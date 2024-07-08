@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.InteropServices.JavaScript;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Microsoft.EntityFrameworkCore;
 
 namespace ModelOpenXmlDoc;
@@ -10,6 +11,7 @@ namespace ModelOpenXmlDoc;
 [Index(nameof(NumStr), IsUnique = false)]
 [Index(nameof(Heading), IsUnique = false)]
 [Index(nameof(OwnerFileId), nameof(NumStr), IsUnique = true)]
+[Index(nameof(ParagraphId), IsUnique = true)]
 public class Chapter
 {
   /// <summary>
@@ -49,10 +51,29 @@ public class Chapter
   public required string Heading { get; set; }
 
   /// <summary>
+  /// Identifier of the paragraph in the Word document that contains the heading of the chapter.
+  /// </summary>
+  [MaxLength(8)]
+  public string? ParagraphId { get; set; }
+
+  /// <summary>
+  /// Text of the chapter.
+  /// </summary>
+  [MaxLength(Int32.MaxValue)]
+  public string? FirstParaText { get; set; }
+
+  /// <summary>
   /// Specifies whether the chapter has subchapters.
   /// </summary>
   [Column(TypeName="bit")]
   public bool HasSubChapters { get; set; }
+
+
+  /// <summary>
+  /// Specifies whether the chapter defines simple types.
+  /// </summary>
+  [Column(TypeName = "bit")]
+  public bool HasSimpleTypes { get; set; }
 
   /// <summary>
   /// Navigation property for the file that contains the chapter.
@@ -65,7 +86,7 @@ public class Chapter
   public Chapter ParentChapter { get; set; } = null!;
 
   /// <summary>
-  /// Navigation property for the collection of subchapters.
+  /// Navigation property for the collection of SubChapters.
   /// </summary>
   public List<Chapter> SubChapters { get; set; } = null!;
 
@@ -75,8 +96,25 @@ public class Chapter
   [NotMapped]
   public Dictionary<string, Chapter> SubChaptersDictionary
   {
-    get => _ListItemsDictionary ??= new Dictionary<string, Chapter>();
-    set => _ListItemsDictionary = value;
+    get => _SubChapters ??= new Dictionary<string, Chapter>();
+    set => _SubChapters = value;
   }
-  private Dictionary<string, Chapter>? _ListItemsDictionary;
+  private Dictionary<string, Chapter>? _SubChapters;
+
+  /// <summary>
+  /// Navigation property for the collection of SimpleTypes.
+  /// </summary>
+  public List<SimpleType> SimpleTypes { get; set; } = null!;
+
+  /// <summary>
+  /// Dictionary of SimpleTypes. SimpleType ShortName is the key.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, SimpleType> SimpleTypesDictionary
+  {
+    get => _SimpleTypes ??= new Dictionary<string, SimpleType>();
+    set => _SimpleTypes = value;
+  }
+  private Dictionary<string, SimpleType>? _SimpleTypes;
+
 }

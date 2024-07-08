@@ -6,10 +6,10 @@ namespace ModelXmlSchema;
 /// <summary>
 /// Enum value for simple types.
 /// </summary>
-[Index(nameof(OwnerTypeId), nameof(Name), IsUnique = true)]
-[Index(nameof(OwnerTypeId), nameof(Value), IsUnique = false)]
+[Index(nameof(OwnerTypeId), nameof(Value), IsUnique = true)]
+[Index(nameof(OwnerTypeId), nameof(OrdNum), IsUnique = false)]
 [Index(nameof(OwnerTypeId), IsUnique = false)]
-[Index(nameof(Name), IsUnique = false)]
+[Index(nameof(Value), IsUnique = false)]
 public class EnumValue
 {
 
@@ -29,12 +29,12 @@ public class EnumValue
   /// </summary>
   [MaxLength(255)]
   [Required]
-  public required string Name { get; set; }
+  public required string Value { get; set; }
 
   /// <summary>
-  /// Numeric representation of the enum value.
+  /// Ordinal number of enum value.Counted from 0.
   /// </summary>
-  public int Value { get; set; }
+  public int OrdNum { get; set; }
 
   /// <summary>
   /// Navigation property for the owner type.

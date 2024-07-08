@@ -484,9 +484,9 @@ public class XmlSchemaParser
 
       if (!simpleType.EnumValuesDictionary.TryGetValue(stringValue, out var enumValue))
       {
-        enumValue = new EnumValue { OwnerTypeId = simpleType.Id, Name = stringValue };
+        enumValue = new EnumValue { OwnerTypeId = simpleType.Id, Value = stringValue };
         dbContext.EnumValues.Add(enumValue);
-        enumValue.Value = n++;
+        enumValue.OrdNum = n++;
         if (SaveChanges() > 0)
           EnumValuesAdded++;
         added = true;

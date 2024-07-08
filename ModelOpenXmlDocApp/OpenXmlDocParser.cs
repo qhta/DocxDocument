@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Reflection.Metadata;
 
@@ -82,7 +83,7 @@ public class OpenXmlDocParser
     foreach (var path in docsPaths)
     {
       var filename = Path.GetFileName(Path.GetFileNameWithoutExtension(Path.GetFileName(path)));
-      if (path.StartsWith('$')) continue;
+      if (path.StartsWith('~')) continue;
 
       if (!dbContext.FilesDictionary.TryGetValue(filename, out var docFile))
       {
@@ -107,17 +108,18 @@ public class OpenXmlDocParser
       var filename = Path.Combine(SourceDocPath, docFile.FileName + ".docx");
       using (var document = WordprocessingDocument.Open(filename, false))
       {
-        ParseDoc(docFile, document);
+        docFile.Document = document;
+        if (docFile.Document == null)
+          continue;
+        ParseDoc(docFile);
+        docFile.Document = null;
       }
     };
   }
-  internal void ParseDoc(DocFile docFile, WordprocessingDocument document)
+  internal void ParseDoc(DocFile docFile)
   {
-    var mainPart = document.MainDocumentPart;
-    if (mainPart == null) return;
-    var body = mainPart.Document.Body;
-    if (body == null) return;
-    var paragraphs = body.Elements<Paragraph>();
+
+    var paragraphs = docFile.Document!.MainDocumentPart!.Document!.Body!.Elements<Paragraph>();
     var paragraph = paragraphs.FirstOrDefault();
     var ordNum = 1;
     while (paragraph != null)
@@ -128,6 +130,17 @@ public class OpenXmlDocParser
         ParseChapter(docFile, ref paragraph, ordNum++);
       }
       paragraph = paragraph.NextSibling<Paragraph>();
+    }
+    foreach (var chapter in docFile.Chapters.Where(item => item.Heading == "Simple Types"))
+    {
+      if (chapter.SubChapters.Count > 0)
+      {
+        var subChapters = chapter.SubChapters.OrderBy(ch => ch.OrdNum);
+        foreach (var subChapter in subChapters)
+        {
+          ParseSimpleTypeChapter(subChapter);
+        }
+      }
     }
   }
 
@@ -141,7 +154,7 @@ public class OpenXmlDocParser
     Write($"Checking chapter {number} {heading} ... ");
     if (!docFile.ChaptersDictionary.TryGetValue(number, out var chapter))
     {
-      chapter = new Chapter { OwnerFileId = docFile.Id, OrdNum = thisNum, NumStr = number, Heading = heading };
+      chapter = new Chapter { OwnerFileId = docFile.Id, OrdNum = thisNum, NumStr = number, Heading = heading, ParagraphId = paragraph.ParagraphId };
       if (parentNumber != null && dbContext.ChaptersDictionary.TryGetValue(parentNumber, out var parentChapter))
       {
         chapter.ParentChapterId = parentChapter.Id;
@@ -177,11 +190,35 @@ public class OpenXmlDocParser
         chapter.Heading = heading;
         updated = true;
       }
-      if (updated)
-        dbContext.Chapters.Update(chapter);
-      if (SaveChanges() > 0)
-        ChaptersUpdated++;
+      if (chapter.ParagraphId != paragraph.ParagraphId?.Value)
+      {
+        chapter.ParagraphId = paragraph.ParagraphId?.Value;
+        updated = true;
+      }
     }
+    var nextParagraph = paragraph.NextSibling<Paragraph>();
+    var isFirst = true;
+    while (nextParagraph != null && !nextParagraph.IsHeading())
+    {
+      paragraph = nextParagraph;
+      if (isFirst)
+      {
+        var firstParaText = paragraph.GetText();
+        if (chapter.FirstParaText != firstParaText)
+        {
+          chapter.FirstParaText = firstParaText;
+          updated = true;
+        }
+      }
+      isFirst = false;
+      nextParagraph = paragraph.NextSibling<Paragraph>();
+    }
+
+    if (updated)
+      dbContext.Chapters.Update(chapter);
+    if (SaveChanges() > 0)
+      ChaptersUpdated++;
+
     if (added)
       WriteLine("added");
     else if (updated)
@@ -212,7 +249,7 @@ public class OpenXmlDocParser
   {
     var k = number.LastIndexOf('.');
     if (k > 0)
-    { 
+    {
       thisNum = int.Parse(number.Substring(k + 1));
       return number.Substring(0, k);
     }
@@ -220,4 +257,63 @@ public class OpenXmlDocParser
     return null;
   }
 
+
+  internal bool ParseSimpleTypeChapter(Chapter chapter)
+  {
+    bool added = false;
+    bool updated = false;
+    var docFile = chapter.OwnerFile;
+    //var paragraph = ParaTools.FindParagraph(chapter.ParagraphId!, chapter.OwnerFile.Document!);
+
+    var text = chapter.Heading;
+    if (!SplitName(text, out var shortName, out var longName))
+      throw new InvalidDataException($"Cannot split heading {text} to short name and long name");
+
+    Write($"Checking simple type {shortName} ({longName}) ... ");
+    if (!chapter.SimpleTypesDictionary.TryGetValue(shortName, out var simpleType))
+    {
+      simpleType = new SimpleType { OwnerChapterId = chapter.Id, ShortName = shortName, LongName = longName };
+      dbContext.SimpleTypes.Add(simpleType);
+      if (SaveChanges() > 0)
+      {
+        added = true;
+      }
+    }
+    else
+    {
+      if (simpleType.LongName != longName)
+      {
+        simpleType.LongName = longName;
+        updated = true;
+      }
+    }
+
+
+    if (updated)
+      dbContext.SimpleTypes.Update(simpleType);
+    if (SaveChanges() > 0)
+      ChaptersUpdated++;
+
+    if (added)
+      WriteLine("added");
+    else if (updated)
+      WriteLine("updated");
+    else
+      WriteLine("ok");
+    return added || updated;
+  }
+
+  internal bool SplitName(string heading, [NotNullWhen(true)] out string? shortName, [NotNullWhen(true)] out string? longName)
+  {
+    var k = heading.IndexOf('(');
+    if (k > 0 && heading.EndsWith(")"))
+    {
+      shortName = heading.Substring(0, k).Trim();
+      longName = heading.Substring(k + 1, heading.Length - k - 2).Trim();
+      return true;
+    }
+    shortName = null;
+    longName = null;
+    return false;
+  }
 }
