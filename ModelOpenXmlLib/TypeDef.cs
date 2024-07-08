@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore;
 namespace ModelOpenXmlLib;
 
 [Index(nameof(Name), IsUnique = false)]
-[Index(nameof(NamespaceId), IsUnique = false)]
-[Index(nameof(NamespaceId), nameof(Name), IsUnique = true)]
+[Index(nameof(OwnerNamespaceId), IsUnique = false)]
+[Index(nameof(OwnerNamespaceId), nameof(Name), IsUnique = true)]
 [Index(nameof(Kind), IsUnique = false)]
 public class TypeDef
 {
@@ -26,28 +26,30 @@ public class TypeDef
   /// <summary>
   /// The kind of the type.
   /// </summary>
+  [Column(TypeName="byte")]
   public TypeKind Kind { get; set; }
 
   /// <summary>
   /// Specifies whether the type is abstract.
   /// </summary>
+  [Column(TypeName = "bit")]
   public bool IsAbstract { get; set; }
 
   /// <summary>
   /// Unique identifier of the namespace containing the type.
   /// </summary>
-  public int NamespaceId { get; set; }
-
-  /// <summary>
-  /// Navigation property for the namespace containing the type.
-  /// </summary>
-  public Namespace Namespace { get; set; } = null!;
+  public int OwnerNamespaceId { get; set; }
 
   /// <summary>
   /// Unique identifier of the base type.
   /// </summary>
   public int? BaseTypeId { get; set; }
 
+  /// <summary>
+  /// Navigation property for the namespace containing the type.
+  /// </summary>
+  public Namespace OwnerNamespace { get; set; } = null!;
+  
   /// <summary>
   /// Navigation property for the base type.
   /// </summary>

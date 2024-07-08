@@ -39,10 +39,10 @@ public class UsedNamespace
   /// <summary>
   /// Navigation property for the Namespace.
   /// </summary>
-  public SchemaFile? SchemaFile { get; set; }
+  public XsdFile? File { get; set; }
 
   /// <summary>
   /// Navigation property for the Namespace.
   /// </summary>
-  public Namespace? SchemaNamespace { get; set; }
+  public Namespace? Namespace { get; set; }
 }

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelOpenXmlLib", "ModelOpenXmlLib.csproj", "{1E102CA9-5302-4626-8AC5-A047AD2B433D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelOpenXmlLib", "ModelOpenXmlLib.csproj", "{1E102CA9-5302-4626-8AC5-A047AD2B433D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelOpenXmlLibApp", "..\ModelOpenXmlLibApp\ModelOpenXmlLibApp.csproj", "{C0F079A5-9AD0-420B-BD60-4EECA35A2A06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelOpenXmlLibApp", "..\ModelOpenXmlLibApp\ModelOpenXmlLibApp.csproj", "{C0F079A5-9AD0-420B-BD60-4EECA35A2A06}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Access.Dao", "..\..\MyLib\Qhta.Access.Dao\Qhta.Access.Dao.csproj", "{A0B46735-A2C8-4DDC-8B11-70752DA35918}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C0F079A5-9AD0-420B-BD60-4EECA35A2A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0F079A5-9AD0-420B-BD60-4EECA35A2A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0F079A5-9AD0-420B-BD60-4EECA35A2A06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0B46735-A2C8-4DDC-8B11-70752DA35918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B46735-A2C8-4DDC-8B11-70752DA35918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B46735-A2C8-4DDC-8B11-70752DA35918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B46735-A2C8-4DDC-8B11-70752DA35918}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

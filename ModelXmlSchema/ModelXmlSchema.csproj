@@ -8,11 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ListType.cs" />
-    <Compile Remove="SchemaFiles.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="EntityFrameworkCore.Jet" Version="8.0.0-rc.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
@@ -26,8 +21,11 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Office.Interop.Access" Version="15.0.4420.1018" />
     <PackageReference Include="Microsoft.Office.Interop.Access.Dao" Version="15.0.4420.1018" />
-    <PackageReference Include="MicrosoftOfficeCore15" Version="15.0.4420.1017" />
     <PackageReference Include="System.Data.OleDb" Version="9.0.0-preview.4.24266.19" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MyLib\Qhta.Access.Dao\Qhta.Access.Dao.csproj" />
   </ItemGroup>
 
 </Project>

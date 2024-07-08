@@ -43,8 +43,7 @@ public class Property
   /// <summary>
   /// Unique identifier of the value type.
   /// </summary>
-  public int? ValueTypeId { get; set; }
-
+  public int ValueTypeId { get; set; }
 
   /// <summary>
   /// Navigation property for the owner type.
@@ -55,5 +54,6 @@ public class Property
   /// <summary>
   /// Navigation property for the value type.
   /// </summary>
-  public TypeDef? ValueType { get; set; }
+  public TypeDef ValueType { get; set; } = null!;
+
 }

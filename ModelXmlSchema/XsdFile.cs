@@ -7,7 +7,7 @@ namespace ModelXmlSchema;
 /// SchemaFile represents an XSD file.
 /// </summary>
 [Index(nameof(FileName), IsUnique = true)]
-public class SchemaFile
+public class XsdFile
 {
   /// <summary>
   ///   Unique identifier for the SchemaFile.
