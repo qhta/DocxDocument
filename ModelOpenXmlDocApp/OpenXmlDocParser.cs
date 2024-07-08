@@ -1,24 +1,15 @@
 ﻿using System.Data;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
-using System.Reflection.Metadata;
 
 using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Vml.Office;
 using DocumentFormat.OpenXml.Wordprocessing;
-
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 using ModelOpenXmlDoc;
 
 using Qhta.OpenXMLTools;
-using ParaTools = Qhta.OpenXMLTools.ParagraphTools;
 
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.Xml.Schema;
+using ParaTools = Qhta.OpenXMLTools.ParagraphTools;
+using Table = DocumentFormat.OpenXml.Wordprocessing.Table;
 
 namespace ModelOpenXmlDocApp;
 
@@ -31,6 +22,8 @@ public class OpenXmlDocParser
   public string SourceDocPath { get; set; } = null!;
   public int FilesTotal, FilesAdded;
   public int ChaptersTotal, ChaptersAdded, ChaptersUpdated;
+  public int SimpleTypesTotal, SimpleTypesAdded, SimpleTypesUpdated;
+  public int EnumValuesTotal, EnumValuesAdded, EnumValuesUpdated;
 
   public void ParseSchemaFiles(string sourceDllPath, string dbFilename)
   {
@@ -43,10 +36,11 @@ public class OpenXmlDocParser
       dbContext.DisplayMessageEnabled = false;
       FilesTotal = dbContext.Files.Count();
       ChaptersTotal = dbContext.Chapters.Count();
+      SimpleTypesTotal = dbContext.SimpleTypes.Count();
+      EnumValuesTotal = dbContext.EnumValues.Count();
     }
   }
 
-  internal int AnonSimpleTypes = 0;
   internal DocDbContext dbContext = null!;
 
 
@@ -83,7 +77,7 @@ public class OpenXmlDocParser
     foreach (var path in docsPaths)
     {
       var filename = Path.GetFileName(Path.GetFileNameWithoutExtension(Path.GetFileName(path)));
-      if (path.StartsWith('~')) continue;
+      if (filename.StartsWith('~')) continue;
 
       if (!dbContext.FilesDictionary.TryGetValue(filename, out var docFile))
       {
@@ -215,9 +209,11 @@ public class OpenXmlDocParser
     }
 
     if (updated)
+    {
       dbContext.Chapters.Update(chapter);
-    if (SaveChanges() > 0)
-      ChaptersUpdated++;
+      if (SaveChanges() > 0)
+        ChaptersUpdated++;
+    }
 
     if (added)
       WriteLine("added");
@@ -262,21 +258,42 @@ public class OpenXmlDocParser
   {
     bool added = false;
     bool updated = false;
-    var docFile = chapter.OwnerFile;
-    //var paragraph = ParaTools.FindParagraph(chapter.ParagraphId!, chapter.OwnerFile.Document!);
+    bool isEnum = false;
 
     var text = chapter.Heading;
     if (!SplitName(text, out var shortName, out var longName))
       throw new InvalidDataException($"Cannot split heading {text} to short name and long name");
 
     Write($"Checking simple type {shortName} ({longName}) ... ");
+    Table? enumTable = null;
+    var fromParagraph = ParaTools.FindParagraph(chapter.OwnerFile.Document!, chapter.ParagraphId!);
+    var element = fromParagraph?.NextSibling();
+    while (element != null && (element as Paragraph)?.IsHeading() != true)
+    {
+      if (element is Table table)
+      {
+        var firstCellPara = table.Elements<TableRow>().FirstOrDefault()?.Elements<TableCell>().FirstOrDefault()?.Elements<Paragraph>().FirstOrDefault();
+        if (firstCellPara != null)
+        {
+          var firstCellText = firstCellPara.GetText();
+          if (firstCellText == "Enumeration Value")
+          {
+            isEnum = true;
+            enumTable = table;
+          }
+          break;
+        }
+      }
+      element = element.NextSibling();
+    }
     if (!chapter.SimpleTypesDictionary.TryGetValue(shortName, out var simpleType))
     {
-      simpleType = new SimpleType { OwnerChapterId = chapter.Id, ShortName = shortName, LongName = longName };
+      simpleType = new SimpleType { OwnerChapterId = chapter.Id, ShortName = shortName, LongName = longName, IsEnum = isEnum };
       dbContext.SimpleTypes.Add(simpleType);
       if (SaveChanges() > 0)
       {
         added = true;
+        SimpleTypesAdded++;
       }
     }
     else
@@ -286,13 +303,17 @@ public class OpenXmlDocParser
         simpleType.LongName = longName;
         updated = true;
       }
+      if (simpleType.IsEnum != isEnum)
+      {
+        simpleType.IsEnum = isEnum;
+        updated = true;
+      }
     }
-
 
     if (updated)
       dbContext.SimpleTypes.Update(simpleType);
     if (SaveChanges() > 0)
-      ChaptersUpdated++;
+      SimpleTypesUpdated++;
 
     if (added)
       WriteLine("added");
@@ -300,6 +321,11 @@ public class OpenXmlDocParser
       WriteLine("updated");
     else
       WriteLine("ok");
+
+    if (isEnum)
+    {
+      ParseEnumValues(simpleType, enumTable!);
+    }
     return added || updated;
   }
 
@@ -316,4 +342,66 @@ public class OpenXmlDocParser
     longName = null;
     return false;
   }
+
+  internal void ParseEnumValues(SimpleType simpleType, Table table)
+  {
+    var rows = table.Elements<TableRow>().Skip(1);
+    int ordNum = 0;
+    foreach (var row in rows)
+    {
+      ParseEnumValue(simpleType, row, ordNum++);
+    }
+  }
+
+  internal bool ParseEnumValue(SimpleType simpleType, TableRow row, int ordNum)
+  {
+    bool added = false;
+    bool updated = false;
+    var cells = row.Elements<TableCell>().ToList();
+    if (cells.Count < 2)
+      throw new InvalidDataException("Enum value row must have at least 2 cells");
+    var text1 = cells[0].GetText();
+    if (text1 == "Enumeration Value")
+      throw new InvalidDataException($"\"Enumeration value\" appeared in simple type {simpleType.ShortName} enum table");
+    if (!SplitName(text1, out var shortName, out var longName))
+      throw new InvalidDataException($"Cannot split enum value {text1} to short name and long name");
+    //var text2 = cells[1].GetText();
+    Write($"Checking enum value {shortName} ({longName}) ... ");
+    if (!simpleType.EnumValuesDictionary.TryGetValue(shortName, out var enumValue))
+    {
+      enumValue = new EnumValue { OwnerTypeId = simpleType.Id, OrdNum = ordNum, Value = shortName, LongName = longName };
+      dbContext.EnumValues.Add(enumValue);
+      if (SaveChanges() > 0)
+      {
+        added = true;
+        EnumValuesAdded++;
+      }
+    }
+    else
+    {
+      if (enumValue.LongName != longName)
+      {
+        enumValue.LongName = longName;
+        updated = true;
+      }
+    }
+
+    if (updated)
+    {
+      dbContext.EnumValues.Update(enumValue);
+      if (SaveChanges() > 0)
+        EnumValuesUpdated++;
+    }
+
+    if (added)
+      WriteLine("added");
+    else if (updated)
+      WriteLine("updated");
+    else
+      WriteLine("ok");
+
+
+    return added || updated;
+  }
+
 }
