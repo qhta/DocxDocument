@@ -14,6 +14,10 @@ public sealed class DocDbContext : DbContext
 
   public DbSet<EnumValue> EnumValues { get; set; }
 
+  public DbSet<Element> Elements { get; set; }
+
+  public DbSet<Attribute> Attributes { get; set; }
+
   public Dictionary<string, DocFile> FilesDictionary { get; set; } = null!;
   public Dictionary<int, DocFile> FilesIndex { get; set; } = null!;
 
@@ -69,6 +73,16 @@ public sealed class DocDbContext : DbContext
     modelBuilder.Entity<EnumValue>()
       .HasOne(item => item.OwnerType)
       .WithMany(type => type.EnumValues)
+      .HasForeignKey(item => item.OwnerTypeId);
+
+    modelBuilder.Entity<Element>()
+      .HasOne(item => item.OwnerChapter)
+      .WithMany(chapter => chapter.Elements)
+      .HasForeignKey(item => item.OwnerChapterId);
+
+    modelBuilder.Entity<Attribute>()
+      .HasOne(item => item.OwnerType)
+      .WithMany(type => type.Attributes)
       .HasForeignKey(item => item.OwnerTypeId);
   }
 
@@ -165,6 +179,37 @@ public sealed class DocDbContext : DbContext
           }
         }
       };
+
+    Elements.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (Element element in args.NewItems!)
+        {
+          element.OwnerChapter.ElementsDictionary.TryAdd(element.ShortName, element);
+        }
+      }
+    };
+
+    foreach (var element in Elements
+               .Include(f => f.Attributes)
+            )
+    {
+      element.HasAttributes = element.Attributes.Count > 0;
+      if (element.HasAttributes)
+        element.AttributesDictionary = element.Attributes.ToDictionary(at => at.ShortName);
+    }
+
+    Attributes.Local.CollectionChanged += (sender, args) =>
+    {
+      if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+      {
+        foreach (Attribute attribute in args.NewItems!)
+        {
+          attribute.OwnerType.AttributesDictionary.TryAdd(attribute.ShortName, attribute);
+        }
+      }
+    };
 
   }
 

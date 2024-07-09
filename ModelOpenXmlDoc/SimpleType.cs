@@ -50,6 +50,12 @@ public class SimpleType
   public bool IsEnum { get; set; }
 
   /// <summary>
+  /// Text of the first paragraph of the chapter.
+  /// </summary>
+  [MaxLength(Int32.MaxValue)]
+  public string? DescriptionText { get; set; }
+
+  /// <summary>
   /// Navigation property for the namespace where this type is defined.
   /// </summary>
   [Required]

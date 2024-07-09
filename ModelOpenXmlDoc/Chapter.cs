@@ -57,7 +57,7 @@ public class Chapter
   public string? ParagraphId { get; set; }
 
   /// <summary>
-  /// Text of the chapter.
+  /// Text of the first paragraph of the chapter.
   /// </summary>
   [MaxLength(Int32.MaxValue)]
   public string? FirstParaText { get; set; }
@@ -102,12 +102,12 @@ public class Chapter
   private Dictionary<string, Chapter>? _SubChapters;
 
   /// <summary>
-  /// Navigation property for the collection of SimpleTypes.
+  /// Navigation property for the collection of simple types defined in this chapter.
   /// </summary>
   public List<SimpleType> SimpleTypes { get; set; } = null!;
 
   /// <summary>
-  /// Dictionary of SimpleTypes. SimpleType ShortName is the key.
+  /// Dictionary of simple types. Simple type ShortName is the key.
   /// </summary>
   [NotMapped]
   public Dictionary<string, SimpleType> SimpleTypesDictionary
@@ -116,5 +116,21 @@ public class Chapter
     set => _SimpleTypes = value;
   }
   private Dictionary<string, SimpleType>? _SimpleTypes;
+
+  /// <summary>
+  /// Navigation property for the collection of elements  defined in this chapter.
+  /// </summary>
+  public List<Element> Elements { get; set; } = null!;
+
+  /// <summary>
+  /// Dictionary of elements. Element ShortName is the key.
+  /// </summary>
+  [NotMapped]
+  public Dictionary<string, Element> ElementsDictionary
+  {
+    get => _Elements ??= new Dictionary<string, Element>();
+    set => _Elements = value;
+  }
+  private Dictionary<string, Element>? _Elements;
 
 }

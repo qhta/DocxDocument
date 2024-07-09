@@ -45,6 +45,12 @@ public class EnumValue
   public required string LongName { get; set; }
 
   /// <summary>
+  /// Text of the description in the second column of enum value table.
+  /// </summary>
+  [MaxLength(Int32.MaxValue)]
+  public string? DescriptionText { get; set; }
+
+  /// <summary>
   /// Navigation property for the owner type.
   /// </summary>
   [Required]
