@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 using DocumentFormat.OpenXml.Packaging;
@@ -8,6 +9,7 @@ using ModelOpenXmlDoc;
 
 using Qhta.OpenXMLTools;
 
+using Attribute = ModelOpenXmlDoc.Attribute;
 using ParaTools = Qhta.OpenXMLTools.ParagraphTools;
 using Table = DocumentFormat.OpenXml.Wordprocessing.Table;
 
@@ -24,7 +26,8 @@ public class OpenXmlDocParser
   public int ChaptersTotal, ChaptersAdded, ChaptersUpdated;
   public int SimpleTypesTotal, SimpleTypesAdded, SimpleTypesUpdated;
   public int EnumValuesTotal, EnumValuesAdded, EnumValuesUpdated;
-
+  public int ElementsTotal, ElementsAdded, ElementsUpdated;
+  public int AttributesTotal, AttributesAdded, AttributesUpdated;
   public void ParseSchemaFiles(string sourceDllPath, string dbFilename)
   {
     SourceDocPath = sourceDllPath;
@@ -38,6 +41,8 @@ public class OpenXmlDocParser
       ChaptersTotal = dbContext.Chapters.Count();
       SimpleTypesTotal = dbContext.SimpleTypes.Count();
       EnumValuesTotal = dbContext.EnumValues.Count();
+      ElementsTotal = dbContext.Elements.Count();
+      AttributesTotal = dbContext.Attributes.Count();
     }
   }
 
@@ -136,6 +141,18 @@ public class OpenXmlDocParser
         }
       }
     }
+
+    foreach (var chapter in docFile.Chapters.Where(item => item.Heading == "Elements"))
+    {
+      if (chapter.SubChapters.Count > 0)
+      {
+        var subChapters = chapter.SubChapters.OrderBy(ch => ch.OrdNum);
+        foreach (var subChapter in subChapters)
+        {
+          ParseElementChapter(subChapter);
+        }
+      }
+    }
   }
 
   internal bool ParseChapter(DocFile docFile, ref Paragraph paragraph, int ordNum)
@@ -190,22 +207,17 @@ public class OpenXmlDocParser
         updated = true;
       }
     }
+
     var nextParagraph = paragraph.NextSibling<Paragraph>();
-    var isFirst = true;
-    while (nextParagraph != null && !nextParagraph.IsHeading())
+    if (nextParagraph != null && !nextParagraph.IsHeading())
     {
       paragraph = nextParagraph;
-      if (isFirst)
-      {
         var firstParaText = paragraph.GetText();
         if (chapter.FirstParaText != firstParaText)
         {
           chapter.FirstParaText = firstParaText;
           updated = true;
         }
-      }
-      isFirst = false;
-      nextParagraph = paragraph.NextSibling<Paragraph>();
     }
 
     if (updated)
@@ -223,6 +235,332 @@ public class OpenXmlDocParser
       WriteLine("ok");
     return added || updated;
   }
+
+  internal bool ParseSimpleTypeChapter(Chapter chapter)
+  {
+    bool added = false;
+    bool updated = false;
+    bool isEnum = false;
+
+    var text = chapter.Heading;
+    if (!SplitName(text, out var shortName, out var longName))
+      throw new InvalidDataException($"Cannot split heading {text} to short name and long name");
+
+    Write($"Checking simple type {shortName} ({longName}) ... ");
+    Table? enumTable = null;
+    var paragraph = ParaTools.FindParagraph(chapter.OwnerFile.Document!, chapter.ParagraphId!);
+    if (paragraph == null)
+      throw new InvalidDataException($"Cannot find paragraph {chapter.ParagraphId} in file {chapter.OwnerFile.FileName}");
+    var item = paragraph?.NextSibling();
+    while (item != null && (item as Paragraph)?.IsHeading() != true)
+    {
+      if (item is Table table)
+      {
+        var firstCellPara = table.Elements<TableRow>().FirstOrDefault()?.Elements<TableCell>().FirstOrDefault()?.Elements<Paragraph>().FirstOrDefault();
+        if (firstCellPara != null)
+        {
+          var firstCellText = firstCellPara.GetText();
+          if (firstCellText == "Enumeration Value")
+          {
+            isEnum = true;
+            enumTable = table;
+          }
+          break;
+        }
+      }
+      item = item.NextSibling();
+    }
+
+    string? descriptionText = null;
+    var nextParagraph = paragraph!.NextSibling<Paragraph>();
+    if (nextParagraph != null && !nextParagraph.IsHeading())
+    {
+      paragraph = nextParagraph;
+      descriptionText = paragraph.GetText();
+    }
+
+    if (!chapter.SimpleTypesDictionary.TryGetValue(shortName, out var simpleType))
+    {
+      simpleType = new SimpleType { OwnerChapterId = chapter.Id, ShortName = shortName, LongName = longName, IsEnum = isEnum, DescriptionText = descriptionText };
+      dbContext.SimpleTypes.Add(simpleType);
+      if (SaveChanges() > 0)
+      {
+        added = true;
+        SimpleTypesAdded++;
+      }
+    }
+    else
+    {
+      if (simpleType.LongName != longName)
+      {
+        simpleType.LongName = longName;
+        updated = true;
+      }
+      if (simpleType.IsEnum != isEnum)
+      {
+        simpleType.IsEnum = isEnum;
+        updated = true;
+      }
+      if (simpleType.DescriptionText != descriptionText)
+      {
+        simpleType.DescriptionText = descriptionText  ;
+        updated = true;
+      }
+    }
+
+    if (updated)
+      dbContext.SimpleTypes.Update(simpleType);
+    if (SaveChanges() > 0)
+      SimpleTypesUpdated++;
+
+    if (added)
+      WriteLine("added");
+    else if (updated)
+      WriteLine("updated");
+    else
+      WriteLine("ok");
+
+    if (isEnum)
+    {
+      ParseEnumValues(simpleType, enumTable!);
+    }
+    return added || updated;
+  }
+
+  internal void ParseEnumValues(SimpleType simpleType, Table table)
+  {
+    var rows = table.Elements<TableRow>().Skip(1);
+    int ordNum = 0;
+    foreach (var row in rows)
+    {
+      ParseEnumValue(simpleType, row, ordNum++);
+    }
+  }
+
+  internal bool ParseEnumValue(SimpleType simpleType, TableRow row, int ordNum)
+  {
+    bool added = false;
+    bool updated = false;
+    var cells = row.Elements<TableCell>().ToList();
+    if (cells.Count < 2)
+      throw new InvalidDataException("Enum value row must have at least 2 cells");
+    var text1 = cells[0].GetText();
+    if (text1 == "Enumeration Value")
+      throw new InvalidDataException($"\"Enumeration value\" appeared in simple type {simpleType.ShortName} enum table");
+    if (!SplitName(text1, out var shortName, out var longName))
+      throw new InvalidDataException($"Cannot split enum value {text1} to short name and long name");
+    var text2 = cells[1].GetText();
+    if (text2.Contains('\n'))
+      Debug.Assert(true);
+    var description = text2;
+    Write($"Checking enum value {shortName} ({longName}) ... ");
+    if (!simpleType.EnumValuesDictionary.TryGetValue(shortName, out var enumValue))
+    {
+      enumValue = new EnumValue { OwnerTypeId = simpleType.Id, OrdNum = ordNum, Value = shortName, LongName = longName, DescriptionText = description };
+      dbContext.EnumValues.Add(enumValue);
+      if (SaveChanges() > 0)
+      {
+        added = true;
+        EnumValuesAdded++;
+      }
+    }
+    else
+    {
+      if (enumValue.LongName != longName)
+      {
+        enumValue.LongName = longName;
+        updated = true;
+      }
+
+      if (enumValue.DescriptionText != description)
+      {
+        enumValue.DescriptionText = description;
+        updated = true;
+      }
+    }
+
+    if (updated)
+    {
+      dbContext.EnumValues.Update(enumValue);
+      if (SaveChanges() > 0)
+        EnumValuesUpdated++;
+    }
+
+    if (added)
+      WriteLine("added");
+    else if (updated)
+      WriteLine("updated");
+    else
+      WriteLine("ok");
+
+
+    return added || updated;
+  }
+
+  internal bool ParseElementChapter(Chapter chapter)
+  {
+    bool added = false;
+    bool updated = false;
+    bool hasAttributes = false;
+
+    var text = chapter.Heading;
+    if (!SplitName(text, out var shortName, out var longName))
+      throw new InvalidDataException($"Cannot split heading {text} to short name and long name");
+
+    Write($"Checking element {shortName} ({longName}) ... ");
+    Table? attribTable = null;
+    var paragraph = ParaTools.FindParagraph(chapter.OwnerFile.Document!, chapter.ParagraphId!);
+    if (paragraph == null)
+      throw new InvalidDataException($"Cannot find paragraph {chapter.ParagraphId} in file {chapter.OwnerFile.FileName}");
+    var item = paragraph?.NextSibling();
+    while (item != null && (item as Paragraph)?.IsHeading() != true)
+    {
+      if (item is Table table)
+      {
+        var firstCellPara = table.Elements<TableRow>().FirstOrDefault()?.Elements<TableCell>().FirstOrDefault()?.Elements<Paragraph>().FirstOrDefault();
+        if (firstCellPara != null)
+        {
+          var firstCellText = firstCellPara.GetText();
+          if (firstCellText == "Attributes")
+          {
+            hasAttributes = true;
+            attribTable = table;
+          }
+          break;
+        }
+      }
+      item = item.NextSibling();
+    }
+
+    string? descriptionText = null;
+    var nextParagraph = paragraph!.NextSibling<Paragraph>();
+    if (nextParagraph != null && !nextParagraph.IsHeading())
+    {
+      paragraph = nextParagraph;
+      descriptionText = paragraph.GetText();
+    }
+
+    if (!chapter.ElementsDictionary.TryGetValue(shortName, out var element))
+    {
+      element = new Element { OwnerChapterId = chapter.Id, ShortName = shortName, LongName = longName, HasAttributes = hasAttributes, DescriptionText = descriptionText };
+      dbContext.Elements.Add(element);
+      if (SaveChanges() > 0)
+      {
+        added = true;
+        SimpleTypesAdded++;
+      }
+    }
+    else
+    {
+      if (element.LongName != longName)
+      {
+        element.LongName = longName;
+        updated = true;
+      }
+      if (element.HasAttributes != hasAttributes)
+      {
+        element.HasAttributes = hasAttributes;
+        updated = true;
+      }
+      if (element.DescriptionText != descriptionText)
+      {
+        element.DescriptionText = descriptionText;
+        updated = true;
+      }
+    }
+
+    if (updated)
+      dbContext.Elements.Update(element);
+    if (SaveChanges() > 0)
+      SimpleTypesUpdated++;
+
+    if (added)
+      WriteLine("added");
+    else if (updated)
+      WriteLine("updated");
+    else
+      WriteLine("ok");
+
+    if (hasAttributes)
+    {
+      ParseAttributes(element, attribTable!);
+    }
+    return added || updated;
+  }
+
+  internal void ParseAttributes(Element element, Table table)
+  {
+    var rows = table.Elements<TableRow>().Skip(1);
+    int ordNum = 0;
+    foreach (var row in rows)
+    {
+      ParseAttribute(element, row, ordNum++);
+    }
+  }
+
+  internal bool ParseAttribute(Element element, TableRow row, int ordNum)
+  {
+    bool added = false;
+    bool updated = false;
+    var cells = row.Elements<TableCell>().ToList();
+    if (cells.Count < 2)
+      throw new InvalidDataException("Attribute row must have at least 2 cells");
+    var para = cells[0].Elements<Paragraph>().FirstOrDefault();
+    if (para == null)
+      throw new InvalidDataException("Attribute cell must have paragraphs");
+    var text1 = para.GetText();
+    if (text1 == "Attributes")
+      throw new InvalidDataException($"\"Attributes\" appeared in element {element.ShortName} enum table");
+    if (!SplitName(text1, out var shortName, out var longName))
+      throw new InvalidDataException($"Cannot split attribute \"{text1}\" to short name and long name");
+    var text2 = cells[1].GetText();
+    if (text2.Contains('\n'))
+      Debug.Assert(true);
+    var description = RemoveExample(text2);
+    Write($"Checking attribute {shortName} ({longName}) ... ");
+    if (!element.AttributesDictionary.TryGetValue(shortName, out var attribute))
+    {
+      attribute = new Attribute { OwnerTypeId = element.Id, OrdNum = ordNum, ShortName = shortName, LongName = longName, DescriptionText = description };
+      dbContext.Attributes.Add(attribute);
+      if (SaveChanges() > 0)
+      {
+        added = true;
+        AttributesAdded++;
+      }
+    }
+    else
+    {
+      if (attribute.LongName != longName)
+      {
+        attribute.LongName = longName;
+        updated = true;
+      }
+
+      if (attribute.DescriptionText != description)
+      {
+        attribute.DescriptionText = description;
+        updated = true;
+      }
+    }
+
+    if (updated)
+    {
+      dbContext.Attributes.Update(attribute);
+      if (SaveChanges() > 0)
+        AttributesUpdated++;
+    }
+
+    if (added)
+      WriteLine("added");
+    else if (updated)
+      WriteLine("updated");
+    else
+      WriteLine("ok");
+
+
+    return added || updated;
+  }
+
 
   internal string? GetNumber(string text, out string heading)
   {
@@ -253,82 +591,6 @@ public class OpenXmlDocParser
     return null;
   }
 
-
-  internal bool ParseSimpleTypeChapter(Chapter chapter)
-  {
-    bool added = false;
-    bool updated = false;
-    bool isEnum = false;
-
-    var text = chapter.Heading;
-    if (!SplitName(text, out var shortName, out var longName))
-      throw new InvalidDataException($"Cannot split heading {text} to short name and long name");
-
-    Write($"Checking simple type {shortName} ({longName}) ... ");
-    Table? enumTable = null;
-    var fromParagraph = ParaTools.FindParagraph(chapter.OwnerFile.Document!, chapter.ParagraphId!);
-    var element = fromParagraph?.NextSibling();
-    while (element != null && (element as Paragraph)?.IsHeading() != true)
-    {
-      if (element is Table table)
-      {
-        var firstCellPara = table.Elements<TableRow>().FirstOrDefault()?.Elements<TableCell>().FirstOrDefault()?.Elements<Paragraph>().FirstOrDefault();
-        if (firstCellPara != null)
-        {
-          var firstCellText = firstCellPara.GetText();
-          if (firstCellText == "Enumeration Value")
-          {
-            isEnum = true;
-            enumTable = table;
-          }
-          break;
-        }
-      }
-      element = element.NextSibling();
-    }
-    if (!chapter.SimpleTypesDictionary.TryGetValue(shortName, out var simpleType))
-    {
-      simpleType = new SimpleType { OwnerChapterId = chapter.Id, ShortName = shortName, LongName = longName, IsEnum = isEnum };
-      dbContext.SimpleTypes.Add(simpleType);
-      if (SaveChanges() > 0)
-      {
-        added = true;
-        SimpleTypesAdded++;
-      }
-    }
-    else
-    {
-      if (simpleType.LongName != longName)
-      {
-        simpleType.LongName = longName;
-        updated = true;
-      }
-      if (simpleType.IsEnum != isEnum)
-      {
-        simpleType.IsEnum = isEnum;
-        updated = true;
-      }
-    }
-
-    if (updated)
-      dbContext.SimpleTypes.Update(simpleType);
-    if (SaveChanges() > 0)
-      SimpleTypesUpdated++;
-
-    if (added)
-      WriteLine("added");
-    else if (updated)
-      WriteLine("updated");
-    else
-      WriteLine("ok");
-
-    if (isEnum)
-    {
-      ParseEnumValues(simpleType, enumTable!);
-    }
-    return added || updated;
-  }
-
   internal bool SplitName(string heading, [NotNullWhen(true)] out string? shortName, [NotNullWhen(true)] out string? longName)
   {
     var k = heading.IndexOf('(');
@@ -343,65 +605,16 @@ public class OpenXmlDocParser
     return false;
   }
 
-  internal void ParseEnumValues(SimpleType simpleType, Table table)
+  internal string RemoveExample(string text)
   {
-    var rows = table.Elements<TableRow>().Skip(1);
-    int ordNum = 0;
-    foreach (var row in rows)
-    {
-      ParseEnumValue(simpleType, row, ordNum++);
+    var k = text.IndexOf("[Example:");
+    if (k > 0)
+    { 
+      var m = text.IndexOf("end example]", k);
+      if (m < 0)
+        throw new InvalidDataException("Cannot find end of example");
+      text = text.Substring(0, k).Trim() + text.Substring(m + 12).Trim();
     }
+    return text;
   }
-
-  internal bool ParseEnumValue(SimpleType simpleType, TableRow row, int ordNum)
-  {
-    bool added = false;
-    bool updated = false;
-    var cells = row.Elements<TableCell>().ToList();
-    if (cells.Count < 2)
-      throw new InvalidDataException("Enum value row must have at least 2 cells");
-    var text1 = cells[0].GetText();
-    if (text1 == "Enumeration Value")
-      throw new InvalidDataException($"\"Enumeration value\" appeared in simple type {simpleType.ShortName} enum table");
-    if (!SplitName(text1, out var shortName, out var longName))
-      throw new InvalidDataException($"Cannot split enum value {text1} to short name and long name");
-    //var text2 = cells[1].GetText();
-    Write($"Checking enum value {shortName} ({longName}) ... ");
-    if (!simpleType.EnumValuesDictionary.TryGetValue(shortName, out var enumValue))
-    {
-      enumValue = new EnumValue { OwnerTypeId = simpleType.Id, OrdNum = ordNum, Value = shortName, LongName = longName };
-      dbContext.EnumValues.Add(enumValue);
-      if (SaveChanges() > 0)
-      {
-        added = true;
-        EnumValuesAdded++;
-      }
-    }
-    else
-    {
-      if (enumValue.LongName != longName)
-      {
-        enumValue.LongName = longName;
-        updated = true;
-      }
-    }
-
-    if (updated)
-    {
-      dbContext.EnumValues.Update(enumValue);
-      if (SaveChanges() > 0)
-        EnumValuesUpdated++;
-    }
-
-    if (added)
-      WriteLine("added");
-    else if (updated)
-      WriteLine("updated");
-    else
-      WriteLine("ok");
-
-
-    return added || updated;
-  }
-
 }
