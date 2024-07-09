@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ModelOpenXmlDoc;
 /// <summary>
-/// Enum value for simple types.
+/// Attribute of the element.
 /// </summary>
 [Index(nameof(OwnerTypeId), nameof(OrdNum), IsUnique = true)]
-[Index(nameof(OwnerTypeId), nameof(Value), IsUnique = true)]
+[Index(nameof(OwnerTypeId), nameof(ShortName), IsUnique = true)]
 [Index(nameof(OwnerTypeId), IsUnique = false)]
 [Index(nameof(OrdNum), IsUnique = false)]
-[Index(nameof(Value), IsUnique = false)]
-public class EnumValue
+[Index(nameof(ShortName), IsUnique = false)]
+public class Attribute
 {
 
   /// <summary>
@@ -35,7 +35,7 @@ public class EnumValue
   /// </summary>
   [MaxLength(255)]
   [Required]
-  public required string Value { get; set; }
+  public required string ShortName { get; set; }
 
   /// <summary>
   /// Long name of the enum value.
@@ -45,15 +45,15 @@ public class EnumValue
   public required string LongName { get; set; }
 
   /// <summary>
-  /// Text of the description in the second column of enum value table.
+  /// Text of the description in the secon column of the attribute table.
   /// </summary>
   [MaxLength(Int32.MaxValue)]
   public string? DescriptionText { get; set; }
 
   /// <summary>
-  /// Navigation property for the owner type.
+  /// Navigation property for the owner element.
   /// </summary>
   [Required]
-  public SimpleType OwnerType { get; set; } = null!;
+  public Element OwnerType { get; set; } = null!;
 }
 

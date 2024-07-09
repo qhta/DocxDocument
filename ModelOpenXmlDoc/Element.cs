@@ -9,14 +9,14 @@ using Microsoft.EntityFrameworkCore;
 namespace ModelOpenXmlDoc;
 
 /// <summary>
-/// Simple type definition .
+/// Element definition.
 /// </summary>
 [Index(nameof(OwnerChapterId), IsUnique = false)]
 [Index(nameof(ShortName), nameof(OwnerChapterId), IsUnique = true)]
 [Index(nameof(ShortName), IsUnique = false)]
 [Index(nameof(LongName), nameof(OwnerChapterId), IsUnique = true)]
 [Index(nameof(LongName), IsUnique = false)]
-public class SimpleType
+public class Element
 {
   /// <summary>
   /// Unique identifier for the type definition.
@@ -39,15 +39,10 @@ public class SimpleType
   public required string LongName { get; set; }
 
   /// <summary>
-  /// Unique identifier of the chapter where the type is defined.
-  /// </summary>
-  public int OwnerChapterId { get; set; }
-
-  /// <summary>
-  /// Specifies if the simple type is an enumeration.
+  /// Specifies if the element has attributes.
   /// </summary>
   [Column(TypeName = "bit")]
-  public bool IsEnum { get; set; }
+  public bool HasAttributes { get; set; }
 
   /// <summary>
   /// Text of the first paragraph of the chapter.
@@ -56,25 +51,30 @@ public class SimpleType
   public string? DescriptionText { get; set; }
 
   /// <summary>
+  /// Unique identifier of the chapter where the type is defined.
+  /// </summary>
+  public int OwnerChapterId { get; set; }
+
+  /// <summary>
   /// Navigation property for the namespace where this type is defined.
   /// </summary>
   [Required]
   public Chapter OwnerChapter { get; set; } = null!;
 
   /// <summary>
-  /// Enumeration values for the simple type.
+  /// Attributes for the simple type.
   /// </summary>
-  public virtual ICollection<EnumValue> EnumValues { get; set; } = null!;
+  public virtual ICollection<Attribute> Attributes { get; set; } = null!;
 
   /// <summary>
-  /// Dictionary of enumeration values for the simple type.
+  /// Dictionary of attributes of the element.
   /// </summary>
   [NotMapped]
-  public Dictionary<string, EnumValue> EnumValuesDictionary
+  public Dictionary<string, Attribute> AttributesDictionary
   {
-    get => _EnumValuesDictionary ??= new Dictionary<string, EnumValue>();
-    set => _EnumValuesDictionary = value;
+    get => _AttributesDictionary ??= new Dictionary<string, Attribute>();
+    set => _AttributesDictionary = value;
   }
-  private Dictionary<string, EnumValue>? _EnumValuesDictionary;
+  private Dictionary<string, Attribute>? _AttributesDictionary;
 
 }
