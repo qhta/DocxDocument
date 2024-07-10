@@ -1,6 +1,15 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Math;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+
+using DocumentFormat.OpenXml.Wordprocessing;
 
 using Microsoft.EntityFrameworkCore;
+using Access = Microsoft.Office.Interop.Access;
+using DAO = Microsoft.Office.Interop.Access.Dao;
+
+using Qhta.Access.Dao;
 
 namespace ModelOpenXmlDoc;
 
@@ -30,6 +39,7 @@ public sealed class DocDbContext : DbContext
   {
     DbFilename = @"D:\VS\Docs\OpenXML\OpenXmlLib.accdb";
     Database.EnsureCreated();
+    SetupAccessDatabase();
   }
 
   public DocDbContext(string dbFilename)
@@ -51,6 +61,39 @@ public sealed class DocDbContext : DbContext
   {
     if (DisplayMessageEnabled)
       Console.WriteLine(message);
+  }
+
+  internal void SetupAccessDatabase()
+  {
+    var accessApp = new Access.Application();
+    DAO.Database database = null!;
+    try
+    {
+      accessApp.OpenCurrentDatabase(DbFilename, false);
+      database = accessApp.CurrentDb();
+
+      Tools.SetQuery(database, "AttributesView", "SELECT Attributes.OwnerTypeId, Attributes.ShortName, Attributes.LongName, Attributes.DescriptionText, Len([Attributes].[DescriptionText]) AS Length\r\nFROM Attributes;");
+      //Tools.CreateEnumLookupTable(database, "TypeKinds", typeof(TypeKind));
+      //Tools.SetLookup(database, "Types", "Kind", "TypeKinds");
+    }
+    catch (Exception ex)
+    {
+      Debug.WriteLine($"An error occurred: {ex.Message}");
+    }
+    finally
+    {
+      if (database != null)
+      {
+        accessApp.CloseCurrentDatabase();
+      }
+      accessApp.Quit(Access.AcQuitOption.acQuitSaveAll);
+      Marshal.ReleaseComObject(accessApp);
+      accessApp = null!;
+      // For good measure, force a garbage collection
+      GC.Collect();
+      GC.WaitForPendingFinalizers();
+      Tools.KillMsAccess();
+    }
   }
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
