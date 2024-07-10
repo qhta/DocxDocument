@@ -27,7 +27,7 @@ public class DocFile
   /// <summary>
   /// Navigation property for the chapters in the file.
   /// </summary>
-  public List<Chapter> Chapters { get; set; } = new List<Chapter>();
+  public List<Chapter> Chapters { get; set; } = new();
 
   /// <summary>
   /// Dictionary of chapters in the file. Chapter Number is the key.
