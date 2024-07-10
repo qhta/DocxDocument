@@ -45,6 +45,12 @@ public class Attribute
   public required string LongName { get; set; }
 
   /// <summary>
+  /// Namespace.
+  /// </summary>
+  [MaxLength(255)]
+  public string? Namespace { get; set; }
+
+  /// <summary>
   /// Text of the description in the secon column of the attribute table.
   /// </summary>
   [MaxLength(Int32.MaxValue)]

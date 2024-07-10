@@ -58,6 +58,7 @@ public sealed class LibDbContext : DbContext
     if (DisplayMessageEnabled)
       Console.WriteLine(message);
   }
+
   internal void SetupAccessDatabase()
   {
     var accessApp = new Access.Application();
@@ -89,6 +90,7 @@ public sealed class LibDbContext : DbContext
       Tools.KillMsAccess();
     }
   }
+
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
 

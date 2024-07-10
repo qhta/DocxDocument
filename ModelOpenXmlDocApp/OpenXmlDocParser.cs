@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
+using DocumentFormat.OpenXml.Office2010.CustomUI;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 
@@ -105,7 +106,31 @@ public class OpenXmlDocParser
     foreach (var docFile in dbContext.Files.ToList())
     {
       var filename = Path.Combine(SourceDocPath, docFile.FileName + ".docx");
-      using (var document = WordprocessingDocument.Open(filename, false))
+      WordprocessingDocument document = null!;
+      while (document == null)
+        try
+        {
+          document = WordprocessingDocument.Open(filename, false);
+        }
+        catch (Exception ex)
+        {
+          Console.WriteLine($"Error opening file {filename}: {ex.Message}");
+          Console.Write($"Abort, Retry, Ignore? ");
+          ConsoleKeyInfo key;
+          do
+          {
+            key = Console.ReadKey();
+            Console.Write(new String(key.KeyChar,1));
+          } while (key.Key != ConsoleKey.A && key.Key != ConsoleKey.I && key.Key != ConsoleKey.R);
+          Console.WriteLine("");
+          if (key.Key == ConsoleKey.A)
+            return;
+          if (key.Key == ConsoleKey.I)
+            break;
+          if (key.Key == ConsoleKey.R)
+            continue;
+        }
+      using (document)
       {
         docFile.Document = document;
         if (docFile.Document == null)
@@ -130,9 +155,34 @@ public class OpenXmlDocParser
       }
       paragraph = paragraph.NextSibling<Paragraph>();
     }
-    foreach (var chapter in docFile.Chapters.Where(item => item.Heading == "Simple Types"))
+
+    //foreach (var chapter in docFile.Chapters.Where(item => item.Heading == "Simple Types"))
+    //{
+    //  if (chapter.SubChapters.Count > 0)
+    //  {
+    //    var subChapters = chapter.SubChapters.OrderBy(ch => ch.OrdNum);
+    //    foreach (var subChapter in subChapters)
+    //    {
+    //      ParseSimpleTypeChapter(subChapter);
+    //    }
+    //  }
+    //}
+
+    //foreach (var chapter in docFile.Chapters.Where(item => item.Heading == "Elements"))
+    //{
+    //  if (chapter.SubChapters.Count > 0)
+    //  {
+    //    var subChapters = chapter.SubChapters.OrderBy(ch => ch.OrdNum);
+    //    foreach (var subChapter in subChapters)
+    //    {
+    //      ParseElementChapter(subChapter);
+    //    }
+    //  }
+    //}
+
+    foreach (var chapter in docFile.Chapters.Where(item => item.HasSubChapters))
     {
-      if (chapter.SubChapters.Count > 0)
+      if (chapter.Heading == "Simple Types")
       {
         var subChapters = chapter.SubChapters.OrderBy(ch => ch.OrdNum);
         foreach (var subChapter in subChapters)
@@ -140,17 +190,25 @@ public class OpenXmlDocParser
           ParseSimpleTypeChapter(subChapter);
         }
       }
-    }
-
-    foreach (var chapter in docFile.Chapters.Where(item => item.Heading == "Elements"))
-    {
-      if (chapter.SubChapters.Count > 0)
+      else if (chapter.Heading == "Elements")
       {
         var subChapters = chapter.SubChapters.OrderBy(ch => ch.OrdNum);
         foreach (var subChapter in subChapters)
         {
           ParseElementChapter(subChapter);
         }
+      }
+      else
+      {
+        var subChapters = chapter.SubChapters.OrderBy(ch => ch.OrdNum);
+        foreach (var subChapter in subChapters.Where(item => !item.HasSubChapters))
+          if (subChapter.Heading.Contains(" ("))
+          {
+            if (subChapter.Heading.StartsWith(("ST_")))
+              ParseSimpleTypeChapter(subChapter);
+            else
+              ParseElementChapter(subChapter);
+          }
       }
     }
   }
@@ -208,18 +266,6 @@ public class OpenXmlDocParser
       }
     }
 
-    var nextParagraph = paragraph.NextSibling<Paragraph>();
-    if (nextParagraph != null && !nextParagraph.IsHeading())
-    {
-      paragraph = nextParagraph;
-        var firstParaText = paragraph.GetText();
-        if (chapter.FirstParaText != firstParaText)
-        {
-          chapter.FirstParaText = firstParaText;
-          updated = true;
-        }
-    }
-
     if (updated)
     {
       dbContext.Chapters.Update(chapter);
@@ -243,7 +289,7 @@ public class OpenXmlDocParser
     bool isEnum = false;
 
     var text = chapter.Heading;
-    if (!SplitName(text, out var shortName, out var longName))
+    if (!SplitName(text, out var shortName, out var longName, out _))
       throw new InvalidDataException($"Cannot split heading {text} to short name and long name");
 
     Write($"Checking simple type {shortName} ({longName}) ... ");
@@ -259,7 +305,7 @@ public class OpenXmlDocParser
         var firstCellPara = table.Elements<TableRow>().FirstOrDefault()?.Elements<TableCell>().FirstOrDefault()?.Elements<Paragraph>().FirstOrDefault();
         if (firstCellPara != null)
         {
-          var firstCellText = firstCellPara.GetText();
+          var firstCellText = firstCellPara.GetText().Trim();
           if (firstCellText == "Enumeration Value")
           {
             isEnum = true;
@@ -271,17 +317,17 @@ public class OpenXmlDocParser
       item = item.NextSibling();
     }
 
-    string? descriptionText = null;
+    string? description = null;
     var nextParagraph = paragraph!.NextSibling<Paragraph>();
     if (nextParagraph != null && !nextParagraph.IsHeading())
     {
       paragraph = nextParagraph;
-      descriptionText = paragraph.GetText();
+      description = TrimDescription(paragraph.GetText());
     }
 
     if (!chapter.SimpleTypesDictionary.TryGetValue(shortName, out var simpleType))
     {
-      simpleType = new SimpleType { OwnerChapterId = chapter.Id, ShortName = shortName, LongName = longName, IsEnum = isEnum, DescriptionText = descriptionText };
+      simpleType = new SimpleType { OwnerChapterId = chapter.Id, ShortName = shortName, LongName = longName, IsEnum = isEnum, DescriptionText = description };
       dbContext.SimpleTypes.Add(simpleType);
       if (SaveChanges() > 0)
       {
@@ -301,9 +347,9 @@ public class OpenXmlDocParser
         simpleType.IsEnum = isEnum;
         updated = true;
       }
-      if (simpleType.DescriptionText != descriptionText)
+      if (simpleType.DescriptionText != description)
       {
-        simpleType.DescriptionText = descriptionText  ;
+        simpleType.DescriptionText = description;
         updated = true;
       }
     }
@@ -347,8 +393,8 @@ public class OpenXmlDocParser
     var text1 = cells[0].GetText();
     if (text1 == "Enumeration Value")
       throw new InvalidDataException($"\"Enumeration value\" appeared in simple type {simpleType.ShortName} enum table");
-    if (!SplitName(text1, out var shortName, out var longName))
-      throw new InvalidDataException($"Cannot split enum value {text1} to short name and long name");
+    if (!SplitName(text1, out var shortName, out var longName, out _))
+      throw new InvalidDataException($"Cannot split enum value \"{text1}\" to short name and long name");
     var text2 = cells[1].GetText();
     if (text2.Contains('\n'))
       Debug.Assert(true);
@@ -404,10 +450,11 @@ public class OpenXmlDocParser
     bool hasAttributes = false;
 
     var text = chapter.Heading;
-    if (!SplitName(text, out var shortName, out var longName))
+    if (!SplitName(text, out var shortName, out var longName, out _))
       throw new InvalidDataException($"Cannot split heading {text} to short name and long name");
 
     Write($"Checking element {shortName} ({longName}) ... ");
+
     Table? attribTable = null;
     var paragraph = ParaTools.FindParagraph(chapter.OwnerFile.Document!, chapter.ParagraphId!);
     if (paragraph == null)
@@ -420,7 +467,7 @@ public class OpenXmlDocParser
         var firstCellPara = table.Elements<TableRow>().FirstOrDefault()?.Elements<TableCell>().FirstOrDefault()?.Elements<Paragraph>().FirstOrDefault();
         if (firstCellPara != null)
         {
-          var firstCellText = firstCellPara.GetText();
+          var firstCellText = firstCellPara.GetText().Trim();
           if (firstCellText == "Attributes")
           {
             hasAttributes = true;
@@ -432,17 +479,17 @@ public class OpenXmlDocParser
       item = item.NextSibling();
     }
 
-    string? descriptionText = null;
+    string? description = null;
     var nextParagraph = paragraph!.NextSibling<Paragraph>();
     if (nextParagraph != null && !nextParagraph.IsHeading())
     {
       paragraph = nextParagraph;
-      descriptionText = paragraph.GetText();
+      description = TrimDescription(paragraph.GetText());
     }
 
     if (!chapter.ElementsDictionary.TryGetValue(shortName, out var element))
     {
-      element = new Element { OwnerChapterId = chapter.Id, ShortName = shortName, LongName = longName, HasAttributes = hasAttributes, DescriptionText = descriptionText };
+      element = new Element { OwnerChapterId = chapter.Id, ShortName = shortName, LongName = longName, HasAttributes = hasAttributes, DescriptionText = description };
       dbContext.Elements.Add(element);
       if (SaveChanges() > 0)
       {
@@ -462,9 +509,9 @@ public class OpenXmlDocParser
         element.HasAttributes = hasAttributes;
         updated = true;
       }
-      if (element.DescriptionText != descriptionText)
+      if (element.DescriptionText != description)
       {
-        element.DescriptionText = descriptionText;
+        element.DescriptionText = description;
         updated = true;
       }
     }
@@ -505,22 +552,19 @@ public class OpenXmlDocParser
     var cells = row.Elements<TableCell>().ToList();
     if (cells.Count < 2)
       throw new InvalidDataException("Attribute row must have at least 2 cells");
-    var para = cells[0].Elements<Paragraph>().FirstOrDefault();
-    if (para == null)
-      throw new InvalidDataException("Attribute cell must have paragraphs");
-    var text1 = para.GetText();
+    var text1 = cells[0].GetText();
     if (text1 == "Attributes")
       throw new InvalidDataException($"\"Attributes\" appeared in element {element.ShortName} enum table");
-    if (!SplitName(text1, out var shortName, out var longName))
+    //TryRemoveNamespace(ref text1);
+    if (!SplitName(text1, out var shortName, out var longName, out var nsName))
       throw new InvalidDataException($"Cannot split attribute \"{text1}\" to short name and long name");
     var text2 = cells[1].GetText();
-    if (text2.Contains('\n'))
-      Debug.Assert(true);
-    var description = RemoveExample(text2);
+
+    var description = RemoveNote(RemoveExample(text2));
     Write($"Checking attribute {shortName} ({longName}) ... ");
     if (!element.AttributesDictionary.TryGetValue(shortName, out var attribute))
     {
-      attribute = new Attribute { OwnerTypeId = element.Id, OrdNum = ordNum, ShortName = shortName, LongName = longName, DescriptionText = description };
+      attribute = new Attribute { OwnerTypeId = element.Id, OrdNum = ordNum, ShortName = shortName, LongName = longName, DescriptionText = description, Namespace = nsName };
       dbContext.Attributes.Add(attribute);
       if (SaveChanges() > 0)
       {
@@ -533,6 +577,12 @@ public class OpenXmlDocParser
       if (attribute.LongName != longName)
       {
         attribute.LongName = longName;
+        updated = true;
+      }
+
+      if (attribute.Namespace != nsName)
+      {
+        attribute.Namespace = nsName;
         updated = true;
       }
 
@@ -591,30 +641,140 @@ public class OpenXmlDocParser
     return null;
   }
 
-  internal bool SplitName(string heading, [NotNullWhen(true)] out string? shortName, [NotNullWhen(true)] out string? longName)
+  internal bool SplitName(string heading, [NotNullWhen(true)] out string? shortName, [NotNullWhen(true)] out string? longName, out string? nsName)
   {
+    heading = heading.Trim();
+    heading = heading.Replace("\r\n", " ");
     var k = heading.IndexOf('(');
-    if (k > 0 && heading.EndsWith(")"))
+    var l = heading.LastIndexOf(')');
+    if (k > 0 && l > k)
     {
       shortName = heading.Substring(0, k).Trim();
-      longName = heading.Substring(k + 1, heading.Length - k - 2).Trim();
+      longName = heading.Substring(k + 1, l - k - 1).Trim();
+      k = heading.IndexOf("Namespace:");
+      if (k > 0)
+      {
+        nsName = heading.Substring(k + 10).Trim();
+        TryRemoveSpaces(ref nsName);
+      }
+      else
+      {
+        nsName = null;
+      }
       return true;
     }
     shortName = null;
     longName = null;
+    nsName = null;
     return false;
   }
 
   internal string RemoveExample(string text)
   {
     var k = text.IndexOf("[Example:");
-    if (k > 0)
-    { 
+    while (k >= 0)
+    {
       var m = text.IndexOf("end example]", k);
-      if (m < 0)
-        throw new InvalidDataException("Cannot find end of example");
-      text = text.Substring(0, k).Trim() + text.Substring(m + 12).Trim();
+      if (m > 0)
+      {
+        text = text.Substring(0, k).Trim() + text.Substring(m + 12).Trim();
+        k = text.IndexOf("[Example:");
+      }
+      else
+      {
+        text = text.Substring(0, k).Trim();
+        break;
+      }
     }
     return text;
+  }
+
+  internal string RemoveNote(string text)
+  {
+    var k = text.IndexOf("[Note:");
+    while (k >= 0)
+    {
+      var m = text.IndexOf("end note]", k);
+      if (m > 0)
+      {
+        text = text.Substring(0, k).Trim() + text.Substring(m + 9).Trim();
+        k = text.IndexOf("[Note:");
+      }
+      else
+      {
+        text = text.Substring(0, k).Trim();
+        break;
+      }
+    }
+    return text;
+  }
+
+  internal string TrimDescription(string text)
+  {
+    text = text.Trim();
+    text = RemoveExample(text);
+    text = RemoveNote(text);
+    if (text.EndsWith(":"))
+      TryRemoveLastSentence(ref text);
+    while (text.EndsWith(" .") || text.EndsWith(" ,"))
+      if (!TryRemoveLastClause(ref text))
+        break;
+    text = text.Replace(", as in .", ".");
+    if (text.EndsWith(":"))
+      TryRemoveLastSentence(ref text);
+    return text;
+  }
+
+  internal bool TryRemoveLastSentence(ref string text)
+  {
+    var k = text.LastIndexOf('.');
+    if (k > 0)
+    {
+      text = text.Substring(0, k) + '.';
+      return true;
+    }
+    return false;
+  }
+
+  internal bool TryRemoveLastClause(ref string text)
+  {
+    var k = text.LastIndexOf(',');
+    if (k > 0)
+    {
+      text = text.Substring(0, k) + '.';
+      return true;
+    }
+    return false;
+  }
+
+  internal bool TryRemoveNamespace(ref string text)
+  {
+    var k = text.LastIndexOf("Namespace:");
+    if (k > 0)
+    {
+      text = text.Substring(0, k);
+      return true;
+    }
+    return false;
+  }
+
+  internal bool TryRemoveSpaces(ref string text)
+  {
+    var chars = text.ToList();
+    var removed = false;
+    for (int i = chars.Count - 1; i >= 0; i--)
+    {
+      if (Char.GetUnicodeCategory(chars[i]) == System.Globalization.UnicodeCategory.SpaceSeparator)
+      {
+        chars.RemoveAt(i);
+        removed = true;
+      }
+    }
+    if (removed)
+    {
+      text = new string(chars.ToArray());
+      return true;
+    }
+    return false;
   }
 }
