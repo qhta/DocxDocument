@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXMLTools.csproj" />
     <ProjectReference Include="..\ModelOpenXmlDoc\ModelOpenXmlDoc.csproj" />
   </ItemGroup>
 

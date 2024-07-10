@@ -57,12 +57,6 @@ public class Chapter
   public string? ParagraphId { get; set; }
 
   /// <summary>
-  /// Text of the first paragraph of the chapter.
-  /// </summary>
-  [MaxLength(Int32.MaxValue)]
-  public string? FirstParaText { get; set; }
-
-  /// <summary>
   /// Specifies whether the chapter has subchapters.
   /// </summary>
   [Column(TypeName="bit")]

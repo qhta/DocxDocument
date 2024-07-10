@@ -21,11 +21,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.6" />
+    <PackageReference Include="MSOffice.Interop" Version="16.0.55555" />
     <PackageReference Include="System.Data.OleDb" Version="9.0.0-preview.5.24306.7" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXMLTools.csproj" />
+    <ProjectReference Include="..\..\MyLib\Qhta.Access.Dao\Qhta.Access.Dao.csproj" />
   </ItemGroup>
 
 </Project>
