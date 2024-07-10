@@ -29,9 +29,10 @@ public class OpenXmlDocParser
   public int EnumValuesTotal, EnumValuesAdded, EnumValuesUpdated;
   public int ElementsTotal, ElementsAdded, ElementsUpdated;
   public int AttributesTotal, AttributesAdded, AttributesUpdated;
-  public void ParseSchemaFiles(string sourceDllPath, string dbFilename)
+
+  public void ParseDocuments(string sourceDocPath, string dbFilename)
   {
-    SourceDocPath = sourceDllPath;
+    SourceDocPath = sourceDocPath;
     using (dbContext = new DocDbContext(dbFilename))
     {
       dbContext.ChangeTracker.LazyLoadingEnabled = false;
@@ -396,8 +397,7 @@ public class OpenXmlDocParser
     if (!SplitName(text1, out var shortName, out var longName, out _))
       throw new InvalidDataException($"Cannot split enum value \"{text1}\" to short name and long name");
     var text2 = cells[1].GetText();
-    if (text2.Contains('\n'))
-      Debug.Assert(true);
+
     var description = text2;
     Write($"Checking enum value {shortName} ({longName}) ... ");
     if (!simpleType.EnumValuesDictionary.TryGetValue(shortName, out var enumValue))
@@ -420,6 +420,7 @@ public class OpenXmlDocParser
 
       if (enumValue.DescriptionText != description)
       {
+        //CompareStr(enumValue.DescriptionText??"", description);
         enumValue.DescriptionText = description;
         updated = true;
       }
@@ -442,6 +443,7 @@ public class OpenXmlDocParser
 
     return added || updated;
   }
+
 
   internal bool ParseElementChapter(Chapter chapter)
   {
@@ -494,7 +496,7 @@ public class OpenXmlDocParser
       if (SaveChanges() > 0)
       {
         added = true;
-        SimpleTypesAdded++;
+        ElementsAdded++;
       }
     }
     else
@@ -519,7 +521,7 @@ public class OpenXmlDocParser
     if (updated)
       dbContext.Elements.Update(element);
     if (SaveChanges() > 0)
-      SimpleTypesUpdated++;
+      ElementsUpdated++;
 
     if (added)
       WriteLine("added");
@@ -564,7 +566,7 @@ public class OpenXmlDocParser
     Write($"Checking attribute {shortName} ({longName}) ... ");
     if (!element.AttributesDictionary.TryGetValue(shortName, out var attribute))
     {
-      attribute = new Attribute { OwnerTypeId = element.Id, OrdNum = ordNum, ShortName = shortName, LongName = longName, DescriptionText = description, Namespace = nsName };
+      attribute = new Attribute { OwnerElementId = element.Id, OrdNum = ordNum, ShortName = shortName, LongName = longName, DescriptionText = description, Namespace = nsName };
       dbContext.Attributes.Add(attribute);
       if (SaveChanges() > 0)
       {
@@ -776,5 +778,21 @@ public class OpenXmlDocParser
       return true;
     }
     return false;
+  }
+
+
+  private bool CompareStr(string str1, string str2)
+  {
+    var chars1 = str1.ToCharArray();
+    var chars2 = str2.ToCharArray();
+    for (int i = 0; i < chars1.Length; i++)
+    {
+      var ch1 = chars1[i];
+      var ch2 = chars2[i];
+      if (ch1 != ch2)
+        return false;
+    }
+    ;
+    return true;
   }
 }

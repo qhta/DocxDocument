@@ -5,9 +5,9 @@ namespace ModelOpenXmlDoc;
 /// <summary>
 /// Attribute of the element.
 /// </summary>
-[Index(nameof(OwnerTypeId), nameof(OrdNum), IsUnique = true)]
-[Index(nameof(OwnerTypeId), nameof(ShortName), IsUnique = true)]
-[Index(nameof(OwnerTypeId), IsUnique = false)]
+[Index(nameof(OwnerElementId), nameof(OrdNum), IsUnique = true)]
+[Index(nameof(OwnerElementId), nameof(ShortName), IsUnique = true)]
+[Index(nameof(OwnerElementId), IsUnique = false)]
 [Index(nameof(OrdNum), IsUnique = false)]
 [Index(nameof(ShortName), IsUnique = false)]
 public class Attribute
@@ -20,12 +20,12 @@ public class Attribute
   public int Id { get; set; }
 
   /// <summary>
-  /// Unique identifier of the simple type which the enum value belongs to.
+  /// Unique identifier of the element which the attribute belongs to.
   /// </summary>
-  public int OwnerTypeId { get; set; }
+  public int OwnerElementId { get; set; }
 
   /// <summary>
-  /// Ordinal number of the enum value in the owner type. Counted from 0.
+  /// Ordinal number of the attribute in the owner element. Counted from 0.
   /// </summary>
   [Required]
   public int OrdNum { get; set; }
@@ -51,7 +51,7 @@ public class Attribute
   public string? Namespace { get; set; }
 
   /// <summary>
-  /// Text of the description in the secon column of the attribute table.
+  /// Text of the description in the second column of the attribute table.
   /// </summary>
   [MaxLength(Int32.MaxValue)]
   public string? DescriptionText { get; set; }
@@ -60,6 +60,6 @@ public class Attribute
   /// Navigation property for the owner element.
   /// </summary>
   [Required]
-  public Element OwnerType { get; set; } = null!;
+  public Element OwnerElement { get; set; } = null!;
 }
 
