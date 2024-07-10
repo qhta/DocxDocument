@@ -62,12 +62,17 @@ public class Chapter
   [Column(TypeName="bit")]
   public bool HasSubChapters { get; set; }
 
-
   /// <summary>
   /// Specifies whether the chapter defines simple types.
   /// </summary>
   [Column(TypeName = "bit")]
   public bool HasSimpleTypes { get; set; }
+
+    /// <summary>
+  /// Specifies whether the chapter defines elements.
+  /// </summary>
+  [Column(TypeName = "bit")]
+  public bool HasElements { get; set; }
 
   /// <summary>
   /// Navigation property for the file that contains the chapter.
@@ -77,7 +82,7 @@ public class Chapter
   /// <summary>
   /// Navigation property for the parent chapter.
   /// </summary>
-  public Chapter ParentChapter { get; set; } = null!;
+  public Chapter? ParentChapter { get; set; } = null!;
 
   /// <summary>
   /// Navigation property for the collection of SubChapters.

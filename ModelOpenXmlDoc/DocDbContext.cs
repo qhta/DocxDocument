@@ -46,6 +46,7 @@ public sealed class DocDbContext : DbContext
   {
     DbFilename = dbFilename;
     Database.EnsureCreated();
+    SetupAccessDatabase();
   }
 
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -72,7 +73,11 @@ public sealed class DocDbContext : DbContext
       accessApp.OpenCurrentDatabase(DbFilename, false);
       database = accessApp.CurrentDb();
 
-      Tools.SetQuery(database, "AttributesView", "SELECT Attributes.OwnerTypeId, Attributes.ShortName, Attributes.LongName, Attributes.DescriptionText, Len([Attributes].[DescriptionText]) AS Length\r\nFROM Attributes;");
+      Tools.SetQuery(database, "ChaptersView", "SELECT Chapters.Id, [NumStr] & \" \" & [Heading] AS Title\r\nFROM Chapters;");
+      Tools.SetQuery(database, "SimpleTypesView", "SELECT SimpleTypes.Id, SimpleTypes.ShortName, ChaptersView.Title AS Chapter\r\nFROM SimpleTypes INNER JOIN ChaptersView ON SimpleTypes.OwnerChapterId = ChaptersView.Id;");
+      Tools.SetQuery(database, "ElementsView", "SELECT Elements.Id, Elements.ShortName, ChaptersView.Title AS OwnerChapter\r\nFROM Elements INNER JOIN ChaptersView ON Elements.OwnerChapterId = ChaptersView.Id;");
+      Tools.SetQuery(database, "AttributesView", "SELECT Attributes.Id, Attributes.OwnerElementId, Attributes.ShortName, Attributes.LongName, Attributes.Namespace, ElementsView.ShortName AS OwnerElement, ElementsView.OwnerChapter, Attributes.DescriptionText, Len([Attributes].[DescriptionText]) AS Length\r\nFROM Attributes INNER JOIN ElementsView ON Attributes.OwnerElementId = ElementsView.Id;");
+      Tools.SetQuery(database, "EnumValuesView", "SELECT EnumValues.Id, EnumValues.OrdNum, EnumValues.Value, EnumValues.LongName, SimpleTypesView.ShortName AS OwnerType, SimpleTypesView.Chapter AS OwnerChapter, EnumValues.DescriptionText\r\nFROM EnumValues INNER JOIN SimpleTypesView ON EnumValues.OwnerTypeId = SimpleTypesView.Id;");
       //Tools.CreateEnumLookupTable(database, "TypeKinds", typeof(TypeKind));
       //Tools.SetLookup(database, "Types", "Kind", "TypeKinds");
     }
@@ -124,9 +129,9 @@ public sealed class DocDbContext : DbContext
       .HasForeignKey(item => item.OwnerChapterId);
 
     modelBuilder.Entity<Attribute>()
-      .HasOne(item => item.OwnerType)
+      .HasOne(item => item.OwnerElement)
       .WithMany(type => type.Attributes)
-      .HasForeignKey(item => item.OwnerTypeId);
+      .HasForeignKey(item => item.OwnerElementId);
   }
 
   public void LoadFiles()
@@ -151,7 +156,8 @@ public sealed class DocDbContext : DbContext
   public void LoadChapters()
   {
     ChaptersDictionary = Chapters.ToDictionary(chapter => chapter.NumStr);
-    ChaptersIndex = Chapters.ToDictionary(chapter => chapter.Id);
+    ChaptersIndex = Chapters.ToDictionary(chapter => chapter.Id);    
+
     foreach (var file in Files
                .Include(f => f.Chapters)
                )
@@ -163,6 +169,7 @@ public sealed class DocDbContext : DbContext
     foreach (var chapter in Chapters
                .Include(f => f.SubChapters)
                .Include(f => f.SimpleTypes)
+               .Include(f => f.Elements)
             )
     {
       chapter.HasSubChapters = chapter.SubChapters.Count > 0;
@@ -171,6 +178,9 @@ public sealed class DocDbContext : DbContext
       chapter.HasSimpleTypes = chapter.SimpleTypes.Count > 0;
       if (chapter.HasSimpleTypes)
         chapter.SimpleTypesDictionary = chapter.SimpleTypes.ToDictionary(SimpleType => SimpleType.ShortName);
+      chapter.HasElements = chapter.Elements.Count > 0;
+      if (chapter.HasElements)
+        chapter.ElementsDictionary = chapter.Elements.ToDictionary(item => item.ShortName);
     }
 
     Chapters.Local.CollectionChanged += (sender, args) =>
@@ -240,7 +250,16 @@ public sealed class DocDbContext : DbContext
     {
       element.HasAttributes = element.Attributes.Count > 0;
       if (element.HasAttributes)
+      {
         element.AttributesDictionary = element.Attributes.ToDictionary(at => at.ShortName);
+      }
+    }
+
+    foreach (var attribute in Attributes
+               .Include(f => f.OwnerElement)
+            )
+    {
+      attribute.OwnerElement.AttributesDictionary.TryAdd(attribute.ShortName, attribute);
     }
 
     Attributes.Local.CollectionChanged += (sender, args) =>
@@ -249,7 +268,7 @@ public sealed class DocDbContext : DbContext
       {
         foreach (Attribute attribute in args.NewItems!)
         {
-          attribute.OwnerType.AttributesDictionary.TryAdd(attribute.ShortName, attribute);
+          attribute.OwnerElement.AttributesDictionary.TryAdd(attribute.ShortName, attribute);
         }
       }
     };
