@@ -1,15 +1,12 @@
-﻿using DocumentFormat.OpenXml.Bibliography;
-using DocumentFormat.OpenXml.Math;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-using DocumentFormat.OpenXml.Wordprocessing;
-
 using Microsoft.EntityFrameworkCore;
-using Access = Microsoft.Office.Interop.Access;
-using DAO = Microsoft.Office.Interop.Access.Dao;
 
 using Qhta.Access.Dao;
+
+using Access = Microsoft.Office.Interop.Access;
+using DAO = Microsoft.Office.Interop.Access.Dao;
 
 namespace ModelOpenXmlDoc;
 
@@ -35,11 +32,8 @@ public sealed class DocDbContext : DbContext
 
   public string DbFilename { get; }
 
-  public DocDbContext()
+  public DocDbContext(): this(@"D:\VS\Docs\OpenXML\OpenXmlLib.accdb")
   {
-    DbFilename = @"D:\VS\Docs\OpenXML\OpenXmlLib.accdb";
-    Database.EnsureCreated();
-    SetupAccessDatabase();
   }
 
   public DocDbContext(string dbFilename)
