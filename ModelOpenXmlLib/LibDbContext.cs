@@ -1,13 +1,12 @@
-﻿using DocumentFormat.OpenXml.Math;
-using System.Diagnostics;
-using System.Net.Mime;
+﻿using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 using Microsoft.EntityFrameworkCore;
-using Access = Microsoft.Office.Interop.Access;
-using DAO = Microsoft.Office.Interop.Access.Dao;
 
 using Qhta.Access.Dao;
+
+using Access = Microsoft.Office.Interop.Access;
+using DAO = Microsoft.Office.Interop.Access.Dao;
 
 namespace ModelOpenXmlLib;
 
@@ -31,10 +30,8 @@ public sealed class LibDbContext : DbContext
 
   public string DbFilename { get; }
 
-  public LibDbContext()
+  public LibDbContext(): this(@"D:\VS\Docs\OpenXML\OpenXmlLib.accdb")
   {
-    DbFilename = @"D:\VS\Docs\OpenXML\OpenXmlLib.accdb";
-    Database.EnsureCreated();
   }
 
   public LibDbContext(string dbFilename)
