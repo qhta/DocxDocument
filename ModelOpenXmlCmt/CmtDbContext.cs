@@ -15,11 +15,9 @@ public sealed class CmtDbContext : DbContext
 
   public DbSet<Member> Members { get; set; }
 
-  public Dictionary<string, CmtFile> FilesDictionary { get; set; } = null!;
-  public Dictionary<int, CmtFile> FilesIndex { get; set; } = null!;
+  //public DbSet<CommentElement> CommentElements { get; set; }
 
-  public Dictionary<string, Member> MembersDictionary { get; set; } = null!;
-  public Dictionary<int, Member> MembersIndex { get; set; } = null!;
+  public Dictionary<string, CmtFile> FilesDictionary { get; set; } = null!;
 
   public string DbFilename { get; }
 
@@ -59,12 +57,12 @@ public sealed class CmtDbContext : DbContext
       database = accessApp.CurrentDb();
 
       //Tools.SetQuery(database, "ChaptersView", "SELECT Chapters.Id, [NumStr] & \" \" & [Heading] AS Title\r\nFROM Chapters;");
-      //Tools.SetQuery(database, "SimpleTypesView", "SELECT SimpleTypes.Id, SimpleTypes.ShortName, ChaptersView.Title AS Chapter\r\nFROM SimpleTypes INNER JOIN ChaptersView ON SimpleTypes.OwnerChapterId = ChaptersView.Id;");
-      //Tools.SetQuery(database, "ElementsView", "SELECT Elements.Id, Elements.ShortName, ChaptersView.Title AS OwnerChapter\r\nFROM Elements INNER JOIN ChaptersView ON Elements.OwnerChapterId = ChaptersView.Id;");
-      //Tools.SetQuery(database, "AttributesView", "SELECT Attributes.Id, Attributes.OwnerElementId, Attributes.ShortName, Attributes.LongName, Attributes.Namespace, ElementsView.ShortName AS OwnerElement, ElementsView.OwnerChapter, Attributes.DescriptionText, Len([Attributes].[DescriptionText]) AS Length\r\nFROM Attributes INNER JOIN ElementsView ON Attributes.OwnerElementId = ElementsView.Id;");
-      //Tools.SetQuery(database, "EnumValuesView", "SELECT EnumValues.Id, EnumValues.OrdNum, EnumValues.Value, EnumValues.LongName, SimpleTypesView.ShortName AS OwnerType, SimpleTypesView.Chapter AS OwnerChapter, EnumValues.DescriptionText\r\nFROM EnumValues INNER JOIN SimpleTypesView ON EnumValues.OwnerTypeId = SimpleTypesView.Id;");
-      Tools.CreateEnumLookupTable(database, "MembersType", typeof(MemberType));
-      Tools.SetLookup(database, "Members", "Type", "MembersType");
+      Tools.CreateEnumLookupTable(database, "MemberTypes", typeof(MemberType));
+      Tools.SetLookup(database, "Members", "Type", "MemberTypes");
+      //Tools.CreateEnumLookupTable(database, "ElementTypes", typeof(ElementType));
+      //Tools.SetLookup(database, "CommentElements", "Type", "ElementTypes");
+      //Tools.CreateEnumLookupTable(database, "ListTypes", typeof(CmtListType));
+      //Tools.SetLookup(database, "CommentElements", "ListType", "ListTypes");
     }
     catch (Exception ex)
     {
@@ -99,12 +97,49 @@ public sealed class CmtDbContext : DbContext
       .HasForeignKey(item => item.ParentMemberId)
       .IsRequired(false);
 
+    //modelBuilder.Entity<CommentElement>()
+    //  .HasDiscriminator<ElementType>(e => e.Type)
+    //  .HasValue<C>(ElementType.C)
+    //  .HasValue<Code>(ElementType.Code)
+    //  .HasValue<CompletionList>(ElementType.CompletionList)
+    //  .HasValue<Description>(ElementType.Description)
+    //  .HasValue<Example>(ElementType.Example)
+    //  .HasValue<CmtException>(ElementType.Exception)
+    //  .HasValue<Include>(ElementType.Include)
+    //  .HasValue<CmtList>(ElementType.List)
+    //  .HasValue<ListHeader>(ElementType.ListHeader)
+    //  .HasValue<CmtListItem>(ElementType.ListItem)
+    //  .HasValue<Para>(ElementType.Para)
+    //  .HasValue<Param>(ElementType.Param)
+    //  .HasValue<ParamRef>(ElementType.ParamRef)
+    //  .HasValue<Permission>(ElementType.Permission)
+    //  .HasValue<Remark>(ElementType.Remark)
+    //  .HasValue<Returns>(ElementType.Returns)
+    //  .HasValue<See>(ElementType.See)
+    //  .HasValue<SeeAlso>(ElementType.SeeAlso)
+    //  .HasValue<SimpleText>(ElementType.SimpleText)
+    //  .HasValue<Summary>(ElementType.Summary)
+    //  .HasValue<Term>(ElementType.Term)
+    //  .HasValue<TypeParam>(ElementType.TypeParam)
+    //  .HasValue<TypeParamRef>(ElementType.TypeParamRef)
+    //  .HasValue<Value>(ElementType.Value)
+    //  ;
+
+    //modelBuilder.Entity<CommentElement>()
+    //  .HasOne(item => item.OwnerMember)
+    //  .WithMany(m => m.Comments)
+    //  .HasForeignKey(item => item.OwnerMemberId);
+
+    //modelBuilder.Entity<CommentElement>()
+    //  .HasOne(item => item.ParentElement)
+    //  .WithMany(m => m.Items)
+    //  .HasForeignKey(item => item.ParentContentId);
   }
 
   public void LoadFiles()
   {
     FilesDictionary = Files.ToDictionary(file => file.FileName);
-    FilesIndex = Files.ToDictionary(file => file.Id);
+    //FilesIndex = Files.ToDictionary(file => file.Id);
 
     Files.Local.CollectionChanged += (sender, args) =>
     {
@@ -112,8 +147,7 @@ public sealed class CmtDbContext : DbContext
       {
         foreach (CmtFile file in args.NewItems!)
         {
-          if (file.Id != 0)
-            FilesIndex.TryAdd(file.Id, file);
+          FilesDictionary.TryAdd(file.FileName, file);
         }
       }
     };
@@ -122,8 +156,8 @@ public sealed class CmtDbContext : DbContext
 
   public void LoadMembers()
   {
-    MembersDictionary = Members.ToDictionary(m => m.FullName);
-    MembersIndex = Members.ToDictionary(m => m.Id);
+    //MembersDictionary = Members.ToDictionary(m => m.FullName);
+    //MembersIndex = Members.ToDictionary(m => m.Id);
 
     foreach (var file in Files
                .Include(f => f.Members)
@@ -148,15 +182,7 @@ public sealed class CmtDbContext : DbContext
       {
         foreach (Member member in args.NewItems!)
         {
-          //member.OwnerFile.MembersDictionary.TryAdd(member => member.FullName, member => member);
-          //MembersDictionary.TryAdd(chapter.NumStr, chapter);
-          //if (chapter.Id != 0)
-          //  MembersIndex.TryAdd(chapter.Id, chapter);
-          //if (chapter.ParentChapterId != null)
-          //{
-          //  chapter.ParentChapter = MembersIndex[chapter.ParentChapterId!.Value];
-          //  chapter.ParentChapter.SubChaptersDictionary.TryAdd(chapter.NumStr, chapter);
-          //}
+          member.OwnerFile.MembersDictionary.TryAdd(member.FullName, member);
         }
       }
     };

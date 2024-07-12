@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Xml;
 using System.Xml.Linq;
 
 using ModelOpenXmlCmt;
@@ -8,6 +9,12 @@ using ModelOpenXmlCmt;
 
 namespace ModelOpenXmlCmtApp;
 
+public struct Counters
+{
+  public int Total;
+  public int Added;
+  public int Updated;
+}
 
 /// <summary>
 /// Parser that reads XML schema files and stores the schema in a database.
@@ -16,7 +23,9 @@ public class OpenXmlCmtParser
 {
   public string SourceDocPath { get; set; } = null!;
   public int FilesTotal, FilesAdded;
-  public int MembersTotal, MembersAdded, MembersUpdated;
+  public int TypesTotal, TypesAdded, TypesUpdated;
+  public int FieldsTotal, FieldsAdded, FieldsUpdated;
+  public int PropsTotal, PropsAdded, PropsUpdated;
 
 
   public void ParseDocuments(string sourceDocPath, string dbFilename)
@@ -29,7 +38,10 @@ public class OpenXmlCmtParser
       ParseXmlDocuments();
       dbContext.DisplayMessageEnabled = false;
       FilesTotal = dbContext.Files.Count();
-      MembersTotal = dbContext.Members.Count();
+      TypesTotal = dbContext.Members.Count(m => m.Type == MemberType.Type);
+      FieldsTotal = dbContext.Members.Count(m => m.Type == MemberType.Field);
+      PropsTotal = dbContext.Members.Count(m => m.Type == MemberType.Property);
+
     }
   }
 
@@ -78,7 +90,7 @@ public class OpenXmlCmtParser
         dbContext.Files.Add(docFile);
         if (SaveChanges() > 0)
         {
-          dbContext.FilesIndex.TryAdd(docFile.Id, docFile);
+          //dbContext.FilesIndex.TryAdd(docFile.Id, docFile);
           FilesAdded++;
         }
       }
@@ -165,62 +177,105 @@ public class OpenXmlCmtParser
 
     var fullName = name;
     name = name.Substring(2);
+    string? paramsStr = null;
+    string parentName = "";
     var k = name.IndexOf('(');
     if (k > 0)
+    {
+      paramsStr = name.Substring(k + 1, name.Length - k - 1);
       name = name.Substring(0, k);
+    }
+
     k = name.LastIndexOf('.');
     if (k > 0)
+    {
+      parentName = name.Substring(0, k);
       name = name.Substring(k + 1);
+    }
     Write($"Checking member {fullName} ... ");
+    int? parentMemberId = null;
+    if (docFile.MembersDictionary.TryGetValue("T:" + parentName, out var typeMember))
+    {
+      parentMemberId = typeMember.Id;
+    }
+    else
+    {
+      if (memberType != MemberType.Type)
+      {
+        typeMember = new Member { OwnerFileId = docFile.Id, FullName = fullName, ShortName = name, Params = paramsStr, Type = MemberType.Type, ParentMemberId = parentMemberId };
+
+        dbContext.Members.Add(typeMember);
+        if (SaveChanges() > 0)
+        {
+          parentMemberId = typeMember.Id;
+          TypesAdded++;
+        }
+      }
+    }
+
+    var descriptionText = GetDescriptionText(xElement);
+
     if (!docFile.MembersDictionary.TryGetValue(fullName, out var member))
     {
-      member = new Member { OwnerFileId = docFile.Id, FullName = fullName, ShortName = name, Type = memberType};
-      //if (parentNumber != null && dbContext.ChaptersDictionary.TryGetValue(parentNumber, out var parentChapter))
-      //{
-      //  chapter.ParentChapterId = parentChapter.Id;
-      //  if (!parentChapter.HasSubChapters)
-      //  {
-      //    parentChapter.HasSubChapters = true;
-      //    dbContext.Chapters.Update(parentChapter);
-      //  }
-      //}
+      member = new Member { OwnerFileId = docFile.Id, FullName = fullName, ShortName = name, Params = paramsStr, Type = memberType, ParentMemberId = parentMemberId, DescriptionText = descriptionText };
+
       dbContext.Members.Add(member);
       if (SaveChanges() > 0)
       {
-        dbContext.MembersIndex.TryAdd(member.Id, member);
-        MembersAdded++;
         added = true;
       }
     }
     else
     {
-      //if (chapter.OrdNum != thisNum)
-      //{
-      //  chapter.OrdNum = thisNum;
-      //  updated = true;
-      //}
-      //if (chapter.NumStr != number)
-      //{
-      //  chapter.NumStr = number;
-      //  updated = true;
-      //}
-      //if (chapter.Heading != heading)
-      //{
-      //  chapter.Heading = heading;
-      //  updated = true;
-      //}
-      //if (chapter.ParagraphId != paragraph.ParagraphId?.Value)
-      //{
-      //  chapter.ParagraphId = paragraph.ParagraphId?.Value;
-      //  updated = true;
-      //}
+      if (member.Params != paramsStr)
+      {
+        member.Params = paramsStr;
+        updated = true;
+      }
+      if (member.ParentMemberId != parentMemberId)
+      {
+        member.ParentMemberId = parentMemberId;
+        updated = true;
+      }
+      if (member.DescriptionText != descriptionText)
+      {
+        member.DescriptionText = descriptionText;
+        updated = true;
+      }
+    }
+
+    if (added)
+    {
+      switch (member.Type)
+      {
+        case MemberType.Type:
+          TypesAdded++;
+          break;
+        case MemberType.Field:
+          FieldsAdded++;
+          break;
+        case MemberType.Property:
+          PropsAdded++;
+          break;
+      }
     }
 
     if (updated)
     {
       dbContext.Members.Update(member);
       if (SaveChanges() > 0)
-        MembersUpdated++;
+        switch (member.Type)
+        {
+          case MemberType.Type:
+            TypesUpdated++;
+            break;
+          case MemberType.Field:
+            FieldsUpdated++;
+            break;
+          case MemberType.Property:
+            PropsUpdated++;
+            break;
+        }
     }
 
     if (added)
@@ -229,6 +284,19 @@ public class OpenXmlCmtParser
       WriteLine("updated");
     else
       WriteLine("ok");
+
     return true;
   }
+
+  internal string GetDescriptionText(XElement xElement)
+  {
+    var stringWriter = new StringWriter();
+    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { OmitXmlDeclaration = true, ConformanceLevel = ConformanceLevel.Fragment }))
+      xElement.WriteTo(xmlWriter);
+    var result = stringWriter.ToString();
+    var k = result.IndexOf('>');
+    var l = result.LastIndexOf('<');
+    return result.Substring(k + 1, l - k - 1).Trim();
+  }
+
 }

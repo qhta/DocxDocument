@@ -14,7 +14,14 @@ internal class Program
     else
       Console.WriteLine("Done in {0} seconds", (int)dt.TotalSeconds);
     Console.WriteLine("Found {0} files, added {1}", OpenXmlCmtParser.FilesTotal, OpenXmlCmtParser.FilesAdded);
-    Console.WriteLine("Found {0} members, added {1}, updated {2}", OpenXmlCmtParser.MembersTotal, OpenXmlCmtParser.MembersAdded, OpenXmlCmtParser.MembersUpdated);
+    Console.WriteLine("Found {0} types, added {1}, updated {2}", OpenXmlCmtParser.TypesTotal, OpenXmlCmtParser.TypesAdded, OpenXmlCmtParser.TypesUpdated);
+    Console.WriteLine("Found {0} fields, added {1}, updated {2}", OpenXmlCmtParser.FieldsTotal, OpenXmlCmtParser.FieldsAdded, OpenXmlCmtParser.FieldsUpdated);
+    Console.WriteLine("Found {0} properties, added {1}, updated {2}", OpenXmlCmtParser.PropsTotal, OpenXmlCmtParser.PropsAdded, OpenXmlCmtParser.PropsUpdated);
+
+    //foreach (var entry in OpenXmlCmtParser.CommentsCountersMap)
+    //{
+    //  Console.WriteLine($"Found {entry.Value.Total} {entry.Key} comments, added {entry.Value.Added}, updated {entry.Value.Updated}");
+    //}
   }
 
 }
