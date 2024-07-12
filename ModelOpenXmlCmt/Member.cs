@@ -9,7 +9,7 @@ namespace ModelOpenXmlCmt;
 /// Member of the documentation.
 /// </summary>
 [Index(nameof(ParentMemberId), IsUnique = false)]
-[Index(nameof(ShortName), nameof(ParentMemberId), IsUnique = true)]
+[Index(nameof(ShortName), nameof(Params), nameof(ParentMemberId), IsUnique = true)]
 [Index(nameof(ShortName), IsUnique = false)]
 [Index(nameof(FullName), nameof(OwnerFileId), IsUnique = true)]
 [Index(nameof(FullName), IsUnique = false)]
@@ -27,6 +27,12 @@ public class Member
   [MaxLength(255)]
   [Required]
   public required string ShortName { get; set; }
+
+  /// <summary>
+  /// Parameters of this member.
+  /// </summary>
+  [MaxLength(255)]
+  public string? Params { get; set; }
 
   /// <summary>
   /// LongName of this member.
@@ -59,11 +65,11 @@ public class Member
   [Column(TypeName = "bit")]
   public bool HasMembers { get; set; }
 
-  ///// <summary>
-  ///// Text of the first paragraph of the chapter.
-  ///// </summary>
-  //[MaxLength(Int32.MaxValue)]
-  //public string? DescriptionText { get; set; }
+  /// <summary>
+  /// Text of the first paragraph of the chapter.
+  /// </summary>
+  [MaxLength(Int32.MaxValue)]
+  public string? DescriptionText { get; set; }
 
   /// <summary>
   /// Navigation property for the file where this member is defined.
@@ -78,19 +84,35 @@ public class Member
   public Member? ParentMember { get; set; } = null!;
 
   /// <summary>
-  /// Enumeration values for the simple member.
+  /// Navigation property for the members assigned to this member.
   /// </summary>
   public virtual ICollection<Member> Members { get; set; } = null!;
 
   /// <summary>
-  /// Dictionary of members placed in this member.
+  /// Dictionary of members the members assigned to this member.
   /// </summary>
   [NotMapped]
   public Dictionary<string, Member> MembersDictionary
   {
-    get => _EnumValuesDictionary ??= new ();
-    set => _EnumValuesDictionary = value;
+    get => _MembersDictionary ??= new ();
+    set => _MembersDictionary = value;
   }
-  private Dictionary<string, Member>? _EnumValuesDictionary;
+  private Dictionary<string, Member>? _MembersDictionary;
+
+  ///// <summary>
+  ///// Navigation property for the comment elements parsed for this member.
+  ///// </summary>
+  //public virtual ICollection<CommentElement> Comments { get; set; } = null!;
+
+  ///// <summary>
+  ///// Dictionary of comment elements parsed for this member. Elements are indexed by their ordinal number.
+  ///// </summary>
+  //[NotMapped]
+  //public Dictionary<int, CommentElement> CommentsDictionary
+  //{
+  //  get => _CommentsDictionary ??= new();
+  //  set => _CommentsDictionary = value;
+  //}
+  //private Dictionary<int, CommentElement>? _CommentsDictionary;
 
 }
