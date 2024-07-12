@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ModelOpenXmlDoc;
 
 /// <summary>
-/// LibFile represents a DLL file.
+/// Represents a DOCX file.
 /// </summary>
 [Index(nameof(FileName), IsUnique = true)]
 public class DocFile
