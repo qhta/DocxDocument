@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Xml;
 using System.Xml.Linq;
 using Microsoft.EntityFrameworkCore;
 
