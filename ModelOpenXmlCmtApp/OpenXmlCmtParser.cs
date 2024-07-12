@@ -9,15 +9,8 @@ using ModelOpenXmlCmt;
 
 namespace ModelOpenXmlCmtApp;
 
-public struct Counters
-{
-  public int Total;
-  public int Added;
-  public int Updated;
-}
-
 /// <summary>
-/// Parser that reads XML schema files and stores the schema in a database.
+/// Parser that reads XML files and stores its elements in a database.
 /// </summary>
 public class OpenXmlCmtParser
 {
@@ -76,7 +69,7 @@ public class OpenXmlCmtParser
   internal void LoadXmlFiles()
   {
     dbContext.LoadFiles();
-    List<CmtFile> files = new();
+    List<XmlFile> files = new();
     var docsPaths = Directory.GetFiles(SourceDocPath, "*.xml");
     foreach (var path in docsPaths)
     {
@@ -86,7 +79,7 @@ public class OpenXmlCmtParser
       if (!dbContext.FilesDictionary.TryGetValue(filename, out var docFile))
       {
         WriteLine($"Adding file {filename}");
-        docFile = new CmtFile() { FileName = filename };
+        docFile = new XmlFile() { FileName = filename };
         dbContext.Files.Add(docFile);
         if (SaveChanges() > 0)
         {
@@ -134,7 +127,7 @@ public class OpenXmlCmtParser
     ;
   }
 
-  internal void ParseDoc(CmtFile docFile)
+  internal void ParseDoc(XmlFile docFile)
   {
     var doc = docFile.Document.Root;
     if (doc == null)
@@ -149,7 +142,7 @@ public class OpenXmlCmtParser
     }
   }
 
-  internal bool ParseMember(CmtFile docFile, XElement xElement)
+  internal bool ParseMember(XmlFile docFile, XElement xElement)
   {
     bool added = false;
     bool updated = false;
@@ -194,7 +187,15 @@ public class OpenXmlCmtParser
     }
     Write($"Checking member {fullName} ... ");
     int? parentMemberId = null;
-    if (docFile.MembersDictionary.TryGetValue("T:" + parentName, out var typeMember))
+    var parentFullName = "T:" + parentName;
+    var parentShortName = parentName;
+    k = parentName.LastIndexOf('.');
+    if (k>0)
+    {
+      parentShortName = parentName.Substring(0, k);
+    }
+
+    if (docFile.MembersDictionary.TryGetValue(parentFullName, out var typeMember))
     {
       parentMemberId = typeMember.Id;
     }
@@ -202,7 +203,7 @@ public class OpenXmlCmtParser
     {
       if (memberType != MemberType.Type)
       {
-        typeMember = new Member { OwnerFileId = docFile.Id, FullName = fullName, ShortName = name, Params = paramsStr, Type = MemberType.Type, ParentMemberId = parentMemberId };
+        typeMember = new Member { OwnerFileId = docFile.Id, FullName = parentFullName, ShortName = parentShortName, Params = null, Type = MemberType.Type, ParentMemberId = parentMemberId };
 
         dbContext.Members.Add(typeMember);
         if (SaveChanges() > 0)

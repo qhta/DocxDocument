@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore;
 namespace ModelOpenXmlCmt;
 
 /// <summary>
-/// LibFile represents a DLL file.
+/// Represents a file with XML documentation.
 /// </summary>
 [Index(nameof(FileName), IsUnique = true)]
-public class CmtFile
+public class XmlFile
 {
   /// <summary>
   ///   Unique identifier for the entity.

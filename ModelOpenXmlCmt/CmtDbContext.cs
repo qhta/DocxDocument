@@ -11,13 +11,12 @@ namespace ModelOpenXmlCmt;
 
 public sealed class CmtDbContext : DbContext
 {
-  public DbSet<CmtFile> Files { get; set; }
+  public DbSet<XmlFile> Files { get; set; }
 
   public DbSet<Member> Members { get; set; }
 
-  //public DbSet<CommentElement> CommentElements { get; set; }
+  public Dictionary<string, XmlFile> FilesDictionary { get; set; } = null!;
 
-  public Dictionary<string, CmtFile> FilesDictionary { get; set; } = null!;
 
   public string DbFilename { get; }
 
@@ -59,10 +58,7 @@ public sealed class CmtDbContext : DbContext
       //Tools.SetQuery(database, "ChaptersView", "SELECT Chapters.Id, [NumStr] & \" \" & [Heading] AS Title\r\nFROM Chapters;");
       Tools.CreateEnumLookupTable(database, "MemberTypes", typeof(MemberType));
       Tools.SetLookup(database, "Members", "Type", "MemberTypes");
-      //Tools.CreateEnumLookupTable(database, "ElementTypes", typeof(ElementType));
-      //Tools.SetLookup(database, "CommentElements", "Type", "ElementTypes");
-      //Tools.CreateEnumLookupTable(database, "ListTypes", typeof(CmtListType));
-      //Tools.SetLookup(database, "CommentElements", "ListType", "ListTypes");
+
     }
     catch (Exception ex)
     {
@@ -96,56 +92,17 @@ public sealed class CmtDbContext : DbContext
       .WithMany(subItem => subItem.Members)
       .HasForeignKey(item => item.ParentMemberId)
       .IsRequired(false);
-
-    //modelBuilder.Entity<CommentElement>()
-    //  .HasDiscriminator<ElementType>(e => e.Type)
-    //  .HasValue<C>(ElementType.C)
-    //  .HasValue<Code>(ElementType.Code)
-    //  .HasValue<CompletionList>(ElementType.CompletionList)
-    //  .HasValue<Description>(ElementType.Description)
-    //  .HasValue<Example>(ElementType.Example)
-    //  .HasValue<CmtException>(ElementType.Exception)
-    //  .HasValue<Include>(ElementType.Include)
-    //  .HasValue<CmtList>(ElementType.List)
-    //  .HasValue<ListHeader>(ElementType.ListHeader)
-    //  .HasValue<CmtListItem>(ElementType.ListItem)
-    //  .HasValue<Para>(ElementType.Para)
-    //  .HasValue<Param>(ElementType.Param)
-    //  .HasValue<ParamRef>(ElementType.ParamRef)
-    //  .HasValue<Permission>(ElementType.Permission)
-    //  .HasValue<Remark>(ElementType.Remark)
-    //  .HasValue<Returns>(ElementType.Returns)
-    //  .HasValue<See>(ElementType.See)
-    //  .HasValue<SeeAlso>(ElementType.SeeAlso)
-    //  .HasValue<SimpleText>(ElementType.SimpleText)
-    //  .HasValue<Summary>(ElementType.Summary)
-    //  .HasValue<Term>(ElementType.Term)
-    //  .HasValue<TypeParam>(ElementType.TypeParam)
-    //  .HasValue<TypeParamRef>(ElementType.TypeParamRef)
-    //  .HasValue<Value>(ElementType.Value)
-    //  ;
-
-    //modelBuilder.Entity<CommentElement>()
-    //  .HasOne(item => item.OwnerMember)
-    //  .WithMany(m => m.Comments)
-    //  .HasForeignKey(item => item.OwnerMemberId);
-
-    //modelBuilder.Entity<CommentElement>()
-    //  .HasOne(item => item.ParentElement)
-    //  .WithMany(m => m.Items)
-    //  .HasForeignKey(item => item.ParentContentId);
   }
 
   public void LoadFiles()
   {
     FilesDictionary = Files.ToDictionary(file => file.FileName);
-    //FilesIndex = Files.ToDictionary(file => file.Id);
 
     Files.Local.CollectionChanged += (sender, args) =>
     {
       if (args.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
       {
-        foreach (CmtFile file in args.NewItems!)
+        foreach (XmlFile file in args.NewItems!)
         {
           FilesDictionary.TryAdd(file.FileName, file);
         }
@@ -156,9 +113,6 @@ public sealed class CmtDbContext : DbContext
 
   public void LoadMembers()
   {
-    //MembersDictionary = Members.ToDictionary(m => m.FullName);
-    //MembersIndex = Members.ToDictionary(m => m.Id);
-
     foreach (var file in Files
                .Include(f => f.Members)
                )

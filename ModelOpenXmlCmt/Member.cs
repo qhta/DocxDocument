@@ -22,6 +22,23 @@ public class Member
   public int Id { get; set; }
 
   /// <summary>
+  /// Unique identifier of the file where the member is placed.
+  /// </summary>
+  public int OwnerFileId { get; set; }
+
+  /// <summary>
+  /// Unique identifier of the parent member.
+  /// </summary>
+  public int? ParentMemberId { get; set; }
+
+  /// <summary>
+  /// LongName of this member.
+  /// </summary>
+  [MaxLength(255)]
+  [Required]
+  public required string FullName { get; set; }
+
+  /// <summary>
   /// ShortName of this member.
   /// </summary>
   [MaxLength(255)]
@@ -33,25 +50,7 @@ public class Member
   /// </summary>
   [MaxLength(255)]
   public string? Params { get; set; }
-
-  /// <summary>
-  /// LongName of this member.
-  /// </summary>
-  [MaxLength(255)]
-  [Required]
-  public required string FullName { get; set; }
-
-
-  /// <summary>
-  /// Unique identifier of the file where the member is placed.
-  /// </summary>
-  public int OwnerFileId { get; set; }
-
-  /// <summary>
-  /// Unique identifier of the parent member.
-  /// </summary>
-  public int? ParentMemberId { get; set; }
-
+  
   /// <summary>
   /// Specifies the type of the member.
   /// </summary>
@@ -75,7 +74,7 @@ public class Member
   /// Navigation property for the file where this member is defined.
   /// </summary>
   [Required]
-  public CmtFile OwnerFile { get; set; } = null!;
+  public XmlFile OwnerFile { get; set; } = null!;
 
   /// <summary>
   /// Navigation property for the member where this member is defined.
@@ -94,7 +93,7 @@ public class Member
   [NotMapped]
   public Dictionary<string, Member> MembersDictionary
   {
-    get => _MembersDictionary ??= new ();
+    get => _MembersDictionary ??= new();
     set => _MembersDictionary = value;
   }
   private Dictionary<string, Member>? _MembersDictionary;
