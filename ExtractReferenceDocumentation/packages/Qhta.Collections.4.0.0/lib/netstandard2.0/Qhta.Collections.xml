@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Qhta.Collections</name>
+    </assembly>
+    <members>
+        <member name="T:Qhta.Collections.BiDiDictionary`2">
+            <summary>
+            Bidirectional dictionary. Converts from Type1 to Type2.
+            </summary>
+        </member>
+        <member name="M:Qhta.Collections.BiDiDictionary`2.#ctor(System.Collections.Generic.IEqualityComparer{`0},System.Collections.Generic.IEqualityComparer{`1})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qhta.Collections.BiDiDictionary`2"/> class.
+            </summary>
+            <param name="comparer1">The comparer1.</param>
+            <param name="comparer2">The comparer2.</param>
+        </member>
+        <member name="T:Qhta.Collections.WildcardStrings">
+            <summary>
+            It is a sorted set of strings, which can contains wildcard '*' character, that can be encompassed to a fragment of string.
+            </summary>
+        </member>
+        <member name="M:Qhta.Collections.WildcardStrings.Contains(System.String)">
+            <summary>
+            Overriden "Contains" funtions that uses "IsLike" method.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

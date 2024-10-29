@@ -1,0 +1,110 @@
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+
+namespace OpenXmlDatabase.Models;
+
+public partial class ModelContext : DbContext
+{
+    public ModelContext()
+    {
+    }
+
+    public ModelContext(DbContextOptions<ModelContext> options)
+        : base(options)
+    {
+    }
+
+    public virtual DbSet<Namespace> Namespaces { get; set; }
+
+    public virtual DbSet<Property> Properties { get; set; }
+
+    public virtual DbSet<Type> Types { get; set; }
+
+    public virtual DbSet<TypeKind> TypeKinds { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseJet("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OneDrive\\VS\\Projects\\DocxDocument\\OpenXmlDatabase\\OpenXml.accdb;Jet OLEDB:Database Password=****;");
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Namespace>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PrimaryKey");
+
+            entity.HasIndex(e => e.Id, "Id");
+
+            entity.HasIndex(e => e.Name, "Name").IsUnique();
+
+            entity.Property(e => e.Id).HasColumnType("counter");
+            entity.Property(e => e.Prefix).HasMaxLength(15);
+        });
+
+        modelBuilder.Entity<Property>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PrimaryKey");
+
+            entity.HasIndex(e => e.Name, "Name");
+
+            entity.HasIndex(e => e.ParentTypeId, "ParentTypeId");
+
+            entity.HasIndex(e => new { e.ParentTypeId, e.Name }, "UniqueKey");
+
+            entity.Property(e => e.Id)
+                .HasColumnType("counter")
+                .HasColumnName("ID");
+
+            entity.HasOne(d => d.ParentType).WithMany(p => p.Properties)
+                .HasForeignKey(d => d.ParentTypeId)
+                .HasConstraintName("TypesProperties");
+        });
+
+        modelBuilder.Entity<Type>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PrimaryKey");
+
+            entity.HasIndex(e => e.Name, "Name");
+
+            entity.HasIndex(e => e.NamespaceId, "NamespaceId");
+
+            entity.HasIndex(e => e.ParentTypeId, "ParentTypeId");
+
+            entity.HasIndex(e => e.SuperTypeId, "SuperTypeId");
+
+            entity.HasIndex(e => new { e.NamespaceId, e.Name, e.ParentTypeId }, "UniqueKey");
+
+            entity.Property(e => e.Id)
+                .HasColumnType("counter")
+                .HasColumnName("ID");
+            entity.Property(e => e.IsAbstract)
+                .HasDefaultValueSql("No")
+                .HasColumnType("bit");
+            entity.Property(e => e.IsGeneric)
+                .HasDefaultValueSql("No")
+                .HasColumnType("bit");
+            entity.Property(e => e.IsNested)
+                .HasDefaultValueSql("No")
+                .HasColumnType("bit");
+            entity.Property(e => e.NamespaceId).HasDefaultValue(0);
+            entity.Property(e => e.ParentTypeId).HasDefaultValue(0);
+            entity.Property(e => e.SuperTypeId).HasDefaultValue(0);
+
+            entity.HasOne(d => d.Namespace).WithMany(p => p.Types)
+                .HasForeignKey(d => d.NamespaceId)
+                .HasConstraintName("NamespacesTypes");
+        });
+
+        modelBuilder.Entity<TypeKind>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PrimaryKey");
+
+            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Kind).HasMaxLength(255);
+        });
+
+        OnModelCreatingPartial(modelBuilder);
+    }
+
+    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+}
