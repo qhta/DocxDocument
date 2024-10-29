@@ -140,7 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DocXmlBuilder.cs" />
-    <None Include="ExtractReferenceDocumentation_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Reference Material.docx" />
     <Compile Include="Chapter.cs" />
