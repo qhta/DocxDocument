@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext -Connection "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\OneDrive\VS\Projects\DocxDocument\OpenXmlDatabase\OpenXml.accdb;Jet OLEDB:Database Password=****;" -Provider EntityFrameworkCore.Jet -OutputDir Models -verbose -force

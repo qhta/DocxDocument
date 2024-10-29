@@ -1,0 +1,695 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Qhta.TextUtils</name>
+    </assembly>
+    <members>
+        <member name="T:Qhta.TextUtils.DuplicateAllowingCompararer`1">
+            <summary>
+            List sort comparer allowing duplicates. Normal comparer returns 0 if compared values are equal. This comparer returns 1 in this case.
+            </summary>
+            <typeparam name="T">Any comparable type (string type preferred)</typeparam>
+        </member>
+        <member name="M:Qhta.TextUtils.DuplicateAllowingCompararer`1.Compare(`0,`0)">
+            <summary>
+            Main comparison method
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.DuplicateAllowingCompararer`1.Equals(`0,`0)">
+            <summary>
+            Equality comparer newer shows true.
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.DuplicateAllowingCompararer`1.GetHashCode(`0)">
+            <summary>
+            GetHashCode metod. Required when Equals defined.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Qhta.TextUtils.StringAllowingDuplicateComparer">
+            <summary>
+            Static string comparer allowing duplicates. Can be used to avoid multiple instance creation.
+            </summary>
+        </member>
+        <member name="P:Qhta.TextUtils.StringAllowingDuplicateComparer.Instance">
+            <summary>
+            Singular instance.
+            </summary>
+        </member>
+        <member name="T:Qhta.TextUtils.StringATergoComparer">
+            <summary>
+            Comparer for inverted strings.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringATergoComparer.Compare(System.String,System.String)">
+            <summary>
+            Main compare method
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringATergoComparer.Equals(System.String,System.String)">
+            <summary>
+            Equality comparer never shows true.
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Qhta.TextUtils.StringATergoComparer.GetHashCode(System.String)">
+            <summary>
+            GetHashCode metod. Required when Equals defined.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Qhta.TextUtils.CSVUtils">
+            <summary>
+            Utilities to process CSV files
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.CSVUtils.SplitCSV(System.String,System.Char)">
+            <summary>
+            Split a line of CSV file into parts.
+            </summary>
+            <param name="str"></param>
+            <param name="sep"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Qhta.TextUtils.CharPair">
+            <summary>
+            A pair of characters. May be used to parse text.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.CharPair.#ctor(System.Char,System.Char)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="item1">first char</param>
+            <param name="item2">second char</param>
+        </member>
+        <member name="P:Qhta.TextUtils.CharPair.Item1">
+            <summary>
+            First char.
+            </summary>
+        </member>
+        <member name="P:Qhta.TextUtils.CharPair.Item2">
+            <summary>
+            Second char.
+            </summary>
+        </member>
+        <member name="T:Qhta.TextUtils.PairedChars">
+            <summary>
+            A list of CharPairs
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.PairedChars.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.PairedChars.#ctor(System.Char[0:,0:])">
+            <summary>
+            Constructor based on 2-dimension array of chars.
+            </summary>
+            <param name="chars"></param>
+        </member>
+        <member name="M:Qhta.TextUtils.PairedChars.op_Implicit(System.Char[0:,0:])~Qhta.TextUtils.PairedChars">
+            <summary>
+            Implicit conversion from a 2-dimension array of chars.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Qhta.TextUtils.PairedChars.op_Implicit(Qhta.TextUtils.PairedChars)~System.Char[0:,0:]">
+            <summary>
+            Implicit conversion to a 2-dimension array of chars
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Qhta.TextUtils.PairedChars.Add(System.Char,System.Char)">
+            <summary>
+            Add a pair of chars
+            </summary>
+            <param name="item1"></param>
+            <param name="item2"></param>
+        </member>
+        <member name="M:Qhta.TextUtils.PairedChars.Remove(System.Char,System.Char)">
+            <summary>
+            Remove a pair of chars.
+            </summary>
+            <param name="item1"></param>
+            <param name="item2"></param>
+        </member>
+        <member name="M:Qhta.TextUtils.PairedChars.TryGetItem2(System.Char,System.Char@)">
+            <summary>
+            Try to get first char when second is known.
+            </summary>
+            <param name="item2"></param>
+            <param name="item1"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.PairedChars.TryGetItem1(System.Char,System.Char@)">
+            <summary>
+            Try to get second char when first is known.
+            </summary>
+            <param name="item2"></param>
+            <param name="item1"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Qhta.TextUtils.StringListUtils">
+            <summary>
+            A list of methods operating on list of strings.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringListUtils.IndexOf(System.Collections.Generic.List{System.String},System.String,System.StringComparison)">
+            <summary>
+            Finds a string in a list.
+            </summary>
+            <param name="aList"></param>
+            <param name="s"></param>
+            <param name="comparison"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringListUtils.IsEqualOrMixed(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.StringComparison)">
+            <summary>
+            Checks whether both lists are equal or both contain the same elements in different order.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringListUtils.FindInclusions(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.StringComparison)">
+            <summary>
+            Checks in which positions the first list contains elements not found in the second list.
+            </summary>
+        </member>
+        <member name="T:Qhta.TextUtils.StringsEqualityComparer">
+            <summary>
+            A handy implementation of string equality comparer.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringsEqualityComparer.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringsEqualityComparer.#ctor(System.StringComparison)">
+            <summary>
+            Constructor with explicit comparison.
+            </summary>
+            <param name="comparison"></param>
+        </member>
+        <member name="M:Qhta.TextUtils.StringsEqualityComparer.Equals(System.String[],System.String[])">
+            <summary>
+            Maint compare method.
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringsEqualityComparer.GetHashCode(System.String[])">
+            <summary>
+            GetHashCode metod. Required when Equals defined.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Qhta.TextUtils.StringUtils">
+            <summary>
+            A bunch of string utility methods
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.TitleCase(System.String)">
+            <summary>
+            Change string to title case. First letter tu upper, rest to lower case.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.CamelCase(System.String)">
+            <summary>
+            Change first letter of each word to upper, rest to lower case.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.SplitCamelCase(System.String)">
+            <summary>
+            Split camel-case string to array of words.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.DeCamelCase(System.String)">
+            <summary>
+            Split camel-case string to words.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.NumberToText(System.Double)">
+            <summary>
+            Changes a number to literal text using whole part and a rational fraction part.
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.NumberToText(System.Int32)">
+            <summary>
+            Changes a number to literal text.
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.NumberToText(System.Int64)">
+            <summary>
+            Changes a number to literal text.
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.Precede(System.String,System.String)">
+            <summary>
+            Precedes a string with a prefix when string is not null.
+            </summary>
+            <param name="str"></param>
+            <param name="prefix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.Attach(System.String,System.String)">
+            <summary>
+            Attach a suffix to a string if string is not null.
+            </summary>
+            <param name="str"></param>
+            <param name="suffix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ContainsAt(System.String,System.String,System.Int32)">
+            <summary>
+            Checks if a string contains a substring at a specified position.
+            </summary>
+            <param name="str"></param>
+            <param name="substring"></param>
+            <param name="atIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ContainsAt(System.String,System.String,System.Int32,System.StringComparison)">
+            <summary>
+            Checks if a string contains a substring at a specified position using a specified comparison.
+            </summary>
+            <param name="str"></param>
+            <param name="substring"></param>
+            <param name="atIndex"></param>
+            <param name="comparison"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ContainsBefore(System.String,System.String,System.Int32)">
+            <summary>
+            Checks if a string ends with a substring at a specified position
+            </summary>
+            <param name="str"></param>
+            <param name="substring"></param>
+            <param name="atIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ContainsBefore(System.String,System.String,System.Int32,System.StringComparison)">
+            <summary>
+            Checks if a string contains a substring at a specified position using explicit comparison using a specified comparison.
+            </summary>
+            <param name="str"></param>
+            <param name="substring"></param>
+            <param name="atIndex"></param>
+            <param name="comparison"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.IsUpper(System.String)">
+            <summary>
+            Checks if a string contains only upper-case letters.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.IsAscii(System.String)">
+            <summary>
+            Checks if a string contains characters from space to ~.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.IsUnicode(System.String)">
+            <summary>
+            Checks if a string contains Unicode characters (i.e. with codes greater than 127)
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.IsLike(System.String,System.String,System.StringComparison)">
+            <summary>
+              Checks the similiarity of key to pattern. Pattern can contain '*' as wildchar replacing any sequence of remaining
+              characters.
+            </summary>
+            <param name="key"></param>
+            <param name="pattern"></param>
+            <param name="stringComparison"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.IsLike(System.String,System.String,System.String@,System.StringComparison)">
+            <summary>
+              Checks the similiarity of key to pattern. Pattern can contain '*' as wildchar replacing any sequence of remaining
+              characters.
+              Output <paramref name="wildKey" /> is set to found wildchar replacement in the key.
+              If there are multiple wildchars in the pattern then returned <paramref name="wildKey" /> contains multiple
+              replacements joined with '*' separator.
+            </summary>
+            <param name="key"></param>
+            <param name="pattern"></param>
+            <param name="wildKey"></param>
+            <param name="stringComparison"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.IsLikeNumber(System.String,System.String,System.String@,System.Int32@)">
+            <summary>
+            Checks if a key text starts or ends with a number..
+            </summary>
+            <param name="key">Checked text</param>
+            <param name="pattern">Pattern text containing '#' ad the beginning or end. The rest is a literal pattern</param>
+            <param name="wildKey">Literal text detected by pattern</param>
+            <param name="wildNum">Number parsed from the wildKey</param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.IsValidUrl(System.String)">
+            <summary>
+            Check if URL is valid. Uses Regex.
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ToUpperFirst(System.String)">
+            <summary>
+            Changes the first letter to uppercase. All others unchanged.
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ToLowerFirst(System.String)">
+            <summary>
+            Changes the first letter to lowercase. All others unchanged.
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.TrimParens(System.String,System.ValueTuple{System.Char,System.Char}[])">
+            <summary>
+            Trims parentheses enclosing the text.
+            </summary>
+            <param name="text"></param>
+            <param name="enclosings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.TrimEnclosings(System.String,System.Char,System.Char,System.ValueTuple{System.Char,System.Char}[])">
+            <summary>
+            Changes enclosing parens. Omits included enclosings.
+            </summary>
+            <param name="text"></param>
+            <param name="openParen"></param>
+            <param name="closeParen"></param>
+            <param name="enclosings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.TrimDblQuotes(System.String)">
+            <summary>
+            Trim double quote characters enclosing the text.
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.SplitBy(System.String,System.Char,System.ValueTuple{System.Char,System.Char}[])">
+            <summary>
+              Splits a text by <paramref name="sep" /> character.
+              Fragments enclosed by <paramref name="enclosings" /> are not splitted.
+            </summary>
+            <param name="text"></param>
+            <param name="sep"></param>
+            <param name="enclosings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.Find(System.String,System.Int32,System.Char,System.ValueTuple{System.Char,System.Char}[])">
+            <summary>
+              Searches a text from <paramref name="startNdx" /> position for a <paramref name="sep" /> character.
+              If not found then length of text is returned;
+            </summary>
+            <param name="text"></param>
+            <param name="startNdx"></param>
+            <param name="sep"></param>
+            <param name="enclosings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.FindMatch(System.String,System.Int32,System.Char,System.ValueTuple{System.Char,System.Char}[])">
+            <summary>
+              Searches a text from <paramref name="startNdx" /> position for a pair of <paramref name="openingSep" /> character.
+              If not found then length of text is returned;
+            </summary>
+            <param name="text"></param>
+            <param name="startNdx"></param>
+            <param name="openingSep"></param>
+            <param name="enclosings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.SubstringUntil(System.String,System.Char,System.Int32)">
+            <summary>
+            Gets a substring at a specified position until a specified delimiter is found.
+            </summary>
+            <param name="text"></param>
+            <param name="ch"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.SplitSpecial(System.String,System.Char,System.ValueTuple{System.Char,System.Char}[])">
+            <summary>
+              Split text with delimiter omitting quotes
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.SubstringUntil(System.String,System.Char,System.Int32,System.Int32@)">
+            <summary>
+            Gets a substring between start and end positions, but untils a specified delimiter is found.
+            </summary>
+            <param name="text"></param>
+            <param name="delimiter"></param>
+            <param name="startPos"></param>
+            <param name="endPos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.FindEndOfSentence(System.String,System.Int32,System.String[])">
+            <summary>
+            Find a position of the end of the sentence using dot position which does not ends amy known abbreviation.
+            </summary>
+            <param name="text"></param>
+            <param name="startPos"></param>
+            <param name="abbreviations"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceStart(System.String,System.String,System.String)">
+            <summary>
+            Replaces the beginning of the string when it starts with a specified text.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceStart(System.String,System.String,System.String,System.StringComparison)">
+            <summary>
+            Replaces the beginning of the string when it starts with a specified text. Uses a specific string comparison.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceEnd(System.String,System.String,System.String)">
+            <summary>
+            Replaces the end of the string when it ends with a specified text.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceEnd(System.String,System.String,System.String,System.StringComparison)">
+            <summary>
+            Replaces the end of the string when it ends with a specified text. Uses a specified string comparison.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceFirst(System.String,System.String,System.String)">
+            <summary>
+            Replaces the first occurence of the string searching in a specified text.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceFirst(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Replaces the first occurence of the string searching in a specified text starting from the specified index.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceFirst(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Replaces the first occurence of the string searching in a specified text starting from the specified index for the specified characters count.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceFirst(System.String,System.String,System.String,System.StringComparison)">
+            <summary>
+            Replaces the first occurence of the string in a specified text. Uses a specific string comparison.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceFirst(System.String,System.String,System.String,System.Int32,System.StringComparison)">
+            <summary>
+            Replaces the first occurence of the string searching in a specified text starting from the specified index. Uses a specific string comparison.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceFirst(System.String,System.String,System.String,System.Int32,System.Int32,System.StringComparison)">
+            <summary>
+            Replaces the first occurence of the string searching in a specified text starting from the specified index for the specified characters count.
+            Uses a specific string comparison.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceLast(System.String,System.String,System.String)">
+            <summary>
+            Replaces the last occurence of the string searching in a specified text.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceLast(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Replaces the last occurence of the string searching in a specified text starting from the specified index
+            and continuing towards the begining of the text.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceLast(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Replaces the last occurence of the string searching in a specified text starting from the specified index
+            and continuing towards the begining of the text for the specified characters count.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceLast(System.String,System.String,System.String,System.StringComparison)">
+            <summary>
+            Replaces the last occurence of the string in a specified text. Uses a specific string comparison.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceLast(System.String,System.String,System.String,System.Int32,System.StringComparison)">
+            <summary>
+            Replaces the first occurence of the string searching in a specified text starting from the specified index
+            and continuing towards the begining of the text. Uses a specific string comparison.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.ReplaceLast(System.String,System.String,System.String,System.Int32,System.Int32,System.StringComparison)">
+            <summary>
+            Replaces the first occurence of the string searching in a specified text starting from the specified index
+            and continuing towards the begining of the text for the specified characters count.
+            Uses a specific string comparison.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.Concat2(System.String,System.String,System.String)">
+            <summary>
+            Concatenates two strings with a separator between them.
+            If any of both is empty of null - the other is returned.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.Shorten(System.String,System.Int32)">
+            <summary>
+            Returns a string shortended by a specified character count.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.Pluralize(System.String)">
+            <summary>
+            Makes Englush plural form of the noun.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.Singularize(System.String)">
+            <summary>
+            Makes Englush singular form of the noun.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.StringUtils.DecodeEscapeSeq(System.String)">
+            <summary>
+            Decodes escapes sequences: \\, \t, \r, \n, \s, \u
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Qhta.TextUtils.CharEquivalence">
+            <summary>
+            Equivalence of Unicode chars.
+            </summary>
+        </member>
+        <member name="F:Qhta.TextUtils.CharEquivalence.Equivalence">
+            <summary>
+            Replacement of Unicode characters to Latin text.
+            </summary>
+        </member>
+        <member name="T:Qhta.TextUtils.UnicodeBlock">
+            <summary>
+            Definitions of Unicode characters blocks (not categories).
+            </summary>
+        </member>
+        <member name="T:Qhta.TextUtils.UnicodeBlockDef">
+            <summary>
+            A definition of Unicode characters block.
+            </summary>
+        </member>
+        <member name="F:Qhta.TextUtils.UnicodeBlockDef.From">
+            <summary>
+            Lowest character code.
+            </summary>
+        </member>
+        <member name="F:Qhta.TextUtils.UnicodeBlockDef.To">
+            <summary>
+            Highest character code.
+            </summary>
+        </member>
+        <member name="F:Qhta.TextUtils.UnicodeBlockDef.Name">
+            <summary>
+            Name of the character block.
+            </summary>
+        </member>
+        <member name="T:Qhta.TextUtils.UnicodeBlockSpan">
+            <summary>
+            Text span with recognized Unicode characters block.
+            </summary>
+        </member>
+        <member name="F:Qhta.TextUtils.UnicodeBlockSpan.Block">
+            <summary>
+            Recognized Unicode character block
+            </summary>
+        </member>
+        <member name="F:Qhta.TextUtils.UnicodeBlockSpan.Text">
+            <summary>
+            Text within a block.
+            </summary>
+        </member>
+        <member name="T:Qhta.TextUtils.UnicodeUtils">
+            <summary>
+            A list of Unicode-based handy methods.
+            </summary>
+        </member>
+        <member name="M:Qhta.TextUtils.UnicodeUtils.SplitToScripts(System.String)">
+            <summary>
+            Splits text to blocks of same script substrings.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.UnicodeUtils.GetUnicodeBlock(System.Char)">
+            <summary>
+            Gets a UnicodeBlock of a specified character.
+            </summary>
+            <param name="ch"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.TextUtils.UnicodeUtils.GetUnicodeBlock(System.Int32)">
+            <summary>
+            Gets a UnicodeBlock from UnicodeBlockDefinitions for a specific character code.
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Qhta.TextUtils.UnicodeUtils.UnicodeBlockDefinitions">
+            <summary>
+            Definitions of UnicodeBLocks with ranges of character codes.
+            </summary>
+        </member>
+    </members>
+</doc>
