@@ -21,6 +21,8 @@ public partial class ModelContext : DbContext
 
     public virtual DbSet<GenericTypesList> GenericTypesLists { get; set; }
 
+    public virtual DbSet<MemberType> MemberTypes { get; set; }
+
     public virtual DbSet<Namespace> Namespaces { get; set; }
 
     public virtual DbSet<NestedGenericTypesList> NestedGenericTypesLists { get; set; }
@@ -28,6 +30,8 @@ public partial class ModelContext : DbContext
     public virtual DbSet<NestedNormalTypesList> NestedNormalTypesLists { get; set; }
 
     public virtual DbSet<NormalTypesList> NormalTypesLists { get; set; }
+
+    public virtual DbSet<OfficeVersion> OfficeVersions { get; set; }
 
     public virtual DbSet<Property> Properties { get; set; }
 
@@ -62,10 +66,15 @@ public partial class ModelContext : DbContext
 
             entity.HasIndex(e => e.Id, "Id");
 
-            entity.HasIndex(e => new { e.GenericTypeId, e.ArgNo, e.ArgTypeId }, "UniqueKey");
+            entity.HasIndex(e => new { e.GenericTypeId, e.ArgNo, e.ArgTypeId }, "UniqueKey").IsUnique();
 
             entity.Property(e => e.Id).HasColumnType("counter");
             entity.Property(e => e.ArgNo).HasDefaultValue((byte)0);
+
+            entity.HasOne(d => d.GenericType).WithMany(p => p.GenericTypeArgs)
+                .HasForeignKey(d => d.GenericTypeId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("TypesGenericTypeArgs");
         });
 
         modelBuilder.Entity<GenericTypesList>(entity =>
@@ -81,6 +90,23 @@ public partial class ModelContext : DbContext
             entity.Property(e => e.IsAbstract).HasColumnType("bit");
             entity.Property(e => e.IsGeneric).HasColumnType("bit");
             entity.Property(e => e.IsNested).HasColumnType("bit");
+        });
+
+        modelBuilder.Entity<MemberType>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PrimaryKey");
+
+            entity.HasIndex(e => e.MemberTypeId, "MemberTypeId");
+
+            entity.HasIndex(e => e.ParentTypeId, "ParentTypeId");
+
+            entity.HasIndex(e => new { e.ParentTypeId, e.MemberTypeId }, "UniqueKey").IsUnique();
+
+            entity.Property(e => e.Id)
+                .HasColumnType("counter")
+                .HasColumnName("ID");
+            entity.Property(e => e.MaxOccurrence).HasDefaultValue(0);
+            entity.Property(e => e.MinOccurrence).HasDefaultValue(0);
         });
 
         modelBuilder.Entity<Namespace>(entity =>
@@ -140,6 +166,14 @@ public partial class ModelContext : DbContext
             entity.Property(e => e.IsNested).HasColumnType("bit");
         });
 
+        modelBuilder.Entity<OfficeVersion>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PrimaryKey");
+
+            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Name).HasMaxLength(255);
+        });
+
         modelBuilder.Entity<Property>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PrimaryKey");
@@ -150,7 +184,7 @@ public partial class ModelContext : DbContext
 
             entity.HasIndex(e => e.ParentTypeId, "ParentTypeId");
 
-            entity.HasIndex(e => new { e.ParentTypeId, e.Name }, "UniqueKey");
+            entity.HasIndex(e => new { e.ParentTypeId, e.Name }, "UniqueKey").IsUnique();
 
             entity.HasIndex(e => e.ValueTypeId, "ValueTypeId");
 
@@ -172,9 +206,11 @@ public partial class ModelContext : DbContext
             entity.Property(e => e.IsVirtual)
                 .HasDefaultValueSql("No")
                 .HasColumnType("bit");
+            entity.Property(e => e.Tag).HasMaxLength(255);
 
             entity.HasOne(d => d.ParentType).WithMany(p => p.Properties)
                 .HasForeignKey(d => d.ParentTypeId)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("TypesProperties");
         });
 
@@ -194,7 +230,7 @@ public partial class ModelContext : DbContext
 
             entity.HasIndex(e => e.Tag, "Tag");
 
-            entity.HasIndex(e => new { e.NamespaceId, e.ParentTypeId, e.Name }, "UniqueKey");
+            entity.HasIndex(e => new { e.NamespaceId, e.ParentTypeId, e.Name }, "UniqueKey").IsUnique();
 
             entity.Property(e => e.Id)
                 .HasColumnType("counter")
@@ -208,7 +244,6 @@ public partial class ModelContext : DbContext
             entity.Property(e => e.IsNested)
                 .HasDefaultValueSql("No")
                 .HasColumnType("bit");
-            entity.Property(e => e.OfficeVersion).HasDefaultValue((byte)0);
 
             entity.HasOne(d => d.Namespace).WithMany(p => p.Types)
                 .HasForeignKey(d => d.NamespaceId)
