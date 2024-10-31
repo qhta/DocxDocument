@@ -15,6 +15,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.1" />
+    <PackageReference Include="NuGet.Configuration" Version="6.11.1" />
     <PackageReference Include="system.data.oledb" Version="8.0.1" />
   </ItemGroup>
 

@@ -10,8 +10,10 @@ internal class Program
 {
   static void Main(string[] args)
   {
-    using var scanner = new OpenXmlScanner();   
-    scanner.Scan();
+    using var scanner = new OpenXmlScanner();
+    scanner.VerboseLevel = 2;
+    //scanner.ScanAssembly();
+    scanner.ScanDocumentationFile();
   }
 
 }

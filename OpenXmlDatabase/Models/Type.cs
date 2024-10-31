@@ -9,6 +9,8 @@ public partial class Type
 
     public int? NamespaceId { get; set; }
 
+    public int? AssemblyId { get; set; }
+
     public string? Name { get; set; }
 
     public byte? Kind { get; set; }
@@ -22,6 +24,12 @@ public partial class Type
     public int? ParentTypeId { get; set; }
 
     public int? SuperTypeId { get; set; }
+
+    public string? Description { get; set; }
+
+    public string? Tag { get; set; }
+
+    public byte? OfficeVersion { get; set; }
 
     public virtual Namespace? Namespace { get; set; }
 
