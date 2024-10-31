@@ -12,4 +12,6 @@ public partial class GenericTypeArg
     public byte? ArgNo { get; set; }
 
     public int? ArgTypeId { get; set; }
+
+    public virtual Type? GenericType { get; set; }
 }

@@ -31,6 +31,8 @@ public partial class Type
 
     public byte? OfficeVersion { get; set; }
 
+    public virtual ICollection<GenericTypeArg> GenericTypeArgs { get; set; } = new List<GenericTypeArg>();
+
     public virtual Namespace? Namespace { get; set; }
 
     public virtual ICollection<Property> Properties { get; set; } = new List<Property>();
