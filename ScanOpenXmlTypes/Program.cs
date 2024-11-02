@@ -13,7 +13,9 @@ internal class Program
     using var scanner = new OpenXmlScanner();
     scanner.VerboseLevel = 2;
     //scanner.ScanAssembly();
-    scanner.ScanDocumentationFile();
+    //scanner.ScanDocumentationFile();
+    //scanner.ScanSchemaFiles();
+    scanner.ScanDocxFiles();
   }
 
 }

@@ -1,0 +1,8 @@
+<xsd:schema targetNamespace="http://schemas.microsoft.com/office/drawing/2016/SVG/main" elementFormDefault="qualified" xmlns:r="http://purl.oclc.org/ooxml/officeDocument/relationships" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/office/drawing/2016/SVG/main" xmlns:a="http://purl.oclc.org/ooxml/drawingml/main">
+   <xsd:import schemaLocation="dml-baseTypes.xsd" namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+   <xsd:import schemaLocation="shared-relationshipReference.xsd" namespace="http://purl.oclc.org/ooxml/officeDocument/relationships"/>
+   <xsd:complexType name="CT_SVGBlip">
+     <xsd:attributeGroup ref="a:AG_Blob"/>
+   </xsd:complexType>
+   <xsd:element name="svgBlip" type="CT_SVGBlip"/>
+ </xsd:schema>

@@ -1,0 +1,100 @@
+<xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+            xmlns="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+            xmlns:a="http://purl.oclc.org/ooxml/drawingml/main"
+            xmlns:w="http://purl.oclc.org/ooxml/wordprocessingml/main"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:r="http://purl.oclc.org/ooxml/officeDocument/relationships">
+	<xsd:import schemaLocation="dml-documentProperties.xsd"
+	            namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+	<xsd:import schemaLocation="dml-shapeProperties.xsd"
+	            namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+	<xsd:import schemaLocation="dml-stylesheet.xsd"
+	            namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+	<xsd:import schemaLocation="shared-rationshipReference.xsd"
+	            namespace="http://purl.oclc.org/ooxml/officeDocument/relationships"/>
+	<xsd:import schemaLocation="wml.xsd"
+	            namespace="http://purl.oclc.org/ooxml/wordprocessingml/main"/>
+	<xsd:complexType name="CT_TextboxInfo">
+		<xsd:sequence>
+			<xsd:element name="txbxContent"
+			             minOccurs="0"
+			             maxOccurs="1"/>
+			<xsd:element name="extLst"
+			             type="a:CT_OfficeArtExtensionList"
+			             minOccurs="0"
+			             maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="id"
+		               type="xsd:unsignedShort"
+		               use="optional"
+		               default="0"/>
+	</xsd:complexType>
+	<xsd:complexType name="CT_LinkedTextboxInformation">
+		<xsd:sequence>
+			<xsd:element name="extLst"
+			             type="a:CT_OfficeArtExtensionList"
+			             minOccurs="0"
+			             maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="id"
+		               type="xsd:unsignedShort"
+		               use="required"/>
+		<xsd:attribute name="seq"
+		               type="xsd:unsignedShort"
+		               use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="CT_WordprocessingShape">
+		<xsd:sequence minOccurs="1"
+		              maxOccurs="1">
+			<xsd:element name="cNvPr"
+			             type="a:CT_NonVisualDrawingProps"
+			             minOccurs="0"
+			             maxOccurs="1"/>
+			<xsd:choice minOccurs="1"
+			            maxOccurs="1">
+				<xsd:element name="cNvSpPr"
+				             type="a:CT_NonVisualDrawingShapeProps"
+				             minOccurs="1"
+				             maxOccurs="1"/>
+				<xsd:element name="cNvCnPr"
+				             type="a:CT_NonVisualConnectorProperties"
+				             minOccurs="1"
+				             maxOccurs="1"/>
+			</xsd:choice>
+			<xsd:element name="spPr"
+			             type="a:CT_ShapeProperties"
+			             minOccurs="1"
+			             maxOccurs="1"/>
+			<xsd:element name="style"
+			             type="a:CT_ShapeStyle"
+			             minOccurs="0"
+			             maxOccurs="1"/>
+			<xsd:element name="extLst"
+			             type="a:CT_OfficeArtExtensionList"
+			             minOccurs="0"
+			             maxOccurs="1"/>
+			<xsd:choice minOccurs="0"
+			            maxOccurs="1">
+				<xsd:element name="txbx"
+				             type="CT_TextboxInfo"
+				             minOccurs="1"
+				             maxOccurs="1"/>
+				<xsd:element name="linkedTxbx"
+				             type="CT_LinkedTextboxInformation"
+				             minOccurs="1"
+				             maxOccurs="1"/>
+			</xsd:choice>
+			<xsd:element name="bodyPr"
+			             type="a:CT_TextBodyProperties"
+			             minOccurs="1"
+			             maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="normalEastAsianFlow"
+		               type="xsd:boolean"
+		               use="optional"
+		               default="false"/>
+	</xsd:complexType>
+	<xsd:element name="wsp"
+	             type="CT_WordprocessingShape"/>
+</xsd:schema>

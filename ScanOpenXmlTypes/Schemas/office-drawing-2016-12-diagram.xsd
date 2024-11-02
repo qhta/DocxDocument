@@ -1,0 +1,6 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/office/drawing/2016/12/diagram" xmlns="http://schemas.microsoft.com/office/drawing/2016/12/diagram" elementFormDefault="qualified" xmlns:a="http://purl.oclc.org/ooxml/drawingml/main">
+   <xsd:import schemaLocation="dml-shapeProperties.xsd" namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+   <xsd:import schemaLocation="dml-tx.xsd" namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+   <xsd:element name="spPr" type="a:CT_ShapeProperties"/>
+   <xsd:element name="lstStyle" type="a:CT_TextListStyle"/>
+ </xsd:schema>

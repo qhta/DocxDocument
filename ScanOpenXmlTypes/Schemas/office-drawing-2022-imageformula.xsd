@@ -1,0 +1,6 @@
+<xsd:schema targetNamespace="http://schemas.microsoft.com/office/drawing/2022/imageformula" xmlns="http://schemas.microsoft.com/office/drawing/2022/imageformula" xmlns:a="http://purl.oclc.org/ooxml/drawingml/main" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:complexType name="CT_ImageFormula">
+     <xsd:attribute name="formula" type="xsd:string"/>
+   </xsd:complexType>
+   <xsd:element name="imageFormula" type="CT_ImageFormula"/>
+ </xsd:schema>

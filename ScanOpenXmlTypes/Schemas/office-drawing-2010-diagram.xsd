@@ -1,0 +1,9 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:a="http://purl.oclc.org/ooxml/drawingml/main" xmlns="http://schemas.microsoft.com/office/drawing/2010/diagram" targetNamespace="http://schemas.microsoft.com/office/drawing/2010/diagram" elementFormDefault="qualified" attributeFormDefault="unqualified">
+   <xsd:import schemaLocation="dml-baseTypes.xsd" namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+   <xsd:import schemaLocation="dml-documentProperties.xsd" namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+   <xsd:element name="cNvPr" type="a:CT_NonVisualDrawingProps"/>
+   <xsd:complexType name="CT_Boolean">
+     <xsd:attribute name="val" type="xsd:boolean" use="optional" default="false"/>
+   </xsd:complexType>
+   <xsd:element name="recolorImg" type="CT_Boolean"/>
+ </xsd:schema>

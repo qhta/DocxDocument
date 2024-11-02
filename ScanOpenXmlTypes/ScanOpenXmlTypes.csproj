@@ -20,7 +20,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXMLTools.csproj" />
     <ProjectReference Include="..\OpenXmlDatabase\OpenXmlDatabase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Clean\Table.docx1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Clean\Test1.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Ecma\Ecma Office Open XML Part 1 - Fundamentals And Markup Language Reference.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Schemas\wml.xsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

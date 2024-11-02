@@ -1,0 +1,12 @@
+<xsd:schema targetNamespace="http://schemas.microsoft.com/office/drawing/2017/03/chart" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://schemas.microsoft.com/office/drawing/2017/03/chart" xmlns:c="http://purl.oclc.org/ooxml/drawingml/chart" xmlns:xsd="http://www.w3.org/2001/XMLSchema" blockDefault="#all">
+   <xsd:import namespace="http://purl.oclc.org/ooxml/drawingml/chart" schemaLocation="chart.xsd"/>
+   <xsd:complexType name="CT_BooleanFalse">
+     <xsd:attribute name="val" type="xsd:boolean" use="optional" default="false"/>
+   </xsd:complexType>
+   <xsd:complexType name="CT_DataDisplayOptions16">
+     <xsd:sequence>
+       <xsd:element name="dispNaAsBlank" type="CT_BooleanFalse" minOccurs="0" maxOccurs="1"/>
+     </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="dataDisplayOptions16" type="CT_DataDisplayOptions16"/>
+ </xsd:schema>
