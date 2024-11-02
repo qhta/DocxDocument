@@ -1,0 +1,866 @@
+		<w:tbl>
+			<w:tblPr>
+				<w:tblStyle w:val="TableGrid"/>
+				<w:tblW w:w="10312" w:type="dxa"/>
+				<w:tblInd w:w="-115" w:type="dxa"/>
+				<w:tblCellMar>
+					<w:top w:w="46" w:type="dxa"/>
+					<w:right w:w="115" w:type="dxa"/>
+				</w:tblCellMar>
+				<w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
+			</w:tblPr>
+			<w:tblGrid>
+				<w:gridCol w:w="1546"/>
+				<w:gridCol w:w="121"/>
+				<w:gridCol w:w="1711"/>
+				<w:gridCol w:w="6684"/>
+				<w:gridCol w:w="250"/>
+			</w:tblGrid>
+			<w:tr w:rsidR="00111BF4" w14:paraId="06AD9D94" w14:textId="77777777">
+				<w:trPr>
+					<w:trHeight w:val="859"/>
+				</w:trPr>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="1546" w:type="dxa"/>
+						<w:vMerge w:val="restart"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="46DF32BB" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+						<w:r>
+							<w:t xml:space="preserve">Content Type:</w:t>
+						</w:r>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="8766" w:type="dxa"/>
+						<w:gridSpan w:val="4"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="7BAA1023" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>Any</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r>
+							<w:t xml:space="preserve"> </w:t>
+						</w:r>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>supported</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r>
+							<w:t xml:space="preserve"> audio </w:t>
+						</w:r>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>type</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r>
+							<w:t xml:space="preserve">.</w:t>
+						</w:r>
+					</w:p>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="463A179C" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+						<w:r/>
+					</w:p>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="3DA8901E" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+						<w:r>
+							<w:t>[</w:t>
+						</w:r>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:rPr>
+								<w:i/>
+							</w:rPr>
+							<w:t>Note</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r>
+							<w:t xml:space="preserve">: </w:t>
+						</w:r>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>Some</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r>
+							<w:t xml:space="preserve"> </w:t>
+						</w:r>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>example</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r>
+							<w:t xml:space="preserve"> </w:t>
+						</w:r>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>content</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r>
+							<w:t xml:space="preserve"> </w:t>
+						</w:r>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>types</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r>
+							<w:t xml:space="preserve"> </w:t>
+						</w:r>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>are</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r>
+							<w:t xml:space="preserve">:</w:t>
+						</w:r>
+					</w:p>
+				</w:tc>
+			</w:tr>
+			<w:tr w:rsidR="00111BF4" w14:paraId="0EFF3BB1" w14:textId="77777777">
+				<w:trPr>
+					<w:trHeight w:val="391"/>
+				</w:trPr>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="0" w:type="auto"/>
+						<w:vMerge/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="4D82DF9A" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="120" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="30C8F090" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="1712" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="double" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="27C18115" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+						<w:r>
+							<w:t>audio/</w:t>
+						</w:r>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>aiff</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r/>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="6685" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="double" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="4581C205" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+						<w:hyperlink r:id="rId141">
+							<w:r>
+								<w:t>http://developer.apple.com/documentation/QuickTime/INMAC/SOUN</w:t>
+							</w:r>
+						</w:hyperlink>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="250" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="1DFD06EC" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+			</w:tr>
+			<w:tr w:rsidR="00111BF4" w14:paraId="52F36DBD" w14:textId="77777777">
+				<w:trPr>
+					<w:trHeight w:val="392"/>
+				</w:trPr>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="1546" w:type="dxa"/>
+						<w:vMerge w:val="restart"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="70A1B25D" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="120" w:type="dxa"/>
+						<w:vMerge w:val="restart"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="nil"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="06449B6A" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="1712" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="double" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="110AEE47" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="6685" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="double" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="250" w:type="dxa"/>
+						<w:vMerge w:val="restart"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="nil"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="708FAD2C" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+			</w:tr>
+			<w:tr w:rsidR="00111BF4" w14:paraId="4A2BD1BC" w14:textId="77777777">
+				<w:trPr>
+					<w:trHeight w:val="365"/>
+				</w:trPr>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="0" w:type="auto"/>
+						<w:vMerge/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="nil"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="5FC5D622" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="0" w:type="auto"/>
+						<w:vMerge/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="nil"/>
+							<w:right w:val="nil"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="43B4B476" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="1712" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="067BF21B" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="115" w:firstLine="0"/>
+						</w:pPr>
+						<w:r>
+							<w:t xml:space="preserve">audio/midi</w:t>
+						</w:r>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="6685" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="5C03A41D" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="115" w:firstLine="0"/>
+						</w:pPr>
+						<w:r>
+							<w:t xml:space="preserve">http://www.midi.org/about-midi/specinfo.shtml</w:t>
+						</w:r>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="0" w:type="auto"/>
+						<w:vMerge/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="nil"/>
+							<w:bottom w:val="nil"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="12BBD01E" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+			</w:tr>
+			<w:tr w:rsidR="00111BF4" w14:paraId="0384E34A" w14:textId="77777777">
+				<w:trPr>
+					<w:trHeight w:val="365"/>
+				</w:trPr>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="0" w:type="auto"/>
+						<w:vMerge/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="nil"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="0E19F40A" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="0" w:type="auto"/>
+						<w:vMerge/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="nil"/>
+							<w:right w:val="nil"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="14B3D5D6" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="1712" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="521F410B" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="115" w:firstLine="0"/>
+						</w:pPr>
+						<w:r>
+							<w:t>audio/</w:t>
+						</w:r>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>ogg</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r/>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="6685" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="0" w:type="auto"/>
+						<w:vMerge/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="nil"/>
+							<w:bottom w:val="nil"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="21C0FBB4" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+			</w:tr>
+			<w:tr w:rsidR="00111BF4" w14:paraId="31CD3038" w14:textId="77777777">
+				<w:trPr>
+					<w:trHeight w:val="365"/>
+				</w:trPr>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="0" w:type="auto"/>
+						<w:vMerge/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="nil"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="1C103885" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="0" w:type="auto"/>
+						<w:vMerge/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="nil"/>
+							<w:right w:val="nil"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="3555075B" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="1712" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="1A07FB03" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="115" w:firstLine="0"/>
+						</w:pPr>
+						<w:r>
+							<w:t>audio/</w:t>
+						</w:r>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>mpeg</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r/>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="6685" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="3F356A79" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="115" w:firstLine="0"/>
+						</w:pPr>
+						<w:r>
+							<w:t xml:space="preserve">ISO/IEC 11172-3</w:t>
+						</w:r>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="0" w:type="auto"/>
+						<w:vMerge/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="nil"/>
+							<w:bottom w:val="nil"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="7F426943" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+			</w:tr>
+			<w:tr w:rsidR="00111BF4" w14:paraId="4E5046CB" w14:textId="77777777">
+				<w:trPr>
+					<w:trHeight w:val="322"/>
+				</w:trPr>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="0" w:type="auto"/>
+						<w:vMerge/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="27BF9801" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="0" w:type="auto"/>
+						<w:vMerge/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="nil"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="7C373906" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="8397" w:type="dxa"/>
+						<w:gridSpan w:val="2"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="nil"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="nil"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="6D939323" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="-5" w:firstLine="0"/>
+						</w:pPr>
+						<w:r>
+							<w:rPr>
+								<w:i/>
+							</w:rPr>
+							<w:t xml:space="preserve">end </w:t>
+						</w:r>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:rPr>
+								<w:i/>
+							</w:rPr>
+							<w:t>note</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r>
+							<w:t xml:space="preserve">]</w:t>
+						</w:r>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="0" w:type="auto"/>
+						<w:vMerge/>
+						<w:tcBorders>
+							<w:top w:val="nil"/>
+							<w:left w:val="nil"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="00111BF4" w14:paraId="51809E93" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="160" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="0" w:firstLine="0"/>
+						</w:pPr>
+					</w:p>
+				</w:tc>
+			</w:tr>
+			<w:tr w:rsidR="00111BF4" w14:paraId="0B863DFA" w14:textId="77777777">
+				<w:trPr>
+					<w:trHeight w:val="631"/>
+				</w:trPr>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="1546" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="78B8A7F8" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="115" w:firstLine="0"/>
+						</w:pPr>
+						<w:r>
+							<w:t xml:space="preserve">Root</w:t>
+						</w:r>
+					</w:p>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="5F10C735" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="115" w:firstLine="0"/>
+						</w:pPr>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>Namespace</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r>
+							<w:t xml:space="preserve">:</w:t>
+						</w:r>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="8766" w:type="dxa"/>
+						<w:gridSpan w:val="4"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="21B72EAC" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="115" w:firstLine="0"/>
+						</w:pPr>
+						<w:r>
+							<w:t xml:space="preserve">not </w:t>
+						</w:r>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>applicable</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r/>
+					</w:p>
+				</w:tc>
+			</w:tr>
+			<w:tr w:rsidR="00111BF4" w14:paraId="676AC289" w14:textId="77777777">
+				<w:trPr>
+					<w:trHeight w:val="634"/>
+				</w:trPr>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="1546" w:type="dxa"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="380449DB" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="115" w:firstLine="0"/>
+						</w:pPr>
+						<w:r>
+							<w:t xml:space="preserve">Source</w:t>
+						</w:r>
+					</w:p>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="17922C94" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="115" w:firstLine="0"/>
+						</w:pPr>
+						<w:proofErr w:type="spellStart"/>
+						<w:r>
+							<w:t>Relationship</w:t>
+						</w:r>
+						<w:proofErr w:type="spellEnd"/>
+						<w:r>
+							<w:t xml:space="preserve">:</w:t>
+						</w:r>
+					</w:p>
+				</w:tc>
+				<w:tc>
+					<w:tcPr>
+						<w:tcW w:w="8766" w:type="dxa"/>
+						<w:gridSpan w:val="4"/>
+						<w:tcBorders>
+							<w:top w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:left w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:bottom w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+							<w:right w:val="single" w:color="000000" w:sz="4" w:space="0"/>
+						</w:tcBorders>
+					</w:tcPr>
+					<w:p w:rsidR="00111BF4" w:rsidRDefault="004E0D0B" w14:paraId="5DC4F152" w14:textId="77777777">
+						<w:pPr>
+							<w:spacing w:after="0" w:line="259" w:lineRule="auto"/>
+							<w:ind w:left="115" w:firstLine="0"/>
+						</w:pPr>
+						<w:r>
+							<w:t xml:space="preserve">http://purl.oclc.org/ooxml/officeDocument/relationships/audio</w:t>
+						</w:r>
+					</w:p>
+				</w:tc>
+			</w:tr>
+		</w:tbl>

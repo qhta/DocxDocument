@@ -1,0 +1,15 @@
+<xsd:schema targetNamespace="http://schemas.microsoft.com/office/drawing/2020/classificationShape" xmlns="http://schemas.microsoft.com/office/drawing/2020/classificationShape" xmlns:a="http://purl.oclc.org/ooxml/drawingml/main" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:import schemaLocation="dml-baseTypes.xsd" namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+   <xsd:simpleType name="ST_ClassificationOutcomeType">
+     <xsd:restriction base="xsd:token">
+       <xsd:enumeration value="none"/>
+       <xsd:enumeration value="hdr"/>
+       <xsd:enumeration value="ftr"/>
+       <xsd:enumeration value="watermark"/>
+     </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:complexType name="CT_ClassificationOutcome">
+     <xsd:attribute name="classificationOutcomeType" type="ST_ClassificationOutcomeType" use="optional"/>
+   </xsd:complexType>
+   <xsd:element name="classification" type="CT_ClassificationOutcome"/>
+ </xsd:schema>

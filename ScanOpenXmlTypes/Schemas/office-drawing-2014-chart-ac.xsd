@@ -1,0 +1,4 @@
+<xsd:schema targetNamespace="http://schemas.microsoft.com/office/drawing/2014/chart/ac" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://schemas.microsoft.com/office/drawing/2014/chart/ac" xmlns:c="http://purl.oclc.org/ooxml/drawingml/chart" xmlns:xsd="http://www.w3.org/2001/XMLSchema" blockDefault="#all">
+   <xsd:import namespace="http://purl.oclc.org/ooxml/drawingml/chart" schemaLocation="chart.xsd"/>
+   <xsd:element name="multiLvlStrLit" type="c:CT_MultiLvlStrData"/>
+ </xsd:schema>

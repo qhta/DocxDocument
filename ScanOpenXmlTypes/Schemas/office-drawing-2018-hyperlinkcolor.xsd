@@ -1,0 +1,12 @@
+<xsd:schema targetNamespace="http://schemas.microsoft.com/office/drawing/2018/hyperlinkcolor" xmlns="http://schemas.microsoft.com/office/drawing/2018/hyperlinkcolor" xmlns:a="http://purl.oclc.org/ooxml/drawingml/main" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:simpleType name="ST_HyperlinkColor">
+     <xsd:restriction base="xsd:token">
+       <xsd:enumeration value="hlink"/>
+       <xsd:enumeration value="tx"/>
+     </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:complexType name="CT_HyperlinkColor">
+     <xsd:attribute name="val" type="ST_HyperlinkColor" use="required"/>
+   </xsd:complexType>
+   <xsd:element name="hlinkClr" type="CT_HyperlinkColor"/>
+ </xsd:schema>

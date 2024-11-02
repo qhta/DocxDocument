@@ -1,0 +1,6 @@
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/office/drawing/2010/picture" xmlns="http://schemas.microsoft.com/office/drawing/2010/picture" xmlns:a="http://purl.oclc.org/ooxml/drawingml/main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:import schemaLocation="dml-baseTypes.xsd" namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+   <xsd:import schemaLocation="dml-shapestyle.xsd" namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+   <xsd:element name="style" type="a:CT_ShapeStyle"/>
+   <xsd:element name="extLst" type="a:CT_OfficeArtExtensionList"/>
+ </xsd:schema>

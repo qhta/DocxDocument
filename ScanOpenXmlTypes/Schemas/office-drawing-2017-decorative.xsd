@@ -1,0 +1,7 @@
+<xsd:schema targetNamespace="http://schemas.microsoft.com/office/drawing/2017/decorative" xmlns="http://schemas.microsoft.com/office/drawing/2017/decorative" xmlns:a="http://purl.oclc.org/ooxml/drawingml/main" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:import schemaLocation="dml-baseTypes.xsd" namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+   <xsd:complexType name="CT_Decorative">
+     <xsd:attribute name="val" type="xsd:boolean" use="optional"/>
+   </xsd:complexType>
+   <xsd:element name="decorative" type="CT_Decorative"/>
+ </xsd:schema>

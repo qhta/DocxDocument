@@ -1,0 +1,27 @@
+<xsd:schema targetNamespace="http://schemas.microsoft.com/office/word/2012/wordprocessingDrawing"
+            elementFormDefault="qualified"
+            xmlns:r="http://purl.oclc.org/ooxml/officeDocument/relationships"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://schemas.microsoft.com/office/word/2012/wordprocessingDrawing"
+            xmlns:a="http://purl.oclc.org/ooxml/drawingml/main">
+	<xsd:import schemaLocation="dml-baseTypes.xsd"
+	            namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+	<xsd:import namespace="http://purl.oclc.org/ooxml/officeDocument/relationships"
+	            schemaLocation="shared-relationshipReference.xsd"/>
+	<xsd:complexType name="CT_WebVideoPr">
+		<xsd:attribute name="embeddedHtml"
+		               type="xsd:string"
+		               use="optional"
+		               default=""/>
+		<xsd:attribute name="h"
+		               type="xsd:unsignedInt"
+		               use="optional"
+		               default="0"/>
+		<xsd:attribute name="w"
+		               type="xsd:unsignedInt"
+		               use="optional"
+		               default="0"/>
+	</xsd:complexType>
+	<xsd:element name="webVideoPr"
+	             type="CT_WebVideoPr"/>
+</xsd:schema>

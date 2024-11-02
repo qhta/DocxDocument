@@ -1,0 +1,42 @@
+<xsd:schema targetNamespace="http://schemas.microsoft.com/office/drawing/2014/main"
+            xmlns="http://schemas.microsoft.com/office/drawing/2014/main"
+            xmlns:a="http://purl.oclc.org/ooxml/drawingml/main"
+			xmlns:s="http://purl.oclc.org/ooxml/officeDocument/sharedTypes"
+            elementFormDefault="qualified"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:import schemaLocation="dml-baseTypes.xsd"
+	            namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+	<xsd:complexType name="CT_CreationId">
+		<xsd:attribute name="id"
+		               type="s:ST_Guid"
+		               use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="CT_PredecessorDrawingElementReference">
+		<xsd:attribute name="pred"
+		               type="s:ST_Guid"
+		               use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="CT_ConnectableReferences">
+		<xsd:attribute name="st"
+		               type="s:ST_Guid"
+		               use="optional"/>
+		<xsd:attribute name="end"
+		               type="s:ST_Guid"
+		               use="optional"/>
+	</xsd:complexType>
+	<xsd:element name="creationId"
+	             type="CT_CreationId"/>
+	<xsd:element name="predDERef"
+	             type="CT_PredecessorDrawingElementReference"/>
+	<xsd:element name="cxnDERefs"
+	             type="CT_ConnectableReferences"/>
+	<xsd:complexType name="CT_Identifier">
+		<xsd:attribute name="val"
+		               type="xsd:unsignedInt"
+		               use="required"/>
+	</xsd:complexType>
+	<xsd:element name="rowId"
+	             type="CT_Identifier"/>
+	<xsd:element name="colId"
+	             type="CT_Identifier"/>
+</xsd:schema>

@@ -1,0 +1,14 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:w="http://purl.oclc.org/ooxml/wordprocessingml/main"
+			xmlns:s="http://purl.oclc.org/ooxml/officeDocument/sharedTypes"			
+            elementFormDefault="qualified"
+            attributeFormDefault="qualified"
+            blockDefault="#all"
+            xmlns="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+            targetNamespace="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash">
+	<xsd:import id="w"
+	            namespace="http://purl.oclc.org/ooxml/wordprocessingml/main"
+	            schemaLocation="wml.xsd"/>
+	<xsd:attribute name="storeItemChecksum"
+	               type="s:ST_String"/>
+</xsd:schema>

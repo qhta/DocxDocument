@@ -1,0 +1,31 @@
+<xsd:schema xmlns:oel="http://schemas.microsoft.com/office/2019/extlst" xmlns:xsd="http://www.w3.org/2001/XMLSchema" blockDefault="#all" xmlns="http://schemas.microsoft.com/office/comments/2020/reactions" targetNamespace="http://schemas.microsoft.com/office/comments/2020/reactions" elementFormDefault="qualified" attributeFormDefault="unqualified">
+   <xsd:import id="oel" namespace="http://schemas.microsoft.com/office/2019/extlst" schemaLocation="officeextlst.xsd"/>
+   <xsd:complexType name="CT_User">
+     <xsd:sequence>
+       <xsd:element name="extLst" type="oel:CT_ExtensionList" minOccurs="0" maxOccurs="1"/>
+     </xsd:sequence>
+     <xsd:attribute name="userId" type="xsd:string" use="required"/>
+     <xsd:attribute name="userName" type="xsd:string" use="required"/>
+     <xsd:attribute name="userProvider" type="xsd:string" use="required"/>
+   </xsd:complexType>
+   <xsd:complexType name="CT_CommentReactionInfo">
+     <xsd:sequence>
+       <xsd:element name="user" type="CT_User" minOccurs="0" maxOccurs="1"/>
+       <xsd:element name="extLst" type="oel:CT_ExtensionList" minOccurs="0" maxOccurs="1"/>
+     </xsd:sequence>
+     <xsd:attribute name="dateUtc" type="xsd:dateTime" use="optional"/>
+   </xsd:complexType>
+   <xsd:complexType name="CT_CommentReaction">
+     <xsd:sequence>
+       <xsd:element name="reactionInfo" type="CT_CommentReactionInfo" minOccurs="0" maxOccurs="unbounded"/>
+       <xsd:element name="extLst" type="oel:CT_ExtensionList" minOccurs="0" maxOccurs="1"/>
+     </xsd:sequence>
+     <xsd:attribute name="reactionType" type="xsd:int" use="required"/>
+   </xsd:complexType>
+   <xsd:complexType name="CT_CommentReactions">
+     <xsd:sequence>
+       <xsd:element name="reaction" type="CT_CommentReaction" minOccurs="1" maxOccurs="unbounded"/>
+     </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="reactions" type="CT_CommentReactions"/>
+ </xsd:schema>

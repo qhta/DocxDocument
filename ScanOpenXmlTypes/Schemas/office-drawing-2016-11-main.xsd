@@ -1,0 +1,15 @@
+<xsd:schema targetNamespace="http://schemas.microsoft.com/office/drawing/2016/11/main"
+            elementFormDefault="qualified"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:r="http://purl.oclc.org/ooxml/officeDocument/relationships"
+            xmlns:a="http://purl.oclc.org/ooxml/drawingml/main"
+            xmlns="http://schemas.microsoft.com/office/drawing/2016/11/main">
+	<xsd:import schemaLocation="shared-relationshipReference.xsd"
+	            namespace="http://purl.oclc.org/ooxml/officeDocument/relationships"/>
+	<xsd:complexType name="CT_PictureAttributionSourceURL">
+		<xsd:attribute ref="r:id"
+		               use="required"/>
+	</xsd:complexType>
+	<xsd:element name="picAttrSrcUrl"
+	             type="CT_PictureAttributionSourceURL"/>
+</xsd:schema>
