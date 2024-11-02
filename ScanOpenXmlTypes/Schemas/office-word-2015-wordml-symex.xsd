@@ -1,0 +1,20 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:w="http://purl.oclc.org/ooxml/wordprocessingml/main"
+	        xmlns:s="http://purl.oclc.org/ooxml/officeDocument/sharedTypes"
+            elementFormDefault="qualified"
+            attributeFormDefault="qualified"
+            blockDefault="#all"
+            xmlns="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+            targetNamespace="http://schemas.microsoft.com/office/word/2015/wordml/symex">
+	<xsd:import id="w"
+	            namespace="http://purl.oclc.org/ooxml/wordprocessingml/main"
+	            schemaLocation="wml.xsd"/>
+	<xsd:complexType name="CT_SymEx">
+		<xsd:attribute name="font"
+		               type="s:ST_String"/>
+		<xsd:attribute name="char"
+		               type="w:ST_LongHexNumber"/>
+	</xsd:complexType>
+	<xsd:element name="symEx"
+	             type="CT_SymEx"/>
+</xsd:schema>

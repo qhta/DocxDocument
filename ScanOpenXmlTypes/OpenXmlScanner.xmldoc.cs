@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Runtime.Versioning;
 using System.Text.RegularExpressions;
+using System.Xml;
 using System.Xml.Linq;
 
 using Microsoft.EntityFrameworkCore;
@@ -34,7 +35,7 @@ public partial class OpenXmlScanner : IDisposable, IAsyncDisposable
     OpenXmlDocumentation = OpenXmlDocumentationFile(OpenXmlAssembly);
     OpenXmlFrameworkDocumentation = OpenXmlDocumentationFile(OpenXmlFrameworkAssembly);
     ScanTypeDescriptions();
-    //ScanPropertiesDescriptions();
+    ScanPropertiesDescriptions();
   }
 
   private XDocument OpenXmlDocumentationFile(Assembly assembly)
@@ -250,7 +251,7 @@ public partial class OpenXmlScanner : IDisposable, IAsyncDisposable
         }
         //Console.WriteLine($"{type} Office version = {officeVersion}");
       }
-      else if (text.StartsWith("When the object is serialized out as xml"))
+      else if (text.Contains("is serialized out as xml"))
       {
         if (text.EndsWith("."))
           text = text.Substring(0, text.Length - 1);
@@ -259,7 +260,6 @@ public partial class OpenXmlScanner : IDisposable, IAsyncDisposable
           tag = text.Substring(k + 1);
         if (tag == ":")
           tag = null;
-        //Console.WriteLine($"{type} tag = {tag}");
       }
       else
       {
@@ -269,8 +269,14 @@ public partial class OpenXmlScanner : IDisposable, IAsyncDisposable
           description += text;
       }
     }
-    if (description == null)
-      description = summaryElement.Value.Trim();
+    if (description==null)
+    {
+      var firstNode = summaryElement.FirstNode;
+      if (firstNode != null && firstNode.NodeType==XmlNodeType.Text)
+      {
+        description = (firstNode as XText)?.Value.Trim();
+      }
+    }
     return description;
   }
 

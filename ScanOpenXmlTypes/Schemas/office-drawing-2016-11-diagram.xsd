@@ -1,0 +1,28 @@
+<xsd:schema targetNamespace="http://schemas.microsoft.com/office/drawing/2016/11/diagram" xmlns="http://schemas.microsoft.com/office/drawing/2016/11/diagram" xmlns:dgm="http://purl.oclc.org/ooxml/drawingml/diagram" xmlns:a="http://purl.oclc.org/ooxml/drawingml/main" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+   <xsd:import schemaLocation="igxtypes.xsd" namespace="http://purl.oclc.org/ooxml/drawingml/diagram"/>
+   <xsd:import schemaLocation="dml-txbullet.xsd" namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+   <xsd:simpleType name="ST_STorageType">
+     <xsd:restriction base="xsd:token">
+       <xsd:enumeration value="sibTrans"/>
+       <xsd:enumeration value="parTrans"/>
+     </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:complexType name="CT_DiagramAutoBullet">
+     <xsd:group ref="a:EG_TextBullet" minOccurs="1" maxOccurs="1"/>
+     <xsd:attribute name="prefix" type="xsd:string" use="optional"/>
+     <xsd:attribute name="leadZeros" type="xsd:boolean" use="optional"/>
+   </xsd:complexType>
+   <xsd:complexType name="CT_NumberDiagramInfo">
+     <xsd:sequence>
+       <xsd:element name="buPr" type="CT_DiagramAutoBullet" minOccurs="1" maxOccurs="1"/>
+     </xsd:sequence>
+     <xsd:attribute name="lvl" type="xsd:unsignedInt" use="required"/>
+     <xsd:attribute name="ptType" type="ST_STorageType" use="required"/>
+   </xsd:complexType>
+   <xsd:complexType name="CT_NumberDiagramInfoList">
+     <xsd:sequence>
+       <xsd:element name="autoBuNodeInfo" type="CT_NumberDiagramInfo" minOccurs="0" maxOccurs="unbounded"/>
+     </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="autoBuNodeInfoLst" type="CT_NumberDiagramInfoList"/>
+ </xsd:schema>

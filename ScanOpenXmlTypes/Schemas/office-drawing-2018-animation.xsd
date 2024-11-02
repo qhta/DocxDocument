@@ -1,0 +1,30 @@
+<xsd:schema targetNamespace="http://schemas.microsoft.com/office/drawing/2018/animation" xmlns="http://schemas.microsoft.com/office/drawing/2018/animation" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:a="http://purl.oclc.org/ooxml/drawingml/main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:import schemaLocation="dml-baseTypes.xsd" namespace="http://purl.oclc.org/ooxml/drawingml/main"/>
+   <xsd:simpleType name="ST_AnimationName">
+     <xsd:restriction base="xsd:string"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ST_Indefinite">
+     <xsd:restriction base="xsd:token">
+       <xsd:enumeration value="indefinite"/>
+     </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ST_PlayCount">
+     <xsd:union memberTypes="xsd:unsignedInt ST_Indefinite"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ST_UniversalTimeOffset">
+     <xsd:restriction base="xsd:string"/>
+   </xsd:simpleType>
+   <xsd:complexType name="CT_AnimationProperties">
+     <xsd:sequence>
+       <xsd:element name="extLst" type="a:CT_OfficeArtExtensionList" minOccurs="0" maxOccurs="1"/>
+     </xsd:sequence>
+     <xsd:attribute name="name" use="optional" default="" type="ST_AnimationName"/>
+     <xsd:attribute name="length" use="required" type="ST_UniversalTimeOffset"/>
+     <xsd:attribute name="count" type="ST_PlayCount" use="optional" default="1"/>
+     <xsd:attribute name="auto" type="xsd:boolean" use="optional" default="true"/>
+     <xsd:attribute name="offset" type="ST_UniversalTimeOffset" use="optional" default="0"/>
+     <xsd:attribute name="st" type="ST_UniversalTimeOffset" use="optional" default="0"/>
+     <xsd:attribute name="end" type="ST_UniversalTimeOffset" use="optional" default="0"/>
+   </xsd:complexType>
+   <xsd:element name="animPr" type="CT_AnimationProperties"/>
+ </xsd:schema>
