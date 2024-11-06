@@ -25,8 +25,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Clean\Table.docx1">
+    <None Update="Clean\Table1.docx1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Clean\Table2.docx1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Clean\Table3.docx1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Clean\Table4.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Clean\Table5.docx1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Clean\Test1.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Clean\Test1.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
