@@ -38,7 +38,7 @@ public partial class OpenXmlScanner : IDisposable, IAsyncDisposable
     if (!Directory.Exists(newDocxDirectory))
       Directory.CreateDirectory(newDocxDirectory);
     File.Copy(docxFileName, newDocxFileName, true);
-    var cleaner = new Qhta.OpenXmlTools.DocumentCleaner();
+    var cleaner = new Qhta.OpenXmlTools.OpenXmlCleaner();
     cleaner.CleanDocument(newDocxFileName);
 
   }
