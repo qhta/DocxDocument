@@ -1430,7 +1430,7 @@
 		               type="ST_TrueFalse"
 		               use="optional">
 			<xsd:annotation>
-				<xsd:documentation>Text Path Trim Toggle</xsd:documentation>
+				<xsd:documentation>Text Path TrimEnd Toggle</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="xscale"
