@@ -25,6 +25,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Clean\ISO_IEC_29500-1_2016.docx1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Clean\Part1.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Clean\Table1.docx1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

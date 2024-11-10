@@ -12,6 +12,7 @@ internal class Program
   {
     var cleaner = new OpenXmlCleaner();
     cleaner.VerboseLevel = 2;
+    cleaner.ExampleFont = "Consolas";
     cleaner.CleanDocxFiles();
     //using var scanner = new OpenXmlScanner();
     //scanner.VerboseLevel = 2;
