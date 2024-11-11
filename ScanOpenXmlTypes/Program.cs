@@ -8,7 +8,7 @@ namespace ScanOpenXmlTypes;
 
 internal class Program
 {
-  static void Main(string[] args)
+   static void Main(string[] args)
   {
     var cleaner = new OpenXmlCleaner();
     cleaner.VerboseLevel = 2;
