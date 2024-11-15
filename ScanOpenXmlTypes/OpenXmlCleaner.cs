@@ -9,10 +9,8 @@ public class OpenXmlCleaner : DocumentCleaner
 
   public void CleanDocxFiles()
   {
-    var docxPath = Assembly.GetExecutingAssembly().Location;
-    docxPath = docxPath.Substring(0, docxPath.LastIndexOf('\\'));
-    docxPath = Path.Combine(docxPath, "Clean");
-    var docxFiles = Directory.GetFiles(docxPath, "*.docx");
+    string workingDirectory = Directory.GetCurrentDirectory();
+    var docxFiles = Directory.GetFiles(workingDirectory, "*.docx");
     foreach (var schemaFile in docxFiles)
     {
       CleanDocxFile(schemaFile);
@@ -21,6 +19,8 @@ public class OpenXmlCleaner : DocumentCleaner
 
   public void CleanDocxFile(string docxFileName)
   {
+    string workingDirectory = Directory.GetCurrentDirectory();
+    docxFileName = Path.Combine(workingDirectory, docxFileName);
     if (VerboseLevel > 0)
       Console.WriteLine($"Cleaning documentation file {docxFileName}");
     var newDocxDirectory = Path.GetDirectoryName(docxFileName) + "Packed";
