@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection;
 using DocumentFormat.OpenXml.Wordprocessing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -10,10 +11,22 @@ internal class Program
 {
    static void Main(string[] args)
   {
+    var docxPath = Assembly.GetExecutingAssembly().Location;
+    docxPath = docxPath.Substring(0, docxPath.LastIndexOf('\\'));
+
+    docxPath = Path.Combine(docxPath, "Clean");
+    Directory.SetCurrentDirectory(docxPath);
     var cleaner = new OpenXmlCleaner();
     cleaner.VerboseLevel = 2;
     cleaner.ExampleFont = "Consolas";
-    cleaner.CleanDocxFiles();
+    if (args.Length > 0)
+    {
+      cleaner.CleanDocxFile(args[0]);
+    }
+    else
+    {
+      cleaner.CleanDocxFiles();
+    }
     //using var scanner = new OpenXmlScanner();
     //scanner.VerboseLevel = 2;
     ////scanner.ScanAssembly();
