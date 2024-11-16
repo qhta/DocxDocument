@@ -1,8 +1,7 @@
 {
   "profiles": {
     "ScanOpenXmlTypes": {
-      "commandName": "Project",
-      "commandLineArgs": "Example2.docx"
+      "commandName": "Project"
     }
   }
 }
