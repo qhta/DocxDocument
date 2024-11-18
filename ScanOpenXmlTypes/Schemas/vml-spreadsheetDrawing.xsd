@@ -168,7 +168,7 @@
       </xsd:element>
       <xsd:element name="WidthMin" type="xsd:integer">
         <xsd:annotation>
-          <xsd:documentation>Minimum Width</xsd:documentation>
+          <xsd:documentation>Minimum CellsCount</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="Sel" type="xsd:integer">
@@ -278,7 +278,7 @@
       </xsd:element>
       <xsd:element name="Dx" type="xsd:integer">
         <xsd:annotation>
-          <xsd:documentation>Scroll Bar Width</xsd:documentation>
+          <xsd:documentation>Scroll Bar CellsCount</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="MapOCX" type="ST_TrueFalseBlank">

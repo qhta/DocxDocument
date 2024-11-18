@@ -577,7 +577,7 @@
 		               type="ST_StrokeArrowWidth"
 		               use="optional">
 			<xsd:annotation>
-				<xsd:documentation>Line Start Arrowhead Width</xsd:documentation>
+				<xsd:documentation>Line Start Arrowhead CellsCount</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="startarrowlength"
@@ -598,7 +598,7 @@
 		               type="ST_StrokeArrowWidth"
 		               use="optional">
 			<xsd:annotation>
-				<xsd:documentation>Line End Arrowhead Width</xsd:documentation>
+				<xsd:documentation>Line End Arrowhead CellsCount</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="endarrowlength"
@@ -1890,7 +1890,7 @@
 	</xsd:simpleType>
 	<xsd:simpleType name="ST_StrokeArrowWidth">
 		<xsd:annotation>
-			<xsd:documentation>Stroke Arrowhead Width</xsd:documentation>
+			<xsd:documentation>Stroke Arrowhead CellsCount</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="narrow">
