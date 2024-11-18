@@ -1,7 +1,8 @@
 {
   "profiles": {
     "ScanOpenXmlTypes": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "JoinTables3.docx"
     }
   }
 }
