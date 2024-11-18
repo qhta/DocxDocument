@@ -1615,7 +1615,7 @@
             <param name="id">Id of relationship</param>
             <returns>A package relationship</returns>
         </member>
-        <member name="P:DocumentFormat.OpenXml.Packaging.IRelationshipCollection.Count">
+        <member name="P:DocumentFormat.OpenXml.Packaging.IRelationshipCollection.RowsCount">
             <summary>
             Gets a count of the registered relationships.
             </summary>
@@ -4315,7 +4315,7 @@
             <param name="index">Index to retrieve the element.</param>
             <returns>The element if found.</returns>
         </member>
-        <member name="P:DocumentFormat.OpenXml.OpenXmlElementList.Count">
+        <member name="P:DocumentFormat.OpenXml.OpenXmlElementList.RowsCount">
             <summary>
             Gets the number of children the element has.
             </summary>
@@ -7950,7 +7950,7 @@
             </summary>
             <param name="expectedChildren"></param>
         </member>
-        <member name="P:DocumentFormat.OpenXml.Validation.Schema.ExpectedChildren.Count">
+        <member name="P:DocumentFormat.OpenXml.Validation.Schema.ExpectedChildren.RowsCount">
             <summary>
             Gets the count of required children elements.
             </summary>

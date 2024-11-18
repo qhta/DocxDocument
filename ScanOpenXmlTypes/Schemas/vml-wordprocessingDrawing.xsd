@@ -39,7 +39,7 @@
 		               type="xsd:positiveInteger"
 		               use="optional">
 			<xsd:annotation>
-				<xsd:documentation>Border Width</xsd:documentation>
+				<xsd:documentation>Border CellsCount</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="shadow"
