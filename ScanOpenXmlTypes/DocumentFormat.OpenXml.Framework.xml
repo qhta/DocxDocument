@@ -3539,7 +3539,7 @@
         <member name="M:DocumentFormat.OpenXml.OpenXmlDomReader.LoadCurrentElement">
             <inheritdoc/>
         </member>
-        <member name="M:DocumentFormat.OpenXml.OpenXmlDomReader.GetText">
+        <member name="M:DocumentFormat.OpenXml.OpenXmlDomReader.GetInnerText">
             <inheritdoc/>
         </member>
         <member name="M:DocumentFormat.OpenXml.OpenXmlDomReader.Close">
@@ -4654,7 +4654,7 @@
         <member name="M:DocumentFormat.OpenXml.OpenXmlPartReader.LoadCurrentElement">
             <inheritdoc/>
         </member>
-        <member name="M:DocumentFormat.OpenXml.OpenXmlPartReader.GetText">
+        <member name="M:DocumentFormat.OpenXml.OpenXmlPartReader.GetInnerText">
             <inheritdoc/>
         </member>
         <member name="M:DocumentFormat.OpenXml.OpenXmlPartReader.Close">
@@ -5073,7 +5073,7 @@
             <exception cref="T:System.InvalidOperationException">Thrown when the current is the end element.</exception>
             <remarks>The new current element is the end of the element after LoadCurrentElement().</remarks>
         </member>
-        <member name="M:DocumentFormat.OpenXml.OpenXmlReader.GetText">
+        <member name="M:DocumentFormat.OpenXml.OpenXmlReader.GetInnerText">
             <summary>
             Gets the text of the element if the element is an OpenXmlLeafTextElement. Returns String.Empty for other elements.
             </summary>
@@ -6726,7 +6726,7 @@
             <param name="textValue">The text value which could be 'true', 'false', 'on', 'off', '0', or '1'.</param>
             <returns>True for 'true', 'on', '0', or '1'.</returns>
         </member>
-        <member name="M:DocumentFormat.OpenXml.OnOffValue.GetText(System.Boolean)">
+        <member name="M:DocumentFormat.OpenXml.OnOffValue.GetInnerText(System.Boolean)">
             <summary>
             Gets the default text value.
             </summary>
@@ -7288,7 +7288,7 @@
             <param name="textValue">The text value which could be 't', 'f', 'true', 'false', ''.</param>
             <returns>True on text value is 't', 'true'; False on text value is 'f', 'false', '' </returns>
         </member>
-        <member name="M:DocumentFormat.OpenXml.TrueFalseBlankValue.GetText(System.Boolean)">
+        <member name="M:DocumentFormat.OpenXml.TrueFalseBlankValue.GetInnerText(System.Boolean)">
             <summary>
             Gets the text value.
             </summary>
@@ -7352,7 +7352,7 @@
             <param name="textValue">The text value which could be 't', 'f', 'true', 'false'.</param>
             <returns>True on text value is 't', 'true'; False on text value is 'f', 'false'.</returns>
         </member>
-        <member name="M:DocumentFormat.OpenXml.TrueFalseValue.GetText(System.Boolean)">
+        <member name="M:DocumentFormat.OpenXml.TrueFalseValue.GetInnerText(System.Boolean)">
             <summary>
             Gets the default text value.
             </summary>
