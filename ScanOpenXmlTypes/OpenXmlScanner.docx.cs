@@ -79,7 +79,7 @@ public partial class OpenXmlScanner : IDisposable, IAsyncDisposable
         if (oldPara.IsHeading())
         {
           foundHeadingParagraphs++;
-          var text = oldPara.GetText().Trim();
+          var text = oldPara.GetText(TextOptions.PlainText).Trim();
           if (!text.Contains("...."))
           {
             var numberingString = oldPara.GetNumberingString();
@@ -102,7 +102,7 @@ public partial class OpenXmlScanner : IDisposable, IAsyncDisposable
         {
           if (wasHeading)
           {
-            var text = oldPara.GetText().Trim();
+            var text = oldPara.GetText(TextOptions.PlainText).Trim();
             if (paraCount < 1 || text.Contains("CT_") || text.Contains("ST_"))
             {
               if (String.IsNullOrEmpty(text)) continue;
