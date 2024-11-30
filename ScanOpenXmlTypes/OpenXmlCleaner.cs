@@ -27,15 +27,19 @@ public class OpenXmlCleaner : DocumentCleaner
     var newDocxFileName = Path.Combine(newDocxDirectory, Path.GetFileName(docxFileName));
     if (!Directory.Exists(newDocxDirectory))
       Directory.CreateDirectory(newDocxDirectory);
-    try
+    var tryCount = 3;
+    while (tryCount > 0)
     {
-      File.Copy(docxFileName, newDocxFileName, true);
-    } catch (Exception e)
-    {
-      Console.WriteLine(e);
-      File.Copy(docxFileName, newDocxFileName, true);
+      try
+      {
+        File.Copy(docxFileName, newDocxFileName, true);
+        tryCount = 0;
+      } catch (Exception e)
+      {
+        Console.WriteLine(e);
+        tryCount--;
+      }
     }
-
     CleanDocument(newDocxFileName);
   }
 
