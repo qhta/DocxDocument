@@ -2,7 +2,7 @@
   "profiles": {
     "ScanOpenXmlTypes": {
       "commandName": "Project",
-      "commandLineArgs": "\"UnicodeBlock.docx\""
+      "commandLineArgs": "\"ISO_IEC_29500-1_2016 Chapter17.docx\""
     }
   }
 }
