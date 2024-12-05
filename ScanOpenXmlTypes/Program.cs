@@ -17,7 +17,7 @@ internal class Program
     docxPath = Path.Combine(docxPath, "Clean");
     Directory.SetCurrentDirectory(docxPath);
     var cleaner = new OpenXmlCleaner();
-    cleaner.VerboseLevel = 2;
+    cleaner.VerboseLevel = 1;
     cleaner.ExampleFont = "Consolas";
     if (args.Length > 0)
     {
