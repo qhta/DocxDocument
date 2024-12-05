@@ -2,7 +2,7 @@
   "profiles": {
     "ScanOpenXmlTypes": {
       "commandName": "Project",
-      "commandLineArgs": "\"ISO_IEC_29500-1_2016 Chapter17.docx\""
+      "commandLineArgs": "\"JoinTables4.docx\""
     }
   }
 }
