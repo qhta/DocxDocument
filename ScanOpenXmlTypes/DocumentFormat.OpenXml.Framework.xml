@@ -3988,7 +3988,7 @@
         </member>
         <member name="M:DocumentFormat.OpenXml.OpenXmlElement.PushMcContext(System.Xml.XmlReader)">
             <summary>
-            Reads MC attributes from the xmlReader and than pushes MC Context on needed.
+            Reads MC attributes from the xmlReader and than pushes MC ContextRange on needed.
             This xmlReader will keeps on the element start after this method.
             </summary>
             <param name="xmlReader">This method screen all attribute from xmlReader, and then set the xmlReader back to the element start.</param>
