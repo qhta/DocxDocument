@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenXmlDatabase", "..\OpenX
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.OpenXmlTools", "..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXmlTools.csproj", "{614C1B46-59DF-4CFA-B949-E998B0EE8F15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTextProcessor", "..\TestTextProcessor\TestTextProcessor.csproj", "{22290748-2F6E-4515-9625-F127A8989E44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{614C1B46-59DF-4CFA-B949-E998B0EE8F15}.Release|x64.Build.0 = Release|Any CPU
 		{614C1B46-59DF-4CFA-B949-E998B0EE8F15}.Release|x86.ActiveCfg = Release|Any CPU
 		{614C1B46-59DF-4CFA-B949-E998B0EE8F15}.Release|x86.Build.0 = Release|Any CPU
+		{22290748-2F6E-4515-9625-F127A8989E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22290748-2F6E-4515-9625-F127A8989E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22290748-2F6E-4515-9625-F127A8989E44}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{22290748-2F6E-4515-9625-F127A8989E44}.Debug|x64.Build.0 = Debug|Any CPU
+		{22290748-2F6E-4515-9625-F127A8989E44}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{22290748-2F6E-4515-9625-F127A8989E44}.Debug|x86.Build.0 = Debug|Any CPU
+		{22290748-2F6E-4515-9625-F127A8989E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22290748-2F6E-4515-9625-F127A8989E44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22290748-2F6E-4515-9625-F127A8989E44}.Release|x64.ActiveCfg = Release|Any CPU
+		{22290748-2F6E-4515-9625-F127A8989E44}.Release|x64.Build.0 = Release|Any CPU
+		{22290748-2F6E-4515-9625-F127A8989E44}.Release|x86.ActiveCfg = Release|Any CPU
+		{22290748-2F6E-4515-9625-F127A8989E44}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

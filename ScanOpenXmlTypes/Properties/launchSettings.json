@@ -2,7 +2,7 @@
   "profiles": {
     "ScanOpenXmlTypes": {
       "commandName": "Project",
-      "commandLineArgs": "\"JoinTables4.docx\""
+      "commandLineArgs": "-t \"FormattedText.docx\""
     }
   }
 }

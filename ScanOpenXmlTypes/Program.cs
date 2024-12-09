@@ -1,30 +1,50 @@
 ﻿using System.Diagnostics;
 using System.Reflection;
+
 using DocumentFormat.OpenXml.Wordprocessing;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 
 namespace ScanOpenXmlTypes;
 
-internal class Program
+public class Program
 {
-   static void Main(string[] args)
+  static void Main(string[] args)
   {
     var docxPath = Assembly.GetExecutingAssembly().Location;
     docxPath = docxPath.Substring(0, docxPath.LastIndexOf('\\'));
 
-    docxPath = Path.Combine(docxPath, "Clean");
+    docxPath = Path.Combine(docxPath, "CleanIt");
     Directory.SetCurrentDirectory(docxPath);
     var cleaner = new OpenXmlCleaner();
-    cleaner.VerboseLevel = 1;
-    cleaner.ExampleFont = "Consolas";
-    if (args.Length > 0)
+    var argList = args.ToList();
+    var verboseLevel = 1;
+    bool testTextProcessing = false;
+    if (argList.Count > 0)
     {
+      var k = argList.IndexOf("-v");
+      if (k >= 0)
+      {
+        if (k < argList.Count - 1)
+        {
+          verboseLevel = int.Parse(argList[k + 1]);
+          argList.RemoveAt(k + 1);
+        }
+        argList.RemoveAt(k);
+      }
+    }
+    if (argList.Count > 0)
+    {
+      cleaner.VerboseLevel = verboseLevel;
+      cleaner.ExampleFont = "Consolas";
       cleaner.CleanDocxFile(args[0]);
     }
     else
     {
+      cleaner.VerboseLevel = verboseLevel;
+      cleaner.ExampleFont = "Consolas";
       cleaner.CleanDocxFiles();
     }
     //using var scanner = new OpenXmlScanner();

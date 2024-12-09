@@ -63,17 +63,17 @@
       </xsd:element>
       <xsd:element name="TextHAlign" type="xsd:string">
         <xsd:annotation>
-          <xsd:documentation>Horizontal Text Alignment</xsd:documentation>
+          <xsd:documentation>Horizontal SearchText Alignment</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="TextVAlign" type="xsd:string">
         <xsd:annotation>
-          <xsd:documentation>Vertical Text Alignment</xsd:documentation>
+          <xsd:documentation>Vertical SearchText Alignment</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="LockText" type="ST_TrueFalseBlank">
         <xsd:annotation>
-          <xsd:documentation>Text Lock</xsd:documentation>
+          <xsd:documentation>SearchText Lock</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="JustLastX" type="ST_TrueFalseBlank">
@@ -318,7 +318,7 @@
       </xsd:element>
       <xsd:element name="ScriptText" type="xsd:string">
         <xsd:annotation>
-          <xsd:documentation>HTML Script Text</xsd:documentation>
+          <xsd:documentation>HTML Script SearchText</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="ScriptExtended" type="xsd:string">
@@ -338,7 +338,7 @@
       </xsd:element>
       <xsd:element name="FmlaTxbx" type="xsd:string">
         <xsd:annotation>
-          <xsd:documentation>Text Formula</xsd:documentation>
+          <xsd:documentation>SearchText Formula</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:choice>
@@ -407,7 +407,7 @@
       </xsd:enumeration>
       <xsd:enumeration value="Edit">
         <xsd:annotation>
-          <xsd:documentation>Editable Text Field</xsd:documentation>
+          <xsd:documentation>Editable SearchText Field</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="GBox">

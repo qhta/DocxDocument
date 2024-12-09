@@ -135,7 +135,7 @@
 		               type="xsd:string"
 		               use="optional">
 			<xsd:annotation>
-				<xsd:documentation>Alternate Text</xsd:documentation>
+				<xsd:documentation>Alternate SearchText</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="coordsize"
@@ -319,7 +319,7 @@
 		</xsd:attribute>
 		<xsd:attribute ref="o:insetmode">
 			<xsd:annotation>
-				<xsd:documentation>Text Inset Mode</xsd:documentation>
+				<xsd:documentation>SearchText Inset Mode</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:attributeGroup>
@@ -839,7 +839,7 @@
 	<xsd:element name="textbox"
 	             type="CT_Textbox">
 		<xsd:annotation>
-			<xsd:documentation>Text Box</xsd:documentation>
+			<xsd:documentation>SearchText Box</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:element name="shadow"
@@ -857,7 +857,7 @@
 	<xsd:element name="textpath"
 	             type="CT_TextPath">
 		<xsd:annotation>
-			<xsd:documentation>Text Layout Path</xsd:documentation>
+			<xsd:documentation>SearchText Layout Path</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="CT_Fill">
@@ -1213,7 +1213,7 @@
 		               type="xsd:string"
 		               use="optional">
 			<xsd:annotation>
-				<xsd:documentation>Text Box Bounding Box</xsd:documentation>
+				<xsd:documentation>SearchText Box Bounding Box</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="fillok"
@@ -1255,7 +1255,7 @@
 		               type="ST_TrueFalse"
 		               use="optional">
 			<xsd:annotation>
-				<xsd:documentation>Text Path Toggle</xsd:documentation>
+				<xsd:documentation>SearchText Path Toggle</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="insetpenok"
@@ -1388,17 +1388,17 @@
 		               type="xsd:string"
 		               use="optional">
 			<xsd:annotation>
-				<xsd:documentation>Text Box Inset</xsd:documentation>
+				<xsd:documentation>SearchText Box Inset</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute ref="o:singleclick">
 			<xsd:annotation>
-				<xsd:documentation>Text Box Single-Click Selection Toggle</xsd:documentation>
+				<xsd:documentation>SearchText Box Single-Click Selection Toggle</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute ref="o:insetmode">
 			<xsd:annotation>
-				<xsd:documentation>Text Inset Mode</xsd:documentation>
+				<xsd:documentation>SearchText Inset Mode</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
@@ -1409,7 +1409,7 @@
 		               type="ST_TrueFalse"
 		               use="optional">
 			<xsd:annotation>
-				<xsd:documentation>Text Path Toggle</xsd:documentation>
+				<xsd:documentation>SearchText Path Toggle</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="fitshape"
@@ -1430,21 +1430,21 @@
 		               type="ST_TrueFalse"
 		               use="optional">
 			<xsd:annotation>
-				<xsd:documentation>Text Path TrimEnd Toggle</xsd:documentation>
+				<xsd:documentation>SearchText Path TrimEnd Toggle</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="xscale"
 		               type="ST_TrueFalse"
 		               use="optional">
 			<xsd:annotation>
-				<xsd:documentation>Text X-Scaling</xsd:documentation>
+				<xsd:documentation>SearchText X-Scaling</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="string"
 		               type="xsd:string"
 		               use="optional">
 			<xsd:annotation>
-				<xsd:documentation>Text Path Text</xsd:documentation>
+				<xsd:documentation>SearchText Path SearchText</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>

@@ -6,14 +6,14 @@
   </xsd:element>
   <xsd:element name="textdata" type="CT_Rel">
     <xsd:annotation>
-      <xsd:documentation>VML Diagram Text</xsd:documentation>
+      <xsd:documentation>VML Diagram SearchText</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:complexType name="CT_Empty" />
   <xsd:complexType name="CT_Rel">
     <xsd:attribute name="id" type="xsd:string">
       <xsd:annotation>
-        <xsd:documentation>Text Reference</xsd:documentation>
+        <xsd:documentation>SearchText Reference</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>

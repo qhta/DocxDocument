@@ -53,7 +53,7 @@
 	<xsd:element name="wrap"
 	             type="CT_Wrap">
 		<xsd:annotation>
-			<xsd:documentation>Text Wrapping</xsd:documentation>
+			<xsd:documentation>SearchText Wrapping</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="CT_Wrap">
@@ -264,7 +264,7 @@
 	</xsd:simpleType>
 	<xsd:simpleType name="ST_WrapType">
 		<xsd:annotation>
-			<xsd:documentation>Text Wrapping Type</xsd:documentation>
+			<xsd:documentation>SearchText Wrapping Type</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="topAndBottom">
@@ -296,7 +296,7 @@
 	</xsd:simpleType>
 	<xsd:simpleType name="ST_WrapSide">
 		<xsd:annotation>
-			<xsd:documentation>Text Wrapping Side</xsd:documentation>
+			<xsd:documentation>SearchText Wrapping Side</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="both">
@@ -338,7 +338,7 @@
 			</xsd:enumeration>
 			<xsd:enumeration value="text">
 				<xsd:annotation>
-					<xsd:documentation>Text</xsd:documentation>
+					<xsd:documentation>SearchText</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="char">
@@ -365,7 +365,7 @@
 			</xsd:enumeration>
 			<xsd:enumeration value="text">
 				<xsd:annotation>
-					<xsd:documentation>Text</xsd:documentation>
+					<xsd:documentation>SearchText</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="line">

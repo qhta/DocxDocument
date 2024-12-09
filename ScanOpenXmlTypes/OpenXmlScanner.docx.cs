@@ -29,6 +29,7 @@ public partial class OpenXmlScanner : IDisposable, IAsyncDisposable
       CleanDocxFile(schemaFile);
     }
   }
+
   public void CleanDocxFile(string docxFileName)
   {
     if (VerboseLevel > 0)
@@ -40,7 +41,6 @@ public partial class OpenXmlScanner : IDisposable, IAsyncDisposable
     File.Copy(docxFileName, newDocxFileName, true);
     var cleaner = new Qhta.OpenXmlTools.DocumentCleaner();
     cleaner.CleanDocument(newDocxFileName);
-
   }
 
   public void PackDocxFile(string docxFileName)

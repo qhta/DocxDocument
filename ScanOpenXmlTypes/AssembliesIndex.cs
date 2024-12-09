@@ -1,4 +1,5 @@
 ﻿using OpenXmlDatabase.Models;
+using Assembly = OpenXmlDatabase.Models.Assembly;
 
 namespace ScanOpenXmlTypes;
 
