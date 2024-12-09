@@ -662,31 +662,31 @@
 	<xsd:element name="left"
 	             type="CT_StrokeChild">
 		<xsd:annotation>
-			<xsd:documentation>Text Box Left Stroke</xsd:documentation>
+			<xsd:documentation>SearchText Box Left Stroke</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:element name="top"
 	             type="CT_StrokeChild">
 		<xsd:annotation>
-			<xsd:documentation>Text Box Top Stroke</xsd:documentation>
+			<xsd:documentation>SearchText Box Top Stroke</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:element name="right"
 	             type="CT_StrokeChild">
 		<xsd:annotation>
-			<xsd:documentation>Text Box Right Stroke</xsd:documentation>
+			<xsd:documentation>SearchText Box Right Stroke</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:element name="bottom"
 	             type="CT_StrokeChild">
 		<xsd:annotation>
-			<xsd:documentation>Text Box Bottom Stroke</xsd:documentation>
+			<xsd:documentation>SearchText Box Bottom Stroke</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:element name="column"
 	             type="CT_StrokeChild">
 		<xsd:annotation>
-			<xsd:documentation>Text Box Interior Stroke</xsd:documentation>
+			<xsd:documentation>SearchText Box Interior Stroke</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:element name="clippath"
@@ -1126,7 +1126,7 @@
 		               type="ST_TrueFalse"
 		               use="optional">
 			<xsd:annotation>
-				<xsd:documentation>Text Lock</xsd:documentation>
+				<xsd:documentation>SearchText Lock</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="aspectratio"
@@ -1542,7 +1542,7 @@
 			</xsd:enumeration>
 			<xsd:enumeration value="blackTextAndLines">
 				<xsd:annotation>
-					<xsd:documentation>Black Text And Lines</xsd:documentation>
+					<xsd:documentation>Black SearchText And Lines</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 		</xsd:restriction>
