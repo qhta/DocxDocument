@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TestTextProcessor": {
+      "commandName": "Project",
+      "commandLineArgs": "FormattedText.docx"
+    }
+  }
+}

@@ -4415,7 +4415,7 @@
         <member name="P:DocumentFormat.OpenXml.OpenXmlLeafTextElement.InnerXml">
             <inheritdoc/>
         </member>
-        <member name="P:DocumentFormat.OpenXml.OpenXmlLeafTextElement.Text">
+        <member name="P:DocumentFormat.OpenXml.OpenXmlLeafTextElement.SearchText">
             <summary>
             Gets or sets the text of the current element.
             </summary>
@@ -4805,7 +4805,7 @@
             </summary>
             <param name="openXmlPart">The OpenXmlPart to be written to.</param>
         </member>
-        <member name="M:DocumentFormat.OpenXml.OpenXmlPartWriter.#ctor(DocumentFormat.OpenXml.Packaging.OpenXmlPart,System.Text.Encoding)">
+        <member name="M:DocumentFormat.OpenXml.OpenXmlPartWriter.#ctor(DocumentFormat.OpenXml.Packaging.OpenXmlPart,System.SearchText.Encoding)">
             <summary>
             Initializes a new instance of the OpenXmlPartWriter.
             </summary>
@@ -4818,7 +4818,7 @@
             </summary>
             <param name="partStream">The given part stream.</param>
         </member>
-        <member name="M:DocumentFormat.OpenXml.OpenXmlPartWriter.#ctor(System.IO.Stream,System.Text.Encoding)">
+        <member name="M:DocumentFormat.OpenXml.OpenXmlPartWriter.#ctor(System.IO.Stream,System.SearchText.Encoding)">
             <summary>
             Initializes a new instance of the OpenXmlPartWriter.
             </summary>
@@ -5153,7 +5153,7 @@
         <member name="P:DocumentFormat.OpenXml.OpenXmlUnknownElement.InnerText">
             <inheritdoc/>
         </member>
-        <member name="P:DocumentFormat.OpenXml.OpenXmlUnknownElement.Text">
+        <member name="P:DocumentFormat.OpenXml.OpenXmlUnknownElement.SearchText">
             <summary>
             Gets the text of the unknown element, only if the unknown element
             has only one child that is a text node.
@@ -5204,7 +5204,7 @@
             <param name="openXmlPart">The OpenXmlPart to be written.</param>
             <returns>The created OpenXmlWriter instance.</returns>
         </member>
-        <member name="M:DocumentFormat.OpenXml.OpenXmlWriter.Create(DocumentFormat.OpenXml.Packaging.OpenXmlPart,System.Text.Encoding)">
+        <member name="M:DocumentFormat.OpenXml.OpenXmlWriter.Create(DocumentFormat.OpenXml.Packaging.OpenXmlPart,System.SearchText.Encoding)">
             <summary>
             Create an OpenXmlWriter from the OpenXmlPart.
             </summary>
@@ -5219,7 +5219,7 @@
             <param name="partStream">The target stream.</param>
             <returns>The created OpenXmlWriter instance.</returns>
         </member>
-        <member name="M:DocumentFormat.OpenXml.OpenXmlWriter.Create(System.IO.Stream,System.Text.Encoding)">
+        <member name="M:DocumentFormat.OpenXml.OpenXmlWriter.Create(System.IO.Stream,System.SearchText.Encoding)">
             <summary>
             Create an OpenXmlWriter on given stream
             </summary>
@@ -5577,7 +5577,7 @@
         </member>
         <member name="P:DocumentFormat.OpenXml.ExceptionMessages.InvalidWriteStringCall">
             <summary>
-              Looks up a localized string similar to Text string can only be written out in OpenXmlLeafTextElement..
+              Looks up a localized string similar to SearchText string can only be written out in OpenXmlLeafTextElement..
             </summary>
         </member>
         <member name="P:DocumentFormat.OpenXml.ExceptionMessages.InvalidXmlIDStringException">
