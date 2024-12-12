@@ -217,6 +217,7 @@ public partial class TextProcessingTester
   private const string xmlnsString =
     " xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"" +
     " xmlns:w14=\"http://schemas.microsoft.com/office/word/2010/wordml\"" +
+    " xmlns:my=\"presentationPurpose\"" +
     //" xmlns:wpc=\"http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas\"" +
     //" xmlns:cx=\"http://schemas.microsoft.com/office/drawing/2014/chartex\"" +
     //" xmlns:cx1=\"http://schemas.microsoft.com/office/drawing/2015/9/8/chartex\"" +
@@ -257,28 +258,29 @@ public partial class TextProcessingTester
     "<w:p w:rsidRPr=\"00C0491F\" w:rsidR=\"007D6C6C\" w:rsidP=\"00F043F7\" w:rsidRDefault=\"00D74F81\" w14:paraId=\"7DF600F6\" w14:textId=\"3F81EAE3\">\r\n\t\t\t<w:bookmarkStart w:name=\"_GoBack\" w:id=\"0\"/>\r\n\t\t\t<w:bookmarkEnd w:id=\"0\"/>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:t>This</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t\t<w:t>text</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t\t<w:t>is</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t</w:r>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:rPr>\r\n\t\t\t\t\t<w:b/>\r\n\t\t\t\t\t<w:bCs/>\r\n\t\t\t\t</w:rPr>\r\n\t\t\t\t<w:t>bold</w:t>\r\n\t\t\t\t<w:t>,</w:t>\r\n\t\t\t</w:r>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:t xml:space=\"preserve\"> and </w:t>\r\n\t\t\t\t<w:t>this</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t\t<w:t>is</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t</w:r>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:rPr>\r\n\t\t\t\t\t<w:i/>\r\n\t\t\t\t\t<w:iCs/>\r\n\t\t\t\t</w:rPr>\r\n\t\t\t\t<w:t>italicized</w:t>\r\n\t\t\t</w:r>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:t>.</w:t>\r\n\t\t\t</w:r>\r\n\t\t</w:p>",
     "<w:p w14:paraId=\"763D35DE\" w14:textId=\"4BD8BFE4\" w:rsidR=\"00B65346\" w:rsidRDefault=\"006F2D84\" w:rsidP=\"00307B9B\">\r\n" +
     "      <w:pPr>\r\n" +
-    "        <w:pStyle w:val=\"Standardowyakapit\"/>\r\n" +
+    "        <w:pStyle w:val=\"Normal\"/>\r\n" +
     "      </w:pPr>\r\n" +
-    "      <w:r>\r\n" +
+    "      <w:r w:rsidRPr=\"006F2D84\" my:runId=\"00000001\">\r\n" +
     "        <w:t xml:space=\"preserve\">This text </w:t>\r\n" +
-    "      </w:r>\r\n      <w:r w:rsidRPr=\"006F2D84\">\r\n" +
+    "      </w:r>\r\n      " +
+    "      <w:r w:rsidRPr=\"006F2D84\" my:runId=\"00000002\">\r\n" +
     "        <w:rPr>\r\n" +
     "          <w:b/>\r\n" +
     "          <w:bCs/>\r\n" +
     "        </w:rPr>\r\n" +
     "        <w:t>is bold,</w:t>\r\n" +
     "      </w:r>\r\n" +
-    "      <w:r>\r\n" +
+    "      <w:r w:rsidRPr=\"006F2D84\" my:runId=\"00000003\">\r\n" +
     "        <w:t xml:space=\"preserve\"> and this </w:t>\r\n" +
     "      </w:r>\r\n" +
-    "      <w:r w:rsidRPr=\"006F2D84\">\r\n" +
+    "      <w:r w:rsidRPr=\"006F2D84\" my:runId=\"00000004\">\r\n" +
     "        <w:rPr>\r\n" +
     "          <w:i/>\r\n" +
     "          <w:iCs/>\r\n" +
     "        </w:rPr>\r\n" +
     "        <w:t>is italicized</w:t>\r\n" +
     "      </w:r>\r\n" +
-    "      <w:r>\r\n" +
+    "      <w:r w:rsidRPr=\"006F2D84\" my:runId=\"00000005\">\r\n" +
     "        <w:t>.</w:t>\r\n" +
     "      </w:r>\r\n" +
     "    </w:p>\r\n",
