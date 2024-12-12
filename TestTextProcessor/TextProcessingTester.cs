@@ -39,6 +39,7 @@ public partial class TextProcessingTester
         TestMultipleRunsTextFindAndReplace(wordDoc);
         TestTextFindAndFormattedReplace(wordDoc);
         TestFormattedTextFindAndReplace(wordDoc);
+        TestWholeWordsTextFindAndReplace(wordDoc);
       }
       finally
       {
@@ -47,7 +48,7 @@ public partial class TextProcessingTester
   }
 
   /// <summary>
-  /// Run a find and replace test on the document.
+  /// Run a find and replace test in the document.
   /// </summary>
   /// <param name="wordDoc"></param>
   public void TestSimpleFindAndReplace(DXPack.WordprocessingDocument wordDoc)
@@ -76,7 +77,7 @@ public partial class TextProcessingTester
   }
 
   /// <summary>
-  /// Run a simple find and replace plain text test on the document paragraph.
+  /// Run a simple find and replace plain text test in the paragraph.
   /// </summary>
   /// <param name="paragraph"></param>
   public bool TestSimpleFindAndReplace(DXW.Paragraph paragraph)
@@ -91,7 +92,7 @@ public partial class TextProcessingTester
 
 
   /// <summary>
-  /// Run a multiple runs text find and replace test on the document.
+  /// Run a multiple runs text find and replace test in the document.
   /// </summary>
   /// <param name="wordDoc"></param>
   public void TestMultipleRunsTextFindAndReplace(DXPack.WordprocessingDocument wordDoc)
@@ -120,7 +121,7 @@ public partial class TextProcessingTester
   }
 
   /// <summary>
-  /// Run a find and replace plain text test on the document paragraph.
+  /// Run a find and replace plain text test in the paragraph.
   /// </summary>
   /// <param name="paragraph"></param>
   public bool TestMultipleRunsTextFindAndReplace(DXW.Paragraph paragraph)
@@ -133,7 +134,7 @@ public partial class TextProcessingTester
 
 
   /// <summary>
-  /// Run a text find and formatted replace test on the document.
+  /// Run a text find and formatted replace test in the document.
   /// </summary>
   /// <param name="wordDoc"></param>
   public void TestTextFindAndFormattedReplace(DXPack.WordprocessingDocument wordDoc)
@@ -162,7 +163,7 @@ public partial class TextProcessingTester
   }
 
   /// <summary>
-  /// Run a find and replace plain text test on the document paragraph.
+  /// Run a find and replace plain text test in the paragraph.
   /// </summary>
   /// <param name="paragraph"></param>
   public bool TestTextFindAndFormattedReplace(DXW.Paragraph paragraph)
@@ -174,7 +175,7 @@ public partial class TextProcessingTester
   }
 
   /// <summary>
-  /// Run a text find and formatted replace test on the document.
+  /// Run a test to find and replace formatted text in the document.
   /// </summary>
   /// <param name="wordDoc"></param>
   public void TestFormattedTextFindAndReplace(DXPack.WordprocessingDocument wordDoc)
@@ -203,14 +204,55 @@ public partial class TextProcessingTester
   }
 
   /// <summary>
-  /// Run a find and replace plain text test on the document paragraph.
+  /// Run a test to find and replace formatted text in the paragraph.
   /// </summary>
   /// <param name="paragraph"></param>
   public bool TestFormattedTextFindAndReplace(DXW.Paragraph paragraph)
   {
     var textProcessor = new TextProcessor(paragraph);
+    textProcessor.Replace(" is ", new TextFormat { Italic = true }, " is ", new TextFormat { Italic = false });
+    Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("This text <b>is bold,</b> and <i>this</i> is <i>italicized</i>."));
+    return true;
+  }
+
+  /// <summary>
+  /// Run a test of find and replace whole words in the document.
+  /// </summary>
+  /// <param name="wordDoc"></param>
+  public void TestWholeWordsTextFindAndReplace(DXPack.WordprocessingDocument wordDoc)
+  {
+    if (VerboseLevel > 0)
+      Console.WriteLine("\nTest whole words text find and replace");
+    var body = wordDoc.GetBody();
+    var paragraphs = body.Elements<DXW.Paragraph>().ToList();
+    foreach (var paragraph in paragraphs)
+    {
+      paragraph.Remove();
+    }
+    var text = TestTexts[2];
+    {
+      body.Append(new DXW.Paragraph(text.Insert(4, xmlnsString)));
+    }
+    var count = 0;
+    paragraphs = body.Elements<DXW.Paragraph>().ToList();
+    foreach (var paragraph in paragraphs)
+    {
+      if (TestWholeWordsTextFindAndReplace(paragraph))
+        count++;
+    }
+    if (VerboseLevel > 0)
+      Console.WriteLine($" {count} tests passed.");
+  }
+
+  /// <summary>
+  /// Run a test of find and replace whole words in the paragraph.
+  /// </summary>
+  /// <param name="paragraph"></param>
+  public bool TestWholeWordsTextFindAndReplace(DXW.Paragraph paragraph)
+  {
+    var textProcessor = new TextProcessor(paragraph) { FindWholeWordsOnly = true };
     textProcessor.Replace("is", new TextFormat { Italic = true }, "is", new TextFormat { Italic = false });
-    Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("This text <b>is bold,</b> and this is<i> italicized</i>."));
+    Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("This text <b>is bold,</b> and <i>this </i>is<i> italicized</i>."));
     return true;
   }
 
@@ -271,14 +313,14 @@ public partial class TextProcessingTester
     "        <w:t>is bold,</w:t>\r\n" +
     "      </w:r>\r\n" +
     "      <w:r w:rsidRPr=\"006F2D84\" my:runId=\"00000003\">\r\n" +
-    "        <w:t xml:space=\"preserve\"> and this </w:t>\r\n" +
+    "        <w:t xml:space=\"preserve\"> and </w:t>\r\n" +
     "      </w:r>\r\n" +
     "      <w:r w:rsidRPr=\"006F2D84\" my:runId=\"00000004\">\r\n" +
     "        <w:rPr>\r\n" +
     "          <w:i/>\r\n" +
     "          <w:iCs/>\r\n" +
     "        </w:rPr>\r\n" +
-    "        <w:t>is italicized</w:t>\r\n" +
+    "        <w:t>this is italicized</w:t>\r\n" +
     "      </w:r>\r\n" +
     "      <w:r w:rsidRPr=\"006F2D84\" my:runId=\"00000005\">\r\n" +
     "        <w:t>.</w:t>\r\n" +
