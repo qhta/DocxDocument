@@ -36,7 +36,8 @@ public partial class TextProcessingTester
       try
       {
         TestSimpleFindAndReplace(wordDoc);
-        TestMoreSophisticatedFindAndReplace(wordDoc);
+        TestMultipleRunsTextFindAndReplace(wordDoc);
+        TestTextFindAndFormattedReplace(wordDoc);
         TestFormattedTextFindAndReplace(wordDoc);
       }
       finally
@@ -90,13 +91,13 @@ public partial class TextProcessingTester
 
 
   /// <summary>
-  /// Run a more sophisticated find and replace test on the document.
+  /// Run a multiple runs text find and replace test on the document.
   /// </summary>
   /// <param name="wordDoc"></param>
-  public void TestMoreSophisticatedFindAndReplace(DXPack.WordprocessingDocument wordDoc)
+  public void TestMultipleRunsTextFindAndReplace(DXPack.WordprocessingDocument wordDoc)
   {
     if (VerboseLevel > 0)
-      Console.WriteLine("\nTesting more sophisticated find and replace");
+      Console.WriteLine("\nTest multiple runs text find and replace");
     var body = wordDoc.GetBody();
     var paragraphs = body.Elements<DXW.Paragraph>().ToList();
     foreach (var paragraph in paragraphs)
@@ -111,7 +112,7 @@ public partial class TextProcessingTester
     paragraphs = body.Elements<DXW.Paragraph>().ToList();
     foreach (var paragraph in paragraphs)
     {
-      if (TestMoreSophisticatedFindAndReplace(paragraph))
+      if (TestMultipleRunsTextFindAndReplace(paragraph))
         count++;
     }
     if (VerboseLevel > 0)
@@ -122,7 +123,7 @@ public partial class TextProcessingTester
   /// Run a find and replace plain text test on the document paragraph.
   /// </summary>
   /// <param name="paragraph"></param>
-  public bool TestMoreSophisticatedFindAndReplace(DXW.Paragraph paragraph)
+  public bool TestMultipleRunsTextFindAndReplace(DXW.Paragraph paragraph)
   {
     var textProcessor = new TextProcessor(paragraph);
     textProcessor.Replace(", and this is", " and this text is");
@@ -132,13 +133,13 @@ public partial class TextProcessingTester
 
 
   /// <summary>
-  /// Run a more sophisticated find and replace test on the document.
+  /// Run a text find and formatted replace test on the document.
   /// </summary>
   /// <param name="wordDoc"></param>
-  public void TestFormattedTextFindAndReplace(DXPack.WordprocessingDocument wordDoc)
+  public void TestTextFindAndFormattedReplace(DXPack.WordprocessingDocument wordDoc)
   {
     if (VerboseLevel > 0)
-      Console.WriteLine("\nTesting more sophisticated formatted find and replace");
+      Console.WriteLine("\nTest text find and formatted replace");
     var body = wordDoc.GetBody();
     var paragraphs = body.Elements<DXW.Paragraph>().ToList();
     foreach (var paragraph in paragraphs)
@@ -146,6 +147,47 @@ public partial class TextProcessingTester
       paragraph.Remove();
     }
     foreach (var text in TestTexts)
+    {
+      body.Append(new DXW.Paragraph(text.Insert(4, xmlnsString)));
+    }
+    var count = 0;
+    paragraphs = body.Elements<DXW.Paragraph>().ToList();
+    foreach (var paragraph in paragraphs)
+    {
+      if (TestTextFindAndFormattedReplace(paragraph))
+        count++;
+    }
+    if (VerboseLevel > 0)
+      Console.WriteLine($" {count} tests passed.");
+  }
+
+  /// <summary>
+  /// Run a find and replace plain text test on the document paragraph.
+  /// </summary>
+  /// <param name="paragraph"></param>
+  public bool TestTextFindAndFormattedReplace(DXW.Paragraph paragraph)
+  {
+    var textProcessor = new TextProcessor(paragraph);
+    textProcessor.Replace(", and this is", " and this text is", new TextFormat{Bold = false});
+    Assert.That(paragraph.GetText(TextOptions.PlainText), Is.EqualTo("This text is bold and this text is italicized."));
+    return true;
+  }
+
+  /// <summary>
+  /// Run a text find and formatted replace test on the document.
+  /// </summary>
+  /// <param name="wordDoc"></param>
+  public void TestFormattedTextFindAndReplace(DXPack.WordprocessingDocument wordDoc)
+  {
+    if (VerboseLevel > 0)
+      Console.WriteLine("\nTest formatted text find and replace");
+    var body = wordDoc.GetBody();
+    var paragraphs = body.Elements<DXW.Paragraph>().ToList();
+    foreach (var paragraph in paragraphs)
+    {
+      paragraph.Remove();
+    }
+    var text = TestTexts[2];
     {
       body.Append(new DXW.Paragraph(text.Insert(4, xmlnsString)));
     }
@@ -167,8 +209,8 @@ public partial class TextProcessingTester
   public bool TestFormattedTextFindAndReplace(DXW.Paragraph paragraph)
   {
     var textProcessor = new TextProcessor(paragraph);
-    textProcessor.Replace(", and this is", " and this text is", null, new TextFormat{Bold = false});
-    Assert.That(paragraph.GetText(TextOptions.PlainText), Is.EqualTo("This text is bold and this text is italicized."));
+    textProcessor.Replace("is", new TextFormat { Italic = true }, "is", new TextFormat { Italic = false });
+    Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("This text <b>is bold,</b> and this is<i> italicized</i>."));
     return true;
   }
 
@@ -212,7 +254,34 @@ public partial class TextProcessingTester
   private static readonly string[] TestTexts = new string[]
   {
     "<w:p><w:r><w:t>This text is bold, and this is italicized.</w:t></w:r></w:p>",
-    "<w:p w14:paraId=\"763D35DE\" w14:textId=\"4BD8BFE4\" w:rsidR=\"00B65346\" w:rsidRDefault=\"006F2D84\" w:rsidP=\"00307B9B\">\r\n      <w:pPr>\r\n        <w:pStyle w:val=\"Standardowyakapit\"/>\r\n      </w:pPr>\r\n      <w:r>\r\n        <w:t xml:space=\"preserve\">This text is </w:t>\r\n      </w:r>\r\n      <w:r w:rsidRPr=\"006F2D84\">\r\n        <w:rPr>\r\n          <w:b/>\r\n          <w:bCs/>\r\n        </w:rPr>\r\n        <w:t>bold,</w:t>\r\n      </w:r>\r\n      <w:r>\r\n        <w:t xml:space=\"preserve\"> and this is </w:t>\r\n      </w:r>\r\n      <w:r w:rsidRPr=\"006F2D84\">\r\n        <w:rPr>\r\n          <w:i/>\r\n          <w:iCs/>\r\n        </w:rPr>\r\n        <w:t>italicized</w:t>\r\n      </w:r>\r\n      <w:r>\r\n        <w:t>.</w:t>\r\n      </w:r>\r\n    </w:p>\r\n",
-    "<w:p w:rsidRPr=\"00C0491F\" w:rsidR=\"007D6C6C\" w:rsidP=\"00F043F7\" w:rsidRDefault=\"00D74F81\" w14:paraId=\"7DF600F6\" w14:textId=\"3F81EAE3\">\r\n\t\t\t<w:bookmarkStart w:name=\"_GoBack\" w:id=\"0\"/>\r\n\t\t\t<w:bookmarkEnd w:id=\"0\"/>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:t>This</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t\t<w:t>text</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t\t<w:t>is</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t</w:r>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:rPr>\r\n\t\t\t\t\t<w:b/>\r\n\t\t\t\t\t<w:bCs/>\r\n\t\t\t\t</w:rPr>\r\n\t\t\t\t<w:t>bold</w:t>\r\n\t\t\t\t<w:t>,</w:t>\r\n\t\t\t</w:r>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:t xml:space=\"preserve\"> and </w:t>\r\n\t\t\t\t<w:t>this</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t\t<w:t>is</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t</w:r>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:rPr>\r\n\t\t\t\t\t<w:i/>\r\n\t\t\t\t\t<w:iCs/>\r\n\t\t\t\t</w:rPr>\r\n\t\t\t\t<w:t>italicized</w:t>\r\n\t\t\t</w:r>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:t>.</w:t>\r\n\t\t\t</w:r>\r\n\t\t</w:p>"
+    "<w:p w:rsidRPr=\"00C0491F\" w:rsidR=\"007D6C6C\" w:rsidP=\"00F043F7\" w:rsidRDefault=\"00D74F81\" w14:paraId=\"7DF600F6\" w14:textId=\"3F81EAE3\">\r\n\t\t\t<w:bookmarkStart w:name=\"_GoBack\" w:id=\"0\"/>\r\n\t\t\t<w:bookmarkEnd w:id=\"0\"/>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:t>This</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t\t<w:t>text</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t\t<w:t>is</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t</w:r>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:rPr>\r\n\t\t\t\t\t<w:b/>\r\n\t\t\t\t\t<w:bCs/>\r\n\t\t\t\t</w:rPr>\r\n\t\t\t\t<w:t>bold</w:t>\r\n\t\t\t\t<w:t>,</w:t>\r\n\t\t\t</w:r>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:t xml:space=\"preserve\"> and </w:t>\r\n\t\t\t\t<w:t>this</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t\t<w:t>is</w:t>\r\n\t\t\t\t<w:t xml:space=\"preserve\"> </w:t>\r\n\t\t\t</w:r>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:rPr>\r\n\t\t\t\t\t<w:i/>\r\n\t\t\t\t\t<w:iCs/>\r\n\t\t\t\t</w:rPr>\r\n\t\t\t\t<w:t>italicized</w:t>\r\n\t\t\t</w:r>\r\n\t\t\t<w:r w:rsidRPr=\"00E7749D\">\r\n\t\t\t\t<w:t>.</w:t>\r\n\t\t\t</w:r>\r\n\t\t</w:p>",
+    "<w:p w14:paraId=\"763D35DE\" w14:textId=\"4BD8BFE4\" w:rsidR=\"00B65346\" w:rsidRDefault=\"006F2D84\" w:rsidP=\"00307B9B\">\r\n" +
+    "      <w:pPr>\r\n" +
+    "        <w:pStyle w:val=\"Standardowyakapit\"/>\r\n" +
+    "      </w:pPr>\r\n" +
+    "      <w:r>\r\n" +
+    "        <w:t xml:space=\"preserve\">This text </w:t>\r\n" +
+    "      </w:r>\r\n      <w:r w:rsidRPr=\"006F2D84\">\r\n" +
+    "        <w:rPr>\r\n" +
+    "          <w:b/>\r\n" +
+    "          <w:bCs/>\r\n" +
+    "        </w:rPr>\r\n" +
+    "        <w:t>is bold,</w:t>\r\n" +
+    "      </w:r>\r\n" +
+    "      <w:r>\r\n" +
+    "        <w:t xml:space=\"preserve\"> and this </w:t>\r\n" +
+    "      </w:r>\r\n" +
+    "      <w:r w:rsidRPr=\"006F2D84\">\r\n" +
+    "        <w:rPr>\r\n" +
+    "          <w:i/>\r\n" +
+    "          <w:iCs/>\r\n" +
+    "        </w:rPr>\r\n" +
+    "        <w:t>is italicized</w:t>\r\n" +
+    "      </w:r>\r\n" +
+    "      <w:r>\r\n" +
+    "        <w:t>.</w:t>\r\n" +
+    "      </w:r>\r\n" +
+    "    </w:p>\r\n",
+
   };
 }
