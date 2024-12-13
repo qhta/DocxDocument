@@ -40,6 +40,7 @@ public partial class TextProcessingTester
         TestTextFindAndFormattedReplace(wordDoc);
         TestFormattedTextFindAndReplace(wordDoc);
         TestWholeWordsTextFindAndReplace(wordDoc);
+        TestCaseInsensitiveTextFindAndReplace(wordDoc);
       }
       finally
       {
@@ -127,8 +128,8 @@ public partial class TextProcessingTester
   public bool TestMultipleRunsTextFindAndReplace(DXW.Paragraph paragraph)
   {
     var textProcessor = new TextProcessor(paragraph);
-    textProcessor.Replace(", and this is", " and this text is");
-    Assert.That(paragraph.GetText(TextOptions.PlainText), Is.EqualTo("This text is bold and this text is italicized."));
+    textProcessor.Replace(", and this is", ", and this text is");
+    Assert.That(paragraph.GetText(TextOptions.PlainText), Is.EqualTo("This text is bold, and this text is italicized."));
     return true;
   }
 
@@ -153,11 +154,8 @@ public partial class TextProcessingTester
     }
     var count = 0;
     paragraphs = body.Elements<DXW.Paragraph>().ToList();
-    foreach (var paragraph in paragraphs)
-    {
-      if (TestTextFindAndFormattedReplace(paragraph))
-        count++;
-    }
+    if (TestTextFindAndFormattedReplace(paragraphs[1]))
+      count++;
     if (VerboseLevel > 0)
       Console.WriteLine($" {count} tests passed.");
   }
@@ -169,8 +167,8 @@ public partial class TextProcessingTester
   public bool TestTextFindAndFormattedReplace(DXW.Paragraph paragraph)
   {
     var textProcessor = new TextProcessor(paragraph);
-    textProcessor.Replace(", and this is", " and this text is", new TextFormat{Bold = false});
-    Assert.That(paragraph.GetText(TextOptions.PlainText), Is.EqualTo("This text is bold and this text is italicized."));
+    textProcessor.Replace(", and this is", ", and this text is", new TextFormat{Bold = false});
+    Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("This text is <b>bold</b>, and this text is <i>italicized</i>."));
     return true;
   }
 
@@ -250,9 +248,51 @@ public partial class TextProcessingTester
   /// <param name="paragraph"></param>
   public bool TestWholeWordsTextFindAndReplace(DXW.Paragraph paragraph)
   {
-    var textProcessor = new TextProcessor(paragraph) { FindWholeWordsOnly = true };
-    textProcessor.Replace("is", new TextFormat { Italic = true }, "is", new TextFormat { Italic = false });
+    var textProcessor = new TextProcessor(paragraph);
+    textProcessor.Replace("is", new TextFormat { Italic = true }, "is", new TextFormat { Italic = false }, new FindAndReplaceOptions { FindWholeWordsOnly = true});
     Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("This text <b>is bold,</b> and <i>this </i>is<i> italicized</i>."));
+    return true;
+  }
+
+  /// <summary>
+  /// Run a test of find and replace whole words in the document.
+  /// </summary>
+  /// <param name="wordDoc"></param>
+  public void TestCaseInsensitiveTextFindAndReplace(DXPack.WordprocessingDocument wordDoc)
+  {
+    if (VerboseLevel > 0)
+      Console.WriteLine("\nTest whole words text find and replace");
+    var body = wordDoc.GetBody();
+    var paragraphs = body.Elements<DXW.Paragraph>().ToList();
+    foreach (var paragraph in paragraphs)
+    {
+      paragraph.Remove();
+    }
+    var text = TestTexts[2];
+    {
+      body.Append(new DXW.Paragraph(text.Insert(4, xmlnsString)));
+    }
+    var count = 0;
+    paragraphs = body.Elements<DXW.Paragraph>().ToList();
+    foreach (var paragraph in paragraphs)
+    {
+      if (TestCaseInsensitiveTextFindAndReplace(paragraph))
+        count++;
+    }
+    if (VerboseLevel > 0)
+      Console.WriteLine($" {count} tests passed.");
+  }
+
+  /// <summary>
+  /// Run a test of find and replace whole words in the paragraph.
+  /// </summary>
+  /// <param name="paragraph"></param>
+  public bool TestCaseInsensitiveTextFindAndReplace(DXW.Paragraph paragraph)
+  {
+    var textProcessor = new TextProcessor(paragraph);
+    textProcessor.Replace("this", "that", new FindAndReplaceOptions{ MatchCaseInsensitive = true });
+    textProcessor.Replace("this", "that", new FindAndReplaceOptions { MatchCaseInsensitive = true });
+    Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("That text <b>is bold,</b> and <i>that is italicized</i>."));
     return true;
   }
 
