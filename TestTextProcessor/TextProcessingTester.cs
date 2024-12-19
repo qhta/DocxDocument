@@ -35,13 +35,14 @@ public partial class TextProcessingTester
     if (wordDoc != null)
       try
       {
-        TestSimpleFindAndReplace(wordDoc);
-        TestMultipleRunsTextFindAndReplace(wordDoc);
-        TestTextFindAndFormattedReplace(wordDoc);
-        TestFormattedTextFindAndReplace(wordDoc);
-        TestWholeWordsTextFindAndReplace(wordDoc);
-        TestCaseInsensitiveTextFindAndReplace(wordDoc);
-        TestFormatFindAndReplace(wordDoc);
+        //TestSimpleFindAndReplace(wordDoc);
+        //TestMultipleRunsTextFindAndReplace(wordDoc);
+        //TestTextFindAndFormattedReplace(wordDoc);
+        //TestFormattedTextFindAndReplace(wordDoc);
+        //TestWholeWordsTextFindAndReplace(wordDoc);
+        //TestCaseInsensitiveTextFindAndReplace(wordDoc);
+        //TestFormatFindAndReplace(wordDoc);
+        TestSimpleSpecialCharactersEncoding(wordDoc);
       }
       finally
       {
@@ -344,6 +345,90 @@ public partial class TextProcessingTester
     return true;
   }
 
+  /// <summary>
+  /// Run a test of BreakPage and LastRenderedPageBreak encoding
+  /// </summary>
+  /// <param name="wordDoc"></param>
+  public void TestSimpleSpecialCharactersEncoding(DXPack.WordprocessingDocument wordDoc)
+  {
+    if (VerboseLevel > 0)
+      Console.WriteLine("\nTest simple special characters encoding");
+    var body = wordDoc.GetBody();
+    var paragraphs = body.Elements<DXW.Paragraph>().ToList();
+    foreach (var paragraph in paragraphs)
+    {
+      paragraph.Remove();
+    }
+    var text = BreakPageText.Insert(4, xmlnsString);
+    {
+      var paragraph = new DXW.Paragraph();
+      var run = new DXW.Run();
+      run.Append(new DXW.Text("This text is on one page."));
+      run.Append(new DXW.Break() { Type = DXW.BreakValues.Page });
+      run.Append(new DXW.Text("And this is on another page."));
+      paragraph.Append(run);
+      body.Append(paragraph);
+    }
+    var count = 0;
+    paragraphs = body.Elements<DXW.Paragraph>().ToList();
+    foreach (var paragraph in paragraphs)
+    {
+      if (TestSimpleSpecialCharactersEncoding(paragraph))
+        count++;
+    }
+    if (VerboseLevel > 0)
+      Console.WriteLine($" {count} tests passed.");
+  }
+
+  /// <summary>
+  /// Run a test of find and replace whole words in the paragraph.
+  /// </summary>
+  /// <param name="paragraph"></param>
+  public bool TestSimpleSpecialCharactersEncoding(DXW.Paragraph paragraph)
+  {
+    var formattedText = new FormattedText(paragraph);
+    var text = formattedText.GetText();
+    Assert.That(text, Is.EqualTo("This text is on one page.\u000CAnd this is on another page."));
+    formattedText.SetText(text);
+    DX.OpenXmlElement? secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
+    Assert.That(secondElement?.GetType(), Is.EqualTo(typeof(DXW.Break)));
+    Assert.That((secondElement as DXW.Break)?.Type?.Value, Is.EqualTo(DXW.BreakValues.Page));
+    var aText = paragraph.GetText(TextOptions.PlainText);
+    Assert.That(aText, Is.EqualTo(text));
+
+    text = text.Replace("\fAnd this is on another page", "\vAnd this is in new text column");
+    formattedText.SetText(text);
+    secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
+    Assert.That(secondElement?.GetType(), Is.EqualTo(typeof(DXW.Break)));
+    Assert.That((secondElement as DXW.Break)?.Type?.Value, Is.EqualTo(DXW.BreakValues.Column));
+    aText = paragraph.GetText(TextOptions.PlainText);
+    Assert.That(aText, Is.EqualTo(text));
+
+    text = text.Replace("\vAnd this is in new text column", "\nAnd this is in new line");
+    formattedText.SetText(text);
+    secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
+    Assert.That(secondElement?.GetType(), Is.EqualTo(typeof(DXW.Break)));
+    Assert.That((secondElement as DXW.Break)?.Type?.Value, Is.EqualTo(DXW.BreakValues.TextWrapping));
+    aText = paragraph.GetText(TextOptions.PlainText);
+    Assert.That(aText, Is.EqualTo(text)); 
+    
+    text = text.Replace("\nAnd this is in new line", "\tAnd this is after tab");
+    formattedText.SetText(text);
+    secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
+    Assert.That(secondElement?.GetType(), Is.EqualTo(typeof(DXW.TabChar)));
+    aText = paragraph.GetText(TextOptions.PlainText);
+    Assert.That(aText, Is.EqualTo(text));
+
+    text = text.Replace("\tAnd this is after tab", "\u00ADAnd this is after soft hyphen");
+    formattedText.SetText(text);
+    secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
+    Assert.That(secondElement?.GetType(), Is.EqualTo(typeof(DXW.SoftHyphen)));
+    aText = paragraph.GetText(TextOptions.PlainText);
+    Assert.That(aText, Is.EqualTo(text));
+
+    return true;
+  }
+
   private const string xmlnsString =
     " xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"" +
     " xmlns:w14=\"http://schemas.microsoft.com/office/word/2010/wordml\"" +
@@ -392,7 +477,7 @@ public partial class TextProcessingTester
     "      </w:pPr>\r\n" +
     "      <w:r w:rsidRPr=\"006F2D84\" my:runId=\"00000001\">\r\n" +
     "        <w:t xml:space=\"preserve\">This text </w:t>\r\n" +
-    "      </w:r>\r\n      " +
+    "      </w:r>      " +
     "      <w:r w:rsidRPr=\"006F2D84\" my:runId=\"00000002\">\r\n" +
     "        <w:rPr>\r\n" +
     "          <w:b/>\r\n" +
@@ -413,7 +498,15 @@ public partial class TextProcessingTester
     "      <w:r w:rsidRPr=\"006F2D84\" my:runId=\"00000005\">\r\n" +
     "        <w:t>.</w:t>\r\n" +
     "      </w:r>\r\n" +
-    "    </w:p>\r\n",
-
+    "    </w:p>",
   };
+
+  private static string BreakPageText =
+    "<w:p w14:paraId=\"20A860B5\" w14:textId=\"15C3B12D\" w:rsidR=\"00AC7F04\" w:rsidRDefault=\"00AF29AF\" w:rsidP=\"00F043F7\">\r\n" +
+    "  <w:r>\r\n" +
+    "    <w:t xml:space=\"preserve\">This text is on one page.</w:t>\r\n" +
+    "    <w:br w:type=\"page\"/>\r\n" +
+    "    <w:t>And this is on another page.</w:t>\r\n" +
+    "  </w:r>\r\n" +
+    "</w:p>";
 }

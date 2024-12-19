@@ -129,7 +129,7 @@ public partial class DocumentCleaner
       //if (targetParagraph != null)
       //{
       //  var textOptions = TextOptions.ParaText;
-      //  var targetParaText = targetParagraph.GetText(textOptions);
+      //  var targetParaText = targetParagraph.PlainText(textOptions);
       //  //Debug.WriteLine($"Target Para is \"{targetParaText}\"");
       //  DXW.TabChar? tabChar = null;
       //  var targetParaMembers = targetParagraph.GetFlattenedMemberList();
@@ -235,7 +235,7 @@ public partial class DocumentCleaner
       if (previousSibling is not null && previousSibling is not DXW.ParagraphProperties)
         continue;
       //if (run.NextSiblingMember() == null
-      //    || run.NextSiblingMember() is DXW.Run nextRun && String.IsNullOrWhiteSpace(nextRun.GetText(TextOptions.PlainText)))
+      //    || run.NextSiblingMember() is DXW.Run nextRun && String.IsNullOrWhiteSpace(nextRun.PlainText(TextOptions.PlainText)))
       //  continue;
       var paragraphText = paragraph.GetText();
       var priorParagraph = paragraph.PreviousSiblingMember() as DXW.Paragraph;
