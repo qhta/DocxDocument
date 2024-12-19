@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.OpenXmlTools", "..\..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTextProcessor", "..\TestTextProcessor\TestTextProcessor.csproj", "{22290748-2F6E-4515-9625-F127A8989E44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanOpenXml", "..\CleanOpenXml\CleanOpenXml.csproj", "{FF467466-B0E6-48D3-8850-33DB39388F95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{22290748-2F6E-4515-9625-F127A8989E44}.Release|x64.Build.0 = Release|Any CPU
 		{22290748-2F6E-4515-9625-F127A8989E44}.Release|x86.ActiveCfg = Release|Any CPU
 		{22290748-2F6E-4515-9625-F127A8989E44}.Release|x86.Build.0 = Release|Any CPU
+		{FF467466-B0E6-48D3-8850-33DB39388F95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF467466-B0E6-48D3-8850-33DB39388F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF467466-B0E6-48D3-8850-33DB39388F95}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FF467466-B0E6-48D3-8850-33DB39388F95}.Debug|x64.Build.0 = Debug|Any CPU
+		{FF467466-B0E6-48D3-8850-33DB39388F95}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FF467466-B0E6-48D3-8850-33DB39388F95}.Debug|x86.Build.0 = Debug|Any CPU
+		{FF467466-B0E6-48D3-8850-33DB39388F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF467466-B0E6-48D3-8850-33DB39388F95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF467466-B0E6-48D3-8850-33DB39388F95}.Release|x64.ActiveCfg = Release|Any CPU
+		{FF467466-B0E6-48D3-8850-33DB39388F95}.Release|x64.Build.0 = Release|Any CPU
+		{FF467466-B0E6-48D3-8850-33DB39388F95}.Release|x86.ActiveCfg = Release|Any CPU
+		{FF467466-B0E6-48D3-8850-33DB39388F95}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
