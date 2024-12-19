@@ -15,7 +15,25 @@ public partial class DocumentCleaner
   /// <summary>
   /// Determines the font used for examples.
   /// </summary>
-  public string ExampleFont { get; set; } = "Courier New";
+  public string ExampleFont { get; set; } = "Consolas";
+
+  public string XmlExampleStyle { get; set; } = "XmlExample";
+
+  public string XmlExampleStyleDef { get; set; } = 
+    "<w:style xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" w:type=\"paragraph\" w:customStyle=\"1\" w:styleId=\"XmlExample\">" +
+    "  <w:name w:val=\"XmlExample\"/>" +
+    "  <w:basedOn w:val=\"Normal\"/>" +
+    "  <w:qFormat/>" +
+    "  <w:rsid w:val=\"00006BC1\"/>" +
+    "  <w:pPr>" +
+    "    <w:spacing w:after=\"5\" w:line=\"270\" w:lineRule=\"auto\"/>" +
+    "    <w:ind w:left=\"480\" w:right=\"119\" w:hanging=\"480\"/>" +
+    "  </w:pPr>" +
+    "  <w:rPr>" +
+    "    <w:rFonts w:ascii=\"Consolas\"/>" +
+    "    <w:noProof/>" +
+    "  </w:rPr>" +
+    "</w:style>";
 
   /// <summary>
   /// Cleans the document using all the methods available.
@@ -50,37 +68,6 @@ public partial class DocumentCleaner
   }
 
   /// <summary>
-  /// Run test of TextProcessor functionality.
-  /// </summary>
-  /// <param name="fileName"></param>
-  public void TestTextProcessor(string fileName)
-  {
-    DXPack.WordprocessingDocument? wordDoc = null;
-    var tryCount = 3;
-    while (tryCount > 0)
-    {
-      try
-      {
-        wordDoc = DXPack.WordprocessingDocument.Open(fileName, true);
-        tryCount = 0;
-      }
-      catch (Exception e)
-      {
-        Console.WriteLine(e);
-        tryCount--;
-      }
-    }
-    if (wordDoc != null)
-      try
-      {
-        CleanDocument(wordDoc);
-      }
-      finally
-      {
-        wordDoc.Dispose();
-      }
-  }
-  /// <summary>
   /// Cleans the document using all the methods available.
   /// </summary>
   /// <param name="wordDoc"></param>
@@ -112,6 +99,7 @@ public partial class DocumentCleaner
     BreakParagraphsBefore(wordDoc, "end note]");
     BreakParagraphsBefore(wordDoc, "end example]");
     FormatTables(wordDoc);
+    //SetStyleNames(wordDoc);
   }
 
   /// <summary>
@@ -239,33 +227,30 @@ public partial class DocumentCleaner
     HashSet<string> headers = new();
     var allHeaders = wordDoc.GetHeaders().Select(h => h.GetText(TextOptions.PlainText)).ToArray();
     foreach (var str in allHeaders)
-      if (str != null)
-      {
-        str.TryRemoveNumbering(out var s);
-        s = s.RemoveWhitespaces();
-        if (s.Length > 0 && !s.IsNumber())
-          headers.Add(s);
-      }
+    {
+      str.TryRemoveNumbering(out var s);
+      s = s.RemoveWhitespaces();
+      if (s.Length > 0 && !s.IsNumber())
+        headers.Add(s);
+    }
     var allFooters = wordDoc.GetFooters().Select(f => f.GetText(TextOptions.PlainText)).ToArray();
     foreach (var str in allFooters)
-      if (str != null)
-      {
-        str.TryRemoveNumbering(out var s);
-        s = s.RemoveWhitespaces();
-        if (s.Length > 0 && !s.IsNumber())
-          headers.Add(s);
-      }
+    {
+      str.TryRemoveNumbering(out var s);
+      s = s.RemoveWhitespaces();
+      if (s.Length > 0 && !s.IsNumber())
+        headers.Add(s);
+    }
     var body = wordDoc.GetBody();
     var headings1 = body.Elements<DXW.Paragraph>().Where(p => p.HeadingLevel() == 1)
       .Select(h => h.GetText(TextOptions.PlainText)).ToList();
     foreach (var str in headings1)
-      if (str != null)
-      {
-        str.TryRemoveNumbering(out var s);
-        s = s.RemoveWhitespaces();
-        if (s.Length > 0 && !s.IsNumber())
-          headers.Add(s);
-      }
+    {
+      str.TryRemoveNumbering(out var s);
+      s = s.RemoveWhitespaces();
+      if (s.Length > 0 && !s.IsNumber())
+        headers.Add(s);
+    }
     var paragraphs = body.Elements<DXW.Paragraph>().Where(p => !p.IsHeading()).ToList();
     foreach (var paragraph in paragraphs)
     {
@@ -356,7 +341,7 @@ public partial class DocumentCleaner
   public void RepairXmlExamples(DXPack.WordprocessingDocument wordDoc)
   {
     if (VerboseLevel > 0)
-      Console.WriteLine("\nRepairing XML end tag containing paragraphs");
+      Console.WriteLine("\nRepairing XML examples");
     int count = 0;
     var paragraphs = wordDoc.GetBody().Descendants<DXW.Paragraph>().ToList();
     //int xmlIndent = 0;
@@ -438,6 +423,37 @@ public partial class DocumentCleaner
 
     if (VerboseLevel > 0)
       Console.WriteLine($"  {count} XML paragraphs repaired");
+  }
+
+  public void SetStyleNames(DXPack.WordprocessingDocument wordDoc)
+  {
+    if (VerboseLevel > 0)
+      Console.WriteLine("\nSetting styles");
+    var styles = wordDoc.GetStyles();
+    if (styles.GetStyle(XmlExampleStyle) == null)
+    {
+      styles.AddChild(new DXW.Style(XmlExampleStyleDef));
+    }
+    
+    int paragraphStyleCount = 0;
+    var paragraphs = wordDoc.GetBody().Descendants<DXW.Paragraph>().ToList();
+    for (int i = 0; i < paragraphs.Count; i++)
+    {
+      var paragraph = paragraphs[i];
+      var paraText = paragraph.GetText(TextOptions.ParaText).Trim();
+      var font = paragraph.GetFont("defaultFont");
+      if (font == ExampleFont )
+      {
+        //if (paraText.Contains("<w:") || paraText.Contains("</w:"))
+        {
+          paragraph.SetStyle(XmlExampleStyle);
+          paragraphStyleCount++;
+        }
+      }
+    }
+
+    if (VerboseLevel > 0)
+      Console.WriteLine($"  {paragraphStyleCount} Paragraph styles set");
   }
 
 }
