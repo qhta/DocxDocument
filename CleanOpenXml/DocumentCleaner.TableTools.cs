@@ -334,7 +334,7 @@ public partial class DocumentCleaner
           lastRange.End = lastRange.Start;
       }
     }
-    //while (ranges.FirstOrDefault()?.GetText(TextOptions.PlainText) is { } str && String.IsNullOrWhiteSpace(str))
+    //while (ranges.FirstOrDefault()?.PlainText(TextOptions.PlainText) is { } str && String.IsNullOrWhiteSpace(str))
     //  ranges.RemoveAt(0);
     return ranges;
   }
