@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices.ComTypes;
+
 using NUnit.Framework;
 
 namespace Qhta.OpenXmlTools;
@@ -169,7 +170,7 @@ public partial class TextProcessingTester
   public bool TestTextFindAndFormattedReplace(DXW.Paragraph paragraph)
   {
     var formattedText = new FormattedText(paragraph);
-    formattedText.Replace(", and this is", ", and this text is", new TextFormat{Bold = false});
+    formattedText.Replace(", and this is", ", and this text is", new TextFormat { Bold = false });
     Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("This text is <b>bold</b>, and this text is <i>italicized</i>."));
     return true;
   }
@@ -251,7 +252,7 @@ public partial class TextProcessingTester
   public bool TestWholeWordsTextFindAndReplace(DXW.Paragraph paragraph)
   {
     var formattedText = new FormattedText(paragraph);
-    formattedText.Replace("is", new TextFormat { Italic = true }, "is", new TextFormat { Italic = false }, new FindAndReplaceOptions { FindWholeWordsOnly = true});
+    formattedText.Replace("is", new TextFormat { Italic = true }, "is", new TextFormat { Italic = false }, new FindAndReplaceOptions { FindWholeWordsOnly = true });
     Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("This text <b>is bold,</b> and <i>this </i>is<i> italicized</i>."));
     return true;
   }
@@ -292,7 +293,7 @@ public partial class TextProcessingTester
   public bool TestCaseInsensitiveTextFindAndReplace(DXW.Paragraph paragraph)
   {
     var formattedText = new FormattedText(paragraph);
-    formattedText.Replace("this", "that", new FindAndReplaceOptions{ MatchCaseInsensitive = true });
+    formattedText.Replace("this", "that", new FindAndReplaceOptions { MatchCaseInsensitive = true });
     formattedText.Replace("this", "that", new FindAndReplaceOptions { MatchCaseInsensitive = true });
     Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("That text <b>is bold,</b> and <i>that is italicized</i>."));
     return true;
@@ -388,7 +389,7 @@ public partial class TextProcessingTester
   {
     var formattedText = new FormattedText(paragraph);
     var text = formattedText.GetText();
-    Assert.That(text, Is.EqualTo("This text is on one page.\u000CAnd this is on another page."));
+    Assert.That(text, Is.EqualTo("This text is on one page.\fAnd this is on another page."));
     formattedText.SetText(text);
     DX.OpenXmlElement? secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
     Assert.That(secondElement?.GetType(), Is.EqualTo(typeof(DXW.Break)));
@@ -396,38 +397,59 @@ public partial class TextProcessingTester
     var aText = paragraph.GetText(TextOptions.PlainText);
     Assert.That(aText, Is.EqualTo(text));
 
-    text = text.Replace("\fAnd this is on another page", "\vAnd this is in new text column");
-    formattedText.SetText(text);
-    secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
-    Assert.That(secondElement?.GetType(), Is.EqualTo(typeof(DXW.Break)));
-    Assert.That((secondElement as DXW.Break)?.Type?.Value, Is.EqualTo(DXW.BreakValues.Column));
-    aText = paragraph.GetText(TextOptions.PlainText);
-    Assert.That(aText, Is.EqualTo(text));
-
-    text = text.Replace("\vAnd this is in new text column", "\nAnd this is in new line");
-    formattedText.SetText(text);
-    secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
-    Assert.That(secondElement?.GetType(), Is.EqualTo(typeof(DXW.Break)));
-    Assert.That((secondElement as DXW.Break)?.Type?.Value, Is.EqualTo(DXW.BreakValues.TextWrapping));
-    aText = paragraph.GetText(TextOptions.PlainText);
-    Assert.That(aText, Is.EqualTo(text)); 
-    
-    text = text.Replace("\nAnd this is in new line", "\tAnd this is after tab");
-    formattedText.SetText(text);
-    secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
-    Assert.That(secondElement?.GetType(), Is.EqualTo(typeof(DXW.TabChar)));
-    aText = paragraph.GetText(TextOptions.PlainText);
-    Assert.That(aText, Is.EqualTo(text));
-
-    text = text.Replace("\tAnd this is after tab", "\u00ADAnd this is after soft hyphen");
-    formattedText.SetText(text);
-    secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
-    Assert.That(secondElement?.GetType(), Is.EqualTo(typeof(DXW.SoftHyphen)));
-    aText = paragraph.GetText(TextOptions.PlainText);
-    Assert.That(aText, Is.EqualTo(text));
-
+    string t1 = "\fAnd this is on another page.";
+    for (int i = 1; i < SpecialCharactersDictionary.Count; i++)
+    {
+      var kvp = SpecialCharactersDictionary.ElementAt(i);
+      string t2 = kvp.Key + "And this is after " + kvp.Value.GetType().Name;
+      TestSimpleSpecialCharactersEncoding(paragraph, ref text, t1, t2, kvp.Value, formattedText);
+      t1 = t2;
+    }
     return true;
   }
+
+  private void TestSimpleSpecialCharactersEncoding(DXW.Paragraph paragraph, ref string text, string t1, string t2, DX.OpenXmlElement element, FormattedText formattedText)
+  {
+    text = text.Replace(t1, t2);
+    formattedText.SetText(text, element);
+    var secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
+    Assert.That(secondElement?.GetType(), Is.EqualTo(element.GetType()));
+    if (element is DXW.Break breakElement)
+      Assert.That((secondElement as DXW.Break)?.Type?.Value, Is.EqualTo(breakElement.Type?.Value));
+    if (element is DXW.FieldChar fieldChar)
+      Assert.That((secondElement as DXW.FieldChar)?.FieldCharType?.Value, Is.EqualTo(fieldChar.FieldCharType?.Value));
+    Assert.That(secondElement, Is.EqualTo(element));
+    //Assert.That(secondElement == element);
+    var aText = paragraph.GetText(TextOptions.PlainText);
+    Assert.That(aText, Is.EqualTo(text));
+  }
+
+  private readonly Dictionary<string, DX.OpenXmlElement> SpecialCharactersDictionary = new Dictionary<string, DX.OpenXmlElement>
+  {
+    { "\f", new DXW.Break() { Type = DXW.BreakValues.Page } },
+    { "\v", new DXW.Break() { Type = DXW.BreakValues.Column } },
+    { "\n", new DXW.Break() { Type = DXW.BreakValues.TextWrapping } },
+    { "\t", new DXW.TabChar() },
+    { "\u00AD", new DXW.SoftHyphen() },
+    { "\u2011", new DXW.NoBreakHyphen() },
+    { "\uE00A", new DXW.AnnotationReferenceMark() },
+    { "\uE00B", new DXW.LastRenderedPageBreak() },
+    { "\uE00C", new DXW.ContinuationSeparatorMark() },
+    { "\uE00D", new DXW.SeparatorMark() },
+    { "\uE00E", new DXW.EndnoteReferenceMark() },
+    { "\uE00F", new DXW.FootnoteReferenceMark() },
+    { "\uE010", new DXW.PageNumber() },
+    { "\uE011", new DXW.DayLong() },
+    { "\uE012", new DXW.DayShort() },
+    { "\uE013", new DXW.MonthLong() },
+    { "\uE014", new DXW.MonthShort() },
+    { "\uE015", new DXW.YearLong() },
+    { "\uE016", new DXW.YearShort() },
+    { "\uE021", new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Begin, FieldLock = true} },
+    { "\uE022", new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Separate } },
+    { "\uE023", new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.End } },
+  };
+
 
   private const string xmlnsString =
     " xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"" +
