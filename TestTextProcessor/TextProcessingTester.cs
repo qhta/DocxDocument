@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Runtime.InteropServices.ComTypes;
 
+using DocumentFormat.OpenXml;
+
 using NUnit.Framework;
 
 namespace Qhta.OpenXmlTools;
@@ -374,8 +376,8 @@ public partial class TextProcessingTester
     paragraphs = body.Elements<DXW.Paragraph>().ToList();
     foreach (var paragraph in paragraphs)
     {
-      if (TestSimpleSpecialCharactersEncoding(paragraph))
-        count++;
+      count += TestSimpleSpecialCharactersEncoding(paragraph);
+
     }
     if (VerboseLevel > 0)
       Console.WriteLine($" {count} tests passed.");
@@ -385,72 +387,83 @@ public partial class TextProcessingTester
   /// Run a test of find and replace whole words in the paragraph.
   /// </summary>
   /// <param name="paragraph"></param>
-  public bool TestSimpleSpecialCharactersEncoding(DXW.Paragraph paragraph)
+  public int TestSimpleSpecialCharactersEncoding(DXW.Paragraph paragraph)
   {
+    int count = 0;
     var formattedText = new FormattedText(paragraph);
     var text = formattedText.GetText();
     Assert.That(text, Is.EqualTo("This text is on one page.\fAnd this is on another page."));
+    count++;
     formattedText.SetText(text);
     DX.OpenXmlElement? secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
     Assert.That(secondElement?.GetType(), Is.EqualTo(typeof(DXW.Break)));
     Assert.That((secondElement as DXW.Break)?.Type?.Value, Is.EqualTo(DXW.BreakValues.Page));
+    count++;
     var aText = paragraph.GetText(TextOptions.PlainText);
     Assert.That(aText, Is.EqualTo(text));
 
-    string t1 = "\fAnd this is on another page.";
-    for (int i = 1; i < SpecialCharactersDictionary.Count; i++)
+    for (int i = 0; i < SpecialCharactersElements.Count; i++)
     {
-      var kvp = SpecialCharactersDictionary.ElementAt(i);
-      string t2 = kvp.Key + "And this is after " + kvp.Value.GetType().Name;
-      TestSimpleSpecialCharactersEncoding(paragraph, ref text, t1, t2, kvp.Value, formattedText);
-      t1 = t2;
+      TestSimpleSpecialCharactersEncoding(paragraph, formattedText, i);
+      count++;
     }
-    return true;
+    return count;
   }
 
-  private void TestSimpleSpecialCharactersEncoding(DXW.Paragraph paragraph, ref string text, string t1, string t2, DX.OpenXmlElement element, FormattedText formattedText)
+  private record TSC
   {
-    text = text.Replace(t1, t2);
+    internal readonly string SpecialChar;
+    internal readonly DX.OpenXmlElement Element;
+
+
+    internal TSC(string specialChar, DX.OpenXmlElement element)
+    {
+      this.SpecialChar = specialChar;
+      this.Element = element;
+    }
+  }
+
+  private void TestSimpleSpecialCharactersEncoding(DXW.Paragraph paragraph, FormattedText formattedText, int index)
+  {
+    var element = SpecialCharactersElements[index];
+    var text = "This text is before" + element.GetText(TextOptions.PlainText) + "And this is after " + element.ToString();
+    Debug.WriteLine(text);
     formattedText.SetText(text, element);
     var secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
     Assert.That(secondElement?.GetType(), Is.EqualTo(element.GetType()));
-    if (element is DXW.Break breakElement)
-      Assert.That((secondElement as DXW.Break)?.Type?.Value, Is.EqualTo(breakElement.Type?.Value));
-    if (element is DXW.FieldChar fieldChar)
-      Assert.That((secondElement as DXW.FieldChar)?.FieldCharType?.Value, Is.EqualTo(fieldChar.FieldCharType?.Value));
     Assert.That(secondElement, Is.EqualTo(element));
-    //Assert.That(secondElement == element);
+    Assert.That(secondElement?.GetOuterXml(), Is.EqualTo(element.GetOuterXml()));
     var aText = paragraph.GetText(TextOptions.PlainText);
     Assert.That(aText, Is.EqualTo(text));
   }
 
-  private readonly Dictionary<string, DX.OpenXmlElement> SpecialCharactersDictionary = new Dictionary<string, DX.OpenXmlElement>
+  private readonly List<DX.OpenXmlElement> SpecialCharactersElements= new List<DX.OpenXmlElement>()
   {
-    { "\f", new DXW.Break() { Type = DXW.BreakValues.Page } },
-    { "\v", new DXW.Break() { Type = DXW.BreakValues.Column } },
-    { "\n", new DXW.Break() { Type = DXW.BreakValues.TextWrapping } },
-    { "\t", new DXW.TabChar() },
-    { "\u00AD", new DXW.SoftHyphen() },
-    { "\u2011", new DXW.NoBreakHyphen() },
-    { "\uE00A", new DXW.AnnotationReferenceMark() },
-    { "\uE00B", new DXW.LastRenderedPageBreak() },
-    { "\uE00C", new DXW.ContinuationSeparatorMark() },
-    { "\uE00D", new DXW.SeparatorMark() },
-    { "\uE00E", new DXW.EndnoteReferenceMark() },
-    { "\uE00F", new DXW.FootnoteReferenceMark() },
-    { "\uE010", new DXW.PageNumber() },
-    { "\uE011", new DXW.DayLong() },
-    { "\uE012", new DXW.DayShort() },
-    { "\uE013", new DXW.MonthLong() },
-    { "\uE014", new DXW.MonthShort() },
-    { "\uE015", new DXW.YearLong() },
-    { "\uE016", new DXW.YearShort() },
-    { "\uE021", new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Begin, FieldLock = true} },
-    { "\uE022", new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Separate } },
-    { "\uE023", new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.End } },
+    new DXW.Break() { Type = DXW.BreakValues.Page },
+    new DXW.Break() { Type = DXW.BreakValues.Column },
+    new DXW.Break() { Type = DXW.BreakValues.TextWrapping },
+    new DXW.Break() { Type = DXW.BreakValues.TextWrapping, Clear = new EnumValue<DXW.BreakTextRestartLocationValues>(DXW.BreakTextRestartLocationValues.Left)},
+    new DXW.TabChar(),
+    new DXW.SoftHyphen(),
+    new DXW.NoBreakHyphen(),
+    new DXW.AnnotationReferenceMark(),
+    new DXW.LastRenderedPageBreak(),
+    new DXW.ContinuationSeparatorMark(),
+    new DXW.SeparatorMark(),
+    new DXW.EndnoteReferenceMark(),
+    new DXW.FootnoteReferenceMark(),
+    new DXW.PageNumber(),
+    new DXW.DayLong(),
+    new DXW.DayShort(),
+    new DXW.MonthLong(),
+    new DXW.MonthShort(),
+    new DXW.YearLong(),
+    new DXW.YearShort(),
+    new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Begin},
+    new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Separate },
+    new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.End },
+//    new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Begin, Dirty = true},
   };
-
-
   private const string xmlnsString =
     " xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"" +
     " xmlns:w14=\"http://schemas.microsoft.com/office/word/2010/wordml\"" +
