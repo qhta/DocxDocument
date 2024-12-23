@@ -21,7 +21,6 @@ public class Program
     var cleaner = new OpenXmlCleaner();
     var argList = args.ToList();
     var verboseLevel = 1;
-    bool testTextProcessing = false;
     if (argList.Count > 0)
     {
       var k = argList.IndexOf("-v");

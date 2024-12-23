@@ -426,7 +426,7 @@ public partial class TextProcessingTester
   private void TestSimpleSpecialCharactersEncoding(DXW.Paragraph paragraph, FormattedText formattedText, int index)
   {
     var element = SpecialCharactersElements[index];
-    var text = "This text is before" + element.GetText(TextOptions.PlainText) + "And this is after " + element.ToString();
+    var text = "This text is before" + element.GetText(TextOptions.PlainText) + "And this is after " + element.GetType().Name;
     Debug.WriteLine(text);
     formattedText.SetText(text, element);
     var secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
