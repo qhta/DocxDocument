@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXMLTools.csproj" />
+    <ProjectReference Include="..\CleanOpenXml\CleanOpenXml.csproj" />
     <ProjectReference Include="..\OpenXmlDatabase\OpenXmlDatabase.csproj" />
   </ItemGroup>
 
