@@ -14,6 +14,8 @@ public partial class TextProcessingTester
   /// </summary>
   public int VerboseLevel { get; set; }
 
+  public TextOptions TestTextOptions = TextOptions.PlainText;
+
   /// <summary>
   /// Run all text processing tests.
   /// </summary>
@@ -88,7 +90,7 @@ public partial class TextProcessingTester
   /// <param name="paragraph"></param>
   public bool TestSimpleFindAndReplace(DXW.Paragraph paragraph)
   {
-    var formattedText = new FormattedText(paragraph);
+    var formattedText = new FormattedText(paragraph, TestTextOptions);
     formattedText.Replace("bold", "boldfaced");
     Assert.That(paragraph.GetText(TextOptions.PlainText), Is.EqualTo("This text is boldfaced, and this is italicized."));
     formattedText.Replace("italicized", "italic");
@@ -132,7 +134,7 @@ public partial class TextProcessingTester
   /// <param name="paragraph"></param>
   public bool TestMultipleRunsTextFindAndReplace(DXW.Paragraph paragraph)
   {
-    var formattedText = new FormattedText(paragraph);
+    var formattedText = new FormattedText(paragraph, TestTextOptions);
     formattedText.Replace(", and this is", ", and this text is");
     Assert.That(paragraph.GetText(TextOptions.PlainText), Is.EqualTo("This text is bold, and this text is italicized."));
     return true;
@@ -171,7 +173,7 @@ public partial class TextProcessingTester
   /// <param name="paragraph"></param>
   public bool TestTextFindAndFormattedReplace(DXW.Paragraph paragraph)
   {
-    var formattedText = new FormattedText(paragraph);
+    var formattedText = new FormattedText(paragraph, TestTextOptions);
     formattedText.Replace(", and this is", ", and this text is", new TextFormat { Bold = false });
     Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("This text is <b>bold</b>, and this text is <i>italicized</i>."));
     return true;
@@ -212,7 +214,7 @@ public partial class TextProcessingTester
   /// <param name="paragraph"></param>
   public bool TestFormattedTextFindAndReplace(DXW.Paragraph paragraph)
   {
-    var formattedText = new FormattedText(paragraph);
+    var formattedText = new FormattedText(paragraph, TestTextOptions);
     formattedText.Replace(" is ", new TextFormat { Italic = true }, " is ", new TextFormat { Italic = false });
     Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("This text <b>is bold,</b> and <i>this</i> is <i>italicized</i>."));
     return true;
@@ -253,7 +255,7 @@ public partial class TextProcessingTester
   /// <param name="paragraph"></param>
   public bool TestWholeWordsTextFindAndReplace(DXW.Paragraph paragraph)
   {
-    var formattedText = new FormattedText(paragraph);
+    var formattedText = new FormattedText(paragraph, TestTextOptions);
     formattedText.Replace("is", new TextFormat { Italic = true }, "is", new TextFormat { Italic = false }, new FindAndReplaceOptions { FindWholeWordsOnly = true });
     Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("This text <b>is bold,</b> and <i>this </i>is<i> italicized</i>."));
     return true;
@@ -294,7 +296,7 @@ public partial class TextProcessingTester
   /// <param name="paragraph"></param>
   public bool TestCaseInsensitiveTextFindAndReplace(DXW.Paragraph paragraph)
   {
-    var formattedText = new FormattedText(paragraph);
+    var formattedText = new FormattedText(paragraph, TestTextOptions);
     formattedText.Replace("this", "that", new FindAndReplaceOptions { MatchCaseInsensitive = true });
     formattedText.Replace("this", "that", new FindAndReplaceOptions { MatchCaseInsensitive = true });
     Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("That text <b>is bold,</b> and <i>that is italicized</i>."));
@@ -336,7 +338,7 @@ public partial class TextProcessingTester
   /// <param name="paragraph"></param>
   public bool TestFormatFindAndReplace(DXW.Paragraph paragraph)
   {
-    var formattedText = new FormattedText(paragraph);
+    var formattedText = new FormattedText(paragraph, TestTextOptions);
     formattedText.Replace(null, new TextFormat { Italic = true }, null, new TextFormat { Bold = true });
     Assert.That(paragraph.GetText(TextOptions.PlainText with { UseHtmlFormatting = true }), Is.EqualTo("This text <b>is bold,</b> and <b><i>this is italicized</i></b>."));
     formattedText.Replace(null, new TextFormat { Bold = true, Italic = false }, null, new TextFormat { Bold = false, Italic = true });
@@ -390,7 +392,7 @@ public partial class TextProcessingTester
   public int TestSimpleSpecialCharactersEncoding(DXW.Paragraph paragraph)
   {
     int count = 0;
-    var formattedText = new FormattedText(paragraph);
+    var formattedText = new FormattedText(paragraph, TestTextOptions);
     var text = formattedText.GetText();
     Assert.That(text, Is.EqualTo("This text is on one page.\fAnd this is on another page."));
     count++;
@@ -426,14 +428,16 @@ public partial class TextProcessingTester
   private void TestSimpleSpecialCharactersEncoding(DXW.Paragraph paragraph, FormattedText formattedText, int index)
   {
     var element = SpecialCharactersElements[index];
-    var text = "This text is before" + element.GetText(TextOptions.PlainText) + "And this is after " + element.GetType().Name;
+    var text = "This text is before" + element.GetText(TextOptions.PlainText with {IncludeMemberProperties = true}) + "And this is after " + element.GetType().Name;
     Debug.WriteLine(text);
-    formattedText.SetText(text, element);
+    formattedText.SetText(text);
     var secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
     Assert.That(secondElement?.GetType(), Is.EqualTo(element.GetType()));
     Assert.That(secondElement, Is.EqualTo(element));
-    Assert.That(secondElement?.GetOuterXml(), Is.EqualTo(element.GetOuterXml()));
-    var aText = paragraph.GetText(TextOptions.PlainText);
+    var outerXml1 = element.GetOuterXml();
+    var outerXml2 = secondElement?.GetOuterXml();
+    Assert.That(outerXml2, Is.EqualTo(outerXml1));
+    var aText = paragraph.GetText(TextOptions.PlainText with { IncludeMemberProperties = true });
     Assert.That(aText, Is.EqualTo(text));
   }
 
@@ -462,7 +466,7 @@ public partial class TextProcessingTester
     new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Begin},
     new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Separate },
     new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.End },
-//    new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Begin, Dirty = true},
+    //new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Begin, Dirty = true},
   };
   private const string xmlnsString =
     " xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"" +
