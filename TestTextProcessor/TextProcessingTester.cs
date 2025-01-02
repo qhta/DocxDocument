@@ -41,14 +41,15 @@ public partial class TextProcessingTester
     if (wordDoc != null)
       try
       {
-        //TestSimpleFindAndReplace(wordDoc);
-        //TestMultipleRunsTextFindAndReplace(wordDoc);
-        //TestTextFindAndFormattedReplace(wordDoc);
-        //TestFormattedTextFindAndReplace(wordDoc);
-        //TestWholeWordsTextFindAndReplace(wordDoc);
-        //TestCaseInsensitiveTextFindAndReplace(wordDoc);
-        //TestFormatFindAndReplace(wordDoc);
-        TestSimpleSpecialCharactersEncoding(wordDoc);
+        var body = wordDoc.GetBody();
+        TestSimpleFindAndReplace(body);
+        TestMultipleRunsTextFindAndReplace(body);
+        TestTextFindAndFormattedReplace(body);
+        TestFormattedTextFindAndReplace(body);
+        TestWholeWordsTextFindAndReplace(body);
+        TestCaseInsensitiveTextFindAndReplace(body);
+        TestFormatFindAndReplace(body);
+        TestSimpleSpecialCharactersEncoding(body);
       }
       finally
       {
@@ -59,12 +60,11 @@ public partial class TextProcessingTester
   /// <summary>
   /// Run a find and replace test in the document.
   /// </summary>
-  /// <param name="wordDoc"></param>
-  public void TestSimpleFindAndReplace(DXPack.WordprocessingDocument wordDoc)
+  /// <param name="body"></param>
+  public void TestSimpleFindAndReplace(DX.OpenXmlCompositeElement body)
   {
     if (VerboseLevel > 0)
       Console.WriteLine("\nTesting simple find and replace");
-    var body = wordDoc.GetBody();
     var paragraphs = body.Elements<DXW.Paragraph>().ToList();
     foreach (var paragraph in paragraphs)
     {
@@ -103,12 +103,12 @@ public partial class TextProcessingTester
   /// <summary>
   /// Run a multiple runs text find and replace test in the document.
   /// </summary>
-  /// <param name="wordDoc"></param>
-  public void TestMultipleRunsTextFindAndReplace(DXPack.WordprocessingDocument wordDoc)
+  /// <param name="body"></param>
+  public void TestMultipleRunsTextFindAndReplace(DX.OpenXmlCompositeElement body)
   {
     if (VerboseLevel > 0)
       Console.WriteLine("\nTest multiple runs text find and replace");
-    var body = wordDoc.GetBody();
+
     var paragraphs = body.Elements<DXW.Paragraph>().ToList();
     foreach (var paragraph in paragraphs)
     {
@@ -145,12 +145,12 @@ public partial class TextProcessingTester
   /// <summary>
   /// Run a text find and formatted replace test in the document.
   /// </summary>
-  /// <param name="wordDoc"></param>
-  public void TestTextFindAndFormattedReplace(DXPack.WordprocessingDocument wordDoc)
+  /// <param name="body"></param>
+  public void TestTextFindAndFormattedReplace(DX.OpenXmlCompositeElement body)
   {
     if (VerboseLevel > 0)
       Console.WriteLine("\nTest text find and formatted replace");
-    var body = wordDoc.GetBody();
+
     var paragraphs = body.Elements<DXW.Paragraph>().ToList();
     foreach (var paragraph in paragraphs)
     {
@@ -183,12 +183,12 @@ public partial class TextProcessingTester
   /// <summary>
   /// Run a test to find and replace formatted text in the document.
   /// </summary>
-  /// <param name="wordDoc"></param>
-  public void TestFormattedTextFindAndReplace(DXPack.WordprocessingDocument wordDoc)
+  /// <param name="body"></param>
+  public void TestFormattedTextFindAndReplace(DX.OpenXmlCompositeElement body)
   {
     if (VerboseLevel > 0)
       Console.WriteLine("\nTest formatted text find and replace");
-    var body = wordDoc.GetBody();
+
     var paragraphs = body.Elements<DXW.Paragraph>().ToList();
     foreach (var paragraph in paragraphs)
     {
@@ -224,12 +224,12 @@ public partial class TextProcessingTester
   /// <summary>
   /// Run a test of find and replace whole words in the document.
   /// </summary>
-  /// <param name="wordDoc"></param>
-  public void TestWholeWordsTextFindAndReplace(DXPack.WordprocessingDocument wordDoc)
+  /// <param name="body"></param>
+  public void TestWholeWordsTextFindAndReplace(DX.OpenXmlCompositeElement body)
   {
     if (VerboseLevel > 0)
       Console.WriteLine("\nTest whole words text find and replace");
-    var body = wordDoc.GetBody();
+
     var paragraphs = body.Elements<DXW.Paragraph>().ToList();
     foreach (var paragraph in paragraphs)
     {
@@ -265,12 +265,12 @@ public partial class TextProcessingTester
   /// <summary>
   /// Run a test of find and replace whole words in the document.
   /// </summary>
-  /// <param name="wordDoc"></param>
-  public void TestCaseInsensitiveTextFindAndReplace(DXPack.WordprocessingDocument wordDoc)
+  /// <param name="body"></param>
+  public void TestCaseInsensitiveTextFindAndReplace(DX.OpenXmlCompositeElement body)
   {
     if (VerboseLevel > 0)
       Console.WriteLine("\nTest whole words text find and replace");
-    var body = wordDoc.GetBody();
+
     var paragraphs = body.Elements<DXW.Paragraph>().ToList();
     foreach (var paragraph in paragraphs)
     {
@@ -307,12 +307,12 @@ public partial class TextProcessingTester
   /// <summary>
   /// Run a test of find and replace whole words in the document.
   /// </summary>
-  /// <param name="wordDoc"></param>
-  public void TestFormatFindAndReplace(DXPack.WordprocessingDocument wordDoc)
+  /// <param name="body"></param>
+  public void TestFormatFindAndReplace(DX.OpenXmlCompositeElement body)
   {
     if (VerboseLevel > 0)
       Console.WriteLine("\nTest format find and replace");
-    var body = wordDoc.GetBody();
+
     var paragraphs = body.Elements<DXW.Paragraph>().ToList();
     foreach (var paragraph in paragraphs)
     {
@@ -354,18 +354,18 @@ public partial class TextProcessingTester
   /// <summary>
   /// Run a test of BreakPage and LastRenderedPageBreak encoding
   /// </summary>
-  /// <param name="wordDoc"></param>
-  public void TestSimpleSpecialCharactersEncoding(DXPack.WordprocessingDocument wordDoc)
+  /// <param name="body"></param>
+  public void TestSimpleSpecialCharactersEncoding(DX.OpenXmlCompositeElement body)
   {
     if (VerboseLevel > 0)
       Console.WriteLine("\nTest simple special characters encoding");
-    TestSimpleSpecialCharactersEncoding(wordDoc, TextOptions.PlainText);
-    TestSimpleSpecialCharactersEncoding(wordDoc, TextOptions.RichText);
+    TestSimpleSpecialCharactersEncoding(body, TextOptions.PlainText);
+    TestSimpleSpecialCharactersEncoding(body, TextOptions.RichText);
   }
 
-  private void TestSimpleSpecialCharactersEncoding(DXPack.WordprocessingDocument wordDoc, TextOptions options)
+  private void TestSimpleSpecialCharactersEncoding(DX.OpenXmlCompositeElement body, TextOptions options)
   {
-    var body = wordDoc.GetBody();
+
     var paragraphs = body.Elements<DXW.Paragraph>().ToList();
     foreach (var paragraph in paragraphs)
     {
