@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.ComTypes;
 
 using DocumentFormat.OpenXml;
@@ -358,6 +359,12 @@ public partial class TextProcessingTester
   {
     if (VerboseLevel > 0)
       Console.WriteLine("\nTest simple special characters encoding");
+    TestSimpleSpecialCharactersEncoding(wordDoc, TextOptions.PlainText);
+    TestSimpleSpecialCharactersEncoding(wordDoc, TextOptions.RichText);
+  }
+
+  private void TestSimpleSpecialCharactersEncoding(DXPack.WordprocessingDocument wordDoc, TextOptions options)
+  {
     var body = wordDoc.GetBody();
     var paragraphs = body.Elements<DXW.Paragraph>().ToList();
     foreach (var paragraph in paragraphs)
@@ -376,13 +383,13 @@ public partial class TextProcessingTester
     }
     var count = 0;
     paragraphs = body.Elements<DXW.Paragraph>().ToList();
+    TestTextOptions = options;
     foreach (var paragraph in paragraphs)
     {
       count += TestSimpleSpecialCharactersEncoding(paragraph);
-
     }
     if (VerboseLevel > 0)
-      Console.WriteLine($" {count} tests passed.");
+      Console.WriteLine($" {count} {options.Mode} tests passed.");
   }
 
   /// <summary>
@@ -394,17 +401,20 @@ public partial class TextProcessingTester
     int count = 0;
     var formattedText = new FormattedText(paragraph, TestTextOptions);
     var text = formattedText.GetText();
-    Assert.That(text, Is.EqualTo("This text is on one page.\fAnd this is on another page."));
+    Assert.That(text, Is.EqualTo($"This text is on one page.{TestTextOptions.Tags.BreakPageTag}And this is on another page."));
     count++;
-    formattedText.SetText(text);
+    formattedText.SetText(text, TestTextOptions);
     DX.OpenXmlElement? secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
     Assert.That(secondElement?.GetType(), Is.EqualTo(typeof(DXW.Break)));
     Assert.That((secondElement as DXW.Break)?.Type?.Value, Is.EqualTo(DXW.BreakValues.Page));
     count++;
-    var aText = paragraph.GetText(TextOptions.PlainText);
+    var aText = paragraph.GetText(TestTextOptions);
     Assert.That(aText, Is.EqualTo(text));
 
-    for (int i = 0; i < SpecialCharactersElements.Count; i++)
+    var n = SpecialCharactersElements.Count;
+    if (TestTextOptions.Mode == FormattedTextMode.PlainText)
+      n -= 2;
+    for (int i = 0; i < n; i++)
     {
       TestSimpleSpecialCharactersEncoding(paragraph, formattedText, i);
       count++;
@@ -428,25 +438,24 @@ public partial class TextProcessingTester
   private void TestSimpleSpecialCharactersEncoding(DXW.Paragraph paragraph, FormattedText formattedText, int index)
   {
     var element = SpecialCharactersElements[index];
-    var text = "This text is before" + element.GetText(TextOptions.PlainText with {IncludeMemberProperties = true}) + "And this is after " + element.GetType().Name;
+    var text = "This text is before" + element.GetText(TestTextOptions) + "And this is after " + element.GetType().Name;
     Debug.WriteLine(text);
-    formattedText.SetText(text);
+    formattedText.SetText(text, TestTextOptions);
     var secondElement = (paragraph.GetMembers().ToArray()[0] as DXW.Run)?.GetMembers().ToArray()[1];
     Assert.That(secondElement?.GetType(), Is.EqualTo(element.GetType()));
     Assert.That(secondElement, Is.EqualTo(element));
     var outerXml1 = element.GetOuterXml();
     var outerXml2 = secondElement?.GetOuterXml();
     Assert.That(outerXml2, Is.EqualTo(outerXml1));
-    var aText = paragraph.GetText(TextOptions.PlainText with { IncludeMemberProperties = true });
+    var aText = paragraph.GetText(TestTextOptions);
     Assert.That(aText, Is.EqualTo(text));
   }
 
-  private readonly List<DX.OpenXmlElement> SpecialCharactersElements= new List<DX.OpenXmlElement>()
+  private readonly List<DX.OpenXmlElement> SpecialCharactersElements = new List<DX.OpenXmlElement>()
   {
     new DXW.Break() { Type = DXW.BreakValues.Page },
     new DXW.Break() { Type = DXW.BreakValues.Column },
     new DXW.Break() { Type = DXW.BreakValues.TextWrapping },
-    new DXW.Break() { Type = DXW.BreakValues.TextWrapping, Clear = new EnumValue<DXW.BreakTextRestartLocationValues>(DXW.BreakTextRestartLocationValues.Left)},
     new DXW.TabChar(),
     new DXW.SoftHyphen(),
     new DXW.NoBreakHyphen(),
@@ -463,10 +472,12 @@ public partial class TextProcessingTester
     new DXW.MonthShort(),
     new DXW.YearLong(),
     new DXW.YearShort(),
-    new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Begin},
+    new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Begin },
     new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Separate },
     new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.End },
-    //new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Begin, Dirty = true},
+
+    new DXW.Break() { Type = DXW.BreakValues.TextWrapping, Clear = new EnumValue<DXW.BreakTextRestartLocationValues>(DXW.BreakTextRestartLocationValues.Left)},
+    new DXW.FieldChar() { FieldCharType = DXW.FieldCharValues.Begin, Dirty = true},
   };
   private const string xmlnsString =
     " xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"" +
