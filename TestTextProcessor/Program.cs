@@ -14,7 +14,7 @@ public class Program
 
     Directory.SetCurrentDirectory(docxPath);
     var argList = args.ToList();
-    var verboseLevel = 1;
+    var verboseLevel = 2;
     if (argList.Count > 0)
     {
       var k = argList.IndexOf("-v");
