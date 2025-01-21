@@ -6,6 +6,7 @@ using System.Text.Encodings.Web;
 using DocumentFormat.OpenXml;
 
 using NUnit.Framework;
+using Qhta.Unicode;
 
 namespace Qhta.OpenXmlTools;
 
@@ -22,11 +23,24 @@ public partial class TextProcessingTester
 
   private void TestCharEncoding(DX.OpenXmlCompositeElement body, TextOptions options)
   {
-    if (VerboseLevel > 0)
-      Console.WriteLine($"\nTest {options.Mode} characters encoding");
     Console.OutputEncoding = Encoding.Unicode;
     int count = 0;
     int failed = 0;
+
+    //var ucd = UnicodeData.Instance;
+    //var points = ucd.SearchInNames("SUPERSCRIPT*").ToList();
+    //foreach (var point in points)
+    //{
+    //  var charInfo = ucd[point];
+    //  if (VerboseLevel > 0)
+    //    Console.WriteLine($"{charInfo.CodePoint} {charInfo.Name}");
+
+    //}
+    //Console.WriteLine($"Found {points.Count()} points");
+    //return;
+    if (VerboseLevel > 0)
+      Console.WriteLine($"\nTest {options.Mode} characters encoding");
+
     count += TestCharEncoding(body, UnicodeCategory.Control, ref failed, options);
     count += TestCharEncoding(body, [UnicodeCategory.SpaceSeparator, UnicodeCategory.ParagraphSeparator, UnicodeCategory.LineSeparator], ref failed, options);
     count += TestCharEncoding(body, '\x20', '\x7E', ref failed, options);
