@@ -8,11 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NUnit" Version="4.2.2" />
+    <PackageReference Include="NUnit" Version="4.3.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXmlTools.csproj" />
+    <ProjectReference Include="..\..\MyLib\Qhta.Unicode\Qhta.Unicode\Qhta.Unicode.csproj" />
   </ItemGroup>
 
 </Project>
