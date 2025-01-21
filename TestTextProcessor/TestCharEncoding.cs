@@ -116,6 +116,7 @@ public partial class TextProcessingTester
   {
     int errs0 = errs;
     DXW.Text testText = new DXW.Text(str);
+    options.GetTextWriter().Clear();
     var encodedText = testText.GetText(options);
     if (VerboseLevel > 1)
       Console.WriteLine($"  Encoded text:\n  {encodedText}");
