@@ -28,12 +28,12 @@ public partial class TextProcessingTester
     int failed = 0;
 
     //var ucd = UnicodeData.Instance;
-    //var points = ucd.SearchInNames("SUPERSCRIPT*").ToList();
+    //var points = ucd.SearchInCategories( "L | N").ToList();
     //foreach (var point in points)
     //{
     //  var charInfo = ucd[point];
     //  if (VerboseLevel > 0)
-    //    Console.WriteLine($"{charInfo.CodePoint} {charInfo.Name}");
+    //    Console.WriteLine($"{charInfo.CodePoint} {charInfo.Name} {charInfo.Category}");
 
     //}
     //Console.WriteLine($"Found {points.Count()} points");
@@ -41,17 +41,19 @@ public partial class TextProcessingTester
     if (VerboseLevel > 0)
       Console.WriteLine($"\nTest {options.Mode} characters encoding");
 
-    count += TestCharEncoding(body, UnicodeCategory.Control, ref failed, options);
+    count += TestCharEncodingInCategory(body, UcdCategory.Cc, ref failed, options);
     count += TestCharEncoding(body, [UnicodeCategory.SpaceSeparator, UnicodeCategory.ParagraphSeparator, UnicodeCategory.LineSeparator], ref failed, options);
     count += TestCharEncoding(body, '\x20', '\x7E', ref failed, options);
     count += TestCharEncoding(body, '\xA1','\xFF', ref failed, options);
-    count += TestCharEncoding(body, UnicodeCategory.DashPunctuation, ref failed, options);
-    count += TestCharEncoding(body, UnicodeCategory.Format, ref failed, options);
-    count += TestCharEncoding(body, UnicodeCategory.ModifierSymbol, ref failed, options);
-    count += TestCharEncoding(body, UnicodeCategory.NonSpacingMark, ref failed, options);
+    count += TestCharEncodingInCategory(body, UcdCategory.Pd, ref failed, options);
+    count += TestCharEncodingInCategory(body, UcdCategory.Cf, ref failed, options);
+    count += TestCharEncodingInCategory(body, UcdCategory.Sk, ref failed, options);
+    count += TestCharEncodingInCategory(body, UcdCategory.Mn, ref failed, options);
     count += TestCharEncoding(body, CharUtils.SupChars, ref failed, options);
     count += TestCharEncoding(body, CharUtils.SubChars, ref failed, options);
     count += TestCharEncoding(body, CharUtils.RomanChars, ref failed, options);
+    count += TestCharEncodingInScript(body, "Latin", ref failed, options);
+
     if (VerboseLevel > 0)
     {
       int passed = count - failed;
@@ -60,14 +62,16 @@ public partial class TextProcessingTester
     }
   }
 
-  private int TestCharEncoding(DX.OpenXmlCompositeElement body, UnicodeCategory ctg, ref int errs, TextOptions options)
+  private int TestCharEncodingInCategory(DX.OpenXmlCompositeElement body, UcdCategory ctg, ref int errs, TextOptions options)
   {
     var sb = new StringBuilder();
-    for (int i = 0; i <= 0xFFFF; i++)
+    foreach (var codePoint in UnicodeData.Instance.SearchInCategories(ctg.ToString()))
     {
-      var ch = (char)i;
-      if (Char.GetUnicodeCategory(ch) == ctg)
+      if (codePoint<=0xFFFF)
+      {
+        var ch = (char)codePoint;
         sb.Append(ch);
+      }
     }
     string text = sb.ToString();
     var count = TestCharEncoding(body, text, ref errs, options);
@@ -88,6 +92,23 @@ public partial class TextProcessingTester
     return count;
   }
 
+  private int TestCharEncodingInScript(DX.OpenXmlCompositeElement body, string script, ref int errs, TextOptions options)
+  {
+    if (ScriptCodes.UcdScriptNames.TryGetValue1(script, out var scriptCode))
+      script = scriptCode;
+    var sb = new StringBuilder();
+    foreach (var codePoint in UnicodeData.Instance.SearchInScripts(script))
+    {
+      if (codePoint <= 0xFFFF)
+      {
+        var ch = (char)codePoint;
+        sb.Append(ch);
+      }
+    }
+    string text = sb.ToString();
+    var count = TestCharEncoding(body, text, ref errs, options);
+    return count;
+  }
   private int TestCharEncoding(DX.OpenXmlCompositeElement body, char from, char to, ref int errs, TextOptions options)
   {
     char[] chars = new char[to-from+1];
