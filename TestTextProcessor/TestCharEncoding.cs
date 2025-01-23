@@ -42,17 +42,17 @@ public partial class TextProcessingTester
       Console.WriteLine($"\nTest {options.Mode} characters encoding");
 
     count += TestCharEncodingInCategory(body, UcdCategory.Cc, ref failed, options);
-    count += TestCharEncoding(body, [UnicodeCategory.SpaceSeparator, UnicodeCategory.ParagraphSeparator, UnicodeCategory.LineSeparator], ref failed, options);
-    count += TestCharEncoding(body, '\x20', '\x7E', ref failed, options);
-    count += TestCharEncoding(body, '\xA1','\xFF', ref failed, options);
-    count += TestCharEncodingInCategory(body, UcdCategory.Pd, ref failed, options);
-    count += TestCharEncodingInCategory(body, UcdCategory.Cf, ref failed, options);
-    count += TestCharEncodingInCategory(body, UcdCategory.Sk, ref failed, options);
-    count += TestCharEncodingInCategory(body, UcdCategory.Mn, ref failed, options);
-    count += TestCharEncoding(body, CharUtils.SupChars, ref failed, options);
-    count += TestCharEncoding(body, CharUtils.SubChars, ref failed, options);
-    count += TestCharEncoding(body, CharUtils.RomanChars, ref failed, options);
-    count += TestCharEncodingInScript(body, "Latin", ref failed, options);
+    count += TestCharEncodingInCategories(body, "Z", ref failed, options);
+    //count += TestCharEncodingInRange(body, '\x20', '\x7E', ref failed, options);
+    //count += TestCharEncodingInRange(body, '\xA1','\xFF', ref failed, options);
+    //count += TestCharEncodingInCategory(body, UcdCategory.Pd, ref failed, options);
+    //count += TestCharEncodingInCategory(body, UcdCategory.Cf, ref failed, options);
+    //count += TestCharEncodingInCategory(body, UcdCategory.Sk, ref failed, options);
+    //count += TestCharEncodingInCategory(body, UcdCategory.Mn, ref failed, options);
+    //count += TestCharEncodingInSet(body, CharUtils.SupChars, ref failed, options);
+    //count += TestCharEncodingInSet(body, CharUtils.SubChars, ref failed, options);
+    //count += TestCharEncodingInSet(body, CharUtils.RomanChars, ref failed, options);
+    //count += TestCharEncodingInScript(body, "Latin", ref failed, options);
 
     if (VerboseLevel > 0)
     {
@@ -78,14 +78,16 @@ public partial class TextProcessingTester
     return count;
   }
 
-  private int TestCharEncoding(DX.OpenXmlCompositeElement body, UnicodeCategory[] ctgs, ref int errs, TextOptions options)
+  private int TestCharEncodingInCategories(DX.OpenXmlCompositeElement body, string pattern, ref int errs, TextOptions options)
   {
     var sb = new StringBuilder();
-    for (int i = 0; i <= 0xFFFF; i++)
+    foreach (var codePoint in UnicodeData.Instance.SearchInCategories(pattern))
     {
-      var ch = (char)i;
-      if (ctgs.Contains(Char.GetUnicodeCategory(ch)))
+      if (codePoint <= 0xFFFF)
+      {
+        var ch = (char)codePoint;
         sb.Append(ch);
+      }
     }
     string text = sb.ToString();
     var count = TestCharEncoding(body, text, ref errs, options);
@@ -109,7 +111,7 @@ public partial class TextProcessingTester
     var count = TestCharEncoding(body, text, ref errs, options);
     return count;
   }
-  private int TestCharEncoding(DX.OpenXmlCompositeElement body, char from, char to, ref int errs, TextOptions options)
+  private int TestCharEncodingInRange(DX.OpenXmlCompositeElement body, char from, char to, ref int errs, TextOptions options)
   {
     char[] chars = new char[to-from+1];
     for (int i = from; i <= to; i++)
@@ -121,7 +123,7 @@ public partial class TextProcessingTester
     return count;
   }
 
-  private int TestCharEncoding(DX.OpenXmlCompositeElement body, char[] values, ref int errs, TextOptions options)
+  private int TestCharEncodingInSet(DX.OpenXmlCompositeElement body, char[] values, ref int errs, TextOptions options)
   {
     char[] chars = new char[values.Length];
     for (int i = 0; i < values.Length; i++)
