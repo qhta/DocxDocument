@@ -43,12 +43,12 @@ public partial class TextProcessingTester
 
     count += TestCharEncodingInCategory(body, UcdCategory.Cc, ref failed, options);
     count += TestCharEncodingInCategories(body, "Z", ref failed, options);
-    //count += TestCharEncodingInRange(body, '\x20', '\x7E', ref failed, options);
-    //count += TestCharEncodingInRange(body, '\xA1','\xFF', ref failed, options);
-    //count += TestCharEncodingInCategory(body, UcdCategory.Pd, ref failed, options);
-    //count += TestCharEncodingInCategory(body, UcdCategory.Cf, ref failed, options);
-    //count += TestCharEncodingInCategory(body, UcdCategory.Sk, ref failed, options);
-    //count += TestCharEncodingInCategory(body, UcdCategory.Mn, ref failed, options);
+    count += TestCharEncodingInRange(body, '\x20', '\x7E', ref failed, options);
+    count += TestCharEncodingInRange(body, '\xA1','\xFF', ref failed, options);
+    count += TestCharEncodingInCategory(body, UcdCategory.Pd, ref failed, options);
+    count += TestCharEncodingInCategory(body, UcdCategory.Cf, ref failed, options);
+    count += TestCharEncodingInCategory(body, UcdCategory.Sk, ref failed, options);
+    count += TestCharEncodingInCategory(body, UcdCategory.Mn, ref failed, options);
     //count += TestCharEncodingInSet(body, CharUtils.SupChars, ref failed, options);
     //count += TestCharEncodingInSet(body, CharUtils.SubChars, ref failed, options);
     //count += TestCharEncodingInSet(body, CharUtils.RomanChars, ref failed, options);
