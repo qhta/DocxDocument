@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanOpenXml", "..\CleanOpe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qhta.Unicode", "..\..\MyLib\Qhta.Unicode\Qhta.Unicode\Qhta.Unicode.csproj", "{5D54FF39-4B8E-4694-86C4-F2CADBCAE2CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qhta.Collections", "..\..\MyLib\Qhta.Collections\Qhta.Collections.csproj", "{92AD5229-30A5-4DC3-B515-EFE47BF37E5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,18 @@ Global
 		{5D54FF39-4B8E-4694-86C4-F2CADBCAE2CD}.Release|x64.Build.0 = Release|Any CPU
 		{5D54FF39-4B8E-4694-86C4-F2CADBCAE2CD}.Release|x86.ActiveCfg = Release|Any CPU
 		{5D54FF39-4B8E-4694-86C4-F2CADBCAE2CD}.Release|x86.Build.0 = Release|Any CPU
+		{92AD5229-30A5-4DC3-B515-EFE47BF37E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92AD5229-30A5-4DC3-B515-EFE47BF37E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92AD5229-30A5-4DC3-B515-EFE47BF37E5E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{92AD5229-30A5-4DC3-B515-EFE47BF37E5E}.Debug|x64.Build.0 = Debug|Any CPU
+		{92AD5229-30A5-4DC3-B515-EFE47BF37E5E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{92AD5229-30A5-4DC3-B515-EFE47BF37E5E}.Debug|x86.Build.0 = Debug|Any CPU
+		{92AD5229-30A5-4DC3-B515-EFE47BF37E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92AD5229-30A5-4DC3-B515-EFE47BF37E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92AD5229-30A5-4DC3-B515-EFE47BF37E5E}.Release|x64.ActiveCfg = Release|Any CPU
+		{92AD5229-30A5-4DC3-B515-EFE47BF37E5E}.Release|x64.Build.0 = Release|Any CPU
+		{92AD5229-30A5-4DC3-B515-EFE47BF37E5E}.Release|x86.ActiveCfg = Release|Any CPU
+		{92AD5229-30A5-4DC3-B515-EFE47BF37E5E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
