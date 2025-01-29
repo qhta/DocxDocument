@@ -50,7 +50,8 @@ public partial class TextProcessingTester
         //TestCaseInsensitiveTextFindAndReplace(body);
         //TestFormatFindAndReplace(body);
         //TestRunElementsEncoding(body);
-        TestCharEncoding(body);
+        //TestCharEncoding(body);
+        TestCharNames();
       }
       finally
       {
