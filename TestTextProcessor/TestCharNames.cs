@@ -52,7 +52,8 @@ public partial class TextProcessingTester
     //count += TestCharLongNamesLike("*VULGAR FRACTION*", ref failed, options);
     //count += TestCharLongNamesLike("*CHESS*", ref failed, options);
     //count += TestCharLongNamesLike("*VARIATION SELECTOR*", ref failed, options);
-    count += TestCharLongNamesLike("*BOX DRAWINGS*", ref failed, options);
+    //count += TestCharLongNamesLike("*BOX DRAWINGS*", ref failed, options);
+    count += TestCharLongNamesLike("*SIGNWRITING*", ref failed, options);
 
     if (VerboseLevel > 0)
     {
