@@ -50,8 +50,9 @@ public partial class TextProcessingTester
     //count += TestCharNamesInScript("Latin", ref failed, options);
 
     //count += TestCharLongNamesLike("*VULGAR FRACTION*", ref failed, options);
-    count += TestCharLongNamesLike("*CHESS*", ref failed, options);
+    //count += TestCharLongNamesLike("*CHESS*", ref failed, options);
     //count += TestCharLongNamesLike("*VARIATION SELECTOR*", ref failed, options);
+    count += TestCharLongNamesLike("*BOX DRAWINGS*", ref failed, options);
 
     if (VerboseLevel > 0)
     {
