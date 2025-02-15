@@ -96,7 +96,7 @@ public partial class TextProcessingTester
 
   private int TestCharEncodingInScript(DX.OpenXmlCompositeElement body, string script, ref int errs, TextOptions options)
   {
-    if (ScriptCodes.UcdScriptNames.TryGetValue1(script, out var scriptCode))
+    if (UnicodeData.Instance.ScriptCodes.TryGetValue1(script, out var scriptCode))
       script = scriptCode;
     var sb = new StringBuilder();
     foreach (var codePoint in UnicodeData.Instance.SearchInScripts(script))
