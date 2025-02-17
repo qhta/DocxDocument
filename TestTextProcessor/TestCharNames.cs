@@ -66,8 +66,7 @@ public partial class TextProcessingTester
     //count += TestCharLongNamesLike("*VARIATION SELECTOR*", ref failed, options);
     //count += TestCharLongNamesLike("*BOX DRAWINGS*", ref failed, options);
 
-    //count += TestCharNamesInRange(0x1FA70, 0x1FAFF, ref failed, options);
-    //count += TestCharNamesInRange(0x1FB00, 0x1FBFF, ref failed, options);
+
     //count += TestCharLongNamesLike("*SIGNWRITING*", ref failed, options);
     //count += TestCharLongNamesLike("WIDE-HEADED*", ref failed, options);
     //count += TestCharLongNamesLike("XIANGQI*", ref failed, options);
@@ -78,7 +77,16 @@ public partial class TextProcessingTester
     //count += TestCharLongNamesLike("ZNAMENNY*", ref failed, options);
     //count += TestCharLongNamesLike("EXTENDED ARABIC-INDIC*", ref failed, options);
     //count += TestCharLongNamesLike("HALFWIDTH*", ref failed, options);
-    count += TestCharLongNamesLike("FULLWIDTH*", ref failed, options);
+    //count += TestCharLongNamesLike("FULLWIDTH*", ref failed, options);
+
+    //count += TestCharNamesInRange(0x0000, 0x007F, ref failed, options);
+    //count += TestCharNamesInRange(0x0080, 0x00FF, ref failed, options);
+    //count += TestCharNamesInRange(0x0100, 0x017F, ref failed, options);
+    count += TestCharNamesInRange(0x0180, 0x024F, ref failed, options);
+    //count += TestCharNamesInRange(0xFF00, 0xFFEF, ref failed, options);
+
+    //count += TestCharNamesInRange(0x1FA70, 0x1FAFF, ref failed, options);
+    //count += TestCharNamesInRange(0x1FB00, 0x1FBFF, ref failed, options);
 
     if (VerboseLevel > 0)
     {
