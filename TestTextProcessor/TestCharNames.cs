@@ -88,8 +88,8 @@ public partial class TextProcessingTester
     //count += TestCharNamesInRange(0x0300, 0x036F, ref failed, options); // Combining Diacritical Marks
     //count += TestCharNamesInRange(0x0370, 0x03FF, ref failed, options); // Greek and Coptic
     //count += TestCharNamesInRange(0x0400, 0x04FF, ref failed, options); // Cyrillic
-    count += TestCharNamesInRange(0x0500, 0x052F, ref failed, options); // Cyrillic Supplement
-    //count += TestCharNamesInRange(0x0530, 0x058F, ref failed, options); // Armenian
+    //count += TestCharNamesInRange(0x0500, 0x052F, ref failed, options); // Cyrillic Supplement
+    count += TestCharNamesInRange(0x0530, 0x058F, ref failed, options); // Armenian
     //count += TestCharNamesInRange(0x0590, 0x05FF, ref failed, options); // Hebrew
     //count += TestCharNamesInRange(0x0600, 0x06FF, ref failed, options); // Arabic
     //count += TestCharNamesInRange(0x0700, 0x074F, ref failed, options); // Syriac
