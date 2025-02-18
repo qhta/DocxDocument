@@ -91,9 +91,9 @@ public partial class TextProcessingTester
     //count += TestCharNamesInRange(0x0500, 0x052F, ref failed, options); // Cyrillic Supplement
     //count += TestCharNamesInRange(0x0530, 0x058F, ref failed, options); // Armenian
     //count += TestCharNamesInRange(0x0590, 0x05FF, ref failed, options); // Hebrew
-    count += TestCharNamesInRange(0x0600, 0x06FF, ref failed, options); // Arabic
+    //count += TestCharNamesInRange(0x0600, 0x06FF, ref failed, options); // Arabic
     //count += TestCharNamesInRange(0x0700, 0x074F, ref failed, options); // Syriac
-    //count += TestCharNamesInRange(0x0750, 0x077F, ref failed, options); // Arabic Supplement
+    count += TestCharNamesInRange(0x0750, 0x077F, ref failed, options); // Arabic Supplement
     //count += TestCharNamesInRange(0x0780, 0x07BF, ref failed, options); // Thaana
     //count += TestCharNamesInRange(0x07C0, 0x07FF, ref failed, options); // NKo
     //count += TestCharNamesInRange(0x0800, 0x083F, ref failed, options); // Samaritan
