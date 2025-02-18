@@ -82,7 +82,11 @@ public partial class TextProcessingTester
     //count += TestCharNamesInRange(0x0000, 0x007F, ref failed, options);
     //count += TestCharNamesInRange(0x0080, 0x00FF, ref failed, options);
     //count += TestCharNamesInRange(0x0100, 0x017F, ref failed, options);
-    count += TestCharNamesInRange(0x0180, 0x024F, ref failed, options);
+    //count += TestCharNamesInRange(0x0180, 0x024F, ref failed, options);
+    //count += TestCharNamesInRange(0x0250, 0x02AF, ref failed, options);
+    //count += TestCharNamesInRange(0x02B0, 0x02FF, ref failed, options);
+    //count += TestCharNamesInRange(0x0300, 0x036F, ref failed, options);
+    count += TestCharNamesInRange(0x0370, 0x03FF, ref failed, options);
     //count += TestCharNamesInRange(0xFF00, 0xFFEF, ref failed, options);
 
     //count += TestCharNamesInRange(0x1FA70, 0x1FAFF, ref failed, options);
