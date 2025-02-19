@@ -101,11 +101,11 @@ public partial class TextProcessingTester
     //count += TestCharNamesInRange(0x0860, 0x086F, ref failed, options); // Syriac Supplement
     //count += TestCharNamesInRange(0x0870, 0x089F, ref failed, options); // Arabic Extended-B
     //count += TestCharNamesInRange(0x08A0, 0x08FF, ref failed, options); // Arabic Extended-A
-    count += TestCharNamesInRange(0x0900, 0x097F, ref failed, options); // Devanagari
+    //count += TestCharNamesInRange(0x0900, 0x097F, ref failed, options); // Devanagari
     //count += TestCharNamesInRange(0x0980, 0x09FF, ref failed, options); // Bengali
     //count += TestCharNamesInRange(0x0A00, 0x0A7F, ref failed, options); // Gurmukhi
     //count += TestCharNamesInRange(0x0A80, 0x0AFF, ref failed, options); // Gujarati
-    //count += TestCharNamesInRange(0x0B00, 0x0B7F, ref failed, options); // Oriya
+    count += TestCharNamesInRange(0x0B00, 0x0B7F, ref failed, options); // Oriya
     //count += TestCharNamesInRange(0x0B80, 0x0BFF, ref failed, options); // Tamil
     //count += TestCharNamesInRange(0x0C00, 0x0C7F, ref failed, options); // Telugu
     //count += TestCharNamesInRange(0x0C80, 0x0CFF, ref failed, options); // Kannada
