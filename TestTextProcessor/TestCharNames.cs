@@ -105,7 +105,7 @@ public partial class TextProcessingTester
     //count += TestCharNamesInRange(0x0980, 0x09FF, ref failed, options); // Bengali
     //count += TestCharNamesInRange(0x0A00, 0x0A7F, ref failed, options); // Gurmukhi
     //count += TestCharNamesInRange(0x0A80, 0x0AFF, ref failed, options); // Gujarati
-    count += TestCharNamesInRange(0x0B00, 0x0B7F, ref failed, options); // Oriya
+    //count += TestCharNamesInRange(0x0B00, 0x0B7F, ref failed, options); // Oriya
     //count += TestCharNamesInRange(0x0B80, 0x0BFF, ref failed, options); // Tamil
     //count += TestCharNamesInRange(0x0C00, 0x0C7F, ref failed, options); // Telugu
     //count += TestCharNamesInRange(0x0C80, 0x0CFF, ref failed, options); // Kannada
@@ -119,10 +119,10 @@ public partial class TextProcessingTester
     //count += TestCharNamesInRange(0x1100, 0x11FF, ref failed, options); // Hangul Jamo
     //count += TestCharNamesInRange(0x1200, 0x137F, ref failed, options); // Ethiopic
     //count += TestCharNamesInRange(0x1380, 0x139F, ref failed, options); // Ethiopic Supplement
-    //count += TestCharNamesInRange(0x13A0, 0x13FF, ref failed, options); // Cherokee
-    //count += TestCharNamesInRange(0x1400, 0x167F, ref failed, options); // Unified Canadian Aboriginal Syllabics
-    //count += TestCharNamesInRange(0x1680, 0x169F, ref failed, options); // Ogham
-    //count += TestCharNamesInRange(0x16A0, 0x16FF, ref failed, options); // Runic
+    count += TestCharNamesInRange(0x13A0, 0x13FF, ref failed, options); // Cherokee
+    count += TestCharNamesInRange(0x1400, 0x167F, ref failed, options); // Unified Canadian Aboriginal Syllabics
+    count += TestCharNamesInRange(0x1680, 0x169F, ref failed, options); // Ogham
+    count += TestCharNamesInRange(0x16A0, 0x16FF, ref failed, options); // Runic
     //count += TestCharNamesInRange(0x1700, 0x171F, ref failed, options); // Tagalog
     //count += TestCharNamesInRange(0x1720, 0x173F, ref failed, options); // Hanunoo
     //count += TestCharNamesInRange(0x1740, 0x175F, ref failed, options); // Buhid
