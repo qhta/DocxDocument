@@ -3,9 +3,11 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Text.Encodings.Web;
+
 using DocumentFormat.OpenXml;
 
 using NUnit.Framework;
+
 using Qhta.Unicode;
 
 namespace Qhta.OpenXmlTools;
@@ -48,6 +50,8 @@ public partial class TextProcessingTester
     //count += TestCharNamesInSet(CharUtils.SubChars, ref failed, options);
     //count += TestCharNamesInSet(CharUtils.RomanChars, ref failed, options);
     //count += TestCharNamesInScript("Latin", ref failed, options);
+    //count += TestCharLongNamesLike("MODIFIER LETTER*", ref failed, options);
+    count += TestCharLongNamesLike("COMBINING*", ref failed, options);
 
     //count += TestCharLongNamesLike("*ARROW*", ref failed, options);
     // += TestCharLongNamesLike("*HARPOON*", ref failed, options);
@@ -119,10 +123,10 @@ public partial class TextProcessingTester
     //count += TestCharNamesInRange(0x1100, 0x11FF, ref failed, options); // Hangul Jamo
     //count += TestCharNamesInRange(0x1200, 0x137F, ref failed, options); // Ethiopic
     //count += TestCharNamesInRange(0x1380, 0x139F, ref failed, options); // Ethiopic Supplement
-    count += TestCharNamesInRange(0x13A0, 0x13FF, ref failed, options); // Cherokee
-    count += TestCharNamesInRange(0x1400, 0x167F, ref failed, options); // Unified Canadian Aboriginal Syllabics
-    count += TestCharNamesInRange(0x1680, 0x169F, ref failed, options); // Ogham
-    count += TestCharNamesInRange(0x16A0, 0x16FF, ref failed, options); // Runic
+    //count += TestCharNamesInRange(0x13A0, 0x13FF, ref failed, options); // Cherokee
+    //count += TestCharNamesInRange(0x1400, 0x167F, ref failed, options); // Unified Canadian Aboriginal Syllabics
+    //count += TestCharNamesInRange(0x1680, 0x169F, ref failed, options); // Ogham
+    //count += TestCharNamesInRange(0x16A0, 0x16FF, ref failed, options); // Runic
     //count += TestCharNamesInRange(0x1700, 0x171F, ref failed, options); // Tagalog
     //count += TestCharNamesInRange(0x1720, 0x173F, ref failed, options); // Hanunoo
     //count += TestCharNamesInRange(0x1740, 0x175F, ref failed, options); // Buhid
@@ -393,21 +397,16 @@ public partial class TextProcessingTester
     }
   }
 
-  //private int TestCharNamesInCategory(UcdCategory ctg, ref int errs, TextOptions options)
-  //{
-  //  var sb = new StringBuilder();
-  //  foreach (var codePoint in UnicodeData.Instance.SearchInCategories(ctg.ToString()))
-  //  {
-  //    if (codePoint<=0xFFFF)
-  //    {
-  //      var ch = (char)codePoint;
-  //      sb.Append(ch);
-  //    }
-  //  }
-  //  string text = sb.ToString();
-  //  var count = TestCharNames(text, ref errs, options);
-  //  return count;
-  //}
+  private int TestCharNamesInCategory(UcdCategory ctg, ref int errs, TextOptions options)
+  {
+    var codePoints = new List<CodePoint>();
+    foreach (var codePoint in UnicodeData.Instance.SearchInCategories(ctg.ToString()))
+    {
+      codePoints.Add(codePoint);
+    }
+    var count = TestCharNames(codePoints, ref errs, options);
+    return count;
+  }
 
   //private int TestCharNamesInCategories(string pattern, ref int errs, TextOptions options)
   //{
@@ -470,7 +469,7 @@ public partial class TextProcessingTester
   {
     var codePoints = new List<CodePoint>();
     var ucd = UnicodeData.Instance;
-    foreach (var namedBlock in ucd.NamedBlocks.Where(entry=>entry.Name==blockName))
+    foreach (var namedBlock in ucd.NamedBlocks.Where(entry => entry.Name == blockName))
     {
       for (int cp = namedBlock.Start; cp <= namedBlock.End; cp++)
       {
