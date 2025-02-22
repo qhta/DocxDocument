@@ -51,7 +51,7 @@ public partial class TextProcessingTester
     //count += TestCharNamesInSet(CharUtils.RomanChars, ref failed, options);
     //count += TestCharNamesInScript("Latin", ref failed, options);
     //count += TestCharLongNamesLike("MODIFIER LETTER*", ref failed, options);
-    count += TestCharLongNamesLike("COMBINING*", ref failed, options);
+    //count += TestCharLongNamesLike("COMBINING*", ref failed, options);
 
     //count += TestCharLongNamesLike("*ARROW*", ref failed, options);
     // += TestCharLongNamesLike("*HARPOON*", ref failed, options);
@@ -71,7 +71,7 @@ public partial class TextProcessingTester
     //count += TestCharLongNamesLike("*BOX DRAWINGS*", ref failed, options);
 
 
-    //count += TestCharLongNamesLike("*SIGNWRITING*", ref failed, options);
+    count += TestCharLongNamesLike("SIGNWRITING*", ref failed, options);
     //count += TestCharLongNamesLike("WIDE-HEADED*", ref failed, options);
     //count += TestCharLongNamesLike("XIANGQI*", ref failed, options);
     //count += TestCharLongNamesLike("YEZIDI*", ref failed, options);
