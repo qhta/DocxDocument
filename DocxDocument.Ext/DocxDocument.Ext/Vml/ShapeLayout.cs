@@ -41,6 +41,9 @@ public partial class ShapeLayout : ModelElement<DXVO.ShapeLayout>
     set => _ExistingElement.SetObject<DMV.Rules, DXVO.Rules>(value); 
   }
 
+  /// <summary>
+  /// Gets or sets the regrouping table associated with this element.
+  /// </summary>
   [DataMember]
   public DMV.RegroupTable? RegroupTable
   {
@@ -55,6 +58,6 @@ public partial class ShapeLayout : ModelElement<DXVO.ShapeLayout>
   public DMV.ExtensionHandlingBehaviorKind? Extension
   {
     get => _Element?.Extension?.GetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>();
-    set => _ExistingElement.Extension = EVU.SetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>(value);
+    set => EVU.SetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>(_ExistingElement, nameof(Extension), value);
   }
 }

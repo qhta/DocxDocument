@@ -16,18 +16,30 @@ public partial class ProofState : ModelElement<DXW.ProofState>
   public ProofState(DXW.ProofState openXmlElement): base(openXmlElement) { } 
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
+  /// <summary>
+  /// Gets or sets the spelling proofing state for the associated content.
+  /// </summary>
+  /// <remarks>Use this property to indicate whether the content has been checked for spelling errors, and to
+  /// specify the result of that check. This property is typically used in document processing scenarios to track or
+  /// update the spelling verification status.</remarks>
   [DataMember]
   public DMW.ProofingStateKind? Spelling
   {
     get => _Element?.Spelling?.GetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>();
-    set => _ExistingElement.Spelling = EVU.SetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>(value);
+    set => EVU.SetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>(_ExistingElement, nameof(Spelling), value);
   }
 
+  /// <summary>
+  /// Gets or sets the grammar proofing state for the associated element.
+  /// </summary>
+  /// <remarks>Use this property to determine or specify the grammar checking status, such as whether grammar
+  /// errors are present or have been ignored. The value is nullable; a null value indicates that no grammar proofing
+  /// state is set.</remarks>
   [DataMember]
   public DMW.ProofingStateKind? Grammar
   {
     get => _Element?.Grammar?.GetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>();
-    set => _ExistingElement.Grammar = EVU.SetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>(value);
+    set => EVU.SetEnumValue<DMW.ProofingStateKind, DXW.ProofingStateValues>(_ExistingElement, nameof(Grammar), value);
   }
 
 }

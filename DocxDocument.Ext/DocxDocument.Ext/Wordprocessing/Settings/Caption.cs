@@ -56,7 +56,7 @@ public partial class Caption: ModelElement<DXW.Caption>, INamedElement
   public DMW.CaptionPositionKind? Position
   {
     get => _Element?.Position?.GetEnumValue<DMW.CaptionPositionKind, DXW.CaptionPositionValues>();
-    set => _ExistingElement.Position = EVU.SetEnumValue<DMW.CaptionPositionKind, DXW.CaptionPositionValues>(value);
+    set => EVU.SetEnumValue<DMW.CaptionPositionKind, DXW.CaptionPositionValues>(_ExistingElement, nameof(Position), value);
   }
 
   /// <summary>
@@ -138,7 +138,7 @@ public partial class Caption: ModelElement<DXW.Caption>, INamedElement
   public DMW.NumberFormatKind? NumberFormat
   {
     get => _Element?.NumberFormat?.GetEnumValue<DMW.NumberFormatKind, DXW.NumberFormatValues>();
-    set => _ExistingElement.NumberFormat = EVU.SetEnumValue<DMW.NumberFormatKind, DXW.NumberFormatValues>(value);
+    set => EVU.SetEnumValue<DMW.NumberFormatKind, DXW.NumberFormatValues>(_ExistingElement, nameof(NumberFormat), value);
   }
 
   /// <summary>
@@ -165,7 +165,7 @@ public partial class Caption: ModelElement<DXW.Caption>, INamedElement
   public DMW.ChapterSeparatorKind? Separator
   {
     get => _Element?.Separator?.GetEnumValue<DMW.ChapterSeparatorKind, DXW.ChapterSeparatorValues>();
-    set => _ExistingElement.Separator = EVU.SetEnumValue<DMW.ChapterSeparatorKind, DXW.ChapterSeparatorValues>(value);
+    set => EVU.SetEnumValue<DMW.ChapterSeparatorKind, DXW.ChapterSeparatorValues>(_ExistingElement, nameof(Separator), value);
   }
 
 }

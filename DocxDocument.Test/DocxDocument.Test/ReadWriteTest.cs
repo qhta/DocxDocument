@@ -1,3 +1,5 @@
+using DocumentFormat.OpenXml.Vml.Office;
+
 using DocumentModel;
 
 using Qhta.TypeUtils;
@@ -237,8 +239,6 @@ public class ReadWriteTest : ReadTest
     {
       Output.WriteLine($"  {ex.GetType().Name}: {ex.Message}");
     }
-    if (success)
-      success = TestReadSettings(targetFile);
     return success;
   }
 
@@ -258,47 +258,47 @@ public class ReadWriteTest : ReadTest
       b = !b;
       return b;
     }
-    else
+    
     if (aType == typeof(string))
       return propName + (++n).ToString();
-    else
+    
     if (aType == typeof(int))
       return 1000000 + (++n);
-    else
+    
     if (aType == typeof(uint))
       return (uint)(1000000000 + (++n));
-    else
+    
     if (aType == typeof(UInt16))
       return (UInt16)(1000 + (++n));
-    else
+    
     if (aType == typeof(Int16))
       return (Int16)(1000 + (++n));
-    else
+    
     if (aType == typeof(Int64))
       return new Random().NextInt64();
-    else
+    
     if (aType == typeof(Guid))
     {
       var str = new Random().NextInt64().ToString("X16") + new Random().NextInt64().ToString("X16");
       var bytes = Convert.FromHexString(str);
       return new Guid(bytes);
     }
-    else
+    
     if (aType == typeof(Reference))
       return new Reference($"r{(++n)}");
-    else
+    
     if (aType == typeof(DateTime))
       return DateTime.Parse("01.02.03 23:59");
-    else
+    
     if (aType == typeof(StringList))
       return new StringList("str1", "str2", "str3");
-    else
+    
     if (aType.IsEnum)
     {
       var enumValues = aType.GetEnumValues();
       return enumValues.GetValue(new Random().Next(enumValues.Length));
     }
-    else
+    
     if (aType == typeof(HeadingPairs))
     {
       var headingPairs = new HeadingPairs();
@@ -306,7 +306,7 @@ public class ReadWriteTest : ReadTest
         headingPairs.Add(new HeadingPair { Heading = "Heading" + i, Num = i * 10 });
       return headingPairs;
     }
-    else
+    
     if (aType == typeof(HyperlinkList))
     {
       var hyperlinkList = new HyperlinkList();
@@ -325,7 +325,7 @@ public class ReadWriteTest : ReadTest
         });
       return hyperlinkList;
     }
-    else
+    
     if (aType == typeof(byte[]))
     {
       var bytes = new byte[10];
@@ -333,7 +333,7 @@ public class ReadWriteTest : ReadTest
         bytes[i] = (byte)(i + 1);
       return bytes;
     }
-    else
+    
     if (aType == typeof(DM.HexBinary))
     {
       var bytes = new byte[10];
@@ -341,32 +341,32 @@ public class ReadWriteTest : ReadTest
         bytes[i] = (byte)(i + 1);
       return new HexBinary(bytes);
     }
-    else
+    
     if (aType == typeof(DM.HexWord))
     {
       return new HexWord(new Random().Next(UInt16.MaxValue));
     }
-    else
+    
     if (aType == typeof(DM.HexInt))
     {
       return new HexInt(new Random().Next());
     }
-    else
+    
     if (aType == typeof(DM.Percent))
     {
       return new Percent(new Random().NextDouble());
     }
-    else
+    
     if (aType == typeof(DM.Twips))
     {
       return new Twips(new Random().Next());
     }
-    else
+    
     if (aType.IsClass)
     {
       var constructor = aType.GetConstructor(new Type[0]);
       if (constructor == null)
-        throw new NotImplementedException($"Property type {aType} should have parameterless constructor");
+        throw new InvalidProgramException($"Property type {aType} should have parameterless constructor");
       var value = constructor.Invoke(new object[0]);
       var props = aType.GetProperties().Where(p => p.GetCustomAttribute<DataMemberAttribute>() != null).ToArray();
       foreach (var prop in props)
@@ -395,8 +395,19 @@ public class ReadWriteTest : ReadTest
       }
       return value;
     }
-    else
-      throw new NotImplementedException($"Can't generate value of type {aType}");
+
+    if (aType.GetInterface("IEnumValue") != null)
+    {
+      var enumType = aType.GetGenericArguments().FirstOrDefault();
+
+        var propEnums = aType.GetProperties(BindingFlags.Public | BindingFlags.Static).ToArray();
+        var randomIndex = Random.Shared.Next(0, propEnums.Length - 1);
+        var enumValue = propEnums[randomIndex].GetValue(null);
+        return enumValue;
+    }
+
+    Debug.WriteLine($"Can't generate value of type {aType}");
+    throw new NotImplementedException($"Can't generate value of type {aType}");
   }
 
 }

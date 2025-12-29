@@ -21,7 +21,7 @@ public partial class BuiltInProperties: ModelElement
   public BuiltInProperties(DM.Document document)
   {
     _WordprocessingDocument = document._WordprocessingDocument;
-    _CoreProperties = _WordprocessingDocument?.PackageProperties;
+    _CoreProperties = _WordprocessingDocument?.PackageProperties as PackageProperties;
     _ExtendedProperties = _WordprocessingDocument?.ExtendedFilePropertiesPart?.Properties;
   }
 

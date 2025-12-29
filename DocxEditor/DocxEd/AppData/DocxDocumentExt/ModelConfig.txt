@@ -1,0 +1,693 @@
+[ExcludedNamespaces]
+DocumentFormat.OpenXml.Drawing.Spreadsheet
+DocumentFormat.OpenXml.Features
+DocumentFormat.OpenXml.Office.Excel
+DocumentFormat.OpenXml.Office.PowerPoint.Y2019.Main.Command
+DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main
+DocumentFormat.OpenXml.Office.PowerPoint.Y2022.M08.Main
+DocumentFormat.OpenXml.Office.SpreadSheetML.Y2021.ExtLinks2021
+DocumentFormat.OpenXml.Office.SpreadSheetML.Y2022.PivotRichData
+DocumentFormat.OpenXml.Office.SpreadSheetML.Y2022.PivotVersionInfo
+DocumentFormat.OpenXml.Office.Word
+DocumentFormat.OpenXml.Office2010.Excel
+DocumentFormat.OpenXml.Office2010.Excel.Drawing
+DocumentFormat.OpenXml.Office2010.ExcelAc
+DocumentFormat.OpenXml.Office2010.PowerPoint
+DocumentFormat.OpenXml.Office2013.Excel
+DocumentFormat.OpenXml.Office2013.ExcelAc
+DocumentFormat.OpenXml.Office2013.PowerPoint
+DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming
+DocumentFormat.OpenXml.Office2016.Excel
+DocumentFormat.OpenXml.Office2016.ExcelAc
+DocumentFormat.OpenXml.Office2016.Presentation
+DocumentFormat.OpenXml.Office2016.Presentation.Command
+DocumentFormat.OpenXml.Office2019.Excel.CalcFeatures
+DocumentFormat.OpenXml.Office2019.Excel.DynamicArray
+DocumentFormat.OpenXml.Office2019.Excel.PivotDefaultLayout
+DocumentFormat.OpenXml.Office2019.Excel.RichData
+DocumentFormat.OpenXml.Office2019.Excel.RichData2
+DocumentFormat.OpenXml.Office2019.Excel.ThreadedComments
+DocumentFormat.OpenXml.Office2019.Presentation
+DocumentFormat.OpenXml.Office2021.Excel.ExternalLinks
+DocumentFormat.OpenXml.Office2021.Excel.NamedSheetViews
+DocumentFormat.OpenXml.Office2021.Excel.RichDataWebImage
+DocumentFormat.OpenXml.Office2021.Excel.RichValueRefreshIntervals
+DocumentFormat.OpenXml.Office2021.Excel.ThreadedComments2
+DocumentFormat.OpenXml.Office2021.MipLabelMetaData
+DocumentFormat.OpenXml.Office2021.PowerPoint.Comment
+DocumentFormat.OpenXml.Office2021.PowerPoint.Designer
+DocumentFormat.OpenXml.Office2021.PowerPoint.Tasks
+DocumentFormat.OpenXml.Presentation
+DocumentFormat.OpenXml.Spreadsheet
+DocumentFormat.OpenXml.Validation
+DocumentFormat.OpenXml.VariantTypes
+DocumentFormat.OpenXml.Vml.Presentation
+DocumentFormat.OpenXml.Vml.Spreadsheet
+
+[TranslatedNamespaces]
+DocumentFormat.OpenXml	DocumentModel
+DocumentFormat.OpenXml.AdditionalCharacteristics	DocumentModel.AdditionalCharacteristics
+DocumentFormat.OpenXml.Bibliography	DocumentModel.Bibliography
+DocumentFormat.OpenXml.CustomProperties	DocumentModel.CustomProperties
+DocumentFormat.OpenXml.CustomXmlDataProperties	DocumentModel.CustomXml
+DocumentFormat.OpenXml.CustomXmlSchemaReferences	DocumentModel.CustomXml
+DocumentFormat.OpenXml.Drawing	DocumentModel.Drawings
+DocumentFormat.OpenXml.Drawing.ChartDrawing	DocumentModel.Drawings.ChartDrawing
+DocumentFormat.OpenXml.Drawing.Charts	DocumentModel.Drawings.Charts
+DocumentFormat.OpenXml.Drawing.Diagrams	DocumentModel.Drawings.Diagrams
+DocumentFormat.OpenXml.Drawing.LegacyCompatibility	DocumentModel.Drawings.Legacy
+DocumentFormat.OpenXml.Drawing.LockedCanvas	DocumentModel.Drawings.LockedCanvas
+DocumentFormat.OpenXml.Drawing.Pictures	DocumentModel.Drawings.Pictures
+DocumentFormat.OpenXml.Drawing.Spreadsheet	DocumentModel.Drawings.Spreadsheet
+DocumentFormat.OpenXml.Drawing.Wordprocessing	DocumentModel.Drawings.Wordprocessing
+DocumentFormat.OpenXml.EMMA	DocumentModel.EMMA
+DocumentFormat.OpenXml.ExtendedProperties	DocumentModel.ExtendedProperties
+DocumentFormat.OpenXml.Features	DocumentModel.Framework
+DocumentFormat.OpenXml.InkML	DocumentModel.InkML
+DocumentFormat.OpenXml.Math	DocumentModel.Math
+DocumentFormat.OpenXml.Office.ActiveX	DocumentModel.ActiveX
+DocumentFormat.OpenXml.Office.ContentType	DocumentModel.ContentType
+DocumentFormat.OpenXml.Office.CoverPageProps	DocumentModel.CoverPageProps
+DocumentFormat.OpenXml.Office.CustomDocumentInformationPanel	DocumentModel.CustomDocumentInformationPanel
+DocumentFormat.OpenXml.Office.CustomUI	DocumentModel.CustomUI
+DocumentFormat.OpenXml.Office.CustomXsn	DocumentModel.CustomXml
+DocumentFormat.OpenXml.Office.Drawing	DocumentModel.Drawings.Office
+DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed	DocumentModel.Drawings.OEmbed
+DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink	DocumentModel.Drawings.ScriptLink
+DocumentFormat.OpenXml.Office.Drawing.Y2022.ImageFormula	DocumentModel.Drawings.ImageFormula
+DocumentFormat.OpenXml.Office.Excel	DocumentModel.Excel
+DocumentFormat.OpenXml.Office.LongProperties	DocumentModel.LongProperties
+DocumentFormat.OpenXml.Office.MetaAttributes	DocumentModel.MetaAttributes
+DocumentFormat.OpenXml.Office.PowerPoint.Y2019.Main.Command	DocumentModel.Presentation.MainCommand
+DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main	DocumentModel.Presentation.Main21
+DocumentFormat.OpenXml.Office.PowerPoint.Y2022.M08.Main	DocumentModel.Presentation.Main22
+DocumentFormat.OpenXml.Office.SpreadSheetML.Y2021.ExtLinks2021	DocumentModel.Spreadsheet.ExtLinks
+DocumentFormat.OpenXml.Office.SpreadSheetML.Y2022.PivotRichData	DocumentModel.Spreadsheet.PivotRichData
+DocumentFormat.OpenXml.Office.SpreadSheetML.Y2022.PivotVersionInfo	DocumentModel.Spreadsheet.PivotVersionInfo
+DocumentFormat.OpenXml.Office.Word	DocumentModel.Word07
+DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed	DocumentModel.Word20
+DocumentFormat.OpenXml.Office2010.CustomUI	DocumentModel.CustomUI10
+DocumentFormat.OpenXml.Office2010.Drawing	DocumentModel.Drawings10
+DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing	DocumentModel.Drawings.ChartDrawings10
+DocumentFormat.OpenXml.Office2010.Drawing.Charts	DocumentModel.Drawings.Charts10
+DocumentFormat.OpenXml.Office2010.Drawing.Diagram	DocumentModel.Drawings.Diagrams
+DocumentFormat.OpenXml.Office2010.Drawing.LegacyCompatibility	DocumentModel.Drawings.Legacy
+DocumentFormat.OpenXml.Office2010.Drawing.Pictures	DocumentModel.Drawings.Pictures
+DocumentFormat.OpenXml.Office2010.Drawing.Slicer	DocumentModel.Drawings.Slicer
+DocumentFormat.OpenXml.Office2010.Excel	DocumentModel.Excel10
+DocumentFormat.OpenXml.Office2010.Excel.Drawing	DocumentModel.Drawings.Spreadsheet10
+DocumentFormat.OpenXml.Office2010.ExcelAc	DocumentModel.Excel10
+DocumentFormat.OpenXml.Office2010.Ink	DocumentModel
+DocumentFormat.OpenXml.Office2010.PowerPoint	DocumentModel.Presentation10
+DocumentFormat.OpenXml.Office2010.Word	DocumentModel.Word10
+DocumentFormat.OpenXml.Office2010.Word.Drawing	DocumentModel.Wordprocessing.Drawings
+DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas	DocumentModel.Wordprocessing.DrawingCanvas
+DocumentFormat.OpenXml.Office2010.Word.DrawingGroup	DocumentModel.Wordprocessing.DrawingGroup
+DocumentFormat.OpenXml.Office2010.Word.DrawingShape	DocumentModel.Wordprocessing.DrawingShape
+DocumentFormat.OpenXml.Office2013.Drawing	DocumentModel.Drawings
+DocumentFormat.OpenXml.Office2013.Drawing.Chart	DocumentModel.Drawings.Charts13
+DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle	DocumentModel.Drawings.ChartsStyle
+DocumentFormat.OpenXml.Office2013.Drawing.TimeSlicer	DocumentModel.Drawings.TimeSlicer
+DocumentFormat.OpenXml.Office2013.Excel	DocumentModel.Excel13
+DocumentFormat.OpenXml.Office2013.ExcelAc	DocumentModel.Excel13
+DocumentFormat.OpenXml.Office2013.PowerPoint	DocumentModel.Presentation13
+DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming	DocumentModel.Presentation.Roaming
+DocumentFormat.OpenXml.Office2013.Theme	DocumentModel.Theme
+DocumentFormat.OpenXml.Office2013.WebExtension	DocumentModel.WebExtensions
+DocumentFormat.OpenXml.Office2013.WebExtentionPane	DocumentModel.WebExtensionsPane
+DocumentFormat.OpenXml.Office2013.Word	DocumentModel.Word13
+DocumentFormat.OpenXml.Office2013.Word.Drawing	DocumentModel.Drawings.Wordprocessing
+DocumentFormat.OpenXml.Office2016.Drawing	DocumentModel.Drawings
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing	DocumentModel.Drawings.ChartDrawings16
+DocumentFormat.OpenXml.Office2016.Drawing.Charts	DocumentModel.Drawings.Charts16
+DocumentFormat.OpenXml.Office2016.Drawing.ChartsAc	DocumentModel.Drawings.Charts16Ac
+DocumentFormat.OpenXml.Office2016.Drawing.Command	DocumentModel.Drawings.Command
+DocumentFormat.OpenXml.Office2016.Excel	DocumentModel.Excel16
+DocumentFormat.OpenXml.Office2016.ExcelAc	DocumentModel.Excel16
+DocumentFormat.OpenXml.Office2016.Presentation	DocumentModel.Presentation
+DocumentFormat.OpenXml.Office2016.Presentation.Command	DocumentModel.Presentation
+DocumentFormat.OpenXml.Office2016.Word.Symex	DocumentModel.Word16
+DocumentFormat.OpenXml.Office2019.Drawing	DocumentModel.Drawings
+DocumentFormat.OpenXml.Office2019.Drawing.Animation	DocumentModel.Drawings.Animation
+DocumentFormat.OpenXml.Office2019.Drawing.Animation.Model3D	DocumentModel.Drawings.Animation.Model3D
+DocumentFormat.OpenXml.Office2019.Drawing.Chart	DocumentModel.Drawings.Charts19
+DocumentFormat.OpenXml.Office2019.Drawing.Diagram11	DocumentModel.Drawings.Diagram1
+DocumentFormat.OpenXml.Office2019.Drawing.Diagram12	DocumentModel.Drawings.Diagram2
+DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor	DocumentModel.Drawings
+DocumentFormat.OpenXml.Office2019.Drawing.Ink	DocumentModel.Drawings
+DocumentFormat.OpenXml.Office2019.Drawing.Model3D	DocumentModel.Drawings.Model3D
+DocumentFormat.OpenXml.Office2019.Drawing.SVG	DocumentModel.Drawings.SVG
+DocumentFormat.OpenXml.Office2019.Excel.CalcFeatures	DocumentModel.Excel.CalcFeatures
+DocumentFormat.OpenXml.Office2019.Excel.DynamicArray	DocumentModel.Excel.DynamicArray
+DocumentFormat.OpenXml.Office2019.Excel.PivotDefaultLayout	DocumentModel.Excel.PivotDefaultLayout
+DocumentFormat.OpenXml.Office2019.Excel.RichData	DocumentModel.Excel.RichData
+DocumentFormat.OpenXml.Office2019.Excel.RichData2	DocumentModel.Excel.RichData2
+DocumentFormat.OpenXml.Office2019.Excel.ThreadedComments	DocumentModel.Excel.ThreadedComments
+DocumentFormat.OpenXml.Office2019.Presentation	DocumentModel.Presentation
+DocumentFormat.OpenXml.Office2019.Word.Cid	DocumentModel.Wordprocessing
+DocumentFormat.OpenXml.Office2021.DocumentTasks	DocumentModel
+DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification	DocumentModel.Drawings
+DocumentFormat.OpenXml.Office2021.Drawing.Livefeed	DocumentModel.Drawings
+DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes	DocumentModel.Drawings.SketchyShapes
+DocumentFormat.OpenXml.Office2021.Excel.ExternalLinks	DocumentModel.Excel.ExternalLinks
+DocumentFormat.OpenXml.Office2021.Excel.NamedSheetViews	DocumentModel.Excel.NamedSheetViews
+DocumentFormat.OpenXml.Office2021.Excel.RichDataWebImage	DocumentModel.Excel.RichDataWebImage
+DocumentFormat.OpenXml.Office2021.Excel.RichValueRefreshIntervals	DocumentModel.Excel.RichValueRefreshIntervals
+DocumentFormat.OpenXml.Office2021.Excel.ThreadedComments2	DocumentModel.Excel.ThreadedComments2
+DocumentFormat.OpenXml.Office2021.MipLabelMetaData	DocumentModel
+DocumentFormat.OpenXml.Office2021.OfficeExtLst	DocumentModel
+DocumentFormat.OpenXml.Office2021.PowerPoint.Comment	DocumentModel.Presentation.Comments
+DocumentFormat.OpenXml.Office2021.PowerPoint.Designer	DocumentModel.Presentation21.Designer
+DocumentFormat.OpenXml.Office2021.PowerPoint.Tasks	DocumentModel.Presentation21.Tasks
+DocumentFormat.OpenXml.Office2021.Word.CommentsExt	DocumentModel.Wordprocessing
+DocumentFormat.OpenXml.Office2021.Word.ExtensionList	DocumentModel.Wordprocessing
+DocumentFormat.OpenXml.Packaging	DocumentModel.Packaging
+DocumentFormat.OpenXml.Presentation	DocumentModel.Presentation
+DocumentFormat.OpenXml.Spreadsheet	DocumentModel.Spreadsheet
+DocumentFormat.OpenXml.Validation	DocumentModel.Validation
+DocumentFormat.OpenXml.VariantTypes	DocumentModel.VariantTypes
+DocumentFormat.OpenXml.Vml	DocumentModel.Vml
+DocumentFormat.OpenXml.Vml.Office	DocumentModel.Vml
+DocumentFormat.OpenXml.Vml.Presentation	DocumentModel.Vml
+DocumentFormat.OpenXml.Vml.Spreadsheet	DocumentModel.Vml
+DocumentFormat.OpenXml.Vml.Wordprocessing	DocumentModel.Vml
+DocumentFormat.OpenXml.Wordprocessing	DocumentModel.Wordprocessing
+
+[NamespaceShortcuts]
+DocumentFormat.OpenXml	DX
+DocumentModel	DM
+DocumentFormat.OpenXml.AdditionalCharacteristics	DXAC
+DocumentModel.AdditionalCharacteristics	DMAC
+DocumentFormat.OpenXml.Bibliography	DXB
+DocumentModel.Bibliography	DMB
+DocumentFormat.OpenXml.CustomProperties	DXCP
+DocumentModel.CustomProperties	DMCP
+DocumentFormat.OpenXml.CustomXmlDataProperties	DXCXDP
+DocumentModel.CustomXml	DMCX
+DocumentFormat.OpenXml.CustomXmlSchemaReferences	DXCXSR
+DocumentFormat.OpenXml.Drawing	DXD
+DocumentModel.Drawings	DMD
+DocumentFormat.OpenXml.Drawing.ChartDrawing	DXDCD
+DocumentModel.Drawings.ChartDrawing	DMDCD
+DocumentFormat.OpenXml.Drawing.Charts	DXDC
+DocumentModel.Drawings.Charts	DMDC
+DocumentFormat.OpenXml.Drawing.Diagrams	DXDDD
+DocumentModel.Drawings.Diagrams	DMDD
+DocumentFormat.OpenXml.Drawing.LegacyCompatibility	DXDLC
+DocumentModel.Drawings.Legacy	DMLC
+DocumentFormat.OpenXml.Drawing.LockedCanvas	DXDLCV
+DocumentModel.Drawings.LockedCanvas	DMLCV
+DocumentFormat.OpenXml.Drawing.Pictures	DXDP
+DocumentModel.Drawings.Pictures	DMDP
+DocumentFormat.OpenXml.Drawing.Spreadsheet	DXDS
+DocumentModel.Drawings.Spreadsheet	DMDS
+DocumentFormat.OpenXml.Drawing.Wordprocessing	DXDW
+DocumentModel.Drawings.Wordprocessing	DMDW
+DocumentFormat.OpenXml.EMMA	DXEMMA
+DocumentModel.EMMA	DMEM
+DocumentFormat.OpenXml.ExtendedProperties	DXEP
+DocumentModel.ExtendedProperties	DMEP
+DocumentFormat.OpenXml.Features	DXF
+DocumentModel.Framework	DMF
+DocumentFormat.OpenXml.InkML	DXI
+DocumentModel.InkML	DMIML
+DocumentFormat.OpenXml.Math	DXM
+DocumentModel.Math	DMM
+DocumentFormat.OpenXml.Office.ActiveX	DXOAX
+DocumentModel.ActiveX	DMAX
+DocumentFormat.OpenXml.Office.ContentType	DXOCT
+DocumentModel.ContentType	DMCT
+DocumentFormat.OpenXml.Office.CoverPageProps	DXOCPP
+DocumentModel.CoverPageProps	DMCPP
+DocumentFormat.OpenXml.Office.CustomDocumentInformationPanel	DXOCDIP
+DocumentModel.CustomDocumentInformationPanel	DMCPIP
+DocumentFormat.OpenXml.Office.CustomUI	DXOCUI
+DocumentModel.CustomUI	DMCUI
+DocumentFormat.OpenXml.Office.CustomXsn	DXOCX
+DocumentFormat.OpenXml.Office.Drawing	DXOD
+DocumentModel.Drawings.Office	DMDO
+DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed	DXOD21OE
+DocumentModel.Drawings.OEmbed	DMDOE
+DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink	DXOD21SL
+DocumentModel.Drawings.ScriptLink	DMDSL
+DocumentFormat.OpenXml.Office.Drawing.Y2022.ImageFormula	DXOD22IF
+DocumentModel.Drawings.ImageFormula	DMDIF
+DocumentFormat.OpenXml.Office.Excel	DXOEX
+DocumentModel.Excel	DMX
+DocumentFormat.OpenXml.Office.LongProperties	DXOLP
+DocumentModel.LongProperties	DMLP
+DocumentFormat.OpenXml.Office.MetaAttributes	DXOMA
+DocumentModel.MetaAttributes	DMMA
+DocumentFormat.OpenXml.Office.PowerPoint.Y2019.Main.Command	DXOP19MC
+DocumentModel.Presentation.MainCommand	DMPPMC
+DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main	DXOP21M
+DocumentModel.Presentation.Main21	DMPM21
+DocumentFormat.OpenXml.Office.PowerPoint.Y2022.M08.Main	DXOP22M
+DocumentModel.Presentation.Main22	DMPM22
+DocumentFormat.OpenXml.Office.SpreadSheetML.Y2021.ExtLinks2021	DXOS21EL
+DocumentModel.Spreadsheet.ExtLinks	DMSEL
+DocumentFormat.OpenXml.Office.SpreadSheetML.Y2022.PivotRichData	DXOS21PRD
+DocumentModel.Spreadsheet.PivotRichData	DMSPRD
+DocumentFormat.OpenXml.Office.SpreadSheetML.Y2022.PivotVersionInfo	DXOS22PVI
+DocumentModel.Spreadsheet.PivotVersionInfo	DMSPVI
+DocumentFormat.OpenXml.Office.Word	DXOW
+DocumentModel.Word07	DMW07
+DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed	DXOW20OE
+DocumentModel.Word20	DMW20
+DocumentFormat.OpenXml.Office2010.CustomUI	DXO10CUI
+DocumentModel.CustomUI10	DMCUI10
+DocumentFormat.OpenXml.Office2010.Drawing	DXO10D
+DocumentModel.Drawings10	DMD10
+DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing	DXO10DCD
+DocumentModel.Drawings.ChartDrawings10	DMDCD10
+DocumentFormat.OpenXml.Office2010.Drawing.Charts	DXO10DC
+DocumentModel.Drawings.Charts10	DMDC10
+DocumentFormat.OpenXml.Office2010.Drawing.Diagram	DXO10DD
+DocumentFormat.OpenXml.Office2010.Drawing.LegacyCompatibility	DXO10DLC
+DocumentFormat.OpenXml.Office2010.Drawing.Pictures	DXO10DP
+DocumentFormat.OpenXml.Office2010.Drawing.Slicer	DXO10DS
+DocumentModel.Drawings.Slicer	DMDSl
+DocumentFormat.OpenXml.Office2010.Excel	DXO10S
+DocumentModel.Excel10	DMX10
+DocumentFormat.OpenXml.Office2010.Excel.Drawing	DXO10SD
+DocumentModel.Drawings.Spreadsheet10	DMDS10
+DocumentFormat.OpenXml.Office2010.ExcelAc	DXO10SA
+DocumentFormat.OpenXml.Office2010.Ink	DXO10I
+DocumentFormat.OpenXml.Office2010.PowerPoint	DXO10P
+DocumentModel.Presentation10	DMP10
+DocumentFormat.OpenXml.Office2010.Word	DXO10W
+DocumentModel.Word10	DMW10
+DocumentFormat.OpenXml.Office2010.Word.Drawing	DXO10WD
+DocumentModel.Wordprocessing.Drawings	DMWD
+DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas	DXO10WDC
+DocumentModel.Wordprocessing.DrawingCanvas	DMWDC
+DocumentFormat.OpenXml.Office2010.Word.DrawingGroup	DXO10WDG
+DocumentModel.Wordprocessing.DrawingGroup	DMWDG
+DocumentFormat.OpenXml.Office2010.Word.DrawingShape	DXO10WDS
+DocumentModel.Wordprocessing.DrawingShape	DMWDS
+DocumentFormat.OpenXml.Office2013.Drawing	DXO13D
+DocumentFormat.OpenXml.Office2013.Drawing.Chart	DXO13DC
+DocumentModel.Drawings.Charts13	DMDC13
+DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle	DXO13DCS
+DocumentModel.Drawings.ChartsStyle	DMDCS
+DocumentFormat.OpenXml.Office2013.Drawing.TimeSlicer	DXO13DTS
+DocumentModel.Drawings.TimeSlicer	DMDTS
+DocumentFormat.OpenXml.Office2013.Excel	DXO13S
+DocumentModel.Excel13	DMX13
+DocumentFormat.OpenXml.Office2013.ExcelAc	DXO13SA
+DocumentFormat.OpenXml.Office2013.PowerPoint	DXO13P
+DocumentModel.Presentation13	DMP13
+DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming	DXO13PR
+DocumentModel.Presentation.Roaming	DMPPR
+DocumentFormat.OpenXml.Office2013.Theme	DXO13T
+DocumentModel.Theme	DMT
+DocumentFormat.OpenXml.Office2013.WebExtension	DXO13WE
+DocumentModel.WebExtensions	DMEX
+DocumentFormat.OpenXml.Office2013.WebExtentionPane	DXO13WEP
+DocumentModel.WebExtensionsPane	DMWEP
+DocumentFormat.OpenXml.Office2013.Word	DXO13W
+DocumentModel.Word13	DMW13
+DocumentFormat.OpenXml.Office2013.Word.Drawing	DXO13WD
+DocumentFormat.OpenXml.Office2016.Drawing	DXO16D
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing	DXO16DCD
+DocumentModel.Drawings.ChartDrawings16	DMDCD16
+DocumentFormat.OpenXml.Office2016.Drawing.Charts	DXO16DC
+DocumentModel.Drawings.Charts16	DMDC16
+DocumentFormat.OpenXml.Office2016.Drawing.ChartsAc	DXO16DCA
+DocumentModel.Drawings.Charts16Ac	DMDC16AC
+DocumentFormat.OpenXml.Office2016.Drawing.Command	DXO16DCd
+DocumentModel.Drawings.Command	DMDCMD
+DocumentFormat.OpenXml.Office2016.Excel	DXO16S
+DocumentModel.Excel16	DMX16
+DocumentFormat.OpenXml.Office2016.ExcelAc	DXO16SAc
+DocumentFormat.OpenXml.Office2016.Presentation	DXO16P
+DocumentModel.Presentation	DMP
+DocumentFormat.OpenXml.Office2016.Presentation.Command	DXO16PCd
+DocumentFormat.OpenXml.Office2016.Word.Symex	DXO16WS
+DocumentModel.Word16	DMW16
+DocumentFormat.OpenXml.Office2019.Drawing	DXO19D
+DocumentFormat.OpenXml.Office2019.Drawing.Animation	DXO19DA
+DocumentModel.Drawings.Animation	DMDA
+DocumentFormat.OpenXml.Office2019.Drawing.Animation.Model3D	DXO19DA3D
+DocumentModel.Drawings.Animation.Model3D	DMDA3D
+DocumentFormat.OpenXml.Office2019.Drawing.Chart	DXO19DC
+DocumentModel.Drawings.Charts19	19
+DocumentFormat.OpenXml.Office2019.Drawing.Diagram11	DXO19DD11
+DocumentModel.Drawings.Diagram1	DMDD1
+DocumentFormat.OpenXml.Office2019.Drawing.Diagram12	DXO19DD12
+DocumentModel.Drawings.Diagram2	DMDD2
+DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor	DXO19DHLC
+DocumentFormat.OpenXml.Office2019.Drawing.Ink	DXO19DI
+DocumentFormat.OpenXml.Office2019.Drawing.Model3D	DXO19D3D
+DocumentModel.Drawings.Model3D	DMD3D
+DocumentFormat.OpenXml.Office2019.Drawing.SVG	DXO19DSVG
+DocumentModel.Drawings.SVG	DMDSVG
+DocumentFormat.OpenXml.Office2019.Excel.CalcFeatures	DXO19SCF
+DocumentModel.Excel.CalcFeatures	DMXCF
+DocumentFormat.OpenXml.Office2019.Excel.DynamicArray	DXO19SDA
+DocumentModel.Excel.DynamicArray	DMXDA
+DocumentFormat.OpenXml.Office2019.Excel.PivotDefaultLayout	DXO19SPDL
+DocumentModel.Excel.PivotDefaultLayout	DMXPDL
+DocumentFormat.OpenXml.Office2019.Excel.RichData	DXO19SRD
+DocumentModel.Excel.RichData	DMXRD
+DocumentFormat.OpenXml.Office2019.Excel.RichData2	DXO19SRD2
+DocumentModel.Excel.RichData2	DMXRD2
+DocumentFormat.OpenXml.Office2019.Excel.ThreadedComments	DXO19STC
+DocumentModel.Excel.ThreadedComments	DMXTC
+DocumentFormat.OpenXml.Office2019.Presentation	DXO19P
+DocumentFormat.OpenXml.Office2019.Word.Cid	DXO19WC
+DocumentModel.Wordprocessing	DMW
+DocumentFormat.OpenXml.Office2021.DocumentTasks	DXO21DT
+DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification	DXO21DDC
+DocumentFormat.OpenXml.Office2021.Drawing.Livefeed	DXO21DL
+DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes	DXO21DSS
+DocumentModel.Drawings.SketchyShapes	DMDSS
+DocumentFormat.OpenXml.Office2021.Excel.ExternalLinks	DXO21SEL
+DocumentModel.Excel.ExternalLinks	DMXEL
+DocumentFormat.OpenXml.Office2021.Excel.NamedSheetViews	DXO21SNSV
+DocumentModel.Excel.NamedSheetViews	DMXNSV
+DocumentFormat.OpenXml.Office2021.Excel.RichDataWebImage	DXO21SRDWI
+DocumentModel.Excel.RichDataWebImage	DMXRDWI
+DocumentFormat.OpenXml.Office2021.Excel.RichValueRefreshIntervals	DXO21SRVRI
+DocumentModel.Excel.RichValueRefreshIntervals	DMXRVRI
+DocumentFormat.OpenXml.Office2021.Excel.ThreadedComments2	DXO21STC2
+DocumentModel.Excel.ThreadedComments2	DMXTC2
+DocumentFormat.OpenXml.Office2021.MipLabelMetaData	DXO21MLMD
+DocumentFormat.OpenXml.Office2021.OfficeExtLst	DXO21OEL
+DocumentFormat.OpenXml.Office2021.PowerPoint.Comment	DXO21PC
+DocumentModel.Presentation.Comments	DMPC
+DocumentFormat.OpenXml.Office2021.PowerPoint.Designer	DXO21PD
+DocumentModel.Presentation21.Designer	DMP21D
+DocumentFormat.OpenXml.Office2021.PowerPoint.Tasks	DXO21PT
+DocumentModel.Presentation21.Tasks	DMP21T
+DocumentFormat.OpenXml.Office2021.Word.CommentsExt	DXO21WCE
+DocumentFormat.OpenXml.Office2021.Word.ExtensionList	DXO21WEL
+DocumentFormat.OpenXml.Packaging	DXPack
+DocumentModel.Packaging	DMPACK
+DocumentFormat.OpenXml.Presentation	DXP
+DocumentFormat.OpenXml.Spreadsheet	DXS
+DocumentModel.Spreadsheet	DMS
+DocumentFormat.OpenXml.Validation	DXVd
+DocumentModel.Validation	DMV
+DocumentFormat.OpenXml.VariantTypes	DXVT
+DocumentModel.VariantTypes	DMVT
+DocumentFormat.OpenXml.Vml	DXV
+DocumentModel.Vml	DMVML
+DocumentFormat.OpenXml.Vml.Office	DXVO
+DocumentFormat.OpenXml.Vml.Presentation	DXVP
+DocumentFormat.OpenXml.Vml.Spreadsheet	DXVS
+DocumentFormat.OpenXml.Vml.Wordprocessing	DXVW
+DocumentFormat.OpenXml.Wordprocessing	DXW
+
+[IncludedTypes]
+DocumentFormat.OpenXml.EnumValue`1
+DocumentFormat.OpenXml.FileFormatVersions
+DocumentFormat.OpenXml.ListValue`1
+DocumentFormat.OpenXml.OpenXmlSimpleValue`1
+DocumentFormat.OpenXml.SpaceProcessingModeValues
+DocumentFormat.OpenXml.Wordprocessing.DocPart
+DocumentFormat.OpenXml.WordprocessingDocumentType
+
+[ExcludedTypes]
+DocumentFormat.OpenXml.ChildElementInfoAttribute
+DocumentFormat.OpenXml.EnumStringAttribute
+DocumentFormat.OpenXml.Features.FeatureExtensions
+DocumentFormat.OpenXml.Features.PackageEventExtensions
+DocumentFormat.OpenXml.Features.PartEventFeatureExtensions
+DocumentFormat.OpenXml.Features.PartRootEventExtensions
+DocumentFormat.OpenXml.MarkupCompatibilityAttributes
+DocumentFormat.OpenXml.Math.OnOffType
+DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main.OpenXmlTaskAssignUnassignUserElement
+DocumentFormat.OpenXml.Office.PowerPoint.Y2022.M08.Main.OpenXmlTaskAssignUnassignUserElement
+DocumentFormat.OpenXml.Office.SpreadSheetML.Y2021.ExtLinks2021.OpenXmlAlternateUrlElement
+DocumentFormat.OpenXml.Office2010.Word.OnOffType
+DocumentFormat.OpenXml.Office2013.Excel.OpenXmlPivotCachesElement
+DocumentFormat.OpenXml.Office2013.Excel.OpenXmlSurveyElementPrElement
+DocumentFormat.OpenXml.Office2013.Excel.WebExtensions
+DocumentFormat.OpenXml.Office2013.Word.OnOffType
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlFormulaElement
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlGridlinesElement
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlSolidColorFillPropertiesElement
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlTickMarksElement
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlValueColorEndPositionElement
+DocumentFormat.OpenXml.Office2016.Drawing.Command.OpenXmlDrawingElementMonikerListElement
+DocumentFormat.OpenXml.Office2016.Drawing.Command.OpenXmlEmptyElement
+DocumentFormat.OpenXml.Office2016.Drawing.Command.OpenXmlHyperlinkPropsElement
+DocumentFormat.OpenXml.Office2016.Drawing.Command.OpenXmlImgDataElement
+DocumentFormat.OpenXml.Office2016.Drawing.Command.OpenXmlRelativeRectPropsElement
+DocumentFormat.OpenXml.Office2016.Drawing.OpenXmlIdentifierElement
+DocumentFormat.OpenXml.Office2016.Presentation.Command.OpenXmlAnimationEffectMonikerListElement
+DocumentFormat.OpenXml.Office2019.Drawing.Model3D.OpenXmlPoint3DElement
+DocumentFormat.OpenXml.Office2019.Drawing.Model3D.OpenXmlPositiveRatioElement
+DocumentFormat.OpenXml.Office2021.DocumentTasks.OpenXmlTaskUserElement
+DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OpenXmlEmptyElement
+DocumentFormat.OpenXml.Office2021.Excel.RichDataWebImage.OpenXmlWebImageSupportingRichDataRelationshipElement
+DocumentFormat.OpenXml.Office2021.PowerPoint.Tasks.OpenXmlTaskAssignUnassignUserElement
+DocumentFormat.OpenXml.OfficeAvailabilityAttribute
+DocumentFormat.OpenXml.OpenXmlAttribute
+DocumentFormat.OpenXml.OpenXmlComparableSimpleReference`1
+DocumentFormat.OpenXml.OpenXmlComparableSimpleValue`1
+DocumentFormat.OpenXml.OpenXmlCompositeElement
+DocumentFormat.OpenXml.OpenXmlDomReader
+DocumentFormat.OpenXml.OpenXmlElement
+DocumentFormat.OpenXml.OpenXmlElementContext
+DocumentFormat.OpenXml.OpenXmlElementFunctionalExtensions
+DocumentFormat.OpenXml.OpenXmlElementList
+DocumentFormat.OpenXml.OpenXmlLeafElement
+DocumentFormat.OpenXml.OpenXmlLeafTextElement
+DocumentFormat.OpenXml.OpenXmlMiscNode
+DocumentFormat.OpenXml.OpenXmlPartReader
+DocumentFormat.OpenXml.OpenXmlPartReaderOptions
+DocumentFormat.OpenXml.OpenXmlPartRootElement
+DocumentFormat.OpenXml.OpenXmlPartWriter
+DocumentFormat.OpenXml.OpenXmlReader
+DocumentFormat.OpenXml.OpenXmlSimpleType
+DocumentFormat.OpenXml.OpenXmlUnknownElement
+DocumentFormat.OpenXml.OpenXmlUnknownElementExtensions
+DocumentFormat.OpenXml.OpenXmlWriter
+DocumentFormat.OpenXml.Packaging.ImagePartExtensions
+DocumentFormat.OpenXml.Packaging.OpenXmlPackage
+DocumentFormat.OpenXml.Packaging.OpenXmlPackageException
+DocumentFormat.OpenXml.Packaging.OpenXmlPackageExtensions
+DocumentFormat.OpenXml.Packaging.OpenXmlPackageValidationEventArgs
+DocumentFormat.OpenXml.Packaging.OpenXmlPackageValidationSettings
+DocumentFormat.OpenXml.Packaging.OpenXmlPart
+DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer
+DocumentFormat.OpenXml.Packaging.PartExtensionProvider
+DocumentFormat.OpenXml.Packaging.SlicerCachePart
+DocumentFormat.OpenXml.Packaging.SlicersPart
+DocumentFormat.OpenXml.Packaging.SlideCommentsPart
+DocumentFormat.OpenXml.Packaging.SlideLayoutPart
+DocumentFormat.OpenXml.Packaging.SlideMasterPart
+DocumentFormat.OpenXml.Packaging.SlidePart
+DocumentFormat.OpenXml.Packaging.SlideSyncDataPart
+DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart
+DocumentFormat.OpenXml.Packaging.TypedOpenXmlPackage
+DocumentFormat.OpenXml.Packaging.TypedOpenXmlPart
+DocumentFormat.OpenXml.Packaging.VbaDataPart
+DocumentFormat.OpenXml.Packaging.VbaProjectPart
+DocumentFormat.OpenXml.Packaging.WorkbookPart
+DocumentFormat.OpenXml.Packaging.WorkbookPersonPart
+DocumentFormat.OpenXml.Packaging.WorkbookRevisionHeaderPart
+DocumentFormat.OpenXml.Packaging.WorkbookRevisionLogPart
+DocumentFormat.OpenXml.Packaging.WorkbookStylesPart
+DocumentFormat.OpenXml.Packaging.WorkbookUserDataPart
+DocumentFormat.OpenXml.Packaging.WorksheetCommentsPart
+DocumentFormat.OpenXml.Packaging.WorksheetPart
+DocumentFormat.OpenXml.Packaging.WorksheetSortMapPart
+DocumentFormat.OpenXml.Packaging.WorksheetThreadedCommentsPart
+DocumentFormat.OpenXml.SchemaAttrAttribute
+DocumentFormat.OpenXml.TypedOpenXmlCompositeElement
+DocumentFormat.OpenXml.TypedOpenXmlElement
+DocumentFormat.OpenXml.TypedOpenXmlLeafElement
+DocumentFormat.OpenXml.TypedOpenXmlLeafTextElement
+DocumentFormat.OpenXml.TypedOpenXmlPartReader
+DocumentFormat.OpenXml.TypedOpenXmlPartRootElement
+DocumentFormat.OpenXml.Validation.OpenXmlValidator
+DocumentFormat.OpenXml.Wordprocessing.LayoutTableRowsApart
+DocumentFormat.OpenXml.Wordprocessing.OnOffType
+DocumentFormat.OpenXml.Wordprocessing.StylePaneSortMethods
+
+[TypeConversion]
+DocumentFormat.OpenXml.Base64BinaryValue	DocumentModel.Base64Binary
+DocumentFormat.OpenXml.Office2019.Drawing.Chart.BooleanFalse	System.Boolean
+DocumentFormat.OpenXml.BooleanValue	System.Boolean
+DocumentFormat.OpenXml.ByteValue	System.Byte
+DocumentFormat.OpenXml.ChildElementInfoAttribute	DocumentModel.Attributes.ChildElementInfoAttribute
+DocumentFormat.OpenXml.DateTimeValue	System.DateTime
+DocumentFormat.OpenXml.DecimalValue	System.Decimal
+DocumentFormat.OpenXml.DoubleValue	System.Double
+DocumentFormat.OpenXml.EnumStringAttribute	DocumentModel.Attributes.EnumStringAttribute
+DocumentFormat.OpenXml.Wordprocessing.Fonts	DocumentModel.Wordprocessing.Fonts
+DocumentFormat.OpenXml.HexBinaryValue	DocumentModel.HexBinary
+DocumentFormat.OpenXml.Int16Value	System.Int16
+DocumentFormat.OpenXml.Int32Value	System.Int32
+DocumentFormat.OpenXml.Int64Value	System.Int64
+DocumentFormat.OpenXml.IntegerValue	System.Int64
+DocumentFormat.OpenXml.Office2010.ExcelAc.List	System.String
+DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType	System.UInt32
+DocumentFormat.OpenXml.OfficeAvailabilityAttribute	DocumentModel.Attributes.OfficeAvailabilityAttribute
+DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues	System.Boolean
+DocumentFormat.OpenXml.Math.OnOffType	System.Boolean
+DocumentFormat.OpenXml.Office2010.Word.OnOffType	System.Boolean
+DocumentFormat.OpenXml.Wordprocessing.OnOffType	System.Boolean
+DocumentFormat.OpenXml.Office2013.Word.OnOffType	System.Boolean
+DocumentFormat.OpenXml.OnOffValue	System.Boolean
+DocumentFormat.OpenXml.OpenXmlElement	DocumentModel.ModelElement
+DocumentFormat.OpenXml.OpenXmlLeafElement	System.Boolean
+DocumentFormat.OpenXml.OpenXmlLeafTextElement	System.String
+DocumentFormat.OpenXml.ExtendedProperties.Properties	DocumentModel.Properties.ExtendedProperties
+DocumentFormat.OpenXml.CustomProperties.Properties	DocumentModel.Properties.CustomProperties
+DocumentFormat.OpenXml.SByteValue	System.SByte
+DocumentFormat.OpenXml.SchemaAttrAttribute	DocumentModel.Attributes.SchemaAttrAttribute
+DocumentFormat.OpenXml.Wordprocessing.Settings	DocumentModel.DocumentSettings
+DocumentFormat.OpenXml.SingleValue	System.Single
+DocumentFormat.OpenXml.StringValue	System.String
+DocumentFormat.OpenXml.UInt16Value	System.UInt16
+DocumentFormat.OpenXml.UInt32Value	System.UInt32
+DocumentFormat.OpenXml.UInt64Value	System.UInt64
+DocumentFormat.OpenXml.VariantTypes.Variant	DocumentModel.Variant
+DocumentFormat.OpenXml.VariantTypes.VTArray	DocumentModel.ArrayVariant
+DocumentFormat.OpenXml.VariantTypes.VTVector	DocumentModel.VectorVariant
+DocumentFormat.OpenXml.Wordprocessing.WebSettings	DocumentModel.WebSettings
+
+[ExcludedProperties]
+*Part
+AddError
+ChildElements
+Container
+ExtendedAttributes
+Features
+FirstChild
+HasAttributes
+HasChildren
+HasValue
+InnerText
+InnerXml
+IsRootElementLoaded
+LastChild
+LocalName
+MCAttributes
+NamespaceDeclarations
+NamespaceUri
+OpenXmlElementContext
+OpenXmlPackage
+OuterXml
+Parent
+Prefix
+RelationshipErrorHandlerFactory
+RootElementContext
+WebExtensions
+XmlQualifiedName
+XName
+
+[PropertyTranslateTable]
+DocumentFormat.OpenXml.Wordprocessing.LatentStyles.Count	TotalCount
+DocumentFormat.OpenXml.Wordprocessing.LatentStyles.LatentStyleExceptionInfos	Items
+DocumentFormat.OpenXml.Wordprocessing.Style.Default	IsDefault
+DocumentFormat.OpenXml.Wordprocessing.Style.CustomStyle	IsCustom
+DocumentFormat.OpenXml.Wordprocessing.Style.AutoRedefine	IsAutoRedefined
+DocumentFormat.OpenXml.Wordprocessing.Style.StyleHidden	IsHidden
+DocumentFormat.OpenXml.Wordprocessing.Style.SemiHidden	IsSemiHidden
+DocumentFormat.OpenXml.Wordprocessing.Style.UnhideWhenUsed	IsUnhiddenWhenUsed
+DocumentFormat.OpenXml.Wordprocessing.Style.PrimaryStyle	IsPrimary
+DocumentFormat.OpenXml.Wordprocessing.Style.Locked	IsLocked
+DocumentFormat.OpenXml.Wordprocessing.Style.Personal	IsPersonal
+DocumentFormat.OpenXml.Wordprocessing.Style.PersonalCompose	IsPersonalCompose
+DocumentFormat.OpenXml.Wordprocessing.Style.PersonalReply	IsPersonalReply
+DocumentFormat.OpenXml.Wordprocessing.Font.Panose1Number	Panose
+
+[PropertyTypeConversion]
+DocumentFormat.OpenXml.Wordprocessing.CheckBoxSymbolType.Val	HexChar
+DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.DocumentId	HexInt
+DocumentFormat.OpenXml.Wordprocessing.DocumentSettings.PersistentDocumentId	Guid
+DocumentFormat.OpenXml.Wordprocessing.Mcd.BEncrypt	HexChar
+DocumentFormat.OpenXml.Wordprocessing.Mcd.Cmg	HexChar
+DocumentFormat.OpenXml.Wordprocessing.Rsids.Items	Collection<HexInt>
+DocumentFormat.OpenXml.Wordprocessing.Rsids.RsidRoot	HexInt
+Rsid	HexInt
+*Id	HexInt
+
+[BuiltInTypeTranslation]
+System.Object	object
+System.String	string
+System.Boolean	bool
+System.Int32	int
+System.UInt32	uint
+System.Int16	short
+System.UInt16	ushort
+System.Int64	long
+System.UInt64	ulong
+System.Byte	byte
+System.SByte	sbyte
+System.Single	float
+System.Double	double
+System.Decimal	decimal
+
+[SimpleTypes]
+Boolean
+Byte
+Decimal
+Double
+Int16
+Int32
+Int64
+SByte
+Single
+String
+UInt16
+UInt32
+UInt64
+
+[RealTypes]
+Boolean
+Double
+http://www.w3.org/2001/XMLSchema:hexBinary
+http://www.w3.org/2001/XMLSchema:integer
+Int32
+Int64
+UInt32
+
+[CommonTypes]
+*Start	*Mark
+*End	*Mark
+MoveFromRangeMark	EditRangeMark
+MoveToRangeMark	EditRangeMark
+CustomXml*RangeMark	EditRangeMark
+BookmarkMark	AnnotationRangeMark
+CommentRangeMark	AnnotationRangeMark
+DXW.Bidirectional*	DXW.BidirectionalMark
+DXO10W.RunConflict*	DXO10W.RunConflictMark
+DXW.AnnotationRangeMark|DXW.EditRangeMark|DXO10W.EditRangeMark	DXW.RangeMark
+DXW.ProofError|DXW.PermMark	DXW.ProofPermMark
+DXW.InsertedRun	DXW.EditRunMark
+DXW.DeletedRun	DXW.EditRunMark
+DXW.MoveFromRun	DXW.EditRunMark
+DXW.MoveToRun	DXW.EditRunMark
+DXW.ProofPermMark|DXW.RangeMark|DXW.EditRunMark|DXW.ContentPart|DXO10W.RunConflictMark	DXW.CommonMark
+DXW.CustomXmlRun|DXW.SimpleField|DXW.Hyperlink	DXW.ActiveRun
+DXW.ActiveRun|DXW.SdtRun|DXW.CommonMark|DXM.MathElement|DXW.Run|DXW.BidirectionalMark|DXW.SubDocumentReference	DXW.ParagraphContent
+DXM.Accent	DXM.MathOp
+DXM.Bar	DXM.MathOp
+DXM.Box	DXM.MathOp
+DXM.BorderBox	DXM.MathOp
+DXM.Delimiter	DXM.MathOp
+DXM.EquationArray	DXM.MathOp
+DXM.Fraction	DXM.MathOp
+DXM.MathFunction	DXM.MathOp
+DXM.GroupChar	DXM.MathOp
+DXM.LimitLower	DXM.MathOp
+DXM.LimitUpper	DXM.MathOp
+DXM.Matrix	DXM.MathOp
+DXM.Nary	DXM.MathOp
+DXM.Phantom	DXM.MathOp
+DXM.Radical	DXM.MathOp
+DXM.PreSubSuper	DXM.MathOp
+DXM.Subscript	DXM.MathOp
+DXM.SubSuperscript	DXM.MathOp
+DXM.Superscript	DXM.MathOp
+DXM.Run	DXM.MathOp
+DXM.Paragraph|DXM.OfficeMath|DXM.MathOp	DXM.MathElement
+DXW.*Border	DXW.Border
+DXW.CustomXmlBlock|DXW.SdtBlock|DXW.Paragraph|DXW.Table	DXW.TextBlock
+

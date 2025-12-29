@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -13,9 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Qhta.Xml" Version="3.0.0" />
-    <PackageReference Include="Qhta.Xml.Reflection" Version="3.0.0" />
-    <PackageReference Include="Qhta.Xml.Serialization" Version="3.0.0" />
+    <PackageReference Include="Qhta.Xml" Version="3.2.0" />
+    <PackageReference Include="Qhta.Xml.Reflection" Version="4.0.0" />
+    <PackageReference Include="Qhta.Xml.Serialization" Version="4.1.0" />
   </ItemGroup>
 
   <ItemGroup>
