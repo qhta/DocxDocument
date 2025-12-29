@@ -41,7 +41,7 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
   public DMW.MailMergeSourceKind? MailMergeSource
   {
     get => _Element?.GetEnumVal<DMW.MailMergeSourceKind, DXW.MailMergeSource>();
-    set => _ExistingElement.SetEnumVal<DMW.MailMergeSourceKind, DXW.MailMergeSource>(value);
+    set => _ExistingElement.SetEnumVal<DMW.MailMergeSourceKind, DXW.MailMergeSourceValues, DXW.MailMergeSource>(value);
   }
 
   /// <summary>

@@ -10,7 +10,7 @@ public static class BuiltInPropertiesUtils
   /// </summary>
   /// <param name="source"></param>
   /// <param name="target"></param>
-  public static void CopyCorePropertiesTo(this BuiltInProperties source, PackageProperties target)
+  public static void CopyCorePropertiesTo(this BuiltInProperties source, DXP.IPackageProperties target)
   {
     target.Title = source.Title;
     target.Creator = source.Creator;

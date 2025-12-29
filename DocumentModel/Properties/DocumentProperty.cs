@@ -23,6 +23,20 @@ public partial class DocumentProperty : ModelElement
     Value = value;
   }
 
+  public DocumentProperty(string name, Type? type = null, object? value = null)
+  {
+    Category = null;
+    Name = name;
+    if (type != null)
+    {
+      var typeName = type.Name;
+      if (typeName.StartsWith("Nullable`"))
+        type = type.GenericTypeArguments[0];
+      Type = type;
+    }
+    Value = value;
+  }
+
   public DocumentProperty(DocumentProperty other)
   {
     Category = other.Category;

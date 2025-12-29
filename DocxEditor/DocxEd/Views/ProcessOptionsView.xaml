@@ -1,0 +1,478 @@
+﻿<UserControl x:Class="DocxEd.Views.ProcessOptionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:DocxEd"
+             xmlns:views="clr-namespace:DocxEd.Views"
+             xmlns:vm="clr-namespace:DocxEd.ViewModels"
+             xmlns:cvr="clr-namespace:DocxEd.Converters"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:MainViewModel}"
+             d:DesignHeight="450"
+             d:DesignWidth="400">
+  <UserControl.Resources>
+    <Style x:Key="{x:Type views:PhaseProgressView}"
+           TargetType="{x:Type views:PhaseProgressView}">
+      <Setter Property="Width"
+              Value="8" />
+      <Setter Property="HorizontalAlignment"
+              Value="Left" />
+      <Setter Property="RenderTransform">
+        <Setter.Value>
+          <TranslateTransform Y="5" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <cvr:PhaseNumberConverter x:Key="PhaseNumberConverter" />
+  </UserControl.Resources>
+  <Grid>
+    <Border BorderBrush="Black"
+            BorderThickness="0.5"
+            Background="WhiteSmoke">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black"
+                BorderThickness="0,0,0,1">
+          <Expander Header="{x:Static local:CommonStrings.OptionsExpanderHeader}"
+                    VerticalAlignment="Bottom"
+                    ExpandDirection="Down">
+            <Grid x:Name="MainOptionsGrid">
+              <Grid.RowDefinitions>
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+                <RowDefinition MinHeight="35"
+                               Height="Auto" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="40" />
+              </Grid.ColumnDefinitions>
+
+              <Label Grid.Row="0"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.AppDataFolder}"
+                     ToolTip="{x:Static local:CommonStrings.AppDataFolderTooltip}" />
+              <ComboBox Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="5"
+                        VerticalContentAlignment="Center"
+                        IsEditable="False"
+                        MinHeight="25"
+                        Height="Auto"
+                        ItemsSource="{Binding Path=ProcessOptionsVM.AppDataFolders}"
+                        SelectedValue="{Binding Path=ProcessOptionsVM.AppDataFolder}" />
+              <Button Grid.Row="0"
+                      Grid.Column="2"
+                      Margin="5"
+                      Content="+"
+                      Command="{Binding Path=ProcessOptionsVM.AddAppDataFolderCommand}" />
+
+              <Label Grid.Row="1"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.InputAssembly}"
+                     ToolTip="{x:Static local:CommonStrings.InputAssemblyTooltip}" />
+              <!--<TextBox Grid.Row="1"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       TextWrapping="Wrap"
+                       MinHeight="25"
+                       Height="Auto"
+                       Text="{Binding Path=ProcessOptionsVM.InputAssembly}" />-->
+              <ComboBox Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="5"
+                        VerticalContentAlignment="Center"
+                        IsEditable="False"
+                        MinHeight="25"
+                        Height="Auto"
+                        ItemsSource="{Binding Path=ProcessOptionsVM.AvailableAssemblies}"
+                        SelectedValue="{Binding Path=ProcessOptionsVM.InputAssembly}" />
+
+              <Label Grid.Row="2"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.GeneratorType}"
+                     ToolTip="{x:Static local:CommonStrings.GeneratorTypeTooltip}" />
+              <TextBox Grid.Row="2"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       TextWrapping="Wrap"
+                       MinHeight="25"
+                       Height="Auto"
+                       Text="{Binding Path=ProcessOptionsVM.GeneratorType}" />
+              <ComboBox x:Name="GeneratorSelectionBox"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Margin="5"
+                        VerticalContentAlignment="Center"
+                        IsEditable="True"
+                        Visibility="Hidden"
+                        DropDownClosed="GeneratorSelectionBox_DropDownClosed"
+                        Text="{Binding Path=ProcessOptionsVM.GeneratorType}"
+                        ItemsSource="{Binding Path=ProcessOptionsVM.GeneratorTypeNames}" />
+              <Button Grid.Row="2"
+                      Grid.Column="2"
+                      Margin="5"
+                      Content="..."
+                      Click="ShowGeneratorSelectionBox_Click" />
+
+              <Label Grid.Row="3"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.ProjectName}"
+                     ToolTip="{x:Static local:CommonStrings.ProjectNameTooltip}" />
+              <TextBox Grid.Row="3"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       Text="{Binding Path=ProcessOptionsVM.ProjectName}" />
+
+              <Label Grid.Row="4"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.SolutionName}"
+                     ToolTip="{x:Static local:CommonStrings.SolutionNameTooltip}" />
+              <TextBox Grid.Row="4"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       Text="{Binding Path=ProcessOptionsVM.SolutionName}" />
+
+              <Label Grid.Row="5"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.RootNamespace}"
+                     ToolTip="{x:Static local:CommonStrings.RootNamespaceTooltip}" />
+              <TextBox Grid.Row="5"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       Text="{Binding Path=ProcessOptionsVM.RootNamespace}" />
+
+              <Label Grid.Row="6"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.TypeToScan}"
+                     ToolTip="{x:Static local:CommonStrings.TypeToScanTooltip}" />
+              <TextBox Grid.Row="6"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       TextWrapping="Wrap"
+                       MinHeight="25"
+                       Height="Auto"
+                       Text="{Binding Path=ProcessOptionsVM.ScanTypeName}" />
+              <ComboBox x:Name="TypeSelectionBox"
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Margin="5"
+                        VerticalContentAlignment="Center"
+                        IsEditable="True"
+                        Visibility="Hidden"
+                        DropDownClosed="TypeSelectionBox_DropDownClosed"
+                        Text="{Binding Path=ProcessOptionsVM.ScanTypeName}"
+                        ItemsSource="{Binding Path=ProcessOptionsVM.MainTypeNames}" />
+              <Button x:Name="ShowTypeSelectionBox"
+                      Grid.Row="6"
+                      Grid.Column="2"
+                      Margin="5"
+                      Content="..."
+                      Click="ShowTypeSelectionBox_Click" />
+
+              <Label Grid.Row="7"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.FileWithDocs}"
+                     ToolTip="{x:Static local:CommonStrings.FileWithDocsTooltip}" />
+              <TextBox Grid.Row="7"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       TextWrapping="Wrap"
+                       MinHeight="25"
+                       Height="Auto"
+                       Text="{Binding Path=ProcessOptionsVM.ModelDocFileName}" />
+              <Button Grid.Row="7"
+                      Grid.Column="2"
+                      Margin="5"
+                      Content="..."
+                      Command="{Binding Path=ProcessOptionsVM.BrowseModelDocFileCommand}" />
+
+              <Label Grid.Row="8"
+                     Grid.Column="0"
+                     Margin="5"
+                     VerticalAlignment="Center"
+                     Content="{x:Static local:CommonStrings.CodeOutputPath}" />
+              <TextBox Grid.Row="8"
+                       Grid.Column="1"
+                       Margin="5"
+                       VerticalContentAlignment="Center"
+                       TextWrapping="Wrap"
+                       MinHeight="25"
+                       Height="Auto"
+                       Text="{Binding Path=ProcessOptionsVM.CodeOutputPath}" />
+              <Button Grid.Row="8"
+                      Grid.Column="2"
+                      Margin="5"
+                      Content="..."
+                      Command="{Binding Path=ProcessOptionsVM.BrowseCodeOutputPathCommand}" />
+
+              <StackPanel Grid.Row="9"
+                          Grid.ColumnSpan="3"
+                          Orientation="Horizontal"
+                          HorizontalAlignment="Center"
+                          Margin="0,8"
+                          >
+                <Button x:Name="SaveOptionsButton"
+                        Width="80"
+                        Content="{x:Static local:CommonStrings.Save}"
+                        Command="{Binding Path=ProcessOptionsVM.SaveOptionsCommand}"/>
+                <Button x:Name="RestoreOptionsButton"
+                        Margin="10,0,0,0"
+                        Width="80"
+                        Content="{x:Static local:CommonStrings.Cancel}"
+                        Command="{Binding Path=ProcessOptionsVM.RestoreOptionsCommand}" />
+              </StackPanel>
+            </Grid>
+          </Expander>
+        </Border>
+        <Grid x:Name="ProcessControlGrid"
+              Grid.Row="1">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+          </Grid.RowDefinitions>
+
+          <Label Grid.Row="0"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="4"
+                 Grid.RowSpan="1"
+                 VerticalAlignment="Center"
+                 Content="{x:Static local:CommonStrings.Process_phases_}" />
+
+          <views:PhaseProgressView Grid.Row="1"
+                                   Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[0].Percentage}" />
+          <views:PhaseProgressView Grid.Row="2"
+                                   Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[1].Percentage}" />
+          <views:PhaseProgressView Grid.Row="3"
+                                   Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[2].Percentage}" />
+          <views:PhaseProgressView Grid.Row="4"
+                                   Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[3].Percentage}" />
+          <views:PhaseProgressView Grid.Row="5"
+                                   Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[4].Percentage}" />
+          <views:PhaseProgressView Grid.Row="6"
+                                   Percentage="{Binding Path=ProcessMonitor.VM.PhaseMonitors[5].Percentage}" />
+          <Slider Grid.Column="0"
+                  Grid.Row="1"
+                  Grid.RowSpan="7"
+                  Minimum="0"
+                  Maximum="6"
+                  Orientation="Vertical"
+                  TickFrequency="1"
+                  TickPlacement="BottomRight"
+                  IsDirectionReversed="True"
+                  IsSnapToTickEnabled="True"
+                  Value="{Binding Path=ProcessOptionsVM.StopAtPhase}" />
+          <StackPanel Grid.Column="1"
+                      Grid.Row="1"
+                      VerticalAlignment="Center"
+                      Margin="0,0,5,0">
+            <Label Content="{x:Static local:CommonStrings.ScanSource}" />
+            <CheckBox Content="{x:Static local:CommonStrings.ValidateScan}"
+                      IsChecked="{Binding Path=ProcessOptionsVM.ValidateScan}" />
+          </StackPanel>
+          <Button Grid.Column="2"
+                  Grid.Row="1"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.ShowResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[0].ShowResultsCommand}" />
+          <Button Grid.Column="3"
+                  Grid.Row="1"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.SaveResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[0].SaveResultsCommand}" />
+
+          <StackPanel Grid.Column="1"
+                      Grid.Row="2"
+                      VerticalAlignment="Center"
+                      Margin="0,0,5,0">
+            <Label Content="{x:Static local:CommonStrings.AddDocs}" />
+            <CheckBox Content="{x:Static local:CommonStrings.ValidateDocs}"
+                      IsChecked="{Binding Path=ProcessOptionsVM.ValidateDocs}" />
+          </StackPanel>
+          <Button Grid.Column="2"
+                  Grid.Row="2"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.ShowResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[1].ShowResultsCommand}" />
+          <Button Grid.Column="3"
+                  Grid.Row="2"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.SaveResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[1].SaveResultsCommand}" />
+
+          <StackPanel Grid.Column="1"
+                      Grid.Row="3"
+                      VerticalAlignment="Center"
+                      Margin="0,0,5,0">
+            <Label Content="{x:Static local:CommonStrings.Rename}" />
+            <CheckBox Content="{x:Static local:CommonStrings.ValidateNames}"
+                      IsChecked="{Binding Path=ProcessOptionsVM.ValidateNames}" />
+          </StackPanel>
+          <Button Grid.Column="2"
+                  Grid.Row="3"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.ShowResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[2].ShowResultsCommand}" />
+          <Button Grid.Column="3"
+                  Grid.Row="3"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.SaveResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[2].SaveResultsCommand}" />
+
+          <StackPanel Grid.Column="1"
+                      Grid.Row="4"
+                      VerticalAlignment="Center"
+                      Margin="0,0,5,0">
+            <Label Content="{x:Static local:CommonStrings.ConvertTypes}" />
+            <CheckBox Content="{x:Static local:CommonStrings.ValidateConversion}"
+                      IsChecked="{Binding Path=ProcessOptionsVM.ValidateConversion}" />
+          </StackPanel>
+          <Button Grid.Column="2"
+                  Grid.Row="4"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.ShowResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[3].ShowResultsCommand}" />
+          <Button Grid.Column="3"
+                  Grid.Row="4"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.SaveResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[3].SaveResultsCommand}" />
+
+          <StackPanel Grid.Column="1"
+                      Grid.Row="5"
+                      VerticalAlignment="Center"
+                      Margin="0,0,5,0">
+            <Label Content="{x:Static local:CommonStrings.FinalFix}" />
+            <CheckBox Content="{x:Static local:CommonStrings.ValidateFix}"
+                      IsChecked="{Binding Path=ProcessOptionsVM.ValidateFix}" />
+          </StackPanel>
+          <Button Grid.Column="2"
+                  Grid.Row="5"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.ShowResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[4].ShowResultsCommand}" />
+          <Button Grid.Column="3"
+                  Grid.Row="5"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.SaveResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[4].SaveResultsCommand}" />
+
+          <StackPanel Grid.Column="1"
+                      Grid.Row="6"
+                      VerticalAlignment="Center"
+                      Margin="0,0,5,0">
+            <Label Content="{x:Static local:CommonStrings.CodeGen}" />
+            <CheckBox Content="{x:Static local:CommonStrings.ValidateGeneration}"
+                      IsChecked="{Binding Path=ProcessOptionsVM.ValidateGeneration}" />
+          </StackPanel>
+          <Button Grid.Column="2"
+                  Grid.Row="6"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.ShowResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[5].ShowResultsCommand}" />
+          <Button Grid.Column="3"
+                  Grid.Row="6"
+                  VerticalAlignment="Center"
+                  Margin="5,0,5,0"
+                  Height="25"
+                  Padding="5,0"
+                  Content="{x:Static local:CommonStrings.SaveResults}"
+                  Command="{Binding Path=ProcessMonitorVM.PhaseMonitors[5].SaveResultsCommand}" />
+
+        </Grid>
+      </Grid>
+    </Border>
+  </Grid>
+</UserControl>

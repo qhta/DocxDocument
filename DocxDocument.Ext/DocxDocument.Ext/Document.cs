@@ -6,7 +6,6 @@ namespace DocumentModel;
 /// The main class representing the whole wordprocessing document.
 /// </summary>
 [DataContract]
-[XmlSerializerFormat]
 public partial class Document : ModelElement, IDisposable
 {
 

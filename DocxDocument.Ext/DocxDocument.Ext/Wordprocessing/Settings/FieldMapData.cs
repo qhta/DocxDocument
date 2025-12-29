@@ -37,7 +37,7 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
   public DMW.MailMergeOdsoFieldKind? MailMergeFieldType
   {
     get => _Element?.GetEnumVal<DMW.MailMergeOdsoFieldKind, DXW.MailMergeFieldType>();
-    set => _ExistingElement.SetEnumVal<DMW.MailMergeOdsoFieldKind, DXW.MailMergeFieldType>(value);
+    set => _ExistingElement.SetEnumVal<DMW.MailMergeOdsoFieldKind, DXW.MailMergeOdsoFieldValues,  DXW.MailMergeFieldType>(value);
   }
 
   /// <summary>

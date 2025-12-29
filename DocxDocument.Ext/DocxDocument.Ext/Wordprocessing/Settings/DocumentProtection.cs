@@ -27,7 +27,7 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   public DMW.DocumentProtectionKind? Edit
   {
     get => _Element?.Edit?.GetEnumValue<DMW.DocumentProtectionKind, DXW.DocumentProtectionValues>();
-    set => _ExistingElement.Edit = EnumValueUtils.SetEnumValue<DMW.DocumentProtectionKind, DXW.DocumentProtectionValues>(value);
+    set => EnumValueUtils.SetEnumValue<DMW.DocumentProtectionKind, DXW.DocumentProtectionValues>(_ExistingElement, nameof(Edit), value);
   }
 
   /// <summary>
@@ -67,21 +67,21 @@ public partial class DocumentProtection: ModelElement<DXW.DocumentProtection>
   public DMW.CryptProviderKind? CryptographicProviderType
   {
     get => _Element?.CryptographicProviderType?.GetEnumValue<DMW.CryptProviderKind, DXW.CryptProviderValues>();
-    set => _ExistingElement.CryptographicProviderType = EnumValueUtils.SetEnumValue<DMW.CryptProviderKind, DXW.CryptProviderValues>(value);
+    set => EnumValueUtils.SetEnumValue<DMW.CryptProviderKind, DXW.CryptProviderValues>(_ExistingElement, nameof(CryptographicProviderType), value);
   }
 
   [DataMember]
   public DMW.CryptAlgorithmClassKind? CryptographicAlgorithmClass
   {
     get => _Element?.CryptographicAlgorithmClass?.GetEnumValue<DMW.CryptAlgorithmClassKind, DXW.CryptAlgorithmClassValues>();
-    set => _ExistingElement.CryptographicAlgorithmClass = EnumValueUtils.SetEnumValue<DMW.CryptAlgorithmClassKind, DXW.CryptAlgorithmClassValues>(value);
+    set => EnumValueUtils.SetEnumValue<DMW.CryptAlgorithmClassKind, DXW.CryptAlgorithmClassValues>(_ExistingElement, nameof(CryptographicAlgorithmClass), value);
   }
 
   [DataMember]
   public DMW.CryptAlgorithmKind? CryptographicAlgorithmType
   {
     get => _Element?.CryptographicAlgorithmType?.GetEnumValue<DMW.CryptAlgorithmKind, DXW.CryptAlgorithmValues>();
-    set => _ExistingElement.CryptographicAlgorithmType = EnumValueUtils.SetEnumValue<DMW.CryptAlgorithmKind, DXW.CryptAlgorithmValues>(value);
+    set => EnumValueUtils.SetEnumValue<DMW.CryptAlgorithmKind, DXW.CryptAlgorithmValues>(_ExistingElement, nameof(CryptographicAlgorithmType), value);
   }
 
   [DataMember]

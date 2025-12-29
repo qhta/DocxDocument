@@ -24,7 +24,7 @@ public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteD
   public DMW.FootnotePositionKind? FootnotePosition
   {
     get => _Element?.GetEnumVal<DMW.FootnotePositionKind,DXW.FootnotePosition>();
-    set => _ExistingElement.SetEnumVal<DMW.FootnotePositionKind,DXW.FootnotePosition>(value);
+    set => _ExistingElement.SetEnumVal<DMW.FootnotePositionKind, DXW.FootnotePositionValues, DXW.FootnotePosition>(value);
   }
 
   /// <summary>
@@ -70,7 +70,7 @@ public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteD
   public DMW.NumberFormatKind? NumberingFormat
   {
     get => _Element?.GetEnumVal<DMW.NumberFormatKind,DXW.NumberingFormat>();
-    set => _ExistingElement.SetEnumVal<DMW.NumberFormatKind,DXW.NumberingFormat>(value);
+    set => _ExistingElement.SetEnumVal<DMW.NumberFormatKind, DXW.NumberFormatValues, DXW.NumberingFormat>(value);
   }
 
   /// <summary>
@@ -85,6 +85,6 @@ public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteD
   public DMW.RestartNumberKind? NumberingRestart
   {
     get => _Element?.GetEnumVal<DMW.RestartNumberKind,DXW.NumberingRestart>();
-    set => _ExistingElement.SetEnumVal<DMW.RestartNumberKind,DXW.NumberingRestart>(value);
+    set => _ExistingElement.SetEnumVal<DMW.RestartNumberKind, DXW.RestartNumberValues,DXW.NumberingRestart>(value);
   }
 }

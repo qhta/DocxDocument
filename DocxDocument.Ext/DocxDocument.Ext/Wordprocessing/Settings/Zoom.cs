@@ -28,7 +28,7 @@ public partial class Zoom : ModelElement<DXW.Zoom>
   public DMW.PresetZoomKind? Val
   {
     get => _Element?.Val?.GetEnumValue<DMW.PresetZoomKind, DXW.PresetZoomValues>();
-    set => _ExistingElement.Val = EVU.SetEnumValue<DMW.PresetZoomKind, DXW.PresetZoomValues>(value);
+    set => EVU.SetEnumValue<DMW.PresetZoomKind, DXW.PresetZoomValues>(_ExistingElement, nameof(Val), value);
   }
 
   /// <summary>

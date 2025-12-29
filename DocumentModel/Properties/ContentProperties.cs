@@ -14,6 +14,11 @@ public partial class ContentProperties : KnownDocumentProperties
   internal Document? OwnerDocument;
   internal O.ExtendedProperties.Properties ExtendedProperties;
 
+  public ContentProperties()
+  {
+
+  }
+
   public ContentProperties(Document ownerDocument)
   {
     OwnerDocument = ownerDocument;
@@ -39,7 +44,6 @@ public partial class ContentProperties : KnownDocumentProperties
         ExtendedProperties.Template = new O.ExtendedProperties.Template(value);
       else
         ExtendedProperties.Template?.Remove();
-      }
     }
   }
 

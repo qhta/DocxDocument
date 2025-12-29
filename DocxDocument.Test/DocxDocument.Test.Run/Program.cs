@@ -13,6 +13,12 @@
       Console.WriteLine($"Tests FAILED");
   }
 
+  private static void ShowFailedTest(string testName)
+  {
+    Console.WriteLine();
+    Console.WriteLine($"*** {testName} FAILED ***");
+    Console.WriteLine();
+  }
   private static bool RunReadTest()
   {
     var test = new DocxDocument.Test.ReadWriteTest();
@@ -20,9 +26,21 @@
     test.Initialize();
     Console.WriteLine($"Opening directory: {test.SamplesPath}");
     Console.WriteLine();
-    if (!test.TestOpenAllFiles()) return false;
-    if (!test.TestReadProperties()) return false;
-    if (!test.TestReadSettings()) return false;
+    if (!test.TestOpenAllFiles())
+    {
+      ShowFailedTest(nameof(test.TestOpenAllFiles));
+      return false;
+    }
+    if (!test.TestReadProperties())
+    {
+      ShowFailedTest(nameof(test.TestReadProperties));
+      return false;
+    }
+    if (!test.TestReadSettings())
+    {
+      ShowFailedTest(nameof(test.TestReadSettings));
+      return false;
+    }
     return true;
   }
 
@@ -33,10 +51,26 @@
     test.Initialize();
     Console.WriteLine($"Opening directory: {test.SamplesPath}");
     Console.WriteLine();
-    if (!test.TestCreate()) return false;
-    if (!test.TestCopyPropertiesOne()) return false;
-    if (!test.TestCreateProperties()) return false;
-    if (!test.TestCreateSettings()) return false;
+    if (!test.TestCreate())
+    {
+      ShowFailedTest(nameof(test.TestCreate));
+      return false;
+    }
+    if (!test.TestCopyPropertiesOne())
+    {
+      ShowFailedTest(nameof(test.TestCopyPropertiesOne));
+      return false;
+    }
+    if (!test.TestCreateProperties())
+    {
+      ShowFailedTest(nameof(test.TestCreateProperties));
+      return false;
+    }
+    if (!test.TestCreateSettings())
+    {
+      ShowFailedTest(nameof(test.TestCreateSettings));
+      return false;
+    }
     return true;
   }
 
@@ -47,8 +81,16 @@
     test.Initialize();
     Console.WriteLine($"Opening directory: {test.SamplesPath}");
     Console.WriteLine();
-    if (!test.TestSerializeAndDeserializeOne()) return false;
-    if (!test.TestSerializeAndDeserializeAll()) return false;
+    if (!test.TestSerializeAndDeserializeOne())
+    {
+      ShowFailedTest(nameof(test.TestSerializeAndDeserializeOne));
+      return false;
+    }
+    if (!test.TestSerializeAndDeserializeAll())
+    {
+      ShowFailedTest(nameof(test.TestSerializeAndDeserializeAll));
+      return false;
+    }
     return true;
   }
 }

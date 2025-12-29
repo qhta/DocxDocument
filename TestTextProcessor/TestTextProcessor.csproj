@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXmlTools.csproj" />
     <ProjectReference Include="..\..\MyLib\Qhta.Unicode\Qhta.Unicode\Qhta.Unicode.csproj" />
   </ItemGroup>
 

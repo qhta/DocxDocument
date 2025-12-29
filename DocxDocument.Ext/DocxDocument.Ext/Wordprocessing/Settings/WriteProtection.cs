@@ -55,7 +55,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   public DMW.CryptProviderKind? CryptographicProviderType
   {
     get => _Element?.CryptographicProviderType?.GetEnumValue<DMW.CryptProviderKind, DXW.CryptProviderValues>();
-    set => _ExistingElement.CryptographicProviderType = EVU.SetEnumValue<DMW.CryptProviderKind, DXW.CryptProviderValues>(value);
+    set => EVU.SetEnumValue<DMW.CryptProviderKind, DXW.CryptProviderValues>(_ExistingElement, nameof(CryptographicProviderType), value);
   }
 
   /// <summary>
@@ -65,7 +65,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   public DMW.CryptAlgorithmClassKind? CryptographicAlgorithmClass
   {
     get => _Element?.CryptographicAlgorithmClass?.GetEnumValue<DMW.CryptAlgorithmClassKind, DXW.CryptAlgorithmClassValues>();
-    set => _ExistingElement.CryptographicAlgorithmClass = EVU.SetEnumValue<DMW.CryptAlgorithmClassKind, DXW.CryptAlgorithmClassValues>(value);
+    set => EVU.SetEnumValue<DMW.CryptAlgorithmClassKind, DXW.CryptAlgorithmClassValues>(_ExistingElement, nameof(CryptographicAlgorithmClass), value);
 
   }
 
@@ -76,7 +76,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   public DMW.CryptAlgorithmKind? CryptographicAlgorithmType
   {
     get => _Element?.CryptographicAlgorithmType?.GetEnumValue<DMW.CryptAlgorithmKind, DXW.CryptAlgorithmValues>();
-    set => _ExistingElement.CryptographicAlgorithmType = EVU.SetEnumValue<DMW.CryptAlgorithmKind, DXW.CryptAlgorithmValues>(value);
+    set => EVU.SetEnumValue<DMW.CryptAlgorithmKind, DXW.CryptAlgorithmValues>(_ExistingElement, nameof(CryptographicAlgorithmType), value);
 
   }
 

@@ -22,7 +22,7 @@ public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
   public DMW.ColorSchemeIndexKind? Background1
   {
     get => _Element?.Background1?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
-    set => _ExistingElement.Background1 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
+    set => EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(_ExistingElement, nameof(Background1), value);
   }
 
   /// <summary>
@@ -32,7 +32,7 @@ public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
   public DMW.ColorSchemeIndexKind? Text1
   {
     get => _Element?.Text1?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
-    set => _ExistingElement.Text1 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
+    set => EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(_ExistingElement, nameof(Text1), value);
   }
 
   /// <summary>
@@ -42,7 +42,7 @@ public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
   public DMW.ColorSchemeIndexKind? Background2
   {
     get => _Element?.Background2?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
-    set => _ExistingElement.Background2 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
+    set => EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(_ExistingElement, nameof(Background2), value);
   }
 
   /// <summary>
@@ -52,7 +52,7 @@ public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
   public DMW.ColorSchemeIndexKind? Text2
   {
     get => _Element?.Text2?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
-    set => _ExistingElement.Text2 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
+    set => EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(_ExistingElement, nameof(Text2), value);
   }
 
   /// <summary>
@@ -62,7 +62,7 @@ public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
   public DMW.ColorSchemeIndexKind? Accent1
   {
     get => _Element?.Accent1?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
-    set => _ExistingElement.Accent1 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
+    set => EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(_ExistingElement, nameof(Accent1), value);
   }
 
   /// <summary>
@@ -72,7 +72,7 @@ public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
   public DMW.ColorSchemeIndexKind? Accent2
   {
     get => _Element?.Accent2?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
-    set => _ExistingElement.Accent2 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
+    set => EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(_ExistingElement, nameof(Accent2), value);
   }
 
   /// <summary>
@@ -82,7 +82,7 @@ public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
   public DMW.ColorSchemeIndexKind? Accent3
   {
     get => _Element?.Accent3?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
-    set => _ExistingElement.Accent3 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
+    set => EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(_ExistingElement, nameof(Accent3), value);
   }
 
   /// <summary>
@@ -92,7 +92,7 @@ public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
   public DMW.ColorSchemeIndexKind? Accent4
   {
     get => _Element?.Accent4?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
-    set => _ExistingElement.Accent4 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
+    set => EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(_ExistingElement, nameof(Accent4), value);
   }
 
   /// <summary>
@@ -102,7 +102,7 @@ public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
   public DMW.ColorSchemeIndexKind? Accent5
   {
     get => _Element?.Accent5?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
-    set => _ExistingElement.Accent5 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
+    set => EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(_ExistingElement, nameof(Accent5), value);
   }
 
   /// <summary>
@@ -112,7 +112,7 @@ public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
   public DMW.ColorSchemeIndexKind? Accent6
   {
     get => _Element?.Accent6?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
-    set => _ExistingElement.Accent6 = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
+    set => EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(_ExistingElement, nameof(Accent6), value);
   }
 
   /// <summary>
@@ -122,7 +122,7 @@ public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
   public DMW.ColorSchemeIndexKind? Hyperlink
   {
     get => _Element?.Hyperlink?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
-    set => _ExistingElement.Hyperlink = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
+    set => EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(_ExistingElement, nameof(Hyperlink), value);
   }
 
   /// <summary>
@@ -132,7 +132,7 @@ public partial class ColorSchemeMapping : ModelElement<DXW.ColorSchemeMapping>
   public DMW.ColorSchemeIndexKind? FollowedHyperlink
   {
     get => _Element?.FollowedHyperlink?.GetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>();
-    set => _ExistingElement.FollowedHyperlink = EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(value);
+    set => EVU.SetEnumValue<DMW.ColorSchemeIndexKind, DXW.ColorSchemeIndexValues>(_ExistingElement, nameof(FollowedHyperlink), value);
   }
 
 }
