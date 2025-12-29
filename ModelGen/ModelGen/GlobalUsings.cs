@@ -15,7 +15,6 @@ global using System.Xml.Linq;
 global using System.Xml.Serialization;
 global using System.Runtime.Serialization;
 
-global using Qhta.Xml.Reflection;
 global using Qhta.Xml.Serialization;
 global using Qhta.TextUtils;
 global using Qhta.TypeUtils;

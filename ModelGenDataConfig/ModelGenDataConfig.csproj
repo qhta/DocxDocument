@@ -1,18 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>Latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ModelConfigData - Copy.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Namotion.Reflection" Version="3.1.1" />
+    <PackageReference Include="Namotion.Reflection" Version="3.4.3" />
   </ItemGroup>
 
   <ItemGroup>
