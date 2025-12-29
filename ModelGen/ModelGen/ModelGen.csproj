@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
@@ -33,23 +33,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Namotion.Reflection" Version="3.1.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Namotion.Reflection" Version="3.4.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="Qhta.HtmlUtils" Version="2.1.0" />
     <PackageReference Include="Qhta.TestHelper" Version="3.0.0" />
     <PackageReference Include="Qhta.TestUtilities" Version="1.0.0" />
-    <PackageReference Include="Qhta.TypeUtils" Version="1.4.0" />
-    <PackageReference Include="Qhta.Xml" Version="3.0.0" />
-    <PackageReference Include="Qhta.Xml.Serialization" Version="3.0.0" />
+    <PackageReference Include="Qhta.Xml.Reflection" Version="4.0.0" />
     <PackageReference Include="Snork.TextWrap" Version="1.0.1301" />
-    <PackageReference Include="System.IO.Packaging" Version="8.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\ModelDocumentation\ModelDocumentation.csproj" />
-    <ProjectReference Include="..\..\ModelGenDataConfig\ModelGenDataConfig.csproj" />
-    <ProjectReference Include="..\..\DocumentModel.Attributes\DocumentModel.Attributes.csproj" />
-    <ProjectReference Include="..\..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
+    <PackageReference Include="System.IO.Packaging" Version="10.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,6 +54,13 @@
 
   <ItemGroup>
     <Folder Include="Schemas\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DocumentModel.Attributes\DocumentModel.Attributes.csproj" />
+    <ProjectReference Include="..\..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
+    <ProjectReference Include="..\..\ModelDocumentation\ModelDocumentation.csproj" />
+    <ProjectReference Include="..\..\ModelGenDataConfig\ModelGenDataConfig.csproj" />
   </ItemGroup>
 
   <ItemGroup>

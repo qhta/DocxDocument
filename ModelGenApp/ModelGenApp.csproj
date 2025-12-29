@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocumentFormat.OpenXml" Version="3.1.1" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.3.0" />
     <PackageReference Include="Qhta.HtmlUtils" Version="2.1.0" />
     <PackageReference Include="WPFFolderBrowser" Version="1.0.2" />
   </ItemGroup>
@@ -87,12 +87,6 @@
     </Reference>
     <Reference Include="Microsoft.Vbe.Interop">
       <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15\Microsoft.Vbe.Interop.dll</HintPath>
-    </Reference>
-    <Reference Include="office">
-      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\v4.0\Office15\Office.dll</HintPath>
-    </Reference>
-    <Reference Include="stdole">
-      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\PublicAssemblies\stdole.dll</HintPath>
     </Reference>
   </ItemGroup>
 
