@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXmlTools.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="CleanIt\ISO_IEC_29500-1_2016 Chapter17.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

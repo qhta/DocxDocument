@@ -31,7 +31,7 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   public DMM.BreakBinaryOperatorKind? BreakBinary
   {
     get => _Element?.GetEnumVal<DMM.BreakBinaryOperatorKind, DXM.BreakBinary>();
-    set => _ExistingElement.SetEnumVal<DMM.BreakBinaryOperatorKind, DXM.BreakBinary>(value);
+    set => _ExistingElement.SetEnumVal<DMM.BreakBinaryOperatorKind, DXM.BreakBinaryOperatorValues, DXM.BreakBinary>(value);
   }
 
   /// <summary>
@@ -42,7 +42,7 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   public DMM.BreakBinarySubtractionKind? BreakBinarySubtraction
   {
     get => _Element?.GetEnumVal<DMM.BreakBinarySubtractionKind, DXM.BreakBinarySubtraction>();
-    set => _ExistingElement.SetEnumVal<DMM.BreakBinarySubtractionKind, DXM.BreakBinarySubtraction>(value);
+    set => _ExistingElement.SetEnumVal<DMM.BreakBinarySubtractionKind, DXM.BreakBinarySubtractionValues, DXM.BreakBinarySubtraction>(value);
   }
 
   /// <summary>
@@ -127,7 +127,7 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   public DMM.JustificationKind? DefaultJustification
   {
     get => _Element?.GetEnumVal<DMM.JustificationKind, DXM.DefaultJustification>();
-    set => _ExistingElement.SetEnumVal<DMM.JustificationKind, DXM.DefaultJustification>(value);
+    set => _ExistingElement.SetEnumVal<DMM.JustificationKind, DXM.JustificationValues, DXM.DefaultJustification>(value);
   }
 
   /// <summary>
@@ -187,7 +187,7 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   public DMM.LimitLocationKind? IntegralLimitLocation
   {
     get => _Element?.GetEnumVal<DMM.LimitLocationKind, DXM.IntegralLimitLocation>();
-    set => _ExistingElement.SetEnumVal<DMM.LimitLocationKind, DXM.IntegralLimitLocation>(value);
+    set => _ExistingElement.SetEnumVal<DMM.LimitLocationKind, DXM.LimitLocationValues, DXM.IntegralLimitLocation>(value);
   }
 
   /// <summary>
@@ -206,7 +206,7 @@ public class MathProperties : ModelElement<DXM.MathProperties>
   public DMM.LimitLocationKind? NaryLimitLocation
   {
     get => _Element?.GetEnumVal<DMM.LimitLocationKind, DXM.NaryLimitLocation>();
-    set => _ExistingElement.SetEnumVal<DMM.LimitLocationKind, DXM.NaryLimitLocation>(value);
+    set => _ExistingElement.SetEnumVal<DMM.LimitLocationKind, DXM.LimitLocationValues, DXM.NaryLimitLocation>(value);
   }
 
   /// <summary>

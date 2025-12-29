@@ -8,15 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocumentFormat.OpenXml" Version="3.2.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
-    <PackageReference Include="NuGet.Configuration" Version="6.12.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXMLTools.csproj" />
-    <ProjectReference Include="..\CleanOpenXml\CleanOpenXml.csproj" />
-    <ProjectReference Include="..\OpenXmlDatabase\OpenXmlDatabase.csproj" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.3.0" />
+    <PackageReference Include="EntityFrameworkCore.Jet" Version="9.0.0-beta.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="NuGet.Configuration" Version="6.13.2" />
+    <PackageReference Include="System.Data.OleDb" Version="9.0.3" />
   </ItemGroup>
 
   <ItemGroup>

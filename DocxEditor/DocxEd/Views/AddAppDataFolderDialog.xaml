@@ -1,0 +1,55 @@
+﻿<Window x:Class="DocxEd.Views.AddAppDataFolderDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DocxEd"
+        xmlns:views="clr-namespace:DocxEd.Views"
+        xmlns:vm="clr-namespace:DocxEd.ViewModels"
+        xmlns:cvr="clr-namespace:DocxEd.Converters"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:AddAppDataFolderViewModel}"
+        Title="{x:Static local:CommonStrings.AddNewAppDataFolder}"
+        d:Height="200"
+        SizeToContent="Height"
+        Height="Auto"
+        Width="300">
+  <Grid x:Name="MainGrid"
+        Background="WhiteSmoke"
+        Height="Auto">
+    <StackPanel x:Name="MainPanel" 
+                Margin="5"
+                VerticalAlignment="Top"
+                >
+      <Label Content="{x:Static local:CommonStrings.NewFolderName}" />
+      <TextBox x:Name="NewApplDataFolderName"
+               Margin="5"
+               Text="{Binding NewFolderName}" />
+      <CheckBox x:Name="CopyContentCheckBox"
+                Margin="5,0,0,0"
+                Content="{x:Static local:CommonStrings.CopyContentFrom}"
+                IsChecked="{Binding CopyContent}" />
+      <ListBox x:Name="SourceFolderListBox"
+               MinHeight="20"
+               Margin="5"
+               ItemsSource="{Binding ExistingFolders}"
+               SelectedItem="{Binding FolderToCopy}" />
+      <StackPanel x:Name="ButtonsPanel"
+                  Orientation="Horizontal"
+                  Margin="5"
+                  HorizontalAlignment="Center">
+        <Button x:Name="OkButton"
+                Content="{x:Static local:CommonStrings.OK}"
+                MinWidth="80"
+                IsDefault="true"
+                Click="OkButton_Click" />
+        <Button x:Name="CancelButton"
+                Margin="20,0,0,0"
+                Content="{x:Static local:CommonStrings.Cancel}"
+                MinWidth="80"
+                IsCancel="True"
+                Click="CancelButton_Click" />
+      </StackPanel>
+    </StackPanel>
+  </Grid>
+</Window>

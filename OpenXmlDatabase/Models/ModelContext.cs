@@ -40,8 +40,9 @@ public partial class ModelContext : DbContext
     public virtual DbSet<TypeKind> TypeKinds { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseJet("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OneDrive\\VS\\Projects\\DocxDocument\\OpenXmlDatabase\\OpenXml.accdb;Jet OLEDB:Database Password=****;");
+#pragma warning disable CA1416
+      => optionsBuilder.UseJet("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\OneDrive\\VS\\Projects\\DocxDocument\\OpenXmlDatabase\\OpenXml.accdb;Jet OLEDB:Database Password=****;");
+#pragma warning restore CA1416
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -92,7 +92,7 @@ public partial class MailMerge :  ModelElement<DXW.MailMerge>
   public DMW.MailMergeDataKind? DataType
   {
     get => _Element?.GetEnumVal<DMW.MailMergeDataKind, DXW.DataType>();
-    set => _ExistingElement.SetEnumVal<DMW.MailMergeDataKind, DXW.DataType>(value);
+    set => _ExistingElement.SetEnumVal<DMW.MailMergeDataKind, DXW.MailMergeDataValues,  DXW.DataType>(value);
   }
 
   /// <summary>
@@ -105,7 +105,7 @@ public partial class MailMerge :  ModelElement<DXW.MailMerge>
   public DMW.MailMergeDestinationKind? Destination
   {
     get => _Element?.GetEnumVal<DMW.MailMergeDestinationKind, DXW.Destination>();
-    set => _ExistingElement.SetEnumVal<DMW.MailMergeDestinationKind, DXW.Destination>(value);
+    set => _ExistingElement.SetEnumVal<DMW.MailMergeDestinationKind, DXW.MailMergeDestinationValues,  DXW.Destination>(value);
   }
 
   /// <summary>
@@ -127,7 +127,7 @@ public partial class MailMerge :  ModelElement<DXW.MailMerge>
   public DMW.MailMergeDocumentKind? MainDocumentType
   {
     get => _Element?.GetEnumVal<DMW.MailMergeDocumentKind, DXW.MainDocumentType>();
-    set => _ExistingElement.SetEnumVal<DMW.MailMergeDocumentKind, DXW.MainDocumentType>(value);
+    set => _ExistingElement.SetEnumVal<DMW.MailMergeDocumentKind, DXW.MailMergeDocumentValues, DXW.MainDocumentType>(value);
   }
 
   /// <summary>

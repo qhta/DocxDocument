@@ -20,7 +20,7 @@ public partial class Rules : NamedElementCollection<DXVO.Rules, DXVO.Rule, DMV.R
   public DMV.ExtensionHandlingBehaviorKind? Extension
   {
     get => _Element?.Extension?.GetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>();
-    set => _ExistingElement.Extension = EVU.SetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>(value);
+    set => EVU.SetEnumValue<DMV.ExtensionHandlingBehaviorKind, DXV.ExtensionHandlingBehaviorValues>(_ExistingElement, nameof(Extension), value);
   }
 
 }

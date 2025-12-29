@@ -24,8 +24,7 @@ public partial class CompatibilitySetting : ModelElement<DXW.CompatibilitySettin
   public CompatSettingNameKind? Name
   {
     get => _Element?.Name?.GetEnumValue<DMW.CompatSettingNameKind, DXW.CompatSettingNameValues>();
-    set => _ExistingElement.Name = (value == null) ? null :
-      EVU.SetEnumValue<DMW.CompatSettingNameKind, DXW.CompatSettingNameValues>(value);
+    set => EVU.SetEnumValue<DMW.CompatSettingNameKind, DXW.CompatSettingNameValues>(_ExistingElement, nameof(Name), value);
   }
 
   /// <summary>
@@ -39,10 +38,8 @@ public partial class CompatibilitySetting : ModelElement<DXW.CompatibilitySettin
   }
   string? INamedElement.Name
   {
-    get => _Element?.Name?.GetEnumValue<DMW.CompatSettingNameKind, DXW.CompatSettingNameValues>()
-      .ToString();
-    set => _ExistingElement.Name = (value == null) ? null :
-      EVU.SetEnumValue<DMW.CompatSettingNameKind, DXW.CompatSettingNameValues>(Enum.Parse<CompatSettingNameKind>(value));
+    get => _Element?.Name?.GetEnumValue<DMW.CompatSettingNameKind, DXW.CompatSettingNameValues>().ToString();
+    set => EVU.SetEnumValue<DMW.CompatSettingNameKind, DXW.CompatSettingNameValues>(_ExistingElement, nameof(Name), value!=null ? Enum.Parse<CompatSettingNameKind>(value) : null);
 
   }
 }

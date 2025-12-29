@@ -15,10 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocumentFormat.OpenXml" Version="3.1.1" />
-    <PackageReference Include="DocumentFormat.OpenXml.Framework" Version="3.1.1" />
-    <PackageReference Include="Qhta.Collections" Version="4.7.0" />
-    <PackageReference Include="Qhta.TypeUtils" Version="1.4.0" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.3.0" />
+    <PackageReference Include="DocumentFormat.OpenXml.Framework" Version="3.3.0" />
+    <PackageReference Include="Qhta.Collections" Version="5.2.0" />
+    <PackageReference Include="Qhta.TypeUtils" Version="1.5.0" />
   </ItemGroup>
 
   <ItemGroup>

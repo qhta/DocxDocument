@@ -1,0 +1,76 @@
+﻿namespace DocxEd.ViewModels;
+
+public class FileViewModel : VisibleViewModel<FileModel>
+{
+  public FileViewModel(FolderViewModel? parent, FileModel model) : base(parent, model)
+  {
+    ShowDetailsCommand = new RelayCommand(ShowDetailsExecute, ShowDetailsCanExecute) { Name = "ShowDetailsCommand" };
+  }
+
+  public string FullName => ((this.ParentViewModel is FolderViewModel parentFolder) ? parentFolder?.FullName 
+    : Path.GetDirectoryName(ProcessOptionsMgr.CurrentInstance.CodeOutputPath))+ @"\" + Name;
+
+  [DataGridColumn(
+    HeaderResourceKey = "DocxEd.CommonStrings." + nameof(CommonStrings.Filename)
+  )]
+  public string Name => Model?.Filename!;
+
+
+  [DataGridColumn(
+    HeaderResourceKey = "DocxEd.CommonStrings." + nameof(CommonStrings.Count)
+  )]
+  public int? Count { [DebuggerStepThrough] get; protected set; }
+
+  public virtual string Caption => Name;
+
+  public string Title => FullName;
+
+
+  public string Text
+  {
+   [DebuggerStepThrough] get { return GetText(); }
+    set
+    {
+      if (_Text != value)
+      {
+        _Text = value;
+        NotifyPropertyChanged(nameof(Text));
+      }
+    }
+  }
+  private string _Text = null!;
+
+  public string GetText()
+  {
+    if (_Text == null)
+    {
+      try
+      {
+        using (var reader = File.OpenText(FullName))
+        {
+          _Text = reader.ReadToEnd();
+        }
+      }
+      catch
+      {
+        _Text = string.Empty;
+      }
+    }
+    return _Text;
+  }
+
+  #region ShowDetailsCommand
+  public Command ShowDetailsCommand { [DebuggerStepThrough] get; private set; }
+
+  protected virtual bool ShowDetailsCanExecute()
+  {
+    return true;
+  }
+
+
+  protected virtual void ShowDetailsExecute()
+  {
+    WindowsManager.ShowWindow<FileViewWindow>(this);
+  }
+  #endregion
+}
