@@ -83,7 +83,7 @@ internal class VariantTypeXmlConverter : VariantTypeConverter, IXmlConverter
           variant = new Variant(variantType, aType, val);
         }
         else
-        if (aType!=null && serializer?.TryGetTypeConverter(aType, out var converter)==true)
+        if (aType!=null && serializer?.TryGetTypeConverter(aType, out var converter)==true && converter!=null)
         {
           var val = converter.ConvertFrom(str);
           variant = new Variant(variantType, aType, val);

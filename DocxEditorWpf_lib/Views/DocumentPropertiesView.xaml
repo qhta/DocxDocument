@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="DocxEditor.Views.DocumentPropertiesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DocxEditor.Views"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+             xmlns:viewModels="clr-namespace:DocxEditor.ViewModels"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=viewModels:DocumentVM}"
+             d:DesignHeight="450" d:DesignWidth="800">
+  <Grid Background="BlanchedAlmond">
+    <syncfusion:SfTreeGrid
+      x:Name="DocumentQuestGrid"
+      AutoExpandMode="AllNodesExpanded"
+      ItemsSource="{Binding DocumentProperties}"
+      AutoGenerateColumns="False"
+      AllowResizingColumns="True"
+      AllowSorting="False"
+      AllowFiltering="False"
+      EditorSelectionBehavior="SelectAll"
+      EditTrigger="OnTap"
+      ColumnSizer="AutoFillColumn"
+      >
+      <syncfusion:SfTreeGrid.Columns>
+        <syncfusion:TreeGridTextColumn
+          HeaderText="Name"
+          MappingName="Name"
+        />
+        <syncfusion:TreeGridTextColumn
+          HeaderText="Value"
+          MappingName="Value"
+        />
+      </syncfusion:SfTreeGrid.Columns>
+    </syncfusion:SfTreeGrid>
+  </Grid>
+</UserControl>

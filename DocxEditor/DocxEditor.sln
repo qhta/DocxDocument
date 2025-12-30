@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.1.11312.151 d18.0
+VisualStudioVersion = 18.1.11312.151
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxEditor", "DocxEditor\DocxEditor.csproj", "{64752951-ECF4-42EC-85CA-CC7513790E6D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxEd", "DocxEd\DocxEd.csproj", "{5AC30984-67A0-4C6E-80EF-8F65420398F5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel", "..\DocumentModel\DocumentModel.csproj", "{F07B1C2E-E383-4DC3-AF26-9C569861FA54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelGen", "..\ModelGen\ModelGen\ModelGen.csproj", "{C99E88FA-EAA6-0219-5880-BEFCF5DEE515}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocxEditorWpf_lib", "..\DocxEditorWpf_lib\DocxEditorWpf_lib.csproj", "{78D622AA-0F60-45E8-9ED4-5CB4C0821DBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +19,14 @@ Global
 		{64752951-ECF4-42EC-85CA-CC7513790E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64752951-ECF4-42EC-85CA-CC7513790E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64752951-ECF4-42EC-85CA-CC7513790E6D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5AC30984-67A0-4C6E-80EF-8F65420398F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5AC30984-67A0-4C6E-80EF-8F65420398F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5AC30984-67A0-4C6E-80EF-8F65420398F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5AC30984-67A0-4C6E-80EF-8F65420398F5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F07B1C2E-E383-4DC3-AF26-9C569861FA54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F07B1C2E-E383-4DC3-AF26-9C569861FA54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F07B1C2E-E383-4DC3-AF26-9C569861FA54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F07B1C2E-E383-4DC3-AF26-9C569861FA54}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C99E88FA-EAA6-0219-5880-BEFCF5DEE515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C99E88FA-EAA6-0219-5880-BEFCF5DEE515}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C99E88FA-EAA6-0219-5880-BEFCF5DEE515}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C99E88FA-EAA6-0219-5880-BEFCF5DEE515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78D622AA-0F60-45E8-9ED4-5CB4C0821DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78D622AA-0F60-45E8-9ED4-5CB4C0821DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78D622AA-0F60-45E8-9ED4-5CB4C0821DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78D622AA-0F60-45E8-9ED4-5CB4C0821DBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

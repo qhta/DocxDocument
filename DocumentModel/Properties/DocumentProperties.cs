@@ -17,6 +17,15 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     CoreProperties = new CoreProperties(OwnerDocument);
   }
 
+  public string? Title
+  {
+    get => CoreProperties?.Title;
+    set
+    {
+      CoreProperties ??= new CoreProperties(OwnerDocument!);
+      CoreProperties.Title = value;
+    }
+  }
   /// <summary>
   /// Collection of core properties, which represents document properties defined in Dublin Core standard
   /// and Open Packaging Conventions. 
