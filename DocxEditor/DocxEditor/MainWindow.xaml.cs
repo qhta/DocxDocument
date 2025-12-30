@@ -73,42 +73,47 @@ public partial class MainWindow : Window
         windowName = windowName.Replace("#", nameCount.ToString()).Replace(" ", "_");
       }
 
-      var dockItem = new DockItem
-      {
-        Name = windowName,
-        Header = header,
-        State = DockState.Float,
-        CanFloatMaximize = true,
-        Content = view,
-      };
+      //var dockItem = new DockItem
+      //{
+      //  Name = windowName,
+      //  Header = header,
+      //  State = DockState.Float,
+      //  CanFloatMaximize = true,
+      //  Content = view,
+      //};
 
-      viewModel.DockCollections.Add(dockItem);
-      // Get top-left of dockingManager in screen pixels
-      Point screenTopLeftPx = dockingManager.PointToScreen(new Point(0, 0));
+
+      DocumentContainer.Items.Add(view);
+
+      //// Get top-left of dockingManager in screen pixels
+      Point screenTopLeftPx = DocumentContainer.PointToScreen(new Point(0, 0));
 
       // Convert to device-independent units (DIPs) if DPI scaling is not 100%
-      var source = PresentationSource.FromVisual(dockingManager);
+      var source = PresentationSource.FromVisual(DocumentContainer);
       if (source?.CompositionTarget is not null)
       {
         // TransformFromDevice converts physical pixels -> DIPs
         var toDip = source.CompositionTarget.TransformFromDevice;
         screenTopLeftPx = toDip.Transform(screenTopLeftPx);
       }
-      var n = viewModel.DockCollections.Count;
+      var n = DocumentContainer.Items.Count;
       // Relative cascade offset in DIPs
       double offset = 20 * n;
 
-      // Desired size
-      double width = 1210;
-      double height = 830;
+      //// Desired size
+      //double width = 1210;
+      //double height = 830;
 
-      // Final rect in screen coordinates (DIPs)
-      dockItem.FloatingWindowRect = new Rect(
-        screenTopLeftPx.X + offset,
-        screenTopLeftPx.Y + offset,
-        width,
-        height);
-      dockingManager.ActivateWindow(windowName);
+      //// Final rect in screen coordinates (DIPs)
+      //dockItem.FloatingWindowRect = new Rect(
+      //  screenTopLeftPx.X + offset,
+      //  screenTopLeftPx.Y + offset,
+      //  width,
+      //  height);
+
+      var newBounds = new Rect(offset, offset, 500, 300);
+      DocumentContainer.SetMDIBounds(view, newBounds);
+      DocumentContainer.ActiveDocument = view;
     }
   }
 
