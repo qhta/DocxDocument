@@ -25,24 +25,17 @@
         <MenuItem Header="Open document" Command="ApplicationCommands.Open"/>
       </MenuItem>
     </Menu>
-    <syncfusion:DockingManager 
-      x:Name="dockingManager"
+    <syncfusion:DocumentContainer 
+      x:Name="DocumentContainer"
       Grid.Row="1"
       Height="Auto"
-      syncfusion:DockingManager.AnimationDelay="00:00:00.200"
-      EnableMouseHoverBackground="False"
-      IsVS2010DraggingEnabled="True"
       PersistState="False"
       SwitchMode="{Binding SwitchMode, Mode=TwoWay}"
-      ItemsSource="{Binding DockCollections }" 
-      ContainerMode="MDI"
-      UseNativeFloatWindow="True"
-      UseDocumentContainer="False"
-      ActiveWindowChanged="DockingManager_OnActiveWindowChanged"
+      Mode="MDI"
+      
     >
-
       <!--  Customized Header Template  -->
-      <syncfusion:DockingManager.HeaderTemplate>
+      <syncfusion:DocumentContainer.HeaderTemplate>
         <DataTemplate>
           <DockPanel LastChildFill="True">
             <TextBlock
@@ -52,7 +45,7 @@
               TextTrimming="CharacterEllipsis" />
           </DockPanel>
         </DataTemplate>
-      </syncfusion:DockingManager.HeaderTemplate>
-    </syncfusion:DockingManager>
+      </syncfusion:DocumentContainer.HeaderTemplate>
+    </syncfusion:DocumentContainer>
   </Grid>
 </Window>
