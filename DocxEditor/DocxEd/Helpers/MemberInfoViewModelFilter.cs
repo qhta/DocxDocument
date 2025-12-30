@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using DocxEd.ViewModels;
+using ModelGen;
 using Qhta.MVVM;
 
 namespace DocxEd.Helpers;

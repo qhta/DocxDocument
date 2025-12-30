@@ -3,10 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         xmlns:local="clr-namespace:DocxEditor"
-        xmlns:views="clr-namespace:DocxEd.Views;assembly=DocxEd"
+        xmlns:views="clr-namespace:DocxEditor.Views;assembly=DocxEditorWpf_lib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+  <Window.DataContext>
+    <local:MDIViewModel/>
+  </Window.DataContext>
   <Window.CommandBindings>
     <CommandBinding Command="ApplicationCommands.Open" Executed="FileOpen_Executed" />
   </Window.CommandBindings>
@@ -21,6 +25,34 @@
         <MenuItem Header="Open document" Command="ApplicationCommands.Open"/>
       </MenuItem>
     </Menu>
-    <views:DocumentView x:Name="DocumentViewer" Grid.Row="1" />
+    <syncfusion:DockingManager 
+      x:Name="dockingManager"
+      Grid.Row="1"
+      Height="Auto"
+      syncfusion:DockingManager.AnimationDelay="00:00:00.200"
+      EnableMouseHoverBackground="False"
+      IsVS2010DraggingEnabled="True"
+      PersistState="False"
+      SwitchMode="{Binding SwitchMode, Mode=TwoWay}"
+      ItemsSource="{Binding DockCollections }" 
+      ContainerMode="MDI"
+      UseNativeFloatWindow="True"
+      UseDocumentContainer="False"
+      ActiveWindowChanged="DockingManager_OnActiveWindowChanged"
+    >
+
+      <!--  Customized Header Template  -->
+      <syncfusion:DockingManager.HeaderTemplate>
+        <DataTemplate>
+          <DockPanel LastChildFill="True">
+            <TextBlock
+              Margin="5,0,0,0"
+              VerticalAlignment="Center"
+              Text="{Binding}"
+              TextTrimming="CharacterEllipsis" />
+          </DockPanel>
+        </DataTemplate>
+      </syncfusion:DockingManager.HeaderTemplate>
+    </syncfusion:DockingManager>
   </Grid>
 </Window>

@@ -10,10 +10,32 @@
 
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="3.3.0" />
+    <PackageReference Include="Qhta.MVVM" Version="4.18.0" />
+    <PackageReference Include="Syncfusion.Licensing" Version="32.1.21" />
+    <PackageReference Include="Syncfusion.SfInput.WPF" Version="32.1.21" />
+    <PackageReference Include="Syncfusion.SfTreeView.WPF" Version="32.1.21" />
+    <PackageReference Include="Syncfusion.Tools.WPF" Version="32.1.21" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DocxEd\DocxEd.csproj" />
+    <ProjectReference Include="..\..\DocumentModel\DocumentModel.csproj" />
+    <ProjectReference Include="..\..\DocxEditorWpf_lib\DocxEditorWpf_lib.csproj" />
+    <PackageReference Include="Syncfusion.SfGrid.WPF" Version="32.1.21" />
+    <PackageReference Include="Syncfusion.Shared.Base" Version="32.1.21" />
+    <PackageReference Include="Syncfusion.Shared.WPF" Version="32.1.21" />
+    <PackageReference Include="syncfusion.ui.wpf.net" Version="32.1.21" />
   </ItemGroup>
 
+  <PropertyGroup Condition=" '$(TargetFramework)'=='net462' ">
+    <SyncfusionAssemblyLocation>4.6.2</SyncfusionAssemblyLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)'=='net8.0-windows' ">
+    <SyncfusionAssemblyLocation>net8.0</SyncfusionAssemblyLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)'=='net9.0-windows' ">
+    <SyncfusionAssemblyLocation>net9.0</SyncfusionAssemblyLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)'=='net10.0-windows' ">
+    <SyncfusionAssemblyLocation>net10.0</SyncfusionAssemblyLocation>
+  </PropertyGroup>
 </Project>

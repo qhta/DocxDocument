@@ -1,4 +1,7 @@
+using DocumentFormat.OpenXml.Spreadsheet;
+
 namespace DocumentModel;
+
 using DocumentModel.Wordprocessing;
 
 using O = DocumentFormat.OpenXml;
@@ -12,7 +15,7 @@ using W = DocumentFormat.OpenXml.Wordprocessing;
 public partial class ContentProperties : KnownDocumentProperties
 {
   internal Document? OwnerDocument;
-  internal O.ExtendedProperties.Properties ExtendedProperties;
+  internal O.ExtendedProperties.Properties? ExtendedProperties;
 
   public ContentProperties()
   {
@@ -26,8 +29,6 @@ public partial class ContentProperties : KnownDocumentProperties
     if (part == null)
       part = OwnerDocument.WordprocessingDocument.AddExtendedFilePropertiesPart();
     var properties = part.Properties;
-    if (properties == null)
-      properties = new O.ExtendedProperties.Properties();
     ExtendedProperties = properties;
   }
 
@@ -37,12 +38,16 @@ public partial class ContentProperties : KnownDocumentProperties
   /// </summary>
   public string? Template
   {
-    get => ExtendedProperties.Template?.Text;
+    get => ExtendedProperties?.Template?.Text;
     set
     {
       if (value != null)
+      {
+        ExtendedProperties ??= new O.ExtendedProperties.Properties();
         ExtendedProperties.Template = new O.ExtendedProperties.Template(value);
+      }
       else
+      if (ExtendedProperties != null)
         ExtendedProperties.Template?.Remove();
     }
   }
@@ -52,7 +57,8 @@ public partial class ContentProperties : KnownDocumentProperties
   /// </summary>
   public string? Manager
   {
-    get; set;
+    get; 
+    set;
   }
 
   /// <summary>
@@ -65,7 +71,7 @@ public partial class ContentProperties : KnownDocumentProperties
 
   /// <summary>
   ///   The intended format for a presentation document. For example, a presentation intended
-  ///   to be shown on video has PresentationFormat "Video"..
+  ///   to be shown on video has PresentationFormat "Video".
   /// </summary>
   public string? PresentationFormat
   {
@@ -74,8 +80,8 @@ public partial class ContentProperties : KnownDocumentProperties
 
   /// <summary>
   ///   Indicates the display mode of the document thumbnail. 
-  ///   Set this element to TRUE to enable scaling of the document thumbnail to the display. 
-  ///   Set this element to FALSE to enable cropping of the document thumbnail to show only sections that fits the display.
+  ///   TRUE means scaling of the document thumbnail to the display. 
+  ///   FALSE means cropping of the document thumbnail to show only sections that fits the display.
   /// </summary>
   public bool? ScaleCrop
   {
@@ -83,8 +89,8 @@ public partial class ContentProperties : KnownDocumentProperties
   }
 
   /// <summary>
-  ///   Indicates the grouping of document parts and the number of parts in each group. These parts are
-  ///   not document parts but conceptual representations of document sections.
+  ///   Indicates the grouping of document parts and the number of parts in each group.
+  ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
   public HeadingPairs? HeadingPairs
   {
@@ -101,8 +107,8 @@ public partial class ContentProperties : KnownDocumentProperties
   }
 
   /// <summary>
-  ///   Indicates whether hyperlinks in a document are up-to-date. Set this element to TRUE to indicate
-  ///   that hyperlinks are updated. Set this element to FALSE to indicate that hyperlinks are outdated.
+  ///   Indicates whether hyperlinks in a document are up-to-date.
+  ///   TRUE means that hyperlinks are updated, FALSE means that hyperlinks are outdated.
   /// </summary>
   public bool? LinksUpToDate
   {
