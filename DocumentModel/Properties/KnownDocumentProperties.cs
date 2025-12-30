@@ -107,7 +107,7 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
     return false;
   }
 
-  static Dictionary<Type, Dictionary<string, PropertyInfo>> _knownTypeProperties = new();
+  static readonly Dictionary<Type, Dictionary<string, PropertyInfo>> _knownTypeProperties = new();
   public static Dictionary<string, PropertyInfo> GetKnownProperties(object obj)
   {
     return GetKnownProperties(obj.GetType());
