@@ -1,12 +1,4 @@
-﻿using System.Collections.ObjectModel;
-
-using DocumentModel;
-
-using DocxEditor.ViewModels;
-
-using Qhta.MVVM;
-
-namespace DocxEditor.ViewsModels;
+﻿namespace DocxEditor.ViewModels;
 
 /// <summary>
 /// ViewModel for DocumentModel.DocumentProperties.
@@ -20,9 +12,16 @@ public sealed class DocumentPropertiesVM : ObservableCollection<DocumentProperty
   public DocumentPropertiesVM(DocumentProperties modelCollection)
   {
     ModelCollection = modelCollection;
-    foreach (var item in ModelCollection)
+    ModelCollection.CoreProperties ??= new DocumentModel.CoreProperties(modelCollection.OwnerDocument!);
+    foreach (var item in ModelCollection.CoreProperties.GetKnownProperties())
     {
-      Add(new DocumentPropertyVM(item));
+      var property = ModelCollection.GetProperty(item.Key);
+      if (property == null)
+      {
+        property = new DocumentProperty(item.Key, item.Value.PropertyType);
+      }
+      var propertyVM = new DocumentPropertyVM(property);
+      Add(propertyVM);
     }
     CollectionChanged += DocumentPropertiesVM_CollectionChanged;
   }

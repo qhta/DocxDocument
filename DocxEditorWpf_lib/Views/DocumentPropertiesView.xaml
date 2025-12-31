@@ -6,16 +6,22 @@
              xmlns:local="clr-namespace:DocxEditor.Views"
              xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
              xmlns:viewModels="clr-namespace:DocxEditor.ViewModels"
+             xmlns:helpers="clr-namespace:DocxEditor.Helpers"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type=viewModels:DocumentVM}"
              d:DesignHeight="450" d:DesignWidth="800">
-  <Grid Background="BlanchedAlmond">
+  <UserControl.Resources>
+    <helpers:PropertiesViewNameCellStyleSelector x:Key="PropertiesViewNameCellStyleSelector"/>
+    <helpers:PropertyEmptyToForegroundConverter x:Key="PropertyEmptyToForegroundConverter"/>
+  </UserControl.Resources>
+  <Grid Background="White">
     <syncfusion:SfTreeGrid
-      x:Name="DocumentQuestGrid"
+      x:Name="DocumentPropertiesGrid"
       AutoExpandMode="AllNodesExpanded"
       ItemsSource="{Binding DocumentProperties}"
       AutoGenerateColumns="False"
       AllowResizingColumns="True"
+      AllowEditing="False"
       AllowSorting="False"
       AllowFiltering="False"
       EditorSelectionBehavior="SelectAll"
@@ -26,7 +32,17 @@
         <syncfusion:TreeGridTextColumn
           HeaderText="Name"
           MappingName="Name"
-        />
+          >
+          <syncfusion:TreeGridTextColumn.CellTemplate>
+            <DataTemplate>
+              <TextBlock 
+                Text="{Binding Name}" 
+                Foreground="{Binding IsEmpty, Converter={StaticResource PropertyEmptyToForegroundConverter}}"
+                VerticalAlignment="Center"
+                Padding="3,0"/>
+            </DataTemplate>
+          </syncfusion:TreeGridTextColumn.CellTemplate>
+        </syncfusion:TreeGridTextColumn>
         <syncfusion:TreeGridTextColumn
           HeaderText="Value"
           MappingName="Value"

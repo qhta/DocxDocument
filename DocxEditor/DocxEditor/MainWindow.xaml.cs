@@ -84,6 +84,7 @@ public partial class MainWindow : Window
 
 
       DocumentContainer.Items.Add(view);
+      DocumentContainer.SetHeader(view, header);
 
       //// Get top-left of dockingManager in screen pixels
       Point screenTopLeftPx = DocumentContainer.PointToScreen(new Point(0, 0));
@@ -100,9 +101,11 @@ public partial class MainWindow : Window
       // Relative cascade offset in DIPs
       double offset = 20 * n;
 
-      //// Desired size
-      //double width = 1210;
-      //double height = 830;
+      // Desired size
+      double desiredWidth = 1000;
+      double desiredHeight = 800;
+
+      var newBounds = new Rect(offset, offset, desiredWidth, desiredHeight);
 
       //// Final rect in screen coordinates (DIPs)
       //dockItem.FloatingWindowRect = new Rect(
@@ -111,7 +114,7 @@ public partial class MainWindow : Window
       //  width,
       //  height);
 
-      var newBounds = new Rect(offset, offset, 500, 300);
+
       DocumentContainer.SetMDIBounds(view, newBounds);
       DocumentContainer.ActiveDocument = view;
     }
