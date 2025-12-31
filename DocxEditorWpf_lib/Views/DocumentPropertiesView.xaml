@@ -15,9 +15,8 @@
     <helpers:PropertyEmptyToForegroundConverter x:Key="PropertyEmptyToForegroundConverter"/>
   </UserControl.Resources>
   <Grid Background="White">
-    <syncfusion:SfTreeGrid
+    <syncfusion:SfDataGrid
       x:Name="DocumentPropertiesGrid"
-      AutoExpandMode="AllNodesExpanded"
       ItemsSource="{Binding DocumentProperties}"
       AutoGenerateColumns="False"
       AllowResizingColumns="True"
@@ -26,14 +25,14 @@
       AllowFiltering="False"
       EditorSelectionBehavior="SelectAll"
       EditTrigger="OnTap"
-      ColumnSizer="AutoFillColumn"
+      ColumnSizer="AutoWithLastColumnFill"
       >
-      <syncfusion:SfTreeGrid.Columns>
-        <syncfusion:TreeGridTextColumn
+      <syncfusion:SfDataGrid.Columns>
+        <syncfusion:GridTextColumn
           HeaderText="Name"
           MappingName="Name"
           >
-          <syncfusion:TreeGridTextColumn.CellTemplate>
+          <syncfusion:GridTextColumn.CellTemplate>
             <DataTemplate>
               <TextBlock 
                 Text="{Binding Name}" 
@@ -41,13 +40,13 @@
                 VerticalAlignment="Center"
                 Padding="3,0"/>
             </DataTemplate>
-          </syncfusion:TreeGridTextColumn.CellTemplate>
-        </syncfusion:TreeGridTextColumn>
-        <syncfusion:TreeGridTextColumn
+          </syncfusion:GridTextColumn.CellTemplate>
+        </syncfusion:GridTextColumn>
+        <syncfusion:GridTextColumn
           HeaderText="Value"
           MappingName="Value"
         />
-      </syncfusion:SfTreeGrid.Columns>
-    </syncfusion:SfTreeGrid>
+      </syncfusion:SfDataGrid.Columns>
+    </syncfusion:SfDataGrid>
   </Grid>
 </UserControl>

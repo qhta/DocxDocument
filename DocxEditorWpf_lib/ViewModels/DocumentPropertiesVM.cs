@@ -13,7 +13,13 @@ public sealed class DocumentPropertiesVM : ObservableCollection<DocumentProperty
   {
     ModelCollection = modelCollection;
     ModelCollection.CoreProperties ??= new DocumentModel.CoreProperties(modelCollection.OwnerDocument!);
-    foreach (var item in ModelCollection.CoreProperties.GetKnownProperties())
+    AddKnownProperties();
+    CollectionChanged += DocumentPropertiesVM_CollectionChanged;
+  }
+
+  private void AddKnownProperties()
+  {
+    foreach (var item in ModelCollection.GetKnownProperties())
     {
       var property = ModelCollection.GetProperty(item.Key);
       if (property == null)
@@ -23,7 +29,6 @@ public sealed class DocumentPropertiesVM : ObservableCollection<DocumentProperty
       var propertyVM = new DocumentPropertyVM(property);
       Add(propertyVM);
     }
-    CollectionChanged += DocumentPropertiesVM_CollectionChanged;
   }
 
   private void DocumentPropertiesVM_CollectionChanged(object? sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)

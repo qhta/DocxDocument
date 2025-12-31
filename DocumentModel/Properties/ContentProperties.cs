@@ -14,14 +14,26 @@ using W = DocumentFormat.OpenXml.Wordprocessing;
 /// </summary>
 public partial class ContentProperties : KnownDocumentProperties
 {
-  internal Document? OwnerDocument;
-  internal O.ExtendedProperties.Properties? ExtendedProperties;
+  /// <summary>
+  /// Document that owns these properties.
+  /// </summary>
+  public Document? OwnerDocument;
+  /// <summary>
+  /// Gets or sets the collection of extended properties associated with this object.
+  /// </summary>
+  public  O.ExtendedProperties.Properties? ExtendedProperties;
 
+  /// <summary>
+  /// Default constructor.
+  /// </summary>
   public ContentProperties()
   {
 
   }
-
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
+  /// <param name="ownerDocument"></param>
   public ContentProperties(Document ownerDocument)
   {
     OwnerDocument = ownerDocument;

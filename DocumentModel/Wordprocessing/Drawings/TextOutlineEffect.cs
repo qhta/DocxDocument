@@ -27,17 +27,38 @@ public class TextOutlineEffect: TypedModelElement, IDrawingProperty
   /// </summary>
   public PenAlignmentKind? Alignment { get; set; }
 
+  /// <summary>
+  /// 
+  /// </summary>
   public bool? NoFillEmpty { get; set; }
 
+  /// <summary>
+  /// 
+  /// </summary>
   public SolidColorFillProperties? SolidColorFillProperties { get; set; }
 
+  /// <summary>
+  /// 
+  /// </summary>
   public GradientFillProperties? GradientFillProperties { get; set; }
 
+  /// <summary>
+  /// 
+  /// </summary>
   public PresetLineDashKind? PresetLineDashProperties { get; set; }
 
+  /// <summary>
+  /// 
+  /// </summary>
   public bool? RoundEmpty { get; set; }
 
+  /// <summary>
+  /// 
+  /// </summary>
   public bool? BevelEmpty { get; set; }
 
+  /// <summary>
+  /// 
+  /// </summary>
   public LineJoinMiterProperties? LineJoinMiterProperties { get; set; }
 }
