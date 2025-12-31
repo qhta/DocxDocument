@@ -12,7 +12,9 @@ using W = DocumentFormat.OpenXml.Wordprocessing;
 public partial class CoreProperties : KnownDocumentProperties
 {
   internal Document? OwnerDocument;
+#pragma warning disable OOXML0001
   internal P.IPackageProperties CoreFilePropertiesPart;
+#pragma warning restore OOXML0001
 
   public CoreProperties(Document ownerDocument)
   {

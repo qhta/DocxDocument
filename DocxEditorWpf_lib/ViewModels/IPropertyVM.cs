@@ -19,4 +19,9 @@ public interface IPropertyVM
   /// Value type of the property.
   /// </summary>
   public Type ValueType { get; set; }
+
+  /// <summary>
+  /// Determines whether the property is empty
+  /// </summary>
+  public bool IsEmpty { get; }
 }

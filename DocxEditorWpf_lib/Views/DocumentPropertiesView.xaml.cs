@@ -1,26 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace DocxEditor.Views;
+﻿namespace DocxEditor.Views;
 /// <summary>
-/// Interaction logic for DocumentPropertiesView.xaml
+/// View for displaying and editing document properties.
 /// </summary>
 public partial class DocumentPropertiesView : UserControl
 {
-    public DocumentPropertiesView()
-    {
-        InitializeComponent();
-    }
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
+  public DocumentPropertiesView()
+  {
+    InitializeComponent();
+  }
+
 }

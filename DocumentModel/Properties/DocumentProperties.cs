@@ -9,7 +9,7 @@ using DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocumentProperties : ICollection<DocumentProperty>
 {
-  internal Document? OwnerDocument;
+  public Document? OwnerDocument { get; }
 
   public DocumentProperties(Document ownerDocument)
   {
@@ -245,6 +245,7 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
       count += CustomProperties.Count();
     return count;
   }
+
 
   public DocumentProperty? GetProperty(string propName)
   {
