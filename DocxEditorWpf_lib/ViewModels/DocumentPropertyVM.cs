@@ -1,8 +1,4 @@
-﻿using DocumentModel;
-using Microsoft.DotNet.DesignTools.ViewModels;
-using Qhta.MVVM;
-
-namespace DocxEditor.ViewModels;
+﻿namespace DocxEditor.ViewModels;
 
 /// <summary>
 /// ViewModel representing a document property.
@@ -43,4 +39,6 @@ public class DocumentPropertyVM: ViewModel<DocumentModel.DocumentProperty>, IPro
     get => Model.Type ?? typeof(object);
     set => Model.Type = value;
   }
+
+  public bool IsEmpty => Value == null || (Value is string str && string.IsNullOrEmpty(str));
 }

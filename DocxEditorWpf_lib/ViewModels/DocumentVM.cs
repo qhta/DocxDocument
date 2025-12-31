@@ -1,8 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using DocxEditor.ViewsModels;
-using Qhta.MVVM;
-
-namespace DocxEditor.ViewModels;
+﻿namespace DocxEditor.ViewModels;
 
 
 /// <summary>
