@@ -276,6 +276,10 @@ public partial class Document : ModelElement, IDisposable
   private DocumentBackground? _Background;
   private bool disposedValue;
 
+  /// <summary>
+  /// Needed as part of IDisposable pattern.
+  /// </summary>
+  /// <param name="disposing"></param>
   protected virtual void Dispose(bool disposing)
   {
     if (!disposedValue)
@@ -298,6 +302,9 @@ public partial class Document : ModelElement, IDisposable
   //     Dispose(disposing: false);
   // }
 
+  /// <summary>
+  /// Needed as part of IDisposable pattern.
+  /// </summary>
   public void Dispose()
   {
     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method

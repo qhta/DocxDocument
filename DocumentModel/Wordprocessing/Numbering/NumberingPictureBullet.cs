@@ -16,8 +16,8 @@ public class NumberingPictureBullet: ModelElement
   /// </summary>
   public PictureBulletBase? PictureBulletBase { get; set; }
 
-  /// <summary>
-  ///   Drawing.
-  /// </summary>
+  ///// <summary>
+  /////   Drawing.
+  ///// </summary>
   //public Drawing? Drawing { get; set; }
 }

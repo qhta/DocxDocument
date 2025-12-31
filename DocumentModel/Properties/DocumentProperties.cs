@@ -9,14 +9,25 @@ using DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocumentProperties : ICollection<DocumentProperty>
 {
+  /// <summary>
+  /// Document that owns these properties.
+  /// </summary>
   public Document? OwnerDocument { get; }
 
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
+  /// <param name="ownerDocument"></param>
   public DocumentProperties(Document ownerDocument)
   {
     OwnerDocument = ownerDocument;
     CoreProperties = new CoreProperties(OwnerDocument);
+    ContentProperties = new ContentProperties(OwnerDocument);
   }
 
+  /// <summary>
+  /// Gets or sets the title of the document.
+  /// </summary>
   public string? Title
   {
     get => CoreProperties?.Title;
@@ -246,6 +257,24 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     return count;
   }
 
+  public IEnumerable<KeyValuePair<string, PropertyInfo>> GetKnownProperties()
+  {
+    if (CoreProperties != null)
+      foreach (var prop in CoreProperties.GetKnownProperties())
+        yield return prop;
+    if (ContentProperties != null)
+      foreach (var prop in ContentProperties.GetKnownProperties())
+        yield return prop;
+    if (StatisticProperties != null)
+      foreach (var prop in StatisticProperties.GetKnownProperties())
+        yield return prop;
+    if (DocumentSettings != null)
+      foreach (var prop in DocumentSettings.GetKnownProperties())
+        yield return prop;
+    if (WebSettings != null)
+      foreach (var prop in WebSettings.GetKnownProperties())
+        yield return prop;
+  }
 
   public DocumentProperty? GetProperty(string propName)
   {

@@ -16,6 +16,10 @@ public partial class CoreProperties : KnownDocumentProperties
   internal P.IPackageProperties CoreFilePropertiesPart;
 #pragma warning restore OOXML0001
 
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
+  /// <param name="ownerDocument">Documents that owns the core properties.</param>
   public CoreProperties(Document ownerDocument)
   {
     OwnerDocument = ownerDocument;
