@@ -15,7 +15,7 @@
     <helpers:PropertyEmptyToForegroundConverter x:Key="PropertyEmptyToForegroundConverter"/>
   </UserControl.Resources>
   <Grid Background="White">
-    <syncfusion:SfDataGrid
+    <!--<syncfusion:SfDataGrid
       x:Name="DocumentPropertiesGrid"
       ItemsSource="{Binding DocumentProperties}"
       AutoGenerateColumns="False"
@@ -33,7 +33,7 @@
           MappingName="Name"
           >
           <syncfusion:GridTextColumn.CellTemplate>
-            <DataTemplate>
+            <DataTemplate DataType="{x:Type viewModels:DocumentPropertyVM}">
               <TextBlock 
                 Text="{Binding Name}" 
                 Foreground="{Binding IsEmpty, Converter={StaticResource PropertyEmptyToForegroundConverter}}"
@@ -47,6 +47,11 @@
           MappingName="Value"
         />
       </syncfusion:SfDataGrid.Columns>
-    </syncfusion:SfDataGrid>
+    </syncfusion:SfDataGrid>-->
+    <syncfusion:PropertyGrid
+      x:Name="propertyGrid"
+      SelectedObject="{Binding DocumentProperties.PropertiesProvider}"
+      >
+    </syncfusion:PropertyGrid>
   </Grid>
 </UserControl>

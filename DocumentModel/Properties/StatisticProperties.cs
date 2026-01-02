@@ -1,10 +1,39 @@
 namespace DocumentModel;
 
+
+using DocumentModel.Wordprocessing;
+
+using OpenXml = DocumentFormat.OpenXml;
+
 /// <summary>
 ///   This set of properties is stored in Extended properties part, but contained data is evaluated on document change.
 /// </summary>
-public partial class StatisticProperties: KnownDocumentProperties
+public partial class StatisticProperties: DocumentProperties
 {
+  /// <summary>
+  /// Document that owns these properties.
+  /// </summary>
+  public Document? Document { get; internal set; }
+
+  /// <summary>
+  /// Gets or sets the collection of extended properties associated with this object.
+  /// </summary>
+  public OpenXml.ExtendedProperties.Properties? ExtendedProperties;
+
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
+  /// <param name="document"></param>
+  public StatisticProperties(Document document)
+  {
+    Document = document;
+    var part = Document.WordprocessingDocument.ExtendedFilePropertiesPart;
+    if (part == null)
+      part = Document.WordprocessingDocument.AddExtendedFilePropertiesPart();
+    var properties = part.Properties;
+    ExtendedProperties = properties;
+  }
+
   /// <summary>
   ///   The total number of pages of a document if applicable.
   /// </summary>

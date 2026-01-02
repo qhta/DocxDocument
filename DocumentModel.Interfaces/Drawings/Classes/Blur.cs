@@ -1,0 +1,16 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+///   Defines the Blur Class.
+/// </summary>
+public class Blur: ModelElement
+{
+  /// <summary>
+  ///   Radius
+  /// </summary>
+  public Int64? Radius { get; set; }
+  /// <summary>
+  ///   Grow Bounds
+  /// </summary>
+  public bool? Grow { get; set; }
+}

@@ -1,0 +1,33 @@
+namespace DocumentModel.Drawings.Diagrams;
+
+/// <summary>
+///   Point Type
+/// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
+public enum PointKind
+{
+  /// <summary>
+  ///   Node.
+  /// </summary>
+  Node,
+  /// <summary>
+  ///   Assistant Element.
+  /// </summary>
+  Assistant,
+  /// <summary>
+  ///   Document.
+  /// </summary>
+  Document,
+  /// <summary>
+  ///   Presentation.
+  /// </summary>
+  Presentation,
+  /// <summary>
+  ///   Parent Transition.
+  /// </summary>
+  ParentTransition,
+  /// <summary>
+  ///   Sibling Transition.
+  /// </summary>
+  SiblingTransition
+}

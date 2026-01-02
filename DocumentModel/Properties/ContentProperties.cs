@@ -1,45 +1,39 @@
-using DocumentFormat.OpenXml.Spreadsheet;
-
 namespace DocumentModel;
 
 using DocumentModel.Wordprocessing;
 
-using O = DocumentFormat.OpenXml;
-using P = DocumentFormat.OpenXml.Packaging;
-using W = DocumentFormat.OpenXml.Wordprocessing;
+using OpenXml = DocumentFormat.OpenXml;
 
 /// <summary>
 ///   Predefined set of metadata properties that are applicable to Office Open XML documents. 
 ///   These properties extend the set of core properties which are common to all packages.
 /// </summary>
-public partial class ContentProperties : KnownDocumentProperties
+public partial class ContentProperties : DocumentProperties
 {
   /// <summary>
   /// Document that owns these properties.
   /// </summary>
-  public Document? OwnerDocument;
-  /// <summary>
-  /// Gets or sets the collection of extended properties associated with this object.
-  /// </summary>
-  public  O.ExtendedProperties.Properties? ExtendedProperties;
+  public Document? Document { get; internal set; }
 
   /// <summary>
-  /// Default constructor.
+  /// Wordprocessing document ExtendedFilePropertiesPart which contains ExtendedProperties.
   /// </summary>
-  public ContentProperties()
-  {
+  private OpenXml.Packaging.ExtendedFilePropertiesPart? ExtendedFilePropertiesPart;
 
-  }
+  /// <summary>
+  /// Wordprocessing ExtendedProperties object which contains the properties of this collection
+  /// </summary>
+  private OpenXml.ExtendedProperties.Properties? ExtendedProperties;
+
   /// <summary>
   /// Initializing constructor.
   /// </summary>
-  /// <param name="ownerDocument"></param>
-  public ContentProperties(Document ownerDocument)
+  /// <param name="document"></param>
+  public ContentProperties(Document document)
   {
-    OwnerDocument = ownerDocument;
-    var part = OwnerDocument.WordprocessingDocument.ExtendedFilePropertiesPart;
-    if (part == null)
-      part = OwnerDocument.WordprocessingDocument.AddExtendedFilePropertiesPart();
+    Document = document;
+    var part = Document.WordprocessingDocument.ExtendedFilePropertiesPart 
+               ?? Document.WordprocessingDocument.AddExtendedFilePropertiesPart();
     var properties = part.Properties;
     ExtendedProperties = properties;
   }
@@ -55,8 +49,11 @@ public partial class ContentProperties : KnownDocumentProperties
     {
       if (value != null)
       {
-        ExtendedProperties ??= new O.ExtendedProperties.Properties();
-        ExtendedProperties.Template = new O.ExtendedProperties.Template(value);
+        var part = Document?.WordprocessingDocument?.ExtendedFilePropertiesPart;
+
+                   ?? Document.WordprocessingDocument.AddExtendedFilePropertiesPart();
+        ExtendedProperties ??= Document.WordprocessingDocument.ExtendedFilePropertiesPart;
+        ExtendedProperties.Template = new OpenXml.ExtendedProperties.Template(value);
       }
       else
       if (ExtendedProperties != null)

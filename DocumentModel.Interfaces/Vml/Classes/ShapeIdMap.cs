@@ -1,0 +1,16 @@
+namespace DocumentModel.Vml;
+
+/// <summary>
+///   Shape ID Map.
+/// </summary>
+public class ShapeIdMap: ModelElement
+{
+  /// <summary>
+  ///   VML Extension Handling Behavior
+  /// </summary>
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+  /// <summary>
+  ///   Shape IDs
+  /// </summary>
+  public string? Data { get; set; }
+}

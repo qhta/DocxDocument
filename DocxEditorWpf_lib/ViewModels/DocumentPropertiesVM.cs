@@ -1,4 +1,8 @@
-﻿namespace DocxEditor.ViewModels;
+﻿using DocumentFormat.OpenXml.EMMA;
+
+using DocxEditor.Helpers;
+
+namespace DocxEditor.ViewModels;
 
 /// <summary>
 /// ViewModel for DocumentModel.DocumentProperties.
@@ -9,18 +13,25 @@ public sealed class DocumentPropertiesVM : ObservableCollection<DocumentProperty
   /// Initializing constructor.
   /// </summary>
   /// <param name="modelCollection"></param>
-  public DocumentPropertiesVM(DocumentProperties modelCollection)
+  public DocumentPropertiesVM(AllDocumentProperties modelCollection)
   {
     ModelCollection = modelCollection;
-    ModelCollection.CoreProperties ??= new DocumentModel.CoreProperties(modelCollection.OwnerDocument!);
+    ModelCollection.CoreProperties ??= new DocumentModel.CoreProperties(modelCollection.Document!);
     AddKnownProperties();
     CollectionChanged += DocumentPropertiesVM_CollectionChanged;
+    //string candidateName = "John";
+    //string candidateAddress = "435 East Coast Road";
+    //int age = 30;
+    //PropertiesProvider.Models.Add("Name", candidateName);
+    //PropertiesProvider.Models.Add("Address", candidateAddress);
+    //PropertiesProvider.Models.Add("Age", age);
   }
 
   private void AddKnownProperties()
   {
     foreach (var item in ModelCollection.GetKnownProperties())
     {
+      PropertiesProvider.Models.Add(item.Key, item.Value);
       var property = ModelCollection.GetProperty(item.Key);
       if (property == null)
       {
@@ -52,5 +63,10 @@ public sealed class DocumentPropertiesVM : ObservableCollection<DocumentProperty
   /// <summary>
   /// Model collection of document properties.
   /// </summary>
-  private readonly DocumentModel.DocumentProperties ModelCollection;
+  public DocumentModel.AllDocumentProperties ModelCollection {  get;}
+
+  /// <summary>
+  /// Provider for dynamic properties recognition needed by PropertyGrid.
+  /// </summary>
+  public DocumentPropertiesProvider PropertiesProvider { get;} = new DocumentPropertiesProvider();
 }

@@ -1,0 +1,16 @@
+namespace DocumentModel.Drawings;
+
+/// <summary>
+///   Dash Stop.
+/// </summary>
+public class DashStop: ModelElement
+{
+  /// <summary>
+  ///   Dash Length
+  /// </summary>
+  public Int32? DashLength { get; set; }
+  /// <summary>
+  ///   Space Length
+  /// </summary>
+  public Int32? SpaceLength { get; set; }
+}

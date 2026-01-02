@@ -1,6 +1,8 @@
 // Global using directives
 
+global using System.Collections;
 global using System.Collections.ObjectModel;
+global using System.ComponentModel;
 global using System.Globalization;
 global using System.Windows;
 global using System.Windows.Controls;
@@ -12,3 +14,4 @@ global using Microsoft.DotNet.DesignTools.ViewModels;
 global using Qhta.MVVM;
 global using Syncfusion.UI.Xaml.Grid;
 global using Syncfusion.UI.Xaml.TreeGrid;
+global using ViewModel = Qhta.MVVM.ViewModel;

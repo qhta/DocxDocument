@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel", "..\Documen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocxEditorWpf_lib", "..\DocxEditorWpf_lib\DocxEditorWpf_lib.csproj", "{78D622AA-0F60-45E8-9ED4-5CB4C0821DBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModel.Interfaces", "..\DocumentModel.Interfaces\DocumentModel.Interfaces.csproj", "{EE806F86-E082-7E79-47B5-68E957455E9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{78D622AA-0F60-45E8-9ED4-5CB4C0821DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78D622AA-0F60-45E8-9ED4-5CB4C0821DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78D622AA-0F60-45E8-9ED4-5CB4C0821DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE806F86-E082-7E79-47B5-68E957455E9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE806F86-E082-7E79-47B5-68E957455E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE806F86-E082-7E79-47B5-68E957455E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE806F86-E082-7E79-47B5-68E957455E9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

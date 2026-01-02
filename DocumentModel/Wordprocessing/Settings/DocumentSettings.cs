@@ -7,7 +7,7 @@ namespace DocumentModel;
 /// <summary>
 ///   These settings specify all document-level properties which affect the handling of the current document. 
 /// </summary>
-public class DocumentSettings : KnownDocumentProperties
+public class DocumentSettings : DocumentProperties
 {
   /// <summary>
   /// This element specifies information about the parameters of the grammar checking 
