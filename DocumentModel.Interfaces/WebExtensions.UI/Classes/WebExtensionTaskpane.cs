@@ -1,0 +1,36 @@
+namespace DocumentModel.WebExtensions.UI;
+
+/// <summary>
+///   Defines the WebExtensionTaskpane Class.
+/// </summary>
+public class WebExtensionTaskpane: ModelElement
+{
+  /// <summary>
+  ///   dockstate, this property is only available in Office 2013 and later.
+  /// </summary>
+  public string? DockState { get; set; }
+  /// <summary>
+  ///   visibility, this property is only available in Office 2013 and later.
+  /// </summary>
+  public bool? Visibility { get; set; }
+  /// <summary>
+  ///   width, this property is only available in Office 2013 and later.
+  /// </summary>
+  public Double? Width { get; set; }
+  /// <summary>
+  ///   row, this property is only available in Office 2013 and later.
+  /// </summary>
+  public UInt32? Row { get; set; }
+  /// <summary>
+  ///   locked, this property is only available in Office 2013 and later.
+  /// </summary>
+  public bool? Locked { get; set; }
+  /// <summary>
+  ///   WebExtensionPartReference.
+  /// </summary>
+  public WebExtensionPartReference? WebExtensionPartReference { get; set; }
+  /// <summary>
+  ///   OfficeArtExtensionList.
+  /// </summary>
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+}

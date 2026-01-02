@@ -1,0 +1,20 @@
+namespace DocumentModel.Drawings.ChartDrawings;
+
+/// <summary>
+///   Defines the FormatOverride Class.
+/// </summary>
+public class FormatOverride: ModelElement
+{
+  /// <summary>
+  ///   idx, this property is only available in Office 2016 and later.
+  /// </summary>
+  public UInt32? Idx { get; set; }
+  /// <summary>
+  ///   ShapeProperties.
+  /// </summary>
+  public ShapeProperties? ShapeProperties { get; set; }
+  /// <summary>
+  ///   ExtensionList.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
+}

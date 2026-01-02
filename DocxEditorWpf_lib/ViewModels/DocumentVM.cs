@@ -27,7 +27,7 @@ public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
     {
       if (_documentPropertiesVM == null)
       {
-        Document.Properties ??= new DocumentModel.DocumentProperties(Document);
+        Document.Properties ??= new DocumentModel.AllDocumentProperties(Document);
         _documentPropertiesVM = new DocumentPropertiesVM(Document.Properties);
       }
       return _documentPropertiesVM;

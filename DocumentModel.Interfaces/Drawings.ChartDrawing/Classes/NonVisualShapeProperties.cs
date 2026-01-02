@@ -1,0 +1,16 @@
+namespace DocumentModel.Drawings.ChartDrawing;
+
+/// <summary>
+///   Non-Visual Shape Properties.
+/// </summary>
+public class NonVisualShapeProperties: ModelElement
+{
+  /// <summary>
+  ///   Chart Non Visual Properties.
+  /// </summary>
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
+  /// <summary>
+  ///   Non-Visual Shape Drawing Properties.
+  /// </summary>
+  public NonVisualShapeDrawingProperties? NonVisualShapeDrawingProperties { get; set; }
+}

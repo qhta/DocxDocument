@@ -1,0 +1,22 @@
+namespace DocumentModel.Drawings.Diagrams;
+
+/// <summary>
+///   Style Definition.
+/// </summary>
+public class StyleDefinition: ModelElement
+{
+  /// <summary>
+  ///   Unique Style ID
+  /// </summary>
+  public string? UniqueId { get; set; }
+  /// <summary>
+  ///   Minimum Version
+  /// </summary>
+  public string? MinVersion { get; set; }
+  public Collection<StyleDefinitionTitle>? StyleDefinitionTitles { get; set; }
+  public Collection<StyleLabelDescription>? StyleLabelDescriptions { get; set; }
+  public StyleDisplayCategories? StyleDisplayCategories { get; set; }
+  public Scene3D? Scene3D { get; set; }
+  public StyleLabel? StyleLabel { get; set; }
+  public ExtensionList? ExtensionList { get; set; }
+}

@@ -2,37 +2,53 @@ namespace DocumentModel;
 
 using DocumentModel.Wordprocessing;
 
-using P = DocumentFormat.OpenXml.Packaging;
-using W = DocumentFormat.OpenXml.Wordprocessing;
+using PP = DocumentFormat.OpenXml.Packaging;
+using WP = DocumentFormat.OpenXml.Wordprocessing;
 
 /// <summary>
 ///   Collection of core properties, which represents document properties defined in Dublin Core standard
 /// and Open Packaging Conventions
 /// </summary>
-public partial class CoreProperties : KnownDocumentProperties
+public partial class CoreProperties : DocumentProperties
 {
-  internal Document? OwnerDocument;
+  /// <summary>
+  /// Documents that owns the core properties.
+  /// </summary>
+  internal Document? Document { get; set; }
 #pragma warning disable OOXML0001
-  internal P.IPackageProperties CoreFilePropertiesPart;
+  internal PP.IPackageProperties? CoreFilePropertiesPart;
 #pragma warning restore OOXML0001
 
   /// <summary>
   /// Initializing constructor.
   /// </summary>
-  /// <param name="ownerDocument">Documents that owns the core properties.</param>
-  public CoreProperties(Document ownerDocument)
+  /// <param name="document">Documents that owns the core properties.</param>
+  public CoreProperties(Document document)
   {
-    OwnerDocument = ownerDocument;
-    CoreFilePropertiesPart = OwnerDocument.WordprocessingDocument.PackageProperties;
+    Document = document;
+    CoreFilePropertiesPart = Document?.WordprocessingDocument?.PackageProperties;
+    KnownProperties = new KnownProperties(typeof(CoreProperties));
   }
+
+  /// <summary>
+  /// Known properties that can be set in CoreProperties
+  /// </summary>
+  public KnownProperties KnownProperties { get; }
 
   /// <summary>
   ///   The topic of the content of the resource.
   /// </summary>
   public string? Title
   {
-    get => CoreFilePropertiesPart.Title; set => CoreFilePropertiesPart.Title = value;
+    get => CoreFilePropertiesPart?.Title;
+    set
+    {
+      _title = value;
+      CoreFilePropertiesPart.Title = value;
+    }
   }
+
+  private string? _title;
 
   /// <summary>
   ///   The topic of the content of the resource.
@@ -126,8 +142,8 @@ public partial class CoreProperties : KnownDocumentProperties
   /// <summary>
   ///   A categorization of the content of this package. 
   ///   Example values for this property might include: 
-  ///   Resume, Letter, Financial Forecast, Proposal, Technical Presentation, and so on. T
-  ///   his value might be used by an application's user interface to facilitate navigation of a large set of documents.
+  ///   Resume, Letter, Financial Forecast, Proposal, Technical Presentation, and so on.
+  ///   This value might be used by an application's user interface to facilitate navigation of a large set of documents.
   /// </summary>
   public string? Category
   {

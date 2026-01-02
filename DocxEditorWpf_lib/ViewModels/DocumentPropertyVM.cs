@@ -40,5 +40,14 @@ public class DocumentPropertyVM: ViewModel<DocumentModel.DocumentProperty>, IPro
     set => Model.Type = value;
   }
 
+  /// <summary>
+  /// Empty property has no value or an empty string.
+  /// </summary>
   public bool IsEmpty => Value == null || (Value is string str && string.IsNullOrEmpty(str));
+
+  public string Category
+  {
+    get => Model.Category ?? string.Empty;
+    set => Model.Category = value;
+  }
 }
