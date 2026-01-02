@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RootNamespace>DocumentModel</RootNamespace>
+    <Description>Definition of document model based on OpenXML</Description>
+    <Authors>Yarreck Qhta</Authors>
+    <Version>1.0</Version>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;8766;0618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;8766;0618</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Properties\Classes\**" />
+    <Compile Remove="Settings\**" />
+    <EmbeddedResource Remove="Properties\Classes\**" />
+    <EmbeddedResource Remove="Settings\**" />
+    <None Remove="Properties\Classes\**" />
+    <None Remove="Settings\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="BaseTypes\BytePercent.cs" />
+    <Compile Remove="BaseTypes\BytePercentTypeConverter.cs" />
+    <Compile Remove="BaseTypes\EighthPoints.cs" />
+    <Compile Remove="BaseTypes\EighthPointsTypeConverter.cs" />
+    <Compile Remove="BaseTypes\HalfPoints.cs" />
+    <Compile Remove="BaseTypes\VectorVariantJsonConverter.cs" />
+    <Compile Remove="Drawings.ChartDrawing\Classes\Extent.cs" />
+    <Compile Remove="Math\Classes\OfficeMathArgumentType.cs" />
+    <Compile Remove="Packaging\Classes\CustomizationPart.cs" />
+    <Compile Remove="Properties\DigitalSignature.cs" />
+    <Compile Remove="Properties\VectorVariantType.cs" />
+    <Compile Remove="Vml\Enums\FillKind.cs" />
+    <Compile Remove="Wordprocessing\Document\Document.ext.cs" />
+    <Compile Remove="Wordprocessing\Drawings\Color.cs" />
+    <Compile Remove="Wordprocessing\Interfaces\ICommonRunContent.cs" />
+    <Compile Remove="Wordprocessing\Run properties\DualBoolTypeConverter.cs" />
+    <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyle.cs" />
+    <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyleTypeConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DeepEqual" Version="5.1.0" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.3.0" />
+    <PackageReference Include="JsonKnownTypes" Version="0.7.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="Qhta.TypeUtils" Version="1.5.0" />
+    <PackageReference Include="Qhta.Xml" Version="3.2.0" />
+    <PackageReference Include="Qhta.Xml.Serialization" Version="4.2.0" />
+    <PackageReference Include="System.IO.Packaging" Version="10.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Colors\Drawings\" />
+    <Folder Include="Drawings.Diagram2\Classes\" />
+  </ItemGroup>
+</Project>

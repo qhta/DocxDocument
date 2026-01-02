@@ -1,0 +1,21 @@
+namespace DocumentModel.Drawings.Diagrams;
+
+/// <summary>
+///   One by One Animation Value Definition
+/// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
+public enum AnimateOneByOneKind
+{
+  /// <summary>
+  ///   Disable One-by-One.
+  /// </summary>
+  None,
+  /// <summary>
+  ///   One By One.
+  /// </summary>
+  One,
+  /// <summary>
+  ///   By Branch One By One.
+  /// </summary>
+  Branch
+}

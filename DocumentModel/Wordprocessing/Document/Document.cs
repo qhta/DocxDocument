@@ -1,8 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 
 
-using P = DocumentFormat.OpenXml.Packaging;
-using W = DocumentFormat.OpenXml.Wordprocessing;
+using PP = DocumentFormat.OpenXml.Packaging;
+using WP = DocumentFormat.OpenXml.Wordprocessing;
 
 /// <summary>
 ///   Main Document.
@@ -13,7 +13,7 @@ public partial class Document : ModelElement, IDisposable
   /// <summary>
   /// Internal WordprocessingDocument. Must be opened all the time.
   /// </summary>
-  internal P.WordprocessingDocument WordprocessingDocument { get; set; } = null!;
+  internal PP.WordprocessingDocument? WordprocessingDocument { get; set; } 
 
   /// <summary>
   /// Name of the opened file.
@@ -31,8 +31,8 @@ public partial class Document : ModelElement, IDisposable
   public void Open(string filename, bool readWrite = true)
   {
     Filename = filename;
-    WordprocessingDocument = P.WordprocessingDocument.Open(filename, readWrite);
-    CoreProperties = new CoreProperties(this);
+    WordprocessingDocument = PP.WordprocessingDocument.Open(filename, readWrite);
+    Properties = new AllDocumentProperties(this);
   }
 
   /// <summary>
@@ -171,7 +171,7 @@ public partial class Document : ModelElement, IDisposable
   /// <summary>
   /// Compound of object of document properties
   /// </summary>
-  public DocumentProperties? Properties
+  public AllDocumentProperties? Properties
   {
     get; set;
   }
