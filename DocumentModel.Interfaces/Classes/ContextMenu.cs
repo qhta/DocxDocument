@@ -194,7 +194,7 @@ public interface ContextMenu : IModelElement
   /// Gets or sets a checkbox control to add to the context menu.
   /// </summary>
   /// <value>
-  /// An <see cref="ICheckBox"/> object defining the checkbox's appearance and behavior.
+  /// An <see cref="CheckBox"/> object defining the checkbox's appearance and behavior.
   /// If <see langword="null"/>, no checkbox is added.
   /// </value>
   /// <remarks>
@@ -214,7 +214,7 @@ public interface ContextMenu : IModelElement
   /// state of the associated feature or setting.
   /// </para>
   /// </remarks>
-  public ICheckBox? CheckBox { get; set; }
+  public CheckBox? CheckBox { get; set; }
 
   /// <summary>
   /// Gets or sets a gallery control to add to the context menu.
