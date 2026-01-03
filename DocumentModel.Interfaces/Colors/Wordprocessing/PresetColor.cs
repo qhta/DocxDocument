@@ -67,10 +67,6 @@ public interface PresetColor: IModelElement
   /// <summary>
   /// Gets or sets the preset color name that defines the base color.
   /// </summary>
-  /// <value>
-  /// A <see cref="PresetColorKind"/> value representing one of the predefined color names
-  /// (e.g., Red, Blue, AliceBlue, AntiqueWhite). If <see langword="null"/>, no preset color is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The preset color names are defined by the Office Open XML standard and include:

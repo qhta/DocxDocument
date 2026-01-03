@@ -110,10 +110,6 @@ public interface LayoutContainer : IModelElement
   /// <summary>
   /// Gets or sets the unique identifier for this layout container.
   /// </summary>
-  /// <value>
-  /// A string containing a unique ID for the container within the Backstage customization.
-  /// If <see langword="null"/>, the container has no explicit identifier.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The ID is used to uniquely identify this container for programmatic access, callback functions,
@@ -128,18 +124,12 @@ public interface LayoutContainer : IModelElement
   /// <item><description>Maintaining consistent naming across related customizations</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? Id { get; set; }
 
   /// <summary>
   /// Gets or sets the namespace-qualified identifier for this layout container.
   /// </summary>
-  /// <value>
-  /// A string containing the fully qualified ID, typically in the format "namespace:id".
-  /// If <see langword="null"/>, no qualified identifier is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The qualified ID allows containers to be organized into namespaces, preventing naming conflicts
@@ -159,18 +149,12 @@ public interface LayoutContainer : IModelElement
   /// Example: "MyCompany:DocumentProperties:TitleSection" clearly identifies the container's
   /// ownership and purpose within a larger customization hierarchy.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? QualifiedId { get; set; }
 
   /// <summary>
   /// Gets or sets an arbitrary tag value for application-specific purposes.
   /// </summary>
-  /// <value>
-  /// A string containing custom metadata or categorization information for the container.
-  /// If <see langword="null"/>, no tag is assigned.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The tag property provides a flexible way to associate custom metadata with layout containers
@@ -190,18 +174,12 @@ public interface LayoutContainer : IModelElement
   /// Tags provide flexibility for custom application logic without interfering with the container's
   /// primary identification and layout properties.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? Tag { get; set; }
 
   /// <summary>
   /// Gets or sets how child controls are aligned within the container's layout space.
   /// </summary>
-  /// <value>
-  /// An <see cref="ExpandKind"/> value specifying the alignment behavior (e.g., Left, Right, Center, Fill).
-  /// If <see langword="null"/>, default alignment behavior is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The Align property controls how child elements are positioned within the container's available space.
@@ -229,18 +207,12 @@ public interface LayoutContainer : IModelElement
   /// <item><description><b>Right-aligned actions:</b> OK/Cancel buttons aligned to the right edge</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public ExpandKind? Align { get; set; }
 
   /// <summary>
   /// Gets or sets how the container itself expands to fill available space in its parent.
   /// </summary>
-  /// <value>
-  /// An <see cref="ExpandKind"/> value specifying expansion behavior (e.g., None, Horizontal, Vertical, Both).
-  /// If <see langword="null"/>, default expansion behavior is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The Expand property controls how the layout container grows to utilize space within its parent container
@@ -274,18 +246,12 @@ public interface LayoutContainer : IModelElement
   /// Understanding the interaction between Expand (container's own sizing) and Align (child control positioning)
   /// is key to creating effective Backstage layouts.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public ExpandKind? Expand { get; set; }
 
   /// <summary>
   /// Gets or sets the layout direction for arranging child controls within the container.
   /// </summary>
-  /// <value>
-  /// A <see cref="LayoutChildrenKind"/> value specifying the layout direction (e.g., Horizontal, Vertical).
-  /// If <see langword="null"/>, default layout behavior is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The LayoutChildren property determines the fundamental layout strategy for how child controls
@@ -331,18 +297,12 @@ public interface LayoutContainer : IModelElement
   ///   └─ Row3 (Horizontal): [Button1] [Button2]
   /// </code>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public LayoutChildrenKind? LayoutChildren { get; set; }
 
   /// <summary>
   /// Gets or sets a button control that is part of a button group in the Backstage view.
   /// </summary>
-  /// <value>
-  /// A <see cref="BackstageGroupButton"/> object defining the button's appearance and behavior.
-  /// If <see langword="null"/>, no group button is added to the container.
-  /// </value>
   /// <remarks>
   /// Backstage group buttons are designed for primary actions in Backstage pages, typically displayed
   /// with large icons and clear labels. They are commonly used for major document operations like
@@ -353,10 +313,6 @@ public interface LayoutContainer : IModelElement
   /// <summary>
   /// Gets or sets a checkbox control for boolean options in the Backstage view.
   /// </summary>
-  /// <value>
-  /// A <see cref="BackstageCheckBox"/> object defining the checkbox's label and state.
-  /// If <see langword="null"/>, no checkbox is added to the container.
-  /// </value>
   /// <remarks>
   /// Backstage checkboxes provide a simple on/off choice for settings or options. They display
   /// a checkmark when selected and are commonly used in settings pages, preferences, or
@@ -367,10 +323,6 @@ public interface LayoutContainer : IModelElement
   /// <summary>
   /// Gets or sets a text input control for single-line text entry in the Backstage view.
   /// </summary>
-  /// <value>
-  /// A <see cref="BackstageEditBox"/> object defining the text box's properties and validation.
-  /// If <see langword="null"/>, no edit box is added to the container.
-  /// </value>
   /// <remarks>
   /// Backstage edit boxes provide text input fields for document metadata, file names, paths,
   /// or other string values. They support validation, maximum length constraints, and
@@ -381,10 +333,6 @@ public interface LayoutContainer : IModelElement
   /// <summary>
   /// Gets or sets a dropdown list control for selecting from predefined options.
   /// </summary>
-  /// <value>
-  /// A <see cref="BackstageDropDown"/> object defining the dropdown's items and selection behavior.
-  /// If <see langword="null"/>, no dropdown is added to the container.
-  /// </value>
   /// <remarks>
   /// Backstage dropdowns display a list of choices when clicked, allowing users to select a single
   /// option from a predefined list. They are ideal for settings with a known set of values,
@@ -395,10 +343,6 @@ public interface LayoutContainer : IModelElement
   /// <summary>
   /// Gets or sets a group of mutually exclusive radio buttons for single-choice selection.
   /// </summary>
-  /// <value>
-  /// A <see cref="RadioGroup"/> object containing the radio button options and managing their selection.
-  /// If <see langword="null"/>, no radio group is added to the container.
-  /// </value>
   /// <remarks>
   /// Radio groups present multiple options where only one can be selected at a time. They are
   /// appropriate when there are 2-5 related options that are mutually exclusive, such as
@@ -409,10 +353,6 @@ public interface LayoutContainer : IModelElement
   /// <summary>
   /// Gets or sets a combo box control that combines text input with a dropdown list.
   /// </summary>
-  /// <value>
-  /// A <see cref="BackstageComboBox"/> object defining the combo box's items and input behavior.
-  /// If <see langword="null"/>, no combo box is added to the container.
-  /// </value>
   /// <remarks>
   /// Backstage combo boxes allow users to either select from a predefined list or type a custom value.
   /// This provides flexibility when you want to offer common choices while still allowing custom input,
@@ -423,10 +363,6 @@ public interface LayoutContainer : IModelElement
   /// <summary>
   /// Gets or sets a hyperlink control for navigation or external links in the Backstage view.
   /// </summary>
-  /// <value>
-  /// A <see cref="Hyperlink"/> object defining the link's text, URL, and appearance.
-  /// If <see langword="null"/>, no hyperlink is added to the container.
-  /// </value>
   /// <remarks>
   /// Hyperlinks in Backstage pages provide navigation to related content, help documentation,
   /// external websites, or other Backstage pages. They appear in the standard hyperlink style
@@ -437,10 +373,6 @@ public interface LayoutContainer : IModelElement
   /// <summary>
   /// Gets or sets a text label control for displaying static text or information.
   /// </summary>
-  /// <value>
-  /// A <see cref="BackstageLabelControl"/> object defining the label's text and formatting.
-  /// If <see langword="null"/>, no label is added to the container.
-  /// </value>
   /// <remarks>
   /// Backstage labels display static text for headings, descriptions, instructions, or data display.
   /// They are essential for form layouts where they identify adjacent input controls, or for
@@ -451,10 +383,6 @@ public interface LayoutContainer : IModelElement
   /// <summary>
   /// Gets or sets a group box that visually groups related controls with an optional border and title.
   /// </summary>
-  /// <value>
-  /// A <see cref="GroupBox"/> object containing nested controls and defining the group's appearance.
-  /// If <see langword="null"/>, no group box is added to the container.
-  /// </value>
   /// <remarks>
   /// Group boxes provide visual organization by drawing a border around related controls with an
   /// optional title label. They help users understand which settings or options belong together,
@@ -465,10 +393,6 @@ public interface LayoutContainer : IModelElement
   /// <summary>
   /// Gets or sets a nested layout container for creating hierarchical layout structures.
   /// </summary>
-  /// <value>
-  /// A <see cref="LayoutContainer"/> object that can contain its own child controls and layout configuration.
-  /// If <see langword="null"/>, no child container is nested within this container.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Nested layout containers are essential for creating complex, multi-level layouts in the Backstage view.
@@ -494,10 +418,6 @@ public interface LayoutContainer : IModelElement
   /// <summary>
   /// Gets or sets an image control for displaying icons, logos, or decorative images.
   /// </summary>
-  /// <value>
-  /// An <see cref="ImageControl"/> object defining the image source and display properties.
-  /// If <see langword="null"/>, no image is added to the container.
-  /// </value>
   /// <remarks>
   /// Image controls in Backstage layouts display static images such as company logos, document preview
   /// thumbnails, icons for visual emphasis, or illustrations for help content. They support various

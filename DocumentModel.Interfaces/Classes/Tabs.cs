@@ -8,13 +8,6 @@ namespace DocumentModel;
 ///   of <see cref="Tab"/> objects. These tabs form the primary navigation structure in the
 ///   ribbon UI, displaying groups of related commands and controls.
 /// </remarks>
-public interface Tabs : IModelElement
+public interface Tabs : IElementCollection<Tab>
 {
-  /// <summary>
-  ///   Gets or sets the collection of tab items that make up the ribbon interface.
-  /// </summary>
-  /// <value>
-  ///   A collection of <see cref="Tab"/> objects, or <c>null</c> if no tabs are defined.
-  /// </value>
-  public Collection<Tab>? Items { get; set; }
 }

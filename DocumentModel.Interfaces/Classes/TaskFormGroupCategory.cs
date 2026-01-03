@@ -8,24 +8,16 @@ namespace DocumentModel;
 ///   that groups related tasks within a <see cref="TaskFormGroup"/>. Categories provide
 ///   organizational structure, labeling, and positioning control for task collections.
 /// </remarks>
-public interface TaskFormGroupCategory : IModelElement
+public interface TaskFormGroupCategory : IElementCollection<TaskFormGroupTask>
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this task form group category.
   /// </summary>
-  /// <value>
-  ///   A string containing the identifier, or <c>null</c> if no identifier is specified.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? Id { get; set; }
 
   /// <summary>
   ///   Gets or sets the qualified identifier for this task form group category.
   /// </summary>
-  /// <value>
-  ///   A string containing the namespace-qualified identifier, or <c>null</c> if not specified.
-  /// </value>
   /// <remarks>
   ///   Use this when the identifier needs to be unique across multiple namespaces.
   /// </remarks>
@@ -34,9 +26,6 @@ public interface TaskFormGroupCategory : IModelElement
   /// <summary>
   ///   Gets or sets an arbitrary tag value for custom data storage.
   /// </summary>
-  /// <value>
-  ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
-  /// </value>
   /// <remarks>
   ///   The tag can be used to store application-specific information associated with this category.
   /// </remarks>
@@ -45,19 +34,11 @@ public interface TaskFormGroupCategory : IModelElement
   /// <summary>
   ///   Gets or sets the identifier for a built-in Microsoft Office task form group category.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office identifier, or <c>null</c> if not referencing a built-in category.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? IdMso { get; set; }
 
   /// <summary>
   ///   Gets or sets the Microsoft Office identifier after which this category should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the category relative to a built-in category.
   /// </remarks>
@@ -66,9 +47,6 @@ public interface TaskFormGroupCategory : IModelElement
   /// <summary>
   ///   Gets or sets the Microsoft Office identifier before which this category should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the category relative to a built-in category.
   /// </remarks>
@@ -77,9 +55,6 @@ public interface TaskFormGroupCategory : IModelElement
   /// <summary>
   ///   Gets or sets the qualified identifier after which this category should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the category relative to another custom category.
   /// </remarks>
@@ -88,9 +63,6 @@ public interface TaskFormGroupCategory : IModelElement
   /// <summary>
   ///   Gets or sets the qualified identifier before which this category should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the category relative to another custom category.
   /// </remarks>
@@ -99,19 +71,11 @@ public interface TaskFormGroupCategory : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the task form group category is visible.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the category is visible; <c>false</c> if hidden; or <c>null</c> to use the default visibility.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public bool? Visible { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the category's visibility.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if visibility is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a boolean value indicating whether the category should be visible.
   /// </remarks>
@@ -120,29 +84,14 @@ public interface TaskFormGroupCategory : IModelElement
   /// <summary>
   ///   Gets or sets the display label for the task form group category.
   /// </summary>
-  /// <value>
-  ///   A string containing the label text, or <c>null</c> if no label is specified.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? Label { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the category's label.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the label is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the label.
   /// </remarks>
   public string? GetLabel { get; set; }
 
-  /// <summary>
-  ///   Gets or sets the collection of tasks within this category.
-  /// </summary>
-  /// <value>
-  ///   A collection of <see cref="TaskFormGroupTask"/> objects, or <c>null</c> if no tasks are defined.
-  /// </value>
-  public Collection<TaskFormGroupTask>? TaskFormGroupTasks { get; set; }
 }

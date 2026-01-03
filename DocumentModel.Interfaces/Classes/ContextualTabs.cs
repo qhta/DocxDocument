@@ -16,24 +16,7 @@ namespace DocumentModel;
 ///   without overwhelming the standard ribbon interface with specialized tools that are only occasionally needed.
 ///   Contextual tabs automatically hide when the user deselects the triggering object or exits the associated context.
 /// </remarks>
-public interface ContextualTabs : IModelElement
+public interface ContextualTabs : IElementCollection<TabSet>
 {
-  /// <summary>
-  ///   Gets or sets the collection of tab sets that define contextual ribbon tabs.
-  /// </summary>
-  /// <value>
-  ///   A collection of <see cref="TabSet"/> objects defining contextual tab groups,
-  ///   or <c>null</c> if no contextual tabs are defined.
-  /// </value>
-  /// <remarks>
-  ///   Each <see cref="TabSet"/> in the collection defines a group of related contextual tabs that appear together
-  ///   under a common label in the ribbon. Tab sets typically correspond to specific object types or application
-  ///   contexts (such as "Table Tools", "Picture Tools", or "Chart Tools" in native Office applications). The tab
-  ///   set structure allows related functionality to be organized into multiple tabs while maintaining a clear
-  ///   relationship through shared labeling and visual styling. Multiple tab sets can be defined to support various
-  ///   contextual scenarios, with each tab set activating based on its specific trigger conditions. When multiple
-  ///   contextual tab sets could apply simultaneously (such as selecting a table within a text box), Office determines
-  ///   which tab sets to display based on selection hierarchy and context precedence rules.
-  /// </remarks>
-  public Collection<TabSet>? TabSets { get; set; }
+  
 }

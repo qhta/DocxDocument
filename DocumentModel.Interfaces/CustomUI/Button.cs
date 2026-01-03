@@ -14,29 +14,16 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the name of the callback function executed when the button is clicked.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if no action is defined.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? OnAction { get; set; }
 
   /// <summary>
   ///   Gets or sets a value indicating whether the button is enabled and can be clicked.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the button is enabled; <c>false</c> if disabled; or <c>null</c> to use the default enabled state.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public bool? Enabled { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines whether the button is enabled.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the enabled state is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a boolean value indicating whether the button should be enabled.
   /// </remarks>
@@ -45,19 +32,11 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the description text that provides additional information about the button.
   /// </summary>
-  /// <value>
-  ///   A string containing the description text, or <c>null</c> if no description is specified.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? Description { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the button's description.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the description is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the description.
   /// </remarks>
@@ -66,9 +45,6 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the custom image identifier for the button icon.
   /// </summary>
-  /// <value>
-  ///   A string containing the image identifier, or <c>null</c> if no custom image is specified.
-  /// </value>
   /// <remarks>
   ///   The image identifier references a custom image resource included in the Office add-in.
   /// </remarks>
@@ -77,9 +53,6 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the Microsoft Office image identifier for the button icon.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office image identifier, or <c>null</c> if not using a built-in image.
-  /// </value>
   /// <remarks>
   ///   Use this to display a built-in Office icon for the button.
   /// </remarks>
@@ -88,9 +61,6 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the button's image.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the image is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return an image object or identifier.
   /// </remarks>
@@ -99,19 +69,11 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the unique identifier for this button.
   /// </summary>
-  /// <value>
-  ///   A string containing the identifier, or <c>null</c> if no identifier is specified.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? Id { get; set; }
 
   /// <summary>
   ///   Gets or sets the qualified identifier for this button.
   /// </summary>
-  /// <value>
-  ///   A string containing the namespace-qualified identifier, or <c>null</c> if not specified.
-  /// </value>
   /// <remarks>
   ///   Use this when the identifier needs to be unique across multiple namespaces.
   /// </remarks>
@@ -120,9 +82,6 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets an arbitrary tag value for custom data storage.
   /// </summary>
-  /// <value>
-  ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
-  /// </value>
   /// <remarks>
   ///   The tag can be used to store application-specific information associated with this button.
   /// </remarks>
@@ -131,29 +90,16 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the identifier for a built-in Microsoft Office button.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office identifier, or <c>null</c> if not referencing a built-in button.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? IdMso { get; set; }
 
   /// <summary>
   ///   Gets or sets the screentip (tooltip) text for the button.
   /// </summary>
-  /// <value>
-  ///   A string containing the screentip text, or <c>null</c> if no screentip is specified.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? Screentip { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the button's screentip.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the screentip is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the screentip.
   /// </remarks>
@@ -162,9 +108,6 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the supertip (extended tooltip) text for the button.
   /// </summary>
-  /// <value>
-  ///   A string containing the supertip text, or <c>null</c> if no supertip is specified.
-  /// </value>
   /// <remarks>
   ///   Supertips provide more detailed information than screentips.
   /// </remarks>
@@ -173,9 +116,6 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the button's supertip.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the supertip is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the supertip.
   /// </remarks>
@@ -184,19 +124,11 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the display label for the button.
   /// </summary>
-  /// <value>
-  ///   A string containing the label text, or <c>null</c> if no label is specified.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? Label { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the button's label.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the label is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the label.
   /// </remarks>
@@ -205,9 +137,6 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the Microsoft Office identifier after which this button should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the button relative to a built-in control.
   /// </remarks>
@@ -216,9 +145,6 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the Microsoft Office identifier before which this button should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the button relative to a built-in control.
   /// </remarks>
@@ -227,9 +153,6 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the qualified identifier after which this button should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the button relative to another custom control.
   /// </remarks>
@@ -238,9 +161,6 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the qualified identifier before which this button should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the button relative to another custom control.
   /// </remarks>
@@ -249,19 +169,11 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the button is visible.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the button is visible; <c>false</c> if hidden; or <c>null</c> to use the default visibility.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public bool? Visible { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the button's visibility.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if visibility is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a boolean value indicating whether the button should be visible.
   /// </remarks>
@@ -270,9 +182,6 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the keyboard shortcut (keytip) for accessing the button.
   /// </summary>
-  /// <value>
-  ///   A string containing the keytip character(s), or <c>null</c> if no keytip is specified.
-  /// </value>
   /// <remarks>
   ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
   /// </remarks>
@@ -281,9 +190,6 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the button's keytip.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the keytip is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the keytip.
   /// </remarks>
@@ -292,19 +198,11 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the button's label should be displayed.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the label is shown; <c>false</c> if hidden; or <c>null</c> to use the default behavior.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public bool? ShowLabel { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines whether the label is shown.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if label visibility is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a boolean value indicating whether the label should be displayed.
   /// </remarks>
@@ -313,19 +211,11 @@ public interface Button : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the button's image should be displayed.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the image is shown; <c>false</c> if hidden; or <c>null</c> to use the default behavior.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public bool? ShowImage { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines whether the image is shown.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if image visibility is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a boolean value indicating whether the image should be displayed.
   /// </remarks>

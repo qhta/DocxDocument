@@ -25,10 +25,6 @@ public interface AlternateContent : IModelElement
   /// <summary>
   ///   Gets or sets the collection of alternate content choices, each representing a different rendering option.
   /// </summary>
-  /// <value>
-  ///   An <see cref="AlternateContentChoiceCollection"/> containing one or more content choices,
-  ///   or <c>null</c> if no choices are defined.
-  /// </value>
   /// <remarks>
   ///   The choices collection contains multiple content options, each with associated requirements that specify
   ///   when that choice should be selected. Choices are evaluated in the order they appear in the collection,
@@ -46,10 +42,6 @@ public interface AlternateContent : IModelElement
   /// <summary>
   ///   Gets or sets the fallback content to use when none of the choices can be satisfied.
   /// </summary>
-  /// <value>
-  ///   An <see cref="AlternateContentFallback"/> object containing the fallback content,
-  ///   or <c>null</c> if no fallback is defined.
-  /// </value>
   /// <remarks>
   ///   The fallback content provides an alternative representation that is used when the application cannot
   ///   satisfy the requirements of any choice in the <see cref="Choices"/> collection. This typically occurs

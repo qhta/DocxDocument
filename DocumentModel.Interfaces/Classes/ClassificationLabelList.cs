@@ -215,10 +215,6 @@ public interface ClassificationLabelList : IModelElement
   /// Gets or sets the collection of classification labels that represent user-visible sensitivity levels,
   /// compliance categories, or information governance classifications applied to the document.
   /// </summary>
-  /// <value>
-  /// A <see cref="Collection{ClassificationLabel}"/> containing zero or more classification labels.
-  /// If <see langword="null"/> or empty, the document has no explicit classification labels.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Classification labels provide the user-facing representation of document classification,
@@ -310,11 +306,6 @@ public interface ClassificationLabelList : IModelElement
   /// Gets or sets the classification extension list containing technical metadata, policy references,
   /// and system-specific information that supports and enhances the classification labels.
   /// </summary>
-  /// <value>
-  /// A <see cref="ClassificationExtensionList"/> containing classification extensions with detailed
-  /// metadata and policy information. If <see langword="null"/>, only basic label information is present
-  /// without extended classification metadata.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The classification extension list provides the technical infrastructure that supports the

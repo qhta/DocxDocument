@@ -14,9 +14,5 @@ public interface TaskHistory : IModelElement
   /// <summary>
   ///   Gets or sets the collection of historical events that have occurred for tasks.
   /// </summary>
-  /// <value>
-  ///   A collection of <see cref="TaskHistoryEvent"/> objects representing the chronological history,
-  ///   or <c>null</c> if no history events are recorded.
-  /// </value>
   public Collection<TaskHistoryEvent>? TaskHistoryEvents { get; set; }
 }

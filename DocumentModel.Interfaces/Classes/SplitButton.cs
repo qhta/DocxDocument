@@ -120,10 +120,6 @@ public interface SplitButton : IModelElement
   /// <summary>
   /// Gets or sets the display size of the split button in the ribbon.
   /// </summary>
-  /// <value>
-  /// A <see cref="SizeKind"/> value specifying the button size (e.g., Large, Normal).
-  /// If <see langword="null"/>, default sizing behavior is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The size property determines how the split button is displayed in the ribbon:
@@ -141,18 +137,12 @@ public interface SplitButton : IModelElement
   /// <item><description>The dropdown arrow is proportionally sized based on the button size</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public SizeKind? Size { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the callback function that dynamically determines the button size.
   /// </summary>
-  /// <value>
-  /// A string containing the callback function name that returns the button's size.
-  /// If <see langword="null"/>, the static <see cref="Size"/> property is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The getSize callback enables dynamic size adjustment based on runtime conditions such as:
@@ -167,18 +157,12 @@ public interface SplitButton : IModelElement
   /// The callback function receives a ribbon control parameter and should return a <see cref="SizeKind"/> value.
   /// Dynamic sizing can improve ribbon usability by emphasizing important commands or adapting to available space.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? GetSize { get; set; }
 
   /// <summary>
   /// Gets or sets whether the split button is enabled and can be interacted with.
   /// </summary>
-  /// <value>
-  /// <see langword="true"/> if the split button is enabled; <see langword="false"/> if it is disabled and grayed out.
-  /// If <see langword="null"/>, the button is enabled by default.
-  /// </value>
   /// <remarks>
   /// <para>
   /// When a split button is disabled:
@@ -198,18 +182,12 @@ public interface SplitButton : IModelElement
   /// <item><description>Feature requires specific document format or version</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public bool? Enabled { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the callback function that dynamically determines whether the button is enabled.
   /// </summary>
-  /// <value>
-  /// A string containing the callback function name that returns the button's enabled state.
-  /// If <see langword="null"/>, the static <see cref="Enabled"/> property is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The getEnabled callback allows the split button's enabled state to respond to:
@@ -225,18 +203,12 @@ public interface SplitButton : IModelElement
   /// Office calls this function when the ribbon needs to update, such as when selection changes or
   /// the ribbon is invalidated programmatically.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? GetEnabled { get; set; }
 
   /// <summary>
   /// Gets or sets the unique identifier for this split button.
   /// </summary>
-  /// <value>
-  /// A string containing a unique ID for the split button within the ribbon customization.
-  /// If <see langword="null"/>, the button has no explicit identifier.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The ID is used to uniquely identify this split button for:
@@ -251,18 +223,12 @@ public interface SplitButton : IModelElement
   /// The ID should be unique within the scope of the ribbon tab or group where the split button appears.
   /// Use descriptive names that indicate the button's purpose (e.g., "customPasteSplitButton", "exportFormatButton").
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? Id { get; set; }
 
   /// <summary>
   /// Gets or sets the namespace-qualified identifier for this split button.
   /// </summary>
-  /// <value>
-  /// A string containing the fully qualified ID, typically in the format "namespace:id".
-  /// If <see langword="null"/>, no qualified identifier is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The qualified ID allows split buttons to be organized into namespaces, preventing naming conflicts
@@ -277,18 +243,12 @@ public interface SplitButton : IModelElement
   /// <item><description>Avoiding ID collisions in complex ribbon customizations</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? QualifiedId { get; set; }
 
   /// <summary>
   /// Gets or sets an arbitrary tag value for application-specific purposes.
   /// </summary>
-  /// <value>
-  /// A string containing custom metadata or categorization information for the split button.
-  /// If <see langword="null"/>, no tag is assigned.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The tag property provides flexible storage for custom metadata used in application logic.
@@ -301,18 +261,12 @@ public interface SplitButton : IModelElement
   /// <item><description>Implementing custom control behaviors or grouping logic</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? Tag { get; set; }
 
   /// <summary>
   /// Gets or sets the Microsoft Office built-in control identifier to customize or reference.
   /// </summary>
-  /// <value>
-  /// A string containing the Office-defined control ID (e.g., "Paste", "FontSize").
-  /// If <see langword="null"/>, the split button is not associated with a built-in control.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The idMso (ID Microsoft Office) property serves two purposes:
@@ -326,18 +280,12 @@ public interface SplitButton : IModelElement
   /// or add additional menu items to the dropdown. This allows integration of custom functionality
   /// with Office's native commands.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? IdMso { get; set; }
 
   /// <summary>
   /// Gets or sets the ID of a built-in Office control after which this split button should be inserted.
   /// </summary>
-  /// <value>
-  /// A string containing the Office control ID (idMso) that this split button should follow.
-  /// If <see langword="null"/>, no after-insertion positioning is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The insertAfterMso property allows precise positioning of custom split buttons within the ribbon
@@ -352,18 +300,12 @@ public interface SplitButton : IModelElement
   /// For example, setting insertAfterMso="Paste" places the custom split button immediately after
   /// the built-in Paste button in the ribbon.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? InsertAfterMso { get; set; }
 
   /// <summary>
   /// Gets or sets the ID of a built-in Office control before which this split button should be inserted.
   /// </summary>
-  /// <value>
-  /// A string containing the Office control ID (idMso) that this split button should precede.
-  /// If <see langword="null"/>, no before-insertion positioning is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The insertBeforeMso property allows precise positioning of custom split buttons by placing them
@@ -374,25 +316,17 @@ public interface SplitButton : IModelElement
   /// For example, setting insertBeforeMso="Copy" places the custom split button immediately before
   /// the built-in Copy button in the ribbon.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? InsertBeforeMso { get; set; }
 
   /// <summary>
   /// Gets or sets the qualified ID of a custom control after which this split button should be inserted.
   /// </summary>
-  /// <value>
-  /// A string containing the namespace-qualified ID of a custom control that this split button should follow.
-  /// If <see langword="null"/>, no after-insertion positioning relative to custom controls is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The insertAfterQualifiedId property enables positioning relative to other custom controls
   /// (rather than built-in Office controls). This is important when multiple add-ins or customizations
   /// need to coordinate their ribbon layout and establish a specific order for custom controls.
-  /// </para>
-  /// <para>
   /// </para>
   /// </remarks>
   public string? InsertAfterQualifiedId { get; set; }
@@ -400,17 +334,11 @@ public interface SplitButton : IModelElement
   /// <summary>
   /// Gets or sets the qualified ID of a custom control before which this split button should be inserted.
   /// </summary>
-  /// <value>
-  /// A string containing the namespace-qualified ID of a custom control that this split button should precede.
-  /// If <see langword="null"/>, no before-insertion positioning relative to custom controls is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The insertBeforeQualifiedId property enables positioning relative to other custom controls
   /// (rather than built-in Office controls). This allows fine-grained control over the order of
   /// custom split buttons and other custom controls in the ribbon.
-  /// </para>
-  /// <para>
   /// </para>
   /// </remarks>
   public string? InsertBeforeQualifiedId { get; set; }
@@ -418,10 +346,6 @@ public interface SplitButton : IModelElement
   /// <summary>
   /// Gets or sets whether the split button is visible in the ribbon.
   /// </summary>
-  /// <value>
-  /// <see langword="true"/> if the split button is visible; <see langword="false"/> if it is hidden.
-  /// If <see langword="null"/>, the button is visible by default.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Visibility control allows split buttons to appear or disappear based on:
@@ -436,18 +360,12 @@ public interface SplitButton : IModelElement
   /// Hidden controls do not occupy ribbon space and cannot be accessed via keyboard navigation.
   /// Use visibility sparingly to avoid confusing users with disappearing commands.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public bool? Visible { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the callback function that dynamically determines whether the button is visible.
   /// </summary>
-  /// <value>
-  /// A string containing the callback function name that returns the button's visibility state.
-  /// If <see langword="null"/>, the static <see cref="Visible"/> property is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The getVisible callback enables dynamic visibility based on runtime conditions such as:
@@ -462,18 +380,12 @@ public interface SplitButton : IModelElement
   /// The callback function receives a ribbon control parameter and should return a boolean value.
   /// Use dynamic visibility to create context-aware ribbons that adapt to user needs.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? GetVisible { get; set; }
 
   /// <summary>
   /// Gets or sets the keyboard shortcut (keytip) that activates this split button.
   /// </summary>
-  /// <value>
-  /// A string containing one or more characters that serve as the keyboard shortcut.
-  /// If <see langword="null"/>, no keytip is assigned.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Keytips appear when users press the Alt key, displaying keyboard shortcuts for ribbon controls.
@@ -489,18 +401,12 @@ public interface SplitButton : IModelElement
   /// When a keytip is activated, it triggers the primary action of the split button (not the dropdown).
   /// Users typically need an additional key to access the dropdown menu via keyboard.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? Keytip { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the callback function that dynamically provides the keytip value.
   /// </summary>
-  /// <value>
-  /// A string containing the callback function name that returns the keytip text.
-  /// If <see langword="null"/>, the static <see cref="Keytip"/> property is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The getKeytip callback allows context-sensitive keyboard shortcuts that adapt to:
@@ -513,18 +419,12 @@ public interface SplitButton : IModelElement
   /// <para>
   /// The callback function receives a ribbon control parameter and should return a string value.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? GetKeytip { get; set; }
 
   /// <summary>
   /// Gets or sets whether the text label is displayed alongside the icon.
   /// </summary>
-  /// <value>
-  /// <see langword="true"/> if the label should be shown; <see langword="false"/> if only the icon is displayed.
-  /// If <see langword="null"/>, default label behavior is used (typically shown for large buttons).
-  /// </value>
   /// <remarks>
   /// <para>
   /// Label visibility affects both usability and ribbon space utilization:
@@ -537,18 +437,12 @@ public interface SplitButton : IModelElement
   /// Typically, large split buttons show labels while normal-sized buttons may hide labels to save space.
   /// Consider icon clarity and user familiarity when deciding whether to show labels.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public bool? ShowLabel { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the callback function that dynamically determines whether the label is shown.
   /// </summary>
-  /// <value>
-  /// A string containing the callback function name that returns the label visibility state.
-  /// If <see langword="null"/>, the static <see cref="ShowLabel"/> property is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The getShowLabel callback enables dynamic label visibility based on:
@@ -562,19 +456,12 @@ public interface SplitButton : IModelElement
   /// The callback function receives a ribbon control parameter and should return a boolean value.
   /// Dynamic label visibility can improve ribbon responsiveness and accommodate different display configurations.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? GetShowLabel { get; set; }
 
   /// <summary>
   /// Gets or sets the primary button component of the split button that executes the default action.
   /// </summary>
-  /// <value>
-  /// A <see cref="VisibleButton"/> object defining the primary button's appearance and behavior.
-  /// If <see langword="null"/>, no primary button is defined (typically one of <see cref="VisibleButton"/>
-  /// or <see cref="VisibleToggleButton"/> must be set).
-  /// </value>
   /// <remarks>
   /// <para>
   /// The visible button represents the main action portion of the split button. When users click
@@ -596,11 +483,6 @@ public interface SplitButton : IModelElement
   /// <summary>
   /// Gets or sets the primary toggle button component of the split button that toggles a feature on/off.
   /// </summary>
-  /// <value>
-  /// A <see cref="VisibleToggleButton"/> object defining the primary toggle button's appearance and behavior.
-  /// If <see langword="null"/>, no primary toggle button is defined (typically one of <see cref="VisibleButton"/>
-  /// or <see cref="VisibleToggleButton"/> must be set).
-  /// </value>
   /// <remarks>
   /// <para>
   /// The visible toggle button provides a primary action that switches between two states (on/off, pressed/unpressed).
@@ -624,10 +506,6 @@ public interface SplitButton : IModelElement
   /// <summary>
   /// Gets or sets the dropdown menu component of the split button containing additional options.
   /// </summary>
-  /// <value>
-  /// A <see cref="MenuRegular"/> object defining the menu items that appear when the dropdown arrow is clicked.
-  /// If <see langword="null"/>, the split button has no dropdown menu (defeating its purpose as a split button).
-  /// </value>
   /// <remarks>
   /// <para>
   /// The menu component contains the alternative actions or options related to the primary button.

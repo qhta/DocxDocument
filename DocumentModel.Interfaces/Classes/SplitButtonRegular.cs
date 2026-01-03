@@ -117,10 +117,6 @@ public interface SplitButtonRegular : IModelElement
   /// <summary>
   /// Gets or sets whether the split button is enabled and can be interacted with.
   /// </summary>
-  /// <value>
-  /// <see langword="true"/> if the split button is enabled; <see langword="false"/> if it is disabled and grayed out.
-  /// If <see langword="null"/>, the button is enabled by default.
-  /// </value>
   /// <remarks>
   /// <para>
   /// When a regular split button is disabled:
@@ -140,18 +136,12 @@ public interface SplitButtonRegular : IModelElement
   /// <item><description>Feature requires specific conditions (network connection, external data source)</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public bool? Enabled { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the callback function that dynamically determines whether the button is enabled.
   /// </summary>
-  /// <value>
-  /// A string containing the callback function name that returns the button's enabled state.
-  /// If <see langword="null"/>, the static <see cref="Enabled"/> property is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The getEnabled callback allows the regular split button's enabled state to respond dynamically to:
@@ -166,18 +156,12 @@ public interface SplitButtonRegular : IModelElement
   /// The callback function receives a control parameter and should return a boolean value.
   /// Office calls this function when menus are displayed or when the interface needs to update.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? GetEnabled { get; set; }
 
   /// <summary>
   /// Gets or sets the unique identifier for this split button.
   /// </summary>
-  /// <value>
-  /// A string containing a unique ID for the split button within the menu or UI context.
-  /// If <see langword="null"/>, the button has no explicit identifier.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The ID is used to uniquely identify this regular split button for:
@@ -193,18 +177,12 @@ public interface SplitButtonRegular : IModelElement
   /// the split button appears. Use descriptive names that indicate context and purpose
   /// (e.g., "contextMenuPaste", "backstageExport", "dialogAccept").
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? Id { get; set; }
 
   /// <summary>
   /// Gets or sets the namespace-qualified identifier for this split button.
   /// </summary>
-  /// <value>
-  /// A string containing the fully qualified ID, typically in the format "namespace:id".
-  /// If <see langword="null"/>, no qualified identifier is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The qualified ID allows regular split buttons to be organized into namespaces, preventing naming
@@ -219,18 +197,12 @@ public interface SplitButtonRegular : IModelElement
   /// <item><description>Avoiding ID collisions in complex menu hierarchies</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? QualifiedId { get; set; }
 
   /// <summary>
   /// Gets or sets an arbitrary tag value for application-specific purposes.
   /// </summary>
-  /// <value>
-  /// A string containing custom metadata or categorization information for the split button.
-  /// If <see langword="null"/>, no tag is assigned.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The tag property provides flexible storage for custom metadata used in application logic.
@@ -243,18 +215,12 @@ public interface SplitButtonRegular : IModelElement
   /// <item><description>Implementing custom menu behavior or grouping logic</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? Tag { get; set; }
 
   /// <summary>
   /// Gets or sets the Microsoft Office built-in control identifier to customize or reference.
   /// </summary>
-  /// <value>
-  /// A string containing the Office-defined control ID (e.g., "Paste", "FileSave").
-  /// If <see langword="null"/>, the split button is not associated with a built-in control.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The idMso (ID Microsoft Office) property serves two purposes for regular split buttons:
@@ -268,18 +234,12 @@ public interface SplitButtonRegular : IModelElement
   /// or add additional items to the dropdown menu. This allows seamless integration of custom functionality
   /// with Office's native context menu and Backstage commands.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? IdMso { get; set; }
 
   /// <summary>
   /// Gets or sets the ID of a built-in Office control after which this split button should be inserted.
   /// </summary>
-  /// <value>
-  /// A string containing the Office control ID (idMso) that this split button should follow.
-  /// If <see langword="null"/>, no after-insertion positioning is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The insertAfterMso property allows precise positioning of custom split buttons within context menus
@@ -294,18 +254,12 @@ public interface SplitButtonRegular : IModelElement
   /// For example, setting insertAfterMso="Paste" in a context menu places the custom split button
   /// immediately after the built-in Paste command.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? InsertAfterMso { get; set; }
 
   /// <summary>
   /// Gets or sets the ID of a built-in Office control before which this split button should be inserted.
   /// </summary>
-  /// <value>
-  /// A string containing the Office control ID (idMso) that this split button should precede.
-  /// If <see langword="null"/>, no before-insertion positioning is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The insertBeforeMso property allows precise positioning of custom split buttons by placing them
@@ -317,25 +271,17 @@ public interface SplitButtonRegular : IModelElement
   /// For example, setting insertBeforeMso="Copy" in a context menu places the custom split button
   /// immediately before the built-in Copy command.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? InsertBeforeMso { get; set; }
 
   /// <summary>
   /// Gets or sets the qualified ID of a custom control after which this split button should be inserted.
   /// </summary>
-  /// <value>
-  /// A string containing the namespace-qualified ID of a custom control that this split button should follow.
-  /// If <see langword="null"/>, no after-insertion positioning relative to custom controls is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The insertAfterQualifiedId property enables positioning relative to other custom controls
   /// (rather than built-in Office controls) in menus and Backstage pages. This is important when multiple
   /// add-ins or customizations need to coordinate their layout and establish a specific order for custom controls.
-  /// </para>
-  /// <para>
   /// </para>
   /// </remarks>
   public string? InsertAfterQualifiedId { get; set; }
@@ -343,17 +289,11 @@ public interface SplitButtonRegular : IModelElement
   /// <summary>
   /// Gets or sets the qualified ID of a custom control before which this split button should be inserted.
   /// </summary>
-  /// <value>
-  /// A string containing the namespace-qualified ID of a custom control that this split button should precede.
-  /// If <see langword="null"/>, no before-insertion positioning relative to custom controls is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The insertBeforeQualifiedId property enables positioning relative to other custom controls
   /// (rather than built-in Office controls) in menus and Backstage pages. This allows fine-grained
   /// control over the order of custom split buttons and other custom controls.
-  /// </para>
-  /// <para>
   /// </para>
   /// </remarks>
   public string? InsertBeforeQualifiedId { get; set; }
@@ -361,10 +301,6 @@ public interface SplitButtonRegular : IModelElement
   /// <summary>
   /// Gets or sets whether the split button is visible in the menu or interface.
   /// </summary>
-  /// <value>
-  /// <see langword="true"/> if the split button is visible; <see langword="false"/> if it is hidden.
-  /// If <see langword="null"/>, the button is visible by default.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Visibility control allows regular split buttons to appear or disappear in context menus,
@@ -380,18 +316,12 @@ public interface SplitButtonRegular : IModelElement
   /// Hidden controls do not appear in menus and cannot be accessed. Use visibility to create
   /// context-aware menus that only show relevant commands for the current situation.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public bool? Visible { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the callback function that dynamically determines whether the button is visible.
   /// </summary>
-  /// <value>
-  /// A string containing the callback function name that returns the button's visibility state.
-  /// If <see langword="null"/>, the static <see cref="Visible"/> property is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The getVisible callback enables dynamic visibility for regular split buttons based on runtime conditions:
@@ -406,18 +336,12 @@ public interface SplitButtonRegular : IModelElement
   /// The callback function receives a control parameter and should return a boolean value.
   /// Dynamic visibility creates intelligent, context-aware menus that adapt to user needs.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? GetVisible { get; set; }
 
   /// <summary>
   /// Gets or sets the keyboard shortcut (keytip) that activates this split button.
   /// </summary>
-  /// <value>
-  /// A string containing one or more characters that serve as the keyboard shortcut.
-  /// If <see langword="null"/>, no keytip is assigned.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Keytips provide keyboard access to regular split buttons in menus and Backstage pages.
@@ -435,18 +359,12 @@ public interface SplitButtonRegular : IModelElement
   /// of the split button (not the dropdown). Additional keyboard interaction may be needed to access
   /// the dropdown menu items.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? Keytip { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the callback function that dynamically provides the keytip value.
   /// </summary>
-  /// <value>
-  /// A string containing the callback function name that returns the keytip text.
-  /// If <see langword="null"/>, the static <see cref="Keytip"/> property is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The getKeytip callback allows context-sensitive keyboard shortcuts that adapt to:
@@ -459,18 +377,12 @@ public interface SplitButtonRegular : IModelElement
   /// <para>
   /// The callback function receives a control parameter and should return a string value.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? GetKeytip { get; set; }
 
   /// <summary>
   /// Gets or sets whether the text label is displayed alongside the icon.
   /// </summary>
-  /// <value>
-  /// <see langword="true"/> if the label should be shown; <see langword="false"/> if only the icon is displayed.
-  /// If <see langword="null"/>, default label behavior is used (typically shown in menus).
-  /// </value>
   /// <remarks>
   /// <para>
   /// Label visibility in menus and Backstage affects usability:
@@ -483,18 +395,12 @@ public interface SplitButtonRegular : IModelElement
   /// Context menus typically always show labels for clarity, while Backstage pages may offer more
   /// flexibility in label display based on layout and space constraints.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public bool? ShowLabel { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the callback function that dynamically determines whether the label is shown.
   /// </summary>
-  /// <value>
-  /// A string containing the callback function name that returns the label visibility state.
-  /// If <see langword="null"/>, the static <see cref="ShowLabel"/> property is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The getShowLabel callback enables dynamic label visibility based on:
@@ -507,19 +413,12 @@ public interface SplitButtonRegular : IModelElement
   /// <para>
   /// The callback function receives a control parameter and should return a boolean value.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? GetShowLabel { get; set; }
 
   /// <summary>
   /// Gets or sets the primary button component of the split button that executes the default action.
   /// </summary>
-  /// <value>
-  /// A <see cref="VisibleButton"/> object defining the primary button's appearance and behavior.
-  /// If <see langword="null"/>, no primary button is defined (typically one of <see cref="VisibleButton"/>
-  /// or <see cref="VisibleToggleButton"/> must be set).
-  /// </value>
   /// <remarks>
   /// <para>
   /// The visible button represents the main action portion of the regular split button. When users click
@@ -540,11 +439,6 @@ public interface SplitButtonRegular : IModelElement
   /// <summary>
   /// Gets or sets the primary toggle button component of the split button that toggles a feature on/off.
   /// </summary>
-  /// <value>
-  /// A <see cref="VisibleToggleButton"/> object defining the primary toggle button's appearance and behavior.
-  /// If <see langword="null"/>, no primary toggle button is defined (typically one of <see cref="VisibleButton"/>
-  /// or <see cref="VisibleToggleButton"/> must be set).
-  /// </value>
   /// <remarks>
   /// <para>
   /// The visible toggle button provides a primary action that switches between two states (on/off, pressed/unpressed).
@@ -565,10 +459,6 @@ public interface SplitButtonRegular : IModelElement
   /// <summary>
   /// Gets or sets the dropdown menu component of the split button containing additional options.
   /// </summary>
-  /// <value>
-  /// A <see cref="MenuRegular"/> object defining the menu items that appear when the dropdown arrow is clicked.
-  /// If <see langword="null"/>, the split button has no dropdown menu (defeating its purpose as a split button).
-  /// </value>
   /// <remarks>
   /// <para>
   /// The menu component contains alternative actions or options related to the primary button.

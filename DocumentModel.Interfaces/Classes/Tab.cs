@@ -133,10 +133,6 @@ public interface Tab : IModelElement
   /// <summary>
   /// Gets or sets the unique identifier for this custom tab.
   /// </summary>
-  /// <value>
-  /// A string containing a unique ID for the tab within the ribbon customization.
-  /// If <see langword="null"/>, the tab has no explicit identifier.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The ID is used to uniquely identify this tab for:
@@ -152,18 +148,12 @@ public interface Tab : IModelElement
   /// of the tab's purpose (e.g., "customDataTab", "myAddInHomeTab", "reportingTab").
   /// Use consistent naming conventions across your ribbon customization for maintainability.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? Id { get; set; }
 
   /// <summary>
   /// Gets or sets the namespace-qualified identifier for this tab.
   /// </summary>
-  /// <value>
-  /// A string containing the fully qualified ID, typically in the format "namespace:id".
-  /// If <see langword="null"/>, no qualified identifier is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The qualified ID allows tabs to be organized into namespaces, preventing naming conflicts
@@ -182,18 +172,12 @@ public interface Tab : IModelElement
   /// <para>
   /// Example: "MyCompany.CRM:customerTab" clearly identifies the tab's ownership and purpose.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? QualifiedId { get; set; }
 
   /// <summary>
   /// Gets or sets an arbitrary tag value for application-specific purposes.
   /// </summary>
-  /// <value>
-  /// A string containing custom metadata or categorization information for the tab.
-  /// If <see langword="null"/>, no tag is assigned.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The tag property provides flexible storage for custom metadata used in application logic.
@@ -210,18 +194,12 @@ public interface Tab : IModelElement
   /// Tags can be used in callback logic to implement dynamic behavior across groups of tabs,
   /// such as hiding all tabs marked with a specific tag when a feature is disabled.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? Tag { get; set; }
 
   /// <summary>
   /// Gets or sets the Microsoft Office built-in tab identifier to customize or reference.
   /// </summary>
-  /// <value>
-  /// A string containing the Office-defined tab ID (e.g., "TabHome", "TabInsert", "TabView").
-  /// If <see langword="null"/>, the tab is not associated with a built-in Office tab.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The idMso (ID Microsoft Office) property serves two purposes:
@@ -252,18 +230,12 @@ public interface Tab : IModelElement
   /// <item><description>Custom groups are typically added at the end unless positioned explicitly</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? IdMso { get; set; }
 
   /// <summary>
   /// Gets or sets the display label text for the tab that appears in the ribbon.
   /// </summary>
-  /// <value>
-  /// A string containing the tab's display text. If <see langword="null"/>, no label is displayed
-  /// (typically results in an invalid tab).
-  /// </value>
   /// <remarks>
   /// <para>
   /// The label is the visible text users see in the ribbon tab bar and is crucial for:
@@ -294,18 +266,12 @@ public interface Tab : IModelElement
   /// <item><description>"Data Import" - Specific task-oriented</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? Label { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the callback function that dynamically provides the tab's label text.
   /// </summary>
-  /// <value>
-  /// A string containing the callback function name that returns the tab's display text.
-  /// If <see langword="null"/>, the static <see cref="Label"/> property is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The getLabel callback enables dynamic tab labels that adapt to:
@@ -329,18 +295,12 @@ public interface Tab : IModelElement
   /// <item><description>Tabs that display status or state information in their label</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? GetLabel { get; set; }
 
   /// <summary>
   /// Gets or sets the ID of a built-in Office tab after which this custom tab should be inserted.
   /// </summary>
-  /// <value>
-  /// A string containing the Office tab ID (idMso) that this custom tab should follow.
-  /// If <see langword="null"/>, no after-insertion positioning is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The insertAfterMso property allows precise positioning of custom tabs within the ribbon
@@ -364,18 +324,12 @@ public interface Tab : IModelElement
   /// For example, setting insertAfterMso="TabHome" places the custom tab immediately after
   /// the built-in Home tab, making it the second tab in the ribbon (in most cases).
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? InsertAfterMso { get; set; }
 
   /// <summary>
   /// Gets or sets the ID of a built-in Office tab before which this custom tab should be inserted.
   /// </summary>
-  /// <value>
-  /// A string containing the Office tab ID (idMso) that this custom tab should precede.
-  /// If <see langword="null"/>, no before-insertion positioning is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The insertBeforeMso property allows precise positioning of custom tabs by placing them
@@ -395,18 +349,12 @@ public interface Tab : IModelElement
   /// <item><description>Creating a logical workflow where your tab's content leads into an Office tab's features</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? InsertBeforeMso { get; set; }
 
   /// <summary>
   /// Gets or sets the qualified ID of a custom tab after which this tab should be inserted.
   /// </summary>
-  /// <value>
-  /// A string containing the namespace-qualified ID of a custom tab that this tab should follow.
-  /// If <see langword="null"/>, no after-insertion positioning relative to custom tabs is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The insertAfterQualifiedId property enables positioning relative to other custom tabs
@@ -422,18 +370,12 @@ public interface Tab : IModelElement
   /// For example, if you have multiple related add-ins from your company, you might position
   /// them relative to each other: "MyCompany.CRM:mainTab" followed by "MyCompany.Reports:mainTab".
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? InsertAfterQualifiedId { get; set; }
 
   /// <summary>
   /// Gets or sets the qualified ID of a custom tab before which this tab should be inserted.
   /// </summary>
-  /// <value>
-  /// A string containing the namespace-qualified ID of a custom tab that this tab should precede.
-  /// If <see langword="null"/>, no before-insertion positioning relative to custom tabs is specified.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The insertBeforeQualifiedId property enables positioning relative to other custom tabs
@@ -448,18 +390,12 @@ public interface Tab : IModelElement
   /// <item><description>Creating dependencies between add-ins where tab order matters</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? InsertBeforeQualifiedId { get; set; }
 
   /// <summary>
   /// Gets or sets whether the tab is visible in the ribbon.
   /// </summary>
-  /// <value>
-  /// <see langword="true"/> if the tab is visible; <see langword="false"/> if it is hidden.
-  /// If <see langword="null"/>, the tab is visible by default.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Tab visibility control allows tabs to appear or disappear based on:
@@ -489,18 +425,12 @@ public interface Tab : IModelElement
   /// <item><description>Use contextual tabs (appear/disappear with selection) for selection-specific commands</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public bool? Visible { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the callback function that dynamically determines whether the tab is visible.
   /// </summary>
-  /// <value>
-  /// A string containing the callback function name that returns the tab's visibility state.
-  /// If <see langword="null"/>, the static <see cref="Visible"/> property is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The getVisible callback enables dynamic tab visibility based on runtime conditions such as:
@@ -526,18 +456,12 @@ public interface Tab : IModelElement
   /// <item><description><b>Clean UI:</b> Hiding irrelevant tabs to reduce clutter and cognitive load</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? GetVisible { get; set; }
 
   /// <summary>
   /// Gets or sets the keyboard shortcut (keytip) that activates this tab.
   /// </summary>
-  /// <value>
-  /// A string containing one or more characters that serve as the keyboard shortcut for this tab.
-  /// If <see langword="null"/>, no keytip is assigned (Office may auto-assign one).
-  /// </value>
   /// <remarks>
   /// <para>
   /// Keytips appear when users press the Alt key, displaying keyboard shortcuts for ribbon tabs and controls.
@@ -571,18 +495,12 @@ public interface Tab : IModelElement
   /// If keytip conflicts exist, Office will modify the keytip display (showing two-character sequences),
   /// but it's better to avoid conflicts through careful selection.
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? Keytip { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the callback function that dynamically provides the keytip value.
   /// </summary>
-  /// <value>
-  /// A string containing the callback function name that returns the keytip text.
-  /// If <see langword="null"/>, the static <see cref="Keytip"/> property is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The getKeytip callback allows context-sensitive keyboard shortcuts that adapt to:
@@ -604,18 +522,12 @@ public interface Tab : IModelElement
   /// <item><description><b>Context awareness:</b> Different keytips for tabs with dynamic labels</description></item>
   /// </list>
   /// </para>
-  /// <para>
-  /// </para>
   /// </remarks>
   public string? GetKeytip { get; set; }
 
   /// <summary>
   /// Gets or sets the group or collection of groups contained within this tab.
   /// </summary>
-  /// <value>
-  /// A <see cref="Group"/> object defining the groups of controls that appear in this tab.
-  /// If <see langword="null"/>, the tab contains no groups (typically invalid for display purposes).
-  /// </value>
   /// <remarks>
   /// <para>
   /// Groups are the organizational units within a tab that contain individual controls (buttons, galleries,

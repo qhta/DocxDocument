@@ -21,19 +21,11 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the size of the cloned control in the ribbon.
   /// </summary>
-  /// <value>
-  ///   A <see cref="SizeKind"/> value specifying the control size, or <c>null</c> to use the source control's default size.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public SizeKind? Size { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the cloned control's size.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the size is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a <see cref="SizeKind"/> value.
   /// </remarks>
@@ -42,19 +34,11 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the cloned control is enabled and can be interacted with.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the control is enabled; <c>false</c> if disabled; or <c>null</c> to use the source control's enabled state.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public bool? Enabled { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines whether the cloned control is enabled.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the enabled state is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a boolean value indicating whether the control should be enabled.
   /// </remarks>
@@ -63,19 +47,11 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the description text that provides additional information about the cloned control.
   /// </summary>
-  /// <value>
-  ///   A string containing the description text, or <c>null</c> if no description is specified or to use the source control's description.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? Description { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the cloned control's description.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the description is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the description.
   /// </remarks>
@@ -84,9 +60,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the custom image identifier for the cloned control's icon.
   /// </summary>
-  /// <value>
-  ///   A string containing the image identifier, or <c>null</c> if no custom image is specified or to use the source control's image.
-  /// </value>
   /// <remarks>
   ///   The image identifier references a custom image resource included in the Office add-in.
   /// </remarks>
@@ -95,9 +68,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the Microsoft Office image identifier for the cloned control's icon.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office image identifier, or <c>null</c> if not using a built-in image or to use the source control's image.
-  /// </value>
   /// <remarks>
   ///   Use this to display a built-in Office icon for the control.
   /// </remarks>
@@ -106,9 +76,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the cloned control's image.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the image is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return an image object or identifier.
   /// </remarks>
@@ -117,10 +84,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the qualified identifier of the custom control to clone.
   /// </summary>
-  /// <value>
-  ///   A string containing the namespace-qualified identifier of the source control,
-  ///   or <c>null</c> if cloning a built-in control using <see cref="IdMso"/> instead.
-  /// </value>
   /// <remarks>
   ///   Use this to clone a previously defined custom control. Either <see cref="QualifiedId"/> or
   ///   <see cref="IdMso"/> should be specified to identify the source control, but typically not both.
@@ -130,9 +93,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets an arbitrary tag value for custom data storage.
   /// </summary>
-  /// <value>
-  ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
-  /// </value>
   /// <remarks>
   ///   The tag can be used to store application-specific information associated with this cloned control.
   /// </remarks>
@@ -141,10 +101,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the identifier of the built-in Microsoft Office control to clone.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office identifier of the source control,
-  ///   or <c>null</c> if cloning a custom control using <see cref="QualifiedId"/> instead.
-  /// </value>
   /// <remarks>
   ///   Use this to clone a built-in Office command or control. Either <see cref="IdMso"/> or
   ///   <see cref="QualifiedId"/> should be specified to identify the source control, but typically not both.
@@ -154,19 +110,11 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the screentip (tooltip) text for the cloned control.
   /// </summary>
-  /// <value>
-  ///   A string containing the screentip text, or <c>null</c> if no screentip is specified or to use the source control's screentip.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? Screentip { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the cloned control's screentip.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the screentip is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the screentip.
   /// </remarks>
@@ -175,9 +123,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the supertip (extended tooltip) text for the cloned control.
   /// </summary>
-  /// <value>
-  ///   A string containing the supertip text, or <c>null</c> if no supertip is specified or to use the source control's supertip.
-  /// </value>
   /// <remarks>
   ///   Supertips provide more detailed information than screentips.
   /// </remarks>
@@ -186,9 +131,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the cloned control's supertip.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the supertip is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the supertip.
   /// </remarks>
@@ -197,19 +139,11 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the display label for the cloned control.
   /// </summary>
-  /// <value>
-  ///   A string containing the label text, or <c>null</c> if no label is specified or to use the source control's label.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? Label { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the cloned control's label.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the label is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the label.
   /// </remarks>
@@ -218,9 +152,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the Microsoft Office identifier after which this cloned control should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the cloned control relative to a built-in control.
   /// </remarks>
@@ -229,9 +160,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the Microsoft Office identifier before which this cloned control should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the cloned control relative to a built-in control.
   /// </remarks>
@@ -240,9 +168,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the qualified identifier after which this cloned control should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the cloned control relative to another custom control.
   /// </remarks>
@@ -251,9 +176,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the qualified identifier before which this cloned control should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the cloned control relative to another custom control.
   /// </remarks>
@@ -262,19 +184,11 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the cloned control is visible.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the control is visible; <c>false</c> if hidden; or <c>null</c> to use the source control's visibility.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public bool? Visible { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the cloned control's visibility.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if visibility is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a boolean value indicating whether the control should be visible.
   /// </remarks>
@@ -283,9 +197,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the keyboard shortcut (keytip) for accessing the cloned control.
   /// </summary>
-  /// <value>
-  ///   A string containing the keytip character(s), or <c>null</c> if no keytip is specified or to use the source control's keytip.
-  /// </value>
   /// <remarks>
   ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
   /// </remarks>
@@ -294,9 +205,6 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the cloned control's keytip.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the keytip is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the keytip.
   /// </remarks>
@@ -305,19 +213,11 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the cloned control's label should be displayed.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the label is shown; <c>false</c> if hidden; or <c>null</c> to use the source control's label visibility.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public bool? ShowLabel { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines whether the label is shown.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if label visibility is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a boolean value indicating whether the label should be displayed.
   /// </remarks>
@@ -326,19 +226,11 @@ public interface ControlClone : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the cloned control's image should be displayed.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the image is shown; <c>false</c> if hidden; or <c>null</c> to use the source control's image visibility.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public bool? ShowImage { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines whether the image is shown.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if image visibility is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a boolean value indicating whether the image should be displayed.
   /// </remarks>

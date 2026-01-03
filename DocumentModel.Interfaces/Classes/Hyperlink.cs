@@ -21,19 +21,11 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the unique identifier for this hyperlink control.
   /// </summary>
-  /// <value>
-  ///   A string containing the identifier, or <c>null</c> if no identifier is specified.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? Id { get; set; }
 
   /// <summary>
   ///   Gets or sets the qualified identifier for this hyperlink control.
   /// </summary>
-  /// <value>
-  ///   A string containing the namespace-qualified identifier, or <c>null</c> if not specified.
-  /// </value>
   /// <remarks>
   ///   Use this when the identifier needs to be unique across multiple namespaces.
   /// </remarks>
@@ -42,9 +34,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets an arbitrary tag value for custom data storage.
   /// </summary>
-  /// <value>
-  ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
-  /// </value>
   /// <remarks>
   ///   The tag can be used to store application-specific information associated with this hyperlink.
   /// </remarks>
@@ -53,10 +42,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the alignment behavior of the hyperlink label.
   /// </summary>
-  /// <value>
-  ///   An <see cref="ExpandKind"/> value specifying how the label aligns or expands,
-  ///   or <c>null</c> to use the default alignment behavior.
-  /// </value>
   /// <remarks>
   ///   This controls whether the label expands horizontally, vertically, or both to utilize available layout space.
   /// </remarks>
@@ -65,10 +50,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the expansion behavior of the hyperlink control.
   /// </summary>
-  /// <value>
-  ///   An <see cref="ExpandKind"/> value specifying how the hyperlink expands to fill available space,
-  ///   or <c>null</c> to use the default expansion behavior.
-  /// </value>
   /// <remarks>
   ///   This controls whether the hyperlink expands horizontally, vertically, or both to utilize available layout space.
   /// </remarks>
@@ -77,19 +58,11 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the hyperlink is enabled and can be clicked.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the hyperlink is enabled; <c>false</c> if disabled; or <c>null</c> to use the default enabled state.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public bool? Enabled { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines whether the hyperlink is enabled.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the enabled state is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a boolean value indicating whether the hyperlink should be enabled.
   /// </remarks>
@@ -98,19 +71,11 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the hyperlink is visible.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the hyperlink is visible; <c>false</c> if hidden; or <c>null</c> to use the default visibility.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public bool? Visible { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the hyperlink's visibility.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if visibility is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a boolean value indicating whether the hyperlink should be visible.
   /// </remarks>
@@ -119,9 +84,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the keyboard shortcut (keytip) for accessing the hyperlink.
   /// </summary>
-  /// <value>
-  ///   A string containing the keytip character(s), or <c>null</c> if no keytip is specified.
-  /// </value>
   /// <remarks>
   ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
   /// </remarks>
@@ -130,9 +92,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the hyperlink's keytip.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the keytip is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the keytip.
   /// </remarks>
@@ -141,9 +100,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the display label for the hyperlink.
   /// </summary>
-  /// <value>
-  ///   A string containing the label text, or <c>null</c> if no label is specified.
-  /// </value>
   /// <remarks>
   ///   The label is the clickable text that appears to the user, typically describing the link destination
   ///   or action (e.g., "Learn more", "View online help", "Open related document").
@@ -153,9 +109,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the hyperlink's label.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the label is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the label.
   /// </remarks>
@@ -164,9 +117,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the name of the callback function executed when the hyperlink is clicked.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if using default navigation behavior.
-  /// </value>
   /// <remarks>
   ///   When specified, this callback overrides the default navigation to the <see cref="Target"/> URL,
   ///   allowing custom handling of the hyperlink click event. This is useful for implementing complex
@@ -177,9 +127,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the custom image identifier for the hyperlink icon.
   /// </summary>
-  /// <value>
-  ///   A string containing the image identifier, or <c>null</c> if no custom image is specified.
-  /// </value>
   /// <remarks>
   ///   The image identifier references a custom image resource included in the Office add-in.
   ///   The image appears next to the hyperlink label.
@@ -189,9 +136,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the Microsoft Office image identifier for the hyperlink icon.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office image identifier, or <c>null</c> if not using a built-in image.
-  /// </value>
   /// <remarks>
   ///   Use this to display a built-in Office icon next to the hyperlink label.
   /// </remarks>
@@ -200,9 +144,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the hyperlink's image.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the image is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return an image object or identifier.
   /// </remarks>
@@ -211,9 +152,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the screentip (tooltip) text for the hyperlink.
   /// </summary>
-  /// <value>
-  ///   A string containing the screentip text, or <c>null</c> if no screentip is specified.
-  /// </value>
   /// <remarks>
   ///   The screentip appears when the user hovers over the hyperlink, providing brief information
   ///   about the link destination or purpose.
@@ -223,9 +161,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the hyperlink's screentip.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the screentip is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the screentip.
   /// </remarks>
@@ -234,9 +169,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the supertip (extended tooltip) text for the hyperlink.
   /// </summary>
-  /// <value>
-  ///   A string containing the supertip text, or <c>null</c> if no supertip is specified.
-  /// </value>
   /// <remarks>
   ///   Supertips provide more detailed information than screentips, typically including a description
   ///   of what the user can expect when clicking the hyperlink.
@@ -246,9 +178,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the hyperlink's supertip.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the supertip is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value for the supertip.
   /// </remarks>
@@ -257,10 +186,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the target URL or location that the hyperlink navigates to when clicked.
   /// </summary>
-  /// <value>
-  ///   A string containing the target URL (e.g., "https://example.com", "file:///C:/path/to/document.docx"),
-  ///   or <c>null</c> if no target is specified or navigation is handled by <see cref="OnAction"/>.
-  /// </value>
   /// <remarks>
   ///   The target can be a web URL (http:// or https://), a file path (file:///), a mailto link (mailto:),
   ///   or other URI schemes supported by the operating system. When both <see cref="Target"/> and
@@ -271,9 +196,6 @@ public interface Hyperlink : IModelElement
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the hyperlink's target URL.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if the target is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a string value containing the target URL or location.
   ///   This enables dynamic link destinations based on application state, user preferences, or other runtime conditions.
