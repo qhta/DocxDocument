@@ -6,5 +6,5 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface TextData: IModelElement
 {
   public OpenXmlFormulaElement? Formula { get; set; }
-  public string? VXsdstring { get; set; }
+  public string? VXsdString { get; set; }
 }
