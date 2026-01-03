@@ -6,7 +6,7 @@ public interface TableGrid: BaseTableGrid
 {
   
   /// <summary>
-  /// Change record of previous Table Grid.
+  /// Change interface of previous Table Grid.
   /// </summary>
   public TableGridChange? TableGridChange { get; set; }
 }

@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FontSignature Class.
 /// </summary>
-public record FontSignature
+public interface FontSignature
 {
   /// <summary>
   ///   First 32 Bits of Unicode Subset Bitfield
@@ -38,5 +38,5 @@ public record FontSignature
   /// Items collecting 6 parts
   /// </summary>
   [XmlIgnore]
-  public IHexInt[] Items { get; } = new IHexInt[6];
+  public IHexInt[] Items { get; } 
 }
