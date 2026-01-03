@@ -1,24 +1,72 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the AxisUnitsLabel Class.
+///   Represents the label displayed for axis units in a chart.
 /// </summary>
-public interface AxisUnitsLabel: IModelElement
+/// <remarks>
+///   This interface extends <see cref="IModelElement"/> and defines the label element that describes
+///   the units or scale applied to a chart axis. The axis units label provides textual context for the
+///   magnitude or measurement type of axis values (e.g., "in millions", "°Celsius", "USD", "percentage").
+///   The label includes text content, visual styling properties through shape properties, text formatting
+///   properties, and support for custom extensions. This label helps users interpret axis values correctly
+///   by clarifying the scale factor or measurement unit, particularly when axis values are displayed in
+///   abbreviated or scaled format. The label can be extensively customized in terms of appearance,
+///   positioning, and text formatting to match the chart's overall design.
+/// </remarks>
+public interface AxisUnitsLabel : IModelElement
 {
   /// <summary>
-  ///   Text.
+  ///   Gets or sets the text content displayed as the axis units label.
   /// </summary>
+  /// <value>
+  ///   A <see cref="Text"/> object containing the label text and its properties,
+  ///   or <c>null</c> if no label text is specified.
+  /// </value>
+  /// <remarks>
+  ///   The text content defines what unit description is displayed, providing clarity about the scale
+  ///   or measurement type (e.g., "(thousands)", "millions", "°F", "%"). This can include plain text
+  ///   or rich text with formatting.
+  /// </remarks>
   public Text? Text { get; set; }
+
   /// <summary>
-  ///   ShapeProperties.
+  ///   Gets or sets the visual styling properties for the axis units label.
   /// </summary>
+  /// <value>
+  ///   A <see cref="ShapeProperties"/> object defining fill, line, and effect properties,
+  ///   or <c>null</c> if default styling is used.
+  /// </value>
+  /// <remarks>
+  ///   Shape properties control the visual appearance of the label element, including background fill,
+  ///   border styling, shadows, and other visual effects that enhance the label's presentation and
+  ///   ensure it stands out appropriately within the chart.
+  /// </remarks>
   public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  ///   TxPrTextBody.
+  ///   Gets or sets the text formatting properties for the axis units label.
   /// </summary>
+  /// <value>
+  ///   A <see cref="TxPrTextBody"/> object defining font, alignment, and paragraph properties,
+  ///   or <c>null</c> if default text formatting is used.
+  /// </value>
+  /// <remarks>
+  ///   Text properties control the formatting of the label text, including font family, size, color,
+  ///   style (bold, italic), alignment, rotation, and spacing. This enables precise control over
+  ///   the label's typographic appearance and ensures readability alongside axis values.
+  /// </remarks>
   public TxPrTextBody? TxPrTextBody { get; set; }
+
   /// <summary>
-  ///   ExtensionList.
+  ///   Gets or sets the collection of extension elements for future extensibility.
   /// </summary>
+  /// <value>
+  ///   An <see cref="ExtensionList"/> containing extension elements,
+  ///   or <c>null</c> if no extensions are defined.
+  /// </value>
+  /// <remarks>
+  ///   Extension elements allow for future enhancements and custom properties without breaking
+  ///   compatibility with existing implementations.
+  /// </remarks>
   public ExtensionList? ExtensionList { get; set; }
 }

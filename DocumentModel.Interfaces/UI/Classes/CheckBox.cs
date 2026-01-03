@@ -1,7 +1,7 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-///   Defines the ICheckBox Class.
+///   Defines the CheckBox Class.
 /// </summary>
 public interface CheckBox: IModelElement
 {
