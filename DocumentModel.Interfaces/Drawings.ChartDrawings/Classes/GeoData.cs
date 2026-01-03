@@ -28,10 +28,6 @@ public interface GeoData : IModelElement
   /// <summary>
   ///   Gets or sets the human-readable name of the geographic entity.
   /// </summary>
-  /// <value>
-  ///   A string containing the entity's display name,
-  ///   or <c>null</c> if no name is specified.
-  /// </value>
   /// <remarks>
    ///   The entity name provides a human-readable identifier for the geographic region, such as "United States",
   ///   "California", "Tokyo", or "European Union". This name is typically used for display purposes in chart labels,
@@ -46,10 +42,6 @@ public interface GeoData : IModelElement
   /// <summary>
   ///   Gets or sets the unique identifier for the geographic entity.
   /// </summary>
-  /// <value>
-  ///   A string containing the entity's unique identifier,
-  ///   or <c>null</c> if no identifier is specified.
-  /// </value>
   /// <remarks>
    ///   The entity identifier provides a machine-readable, unique reference for the geographic region that remains
   ///   consistent across different localizations, data updates, and provider versions. Common identifier schemes
@@ -66,10 +58,6 @@ public interface GeoData : IModelElement
   /// <summary>
   ///   Gets or sets the eastern longitude boundary of the entity's bounding box.
   /// </summary>
-  /// <value>
-  ///   A double-precision floating-point value representing the eastern longitude in decimal degrees,
-  ///   or <c>null</c> if the eastern boundary is not specified.
-  /// </value>
   /// <remarks>
    ///   The eastern longitude defines the rightmost boundary of the geographic entity's extent in the standard
   ///   geographic coordinate system, using decimal degrees where values range from -180 (180°W) to +180 (180°E).
@@ -83,10 +71,6 @@ public interface GeoData : IModelElement
   /// <summary>
   ///   Gets or sets the western longitude boundary of the entity's bounding box.
   /// </summary>
-  /// <value>
-  ///   A double-precision floating-point value representing the western longitude in decimal degrees,
-  ///   or <c>null</c> if the western boundary is not specified.
-  /// </value>
   /// <remarks>
    ///   The western longitude defines the leftmost boundary of the geographic entity's extent in the standard
   ///   geographic coordinate system, using decimal degrees where values range from -180 (180°W) to +180 (180°E).
@@ -99,10 +83,6 @@ public interface GeoData : IModelElement
   /// <summary>
   ///   Gets or sets the northern latitude boundary of the entity's bounding box.
   /// </summary>
-  /// <value>
-  ///   A double-precision floating-point value representing the northern latitude in decimal degrees,
-  ///   or <c>null</c> if the northern boundary is not specified.
-  /// </value>
   /// <remarks>
    ///   The northern latitude defines the uppermost boundary of the geographic entity's extent in the standard
   ///   geographic coordinate system, using decimal degrees where values range from -90 (90°S) to +90 (90°N).
@@ -114,10 +94,6 @@ public interface GeoData : IModelElement
   /// <summary>
   ///   Gets or sets the southern latitude boundary of the entity's bounding box.
   /// </summary>
-  /// <value>
-  ///   A double-precision floating-point value representing the southern latitude in decimal degrees,
-  ///   or <c>null</c> if the southern boundary is not specified.
-  /// </value>
   /// <remarks>
    ///   The southern latitude defines the lowermost boundary of the geographic entity's extent in the standard
   ///   geographic coordinate system, using decimal degrees where values range from -90 (90°S) to +90 (90°N).
@@ -130,10 +106,6 @@ public interface GeoData : IModelElement
   /// <summary>
   ///   Gets or sets the collection of polygons that define the precise geographic boundaries of the entity.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoPolygons"/> object containing the boundary polygon definitions,
-  ///   or <c>null</c> if no boundary polygons are defined.
-  /// </value>
   /// <remarks>
   ///   The geographic polygons provide detailed, accurate boundary definitions for the entity, enabling precise
   ///   rendering of the region's shape on map charts. Unlike the bounding box (which provides a simple rectangular
@@ -152,10 +124,6 @@ public interface GeoData : IModelElement
   /// <summary>
   ///   Gets or sets the copyright information for the geographic data.
   /// </summary>
-  /// <value>
-  ///   A <see cref="Copyrights"/> object containing copyright notices and attributions,
-  ///   or <c>null</c> if no copyright information is specified.
-  /// </value>
   /// <remarks>
   ///   The copyright information provides proper attribution for the geographic data sources, ensuring legal
   ///   compliance and acknowledging the providers of the boundary data, coordinates, and other geographic

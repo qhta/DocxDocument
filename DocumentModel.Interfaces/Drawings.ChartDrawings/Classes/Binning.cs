@@ -17,10 +17,6 @@ public interface Binning : IModelElement
   /// <summary>
   ///   Gets or sets which side of the interval boundary is included in the bin.
   /// </summary>
-  /// <value>
-  ///   An <see cref="IntervalClosedSide"/> value specifying whether intervals are closed on the left or right,
-  ///   or <c>null</c> to use the default interval closure behavior.
-  /// </value>
   /// <remarks>
    ///   Interval closure determines whether boundary values belong to the lower or upper bin. For example,
   ///   with left-closed intervals [0, 10), a value of 10 belongs to the next bin [10, 20). With right-closed
@@ -32,10 +28,6 @@ public interface Binning : IModelElement
   /// <summary>
   ///   Gets or sets the threshold value for the underflow bin.
   /// </summary>
-  /// <value>
-  ///   A string containing the numeric threshold for underflow values,
-  ///   or <c>null</c> if no underflow bin is defined.
-  /// </value>
   /// <remarks>
    ///   The underflow value defines the lower boundary below which all values are grouped into a single
   ///   underflow bin. This is useful for handling outliers or extreme low values that would otherwise
@@ -46,10 +38,6 @@ public interface Binning : IModelElement
   /// <summary>
   ///   Gets or sets the threshold value for the overflow bin.
   /// </summary>
-  /// <value>
-  ///   A string containing the numeric threshold for overflow values,
-  ///   or <c>null</c> if no overflow bin is defined.
-  /// </value>
   /// <remarks>
    ///   The overflow value defines the upper boundary above which all values are grouped into a single
   ///   overflow bin. This is useful for handling outliers or extreme high values that would otherwise
@@ -60,10 +48,6 @@ public interface Binning : IModelElement
   /// <summary>
   ///   Gets or sets the width of each bin interval.
   /// </summary>
-  /// <value>
-  ///   A string containing the numeric bin width value,
-  ///   or <c>null</c> if bin width is not specified (using bin count instead).
-  /// </value>
   /// <remarks>
   ///   The bin width determines the size of each interval in the histogram. For example, a bin width
   ///   of 10 creates bins like [0-10), [10-20), [20-30), etc. Either <see cref="Xsddouble"/> (bin width)
@@ -75,10 +59,6 @@ public interface Binning : IModelElement
   /// <summary>
   ///   Gets or sets the number of bins to create for the histogram.
   /// </summary>
-  /// <value>
-  ///   A string containing the unsigned integer bin count value,
-  ///   or <c>null</c> if bin count is not specified (using bin width instead).
-  /// </value>
   /// <remarks>
   ///   The bin count determines how many bins to create by dividing the data range into equal intervals.
   ///   For example, a bin count of 10 divides the range between minimum and maximum values into 10 equal bins.

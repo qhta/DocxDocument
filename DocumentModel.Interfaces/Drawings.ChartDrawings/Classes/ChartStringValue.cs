@@ -19,10 +19,6 @@ public interface ChartStringValue : IModelElement
   /// <summary>
   ///   Gets or sets the zero-based index position of this string value within its collection.
   /// </summary>
-  /// <value>
-  ///   An unsigned 32-bit integer representing the index position,
-  ///   or <c>null</c> if no index is specified.
-  /// </value>
   /// <remarks>
    ///   The index determines the position of this string value within its parent collection, such as a
   ///   category axis labels collection or a data series labels collection. The index is zero-based,

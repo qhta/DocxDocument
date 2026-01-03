@@ -26,10 +26,6 @@ public interface GeoChildEntitiesQuery : IModelElement
   /// <summary>
   ///   Gets or sets the identifier of the parent geographic entity whose child entities are being queried.
   /// </summary>
-  /// <value>
-  ///   A string containing the parent entity's unique identifier,
-  ///   or <c>null</c> if no parent entity is specified.
-  /// </value>
   /// <remarks>
    ///   The entity identifier uniquely identifies the parent geographic entity for which child entities are being
   ///   requested. This ID typically corresponds to a geographic entity defined in the mapping service's data model,
@@ -47,10 +43,6 @@ public interface GeoChildEntitiesQuery : IModelElement
   /// <summary>
   ///   Gets or sets the types of child entities to retrieve in the query.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoChildTypes"/> object specifying which types of child entities to include,
-  ///   or <c>null</c> to retrieve all child entity types.
-  /// </value>
   /// <remarks>
   ///   The child types specification enables filtering of the query results to include only specific categories
   ///   of child entities, such as administrative divisions (states, provinces), statistical regions, cities, or

@@ -16,10 +16,6 @@ public interface DataStoreItem : IModelElement
   /// <summary>
   ///   Gets or sets the unique identifier for this custom XML data item.
   /// </summary>
-  /// <value>
-  ///   A string containing a GUID that uniquely identifies this custom XML data store,
-  ///   or <c>null</c> if no identifier is assigned.
-  /// </value>
   /// <remarks>
   ///   The identifier is typically a GUID in string format and is used to reference this specific
   ///   custom XML data store from other parts of the document, such as content controls that bind
@@ -30,10 +26,6 @@ public interface DataStoreItem : IModelElement
   /// <summary>
   ///   Gets or sets the collection of XML schema references associated with this custom XML data.
   /// </summary>
-  /// <value>
-  ///   A <see cref="SchemaReferences"/> object containing the set of schema references,
-  ///   or <c>null</c> if no schemas are associated with this data store.
-  /// </value>
   /// <remarks>
   ///   The schema references define the XML schemas that describe the structure and validation
   ///   rules for the custom XML data. Multiple schemas can be referenced to support complex

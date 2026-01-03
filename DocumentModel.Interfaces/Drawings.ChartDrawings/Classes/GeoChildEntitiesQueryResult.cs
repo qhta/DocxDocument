@@ -27,10 +27,6 @@ public interface GeoChildEntitiesQueryResult : IModelElement
   /// <summary>
   ///   Gets or sets the query specification that was used to retrieve the child entities.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoChildEntitiesQuery"/> object defining the query parameters,
-  ///   or <c>null</c> if no query specification is stored.
-  /// </value>
   /// <remarks>
   ///   The query specification preserves the parameters used to retrieve the child entities, including the parent
   ///   entity identifier and any child type filters that were applied. This enables cache validation by comparing
@@ -47,10 +43,6 @@ public interface GeoChildEntitiesQueryResult : IModelElement
   /// <summary>
   ///   Gets or sets the collection of child geographic entities retrieved by the query.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoChildEntities"/> object containing the child entities,
-  ///   or <c>null</c> if no results are available.
-  /// </value>
   /// <remarks>
   ///   The child entities collection contains the geographic regions retrieved in response to the query, representing
   ///   the subdivisions within the parent entity specified in the <see cref="GeoChildEntitiesQuery"/>. For example,

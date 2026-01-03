@@ -21,10 +21,6 @@ public interface DataLabel : IModelElement
   /// <summary>
   ///   Gets or sets the zero-based index identifying which data point this label belongs to.
   /// </summary>
-  /// <value>
-  ///   An unsigned 32-bit integer representing the data point index,
-  ///   or <c>null</c> if no index is specified.
-  /// </value>
   /// <remarks>
    ///   The index associates this label with a specific data point in the series. The index is zero-based,
   ///   meaning the first data point has index 0, the second has index 1, and so on. This enables precise
@@ -36,10 +32,6 @@ public interface DataLabel : IModelElement
   /// <summary>
   ///   Gets or sets the position of the data label relative to its data point.
   /// </summary>
-  /// <value>
-  ///   A <see cref="DataLabelPos"/> value specifying the label's position (e.g., above, below, center, left, right),
-  ///   or <c>null</c> to use the default position for the chart type.
-  /// </value>
   /// <remarks>
    ///   The position determines where the label appears relative to its associated data point. Different chart
   ///   types have different default and recommended positions. For example, column charts typically position
@@ -52,10 +44,6 @@ public interface DataLabel : IModelElement
   /// <summary>
   ///   Gets or sets the number formatting applied to numeric values in the data label.
   /// </summary>
-  /// <value>
-  ///   A <see cref="NumberFormat"/> object defining the format code for numeric display,
-  ///   or <c>null</c> if default number formatting is used.
-  /// </value>
   /// <remarks>
   ///   Number formatting controls how numeric values are displayed in the label, including decimal places,
   ///   currency symbols, percentage formatting, thousand separators, and scientific notation. Proper number
@@ -67,10 +55,6 @@ public interface DataLabel : IModelElement
   /// <summary>
   ///   Gets or sets the visual styling properties for the data label.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ShapeProperties"/> object defining fill, line, and effect properties,
-  ///   or <c>null</c> if default styling is used.
-  /// </value>
   /// <remarks>
   ///   Shape properties control the visual appearance of the label container, including background fill,
   ///   border styling, shadows, and other visual effects. These properties can make labels more prominent
@@ -82,10 +66,6 @@ public interface DataLabel : IModelElement
   /// <summary>
   ///   Gets or sets the text formatting properties for the data label text.
   /// </summary>
-  /// <value>
-  ///   A <see cref="TxPrTextBody"/> object defining font, alignment, and paragraph properties,
-  ///   or <c>null</c> if default text formatting is used.
-  /// </value>
   /// <remarks>
   ///   Text properties control the formatting of the label text, including font family, size, color,
   ///   style (bold, italic), alignment, rotation, and spacing. This enables labels to be styled
@@ -97,10 +77,6 @@ public interface DataLabel : IModelElement
   /// <summary>
   ///   Gets or sets the visibility settings that control which components are displayed in the data label.
   /// </summary>
-  /// <value>
-  ///   A <see cref="DataLabelVisibilities"/> object specifying which label components to show or hide,
-  ///   or <c>null</c> if default visibility settings are used.
-  /// </value>
   /// <remarks>
   ///   Data label visibility settings allow selective display of different information types such as the
   ///   data value, category name, series name, percentage, legend key, or bubble size. This enables
@@ -113,10 +89,6 @@ public interface DataLabel : IModelElement
   /// <summary>
   ///   Gets or sets the separator string used between multiple label components when displayed together.
   /// </summary>
-  /// <value>
-  ///   A string containing the separator text (e.g., ", ", " - ", newline character),
-  ///   or <c>null</c> to use the default separator.
-  /// </value>
   /// <remarks>
   ///   The separator determines how multiple pieces of information are delimited when a data label displays
   ///   more than one component (such as both value and category name). Common separators include commas,
@@ -129,10 +101,6 @@ public interface DataLabel : IModelElement
   /// <summary>
   ///   Gets or sets the collection of extension elements for future extensibility.
   /// </summary>
-  /// <value>
-  ///   An <see cref="ExtensionList"/> containing extension elements,
-  ///   or <c>null</c> if no extensions are defined.
-  /// </value>
   /// <remarks>
   ///   Extension elements allow for future enhancements to data label functionality without breaking
   ///   compatibility with existing implementations. This could include additional positioning options,

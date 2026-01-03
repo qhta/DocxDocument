@@ -19,10 +19,6 @@ public interface CategoryAxisScaling : IModelElement
   /// <summary>
   ///   Gets or sets the width of the gap between categories as a percentage of the bar or column width.
   /// </summary>
-  /// <value>
-  ///   A string containing the numeric gap width percentage value,
-  ///   or <c>null</c> if the default gap width is used.
-  /// </value>
   /// <remarks>
    ///   The gap width determines the spacing between categories or groups in bar and column charts.
   ///   It is expressed as a percentage of the bar or column width. For example, a gap width of "50"

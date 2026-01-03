@@ -20,10 +20,6 @@ public interface DataLabelHidden : IModelElement
   /// <summary>
   ///   Gets or sets the zero-based index identifying which data point's label should be hidden.
   /// </summary>
-  /// <value>
-  ///   An unsigned 32-bit integer representing the data point index,
-  ///   or <c>null</c> if no index is specified.
-  /// </value>
   /// <remarks>
    ///   The index identifies a specific data point in the series whose label should be suppressed from
   ///   display. The index is zero-based, meaning the first data point has index 0, the second has index 1,

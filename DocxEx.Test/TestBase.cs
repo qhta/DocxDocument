@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Diagnostics;
 using System.Reflection;
 using System.Xml.Serialization;
@@ -25,9 +25,6 @@ public class TestBase
   /// <summary>
   /// Gets or sets the test path that is used to read/write test data files.
   /// </summary>
-  /// <value>
-  /// The test path.
-  /// </value>
   public string TestPath { get; set; } = string.Empty;
 
   /// <summary>

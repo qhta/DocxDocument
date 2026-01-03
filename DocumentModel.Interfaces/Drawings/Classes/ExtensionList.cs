@@ -201,11 +201,6 @@ public interface ExtensionList : IModelElement
   /// Gets or sets the collection of DrawingML extensions that add enhanced visual capabilities,
   /// modern graphics features, or application-specific drawing data to DrawingML elements.
   /// </summary>
-  /// <value>
-  /// A <see cref="Collection{Extension}"/> containing zero or more DrawingML-specific extensions.
-  /// If <see langword="null"/> or empty, the DrawingML element has no extensions and uses only
-  /// standard Office Art properties.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The collection of DrawingML extensions provides a flexible mechanism for extending shapes,

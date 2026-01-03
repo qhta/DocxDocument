@@ -18,10 +18,6 @@ public interface AxisUnitsLabel : IModelElement
   /// <summary>
   ///   Gets or sets the text content displayed as the axis units label.
   /// </summary>
-  /// <value>
-  ///   A <see cref="Text"/> object containing the label text and its properties,
-  ///   or <c>null</c> if no label text is specified.
-  /// </value>
   /// <remarks>
   ///   The text content defines what unit description is displayed, providing clarity about the scale
   ///   or measurement type (e.g., "(thousands)", "millions", "°F", "%"). This can include plain text
@@ -32,10 +28,6 @@ public interface AxisUnitsLabel : IModelElement
   /// <summary>
   ///   Gets or sets the visual styling properties for the axis units label.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ShapeProperties"/> object defining fill, line, and effect properties,
-  ///   or <c>null</c> if default styling is used.
-  /// </value>
   /// <remarks>
   ///   Shape properties control the visual appearance of the label element, including background fill,
   ///   border styling, shadows, and other visual effects that enhance the label's presentation and
@@ -46,10 +38,6 @@ public interface AxisUnitsLabel : IModelElement
   /// <summary>
   ///   Gets or sets the text formatting properties for the axis units label.
   /// </summary>
-  /// <value>
-  ///   A <see cref="TxPrTextBody"/> object defining font, alignment, and paragraph properties,
-  ///   or <c>null</c> if default text formatting is used.
-  /// </value>
   /// <remarks>
   ///   Text properties control the formatting of the label text, including font family, size, color,
   ///   style (bold, italic), alignment, rotation, and spacing. This enables precise control over
@@ -60,10 +48,6 @@ public interface AxisUnitsLabel : IModelElement
   /// <summary>
   ///   Gets or sets the collection of extension elements for future extensibility.
   /// </summary>
-  /// <value>
-  ///   An <see cref="ExtensionList"/> containing extension elements,
-  ///   or <c>null</c> if no extensions are defined.
-  /// </value>
   /// <remarks>
   ///   Extension elements allow for future enhancements and custom properties without breaking
   ///   compatibility with existing implementations.

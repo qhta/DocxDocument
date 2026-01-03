@@ -217,11 +217,6 @@ public interface BlipExtensionList : IModelElement
   /// Gets or sets the collection of BLIP (image) extensions that add support for modern image formats,
   /// advanced image processing features, or image-specific metadata.
   /// </summary>
-  /// <value>
-  /// A <see cref="Collection{BlipExtension}"/> containing zero or more image-specific extensions.
-  /// If <see langword="null"/> or empty, the image uses only standard OpenXML-supported formats
-  /// without extended features.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The collection of BLIP extensions enables images in Office documents to leverage modern image

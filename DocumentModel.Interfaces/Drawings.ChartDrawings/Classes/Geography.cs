@@ -28,10 +28,6 @@ public interface Geography : IModelElement
   /// <summary>
   ///   Gets or sets the map projection type used to render the geographic chart.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoProjectionType"/> value specifying the projection method,
-  ///   or <c>null</c> to use the default projection for the viewed region.
-  /// </value>
   /// <remarks>
    ///   The projection type determines how the three-dimensional spherical Earth is mathematically transformed to a
   ///   two-dimensional chart surface. Different projections preserve different geographic properties and are suited
@@ -50,10 +46,6 @@ public interface Geography : IModelElement
   /// <summary>
   ///   Gets or sets the geographic scope and detail level of the viewed region.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoMappingLevel"/> value specifying the regional scope,
-  ///   or <c>null</c> to use automatic region detection based on the data.
-  /// </value>
   /// <remarks>
    ///   The viewed region type specifies the geographic hierarchy level and scope of the map visualization, such as
   ///   world view (showing all countries globally), continental view (focusing on a specific continent), country view
@@ -70,10 +62,6 @@ public interface Geography : IModelElement
   /// <summary>
   ///   Gets or sets the culture language code used for localizing geographic names and labels.
   /// </summary>
-  /// <value>
-  ///   A string containing the language code (e.g., "en" for English, "fr" for French, "ja" for Japanese),
-  ///   or <c>null</c> to use the document's default language settings.
-  /// </value>
   /// <remarks>
    ///   The culture language specifies which language should be used for displaying geographic entity names, labels,
   ///   and other text elements in the map chart. This enables localization of geographic names to match user preferences
@@ -89,10 +77,6 @@ public interface Geography : IModelElement
   /// <summary>
   ///   Gets or sets the culture region code used for formatting conventions and regional preferences.
   /// </summary>
-  /// <value>
-  ///   A string containing the region code (e.g., "US" for United States, "GB" for United Kingdom, "JP" for Japan),
-  ///   or <c>null</c> to use the document's default region settings.
-  /// </value>
   /// <remarks>
    ///   The culture region specifies regional formatting conventions and preferences that affect how data is displayed
   ///   in the map chart, including number formats, date formats, measurement units, and regional naming preferences.
@@ -109,10 +93,6 @@ public interface Geography : IModelElement
   /// <summary>
   ///   Gets or sets the attribution text that credits the geographic data source providers.
   /// </summary>
-  /// <value>
-  ///   A string containing the attribution text with credits to data providers,
-  ///   or <c>null</c> if no attribution is specified.
-  /// </value>
   /// <remarks>
    ///   The attribution text provides proper credit to the mapping services, geographic data providers, and other sources
   ///   that supplied the geographic information used in the map chart. This attribution is essential for legal compliance,
@@ -129,10 +109,6 @@ public interface Geography : IModelElement
   /// <summary>
   ///   Gets or sets the geographic data cache for offline access and performance optimization.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoCache"/> object containing cached geographic data,
-  ///   or <c>null</c> if no cache is configured.
-  /// </value>
   /// <remarks>
   ///   The geographic cache stores previously retrieved geographic data including entity boundaries, coordinates,
   ///   query results, and hierarchical relationships. This cached data enables offline map chart rendering without

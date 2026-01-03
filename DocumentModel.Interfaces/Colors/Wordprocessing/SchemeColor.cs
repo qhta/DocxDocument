@@ -67,11 +67,6 @@ public interface SchemeColor : IModelElement
   /// <summary>
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.
   /// </summary>
-  /// <value>
-  /// A <see cref="SchemeColorKind"/> value specifying which theme color to reference
-  /// (e.g., Accent1, Dark1, Background1, Text1, Hyperlink).
-  /// If <see langword="null"/>, no theme color is referenced.
-  /// </value>
   /// <remarks>
   /// <para>
   /// This property specifies which color from the document's active theme should be used as the base color.
@@ -99,10 +94,6 @@ public interface SchemeColor : IModelElement
   /// <summary>
   /// Gets or sets the tint value to lighten the scheme color.
   /// </summary>
-  /// <value>
-  /// An integer value representing the tint percentage (0-100000, where 100000 = 100%).
-  /// If <see langword="null"/>, no tint is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// A tint lightens the theme color by mixing it with white. Values range from 0 to 100000:
@@ -126,10 +117,6 @@ public interface SchemeColor : IModelElement
   /// <summary>
   /// Gets or sets the shade value to darken the scheme color.
   /// </summary>
-  /// <value>
-  /// An integer value representing the shade percentage (0-100000, where 100000 = 100%).
-  /// If <see langword="null"/>, no shade is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// A shade darkens the theme color by mixing it with black. Values range from 0 to 100000:
@@ -153,10 +140,6 @@ public interface SchemeColor : IModelElement
   /// <summary>
   /// Gets or sets the absolute alpha (transparency) value for the scheme color.
   /// </summary>
-  /// <value>
-  /// An integer value representing the opacity percentage (0-100000, where 100000 = 100% opaque).
-  /// If <see langword="null"/>, full opacity is assumed.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Specifies the opacity of the theme color:
@@ -183,10 +166,6 @@ public interface SchemeColor : IModelElement
   /// <summary>
   /// Gets or sets the hue modulation percentage for the scheme color.
   /// </summary>
-  /// <value>
-  /// An integer value representing the hue modulation percentage (0-100000, where 100000 = 100% = no change).
-  /// If <see langword="null"/>, no hue modulation is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Multiplies the theme color's hue by this percentage. Range is 0 to 100000:
@@ -207,10 +186,6 @@ public interface SchemeColor : IModelElement
   /// <summary>
   /// Gets or sets the absolute saturation value for the scheme color in HSL color space.
   /// </summary>
-  /// <value>
-  /// An integer value representing saturation (0-100000, where 0 = grayscale, 100000 = fully saturated).
-  /// If <see langword="null"/>, the theme color's original saturation is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Overrides the saturation component of the theme color:
@@ -231,10 +206,6 @@ public interface SchemeColor : IModelElement
   /// <summary>
   /// Gets or sets the saturation offset adjustment for the scheme color.
   /// </summary>
-  /// <value>
-  /// An integer value to add or subtract from the theme color's saturation (-100000 to +100000).
-  /// If <see langword="null"/>, no saturation adjustment is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Adds or subtracts from the theme color's saturation:
@@ -256,10 +227,6 @@ public interface SchemeColor : IModelElement
   /// <summary>
   /// Gets or sets the saturation modulation percentage for the scheme color.
   /// </summary>
-  /// <value>
-  /// An integer value representing the saturation modulation percentage (0-100000, where 100000 = no change).
-  /// If <see langword="null"/>, no saturation modulation is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Multiplies the theme color's saturation by this percentage:
@@ -281,10 +248,6 @@ public interface SchemeColor : IModelElement
   /// <summary>
   /// Gets or sets the absolute luminance (brightness) value for the scheme color in HSL color space.
   /// </summary>
-  /// <value>
-  /// An integer value representing luminance (0-100000, where 0 = black, 50000 = normal, 100000 = white).
-  /// If <see langword="null"/>, the theme color's original luminance is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Overrides the luminance component of the theme color:
@@ -306,10 +269,6 @@ public interface SchemeColor : IModelElement
   /// <summary>
   /// Gets or sets the luminance (brightness) offset adjustment for the scheme color.
   /// </summary>
-  /// <value>
-  /// An integer value to add or subtract from the theme color's luminance (-100000 to +100000).
-  /// If <see langword="null"/>, no luminance adjustment is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Adds or subtracts from the theme color's luminance:
@@ -331,10 +290,6 @@ public interface SchemeColor : IModelElement
   /// <summary>
   /// Gets or sets the luminance (brightness) modulation percentage for the scheme color.
   /// </summary>
-  /// <value>
-  /// An integer value representing the luminance modulation percentage (0-100000, where 100000 = no change).
-  /// If <see langword="null"/>, no luminance modulation is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Multiplies the theme color's luminance by this percentage:

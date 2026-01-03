@@ -17,10 +17,6 @@ public interface Schema : IModelElement, ICollectionItem
   /// <summary>
   ///   Gets or sets the namespace URI that uniquely identifies this XML schema.
   /// </summary>
-  /// <value>
-  ///   A <see cref="System.Uri"/> containing the schema's target namespace,
-  ///   or <c>null</c> if no namespace is specified.
-  /// </value>
   /// <remarks>
   ///   The namespace URI identifies the schema and matches the target namespace defined in the schema file.
   ///   This is used to associate XML elements in the custom XML data with their corresponding schema definitions.
@@ -30,10 +26,6 @@ public interface Schema : IModelElement, ICollectionItem
   /// <summary>
   ///   Gets or sets the location of the resource manifest file for this schema.
   /// </summary>
-  /// <value>
-  ///   A string containing the path or URL to the manifest file,
-  ///   or <c>null</c> if no manifest location is specified.
-  /// </value>
   /// <remarks>
   ///   The manifest location can be used for schema discovery and resolution, particularly in scenarios
   ///   where multiple related schemas need to be loaded or when schema catalogs are employed.
@@ -43,10 +35,6 @@ public interface Schema : IModelElement, ICollectionItem
   /// <summary>
   ///   Gets or sets the physical location of the XML schema file.
   /// </summary>
-  /// <value>
-  ///   A string containing the file path or URL to the schema (XSD) file,
-  ///   or <c>null</c> if no schema location is specified.
-  /// </value>
   /// <remarks>
   ///   The schema location points to the actual XSD (XML Schema Definition) file that contains
   ///   the validation rules and structure definitions. This can be a local file path, a relative path

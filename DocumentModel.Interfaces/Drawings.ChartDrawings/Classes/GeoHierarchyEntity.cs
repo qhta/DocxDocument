@@ -1,4 +1,4 @@
-ï»¿namespace DocumentModel.Drawings.ChartDrawings;
+namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
 ///   Represents a geographic entity within a hierarchical structure, providing identification and classification for parent-child geographic relationships.
@@ -21,7 +21,7 @@
 ///   operations, enabling efficient cache lookup, supporting data binding between chart data and geographic entities, and
 ///   facilitating hierarchical navigation where entities at one level need to reference their parent or child entities at
 ///   other levels. The hierarchical entity structure supports various geographic hierarchy models including administrative
-///   hierarchies (country â†’ state â†’ county â†’ city), statistical hierarchies (continent â†’ country â†’ region), or custom
+///   hierarchies (country › state › county › city), statistical hierarchies (continent › country › region), or custom
 ///   domain-specific hierarchies tailored to particular analytical or business requirements.
 /// </remarks>
 public interface GeoHierarchyEntity : IModelElement
@@ -29,10 +29,6 @@ public interface GeoHierarchyEntity : IModelElement
   /// <summary>
   ///   Gets or sets the human-readable name of the geographic entity.
   /// </summary>
-  /// <value>
-  ///   A string containing the entity's display name,
-  ///   or <c>null</c> if no name is specified.
-  /// </value>
   /// <remarks>
    ///   The entity name provides a user-friendly identifier for the geographic entity that is suitable for display
   ///   in user interfaces, chart labels, drill-down navigation menus, hierarchical lists, and other contexts where
@@ -49,10 +45,6 @@ public interface GeoHierarchyEntity : IModelElement
   /// <summary>
   ///   Gets or sets the unique identifier for the geographic entity.
   /// </summary>
-  /// <value>
-  ///   A string containing the entity's unique identifier,
-  ///   or <c>null</c> if no identifier is specified.
-  /// </value>
   /// <remarks>
    ///   The entity identifier provides a unique, machine-readable reference for the geographic entity that remains
   ///   consistent across different operations, queries, and data sources. Common identifier formats include ISO country
@@ -73,17 +65,13 @@ public interface GeoHierarchyEntity : IModelElement
   /// <summary>
   ///   Gets or sets the classification type of the geographic entity.
   /// </summary>
-  /// <value>
-  ///   An <see cref="EntityTypeEnum"/> value specifying the entity's administrative or geographic classification,
-  ///   or <c>null</c> if no type is specified.
-  /// </value>
   /// <remarks>
    ///   The entity type specifies the administrative or geographic classification level of the entity within hierarchical
   ///   structures, such as country, first-level administrative division (state/province), second-level administrative
   ///   division (county/district), populated place (city/town), or other classifications. This type information is
   ///   crucial for hierarchical operations including: (1) determining valid parent-child relationships (such as knowing
   ///   that counties can be children of states but not vice versa), (2) supporting appropriate drill-down navigation
-  ///   where users progress through logical hierarchy levels (country â†’ state â†’ county rather than arbitrary jumps),
+  ///   where users progress through logical hierarchy levels (country › state › county rather than arbitrary jumps),
   ///   (3) disambiguating entities with the same name at different administrative levels (such as "Georgia" the country
   ///   vs. "Georgia" the U.S. state), (4) filtering child entity queries by type to retrieve only specific administrative
   ///   levels (as seen in <see cref="GeoChildEntitiesQuery.GeoChildTypes"/>), and (5) organizing geographic entities

@@ -27,10 +27,6 @@ public interface GeoDataEntityQuery : IModelElement
   /// <summary>
   ///   Gets or sets the type classification of the geographic entity being queried.
   /// </summary>
-  /// <value>
-  ///   An <see cref="EntityTypeEnum"/> value specifying the entity's classification level,
-  ///   or <c>null</c> if no type filter is specified.
-  /// </value>
   /// <remarks>
    ///   The entity type specifies the classification level or category of the geographic entity, helping to
   ///   disambiguate entities and ensure the correct entity is retrieved when identifiers might be ambiguous.
@@ -48,10 +44,6 @@ public interface GeoDataEntityQuery : IModelElement
   /// <summary>
   ///   Gets or sets the unique identifier of the geographic entity to retrieve.
   /// </summary>
-  /// <value>
-  ///   A string containing the entity's unique identifier,
-  ///   or <c>null</c> if no entity is specified.
-  /// </value>
   /// <remarks>
    ///   The entity identifier uniquely references the specific geographic entity for which detailed data is being
   ///   requested. Entity identifiers typically follow standardized formats such as ISO country codes (e.g., "US",

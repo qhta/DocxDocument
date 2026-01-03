@@ -21,10 +21,6 @@ public interface ColorMappingType : IModelElement
   /// <summary>
   ///   Gets or sets the theme color scheme index for the primary background color.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ColorSchemeIndexKind"/> value specifying which theme color to use for the primary background,
-  ///   or <c>null</c> to use the default theme background color.
-  /// </value>
   /// <remarks>
   ///   The primary background color is typically used for the main chart background and provides the base
   ///   color layer for the visualization. It should contrast appropriately with text and data elements.
@@ -34,10 +30,6 @@ public interface ColorMappingType : IModelElement
   /// <summary>
   ///   Gets or sets the theme color scheme index for the primary text color.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ColorSchemeIndexKind"/> value specifying which theme color to use for primary text,
-  ///   or <c>null</c> to use the default theme text color.
-  /// </value>
   /// <remarks>
   ///   The primary text color is used for main labels, titles, and other prominent text elements in the chart.
   ///   It should provide sufficient contrast against the primary background for readability.
@@ -47,10 +39,6 @@ public interface ColorMappingType : IModelElement
   /// <summary>
   ///   Gets or sets the theme color scheme index for the secondary background color.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ColorSchemeIndexKind"/> value specifying which theme color to use for the secondary background,
-  ///   or <c>null</c> to use the default theme background color.
-  /// </value>
   /// <remarks>
   ///   The secondary background color is used for alternate or complementary background areas in the chart,
   ///   such as the plot area background if different from the overall chart background.
@@ -60,10 +48,6 @@ public interface ColorMappingType : IModelElement
   /// <summary>
   ///   Gets or sets the theme color scheme index for the secondary text color.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ColorSchemeIndexKind"/> value specifying which theme color to use for secondary text,
-  ///   or <c>null</c> to use the default theme text color.
-  /// </value>
   /// <remarks>
   ///   The secondary text color is used for less prominent text elements such as axis labels, legend text,
   ///   or supporting annotations that should be visible but less emphasized than primary text.
@@ -73,10 +57,6 @@ public interface ColorMappingType : IModelElement
   /// <summary>
   ///   Gets or sets the theme color scheme index for the first accent color.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ColorSchemeIndexKind"/> value specifying which theme color to use for the first accent,
-  ///   or <c>null</c> to use the default theme accent color.
-  /// </value>
   /// <remarks>
   ///   Accent 1 is typically used for the first data series or primary data visualization elements.
   ///   The six accent colors enable consistent color differentiation across multiple data series.
@@ -86,10 +66,6 @@ public interface ColorMappingType : IModelElement
   /// <summary>
   ///   Gets or sets the theme color scheme index for the second accent color.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ColorSchemeIndexKind"/> value specifying which theme color to use for the second accent,
-  ///   or <c>null</c> to use the default theme accent color.
-  /// </value>
   /// <remarks>
   ///   Accent 2 is typically used for the second data series or secondary data visualization elements.
   /// </remarks>
@@ -98,10 +74,6 @@ public interface ColorMappingType : IModelElement
   /// <summary>
   ///   Gets or sets the theme color scheme index for the third accent color.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ColorSchemeIndexKind"/> value specifying which theme color to use for the third accent,
-  ///   or <c>null</c> to use the default theme accent color.
-  /// </value>
   /// <remarks>
   ///   Accent 3 is typically used for the third data series or tertiary data visualization elements.
   /// </remarks>
@@ -110,10 +82,6 @@ public interface ColorMappingType : IModelElement
   /// <summary>
   ///   Gets or sets the theme color scheme index for the fourth accent color.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ColorSchemeIndexKind"/> value specifying which theme color to use for the fourth accent,
-  ///   or <c>null</c> to use the default theme accent color.
-  /// </value>
   /// <remarks>
   ///   Accent 4 is typically used for the fourth data series in multi-series charts.
   /// </remarks>
@@ -122,10 +90,6 @@ public interface ColorMappingType : IModelElement
   /// <summary>
   ///   Gets or sets the theme color scheme index for the fifth accent color.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ColorSchemeIndexKind"/> value specifying which theme color to use for the fifth accent,
-  ///   or <c>null</c> to use the default theme accent color.
-  /// </value>
   /// <remarks>
   ///   Accent 5 is typically used for the fifth data series in multi-series charts.
   /// </remarks>
@@ -134,10 +98,6 @@ public interface ColorMappingType : IModelElement
   /// <summary>
   ///   Gets or sets the theme color scheme index for the sixth accent color.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ColorSchemeIndexKind"/> value specifying which theme color to use for the sixth accent,
-  ///   or <c>null</c> to use the default theme accent color.
-  /// </value>
   /// <remarks>
   ///   Accent 6 is typically used for the sixth data series in multi-series charts. For charts with more
   ///   than six data series, colors may cycle through the accent colors with variations.
@@ -147,10 +107,6 @@ public interface ColorMappingType : IModelElement
   /// <summary>
   ///   Gets or sets the theme color scheme index for hyperlink text.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ColorSchemeIndexKind"/> value specifying which theme color to use for hyperlinks,
-  ///   or <c>null</c> to use the default theme hyperlink color.
-  /// </value>
   /// <remarks>
   ///   The hyperlink color is used for interactive text elements that link to external resources or trigger
   ///   navigation actions within the chart or document.
@@ -160,10 +116,6 @@ public interface ColorMappingType : IModelElement
   /// <summary>
   ///   Gets or sets the theme color scheme index for followed (visited) hyperlink text.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ColorSchemeIndexKind"/> value specifying which theme color to use for followed hyperlinks,
-  ///   or <c>null</c> to use the default theme followed hyperlink color.
-  /// </value>
   /// <remarks>
   ///   The followed hyperlink color is used to visually distinguish hyperlinks that have been previously
   ///   activated, providing users with visual feedback about their navigation history.
@@ -173,10 +125,6 @@ public interface ColorMappingType : IModelElement
   /// <summary>
   ///   Gets or sets the collection of extension elements for future extensibility.
   /// </summary>
-  /// <value>
-  ///   An <see cref="Drawings.ExtensionList"/> containing extension elements,
-  ///   or <c>null</c> if no extensions are defined.
-  /// </value>
   /// <remarks>
   ///   Extension elements allow for future enhancements to the color mapping system without breaking
   ///   compatibility with existing implementations. This could include additional color roles or

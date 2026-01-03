@@ -19,10 +19,6 @@ public interface ChartSpace : IModelElement
   /// <summary>
   ///   Gets or sets the data source configuration for the chart.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ChartData"/> object defining where the chart retrieves its data,
-  ///   or <c>null</c> if no data source is configured.
-  /// </value>
   /// <remarks>
   ///   The chart data specifies whether the chart uses external data sources (such as Excel ranges) or
   ///   embedded data stored within the chart structure. This determines how the chart accesses values,
@@ -33,10 +29,6 @@ public interface ChartSpace : IModelElement
   /// <summary>
   ///   Gets or sets the chart visualization containing the plot area, title, and legend.
   /// </summary>
-  /// <value>
-  ///   A <see cref="Chart"/> object defining the complete chart visualization,
-  ///   or <c>null</c> if no chart is defined.
-  /// </value>
   /// <remarks>
   ///   The chart represents the visual components including the plot area with data series and axes,
   ///   the chart title, and the legend. This is the core visualization element that displays the data
@@ -47,10 +39,6 @@ public interface ChartSpace : IModelElement
   /// <summary>
   ///   Gets or sets the global shape properties applied to the entire chart space.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ShapeProperties"/> object defining fill, line, and effect properties for the chart container,
-  ///   or <c>null</c> if default styling is used.
-  /// </value>
   /// <remarks>
   ///   Shape properties control the visual appearance of the chart space container, including background fill,
   ///   border styling, shadows, and other visual effects. These properties apply to the entire chart area
@@ -61,10 +49,6 @@ public interface ChartSpace : IModelElement
   /// <summary>
   ///   Gets or sets the global text properties applied to text elements throughout the chart.
   /// </summary>
-  /// <value>
-  ///   A <see cref="TxPrTextBody"/> object defining default font, alignment, and paragraph properties,
-  ///   or <c>null</c> if default text formatting is used.
-  /// </value>
   /// <remarks>
   ///   Text properties provide default formatting for all text elements in the chart, including titles,
   ///   labels, and legends, unless overridden by specific element formatting. This ensures consistent
@@ -75,10 +59,6 @@ public interface ChartSpace : IModelElement
   /// <summary>
   ///   Gets or sets the color mapping configuration that defines how theme colors are applied to the chart.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ColorMappingType"/> object defining the mapping between theme colors and chart elements,
-  ///   or <c>null</c> if default color mapping is used.
-  /// </value>
   /// <remarks>
   ///   Color mapping connects the chart's color scheme to the document's theme colors, ensuring visual
   ///   consistency with the overall document design. This enables charts to automatically adapt their
@@ -89,10 +69,6 @@ public interface ChartSpace : IModelElement
   /// <summary>
   ///   Gets or sets the format overrides that customize specific formatting aspects of the chart.
   /// </summary>
-  /// <value>
-  ///   A <see cref="FormatOverrides"/> object defining custom formatting that supersedes default settings,
-  ///   or <c>null</c> if no format overrides are applied.
-  /// </value>
   /// <remarks>
   ///   Format overrides allow specific formatting rules to be applied that take precedence over default
   ///   or inherited formatting. This provides fine-grained control over chart appearance for specific
@@ -103,10 +79,6 @@ public interface ChartSpace : IModelElement
   /// <summary>
   ///   Gets or sets the print settings that control how the chart is rendered when printed.
   /// </summary>
-  /// <value>
-  ///   A <see cref="PrintSettings"/> object defining page setup, margins, and print-specific options,
-  ///   or <c>null</c> if default print settings are used.
-  /// </value>
   /// <remarks>
   ///   Print settings configure how the chart appears in printed output, including page orientation,
   ///   scaling, margins, headers, and footers. These settings ensure the chart prints correctly and
@@ -117,10 +89,6 @@ public interface ChartSpace : IModelElement
   /// <summary>
   ///   Gets or sets the collection of extension elements for future extensibility.
   /// </summary>
-  /// <value>
-  ///   An <see cref="ExtensionList"/> containing extension elements,
-  ///   or <c>null</c> if no extensions are defined.
-  /// </value>
   /// <remarks>
   ///   Extension elements allow for future enhancements and custom properties without breaking
   ///   compatibility with existing implementations. This enables new chart features and capabilities

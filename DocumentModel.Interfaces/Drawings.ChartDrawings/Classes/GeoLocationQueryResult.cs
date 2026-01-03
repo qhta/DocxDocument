@@ -29,10 +29,6 @@ public interface GeoLocationQueryResult : IModelElement
   /// <summary>
   ///   Gets or sets the query specification that was used to retrieve the geographic locations.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoLocationQuery"/> object defining the geocoding query parameters,
-  ///   or <c>null</c> if no query specification is stored.
-  /// </value>
   /// <remarks>
   ///   The query specification preserves the address components used to perform the geocoding operation, including
   ///   the country/region, first-level administrative division (state/province), second-level administrative division
@@ -53,10 +49,6 @@ public interface GeoLocationQueryResult : IModelElement
   /// <summary>
   ///   Gets or sets the collection of geographic locations retrieved by the geocoding query.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoLocations"/> object containing the geocoding results,
-  ///   or <c>null</c> if no locations are available.
-  /// </value>
   /// <remarks>
   ///   The geographic locations collection contains the complete location information retrieved through geocoding the
   ///   address components specified in the <see cref="GeoLocationQuery"/>. Each location in the collection includes

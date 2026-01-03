@@ -100,11 +100,6 @@ public interface ConnectorLockingExtensionList : IModelElement
   /// Gets or sets the collection of connector locking extensions that define attachment constraints,
   /// routing rules, and protection settings for connector shapes in diagrams.
   /// </summary>
-  /// <value>
-  /// A <see cref="Collection{ConnectorLockingExtension}"/> containing zero or more connector-specific
-  /// locking extensions. If <see langword="null"/> or empty, the connector has no extended locking
-  /// behaviors and uses default connector properties.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The collection of connector locking extensions provides fine-grained control over connector

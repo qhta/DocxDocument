@@ -20,10 +20,6 @@ public interface Copyrights : IModelElement
   /// <summary>
   ///   Gets or sets the collection of copyright notice strings.
   /// </summary>
-  /// <value>
-  ///   A collection of strings where each string represents a copyright notice or attribution statement,
-  ///   or <c>null</c> if no copyright information is specified.
-  /// </value>
   /// <remarks>
   ///   Each string in the collection typically contains a complete copyright notice including the copyright
   ///   symbol (©), year, copyright holder name, and any additional rights or attribution information
