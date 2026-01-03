@@ -1,6 +1,6 @@
 namespace DocumentModel.Wordprocessing;
 
-public partial interface Style : INotifyPropertyChanged, INotifyPropertyChanging, INamedObject, IAliasedObject
+public partial interface Style : IModelElement, IAliasedObject
 {
   /// <summary>
   ///   Primary Style Name.

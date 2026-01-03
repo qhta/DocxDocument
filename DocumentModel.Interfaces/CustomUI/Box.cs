@@ -44,12 +44,12 @@ public interface Box: IModelElement
   /// <summary>
   ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public string? InsertAfterQulifiedId { get; set; }
+  public string? InsertAfterQualifiedId { get; set; }
 
   /// <summary>
   ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public string? InsertBeforeQulifiedId { get; set; }
+  public string? InsertBeforeQualifiedId { get; set; }
 
   /// <summary>
   ///   boxStyle, this property is only available in Office 2010 and later.
