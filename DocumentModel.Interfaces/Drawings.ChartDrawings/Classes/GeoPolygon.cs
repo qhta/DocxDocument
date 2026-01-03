@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a polygon that defines a portion of a geographic entity's boundary or shape.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a geometric polygon used to represent the
+///   This interface defines a geometric polygon used to represent the
 ///   boundaries, coastlines, or other geographic features of a map entity. Geographic polygons are essential for
 ///   accurate rendering of region shapes in map-based charts, enabling precise visualization of countries, states,
 ///   counties, and other geographic entities with their actual irregular boundaries rather than simplified geometric

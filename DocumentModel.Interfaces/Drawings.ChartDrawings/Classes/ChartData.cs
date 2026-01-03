@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the data source configuration for a chart, specifying whether data is external or embedded.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the data source structure for a chart,
+///   This interface defines the data source structure for a chart,
 ///   which can either reference external data sources or contain embedded data directly within the chart definition.
 ///   The chart data configuration determines where the chart retrieves its values, categories, and series information.
 ///   External data typically links to spreadsheet ranges, database connections, or other data sources outside the

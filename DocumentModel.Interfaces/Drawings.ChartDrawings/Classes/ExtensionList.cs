@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a collection of extension elements that enable future extensibility for chart drawings.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a container for extension elements that
+///   This interface defines a container for extension elements that
 ///   allow chart drawings to include additional data, functionality, or features not defined in the base schema.
 ///   The ExtensionList serves as an extensibility mechanism throughout chart drawing objects, enabling Office
 ///   applications to introduce new features, custom properties, or enhanced capabilities without requiring schema

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the scaling properties for a category axis in a chart.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the scaling configuration for category
+///   This interface defines the scaling configuration for category
 ///   axes, which display discrete data such as text labels, dates, or named categories. Unlike value axes
 ///   that represent continuous numeric data with minimum and maximum ranges, category axes organize data
 ///   into distinct, ordered categories. The primary scaling property for category axes is the gap width,

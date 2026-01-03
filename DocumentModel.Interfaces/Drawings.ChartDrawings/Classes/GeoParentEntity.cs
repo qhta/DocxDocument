@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a parent geographic entity in a hierarchical containment relationship.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a parent geographic entity that contains or
+///   This interface defines a parent geographic entity that contains or
 ///   encompasses a child entity within the geographic hierarchy. Unlike the more comprehensive <see cref="GeoHierarchyEntity"/>
 ///   which includes name, identifier, and type, or <see cref="GeoEntity"/> which includes name and type, GeoParentEntity
 ///   provides a minimal representation with only the unique identifier, making it a lightweight reference suitable for

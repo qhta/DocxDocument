@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a collection of child geographic entities within a hierarchical geographic structure.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a collection of child geographic entities
+///   This interface defines a collection of child geographic entities
 ///   that represent subdivisions within a parent geographic entity. Geographic entities are organized hierarchically,
 ///   with larger regions containing smaller subdivisions (such as countries containing states, states containing
 ///   counties, or provinces containing districts). This interface provides access to the child entities at a

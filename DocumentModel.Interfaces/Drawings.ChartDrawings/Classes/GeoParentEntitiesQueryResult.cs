@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the result of a parent entities query, containing the query specification and retrieved parent entity data.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a query result structure that pairs a parent
+///   This interface defines a query result structure that pairs a parent
 ///   entities query (<see cref="GeoParentEntitiesQuery"/>) with its corresponding results, which may include both
 ///   the child entity (<see cref="GeoEntity"/>) and its direct parent entity (<see cref="GeoParentEntity"/>). This
 ///   structure preserves the association between the query parameter (child entity identifier) and the parent entity

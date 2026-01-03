@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents an edit box control that provides a text input field for user entry in the ribbon interface.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a text input control that allows users
+///   This interface defines a text input control that allows users
 ///   to enter and edit text directly within the ribbon. Unlike a <see cref="ComboBox"/> which combines text
 ///   input with a dropdown list, the edit box provides a simple text field without predefined options.
 ///   The control supports text length constraints, change notifications, customizable appearance with images

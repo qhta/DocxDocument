@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a collection of geographic entity type filters used to specify which child entity types to retrieve.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a collection of entity type identifiers used
+///   This interface defines a collection of entity type identifiers used
 ///   to filter geographic child entity queries. When requesting child entities from a parent geographic region
 ///   (via <see cref="GeoChildEntitiesQuery"/>), the GeoChildTypes collection specifies which categories or types
 ///   of child entities should be included in the results. This filtering capability enables selective retrieval

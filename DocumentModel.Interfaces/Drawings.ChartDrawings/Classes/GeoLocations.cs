@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a container for geographic location data retrieved from geocoding operations.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a container for geographic location information
+///   This interface defines a container for geographic location information
 ///   returned from geocoding queries that convert address components into coordinate and entity data. The GeoLocations
 ///   container holds a <see cref="GeoLocation"/> object containing comprehensive location information including coordinates
 ///   (latitude/longitude), entity identification (name and type), and structured address data. This structure serves as

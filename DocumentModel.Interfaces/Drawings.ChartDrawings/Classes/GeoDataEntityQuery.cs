@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a query for retrieving detailed geographic data for a specific entity.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a query specification used to retrieve
+///   This interface defines a query specification used to retrieve
 ///   comprehensive geographic information for a specific entity from mapping services or geographic data providers.
 ///   The query targets a single geographic entity identified by its unique identifier (<see cref="EntityId"/>) and
 ///   optionally filtered by entity type (<see cref="EntityType"/>), requesting detailed data including boundaries,

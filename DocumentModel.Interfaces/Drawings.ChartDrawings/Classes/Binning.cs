@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the binning configuration for histogram charts that groups continuous data into discrete intervals.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the parameters for organizing continuous
+///   This interface defines the parameters for organizing continuous
 ///   numeric data into bins (intervals or buckets) for histogram visualization. Binning is essential for creating
 ///   histograms that display the distribution and frequency of data values across ranges. The configuration
 ///   includes settings for how interval boundaries are handled (whether intervals are closed on the left or right),

@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a cloned control specifically designed for the Quick Access Toolbar (QAT) in Office applications.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a control clone optimized for use in the
+///   This interface defines a control clone optimized for use in the
 ///   Quick Access Toolbar, which provides users with convenient access to frequently used commands above or below
 ///   the ribbon. Similar to <see cref="ControlClone"/>, this interface enables replication of existing controls
 ///   (either built-in Office commands or custom controls) while allowing customization of appearance, behavior,

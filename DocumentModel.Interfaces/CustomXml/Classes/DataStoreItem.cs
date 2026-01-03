@@ -4,7 +4,7 @@ namespace DocumentModel.CustomXml;
 ///   Represents a custom XML data item stored within a document with associated schema information.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a container for custom XML data
+///   This interface defines a container for custom XML data
 ///   that can be embedded within Office documents. Custom XML data stores allow documents to contain
 ///   structured data that can be mapped to document content controls or accessed programmatically.
 ///   Each data store item is uniquely identified and can reference one or more XML schemas that

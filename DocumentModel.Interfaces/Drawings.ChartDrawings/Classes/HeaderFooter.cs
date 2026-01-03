@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents header and footer configuration for printed chart output.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines header and footer settings that control how
+///   This interface defines header and footer settings that control how
 ///   text appears at the top and bottom of printed chart pages. Headers and footers provide consistent page decoration
 ///   for printed charts, displaying information such as chart titles, page numbers, dates, author names, or other
 ///   contextual information that helps identify and organize printed output. The interface supports sophisticated

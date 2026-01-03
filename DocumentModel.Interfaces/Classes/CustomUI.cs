@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents the root element for Office UI customization, defining custom ribbons, backstage views, and context menus.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the top-level container for all Office user
+///   This interface defines the top-level container for all Office user
 ///   interface customizations in an add-in or document. The CustomUI element serves as the root of the UI customization
 ///   structure, containing definitions for custom commands, ribbon modifications, backstage view customizations, and
 ///   context menu extensions. This interface enables comprehensive Office UI customization by providing access to

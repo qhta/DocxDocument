@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a dialog box launcher button that appears in the lower-right corner of ribbon groups.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a dialog box launcher element that provides
+///   This interface defines a dialog box launcher element that provides
 ///   access to a dialog box or task pane related to a ribbon group's functionality. Dialog box launchers are
 ///   small arrow buttons that appear in the lower-right corner of ribbon groups, offering users a way to access
 ///   additional options, settings, or features that don't fit within the group's main controls. When clicked,

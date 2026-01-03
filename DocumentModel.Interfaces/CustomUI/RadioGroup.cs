@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a radio group control that provides mutually exclusive selection options.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a control that presents a set
+///   This interface defines a control that presents a set
 ///   of radio button options where only one item can be selected at a time. Radio groups are commonly
 ///   used in backstage views and other Office UI contexts to allow users to choose from a predefined
 ///   set of mutually exclusive options. The control supports both static and dynamic content generation,

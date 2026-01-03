@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a hidden data label indicator for a specific data point in a chart.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a marker that identifies a data point
+///   This interface defines a marker that identifies a data point
 ///   whose label should be hidden or suppressed in the chart visualization. While charts may have default
 ///   settings to display labels for all data points or series-wide label settings, the DataLabelHidden
 ///   interface enables selective suppression of labels for specific data points identified by their index.

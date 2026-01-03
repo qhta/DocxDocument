@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a collection of format overrides that customize specific formatting aspects of chart elements.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a container for format override elements that
+///   This interface defines a container for format override elements that
 ///   allow selective modification of chart formatting without affecting the base formatting definitions. Format
 ///   overrides provide a mechanism to apply specific formatting customizations to individual chart elements (such as
 ///   data points, series, axes, or other components) that take precedence over default or inherited formatting rules.

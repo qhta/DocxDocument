@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a group of related tasks displayed in the backstage view or task pane.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a logical grouping of task categories
+///   This interface defines a logical grouping of task categories
 ///   that organize commands and controls in the Office backstage view. Task groups provide structure,
 ///   labeling, visibility control, and sizing options for collections of related tasks.
 /// </remarks>

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the visibility settings that control which components are displayed in data labels.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines visibility flags for different information
+///   This interface defines visibility flags for different information
 ///   components that can be included in chart data labels. Data labels can display various types of information
 ///   to help users understand data points, including the series name, category name, and actual data value. This
 ///   interface provides granular control over which components appear in labels, enabling customization based on
