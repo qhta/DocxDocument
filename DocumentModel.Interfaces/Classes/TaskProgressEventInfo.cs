@@ -6,7 +6,7 @@ namespace DocumentModel;
 public interface TaskProgressEventInfo: IModelElement
 {
   /// <summary>
-  ///   percentComplete, this property is only available in Office 2021 and later.
+  ///   percentComplete
   /// </summary>
   public Int32? PercentComplete { get; set; }
 }

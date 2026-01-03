@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface NumberFormat: IModelElement
 {
   /// <summary>
-  ///   formatCode, this property is only available in Office 2016 and later.
+  ///   formatCode
   /// </summary>
   public string? FormatCode { get; set; }
   /// <summary>
-  ///   sourceLinked, this property is only available in Office 2016 and later.
+  ///   sourceLinked
   /// </summary>
   public bool? SourceLinked { get; set; }
 }

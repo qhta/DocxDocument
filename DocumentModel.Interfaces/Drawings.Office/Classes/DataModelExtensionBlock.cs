@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings.Office;
 public interface DataModelExtensionBlock: IModelElement
 {
   /// <summary>
-  ///   relId, this property is only available in Office 2010 and later.
+  ///   relId
   /// </summary>
   public string? RelId { get; set; }
   /// <summary>
-  ///   minVer, this property is only available in Office 2010 and later.
+  ///   minVer
   /// </summary>
   public string? MinVer { get; set; }
 }

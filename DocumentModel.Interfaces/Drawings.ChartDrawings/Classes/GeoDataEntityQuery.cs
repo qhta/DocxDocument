@@ -21,7 +21,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   on-demand loading of geographic information as needed for chart rendering and interaction. The entity type
 ///   filter helps disambiguate entities that might have the same identifier across different classification levels
 ///   (such as "Georgia" the country vs. "Georgia" the U.S. state), ensuring the correct entity data is retrieved.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface GeoDataEntityQuery : IModelElement
 {
@@ -33,8 +32,7 @@ public interface GeoDataEntityQuery : IModelElement
   ///   or <c>null</c> if no type filter is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity type specifies the classification level or category of the geographic entity, helping to
+   ///   The entity type specifies the classification level or category of the geographic entity, helping to
   ///   disambiguate entities and ensure the correct entity is retrieved when identifiers might be ambiguous.
   ///   Entity types typically correspond to administrative levels (such as country, state/province, county/district)
   ///   or geographic classifications (such as populated place, statistical region, postal code area). For example,
@@ -55,8 +53,7 @@ public interface GeoDataEntityQuery : IModelElement
   ///   or <c>null</c> if no entity is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity identifier uniquely references the specific geographic entity for which detailed data is being
+   ///   The entity identifier uniquely references the specific geographic entity for which detailed data is being
   ///   requested. Entity identifiers typically follow standardized formats such as ISO country codes (e.g., "US",
   ///   "GB", "JP" for countries), administrative division codes, or provider-specific entity references. The
   ///   identifier format depends on the geographic data provider specified in <see cref="GeoCache.Provider"/>,

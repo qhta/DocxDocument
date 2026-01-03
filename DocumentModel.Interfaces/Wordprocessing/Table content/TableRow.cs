@@ -22,11 +22,11 @@ public interface TableRow: IElementCollection<ITableRowContent>, ITableContent, 
   /// </summary>
   public IHexInt? RsidTableRowProperties { get; set; }
   /// <summary>
-  ///   paraId, this property is only available in Office 2010 and later.
+  ///   paraId
   /// </summary>
   public IHexInt? ParagraphId { get; set; }
   /// <summary>
-  ///   textId, this property is only available in Office 2010 and later.
+  ///   textId
   /// </summary>
   public IHexInt? TextId { get; set; }
   /// <summary>

@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings.Diagram1;
 public interface NumberDiagramInfo: IModelElement
 {
   /// <summary>
-  ///   lvl, this property is only available in Office 2019 and later.
+  ///   lvl
   /// </summary>
   public UInt32? Lvl { get; set; }
   /// <summary>
-  ///   ptType, this property is only available in Office 2019 and later.
+  ///   ptType
   /// </summary>
   public STorageType? PtType { get; set; }
   /// <summary>

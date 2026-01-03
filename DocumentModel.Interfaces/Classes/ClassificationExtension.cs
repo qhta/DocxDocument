@@ -6,7 +6,7 @@ namespace DocumentModel;
 public interface ClassificationExtension: IModelElement
 {
   /// <summary>
-  ///   uri, this property is only available in Office 2021 and later.
+  ///   uri
   /// </summary>
   public string? Uri { get; set; }
 }

@@ -7,12 +7,12 @@ namespace DocumentModel;
 public interface Backstage: IModelElement
 {
   /// <summary>
-  ///   onShow, this property is only available in Office 2010 and later.
+  ///   onShow
   /// </summary>
   public string? OnShow { get; set; }
 
   /// <summary>
-  ///   onHide, this property is only available in Office 2010 and later.
+  ///   onHide
   /// </summary>
   public string? OnHide { get; set; }
 

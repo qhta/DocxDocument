@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface OpenXmlTickMarksElement: IModelElement
 {
   /// <summary>
-  ///   type, this property is only available in Office 2016 and later.
+  ///   type
   /// </summary>
   public TickMarksType? Type { get; set; }
   /// <summary>

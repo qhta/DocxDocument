@@ -18,7 +18,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   or emphasizing trend changes. The data point customization works in conjunction with <see cref="DataLabel"/> and
 ///   <see cref="DataLabelHidden"/> to control both the visual appearance and labeling of individual points. Extension
 ///   support enables future enhancements to data point functionality without schema changes.
-///   This functionality is available in Office 2016 and later versions for the index property.
 /// </remarks>
 public interface DataPoint : IModelElement
 {
@@ -30,8 +29,7 @@ public interface DataPoint : IModelElement
   ///   or <c>null</c> if no index is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The index identifies which data point in the series this formatting applies to, using zero-based positioning
+   ///   The index identifies which data point in the series this formatting applies to, using zero-based positioning
   ///   where 0 represents the first data point, 1 the second, and so on. This index-based approach enables precise
   ///   targeting of specific data points for custom formatting, allowing selective emphasis or distinction of
   ///   particular values in the data sequence. The index corresponds directly to the position of the data value

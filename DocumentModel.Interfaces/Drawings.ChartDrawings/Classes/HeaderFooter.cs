@@ -19,7 +19,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   <see cref="PrintSettings"/> within the <see cref="ChartSpace"/>, controlling how charts appear when printed or
 ///   exported to print-oriented formats such as PDF. This configuration ensures that printed charts maintain consistent,
 ///   professional appearance with appropriate page decoration that aids in document organization and identification.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface HeaderFooter : IModelElement
 {
@@ -31,8 +30,7 @@ public interface HeaderFooter : IModelElement
   ///   or <c>null</c> to use default alignment behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   When enabled, headers and footers align with the left and right margins of the printed page, ensuring
+   ///   When enabled, headers and footers align with the left and right margins of the printed page, ensuring
   ///   consistent visual alignment between page content and header/footer content. This creates a cohesive appearance
   ///   where headers and footers respect the same page boundaries as the chart content. When disabled, headers and
   ///   footers may extend to the full width of the page, potentially extending beyond the content margins. Margin
@@ -49,8 +47,7 @@ public interface HeaderFooter : IModelElement
   ///   or <c>null</c> to use default behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   When enabled, odd-numbered pages use the content specified in <see cref="OddHeaderXsdString"/> and
+   ///   When enabled, odd-numbered pages use the content specified in <see cref="OddHeaderXsdString"/> and
   ///   <see cref="OddFooterXsdString"/>, while even-numbered pages use <see cref="EvenHeaderXsdString"/> and
   ///   <see cref="EvenFooterXsdString"/>. This feature is valuable for double-sided printing or bound documents
   ///   where facing pages should have mirrored headers and footers. For example, page numbers might appear on the
@@ -68,8 +65,7 @@ public interface HeaderFooter : IModelElement
   ///   or <c>null</c> to use default behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   When enabled, the first page uses the content specified in <see cref="FirstHeaderXsdString"/> and
+   ///   When enabled, the first page uses the content specified in <see cref="FirstHeaderXsdString"/> and
   ///   <see cref="FirstFooterXsdString"/>, while subsequent pages use the odd/even page content as appropriate.
   ///   This feature is commonly used to omit or customize headers and footers on title pages, cover pages, or
   ///   opening pages where standard header/footer content might be inappropriate or redundant. For example, a

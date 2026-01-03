@@ -15,7 +15,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   formatting, showing labels for select data points with custom formatting, or any combination thereof. The default
 ///   settings reduce redundancy and simplify label management for charts with many data points, while the individual
 ///   label collections provide flexibility for emphasizing or suppressing specific values.
-///   This functionality is available in Office 2016 and later versions for positioning properties.
 /// </remarks>
 public interface DataLabels : IModelElement
 {
@@ -27,8 +26,7 @@ public interface DataLabels : IModelElement
   ///   or <c>null</c> to use the chart type's default position.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The position setting establishes the default placement for all data labels in the series. Individual labels
+   ///   The position setting establishes the default placement for all data labels in the series. Individual labels
   ///   defined in the <see cref="Items"/> collection can override this default with their own position settings.
   ///   The appropriate position varies by chart type: column charts typically use above or inside positions,
   ///   bar charts use right or inside, pie charts use outside with leader lines, and line charts use above or right.

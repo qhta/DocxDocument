@@ -6,23 +6,23 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface SeriesElementVisibilities: IModelElement
 {
   /// <summary>
-  ///   connectorLines, this property is only available in Office 2016 and later.
+  ///   connectorLines
   /// </summary>
   public bool? ConnectorLines { get; set; }
   /// <summary>
-  ///   meanLine, this property is only available in Office 2016 and later.
+  ///   meanLine
   /// </summary>
   public bool? MeanLine { get; set; }
   /// <summary>
-  ///   meanMarker, this property is only available in Office 2016 and later.
+  ///   meanMarker
   /// </summary>
   public bool? MeanMarker { get; set; }
   /// <summary>
-  ///   nonoutliers, this property is only available in Office 2016 and later.
+  ///   nonoutliers
   /// </summary>
   public bool? Nonoutliers { get; set; }
   /// <summary>
-  ///   outliers, this property is only available in Office 2016 and later.
+  ///   outliers
   /// </summary>
   public bool? Outliers { get; set; }
 }

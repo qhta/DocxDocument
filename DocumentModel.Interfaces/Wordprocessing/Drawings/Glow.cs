@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 public interface Glow: ITypedModelElement, IDrawingProperty
 {
   /// <summary>
-  ///   rad, this property is only available in Office 2010 and later.
+  ///   rad
   /// </summary>
   public Int64? GlowRadius { get; set; }
   /// <summary>

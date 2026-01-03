@@ -6,15 +6,15 @@ namespace DocumentModel.Wordprocessing;
 public interface Properties3D: ITypedModelElement, IDrawingProperty
 {
   /// <summary>
-  ///   extrusionH, this property is only available in Office 2010 and later.
+  ///   extrusionH
   /// </summary>
   public Int64? ExtrusionHeight { get; set; }
   /// <summary>
-  ///   contourW, this property is only available in Office 2010 and later.
+  ///   contourW
   /// </summary>
   public Int64? ContourWidth { get; set; }
   /// <summary>
-  ///   prstMaterial, this property is only available in Office 2010 and later.
+  ///   prstMaterial
   /// </summary>
   public PresetMaterialKind? PresetMaterialType { get; set; }
   /// <summary>

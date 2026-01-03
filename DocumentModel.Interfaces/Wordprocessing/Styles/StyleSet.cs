@@ -6,11 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public interface StyleSet: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id
   /// </summary>
   public UInt32? Id { get; set; }
   /// <summary>
-  ///   val, this property is only available in Office 2010 and later.
+  ///   val
   /// </summary>
   public OnOffKind? Val { get; set; }
 }

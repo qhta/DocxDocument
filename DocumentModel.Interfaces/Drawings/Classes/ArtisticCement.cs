@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ArtisticCement: IModelElement
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  ///   trans
   /// </summary>
   public Int32? Transparancy { get; set; }
   /// <summary>
-  ///   crackSpacing, this property is only available in Office 2010 and later.
+  ///   crackSpacing
   /// </summary>
   public Int32? CrackSpacing { get; set; }
 }

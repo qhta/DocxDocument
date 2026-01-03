@@ -18,7 +18,7 @@ public interface VerticalPosition: IModelElement
   /// </summary>
   public string? PositionOffset { get; set; }
   /// <summary>
-  ///   PercentagePositionVerticalOffset, this property is only available in Office 2010 and later..
+  ///   PercentagePositionVerticalOffset.
   /// </summary>
   public string? PercentagePositionVerticalOffset { get; set; }
 }

@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Office;
 public interface Shape: IModelElement
 {
   /// <summary>
-  ///   modelId, this property is only available in Office 2010 and later.
+  ///   modelId
   /// </summary>
   public string? ModelId { get; set; }
   /// <summary>

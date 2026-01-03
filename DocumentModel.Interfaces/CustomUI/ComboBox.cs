@@ -11,7 +11,6 @@ namespace DocumentModel;
 ///   dynamic content generation, customizable appearance with images and labels, text length constraints,
 ///   and change notifications. It can have its state and behavior controlled through static properties
 ///   or dynamic callbacks.
-///   This functionality is available in Office 2010 and later versions.
 /// </remarks>
 public interface ComboBox : IModelElement
 {
@@ -22,7 +21,6 @@ public interface ComboBox : IModelElement
   ///   <c>true</c> to show item images; <c>false</c> to hide them; or <c>null</c> to use the default behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? ShowItemImage { get; set; }
 
@@ -33,7 +31,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if using static items.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return an integer representing the item count.
   ///   Use this for dynamically generated dropdown content.
   /// </remarks>
@@ -46,7 +43,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if not using dynamic labels.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function receives an item index and should return a string label.
   /// </remarks>
   public string? GetItemLabel { get; set; }
@@ -58,7 +54,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if not using dynamic screentips.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function receives an item index and should return a string screentip.
   /// </remarks>
   public string? GetItemScreentip { get; set; }
@@ -70,7 +65,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if not using dynamic supertips.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function receives an item index and should return a string supertip (extended tooltip).
   /// </remarks>
   public string? GetItemSupertip { get; set; }
@@ -82,7 +76,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if not using dynamic images.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function receives an item index and should return an image object or identifier.
   /// </remarks>
   public string? GetItemImage { get; set; }
@@ -94,7 +87,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if not using dynamic item IDs.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function receives an item index and should return a string identifier.
   /// </remarks>
   public string? GetItemID { get; set; }
@@ -106,7 +98,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the size value, or <c>null</c> if not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? SizeString { get; set; }
 
@@ -117,7 +108,6 @@ public interface ComboBox : IModelElement
   ///   <c>true</c> to invalidate content on dropdown close; <c>false</c> otherwise; or <c>null</c> to use the default behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   When enabled, the dropdown content will be refreshed each time the dropdown is opened.
   /// </remarks>
   public bool? InvalidateContentOnDrop { get; set; }
@@ -129,7 +119,6 @@ public interface ComboBox : IModelElement
   ///   <c>true</c> if the combo box is enabled; <c>false</c> if disabled; or <c>null</c> to use the default enabled state.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? Enabled { get; set; }
 
@@ -140,7 +129,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the enabled state is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value indicating whether the combo box should be enabled.
   /// </remarks>
   public string? GetEnabled { get; set; }
@@ -152,7 +140,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the image identifier, or <c>null</c> if no custom image is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The image identifier references a custom image resource included in the Office add-in.
   /// </remarks>
   public string? Image { get; set; }
@@ -164,7 +151,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the Microsoft Office image identifier, or <c>null</c> if not using a built-in image.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to display a built-in Office icon for the combo box.
   /// </remarks>
   public string? ImageMso { get; set; }
@@ -176,7 +162,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the image is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return an image object or identifier.
   /// </remarks>
   public string? GetImage { get; set; }
@@ -188,7 +173,6 @@ public interface ComboBox : IModelElement
   ///   An integer representing the maximum character length, or <c>null</c> to allow unlimited input.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   This constraint applies to text typed directly into the combo box, not to selected items.
   /// </remarks>
   public Int64? MaxLength { get; set; }
@@ -200,7 +184,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if not retrieving text dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string representing the current text in the combo box.
   /// </remarks>
   public string? GetText { get; set; }
@@ -212,7 +195,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if no change handler is defined.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function is invoked when the user types text or selects an item from the dropdown.
   /// </remarks>
   public string? OnChange { get; set; }
@@ -224,7 +206,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the identifier, or <c>null</c> if no identifier is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Id { get; set; }
 
@@ -235,7 +216,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this when the identifier needs to be unique across multiple namespaces.
   /// </remarks>
   public string? QualifiedId { get; set; }
@@ -247,7 +227,6 @@ public interface ComboBox : IModelElement
   ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The tag can be used to store application-specific information associated with this combo box.
   /// </remarks>
   public string? Tag { get; set; }
@@ -259,7 +238,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if not referencing a built-in combo box.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? IdMso { get; set; }
 
@@ -270,7 +248,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the screentip text, or <c>null</c> if no screentip is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Screentip { get; set; }
 
@@ -281,7 +258,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the screentip is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the screentip.
   /// </remarks>
   public string? GetScreentip { get; set; }
@@ -293,7 +269,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the supertip text, or <c>null</c> if no supertip is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Supertips provide more detailed information than screentips.
   /// </remarks>
   public string? Supertip { get; set; }
@@ -305,7 +280,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the supertip is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the supertip.
   /// </remarks>
   public string? GetSupertip { get; set; }
@@ -317,7 +291,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the label text, or <c>null</c> if no label is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Label { get; set; }
 
@@ -328,7 +301,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the label is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the label.
   /// </remarks>
   public string? GetLabel { get; set; }
@@ -340,7 +312,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the combo box relative to a built-in control.
   /// </remarks>
   public string? InsertAfterMso { get; set; }
@@ -352,7 +323,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the combo box relative to a built-in control.
   /// </remarks>
   public string? InsertBeforeMso { get; set; }
@@ -364,7 +334,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the combo box relative to another custom control.
   /// </remarks>
   public string? InsertAfterQualifiedId { get; set; }
@@ -376,7 +345,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the combo box relative to another custom control.
   /// </remarks>
   public string? InsertBeforeQualifiedId { get; set; }
@@ -388,7 +356,6 @@ public interface ComboBox : IModelElement
   ///   <c>true</c> if the combo box is visible; <c>false</c> if hidden; or <c>null</c> to use the default visibility.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? Visible { get; set; }
 
@@ -399,7 +366,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if visibility is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value indicating whether the combo box should be visible.
   /// </remarks>
   public string? GetVisible { get; set; }
@@ -411,7 +377,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the keytip character(s), or <c>null</c> if no keytip is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
   /// </remarks>
   public string? Keytip { get; set; }
@@ -423,7 +388,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the keytip is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the keytip.
   /// </remarks>
   public string? GetKeytip { get; set; }
@@ -435,7 +399,6 @@ public interface ComboBox : IModelElement
   ///   <c>true</c> if the label is shown; <c>false</c> if hidden; or <c>null</c> to use the default behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? ShowLabel { get; set; }
 
@@ -446,7 +409,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if label visibility is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value indicating whether the label should be displayed.
   /// </remarks>
   public string? GetShowLabel { get; set; }
@@ -458,7 +420,6 @@ public interface ComboBox : IModelElement
   ///   <c>true</c> if the image is shown; <c>false</c> if hidden; or <c>null</c> to use the default behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? ShowImage { get; set; }
 
@@ -469,7 +430,6 @@ public interface ComboBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if image visibility is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value indicating whether the image should be displayed.
   /// </remarks>
   public string? GetShowImage { get; set; }

@@ -7,17 +7,17 @@ namespace DocumentModel;
 public interface BackstageItemType: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   label, this property is only available in Office 2010 and later.
+  ///   label
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel
   /// </summary>
   public string? GetLabel { get; set; }
 }

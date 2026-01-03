@@ -16,7 +16,7 @@ public interface TableCellMargin: IModelElement
   /// </summary>
   public TableWidth? LeftMargin { get; set; }
   /// <summary>
-  ///   StartMargin, this property is only available in Office 2010 and later.
+  ///   StartMargin
   /// </summary>
   public TableWidth? StartMargin { get; set; }
   /// <summary>
@@ -28,7 +28,7 @@ public interface TableCellMargin: IModelElement
   /// </summary>
   public TableWidth? RightMargin { get; set; }
   /// <summary>
-  ///   EndMargin, this property is only available in Office 2010 and later.
+  ///   EndMargin
   /// </summary>
   public TableWidth? EndMargin { get; set; }
 }

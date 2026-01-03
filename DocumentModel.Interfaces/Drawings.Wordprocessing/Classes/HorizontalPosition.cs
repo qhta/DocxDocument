@@ -18,7 +18,7 @@ public interface HorizontalPosition: IModelElement
   /// </summary>
   public string? PositionOffset { get; set; }
   /// <summary>
-  ///   PercentagePositionHeightOffset, this property is only available in Office 2010 and later..
+  ///   PercentagePositionHeightOffset.
   /// </summary>
   public string? PercentagePositionHeightOffset { get; set; }
 }

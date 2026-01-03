@@ -7,32 +7,32 @@ namespace DocumentModel;
 public interface BackstageMenuGroup: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   idQ, this property is only available in Office 2010 and later.
+  ///   idQ
   /// </summary>
   public string? QualifiedId { get; set; }
 
   /// <summary>
-  ///   tag, this property is only available in Office 2010 and later.
+  ///   tag
   /// </summary>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   label, this property is only available in Office 2010 and later.
+  ///   label
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel
   /// </summary>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   itemSize, this property is only available in Office 2010 and later.
+  ///   itemSize
   /// </summary>
   public ItemSizeKind? ItemSize { get; set; }
 

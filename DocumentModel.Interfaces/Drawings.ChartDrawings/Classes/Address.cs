@@ -11,7 +11,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   data visualization in charts, supporting features such as map charts and geographic data series.
 ///   The address components follow international addressing standards to ensure compatibility across
 ///   different regions and mapping services.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface Address : IModelElement
 {
@@ -23,8 +22,7 @@ public interface Address : IModelElement
   ///   or <c>null</c> if no street address is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   This represents the first line of the street address and typically includes the building number
+   ///   This represents the first line of the street address and typically includes the building number
   ///   and street name (e.g., "123 Main Street").
   /// </remarks>
   public string? Address1 { get; set; }
@@ -37,8 +35,7 @@ public interface Address : IModelElement
   ///   or <c>null</c> if no country/region is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   This contains the human-readable country or region name (e.g., "United States", "Canada").
+   ///   This contains the human-readable country or region name (e.g., "United States", "Canada").
   ///   For programmatic country identification, use <see cref="IsoCountryCode"/>.
   /// </remarks>
   public string? CountryRegion { get; set; }
@@ -51,8 +48,7 @@ public interface Address : IModelElement
   ///   or <c>null</c> if no first-level district is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   This represents the largest sub-national administrative division, such as a state, province,
+   ///   This represents the largest sub-national administrative division, such as a state, province,
   ///   or region (e.g., "California" in the United States, "Ontario" in Canada).
   /// </remarks>
   public string? AdminDistrict1 { get; set; }
@@ -65,8 +61,7 @@ public interface Address : IModelElement
   ///   or <c>null</c> if no second-level district is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   This represents a sub-division of the first-level administrative district, such as a county,
+   ///   This represents a sub-division of the first-level administrative district, such as a county,
   ///   district, or prefecture (e.g., "Los Angeles County" in California).
   /// </remarks>
   public string? AdminDistrict2 { get; set; }
@@ -79,8 +74,7 @@ public interface Address : IModelElement
   ///   or <c>null</c> if no postal code is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The postal code format varies by country (e.g., "90210" in the US, "SW1A 1AA" in the UK).
+   ///   The postal code format varies by country (e.g., "90210" in the US, "SW1A 1AA" in the UK).
   /// </remarks>
   public string? PostalCode { get; set; }
 
@@ -92,8 +86,7 @@ public interface Address : IModelElement
   ///   or <c>null</c> if no locality is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   This represents the populated place name, typically a city or town (e.g., "Los Angeles", "Toronto").
+   ///   This represents the populated place name, typically a city or town (e.g., "Los Angeles", "Toronto").
   /// </remarks>
   public string? Locality { get; set; }
 
@@ -105,8 +98,7 @@ public interface Address : IModelElement
   ///   or <c>null</c> if no ISO code is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The ISO country code provides a standardized, machine-readable country identifier using the
+   ///   The ISO country code provides a standardized, machine-readable country identifier using the
   ///   ISO 3166-1 alpha-2 format (e.g., "US" for United States, "CA" for Canada, "GB" for United Kingdom).
   ///   This is preferred over <see cref="CountryRegion"/> for programmatic operations and geocoding.
   /// </remarks>

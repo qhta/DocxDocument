@@ -23,7 +23,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   identifier might exist at different administrative levels, ensuring the data point is mapped to the correct
 ///   geographic entity. This query-based mapping enables flexible, efficient data visualization on map charts
 ///   where geographic associations are known and explicit rather than derived from coordinates.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface GeoDataPointToEntityQuery : IModelElement
 {
@@ -35,8 +34,7 @@ public interface GeoDataPointToEntityQuery : IModelElement
   ///   or <c>null</c> if no type filter is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity type specifies the administrative or geographic classification level of the target entity,
+   ///   The entity type specifies the administrative or geographic classification level of the target entity,
   ///   helping to disambiguate cases where entity identifiers might not be unique across different classification
   ///   levels. For example, "GA" could refer to either Georgia the U.S. state or Georgia the country, and specifying
   ///   the entity type (such as "AdminDivision1" for state or "Country" for nation) ensures the data point is
@@ -56,8 +54,7 @@ public interface GeoDataPointToEntityQuery : IModelElement
   ///   or <c>null</c> if no entity is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity identifier specifies the target geographic entity to which the data point should be mapped.
+   ///   The entity identifier specifies the target geographic entity to which the data point should be mapped.
   ///   Entity identifiers typically follow standardized formats such as ISO country codes (e.g., "US", "GB", "JP"),
   ///   administrative division codes (e.g., "CA" for California, "NY" for New York), or custom region identifiers
   ///   defined by the organization or mapping provider. The identifier enables direct association between data points

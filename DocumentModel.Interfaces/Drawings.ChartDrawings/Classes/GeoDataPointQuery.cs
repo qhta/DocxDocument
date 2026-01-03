@@ -22,7 +22,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   lower-level subdivisions) or finding the most specific local administrative division. This point-to-entity
 ///   mapping is fundamental to geographic data visualization, enabling charts to organize and aggregate point-based
 ///   data according to geographic boundaries and hierarchies.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface GeoDataPointQuery : IModelElement
 {
@@ -34,8 +33,7 @@ public interface GeoDataPointQuery : IModelElement
   ///   or <c>null</c> to return any entity type that contains the point.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity type specifies the administrative or geographic classification level at which to identify the
+   ///   The entity type specifies the administrative or geographic classification level at which to identify the
   ///   containing entity. This filtering is valuable because a given coordinate point may be contained within
   ///   multiple nested geographic entities (such as a city within a county within a state within a country), and
   ///   the query needs to specify which level of the hierarchy to return. For example, specifying "Country" returns
@@ -56,8 +54,7 @@ public interface GeoDataPointQuery : IModelElement
   ///   or <c>null</c> if no latitude is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The latitude specifies the north-south position of the point in the standard geographic coordinate system,
+   ///   The latitude specifies the north-south position of the point in the standard geographic coordinate system,
   ///   using decimal degrees where values range from -90 (90°S, South Pole) to +90 (90°N, North Pole). The latitude,
   ///   combined with <see cref="Longitude"/>, uniquely identifies the geographic location for which the containing
   ///   entity is being queried. For example, querying with latitude 37.7749 and longitude -122.4194 would identify
@@ -75,8 +72,7 @@ public interface GeoDataPointQuery : IModelElement
   ///   or <c>null</c> if no longitude is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The longitude specifies the east-west position of the point in the standard geographic coordinate system,
+   ///   The longitude specifies the east-west position of the point in the standard geographic coordinate system,
   ///   using decimal degrees where values range from -180 (180°W) to +180 (180°E). The longitude, combined with
   ///   <see cref="Latitude"/>, uniquely identifies the geographic location for which the containing entity is being
   ///   queried. The International Date Line is located at approximately ±180° longitude. For coordinates near this

@@ -15,7 +15,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   <see cref="ChartData.ExternalData"/>, embedded data must be manually updated if the underlying values
 ///   change. The dimensional structure supports various chart types including bar charts, line charts,
 ///   scatter plots, and more complex visualizations that require both numeric and categorical data.
-///   This functionality is available in Office 2016 and later versions for the identifier property.
 /// </remarks>
 public interface Data : IModelElement
 {
@@ -27,8 +26,7 @@ public interface Data : IModelElement
   ///   or <c>null</c> if no identifier is assigned.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The identifier uniquely distinguishes this data instance from other data collections in the chart,
+   ///   The identifier uniquely distinguishes this data instance from other data collections in the chart,
   ///   enabling references from chart series and other elements that need to access this specific data set.
   ///   This is particularly useful when a chart contains multiple embedded data collections.
   /// </remarks>

@@ -17,7 +17,6 @@ namespace DocumentModel;
 ///   that don't recognize a particular extension URI can safely ignore the extension content, ensuring documents
 ///   remain functional even when opened in older or different Office versions. This forward-compatible design
 ///   enables innovation while preserving document interoperability across different Office versions and platforms.
-///   This functionality is available in Office 2021 and later versions.
 /// </remarks>
 public interface Extension : IModelElement
 {
@@ -29,7 +28,6 @@ public interface Extension : IModelElement
   ///   or <c>null</c> if no URI is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2021 and later.
   ///   The URI serves as a unique identifier that specifies what type of extension this is and how it should
   ///   be processed. The URI typically follows a namespace format (e.g., "http://schemas.microsoft.com/office/...")
   ///   that ensures uniqueness and provides context about the extension's origin and purpose. Office applications

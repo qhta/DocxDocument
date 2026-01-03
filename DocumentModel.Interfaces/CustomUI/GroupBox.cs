@@ -9,7 +9,6 @@ namespace DocumentModel;
 ///   optional labels to separate and categorize controls, improving the organization and usability of
 ///   backstage views. They support various control types including buttons, checkboxes, text inputs,
 ///   dropdowns, radio groups, hyperlinks, labels, and nested group boxes for hierarchical organization.
-///   This functionality is available in Office 2010 and later versions.
 /// </remarks>
 public interface GroupBox : IModelElement
 {
@@ -20,7 +19,6 @@ public interface GroupBox : IModelElement
   ///   A string containing the identifier, or <c>null</c> if no identifier is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Id { get; set; }
 
@@ -31,7 +29,6 @@ public interface GroupBox : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this when the identifier needs to be unique across multiple namespaces.
   /// </remarks>
   public string? QualifiedId { get; set; }
@@ -43,7 +40,6 @@ public interface GroupBox : IModelElement
   ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The tag can be used to store application-specific information associated with this group box.
   /// </remarks>
   public string? Tag { get; set; }
@@ -56,7 +52,6 @@ public interface GroupBox : IModelElement
   ///   or <c>null</c> to use the default expansion behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   This controls whether the group box expands horizontally, vertically, or both to utilize available layout space.
   /// </remarks>
   public ExpandKind? Expand { get; set; }
@@ -68,7 +63,6 @@ public interface GroupBox : IModelElement
   ///   A string containing the label text, or <c>null</c> if no label is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The label is typically displayed at the top of the group box as a header.
   /// </remarks>
   public string? Label { get; set; }
@@ -80,7 +74,6 @@ public interface GroupBox : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the label is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the label.
   /// </remarks>
   public string? GetLabel { get; set; }

@@ -10,27 +10,27 @@ public interface TableLook: IModelElement
   /// </summary>
   public IHexChar? Val { get; set; }
   /// <summary>
-  ///   firstRow, this property is only available in Office 2010 and later.
+  ///   firstRow
   /// </summary>
   public bool? FirstRow { get; set; }
   /// <summary>
-  ///   lastRow, this property is only available in Office 2010 and later.
+  ///   lastRow
   /// </summary>
   public bool? LastRow { get; set; }
   /// <summary>
-  ///   firstColumn, this property is only available in Office 2010 and later.
+  ///   firstColumn
   /// </summary>
   public bool? FirstColumn { get; set; }
   /// <summary>
-  ///   lastColumn, this property is only available in Office 2010 and later.
+  ///   lastColumn
   /// </summary>
   public bool? LastColumn { get; set; }
   /// <summary>
-  ///   noHBand, this property is only available in Office 2010 and later.
+  ///   noHBand
   /// </summary>
   public bool? NoHorizontalBand { get; set; }
   /// <summary>
-  ///   noVBand, this property is only available in Office 2010 and later.
+  ///   noVBand
   /// </summary>
   public bool? NoVerticalBand { get; set; }
 }

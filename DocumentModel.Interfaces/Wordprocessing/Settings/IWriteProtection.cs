@@ -65,15 +65,15 @@ public interface IWriteProtection: IModelElement
   /// </summary>
   public string? AlgorithmName { get; set; }
   /// <summary>
-  ///   hashValue, this property is only available in Office 2010 and later.
+  ///   hashValue
   /// </summary>
   public IBase64Binary? HashValue { get; set; }
   /// <summary>
-  ///   saltValue, this property is only available in Office 2010 and later.
+  ///   saltValue
   /// </summary>
   public IBase64Binary? SaltValue { get; set; }
   /// <summary>
-  ///   spinCount, this property is only available in Office 2010 and later.
+  ///   spinCount
   /// </summary>
   public Int32? SpinCount { get; set; }
 }

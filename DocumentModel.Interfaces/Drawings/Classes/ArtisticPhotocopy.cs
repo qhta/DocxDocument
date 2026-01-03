@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ArtisticPhotocopy: IModelElement
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  ///   trans
   /// </summary>
   public Int32? Transparancy { get; set; }
   /// <summary>
-  ///   detail, this property is only available in Office 2010 and later.
+  ///   detail
   /// </summary>
   public Int32? Detail { get; set; }
 }

@@ -132,11 +132,6 @@ public interface ContextMenu : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later versions. Add-ins targeting Office 2010+
-  /// can use this to ensure context menu customizations appear in the appropriate contexts.
-  /// The exact list of available context menu IDs is documented in the Office ribbon extensibility documentation.
-  /// </para>
-  /// <para>
   /// To find available context menu IDs, developers can use the Office Fluent UI Control Identifiers
   /// documentation or inspect existing Office UI using tools like the Custom UI Editor.
   /// </para>

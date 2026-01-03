@@ -90,7 +90,7 @@ public interface SchemeColor : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later versions. Documents using scheme colors
+  /// Documents using scheme colors
   /// require compatibility with Office 2010 or higher to display correctly.
   /// </para>
   /// </remarks>

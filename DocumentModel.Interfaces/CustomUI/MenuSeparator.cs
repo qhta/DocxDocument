@@ -9,7 +9,6 @@ namespace DocumentModel;
 ///   to label sections of the menu, providing better organization and improving usability by creating
 ///   logical groupings of commands. Separators support positioning relative to other menu items and
 ///   can have their title determined statically or dynamically through callbacks.
-///   This functionality is available in Office 2010 and later versions.
 /// </remarks>
 public interface MenuSeparator : IModelElement
 {
@@ -20,7 +19,6 @@ public interface MenuSeparator : IModelElement
   ///   A string containing the identifier, or <c>null</c> if no identifier is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Id { get; set; }
 
@@ -31,7 +29,6 @@ public interface MenuSeparator : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this when the identifier needs to be unique across multiple namespaces.
   /// </remarks>
   public string? QualifiedId { get; set; }
@@ -43,7 +40,6 @@ public interface MenuSeparator : IModelElement
   ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The tag can be used to store application-specific information associated with this menu separator.
   /// </remarks>
   public string? Tag { get; set; }
@@ -55,7 +51,6 @@ public interface MenuSeparator : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the separator relative to a built-in menu item.
   /// </remarks>
   public string? InsertAfterMso { get; set; }
@@ -67,7 +62,6 @@ public interface MenuSeparator : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the separator relative to a built-in menu item.
   /// </remarks>
   public string? InsertBeforeMso { get; set; }
@@ -79,7 +73,6 @@ public interface MenuSeparator : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the separator relative to another custom menu item.
   /// </remarks>
   public string? InsertAfterQualifiedId { get; set; }
@@ -91,7 +84,6 @@ public interface MenuSeparator : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the separator relative to another custom menu item.
   /// </remarks>
   public string? InsertBeforeQualifiedId { get; set; }
@@ -103,7 +95,6 @@ public interface MenuSeparator : IModelElement
   ///   A string containing the title text, or <c>null</c> if no title is displayed (simple divider line).
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   When specified, the separator becomes a labeled section header rather than just a dividing line.
   /// </remarks>
   public string? Title { get; set; }
@@ -115,7 +106,6 @@ public interface MenuSeparator : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the title is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the title.
   /// </remarks>
   public string? GetTitle { get; set; }

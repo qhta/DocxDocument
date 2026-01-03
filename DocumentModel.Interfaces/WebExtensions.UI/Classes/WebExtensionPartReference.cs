@@ -6,7 +6,7 @@ namespace DocumentModel.WebExtensions.UI;
 public interface WebExtensionPartReference: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
 }

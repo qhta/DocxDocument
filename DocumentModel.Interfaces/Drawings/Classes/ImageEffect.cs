@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface ImageEffect: IModelElement
 {
   /// <summary>
-  ///   visible, this property is only available in Office 2010 and later.
+  ///   visible
   /// </summary>
   public bool? Visible { get; set; }
   /// <summary>
