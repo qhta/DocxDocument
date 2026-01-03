@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the mapping between logical color roles and theme color scheme indices for a chart.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines how chart colors are mapped to the
+///   This interface defines how chart colors are mapped to the
 ///   document's theme color scheme, ensuring visual consistency between the chart and the overall document design.
 ///   The color mapping establishes relationships between semantic color roles (such as backgrounds, text colors,
 ///   accent colors, and hyperlinks) and specific positions in the theme's color scheme. This enables charts to

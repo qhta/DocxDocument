@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a dynamic menu control that generates menu items at runtime through callback functions.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a menu control that creates its content
+///   This interface defines a menu control that creates its content
 ///   dynamically rather than using a predefined static list of items. Unlike standard <see cref="Menu"/> controls
 ///   with fixed items, dynamic menus use a callback function to generate menu content on-demand when the menu
 ///   is opened. This is particularly useful for menus that need to reflect current application state, recently

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a basic geographic entity reference with identification information.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a lightweight geographic entity representation
+///   This interface defines a lightweight geographic entity representation
 ///   that provides basic identification through a name and type classification. Unlike <see cref="GeoData"/> which
 ///   contains comprehensive geographic information including boundaries, coordinates, and polygons, GeoEntity provides
 ///   minimal entity identification suitable for references, lists, or scenarios where full geographic detail is not

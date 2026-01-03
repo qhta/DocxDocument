@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a category within a task form group that organizes related tasks.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a logical category
+///   This interface defines a logical category
 ///   that groups related tasks within a <see cref="TaskFormGroup"/>. Categories provide
 ///   organizational structure, labeling, and positioning control for task collections.
 /// </remarks>

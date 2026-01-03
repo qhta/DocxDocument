@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a gallery control that displays a collection of items in a grid layout within the ribbon.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a gallery control that presents
+///   This interface defines a gallery control that presents
 ///   a visual collection of selectable items arranged in rows and columns. Galleries provide rich
 ///   visual selection interfaces with customizable item appearance, dimensions, labels, and images.
 ///   They support both static and dynamic content generation through callback functions.

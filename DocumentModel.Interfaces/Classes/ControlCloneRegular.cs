@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a regular cloned control optimized for use within menus and button groups.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a streamlined control clone specifically
+///   This interface defines a streamlined control clone specifically
 ///   designed for constrained ribbon contexts such as menus, button groups, and split buttons. Similar to
 ///   <see cref="ControlClone"/>, this interface enables replication of existing controls (either built-in
 ///   Office commands or custom controls) while allowing customization of appearance, behavior, and positioning.

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a complete chart visualization with its associated components.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the top-level container for a chart
+///   This interface defines the top-level container for a chart
 ///   drawing that encompasses all the visual and structural elements of a chart. A chart combines a title,
 ///   a plot area containing the data visualization and axes, a legend for identifying data series, and
 ///   support for custom extensions. This interface represents the complete chart object as it appears in

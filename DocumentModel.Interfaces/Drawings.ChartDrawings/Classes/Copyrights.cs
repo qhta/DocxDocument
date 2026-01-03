@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a collection of copyright notices associated with chart data or content.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a container for copyright information
+///   This interface defines a container for copyright information
 ///   related to chart data, geographic information, images, or other content used in chart visualizations.
 ///   Copyright notices are important for legal attribution and intellectual property protection, particularly
 ///   when charts incorporate data from external sources, licensed geographic information, proprietary datasets,

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a query for mapping a data point to its containing geographic entity by entity reference.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a query specification used to associate a
+///   This interface defines a query specification used to associate a
 ///   chart data point with a specific geographic entity through entity identification rather than coordinate-based
 ///   lookup. Unlike <see cref="GeoDataPointQuery"/> which uses latitude/longitude coordinates to find containing
 ///   entities, this interface directly references a target entity through its identifier (<see cref="EntityId"/>)

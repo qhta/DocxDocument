@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the result of a data point-to-entity mapping query, containing both coordinate-based and entity-based query specifications.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a query result structure that pairs multiple query
+///   This interface defines a query result structure that pairs multiple query
 ///   approaches for mapping data points to geographic entities. The result can contain both a coordinate-based query
 ///   (<see cref="GeoDataPointQuery"/>) that identifies entities by latitude/longitude position, and an entity-based
 ///   query (<see cref="GeoDataPointToEntityQuery"/>) that directly references entities by identifier. This dual-query

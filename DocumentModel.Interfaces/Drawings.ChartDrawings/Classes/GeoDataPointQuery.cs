@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a query for identifying the geographic entity that contains a specific coordinate point.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a query specification used to determine which
+///   This interface defines a query specification used to determine which
 ///   geographic entity contains a specific latitude/longitude coordinate point. This reverse geocoding operation
 ///   is essential for map-based charts that need to associate data points specified by coordinates with their
 ///   corresponding geographic regions, enabling accurate data visualization and geographic analysis. The query

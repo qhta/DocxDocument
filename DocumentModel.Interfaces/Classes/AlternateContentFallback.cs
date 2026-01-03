@@ -6,7 +6,7 @@ namespace DocumentModel;
 ///   Represents a collection of fallback content items used when no alternate content choice requirements can be satisfied.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IElementCollection{T}"/> of <see cref="ICollectionItem"/> and defines the
+///   This interface and defines the
 ///   fallback content within an <see cref="AlternateContent"/> structure. The fallback serves as the default content
 ///   representation that is rendered when an Office application cannot satisfy the requirements of any choice in the
 ///   <see cref="AlternateContent.Choices"/> collection. This typically occurs when a document created with a newer

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a content part embedded within a chart drawing that references external content through relationships.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a content part element that can embed external
+///   This interface defines a content part element that can embed external
 ///   content within a chart through relationship-based references. Content parts enable charts to incorporate rich
 ///   content such as images, diagrams, or other visual elements that are stored separately and referenced via
 ///   relationship identifiers. The content part includes properties for the relationship reference, black-and-white

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a single data point in a chart series with customizable visual formatting.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines an individual data point within a chart series
+///   This interface defines an individual data point within a chart series
 ///   that can have its own unique visual styling separate from the series' default formatting. Data points are the
 ///   fundamental building blocks of chart visualizations, representing individual values or observations in the data.
 ///   While most data points inherit formatting from their parent series, this interface enables selective customization

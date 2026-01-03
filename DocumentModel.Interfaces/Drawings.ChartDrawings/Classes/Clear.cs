@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a container for geographic data query results used in map-based chart visualizations.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a collection of geographic data query
+///   This interface defines a collection of geographic data query
 ///   result sets that support map charts and geographic visualizations. The Clear interface aggregates various
 ///   types of geographic query results including location queries (coordinates and addresses), data entity queries
 ///   (geographic regions and their properties), point-to-entity mappings (associating data points with geographic

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a cache of geographic data query results used for map-based chart visualizations.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a geographic data cache that stores the results
+///   This interface defines a geographic data cache that stores the results
 ///   of geographic queries to improve performance and enable offline access to map-based chart features. The GeoCache
 ///   serves as a local repository of geographic information retrieved from mapping services or geographic data providers,
 ///   reducing the need for repeated network requests and enabling charts to render quickly with previously retrieved

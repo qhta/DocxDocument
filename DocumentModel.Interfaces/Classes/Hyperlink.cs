@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a hyperlink control in the Office backstage view that navigates to external resources or document locations.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a hyperlink control designed specifically for
+///   This interface defines a hyperlink control designed specifically for
 ///   use in Office backstage views (File menu). Unlike standard document hyperlinks that navigate within content,
 ///   backstage hyperlinks provide navigation to external web resources, other documents, or specific document locations
 ///   from within the backstage interface. The hyperlink control appears as a clickable text element with optional icon,

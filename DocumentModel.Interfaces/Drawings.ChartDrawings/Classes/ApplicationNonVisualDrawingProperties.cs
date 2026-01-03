@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents application-specific non-visual drawing properties for chart drawing elements.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines application-level properties
+///   This interface defines application-level properties
 ///   that affect the behavior and interaction of chart drawing objects but do not impact their visual
 ///   appearance. These properties include macro associations for interactive behavior and publication
 ///   status for content management. Non-visual properties are essential for defining the functional

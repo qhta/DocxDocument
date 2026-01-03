@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a collection of tasks within the document model.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and provides access to a collection
+///   This interface provides access to a collection
 ///   of <see cref="Task"/> objects that define actionable items, assignments, and workflow
 ///   elements within the document. Tasks can be tracked, assigned to users, and monitored
 ///   through their lifecycle with associated history and progress information.

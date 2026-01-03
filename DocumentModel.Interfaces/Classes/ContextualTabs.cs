@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a collection of contextual tab sets that appear dynamically in the ribbon UI based on user context or selection.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a container for contextual tab sets that provide
+///   This interface defines a container for contextual tab sets that provide
 ///   context-sensitive commands and tools in Office applications. Contextual tabs are special ribbon tabs that appear
 ///   automatically when users select specific objects or enter particular contexts (such as selecting a table, image,
 ///   chart, or shape in a document). Unlike standard tabs that are always visible, contextual tabs provide focused

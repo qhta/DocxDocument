@@ -4,8 +4,7 @@
 ///   Represents a single content choice within an alternate content container, selected when specific requirements are met.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IElementCollection{T}"/> of <see cref="ICollectionItem"/> and
-///   <see cref="ICollectionItem"/>, and defines a content choice option within an <see cref="AlternateContent"/>
+///   This interface defines a content choice option within an <see cref="AlternateContent"/>
 ///   structure. Each choice represents a specific way to render or represent content, associated with requirements
 ///   that must be met for the choice to be selected. The requirements, specified through the <see cref="Requires"/>
 ///   property, typically identify namespaces, features, or capabilities that the application must support to use
