@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ObjectDefaults Class.
+///   Defines the ObjectDefaults interface.
 /// </summary>
-public class ObjectDefaults: ModelElement
+public interface ObjectDefaults: IModelElement
 {
   /// <summary>
   ///   Shape Default.

@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ColorReplacement Class.
+///   Defines the ColorReplacement interface.
 /// </summary>
-public class ColorReplacement: ModelElement
+public interface ColorReplacement: IModelElement
 {
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

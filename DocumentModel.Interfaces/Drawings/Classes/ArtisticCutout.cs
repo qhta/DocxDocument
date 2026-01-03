@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticCutout Class.
+///   Defines the ArtisticCutout interface.
 /// </summary>
-public class ArtisticCutout: ModelElement
+public interface ArtisticCutout: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

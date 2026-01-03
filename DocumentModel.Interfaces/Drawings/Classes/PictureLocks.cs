@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the PictureLocks Class.
+///   Defines the PictureLocks interface.
 /// </summary>
-public class PictureLocks: ModelElement
+public interface PictureLocks: IModelElement
 {
   /// <summary>
   ///   Disallow Shape Grouping

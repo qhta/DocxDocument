@@ -3,12 +3,12 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Suggested Filtering for List of Document Styles.
 /// </summary>
-public class StylePaneFormatFilter: ModelElement
+public interface StylePaneFormatFilter: IModelElement
 {
   /// <summary>
   ///   val
   /// </summary>
-  public HexChar? Val { get; set; }
+  public IHexChar? Val { get; set; }
   /// <summary>
   ///   allStyles, this property is only available in Office 2010 and later.
   /// </summary>

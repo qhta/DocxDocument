@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   User Shapes.
 /// </summary>
-public class UserShapes: ModelElement
+public interface UserShapes: IModelElement
 {
   public RelativeAnchorSize? RelativeAnchorSize { get; set; }
   public AbsoluteAnchorSize? AbsoluteAnchorSize { get; set; }

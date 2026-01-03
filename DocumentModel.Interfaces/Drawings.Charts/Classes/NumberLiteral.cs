@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Number Literal.
 /// </summary>
-public class NumberLiteral: ModelElement
+public interface NumberLiteral: IModelElement
 {
   public string? FormatCode { get; set; }
   public UInt32? PointCount { get; set; }

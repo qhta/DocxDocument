@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Group-Character Properties.
 /// </summary>
-public class GroupCharProperties: ModelElement
+public interface GroupCharProperties: IModelElement
 {
   /// <summary>
   ///   Group Character (Grouping Character).

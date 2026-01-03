@@ -10,6 +10,6 @@ namespace DocumentModel.Wordprocessing;
 ///   LRE/RLE character at the location of the start element, and a corresponding PDF character 
 ///   at the location of the end element in a string of Unicode text.
 /// </summary>
-public class BidirectionalEmbedding: BidirectionalElement
+public interface BidirectionalEmbedding: BidirectionalElement
 {
 }

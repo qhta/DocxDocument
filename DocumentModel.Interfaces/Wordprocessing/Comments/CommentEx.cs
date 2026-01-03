@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies additional information for a single comment in the current document.
 /// </summary>
-public class CommentEx: ModelElement
+public interface CommentEx: IModelElement
 {
   /// <summary>
   ///   Specifies the paraId of the last paragraph in the associated comment.

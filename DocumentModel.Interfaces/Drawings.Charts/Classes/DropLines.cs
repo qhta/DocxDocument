@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Drop Lines.
 /// </summary>
-public class DropLines: ModelElement
+public interface DropLines: IModelElement
 {
   public ChartShapeProperties? ChartShapeProperties { get; set; }
 }

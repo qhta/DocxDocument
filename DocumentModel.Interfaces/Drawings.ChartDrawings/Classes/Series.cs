@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Series Class.
 /// </summary>
-public class Series: ModelElement
+public interface Series: IModelElement
 {
   /// <summary>
   ///   layoutId, this property is only available in Office 2016 and later.

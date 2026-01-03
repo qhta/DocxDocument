@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PictureBulletBase Class.
 /// </summary>
-public class PictureBulletBase: ModelElement
+public interface PictureBulletBase: IModelElement
 {
   public DocumentModel.Vml.Group? Group { get; set; }
   public ImageFile? ImageFile { get; set; }

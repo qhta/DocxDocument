@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///  Specifies the set of properties which shall be applied to the parent structured document tag.
 /// </summary>
-public class SdtProperties : ModelElement, IStoryContent
+public interface SdtProperties : IModelElement, IStoryContent
 {
   /// <summary>
   /// specifies a unique numerical ID for the nearest ancestor structured document tag. 

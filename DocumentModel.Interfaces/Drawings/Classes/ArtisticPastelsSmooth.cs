@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticPastelsSmooth Class.
+///   Defines the ArtisticPastelsSmooth interface.
 /// </summary>
-public class ArtisticPastelsSmooth: ModelElement
+public interface ArtisticPastelsSmooth: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

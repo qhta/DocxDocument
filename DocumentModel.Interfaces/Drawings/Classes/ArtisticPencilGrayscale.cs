@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticPencilGrayscale Class.
+///   Defines the ArtisticPencilGrayscale interface.
 /// </summary>
-public class ArtisticPencilGrayscale: ModelElement
+public interface ArtisticPencilGrayscale: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines MailMergeRecipients.
 /// </summary>
-public class MailMergeRecipients: ModelElement
+public interface MailMergeRecipients: IModelElement
 {
   public SingleDataSourceRecord? SingleDataSourceRecord { get; set; }
 }

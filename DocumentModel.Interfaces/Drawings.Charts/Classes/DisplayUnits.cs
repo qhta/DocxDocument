@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the DisplayUnits Class.
 /// </summary>
-public class DisplayUnits: ModelElement
+public interface DisplayUnits: IModelElement
 {
   public Double? CustomDisplayUnit { get; set; }
   public BuiltInUnitKind? BuiltInUnit { get; set; }

@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticMosaicBubbles Class.
+///   Defines the ArtisticMosaicBubbles interface.
 /// </summary>
-public class ArtisticMosaicBubbles: ModelElement
+public interface ArtisticMosaicBubbles: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

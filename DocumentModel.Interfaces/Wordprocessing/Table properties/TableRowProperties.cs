@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 ///   These properties affect the appearance of all cells in the current row within the parent table, 
 ///   but can be overridden by individual cell-level properties, as defined by each property.
 /// </summary>
-public class TableRowProperties: BaseTableRowProperties
+public interface TableRowProperties: BaseTableRowProperties
 {
   /// <summary>
   /// Specifies that the parent table row shall be treated as an inserted row whose insertion has been tracked as a revision. 

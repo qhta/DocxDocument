@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 ///   at the location of the start element, and a corresponding PDF character at the location of the end element 
 ///   in a string of Unicode text. 
 /// </summary>
-public class BidirectionalOverride: BidirectionalElement
+public interface BidirectionalOverride: BidirectionalElement
 {
 }

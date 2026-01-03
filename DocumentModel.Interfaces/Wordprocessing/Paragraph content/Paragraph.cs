@@ -3,21 +3,9 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Paragraph Class.
 /// </summary>
-public partial class Paragraph: ElementCollection<IParagraphContent>, 
+public partial interface Paragraph: IElementCollection<IParagraphContent>, 
   IStoryContent, ITableCellContent, ISdtBlockContent, ICommentContent, IBidirectionalContent
 {
-  /// <summary>
-  /// Default constructor
-  /// </summary>
-  public Paragraph() { }
-  /// <summary>
-  /// Constructor for short content creation.
-  /// </summary>
-  public Paragraph(params IParagraphContent[] content) 
-  { 
-    foreach (var contentItem in content) 
-      Add(contentItem);
-  }
   /// <summary>
   ///   Specifies an identifier for a paragraph that is unique within the document part, 
   ///   with the exception that it need not be unique across the choices or fallback of an Alternate Content block. 
@@ -61,11 +49,5 @@ public partial class Paragraph: ElementCollection<IParagraphContent>,
   ///   Paragraph Properties.
   /// </summary>
   public ParagraphProperties? ParagraphProperties { get; set; }
-  public override string ToString()
-  {
-    var result = this.GetType().ToString();
-    if (ParagraphId!=null)
-      result +=$" ParagraphId={ParagraphId}";
-    return result;
-  }
+
 }

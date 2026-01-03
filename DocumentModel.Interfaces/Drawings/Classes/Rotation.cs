@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Rotation.
 /// </summary>
-public class Rotation: ModelElement
+public interface Rotation: IModelElement
 {
   /// <summary>
   ///   Latitude

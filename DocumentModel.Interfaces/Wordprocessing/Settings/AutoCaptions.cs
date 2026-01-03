@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Automatic Captioning Settings.
 /// </summary>
-public class AutoCaptions: ModelElement
+public interface AutoCaptions: IModelElement
 {
   public AutoCaption? AutoCaption { get; set; }
 }

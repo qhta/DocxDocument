@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ThemeElements Class.
+///   Defines the ThemeElements interface.
 /// </summary>
-public class ThemeElements: ModelElement
+public interface ThemeElements: IModelElement
 {
   /// <summary>
   ///   ColorScheme.

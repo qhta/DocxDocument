@@ -7,7 +7,7 @@ namespace DocumentModel.Math;
 ///   The control character inherits its formatting from the paragraph formatting; 
 ///   ControlProperties contains the formatting differences between the control character and the paragraph formatting.
 /// </summary>
-public class ControlProperties: ModelElement
+public interface ControlProperties: IModelElement
 {
   /// <summary>
   /// Specifies formatting differences between the control character and the paragraph formatting.

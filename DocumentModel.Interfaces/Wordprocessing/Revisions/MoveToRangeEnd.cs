@@ -17,6 +17,6 @@ namespace DocumentModel.Wordprocessing;
 ///   The Id attribute on this element shall be used to link this element 
 ///   with the corresponding start of a move destination container in the document. 
 /// </summary>
-public class MoveToRangeEnd: MarkupRangeElement
+public interface MoveToRangeEnd: MarkupRangeElement
 {
 }

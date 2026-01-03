@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BodyProperties Class.
+///   Defines the BodyProperties interface.
 /// </summary>
-public class BodyProperties: ModelElement
+public interface BodyProperties: IModelElement
 {
   /// <summary>
   ///   Rotation

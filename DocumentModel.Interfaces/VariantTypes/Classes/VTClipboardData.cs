@@ -3,7 +3,7 @@ namespace DocumentModel.VariantTypes;
 /// <summary>
 ///   Clipboard Data.
 /// </summary>
-public class VTClipboardData: ModelElement
+public interface VTClipboardData: IModelElement
 {
   /// <summary>
   ///   Format Attribute

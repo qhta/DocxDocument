@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Table Grid.
 /// </summary>
-public class TableGrid: BaseTableGrid
+public interface TableGrid: BaseTableGrid
 {
   
   /// <summary>

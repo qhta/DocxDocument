@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SchemeColor Class.
 /// </summary>
-public class SchemeColor: ModelElement
+public interface SchemeColor: IModelElement
 {
   /// <summary>
   ///   val, this property is only available in Office 2010 and later.

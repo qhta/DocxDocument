@@ -12,7 +12,7 @@ namespace DocumentModel.Wordprocessing;
 /// </item>
 /// </list>
 /// </summary>
-public class Captions : ModelElement
+public interface Captions : IModelElement
 {
   public Caption? Caption { get; set; }
   public AutoCaptions? AutoCaptions { get; set; }

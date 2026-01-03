@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Minor Gridlines.
 /// </summary>
-public class MinorGridlines: ModelElement
+public interface MinorGridlines: IModelElement
 {
   public ChartShapeProperties? ChartShapeProperties { get; set; }
 }

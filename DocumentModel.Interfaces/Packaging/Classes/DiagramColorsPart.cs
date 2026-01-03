@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramColorsPart
 /// </summary>
-public class DiagramColorsPart: ModelElement
+public interface DiagramColorsPart: IModelElement
 {
   /// <summary>
   ///   Gets or sets the root element of this part.

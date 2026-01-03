@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Diagram to Animate.
 /// </summary>
-public class Diagram: ModelElement
+public interface Diagram: IModelElement
 {
   /// <summary>
   ///   Identifier

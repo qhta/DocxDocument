@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FilteredSurfaceSeries Class.
 /// </summary>
-public class FilteredSurfaceSeries: ModelElement
+public interface FilteredSurfaceSeries: IModelElement
 {
   /// <summary>
   ///   SurfaceChartSeries.

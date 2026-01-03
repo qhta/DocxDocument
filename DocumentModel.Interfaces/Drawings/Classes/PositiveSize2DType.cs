@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the PositiveSize2DType Class.
+///   Defines the PositiveSize2DType interface.
 /// </summary>
-public class PositiveSize2DType: ModelElement
+public interface PositiveSize2DType: IModelElement
 {
   /// <summary>
   ///   Extent Length

@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ListStyle Class.
+///   Defines the ListStyle interface.
 /// </summary>
-public class ListStyle: ModelElement
+public interface ListStyle: IModelElement
 {
   /// <summary>
   ///   Default Paragraph Style.

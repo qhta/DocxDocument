@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Person Class.
 /// </summary>
-public class Person: ModelElement
+public interface Person: IModelElement
 {
   /// <summary>
   ///   Gets or sets the  value. It is only available for backwards compatibility

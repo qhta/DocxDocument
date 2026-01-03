@@ -2,6 +2,6 @@
 /// <summary>
 ///   Collection of NumLevelOverride elements
 /// </summary>
-public class NumLevelOverrides: Collection<NumLevelOverride>
+public interface NumLevelOverrides: IElementCollection<NumLevelOverride>
 {
 }

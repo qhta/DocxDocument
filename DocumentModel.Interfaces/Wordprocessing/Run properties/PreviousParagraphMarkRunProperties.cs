@@ -1,8 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   PreviousParagraphMarkRunProperties class used in <see cref="ParagraphMarkRunPropertiesChange"/>.
+///   PreviousParagraphMarkRunProperties interface used in <see cref="ParagraphMarkRunPropertiesChange"/>.
 ///   Represents previous version of <see cref="ParagraphMarkRunProperties"/>.
 /// </summary>
-public class PreviousParagraphMarkRunProperties: BaseParagraphMarkRunProperties
+public interface PreviousParagraphMarkRunProperties: BaseParagraphMarkRunProperties
 {
 }

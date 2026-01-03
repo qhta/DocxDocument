@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticChalkSketch Class.
+///   Defines the ArtisticChalkSketch interface.
 /// </summary>
-public class ArtisticChalkSketch: ModelElement
+public interface ArtisticChalkSketch: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   String Point.
 /// </summary>
-public class StringPoint: ModelElement
+public interface StringPoint: IModelElement
 {
   /// <summary>
   ///   Index

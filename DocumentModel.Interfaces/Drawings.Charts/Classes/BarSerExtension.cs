@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the BarSerExtension Class.
 /// </summary>
-public class BarSerExtension: ModelElement
+public interface BarSerExtension: IModelElement
 {
   /// <summary>
   ///   URI

@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the GroupShapeLocks Class.
+///   Defines the GroupShapeLocks interface.
 /// </summary>
-public class GroupShapeLocks: ModelElement
+public interface GroupShapeLocks: IModelElement
 {
   /// <summary>
   ///   Disallow Shape Grouping

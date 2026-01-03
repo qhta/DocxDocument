@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ChartColorStylePart
 /// </summary>
-public class ChartColorStylePart: ModelElement
+public interface ChartColorStylePart: IModelElement
 {
   /// <summary>
   ///   Gets or sets the root element of this part.

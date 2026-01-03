@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   This element specifies the set of properties which shall be applied to the parent custom XML element.
 /// </summary>
-public class CustomXmlProperties: ElementCollection<CustomXmlAttribute>
+public interface CustomXmlProperties: IElementCollection<CustomXmlAttribute>
 {
   /// <summary>
   ///   Specifies the placeholder text which shall be displayed in place of this custom XML element 

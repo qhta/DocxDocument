@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies properties such as ctrlPr that can be stored on the Superscript object.
 /// </summary>
-public class SuperscriptProperties: ModelElement
+public interface SuperscriptProperties: IModelElement
 {
   /// <summary>
   ///   Specifies formatting of Superscript object argument.

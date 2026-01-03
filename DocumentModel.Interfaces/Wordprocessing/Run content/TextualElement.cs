@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a textual element of text run. There are two textual elements: Text and FieldCode
 /// </summary>
-public abstract class TextualElement: ModelElement, IRunContent
+public interface TextualElement: IModelElement, IRunContent
 {
   /// <summary>
   ///   Indicates whether this element is deleted.
@@ -12,5 +12,5 @@ public abstract class TextualElement: ModelElement, IRunContent
   /// <summary>
   /// Represents the text itself.
   /// </summary>  
-  [XmlText] public virtual string Text { get; set; } = string.Empty;
+  [XmlText] public string Text { get; set; } 
 }

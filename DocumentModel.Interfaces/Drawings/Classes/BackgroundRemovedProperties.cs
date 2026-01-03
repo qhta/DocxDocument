@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BackgroundRemovedProperties Class.
+///   Defines the BackgroundRemovedProperties interface.
 /// </summary>
-public class BackgroundRemovedProperties: ModelElement
+public interface BackgroundRemovedProperties: IModelElement
 {
   /// <summary>
   ///   OfficeArtExtensionList.

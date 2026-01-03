@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the properties of the matrix column mn, including the number of columns and the type of justification.
 /// </summary>
-public class MatrixColumnProperties: ModelElement
+public interface MatrixColumnProperties: IModelElement
 {
   /// <summary>
   ///   Matrix IColumn Count.

@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the StyleMatrixReferenceType Class.
+///   Defines the StyleMatrixReferenceType interface.
 /// </summary>
-public class StyleMatrixReferenceType: ModelElement
+public interface StyleMatrixReferenceType: IModelElement
 {
   /// <summary>
   ///   Style Matrix Index

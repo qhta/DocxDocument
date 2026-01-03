@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the NumericValue Class.
 /// </summary>
-public class NumericValue: ModelElement
+public interface NumericValue: IModelElement
 {
   /// <summary>
   ///   idx, this property is only available in Office 2016 and later.

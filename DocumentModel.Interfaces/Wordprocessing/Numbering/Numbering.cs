@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Numbering Definitions.
 /// </summary>
-public class Numbering: ModelElement
+public interface Numbering: IModelElement
 {
   /// <summary>
   /// Specifies to a consumer the progress in the last attempt made by the application 

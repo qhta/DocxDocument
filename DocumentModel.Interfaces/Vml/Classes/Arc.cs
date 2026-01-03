@@ -6,7 +6,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Arc Segment.
 /// </summary>
-public class Arc: ModelElement, IEmbeddedObjectContent
+public interface Arc: IModelElement, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Optional String
@@ -181,11 +181,11 @@ public class Arc: ModelElement, IEmbeddedObjectContent
   /// </summary>
   public string? Style { get; set; }
   /// <summary>
-  ///   Hyperlink Target
+  ///   IHyperlink Target
   /// </summary>
   public string? Href { get; set; }
   /// <summary>
-  ///   Hyperlink Display Target
+  ///   IHyperlink Display Target
   /// </summary>
   public string? Target { get; set; }
   /// <summary>

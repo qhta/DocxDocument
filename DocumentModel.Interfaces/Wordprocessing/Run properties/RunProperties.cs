@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Run Properties.
 /// </summary>
-public class RunProperties: ExtBaseRunProperties
+public interface RunProperties: ExtBaseRunProperties
 {
   /// <summary>
   ///   RunPropertiesChange.

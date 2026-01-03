@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the StringLevel Class.
 /// </summary>
-public class StringLevel: ModelElement
+public interface StringLevel: IModelElement
 {
   /// <summary>
   ///   ptCount, this property is only available in Office 2016 and later.

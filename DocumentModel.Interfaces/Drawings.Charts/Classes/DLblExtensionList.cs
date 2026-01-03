@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the DLblExtensionList Class.
 /// </summary>
-public class DLblExtensionList: ModelElement
+public interface DLblExtensionList: IModelElement
 {
   public Collection<DLblExtension>? DLblExtensions { get; set; }
 }

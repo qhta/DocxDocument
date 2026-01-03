@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the EmbeddedControlPersistenceBinaryDataPart
 /// </summary>
-public class EmbeddedControlPersistenceBinaryDataPart: ModelElement
+public interface EmbeddedControlPersistenceBinaryDataPart: IModelElement
 {
   public string? RelationshipType { get; set; }
 }

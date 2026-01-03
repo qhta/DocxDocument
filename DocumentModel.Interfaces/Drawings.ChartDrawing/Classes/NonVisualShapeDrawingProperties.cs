@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Non-Visual Shape Drawing Properties.
 /// </summary>
-public class NonVisualShapeDrawingProperties: ModelElement
+public interface NonVisualShapeDrawingProperties: IModelElement
 {
   /// <summary>
   ///   Text Box

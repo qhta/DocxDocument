@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Format Scheme.
 /// </summary>
-public class FormatScheme: ModelElement
+public interface FormatScheme: IModelElement
 {
   /// <summary>
   ///   Name

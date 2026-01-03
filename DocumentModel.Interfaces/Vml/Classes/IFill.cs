@@ -34,7 +34,7 @@ public interface IFill: IModelElement
   /// </summary>
   public string? Source { get; set; }
   /// <summary>
-  ///   Hyperlink Target
+  ///   IHyperlink Target
   /// </summary>
   public string? Href { get; set; }
   /// <summary>

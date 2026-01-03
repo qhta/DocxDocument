@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ChartLinesType Class.
 /// </summary>
-public class ChartLinesType: ModelElement
+public interface ChartLinesType: IModelElement
 {
   /// <summary>
   ///   ChartShapeProperties.

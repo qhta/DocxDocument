@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ShapePropertiesExtensionList Class.
+///   Defines the ShapePropertiesExtensionList interface.
 /// </summary>
-public class ShapePropertiesExtensionList: ModelElement
+public interface ShapePropertiesExtensionList: IModelElement
 {
   public Collection<ShapePropertiesExtension>? ShapePropertiesExtensions { get; set; }
 }

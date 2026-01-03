@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Default.
 /// </summary>
-public class TextDefault: ModelElement
+public interface TextDefault: IModelElement
 {
   public ShapeProperties? ShapeProperties { get; set; }
   public BodyProperties? BodyProperties { get; set; }

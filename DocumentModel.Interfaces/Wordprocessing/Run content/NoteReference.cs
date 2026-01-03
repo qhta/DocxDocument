@@ -3,14 +3,14 @@ namespace DocumentModel.Wordprocessing;
 ///  Represents a footnote, endnote or annotation reference. 
 ///  A footnote/endnote reference is a run of automatically numbered text 
 ///  which references a particular footnote/endnote within the parent document, 
-///  and inherits the footnote/endnote reference mark's numbering.
+///  and inherits the footnote/endnote reference mark numbering.
 ///  If an footnote/endnote reference is specified within a footnote or endnote, 
 ///  then the document shall be considered non-conformant.
 /// </summary>
-public class NoteReference : ModelElement, IRunContent
+public interface NoteReference : IModelElement, IRunContent
 {
     /// <summary>
-    /// Specifies which class is a target of this reference.
+    /// Specifies which interface is a target of this reference.
     /// </summary>
     public NoteReferenceKind Kind { get; set; }
     /// <summary>

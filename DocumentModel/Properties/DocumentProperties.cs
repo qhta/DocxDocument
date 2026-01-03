@@ -78,13 +78,13 @@ public class DocumentProperties : ICollection<DocumentProperty>
   public object? GetValue(string propName)
   {
     var prop = GetKnownProperties(this)[propName];
-    return prop?.GetValue(this, null);
+    return prop?.GetValue(this);
   }
 
   public DocumentProperty? GetProperty(string propName)
   {
     var prop = GetKnownProperties(this)[propName];
-    var value = prop?.GetValue(this, null);
+    var value = prop?.GetValue(this);
     return new DocumentProperty(propName, prop?.PropertyType, value);
   }
 
@@ -107,24 +107,25 @@ public class DocumentProperties : ICollection<DocumentProperty>
     return false;
   }
 
-  static readonly Dictionary<Type, Dictionary<string, DocumentProperty>> _knownTypeProperties = new();
+  static readonly Dictionary<Type, Dictionary<string, PropertyModel>> _knownTypeProperties = new();
   public static Dictionary<string, PropertyModel> GetKnownProperties(object obj)
   {
     return GetKnownProperties(obj.GetType());
   }
 
-  public static Dictionary<string, PropertyInfo> GetKnownProperties(Type ofType)
+  public static Dictionary<string, PropertyModel> GetKnownProperties(Type ofType)
   {
     if (!_knownTypeProperties.TryGetValue(ofType, out var _properties))
     {
-      _properties = ofType.GetProperties()
+      var classProperties = ofType.GetProperties()
         .Where(item => item.Name != "Count" || item.Name != "IsReadOnly").ToDictionary(item => item.Name);
+      _properties = new Dictionary<string, PropertyModel>();
       _knownTypeProperties.Add(ofType, _properties);
     }
     return _properties;
   }
 
-  public Dictionary<string, PropertyInfo> GetKnownProperties()
+  public Dictionary<string, PropertyModel> GetKnownProperties()
   {
     return GetKnownProperties(this.GetType());
   }

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Camera Class.
 /// </summary>
-public class Camera: ModelElement
+public interface Camera: IModelElement
 {
   /// <summary>
   ///   prst, this property is only available in Office 2010 and later.

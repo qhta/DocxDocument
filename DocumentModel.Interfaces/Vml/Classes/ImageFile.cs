@@ -6,7 +6,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Image File.
 /// </summary>
-public class ImageFile: ModelElement, IEmbeddedObjectContent
+public interface ImageFile: IModelElement, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier
@@ -25,7 +25,7 @@ public class ImageFile: ModelElement, IEmbeddedObjectContent
   /// </summary>
   public string? Target { get; set; }
   /// <summary>
-  ///   class
+  ///   interface
   /// </summary>
   public string? Class { get; set; }
   /// <summary>

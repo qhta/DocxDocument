@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the DropDownRegular Class.
 /// </summary>
-public class DropDownRegular: ModelElement
+public interface DropDownRegular: IModelElement
 {
   /// <summary>
   ///   onAction, this property is only available in Office 2010 and later.

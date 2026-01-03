@@ -1,9 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Run Properties for the Paragraph Mark class.
+///   Run Properties for the Paragraph Mark interface.
 ///   Used in <see cref="ParagraphProperties"/>
 /// </summary>
-public class ParagraphMarkRunProperties: BaseParagraphMarkRunProperties
+public interface ParagraphMarkRunProperties: BaseParagraphMarkRunProperties
 {
   /// <summary>
   /// specifies a set of run properties applied to the glyph used to represent the physical location of the

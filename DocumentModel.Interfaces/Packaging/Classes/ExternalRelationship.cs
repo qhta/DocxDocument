@@ -3,6 +3,6 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Represents an external relationship.
 /// </summary>
-public class ExternalRelationship: ModelElement
+public interface ExternalRelationship: IModelElement
 {
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ValueColorMiddlePosition Class.
 /// </summary>
-public class ValueColorMiddlePosition: ModelElement
+public interface ValueColorMiddlePosition: IModelElement
 {
   /// <summary>
   ///   NumberColorPosition.

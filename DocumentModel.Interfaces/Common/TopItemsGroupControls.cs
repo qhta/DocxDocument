@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TopItemsGroupControls Class.
 /// </summary>
-public class TopItemsGroupControls: ModelElement
+public interface TopItemsGroupControls: IModelElement
 {
   public BackstageGroupButton? BackstageGroupButton { get; set; }
   public BackstageCheckBox? BackstageCheckBox { get; set; }

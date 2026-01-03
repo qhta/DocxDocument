@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the MenuWithTitle Class.
 /// </summary>
-public class MenuWithTitle: ModelElement
+public interface MenuWithTitle: IModelElement
 {
   /// <summary>
   ///   id

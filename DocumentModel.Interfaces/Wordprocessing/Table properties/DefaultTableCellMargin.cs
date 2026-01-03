@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
   ///   These settings can be overridden by the table cell margin definition specified by the tcMar element 
   ///   contained within the table cell's properties (§17.4.42).
   /// </summary>
-public class DefaultTableCellMargin: TableCellMargin
+public interface DefaultTableCellMargin: TableCellMargin
 {
 }

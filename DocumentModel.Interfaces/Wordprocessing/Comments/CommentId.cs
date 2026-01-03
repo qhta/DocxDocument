@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CommentId Class.
 /// </summary>
-public class CommentId: ModelElement
+public interface CommentId: IModelElement
 {
   /// <summary>
   ///   paraId, this property is only available in Office 2019 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Draw Cubic Bezier Curve To.
 /// </summary>
-public class CubicBezierCurveTo: ModelElement
+public interface CubicBezierCurveTo: IModelElement
 {
   public Collection<AdjustPoint2DType>? Points { get; set; }
 }

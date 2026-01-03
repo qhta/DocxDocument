@@ -10,6 +10,19 @@ namespace DocumentModel;
 public class DocumentSettings : DocumentProperties
 {
   /// <summary>
+  /// Owner document.
+  /// </summary>
+  public Document Document { get; }
+
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
+  /// <param name="document"></param>
+  public DocumentSettings(Document document)
+  {
+    Document = document;
+  }
+  /// <summary>
   /// This element specifies information about the parameters of the grammar checking 
   /// which was performed on the contents of the current WordprocessingML document. 
   /// </summary>

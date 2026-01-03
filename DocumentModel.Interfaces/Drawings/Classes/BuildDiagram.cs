@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Build Diagram.
 /// </summary>
-public class BuildDiagram: ModelElement
+public interface BuildDiagram: IModelElement
 {
   /// <summary>
   ///   Build

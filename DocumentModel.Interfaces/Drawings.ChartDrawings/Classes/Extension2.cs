@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Extension2 Class.
 /// </summary>
-public class Extension2: ModelElement
+public interface Extension2: IModelElement
 {
   /// <summary>
   ///   uri, this property is only available in Office 2016 and later.

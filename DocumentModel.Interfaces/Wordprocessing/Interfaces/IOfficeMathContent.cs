@@ -1,4 +1,4 @@
-using DocumentModel.BaseTypes;
+
 namespace DocumentModel.Math;
 /// <summary>
 ///   Interface for math elements that can be included in Office Math

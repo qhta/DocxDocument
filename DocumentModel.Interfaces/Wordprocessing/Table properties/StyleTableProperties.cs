@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Style Table Properties.
 /// </summary>
-public class StyleTableProperties: BaseTableProperties
+public interface StyleTableProperties: BaseTableProperties
 {
   /// <summary>
   ///   TableStyleRowBandSize.

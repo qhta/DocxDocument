@@ -46,11 +46,11 @@ public enum ThemeColorIndex
   /// </summary>
   Accent6,
   /// <summary>
-  ///   Hyperlink Theme Color.
+  ///   IHyperlink Theme Color.
   /// </summary>
   Hyperlink,
   /// <summary>
-  ///   Followed Hyperlink Theme Color.
+  ///   Followed IHyperlink Theme Color.
   /// </summary>
   FollowedHyperlink,
   /// <summary>

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the Drawing Class.
 /// </summary>
-public class Drawing: ModelElement
+public interface Drawing: IModelElement
 {
   /// <summary>
   ///   ShapeTree.

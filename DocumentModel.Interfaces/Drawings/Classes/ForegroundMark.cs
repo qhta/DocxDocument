@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ForegroundMark Class.
+///   Defines the ForegroundMark interface.
 /// </summary>
-public class ForegroundMark: ModelElement
+public interface ForegroundMark: IModelElement
 {
   /// <summary>
   ///   x1, this property is only available in Office 2010 and later.

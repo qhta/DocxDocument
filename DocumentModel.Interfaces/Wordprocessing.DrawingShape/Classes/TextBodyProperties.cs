@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// <summary>
 ///   Defines the TextBodyProperties Class.
 /// </summary>
-public class TextBodyProperties: ModelElement
+public interface TextBodyProperties: IModelElement
 {
   /// <summary>
   ///   Rotation

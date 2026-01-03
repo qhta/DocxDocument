@@ -2,16 +2,9 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document-Wide Footnote Properties.
 /// </summary>
-public class FootnoteDocumentWideProperties: ModelElement
+public interface FootnoteDocumentWideProperties: IModelElement
 {
-  /// <summary>
-  /// Initializes <see cref="DMW.FootnoteSeparators"/>
-  /// </summary>
-  public void Init()
-  {
-    FootnoteSeparators = new FootnoteSeparators();
-    FootnoteSeparators.Init();
-  }
+
   /// <summary>
   ///   Footnote Placement.
   /// </summary>

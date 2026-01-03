@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Most Recently Used Colors.
 /// </summary>
-public class ColorMostRecentlyUsed: ModelElement
+public interface ColorMostRecentlyUsed: IModelElement
 {
   /// <summary>
   ///   VML Extension Handling Behavior

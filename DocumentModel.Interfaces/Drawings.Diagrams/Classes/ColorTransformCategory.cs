@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Color Transform Category.
 /// </summary>
-public class ColorTransformCategory: ModelElement
+public interface ColorTransformCategory: IModelElement
 {
   /// <summary>
   ///   Category Type

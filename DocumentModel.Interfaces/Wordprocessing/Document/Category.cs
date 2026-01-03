@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Entry Categorization.
 /// </summary>
-public class Category: ModelElement
+public interface Category: IModelElement
 {
   /// <summary>
   ///   Category Associated With Entry.

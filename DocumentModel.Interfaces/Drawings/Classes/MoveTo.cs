@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Move Path To.
 /// </summary>
-public class MoveTo: ModelElement
+public interface MoveTo: IModelElement
 {
   /// <summary>
   ///   Move end point.

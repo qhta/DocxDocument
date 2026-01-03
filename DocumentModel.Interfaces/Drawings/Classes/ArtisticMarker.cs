@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticMarker Class.
+///   Defines the ArtisticMarker interface.
 /// </summary>
-public class ArtisticMarker: ModelElement
+public interface ArtisticMarker: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.
