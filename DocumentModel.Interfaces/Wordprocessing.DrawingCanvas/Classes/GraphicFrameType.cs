@@ -26,5 +26,5 @@ public interface GraphicFrameType: IModelElement
   /// <summary>
   ///   OfficeArtExtensionList.
   /// </summary>
-  public DrawingGroup.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }
