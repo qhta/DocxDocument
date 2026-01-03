@@ -23,10 +23,6 @@ public interface Extension : IModelElement
   /// <summary>
   ///   Gets or sets the URI that identifies the type or namespace of this extension.
   /// </summary>
-  /// <value>
-  ///   A string containing the URI identifier for the extension type,
-  ///   or <c>null</c> if no URI is specified.
-  /// </value>
   /// <remarks>
   ///   The URI serves as a unique identifier that specifies what type of extension this is and how it should
   ///   be processed. The URI typically follows a namespace format (e.g., "http://schemas.microsoft.com/office/...")

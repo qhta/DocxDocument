@@ -24,10 +24,6 @@ public interface AlternateContentChoice : IElementCollection<ICollectionItem>, I
   /// <summary>
   ///   Gets or sets the requirement condition that must be satisfied for this choice to be selected.
   /// </summary>
-  /// <value>
-  ///   A string containing the requirement specification (typically a namespace URI or feature identifier),
-  ///   or <c>null</c> if no specific requirement is defined.
-  /// </value>
   /// <remarks>
   ///   This property specifies the condition that an application must meet to use this choice's content.
   ///   The value is typically a namespace URI that identifies a specific XML schema, content type, or feature set

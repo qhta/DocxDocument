@@ -8,7 +8,7 @@ namespace DocumentModel;
 ///   displayed in a task pane or form. Task form groups organize related controls and provide
 ///   options for labeling, visibility, and sizing.
 /// </remarks>
-public interface TaskFormGroup : IModelElement
+public interface TaskFormGroup : IElementCollection<TaskFormGroupCategory>
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this task form group.
@@ -148,11 +148,4 @@ public interface TaskFormGroup : IModelElement
   /// </remarks>
   public TaskSizesKind? AllowedTaskSizes { get; set; }
 
-  /// <summary>
-  ///   Gets or sets the collection of categories within this task form group.
-  /// </summary>
-  /// <value>
-  ///   A collection of <see cref="TaskFormGroupCategory"/> objects, or <c>null</c> if no categories are defined.
-  /// </value>
-  public Collection<TaskFormGroupCategory>? TaskFormGroupCategories { get; set; }
 }

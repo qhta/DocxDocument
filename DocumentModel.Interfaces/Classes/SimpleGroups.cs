@@ -81,10 +81,6 @@ public interface SimpleGroups : IModelElement
   /// <summary>
   /// Gets or sets a group container for organizing content in the Backstage view.
   /// </summary>
-  /// <value>
-  /// A <see cref="BackstageGroup"/> object defining the group's content, appearance, and behavior
-  /// within a Backstage tab or page. If <see langword="null"/>, no Backstage group is defined.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Backstage groups organize related controls and content within the Office Backstage view (the
@@ -129,10 +125,6 @@ public interface SimpleGroups : IModelElement
   /// <summary>
   /// Gets or sets a group container for organizing controls in custom task panes.
   /// </summary>
-  /// <value>
-  /// A <see cref="TaskGroup"/> object defining the group's controls, layout, and behavior
-  /// within a task pane add-in. If <see langword="null"/>, no task group is defined.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Task groups organize related controls within custom task pane add-ins that appear alongside

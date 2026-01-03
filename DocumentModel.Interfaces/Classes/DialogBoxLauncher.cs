@@ -22,10 +22,6 @@ public interface DialogBoxLauncher : IModelElement
   /// <summary>
   ///   Gets or sets the button control that defines the dialog box launcher's behavior and appearance.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ButtonRegular"/> object defining the launcher button's properties and action,
-  ///   or <c>null</c> if no dialog box launcher is configured.
-  /// </value>
   /// <remarks>
   ///   The ButtonRegular control provides all the properties needed to define the dialog box launcher,
   ///   including the action to perform when clicked (onAction callback), screentip and supertip for
