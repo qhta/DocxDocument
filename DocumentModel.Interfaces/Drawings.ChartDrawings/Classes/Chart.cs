@@ -19,10 +19,6 @@ public interface Chart : IModelElement
   /// <summary>
   ///   Gets or sets the title displayed at the top of the chart.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ChartTitle"/> object defining the chart's title and its formatting,
-  ///   or <c>null</c> if no title is displayed.
-  /// </value>
   /// <remarks>
   ///   The chart title provides a high-level description of what the chart represents, helping users
   ///   understand the purpose and context of the data visualization. It typically appears at the top
@@ -33,10 +29,6 @@ public interface Chart : IModelElement
   /// <summary>
   ///   Gets or sets the plot area containing the data series, axes, and gridlines.
   /// </summary>
-  /// <value>
-  ///   A <see cref="PlotArea"/> object defining the chart's data visualization region,
-  ///   or <c>null</c> if no plot area is defined.
-  /// </value>
   /// <remarks>
   ///   The plot area is the core region of the chart where data is actually visualized. It contains
   ///   the data series (bars, lines, points, etc.), axes that provide scale and context, gridlines
@@ -48,10 +40,6 @@ public interface Chart : IModelElement
   /// <summary>
   ///   Gets or sets the legend that identifies the data series in the chart.
   /// </summary>
-  /// <value>
-  ///   A <see cref="Legend"/> object defining the chart's legend and its positioning,
-  ///   or <c>null</c> if no legend is displayed.
-  /// </value>
   /// <remarks>
   ///   The legend provides a key that maps visual elements (colors, markers, patterns) to their
   ///   corresponding data series names. It helps users identify what each visual element represents,
@@ -63,10 +51,6 @@ public interface Chart : IModelElement
   /// <summary>
   ///   Gets or sets the collection of extension elements for future extensibility.
   /// </summary>
-  /// <value>
-  ///   An <see cref="ExtensionList"/> containing extension elements,
-  ///   or <c>null</c> if no extensions are defined.
-  /// </value>
   /// <remarks>
   ///   Extension elements allow for future enhancements and custom properties without breaking
   ///   compatibility with existing implementations. This enables new chart features and customizations

@@ -29,10 +29,6 @@ public interface GeoDataPointToEntityQuery : IModelElement
   /// <summary>
   ///   Gets or sets the type classification of the target geographic entity.
   /// </summary>
-  /// <value>
-  ///   An <see cref="EntityTypeEnum"/> value specifying the entity's classification level,
-  ///   or <c>null</c> if no type filter is specified.
-  /// </value>
   /// <remarks>
    ///   The entity type specifies the administrative or geographic classification level of the target entity,
   ///   helping to disambiguate cases where entity identifiers might not be unique across different classification
@@ -49,10 +45,6 @@ public interface GeoDataPointToEntityQuery : IModelElement
   /// <summary>
   ///   Gets or sets the unique identifier of the target geographic entity.
   /// </summary>
-  /// <value>
-  ///   A string containing the entity's unique identifier,
-  ///   or <c>null</c> if no entity is specified.
-  /// </value>
   /// <remarks>
    ///   The entity identifier specifies the target geographic entity to which the data point should be mapped.
   ///   Entity identifiers typically follow standardized formats such as ISO country codes (e.g., "US", "GB", "JP"),

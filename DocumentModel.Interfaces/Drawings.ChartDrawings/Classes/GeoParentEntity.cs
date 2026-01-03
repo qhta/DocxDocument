@@ -30,10 +30,6 @@ public interface GeoParentEntity : IModelElement
   /// <summary>
   ///   Gets or sets the unique identifier of the parent geographic entity.
   /// </summary>
-  /// <value>
-  ///   A string containing the parent entity's unique identifier,
-  ///   or <c>null</c> if no identifier is specified.
-  /// </value>
   /// <remarks>
    ///   The entity identifier provides a unique, machine-readable reference for the parent geographic entity that
   ///   contains or encompasses a child entity in the geographic hierarchy. The identifier typically follows standardized

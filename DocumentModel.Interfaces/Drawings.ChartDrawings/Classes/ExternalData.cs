@@ -27,10 +27,6 @@ public interface ExternalData : IModelElement
   /// <summary>
   ///   Gets or sets the relationship identifier that references the external data source.
   /// </summary>
-  /// <value>
-  ///   A string containing the relationship ID that links to the external data source,
-  ///   or <c>null</c> if no external data connection is specified.
-  /// </value>
   /// <remarks>
    ///   The relationship identifier (RelId) establishes the connection between the chart and its external data source
   ///   by referencing a relationship defined in the document's relationship structure. This ID corresponds to a
@@ -47,11 +43,6 @@ public interface ExternalData : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the chart should automatically update from the external data source.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the chart automatically refreshes from the external data source when the document is opened
-  ///   or when source data changes; <c>false</c> if manual refresh is required; or <c>null</c> to use the default
-  ///   update behavior.
-  /// </value>
   /// <remarks>
    ///   The AutoUpdate flag controls whether the chart data is automatically refreshed from the external source,
   ///   enabling real-time or on-demand data updates. When set to <c>true</c>, Office attempts to retrieve the latest

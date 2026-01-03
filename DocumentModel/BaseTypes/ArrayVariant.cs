@@ -103,16 +103,11 @@ public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVaria
   /// <summary>
   /// Gets the variant type of the value represented by this instance.
   /// </summary>
-  /// <value>Always returns <see cref="VariantType.Array"/> for array variants.</value>
   [XmlIgnore] public new VariantType VariantType => VariantType.Array;
   
   /// <summary>
   /// Gets or sets the base type of elements stored in the array.
   /// </summary>
-  /// <value>
-  /// A <see cref="VariantType"/> value indicating the type of elements in the array
-  /// (e.g., Int32, String, DateTime, Boolean).
-  /// </value>
   /// <remarks>
   /// When the base type is changed, the array is resized and existing elements are converted
   /// to the new type if possible. Elements that cannot be converted are set to their default values.
@@ -131,10 +126,6 @@ public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVaria
   /// <summary>
   /// Gets the .NET CLR type that corresponds to the current <see cref="BaseType"/>.
   /// </summary>
-  /// <value>
-  /// A <see cref="Type"/> object representing the runtime type of array elements.
-  /// Returns <see cref="object"/> if the base type is not set.
-  /// </value>
   /// <remarks>
   /// This property provides the actual .NET type used for the internal array storage,
   /// enabling type-safe operations and conversions. The type is determined by the
@@ -145,10 +136,6 @@ public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVaria
   /// <summary>
   /// Gets or sets the inclusive lower bound (starting index) of the array.
   /// </summary>
-  /// <value>
-  /// An integer representing the first valid index for the array. Can be any integer value,
-  /// including zero, negative numbers, or positive numbers.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Setting this property resizes the array while attempting to preserve existing data.
@@ -171,10 +158,6 @@ public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVaria
   /// <summary>
   /// Gets or sets the inclusive upper bound (ending index) of the array.
   /// </summary>
-  /// <value>
-  /// An integer representing the last valid index for the array. Must be greater than or equal to
-  /// <see cref="LowerBounds"/>.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Setting this property resizes the array while attempting to preserve existing data.
@@ -197,10 +180,6 @@ public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVaria
   /// <summary>
   /// Gets the total number of elements in the array.
   /// </summary>
-  /// <value>
-  /// The count of elements, calculated as (<see cref="UpperBounds"/> - <see cref="LowerBounds"/> + 1).
-  /// Returns 0 if the array has not been initialized.
-  /// </value>
   /// <remarks>
   /// This represents the capacity of the array, not the count of non-null elements.
   /// For the count of non-null elements, use the <see cref="Count"/> property.
@@ -214,9 +193,6 @@ public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVaria
   /// The index of the element to get or set. Must be within the range
   /// [<see cref="LowerBounds"/>, <see cref="UpperBounds"/>] inclusive.
   /// </param>
-  /// <value>
-  /// The element at the specified index. Can be <see langword="null"/> if the element type permits null values.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The indexer accepts indices in the custom bounds range, not zero-based indices.
@@ -368,10 +344,6 @@ public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVaria
   /// <summary>
   /// Gets the number of non-null elements contained in the array.
   /// </summary>
-  /// <value>
-  /// An integer representing the count of elements that are not <see langword="null"/>.
-  /// This may be less than or equal to <see cref="Size"/>.
-  /// </value>
   /// <remarks>
   /// This property performs a linear search through the array to count non-null elements,
   /// so it has O(n) time complexity. For the total capacity of the array regardless of
@@ -393,7 +365,6 @@ public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVaria
   /// <summary>
   /// Gets a value indicating whether the array is read-only.
   /// </summary>
-  /// <value>Always returns <see langword="false"/> as the array supports modification.</value>
   /// <remarks>
   /// This property is provided to satisfy the <see cref="ICollection{T}"/> interface contract.
   /// Elements can be modified via the indexer, and the array can be resized or cleared.

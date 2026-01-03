@@ -29,10 +29,6 @@ public interface GeoLocation : IModelElement
   /// <summary>
   ///   Gets or sets the latitude coordinate of the geographic location.
   /// </summary>
-  /// <value>
-  ///   A double-precision floating-point value representing the latitude in decimal degrees,
-  ///   or <c>null</c> if no latitude is specified.
-  /// </value>
   /// <remarks>
    ///   The latitude specifies the north-south position of the location in the standard geographic coordinate system,
   ///   using decimal degrees where values range from -90 (90°S, South Pole) to +90 (90°N, North Pole). The latitude,
@@ -48,10 +44,6 @@ public interface GeoLocation : IModelElement
   /// <summary>
   ///   Gets or sets the longitude coordinate of the geographic location.
   /// </summary>
-  /// <value>
-  ///   A double-precision floating-point value representing the longitude in decimal degrees,
-  ///   or <c>null</c> if no longitude is specified.
-  /// </value>
   /// <remarks>
    ///   The longitude specifies the east-west position of the location in the standard geographic coordinate system,
   ///   using decimal degrees where values range from -180 (180°W) to +180 (180°E). The longitude, combined with
@@ -66,10 +58,6 @@ public interface GeoLocation : IModelElement
   /// <summary>
   ///   Gets or sets the human-readable name of the geographic entity associated with this location.
   /// </summary>
-  /// <value>
-  ///   A string containing the entity's display name,
-  ///   or <c>null</c> if no entity name is specified.
-  /// </value>
   /// <remarks>
    ///   The entity name provides a user-friendly identifier for the geographic entity that contains or represents this
   ///   location, such as "San Francisco", "California", "United States", or "Tokyo". This name is useful for display
@@ -85,10 +73,6 @@ public interface GeoLocation : IModelElement
   /// <summary>
   ///   Gets or sets the classification type of the geographic entity associated with this location.
   /// </summary>
-  /// <value>
-  ///   An <see cref="EntityTypeEnum"/> value specifying the entity's administrative or geographic classification,
-  ///   or <c>null</c> if no entity type is specified.
-  /// </value>
   /// <remarks>
    ///   The entity type specifies the administrative or geographic classification level of the entity associated with
   ///   this location, such as country, first-level administrative division (state/province), second-level administrative
@@ -104,10 +88,6 @@ public interface GeoLocation : IModelElement
   /// <summary>
   ///   Gets or sets the detailed structured address information for this location.
   /// </summary>
-  /// <value>
-  ///   An <see cref="Address"/> object containing structured address components,
-  ///   or <c>null</c> if no address information is available.
-  /// </value>
   /// <remarks>
   ///   The address provides detailed, human-readable location information organized into standardized components
   ///   including street address, administrative divisions (country, states, districts), postal code, locality (city/town),

@@ -1,4 +1,4 @@
-ï»¿namespace DocumentModel.Drawings.ChartDrawings;
+namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
 ///   Represents a collection of child geographic entities within a hierarchical geographic structure.
@@ -15,8 +15,8 @@
 ///   state-level data, or from state-level to county-level, providing progressively more detailed geographic
 ///   visualizations. Each <see cref="GeoHierarchyEntity"/> in the collection represents a child geographic region
 ///   with its own properties, boundaries, and potential child entities, forming a tree structure that mirrors
-///   real-world geographic containment relationships. Common hierarchical structures include: countries â†’ states/provinces
-///   â†’ counties/districts â†’ cities; continents â†’ countries â†’ regions; or custom geographic hierarchies for
+///   real-world geographic containment relationships. Common hierarchical structures include: countries › states/provinces
+///   › counties/districts › cities; continents › countries › regions; or custom geographic hierarchies for
 ///   specialized domains. The child entities collection supports map chart features like interactive region selection,
 ///   progressive detail display, and hierarchical data aggregation where data from smaller regions can be rolled up
 ///   to larger containing regions. This hierarchical organization is fundamental to creating intuitive, exploratory
@@ -27,10 +27,6 @@ public interface GeoChildEntities : IModelElement
   /// <summary>
   ///   Gets or sets the collection of child geographic entities in the hierarchy.
   /// </summary>
-  /// <value>
-  ///   A collection of <see cref="GeoHierarchyEntity"/> objects representing child geographic regions,
-  ///   or <c>null</c> if no child entities are defined.
-  /// </value>
   /// <remarks>
   ///   Each <see cref="GeoHierarchyEntity"/> in the collection represents a geographic region that is contained
   ///   within a parent entity, such as states within a country or counties within a state. The collection enables

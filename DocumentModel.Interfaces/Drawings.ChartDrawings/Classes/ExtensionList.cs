@@ -26,10 +26,6 @@ public interface ExtensionList : IModelElement
   /// <summary>
   ///   Gets or sets the collection of extension elements.
   /// </summary>
-  /// <value>
-  ///   A collection of <see cref="Extension2"/> objects defining custom extensions,
-  ///   or <c>null</c> if no extensions are defined.
-  /// </value>
   /// <remarks>
   ///   Each <see cref="Extension2"/> in the collection represents a specific extension with a unique URI identifier
   ///   that specifies the extension's type, namespace, and processing requirements. The collection enables multiple

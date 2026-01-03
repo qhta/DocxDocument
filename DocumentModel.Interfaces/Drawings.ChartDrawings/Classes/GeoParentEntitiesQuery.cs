@@ -1,4 +1,4 @@
-ï»¿namespace DocumentModel.Drawings.ChartDrawings;
+namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
 ///   Represents a query for retrieving parent geographic entities that contain a specific child entity.
@@ -20,7 +20,7 @@
 ///   area). Common scenarios include determining which state contains a selected county for context, identifying which
 ///   country contains a city for international data visualization, finding regional groupings for local administrative
 ///   divisions, or establishing hierarchical navigation paths that show the complete containment structure (such as
-///   City â†’ County â†’ State â†’ Country â†’ Continent). The parent entity query enables bidirectional navigation through
+///   City › County › State › Country › Continent). The parent entity query enables bidirectional navigation through
 ///   geographic hierarchies, complementing child entity queries to provide complete hierarchical exploration capabilities.
 /// </remarks>
 public interface GeoParentEntitiesQuery : IModelElement
@@ -28,10 +28,6 @@ public interface GeoParentEntitiesQuery : IModelElement
   /// <summary>
   ///   Gets or sets the unique identifier of the child entity whose parent entities are being queried.
   /// </summary>
-  /// <value>
-  ///   A string containing the child entity's unique identifier,
-  ///   or <c>null</c> if no entity is specified.
-  /// </value>
   /// <remarks>
    ///   The entity identifier uniquely identifies the child geographic entity for which parent entities are being
   ///   requested. This ID typically corresponds to a geographic entity defined in the mapping service's data model,

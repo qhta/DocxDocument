@@ -19,10 +19,6 @@ public interface ChartData : IModelElement
   /// <summary>
   ///   Gets or sets the external data source reference for the chart.
   /// </summary>
-  /// <value>
-  ///   An <see cref="ExternalData"/> object defining the external data source location and refresh settings,
-  ///   or <c>null</c> if the chart uses embedded data.
-  /// </value>
   /// <remarks>
   ///   External data references link the chart to data sources such as Excel worksheets, database queries,
   ///   or other external data providers. When external data is specified, the chart can automatically update
@@ -35,10 +31,6 @@ public interface ChartData : IModelElement
   /// <summary>
   ///   Gets or sets the embedded data contained directly within the chart.
   /// </summary>
-  /// <value>
-  ///   A <see cref="Data"/> object containing the chart's data values, categories, and series information,
-  ///   or <c>null</c> if the chart uses an external data source.
-  /// </value>
   /// <remarks>
   ///   Embedded data stores the actual data points, categories, and series information directly within the
   ///   chart definition, making the chart self-contained and independent of external data sources. This approach
@@ -51,10 +43,6 @@ public interface ChartData : IModelElement
   /// <summary>
   ///   Gets or sets the collection of extension elements for future extensibility.
   /// </summary>
-  /// <value>
-  ///   An <see cref="ExtensionList"/> containing extension elements,
-  ///   or <c>null</c> if no extensions are defined.
-  /// </value>
   /// <remarks>
   ///   Extension elements allow for future enhancements and custom data source types without breaking
   ///   compatibility with existing implementations. This enables support for new data source configurations

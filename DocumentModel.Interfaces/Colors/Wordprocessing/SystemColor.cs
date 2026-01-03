@@ -74,11 +74,6 @@ public interface SystemColor: IModelElement
   /// <summary>
   /// Gets or sets the system color identifier that references a specific OS-defined color.
   /// </summary>
-  /// <value>
-  /// A <see cref="SystemColorKind"/> value specifying which operating system color to reference
-  /// (e.g., Window, WindowText, Highlight, ButtonFace, MenuText).
-  /// If <see langword="null"/>, no system color is referenced.
-  /// </value>
   /// <remarks>
   /// <para>
   /// This property specifies which color from the operating system's color scheme should be used.
@@ -115,10 +110,6 @@ public interface SystemColor: IModelElement
   /// <summary>
   /// Gets or sets the last known RGB value for this system color, used as a fallback.
   /// </summary>
-  /// <value>
-  /// An <see cref="IRGB"/> value containing the most recently resolved RGB color value
-  /// for this system color. If <see langword="null"/>, no fallback color is stored.
-  /// </value>
   /// <remarks>
   /// <para>
   /// This property serves multiple important purposes:

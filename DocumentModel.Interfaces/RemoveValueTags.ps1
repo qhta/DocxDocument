@@ -11,10 +11,11 @@ foreach ($file in $csFiles) {
         $originalContent = $content
         
         # Pattern to match <value> tags with their content (including multi-line)
-        $valuePattern = '(?m)^\s*/// <value>.*?</value>\s*\r?\n'
+        # This matches from /// <value> to </value> including everything in between
+        $valuePattern = '(?ms)^\s*///\s*<value>.*?</value>\s*\r?\n'
         
         # Pattern to match empty <remarks> tags (with only whitespace)
-        $emptyRemarksPattern = '(?m)^\s*/// <remarks>\s*\r?\n\s*/// </remarks>\s*\r?\n'
+        $emptyRemarksPattern = '(?m)^\s*///\s*<remarks>\s*\r?\n\s*///\s*</remarks>\s*\r?\n'
         
         # Count matches before removal
         $valueMatches = ([regex]$valuePattern).Matches($content)

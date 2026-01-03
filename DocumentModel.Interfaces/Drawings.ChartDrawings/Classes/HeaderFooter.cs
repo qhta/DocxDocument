@@ -25,10 +25,6 @@ public interface HeaderFooter : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether headers and footers align with the page margins.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if headers and footers align with margins; <c>false</c> if they use the full page width;
-  ///   or <c>null</c> to use default alignment behavior.
-  /// </value>
   /// <remarks>
    ///   When enabled, headers and footers align with the left and right margins of the printed page, ensuring
   ///   consistent visual alignment between page content and header/footer content. This creates a cohesive appearance
@@ -42,10 +38,6 @@ public interface HeaderFooter : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether different headers and footers are used for odd and even pages.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> to use different content for odd and even pages; <c>false</c> to use the same content for all pages;
-  ///   or <c>null</c> to use default behavior.
-  /// </value>
   /// <remarks>
    ///   When enabled, odd-numbered pages use the content specified in <see cref="OddHeaderXsdString"/> and
   ///   <see cref="OddFooterXsdString"/>, while even-numbered pages use <see cref="EvenHeaderXsdString"/> and
@@ -60,10 +52,6 @@ public interface HeaderFooter : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the first page uses different headers and footers.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> to use different content for the first page; <c>false</c> to use the same content for all pages;
-  ///   or <c>null</c> to use default behavior.
-  /// </value>
   /// <remarks>
    ///   When enabled, the first page uses the content specified in <see cref="FirstHeaderXsdString"/> and
   ///   <see cref="FirstFooterXsdString"/>, while subsequent pages use the odd/even page content as appropriate.
@@ -78,10 +66,6 @@ public interface HeaderFooter : IModelElement
   /// <summary>
   ///   Gets or sets the header content for odd-numbered pages.
   /// </summary>
-  /// <value>
-  ///   A string containing the header text and formatting codes for odd pages,
-  ///   or <c>null</c> if no odd page header is specified.
-  /// </value>
   /// <remarks>
   ///   The odd header string defines the content that appears at the top of odd-numbered pages when the chart is
   ///   printed. This string may contain plain text, formatting codes for styling (such as bold, italic, or font
@@ -97,10 +81,6 @@ public interface HeaderFooter : IModelElement
   /// <summary>
   ///   Gets or sets the footer content for odd-numbered pages.
   /// </summary>
-  /// <value>
-  ///   A string containing the footer text and formatting codes for odd pages,
-  ///   or <c>null</c> if no odd page footer is specified.
-  /// </value>
   /// <remarks>
   ///   The odd footer string defines the content that appears at the bottom of odd-numbered pages when the chart is
   ///   printed. This string may contain plain text, formatting codes, field codes, and alignment indicators similar
@@ -115,10 +95,6 @@ public interface HeaderFooter : IModelElement
   /// <summary>
   ///   Gets or sets the header content for even-numbered pages.
   /// </summary>
-  /// <value>
-  ///   A string containing the header text and formatting codes for even pages,
-  ///   or <c>null</c> if no even page header is specified.
-  /// </value>
   /// <remarks>
   ///   The even header string defines the content that appears at the top of even-numbered pages when the chart is
   ///   printed. This content is only used when <see cref="DifferentOddEven"/> is enabled; otherwise, even pages use
@@ -133,10 +109,6 @@ public interface HeaderFooter : IModelElement
   /// <summary>
   ///   Gets or sets the footer content for even-numbered pages.
   /// </summary>
-  /// <value>
-  ///   A string containing the footer text and formatting codes for even pages,
-  ///   or <c>null</c> if no even page footer is specified.
-  /// </value>
   /// <remarks>
   ///   The even footer string defines the content that appears at the bottom of even-numbered pages when the chart is
   ///   printed. This content is only used when <see cref="DifferentOddEven"/> is enabled; otherwise, even pages use
@@ -150,10 +122,6 @@ public interface HeaderFooter : IModelElement
   /// <summary>
   ///   Gets or sets the header content for the first page.
   /// </summary>
-  /// <value>
-  ///   A string containing the header text and formatting codes for the first page,
-  ///   or <c>null</c> if no first page header is specified.
-  /// </value>
   /// <remarks>
   ///   The first header string defines the content that appears at the top of the first page when the chart is printed.
   ///   This content is only used when <see cref="DifferentFirst"/> is enabled; otherwise, the first page uses the
@@ -168,10 +136,6 @@ public interface HeaderFooter : IModelElement
   /// <summary>
   ///   Gets or sets the footer content for the first page.
   /// </summary>
-  /// <value>
-  ///   A string containing the footer text and formatting codes for the first page,
-  ///   or <c>null</c> if no first page footer is specified.
-  /// </value>
   /// <remarks>
   ///   The first footer string defines the content that appears at the bottom of the first page when the chart is
   ///   printed. This content is only used when <see cref="DifferentFirst"/> is enabled; otherwise, the first page

@@ -23,9 +23,6 @@ public interface DataLabelVisibilities : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the series name is displayed in data labels.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> to show the series name; <c>false</c> to hide it; or <c>null</c> to use the default visibility.
-  /// </value>
   /// <remarks>
    ///   The series name identifies which data series a data point belongs to, which is particularly valuable in
   ///   multi-series charts where data points from different series may appear near each other. Showing the series
@@ -39,9 +36,6 @@ public interface DataLabelVisibilities : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the category name is displayed in data labels.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> to show the category name; <c>false</c> to hide it; or <c>null</c> to use the default visibility.
-  /// </value>
   /// <remarks>
    ///   The category name identifies which category a data point represents, providing context about what the value
   ///   measures. This is particularly valuable in charts where the category axis labels may be hard to read due to
@@ -55,9 +49,6 @@ public interface DataLabelVisibilities : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the data value is displayed in data labels.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> to show the data value; <c>false</c> to hide it; or <c>null</c> to use the default visibility.
-  /// </value>
   /// <remarks>
    ///   The data value is the actual numeric value represented by the data point, which is the most fundamental
   ///   piece of information a data label can display. Showing values enables precise reading of data points without

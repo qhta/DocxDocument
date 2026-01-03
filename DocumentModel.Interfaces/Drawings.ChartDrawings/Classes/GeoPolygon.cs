@@ -27,10 +27,6 @@ public interface GeoPolygon : IModelElement
   /// <summary>
   ///   Gets or sets the unique identifier for this polygon within the entity's boundary definition.
   /// </summary>
-  /// <value>
-  ///   A string containing the polygon's identifier,
-  ///   or <c>null</c> if no identifier is specified.
-  /// </value>
   /// <remarks>
    ///   The polygon identifier enables tracking and referencing of specific boundary components within a geographic
   ///   entity's complete boundary definition. When an entity has multiple polygons (such as a country with islands,
@@ -45,10 +41,6 @@ public interface GeoPolygon : IModelElement
   /// <summary>
   ///   Gets or sets the number of coordinate points that define this polygon's boundary.
   /// </summary>
-  /// <value>
-  ///   A 64-bit integer representing the count of coordinate points,
-  ///   or <c>null</c> if the point count is not specified.
-  /// </value>
   /// <remarks>
    ///   The number of points indicates the complexity and detail level of the polygon boundary. Higher point counts
   ///   provide more detailed, accurate boundary representations with smoother curves and finer features, but require
@@ -65,10 +57,6 @@ public interface GeoPolygon : IModelElement
   /// <summary>
   ///   Gets or sets the encoded coordinate data representing the polygon's rings (outer boundary and any holes).
   /// </summary>
-  /// <value>
-  ///   A string containing the encoded polygon ring data,
-  ///   or <c>null</c> if no polygon data is specified.
-  /// </value>
   /// <remarks>
    ///   The pcaRings (Principal Component Analysis rings) contains the polygon's coordinate data in an encoded or compressed
   ///   format for efficient storage and transmission. A polygon ring is a closed sequence of coordinate points (latitude/longitude

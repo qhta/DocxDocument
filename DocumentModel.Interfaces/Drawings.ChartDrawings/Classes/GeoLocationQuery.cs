@@ -30,10 +30,6 @@ public interface GeoLocationQuery : IModelElement
   /// <summary>
   ///   Gets or sets the country or region component of the address query.
   /// </summary>
-  /// <value>
-  ///   A string containing the country or region name,
-  ///   or <c>null</c> if no country/region is specified.
-  /// </value>
   /// <remarks>
    ///   The country or region specifies the top-level geographic context for the location query, identifying the
   ///   nation or sovereign region within which the location exists. This can be specified using full country names
@@ -50,10 +46,6 @@ public interface GeoLocationQuery : IModelElement
   /// <summary>
   ///   Gets or sets the first-level administrative division component of the address query.
   /// </summary>
-  /// <value>
-  ///   A string containing the first-level administrative division name (state, province, region, etc.),
-  ///   or <c>null</c> if no first-level division is specified.
-  /// </value>
   /// <remarks>
    ///   The first-level administrative division represents the primary sub-national geographic unit, such as states
   ///   in the United States (e.g., "California", "New York"), provinces in Canada (e.g., "Ontario", "British Columbia"),
@@ -69,10 +61,6 @@ public interface GeoLocationQuery : IModelElement
   /// <summary>
   ///   Gets or sets the second-level administrative division component of the address query.
   /// </summary>
-  /// <value>
-  ///   A string containing the second-level administrative division name (county, district, municipality, etc.),
-  ///   or <c>null</c> if no second-level division is specified.
-  /// </value>
   /// <remarks>
    ///   The second-level administrative division represents a sub-division of the first-level division, such as counties
   ///   within U.S. states (e.g., "Los Angeles County" within California, "Cook County" within Illinois), districts within
@@ -88,10 +76,6 @@ public interface GeoLocationQuery : IModelElement
   /// <summary>
   ///   Gets or sets the postal code component of the address query.
   /// </summary>
-  /// <value>
-  ///   A string containing the postal code (ZIP code, postcode, etc.),
-  ///   or <c>null</c> if no postal code is specified.
-  /// </value>
   /// <remarks>
    ///   The postal code provides precise geographic localization through mail delivery codes, such as ZIP codes in the
   ///   United States (e.g., "90210", "10001"), postcodes in the United Kingdom (e.g., "SW1A 1AA"), or equivalent codes
@@ -107,10 +91,6 @@ public interface GeoLocationQuery : IModelElement
   /// <summary>
   ///   Gets or sets the type of geographic entity to target in the location query.
   /// </summary>
-  /// <value>
-  ///   An <see cref="EntityTypeEnum"/> value specifying the desired entity classification level,
-  ///   or <c>null</c> to return any entity type matching the address components.
-  /// </value>
   /// <remarks>
    ///   The entity type specifies the desired geographic classification level to target in the geocoding operation,
   ///   such as country, first-level administrative division (state/province), second-level administrative division

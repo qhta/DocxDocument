@@ -18,10 +18,6 @@ public interface SchemaReferences : IModelElement
   /// <summary>
   ///   Gets or sets the collection of schema reference items.
   /// </summary>
-  /// <value>
-  ///   A collection of <see cref="SchemaReference"/> objects identifying the associated schemas,
-  ///   or <c>null</c> if no schema references are defined.
-  /// </value>
   /// <remarks>
   ///   Each item in the collection references a schema by its target namespace URI. The schemas identified
   ///   by these references provide validation rules and structure definitions for the custom XML data stored

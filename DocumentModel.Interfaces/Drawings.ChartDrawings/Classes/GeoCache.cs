@@ -26,10 +26,6 @@ public interface GeoCache : IModelElement
   /// <summary>
   ///   Gets or sets the identifier of the geographic data provider that supplied the cached data.
   /// </summary>
-  /// <value>
-  ///   A string containing the provider identifier or name,
-  ///   or <c>null</c> if no provider is specified.
-  /// </value>
   /// <remarks>
    ///   The provider identifier specifies which geographic data service or mapping provider was used to retrieve
   ///   the cached geographic information. This enables Office to understand the source and format of the cached
@@ -44,10 +40,6 @@ public interface GeoCache : IModelElement
   /// <summary>
   ///   Gets or sets the binary-encoded geographic data cached from the provider.
   /// </summary>
-  /// <value>
-  ///   A string containing base64-encoded binary geographic data,
-  ///   or <c>null</c> if no binary data is cached.
-  /// </value>
   /// <remarks>
   ///   The binary data contains the raw geographic information retrieved from the mapping provider, encoded in
   ///   base64 format for storage within the XML document structure. This data may include geographic boundaries,
@@ -64,10 +56,6 @@ public interface GeoCache : IModelElement
   /// <summary>
   ///   Gets or sets the structured geographic query results cached for this chart.
   /// </summary>
-  /// <value>
-  ///   A <see cref="Clear"/> object containing organized geographic data query results,
-  ///   or <c>null</c> if no structured query results are cached.
-  /// </value>
   /// <remarks>
   ///   The Clear object provides structured access to the various types of geographic query results cached for
   ///   the chart, including location queries (coordinates and addresses), data entity queries (geographic regions

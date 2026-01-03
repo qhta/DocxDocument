@@ -24,10 +24,6 @@ public interface DataPoint : IModelElement
   /// <summary>
   ///   Gets or sets the zero-based index identifying this data point's position within its series.
   /// </summary>
-  /// <value>
-  ///   An unsigned 32-bit integer representing the data point's position in the series,
-  ///   or <c>null</c> if no index is specified.
-  /// </value>
   /// <remarks>
    ///   The index identifies which data point in the series this formatting applies to, using zero-based positioning
   ///   where 0 represents the first data point, 1 the second, and so on. This index-based approach enables precise
@@ -40,10 +36,6 @@ public interface DataPoint : IModelElement
   /// <summary>
   ///   Gets or sets the visual styling properties for this data point.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ShapeProperties"/> object defining fill, line, and effect properties,
-  ///   or <c>null</c> if the data point uses the series' default formatting.
-  /// </value>
   /// <remarks>
   ///   Shape properties control the visual appearance of this specific data point, overriding the default formatting
   ///   inherited from the parent series. This enables individual data points to be visually distinguished through
@@ -60,10 +52,6 @@ public interface DataPoint : IModelElement
   /// <summary>
   ///   Gets or sets the collection of extension elements for future extensibility.
   /// </summary>
-  /// <value>
-  ///   An <see cref="ExtensionList"/> containing extension elements,
-  ///   or <c>null</c> if no extensions are defined.
-  /// </value>
   /// <remarks>
   ///   Extension elements allow for future enhancements to data point functionality without breaking compatibility
   ///   with existing implementations. This could include additional formatting options, interactive behaviors,
