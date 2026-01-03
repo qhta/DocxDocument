@@ -16,10 +16,6 @@ public interface ApplicationNonVisualDrawingProperties : IModelElement
   /// <summary>
   ///   Gets or sets the name of the macro associated with this drawing object.
   /// </summary>
-  /// <value>
-  ///   A string containing the macro name or script reference,
-  ///   or <c>null</c> if no macro is associated.
-  /// </value>
   /// <remarks>
   ///   The macro name typically references a VBA macro or script that executes when the user interacts
   ///   with the drawing object (such as clicking on it). This enables interactive chart elements that
@@ -30,10 +26,6 @@ public interface ApplicationNonVisualDrawingProperties : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether this drawing object has been published or is marked for publication.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the object is published or marked for publication; <c>false</c> if not published;
-  ///   or <c>null</c> to use the default publication state.
-  /// </value>
   /// <remarks>
   ///   The publication flag is used in content management workflows to track whether drawing objects
   ///   have been published to external systems, shared with collaborators, or marked as ready for

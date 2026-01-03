@@ -13,15 +13,11 @@ public interface TabSet : IElementCollection<Tabs>
   /// <summary>
   ///   Gets or sets the identifier for a built-in Microsoft Office tab set.
   /// </summary>
-  /// <remarks>
-  /// </remarks>
   public string? IdMso { get; set; }
 
   /// <summary>
   ///   Gets or sets a value indicating whether the tab set is visible in the ribbon UI.
   /// </summary>
-  /// <remarks>
-  /// </remarks>
   public bool? Visible { get; set; }
 
   /// <summary>

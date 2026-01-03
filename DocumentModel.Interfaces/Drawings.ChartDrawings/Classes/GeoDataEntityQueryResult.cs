@@ -29,10 +29,6 @@ public interface GeoDataEntityQueryResult : IModelElement
   /// <summary>
   ///   Gets or sets the query specification that was used to retrieve the geographic entity data.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoDataEntityQuery"/> object defining the query parameters,
-  ///   or <c>null</c> if no query specification is stored.
-  /// </value>
   /// <remarks>
   ///   The query specification preserves the parameters used to retrieve the geographic entity data, including
   ///   the entity identifier and optional entity type that were specified in the original query. This enables
@@ -52,10 +48,6 @@ public interface GeoDataEntityQueryResult : IModelElement
   /// <summary>
   ///   Gets or sets the comprehensive geographic data retrieved for the queried entity.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoData"/> object containing the entity's geographic information,
-  ///   or <c>null</c> if no data is available.
-  /// </value>
   /// <remarks>
   ///   The geographic data contains comprehensive information about the queried entity, including its identification
   ///   (name and ID), bounding box coordinates (east, west, north, south), detailed boundary polygons, and copyright

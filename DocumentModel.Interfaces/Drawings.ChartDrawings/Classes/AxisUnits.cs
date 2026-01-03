@@ -17,10 +17,6 @@ public interface AxisUnits : IModelElement
   /// <summary>
   ///   Gets or sets the unit type applied to the axis values.
   /// </summary>
-  /// <value>
-  ///   An <see cref="AxisUnit"/> value specifying the unit type or multiplier,
-  ///   or <c>null</c> if no unit is applied.
-  /// </value>
   /// <remarks>
    ///   The unit determines how axis values are scaled or interpreted, such as displaying values
   ///   in thousands, millions, billions, or with specific measurement units. This allows the axis
@@ -31,10 +27,6 @@ public interface AxisUnits : IModelElement
   /// <summary>
   ///   Gets or sets the custom label displayed for the axis units.
   /// </summary>
-  /// <value>
-  ///   An <see cref="AxisUnitsLabel"/> object defining the unit label text and formatting,
-  ///   or <c>null</c> if no custom unit label is displayed.
-  /// </value>
   /// <remarks>
   ///   The axis units label provides a textual representation of the units that can be customized
   ///   in terms of content, positioning, and formatting. This label typically appears near the axis
@@ -45,10 +37,6 @@ public interface AxisUnits : IModelElement
   /// <summary>
   ///   Gets or sets the collection of extension elements for future extensibility.
   /// </summary>
-  /// <value>
-  ///   An <see cref="ExtensionList"/> containing extension elements,
-  ///   or <c>null</c> if no extensions are defined.
-  /// </value>
   /// <remarks>
   ///   Extension elements allow for future enhancements and custom properties without breaking
   ///   compatibility with existing implementations.

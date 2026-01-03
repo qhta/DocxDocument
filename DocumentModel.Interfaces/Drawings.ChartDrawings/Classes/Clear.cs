@@ -20,10 +20,6 @@ public interface Clear : IModelElement
   /// <summary>
   ///   Gets or sets the results from geographic location queries.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoLocationQueryResults"/> object containing location query results with coordinates and addresses,
-  ///   or <c>null</c> if no location query results are available.
-  /// </value>
   /// <remarks>
   ///   Geographic location query results provide coordinate information (latitude/longitude) and structured
   ///   address data for locations referenced in the chart. This enables the chart to accurately position
@@ -34,10 +30,6 @@ public interface Clear : IModelElement
   /// <summary>
   ///   Gets or sets the results from geographic data entity queries.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoDataEntityQueryResults"/> object containing entity query results with geographic regions and properties,
-  ///   or <c>null</c> if no data entity query results are available.
-  /// </value>
   /// <remarks>
   ///   Geographic data entity query results provide information about geographic entities such as countries,
   ///   states, provinces, counties, or custom regions. This includes entity identifiers, names, boundaries,
@@ -48,10 +40,6 @@ public interface Clear : IModelElement
   /// <summary>
   ///   Gets or sets the results from queries that map data points to geographic entities.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoDataPointToEntityQueryResults"/> object containing mappings between data points and entities,
-  ///   or <c>null</c> if no point-to-entity mapping results are available.
-  /// </value>
   /// <remarks>
   ///   Geographic data point-to-entity query results establish associations between chart data points and
   ///   their corresponding geographic entities. This enables the chart to correctly attribute data values
@@ -62,10 +50,6 @@ public interface Clear : IModelElement
   /// <summary>
   ///   Gets or sets the results from queries for child geographic entities.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoChildEntitiesQueryResults"/> object containing hierarchical child entity information,
-  ///   or <c>null</c> if no child entity query results are available.
-  /// </value>
   /// <remarks>
   ///   Geographic child entities query results provide information about subdivisions within a parent
   ///   geographic entity, such as states within a country or counties within a state. This supports
@@ -77,10 +61,6 @@ public interface Clear : IModelElement
   /// <summary>
   ///   Gets or sets the results from queries for parent geographic entities.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoParentEntitiesQueryResults"/> object containing hierarchical parent entity information,
-  ///   or <c>null</c> if no parent entity query results are available.
-  /// </value>
   /// <remarks>
   ///   Geographic parent entities query results provide information about the containing or parent entities
   ///   for a given geographic region, such as identifying the state that contains a county or the country

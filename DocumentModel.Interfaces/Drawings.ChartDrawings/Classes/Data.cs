@@ -21,10 +21,6 @@ public interface Data : IModelElement
   /// <summary>
   ///   Gets or sets the unique identifier for this data instance.
   /// </summary>
-  /// <value>
-  ///   An unsigned 32-bit integer representing the data identifier,
-  ///   or <c>null</c> if no identifier is assigned.
-  /// </value>
   /// <remarks>
    ///   The identifier uniquely distinguishes this data instance from other data collections in the chart,
   ///   enabling references from chart series and other elements that need to access this specific data set.
@@ -35,10 +31,6 @@ public interface Data : IModelElement
   /// <summary>
   ///   Gets or sets the numeric dimension containing continuous numerical data values.
   /// </summary>
-  /// <value>
-  ///   A <see cref="NumericDimension"/> object containing numeric data values for the chart,
-  ///   or <c>null</c> if the chart does not use numeric data.
-  /// </value>
   /// <remarks>
   ///   The numeric dimension stores continuous numerical values such as sales figures, measurements,
   ///   quantities, percentages, or any other numeric data that will be visualized in the chart.
@@ -50,10 +42,6 @@ public interface Data : IModelElement
   /// <summary>
   ///   Gets or sets the string dimension containing categorical or label data.
   /// </summary>
-  /// <value>
-  ///   A <see cref="StringDimension"/> object containing string data for categories or labels,
-  ///   or <c>null</c> if the chart does not use categorical data.
-  /// </value>
   /// <remarks>
   ///   The string dimension stores categorical information such as category names, date labels, series names,
   ///   or any other text-based data that provides context or organization for the chart. This dimension
@@ -65,10 +53,6 @@ public interface Data : IModelElement
   /// <summary>
   ///   Gets or sets the collection of extension elements for future extensibility.
   /// </summary>
-  /// <value>
-  ///   An <see cref="ExtensionList"/> containing extension elements,
-  ///   or <c>null</c> if no extensions are defined.
-  /// </value>
   /// <remarks>
   ///   Extension elements allow for future enhancements to the data structure without breaking
   ///   compatibility with existing implementations. This could include support for additional data

@@ -75,11 +75,6 @@ public interface RgbColorModelHex: IModelElement
   /// <summary>
   /// Gets or sets the base RGB color value in hexadecimal format.
   /// </summary>
-  /// <value>
-  /// An <see cref="IRGB"/> value representing the 24-bit RGB color (8 bits per channel).
-  /// Common values include RGB(0xFF0000) for red, RGB(0x00FF00) for green, RGB(0x0000FF) for blue,
-  /// RGB(0x000000) for black, and RGB(0xFFFFFF) for white.
-  /// </value>
   /// <remarks>
   /// <para>
   /// This is the primary color value specified as a 24-bit RGB color. The hexadecimal format
@@ -96,10 +91,6 @@ public interface RgbColorModelHex: IModelElement
   /// <summary>
   /// Gets or sets the tint value to lighten the color.
   /// </summary>
-  /// <value>
-  /// An integer value representing the tint percentage (0-100000, where 100000 = 100%).
-  /// If <see langword="null"/>, no tint is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// A tint lightens the base RGB color by mixing it with white. Values range from 0 to 100000:
@@ -127,10 +118,6 @@ public interface RgbColorModelHex: IModelElement
   /// <summary>
   /// Gets or sets the shade value to darken the color.
   /// </summary>
-  /// <value>
-  /// An integer value representing the shade percentage (0-100000, where 100000 = 100%).
-  /// If <see langword="null"/>, no shade is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// A shade darkens the base RGB color by mixing it with black. Values range from 0 to 100000:
@@ -158,10 +145,6 @@ public interface RgbColorModelHex: IModelElement
   /// <summary>
   /// Gets or sets the absolute alpha (transparency) value.
   /// </summary>
-  /// <value>
-  /// An integer value representing the opacity percentage (0-100000, where 100000 = 100% opaque).
-  /// If <see langword="null"/>, full opacity is assumed.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Specifies the opacity of the color:
@@ -190,10 +173,6 @@ public interface RgbColorModelHex: IModelElement
   /// <summary>
   /// Gets or sets the hue modulation percentage.
   /// </summary>
-  /// <value>
-  /// An integer value representing the hue modulation percentage (0-100000, where 100000 = 100% = no change).
-  /// If <see langword="null"/>, no hue modulation is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Multiplies the RGB color's hue by this percentage in HSL color space. Range is 0 to 100000:
@@ -214,10 +193,6 @@ public interface RgbColorModelHex: IModelElement
   /// <summary>
   /// Gets or sets the absolute saturation value in the HSL color space.
   /// </summary>
-  /// <value>
-  /// An integer value representing saturation (0-100000, where 0 = grayscale, 100000 = fully saturated).
-  /// If <see langword="null"/>, the RGB color's original saturation is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Overrides the saturation component of the RGB color:
@@ -238,10 +213,6 @@ public interface RgbColorModelHex: IModelElement
   /// <summary>
   /// Gets or sets the saturation offset adjustment.
   /// </summary>
-  /// <value>
-  /// An integer value to add or subtract from the RGB color's saturation (-100000 to +100000).
-  /// If <see langword="null"/>, no saturation adjustment is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Adds or subtracts from the RGB color's saturation in HSL space:
@@ -261,10 +232,6 @@ public interface RgbColorModelHex: IModelElement
   /// <summary>
   /// Gets or sets the saturation modulation percentage.
   /// </summary>
-  /// <value>
-  /// An integer value representing the saturation modulation percentage (0-100000, where 100000 = no change).
-  /// If <see langword="null"/>, no saturation modulation is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Multiplies the RGB color's saturation by this percentage:
@@ -289,10 +256,6 @@ public interface RgbColorModelHex: IModelElement
   /// <summary>
   /// Gets or sets the absolute luminance (brightness) value in the HSL color space.
   /// </summary>
-  /// <value>
-  /// An integer value representing luminance (0-100000, where 0 = black, 50000 = normal, 100000 = white).
-  /// If <see langword="null"/>, the RGB color's original luminance is used.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Overrides the luminance component of the RGB color:
@@ -312,10 +275,6 @@ public interface RgbColorModelHex: IModelElement
   /// <summary>
   /// Gets or sets the luminance (brightness) offset adjustment.
   /// </summary>
-  /// <value>
-  /// An integer value to add or subtract from the RGB color's luminance (-100000 to +100000).
-  /// If <see langword="null"/>, no luminance adjustment is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Adds or subtracts from the RGB color's luminance in HSL space:
@@ -336,10 +295,6 @@ public interface RgbColorModelHex: IModelElement
   /// <summary>
   /// Gets or sets the luminance (brightness) modulation percentage.
   /// </summary>
-  /// <value>
-  /// An integer value representing the luminance modulation percentage (0-100000, where 100000 = no change).
-  /// If <see langword="null"/>, no luminance modulation is applied.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Multiplies the RGB color's luminance by this percentage:

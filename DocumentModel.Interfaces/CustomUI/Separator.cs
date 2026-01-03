@@ -16,19 +16,11 @@ public interface Separator : IModelElement
   /// <summary>
   ///   Gets or sets the unique identifier for this separator.
   /// </summary>
-  /// <value>
-  ///   A string containing the identifier, or <c>null</c> if no identifier is specified.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public string? Id { get; set; }
 
   /// <summary>
   ///   Gets or sets the qualified identifier for this separator.
   /// </summary>
-  /// <value>
-  ///   A string containing the namespace-qualified identifier, or <c>null</c> if not specified.
-  /// </value>
   /// <remarks>
   ///   Use this when the identifier needs to be unique across multiple namespaces.
   /// </remarks>
@@ -37,9 +29,6 @@ public interface Separator : IModelElement
   /// <summary>
   ///   Gets or sets an arbitrary tag value for custom data storage.
   /// </summary>
-  /// <value>
-  ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
-  /// </value>
   /// <remarks>
   ///   The tag can be used to store application-specific information associated with this separator.
   /// </remarks>
@@ -48,19 +37,11 @@ public interface Separator : IModelElement
   /// <summary>
   ///   Gets or sets a value indicating whether the separator is visible.
   /// </summary>
-  /// <value>
-  ///   <c>true</c> if the separator is visible; <c>false</c> if hidden; or <c>null</c> to use the default visibility.
-  /// </value>
-  /// <remarks>
-  /// </remarks>
   public bool? Visible { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the separator's visibility.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if visibility is not determined dynamically.
-  /// </value>
   /// <remarks>
   ///   The callback function should return a boolean value indicating whether the separator should be visible.
   /// </remarks>
@@ -69,9 +50,6 @@ public interface Separator : IModelElement
   /// <summary>
   ///   Gets or sets the Microsoft Office identifier after which this separator should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the separator relative to a built-in control.
   /// </remarks>
@@ -80,9 +58,6 @@ public interface Separator : IModelElement
   /// <summary>
   ///   Gets or sets the Microsoft Office identifier before which this separator should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the separator relative to a built-in control.
   /// </remarks>
@@ -91,9 +66,6 @@ public interface Separator : IModelElement
   /// <summary>
   ///   Gets or sets the qualified identifier after which this separator should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the separator relative to another custom control.
   /// </remarks>
@@ -102,9 +74,6 @@ public interface Separator : IModelElement
   /// <summary>
   ///   Gets or sets the qualified identifier before which this separator should be inserted.
   /// </summary>
-  /// <value>
-  ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
-  /// </value>
   /// <remarks>
   ///   Use this to position the separator relative to another custom control.
   /// </remarks>

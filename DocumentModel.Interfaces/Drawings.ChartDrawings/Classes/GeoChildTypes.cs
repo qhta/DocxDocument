@@ -28,10 +28,6 @@ public interface GeoChildTypes : IModelElement
   /// <summary>
   ///   Gets or sets the collection of entity type identifiers to include in child entity queries.
   /// </summary>
-  /// <value>
-  ///   A collection of strings where each string represents a geographic entity type identifier,
-  ///   or <c>null</c> to retrieve all entity types without filtering.
-  /// </value>
   /// <remarks>
   ///   Each string in the collection identifies a specific type or category of geographic entity to include in
   ///   query results. The entity type identifiers correspond to the classification system used by the geographic

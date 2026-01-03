@@ -27,10 +27,6 @@ public interface GeoEntity : IModelElement
   /// <summary>
   ///   Gets or sets the human-readable name of the geographic entity.
   /// </summary>
-  /// <value>
-  ///   A string containing the entity's display name,
-  ///   or <c>null</c> if no name is specified.
-  /// </value>
   /// <remarks>
    ///   The entity name provides a user-friendly identifier for the geographic entity, such as "United States",
   ///   "California", "Los Angeles County", or "Tokyo". This name is used for display purposes in user interfaces,
@@ -47,10 +43,6 @@ public interface GeoEntity : IModelElement
   /// <summary>
   ///   Gets or sets the classification type of the geographic entity.
   /// </summary>
-  /// <value>
-  ///   An <see cref="EntityTypeEnum"/> value specifying the entity's administrative or geographic classification,
-  ///   or <c>null</c> if no type is specified.
-  /// </value>
   /// <remarks>
    ///   The entity type specifies the classification level of the geographic entity within administrative or
   ///   geographic hierarchies, such as country, first-level administrative division (state/province), second-level

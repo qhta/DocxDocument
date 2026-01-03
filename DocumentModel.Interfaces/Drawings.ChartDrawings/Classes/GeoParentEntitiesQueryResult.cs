@@ -30,10 +30,6 @@ public interface GeoParentEntitiesQueryResult : IModelElement
   /// <summary>
   ///   Gets or sets the query specification that was used to retrieve the parent entities.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoParentEntitiesQuery"/> object defining the query parameters,
-  ///   or <c>null</c> if no query specification is stored.
-  /// </value>
   /// <remarks>
   ///   The query specification preserves the child entity identifier used to retrieve parent entities, enabling
   ///   cache validation by comparing new query parameters against cached queries to determine if a cached result
@@ -50,10 +46,6 @@ public interface GeoParentEntitiesQueryResult : IModelElement
   /// <summary>
   ///   Gets or sets the child geographic entity for which parent entities were queried.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoEntity"/> object containing the child entity's identification,
-  ///   or <c>null</c> if no child entity information is available.
-  /// </value>
   /// <remarks>
   ///   The child entity provides lightweight identification information (name and type) about the entity for which
   ///   parent entities were queried. This context information helps users understand the hierarchical relationship
@@ -70,10 +62,6 @@ public interface GeoParentEntitiesQueryResult : IModelElement
   /// <summary>
   ///   Gets or sets the parent geographic entity that contains the queried child entity.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoParentEntity"/> object containing the parent entity information,
-  ///   or <c>null</c> if no parent entity data is available.
-  /// </value>
   /// <remarks>
   ///   The parent entity provides information about the geographic entity that contains or encompasses the child
   ///   entity specified in the query. This represents one level up in the geographic hierarchy, such as the state

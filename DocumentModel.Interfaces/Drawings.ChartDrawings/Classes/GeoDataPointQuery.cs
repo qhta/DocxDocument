@@ -28,10 +28,6 @@ public interface GeoDataPointQuery : IModelElement
   /// <summary>
   ///   Gets or sets the type of geographic entity to search for when identifying the containing region.
   /// </summary>
-  /// <value>
-  ///   An <see cref="EntityTypeEnum"/> value specifying the desired entity classification level,
-  ///   or <c>null</c> to return any entity type that contains the point.
-  /// </value>
   /// <remarks>
    ///   The entity type specifies the administrative or geographic classification level at which to identify the
   ///   containing entity. This filtering is valuable because a given coordinate point may be contained within
@@ -49,10 +45,6 @@ public interface GeoDataPointQuery : IModelElement
   /// <summary>
   ///   Gets or sets the latitude coordinate of the point to query.
   /// </summary>
-  /// <value>
-  ///   A double-precision floating-point value representing the latitude in decimal degrees,
-  ///   or <c>null</c> if no latitude is specified.
-  /// </value>
   /// <remarks>
    ///   The latitude specifies the north-south position of the point in the standard geographic coordinate system,
   ///   using decimal degrees where values range from -90 (90°S, South Pole) to +90 (90°N, North Pole). The latitude,
@@ -67,10 +59,6 @@ public interface GeoDataPointQuery : IModelElement
   /// <summary>
   ///   Gets or sets the longitude coordinate of the point to query.
   /// </summary>
-  /// <value>
-  ///   A double-precision floating-point value representing the longitude in decimal degrees,
-  ///   or <c>null</c> if no longitude is specified.
-  /// </value>
   /// <remarks>
    ///   The longitude specifies the east-west position of the point in the standard geographic coordinate system,
   ///   using decimal degrees where values range from -180 (180°W) to +180 (180°E). The longitude, combined with

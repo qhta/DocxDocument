@@ -17,10 +17,6 @@ public interface SchemaReference : IModelElement
   /// <summary>
   ///   Gets or sets the target namespace URI of the associated XML schema.
   /// </summary>
-  /// <value>
-  ///   A string containing the schema's target namespace URI,
-  ///   or <c>null</c> if no namespace is specified.
-  /// </value>
   /// <remarks>
   ///   The target namespace uniquely identifies the XML schema being referenced. This URI should match
   ///   the target namespace defined in the actual schema (XSD) file. The namespace is used to locate

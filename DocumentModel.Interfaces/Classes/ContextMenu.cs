@@ -92,10 +92,6 @@ public interface ContextMenu : IModelElement
   /// <summary>
   /// Gets or sets the Microsoft Office built-in context menu identifier that this customization applies to.
   /// </summary>
-  /// <value>
-  /// A string containing the Office-defined context menu ID (e.g., "ContextMenuText", "ContextMenuTable").
-  /// If <see langword="null"/>, the context menu customization is not associated with a specific built-in menu.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The idMso (ID Microsoft Office) property identifies which built-in context menu should be customized.

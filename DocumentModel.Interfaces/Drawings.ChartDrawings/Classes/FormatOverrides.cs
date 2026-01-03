@@ -26,10 +26,6 @@ public interface FormatOverrides : IModelElement
   /// <summary>
   ///   Gets or sets the collection of individual format override definitions.
   /// </summary>
-  /// <value>
-  ///   A collection of <see cref="FormatOverride"/> objects defining specific formatting customizations,
-  ///   or <c>null</c> if no format overrides are defined.
-  /// </value>
   /// <remarks>
   ///   Each <see cref="FormatOverride"/> in the collection specifies a formatting customization that applies to
   ///   a particular chart element or set of elements. The overrides take precedence over default formatting,

@@ -22,9 +22,6 @@ public interface CustomUI : IModelElement
   /// <summary>
   ///   Gets or sets the name of the callback function invoked when the custom UI is loaded.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if no load callback is defined.
-  /// </value>
   /// <remarks>
   ///   The OnLoad callback is invoked when the Office application loads the custom UI, providing an opportunity
   ///   to initialize UI state, store references to ribbon objects, and perform setup operations. The callback
@@ -37,9 +34,6 @@ public interface CustomUI : IModelElement
   /// <summary>
   ///   Gets or sets the name of the callback function that provides images for custom controls.
   /// </summary>
-  /// <value>
-  ///   A string containing the callback function name, or <c>null</c> if no image loading callback is defined.
-  /// </value>
   /// <remarks>
   ///   The LoadImage callback is invoked whenever the Office application needs to retrieve an image for a custom
   ///   control. The callback receives an image identifier as a parameter and should return the corresponding image
@@ -53,10 +47,6 @@ public interface CustomUI : IModelElement
   /// <summary>
   ///   Gets or sets the collection of custom command definitions.
   /// </summary>
-  /// <value>
-  ///   A <see cref="Commands"/> object containing custom command handlers,
-  ///   or <c>null</c> if no custom commands are defined.
-  /// </value>
   /// <remarks>
   ///   Custom commands define reusable command handlers that can be referenced by multiple controls throughout
   ///   the UI. This promotes code reuse and ensures consistent behavior when the same command is invoked from
@@ -69,10 +59,6 @@ public interface CustomUI : IModelElement
   /// <summary>
   ///   Gets or sets the ribbon customization definition.
   /// </summary>
-  /// <value>
-  ///   A <see cref="Ribbon"/> object defining custom ribbon tabs, groups, and controls,
-  ///   or <c>null</c> if no ribbon customization is defined.
-  /// </value>
   /// <remarks>
   ///   The ribbon customization defines modifications to the Office ribbon interface, including custom tabs,
   ///   modifications to built-in tabs, custom groups, Quick Access Toolbar customizations, and contextual tab
@@ -86,10 +72,6 @@ public interface CustomUI : IModelElement
   /// <summary>
   ///   Gets or sets the backstage view customization definition.
   /// </summary>
-  /// <value>
-  ///   A <see cref="Backstage"/> object defining custom backstage tabs and content,
-  ///   or <c>null</c> if no backstage customization is defined.
-  /// </value>
   /// <remarks>
   ///   The backstage customization defines modifications to the File menu (backstage view) in Office applications.
   ///   The backstage provides access to document-level operations such as Save, Print, Share, and application
@@ -102,10 +84,6 @@ public interface CustomUI : IModelElement
   /// <summary>
   ///   Gets or sets the collection of context menu customizations.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ContextMenus"/> object containing custom context menu definitions,
-  ///   or <c>null</c> if no context menu customizations are defined.
-  /// </value>
   /// <remarks>
   ///   Context menu customizations define modifications to right-click menus throughout the Office application.
   ///   Custom context menus can add new commands, modify existing menus, or provide context-sensitive options

@@ -28,10 +28,6 @@ public interface GeoDataPointToEntityQueryResult : IModelElement
   /// <summary>
   ///   Gets or sets the coordinate-based query specification used to identify the containing entity.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoDataPointQuery"/> object defining the coordinate-based query parameters,
-  ///   or <c>null</c> if no coordinate-based query is stored.
-  /// </value>
   /// <remarks>
   ///   The coordinate-based query specification preserves the latitude/longitude coordinates and optional entity
   ///   type used to perform reverse geocoding, identifying which geographic entity contains the specified point.
@@ -48,10 +44,6 @@ public interface GeoDataPointToEntityQueryResult : IModelElement
   /// <summary>
   ///   Gets or sets the entity-based query specification used to directly reference the target entity.
   /// </summary>
-  /// <value>
-  ///   A <see cref="GeoDataPointToEntityQuery"/> object defining the entity-based query parameters,
-  ///   or <c>null</c> if no entity-based query is stored.
-  /// </value>
   /// <remarks>
   ///   The entity-based query specification preserves the entity identifier and optional entity type used to
   ///   directly associate the data point with a specific geographic entity. This enables cache validation for

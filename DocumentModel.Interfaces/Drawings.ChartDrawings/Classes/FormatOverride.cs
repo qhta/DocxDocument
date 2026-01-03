@@ -26,10 +26,6 @@ public interface FormatOverride : IModelElement
   /// <summary>
   ///   Gets or sets the zero-based index identifying which chart element this format override applies to.
   /// </summary>
-  /// <value>
-  ///   An unsigned 32-bit integer representing the element's position or identifier,
-  ///   or <c>null</c> if no index is specified.
-  /// </value>
   /// <remarks>
    ///   The index identifies the target chart element for this format override, using zero-based positioning where
   ///   0 represents the first element, 1 the second, and so on. The interpretation of the index depends on the
@@ -45,10 +41,6 @@ public interface FormatOverride : IModelElement
   /// <summary>
   ///   Gets or sets the custom visual styling properties that override the element's default formatting.
   /// </summary>
-  /// <value>
-  ///   A <see cref="ShapeProperties"/> object defining fill, line, and effect properties,
-  ///   or <c>null</c> if no custom formatting is applied.
-  /// </value>
   /// <remarks>
   ///   Shape properties define the custom visual styling that supersedes the target element's default or inherited
   ///   formatting. This enables precise control over the element's appearance through custom colors, patterns, borders,
@@ -67,10 +59,6 @@ public interface FormatOverride : IModelElement
   /// <summary>
   ///   Gets or sets the collection of extension elements for future extensibility.
   /// </summary>
-  /// <value>
-  ///   An <see cref="ExtensionList"/> containing extension elements,
-  ///   or <c>null</c> if no extensions are defined.
-  /// </value>
   /// <remarks>
   ///   Extension elements allow for future enhancements to format override functionality without breaking
   ///   compatibility with existing implementations. This could include additional formatting options, conditional
