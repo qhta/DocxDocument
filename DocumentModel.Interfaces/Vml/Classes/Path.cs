@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the Path Class.
 /// </summary>
-public class Path: ModelElement
+public interface Path: IModelElement
 {
   /// <summary>
   ///   Unique Identifier

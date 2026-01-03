@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WebExTaskpanesPart
 /// </summary>
-public class WebExTaskpanesPart: ModelElement
+public interface WebExTaskpanesPart: IModelElement
 {
   public string? ContentType { get; set; }
   public string? RelationshipType { get; set; }

@@ -5,9 +5,9 @@ using DocumentModel.Wordprocessing.OEmbed;
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BlipExtension Class.
+///   Defines the BlipExtension interface.
 /// </summary>
-public class BlipExtension: ModelElement
+public interface BlipExtension: IModelElement
 {
   /// <summary>
   ///   URI

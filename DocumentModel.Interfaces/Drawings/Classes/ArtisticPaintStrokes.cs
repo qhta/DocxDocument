@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticPaintStrokes Class.
+///   Defines the ArtisticPaintStrokes interface.
 /// </summary>
-public class ArtisticPaintStrokes: ModelElement
+public interface ArtisticPaintStrokes: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

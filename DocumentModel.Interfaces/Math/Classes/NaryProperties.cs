@@ -6,7 +6,7 @@ namespace DocumentModel.Math;
 ///  the location of limits (using the limLoc element) 
 ///  and whether empty limits display a placeholder character or are hidden (using the subHide and supHide elements). 
 /// </summary>
-public class NaryProperties: ModelElement
+public interface NaryProperties: IModelElement
 {
   /// <summary>
   ///   Specifies n-ary Operator Character.

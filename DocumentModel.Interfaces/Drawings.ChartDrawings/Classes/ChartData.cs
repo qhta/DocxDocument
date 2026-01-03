@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ChartData Class.
 /// </summary>
-public class ChartData: ModelElement
+public interface ChartData: IModelElement
 {
   /// <summary>
   ///   ExternalData.

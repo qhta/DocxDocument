@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Audio from File.
 /// </summary>
-public class AudioFromFile: ModelElement
+public interface AudioFromFile: IModelElement
 {
   /// <summary>
   ///   Linked Relationship ID

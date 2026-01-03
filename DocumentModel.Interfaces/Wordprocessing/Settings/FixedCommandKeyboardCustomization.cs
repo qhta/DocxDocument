@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FixedCommandKeyboardCustomization Class.
 /// </summary>
-public class FixedCommandKeyboardCustomization: ModelElement
+public interface FixedCommandKeyboardCustomization: IModelElement
 {
   /// <summary>
   ///   fciName
@@ -12,9 +12,9 @@ public class FixedCommandKeyboardCustomization: ModelElement
   /// <summary>
   ///   fciIndex
   /// </summary>
-  public HexChar? CommandIndex { get; set; }
+  public IHexChar? CommandIndex { get; set; }
   /// <summary>
   ///   swArg
   /// </summary>
-  public HexChar? Argument { get; set; }
+  public IHexChar? Argument { get; set; }
 }

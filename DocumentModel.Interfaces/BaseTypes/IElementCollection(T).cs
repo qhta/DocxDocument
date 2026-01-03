@@ -5,7 +5,7 @@
 /// </summary>
 /// <typeparam name="ItemType">The type of elements contained in the collection. Must implement <see cref="ICollectionItem"/>.</typeparam>
 public interface IElementCollection<ItemType> : ICollection<ItemType>
-  where ItemType : ICollectionItem
+  //where ItemType : ICollectionItem
 {
   /// <summary>
   /// Parent element of this model element.

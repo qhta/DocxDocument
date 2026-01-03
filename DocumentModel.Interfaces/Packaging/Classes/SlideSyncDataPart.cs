@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the SlideSyncDataPart
 /// </summary>
-public class SlideSyncDataPart: ModelElement
+public interface SlideSyncDataPart: IModelElement
 {
   public string? ContentType { get; set; }
   public string? RelationshipType { get; set; }

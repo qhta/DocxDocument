@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ObjectProperties Class.
+///   Defines the ObjectProperties interface.
 /// </summary>
-public class ObjectProperties: ModelElement
+public interface ObjectProperties: IModelElement
 {
   /// <summary>
   ///   objectId, this property is only available in Office 2013 and later.

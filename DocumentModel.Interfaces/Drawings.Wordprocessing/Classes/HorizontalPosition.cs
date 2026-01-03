@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Horizontal Positioning.
 /// </summary>
-public class HorizontalPosition: ModelElement
+public interface HorizontalPosition: IModelElement
 {
   /// <summary>
   ///   Horizontal Position Relative Base

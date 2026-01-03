@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// <summary>
 ///   Defines the WordprocessingShape Class.
 /// </summary>
-public class WordprocessingShape: ModelElement
+public interface WordprocessingShape: IModelElement
 {
   /// <summary>
   ///   normalEastAsianFlow, this property is only available in Office 2010 and later.

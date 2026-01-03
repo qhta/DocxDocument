@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Mcd Class.
 /// </summary>
-public class Mcd: ModelElement
+public interface Mcd: IModelElement
 {
   /// <summary>
   ///   macroName
@@ -20,9 +20,9 @@ public class Mcd: ModelElement
   /// <summary>
   ///   bEncrypt
   /// </summary>
-  public HexChar? BEncrypt { get; set; }
+  public IHexChar? BEncrypt { get; set; }
   /// <summary>
   ///   cmg
   /// </summary>
-  public HexChar? Cmg { get; set; }
+  public IHexChar? Cmg { get; set; }
 }

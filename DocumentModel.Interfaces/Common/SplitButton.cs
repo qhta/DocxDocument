@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the SplitButton Class.
 /// </summary>
-public class SplitButton: ModelElement
+public interface SplitButton: IModelElement
 {
   /// <summary>
   ///   size, this property is only available in Office 2010 and later.

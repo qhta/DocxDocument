@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Audio from CD.
 /// </summary>
-public class AudioFromCD: ModelElement
+public interface AudioFromCD: IModelElement
 {
   /// <summary>
   ///   Audio Start Time.

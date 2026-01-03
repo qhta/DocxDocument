@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the SplitButtonRegular Class.
 /// </summary>
-public class SplitButtonRegular: ModelElement
+public interface SplitButtonRegular: IModelElement
 {
   /// <summary>
   ///   enabled, this property is only available in Office 2010 and later.

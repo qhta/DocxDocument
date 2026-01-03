@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Hue Saturation Luminance Effect.
 /// </summary>
-public class Hsl: ModelElement
+public interface Hsl: IModelElement
 {
   /// <summary>
   ///   Hue

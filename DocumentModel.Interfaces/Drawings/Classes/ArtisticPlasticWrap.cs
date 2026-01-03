@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticPlasticWrap Class.
+///   Defines the ArtisticPlasticWrap interface.
 /// </summary>
-public class ArtisticPlasticWrap: ModelElement
+public interface ArtisticPlasticWrap: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

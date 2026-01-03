@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   This element specifies the content of a single comment stored in the Comments part of a WordprocessingML document.
 /// </summary>
-public class Comment: ElementCollection<ICommentContent>
+public interface Comment: IElementCollection<ICommentContent>
 {
   /// <summary>
   ///   Specifies a unique identifier for an annotation.

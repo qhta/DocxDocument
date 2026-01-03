@@ -4,7 +4,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 ///   Defines the Snapshot Class.
 /// </summary>
-public class Snapshot: ModelElement
+public interface Snapshot: IModelElement
 {
   /// <summary>
   ///   Embedded Picture Reference

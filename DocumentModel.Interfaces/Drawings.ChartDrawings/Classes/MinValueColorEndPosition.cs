@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the MinValueColorEndPosition Class.
 /// </summary>
-public class MinValueColorEndPosition: ModelElement
+public interface MinValueColorEndPosition: IModelElement
 {
   public bool? ExtremeValueColorPosition { get; set; }
   public Double? NumberColorPosition { get; set; }

@@ -1,6 +1,6 @@
 namespace DocumentModel.Properties;
 /// <summary>
-///   Hyperlink List.
+///   IHyperlink List.
 /// </summary>
 public interface IHyperlinkList : IElementCollection<IHyperlinkInfo>
 {

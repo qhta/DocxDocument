@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 ///   adding the spacing of the phantom base element e without displaying that base; 
 ///   and suppressing part of the glyph for spacing considerations.
 /// </summary>
-public class Phantom: ModelElement, ICommonMathContent
+public interface Phantom: IModelElement, ICommonMathContent
 {
   /// <summary>
   ///   Phantom Properties.

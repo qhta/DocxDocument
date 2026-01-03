@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ConnectorLockingExtensionList Class.
+///   Defines the ConnectorLockingExtensionList interface.
 /// </summary>
-public class ConnectorLockingExtensionList: ModelElement
+public interface ConnectorLockingExtensionList: IModelElement
 {
   public Collection<ConnectorLockingExtension>? ConnectorLockingExtensions { get; set; }
 }

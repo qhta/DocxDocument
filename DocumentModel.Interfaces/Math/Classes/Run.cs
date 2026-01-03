@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies a run of mathematical text.
 /// </summary>
-public class Run: ElementCollection<IRunContent>, IBidirectionalContent, 
+public interface Run: IElementCollection<IRunContent>, IBidirectionalContent, 
   IMathArgumentContent, IOfficeMathContent, IMathParagraphContent
 {
   /// <summary>

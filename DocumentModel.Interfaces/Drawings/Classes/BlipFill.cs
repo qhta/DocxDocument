@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BlipFill Class.
+///   Defines the BlipFill interface.
 /// </summary>
-public class BlipFill: ModelElement
+public interface BlipFill: IModelElement
 {
   /// <summary>
   ///   DPI Setting

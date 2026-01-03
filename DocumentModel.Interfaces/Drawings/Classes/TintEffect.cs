@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the TintEffect Class.
+///   Defines the TintEffect interface.
 /// </summary>
-public class TintEffect: ModelElement
+public interface TintEffect: IModelElement
 {
   /// <summary>
   ///   Hue

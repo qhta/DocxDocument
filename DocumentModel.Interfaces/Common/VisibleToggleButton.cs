@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the VisibleToggleButton Class.
 /// </summary>
-public class VisibleToggleButton: ModelElement
+public interface VisibleToggleButton: IModelElement
 {
   /// <summary>
   ///   getPressed, this property is only available in Office 2010 and later.

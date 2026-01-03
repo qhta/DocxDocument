@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the AudioCDTimeType Class.
+///   Defines the AudioCDTimeType interface.
 /// </summary>
-public class AudioCDTimeType: ModelElement
+public interface AudioCDTimeType: IModelElement
 {
   /// <summary>
   ///   Track

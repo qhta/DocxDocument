@@ -2,7 +2,6 @@
 /// <summary>
 /// This struct represents equation array row spacing rule and value.
 /// </summary>
-[TypeConverter(typeof(RowSpacingTypeConverter))]
 public struct RowSpacing
 {
   /// <summary>

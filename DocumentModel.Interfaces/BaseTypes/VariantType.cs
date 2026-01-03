@@ -3,8 +3,6 @@ namespace DocumentModel;
 /// <summary>
 ///   Array Variant Type Simple Type
 /// </summary>
-//[JsonConverter(typeof(StringEnumConverter))]
-[JsonConverter(typeof(StringEnumConverter))]
 public enum VariantType
 {
   /// <summary>

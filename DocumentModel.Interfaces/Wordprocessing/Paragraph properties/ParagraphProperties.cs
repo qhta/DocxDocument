@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Paragraph Properties.
 /// </summary>
-public class ParagraphProperties: ExtBaseParagraphProperties
+public interface ParagraphProperties: ExtBaseParagraphProperties
 {
   /// <summary>
   ///   Run Properties for the Paragraph Mark.

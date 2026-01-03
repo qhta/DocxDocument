@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FullReference Class.
 /// </summary>
-public class FullReference: ModelElement
+public interface FullReference: IModelElement
 {
   /// <summary>
   ///   SequenceOfReferences.

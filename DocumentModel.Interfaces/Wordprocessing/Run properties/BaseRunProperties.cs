@@ -1,10 +1,10 @@
 using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Base class for all RunProperties classes.
+///   Base interface for all RunProperties classes.
 ///   Contains common properties.
 /// </summary>
-public abstract class BaseRunProperties : ElementCollection<Type, IRunProperty>
+public interface BaseRunProperties : IElementCollection<IRunProperty>
 {
   #region Common run properties
   /// <summary>
@@ -26,11 +26,8 @@ public abstract class BaseRunProperties : ElementCollection<Type, IRunProperty>
   ///   </list>
   /// </summary>
   [XmlIgnore]
-  public RunFonts? RunFonts
-  {
-    get => this[typeof(RunFonts)] as RunFonts;
-    set => this[typeof(RunFonts)] = value;
-  }
+  public RunFonts? RunFonts { get; set; }
+
   /// <summary>
   ///   Specifies whether the bold property shall be applied to characters in the contents of this run when displayed in a document.
   ///   There can be two toggle properties:

@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the Point2DType Class.
+///   Defines the Point2DType interface.
 /// </summary>
-public class Point2DType: ModelElement
+public interface Point2DType: IModelElement
 {
   /// <summary>
   ///   X-Axis Coordinate

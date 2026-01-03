@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// <summary>
 ///   Defines the ShapeProperties Class.
 /// </summary>
-public class ShapeProperties: ModelElement
+public interface ShapeProperties: IModelElement
 {
   /// <summary>
   ///   Black and White Mode

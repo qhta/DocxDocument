@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Style Label Description.
 /// </summary>
-public class StyleLabelDescription: ModelElement
+public interface StyleLabelDescription: IModelElement
 {
   /// <summary>
   ///   Natural Language

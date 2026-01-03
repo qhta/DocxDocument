@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Specifies a unique instance of numbering information that can be referenced by zero or more paragraphs 
 ///   within the parent WordprocessingML document.
 /// </summary>
-public class NumberingInstance: ModelElement
+public interface NumberingInstance: IModelElement
 {
   /// <summary>
   ///   A value of 0 for NumberId shall never be used to point to a numbering definition instance,

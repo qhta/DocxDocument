@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the TextFontType Class.
+///   Defines the TextFontType interface.
 /// </summary>
-public class TextFontType: ModelElement
+public interface TextFontType: IModelElement
 {
   /// <summary>
   ///   Text Typeface

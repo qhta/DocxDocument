@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Pictures;
 /// <summary>
 ///   Picture Fill.
 /// </summary>
-public class BlipFill: ModelElement
+public interface BlipFill: IModelElement
 {
   /// <summary>
   ///   DPI Setting

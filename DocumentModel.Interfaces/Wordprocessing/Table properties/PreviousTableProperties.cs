@@ -9,6 +9,6 @@ namespace DocumentModel.Wordprocessing;
 ///   but can be overridden by individual table-level exception, row, and cell level properties, 
 ///   as defined by each property.
 /// </summary>
-public class PreviousTableProperties: ExtBaseTableProperties
+public interface PreviousTableProperties: ExtBaseTableProperties
 {
 }

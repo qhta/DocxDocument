@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoLocations Class.
 /// </summary>
-public class GeoLocations: ModelElement
+public interface GeoLocations: IModelElement
 {
   /// <summary>
   ///   GeoLocation.

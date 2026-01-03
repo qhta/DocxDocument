@@ -1,9 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   TableRowPropertiesChange class used in <see cref="TableRowProperties"/>.
+///   TableRowPropertiesChange interface used in <see cref="TableRowProperties"/>.
 ///   Represents <see cref="PreviousTableRowProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
-public class TableRowPropertiesChange: ModelElement
+public interface TableRowPropertiesChange: IModelElement
 {
   /// <summary>
   ///   Author.

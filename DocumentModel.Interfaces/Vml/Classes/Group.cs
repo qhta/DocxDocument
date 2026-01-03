@@ -5,7 +5,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Group.
 /// </summary>
-public class Group: ModelElement, IEmbeddedObjectContent
+public interface Group: IModelElement, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier
@@ -16,11 +16,11 @@ public class Group: ModelElement, IEmbeddedObjectContent
   /// </summary>
   public string? Style { get; set; }
   /// <summary>
-  ///   Hyperlink Target
+  ///   IHyperlink Target
   /// </summary>
   public string? Href { get; set; }
   /// <summary>
-  ///   Hyperlink Display Target
+  ///   IHyperlink Display Target
   /// </summary>
   public string? Target { get; set; }
   /// <summary>

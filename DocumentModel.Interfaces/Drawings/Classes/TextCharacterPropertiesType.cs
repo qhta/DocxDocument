@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the TextCharacterPropertiesType Class.
+///   Defines the TextCharacterPropertiesType interface.
 /// </summary>
-public class TextCharacterPropertiesType: ModelElement
+public interface TextCharacterPropertiesType: IModelElement
 {
   /// <summary>
   ///   Gets or sets the  value. It is only available for backwards compatibility

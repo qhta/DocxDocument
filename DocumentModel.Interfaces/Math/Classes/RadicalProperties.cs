@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies properties of the Radical object rad, including the hidden or shown state of the degree deg.
 /// </summary>
-public class RadicalProperties: ModelElement
+public interface RadicalProperties: IModelElement
 {
   /// <summary>
   ///   This element specifies the per-object option to hide the degree of a radical. 

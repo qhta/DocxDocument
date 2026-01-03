@@ -9,7 +9,7 @@ namespace DocumentModel.Wordprocessing;
 ///   except for the fact that it is defined as part of a numbering definition instance using the  abstractNum element (§17.9.1) 
 ///   rather than as part of an abstract numbering definition using the num element (§17.9.15).
 /// </remarks>
-public class NumLevel: ModelElement
+public interface NumLevel: IModelElement
 {
   /// <summary>
   ///   Specifies the numbering level definition that is to be defined by this set of numbering properties.  

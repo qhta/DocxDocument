@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   The location of the external content to be imported shall be specified by the relationship 
 ///   whose Id attribute matches the Id attribute on this element. 
 /// </summary>
-public class AltChunk: ModelElement, IStoryContent, ITableCellContent, ICommentContent
+public interface AltChunk: IModelElement, IStoryContent, ITableCellContent, ICommentContent
 {
   /// <summary>
   ///   Relationship to Part

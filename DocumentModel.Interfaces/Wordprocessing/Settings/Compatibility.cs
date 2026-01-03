@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Compatibility Settings.
 /// </summary>
-public class Compatibility: ModelElement
+public interface Compatibility: IModelElement
 {
   /// <summary>
   ///   Use Simplified Rules For Table Border Conflicts.

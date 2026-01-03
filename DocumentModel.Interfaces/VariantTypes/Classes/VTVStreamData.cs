@@ -3,7 +3,7 @@ namespace DocumentModel.VariantTypes;
 /// <summary>
 ///   Binary Versioned Stream.
 /// </summary>
-public class VTVStreamData: ModelElement
+public interface VTVStreamData: IModelElement
 {
   /// <summary>
   ///   VSTREAM Version Attribute

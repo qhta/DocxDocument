@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Anchor for Floating DrawingML Object.
 /// </summary>
-public class Anchor: ModelElement
+public interface Anchor: IModelElement
 {
   /// <summary>
   ///   Distance From Text on Top Edge

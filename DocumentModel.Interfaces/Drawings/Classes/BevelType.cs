@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BevelType Class.
+///   Defines the BevelType interface.
 /// </summary>
-public class BevelType: ModelElement
+public interface BevelType: IModelElement
 {
   /// <summary>
   ///   Width

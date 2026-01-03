@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Major Gridlines.
 /// </summary>
-public class MajorGridlines: ModelElement
+public interface MajorGridlines: IModelElement
 {
   public ChartShapeProperties? ChartShapeProperties { get; set; }
 }

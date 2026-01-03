@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Background Formatting.
 /// </summary>
-public class Background: ModelElement
+public interface Background: IModelElement
 {
   public Fill? Fill { get; set; }
   public EffectList? EffectList { get; set; }

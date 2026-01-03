@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Extended BaseParagraphProperties.
 ///   Contains these common properties, which are not applied to <see cref="BaseParagraphProperties"/>
 /// </summary>
-public abstract class ExtBaseParagraphProperties: BaseParagraphProperties
+public interface ExtBaseParagraphProperties: BaseParagraphProperties
 {
   /// <summary>
   ///   Specifies the style ID of the paragraph style which shall be used to format the contents of this paragraph. 

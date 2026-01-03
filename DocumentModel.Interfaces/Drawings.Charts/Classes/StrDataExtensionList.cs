@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the StrDataExtensionList Class.
 /// </summary>
-public class StrDataExtensionList: ModelElement
+public interface StrDataExtensionList: IModelElement
 {
   public Collection<StrDataExtension>? StrDataExtensions { get; set; }
 }

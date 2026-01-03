@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CheckBoxSymbolType Class.
 /// </summary>
-public class CheckBoxSymbolType: ModelElement
+public interface CheckBoxSymbolType: IModelElement
 {
   /// <summary>
   ///   font, this property is only available in Office 2010 and later.
@@ -12,5 +12,5 @@ public class CheckBoxSymbolType: ModelElement
   /// <summary>
   ///   val, this property is only available in Office 2010 and later.
   /// </summary>
-  public HexChar? Val { get; set; }
+  public IHexChar? Val { get; set; }
 }

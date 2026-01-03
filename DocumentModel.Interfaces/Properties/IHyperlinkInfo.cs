@@ -1,6 +1,6 @@
 namespace DocumentModel.Properties;
 /// <summary>
-///   Hyperlink info as HyperlinkList item.
+///   IHyperlink info as HyperlinkList item.
 /// </summary>
 public interface IHyperlinkInfo: IModelElement, ICollectionItem
 {
@@ -22,9 +22,9 @@ public interface IHyperlinkInfo: IModelElement, ICollectionItem
   ///  1 - Graphic shown in document
   ///  2 - Graphic used to fill a shape
   ///  3 - Graphic used for shape outline
-  ///  4 - Hyperlink attached to a shape
-  ///  5 - Hyperlink attached to a WordprocessingML  field
-  ///  6 - Hyperlink attached to a SpreadsheetML  range
+  ///  4 - IHyperlink attached to a shape
+  ///  5 - IHyperlink attached to a WordprocessingML  field
+  ///  6 - IHyperlink attached to a SpreadsheetML  range
   /// </summary>
   public HyperlinkAttachmentKind Attachment { get; set; }
   /// <summary>

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PageSize Class.
 /// </summary>
-public class PageSize: ModelElement, ISectionPropertiesContent
+public interface PageSize: IModelElement, ISectionPropertiesContent
 {
   /// <summary>
   ///   Page Width

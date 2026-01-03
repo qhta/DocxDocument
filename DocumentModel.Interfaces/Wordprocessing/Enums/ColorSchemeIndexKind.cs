@@ -47,11 +47,11 @@ public enum ColorSchemeIndexKind
   /// </summary>
   Accent6,
   /// <summary>
-  ///   Hyperlink Theme Color Reference.
+  ///   IHyperlink Theme Color Reference.
   /// </summary>
   Hyperlink,
   /// <summary>
-  ///   Followed Hyperlink Theme Color Reference.
+  ///   Followed IHyperlink Theme Color Reference.
   /// </summary>
   FollowedHyperlink
 }

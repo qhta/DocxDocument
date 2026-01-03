@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ExtensionList Class.
+///   Defines the ExtensionList interface.
 /// </summary>
-public class ExtensionList: ModelElement
+public interface ExtensionList: IModelElement
 {
   public Collection<Extension>? Extensions { get; set; }
 }

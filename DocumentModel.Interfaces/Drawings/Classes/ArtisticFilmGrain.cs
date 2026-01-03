@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticFilmGrain Class.
+///   Defines the ArtisticFilmGrain interface.
 /// </summary>
-public class ArtisticFilmGrain: ModelElement
+public interface ArtisticFilmGrain: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

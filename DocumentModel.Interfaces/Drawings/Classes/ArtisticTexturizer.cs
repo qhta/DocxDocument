@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticTexturizer Class.
+///   Defines the ArtisticTexturizer interface.
 /// </summary>
-public class ArtisticTexturizer: ModelElement
+public interface ArtisticTexturizer: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

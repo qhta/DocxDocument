@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Picture Numbering Symbol Definition.
 /// </summary>
-public class NumberingPictureBullet: ModelElement
+public interface NumberingPictureBullet: IModelElement
 {
   /// <summary>
   ///   numPicBulletId

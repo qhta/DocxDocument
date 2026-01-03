@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Extended BaseTableProperties.
 ///   Contains these common properties, which are not applied to <see cref="CurrentTableProperties"/>
 /// </summary>
-public abstract class ExtBaseTableProperties: CurrentTableProperties
+public interface ExtBaseTableProperties: CurrentTableProperties
 {
   /// <summary>
   ///   TableStyle.

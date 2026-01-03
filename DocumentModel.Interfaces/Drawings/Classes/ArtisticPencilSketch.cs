@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticPencilSketch Class.
+///   Defines the ArtisticPencilSketch interface.
 /// </summary>
-public class ArtisticPencilSketch: ModelElement
+public interface ArtisticPencilSketch: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

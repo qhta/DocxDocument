@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Path Gradient.
 /// </summary>
-public class PathGradientFill: GradientFill
+public interface PathGradientFill: GradientFill
 {
   /// <summary>
   ///   Gradient Fill Path

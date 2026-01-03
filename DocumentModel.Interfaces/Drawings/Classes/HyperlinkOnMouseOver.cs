@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the HyperlinkOnMouseOver Class.
+///   Defines the HyperlinkOnMouseOver interface.
 /// </summary>
-public class HyperlinkOnMouseOver: ModelElement
+public interface HyperlinkOnMouseOver: IModelElement
 {
   public EmbeddedWavAudioFileType? HyperlinkSound { get; set; }
   public HyperlinkExtensionList? HyperlinkExtensionList { get; set; }

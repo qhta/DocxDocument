@@ -1,6 +1,6 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Common class for <see cref="IBody"/> and <see cref="IDocPartBody"/> elements.
+///   Common interface for <see cref="IBody"/> and <see cref="IDocPartBody"/> elements.
 /// </summary>
 public interface IBodyType : IStory
 {

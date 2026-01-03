@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Clear Class.
 /// </summary>
-public class Clear: ModelElement
+public interface Clear: IModelElement
 {
   /// <summary>
   ///   GeoLocationQueryResults.

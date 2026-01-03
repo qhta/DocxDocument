@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the SlideCommentsPart
 /// </summary>
-public class SlideCommentsPart: ModelElement
+public interface SlideCommentsPart: IModelElement
 {
   public string? ContentType { get; set; }
   public string? RelationshipType { get; set; }

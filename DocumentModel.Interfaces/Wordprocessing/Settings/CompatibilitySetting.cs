@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CompatibilitySetting Class.
 /// </summary>
-public class CompatibilitySetting: ModelElement
+public interface CompatibilitySetting: IModelElement
 {
   /// <summary>
   ///   name

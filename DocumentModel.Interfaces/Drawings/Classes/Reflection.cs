@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Reflection Effect.
 /// </summary>
-public class Reflection: ModelElement
+public interface Reflection: IModelElement
 {
   /// <summary>
   ///   Blur Radius

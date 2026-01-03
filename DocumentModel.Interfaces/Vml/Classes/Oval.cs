@@ -6,7 +6,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Oval.
 /// </summary>
-public class Oval: ModelElement, IEmbeddedObjectContent
+public interface Oval: IModelElement, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier
@@ -17,11 +17,11 @@ public class Oval: ModelElement, IEmbeddedObjectContent
   /// </summary>
   public string? Style { get; set; }
   /// <summary>
-  ///   Hyperlink Target
+  ///   IHyperlink Target
   /// </summary>
   public string? Href { get; set; }
   /// <summary>
-  ///   Hyperlink Display Target
+  ///   IHyperlink Display Target
   /// </summary>
   public string? Target { get; set; }
   /// <summary>

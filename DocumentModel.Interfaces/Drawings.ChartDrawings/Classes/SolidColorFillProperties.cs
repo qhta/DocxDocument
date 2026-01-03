@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the MaxColorSolidColorFillProperties Class.
 /// </summary>
-public class SolidColorFillProperties: ModelElement
+public interface SolidColorFillProperties: IModelElement
 {
   /// <summary>
   /// Rgb color in hex model

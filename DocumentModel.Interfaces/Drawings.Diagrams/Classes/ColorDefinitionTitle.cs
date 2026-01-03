@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Title.
 /// </summary>
-public class ColorDefinitionTitle: ModelElement
+public interface ColorDefinitionTitle: IModelElement
 {
   /// <summary>
   ///   Language

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the DataLabelFieldTable Class.
 /// </summary>
-public class DataLabelFieldTable: ModelElement
+public interface DataLabelFieldTable: IModelElement
 {
   public Collection<DataLabelFieldTableEntry>? DataLabelFieldTableEntries { get; set; }
 }

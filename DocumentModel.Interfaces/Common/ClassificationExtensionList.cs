@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ClassificationExtensionList Class.
 /// </summary>
-public class ClassificationExtensionList: ModelElement
+public interface ClassificationExtensionList: IModelElement
 {
   public Collection<ClassificationExtension>? ClassificationExtensions { get; set; }
 }

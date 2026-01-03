@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Pictures;
 /// <summary>
 ///   Non-Visual Drawing Properties.
 /// </summary>
-public class NonVisualDrawingProperties: ModelElement
+public interface NonVisualDrawingProperties: IModelElement
 {
   /// <summary>
   ///   Application defined unique identifier.
@@ -26,11 +26,11 @@ public class NonVisualDrawingProperties: ModelElement
   /// </summary>
   public string? Title { get; set; }
   /// <summary>
-  ///   Hyperlink associated with clicking or selecting the element..
+  ///   IHyperlink associated with clicking or selecting the element..
   /// </summary>
   public HyperlinkOnClick? HyperlinkOnClick { get; set; }
   /// <summary>
-  ///   Hyperlink associated with hovering over the element..
+  ///   IHyperlink associated with hovering over the element..
   /// </summary>
   public HyperlinkOnHover? HyperlinkOnHover { get; set; }
   /// <summary>

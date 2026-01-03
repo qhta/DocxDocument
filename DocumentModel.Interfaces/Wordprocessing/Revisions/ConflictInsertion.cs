@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ConflictInsertion Class.
 /// </summary>
-public class ConflictInsertion: TrackChangeType2
+public interface ConflictInsertion: TrackChangeType2
 {
 }

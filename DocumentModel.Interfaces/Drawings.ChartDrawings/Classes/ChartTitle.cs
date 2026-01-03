@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ChartTitle Class.
 /// </summary>
-public class ChartTitle: ModelElement
+public interface ChartTitle: IModelElement
 {
   /// <summary>
   ///   pos, this property is only available in Office 2016 and later.

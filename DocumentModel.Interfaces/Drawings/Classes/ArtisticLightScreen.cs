@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticLightScreen Class.
+///   Defines the ArtisticLightScreen interface.
 /// </summary>
-public class ArtisticLightScreen: ModelElement
+public interface ArtisticLightScreen: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

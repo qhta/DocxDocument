@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 ///   including whether the phantom is hidden or visible 
 ///   and the amount of space that is considered when laying out text and objects around phantoms.
 /// </summary>
-public class PhantomProperties: ModelElement
+public interface PhantomProperties: IModelElement
 {
   /// <summary>
   ///   Specifies the show property of the phantom phant. When 0 or false, the phant base e is hidden. 
@@ -42,7 +42,7 @@ public class PhantomProperties: ModelElement
   public bool? ZeroDescent { get; set; }
   /// <summary>
   ///   This element specifies that the phantom is transparent for spacing. 
-  ///   This means that if the contents of the phantom are belonging to a special spacing class 
+  ///   This means that if the contents of the phantom are belonging to a special spacing interface 
   ///   (such as binary operators, relational operators, differentials, etc.), 
   ///   the contents of that phantom are taken into consideration when laying out text. 
   ///   If transparency is turned off, then the contents of the phantom are ignored during layout. 

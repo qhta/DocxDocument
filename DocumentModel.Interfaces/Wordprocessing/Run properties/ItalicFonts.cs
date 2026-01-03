@@ -2,6 +2,6 @@
 /// <summary>
 /// Class representing italic for run fonts.
 /// </summary>
-public class ItalicFonts: DualBool, IRunProperty
+public interface ItalicFonts: DualBool, IRunProperty
 {
 }

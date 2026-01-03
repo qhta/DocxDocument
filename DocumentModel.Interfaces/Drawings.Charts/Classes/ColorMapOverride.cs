@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ColorMapOverride Class.
 /// </summary>
-public class ColorMapOverride: ModelElement
+public interface ColorMapOverride: IModelElement
 {
   /// <summary>
   ///   Background 1
@@ -46,11 +46,11 @@ public class ColorMapOverride: ModelElement
   /// </summary>
   public ColorSchemeIndexKind? Accent6 { get; set; }
   /// <summary>
-  ///   Hyperlink
+  ///   IHyperlink
   /// </summary>
   public ColorSchemeIndexKind? Hyperlink { get; set; }
   /// <summary>
-  ///   Followed Hyperlink
+  ///   Followed IHyperlink
   /// </summary>
   public ColorSchemeIndexKind? FollowedHyperlink { get; set; }
   /// <summary>
