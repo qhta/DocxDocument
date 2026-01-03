@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface ParentLabelLayout: IModelElement
 {
   /// <summary>
-  ///   val, this property is only available in Office 2016 and later.
+  ///   val
   /// </summary>
   public ParentLabelLayoutVal? ParentLabelLayoutVal { get; set; }
 }

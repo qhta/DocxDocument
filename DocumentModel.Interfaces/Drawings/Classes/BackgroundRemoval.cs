@@ -6,19 +6,19 @@ namespace DocumentModel.Drawings;
 public interface BackgroundRemoval: IModelElement
 {
   /// <summary>
-  ///   t, this property is only available in Office 2010 and later.
+  ///   t
   /// </summary>
   public Int32? MarqueeTop { get; set; }
   /// <summary>
-  ///   b, this property is only available in Office 2010 and later.
+  ///   b
   /// </summary>
   public Int32? MarqueeBottom { get; set; }
   /// <summary>
-  ///   l, this property is only available in Office 2010 and later.
+  ///   l
   /// </summary>
   public Int32? MarqueeLeft { get; set; }
   /// <summary>
-  ///   r, this property is only available in Office 2010 and later.
+  ///   r
   /// </summary>
   public Int32? MarqueeRight { get; set; }
   public Collection<ForegroundMark>? ForegroundMarks { get; set; }

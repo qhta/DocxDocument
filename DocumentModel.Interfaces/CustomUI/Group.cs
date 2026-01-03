@@ -10,7 +10,6 @@ namespace DocumentModel;
 ///   Groups support visual customization with labels, images, tooltips, and can include a dialog box launcher
 ///   for accessing additional functionality. They provide automatic scaling behavior to optimize
 ///   ribbon space usage when the window is resized.
-///   This functionality is available in Office 2010 and later versions.
 /// </remarks>
 public interface Group : IModelElement
 {
@@ -21,7 +20,6 @@ public interface Group : IModelElement
   ///   A string containing the identifier, or <c>null</c> if no identifier is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Id { get; set; }
 
@@ -32,7 +30,6 @@ public interface Group : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this when the identifier needs to be unique across multiple namespaces.
   /// </remarks>
   public string? QualifiedId { get; set; }
@@ -44,7 +41,6 @@ public interface Group : IModelElement
   ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The tag can be used to store application-specific information associated with this group.
   /// </remarks>
   public string? Tag { get; set; }
@@ -56,7 +52,6 @@ public interface Group : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if not referencing a built-in group.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? IdMso { get; set; }
 
@@ -67,7 +62,6 @@ public interface Group : IModelElement
   ///   A string containing the label text, or <c>null</c> if no label is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The label is displayed at the bottom of the group in the ribbon.
   /// </remarks>
   public string? Label { get; set; }
@@ -79,7 +73,6 @@ public interface Group : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the label is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the label.
   /// </remarks>
   public string? GetLabel { get; set; }
@@ -91,7 +84,6 @@ public interface Group : IModelElement
   ///   A string containing the image identifier, or <c>null</c> if no custom image is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The image identifier references a custom image resource included in the Office add-in.
   ///   Group images are displayed when the group is collapsed due to ribbon sizing.
   /// </remarks>
@@ -104,7 +96,6 @@ public interface Group : IModelElement
   ///   A string containing the Microsoft Office image identifier, or <c>null</c> if not using a built-in image.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to display a built-in Office icon for the group.
   ///   Group images are displayed when the group is collapsed due to ribbon sizing.
   /// </remarks>
@@ -117,7 +108,6 @@ public interface Group : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the image is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return an image object or identifier.
   /// </remarks>
   public string? GetImage { get; set; }
@@ -129,7 +119,6 @@ public interface Group : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the group relative to a built-in group.
   /// </remarks>
   public string? InsertAfterMso { get; set; }
@@ -141,7 +130,6 @@ public interface Group : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the group relative to a built-in group.
   /// </remarks>
   public string? InsertBeforeMso { get; set; }
@@ -153,7 +141,6 @@ public interface Group : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the group relative to another custom group.
   /// </remarks>
   public string? InsertAfterQualifiedId { get; set; }
@@ -165,7 +152,6 @@ public interface Group : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the group relative to another custom group.
   /// </remarks>
   public string? InsertBeforeQualifiedId { get; set; }
@@ -177,7 +163,6 @@ public interface Group : IModelElement
   ///   A string containing the screentip text, or <c>null</c> if no screentip is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The screentip is displayed when the user hovers over the collapsed group button.
   /// </remarks>
   public string? Screentip { get; set; }
@@ -189,7 +174,6 @@ public interface Group : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the screentip is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the screentip.
   /// </remarks>
   public string? GetScreentip { get; set; }
@@ -201,7 +185,6 @@ public interface Group : IModelElement
   ///   A string containing the supertip text, or <c>null</c> if no supertip is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Supertips provide more detailed information than screentips and are displayed when hovering over the collapsed group button.
   /// </remarks>
   public string? Supertip { get; set; }
@@ -213,7 +196,6 @@ public interface Group : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the supertip is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the supertip.
   /// </remarks>
   public string? GetSupertip { get; set; }
@@ -225,7 +207,6 @@ public interface Group : IModelElement
   ///   <c>true</c> if the group is visible; <c>false</c> if hidden; or <c>null</c> to use the default visibility.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? Visible { get; set; }
 
@@ -236,7 +217,6 @@ public interface Group : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if visibility is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value indicating whether the group should be visible.
   /// </remarks>
   public string? GetVisible { get; set; }
@@ -248,7 +228,6 @@ public interface Group : IModelElement
   ///   A string containing the keytip character(s), or <c>null</c> if no keytip is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
   /// </remarks>
   public string? Keytip { get; set; }
@@ -260,7 +239,6 @@ public interface Group : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the keytip is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the keytip.
   /// </remarks>
   public string? GetKeytip { get; set; }
@@ -272,7 +250,6 @@ public interface Group : IModelElement
   ///   <c>true</c> to enable automatic scaling; <c>false</c> to disable it; or <c>null</c> to use the default behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   When enabled, the group will progressively reduce control sizes and eventually collapse to a single button
   ///   with a dropdown menu as the ribbon width decreases.
   /// </remarks>
@@ -285,7 +262,6 @@ public interface Group : IModelElement
   ///   <c>true</c> to center controls vertically; <c>false</c> otherwise; or <c>null</c> to use the default alignment.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   This affects how controls of different sizes are aligned within the group.
   /// </remarks>
   public bool? CenterVertically { get; set; }

@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface NumericValue: IModelElement
 {
   /// <summary>
-  ///   idx, this property is only available in Office 2016 and later.
+  ///   idx
   /// </summary>
   public UInt32? Idx { get; set; }
 }

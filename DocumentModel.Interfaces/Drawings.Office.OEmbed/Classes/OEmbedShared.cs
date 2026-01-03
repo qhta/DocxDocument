@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings.Office.OEmbed;
 public interface OEmbedShared: IModelElement
 {
   /// <summary>
-  ///   srcUrl, this property is only available in Microsoft365 and later.
+  ///   srcUrl
   /// </summary>
   public string? SrcUrl { get; set; }
   /// <summary>
-  ///   type, this property is only available in Microsoft365 and later.
+  ///   type
   /// </summary>
   public string? Type { get; set; }
   /// <summary>

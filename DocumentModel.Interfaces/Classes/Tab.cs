@@ -70,11 +70,6 @@
 /// <item><description>Position custom tabs near related Office tabs for intuitive workflows</description></item>
 /// </list>
 /// </para>
-/// <para>
-/// All properties in this interface are only available in Office 2010 and later versions, as the
-/// ribbon extensibility model was introduced in Office 2007 and enhanced in Office 2010. Add-ins
-/// using custom tabs require Office 2010+ compatibility for full functionality.
-/// </para>
 /// </remarks>
 /// <example>
 /// <code>
@@ -158,7 +153,6 @@ public interface Tab : IModelElement
   /// Use consistent naming conventions across your ribbon customization for maintainability.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? Id { get; set; }
@@ -189,7 +183,6 @@ public interface Tab : IModelElement
   /// Example: "MyCompany.CRM:customerTab" clearly identifies the tab's ownership and purpose.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? QualifiedId { get; set; }
@@ -218,7 +211,6 @@ public interface Tab : IModelElement
   /// such as hiding all tabs marked with a specific tag when a feature is disabled.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? Tag { get; set; }
@@ -261,7 +253,6 @@ public interface Tab : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? IdMso { get; set; }
@@ -304,7 +295,6 @@ public interface Tab : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? Label { get; set; }
@@ -340,7 +330,6 @@ public interface Tab : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? GetLabel { get; set; }
@@ -376,7 +365,6 @@ public interface Tab : IModelElement
   /// the built-in Home tab, making it the second tab in the ribbon (in most cases).
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? InsertAfterMso { get; set; }
@@ -408,7 +396,6 @@ public interface Tab : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? InsertBeforeMso { get; set; }
@@ -436,7 +423,6 @@ public interface Tab : IModelElement
   /// them relative to each other: "MyCompany.CRM:mainTab" followed by "MyCompany.Reports:mainTab".
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? InsertAfterQualifiedId { get; set; }
@@ -463,7 +449,6 @@ public interface Tab : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? InsertBeforeQualifiedId { get; set; }
@@ -505,7 +490,6 @@ public interface Tab : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public bool? Visible { get; set; }
@@ -543,7 +527,6 @@ public interface Tab : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? GetVisible { get; set; }
@@ -589,7 +572,6 @@ public interface Tab : IModelElement
   /// but it's better to avoid conflicts through careful selection.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? Keytip { get; set; }
@@ -623,7 +605,6 @@ public interface Tab : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? GetKeytip { get; set; }

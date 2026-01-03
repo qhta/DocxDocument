@@ -51,11 +51,6 @@
 /// <item><description>Custom wizards or multi-step processes</description></item>
 /// </list>
 /// </para>
-/// <para>
-/// All properties in this interface are only available in Office 2010 and later versions, as the
-/// Backstage view was introduced in Office 2010 as part of the ribbon interface redesign. Add-ins
-/// or customizations using layout containers require Office 2010+ compatibility.
-/// </para>
 /// </remarks>
 /// <example>
 /// <code>
@@ -134,7 +129,6 @@ public interface LayoutContainer : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? Id { get; set; }
@@ -166,7 +160,6 @@ public interface LayoutContainer : IModelElement
   /// ownership and purpose within a larger customization hierarchy.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? QualifiedId { get; set; }
@@ -198,7 +191,6 @@ public interface LayoutContainer : IModelElement
   /// primary identification and layout properties.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? Tag { get; set; }
@@ -238,7 +230,6 @@ public interface LayoutContainer : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public ExpandKind? Align { get; set; }
@@ -284,7 +275,6 @@ public interface LayoutContainer : IModelElement
   /// is key to creating effective Backstage layouts.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public ExpandKind? Expand { get; set; }
@@ -342,7 +332,6 @@ public interface LayoutContainer : IModelElement
   /// </code>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public LayoutChildrenKind? LayoutChildren { get; set; }

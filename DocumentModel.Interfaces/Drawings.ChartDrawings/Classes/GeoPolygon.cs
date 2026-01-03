@@ -21,7 +21,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   which region contains a specific coordinate), and spatial operations (calculating areas, testing overlaps, or measuring
 ///   distances). The polygon identifier enables tracking and referencing specific boundary components, while the point count
 ///   provides information about the polygon's complexity and detail level.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface GeoPolygon : IModelElement
 {
@@ -33,8 +32,7 @@ public interface GeoPolygon : IModelElement
   ///   or <c>null</c> if no identifier is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The polygon identifier enables tracking and referencing of specific boundary components within a geographic
+   ///   The polygon identifier enables tracking and referencing of specific boundary components within a geographic
   ///   entity's complete boundary definition. When an entity has multiple polygons (such as a country with islands,
   ///   or a region with interior holes like lakes), each polygon can be uniquely identified for management, updates,
   ///   or selective rendering. The identifier is particularly valuable for complex geographic entities where boundary
@@ -52,8 +50,7 @@ public interface GeoPolygon : IModelElement
   ///   or <c>null</c> if the point count is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The number of points indicates the complexity and detail level of the polygon boundary. Higher point counts
+   ///   The number of points indicates the complexity and detail level of the polygon boundary. Higher point counts
   ///   provide more detailed, accurate boundary representations with smoother curves and finer features, but require
   ///   more storage space and processing time. Lower point counts create simplified boundaries suitable for overview
   ///   maps or performance-critical scenarios where extreme precision is not required. For example, a simplified country
@@ -73,8 +70,7 @@ public interface GeoPolygon : IModelElement
   ///   or <c>null</c> if no polygon data is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The pcaRings (Principal Component Analysis rings) contains the polygon's coordinate data in an encoded or compressed
+   ///   The pcaRings (Principal Component Analysis rings) contains the polygon's coordinate data in an encoded or compressed
   ///   format for efficient storage and transmission. A polygon ring is a closed sequence of coordinate points (latitude/longitude
   ///   pairs) that defines a boundary. The data typically includes the outer ring (the polygon's perimeter) and potentially
   ///   interior rings representing holes (such as lakes within a landmass, or enclaves). The encoding format depends on

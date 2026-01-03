@@ -10,11 +10,11 @@ public interface WebExtension: IModelElement
   /// </summary>
   public bool? Fronzen { get; set; }
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
   /// <summary>
-  ///   frozen, this property is only available in Office 2013 and later.
+  ///   frozen
   /// </summary>
   public bool? Frozen { get; set; }
   /// <summary>

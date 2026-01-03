@@ -13,7 +13,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   affects both the visual appearance and data interpretation. Category axis scaling is used in conjunction
 ///   with the <see cref="Axis"/> interface, where either <c>CategoryAxisScaling</c> or <see cref="ValueAxisScaling"/>
 ///   is specified depending on the axis type.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface CategoryAxisScaling : IModelElement
 {
@@ -25,8 +24,7 @@ public interface CategoryAxisScaling : IModelElement
   ///   or <c>null</c> if the default gap width is used.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The gap width determines the spacing between categories or groups in bar and column charts.
+   ///   The gap width determines the spacing between categories or groups in bar and column charts.
   ///   It is expressed as a percentage of the bar or column width. For example, a gap width of "50"
   ///   means the gap between categories is 50% of the width of each bar or column. A larger gap width
   ///   creates more spacing between categories, making individual categories more distinct but reducing

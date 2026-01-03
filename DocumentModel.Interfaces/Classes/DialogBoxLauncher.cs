@@ -16,7 +16,6 @@ namespace DocumentModel;
 ///   user experience across Office applications, where users expect to find additional options via the small
 ///   arrow button at the bottom of groups. Dialog box launchers are optional and should be used judiciously to
 ///   provide access to truly supplementary functionality rather than essential commands.
-///   This functionality is available in Office 2010 and later versions.
 /// </remarks>
 public interface DialogBoxLauncher : IModelElement
 {

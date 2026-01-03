@@ -13,7 +13,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   or categories, such as custom category names, data point annotations, or series identifiers. The indexed
 ///   structure supports efficient lookup and modification of string values at specific positions within the
 ///   chart's data model.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface ChartStringValue : IModelElement
 {
@@ -25,8 +24,7 @@ public interface ChartStringValue : IModelElement
   ///   or <c>null</c> if no index is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The index determines the position of this string value within its parent collection, such as a
+   ///   The index determines the position of this string value within its parent collection, such as a
   ///   category axis labels collection or a data series labels collection. The index is zero-based,
   ///   meaning the first position is 0, the second is 1, and so on. This allows the string value to
   ///   be precisely positioned to correspond with specific data points, categories, or series elements

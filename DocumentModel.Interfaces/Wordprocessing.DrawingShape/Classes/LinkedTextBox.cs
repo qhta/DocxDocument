@@ -6,11 +6,11 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 public interface LinkedTextBox: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id
   /// </summary>
   public UInt16? Id { get; set; }
   /// <summary>
-  ///   seq, this property is only available in Office 2010 and later.
+  ///   seq
   /// </summary>
   public UInt16? Sequence { get; set; }
   /// <summary>

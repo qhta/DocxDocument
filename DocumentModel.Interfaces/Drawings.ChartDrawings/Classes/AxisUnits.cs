@@ -11,7 +11,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   the unit type/value and an optional label that can be customized for display. This aids in chart
 ///   readability by keeping axis labels concise while still conveying the actual magnitude or measurement
 ///   type of the data.
-///   This functionality is available in Office 2016 and later versions for the unit property.
 /// </remarks>
 public interface AxisUnits : IModelElement
 {
@@ -23,8 +22,7 @@ public interface AxisUnits : IModelElement
   ///   or <c>null</c> if no unit is applied.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The unit determines how axis values are scaled or interpreted, such as displaying values
+   ///   The unit determines how axis values are scaled or interpreted, such as displaying values
   ///   in thousands, millions, billions, or with specific measurement units. This allows the axis
   ///   to show "1.5" with a unit of "Millions" instead of displaying "1,500,000" on the axis.
   /// </remarks>

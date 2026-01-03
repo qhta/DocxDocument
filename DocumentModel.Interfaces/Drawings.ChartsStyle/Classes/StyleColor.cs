@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 public interface StyleColor: IModelElement
 {
   /// <summary>
-  ///   val, this property is only available in Office 2013 and later.
+  ///   val
   /// </summary>
   public string? Val { get; set; }
   public Int32? Tint { get; set; }

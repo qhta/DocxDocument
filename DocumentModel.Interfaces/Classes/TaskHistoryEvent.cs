@@ -7,7 +7,6 @@ namespace DocumentModel;
 ///   This interface extends <see cref="IModelElement"/> and captures detailed information about
 ///   task-related events such as creation, assignment, scheduling changes, priority updates,
 ///   and deletions. Each event includes attribution, timing, and specific event details.
-///   This functionality is available in Office 2021 and later versions.
 /// </remarks>
 public interface TaskHistoryEvent : IModelElement
 {
@@ -18,7 +17,6 @@ public interface TaskHistoryEvent : IModelElement
   ///   A <see cref="DateTime"/> value representing when the event took place, or <c>null</c> if the time is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2021 and later.
   /// </remarks>
   public DateTime? Time { get; set; }
 
@@ -29,7 +27,6 @@ public interface TaskHistoryEvent : IModelElement
   ///   A string containing the event identifier, or <c>null</c> if no identifier is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2021 and later.
   /// </remarks>
   public string? Id { get; set; }
 

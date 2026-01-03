@@ -22,11 +22,11 @@ public interface Inline: IModelElement
   /// </summary>
   public EMU? DistanceFromRight { get; set; }
   /// <summary>
-  ///   anchorId, this property is only available in Office 2010 and later.
+  ///   anchorId
   /// </summary>
   public IHexInt? AnchorId { get; set; }
   /// <summary>
-  ///   editId, this property is only available in Office 2010 and later.
+  ///   editId
   /// </summary>
   public IHexInt? EditId { get; set; }
   /// <summary>

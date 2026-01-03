@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings.ChartsStyle;
 public interface ColorStyle: IModelElement
 {
   /// <summary>
-  ///   meth, this property is only available in Office 2013 and later.
+  ///   meth
   /// </summary>
   public string? Method { get; set; }
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  ///   id
   /// </summary>
   public UInt32? Id { get; set; }
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }

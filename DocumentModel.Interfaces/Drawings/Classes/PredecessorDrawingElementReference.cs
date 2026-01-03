@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface PredecessorDrawingElementReference: IModelElement
 {
   /// <summary>
-  ///   pred, this property is only available in Office 2016 and later.
+  ///   pred
   /// </summary>
   public string? Pred { get; set; }
 }

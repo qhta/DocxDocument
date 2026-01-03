@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings;
 public interface BrightnessContrast: IModelElement
 {
   /// <summary>
-  ///   bright, this property is only available in Office 2010 and later.
+  ///   bright
   /// </summary>
   public Int32? Bright { get; set; }
   /// <summary>
-  ///   contrast, this property is only available in Office 2010 and later.
+  ///   contrast
   /// </summary>
   public Int32? Contrast { get; set; }
 }

@@ -12,7 +12,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   and can be positioned flexibly around the chart area. The title can overlay the plot area to save space
 ///   or be positioned outside the plot area for clearer separation. Extensive customization options enable
 ///   the title to match the chart's overall design while maintaining readability and visual hierarchy.
-///   This functionality is available in Office 2016 and later versions for positioning properties.
 /// </remarks>
 public interface ChartTitle : IModelElement
 {
@@ -24,8 +23,7 @@ public interface ChartTitle : IModelElement
   ///   or <c>null</c> to use the default position (typically top).
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The position determines where the title appears relative to the chart plot area, such as top, bottom,
+   ///   The position determines where the title appears relative to the chart plot area, such as top, bottom,
   ///   left, or right. Different positions may be more appropriate depending on the chart type, layout
   ///   requirements, and space constraints.
   /// </remarks>
@@ -39,8 +37,7 @@ public interface ChartTitle : IModelElement
   ///   or <c>null</c> to use the default alignment.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The alignment controls how the title is positioned within the space allocated for it at the
+   ///   The alignment controls how the title is positioned within the space allocated for it at the
   ///   specified side position. For example, a top-positioned title can be center-aligned, left-aligned,
   ///   or right-aligned across the width of the chart.
   /// </remarks>
@@ -54,8 +51,7 @@ public interface ChartTitle : IModelElement
   ///   the plot area; or <c>null</c> to use the default overlay behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   When overlay is enabled, the title is drawn over the plot area, allowing the plot area to use
+   ///   When overlay is enabled, the title is drawn over the plot area, allowing the plot area to use
   ///   the full available space. This can be useful for maximizing the data visualization area, but
   ///   care must be taken to ensure the title doesn't obscure important data. When overlay is disabled,
   ///   the plot area is sized to accommodate the title outside its boundaries, providing clearer

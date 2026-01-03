@@ -6,7 +6,7 @@ namespace DocumentModel;
 public interface TaskTitleEventInfo: IModelElement
 {
   /// <summary>
-  ///   title, this property is only available in Office 2021 and later.
+  ///   title
   /// </summary>
   public string? Title { get; set; }
 }

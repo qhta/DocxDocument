@@ -6,15 +6,15 @@ namespace DocumentModel.WebExtensions;
 public interface WebExtensionBinding: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
   /// <summary>
-  ///   type, this property is only available in Office 2013 and later.
+  ///   type
   /// </summary>
   public string? Type { get; set; }
   /// <summary>
-  ///   appref, this property is only available in Office 2013 and later.
+  ///   appref
   /// </summary>
   public string? AppReference { get; set; }
   /// <summary>

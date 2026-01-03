@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface Saturation2: IModelElement
 {
   /// <summary>
-  ///   sat, this property is only available in Office 2010 and later.
+  ///   sat
   /// </summary>
   public Int32? SaturationAmount { get; set; }
 }

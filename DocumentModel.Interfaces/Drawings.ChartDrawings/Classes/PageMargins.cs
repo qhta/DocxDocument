@@ -6,27 +6,27 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface PageMargins: IModelElement
 {
   /// <summary>
-  ///   l, this property is only available in Office 2016 and later.
+  ///   l
   /// </summary>
   public Double? L { get; set; }
   /// <summary>
-  ///   r, this property is only available in Office 2016 and later.
+  ///   r
   /// </summary>
   public Double? R { get; set; }
   /// <summary>
-  ///   t, this property is only available in Office 2016 and later.
+  ///   t
   /// </summary>
   public Double? T { get; set; }
   /// <summary>
-  ///   b, this property is only available in Office 2016 and later.
+  ///   b
   /// </summary>
   public Double? B { get; set; }
   /// <summary>
-  ///   header, this property is only available in Office 2016 and later.
+  ///   header
   /// </summary>
   public Double? Header { get; set; }
   /// <summary>
-  ///   footer, this property is only available in Office 2016 and later.
+  ///   footer
   /// </summary>
   public Double? Footer { get; set; }
 }

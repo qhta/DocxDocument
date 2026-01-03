@@ -7,87 +7,87 @@ namespace DocumentModel;
 public interface BackstageEditBox: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   idQ, this property is only available in Office 2010 and later.
+  ///   idQ
   /// </summary>
   public string? QualifiedId { get; set; }
 
   /// <summary>
-  ///   tag, this property is only available in Office 2010 and later.
+  ///   tag
   /// </summary>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   alignLabel, this property is only available in Office 2010 and later.
+  ///   alignLabel
   /// </summary>
   public ExpandKind? AlignLabel { get; set; }
 
   /// <summary>
-  ///   expand, this property is only available in Office 2010 and later.
+  ///   expand
   /// </summary>
   public ExpandKind? Expand { get; set; }
 
   /// <summary>
-  ///   enabled, this property is only available in Office 2010 and later.
+  ///   enabled
   /// </summary>
   public bool? Enabled { get; set; }
 
   /// <summary>
-  ///   getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled
   /// </summary>
   public string? GetEnabled { get; set; }
 
   /// <summary>
-  ///   label, this property is only available in Office 2010 and later.
+  ///   label
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel
   /// </summary>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   visible, this property is only available in Office 2010 and later.
+  ///   visible
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible
   /// </summary>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   keytip, this property is only available in Office 2010 and later.
+  ///   keytip
   /// </summary>
   public string? Keytip { get; set; }
 
   /// <summary>
-  ///   getKeytip, this property is only available in Office 2010 and later.
+  ///   getKeytip
   /// </summary>
   public string? GetKeytip { get; set; }
 
   /// <summary>
-  ///   getText, this property is only available in Office 2010 and later.
+  ///   getText
   /// </summary>
   public string? GetText { get; set; }
 
   /// <summary>
-  ///   onChange, this property is only available in Office 2010 and later.
+  ///   onChange
   /// </summary>
   public string? OnChange { get; set; }
 
   /// <summary>
-  ///   maxLength, this property is only available in Office 2010 and later.
+  ///   maxLength
   /// </summary>
   public Int64? MaxLength { get; set; }
 
   /// <summary>
-  ///   sizeString, this property is only available in Office 2010 and later.
+  ///   sizeString
   /// </summary>
   public string? SizeString { get; set; }
 }

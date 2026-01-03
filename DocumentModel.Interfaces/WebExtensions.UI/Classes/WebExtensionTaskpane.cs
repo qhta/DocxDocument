@@ -6,23 +6,23 @@ namespace DocumentModel.WebExtensions.UI;
 public interface WebExtensionTaskpane: IModelElement
 {
   /// <summary>
-  ///   dockstate, this property is only available in Office 2013 and later.
+  ///   dockstate
   /// </summary>
   public string? DockState { get; set; }
   /// <summary>
-  ///   visibility, this property is only available in Office 2013 and later.
+  ///   visibility
   /// </summary>
   public bool? Visibility { get; set; }
   /// <summary>
-  ///   width, this property is only available in Office 2013 and later.
+  ///   width
   /// </summary>
   public Double? Width { get; set; }
   /// <summary>
-  ///   row, this property is only available in Office 2013 and later.
+  ///   row
   /// </summary>
   public UInt32? Row { get; set; }
   /// <summary>
-  ///   locked, this property is only available in Office 2013 and later.
+  ///   locked
   /// </summary>
   public bool? Locked { get; set; }
   /// <summary>

@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings.ChartsStyle;
 public interface MarkerLayoutProperties: IModelElement
 {
   /// <summary>
-  ///   symbol, this property is only available in Office 2013 and later.
+  ///   symbol
   /// </summary>
   public MarkerStyle? Symbol { get; set; }
   /// <summary>
-  ///   size, this property is only available in Office 2013 and later.
+  ///   size
   /// </summary>
   public Byte? Size { get; set; }
 }

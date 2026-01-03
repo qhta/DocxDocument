@@ -6,23 +6,23 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface Series: IModelElement
 {
   /// <summary>
-  ///   layoutId, this property is only available in Office 2016 and later.
+  ///   layoutId
   /// </summary>
   public SeriesLayout? LayoutId { get; set; }
   /// <summary>
-  ///   hidden, this property is only available in Office 2016 and later.
+  ///   hidden
   /// </summary>
   public bool? Hidden { get; set; }
   /// <summary>
-  ///   ownerIdx, this property is only available in Office 2016 and later.
+  ///   ownerIdx
   /// </summary>
   public UInt32? OwnerIdx { get; set; }
   /// <summary>
-  ///   uniqueId, this property is only available in Office 2016 and later.
+  ///   uniqueId
   /// </summary>
   public string? UniqueId { get; set; }
   /// <summary>
-  ///   formatIdx, this property is only available in Office 2016 and later.
+  ///   formatIdx
   /// </summary>
   public UInt32? FormatIdx { get; set; }
   /// <summary>

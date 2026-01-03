@@ -21,7 +21,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   a reference to query for complete <see cref="GeoData"/> containing boundaries and coordinates. This separation
 ///   between lightweight entity references and detailed geographic data enables flexible, efficient geographic data
 ///   management in map-based chart visualizations.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface GeoEntity : IModelElement
 {
@@ -33,8 +32,7 @@ public interface GeoEntity : IModelElement
   ///   or <c>null</c> if no name is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity name provides a user-friendly identifier for the geographic entity, such as "United States",
+   ///   The entity name provides a user-friendly identifier for the geographic entity, such as "United States",
   ///   "California", "Los Angeles County", or "Tokyo". This name is used for display purposes in user interfaces,
   ///   chart labels, dropdown lists, navigation hierarchies, and other contexts where the entity needs to be
   ///   presented to users in a readable, recognizable format. The name may be localized based on the document's
@@ -54,8 +52,7 @@ public interface GeoEntity : IModelElement
   ///   or <c>null</c> if no type is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity type specifies the classification level of the geographic entity within administrative or
+   ///   The entity type specifies the classification level of the geographic entity within administrative or
   ///   geographic hierarchies, such as country, first-level administrative division (state/province), second-level
   ///   administrative division (county/district), populated place (city/town), or other geographic classifications.
   ///   This type information is essential for understanding the entity's position in geographic hierarchies and

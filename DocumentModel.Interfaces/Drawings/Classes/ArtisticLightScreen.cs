@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ArtisticLightScreen: IModelElement
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  ///   trans
   /// </summary>
   public Int32? Transparancy { get; set; }
   /// <summary>
-  ///   gridSize, this property is only available in Office 2010 and later.
+  ///   gridSize
   /// </summary>
   public Int32? GridSize { get; set; }
 }

@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface SharpenSoften: IModelElement
 {
   /// <summary>
-  ///   amount, this property is only available in Office 2010 and later.
+  ///   amount
   /// </summary>
   public Int32? Amount { get; set; }
 }

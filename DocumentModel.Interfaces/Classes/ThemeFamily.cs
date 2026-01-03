@@ -6,15 +6,15 @@ namespace DocumentModel;
 public interface ThemeFamily: IModelElement
 {
   /// <summary>
-  ///   name, this property is only available in Office 2013 and later.
+  ///   name
   /// </summary>
   public string? Name { get; set; }
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
   /// <summary>
-  ///   vid, this property is only available in Office 2013 and later.
+  ///   vid
   /// </summary>
   public string? Vid { get; set; }
   /// <summary>

@@ -16,7 +16,6 @@ namespace DocumentModel;
 ///   ensures consistent customization across all Office UI surfaces and enables add-ins to seamlessly integrate with
 ///   the native Office user experience. All UI customizations defined through this interface follow Office's ribbon
 ///   XML schema and support both static definitions and dynamic behavior through callback functions.
-///   This functionality is available in Office 2010 and later versions.
 /// </remarks>
 public interface CustomUI : IModelElement
 {
@@ -27,7 +26,6 @@ public interface CustomUI : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if no load callback is defined.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The OnLoad callback is invoked when the Office application loads the custom UI, providing an opportunity
   ///   to initialize UI state, store references to ribbon objects, and perform setup operations. The callback
   ///   typically receives a ribbon object parameter that enables programmatic control over the custom UI through
@@ -43,7 +41,6 @@ public interface CustomUI : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if no image loading callback is defined.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The LoadImage callback is invoked whenever the Office application needs to retrieve an image for a custom
   ///   control. The callback receives an image identifier as a parameter and should return the corresponding image
   ///   object. This centralized image loading mechanism allows controls to reference images by ID rather than

@@ -43,7 +43,7 @@ namespace DocumentModel.Wordprocessing;
 /// </para>
 /// <para>
 /// Transformation values use the range 0-100000 to represent 0% to 100%, providing fine-grained
-/// control with 1/1000th of a percent precision. This property is only available in Office 2010 and later.
+/// control with 1/1000th of a percent precision.
 /// </para>
 /// </remarks>
 /// <example>
@@ -86,7 +86,7 @@ public interface RgbColorModelHex: IModelElement
   /// provides a compact and familiar way to specify colors, matching standard web/CSS notation.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later versions. Documents using RGB colors
+  /// Documents using RGB colors
   /// with transformations require compatibility with Office 2010 or higher to display correctly.
   /// In earlier versions, only the base RGB value may be displayed without transformations.
   /// </para>

@@ -7,117 +7,117 @@ namespace DocumentModel;
 public interface BackstageTab: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   idQ, this property is only available in Office 2010 and later.
+  ///   idQ
   /// </summary>
   public string? QualifiedId { get; set; }
 
   /// <summary>
-  ///   tag, this property is only available in Office 2010 and later.
+  ///   tag
   /// </summary>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   idMso, this property is only available in Office 2010 and later.
+  ///   idMso
   /// </summary>
   public string? IdMso { get; set; }
 
   /// <summary>
-  ///   insertAfterMso, this property is only available in Office 2010 and later.
+  ///   insertAfterMso
   /// </summary>
   public string? InsertAfterMso { get; set; }
 
   /// <summary>
-  ///   insertBeforeMso, this property is only available in Office 2010 and later.
+  ///   insertBeforeMso
   /// </summary>
   public string? InsertBeforeMso { get; set; }
 
   /// <summary>
-  ///   insertAfterQ, this property is only available in Office 2010 and later.
+  ///   insertAfterQ
   /// </summary>
   public string? InsertAfterQualifiedId { get; set; }
 
   /// <summary>
-  ///   insertBeforeQ, this property is only available in Office 2010 and later.
+  ///   insertBeforeQ
   /// </summary>
   public string? InsertBeforeQualifiedId { get; set; }
 
   /// <summary>
-  ///   enabled, this property is only available in Office 2010 and later.
+  ///   enabled
   /// </summary>
   public bool? Enabled { get; set; }
 
   /// <summary>
-  ///   getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled
   /// </summary>
   public string? GetEnabled { get; set; }
 
   /// <summary>
-  ///   label, this property is only available in Office 2010 and later.
+  ///   label
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel
   /// </summary>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   visible, this property is only available in Office 2010 and later.
+  ///   visible
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible
   /// </summary>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   keytip, this property is only available in Office 2010 and later.
+  ///   keytip
   /// </summary>
   public string? Keytip { get; set; }
 
   /// <summary>
-  ///   getKeytip, this property is only available in Office 2010 and later.
+  ///   getKeytip
   /// </summary>
   public string? GetKeytip { get; set; }
 
   /// <summary>
-  ///   title, this property is only available in Office 2010 and later.
+  ///   title
   /// </summary>
   public string? Title { get; set; }
 
   /// <summary>
-  ///   getTitle, this property is only available in Office 2010 and later.
+  ///   getTitle
   /// </summary>
   public string? GetTitle { get; set; }
 
   /// <summary>
-  ///   columnWidthPercent, this property is only available in Office 2010 and later.
+  ///   columnWidthPercent
   /// </summary>
   public Int64? ColumnWidthPercent { get; set; }
 
   /// <summary>
-  ///   firstColumnMinWidth, this property is only available in Office 2010 and later.
+  ///   firstColumnMinWidth
   /// </summary>
   public Int64? FirstColumnMinWidth { get; set; }
 
   /// <summary>
-  ///   firstColumnMaxWidth, this property is only available in Office 2010 and later.
+  ///   firstColumnMaxWidth
   /// </summary>
   public Int64? FirstColumnMaxWidth { get; set; }
 
   /// <summary>
-  ///   secondColumnMinWidth, this property is only available in Office 2010 and later.
+  ///   secondColumnMinWidth
   /// </summary>
   public Int64? SecondColumnMinWidth { get; set; }
 
   /// <summary>
-  ///   secondColumnMaxWidth, this property is only available in Office 2010 and later.
+  ///   secondColumnMaxWidth
   /// </summary>
   public Int64? SecondColumnMaxWidth { get; set; }
 

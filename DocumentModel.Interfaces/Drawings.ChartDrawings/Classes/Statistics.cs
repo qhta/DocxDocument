@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface Statistics: IModelElement
 {
   /// <summary>
-  ///   quartileMethod, this property is only available in Office 2016 and later.
+  ///   quartileMethod
   /// </summary>
   public QuartileMethod? QuartileMethod { get; set; }
 }

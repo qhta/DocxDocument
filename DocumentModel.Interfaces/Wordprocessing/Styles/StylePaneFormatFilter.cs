@@ -10,63 +10,63 @@ public interface StylePaneFormatFilter: IModelElement
   /// </summary>
   public IHexChar? Val { get; set; }
   /// <summary>
-  ///   allStyles, this property is only available in Office 2010 and later.
+  ///   allStyles
   /// </summary>
   public bool? AllStyles { get; set; }
   /// <summary>
-  ///   customStyles, this property is only available in Office 2010 and later.
+  ///   customStyles
   /// </summary>
   public bool? CustomStyles { get; set; }
   /// <summary>
-  ///   latentStyles, this property is only available in Office 2010 and later.
+  ///   latentStyles
   /// </summary>
   public bool? LatentStyles { get; set; }
   /// <summary>
-  ///   stylesInUse, this property is only available in Office 2010 and later.
+  ///   stylesInUse
   /// </summary>
   public bool? StylesInUse { get; set; }
   /// <summary>
-  ///   headingStyles, this property is only available in Office 2010 and later.
+  ///   headingStyles
   /// </summary>
   public bool? HeadingStyles { get; set; }
   /// <summary>
-  ///   numberingStyles, this property is only available in Office 2010 and later.
+  ///   numberingStyles
   /// </summary>
   public bool? NumberingStyles { get; set; }
   /// <summary>
-  ///   tableStyles, this property is only available in Office 2010 and later.
+  ///   tableStyles
   /// </summary>
   public bool? TableStyles { get; set; }
   /// <summary>
-  ///   directFormattingOnRuns, this property is only available in Office 2010 and later.
+  ///   directFormattingOnRuns
   /// </summary>
   public bool? DirectFormattingOnRuns { get; set; }
   /// <summary>
-  ///   directFormattingOnParagraphs, this property is only available in Office 2010 and later.
+  ///   directFormattingOnParagraphs
   /// </summary>
   public bool? DirectFormattingOnParagraphs { get; set; }
   /// <summary>
-  ///   directFormattingOnNumbering, this property is only available in Office 2010 and later.
+  ///   directFormattingOnNumbering
   /// </summary>
   public bool? DirectFormattingOnNumbering { get; set; }
   /// <summary>
-  ///   directFormattingOnTables, this property is only available in Office 2010 and later.
+  ///   directFormattingOnTables
   /// </summary>
   public bool? DirectFormattingOnTables { get; set; }
   /// <summary>
-  ///   clearFormatting, this property is only available in Office 2010 and later.
+  ///   clearFormatting
   /// </summary>
   public bool? ClearFormatting { get; set; }
   /// <summary>
-  ///   top3HeadingStyles, this property is only available in Office 2010 and later.
+  ///   top3HeadingStyles
   /// </summary>
   public bool? Top3HeadingStyles { get; set; }
   /// <summary>
-  ///   visibleStyles, this property is only available in Office 2010 and later.
+  ///   visibleStyles
   /// </summary>
   public bool? VisibleStyles { get; set; }
   /// <summary>
-  ///   alternateStyleNames, this property is only available in Office 2010 and later.
+  ///   alternateStyleNames
   /// </summary>
   public bool? AlternateStyleNames { get; set; }
 }

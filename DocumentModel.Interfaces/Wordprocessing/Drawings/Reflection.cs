@@ -6,55 +6,55 @@ namespace DocumentModel.Wordprocessing;
 public interface Reflection: ITypedModelElement, IDrawingProperty
 {
   /// <summary>
-  ///   blurRad, this property is only available in Office 2010 and later.
+  ///   blurRad
   /// </summary>
   public Int64? BlurRadius { get; set; }
   /// <summary>
-  ///   stA, this property is only available in Office 2010 and later.
+  ///   stA
   /// </summary>
   public Int32? StartingOpacity { get; set; }
   /// <summary>
-  ///   stPos, this property is only available in Office 2010 and later.
+  ///   stPos
   /// </summary>
   public Int32? StartPosition { get; set; }
   /// <summary>
-  ///   endA, this property is only available in Office 2010 and later.
+  ///   endA
   /// </summary>
   public Int32? EndingOpacity { get; set; }
   /// <summary>
-  ///   endPos, this property is only available in Office 2010 and later.
+  ///   endPos
   /// </summary>
   public Int32? EndPosition { get; set; }
   /// <summary>
-  ///   dist, this property is only available in Office 2010 and later.
+  ///   dist
   /// </summary>
   public Int64? DistanceFromText { get; set; }
   /// <summary>
-  ///   dir, this property is only available in Office 2010 and later.
+  ///   dir
   /// </summary>
   public Int32? DirectionAngle { get; set; }
   /// <summary>
-  ///   fadeDir, this property is only available in Office 2010 and later.
+  ///   fadeDir
   /// </summary>
   public Int32? FadeDirection { get; set; }
   /// <summary>
-  ///   sx, this property is only available in Office 2010 and later.
+  ///   sx
   /// </summary>
   public Int32? HorizontalScalingFactor { get; set; }
   /// <summary>
-  ///   sy, this property is only available in Office 2010 and later.
+  ///   sy
   /// </summary>
   public Int32? VerticalScalingFactor { get; set; }
   /// <summary>
-  ///   kx, this property is only available in Office 2010 and later.
+  ///   kx
   /// </summary>
   public Int32? HorizontalSkewAngle { get; set; }
   /// <summary>
-  ///   ky, this property is only available in Office 2010 and later.
+  ///   ky
   /// </summary>
   public Int32? VerticalSkewAngle { get; set; }
   /// <summary>
-  ///   algn, this property is only available in Office 2010 and later.
+  ///   algn
   /// </summary>
   public RectangleAlignmentKind? Alignment { get; set; }
 }

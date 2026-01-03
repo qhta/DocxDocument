@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ArtisticCutout: IModelElement
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  ///   trans
   /// </summary>
   public Int32? Transparancy { get; set; }
   /// <summary>
-  ///   numberOfShades, this property is only available in Office 2010 and later.
+  ///   numberOfShades
   /// </summary>
   public Int32? NumberOfShades { get; set; }
 }

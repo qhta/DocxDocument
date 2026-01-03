@@ -52,11 +52,6 @@ namespace DocumentModel;
 /// <item><description><b>getKeytip:</b> Provide keyboard access</description></item>
 /// </list>
 /// </para>
-/// <para>
-/// All properties in this interface are only available in Office 2010 and later versions, as the
-/// extensibility model for context menus and Backstage was introduced in Office 2010. Add-ins using
-/// regular split buttons require Office 2010+ compatibility.
-/// </para>
 /// </remarks>
 /// <example>
 /// <code>
@@ -146,7 +141,6 @@ public interface SplitButtonRegular : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public bool? Enabled { get; set; }
@@ -173,7 +167,6 @@ public interface SplitButtonRegular : IModelElement
   /// Office calls this function when menus are displayed or when the interface needs to update.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? GetEnabled { get; set; }
@@ -201,7 +194,6 @@ public interface SplitButtonRegular : IModelElement
   /// (e.g., "contextMenuPaste", "backstageExport", "dialogAccept").
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? Id { get; set; }
@@ -228,7 +220,6 @@ public interface SplitButtonRegular : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? QualifiedId { get; set; }
@@ -253,7 +244,6 @@ public interface SplitButtonRegular : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? Tag { get; set; }
@@ -279,7 +269,6 @@ public interface SplitButtonRegular : IModelElement
   /// with Office's native context menu and Backstage commands.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? IdMso { get; set; }
@@ -306,7 +295,6 @@ public interface SplitButtonRegular : IModelElement
   /// immediately after the built-in Paste command.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? InsertAfterMso { get; set; }
@@ -330,7 +318,6 @@ public interface SplitButtonRegular : IModelElement
   /// immediately before the built-in Copy command.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? InsertBeforeMso { get; set; }
@@ -349,7 +336,6 @@ public interface SplitButtonRegular : IModelElement
   /// add-ins or customizations need to coordinate their layout and establish a specific order for custom controls.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? InsertAfterQualifiedId { get; set; }
@@ -368,7 +354,6 @@ public interface SplitButtonRegular : IModelElement
   /// control over the order of custom split buttons and other custom controls.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? InsertBeforeQualifiedId { get; set; }
@@ -396,7 +381,6 @@ public interface SplitButtonRegular : IModelElement
   /// context-aware menus that only show relevant commands for the current situation.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public bool? Visible { get; set; }
@@ -423,7 +407,6 @@ public interface SplitButtonRegular : IModelElement
   /// Dynamic visibility creates intelligent, context-aware menus that adapt to user needs.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? GetVisible { get; set; }
@@ -453,7 +436,6 @@ public interface SplitButtonRegular : IModelElement
   /// the dropdown menu items.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? Keytip { get; set; }
@@ -478,7 +460,6 @@ public interface SplitButtonRegular : IModelElement
   /// The callback function receives a control parameter and should return a string value.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? GetKeytip { get; set; }
@@ -503,7 +484,6 @@ public interface SplitButtonRegular : IModelElement
   /// flexibility in label display based on layout and space constraints.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public bool? ShowLabel { get; set; }
@@ -528,7 +508,6 @@ public interface SplitButtonRegular : IModelElement
   /// The callback function receives a control parameter and should return a boolean value.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? GetShowLabel { get; set; }

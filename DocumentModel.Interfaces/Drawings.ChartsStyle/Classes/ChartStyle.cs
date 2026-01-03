@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 public interface ChartStyle: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  ///   id
   /// </summary>
   public UInt32? Id { get; set; }
   /// <summary>

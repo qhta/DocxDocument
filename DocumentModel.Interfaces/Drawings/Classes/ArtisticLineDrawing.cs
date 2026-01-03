@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ArtisticLineDrawing: IModelElement
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  ///   trans
   /// </summary>
   public Int32? Transparancy { get; set; }
   /// <summary>
-  ///   pencilSize, this property is only available in Office 2010 and later.
+  ///   pencilSize
   /// </summary>
   public Int32? PencilSize { get; set; }
 }

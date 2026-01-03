@@ -6,19 +6,19 @@ namespace DocumentModel.WebExtensions;
 public interface WebExtensionStoreReference: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
   /// <summary>
-  ///   version, this property is only available in Office 2013 and later.
+  ///   version
   /// </summary>
   public string? Version { get; set; }
   /// <summary>
-  ///   store, this property is only available in Office 2013 and later.
+  ///   store
   /// </summary>
   public string? Store { get; set; }
   /// <summary>
-  ///   storeType, this property is only available in Office 2013 and later.
+  ///   storeType
   /// </summary>
   public string? StoreType { get; set; }
   /// <summary>

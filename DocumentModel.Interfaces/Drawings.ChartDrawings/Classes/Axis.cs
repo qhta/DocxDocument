@@ -10,7 +10,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   The axis includes comprehensive formatting options including title, units, gridlines (major and minor),
 ///   tick marks, tick labels, number formatting, visual styling, and text properties. Axes can be hidden while
 ///   still providing the underlying data structure, and support extensibility through custom extensions.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface Axis : IModelElement
 {
@@ -22,8 +21,7 @@ public interface Axis : IModelElement
   ///   or <c>null</c> if no identifier is assigned.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The identifier uniquely distinguishes this axis from other axes in the chart, enabling
+   ///   The identifier uniquely distinguishes this axis from other axes in the chart, enabling
   ///   references from data series and other chart elements.
   /// </remarks>
   public UInt32? Id { get; set; }
@@ -36,8 +34,7 @@ public interface Axis : IModelElement
   ///   or <c>null</c> to use the default visibility.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   When hidden, the axis still provides the underlying data structure and scaling for the chart,
+   ///   When hidden, the axis still provides the underlying data structure and scaling for the chart,
   ///   but its visual elements (labels, gridlines, tick marks) are not displayed.
   /// </remarks>
   public bool? Hidden { get; set; }
