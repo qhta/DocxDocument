@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Point.
 /// </summary>
-public class Point: ModelElement
+public interface Point: IModelElement
 {
   /// <summary>
   ///   Model Identifier

@@ -2,9 +2,9 @@ using DocumentModel;
 namespace DocumentModel.Packaging;
 
 /// <summary>
-///   Represents a base class for strong typed Open XML document classes.
+///   Represents a base interface for strong typed Open XML document classes.
 /// </summary>
-public class OpenXmlPackage: ModelElement
+public interface OpenXmlPackage: IModelElement
 {
   /// <summary>
   ///   Gets a value indicating whether this package contains Transitional relationships converted from Strict.

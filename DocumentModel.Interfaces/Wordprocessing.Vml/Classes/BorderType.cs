@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// <summary>
 ///   Defines the BorderType Class.
 /// </summary>
-public class BorderType: ModelElement
+public interface BorderType: IModelElement
 {
   /// <summary>
   ///   Border Style

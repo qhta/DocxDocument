@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BrightnessContrast Class.
+///   Defines the BrightnessContrast interface.
 /// </summary>
-public class BrightnessContrast: ModelElement
+public interface BrightnessContrast: IModelElement
 {
   /// <summary>
   ///   bright, this property is only available in Office 2010 and later.

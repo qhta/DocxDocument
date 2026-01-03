@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the NonVisualDrawingPropertiesExtensionList Class.
+///   Defines the NonVisualDrawingPropertiesExtensionList interface.
 /// </summary>
-public class NonVisualDrawingPropertiesExtensionList: ModelElement
+public interface NonVisualDrawingPropertiesExtensionList: IModelElement
 {
   public Collection<NonVisualDrawingPropertiesExtension>? NonVisualDrawingPropertiesExtensions { get; set; }
 }

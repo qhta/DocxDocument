@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Text Fill Color List.
 /// </summary>
-public class TextFillColorList: ModelElement
+public interface TextFillColorList: IModelElement
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
   public RgbColorModelHex? RgbColorModelHex { get; set; }

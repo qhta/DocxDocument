@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the NumberingCache Class.
 /// </summary>
-public class NumberingCache: ModelElement
+public interface NumberingCache: IModelElement
 {
   public string? FormatCode { get; set; }
   public UInt32? PointCount { get; set; }

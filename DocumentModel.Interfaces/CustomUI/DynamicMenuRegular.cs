@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the DynamicMenuRegular Class.
 /// </summary>
-public class DynamicMenuRegular: ModelElement
+public interface DynamicMenuRegular: IModelElement
 {
   /// <summary>
   ///   description, this property is only available in Office 2010 and later.

@@ -2,9 +2,9 @@ using DocumentModel.Drawings.Office;
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the DataModelExtension Class.
+///   Defines the DataModelExtension interface.
 /// </summary>
-public class DataModelExtension: ModelElement
+public interface DataModelExtension: IModelElement
 {
   /// <summary>
   ///   URI

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Defines the MarkerType Class.
 /// </summary>
-public class MarkerType: ModelElement
+public interface MarkerType: IModelElement
 {
   /// <summary>
   ///   Relative X Coordinate.

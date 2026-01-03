@@ -2,6 +2,6 @@
 /// <summary>
 /// Embedded fonts relationship.
 /// </summary>
-public class EmbeddedFonts: SortedDictionary<FontFormKind, EmbeddedFont>
+public interface EmbeddedFonts: IDictionary<FontFormKind, EmbeddedFont>
 {
 }

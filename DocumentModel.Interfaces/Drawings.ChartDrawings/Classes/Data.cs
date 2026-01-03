@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Data Class.
 /// </summary>
-public class Data: ModelElement
+public interface Data: IModelElement
 {
   /// <summary>
   ///   id, this property is only available in Office 2016 and later.

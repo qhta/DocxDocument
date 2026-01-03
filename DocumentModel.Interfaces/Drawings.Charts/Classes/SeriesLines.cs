@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the SeriesLines Class.
 /// </summary>
-public class SeriesLines: ModelElement
+public interface SeriesLines: IModelElement
 {
   public ChartShapeProperties? ChartShapeProperties { get; set; }
 }

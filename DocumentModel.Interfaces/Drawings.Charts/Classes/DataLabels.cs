@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Data Labels.
 /// </summary>
-public class DataLabels: ModelElement
+public interface DataLabels: IModelElement
 {
   public Collection<DataLabel>? Items { get; set; }
   public bool? Delete { get; set; }

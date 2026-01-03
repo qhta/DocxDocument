@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Entry Insertion Behaviors.
 /// </summary>
-public class Behaviors: ModelElement
+public interface Behaviors: IModelElement
 {
   public DocPartBehaviorKind? Behavior { get; set; }
 }

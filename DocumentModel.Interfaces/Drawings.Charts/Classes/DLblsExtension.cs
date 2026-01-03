@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the DLblsExtension Class.
 /// </summary>
-public class DLblsExtension: ModelElement
+public interface DLblsExtension: IModelElement
 {
   /// <summary>
   ///   URI

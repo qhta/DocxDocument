@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Line Break.
 /// </summary>
-public class Break: ModelElement
+public interface Break: IModelElement
 {
   /// <summary>
   ///   Text Run Properties.

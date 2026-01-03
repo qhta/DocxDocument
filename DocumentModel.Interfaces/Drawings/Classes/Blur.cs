@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the Blur Class.
+///   Defines the Blur interface.
 /// </summary>
-public class Blur: ModelElement
+public interface Blur: IModelElement
 {
   /// <summary>
   ///   Radius

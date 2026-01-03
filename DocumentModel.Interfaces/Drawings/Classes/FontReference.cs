@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the FontReference Class.
+///   Defines the FontReference interface.
 /// </summary>
-public class FontReference: ModelElement
+public interface FontReference: IModelElement
 {
   /// <summary>
   ///   Identifier

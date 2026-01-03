@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ColorMappingType Class.
 /// </summary>
-public class ColorMappingType: ModelElement
+public interface ColorMappingType: IModelElement
 {
   /// <summary>
   ///   Background 1
@@ -46,11 +46,11 @@ public class ColorMappingType: ModelElement
   /// </summary>
   public ColorSchemeIndexKind? Accent6 { get; set; }
   /// <summary>
-  ///   Hyperlink
+  ///   IHyperlink
   /// </summary>
   public ColorSchemeIndexKind? Hyperlink { get; set; }
   /// <summary>
-  ///   Followed Hyperlink
+  ///   Followed IHyperlink
   /// </summary>
   public ColorSchemeIndexKind? FollowedHyperlink { get; set; }
   /// <summary>

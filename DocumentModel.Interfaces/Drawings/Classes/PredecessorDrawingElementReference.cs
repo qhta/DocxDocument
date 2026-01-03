@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the PredecessorDrawingElementReference Class.
+///   Defines the PredecessorDrawingElementReference interface.
 /// </summary>
-public class PredecessorDrawingElementReference: ModelElement
+public interface PredecessorDrawingElementReference: IModelElement
 {
   /// <summary>
   ///   pred, this property is only available in Office 2016 and later.

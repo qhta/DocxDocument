@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the AlphaModulationFixed Class.
+///   Defines the AlphaModulationFixed interface.
 /// </summary>
-public class AlphaModulationFixed: ModelElement
+public interface AlphaModulationFixed: IModelElement
 {
   /// <summary>
   ///   Amount

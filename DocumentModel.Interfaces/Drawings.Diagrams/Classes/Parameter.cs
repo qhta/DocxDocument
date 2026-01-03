@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Parameter.
 /// </summary>
-public class Parameter: ModelElement
+public interface Parameter: IModelElement
 {
   /// <summary>
   ///   Parameter Type

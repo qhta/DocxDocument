@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the VerticalSeparator Class.
 /// </summary>
-public class VerticalSeparator: ModelElement
+public interface VerticalSeparator: IModelElement
 {
   /// <summary>
   ///   id

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Chart Space.
 /// </summary>
-public class ChartSpace: ModelElement
+public interface ChartSpace: IModelElement
 {
   /// <summary>
   ///   Date1904.

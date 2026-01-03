@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Theme Color Mappings.
 /// </summary>
-public class ColorSchemeMapping: ModelElement
+public interface ColorSchemeMapping: IModelElement
 {
   /// <summary>
   ///   Background 1 Theme Color Mapping
@@ -46,11 +46,11 @@ public class ColorSchemeMapping: ModelElement
   /// </summary>
   public ColorSchemeIndexKind? Accent6 { get; set; }
   /// <summary>
-  ///   Hyperlink Theme Color Mapping
+  ///   IHyperlink Theme Color Mapping
   /// </summary>
   public ColorSchemeIndexKind? Hyperlink { get; set; }
   /// <summary>
-  ///   Followed Hyperlink Theme Color Mapping
+  ///   Followed IHyperlink Theme Color Mapping
   /// </summary>
   public ColorSchemeIndexKind? FollowedHyperlink { get; set; }
 }

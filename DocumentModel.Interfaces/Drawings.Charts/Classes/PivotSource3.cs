@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the PivotSource Class.
 /// </summary>
-public class PivotSource3: ModelElement
+public interface PivotSource3: IModelElement
 {
   /// <summary>
   ///   Pivot Name.

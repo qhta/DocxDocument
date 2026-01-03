@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the DefaultShapeDefinitionType Class.
+///   Defines the DefaultShapeDefinitionType interface.
 /// </summary>
-public class DefaultShapeDefinitionType: ModelElement
+public interface DefaultShapeDefinitionType: IModelElement
 {
   /// <summary>
   ///   Visual Properties.

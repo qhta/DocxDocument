@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the CreationId Class.
+///   Defines the CreationId interface.
 /// </summary>
-public class CreationId: ModelElement
+public interface CreationId: IModelElement
 {
   /// <summary>
   ///   id, this property is only available in Office 2016 and later.

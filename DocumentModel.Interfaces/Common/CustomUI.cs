@@ -1,9 +1,9 @@
-amespace DocumentModel;
+namespace DocumentModel;
 
 /// <summary>
 ///   Defines the CustomUI Class.
 /// </summary>
-public class CustomUI: ModelElement
+public interface CustomUI: IModelElement
 {
   /// <summary>
   ///   onLoad, this property is only available in Office 2010 and later.
@@ -24,7 +24,7 @@ public class CustomUI: ModelElement
   /// <summary>
   ///   IBackstage.
   /// </summary>
-  public IBackstage? Backstage { get; set; }
+  public Backstage? Backstage { get; set; }
   /// <summary>
   ///   ContextMenus.
   /// </summary>

@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the ToggleButton Class.
 /// </summary>
-public class ToggleButton: ModelElement
+public interface ToggleButton: IModelElement
 {
   /// <summary>
   ///   size

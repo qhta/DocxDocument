@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Light Rig.
 /// </summary>
-public class LightRig: ModelElement
+public interface LightRig: IModelElement
 {
   /// <summary>
   ///   Rig Preset

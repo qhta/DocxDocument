@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BackgroundProperties Class.
+///   Defines the BackgroundProperties interface.
 /// </summary>
-public class BackgroundProperties: ModelElement
+public interface BackgroundProperties: IModelElement
 {
   /// <summary>
   ///   bwMode, this property is only available in Office 2013 and later.

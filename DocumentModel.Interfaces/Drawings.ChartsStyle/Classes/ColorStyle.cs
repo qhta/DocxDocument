@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the ColorStyle Class.
 /// </summary>
-public class ColorStyle: ModelElement
+public interface ColorStyle: IModelElement
 {
   /// <summary>
   ///   meth, this property is only available in Office 2013 and later.

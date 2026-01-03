@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtRepeatedSection Class.
 /// </summary>
-public class SdtRepeatedSection: ModelElement
+public interface SdtRepeatedSection: IModelElement
 {
   /// <summary>
   ///   SectionTitle.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Legend Class.
 /// </summary>
-public class Legend: ModelElement
+public interface Legend: IModelElement
 {
   /// <summary>
   ///   pos, this property is only available in Office 2016 and later.

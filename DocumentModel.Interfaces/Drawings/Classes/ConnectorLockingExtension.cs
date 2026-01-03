@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ConnectorLockingExtension Class.
+///   Defines the ConnectorLockingExtension interface.
 /// </summary>
-public class ConnectorLockingExtension: ModelElement
+public interface ConnectorLockingExtension: IModelElement
 {
   /// <summary>
   ///   URI

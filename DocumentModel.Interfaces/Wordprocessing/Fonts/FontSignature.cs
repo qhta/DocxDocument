@@ -2,7 +2,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FontSignature Class.
 /// </summary>
-[TypeConverter(typeof(FontSignatureTypeConverter))]
 public record FontSignature
 {
   /// <summary>

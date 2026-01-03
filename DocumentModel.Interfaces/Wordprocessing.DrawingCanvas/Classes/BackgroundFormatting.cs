@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.DrawingCanvas;
 /// <summary>
 ///   Defines the BackgroundFormatting Class.
 /// </summary>
-public class BackgroundFormatting: ModelElement
+public interface BackgroundFormatting: IModelElement
 {
   public bool? NoFill { get; set; }
   public SolidFill? SolidFill { get; set; }

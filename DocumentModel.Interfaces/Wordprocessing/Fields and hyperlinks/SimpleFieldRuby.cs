@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Ruby counterpart of <see cref="SimpleField"/> class.
+///   Ruby counterpart of <see cref="SimpleField"/> interface.
 /// </summary>
-public class SimpleFieldRuby: SimpleField, IRubyContent
+public interface SimpleFieldRuby: SimpleField, IRubyContent
 {
 }

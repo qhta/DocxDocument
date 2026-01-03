@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the ImageData Class.
 /// </summary>
-public class ImageData: ModelElement
+public interface ImageData: IModelElement
 {
   /// <summary>
   ///   Unique Identifier
@@ -78,7 +78,7 @@ public class ImageData: ModelElement
   /// </summary>
   public string? Picture { get; set; }
   /// <summary>
-  ///   Explicit Relationship to Hyperlink Target
+  ///   Explicit Relationship to IHyperlink Target
   /// </summary>
   public string? RelHref { get; set; }
 }

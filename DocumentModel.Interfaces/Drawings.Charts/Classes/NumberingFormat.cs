@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Number Format.
 /// </summary>
-public class NumberingFormat: ModelElement
+public interface NumberingFormat: IModelElement
 {
   /// <summary>
   ///   Number Format Code

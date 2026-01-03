@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ThemeFamily Class.
 /// </summary>
-public class ThemeFamily: ModelElement
+public interface ThemeFamily: IModelElement
 {
   /// <summary>
   ///   name, this property is only available in Office 2013 and later.

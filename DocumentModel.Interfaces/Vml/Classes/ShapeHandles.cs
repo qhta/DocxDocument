@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the ShapeHandles Class.
 /// </summary>
-public class ShapeHandles: ModelElement
+public interface ShapeHandles: IModelElement
 {
   public Collection<ShapeHandle>? Items { get; set; }
 }

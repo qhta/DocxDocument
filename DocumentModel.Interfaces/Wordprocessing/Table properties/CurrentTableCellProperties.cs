@@ -1,8 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Base class for current table cell Pproperties.
+///   Base interface for current table cell Pproperties.
 /// </summary>
-public abstract class CurrentTableCellProperties : BaseTableCellProperties
+public interface CurrentTableCellProperties : BaseTableCellProperties
 {
   /// <summary>
   ///   Sspecifies the set of conditional table style formatting properties which have been applied to this table cell. 

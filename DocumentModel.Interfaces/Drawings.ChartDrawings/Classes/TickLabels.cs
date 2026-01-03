@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the TickLabels Class.
 /// </summary>
-public class TickLabels: ModelElement
+public interface TickLabels: IModelElement
 {
   /// <summary>
   ///   ExtensionList.

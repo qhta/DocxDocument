@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the CameraTool Class.
+///   Defines the CameraTool interface.
 /// </summary>
-public class CameraTool: ModelElement
+public interface CameraTool: IModelElement
 {
   /// <summary>
   ///   cellRange, this property is only available in Office 2010 and later.

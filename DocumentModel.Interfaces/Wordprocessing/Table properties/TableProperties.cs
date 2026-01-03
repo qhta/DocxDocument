@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   These properties affect the appearance of all rows and cells within the parent table, 
 ///   but can be overridden by individual table-level exception, row, and cell level properties as defined by each property.
 /// </summary>
-public class TableProperties: ExtBaseTableProperties
+public interface TableProperties: ExtBaseTableProperties
 {
   /// <summary>
   ///   Revision Information for Table Properties.

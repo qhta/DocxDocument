@@ -1,8 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Default Run Properties class.
+///   Default Run Properties interface.
 ///   Used in <see cref="DocDefaults"/>.
 /// </summary>
-public class DefaultRunProperties: BaseRunProperties
+public interface DefaultRunProperties: BaseRunProperties
 {
 }

@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 ///   or around an arbitrary run or set of runs within a document (at the inline level) 
 ///   to provide semantics to that content within the context and structures defined by the associated schema definition.
 /// </summary>
-public class CustomXmlRun: CustomXmlElement, 
+public interface CustomXmlRun: CustomXmlElement, 
   IParagraphContent, 
   IRunContent, 
   ISdtRunContent, 

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Variable List.
 /// </summary>
-public class VariableList: ModelElement
+public interface VariableList: IModelElement
 {
   public bool? OrganizationChart { get; set; }
   public Int32? MaxNumberOfChildren { get; set; }

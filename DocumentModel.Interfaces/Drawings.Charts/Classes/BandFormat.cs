@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Band Format.
 /// </summary>
-public class BandFormat: ModelElement
+public interface BandFormat: IModelElement
 {
   /// <summary>
   ///   Index.

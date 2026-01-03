@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskFormGroupCategory Class.
 /// </summary>
-public class TaskFormGroupCategory: ModelElement
+public interface TaskFormGroupCategory: IModelElement
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

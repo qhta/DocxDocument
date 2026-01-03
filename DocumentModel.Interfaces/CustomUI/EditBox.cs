@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the EditBox Class.
 /// </summary>
-public class EditBox: ModelElement
+public interface EditBox: IModelElement
 {
   /// <summary>
   ///   enabled, this property is only available in Office 2010 and later.

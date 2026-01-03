@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Title.
 /// </summary>
-public class Title: ModelElement
+public interface Title: IModelElement
 {
   /// <summary>
   ///   Chart Text.

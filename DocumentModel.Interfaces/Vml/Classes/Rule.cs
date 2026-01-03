@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Rule.
 /// </summary>
-public class Rule: ModelElement
+public interface Rule: IModelElement
 {
   /// <summary>
   ///   Rule ID

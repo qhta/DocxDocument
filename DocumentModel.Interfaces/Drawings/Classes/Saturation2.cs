@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the Saturation Class.
+///   Defines the Saturation interface.
 /// </summary>
-public class Saturation2: ModelElement
+public interface Saturation2: IModelElement
 {
   /// <summary>
   ///   sat, this property is only available in Office 2010 and later.

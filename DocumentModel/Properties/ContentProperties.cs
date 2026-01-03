@@ -13,12 +13,12 @@ public partial class ContentProperties : DocumentProperties
   /// <summary>
   /// Document that owns these properties.
   /// </summary>
-  public Document? Document { get; internal set; }
+  public Document Document { get; internal set; }
 
   /// <summary>
   /// Wordprocessing document ExtendedFilePropertiesPart which contains ExtendedProperties.
   /// </summary>
-  private OpenXml.Packaging.ExtendedFilePropertiesPart? ExtendedFilePropertiesPart;
+  private OpenXml.Packaging.ExtendedFilePropertiesPart? ExtendedPropertiesPart;
 
   /// <summary>
   /// Wordprocessing ExtendedProperties object which contains the properties of this collection
@@ -32,7 +32,7 @@ public partial class ContentProperties : DocumentProperties
   public ContentProperties(Document document)
   {
     Document = document;
-    var part = Document.WordprocessingDocument.ExtendedFilePropertiesPart 
+    var part = Document.WordprocessingDocument!.ExtendedFilePropertiesPart 
                ?? Document.WordprocessingDocument.AddExtendedFilePropertiesPart();
     var properties = part.Properties;
     ExtendedProperties = properties;
@@ -49,11 +49,12 @@ public partial class ContentProperties : DocumentProperties
     {
       if (value != null)
       {
-        var part = Document?.WordprocessingDocument?.ExtendedFilePropertiesPart;
-
-                   ?? Document.WordprocessingDocument.AddExtendedFilePropertiesPart();
-        ExtendedProperties ??= Document.WordprocessingDocument.ExtendedFilePropertiesPart;
-        ExtendedProperties.Template = new OpenXml.ExtendedProperties.Template(value);
+        if (ExtendedProperties == null)
+        {
+          ExtendedPropertiesPart ??= Document.WordprocessingDocument!.AddExtendedFilePropertiesPart();
+          ExtendedProperties = ExtendedPropertiesPart!.Properties;
+          ExtendedProperties.Template = new OpenXml.ExtendedProperties.Template(value);
+        }
       }
       else
       if (ExtendedProperties != null)

@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the CompatExtension Class.
+///   Defines the CompatExtension interface.
 /// </summary>
-public class CompatExtension: ModelElement
+public interface CompatExtension: IModelElement
 {
   /// <summary>
   ///   spid, this property is only available in Office 2010 and later.

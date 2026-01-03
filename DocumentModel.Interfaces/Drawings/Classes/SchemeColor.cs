@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Scheme Color.
 /// </summary>
-public class SchemeColor: ModelElement
+public interface SchemeColor: IModelElement
 {
   /// <summary>
   ///   Value

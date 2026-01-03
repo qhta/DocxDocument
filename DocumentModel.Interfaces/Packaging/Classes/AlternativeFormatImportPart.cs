@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the AlternativeFormatImportPart
 /// </summary>
-public class AlternativeFormatImportPart: ModelElement
+public interface AlternativeFormatImportPart: IModelElement
 {
   public string? RelationshipType { get; set; }
 }

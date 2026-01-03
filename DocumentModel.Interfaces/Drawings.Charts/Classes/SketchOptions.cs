@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the SketchOptions Class.
 /// </summary>
-public class SketchOptions: ModelElement
+public interface SketchOptions: IModelElement
 {
   /// <summary>
   ///   InSketchMode.

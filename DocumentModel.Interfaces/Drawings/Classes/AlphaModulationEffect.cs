@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Alpha Modulate Effect.
 /// </summary>
-public class AlphaModulationEffect: ModelElement
+public interface AlphaModulationEffect: IModelElement
 {
   /// <summary>
   ///   EffectContainer.

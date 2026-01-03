@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings;
 /// <summary>
-///   Defines the ColorType Class.
+///   Defines the ColorType interface.
 /// </summary>
-public class ColorType: ModelElement
+public interface ColorType: IModelElement
 {
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the AreaSerExtension Class.
 /// </summary>
-public class AreaSerExtension: ModelElement
+public interface AreaSerExtension: IModelElement
 {
   /// <summary>
   ///   URI

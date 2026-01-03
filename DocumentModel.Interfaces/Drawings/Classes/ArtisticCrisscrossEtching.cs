@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticCrisscrossEtching Class.
+///   Defines the ArtisticCrisscrossEtching interface.
 /// </summary>
-public class ArtisticCrisscrossEtching: ModelElement
+public interface ArtisticCrisscrossEtching: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

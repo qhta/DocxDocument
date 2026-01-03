@@ -1,8 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Counterpart of <see cref="SdtRun"/> class in Ruby domain.
+///   Counterpart of <see cref="SdtRun"/> interface in Ruby domain.
 /// </summary>
-public class SdtRunRuby: ElementCollection<IRubyContent>, IRubyContent
+public interface SdtRunRuby: IElementCollection<IRubyContent>, IRubyContent
 {
   /// <summary>
   ///  Specifies the set of properties which shall be applied to this structured document tag.

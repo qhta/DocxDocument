@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the DataLabel Class.
 /// </summary>
-public class DataLabel3: ModelElement
+public interface DataLabel3: IModelElement
 {
   /// <summary>
   ///   Index.

@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the OfficeStyleSheetExtensionList Class.
+///   Defines the OfficeStyleSheetExtensionList interface.
 /// </summary>
-public class OfficeStyleSheetExtensionList: ModelElement
+public interface OfficeStyleSheetExtensionList: IModelElement
 {
   public Collection<OfficeStyleSheetExtension>? OfficeStyleSheetExtensions { get; set; }
 }

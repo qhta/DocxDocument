@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ColorType Class.
 /// </summary>
-public class ColorType: ModelElement
+public interface ColorType: IModelElement
 {
   /// <summary>
   ///   RgbColorModelHex.

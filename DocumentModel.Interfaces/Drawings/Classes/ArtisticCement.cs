@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticCement Class.
+///   Defines the ArtisticCement interface.
 /// </summary>
-public class ArtisticCement: ModelElement
+public interface ArtisticCement: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

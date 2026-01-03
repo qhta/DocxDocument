@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the SignatureLine Class.
+///   Defines the SignatureLine interface.
 /// </summary>
-public class SignatureLine: ModelElement
+public interface SignatureLine: IModelElement
 {
   /// <summary>
   ///   isSignatureLine, this property is only available in Office 2013 and later.

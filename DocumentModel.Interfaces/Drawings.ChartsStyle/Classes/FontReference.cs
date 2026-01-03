@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the FontReference Class.
 /// </summary>
-public class FontReference: ModelElement
+public interface FontReference: IModelElement
 {
   /// <summary>
   ///   idx, this property is only available in Office 2013 and later.

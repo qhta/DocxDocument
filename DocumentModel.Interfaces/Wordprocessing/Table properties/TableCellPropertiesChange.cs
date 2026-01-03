@@ -1,10 +1,10 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   TableCellPropertiesChange class used in <see cref="TableCellProperties"/>.
+///   TableCellPropertiesChange interface used in <see cref="TableCellProperties"/>.
 ///   Represents <see cref="PreviousTableCellProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
-public class TableCellPropertiesChange: ModelElement
+public interface TableCellPropertiesChange: IModelElement
 {
   /// <summary>
   ///   Author.

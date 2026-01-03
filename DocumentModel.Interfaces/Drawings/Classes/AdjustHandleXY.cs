@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   XY Adjust Handle.
 /// </summary>
-public class AdjustHandleXY: ModelElement
+public interface AdjustHandleXY: IModelElement
 {
   /// <summary>
   ///   Horizontal Adjustment Guide

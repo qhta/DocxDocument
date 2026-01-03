@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticGlowEdges Class.
+///   Defines the ArtisticGlowEdges interface.
 /// </summary>
-public class ArtisticGlowEdges: ModelElement
+public interface ArtisticGlowEdges: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

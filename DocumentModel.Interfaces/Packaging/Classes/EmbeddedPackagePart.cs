@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the EmbeddedPackagePart
 /// </summary>
-public class EmbeddedPackagePart: ModelElement
+public interface EmbeddedPackagePart: IModelElement
 {
   public string? RelationshipType { get; set; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the CatAxExtension Class.
 /// </summary>
-public class CatAxExtension: ModelElement
+public interface CatAxExtension: IModelElement
 {
   /// <summary>
   ///   URI

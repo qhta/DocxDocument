@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Future extensions..
 /// </summary>
-public class BlipExtensionList: ModelElement
+public interface BlipExtensionList: IModelElement
 {
   public Collection<BlipExtension>? BlipExtensions { get; set; }
 }

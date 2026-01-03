@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DigitalSignatureOriginPart
 /// </summary>
-public class DigitalSignatureOriginPart: ModelElement
+public interface DigitalSignatureOriginPart: IModelElement
 {
   public string? ContentType { get; set; }
   public string? RelationshipType { get; set; }

@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticLineDrawing Class.
+///   Defines the ArtisticLineDrawing interface.
 /// </summary>
-public class ArtisticLineDrawing: ModelElement
+public interface ArtisticLineDrawing: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

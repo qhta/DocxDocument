@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Legend Entry.
 /// </summary>
-public class LegendEntry: ModelElement
+public interface LegendEntry: IModelElement
 {
   /// <summary>
   ///   Index.

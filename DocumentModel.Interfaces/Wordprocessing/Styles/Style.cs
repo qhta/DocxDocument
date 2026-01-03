@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Style Definition.
 /// </summary>
-public partial class Style : ModelElement, IEquatable<Style>
+public partial interface Style : IModelElement, IEquatable<Style>
 {
   /// <summary>
   ///   Style Type

@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the EmbeddedControlPersistencePart
 /// </summary>
-public class EmbeddedControlPersistencePart: ModelElement
+public interface EmbeddedControlPersistencePart: IModelElement
 {
   /// <summary>
   ///   Gets the EmbeddedControlPersistenceBinaryDataParts of the EmbeddedControlPersistencePart

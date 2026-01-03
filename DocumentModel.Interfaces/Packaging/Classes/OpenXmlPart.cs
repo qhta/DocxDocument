@@ -1,9 +1,9 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-///   Represents an abstract base class for all OpenXml parts.
+///   Represents an abstract base interface for all OpenXml parts.
 /// </summary>
-public class OpenXmlPart: ModelElement
+public interface OpenXmlPart: IModelElement
 {
   /// <summary>
   ///   Gets the internal part path in the package.
@@ -20,5 +20,5 @@ public class OpenXmlPart: ModelElement
   /// <summary>
   ///   Gets the root element of the current part.
   /// </summary>
-  public ModelElement? RootElement { get; set; }
+  public IModelElement? RootElement { get; set; }
 }

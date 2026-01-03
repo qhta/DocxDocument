@@ -14,7 +14,7 @@ namespace DocumentModel.Wordprocessing;
 ///     </item>
 ///   </list>
 /// </summary>
-public class Font: ModelElement
+public interface Font : IModelElement
 {
   /// <summary>
   ///   Specifies the primary name of the current font. 
@@ -35,7 +35,7 @@ public class Font: ModelElement
   ///   This information is determined by querying the font when present 
   ///   and shall not be modified when the font is not available.
   /// </summary>
-   public IHexBinary? Panose { get; set; }
+  public IHexBinary? Panose { get; set; }
   /// <summary>
   ///   Specifies the character set which is supported by the parent font. 
   ///   This information can be used as defined in font substitution logic 
@@ -63,60 +63,25 @@ public class Font: ModelElement
   /// <summary>
   ///   EmbedRegularFont.
   /// </summary>
-  public EmbeddedFont? EmbedRegularFont 
-  { 
-    get => (EmbeddedFonts!=null && EmbeddedFonts.TryGetValue(FontFormKind.Regular, out var val)) ? val : null;
-    set => SetEmbeddedFont(FontFormKind.Regular, value);
-  }
+  public EmbeddedFont? EmbedRegularFont { get; set; }
+
   /// <summary>
   ///   EmbedBoldFont.
   /// </summary>
-  public EmbeddedFont? EmbedBoldFont
-  { 
-    get => (EmbeddedFonts!=null && EmbeddedFonts.TryGetValue(FontFormKind.Bold, out var val)) ? val : null; 
-    set => SetEmbeddedFont(FontFormKind.Bold, value);
-  }
+  public EmbeddedFont? EmbedBoldFont { get; set; }
+
   /// <summary>
   ///   EmbedItalicFont.
   /// </summary>
-  public EmbeddedFont? EmbedItalicFont
-  { 
-    get => (EmbeddedFonts!=null && EmbeddedFonts.TryGetValue(FontFormKind.Italic, out var val)) ? val : null; 
-    set => SetEmbeddedFont(FontFormKind.Italic, value);
-  }
+  public EmbeddedFont? EmbedItalicFont { get; set; }
+
   /// <summary>
   ///   EmbedBoldItalicFont.
   /// </summary>
-  public EmbeddedFont? EmbedBoldItalicFont
-  { 
-    get => (EmbeddedFonts!=null && EmbeddedFonts.TryGetValue(FontFormKind.BoldItalic, out var val)) ? val : null; 
-    set => SetEmbeddedFont(FontFormKind.BoldItalic, value);
-  }
-  private void SetEmbeddedFont(FontFormKind formKind, EmbeddedFont? value)
-  {
-    if (value != null)
-    {
-      if (EmbeddedFonts == null)
-        EmbeddedFonts = new EmbeddedFonts();
-      if (EmbeddedFonts.ContainsKey(formKind)) 
-        EmbeddedFonts[formKind] = value;
-      else
-        EmbeddedFonts.Add(formKind, value);
-      value.Parent = this;
-    }
-    else
-    {
-      if (EmbeddedFonts != null)
-      {
-        if (EmbeddedFonts.ContainsKey(formKind))
-          EmbeddedFonts.Remove(formKind);
-        if (EmbeddedFonts.Count == 0)
-          EmbeddedFonts = null;
-      }
-    }
-  }
+  public EmbeddedFont? EmbedBoldItalicFont { get; set; }
+
   /// <summary>
   ///   Collection of embedded fonts.
   /// </summary>
-  [XmlIgnore] public EmbeddedFonts? EmbeddedFonts { get; set;}
+  public EmbeddedFonts? EmbeddedFonts { get; set; }
 }

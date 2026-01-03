@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Presentation Layout Variables.
 /// </summary>
-public class PresentationLayoutVariables: ModelElement
+public interface PresentationLayoutVariables: IModelElement
 {
   public bool? OrganizationChart { get; set; }
   public Int32? MaxNumberOfChildren { get; set; }

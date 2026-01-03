@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the LiveFeedProperties Class.
+///   Defines the LiveFeedProperties interface.
 /// </summary>
-public class LiveFeedProperties: ModelElement
+public interface LiveFeedProperties: IModelElement
 {
   /// <summary>
   ///   LiveFeedBackgroundProperties.

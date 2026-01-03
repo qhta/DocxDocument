@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.DrawingCanvas;
 /// <summary>
 ///   Defines the WordprocessingCanvas Class.
 /// </summary>
-public class WordprocessingCanvas: ModelElement
+public interface WordprocessingCanvas: IModelElement
 {
   /// <summary>
   ///   BackgroundFormatting.

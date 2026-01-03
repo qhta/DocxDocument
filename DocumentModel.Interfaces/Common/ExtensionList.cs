@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ExtensionList Class.
 /// </summary>
-public class ExtensionList: ModelElement
+public interface ExtensionList: IModelElement
 {
   public Collection<Extension>? Extensions { get; set; }
 }

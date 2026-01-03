@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines Styles.
 /// </summary>
-public partial class Styles
+public partial interface Styles
 {
   /// <summary>
   ///   Document Default Paragraph and Run Properties.

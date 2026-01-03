@@ -1,8 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Base class for current table properties
+///   Base interface for current table properties
 /// </summary>
-public abstract class CurrentTableProperties: BaseTableProperties
+public interface CurrentTableProperties: BaseTableProperties
 {
   /// <summary>
   ///   Preferred Table Width.

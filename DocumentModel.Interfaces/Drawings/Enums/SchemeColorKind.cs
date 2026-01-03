@@ -47,11 +47,11 @@ public enum SchemeColorKind
   /// </summary>
   Accent6,
   /// <summary>
-  ///   Hyperlink Color.
+  ///   IHyperlink Color.
   /// </summary>
   Hyperlink,
   /// <summary>
-  ///   Followed Hyperlink Color.
+  ///   Followed IHyperlink Color.
   /// </summary>
   FollowedHyperlink,
   /// <summary>

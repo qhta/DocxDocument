@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the GridlineMajor Class.
 /// </summary>
-public class GridlineMajor: ModelElement
+public interface GridlineMajor: IModelElement
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }

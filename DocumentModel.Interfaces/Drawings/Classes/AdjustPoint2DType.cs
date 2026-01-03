@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the AdjustPoint2DType Class.
+///   Defines the AdjustPoint2DType interface.
 /// </summary>
-public class AdjustPoint2DType: ModelElement
+public interface AdjustPoint2DType: IModelElement
 {
   /// <summary>
   ///   X-Coordinate

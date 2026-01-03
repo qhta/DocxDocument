@@ -2,9 +2,9 @@ using DocumentModel.Drawings.Diagrams;
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the PtExtension Class.
+///   Defines the PtExtension interface.
 /// </summary>
-public class PtExtension: ModelElement
+public interface PtExtension: IModelElement
 {
   /// <summary>
   ///   URI

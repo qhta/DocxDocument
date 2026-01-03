@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the LineSerExtension Class.
 /// </summary>
-public class LineSerExtension: ModelElement
+public interface LineSerExtension: IModelElement
 {
   /// <summary>
   ///   URI

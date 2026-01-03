@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the EndnotesPart
 /// </summary>
-public class EndnotesPart: ModelElement
+public interface EndnotesPart: IModelElement
 {
   /// <summary>
   ///   Gets the AlternativeFormatImportParts of the EndnotesPart

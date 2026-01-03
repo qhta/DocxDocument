@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the LayoutContainer Class.
 /// </summary>
-public class LayoutContainer: ModelElement
+public interface LayoutContainer: IModelElement
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

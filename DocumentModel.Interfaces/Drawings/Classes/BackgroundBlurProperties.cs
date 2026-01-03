@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BackgroundBlurProperties Class.
+///   Defines the BackgroundBlurProperties interface.
 /// </summary>
-public class BackgroundBlurProperties: ModelElement
+public interface BackgroundBlurProperties: IModelElement
 {
   /// <summary>
   ///   OfficeArtExtensionList.

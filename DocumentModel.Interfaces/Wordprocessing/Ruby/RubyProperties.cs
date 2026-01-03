@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Phonetic Guide Properties.
 /// </summary>
-public class RubyProperties: ModelElement
+public interface RubyProperties: IModelElement
 {
   /// <summary>
   ///   Phonetic Guide Text Alignment.
@@ -11,7 +11,7 @@ public class RubyProperties: ModelElement
   /// <summary>
   ///   Phonetic Guide Text Font Size.
   /// </summary>
-  public Hps? PhoneticGuideTextFontSize { get; set; }
+  public IHps? PhoneticGuideTextFontSize { get; set; }
   /// <summary>
   ///   Distance Between Phonetic Guide Text and Phonetic Guide Base Text.
   /// </summary>
@@ -19,7 +19,7 @@ public class RubyProperties: ModelElement
   /// <summary>
   ///   Phonetic Guide Base Text Font Size.
   /// </summary>
-  public Hps? PhoneticGuideBaseTextSize { get; set; }
+  public IHps? PhoneticGuideBaseTextSize { get; set; }
   /// <summary>
   ///   Language ID for Phonetic Guide.
   /// </summary>

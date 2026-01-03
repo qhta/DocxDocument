@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the AxisTitle Class.
 /// </summary>
-public class AxisTitle: ModelElement
+public interface AxisTitle: IModelElement
 {
   /// <summary>
   ///   Text.

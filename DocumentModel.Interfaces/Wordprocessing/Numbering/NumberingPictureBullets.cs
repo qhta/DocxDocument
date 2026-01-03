@@ -2,6 +2,6 @@
 /// <summary>
 ///   Collection of NumberingPictureBullet elements
 /// </summary>
-public class NumberingPictureBullets: Collection<NumberingPictureBullet>
+public interface NumberingPictureBullets: IElementCollection<NumberingPictureBullet>
 {
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 ///   whether the Box serves as operator emulator with or without an alignment point, 
 ///   serves as a line break point, or receives the correct spacing for the mathematical differential. 
 /// </summary>
-public class BoxProperties: ModelElement
+public interface BoxProperties: IModelElement
 {
   /// <summary>
   ///   Operator Emulator.

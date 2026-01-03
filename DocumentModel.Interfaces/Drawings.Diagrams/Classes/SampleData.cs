@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Defines the SampleData Class.
 /// </summary>
-public class SampleData: ModelElement
+public interface SampleData: IModelElement
 {
   public DataModel? DataModel { get; set; }
 }

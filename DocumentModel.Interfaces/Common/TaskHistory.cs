@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskHistory Class.
 /// </summary>
-public class TaskHistory: ModelElement
+public interface TaskHistory: IModelElement
 {
   public Collection<TaskHistoryEvent>? TaskHistoryEvents { get; set; }
 }

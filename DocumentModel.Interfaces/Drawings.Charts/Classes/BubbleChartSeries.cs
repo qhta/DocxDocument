@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the BubbleChartSeries Class.
 /// </summary>
-public class BubbleChartSeries: ModelElement
+public interface BubbleChartSeries: IModelElement
 {
   /// <summary>
   ///   Index.

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Revision Information for ISection Properties.
 /// </summary>
-public class SectionPropertiesChange: ModelElement, ISectionPropertiesContent
+public interface SectionPropertiesChange: IModelElement, ISectionPropertiesContent
 {
   /// <summary>
   ///   author

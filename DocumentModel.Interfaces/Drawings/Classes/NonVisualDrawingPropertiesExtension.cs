@@ -2,9 +2,9 @@ using DocumentModel.Drawings.Office.ScriptLink;
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the NonVisualDrawingPropertiesExtension Class.
+///   Defines the NonVisualDrawingPropertiesExtension interface.
 /// </summary>
-public class NonVisualDrawingPropertiesExtension: ModelElement
+public interface NonVisualDrawingPropertiesExtension: IModelElement
 {
   /// <summary>
   ///   URI

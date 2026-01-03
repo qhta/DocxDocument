@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the FooterPart
 /// </summary>
-public class FooterPart: ModelElement
+public interface FooterPart: IModelElement
 {
   /// <summary>
   ///   Gets the AlternativeFormatImportParts of the FooterPart

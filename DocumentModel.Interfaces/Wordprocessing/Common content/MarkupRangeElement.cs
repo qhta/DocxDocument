@@ -1,21 +1,14 @@
 using System.Runtime.Serialization;
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Defines the abstract MarkupRangeType class for the following types: 
+///   Defines the abstract MarkupRangeType interface for the following types: 
 ///   BookmarkStart, BookmarkEnd, 
 ///   CommentRangeStart, CommentRangeEnd, 
 ///   MoveFromRangeStart, MoveFromRangeEnd, 
 ///   MoveToRangeStart, MoveToRangeEnd.
 /// </summary>
-[KnownType(typeof(BookmarkStart))]
-[KnownType(typeof(BookmarkEnd))]
-[KnownType(typeof(CommentRangeStart))]
-[KnownType(typeof(CommentRangeEnd))]
-[KnownType(typeof(MoveFromRangeStart))]
-[KnownType(typeof(MoveFromRangeEnd))]
-[KnownType(typeof(MoveToRangeStart))]
-[KnownType(typeof(MoveToRangeEnd))]
-public abstract class MarkupRangeElement: ModelElement, IRangeMarkupElement, ICommonContent
+
+public interface MarkupRangeElement: IModelElement, IRangeMarkupElement, ICommonContent
 {
   /// <summary>
   ///   Specifies a unique identifier for an annotation within a WordprocessingML document. 

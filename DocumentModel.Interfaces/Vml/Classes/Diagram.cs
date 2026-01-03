@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   VML Diagram.
 /// </summary>
-public class Diagram: ModelElement
+public interface Diagram: IModelElement
 {
   /// <summary>
   ///   VML Extension Handling Behavior

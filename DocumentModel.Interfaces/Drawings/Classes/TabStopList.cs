@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Tab List.
 /// </summary>
-public class TabStopList: ModelElement
+public interface TabStopList: IModelElement
 {
   public Collection<TabStop>? TabStops { get; set; }
 }

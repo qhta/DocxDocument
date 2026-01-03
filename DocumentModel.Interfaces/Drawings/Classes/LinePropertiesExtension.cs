@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the LinePropertiesExtension Class.
+///   Defines the LinePropertiesExtension interface.
 /// </summary>
-public class LinePropertiesExtension: ModelElement
+public interface LinePropertiesExtension: IModelElement
 {
   /// <summary>
   ///   URI

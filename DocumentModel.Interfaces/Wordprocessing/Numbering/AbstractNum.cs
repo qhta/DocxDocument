@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   (hence the use of abstract). Instead, these properties shall be inherited by a numbering definition instance using the num element, 
 ///   which can then itself be referenced by content.
 /// </summary>
-public class AbstractNum : ModelElement
+public interface AbstractNum : IModelElement
 {
   /// <summary>
   ///   Specifies a unique number which shall be used as the identifier for this abstract numbering definition. 
@@ -22,7 +22,7 @@ public class AbstractNum : ModelElement
   /// </summary>
   public IHexInt? Nsid { get; set; }
   /// <summary>
-  ///   Apecifies the type of numbering defined by a given abstract numbering type. 
+  ///   Specifies the type of numbering defined by a given abstract numbering type. 
   ///   This information shall only be used by a consumer to determine user interface behaviors for this numbering definition, 
   ///   and shall not be used to limit the behavior of the list 
   ///   (i.e. a list with multiple levels marked as singleLevel shall not be prevented from using levels 2 through 9).

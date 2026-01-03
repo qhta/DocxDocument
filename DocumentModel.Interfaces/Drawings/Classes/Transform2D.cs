@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the Transform2D Class.
+///   Defines the Transform2D interface.
 /// </summary>
-public class Transform2D: ModelElement
+public interface Transform2D: IModelElement
 {
   /// <summary>
   ///   Rotation

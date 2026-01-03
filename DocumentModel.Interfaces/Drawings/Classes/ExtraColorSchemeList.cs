@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ExtraColorSchemeList Class.
+///   Defines the ExtraColorSchemeList interface.
 /// </summary>
-public class ExtraColorSchemeList: ModelElement
+public interface ExtraColorSchemeList: IModelElement
 {
   public Collection<ExtraColorScheme>? ExtraColorSchemes { get; set; }
 }

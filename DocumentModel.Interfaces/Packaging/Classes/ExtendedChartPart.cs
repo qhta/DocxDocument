@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ExtendedChartPart
 /// </summary>
-public class ExtendedChartPart: ModelElement
+public interface ExtendedChartPart: IModelElement
 {
   /// <summary>
   ///   Gets the ChartColorStyleParts of the ExtendedChartPart

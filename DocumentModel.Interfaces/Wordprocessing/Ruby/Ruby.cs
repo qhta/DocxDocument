@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   The resulting construct is called a phonetic guide as it is typically used 
 ///   to map words in one language to another phonetically.
 /// </summary>
-public class Ruby: ModelElement, IRunContent, IRubyContent
+public interface Ruby: IModelElement, IRunContent, IRubyContent
 {
   /// <summary>
   ///   Phonetic Guide Properties.

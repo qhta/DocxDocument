@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ImageLayer Class.
+///   Defines the ImageLayer interface.
 /// </summary>
-public class ImageLayer: ModelElement
+public interface ImageLayer: IModelElement
 {
   /// <summary>
   ///   embed, this property is only available in Office 2010 and later.

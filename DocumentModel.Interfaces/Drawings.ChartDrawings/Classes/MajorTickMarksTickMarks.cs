@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the MajorTickMarksTickMarks Class.
 /// </summary>
-public class MajorTickMarksTickMarks: ModelElement
+public interface MajorTickMarksTickMarks: IModelElement
 {
   public ExtensionList? ExtensionList { get; set; }
 }

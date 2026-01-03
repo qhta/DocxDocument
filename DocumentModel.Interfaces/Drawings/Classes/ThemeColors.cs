@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 namespace DocumentModel.Drawings;
 
-public partial class ThemeColors : NameIndexedCollection<ThemeColor>
+public partial interface ThemeColors : INameIndexedCollection<ThemeColor>
 {
 }

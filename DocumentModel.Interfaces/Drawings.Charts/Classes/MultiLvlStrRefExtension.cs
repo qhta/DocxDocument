@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the MultiLvlStrRefExtension Class.
 /// </summary>
-public class MultiLvlStrRefExtension: ModelElement
+public interface MultiLvlStrRefExtension: IModelElement
 {
   /// <summary>
   ///   URI

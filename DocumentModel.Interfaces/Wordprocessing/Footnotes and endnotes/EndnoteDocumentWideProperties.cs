@@ -2,16 +2,8 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document-Wide Endnote Properties.
 /// </summary>
-public class EndnoteDocumentWideProperties: ModelElement
+public interface EndnoteDocumentWideProperties: IModelElement
 {
-  /// <summary>
-  /// Initializes <see cref="EndnoteSeparators"/>
-  /// </summary>
-  public void Init()
-  {
-    EndnoteSeparators = new EndnoteSeparators();
-    EndnoteSeparators.Init();
-  }
   /// <summary>
   ///   Endnote Placement.
   /// </summary>
@@ -32,11 +24,6 @@ public class EndnoteDocumentWideProperties: ModelElement
   /// Endnote special references.
   /// </summary>
   public EndnoteSeparators? EndnoteSeparators { get; set; }
-  /// <summary>
-  /// Modified for tests.
-  /// </summary>
-  public override string ToString()
-  {
-    return $"EndnoteDocumentWideProperties(EndnotePosition={EndnotePosition})";
-  }
+
+
 }

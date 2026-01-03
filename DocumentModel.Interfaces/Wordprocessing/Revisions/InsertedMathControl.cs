@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the InsertedMathControl Class.
 /// </summary>
-public class InsertedMathControl: ModelElement
+public interface InsertedMathControl: IModelElement
 {
   /// <summary>
   ///   author

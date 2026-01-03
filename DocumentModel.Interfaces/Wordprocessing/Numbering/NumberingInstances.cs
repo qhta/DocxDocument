@@ -2,6 +2,6 @@
 /// <summary>
 ///   Collection of NumberingInstance elements
 /// </summary>
-public class NumberingInstances: Collection<NumberingInstance>
+public interface NumberingInstances: IElementCollection<NumberingInstance>
 {
 }

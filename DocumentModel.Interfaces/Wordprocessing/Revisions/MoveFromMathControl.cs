@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MoveFromMathControl Class.
 /// </summary>
-public class MoveFromMathControl: ModelElement
+public interface MoveFromMathControl: IModelElement
 {
   public RunProperties? RunProperties { get; set; }
   public InsertedMathControl? InsertedMathControl { get; set; }

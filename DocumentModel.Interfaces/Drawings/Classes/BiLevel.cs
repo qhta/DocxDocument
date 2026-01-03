@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BiLevel Class.
+///   Defines the BiLevel interface.
 /// </summary>
-public class BiLevel: ModelElement
+public interface BiLevel: IModelElement
 {
   /// <summary>
   ///   Threshold

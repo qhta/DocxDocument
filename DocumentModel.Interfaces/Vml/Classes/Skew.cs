@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Skew Transform.
 /// </summary>
-public class Skew: ModelElement
+public interface Skew: IModelElement
 {
   /// <summary>
   ///   VML Extension Handling Behavior

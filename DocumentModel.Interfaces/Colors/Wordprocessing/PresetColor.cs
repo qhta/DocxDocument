@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset Color.
 /// </summary>
-public class PresetColor: ModelElement
+public interface PresetColor: IModelElement
 {
   /// <summary>
   ///   Value

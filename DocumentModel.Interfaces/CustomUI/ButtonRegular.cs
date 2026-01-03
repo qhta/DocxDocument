@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ButtonRegular Class.
 /// </summary>
-public class ButtonRegular: ModelElement
+public interface ButtonRegular: IModelElement
 {
   /// <summary>
   ///   onAction, this property is only available in Office 2010 and later.

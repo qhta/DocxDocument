@@ -31,7 +31,7 @@ public interface IAllDocumentProperties : ICollection<IDocumentProperty>
   /// Collection of web settings, which affect HTML generation.
   /// </summary>
   [XmlIgnore]
-  public IWebSettings? WebSettings { get; set; }
+  public DMW.IWebSettings? WebSettings { get; set; }
   /// <summary>
   /// Collection of custom-defined document properties.
   /// </summary>

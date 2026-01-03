@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ChartStylePart
 /// </summary>
-public class ChartStylePart: ModelElement
+public interface ChartStylePart: IModelElement
 {
   /// <summary>
   ///   Gets or sets the root element of this part.

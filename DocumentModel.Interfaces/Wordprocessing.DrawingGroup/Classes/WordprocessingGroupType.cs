@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.DrawingGroup;
 /// <summary>
 ///   Defines the WordprocessingGroupType Class.
 /// </summary>
-public class WordprocessingGroupType: ModelElement
+public interface WordprocessingGroupType: IModelElement
 {
   /// <summary>
   ///   NonVisualDrawingProperties.

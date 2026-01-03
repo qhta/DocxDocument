@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the Shadow Class.
 /// </summary>
-public class Shadow: ModelElement
+public interface Shadow: IModelElement
 {
   /// <summary>
   ///   Unique Identifier

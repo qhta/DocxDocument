@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Multi Level String Reference.
 /// </summary>
-public class MultiLevelStringReference: ModelElement
+public interface MultiLevelStringReference: IModelElement
 {
   /// <summary>
   ///   Formula.

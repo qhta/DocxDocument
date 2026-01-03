@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Latent Style Information.
 /// </summary>
-public partial class LatentStyles
+public partial interface LatentStyles
 {
   /// <summary>
   ///   Default Style Locking Setting

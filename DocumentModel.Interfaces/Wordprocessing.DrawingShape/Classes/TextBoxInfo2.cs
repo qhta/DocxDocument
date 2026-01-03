@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// <summary>
 ///   Defines the TextBoxInfo2 Class.
 /// </summary>
-public class TextBoxInfo2: ModelElement
+public interface TextBoxInfo2: IModelElement
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

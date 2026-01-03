@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the StringDimension Class.
 /// </summary>
-public class StringDimension: ModelElement
+public interface StringDimension: IModelElement
 {
   /// <summary>
   ///   type, this property is only available in Office 2016 and later.

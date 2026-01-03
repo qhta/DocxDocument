@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the HiddenEffectsProperties Class.
+///   Defines the HiddenEffectsProperties interface.
 /// </summary>
-public class HiddenEffectsProperties: ModelElement
+public interface HiddenEffectsProperties: IModelElement
 {
   /// <summary>
   ///   Effect Container.

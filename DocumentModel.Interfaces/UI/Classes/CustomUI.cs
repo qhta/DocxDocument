@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines CustomUI.
 /// </summary>
-public class CustomUI: ModelElement
+public interface CustomUI: IModelElement
 {
   /// <summary>
   ///   onLoad

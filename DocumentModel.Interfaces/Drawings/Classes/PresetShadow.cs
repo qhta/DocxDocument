@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset Shadow.
 /// </summary>
-public class PresetShadow: ModelElement
+public interface PresetShadow: IModelElement
 {
   /// <summary>
   ///   Preset Shadow

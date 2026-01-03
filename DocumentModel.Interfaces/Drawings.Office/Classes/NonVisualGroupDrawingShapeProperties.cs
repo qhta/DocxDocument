@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the NonVisualGroupDrawingShapeProperties Class.
 /// </summary>
-public class NonVisualGroupDrawingShapeProperties: ModelElement
+public interface NonVisualGroupDrawingShapeProperties: IModelElement
 {
   /// <summary>
   ///   GroupShapeLocks.

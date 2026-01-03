@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the OfficeArtExtensionList Class.
+///   Defines the OfficeArtExtensionList interface.
 /// </summary>
-public class OfficeArtExtensionList2: ModelElement
+public interface OfficeArtExtensionList2: IModelElement
 {
   public Collection<Extension>? Extensions { get; set; }
 }

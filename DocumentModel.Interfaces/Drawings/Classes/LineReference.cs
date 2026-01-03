@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the LineReference Class.
+///   Defines the LineReference interface.
 /// </summary>
-public class LineReference: ModelElement
+public interface LineReference: IModelElement
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
   public RgbColorModelHex? RgbColorModelHex { get; set; }

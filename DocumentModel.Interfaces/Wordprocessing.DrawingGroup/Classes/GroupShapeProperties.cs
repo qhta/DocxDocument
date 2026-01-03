@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.DrawingGroup;
 /// <summary>
 ///   Defines the GroupShapeProperties Class.
 /// </summary>
-public class GroupShapeProperties: ModelElement
+public interface GroupShapeProperties: IModelElement
 {
   /// <summary>
   ///   Black and White Mode

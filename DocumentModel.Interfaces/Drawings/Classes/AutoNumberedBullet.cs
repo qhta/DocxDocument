@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Auto-Numbered Bullet.
 /// </summary>
-public class AutoNumberedBullet: ModelElement
+public interface AutoNumberedBullet: IModelElement
 {
   /// <summary>
   ///   Bullet Autonumbering Type

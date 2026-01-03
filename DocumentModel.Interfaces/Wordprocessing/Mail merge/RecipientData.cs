@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Data About Single Data Source Record.
 /// </summary>
-public class RecipientData: ModelElement
+public interface RecipientData: IModelElement
 {
   /// <summary>
   ///   Record Is Included in Mail Merge.

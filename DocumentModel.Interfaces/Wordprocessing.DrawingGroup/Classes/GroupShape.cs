@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.DrawingGroup;
 /// <summary>
 ///   Defines the GroupShape Class.
 /// </summary>
-public class GroupShape: ModelElement
+public interface GroupShape: IModelElement
 {
   public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
   public NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get; set; }

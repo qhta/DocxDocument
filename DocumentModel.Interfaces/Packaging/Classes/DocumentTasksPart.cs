@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DocumentTasksPart
 /// </summary>
-public class DocumentTasksPart: ModelElement
+public interface DocumentTasksPart: IModelElement
 {
   public string? ContentType { get; set; }
   public string? RelationshipType { get; set; }

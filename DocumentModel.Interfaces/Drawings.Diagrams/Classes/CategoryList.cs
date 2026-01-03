@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Category List.
 /// </summary>
-public class CategoryList: ModelElement
+public interface CategoryList: IModelElement
 {
   public Collection<Category>? Categories { get; set; }
 }

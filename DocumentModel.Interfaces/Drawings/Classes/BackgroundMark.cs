@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BackgroundMark Class.
+///   Defines the BackgroundMark interface.
 /// </summary>
-public class BackgroundMark: ModelElement
+public interface BackgroundMark: IModelElement
 {
   /// <summary>
   ///   x1, this property is only available in Office 2010 and later.

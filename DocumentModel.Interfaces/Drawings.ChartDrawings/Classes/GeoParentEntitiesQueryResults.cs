@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoParentEntitiesQueryResults Class.
 /// </summary>
-public class GeoParentEntitiesQueryResults: ModelElement
+public interface GeoParentEntitiesQueryResults: IModelElement
 {
   public Collection<GeoParentEntitiesQueryResult>? Items { get; set; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Effect Style.
 /// </summary>
-public class EffectStyle: ModelElement
+public interface EffectStyle: IModelElement, ICollectionItem
 {
   public EffectList? EffectList { get; set; }
   public EffectDag? EffectDag { get; set; }

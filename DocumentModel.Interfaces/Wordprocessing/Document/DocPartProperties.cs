@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Glossary Document Entry Properties.
 /// </summary>
-public class DocPartProperties: ModelElement
+public interface DocPartProperties: IModelElement
 {
   /// <summary>
   ///   Entry Name.

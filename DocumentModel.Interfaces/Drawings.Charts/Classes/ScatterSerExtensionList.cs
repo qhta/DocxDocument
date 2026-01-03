@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ScatterSerExtensionList Class.
 /// </summary>
-public class ScatterSerExtensionList: ModelElement
+public interface ScatterSerExtensionList: IModelElement
 {
   public Collection<ScatterSerExtension>? ScatterSerExtensions { get; set; }
 }

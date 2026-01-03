@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Run.
 /// </summary>
-public class Run: ModelElement
+public interface Run: IModelElement
 {
   /// <summary>
   ///   Text Character Properties.

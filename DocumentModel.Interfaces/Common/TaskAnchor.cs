@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskAnchor Class.
 /// </summary>
-public class TaskAnchor: ModelElement
+public interface TaskAnchor: IModelElement
 {
   /// <summary>
   ///   CommentAnchor.

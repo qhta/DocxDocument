@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Paragraphs.
 /// </summary>
-public class Paragraph: ModelElement
+public interface Paragraph: IModelElement
 {
   /// <summary>
   ///   Text Paragraph Properties.

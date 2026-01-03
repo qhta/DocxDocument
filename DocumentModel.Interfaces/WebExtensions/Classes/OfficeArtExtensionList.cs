@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 ///   Defines the OfficeArtExtensionList Class.
 /// </summary>
-public class OfficeArtExtensionList: ModelElement
+public interface OfficeArtExtensionList: IModelElement
 {
   public Collection<Drawings.Extension>? Extensions { get; set; }
 }

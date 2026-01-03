@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   CellDeletion track change type
 /// </summary>
-public class CellDeletion: TrackChangeType
+public interface CellDeletion: TrackChangeType
 {
 }

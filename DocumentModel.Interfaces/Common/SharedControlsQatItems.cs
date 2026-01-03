@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the SharedControlsQatItems Class.
 /// </summary>
-public class SharedControlsQatItems: ModelElement
+public interface SharedControlsQatItems: IModelElement
 {
   public ControlCloneQat? ControlCloneQat { get; set; }
   public ButtonRegular? ButtonRegular { get; set; }

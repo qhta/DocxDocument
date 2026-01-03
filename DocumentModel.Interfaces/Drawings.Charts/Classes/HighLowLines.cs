@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the HighLowLines Class.
 /// </summary>
-public class HighLowLines: ModelElement
+public interface HighLowLines: IModelElement
 {
   public ChartShapeProperties? ChartShapeProperties { get; set; }
 }

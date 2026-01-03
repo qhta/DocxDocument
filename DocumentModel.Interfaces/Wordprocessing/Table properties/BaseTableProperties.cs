@@ -1,9 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Base class for all TableProperties classes.
+///   Base interface for all TableProperties classes.
 ///   Contains common properties.
 /// </summary>
-public abstract class BaseTableProperties: ModelElement
+public interface BaseTableProperties: IModelElement
 {
   /// <summary>
   ///   Table Alignment.

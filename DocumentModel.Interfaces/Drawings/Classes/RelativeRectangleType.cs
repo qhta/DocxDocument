@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings;
 /// <summary>
-///   Defines the RelativeRectangleType Class.
+///   Defines the RelativeRectangleType interface.
 /// </summary>
-public class RelativeRectangleType: ModelElement
+public interface RelativeRectangleType: IModelElement
 {
   /// <summary>
   ///   Left Offset

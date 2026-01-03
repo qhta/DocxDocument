@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Item Class.
 /// </summary>
-public class Item: ModelElement
+public interface Item: IModelElement
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

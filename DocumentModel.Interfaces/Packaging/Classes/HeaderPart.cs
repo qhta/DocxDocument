@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the HeaderPart
 /// </summary>
-public class HeaderPart: ModelElement
+public interface HeaderPart: IModelElement
 {
   /// <summary>
   ///   Gets the AlternativeFormatImportParts of the HeaderPart

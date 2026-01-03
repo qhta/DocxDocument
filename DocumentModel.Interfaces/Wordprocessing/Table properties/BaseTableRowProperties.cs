@@ -1,9 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Base class for all TableRowProperties classes.
+///   Base interface for all TableRowProperties classes.
 ///   Contains common properties.
 /// </summary>
-public abstract class BaseTableRowProperties: ModelElement
+public interface BaseTableRowProperties: IModelElement
 {
   /// <summary>
   /// Specifies the height of the current table row within the current table. 

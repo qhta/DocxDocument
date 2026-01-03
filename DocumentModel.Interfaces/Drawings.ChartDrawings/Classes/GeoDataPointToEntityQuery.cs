@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoDataPointToEntityQuery Class.
 /// </summary>
-public class GeoDataPointToEntityQuery: ModelElement
+public interface GeoDataPointToEntityQuery: IModelElement
 {
   /// <summary>
   ///   entityType, this property is only available in Office 2016 and later.

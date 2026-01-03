@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Paragraph Class.
 /// </summary>
-public class SubDocumentReference: IRelationshipType, 
+public interface SubDocumentReference: IRelationshipType, 
   IParagraphContent, 
   ISdtRunContent, 
   IBidirectionalContent

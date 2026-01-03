@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BackgroundNormalProperties Class.
+///   Defines the BackgroundNormalProperties interface.
 /// </summary>
-public class BackgroundNormalProperties: ModelElement
+public interface BackgroundNormalProperties: IModelElement
 {
   /// <summary>
   ///   OfficeArtExtensionList.

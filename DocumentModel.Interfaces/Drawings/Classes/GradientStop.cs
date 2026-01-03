@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Gradient stops.
 /// </summary>
-public class GradientStop: ModelElement
+public interface GradientStop: IModelElement, ICollectionItem
 {
   /// <summary>
   ///   Position

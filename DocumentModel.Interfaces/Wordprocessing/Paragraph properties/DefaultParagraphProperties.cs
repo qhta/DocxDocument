@@ -1,8 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Default Paragraph Properties class.
+///   Default Paragraph Properties interface.
 ///   Used in <see cref="DocDefaults"/>.
 /// </summary>
-public class DefaultParagraphProperties: BaseParagraphProperties
+public interface DefaultParagraphProperties: BaseParagraphProperties
 {
 }

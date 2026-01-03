@@ -3,12 +3,12 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableLook Class.
 /// </summary>
-public class TableLook: ModelElement
+public interface TableLook: IModelElement
 {
   /// <summary>
   ///   val
   /// </summary>
-  public HexChar? Val { get; set; }
+  public IHexChar? Val { get; set; }
   /// <summary>
   ///   firstRow, this property is only available in Office 2010 and later.
   /// </summary>

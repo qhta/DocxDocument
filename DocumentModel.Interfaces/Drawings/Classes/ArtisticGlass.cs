@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticGlass Class.
+///   Defines the ArtisticGlass interface.
 /// </summary>
-public class ArtisticGlass: ModelElement
+public interface ArtisticGlass: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticWatercolorSponge Class.
+///   Defines the ArtisticWatercolorSponge interface.
 /// </summary>
-public class ArtisticWatercolorSponge: ModelElement
+public interface ArtisticWatercolorSponge: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

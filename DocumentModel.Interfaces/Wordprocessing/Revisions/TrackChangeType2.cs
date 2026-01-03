@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TrackChangeType Class.
 /// </summary>
-public class TrackChangeType2: ModelElement, IRangeMarkupElement, ICommonContent
+public interface TrackChangeType2: IModelElement, IRangeMarkupElement, ICommonContent
 {
   /// <summary>
   ///   author

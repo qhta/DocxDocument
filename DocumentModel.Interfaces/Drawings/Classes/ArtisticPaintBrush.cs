@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticPaintBrush Class.
+///   Defines the ArtisticPaintBrush interface.
 /// </summary>
-public class ArtisticPaintBrush: ModelElement
+public interface ArtisticPaintBrush: IModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

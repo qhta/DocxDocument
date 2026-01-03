@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the HiddenScene3D Class.
+///   Defines the HiddenScene3D interface.
 /// </summary>
-public class HiddenScene3D: ModelElement
+public interface HiddenScene3D: IModelElement
 {
   /// <summary>
   ///   Camera.

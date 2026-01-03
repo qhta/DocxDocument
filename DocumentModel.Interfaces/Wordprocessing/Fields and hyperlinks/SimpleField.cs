@@ -1,10 +1,10 @@
-using DocumentModel.BaseTypes;
+
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   This element specifies the presence of a simple field at the current location in the document. 
 ///   The semantics of this field are defined via its field codes.
 /// </summary>
-public class SimpleField: ElementCollection<IModelElement>, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
+public interface SimpleField: IElementCollection<IModelElement>, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
 {
   /// <summary>
   ///   Specifies the field codes for the simple field. The possible field codes are defined in §17.16.5.

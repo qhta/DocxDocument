@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the LineChartSeries Class.
 /// </summary>
-public class LineChartSeries3: ModelElement
+public interface LineChartSeries3: IModelElement
 {
   /// <summary>
   ///   Index.

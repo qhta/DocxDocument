@@ -7,6 +7,6 @@ namespace DocumentModel.Wordprocessing;
 ///   These properties affect the appearance of all cells in the current row within the parent table, 
 ///   but can be overridden by individual cell-level properties, as defined by each property.
 /// </summary>
-public class PreviousTableRowProperties: BaseTableRowProperties
+public interface PreviousTableRowProperties: BaseTableRowProperties
 {
 }

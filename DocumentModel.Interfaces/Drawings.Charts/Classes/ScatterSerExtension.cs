@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ScatterSerExtension Class.
 /// </summary>
-public class ScatterSerExtension: ModelElement
+public interface ScatterSerExtension: IModelElement
 {
   /// <summary>
   ///   URI

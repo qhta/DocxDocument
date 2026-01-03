@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ColorMap Class.
+///   Defines the ColorMap interface.
 /// </summary>
-public class ColorMap: ModelElement
+public interface ColorMap: IModelElement
 {
   public ExtensionList? ExtensionList { get; set; }
 }

@@ -3,7 +3,7 @@
 /// <summary>
 /// Element of the ComboBox, DropDown or Gallery selection.
 /// </summary>
-public interface ISelectionItem: IModelElement, ICollectionItem
+public interface ISelectionItem : IModelElement, ICollectionItem
 {
   /// <summary>
   ///   Specifies the identifier for a custom control. All new custom controls MUST have unique identifiers.
@@ -36,7 +36,5 @@ public interface ISelectionItem: IModelElement, ICollectionItem
   /// <summary>
   ///   Specifies a string to be shown as the supertip for this control.
   /// </summary>
-  public string? Supertip
-  {
-    get; set;
-  }
+  public string? Supertip { get; set; }
+}

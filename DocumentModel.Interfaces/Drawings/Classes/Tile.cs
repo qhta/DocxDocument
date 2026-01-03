@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Tile.
 /// </summary>
-public class Tile: ModelElement
+public interface Tile: IModelElement
 {
   /// <summary>
   ///   Horizontal Offset

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FilteredSeriesTitle Class.
 /// </summary>
-public class FilteredSeriesTitle: ModelElement
+public interface FilteredSeriesTitle: IModelElement
 {
   /// <summary>
   ///   ChartText.

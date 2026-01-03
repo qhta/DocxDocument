@@ -9,7 +9,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This start marker is matched with the appropriately paired end marker 
 ///   by matching the value of the Id attribute from the associated permEnd element. 
 /// </summary>
-public class PermStart: MarkupRangeElement, ICommonContent
+public interface PermStart: MarkupRangeElement, ICommonContent
 {
   /// <summary>
   ///   Specifies the zero-based index of the first column in this row which shall be part of this range permission.

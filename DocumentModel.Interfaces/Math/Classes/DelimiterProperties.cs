@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 ///   Specifies the properties of <see cref="Delimiter"/>, including the enclosing and separating characters, 
 ///   and the properties that affect the shape of the delimiters.
 /// </summary>
-public class DelimiterProperties: ModelElement
+public interface DelimiterProperties: IModelElement
 {
   /// <summary>
   ///   Delimiter Beginning Character.

@@ -17,6 +17,6 @@ namespace DocumentModel.Wordprocessing;
 ///   The Id attribute on this element shall be used to link this element 
 ///   with the corresponding end of a move destination container in the document. 
 /// </summary>
-public class MoveToRangeStart: MoveBookmarkType
+public interface MoveToRangeStart: MoveBookmarkType
 {
 }

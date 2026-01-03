@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the DataPoint3D Class.
 /// </summary>
-public class DataPoint3D: ModelElement
+public interface DataPoint3D: IModelElement
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }
