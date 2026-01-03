@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a collection of context menus that define right-click menu options for Office UI customization.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a container for custom context menus
+///   This interface defines a container for custom context menus
 ///   that can be displayed when users right-click on specific UI elements or document areas in Office applications.
 ///   Context menus provide contextual actions and commands relevant to the selected element or current context,
 ///   enhancing user productivity by offering quick access to frequently used operations. The collection enables

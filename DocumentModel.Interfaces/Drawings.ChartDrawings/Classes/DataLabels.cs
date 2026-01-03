@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the collection of data labels and their default settings for a chart series or chart.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the data labels configuration that applies
+///   This interface defines the data labels configuration that applies
 ///   to a series or entire chart, providing both default formatting settings and individual label definitions.
 ///   The DataLabels interface serves as a container that establishes default properties (position, number formatting,
 ///   styling, text formatting, visibility, and separator) that apply to all labels in the series unless overridden

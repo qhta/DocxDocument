@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the label displayed for axis units in a chart.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the label element that describes
+///   This interface defines the label element that describes
 ///   the units or scale applied to a chart axis. The axis units label provides textual context for the
 ///   magnitude or measurement type of axis values (e.g., "in millions", "°Celsius", "USD", "percentage").
 ///   The label includes text content, visual styling properties through shape properties, text formatting

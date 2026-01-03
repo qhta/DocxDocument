@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the title displayed for a chart axis.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the title element that labels
+///   This interface defines the title element that labels
 ///   a chart axis, providing context and meaning to the data represented along that axis. The axis
 ///   title includes the text content, visual styling properties through shape properties, text formatting
 ///   properties, and support for custom extensions. Axis titles help users understand what data dimension

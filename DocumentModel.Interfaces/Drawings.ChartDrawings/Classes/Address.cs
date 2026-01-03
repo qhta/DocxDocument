@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a geographic address used for chart data visualization and mapping features.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a structured address representation
+///   This interface defines a structured address representation
 ///   used in chart drawings, particularly for geographic and map-based visualizations. The address contains
 ///   standardized components including street address, country/region, administrative districts, postal code,
 ///   locality, and ISO country code. This structured format enables accurate geocoding and location-based

@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a single historical event that records a change or action performed on a task.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and captures detailed information about
+///   This interface captures detailed information about
 ///   task-related events such as creation, assignment, scheduling changes, priority updates,
 ///   and deletions. Each event includes attribution, timing, and specific event details.
 /// </remarks>

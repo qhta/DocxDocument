@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents an axis in a chart drawing that defines the scale and appearance of data dimensions.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a chart axis that provides the framework
+///   This interface defines a chart axis that provides the framework
 ///   for displaying and measuring data values in chart visualizations. Axes can be category axes (for discrete
 ///   data like labels or dates) or value axes (for continuous numeric data), each with their own scaling properties.
 ///   The axis includes comprehensive formatting options including title, units, gridlines (major and minor),

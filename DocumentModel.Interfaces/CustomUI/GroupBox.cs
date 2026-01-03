@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a container control that visually groups related controls together in the backstage view.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a grouping container that organizes
+///   This interface defines a grouping container that organizes
 ///   related controls within the Office backstage interface. Group boxes provide visual boundaries with
 ///   optional labels to separate and categorize controls, improving the organization and usability of
 ///   backstage views. They support various control types including buttons, checkboxes, text inputs,

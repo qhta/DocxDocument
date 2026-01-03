@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the legend that identifies data series and categories in a chart visualization.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the legend element that provides a key for
+///   This interface defines the legend element that provides a key for
 ///   interpreting chart data by displaying series names, category labels, and their associated visual indicators
 ///   (such as colors, patterns, or symbols). The legend helps users understand which visual elements correspond to
 ///   which data series or categories in the chart, making multi-series or categorized data visualizations interpretable.

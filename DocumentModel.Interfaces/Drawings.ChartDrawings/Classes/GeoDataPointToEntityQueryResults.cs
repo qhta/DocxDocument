@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a collection of data point-to-entity mapping query results cached for map-based chart visualizations.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a collection of query results that cache
+///   This interface defines a collection of query results that cache
 ///   data point-to-entity mappings retrieved from mapping services or geographic data providers. Each result in
 ///   the collection contains both coordinate-based (<see cref="GeoDataPointQuery"/>) and entity-based
 ///   (<see cref="GeoDataPointToEntityQuery"/>) query specifications, enabling flexible caching strategies that

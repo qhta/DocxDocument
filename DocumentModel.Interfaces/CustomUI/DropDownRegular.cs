@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a regular dropdown control that displays a list of selectable items, suitable for use within menus and button groups.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a streamlined dropdown control optimized for use
+///   This interface defines a streamlined dropdown control optimized for use
 ///   within constrained ribbon contexts such as menus, button groups, and other containers. Unlike the standard dropdown
 ///   control which may have additional sizing options, DropDownRegular provides a simplified dropdown implementation
 ///   that maintains consistent dimensions appropriate for its context. The control allows users to select from a

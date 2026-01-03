@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the unit display information for a chart axis.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the unit specification and labeling
+///   This interface defines the unit specification and labeling
 ///   for a chart axis, providing context for the scale and magnitude of values displayed. Axis units help
 ///   users interpret large or small numbers by indicating multipliers (such as "Millions", "Thousands",
 ///   "Billions") or measurement units (such as "°C", "%", "USD"). The unit information includes both

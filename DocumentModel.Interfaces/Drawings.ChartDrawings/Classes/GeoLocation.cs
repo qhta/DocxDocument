@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a complete geographic location with coordinates, entity identification, and address information.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a comprehensive geographic location representation
+///   This interface defines a comprehensive geographic location representation
 ///   that combines coordinate positioning (<see cref="Latitude"/> and <see cref="Longitude"/>), entity identification
 ///   (<see cref="EntityName"/> and <see cref="EntityType"/>), and structured address data (<see cref="Address"/>).
 ///   This complete location structure supports various map-based chart scenarios including geocoding (converting addresses

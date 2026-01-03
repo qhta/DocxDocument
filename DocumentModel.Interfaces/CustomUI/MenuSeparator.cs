@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a separator control that provides visual division between menu items.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a visual divider used to organize
+///   This interface defines a visual divider used to organize
 ///   and separate groups of related items within menus. Menu separators can optionally display a title
 ///   to label sections of the menu, providing better organization and improving usability by creating
 ///   logical groupings of commands. Separators support positioning relative to other menu items and

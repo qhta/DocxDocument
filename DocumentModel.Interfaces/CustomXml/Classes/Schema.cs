@@ -4,7 +4,7 @@ namespace DocumentModel.CustomXml;
 ///   Represents a reference to an XML schema that defines the structure and validation rules for custom XML data.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and <see cref="ICollectionItem"/> and defines a schema
+///   This interface <see cref="ICollectionItem"/> and defines a schema
 ///   reference used to validate and describe the structure of custom XML data stored within Office documents.
 ///   Each schema reference includes the schema's namespace URI, optional manifest location for schema discovery,
 ///   and the physical location of the schema file. Multiple schemas can be associated with a single custom XML

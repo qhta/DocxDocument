@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents embedded data stored directly within a chart definition.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the structure for chart data that is
+///   This interface defines the structure for chart data that is
 ///   stored directly within the chart rather than referenced from external sources. Embedded data makes the
 ///   chart self-contained and portable, eliminating dependencies on external data sources such as spreadsheets
 ///   or databases. The data is organized into dimensions: numeric dimensions for continuous values (such as

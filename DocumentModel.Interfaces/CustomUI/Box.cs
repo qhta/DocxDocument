@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a container control that organizes and layouts child controls within the ribbon interface.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a flexible container that can hold
+///   This interface defines a flexible container that can hold
 ///   various types of controls including buttons, checkboxes, galleries, menus, and nested boxes.
 ///   Boxes provide layout capabilities with customizable styling to organize controls in a structured manner.
 ///   They support both horizontal and vertical arrangements depending on the specified box style.

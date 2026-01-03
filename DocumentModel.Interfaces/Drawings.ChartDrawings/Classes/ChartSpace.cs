@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the complete chart space container that encapsulates all chart elements and their configurations.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the root container for a chart drawing
+///   This interface defines the root container for a chart drawing
 ///   that encompasses the entire chart structure including data sources, visual representation, styling, and
 ///   output settings. The chart space serves as the top-level wrapper that combines the chart data configuration,
 ///   the chart visualization itself, global styling properties, text formatting, color mappings, format overrides,

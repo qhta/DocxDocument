@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a regular button control that executes an action when clicked, suitable for use within menus and button groups.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a streamlined button control optimized for use
+///   This interface defines a streamlined button control optimized for use
 ///   within constrained ribbon contexts such as menus, button groups, and split buttons. Unlike the standard
 ///   <see cref="Button"/> control which has additional sizing options, ButtonRegular provides a simplified button
 ///   implementation that maintains consistent dimensions appropriate for its context. The control supports

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a reference to external data source for a chart with automatic update capabilities.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines an external data source connection for charts
+///   This interface defines an external data source connection for charts
 ///   that links to data stored outside the chart definition, typically in Excel worksheets, database queries, or
 ///   other external data providers. External data references enable charts to remain synchronized with their source
 ///   data through relationship-based connections, supporting dynamic visualizations that automatically reflect changes

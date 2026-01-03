@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a group of controls within a task form in the Office UI.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a logical grouping of controls
+///   This interface defines a logical grouping of controls
 ///   displayed in a task pane or form. Task form groups organize related controls and provide
 ///   options for labeling, visibility, and sizing.
 /// </remarks>

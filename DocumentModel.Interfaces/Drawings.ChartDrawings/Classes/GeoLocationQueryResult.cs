@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the result of a geographic location query, containing both the query specification and retrieved location data.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a query result structure that pairs a geographic
+///   This interface defines a query result structure that pairs a geographic
 ///   location query (<see cref="GeoLocationQuery"/>) with its corresponding location results (<see cref="GeoLocations"/>).
 ///   This structure preserves the association between the query parameters (address components including country, administrative
 ///   divisions, postal code, and optional entity type) and the geographic locations retrieved through geocoding operations.

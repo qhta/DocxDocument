@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a string value associated with a specific index position in chart data.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a string value element that is positioned
+///   This interface defines a string value element that is positioned
 ///   at a specific index within a chart data series or category collection. Chart string values are typically
 ///   used for category labels, data point labels, or series names that need to be associated with a particular
 ///   position in the data structure. The index-based approach allows for sparse data representations where not

@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a regular menu control that displays a dropdown list of commands within other menus or controls.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a streamlined menu control suitable for use
+///   This interface defines a streamlined menu control suitable for use
 ///   within button groups, other menus, and constrained ribbon contexts. Unlike the standard <see cref="Menu"/>
 ///   control which has additional sizing options, MenuRegular provides a simplified menu implementation
 ///   optimized for nested menu scenarios. It presents a hierarchical collection of commands and controls

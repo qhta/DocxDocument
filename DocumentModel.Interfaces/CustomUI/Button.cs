@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a button control that executes an action when clicked in the ribbon interface.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a clickable button control
+///   This interface defines a clickable button control
 ///   that can be placed in various ribbon locations such as groups, menus, and containers.
 ///   Buttons support customizable appearance with images, labels, tooltips, keyboard shortcuts,
 ///   and can have their state and behavior controlled through static properties or dynamic callbacks.

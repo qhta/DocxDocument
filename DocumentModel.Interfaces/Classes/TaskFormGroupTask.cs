@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents an individual task within a task form group category.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a single actionable task
+///   This interface defines a single actionable task
 ///   within a <see cref="TaskFormGroupCategory"/>. Tasks provide interactive elements with
 ///   customizable appearance, behavior, and positioning within the task pane UI.
 /// </remarks>

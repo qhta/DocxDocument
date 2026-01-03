@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a combo box control that combines text input with a dropdown list of selectable items.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a combo box control that allows users
+///   This interface defines a combo box control that allows users
 ///   to either type text directly or select from a predefined list of options. Unlike a simple dropdown,
 ///   the combo box provides an editable text field, making it suitable for scenarios where users need
 ///   flexibility to enter custom values or select from suggestions. The control supports both static and

@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a collection of top-level controls that can be displayed within a backstage group.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and provides access to various control types
+///   This interface provides access to various control types
 ///   that can be positioned at the top level of a backstage group. These controls include buttons,
 ///   checkboxes, text inputs, dropdowns, radio groups, hyperlinks, labels, group boxes, layout containers,
 ///   and images, providing a comprehensive set of UI elements for backstage customization.

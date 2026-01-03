@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a toggle button control that maintains an on/off pressed state in the ribbon interface.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a button control that toggles between
+///   This interface defines a button control that toggles between
 ///   pressed (on) and unpressed (off) states when clicked. Unlike a standard <see cref="Button"/> which
 ///   executes a single action, toggle buttons maintain their state to indicate whether a feature or option
 ///   is currently active. They are commonly used for formatting options (like Bold or Italic) or to show/hide

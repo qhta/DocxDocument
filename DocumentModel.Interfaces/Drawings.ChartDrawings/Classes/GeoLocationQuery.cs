@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a query for geocoding address components to determine geographic coordinates and location information.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a geocoding query specification that converts
+///   This interface defines a geocoding query specification that converts
 ///   structured address components into geographic location data including coordinates, entity identification, and
 ///   complete address information. The query accepts partial or complete address information through administrative
 ///   division properties (<see cref="CountryRegion"/>, <see cref="AdminDistrict1"/>, <see cref="AdminDistrict2"/>),

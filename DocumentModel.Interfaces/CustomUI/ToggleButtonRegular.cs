@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a regular toggle button control that maintains an on/off pressed state, suitable for use within menus and button groups.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a streamlined toggle button control optimized for use
+///   This interface defines a streamlined toggle button control optimized for use
 ///   within constrained ribbon contexts such as menus, button groups, and other containers. Unlike the standard
 ///   <see cref="ToggleButton"/> control which has additional sizing options, ToggleButtonRegular provides a simplified
 ///   toggle button implementation that maintains consistent dimensions appropriate for its context. Like all toggle buttons,

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a geographic entity within a hierarchical structure, providing identification and classification for parent-child geographic relationships.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a geographic entity that participates in hierarchical
+///   This interface defines a geographic entity that participates in hierarchical
 ///   geographic relationships, such as parent-child containment structures used in map-based chart drill-down navigation.
 ///   Unlike the basic <see cref="GeoEntity"/> which provides only name and type, GeoHierarchyEntity includes a unique
 ///   identifier (<see cref="EntityId"/>) enabling precise entity reference and correlation across geographic queries and

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the title displayed for a chart with positioning and formatting options.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the title element that appears at the
+///   This interface defines the title element that appears at the
 ///   top or other designated position of a chart, providing a descriptive label for the entire visualization.
 ///   The chart title includes comprehensive positioning control (side position and alignment), overlay behavior
 ///   for space optimization, text content, visual styling through shape properties, text formatting properties,

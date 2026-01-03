@@ -4,7 +4,7 @@ namespace DocumentModel.CustomXml;
 ///   Represents a collection of XML schema references associated with a custom XML data store.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a collection of <see cref="SchemaReference"/>
+///   This interface defines a collection of <see cref="SchemaReference"/>
 ///   objects that identify the XML schemas used to validate and describe the structure of custom XML data.
 ///   Each <see cref="DataStoreItem"/> can have an associated SchemaReferences collection that specifies one or
 ///   more schemas governing the XML data's structure and validation rules. Multiple schema references enable

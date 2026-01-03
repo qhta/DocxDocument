@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a group container within a ribbon tab that organizes related controls.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a logical grouping of controls
+///   This interface defines a logical grouping of controls
 ///   within a ribbon tab. Groups are the primary organizational unit in the ribbon interface,
 ///   containing collections of related commands, buttons, galleries, and other controls.
 ///   Groups support visual customization with labels, images, tooltips, and can include a dialog box launcher

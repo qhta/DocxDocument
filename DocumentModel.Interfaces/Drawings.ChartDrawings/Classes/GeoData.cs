@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents geographic data for a specific entity including identification, bounding box coordinates, and geometric boundaries.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines comprehensive geographic information for a single
+///   This interface defines comprehensive geographic information for a single
 ///   geographic entity used in map-based chart visualizations. The geographic data includes entity identification
 ///   (<see cref="EntityName"/> and <see cref="EntityId"/>), a bounding box defining the entity's geographic extent
 ///   (<see cref="East"/>, <see cref="West"/>, <see cref="North"/>, <see cref="South"/>), detailed boundary polygons

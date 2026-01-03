@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a label that displays information for a specific data point in a chart.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a data label element that provides textual
+///   This interface defines a data label element that provides textual
 ///   or visual information about individual data points in a chart. Data labels help users understand specific
 ///   values, categories, series names, or other contextual information directly on the chart without requiring
 ///   reference to axes or legends. Each data label is associated with a specific data point through an index,

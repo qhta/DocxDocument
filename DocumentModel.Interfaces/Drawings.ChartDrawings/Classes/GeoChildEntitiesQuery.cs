@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a query for retrieving child geographic entities within a specific parent geographic entity.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a query specification used to retrieve child
+///   This interface defines a query specification used to retrieve child
 ///   geographic entities that are contained within a parent geographic entity. The query enables map-based charts
 ///   to request hierarchical geographic information from mapping services or cached geographic data, supporting
 ///   drill-down navigation and progressive detail display in geographic visualizations. By specifying a parent

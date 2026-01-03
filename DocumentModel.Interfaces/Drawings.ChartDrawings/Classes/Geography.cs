@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the geographic configuration and settings for map-based chart visualizations.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines the comprehensive geographic settings that control
+///   This interface defines the comprehensive geographic settings that control
 ///   how map-based charts render and display geographic data. The geography configuration includes the map projection
 ///   type (<see cref="ProjectionType"/>) which determines how the spherical Earth is represented on a flat chart surface,
 ///   the viewed region type (<see cref="ViewedRegionType"/>) which specifies the geographic scope and detail level,

@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a menu control that displays a dropdown list of commands and controls in the ribbon interface.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a menu control that presents
+///   This interface defines a menu control that presents
 ///   a hierarchical collection of commands when clicked. Menus can contain various child controls
 ///   including buttons, checkboxes, galleries, toggle buttons, separators, split buttons, and nested menus.
 ///   They support customizable appearance with images, labels, tooltips, sizing options, and can have

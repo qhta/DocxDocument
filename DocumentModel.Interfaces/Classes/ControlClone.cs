@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a cloned instance of a built-in or custom Office ribbon control with customizable properties.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a control clone that replicates an existing
+///   This interface defines a control clone that replicates an existing
 ///   Office control (either built-in or custom) while allowing customization of its appearance, behavior, and
 ///   positioning. Control clones enable add-ins to reuse existing control definitions without duplicating their
 ///   entire implementation, providing an efficient way to include standard Office commands or previously defined

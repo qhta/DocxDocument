@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the result of a geographic data entity query, containing both the query specification and retrieved entity data.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a query result structure that pairs a geographic
+///   This interface defines a query result structure that pairs a geographic
 ///   entity query (<see cref="GeoDataEntityQuery"/>) with its corresponding geographic data (<see cref="GeoData"/>).
 ///   This structure preserves the association between the query parameters (entity identifier and optional entity type)
 ///   and the comprehensive geographic information retrieved in response to that query. By maintaining this query-result

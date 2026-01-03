@@ -4,7 +4,7 @@ namespace DocumentModel.CustomXml;
 ///   Represents a reference to an associated XML schema by its target namespace.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a lightweight schema reference
+///   This interface defines a lightweight schema reference
 ///   that identifies an XML schema through its target namespace URI. Unlike the <see cref="Schema"/>
 ///   interface which includes manifest and physical file locations, SchemaReference provides a minimal
 ///   representation focused solely on namespace identification. This is typically used within a

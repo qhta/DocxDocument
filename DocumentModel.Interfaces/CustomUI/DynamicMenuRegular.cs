@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Represents a regular dynamic menu control that generates menu items at runtime, suitable for use within menus and button groups.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IModelElement"/> and defines a streamlined dynamic menu control optimized for use
+///   This interface defines a streamlined dynamic menu control optimized for use
 ///   within constrained ribbon contexts such as menus, button groups, and other containers. Unlike the standard
 ///   <see cref="DynamicMenu"/> control which has additional sizing options, DynamicMenuRegular provides a simplified
 ///   dynamic menu implementation that maintains consistent dimensions appropriate for its context. The control creates
