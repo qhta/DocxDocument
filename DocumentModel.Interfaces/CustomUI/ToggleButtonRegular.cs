@@ -1,132 +1,383 @@
 namespace DocumentModel;
 
 /// <summary>
-///   Defines the ToggleButtonRegular Class.
+///   Represents a regular toggle button control that maintains an on/off pressed state, suitable for use within menus and button groups.
 /// </summary>
-public interface ToggleButtonRegular: IModelElement
+/// <remarks>
+///   This interface extends <see cref="IModelElement"/> and defines a streamlined toggle button control optimized for use
+///   within constrained ribbon contexts such as menus, button groups, and other containers. Unlike the standard
+///   <see cref="ToggleButton"/> control which has additional sizing options, ToggleButtonRegular provides a simplified
+///   toggle button implementation that maintains consistent dimensions appropriate for its context. Like all toggle buttons,
+///   it maintains a pressed (on) or unpressed (off) state to indicate whether a feature or option is currently active.
+///   The control is commonly used for formatting options or to show/hide UI elements in compact contexts, and supports
+///   customizable appearance with images, labels, tooltips, and can have its state and behavior controlled through
+///   static properties or dynamic callbacks.
+///   This functionality is available in Office 2010 and later versions.
+/// </remarks>
+public interface ToggleButtonRegular : IModelElement
 {
   /// <summary>
-  ///   getPressed, this property is only available in Office 2010 and later.
+  ///   Gets or sets the name of a callback function that returns the current pressed state of the toggle button.
   /// </summary>
+  /// <value>
+  ///   A string containing the callback function name, or <c>null</c> if not tracking the pressed state dynamically.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The callback function should return a boolean value: <c>true</c> if the button is pressed (on),
+  ///   <c>false</c> if unpressed (off). This is the primary mechanism for synchronizing the button's
+  ///   visual state with the application's state.
+  /// </remarks>
   public string? GetPressed { get; set; }
+
   /// <summary>
-  ///   onAction, this property is only available in Office 2010 and later.
+  ///   Gets or sets the name of the callback function executed when the toggle button is clicked.
   /// </summary>
+  /// <value>
+  ///   A string containing the callback function name, or <c>null</c> if no action is defined.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The callback function is invoked each time the button is clicked to toggle its state.
+  /// </remarks>
   public string? OnAction { get; set; }
+
   /// <summary>
-  ///   enabled, this property is only available in Office 2010 and later.
+  ///   Gets or sets a value indicating whether the toggle button is enabled and can be clicked.
   /// </summary>
+  /// <value>
+  ///   <c>true</c> if the button is enabled; <c>false</c> if disabled; or <c>null</c> to use the default enabled state.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  /// </remarks>
   public bool? Enabled { get; set; }
+
   /// <summary>
-  ///   getEnabled, this property is only available in Office 2010 and later.
+  ///   Gets or sets the name of a callback function that dynamically determines whether the toggle button is enabled.
   /// </summary>
+  /// <value>
+  ///   A string containing the callback function name, or <c>null</c> if the enabled state is not determined dynamically.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The callback function should return a boolean value indicating whether the button should be enabled.
+  /// </remarks>
   public string? GetEnabled { get; set; }
+
   /// <summary>
-  ///   description, this property is only available in Office 2010 and later.
+  ///   Gets or sets the description text that provides additional information about the toggle button.
   /// </summary>
+  /// <value>
+  ///   A string containing the description text, or <c>null</c> if no description is specified.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  /// </remarks>
   public string? Description { get; set; }
+
   /// <summary>
-  ///   getDescription, this property is only available in Office 2010 and later.
+  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's description.
   /// </summary>
+  /// <value>
+  ///   A string containing the callback function name, or <c>null</c> if the description is not determined dynamically.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The callback function should return a string value for the description.
+  /// </remarks>
   public string? GetDescription { get; set; }
+
   /// <summary>
-  ///   image, this property is only available in Office 2010 and later.
+  ///   Gets or sets the custom image identifier for the toggle button icon.
   /// </summary>
+  /// <value>
+  ///   A string containing the image identifier, or <c>null</c> if no custom image is specified.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The image identifier references a custom image resource included in the Office add-in.
+  /// </remarks>
   public string? Image { get; set; }
+
   /// <summary>
-  ///   imageMso, this property is only available in Office 2010 and later.
+  ///   Gets or sets the Microsoft Office image identifier for the toggle button icon.
   /// </summary>
+  /// <value>
+  ///   A string containing the Microsoft Office image identifier, or <c>null</c> if not using a built-in image.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   Use this to display a built-in Office icon for the button.
+  /// </remarks>
   public string? ImageMso { get; set; }
+
   /// <summary>
-  ///   getImage, this property is only available in Office 2010 and later.
+  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's image.
   /// </summary>
+  /// <value>
+  ///   A string containing the callback function name, or <c>null</c> if the image is not determined dynamically.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The callback function should return an image object or identifier.
+  /// </remarks>
   public string? GetImage { get; set; }
+
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   Gets or sets the unique identifier for this toggle button.
   /// </summary>
+  /// <value>
+  ///   A string containing the identifier, or <c>null</c> if no identifier is specified.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  /// </remarks>
   public string? Id { get; set; }
+
   /// <summary>
-  ///   idQ, this property is only available in Office 2010 and later.
+  ///   Gets or sets the qualified identifier for this toggle button.
   /// </summary>
+  /// <value>
+  ///   A string containing the namespace-qualified identifier, or <c>null</c> if not specified.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   Use this when the identifier needs to be unique across multiple namespaces.
+  /// </remarks>
   public string? QualifiedId { get; set; }
+
   /// <summary>
-  ///   tag, this property is only available in Office 2010 and later.
+  ///   Gets or sets an arbitrary tag value for custom data storage.
   /// </summary>
+  /// <value>
+  ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The tag can be used to store application-specific information associated with this toggle button.
+  /// </remarks>
   public string? Tag { get; set; }
+
   /// <summary>
-  ///   idMso, this property is only available in Office 2010 and later.
+  ///   Gets or sets the identifier for a built-in Microsoft Office toggle button.
   /// </summary>
+  /// <value>
+  ///   A string containing the Microsoft Office identifier, or <c>null</c> if not referencing a built-in button.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  /// </remarks>
   public string? IdMso { get; set; }
+
   /// <summary>
-  ///   screentip, this property is only available in Office 2010 and later.
+  ///   Gets or sets the screentip (tooltip) text for the toggle button.
   /// </summary>
+  /// <value>
+  ///   A string containing the screentip text, or <c>null</c> if no screentip is specified.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  /// </remarks>
   public string? Screentip { get; set; }
+
   /// <summary>
-  ///   getScreentip, this property is only available in Office 2010 and later.
+  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's screentip.
   /// </summary>
+  /// <value>
+  ///   A string containing the callback function name, or <c>null</c> if the screentip is not determined dynamically.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The callback function should return a string value for the screentip.
+  /// </remarks>
   public string? GetScreentip { get; set; }
+
   /// <summary>
-  ///   supertip, this property is only available in Office 2010 and later.
+  ///   Gets or sets the supertip (extended tooltip) text for the toggle button.
   /// </summary>
+  /// <value>
+  ///   A string containing the supertip text, or <c>null</c> if no supertip is specified.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   Supertips provide more detailed information than screentips.
+  /// </remarks>
   public string? Supertip { get; set; }
+
   /// <summary>
-  ///   getSupertip, this property is only available in Office 2010 and later.
+  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's supertip.
   /// </summary>
+  /// <value>
+  ///   A string containing the callback function name, or <c>null</c> if the supertip is not determined dynamically.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The callback function should return a string value for the supertip.
+  /// </remarks>
   public string? GetSupertip { get; set; }
+
   /// <summary>
-  ///   label, this property is only available in Office 2010 and later.
+  ///   Gets or sets the display label for the toggle button.
   /// </summary>
+  /// <value>
+  ///   A string containing the label text, or <c>null</c> if no label is specified.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  /// </remarks>
   public string? Label { get; set; }
+
   /// <summary>
-  ///   getLabel, this property is only available in Office 2010 and later.
+  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's label.
   /// </summary>
+  /// <value>
+  ///   A string containing the callback function name, or <c>null</c> if the label is not determined dynamically.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The callback function should return a string value for the label.
+  /// </remarks>
   public string? GetLabel { get; set; }
+
   /// <summary>
-  ///   insertAfterMso, this property is only available in Office 2010 and later.
+  ///   Gets or sets the Microsoft Office identifier after which this toggle button should be inserted.
   /// </summary>
+  /// <value>
+  ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   Use this to position the button relative to a built-in control.
+  /// </remarks>
   public string? InsertAfterMso { get; set; }
+
   /// <summary>
-  ///   insertBeforeMso, this property is only available in Office 2010 and later.
+  ///   Gets or sets the Microsoft Office identifier before which this toggle button should be inserted.
   /// </summary>
+  /// <value>
+  ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   Use this to position the button relative to a built-in control.
+  /// </remarks>
   public string? InsertBeforeMso { get; set; }
+
   /// <summary>
-  ///   insertAfterQ, this property is only available in Office 2010 and later.
+  ///   Gets or sets the qualified identifier after which this toggle button should be inserted.
   /// </summary>
+  /// <value>
+  ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   Use this to position the button relative to another custom control.
+  /// </remarks>
   public string? InsertAfterQualifiedId { get; set; }
+
   /// <summary>
-  ///   insertBeforeQ, this property is only available in Office 2010 and later.
+  ///   Gets or sets the qualified identifier before which this toggle button should be inserted.
   /// </summary>
+  /// <value>
+  ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   Use this to position the button relative to another custom control.
+  /// </remarks>
   public string? InsertBeforeQualifiedId { get; set; }
+
   /// <summary>
-  ///   visible, this property is only available in Office 2010 and later.
+  ///   Gets or sets a value indicating whether the toggle button is visible.
   /// </summary>
+  /// <value>
+  ///   <c>true</c> if the button is visible; <c>false</c> if hidden; or <c>null</c> to use the default visibility.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  /// </remarks>
   public bool? Visible { get; set; }
+
   /// <summary>
-  ///   getVisible, this property is only available in Office 2010 and later.
+  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's visibility.
   /// </summary>
+  /// <value>
+  ///   A string containing the callback function name, or <c>null</c> if visibility is not determined dynamically.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The callback function should return a boolean value indicating whether the button should be visible.
+  /// </remarks>
   public string? GetVisible { get; set; }
+
   /// <summary>
-  ///   keytip, this property is only available in Office 2010 and later.
+  ///   Gets or sets the keyboard shortcut (keytip) for accessing the toggle button.
   /// </summary>
+  /// <value>
+  ///   A string containing the keytip character(s), or <c>null</c> if no keytip is specified.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
+  /// </remarks>
   public string? Keytip { get; set; }
+
   /// <summary>
-  ///   getKeytip, this property is only available in Office 2010 and later.
+  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's keytip.
   /// </summary>
+  /// <value>
+  ///   A string containing the callback function name, or <c>null</c> if the keytip is not determined dynamically.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The callback function should return a string value for the keytip.
+  /// </remarks>
   public string? GetKeytip { get; set; }
+
   /// <summary>
-  ///   showLabel, this property is only available in Office 2010 and later.
+  ///   Gets or sets a value indicating whether the toggle button's label should be displayed.
   /// </summary>
+  /// <value>
+  ///   <c>true</c> if the label is shown; <c>false</c> if hidden; or <c>null</c> to use the default behavior.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  /// </remarks>
   public bool? ShowLabel { get; set; }
+
   /// <summary>
-  ///   getShowLabel, this property is only available in Office 2010 and later.
+  ///   Gets or sets the name of a callback function that dynamically determines whether the label is shown.
   /// </summary>
+  /// <value>
+  ///   A string containing the callback function name, or <c>null</c> if label visibility is not determined dynamically.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The callback function should return a boolean value indicating whether the label should be displayed.
+  /// </remarks>
   public string? GetShowLabel { get; set; }
+
   /// <summary>
-  ///   showImage, this property is only available in Office 2010 and later.
+  ///   Gets or sets a value indicating whether the toggle button's image should be displayed.
   /// </summary>
+  /// <value>
+  ///   <c>true</c> if the image is shown; <c>false</c> if hidden; or <c>null</c> to use the default behavior.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  /// </remarks>
   public bool? ShowImage { get; set; }
+
   /// <summary>
-  ///   getShowImage, this property is only available in Office 2010 and later.
+  ///   Gets or sets the name of a callback function that dynamically determines whether the image is shown.
   /// </summary>
+  /// <value>
+  ///   A string containing the callback function name, or <c>null</c> if image visibility is not determined dynamically.
+  /// </value>
+  /// <remarks>
+  ///   This property is only available in Office 2010 and later.
+  ///   The callback function should return a boolean value indicating whether the image should be displayed.
+  /// </remarks>
   public string? GetShowImage { get; set; }
 }
