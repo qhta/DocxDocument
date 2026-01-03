@@ -6,11 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public interface ContentPart2: IModelElement
 {
   /// <summary>
-  ///   bwMode, this property is only available in Office 2010 and later.
+  ///   bwMode
   /// </summary>
   public BlackWhiteMode? BlackWhiteMode { get; set; }
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id
   /// </summary>
   public string? RelationshipId { get; set; }
   /// <summary>

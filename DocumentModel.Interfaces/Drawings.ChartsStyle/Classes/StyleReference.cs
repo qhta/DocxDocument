@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings.ChartsStyle;
 public interface StyleReference: IModelElement
 {
   /// <summary>
-  ///   idx, this property is only available in Office 2013 and later.
+  ///   idx
   /// </summary>
   public UInt32? Index { get; set; }
   /// <summary>
-  ///   mods, this property is only available in Office 2013 and later.
+  ///   mods
   /// </summary>
   public ListOf<String>? Modifiers { get; set; }
 }

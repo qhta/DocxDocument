@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface CompatExtension: IModelElement
 {
   /// <summary>
-  ///   spid, this property is only available in Office 2010 and later.
+  ///   spid
   /// </summary>
   public string? ShapeId { get; set; }
 }

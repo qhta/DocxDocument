@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ArtisticPastelsSmooth: IModelElement
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  ///   trans
   /// </summary>
   public Int32? Transparancy { get; set; }
   /// <summary>
-  ///   scaling, this property is only available in Office 2010 and later.
+  ///   scaling
   /// </summary>
   public Int32? BrushSize { get; set; }
 }

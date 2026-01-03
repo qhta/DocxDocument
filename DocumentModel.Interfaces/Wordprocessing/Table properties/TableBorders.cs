@@ -14,7 +14,7 @@ public interface TableBorders: IModelElement
   /// </summary>
   public IBorder? LeftBorder { get; set; }
   /// <summary>
-  ///   StartBorder, this property is only available in Office 2010 and later..
+  ///   StartBorder.
   /// </summary>
   public IBorder? StartBorder { get; set; }
   /// <summary>
@@ -26,7 +26,7 @@ public interface TableBorders: IModelElement
   /// </summary>
   public IBorder? RightBorder { get; set; }
   /// <summary>
-  ///   EndBorder, this property is only available in Office 2010 and later..
+  ///   EndBorder.
   /// </summary>
   public IBorder? EndBorder { get; set; }
   /// <summary>

@@ -24,7 +24,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   entity definitions for every parent reference. The parent entity structure supports drill-up navigation in map-based
 ///   charts, enabling users to navigate from detailed regions to broader containing regions while maintaining efficient
 ///   cache storage and quick hierarchical relationship lookups.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface GeoParentEntity : IModelElement
 {
@@ -36,8 +35,7 @@ public interface GeoParentEntity : IModelElement
   ///   or <c>null</c> if no identifier is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity identifier provides a unique, machine-readable reference for the parent geographic entity that
+   ///   The entity identifier provides a unique, machine-readable reference for the parent geographic entity that
   ///   contains or encompasses a child entity in the geographic hierarchy. The identifier typically follows standardized
   ///   formats such as ISO country codes (e.g., "US" for United States, "GB" for United Kingdom, "JP" for Japan),
   ///   administrative division codes (e.g., "US-CA" for California, "US-NY" for New York), or provider-specific entity

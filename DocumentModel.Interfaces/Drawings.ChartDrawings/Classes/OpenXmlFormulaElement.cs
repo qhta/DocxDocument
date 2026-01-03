@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface OpenXmlFormulaElement: IModelElement
 {
   /// <summary>
-  ///   dir, this property is only available in Office 2016 and later.
+  ///   dir
   /// </summary>
   public FormulaDirection? Dir { get; set; }
 }

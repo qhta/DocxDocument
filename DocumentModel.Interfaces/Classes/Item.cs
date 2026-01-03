@@ -7,32 +7,32 @@ namespace DocumentModel;
 public interface Item: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   label, this property is only available in Office 2010 and later.
+  ///   label
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   image, this property is only available in Office 2010 and later.
+  ///   image
   /// </summary>
   public string? Image { get; set; }
 
   /// <summary>
-  ///   imageMso, this property is only available in Office 2010 and later.
+  ///   imageMso
   /// </summary>
   public string? ImageMso { get; set; }
 
   /// <summary>
-  ///   screentip, this property is only available in Office 2010 and later.
+  ///   screentip
   /// </summary>
   public string? Screentip { get; set; }
 
   /// <summary>
-  ///   supertip, this property is only available in Office 2010 and later.
+  ///   supertip
   /// </summary>
   public string? Supertip { get; set; }
 }

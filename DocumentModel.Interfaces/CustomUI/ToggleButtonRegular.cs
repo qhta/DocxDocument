@@ -12,7 +12,6 @@ namespace DocumentModel;
 ///   The control is commonly used for formatting options or to show/hide UI elements in compact contexts, and supports
 ///   customizable appearance with images, labels, tooltips, and can have its state and behavior controlled through
 ///   static properties or dynamic callbacks.
-///   This functionality is available in Office 2010 and later versions.
 /// </remarks>
 public interface ToggleButtonRegular : IModelElement
 {
@@ -23,7 +22,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if not tracking the pressed state dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value: <c>true</c> if the button is pressed (on),
   ///   <c>false</c> if unpressed (off). This is the primary mechanism for synchronizing the button's
   ///   visual state with the application's state.
@@ -37,7 +35,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if no action is defined.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function is invoked each time the button is clicked to toggle its state.
   /// </remarks>
   public string? OnAction { get; set; }
@@ -49,7 +46,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   <c>true</c> if the button is enabled; <c>false</c> if disabled; or <c>null</c> to use the default enabled state.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? Enabled { get; set; }
 
@@ -60,7 +56,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the enabled state is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value indicating whether the button should be enabled.
   /// </remarks>
   public string? GetEnabled { get; set; }
@@ -72,7 +67,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the description text, or <c>null</c> if no description is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Description { get; set; }
 
@@ -83,7 +77,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the description is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the description.
   /// </remarks>
   public string? GetDescription { get; set; }
@@ -95,7 +88,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the image identifier, or <c>null</c> if no custom image is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The image identifier references a custom image resource included in the Office add-in.
   /// </remarks>
   public string? Image { get; set; }
@@ -107,7 +99,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the Microsoft Office image identifier, or <c>null</c> if not using a built-in image.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to display a built-in Office icon for the button.
   /// </remarks>
   public string? ImageMso { get; set; }
@@ -119,7 +110,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the image is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return an image object or identifier.
   /// </remarks>
   public string? GetImage { get; set; }
@@ -131,7 +121,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the identifier, or <c>null</c> if no identifier is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Id { get; set; }
 
@@ -142,7 +131,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this when the identifier needs to be unique across multiple namespaces.
   /// </remarks>
   public string? QualifiedId { get; set; }
@@ -154,7 +142,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The tag can be used to store application-specific information associated with this toggle button.
   /// </remarks>
   public string? Tag { get; set; }
@@ -166,7 +153,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if not referencing a built-in button.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? IdMso { get; set; }
 
@@ -177,7 +163,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the screentip text, or <c>null</c> if no screentip is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Screentip { get; set; }
 
@@ -188,7 +173,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the screentip is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the screentip.
   /// </remarks>
   public string? GetScreentip { get; set; }
@@ -200,7 +184,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the supertip text, or <c>null</c> if no supertip is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Supertips provide more detailed information than screentips.
   /// </remarks>
   public string? Supertip { get; set; }
@@ -212,7 +195,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the supertip is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the supertip.
   /// </remarks>
   public string? GetSupertip { get; set; }
@@ -224,7 +206,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the label text, or <c>null</c> if no label is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Label { get; set; }
 
@@ -235,7 +216,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the label is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the label.
   /// </remarks>
   public string? GetLabel { get; set; }
@@ -247,7 +227,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the button relative to a built-in control.
   /// </remarks>
   public string? InsertAfterMso { get; set; }
@@ -259,7 +238,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the button relative to a built-in control.
   /// </remarks>
   public string? InsertBeforeMso { get; set; }
@@ -271,7 +249,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the button relative to another custom control.
   /// </remarks>
   public string? InsertAfterQualifiedId { get; set; }
@@ -283,7 +260,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the button relative to another custom control.
   /// </remarks>
   public string? InsertBeforeQualifiedId { get; set; }
@@ -295,7 +271,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   <c>true</c> if the button is visible; <c>false</c> if hidden; or <c>null</c> to use the default visibility.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? Visible { get; set; }
 
@@ -306,7 +281,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if visibility is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value indicating whether the button should be visible.
   /// </remarks>
   public string? GetVisible { get; set; }
@@ -318,7 +292,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the keytip character(s), or <c>null</c> if no keytip is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
   /// </remarks>
   public string? Keytip { get; set; }
@@ -330,7 +303,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the keytip is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the keytip.
   /// </remarks>
   public string? GetKeytip { get; set; }
@@ -342,7 +314,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   <c>true</c> if the label is shown; <c>false</c> if hidden; or <c>null</c> to use the default behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? ShowLabel { get; set; }
 
@@ -353,7 +324,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if label visibility is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value indicating whether the label should be displayed.
   /// </remarks>
   public string? GetShowLabel { get; set; }
@@ -365,7 +335,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   <c>true</c> if the image is shown; <c>false</c> if hidden; or <c>null</c> to use the default behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? ShowImage { get; set; }
 
@@ -376,7 +345,6 @@ public interface ToggleButtonRegular : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if image visibility is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value indicating whether the image should be displayed.
   /// </remarks>
   public string? GetShowImage { get; set; }

@@ -20,7 +20,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   service is unavailable or has updated its data. The cache can be refreshed when connectivity is available to
 ///   incorporate updated geographic information, boundary changes, or new location data while preserving the ability
 ///   to render the chart using cached data when updates aren't possible.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface GeoCache : IModelElement
 {
@@ -32,8 +31,7 @@ public interface GeoCache : IModelElement
   ///   or <c>null</c> if no provider is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The provider identifier specifies which geographic data service or mapping provider was used to retrieve
+   ///   The provider identifier specifies which geographic data service or mapping provider was used to retrieve
   ///   the cached geographic information. This enables Office to understand the source and format of the cached
   ///   data, apply appropriate processing and rendering logic, and potentially refresh the cache using the same
   ///   provider when updates are needed. Different providers may use different geographic data formats, coordinate

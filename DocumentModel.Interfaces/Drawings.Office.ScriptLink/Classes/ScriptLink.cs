@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Office.ScriptLink;
 public interface ScriptLink: IModelElement
 {
   /// <summary>
-  ///   val, this property is only available in Microsoft365 and later.
+  ///   val
   /// </summary>
   public string? Val { get; set; }
   /// <summary>

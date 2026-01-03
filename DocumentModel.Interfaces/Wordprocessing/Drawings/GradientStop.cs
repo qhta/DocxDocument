@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 public interface GradientStop: IModelElement
 {
   /// <summary>
-  ///   pos, this property is only available in Office 2010 and later.
+  ///   pos
   /// </summary>
   public Int32? StopPosition { get; set; }
   /// <summary>

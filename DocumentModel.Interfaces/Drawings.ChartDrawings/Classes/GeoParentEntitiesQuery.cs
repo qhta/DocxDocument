@@ -22,7 +22,6 @@
 ///   divisions, or establishing hierarchical navigation paths that show the complete containment structure (such as
 ///   City → County → State → Country → Continent). The parent entity query enables bidirectional navigation through
 ///   geographic hierarchies, complementing child entity queries to provide complete hierarchical exploration capabilities.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface GeoParentEntitiesQuery : IModelElement
 {
@@ -34,8 +33,7 @@ public interface GeoParentEntitiesQuery : IModelElement
   ///   or <c>null</c> if no entity is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity identifier uniquely identifies the child geographic entity for which parent entities are being
+   ///   The entity identifier uniquely identifies the child geographic entity for which parent entities are being
   ///   requested. This ID typically corresponds to a geographic entity defined in the mapping service's data model,
   ///   such as a county code, city identifier, or region reference. For example, querying for parent entities of
   ///   "Los Angeles County" would retrieve California (the state) and United States (the country), or querying for

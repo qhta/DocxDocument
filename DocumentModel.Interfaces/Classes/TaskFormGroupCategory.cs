@@ -7,7 +7,6 @@ namespace DocumentModel;
 ///   This interface extends <see cref="IModelElement"/> and defines a logical category
 ///   that groups related tasks within a <see cref="TaskFormGroup"/>. Categories provide
 ///   organizational structure, labeling, and positioning control for task collections.
-///   This functionality is available in Office 2010 and later versions.
 /// </remarks>
 public interface TaskFormGroupCategory : IModelElement
 {
@@ -18,7 +17,6 @@ public interface TaskFormGroupCategory : IModelElement
   ///   A string containing the identifier, or <c>null</c> if no identifier is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Id { get; set; }
 
@@ -29,7 +27,6 @@ public interface TaskFormGroupCategory : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this when the identifier needs to be unique across multiple namespaces.
   /// </remarks>
   public string? QualifiedId { get; set; }
@@ -41,7 +38,6 @@ public interface TaskFormGroupCategory : IModelElement
   ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The tag can be used to store application-specific information associated with this category.
   /// </remarks>
   public string? Tag { get; set; }
@@ -53,7 +49,6 @@ public interface TaskFormGroupCategory : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if not referencing a built-in category.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? IdMso { get; set; }
 
@@ -64,7 +59,6 @@ public interface TaskFormGroupCategory : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the category relative to a built-in category.
   /// </remarks>
   public string? InsertAfterMso { get; set; }
@@ -76,7 +70,6 @@ public interface TaskFormGroupCategory : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the category relative to a built-in category.
   /// </remarks>
   public string? InsertBeforeMso { get; set; }
@@ -88,7 +81,6 @@ public interface TaskFormGroupCategory : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the category relative to another custom category.
   /// </remarks>
   public string? InsertAfterQualifiedId { get; set; }
@@ -100,7 +92,6 @@ public interface TaskFormGroupCategory : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the category relative to another custom category.
   /// </remarks>
   public string? InsertBeforeQualifiedId { get; set; }
@@ -112,7 +103,6 @@ public interface TaskFormGroupCategory : IModelElement
   ///   <c>true</c> if the category is visible; <c>false</c> if hidden; or <c>null</c> to use the default visibility.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? Visible { get; set; }
 
@@ -123,7 +113,6 @@ public interface TaskFormGroupCategory : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if visibility is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value indicating whether the category should be visible.
   /// </remarks>
   public string? GetVisible { get; set; }
@@ -135,7 +124,6 @@ public interface TaskFormGroupCategory : IModelElement
   ///   A string containing the label text, or <c>null</c> if no label is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Label { get; set; }
 
@@ -146,7 +134,6 @@ public interface TaskFormGroupCategory : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the label is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the label.
   /// </remarks>
   public string? GetLabel { get; set; }

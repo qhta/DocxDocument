@@ -6,39 +6,39 @@ namespace DocumentModel;
 public interface ClassificationLabel: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2021 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
   /// <summary>
-  ///   enabled, this property is only available in Office 2021 and later.
+  ///   enabled
   /// </summary>
   public bool? Enabled { get; set; }
   /// <summary>
-  ///   setDate, this property is only available in Office 2021 and later.
+  ///   setDate
   /// </summary>
   public string? SetDate { get; set; }
   /// <summary>
-  ///   method, this property is only available in Office 2021 and later.
+  ///   method
   /// </summary>
   public string? Method { get; set; }
   /// <summary>
-  ///   name, this property is only available in Office 2021 and later.
+  ///   name
   /// </summary>
   public string? Name { get; set; }
   /// <summary>
-  ///   siteId, this property is only available in Office 2021 and later.
+  ///   siteId
   /// </summary>
   public string? SiteId { get; set; }
   /// <summary>
-  ///   actionId, this property is only available in Office 2021 and later.
+  ///   actionId
   /// </summary>
   public string? ActionId { get; set; }
   /// <summary>
-  ///   contentBits, this property is only available in Office 2021 and later.
+  ///   contentBits
   /// </summary>
   public UInt32? ContentBits { get; set; }
   /// <summary>
-  ///   removed, this property is only available in Office 2021 and later.
+  ///   removed
   /// </summary>
   public bool? Removed { get; set; }
 }

@@ -6,15 +6,15 @@ namespace DocumentModel.Wordprocessing;
 public interface SphereCoordinates: IModelElement
 {
   /// <summary>
-  ///   lat, this property is only available in Office 2010 and later.
+  ///   lat
   /// </summary>
   public Int32? Lattitude { get; set; }
   /// <summary>
-  ///   lon, this property is only available in Office 2010 and later.
+  ///   lon
   /// </summary>
   public Int32? Longitude { get; set; }
   /// <summary>
-  ///   rev, this property is only available in Office 2010 and later.
+  ///   rev
   /// </summary>
   public Int32? Revolution { get; set; }
 }

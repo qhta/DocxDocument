@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 public interface LineJoinMiterProperties: IModelElement
 {
   /// <summary>
-  ///   lim, this property is only available in Office 2010 and later.
+  ///   lim
   /// </summary>
   public Int32? Limit { get; set; }
 }

@@ -6,15 +6,15 @@ namespace DocumentModel.Wordprocessing.OEmbed;
 public interface OEmbed: IModelElement
 {
   /// <summary>
-  ///   oEmbedUrl, this property is only available in Microsoft365 and later.
+  ///   oEmbedUrl
   /// </summary>
   public string? OEmbedUrl { get; set; }
   /// <summary>
-  ///   mediaType, this property is only available in Microsoft365 and later.
+  ///   mediaType
   /// </summary>
   public string? MediaType { get; set; }
   /// <summary>
-  ///   picLocksAutoForOEmbed, this property is only available in Microsoft365 and later.
+  ///   picLocksAutoForOEmbed
   /// </summary>
   public bool? PicLocksAutoForOEmbed { get; set; }
 }

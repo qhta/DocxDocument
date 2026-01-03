@@ -6,19 +6,19 @@ namespace DocumentModel;
 public interface Command: IModelElement
 {
   /// <summary>
-  ///   onAction, this property is only available in Office 2010 and later.
+  ///   onAction
   /// </summary>
   public string? OnAction { get; set; }
   /// <summary>
-  ///   enabled, this property is only available in Office 2010 and later.
+  ///   enabled
   /// </summary>
   public bool? Enabled { get; set; }
   /// <summary>
-  ///   getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled
   /// </summary>
   public string? GetEnabled { get; set; }
   /// <summary>
-  ///   idMso, this property is only available in Office 2010 and later.
+  ///   idMso
   /// </summary>
   public string? IdMso { get; set; }
 }

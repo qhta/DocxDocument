@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface ClassificationOutcome : IModelElement
 {
   /// <summary>
-  ///   ClassificationOutcomeType, this property is only available in Office 2021 and later.
+  ///   ClassificationOutcomeType
   /// </summary>
   public ClassificationOutcomeType? ClassificationOutcomeType { get; set; }
 }

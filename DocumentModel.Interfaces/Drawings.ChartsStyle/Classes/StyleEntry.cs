@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 public interface StyleEntry: IModelElement
 {
   /// <summary>
-  ///   mods, this property is only available in Office 2013 and later.
+  ///   mods
   /// </summary>
   public ListOf<String>? Modifiers { get; set; }
   /// <summary>

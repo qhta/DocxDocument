@@ -10,7 +10,7 @@ public interface Theme: IModelElement
   /// </summary>
   public string? Name { get; set; }
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  ///   id
   /// </summary>
   public string? ThemeId { get; set; }
   /// <summary>

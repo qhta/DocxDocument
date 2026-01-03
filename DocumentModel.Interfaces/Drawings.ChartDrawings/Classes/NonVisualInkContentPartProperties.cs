@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface NonVisualInkContentPartProperties: IModelElement
 {
   /// <summary>
-  ///   isComment, this property is only available in Office 2010 and later.
+  ///   isComment
   /// </summary>
   public bool? IsComment { get; set; }
   /// <summary>

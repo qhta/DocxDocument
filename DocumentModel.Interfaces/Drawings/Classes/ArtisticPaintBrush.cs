@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ArtisticPaintBrush: IModelElement
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  ///   trans
   /// </summary>
   public Int32? Transparancy { get; set; }
   /// <summary>
-  ///   brushSize, this property is only available in Office 2010 and later.
+  ///   brushSize
   /// </summary>
   public Int32? BrushSize { get; set; }
 }

@@ -6,31 +6,31 @@ namespace DocumentModel;
 public interface MenuSeparatorNoTitle: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
   /// <summary>
-  ///   idQ, this property is only available in Office 2010 and later.
+  ///   idQ
   /// </summary>
   public string? QualifiedId { get; set; }
   /// <summary>
-  ///   tag, this property is only available in Office 2010 and later.
+  ///   tag
   /// </summary>
   public string? Tag { get; set; }
   /// <summary>
-  ///   insertAfterMso, this property is only available in Office 2010 and later.
+  ///   insertAfterMso
   /// </summary>
   public string? InsertAfterMso { get; set; }
   /// <summary>
-  ///   insertBeforeMso, this property is only available in Office 2010 and later.
+  ///   insertBeforeMso
   /// </summary>
   public string? InsertBeforeMso { get; set; }
   /// <summary>
-  ///   insertAfterQ, this property is only available in Office 2010 and later.
+  ///   insertAfterQ
   /// </summary>
   public string? InsertAfterQualifiedId { get; set; }
   /// <summary>
-  ///   insertBeforeQ, this property is only available in Office 2010 and later.
+  ///   insertBeforeQ
   /// </summary>
   public string? InsertBeforeQualifiedId { get; set; }
 }

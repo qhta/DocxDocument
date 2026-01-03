@@ -13,7 +13,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   multiple charts and documents while maintaining the chart's structure. Content parts are particularly useful
 ///   for including complex graphics, logos, or supplementary visual elements that enhance the chart's presentation
 ///   without embedding the actual content data directly within the chart definition.
-///   This functionality is available in Office 2010 and later versions.
 /// </remarks>
 public interface ContentPart : IModelElement
 {
@@ -25,7 +24,6 @@ public interface ContentPart : IModelElement
   ///   or <c>null</c> if no relationship is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The relationship identifier establishes the connection between this content part element and the actual
   ///   content stored in a separate part of the document package. This ID corresponds to a relationship
   ///   defined in the document's relationship structure, enabling the chart to locate and access the
@@ -41,7 +39,6 @@ public interface ContentPart : IModelElement
   ///   or <c>null</c> to use the default rendering mode.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The black-and-white mode determines how the content is displayed when printed or viewed in monochrome.
   ///   Different modes can preserve grayscale information, convert to pure black and white, or maintain
   ///   the original colors depending on the output requirements and visual preferences.

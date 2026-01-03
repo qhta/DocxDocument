@@ -20,7 +20,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   maintains consistency across most chart elements) from targeted overrides (which handle special cases),
 ///   promoting maintainable and flexible chart styling where most elements follow standard rules while specific
 ///   elements receive custom treatment. Extension support enables future enhancements to format override capabilities.
-///   This functionality is available in Office 2016 and later versions for the index property.
 /// </remarks>
 public interface FormatOverride : IModelElement
 {
@@ -32,8 +31,7 @@ public interface FormatOverride : IModelElement
   ///   or <c>null</c> if no index is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The index identifies the target chart element for this format override, using zero-based positioning where
+   ///   The index identifies the target chart element for this format override, using zero-based positioning where
   ///   0 represents the first element, 1 the second, and so on. The interpretation of the index depends on the
   ///   context in which the format override is used. For example, when overriding data point formatting, the index
   ///   corresponds to the data point's position within its series (similar to <see cref="DataPoint.Idx"/>); when

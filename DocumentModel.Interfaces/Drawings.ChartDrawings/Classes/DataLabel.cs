@@ -15,7 +15,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   significantly enhance chart readability by making key values immediately visible, though excessive use
 ///   may clutter the visualization. They are particularly valuable in charts with few data points or when
 ///   precise values need to be emphasized.
-///   This functionality is available in Office 2016 and later versions for positioning properties.
 /// </remarks>
 public interface DataLabel : IModelElement
 {
@@ -27,8 +26,7 @@ public interface DataLabel : IModelElement
   ///   or <c>null</c> if no index is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The index associates this label with a specific data point in the series. The index is zero-based,
+   ///   The index associates this label with a specific data point in the series. The index is zero-based,
   ///   meaning the first data point has index 0, the second has index 1, and so on. This enables precise
   ///   control over which data points display labels, allowing selective labeling of important or outlier
   ///   values rather than labeling all points in a series.
@@ -43,8 +41,7 @@ public interface DataLabel : IModelElement
   ///   or <c>null</c> to use the default position for the chart type.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The position determines where the label appears relative to its associated data point. Different chart
+   ///   The position determines where the label appears relative to its associated data point. Different chart
   ///   types have different default and recommended positions. For example, column charts typically position
   ///   labels above or inside the columns, while pie charts often position labels outside the slices with
   ///   leader lines. The position can be adjusted to avoid overlapping with other chart elements or to

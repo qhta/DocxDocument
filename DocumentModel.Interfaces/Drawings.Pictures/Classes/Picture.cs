@@ -18,11 +18,11 @@ public interface Picture: IModelElement
   /// </summary>
   public ShapeProperties? ShapeProperties { get; set; }
   /// <summary>
-  ///   ShapeStyle, this property is only available in Office 2010 and later..
+  ///   ShapeStyle.
   /// </summary>
   public ShapeStyle? ShapeStyle { get; set; }
   /// <summary>
-  ///   OfficeArtExtensionList, this property is only available in Office 2010 and later..
+  ///   OfficeArtExtensionList.
   /// </summary>
   public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

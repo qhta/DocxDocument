@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ArtisticFilmGrain: IModelElement
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  ///   trans
   /// </summary>
   public Int32? Transparancy { get; set; }
   /// <summary>
-  ///   grainSize, this property is only available in Office 2010 and later.
+  ///   grainSize
   /// </summary>
   public Int32? GrainSize { get; set; }
 }

@@ -98,7 +98,7 @@ public interface PreviousSectionProperties: IModelElement
   /// </summary>
   public IRelationshipType? PrinterSettingsReference { get; set; }
   /// <summary>
-  ///   FootnoteColumns, this property is only available in Office 2013 and later..
+  ///   FootnoteColumns.
   /// </summary>
   public Int32? FootnoteColumns { get; set; }
 }

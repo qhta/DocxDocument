@@ -21,7 +21,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   to share the same data source. When a document with external data references is opened, Office can refresh the
 ///   chart data from the source if the relationship is still valid and accessible, or preserve the last-known data
 ///   if the source is unavailable.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface ExternalData : IModelElement
 {
@@ -33,8 +32,7 @@ public interface ExternalData : IModelElement
   ///   or <c>null</c> if no external data connection is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The relationship identifier (RelId) establishes the connection between the chart and its external data source
+   ///   The relationship identifier (RelId) establishes the connection between the chart and its external data source
   ///   by referencing a relationship defined in the document's relationship structure. This ID corresponds to a
   ///   relationship entry that specifies the location and type of the external data source, such as a reference to
   ///   an Excel worksheet range, a database connection, or another data provider. The relationship-based approach
@@ -55,8 +53,7 @@ public interface ExternalData : IModelElement
   ///   update behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The AutoUpdate flag controls whether the chart data is automatically refreshed from the external source,
+   ///   The AutoUpdate flag controls whether the chart data is automatically refreshed from the external source,
   ///   enabling real-time or on-demand data updates. When set to <c>true</c>, Office attempts to retrieve the latest
   ///   data from the external source when the document is opened, ensuring the chart displays current information.
   ///   This is particularly valuable for dashboard reports, live data visualizations, or presentations that need to

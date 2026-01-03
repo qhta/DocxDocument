@@ -10,7 +10,7 @@ public interface Indentation: IModelElement
   /// </summary>
   public string? Left { get; set; }
   /// <summary>
-  ///   start, this property is only available in Office 2010 and later.
+  ///   start
   /// </summary>
   public string? Start { get; set; }
   /// <summary>
@@ -18,7 +18,7 @@ public interface Indentation: IModelElement
   /// </summary>
   public Int32? LeftChars { get; set; }
   /// <summary>
-  ///   startChars, this property is only available in Office 2010 and later.
+  ///   startChars
   /// </summary>
   public Int32? StartCharacters { get; set; }
   /// <summary>
@@ -26,7 +26,7 @@ public interface Indentation: IModelElement
   /// </summary>
   public string? Right { get; set; }
   /// <summary>
-  ///   end, this property is only available in Office 2010 and later.
+  ///   end
   /// </summary>
   public string? End { get; set; }
   /// <summary>
@@ -34,7 +34,7 @@ public interface Indentation: IModelElement
   /// </summary>
   public Int32? RightChars { get; set; }
   /// <summary>
-  ///   endChars, this property is only available in Office 2010 and later.
+  ///   endChars
   /// </summary>
   public Int32? EndCharacters { get; set; }
   /// <summary>

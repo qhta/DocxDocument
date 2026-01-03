@@ -15,7 +15,6 @@ namespace DocumentModel;
 ///   navigation to related files or locations. The <see cref="OnAction"/> callback can override the default navigation
 ///   behavior to provide custom handling when the hyperlink is clicked. Properties can be set statically or determined
 ///   dynamically through callback functions, enabling responsive UI that adapts to application context and state.
-///   This functionality is available in Office 2010 and later versions.
 /// </remarks>
 public interface Hyperlink : IModelElement
 {
@@ -26,7 +25,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the identifier, or <c>null</c> if no identifier is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Id { get; set; }
 
@@ -37,7 +35,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this when the identifier needs to be unique across multiple namespaces.
   /// </remarks>
   public string? QualifiedId { get; set; }
@@ -49,7 +46,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The tag can be used to store application-specific information associated with this hyperlink.
   /// </remarks>
   public string? Tag { get; set; }
@@ -62,7 +58,6 @@ public interface Hyperlink : IModelElement
   ///   or <c>null</c> to use the default alignment behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   This controls whether the label expands horizontally, vertically, or both to utilize available layout space.
   /// </remarks>
   public ExpandKind? AlignLabel { get; set; }
@@ -75,7 +70,6 @@ public interface Hyperlink : IModelElement
   ///   or <c>null</c> to use the default expansion behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   This controls whether the hyperlink expands horizontally, vertically, or both to utilize available layout space.
   /// </remarks>
   public ExpandKind? Expand { get; set; }
@@ -87,7 +81,6 @@ public interface Hyperlink : IModelElement
   ///   <c>true</c> if the hyperlink is enabled; <c>false</c> if disabled; or <c>null</c> to use the default enabled state.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? Enabled { get; set; }
 
@@ -98,7 +91,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the enabled state is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value indicating whether the hyperlink should be enabled.
   /// </remarks>
   public string? GetEnabled { get; set; }
@@ -110,7 +102,6 @@ public interface Hyperlink : IModelElement
   ///   <c>true</c> if the hyperlink is visible; <c>false</c> if hidden; or <c>null</c> to use the default visibility.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? Visible { get; set; }
 
@@ -121,7 +112,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if visibility is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value indicating whether the hyperlink should be visible.
   /// </remarks>
   public string? GetVisible { get; set; }
@@ -133,7 +123,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the keytip character(s), or <c>null</c> if no keytip is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
   /// </remarks>
   public string? Keytip { get; set; }
@@ -145,7 +134,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the keytip is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the keytip.
   /// </remarks>
   public string? GetKeytip { get; set; }
@@ -157,7 +145,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the label text, or <c>null</c> if no label is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The label is the clickable text that appears to the user, typically describing the link destination
   ///   or action (e.g., "Learn more", "View online help", "Open related document").
   /// </remarks>
@@ -170,7 +157,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the label is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the label.
   /// </remarks>
   public string? GetLabel { get; set; }
@@ -182,7 +168,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if using default navigation behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   When specified, this callback overrides the default navigation to the <see cref="Target"/> URL,
   ///   allowing custom handling of the hyperlink click event. This is useful for implementing complex
   ///   navigation logic, validation, or actions beyond simple URL navigation.
@@ -196,7 +181,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the image identifier, or <c>null</c> if no custom image is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The image identifier references a custom image resource included in the Office add-in.
   ///   The image appears next to the hyperlink label.
   /// </remarks>
@@ -209,7 +193,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the Microsoft Office image identifier, or <c>null</c> if not using a built-in image.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to display a built-in Office icon next to the hyperlink label.
   /// </remarks>
   public string? ImageMso { get; set; }
@@ -221,7 +204,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the image is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return an image object or identifier.
   /// </remarks>
   public string? GetImage { get; set; }
@@ -233,7 +215,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the screentip text, or <c>null</c> if no screentip is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The screentip appears when the user hovers over the hyperlink, providing brief information
   ///   about the link destination or purpose.
   /// </remarks>
@@ -246,7 +227,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the screentip is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the screentip.
   /// </remarks>
   public string? GetScreentip { get; set; }
@@ -258,7 +238,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the supertip text, or <c>null</c> if no supertip is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Supertips provide more detailed information than screentips, typically including a description
   ///   of what the user can expect when clicking the hyperlink.
   /// </remarks>
@@ -271,7 +250,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the supertip is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value for the supertip.
   /// </remarks>
   public string? GetSupertip { get; set; }
@@ -284,7 +262,6 @@ public interface Hyperlink : IModelElement
   ///   or <c>null</c> if no target is specified or navigation is handled by <see cref="OnAction"/>.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The target can be a web URL (http:// or https://), a file path (file:///), a mailto link (mailto:),
   ///   or other URI schemes supported by the operating system. When both <see cref="Target"/> and
   ///   <see cref="OnAction"/> are specified, the OnAction callback takes precedence.
@@ -298,7 +275,6 @@ public interface Hyperlink : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if the target is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a string value containing the target URL or location.
   ///   This enables dynamic link destinations based on application state, user preferences, or other runtime conditions.
   /// </remarks>

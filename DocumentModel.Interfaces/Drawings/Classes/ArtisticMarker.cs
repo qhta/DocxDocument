@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ArtisticMarker: IModelElement
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  ///   trans
   /// </summary>
   public Int32? Transparancy { get; set; }
   /// <summary>
-  ///   size, this property is only available in Office 2010 and later.
+  ///   size
   /// </summary>
   public Int32? Size { get; set; }
 }

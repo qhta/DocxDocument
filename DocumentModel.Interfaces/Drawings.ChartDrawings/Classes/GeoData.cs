@@ -22,7 +22,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   with various mapping and GIS systems. This geographic data structure is fundamental to Office's map chart
 ///   capabilities, enabling visualization of data in geographic context across countries, states, regions, or custom
 ///   geographic boundaries.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface GeoData : IModelElement
 {
@@ -34,8 +33,7 @@ public interface GeoData : IModelElement
   ///   or <c>null</c> if no name is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity name provides a human-readable identifier for the geographic region, such as "United States",
+   ///   The entity name provides a human-readable identifier for the geographic region, such as "United States",
   ///   "California", "Tokyo", or "European Union". This name is typically used for display purposes in chart labels,
   ///   tooltips, legends, and other user-facing elements where the geographic entity needs to be identified in a
   ///   way that users can easily understand. The name may be localized based on the document's language settings
@@ -53,8 +51,7 @@ public interface GeoData : IModelElement
   ///   or <c>null</c> if no identifier is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity identifier provides a machine-readable, unique reference for the geographic region that remains
+   ///   The entity identifier provides a machine-readable, unique reference for the geographic region that remains
   ///   consistent across different localizations, data updates, and provider versions. Common identifier schemes
   ///   include ISO country codes (e.g., "US", "GB", "JP"), administrative division codes, or provider-specific
   ///   entity identifiers. This ID is used to correlate chart data points with geographic entities, enabling the
@@ -74,8 +71,7 @@ public interface GeoData : IModelElement
   ///   or <c>null</c> if the eastern boundary is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The eastern longitude defines the rightmost boundary of the geographic entity's extent in the standard
+   ///   The eastern longitude defines the rightmost boundary of the geographic entity's extent in the standard
   ///   geographic coordinate system, using decimal degrees where values range from -180 (180°W) to +180 (180°E).
   ///   The bounding box formed by the east, west, north, and south coordinates provides a rectangular approximation
   ///   of the entity's geographic extent, useful for quick spatial calculations such as determining map viewport,
@@ -92,8 +88,7 @@ public interface GeoData : IModelElement
   ///   or <c>null</c> if the western boundary is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The western longitude defines the leftmost boundary of the geographic entity's extent in the standard
+   ///   The western longitude defines the leftmost boundary of the geographic entity's extent in the standard
   ///   geographic coordinate system, using decimal degrees where values range from -180 (180°W) to +180 (180°E).
   ///   The western boundary represents the minimum longitude value within the entity's boundaries. Together with
   ///   the eastern boundary, this defines the horizontal extent of the bounding box used for spatial calculations
@@ -109,8 +104,7 @@ public interface GeoData : IModelElement
   ///   or <c>null</c> if the northern boundary is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The northern latitude defines the uppermost boundary of the geographic entity's extent in the standard
+   ///   The northern latitude defines the uppermost boundary of the geographic entity's extent in the standard
   ///   geographic coordinate system, using decimal degrees where values range from -90 (90°S) to +90 (90°N).
   ///   The northern boundary represents the maximum latitude value within the entity's boundaries, defining the
   ///   topmost edge of the bounding box used for spatial reference and map calculations.
@@ -125,8 +119,7 @@ public interface GeoData : IModelElement
   ///   or <c>null</c> if the southern boundary is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The southern latitude defines the lowermost boundary of the geographic entity's extent in the standard
+   ///   The southern latitude defines the lowermost boundary of the geographic entity's extent in the standard
   ///   geographic coordinate system, using decimal degrees where values range from -90 (90°S) to +90 (90°N).
   ///   The southern boundary represents the minimum latitude value within the entity's boundaries. Together with
   ///   the northern boundary, this defines the vertical extent of the bounding box, completing the rectangular

@@ -6,19 +6,19 @@ namespace DocumentModel.Wordprocessing;
 public interface TextOutlineEffect: ITypedModelElement, IDrawingProperty
 {
   /// <summary>
-  ///   w, this property is only available in Office 2010 and later.
+  ///   w
   /// </summary>
   public Int32? LineWidth { get; set; }
   /// <summary>
-  ///   cap, this property is only available in Office 2010 and later.
+  ///   cap
   /// </summary>
   public LineCapKind? CapType { get; set; }
   /// <summary>
-  ///   cmpd, this property is only available in Office 2010 and later.
+  ///   cmpd
   /// </summary>
   public CompoundLineKind? Compound { get; set; }
   /// <summary>
-  ///   algn, this property is only available in Office 2010 and later.
+  ///   algn
   /// </summary>
   public PenAlignmentKind? Alignment { get; set; }
   /// <summary>

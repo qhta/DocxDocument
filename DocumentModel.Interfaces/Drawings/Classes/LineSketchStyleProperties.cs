@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface LineSketchStyleProperties: IModelElement
 {
   /// <summary>
-  ///   sd, this property is only available in Office 2021 and later.
+  ///   sd
   /// </summary>
   public UInt32? Sd { get; set; }
   public CustomGeometry? CustomGeometry { get; set; }

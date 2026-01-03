@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface NonVisualGroupProperties: IModelElement
 {
   /// <summary>
-  ///   isLegacyGroup, this property is only available in Office 2013 and later.
+  ///   isLegacyGroup
   /// </summary>
   public bool? IsLegacyGroup { get; set; }
 }

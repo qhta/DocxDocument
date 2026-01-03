@@ -7,92 +7,92 @@ namespace DocumentModel;
 public interface BackstageGroup: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   idQ, this property is only available in Office 2010 and later.
+  ///   idQ
   /// </summary>
   public string? QualifiedId { get; set; }
 
   /// <summary>
-  ///   tag, this property is only available in Office 2010 and later.
+  ///   tag
   /// </summary>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   idMso, this property is only available in Office 2010 and later.
+  ///   idMso
   /// </summary>
   public string? IdMso { get; set; }
 
   /// <summary>
-  ///   insertAfterMso, this property is only available in Office 2010 and later.
+  ///   insertAfterMso
   /// </summary>
   public string? InsertAfterMso { get; set; }
 
   /// <summary>
-  ///   insertBeforeMso, this property is only available in Office 2010 and later.
+  ///   insertBeforeMso
   /// </summary>
   public string? InsertBeforeMso { get; set; }
 
   /// <summary>
-  ///   insertAfterQ, this property is only available in Office 2010 and later.
+  ///   insertAfterQ
   /// </summary>
   public string? InsertAfterQualifiedId { get; set; }
 
   /// <summary>
-  ///   insertBeforeQ, this property is only available in Office 2010 and later.
+  ///   insertBeforeQ
   /// </summary>
   public string? InsertBeforeQualifiedId { get; set; }
 
   /// <summary>
-  ///   label, this property is only available in Office 2010 and later.
+  ///   label
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel
   /// </summary>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   visible, this property is only available in Office 2010 and later.
+  ///   visible
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible
   /// </summary>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   style, this property is only available in Office 2010 and later.
+  ///   style
   /// </summary>
   public StyleKind? Style { get; set; }
 
   /// <summary>
-  ///   getStyle, this property is only available in Office 2010 and later.
+  ///   getStyle
   /// </summary>
   public string? GetStyle { get; set; }
 
   /// <summary>
-  ///   helperText, this property is only available in Office 2010 and later.
+  ///   helperText
   /// </summary>
   public string? HelperText { get; set; }
 
   /// <summary>
-  ///   getHelperText, this property is only available in Office 2010 and later.
+  ///   getHelperText
   /// </summary>
   public string? GetHelperText { get; set; }
 
   /// <summary>
-  ///   showLabel, this property is only available in Office 2010 and later.
+  ///   showLabel
   /// </summary>
   public bool? ShowLabel { get; set; }
 
   /// <summary>
-  ///   getShowLabel, this property is only available in Office 2010 and later.
+  ///   getShowLabel
   /// </summary>
   public string? GetShowLabel { get; set; }
 

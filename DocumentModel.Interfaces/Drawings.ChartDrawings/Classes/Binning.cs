@@ -11,7 +11,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   overflow and underflow thresholds for values outside the normal range, and the method for determining bin
 ///   divisions (either by specifying bin width or bin count). This enables flexible histogram creation that can
 ///   accommodate various data distributions and analysis requirements.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface Binning : IModelElement
 {
@@ -23,8 +22,7 @@ public interface Binning : IModelElement
   ///   or <c>null</c> to use the default interval closure behavior.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   Interval closure determines whether boundary values belong to the lower or upper bin. For example,
+   ///   Interval closure determines whether boundary values belong to the lower or upper bin. For example,
   ///   with left-closed intervals [0, 10), a value of 10 belongs to the next bin [10, 20). With right-closed
   ///   intervals (0, 10], a value of 10 belongs to the current bin. This affects how boundary values are
   ///   counted in the frequency distribution.
@@ -39,8 +37,7 @@ public interface Binning : IModelElement
   ///   or <c>null</c> if no underflow bin is defined.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The underflow value defines the lower boundary below which all values are grouped into a single
+   ///   The underflow value defines the lower boundary below which all values are grouped into a single
   ///   underflow bin. This is useful for handling outliers or extreme low values that would otherwise
   ///   create excessive bins or skew the histogram distribution.
   /// </remarks>
@@ -54,8 +51,7 @@ public interface Binning : IModelElement
   ///   or <c>null</c> if no overflow bin is defined.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The overflow value defines the upper boundary above which all values are grouped into a single
+   ///   The overflow value defines the upper boundary above which all values are grouped into a single
   ///   overflow bin. This is useful for handling outliers or extreme high values that would otherwise
   ///   create excessive bins or skew the histogram distribution.
   /// </remarks>

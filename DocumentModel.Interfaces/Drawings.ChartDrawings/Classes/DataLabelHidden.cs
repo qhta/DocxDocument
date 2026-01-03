@@ -14,7 +14,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   interface, where DataLabel defines visible labels with full formatting options, while DataLabelHidden
 ///   provides a lightweight indicator for suppressed labels. This selective hiding approach offers fine-grained
 ///   control over label visibility without requiring individual DataLabel definitions for every data point.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface DataLabelHidden : IModelElement
 {
@@ -26,8 +25,7 @@ public interface DataLabelHidden : IModelElement
   ///   or <c>null</c> if no index is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The index identifies a specific data point in the series whose label should be suppressed from
+   ///   The index identifies a specific data point in the series whose label should be suppressed from
   ///   display. The index is zero-based, meaning the first data point has index 0, the second has index 1,
   ///   and so on. This enables precise control over which data points do not display labels, even when
   ///   the series or chart has a general setting to show labels. Common scenarios include hiding labels

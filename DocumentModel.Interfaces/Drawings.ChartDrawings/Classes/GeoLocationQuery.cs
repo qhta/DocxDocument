@@ -24,7 +24,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   types within the specified address components. This flexible address-based query mechanism enables charts to work
 ///   with diverse data sources that specify locations through addresses, administrative boundaries, or postal codes
 ///   rather than explicit coordinates, automatically converting these references into mappable geographic positions.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface GeoLocationQuery : IModelElement
 {
@@ -36,8 +35,7 @@ public interface GeoLocationQuery : IModelElement
   ///   or <c>null</c> if no country/region is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The country or region specifies the top-level geographic context for the location query, identifying the
+   ///   The country or region specifies the top-level geographic context for the location query, identifying the
   ///   nation or sovereign region within which the location exists. This can be specified using full country names
   ///   (e.g., "United States", "United Kingdom", "Japan"), common abbreviations (e.g., "USA", "UK"), or ISO country
   ///   codes (e.g., "US", "GB", "JP"). The country/region is essential for disambiguating locations, as many place
@@ -57,8 +55,7 @@ public interface GeoLocationQuery : IModelElement
   ///   or <c>null</c> if no first-level division is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The first-level administrative division represents the primary sub-national geographic unit, such as states
+   ///   The first-level administrative division represents the primary sub-national geographic unit, such as states
   ///   in the United States (e.g., "California", "New York"), provinces in Canada (e.g., "Ontario", "British Columbia"),
   ///   prefectures in Japan, or equivalent divisions in other countries. This division narrows the geographic scope
   ///   from the country level to a major regional subdivision, enabling more precise location identification. The
@@ -77,8 +74,7 @@ public interface GeoLocationQuery : IModelElement
   ///   or <c>null</c> if no second-level division is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The second-level administrative division represents a sub-division of the first-level division, such as counties
+   ///   The second-level administrative division represents a sub-division of the first-level division, such as counties
   ///   within U.S. states (e.g., "Los Angeles County" within California, "Cook County" within Illinois), districts within
   ///   provinces, or equivalent subdivisions in other administrative systems. This division provides finer geographic
   ///   granularity than first-level divisions, enabling more precise location identification for detailed regional
@@ -97,8 +93,7 @@ public interface GeoLocationQuery : IModelElement
   ///   or <c>null</c> if no postal code is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The postal code provides precise geographic localization through mail delivery codes, such as ZIP codes in the
+   ///   The postal code provides precise geographic localization through mail delivery codes, such as ZIP codes in the
   ///   United States (e.g., "90210", "10001"), postcodes in the United Kingdom (e.g., "SW1A 1AA"), or equivalent codes
   ///   in other countries. Postal codes enable high-precision geocoding as they typically correspond to small geographic
   ///   areas (neighborhoods, districts, or specific delivery zones). When combined with administrative divisions, postal
@@ -117,8 +112,7 @@ public interface GeoLocationQuery : IModelElement
   ///   or <c>null</c> to return any entity type matching the address components.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity type specifies the desired geographic classification level to target in the geocoding operation,
+   ///   The entity type specifies the desired geographic classification level to target in the geocoding operation,
   ///   such as country, first-level administrative division (state/province), second-level administrative division
   ///   (county/district), populated place (city/town), or other classifications. This filtering helps refine geocoding
   ///   results when address components could match multiple entity types. For example, querying with "Georgia" and

@@ -23,7 +23,6 @@
 ///   other levels. The hierarchical entity structure supports various geographic hierarchy models including administrative
 ///   hierarchies (country → state → county → city), statistical hierarchies (continent → country → region), or custom
 ///   domain-specific hierarchies tailored to particular analytical or business requirements.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface GeoHierarchyEntity : IModelElement
 {
@@ -35,8 +34,7 @@ public interface GeoHierarchyEntity : IModelElement
   ///   or <c>null</c> if no name is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity name provides a user-friendly identifier for the geographic entity that is suitable for display
+   ///   The entity name provides a user-friendly identifier for the geographic entity that is suitable for display
   ///   in user interfaces, chart labels, drill-down navigation menus, hierarchical lists, and other contexts where
   ///   the entity needs to be presented to users in a readable, recognizable format. Examples include "United States",
   ///   "California", "Los Angeles County", or "San Francisco". The name may be localized based on culture settings
@@ -56,8 +54,7 @@ public interface GeoHierarchyEntity : IModelElement
   ///   or <c>null</c> if no identifier is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity identifier provides a unique, machine-readable reference for the geographic entity that remains
+   ///   The entity identifier provides a unique, machine-readable reference for the geographic entity that remains
   ///   consistent across different operations, queries, and data sources. Common identifier formats include ISO country
   ///   codes (e.g., "US", "GB", "JP" for countries), administrative division codes (e.g., "US-CA" for California,
   ///   "US-NY" for New York), or provider-specific entity identifiers. The unique identifier is essential for several
@@ -81,8 +78,7 @@ public interface GeoHierarchyEntity : IModelElement
   ///   or <c>null</c> if no type is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity type specifies the administrative or geographic classification level of the entity within hierarchical
+   ///   The entity type specifies the administrative or geographic classification level of the entity within hierarchical
   ///   structures, such as country, first-level administrative division (state/province), second-level administrative
   ///   division (county/district), populated place (city/town), or other classifications. This type information is
   ///   crucial for hierarchical operations including: (1) determining valid parent-child relationships (such as knowing

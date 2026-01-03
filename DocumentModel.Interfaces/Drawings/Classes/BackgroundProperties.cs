@@ -6,19 +6,19 @@ namespace DocumentModel.Drawings;
 public interface BackgroundProperties: IModelElement
 {
   /// <summary>
-  ///   bwMode, this property is only available in Office 2013 and later.
+  ///   bwMode
   /// </summary>
   public BlackWhiteMode? Mode { get; set; }
   /// <summary>
-  ///   bwPure, this property is only available in Office 2013 and later.
+  ///   bwPure
   /// </summary>
   public BlackWhiteMode? Pure { get; set; }
   /// <summary>
-  ///   bwNormal, this property is only available in Office 2013 and later.
+  ///   bwNormal
   /// </summary>
   public BlackWhiteMode? Normal { get; set; }
   /// <summary>
-  ///   targetScreenSize, this property is only available in Office 2013 and later.
+  ///   targetScreenSize
   /// </summary>
   public TargetScreenSize? TargetScreenSize { get; set; }
 }

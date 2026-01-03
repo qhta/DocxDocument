@@ -6,15 +6,15 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface NumericLevel: IModelElement
 {
   /// <summary>
-  ///   ptCount, this property is only available in Office 2016 and later.
+  ///   ptCount
   /// </summary>
   public UInt32? PtCount { get; set; }
   /// <summary>
-  ///   formatCode, this property is only available in Office 2016 and later.
+  ///   formatCode
   /// </summary>
   public string? FormatCode { get; set; }
   /// <summary>
-  ///   name, this property is only available in Office 2016 and later.
+  ///   name
   /// </summary>
   public string? Name { get; set; }
   public Collection<NumericValue>? NumericValues { get; set; }

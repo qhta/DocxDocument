@@ -22,11 +22,11 @@ public interface ExtBaseTableProperties: CurrentTableProperties
   /// </summary>
   public bool? BiDiVisual { get; set; }
   /// <summary>
-  ///   TableCaption, this property is only available in Office 2010 and later..
+  ///   TableCaption.
   /// </summary>
   public string? TableCaption { get; set; }
   /// <summary>
-  ///   TableDescription, this property is only available in Office 2010 and later..
+  ///   TableDescription.
   /// </summary>
   public string? TableDescription { get; set; }
 }

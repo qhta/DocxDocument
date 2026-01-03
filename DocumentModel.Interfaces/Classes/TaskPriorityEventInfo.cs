@@ -6,7 +6,7 @@ namespace DocumentModel;
 public interface TaskPriorityEventInfo: IModelElement
 {
   /// <summary>
-  ///   value, this property is only available in Office 2021 and later.
+  ///   value
   /// </summary>
   public Int32? Value { get; set; }
 }

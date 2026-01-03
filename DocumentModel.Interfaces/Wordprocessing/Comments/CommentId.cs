@@ -5,11 +5,11 @@ namespace DocumentModel.Wordprocessing;
 public interface CommentId: IModelElement
 {
   /// <summary>
-  ///   paraId, this property is only available in Office 2019 and later.
+  ///   paraId
   /// </summary>
   public IHexInt? ParaId { get; set; }
   /// <summary>
-  ///   durableId, this property is only available in Office 2019 and later.
+  ///   durableId
   /// </summary>
   public IHexInt? DurableId { get; set; }
 }

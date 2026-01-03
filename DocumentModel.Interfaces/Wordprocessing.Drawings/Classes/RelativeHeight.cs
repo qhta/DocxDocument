@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 public interface RelativeHeight: IModelElement
 {
   /// <summary>
-  ///   relativeFrom, this property is only available in Office 2010 and later.
+  ///   relativeFrom
   /// </summary>
   public SizeRelativeVerticallyKind? RelativeFrom { get; set; }
   /// <summary>

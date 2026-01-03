@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 public interface TextBoxInfo2: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id
   /// </summary>
   public UInt16? Id { get; set; }
   /// <summary>

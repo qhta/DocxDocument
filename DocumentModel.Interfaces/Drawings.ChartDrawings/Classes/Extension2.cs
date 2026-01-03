@@ -21,7 +21,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   versions and platforms. The Extension2 interface is used throughout chart drawing structures via <see cref="ExtensionList"/>,
 ///   appearing in <see cref="Chart"/>, <see cref="ChartSpace"/>, <see cref="Axis"/>, <see cref="DataLabels"/>,
 ///   <see cref="DataPoint"/>, and many other chart components to provide consistent extensibility.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface Extension2 : IModelElement
 {
@@ -33,8 +32,7 @@ public interface Extension2 : IModelElement
   ///   or <c>null</c> if no URI is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The URI serves as a unique identifier that specifies what type of chart extension this is and how it should
+   ///   The URI serves as a unique identifier that specifies what type of chart extension this is and how it should
   ///   be processed. The URI typically follows a namespace format (e.g., "http://schemas.microsoft.com/office/drawing/2014/chartex"
   ///   for chart extensions, "http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" for advanced chart features)
   ///   that ensures uniqueness and provides context about the extension's origin and purpose. Office applications

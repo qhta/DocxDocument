@@ -6,15 +6,15 @@ namespace DocumentModel.Drawings.Wordprocessing;
 public interface WebVideoProperty: IModelElement
 {
   /// <summary>
-  ///   embeddedHtml, this property is only available in Office 2013 and later.
+  ///   embeddedHtml
   /// </summary>
   public string? EmbeddedHtml { get; set; }
   /// <summary>
-  ///   h, this property is only available in Office 2013 and later.
+  ///   h
   /// </summary>
   public UInt32? Height { get; set; }
   /// <summary>
-  ///   w, this property is only available in Office 2013 and later.
+  ///   w
   /// </summary>
   public UInt32? Width { get; set; }
 }

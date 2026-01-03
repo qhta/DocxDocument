@@ -6,19 +6,19 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface ValueAxisScaling: IModelElement
 {
   /// <summary>
-  ///   max, this property is only available in Office 2016 and later.
+  ///   max
   /// </summary>
   public string? Max { get; set; }
   /// <summary>
-  ///   min, this property is only available in Office 2016 and later.
+  ///   min
   /// </summary>
   public string? Min { get; set; }
   /// <summary>
-  ///   majorUnit, this property is only available in Office 2016 and later.
+  ///   majorUnit
   /// </summary>
   public string? MajorUnit { get; set; }
   /// <summary>
-  ///   minorUnit, this property is only available in Office 2016 and later.
+  ///   minorUnit
   /// </summary>
   public string? MinorUnit { get; set; }
 }

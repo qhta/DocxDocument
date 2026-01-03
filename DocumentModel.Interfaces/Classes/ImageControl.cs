@@ -6,51 +6,51 @@ namespace DocumentModel;
 public interface ImageControl: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
   /// <summary>
-  ///   idQ, this property is only available in Office 2010 and later.
+  ///   idQ
   /// </summary>
   public string? QualifiedId { get; set; }
   /// <summary>
-  ///   tag, this property is only available in Office 2010 and later.
+  ///   tag
   /// </summary>
   public string? Tag { get; set; }
   /// <summary>
-  ///   enabled, this property is only available in Office 2010 and later.
+  ///   enabled
   /// </summary>
   public bool? Enabled { get; set; }
   /// <summary>
-  ///   getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled
   /// </summary>
   public string? GetEnabled { get; set; }
   /// <summary>
-  ///   visible, this property is only available in Office 2010 and later.
+  ///   visible
   /// </summary>
   public bool? Visible { get; set; }
   /// <summary>
-  ///   getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible
   /// </summary>
   public string? GetVisible { get; set; }
   /// <summary>
-  ///   image, this property is only available in Office 2010 and later.
+  ///   image
   /// </summary>
   public string? Image { get; set; }
   /// <summary>
-  ///   imageMso, this property is only available in Office 2010 and later.
+  ///   imageMso
   /// </summary>
   public string? ImageMso { get; set; }
   /// <summary>
-  ///   getImage, this property is only available in Office 2010 and later.
+  ///   getImage
   /// </summary>
   public string? GetImage { get; set; }
   /// <summary>
-  ///   altText, this property is only available in Office 2010 and later.
+  ///   altText
   /// </summary>
   public string? AltText { get; set; }
   /// <summary>
-  ///   getAltText, this property is only available in Office 2010 and later.
+  ///   getAltText
   /// </summary>
   public string? GetAltText { get; set; }
 }

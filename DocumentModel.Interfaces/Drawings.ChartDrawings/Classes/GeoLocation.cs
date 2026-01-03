@@ -23,7 +23,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   that map coordinates to their containing entities and addresses. The comprehensive location structure eliminates
 ///   the need for separate coordinate, entity, and address lookups, providing all location information in a single,
 ///   cohesive structure suitable for efficient caching and retrieval in map-based chart applications.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface GeoLocation : IModelElement
 {
@@ -35,8 +34,7 @@ public interface GeoLocation : IModelElement
   ///   or <c>null</c> if no latitude is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The latitude specifies the north-south position of the location in the standard geographic coordinate system,
+   ///   The latitude specifies the north-south position of the location in the standard geographic coordinate system,
   ///   using decimal degrees where values range from -90 (90°S, South Pole) to +90 (90°N, North Pole). The latitude,
   ///   combined with <see cref="Longitude"/>, provides precise positioning for the location on map charts, enabling
   ///   accurate point plotting, spatial analysis, and geographic visualization. For example, a location in San Francisco
@@ -55,8 +53,7 @@ public interface GeoLocation : IModelElement
   ///   or <c>null</c> if no longitude is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The longitude specifies the east-west position of the location in the standard geographic coordinate system,
+   ///   The longitude specifies the east-west position of the location in the standard geographic coordinate system,
   ///   using decimal degrees where values range from -180 (180°W) to +180 (180°E). The longitude, combined with
   ///   <see cref="Latitude"/>, provides precise positioning for the location on map charts. For example, a location
   ///   in San Francisco might have longitude -122.4194. The coordinate precision (number of decimal places) affects
@@ -74,8 +71,7 @@ public interface GeoLocation : IModelElement
   ///   or <c>null</c> if no entity name is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity name provides a user-friendly identifier for the geographic entity that contains or represents this
+   ///   The entity name provides a user-friendly identifier for the geographic entity that contains or represents this
   ///   location, such as "San Francisco", "California", "United States", or "Tokyo". This name is useful for display
   ///   purposes in chart labels, tooltips, location lists, and other user-facing contexts where the location needs to
   ///   be identified in a readable format. The entity name typically results from reverse geocoding operations that
@@ -94,8 +90,7 @@ public interface GeoLocation : IModelElement
   ///   or <c>null</c> if no entity type is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity type specifies the administrative or geographic classification level of the entity associated with
+   ///   The entity type specifies the administrative or geographic classification level of the entity associated with
   ///   this location, such as country, first-level administrative division (state/province), second-level administrative
   ///   division (county/district), populated place (city/town), or other classifications. This type information helps
   ///   categorize and organize locations, supports appropriate data aggregation (such as grouping locations by city,

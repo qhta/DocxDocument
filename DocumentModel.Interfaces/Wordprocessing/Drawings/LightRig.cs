@@ -6,11 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public interface LightRig: IModelElement
 {
   /// <summary>
-  ///   rig, this property is only available in Office 2010 and later.
+  ///   rig
   /// </summary>
   public LightRigKind? LightRigType { get; set; }
   /// <summary>
-  ///   dir, this property is only available in Office 2010 and later.
+  ///   dir
   /// </summary>
   public LightRigDirectionKind? LightDirectionType { get; set; }
   /// <summary>

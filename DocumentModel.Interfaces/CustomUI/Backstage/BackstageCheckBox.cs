@@ -7,102 +7,102 @@ namespace DocumentModel;
 public interface BackstageCheckBox: IModelElement
 {
   /// <summary>
-  ///   expand, this property is only available in Office 2010 and later.
+  ///   expand
   /// </summary>
   public ExpandKind? Expand { get; set; }
 
   /// <summary>
-  ///   description, this property is only available in Office 2010 and later.
+  ///   description
   /// </summary>
   public string? Description { get; set; }
 
   /// <summary>
-  ///   getDescription, this property is only available in Office 2010 and later.
+  ///   getDescription
   /// </summary>
   public string? GetDescription { get; set; }
 
   /// <summary>
-  ///   screentip, this property is only available in Office 2010 and later.
+  ///   screentip
   /// </summary>
   public string? Screentip { get; set; }
 
   /// <summary>
-  ///   getScreentip, this property is only available in Office 2010 and later.
+  ///   getScreentip
   /// </summary>
   public string? GetScreentip { get; set; }
 
   /// <summary>
-  ///   supertip, this property is only available in Office 2010 and later.
+  ///   supertip
   /// </summary>
   public string? Supertip { get; set; }
 
   /// <summary>
-  ///   getSupertip, this property is only available in Office 2010 and later.
+  ///   getSupertip
   /// </summary>
   public string? GetSupertip { get; set; }
 
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   idQ, this property is only available in Office 2010 and later.
+  ///   idQ
   /// </summary>
   public string? QualifiedId { get; set; }
 
   /// <summary>
-  ///   tag, this property is only available in Office 2010 and later.
+  ///   tag
   /// </summary>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   onAction, this property is only available in Office 2010 and later.
+  ///   onAction
   /// </summary>
   public string? OnAction { get; set; }
 
   /// <summary>
-  ///   getPressed, this property is only available in Office 2010 and later.
+  ///   getPressed
   /// </summary>
   public string? GetPressed { get; set; }
 
   /// <summary>
-  ///   enabled, this property is only available in Office 2010 and later.
+  ///   enabled
   /// </summary>
   public bool? Enabled { get; set; }
 
   /// <summary>
-  ///   getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled
   /// </summary>
   public string? GetEnabled { get; set; }
 
   /// <summary>
-  ///   label, this property is only available in Office 2010 and later.
+  ///   label
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel
   /// </summary>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   visible, this property is only available in Office 2010 and later.
+  ///   visible
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible
   /// </summary>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   keytip, this property is only available in Office 2010 and later.
+  ///   keytip
   /// </summary>
   public string? Keytip { get; set; }
 
   /// <summary>
-  ///   getKeytip, this property is only available in Office 2010 and later.
+  ///   getKeytip
   /// </summary>
   public string? GetKeytip { get; set; }
 }

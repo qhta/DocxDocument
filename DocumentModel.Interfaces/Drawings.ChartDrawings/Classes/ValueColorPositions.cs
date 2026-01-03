@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface ValueColorPositions: IModelElement
 {
   /// <summary>
-  ///   count, this property is only available in Office 2016 and later.
+  ///   count
   /// </summary>
   public Int32? Count { get; set; }
   /// <summary>

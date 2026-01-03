@@ -20,7 +20,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   entities to optimize performance and reduce data transfer). The query structure enables efficient geographic
 ///   data retrieval by targeting specific parent-child relationships rather than loading entire geographic hierarchies,
 ///   making it practical to work with large geographic datasets while maintaining responsive chart interactions.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface GeoChildEntitiesQuery : IModelElement
 {
@@ -32,8 +31,7 @@ public interface GeoChildEntitiesQuery : IModelElement
   ///   or <c>null</c> if no parent entity is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The entity identifier uniquely identifies the parent geographic entity for which child entities are being
+   ///   The entity identifier uniquely identifies the parent geographic entity for which child entities are being
   ///   requested. This ID typically corresponds to a geographic entity defined in the mapping service's data model,
   ///   such as a country code, state identifier, or region reference. For example, querying for child entities of
   ///   "US" (United States) would retrieve its states, or querying for "CA" (California) would retrieve its counties.

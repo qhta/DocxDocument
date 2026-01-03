@@ -6,7 +6,7 @@ namespace DocumentModel;
 public interface Ribbon: IModelElement
 {
   /// <summary>
-  ///   startFromScratch, this property is only available in Office 2010 and later.
+  ///   startFromScratch
   /// </summary>
   public bool? StartFromScratch { get; set; }
   /// <summary>

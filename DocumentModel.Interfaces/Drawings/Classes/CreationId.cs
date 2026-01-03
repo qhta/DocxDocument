@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface CreationId: IModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2016 and later.
+  ///   id
   /// </summary>
   public string? Id { get; set; }
 }

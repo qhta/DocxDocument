@@ -22,7 +22,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   mapping services. Together, these components provide comprehensive control over map-based chart visualization,
 ///   supporting various use cases from global data analysis to regional drill-down visualizations with appropriate
 ///   cultural localization and efficient data management.
-///   This functionality is available in Office 2016 and later versions.
 /// </remarks>
 public interface Geography : IModelElement
 {
@@ -34,8 +33,7 @@ public interface Geography : IModelElement
   ///   or <c>null</c> to use the default projection for the viewed region.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The projection type determines how the three-dimensional spherical Earth is mathematically transformed to a
+   ///   The projection type determines how the three-dimensional spherical Earth is mathematically transformed to a
   ///   two-dimensional chart surface. Different projections preserve different geographic properties and are suited
   ///   for different visualization purposes. Common projection types include Mercator (preserves shapes and angles,
   ///   commonly used for navigation and world maps but distorts areas near poles), Miller (compromise projection
@@ -57,8 +55,7 @@ public interface Geography : IModelElement
   ///   or <c>null</c> to use automatic region detection based on the data.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The viewed region type specifies the geographic hierarchy level and scope of the map visualization, such as
+   ///   The viewed region type specifies the geographic hierarchy level and scope of the map visualization, such as
   ///   world view (showing all countries globally), continental view (focusing on a specific continent), country view
   ///   (showing regions within a country), or more detailed regional views. This setting influences the level of detail
   ///   displayed, the appropriate projection to use, and the geographic entities that are rendered. Different region
@@ -78,8 +75,7 @@ public interface Geography : IModelElement
   ///   or <c>null</c> to use the document's default language settings.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The culture language specifies which language should be used for displaying geographic entity names, labels,
+   ///   The culture language specifies which language should be used for displaying geographic entity names, labels,
   ///   and other text elements in the map chart. This enables localization of geographic names to match user preferences
   ///   or document requirements. For example, with language "de" (German), "Germany" might be displayed as "Deutschland",
   ///   "Spain" as "Spanien", and "Japan" as "Japan". The language code typically follows ISO 639-1 (two-letter codes)
@@ -98,8 +94,7 @@ public interface Geography : IModelElement
   ///   or <c>null</c> to use the document's default region settings.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The culture region specifies regional formatting conventions and preferences that affect how data is displayed
+   ///   The culture region specifies regional formatting conventions and preferences that affect how data is displayed
   ///   in the map chart, including number formats, date formats, measurement units, and regional naming preferences.
   ///   For example, region "US" typically uses imperial measurements and month/day/year date format, while region "GB"
   ///   uses metric measurements and day/month/year format. The region code typically follows ISO 3166-1 alpha-2 (two-letter)
@@ -119,8 +114,7 @@ public interface Geography : IModelElement
   ///   or <c>null</c> if no attribution is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2016 and later.
-  ///   The attribution text provides proper credit to the mapping services, geographic data providers, and other sources
+   ///   The attribution text provides proper credit to the mapping services, geographic data providers, and other sources
   ///   that supplied the geographic information used in the map chart. This attribution is essential for legal compliance,
   ///   honoring data licensing agreements, and acknowledging the work of geographic data creators and maintainers. Common
   ///   attribution might include credits to commercial mapping services (such as Bing Maps or other providers), government

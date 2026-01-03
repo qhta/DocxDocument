@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ArtisticGlowDiffused: IModelElement
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  ///   trans
   /// </summary>
   public Int32? Transparancy { get; set; }
   /// <summary>
-  ///   intensity, this property is only available in Office 2010 and later.
+  ///   intensity
   /// </summary>
   public Int32? Intensity { get; set; }
 }

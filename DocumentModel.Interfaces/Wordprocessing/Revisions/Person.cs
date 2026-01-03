@@ -10,7 +10,7 @@ public interface Person: IModelElement
   /// </summary>
   public string? Contact { get; set; }
   /// <summary>
-  ///   author, this property is only available in Office 2013 and later.
+  ///   author
   /// </summary>
   public string? Author { get; set; }
   /// <summary>

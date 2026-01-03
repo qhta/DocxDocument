@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings.Diagram1;
 public interface DiagramAutoBullet: IModelElement
 {
   /// <summary>
-  ///   prefix, this property is only available in Office 2019 and later.
+  ///   prefix
   /// </summary>
   public string? AutoBulletPrefix { get; set; }
   /// <summary>
-  ///   leadZeros, this property is only available in Office 2019 and later.
+  ///   leadZeros
   /// </summary>
   public bool? LeadZeros { get; set; }
   /// <summary>

@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 public interface RelativeWidth: IModelElement
 {
   /// <summary>
-  ///   relativeFrom, this property is only available in Office 2010 and later.
+  ///   relativeFrom
   /// </summary>
   public SizeRelativeHorizontallyKind? ObjectId { get; set; }
   /// <summary>

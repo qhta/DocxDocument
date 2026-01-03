@@ -6,39 +6,39 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface PageSetup: IModelElement
 {
   /// <summary>
-  ///   paperSize, this property is only available in Office 2016 and later.
+  ///   paperSize
   /// </summary>
   public UInt32? PaperSize { get; set; }
   /// <summary>
-  ///   firstPageNumber, this property is only available in Office 2016 and later.
+  ///   firstPageNumber
   /// </summary>
   public UInt32? FirstPageNumber { get; set; }
   /// <summary>
-  ///   orientation, this property is only available in Office 2016 and later.
+  ///   orientation
   /// </summary>
   public PageOrientation? Orientation { get; set; }
   /// <summary>
-  ///   blackAndWhite, this property is only available in Office 2016 and later.
+  ///   blackAndWhite
   /// </summary>
   public bool? BlackAndWhite { get; set; }
   /// <summary>
-  ///   draft, this property is only available in Office 2016 and later.
+  ///   draft
   /// </summary>
   public bool? Draft { get; set; }
   /// <summary>
-  ///   useFirstPageNumber, this property is only available in Office 2016 and later.
+  ///   useFirstPageNumber
   /// </summary>
   public bool? UseFirstPageNumber { get; set; }
   /// <summary>
-  ///   horizontalDpi, this property is only available in Office 2016 and later.
+  ///   horizontalDpi
   /// </summary>
   public Int32? HorizontalDpi { get; set; }
   /// <summary>
-  ///   verticalDpi, this property is only available in Office 2016 and later.
+  ///   verticalDpi
   /// </summary>
   public Int32? VerticalDpi { get; set; }
   /// <summary>
-  ///   copies, this property is only available in Office 2016 and later.
+  ///   copies
   /// </summary>
   public UInt32? Copies { get; set; }
 }

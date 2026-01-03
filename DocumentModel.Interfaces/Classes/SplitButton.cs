@@ -54,11 +54,6 @@ namespace DocumentModel;
 /// <item><description>Consider whether a split button is more appropriate than separate buttons or a gallery</description></item>
 /// </list>
 /// </para>
-/// <para>
-/// All properties in this interface are only available in Office 2010 and later versions, as the
-/// modern ribbon extensibility model was enhanced in Office 2010. Add-ins using split buttons require
-/// Office 2010+ compatibility.
-/// </para>
 /// </remarks>
 /// <example>
 /// <code>
@@ -147,7 +142,6 @@ public interface SplitButton : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public SizeKind? Size { get; set; }
@@ -174,7 +168,6 @@ public interface SplitButton : IModelElement
   /// Dynamic sizing can improve ribbon usability by emphasizing important commands or adapting to available space.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? GetSize { get; set; }
@@ -206,7 +199,6 @@ public interface SplitButton : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public bool? Enabled { get; set; }
@@ -234,7 +226,6 @@ public interface SplitButton : IModelElement
   /// the ribbon is invalidated programmatically.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? GetEnabled { get; set; }
@@ -261,7 +252,6 @@ public interface SplitButton : IModelElement
   /// Use descriptive names that indicate the button's purpose (e.g., "customPasteSplitButton", "exportFormatButton").
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? Id { get; set; }
@@ -288,7 +278,6 @@ public interface SplitButton : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? QualifiedId { get; set; }
@@ -313,7 +302,6 @@ public interface SplitButton : IModelElement
   /// </list>
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? Tag { get; set; }
@@ -339,7 +327,6 @@ public interface SplitButton : IModelElement
   /// with Office's native commands.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? IdMso { get; set; }
@@ -366,7 +353,6 @@ public interface SplitButton : IModelElement
   /// the built-in Paste button in the ribbon.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? InsertAfterMso { get; set; }
@@ -389,7 +375,6 @@ public interface SplitButton : IModelElement
   /// the built-in Copy button in the ribbon.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? InsertBeforeMso { get; set; }
@@ -408,7 +393,6 @@ public interface SplitButton : IModelElement
   /// need to coordinate their ribbon layout and establish a specific order for custom controls.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? InsertAfterQualifiedId { get; set; }
@@ -427,7 +411,6 @@ public interface SplitButton : IModelElement
   /// custom split buttons and other custom controls in the ribbon.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? InsertBeforeQualifiedId { get; set; }
@@ -454,7 +437,6 @@ public interface SplitButton : IModelElement
   /// Use visibility sparingly to avoid confusing users with disappearing commands.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public bool? Visible { get; set; }
@@ -481,7 +463,6 @@ public interface SplitButton : IModelElement
   /// Use dynamic visibility to create context-aware ribbons that adapt to user needs.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? GetVisible { get; set; }
@@ -509,7 +490,6 @@ public interface SplitButton : IModelElement
   /// Users typically need an additional key to access the dropdown menu via keyboard.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? Keytip { get; set; }
@@ -534,7 +514,6 @@ public interface SplitButton : IModelElement
   /// The callback function receives a ribbon control parameter and should return a string value.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? GetKeytip { get; set; }
@@ -559,7 +538,6 @@ public interface SplitButton : IModelElement
   /// Consider icon clarity and user familiarity when deciding whether to show labels.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public bool? ShowLabel { get; set; }
@@ -585,7 +563,6 @@ public interface SplitButton : IModelElement
   /// Dynamic label visibility can improve ribbon responsiveness and accommodate different display configurations.
   /// </para>
   /// <para>
-  /// This property is only available in Office 2010 and later.
   /// </para>
   /// </remarks>
   public string? GetShowLabel { get; set; }

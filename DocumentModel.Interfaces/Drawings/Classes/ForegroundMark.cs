@@ -6,19 +6,19 @@ namespace DocumentModel.Drawings;
 public interface ForegroundMark: IModelElement
 {
   /// <summary>
-  ///   x1, this property is only available in Office 2010 and later.
+  ///   x1
   /// </summary>
   public Int32? FirstXCoordinate { get; set; }
   /// <summary>
-  ///   y1, this property is only available in Office 2010 and later.
+  ///   y1
   /// </summary>
   public Int32? FirstYCoordinate { get; set; }
   /// <summary>
-  ///   x2, this property is only available in Office 2010 and later.
+  ///   x2
   /// </summary>
   public Int32? SecondXCoordinate { get; set; }
   /// <summary>
-  ///   y2, this property is only available in Office 2010 and later.
+  ///   y2
   /// </summary>
   public Int32? SecondYCoordinate { get; set; }
 }

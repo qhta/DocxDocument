@@ -8,7 +8,6 @@ namespace DocumentModel;
 ///   related buttons and controls together within the Office ribbon UI. Button groups allow
 ///   multiple controls to be visually clustered, providing better organization and efficient
 ///   use of ribbon space by displaying controls in a compact arrangement.
-///   This functionality is available in Office 2010 and later versions.
 /// </remarks>
 public interface ButtonGroup : IModelElement
 {
@@ -19,7 +18,6 @@ public interface ButtonGroup : IModelElement
   ///   A string containing the identifier, or <c>null</c> if no identifier is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public string? Id { get; set; }
 
@@ -30,7 +28,6 @@ public interface ButtonGroup : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this when the identifier needs to be unique across multiple namespaces.
   /// </remarks>
   public string? QualifiedId { get; set; }
@@ -42,7 +39,6 @@ public interface ButtonGroup : IModelElement
   ///   A string containing custom tag data, or <c>null</c> if no tag is specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The tag can be used to store application-specific information associated with this button group.
   /// </remarks>
   public string? Tag { get; set; }
@@ -54,7 +50,6 @@ public interface ButtonGroup : IModelElement
   ///   <c>true</c> if the button group is visible; <c>false</c> if hidden; or <c>null</c> to use the default visibility.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   /// </remarks>
   public bool? Visible { get; set; }
 
@@ -65,7 +60,6 @@ public interface ButtonGroup : IModelElement
   ///   A string containing the callback function name, or <c>null</c> if visibility is not determined dynamically.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   The callback function should return a boolean value indicating whether the button group should be visible.
   /// </remarks>
   public string? GetVisible { get; set; }
@@ -77,7 +71,6 @@ public interface ButtonGroup : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the button group relative to a built-in control.
   /// </remarks>
   public string? InsertAfterMso { get; set; }
@@ -89,7 +82,6 @@ public interface ButtonGroup : IModelElement
   ///   A string containing the Microsoft Office identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the button group relative to a built-in control.
   /// </remarks>
   public string? InsertBeforeMso { get; set; }
@@ -101,7 +93,6 @@ public interface ButtonGroup : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the button group relative to another custom control.
   /// </remarks>
   public string? InsertAfterQualifiedId { get; set; }
@@ -113,7 +104,6 @@ public interface ButtonGroup : IModelElement
   ///   A string containing the namespace-qualified identifier, or <c>null</c> if position is not specified.
   /// </value>
   /// <remarks>
-  ///   This property is only available in Office 2010 and later.
   ///   Use this to position the button group relative to another custom control.
   /// </remarks>
   public string? InsertBeforeQualifiedId { get; set; }

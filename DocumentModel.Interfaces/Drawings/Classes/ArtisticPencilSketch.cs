@@ -6,11 +6,11 @@ namespace DocumentModel.Drawings;
 public interface ArtisticPencilSketch: IModelElement
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  ///   trans
   /// </summary>
   public Int32? Transparancy { get; set; }
   /// <summary>
-  ///   pressure, this property is only available in Office 2010 and later.
+  ///   pressure
   /// </summary>
   public Int32? Pressure { get; set; }
 }

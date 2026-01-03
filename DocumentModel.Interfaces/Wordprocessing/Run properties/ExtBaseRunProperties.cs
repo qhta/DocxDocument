@@ -44,19 +44,19 @@ public interface ExtBaseRunProperties : BaseRunProperties
   /// </summary>
   public Reflection? Reflection { get; set; }
   /// <summary>
-  ///   TextOutlineEffect, this property is only available in Office 2010 and later..
+  ///   TextOutlineEffect.
   /// </summary>
   public TextOutlineEffect? TextOutlineEffect { get; set; }
   /// <summary>
-  ///   FillTextEffect, this property is only available in Office 2010 and later..
+  ///   FillTextEffect.
   /// </summary>
   public FillTextEffect? FillTextEffect { get; set; }
   /// <summary>
-  ///   Scene3D, this property is only available in Office 2010 and later..
+  ///   Scene3D.
   /// </summary>
   public Scene3D? Scene3D { get; set; }
   /// <summary>
-  ///   Properties3D, this property is only available in Office 2010 and later..
+  ///   Properties3D.
   /// </summary>
   public Properties3D? Properties3D { get; set; }
   /// <summary>
@@ -64,15 +64,15 @@ public interface ExtBaseRunProperties : BaseRunProperties
   /// </summary>
   public LigaturesKind? Ligatures { get; set; }
   /// <summary>
-  ///   NumberingFormat, this property is only available in Office 2010 and later..
+  ///   NumberingFormat.
   /// </summary>
   public NumberFormKind? NumberingFormat { get; set; }
   /// <summary>
-  ///   NumberSpacing, this property is only available in Office 2010 and later..
+  ///   NumberSpacing.
   /// </summary>
   public NumberSpacingKind? NumberSpacing { get; set; }
   /// <summary>
-  ///   StylisticSets, this property is only available in Office 2010 and later..
+  ///   StylisticSets.
   /// </summary>
   public StylisticSets? StylisticSets { get; set; }
   #endregion

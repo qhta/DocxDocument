@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 public interface Camera: IModelElement
 {
   /// <summary>
-  ///   prst, this property is only available in Office 2010 and later.
+  ///   prst
   /// </summary>
   public PresetCameraKind? PresetCameraType { get; set; }
 }

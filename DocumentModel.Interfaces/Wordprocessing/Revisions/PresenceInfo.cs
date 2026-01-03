@@ -6,11 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public interface PresenceInfo: IModelElement
 {
   /// <summary>
-  ///   providerId, this property is only available in Office 2013 and later.
+  ///   providerId
   /// </summary>
   public string? ProviderId { get; set; }
   /// <summary>
-  ///   userId, this property is only available in Office 2013 and later.
+  ///   userId
   /// </summary>
   public string? UserId { get; set; }
 }

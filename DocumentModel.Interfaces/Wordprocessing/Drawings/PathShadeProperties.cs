@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 public interface PathShadeProperties: IModelElement
 {
   /// <summary>
-  ///   path, this property is only available in Office 2010 and later.
+  ///   path
   /// </summary>
   public PathShadeKind? Path { get; set; }
   /// <summary>

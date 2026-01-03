@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public interface NumericDimension: IModelElement
 {
   /// <summary>
-  ///   type, this property is only available in Office 2016 and later.
+  ///   type
   /// </summary>
   public NumericDimensionType? Type { get; set; }
   public OpenXmlFormulaElement? Formula { get; set; }
