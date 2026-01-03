@@ -141,10 +141,6 @@ public interface ClassificationExtensionList : IModelElement
   /// Gets or sets the collection of classification extensions that define document classifications,
   /// sensitivity labels, and compliance metadata.
   /// </summary>
-  /// <value>
-  /// A <see cref="Collection{ClassificationExtension}"/> containing zero or more classification extensions.
-  /// If <see langword="null"/> or empty, the document has no custom classification metadata.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The collection of classification extensions stores all classification-related metadata for the document.

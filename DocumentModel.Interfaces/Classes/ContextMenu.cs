@@ -141,10 +141,6 @@ public interface ContextMenu : IModelElement
   /// <summary>
   /// Gets or sets a reference to a built-in Office control to clone and add to the context menu.
   /// </summary>
-  /// <value>
-  /// A <see cref="ControlCloneRegular"/> object that specifies which built-in Office control to duplicate.
-  /// If <see langword="null"/>, no built-in control is cloned.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Control cloning allows add-ins to duplicate existing Office commands and place them in custom
@@ -163,10 +159,6 @@ public interface ContextMenu : IModelElement
   /// <summary>
   /// Gets or sets a custom button control to add to the context menu.
   /// </summary>
-  /// <value>
-  /// A <see cref="ButtonRegular"/> object defining the button's appearance and behavior.
-  /// If <see langword="null"/>, no button is added.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Buttons are the most common control type in context menus, used for immediate actions that
@@ -188,10 +180,6 @@ public interface ContextMenu : IModelElement
   /// <summary>
   /// Gets or sets a checkbox control to add to the context menu.
   /// </summary>
-  /// <value>
-  /// An <see cref="CheckBox"/> object defining the checkbox's appearance and behavior.
-  /// If <see langword="null"/>, no checkbox is added.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Checkboxes in context menus provide a visual indication of on/off state for settings or options.
@@ -214,10 +202,6 @@ public interface ContextMenu : IModelElement
   /// <summary>
   /// Gets or sets a gallery control to add to the context menu.
   /// </summary>
-  /// <value>
-  /// A <see cref="GalleryRegular"/> object defining the gallery's appearance, items, and behavior.
-  /// If <see langword="null"/>, no gallery is added.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Galleries in context menus display a visual collection of options that users can choose from,
@@ -248,10 +232,6 @@ public interface ContextMenu : IModelElement
   /// <summary>
   /// Gets or sets a toggle button control to add to the context menu.
   /// </summary>
-  /// <value>
-  /// A <see cref="ToggleButtonRegular"/> object defining the toggle button's appearance and behavior.
-  /// If <see langword="null"/>, no toggle button is added.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Toggle buttons in context menus provide a way to switch features or formatting on and off.
@@ -274,10 +254,6 @@ public interface ContextMenu : IModelElement
   /// <summary>
   /// Gets or sets a split button control to add to the context menu.
   /// </summary>
-  /// <value>
-  /// A <see cref="SplitButtonRegular"/> object defining the split button's appearance and behavior.
-  /// If <see langword="null"/>, no split button is added.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Split buttons combine a primary action button with a dropdown menu of related options.
@@ -300,10 +276,6 @@ public interface ContextMenu : IModelElement
   /// <summary>
   /// Gets or sets a submenu control to add to the context menu.
   /// </summary>
-  /// <value>
-  /// A <see cref="MenuRegular"/> object defining the submenu's label and nested items.
-  /// If <see langword="null"/>, no submenu is added.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Submenus organize related commands in a hierarchical structure, helping to keep context menus
@@ -326,10 +298,6 @@ public interface ContextMenu : IModelElement
   /// <summary>
   /// Gets or sets a dynamic submenu control that populates its items at runtime.
   /// </summary>
-  /// <value>
-  /// A <see cref="DynamicMenuRegular"/> object defining the dynamic submenu's behavior.
-  /// If <see langword="null"/>, no dynamic submenu is added.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Dynamic menus generate their menu items programmatically when the menu is opened, rather than
@@ -363,10 +331,6 @@ public interface ContextMenu : IModelElement
   /// <summary>
   /// Gets or sets a menu separator to visually group related commands in the context menu.
   /// </summary>
-  /// <value>
-  /// A <see cref="MenuSeparatorNoTitle"/> object representing a horizontal dividing line.
-  /// If <see langword="null"/>, no separator is added.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Menu separators are horizontal lines that divide context menu items into logical groups,

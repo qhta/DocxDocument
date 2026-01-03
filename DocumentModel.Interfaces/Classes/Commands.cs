@@ -214,10 +214,6 @@ public interface Commands : IModelElement
   /// Gets or sets the collection of command definitions that map user interface actions to
   /// application logic and event handlers in Office add-ins.
   /// </summary>
-  /// <value>
-  /// A <see cref="Collection{Command}"/> containing zero or more command definitions.
-  /// If <see langword="null"/> or empty, no commands are defined and UI controls may not function.
-  /// </value>
   /// <remarks>
   /// <para>
   /// The collection of commands provides the executable actions that power custom Office add-in

@@ -98,10 +98,6 @@ public interface DocumentControlsQatItems : IModelElement
   /// <summary>
   /// Gets or sets a reference to a built-in Office control to clone and add to the Quick Access Toolbar.
   /// </summary>
-  /// <value>
-  /// A <see cref="ControlCloneQat"/> object that specifies which built-in Office command to duplicate in the QAT.
-  /// If <see langword="null"/>, no built-in control is cloned.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Control cloning is the recommended approach for adding commands to the QAT because it:
@@ -139,10 +135,6 @@ public interface DocumentControlsQatItems : IModelElement
   /// <summary>
   /// Gets or sets a custom button control to add to the Quick Access Toolbar.
   /// </summary>
-  /// <value>
-  /// A <see cref="ButtonRegular"/> object defining the button's appearance, behavior, and callback.
-  /// If <see langword="null"/>, no custom button is added.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Custom buttons in the QAT execute document-specific actions through macros or add-in callbacks.
@@ -185,10 +177,6 @@ public interface DocumentControlsQatItems : IModelElement
   /// <summary>
   /// Gets or sets a visual separator to organize and group related commands in the Quick Access Toolbar.
   /// </summary>
-  /// <value>
-  /// A <see cref="Separator"/> object representing a vertical dividing line between QAT controls.
-  /// If <see langword="null"/>, no separator is added.
-  /// </value>
   /// <remarks>
   /// <para>
   /// Separators in the QAT are vertical lines that visually divide commands into logical groups,
