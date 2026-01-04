@@ -108,6 +108,6 @@ public class HexCharJsonConverter : JsonConverter<HexChar>
   /// </remarks>
   public override void Write(Utf8JsonWriter writer, HexChar value, JsonSerializerOptions options)
   {
-    writer.WriteStringValue(value.ToString());
+    writer.WriteStringValue(value.ToString(CultureInfo.InvariantCulture));
   }
 }
