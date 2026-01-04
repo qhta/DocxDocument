@@ -1,20 +1,21 @@
+// Global using directives
+
 global using System;
 global using System.Collections;
-global using System.Collections.ObjectModel;
 global using System.Collections.Generic;
+global using System.Collections.ObjectModel;
 global using System.Collections.Specialized;
 global using System.ComponentModel;
 global using System.Diagnostics;
 global using System.Diagnostics.CodeAnalysis;
 global using System.Globalization;
-global using System.IO;
-global using System.IO.Packaging;
 global using System.Linq;
 global using System.Reflection;
+global using System.Runtime.Serialization;
 global using System.Text;
-global using System.Text.Json;
-global using System.Text.Json.Serialization;
-global using System.Xml;
-global using System.Xml.Schema;
-global using System.Xml.Serialization;
-global using JsonException = System.Text.Json.JsonException;
+
+global using DX=DocumentFormat.OpenXml;
+global using DXPack=DocumentFormat.OpenXml.Packaging;
+
+global using Qhta.Conversion;
+global using Qhta.TextUtils;

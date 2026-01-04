@@ -25,10 +25,6 @@
     <None Remove="Settings\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="BaseTypes\BytePercentTypeConverter.cs" />
-    <Compile Remove="BaseTypes\EighthPointsTypeConverter.cs" />
-    <Compile Remove="BaseTypes\HalfPoints.cs" />
-    <Compile Remove="BaseTypes\VectorVariantJsonConverter.cs" />
     <Compile Remove="Drawings.ChartDrawing\Classes\Extent.cs" />
     <Compile Remove="Math\Classes\OfficeMathArgumentType.cs" />
     <Compile Remove="Packaging\Classes\CustomizationPart.cs" />
@@ -53,5 +49,8 @@
   <ItemGroup>
     <Folder Include="Colors\Drawings\" />
     <Folder Include="Drawings.Diagram2\Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
   </ItemGroup>
 </Project>
