@@ -29,9 +29,9 @@ public partial struct HexInt : IXmlSerializable
   ///   <para>
   ///   The method properly handles three scenarios:
   ///   <list type="number">
-  ///   <item><description><b>Empty elements:</b> &lt;Int /&gt; → Value remains 0 (default)</description></item>
+  ///   <item><description><b>Empty elements:</b> &lt;Int /&gt; → value remains 0 (default)</description></item>
   ///   <item><description><b>Text content:</b> &lt;Int&gt;0000007B&lt;/Int&gt; → Parses and sets hex value</description></item>
-  ///   <item><description><b>No content:</b> &lt;Int&gt;&lt;/Int&gt; → Value remains 0 (default)</description></item>
+  ///   <item><description><b>No content:</b> &lt;Int&gt;&lt;/Int&gt; → value remains 0 (default)</description></item>
   ///   </list>
   ///   </para>
   ///   <para>
@@ -77,7 +77,7 @@ public partial struct HexInt : IXmlSerializable
         int parsedValue = int.Parse(hexString, NumberStyles.HexNumber);
 
         // Use Unsafe.AsRef to update the readonly field
-        System.Runtime.CompilerServices.Unsafe.AsRef(in Value) = parsedValue;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
       }
 
       reader.Read(); // Move past text
