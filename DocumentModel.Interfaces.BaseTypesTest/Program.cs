@@ -7,6 +7,7 @@ class Program
 {
   static void Main(string[] args)
   {
+    Console.OutputEncoding = System.Text.Encoding.UTF8;
     if (!HexBinarySerializationTests.Run()) return;
     if (!HexCharSerializationTests.Run()) return;
     Console.WriteLine();
