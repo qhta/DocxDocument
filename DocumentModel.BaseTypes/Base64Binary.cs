@@ -38,7 +38,7 @@ namespace DocumentModel;
 ///   </para>
 /// </remarks>
 [JsonConverter(typeof(Base64BinaryJsonConverter))]
-public partial class Base64Binary : IEquatable<Base64Binary>, IXmlSerializable
+public partial class Base64Binary : IEquatable<Base64Binary>
 {
   private readonly byte[] value = Array.Empty<byte>();
 

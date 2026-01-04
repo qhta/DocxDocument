@@ -38,7 +38,7 @@
 [JsonConverter(typeof(HexIntJsonConverter))]
 public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
 {
-  private readonly int Value;
+  private readonly int value;
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="HexInt"/> struct from a hexadecimal string.
@@ -60,7 +60,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </exception>
   public HexInt(string val)
   {
-    Value = int.Parse(val, NumberStyles.HexNumber);
+    value = int.Parse(val, NumberStyles.HexNumber);
   }
 
   /// <summary>
@@ -75,7 +75,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </remarks>
   public HexInt(int value)
   {
-    Value = value;
+    this.value = value;
   }
 
   /// <summary>
@@ -90,7 +90,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </remarks>
   public HexInt(uint value)
   {
-    Value = (int)value;
+    this.value = (int)value;
   }
 
   /// <summary>
@@ -105,9 +105,10 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </remarks>
   public HexInt(ulong value)
   {
-    Value = (int)value;
+    this.value = (int)value;
   }
 
+  #region IConvertible Implementation
   /// <summary>
   ///   Returns the <see cref="TypeCode"/> for the underlying value type.
   /// </summary>
@@ -116,7 +117,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public TypeCode GetTypeCode()
   {
-    return Value.GetTypeCode();
+    return value.GetTypeCode();
   }
 
   /// <summary>
@@ -128,7 +129,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public bool ToBoolean(IFormatProvider? provider)
   {
-    return Value != 0;
+    return value != 0;
   }
 
   /// <summary>
@@ -143,7 +144,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </remarks>
   public byte ToByte(IFormatProvider? provider)
   {
-    return (byte)Value;
+    return (byte)value;
   }
 
   /// <summary>
@@ -155,7 +156,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public char ToChar(IFormatProvider? provider)
   {
-    return ((IConvertible)Value).ToChar(provider);
+    return ((IConvertible)value).ToChar(provider);
   }
 
   /// <summary>
@@ -170,7 +171,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </exception>
   public DateTime ToDateTime(IFormatProvider? provider)
   {
-    return ((IConvertible)Value).ToDateTime(provider);
+    return ((IConvertible)value).ToDateTime(provider);
   }
 
   /// <summary>
@@ -182,7 +183,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public decimal ToDecimal(IFormatProvider? provider)
   {
-    return Value;
+    return value;
   }
 
   /// <summary>
@@ -194,7 +195,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public double ToDouble(IFormatProvider? provider)
   {
-    return Value;
+    return value;
   }
 
   /// <summary>
@@ -206,7 +207,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public short ToInt16(IFormatProvider? provider)
   {
-    return (short)Value;
+    return (short)value;
   }
 
   /// <summary>
@@ -218,7 +219,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public int ToInt32(IFormatProvider? provider)
   {
-    return Value;
+    return value;
   }
 
   /// <summary>
@@ -230,7 +231,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public long ToInt64(IFormatProvider? provider)
   {
-    return Value;
+    return value;
   }
 
   /// <summary>
@@ -242,7 +243,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public sbyte ToSByte(IFormatProvider? provider)
   {
-    return (sbyte)Value;
+    return (sbyte)value;
   }
 
   /// <summary>
@@ -254,7 +255,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public float ToSingle(IFormatProvider? provider)
   {
-    return Value;
+    return value;
   }
 
   /// <summary>
@@ -270,7 +271,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </remarks>
   public string ToString(IFormatProvider? provider)
   {
-    return Value.ToString(provider);
+    return value.ToString(provider);
   }
 
   /// <summary>
@@ -282,7 +283,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public ushort ToUInt16(IFormatProvider? provider)
   {
-    return (ushort)Value;
+    return (ushort)value;
   }
 
   /// <summary>
@@ -294,7 +295,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public uint ToUInt32(IFormatProvider? provider)
   {
-    return (uint)Value;
+    return (uint)value;
   }
 
   /// <summary>
@@ -306,7 +307,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public ulong ToUInt64(IFormatProvider? provider)
   {
-    return (ulong)Value;
+    return (ulong)value;
   }
 
   /// <summary>
@@ -335,34 +336,37 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   public object ToType(Type targetType, IFormatProvider? provider)
   {
     if (targetType == typeof(UInt16))
-      return Value;
+      return value;
     if (targetType == typeof(Int32))
-      return Value;
+      return value;
     if (targetType == typeof(UInt32))
-      return Value;
+      return value;
     if (targetType == typeof(Int64))
-      return Value;
+      return value;
     if (targetType == typeof(UInt64))
-      return Value;
+      return value;
     if (targetType == typeof(Int16))
-      return (short)Value;
+      return (short)value;
     if (targetType == typeof(Byte))
-      return (byte)Value;
+      return (byte)value;
     if (targetType == typeof(SByte))
-      return (sbyte)Value;
+      return (sbyte)value;
     if (targetType == typeof(Single))
-      return Value;
+      return value;
     if (targetType == typeof(Double))
-      return Value;
+      return value;
     if (targetType == typeof(Decimal))
-      return Value;
+      return value;
     if (targetType == typeof(String))
       return ToString();
     if (targetType == typeof(HexInt))
-      return new HexInt(Value);
-    return ((IConvertible)Value).ToType(targetType, provider);
+      return new HexInt(value);
+    return ((IConvertible)value).ToType(targetType, provider);
   }
 
+  #endregion
+
+  #region Implicit Conversions
   /// <summary>
   ///   Implicitly converts a hexadecimal string to a HexInt.
   /// </summary>
@@ -383,7 +387,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// <returns>The lower 16 bits as a ushort.</returns>
   public static implicit operator ushort(HexInt val)
   {
-    return (ushort)val.Value;
+    return (ushort)val.value;
   }
 
   /// <summary>
@@ -393,7 +397,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// <returns>The value reinterpreted as a uint.</returns>
   public static implicit operator uint(HexInt val)
   {
-    return (uint)val.Value;
+    return (uint)val.value;
   }
 
   /// <summary>
@@ -403,7 +407,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// <returns>The underlying int32 value.</returns>
   public static implicit operator Int32(HexInt val)
   {
-    return val.Value;
+    return val.value;
   }
 
   /// <summary>
@@ -413,7 +417,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// <returns>The value as a ulong.</returns>
   public static implicit operator ulong(HexInt val)
   {
-    return (ulong)val.Value;
+    return (ulong)val.value;
   }
 
   /// <summary>
@@ -476,6 +480,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </remarks>
   public static implicit operator HexInt(HexBinary value) => new HexInt(value.ToString());
 
+  #endregion
   /// <summary>
   ///   Converts this HexInt to its 8-character uppercase hexadecimal string representation.
   /// </summary>
@@ -486,16 +491,16 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   ///   <para>
   ///   Examples:
   ///   <list type="bullet">
-  ///   <item><description>Value 0 → "00000000"</description></item>
-  ///   <item><description>Value 123 (0x7B) → "0000007B"</description></item>
-  ///   <item><description>Value -1 (0xFFFFFFFF) → "FFFFFFFF"</description></item>
-  ///   <item><description>Value 2,147,483,647 → "7FFFFFFF"</description></item>
+  ///   <item><description>value 0 → "00000000"</description></item>
+  ///   <item><description>value 123 (0x7B) → "0000007B"</description></item>
+  ///   <item><description>value -1 (0xFFFFFFFF) → "FFFFFFFF"</description></item>
+  ///   <item><description>value 2,147,483,647 → "7FFFFFFF"</description></item>
   ///   </list>
   ///   </para>
   /// </remarks>
   public override string ToString()
   {
-    return Value.ToString("X8");
+    return value.ToString("X8");
   }
 
   /// <summary>
@@ -507,7 +512,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public bool Equals(HexInt other)
   {
-    return Value == other.Value;
+    return value == other.value;
   }
 
   /// <summary>
@@ -518,6 +523,6 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public override int GetHashCode()
   {
-    return Value;
+    return value;
   }
 }
