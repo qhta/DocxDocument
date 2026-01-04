@@ -75,7 +75,7 @@ public interface SdtProperties : IModelElement, IStoryContent
   /// applications may exhibit undefined behavior. The value is typically a large positive integer.
   /// </para>
   /// </remarks>
-  public IHexInt? SdtId { get; set; }
+  public HexInt? SdtId { get; set; }
   
   /// <summary>
   /// Gets or sets the run properties that shall be applied to text runs within the structured document tag.

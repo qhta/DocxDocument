@@ -15,15 +15,15 @@ public interface Run : IElementCollection<IRunContent>,
   /// <summary>
   ///   Revision Identifier for Run Properties
   /// </summary>
-  public IHexInt? RsidRunProperties { get; set; }
+  public HexInt? RsidRunProperties { get; set; }
   /// <summary>
   ///   Revision Identifier for Run Deletion
   /// </summary>
-  public IHexInt? RsidRunDeletion { get; set; }
+  public HexInt? RsidRunDeletion { get; set; }
   /// <summary>
   ///   Revision Identifier for Run
   /// </summary>
-  public IHexInt? RsidRunAddition { get; set; }
+  public HexInt? RsidRunAddition { get; set; }
   /// <summary>
   ///   Specifies a set of run properties which shall be applied to the contents of the parent run 
   ///   after all style formatting has been applied to the text. These properties are defined as direct formatting, 

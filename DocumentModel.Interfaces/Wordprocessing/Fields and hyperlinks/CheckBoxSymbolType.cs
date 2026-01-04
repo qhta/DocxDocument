@@ -12,5 +12,5 @@ public interface CheckBoxSymbolType: IModelElement
   /// <summary>
   ///   val
   /// </summary>
-  public IHexChar? Val { get; set; }
+  public HexChar? Val { get; set; }
 }

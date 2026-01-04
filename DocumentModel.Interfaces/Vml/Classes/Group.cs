@@ -130,7 +130,7 @@ public interface Group: IModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   Encoded Package
   /// </summary>
-  public IBase64Binary? Gfxdata { get; set; }
+  public Base64Binary? Gfxdata { get; set; }
   /// <summary>
   ///   Group Diagram Type
   /// </summary>

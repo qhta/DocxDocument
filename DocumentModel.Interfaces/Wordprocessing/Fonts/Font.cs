@@ -27,7 +27,7 @@ public interface Font : IModelElement
   ///   This set of alternative names is stored in a comma-delimited list, with all adjacent commas ignored 
   ///   (i.e. a value of Name A, Name B is equivalent to Name A,,,,,,,,, Name B). 
   /// </summary>
-  public IStringList? Aliases { get; set; }
+  public StringList? Aliases { get; set; }
   /// <summary>
   ///   Specifies the Panose-1 classification number shown in §5.2.7.17 of ISO/IEC 14496-22. 
   ///   This information can be used as defined in font substitution logic 
@@ -35,7 +35,7 @@ public interface Font : IModelElement
   ///   This information is determined by querying the font when present 
   ///   and shall not be modified when the font is not available.
   /// </summary>
-  public IHexBinary? Panose { get; set; }
+  public HexBinary? Panose { get; set; }
   /// <summary>
   ///   Specifies the character set which is supported by the parent font. 
   ///   This information can be used as defined in font substitution logic 

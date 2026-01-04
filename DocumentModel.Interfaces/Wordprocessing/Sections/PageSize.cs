@@ -8,11 +8,11 @@ public interface PageSize: IModelElement, ISectionPropertiesContent
   /// <summary>
   ///   Page Width
   /// </summary>
-  public ITwips? Width { get; set; }
+  public Twips? Width { get; set; }
   /// <summary>
   ///   Page Height
   /// </summary>
-  public ITwips? Height { get; set; }
+  public Twips? Height { get; set; }
   /// <summary>
   ///   Page Orientation
   /// </summary>

@@ -12,7 +12,7 @@ public interface TextFontType: IModelElement
   /// <summary>
   ///   Panose Setting
   /// </summary>
-   public IHexBinary? Panose { get; set; }
+   public HexBinary? Panose { get; set; }
   /// <summary>
   ///   Similar Font Family
   /// </summary>

@@ -11,9 +11,9 @@ public interface ThemeColor : IColor
   /// <summary>
   ///   Specifies a lighter version of its input color. A 10% tint is 10% of the input color combined with 90% white.
   /// </summary>
-  public IPercent? Tint { get; set; }
+  public Percent? Tint { get; set; }
   /// <summary>
   /// Specifies a darker version of its input color. A 10% shade is 10% of the input color combined with 90% black.
   /// </summary>
-  public IPercent? Shade { get; set; }
+  public Percent? Shade { get; set; }
 }

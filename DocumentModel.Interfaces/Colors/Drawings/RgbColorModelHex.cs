@@ -56,7 +56,7 @@ public interface RgbColorModelHex: IModelElement
   /// This is the primary color value specified as a 24-bit RGB color (8 bits per channel).
   /// Common values include 0xFF0000 (red), 0x00FF00 (green), 0x0000FF (blue), 0x000000 (black), and 0xFFFFFF (white).
   /// </remarks>
-  public IRGB? Val { get; set; }
+  public RGB? Val { get; set; }
   
   /// <summary>
   /// Gets or sets the legacy color index used by spreadsheet applications for this item.

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
-internal class EighthPointsTypeConverter : TypeConverter
+internal class HexIntXmlConverter : TypeConverter, IXmlConverter
 {
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
@@ -20,15 +20,40 @@ internal class EighthPointsTypeConverter : TypeConverter
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
     if (value is string str)
-      return new EighthPoints(str);
+      return new HexInt(str);
     return base.ConvertFrom(context, culture, value);
   }
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
-    if (value is EighthPoints val)
-      return val.ToString();
+    if (value is HexInt hexInt)
+      return hexInt.ToString();
     return base.ConvertTo(context, culture, value, destinationType);
   }
 
+  public bool CanRead => true;
+  public bool CanWrite => false;
+
+  public void WriteXml(object? context, IXmlWriter writer, object? value, IXmlSerializer? serializer)
+  {
+    throw new NotImplementedException();
+  }
+
+  public object? ReadXml(object? context, IXmlReader reader, Type objectType, object? existingValue, IXmlSerializer? serializer)
+  {
+    if (reader.NodeType==System.Xml.XmlNodeType.Element)
+      reader.Read(); // read pass start element;
+    var str = reader.Value;
+    if (str=="")
+      Debug.Assert(true);
+    var val = new HexInt(str);
+    reader.Read(); // read pass string value;
+    reader.Read(); // read pass end element;
+    return val;
+  }
+
+  public bool CanConvert(Type objectType)
+  {
+    return objectType == typeof(HexInt);
+  }
 }

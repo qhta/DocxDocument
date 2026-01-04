@@ -13,7 +13,7 @@ public partial interface Style : IModelElement, IAliasedObject
   ///   Each name shall be separated by one or more consecutive comma characters (Unicode character value 002C). 
   ///   All commas present shall be interpreted as separator character and never as part of an alternate style name.
   /// </summary>
-  public new IStringList? Aliases { get; set; }
+  public new StringList? Aliases { get; set; }
 
   IEnumerable<string>? IAliasedObject.Aliases => Aliases;
 

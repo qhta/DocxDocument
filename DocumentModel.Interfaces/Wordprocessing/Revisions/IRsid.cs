@@ -7,5 +7,5 @@ public interface IRsid
   /// <summary>
   /// Identifier of the revision
   /// </summary>
-  public IHexInt Id { get; set; }
+  public HexInt Id { get; set; }
 }

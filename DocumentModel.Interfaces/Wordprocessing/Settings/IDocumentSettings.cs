@@ -231,7 +231,7 @@ public interface IDocumentSettings : IDocumentProperties
   /// in the document. Values MUST be greater than 0 and less than 0x80000000. 
   /// </summary>
   [Category("Identification")]
-  public IHexInt? DocumentId { get; set; }
+  public HexInt? DocumentId { get; set; }
   /// <summary>
   /// This element specifies the set of document protection restrictions which have been applied to the contents 
   /// of a WordprocessingML document. These restrictions should be enforced by applications editing this document 
@@ -331,14 +331,14 @@ public interface IDocumentSettings : IDocumentProperties
   /// (i.e. it only adjusts the grid by the modulus of the value against the width of one grid unit).
   /// </summary>
   [Category("Document grid")]
-  public ITwips? DrawingGridHorizontalOrigin { get; set; }
+  public Twips? DrawingGridHorizontalOrigin { get; set; }
   /// <summary>
   /// This element specifies the width of horizontal grid units in this document. 
   /// The drawing grid is a grid which can be used by applications to help position floating objects in the document. 
   /// If this element is omitted, then each horizontal grid unit shall be 180 twentieths of a point (0.125") in width.
   /// </summary>
   [Category("Document grid")]
-  public ITwips? DrawingGridHorizontalSpacing { get; set; }
+  public Twips? DrawingGridHorizontalSpacing { get; set; }
   /// <summary>
   /// This element specifies the distance from of the top edge of the page which shall be used as the origin 
   /// for the vertical gridlines used by the drawing grid. The drawing grid is a virtual grid 
@@ -349,13 +349,13 @@ public interface IDocumentSettings : IDocumentProperties
   /// (i.e. it only adjusts the grid by the modulus of the value against the width of one grid unit).
   /// </summary>
   [Category("Document grid")]
-  public ITwips? DrawingGridVerticalOrigin { get; set; }
+  public Twips? DrawingGridVerticalOrigin { get; set; }
   /// <summary>
   /// This element specifies the width of vertical grid units in this document. 
   /// The drawing grid is a grid which can be used by applications to help position floating objects in the document.
   /// </summary>
   [Category("Document grid")]
-  public ITwips? DrawingGridVerticalSpacing { get; set; }
+  public Twips? DrawingGridVerticalSpacing { get; set; }
   /// <summary>
   /// This element specifies that applications shall embed common system fonts when they are in use 
   /// and font embedding is enabled for this document using the embedTrueTypeFonts element (§17.8.3.8). 
@@ -439,7 +439,7 @@ public interface IDocumentSettings : IDocumentProperties
   /// If this element is omitted, then a default hyphenation zone of 360 twentieths of a point (0.25") shall be applied when performing hyphenation on this document.
   /// </summary>
   [Category("Hyphenation")]
-  public ITwips? HyphenationZone { get; set; }
+  public Twips? HyphenationZone { get; set; }
   /// <summary>
   /// This element specifies that applications should ignore all text content which is not contained within a leaf custom XML markup element 
   /// when validating the contents of the custom XML markup in this document against one or more attached custom XML schema(s). 
@@ -666,7 +666,7 @@ public interface IDocumentSettings : IDocumentProperties
   /// on a given WordprocessingML document as a percentage of the total size of the given WordprocessingML document. 
   /// Performing an automatic document summary is a runtime operation outside the scope of ECMA-376.
   /// </summary>
-  public IPercent? SummaryLength { get; set; }
+  public Percent? SummaryLength { get; set; }
   /// <summary>
   /// This element specifies the language which shall be used to determine the appropriate theme fonts 
   /// in the document's Theme part which map to the major/minor theme fonts. 

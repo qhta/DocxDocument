@@ -38,7 +38,7 @@ public interface IContentProperties: IModelElement, IDocumentProperties
   ///   The title of each document. 
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
-  public IStringList? TitlesOfParts { get; set; }
+  public StringList? TitlesOfParts { get; set; }
   /// <summary>
   ///   Indicates whether hyperlinks in a document are up-to-date.
   ///   TRUE means that hyperlinks are updated, FALSE means that hyperlinks are outdated.
