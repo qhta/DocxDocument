@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Globalization;
+using System.Text.Json;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -21,8 +22,8 @@ public static class BytePercentSerializationTests
     if (!TestBytePercentBasicOperations()) return false;
     if (!TestBytePercentXmlSerialization()) return false;
     if (!TestBytePercentJsonSerialization()) return false;
-    //if (!TestBytePercentEdgeCases()) return false;
-    //if (!TestBytePercentPerformance()) return false;
+    if (!TestBytePercentEdgeCases()) return false;
+    if (!TestBytePercentPerformance()) return false;
 
     return true;
   }
@@ -302,231 +303,232 @@ public static class BytePercentSerializationTests
 
   #region Edge Cases Tests
 
-  //static bool TestBytePercentEdgeCases()
-  //{
-  //  Console.WriteLine("--- Testing BytePercent Edge Cases ---");
+  static bool TestBytePercentEdgeCases()
+  {
+    Console.WriteLine("--- Testing BytePercent Edge Cases ---");
 
-  //  try
-  //  {
-  //    // Test zero value
-  //    Console.WriteLine("Testing zero value:");
-  //    BytePercent zero = 0;
-  //    Console.WriteLine($"  Zero: '{zero}' ({(byte)zero}%)");
+    try
+    {
+      // Test zero value
+      Console.WriteLine("Testing zero value:");
+      BytePercent zero = 0;
+      Console.WriteLine($"  Zero: '{zero}' ({(byte)zero}%)");
 
-  //    // Test boundary values (0-100% range)
-  //    Console.WriteLine("\nTesting boundary values:");
-  //    BytePercent minPercent = 0;
-  //    BytePercent maxPercent = 100;
-  //    Console.WriteLine($"  Min (0%): '{minPercent}'");
-  //    Console.WriteLine($"  Max (100%): '{maxPercent}'");
+      // Test boundary values (0-100% range)
+      Console.WriteLine("\nTesting boundary values:");
+      BytePercent minPercent = 0;
+      BytePercent maxPercent = 100;
+      Console.WriteLine($"  Min (0%): '{minPercent}'");
+      Console.WriteLine($"  Max (100%): '{maxPercent}'");
 
-  //    // Test values beyond typical percentage range (byte supports 0-255)
-  //    Console.WriteLine("\nTesting extended byte range:");
-  //    BytePercent extended = (byte)150;
-  //    Console.WriteLine($"  Extended value (150): '{extended}' (valid for byte range)");
+      // Test values beyond typical percentage range (byte supports 0-255)
+      Console.WriteLine("\nTesting extended byte range:");
+      BytePercent extended = (byte)150;
+      Console.WriteLine($"  Extended value (150): '{extended}' (valid for byte range)");
 
-  //    // Test common percentage values
-  //    Console.WriteLine("\nTesting common percentage values:");
-  //    BytePercent quarter = 25;
-  //    BytePercent half = 50;
-  //    BytePercent threeQuarters = 75;
-  //    Console.WriteLine($"  25%: '{quarter}'");
-  //    Console.WriteLine($"  50%: '{half}'");
-  //    Console.WriteLine($"  75%: '{threeQuarters}'");
+      // Test common percentage values
+      Console.WriteLine("\nTesting common percentage values:");
+      BytePercent quarter = 25;
+      BytePercent half = 50;
+      BytePercent threeQuarters = 75;
+      Console.WriteLine($"  25%: '{quarter}'");
+      Console.WriteLine($"  50%: '{half}'");
+      Console.WriteLine($"  75%: '{threeQuarters}'");
 
-  //    // Test hex conversion (color alpha channel scenario)
-  //    Console.WriteLine("\nTesting hex conversion (color alpha):");
-  //    BytePercent fromHex00 = BytePercent.FromHexString("00"); // 0% opacity
-  //    BytePercent fromHex80 = BytePercent.FromHexString("80"); // ~50% opacity
-  //    BytePercent fromHexFF = BytePercent.FromHexString("FF"); // 100% opacity
-  //    Console.WriteLine($"  0x00 → {fromHex00} ({(byte)fromHex00}%)");
-  //    Console.WriteLine($"  0x80 → {fromHex80} ({(byte)fromHex80}%)");
-  //    Console.WriteLine($"  0xFF → {fromHexFF} ({(byte)fromHexFF}%)");
+      // Test hex conversion (color alpha channel scenario)
+      Console.WriteLine("\nTesting hex conversion (color alpha):");
+      BytePercent fromHex00 = BytePercent.FromHexString("00"); // 0% opacity
+      BytePercent fromHex80 = BytePercent.FromHexString("80"); // ~50% opacity
+      BytePercent fromHexFF = BytePercent.FromHexString("FF"); // 100% opacity
+      Console.WriteLine($"  0x00 → {fromHex00} ({(byte)fromHex00}%)");
+      Console.WriteLine($"  0x80 → {fromHex80} ({(byte)fromHex80}%)");
+      Console.WriteLine($"  0xFF → {fromHexFF} ({(byte)fromHexFF}%)");
 
-  //    // Test reverse hex conversion
-  //    Console.WriteLine("\nTesting reverse hex conversion:");
-  //    BytePercent pct0 = 0;
-  //    BytePercent pct50 = 50;
-  //    BytePercent pct100 = 100;
-  //    Console.WriteLine($"  0% → 0x{pct0.ToHexString()}");
-  //    Console.WriteLine($"  50% → 0x{pct50.ToHexString()}");
-  //    Console.WriteLine($"  100% → 0x{pct100.ToHexString()}");
+      // Test reverse hex conversion
+      Console.WriteLine("\nTesting reverse hex conversion:");
+      BytePercent pct0 = 0;
+      BytePercent pct50 = 50;
+      BytePercent pct100 = 100;
+      Console.WriteLine($"  0% → 0x{pct0.ToHexString()}");
+      Console.WriteLine($"  50% → 0x{pct50.ToHexString()}");
+      Console.WriteLine($"  100% → 0x{pct100.ToHexString()}");
 
-  //    // Test string parsing with and without % suffix
-  //    Console.WriteLine("\nTesting string parsing:");
-  //    BytePercent withPercent = "75%";
-  //    BytePercent withoutPercent = "75";
-  //    Console.WriteLine($"  \"75%\" → {withPercent} ({(byte)withPercent})");
-  //    Console.WriteLine($"  \"75\" → {withoutPercent} ({(byte)withoutPercent})");
-  //    Console.WriteLine($"  Are equal: {withPercent.CompareTo(withoutPercent) == 0}");
+      // Test string parsing with and without % suffix
+      Console.WriteLine("\nTesting string parsing:");
+      BytePercent withPercent = "75%";
+      BytePercent withoutPercent = "75";
+      Console.WriteLine($"  \"75%\" → {withPercent} ({(byte)withPercent})");
+      Console.WriteLine($"  \"75\" → {withoutPercent} ({(byte)withoutPercent})");
+      Console.WriteLine($"  Are equal: {withPercent.CompareTo(withoutPercent) == 0}");
 
-  //    // Test JSON numeric vs string input
-  //    Console.WriteLine("\nTesting JSON deserialization from different formats:");
+      // Test JSON numeric vs string input
+      Console.WriteLine("\nTesting JSON deserialization from different formats:");
 
-  //    // String format
-  //    string jsonString = "{\"Value\":\"50\"}";
-  //    var fromString = JsonSerializer.Deserialize<BytePercentWrapper>(jsonString);
-  //    Console.WriteLine($"  From JSON string \"50\": {fromString?.Value} ({(byte)(fromString?.Value ?? 0)})");
+      // String format
+      string jsonString = "{\"Value\":\"50\"}";
+      var fromString = JsonSerializer.Deserialize<BytePercentWrapper>(jsonString);
+      Console.WriteLine($"  From JSON string \"50\": {fromString?.Value} ({(byte)(fromString?.Value ?? 0)})");
 
-  //    // Numeric format
-  //    string jsonNumeric = "{\"Value\":50}";
-  //    var fromNumeric = JsonSerializer.Deserialize<BytePercentWrapper>(jsonNumeric);
-  //    Console.WriteLine($"  From JSON number 50: {fromNumeric?.Value} ({(byte)(fromNumeric?.Value ?? 0)})");
+      // Numeric format
+      string jsonNumeric = "{\"Value\":50}";
+      var fromNumeric = JsonSerializer.Deserialize<BytePercentWrapper>(jsonNumeric);
+      Console.WriteLine($"  From JSON number 50: {fromNumeric?.Value} ({(byte)(fromNumeric?.Value ?? 0)})");
 
-  //    // With % suffix
-  //    string jsonWithPercent = "{\"Value\":\"50%\"}";
-  //    var fromPercent = JsonSerializer.Deserialize<BytePercentWrapper>(jsonWithPercent);
-  //    Console.WriteLine($"  From JSON \"50%\": {fromPercent?.Value} ({(byte)(fromPercent?.Value ?? 0)})");
+      // With % suffix
+      string jsonWithPercent = "{\"Value\":\"50%\"}";
+      var fromPercent = JsonSerializer.Deserialize<BytePercentWrapper>(jsonWithPercent);
+      Console.WriteLine($"  From JSON \"50%\": {fromPercent?.Value} ({(byte)(fromPercent?.Value ?? 0)})");
 
-  //    // Test formatting with precision
-  //    Console.WriteLine("\nTesting formatted output:");
-  //    BytePercent pct = 75;
-  //    Console.WriteLine($"  Default: {pct.ToString()}");
-  //    Console.WriteLine($"  No unit: {pct.ToString(null)}");
-  //    Console.WriteLine($"  Precision 2: {pct.ToString(2, "%")}");
-  //    Console.WriteLine($"  Precision 0: {pct.ToString(0, "%")}");
+      // Test formatting with precision
+      Console.WriteLine("\nTesting formatted output:");
+      BytePercent pct = 75;
+      // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+      Console.WriteLine($"  Default: {pct.ToString()}");
+      Console.WriteLine($"  No unit: {pct.ToString(CultureInfo.InvariantCulture, null)}");
+      Console.WriteLine($"  Precision 2: {pct.ToString(2, "%")}");
+      Console.WriteLine($"  Precision 0: {pct.ToString(0, "%")}");
 
-  //    // Test comparison
-  //    Console.WriteLine("\nTesting comparison:");
-  //    BytePercent small = 25;
-  //    BytePercent large = 75;
-  //    Console.WriteLine($"  25% < 75%: {small.CompareTo(large) < 0}");
-  //    Console.WriteLine($"  75% > 25%: {large.CompareTo(small) > 0}");
-  //    Console.WriteLine($"  50% == 50%: {half.CompareTo((BytePercent)50) == 0}");
+      // Test comparison
+      Console.WriteLine("\nTesting comparison:");
+      BytePercent small = 25;
+      BytePercent large = 75;
+      Console.WriteLine($"  25% < 75%: {small.CompareTo(large) < 0}");
+      Console.WriteLine($"  75% > 25%: {large.CompareTo(small) > 0}");
+      Console.WriteLine($"  50% == 50%: {half.CompareTo((BytePercent)50) == 0}");
 
-  //    Console.WriteLine("\n✓ All edge case tests completed");
-  //    Console.WriteLine();
-  //    return true;
-  //  }
-  //  catch (Exception ex)
-  //  {
-  //    Console.WriteLine($"✗ Edge case test FAILED: {ex.Message}");
-  //    Console.WriteLine($"  Stack trace: {ex.StackTrace}");
-  //    Console.WriteLine();
-  //    return false;
-  //  }
-  //}
+      Console.WriteLine("\n✓ All edge case tests completed");
+      Console.WriteLine();
+      return true;
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"✗ Edge case test FAILED: {ex.Message}");
+      Console.WriteLine($"  Stack trace: {ex.StackTrace}");
+      Console.WriteLine();
+      return false;
+    }
+  }
 
   #endregion
 
   #region Performance Tests
 
-  //static bool TestBytePercentPerformance()
-  //{
-  //  Console.WriteLine("--- Testing BytePercent Performance ---");
+  static bool TestBytePercentPerformance()
+  {
+    Console.WriteLine("--- Testing BytePercent Performance ---");
 
-  //  try
-  //  {
-  //    const int iterations = 100000;
+    try
+    {
+      const int iterations = 100000;
 
-  //    // Test construction from string
-  //    var sw = System.Diagnostics.Stopwatch.StartNew();
-  //    for (int i = 0; i < iterations; i++)
-  //    {
-  //      BytePercent pct = "50%";
-  //    }
-  //    sw.Stop();
-  //    Console.WriteLine($"Construction from string x {iterations}: {sw.ElapsedMilliseconds}ms");
+      // Test construction from string
+      var sw = System.Diagnostics.Stopwatch.StartNew();
+      for (int i = 0; i < iterations; i++)
+      {
+        BytePercent pct = "50%";
+      }
+      sw.Stop();
+      Console.WriteLine($"Construction from string x {iterations}: {sw.ElapsedMilliseconds}ms");
 
-  //    // Test construction from byte
-  //    sw.Restart();
-  //    for (int i = 0; i < iterations; i++)
-  //    {
-  //      BytePercent pct = (byte)50;
-  //    }
-  //    sw.Stop();
-  //    Console.WriteLine($"Construction from byte x {iterations}: {sw.ElapsedMilliseconds}ms");
+      // Test construction from byte
+      sw.Restart();
+      for (int i = 0; i < iterations; i++)
+      {
+        BytePercent pct = (byte)50;
+      }
+      sw.Stop();
+      Console.WriteLine($"Construction from byte x {iterations}: {sw.ElapsedMilliseconds}ms");
 
-  //    // Test ToString performance
-  //    BytePercent testPct = 50;
-  //    sw.Restart();
-  //    for (int i = 0; i < iterations; i++)
-  //    {
-  //      string str = testPct.ToString();
-  //    }
-  //    sw.Stop();
-  //    Console.WriteLine($"ToString() x {iterations}: {sw.ElapsedMilliseconds}ms");
+      // Test ToString performance
+      BytePercent testPct = 50;
+      sw.Restart();
+      for (int i = 0; i < iterations; i++)
+      {
+        string str = testPct.ToString();
+      }
+      sw.Stop();
+      Console.WriteLine($"ToString() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
-  //    // Test hex conversion performance
-  //    sw.Restart();
-  //    for (int i = 0; i < iterations; i++)
-  //    {
-  //      string hex = testPct.ToHexString();
-  //    }
-  //    sw.Stop();
-  //    Console.WriteLine($"ToHexString() x {iterations}: {sw.ElapsedMilliseconds}ms");
+      // Test hex conversion performance
+      sw.Restart();
+      for (int i = 0; i < iterations; i++)
+      {
+        string hex = testPct.ToHexString();
+      }
+      sw.Stop();
+      Console.WriteLine($"ToHexString() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
-  //    sw.Restart();
-  //    for (int i = 0; i < iterations; i++)
-  //    {
-  //      BytePercent pct = BytePercent.FromHexString("80");
-  //    }
-  //    sw.Stop();
-  //    Console.WriteLine($"FromHexString() x {iterations}: {sw.ElapsedMilliseconds}ms");
+      sw.Restart();
+      for (int i = 0; i < iterations; i++)
+      {
+        BytePercent pct = BytePercent.FromHexString("80");
+      }
+      sw.Stop();
+      Console.WriteLine($"FromHexString() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
-  //    // Test JSON serialization performance
-  //    var testObj = new BytePercentTestData
-  //    {
-  //      Id = 1,
-  //      Name = "Perf Test",
-  //      Opacity = 75,
-  //      //ColorAlpha = 100,
-  //      //FillLevel = 50,
-  //      //ZeroPercent = 0,
-  //      //MaxPercent = 100,
-  //      //MidPercent = 50
-  //    };
+      // Test JSON serialization performance
+      var testObj = new BytePercentTestData
+      {
+        Id = 1,
+        Name = "Perf Test",
+        Opacity = 75,
+        //ColorAlpha = 100,
+        //FillLevel = 50,
+        //ZeroPercent = 0,
+        //MaxPercent = 100,
+        //MidPercent = 50
+      };
 
-  //    sw.Restart();
-  //    for (int i = 0; i < iterations / 10; i++)
-  //    {
-  //      string json = JsonSerializer.Serialize(testObj);
-  //    }
-  //    sw.Stop();
-  //    Console.WriteLine($"JSON Serialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
+      sw.Restart();
+      for (int i = 0; i < iterations / 10; i++)
+      {
+        string json = JsonSerializer.Serialize(testObj);
+      }
+      sw.Stop();
+      Console.WriteLine($"JSON Serialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
 
-  //    // Test JSON deserialization performance
-  //    string jsonData = JsonSerializer.Serialize(testObj);
-  //    sw.Restart();
-  //    for (int i = 0; i < iterations / 10; i++)
-  //    {
-  //      var obj = JsonSerializer.Deserialize<BytePercentTestData>(jsonData);
-  //    }
-  //    sw.Stop();
-  //    Console.WriteLine($"JSON Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
+      // Test JSON deserialization performance
+      string jsonData = JsonSerializer.Serialize(testObj);
+      sw.Restart();
+      for (int i = 0; i < iterations / 10; i++)
+      {
+        var obj = JsonSerializer.Deserialize<BytePercentTestData>(jsonData);
+      }
+      sw.Stop();
+      Console.WriteLine($"JSON Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
 
-  //    // Test comparison performance
-  //    BytePercent pct1 = 50;
-  //    BytePercent pct2 = 50;
-  //    sw.Restart();
-  //    for (int i = 0; i < iterations; i++)
-  //    {
-  //      int result = pct1.CompareTo(pct2);
-  //    }
-  //    sw.Stop();
-  //    Console.WriteLine($"CompareTo() x {iterations}: {sw.ElapsedMilliseconds}ms");
+      // Test comparison performance
+      BytePercent pct1 = 50;
+      BytePercent pct2 = 50;
+      sw.Restart();
+      for (int i = 0; i < iterations; i++)
+      {
+        int result = pct1.CompareTo(pct2);
+      }
+      sw.Stop();
+      Console.WriteLine($"CompareTo() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
-  //    // Test implicit conversions performance
-  //    sw.Restart();
-  //    for (int i = 0; i < iterations; i++)
-  //    {
-  //      byte value = (byte)pct1;
-  //    }
-  //    sw.Stop();
-  //    Console.WriteLine($"Implicit conversion to byte x {iterations}: {sw.ElapsedMilliseconds}ms");
+      // Test implicit conversions performance
+      sw.Restart();
+      for (int i = 0; i < iterations; i++)
+      {
+        byte value = (byte)pct1;
+      }
+      sw.Stop();
+      Console.WriteLine($"Implicit conversion to byte x {iterations}: {sw.ElapsedMilliseconds}ms");
 
-  //    Console.WriteLine("✓ Performance tests completed");
-  //    Console.WriteLine();
-  //    return true;
-  //  }
-  //  catch (Exception ex)
-  //  {
-  //    Console.WriteLine($"✗ Performance test FAILED: {ex.Message}");
-  //    Console.WriteLine($"  Stack trace: {ex.StackTrace}");
-  //    Console.WriteLine();
-  //    return false;
-  //  }
-  //}
+      Console.WriteLine("✓ Performance tests completed");
+      Console.WriteLine();
+      return true;
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"✗ Performance test FAILED: {ex.Message}");
+      Console.WriteLine($"  Stack trace: {ex.StackTrace}");
+      Console.WriteLine();
+      return false;
+    }
+  }
 
   #endregion
 }

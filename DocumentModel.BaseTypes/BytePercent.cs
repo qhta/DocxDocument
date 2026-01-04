@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Represents a percentage value stored as a byte (0-100), commonly used in Office Open XML documents.
@@ -419,6 +417,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
 
   #endregion
 
+  #region String Conversion
   /// <summary>
   /// Converts the value of this instance to its equivalent string representation with "%" suffix.
   /// </summary>
@@ -429,8 +428,85 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// </remarks>
   public override string ToString()
   {
-    return value.ToString() + "%";
+    return value.ToString(CultureInfo.InvariantCulture) + "%";
   }
+
+  /// <summary>
+  /// Converts value to string using unit.
+  /// Unit can be determined as "%" suffix or null.
+  /// </summary>
+  public string ToString(string? unit)
+  {
+    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
+  }
+
+  /// <summary>
+  /// Converts value to string using unit and specific precision (fractional digits count).
+  /// Unit can be determined as "%" suffix or null.
+  /// </summary>
+  public string ToString(int precision, string? unit)
+  {
+    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
+  }
+
+  /// <summary>
+  /// Converts value to string using unit, specific precision (fractional digits count),
+  /// and format provider to determine digits separator.
+  /// Fixed format is used.
+  /// Unit can be determined as "%" suffix or null.
+  /// </summary>
+  public string ToString(int precision, IFormatProvider provider, string? unit)
+  {
+    string format = $"F{precision}";
+    if (unit != null)
+    {
+      if (unit.EndsWith("%"))
+        return (value).ToString(format, provider) + unit;
+    }
+    return value.ToString(provider);
+  }
+
+  /// <summary>
+  /// Converts value to string using unit
+  /// and format provider to determine digits separator.
+  /// Unit can be determined as "%" suffix or null.
+  /// </summary>
+  public string ToString(IFormatProvider provider, string? unit)
+  {
+    if (unit != null)
+    {
+      if (unit.EndsWith("%"))
+        return (value).ToString(provider) + unit;
+    }
+    return value.ToString(provider);
+  }
+  #endregion
+
+  #region HexString conversion
+
+  /// <summary>
+  /// Creates a new BytePercent instance from a hexadecimal string representation.
+  /// </summary>
+  /// <remarks>The input string is interpreted as a hexadecimal byte and mapped to a percentage value in the
+  /// range 0 to 100. The method rounds the result to the nearest integer percentage.</remarks>
+  /// <param name="str">A string containing a hexadecimal value to convert. The string must represent a value between 0x00 and 0xFF.</param>
+  /// <returns>A BytePercent instance corresponding to the percentage value derived from the specified hexadecimal string.</returns>
+  public static BytePercent FromHexString(string str)
+  {
+    byte byteValue = Convert.ToByte(str, 16);
+    return new BytePercent((byte)((byteValue * 100 + 127) / 255));
+  }
+
+  /// <summary>
+  /// Converts the value of this instance to its equivalent hexadecimal string representation.
+  /// </summary>
+  /// <returns>A string representation of the hexadecimal value (e.g., "32").</returns>
+  public string ToHexString()
+  {
+    byte hexValue = (byte)((value * 255 + 50) / 100);
+    return hexValue.ToString("X2");
+  } 
+  #endregion
 
   /// <summary>
   /// Indicates whether the current object is equal to another object of the same type.
