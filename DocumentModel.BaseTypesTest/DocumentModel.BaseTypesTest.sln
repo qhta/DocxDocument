@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.1.11312.151 d18.0
+VisualStudioVersion = 18.1.11312.151
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModel.BaseTypesTest", "DocumentModel.BaseTypesTest.csproj", "{E0312830-5533-8D18-113B-6102F4CA255C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModel.BaseTypes", "..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj", "{627995BF-C161-6646-75A3-02FE30793B9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E0312830-5533-8D18-113B-6102F4CA255C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0312830-5533-8D18-113B-6102F4CA255C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0312830-5533-8D18-113B-6102F4CA255C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{627995BF-C161-6646-75A3-02FE30793B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{627995BF-C161-6646-75A3-02FE30793B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{627995BF-C161-6646-75A3-02FE30793B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{627995BF-C161-6646-75A3-02FE30793B9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

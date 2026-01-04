@@ -5,65 +5,64 @@ using System.Xml.Serialization;
 namespace DocumentModel.BaseTypesTest;
 
 /// <summary>
-/// Test suite for HexBinary type serialization in both XML and JSON formats.
+/// Test suite for Base64Binary type serialization in both XML and JSON formats.
 /// </summary>
-public static class HexBinarySerializationTests
+public static class Base64BinarySerializationTests
 {
   /// <summary>
-  /// Runs all HexBinary serialization tests.
+  /// Runs all Base64Binary serialization tests.
   /// </summary>
   public static bool Run()
   {
-    Console.WriteLine("=== HexBinary Serialization Test Program ===");
-    Console.WriteLine("=== HexBinary Serialization Test Program ===");
+    Console.WriteLine("=== Base64Binary Serialization Test Program ===");
     Console.WriteLine();
 
     // Run all tests
-    if (!TestHexBinaryBasicOperations()) return false;
-    if (!TestHexBinaryXmlSerialization()) return false;
-    if (!TestHexBinaryJsonSerialization()) return false;
-    if (!TestHexBinaryEdgeCases()) return false;
-    if (!TestHexBinaryPerformance()) return false;
+    if (!TestBase64BinaryBasicOperations()) return false;
+    if (!TestBase64BinaryXmlSerialization()) return false;
+    if (!TestBase64BinaryJsonSerialization()) return false;
+    if (!TestBase64BinaryEdgeCases()) return false;
+    if (!TestBase64BinaryPerformance()) return false;
 
     return true;
   }
 
   #region Basic Operations Tests
 
-  static bool TestHexBinaryBasicOperations()
+  static bool TestBase64BinaryBasicOperations()
   {
-    Console.WriteLine("--- Testing HexBinary Basic Operations ---");
+    Console.WriteLine("--- Testing Base64Binary Basic Operations ---");
 
     try
     {
-      // Test string to HexBinary conversion
-      HexBinary hex1 = "48656C6C6F"; // "Hello" in hex
-      Console.WriteLine($"✓ String to HexBinary: {hex1}");
+      // Test string to Base64Binary conversion
+      Base64Binary b64_1 = "SGVsbG8="; // "Hello" in Base64
+      Console.WriteLine($"✓ String to Base64Binary: {b64_1}");
 
-      // Test byte array to HexBinary conversion
+      // Test byte array to Base64Binary conversion
       byte[] bytes = new byte[] { 0x48, 0x65, 0x6C, 0x6C, 0x6F };
-      HexBinary hex2 = bytes;
-      Console.WriteLine($"✓ Byte array to HexBinary: {hex2}");
+      Base64Binary b64_2 = bytes;
+      Console.WriteLine($"✓ Byte array to Base64Binary: {b64_2}");
 
       // Test equality
-      if (hex1.Equals(hex2))
+      if (b64_1.Equals(b64_2))
         Console.WriteLine("✓ Equality test passed");
       else
         Console.WriteLine("✗ Equality test FAILED");
 
-      // Test HexBinary to string
-      string str = hex1;
-      Console.WriteLine($"✓ HexBinary to string: {str}");
+      // Test Base64Binary to string
+      string str = b64_1;
+      Console.WriteLine($"✓ Base64Binary to string: {str}");
 
-      // Test HexBinary to byte array
-      byte[] resultBytes = hex1;
-      Console.WriteLine($"✓ HexBinary to byte array: [{string.Join(", ", resultBytes.Select(b => $"0x{b:X2}"))}]");
+      // Test Base64Binary to byte array
+      byte[] resultBytes = b64_1;
+      Console.WriteLine($"✓ Base64Binary to byte array: [{string.Join(", ", resultBytes.Select(b => $"0x{b:X2}"))}]");
 
-      // Test Length property
-      Console.WriteLine($"✓ Length: {hex1.Length} bytes");
+      // Test ToString method
+      Console.WriteLine($"✓ ToString: {b64_1.ToString()}");
 
       // Test hash code
-      Console.WriteLine($"✓ Hash code: {hex1.GetHashCode()}");
+      Console.WriteLine($"✓ Hash code: {b64_1.GetHashCode()}");
 
       Console.WriteLine("✓ All basic operations passed");
       Console.WriteLine();
@@ -81,32 +80,32 @@ public static class HexBinarySerializationTests
 
   #region XML Serialization Tests
 
-  static bool TestHexBinaryXmlSerialization()
+  static bool TestBase64BinaryXmlSerialization()
   {
-    Console.WriteLine("--- Testing HexBinary XML Serialization ---");
+    Console.WriteLine("--- Testing Base64Binary XML Serialization ---");
 
     try
     {
       // Create test object
-      var testData = new HexBinaryTestDataClass
+      var testData = new Base64BinaryTestDataClass
       {
         Id = 1,
         Name = "XML Test",
         BinaryData = new byte[] { 0xDE, 0xAD, 0xBE, 0xEF },
-        DocumentHash = "A1B2C3D4E5F6",
-        ImageData = new byte[] { 0xFF, 0xD8, 0xFF, 0xE0 } // JPEG header
+        EmbeddedImage = "/9j/4A==", // JPEG header in Base64
+        EncryptedContent = new byte[] { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 }
       };
 
       Console.WriteLine($"Original data:");
       Console.WriteLine($"  Id: {testData.Id}");
       Console.WriteLine($"  Name: {testData.Name}");
       Console.WriteLine($"  BinaryData: {testData.BinaryData}");
-      Console.WriteLine($"  DocumentHash: {testData.DocumentHash}");
-      Console.WriteLine($"  ImageData: {testData.ImageData}");
+      Console.WriteLine($"  EmbeddedImage: {testData.EmbeddedImage}");
+      Console.WriteLine($"  EncryptedContent: {testData.EncryptedContent}");
       Console.WriteLine();
 
       // Serialize to XML
-      var xmlSerializer = new XmlSerializer(typeof(HexBinaryTestDataClass));
+      var xmlSerializer = new XmlSerializer(typeof(Base64BinaryTestDataClass));
       string xmlString;
 
       using (var stringWriter = new StringWriter())
@@ -126,10 +125,10 @@ public static class HexBinarySerializationTests
       Console.WriteLine();
 
       // Deserialize from XML
-      HexBinaryTestDataClass? deserializedData;
+      Base64BinaryTestDataClass? deserializedData;
       using (var stringReader = new StringReader(xmlString))
       {
-        deserializedData = (HexBinaryTestDataClass?)xmlSerializer.Deserialize(stringReader);
+        deserializedData = (Base64BinaryTestDataClass?)xmlSerializer.Deserialize(stringReader);
       }
 
       if (deserializedData == null)
@@ -143,12 +142,12 @@ public static class HexBinarySerializationTests
       Console.WriteLine($"  Id: {deserializedData.Id}");
       Console.WriteLine($"  Name: {deserializedData.Name}");
       Console.WriteLine($"  BinaryData: {deserializedData.BinaryData}");
-      Console.WriteLine($"  DocumentHash: {deserializedData.DocumentHash}");
-      Console.WriteLine($"  ImageData: {deserializedData.ImageData}");
+      Console.WriteLine($"  EmbeddedImage: {deserializedData.EmbeddedImage}");
+      Console.WriteLine($"  EncryptedContent: {deserializedData.EncryptedContent}");
       Console.WriteLine();
 
       // Validate
-      bool isValid = testData.Id == deserializedData.Id && testData.Name == deserializedData.Name && testData.BinaryData.Equals(deserializedData.BinaryData) && testData.DocumentHash.Equals(deserializedData.DocumentHash) && testData.ImageData.Equals(deserializedData.ImageData);
+      bool isValid = testData.Id == deserializedData.Id && testData.Name == deserializedData.Name && testData.BinaryData.Equals(deserializedData.BinaryData) && testData.EmbeddedImage.Equals(deserializedData.EmbeddedImage) && testData.EncryptedContent.Equals(deserializedData.EncryptedContent);
 
       if (isValid)
       {
@@ -176,28 +175,28 @@ public static class HexBinarySerializationTests
 
   #region JSON Serialization Tests
 
-  static bool TestHexBinaryJsonSerialization()
+  static bool TestBase64BinaryJsonSerialization()
   {
-    Console.WriteLine("--- Testing HexBinary JSON Serialization ---");
+    Console.WriteLine("--- Testing Base64Binary JSON Serialization ---");
 
     try
     {
       // Create test object
-      var testData = new HexBinaryTestDataClass
+      var testData = new Base64BinaryTestDataClass
       {
         Id = 2,
         Name = "JSON Test",
         BinaryData = new byte[] { 0xCA, 0xFE, 0xBA, 0xBE },
-        DocumentHash = "0123456789ABCDEF",
-        ImageData = new byte[] { 0x89, 0x50, 0x4E, 0x47 } // PNG header
+        EmbeddedImage = "iVBORw0KGgo=", // PNG header in Base64
+        EncryptedContent = new byte[] { 0xFF, 0xEE, 0xDD, 0xCC, 0xBB, 0xAA }
       };
 
       Console.WriteLine($"Original data:");
       Console.WriteLine($"  Id: {testData.Id}");
       Console.WriteLine($"  Name: {testData.Name}");
       Console.WriteLine($"  BinaryData: {testData.BinaryData}");
-      Console.WriteLine($"  DocumentHash: {testData.DocumentHash}");
-      Console.WriteLine($"  ImageData: {testData.ImageData}");
+      Console.WriteLine($"  EmbeddedImage: {testData.EmbeddedImage}");
+      Console.WriteLine($"  EncryptedContent: {testData.EncryptedContent}");
       Console.WriteLine();
 
       // Serialize to JSON
@@ -214,7 +213,7 @@ public static class HexBinarySerializationTests
       Console.WriteLine();
 
       // Deserialize from JSON
-      var deserializedData = JsonSerializer.Deserialize<HexBinaryTestDataClass>(jsonString, jsonOptions);
+      var deserializedData = JsonSerializer.Deserialize<Base64BinaryTestDataClass>(jsonString, jsonOptions);
 
       if (deserializedData == null)
       {
@@ -227,12 +226,12 @@ public static class HexBinarySerializationTests
       Console.WriteLine($"  Id: {deserializedData.Id}");
       Console.WriteLine($"  Name: {deserializedData.Name}");
       Console.WriteLine($"  BinaryData: {deserializedData.BinaryData}");
-      Console.WriteLine($"  DocumentHash: {deserializedData.DocumentHash}");
-      Console.WriteLine($"  ImageData: {deserializedData.ImageData}");
+      Console.WriteLine($"  EmbeddedImage: {deserializedData.EmbeddedImage}");
+      Console.WriteLine($"  EncryptedContent: {deserializedData.EncryptedContent}");
       Console.WriteLine();
 
       // Validate
-      bool isValid = testData.Id == deserializedData.Id && testData.Name == deserializedData.Name && testData.BinaryData.Equals(deserializedData.BinaryData) && testData.DocumentHash.Equals(deserializedData.DocumentHash) && testData.ImageData.Equals(deserializedData.ImageData);
+      bool isValid = testData.Id == deserializedData.Id && testData.Name == deserializedData.Name && testData.BinaryData.Equals(deserializedData.BinaryData) && testData.EmbeddedImage.Equals(deserializedData.EmbeddedImage) && testData.EncryptedContent.Equals(deserializedData.EncryptedContent);
 
       if (isValid)
       {
@@ -260,16 +259,16 @@ public static class HexBinarySerializationTests
 
   #region Edge Cases Tests
 
-  static bool TestHexBinaryEdgeCases()
+  static bool TestBase64BinaryEdgeCases()
   {
-    Console.WriteLine("--- Testing HexBinary Edge Cases ---");
+    Console.WriteLine("--- Testing Base64Binary Edge Cases ---");
 
     try
     {
-      // Test empty HexBinary
-      Console.WriteLine("Testing empty HexBinary:");
-      HexBinary empty = new byte[0];
-      Console.WriteLine($"  Empty HexBinary: '{empty}' (Length: {empty.Length})");
+      // Test empty Base64Binary
+      Console.WriteLine("Testing empty Base64Binary:");
+      Base64Binary empty = new byte[0];
+      Console.WriteLine($"  Empty Base64Binary: '{empty}' (Length: {((byte[])empty).Length})");
 
       // Serialize and deserialize empty
       string jsonEmpty = JsonSerializer.Serialize(new { Data = empty });
@@ -279,34 +278,58 @@ public static class HexBinarySerializationTests
 
       // Test single byte
       Console.WriteLine("\nTesting single byte:");
-      HexBinary singleByte = new byte[] { 0xFF };
-      Console.WriteLine($"  Single byte: '{singleByte}' (Length: {singleByte.Length})");
+      Base64Binary singleByte = new byte[] { 0xFF };
+      Console.WriteLine($"  Single byte: '{singleByte}' (Base64)");
+
+      // Test two bytes (needs padding)
+      Console.WriteLine("\nTesting two bytes (padding test):");
+      Base64Binary twoBytes = new byte[] { 0x12, 0x34 };
+      string twoByteString = twoBytes;
+      Console.WriteLine($"  Two bytes as Base64: '{twoByteString}' (should have == padding)");
+
+      // Test three bytes (no padding)
+      Console.WriteLine("\nTesting three bytes (no padding):");
+      Base64Binary threeBytes = new byte[] { 0x12, 0x34, 0x56 };
+      string threeByteString = threeBytes;
+      Console.WriteLine($"  Three bytes as Base64: '{threeByteString}' (should have no padding)");
 
       // Test large binary data
       Console.WriteLine("\nTesting large binary data:");
       byte[] largeData = new byte[1024];
       for (int i = 0; i < largeData.Length; i++)
         largeData[i] = (byte)(i % 256);
-      HexBinary large = largeData;
-      Console.WriteLine($"  Large data: Length = {large.Length} bytes");
-      Console.WriteLine($"  First 32 chars: {large.ToString().Substring(0, System.Math.Min(32, large.ToString().Length))}...");
+      Base64Binary large = largeData;
+      string largeBase64 = large;
+      Console.WriteLine($"  Large data: Length = {((byte[])large).Length} bytes");
+      Console.WriteLine($"  Base64 length: {largeBase64.Length} chars");
+      Console.WriteLine($"  First 32 chars: {largeBase64.Substring(0, System.Math.Min(32, largeBase64.Length))}...");
 
       // Test null handling
       Console.WriteLine("\nTesting null handling:");
       var nullWrapper = new Base64BinaryTestWrapper { Data = default };
       string jsonNull = JsonSerializer.Serialize(nullWrapper);
-      Console.WriteLine($"  JSON with default HexBinary: {jsonNull}");
+      Console.WriteLine($"  JSON with default Base64Binary: {jsonNull}");
 
       // Test special byte sequences
       Console.WriteLine("\nTesting special byte sequences:");
-      HexBinary allZeros = new byte[] { 0x00, 0x00, 0x00, 0x00 };
+      Base64Binary allZeros = new byte[] { 0x00, 0x00, 0x00, 0x00 };
       Console.WriteLine($"  All zeros: {allZeros}");
 
-      HexBinary allOnes = new byte[] { 0xFF, 0xFF, 0xFF, 0xFF };
+      Base64Binary allOnes = new byte[] { 0xFF, 0xFF, 0xFF, 0xFF };
       Console.WriteLine($"  All ones: {allOnes}");
 
-      HexBinary pattern = new byte[] { 0xAA, 0x55, 0xAA, 0x55 };
+      Base64Binary pattern = new byte[] { 0xAA, 0x55, 0xAA, 0x55 };
       Console.WriteLine($"  Pattern: {pattern}");
+
+      // Test known Base64 conversions
+      Console.WriteLine("\nTesting known Base64 conversions:");
+      Base64Binary hello = new byte[] { 0x48, 0x65, 0x6C, 0x6C, 0x6F }; // "Hello"
+      string helloBase64 = hello;
+      Console.WriteLine($"  'Hello' bytes: {helloBase64} (expected: SGVsbG8=)");
+
+      Base64Binary jpegHeader = new byte[] { 0xFF, 0xD8, 0xFF, 0xE0 };
+      string jpegBase64 = jpegHeader;
+      Console.WriteLine($"  JPEG header: {jpegBase64} (expected: /9j/4A==)");
 
       Console.WriteLine("\n✓ All edge case tests completed");
       Console.WriteLine();
@@ -324,9 +347,9 @@ public static class HexBinarySerializationTests
 
   #region Performance Tests
 
-  static bool TestHexBinaryPerformance()
+  static bool TestBase64BinaryPerformance()
   {
-    Console.WriteLine("--- Testing HexBinary Performance ---");
+    Console.WriteLine("--- Testing Base64Binary Performance ---");
 
     try
     {
@@ -339,20 +362,20 @@ public static class HexBinarySerializationTests
       var sw = System.Diagnostics.Stopwatch.StartNew();
       for (int i = 0; i < iterations; i++)
       {
-        HexBinary hex = testData;
-        string str = hex;
+        Base64Binary b64 = testData;
+        string str = b64;
       }
       sw.Stop();
-      Console.WriteLine($"Conversion (byte[] → HexBinary → string) x {iterations}: {sw.ElapsedMilliseconds}ms");
+      Console.WriteLine($"Conversion (byte[] → Base64Binary → string) x {iterations}: {sw.ElapsedMilliseconds}ms");
 
       // Test JSON serialization performance
-      var testObj = new HexBinaryTestDataClass
+      var testObj = new Base64BinaryTestDataClass
       {
         Id = 1,
         Name = "Perf Test",
         BinaryData = testData,
-        DocumentHash = "ABCDEF123456",
-        ImageData = testData
+        EmbeddedImage = "ABCDEF123456",
+        EncryptedContent = testData
       };
 
       sw.Restart();
@@ -368,21 +391,31 @@ public static class HexBinarySerializationTests
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
-        var obj = JsonSerializer.Deserialize<HexBinaryTestDataClass>(jsonData);
+        var obj = JsonSerializer.Deserialize<Base64BinaryTestDataClass>(jsonData);
       }
       sw.Stop();
       Console.WriteLine($"JSON Deserialization x {iterations}: {sw.ElapsedMilliseconds}ms");
 
       // Test equality comparison performance
-      HexBinary hex1 = testData;
-      HexBinary hex2 = testData;
+      Base64Binary b64_1 = testData;
+      Base64Binary b64_2 = testData;
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
-        bool equal = hex1.Equals(hex2);
+        bool equal = b64_1.Equals(b64_2);
       }
       sw.Stop();
       Console.WriteLine($"Equality comparison x {iterations}: {sw.ElapsedMilliseconds}ms");
+
+      // Test Base64 encoding/decoding performance
+      sw.Restart();
+      for (int i = 0; i < iterations; i++)
+      {
+        string base64 = Convert.ToBase64String(testData);
+        byte[] decoded = Convert.FromBase64String(base64);
+      }
+      sw.Stop();
+      Console.WriteLine($"Base64 encode/decode x {iterations}: {sw.ElapsedMilliseconds}ms");
 
       Console.WriteLine("✓ Performance tests completed");
       Console.WriteLine();
@@ -403,10 +436,10 @@ public static class HexBinarySerializationTests
 #region Test Helper Classes
 
 /// <summary>
-/// Test data class containing various HexBinary properties.
+/// Test data class containing various Base64Binary properties.
 /// </summary>
 [XmlRoot("TestData")]
-public class HexBinaryTestDataClass
+public class Base64BinaryTestDataClass
 {
   [XmlElement("Id")]
   public int Id { get; set; }
@@ -415,21 +448,21 @@ public class HexBinaryTestDataClass
   public string Name { get; set; } = string.Empty;
 
   [XmlElement("BinaryData")]
-  public HexBinary BinaryData { get; set; }
+  public Base64Binary BinaryData { get; set; }
 
-  [XmlElement("DocumentHash")]
-  public HexBinary DocumentHash { get; set; }
+  [XmlElement("EmbeddedImage")]
+  public Base64Binary EmbeddedImage { get; set; }
 
-  [XmlElement("ImageData")]
-  public HexBinary ImageData { get; set; }
+  [XmlElement("EncryptedContent")]
+  public Base64Binary EncryptedContent { get; set; }
 }
 
 /// <summary>
 /// Simple wrapper class for testing nullable scenarios.
 /// </summary>
-public class HexBinaryTestWrapper
+public class Base64BinaryTestWrapper
 {
-  public HexBinary Data { get; set; }
+  public Base64Binary Data { get; set; }
 }
 
 #endregion

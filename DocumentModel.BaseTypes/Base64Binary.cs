@@ -1,4 +1,6 @@
-﻿namespace DocumentModel;
+﻿using System;
+
+namespace DocumentModel;
 
 /// <summary>
 ///   Represents binary data encoded as a Base64 string, used for embedding binary content in text-based formats.
@@ -35,9 +37,45 @@
 ///   encoding method for embedding binary data in XML-based document formats.
 ///   </para>
 /// </remarks>
-public struct Base64Binary : IEquatable<Base64Binary>
+[JsonConverter(typeof(Base64BinaryJsonConverter))]
+public partial class Base64Binary : IEquatable<Base64Binary>, IXmlSerializable
 {
-  private byte[] value;
+  private readonly byte[] value = Array.Empty<byte>();
+
+  /// <summary>
+  ///   Initializes a new instance of the <see cref="Base64Binary"/> class with an empty byte array.
+  /// </summary>
+  /// <remarks>
+  ///   This parameterless constructor is required for XML serialization.
+  /// </remarks>
+  public Base64Binary()
+  {
+  }
+
+  /// <summary>
+  ///   Initializes a new instance of the <see cref="Base64Binary"/> class from a Base64-encoded string.
+  /// </summary>
+  /// <param name="val">A Base64-encoded string.</param>
+  public Base64Binary(string val)
+  {
+    if (string.IsNullOrEmpty(val))
+    {
+      value = Array.Empty<byte>();
+      return;
+    }
+
+    value = Convert.FromBase64String(val);
+  }
+
+
+  /// <summary>
+  ///   Initializes a new instance of the <see cref="Base64Binary"/> class from a byte array.
+  /// </summary>
+  /// <param name="val">The byte array to wrap.</param>
+  public Base64Binary(byte[] val)
+  {
+    value = val ?? Array.Empty<byte>();
+  }
 
   /// <summary>
   ///   Implicitly converts a Base64Binary value to its Base64-encoded string representation.
@@ -60,10 +98,7 @@ public struct Base64Binary : IEquatable<Base64Binary>
   ///   </list>
   ///   </para>
   /// </remarks>
-  public static implicit operator string(Base64Binary val)
-  {
-    return Convert.ToBase64String(val.value);
-  }
+  public static implicit operator string(Base64Binary val) => Convert.ToBase64String(val.value);
 
   /// <summary>
   ///   Implicitly converts a Base64-encoded string to a Base64Binary value.
@@ -93,10 +128,7 @@ public struct Base64Binary : IEquatable<Base64Binary>
   /// <exception cref="FormatException">
   ///   Thrown when the input string is not a valid Base64-encoded string.
   /// </exception>
-  public static implicit operator Base64Binary(string val)
-  {
-    return new() { value = Convert.FromBase64String(val) };
-  }
+  public static implicit operator Base64Binary(string val) => new(val);
 
   /// <summary>
   ///   Implicitly converts a Base64Binary value to its underlying byte array representation.
@@ -109,10 +141,7 @@ public struct Base64Binary : IEquatable<Base64Binary>
   ///   This conversion provides direct access to the raw binary data without encoding overhead.
   ///   The returned byte array is the actual underlying data, not a Base64-encoded representation.
   /// </remarks>
-  public static implicit operator byte[](Base64Binary val)
-  {
-    return val.value;
-  }
+  public static implicit operator byte[](Base64Binary val) => val.value;
 
   /// <summary>
   ///   Implicitly converts a byte array to a Base64Binary value.
@@ -130,9 +159,16 @@ public struct Base64Binary : IEquatable<Base64Binary>
   ///   Null input is accepted and results in a Base64Binary with an empty byte array.
   ///   </para>
   /// </remarks>
-  public static implicit operator Base64Binary(byte[] val)
+  public static implicit operator Base64Binary(byte[] val) => new(val);
+
+  /// <summary>
+  /// Returns a hexadecimal string representation of the underlying byte array.
+  /// </summary>
+  /// <returns>A string containing the hexadecimal representation of the value. Returns an empty string if the value is null or
+  /// empty.</returns>
+  public override string ToString()
   {
-    return new() { value = val };
+    return Convert.ToBase64String(value);
   }
 
   /// <summary>
@@ -153,8 +189,10 @@ public struct Base64Binary : IEquatable<Base64Binary>
   ///   are considered equal even if they were created from different sources (byte array vs. Base64 string).
   ///   </para>
   /// </remarks>
-  public bool Equals(Base64Binary other)
+  public bool Equals(Base64Binary? other)
   {
+    if (other == null)
+      return false;
     return Enumerable.SequenceEqual(value, other.value);
   }
 
@@ -167,7 +205,7 @@ public struct Base64Binary : IEquatable<Base64Binary>
   /// <remarks>
   ///   <para>
   ///   The hash code is computed by combining the array length with each byte value using
-  ///   <see cref="HashCode.Combine"/>. This ensures that Base64Binary values with identical
+  ///   <see cref="HashCode.Combine{T, T}"/>. This ensures that Base64Binary values with identical
   ///   byte content produce the same hash code, supporting proper usage in hash-based collections
   ///   like <see cref="Dictionary{TKey,TValue}"/> and <see cref="HashSet{T}"/>.
   ///   </para>

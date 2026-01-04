@@ -1,6 +1,5 @@
-﻿using DocumentModel.Interfaces.BaseTypesTest;
-
-namespace DocumentModel.Interfaces.BaseTypesTest;
+﻿
+namespace DocumentModel.BaseTypesTest;
 
 /// <summary>
 /// Entry point for the base types serialization test program.
@@ -41,11 +40,19 @@ class Program
       allTestsPassed = false;
 
     Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    // Run BaseBinary tests
+    if (!Base64BinarySerializationTests.Run())
+      allTestsPassed = false;
+
+    Console.WriteLine();
     Console.WriteLine  ("╔════════════════════════════════════════════════════════════╗");
     if (allTestsPassed)
       Console.WriteLine("║         ✓ All Test Suites Passed Successfully              ║");
     else
-      Console.WriteLine("║         ✗ Some Tests Failed - Check Output Above          ║");
+      Console.WriteLine("║         ✗ Some Tests Failed - Check Output Above           ║");
     Console.WriteLine  ("╚════════════════════════════════════════════════════════════╝");
     Console.WriteLine();
     Console.WriteLine("Press any key to exit...");

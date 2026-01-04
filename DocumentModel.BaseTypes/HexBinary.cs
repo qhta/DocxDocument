@@ -122,7 +122,7 @@ public partial class HexBinary : IEquatable<HexBinary>
   /// <remarks>This operator enables direct assignment of a HexBinary object to a byte variable. If the
   /// HexBinary instance is null or its value is null or empty, the result is 0.</remarks>
   /// <param name="val">The HexBinary instance to convert to a byte.</param>
-  public static implicit operator byte(HexBinary val) => val?.value?[0] ?? 0;
+  public static implicit operator byte(HexBinary val) => val?.value[0] ?? 0;
 
   /// <summary>
   /// Defines an implicit conversion from a single byte value to a HexBinary instance.
@@ -130,7 +130,7 @@ public partial class HexBinary : IEquatable<HexBinary>
   /// <remarks>The resulting HexBinary instance will represent a hexadecimal value containing only the specified
   /// byte. This allows direct assignment of a byte to a HexBinary variable without explicit casting.</remarks>
   /// <param name="val">The byte value to convert to a HexBinary instance.</param>
-  public static implicit operator HexBinary(byte val) => new(new[] { val });
+  public static implicit operator HexBinary(byte val) => new([val]);
 
   /// <summary>
   /// Defines an implicit conversion from a HexBinary instance to a ushort by parsing its string representation as a hexadecimal number.
