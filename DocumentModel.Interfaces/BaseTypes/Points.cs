@@ -3,7 +3,6 @@
 /// <summary>
 /// Points unit. 1 point = 1/72 inch.
 /// </summary>
-[TypeConverter(typeof(PointsXmlConverter))]
 public struct Points: IComparable<Points>
 {
   /// <summary>

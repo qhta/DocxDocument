@@ -3,7 +3,6 @@
 /// <summary>
 /// Percent unit.
 /// </summary>
-[TypeConverter(typeof(PercentXmlConverter))]
 public struct Percent: IComparable<Percent>
 {
   private Double Value;
