@@ -37,11 +37,10 @@ namespace DocumentModel;
 ///   formats including Word, Excel, and PowerPoint documents (Office 2007 and later).
 ///   </para>
 /// </remarks>
-[TypeConverter(typeof(HexCharXmlConverter))]
 [JsonConverter(typeof(HexCharJsonConverter))]
-public struct HexChar : IConvertible, IEquatable<HexChar>
+public readonly partial struct HexChar : IConvertible, IEquatable<HexChar>
 {
-  private ushort Value;
+  private readonly ushort value;
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="HexChar"/> struct from a hexadecimal string.
@@ -63,7 +62,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </exception>
   public HexChar(string val)
   {
-    Value = ushort.Parse(val, NumberStyles.HexNumber);
+    value = ushort.Parse(val, NumberStyles.HexNumber);
   }
 
   /// <summary>
@@ -78,7 +77,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </remarks>
   public HexChar(Byte value)
   {
-    Value = value;
+    this.value = value;
   }
 
   /// <summary>
@@ -93,7 +92,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </remarks>
   public HexChar(char value)
   {
-    Value = value;
+    this.value = value;
   }
 
   /// <summary>
@@ -108,7 +107,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </remarks>
   public HexChar(ushort value)
   {
-    Value = value;
+    this.value = value;
   }
 
   /// <summary>
@@ -122,7 +121,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </remarks>
   public HexChar(int value)
   {
-    Value = (ushort)value;
+    this.value = (ushort)value;
   }
 
   /// <summary>
@@ -133,7 +132,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public TypeCode GetTypeCode()
   {
-    return Value.GetTypeCode();
+    return value.GetTypeCode();
   }
 
   /// <summary>
@@ -145,7 +144,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public bool ToBoolean(IFormatProvider? provider)
   {
-    return Value != 0;
+    return value != 0;
   }
 
   /// <summary>
@@ -160,7 +159,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </remarks>
   public byte ToByte(IFormatProvider? provider)
   {
-    return (byte)Value;
+    return (byte)value;
   }
 
   /// <summary>
@@ -172,7 +171,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public char ToChar(IFormatProvider? provider)
   {
-    return ((IConvertible)Value).ToChar(provider);
+    return ((IConvertible)value).ToChar(provider);
   }
 
   /// <summary>
@@ -187,7 +186,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </exception>
   public DateTime ToDateTime(IFormatProvider? provider)
   {
-    return ((IConvertible)Value).ToDateTime(provider);
+    return ((IConvertible)value).ToDateTime(provider);
   }
 
   /// <summary>
@@ -199,7 +198,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public decimal ToDecimal(IFormatProvider? provider)
   {
-    return Value;
+    return value;
   }
 
   /// <summary>
@@ -211,7 +210,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public double ToDouble(IFormatProvider? provider)
   {
-    return Value;
+    return value;
   }
 
   /// <summary>
@@ -223,7 +222,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public short ToInt16(IFormatProvider? provider)
   {
-    return (short)Value;
+    return (short)value;
   }
 
   /// <summary>
@@ -235,7 +234,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public int ToInt32(IFormatProvider? provider)
   {
-    return Value;
+    return value;
   }
 
   /// <summary>
@@ -247,7 +246,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public long ToInt64(IFormatProvider? provider)
   {
-    return Value;
+    return value;
   }
 
   /// <summary>
@@ -259,7 +258,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public sbyte ToSByte(IFormatProvider? provider)
   {
-    return (sbyte)Value;
+    return (sbyte)value;
   }
 
   /// <summary>
@@ -271,7 +270,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public float ToSingle(IFormatProvider? provider)
   {
-    return Value;
+    return value;
   }
 
   /// <summary>
@@ -287,7 +286,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </remarks>
   public string ToString(IFormatProvider? provider)
   {
-    return Value.ToString(provider);
+    return ToString();
   }
 
   /// <summary>
@@ -299,7 +298,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public ushort ToUInt16(IFormatProvider? provider)
   {
-    return (ushort)Value;
+    return (ushort)value;
   }
 
   /// <summary>
@@ -311,7 +310,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public uint ToUInt32(IFormatProvider? provider)
   {
-    return (uint)Value;
+    return (uint)value;
   }
 
   /// <summary>
@@ -323,7 +322,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public ulong ToUInt64(IFormatProvider? provider)
   {
-    return (ulong)Value;
+    return (ulong)value;
   }
 
   /// <summary>
@@ -352,30 +351,30 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   public object ToType(Type targetType, IFormatProvider? provider)
   {
     if (targetType == typeof(UInt16))
-      return Value;
+      return value;
     if (targetType == typeof(Int32))
-      return Value;
+      return value;
     if (targetType == typeof(UInt32))
-      return Value;
+      return value;
     if (targetType == typeof(UInt64))
-      return Value;
+      return value;
     if (targetType == typeof(Int16))
-      return (short)Value;
+      return (short)value;
     if (targetType == typeof(Byte))
-      return (byte)Value;
+      return (byte)value;
     if (targetType == typeof(SByte))
-      return (sbyte)Value;
+      return (sbyte)value;
     if (targetType == typeof(Single))
-      return Value;
+      return value;
     if (targetType == typeof(Double))
-      return Value;
+      return value;
     if (targetType == typeof(Decimal))
-      return Value;
+      return value;
     if (targetType == typeof(String))
       return ToString();
     if (targetType == typeof(HexChar))
-      return new HexChar(Value);
-    return ((IConvertible)Value).ToType(targetType, provider);
+      return new HexChar(value);
+    return ((IConvertible)value).ToType(targetType, provider);
   }
 
   /// <summary>
@@ -413,7 +412,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// <returns>The underlying ushort value (0-65535).</returns>
   public static implicit operator ushort(HexChar val)
   {
-    return (ushort)val.Value;
+    return (ushort)val.value;
   }
 
   /// <summary>
@@ -423,7 +422,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// <returns>The character code as a uint (0-65535).</returns>
   public static implicit operator uint(HexChar val)
   {
-    return (uint)val.Value;
+    return (uint)val.value;
   }
 
   /// <summary>
@@ -445,7 +444,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// <returns>The character code as a ulong (0-65535).</returns>
   public static implicit operator ulong(HexChar val)
   {
-    return (ulong)val.Value;
+    return (ulong)val.value;
   }
 
   /// <summary>
@@ -498,35 +497,17 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   ///   <para>
   ///   Examples:
   ///   <list type="bullet">
-  ///   <item><description>Value 65 (0x41, 'A') → "41"</description></item>
-  ///   <item><description>Value 32 (0x20, space) → "20"</description></item>
-  ///   <item><description>Value 945 (0x03B1, Greek alpha α) → "03B1"</description></item>
+  ///   <item><description>value 65 (0x41, 'A') → "41"</description></item>
+  ///   <item><description>value 32 (0x20, space) → "20"</description></item>
+  ///   <item><description>value 945 (0x03B1, Greek alpha α) → "03B1"</description></item>
   ///   </list>
   ///   </para>
   /// </remarks>
   public override string ToString()
   {
-    if (Value > 255)
-      return Value.ToString("X4");
-    return Value.ToString("X2");
-  }
-
-  /// <summary>
-  ///   Sets this HexChar's value from a hexadecimal string.
-  /// </summary>
-  /// <param name="val">A hexadecimal string (2 or 4 hex digits).</param>
-  /// <remarks>
-  ///   This method updates the internal value by parsing the hexadecimal string.
-  /// </remarks>
-  /// <exception cref="FormatException">
-  ///   Thrown when the string is not a valid hexadecimal number.
-  /// </exception>
-  /// <exception cref="OverflowException">
-  ///   Thrown when the parsed value exceeds 65535.
-  /// </exception>
-  public void FromString(string val)
-  {
-    Value = ushort.Parse(val, NumberStyles.HexNumber);
+    if (value > 255)
+      return value.ToString("X4");
+    return value.ToString("X2");
   }
 
   /// <summary>
@@ -538,7 +519,7 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public bool Equals(HexChar other)
   {
-    return Value == other.Value;
+    return value == other.value;
   }
 
   /// <summary>
@@ -549,6 +530,6 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public override int GetHashCode()
   {
-    return Value;
+    return value;
   }
 }
