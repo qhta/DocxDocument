@@ -11,7 +11,7 @@ public interface RubyProperties: IModelElement
   /// <summary>
   ///   Phonetic Guide Text Font Size.
   /// </summary>
-  public IHps? PhoneticGuideTextFontSize { get; set; }
+  public Hps? PhoneticGuideTextFontSize { get; set; }
   /// <summary>
   ///   Distance Between Phonetic Guide Text and Phonetic Guide Base Text.
   /// </summary>
@@ -19,7 +19,7 @@ public interface RubyProperties: IModelElement
   /// <summary>
   ///   Phonetic Guide Base Text Font Size.
   /// </summary>
-  public IHps? PhoneticGuideBaseTextSize { get; set; }
+  public Hps? PhoneticGuideBaseTextSize { get; set; }
   /// <summary>
   ///   Language ID for Phonetic Guide.
   /// </summary>

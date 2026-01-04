@@ -12,9 +12,9 @@ public interface DocGrid: IModelElement, ISectionPropertiesContent
   /// <summary>
   ///   Document Grid Line Pitch
   /// </summary>
-  public ITwips? LinePitch { get; set; }
+  public Twips? LinePitch { get; set; }
   /// <summary>
   ///   Document Grid Character Pitch
   /// </summary>
-  public ITwips? CharacterSpace { get; set; }
+  public Twips? CharacterSpace { get; set; }
 }

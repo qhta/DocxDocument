@@ -89,7 +89,7 @@ public interface PresetColor: IModelElement
   /// <remarks>
   /// <para>
   /// A tint value lightens the preset color by mixing it with white. 
-  /// The <see cref="IPercent"/> value typically ranges from 0% to 100%, where:
+  /// The <see cref="Percent"/> value typically ranges from 0% to 100%, where:
   /// <list type="bullet">
   /// <item><description>0% or null = no tint applied (original preset color)</description></item>
   /// <item><description>50% = preset color mixed 50/50 with white</description></item>
@@ -101,7 +101,7 @@ public interface PresetColor: IModelElement
   /// Tint and shade are mutually exclusive; typically only one should be set.
   /// </para>
   /// </remarks>
-  public IPercent? Tint { get; set; }
+  public Percent? Tint { get; set; }
   
   /// <summary>
   /// Gets or sets the shade value to darken the color.
@@ -109,7 +109,7 @@ public interface PresetColor: IModelElement
   /// <remarks>
   /// <para>
   /// A shade value darkens the preset color by mixing it with black.
-  /// The <see cref="IPercent"/> value typically ranges from 0% to 100%, where:
+  /// The <see cref="Percent"/> value typically ranges from 0% to 100%, where:
   /// <list type="bullet">
   /// <item><description>0% or null = no shade applied (original preset color)</description></item>
   /// <item><description>50% = preset color mixed 50/50 with black</description></item>
@@ -120,7 +120,7 @@ public interface PresetColor: IModelElement
   /// Shade and tint are mutually exclusive; typically only one should be set.
   /// </para>
   /// </remarks>
-  public IPercent? Shade { get; set; }
+  public Percent? Shade { get; set; }
   
   /// <summary>
   /// Gets or sets a value indicating whether the complement (opposite) color operation is applied.

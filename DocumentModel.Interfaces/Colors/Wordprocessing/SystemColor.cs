@@ -136,7 +136,7 @@ public interface SystemColor: IModelElement
   /// fallback for non-Windows or incompatible systems.
   /// </para>
   /// </remarks>
-  public IRGB? LastColor { get; set; }
+  public RGB? LastColor { get; set; }
   
   /// <summary>
   /// Gets or sets the tint value to lighten the system color.
@@ -144,7 +144,7 @@ public interface SystemColor: IModelElement
   /// <remarks>
   /// <para>
   /// A tint lightens the system color by mixing it with white. 
-  /// The <see cref="IPercent"/> value typically ranges from 0% to 100%, where:
+  /// The <see cref="Percent"/> value typically ranges from 0% to 100%, where:
   /// <list type="bullet">
   /// <item><description>0% or null = no tint (original system color)</description></item>
   /// <item><description>50% = system color mixed 50/50 with white</description></item>
@@ -161,7 +161,7 @@ public interface SystemColor: IModelElement
   /// Tint and shade are mutually exclusive; typically only one should be set.
   /// </para>
   /// </remarks>
-  public IPercent? Tint { get; set; }
+  public Percent? Tint { get; set; }
   
   /// <summary>
   /// Gets or sets the shade value to darken the system color.
@@ -169,7 +169,7 @@ public interface SystemColor: IModelElement
   /// <remarks>
   /// <para>
   /// A shade darkens the system color by mixing it with black.
-  /// The <see cref="IPercent"/> value typically ranges from 0% to 100%, where:
+  /// The <see cref="Percent"/> value typically ranges from 0% to 100%, where:
   /// <list type="bullet">
   /// <item><description>0% or null = no shade (original system color)</description></item>
   /// <item><description>50% = system color mixed 50/50 with black</description></item>
@@ -185,7 +185,7 @@ public interface SystemColor: IModelElement
   /// Shade and tint are mutually exclusive; typically only one should be set.
   /// </para>
   /// </remarks>
-  public IPercent? Shade { get; set; }
+  public Percent? Shade { get; set; }
   
   /// <summary>
   /// Gets or sets a value indicating whether the complement (opposite) color operation is applied.

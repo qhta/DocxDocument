@@ -90,7 +90,7 @@ public partial interface Style : IModelElement, IEquatable<Style>
   /// <summary>
   ///   Revision Identifier for Style Definition.
   /// </summary>
-   public IHexInt? Rsid { get; set; }
+   public HexInt? Rsid { get; set; }
   /// <summary>
   ///   Style Paragraph Properties.
   /// </summary>

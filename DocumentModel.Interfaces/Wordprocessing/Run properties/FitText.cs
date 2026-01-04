@@ -12,5 +12,5 @@ public interface FitText: IModelElement
   /// <summary>
   ///   Value
   /// </summary>
-  public ITwips? Value { get; set; }
+  public Twips? Value { get; set; }
 }

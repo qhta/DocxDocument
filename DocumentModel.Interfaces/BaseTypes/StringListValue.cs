@@ -3,6 +3,6 @@ using System.Diagnostics;
 namespace DocumentModel;
 
 /// <summary>Represents the list value attributes (xsd:list).</summary>
-public interface IStringListValue : ICollection<string>, IEnumerable, IEquatable<IStringListValue>
+public interface StringListValue : ICollection<string>, IEnumerable, IEquatable<StringListValue>
 {
 }

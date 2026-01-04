@@ -11,34 +11,34 @@ public partial interface Paragraph: IElementCollection<IParagraphContent>,
   ///   with the exception that it need not be unique across the choices or fallback of an Alternate Content block. 
   ///   Values MUST be greater than 0 and less than 0x80000000. 
   /// </summary>
-  public IHexInt? ParagraphId { get; set; }
+  public HexInt? ParagraphId { get; set; }
   /// <summary>
   ///   Specifies a version identifier for a paragraph. Values MUST be greater than 0 and less than 0x80000000. 
   ///   Any element having this attribute MUST also have the <see cref="ParagraphId"/> attribute.
   ///   If two documents have the same docId, then if two paragraphs within the same respective document part 
   ///   that have the same <see cref="ParagraphId"/> and <see cref="TextId"/> SHOULD contain identical text, although formatting could differ. 
   /// </summary>
-  public IHexInt? TextId { get; set; }
+  public HexInt? TextId { get; set; }
   /// <summary>
   ///   Revision Identifier for Paragraph Glyph Formatting
   /// </summary>
-  public IHexInt? RsidParagraphMarkRevision { get; set; }
+  public HexInt? RsidParagraphMarkRevision { get; set; }
   /// <summary>
   ///   Revision Identifier for Paragraph
   /// </summary>
-  public IHexInt? RsidParagraphAddition { get; set; }
+  public HexInt? RsidParagraphAddition { get; set; }
   /// <summary>
   ///   Revision Identifier for Paragraph Deletion
   /// </summary>
-  public IHexInt? RsidParagraphDeletion { get; set; }
+  public HexInt? RsidParagraphDeletion { get; set; }
   /// <summary>
   ///   Revision Identifier for Paragraph Properties
   /// </summary>
-  public IHexInt? RsidParagraphProperties { get; set; }
+  public HexInt? RsidParagraphProperties { get; set; }
   /// <summary>
   ///   Default Revision Identifier for Runs
   /// </summary>
-  public IHexInt? RsidRunAdditionDefault { get; set; }
+  public HexInt? RsidRunAdditionDefault { get; set; }
   
   /// <summary>
   ///   Specifies whether the text of that paragraph is free of detected spelling errors. 

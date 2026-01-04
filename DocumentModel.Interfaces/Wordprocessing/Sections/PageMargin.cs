@@ -8,29 +8,29 @@ public interface PageMargin: IModelElement, ISectionPropertiesContent
   /// <summary>
   ///   Top Margin Spacing
   /// </summary>
-  public ITwips? Top { get; set; }
+  public Twips? Top { get; set; }
   /// <summary>
   ///   Right Margin Spacing
   /// </summary>
-  public ITwips? Right { get; set; }
+  public Twips? Right { get; set; }
   /// <summary>
   ///   Page Bottom Spacing
   /// </summary>
-  public ITwips? Bottom { get; set; }
+  public Twips? Bottom { get; set; }
   /// <summary>
   ///   Left Margin Spacing
   /// </summary>
-  public ITwips? Left { get; set; }
+  public Twips? Left { get; set; }
   /// <summary>
   ///   Spacing to Top of Header
   /// </summary>
-  public ITwips? Header { get; set; }
+  public Twips? Header { get; set; }
   /// <summary>
   ///   Spacing to Bottom of Footer
   /// </summary>
-  public ITwips? Footer { get; set; }
+  public Twips? Footer { get; set; }
   /// <summary>
   ///   Page Gutter Spacing
   /// </summary>
-  public ITwips? Gutter { get; set; }
+  public Twips? Gutter { get; set; }
 }

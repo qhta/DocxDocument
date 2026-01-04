@@ -20,9 +20,9 @@ public interface Mcd: IModelElement
   /// <summary>
   ///   bEncrypt
   /// </summary>
-  public IHexChar? BEncrypt { get; set; }
+  public HexChar? BEncrypt { get; set; }
   /// <summary>
   ///   cmg
   /// </summary>
-  public IHexChar? Cmg { get; set; }
+  public HexChar? Cmg { get; set; }
 }
