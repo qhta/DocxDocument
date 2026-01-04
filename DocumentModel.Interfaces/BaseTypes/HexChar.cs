@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 ///   Represents a character value encoded as a hexadecimal string (2 or 4 hex digits) for use in Office Open XML documents.
