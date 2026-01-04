@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 
 using DocumentModel;
 
-namespace DocumentModel.Interfaces.BaseTypesTest;
+namespace DocumentModel.BaseTypesTest;
 
 /// <summary>
 /// Test suite for HexInt type serialization in both XML and JSON formats.

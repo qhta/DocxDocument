@@ -2,7 +2,7 @@
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace DocumentModel.Interfaces.BaseTypesTest;
+namespace DocumentModel.BaseTypesTest;
 
 /// <summary>
 /// Test suite for HexChar type serialization in both XML and JSON formats.

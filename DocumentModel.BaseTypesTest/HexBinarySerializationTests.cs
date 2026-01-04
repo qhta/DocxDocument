@@ -2,7 +2,7 @@
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace DocumentModel.Interfaces.BaseTypesTest;
+namespace DocumentModel.BaseTypesTest;
 
 /// <summary>
 /// Test suite for HexBinary type serialization in both XML and JSON formats.
@@ -88,7 +88,7 @@ public static class HexBinarySerializationTests
     try
     {
       // Create test object
-      var testData = new TestDataClass
+      var testData = new HexBinaryTestDataClass
       {
         Id = 1,
         Name = "XML Test",
@@ -106,7 +106,7 @@ public static class HexBinarySerializationTests
       Console.WriteLine();
 
       // Serialize to XML
-      var xmlSerializer = new XmlSerializer(typeof(TestDataClass));
+      var xmlSerializer = new XmlSerializer(typeof(HexBinaryTestDataClass));
       string xmlString;
 
       using (var stringWriter = new StringWriter())
@@ -126,10 +126,10 @@ public static class HexBinarySerializationTests
       Console.WriteLine();
 
       // Deserialize from XML
-      TestDataClass? deserializedData;
+      HexBinaryTestDataClass? deserializedData;
       using (var stringReader = new StringReader(xmlString))
       {
-        deserializedData = (TestDataClass?)xmlSerializer.Deserialize(stringReader);
+        deserializedData = (HexBinaryTestDataClass?)xmlSerializer.Deserialize(stringReader);
       }
 
       if (deserializedData == null)
@@ -183,7 +183,7 @@ public static class HexBinarySerializationTests
     try
     {
       // Create test object
-      var testData = new TestDataClass
+      var testData = new HexBinaryTestDataClass
       {
         Id = 2,
         Name = "JSON Test",
@@ -214,7 +214,7 @@ public static class HexBinarySerializationTests
       Console.WriteLine();
 
       // Deserialize from JSON
-      var deserializedData = JsonSerializer.Deserialize<TestDataClass>(jsonString, jsonOptions);
+      var deserializedData = JsonSerializer.Deserialize<HexBinaryTestDataClass>(jsonString, jsonOptions);
 
       if (deserializedData == null)
       {
@@ -274,7 +274,7 @@ public static class HexBinarySerializationTests
       // Serialize and deserialize empty
       string jsonEmpty = JsonSerializer.Serialize(new { Data = empty });
       Console.WriteLine($"  JSON: {jsonEmpty}");
-      var deserializedEmpty = JsonSerializer.Deserialize<TestWrapper>(jsonEmpty);
+      var deserializedEmpty = JsonSerializer.Deserialize<Base64BinaryTestWrapper>(jsonEmpty);
       Console.WriteLine($"  Deserialized empty equals original: {empty.Equals(deserializedEmpty?.Data ?? default)}");
 
       // Test single byte
@@ -293,7 +293,7 @@ public static class HexBinarySerializationTests
 
       // Test null handling
       Console.WriteLine("\nTesting null handling:");
-      var nullWrapper = new TestWrapper { Data = default };
+      var nullWrapper = new Base64BinaryTestWrapper { Data = default };
       string jsonNull = JsonSerializer.Serialize(nullWrapper);
       Console.WriteLine($"  JSON with default HexBinary: {jsonNull}");
 
@@ -346,7 +346,7 @@ public static class HexBinarySerializationTests
       Console.WriteLine($"Conversion (byte[] → HexBinary → string) x {iterations}: {sw.ElapsedMilliseconds}ms");
 
       // Test JSON serialization performance
-      var testObj = new TestDataClass
+      var testObj = new HexBinaryTestDataClass
       {
         Id = 1,
         Name = "Perf Test",
@@ -368,7 +368,7 @@ public static class HexBinarySerializationTests
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
-        var obj = JsonSerializer.Deserialize<TestDataClass>(jsonData);
+        var obj = JsonSerializer.Deserialize<HexBinaryTestDataClass>(jsonData);
       }
       sw.Stop();
       Console.WriteLine($"JSON Deserialization x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -406,7 +406,7 @@ public static class HexBinarySerializationTests
 /// Test data class containing various HexBinary properties.
 /// </summary>
 [XmlRoot("TestData")]
-public class TestDataClass
+public class HexBinaryTestDataClass
 {
   [XmlElement("Id")]
   public int Id { get; set; }
@@ -427,7 +427,7 @@ public class TestDataClass
 /// <summary>
 /// Simple wrapper class for testing nullable scenarios.
 /// </summary>
-public class TestWrapper
+public class HexBinaryTestWrapper
 {
   public HexBinary Data { get; set; }
 }
