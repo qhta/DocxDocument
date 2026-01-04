@@ -4,7 +4,6 @@
 /// <summary>
 /// Represents the list of string
 /// </summary>
-[TypeConverter(typeof(StringListXmlConverter))]
 public class StringList : ICollection, ICollection<string>, IEnumerable, IEquatable<StringList>
 {
   private readonly List<string> _list = new();
