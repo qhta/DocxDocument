@@ -2,10 +2,15 @@
 
 using System;
 using System.ComponentModel;
+using System.Xml;
+
 using DocumentModel;
 
 using Qhta.Conversion;
+using Qhta.Xml;
 using Qhta.TypeUtils;
+using System.Xml.Serialization;
+using Qhta.Xml.Serialization;
 
 namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -16,8 +21,8 @@ namespace DocumentModel;
 [XmlInclude(typeof(DateOnly))]
 [XmlInclude(typeof(DBNull))]
 [XmlInclude(typeof(HexInt))]
-[XmlInclude(typeof(VectorVariant))]
-[XmlInclude(typeof(ArrayVariant))]
+[XmlInclude(typeof(VariantVector))]
+[XmlInclude(typeof(VariantArray))]
 [XmlContentProperty("Value")]
 
 [XmlItemElement(typeof(SByte))]
@@ -42,6 +47,9 @@ namespace DocumentModel;
 [XmlItemElement(typeof(byte[]), ConverterType = typeof(Base64TypeConverter), ElementName="Blob")]
 [XmlItemElement(typeof(Variant))]
 
+
+//[TypeConverter(typeof(VariantTypeXmlConverter))]
+//[JsonConverter(typeof(VariantJsonConverter))]
 public class Variant : IConvertible, IEquatable<Variant>
 {
   public static Dictionary<VariantType, Type> ItemTypes = new()
@@ -157,6 +165,8 @@ public class Variant : IConvertible, IEquatable<Variant>
   [XmlIgnore]
   public virtual Type? Type { get; set; }
 
+  [TypeConverter(typeof(VariantValueConverter))]
+  [XmlElement]
   public virtual object? Value
   {
     get => GetValue();
@@ -244,7 +254,7 @@ public class Variant : IConvertible, IEquatable<Variant>
     return TypeCode.Object;
   }
 
-  public virtual object? ToType(Type conversionType, IFormatProvider? provider)
+  public virtual object ToType(Type conversionType, IFormatProvider? provider)
   {
     if (conversionType.Name.StartsWith("Nullable`"))
       conversionType = conversionType.GetGenericArguments()[0];
@@ -264,20 +274,20 @@ public class Variant : IConvertible, IEquatable<Variant>
     if (conversionType == typeof(Single)) return ToSingle(provider);
     if (conversionType == typeof(DateOnly)) return ToDateOnly(provider);
     if (conversionType == typeof(DateTime)) return ToDateTime(provider);
-    if (conversionType.IsEnum) return typeof(Variant).GetMethod("ToEnum")?.MakeGenericMethod(conversionType).Invoke(this, new object?[]{provider});
-    if (conversionType == typeof(String)) return ToString(provider);
+    if (conversionType.IsEnum) return typeof(Variant).GetMethod("ToEnum")?.MakeGenericMethod(conversionType).Invoke(this, new object?[]{provider})!;
+    if (conversionType == typeof(String)) return ToString(provider)!;
     if (conversionType == typeof(Char)) return ToChar(provider);
     if (conversionType == typeof(Guid)) return ToGuid(provider);
     if (conversionType == typeof(byte[])) return ToBytes(provider);
     if (conversionType == typeof(Variant)) return this;
     if (conversionType == typeof(object)) return this;
-    if (conversionType == typeof(VectorVariant))
-      return new VectorVariant { this };
+    if (conversionType == typeof(VariantVector))
+      return new VariantVector { this };
 
     if (conversionType.TryGetConverter(out var typeConverter) && typeConverter!=null)
     {
       if (_Value is string && typeConverter.CanConvertFrom(typeof(string)))
-        return typeConverter.ConvertFrom(_Value);
+        return typeConverter.ConvertFrom(_Value)!;
     }
     throw new InvalidOperationException($"Can't convert Variant to {conversionType} type");
   }
@@ -376,21 +386,21 @@ public class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToDateTime(Value);
   }
 
-  public virtual string? ToString(IFormatProvider? provider = null)
+  public virtual string ToString(IFormatProvider? provider = null)
   {
     if (Value is byte[] bytes)
       return Convert.ToBase64String(bytes);
     if (VariantType == VariantType.Date)
       return ToDateOnly().ToString("yyyy-MM-dd");
     if (VariantType == VariantType.DateTime)
-      return Value?.ToString();
+      return Value?.ToString()!;
     if (_Value?.GetType().TryGetConverter(out var typeConverter) == true)
     {
       if (typeConverter!=null && typeConverter.CanConvertTo(typeof(string)))
-        return typeConverter.ConvertToInvariantString(_Value);
+        return typeConverter.ConvertToInvariantString(_Value)!;
     }
     var result = Convert.ToString(Value, CultureInfo.InvariantCulture);
-    return result;
+    return result!;
   }
 
   public virtual char ToChar(IFormatProvider? provider = null)
@@ -1070,7 +1080,7 @@ public class Variant : IConvertible, IEquatable<Variant>
       if (value is DateOnly vDateOnly)
         return vDateOnly.ToString("yyyy-MM-dd");
       if (value is DateTime vDateTime)
-        return XmlConvert.ToString(vDateTime);
+        return XmlConvert.ToString(vDateTime, XmlDateTimeSerializationMode.Local);
       if (value is Decimal vDecimal)
         return XmlConvert.ToString(vDecimal);
       if (value is Double vDouble)

@@ -1,15 +1,11 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// This class represents a decimal value treated as percent value.
-/// It implements desirable conversion to/from other types. When converting to string, it is returned as decimal value with a '%' suffix.
+/// Percent unit.
 /// </summary>
-[TypeConverter(typeof(PercentTypeConverter))]
-[DataContract]
 public struct Percent: IComparable<Percent>
 {
-  [DataMember]
-  private Decimal Value;
+  private Double Value;
 
   /// <summary>
   /// Constructor converting from string. 
@@ -19,7 +15,7 @@ public struct Percent: IComparable<Percent>
   {
     if (str.EndsWith("%"))
       str = str.Substring(0, str.Length - 1);
-    var val = Decimal.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture);
+    var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture);
     Value = val;
   }
 
@@ -40,11 +36,11 @@ public struct Percent: IComparable<Percent>
   }
 
   /// <summary>
-  /// Converting constructor from Double value.
+  /// Converting constructor from UInt64 value.
   /// </summary>
   public Percent(Double value)
   {
-    Value = (Decimal)value;
+    Value = value;
   }
 
   /// <summary>
@@ -63,7 +59,7 @@ public struct Percent: IComparable<Percent>
   /// </summary>
   public string ToHexString()
   {
-    var val = (Byte)(System.Math.Round(Value * 255 / 100.0m));
+    var val = (Byte)(System.Math.Round(Value * 255 / 100.0));
     var str = val.ToString("X2");
 //    Debug.WriteLine($"{Value} => {str}");
     return str;
