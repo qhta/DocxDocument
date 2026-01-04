@@ -62,6 +62,22 @@ class Program
     // Run Percent tests
     if (!PercentSerializationTests.Run())
       allTestsPassed = false;
+    
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    // Run Points tests
+    if (!PointsSerializationTests.Run())
+      allTestsPassed = false;
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    // Run Twips tests
+    if (!TwipsSerializationTests.Run())
+      allTestsPassed = false;
 
     Console.WriteLine();
     Console.WriteLine  ("╔════════════════════════════════════════════════════════════╗");
