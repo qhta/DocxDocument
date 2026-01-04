@@ -38,7 +38,7 @@ public interface IWriteProtection: IModelElement
   /// <summary>
   ///   Cryptographic Algorithm Extensibility
   /// </summary>
-  public IHexInt? AlgorithmIdExtensibility { get; set; }
+  public HexInt? AlgorithmIdExtensibility { get; set; }
   /// <summary>
   ///   Algorithm Extensibility Source
   /// </summary>
@@ -46,7 +46,7 @@ public interface IWriteProtection: IModelElement
   /// <summary>
   ///   Cryptographic Provider Type Extensibility
   /// </summary>
-  public IHexInt? CryptographicProviderTypeExtensibility { get; set; }
+  public HexInt? CryptographicProviderTypeExtensibility { get; set; }
   /// <summary>
   ///   Provider Type Extensibility Source
   /// </summary>
@@ -54,11 +54,11 @@ public interface IWriteProtection: IModelElement
   /// <summary>
   ///   Password Hash
   /// </summary>
-  public IBase64Binary? Hash { get; set; }
+  public Base64Binary? Hash { get; set; }
   /// <summary>
   ///   Salt for Password Verifier
   /// </summary>
-  public IBase64Binary? Salt { get; set; }
+  public Base64Binary? Salt { get; set; }
   /// <summary>
   ///   Specifies the specific cryptographic hashing algorithm which shall be used along with the
   ///   salt attribute and input password in order to compute the hash value.
@@ -67,11 +67,11 @@ public interface IWriteProtection: IModelElement
   /// <summary>
   ///   hashValue
   /// </summary>
-  public IBase64Binary? HashValue { get; set; }
+  public Base64Binary? HashValue { get; set; }
   /// <summary>
   ///   saltValue
   /// </summary>
-  public IBase64Binary? SaltValue { get; set; }
+  public Base64Binary? SaltValue { get; set; }
   /// <summary>
   ///   spinCount
   /// </summary>

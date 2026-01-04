@@ -20,19 +20,19 @@ public interface IDivElement: IModelElement, ICollectionItem
   /// <summary>
   ///   Left Margin for HTML div.
   /// </summary>
-  public ITwips? LeftMargin { get; set; }
+  public Twips? LeftMargin { get; set; }
   /// <summary>
   ///   Right Margin for HTML div.
   /// </summary>
-  public ITwips? RightMargin { get; set; }
+  public Twips? RightMargin { get; set; }
   /// <summary>
   ///   Top Margin for HTML div.
   /// </summary>
-  public ITwips? TopMargin { get; set; }
+  public Twips? TopMargin { get; set; }
   /// <summary>
   ///   Bottom Margin for HTML div.
   /// </summary>
-  public ITwips? BottomMargin { get; set; }
+  public Twips? BottomMargin { get; set; }
   /// <summary>
   ///   Set of Borders for HTML div.
   /// </summary>

@@ -44,7 +44,7 @@ public interface IMathProperties: IModelElement
   ///   Math margins are added to the paragraph settings for margins. 
   ///   If the sum of lMargin and rMargin exceed the width available, lMargin should be ignored. 
   /// </summary>
-  public ITwips? LeftMargin { get; set; }
+  public Twips? LeftMargin { get; set; }
   /// <summary>
   ///   Specifies the right margin for math, in twips. If this element is omitted, no right margin is used. 
   ///   In other words, when the element is absent, the default value of the option is 0. 
@@ -53,7 +53,7 @@ public interface IMathProperties: IModelElement
   ///   If the sum of lMargin and rMargin exceed the width available, lMargin should be ignored. 
   ///   If rMargin exceeds the width available, a default indent of 1440 twips should be used. 
   /// </summary>
-  public ITwips? RightMargin { get; set; }
+  public Twips? RightMargin { get; set; }
   /// <summary>
   ///   Specifies the default justification of display math, at the document level. 
   ///   Individual instances of mathematical text can overrule the default setting. 
@@ -69,21 +69,21 @@ public interface IMathProperties: IModelElement
   ///   Specifies the spacing before a math paragraph, in twips. 
   ///   If this element is omitted, no spacing is applied before the paragraph. 
   /// </summary>
-  public ITwips? PreSpacing { get; set; }
+  public Twips? PreSpacing { get; set; }
   /// <summary>
   ///   Specifies the spacing after a math paragraph, in twips. 
   ///   If this element is omitted, no spacing is applied after the paragraph.
   /// </summary>
-  public ITwips? PostSpacing { get; set; }
+  public Twips? PostSpacing { get; set; }
   /// <summary>
   ///   Specifies spacing between equations, expressions, or other instances of mathematical text within a display math paragraph, in twips.
   /// </summary>
-  public ITwips? InterSpacing { get; set; }
+  public Twips? InterSpacing { get; set; }
   /// <summary>
   ///   Specifies the spacing between adjacent display math paragraphs, in twips. 
   ///   If this element is omitted, no spacing is applied between adjacent math paragraphs..
   /// </summary>
-  public ITwips? IntraSpacing { get; set; }
+  public Twips? IntraSpacing { get; set; }
   /// <summary>
   ///   Specifies the indent of the wrapped line of an instance of mathematical text. 
   ///   The line or lines of a wrapped instance of mathematical text after the line break 
@@ -91,7 +91,7 @@ public interface IMathProperties: IModelElement
   ///   The default indent is 1". In other words, whether the element is absent or present without the val attribute, 
   ///   the default of the val attribute is 1440 twips (or 1 inch). 
   /// </summary>
-  public ITwips? WrapIndent { get; set; }
+  public Twips? WrapIndent { get; set; }
   /// <summary>
   ///   Specifies the right justification of the wrapped line of an instance of mathematical text. 
   ///   The line or lines of a wrapped instance of mathematical text after the line break 

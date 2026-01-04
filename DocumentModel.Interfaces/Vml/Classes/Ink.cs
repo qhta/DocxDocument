@@ -8,7 +8,7 @@ public interface Ink: IModelElement
   /// <summary>
   ///   Ink Data
   /// </summary>
-  public IBase64Binary? InkData { get; set; }
+  public Base64Binary? InkData { get; set; }
   /// <summary>
   ///   Annotation Flag
   /// </summary>

@@ -12,9 +12,9 @@ public interface FixedCommandKeyboardCustomization: IModelElement
   /// <summary>
   ///   fciIndex
   /// </summary>
-  public IHexChar? CommandIndex { get; set; }
+  public HexChar? CommandIndex { get; set; }
   /// <summary>
   ///   swArg
   /// </summary>
-  public IHexChar? Argument { get; set; }
+  public HexChar? Argument { get; set; }
 }

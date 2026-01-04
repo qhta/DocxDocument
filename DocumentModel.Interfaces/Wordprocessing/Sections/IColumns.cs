@@ -12,7 +12,7 @@ public interface IColumns: IModelElement, ISectionPropertiesContent, IElementCol
   /// <summary>
   ///   Spacing Between Equal Width IColumns
   /// </summary>
-  public ITwips? Space { get; set; }
+  public Twips? Space { get; set; }
   /// <summary>
   ///   Number of Equal Width IColumns
   /// </summary>

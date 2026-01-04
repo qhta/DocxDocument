@@ -81,7 +81,7 @@ public interface NumLevel: IModelElement
   ///   Specifies a unique hexadecimal value which can be used to specify a location within an application's user interface 
   ///   in which this numbering level shall be displayed. The method by which this value is interpreted shall be application-defined. 
   /// </summary>
-  public IHexInt? TemplateCode { get; set; }
+  public HexInt? TemplateCode { get; set; }
   /// <summary>
   ///   Specifies that a given numbering level is from an earlier word processing application 
   ///   which did not support the full richness of the numbering properties supported by WordprocessingML.

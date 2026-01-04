@@ -7,5 +7,5 @@ public interface GridColumn: IModelElement
   /// <summary>
   ///   Grid IColumn Width
   /// </summary>
-  public ITwips? Width { get; set; }
+  public Twips? Width { get; set; }
 }

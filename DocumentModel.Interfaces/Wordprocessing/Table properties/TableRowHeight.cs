@@ -10,7 +10,7 @@ public interface TableRowHeight: IModelElement
   /// <summary>
   ///   Table Row Height
   /// </summary>
-  public ITwips Value { get; set; }
+  public Twips Value { get; set; }
   /// <summary>
   ///   Table Row Height Type
   /// </summary>

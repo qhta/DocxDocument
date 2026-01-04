@@ -7,7 +7,7 @@ public interface FramesetSplitbar: IModelElement
   /// <summary>
   ///   Frameset Splitter Width.
   /// </summary>
-  public ITwips? Width { get; set; }
+  public Twips? Width { get; set; }
   /// <summary>
   ///   Frameset Splitter Color.
   /// </summary>

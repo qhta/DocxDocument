@@ -14,7 +14,7 @@ public interface IColor
   /// <summary>
   ///   RGB value of the color.
   /// </summary>
-  public IRGB? Value { get; set; }
+  public RGB? Value { get; set; }
 
   /// <summary>
   /// Initializing constructor for "auto" or RGB color.
@@ -26,7 +26,7 @@ public interface IColor
   /// Initialization constructor with RGB value.
   /// </summary>
   /// <param name="value"></param>
-  public void FromRGB(IRGB value);
+  public void FromRGB(RGB value);
 
   /// <summary>
   /// Determines if the value is empty

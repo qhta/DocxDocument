@@ -227,7 +227,7 @@ public interface Shape: IModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   Encoded Package
   /// </summary>
-  public IBase64Binary? EncodedPackage { get; set; }
+  public Base64Binary? EncodedPackage { get; set; }
   /// <summary>
   ///   Storage for Alternate Math Content
   /// </summary>

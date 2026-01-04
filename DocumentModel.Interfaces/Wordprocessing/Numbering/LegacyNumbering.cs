@@ -12,9 +12,9 @@ public interface LegacyNumbering
   /// <summary>
   ///   Legacy Spacing
   /// </summary>
-  public ITwips Space { get; set; }
+  public Twips Space { get; set; }
   /// <summary>
   ///   Legacy Indent
   /// </summary>
-  public ITwips Indent { get; set; }
+  public Twips Indent { get; set; }
 }

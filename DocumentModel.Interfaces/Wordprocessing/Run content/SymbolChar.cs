@@ -15,5 +15,5 @@ public interface SymbolChar: IModelElement, IRunContent
   /// <summary>
   ///   Symbol Character Code
   /// </summary>
-  public IHexChar? Char { get; set; }
+  public HexChar? Char { get; set; }
 }

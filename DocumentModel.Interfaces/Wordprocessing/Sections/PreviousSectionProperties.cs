@@ -8,19 +8,19 @@ public interface PreviousSectionProperties: IModelElement
   /// <summary>
   ///   Physical ISection Mark Character Revision ID
   /// </summary>
-  public IHexInt? RsidRPr { get; set; }
+  public HexInt? RsidRPr { get; set; }
   /// <summary>
   ///   ISection Deletion Revision ID
   /// </summary>
-  public IHexInt? RsidDel { get; set; }
+  public HexInt? RsidDel { get; set; }
   /// <summary>
   ///   ISection Addition Revision ID
   /// </summary>
-  public IHexInt? RsidR { get; set; }
+  public HexInt? RsidR { get; set; }
   /// <summary>
   ///   ISection Properties Revision ID
   /// </summary>
-  public IHexInt? RsidSect { get; set; }
+  public HexInt? RsidSect { get; set; }
   /// <summary>
   ///   FootnoteProperties.
   /// </summary>

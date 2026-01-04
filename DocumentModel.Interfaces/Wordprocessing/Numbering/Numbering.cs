@@ -9,7 +9,7 @@ public interface Numbering: IModelElement
   /// Specifies to a consumer the progress in the last attempt made by the application 
   /// to remove unused abstract numbering definitions from a given document. 
   /// </summary>
-  public IHexInt? NumberingIdMacAtCleanup { get; set; }
+  public HexInt? NumberingIdMacAtCleanup { get; set; }
   /// <summary>
   /// Collection of abstract numbering definitions
   /// </summary>

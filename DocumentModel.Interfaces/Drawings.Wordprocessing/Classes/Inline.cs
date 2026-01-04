@@ -24,11 +24,11 @@ public interface Inline: IModelElement
   /// <summary>
   ///   anchorId
   /// </summary>
-  public IHexInt? AnchorId { get; set; }
+  public HexInt? AnchorId { get; set; }
   /// <summary>
   ///   editId
   /// </summary>
-  public IHexInt? EditId { get; set; }
+  public HexInt? EditId { get; set; }
   /// <summary>
   ///   Drawing Object Size.
   /// </summary>

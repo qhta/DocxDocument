@@ -15,11 +15,11 @@ public interface IBorder: IModelElement
   /// <summary>
   ///   Border Width
   /// </summary>
-  public ITwips? Width { get; set; }
+  public Twips? Width { get; set; }
   /// <summary>
   ///   Border Spacing Measurement
   /// </summary>
-  public ITwips? Space { get; set; }
+  public Twips? Space { get; set; }
   /// <summary>
   ///   Border Shadow
   /// </summary>

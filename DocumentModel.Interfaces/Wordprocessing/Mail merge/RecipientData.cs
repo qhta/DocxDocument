@@ -16,5 +16,5 @@ public interface RecipientData: IModelElement
   /// <summary>
   ///   Unique Value for Record.
   /// </summary>
-  public IHexBinary? UniqueTag { get; set; }
+  public HexBinary? UniqueTag { get; set; }
 }

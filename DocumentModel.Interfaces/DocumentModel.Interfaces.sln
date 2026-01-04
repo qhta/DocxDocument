@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.1.11312.151 d18.0
+VisualStudioVersion = 18.1.11312.151
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModel.Interfaces", "DocumentModel.Interfaces.csproj", "{27270877-5208-B535-E3A8-BD78189C82EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModel.Interfaces.BaseTypesTest", "..\DocumentModel.Interfaces.BaseTypesTest\DocumentModel.Interfaces.BaseTypesTest.csproj", "{FB51CC46-383D-43A7-BA93-93EA89FB6437}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{27270877-5208-B535-E3A8-BD78189C82EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27270877-5208-B535-E3A8-BD78189C82EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27270877-5208-B535-E3A8-BD78189C82EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB51CC46-383D-43A7-BA93-93EA89FB6437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB51CC46-383D-43A7-BA93-93EA89FB6437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB51CC46-383D-43A7-BA93-93EA89FB6437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB51CC46-383D-43A7-BA93-93EA89FB6437}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

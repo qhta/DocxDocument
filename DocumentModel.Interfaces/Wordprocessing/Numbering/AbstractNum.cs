@@ -20,7 +20,7 @@ public interface AbstractNum : IModelElement
   ///   This number shall be identical for two abstract numbering definitions that are based from the same initial numbering definition 
   ///   - if a document is repurposed and the underlying numbering definition is changed, it shall maintain its original nsid.
   /// </summary>
-  public IHexInt? Nsid { get; set; }
+  public HexInt? Nsid { get; set; }
   /// <summary>
   ///   Specifies the type of numbering defined by a given abstract numbering type. 
   ///   This information shall only be used by a consumer to determine user interface behaviors for this numbering definition, 
@@ -38,7 +38,7 @@ public interface AbstractNum : IModelElement
   ///   Specifies a unique hexadecimal code which can be used to determine a location within application user interface 
   ///   in which this abstract numbering definition shall be displayed.
   /// </summary>
-  public IHexInt? TemplateCode { get; set; }
+  public HexInt? TemplateCode { get; set; }
   
   /// <summary>
   ///    Specifies that the parent abstract numbering definition is the base numbering definition 

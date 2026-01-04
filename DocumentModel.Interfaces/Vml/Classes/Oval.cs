@@ -215,7 +215,7 @@ public interface Oval: IModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   Encoded Package
   /// </summary>
-  public IBase64Binary? Gfxdata { get; set; }
+  public Base64Binary? Gfxdata { get; set; }
   public Path? Path { get; set; }
   public Formulas? Formulas { get; set; }
   public ShapeHandles? ShapeHandles { get; set; }

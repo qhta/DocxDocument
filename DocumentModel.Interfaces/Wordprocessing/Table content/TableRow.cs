@@ -8,27 +8,27 @@ public interface TableRow: IElementCollection<ITableRowContent>, ITableContent, 
   /// <summary>
   ///   Revision Identifier for Table Row Glyph Formatting
   /// </summary>
-  public IHexInt? RsidTableRowMarkRevision { get; set; }
+  public HexInt? RsidTableRowMarkRevision { get; set; }
   /// <summary>
   ///   Revision Identifier for Table Row
   /// </summary>
-  public IHexInt? RsidTableRowAddition { get; set; }
+  public HexInt? RsidTableRowAddition { get; set; }
   /// <summary>
   ///   Revision Identifier for Table Row Deletion
   /// </summary>
-  public IHexInt? RsidTableRowDeletion { get; set; }
+  public HexInt? RsidTableRowDeletion { get; set; }
   /// <summary>
   ///   Revision Identifier for Table Row Properties
   /// </summary>
-  public IHexInt? RsidTableRowProperties { get; set; }
+  public HexInt? RsidTableRowProperties { get; set; }
   /// <summary>
   ///   paraId
   /// </summary>
-  public IHexInt? ParagraphId { get; set; }
+  public HexInt? ParagraphId { get; set; }
   /// <summary>
   ///   textId
   /// </summary>
-  public IHexInt? TextId { get; set; }
+  public HexInt? TextId { get; set; }
   /// <summary>
   ///   Table-Level Property Exceptions.
   /// </summary>

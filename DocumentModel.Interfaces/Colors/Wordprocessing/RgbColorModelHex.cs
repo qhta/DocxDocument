@@ -86,7 +86,7 @@ public interface RgbColorModelHex: IModelElement
   /// In earlier versions, only the base RGB value may be displayed without transformations.
   /// </para>
   /// </remarks>
-  public IRGB? RGB { get; set; }
+  public RGB? RGB { get; set; }
   
   /// <summary>
   /// Gets or sets the tint value to lighten the color.

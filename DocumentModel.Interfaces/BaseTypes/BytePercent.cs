@@ -3,7 +3,7 @@
 /// <summary>
 /// BytePercent unit.
 /// </summary>
-[TypeConverter(typeof(BytePercentTypeConverter))]
+[TypeConverter(typeof(BytePercentXmlConverter))]
 public struct BytePercent : IComparable<BytePercent>
 {
   private Byte Value;

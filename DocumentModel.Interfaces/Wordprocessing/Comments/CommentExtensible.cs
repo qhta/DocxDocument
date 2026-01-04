@@ -7,7 +7,7 @@ public interface CommentExtensible: IModelElement
   /// <summary>
   ///   Specifies the identifier for the associated comment. Values MUST be greater than 0 and less than 0x7FFFFFFF.
   /// </summary>
-  public IHexInt? DurableId { get; set; }
+  public HexInt? DurableId { get; set; }
   /// <summary>
   ///   Specifies date information for the comment. Unlike the date attribute of a comment element, 
   ///   the dateUtc attribute is defined to be in the UTC time zone.

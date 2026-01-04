@@ -3,7 +3,7 @@
 /// <summary>
 /// EighthPoints unit. 1 EighthPoint = 1/576 inch.
 /// </summary>
-[TypeConverter(typeof(EighthPointsTypeConverter))]
+[TypeConverter(typeof(EighthPointsXmlConverter))]
 public struct EighthPoints : IComparable<EighthPoints>
 {
   /// <summary>

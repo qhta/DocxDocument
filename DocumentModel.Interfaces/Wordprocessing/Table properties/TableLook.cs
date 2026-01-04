@@ -8,7 +8,7 @@ public interface TableLook: IModelElement
   /// <summary>
   ///   val
   /// </summary>
-  public IHexChar? Val { get; set; }
+  public HexChar? Val { get; set; }
   /// <summary>
   ///   firstRow
   /// </summary>

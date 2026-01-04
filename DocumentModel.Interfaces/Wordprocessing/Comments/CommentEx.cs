@@ -7,11 +7,11 @@ public interface CommentEx: IModelElement
   /// <summary>
   ///   Specifies the paraId of the last paragraph in the associated comment.
   /// </summary>
-  public IHexInt? ParaId { get; set; }
+  public HexInt? ParaId { get; set; }
   /// <summary>
   ///   Specifies the paraId of the last paragraph in the comment to which the associated comment is a reply.
   /// </summary>
-  public IHexInt? ParaIdParent { get; set; }
+  public HexInt? ParaIdParent { get; set; }
   /// <summary>
   ///   Specifies whether the associated comment is marked as done. 
   /// </summary>

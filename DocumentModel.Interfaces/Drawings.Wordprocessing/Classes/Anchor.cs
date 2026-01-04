@@ -53,11 +53,11 @@ public interface Anchor: IModelElement
   /// <summary>
   ///   editId
   /// </summary>
-  public IHexInt? EditId { get; set; }
+  public HexInt? EditId { get; set; }
   /// <summary>
   ///   anchorId
   /// </summary>
-  public IHexInt? AnchorId { get; set; }
+  public HexInt? AnchorId { get; set; }
   /// <summary>
   ///   Simple Positioning Coordinates.
   /// </summary>
