@@ -12,28 +12,25 @@ public static class HexBinarySerializationTests
   /// <summary>
   /// Runs all HexBinary serialization tests.
   /// </summary>
-  public static void Run()
+  public static bool Run()
   {
     Console.WriteLine("=== HexBinary Serialization Test Program ===");
     Console.WriteLine("=== HexBinary Serialization Test Program ===");
     Console.WriteLine();
 
     // Run all tests
-    TestHexBinaryBasicOperations();
-    TestHexBinaryXmlSerialization();
-    TestHexBinaryJsonSerialization();
-    TestHexBinaryEdgeCases();
-    TestHexBinaryPerformance();
+    if (!TestHexBinaryBasicOperations()) return false;
+    if (!TestHexBinaryXmlSerialization()) return false;
+    if (!TestHexBinaryJsonSerialization()) return false;
+    if (!TestHexBinaryEdgeCases()) return false;
+    if (!TestHexBinaryPerformance()) return false;
 
-    Console.WriteLine();
-    Console.WriteLine("=== All Tests Completed ===");
-    Console.WriteLine("Press any key to exit...");
-    Console.ReadKey();
+    return true;
   }
 
   #region Basic Operations Tests
 
-  static void TestHexBinaryBasicOperations()
+  static bool TestHexBinaryBasicOperations()
   {
     Console.WriteLine("--- Testing HexBinary Basic Operations ---");
 
@@ -69,20 +66,22 @@ public static class HexBinarySerializationTests
       Console.WriteLine($"✓ Hash code: {hex1.GetHashCode()}");
 
       Console.WriteLine("✓ All basic operations passed");
+      Console.WriteLine();
+      return true;
     }
     catch (Exception ex)
     {
       Console.WriteLine($"✗ Basic operations test FAILED: {ex.Message}");
+      Console.WriteLine();
+      return false;
     }
-
-    Console.WriteLine();
   }
 
   #endregion
 
   #region XML Serialization Tests
 
-  static void TestHexBinaryXmlSerialization()
+  static bool TestHexBinaryXmlSerialization()
   {
     Console.WriteLine("--- Testing HexBinary XML Serialization ---");
 
@@ -136,7 +135,7 @@ public static class HexBinarySerializationTests
       if (deserializedData == null)
       {
         Console.WriteLine("✗ XML Deserialization returned null");
-        return;
+        return false;
       }
 
       // Verify deserialized data
@@ -152,24 +151,32 @@ public static class HexBinarySerializationTests
       bool isValid = testData.Id == deserializedData.Id && testData.Name == deserializedData.Name && testData.BinaryData.Equals(deserializedData.BinaryData) && testData.DocumentHash.Equals(deserializedData.DocumentHash) && testData.ImageData.Equals(deserializedData.ImageData);
 
       if (isValid)
+      {
         Console.WriteLine("✓ XML Serialization/Deserialization test passed");
+        Console.WriteLine();
+        return true;
+      }
       else
+      {
         Console.WriteLine("✗ XML Serialization/Deserialization test FAILED - data mismatch");
+        Console.WriteLine();
+        return false;
+      }
     }
     catch (Exception ex)
     {
       Console.WriteLine($"✗ XML Serialization test FAILED: {ex.Message}");
       Console.WriteLine($"  Stack trace: {ex.StackTrace}");
+      Console.WriteLine();
+      return false;
     }
-
-    Console.WriteLine();
   }
 
   #endregion
 
   #region JSON Serialization Tests
 
-  static void TestHexBinaryJsonSerialization()
+  static bool TestHexBinaryJsonSerialization()
   {
     Console.WriteLine("--- Testing HexBinary JSON Serialization ---");
 
@@ -212,7 +219,7 @@ public static class HexBinarySerializationTests
       if (deserializedData == null)
       {
         Console.WriteLine("✗ JSON Deserialization returned null");
-        return;
+        return false;
       }
 
       // Verify deserialized data
@@ -228,24 +235,32 @@ public static class HexBinarySerializationTests
       bool isValid = testData.Id == deserializedData.Id && testData.Name == deserializedData.Name && testData.BinaryData.Equals(deserializedData.BinaryData) && testData.DocumentHash.Equals(deserializedData.DocumentHash) && testData.ImageData.Equals(deserializedData.ImageData);
 
       if (isValid)
+      {
         Console.WriteLine("✓ JSON Serialization/Deserialization test passed");
+        Console.WriteLine();
+        return true;
+      }
       else
+      {
         Console.WriteLine("✗ JSON Serialization/Deserialization test FAILED - data mismatch");
+        Console.WriteLine();
+        return false;
+      }
     }
     catch (Exception ex)
     {
       Console.WriteLine($"✗ JSON Serialization test FAILED: {ex.Message}");
       Console.WriteLine($"  Stack trace: {ex.StackTrace}");
+      Console.WriteLine();
+      return false;
     }
-
-    Console.WriteLine();
   }
 
   #endregion
 
   #region Edge Cases Tests
 
-  static void TestHexBinaryEdgeCases()
+  static bool TestHexBinaryEdgeCases()
   {
     Console.WriteLine("--- Testing HexBinary Edge Cases ---");
 
@@ -294,20 +309,22 @@ public static class HexBinarySerializationTests
       Console.WriteLine($"  Pattern: {pattern}");
 
       Console.WriteLine("\n✓ All edge case tests completed");
+      Console.WriteLine();
+      return true;
     }
     catch (Exception ex)
     {
       Console.WriteLine($"✗ Edge case test FAILED: {ex.Message}");
+      Console.WriteLine();
+      return false;
     }
-
-    Console.WriteLine();
   }
 
   #endregion
 
   #region Performance Tests
 
-  static void TestHexBinaryPerformance()
+  static bool TestHexBinaryPerformance()
   {
     Console.WriteLine("--- Testing HexBinary Performance ---");
 
@@ -368,13 +385,15 @@ public static class HexBinarySerializationTests
       Console.WriteLine($"Equality comparison x {iterations}: {sw.ElapsedMilliseconds}ms");
 
       Console.WriteLine("✓ Performance tests completed");
+      Console.WriteLine();
+      return true;
     }
     catch (Exception ex)
     {
       Console.WriteLine($"✗ Performance test FAILED: {ex.Message}");
+      Console.WriteLine();
+      return false;
     }
-
-    Console.WriteLine();
   }
 
   #endregion

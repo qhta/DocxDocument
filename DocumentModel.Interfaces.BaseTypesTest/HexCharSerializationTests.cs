@@ -2,8 +2,6 @@
 using System.Xml;
 using System.Xml.Serialization;
 
-using DocumentModel;
-
 namespace DocumentModel.Interfaces.BaseTypesTest;
 
 /// <summary>
@@ -14,25 +12,23 @@ public static class HexCharSerializationTests
   /// <summary>
   /// Runs all HexChar serialization tests.
   /// </summary>
-  public static void Run()
+  public static bool Run()
   {
     Console.WriteLine("=== HexChar Serialization Test Program ===");
     Console.WriteLine();
 
     // Run all tests
-    TestHexCharBasicOperations();
-    TestHexCharXmlSerialization();
-    TestHexCharJsonSerialization();
-    TestHexCharEdgeCases();
-    TestHexCharPerformance();
-
-    Console.WriteLine();
-    Console.WriteLine("=== All HexChar Tests Completed ===");
+    if (!TestHexCharBasicOperations()) return false;
+    if (!TestHexCharXmlSerialization()) return false;
+    if (!TestHexCharJsonSerialization()) return false;
+    if (!TestHexCharEdgeCases()) return false;
+    if (!TestHexCharPerformance()) return false;
+    return true;
   }
 
   #region Basic Operations Tests
 
-  static void TestHexCharBasicOperations()
+  static bool TestHexCharBasicOperations()
   {
     Console.WriteLine("--- Testing HexChar Basic Operations ---");
 
@@ -74,21 +70,22 @@ public static class HexCharSerializationTests
       Console.WriteLine($"✓ Extended range (256+): '{extended}' (4 digits)");
 
       Console.WriteLine("✓ All basic operations passed");
-    }
-    catch (Exception ex)
+      Console.WriteLine();
+      return true;
+    } catch (Exception ex)
     {
       Console.WriteLine($"✗ Basic operations test FAILED: {ex.Message}");
       Console.WriteLine($"  Stack trace: {ex.StackTrace}");
+      Console.WriteLine();
+      return false;
     }
-
-    Console.WriteLine();
   }
 
   #endregion
 
   #region XML Serialization Tests
 
-  static void TestHexCharXmlSerialization()
+  static bool TestHexCharXmlSerialization()
   {
     Console.WriteLine("--- Testing HexChar XML Serialization ---");
 
@@ -99,10 +96,10 @@ public static class HexCharSerializationTests
       {
         Id = 1,
         Name = "XML Test",
-        LetterA = "41",        // 'A'
-        Space = "20",          // space
-        GreekAlpha = "03B1",   // α
-        MaxValue = "FFFF"      // maximum ushort
+        LetterA = "41", // 'A'
+        Space = "20", // space
+        GreekAlpha = "03B1", // α
+        MaxValue = "FFFF" // maximum ushort
       };
 
       Console.WriteLine($"Original data:");
@@ -120,11 +117,11 @@ public static class HexCharSerializationTests
 
       using (var stringWriter = new StringWriter())
       using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings
-      {
-        Indent = true,
-        OmitXmlDeclaration = false,
-        Encoding = System.Text.Encoding.UTF8
-      }))
+             {
+               Indent = true,
+               OmitXmlDeclaration = false,
+               Encoding = System.Text.Encoding.UTF8
+             }))
       {
         xmlSerializer.Serialize(xmlWriter, testData);
         xmlString = stringWriter.ToString();
@@ -144,7 +141,7 @@ public static class HexCharSerializationTests
       if (deserializedData == null)
       {
         Console.WriteLine("✗ XML Deserialization returned null");
-        return;
+        return false;
       }
 
       // Verify deserialized data
@@ -158,33 +155,34 @@ public static class HexCharSerializationTests
       Console.WriteLine();
 
       // Validate
-      bool isValid =
-        testData.Id == deserializedData.Id &&
-        testData.Name == deserializedData.Name &&
-        testData.LetterA.Equals(deserializedData.LetterA) &&
-        testData.Space.Equals(deserializedData.Space) &&
-        testData.GreekAlpha.Equals(deserializedData.GreekAlpha) &&
-        testData.MaxValue.Equals(deserializedData.MaxValue);
+      bool isValid = testData.Id == deserializedData.Id && testData.Name == deserializedData.Name && testData.LetterA.Equals(deserializedData.LetterA) && testData.Space.Equals(deserializedData.Space) && testData.GreekAlpha.Equals(deserializedData.GreekAlpha) && testData.MaxValue.Equals(deserializedData.MaxValue);
 
       if (isValid)
+      {
         Console.WriteLine("✓ XML Serialization/Deserialization test passed");
+        Console.WriteLine();
+        return true;
+      }
       else
+      {
         Console.WriteLine("✗ XML Serialization/Deserialization test FAILED - data mismatch");
-    }
-    catch (Exception ex)
+        Console.WriteLine();
+        return false;
+      }
+    } catch (Exception ex)
     {
       Console.WriteLine($"✗ XML Serialization test FAILED: {ex.Message}");
       Console.WriteLine($"  Stack trace: {ex.StackTrace}");
+      Console.WriteLine();
+      return false;
     }
-
-    Console.WriteLine();
   }
 
   #endregion
 
   #region JSON Serialization Tests
 
-  static void TestHexCharJsonSerialization()
+  static bool TestHexCharJsonSerialization()
   {
     Console.WriteLine("--- Testing HexChar JSON Serialization ---");
 
@@ -195,10 +193,10 @@ public static class HexCharSerializationTests
       {
         Id = 2,
         Name = "JSON Test",
-        LetterA = "41",        // 'A'
-        Space = "20",          // space
-        GreekAlpha = "03B1",   // α
-        MaxValue = "FFFF"      // maximum ushort
+        LetterA = "41", // 'A'
+        Space = "20", // space
+        GreekAlpha = "03B1", // α
+        MaxValue = "FFFF" // maximum ushort
       };
 
       Console.WriteLine($"Original data:");
@@ -229,7 +227,7 @@ public static class HexCharSerializationTests
       if (deserializedData == null)
       {
         Console.WriteLine("✗ JSON Deserialization returned null");
-        return;
+        return false;
       }
 
       // Verify deserialized data
@@ -243,33 +241,34 @@ public static class HexCharSerializationTests
       Console.WriteLine();
 
       // Validate
-      bool isValid =
-        testData.Id == deserializedData.Id &&
-        testData.Name == deserializedData.Name &&
-        testData.LetterA.Equals(deserializedData.LetterA) &&
-        testData.Space.Equals(deserializedData.Space) &&
-        testData.GreekAlpha.Equals(deserializedData.GreekAlpha) &&
-        testData.MaxValue.Equals(deserializedData.MaxValue);
+      bool isValid = testData.Id == deserializedData.Id && testData.Name == deserializedData.Name && testData.LetterA.Equals(deserializedData.LetterA) && testData.Space.Equals(deserializedData.Space) && testData.GreekAlpha.Equals(deserializedData.GreekAlpha) && testData.MaxValue.Equals(deserializedData.MaxValue);
 
       if (isValid)
+      {
         Console.WriteLine("✓ JSON Serialization/Deserialization test passed");
+        Console.WriteLine();
+        return true;
+      }
       else
+      {
         Console.WriteLine("✗ JSON Serialization/Deserialization test FAILED - data mismatch");
-    }
-    catch (Exception ex)
+        Console.WriteLine();
+        return false;
+      }
+    } catch (Exception ex)
     {
       Console.WriteLine($"✗ JSON Serialization test FAILED: {ex.Message}");
       Console.WriteLine($"  Stack trace: {ex.StackTrace}");
+      Console.WriteLine();
+      return false;
     }
-
-    Console.WriteLine();
   }
 
   #endregion
 
   #region Edge Cases Tests
 
-  static void TestHexCharEdgeCases()
+  static bool TestHexCharEdgeCases()
   {
     Console.WriteLine("--- Testing HexChar Edge Cases ---");
 
@@ -333,21 +332,22 @@ public static class HexCharSerializationTests
       Console.WriteLine($"  From byte (65): {fromByte}");
 
       Console.WriteLine("\n✓ All edge case tests completed");
-    }
-    catch (Exception ex)
+      Console.WriteLine();
+      return true;
+    } catch (Exception ex)
     {
       Console.WriteLine($"✗ Edge case test FAILED: {ex.Message}");
       Console.WriteLine($"  Stack trace: {ex.StackTrace}");
+      Console.WriteLine();
+      return false;
     }
-
-    Console.WriteLine();
   }
 
   #endregion
 
   #region Performance Tests
 
-  static void TestHexCharPerformance()
+  static bool TestHexCharPerformance()
   {
     Console.WriteLine("--- Testing HexChar Performance ---");
 
@@ -431,16 +431,16 @@ public static class HexCharSerializationTests
       }
       sw.Stop();
       Console.WriteLine($"Implicit conversion to ushort x {iterations}: {sw.ElapsedMilliseconds}ms");
-
       Console.WriteLine("✓ Performance tests completed");
-    }
-    catch (Exception ex)
+      Console.WriteLine();
+      return true;
+    } catch (Exception ex)
     {
       Console.WriteLine($"✗ Performance test FAILED: {ex.Message}");
       Console.WriteLine($"  Stack trace: {ex.StackTrace}");
+      Console.WriteLine();
+      return false;
     }
-
-    Console.WriteLine();
   }
 
   #endregion
