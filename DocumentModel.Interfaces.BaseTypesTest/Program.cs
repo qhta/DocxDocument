@@ -7,7 +7,11 @@ class Program
 {
   static void Main(string[] args)
   {
-    HexCharSerializationTests.Run();
+    if (!HexBinarySerializationTests.Run()) return;
+    if (!HexCharSerializationTests.Run()) return;
+    Console.WriteLine();
+    Console.WriteLine("=== All Tests Completed ===");
+    Console.ReadKey();
   }
 }
 
