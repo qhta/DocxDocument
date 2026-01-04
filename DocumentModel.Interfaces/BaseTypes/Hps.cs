@@ -3,7 +3,6 @@
 /// <summary>
 /// HalfPoints unit. 1 HalfPoint = 1/144 inch.
 /// </summary>
-[TypeConverter(typeof(HpsXmlConverter))]
 public struct Hps : IComparable<Hps>
 {
   /// <summary>

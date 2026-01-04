@@ -3,7 +3,6 @@
 /// <summary>
 /// Twips unit. 1 twip = 1/1440 inch.
 /// </summary>
-[TypeConverter(typeof(TwipsXmlConverter))]
 public struct Twips : IComparable<Twips>
 {
   /// <summary>
