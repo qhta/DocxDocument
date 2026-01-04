@@ -144,7 +144,6 @@ public class BytePercentJsonConverter : JsonConverter<BytePercent>
   /// </remarks>
   public override void Write(Utf8JsonWriter writer, BytePercent value, JsonSerializerOptions options)
   {
-    // Write as numeric string without "%" suffix, following Office Open XML conventions
-    writer.WriteStringValue(value.ToString());
+    writer.WriteStringValue(value.ToString(CultureInfo.InvariantCulture));
   }
 }

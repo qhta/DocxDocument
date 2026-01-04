@@ -56,6 +56,14 @@ class Program
       allTestsPassed = false;
 
     Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    // Run Percent tests
+    if (!PercentSerializationTests.Run())
+      allTestsPassed = false;
+
+    Console.WriteLine();
     Console.WriteLine  ("╔════════════════════════════════════════════════════════════╗");
     if (allTestsPassed)
       Console.WriteLine("║         ✓ All Test Suites Passed Successfully              ║");
