@@ -48,13 +48,14 @@ namespace DocumentModel;
 /// intArray.Resize(10, VariantType.String); // Now a 10-element string array
 /// </code>
 /// </example>
-public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVariant>
+[JsonConverter(typeof(ArrayVariantJsonConverter))]
+public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVariant>
 {
   private VariantType _baseType;
   private int _fillCount;
   private Array? _items;
   private int _lowerBounds;
-  private int _upperBounds;
+  private int _upperBounds = -1;
 
   /// <summary>
   /// Initializes a new instance of the <see cref="ArrayVariant"/> class with default settings.
@@ -541,7 +542,9 @@ public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVaria
       {
         var item = _items.GetValue(i);
         var otherItem = other._items.GetValue(i);
-        if (item != otherItem)
+        if (item==null && otherItem==null)
+          continue;
+        if (!item!.Equals(otherItem))
           return false;
       }
     return true;
