@@ -99,8 +99,16 @@ class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
-    // Run RGBPoints tests
+    // Run RGB tests
     if (!RGBSerializationTests.Run())
+      allTestsPassed = false;
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    // Run StrNumPair tests
+    if (!StrNumPairSerializationTests.Run())
       allTestsPassed = false;
 
     Console.WriteLine();

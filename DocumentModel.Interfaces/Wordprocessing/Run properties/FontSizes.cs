@@ -9,9 +9,9 @@ public interface FontSizes
   /// <summary>
   /// Value for regular script.
   /// </summary>
-  public Hps? Val { get; set; }
+  public HalfPoints? Val { get; set; }
   /// <summary>
   /// Value for complex script.
   /// </summary>
-  public Hps? ValCS { get; set; }
+  public HalfPoints? ValCS { get; set; }
 }
