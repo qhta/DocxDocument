@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 ///   Represents binary data encoded as a Base64 string, used for embedding binary content in text-based formats.

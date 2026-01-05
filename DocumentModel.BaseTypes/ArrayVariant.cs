@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using DocumentModel;
 namespace DocumentModel;
 
 /// <summary>
@@ -550,4 +545,51 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
     return true;
   }
 
+  /// <summary>
+  /// Converts the value of this instance to a string representation using the specified format provider.
+  /// </summary>
+  /// <param name="provider">
+  /// An <see cref="IFormatProvider"/> that supplies culture-specific formatting information.
+  /// Can be <see langword="null"/> to use the current culture.
+  /// </param>
+  /// <returns>
+  /// A string representation of the array in the format "[element1, element2, ...]".
+  /// </returns>
+  /// <remarks>
+  /// <para>
+  /// The string representation includes all elements separated by commas and enclosed in brackets.
+  /// Null elements appear as empty strings.
+  /// </para>
+  /// <para>
+  /// If a <paramref name="provider"/> is specified, it is used for formatting elements that implement
+  /// <see cref="IFormattable"/>. For other elements, the standard <see cref="object.ToString()"/> method is used.
+  /// </para>
+  /// <para>
+  /// Example outputs:
+  /// <list type="bullet">
+  /// <item><description>"[10, 20, 30]" - Integer array</description></item>
+  /// <item><description>"[apple, banana, cherry]" - String array</description></item>
+  /// <item><description>"[]" - Empty array</description></item>
+  /// </list>
+  /// </para>
+  /// </remarks>
+  public override string? ToString(IFormatProvider? provider = null)
+  {
+    if (_items == null)
+      return "[]";
+
+    var formattedItems = new List<string>();
+
+    foreach (var item in _items)
+    {
+      if (item == null)
+        formattedItems.Add("");
+      else if (item is IFormattable formattable)
+        formattedItems.Add(formattable.ToString(null, provider) ?? "");
+      else
+        formattedItems.Add(item.ToString() ?? "");
+    }
+
+    return "[" + string.Join(", ", formattedItems) + "]";
+  }
 }
