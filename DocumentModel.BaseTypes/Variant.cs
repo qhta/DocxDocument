@@ -61,6 +61,7 @@ public class Variant : IConvertible, IEquatable<Variant>
     { VariantType.Single, typeof(Single) },
     { VariantType.Double, typeof(Double) },
     { VariantType.Char, typeof(Char) },
+    { VariantType.String, typeof(string) },
     { VariantType.Bstr, typeof(String) },
     { VariantType.Lpstr, typeof(String) },
     { VariantType.Lpwstr, typeof(String) },
