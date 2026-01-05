@@ -285,7 +285,7 @@ public static class VectorVariantSerializationTests
       // Test empty vector
       Console.WriteLine("Testing empty vector ToString:");
       VectorVariant emptyVector = new VectorVariant(VariantType.Int32);
-      string emptyStr = emptyVector.ToString();
+      string emptyStr = emptyVector.ToString()!;
       Console.WriteLine($"  Empty vector: '{emptyStr}'");
       if (emptyStr != "()")
       {
@@ -299,7 +299,7 @@ public static class VectorVariantSerializationTests
       intVector.Add(10);
       intVector.Add(20);
       intVector.Add(30);
-      string intStr = intVector.ToString();
+      string intStr = intVector.ToString()!;
       Console.WriteLine($"  Integer vector: '{intStr}'");
       if (!intStr.Contains("10") || !intStr.Contains("20") || !intStr.Contains("30"))
       {
@@ -313,7 +313,7 @@ public static class VectorVariantSerializationTests
       strVector.Add("Alpha");
       strVector.Add("Beta");
       strVector.Add("Gamma");
-      string strStr = strVector.ToString();
+      string strStr = strVector.ToString()!;
       Console.WriteLine($"  String vector: '{strStr}'");
 
       // Test vector with null values
@@ -322,7 +322,7 @@ public static class VectorVariantSerializationTests
       nullVector.Add("First");
       nullVector.Add(null);
       nullVector.Add("Third");
-      string nullStr = nullVector.ToString();
+      string nullStr = nullVector.ToString()!;
       Console.WriteLine($"  Vector with nulls: '{nullStr}'");
 
       // Test double vector with InvariantCulture
@@ -331,13 +331,13 @@ public static class VectorVariantSerializationTests
       doubleVector.Add(1.5);
       doubleVector.Add(2.75);
       doubleVector.Add(3.125);
-      string doubleStrInvariant = doubleVector.ToString(CultureInfo.InvariantCulture);
+      string doubleStrInvariant = doubleVector.ToString(CultureInfo.InvariantCulture)!;
       Console.WriteLine($"  InvariantCulture: '{doubleStrInvariant}'");
 
       // Test double vector with French culture
       Console.WriteLine("\nTesting double vector with French culture:");
       var frenchCulture = new CultureInfo("fr-FR");
-      string doubleStrFrench = doubleVector.ToString(frenchCulture);
+      string doubleStrFrench = doubleVector.ToString(frenchCulture)!;
       Console.WriteLine($"  French culture: '{doubleStrFrench}'");
 
       // Test boolean vector
@@ -346,7 +346,7 @@ public static class VectorVariantSerializationTests
       boolVector.Add(true);
       boolVector.Add(false);
       boolVector.Add(true);
-      string boolStr = boolVector.ToString();
+      string boolStr = boolVector.ToString()!;
       Console.WriteLine($"  Boolean vector: '{boolStr}'");
 
       // Test DateTime vector
@@ -354,14 +354,14 @@ public static class VectorVariantSerializationTests
       VectorVariant dateVector = new VectorVariant(VariantType.DateTime);
       dateVector.Add(new DateTime(2024, 1, 15, 10, 30, 0));
       dateVector.Add(new DateTime(2024, 12, 25, 18, 45, 0));
-      string dateStr = dateVector.ToString(CultureInfo.InvariantCulture);
+      string dateStr = dateVector.ToString(CultureInfo.InvariantCulture)!;
       Console.WriteLine($"  DateTime vector (InvariantCulture): '{dateStr}'");
 
       // Test single element vector
       Console.WriteLine("\nTesting single element vector ToString:");
       VectorVariant singleVector = new VectorVariant(VariantType.String);
       singleVector.Add("OnlyOne");
-      string singleStr = singleVector.ToString();
+      string singleStr = singleVector.ToString()!;
       Console.WriteLine($"  Single element: '{singleStr}'");
 
       // Test format consistency
@@ -689,7 +689,7 @@ public static class VectorVariantSerializationTests
       Console.WriteLine($"  vec1.Equals(vec3): {vec1.Equals(vec3)}");
       Console.WriteLine($"  vec1.Equals(null): {vec1.Equals((VectorVariant?)null)}");
 
-      if (!vec1.Equals(vec2))
+      if (vec1 == null || !vec1.Equals(vec2))
       {
         Console.WriteLine("✗ Equality test FAILED");
         return false;
