@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ValueAxisScaling Class.
 /// </summary>
-public interface ValueAxisScaling: IModelElement
+public interface ValueAxisScaling:
 {
   /// <summary>
   ///   max

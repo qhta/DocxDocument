@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the DialogBoxLauncher Class.
 /// </summary>
-public interface DialogBoxLauncher: IModelElement
+public interface DialogBoxLauncher:
 {
   /// <summary>
   ///   UnsizedButton.

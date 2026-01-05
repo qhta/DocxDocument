@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Minor fonts.
 /// </summary>
-public interface MinorFont: IModelElement
+public interface MinorFont:
 {
   public TextFontType? LatinFont { get; set; }
   public TextFontType? EastAsianFont { get; set; }

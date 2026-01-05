@@ -11,7 +11,7 @@ namespace DocumentModel.CustomXml;
 ///   define the structure and validation rules for the contained XML data. This functionality enables
 ///   data-driven documents, content control binding, and integration with external data sources.
 /// </remarks>
-public interface DataStoreItem : IModelElement
+public interface DataStoreItem :
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this custom XML data item.

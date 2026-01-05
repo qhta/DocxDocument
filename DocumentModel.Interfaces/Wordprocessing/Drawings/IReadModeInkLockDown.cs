@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Freeze Document Layout.
 /// </summary>
-public interface IReadModeInkLockDown: IModelElement
+public interface IReadModeInkLockDown:
 {
   /// <summary>
   ///   Use Actual Pages, Not Virtual Pages

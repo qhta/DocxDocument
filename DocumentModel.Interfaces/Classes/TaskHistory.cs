@@ -9,7 +9,7 @@ namespace DocumentModel;
 ///   of tasks within the document model. This enables audit trails, undo/redo functionality,
 ///   and historical analysis of task-related operations.
 /// </remarks>
-public interface TaskHistory : IModelElement
+public interface TaskHistory :
 {
   /// <summary>
   ///   Gets or sets the collection of historical events that have occurred for tasks.

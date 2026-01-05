@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the SeriesElementVisibilities Class.
 /// </summary>
-public interface SeriesElementVisibilities: IModelElement
+public interface SeriesElementVisibilities:
 {
   /// <summary>
   ///   connectorLines

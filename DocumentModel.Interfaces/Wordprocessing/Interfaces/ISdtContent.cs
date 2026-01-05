@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Interface for elements that can be included in a structured document tag element
 /// </summary>
-public interface ISdtContent: IModelElement
+public interface ISdtContent:
 {
   /// <summary>
   /// Parent as a <see cref="SdtBlock"/> element.

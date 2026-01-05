@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskPriorityEventInfo Class.
 /// </summary>
-public interface TaskPriorityEventInfo: IModelElement
+public interface TaskPriorityEventInfo:
 {
   /// <summary>
   ///   value

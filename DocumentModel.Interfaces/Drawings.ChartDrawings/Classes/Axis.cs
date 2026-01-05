@@ -11,7 +11,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   tick marks, tick labels, number formatting, visual styling, and text properties. Axes can be hidden while
 ///   still providing the underlying data structure, and support extensibility through custom extensions.
 /// </remarks>
-public interface Axis : IModelElement
+public interface Axis :
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this axis.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Theme Override.
 /// </summary>
-public interface ThemeOverride: IModelElement
+public interface ThemeOverride:
 {
   /// <summary>
   ///   Color Scheme.

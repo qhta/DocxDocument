@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageMenuToggleButton Class.
 /// </summary>
-public interface BackstageMenuToggleButton: IModelElement
+public interface BackstageMenuToggleButton:
 {
   /// <summary>
   ///   image

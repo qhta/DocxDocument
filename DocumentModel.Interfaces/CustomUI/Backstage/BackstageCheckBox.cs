@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageCheckBox Class.
 /// </summary>
-public interface BackstageCheckBox: IModelElement
+public interface BackstageCheckBox:
 {
   /// <summary>
   ///   expand

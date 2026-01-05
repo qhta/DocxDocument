@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Lower Limit Properties.
 /// </summary>
-public interface LimitLowerProperties: IModelElement
+public interface LimitLowerProperties:
 {
   /// <summary>
   ///   ControlProperties.

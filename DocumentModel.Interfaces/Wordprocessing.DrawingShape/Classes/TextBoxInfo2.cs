@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// <summary>
 ///   Defines the TextBoxInfo2 Class.
 /// </summary>
-public interface TextBoxInfo2: IModelElement
+public interface TextBoxInfo2:
 {
   /// <summary>
   ///   id

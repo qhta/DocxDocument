@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagram1;
 /// <summary>
 ///   Defines the NumberDiagramInfo Class.
 /// </summary>
-public interface NumberDiagramInfo: IModelElement
+public interface NumberDiagramInfo:
 {
   /// <summary>
   ///   lvl

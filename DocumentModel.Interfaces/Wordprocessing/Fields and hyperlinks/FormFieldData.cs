@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Form Field Properties.
 /// </summary>
-public interface FormFieldData: IModelElement
+public interface FormFieldData:
 {
   public string? FormFieldName { get; set; }
   public bool? Enabled { get; set; }

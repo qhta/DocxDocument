@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the PtExtension interface.
 /// </summary>
-public interface PtExtension: IModelElement
+public interface PtExtension:
 {
   /// <summary>
   ///   URI

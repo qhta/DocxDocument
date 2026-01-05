@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HiddenShape3D interface.
 /// </summary>
-public interface HiddenShape3D: IModelElement
+public interface HiddenShape3D:
 {
   /// <summary>
   ///   Shape Depth

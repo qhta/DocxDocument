@@ -24,7 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   geographic entity. This query-based mapping enables flexible, efficient data visualization on map charts
 ///   where geographic associations are known and explicit rather than derived from coordinates.
 /// </remarks>
-public interface GeoDataPointToEntityQuery : IModelElement
+public interface GeoDataPointToEntityQuery :
 {
   /// <summary>
   ///   Gets or sets the type classification of the target geographic entity.

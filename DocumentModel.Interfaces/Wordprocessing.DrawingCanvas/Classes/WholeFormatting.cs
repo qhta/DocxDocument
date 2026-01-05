@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.DrawingCanvas;
 /// <summary>
 ///   Defines the WholeFormatting Class.
 /// </summary>
-public interface WholeFormatting: IModelElement
+public interface WholeFormatting:
 {
   /// <summary>
   ///   Outline.

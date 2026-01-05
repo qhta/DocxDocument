@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ThemeFamily Class.
 /// </summary>
-public interface ThemeFamily: IModelElement
+public interface ThemeFamily:
 {
   /// <summary>
   ///   name

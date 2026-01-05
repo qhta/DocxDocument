@@ -47,7 +47,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public interface RgbColorModelHex: IModelElement
+public interface RgbColorModelHex:
 {
   /// <summary>
   /// Gets or sets the base RGB color value in hexadecimal format.

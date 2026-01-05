@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions.UI;
 /// <summary>
 ///   Defines the WebExtensionTaskpane Class.
 /// </summary>
-public interface WebExtensionTaskpane: IModelElement
+public interface WebExtensionTaskpane:
 {
   /// <summary>
   ///   dockstate

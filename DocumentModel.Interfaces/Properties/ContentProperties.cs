@@ -3,7 +3,7 @@ namespace DocumentModel;
 ///   Predefined set of metadata properties that are applicable to Office Open XML documents. 
 ///   These properties extend the set of core properties which are common to all packages.
 /// </summary>
-public interface ContentProperties: IModelElement, DocumentProperties
+public interface ContentProperties: DocumentProperties
 {
   /// <summary>
   ///   Specifies the name of an external document template containing format 

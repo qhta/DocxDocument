@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the SeriesLayoutProperties Class.
 /// </summary>
-public interface SeriesLayoutProperties: IModelElement
+public interface SeriesLayoutProperties:
 {
   /// <summary>
   ///   ParentLabelLayout.

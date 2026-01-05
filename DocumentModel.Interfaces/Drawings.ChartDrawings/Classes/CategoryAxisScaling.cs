@@ -14,7 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   with the <see cref="Axis"/> interface, where either <c>CategoryAxisScaling</c> or <see cref="ValueAxisScaling"/>
 ///   is specified depending on the axis type.
 /// </remarks>
-public interface CategoryAxisScaling : IModelElement
+public interface CategoryAxisScaling :
 {
   /// <summary>
   ///   Gets or sets the width of the gap between categories as a percentage of the bar or column width.

@@ -2,7 +2,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Interface for model element that has a unique key to identify it.
 /// </summary>
-public interface IUniqueModelElement<out KeyType>: IModelElement, ICollectionItem
+public interface IUniqueModelElement<out KeyType>: ICollectionItem
 {
   /// <summary>
   /// Instance must have a unique get key method.

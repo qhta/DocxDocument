@@ -18,7 +18,7 @@ namespace DocumentModel;
 ///   The control is identified through its own ID and references its source through either a built-in Microsoft
 ///   Office identifier (IdMso) or a qualified custom control identifier (IdQ).
 /// </remarks>
-public interface ControlCloneQat : IModelElement
+public interface ControlCloneQat :
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this QAT control clone.

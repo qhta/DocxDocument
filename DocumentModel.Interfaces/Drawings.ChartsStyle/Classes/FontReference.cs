@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the FontReference Class.
 /// </summary>
-public interface FontReference: IModelElement
+public interface FontReference:
 {
   /// <summary>
   ///   idx

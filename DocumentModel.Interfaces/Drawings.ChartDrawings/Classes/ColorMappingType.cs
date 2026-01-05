@@ -16,7 +16,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   through theme customization. The color mapping is referenced by the <see cref="ChartSpace"/> to apply
 ///   theme colors throughout the chart's visual elements.
 /// </remarks>
-public interface ColorMappingType : IModelElement
+public interface ColorMappingType :
 {
   /// <summary>
   ///   Gets or sets the theme color scheme index for the primary background color.

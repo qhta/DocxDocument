@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the NonVisualInkContentPartProperties Class.
 /// </summary>
-public interface NonVisualInkContentPartProperties: IModelElement
+public interface NonVisualInkContentPartProperties:
 {
   /// <summary>
   ///   isComment

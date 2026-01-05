@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Trendline Label.
 /// </summary>
-public interface TrendlineLabel: IModelElement
+public interface TrendlineLabel:
 {
   /// <summary>
   ///   Layout.

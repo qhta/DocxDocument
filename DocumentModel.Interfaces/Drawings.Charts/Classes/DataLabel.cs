@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Data Label.
 /// </summary>
-public interface DataLabel: IModelElement
+public interface DataLabel:
 {
   /// <summary>
   ///   Index.

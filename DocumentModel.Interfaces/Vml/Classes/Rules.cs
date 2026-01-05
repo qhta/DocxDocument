@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Rule Set.
 /// </summary>
-public interface Rules: IModelElement
+public interface Rules:
 {
   /// <summary>
   ///   VML Extension Handling Behavior

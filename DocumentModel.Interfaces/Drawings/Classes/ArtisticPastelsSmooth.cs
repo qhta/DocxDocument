@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticPastelsSmooth interface.
 /// </summary>
-public interface ArtisticPastelsSmooth: IModelElement
+public interface ArtisticPastelsSmooth:
 {
   /// <summary>
   ///   trans

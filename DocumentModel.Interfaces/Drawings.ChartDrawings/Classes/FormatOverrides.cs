@@ -21,7 +21,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   definitions clean and maintainable. This separation of base formatting and overrides promotes efficient chart
 ///   styling where most elements follow consistent rules while specific elements receive targeted customization.
 /// </remarks>
-public interface FormatOverrides : IModelElement
+public interface FormatOverrides :
 {
   /// <summary>
   ///   Gets or sets the collection of individual format override definitions.

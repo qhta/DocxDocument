@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Frameset Splitter Properties.
 /// </summary>
-public interface FramesetSplitbar: IModelElement
+public interface FramesetSplitbar:
 {
   /// <summary>
   ///   Frameset Splitter Width.

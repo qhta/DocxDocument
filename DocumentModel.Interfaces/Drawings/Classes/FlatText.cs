@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   No text in 3D scene.
 /// </summary>
-public interface FlatText: IModelElement
+public interface FlatText:
 {
   /// <summary>
   ///   Z Coordinate

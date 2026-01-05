@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the Chart Class.
 /// </summary>
-public interface Chart: IModelElement
+public interface Chart:
 {
   /// <summary>
   ///   Title data and formatting.

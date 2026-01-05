@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageComboBox Class.
 /// </summary>
-public interface BackstageComboBox: IModelElement
+public interface BackstageComboBox:
 {
   /// <summary>
   ///   id

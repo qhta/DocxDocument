@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the LinePropertiesExtension interface.
 /// </summary>
-public interface LinePropertiesExtension: IModelElement
+public interface LinePropertiesExtension:
 {
   /// <summary>
   ///   URI

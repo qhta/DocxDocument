@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Choose Element.
 /// </summary>
-public interface Choose: IModelElement
+public interface Choose:
 {
   /// <summary>
   ///   Name

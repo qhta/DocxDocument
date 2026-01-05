@@ -23,7 +23,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   reference formats. The dual-query capability ensures efficient cache utilization regardless of how the geographic
 ///   association is specified, supporting responsive map chart rendering while minimizing external service dependencies.
 /// </remarks>
-public interface GeoDataPointToEntityQueryResult : IModelElement
+public interface GeoDataPointToEntityQueryResult :
 {
   /// <summary>
   ///   Gets or sets the coordinate-based query specification used to identify the containing entity.

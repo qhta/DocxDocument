@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SolidColorFillProperties Class.
 /// </summary>
-public interface SolidColorFillProperties: IModelElement
+public interface SolidColorFillProperties:
 {
   /// <summary>
   ///   RgbColorModelHex.

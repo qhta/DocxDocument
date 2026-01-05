@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BackgroundCustomProperties interface.
 /// </summary>
-public interface BackgroundCustomProperties: IModelElement
+public interface BackgroundCustomProperties:
 {
   /// <summary>
   ///   OfficeArtExtensionList.

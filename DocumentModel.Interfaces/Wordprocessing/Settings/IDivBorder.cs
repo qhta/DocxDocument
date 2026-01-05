@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Set of Borders for HTML div.
 /// </summary>
-public interface IDivBorder: IModelElement
+public interface IDivBorder:
 {
   /// <summary>
   ///   Top Border for HTML div.

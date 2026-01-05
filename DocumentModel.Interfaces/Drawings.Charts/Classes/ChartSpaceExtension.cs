@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ChartSpaceExtension Class.
 /// </summary>
-public interface ChartSpaceExtension: IModelElement
+public interface ChartSpaceExtension:
 {
   /// <summary>
   ///   URI

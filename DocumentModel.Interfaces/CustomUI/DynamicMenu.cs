@@ -12,7 +12,7 @@ namespace DocumentModel;
 ///   and the control supports customizable appearance with images, labels, tooltips, sizing options, and can
 ///   have its state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface DynamicMenu : IModelElement
+public interface DynamicMenu :
 {
   /// <summary>
   ///   Gets or sets the size of the dynamic menu control in the ribbon.

@@ -13,7 +13,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   or be positioned outside the plot area for clearer separation. Extensive customization options enable
 ///   the title to match the chart's overall design while maintaining readability and visual hierarchy.
 /// </remarks>
-public interface ChartTitle : IModelElement
+public interface ChartTitle :
 {
   /// <summary>
   ///   Gets or sets the side position where the chart title is displayed.

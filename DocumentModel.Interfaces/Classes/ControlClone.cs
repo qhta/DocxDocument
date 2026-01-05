@@ -16,7 +16,7 @@ namespace DocumentModel;
 ///   adapts to application state. The control clone references its source through either a built-in Microsoft
 ///   Office identifier (IdMso) or a qualified custom control identifier (QualifiedId).
 /// </remarks>
-public interface ControlClone : IModelElement
+public interface ControlClone :
 {
   /// <summary>
   ///   Gets or sets the size of the cloned control in the ribbon.

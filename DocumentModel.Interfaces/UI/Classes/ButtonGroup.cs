@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the ButtonGroup Class.
 /// </summary>
-public interface ButtonGroup: IModelElement
+public interface ButtonGroup:
 {
   /// <summary>
   ///   id

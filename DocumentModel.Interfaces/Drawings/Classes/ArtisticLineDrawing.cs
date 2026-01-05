@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticLineDrawing interface.
 /// </summary>
-public interface ArtisticLineDrawing: IModelElement
+public interface ArtisticLineDrawing:
 {
   /// <summary>
   ///   trans

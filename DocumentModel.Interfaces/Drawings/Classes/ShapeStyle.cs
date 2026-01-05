@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Style.
 /// </summary>
-public interface ShapeStyle: IModelElement
+public interface ShapeStyle:
 {
   /// <summary>
   ///   LineReference.

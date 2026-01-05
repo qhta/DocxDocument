@@ -14,7 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   embedded) should typically be specified for a given chart, though the structure allows for flexibility in
 ///   data source management and future extensibility.
 /// </remarks>
-public interface ChartData : IModelElement
+public interface ChartData :
 {
   /// <summary>
   ///   Gets or sets the external data source reference for the chart.

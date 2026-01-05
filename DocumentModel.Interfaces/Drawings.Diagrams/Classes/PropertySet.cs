@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Property Set.
 /// </summary>
-public interface PropertySet: IModelElement
+public interface PropertySet:
 {
   /// <summary>
   ///   Presentation Element Identifier

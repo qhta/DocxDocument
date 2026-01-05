@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WordprocessingPeoplePart
 /// </summary>
-public interface WordprocessingPeoplePart: IModelElement
+public interface WordprocessingPeoplePart:
 {
   public string? ContentType { get; set; }
   /// <summary>

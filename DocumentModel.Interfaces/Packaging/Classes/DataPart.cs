@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Represents the type of part referenced by a .
 /// </summary>
-public interface DataPart: IModelElement
+public interface DataPart:
 {
   /// <summary>
   ///   Gets the internal part path in the package.

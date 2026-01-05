@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the StringDimension Class.
 /// </summary>
-public interface StringDimension: IModelElement
+public interface StringDimension:
 {
   /// <summary>
   ///   type

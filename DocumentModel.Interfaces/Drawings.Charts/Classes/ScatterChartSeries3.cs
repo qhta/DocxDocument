@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ScatterChartSeries Class.
 /// </summary>
-public interface ScatterChartSeries3: IModelElement
+public interface ScatterChartSeries3:
 {
   /// <summary>
   ///   Index.

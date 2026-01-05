@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the TextSpacingType interface.
 /// </summary>
-public interface TextSpacingType: IModelElement
+public interface TextSpacingType:
 {
   /// <summary>
   ///   Spacing Percent.

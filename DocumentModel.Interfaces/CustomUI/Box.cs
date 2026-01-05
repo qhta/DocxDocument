@@ -9,7 +9,7 @@ namespace DocumentModel;
 ///   Boxes provide layout capabilities with customizable styling to organize controls in a structured manner.
 ///   They support both horizontal and vertical arrangements depending on the specified box style.
 /// </remarks>
-public interface Box : IModelElement
+public interface Box :
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this box container.

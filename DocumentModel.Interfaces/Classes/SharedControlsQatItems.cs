@@ -106,7 +106,7 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public interface SharedControlsQatItems : IModelElement
+public interface SharedControlsQatItems :
 {
   /// <summary>
   /// Gets or sets a reference to a built-in Office control to clone and add to the Quick Access Toolbar.

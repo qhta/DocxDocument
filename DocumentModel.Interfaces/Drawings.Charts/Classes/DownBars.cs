@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Down Bars.
 /// </summary>
-public interface DownBars: IModelElement
+public interface DownBars:
 {
   public ChartShapeProperties? ChartShapeProperties { get; set; }
 }
