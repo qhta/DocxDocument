@@ -53,7 +53,7 @@ public static class HexCharSerializationTests
         Console.WriteLine("✗ Equality test FAILED");
 
       // Test HexChar to string
-      string str = hexChar1;
+      string? str = hexChar1;
       Console.WriteLine($"✓ HexChar to string: {str}");
 
       // Test HexChar to ushort

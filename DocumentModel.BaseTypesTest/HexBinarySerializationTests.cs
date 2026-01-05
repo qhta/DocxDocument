@@ -415,13 +415,13 @@ public class HexBinaryTestDataClass
   public string Name { get; set; } = string.Empty;
 
   [XmlElement("BinaryData")]
-  public HexBinary BinaryData { get; set; }
+  public HexBinary? BinaryData { get; set; }
 
   [XmlElement("DocumentHash")]
-  public HexBinary DocumentHash { get; set; }
+  public HexBinary? DocumentHash { get; set; }
 
   [XmlElement("ImageData")]
-  public HexBinary ImageData { get; set; }
+  public HexBinary? ImageData { get; set; }
 }
 
 /// <summary>
@@ -429,7 +429,7 @@ public class HexBinaryTestDataClass
 /// </summary>
 public class HexBinaryTestWrapper
 {
-  public HexBinary Data { get; set; }
+  public HexBinary? Data { get; set; }
 }
 
 #endregion

@@ -448,13 +448,13 @@ public class Base64BinaryTestDataClass
   public string Name { get; set; } = string.Empty;
 
   [XmlElement("BinaryData")]
-  public Base64Binary BinaryData { get; set; }
+  public Base64Binary? BinaryData { get; set; }
 
   [XmlElement("EmbeddedImage")]
-  public Base64Binary EmbeddedImage { get; set; }
+  public Base64Binary? EmbeddedImage { get; set; }
 
   [XmlElement("EncryptedContent")]
-  public Base64Binary EncryptedContent { get; set; }
+  public Base64Binary? EncryptedContent { get; set; }
 }
 
 /// <summary>
@@ -462,7 +462,7 @@ public class Base64BinaryTestDataClass
 /// </summary>
 public class Base64BinaryTestWrapper
 {
-  public Base64Binary Data { get; set; }
+  public Base64Binary? Data { get; set; }
 }
 
 #endregion
