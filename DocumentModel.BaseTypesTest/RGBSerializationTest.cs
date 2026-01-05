@@ -21,6 +21,7 @@ public static class RGBSerializationTests
     // Run all tests
     if (!TestRGBBasicOperations()) return false;
     if (!TestRGBColorOperations()) return false;
+    if (!TestRGBConversions()) return false;
     if (!TestRGBXmlSerialization()) return false;
     if (!TestRGBJsonSerialization()) return false;
     if (!TestRGBEdgeCases()) return false;
@@ -176,6 +177,293 @@ public static class RGBSerializationTests
     catch (Exception ex)
     {
       Console.WriteLine($"✗ Color operation test FAILED: {ex.Message}");
+      Console.WriteLine($"  Stack trace: {ex.StackTrace}");
+      Console.WriteLine();
+      return false;
+    }
+  }
+
+  #endregion
+
+  #region Conversion Tests
+
+  static bool TestRGBConversions()
+  {
+    Console.WriteLine("--- Testing RGB IConvertible Conversions ---");
+
+    try
+    {
+      // Test GetTypeCode
+      Console.WriteLine("Testing GetTypeCode:");
+      RGB color = new RGB(0xABCDEF);
+      TypeCode typeCode = color.GetTypeCode();
+      Console.WriteLine($"  GetTypeCode(): {typeCode}");
+      if (typeCode != TypeCode.Object)
+      {
+        Console.WriteLine("✗ GetTypeCode test FAILED");
+        return false;
+      }
+
+      // Test ToInt32
+      Console.WriteLine("\nTesting ToInt32 (returns RGB value):");
+      RGB testColor = new RGB(0x123456);
+      int int32Value = testColor.ToInt32(null);
+      Console.WriteLine($"  RGB(0x123456) ToInt32: 0x{int32Value:X6}");
+      if (int32Value != 0x123456)
+      {
+        Console.WriteLine("✗ ToInt32 test FAILED");
+        return false;
+      }
+
+      // Test ToInt64
+      Console.WriteLine("\nTesting ToInt64 (returns RGB value):");
+      long int64Value = testColor.ToInt64(null);
+      Console.WriteLine($"  RGB(0x123456) ToInt64: 0x{int64Value:X6}");
+      if (int64Value != 0x123456L)
+      {
+        Console.WriteLine("✗ ToInt64 test FAILED");
+        return false;
+      }
+
+      // Test ToUInt32
+      Console.WriteLine("\nTesting ToUInt32 (returns RGB value):");
+      uint uint32Value = testColor.ToUInt32(null);
+      Console.WriteLine($"  RGB(0x123456) ToUInt32: 0x{uint32Value:X6}");
+      if (uint32Value != 0x123456U)
+      {
+        Console.WriteLine("✗ ToUInt32 test FAILED");
+        return false;
+      }
+
+      // Test ToUInt64
+      Console.WriteLine("\nTesting ToUInt64 (returns RGB value):");
+      ulong uint64Value = testColor.ToUInt64(null);
+      Console.WriteLine($"  RGB(0x123456) ToUInt64: 0x{uint64Value:X6}");
+      if (uint64Value != 0x123456UL)
+      {
+        Console.WriteLine("✗ ToUInt64 test FAILED");
+        return false;
+      }
+
+      // Test ToString(IFormatProvider)
+      Console.WriteLine("\nTesting ToString(IFormatProvider):");
+      RGB rgbColor = new RGB("FF00AA");
+      string str = rgbColor.ToString(CultureInfo.InvariantCulture);
+      Console.WriteLine($"  ToString result: '{str}'");
+      if (str != "FF00AA")
+      {
+        Console.WriteLine("✗ ToString test FAILED");
+        return false;
+      }
+
+      // Test ToType conversions
+      Console.WriteLine("\nTesting ToType conversions:");
+
+      // ToType(typeof(string))
+      var asString = testColor.ToType(typeof(string), null);
+      Console.WriteLine($"  ToType(typeof(string)): '{asString}'");
+      if (asString as string != "123456")
+      {
+        Console.WriteLine("✗ ToType(string) test FAILED");
+        return false;
+      }
+
+      // ToType(typeof(int))
+      var asInt = testColor.ToType(typeof(int), null);
+      Console.WriteLine($"  ToType(typeof(int)): 0x{asInt:X6}");
+      if ((int)asInt != 0x123456)
+      {
+        Console.WriteLine("✗ ToType(int) test FAILED");
+        return false;
+      }
+
+      // ToType(typeof(long))
+      var asLong = testColor.ToType(typeof(long), null);
+      Console.WriteLine($"  ToType(typeof(long)): 0x{asLong:X6}");
+      if ((long)asLong != 0x123456L)
+      {
+        Console.WriteLine("✗ ToType(long) test FAILED");
+        return false;
+      }
+
+      // ToType(typeof(uint))
+      var asUInt = testColor.ToType(typeof(uint), null);
+      Console.WriteLine($"  ToType(typeof(uint)): 0x{asUInt:X6}");
+      if ((uint)asUInt != 0x123456U)
+      {
+        Console.WriteLine("✗ ToType(uint) test FAILED");
+        return false;
+      }
+
+      // ToType(typeof(ulong))
+      var asULong = testColor.ToType(typeof(ulong), null);
+      Console.WriteLine($"  ToType(typeof(ulong)): 0x{asULong:X6}");
+      if ((ulong)asULong != 0x123456UL)
+      {
+        Console.WriteLine("✗ ToType(ulong) test FAILED");
+        return false;
+      }
+
+      // ToType(typeof(HexInt))
+      var asHexInt = testColor.ToType(typeof(HexInt), null);
+      Console.WriteLine($"  ToType(typeof(HexInt)): {asHexInt}");
+      if (!(asHexInt is HexInt))
+      {
+        Console.WriteLine("✗ ToType(HexInt) test FAILED");
+        return false;
+      }
+
+      // ToType(typeof(RGB))
+      var asRGB = testColor.ToType(typeof(RGB), null);
+      Console.WriteLine($"  ToType(typeof(RGB)): {asRGB == (object)testColor}");
+      if (!(asRGB is RGB) || !((RGB)asRGB).Equals(testColor))
+      {
+        Console.WriteLine("✗ ToType(RGB) test FAILED");
+        return false;
+      }
+
+      // Test unsupported conversions
+      Console.WriteLine("\nTesting unsupported conversions:");
+
+      // ToBoolean should throw
+      try
+      {
+        testColor.ToBoolean(null);
+        Console.WriteLine("✗ ToBoolean should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToBoolean correctly threw: {ex.Message}");
+      }
+
+      // ToByte should throw
+      try
+      {
+        testColor.ToByte(null);
+        Console.WriteLine("✗ ToByte should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToByte correctly threw: {ex.Message}");
+      }
+
+      // ToChar should throw
+      try
+      {
+        testColor.ToChar(null);
+        Console.WriteLine("✗ ToChar should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToChar correctly threw: {ex.Message}");
+      }
+
+      // ToDateTime should throw
+      try
+      {
+        testColor.ToDateTime(null);
+        Console.WriteLine("✗ ToDateTime should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToDateTime correctly threw: {ex.Message}");
+      }
+
+      // ToDecimal should throw
+      try
+      {
+        testColor.ToDecimal(null);
+        Console.WriteLine("✗ ToDecimal should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToDecimal correctly threw: {ex.Message}");
+      }
+
+      // ToDouble should throw
+      try
+      {
+        testColor.ToDouble(null);
+        Console.WriteLine("✗ ToDouble should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToDouble correctly threw: {ex.Message}");
+      }
+
+      // ToInt16 should throw
+      try
+      {
+        testColor.ToInt16(null);
+        Console.WriteLine("✗ ToInt16 should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToInt16 correctly threw: {ex.Message}");
+      }
+
+      // ToSByte should throw
+      try
+      {
+        testColor.ToSByte(null);
+        Console.WriteLine("✗ ToSByte should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToSByte correctly threw: {ex.Message}");
+      }
+
+      // ToSingle should throw
+      try
+      {
+        testColor.ToSingle(null);
+        Console.WriteLine("✗ ToSingle should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToSingle correctly threw: {ex.Message}");
+      }
+
+      // ToUInt16 should throw
+      try
+      {
+        testColor.ToUInt16(null);
+        Console.WriteLine("✗ ToUInt16 should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToUInt16 correctly threw: {ex.Message}");
+      }
+
+      // ToType with unsupported type should throw
+      try
+      {
+        testColor.ToType(typeof(DateTime), null);
+        Console.WriteLine("✗ ToType(typeof(DateTime)) should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToType(typeof(DateTime)) correctly threw: {ex.Message}");
+      }
+
+      Console.WriteLine("\n✓ All IConvertible conversion tests passed");
+      Console.WriteLine();
+      return true;
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"✗ Conversion test FAILED: {ex.Message}");
       Console.WriteLine($"  Stack trace: {ex.StackTrace}");
       Console.WriteLine();
       return false;
@@ -472,13 +760,13 @@ public static class RGBSerializationTests
       Console.WriteLine("\nTesting component modification:");
       RGB mutable = new RGB(100, 100, 100);
       Console.WriteLine($"  Original: {mutable} (R={mutable.R}, G={mutable.G}, B={mutable.B})");
-      
+
       mutable.R = 200;
       Console.WriteLine($"  After R=200: {mutable} (R={mutable.R}, G={mutable.G}, B={mutable.B})");
-      
+
       mutable.G = 150;
       Console.WriteLine($"  After G=150: {mutable} (R={mutable.R}, G={mutable.G}, B={mutable.B})");
-      
+
       mutable.B = 50;
       Console.WriteLine($"  After B=50: {mutable} (R={mutable.R}, G={mutable.G}, B={mutable.B})");
 

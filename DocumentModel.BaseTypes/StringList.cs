@@ -13,7 +13,7 @@
 /// </list>
 /// </remarks>
 [JsonConverter(typeof(StringListJsonConverter))]
-public partial class StringList : ICollection, ICollection<string>, IEquatable<StringList>
+public partial class StringList : ICollection, ICollection<string>, IEquatable<StringList>, IConvertible
 {
   private readonly List<string> _list = new();
 
@@ -229,4 +229,206 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// </summary>
   /// <value>An object that can be used to synchronize access to the collection.</value>
   object ICollection.SyncRoot { get; } = new object();
+
+  #region IConvertible Implementation
+
+  /// <summary>
+  /// Returns the <see cref="TypeCode"/> for this instance.
+  /// </summary>
+  /// <returns><see cref="TypeCode.Object"/> as this is a collection type.</returns>
+  public TypeCode GetTypeCode()
+  {
+    return TypeCode.Object;
+  }
+
+  /// <summary>
+  /// Converts the value of this instance to an equivalent Boolean value.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns><see langword="true"/> if the list is not empty; otherwise, <see langword="false"/>.</returns>
+  public bool ToBoolean(IFormatProvider? provider)
+  {
+    return Count > 0;
+  }
+
+  /// <summary>
+  /// This conversion is not supported for string list types.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
+  /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
+  public byte ToByte(IFormatProvider? provider)
+  {
+    throw new InvalidCastException("Cannot convert StringList to Byte.");
+  }
+
+  /// <summary>
+  /// This conversion is not supported for string list types.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
+  /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
+  public char ToChar(IFormatProvider? provider)
+  {
+    throw new InvalidCastException("Cannot convert StringList to Char.");
+  }
+
+  /// <summary>
+  /// This conversion is not supported for string list types.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
+  /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
+  public DateTime ToDateTime(IFormatProvider? provider)
+  {
+    throw new InvalidCastException("Cannot convert StringList to DateTime.");
+  }
+
+  /// <summary>
+  /// This conversion is not supported for string list types.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
+  /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
+  public decimal ToDecimal(IFormatProvider? provider)
+  {
+    throw new InvalidCastException("Cannot convert StringList to Decimal.");
+  }
+
+  /// <summary>
+  /// This conversion is not supported for string list types.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
+  /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
+  public double ToDouble(IFormatProvider? provider)
+  {
+    throw new InvalidCastException("Cannot convert StringList to Double.");
+  }
+
+  /// <summary>
+  /// This conversion is not supported for string list types.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
+  /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
+  public short ToInt16(IFormatProvider? provider)
+  {
+    throw new InvalidCastException("Cannot convert StringList to Int16.");
+  }
+
+  /// <summary>
+  /// Converts the value of this instance to an equivalent 32-bit signed integer.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>The number of items in the list.</returns>
+  public int ToInt32(IFormatProvider? provider)
+  {
+    return Count;
+  }
+
+  /// <summary>
+  /// Converts the value of this instance to an equivalent 64-bit signed integer.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>The number of items in the list.</returns>
+  public long ToInt64(IFormatProvider? provider)
+  {
+    return Count;
+  }
+
+  /// <summary>
+  /// This conversion is not supported for string list types.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
+  /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
+  public sbyte ToSByte(IFormatProvider? provider)
+  {
+    throw new InvalidCastException("Cannot convert StringList to SByte.");
+  }
+
+  /// <summary>
+  /// This conversion is not supported for string list types.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
+  /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
+  public float ToSingle(IFormatProvider? provider)
+  {
+    throw new InvalidCastException("Cannot convert StringList to Single.");
+  }
+
+  /// <summary>
+  /// Converts the value of this instance to an equivalent string.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>A string representation with all items separated by ", " (comma and space), or an empty string if the list is empty.</returns>
+  public string ToString(IFormatProvider? provider)
+  {
+    return ToString();
+  }
+
+  /// <summary>
+  /// Converts the value of this instance to the specified type.
+  /// </summary>
+  /// <param name="conversionType">The type to which to convert the value of this instance.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>
+  /// An object of the specified type with a value equivalent to the value of this instance.
+  /// Supports conversion to <see cref="String"/>, <see cref="Boolean"/>, <see cref="Int32"/>, <see cref="Int64"/>, and <see cref="StringList"/>.
+  /// </returns>
+  /// <exception cref="InvalidCastException">This conversion is not supported for the specified type.</exception>
+  public object ToType(Type conversionType, IFormatProvider? provider)
+  {
+    if (conversionType == typeof(string))
+      return ToString(provider);
+
+    if (conversionType == typeof(bool))
+      return ToBoolean(provider);
+
+    if (conversionType == typeof(int))
+      return ToInt32(provider);
+
+    if (conversionType == typeof(long))
+      return ToInt64(provider);
+
+    if (conversionType == typeof(StringList))
+      return this;
+
+    throw new InvalidCastException($"Cannot convert StringList to {conversionType.Name}.");
+  }
+
+  /// <summary>
+  /// This conversion is not supported for string list types.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
+  /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
+  public ushort ToUInt16(IFormatProvider? provider)
+  {
+    throw new InvalidCastException("Cannot convert StringList to UInt16.");
+  }
+
+  /// <summary>
+  /// Converts the value of this instance to an equivalent 32-bit unsigned integer.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>The number of items in the list as an unsigned integer.</returns>
+  public uint ToUInt32(IFormatProvider? provider)
+  {
+    return (uint)Count;
+  }
+
+  /// <summary>
+  /// Converts the value of this instance to an equivalent 64-bit unsigned integer.
+  /// </summary>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>The number of items in the list as an unsigned long integer.</returns>
+  public ulong ToUInt64(IFormatProvider? provider)
+  {
+    return (ulong)Count;
+  }
+
+  #endregion
 }
