@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BorderType Class.
 /// </summary>
-public interface IBorder: IModelElement
+public interface IBorder:
 {
   /// <summary>
   ///   Border Style

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// <summary>
 ///   Defines the WordprocessingShape Class.
 /// </summary>
-public interface WordprocessingShape: IModelElement
+public interface WordprocessingShape:
 {
   /// <summary>
   ///   normalEastAsianFlow

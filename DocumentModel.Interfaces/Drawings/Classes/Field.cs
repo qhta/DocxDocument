@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Field.
 /// </summary>
-public interface Field: IModelElement
+public interface Field:
 {
   /// <summary>
   ///   Field ID

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the Protection Class.
 /// </summary>
-public interface Protection: IModelElement
+public interface Protection:
 {
   /// <summary>
   ///   Chart Object.

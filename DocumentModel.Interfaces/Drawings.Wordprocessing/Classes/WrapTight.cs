@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Tight Wrapping.
 /// </summary>
-public interface WrapTight: IModelElement
+public interface WrapTight:
 {
   /// <summary>
   ///   Text Wrapping Location

@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines WordprocessingDocument - an OpenXmlPackage represents a Word document.
 /// </summary>
-public interface WordprocessingDocument: IModelElement
+public interface WordprocessingDocument:
 {
   /// <summary>
   ///   Gets the type of the WordprocessingDocument.

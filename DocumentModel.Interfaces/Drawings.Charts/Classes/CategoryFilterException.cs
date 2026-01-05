@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the CategoryFilterException Class.
 /// </summary>
-public interface CategoryFilterException: IModelElement
+public interface CategoryFilterException:
 {
   /// <summary>
   ///   SequenceOfReferences.

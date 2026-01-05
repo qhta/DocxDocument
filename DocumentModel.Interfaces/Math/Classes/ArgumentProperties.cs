@@ -35,7 +35,7 @@ namespace DocumentModel.Math;
 ///    </item>
 ///   </list>
 /// </summary>
-public interface ArgumentProperties: IModelElement
+public interface ArgumentProperties:
 {
   /// <summary>
   ///   Argument Size.

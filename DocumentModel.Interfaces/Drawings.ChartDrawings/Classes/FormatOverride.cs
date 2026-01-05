@@ -21,7 +21,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   promoting maintainable and flexible chart styling where most elements follow standard rules while specific
 ///   elements receive custom treatment. Extension support enables future enhancements to format override capabilities.
 /// </remarks>
-public interface FormatOverride : IModelElement
+public interface FormatOverride :
 {
   /// <summary>
   ///   Gets or sets the zero-based index identifying which chart element this format override applies to.

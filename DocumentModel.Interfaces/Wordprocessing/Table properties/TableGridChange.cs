@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Revision Information for Table Grid IColumn Definitions.
 /// </summary>
-public interface TableGridChange: IModelElement
+public interface TableGridChange:
 {
   /// <summary>
   ///   Annotation Identifier

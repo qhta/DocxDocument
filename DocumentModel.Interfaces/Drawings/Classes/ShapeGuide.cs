@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Shape Guide.
 /// </summary>
-public interface ShapeGuide: IModelElement
+public interface ShapeGuide:
 {
   /// <summary>
   ///   Shape Guide Name

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableBorders Class.
 /// </summary>
-public interface TableBorders: IModelElement
+public interface TableBorders:
 {
   /// <summary>
   ///   Table Top Border.

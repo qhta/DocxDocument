@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Doughnut Charts.
 /// </summary>
-public interface DoughnutChart: IModelElement
+public interface DoughnutChart:
 {
   /// <summary>
   ///   VaryColors.

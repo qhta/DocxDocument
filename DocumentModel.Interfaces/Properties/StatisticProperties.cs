@@ -2,7 +2,7 @@ namespace DocumentModel;
 /// <summary>
 ///   This set of properties is evaluated on document change.
 /// </summary>
-public interface StatisticProperties: IModelElement, DocumentProperties
+public interface StatisticProperties: DocumentProperties
 {
   /// <summary>
   ///   The total number of pages of a document if applicable.

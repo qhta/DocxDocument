@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Effect Container.
 /// </summary>
-public interface EffectDag: IModelElement
+public interface EffectDag:
 {
   public EffectContainer? EffectContainer { get; set; }
   public Effect? Effect { get; set; }

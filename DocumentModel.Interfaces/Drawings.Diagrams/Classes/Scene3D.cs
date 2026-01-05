@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   3-D Scene.
 /// </summary>
-public interface Scene3D: IModelElement
+public interface Scene3D:
 {
   /// <summary>
   ///   Camera.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Bubble Charts.
 /// </summary>
-public interface BubbleChart: IModelElement
+public interface BubbleChart:
 {
   /// <summary>
   ///   VaryColors.

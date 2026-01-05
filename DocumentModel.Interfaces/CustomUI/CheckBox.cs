@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the CheckBox Class.
 /// </summary>
-public interface CheckBox: IModelElement
+public interface CheckBox:
 {
   /// <summary>
   ///   getPressed

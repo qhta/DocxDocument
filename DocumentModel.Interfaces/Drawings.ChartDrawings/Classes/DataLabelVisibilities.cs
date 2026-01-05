@@ -18,7 +18,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   complex visualizations. The visibility flags provide flexibility in balancing information richness with visual
 ///   clarity, allowing charts to be tailored to specific audiences and use cases.
 /// </remarks>
-public interface DataLabelVisibilities : IModelElement
+public interface DataLabelVisibilities :
 {
   /// <summary>
   ///   Gets or sets a value indicating whether the series name is displayed in data labels.

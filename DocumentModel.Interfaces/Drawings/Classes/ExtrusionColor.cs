@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Extrusion Color.
 /// </summary>
-public interface ExtrusionColor: IModelElement
+public interface ExtrusionColor:
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
   public RgbColorModelHex? RgbColorModelHex { get; set; }

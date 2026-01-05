@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the NumericLevel Class.
 /// </summary>
-public interface NumericLevel: IModelElement
+public interface NumericLevel:
 {
   /// <summary>
   ///   ptCount

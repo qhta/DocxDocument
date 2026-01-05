@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// <summary>
 ///   Defines the LinkedTextBox Class.
 /// </summary>
-public interface LinkedTextBox: IModelElement
+public interface LinkedTextBox:
 {
   /// <summary>
   ///   id

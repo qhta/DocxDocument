@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticGlowEdges interface.
 /// </summary>
-public interface ArtisticGlowEdges: IModelElement
+public interface ArtisticGlowEdges:
 {
   /// <summary>
   ///   trans

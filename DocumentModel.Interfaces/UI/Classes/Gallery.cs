@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the Gallery Class.
 /// </summary>
-public interface Gallery: IModelElement
+public interface Gallery:
 {
   /// <summary>
   ///   size

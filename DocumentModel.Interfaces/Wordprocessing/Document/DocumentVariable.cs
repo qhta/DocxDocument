@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   A document variable that has a name and a string value.
 /// </summary>
-public interface DocumentVariable: IModelElement, ICollectionItem
+public interface DocumentVariable: ICollectionItem
 {
   /// <summary>
   ///   Document Variable Name

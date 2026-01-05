@@ -17,7 +17,7 @@ namespace DocumentModel;
 ///   arrow button at the bottom of groups. Dialog box launchers are optional and should be used judiciously to
 ///   provide access to truly supplementary functionality rather than essential commands.
 /// </remarks>
-public interface DialogBoxLauncher : IModelElement
+public interface DialogBoxLauncher :
 {
   /// <summary>
   ///   Gets or sets the button control that defines the dialog box launcher's behavior and appearance.

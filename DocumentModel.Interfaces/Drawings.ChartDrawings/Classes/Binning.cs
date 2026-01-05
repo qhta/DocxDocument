@@ -12,7 +12,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   divisions (either by specifying bin width or bin count). This enables flexible histogram creation that can
 ///   accommodate various data distributions and analysis requirements.
 /// </remarks>
-public interface Binning : IModelElement
+public interface Binning :
 {
   /// <summary>
   ///   Gets or sets which side of the interval boundary is included in the bin.

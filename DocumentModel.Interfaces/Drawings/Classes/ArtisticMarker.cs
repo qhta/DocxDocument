@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticMarker interface.
 /// </summary>
-public interface ArtisticMarker: IModelElement
+public interface ArtisticMarker:
 {
   /// <summary>
   ///   trans

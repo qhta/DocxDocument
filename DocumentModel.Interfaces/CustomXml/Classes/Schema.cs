@@ -12,7 +12,7 @@ namespace DocumentModel.CustomXml;
 ///   that span multiple namespaces. Schema references support both local and remote schema locations, allowing
 ///   documents to reference standard industry schemas or custom validation rules.
 /// </remarks>
-public interface Schema : IModelElement, ICollectionItem
+public interface Schema : ICollectionItem
 {
   /// <summary>
   ///   Gets or sets the namespace URI that uniquely identifies this XML schema.

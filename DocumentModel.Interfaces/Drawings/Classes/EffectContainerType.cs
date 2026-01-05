@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the EffectContainerType interface.
 /// </summary>
-public interface EffectContainerType: IModelElement
+public interface EffectContainerType:
 {
   /// <summary>
   ///   Effect Container Type

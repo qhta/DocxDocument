@@ -9,7 +9,7 @@ namespace DocumentModel;
 ///   checkboxes, text inputs, dropdowns, radio groups, hyperlinks, labels, group boxes, layout containers,
 ///   and images, providing a comprehensive set of UI elements for backstage customization.
 /// </remarks>
-public interface TopItemsGroupControls : IModelElement
+public interface TopItemsGroupControls :
 {
   /// <summary>
   ///   Gets or sets the backstage group button control.

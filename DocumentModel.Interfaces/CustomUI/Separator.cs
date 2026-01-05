@@ -11,7 +11,7 @@ namespace DocumentModel;
 ///   between different functional areas of the ribbon. They support positioning relative to other controls
 ///   and can have their visibility controlled statically or dynamically through callbacks.
 /// </remarks>
-public interface Separator : IModelElement
+public interface Separator :
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this separator.

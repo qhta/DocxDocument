@@ -9,7 +9,7 @@ namespace DocumentModel;
 ///   multiple controls to be visually clustered, providing better organization and efficient
 ///   use of ribbon space by displaying controls in a compact arrangement.
 /// </remarks>
-public interface ButtonGroup : IModelElement
+public interface ButtonGroup :
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this button group.

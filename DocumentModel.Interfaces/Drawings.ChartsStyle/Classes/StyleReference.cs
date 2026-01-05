@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the StyleReference Class.
 /// </summary>
-public interface StyleReference: IModelElement
+public interface StyleReference:
 {
   /// <summary>
   ///   idx

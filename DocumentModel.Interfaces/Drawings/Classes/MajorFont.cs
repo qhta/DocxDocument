@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Major Font.
 /// </summary>
-public interface MajorFont: IModelElement
+public interface MajorFont:
 {
   public TextFontType? LatinFont { get; set; }
   public TextFontType? EastAsianFont { get; set; }

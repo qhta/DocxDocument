@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Statistics Class.
 /// </summary>
-public interface Statistics: IModelElement
+public interface Statistics:
 {
   /// <summary>
   ///   quartileMethod

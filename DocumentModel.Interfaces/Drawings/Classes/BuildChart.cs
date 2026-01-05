@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Build Chart.
 /// </summary>
-public interface BuildChart: IModelElement
+public interface BuildChart:
 {
   /// <summary>
   ///   Build

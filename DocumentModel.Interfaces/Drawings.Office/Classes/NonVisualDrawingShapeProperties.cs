@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the NonVisualDrawingShapeProperties Class.
 /// </summary>
-public interface NonVisualDrawingShapeProperties: IModelElement
+public interface NonVisualDrawingShapeProperties:
 {
   /// <summary>
   ///   Text Box

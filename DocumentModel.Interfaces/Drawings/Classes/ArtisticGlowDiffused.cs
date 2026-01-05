@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticGlowDiffused interface.
 /// </summary>
-public interface ArtisticGlowDiffused: IModelElement
+public interface ArtisticGlowDiffused:
 {
   /// <summary>
   ///   trans

@@ -23,7 +23,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   capabilities, enabling visualization of data in geographic context across countries, states, regions, or custom
 ///   geographic boundaries.
 /// </remarks>
-public interface GeoData : IModelElement
+public interface GeoData :
 {
   /// <summary>
   ///   Gets or sets the human-readable name of the geographic entity.

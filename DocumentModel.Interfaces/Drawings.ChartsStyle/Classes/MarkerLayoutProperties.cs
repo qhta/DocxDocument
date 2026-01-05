@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the MarkerLayoutProperties Class.
 /// </summary>
-public interface MarkerLayoutProperties: IModelElement
+public interface MarkerLayoutProperties:
 {
   /// <summary>
   ///   symbol

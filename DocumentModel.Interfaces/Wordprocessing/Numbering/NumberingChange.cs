@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Previous Paragraph Numbering Properties.
 /// </summary>
-public interface NumberingChange: IModelElement
+public interface NumberingChange:
 {
   /// <summary>
   ///   original

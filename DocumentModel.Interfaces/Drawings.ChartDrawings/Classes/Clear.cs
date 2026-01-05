@@ -15,7 +15,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   and enables drill-down capabilities through the parent-child entity relationships. This functionality is
 ///   essential for creating interactive map charts that accurately represent data in geographic context.
 /// </remarks>
-public interface Clear : IModelElement
+public interface Clear :
 {
   /// <summary>
   ///   Gets or sets the results from geographic location queries.

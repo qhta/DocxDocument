@@ -3,7 +3,7 @@
 /// <summary>
 /// Element of the ComboBox, DropDown or Gallery selection.
 /// </summary>
-public interface ISelectionItem : IModelElement, ICollectionItem
+public interface ISelectionItem : ICollectionItem
 {
   /// <summary>
   ///   Specifies the identifier for a custom control. All new custom controls MUST have unique identifiers.

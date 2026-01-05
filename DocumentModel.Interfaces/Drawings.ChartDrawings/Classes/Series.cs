@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Series Class.
 /// </summary>
-public interface Series: IModelElement
+public interface Series:
 {
   /// <summary>
   ///   layoutId

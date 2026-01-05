@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PathShadeProperties Class.
 /// </summary>
-public interface PathShadeProperties: IModelElement
+public interface PathShadeProperties:
 {
   /// <summary>
   ///   path

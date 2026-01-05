@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Dash Stop.
 /// </summary>
-public interface DashStop: IModelElement
+public interface DashStop:
 {
   /// <summary>
   ///   Dash Length

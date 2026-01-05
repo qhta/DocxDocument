@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the DynamicMenu Class.
 /// </summary>
-public interface DynamicMenu: IModelElement
+public interface DynamicMenu:
 {
   /// <summary>
   ///   size

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ObjectProperties interface.
 /// </summary>
-public interface ObjectProperties: IModelElement
+public interface ObjectProperties:
 {
   /// <summary>
   ///   objectId

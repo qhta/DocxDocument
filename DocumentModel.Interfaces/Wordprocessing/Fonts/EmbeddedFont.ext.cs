@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-public partial interface EmbeddedFont : IModelElement
+public partial interface EmbeddedFont :
 {
   /// <summary>
   /// Retrieves the embedded font stored in the document.

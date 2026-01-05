@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines Styles.
 /// </summary>
-public partial interface Styles: IModelElement
+public partial interface Styles:
 {
   /// <summary>
   /// Defines Styles.

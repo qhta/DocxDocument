@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Default Properties for VML Objects in Header and Footer.
 /// </summary>
-public interface IHeaderShapeDefaults: IModelElement
+public interface IHeaderShapeDefaults:
 {
   /// <summary>
   /// Default Shape Properties for VML Shapes in Header and Footer.

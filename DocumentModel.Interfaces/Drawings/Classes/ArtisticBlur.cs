@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticBlur interface.
 /// </summary>
-public interface ArtisticBlur: IModelElement
+public interface ArtisticBlur:
 {
   /// <summary>
   ///   radius

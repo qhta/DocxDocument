@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   ParagraphMarkRunPropertiesChange interface used in <see cref="ParagraphMarkRunProperties"/>.
 ///   Represents <see cref="PreviousParagraphMarkRunProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
-public interface ParagraphMarkRunPropertiesChange: IModelElement
+public interface ParagraphMarkRunPropertiesChange:
 {
   /// <summary>
   ///   author

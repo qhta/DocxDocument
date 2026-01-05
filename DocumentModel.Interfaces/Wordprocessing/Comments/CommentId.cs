@@ -29,7 +29,7 @@ namespace DocumentModel.Wordprocessing;
 ///   comment synchronization and persistence in modern Office 365 and Microsoft 365 collaborative workflows.
 ///   </para>
 /// </remarks>
-public interface CommentId : IModelElement
+public interface CommentId :
 {
   /// <summary>
   ///   Gets or sets the hexadecimal identifier of the paragraph associated with this comment.

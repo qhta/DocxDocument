@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the Item Class.
 /// </summary>
-public interface Item: IModelElement
+public interface Item:
 {
   /// <summary>
   ///   id

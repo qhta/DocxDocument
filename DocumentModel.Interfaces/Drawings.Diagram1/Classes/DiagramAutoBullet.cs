@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagram1;
 /// <summary>
 ///   Defines the DiagramAutoBullet Class.
 /// </summary>
-public interface DiagramAutoBullet: IModelElement
+public interface DiagramAutoBullet:
 {
   /// <summary>
   ///   prefix

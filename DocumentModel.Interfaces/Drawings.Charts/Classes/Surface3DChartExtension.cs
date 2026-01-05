@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the Surface3DChartExtension Class.
 /// </summary>
-public interface Surface3DChartExtension: IModelElement
+public interface Surface3DChartExtension:
 {
   /// <summary>
   ///   URI

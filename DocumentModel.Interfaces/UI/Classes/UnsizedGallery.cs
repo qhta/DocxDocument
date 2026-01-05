@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the UnsizedGallery Class.
 /// </summary>
-public interface UnsizedGallery: IModelElement
+public interface UnsizedGallery:
 {
   /// <summary>
   ///   description

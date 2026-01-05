@@ -16,7 +16,7 @@ namespace DocumentModel;
 ///   behavior to provide custom handling when the hyperlink is clicked. Properties can be set statically or determined
 ///   dynamically through callback functions, enabling responsive UI that adapts to application context and state.
 /// </remarks>
-public interface Hyperlink : IModelElement
+public interface Hyperlink :
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this hyperlink control.

@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the UnsizedControlClone Class.
 /// </summary>
-public interface UnsizedControlClone: IModelElement
+public interface UnsizedControlClone:
 {
   /// <summary>
   ///   idQ

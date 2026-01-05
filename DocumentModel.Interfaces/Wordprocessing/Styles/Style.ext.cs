@@ -1,6 +1,6 @@
 namespace DocumentModel.Wordprocessing;
 
-public partial interface Style : IModelElement, AliasedObject
+public partial interface Style : AliasedObject
 {
   /// <summary>
   ///   Primary Style Name.

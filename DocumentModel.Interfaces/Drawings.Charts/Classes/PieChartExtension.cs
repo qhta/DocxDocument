@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the PieChartExtension Class.
 /// </summary>
-public interface PieChartExtension: IModelElement
+public interface PieChartExtension:
 {
   /// <summary>
   ///   URI

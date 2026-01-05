@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the SplitButton Class.
 /// </summary>
-public interface SplitButton: IModelElement
+public interface SplitButton:
 {
   /// <summary>
   ///   size

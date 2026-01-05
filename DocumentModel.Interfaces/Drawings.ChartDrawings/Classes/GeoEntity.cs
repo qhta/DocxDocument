@@ -22,7 +22,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   between lightweight entity references and detailed geographic data enables flexible, efficient geographic data
 ///   management in map-based chart visualizations.
 /// </remarks>
-public interface GeoEntity : IModelElement
+public interface GeoEntity :
 {
   /// <summary>
   ///   Gets or sets the human-readable name of the geographic entity.

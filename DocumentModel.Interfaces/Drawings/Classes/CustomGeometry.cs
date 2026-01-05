@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Custom geometry.
 /// </summary>
-public interface CustomGeometry: IModelElement
+public interface CustomGeometry:
 {
   /// <summary>
   ///   Adjust Value List.

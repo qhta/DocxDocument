@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Single Column Definition.
 /// </summary>
-public interface Column: IModelElement, ICollectionItem
+public interface Column: ICollectionItem
 {
   /// <summary>
   ///   IColumn Width

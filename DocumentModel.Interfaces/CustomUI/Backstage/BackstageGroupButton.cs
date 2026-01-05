@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageGroupButton Class.
 /// </summary>
-public interface BackstageGroupButton: IModelElement
+public interface BackstageGroupButton:
 {
   /// <summary>
   ///   expand

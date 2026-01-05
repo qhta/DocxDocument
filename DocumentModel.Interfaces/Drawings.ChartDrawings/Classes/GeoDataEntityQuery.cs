@@ -22,7 +22,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   filter helps disambiguate entities that might have the same identifier across different classification levels
 ///   (such as "Georgia" the country vs. "Georgia" the U.S. state), ensuring the correct entity data is retrieved.
 /// </remarks>
-public interface GeoDataEntityQuery : IModelElement
+public interface GeoDataEntityQuery :
 {
   /// <summary>
   ///   Gets or sets the type classification of the geographic entity being queried.

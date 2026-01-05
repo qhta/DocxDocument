@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the EmbeddedWavAudioFileType interface.
 /// </summary>
-public interface EmbeddedWavAudioFileType: IModelElement
+public interface EmbeddedWavAudioFileType:
 {
   /// <summary>
   ///   Embedded Audio File Relationship ID

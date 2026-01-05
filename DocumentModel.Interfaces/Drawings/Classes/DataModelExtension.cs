@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the DataModelExtension interface.
 /// </summary>
-public interface DataModelExtension: IModelElement
+public interface DataModelExtension:
 {
   /// <summary>
   ///   URI

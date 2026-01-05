@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   3D Area Charts.
 /// </summary>
-public interface Area3DChart: IModelElement
+public interface Area3DChart:
 {
   /// <summary>
   ///   Grouping.

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SpacingBetweenLines Class.
 /// </summary>
-public interface SpacingBetweenLines: IModelElement
+public interface SpacingBetweenLines:
 {
   /// <summary>
   ///   Spacing Above Paragraph

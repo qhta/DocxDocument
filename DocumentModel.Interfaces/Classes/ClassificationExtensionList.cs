@@ -135,7 +135,7 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public interface ClassificationExtensionList : IModelElement
+public interface ClassificationExtensionList :
 {
   /// <summary>
   /// Gets or sets the collection of classification extensions that define document classifications,

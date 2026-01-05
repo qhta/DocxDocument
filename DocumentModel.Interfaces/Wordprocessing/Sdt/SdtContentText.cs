@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtContentText Class.
 /// </summary>
-public interface SdtContentText: IModelElement
+public interface SdtContentText:
 {
   /// <summary>
   ///   Allow Soft Line Breaks

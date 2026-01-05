@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.DrawingCanvas;
 /// <summary>
 ///   Defines the GraphicFrameType Class.
 /// </summary>
-public interface GraphicFrameType: IModelElement
+public interface GraphicFrameType:
 {
   /// <summary>
   ///   NonVisualDrawingProperties.

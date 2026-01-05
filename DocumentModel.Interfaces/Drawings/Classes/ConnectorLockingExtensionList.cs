@@ -94,7 +94,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public interface ConnectorLockingExtensionList : IModelElement
+public interface ConnectorLockingExtensionList :
 {
   /// <summary>
   /// Gets or sets the collection of connector locking extensions that define attachment constraints,

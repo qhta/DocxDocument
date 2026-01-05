@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents properties of a footnote.
 /// </summary>
-public interface FootnoteProperties: IModelElement, ISectionPropertiesContent
+public interface FootnoteProperties: ISectionPropertiesContent
 {
   /// <summary>
   ///   Footnote Placement.

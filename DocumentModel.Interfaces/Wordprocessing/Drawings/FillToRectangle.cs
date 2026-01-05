@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FillToRectangle Class.
 /// </summary>
-public interface FillToRectangle: IModelElement
+public interface FillToRectangle:
 {
   /// <summary>
   ///   l

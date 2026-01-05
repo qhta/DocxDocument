@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the bar function, consisting of a base argument and an overbar or underbar, as in ¯a and _𝑎.
 /// </summary>
-public interface Bar: IModelElement, ICommonMathContent
+public interface Bar: ICommonMathContent
 {
   /// <summary>
   ///   Specifies formatting properties of bar function.

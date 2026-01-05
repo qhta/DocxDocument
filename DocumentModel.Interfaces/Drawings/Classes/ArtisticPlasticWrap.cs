@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticPlasticWrap interface.
 /// </summary>
-public interface ArtisticPlasticWrap: IModelElement
+public interface ArtisticPlasticWrap:
 {
   /// <summary>
   ///   trans

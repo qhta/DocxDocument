@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskTitleEventInfo Class.
 /// </summary>
-public interface TaskTitleEventInfo: IModelElement
+public interface TaskTitleEventInfo:
 {
   /// <summary>
   ///   title

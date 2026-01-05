@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the OpenXmlFormulaElement Class.
 /// </summary>
-public interface OpenXmlFormulaElement: IModelElement
+public interface OpenXmlFormulaElement:
 {
   /// <summary>
   ///   dir

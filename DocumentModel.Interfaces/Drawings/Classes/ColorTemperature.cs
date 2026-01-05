@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ColorTemperature interface.
 /// </summary>
-public interface ColorTemperature: IModelElement
+public interface ColorTemperature:
 {
   /// <summary>
   ///   colorTemp

@@ -10,7 +10,7 @@ namespace DocumentModel;
 ///   a streamlined gallery implementation suitable for use within button groups and other constrained
 ///   ribbon contexts. Galleries support both static and dynamic content generation through callback functions.
 /// </remarks>
-public interface GalleryRegular : IModelElement
+public interface GalleryRegular :
 {
   /// <summary>
   ///   Gets or sets the description text for the gallery control.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FilteredAreaSeries Class.
 /// </summary>
-public interface FilteredAreaSeries: IModelElement
+public interface FilteredAreaSeries:
 {
   /// <summary>
   ///   AreaChartSeries.

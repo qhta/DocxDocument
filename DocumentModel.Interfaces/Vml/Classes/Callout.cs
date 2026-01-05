@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the Callout Class.
 /// </summary>
-public interface Callout: IModelElement
+public interface Callout:
 {
   /// <summary>
   ///   VML Extension Handling Behavior

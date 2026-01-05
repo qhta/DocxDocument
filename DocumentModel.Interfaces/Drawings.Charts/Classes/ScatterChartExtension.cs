@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ScatterChartExtension Class.
 /// </summary>
-public interface ScatterChartExtension: IModelElement
+public interface ScatterChartExtension:
 {
   /// <summary>
   ///   URI

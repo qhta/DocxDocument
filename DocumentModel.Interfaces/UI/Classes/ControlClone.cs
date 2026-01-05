@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the ControlClone Class.
 /// </summary>
-public interface ControlClone: IModelElement
+public interface ControlClone:
 {
   /// <summary>
   ///   size

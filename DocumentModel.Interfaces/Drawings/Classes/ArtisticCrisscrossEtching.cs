@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticCrisscrossEtching interface.
 /// </summary>
-public interface ArtisticCrisscrossEtching: IModelElement
+public interface ArtisticCrisscrossEtching:
 {
   /// <summary>
   ///   trans

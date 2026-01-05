@@ -22,7 +22,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   chart data from the source if the relationship is still valid and accessible, or preserve the last-known data
 ///   if the source is unavailable.
 /// </remarks>
-public interface ExternalData : IModelElement
+public interface ExternalData :
 {
   /// <summary>
   ///   Gets or sets the relationship identifier that references the external data source.

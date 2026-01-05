@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Defines the ColorsType Class.
 /// </summary>
-public interface ColorsType: IModelElement
+public interface ColorsType:
 {
   /// <summary>
   ///   Color Application Method Type

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticTexturizer interface.
 /// </summary>
-public interface ArtisticTexturizer: IModelElement
+public interface ArtisticTexturizer:
 {
   /// <summary>
   ///   trans

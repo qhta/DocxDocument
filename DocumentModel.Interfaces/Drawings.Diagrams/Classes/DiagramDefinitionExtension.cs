@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Defines the DiagramDefinitionExtension Class.
 /// </summary>
-public interface DiagramDefinitionExtension: IModelElement
+public interface DiagramDefinitionExtension:
 {
   /// <summary>
   ///   URI

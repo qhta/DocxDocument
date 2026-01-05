@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Area Chart Series.
 /// </summary>
-public interface AreaChartSeries: IModelElement
+public interface AreaChartSeries:
 {
   /// <summary>
   ///   Index.

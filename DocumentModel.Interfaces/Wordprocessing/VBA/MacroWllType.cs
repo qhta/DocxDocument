@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MacroWllType Class.
 /// </summary>
-public interface MacroWllType: IModelElement
+public interface MacroWllType:
 {
   /// <summary>
   ///   macroName

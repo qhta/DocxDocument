@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticPhotocopy interface.
 /// </summary>
-public interface ArtisticPhotocopy: IModelElement
+public interface ArtisticPhotocopy:
 {
   /// <summary>
   ///   trans

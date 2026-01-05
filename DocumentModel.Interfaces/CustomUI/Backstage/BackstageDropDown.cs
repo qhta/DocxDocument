@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageDropDown Class.
 /// </summary>
-public interface BackstageDropDown: IModelElement
+public interface BackstageDropDown:
 {
   /// <summary>
   ///   id

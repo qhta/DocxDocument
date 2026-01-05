@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageEditBox Class.
 /// </summary>
-public interface BackstageEditBox: IModelElement
+public interface BackstageEditBox:
 {
   /// <summary>
   ///   id

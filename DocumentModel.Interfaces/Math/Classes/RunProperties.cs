@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the properties of the math run r.
 /// </summary>
-public interface RunProperties: IModelElement
+public interface RunProperties:
 {
   /// <summary>
   ///   Specifies that the characters in the run are literal; that is, they are to be interpreted literally 

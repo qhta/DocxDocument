@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This height shall be used to determine the resulting height of the table row, 
 ///   which can be absolute or relative (depending on its attribute values). 
 /// </summary>
-public interface TableRowHeight: IModelElement
+public interface TableRowHeight:
 {
   /// <summary>
   ///   Table Row Height

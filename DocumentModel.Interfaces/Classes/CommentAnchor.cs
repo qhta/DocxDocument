@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the CommentAnchor Class.
 /// </summary>
-public interface CommentAnchor: IModelElement
+public interface CommentAnchor:
 {
   /// <summary>
   ///   id

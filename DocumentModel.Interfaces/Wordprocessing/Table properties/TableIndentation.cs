@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableIndentation Class.
 /// </summary>
-public interface TableIndentation: IModelElement
+public interface TableIndentation:
 {
   /// <summary>
   ///   w

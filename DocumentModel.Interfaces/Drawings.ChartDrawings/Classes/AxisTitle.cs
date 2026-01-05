@@ -12,7 +12,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   extensively customized in terms of appearance, positioning, and text formatting to match the
 ///   chart's overall design and ensure readability.
 /// </remarks>
-public interface AxisTitle : IModelElement
+public interface AxisTitle :
 {
   /// <summary>
   ///   Gets or sets the text content displayed as the axis title.

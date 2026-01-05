@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///  If an footnote/endnote reference is specified within a footnote or endnote, 
 ///  then the document shall be considered non-conformant.
 /// </summary>
-public interface NoteReference : IModelElement, IRunContent
+public interface NoteReference : IRunContent
 {
     /// <summary>
     /// Specifies which interface is a target of this reference.

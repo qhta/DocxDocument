@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Defines the WebVideoProperty Class.
 /// </summary>
-public interface WebVideoProperty: IModelElement
+public interface WebVideoProperty:
 {
   /// <summary>
   ///   embeddedHtml

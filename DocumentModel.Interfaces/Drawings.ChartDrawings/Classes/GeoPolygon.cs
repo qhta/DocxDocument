@@ -22,7 +22,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   distances). The polygon identifier enables tracking and referencing specific boundary components, while the point count
 ///   provides information about the polygon's complexity and detail level.
 /// </remarks>
-public interface GeoPolygon : IModelElement
+public interface GeoPolygon :
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this polygon within the entity's boundary definition.

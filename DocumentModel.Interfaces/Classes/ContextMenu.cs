@@ -87,7 +87,7 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public interface ContextMenu : IModelElement
+public interface ContextMenu :
 {
   /// <summary>
   /// Gets or sets the Microsoft Office built-in context menu identifier that this customization applies to.

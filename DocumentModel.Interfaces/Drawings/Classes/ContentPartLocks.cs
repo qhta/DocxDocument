@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ContentPartLocks interface.
 /// </summary>
-public interface ContentPartLocks: IModelElement
+public interface ContentPartLocks:
 {
   /// <summary>
   ///   Disallow Shape Grouping

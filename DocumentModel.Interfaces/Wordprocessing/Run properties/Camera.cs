@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Camera Class.
 /// </summary>
-public interface Camera: IModelElement
+public interface Camera:
 {
   /// <summary>
   ///   prst

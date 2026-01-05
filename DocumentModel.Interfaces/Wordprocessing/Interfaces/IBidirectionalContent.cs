@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Interface for elements that can be included in document <see cref="BidirectionalElement"/>.
 /// </summary>
-public interface IBidirectionalContent: IModelElement
+public interface IBidirectionalContent:
 {
   /// <summary>
   /// Parent as a <see cref="BidirectionalElement"/> element.

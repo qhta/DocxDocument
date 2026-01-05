@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   End Paragraph Run Properties.
 /// </summary>
-public interface EndParagraphRunProperties: IModelElement
+public interface EndParagraphRunProperties:
 {
   public LineProperties? Outline { get; set; }
   public Fill? Fill { get; set; }

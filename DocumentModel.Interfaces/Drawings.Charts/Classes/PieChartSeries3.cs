@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the PieChartSeries Class.
 /// </summary>
-public interface PieChartSeries3: IModelElement
+public interface PieChartSeries3:
 {
   /// <summary>
   ///   Index.

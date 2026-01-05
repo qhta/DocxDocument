@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ConnectionType interface.
 /// </summary>
-public interface ConnectionType: IModelElement
+public interface ConnectionType:
 {
   /// <summary>
   ///   Identifier

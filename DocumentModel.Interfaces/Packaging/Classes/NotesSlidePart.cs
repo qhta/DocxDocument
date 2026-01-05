@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the NotesSlidePart
 /// </summary>
-public interface NotesSlidePart: IModelElement
+public interface NotesSlidePart:
 {
   /// <summary>
   ///   Gets the ChartParts of the NotesSlidePart

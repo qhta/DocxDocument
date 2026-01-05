@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the NumericDimension Class.
 /// </summary>
-public interface NumericDimension: IModelElement
+public interface NumericDimension:
 {
   /// <summary>
   ///   type

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticCement interface.
 /// </summary>
-public interface ArtisticCement: IModelElement
+public interface ArtisticCement:
 {
   /// <summary>
   ///   trans

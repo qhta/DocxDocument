@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the VisibleButton Class.
 /// </summary>
-public interface VisibleButton: IModelElement
+public interface VisibleButton:
 {
   /// <summary>
   ///   onAction

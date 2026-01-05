@@ -69,7 +69,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public interface SystemColor: IModelElement
+public interface SystemColor:
 {
   /// <summary>
   /// Gets or sets the system color identifier that references a specific OS-defined color.

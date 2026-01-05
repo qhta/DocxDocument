@@ -59,7 +59,7 @@ namespace DocumentModel.Wordprocessing;
 /// };
 /// </code>
 /// </example>
-public interface SdtProperties : IModelElement, IStoryContent
+public interface SdtProperties : IStoryContent
 {
   /// <summary>
   /// Gets or sets the unique numerical identifier for this structured document tag.

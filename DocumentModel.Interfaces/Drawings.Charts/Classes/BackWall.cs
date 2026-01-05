@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   3D back wall formatting.
 /// </summary>
-public interface BackWall: IModelElement
+public interface BackWall:
 {
   public Byte? Thickness { get; set; }
   public ShapeProperties? ShapeProperties { get; set; }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the PageMargins Class.
 /// </summary>
-public interface PageMargins: IModelElement
+public interface PageMargins:
 {
   /// <summary>
   ///   l

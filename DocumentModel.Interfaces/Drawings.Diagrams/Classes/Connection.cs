@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Connection.
 /// </summary>
-public interface Connection: IModelElement
+public interface Connection:
 {
   /// <summary>
   ///   Model Identifier

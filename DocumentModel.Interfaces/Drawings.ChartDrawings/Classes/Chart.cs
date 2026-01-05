@@ -14,7 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   consistent formatting and layout. Charts can be embedded in documents, presentations, and spreadsheets,
 ///   providing powerful data visualization capabilities across the Office suite.
 /// </remarks>
-public interface Chart : IModelElement
+public interface Chart :
 {
   /// <summary>
   ///   Gets or sets the title displayed at the top of the chart.

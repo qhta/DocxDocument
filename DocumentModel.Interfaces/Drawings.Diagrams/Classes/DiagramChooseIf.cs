@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   If.
 /// </summary>
-public interface DiagramChooseIf: IModelElement
+public interface DiagramChooseIf:
 {
   /// <summary>
   ///   Name

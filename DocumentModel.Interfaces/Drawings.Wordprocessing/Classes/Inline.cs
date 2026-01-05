@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Inline DrawingML Object.
 /// </summary>
-public interface Inline: IModelElement
+public interface Inline:
 {
   /// <summary>
   ///   Distance From Text on Top Edge

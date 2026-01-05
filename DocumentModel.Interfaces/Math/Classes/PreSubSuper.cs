@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies properties such as ctrlPr that can be stored on the Pre-Sub-Superscript objects Pre. 
 /// </summary>
-public interface PreSubSuper: IModelElement, ICommonMathContent
+public interface PreSubSuper: ICommonMathContent
 {
   /// <summary>
   ///   Pre-Sub-Superscript Properties.

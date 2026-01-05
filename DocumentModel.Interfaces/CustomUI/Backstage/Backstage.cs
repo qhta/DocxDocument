@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Backstage Class.
 /// </summary>
-public interface Backstage: IModelElement
+public interface Backstage:
 {
   /// <summary>
   ///   onShow

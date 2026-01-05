@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtContentCheckBox Class.
 /// </summary>
-public interface SdtContentCheckBox: IModelElement
+public interface SdtContentCheckBox:
 {
   /// <summary>
   ///   Checked.

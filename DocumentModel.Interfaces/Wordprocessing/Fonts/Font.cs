@@ -14,7 +14,7 @@ namespace DocumentModel.Wordprocessing;
 ///     </item>
 ///   </list>
 /// </summary>
-public interface Font : IModelElement
+public interface Font :
 {
   /// <summary>
   ///   Specifies the primary name of the current font. 

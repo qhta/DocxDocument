@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the FootnotesPart
 /// </summary>
-public interface FootnotesPart: IModelElement
+public interface FootnotesPart:
 {
   /// <summary>
   ///   Gets the AlternativeFormatImportParts of the FootnotesPart
