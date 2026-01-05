@@ -62,7 +62,7 @@ class Program
     // Run Percent tests
     if (!PercentSerializationTests.Run())
       allTestsPassed = false;
-    
+
     Console.WriteLine();
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
@@ -85,6 +85,22 @@ class Program
 
     // Run HalfPoints tests
     if (!HalfPointsSerializationTests.Run())
+      allTestsPassed = false;
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    // Run EighthPoints tests
+    if (!EighthPointsSerializationTests.Run())
+      allTestsPassed = false;
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    // Run RGBPoints tests
+    if (!RGBSerializationTests.Run())
       allTestsPassed = false;
 
     Console.WriteLine();
