@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies additional information about comments in the document.
 /// </summary>
-public interface CommentExtensible: IModelElement
+public interface CommentExtensible:
 {
   /// <summary>
   ///   Specifies the identifier for the associated comment. Values MUST be greater than 0 and less than 0x7FFFFFFF.

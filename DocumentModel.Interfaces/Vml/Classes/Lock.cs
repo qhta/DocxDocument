@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the Lock Class.
 /// </summary>
-public interface Lock: IModelElement
+public interface Lock:
 {
   /// <summary>
   ///   VML Extension Handling Behavior

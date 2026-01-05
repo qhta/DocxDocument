@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the AlphaBiLevel interface.
 /// </summary>
-public interface AlphaBiLevel: IModelElement
+public interface AlphaBiLevel:
 {
   /// <summary>
   ///   Threshold

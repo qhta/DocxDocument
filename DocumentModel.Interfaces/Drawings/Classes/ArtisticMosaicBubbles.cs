@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticMosaicBubbles interface.
 /// </summary>
-public interface ArtisticMosaicBubbles: IModelElement
+public interface ArtisticMosaicBubbles:
 {
   /// <summary>
   ///   trans

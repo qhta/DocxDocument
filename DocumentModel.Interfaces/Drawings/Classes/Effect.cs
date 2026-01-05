@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Effect.
 /// </summary>
-public interface Effect: IModelElement
+public interface Effect:
 {
   /// <summary>
   ///   Reference

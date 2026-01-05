@@ -17,7 +17,7 @@ namespace DocumentModel;
 ///   the native Office user experience. All UI customizations defined through this interface follow Office's ribbon
 ///   XML schema and support both static definitions and dynamic behavior through callback functions.
 /// </remarks>
-public interface CustomUI : IModelElement
+public interface CustomUI :
 {
   /// <summary>
   ///   Gets or sets the name of the callback function invoked when the custom UI is loaded.

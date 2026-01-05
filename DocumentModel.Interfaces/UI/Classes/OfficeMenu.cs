@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the OfficeMenu Class.
 /// </summary>
-public interface OfficeMenu: IModelElement
+public interface OfficeMenu:
 {
   public UnsizedControlClone? UnsizedControlClone { get; set; }
   public UnsizedButton? UnsizedButton { get; set; }

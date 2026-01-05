@@ -211,7 +211,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public interface BlipExtensionList : IModelElement
+public interface BlipExtensionList :
 {
   /// <summary>
   /// Gets or sets the collection of BLIP (image) extensions that add support for modern image formats,

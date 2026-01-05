@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// <summary>
 ///   Defines the NonVisualDrawingProperties Class.
 /// </summary>
-public interface NonVisualDrawingProperties: IModelElement
+public interface NonVisualDrawingProperties:
 {
   /// <summary>
   ///   Application defined unique identifier.

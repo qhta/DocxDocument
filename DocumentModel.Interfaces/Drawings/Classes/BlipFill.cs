@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BlipFill interface.
 /// </summary>
-public interface BlipFill: IModelElement
+public interface BlipFill:
 {
   /// <summary>
   ///   DPI Setting

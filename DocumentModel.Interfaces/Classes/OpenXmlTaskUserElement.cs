@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the OpenXmlTaskUserElement Class.
 /// </summary>
-public interface OpenXmlTaskUserElement: IModelElement
+public interface OpenXmlTaskUserElement:
 {
   /// <summary>
   ///   userId

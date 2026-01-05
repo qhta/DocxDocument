@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HyperlinkExtension interface.
 /// </summary>
-public interface HyperlinkExtension: IModelElement
+public interface HyperlinkExtension:
 {
   /// <summary>
   ///   URI

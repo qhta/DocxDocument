@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Layout Node.
 /// </summary>
-public interface LayoutNode: IModelElement
+public interface LayoutNode:
 {
   /// <summary>
   ///   Name

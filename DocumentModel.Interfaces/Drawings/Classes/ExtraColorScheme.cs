@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Extra Color Scheme.
 /// </summary>
-public interface ExtraColorScheme: IModelElement
+public interface ExtraColorScheme:
 {
   /// <summary>
   ///   ColorScheme.

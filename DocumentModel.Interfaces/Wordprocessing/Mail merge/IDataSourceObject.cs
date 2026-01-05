@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Office Data Source Object Settings.
 /// </summary>
-public interface IDataSourceObject: IModelElement
+public interface IDataSourceObject:
 {
   /// <summary>
   ///   UDL Connection String.

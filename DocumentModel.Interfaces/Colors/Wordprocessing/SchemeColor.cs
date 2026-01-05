@@ -62,7 +62,7 @@ namespace DocumentModel.Wordprocessing;
 /// };
 /// </code>
 /// </example>
-public interface SchemeColor : IModelElement
+public interface SchemeColor :
 {
   /// <summary>
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.

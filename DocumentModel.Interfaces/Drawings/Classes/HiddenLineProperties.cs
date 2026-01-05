@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HiddenLineProperties interface.
 /// </summary>
-public interface HiddenLineProperties: IModelElement
+public interface HiddenLineProperties:
 {
   /// <summary>
   ///   line width

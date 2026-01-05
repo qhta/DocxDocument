@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the document-level properties for all math in the document.
 /// </summary>
-public interface IMathProperties: IModelElement
+public interface IMathProperties:
 {
   /// <summary>
   ///   Specifies the default math font to be used in the document. 

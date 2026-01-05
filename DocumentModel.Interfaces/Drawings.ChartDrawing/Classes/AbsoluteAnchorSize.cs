@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Absolute Anchor Shape Size.
 /// </summary>
-public interface AbsoluteAnchorSize: IModelElement
+public interface AbsoluteAnchorSize:
 {
   /// <summary>
   ///   FromAnchor.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Defines the Point2DType Class.
 /// </summary>
-public interface Point2DType: IModelElement
+public interface Point2DType:
 {
   /// <summary>
   ///   X-Axis Coordinate

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ParentLabelLayout Class.
 /// </summary>
-public interface ParentLabelLayout: IModelElement
+public interface ParentLabelLayout:
 {
   /// <summary>
   ///   val

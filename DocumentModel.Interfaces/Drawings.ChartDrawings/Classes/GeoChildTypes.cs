@@ -23,7 +23,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   or the collection is null, queries typically return all available child entity types within the parent region,
 ///   providing comprehensive geographic hierarchy information at the cost of larger data transfers and longer query times.
 /// </remarks>
-public interface GeoChildTypes : IModelElement
+public interface GeoChildTypes :
 {
   /// <summary>
   ///   Gets or sets the collection of entity type identifiers to include in child entity queries.

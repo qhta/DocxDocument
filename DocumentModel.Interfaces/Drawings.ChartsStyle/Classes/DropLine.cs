@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the DropLine Class.
 /// </summary>
-public interface DropLine: IModelElement
+public interface DropLine:
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }

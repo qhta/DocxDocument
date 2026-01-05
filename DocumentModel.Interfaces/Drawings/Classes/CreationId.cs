@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the CreationId interface.
 /// </summary>
-public interface CreationId: IModelElement
+public interface CreationId:
 {
   /// <summary>
   ///   id

@@ -15,7 +15,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   sources, which is especially important for charts used in published documents, presentations, or
 ///   commercial applications.
 /// </remarks>
-public interface Copyrights : IModelElement
+public interface Copyrights :
 {
   /// <summary>
   ///   Gets or sets the collection of copyright notice strings.

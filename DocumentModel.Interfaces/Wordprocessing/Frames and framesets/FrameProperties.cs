@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FrameProperties Class.
 /// </summary>
-public interface FrameProperties: IModelElement
+public interface FrameProperties:
 {
   /// <summary>
   ///   Drop Cap Frame

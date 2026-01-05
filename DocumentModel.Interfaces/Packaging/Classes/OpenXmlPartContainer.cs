@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the base interface for OpenXmlPackage and OpenXmlPart.
 /// </summary>
-public interface OpenXmlPartContainer: IModelElement
+public interface OpenXmlPartContainer:
 {
   /// <summary>
   ///   Gets all external relationships.

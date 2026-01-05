@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Blip interface.
 /// </summary>
-public interface Blip: IModelElement
+public interface Blip:
 {
   /// <summary>
   ///   Embedded Picture Reference

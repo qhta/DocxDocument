@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Base interface for all TableProperties classes.
 ///   Contains common properties.
 /// </summary>
-public interface BaseTableProperties: IModelElement
+public interface BaseTableProperties:
 {
   /// <summary>
   ///   Table Alignment.

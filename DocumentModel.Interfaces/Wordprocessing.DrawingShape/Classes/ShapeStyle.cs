@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// <summary>
 ///   Defines the ShapeStyle Class.
 /// </summary>
-public interface ShapeStyle: IModelElement
+public interface ShapeStyle:
 {
   /// <summary>
   ///   LineReference.

@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Additional extent for object effects.
 /// </summary>
-public interface EffectExtent: IModelElement
+public interface EffectExtent:
 {
   /// <summary>
   ///   Additional Extent on Left Edge

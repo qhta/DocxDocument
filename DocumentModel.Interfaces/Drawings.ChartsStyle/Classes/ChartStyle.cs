@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the ChartStyle Class.
 /// </summary>
-public interface ChartStyle: IModelElement
+public interface ChartStyle:
 {
   /// <summary>
   ///   id

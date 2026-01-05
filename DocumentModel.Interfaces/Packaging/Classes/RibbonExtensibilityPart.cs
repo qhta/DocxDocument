@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the RibbonExtensibilityPart
 /// </summary>
-public interface RibbonExtensibilityPart: IModelElement
+public interface RibbonExtensibilityPart:
 {
   public string? ContentType { get; set; }
   /// <summary>

@@ -24,7 +24,7 @@ namespace DocumentModel.VariantTypes;
 ///   and application-specific formats registered with the system.
 ///   </para>
 /// </remarks>
-public interface VTClipboardData : IModelElement
+public interface VTClipboardData :
 {
   /// <summary>
   ///   Gets or sets the clipboard format identifier that specifies how the data should be interpreted.

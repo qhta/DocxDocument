@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 ///   Defines the WebExtensionBinding Class.
 /// </summary>
-public interface WebExtensionBinding: IModelElement
+public interface WebExtensionBinding:
 {
   /// <summary>
   ///   id

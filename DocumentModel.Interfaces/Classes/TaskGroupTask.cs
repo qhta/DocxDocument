@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskGroupTask Class.
 /// </summary>
-public interface TaskGroupTask: IModelElement
+public interface TaskGroupTask:
 {
   /// <summary>
   ///   id

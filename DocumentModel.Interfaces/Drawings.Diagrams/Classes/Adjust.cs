@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Shape Adjust.
 /// </summary>
-public interface Adjust: IModelElement
+public interface Adjust:
 {
   /// <summary>
   ///   Adjust Handle Index

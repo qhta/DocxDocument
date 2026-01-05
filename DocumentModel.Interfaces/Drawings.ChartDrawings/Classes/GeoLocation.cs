@@ -24,7 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   the need for separate coordinate, entity, and address lookups, providing all location information in a single,
 ///   cohesive structure suitable for efficient caching and retrieval in map-based chart applications.
 /// </remarks>
-public interface GeoLocation : IModelElement
+public interface GeoLocation :
 {
   /// <summary>
   ///   Gets or sets the latitude coordinate of the geographic location.

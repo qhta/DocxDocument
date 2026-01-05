@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Base interface for all ParagraphProperties classes.
 ///   Contains common properties.
 /// </summary>
-public interface BaseParagraphProperties: IModelElement
+public interface BaseParagraphProperties:
 {
   /// <summary>
   ///   KeepNext.

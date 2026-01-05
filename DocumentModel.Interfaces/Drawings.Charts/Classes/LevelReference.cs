@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the LevelReference Class.
 /// </summary>
-public interface LevelReference: IModelElement
+public interface LevelReference:
 {
   /// <summary>
   ///   SequenceOfReferences.

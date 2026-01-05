@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the PlotArea Class.
 /// </summary>
-public interface PlotArea: IModelElement
+public interface PlotArea:
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }

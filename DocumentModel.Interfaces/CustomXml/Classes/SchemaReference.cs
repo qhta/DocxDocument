@@ -12,7 +12,7 @@ namespace DocumentModel.CustomXml;
 ///   enabling validation and structure definition for custom XML data. The referenced schema may be
 ///   resolved from the document's <see cref="SchemaLibrary"/> or from external schema sources.
 /// </remarks>
-public interface SchemaReference : IModelElement
+public interface SchemaReference :
 {
   /// <summary>
   ///   Gets or sets the target namespace URI of the associated XML schema.

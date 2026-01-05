@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Layout Properties.
 /// </summary>
-public interface ShapeLayout: IModelElement
+public interface ShapeLayout:
 {
   /// <summary>
   ///   VML Extension Handling Behavior

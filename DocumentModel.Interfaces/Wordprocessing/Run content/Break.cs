@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 ///   The behavior of this break character (the location where text shall be restarted after this break) 
 ///   shall be determined by its type and clear attribute values.
 /// </summary>
-public interface Break: IModelElement, IRunContent
+public interface Break: IRunContent
 {
   /// <summary>
   ///   Break type

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Vector3DType interface.
 /// </summary>
-public interface Vector3DType: IModelElement
+public interface Vector3DType:
 {
   /// <summary>
   ///   Distance along X-axis in 3D

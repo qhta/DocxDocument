@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the LineSketchStyleProperties interface.
 /// </summary>
-public interface LineSketchStyleProperties: IModelElement
+public interface LineSketchStyleProperties:
 {
   /// <summary>
   ///   sd

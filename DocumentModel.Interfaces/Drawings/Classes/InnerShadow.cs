@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Inner Shadow Effect.
 /// </summary>
-public interface InnerShadow: IModelElement
+public interface InnerShadow:
 {
   /// <summary>
   ///   Blur Radius

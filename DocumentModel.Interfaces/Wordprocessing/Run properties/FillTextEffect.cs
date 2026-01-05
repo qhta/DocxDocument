@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FillTextEffect Class.
 /// </summary>
-public interface FillTextEffect: IModelElement
+public interface FillTextEffect:
 {
   /// <summary>
   ///   NoFillEmpty.

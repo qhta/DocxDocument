@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ImageControl Class.
 /// </summary>
-public interface ImageControl: IModelElement
+public interface ImageControl:
 {
   /// <summary>
   ///   id

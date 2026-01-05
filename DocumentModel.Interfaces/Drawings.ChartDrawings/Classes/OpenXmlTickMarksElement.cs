@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the OpenXmlTickMarksElement Class.
 /// </summary>
-public interface OpenXmlTickMarksElement: IModelElement
+public interface OpenXmlTickMarksElement:
 {
   /// <summary>
   ///   type

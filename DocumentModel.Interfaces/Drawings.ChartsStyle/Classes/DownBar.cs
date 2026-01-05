@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the DownBar Class.
 /// </summary>
-public interface DownBar: IModelElement
+public interface DownBar:
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }

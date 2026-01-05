@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticCutout interface.
 /// </summary>
-public interface ArtisticCutout: IModelElement
+public interface ArtisticCutout:
 {
   /// <summary>
   ///   trans

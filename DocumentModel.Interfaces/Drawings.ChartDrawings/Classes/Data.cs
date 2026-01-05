@@ -16,7 +16,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   change. The dimensional structure supports various chart types including bar charts, line charts,
 ///   scatter plots, and more complex visualizations that require both numeric and categorical data.
 /// </remarks>
-public interface Data : IModelElement
+public interface Data :
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this data instance.

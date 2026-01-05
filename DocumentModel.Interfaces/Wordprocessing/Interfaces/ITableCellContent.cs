@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Interface for elements that can be included in document <see cref="TableCell"/> element.
 /// </summary>
-public interface ITableCellContent: IModelElement
+public interface ITableCellContent:
 {
   /// <summary>
   /// Parent as a <see cref="TableCell"/> element.

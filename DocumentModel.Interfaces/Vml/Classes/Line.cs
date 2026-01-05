@@ -6,7 +6,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Line.
 /// </summary>
-public interface Line: IModelElement, IEmbeddedObjectContent
+public interface Line: IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramDataPart
 /// </summary>
-public interface DiagramDataPart: IModelElement
+public interface DiagramDataPart:
 {
   public string? ContentType { get; set; }
   /// <summary>

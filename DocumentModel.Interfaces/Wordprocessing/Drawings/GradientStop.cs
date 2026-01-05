@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the GradientStop Class.
 /// </summary>
-public interface GradientStop: IModelElement
+public interface GradientStop:
 {
   /// <summary>
   ///   pos

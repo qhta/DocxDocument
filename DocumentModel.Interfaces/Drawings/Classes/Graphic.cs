@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Graphic Object.
 /// </summary>
-public interface Graphic: IModelElement
+public interface Graphic:
 {
   /// <summary>
   ///   Graphic Object Data.

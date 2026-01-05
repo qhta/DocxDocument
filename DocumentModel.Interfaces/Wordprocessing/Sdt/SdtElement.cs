@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines SdtElement - the base interface for the sdt elements.
 /// </summary>
-public interface SdtElement: IModelElement
+public interface SdtElement:
 {
   /// <summary>
   ///  Specifies the set of properties which shall be applied to this structured document tag.

@@ -10,7 +10,7 @@ namespace DocumentModel;
 ///   The control supports text length constraints, change notifications, customizable appearance with images
 ///   and labels, and can have its state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface EditBox : IModelElement
+public interface EditBox :
 {
   /// <summary>
   ///   Gets or sets a value indicating whether the edit box is enabled and can be interacted with.

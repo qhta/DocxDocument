@@ -14,7 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   for including complex graphics, logos, or supplementary visual elements that enhance the chart's presentation
 ///   without embedding the actual content data directly within the chart definition.
 /// </remarks>
-public interface ContentPart : IModelElement
+public interface ContentPart :
 {
   /// <summary>
   ///   Gets or sets the relationship identifier that references the external content.

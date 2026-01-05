@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 ///   Defines the WebExtensionStoreReference Class.
 /// </summary>
-public interface WebExtensionStoreReference: IModelElement
+public interface WebExtensionStoreReference:
 {
   /// <summary>
   ///   id

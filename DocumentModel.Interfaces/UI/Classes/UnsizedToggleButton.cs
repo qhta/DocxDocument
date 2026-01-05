@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the UnsizedToggleButton Class.
 /// </summary>
-public interface UnsizedToggleButton: IModelElement
+public interface UnsizedToggleButton:
 {
   /// <summary>
   ///   getPressed

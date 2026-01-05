@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageMenuButton Class.
 /// </summary>
-public interface BackstageMenuButton: IModelElement
+public interface BackstageMenuButton:
 {
   /// <summary>
   ///   description

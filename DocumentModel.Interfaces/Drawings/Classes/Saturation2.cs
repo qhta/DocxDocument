@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Saturation interface.
 /// </summary>
-public interface Saturation2: IModelElement
+public interface Saturation2:
 {
   /// <summary>
   ///   sat

@@ -20,7 +20,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   exported to print-oriented formats such as PDF. This configuration ensures that printed charts maintain consistent,
 ///   professional appearance with appropriate page decoration that aids in document organization and identification.
 /// </remarks>
-public interface HeaderFooter : IModelElement
+public interface HeaderFooter :
 {
   /// <summary>
   ///   Gets or sets a value indicating whether headers and footers align with the page margins.

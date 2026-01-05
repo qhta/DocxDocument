@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Ink.
 /// </summary>
-public interface Ink: IModelElement
+public interface Ink:
 {
   /// <summary>
   ///   Ink Data

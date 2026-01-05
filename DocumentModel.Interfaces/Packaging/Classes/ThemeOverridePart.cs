@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ThemeOverridePart
 /// </summary>
-public interface ThemeOverridePart: IModelElement
+public interface ThemeOverridePart:
 {
   public string? ContentType { get; set; }
   /// <summary>

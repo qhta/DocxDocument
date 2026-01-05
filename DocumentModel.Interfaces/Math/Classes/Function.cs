@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the Function-Apply object, which consists of a function name and an argument element (e) acted upon. 
 ///   It is often applied using a form of linear format. 
 /// </summary>
-public interface Function: IModelElement, ICommonMathContent
+public interface Function: ICommonMathContent
 {
   /// <summary>
   ///   Function Properties.

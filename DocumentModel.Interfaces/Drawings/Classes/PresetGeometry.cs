@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset geometry.
 /// </summary>
-public interface PresetGeometry: IModelElement
+public interface PresetGeometry:
 {
   /// <summary>
   ///   Preset Shape

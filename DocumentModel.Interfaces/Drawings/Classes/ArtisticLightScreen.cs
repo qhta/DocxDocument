@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticLightScreen interface.
 /// </summary>
-public interface ArtisticLightScreen: IModelElement
+public interface ArtisticLightScreen:
 {
   /// <summary>
   ///   trans

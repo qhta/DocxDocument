@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticWatercolorSponge interface.
 /// </summary>
-public interface ArtisticWatercolorSponge: IModelElement
+public interface ArtisticWatercolorSponge:
 {
   /// <summary>
   ///   trans

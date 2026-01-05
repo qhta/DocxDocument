@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Previous ISection Properties.
 /// </summary>
-public interface PreviousSectionProperties: IModelElement
+public interface PreviousSectionProperties:
 {
   /// <summary>
   ///   Physical ISection Mark Character Revision ID

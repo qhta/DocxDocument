@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies properties of the bar function. 
 ///   If this element is omitted, the bar assumes its default location of top (the mathematical overbar). 
 /// </summary>
-public interface BarProperties: IModelElement
+public interface BarProperties:
 {
   /// <summary>
   ///   Specifies vertical position of the bar.

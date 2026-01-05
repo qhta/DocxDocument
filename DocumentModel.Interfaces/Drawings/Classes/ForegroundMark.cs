@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ForegroundMark interface.
 /// </summary>
-public interface ForegroundMark: IModelElement
+public interface ForegroundMark:
 {
   /// <summary>
   ///   x1

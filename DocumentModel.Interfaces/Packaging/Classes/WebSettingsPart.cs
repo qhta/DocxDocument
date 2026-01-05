@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WebSettingsPart
 /// </summary>
-public interface WebSettingsPart: IModelElement
+public interface WebSettingsPart:
 {
   public string? ContentType { get; set; }
   public string? RelationshipType { get; set; }

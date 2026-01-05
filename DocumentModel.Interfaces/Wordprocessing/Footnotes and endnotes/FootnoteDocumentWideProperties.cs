@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document-Wide Footnote Properties.
 /// </summary>
-public interface FootnoteDocumentWideProperties: IModelElement
+public interface FootnoteDocumentWideProperties:
 {
 
   /// <summary>

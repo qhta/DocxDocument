@@ -31,7 +31,7 @@ namespace DocumentModel.VariantTypes;
 ///   and variant type data structures. Support is available in Office 2007 and later versions.
 ///   </para>
 /// </remarks>
-public interface VTVStreamData : IModelElement
+public interface VTVStreamData :
 {
   /// <summary>
   ///   Gets or sets the version identifier that specifies the format version of the versioned stream data.

@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document Editing Restrictions.
 /// </summary>
-public interface DocumentProtection: IModelElement
+public interface DocumentProtection:
 {
   /// <summary>
   ///   Document Editing Restrictions

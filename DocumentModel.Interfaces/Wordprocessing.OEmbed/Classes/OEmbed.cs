@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.OEmbed;
 /// <summary>
 ///   Defines the OEmbed Class.
 /// </summary>
-public interface OEmbed: IModelElement
+public interface OEmbed:
 {
   /// <summary>
   ///   oEmbedUrl

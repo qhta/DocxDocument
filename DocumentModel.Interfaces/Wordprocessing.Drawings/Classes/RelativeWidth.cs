@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 ///   Defines the RelativeWidth Class.
 /// </summary>
-public interface RelativeWidth: IModelElement
+public interface RelativeWidth:
 {
   /// <summary>
   ///   relativeFrom

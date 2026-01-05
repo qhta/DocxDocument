@@ -209,7 +209,7 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public interface ClassificationLabelList : IModelElement
+public interface ClassificationLabelList :
 {
   /// <summary>
   /// Gets or sets the collection of classification labels that represent user-visible sensitivity levels,
