@@ -162,6 +162,15 @@ class Program
       allTestsPassed = false;
 
     Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    // Run Variant tests
+    // variant type with support for all Office Open XML variant types
+    if (!VariantSerializationTests.Run())
+      allTestsPassed = false;
+
+    Console.WriteLine();
     Console.WriteLine  ("╔════════════════════════════════════════════════════════════╗");
     if (allTestsPassed)
       Console.WriteLine("║         ✓ All Test Suites Passed Successfully              ║");

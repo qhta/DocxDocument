@@ -59,9 +59,8 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// The array is created with no elements and must be resized before use.
   /// The <see cref="VariantType"/> is set to <see cref="VariantType.Array"/>.
   /// </remarks>
-  public ArrayVariant()
+  public ArrayVariant(): base(VariantType.Array)
   {
-    base.VariantType = VariantType.Array;
   }
 
   /// <summary>
@@ -74,9 +73,8 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// All elements are initialized to their default values for the specified type.
   /// </remarks>
   /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="size"/> is negative.</exception>
-  public ArrayVariant(VariantType baseType, int size)
+  public ArrayVariant(VariantType baseType, int size) : base(VariantType.Array)
   {
-    base.VariantType = VariantType.Array;
     Resize(size, baseType);
   }
 
@@ -92,9 +90,8 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// All elements are initialized to their default values for the specified type.
   /// </remarks>
   /// <exception cref="ArgumentException">Thrown when <paramref name="upperBounds"/> is less than <paramref name="lowerBounds"/>.</exception>
-  public ArrayVariant(VariantType baseType, int lowerBounds, int upperBounds)
+  public ArrayVariant(VariantType baseType, int lowerBounds, int upperBounds) : base(VariantType.Array)
   {
-    base.VariantType = VariantType.Array;
     Resize(lowerBounds, upperBounds, baseType);
   }
 
@@ -528,7 +525,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
     if (other == null)
       return false;
     var result =
-      _VariantType == other._VariantType
+      _variantType == other._variantType
       && _lowerBounds == other._lowerBounds 
       && _upperBounds == other._upperBounds
       && _items?.Length == other._items?.Length;
