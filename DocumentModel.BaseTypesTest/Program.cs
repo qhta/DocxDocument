@@ -128,6 +128,14 @@ class Program
       allTestsPassed = false;
 
     Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    // Run ArrayVariant tests
+    if (!ArrayVariantSerializationTests.Run())
+      allTestsPassed = false;
+
+    Console.WriteLine();
     Console.WriteLine  ("╔════════════════════════════════════════════════════════════╗");
     if (allTestsPassed)
       Console.WriteLine("║         ✓ All Test Suites Passed Successfully              ║");
