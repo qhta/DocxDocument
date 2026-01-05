@@ -872,7 +872,7 @@ public static class ArrayVariantSerializationTests
       Console.WriteLine($"  arr1.Equals(arr3): {arr1.Equals(arr3)}");
       Console.WriteLine($"  arr1.Equals(null): {arr1.Equals(null)}");
 
-      if (!arr1.Equals(arr2))
+      if (arr1==null || !arr1.Equals(arr2))
       {
         Console.WriteLine("✗ Equality test FAILED");
         return false;
