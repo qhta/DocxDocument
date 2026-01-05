@@ -21,6 +21,7 @@ public static class ArrayVariantSerializationTests
     // Run all tests
     if (!TestArrayVariantBasicOperations()) return false;
     if (!TestArrayVariantTypeConversions()) return false;
+    if (!TestArrayVariantToString()) return false;
     if (!TestArrayVariantCustomBounds()) return false;
     if (!TestArrayVariantResizing()) return false;
     if (!TestArrayVariantXmlSerialization()) return false;
@@ -180,7 +181,192 @@ public static class ArrayVariantSerializationTests
   }
 
   #endregion
+  #region ToString Tests
 
+  static bool TestArrayVariantToString()
+  {
+    Console.WriteLine("--- Testing ArrayVariant ToString ---");
+
+    try
+    {
+      // Test empty array
+      Console.WriteLine("Testing empty array ToString:");
+      ArrayVariant emptyArray = new ArrayVariant(VariantType.Int32, 0);
+      string emptyStr = emptyArray.ToString()!;
+      Console.WriteLine($"  Empty array: '{emptyStr}'");
+      if (emptyStr != "[]")
+      {
+        Console.WriteLine("✗ Empty array ToString FAILED");
+        return false;
+      }
+
+      // Test integer array
+      Console.WriteLine("\nTesting integer array ToString:");
+      ArrayVariant intArray = new ArrayVariant(VariantType.Int32, 5);
+      intArray[0] = 10;
+      intArray[1] = 20;
+      intArray[2] = 30;
+      intArray[3] = 40;
+      intArray[4] = 50;
+      string intStr = intArray.ToString()!;
+      Console.WriteLine($"  Integer array: '{intStr}'");
+      if (!intStr.Contains("10") || !intStr.Contains("20") || !intStr.Contains("50"))
+      {
+        Console.WriteLine("✗ Integer array ToString FAILED");
+        return false;
+      }
+
+      // Test string array
+      Console.WriteLine("\nTesting string array ToString:");
+      ArrayVariant strArray = new ArrayVariant(VariantType.String, 3);
+      strArray[0] = "Alpha";
+      strArray[1] = "Beta";
+      strArray[2] = "Gamma";
+      string strStr = strArray.ToString()!;
+      Console.WriteLine($"  String array: '{strStr}'");
+      if (!strStr.Contains("Alpha") || !strStr.Contains("Beta") || !strStr.Contains("Gamma"))
+      {
+        Console.WriteLine("✗ String array ToString FAILED");
+        return false;
+      }
+
+      // Test array with null values
+      Console.WriteLine("\nTesting array with null values ToString:");
+      ArrayVariant nullArray = new ArrayVariant(VariantType.String, 3);
+      nullArray[0] = "First";
+      nullArray[1] = null;
+      nullArray[2] = "Third";
+      string nullStr = nullArray.ToString()!;
+      Console.WriteLine($"  Array with nulls: '{nullStr}'");
+      if (!nullStr.Contains("First") || !nullStr.Contains("Third"))
+      {
+        Console.WriteLine("✗ Array with nulls ToString FAILED");
+        return false;
+      }
+
+      // Test double array with InvariantCulture
+      Console.WriteLine("\nTesting double array with InvariantCulture:");
+      ArrayVariant doubleArray = new ArrayVariant(VariantType.Double, 3);
+      doubleArray[0] = 1.5;
+      doubleArray[1] = 2.75;
+      doubleArray[2] = 3.125;
+      string doubleStrInvariant = doubleArray.ToString(CultureInfo.InvariantCulture)!;
+      Console.WriteLine($"  InvariantCulture: '{doubleStrInvariant}'");
+
+      // Test double array with different culture (French uses comma as decimal separator)
+      Console.WriteLine("\nTesting double array with French culture:");
+      var frenchCulture = new CultureInfo("fr-FR");
+      string doubleStrFrench = doubleArray.ToString(frenchCulture)!;
+      Console.WriteLine($"  French culture: '{doubleStrFrench}'");
+
+      // Test boolean array
+      Console.WriteLine("\nTesting boolean array ToString:");
+      ArrayVariant boolArray = new ArrayVariant(VariantType.Boolean, 3);
+      boolArray[0] = true;
+      boolArray[1] = false;
+      boolArray[2] = true;
+      string boolStr = boolArray.ToString()!;
+      Console.WriteLine($"  Boolean array: '{boolStr}'");
+      if (!boolStr.Contains("True") || !boolStr.Contains("False"))
+      {
+        Console.WriteLine("✗ Boolean array ToString FAILED");
+        return false;
+      }
+
+      // Test DateTime array
+      Console.WriteLine("\nTesting DateTime array ToString:");
+      ArrayVariant dateArray = new ArrayVariant(VariantType.DateTime, 2);
+      dateArray[0] = new DateTime(2024, 1, 15, 10, 30, 0);
+      dateArray[1] = new DateTime(2024, 12, 25, 18, 45, 0);
+      string dateStr = dateArray.ToString(CultureInfo.InvariantCulture)!;
+      Console.WriteLine($"  DateTime array (InvariantCulture): '{dateStr}'");
+
+      // Test DateTime array with different culture
+      string dateStrUs = dateArray.ToString(new CultureInfo("en-US"))!;
+      Console.WriteLine($"  DateTime array (en-US): '{dateStrUs}'");
+
+      // Test single element array
+      Console.WriteLine("\nTesting single element array ToString:");
+      ArrayVariant singleArray = new ArrayVariant(VariantType.String, 1);
+      singleArray[0] = "OnlyOne";
+      string singleStr = singleArray.ToString()!;
+      Console.WriteLine($"  Single element: '{singleStr}'");
+      if (!singleStr.Contains("OnlyOne"))
+      {
+        Console.WriteLine("✗ Single element ToString FAILED");
+        return false;
+      }
+
+      // Test custom bounds array
+      Console.WriteLine("\nTesting custom bounds array ToString:");
+      ArrayVariant customArray = new ArrayVariant(VariantType.Int32, 5, 7);
+      customArray[5] = 50;
+      customArray[6] = 60;
+      customArray[7] = 70;
+      string customStr = customArray.ToString()!;
+      Console.WriteLine($"  Custom bounds (5-7): '{customStr}'");
+      if (!customStr.Contains("50") || !customStr.Contains("60") || !customStr.Contains("70"))
+      {
+        Console.WriteLine("✗ Custom bounds ToString FAILED");
+        return false;
+      }
+
+      // Test format consistency
+      Console.WriteLine("\nTesting format consistency:");
+      Console.WriteLine($"  Format should be: [element1, element2, ...]");
+      if (!intStr.StartsWith("[") || !intStr.EndsWith("]"))
+      {
+        Console.WriteLine("✗ Format consistency FAILED - missing parentheses");
+        return false;
+      }
+      if (!intStr.Contains(","))
+      {
+        Console.WriteLine("✗ Format consistency FAILED - missing comma separator");
+        return false;
+      }
+
+      // Test decimal formatting with specific culture
+      Console.WriteLine("\nTesting decimal formatting:");
+      ArrayVariant decimalArray = new ArrayVariant(VariantType.Decimal, 2);
+      decimalArray[0] = 1234.56m;
+      decimalArray[1] = 7890.12m;
+      string decimalStrInvariant = decimalArray.ToString(CultureInfo.InvariantCulture)!;
+      Console.WriteLine($"  Decimal (InvariantCulture): '{decimalStrInvariant}'");
+
+      var germanCulture = new CultureInfo("de-DE");
+      string decimalStrGerman = decimalArray.ToString(germanCulture)!;
+      Console.WriteLine($"  Decimal (de-DE): '{decimalStrGerman}'");
+
+      // Test performance of ToString
+      Console.WriteLine("\nTesting ToString performance:");
+      var perfArray = new ArrayVariant(VariantType.Int32, 100);
+      for (int i = 0; i < 100; i++)
+      {
+        perfArray[i] = i;
+      }
+
+      var sw = System.Diagnostics.Stopwatch.StartNew();
+      for (int i = 0; i < 1000; i++)
+      {
+        string result = perfArray.ToString()!;
+      }
+      sw.Stop();
+      Console.WriteLine($"  ToString() x 1000 (100 elements): {sw.ElapsedMilliseconds}ms");
+
+      Console.WriteLine("\n✓ All ToString tests passed");
+      Console.WriteLine();
+      return true;
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"✗ ToString test FAILED: {ex.Message}");
+      Console.WriteLine($"  Stack trace: {ex.StackTrace}");
+      Console.WriteLine();
+      return false;
+    }
+  }
+
+  #endregion
   #region Custom Bounds Tests
 
   static bool TestArrayVariantCustomBounds()
