@@ -23,6 +23,7 @@ public static class StringListSerializationTests
     if (!TestStringListBasicOperations()) return false;
     if (!TestStringListCollectionOperations()) return false;
     if (!TestStringListParsing()) return false;
+    if (!TestStringListConversions()) return false;
     if (!TestStringListXmlSerialization()) return false;
     if (!TestStringListJsonSerialization()) return false;
     if (!TestStringListEdgeCases()) return false;
@@ -57,11 +58,11 @@ public static class StringListSerializationTests
       Console.WriteLine($"✓ Contains 'banana': {contains}");
 
       // Test ToString
-      string str = list2.ToString();
+      string str = list2.ToString(CultureInfo.InvariantCulture);
       Console.WriteLine($"✓ ToString: '{str}'");
 
       // Test implicit conversion from string
-      StringList list3 = "one,two,three";
+      StringList list3 = "one,two,three"!;
       Console.WriteLine($"✓ Implicit from string: {list3}");
 
       // Test implicit conversion to string
@@ -252,6 +253,275 @@ public static class StringListSerializationTests
     catch (Exception ex)
     {
       Console.WriteLine($"✗ Parsing test FAILED: {ex.Message}");
+      Console.WriteLine($"  Stack trace: {ex.StackTrace}");
+      Console.WriteLine();
+      return false;
+    }
+  }
+
+  #endregion
+
+  #region Conversion Tests
+
+  static bool TestStringListConversions()
+  {
+    Console.WriteLine("--- Testing StringList IConvertible Conversions ---");
+
+    try
+    {
+      // Test GetTypeCode
+      Console.WriteLine("Testing GetTypeCode:");
+      StringList list = new StringList("a,b,c");
+      TypeCode typeCode = list.GetTypeCode();
+      Console.WriteLine($"  GetTypeCode(): {typeCode}");
+      if (typeCode != TypeCode.Object)
+      {
+        Console.WriteLine("✗ GetTypeCode test FAILED");
+        return false;
+      }
+
+      // Test ToBoolean
+      Console.WriteLine("\nTesting ToBoolean:");
+      StringList nonEmptyList = new StringList("item");
+      StringList emptyList = new StringList();
+      Console.WriteLine($"  Non-empty list ToBoolean: {nonEmptyList.ToBoolean(null)}");
+      Console.WriteLine($"  Empty list ToBoolean: {emptyList.ToBoolean(null)}");
+      if (!nonEmptyList.ToBoolean(null) || emptyList.ToBoolean(null))
+      {
+        Console.WriteLine("✗ ToBoolean test FAILED");
+        return false;
+      }
+
+      // Test ToInt32
+      Console.WriteLine("\nTesting ToInt32 (returns count):");
+      StringList threeItems = new StringList("x,y,z");
+      int count32 = threeItems.ToInt32(null);
+      Console.WriteLine($"  List with 3 items ToInt32: {count32}");
+      if (count32 != 3)
+      {
+        Console.WriteLine("✗ ToInt32 test FAILED");
+        return false;
+      }
+
+      // Test ToInt64
+      Console.WriteLine("\nTesting ToInt64 (returns count):");
+      long count64 = threeItems.ToInt64(null);
+      Console.WriteLine($"  List with 3 items ToInt64: {count64}");
+      if (count64 != 3L)
+      {
+        Console.WriteLine("✗ ToInt64 test FAILED");
+        return false;
+      }
+
+      // Test ToUInt32
+      Console.WriteLine("\nTesting ToUInt32 (returns count):");
+      uint countU32 = threeItems.ToUInt32(null);
+      Console.WriteLine($"  List with 3 items ToUInt32: {countU32}");
+      if (countU32 != 3U)
+      {
+        Console.WriteLine("✗ ToUInt32 test FAILED");
+        return false;
+      }
+
+      // Test ToUInt64
+      Console.WriteLine("\nTesting ToUInt64 (returns count):");
+      ulong countU64 = threeItems.ToUInt64(null);
+      Console.WriteLine($"  List with 3 items ToUInt64: {countU64}");
+      if (countU64 != 3UL)
+      {
+        Console.WriteLine("✗ ToUInt64 test FAILED");
+        return false;
+      }
+
+      // Test ToString(IFormatProvider)
+      Console.WriteLine("\nTesting ToString(IFormatProvider):");
+      StringList strList = new StringList("alpha,beta,gamma");
+      string str = strList.ToString(CultureInfo.InvariantCulture);
+      Console.WriteLine($"  ToString result: '{str}'");
+      if (str != "alpha, beta, gamma")
+      {
+        Console.WriteLine("✗ ToString test FAILED");
+        return false;
+      }
+
+      // Test ToType conversions
+      Console.WriteLine("\nTesting ToType conversions:");
+      
+      // ToType(typeof(string))
+      var asString = strList.ToType(typeof(string), null);
+      Console.WriteLine($"  ToType(typeof(string)): '{asString}'");
+      if (asString as string != "alpha, beta, gamma")
+      {
+        Console.WriteLine("✗ ToType(string) test FAILED");
+        return false;
+      }
+
+      // ToType(typeof(bool))
+      var asBool = strList.ToType(typeof(bool), null);
+      Console.WriteLine($"  ToType(typeof(bool)): {asBool}");
+      if ((bool)asBool != true)
+      {
+        Console.WriteLine("✗ ToType(bool) test FAILED");
+        return false;
+      }
+
+      // ToType(typeof(int))
+      var asInt = strList.ToType(typeof(int), null);
+      Console.WriteLine($"  ToType(typeof(int)): {asInt}");
+      if ((int)asInt != 3)
+      {
+        Console.WriteLine("✗ ToType(int) test FAILED");
+        return false;
+      }
+
+      // ToType(typeof(long))
+      var asLong = strList.ToType(typeof(long), null);
+      Console.WriteLine($"  ToType(typeof(long)): {asLong}");
+      if ((long)asLong != 3L)
+      {
+        Console.WriteLine("✗ ToType(long) test FAILED");
+        return false;
+      }
+
+      // ToType(typeof(StringList))
+      var asStringList = strList.ToType(typeof(StringList), null);
+      Console.WriteLine($"  ToType(typeof(StringList)): {asStringList == strList}");
+      if (asStringList != strList)
+      {
+        Console.WriteLine("✗ ToType(StringList) test FAILED");
+        return false;
+      }
+
+      // Test unsupported conversions
+      Console.WriteLine("\nTesting unsupported conversions:");
+      
+      // ToByte should throw
+      try
+      {
+        strList.ToByte(null);
+        Console.WriteLine("✗ ToByte should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToByte correctly threw: {ex.Message}");
+      }
+
+      // ToChar should throw
+      try
+      {
+        strList.ToChar(null);
+        Console.WriteLine("✗ ToChar should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToChar correctly threw: {ex.Message}");
+      }
+
+      // ToDateTime should throw
+      try
+      {
+        strList.ToDateTime(null);
+        Console.WriteLine("✗ ToDateTime should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToDateTime correctly threw: {ex.Message}");
+      }
+
+      // ToDecimal should throw
+      try
+      {
+        strList.ToDecimal(null);
+        Console.WriteLine("✗ ToDecimal should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToDecimal correctly threw: {ex.Message}");
+      }
+
+      // ToDouble should throw
+      try
+      {
+        strList.ToDouble(null);
+        Console.WriteLine("✗ ToDouble should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToDouble correctly threw: {ex.Message}");
+      }
+
+      // ToInt16 should throw
+      try
+      {
+        strList.ToInt16(null);
+        Console.WriteLine("✗ ToInt16 should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToInt16 correctly threw: {ex.Message}");
+      }
+
+      // ToSByte should throw
+      try
+      {
+        strList.ToSByte(null);
+        Console.WriteLine("✗ ToSByte should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToSByte correctly threw: {ex.Message}");
+      }
+
+      // ToSingle should throw
+      try
+      {
+        strList.ToSingle(null);
+        Console.WriteLine("✗ ToSingle should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToSingle correctly threw: {ex.Message}");
+      }
+
+      // ToUInt16 should throw
+      try
+      {
+        strList.ToUInt16(null);
+        Console.WriteLine("✗ ToUInt16 should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToUInt16 correctly threw: {ex.Message}");
+      }
+
+      // ToType with unsupported type should throw
+      try
+      {
+        strList.ToType(typeof(DateTime), null);
+        Console.WriteLine("✗ ToType(typeof(DateTime)) should have thrown InvalidCastException");
+        return false;
+      }
+      catch (InvalidCastException ex)
+      {
+        Console.WriteLine($"  ✓ ToType(typeof(DateTime)) correctly threw: {ex.Message}");
+      }
+
+      Console.WriteLine("\n✓ All IConvertible conversion tests passed");
+      Console.WriteLine();
+      return true;
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"✗ Conversion test FAILED: {ex.Message}");
       Console.WriteLine($"  Stack trace: {ex.StackTrace}");
       Console.WriteLine();
       return false;
@@ -520,7 +790,7 @@ public static class StringListSerializationTests
       Console.WriteLine($"  list1.Equals(singleString): {list1.Equals(singleString)}");
       Console.WriteLine($"  list1.Equals(null): {list1.Equals(null)}");
 
-      if (!list1.Equals(list2))
+      if (list1 == null || !list1.Equals(list2))
       {
         Console.WriteLine("✗ Equality test FAILED");
         return false;
