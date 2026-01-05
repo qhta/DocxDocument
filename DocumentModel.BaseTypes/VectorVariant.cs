@@ -44,7 +44,8 @@ namespace DocumentModel;
 /// Console.WriteLine(stringVector[1]); // "Middle"
 /// </code>
 /// </example>
-public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
+[JsonConverter(typeof(VectorVariantJsonConverter))]
+public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
 {
 
 #pragma warning disable CS8600

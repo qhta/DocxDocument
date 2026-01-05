@@ -1,9 +1,5 @@
 namespace DocumentModel;
 
-/// <summary>
-/// Provides XML serialization support for the <see cref="ListOf{T}"/> class.
-/// </summary>
-/// <typeparam name="T">The type of elements in the list. Must implement <see cref="IConvertible"/>.</typeparam>
 public partial class ListOf<T> : IXmlSerializable
   where T : IConvertible
 {
