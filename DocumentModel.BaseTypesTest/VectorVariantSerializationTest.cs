@@ -120,11 +120,11 @@ public static class VectorVariantSerializationTests
 
   #endregion
 
-  #region Type Conversion Tests
+  #region ValueType Conversion Tests
 
   static bool TestVectorVariantTypeConversions()
   {
-    Console.WriteLine("--- Testing VectorVariant Type Conversions ---");
+    Console.WriteLine("--- Testing VectorVariant ValueType Conversions ---");
 
     try
     {
@@ -185,7 +185,7 @@ public static class VectorVariantSerializationTests
     }
     catch (Exception ex)
     {
-      Console.WriteLine($"✗ Type conversion test FAILED: {ex.Message}");
+      Console.WriteLine($"✗ ValueType conversion test FAILED: {ex.Message}");
       Console.WriteLine($"  Stack trace: {ex.StackTrace}");
       Console.WriteLine();
       return false;

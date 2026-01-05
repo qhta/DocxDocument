@@ -115,11 +115,11 @@ public static class ArrayVariantSerializationTests
 
   #endregion
 
-  #region Type Conversion Tests
+  #region ValueType Conversion Tests
 
   static bool TestArrayVariantTypeConversions()
   {
-    Console.WriteLine("--- Testing ArrayVariant Type Conversions ---");
+    Console.WriteLine("--- Testing ArrayVariant ValueType Conversions ---");
 
     try
     {
@@ -173,7 +173,7 @@ public static class ArrayVariantSerializationTests
     }
     catch (Exception ex)
     {
-      Console.WriteLine($"✗ Type conversion test FAILED: {ex.Message}");
+      Console.WriteLine($"✗ ValueType conversion test FAILED: {ex.Message}");
       Console.WriteLine($"  Stack trace: {ex.StackTrace}");
       Console.WriteLine();
       return false;

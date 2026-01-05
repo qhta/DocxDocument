@@ -51,14 +51,14 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
 #pragma warning disable CS8600
 #pragma warning disable CS8603
   /// <summary>
-  /// Gets the internal list of items cast from the base <see cref="Variant._Value"/> field.
+  /// Gets the internal list of items cast from the base <see cref="Variant._value"/> field.
   /// </summary>
   /// <remarks>
   /// This property provides direct access to the underlying <see cref="List{T}"/> that stores
   /// the vector elements. The value is guaranteed to be a <see cref="List{T}"/> of nullable objects
   /// as initialized in the constructor.
   /// </remarks>
-  private List<object?> _items => (List<object?>)_Value;
+  private List<object?> _items => (List<object?>)_value;
 #pragma warning restore
 
   /// <summary>
@@ -68,10 +68,8 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// Creates an empty vector with no specific base type. The <see cref="VariantType"/> is set
   /// to <see cref="VariantType.Vector"/>. Elements can be added using the <see cref="Add"/> method.
   /// </remarks>
-  public VectorVariant()
+  public VectorVariant(): base (VariantType.Vector, new List<object?>())
   {
-    _Value = new List<object?>();
-    base.VariantType = VariantType.Vector;
   }
 
   /// <summary>
@@ -120,16 +118,9 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// This property is marked with <see cref="XmlIgnoreAttribute"/> to prevent direct XML serialization.
   /// The vector's elements should be serialized individually through the collection interface.
   /// </para>
-  /// <para>
-  /// When setting the value, it is processed through the <see cref="Variant.SetValue"/> method.
-  /// </para>
   /// </remarks>
   [XmlIgnore]
-  public override object? Value
-  {
-    get => _Value;
-    set => SetValue(value);
-  }
+  public override object? Value => _value;
 
   /// <summary>
   /// Gets or sets the base type of elements contained in the vector.
@@ -144,13 +135,13 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// to contain. This information can be used for:
   /// <list type="bullet">
   /// <item><description>Validation during serialization/deserialization</description></item>
-  /// <item><description>Type conversion when reading/writing elements</description></item>
+  /// <item><description>ValueType conversion when reading/writing elements</description></item>
   /// <item><description>Documentation of the vector's intended usage</description></item>
   /// </list>
   /// </para>
   /// <para>
   /// Note that the base type is not strictly enforced by the VectorVariant class itself;
-  /// elements of different types can be added. Type enforcement depends on the usage context
+  /// elements of different types can be added. ValueType enforcement depends on the usage context
   /// and serialization implementation.
   /// </para>
   /// </remarks>
@@ -199,7 +190,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// </para>
   /// <para>
   /// No type checking is performed against the <see cref="BaseType"/> property when adding elements.
-  /// Type validation, if needed, should be performed by the caller or during serialization.
+  /// ValueType validation, if needed, should be performed by the caller or during serialization.
   /// </para>
   /// </remarks>
   public void Add(object? item)

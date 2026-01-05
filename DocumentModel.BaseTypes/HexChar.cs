@@ -466,7 +466,7 @@ public readonly partial struct HexChar : IConvertible, IEquatable<HexChar>
   public static implicit operator HexChar(uint val)
   {
     if (val > ushort.MaxValue)
-      throw new InvalidCastException($"Type {val} out of range to cast to HexChar");
+      throw new InvalidCastException($"ValueType {val} out of range to cast to HexChar");
     return new HexChar((ushort)val);
   }
 
@@ -481,7 +481,7 @@ public readonly partial struct HexChar : IConvertible, IEquatable<HexChar>
   public static implicit operator HexChar(ulong val)
   {
     if (val > ushort.MaxValue)
-      throw new InvalidCastException($"Type {val} out of range to cast to HexChar");
+      throw new InvalidCastException($"ValueType {val} out of range to cast to HexChar");
     return new HexChar((ushort)val);
   }
 

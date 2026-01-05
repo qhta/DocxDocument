@@ -2,6 +2,7 @@
 
 using System;
 using System.ComponentModel;
+
 using DocumentModel;
 
 using Qhta.Conversion;
@@ -13,36 +14,8 @@ namespace DocumentModel;
 /// <summary>
 ///   Variant implementation. Value is of any type.
 /// </summary>
-[XmlInclude(typeof(DateOnly))]
-[XmlInclude(typeof(DBNull))]
-[XmlInclude(typeof(HexInt))]
-[XmlInclude(typeof(VectorVariant))]
-[XmlInclude(typeof(ArrayVariant))]
-//[XmlContentProperty("Value")]
-
-//[XmlItemElement(typeof(SByte))]
-//[XmlItemElement(typeof(Int16))]
-//[XmlItemElement(typeof(Int32))]
-//[XmlItemElement(typeof(Int64))]
-//[XmlItemElement(typeof(Byte))]
-//[XmlItemElement(typeof(UInt16))]
-//[XmlItemElement(typeof(UInt32))]
-//[XmlItemElement(typeof(UInt64))]
-//[XmlItemElement(typeof(Single))]
-//[XmlItemElement(typeof(Double))]
-//[XmlItemElement(typeof(Char))]
-//[XmlItemElement(typeof(String))]
-//[XmlItemElement(typeof(DateOnly))]
-//[XmlItemElement(typeof(DateTime))]
-//[XmlItemElement(typeof(Boolean))]
-//[XmlItemElement(typeof(Decimal))]
-//[XmlItemElement(typeof(HexInt))]
-//[XmlItemElement("null", null)]
-//[XmlItemElement(typeof(Guid))]
-//[XmlItemElement(typeof(byte[]), ConverterType = typeof(Base64TypeConverter), ElementName="Blob")]
-//[XmlItemElement(typeof(Variant))]
-
-public class Variant : IConvertible, IEquatable<Variant>
+[JsonConverter(typeof(VariantJsonConverter))]
+public partial class Variant : IConvertible, IEquatable<Variant>
 {
   public static Dictionary<VariantType, Type> ItemTypes = new()
   {
@@ -75,9 +48,11 @@ public class Variant : IConvertible, IEquatable<Variant>
     { VariantType.Variant, typeof(Variant) }
   };
 
-  protected object? _Value;
+  protected readonly object? _value;
 
-  protected VariantType _VariantType;
+  protected readonly VariantType _variantType;
+
+  protected readonly Type? _valueType;
 
   public Variant()
   {
@@ -85,83 +60,216 @@ public class Variant : IConvertible, IEquatable<Variant>
 
   public Variant(object? value)
   {
-    SetValueRecognizeType(value);
+    if (value is Boolean vBool)
+    {
+      _variantType = VariantType.Boolean;
+      _value = vBool;
+      return;
+    }
+
+    if (value is string vString)
+    {
+      //if (vString.IsAscii())
+      _variantType = VariantType.Lpstr;
+      //else
+      //if (vString.IsUnicode())
+      // VariantType = VariantType.Lpwstr;
+      //else
+      // VariantType = VariantType.Bstr;
+      _value = vString;
+      return;
+    }
+
+    if (value is Byte vByte)
+    {
+      _variantType = VariantType.Byte;
+      _value = vByte;
+      return;
+    }
+
+    if (value is SByte vSByte)
+    {
+      _variantType = VariantType.SByte;
+      _value = vSByte;
+      return;
+    }
+
+    if (value is short vShort)
+    {
+      _variantType = VariantType.Int16;
+      _value = vShort;
+      return;
+    }
+
+    if (value is ushort vUShort)
+    {
+        _variantType = VariantType.UInt16;
+      _value = vUShort;
+      return;
+    }
+
+    if (value is Int32 vInt32)
+    {
+      _variantType = VariantType.Int32;
+      _value = vInt32;
+      return;
+    }
+
+    if (value is UInt32 vUInt32)
+    {
+        _variantType = VariantType.UInt32;
+      _value = vUInt32;
+      return;
+    }
+
+    if (value is Int64 vInt64)
+    {
+      _variantType = VariantType.Int64;
+      _value = vInt64;
+      return;
+    }
+
+    if (value is UInt64 vUInt64)
+    {
+      _variantType = VariantType.UInt64;
+      _value = vUInt64;
+      return;
+    }
+
+    if (value is float vFloat)
+    {
+      _variantType = VariantType.Single;
+      _value = vFloat;
+      return;
+    }
+
+    if (value is Double vDouble)
+    {
+      _variantType = VariantType.Double;
+      _value = vDouble;
+      return;
+    }
+
+    if (value is Decimal vDecimal)
+    {
+      _variantType = VariantType.Decimal;
+      _value = vDecimal;
+      return;
+    }
+
+    if (value is DateOnly vDate)
+    {
+      _variantType = VariantType.Date;
+      _value = vDate;
+      return;
+    }
+
+    if (value is DateTime vFileTime)
+    {
+      _variantType = VariantType.DateTime;
+      _value = vFileTime;
+      return;
+    }
+
+    if (value is DBNull)
+    {
+      _variantType = VariantType.Null;
+      _value = DBNull.Value;
+      return;
+    }
+
+    if (value is null)
+    {
+      _variantType = VariantType.Empty;
+      _value = null;
+      return;
+    }
+
+    if (value is Guid vclassId)
+    {
+        _variantType = VariantType.Guid;
+      _value = vclassId;
+      return;
+    }
+
+    if (value is HexInt vError)
+    {
+        _variantType = VariantType.HexInt;
+      _value = vError;
+      return;
+    }
+
+    if (value is byte[] vBlob)
+    {
+        _variantType = VariantType.Blob;
+      _value = vBlob;
+      return;
+    }
+
+    if (value is object[] oBlob)
+    {
+      _variantType = VariantType.OBlob;
+      _value = oBlob;
+      return;
+    }
+    ;
+
+    if (value is Variant variant)
+    {
+      _variantType = VariantType.Variant;
+      _value = variant;
+      return;
+    }
+
+    if (value is Object vObj)
+    {
+      _variantType = VariantType.Object;
+      _value = vObj;
+    }
   }
 
-  public Variant(VariantType variantType)
-  {
-    VariantType = variantType;
-    if (variantType == VariantType.Null)
-      Value = DBNull.Value;
-  }
-
-  public Variant(VariantType variantType, object? value): this(variantType, null, value)
+  public Variant(VariantType variantType, object? value) : this(variantType, null, value)
   {
   }
 
   public Variant(VariantType variantType, Type? valueType, object? value)
   {
-    VariantType = variantType;
+    _variantType = variantType;
     if (variantType == VariantType.Empty)
       return;
     if (value != null)
     {
       if (valueType == null)
         valueType = value.GetType();
-      if (valueType != null)
-        Type = valueType;
+      _valueType = valueType;
     }
-    SetValue(value);
+    _value = ConvertValue(variantType, value);
   }
 
   [XmlIgnore]
   public virtual VariantType VariantType
   {
-    get => _VariantType;
-    set
-    {
-#if TraceSetValue
-      Debug.WriteLine($"Set VariantType({value})");
-#endif
-      if (value == VariantType.Null)
-        _Value = DBNull.Value;
-      _VariantType = value;
-    }
+    get => _variantType;
   }
 
-   public virtual string TypeName
+  public virtual string TypeName
   {
     get
     {
       if (VariantType == VariantType.Enum)
-        return Type?.FullName ?? "Enum";
+        return ValueType?.FullName ?? "Enum";
       if (VariantType == VariantType.Object)
-        return Type?.FullName ?? "Object";
+        return ValueType?.FullName ?? "Object";
       return VariantType.ToString();
-    }
-    set
-    {
-      if (Enum.TryParse<VariantType>(value, out var variantType)) 
-        VariantType = (VariantType)variantType;
-      else
-      {
-        var type = Type.GetType(value);
-        Type = type;
-        if (type != null && type.IsEnum)
-          VariantType = VariantType.Enum;
-        else
-          VariantType = VariantType.Object;
-      }
     }
   }
 
   [XmlIgnore]
-  public virtual Type? Type { get; set; }
+  public virtual Type? ValueType => _valueType;
 
   public virtual object? Value
   {
     get => GetValue();
-    set => SetValue(value);
   }
 
   public virtual TypeCode GetTypeCode()
@@ -249,8 +357,8 @@ public class Variant : IConvertible, IEquatable<Variant>
   {
     if (conversionType.Name.StartsWith("Nullable`"))
       conversionType = conversionType.GetGenericArguments()[0];
-    if (_Value?.GetType() == conversionType)
-      return _Value;
+    if (_value?.GetType() == conversionType)
+      return _value;
     if (conversionType == typeof(Boolean)) return ToBoolean(provider);
     if (conversionType == typeof(Byte)) return ToByte(provider);
     if (conversionType == typeof(SByte)) return ToSByte(provider);
@@ -265,7 +373,7 @@ public class Variant : IConvertible, IEquatable<Variant>
     if (conversionType == typeof(Single)) return ToSingle(provider);
     if (conversionType == typeof(DateOnly)) return ToDateOnly(provider);
     if (conversionType == typeof(DateTime)) return ToDateTime(provider);
-    if (conversionType.IsEnum) return typeof(Variant).GetMethod("ToEnum")?.MakeGenericMethod(conversionType).Invoke(this, new object?[]{provider});
+    if (conversionType.IsEnum) return typeof(Variant).GetMethod("ToEnum")?.MakeGenericMethod(conversionType).Invoke(this, new object?[] { provider });
     if (conversionType == typeof(String)) return ToString(provider);
     if (conversionType == typeof(Char)) return ToChar(provider);
     if (conversionType == typeof(Guid)) return ToGuid(provider);
@@ -275,10 +383,10 @@ public class Variant : IConvertible, IEquatable<Variant>
     if (conversionType == typeof(VectorVariant))
       return new VectorVariant { this };
 
-    if (conversionType.TryGetConverter(out var typeConverter) && typeConverter!=null)
+    if (conversionType.TryGetConverter(out var typeConverter) && typeConverter != null)
     {
-      if (_Value is string && typeConverter.CanConvertFrom(typeof(string)))
-        return typeConverter.ConvertFrom(_Value);
+      if (_value is string && typeConverter.CanConvertFrom(typeof(string)))
+        return typeConverter.ConvertFrom(_value);
     }
     throw new InvalidOperationException($"Can't convert Variant to {conversionType} type");
   }
@@ -351,21 +459,21 @@ public class Variant : IConvertible, IEquatable<Variant>
 
   public virtual decimal ToDecimal(IFormatProvider? provider = null)
   {
-    if (_Value is string str)
+    if (_value is string str)
       return XmlConvert.ToDecimal(str);
     return Convert.ToDecimal(Value);
   }
 
   public virtual float ToSingle(IFormatProvider? provider = null)
   {
-    if (_Value is string str)
+    if (_value is string str)
       return XmlConvert.ToSingle(str);
     return Convert.ToSingle(Value);
   }
 
   public virtual double ToDouble(IFormatProvider? provider = null)
   {
-    if (_Value is string str)
+    if (_value is string str)
       return XmlConvert.ToDouble(str);
     return Convert.ToDouble(Value);
   }
@@ -385,10 +493,10 @@ public class Variant : IConvertible, IEquatable<Variant>
       return ToDateOnly().ToString("yyyy-MM-dd");
     if (VariantType == VariantType.DateTime)
       return Value?.ToString();
-    if (_Value?.GetType().TryGetConverter(out var typeConverter) == true)
+    if (_value?.GetType().TryGetConverter(out var typeConverter) == true)
     {
-      if (typeConverter!=null && typeConverter.CanConvertTo(typeof(string)))
-        return typeConverter.ConvertToInvariantString(_Value);
+      if (typeConverter != null && typeConverter.CanConvertTo(typeof(string)))
+        return typeConverter.ConvertToInvariantString(_value);
     }
     var result = Convert.ToString(Value, CultureInfo.InvariantCulture);
     return result;
@@ -400,13 +508,13 @@ public class Variant : IConvertible, IEquatable<Variant>
   }
 
   public virtual EnumType ToEnum<EnumType>(IFormatProvider? provider = null)
-  where EnumType: struct, IConvertible
+  where EnumType : struct, IConvertible
   {
     if (Value is string str)
       return Enum.Parse<EnumType>(str);
-    if (Value!=null)
+    if (Value != null)
       return (EnumType)Enum.ToObject(typeof(EnumType), Value);
-    throw new InvalidOperationException($"Type is null when converting variant to Enum");
+    throw new InvalidOperationException($"ValueType is null when converting variant to Enum");
   }
 
   public override bool Equals(object? obj)
@@ -446,29 +554,15 @@ public class Variant : IConvertible, IEquatable<Variant>
 #if TraceSetValue
     Debug.WriteLine($"GetValue()");
 #endif
-    var val = ConvertValue(VariantType, _Value);
-    if (val != null && VariantType == VariantType.Enum && Type != null)
+    var val = ConvertValue(VariantType, _value);
+    if (val != null && VariantType == VariantType.Enum && ValueType != null)
     {
       if (val is string str)
-        val = Enum.Parse(Type, str);
+        val = Enum.Parse(ValueType, str);
       else
-        val = Enum.ToObject(Type, val);
+        val = Enum.ToObject(ValueType, val);
     }
     return val;
-  }
-
-  public void SetValue(object? value)
-  {
-#if TraceSetValue
-    Debug.WriteLine($"SetValue({value})");
-#endif
-    var val = ConvertValue(VariantType, value);
-    if (val != null)
-      _Value = val;
-    else if (VariantType == VariantType.Null)
-      _Value = DBNull.Value;
-    else
-      SetValueRecognizeType(value);
   }
 
   public static object? ConvertValue(VariantType variantType, object? value)
@@ -625,189 +719,20 @@ public class Variant : IConvertible, IEquatable<Variant>
         return null;
 
       case VariantType.Vector:
-        if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
-        return null;
+        if (value is IEnumerable)
+          return value;
+        throw new InvalidOperationException($"Can't assign value of type {value?.GetType()} to {variantType} type Variant");
 
       case VariantType.Array:
-        if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
-        return null;
+        if (value is Array array)
+          return array;
+        throw new InvalidOperationException($"Can't assign value of type {value?.GetType()} to {variantType} type Variant");
 
       default:
         return value;
     }
   }
 
-  public void SetValueRecognizeType(object? value)
-  {
-    if (value is Boolean vBool)
-    {
-      VariantType = VariantType.Boolean;
-      _Value = vBool;
-      return;
-    }
-
-    if (value is string vString)
-    {
-      //if (vString.IsAscii())
-       VariantType = VariantType.Lpstr;
-      //else
-      //if (vString.IsUnicode())
-      // VariantType = VariantType.Lpwstr;
-      //else
-      // VariantType = VariantType.Bstr;
-      _Value = vString;
-      return;
-    }
-
-    if (value is Byte vByte)
-    {
-      VariantType = VariantType.Byte;
-      _Value = vByte;
-      return;
-    }
-
-    if (value is SByte vSByte)
-    {
-      VariantType = VariantType.SByte;
-      _Value = vSByte;
-      return;
-    }
-
-    if (value is short vShort)
-    {
-      VariantType = VariantType.Int16;
-      _Value = vShort;
-      return;
-    }
-
-    if (value is ushort vUShort)
-    {
-      VariantType = VariantType.UInt16;
-      _Value = vUShort;
-      return;
-    }
-
-    if (value is Int32 vInt32)
-    {
-      VariantType = VariantType.Int32;
-      _Value = vInt32;
-      return;
-    }
-
-    if (value is UInt32 vUInt32)
-    {
-      VariantType = VariantType.UInt32;
-      _Value = vUInt32;
-      return;
-    }
-
-    if (value is Int64 vInt64)
-    {
-      VariantType = VariantType.Int64;
-      _Value = vInt64;
-      return;
-    }
-
-    if (value is UInt64 vUInt64)
-    {
-      VariantType = VariantType.UInt64;
-      _Value = vUInt64;
-      return;
-    }
-
-    if (value is float vFloat)
-    {
-      VariantType = VariantType.Single;
-      _Value = vFloat;
-      return;
-    }
-
-    if (value is Double vDouble)
-    {
-      VariantType = VariantType.Double;
-      _Value = vDouble;
-      return;
-    }
-
-    if (value is Decimal vDecimal)
-    {
-      VariantType = VariantType.Decimal;
-      _Value = vDecimal;
-      return;
-    }
-
-    if (value is DateOnly vDate)
-    {
-      VariantType = VariantType.Date;
-      _Value = vDate;
-      return;
-    }
-
-    if (value is DateTime vFileTime)
-    {
-      VariantType = VariantType.DateTime;
-      _Value = vFileTime;
-      return;
-    }
-
-    if (value is DBNull)
-    {
-      VariantType = VariantType.Null;
-      _Value = DBNull.Value;
-      return;
-    }
-
-    if (value is null)
-    {
-      VariantType = VariantType.Empty;
-      _Value = null;
-      return;
-    }
-
-    if (value is Guid vclassId)
-    {
-      VariantType = VariantType.Guid;
-      _Value = vclassId;
-      return;
-    }
-
-    if (value is HexInt vError)
-    {
-      VariantType = VariantType.HexInt;
-      _Value = vError;
-      return;
-    }
-
-    if (value is byte[] vBlob)
-    {
-      VariantType = VariantType.Blob;
-      _Value = vBlob;
-      return;
-    }
-
-    if (value is object[] oBlob)
-    {
-      VariantType = VariantType.OBlob;
-      _Value = oBlob;
-      return;
-    }
-    ;
-
-    if (value is Variant variant)
-    {
-      VariantType = VariantType.Variant;
-      _Value = variant;
-      return;
-    }
-
-    if (value is Object vObj)
-    {
-      VariantType = VariantType.Object;
-      _Value = vObj;
-    }
-  }
 
   public static implicit operator bool(Variant value)
   {
@@ -1115,11 +1040,11 @@ public class Variant : IConvertible, IEquatable<Variant>
 
   public override int GetHashCode()
   {
-    return HashCode.Combine(VariantType, _Value);
+    return HashCode.Combine(VariantType, _value);
   }
 
   public override string? ToString()
   {
-    return ToString(CultureInfo.InvariantCulture)+$" ({TypeName})";
+    return ToString(CultureInfo.InvariantCulture) + $" ({TypeName})";
   }
 }
