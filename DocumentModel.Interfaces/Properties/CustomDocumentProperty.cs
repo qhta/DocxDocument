@@ -2,7 +2,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Abstract document Property.
 /// </summary>
-public interface ICustomDocumentProperty: IDocumentProperty
+public interface CustomDocumentProperty: DocumentProperty
 {
   /// <summary>
   ///   Property ID

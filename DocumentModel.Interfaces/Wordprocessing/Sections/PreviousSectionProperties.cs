@@ -60,7 +60,7 @@ public interface PreviousSectionProperties: IModelElement
   /// <summary>
   ///   IColumns.
   /// </summary>
-  public IColumns? Columns { get; set; }
+  public Columns? Columns { get; set; }
   /// <summary>
   ///   FormProtection.
   /// </summary>
@@ -96,7 +96,7 @@ public interface PreviousSectionProperties: IModelElement
   /// <summary>
   ///   PrinterSettingsReference.
   /// </summary>
-  public IRelationshipType? PrinterSettingsReference { get; set; }
+  public RelationshipType? PrinterSettingsReference { get; set; }
   /// <summary>
   ///   FootnoteColumns.
   /// </summary>

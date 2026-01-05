@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Properties;
 /// <summary>
-/// Specifies meaning od N4H field of <see cref="IHyperlinkInfo"/>.
+/// Specifies meaning od N4H field of <see cref="HyperlinkInfo"/>.
 /// </summary>
 public enum HyperlinkActionKind
 {

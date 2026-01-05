@@ -12,5 +12,5 @@ public interface DocPart: IModelElement
   /// <summary>
   ///   Contents of Glossary Document Entry.
   /// </summary>
-  public IDocPartBody? DocPartBody { get; set; }
+  public DocPartBody? DocPartBody { get; set; }
 }

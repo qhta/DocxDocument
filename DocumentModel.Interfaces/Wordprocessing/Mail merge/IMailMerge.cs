@@ -28,11 +28,11 @@ public interface IMailMerge: IModelElement
   /// <summary>
   ///   Data Source File Path.
   /// </summary>
-  public IRelationshipType? DataSourceReference { get; set; }
+  public RelationshipType? DataSourceReference { get; set; }
   /// <summary>
   ///   Header Definition File Path.
   /// </summary>
-  public IRelationshipType? HeaderSource { get; set; }
+  public RelationshipType? HeaderSource { get; set; }
   /// <summary>
   ///   Remove Blank Lines from Merged Documents.
   /// </summary>

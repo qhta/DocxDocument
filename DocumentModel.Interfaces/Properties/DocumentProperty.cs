@@ -2,7 +2,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Abstract document Property.
 /// </summary>
-public interface IDocumentProperty: IModelElement, ICollectionItem
+public interface DocumentProperty: IModelElement, ICollectionItem
 {
   /// <summary>
   ///   Property Category.
