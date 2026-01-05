@@ -10,6 +10,6 @@ public interface ExtendedFilePropertiesPart: IModelElement
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public IContentProperties? Properties { get; set; }
+  public ContentProperties? Properties { get; set; }
   public string? RelationshipType { get; set; }
 }

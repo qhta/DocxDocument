@@ -21,7 +21,7 @@ public interface OpenXmlPackage: IModelElement
   /// <summary>
   ///   Gets the core package properties of the Open XML document.
   /// </summary>
-  public ICoreProperties? PackageProperties { get; set; }
+  public CoreProperties? PackageProperties { get; set; }
   /// <summary>
   ///   Gets or sets the compression level for the content of the new part
   /// </summary>

@@ -10,6 +10,6 @@ public interface CustomFilePropertiesPart: IModelElement
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public ICustomProperties? Properties { get; set; }
+  public CustomProperties? Properties { get; set; }
   public string? RelationshipType { get; set; }
 }

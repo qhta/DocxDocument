@@ -1,6 +1,6 @@
 namespace DocumentModel.Wordprocessing;
 
-public partial interface Style : IModelElement, IAliasedObject
+public partial interface Style : IModelElement, AliasedObject
 {
   /// <summary>
   ///   Primary Style Name.
@@ -15,7 +15,7 @@ public partial interface Style : IModelElement, IAliasedObject
   /// </summary>
   public new StringList? Aliases { get; set; }
 
-  IEnumerable<string>? IAliasedObject.Aliases => Aliases;
+  IEnumerable<string>? AliasedObject.Aliases => Aliases;
 
   /// <summary>
   /// Determines whether any properties are defined.

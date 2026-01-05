@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Relationship for external file.
 /// </summary>
-public interface IExternalFile: IRelationshipType
+public interface ExternalFile: RelationshipType
 {
   /// <summary>
   /// Filename

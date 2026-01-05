@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 ///   For any other section the properties are stored as a child element of the paragraph element 
 ///   corresponding to the last paragraph in the given section.
 /// </summary>
-public interface ISectionProperties : IModelElement, IStoryContent
+public interface SectionProperties : IModelElement, IStoryContent
 {
   /// <summary>
   ///   Physical ISection Mark Character Revision ID
@@ -125,7 +125,7 @@ public interface ISectionProperties : IModelElement, IStoryContent
   /// <summary>
   /// Gets or sets the columns in this section.
   /// </summary>
-  public IColumns? Columns { get; set; }
+  public Columns? Columns { get; set; }
 
   /// <summary>
   /// Gets or sets the document grid settings for the current document.
