@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Common type for footnote/endnote.
 /// </summary>
-public interface FootnoteEndnoteType: IStory
+public interface FootnoteEndnoteType: Story
 {
   /// <summary>
   ///   Footnote/Endnote Type

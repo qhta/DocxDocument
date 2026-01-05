@@ -1,12 +1,12 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Common interface for <see cref="IBody"/> and <see cref="IDocPartBody"/> elements.
+///   Common interface for <see cref="Body"/> and <see cref="DocPartBody"/> elements.
 /// </summary>
-public interface IBodyType : IStory
+public interface BodyType : Story
 {
   /// <summary>
   /// Collection of sections which is recollected from ISectionProperties elements
   /// </summary>
-  public ISectionsCollection? Sections { get; set; }
+  public SectionsCollection? Sections { get; set; }
 
 }

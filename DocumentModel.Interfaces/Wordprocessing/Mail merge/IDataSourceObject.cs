@@ -16,7 +16,7 @@ public interface IDataSourceObject: IModelElement
   /// <summary>
   ///   ODSO Data Source File Path.
   /// </summary>
-  public IRelationshipType? SourceReference { get; set; }
+  public RelationshipType? SourceReference { get; set; }
   /// <summary>
   ///   IColumn Delimiter for Data Source.
   /// </summary>
@@ -36,5 +36,5 @@ public interface IDataSourceObject: IModelElement
   /// <summary>
   /// Recipient Data Reference.
   /// </summary>
-  public IRelationshipType? RecipientDataReference { get; set; }
+  public RelationshipType? RecipientDataReference { get; set; }
 }

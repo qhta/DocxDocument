@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a reference to Printer settings.
 /// </summary>
-public interface PrinterSettingsReference: IRelationshipType, ISectionPropertiesContent
+public interface PrinterSettingsReference: RelationshipType, ISectionPropertiesContent
 {
 }

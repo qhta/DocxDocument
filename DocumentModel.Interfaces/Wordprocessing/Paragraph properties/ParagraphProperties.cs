@@ -11,7 +11,7 @@ public interface ParagraphProperties: ExtBaseParagraphProperties
   /// <summary>
   ///   ISection Properties.
   /// </summary>
-  public ISectionProperties? SectionProperties { get; set; }
+  public SectionProperties? SectionProperties { get; set; }
   /// <summary>
   ///   ParagraphPropertiesChange.
   /// </summary>

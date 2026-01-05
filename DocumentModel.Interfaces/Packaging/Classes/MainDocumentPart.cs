@@ -41,7 +41,7 @@ public interface MainDocumentPart: IModelElement
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public IDocument? Document { get; set; }
+  public Document? Document { get; set; }
   /// <summary>
   ///   Gets the EmbeddedControlPersistenceParts of the MainDocumentPart
   /// </summary>

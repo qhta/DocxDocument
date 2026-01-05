@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <summary>
 ///   These settings specify all document-level properties which affect the handling of the current document. 
 /// </summary>
-public interface IDocumentSettings : IDocumentProperties
+public interface IDocumentSettings : DocumentProperties
 {
   /// <summary>
   /// This element specifies information about the parameters of the grammar checking 
@@ -50,14 +50,14 @@ public interface IDocumentSettings : IDocumentProperties
   /// These customXML schemas can then be used to validate the structure of the custom XML markup in the document, etc.
   /// </summary>
   [Category("CustomXml")]
-  public IAttachedSchemas? AttachedSchemas { get; set; }
+  public AttachedSchemas? AttachedSchemas { get; set; }
   /// <summary>
   /// This element specifies the location of a document template which shall be attached to the current WordprocessingML document 
   /// if it is accessible and of a format supported by an application. 
   /// Specifically, this element's val attribute shall contain the file path of the associated document template.  
   /// </summary>
   [Category("Template")]
-  public IAttachedTemplate? AttachedTemplate { get; set; }
+  public AttachedTemplate? AttachedTemplate { get; set; }
   /// <summary>
   /// This element specifies whether formatting automatically applied by an application 
   /// (i.e. not explicitly applied by a use or an application) shall be allowed to override formatting protection 
@@ -242,7 +242,7 @@ public interface IDocumentSettings : IDocumentProperties
   /// This protection is not intended as a security feature. 
   /// </summary>
   [Category("Protection")]
-  public IDocumentProtection? DocumentProtection { get; set; }
+  public DocumentProtection? DocumentProtection { get; set; }
   /// <summary>
   /// This element specifies the classification of a given WordprocessingML document.  
   /// Note: This element can be used by hosting applications to facilitate customized user interface 
@@ -254,7 +254,7 @@ public interface IDocumentSettings : IDocumentProperties
   /// A document variable is a storage location for arbitrary customer data in name/value pairs 
   /// that is persisted in a given WordprocessingML document
   /// </summary>
-  public IDocumentVariables? DocumentVariables { get; set; }
+  public DocumentVariables? DocumentVariables { get; set; }
   /// <summary>
   /// This element specifies that pictures in this document shall not automatically be compressed 
   /// when saving the document in order to reduce the overall size of the resulting WordprocessingML document.

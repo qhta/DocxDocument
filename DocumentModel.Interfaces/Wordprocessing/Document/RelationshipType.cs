@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Identified relationship type
 /// </summary>
-public interface IRelationshipType: IModelElement
+public interface RelationshipType: IModelElement
 {
   /// <summary>
   ///   Relationship to Part

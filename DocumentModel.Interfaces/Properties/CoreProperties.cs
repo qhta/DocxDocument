@@ -6,7 +6,7 @@ using WP = DocumentFormat.OpenXml.Wordprocessing;
 ///   Collection of core properties, which represents document properties defined in Dublin Core standard
 /// and Open Packaging Conventions
 /// </summary>
-public interface ICoreProperties: IModelElement, IDocumentProperties
+public interface CoreProperties: IModelElement, DocumentProperties
 {
   /// <summary>
   ///   Title the document.

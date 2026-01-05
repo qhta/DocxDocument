@@ -2,6 +2,6 @@
 /// <summary>
 ///   Reference to source file for a frame.
 /// </summary>
-public interface FrameSourceFile: IExternalFile
+public interface FrameSourceFile: ExternalFile
 {
 }

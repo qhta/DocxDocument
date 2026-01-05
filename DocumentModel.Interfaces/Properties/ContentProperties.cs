@@ -3,7 +3,7 @@ namespace DocumentModel;
 ///   Predefined set of metadata properties that are applicable to Office Open XML documents. 
 ///   These properties extend the set of core properties which are common to all packages.
 /// </summary>
-public interface IContentProperties: IModelElement, IDocumentProperties
+public interface ContentProperties: IModelElement, DocumentProperties
 {
   /// <summary>
   ///   Specifies the name of an external document template containing format 
@@ -33,7 +33,7 @@ public interface IContentProperties: IModelElement, IDocumentProperties
   ///   Indicates the grouping of document parts and the number of parts in each group.
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
-  public IHeadingPairs? HeadingPairs { get; set; }
+  public HeadingPairs? HeadingPairs { get; set; }
   /// <summary>
   ///   The title of each document. 
   ///   These parts are not document parts but conceptual representations of document sections.
@@ -56,7 +56,7 @@ public interface IContentProperties: IModelElement, IDocumentProperties
   /// <summary>
   ///   The set of hyperlinks that were in this document when last saved.
   /// </summary>
-  public DMPr.IHyperlinkList? HyperlinkList { get; set; }
+  public DMPr.HyperlinkList? HyperlinkList { get; set; }
   /// <summary>
   ///   Specifies that one or more hyperlinks in this part were updated exclusively in this part by a producer. 
   ///   The next producer to open this document shall update the hyperlink relationships with the new hyperlinks specified in this part.

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents the columns layout in a section.
 /// </summary>
-public interface IColumns: IModelElement, ISectionPropertiesContent, IElementCollection<IColumn>
+public interface Columns: IModelElement, ISectionPropertiesContent, IElementCollection<Column>
 {
   /// <summary>
   ///   Equal IColumn Widths

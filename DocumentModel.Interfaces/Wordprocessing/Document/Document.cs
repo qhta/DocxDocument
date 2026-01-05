@@ -6,7 +6,7 @@ using WP = DocumentFormat.OpenXml.Wordprocessing;
 /// <summary>
 ///   Main Document.
 /// </summary>
-public interface IDocument
+public interface Document
 {
   #region CoreProperties
 
@@ -90,7 +90,7 @@ public interface IDocument
   /// <summary>
   /// Compound of object of document properties
   /// </summary>
-  public IAllDocumentProperties? Properties { get; set; }
+  public AllDocumentProperties? Properties { get; set; }
 
   /// <summary>
   /// Style definitions.
@@ -140,5 +140,5 @@ public interface IDocument
   /// <summary>
   ///   Body.
   /// </summary>
-  public IBody? Body { get; set; }
+  public Body? Body { get; set; }
 }
