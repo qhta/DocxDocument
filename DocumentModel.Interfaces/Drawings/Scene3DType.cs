@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   3D Scene Properties.
 /// </summary>
-public interface Scene3DType
+public interface Scene3DType: ExtendableElement
 {
   /// <summary>
   ///   Camera.
@@ -17,8 +17,4 @@ public interface Scene3DType
   ///   Backdrop Plane.
   /// </summary>
   public Backdrop? Backdrop { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

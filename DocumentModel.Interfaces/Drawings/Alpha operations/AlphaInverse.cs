@@ -6,32 +6,32 @@ namespace DocumentModel.Drawings;
 public interface AlphaInverse
 {
   /// <summary>
-  /// Gets or sets the RGB color model using percentage values for the alpha inverse effect.
+  /// RGB color model using percentage values for the alpha inverse effect.
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 
   /// <summary>
-  /// Gets or sets the RGB color model using hexadecimal values for the alpha inverse effect.
+  /// RGB color model using hexadecimal values for the alpha inverse effect.
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex { get; set; }
 
   /// <summary>
-  /// Gets or sets the HSL (Hue, Saturation, Luminance) color model for the alpha inverse effect.
+  /// HSL (Hue, Saturation, Luminance) color model for the alpha inverse effect.
   /// </summary>
   public HslColor? HslColor { get; set; }
 
   /// <summary>
-  /// Gets or sets the system color for the alpha inverse effect.
+  /// System color for the alpha inverse effect.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
 
   /// <summary>
-  /// Gets or sets the scheme color for the alpha inverse effect.
+  /// Scheme color for the alpha inverse effect.
   /// </summary>
   public SchemeColor? SchemeColor { get; set; }
 
   /// <summary>
-  /// Gets or sets the preset color for the alpha inverse effect.
+  /// Preset color for the alpha inverse effect.
   /// </summary>
   public PresetColor? PresetColor { get; set; }
 }

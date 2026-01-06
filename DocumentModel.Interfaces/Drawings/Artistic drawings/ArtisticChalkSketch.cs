@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings;
 public interface ArtisticChalkSketch
 {
   /// <summary>
-  /// Gets or sets the transparency level of the chalk sketch effect.
+  /// Transparency level of the chalk sketch effect.
   /// </summary>
   public Int32? Transparency { get; set; }
 
   /// <summary>
-  /// Gets or sets the pressure applied in the chalk sketch effect, influencing the intensity of the strokes.
+  /// Pressure applied in the chalk sketch effect, influencing the intensity of the strokes.
   /// </summary>
   public Int32? Pressure { get; set; }
 }

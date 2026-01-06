@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Graphic Frame Locks.
 /// </summary>
-public interface GraphicFrameLocks
+public interface GraphicFrameLocks: ExtendableElement
 {
   /// <summary>
   ///   Disallow Shape Grouping
@@ -28,9 +28,5 @@ public interface GraphicFrameLocks
   /// <summary>
   ///   Disallow Shape Resize
   /// </summary>
-  public bool? NoResize { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+  public bool? NoResize { get; set; }s
 }

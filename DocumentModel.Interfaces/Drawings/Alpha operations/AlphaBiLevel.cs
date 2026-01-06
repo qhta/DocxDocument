@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface AlphaBiLevel
 {
   /// <summary>
-  /// Gets or sets the threshold value used to determine the bi-level separation of the alpha channel.
+  /// Threshold value used to determine the bi-level separation of the alpha channel.
   /// </summary>
   public Int32? Threshold { get; set; }
 }

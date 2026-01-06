@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HiddenShape3D interface.
 /// </summary>
-public interface HiddenShape3D
+public interface HiddenShape3D: ExtendableElement
 {
   /// <summary>
   ///   Shape Depth
@@ -37,8 +37,4 @@ public interface HiddenShape3D
   ///   Contour Color.
   /// </summary>
   public ContourColor? ContourColor { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a blip (binary large image or picture), providing references and effects for embedded or linked images in a drawing.
 /// </summary>
-public interface Blip
+public interface Blip: ExtendableElement
 {
   /// <summary>
   /// Gets or sets the reference to an embedded picture.
@@ -106,7 +106,7 @@ public interface Blip
   public TintEffect? TintEffect { get; set; }
 
   /// <summary>
-  /// Gets or sets the list of blip extensions, which provide additional metadata or custom extensions.
+  /// List of extensions associated with the blip.
   /// </summary>
-  public BlipExtensionList? BlipExtensionList { get; set; }
+  public BlipExtensionList ExtensionList { get; set; }
 }

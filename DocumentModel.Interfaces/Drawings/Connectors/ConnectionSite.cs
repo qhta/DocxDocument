@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Shape Connection Site.
+/// Represents a shape connection site, defining the angle and position where a connector attaches to a shape.
 /// </summary>
 public interface ConnectionSite
 {
   /// <summary>
-  ///   Connection Site Angle
+  /// Angle of the connection site.
   /// </summary>
   public string? Angle { get; set; }
+
   /// <summary>
-  ///   Position.
+  /// Position of the connection site as a two-dimensional adjustment point.
   /// </summary>
   public AdjustPoint2DType? Position { get; set; }
 }

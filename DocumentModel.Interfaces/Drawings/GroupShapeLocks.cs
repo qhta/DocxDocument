@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the GroupShapeLocks interface.
 /// </summary>
-public interface GroupShapeLocks
+public interface GroupShapeLocks: ExtendableElement
 {
   /// <summary>
   ///   Disallow Shape Grouping
@@ -33,8 +33,4 @@ public interface GroupShapeLocks
   ///   Disallow Shape Resizing
   /// </summary>
   public bool? NoResize { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

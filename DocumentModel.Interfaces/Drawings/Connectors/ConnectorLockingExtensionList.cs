@@ -94,36 +94,6 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public interface ConnectorLockingExtensionList
+public interface ConnectorLockingExtensionList: IElementCollection<ConnectorLockingExtension>
 {
-  /// <summary>
-  /// Gets or sets the collection of connector locking extensions that define attachment constraints,
-  /// routing rules, and protection settings for connector shapes in diagrams.
-  /// </summary>
-  /// <remarks>
-  /// <para>
-  /// The collection of connector locking extensions provides fine-grained control over connector
-  /// behavior in diagrams, flowcharts, and organizational charts. Each extension represents a specific
-  /// locking constraint or behavior rule, such as:
-  /// <list type="bullet">
-  /// <item><description><b>Endpoint locking:</b> Prevent connector start/end points from detaching from shapes</description></item>
-  /// <item><description><b>Routing locks:</b> Prevent automatic rerouting, maintain manual connector paths</description></item>
-  /// <item><description><b>Connection point constraints:</b> Restrict which connection points can be used</description></item>
-  /// <item><description><b>Style protection:</b> Lock connector line style, arrows, and formatting</description></item>
-  /// <item><description><b>Relationship enforcement:</b> Maintain logical connections during diagram changes</description></item>
-  /// <item><description><b>SmartArt management:</b> Special behaviors for SmartArt-managed connectors</description></item>
-  /// </list>
-  /// </para>
-  /// <para>
-  /// Applications working with connector locking extensions should:
-  /// <list type="bullet">
-  /// <item><description><b>Check locks before operations:</b> Validate that operations don't violate locking constraints</description></item>
-  /// <item><description><b>Provide feedback:</b> Inform users when operations are blocked by connector locks</description></item>
-  /// <item><description><b>Respect SmartArt locks:</b> Don't manually modify SmartArt-managed connectors</description></item>
-  /// <item><description><b>Maintain during edits:</b> Keep connector locks valid during shape manipulation</description></item>
-  /// <item><description><b>Preserve unknown extensions:</b> Round-trip unrecognized extensions for compatibility</description></item>
-  /// </list>
-  /// </para>
-  /// </remarks>
-  public Collection<ConnectorLockingExtension>? ConnectorLockingExtensions { get; set; }
 }

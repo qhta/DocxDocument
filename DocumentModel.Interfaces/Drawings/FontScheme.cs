@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Font Scheme.
 /// </summary>
-public interface FontScheme
+public interface FontScheme: ExtendableElement
 {
   /// <summary>
   ///   Name
@@ -17,8 +17,4 @@ public interface FontScheme
   ///   Minor fonts.
   /// </summary>
   public MinorFont? MinorFont { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ObjectDefaults interface.
 /// </summary>
-public interface ObjectDefaults
+public interface ObjectDefaults: ExtendableElement
 {
   /// <summary>
   ///   Shape Default.
@@ -17,8 +17,4 @@ public interface ObjectDefaults
   ///   Text Default.
   /// </summary>
   public TextDefault? TextDefault { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

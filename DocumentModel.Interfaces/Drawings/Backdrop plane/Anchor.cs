@@ -39,7 +39,7 @@ namespace DocumentModel.Drawings;
 public interface Anchor
 {
   /// <summary>
-  ///   Gets or sets the X-coordinate (horizontal position) of the anchor point in 3D space.
+  ///   X-coordinate (horizontal position) of the anchor point in 3D space.
   /// </summary>
   /// <remarks>
   ///   <para>
@@ -72,7 +72,7 @@ public interface Anchor
   public Int64? X { get; set; }
 
   /// <summary>
-  ///   Gets or sets the Y-coordinate (vertical position) of the anchor point in 3D space.
+  ///   Y-coordinate (vertical position) of the anchor point in 3D space.
   /// </summary>
   /// <remarks>
   ///   <para>
@@ -102,7 +102,7 @@ public interface Anchor
   public Int64? Y { get; set; }
 
   /// <summary>
-  ///   Gets or sets the Z-coordinate (depth position) of the anchor point in 3D space.
+  ///   Z-coordinate (depth position) of the anchor point in 3D space.
   /// </summary>
   /// <remarks>
   ///   <para>

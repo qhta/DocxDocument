@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings;
 public interface ArtisticGlowDiffused
 {
   /// <summary>
-  /// Gets or sets the transparency level of the diffused glow effect.
+  /// Transparency level of the diffused glow effect.
   /// </summary>
   public Int32? Transparency { get; set; }
 
   /// <summary>
-  /// Gets or sets the intensity of the diffused glow effect, influencing the strength of the glow.
+  /// Intensity of the diffused glow effect, influencing the strength of the glow.
   /// </summary>
   public Int32? Intensity { get; set; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Shape Locks.
 /// </summary>
-public interface ShapeLocks
+public interface ShapeLocks: ExtendableElement
 {
   /// <summary>
   ///   Disallow Shape Grouping
@@ -49,8 +49,4 @@ public interface ShapeLocks
   ///   Disallow Shape Text Editing
   /// </summary>
   public bool? NoTextEdit { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

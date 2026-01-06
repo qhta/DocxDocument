@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Run Properties.
 /// </summary>
-public interface RunProperties
+public interface RunProperties: ExtendableElement
 {
   public LineProperties? Outline { get; set; }
   public Fill? Fill { get; set; }
@@ -25,5 +25,4 @@ public interface RunProperties
   /// Collected drawing properties for a text run.
   /// </summary>
   public DrawingProperties? DrawingProperties { get; set; }
-  public ExtensionList? ExtensionList { get; set; }
 }

@@ -214,7 +214,7 @@ namespace DocumentModel.Drawings;
 public interface BlipExtensionList
 {
   /// <summary>
-  /// Gets or sets the collection of BLIP (image) extensions that add support for modern image formats,
+  /// Collection of BLIP (image) extensions that add support for modern image formats,
   /// advanced image processing features, or image-specific metadata.
   /// </summary>
   /// <remarks>

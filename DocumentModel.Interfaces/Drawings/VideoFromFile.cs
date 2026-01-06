@@ -3,14 +3,10 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Video from File.
 /// </summary>
-public interface VideoFromFile
+public interface VideoFromFile: ExtendableElement
 {
   /// <summary>
   ///   Linked Relationship ID
   /// </summary>
   public string? Link { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

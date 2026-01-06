@@ -3,7 +3,6 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Override Color Mapping.
 /// </summary>
-public interface OverrideColorMapping
+public interface OverrideColorMapping: ExtendableElement
 {
-  public ExtensionList? ExtensionList { get; set; }
 }

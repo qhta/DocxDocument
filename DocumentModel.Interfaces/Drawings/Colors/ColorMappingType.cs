@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the color mapping type for drawing elements.
 /// </summary>
-public interface ColorMappingType
+public interface ColorMappingType: ExtendableElement
 {
   /// <summary>
   /// Background 1.
@@ -64,11 +64,6 @@ public interface ColorMappingType
   /// Followed hyperlink.
   /// </summary>
   public ColorSchemeIndexKind? FollowedHyperlink { get; set; }
-
-  /// <summary>
-  /// Extension list.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 
   /// <summary>
   /// Name.

@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface AlphaReplace
 {
   /// <summary>
-  /// Gets or sets the alpha value to be applied, replacing the existing alpha channel.
+  /// Alpha value to be applied, replacing the existing alpha channel.
   /// </summary>
   public Int32? Alpha { get; set; }
 }

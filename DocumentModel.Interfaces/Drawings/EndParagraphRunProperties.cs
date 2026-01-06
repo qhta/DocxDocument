@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   End Paragraph Run Properties.
 /// </summary>
-public interface EndParagraphRunProperties
+public interface EndParagraphRunProperties: ExtendableElement
 {
   public LineProperties? Outline { get; set; }
   public Fill? Fill { get; set; }
@@ -21,5 +21,4 @@ public interface EndParagraphRunProperties
   public HyperlinkOnClick? HyperlinkOnClick { get; set; }
   public HyperlinkOnMouseOver? HyperlinkOnMouseOver { get; set; }
   public bool? RightToLeft { get; set; }
-  public ExtensionList? ExtensionList { get; set; }
 }

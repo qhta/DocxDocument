@@ -6,37 +6,37 @@ namespace DocumentModel.Drawings;
 public interface AdjustHandlePolar
 {
   /// <summary>
-  /// Gets or sets the radial adjustment guide, which determines how the radial distance is adjusted.
+  /// Radial adjustment guide, which determines how the radial distance is adjusted.
   /// </summary>
   public string? RadialAdjustmentGuide { get; set; }
 
   /// <summary>
-  /// Gets or sets the minimum allowed value for radial adjustment.
+  /// Minimum allowed value for radial adjustment.
   /// </summary>
   public string? MinRadial { get; set; }
 
   /// <summary>
-  /// Gets or sets the maximum allowed value for radial adjustment.
+  /// Maximum allowed value for radial adjustment.
   /// </summary>
   public string? MaxRadial { get; set; }
 
   /// <summary>
-  /// Gets or sets the angle adjustment guide, which determines how the angle is adjusted.
+  /// Angle adjustment guide, which determines how the angle is adjusted.
   /// </summary>
   public string? AngleAdjustmentGuide { get; set; }
 
   /// <summary>
-  /// Gets or sets the minimum allowed value for angle adjustment.
+  /// Minimum allowed value for angle adjustment.
   /// </summary>
   public string? MinAngle { get; set; }
 
   /// <summary>
-  /// Gets or sets the maximum allowed value for angle adjustment.
+  /// Maximum allowed value for angle adjustment.
   /// </summary>
   public string? MaxAngle { get; set; }
 
   /// <summary>
-  /// Gets or sets the position of the adjust handle as a two-dimensional coordinate.
+  /// Position of the adjust handle as a two-dimensional coordinate.
   /// </summary>
   public AdjustPoint2DType? Position { get; set; }
 }

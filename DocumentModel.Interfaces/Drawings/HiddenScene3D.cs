@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HiddenScene3D interface.
 /// </summary>
-public interface HiddenScene3D
+public interface HiddenScene3D: ExtendableElement
 {
   /// <summary>
   ///   Camera.
@@ -17,8 +17,4 @@ public interface HiddenScene3D
   ///   Backdrop Plane.
   /// </summary>
   public Backdrop? Backdrop { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

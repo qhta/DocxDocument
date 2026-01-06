@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BrightnessContrast interface.
+/// Represents brightness and contrast adjustment settings for a drawing element.
 /// </summary>
-public interface BrightnessContrast
+public interface BrightnessContrast: ExtendableElement
 {
   /// <summary>
-  ///   bright
+  /// Brightness adjustment value.
   /// </summary>
   public Int32? Bright { get; set; }
+
   /// <summary>
-  ///   contrast
+  /// Contrast adjustment value.
   /// </summary>
   public Int32? Contrast { get; set; }
 }

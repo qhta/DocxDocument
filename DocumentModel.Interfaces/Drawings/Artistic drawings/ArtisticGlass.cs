@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings;
 public interface ArtisticGlass
 {
   /// <summary>
-  /// Gets or sets the transparency level of the glass effect.
+  /// Transparency level of the glass effect.
   /// </summary>
   public Int32? Transparency { get; set; }
 
   /// <summary>
-  /// Gets or sets the scaling factor for the glass effect, influencing the distortion and texture.
+  /// Scaling factor for the glass effect, influencing the distortion and texture.
   /// </summary>
   public Int32? Scaling { get; set; }
 }
