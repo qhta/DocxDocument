@@ -8,7 +8,7 @@
 /// a callback function to determine the label at runtime. The Label and GetLabel properties are mutually exclusive;
 /// only one should be set for a given control. If neither property is set, the control will not display a
 /// label.</remarks>
-public interface LabelControl
+public interface LabelledControl
 {
   /// <summary>
   ///   Specifies a string to be used as the label for this control.

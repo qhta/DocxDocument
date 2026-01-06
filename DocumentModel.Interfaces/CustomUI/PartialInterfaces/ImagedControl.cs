@@ -8,7 +8,7 @@
 /// image via <see cref="Image"/>, a built-in image via <see cref="ImageMso"/>, or a callback function via <see
 /// cref="GetImage"/>. If none of these properties are set, no icon is displayed. Implementations should ensure that
 /// only one of these properties is specified at a time.</remarks>
-public interface ImageControl
+public interface ImagedControl
 {
   /// <summary>
   ///   Specifies the relationship identifier for an image to be used as the icon for this control. This attribute is used to specify an embedded picture that resides locally within the containing file.

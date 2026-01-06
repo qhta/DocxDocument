@@ -30,11 +30,10 @@
     <Compile Remove="Packaging\Classes\CustomizationPart.cs" />
     <Compile Remove="Properties\DigitalSignature.cs" />
     <Compile Remove="Properties\VectorVariantType.cs" />
-    <Compile Remove="Vml\Enums\FillKind.cs" />
     <Compile Remove="Wordprocessing\Document\Document.ext.cs" />
     <Compile Remove="Wordprocessing\Drawings\Color.cs" />
     <Compile Remove="Wordprocessing\Enums\DocumentProtectionKind.cs" />
-    <Compile Remove="Wordprocessing\Interfaces\ICommonRunContent.cs" />
+    <Compile Remove="Wordprocessing\Abstract interfaces\ICommonRunContent.cs" />
     <Compile Remove="Wordprocessing\Run properties\DualBoolTypeConverter.cs" />
     <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyle.cs" />
     <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyleTypeConverter.cs" />
@@ -50,8 +49,7 @@
   <ItemGroup>
     <Folder Include="Colors\Drawings\" />
     <Folder Include="Drawings.Diagram2\Classes\" />
-    <Folder Include="Wordprocessing\Common\Enums\" />
-    <Folder Include="Wordprocessing\Range\Enums\" />
+    <Folder Include="Vml\Classes\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />

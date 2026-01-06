@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Office Data Source Object Settings.
 /// </summary>
-public interface IDataSourceObject
+public interface DataSourceObject
 {
   /// <summary>
   ///   UDL Connection String.
@@ -32,7 +32,7 @@ public interface IDataSourceObject
   /// <summary>
   /// Collection of Field Map Data.
   /// </summary>
-  public IFieldMapDataCollection? FieldMap { get; set; }
+  public FieldMapDataCollection? FieldMap { get; set; }
   /// <summary>
   /// Recipient Data Reference.
   /// </summary>
