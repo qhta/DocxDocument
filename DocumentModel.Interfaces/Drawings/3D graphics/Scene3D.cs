@@ -1,24 +1,23 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-///   3-D Scene.
+///   Represents a 3-D scene, including camera, lighting, backdrop, and extension information.
 /// </summary>
-public interface Scene3D
+public interface Scene3D: ExtendableElement
 {
   /// <summary>
-  ///   Camera.
+  ///   Camera settings for the 3-D scene.
   /// </summary>
   public Camera? Camera { get; set; }
+
   /// <summary>
-  ///   Light Rig.
+  ///   Light rig configuration for the 3-D scene.
   /// </summary>
   public LightRig? LightRig { get; set; }
+
   /// <summary>
-  ///   Backdrop Plane.
+  ///   Backdrop plane for the 3-D scene.
   /// </summary>
   public Backdrop? Backdrop { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public Drawings.ExtensionList? ExtensionList { get; set; }
+
 }

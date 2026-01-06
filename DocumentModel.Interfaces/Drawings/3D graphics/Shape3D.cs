@@ -1,44 +1,47 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-///   3-D Shape Properties.
+///   Defines properties for a 3-D shape, including depth, extrusion, contour, material, bevels, and color settings.
 /// </summary>
-public interface Shape3D
+public interface Shape3D : ExtendableElement
 {
   /// <summary>
-  ///   Shape Depth
+  ///   Shape depth along the Z-axis.
   /// </summary>
   public Int64? Z { get; set; }
+
   /// <summary>
-  ///   Extrusion Height
+  ///   Height of the extrusion applied to the shape.
   /// </summary>
   public Int64? ExtrusionHeight { get; set; }
+
   /// <summary>
-  ///   Contour Width
+  ///   Width of the contour around the shape.
   /// </summary>
   public Int64? ContourWidth { get; set; }
+
   /// <summary>
-  ///   Preset Material Type
+  ///   Preset material type applied to the shape's surface.
   /// </summary>
   public PresetMaterialKind? PresetMaterial { get; set; }
+
   /// <summary>
-  ///   Top Bevel.
+  ///   Top bevel effect applied to the shape.
   /// </summary>
   public BevelType? BevelTop { get; set; }
+
   /// <summary>
-  ///   Bottom Bevel.
+  ///   Bottom bevel effect applied to the shape.
   /// </summary>
   public BevelType? BevelBottom { get; set; }
+
   /// <summary>
-  ///   Extrusion Color.
+  ///   Color used for the extrusion.
   /// </summary>
   public ExtrusionColor? ExtrusionColor { get; set; }
+
   /// <summary>
-  ///   Contour Color.
+  ///   Color used for the contour.
   /// </summary>
   public ContourColor? ContourColor { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public Drawings.ExtensionList? ExtensionList { get; set; }
 }

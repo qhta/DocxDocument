@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Drawings.Diagram2\Classes\" />
+    <Folder Include="Drawings\Cameras\" />
     <Folder Include="Office.Drawing\" />
     <Folder Include="Vml\Classes\" />
   </ItemGroup>
