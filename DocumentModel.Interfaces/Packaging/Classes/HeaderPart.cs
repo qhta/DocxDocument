@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the HeaderPart
 /// </summary>
-public interface HeaderPart:
+public interface HeaderPart
 {
   /// <summary>
   ///   Gets the AlternativeFormatImportParts of the HeaderPart

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BackgroundProperties interface.
 /// </summary>
-public interface BackgroundProperties:
+public interface BackgroundProperties
 {
   /// <summary>
   ///   bwMode

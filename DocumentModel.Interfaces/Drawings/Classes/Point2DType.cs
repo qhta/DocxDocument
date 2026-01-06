@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Point2DType interface.
 /// </summary>
-public interface Point2DType:
+public interface Point2DType
 {
   /// <summary>
   ///   X-Axis Coordinate

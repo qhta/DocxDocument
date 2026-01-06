@@ -13,7 +13,7 @@ namespace DocumentModel;
 ///   customizable appearance with images, labels, tooltips, and can have its state and behavior controlled through
 ///   static properties or dynamic callbacks.
 /// </remarks>
-public interface ToggleButtonRegular :
+public interface ToggleButtonRegular
 {
   /// <summary>
   ///   Gets or sets the name of a callback function that returns the current pressed state of the toggle button.

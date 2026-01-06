@@ -25,7 +25,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   with diverse data sources that specify locations through addresses, administrative boundaries, or postal codes
 ///   rather than explicit coordinates, automatically converting these references into mappable geographic positions.
 /// </remarks>
-public interface GeoLocationQuery :
+public interface GeoLocationQuery
 {
   /// <summary>
   ///   Gets or sets the country or region component of the address query.

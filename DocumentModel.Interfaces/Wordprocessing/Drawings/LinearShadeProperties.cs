@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LinearShadeProperties Class.
 /// </summary>
-public interface LinearShadeProperties:
+public interface LinearShadeProperties
 {
   /// <summary>
   ///   ang

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the OfficeStyleSheetExtension interface.
 /// </summary>
-public interface OfficeStyleSheetExtension:
+public interface OfficeStyleSheetExtension
 {
   /// <summary>
   ///   URI

@@ -16,7 +16,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   settings reduce redundancy and simplify label management for charts with many data points, while the individual
 ///   label collections provide flexibility for emphasizing or suppressing specific values.
 /// </remarks>
-public interface DataLabels :
+public interface DataLabels
 {
   /// <summary>
   ///   Gets or sets the default position for data labels relative to their data points.

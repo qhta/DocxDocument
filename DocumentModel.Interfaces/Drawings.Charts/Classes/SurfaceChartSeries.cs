@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Surface Chart Series.
 /// </summary>
-public interface SurfaceChartSeries:
+public interface SurfaceChartSeries
 {
   /// <summary>
   ///   Index.

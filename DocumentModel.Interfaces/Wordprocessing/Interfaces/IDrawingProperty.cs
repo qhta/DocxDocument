@@ -3,7 +3,6 @@ namespace DocumentModel.Drawings;
 ///   Interface for drawing property.
 /// </summary>
 public interface IDrawingProperty: 
-  IModelElement,
   DMW.IRunProperty
 {
 }

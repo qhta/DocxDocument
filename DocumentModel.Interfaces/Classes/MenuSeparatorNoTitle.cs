@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the MenuSeparatorNoTitle Class.
 /// </summary>
-public interface MenuSeparatorNoTitle:
+public interface MenuSeparatorNoTitle
 {
   /// <summary>
   ///   id

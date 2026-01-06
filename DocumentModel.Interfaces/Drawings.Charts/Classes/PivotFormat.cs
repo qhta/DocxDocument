@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Pivot Format.
 /// </summary>
-public interface PivotFormat:
+public interface PivotFormat
 {
   /// <summary>
   ///   Index.

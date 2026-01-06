@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtContentComboBox Class.
 /// </summary>
-public interface SdtContentComboBox:
+public interface SdtContentComboBox
 {
   /// <summary>
   ///   Combo Box Last Saved Value

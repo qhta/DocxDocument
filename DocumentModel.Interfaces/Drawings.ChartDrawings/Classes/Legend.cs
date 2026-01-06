@@ -22,7 +22,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   multi-series visualizations, compare data across categories, and understand the meaning of different visual encodings
 ///   (colors, patterns, symbols) used throughout the chart.
 /// </remarks>
-public interface Legend :
+public interface Legend
 {
   /// <summary>
   ///   Gets or sets the side position where the legend is displayed relative to the chart.

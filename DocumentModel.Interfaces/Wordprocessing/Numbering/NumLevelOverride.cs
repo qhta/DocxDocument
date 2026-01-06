@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Each instance of this element is used to override the appearance and behavior 
 ///   of a given numbering level definition within the given abstract numbering definition. 
 /// </summary>
-public interface NumLevelOverride:
+public interface NumLevelOverride
 {
   /// <summary>
   ///   Numbering Level ID

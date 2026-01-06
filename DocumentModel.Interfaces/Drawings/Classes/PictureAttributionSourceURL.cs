@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the PictureAttributionSourceURL interface.
 /// </summary>
-public interface PictureAttributionSourceURL:
+public interface PictureAttributionSourceURL
 {
   /// <summary>
   ///   id

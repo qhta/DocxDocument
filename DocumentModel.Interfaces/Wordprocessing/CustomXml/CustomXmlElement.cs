@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines CustomXmlElement - the base interface for the customXml elements.
 /// </summary>
-public interface CustomXmlElement: IElementCollection<IModelElement>
+public interface CustomXmlElement
 {
   /// <summary>
   ///   Gets or sets the custom XML Markup Namespace.

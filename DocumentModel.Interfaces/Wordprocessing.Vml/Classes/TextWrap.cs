@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// <summary>
 ///   Text Wrapping.
 /// </summary>
-public interface TextWrap:
+public interface TextWrap
 {
   /// <summary>
   ///   Wrapping type

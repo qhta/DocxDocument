@@ -26,12 +26,12 @@ public interface AllDocumentProperties : ICollection<DocumentProperty>
   /// Collection of document settings, which represent Word document settings.
   /// </summary>
   [XmlIgnore]
-  public IDocumentSettings? DocumentSettings { get; set; }
+  public DocumentSettings? DocumentSettings { get; set; }
   /// <summary>
   /// Collection of web settings, which affect HTML generation.
   /// </summary>
   [XmlIgnore]
-  public DMW.IWebSettings? WebSettings { get; set; }
+  public DMW.WebSettings? WebSettings { get; set; }
   /// <summary>
   /// Collection of custom-defined document properties.
   /// </summary>

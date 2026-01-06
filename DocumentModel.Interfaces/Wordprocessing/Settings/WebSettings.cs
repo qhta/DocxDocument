@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Web Page Settings.
 /// </summary>
-public interface IWebSettings: DocumentProperties
+public interface WebSettings: DocumentProperties
 {
     /// <summary>
     ///   Frameset.
@@ -11,7 +11,7 @@ public interface IWebSettings: DocumentProperties
     /// <summary>
     ///   Divs.
     /// </summary>
-    public IDivElements? Divs { get; set; }
+    public DivElements? Divs { get; set; }
     /// <summary>
     ///   WebPageEncoding.
     /// </summary>

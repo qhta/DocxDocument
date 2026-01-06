@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ImageLayer interface.
 /// </summary>
-public interface ImageLayer:
+public interface ImageLayer
 {
   /// <summary>
   ///   embed

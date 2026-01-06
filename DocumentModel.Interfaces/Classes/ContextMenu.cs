@@ -8,7 +8,7 @@ namespace DocumentModel;
 /// <remarks>
 /// <para>
 /// Context menus in Office applications are part of the ribbon extensibility framework, allowing developers
-/// to customize the menus that appear when users right-click in different contexts. This interface enables:
+/// to customize the menus that appear when users right-click in different contexts. This interface enables
 /// <list type="bullet">
 /// <item><description><b>Menu customization:</b> Add custom commands to built-in context menus</description></item>
 /// <item><description><b>Context-aware commands:</b> Present relevant options based on what the user clicked</description></item>
@@ -87,7 +87,7 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public interface ContextMenu :
+public interface ContextMenu
 {
   /// <summary>
   /// Gets or sets the Microsoft Office built-in context menu identifier that this customization applies to.

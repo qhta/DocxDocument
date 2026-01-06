@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Blend Effect.
 /// </summary>
-public interface Blend:
+public interface Blend
 {
   /// <summary>
   ///   Blend Mode

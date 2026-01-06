@@ -12,7 +12,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   readability by keeping axis labels concise while still conveying the actual magnitude or measurement
 ///   type of the data.
 /// </remarks>
-public interface AxisUnits :
+public interface AxisUnits
 {
   /// <summary>
   ///   Gets or sets the unit type applied to the axis values.

@@ -33,6 +33,7 @@
     <Compile Remove="Vml\Enums\FillKind.cs" />
     <Compile Remove="Wordprocessing\Document\Document.ext.cs" />
     <Compile Remove="Wordprocessing\Drawings\Color.cs" />
+    <Compile Remove="Wordprocessing\Enums\DocumentProtectionKind.cs" />
     <Compile Remove="Wordprocessing\Interfaces\ICommonRunContent.cs" />
     <Compile Remove="Wordprocessing\Run properties\DualBoolTypeConverter.cs" />
     <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyle.cs" />

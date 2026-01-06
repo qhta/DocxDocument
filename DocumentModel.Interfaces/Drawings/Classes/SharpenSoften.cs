@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the SharpenSoften interface.
 /// </summary>
-public interface SharpenSoften:
+public interface SharpenSoften
 {
   /// <summary>
   ///   amount

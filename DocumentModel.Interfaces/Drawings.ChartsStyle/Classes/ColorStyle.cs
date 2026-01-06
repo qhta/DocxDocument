@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the ColorStyle Class.
 /// </summary>
-public interface ColorStyle:
+public interface ColorStyle
 {
   /// <summary>
   ///   meth

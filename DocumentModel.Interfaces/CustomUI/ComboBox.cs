@@ -12,7 +12,7 @@ namespace DocumentModel;
 ///   and change notifications. It can have its state and behavior controlled through static properties
 ///   or dynamic callbacks.
 /// </remarks>
-public interface ComboBox :
+public interface ComboBox
 {
   /// <summary>
   ///   Gets or sets a value indicating whether item images are displayed in the dropdown list.

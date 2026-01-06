@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TablePositionProperties Class.
 /// </summary>
-public interface TablePositionProperties:
+public interface TablePositionProperties
 {
   /// <summary>
   ///   Distance From Left of Table to Text

@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the LabelControl Class.
 /// </summary>
-public interface LabelControl:
+public interface LabelControl
 {
   /// <summary>
   ///   id

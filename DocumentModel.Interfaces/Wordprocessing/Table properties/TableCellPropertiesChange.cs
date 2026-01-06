@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   TableCellPropertiesChange interface used in <see cref="TableCellProperties"/>.
 ///   Represents <see cref="PreviousTableCellProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
-public interface TableCellPropertiesChange:
+public interface TableCellPropertiesChange
 {
   /// <summary>
   ///   Author.

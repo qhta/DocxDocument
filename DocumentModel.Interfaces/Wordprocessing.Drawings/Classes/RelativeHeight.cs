@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 ///   Defines the RelativeHeight Class.
 /// </summary>
-public interface RelativeHeight:
+public interface RelativeHeight
 {
   /// <summary>
   ///   relativeFrom

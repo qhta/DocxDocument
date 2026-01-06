@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ContentPart Class.
 /// </summary>
-public interface ContentPart2:
+public interface ContentPart2
 {
   /// <summary>
   ///   bwMode

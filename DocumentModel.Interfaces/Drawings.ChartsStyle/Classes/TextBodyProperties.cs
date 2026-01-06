@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the TextBodyProperties Class.
 /// </summary>
-public interface TextBodyProperties:
+public interface TextBodyProperties
 {
   /// <summary>
   ///   Rotation

@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageRegularButton Class.
 /// </summary>
-public interface BackstageRegularButton:
+public interface BackstageRegularButton
 {
   /// <summary>
   ///   screentip

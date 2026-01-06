@@ -23,7 +23,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   supporting various use cases from global data analysis to regional drill-down visualizations with appropriate
 ///   cultural localization and efficient data management.
 /// </remarks>
-public interface Geography :
+public interface Geography
 {
   /// <summary>
   ///   Gets or sets the map projection type used to render the geographic chart.

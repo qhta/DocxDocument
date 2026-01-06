@@ -16,7 +16,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   may clutter the visualization. They are particularly valuable in charts with few data points or when
 ///   precise values need to be emphasized.
 /// </remarks>
-public interface DataLabel :
+public interface DataLabel
 {
   /// <summary>
   ///   Gets or sets the zero-based index identifying which data point this label belongs to.

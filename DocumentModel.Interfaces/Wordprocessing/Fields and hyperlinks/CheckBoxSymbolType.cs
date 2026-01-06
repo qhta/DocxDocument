@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CheckBoxSymbolType Class.
 /// </summary>
-public interface CheckBoxSymbolType:
+public interface CheckBoxSymbolType
 {
   /// <summary>
   ///   font

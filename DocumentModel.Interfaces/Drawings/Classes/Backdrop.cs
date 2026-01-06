@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Backdrop Plane.
 /// </summary>
-public interface Backdrop:
+public interface Backdrop
 {
   /// <summary>
   ///   Anchor Point.

@@ -25,7 +25,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   charts, enabling users to navigate from detailed regions to broader containing regions while maintaining efficient
 ///   cache storage and quick hierarchical relationship lookups.
 /// </remarks>
-public interface GeoParentEntity :
+public interface GeoParentEntity
 {
   /// <summary>
   ///   Gets or sets the unique identifier of the parent geographic entity.
