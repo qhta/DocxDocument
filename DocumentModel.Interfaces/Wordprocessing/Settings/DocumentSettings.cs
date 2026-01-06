@@ -606,7 +606,7 @@ public interface DocumentSettings : DocumentProperties
   /// (in an application-defined format).
   /// </summary>
   [Category("Xslt")]
-  public ISaveThroughXslt? SaveThroughXslt { get; set; }
+  public SaveThroughXslt? SaveThroughXslt { get; set; }
   /// <summary>
   /// This element specifies that the contents of this document shall be saved as an XML file containing only the custom XML markup 
   /// in this document in its regular form. The resulting document does not conform to ECMA376 

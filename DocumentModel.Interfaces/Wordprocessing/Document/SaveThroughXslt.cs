@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Custom XSL Transform To Use When Saving As XML File.
 /// </summary>
-public interface ISaveThroughXslt: ExternalFile
+public interface SaveThroughXslt: ExternalFile
 {
   /// <summary>
   ///   Local Identifier for XSL Transform
