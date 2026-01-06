@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Paragraph Class.
 /// </summary>
-public partial interface Paragraph: IElementCollection<ParagraphContent>, 
+public partial interface Paragraph: ElementCollection<ParagraphContent>, 
   StoryContent, TableCellContent, SdtBlockContent, CommentContent, BidirectionalContent
 {
   /// <summary>

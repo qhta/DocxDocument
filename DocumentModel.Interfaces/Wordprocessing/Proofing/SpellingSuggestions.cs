@@ -3,7 +3,7 @@
 /// <summary>
 ///   Represents a collection of spelling suggestions for a misspelled word.
 /// </summary>
-public interface SpellingSuggestions : IElementCollection<SpellingSuggestion>
+public interface SpellingSuggestions : ElementCollection<SpellingSuggestion>
 {
   #region Collection Properties
 

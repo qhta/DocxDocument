@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Base interface for all RunProperties classes.
 ///   Contains common properties.
 /// </summary>
-public interface BaseRunProperties : IElementCollection<RunProperty>
+public interface BaseRunProperties : ElementCollection<RunProperty>
 {
   #region Common run properties
   /// <summary>

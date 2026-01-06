@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Table Cell.
 /// </summary>
-public interface TableCell: IElementCollection<TableCellContent>, TableRowContent, SdtCellContent
+public interface TableCell: ElementCollection<TableCellContent>, TableRowContent, SdtCellContent
 {
   /// <summary>
   ///   Table Cell Properties.

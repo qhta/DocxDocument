@@ -8,8 +8,8 @@
 /// notification. It is suitable for scenarios where objects need to be retrieved or managed by their unique names, and
 /// where clients should be notified of changes to the collection. Implementations must ensure that each element's name
 /// is unique within the collection.</remarks>
-/// <typeparam name="T">The type of elements in the collection. Must implement <see cref="INamedObject"/> and <see cref="IEquatable{T}"/>.</typeparam>
-public interface INameIndexedCollection<T>: ICollection<T>, INotifyCollectionChanged, IEquatable<INameIndexedCollection<T>> 
-  where T: INamedObject, IEquatable<T>
+/// <typeparam name="T">The type of elements in the collection. Must implement <see cref="NamedObject"/> and <see cref="IEquatable{T}"/>.</typeparam>
+public interface NameIndexedCollection<T>: ICollection<T>, INotifyCollectionChanged, IEquatable<NameIndexedCollection<T>> 
+  where T: NamedObject, IEquatable<T>
 {
 }

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
-internal interface IParticle<T>
+internal interface Particle<T>
 {
   /// <summary>Gets the minOccurs constraint.</summary>
   public int MinOccurs { get; }

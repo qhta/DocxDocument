@@ -9,7 +9,7 @@ namespace DocumentModel;
 ///   organizational structure, labeling, and positioning control for task collections
 ///   in the backstage view or task pane.
 /// </remarks>
-public interface TaskGroupCategory : IElementCollection<TaskGroupTask>
+public interface TaskGroupCategory : ElementCollection<TaskGroupTask>
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this task group category.

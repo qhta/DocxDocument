@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the degree in the mathematical radical. This element is optional. 
 ///   When omitted, the square root function, as in √x, is assumed.
 /// </summary>
-public interface Degree: IElementCollection<MathArgumentContent>
+public interface Degree: ElementCollection<MathArgumentContent>
 {
   /// <summary>
   /// Specifies properties of the degree argument.

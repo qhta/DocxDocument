@@ -2,6 +2,6 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Line Style List.
 /// </summary>
-public interface LineStyleList: IElementCollection<LineProperties>
+public interface LineStyleList: ElementCollection<LineProperties>
 {
 }

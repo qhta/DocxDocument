@@ -5,7 +5,7 @@
 /// </summary>
 /// <remarks>Implementations of this interface should return a meaningful name that uniquely identifies the object
 /// within its context. The returned name may be null if the object does not have an assigned name.</remarks>
-public interface INamedObject
+public interface NamedObject
 {
   /// <summary>
   /// A name.

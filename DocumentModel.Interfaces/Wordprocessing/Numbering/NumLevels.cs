@@ -2,6 +2,6 @@
 /// <summary>
 ///   Collection of NumLevel elements
 /// </summary>
-public interface NumLevels: IElementCollection<NumLevel>
+public interface NumLevels: ElementCollection<NumLevel>
 {
 }

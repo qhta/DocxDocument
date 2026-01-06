@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a collection of list levels in a list template.
 /// </summary>
-public interface ListLevels : IElementCollection<ListLevel>
+public interface ListLevels : ElementCollection<ListLevel>
 {
   #region Collection Properties
 

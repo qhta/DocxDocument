@@ -2,6 +2,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Font Table Root Element.
 /// </summary>
-public interface Fonts : IElementCollection<FontProperties>
+public interface Fonts : ElementCollection<FontProperties>
 {
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a collection of parent entities query results cached for map-based chart visualizations.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IElementCollection{T}"/> of <see cref="GeoParentEntitiesQueryResult"/> and
+///   This interface extends <see cref="ElementCollection{ItemType}"/> of <see cref="GeoParentEntitiesQueryResult"/> and
 ///   defines a collection of query results that cache parent entity relationships retrieved from mapping services
 ///   or geographic data providers. Each result in the collection pairs a parent entities query specification
 ///   (<see cref="GeoParentEntitiesQuery"/>) with its corresponding parent entity data (<see cref="GeoEntity"/> and
@@ -28,6 +28,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   the hierarchical path from detailed to broader regions), data aggregation (rolling up values from child entities
 ///   to parent entities), and geographic context display (showing which larger regions contain a selected area).
 /// </remarks>
-public interface GeoParentEntitiesQueryResults : IElementCollection<GeoParentEntitiesQueryResult>
+public interface GeoParentEntitiesQueryResults : ElementCollection<GeoParentEntitiesQueryResult>
 {
 }

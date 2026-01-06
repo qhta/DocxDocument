@@ -2,6 +2,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Tabs Class.
 /// </summary>
-public interface Tabs: IElementCollection<TabStop>
+public interface Tabs: ElementCollection<TabStop>
 {
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a collection of bibliographic sources.
 /// </summary>
-public interface Sources : IElementCollection<Source>
+public interface Sources : ElementCollection<Source>
 {
   /// <summary>
   ///   Adds a new source to the collection.

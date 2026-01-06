@@ -3,7 +3,7 @@
 /// <summary>
 ///   Represents a collection of tables in a document, section, range, or cell.
 /// </summary>
-public interface Tables : IElementCollection<Table>
+public interface Tables : ElementCollection<Table>
 {
   #region Collection Properties
 

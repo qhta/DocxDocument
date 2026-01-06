@@ -16,7 +16,7 @@ namespace DocumentModel;
 ///   without overwhelming the standard ribbon interface with specialized tools that are only occasionally needed.
 ///   Contextual tabs automatically hide when the user deselects the triggering object or exits the associated context.
 /// </remarks>
-public interface ContextualTabs : IElementCollection<TabSet>
+public interface ContextualTabs : ElementCollection<TabSet>
 {
   
 }

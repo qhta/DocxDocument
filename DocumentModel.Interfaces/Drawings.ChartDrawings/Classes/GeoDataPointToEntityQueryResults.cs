@@ -27,6 +27,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   are specified by coordinates or entity identifiers, providing comprehensive support for diverse data sources
 ///   and mapping requirements.
 /// </remarks>
-public interface GeoDataPointToEntityQueryResults : IElementCollection<GeoDataPointToEntityQueryResult>
+public interface GeoDataPointToEntityQueryResults : ElementCollection<GeoDataPointToEntityQueryResult>
 {
 }

@@ -14,6 +14,6 @@ namespace DocumentModel;
 ///   menu in the collection can contain buttons, toggles, galleries, separators, and other controls organized
 ///   to provide intuitive access to custom functionality.
 /// </remarks>
-public interface ContextMenus : IElementCollection<ContextMenu>
+public interface ContextMenus : ElementCollection<ContextMenu>
 {
 }

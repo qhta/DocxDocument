@@ -2,6 +2,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   This element represents the root element of the CommentsExtended part of a WordprocessingML document.
 /// </summary>
-public interface CommentsEx: IElementCollection<CommentEx>
+public interface CommentsEx: ElementCollection<CommentEx>
 {
 }

@@ -8,7 +8,7 @@ namespace DocumentModel;
 ///   that organize commands and controls in the Office backstage view. Task groups provide structure,
 ///   labeling, visibility control, and sizing options for collections of related tasks.
 /// </remarks>
-public interface TaskGroup : IElementCollection<TaskGroupCategory>
+public interface TaskGroup : ElementCollection<TaskGroupCategory>
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this task group.

@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the CompatExtension interface.
+/// Represents a compatibility extension, including a shape identifier.
 /// </summary>
 public interface CompatExtension
 {
   /// <summary>
-  ///   spid
+  /// Shape identifier.
   /// </summary>
   public string? ShapeId { get; set; }
 }

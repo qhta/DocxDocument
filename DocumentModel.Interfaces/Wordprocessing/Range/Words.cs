@@ -14,7 +14,7 @@ namespace DocumentModel.Wordprocessing;
 ///   by different rules and may require language-specific word-breaking algorithms.
 ///   </para>
 /// </remarks>
-public interface Words : IElementCollection<Word>
+public interface Words : ElementCollection<Word>
 {
   #region Collection Properties
 

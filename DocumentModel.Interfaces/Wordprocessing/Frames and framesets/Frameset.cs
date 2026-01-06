@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Frameset Definition.
 /// </summary>
-public interface Frameset: IElementCollection<FramesetItem>
+public interface Frameset: ElementCollection<FramesetItem>
 {
   ///// <summary>
   /////   Advisory information about the frameset.

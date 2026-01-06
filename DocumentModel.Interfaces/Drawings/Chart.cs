@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a chart to animate, including series and category indices, animation build step, and extension options.
 /// </summary>
-public interface Chart
+public interface Chart: ExtendableElement
 {
   /// <summary>
   /// Series index for the chart animation.
@@ -19,9 +19,4 @@ public interface Chart
   /// Animation build step for the chart.
   /// </summary>
   public ChartBuildStepKind? BuildStep { get; set; }
-
-  /// <summary>
-  /// Extension list for additional chart properties.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

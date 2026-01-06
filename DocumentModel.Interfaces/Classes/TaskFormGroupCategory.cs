@@ -8,7 +8,7 @@ namespace DocumentModel;
 ///   that groups related tasks within a <see cref="TaskFormGroup"/>. Categories provide
 ///   organizational structure, labeling, and positioning control for task collections.
 /// </remarks>
-public interface TaskFormGroupCategory : IElementCollection<TaskFormGroupTask>
+public interface TaskFormGroupCategory : ElementCollection<TaskFormGroupTask>
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this task form group category.

@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public interface Bookmarks: IElementCollection<Bookmark>
+public interface Bookmarks: ElementCollection<Bookmark>
 {
   
 }

@@ -94,6 +94,6 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public interface ConnectorLockingExtensionList: IElementCollection<ConnectorLockingExtension>
+public interface ConnectorLockingExtensionList: ElementCollection<ConnectorLockingExtension>
 {
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Listing of All Revision Save ID Values.
 /// </summary>
-public interface Rsids : IValueCollection<IRsid>
+public interface Rsids : ValueCollection<IRsid>
 {
   ///// <summary>
   /////   Original Document Revision Save ID.

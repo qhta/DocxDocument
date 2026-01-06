@@ -14,7 +14,7 @@
 ///   the base collection interface with Word-specific functionality for sentence manipulation.
 ///   </para>
 /// </remarks>
-public interface Sentences : IElementCollection<Sentence>
+public interface Sentences : ElementCollection<Sentence>
 {
   #region Collection Properties
 
