@@ -1,32 +1,42 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ColorReplacement interface.
+/// Defines the color replacement effect for drawing elements.
 /// </summary>
 public interface ColorReplacement
 {
   /// <summary>
-  ///   RGB Color Model - Percentage Variant.
+  /// RGB color model - percentage variant.
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
+
   /// <summary>
-  ///   RGB Color Model - Hex Variant.
+  /// RGB color model - hex variant.
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex { get; set; }
+
   /// <summary>
-  ///   Hue, Saturation, Luminance Color Model.
+  /// Hue, saturation, luminance color model.
   /// </summary>
   public HslColor? HslColor { get; set; }
+
   /// <summary>
-  ///   System Color.
+  /// System color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
+
   /// <summary>
-  ///   Scheme Color.
+  /// Scheme color.
   /// </summary>
   public SchemeColor? SchemeColor { get; set; }
+
   /// <summary>
-  ///   Preset Color.
+  /// Preset color.
   /// </summary>
   public PresetColor? PresetColor { get; set; }
+
+  /// <summary>
+  /// Extension list.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

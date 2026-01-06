@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Alpha Replace Effect.
+/// Represents an alpha replace effect, which sets the alpha channel of an image or shape to a specified value.
 /// </summary>
 public interface AlphaReplace
 {
   /// <summary>
-  ///   Alpha
+  /// Gets or sets the alpha value to be applied, replacing the existing alpha channel.
   /// </summary>
   public Int32? Alpha { get; set; }
 }

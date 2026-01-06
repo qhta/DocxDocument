@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the CameraTool interface.
+/// Camera tool settings for drawing elements.
 /// </summary>
 public interface CameraTool
 {
   /// <summary>
-  ///   cellRange
+  /// Cell range.
   /// </summary>
   public string? CellRange { get; set; }
+
   /// <summary>
-  ///   spid
+  /// Shape ID.
   /// </summary>
   public string? ShapeId { get; set; }
 }

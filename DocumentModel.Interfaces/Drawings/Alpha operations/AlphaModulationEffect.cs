@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Alpha Modulate Effect.
+/// Represents an alpha modulation effect, which modulates the alpha channel of an image or shape using an effect container.
 /// </summary>
 public interface AlphaModulationEffect
 {
   /// <summary>
-  ///   EffectContainer.
+  /// Gets or sets the effect container that defines the parameters for alpha modulation.
   /// </summary>
   public EffectContainer? EffectContainer { get; set; }
 }

@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticGlowEdges interface.
+/// Represents an artistic glow edges effect, which simulates glowing edges with adjustable transparency and smoothness.
 /// </summary>
 public interface ArtisticGlowEdges
 {
   /// <summary>
-  ///   trans
+  /// Gets or sets the transparency level of the glow edges effect.
   /// </summary>
-  public Int32? Transparancy { get; set; }
+  public Int32? Transparency { get; set; }
+
   /// <summary>
-  ///   smoothness
+  /// Gets or sets the smoothness of the glow edges effect, influencing the softness of the glow.
   /// </summary>
   public Int32? Smoothness { get; set; }
 }

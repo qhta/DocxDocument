@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings;
 /// <summary>
-///   Effect Style List.
+/// Represents a collection of effect styles, each defining a set of effects and 3D properties for drawing elements.
 /// </summary>
-public interface EffectStyleList: IElementCollection<EffectStyle>
+public interface EffectStyleList : IElementCollection<EffectStyle>
 {
 }

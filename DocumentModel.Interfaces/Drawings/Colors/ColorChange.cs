@@ -1,20 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Color Change Effect.
+/// Color change effect for drawing elements.
 /// </summary>
 public interface ColorChange
 {
   /// <summary>
-  ///   Consider Alpha Values
+  /// Consider alpha values.
   /// </summary>
   public bool? UseAlpha { get; set; }
+
   /// <summary>
-  ///   Change Color From.
+  /// Change color from.
   /// </summary>
-  public ColorFrom? ColorFrom { get; set; }
+  public ColorType? ColorFrom { get; set; }
+
   /// <summary>
-  ///   Change Color To.
+  /// Change color to.
   /// </summary>
-  public ColorTo? ColorTo { get; set; }
+  public ColorType? ColorTo { get; set; }
 }
