@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the ColorStyle Class.
 /// </summary>
-public interface ColorStyle
+public interface ColorStyle: OfficeArtExtendableElement
 {
   /// <summary>
   ///   meth
@@ -20,5 +20,4 @@ public interface ColorStyle
   public SchemeColor? SchemeColor { get; set; }
   public PresetColor? PresetColor { get; set; }
   public Collection<ColorStyleVariation>? ColorStyleVariations { get; set; }
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }
