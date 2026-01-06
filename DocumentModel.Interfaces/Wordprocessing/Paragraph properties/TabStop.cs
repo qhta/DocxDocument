@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Custom Tab Stop.
 /// </summary>
-public interface TabStop:
+public interface TabStop
 {
   /// <summary>
   ///   Tab Stop Type

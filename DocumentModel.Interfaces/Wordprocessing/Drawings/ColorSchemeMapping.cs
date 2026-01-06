@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Theme Color Mappings.
 /// </summary>
-public interface ColorSchemeMapping:
+public interface ColorSchemeMapping
 {
   /// <summary>
   ///   Background 1 Theme Color Mapping

@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageSubMenu Class.
 /// </summary>
-public interface BackstageSubMenu:
+public interface BackstageSubMenu
 {
   /// <summary>
   ///   description

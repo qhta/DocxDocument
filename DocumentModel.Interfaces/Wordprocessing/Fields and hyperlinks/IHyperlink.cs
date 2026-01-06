@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   This element specifies the presence of a hyperlink at the current location in the document.
 /// </summary>
-public interface IHyperlink: IElementCollection<IModelElement>, 
+public interface IHyperlink:
   IParagraphContent, 
   ISdtRunContent, 
   IBidirectionalContent, 

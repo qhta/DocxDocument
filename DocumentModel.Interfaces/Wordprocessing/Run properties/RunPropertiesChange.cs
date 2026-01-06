@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   RunPropertiesChange interface used in <see cref="RunProperties"/>.
 ///   Represents <see cref="PreviousRunProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
-public interface RunPropertiesChange:
+public interface RunPropertiesChange
 {
   /// <summary>
   ///   author

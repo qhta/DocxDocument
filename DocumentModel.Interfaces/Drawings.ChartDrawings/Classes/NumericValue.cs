@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the NumericValue Class.
 /// </summary>
-public interface NumericValue:
+public interface NumericValue
 {
   /// <summary>
   ///   idx

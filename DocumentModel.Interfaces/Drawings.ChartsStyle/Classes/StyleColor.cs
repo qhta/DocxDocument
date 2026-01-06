@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the StyleColor Class.
 /// </summary>
-public interface StyleColor:
+public interface StyleColor
 {
   /// <summary>
   ///   val

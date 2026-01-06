@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the PageSetup Class.
 /// </summary>
-public interface PageSetup:
+public interface PageSetup
 {
   /// <summary>
   ///   paperSize

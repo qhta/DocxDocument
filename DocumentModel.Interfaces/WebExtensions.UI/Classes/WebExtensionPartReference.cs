@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions.UI;
 /// <summary>
 ///   Defines the WebExtensionPartReference Class.
 /// </summary>
-public interface WebExtensionPartReference:
+public interface WebExtensionPartReference
 {
   /// <summary>
   ///   id

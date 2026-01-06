@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ColorMappingType interface.
 /// </summary>
-public interface ColorMappingType:
+public interface ColorMappingType
 {
   /// <summary>
   ///   Background 1

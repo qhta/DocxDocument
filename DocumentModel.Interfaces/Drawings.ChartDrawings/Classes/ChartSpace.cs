@@ -14,7 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   formats. It represents the entire chart object as stored in Office documents, maintaining all information
 ///   needed to render, edit, and reproduce the chart accurately.
 /// </remarks>
-public interface ChartSpace :
+public interface ChartSpace
 {
   /// <summary>
   ///   Gets or sets the data source configuration for the chart.

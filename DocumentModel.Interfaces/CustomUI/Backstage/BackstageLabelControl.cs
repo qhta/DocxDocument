@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageLabelControl Class.
 /// </summary>
-public interface BackstageLabelControl:
+public interface BackstageLabelControl
 {
   /// <summary>
   ///   id

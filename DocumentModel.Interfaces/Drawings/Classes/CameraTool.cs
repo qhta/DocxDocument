@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the CameraTool interface.
 /// </summary>
-public interface CameraTool:
+public interface CameraTool
 {
   /// <summary>
   ///   cellRange

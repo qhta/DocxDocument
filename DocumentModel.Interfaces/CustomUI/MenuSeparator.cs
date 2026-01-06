@@ -10,7 +10,7 @@ namespace DocumentModel;
 ///   logical groupings of commands. Separators support positioning relative to other menu items and
 ///   can have their title determined statically or dynamically through callbacks.
 /// </remarks>
-public interface MenuSeparator :
+public interface MenuSeparator
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this menu separator.

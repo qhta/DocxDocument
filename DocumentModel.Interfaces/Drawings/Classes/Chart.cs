@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Chart to Animate.
 /// </summary>
-public interface Chart:
+public interface Chart
 {
   /// <summary>
   ///   Series Index

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Data Model.
 /// </summary>
-public interface DataModelRoot:
+public interface DataModelRoot
 {
   /// <summary>
   ///   Point List.

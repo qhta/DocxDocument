@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ImageEffect interface.
 /// </summary>
-public interface ImageEffect:
+public interface ImageEffect
 {
   /// <summary>
   ///   visible

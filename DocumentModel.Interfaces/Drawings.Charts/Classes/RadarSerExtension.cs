@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the RadarSerExtension Class.
 /// </summary>
-public interface RadarSerExtension:
+public interface RadarSerExtension
 {
   /// <summary>
   ///   URI

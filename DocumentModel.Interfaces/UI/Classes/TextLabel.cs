@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the TextLabel Class.
 /// </summary>
-public interface TextLabel:
+public interface TextLabel
 {
   /// <summary>
   ///   id

@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Glow Effect.
 /// </summary>
-public interface Glow:
+public interface Glow
 {
   /// <summary>
   ///   Radius

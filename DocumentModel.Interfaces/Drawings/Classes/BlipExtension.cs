@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BlipExtension interface.
 /// </summary>
-public interface BlipExtension:
+public interface BlipExtension
 {
   /// <summary>
   ///   URI

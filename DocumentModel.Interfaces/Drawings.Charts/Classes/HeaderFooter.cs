@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Header and Footer.
 /// </summary>
-public interface HeaderFooter:
+public interface HeaderFooter
 {
   /// <summary>
   ///   Align With Margins

@@ -15,7 +15,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   provides a lightweight indicator for suppressed labels. This selective hiding approach offers fine-grained
 ///   control over label visibility without requiring individual DataLabel definitions for every data point.
 /// </remarks>
-public interface DataLabelHidden :
+public interface DataLabelHidden
 {
   /// <summary>
   ///   Gets or sets the zero-based index identifying which data point's label should be hidden.

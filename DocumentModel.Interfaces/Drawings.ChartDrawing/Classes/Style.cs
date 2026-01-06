@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Shape Style.
 /// </summary>
-public interface Style:
+public interface Style
 {
   /// <summary>
   ///   LineReference.

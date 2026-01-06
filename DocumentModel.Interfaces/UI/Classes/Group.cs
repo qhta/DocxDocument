@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the Group Class.
 /// </summary>
-public interface Group:
+public interface Group
 {
   /// <summary>
   ///   id

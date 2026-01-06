@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstagePrimaryMenu Class.
 /// </summary>
-public interface BackstagePrimaryMenu:
+public interface BackstagePrimaryMenu
 {
   /// <summary>
   ///   screentip

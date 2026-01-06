@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the DataTableStyle Class.
 /// </summary>
-public interface DataTableStyle:
+public interface DataTableStyle
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }

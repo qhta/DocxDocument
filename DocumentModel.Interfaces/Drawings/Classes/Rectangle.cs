@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Shape Text Rectangle.
 /// </summary>
-public interface Rectangle:
+public interface Rectangle
 {
   /// <summary>
   ///   Left

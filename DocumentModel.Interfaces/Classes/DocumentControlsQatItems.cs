@@ -93,7 +93,7 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public interface DocumentControlsQatItems :
+public interface DocumentControlsQatItems
 {
   /// <summary>
   /// Gets or sets a reference to a built-in Office control to clone and add to the Quick Access Toolbar.

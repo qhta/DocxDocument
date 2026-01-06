@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the StyleEntry Class.
 /// </summary>
-public interface StyleEntry:
+public interface StyleEntry
 {
   /// <summary>
   ///   mods

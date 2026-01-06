@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticPencilSketch interface.
 /// </summary>
-public interface ArtisticPencilSketch:
+public interface ArtisticPencilSketch
 {
   /// <summary>
   ///   trans

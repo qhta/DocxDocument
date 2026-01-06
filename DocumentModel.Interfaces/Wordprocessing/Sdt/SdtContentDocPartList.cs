@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtContentDocPartList Class.
 /// </summary>
-public interface SdtContentDocPartList:
+public interface SdtContentDocPartList
 {
   public string? DocPartGallery { get; set; }
   public string? DocPartCategory { get; set; }

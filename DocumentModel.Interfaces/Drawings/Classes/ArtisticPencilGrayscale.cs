@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticPencilGrayscale interface.
 /// </summary>
-public interface ArtisticPencilGrayscale:
+public interface ArtisticPencilGrayscale
 {
   /// <summary>
   ///   trans

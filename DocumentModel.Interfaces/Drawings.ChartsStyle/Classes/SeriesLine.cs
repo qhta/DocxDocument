@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the SeriesLine Class.
 /// </summary>
-public interface SeriesLine:
+public interface SeriesLine
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }

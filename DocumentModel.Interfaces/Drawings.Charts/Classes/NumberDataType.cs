@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the NumberDataType Class.
 /// </summary>
-public interface NumberDataType:
+public interface NumberDataType
 {
   /// <summary>
   ///   Format Code.

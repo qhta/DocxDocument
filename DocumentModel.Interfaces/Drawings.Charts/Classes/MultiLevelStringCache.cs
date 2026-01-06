@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the MultiLevelStringCache Class.
 /// </summary>
-public interface MultiLevelStringCache:
+public interface MultiLevelStringCache
 {
   /// <summary>
   ///   PointCount.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the DataLabelsRange Class.
 /// </summary>
-public interface DataLabelsRange:
+public interface DataLabelsRange
 {
   /// <summary>
   ///   Formula.

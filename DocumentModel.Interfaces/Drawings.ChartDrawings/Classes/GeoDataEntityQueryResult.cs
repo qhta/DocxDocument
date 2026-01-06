@@ -24,7 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   cached geographic data ensures consistent, accurate rendering of map regions even when offline or when the
 ///   external mapping service is unavailable.
 /// </remarks>
-public interface GeoDataEntityQueryResult :
+public interface GeoDataEntityQueryResult
 {
   /// <summary>
   ///   Gets or sets the query specification that was used to retrieve the geographic entity data.

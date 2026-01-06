@@ -21,7 +21,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   data retrieval by targeting specific parent-child relationships rather than loading entire geographic hierarchies,
 ///   making it practical to work with large geographic datasets while maintaining responsive chart interactions.
 /// </remarks>
-public interface GeoChildEntitiesQuery :
+public interface GeoChildEntitiesQuery
 {
   /// <summary>
   ///   Gets or sets the identifier of the parent geographic entity whose child entities are being queried.

@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies properties such as ctrlPr that can be stored on the function apply object func.
 /// </summary>
-public interface FunctionProperties:
+public interface FunctionProperties
 {
   /// <summary>
   ///   ControlProperties.

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ParagraphBorders Class.
 /// </summary>
-public interface ParagraphBorders:
+public interface ParagraphBorders
 {
   /// <summary>
   ///   Paragraph Border Above Identical Paragraphs.

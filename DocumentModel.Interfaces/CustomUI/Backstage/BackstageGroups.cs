@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageGroups Class.
 /// </summary>
-public interface BackstageGroups:
+public interface BackstageGroups
 {
   public TaskFormGroup? TaskFormGroup { get; set; }
 

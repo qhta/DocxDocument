@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   3D Pie Charts.
 /// </summary>
-public interface Pie3DChart:
+public interface Pie3DChart
 {
   /// <summary>
   ///   VaryColors.

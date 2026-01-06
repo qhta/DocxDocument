@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Magnification Setting.
 /// </summary>
-public interface IZoom:
+public interface Zoom
 {
   /// <summary>
   ///   Zoom Type

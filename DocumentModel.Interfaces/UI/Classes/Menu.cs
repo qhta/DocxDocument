@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the Menu Class.
 /// </summary>
-public interface Menu:
+public interface Menu
 {
   /// <summary>
   ///   size

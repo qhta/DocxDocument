@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the DropDown Class.
 /// </summary>
-public interface DropDown:
+public interface DropDown
 {
   /// <summary>
   ///   onAction

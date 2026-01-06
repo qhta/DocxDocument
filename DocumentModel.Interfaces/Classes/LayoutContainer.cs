@@ -105,7 +105,7 @@
 /// };
 /// </code>
 /// </example>
-public interface LayoutContainer :
+public interface LayoutContainer
 {
   /// <summary>
   /// Gets or sets the unique identifier for this layout container.

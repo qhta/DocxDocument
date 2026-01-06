@@ -13,7 +13,7 @@ namespace DocumentModel;
 ///   The menu content can be invalidated and regenerated as needed, and the control supports customizable appearance
 ///   with images, labels, tooltips, and can have its state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface DynamicMenuRegular :
+public interface DynamicMenuRegular
 {
   /// <summary>
   ///   Gets or sets the description text for the dynamic menu control.

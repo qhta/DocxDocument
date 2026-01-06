@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape ID Map.
 /// </summary>
-public interface ShapeIdMap:
+public interface ShapeIdMap
 {
   /// <summary>
   ///   VML Extension Handling Behavior

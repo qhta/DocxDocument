@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Item Class.
 /// </summary>
-public interface Item:
+public interface Item
 {
   /// <summary>
   ///   id

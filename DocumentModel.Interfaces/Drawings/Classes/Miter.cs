@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Miter Line Join.
 /// </summary>
-public interface Miter:
+public interface Miter
 {
   /// <summary>
   ///   Miter Join Limit

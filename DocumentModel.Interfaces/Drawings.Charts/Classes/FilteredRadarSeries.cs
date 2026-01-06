@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FilteredRadarSeries Class.
 /// </summary>
-public interface FilteredRadarSeries:
+public interface FilteredRadarSeries
 {
   /// <summary>
   ///   RadarChartSeries.

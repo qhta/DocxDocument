@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the TextBodyType Class.
 /// </summary>
-public interface TextBodyType:
+public interface TextBodyType
 {
   /// <summary>
   ///   Body Properties.

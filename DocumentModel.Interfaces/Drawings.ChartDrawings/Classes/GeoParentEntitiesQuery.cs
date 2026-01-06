@@ -23,7 +23,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   City › County › State › Country › Continent). The parent entity query enables bidirectional navigation through
 ///   geographic hierarchies, complementing child entity queries to provide complete hierarchical exploration capabilities.
 /// </remarks>
-public interface GeoParentEntitiesQuery :
+public interface GeoParentEntitiesQuery
 {
   /// <summary>
   ///   Gets or sets the unique identifier of the child entity whose parent entities are being queried.

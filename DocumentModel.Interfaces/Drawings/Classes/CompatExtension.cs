@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the CompatExtension interface.
 /// </summary>
-public interface CompatExtension:
+public interface CompatExtension
 {
   /// <summary>
   ///   spid

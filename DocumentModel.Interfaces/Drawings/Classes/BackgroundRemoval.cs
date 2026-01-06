@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BackgroundRemoval interface.
 /// </summary>
-public interface BackgroundRemoval:
+public interface BackgroundRemoval
 {
   /// <summary>
   ///   t

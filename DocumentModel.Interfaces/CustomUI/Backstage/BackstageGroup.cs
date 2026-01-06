@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageGroup Class.
 /// </summary>
-public interface BackstageGroup:
+public interface BackstageGroup
 {
   /// <summary>
   ///   id

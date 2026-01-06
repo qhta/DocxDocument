@@ -11,7 +11,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   characteristics of drawing elements beyond their graphical representation, enabling features such
 ///   as scripted interactions and document workflow management.
 /// </remarks>
-public interface ApplicationNonVisualDrawingProperties :
+public interface ApplicationNonVisualDrawingProperties
 {
   /// <summary>
   ///   Gets or sets the name of the macro associated with this drawing object.

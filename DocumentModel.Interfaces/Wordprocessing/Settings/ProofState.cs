@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Spelling and Grammatical Checking State.
 /// </summary>
-public interface IProofState:
+public interface ProofState
 {
   /// <summary>
   ///   Spell Checking State

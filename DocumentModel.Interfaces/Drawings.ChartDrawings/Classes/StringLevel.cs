@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the StringLevel Class.
 /// </summary>
-public interface StringLevel:
+public interface StringLevel
 {
   /// <summary>
   ///   ptCount

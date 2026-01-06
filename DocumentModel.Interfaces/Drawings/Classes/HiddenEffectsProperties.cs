@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HiddenEffectsProperties interface.
 /// </summary>
-public interface HiddenEffectsProperties:
+public interface HiddenEffectsProperties
 {
   /// <summary>
   ///   Effect Container.

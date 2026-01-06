@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the DataLabelFieldTableEntry Class.
 /// </summary>
-public interface DataLabelFieldTableEntry:
+public interface DataLabelFieldTableEntry
 {
   /// <summary>
   ///   TextFieldGuid.

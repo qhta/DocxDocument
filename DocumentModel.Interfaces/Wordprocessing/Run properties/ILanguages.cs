@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines languages for three script types: Normal, EastAsia, and Bidi.
 /// </summary>
-public interface ILanguages:
+public interface ILanguages
 {
   /// <summary>
   ///   Language for all regular scripts.

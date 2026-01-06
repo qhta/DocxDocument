@@ -112,7 +112,7 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public interface SplitButtonRegular :
+public interface SplitButtonRegular
 {
   /// <summary>
   /// Gets or sets whether the split button is enabled and can be interacted with.

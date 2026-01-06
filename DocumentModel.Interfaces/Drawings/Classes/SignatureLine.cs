@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the SignatureLine interface.
 /// </summary>
-public interface SignatureLine:
+public interface SignatureLine
 {
   /// <summary>
   ///   isSignatureLine

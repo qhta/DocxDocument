@@ -195,7 +195,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public interface ExtensionList :
+public interface ExtensionList
 {
   /// <summary>
   /// Gets or sets the collection of DrawingML extensions that add enhanced visual capabilities,

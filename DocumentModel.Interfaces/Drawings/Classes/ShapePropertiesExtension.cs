@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ShapePropertiesExtension interface.
 /// </summary>
-public interface ShapePropertiesExtension:
+public interface ShapePropertiesExtension
 {
   /// <summary>
   ///   URI

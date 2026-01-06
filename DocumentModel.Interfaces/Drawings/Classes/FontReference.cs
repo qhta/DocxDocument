@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the FontReference interface.
 /// </summary>
-public interface FontReference:
+public interface FontReference
 {
   /// <summary>
   ///   Identifier

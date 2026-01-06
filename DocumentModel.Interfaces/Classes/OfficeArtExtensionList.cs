@@ -176,7 +176,7 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public interface OfficeArtExtensionList :
+public interface OfficeArtExtensionList
 {
   /// <summary>
   /// Gets or sets the collection of DrawingML extensions that add enhanced visual capabilities,

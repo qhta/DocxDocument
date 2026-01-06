@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the PrimaryItem Class.
 /// </summary>
-public interface PrimaryItem:
+public interface PrimaryItem
 {
   /// <summary>
   ///   BackstageRegularButton.

@@ -2,7 +2,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   New Shape Defaults.
 /// </summary>
-public interface IShapeDefaults:
+public interface IShapeDefaults
 {
   /// <summary>
   ///   VML Extension Handling Behavior

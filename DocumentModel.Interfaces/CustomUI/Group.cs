@@ -11,7 +11,7 @@ namespace DocumentModel;
 ///   for accessing additional functionality. They provide automatic scaling behavior to optimize
 ///   ribbon space usage when the window is resized.
 /// </remarks>
-public interface Group :
+public interface Group
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this group.

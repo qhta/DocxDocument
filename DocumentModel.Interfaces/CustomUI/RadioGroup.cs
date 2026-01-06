@@ -11,7 +11,7 @@ namespace DocumentModel;
 ///   with options for customizable labels, layout expansion, keyboard shortcuts, and enabled/visible states
 ///   that can be controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface RadioGroup :
+public interface RadioGroup
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this radio group.

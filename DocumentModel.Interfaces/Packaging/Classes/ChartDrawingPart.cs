@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ChartDrawingPart
 /// </summary>
-public interface ChartDrawingPart:
+public interface ChartDrawingPart
 {
   public string? ContentType { get; set; }
   /// <summary>

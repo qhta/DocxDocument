@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Through Wrapping.
 /// </summary>
-public interface WrapThrough:
+public interface WrapThrough
 {
   /// <summary>
   ///   Text Wrapping Location

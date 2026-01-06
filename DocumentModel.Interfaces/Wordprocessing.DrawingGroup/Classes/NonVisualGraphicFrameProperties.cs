@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.DrawingGroup;
 /// <summary>
 ///   Defines the NonVisualGraphicFrameProperties Class.
 /// </summary>
-public interface NonVisualGraphicFrameProperties:
+public interface NonVisualGraphicFrameProperties
 {
   /// <summary>
   ///   Graphic Frame Locks.

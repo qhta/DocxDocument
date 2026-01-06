@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtContentDropDownList Class.
 /// </summary>
-public interface SdtContentDropDownList:
+public interface SdtContentDropDownList
 {
   /// <summary>
   ///   Drop-down List Last Saved Value

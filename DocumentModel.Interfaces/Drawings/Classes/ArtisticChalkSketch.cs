@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticChalkSketch interface.
 /// </summary>
-public interface ArtisticChalkSketch:
+public interface ArtisticChalkSketch
 {
   /// <summary>
   ///   trans

@@ -19,7 +19,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   <see cref="DataLabelHidden"/> to control both the visual appearance and labeling of individual points. Extension
 ///   support enables future enhancements to data point functionality without schema changes.
 /// </remarks>
-public interface DataPoint :
+public interface DataPoint
 {
   /// <summary>
   ///   Gets or sets the zero-based index identifying this data point's position within its series.

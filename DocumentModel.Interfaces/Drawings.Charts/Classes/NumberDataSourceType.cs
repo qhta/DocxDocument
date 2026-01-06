@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the NumberDataSourceType Class.
 /// </summary>
-public interface NumberDataSourceType:
+public interface NumberDataSourceType
 {
   /// <summary>
   ///   Number Reference.

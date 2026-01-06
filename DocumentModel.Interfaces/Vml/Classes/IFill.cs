@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the fill properties of a shape.
 /// </summary>
-public interface IFill:
+public interface IFill
 {
   /// <summary>
   ///   Unique Identifier

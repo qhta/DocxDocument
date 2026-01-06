@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the HiLoLine Class.
 /// </summary>
-public interface HiLoLine:
+public interface HiLoLine
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Picture Bullet.
 /// </summary>
-public interface PictureBullet:
+public interface PictureBullet
 {
   /// <summary>
   ///   Blip.

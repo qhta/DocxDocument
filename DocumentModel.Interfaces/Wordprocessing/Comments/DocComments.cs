@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   This element specifies all of the comments defined in the current document. 
 /// </summary>
-public interface DocComments:
+public interface DocComments
 {
   /// <summary>
   /// Comments collections.

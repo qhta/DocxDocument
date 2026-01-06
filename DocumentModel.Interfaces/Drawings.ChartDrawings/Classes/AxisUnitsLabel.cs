@@ -13,7 +13,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   abbreviated or scaled format. The label can be extensively customized in terms of appearance,
 ///   positioning, and text formatting to match the chart's overall design.
 /// </remarks>
-public interface AxisUnitsLabel :
+public interface AxisUnitsLabel
 {
   /// <summary>
   ///   Gets or sets the text content displayed as the axis units label.

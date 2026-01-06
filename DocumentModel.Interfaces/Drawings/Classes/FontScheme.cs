@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Font Scheme.
 /// </summary>
-public interface FontScheme:
+public interface FontScheme
 {
   /// <summary>
   ///   Name

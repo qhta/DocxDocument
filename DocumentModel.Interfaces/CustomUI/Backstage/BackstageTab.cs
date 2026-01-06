@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageTab Class.
 /// </summary>
-public interface BackstageTab:
+public interface BackstageTab
 {
   /// <summary>
   ///   id

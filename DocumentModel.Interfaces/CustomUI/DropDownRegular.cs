@@ -12,7 +12,7 @@ namespace DocumentModel;
 ///   customizable appearance with images and labels for both the control and its items, selection tracking, and can
 ///   have its state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface DropDownRegular :
+public interface DropDownRegular
 {
   /// <summary>
   ///   Gets or sets the name of the callback function executed when a dropdown item is selected.

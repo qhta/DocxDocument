@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticGlass interface.
 /// </summary>
-public interface ArtisticGlass:
+public interface ArtisticGlass
 {
   /// <summary>
   ///   trans

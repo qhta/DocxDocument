@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies information about the embedded font storage. 
 /// </summary>
-public partial interface EmbeddedFont :
+public partial interface EmbeddedFont
 {
   /// <summary>
   ///   Specifies the key which was used to obfuscate this embedded font. 

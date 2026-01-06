@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BrightnessContrast interface.
 /// </summary>
-public interface BrightnessContrast:
+public interface BrightnessContrast
 {
   /// <summary>
   ///   bright

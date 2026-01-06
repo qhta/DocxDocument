@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticPaintStrokes interface.
 /// </summary>
-public interface ArtisticPaintStrokes:
+public interface ArtisticPaintStrokes
 {
   /// <summary>
   ///   trans

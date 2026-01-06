@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the TextParagraphPropertiesType interface.
 /// </summary>
-public interface ParagraphProperties:
+public interface ParagraphProperties
 {
   /// <summary>
   ///   Left Margin

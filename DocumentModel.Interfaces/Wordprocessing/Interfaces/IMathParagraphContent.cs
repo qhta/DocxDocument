@@ -5,12 +5,5 @@ namespace DocumentModel.Math;
 /// </summary>
 public interface IMathParagraphContent: DMM.IOfficeMathContent
 {
-  /// <summary>
-  /// Parent as a <see cref="DMM.Paragraph"/> element.
-  /// </summary>
-  public new DMM.Paragraph? Parent
-  {
-    get => (this as IModelElement).Parent as DMM.Paragraph;
-    set => (this as IModelElement).Parent = value;
-  }
+
 }

@@ -208,7 +208,7 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public interface Commands :
+public interface Commands
 {
   /// <summary>
   /// Gets or sets the collection of command definitions that map user interface actions to

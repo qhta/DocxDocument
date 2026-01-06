@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LightRig Class.
 /// </summary>
-public interface LightRig:
+public interface LightRig
 {
   /// <summary>
   ///   rig

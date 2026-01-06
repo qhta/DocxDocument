@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the NonVisualGroupProperties interface.
 /// </summary>
-public interface NonVisualGroupProperties:
+public interface NonVisualGroupProperties
 {
   /// <summary>
   ///   isLegacyGroup

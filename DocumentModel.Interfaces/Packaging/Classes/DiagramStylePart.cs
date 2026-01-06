@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramStylePart
 /// </summary>
-public interface DiagramStylePart:
+public interface DiagramStylePart
 {
   public string? ContentType { get; set; }
   public string? RelationshipType { get; set; }

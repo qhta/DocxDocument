@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 ///   Defines CustomUiPart. The CustomUiPart served as the base interface of RibbonExtensibilityPart and
 ///   QuickAccessToolbarCustomizationsPart.
 /// </summary>
-public interface CustomUIPart:
+public interface CustomUIPart
 {
   /// <summary>
   ///   Gets or sets the root element of this part.

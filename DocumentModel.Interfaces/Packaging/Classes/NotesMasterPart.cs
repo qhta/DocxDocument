@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the NotesMasterPart
 /// </summary>
-public interface NotesMasterPart:
+public interface NotesMasterPart
 {
   /// <summary>
   ///   Gets the ChartParts of the NotesMasterPart

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FormulaReference Class.
 /// </summary>
-public interface FormulaReference:
+public interface FormulaReference
 {
   /// <summary>
   ///   SequenceOfReferences.

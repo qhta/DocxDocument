@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Run Properties.
 /// </summary>
-public interface RunProperties:
+public interface RunProperties
 {
   public LineProperties? Outline { get; set; }
   public Fill? Fill { get; set; }

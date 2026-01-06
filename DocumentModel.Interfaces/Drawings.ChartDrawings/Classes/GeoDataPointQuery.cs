@@ -23,7 +23,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   mapping is fundamental to geographic data visualization, enabling charts to organize and aggregate point-based
 ///   data according to geographic boundaries and hierarchies.
 /// </remarks>
-public interface GeoDataPointQuery :
+public interface GeoDataPointQuery
 {
   /// <summary>
   ///   Gets or sets the type of geographic entity to search for when identifying the containing region.

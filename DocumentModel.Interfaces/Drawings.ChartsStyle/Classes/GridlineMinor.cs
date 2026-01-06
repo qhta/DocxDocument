@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the GridlineMinor Class.
 /// </summary>
-public interface GridlineMinor:
+public interface GridlineMinor
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }

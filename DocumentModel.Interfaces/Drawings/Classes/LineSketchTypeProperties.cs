@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the LineSketchTypeProperties interface.
 /// </summary>
-public interface LineSketchTypeProperties:
+public interface LineSketchTypeProperties
 {
   /// <summary>
   ///   LineSketchNoneEmpty.

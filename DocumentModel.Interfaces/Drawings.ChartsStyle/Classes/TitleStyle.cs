@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the TitleStyle Class.
 /// </summary>
-public interface TitleStyle:
+public interface TitleStyle
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }

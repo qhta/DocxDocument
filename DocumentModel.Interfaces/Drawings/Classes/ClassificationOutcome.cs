@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ClassificationOutcome interface.
 /// </summary>
-public interface ClassificationOutcome :
+public interface ClassificationOutcome
 {
   /// <summary>
   ///   ClassificationOutcomeType

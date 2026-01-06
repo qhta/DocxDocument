@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   QuickTime from File.
 /// </summary>
-public interface QuickTimeFromFile:
+public interface QuickTimeFromFile
 {
   /// <summary>
   ///   Linked Relationship ID

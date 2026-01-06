@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the ShapeTree Class.
 /// </summary>
-public interface ShapeTree:
+public interface ShapeTree
 {
   public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get; set; }
   public GroupShapeProperties? GroupShapeProperties { get; set; }

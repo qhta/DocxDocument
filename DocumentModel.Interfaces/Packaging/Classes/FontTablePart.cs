@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the FontTablePart
 /// </summary>
-public interface FontTablePart:
+public interface FontTablePart
 {
   public string? ContentType { get; set; }
   /// <summary>

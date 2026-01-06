@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Base interface for all TableCellProperties classes.
 ///   Contains common properties.
 /// </summary>
-public interface BaseTableCellProperties:
+public interface BaseTableCellProperties
 {
   /// <summary>
   ///   Shading.

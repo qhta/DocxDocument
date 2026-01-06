@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Vertically Merged/Split Table Cells.
 /// </summary>
-public interface CellMerge:
+public interface CellMerge
 {
   /// <summary>
   ///   vMerge

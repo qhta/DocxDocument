@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ValueColorPositions Class.
 /// </summary>
-public interface ValueColorPositions:
+public interface ValueColorPositions
 {
   /// <summary>
   ///   count

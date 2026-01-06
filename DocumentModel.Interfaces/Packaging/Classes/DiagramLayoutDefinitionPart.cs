@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramLayoutDefinitionPart
 /// </summary>
-public interface DiagramLayoutDefinitionPart:
+public interface DiagramLayoutDefinitionPart
 {
   public string? ContentType { get; set; }
   /// <summary>

@@ -6,14 +6,14 @@ namespace DocumentModel;
 /// <summary>
 ///   These settings specify all document-level properties which affect the handling of the current document. 
 /// </summary>
-public interface IDocumentSettings : DocumentProperties
+public interface DocumentSettings : DocumentProperties
 {
   /// <summary>
   /// This element specifies information about the parameters of the grammar checking 
   /// which was performed on the contents of the current WordprocessingML document. 
   /// </summary>
   [Category("Proofing")]
-  public IActiveWritingStyles? ActiveWritingStyles { get; set; }
+  public ActiveWritingStyles? ActiveWritingStyles { get; set; }
   /// <summary>
   /// This element specifies that paragraph borders specified using the pBdr element (§17.3.1.24) 
   /// and table borders using the tblBorders element (§17.4.39) shall be adjusted to align with extents of the page border 
@@ -254,7 +254,7 @@ public interface IDocumentSettings : DocumentProperties
   /// A document variable is a storage location for arbitrary customer data in name/value pairs 
   /// that is persisted in a given WordprocessingML document
   /// </summary>
-  public DocumentVariables? DocumentVariables { get; set; }
+  public Variables? DocumentVariables { get; set; }
   /// <summary>
   /// This element specifies that pictures in this document shall not automatically be compressed 
   /// when saving the document in order to reduce the overall size of the resulting WordprocessingML document.
@@ -537,7 +537,7 @@ public interface IDocumentSettings : DocumentProperties
   /// Applications which modify the document contents without checking spelling or grammar should reset these states as needed.
   /// </summary>
   [Category("Proofing")]
-  public IProofState? ProofState { get; set; }
+  public ProofState? ProofState { get; set; }
   /// <summary>
   /// This element specifies the exact set of page and text sizing parameters which shall be used to display 
   /// the contents of a WordprocessingML document. 
@@ -564,7 +564,7 @@ public interface IDocumentSettings : DocumentProperties
   /// which exist in the document's contents (persisted or in memory).
   /// </summary>
   [Category("View")]
-  public IRevisionView? RevisionView { get; set; }
+  public RevisionView? RevisionView { get; set; }
   /// <summary>
   /// This element specifies the set of revision save ID values for the current document. 
   /// Revision save ID values refer to four-digit hexadecimal values which uniquely identify 
@@ -722,10 +722,10 @@ public interface IDocumentSettings : DocumentProperties
   /// this setting is not intended as a security feature and can be ignored.
   /// </summary>
   [Category("Protection")]
-  public IWriteProtection? WriteProtection { get; set; }
+  public WriteProtection? WriteProtection { get; set; }
   /// <summary>
   /// This element specifies the magnification level which should be applied to a document when it is displayed by an application.
   /// </summary>
   [Category("View")]
-  public IZoom? Zoom { get; set; }
+  public Zoom? Zoom { get; set; }
 }

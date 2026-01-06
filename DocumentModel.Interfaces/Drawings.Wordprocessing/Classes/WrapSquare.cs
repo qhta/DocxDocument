@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Square Wrapping.
 /// </summary>
-public interface WrapSquare:
+public interface WrapSquare
 {
   /// <summary>
   ///   Text Wrapping Location

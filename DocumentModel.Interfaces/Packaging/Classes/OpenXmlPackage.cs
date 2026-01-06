@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Represents a base interface for strong typed Open XML document classes.
 /// </summary>
-public interface OpenXmlPackage:
+public interface OpenXmlPackage
 {
   /// <summary>
   ///   Gets a value indicating whether this package contains Transitional relationships converted from Strict.

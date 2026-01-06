@@ -53,7 +53,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public interface RgbColorModelPercentage:
+public interface RgbColorModelPercentage
 {
   /// <summary>
   /// Gets or sets the red component as a percentage value.

@@ -7,6 +7,6 @@ public interface BodyType : Story
   /// <summary>
   /// Collection of sections which is recollected from ISectionProperties elements
   /// </summary>
-  public SectionsCollection? Sections { get; set; }
+  public Sections? Sections { get; set; }
 
 }

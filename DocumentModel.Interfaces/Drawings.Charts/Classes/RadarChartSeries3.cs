@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the RadarChartSeries Class.
 /// </summary>
-public interface RadarChartSeries3:
+public interface RadarChartSeries3
 {
   /// <summary>
   ///   Index.
