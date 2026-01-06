@@ -1,24 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Camera.
+/// Camera settings for 3D effects in drawing elements.
 /// </summary>
 public interface Camera
 {
   /// <summary>
-  ///   Preset Camera Type
+  /// Preset camera type.
   /// </summary>
   public PresetCameraKind? Preset { get; set; }
+
   /// <summary>
-  ///   Field of View
+  /// Field of view.
   /// </summary>
   public Int32? FieldOfView { get; set; }
+
   /// <summary>
-  ///   Zoom
+  /// Zoom factor.
   /// </summary>
   public Int32? Zoom { get; set; }
+
   /// <summary>
-  ///   Rotation.
+  /// Camera rotation.
   /// </summary>
   public Rotation? Rotation { get; set; }
 }

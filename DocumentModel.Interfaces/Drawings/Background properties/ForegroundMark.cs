@@ -1,24 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ForegroundMark interface.
+/// Represents a foreground mark defined by two coordinate points, typically used to specify areas to retain during background removal processing.
 /// </summary>
 public interface ForegroundMark
 {
   /// <summary>
-  ///   x1
+  /// Gets or sets the X coordinate of the first point.
   /// </summary>
   public Int32? FirstXCoordinate { get; set; }
+
   /// <summary>
-  ///   y1
+  /// Gets or sets the Y coordinate of the first point.
   /// </summary>
   public Int32? FirstYCoordinate { get; set; }
+
   /// <summary>
-  ///   x2
+  /// Gets or sets the X coordinate of the second point.
   /// </summary>
   public Int32? SecondXCoordinate { get; set; }
+
   /// <summary>
-  ///   y2
+  /// Gets or sets the Y coordinate of the second point.
   /// </summary>
   public Int32? SecondYCoordinate { get; set; }
 }

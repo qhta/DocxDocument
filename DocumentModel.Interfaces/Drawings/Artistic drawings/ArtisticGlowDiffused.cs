@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticGlowDiffused interface.
+/// Represents an artistic diffused glow effect, which simulates a soft glowing appearance with adjustable transparency and intensity.
 /// </summary>
 public interface ArtisticGlowDiffused
 {
   /// <summary>
-  ///   trans
+  /// Gets or sets the transparency level of the diffused glow effect.
   /// </summary>
-  public Int32? Transparancy { get; set; }
+  public Int32? Transparency { get; set; }
+
   /// <summary>
-  ///   intensity
+  /// Gets or sets the intensity of the diffused glow effect, influencing the strength of the glow.
   /// </summary>
   public Int32? Intensity { get; set; }
 }

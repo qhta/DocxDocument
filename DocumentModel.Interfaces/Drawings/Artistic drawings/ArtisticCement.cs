@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticCement interface.
+/// Represents an artistic cement effect, which simulates a cement texture with adjustable transparency and crack spacing.
 /// </summary>
 public interface ArtisticCement
 {
   /// <summary>
-  ///   trans
+  /// Gets or sets the transparency level of the cement effect.
   /// </summary>
-  public Int32? Transparancy { get; set; }
+  public Int32? Transparency { get; set; }
+
   /// <summary>
-  ///   crackSpacing
+  /// Gets or sets the spacing between cracks in the cement effect.
   /// </summary>
   public Int32? CrackSpacing { get; set; }
 }

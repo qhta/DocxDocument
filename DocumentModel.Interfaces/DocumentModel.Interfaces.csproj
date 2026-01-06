@@ -47,7 +47,6 @@
     <PackageReference Include="System.IO.Packaging" Version="10.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Colors\Drawings\" />
     <Folder Include="Drawings.Diagram2\Classes\" />
     <Folder Include="Vml\Classes\" />
   </ItemGroup>

@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
-///   Defines the Color2Type interface.
+///   Defines the ColorType interface.
 /// </summary>
-public partial interface Color2Type
+public interface Color2Type
 {
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

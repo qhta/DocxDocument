@@ -1,24 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BackgroundProperties interface.
+/// Represents background properties, including black and white rendering modes and target screen size for display.
 /// </summary>
 public interface BackgroundProperties
 {
   /// <summary>
-  ///   bwMode
+  /// Gets or sets the black and white mode for background rendering.
   /// </summary>
   public BlackWhiteMode? Mode { get; set; }
+
   /// <summary>
-  ///   bwPure
+  /// Gets or sets the pure black and white mode for background rendering.
   /// </summary>
   public BlackWhiteMode? Pure { get; set; }
+
   /// <summary>
-  ///   bwNormal
+  /// Gets or sets the normal black and white mode for background rendering.
   /// </summary>
   public BlackWhiteMode? Normal { get; set; }
+
   /// <summary>
-  ///   targetScreenSize
+  /// Gets or sets the target screen size for which the background is optimized.
   /// </summary>
   public TargetScreenSize? TargetScreenSize { get; set; }
 }

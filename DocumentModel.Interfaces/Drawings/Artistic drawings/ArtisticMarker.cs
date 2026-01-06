@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticMarker interface.
+/// Represents an artistic marker effect, which simulates a marker drawing style with adjustable transparency and size.
 /// </summary>
 public interface ArtisticMarker
 {
   /// <summary>
-  ///   trans
+  /// Gets or sets the transparency level of the marker effect.
   /// </summary>
-  public Int32? Transparancy { get; set; }
+  public Int32? Transparency { get; set; }
+
   /// <summary>
-  ///   size
+  /// Gets or sets the size of the marker used in the effect, influencing the thickness of the strokes.
   /// </summary>
   public Int32? Size { get; set; }
 }

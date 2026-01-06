@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticLineDrawing interface.
+/// Represents an artistic line drawing effect, which simulates a hand-drawn line style with adjustable transparency and pencil size.
 /// </summary>
 public interface ArtisticLineDrawing
 {
   /// <summary>
-  ///   trans
+  /// Gets or sets the transparency level of the line drawing effect.
   /// </summary>
-  public Int32? Transparancy { get; set; }
+  public Int32? Transparency { get; set; }
+
   /// <summary>
-  ///   pencilSize
+  /// Gets or sets the size of the pencil used in the line drawing effect, influencing the thickness of the lines.
   /// </summary>
   public Int32? PencilSize { get; set; }
 }

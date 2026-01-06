@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticPhotocopy interface.
+/// Represents an artistic photocopy effect, which simulates a photocopied appearance with adjustable transparency and detail.
 /// </summary>
 public interface ArtisticPhotocopy
 {
   /// <summary>
-  ///   trans
+  /// Gets or sets the transparency level of the photocopy effect.
   /// </summary>
-  public Int32? Transparancy { get; set; }
+  public Int32? Transparency { get; set; }
+
   /// <summary>
-  ///   detail
+  /// Gets or sets the detail level of the photocopy effect, influencing the sharpness and clarity of the simulated photocopy.
   /// </summary>
   public Int32? Detail { get; set; }
 }

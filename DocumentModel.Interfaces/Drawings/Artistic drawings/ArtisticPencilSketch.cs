@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticPencilSketch interface.
+/// Represents an artistic pencil sketch effect, which simulates a pencil sketch style with adjustable transparency and pressure.
 /// </summary>
 public interface ArtisticPencilSketch
 {
   /// <summary>
-  ///   trans
+  /// Gets or sets the transparency level of the pencil sketch effect.
   /// </summary>
-  public Int32? Transparancy { get; set; }
+  public Int32? Transparency { get; set; }
+
   /// <summary>
-  ///   pressure
+  /// Gets or sets the pressure applied in the pencil sketch effect, influencing the intensity and darkness of the strokes.
   /// </summary>
   public Int32? Pressure { get; set; }
 }

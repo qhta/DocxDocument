@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticWatercolorSponge interface.
+/// Represents an artistic watercolor sponge effect, which simulates a watercolor texture with adjustable transparency and brush size.
 /// </summary>
 public interface ArtisticWatercolorSponge
 {
   /// <summary>
-  ///   trans
+  /// Gets or sets the transparency level of the watercolor sponge effect.
   /// </summary>
-  public Int32? Transparancy { get; set; }
+  public Int32? Transparency { get; set; }
+
   /// <summary>
-  ///   brushSize
+  /// Gets or sets the size of the brush used in the watercolor sponge effect, influencing the coverage and texture.
   /// </summary>
   public Int32? BrushSize { get; set; }
 }

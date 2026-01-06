@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticPaintStrokes interface.
+/// Represents an artistic paint strokes effect, which simulates painted strokes with adjustable transparency and intensity.
 /// </summary>
 public interface ArtisticPaintStrokes
 {
   /// <summary>
-  ///   trans
+  /// Gets or sets the transparency level of the paint strokes effect.
   /// </summary>
-  public Int32? Transparancy { get; set; }
+  public Int32? Transparency { get; set; }
+
   /// <summary>
-  ///   intensity
+  /// Gets or sets the intensity of the paint strokes effect, influencing the strength and visibility of the strokes.
   /// </summary>
   public Int32? Intensity { get; set; }
 }
