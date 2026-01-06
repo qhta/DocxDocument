@@ -1,20 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the BevelType interface.
+/// Represents a bevel effect, defining the width, height, and preset style for 3D effects on shapes.
 /// </summary>
 public interface BevelType
 {
   /// <summary>
-  ///   Width
+  /// Width of the bevel.
   /// </summary>
   public Int64? Width { get; set; }
+
   /// <summary>
-  ///   Height
+  /// Height of the bevel.
   /// </summary>
   public Int64? Height { get; set; }
+
   /// <summary>
-  ///   Preset Bevel
+  /// Preset bevel style.
   /// </summary>
   public BevelPresetKind? Preset { get; set; }
 }

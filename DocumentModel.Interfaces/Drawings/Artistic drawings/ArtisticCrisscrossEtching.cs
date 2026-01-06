@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings;
 public interface ArtisticCrisscrossEtching
 {
   /// <summary>
-  /// Gets or sets the transparency level of the crisscross etching effect.
+  /// Transparency level of the crisscross etching effect.
   /// </summary>
   public Int32? Transparency { get; set; }
 
   /// <summary>
-  /// Gets or sets the pressure applied in the crisscross etching effect, influencing the intensity of the etched lines.
+  /// Pressure applied in the crisscross etching effect, influencing the intensity of the etched lines.
   /// </summary>
   public Int32? Pressure { get; set; }
 }

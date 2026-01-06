@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings;
 public interface ArtisticMarker
 {
   /// <summary>
-  /// Gets or sets the transparency level of the marker effect.
+  /// Transparency level of the marker effect.
   /// </summary>
   public Int32? Transparency { get; set; }
 
   /// <summary>
-  /// Gets or sets the size of the marker used in the effect, influencing the thickness of the strokes.
+  /// Size of the marker used in the effect, influencing the thickness of the strokes.
   /// </summary>
   public Int32? Size { get; set; }
 }

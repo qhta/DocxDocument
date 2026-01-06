@@ -46,7 +46,7 @@ namespace DocumentModel.Drawings;
 public interface Effect
 {
   /// <summary>
-  ///   Gets or sets the reference identifier that links to a specific effect definition.
+  ///   Reference identifier that links to a specific effect definition.
   /// </summary>
   /// <remarks>
   ///   <para>

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the PictureLocks interface.
 /// </summary>
-public interface PictureLocks
+public interface PictureLocks: ExtendableElement
 {
   /// <summary>
   ///   Disallow Shape Grouping
@@ -49,8 +49,4 @@ public interface PictureLocks
   ///   Disallow Crop Changes
   /// </summary>
   public bool? NoCrop { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

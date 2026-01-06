@@ -1,120 +1,147 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ImageEffect interface.
+/// Represents an image effect, including visibility, a variety of artistic effects, image adjustments, and extension options.
 /// </summary>
-public interface ImageEffect
+public interface ImageEffect: ExtendableElement
 {
   /// <summary>
-  ///   visible
+  /// Gets or sets a value indicating whether the effect is visible.
   /// </summary>
   public bool? Visible { get; set; }
+
   /// <summary>
-  ///   ArtisticBlur.
+  /// Artistic blur effect.
   /// </summary>
   public ArtisticBlur? ArtisticBlur { get; set; }
+
   /// <summary>
-  ///   ArtisticCement.
+  /// Artistic cement effect.
   /// </summary>
   public ArtisticCement? ArtisticCement { get; set; }
+
   /// <summary>
-  ///   ArtisticChalkSketch.
+  /// Artistic chalk sketch effect.
   /// </summary>
   public ArtisticChalkSketch? ArtisticChalkSketch { get; set; }
+
   /// <summary>
-  ///   ArtisticCrisscrossEtching.
+  /// Artistic crisscross etching effect.
   /// </summary>
   public ArtisticCrisscrossEtching? ArtisticCrisscrossEtching { get; set; }
+
   /// <summary>
-  ///   ArtisticCutout.
+  /// Artistic cutout effect.
   /// </summary>
   public ArtisticCutout? ArtisticCutout { get; set; }
+
   /// <summary>
-  ///   ArtisticFilmGrain.
+  /// Artistic film grain effect.
   /// </summary>
   public ArtisticFilmGrain? ArtisticFilmGrain { get; set; }
+
   /// <summary>
-  ///   ArtisticGlass.
+  /// Artistic glass effect.
   /// </summary>
   public ArtisticGlass? ArtisticGlass { get; set; }
+
   /// <summary>
-  ///   ArtisticGlowDiffused.
+  /// Artistic diffused glow effect.
   /// </summary>
   public ArtisticGlowDiffused? ArtisticGlowDiffused { get; set; }
+
   /// <summary>
-  ///   ArtisticGlowEdges.
+  /// Artistic glow edges effect.
   /// </summary>
   public ArtisticGlowEdges? ArtisticGlowEdges { get; set; }
+
   /// <summary>
-  ///   ArtisticLightScreen.
+  /// Artistic light screen effect.
   /// </summary>
   public ArtisticLightScreen? ArtisticLightScreen { get; set; }
+
   /// <summary>
-  ///   ArtisticLineDrawing.
+  /// Artistic line drawing effect.
   /// </summary>
   public ArtisticLineDrawing? ArtisticLineDrawing { get; set; }
+
   /// <summary>
-  ///   ArtisticMarker.
+  /// Artistic marker effect.
   /// </summary>
   public ArtisticMarker? ArtisticMarker { get; set; }
+
   /// <summary>
-  ///   ArtisticMosaicBubbles.
+  /// Artistic mosaic bubbles effect.
   /// </summary>
   public ArtisticMosaicBubbles? ArtisticMosaicBubbles { get; set; }
+
   /// <summary>
-  ///   ArtisticPaintStrokes.
+  /// Artistic paint strokes effect.
   /// </summary>
   public ArtisticPaintStrokes? ArtisticPaintStrokes { get; set; }
+
   /// <summary>
-  ///   ArtisticPaintBrush.
+  /// Artistic paint brush effect.
   /// </summary>
   public ArtisticPaintBrush? ArtisticPaintBrush { get; set; }
+
   /// <summary>
-  ///   ArtisticPastelsSmooth.
+  /// Artistic pastels smooth effect.
   /// </summary>
   public ArtisticPastelsSmooth? ArtisticPastelsSmooth { get; set; }
+
   /// <summary>
-  ///   ArtisticPencilGrayscale.
+  /// Artistic pencil grayscale effect.
   /// </summary>
   public ArtisticPencilGrayscale? ArtisticPencilGrayscale { get; set; }
+
   /// <summary>
-  ///   ArtisticPencilSketch.
+  /// Artistic pencil sketch effect.
   /// </summary>
   public ArtisticPencilSketch? ArtisticPencilSketch { get; set; }
+
   /// <summary>
-  ///   ArtisticPhotocopy.
+  /// Artistic photocopy effect.
   /// </summary>
   public ArtisticPhotocopy? ArtisticPhotocopy { get; set; }
+
   /// <summary>
-  ///   ArtisticPlasticWrap.
+  /// Artistic plastic wrap effect.
   /// </summary>
   public ArtisticPlasticWrap? ArtisticPlasticWrap { get; set; }
+
   /// <summary>
-  ///   ArtisticTexturizer.
+  /// Artistic texturizer effect.
   /// </summary>
   public ArtisticTexturizer? ArtisticTexturizer { get; set; }
+
   /// <summary>
-  ///   ArtisticWatercolorSponge.
+  /// Artistic watercolor sponge effect.
   /// </summary>
   public ArtisticWatercolorSponge? ArtisticWatercolorSponge { get; set; }
+
   /// <summary>
-  ///   BackgroundRemoval.
+  /// Background removal effect.
   /// </summary>
   public BackgroundRemoval? BackgroundRemoval { get; set; }
+
   /// <summary>
-  ///   BrightnessContrast.
+  /// Brightness and contrast adjustment.
   /// </summary>
   public BrightnessContrast? BrightnessContrast { get; set; }
+
   /// <summary>
-  ///   ColorTemperature.
+  /// Color temperature adjustment.
   /// </summary>
   public ColorTemperature? ColorTemperature { get; set; }
+
   /// <summary>
-  ///   Saturation.
+  /// Saturation adjustment.
   /// </summary>
   public Saturation2? Saturation { get; set; }
+
   /// <summary>
-  ///   SharpenSoften.
+  /// Sharpen or soften adjustment.
   /// </summary>
   public SharpenSoften? SharpenSoften { get; set; }
 }

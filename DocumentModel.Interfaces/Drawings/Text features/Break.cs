@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Text Line Break.
+/// Represents a text line break within a drawing, optionally including run properties for the break.
 /// </summary>
 public interface Break
 {
   /// <summary>
-  ///   Text Run Properties.
+  /// Text run properties applied to the break.
   /// </summary>
   public RunProperties? RunProperties { get; set; }
 }

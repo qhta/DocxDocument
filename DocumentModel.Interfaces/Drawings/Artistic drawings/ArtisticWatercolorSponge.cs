@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings;
 public interface ArtisticWatercolorSponge
 {
   /// <summary>
-  /// Gets or sets the transparency level of the watercolor sponge effect.
+  /// Transparency level of the watercolor sponge effect.
   /// </summary>
   public Int32? Transparency { get; set; }
 
   /// <summary>
-  /// Gets or sets the size of the brush used in the watercolor sponge effect, influencing the coverage and texture.
+  /// Size of the brush used in the watercolor sponge effect, influencing the coverage and texture.
   /// </summary>
   public Int32? BrushSize { get; set; }
 }

@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings;
 public interface AdjustHandleList
 {
   /// <summary>
-  /// Gets or sets the XY adjust handle, which provides guides and limits for horizontal and vertical adjustments.
+  /// XY adjust handle, which provides guides and limits for horizontal and vertical adjustments.
   /// </summary>
   public AdjustHandleXY? AdjustHandleXY { get; set; }
 
   /// <summary>
-  /// Gets or sets the polar adjust handle, which provides guides and limits for radial and angular adjustments.
+  /// Polar adjust handle, which provides guides and limits for radial and angular adjustments.
   /// </summary>
   public AdjustHandlePolar? AdjustHandlePolar { get; set; }
 }

@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings;
 public interface AdjustPoint2DType
 {
   /// <summary>
-  /// Gets or sets the X-coordinate of the adjustment point.
+  /// X-coordinate of the adjustment point.
   /// </summary>
   public string? X { get; set; }
 
   /// <summary>
-  /// Gets or sets the Y-coordinate of the adjustment point.
+  /// Y-coordinate of the adjustment point.
   /// </summary>
   public string? Y { get; set; }
 }

@@ -3,30 +3,30 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a color using the Hue, Saturation, and Luminance (HSL) color model, with additional color adjustment properties.
 /// </summary>
-public interface HslColor
+public interface HslColor: ExtendableElement
 {
   /// <summary>
-  /// Gets or sets the base hue value.
+  /// Base hue value.
   /// </summary>
   public Int32? HueValue { get; set; }
 
   /// <summary>
-  /// Gets or sets the base saturation value.
+  /// Base saturation value.
   /// </summary>
   public Int32? SatValue { get; set; }
 
   /// <summary>
-  /// Gets or sets the base luminance value.
+  /// Base luminance value.
   /// </summary>
   public Int32? LumValue { get; set; }
 
   /// <summary>
-  /// Gets or sets the tint adjustment.
+  /// Tint adjustment.
   /// </summary>
   public Int32? Tint { get; set; }
 
   /// <summary>
-  /// Gets or sets the shade adjustment.
+  /// Shade adjustment.
   /// </summary>
   public Int32? Shade { get; set; }
 
@@ -49,107 +49,107 @@ public interface HslColor
   public Boolean Gray { get; set; }
 
   /// <summary>
-  /// Gets or sets the alpha (transparency) value.
+  /// Alpha (transparency) value.
   /// </summary>
   public Int32? Alpha { get; set; }
 
   /// <summary>
-  /// Gets or sets the alpha offset adjustment.
+  /// Alpha offset adjustment.
   /// </summary>
   public Int32? AlphaOffset { get; set; }
 
   /// <summary>
-  /// Gets or sets the alpha modulation adjustment.
+  /// Alpha modulation adjustment.
   /// </summary>
   public Int32? AlphaModulation { get; set; }
 
   /// <summary>
-  /// Gets or sets the hue adjustment.
+  /// Hue adjustment.
   /// </summary>
   public Int32? Hue { get; set; }
 
   /// <summary>
-  /// Gets or sets the hue offset adjustment.
+  /// Hue offset adjustment.
   /// </summary>
   public Int32? HueOffset { get; set; }
 
   /// <summary>
-  /// Gets or sets the hue modulation adjustment.
+  /// Hue modulation adjustment.
   /// </summary>
   public Int32? HueModulation { get; set; }
 
   /// <summary>
-  /// Gets or sets the saturation adjustment.
+  /// Saturation adjustment.
   /// </summary>
   public Int32? Saturation { get; set; }
 
   /// <summary>
-  /// Gets or sets the saturation offset adjustment.
+  /// Saturation offset adjustment.
   /// </summary>
   public Int32? SaturationOffset { get; set; }
 
   /// <summary>
-  /// Gets or sets the saturation modulation adjustment.
+  /// Saturation modulation adjustment.
   /// </summary>
   public Int32? SaturationModulation { get; set; }
 
   /// <summary>
-  /// Gets or sets the luminance adjustment.
+  /// Luminance adjustment.
   /// </summary>
   public Int32? Luminance { get; set; }
 
   /// <summary>
-  /// Gets or sets the luminance offset adjustment.
+  /// Luminance offset adjustment.
   /// </summary>
   public Int32? LuminanceOffset { get; set; }
 
   /// <summary>
-  /// Gets or sets the luminance modulation adjustment.
+  /// Luminance modulation adjustment.
   /// </summary>
   public Int32? LuminanceModulation { get; set; }
 
   /// <summary>
-  /// Gets or sets the red channel adjustment.
+  /// Red channel adjustment.
   /// </summary>
   public Int32? Red { get; set; }
 
   /// <summary>
-  /// Gets or sets the red channel offset adjustment.
+  /// Red channel offset adjustment.
   /// </summary>
   public Int32? RedOffset { get; set; }
 
   /// <summary>
-  /// Gets or sets the red channel modulation adjustment.
+  /// Red channel modulation adjustment.
   /// </summary>
   public Int32? RedModulation { get; set; }
 
   /// <summary>
-  /// Gets or sets the green channel adjustment.
+  /// Green channel adjustment.
   /// </summary>
   public Int32? Green { get; set; }
 
   /// <summary>
-  /// Gets or sets the green channel offset adjustment.
+  /// Green channel offset adjustment.
   /// </summary>
   public Int32? GreenOffset { get; set; }
 
   /// <summary>
-  /// Gets or sets the green channel modulation adjustment.
+  /// Green channel modulation adjustment.
   /// </summary>
   public Int32? GreenModulation { get; set; }
 
   /// <summary>
-  /// Gets or sets the blue channel adjustment.
+  /// Blue channel adjustment.
   /// </summary>
   public Int32? Blue { get; set; }
 
   /// <summary>
-  /// Gets or sets the blue channel offset adjustment.
+  /// Blue channel offset adjustment.
   /// </summary>
   public Int32? BlueOffset { get; set; }
 
   /// <summary>
-  /// Gets or sets the blue channel modulation adjustment.
+  /// Blue channel modulation adjustment.
   /// </summary>
   public Int32? BlueModulation { get; set; }
 
@@ -164,9 +164,4 @@ public interface HslColor
   /// </summary>
   [DefaultValue(false)]
   public Boolean InverseGamma { get; set; }
-
-  /// <summary>
-  /// Gets or sets the extension list for additional color properties.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

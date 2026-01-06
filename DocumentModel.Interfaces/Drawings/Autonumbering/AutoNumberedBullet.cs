@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Auto-Numbered Bullet.
+/// Represents an auto-numbered bullet, specifying the numbering scheme and starting value for bullet lists.
 /// </summary>
 public interface AutoNumberedBullet
 {
   /// <summary>
-  ///   Bullet Autonumbering Type
+  /// Bullet autonumbering type.
   /// </summary>
   public TextAutoNumberSchemeKind? Type { get; set; }
+
   /// <summary>
-  ///   Start Numbering At
+  /// Starting value for numbering.
   /// </summary>
   public Int32? StartAt { get; set; }
 }

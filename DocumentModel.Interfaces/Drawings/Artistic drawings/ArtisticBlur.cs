@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface ArtisticBlur
 {
   /// <summary>
-  /// Gets or sets the radius of the artistic blur effect.
+  /// Radius of the artistic blur effect.
   /// </summary>
   public Int32? Radius { get; set; }
 }

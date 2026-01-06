@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ThemeElements interface.
 /// </summary>
-public interface ThemeElements
+public interface ThemeElements: ExtendableElement
 {
   /// <summary>
   ///   ColorScheme.
@@ -17,8 +17,4 @@ public interface ThemeElements
   ///   Format Scheme.
   /// </summary>
   public FormatScheme? FormatScheme { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

@@ -26,7 +26,7 @@ namespace DocumentModel.Drawings;
 public interface EffectContainerType
 {
   /// <summary>
-  ///   Gets or sets the type of the effect container, indicating how effects are grouped or applied.
+  ///   Type of the effect container, indicating how effects are grouped or applied.
   /// </summary>
   /// <remarks>
   ///   <para>
@@ -46,7 +46,7 @@ public interface EffectContainerType
   public EffectContainerKind? Type { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of the effect container for identification or documentation purposes.
+  ///   Name of the effect container for identification or documentation purposes.
   /// </summary>
   /// <remarks>
   ///   <para>
