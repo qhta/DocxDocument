@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the color replacement effect for drawing elements.
 /// </summary>
-public interface ColorReplacement
+public interface ColorReplacement: ExtendableElement
 {
   /// <summary>
   /// RGB color model - percentage variant.
@@ -34,9 +34,4 @@ public interface ColorReplacement
   /// Preset color.
   /// </summary>
   public PresetColor? PresetColor { get; set; }
-
-  /// <summary>
-  /// Extension list.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

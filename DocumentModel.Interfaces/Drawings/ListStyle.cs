@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ListStyle interface.
 /// </summary>
-public interface ListStyle
+public interface ListStyle: ExtendableElement
 {
   /// <summary>
   ///   Default Paragraph Style.
@@ -45,8 +45,4 @@ public interface ListStyle
   ///   List Level 9 Text Style.
   /// </summary>
   public ParagraphProperties? Level9ParagraphProperties { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 }

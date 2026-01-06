@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface BiLevel
 {
   /// <summary>
-  /// Gets or sets the threshold value used to determine the separation between the two levels.
+  /// Threshold value used to determine the separation between the two levels.
   /// </summary>
   public Int32? Threshold { get; set; }
 }

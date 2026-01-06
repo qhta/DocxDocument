@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings;
 public interface ArtisticPaintStrokes
 {
   /// <summary>
-  /// Gets or sets the transparency level of the paint strokes effect.
+  /// Transparency level of the paint strokes effect.
   /// </summary>
   public Int32? Transparency { get; set; }
 
   /// <summary>
-  /// Gets or sets the intensity of the paint strokes effect, influencing the strength and visibility of the strokes.
+  /// Intensity of the paint strokes effect, influencing the strength and visibility of the strokes.
   /// </summary>
   public Int32? Intensity { get; set; }
 }

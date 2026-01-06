@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Blend Effect.
+/// Represents a blend effect, allowing the combination of effects using a specified blend mode.
 /// </summary>
 public interface Blend
 {
   /// <summary>
-  ///   Blend Mode
+  /// Blend mode used to combine effects.
   /// </summary>
   public BlendMode? BlendMode { get; set; }
+
   /// <summary>
-  ///   Effect to blend.
+  /// Effect container that is blended using the specified blend mode.
   /// </summary>
   public EffectContainer? EffectContainer { get; set; }
 }

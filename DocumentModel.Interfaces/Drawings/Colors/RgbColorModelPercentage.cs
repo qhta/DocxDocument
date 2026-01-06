@@ -56,7 +56,7 @@ namespace DocumentModel.Drawings;
 public interface RgbColorModelPercentage
 {
   /// <summary>
-  /// Gets or sets the red component as a percentage value.
+  /// Red component as a percentage value.
   /// </summary>
   /// <remarks>
   /// Specifies the amount of red in the color where 0 is no red and 100000 is maximum red (100%).
@@ -66,7 +66,7 @@ public interface RgbColorModelPercentage
   public Int32? RedPortion { get; set; }
   
   /// <summary>
-  /// Gets or sets the green component as a percentage value.
+  /// Green component as a percentage value.
   /// </summary>
   /// <remarks>
   /// Specifies the amount of green in the color where 0 is no green and 100000 is maximum green (100%).
@@ -76,7 +76,7 @@ public interface RgbColorModelPercentage
   public Int32? GreenPortion { get; set; }
   
   /// <summary>
-  /// Gets or sets the blue component as a percentage value.
+  /// Blue component as a percentage value.
   /// </summary>
   /// <remarks>
   /// Specifies the amount of blue in the color where 0 is no blue and 100000 is maximum blue (100%).
@@ -86,7 +86,7 @@ public interface RgbColorModelPercentage
   public Int32? BluePortion { get; set; }
   
   /// <summary>
-  /// Gets or sets the tint value to lighten the color.
+  /// Tint value to lighten the color.
   /// </summary>
   /// <remarks>
   /// <para>
@@ -106,7 +106,7 @@ public interface RgbColorModelPercentage
   public Int32? Tint { get; set; }
   
   /// <summary>
-  /// Gets or sets the shade value to darken the color.
+  /// Shade value to darken the color.
   /// </summary>
   /// <remarks>
   /// <para>
@@ -155,7 +155,7 @@ public interface RgbColorModelPercentage
   public Boolean Gray { get; set; }
   
   /// <summary>
-  /// Gets or sets the absolute alpha (transparency) value.
+  /// Absolute alpha (transparency) value.
   /// </summary>
   /// <remarks>
   /// Specifies the opacity of the color where 0 is fully transparent and 100000 is fully opaque (100%).
@@ -164,7 +164,7 @@ public interface RgbColorModelPercentage
   public Int32? Alpha { get; set; }
   
   /// <summary>
-  /// Gets or sets the alpha (transparency) offset adjustment.
+  /// Alpha (transparency) offset adjustment.
   /// </summary>
   /// <remarks>
   /// Adds or subtracts from the base alpha value. Range is typically -100000 to +100000.
@@ -173,7 +173,7 @@ public interface RgbColorModelPercentage
   public Int32? AlphaOffset { get; set; }
   
   /// <summary>
-  /// Gets or sets the alpha (transparency) modulation percentage.
+  /// Alpha (transparency) modulation percentage.
   /// </summary>
   /// <remarks>
   /// Multiplies the base alpha by this percentage. A value of 50000 (50%) makes the color twice as transparent.
@@ -182,7 +182,7 @@ public interface RgbColorModelPercentage
   public Int32? AlphaModulation { get; set; }
   
   /// <summary>
-  /// Gets or sets the absolute hue value in the HSL color space.
+  /// Absolute hue value in the HSL color space.
   /// </summary>
   /// <remarks>
   /// Specifies the hue angle in degrees (0-360), represented as 0-21600000 units (1/60000th of a degree).
@@ -191,7 +191,7 @@ public interface RgbColorModelPercentage
   public Int32? Hue { get; set; }
   
   /// <summary>
-  /// Gets or sets the hue offset adjustment in the HSL color space.
+  /// Hue offset adjustment in the HSL color space.
   /// </summary>
   /// <remarks>
   /// Adds or subtracts from the base hue value to shift the color around the color wheel.
@@ -200,7 +200,7 @@ public interface RgbColorModelPercentage
   public Int32? HueOffset { get; set; }
   
   /// <summary>
-  /// Gets or sets the hue modulation percentage.
+  /// Hue modulation percentage.
   /// </summary>
   /// <remarks>
   /// Multiplies the base hue by this percentage. Used for relative hue adjustments.
@@ -209,7 +209,7 @@ public interface RgbColorModelPercentage
   public Int32? HueModulation { get; set; }
   
   /// <summary>
-  /// Gets or sets the absolute saturation value in the HSL color space.
+  /// Absolute saturation value in the HSL color space.
   /// </summary>
   /// <remarks>
   /// Specifies the color saturation where 0 is grayscale and 100000 is fully saturated (100%).
@@ -218,7 +218,7 @@ public interface RgbColorModelPercentage
   public Int32? Saturation { get; set; }
   
   /// <summary>
-  /// Gets or sets the saturation offset adjustment.
+  /// Saturation offset adjustment.
   /// </summary>
   /// <remarks>
   /// Adds or subtracts from the base saturation value. Range is typically -100000 to +100000.
@@ -227,7 +227,7 @@ public interface RgbColorModelPercentage
   public Int32? SaturationOffset { get; set; }
   
   /// <summary>
-  /// Gets or sets the saturation modulation percentage.
+  /// Saturation modulation percentage.
   /// </summary>
   /// <remarks>
   /// Multiplies the base saturation by this percentage. A value of 50000 (50%) reduces saturation by half.
@@ -236,7 +236,7 @@ public interface RgbColorModelPercentage
   public Int32? SaturationModulation { get; set; }
   
   /// <summary>
-  /// Gets or sets the absolute luminance value in the HSL color space.
+  /// Absolute luminance value in the HSL color space.
   /// </summary>
   /// <remarks>
   /// Specifies the brightness where 0 is black, 50000 is the color at normal brightness (50%), 
@@ -245,7 +245,7 @@ public interface RgbColorModelPercentage
   public Int32? Luminance { get; set; }
   
   /// <summary>
-  /// Gets or sets the luminance offset adjustment.
+  /// Luminance offset adjustment.
   /// </summary>
   /// <remarks>
   /// Adds or subtracts from the base luminance value. Range is typically -100000 to +100000.
@@ -254,7 +254,7 @@ public interface RgbColorModelPercentage
   public Int32? LuminanceOffset { get; set; }
   
   /// <summary>
-  /// Gets or sets the luminance modulation percentage.
+  /// Luminance modulation percentage.
   /// </summary>
   /// <remarks>
   /// Multiplies the base luminance by this percentage. A value of 50000 (50%) reduces brightness by half.
@@ -263,7 +263,7 @@ public interface RgbColorModelPercentage
   public Int32? LuminanceModulation { get; set; }
   
   /// <summary>
-  /// Gets or sets the absolute red channel value override.
+  /// Absolute red channel value override.
   /// </summary>
   /// <remarks>
   /// Overrides the red component (0-100000 representing 0-100%). 
@@ -273,7 +273,7 @@ public interface RgbColorModelPercentage
   public Int32? Red { get; set; }
   
   /// <summary>
-  /// Gets or sets the red channel offset adjustment.
+  /// Red channel offset adjustment.
   /// </summary>
   /// <remarks>
   /// Adds or subtracts from the red channel value. Range is typically -100000 to +100000.
@@ -282,7 +282,7 @@ public interface RgbColorModelPercentage
   public Int32? RedOffset { get; set; }
   
   /// <summary>
-  /// Gets or sets the red channel modulation percentage.
+  /// Red channel modulation percentage.
   /// </summary>
   /// <remarks>
   /// Multiplies the base red channel by this percentage. Range is 0 to 100000, where 100000 means no change.
@@ -291,7 +291,7 @@ public interface RgbColorModelPercentage
   public Int32? RedModulation { get; set; }
   
   /// <summary>
-  /// Gets or sets the absolute green channel value override.
+  /// Absolute green channel value override.
   /// </summary>
   /// <remarks>
   /// Overrides the green component (0-100000 representing 0-100%).
@@ -301,7 +301,7 @@ public interface RgbColorModelPercentage
   public Int32? Green { get; set; }
   
   /// <summary>
-  /// Gets or sets the green channel offset adjustment.
+  /// Green channel offset adjustment.
   /// </summary>
   /// <remarks>
   /// Adds or subtracts from the green channel value. Range is typically -100000 to +100000.
@@ -310,7 +310,7 @@ public interface RgbColorModelPercentage
   public Int32? GreenOffset { get; set; }
   
   /// <summary>
-  /// Gets or sets the green channel modulation percentage.
+  /// Green channel modulation percentage.
   /// </summary>
   /// <remarks>
   /// Multiplies the base green channel by this percentage. Range is 0 to 100000, where 100000 means no change.
@@ -319,7 +319,7 @@ public interface RgbColorModelPercentage
   public Int32? GreenModulation { get; set; }
   
   /// <summary>
-  /// Gets or sets the absolute blue channel value override.
+  /// Absolute blue channel value override.
   /// </summary>
   /// <remarks>
   /// Overrides the blue component (0-100000 representing 0-100%).
@@ -329,7 +329,7 @@ public interface RgbColorModelPercentage
   public Int32? Blue { get; set; }
   
   /// <summary>
-  /// Gets or sets the blue channel offset adjustment.
+  /// Blue channel offset adjustment.
   /// </summary>
   /// <remarks>
   /// Adds or subtracts from the blue channel value. Range is typically -100000 to +100000.
@@ -338,7 +338,7 @@ public interface RgbColorModelPercentage
   public Int32? BlueOffset { get; set; }
   
   /// <summary>
-  /// Gets or sets the blue channel modulation percentage.
+  /// Blue channel modulation percentage.
   /// </summary>
   /// <remarks>
   /// Multiplies the base blue channel by this percentage. Range is 0 to 100000, where 100000 means no change.

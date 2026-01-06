@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface AlphaModulationEffect
 {
   /// <summary>
-  /// Gets or sets the effect container that defines the parameters for alpha modulation.
+  /// Effect container that defines the parameters for alpha modulation.
   /// </summary>
   public EffectContainer? EffectContainer { get; set; }
 }

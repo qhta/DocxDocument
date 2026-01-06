@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface AlphaModulationFixed
 {
   /// <summary>
-  /// Gets or sets the fixed amount by which the alpha channel is modulated.
+  /// Fixed amount by which the alpha channel is modulated.
   /// </summary>
   public Int32? Amount { get; set; }
 }

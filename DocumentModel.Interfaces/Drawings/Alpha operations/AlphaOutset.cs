@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public interface AlphaOutset
 {
   /// <summary>
-  /// Gets or sets the radius value that determines the extent of the alpha inset or outset effect.
+  /// Radius value that determines the extent of the alpha inset or outset effect.
   /// </summary>
   public Int64? Radius { get; set; }
 }

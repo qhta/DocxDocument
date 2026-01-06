@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the color scheme for drawing elements.
 /// </summary>
-public partial interface ColorScheme
+public partial interface ColorScheme: ExtendableElement
 {
   /// <summary>
   /// Name.
@@ -88,11 +88,6 @@ public partial interface ColorScheme
   [XmlIgnore]
   public ThemeColor? FollowedHyperlinkColor { get; set; }
   #endregion
-
-  /// <summary>
-  /// Extension list.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
 
   /// <summary>
   /// OfficeArtExtensionList.

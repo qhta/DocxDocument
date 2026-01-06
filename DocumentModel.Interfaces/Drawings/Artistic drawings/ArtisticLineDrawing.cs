@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings;
 public interface ArtisticLineDrawing
 {
   /// <summary>
-  /// Gets or sets the transparency level of the line drawing effect.
+  /// Transparency level of the line drawing effect.
   /// </summary>
   public Int32? Transparency { get; set; }
 
   /// <summary>
-  /// Gets or sets the size of the pencil used in the line drawing effect, influencing the thickness of the lines.
+  /// Size of the pencil used in the line drawing effect, influencing the thickness of the lines.
   /// </summary>
   public Int32? PencilSize { get; set; }
 }

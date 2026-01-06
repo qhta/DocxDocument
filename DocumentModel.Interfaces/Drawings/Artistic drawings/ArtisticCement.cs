@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings;
 public interface ArtisticCement
 {
   /// <summary>
-  /// Gets or sets the transparency level of the cement effect.
+  /// Transparency level of the cement effect.
   /// </summary>
   public Int32? Transparency { get; set; }
 
   /// <summary>
-  /// Gets or sets the spacing between cracks in the cement effect.
+  /// Spacing between cracks in the cement effect.
   /// </summary>
   public Int32? CrackSpacing { get; set; }
 }

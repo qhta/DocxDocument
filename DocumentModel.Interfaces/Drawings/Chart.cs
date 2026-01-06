@@ -1,20 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Chart to Animate.
+/// Represents a chart to animate, including series and category indices, animation build step, and extension options.
 /// </summary>
 public interface Chart
 {
   /// <summary>
-  ///   Series Index
+  /// Series index for the chart animation.
   /// </summary>
   public Int32? SeriesIndex { get; set; }
+
   /// <summary>
-  ///   Category Index
+  /// Category index for the chart animation.
   /// </summary>
   public Int32? CategoryIndex { get; set; }
+
   /// <summary>
-  ///   Animation Build Step
+  /// Animation build step for the chart.
   /// </summary>
   public ChartBuildStepKind? BuildStep { get; set; }
+
+  /// <summary>
+  /// Extension list for additional chart properties.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

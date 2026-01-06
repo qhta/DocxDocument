@@ -3,13 +3,8 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the color map for drawing elements.
 /// </summary>
-public interface ColorMap
+public interface ColorMap: ExtendableElement
 {
-  /// <summary>
-  /// Extension list.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
-
   /// <summary>
   /// Background 1 color mapping.
   /// </summary>

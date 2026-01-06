@@ -22,7 +22,7 @@ namespace DocumentModel.Drawings;
 public interface ArcTo
 {
   /// <summary>
-  ///   Gets or sets the horizontal radius (width) of the ellipse from which the arc is drawn.
+  ///   Horizontal radius (width) of the ellipse from which the arc is drawn.
   /// </summary>
   /// <remarks>
   ///   <para>
@@ -45,7 +45,7 @@ public interface ArcTo
   public string? WidthRadius { get; set; }
 
   /// <summary>
-  ///   Gets or sets the vertical radius (height) of the ellipse from which the arc is drawn.
+  ///   Vertical radius (height) of the ellipse from which the arc is drawn.
   /// </summary>
   /// <remarks>
   ///   <para>
@@ -68,7 +68,7 @@ public interface ArcTo
   public string? HeightRadius { get; set; }
 
   /// <summary>
-  ///   Gets or sets the starting angle of the arc on the ellipse.
+  ///   Starting angle of the arc on the ellipse.
   /// </summary>
   /// <remarks>
   ///   <para>
@@ -99,7 +99,7 @@ public interface ArcTo
   public string? StartAngle { get; set; }
 
   /// <summary>
-  ///   Gets or sets the angular extent through which the arc sweeps.
+  ///   Angular extent through which the arc sweeps.
   /// </summary>
   /// <remarks>
   ///   <para>

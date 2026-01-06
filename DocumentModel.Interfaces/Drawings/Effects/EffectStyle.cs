@@ -3,15 +3,15 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a style that defines a set of effects and 3D properties for a drawing element.
 /// </summary>
-public interface EffectStyle : ICollectionItem
+public interface EffectStyle : ExtendableElement
 {
   /// <summary>
-  /// Gets or sets the list of effects applied to the drawing element.
+  /// List of effects applied to the drawing element.
   /// </summary>
   public EffectList? EffectList { get; set; }
 
   /// <summary>
-  /// Gets or sets the effect directed acyclic graph, which defines the structure and relationships of effects.
+  /// Effect directed acyclic graph, which defines the structure and relationships of effects.
   /// </summary>
   public EffectDag? EffectDag { get; set; }
 
