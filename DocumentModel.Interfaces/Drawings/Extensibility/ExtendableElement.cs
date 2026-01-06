@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Element that cas specify the extension list within which all future extensions of element type are defined.
+/// Element that can specify the extension list within which all future extensions of element type are defined.
 /// The extension list along with corresponding future extensions is used to extend the storage capabilities of the DrawingML framework.
 /// This allows for various new types of data to be stored natively within the framework.
 /// </summary>
