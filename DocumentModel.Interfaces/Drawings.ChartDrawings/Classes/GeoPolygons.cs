@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a collection of polygons that define the complete geographic boundaries of an entity.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IElementCollection{T}"/> of <see cref="GeoPolygon"/> and defines a collection
+///   This interface extends <see cref="ElementCollection{ItemType}"/> of <see cref="GeoPolygon"/> and defines a collection
 ///   of geometric polygons that together represent the complete boundary shape of a geographic entity. Geographic
 ///   entities often require multiple polygons to accurately represent their boundaries due to various geographic
 ///   features including disconnected territories (such as archipelagos, overseas territories, or non-contiguous regions),
@@ -24,7 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   components can be loaded, cached, or rendered independently based on visualization requirements, zoom levels, or
 ///   performance constraints.
 /// </remarks>
-public interface GeoPolygons : IElementCollection<GeoPolygon>
+public interface GeoPolygons : ElementCollection<GeoPolygon>
 {
 
 }

@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Each character in the collection includes not only text characters but also
 ///   special characters like spaces, tabs, paragraph marks, and other formatting marks.
 /// </remarks>
-public interface Characters : IElementCollection<Character>
+public interface Characters : ElementCollection<Character>
 {
   #region Collection Properties
 

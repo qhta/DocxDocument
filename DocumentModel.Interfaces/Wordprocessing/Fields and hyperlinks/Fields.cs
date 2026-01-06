@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public interface Fields: IElementCollection<Field>
+public interface Fields: ElementCollection<Field>
 {
   
 }

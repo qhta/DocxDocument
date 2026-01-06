@@ -26,6 +26,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   The collection handles scenarios where geocoding queries return multiple locations for ambiguous addresses, storing
 ///   all potential matches for comprehensive address resolution.
 /// </remarks>
-public interface GeoLocationQueryResults : IElementCollection<GeoLocationQueryResult>
+public interface GeoLocationQueryResults : ElementCollection<GeoLocationQueryResult>
 {
 }

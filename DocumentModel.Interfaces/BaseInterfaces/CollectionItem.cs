@@ -2,10 +2,10 @@
 /// <summary>
 /// Element of the collection must implement this interface.
 /// </summary>
-public interface ICollectionItem
+public interface CollectionItem
 {
   /// <summary>
   /// Collection that contains this item.
   /// </summary>
-  public IElementCollection<ICollectionItem> Collection { get; }
+  public ElementCollection<CollectionItem> Collection { get; }
 }

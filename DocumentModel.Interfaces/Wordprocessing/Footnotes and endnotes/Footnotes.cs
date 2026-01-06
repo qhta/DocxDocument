@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document Footnotes.
 /// </summary>
-public interface Footnotes: IElementCollection<Footnote>
+public interface Footnotes: ElementCollection<Footnote>
 {
 
 }

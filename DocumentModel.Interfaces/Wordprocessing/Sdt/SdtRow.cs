@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the presence of a structured document tag around a single table row..
 /// </summary>
-public interface SdtRow: IElementCollection<SdtRowContent>, TableContent, SdtRowContent
+public interface SdtRow: ElementCollection<SdtRowContent>, TableContent, SdtRowContent
 {
   /// <summary>
   ///  Specifies the set of properties which shall be applied to this structured document tag.

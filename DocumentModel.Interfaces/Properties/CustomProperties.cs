@@ -2,6 +2,6 @@
 /// <summary>
 /// Custom properties enable users to define custom metadata properties through a set of well-defined data types.
 /// </summary>
-public interface CustomProperties : IElementCollection<CustomDocumentProperty>
+public interface CustomProperties : ElementCollection<CustomDocumentProperty>
 {
 }

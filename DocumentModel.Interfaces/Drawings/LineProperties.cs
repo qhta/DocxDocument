@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the LinePropertiesType interface.
 /// </summary>
-public interface LineProperties: ITypedModelElement, DrawingProperty
+public interface LineProperties: TypedModelElement, DrawingProperty
 {
   /// <summary>
   ///   Line width

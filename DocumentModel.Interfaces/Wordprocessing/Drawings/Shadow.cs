@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Shadow Class.
 /// </summary>
-public interface Shadow: ITypedModelElement, DrawingProperty
+public interface Shadow: TypedModelElement, DrawingProperty
 {
   /// <summary>
   ///   blurRad

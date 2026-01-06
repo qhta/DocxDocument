@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a collection of contributors (authors, editors, etc.).
 /// </summary>
-public interface Contributors : IElementCollection<Contributor>
+public interface Contributors : ElementCollection<Contributor>
 {
   /// <summary>
   ///   Adds a contributor to the collection.

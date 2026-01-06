@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 ///   (such as parentheses, braces, brackets, and vertical bars), and an element contained inside. 
 ///   The delimiter may have more than one element, with a designated separator character between each element. 
 /// </summary>
-public interface Delimiter: IElementCollection<Argument>, CommonMathContent
+public interface Delimiter: ElementCollection<Argument>, CommonMathContent
 {
   /// <summary>
   ///   Specifies Delimiter object properties.

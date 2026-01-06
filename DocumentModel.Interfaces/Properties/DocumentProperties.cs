@@ -2,6 +2,6 @@
 /// <summary>
 /// Collection of document properties
 /// </summary>
-public interface DocumentProperties : IElementCollection<DocumentProperty>
+public interface DocumentProperties : ElementCollection<DocumentProperty>
 {
 }

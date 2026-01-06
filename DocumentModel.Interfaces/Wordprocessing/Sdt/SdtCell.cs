@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Cell-Level Structured Document Tag.
 /// </summary>
-public interface SdtCell: IElementCollection<SdtCellContent>, TableRowContent, SdtCellContent
+public interface SdtCell: ElementCollection<SdtCellContent>, TableRowContent, SdtCellContent
 {
   /// <summary>
   ///  Specifies the set of properties which shall be applied to this structured document tag.

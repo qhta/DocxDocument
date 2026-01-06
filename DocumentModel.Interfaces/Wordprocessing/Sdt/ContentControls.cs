@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public interface ContentControls: IElementCollection<ContentControl>
+public interface ContentControls: ElementCollection<ContentControl>
 {
   
 }

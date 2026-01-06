@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines Styles.
 /// </summary>
-public partial interface DefinedStyles : IElementCollection<Style>
+public partial interface DefinedStyles : ElementCollection<Style>
 {
   public IEnumerable<Style> ParagraphStyles
   {

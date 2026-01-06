@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing.DrawingShape;
 
-public interface Shapes: IElementCollection<Shape>
+public interface Shapes: ElementCollection<Shape>
 {
   
 }
