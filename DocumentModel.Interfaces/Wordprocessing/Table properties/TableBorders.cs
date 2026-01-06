@@ -8,33 +8,33 @@ public interface TableBorders
   /// <summary>
   ///   Table Top Border.
   /// </summary>
-  public IBorder? TopBorder { get; set; }
+  public Border? TopBorder { get; set; }
   /// <summary>
   ///   Table Left Border.
   /// </summary>
-  public IBorder? LeftBorder { get; set; }
+  public Border? LeftBorder { get; set; }
   /// <summary>
   ///   StartBorder.
   /// </summary>
-  public IBorder? StartBorder { get; set; }
+  public Border? StartBorder { get; set; }
   /// <summary>
   ///   Table Bottom Border.
   /// </summary>
-  public IBorder? BottomBorder { get; set; }
+  public Border? BottomBorder { get; set; }
   /// <summary>
   ///   Table Right Border.
   /// </summary>
-  public IBorder? RightBorder { get; set; }
+  public Border? RightBorder { get; set; }
   /// <summary>
   ///   EndBorder.
   /// </summary>
-  public IBorder? EndBorder { get; set; }
+  public Border? EndBorder { get; set; }
   /// <summary>
   ///   Table Inside Horizontal Edges Border.
   /// </summary>
-  public IBorder? InsideHorizontalBorder { get; set; }
+  public Border? InsideHorizontalBorder { get; set; }
   /// <summary>
   ///   Table Inside Vertical Edges Border.
   /// </summary>
-  public IBorder? InsideVerticalBorder { get; set; }
+  public Border? InsideVerticalBorder { get; set; }
 }

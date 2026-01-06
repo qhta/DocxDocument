@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 ///   MoveToRangeStart, MoveToRangeEnd.
 /// </summary>
 
-public interface MarkupRangeElement: IRangeMarkupElement, ICommonContent
+public interface MarkupRangeElement: RangeMarkupElement, CommonContent
 {
   /// <summary>
   ///   Specifies a unique identifier for an annotation within a WordprocessingML document. 

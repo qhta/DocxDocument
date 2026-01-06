@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Sub-Superscript Function.
 /// </summary>
-public interface SubSuperscript: ICommonMathContent
+public interface SubSuperscript: CommonMathContent
 {
   /// <summary>
   ///   Sub-Superscript Properties.

@@ -1,12 +1,12 @@
 using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
-using BorderType = DocumentModel.Wordprocessing.Vml.BorderType;
+
 namespace DocumentModel.Vml;
 
 /// <summary>
 ///   Arc Segment.
 /// </summary>
-public interface Arc: IEmbeddedObjectContent
+public interface Arc: EmbeddedObjectContent
 {
   /// <summary>
   ///   Optional String
@@ -223,7 +223,7 @@ public interface Arc: IEmbeddedObjectContent
   public Path? Path { get; set; }
   public Formulas? Formulas { get; set; }
   public ShapeHandles? ShapeHandles { get; set; }
-  public IFill? Fill { get; set; }
+  public Fill? Fill { get; set; }
   public Stroke? Stroke { get; set; }
   public Shadow? Shadow { get; set; }
   public TextBox? TextBox { get; set; }

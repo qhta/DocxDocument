@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MarkupType Class.
 /// </summary>
-public interface MarkupType2: IRangeMarkupElement, ICommonContent
+public interface MarkupType2: RangeMarkupElement, CommonContent
 {
   /// <summary>
   ///   Annotation Identifier

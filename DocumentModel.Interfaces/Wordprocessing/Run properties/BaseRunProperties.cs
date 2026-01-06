@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Base interface for all RunProperties classes.
 ///   Contains common properties.
 /// </summary>
-public interface BaseRunProperties : IElementCollection<IRunProperty>
+public interface BaseRunProperties : IElementCollection<RunProperty>
 {
   #region Common run properties
   /// <summary>
@@ -104,7 +104,7 @@ public interface BaseRunProperties : IElementCollection<IRunProperty>
   ///   This color can be explicitly specified, or set to allow the consumer to automatically choose 
   ///   an appropriate color based on the background color behind the run's content. 
   /// </summary>
-  public DM.IColor? Color { get; set; }
+  public DM.Color? Color { get; set; }
   /// <summary>
   ///   Specifies the amount of character pitch which shall be added or removed after each character in this run 
   ///   before the following character is rendered in the document. This property has an effect equivalent 
@@ -183,7 +183,7 @@ public interface BaseRunProperties : IElementCollection<IRunProperty>
   ///     </item>
   ///   </list>
   /// </summary>
-  public ILanguages? Language { get; set; }
+  public Languages? Language { get; set; }
   /// <summary>
   ///   Specifies that the contents of this run shall not report any errors when the document is scanned for spelling and grammar.
   /// </summary>
@@ -216,7 +216,7 @@ public interface BaseRunProperties : IElementCollection<IRunProperty>
   ///  then those two runs shall be considered to be part of the same run border group and rendered 
   ///  within the same set of borders in the document.
   /// </summary>
-  public IBorder? Border { get; set; }
+  public Border? Border { get; set; }
   /// <summary>
   ///   Specifies an animated text effect which should be displayed when rendering the contents of this run. 
   ///   This effect is rendered around the extents of the text in the run in the same location as a run border with zero pixels of padding would be rendered (if such a run border was present).

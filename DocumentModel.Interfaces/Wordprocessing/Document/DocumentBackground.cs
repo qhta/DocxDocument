@@ -8,7 +8,7 @@ public interface DocumentBackground
   /// <summary>
   ///   Specifies the color for the background of the document.
   /// </summary>
-  public DM.IColor? Color { get; set; }
+  public DM.Color? Color { get; set; }
   /// <summary>
   ///   Background.
   /// </summary>

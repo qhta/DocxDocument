@@ -2,7 +2,7 @@
 /// <summary>
 /// Base interface for all model elements recognized by its type. 
 /// </summary>
-public interface ITypedModelElement : IUniqueModelElement<Type>
+public interface ITypedModelElement : UniqueModelElement<Type>
 {
   /// <summary>
   /// Gets the element type.

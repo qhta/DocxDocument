@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This start marker is matched with the appropriately paired end marker 
 ///   by matching the value of the Id attribute from the associated bookmarkEnd element. 
 /// </summary>
-public interface BookmarkStart: MarkupRangeElement, IRangeMarkupElement, ICommonContent
+public interface BookmarkStart: MarkupRangeElement, RangeMarkupElement, CommonContent
 {
   /// <summary>
   ///   Specifies the bookmark name. 

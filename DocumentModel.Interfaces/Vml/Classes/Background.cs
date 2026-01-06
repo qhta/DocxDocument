@@ -36,5 +36,5 @@ public interface Background
   /// <summary>
   ///   Fill.
   /// </summary>
-  public IFill? Fill { get; set; }
+  public Fill? Fill { get; set; }
 }

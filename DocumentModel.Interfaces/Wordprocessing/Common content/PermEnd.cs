@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 ///   This end marker is matched with the appropriately paired start marker 
 ///   by matching the value of the Id attribute from the associated permStart element.
 /// </summary>
-public interface PermEnd: MarkupRangeElement, ICommonContent
+public interface PermEnd: MarkupRangeElement, CommonContent
 {
 }

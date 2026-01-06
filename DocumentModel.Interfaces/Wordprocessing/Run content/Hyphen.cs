@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   There are two complementary ways to specific a character code of the hyphen: 
 ///   with enum typed HyphenKind or with a text string.
 /// </summary>
-public interface Hyphen : IRunContent
+public interface Hyphen : RunContent
 {
   /// <summary>
   /// Encoded char value of the hyphen.
