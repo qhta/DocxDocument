@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RunFonts Class.
 /// </summary>
-public interface RunFonts: ITypedModelElement, IRunProperty
+public interface RunFonts: ITypedModelElement, RunProperty
 {
   /// <summary>
   ///   Font Content Type

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the accent function, consisting of a base and a combining diacritical mark. 
 ///   If AccentProperties is omitted, the default accent is U+0302 (COMBINING CIRCUMFLEX ACCENT).
 /// </summary>
-public interface Accent: ICommonMathContent
+public interface Accent: CommonMathContent
 {
   /// <summary>
   ///   Specifies formatting properties of accent function.

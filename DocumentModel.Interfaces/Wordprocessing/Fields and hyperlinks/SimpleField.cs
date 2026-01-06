@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This element specifies the presence of a simple field at the current location in the document. 
 ///   The semantics of this field are defined via its field codes.
 /// </summary>
-public interface SimpleField: IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
+public interface SimpleField: ParagraphContent, SdtRunContent, BidirectionalContent, DMM.MathArgumentContent
 {
   /// <summary>
   ///   Specifies the field codes for the simple field. The possible field codes are defined in §17.16.5.

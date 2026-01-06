@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 ///  Instead, this character shall be determined by pulling the character with the hexadecimal value 
 ///  specified in the char attribute from the font specified in the font attribute.
 /// </summary>
-public interface SymbolChar: IRunContent
+public interface SymbolChar: RunContent
 {
   /// <summary>
   ///   Symbol Character Font

@@ -1,8 +1,4 @@
-﻿using DocumentFormat.OpenXml.ExtendedProperties;
-using DocumentFormat.OpenXml.InkML;
-using DocumentFormat.OpenXml.Spreadsheet;
-
-using DocumentModel.Wordprocessing.DrawingShape;
+﻿using DocumentModel.Wordprocessing.DrawingShape;
 
 namespace DocumentModel.Wordprocessing;
 
@@ -172,7 +168,7 @@ public interface Range
   /// <summary>
   ///   Gets or sets the font formatting for the range.
   /// </summary>
-  public Font? Font { get; set; }
+  public TextFormat? Font { get; set; }
 
   /// <summary>
   ///   Gets or sets the paragraph format for the range.

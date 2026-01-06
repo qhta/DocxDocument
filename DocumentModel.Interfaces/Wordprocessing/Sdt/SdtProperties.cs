@@ -59,7 +59,7 @@ namespace DocumentModel.Wordprocessing;
 /// };
 /// </code>
 /// </example>
-public interface SdtProperties : IStoryContent
+public interface SdtProperties : StoryContent
 {
   /// <summary>
   /// Gets or sets the unique numerical identifier for this structured document tag.
@@ -220,7 +220,7 @@ public interface SdtProperties : IStoryContent
   /// The exact rendering depends on the <see cref="Appearance"/> setting and the application's
   /// display preferences. If not specified, the application's default SDT color is used.
   /// </remarks>
-  public DM.IColor? Color { get; set; }
+  public DM.Color? Color { get; set; }
   
   /// <summary>
   /// Gets or sets the visual appearance style for this structured document tag.

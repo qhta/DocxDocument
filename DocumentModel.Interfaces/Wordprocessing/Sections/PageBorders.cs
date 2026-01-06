@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PageBorders Class.
 /// </summary>
-public interface PageBorders: ISectionPropertiesContent
+public interface PageBorders: SectionPropertiesContent
 {
   /// <summary>
   ///   Z-Ordering of Page Border
@@ -20,17 +20,17 @@ public interface PageBorders: ISectionPropertiesContent
   /// <summary>
   ///   Top Border.
   /// </summary>
-  public IBorder? TopBorder { get; set; }
+  public Border? TopBorder { get; set; }
   /// <summary>
   ///   Left Border.
   /// </summary>
-  public IBorder? LeftBorder { get; set; }
+  public Border? LeftBorder { get; set; }
   /// <summary>
   ///   Bottom Border.
   /// </summary>
-  public IBorder? BottomBorder { get; set; }
+  public Border? BottomBorder { get; set; }
   /// <summary>
   ///   Right Border.
   /// </summary>
-  public IBorder? RightBorder { get; set; }
+  public Border? RightBorder { get; set; }
 }

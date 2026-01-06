@@ -14,6 +14,6 @@ namespace DocumentModel.Wordprocessing;
 /// </item>
 /// </list>
 /// </summary>
-public interface TabChar: IRunContent
+public interface TabChar: RunContent
 {
 }

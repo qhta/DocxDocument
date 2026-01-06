@@ -7,7 +7,7 @@ public interface WebSettings: DocumentProperties
     /// <summary>
     ///   Frameset.
     /// </summary>
-    public IFrameset? Frameset { get; set; }
+    public Frameset? Frameset { get; set; }
     /// <summary>
     ///   Divs.
     /// </summary>

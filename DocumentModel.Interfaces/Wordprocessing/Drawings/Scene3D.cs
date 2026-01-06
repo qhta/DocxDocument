@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Scene3D Class.
 /// </summary>
-public interface Scene3D: ITypedModelElement, IDrawingProperty
+public interface Scene3D: ITypedModelElement, DrawingProperty
 {
   /// <summary>
   ///   Camera.

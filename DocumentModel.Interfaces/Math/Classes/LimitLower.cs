@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the Lower-Limit object, consisting of text on the baseline 
 ///   and reduced-size text immediately below it. Examples of limLow include lim and max.
 /// </summary>
-public interface LimitLower: ICommonMathContent
+public interface LimitLower: CommonMathContent
 {
   /// <summary>
   ///   Lower Limit Properties.

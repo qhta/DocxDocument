@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Common base interface for 
 ///   <see cref="InsertedRun"/>, <see cref="DeletedRun"/>, <see cref="MoveFromRun"/>, <see cref="MoveToRun"/> classes.
 /// </summary>
-public interface RunTrackChangeType: IElementCollection<IParagraphContent>, ICommonContent
+public interface RunTrackChangeType: IElementCollection<ParagraphContent>, CommonContent
 {
   /// <summary>
   ///   author

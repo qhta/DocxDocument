@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Theme color interface.
 /// </summary>
-public interface ThemeColor : IColor
+public interface ThemeColor : DM.Color
 {
   /// <summary>
   ///   Run Content Theme Color

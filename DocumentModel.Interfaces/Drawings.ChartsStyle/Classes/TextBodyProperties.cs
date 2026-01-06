@@ -28,7 +28,7 @@ public interface TextBodyProperties
   /// <summary>
   ///   Text Wrapping Type
   /// </summary>
-  public TextWrappingKind? Wrap { get; set; }
+  public DMW.TextWrappingKind? Wrap { get; set; }
   /// <summary>
   ///   Left Inset
   /// </summary>

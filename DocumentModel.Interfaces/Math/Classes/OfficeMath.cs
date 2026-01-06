@@ -13,6 +13,6 @@ namespace DocumentModel.Math;
 ///   When an oMath block is not part of a display math zone, it is interpreted as its own inline math zone. 
 ///   The contents of an oMath block do not differ between display zone containers and independent inline math zones.
 /// </summary>
-public interface OfficeMath: IElementCollection<IOfficeMathContent>, ICommonMathContent, IMathParagraphContent
+public interface OfficeMath: IElementCollection<OfficeMathContent>, CommonMathContent, MathParagraphContent
 {
 }

@@ -15,6 +15,6 @@ namespace DocumentModel.Wordprocessing;
 ///     </item>
 ///   </list>
 /// </summary>
-public interface CommentReference : MarkupType, IRunContent
+public interface CommentReference : MarkupType, RunContent
 {
 }

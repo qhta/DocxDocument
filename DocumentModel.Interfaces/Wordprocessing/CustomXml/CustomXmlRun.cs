@@ -7,11 +7,11 @@ namespace DocumentModel.Wordprocessing;
 ///   to provide semantics to that content within the context and structures defined by the associated schema definition.
 /// </summary>
 public interface CustomXmlRun: CustomXmlElement, 
-  IParagraphContent, 
-  IRunContent, 
-  ISdtRunContent, 
-  ITableContent, 
-  IBidirectionalContent, 
-  DMM.IMathArgumentContent
+  ParagraphContent, 
+  RunContent, 
+  SdtRunContent, 
+  TableContent, 
+  BidirectionalContent, 
+  DMM.MathArgumentContent
 {
 }

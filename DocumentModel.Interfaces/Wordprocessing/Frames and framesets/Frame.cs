@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Single Frame Properties.
 /// </summary>
-public interface Frame: IFramesetItem
+public interface Frame: FramesetItem
 {
   /// <summary>
   ///   Frame Size.

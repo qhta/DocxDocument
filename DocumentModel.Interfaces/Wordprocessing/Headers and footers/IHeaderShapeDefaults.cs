@@ -8,7 +8,7 @@ public interface IHeaderShapeDefaults
   /// <summary>
   /// Default Shape Properties for VML Shapes in Header and Footer.
   /// </summary>
-  public DocumentModel.Vml.IShapeDefaults? ShapeDefaults { get; set; }
+  public DocumentModel.Vml.ShapeDefaults? ShapeDefaults { get; set; }
   /// <summary>
   /// Default Shape Layout for VML Shapes in Header and Footer.
   /// </summary>
