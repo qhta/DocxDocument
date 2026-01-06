@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the numerator of the Fraction object f. 
 /// </summary>
-public interface Numerator: IElementCollection<MathArgumentContent>
+public interface Numerator: ElementCollection<MathArgumentContent>
 {
    /// <summary>
   ///   Specifies properties of argument object.

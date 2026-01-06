@@ -4,7 +4,7 @@
 /// If second value is null, it is assumed to be the first value;
 /// </summary>
 //[TypeConverter(typeof(DualBoolTypeConverter))]
-public interface DualBool: ITypedModelElement
+public interface DualBool: TypedModelElement
 {
   /// <summary>
   /// Value for regular script.

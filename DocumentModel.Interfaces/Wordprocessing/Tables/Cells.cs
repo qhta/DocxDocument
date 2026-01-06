@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a collection of cells in a table row.
 /// </summary>
-public interface Cells : IElementCollection<Cell>
+public interface Cells : ElementCollection<Cell>
 {
   #region Collection Properties
 

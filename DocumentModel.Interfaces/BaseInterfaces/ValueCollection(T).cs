@@ -4,7 +4,7 @@
 /// Collection of Values.
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public interface IValueCollection<T> : ICollection<T>, INotifyCollectionChanged, IEquatable<IValueCollection<T>>
+public interface ValueCollection<T> : ICollection<T>, INotifyCollectionChanged, IEquatable<ValueCollection<T>>
 {
 
 }

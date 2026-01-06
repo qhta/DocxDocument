@@ -18,7 +18,7 @@
 ///   with older versions through the alternate content fallback mechanism. For example, a choice might require
 ///   3D model support and contain a 3D shape, while a fallback provides a 2D image for older applications.
 /// </remarks>
-public interface AlternateContentChoice : IElementCollection<ICollectionItem>, ICollectionItem
+public interface AlternateContentChoice : ElementCollection<ICollectionItem>, ICollectionItem
 {
   /// <summary>
   ///   Gets or sets the requirement condition that must be satisfied for this choice to be selected.

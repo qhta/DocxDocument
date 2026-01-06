@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public interface InlineShapes: IElementCollection<InlineShape>
+public interface InlineShapes: ElementCollection<InlineShape>
 {
   
 }

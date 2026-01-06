@@ -4,7 +4,7 @@ namespace DocumentModel.CustomXml;
 ///   Represents a collection of embedded XML schema references that provide supplementary validation data for custom XML.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="IElementCollection{T}"/> of <see cref="Schema"/> and defines a library
+///   This interface extends <see cref="ElementCollection{ItemType}"/> of <see cref="Schema"/> and defines a library
 ///   of XML schema references stored within the document package. The schema library serves as a repository
 ///   of supplementary schema data that complements the schema references associated with individual custom XML
 ///   data stores. Schemas in the library can be referenced by multiple <see cref="DataStoreItem"/> instances,
@@ -12,6 +12,6 @@ namespace DocumentModel.CustomXml;
 ///   within the document package, making documents self-contained and enabling offline validation of custom
 ///   XML data without requiring external schema resolution.
 /// </remarks>
-public interface SchemaLibrary : IElementCollection<Schema>
+public interface SchemaLibrary : ElementCollection<Schema>
 {
 }

@@ -2,6 +2,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document Endnotes.
 /// </summary>
-public interface Endnotes: IElementCollection<Endnote>
+public interface Endnotes: ElementCollection<Endnote>
 {
 }

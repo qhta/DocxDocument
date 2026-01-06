@@ -22,6 +22,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   location data handling across different geocoding scenarios including address-to-coordinate conversion, reverse
 ///   geocoding results, and location search operations.
 /// </remarks>
-public interface GeoLocations : IElementCollection<GeoLocation>
+public interface GeoLocations : ElementCollection<GeoLocation>
 {
 }

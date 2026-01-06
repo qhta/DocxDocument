@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Properties3D Class.
 /// </summary>
-public interface Properties3D: ITypedModelElement, DrawingProperty
+public interface Properties3D: TypedModelElement, DrawingProperty
 {
   /// <summary>
   ///   extrusionH

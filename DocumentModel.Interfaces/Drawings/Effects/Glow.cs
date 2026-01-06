@@ -1,6 +1,6 @@
 namespace DocumentModel.Drawings;
 /// <summary>
-///   Glow Effect.
+///   Represents a glow effect that can be applied to a drawing object.
 /// </summary>
 public interface Glow
 {

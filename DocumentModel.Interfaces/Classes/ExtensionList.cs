@@ -141,6 +141,6 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public interface ExtensionList : IElementCollection<Extension>
+public interface ExtensionList : ElementCollection<Extension>
 {
 }

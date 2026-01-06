@@ -25,6 +25,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   polygons, identification, copyright attributions) needed for accurate map visualization, supporting features such
 ///   as region coloring, boundary rendering, geographic selection, and spatial analysis.
 /// </remarks>
-public interface GeoDataEntityQueryResults : IElementCollection<GeoDataEntityQueryResult>
+public interface GeoDataEntityQueryResults : ElementCollection<GeoDataEntityQueryResult>
 {
 }

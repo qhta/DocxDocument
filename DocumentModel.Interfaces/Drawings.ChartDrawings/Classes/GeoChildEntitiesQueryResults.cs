@@ -24,6 +24,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   This optimization balances data freshness with performance, enabling responsive map chart interactions while
 ///   minimizing external service dependencies and network traffic.
 /// </remarks>
-public interface GeoChildEntitiesQueryResults : IElementCollection<GeoChildEntitiesQueryResult>
+public interface GeoChildEntitiesQueryResults : ElementCollection<GeoChildEntitiesQueryResult>
 {
 }

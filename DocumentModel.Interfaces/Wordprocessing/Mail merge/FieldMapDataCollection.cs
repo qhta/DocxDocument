@@ -3,7 +3,7 @@
 /// <summary>
 /// Collection of Field Map Data Elements.
 /// </summary>
-public interface FieldMapDataCollection: IElementCollection<FieldMapData>
+public interface FieldMapDataCollection: ElementCollection<FieldMapData>
 {
   
 }

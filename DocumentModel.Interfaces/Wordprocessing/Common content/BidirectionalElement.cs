@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines abstract BidirectionalElement Class.
 /// </summary>
-public interface BidirectionalElement: IElementCollection<BidirectionalContent>, 
+public interface BidirectionalElement: ElementCollection<BidirectionalContent>, 
   ParagraphContent, 
   SdtRunContent, 
   BidirectionalContent

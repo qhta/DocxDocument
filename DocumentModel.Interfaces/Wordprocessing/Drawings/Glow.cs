@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Glow Class.
 /// </summary>
-public interface Glow: ITypedModelElement, DrawingProperty
+public interface Glow: TypedModelElement, DrawingProperty
 {
   /// <summary>
   ///   rad
