@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the NumberFormat Class.
 /// </summary>
-public interface NumberFormat:
+public interface NumberFormat
 {
   /// <summary>
   ///   formatCode

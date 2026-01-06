@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the IEditBox Class.
 /// </summary>
-public interface EditBox:
+public interface EditBox
 {
   /// <summary>
   ///   enabled

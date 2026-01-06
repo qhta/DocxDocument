@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Character Bullet.
 /// </summary>
-public interface CharacterBullet:
+public interface CharacterBullet
 {
   /// <summary>
   ///   Bullet Character

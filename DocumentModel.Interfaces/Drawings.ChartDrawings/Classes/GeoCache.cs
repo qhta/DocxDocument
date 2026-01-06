@@ -21,7 +21,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   incorporate updated geographic information, boundary changes, or new location data while preserving the ability
 ///   to render the chart using cached data when updates aren't possible.
 /// </remarks>
-public interface GeoCache :
+public interface GeoCache
 {
   /// <summary>
   ///   Gets or sets the identifier of the geographic data provider that supplied the cached data.

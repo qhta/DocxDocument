@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BiLevel interface.
 /// </summary>
-public interface BiLevel:
+public interface BiLevel
 {
   /// <summary>
   ///   Threshold

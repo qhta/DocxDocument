@@ -10,7 +10,7 @@ namespace DocumentModel;
 ///   backstage views. They support various control types including buttons, checkboxes, text inputs,
 ///   dropdowns, radio groups, hyperlinks, labels, and nested group boxes for hierarchical organization.
 /// </remarks>
-public interface GroupBox :
+public interface GroupBox
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this group box.

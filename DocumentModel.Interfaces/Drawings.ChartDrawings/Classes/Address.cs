@@ -12,7 +12,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   The address components follow international addressing standards to ensure compatibility across
 ///   different regions and mapping services.
 /// </remarks>
-public interface Address :
+public interface Address
 {
   /// <summary>
   ///   Gets or sets the primary street address line.

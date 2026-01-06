@@ -62,7 +62,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public interface PresetColor:
+public interface PresetColor
 {
   /// <summary>
   /// Gets or sets the preset color name that defines the base color.

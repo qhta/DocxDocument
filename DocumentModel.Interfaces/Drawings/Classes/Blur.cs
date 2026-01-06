@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Blur interface.
 /// </summary>
-public interface Blur:
+public interface Blur
 {
   /// <summary>
   ///   Radius

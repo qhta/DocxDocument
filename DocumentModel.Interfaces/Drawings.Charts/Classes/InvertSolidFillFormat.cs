@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the InvertSolidFillFormat Class.
 /// </summary>
-public interface InvertSolidFillFormat:
+public interface InvertSolidFillFormat
 {
   /// <summary>
   ///   ShapeProperties.

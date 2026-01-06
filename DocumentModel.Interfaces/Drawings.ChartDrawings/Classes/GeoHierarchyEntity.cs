@@ -24,7 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   hierarchies (country › state › county › city), statistical hierarchies (continent › country › region), or custom
 ///   domain-specific hierarchies tailored to particular analytical or business requirements.
 /// </remarks>
-public interface GeoHierarchyEntity :
+public interface GeoHierarchyEntity
 {
   /// <summary>
   ///   Gets or sets the human-readable name of the geographic entity.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office.OEmbed;
 /// <summary>
 ///   Defines the OEmbedShared Class.
 /// </summary>
-public interface OEmbedShared:
+public interface OEmbedShared
 {
   /// <summary>
   ///   srcUrl

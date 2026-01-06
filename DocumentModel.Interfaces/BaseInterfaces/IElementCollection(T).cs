@@ -7,8 +7,5 @@
 public interface IElementCollection<ItemType> : ICollection<ItemType>
   //where ItemType : ICollectionItem
 {
-  /// <summary>
-  /// Parent element of this model element.
-  /// </summary>
-  public IModelElement? ParentElement { get; }
+
 }

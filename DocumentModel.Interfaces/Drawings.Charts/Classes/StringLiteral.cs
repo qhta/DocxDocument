@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   String Literal.
 /// </summary>
-public interface StringLiteral:
+public interface StringLiteral
 {
   public UInt32? PointCount { get; set; }
   public Collection<StringPoint>? StringPoints { get; set; }

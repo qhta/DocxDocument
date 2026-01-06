@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticFilmGrain interface.
 /// </summary>
-public interface ArtisticFilmGrain:
+public interface ArtisticFilmGrain
 {
   /// <summary>
   ///   trans

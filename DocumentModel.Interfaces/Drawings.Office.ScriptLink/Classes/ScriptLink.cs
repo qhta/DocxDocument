@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office.ScriptLink;
 /// <summary>
 ///   Defines the ScriptLink Class.
 /// </summary>
-public interface ScriptLink:
+public interface ScriptLink
 {
   /// <summary>
   ///   val

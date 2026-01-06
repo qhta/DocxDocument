@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the PositiveSize2DType interface.
 /// </summary>
-public interface PositiveSize2DType:
+public interface PositiveSize2DType
 {
   /// <summary>
   ///   Extent Length

@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the QuickAccessToolbar Class.
 /// </summary>
-public interface QuickAccessToolbar:
+public interface QuickAccessToolbar
 {
   /// <summary>
   ///   SharedControlsQatItems.

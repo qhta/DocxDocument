@@ -12,7 +12,7 @@ namespace DocumentModel.Wordprocessing;
 /// </item>
 /// </list>
 /// </summary>
-public interface Captions :
+public interface Captions
 {
   public Caption? Caption { get; set; }
   public AutoCaptions? AutoCaptions { get; set; }

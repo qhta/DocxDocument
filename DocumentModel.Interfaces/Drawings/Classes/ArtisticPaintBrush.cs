@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticPaintBrush interface.
 /// </summary>
-public interface ArtisticPaintBrush:
+public interface ArtisticPaintBrush
 {
   /// <summary>
   ///   trans

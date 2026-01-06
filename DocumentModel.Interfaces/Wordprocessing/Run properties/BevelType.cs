@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BevelType Class.
 /// </summary>
-public interface BevelType:
+public interface BevelType
 {
   /// <summary>
   ///   w

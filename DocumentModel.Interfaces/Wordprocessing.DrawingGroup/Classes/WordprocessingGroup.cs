@@ -4,12 +4,12 @@ namespace DocumentModel.Wordprocessing.DrawingGroup;
 /// <summary>
 ///   Defines the WordprocessingGroup Class.
 /// </summary>
-public interface WordprocessingGroup:
+public interface WordprocessingGroup
 {
   public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
   public NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get; set; }
   public GroupShapeProperties? GroupShapeProperties { get; set; }
-  public WordprocessingShape? WordprocessingShape { get; set; }
+  public Shape? WordprocessingShape { get; set; }
   public GroupShape? GroupShape { get; set; }
   public GraphicFrame? GraphicFrame { get; set; }
   public DocumentModel.Drawings.Pictures.Picture? Picture { get; set; }

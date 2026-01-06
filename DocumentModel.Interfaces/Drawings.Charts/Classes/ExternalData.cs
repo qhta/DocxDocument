@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ExternalData Class.
 /// </summary>
-public interface ExternalData:
+public interface ExternalData
 {
   /// <summary>
   ///   Relationship Reference

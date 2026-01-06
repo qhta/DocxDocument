@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ColorReplacement interface.
 /// </summary>
-public interface ColorReplacement:
+public interface ColorReplacement
 {
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

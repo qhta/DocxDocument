@@ -22,7 +22,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   to larger containing regions. This hierarchical organization is fundamental to creating intuitive, exploratory
 ///   map-based visualizations where users can navigate between different levels of geographic detail.
 /// </remarks>
-public interface GeoChildEntities :
+public interface GeoChildEntities
 {
   /// <summary>
   ///   Gets or sets the collection of child geographic entities in the hierarchy.

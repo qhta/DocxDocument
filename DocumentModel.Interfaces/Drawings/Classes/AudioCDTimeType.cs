@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the AudioCDTimeType interface.
 /// </summary>
-public interface AudioCDTimeType:
+public interface AudioCDTimeType
 {
   /// <summary>
   ///   Track

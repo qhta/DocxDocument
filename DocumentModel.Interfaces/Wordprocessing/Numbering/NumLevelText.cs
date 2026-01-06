@@ -9,7 +9,7 @@ namespace DocumentModel.Wordprocessing;
 ///   When the % syntax is used, the number shall be incremented for each subsequent paragraph of that level (sequential or not), 
 ///   until the restart level is seen between two subsequent paragraphs of this level. 
 /// </summary>
-public interface NumLevelText :
+public interface NumLevelText
 {
   /// <summary>
   ///   Level Text

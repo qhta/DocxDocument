@@ -8,7 +8,7 @@ namespace DocumentModel;
 ///   task-related events such as creation, assignment, scheduling changes, priority updates,
 ///   and deletions. Each event includes attribution, timing, and specific event details.
 /// </remarks>
-public interface TaskHistoryEvent :
+public interface TaskHistoryEvent
 {
   /// <summary>
   ///   Gets or sets the timestamp when the task event occurred.

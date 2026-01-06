@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the VisibleToggleButton Class.
 /// </summary>
-public interface VisibleToggleButton:
+public interface VisibleToggleButton
 {
   /// <summary>
   ///   getPressed

@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   External Content Import Properties.
 /// </summary>
-public interface AltChunkProperties:
+public interface AltChunkProperties
 {
   /// <summary>
   ///   Specifies if any style definitions present in the imported content shall be overridden 

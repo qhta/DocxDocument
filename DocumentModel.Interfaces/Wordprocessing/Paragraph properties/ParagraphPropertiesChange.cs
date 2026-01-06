@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   ParagraphPropertiesChange interface used in <see cref="ParagraphProperties"/>.
 ///   Represents <see cref="PreviousParagraphProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
-public interface ParagraphPropertiesChange:
+public interface ParagraphPropertiesChange
 {
   /// <summary>
   ///   Author

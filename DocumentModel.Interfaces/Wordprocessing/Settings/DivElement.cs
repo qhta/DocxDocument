@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Information About Single HTML div Element.
 /// </summary>
-public interface IDivElement: ICollectionItem
+public interface DivElement: ICollectionItem
 {
   /// <summary>
   ///   div Data ID
@@ -36,9 +36,9 @@ public interface IDivElement: ICollectionItem
   /// <summary>
   ///   Set of Borders for HTML div.
   /// </summary>
-  public IDivBorder? DivBorder { get; set; }
+  public DivBorder? DivBorder { get; set; }
   /// <summary>
   /// Child divs.
   /// </summary>
-  public IDivChildren? Children { get; set; }
+  public DivChildren? Children { get; set; }
 }

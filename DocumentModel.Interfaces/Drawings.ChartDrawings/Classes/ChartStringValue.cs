@@ -14,7 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   structure supports efficient lookup and modification of string values at specific positions within the
 ///   chart's data model.
 /// </remarks>
-public interface ChartStringValue :
+public interface ChartStringValue
 {
   /// <summary>
   ///   Gets or sets the zero-based index position of this string value within its collection.

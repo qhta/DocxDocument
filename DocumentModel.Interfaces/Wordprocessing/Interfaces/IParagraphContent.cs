@@ -5,12 +5,5 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IParagraphContent: DMM.IOfficeMathContent
 {
-  /// <summary>
-  /// Parent as a <see cref="Paragraph"/> element.
-  /// </summary>
-  public new Paragraph? Parent
-  {
-    get => (this as IModelElement).Parent as Paragraph;
-    set => (this as IModelElement).Parent = value;
-  }
+
 }

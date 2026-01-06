@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Luminance.
 /// </summary>
-public interface LuminanceEffect:
+public interface LuminanceEffect
 {
   /// <summary>
   ///   Brightness

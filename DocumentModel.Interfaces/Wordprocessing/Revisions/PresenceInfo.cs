@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PresenceInfo Class.
 /// </summary>
-public interface PresenceInfo:
+public interface PresenceInfo
 {
   /// <summary>
   ///   providerId

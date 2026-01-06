@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ThemeElements interface.
 /// </summary>
-public interface ThemeElements:
+public interface ThemeElements
 {
   /// <summary>
   ///   ColorScheme.

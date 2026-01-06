@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Radar Charts.
 /// </summary>
-public interface RadarChart:
+public interface RadarChart
 {
   /// <summary>
   ///   RadarStyle.

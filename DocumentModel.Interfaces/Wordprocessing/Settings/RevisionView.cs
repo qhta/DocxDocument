@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Visibility of Annotation Types.
 /// </summary>
-public interface IRevisionView:
+public interface RevisionView
 {
   /// <summary>
   ///   Display Visual Indicator Of Markup Area

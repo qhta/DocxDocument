@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Rule.
 /// </summary>
-public interface Rule:
+public interface Rule
 {
   /// <summary>
   ///   Constraint Type

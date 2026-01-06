@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the LiveFeedProperties interface.
 /// </summary>
-public interface LiveFeedProperties:
+public interface LiveFeedProperties
 {
   /// <summary>
   ///   LiveFeedBackgroundProperties.

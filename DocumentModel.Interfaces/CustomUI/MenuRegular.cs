@@ -12,7 +12,7 @@ namespace DocumentModel;
 ///   The control supports customizable appearance with images, labels, tooltips, and can have its state
 ///   and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface MenuRegular :
+public interface MenuRegular
 {
   /// <summary>
   ///   Gets or sets the size of items within the menu.

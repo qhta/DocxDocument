@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Shape Default.
 /// </summary>
-public interface ShapeDefault:
+public interface ShapeDefault
 {
   public ShapeProperties? ShapeProperties { get; set; }
   public BodyProperties? BodyProperties { get; set; }

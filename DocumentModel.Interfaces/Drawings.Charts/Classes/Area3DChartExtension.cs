@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the Area3DChartExtension Class.
 /// </summary>
-public interface Area3DChartExtension:
+public interface Area3DChartExtension
 {
   /// <summary>
   ///   URI

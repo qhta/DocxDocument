@@ -2,7 +2,7 @@
 /// <summary>
 /// Collection of active writing styles applied to the document.
 /// </summary>
-public interface IActiveWritingStyles: IElementCollection<IActiveWritingStyle>
+public interface ActiveWritingStyles: IElementCollection<ActiveWritingStyle>
 {
   
 }

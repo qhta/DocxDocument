@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the UpBar Class.
 /// </summary>
-public interface UpBar:
+public interface UpBar
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }

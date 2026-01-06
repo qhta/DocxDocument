@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BackgroundMark interface.
 /// </summary>
-public interface BackgroundMark:
+public interface BackgroundMark
 {
   /// <summary>
   ///   x1

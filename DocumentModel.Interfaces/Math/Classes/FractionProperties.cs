@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Fraction Properties.
 /// </summary>
-public interface FractionProperties:
+public interface FractionProperties
 {
   /// <summary>
   ///   Fraction type.

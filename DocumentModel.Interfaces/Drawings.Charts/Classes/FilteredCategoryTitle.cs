@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FilteredCategoryTitle Class.
 /// </summary>
-public interface FilteredCategoryTitle:
+public interface FilteredCategoryTitle
 {
   /// <summary>
   ///   AxisDataSourceType.

@@ -115,7 +115,7 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public interface SplitButton :
+public interface SplitButton
 {
   /// <summary>
   /// Gets or sets the display size of the split button in the ribbon.

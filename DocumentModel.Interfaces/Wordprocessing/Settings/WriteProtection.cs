@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 ///   be resaved using the same file name. This setting is independent of the documentProtection (§17.15.1.29)
 ///  element, but like document protection, this setting is not intended as a security feature and can be ignored.
 /// </summary>
-public interface IWriteProtection:
+public interface WriteProtection
 {
   /// <summary>
   ///   Recommend Write Protection in User Interface

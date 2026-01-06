@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This element specifies the presence of a simple field at the current location in the document. 
 ///   The semantics of this field are defined via its field codes.
 /// </summary>
-public interface SimpleField: IElementCollection<IModelElement>, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
+public interface SimpleField: IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
 {
   /// <summary>
   ///   Specifies the field codes for the simple field. The possible field codes are defined in §17.16.5.
@@ -25,7 +25,7 @@ public interface SimpleField: IElementCollection<IModelElement>, IParagraphConte
   /// </summary>
   public bool? Dirty { get; set; }
   /// <summary>
-  ///   Apecifies custom field data which shall be associated with the parent field. 
+  ///   Specifies custom field data which shall be associated with the parent field. 
   ///   No information or semantics are applied to the contents of this data by ISO/IEC 29500, 
   ///   and therefore this field can be used as desired to store additional application-defined data with the field. 
   ///   However, applications should not lose the contents of this custom data if they do not understand or utilize it 

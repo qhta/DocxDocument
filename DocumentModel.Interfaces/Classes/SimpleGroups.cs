@@ -76,7 +76,7 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public interface SimpleGroups :
+public interface SimpleGroups
 {
   /// <summary>
   /// Gets or sets a group container for organizing content in the Backstage view.

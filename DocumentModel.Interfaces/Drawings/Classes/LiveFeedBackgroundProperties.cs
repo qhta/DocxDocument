@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the LiveFeedBackgroundProperties interface.
 /// </summary>
-public interface LiveFeedBackgroundProperties:
+public interface LiveFeedBackgroundProperties
 {
   public BackgroundNormalProperties? BackgroundNormalProperties { get; set; }
   public BackgroundRemovedProperties? BackgroundRemovedProperties { get; set; }

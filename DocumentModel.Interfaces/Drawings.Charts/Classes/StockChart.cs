@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Stock Charts.
 /// </summary>
-public interface StockChart:
+public interface StockChart
 {
   public Collection<LineChartSeries>? LineChartSeries { get; set; }
   public DataLabels? DataLabels { get; set; }

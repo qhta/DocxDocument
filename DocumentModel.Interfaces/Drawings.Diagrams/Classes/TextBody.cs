@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Text Body.
 /// </summary>
-public interface TextBody:
+public interface TextBody
 {
   /// <summary>
   ///   Body Properties.

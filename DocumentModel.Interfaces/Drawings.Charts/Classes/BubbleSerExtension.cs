@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the BubbleSerExtension Class.
 /// </summary>
-public interface BubbleSerExtension:
+public interface BubbleSerExtension
 {
   /// <summary>
   ///   URI

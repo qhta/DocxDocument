@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ClassificationLabel Class.
 /// </summary>
-public interface ClassificationLabel:
+public interface ClassificationLabel
 {
   /// <summary>
   ///   id

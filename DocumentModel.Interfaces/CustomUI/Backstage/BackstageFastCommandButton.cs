@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageFastCommandButton Class.
 /// </summary>
-public interface BackstageFastCommandButton:
+public interface BackstageFastCommandButton
 {
   /// <summary>
   ///   idMso
