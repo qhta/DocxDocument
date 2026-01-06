@@ -464,7 +464,7 @@ public interface DocumentSettings : DocumentProperties
   /// that has been connected to an external data source as part of a mail merge operation.
   /// </summary>
   [Category("Mailing")]
-  public IMailMerge? MailMerge { get; set; }
+  public MailMerge? MailMerge { get; set; }
   /// <summary>
   /// This element specifies the document-level properties for all math in the document.
   /// </summary>

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   External Data Source to Merge Field Mapping.
 /// </summary>
-public interface IFieldMapData: ICollectionItem
+public interface FieldMapData: ICollectionItem
 {
   /// <summary>
   ///   Merge Field Mapping.

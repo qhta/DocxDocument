@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Mail Merge Settings.
 /// </summary>
-public interface IMailMerge
+public interface MailMerge
 {
   /// <summary>
   ///   Source Document Type.
@@ -68,5 +68,5 @@ public interface IMailMerge
   /// <summary>
   ///   Office Data Source Object Settings.
   /// </summary>
-  public IDataSourceObject? DataSourceObject { get; set; }
+  public DataSourceObject? DataSourceObject { get; set; }
 }
