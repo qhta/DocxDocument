@@ -347,7 +347,7 @@ public interface Document
   /// <summary>
   ///   Mail merge settings.
   /// </summary>
-  public MailMerge? MailMerge { get; set; }
+  public DocumentFormat.OpenXml.Wordprocessing.MailMerge? MailMerge { get; set; }
 
   /// <summary>
   ///   Grammar checking settings.
