@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the PlotArea Class.
 /// </summary>
-public interface PlotArea
+public interface PlotArea: OfficeArtExtendableElement
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }
@@ -13,5 +13,4 @@ public interface PlotArea
   public ShapeProperties? ShapeProperties { get; set; }
   public TextCharacterPropertiesType? TextCharacterPropertiesType { get; set; }
   public TextBodyProperties? TextBodyProperties { get; set; }
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the DataPoint3D Class.
 /// </summary>
-public interface DataPoint3D
+public interface DataPoint3D: OfficeArtExtendableElement
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }
@@ -13,5 +13,4 @@ public interface DataPoint3D
   public ShapeProperties? ShapeProperties { get; set; }
   public TextCharacterPropertiesType? TextCharacterPropertiesType { get; set; }
   public TextBodyProperties? TextBodyProperties { get; set; }
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the DataLabelCallout Class.
 /// </summary>
-public interface DataLabelCallout
+public interface DataLabelCallout: OfficeArtExtendableElement
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }
@@ -13,5 +13,4 @@ public interface DataLabelCallout
   public ShapeProperties? ShapeProperties { get; set; }
   public TextCharacterPropertiesType? TextCharacterPropertiesType { get; set; }
   public TextBodyProperties? TextBodyProperties { get; set; }
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

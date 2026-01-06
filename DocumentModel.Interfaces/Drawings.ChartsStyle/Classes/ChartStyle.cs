@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the ChartStyle Class.
 /// </summary>
-public interface ChartStyle
+public interface ChartStyle: OfficeArtExtendableElement
 {
   /// <summary>
   ///   id
@@ -133,8 +133,4 @@ public interface ChartStyle
   ///   Wall.
   /// </summary>
   public Wall? Wall { get; set; }
-  /// <summary>
-  ///   OfficeArtExtensionList.
-  /// </summary>
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

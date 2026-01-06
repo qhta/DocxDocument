@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the UpBar Class.
 /// </summary>
-public interface UpBar
+public interface UpBar: OfficeArtExtendableElement
 {
   public LineReference? LineReference { get; set; }
   public string? LineWidthScale { get; set; }
@@ -13,5 +13,4 @@ public interface UpBar
   public ShapeProperties? ShapeProperties { get; set; }
   public TextCharacterPropertiesType? TextCharacterPropertiesType { get; set; }
   public TextBodyProperties? TextBodyProperties { get; set; }
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

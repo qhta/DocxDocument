@@ -14,7 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   for including complex graphics, logos, or supplementary visual elements that enhance the chart's presentation
 ///   without embedding the actual content data directly within the chart definition.
 /// </remarks>
-public interface ContentPart
+public interface ContentPart: OfficeArtExtendableElement
 {
   /// <summary>
   ///   Gets or sets the relationship identifier that references the external content.
@@ -66,14 +66,4 @@ public interface ContentPart
   ///   placement and sizing of the embedded content relative to other chart elements.
   /// </remarks>
   public Transform2D? Transform2D { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the collection of Office Art extension elements for future extensibility.
-  /// </summary>
-  /// <remarks>
-  ///   Office Art extension elements allow for future enhancements to the content part functionality
-  ///   without breaking compatibility with existing implementations. This enables new features and
-  ///   properties to be added to content parts as Office evolves.
-  /// </remarks>
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }
