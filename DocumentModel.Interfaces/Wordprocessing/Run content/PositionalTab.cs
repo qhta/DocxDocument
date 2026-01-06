@@ -16,7 +16,7 @@ namespace DocumentModel.Wordprocessing;
 ///   </item>
 /// </list>
 /// </summary>
-public interface PositionalTab: IRunContent
+public interface PositionalTab: RunContent
 {
   /// <summary>
   ///   Positional Tab Stop Alignment

@@ -29,7 +29,7 @@ public interface TextBodyProperties
   /// <summary>
   ///   Text Wrapping Type
   /// </summary>
-  public DocumentModel.Drawings.TextWrappingKind? Wrap { get; set; }
+  public TextWrappingKind? Wrap { get; set; }
   /// <summary>
   ///   Left Inset
   /// </summary>

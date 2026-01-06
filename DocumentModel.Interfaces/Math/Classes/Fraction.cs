@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 ///   The fraction bar can be horizontal or diagonal, depending on the fraction properties. 
 ///   The fraction object is also used to represent the stack function, which places one element above another, with no fraction bar. .
 /// </summary>
-public interface Fraction: ICommonMathContent
+public interface Fraction: CommonMathContent
 {
   /// <summary>
   ///   Fraction Properties.

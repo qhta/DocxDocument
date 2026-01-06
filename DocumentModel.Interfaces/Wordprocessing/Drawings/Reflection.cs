@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Reflection Class.
 /// </summary>
-public interface Reflection: ITypedModelElement, IDrawingProperty
+public interface Reflection: ITypedModelElement, DrawingProperty
 {
   /// <summary>
   ///   blurRad

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents properties of an endnote.
 /// </summary>
-public interface EndnoteProperties: ISectionPropertiesContent
+public interface EndnoteProperties: SectionPropertiesContent
 {
   /// <summary>
   ///   Endnote Placement.

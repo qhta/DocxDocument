@@ -1,25 +1,13 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the OnOffValues enumeration.
+///   Specifies on/off values used in Office 2010+ features.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
 public enum OnOffKind
 {
-  /// <summary>
-  ///   true.
-  /// </summary>
-  True,
-  /// <summary>
-  ///   false.
-  /// </summary>
-  False,
-  /// <summary>
-  ///   0.
-  /// </summary>
-  Zero,
-  /// <summary>
-  ///   1.
-  /// </summary>
-  One
+  /// <summary>Off or false</summary>
+  Off = 0,
+  
+  /// <summary>On or true</summary>
+  On = 1
 }

@@ -16,7 +16,7 @@ namespace DocumentModel.Wordprocessing;
 ///   If an application cannot process content of the content type specified by the targeted part, 
 ///   then it should continue to process the file. If possible, it should also provide some indication that unknown content was not imported. 
 /// </summary>
-public interface ContentPart: IRunContent, DMM.IMathArgumentContent
+public interface ContentPart: RunContent, DMM.MathArgumentContent
 {
   /// <summary>
   ///   Specifies the relationship ID to a specified part.

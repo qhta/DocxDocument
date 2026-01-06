@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Wordprocessing.DrawingShape;
+﻿namespace DocumentModel.Wordprocessing;
 
 public interface InlineShapes: IElementCollection<InlineShape>
 {

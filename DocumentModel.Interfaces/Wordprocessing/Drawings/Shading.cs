@@ -12,9 +12,9 @@ public interface Shading
   /// <summary>
   /// Color of the pattern foreground.
   /// </summary>
-  public DM.IColor? ForegroundColor {get; set; }
+  public DM.Color? ForegroundColor {get; set; }
   /// <summary>
   /// Color of the pattern background.
   /// </summary>
-  public DM.IColor? BackgroundColor {get; set; }
+  public DM.Color? BackgroundColor {get; set; }
 }

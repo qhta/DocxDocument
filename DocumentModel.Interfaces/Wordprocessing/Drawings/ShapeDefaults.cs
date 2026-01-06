@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ShapeDefaults
 {
-  public DocumentModel.Vml.IShapeDefaults? ChildShapeDefaults { get; set; }
+  public DocumentModel.Vml.ShapeDefaults? ChildShapeDefaults { get; set; }
   public ShapeLayout? ShapeLayout { get; set; }
 }

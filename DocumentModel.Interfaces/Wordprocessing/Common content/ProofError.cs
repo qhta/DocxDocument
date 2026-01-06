@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ProofError Class.
 /// </summary>
-public interface ProofError: ICommonContent
+public interface ProofError: CommonContent
 {
   /// <summary>
   ///   Proofing Error Anchor Type

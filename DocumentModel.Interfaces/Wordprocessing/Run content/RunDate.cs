@@ -9,7 +9,7 @@ namespace DocumentModel.Wordprocessing;
 ///   A date block shall be displayed using the primary editing language of the host application, 
 ///   regardless of the languages specified in the parent run’s lang property (§17.3.2.20). 
 /// </summary>
-public interface RunDate: IRunContent
+public interface RunDate: RunContent
 {
   /// <summary>
   /// Specifies, which part of date is presented

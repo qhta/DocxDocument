@@ -50,6 +50,8 @@
   <ItemGroup>
     <Folder Include="Colors\Drawings\" />
     <Folder Include="Drawings.Diagram2\Classes\" />
+    <Folder Include="Wordprocessing\Common\Enums\" />
+    <Folder Include="Wordprocessing\Range\Enums\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />

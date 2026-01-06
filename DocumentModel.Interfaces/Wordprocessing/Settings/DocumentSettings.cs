@@ -468,7 +468,7 @@ public interface DocumentSettings : DocumentProperties
   /// <summary>
   /// This element specifies the document-level properties for all math in the document.
   /// </summary>
-  public IMathProperties? MathProperties { get; set; }
+  public MathProperties? MathProperties { get; set; }
   /// <summary>
   /// This element specifies that the left and right margins defined in the section properties shall be swapped on every second page. 
   /// </summary>
@@ -545,7 +545,7 @@ public interface DocumentSettings : DocumentProperties
   /// This setting freezes the document's presentation such that the ink annotations must exist at the same position 
   /// of the WordprocessingML document irrespective of the monitor on which the WordprocessingML document is rendered.
   /// </summary>
-  public IReadModeInkLockDown? ReadModeInkLockDown { get; set; }
+  public ReadModeInkLockDown? ReadModeInkLockDown { get; set; }
   /// <summary>
   /// This element specifies that the date and time information shall be removed from all annotations which are present 
   /// in the current document when it is saved. Annotations store this information in the date attribute on the annotation's XML element.
@@ -675,7 +675,7 @@ public interface DocumentSettings : DocumentProperties
   /// and the val attribute is used to determine the theme font applied to all other text.
   /// </summary>
   [Category("Fonts")]
-  public ILanguages? ThemeFontLanguages { get; set; }
+  public Languages? ThemeFontLanguages { get; set; }
   /// <summary>
   /// This element specifies that applications shall track revisions made to the WordprocessingML document. 
   /// Revisions are changes to a WordprocessingML document which are recorded such that they can be viewed independently, 

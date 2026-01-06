@@ -11,7 +11,7 @@ namespace DocumentModel.Math;
 ///   Within each argument in the array, every odd ampersand is an align value and every even ampersand is a spacer value 
 ///   (as well, the beginning of each argument provides an implied spacer value).
 /// </summary>
-public interface EquationArray: IElementCollection<Argument>, ICommonMathContent
+public interface EquationArray: IElementCollection<Argument>, CommonMathContent
 {
   /// <summary>
   ///   Specifies Equation Array properties.

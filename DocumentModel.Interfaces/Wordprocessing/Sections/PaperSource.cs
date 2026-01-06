@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PaperSource Class.
 /// </summary>
-public interface PaperSource: ISectionPropertiesContent
+public interface PaperSource: SectionPropertiesContent
 {
   /// <summary>
   ///   First Page Printer Tray Code

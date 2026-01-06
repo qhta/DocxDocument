@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 ///   inline-level structures (runs, images, fields, and so on) within a paragraph. 
 ///   The attributes on this element shall be used to specify the name and namespace URI of the current custom XML element.
 /// </summary>
-public interface CustomXmlRuby: CustomXmlRun, IRubyContent
+public interface CustomXmlRuby: CustomXmlRun, RubyContent
 {
 }
