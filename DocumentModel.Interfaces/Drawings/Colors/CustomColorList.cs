@@ -1,9 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the CustomColorList interface.
+/// Defines a list of custom colors for drawing elements.
 /// </summary>
-public interface CustomColorList
+public interface CustomColorList : IElementCollection<CustomColor>
 {
-  public Collection<CustomColor>? CustomColors { get; set; }
+  /// <summary>
+  /// Extension list.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

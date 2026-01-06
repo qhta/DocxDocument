@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticPlasticWrap interface.
+/// Represents an artistic plastic wrap effect, which simulates a plastic-wrapped appearance with adjustable transparency and smoothness.
 /// </summary>
 public interface ArtisticPlasticWrap
 {
   /// <summary>
-  ///   trans
+  /// Gets or sets the transparency level of the plastic wrap effect.
   /// </summary>
-  public Int32? Transparancy { get; set; }
+  public Int32? Transparency { get; set; }
+
   /// <summary>
-  ///   smoothness
+  /// Gets or sets the smoothness of the plastic wrap effect, influencing the softness and clarity of the simulated plastic texture.
   /// </summary>
   public Int32? Smoothness { get; set; }
 }

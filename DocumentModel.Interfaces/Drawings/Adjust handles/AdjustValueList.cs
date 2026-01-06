@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   List of Shape Adjust Values.
+/// Represents a collection of shape guide values used to adjust the geometry of shapes.
 /// </summary>
-public interface AdjustValueList
+public interface AdjustValueList : IElementCollection<ShapeGuide>
 {
-  public Collection<ShapeGuide>? ShapeGuides { get; set; }
 }

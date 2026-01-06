@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ArtisticCrisscrossEtching interface.
+/// Represents an artistic crisscross etching effect, which simulates a textured etching with adjustable transparency and pressure.
 /// </summary>
 public interface ArtisticCrisscrossEtching
 {
   /// <summary>
-  ///   trans
+  /// Gets or sets the transparency level of the crisscross etching effect.
   /// </summary>
-  public Int32? Transparancy { get; set; }
+  public Int32? Transparency { get; set; }
+
   /// <summary>
-  ///   pressure
+  /// Gets or sets the pressure applied in the crisscross etching effect, influencing the intensity of the etched lines.
   /// </summary>
   public Int32? Pressure { get; set; }
 }
