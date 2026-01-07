@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel;
 
 /// <summary>
 /// Represents an RGB color using hexadecimal notation with optional transformations for WordprocessingML.
@@ -70,7 +70,7 @@ namespace DocumentModel.Wordprocessing;
 /// };
 /// </code>
 /// </example>
-public interface RgbColorModelHex
+public interface RgbColorModelHex: 
 {
   /// <summary>
   /// Gets or sets the base RGB color value in hexadecimal format.

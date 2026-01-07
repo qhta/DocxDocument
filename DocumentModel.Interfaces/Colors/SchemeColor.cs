@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel;
 
 /// <summary>
 /// Represents a color that references a theme color scheme with optional transformations.

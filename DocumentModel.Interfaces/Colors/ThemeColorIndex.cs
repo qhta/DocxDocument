@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel;
 /// <summary>
 ///   Defines the ThemeColorValues enumeration.
 /// </summary>
