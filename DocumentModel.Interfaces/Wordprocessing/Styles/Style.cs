@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a style (paragraph style, character style, etc.) in the document.
 /// </summary>
-public interface Style
+public interface Style: CollectionItem
 {
   /// <summary>
   ///   Gets the name of the style.

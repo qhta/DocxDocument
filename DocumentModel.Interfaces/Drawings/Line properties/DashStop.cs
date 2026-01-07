@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a stop in a custom dash pattern, defining the length of a dash and the following space.
 /// </summary>
-public interface DashStop
+public interface DashStop: CollectionItem
 {
   /// <summary>
   ///   Length of the dash segment.

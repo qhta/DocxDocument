@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a single spelling suggestion.
 /// </summary>
-public interface SpellingSuggestion
+public interface SpellingSuggestion: CollectionItem
 {
   /// <summary>
   ///   Gets the suggested spelling.

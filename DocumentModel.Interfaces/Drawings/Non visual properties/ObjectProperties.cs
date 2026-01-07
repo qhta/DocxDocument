@@ -1,20 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ObjectProperties interface.
+///   Represents properties for an embedded object, including its identifier, ActiveX status, and link type.
 /// </summary>
 public interface ObjectProperties
 {
   /// <summary>
-  ///   objectId
+  ///   Identifier for the embedded object.
   /// </summary>
   public string? Id { get; set; }
+
   /// <summary>
-  ///   isActiveX
+  ///   Indicates whether the object is an ActiveX control.
   /// </summary>
   public bool? IsActiveX { get; set; }
+
   /// <summary>
-  ///   linkType
+  ///   Type of link associated with the object.
   /// </summary>
   public string? LinkType { get; set; }
 }

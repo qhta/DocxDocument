@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the Point2DType interface.
+///   Represents a 2D point with X and Y coordinates.
 /// </summary>
 public interface Point2DType
 {
   /// <summary>
-  ///   X-Axis Coordinate
+  ///   X-axis coordinate of the point.
   /// </summary>
   public Int64? X { get; set; }
+
   /// <summary>
-  ///   Y-Axis Coordinate
+  ///   Y-axis coordinate of the point.
   /// </summary>
   public Int64? Y { get; set; }
 }

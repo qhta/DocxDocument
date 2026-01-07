@@ -25,7 +25,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   dependencies. Common use cases include caching parent relationships for counties within states, states within
 ///   countries, or cities within regions for quick navigation through geographic hierarchies.
 /// </remarks>
-public interface GeoParentEntitiesQueryResult
+public interface GeoParentEntitiesQueryResult: CollectionItem
 {
   /// <summary>
   ///   Gets or sets the query specification that was used to retrieve the parent entities.

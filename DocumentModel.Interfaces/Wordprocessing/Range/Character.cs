@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   A character can be a text character, whitespace, punctuation, or special
 ///   formatting mark like a tab or paragraph mark.
 /// </remarks>
-public interface Character
+public interface Character: CollectionItem
 {
   #region Text Content
 

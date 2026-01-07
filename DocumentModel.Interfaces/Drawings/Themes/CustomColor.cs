@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Custom color.
 /// </summary>
-public interface CustomColor
+public interface CustomColor: CollectionItem
 {
   /// <summary>
   ///   Name

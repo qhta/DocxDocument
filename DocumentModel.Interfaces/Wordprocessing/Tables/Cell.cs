@@ -16,7 +16,7 @@ namespace DocumentModel.Wordprocessing;
 ///   control this behavior.
 ///   </para>
 /// </remarks>
-public interface Cell
+public interface Cell: CollectionItem
 {
   #region Properties
 

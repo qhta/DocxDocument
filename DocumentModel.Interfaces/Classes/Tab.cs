@@ -128,7 +128,7 @@
 /// };
 /// </code>
 /// </example>
-public interface Tab
+public interface Tab: CollectionItem
 {
   /// <summary>
   /// Gets or sets the unique identifier for this custom tab.

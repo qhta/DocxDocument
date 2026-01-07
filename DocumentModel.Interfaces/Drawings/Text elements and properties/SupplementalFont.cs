@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a supplemental font for a specific script, including script identifier and typeface.
 /// </summary>
-public interface SupplementalFont
+public interface SupplementalFont: CollectionItem
 {
   /// <summary>
   ///   Script identifier for which the font is used.

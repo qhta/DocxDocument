@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the PositiveSize2DType interface.
+///   Represents a positive 2D size, defined by its length and width.
 /// </summary>
 public interface PositiveSize2DType
 {
   /// <summary>
-  ///   Extent Length
+  ///   Length of the extent.
   /// </summary>
   public Int64? Cx { get; set; }
+
   /// <summary>
-  ///   Extent Width
+  ///   Width of the extent.
   /// </summary>
   public Int64? Cy { get; set; }
 }

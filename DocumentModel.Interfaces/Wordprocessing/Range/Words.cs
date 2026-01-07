@@ -16,36 +16,6 @@ namespace DocumentModel.Wordprocessing;
 /// </remarks>
 public interface Words : ElementCollection<Word>
 {
-  #region Collection Properties
-
-  /// <summary>
-  ///   Gets the number of words in the collection.
-  /// </summary>
-  public int Count { get; }
-
-  /// <summary>
-  ///   Gets the first word in the collection.
-  /// </summary>
-  public Word? First { get; }
-
-  /// <summary>
-  ///   Gets the last word in the collection.
-  /// </summary>
-  public Word? Last { get; }
-
-  #endregion
-
-  #region Item Access
-
-  /// <summary>
-  ///   Gets a word by its index in the collection.
-  /// </summary>
-  /// <param name="index">The one-based index of the word to retrieve.</param>
-  /// <returns>The word at the specified index.</returns>
-  public Word? Item(int index);
-
-  #endregion
-
   #region Parent and Application
 
   /// <summary>

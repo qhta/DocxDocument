@@ -18,7 +18,7 @@ namespace DocumentModel;
 ///   remain functional even when opened in older or different Office versions. This forward-compatible design
 ///   enables innovation while preserving document interoperability across different Office versions and platforms.
 /// </remarks>
-public interface Extension
+public interface Extension: CollectionItem
 {
   /// <summary>
   ///   Gets or sets the URI that identifies the type or namespace of this extension.

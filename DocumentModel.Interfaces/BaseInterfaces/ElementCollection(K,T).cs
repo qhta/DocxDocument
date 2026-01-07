@@ -5,6 +5,7 @@
 /// </summary>
 /// <typeparam name="KeyType"></typeparam>
 /// <typeparam name="ItemType"></typeparam>
-public interface ElementCollection<KeyType, ItemType> : ElementCollection<ItemType> where ItemType : UniqueModelElement<KeyType> where KeyType: IEquatable<KeyType>
+public interface ElementCollection<KeyType, ItemType> : ElementCollection<ItemType> 
+  where ItemType : UniqueModelElement<KeyType> where KeyType: IEquatable<KeyType>
 {
 }

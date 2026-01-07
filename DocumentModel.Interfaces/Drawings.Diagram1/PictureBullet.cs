@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Picture Bullet.
+///   Represents a picture bullet, which uses an image as a bullet in lists or text.
 /// </summary>
 public interface PictureBullet
 {
   /// <summary>
-  ///   Blip.
+  ///   Image used for the picture bullet.
   /// </summary>
   public Blip? Blip { get; set; }
 }

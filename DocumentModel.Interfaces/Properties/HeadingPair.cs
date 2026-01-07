@@ -3,7 +3,7 @@
 /// Heading pairs indicates the grouping of document parts and the number of parts in each group.
 /// These parts are not document parts but conceptual representations of document sections.
 /// </summary>
-public interface HeadingPair: ICollectionItem
+public interface HeadingPair: CollectionItem
 {
   /// <summary>
   /// String part of the structure.

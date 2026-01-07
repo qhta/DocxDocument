@@ -8,7 +8,7 @@ namespace DocumentModel;
 ///   within a <see cref="TaskFormGroupCategory"/>. Tasks provide interactive elements with
 ///   customizable appearance, behavior, and positioning within the task pane UI.
 /// </remarks>
-public interface TaskFormGroupTask : ElementCollection<BackstageGroup>
+public interface TaskFormGroupTask : CollectionItem, ElementCollection<BackstageGroup>
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this task.

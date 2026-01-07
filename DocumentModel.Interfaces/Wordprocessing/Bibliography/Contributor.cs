@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a single contributor (author, editor, etc.).
 /// </summary>
-public interface Contributor
+public interface Contributor: CollectionItem
 {
   /// <summary>
   ///   Gets or sets the first name.
