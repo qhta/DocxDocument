@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Miter Line Join.
+///   Represents a miter line join, specifying the miter limit for the join.
 /// </summary>
 public interface Miter
 {
   /// <summary>
-  ///   Miter Join Limit
+  ///   Miter join limit value.
   /// </summary>
   public Int32? Limit { get; set; }
 }

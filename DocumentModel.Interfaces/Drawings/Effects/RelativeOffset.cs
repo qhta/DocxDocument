@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Relative Offset Effect.
+///   Represents a relative offset effect, specifying X and Y offset values for positioning.
 /// </summary>
 public interface RelativeOffset
 {
   /// <summary>
-  ///   Offset X
+  ///   X offset value.
   /// </summary>
   public Int32? OffsetX { get; set; }
+
   /// <summary>
-  ///   Offset Y
+  ///   Y offset value.
   /// </summary>
   public Int32? OffsetY { get; set; }
 }

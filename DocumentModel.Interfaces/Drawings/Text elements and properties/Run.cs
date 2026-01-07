@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Text Run.
+///   Represents a text run, including character properties and the text string.
 /// </summary>
 public interface Run
 {
   /// <summary>
-  ///   Text Character Properties.
+  ///   Character properties applied to the text run.
   /// </summary>
   public RunProperties? RunProperties { get; set; }
+
   /// <summary>
-  ///   Text String.
+  ///   Text string content of the run.
   /// </summary>
   public string? Text { get; set; }
 }
