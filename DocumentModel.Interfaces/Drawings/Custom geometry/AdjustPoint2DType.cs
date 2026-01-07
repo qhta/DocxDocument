@@ -8,10 +8,10 @@ public interface AdjustPoint2DType
   /// <summary>
   /// X-coordinate of the adjustment point.
   /// </summary>
-  public string? X { get; set; }
+  public AdjustCoordinate? X { get; set; }
 
   /// <summary>
   /// Y-coordinate of the adjustment point.
   /// </summary>
-  public string? Y { get; set; }
+  public AdjustCoordinate? Y { get; set; }
 }

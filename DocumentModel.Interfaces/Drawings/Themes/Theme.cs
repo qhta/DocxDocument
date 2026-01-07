@@ -1,36 +1,37 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Theme.
+///   Represents a theme, including its name, identifier, theme elements, object defaults, color schemes, custom colors, and extension lists.
 /// </summary>
-public interface Theme
+public interface Theme: OfficeStyleSheetExtendableElement
 {
   /// <summary>
-  ///   name
+  ///   Name of the theme.
   /// </summary>
   public string? Name { get; set; }
+
   /// <summary>
-  ///   id
+  ///   Identifier for the theme.
   /// </summary>
   public string? ThemeId { get; set; }
+
   /// <summary>
-  ///   ThemeElements.
+  ///   Elements that define the theme's appearance.
   /// </summary>
   public ThemeElements? ThemeElements { get; set; }
+
   /// <summary>
-  ///   ObjectDefaults.
+  ///   Default formatting for objects in the theme.
   /// </summary>
   public ObjectDefaults? ObjectDefaults { get; set; }
+
   /// <summary>
-  ///   ExtraColorSchemeList.
+  ///   List of extra color schemes associated with the theme.
   /// </summary>
   public ExtraColorSchemeList? ExtraColorSchemeList { get; set; }
+
   /// <summary>
-  ///   CustomColorList.
+  ///   List of custom colors defined for the theme.
   /// </summary>
   public CustomColorList? CustomColorList { get; set; }
-  /// <summary>
-  ///   OfficeStyleSheetExtensionList.
-  /// </summary>
-  public OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get; set; }
 }

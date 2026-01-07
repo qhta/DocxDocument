@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Soft Edge Effect.
+///   Represents a soft edge effect, allowing adjustment of the edge radius for a drawing element.
 /// </summary>
 public interface SoftEdge
 {
   /// <summary>
-  ///   Radius
+  ///   Radius of the soft edge effect.
   /// </summary>
   public Int64? Radius { get; set; }
 }
