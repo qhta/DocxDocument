@@ -1,24 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the DefaultShapeDefinitionType interface.
+///   Represents the default shape definition, including visual properties, body properties, list style, and shape style.
 /// </summary>
-public interface DefaultShapeDefinitionType: ExtendableElement
+public interface DefaultShapeDefinitionType : ExtendableElement
 {
   /// <summary>
-  ///   Visual Properties.
+  ///   Visual properties for the default shape.
   /// </summary>
   public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  ///   BodyProperties.
+  ///   Body properties for the default shape.
   /// </summary>
   public BodyProperties? BodyProperties { get; set; }
+
   /// <summary>
-  ///   ListStyle.
+  ///   List style for the default shape.
   /// </summary>
   public ListStyle? ListStyle { get; set; }
+
   /// <summary>
-  ///   ShapeStyle.
+  ///   Shape style for the default shape.
   /// </summary>
   public ShapeStyle? ShapeStyle { get; set; }
 }
