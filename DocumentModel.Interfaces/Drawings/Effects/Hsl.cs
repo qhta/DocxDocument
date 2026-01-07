@@ -1,20 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Hue Saturation Luminance Effect.
+///   Represents a hue, saturation, and luminance (HSL) effect for color adjustment.
 /// </summary>
 public interface Hsl
 {
   /// <summary>
-  ///   Hue
+  ///   Hue component of the color.
   /// </summary>
   public Int32? Hue { get; set; }
+
   /// <summary>
-  ///   Saturation
+  ///   Saturation component of the color.
   /// </summary>
   public Int32? Saturation { get; set; }
+
   /// <summary>
-  ///   Luminance
+  ///   Luminance component of the color.
   /// </summary>
   public Int32? Luminance { get; set; }
 }

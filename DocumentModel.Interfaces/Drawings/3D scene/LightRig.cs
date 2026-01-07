@@ -1,20 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Light Rig.
+///   Represents a light rig configuration, including preset, direction, and rotation for 3D scenes or objects.
 /// </summary>
 public interface LightRig
 {
   /// <summary>
-  ///   Rig Preset
+  ///   Preset type of the light rig.
   /// </summary>
   public LightRigKind? Rig { get; set; }
+
   /// <summary>
-  ///   Direction
+  ///   Direction of the light rig.
   /// </summary>
   public LightRigDirectionKind? Direction { get; set; }
+
   /// <summary>
-  ///   Rotation.
+  ///   Rotation settings for the light rig.
   /// </summary>
   public Rotation? Rotation { get; set; }
 }

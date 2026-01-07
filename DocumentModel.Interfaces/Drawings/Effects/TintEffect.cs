@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the TintEffect interface.
+///   Represents a tint effect, allowing adjustment of hue and amount for color modification.
 /// </summary>
 public interface TintEffect
 {
   /// <summary>
-  ///   Hue
+  ///   Hue adjustment value for the tint effect.
   /// </summary>
   public Int32? Hue { get; set; }
+
   /// <summary>
-  ///   Amount
+  ///   Amount of tint to apply.
   /// </summary>
   public Int32? Amount { get; set; }
 }

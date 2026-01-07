@@ -1,20 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Rotation.
+///   Represents rotation parameters, including latitude, longitude, and revolution values.
 /// </summary>
 public interface Rotation
 {
   /// <summary>
-  ///   Latitude
+  ///   Latitude value for the rotation.
   /// </summary>
   public Int32? Latitude { get; set; }
+
   /// <summary>
-  ///   Longitude
+  ///   Longitude value for the rotation.
   /// </summary>
   public Int32? Longitude { get; set; }
+
   /// <summary>
-  ///   Revolution
+  ///   Revolution value for the rotation.
   /// </summary>
   public Int32? Revolution { get; set; }
 }

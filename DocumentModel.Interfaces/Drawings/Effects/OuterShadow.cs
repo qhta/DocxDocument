@@ -1,68 +1,82 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Outer Shadow Effect.
+///   Represents an outer shadow effect, including blur, offset, direction, scaling, skew, alignment, rotation, and color options.
 /// </summary>
 public interface OuterShadow
 {
   /// <summary>
-  ///   Blur Radius
+  ///   Blur radius of the shadow.
   /// </summary>
   public Int64? BlurRadius { get; set; }
+
   /// <summary>
-  ///   Shadow Offset Distance
+  ///   Distance to offset the shadow from the object.
   /// </summary>
   public Int64? Distance { get; set; }
+
   /// <summary>
-  ///   Shadow Direction
+  ///   Direction angle of the shadow.
   /// </summary>
   public Int32? Direction { get; set; }
+
   /// <summary>
-  ///   Horizontal Scaling Factor
+  ///   Horizontal scaling factor for the shadow.
   /// </summary>
   public Int32? HorizontalRatio { get; set; }
+
   /// <summary>
-  ///   Vertical Scaling Factor
+  ///   Vertical scaling factor for the shadow.
   /// </summary>
   public Int32? VerticalRatio { get; set; }
+
   /// <summary>
-  ///   Horizontal Skew
+  ///   Horizontal skew of the shadow.
   /// </summary>
   public Int32? HorizontalSkew { get; set; }
+
   /// <summary>
-  ///   Vertical Skew
+  ///   Vertical skew of the shadow.
   /// </summary>
   public Int32? VerticalSkew { get; set; }
+
   /// <summary>
-  ///   Shadow Alignment
+  ///   Alignment of the shadow relative to the object.
   /// </summary>
   public RectangleAlignmentKind? Alignment { get; set; }
+
   /// <summary>
-  ///   Rotate With Shape
+  ///   Indicates whether the shadow rotates with the shape.
   /// </summary>
   public bool? RotateWithShape { get; set; }
+
   /// <summary>
-  ///   RGB Color Model - Percentage Variant.
+  ///   Shadow color specified using the RGB color model with percentage values.
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
+
   /// <summary>
-  ///   RGB Color Model - Hex Variant.
+  ///   Shadow color specified using the RGB color model with hexadecimal values.
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex { get; set; }
+
   /// <summary>
-  ///   Hue, Saturation, Luminance Color Model.
+  ///   Shadow color specified using the hue, saturation, luminance (HSL) color model.
   /// </summary>
   public HslColor? HslColor { get; set; }
+
   /// <summary>
-  ///   System Color.
+  ///   Shadow color specified using a system-defined color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
+
   /// <summary>
-  ///   Scheme Color.
+  ///   Shadow color specified using a color scheme.
   /// </summary>
   public SchemeColor? SchemeColor { get; set; }
+
   /// <summary>
-  ///   Preset Color.
+  ///   Shadow color specified using a preset color.
   /// </summary>
   public PresetColor? PresetColor { get; set; }
 }
