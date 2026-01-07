@@ -1,36 +1,42 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the GroupShapeLocks interface.
+///   Represents locking options for a group shape, restricting user actions such as grouping, ungrouping, selection, rotation, movement, and resizing.
 /// </summary>
-public interface GroupShapeLocks: ExtendableElement
+public interface GroupShapeLocks : ExtendableElement
 {
   /// <summary>
-  ///   Disallow Shape Grouping
+  ///   Disallows grouping of shapes within the group.
   /// </summary>
   public bool? NoGrouping { get; set; }
+
   /// <summary>
-  ///   Disallow Shape Ungrouping
+  ///   Disallows ungrouping of the group shape.
   /// </summary>
   public bool? NoUngrouping { get; set; }
+
   /// <summary>
-  ///   Disallow Shape Selection
+  ///   Disallows selection of the group shape.
   /// </summary>
   public bool? NoSelection { get; set; }
+
   /// <summary>
-  ///   Disallow Shape Rotation
+  ///   Disallows rotation of the group shape.
   /// </summary>
   public bool? NoRotation { get; set; }
+
   /// <summary>
-  ///   Disallow Aspect Ratio Change
+  ///   Disallows changing the aspect ratio of the group shape.
   /// </summary>
   public bool? NoChangeAspect { get; set; }
+
   /// <summary>
-  ///   Disallow Moving Shape
+  ///   Disallows moving the group shape.
   /// </summary>
   public bool? NoMove { get; set; }
+
   /// <summary>
-  ///   Disallow Shape Resizing
+  ///   Disallows resizing the group shape.
   /// </summary>
   public bool? NoResize { get; set; }
 }

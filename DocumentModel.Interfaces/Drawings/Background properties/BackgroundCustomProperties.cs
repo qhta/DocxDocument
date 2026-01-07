@@ -5,8 +5,4 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface BackgroundCustomProperties
 {
-  /// <summary>
-  /// Gets or sets the OfficeArt extension list, which contains additional metadata or custom extensions for background customization.
-  /// </summary>
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

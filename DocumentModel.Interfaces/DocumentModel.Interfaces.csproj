@@ -49,6 +49,7 @@
   <ItemGroup>
     <Folder Include="Drawings.Diagram2\Classes\" />
     <Folder Include="Drawings.Office.ScriptLink\Classes\" />
+    <Folder Include="Drawings\Enums\" />
     <Folder Include="Office.Drawing\" />
     <Folder Include="Office2013.Word.Drawing\" />
     <Folder Include="Vml\Classes\" />
