@@ -1,63 +1,69 @@
 namespace DocumentModel.Drawings;
+
 /// <summary>
-///   Defines the LinePropertiesType interface.
+///   Represents line formatting properties, including width, cap, compound type, alignment, fill, dash, join, end properties, and extensions.
 /// </summary>
-public interface LineProperties: TypedModelElement, DrawingProperty
+public interface LineProperties : LinePropertiesExtendableElement, TypedModelElement, DrawingProperty
 {
   /// <summary>
-  ///   Line width
+  ///   Line width.
   /// </summary>
   public Int32? Width { get; set; }
+
   /// <summary>
-  ///   Line cap
+  ///   Line cap type.
   /// </summary>
   public LineCapKind? CapType { get; set; }
+
   /// <summary>
-  ///   Compound line type
+  ///   Compound line type.
   /// </summary>
   public CompoundLineKind? CompoundLineType { get; set; }
+
   /// <summary>
-  ///   Pen alignment
+  ///   Pen alignment.
   /// </summary>
   public PenAlignmentKind? Alignment { get; set; }
+
   /// <summary>
-  /// Line fill properties
+  ///   Line fill properties.
   /// </summary>
   public Fill? Fill { get; set; }
+
   /// <summary>
-  /// Line preset dash properties
+  ///   Preset dash style for the line.
   /// </summary>
   public PresetLineDashKind? PresetDash { get; set; }
+
   /// <summary>
-  /// Line custom dash properties
+  ///   Custom dash pattern for the line.
   /// </summary>
   public CustomDash? CustomDash { get; set; }
+
   /// <summary>
-  /// Round Line Join.
+  ///   Indicates a round line join.
   /// </summary>
   [DefaultValue(false)]
   public Boolean Round { get; set; }
+
   /// <summary>
-  /// Angle joint is used to connect lines.
+  ///   Indicates an angle (bevel) joint is used to connect lines.
   /// </summary>
   [DefaultValue(false)]
   public Boolean LineJoinBevel { get; set; }
+
   /// <summary>
-  /// This element specifies that a line join shall be mitered.
+  ///   Specifies that a line join shall be mitered.
   /// </summary>
   public Miter? Miter { get; set; }
+
   /// <summary>
-  /// Properties for the head end of the line.  
+  ///   Properties for the head end of the line.
   /// </summary>
   public LineEndPropertiesType? HeadEnd { get; set; }
+
   /// <summary>
-  /// Properties for the tail end of the line.
+  ///   Properties for the tail end of the line.
   /// </summary>
   public LineEndPropertiesType? TailEnd { get; set; }
-  /// <summary>
-  /// Gets or sets the list of extension properties for the line.
-  /// </summary>
-  /// <remarks>Use this property to store or retrieve additional custom properties associated with the line that
-  /// are not defined in the standard schema. This is typically used for extensibility scenarios.</remarks>
-  public LinePropertiesExtensionList? LinePropertiesExtensionList { get; set; }
 }
