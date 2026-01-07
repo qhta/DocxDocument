@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Description.
 /// </summary>
-public interface ColorTransformDescription
+public interface ColorTransformDescription: CollectionItem
 {
   /// <summary>
   ///   Language

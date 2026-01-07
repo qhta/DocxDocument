@@ -3,7 +3,6 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the CustomPropertyPart
 /// </summary>
-public interface CustomPropertyPart
+public interface CustomPropertyPart: OpenXmlPart
 {
-  public string? RelationshipType { get; set; }
 }

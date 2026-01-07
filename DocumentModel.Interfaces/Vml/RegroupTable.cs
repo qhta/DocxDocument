@@ -9,5 +9,5 @@ public interface RegroupTable
   ///   VML Extension Handling Behavior
   /// </summary>
   public ExtensionHandlingBehaviorKind? Extension { get; set; }
-  public Collection<Entry>? Entries { get; set; }
+  public Entries Entries { get; set; }
 }

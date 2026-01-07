@@ -9,5 +9,5 @@ public interface SdtContentComboBox
   ///   Combo Box Last Saved Value
   /// </summary>
   public string? LastValue { get; set; }
-  public Collection<ListItem>? ListItems { get; set; }
+  public ListItems ListItems { get; set; }
 }

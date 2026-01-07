@@ -3,7 +3,6 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 ///   Defines the WebExtensionPropertyBag Class.
 /// </summary>
-public interface WebExtensionPropertyBag
+public interface WebExtensionPropertyBag: ElementCollection<WebExtensionProperty>
 {
-  public Collection<WebExtensionProperty>? WebExtensionProperties { get; set; }
 }

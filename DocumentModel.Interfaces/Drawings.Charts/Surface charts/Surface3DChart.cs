@@ -1,0 +1,20 @@
+namespace DocumentModel.Drawings.Charts;
+
+/// <summary>
+///   3D Surface Charts.
+/// </summary>
+public interface Surface3DChart
+{
+  /// <summary>
+  ///   Wireframe.
+  /// </summary>
+  public bool? Wireframe { get; set; }
+  /// <summary>
+  ///   VaryColors.
+  /// </summary>
+  public bool? VaryColors { get; set; }
+  public SurfaceChartSeries SurfaceChartSeries { get; set; }
+  public BandFormats? BandFormats { get; set; }
+  public AxisIds AxisIds { get; set; }
+  public Surface3DChartExtensionList? Surface3DChartExtensionList { get; set; }
+}

@@ -65,8 +65,4 @@ public interface HiddenLineProperties : LinePropertiesExtendableElement
   /// </summary>
   public LineEndPropertiesType? TailEnd { get; set; }
 
-  /// <summary>
-  ///   List of extension properties for the line, used for extensibility scenarios.
-  /// </summary>
-  public LinePropertiesExtensionList? LinePropertiesExtensionList { get; set; }
 }

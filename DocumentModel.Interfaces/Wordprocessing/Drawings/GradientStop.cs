@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the GradientStop Class.
 /// </summary>
-public interface GradientStop
+public interface GradientStop: CollectionItem
 {
   /// <summary>
   ///   pos
@@ -12,7 +12,7 @@ public interface GradientStop
   /// <summary>
   ///   RgbColorModelHex.
   /// </summary>
-  public RgbColorModelHex? RgbColorModelHex { get; set; }
+  public RgbColor? RgbColor { get; set; }
   /// <summary>
   ///   SchemeColor.
   /// </summary>

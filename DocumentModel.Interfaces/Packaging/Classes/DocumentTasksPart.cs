@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DocumentTasksPart
 /// </summary>
-public interface DocumentTasksPart
+public interface DocumentTasksPart: OpenXmlPart
 {
   public string? ContentType { get; set; }
   public string? RelationshipType { get; set; }

@@ -279,5 +279,5 @@ public interface OfficeArtExtensionList
   /// </list>
   /// </para>
   /// </remarks>
-  public Collection<Drawings.Extension>? Extensions { get; set; }
+  public ExtensionList? Extensions { get; set; }
 }

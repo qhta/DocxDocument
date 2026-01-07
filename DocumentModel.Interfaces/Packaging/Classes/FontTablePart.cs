@@ -4,13 +4,13 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the FontTablePart
 /// </summary>
-public interface FontTablePart
+public interface FontTablePart: OpenXmlPart
 {
   public string? ContentType { get; set; }
   /// <summary>
   ///   Gets the FontParts of the FontTablePart
   /// </summary>
-  public Collection<FontPart>? FontParts { get; set; }
+  public FontParts FontParts { get; set; }
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>

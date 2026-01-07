@@ -9,5 +9,5 @@ public interface RelationTable
   ///   VML Extension Handling Behavior
   /// </summary>
   public ExtensionHandlingBehaviorKind? Extension { get; set; }
-  public Collection<Relation>? Relations { get; set; }
+  public Relations Relations { get; set; }
 }

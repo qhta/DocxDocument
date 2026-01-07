@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 ///   Defines the WebExtensionProperty Class.
 /// </summary>
-public interface WebExtensionProperty
+public interface WebExtensionProperty: CollectionItem
 {
   /// <summary>
   ///   name

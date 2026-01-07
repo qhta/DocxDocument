@@ -13,5 +13,5 @@ public interface DropDownListFormField
   ///   Default Drop-Down List Item Index.
   /// </summary>
   public Int32? DefaultDropDownListItemIndex { get; set; }
-  public Collection<String>? ListEntryFormFields { get; set; }
+  public ListEntryFormFields ListEntryFormFields { get; set; }
 }

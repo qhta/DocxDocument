@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the StyleSet Class.
 /// </summary>
-public interface StyleSet
+public interface StyleSet: CollectionItem
 {
   /// <summary>
   ///   id

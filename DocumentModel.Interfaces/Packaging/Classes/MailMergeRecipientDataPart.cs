@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines MailMergeRecipientDataPart.
 /// </summary>
-public interface MailMergeRecipientDataPart
+public interface MailMergeRecipientDataPart: OpenXmlPart
 {
   /// <summary>
   ///   Gets or sets the part's root element when the part's content type is
@@ -16,5 +16,4 @@ public interface MailMergeRecipientDataPart
   ///   MailMergeRecipientDataPartType.MsWordMailMergeRecipientData.
   /// </summary>
   public MailMergeRecipients? MailMergeRecipients { get; set; }
-  public string? RelationshipType { get; set; }
 }

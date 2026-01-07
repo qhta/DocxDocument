@@ -161,5 +161,5 @@ public interface ComboBox
   ///   getShowImage
   /// </summary>
   public string? GetShowImage { get; set; }
-  public Collection<Item>? Items { get; set; }
+  public SelectionItems Items { get; set; }
 }

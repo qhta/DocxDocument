@@ -4,16 +4,14 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramLayoutDefinitionPart
 /// </summary>
-public interface DiagramLayoutDefinitionPart
+public interface DiagramLayoutDefinitionPart: OpenXmlPart
 {
-  public string? ContentType { get; set; }
   /// <summary>
   ///   Gets the ImageParts of the DiagramLayoutDefinitionPart
   /// </summary>
-  public Collection<ImagePart>? ImageParts { get; set; }
+  public ImageParts ImageParts { get; set; }
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
   public LayoutDefinition? LayoutDefinition { get; set; }
-  public string? RelationshipType { get; set; }
 }

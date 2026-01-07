@@ -1,6 +1,5 @@
 ﻿namespace DocumentModel.Packaging;
 
-public interface CustomXMLParts: ElementCollection<CustomXmlPart>
+public interface CustomXmlParts: OpenXmlPartCollection<CustomXmlPart>
 {
-  
 }

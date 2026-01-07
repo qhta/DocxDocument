@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the ContextualTabSet Class.
 /// </summary>
-public interface ContextualTabSet
+public interface ContextualTabSet: CollectionItem
 {
   /// <summary>
   ///   idMso
@@ -17,5 +17,5 @@ public interface ContextualTabSet
   ///   getVisible
   /// </summary>
   public string? GetVisible { get; set; }
-  public Collection<Tab>? Tabs { get; set; }
+  public Tabs Tabs { get; set; }
 }

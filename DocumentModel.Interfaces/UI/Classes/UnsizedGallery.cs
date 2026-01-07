@@ -197,6 +197,6 @@ public interface UnsizedGallery
   ///   getShowImage
   /// </summary>
   public string? GetShowImage { get; set; }
-  public Collection<Item>? Items { get; set; }
-  public Collection<UnsizedButton>? UnsizedButtons { get; set; }
+  public SelectionItems Items { get; set; }
+  public UnsizedButtons UnsizedButtons { get; set; }
 }

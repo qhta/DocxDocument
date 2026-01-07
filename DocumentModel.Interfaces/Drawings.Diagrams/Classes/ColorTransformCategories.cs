@@ -3,7 +3,6 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Color Transform Category List.
 /// </summary>
-public interface ColorTransformCategories
+public interface ColorTransformCategories: ElementCollection<ColorTransformCategory>
 {
-  public Collection<ColorTransformCategory>? Items { get; set; }
 }

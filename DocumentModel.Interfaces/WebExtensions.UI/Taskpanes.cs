@@ -3,7 +3,6 @@ namespace DocumentModel.WebExtensions.UI;
 /// <summary>
 ///   Defines the Taskpanes Class.
 /// </summary>
-public interface Taskpanes
+public interface Taskpanes: ElementCollection<WebExtensionTaskpane>
 {
-  public Collection<WebExtensionTaskpane>? WebExtensionTaskpanes { get; set; }
 }

@@ -3,7 +3,6 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the Tabs Class.
 /// </summary>
-public interface Tabs
+public interface Tabs: ElementCollection<Tab>
 {
-  public Collection<Tab>? Items { get; set; }
 }

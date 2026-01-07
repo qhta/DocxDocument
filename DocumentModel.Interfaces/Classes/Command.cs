@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Command Class.
 /// </summary>
-public interface Command
+public interface Command: CollectionItem
 {
   /// <summary>
   ///   onAction

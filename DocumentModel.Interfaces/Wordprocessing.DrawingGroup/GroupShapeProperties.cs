@@ -23,5 +23,5 @@ public interface GroupShapeProperties
   public EffectList? EffectList { get; set; }
   public EffectDag? EffectDag { get; set; }
   public Scene3DType? Scene3DType { get; set; }
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
+  public ExtensionList? ExtensionList { get; set; }
 }
