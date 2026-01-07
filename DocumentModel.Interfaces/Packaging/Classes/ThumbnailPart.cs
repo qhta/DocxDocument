@@ -5,5 +5,5 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface ThumbnailPart: OpenXmlPart
 {
-  public string? RelationshipType { get; set; }
+
 }

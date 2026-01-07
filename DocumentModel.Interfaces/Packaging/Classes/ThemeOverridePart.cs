@@ -6,12 +6,12 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface ThemeOverridePart: OpenXmlPart
 {
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets the ImageParts of the ThemeOverridePart
   /// </summary>
   public ImageParts ImageParts { get; set; }
-  public string? RelationshipType { get; set; }
+
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>

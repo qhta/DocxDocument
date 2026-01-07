@@ -5,5 +5,5 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface FontPart: OpenXmlPart
 {
-  public string? RelationshipType { get; set; }
+
 }

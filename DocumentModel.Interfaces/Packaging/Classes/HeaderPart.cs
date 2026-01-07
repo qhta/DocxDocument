@@ -14,7 +14,7 @@ public interface HeaderPart: OpenXmlPart
   ///   Gets the ChartParts of the HeaderPart
   /// </summary>
   public ChartParts ChartParts { get; set; }
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets the DiagramColorsParts of the HeaderPart
   /// </summary>
@@ -63,5 +63,5 @@ public interface HeaderPart: OpenXmlPart
   ///   Gets the Model3DReferenceRelationshipParts of the HeaderPart
   /// </summary>
   public Model3DReferenceRelationshipParts Model3DReferenceRelationshipParts { get; set; }
-  public string? RelationshipType { get; set; }
+
 }

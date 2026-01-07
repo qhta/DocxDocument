@@ -5,5 +5,5 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface EmbeddedControlPersistenceBinaryDataPart: OpenXmlPart
 {
-  public string? RelationshipType { get; set; }
+
 }

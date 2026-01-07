@@ -9,7 +9,7 @@ public interface DrawingsPart: OpenXmlPart
   ///   Gets the ChartParts of the DrawingsPart
   /// </summary>
   public ChartParts ChartParts { get; set; }
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets the CustomXmlParts of the DrawingsPart
   /// </summary>
@@ -42,7 +42,7 @@ public interface DrawingsPart: OpenXmlPart
   ///   Gets the ImageParts of the DrawingsPart
   /// </summary>
   public ImageParts ImageParts { get; set; }
-  public string? RelationshipType { get; set; }
+
   /// <summary>
   ///   Gets the WebExtensionParts of the DrawingsPart
   /// </summary>

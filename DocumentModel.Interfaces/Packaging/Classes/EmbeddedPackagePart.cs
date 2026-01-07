@@ -5,5 +5,5 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface EmbeddedPackagePart: OpenXmlPart
 {
-  public string? RelationshipType { get; set; }
+
 }

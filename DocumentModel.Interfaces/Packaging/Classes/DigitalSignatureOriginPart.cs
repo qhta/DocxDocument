@@ -5,8 +5,8 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface DigitalSignatureOriginPart: OpenXmlPart
 {
-  public string? ContentType { get; set; }
-  public string? RelationshipType { get; set; }
+
+
   /// <summary>
   ///   Gets the XmlSignatureParts of the DigitalSignatureOriginPart
   /// </summary>

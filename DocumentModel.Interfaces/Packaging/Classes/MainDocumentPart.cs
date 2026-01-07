@@ -74,7 +74,7 @@ public interface MainDocumentPart: OpenXmlPart
   ///   Gets the Model3DReferenceRelationshipParts of the MainDocumentPart
   /// </summary>
   public Model3DReferenceRelationshipParts Model3DReferenceRelationshipParts { get; set; }
-  public string? RelationshipType { get; set; }
+
   /// <summary>
   ///   Gets the WordprocessingPrinterSettingsParts of the MainDocumentPart
   /// </summary>

@@ -5,6 +5,6 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface WordAttachedToolbarsPart: OpenXmlPart
 {
-  public string? ContentType { get; set; }
-  public string? RelationshipType { get; set; }
+
+
 }

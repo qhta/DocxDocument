@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface VmlDrawingPart: OpenXmlPart
 {
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets the ImageParts of the VmlDrawingPart
   /// </summary>
@@ -14,5 +14,5 @@ public interface VmlDrawingPart: OpenXmlPart
   ///   Gets the LegacyDiagramTextParts of the VmlDrawingPart
   /// </summary>
   public LegacyDiagramTextParts LegacyDiagramTextParts { get; set; }
-  public string? RelationshipType { get; set; }
+
 }

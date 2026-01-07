@@ -5,10 +5,10 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface RibbonExtensibilityPart: OpenXmlPart
 {
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets the ImageParts of the RibbonExtensibilityPart
   /// </summary>
   public ImageParts ImageParts { get; set; }
-  public string? RelationshipType { get; set; }
+
 }

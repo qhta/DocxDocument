@@ -10,6 +10,6 @@ public interface WordCommentsExtensiblePart: OpenXmlPart
   ///   Gets or sets the root element of this part.
   /// </summary>
   public CommentsExtensible? CommentsExtensible { get; set; }
-  public string? ContentType { get; set; }
-  public string? RelationshipType { get; set; }
+
+
 }
