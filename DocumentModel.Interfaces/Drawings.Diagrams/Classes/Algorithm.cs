@@ -13,6 +13,6 @@ public interface Algorithm
   ///   Revision Number
   /// </summary>
   public UInt32? Revision { get; set; }
-  public Collection<Parameter>? Parameters { get; set; }
+  public Parameters Parameters { get; set; }
   public ExtensionList? ExtensionList { get; set; }
 }

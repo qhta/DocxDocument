@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramPersistLayoutPart
 /// </summary>
-public interface DiagramPersistLayoutPart
+public interface DiagramPersistLayoutPart: OpenXmlPart
 {
   public string? ContentType { get; set; }
   /// <summary>
@@ -14,6 +14,6 @@ public interface DiagramPersistLayoutPart
   /// <summary>
   ///   Gets the ImageParts of the DiagramPersistLayoutPart
   /// </summary>
-  public Collection<ImagePart>? ImageParts { get; set; }
+  public ImageParts ImageParts { get; set; }
   public string? RelationshipType { get; set; }
 }

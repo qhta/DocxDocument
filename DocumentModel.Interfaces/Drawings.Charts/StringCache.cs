@@ -1,0 +1,11 @@
+namespace DocumentModel.Drawings.Charts;
+
+/// <summary>
+///   Defines the StringCache Class.
+/// </summary>
+public interface StringCache
+{
+  public UInt32? PointCount { get; set; }
+  public StringPoints StringPoints { get; set; }
+  public StrDataExtensionList? StrDataExtensionList { get; set; }
+}

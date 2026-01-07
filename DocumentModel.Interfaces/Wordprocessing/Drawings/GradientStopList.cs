@@ -3,7 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the GradientStopList Class.
 /// </summary>
-public interface GradientStopList
+public interface GradientStopList: ElementCollection<GradientStop>
 {
-  public Collection<GradientStop>? GradientStops { get; set; }
 }

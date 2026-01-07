@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an extension for a blip (binary large image or picture), providing additional properties and metadata for enhanced image handling.
 /// </summary>
-public interface BlipExtension
+public interface BlipExtension: CollectionItem
 {
   /// <summary>
   /// Gets or sets the URI that identifies the extension or provides additional context.

@@ -354,10 +354,10 @@ public interface GalleryRegular
   /// <summary>
   ///   Gets or sets the collection of static items displayed in the gallery.
   /// </summary>
-  public Collection<Item>? Items { get; set; }
+  public SelectionItems? Items { get; set; }
 
   /// <summary>
   ///   Gets or sets the collection of button controls that can be displayed in the gallery.
   /// </summary>
-  public Collection<ButtonRegular>? ButtonRegulars { get; set; }
+  public ButtonRegulars? ButtonRegulars { get; set; }
 }

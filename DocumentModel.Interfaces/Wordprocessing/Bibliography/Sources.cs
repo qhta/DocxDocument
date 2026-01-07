@@ -6,12 +6,6 @@ namespace DocumentModel.Wordprocessing;
 public interface Sources : ElementCollection<Source>
 {
   /// <summary>
-  ///   Adds a new source to the collection.
-  /// </summary>
-  /// <param name="source">The source to add.</param>
-  public void Add(Source source);
-
-  /// <summary>
   ///   Removes a source by its tag identifier.
   /// </summary>
   /// <param name="tag">The unique tag of the source to remove.</param>

@@ -105,8 +105,4 @@ public interface Blip: ExtendableElement
   /// </summary>
   public TintEffect? TintEffect { get; set; }
 
-  /// <summary>
-  /// List of extensions associated with the blip.
-  /// </summary>
-  public BlipExtensionList ExtensionList { get; set; }
 }

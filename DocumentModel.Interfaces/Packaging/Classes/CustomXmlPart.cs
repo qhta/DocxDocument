@@ -3,7 +3,6 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the CustomXmlPart
 /// </summary>
-public interface CustomXmlPart: CollectionItem
+public interface CustomXmlPart: OpenXmlPart
 {
-  public string? RelationshipType { get; set; }
 }

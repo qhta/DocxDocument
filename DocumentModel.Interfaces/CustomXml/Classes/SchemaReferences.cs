@@ -13,15 +13,6 @@ namespace DocumentModel.CustomXml;
 ///   <see cref="SchemaLibrary"/> or from external schema sources, providing flexibility in schema management
 ///   and enabling both self-contained documents and documents that reference standard industry schemas.
 /// </remarks>
-public interface SchemaReferences
+public interface SchemaReferences : ElementCollection<SchemaReference>
 {
-  /// <summary>
-  ///   Gets or sets the collection of schema reference items.
-  /// </summary>
-  /// <remarks>
-  ///   Each item in the collection references a schema by its target namespace URI. The schemas identified
-  ///   by these references provide validation rules and structure definitions for the custom XML data stored
-  ///   in the associated <see cref="DataStoreItem"/>.
-  /// </remarks>
-  public Collection<SchemaReference>? Items { get; set; }
 }

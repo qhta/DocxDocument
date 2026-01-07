@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Title.
 /// </summary>
-public interface Title
+public interface Title: CollectionItem
 {
   /// <summary>
   ///   Language

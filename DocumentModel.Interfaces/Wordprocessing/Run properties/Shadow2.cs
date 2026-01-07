@@ -160,7 +160,7 @@ public interface Shadow2
   ///   For theme-aware shadows, use SchemeColor instead.
   ///   </para>
   /// </remarks>
-  public RgbColorModelHex? RgbColorModelHex { get; set; }
+  public RgbColor? RgbColor{ get; set; }
 
   /// <summary>
   ///   Gets or sets the shadow color using a theme color scheme.

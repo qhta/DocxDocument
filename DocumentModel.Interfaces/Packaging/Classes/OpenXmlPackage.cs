@@ -33,7 +33,7 @@ public interface OpenXmlPackage
   /// <summary>
   ///   Gets all the  parts in the document package.
   /// </summary>
-  public Collection<DataPart>? DataParts { get; set; }
+  public DataParts DataParts { get; set; }
   /// <summary>
   ///   Gets the markup compatibility settings applied at loading time.
   /// </summary>

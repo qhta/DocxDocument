@@ -3,7 +3,6 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   List of extensions to the CT_DiagramDefintions type..
 /// </summary>
-public interface DiagramDefinitionExtensionList
+public interface DiagramDefinitionExtensionList: ElementCollection<DiagramDefinitionExtension>
 {
-  public Collection<DiagramDefinitionExtension>? DiagramDefinitionExtensions { get; set; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Rule.
 /// </summary>
-public interface Rule
+public interface Rule: CollectionItem
 {
   /// <summary>
   ///   Rule ID
@@ -21,5 +21,5 @@ public interface Rule
   ///   Rule Shape Reference
   /// </summary>
   public string? ShapeReference { get; set; }
-  public Collection<Proxy>? Proxies { get; set; }
+  public Proxies Proxies { get; set; }
 }

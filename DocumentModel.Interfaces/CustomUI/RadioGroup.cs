@@ -152,5 +152,5 @@ public interface RadioGroup
   /// <summary>
   ///   Gets or sets the collection of radio button items displayed in the group.
   /// </summary>
-  public Collection<BackstageItemType>? RadioButtonBackstageItems { get; set; }
+  public BackstageItems? RadioButtonBackstageItems { get; set; }
 }

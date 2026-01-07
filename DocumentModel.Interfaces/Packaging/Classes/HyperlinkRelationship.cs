@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Represents a hyperlink relationship.
 /// </summary>
-public interface HyperlinkRelationship
+public interface HyperlinkRelationship: CollectionItem
 {
   /// <summary>
   ///   Gets the relationship type.

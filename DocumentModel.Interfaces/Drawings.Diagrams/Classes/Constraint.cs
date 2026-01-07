@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Constraint.
 /// </summary>
-public interface Constraint
+public interface Constraint: CollectionItem
 {
   /// <summary>
   ///   Constraint Type

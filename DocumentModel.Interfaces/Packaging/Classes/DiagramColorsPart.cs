@@ -4,12 +4,10 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramColorsPart
 /// </summary>
-public interface DiagramColorsPart
+public interface DiagramColorsPart: OpenXmlPart
 {
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
   public ColorsDefinition? ColorsDefinition { get; set; }
-  public string? ContentType { get; set; }
-  public string? RelationshipType { get; set; }
 }

@@ -7,7 +7,7 @@ public interface ColorType: AbstractColor
   /// <summary>
   ///   RgbColorModelHex.
   /// </summary>
-  public RgbColorModelHex? RgbColorModelHex { get; set; }
+  public RgbColor? RgbColor { get; set; }
   /// <summary>
   ///   SchemeColor.
   /// </summary>

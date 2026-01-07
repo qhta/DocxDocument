@@ -9,13 +9,8 @@ namespace DocumentModel;
 ///   elements within the document. Tasks can be tracked, assigned to users, and monitored
 ///   through their lifecycle with associated history and progress information.
 /// </remarks>
-public interface Tasks
+public interface Tasks: ElementCollection<Task>
 {
-  /// <summary>
-  ///   Gets or sets the collection of task items.
-  /// </summary>
-  public Collection<Task>? Items { get; set; }
-
   /// <summary>
   ///   Gets or sets the collection of extension elements for future extensibility.
   /// </summary>

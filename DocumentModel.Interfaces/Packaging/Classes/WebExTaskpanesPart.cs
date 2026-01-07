@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WebExTaskpanesPart
 /// </summary>
-public interface WebExTaskpanesPart
+public interface WebExTaskpanesPart: OpenXmlPart
 {
   public string? ContentType { get; set; }
   public string? RelationshipType { get; set; }
@@ -15,5 +15,5 @@ public interface WebExTaskpanesPart
   /// <summary>
   ///   Gets the WebExtensionParts of the WebExTaskpanesPart
   /// </summary>
-  public Collection<WebExtensionPart>? WebExtensionParts { get; set; }
+  public WebExtensionParts WebExtensionParts { get; set; }
 }

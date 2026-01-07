@@ -101,5 +101,5 @@ public interface BackstageComboBox
   /// </summary>
   public string? GetItemID { get; set; }
 
-  public Collection<BackstageItemType>? ItemBackstageItems { get; set; }
+  public BackstageItems? BackstageItems { get; set; }
 }

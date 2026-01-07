@@ -294,10 +294,10 @@ public interface DropDownRegular
   /// <summary>
   ///   Gets or sets the collection of static items displayed in the dropdown list.
   /// </summary>
-  public Collection<Item>? Items { get; set; }
+  public SelectionItems? Items { get; set; }
 
   /// <summary>
   ///   Gets or sets the collection of button controls that can be displayed in the dropdown.
   /// </summary>
-  public Collection<ButtonRegular>? ButtonRegulars { get; set; }
+  public ButtonRegulars? ButtonRegulars { get; set; }
 }

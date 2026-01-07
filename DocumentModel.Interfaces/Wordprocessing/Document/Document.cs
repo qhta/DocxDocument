@@ -457,7 +457,7 @@ public interface Document
   /// <summary>
   ///   Collection of custom XML parts in the document.
   /// </summary>
-  public DMPack.CustomXMLParts? CustomXMLParts { get; set; }
+  public DMPack.CustomXmlParts? CustomXmlParts { get; set; }
 
   /// <summary>
   ///   Collection of XML schemas attached to the document.

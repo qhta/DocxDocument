@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ExtrusionColor
 {
-  public RgbColorModelHex? RgbColorModelHex { get; set; }
+  public RgbColor? RgbColor { get; set; }
   public SchemeColor? SchemeColor { get; set; }
 }

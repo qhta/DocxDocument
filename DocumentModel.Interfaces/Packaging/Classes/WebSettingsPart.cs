@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WebSettingsPart
 /// </summary>
-public interface WebSettingsPart
+public interface WebSettingsPart: OpenXmlPart
 {
   public string? ContentType { get; set; }
   public string? RelationshipType { get; set; }

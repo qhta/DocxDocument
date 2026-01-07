@@ -300,5 +300,5 @@ public interface ComboBox
   /// <summary>
   ///   Gets or sets the collection of static items displayed in the dropdown list.
   /// </summary>
-  public Collection<Item>? Items { get; set; }
+  public SelectionItems? Items { get; set; }
 }

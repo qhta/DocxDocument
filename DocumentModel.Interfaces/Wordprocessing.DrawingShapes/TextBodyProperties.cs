@@ -92,5 +92,5 @@ public interface TextBodyProperties
   public Scene3DType? Scene3DType { get; set; }
   public Shape3DType? Shape3DType { get; set; }
   public FlatText? FlatText { get; set; }
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
+  public ExtensionList? ExtensionList { get; set; }
 }

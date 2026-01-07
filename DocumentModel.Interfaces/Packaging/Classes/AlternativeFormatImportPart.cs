@@ -3,7 +3,6 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the AlternativeFormatImportPart
 /// </summary>
-public interface AlternativeFormatImportPart
+public interface AlternativeFormatImportPart: OpenXmlPart
 {
-  public string? RelationshipType { get; set; }
 }

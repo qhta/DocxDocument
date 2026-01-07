@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 ///   Defines the WebExtensionStoreReference Class.
 /// </summary>
-public interface WebExtensionStoreReference
+public interface WebExtensionStoreReference: CollectionItem
 {
   /// <summary>
   ///   id

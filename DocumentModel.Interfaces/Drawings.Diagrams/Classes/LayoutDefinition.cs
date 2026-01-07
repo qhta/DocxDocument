@@ -17,8 +17,8 @@ public interface LayoutDefinition
   ///   defStyle
   /// </summary>
   public string? DefaultStyle { get; set; }
-  public Collection<Title>? Titles { get; set; }
-  public Collection<Description>? Descriptions { get; set; }
+  public Titles Titles { get; set; }
+  public Descriptions Descriptions { get; set; }
   public CategoryList? CategoryList { get; set; }
   public SampleData? SampleData { get; set; }
   public StyleData? StyleData { get; set; }

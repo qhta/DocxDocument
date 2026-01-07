@@ -4,53 +4,53 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the FootnotesPart
 /// </summary>
-public interface FootnotesPart
+public interface FootnotesPart: OpenXmlPart
 {
   /// <summary>
   ///   Gets the AlternativeFormatImportParts of the FootnotesPart
   /// </summary>
-  public Collection<AlternativeFormatImportPart>? AlternativeFormatImportParts { get; set; }
+  public AlternativeFormatImportParts AlternativeFormatImportParts { get; set; }
   /// <summary>
   ///   Gets the ChartParts of the FootnotesPart
   /// </summary>
-  public Collection<ChartPart>? ChartParts { get; set; }
+  public ChartParts ChartParts { get; set; }
   public string? ContentType { get; set; }
   /// <summary>
   ///   Gets the DiagramColorsParts of the FootnotesPart
   /// </summary>
-  public Collection<DiagramColorsPart>? DiagramColorsParts { get; set; }
+  public DiagramColorsParts DiagramColorsParts { get; set; }
   /// <summary>
   ///   Gets the DiagramDataParts of the FootnotesPart
   /// </summary>
-  public Collection<DiagramDataPart>? DiagramDataParts { get; set; }
+  public DiagramDataParts DiagramDataParts { get; set; }
   /// <summary>
   ///   Gets the DiagramLayoutDefinitionParts of the FootnotesPart
   /// </summary>
-  public Collection<DiagramLayoutDefinitionPart>? DiagramLayoutDefinitionParts { get; set; }
+  public DiagramLayoutDefinitionParts DiagramLayoutDefinitionParts { get; set; }
   /// <summary>
   ///   Gets the DiagramPersistLayoutParts of the FootnotesPart
   /// </summary>
-  public Collection<DiagramPersistLayoutPart>? DiagramPersistLayoutParts { get; set; }
+  public DiagramPersistLayoutParts DiagramPersistLayoutParts { get; set; }
   /// <summary>
   ///   Gets the DiagramStyleParts of the FootnotesPart
   /// </summary>
-  public Collection<DiagramStylePart>? DiagramStyleParts { get; set; }
+  public DiagramStyleParts DiagramStyleParts { get; set; }
   /// <summary>
   ///   Gets the EmbeddedControlPersistenceParts of the FootnotesPart
   /// </summary>
-  public Collection<EmbeddedControlPersistencePart>? EmbeddedControlPersistenceParts { get; set; }
+  public EmbeddedControlPersistenceParts EmbeddedControlPersistenceParts { get; set; }
   /// <summary>
   ///   Gets the EmbeddedObjectParts of the FootnotesPart
   /// </summary>
-  public Collection<EmbeddedObjectPart>? EmbeddedObjectParts { get; set; }
+  public EmbeddedObjectParts EmbeddedObjectParts { get; set; }
   /// <summary>
   ///   Gets the EmbeddedPackageParts of the FootnotesPart
   /// </summary>
-  public Collection<EmbeddedPackagePart>? EmbeddedPackageParts { get; set; }
+  public EmbeddedPackageParts EmbeddedPackageParts { get; set; }
   /// <summary>
   ///   Gets the ExtendedChartParts of the FootnotesPart
   /// </summary>
-  public Collection<ExtendedChartPart>? ExtendedChartParts { get; set; }
+  public ExtendedChartParts ExtendedChartParts { get; set; }
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
@@ -58,10 +58,10 @@ public interface FootnotesPart
   /// <summary>
   ///   Gets the ImageParts of the FootnotesPart
   /// </summary>
-  public Collection<ImagePart>? ImageParts { get; set; }
+  public ImageParts ImageParts { get; set; }
   /// <summary>
   ///   Gets the Model3DReferenceRelationshipParts of the FootnotesPart
   /// </summary>
-  public Collection<Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts { get; set; }
+  public Model3DReferenceRelationshipParts Model3DReferenceRelationshipParts { get; set; }
   public string? RelationshipType { get; set; }
 }

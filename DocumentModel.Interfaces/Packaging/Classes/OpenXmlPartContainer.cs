@@ -3,22 +3,18 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the base interface for OpenXmlPackage and OpenXmlPart.
 /// </summary>
-public interface OpenXmlPartContainer
+public interface OpenXmlPartContainer: OpenXmlPartCollection<OpenXmlPart>
 {
   /// <summary>
   ///   Gets all external relationships.
   /// </summary>
-  public Collection<ExternalRelationship>? ExternalRelationships { get; set; }
+  public ExternalRelationships ExternalRelationships { get; set; }
   /// <summary>
   ///   Gets all hyperlink relationships.
   /// </summary>
-  public Collection<HyperlinkRelationship>? HyperlinkRelationships { get; set; }
+  public HyperlinkRelationships HyperlinkRelationships { get; set; }
   /// <summary>
   ///   Gets all  relationships.
   /// </summary>
-  public Collection<DataPartReferenceRelationship>? DataPartReferenceRelationships { get; set; }
-  /// <summary>
-  ///   Gets all parts which are relationship targets of this part.
-  /// </summary>
-  public Collection<IdPartPair>? Parts { get; set; }
+  public DataPartReferenceRelationships DataPartReferenceRelationships { get; set; }
 }

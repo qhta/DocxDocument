@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface CustomXmlCell: CustomXmlElement, TableRowContent, SdtCellContent
 {
-  //public Collection<TableCell>? TableCells { get; set; }
+  //public TableCells TableCells { get; set; }
   //public CustomXmlCell? ChildCustomXmlCell { get; set; }
   //public SdtCell? SdtCell { get; set; }
 }

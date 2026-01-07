@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the CustomXmlPropertiesPart
 /// </summary>
-public interface CustomXmlPropertiesPart
+public interface CustomXmlPropertiesPart: OpenXmlPart
 {
   public string? ContentType { get; set; }
   /// <summary>

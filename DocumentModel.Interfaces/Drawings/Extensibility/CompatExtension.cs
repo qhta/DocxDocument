@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a compatibility extension, including a shape identifier.
 /// </summary>
-public interface CompatExtension
+public interface CompatExtension: Extension
 {
   /// <summary>
   /// Shape identifier.

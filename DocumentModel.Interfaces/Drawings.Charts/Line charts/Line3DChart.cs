@@ -1,0 +1,22 @@
+namespace DocumentModel.Drawings.Charts;
+
+/// <summary>
+///   3D Line Charts.
+/// </summary>
+public interface Line3DChart
+{
+  /// <summary>
+  ///   Grouping.
+  /// </summary>
+  public GroupingKind? Grouping { get; set; }
+  /// <summary>
+  ///   VaryColors.
+  /// </summary>
+  public bool? VaryColors { get; set; }
+  public LineChartSeries LineChartSeries { get; set; }
+  public DataLabels? DataLabels { get; set; }
+  public DropLines? DropLines { get; set; }
+  public UInt16? GapDepth { get; set; }
+  public AxisIds AxisIds { get; set; }
+  public Line3DChartExtensionList? Line3DChartExtensionList { get; set; }
+}

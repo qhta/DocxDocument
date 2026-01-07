@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Glossary Document Entry.
 /// </summary>
-public interface DocPart
+public interface DocPart: DMPack.OpenXmlPart
 {
   /// <summary>
   ///   Glossary Document Entry Properties.
