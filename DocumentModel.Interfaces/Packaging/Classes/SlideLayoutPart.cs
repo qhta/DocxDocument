@@ -9,7 +9,7 @@ public interface SlideLayoutPart: OpenXmlPart
   ///   Gets the ChartParts of the SlideLayoutPart
   /// </summary>
   public ChartParts ChartParts { get; set; }
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets the CustomXmlParts of the SlideLayoutPart
   /// </summary>
@@ -62,7 +62,7 @@ public interface SlideLayoutPart: OpenXmlPart
   ///   Gets the Model3DReferenceRelationshipParts of the SlideLayoutPart
   /// </summary>
   public Model3DReferenceRelationshipParts Model3DReferenceRelationshipParts { get; set; }
-  public string? RelationshipType { get; set; }
+
   /// <summary>
   ///   Gets the SlideParts of the SlideLayoutPart
   /// </summary>

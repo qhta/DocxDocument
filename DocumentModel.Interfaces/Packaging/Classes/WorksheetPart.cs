@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface WorksheetPart: OpenXmlPart
 {
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets the ControlPropertiesParts of the WorksheetPart
   /// </summary>
@@ -50,7 +50,7 @@ public interface WorksheetPart: OpenXmlPart
   ///   Gets the QueryTableParts of the WorksheetPart
   /// </summary>
   public QueryTableParts QueryTableParts { get; set; }
-  public string? RelationshipType { get; set; }
+
   /// <summary>
   ///   Gets the SlicersParts of the WorksheetPart
   /// </summary>

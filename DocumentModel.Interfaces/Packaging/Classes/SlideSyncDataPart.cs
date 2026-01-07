@@ -5,6 +5,6 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface SlideSyncDataPart: OpenXmlPart
 {
-  public string? ContentType { get; set; }
-  public string? RelationshipType { get; set; }
+
+
 }

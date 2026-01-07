@@ -18,7 +18,7 @@ public interface WordprocessingCommentsPart: OpenXmlPart
   ///   Gets or sets the root element of this part.
   /// </summary>
   public Comments? Comments { get; set; }
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets the DiagramColorsParts of the WordprocessingCommentsPart
   /// </summary>
@@ -63,5 +63,5 @@ public interface WordprocessingCommentsPart: OpenXmlPart
   ///   Gets the Model3DReferenceRelationshipParts of the WordprocessingCommentsPart
   /// </summary>
   public Model3DReferenceRelationshipParts Model3DReferenceRelationshipParts { get; set; }
-  public string? RelationshipType { get; set; }
+
 }
