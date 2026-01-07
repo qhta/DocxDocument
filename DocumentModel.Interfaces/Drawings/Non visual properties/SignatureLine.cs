@@ -1,56 +1,67 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the SignatureLine interface.
+///   Represents a signature line, including identification, provider, signer information, instructions, and display options.
 /// </summary>
 public interface SignatureLine
 {
   /// <summary>
-  ///   isSignatureLine
+  ///   Indicates whether this element is a signature line.
   /// </summary>
   public bool? IsSignatureLine { get; set; }
+
   /// <summary>
-  ///   id
+  ///   Unique identifier for the signature line.
   /// </summary>
   public string? Id { get; set; }
+
   /// <summary>
-  ///   provId
+  ///   Provider identifier for the signature line.
   /// </summary>
   public string? ProviderId { get; set; }
+
   /// <summary>
-  ///   signingInstructionsSet
+  ///   Indicates whether signing instructions are set.
   /// </summary>
   public bool? SigningInstructionsSet { get; set; }
+
   /// <summary>
-  ///   allowComments
+  ///   Indicates whether comments are allowed.
   /// </summary>
   public bool? AllowComments { get; set; }
+
   /// <summary>
-  ///   showSignDate
+  ///   Indicates whether to show the signing date.
   /// </summary>
   public bool? ShowSignDate { get; set; }
+
   /// <summary>
-  ///   suggestedSigner
+  ///   Suggested signer name.
   /// </summary>
   public string? SuggestedSigner { get; set; }
+
   /// <summary>
-  ///   suggestedSigner2
+  ///   Additional suggested signer name.
   /// </summary>
   public string? SuggestedSigner2 { get; set; }
+
   /// <summary>
-  ///   suggestedSignerEmail
+  ///   Suggested signer email address.
   /// </summary>
   public string? SuggestedSignerEmail { get; set; }
+
   /// <summary>
-  ///   signingInstructions
+  ///   Instructions for signing.
   /// </summary>
   public string? SigningInstructions { get; set; }
+
   /// <summary>
-  ///   addlXml
+  ///   Additional XML data for the signature line.
   /// </summary>
   public string? AdditionalXml { get; set; }
+
   /// <summary>
-  ///   sigProvUrl
+  ///   URL for the signature provider.
   /// </summary>
   public string? SignatureProviderUrl { get; set; }
 }

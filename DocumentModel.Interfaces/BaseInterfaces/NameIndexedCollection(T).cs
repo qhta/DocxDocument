@@ -9,7 +9,7 @@
 /// where clients should be notified of changes to the collection. Implementations must ensure that each element's name
 /// is unique within the collection.</remarks>
 /// <typeparam name="T">The type of elements in the collection. Must implement <see cref="NamedObject"/> and <see cref="IEquatable{T}"/>.</typeparam>
-public interface NameIndexedCollection<T>: ICollection<T>, INotifyCollectionChanged, IEquatable<NameIndexedCollection<T>> 
+public interface NameIndexedElementCollection<T>: ICollection<T>, INotifyCollectionChanged, IEquatable<NameIndexedElementCollection<T>> 
   where T: NamedObject, IEquatable<T>
 {
 }

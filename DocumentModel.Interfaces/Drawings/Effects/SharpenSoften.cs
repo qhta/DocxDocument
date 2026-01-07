@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the SharpenSoften interface.
+///   Represents a sharpen or soften effect, allowing adjustment of the amount for image enhancement.
 /// </summary>
 public interface SharpenSoften
 {
   /// <summary>
-  ///   amount
+  ///   Amount of sharpening or softening applied.
   /// </summary>
   public Int32? Amount { get; set; }
 }

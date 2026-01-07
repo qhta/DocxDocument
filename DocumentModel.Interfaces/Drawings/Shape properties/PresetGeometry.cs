@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Preset geometry.
+///   Represents a preset geometry for a shape, including the preset type and optional adjustment values.
 /// </summary>
 public interface PresetGeometry
 {
   /// <summary>
-  ///   Preset Shape
+  ///   Preset shape type.
   /// </summary>
   public ShapeKind? Preset { get; set; }
+
   /// <summary>
-  ///   List of Shape Adjust Values.
+  ///   List of adjustment values for the preset shape.
   /// </summary>
   public AdjustValueList? AdjustValueList { get; set; }
 }
