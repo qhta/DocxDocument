@@ -1,20 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the ThemeElements interface.
+///   Represents a theme override, allowing customization of color, font, and format schemes for a document theme.
 /// </summary>
-public interface ThemeElements: ExtendableElement
+public interface ThemeOverride
 {
   /// <summary>
-  ///   ColorScheme.
+  ///   Color scheme used for the theme override.
   /// </summary>
   public ColorScheme? ColorScheme { get; set; }
+
   /// <summary>
-  ///   Font Scheme.
+  ///   Font scheme used for the theme override.
   /// </summary>
   public FontScheme? FontScheme { get; set; }
+
   /// <summary>
-  ///   Format Scheme.
+  ///   Format scheme used for the theme override.
   /// </summary>
   public FormatScheme? FormatScheme { get; set; }
 }

@@ -1,20 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the Vector3DType interface.
+///   Represents a 3D vector with distances along the X, Y, and Z axes.
 /// </summary>
 public interface Vector3DType
 {
   /// <summary>
-  ///   Distance along X-axis in 3D
+  ///   Distance along the X-axis in 3D space.
   /// </summary>
   public Int64? Dx { get; set; }
+
   /// <summary>
-  ///   Distance along Y-axis in 3D
+  ///   Distance along the Y-axis in 3D space.
   /// </summary>
   public Int64? Dy { get; set; }
+
   /// <summary>
-  ///   Distance along Z-axis in 3D
+  ///   Distance along the Z-axis in 3D space.
   /// </summary>
   public Int64? Dz { get; set; }
 }

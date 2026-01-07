@@ -1,44 +1,52 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Preset Shadow.
+///   Represents a preset shadow effect, including type, distance, direction, and color options.
 /// </summary>
 public interface PresetShadow
 {
   /// <summary>
-  ///   Preset Shadow
+  ///   Preset shadow type.
   /// </summary>
   public PresetShadowKind? Preset { get; set; }
+
   /// <summary>
-  ///   Distance
+  ///   Distance to offset the shadow from the object.
   /// </summary>
   public Int64? Distance { get; set; }
+
   /// <summary>
-  ///   Direction
+  ///   Direction angle of the shadow.
   /// </summary>
   public Int32? Direction { get; set; }
+
   /// <summary>
-  ///   RGB Color Model - Percentage Variant.
+  ///   Shadow color specified using the RGB color model with percentage values.
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
+
   /// <summary>
-  ///   RGB Color Model - Hex Variant.
+  ///   Shadow color specified using the RGB color model with hexadecimal values.
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex { get; set; }
+
   /// <summary>
-  ///   Hue, Saturation, Luminance Color Model.
+  ///   Shadow color specified using the hue, saturation, luminance (HSL) color model.
   /// </summary>
   public HslColor? HslColor { get; set; }
+
   /// <summary>
-  ///   System Color.
+  ///   Shadow color specified using a system-defined color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
+
   /// <summary>
-  ///   Scheme Color.
+  ///   Shadow color specified using a color scheme.
   /// </summary>
   public SchemeColor? SchemeColor { get; set; }
+
   /// <summary>
-  ///   Preset Color.
+  ///   Shadow color specified using a preset color.
   /// </summary>
   public PresetColor? PresetColor { get; set; }
 }

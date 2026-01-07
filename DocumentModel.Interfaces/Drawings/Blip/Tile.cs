@@ -1,32 +1,37 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Tile.
+///   Represents tiling options for a fill, including offset, scaling, flipping, and alignment.
 /// </summary>
 public interface Tile
 {
   /// <summary>
-  ///   Horizontal Offset
+  ///   Horizontal offset for the tile.
   /// </summary>
   public Int64? HorizontalOffset { get; set; }
+
   /// <summary>
-  ///   Vertical Offset
+  ///   Vertical offset for the tile.
   /// </summary>
   public Int64? VerticalOffset { get; set; }
+
   /// <summary>
-  ///   Horizontal Ratio
+  ///   Horizontal scaling ratio for the tile.
   /// </summary>
   public Int32? HorizontalRatio { get; set; }
+
   /// <summary>
-  ///   Vertical Ratio
+  ///   Vertical scaling ratio for the tile.
   /// </summary>
   public Int32? VerticalRatio { get; set; }
+
   /// <summary>
-  ///   Tile Flipping
+  ///   Tile flipping mode.
   /// </summary>
   public TileFlipKind? Flip { get; set; }
+
   /// <summary>
-  ///   Alignment
+  ///   Alignment of the tile within the filled area.
   /// </summary>
   public RectangleAlignmentKind? Alignment { get; set; }
 }

@@ -1,20 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Theme Override.
+///   Represents the main elements of a theme, including color scheme, font scheme, and format scheme.
 /// </summary>
-public interface ThemeOverride
+public interface ThemeElements : ExtendableElement
 {
   /// <summary>
-  ///   Color Scheme.
+  ///   Color scheme for the theme.
   /// </summary>
   public ColorScheme? ColorScheme { get; set; }
+
   /// <summary>
-  ///   FontScheme.
+  ///   Font scheme for the theme.
   /// </summary>
   public FontScheme? FontScheme { get; set; }
+
   /// <summary>
-  ///   FormatScheme.
+  ///   Format scheme for the theme.
   /// </summary>
   public FormatScheme? FormatScheme { get; set; }
 }
