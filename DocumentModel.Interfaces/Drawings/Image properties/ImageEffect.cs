@@ -138,7 +138,7 @@ public interface ImageEffect: ExtendableElement
   /// <summary>
   /// Saturation adjustment.
   /// </summary>
-  public Saturation2? Saturation { get; set; }
+  public Saturation? Saturation { get; set; }
 
   /// <summary>
   /// Sharpen or soften adjustment.

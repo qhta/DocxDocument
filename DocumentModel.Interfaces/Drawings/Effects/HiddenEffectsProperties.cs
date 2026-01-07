@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the HiddenEffectsProperties interface.
+///   Represents hidden effects properties for a drawing element, including effect containers.
 /// </summary>
 public interface HiddenEffectsProperties
 {
   /// <summary>
-  ///   Effect Container.
+  ///   List of effects applied to the element.
   /// </summary>
   public EffectList? EffectList { get; set; }
+
   /// <summary>
-  ///   Effect Container.
+  ///   Effect DAG (Directed Acyclic Graph) for advanced effect composition.
   /// </summary>
   public EffectDag? EffectDag { get; set; }
 }

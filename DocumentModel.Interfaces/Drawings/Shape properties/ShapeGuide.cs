@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Shape Guide.
+///   Represents a shape guide, defining a named formula used for shape geometry calculations.
 /// </summary>
 public interface ShapeGuide
 {
   /// <summary>
-  ///   Shape Guide Name
+  ///   Name of the shape guide.
   /// </summary>
   public string? Name { get; set; }
+
   /// <summary>
-  ///   Shape Guide Formula
+  ///   Formula used by the shape guide for geometry calculations.
   /// </summary>
   public string? Formula { get; set; }
 }
