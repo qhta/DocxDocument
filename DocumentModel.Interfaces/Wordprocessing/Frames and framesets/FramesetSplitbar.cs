@@ -11,7 +11,7 @@ public interface FramesetSplitbar
   /// <summary>
   ///   Frameset Splitter Color.
   /// </summary>
-  public DM.Color? Color { get; set; }
+  public DM.AbstractColor? Color { get; set; }
   /// <summary>
   ///   Do Not Display Frameset Splitters.
   /// </summary>

@@ -220,7 +220,7 @@ public interface SdtProperties : StoryContent
   /// The exact rendering depends on the <see cref="Appearance"/> setting and the application's
   /// display preferences. If not specified, the application's default SDT color is used.
   /// </remarks>
-  public DM.Color? Color { get; set; }
+  public DM.AbstractColor? Color { get; set; }
   
   /// <summary>
   /// Gets or sets the visual appearance style for this structured document tag.

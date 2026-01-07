@@ -11,7 +11,7 @@ public interface Border
   /// <summary>
   ///   Border Color
   /// </summary>
-  public DM.Color? Color { get; set; }
+  public DM.AbstractColor? Color { get; set; }
   /// <summary>
   ///   Border Width
   /// </summary>

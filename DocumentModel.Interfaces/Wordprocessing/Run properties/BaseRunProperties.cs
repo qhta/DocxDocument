@@ -104,7 +104,7 @@ public interface BaseRunProperties : ElementCollection<RunProperty>
   ///   This color can be explicitly specified, or set to allow the consumer to automatically choose 
   ///   an appropriate color based on the background color behind the run's content. 
   /// </summary>
-  public DM.Color? Color { get; set; }
+  public DM.AbstractColor? Color { get; set; }
   /// <summary>
   ///   Specifies the amount of character pitch which shall be added or removed after each character in this run 
   ///   before the following character is rendered in the document. This property has an effect equivalent 

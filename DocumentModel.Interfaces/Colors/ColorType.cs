@@ -2,7 +2,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ColorType Class.
 /// </summary>
-public interface ColorType: Color
+public interface ColorType: AbstractColor
 {
   /// <summary>
   ///   RgbColorModelHex.
