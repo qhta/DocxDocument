@@ -10,53 +10,48 @@ public partial interface ColorScheme: ExtendableElement
   /// </summary>
   public string? Name { get; set; }
 
-  /// <summary>
-  /// Theme colors.
-  /// </summary>
-  public ThemeColors ThemeColors { get; set; }
-
   #region specific color definitions
   /// <summary>
   /// Dark 1.
   /// </summary>
   [XmlIgnore]
-  public ThemeColor? Dark1Color { get; set; }
+  public Color2Type? Dark1Color { get; set; }
 
   /// <summary>
   /// Light 1.
   /// </summary>
   [XmlIgnore]
-  public ThemeColor? Light1Color { get; set; }
+  public Color2Type? Light1Color { get; set; }
 
   /// <summary>
   /// Dark 2.
   /// </summary>
   [XmlIgnore]
-  public ThemeColor? Dark2Color { get; set; }
+  public Color2Type? Dark2Color { get; set; }
 
   /// <summary>
   /// Light 2.
   /// </summary>
   [XmlIgnore]
-  public ThemeColor? Light2Color { get; set; }
+  public Color2Type? Light2Color { get; set; }
 
   /// <summary>
   /// Accent 1.
   /// </summary>
   [XmlIgnore]
-  public ThemeColor? Accent1Color { get; set; }
+  public Color2Type? Accent1Color { get; set; }
 
   /// <summary>
   /// Accent 2.
   /// </summary>
   [XmlIgnore]
-  public ThemeColor? Accent2Color { get; set; }
+  public Color2Type? Accent2Color { get; set; }
 
   /// <summary>
   /// Accent 3.
   /// </summary>
   [XmlIgnore]
-  public ThemeColor? Accent3Color { get; set; }
+  public Color2Type? Accent3Color { get; set; }
 
   /// <summary>
   /// Accent 4.
