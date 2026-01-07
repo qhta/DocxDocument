@@ -6,7 +6,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface DiagramPersistLayoutPart: OpenXmlPart
 {
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
@@ -15,5 +15,5 @@ public interface DiagramPersistLayoutPart: OpenXmlPart
   ///   Gets the ImageParts of the DiagramPersistLayoutPart
   /// </summary>
   public ImageParts ImageParts { get; set; }
-  public string? RelationshipType { get; set; }
+
 }

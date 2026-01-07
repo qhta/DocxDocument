@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface RibbonAndBackstageCustomizationsPart: OpenXmlPart
 {
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
@@ -14,5 +14,5 @@ public interface RibbonAndBackstageCustomizationsPart: OpenXmlPart
   ///   Gets the ImageParts of the RibbonAndBackstageCustomizationsPart
   /// </summary>
   public ImageParts ImageParts { get; set; }
-  public string? RelationshipType { get; set; }
+
 }

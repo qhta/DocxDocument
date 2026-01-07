@@ -9,5 +9,5 @@ public interface EmbeddedControlPersistencePart: OpenXmlPart
   ///   Gets the EmbeddedControlPersistenceBinaryDataParts of the EmbeddedControlPersistencePart
   /// </summary>
   public EmbeddedControlPersistenceBinaryDataParts EmbeddedControlPersistenceBinaryDataParts { get; set; }
-  public string? RelationshipType { get; set; }
+
 }

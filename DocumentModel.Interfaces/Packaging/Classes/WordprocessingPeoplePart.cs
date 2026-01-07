@@ -6,10 +6,10 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface WordprocessingPeoplePart: OpenXmlPart
 {
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
   public People? People { get; set; }
-  public string? RelationshipType { get; set; }
+
 }

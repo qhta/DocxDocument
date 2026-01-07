@@ -14,7 +14,7 @@ public interface EndnotesPart: OpenXmlPart
   ///   Gets the ChartParts of the EndnotesPart
   /// </summary>
   public ChartParts ChartParts { get; set; }
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets the DiagramColorsParts of the EndnotesPart
   /// </summary>
@@ -63,5 +63,5 @@ public interface EndnotesPart: OpenXmlPart
   ///   Gets the Model3DReferenceRelationshipParts of the EndnotesPart
   /// </summary>
   public Model3DReferenceRelationshipParts Model3DReferenceRelationshipParts { get; set; }
-  public string? RelationshipType { get; set; }
+
 }

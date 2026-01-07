@@ -6,10 +6,10 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface CustomFilePropertiesPart: OpenXmlPart
 {
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
   public CustomProperties? Properties { get; set; }
-  public string? RelationshipType { get; set; }
+
 }

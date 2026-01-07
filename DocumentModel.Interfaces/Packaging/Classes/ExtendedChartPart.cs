@@ -18,10 +18,10 @@ public interface ExtendedChartPart: OpenXmlPart
   ///   Gets the ChartStyleParts of the ExtendedChartPart
   /// </summary>
   public ChartStyleParts ChartStyleParts { get; set; }
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets the ImageParts of the ExtendedChartPart
   /// </summary>
   public ImageParts ImageParts { get; set; }
-  public string? RelationshipType { get; set; }
+
 }

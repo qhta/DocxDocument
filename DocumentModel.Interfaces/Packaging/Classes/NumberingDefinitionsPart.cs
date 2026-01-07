@@ -6,7 +6,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public interface NumberingDefinitionsPart: OpenXmlPart
 {
-  public string? ContentType { get; set; }
+
   /// <summary>
   ///   Gets the ImageParts of the NumberingDefinitionsPart
   /// </summary>
@@ -15,5 +15,5 @@ public interface NumberingDefinitionsPart: OpenXmlPart
   ///   Gets or sets the root element of this part.
   /// </summary>
   public Numbering? Numbering { get; set; }
-  public string? RelationshipType { get; set; }
+
 }
