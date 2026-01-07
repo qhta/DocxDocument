@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents an extension for shape properties, providing additional or hidden formatting and configuration options.
 /// </summary>
-public interface ShapePropertiesExtension
+public interface ShapePropertiesExtension: CollectionItem
 {
   /// <summary>
   ///   Uniform Resource Identifier for the extension.

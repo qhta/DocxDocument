@@ -4,6 +4,6 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Abstract Fill interface.
 /// </summary>
-public interface Fill: TypedModelElement, ICollectionItem, DrawingProperty
+public interface Fill: TypedModelElement, DrawingProperty
 {
 }

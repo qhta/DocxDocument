@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This element specifies information about the parameters of the grammar checking 
 ///   which was performed on the contents of the current WordprocessingML document. 
 /// </summary>
-public interface ActiveWritingStyle: ICollectionItem
+public interface ActiveWritingStyle: CollectionItem
 {
   /// <summary>
   ///   Specifies the name of the application which specified the grammatical settings 

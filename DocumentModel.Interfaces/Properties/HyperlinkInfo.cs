@@ -2,7 +2,7 @@ namespace DocumentModel.Properties;
 /// <summary>
 ///   IHyperlink info as HyperlinkList item.
 /// </summary>
-public interface HyperlinkInfo: ICollectionItem
+public interface HyperlinkInfo: CollectionItem
 {
   /// <summary>
   /// Application specific data associated with the hyperlink.

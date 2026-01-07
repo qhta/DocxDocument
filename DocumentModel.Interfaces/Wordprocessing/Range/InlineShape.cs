@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Inline shapes flow with surrounding text like characters, as opposed to
 ///   floating shapes which can be positioned independently.
 /// </remarks>
-public interface InlineShape
+public interface InlineShape: CollectionItem
 {
   #region Properties
 

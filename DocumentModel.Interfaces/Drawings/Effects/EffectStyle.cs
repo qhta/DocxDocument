@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a style that defines a set of effects and 3D properties for a drawing element.
 /// </summary>
-public interface EffectStyle : ExtendableElement
+public interface EffectStyle : CollectionItem, ExtendableElement
 {
   /// <summary>
   /// List of effects applied to the drawing element.

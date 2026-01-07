@@ -1,7 +1,5 @@
 using DocumentModel.Drawings.Office.OEmbed;
 using DocumentModel.Drawings.SVG;
-using DocumentModel.Drawings.Wordprocessing;
-using DocumentModel.Office2013.Word.Drawing;
 using DocumentModel.Wordprocessing.OEmbed;
 namespace DocumentModel.Drawings;
 

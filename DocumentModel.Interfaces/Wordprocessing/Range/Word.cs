@@ -17,7 +17,7 @@ namespace DocumentModel.Wordprocessing;
 ///   </list>
 ///   </para>
 /// </remarks>
-public interface Word
+public interface Word: CollectionItem
 {
   #region Text Content
 

@@ -14,7 +14,7 @@ namespace DocumentModel.Wordprocessing;
 ///     </item>
 ///   </list>
 /// </summary>
-public interface FontProperties
+public interface FontProperties: CollectionItem
 {
   /// <summary>
   ///   Specifies the primary name of the current font. 

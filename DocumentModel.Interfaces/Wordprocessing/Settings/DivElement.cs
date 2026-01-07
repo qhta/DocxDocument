@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Information About Single HTML div Element.
 /// </summary>
-public interface DivElement: ICollectionItem
+public interface DivElement: CollectionItem
 {
   /// <summary>
   ///   div Data ID
