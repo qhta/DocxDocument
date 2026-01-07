@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings;
-/// <summary>
-///   Extent for 2D drawings
-/// </summary>
 
+/// <summary>
+///   Represents the extent (width and height) for 2D drawings, measured in English Metric Units (EMUs).
+/// </summary>
 public interface Extent
 {
   /// <summary>
-  ///   X extent
+  ///   Width of the extent in EMUs.
   /// </summary>
   public EMU Cx { get; set; }
+
   /// <summary>
-  ///   Y extent
+  ///   Height of the extent in EMUs.
   /// </summary>
   public EMU Cy { get; set; }
 }
