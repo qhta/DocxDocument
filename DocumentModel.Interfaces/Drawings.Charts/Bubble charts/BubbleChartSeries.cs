@@ -1,0 +1,41 @@
+namespace DocumentModel.Drawings.Charts;
+
+/// <summary>
+///   Defines the BubbleChartSeries Class.
+/// </summary>
+public interface BubbleChartSeries: CollectionItem
+{
+  /// <summary>
+  ///   Index.
+  /// </summary>
+  public UInt32? Index { get; set; }
+  /// <summary>
+  ///   Order.
+  /// </summary>
+  public UInt32? Order { get; set; }
+  /// <summary>
+  ///   Series Text.
+  /// </summary>
+  public SeriesText? SeriesText { get; set; }
+  /// <summary>
+  ///   ChartShapeProperties.
+  /// </summary>
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+  /// <summary>
+  ///   PictureOptions.
+  /// </summary>
+  public PictureOptions? PictureOptions { get; set; }
+  /// <summary>
+  ///   InvertIfNegative.
+  /// </summary>
+  public bool? InvertIfNegative { get; set; }
+  public DataPoints? DataPoints { get; set; }
+  public DataLabels? DataLabels { get; set; }
+  public Trendlines? Trendlines { get; set; }
+  public ErrorBars? ErrorBars { get; set; }
+  public XValues? XValues { get; set; }
+  public YValues? YValues { get; set; }
+  public BubbleSize? BubbleSize { get; set; }
+  public bool? Bubble3D { get; set; }
+  public BubbleSerExtensionList? BubbleSerExtensionList { get; set; }
+}

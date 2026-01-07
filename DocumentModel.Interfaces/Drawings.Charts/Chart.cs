@@ -1,22 +1,56 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Represents a chart to animate, including series and category indices, animation build step, and extension options.
+///   Defines the Chart Class.
 /// </summary>
-public interface Chart: ExtendableElement
+public interface Chart
 {
   /// <summary>
-  /// Series index for the chart animation.
+  ///   Title data and formatting.
   /// </summary>
-  public Int32? SeriesIndex { get; set; }
-
+  public Title? Title { get; set; }
   /// <summary>
-  /// Category index for the chart animation.
+  ///   True if the chart automatic title has been deleted..
   /// </summary>
-  public Int32? CategoryIndex { get; set; }
-
+  public bool? AutoTitleDeleted { get; set; }
   /// <summary>
-  /// Animation build step for the chart.
+  ///   pivot chart format persistence data.
   /// </summary>
-  public ChartBuildStepKind? BuildStep { get; set; }
+  public PivotFormats? PivotFormats { get; set; }
+  /// <summary>
+  ///   3D view settings.
+  /// </summary>
+  public View3D? View3D { get; set; }
+  /// <summary>
+  ///   3D floor formatting.
+  /// </summary>
+  public Floor? Floor { get; set; }
+  /// <summary>
+  ///   3D side wall formatting.
+  /// </summary>
+  public SideWall? SideWall { get; set; }
+  /// <summary>
+  ///   3D back wall formatting.
+  /// </summary>
+  public BackWall? BackWall { get; set; }
+  /// <summary>
+  ///   Plot data and formatting.
+  /// </summary>
+  public PlotArea? PlotArea { get; set; }
+  /// <summary>
+  ///   Legend data and formatting.
+  /// </summary>
+  public Legend? Legend { get; set; }
+  /// <summary>
+  ///   True if only visible cells are plotted..
+  /// </summary>
+  public bool? PlotVisibleOnly { get; set; }
+  /// <summary>
+  ///   The way that blank cells are plotted on a chart..
+  /// </summary>
+  public DisplayBlanksAsKind? DisplayBlanksAs { get; set; }
+  /// <summary>
+  ///   True if we should render datalabels over the maximum scale.
+  /// </summary>
+  public bool? ShowDataLabelsOverMaximum { get; set; }
 }

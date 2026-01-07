@@ -13,10 +13,14 @@ public interface StyleDefinition
   ///   Minimum Version
   /// </summary>
   public string? MinVersion { get; set; }
-  public Collection<StyleDefinitionTitle>? StyleDefinitionTitles { get; set; }
-  public Collection<StyleLabelDescription>? StyleLabelDescriptions { get; set; }
+  public StyleDefinitionTitles StyleDefinitionTitles { get; set; }
+  public StyleLabelDescriptions StyleLabelDescriptions { get; set; }
   public StyleDisplayCategories? StyleDisplayCategories { get; set; }
   public Scene3D? Scene3D { get; set; }
   public StyleLabel? StyleLabel { get; set; }
   public ExtensionList? ExtensionList { get; set; }
+}
+
+public interface StyleLabelDescriptions: ElementCollection<StyleLabelDescription>
+{
 }

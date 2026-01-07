@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 ///   Defines the WebExtension Class.
 /// </summary>
-public interface WebExtension
+public interface WebExtension: Extension
 {
   /// <summary>
   ///   Gets or sets the  value. It is only available for backwards compatibility

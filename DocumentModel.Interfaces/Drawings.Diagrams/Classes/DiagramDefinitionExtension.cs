@@ -5,12 +5,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Defines the DiagramDefinitionExtension Class.
 /// </summary>
-public interface DiagramDefinitionExtension
+public interface DiagramDefinitionExtension: Extension
 {
-  /// <summary>
-  ///   URI
-  /// </summary>
-  public string? Uri { get; set; }
   public NumberDiagramInfoList? NumberDiagramInfoList { get; set; }
   public ListStyle? TextListStyleType { get; set; }
 }

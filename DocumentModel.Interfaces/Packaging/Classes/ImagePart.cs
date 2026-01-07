@@ -3,7 +3,6 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ImagePart
 /// </summary>
-public interface ImagePart
+public interface ImagePart: OpenXmlPart
 {
-  public string? RelationshipType { get; set; }
 }

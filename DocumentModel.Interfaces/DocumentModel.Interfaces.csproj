@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <RootNamespace>DocumentModel</RootNamespace>
     <Description>Definition of document model based on OpenXML</Description>
     <Authors>Yarreck Qhta</Authors>
@@ -17,15 +17,17 @@
     <NoWarn>1701;1702;8766;0618</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Drawings.Charts\Classes\**" />
     <Compile Remove="Properties\Classes\**" />
     <Compile Remove="Settings\**" />
+    <EmbeddedResource Remove="Drawings.Charts\Classes\**" />
     <EmbeddedResource Remove="Properties\Classes\**" />
     <EmbeddedResource Remove="Settings\**" />
+    <None Remove="Drawings.Charts\Classes\**" />
     <None Remove="Properties\Classes\**" />
     <None Remove="Settings\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="Drawings.ChartDrawing\Classes\Extent.cs" />
     <Compile Remove="Math\Classes\OfficeMathArgumentType.cs" />
     <Compile Remove="Packaging\Classes\CustomizationPart.cs" />
     <Compile Remove="Properties\DigitalSignature.cs" />

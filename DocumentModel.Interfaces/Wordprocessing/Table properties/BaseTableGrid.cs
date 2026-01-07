@@ -8,5 +8,5 @@ public interface BaseTableGrid
   /// <summary>
   /// Simple collection of <see cref="GridColumn"/>
   /// </summary>
-  public Collection<GridColumn>? GridColumns { get; set; }
+  public GridColumns GridColumns { get; set; }
 }

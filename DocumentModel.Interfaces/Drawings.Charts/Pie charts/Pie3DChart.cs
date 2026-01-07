@@ -1,0 +1,15 @@
+namespace DocumentModel.Drawings.Charts;
+
+/// <summary>
+///   3D Pie Charts.
+/// </summary>
+public interface Pie3DChart
+{
+  /// <summary>
+  ///   VaryColors.
+  /// </summary>
+  public bool? VaryColors { get; set; }
+  public PieChartSeries PieChartSeries { get; set; }
+  public DataLabels? DataLabels { get; set; }
+  public Pie3DChartExtensionList? Pie3DChartExtensionList { get; set; }
+}

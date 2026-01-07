@@ -57,31 +57,31 @@ public partial interface ColorScheme: ExtendableElement
   /// Accent 4.
   /// </summary>
   [XmlIgnore]
-  public ThemeColor? Accent4Color { get; set; }
+  public Color2Type? Accent4Color { get; set; }
 
   /// <summary>
   /// Accent 5.
   /// </summary>
   [XmlIgnore]
-  public ThemeColor? Accent5Color { get; set; }
+  public Color2Type? Accent5Color { get; set; }
 
   /// <summary>
   /// Accent 6.
   /// </summary>
   [XmlIgnore]
-  public ThemeColor? Accent6Color { get; set; }
+  public Color2Type? Accent6Color { get; set; }
 
   /// <summary>
   /// Hyperlink.
   /// </summary>
   [XmlIgnore]
-  public ThemeColor? Hyperlink { get; set; }
+  public Color2Type? Hyperlink { get; set; }
 
   /// <summary>
   /// Followed hyperlink.
   /// </summary>
   [XmlIgnore]
-  public ThemeColor? FollowedHyperlinkColor { get; set; }
+  public Color2Type? FollowedHyperlinkColor { get; set; }
   #endregion
 
   /// <summary>

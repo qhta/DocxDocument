@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Grid IColumn Definition.
 /// </summary>
-public interface GridColumn
+public interface GridColumn: CollectionItem
 {
   /// <summary>
   ///   Grid IColumn Width

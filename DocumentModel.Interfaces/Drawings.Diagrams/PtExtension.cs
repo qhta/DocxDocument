@@ -4,11 +4,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Defines the PtExtension interface.
 /// </summary>
-public interface PtExtension
+public interface PtExtension: Extension
 {
-  /// <summary>
-  ///   URI
-  /// </summary>
-  public string? Uri { get; set; }
   public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
 }

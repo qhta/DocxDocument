@@ -4,12 +4,12 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ChartPart
 /// </summary>
-public interface ChartPart
+public interface ChartPart: OpenXmlPart
 {
   /// <summary>
   ///   Gets the ChartColorStyleParts of the ChartPart
   /// </summary>
-  public Collection<ChartColorStylePart>? ChartColorStyleParts { get; set; }
+  public ChartColorStyleParts ChartColorStyleParts { get; set; }
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
@@ -17,11 +17,9 @@ public interface ChartPart
   /// <summary>
   ///   Gets the ChartStyleParts of the ChartPart
   /// </summary>
-  public Collection<ChartStylePart>? ChartStyleParts { get; set; }
-  public string? ContentType { get; set; }
+  public ChartStyleParts ChartStyleParts { get; set; }
   /// <summary>
   ///   Gets the ImageParts of the ChartPart
   /// </summary>
-  public Collection<ImagePart>? ImageParts { get; set; }
-  public string? RelationshipType { get; set; }
+  public ImageParts ImageParts { get; set; }
 }

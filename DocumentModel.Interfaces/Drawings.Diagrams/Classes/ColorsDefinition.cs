@@ -13,9 +13,9 @@ public interface ColorsDefinition
   ///   Minimum Version
   /// </summary>
   public string? MinVersion { get; set; }
-  public Collection<ColorDefinitionTitle>? ColorDefinitionTitles { get; set; }
-  public Collection<ColorTransformDescription>? ColorTransformDescriptions { get; set; }
+  public ColorDefinitionTitles ColorDefinitionTitles { get; set; }
+  public ColorTransformDescriptions ColorTransformDescriptions { get; set; }
   public ColorTransformCategories? ColorTransformCategories { get; set; }
-  public Collection<ColorTransformStyleLabel>? ColorTransformStyleLabels { get; set; }
+  public ColorTransformStyleLabels ColorTransformStyleLabels { get; set; }
   public ExtensionList? ExtensionList { get; set; }
 }

@@ -8,6 +8,6 @@ public interface CustomXmlBlock: CustomXmlElement, StoryContent, TableCellConten
 {
   //public CustomXmlBlock? ChildCustomXmlBlock { get; set; }
   //public SdtBlock? SdtBlock { get; set; }
-  //public Collection<Paragraph>? Paragraphs { get; set; }
-  //public Collection<Table>? Tables { get; set; }
+  //public Paragraphs Paragraphs { get; set; }
+  //public Tables Tables { get; set; }
 }

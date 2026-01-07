@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageItemType Class.
 /// </summary>
-public interface BackstageItemType
+public interface BackstageItemType: CollectionItem
 {
   /// <summary>
   ///   id

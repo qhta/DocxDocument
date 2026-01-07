@@ -19,5 +19,5 @@ public interface ColorStyle: OfficeArtExtendableElement
   public SystemColor? SystemColor { get; set; }
   public SchemeColor? SchemeColor { get; set; }
   public PresetColor? PresetColor { get; set; }
-  public Collection<ColorStyleVariation>? ColorStyleVariations { get; set; }
+  public ColorStyleVariations ColorStyleVariations { get; set; }
 }

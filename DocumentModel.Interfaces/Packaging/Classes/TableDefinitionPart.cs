@@ -3,12 +3,12 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the TableDefinitionPart
 /// </summary>
-public interface TableDefinitionPart
+public interface TableDefinitionPart: OpenXmlPart
 {
   public string? ContentType { get; set; }
   /// <summary>
   ///   Gets the QueryTableParts of the TableDefinitionPart
   /// </summary>
-  public Collection<QueryTablePart>? QueryTableParts { get; set; }
+  public QueryTableParts QueryTableParts { get; set; }
   public string? RelationshipType { get; set; }
 }

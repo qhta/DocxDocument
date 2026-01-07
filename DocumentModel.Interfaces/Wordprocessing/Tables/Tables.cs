@@ -5,36 +5,6 @@
 /// </summary>
 public interface Tables : ElementCollection<Table>
 {
-  #region Collection Properties
-
-  /// <summary>
-  ///   Gets the number of tables in the collection.
-  /// </summary>
-  public int Count { get; }
-
-  /// <summary>
-  ///   Gets the first table in the collection.
-  /// </summary>
-  public Table? First { get; }
-
-  /// <summary>
-  ///   Gets the last table in the collection.
-  /// </summary>
-  public Table? Last { get; }
-
-  #endregion
-
-  #region Item Access
-
-  /// <summary>
-  ///   Gets a table by its index.
-  /// </summary>
-  /// <param name="index">The one-based index of the table.</param>
-  /// <returns>The table at the specified index.</returns>
-  public Table? Item(int index);
-
-  #endregion
-
   #region Methods
 
   /// <summary>

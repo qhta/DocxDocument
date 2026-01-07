@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the UnsizedButton Class.
 /// </summary>
-public interface UnsizedButton
+public interface UnsizedButton: CollectionItem
 {
   /// <summary>
   ///   onAction

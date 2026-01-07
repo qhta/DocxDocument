@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the RibbonAndBackstageCustomizationsPart
 /// </summary>
-public interface RibbonAndBackstageCustomizationsPart
+public interface RibbonAndBackstageCustomizationsPart: OpenXmlPart
 {
   public string? ContentType { get; set; }
   /// <summary>
@@ -13,6 +13,6 @@ public interface RibbonAndBackstageCustomizationsPart
   /// <summary>
   ///   Gets the ImageParts of the RibbonAndBackstageCustomizationsPart
   /// </summary>
-  public Collection<ImagePart>? ImageParts { get; set; }
+  public ImageParts ImageParts { get; set; }
   public string? RelationshipType { get; set; }
 }
