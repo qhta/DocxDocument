@@ -6,12 +6,6 @@ namespace DocumentModel.Wordprocessing;
 public interface Contributors : ElementCollection<Contributor>
 {
   /// <summary>
-  ///   Adds a contributor to the collection.
-  /// </summary>
-  /// <param name="contributor">The contributor to add.</param>
-  public void Add(Contributor contributor);
-
-  /// <summary>
   ///   Formats the contributors as a string according to bibliography style.
   /// </summary>
   /// <param name="style">The bibliography style to use for formatting.</param>

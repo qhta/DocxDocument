@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents an extension for an office style sheet, providing additional theme or formatting information.
 /// </summary>
-public interface OfficeStyleSheetExtension
+public interface OfficeStyleSheetExtension: CollectionItem
 {
   /// <summary>
   ///   Uniform Resource Identifier for the extension.

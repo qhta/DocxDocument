@@ -22,7 +22,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Common use cases include caching the states within a country after the first drill-down, storing counties within
 ///   a state for repeated access, or maintaining city-level data for quick navigation within regional hierarchies.
 /// </remarks>
-public interface GeoChildEntitiesQueryResult
+public interface GeoChildEntitiesQueryResult: CollectionItem
 {
   /// <summary>
   ///   Gets or sets the query specification that was used to retrieve the child entities.

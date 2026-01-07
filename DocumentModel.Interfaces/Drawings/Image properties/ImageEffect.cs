@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an image effect, including visibility, a variety of artistic effects, image adjustments, and extension options.
 /// </summary>
-public interface ImageEffect: ExtendableElement
+public interface ImageEffect: CollectionItem, ExtendableElement
 {
   /// <summary>
   /// Gets or sets a value indicating whether the effect is visible.

@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Each list template contains nine list levels (1-9), each with its own
 ///   number format, position, alignment, and other formatting attributes.
 /// </remarks>
-public interface ListLevel
+public interface ListLevel: CollectionItem
 {
   #region Number Format
 

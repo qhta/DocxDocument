@@ -24,7 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   facility location results for repeated visualization, maintaining demographic location data for regional analysis,
 ///   or preserving address resolution results for consistent map chart rendering across document sessions.
 /// </remarks>
-public interface GeoLocationQueryResult
+public interface GeoLocationQueryResult: CollectionItem
 {
   /// <summary>
   ///   Gets or sets the query specification that was used to retrieve the geographic locations.

@@ -1,52 +1,62 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the PictureLocks interface.
+///   Represents locking options for a picture, restricting user actions such as grouping, selection, rotation, resizing, cropping, and editing.
 /// </summary>
-public interface PictureLocks: ExtendableElement
+public interface PictureLocks : ExtendableElement
 {
   /// <summary>
-  ///   Disallow Shape Grouping
+  ///   Disallows grouping of the picture.
   /// </summary>
   public bool? NoGrouping { get; set; }
+
   /// <summary>
-  ///   Disallow Shape Selection
+  ///   Disallows selection of the picture.
   /// </summary>
   public bool? NoSelection { get; set; }
+
   /// <summary>
-  ///   Disallow Shape Rotation
+  ///   Disallows rotation of the picture.
   /// </summary>
   public bool? NoRotation { get; set; }
+
   /// <summary>
-  ///   Disallow Aspect Ratio Change
+  ///   Disallows changing the aspect ratio of the picture.
   /// </summary>
   public bool? NoChangeAspect { get; set; }
+
   /// <summary>
-  ///   Disallow Shape Movement
+  ///   Disallows moving the picture.
   /// </summary>
   public bool? NoMove { get; set; }
+
   /// <summary>
-  ///   Disallow Shape Resize
+  ///   Disallows resizing the picture.
   /// </summary>
   public bool? NoResize { get; set; }
+
   /// <summary>
-  ///   Disallow Shape Point Editing
+  ///   Disallows editing the points of the picture.
   /// </summary>
   public bool? NoEditPoints { get; set; }
+
   /// <summary>
-  ///   Disallow Showing Adjust Handles
+  ///   Disallows showing adjustment handles on the picture.
   /// </summary>
   public bool? NoAdjustHandles { get; set; }
+
   /// <summary>
-  ///   Disallow Arrowhead Changes
+  ///   Disallows changing arrowheads on the picture.
   /// </summary>
   public bool? NoChangeArrowheads { get; set; }
+
   /// <summary>
-  ///   Disallow Shape Type Change
+  ///   Disallows changing the picture type.
   /// </summary>
   public bool? NoChangeShapeType { get; set; }
+
   /// <summary>
-  ///   Disallow Crop Changes
+  ///   Disallows cropping the picture.
   /// </summary>
   public bool? NoCrop { get; set; }
 }

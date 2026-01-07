@@ -1,5 +1,5 @@
 using DocumentModel.Drawings.Diagrams;
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 ///   Defines the PtExtension interface.

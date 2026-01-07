@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a bibliographic source (reference).
 /// </summary>
-public interface Source
+public interface Source: CollectionItem
 {
   /// <summary>
   ///   Gets or sets the unique identifier (tag) for the source.

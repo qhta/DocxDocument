@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public interface Field
+public interface Field: CollectionItem
 {
   
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a shape guide, defining a named formula used for shape geometry calculations.
 /// </summary>
-public interface ShapeGuide
+public interface ShapeGuide: CollectionItem
 {
   /// <summary>
   ///   Name of the shape guide.

@@ -24,6 +24,6 @@ namespace DocumentModel;
 ///   restored and properly rendered. This ensures no data loss occurs during the roundtrip between different Office
 ///   versions, even when some applications must use fallback representations.
 /// </remarks>
-public interface AlternateContentFallback : ElementCollection<ICollectionItem>
+public interface AlternateContentFallback : ElementCollection<CollectionItem>
 {
 }

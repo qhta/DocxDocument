@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the PictureAttributionSourceURL interface.
+///   Represents a picture attribution source URL, providing an identifier for the attribution source.
 /// </summary>
 public interface PictureAttributionSourceURL
 {
   /// <summary>
-  ///   id
+  ///   Identifier for the picture attribution source.
   /// </summary>
   public string? Id { get; set; }
 }

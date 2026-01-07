@@ -30,7 +30,7 @@ namespace DocumentModel.Wordprocessing;
 ///   comment tracking and synchronization across platforms, including Word Online and mobile applications.
 ///   </para>
 /// </remarks>
-public interface Comment : ElementCollection<CommentContent>
+public interface Comment : CollectionItem, ElementCollection<CommentContent>
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this comment annotation.

@@ -28,7 +28,7 @@
 ///   </list>
 ///   </para>
 /// </remarks>
-public interface Sentence
+public interface Sentence: CollectionItem
 {
   #region Text Content
 
