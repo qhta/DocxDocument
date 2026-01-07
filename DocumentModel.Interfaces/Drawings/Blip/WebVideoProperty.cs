@@ -1,4 +1,4 @@
-namespace DocumentModel.Office2013.Word.Drawing;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Represents properties for an embedded web video, including HTML markup and display dimensions.

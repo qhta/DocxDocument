@@ -1,44 +1,52 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Inner Shadow Effect.
+///   Represents an inner shadow effect, including blur, offset, direction, and color options.
 /// </summary>
 public interface InnerShadow
 {
   /// <summary>
-  ///   Blur Radius
+  ///   Blur radius of the inner shadow.
   /// </summary>
   public Int64? BlurRadius { get; set; }
+
   /// <summary>
-  ///   Distance
+  ///   Distance to offset the inner shadow from the object.
   /// </summary>
   public Int64? Distance { get; set; }
+
   /// <summary>
-  ///   Direction
+  ///   Direction angle of the inner shadow.
   /// </summary>
   public Int32? Direction { get; set; }
+
   /// <summary>
-  ///   RGB Color Model - Percentage Variant.
+  ///   Inner shadow color specified using the RGB color model with percentage values.
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
+
   /// <summary>
-  ///   RGB Color Model - Hex Variant.
+  ///   Inner shadow color specified using the RGB color model with hexadecimal values.
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex { get; set; }
+
   /// <summary>
-  ///   Hue, Saturation, Luminance Color Model.
+  ///   Inner shadow color specified using the hue, saturation, luminance (HSL) color model.
   /// </summary>
   public HslColor? HslColor { get; set; }
+
   /// <summary>
-  ///   System Color.
+  ///   Inner shadow color specified using a system-defined color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
+
   /// <summary>
-  ///   Scheme Color.
+  ///   Inner shadow color specified using a color scheme.
   /// </summary>
   public SchemeColor? SchemeColor { get; set; }
+
   /// <summary>
-  ///   Preset Color.
+  ///   Inner shadow color specified using a preset color.
   /// </summary>
   public PresetColor? PresetColor { get; set; }
 }
