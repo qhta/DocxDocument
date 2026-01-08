@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the PieChartExtensionList Class.
+///   Represents a collection of pie chart extensions.
 /// </summary>
-public interface PieChartExtensionList: ElementCollection<PieChartExtension>
+public interface PieChartExtensionList : ElementCollection<PieChartExtension>
 {
 }
