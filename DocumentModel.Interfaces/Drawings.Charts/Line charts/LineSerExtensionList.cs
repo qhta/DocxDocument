@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the LineSerExtensionList Class.
+///   Represents a collection of line chart series extensions.
 /// </summary>
-public interface LineSerExtensionList: ElementCollection<LineSerExtension>
+public interface LineSerExtensionList : ElementCollection<LineSerExtension>
 {
 }
