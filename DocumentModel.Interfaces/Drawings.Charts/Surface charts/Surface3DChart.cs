@@ -1,20 +1,37 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   3D Surface Charts.
+///   Represents a 3D surface chart, including wireframe, color variation, series, band formats, axis identifiers, and extension list.
 /// </summary>
 public interface Surface3DChart
 {
   /// <summary>
-  ///   Wireframe.
+  ///   Indicates whether the chart is rendered as a wireframe.
   /// </summary>
   public bool? Wireframe { get; set; }
+
   /// <summary>
-  ///   VaryColors.
+  ///   Indicates whether colors should vary between chart series.
   /// </summary>
   public bool? VaryColors { get; set; }
-  public SurfaceChartSeries SurfaceChartSeries { get; set; }
+
+  /// <summary>
+  ///   Series displayed in the 3D surface chart.
+  /// </summary>
+  public SurfaceChartSeriesList SurfaceChartSeries { get; set; }
+
+  /// <summary>
+  ///   Band formats configuration for the chart.
+  /// </summary>
   public BandFormats? BandFormats { get; set; }
+
+  /// <summary>
+  ///   Identifiers for the axes used in the chart.
+  /// </summary>
   public AxisIds AxisIds { get; set; }
+
+  /// <summary>
+  ///   Extension list for additional chart properties.
+  /// </summary>
   public Surface3DChartExtensionList? Surface3DChartExtensionList { get; set; }
 }

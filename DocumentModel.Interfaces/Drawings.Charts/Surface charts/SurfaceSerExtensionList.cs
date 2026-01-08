@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the SurfaceSerExtensionList Class.
+///   Represents a collection of surface chart series extensions.
 /// </summary>
-public interface SurfaceSerExtensionList: ElementCollection<SurfaceSerExtension>
+public interface SurfaceSerExtensionList : ElementCollection<SurfaceSerExtension>
 {
 }

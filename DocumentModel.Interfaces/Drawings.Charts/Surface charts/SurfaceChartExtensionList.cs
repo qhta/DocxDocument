@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the SurfaceChartExtensionList Class.
+///   Represents a collection of surface chart extensions.
 /// </summary>
-public interface SurfaceChartExtensionList: ElementCollection<SurfaceChartExtension>
+public interface SurfaceChartExtensionList : ElementCollection<SurfaceChartExtension>
 {
 }
