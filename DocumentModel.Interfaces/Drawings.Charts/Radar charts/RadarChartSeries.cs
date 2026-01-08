@@ -1,37 +1,62 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the RadarChartSeries Class.
+///   Represents a series in a radar chart, including index, order, text, shape properties, picture options, marker, data points, labels, axis data, values, and extensions.
 /// </summary>
-public interface RadarChartSeries
+public interface RadarChartSeries: CollectionItem
 {
   /// <summary>
-  ///   Index.
+  ///   Index of the series within the chart.
   /// </summary>
   public UInt32? Index { get; set; }
+
   /// <summary>
-  ///   Order.
+  ///   Order of the series in the chart.
   /// </summary>
   public UInt32? Order { get; set; }
+
   /// <summary>
-  ///   Series Text.
+  ///   Text or name of the series.
   /// </summary>
   public SeriesText? SeriesText { get; set; }
+
   /// <summary>
-  ///   ChartShapeProperties.
+  ///   Shape properties for the chart series.
   /// </summary>
   public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  ///   PictureOptions.
+  ///   Picture options for the series.
   /// </summary>
   public PictureOptions? PictureOptions { get; set; }
+
   /// <summary>
-  ///   Marker.
+  ///   Marker configuration for the series.
   /// </summary>
   public Marker? Marker { get; set; }
+
+  /// <summary>
+  ///   Data points contained in the series.
+  /// </summary>
   public DataPoints DataPoints { get; set; }
+
+  /// <summary>
+  ///   Data labels configuration for the series.
+  /// </summary>
   public DataLabels? DataLabels { get; set; }
+
+  /// <summary>
+  ///   Category axis data for the series.
+  /// </summary>
   public CategoryAxisData? CategoryAxisData { get; set; }
+
+  /// <summary>
+  ///   Values for the series.
+  /// </summary>
   public Values? Values { get; set; }
+
+  /// <summary>
+  ///   Extension list for additional series properties.
+  /// </summary>
   public RadarSerExtensionList? RadarSerExtensionList { get; set; }
 }

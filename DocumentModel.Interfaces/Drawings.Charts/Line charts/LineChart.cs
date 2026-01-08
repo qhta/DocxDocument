@@ -18,7 +18,7 @@ public interface LineChart
   /// <summary>
   ///   Series displayed in the line chart.
   /// </summary>
-  public LineChartSeries LineChartSeries { get; set; }
+  public LineChartSeriesList LineChartSeries { get; set; }
 
   /// <summary>
   ///   Data labels configuration for the chart.
