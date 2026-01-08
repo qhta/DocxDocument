@@ -1,23 +1,27 @@
 namespace DocumentModel.Drawings.ChartsStyle;
 
 /// <summary>
-///   Defines the ColorStyle Class.
+/// Describes a color style configuration for chart elements, supporting various color models and style variations.
 /// </summary>
-public interface ColorStyle: OfficeArtExtendableElement
+public interface ColorStyle : OfficeArtExtendableElement
 {
   /// <summary>
-  ///   meth
+  /// Method used to apply the color style to chart elements.
   /// </summary>
   public string? Method { get; set; }
+
   /// <summary>
-  ///   id
+  /// Unique identifier for the color style.
   /// </summary>
   public UInt32? Id { get; set; }
-  public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
-  public RgbColorModelHex? RgbColorModelHex { get; set; }
-  public HslColor? HslColor { get; set; }
-  public SystemColor? SystemColor { get; set; }
-  public SchemeColor? SchemeColor { get; set; }
-  public PresetColor? PresetColor { get; set; }
+
+  /// <summary>
+  /// Color used in the color style.
+  /// </summary>
+  public ColorType? Color { get; set; }
+
+  /// <summary>
+  /// Collection of color style variations for additional customization.
+  /// </summary>
   public ColorStyleVariations ColorStyleVariations { get; set; }
 }

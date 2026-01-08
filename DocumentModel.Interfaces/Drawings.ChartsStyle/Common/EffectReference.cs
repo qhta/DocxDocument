@@ -1,15 +1,9 @@
 namespace DocumentModel.Drawings.ChartsStyle;
 
 /// <summary>
-///   Defines the EffectReference Class.
+///   EffectReference in ChartsStyle extends EffectReference in Drawings with StyleColor.
 /// </summary>
-public interface EffectReference
+public interface EffectReference: DocumentModel.Drawings.EffectReference
 {
-  public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
-  public RgbColorModelHex? RgbColorModelHex { get; set; }
-  public HslColor? HslColor { get; set; }
-  public SystemColor? SystemColor { get; set; }
-  public SchemeColor? SchemeColor { get; set; }
-  public PresetColor? PresetColor { get; set; }
   public StyleColor? StyleColor { get; set; }
 }

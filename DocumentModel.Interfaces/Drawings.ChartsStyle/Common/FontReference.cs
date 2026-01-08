@@ -1,23 +1,9 @@
 namespace DocumentModel.Drawings.ChartsStyle;
 
 /// <summary>
-///   Defines the FontReference Class.
+///    FontReference in ChartsStyle extends FontReference in Drawings with StyleColor.
 /// </summary>
-public interface FontReference
+public interface FontReference: DocumentModel.Drawings.FontReference
 {
-  /// <summary>
-  ///   idx
-  /// </summary>
-  public FontCollectionIndexKind? Index { get; set; }
-  /// <summary>
-  ///   mods
-  /// </summary>
-  public ListOf<String>? Modifiers { get; set; }
-  public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
-  public RgbColorModelHex? RgbColorModelHex { get; set; }
-  public HslColor? HslColor { get; set; }
-  public SystemColor? SystemColor { get; set; }
-  public SchemeColor? SchemeColor { get; set; }
-  public PresetColor? PresetColor { get; set; }
   public StyleColor? StyleColor { get; set; }
 }
