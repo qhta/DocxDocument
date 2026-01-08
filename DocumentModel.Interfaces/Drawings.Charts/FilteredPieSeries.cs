@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the FilteredPieSeries Class.
+///   Represents a filtered pie series for a chart, containing a reference to a pie chart series.
 /// </summary>
 public interface FilteredPieSeries
 {
   /// <summary>
-  ///   PieChartSeries.
+  ///   Pie chart series associated with the filtered pie series.
   /// </summary>
-  public PieChartSeries3? PieChartSeries { get; set; }
+  public PieChartSeries3 PieChartSeries { get; set; }
 }
