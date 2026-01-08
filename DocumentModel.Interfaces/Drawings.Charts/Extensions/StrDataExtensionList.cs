@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the StrDataExtensionList Class.
+///   Represents a collection of string data extensions.
 /// </summary>
 public interface StrDataExtensionList: ElementCollection<StrDataExtension>
 {
