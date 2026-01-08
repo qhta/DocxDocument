@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 ///   Defines the MarkerStyle enumeration.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
-public enum MarkerStyle
+public enum MarkerStyleKind
 {
   /// <summary>
   ///   circle.
