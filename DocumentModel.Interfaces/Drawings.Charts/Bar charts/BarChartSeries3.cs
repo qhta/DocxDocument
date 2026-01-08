@@ -53,7 +53,7 @@ public interface BarChartSeries3
   /// <summary>
   ///   Error bars for the series.
   /// </summary>
-  public ErrorBar? ErrorBars { get; set; }
+  public ErrorBars? ErrorBars { get; set; }
 
   /// <summary>
   ///   Category axis data for the series.
