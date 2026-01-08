@@ -13,8 +13,8 @@ public interface ScatterChart
   ///   VaryColors.
   /// </summary>
   public bool? VaryColors { get; set; }
-  public Collection<ScatterChartSeries>? ScatterChartSeries { get; set; }
+  public ScatterChartSeries ScatterChartSeries { get; set; }
   public DataLabels? DataLabels { get; set; }
-  public Collection<UInt32>? AxisIds { get; set; }
+  public AxisIds AxisIds { get; set; }
   public ScatterChartExtensionList? ScatterChartExtensionList { get; set; }
 }
