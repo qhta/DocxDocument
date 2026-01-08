@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the FilteredLineSeriesExtension Class.
+///   Represents an extension for a filtered line series, containing a reference to a line chart series.
 /// </summary>
-public interface FilteredLineSeriesExtension: Extension
+public interface FilteredLineSeriesExtension : Extension
 {
   /// <summary>
-  ///   LineChartSeries.
+  ///   Line chart series associated with the filtered line series extension.
   /// </summary>
-  public LineChartSeries3? LineChartSeries { get; set; }
+  public LineChartSeries3 LineChartSeries { get; set; }
 }
