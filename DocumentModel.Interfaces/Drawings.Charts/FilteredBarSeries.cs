@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the FilteredBarSeries Class.
+///   Represents a filtered bar series for a chart, containing a reference to a bar chart series.
 /// </summary>
 public interface FilteredBarSeries
 {
   /// <summary>
-  ///   BarChartSeries.
+  ///   Bar chart series associated with the filtered bar series.
   /// </summary>
-  public BarChartSeries3? BarChartSeries { get; set; }
+  public BarChartSeries3 BarChartSeries { get; set; }
 }

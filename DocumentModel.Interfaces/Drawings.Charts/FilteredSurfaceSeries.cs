@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 public interface FilteredSurfaceSeries
 {
   /// <summary>
-  ///   SurfaceChartSeries.
+  ///   Surface chart series associated with the filtered surface series.
   /// </summary>
   public SurfaceChartSeries3? SurfaceChartSeries { get; set; }
 }

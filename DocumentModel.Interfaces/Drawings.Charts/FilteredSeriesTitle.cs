@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the FilteredSeriesTitle Class.
+///   Represents a filtered series title for a chart, including the chart text.
 /// </summary>
 public interface FilteredSeriesTitle
 {
   /// <summary>
-  ///   ChartText.
+  ///   Chart text associated with the filtered series title.
   /// </summary>
-  public ChartText3? ChartText { get; set; }
+  public ChartText3 ChartText { get; set; }
 }

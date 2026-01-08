@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the FilteredScatterSeries Class.
+///   Represents a filtered scatter series for a chart, containing a reference to a scatter chart series.
 /// </summary>
 public interface FilteredScatterSeries
 {
   /// <summary>
-  ///   ScatterChartSeries.
+  ///   Scatter chart series associated with the filtered scatter series.
   /// </summary>
-  public ScatterChartSeries3? ScatterChartSeries { get; set; }
+  public ScatterChartSeries3 ScatterChartSeries { get; set; }
 }

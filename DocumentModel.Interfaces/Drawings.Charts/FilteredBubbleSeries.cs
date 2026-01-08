@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the FilteredBubbleSeries Class.
+///   Represents a filtered bubble series for a chart, containing a reference to a bubble chart series.
 /// </summary>
 public interface FilteredBubbleSeries
 {
   /// <summary>
-  ///   BubbleChartSeries.
+  ///   Bubble chart series associated with the filtered bubble series.
   /// </summary>
-  public BubbleChartSeries3? BubbleChartSeries { get; set; }
+  public BubbleChartSeries3 BubbleChartSeries { get; set; }
 }
