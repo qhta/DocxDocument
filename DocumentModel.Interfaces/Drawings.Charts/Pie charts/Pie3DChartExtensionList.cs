@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the Pie3DChartExtensionList Class.
+///   Represents a collection of 3D pie chart extensions.
 /// </summary>
-public interface Pie3DChartExtensionList
+public interface Pie3DChartExtensionList : ElementCollection<Pie3DChartExtension>
 {
-  public Pie3DChartExtensions Pie3DChartExtensions { get; set; }
 }
