@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the NumRefExtensionList Class.
+///   Represents a collection of number reference extensions.
 /// </summary>
 public interface NumRefExtensionList: ElementCollection<NumRefExtension>
 {

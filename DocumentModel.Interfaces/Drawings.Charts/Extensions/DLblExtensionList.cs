@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the DLblExtensionList Class.
+///   Represents a collection of extension elements for a single data label.
 /// </summary>
 public interface DLblExtensionList: ElementCollection<DLblExtension>
 {
