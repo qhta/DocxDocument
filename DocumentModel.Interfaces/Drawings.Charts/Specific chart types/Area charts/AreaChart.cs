@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents an area chart, including grouping, color variation, series, labels, drop lines, axis identifiers, and extension list.
 /// </summary>
-public interface AreaChart
+public interface AreaChart: ChartType
 {
   /// <summary>
   ///   Specifies the grouping type for the area chart.

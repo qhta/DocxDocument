@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a pie chart, including color variation, series, labels, first slice angle, and extension list.
 /// </summary>
-public interface PieChart
+public interface PieChart: ChartType
 {
   /// <summary>
   ///   Indicates whether colors should vary between chart series.

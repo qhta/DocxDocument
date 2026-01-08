@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a radar chart, including style, color variation, series, labels, axis identifiers, and extension list.
 /// </summary>
-public interface RadarChart
+public interface RadarChart: ChartType
 {
   /// <summary>
   ///   Style of the radar chart.

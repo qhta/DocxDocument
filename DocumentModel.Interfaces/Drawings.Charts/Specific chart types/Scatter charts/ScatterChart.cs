@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a scatter chart, including style, color variation, series, labels, axis identifiers, and extension list.
 /// </summary>
-public interface ScatterChart
+public interface ScatterChart: ChartType
 {
   /// <summary>
   ///   Style of the scatter chart.

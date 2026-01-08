@@ -1,56 +1,67 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the Chart Class.
+///   Represents a chart, including title, formatting, 3D view and wall settings, plot area, legend, visibility, blank cell display, and data label options.
 /// </summary>
 public interface Chart
 {
   /// <summary>
-  ///   Title data and formatting.
+  ///   Title data and formatting for the chart.
   /// </summary>
   public Title? Title { get; set; }
+
   /// <summary>
-  ///   True if the chart automatic title has been deleted..
+  ///   Indicates if the chart automatic title has been deleted.
   /// </summary>
   public bool? AutoTitleDeleted { get; set; }
+
   /// <summary>
-  ///   pivot chart format persistence data.
+  ///   Pivot chart format persistence data.
   /// </summary>
   public PivotFormats? PivotFormats { get; set; }
+
   /// <summary>
-  ///   3D view settings.
+  ///   3D view settings for the chart.
   /// </summary>
   public View3D? View3D { get; set; }
+
   /// <summary>
-  ///   3D floor formatting.
+  ///   3D floor formatting for the chart.
   /// </summary>
   public Floor? Floor { get; set; }
+
   /// <summary>
-  ///   3D side wall formatting.
+  ///   3D side wall formatting for the chart.
   /// </summary>
   public SideWall? SideWall { get; set; }
+
   /// <summary>
-  ///   3D back wall formatting.
+  ///   3D back wall formatting for the chart.
   /// </summary>
   public BackWall? BackWall { get; set; }
+
   /// <summary>
-  ///   Plot data and formatting.
+  ///   Plot data and formatting for the chart.
   /// </summary>
   public PlotArea? PlotArea { get; set; }
+
   /// <summary>
-  ///   Legend data and formatting.
+  ///   Legend data and formatting for the chart.
   /// </summary>
   public Legend? Legend { get; set; }
+
   /// <summary>
-  ///   True if only visible cells are plotted..
+  ///   Indicates if only visible cells are plotted.
   /// </summary>
   public bool? PlotVisibleOnly { get; set; }
+
   /// <summary>
-  ///   The way that blank cells are plotted on a chart..
+  ///   Specifies how blank cells are plotted on the chart.
   /// </summary>
   public DisplayBlanksAsKind? DisplayBlanksAs { get; set; }
+
   /// <summary>
-  ///   True if we should render datalabels over the maximum scale.
+  ///   Indicates if data labels should be rendered over the maximum scale.
   /// </summary>
   public bool? ShowDataLabelsOverMaximum { get; set; }
 }

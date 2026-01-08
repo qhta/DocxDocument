@@ -1,73 +1,89 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Category Axis Data.
+/// Abstract representation of an axis type. All specific axis types implement this interface.
 /// </summary>
-public interface CategoryAxis
+public interface AxisType: CollectionItem
 {
   /// <summary>
-  ///   Axis ID.
+  ///   Identifier for the axis.
   /// </summary>
   public UInt32? AxisId { get; set; }
+
   /// <summary>
-  ///   Scaling.
+  ///   Scaling configuration for the axis.
   /// </summary>
   public Scaling? Scaling { get; set; }
+
   /// <summary>
-  ///   Delete.
+  ///   Indicates whether the axis is deleted.
   /// </summary>
   public bool? Delete { get; set; }
+
   /// <summary>
-  ///   Axis Position.
+  ///   Position of the axis on the chart.
   /// </summary>
   public AxisPositionKind? AxisPosition { get; set; }
+
   /// <summary>
-  ///   Major Gridlines.
+  ///   Major gridlines configuration for the axis.
   /// </summary>
   public MajorGridlines? MajorGridlines { get; set; }
+
   /// <summary>
-  ///   Minor Gridlines.
+  ///   Minor gridlines configuration for the axis.
   /// </summary>
   public MinorGridlines? MinorGridlines { get; set; }
+
   /// <summary>
-  ///   Title.
+  ///   Title of the axis.
   /// </summary>
   public Title? Title { get; set; }
+
   /// <summary>
-  ///   Number Format.
+  ///   Number format for the axis labels.
   /// </summary>
   public NumberingFormat? NumberingFormat { get; set; }
+
   /// <summary>
-  ///   Major Tick Mark.
+  ///   Major tick mark type for the axis.
   /// </summary>
   public TickMarkKind? MajorTickMark { get; set; }
+
   /// <summary>
-  ///   Minor Tick Mark.
+  ///   Minor tick mark type for the axis.
   /// </summary>
   public TickMarkKind? MinorTickMark { get; set; }
+
   /// <summary>
-  ///   Tick Label Position.
+  ///   Position of the tick labels on the axis.
   /// </summary>
   public TickLabelPositionKind? TickLabelPosition { get; set; }
+
   /// <summary>
-  ///   ChartShapeProperties.
+  ///   Shape properties for the axis.
   /// </summary>
   public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  ///   TextProperties.
+  ///   Text properties for the axis.
   /// </summary>
   public TextProperties? TextProperties { get; set; }
+
   /// <summary>
-  ///   Crossing Axis ID.
+  ///   Identifier of the crossing axis.
   /// </summary>
   public UInt32? CrossingAxis { get; set; }
+
+  /// <summary>
+  ///   Specifies how the axis crosses.
+  /// </summary>
   public CrossesKind? Crosses { get; set; }
+
+  /// <summary>
+  ///   Value at which the axis crosses.
+  /// </summary>
   public Double? CrossesAt { get; set; }
-  public bool? AutoLabeled { get; set; }
-  public LabelAlignmentKind? LabelAlignment { get; set; }
-  public UInt16? LabelOffset { get; set; }
-  public Int32? TickLabelSkip { get; set; }
-  public Int32? TickMarkSkip { get; set; }
-  public bool? NoMultiLevelLabels { get; set; }
-  public CatAxExtensionList? CatAxExtensionList { get; set; }
+
+
 }

@@ -1,25 +1,62 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Pie of Pie or Bar of Pie Charts.
+///   Represents a Pie of Pie or Bar of Pie chart, including type, color variation, series, labels, gap width, split options, secondary pie size, series lines, and extension list.
 /// </summary>
-public interface OfPieChart
+public interface OfPieChart : ChartType
 {
   /// <summary>
-  ///   Pie of Pie or Bar of Pie Type.
+  ///   Specifies the Pie of Pie or Bar of Pie chart type.
   /// </summary>
   public OfPieKind? OfPieType { get; set; }
+
   /// <summary>
-  ///   VaryColors.
+  ///   Indicates whether colors should vary between chart series.
   /// </summary>
   public bool? VaryColors { get; set; }
+
+  /// <summary>
+  ///   Series displayed in the chart.
+  /// </summary>
   public PieChartSeriesList PieChartSeries { get; set; }
+
+  /// <summary>
+  ///   Data labels configuration for the chart.
+  /// </summary>
   public DataLabels? DataLabels { get; set; }
+
+  /// <summary>
+  ///   Width of the gap between the main and secondary pie or bar.
+  /// </summary>
   public UInt16? GapWidth { get; set; }
+
+  /// <summary>
+  ///   Type of split used to separate the secondary chart.
+  /// </summary>
   public SplitKind? SplitType { get; set; }
+
+  /// <summary>
+  ///   Position value used for splitting the chart.
+  /// </summary>
   public Double? SplitPosition { get; set; }
+
+  /// <summary>
+  ///   Custom split configuration for the chart.
+  /// </summary>
   public CustomSplit? CustomSplit { get; set; }
+
+  /// <summary>
+  ///   Size of the secondary pie or bar.
+  /// </summary>
   public UInt16? SecondPieSize { get; set; }
+
+  /// <summary>
+  ///   Series lines connecting the main and secondary chart.
+  /// </summary>
   public SeriesLines SeriesLines { get; set; }
+
+  /// <summary>
+  ///   Extension list for additional chart properties.
+  /// </summary>
   public ExtensionList? ExtensionList { get; set; }
 }

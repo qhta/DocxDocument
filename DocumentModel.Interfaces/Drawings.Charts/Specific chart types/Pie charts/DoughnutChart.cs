@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a doughnut chart, including color variation, series, labels, first slice angle, hole size, and extension list.
 /// </summary>
-public interface DoughnutChart
+public interface DoughnutChart: ChartType
 {
   /// <summary>
   ///   Indicates whether colors should vary between chart series.

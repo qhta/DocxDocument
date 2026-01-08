@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a bubble chart, including color variation, series, labels, 3D bubbles, scale, negative bubble display, size representation, axis identifiers, and extension list.
 /// </summary>
-public interface BubbleChart
+public interface BubbleChart: ChartType
 {
   /// <summary>
   ///   Indicates whether colors should vary between chart series.

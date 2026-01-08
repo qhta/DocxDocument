@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a 3D Area Chart, including grouping, color variation, series, labels, drop lines, gap depth, axis identifiers, and extension list.
 /// </summary>
-public interface Area3DChart
+public interface Area3DChart: ChartType
 {
   /// <summary>
   ///   Specifies the grouping type for the 3D area chart.
