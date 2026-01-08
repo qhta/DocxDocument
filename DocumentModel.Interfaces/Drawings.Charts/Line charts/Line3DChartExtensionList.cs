@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the Line3DChartExtensionList Class.
+///   Represents a collection of 3D line chart extensions.
 /// </summary>
-public interface Line3DChartExtensionList
+public interface Line3DChartExtensionList : ElementCollection<Line3DChartExtension>
 {
-  public Line3DChartExtensions Line3DChartExtensions { get; set; }
 }

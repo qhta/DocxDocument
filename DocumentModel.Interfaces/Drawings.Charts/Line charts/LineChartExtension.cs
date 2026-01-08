@@ -1,9 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the LineChartExtension Class.
+///   Represents an extension for a line chart, providing additional series extension capabilities.
 /// </summary>
-public interface LineChartExtension: Extension
+public interface LineChartExtension : Extension
 {
+  /// <summary>
+  ///   Filtered line series extension for the chart extension.
+  /// </summary>
   public FilteredLineSeriesExtension? FilteredLineSeriesExtension { get; set; }
 }
