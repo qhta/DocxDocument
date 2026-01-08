@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the MultiLvlStrRefExtensionList Class.
+///   Represents a collection of multi-level string reference extensions.
 /// </summary>
 public interface MultiLvlStrRefExtensionList: ElementCollection<MultiLvlStrRefExtension>
 {

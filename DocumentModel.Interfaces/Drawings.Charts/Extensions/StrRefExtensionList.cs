@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the StrRefExtensionList Class.
+///   Represents a collection of string reference extensions.
 /// </summary>
 public interface StrRefExtensionList: ElementCollection<StrRefExtension>
 {
