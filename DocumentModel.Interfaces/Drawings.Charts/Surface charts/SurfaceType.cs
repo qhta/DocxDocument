@@ -1,24 +1,27 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the SurfaceType Class.
+///   Represents the surface type for a chart, including thickness, shape properties, picture options, and extensibility.
 /// </summary>
 public interface SurfaceType
 {
   /// <summary>
-  ///   Thickness.
+  ///   Thickness of the surface.
   /// </summary>
   public Byte? Thickness { get; set; }
+
   /// <summary>
-  ///   ShapeProperties.
+  ///   Shape properties for the surface.
   /// </summary>
   public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  ///   Picture Options.
+  ///   Picture options for the surface.
   /// </summary>
   public PictureOptions? PictureOptions { get; set; }
+
   /// <summary>
-  ///   Chart Extensibility.
+  ///   Extension list for additional surface properties.
   /// </summary>
   public ExtensionList? ExtensionList { get; set; }
 }

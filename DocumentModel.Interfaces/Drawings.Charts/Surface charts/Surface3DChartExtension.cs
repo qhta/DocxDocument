@@ -1,9 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the Surface3DChartExtension Class.
+///   Represents an extension for a 3D surface chart, providing additional series filtering capabilities.
 /// </summary>
-public interface Surface3DChartExtension: Extension
+public interface Surface3DChartExtension : Extension
 {
+  /// <summary>
+  ///   Filtered surface series for the chart extension.
+  /// </summary>
   public FilteredSurfaceSeries? FilteredSurfaceSeries { get; set; }
 }

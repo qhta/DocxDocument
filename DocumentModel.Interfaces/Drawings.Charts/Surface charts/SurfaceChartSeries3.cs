@@ -1,44 +1,52 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the SurfaceChartSeries Class.
+///   Represents a series in a surface chart, including index, order, text, shape properties, picture options, axis data, values, 3D bubble option, and extensions.
 /// </summary>
 public interface SurfaceChartSeries3
 {
   /// <summary>
-  ///   Index.
+  ///   Index of the series within the chart.
   /// </summary>
   public UInt32? Index { get; set; }
+
   /// <summary>
-  ///   Order.
+  ///   Order of the series in the chart.
   /// </summary>
   public UInt32? Order { get; set; }
+
   /// <summary>
-  ///   Series Text.
+  ///   Text or name of the series.
   /// </summary>
   public SeriesText? SeriesText { get; set; }
+
   /// <summary>
-  ///   ChartShapeProperties.
+  ///   Shape properties for the chart series.
   /// </summary>
   public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  ///   PictureOptions.
+  ///   Picture options for the series.
   /// </summary>
   public PictureOptions? PictureOptions { get; set; }
+
   /// <summary>
-  ///   CategoryAxisData.
+  ///   Category axis data for the series.
   /// </summary>
   public CategoryAxisData? CategoryAxisData { get; set; }
+
   /// <summary>
-  ///   Values.
+  ///   Values for the series.
   /// </summary>
   public Values? Values { get; set; }
+
   /// <summary>
-  ///   Bubble3D.
+  ///   Indicates whether bubbles are rendered in 3D.
   /// </summary>
   public bool? Bubble3D { get; set; }
+
   /// <summary>
-  ///   SurfaceSerExtensionList.
+  ///   Extension list for additional series properties.
   /// </summary>
   public SurfaceSerExtensionList? SurfaceSerExtensionList { get; set; }
 }

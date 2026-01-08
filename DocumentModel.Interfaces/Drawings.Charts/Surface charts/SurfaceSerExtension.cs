@@ -1,11 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the SurfaceSerExtension Class.
+///   Represents an extension for a surface chart series, providing additional filtering and labeling options.
 /// </summary>
-public interface SurfaceSerExtension: Extension
+public interface SurfaceSerExtension : Extension
 {
+  /// <summary>
+  ///   Filtered title for the series.
+  /// </summary>
   public FilteredSeriesTitle? FilteredSeriesTitle { get; set; }
+
+  /// <summary>
+  ///   Filtered title for the category.
+  /// </summary>
   public FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
+
+  /// <summary>
+  ///   Exceptions for category filters applied to the series.
+  /// </summary>
   public CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
 }
