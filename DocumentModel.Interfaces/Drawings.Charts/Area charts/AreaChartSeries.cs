@@ -1,35 +1,42 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Area Chart Series.
+///   Represents a series in an area chart, including values, formatting, and data point configuration.
 /// </summary>
 public interface AreaChartSeries
 {
   /// <summary>
-  ///   Index.
+  ///   Index of the series within the chart.
   /// </summary>
-  public UInt32? Index { get; set; }
+  public uint? Index { get; set; }
+
   /// <summary>
-  ///   Order.
+  ///   Order of the series in the chart.
   /// </summary>
-  public UInt32? Order { get; set; }
+  public uint? Order { get; set; }
+
   /// <summary>
-  ///   Series Text.
+  ///   Series text or name.
   /// </summary>
   public SeriesText? SeriesText { get; set; }
+
   /// <summary>
-  ///   ChartShapeProperties.
+  ///   Data points for the series.
   /// </summary>
-  public ChartShapeProperties? ChartShapeProperties { get; set; }
+  public Collection<DataPoint>? DataPoints { get; set; }
+
   /// <summary>
-  ///   PictureOptions.
+  ///   Data labels for the series.
   /// </summary>
-  public PictureOptions? PictureOptions { get; set; }
-  public DataPoints DataPoints { get; set; }
   public DataLabels? DataLabels { get; set; }
-  public Trendlines Trendlines { get; set; }
-  public ErrorBars ErrorBars { get; set; }
-  public CategoryAxisData? CategoryAxisData { get; set; }
-  public Values? Values { get; set; }
+
+  /// <summary>
+  ///   Chart shape properties for the series.
+  /// </summary>
+  public ShapeProperties? ShapeProperties { get; set; }
+
+  /// <summary>
+  ///   Extension list for additional series properties.
+  /// </summary>
   public AreaSerExtensionList? AreaSerExtensionList { get; set; }
 }
