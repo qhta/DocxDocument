@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the BarChartExtension Class.
+///   Represents an extension for a bar chart, providing additional series filtering capabilities.
 /// </summary>
-public interface BarChartExtension: CollectionItem
+public interface BarChartExtension : Extension
 {
   /// <summary>
-  ///   URI
+  ///   Filtered bar series for the chart extension.
   /// </summary>
-  public string? Uri { get; set; }
   public FilteredBarSeries? FilteredBarSeries { get; set; }
 }

@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the BarSerExtensionList Class.
+///   Represents a collection of bar chart series extensions.
 /// </summary>
-public interface BarSerExtensionList: ElementCollection<BarSerExtension>
+public interface BarSerExtensionList : ElementCollection<BarSerExtension>
 {
 }
