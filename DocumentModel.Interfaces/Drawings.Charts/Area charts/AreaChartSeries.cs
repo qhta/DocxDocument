@@ -25,10 +25,10 @@ public interface AreaChartSeries
   ///   PictureOptions.
   /// </summary>
   public PictureOptions? PictureOptions { get; set; }
-  public Collection<DataPoint>? DataPoints { get; set; }
+  public DataPoints DataPoints { get; set; }
   public DataLabels? DataLabels { get; set; }
-  public Collection<Trendline>? Trendlines { get; set; }
-  public Collection<ErrorBar>? ErrorBars { get; set; }
+  public Trendlines Trendlines { get; set; }
+  public ErrorBars ErrorBars { get; set; }
   public CategoryAxisData? CategoryAxisData { get; set; }
   public Values? Values { get; set; }
   public AreaSerExtensionList? AreaSerExtensionList { get; set; }

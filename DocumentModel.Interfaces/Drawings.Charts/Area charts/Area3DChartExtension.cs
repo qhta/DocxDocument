@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the Area3DChartExtension Class.
+///   Represents an extension for 3D Area Charts, providing additional series filtering capabilities.
 /// </summary>
-public interface Area3DChartExtension
+public interface Area3DChartExtension : Extension
 {
   /// <summary>
-  ///   URI
+  ///   Specifies the filtered area series for the chart extension.
   /// </summary>
-  public string? Uri { get; set; }
   public FilteredAreaSeries? FilteredAreaSeries { get; set; }
 }

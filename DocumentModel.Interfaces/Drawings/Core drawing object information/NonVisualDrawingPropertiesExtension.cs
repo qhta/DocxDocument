@@ -4,12 +4,8 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents an extension for non-visual drawing properties, providing additional metadata and configuration options.
 /// </summary>
-public interface NonVisualDrawingPropertiesExtension
+public interface NonVisualDrawingPropertiesExtension: Extension
 {
-  /// <summary>
-  ///   Uniform Resource Identifier for the extension.
-  /// </summary>
-  public string? Uri { get; set; }
 
   /// <summary>
   ///   Compatibility extension for handling legacy or platform-specific features.

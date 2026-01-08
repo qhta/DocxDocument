@@ -25,10 +25,10 @@ public interface ScatterChartSeries
   ///   Marker.
   /// </summary>
   public Marker? Marker { get; set; }
-  public Collection<DataPoint>? DataPoints { get; set; }
+  public DataPoints DataPoints { get; set; }
   public DataLabels? DataLabels { get; set; }
-  public Collection<Trendline>? Trendlines { get; set; }
-  public Collection<ErrorBar>? ErrorBars { get; set; }
+  public Trendlines Trendlines { get; set; }
+  public ErrorBars ErrorBars { get; set; }
   public XValues? XValues { get; set; }
   public YValues? YValues { get; set; }
   public bool? Smooth { get; set; }
