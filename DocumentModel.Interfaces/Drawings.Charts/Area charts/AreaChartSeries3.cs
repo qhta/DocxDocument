@@ -1,35 +1,67 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the AreaChartSeries Class.
+///   Represents a series in an area chart, including index, order, text, shape properties, picture options, data points, labels, trendlines, error bars, axis data, values, and extensions.
 /// </summary>
 public interface AreaChartSeries3
 {
   /// <summary>
-  ///   Index.
+  ///   Index of the series within the chart.
   /// </summary>
   public UInt32? Index { get; set; }
+
   /// <summary>
-  ///   Order.
+  ///   Order of the series in the chart.
   /// </summary>
   public UInt32? Order { get; set; }
+
   /// <summary>
-  ///   Series Text.
+  ///   Text or name of the series.
   /// </summary>
   public SeriesText? SeriesText { get; set; }
+
   /// <summary>
-  ///   ChartShapeProperties.
+  ///   Shape properties for the chart series.
   /// </summary>
   public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  ///   PictureOptions.
+  ///   Picture options for the series.
   /// </summary>
   public PictureOptions? PictureOptions { get; set; }
+
+  /// <summary>
+  ///   Data points contained in the series.
+  /// </summary>
   public DataPoints DataPoints { get; set; }
+
+  /// <summary>
+  ///   Data labels configuration for the series.
+  /// </summary>
   public DataLabels? DataLabels { get; set; }
+
+  /// <summary>
+  ///   Trendlines associated with the series.
+  /// </summary>
   public Trendlines Trendlines { get; set; }
+
+  /// <summary>
+  ///   Error bars for the series.
+  /// </summary>
   public ErrorBars ErrorBars { get; set; }
+
+  /// <summary>
+  ///   Category axis data for the series.
+  /// </summary>
   public CategoryAxisData? CategoryAxisData { get; set; }
+
+  /// <summary>
+  ///   Values for the series.
+  /// </summary>
   public Values? Values { get; set; }
+
+  /// <summary>
+  ///   Extension list for additional series properties.
+  /// </summary>
   public AreaSerExtensionList? AreaSerExtensionList { get; set; }
 }

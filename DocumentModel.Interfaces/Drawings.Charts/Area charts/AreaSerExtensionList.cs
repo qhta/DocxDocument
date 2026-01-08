@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the AreaSerExtensionList Class.
+///   Represents a collection of area chart series extensions.
 /// </summary>
-public interface AreaSerExtensionList: ElementCollection<AreaSerExtension>
+public interface AreaSerExtensionList : ElementCollection<AreaSerExtension>
 {
 }
