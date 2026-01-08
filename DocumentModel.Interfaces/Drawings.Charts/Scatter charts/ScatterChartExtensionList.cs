@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the ScatterChartExtensionList Class.
+///   Represents a collection of scatter chart extensions.
 /// </summary>
-public interface ScatterChartExtensionList: ElementCollection<ScatterChartExtension>
+public interface ScatterChartExtensionList : ElementCollection<ScatterChartExtension>
 {
 }
