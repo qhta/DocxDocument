@@ -1,7 +1,7 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the ExtensionList Class.
+///   Represents a collection of extension elements.
 /// </summary>
 public interface ExtensionList: ElementCollection<Extension>
 {
