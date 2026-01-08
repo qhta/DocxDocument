@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the LevelReference Class.
+///   Represents a reference to a level in a data source.
 /// </summary>
 public interface LevelReference
 {
   /// <summary>
-  ///   SequenceOfReferences.
+  ///   Sequence of references defining the level data.
   /// </summary>
   public string? SequenceOfReferences { get; set; }
 }

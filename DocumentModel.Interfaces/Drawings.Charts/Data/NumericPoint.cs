@@ -1,20 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
-
+  
 /// <summary>
-///   Numeric Point.
+///   Represents a numeric data point in a chart.
 /// </summary>
 public interface NumericPoint: CollectionItem
 {
   /// <summary>
-  ///   Index
+  ///   Index of the numeric point.
   /// </summary>
   public UInt32? Index { get; set; }
+
   /// <summary>
-  ///   Number Format
+  ///   Format code for the numeric value.
   /// </summary>
   public string? FormatCode { get; set; }
+
   /// <summary>
-  ///   Numeric Value.
+  ///   Numeric value of the point.
   /// </summary>
   public string? NumericValue { get; set; }
 }
