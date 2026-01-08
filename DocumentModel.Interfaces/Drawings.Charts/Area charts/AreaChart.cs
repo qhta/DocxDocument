@@ -18,7 +18,7 @@ public interface AreaChart
   /// <summary>
   ///   Area chart series displayed in the chart.
   /// </summary>
-  public AreaChartSeries AreaChartSeries { get; set; }
+  public AreaChartSeriesList AreaChartSeries { get; set; }
 
   /// <summary>
   ///   Data labels configuration for the chart.

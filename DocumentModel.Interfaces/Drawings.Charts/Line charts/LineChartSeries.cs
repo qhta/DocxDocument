@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a series in a line chart, including index, order, text, shape properties, marker, picture options, data points, labels, trendlines, error bars, axis data, values, smoothing, and extensions.
 /// </summary>
-public interface LineChartSeries
+public interface LineChartSeries: CollectionItem
 {
   /// <summary>
   ///   Index of the series within the chart.

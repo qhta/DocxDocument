@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a series in an area chart, including values, formatting, and data point configuration.
 /// </summary>
-public interface AreaChartSeries
+public interface AreaChartSeries: CollectionItem
 {
   /// <summary>
   ///   Index of the series within the chart.

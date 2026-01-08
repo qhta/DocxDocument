@@ -13,7 +13,7 @@ public interface DoughnutChart
   /// <summary>
   ///   Series displayed in the doughnut chart.
   /// </summary>
-  public PieChartSeries PieChartSeries { get; set; }
+  public PieChartSeriesList PieChartSeries { get; set; }
 
   /// <summary>
   ///   Data labels configuration for the chart.

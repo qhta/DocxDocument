@@ -1,22 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Represents a line chart, including grouping, color variation, series, labels, drop lines, high-low lines, up-down bars, marker and smoothing options, axis identifiers, and extension list.
+///   Represents a stock chart, including series, labels, drop lines, high-low lines, up-down bars, axis identifiers, and extension list.
 /// </summary>
-public interface LineChart
+public interface StockChart
 {
   /// <summary>
-  ///   Specifies the grouping type for the line chart.
-  /// </summary>
-  public GroupingKind? Grouping { get; set; }
-
-  /// <summary>
-  ///   Indicates whether colors should vary between chart series.
-  /// </summary>
-  public bool? VaryColors { get; set; }
-
-  /// <summary>
-  ///   Series displayed in the line chart.
+  ///   Series displayed in the stock chart.
   /// </summary>
   public LineChartSeriesList LineChartSeries { get; set; }
 
@@ -41,16 +31,6 @@ public interface LineChart
   public UpDownBars? UpDownBars { get; set; }
 
   /// <summary>
-  ///   Indicates whether markers are shown for data points.
-  /// </summary>
-  public bool? ShowMarker { get; set; }
-
-  /// <summary>
-  ///   Indicates whether the lines are smoothed.
-  /// </summary>
-  public bool? Smooth { get; set; }
-
-  /// <summary>
   ///   Identifiers for the axes used in the chart.
   /// </summary>
   public AxisIds AxisIds { get; set; }
@@ -58,5 +38,5 @@ public interface LineChart
   /// <summary>
   ///   Extension list for additional chart properties.
   /// </summary>
-  public LineChartExtensionList? LineChartExtensionList { get; set; }
+  public StockChartExtensionList? StockChartExtensionList { get; set; }
 }

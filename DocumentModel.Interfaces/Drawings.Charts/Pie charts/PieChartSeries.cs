@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a series in a pie chart, including index, order, text, shape properties, picture options, explosion, data points, labels, axis data, values, and extensions.
 /// </summary>
-public interface PieChartSeries
+public interface PieChartSeries: CollectionItem
 {
   /// <summary>
   ///   Index of the series within the chart.
