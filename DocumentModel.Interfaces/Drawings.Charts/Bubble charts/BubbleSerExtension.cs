@@ -3,12 +3,8 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the BubbleSerExtension Class.
 /// </summary>
-public interface BubbleSerExtension: CollectionItem
+public interface BubbleSerExtension: Extension
 {
-  /// <summary>
-  ///   URI
-  /// </summary>
-  public string? Uri { get; set; }
   public InvertSolidFillFormat? InvertSolidFillFormat { get; set; }
   public FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
   public DataLabelsRange? DataLabelsRange { get; set; }
