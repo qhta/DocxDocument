@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a 3D bar chart, including direction, grouping, color variation, series, labels, gap settings, shape, axis identifiers, and extension list.
 /// </summary>
-public interface Bar3DChart
+public interface Bar3DChart: ChartType
 {
   /// <summary>
   ///   Direction of the bars in the chart.
