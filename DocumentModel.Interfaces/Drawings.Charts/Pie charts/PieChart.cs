@@ -13,7 +13,7 @@ public interface PieChart
   /// <summary>
   ///   Series displayed in the pie chart.
   /// </summary>
-  public PieChartSeries PieChartSeries { get; set; }
+  public PieChartSeriesList PieChartSeries { get; set; }
 
   /// <summary>
   ///   Data labels configuration for the chart.

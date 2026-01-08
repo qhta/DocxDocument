@@ -13,7 +13,7 @@ public interface OfPieChart
   ///   VaryColors.
   /// </summary>
   public bool? VaryColors { get; set; }
-  public PieChartSeries PieChartSeries { get; set; }
+  public PieChartSeriesList PieChartSeries { get; set; }
   public DataLabels? DataLabels { get; set; }
   public UInt16? GapWidth { get; set; }
   public SplitKind? SplitType { get; set; }

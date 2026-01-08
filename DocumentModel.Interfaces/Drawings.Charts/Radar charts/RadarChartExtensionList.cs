@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the RadarChartExtensionList Class.
+///   Represents a collection of radar chart extensions.
 /// </summary>
-public interface RadarChartExtensionList: ElementCollection<RadarChartExtension>
+public interface RadarChartExtensionList : ElementCollection<RadarChartExtension>
 {
 }

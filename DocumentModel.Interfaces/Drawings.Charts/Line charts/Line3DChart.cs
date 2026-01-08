@@ -18,7 +18,7 @@ public interface Line3DChart
   /// <summary>
   ///   Series displayed in the 3D line chart.
   /// </summary>
-  public LineChartSeries LineChartSeries { get; set; }
+  public LineChartSeriesList LineChartSeries { get; set; }
 
   /// <summary>
   ///   Data labels configuration for the chart.

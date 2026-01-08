@@ -13,7 +13,7 @@ public interface Pie3DChart
   /// <summary>
   ///   Series displayed in the 3D pie chart.
   /// </summary>
-  public PieChartSeries PieChartSeries { get; set; }
+  public PieChartSeriesList PieChartSeries { get; set; }
 
   /// <summary>
   ///   Data labels configuration for the chart.
