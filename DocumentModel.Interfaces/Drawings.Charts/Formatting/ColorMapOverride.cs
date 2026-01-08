@@ -1,60 +1,73 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the ColorMapOverride Class.
+///   Represents a mechanism to override color assignments in a chart.
+///   This interface allows mapping specific theme colors (like Background1, Text1, Accents) to new color scheme indices.
 /// </summary>
 public interface ColorMapOverride
 {
   /// <summary>
-  ///   Background 1
+  ///   Override value for Background 1 color.
   /// </summary>
   public ColorSchemeIndexKind? Background1 { get; set; }
+
   /// <summary>
-  ///   Text 1
+  ///   Override value for Text 1 color.
   /// </summary>
   public ColorSchemeIndexKind? Text1 { get; set; }
+
   /// <summary>
-  ///   Background 2
+  ///   Override value for Background 2 color.
   /// </summary>
   public ColorSchemeIndexKind? Background2 { get; set; }
+
   /// <summary>
-  ///   Text 2
+  ///   Override value for Text 2 color.
   /// </summary>
   public ColorSchemeIndexKind? Text2 { get; set; }
+
   /// <summary>
-  ///   Accent 1
+  ///   Override value for Accent 1 color.
   /// </summary>
   public ColorSchemeIndexKind? Accent1 { get; set; }
+
   /// <summary>
-  ///   Accent 2
+  ///   Override value for Accent 2 color.
   /// </summary>
   public ColorSchemeIndexKind? Accent2 { get; set; }
+
   /// <summary>
-  ///   Accent 3
+  ///   Override value for Accent 3 color.
   /// </summary>
   public ColorSchemeIndexKind? Accent3 { get; set; }
+
   /// <summary>
-  ///   Accent 4
+  ///   Override value for Accent 4 color.
   /// </summary>
   public ColorSchemeIndexKind? Accent4 { get; set; }
+
   /// <summary>
-  ///   Accent 5
+  ///   Override value for Accent 5 color.
   /// </summary>
   public ColorSchemeIndexKind? Accent5 { get; set; }
+
   /// <summary>
-  ///   Accent 6
+  ///   Override value for Accent 6 color.
   /// </summary>
   public ColorSchemeIndexKind? Accent6 { get; set; }
+
   /// <summary>
-  ///   IHyperlink
+  ///   Override value for Hyperlink color.
   /// </summary>
   public ColorSchemeIndexKind? Hyperlink { get; set; }
+
   /// <summary>
-  ///   Followed IHyperlink
+  ///   Override value for Followed Hyperlink color.
   /// </summary>
   public ColorSchemeIndexKind? FollowedHyperlink { get; set; }
+
   /// <summary>
-  ///   ExtensionList.
+  ///   Collection of extension elements for additional color map customization.
   /// </summary>
   public ExtensionList? ExtensionList { get; set; }
 }
