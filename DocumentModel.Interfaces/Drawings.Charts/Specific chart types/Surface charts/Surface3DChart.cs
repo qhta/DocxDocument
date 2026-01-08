@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a 3D surface chart, including wireframe, color variation, series, band formats, axis identifiers, and extension list.
 /// </summary>
-public interface Surface3DChart
+public interface Surface3DChart: ChartType
 {
   /// <summary>
   ///   Indicates whether the chart is rendered as a wireframe.

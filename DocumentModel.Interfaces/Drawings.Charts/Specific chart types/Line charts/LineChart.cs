@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a line chart, including grouping, color variation, series, labels, drop lines, high-low lines, up-down bars, marker and smoothing options, axis identifiers, and extension list.
 /// </summary>
-public interface LineChart
+public interface LineChart: ChartType
 {
   /// <summary>
   ///   Specifies the grouping type for the line chart.

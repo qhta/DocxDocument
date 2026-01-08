@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a stock chart, including series, labels, drop lines, high-low lines, up-down bars, axis identifiers, and extension list.
 /// </summary>
-public interface StockChart
+public interface StockChart: ChartType
 {
   /// <summary>
   ///   Series displayed in the stock chart.
