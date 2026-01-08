@@ -8,7 +8,7 @@ public interface MarkerLayoutProperties
   /// <summary>
   ///   symbol
   /// </summary>
-  public MarkerStyle? Symbol { get; set; }
+  public MarkerStyleKind? Symbol { get; set; }
   /// <summary>
   ///   size
   /// </summary>
