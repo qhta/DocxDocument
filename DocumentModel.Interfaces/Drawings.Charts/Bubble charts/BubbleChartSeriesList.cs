@@ -1,6 +1,9 @@
 ﻿namespace DocumentModel.Drawings.Charts;
 
-public interface BubbleChartSeriesList: ElementCollection<BubbleChartSeries>
+/// <summary>
+///   Represents a collection of bubble chart series.
+/// </summary>
+public interface BubbleChartSeriesList : ElementCollection<BubbleChartSeries>
 {
   
 }

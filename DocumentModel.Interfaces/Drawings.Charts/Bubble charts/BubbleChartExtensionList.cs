@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the BubbleChartExtensionList Class.
+///   Represents a collection of bubble chart extensions.
 /// </summary>
-public interface BubbleChartExtensionList: ElementCollection<BubbleChartExtension>
+public interface BubbleChartExtensionList : ElementCollection<BubbleChartExtension>
 {
 }
