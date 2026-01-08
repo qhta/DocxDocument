@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings.ChartsStyle;
 
 /// <summary>
-///   Defines the MarkerLayoutProperties Class.
+/// Describes the layout properties for chart markers, including symbol type and size settings.
 /// </summary>
 public interface MarkerLayoutProperties
 {
   /// <summary>
-  ///   symbol
+  /// Marker symbol type used for data points in the chart.
   /// </summary>
   public MarkerStyleKind? Symbol { get; set; }
+
   /// <summary>
-  ///   size
+  /// Size value for the marker symbols.
   /// </summary>
   public Byte? Size { get; set; }
 }
