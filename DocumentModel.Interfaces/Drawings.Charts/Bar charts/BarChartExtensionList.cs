@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the BarChartExtensionList Class.
+///   Represents a collection of bar chart extensions.
 /// </summary>
-public interface BarChartExtensionList: ElementCollection<BarChartExtension>
+public interface BarChartExtensionList : ElementCollection<BarChartExtension>
 {
 }

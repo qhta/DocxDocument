@@ -1,13 +1,13 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the Bar3DChartExtension Class.
+///   Represents an extension for a 3D bar chart, providing additional series filtering and metadata.
 /// </summary>
-public interface Bar3DChartExtension: CollectionItem
+public interface Bar3DChartExtension : Extension
 {
+
   /// <summary>
-  ///   URI
+  ///   Filtered bar series for the chart extension.
   /// </summary>
-  public string? Uri { get; set; }
   public FilteredBarSeries? FilteredBarSeries { get; set; }
 }

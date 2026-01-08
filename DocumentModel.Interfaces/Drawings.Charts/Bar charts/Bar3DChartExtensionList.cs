@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the Bar3DChartExtensionList Class.
+///   Represents a collection of 3D bar chart extensions.
 /// </summary>
-public interface Bar3DChartExtensionList: ElementCollection<Bar3DChartExtension>
+public interface Bar3DChartExtensionList : ElementCollection<Bar3DChartExtension>
 {
 }
