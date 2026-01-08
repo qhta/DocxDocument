@@ -49,7 +49,6 @@
     <PackageReference Include="System.IO.Packaging" Version="10.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Drawings.Diagram2\Classes\" />
     <Folder Include="Drawings.Office.ScriptLink\Classes\" />
     <Folder Include="Drawings\Enums\" />
     <Folder Include="Office.Drawing\" />
