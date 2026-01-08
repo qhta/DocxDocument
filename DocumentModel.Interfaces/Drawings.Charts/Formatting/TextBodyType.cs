@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the TextBodyType Class.
+/// Represents the text body structure containing body properties and list styles for chart elements.
 /// </summary>
 public interface TextBodyType
 {
   /// <summary>
-  ///   Body Properties.
+  /// Formatting properties for the body of the text, such as insets and text wrapping.
   /// </summary>
   public BodyProperties? BodyProperties { get; set; }
+
   /// <summary>
-  ///   Text List Styles.
+  /// Styles applied to bulleted or numbered lists within the text body.
   /// </summary>
   public ListStyle? ListStyle { get; set; }
 }
