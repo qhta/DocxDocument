@@ -1,12 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the StringDataType Class.
+///   Represents base data for a string data source type.
 /// </summary>
 public interface StringDataType
 {
   /// <summary>
-  ///   PointCount.
+  ///   Number of points in the string data set.
   /// </summary>
   public UInt32? PointCount { get; set; }
 }
