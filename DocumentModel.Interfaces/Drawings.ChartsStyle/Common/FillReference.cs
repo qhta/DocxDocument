@@ -1,15 +1,9 @@
 namespace DocumentModel.Drawings.ChartsStyle;
 
 /// <summary>
-///   Defines the FillReference Class.
+///    FillReference in ChartsStyle extends FillReference in Drawings with StyleColor.
 /// </summary>
-public interface FillReference
+public interface FillReference: DocumentModel.Drawings.FillReference
 {
-  public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
-  public RgbColorModelHex? RgbColorModelHex { get; set; }
-  public HslColor? HslColor { get; set; }
-  public SystemColor? SystemColor { get; set; }
-  public SchemeColor? SchemeColor { get; set; }
-  public PresetColor? PresetColor { get; set; }
   public StyleColor? StyleColor { get; set; }
 }

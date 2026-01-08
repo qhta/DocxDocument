@@ -1,5 +1,8 @@
 namespace DocumentModel.Drawings.ChartsStyle;
 
-public interface ColorStyleVariations: ElementCollection<ColorStyleVariation>
+/// <summary>
+/// Represents a collection of color style variations for chart elements, allowing multiple color adjustments and effects to be grouped together.
+/// </summary>
+public interface ColorStyleVariations : ElementCollection<ColorStyleVariation>
 {
 }
