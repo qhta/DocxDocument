@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-///   Defines the Area3DChartExtensionList Class.
+///   Represents a collection of extensions for 3D Area Charts.
 /// </summary>
-public interface Area3DChartExtensionList
+public interface Area3DChartExtensionList : ElementCollection<Area3DChartExtension>
 {
-  public Collection<Area3DChartExtension>? Area3DChartExtensions { get; set; }
 }

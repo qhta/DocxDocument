@@ -13,9 +13,9 @@ public interface AreaChart
   ///   VaryColors.
   /// </summary>
   public bool? VaryColors { get; set; }
-  public Collection<AreaChartSeries>? AreaChartSeries { get; set; }
+  public AreaChartSeries AreaChartSeries { get; set; }
   public DataLabels? DataLabels { get; set; }
   public DropLines? DropLines { get; set; }
-  public Collection<UInt32>? AxisIds { get; set; }
+  public AxisIds AxisIds { get; set; }
   public AreaChartExtensionList? AreaChartExtensionList { get; set; }
 }

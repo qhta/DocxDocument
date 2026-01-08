@@ -3,7 +3,6 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the AreaChartExtensionList Class.
 /// </summary>
-public interface AreaChartExtensionList
+public interface AreaChartExtensionList: ElementCollection<AreaChartExtension>
 {
-  public Collection<AreaChartExtension>? AreaChartExtensions { get; set; }
 }

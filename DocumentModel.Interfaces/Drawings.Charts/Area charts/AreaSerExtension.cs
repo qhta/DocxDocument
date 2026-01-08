@@ -3,12 +3,8 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the AreaSerExtension Class.
 /// </summary>
-public interface AreaSerExtension
+public interface AreaSerExtension: Extension
 {
-  /// <summary>
-  ///   URI
-  /// </summary>
-  public string? Uri { get; set; }
   public FilteredSeriesTitle? FilteredSeriesTitle { get; set; }
   public FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
   public DataLabelsRange? DataLabelsRange { get; set; }

@@ -3,7 +3,6 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ScatterChartExtensionList Class.
 /// </summary>
-public interface ScatterChartExtensionList
+public interface ScatterChartExtensionList: ElementCollection<ScatterChartExtension>
 {
-  public Collection<ScatterChartExtension>? ScatterChartExtensions { get; set; }
 }
