@@ -1,15 +1,15 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines a regular dynamic menu control that generates menu items at runtime, optimized for use in menus, button groups, and other non-ribbon Office UI contexts. Supports dynamic content, flexible appearance, and advanced callback integration.
+/// Represents a cloned control specifically designed for the Quick Access Toolbar (QAT) in Office applications, supporting dynamic state, customizable appearance, and advanced callback integration for compact UI scenarios.
 /// </summary>
 /// <remarks>
-/// This interface provides a streamlined dynamic menu for context menus, Backstage, and compact UI containers. Menu content is generated on demand via callback, supporting context-sensitive commands, recently used items, and menus that reflect current application state. The interface enables dynamic labeling, images, tooltips, and state, with support for custom metadata and flexible menu regeneration.
+/// This interface defines a control clone optimized for the QAT, enabling replication of built-in Office commands or custom controls with tailored appearance, behavior, and positioning. The cloned control inherits base functionality but can override properties such as size, label, image, visibility, enabled state, and QAT-specific layout. All properties can be set statically or determined dynamically through callback functions for responsive UI.
 /// </remarks>
-public interface DynamicMenuRegular : CustomUIControl, BuiltInControl, ContextMenuContent
+public interface ControlCloneQat : CustomUIControl, BuiltInControl
 {
   /// <summary>
-  /// Description text for the dynamic menu control.
+  /// Description text for the QAT control.
   /// </summary>
   public string? Description { get; set; }
 
@@ -19,37 +19,32 @@ public interface DynamicMenuRegular : CustomUIControl, BuiltInControl, ContextMe
   public string? GetDescription { get; set; }
 
   /// <summary>
-  /// Arbitrary tag value for custom data storage.
+  /// Size of the cloned control in the Quick Access Toolbar.
   /// </summary>
-  public string? Tag { get; set; }
+  public SizeKind? Size { get; set; }
 
   /// <summary>
-  /// Callback function that generates the dynamic menu content as XML markup.
+  /// Callback for dynamic size selection.
   /// </summary>
-  public string? GetContent { get; set; }
+  public string? GetSize { get; set; }
 
   /// <summary>
-  /// Invalidate menu content when the dropdown is closed.
-  /// </summary>
-  public bool? InvalidateContentOnDrop { get; set; }
-
-  /// <summary>
-  /// Custom image identifier for the dynamic menu button.
+  /// Custom image identifier for the QAT control's icon.
   /// </summary>
   public string? Image { get; set; }
 
   /// <summary>
-  /// Built-in Office image identifier for the dynamic menu button.
+  /// Built-in Office image identifier for the QAT control's icon.
   /// </summary>
   public string? ImageMso { get; set; }
 
   /// <summary>
-  /// Callback for dynamic menu image.
+  /// Callback for dynamic QAT control image.
   /// </summary>
   public string? GetImage { get; set; }
 
   /// <summary>
-  /// Screentip text for the dynamic menu.
+  /// Screentip text for the QAT control.
   /// </summary>
   public string? Screentip { get; set; }
 
@@ -59,7 +54,7 @@ public interface DynamicMenuRegular : CustomUIControl, BuiltInControl, ContextMe
   public string? GetScreentip { get; set; }
 
   /// <summary>
-  /// Supertip text for the dynamic menu.
+  /// Supertip text for the QAT control.
   /// </summary>
   public string? Supertip { get; set; }
 
@@ -69,7 +64,7 @@ public interface DynamicMenuRegular : CustomUIControl, BuiltInControl, ContextMe
   public string? GetSupertip { get; set; }
 
   /// <summary>
-  /// Enable interaction with the dynamic menu.
+  /// Enable interaction with the QAT control.
   /// </summary>
   public bool? Enabled { get; set; }
 
@@ -79,7 +74,7 @@ public interface DynamicMenuRegular : CustomUIControl, BuiltInControl, ContextMe
   public string? GetEnabled { get; set; }
 
   /// <summary>
-  /// Label displayed for the dynamic menu.
+  /// Label text for the QAT control.
   /// </summary>
   public string? Label { get; set; }
 
@@ -89,7 +84,7 @@ public interface DynamicMenuRegular : CustomUIControl, BuiltInControl, ContextMe
   public string? GetLabel { get; set; }
 
   /// <summary>
-  /// Show the dynamic menu in the UI.
+  /// Show the QAT control in the UI.
   /// </summary>
   public bool? Visible { get; set; }
 
@@ -99,7 +94,7 @@ public interface DynamicMenuRegular : CustomUIControl, BuiltInControl, ContextMe
   public string? GetVisible { get; set; }
 
   /// <summary>
-  /// Keyboard shortcut (keytip) for accessing the dynamic menu.
+  /// Keyboard shortcut (keytip) for accessing the QAT control.
   /// </summary>
   public string? Keytip { get; set; }
 
@@ -109,7 +104,7 @@ public interface DynamicMenuRegular : CustomUIControl, BuiltInControl, ContextMe
   public string? GetKeytip { get; set; }
 
   /// <summary>
-  /// Show the dynamic menu label in the UI.
+  /// Show the QAT control's label in the UI.
   /// </summary>
   public bool? ShowLabel { get; set; }
 
@@ -119,7 +114,7 @@ public interface DynamicMenuRegular : CustomUIControl, BuiltInControl, ContextMe
   public string? GetShowLabel { get; set; }
 
   /// <summary>
-  /// Show the dynamic menu image in the UI.
+  /// Show the QAT control's image in the UI.
   /// </summary>
   public bool? ShowImage { get; set; }
 

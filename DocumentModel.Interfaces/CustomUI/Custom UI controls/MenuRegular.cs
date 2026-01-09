@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a streamlined menu control suitable for use within button groups, other menus, and constrained ribbon contexts. Unlike the standard <see cref="Menu"/> control which has additional sizing options, MenuRegular provides a simplified menu implementation optimized for nested menu scenarios. It presents a hierarchical collection of commands and controls including buttons, checkboxes, galleries, toggle buttons, separators, split buttons, and nested menus. The control supports customizable appearance with images, labels, tooltips, and can have its state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface MenuRegular : CustomUIControl, BuiltInControl
+public interface MenuRegular : CustomUIControl, BuiltInControl, ContextMenuContent
 {
   /// <summary>
   /// Size of items within the menu.

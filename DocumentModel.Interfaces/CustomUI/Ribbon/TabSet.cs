@@ -8,12 +8,8 @@ namespace DocumentModel;
 ///   that are displayed as a unit in the ribbon interface. Tab sets are typically used for
 ///   contextual tabs that appear when specific objects or elements are selected.
 /// </remarks>
-public interface TabSet : CollectionItem, ElementCollection<Tabs>
+public interface TabSet : BuiltInControl, CollectionItem, ElementCollection<Tabs>
 {
-  /// <summary>
-  ///   Gets or sets the identifier for a built-in Microsoft Office tab set.
-  /// </summary>
-  public string? IdMso { get; set; }
 
   /// <summary>
   ///   Gets or sets a value indicating whether the tab set is visible in the ribbon UI.

@@ -28,13 +28,6 @@
     <None Remove="Settings\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="CustomUI\Box.cs" />
-    <Compile Remove="CustomUI\Button.cs" />
-    <Compile Remove="CustomUI\ButtonGroup.cs" />
-    <Compile Remove="CustomUI\ButtonRegular.cs" />
-    <Compile Remove="CustomUI\ButtonRegulars.cs" />
-    <Compile Remove="CustomUI\CheckBox.cs" />
-    <Compile Remove="CustomUI\ComboBox.cs" />
     <Compile Remove="CustomUI\DropDownRegular.cs" />
     <Compile Remove="CustomUI\DynamicMenu.cs" />
     <Compile Remove="CustomUI\DynamicMenuRegular.cs" />
