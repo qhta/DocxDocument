@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents a collection of custom UI controls.
 /// </summary>
-public interface BoxContentControls: ElementCollection<BoxContentControl>
+public interface BoxContentList: ElementCollection<BoxContent>
 {
   
 }

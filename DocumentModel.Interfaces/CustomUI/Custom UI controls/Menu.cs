@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a menu control that presents a hierarchical collection of commands when clicked. Menus can contain various child controls including buttons, checkboxes, galleries, toggle buttons, separators, split buttons, and nested menus. They support customizable appearance with images, labels, tooltips, sizing options, and can have their state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface Menu : BoxContentControl
+public interface Menu : CustomUIControl, BoxContent, BuiltInControl
 {
   /// <summary>
   /// Size of the menu control in the ribbon.
@@ -37,11 +37,6 @@ public interface Menu : BoxContentControl
   /// Arbitrary tag value for custom data storage.
   /// </summary>
   public string? Tag { get; set; }
-
-  /// <summary>
-  /// Built-in Office identifier for a menu.
-  /// </summary>
-  public string? IdMso { get; set; }
 
   /// <summary>
   /// Custom image identifier for the menu button.

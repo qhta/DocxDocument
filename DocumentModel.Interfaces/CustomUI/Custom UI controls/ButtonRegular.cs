@@ -11,7 +11,7 @@ namespace DocumentModel;
 ///   customizable appearance with images, labels, tooltips, keyboard shortcuts, and can have its state and
 ///   behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface ButtonRegular: CollectionItem
+public interface ButtonRegular: CustomUIControl, BuiltInControl
 {
   /// <summary>
   ///   Gets or sets the name of the callback function executed when the button is clicked.
@@ -69,30 +69,12 @@ public interface ButtonRegular: CollectionItem
   public string? GetImage { get; set; }
 
   /// <summary>
-  ///   Gets or sets the unique identifier for this button.
-  /// </summary>
-  public string? Id { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier for this button.
-  /// </summary>
-  /// <remarks>
-  ///   Use this when the identifier needs to be unique across multiple namespaces.
-  /// </remarks>
-  public string? QualifiedId { get; set; }
-
-  /// <summary>
   ///   Gets or sets an arbitrary tag value for custom data storage.
   /// </summary>
   /// <remarks>
   ///   The tag can be used to store application-specific information associated with this button.
   /// </remarks>
   public string? Tag { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the identifier for a built-in Microsoft Office button.
-  /// </summary>
-  public string? IdMso { get; set; }
 
   /// <summary>
   ///   Gets or sets the screentip (tooltip) text for the button.
@@ -135,38 +117,6 @@ public interface ButtonRegular: CollectionItem
   ///   The callback function should return a string value for the label.
   /// </remarks>
   public string? GetLabel { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the Microsoft Office identifier after which this button should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the button relative to a built-in control.
-  /// </remarks>
-  public string? InsertAfterMso { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the Microsoft Office identifier before which this button should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the button relative to a built-in control.
-  /// </remarks>
-  public string? InsertBeforeMso { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier after which this button should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the button relative to another custom control.
-  /// </remarks>
-  public string? InsertAfterQualifiedId { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier before which this button should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the button relative to another custom control.
-  /// </remarks>
-  public string? InsertBeforeQualifiedId { get; set; }
 
   /// <summary>
   ///   Gets or sets a value indicating whether the button is visible.
