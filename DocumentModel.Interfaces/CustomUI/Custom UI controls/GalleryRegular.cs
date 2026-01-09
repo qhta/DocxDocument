@@ -10,7 +10,7 @@ namespace DocumentModel;
 ///   a streamlined gallery implementation suitable for use within button groups and other constrained
 ///   ribbon contexts. Galleries support both static and dynamic content generation through callback functions.
 /// </remarks>
-public interface GalleryRegular
+public interface GalleryRegular: CustomUIControl, BuiltInControl
 {
   /// <summary>
   ///   Gets or sets the description text for the gallery control.
@@ -197,30 +197,12 @@ public interface GalleryRegular
   public string? GetSelectedItemIndex { get; set; }
 
   /// <summary>
-  ///   Gets or sets the unique identifier for this gallery.
-  /// </summary>
-  public string? Id { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier for this gallery.
-  /// </summary>
-  /// <remarks>
-  ///   Use this when the identifier needs to be unique across multiple namespaces.
-  /// </remarks>
-  public string? QualifiedId { get; set; }
-
-  /// <summary>
   ///   Gets or sets an arbitrary tag value for custom data storage.
   /// </summary>
   /// <remarks>
   ///   The tag can be used to store application-specific information associated with this gallery.
   /// </remarks>
   public string? Tag { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the identifier for a built-in Microsoft Office gallery.
-  /// </summary>
-  public string? IdMso { get; set; }
 
   /// <summary>
   ///   Gets or sets the screentip (tooltip) text for the gallery.
@@ -263,38 +245,6 @@ public interface GalleryRegular
   ///   The callback function should return a string value for the label.
   /// </remarks>
   public string? GetLabel { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the Microsoft Office identifier after which this gallery should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the gallery relative to a built-in control.
-  /// </remarks>
-  public string? InsertAfterMso { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the Microsoft Office identifier before which this gallery should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the gallery relative to a built-in control.
-  /// </remarks>
-  public string? InsertBeforeMso { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier after which this gallery should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the gallery relative to another custom control.
-  /// </remarks>
-  public string? InsertAfterQualifiedId { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier before which this gallery should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the gallery relative to another custom control.
-  /// </remarks>
-  public string? InsertBeforeQualifiedId { get; set; }
 
   /// <summary>
   ///   Gets or sets a value indicating whether the gallery is visible.

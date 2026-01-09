@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a gallery control that presents a visual collection of selectable items arranged in rows and columns. Galleries provide rich visual selection interfaces with customizable item appearance, dimensions, labels, and images. They support both static and dynamic content generation through callback functions.
 /// </remarks>
-public interface Gallery : BoxContentControl
+public interface Gallery : CustomUIControl, BoxContent, BuiltInControl
 {
   /// <summary>
   /// Size of the gallery control in the ribbon.
@@ -157,11 +157,6 @@ public interface Gallery : BoxContentControl
   /// Arbitrary tag value for custom data storage.
   /// </summary>
   public string? Tag { get; set; }
-
-  /// <summary>
-  /// Built-in Office identifier for a gallery control.
-  /// </summary>
-  public string? IdMso { get; set; }
 
   /// <summary>
   /// Screentip text for the gallery.

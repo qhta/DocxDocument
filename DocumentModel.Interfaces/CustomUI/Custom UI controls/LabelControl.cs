@@ -6,17 +6,12 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a label control that can be used within box containers and other layout controls in the ribbon. It supports static and callback-based values for label, visibility, enabled state, tooltips, and show label options. The control can be uniquely identified, supports Office built-in icons, and provides accessibility features through screentip and supertip properties. Label controls are useful for displaying descriptive text, section headers, or instructions within custom UI layouts.
 /// </remarks>
-public interface LabelControl : BoxContentControl
+public interface LabelControl : CustomUIControl, BoxContent, BuiltInControl
 {
   /// <summary>
   /// Custom tag for storing additional metadata or for programmatic grouping.
   /// </summary>
   public string? Tag { get; set; }
-
-  /// <summary>
-  /// Built-in Office identifier for the label control.
-  /// </summary>
-  public string? IdMso { get; set; }
 
   /// <summary>
   /// Screentip text for the label control.

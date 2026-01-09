@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a text input control that allows users to enter and edit text directly within the ribbon. Unlike a <see cref="ComboBox"/> which combines text input with a dropdown list, the edit box provides a simple text field without predefined options. The control supports text length constraints, change notifications, customizable appearance with images and labels, and can have its state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface EditBox : BoxContentControl
+public interface EditBox : CustomUIControl, BoxContent, BuiltInControl
 {
   /// <summary>
   /// Enable interaction with the edit box.
@@ -57,11 +57,6 @@ public interface EditBox : BoxContentControl
   /// Arbitrary tag value for custom data storage.
   /// </summary>
   public string? Tag { get; set; }
-
-  /// <summary>
-  /// Built-in Office identifier for an edit box control.
-  /// </summary>
-  public string? IdMso { get; set; }
 
   /// <summary>
   /// Screentip text for the edit box.
