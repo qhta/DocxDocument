@@ -1,100 +1,95 @@
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the BackstagePrimaryMenu Class.
+/// Represents a primary menu in the Office Backstage view, supporting dynamic state, customizable appearance, and advanced callback integration for flexible UI scenarios.
 /// </summary>
-public interface BackstagePrimaryMenu
+/// <remarks>
+/// This interface defines a Backstage primary menu with properties for tooltips, identification, state, labeling, images, keytips, and menu group content. It enables dynamic visibility, enabled state, labeling, and image selection, supporting comprehensive customization of the Backstage experience in Office applications.
+/// </remarks>
+public interface BackstagePrimaryMenu: QualifiedElement
 {
   /// <summary>
-  ///   screentip
+  /// Screentip text for the Backstage primary menu.
   /// </summary>
   public string? Screentip { get; set; }
 
   /// <summary>
-  ///   getScreentip
+  /// Callback for dynamic screentip text.
   /// </summary>
   public string? GetScreentip { get; set; }
 
   /// <summary>
-  ///   supertip
+  /// Supertip text for the Backstage primary menu.
   /// </summary>
   public string? Supertip { get; set; }
 
   /// <summary>
-  ///   getSupertip
+  /// Callback for dynamic supertip text.
   /// </summary>
   public string? GetSupertip { get; set; }
 
   /// <summary>
-  ///   id
-  /// </summary>
-  public string? Id { get; set; }
-
-  /// <summary>
-  ///   idQ
-  /// </summary>
-  public string? QualifiedId { get; set; }
-
-  /// <summary>
-  ///   tag
+  /// Arbitrary tag value for custom data storage.
   /// </summary>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   enabled
+  /// Enable interaction with the Backstage primary menu.
   /// </summary>
   public bool? Enabled { get; set; }
 
   /// <summary>
-  ///   getEnabled
+  /// Callback for dynamic enabled state.
   /// </summary>
   public string? GetEnabled { get; set; }
 
   /// <summary>
-  ///   label
+  /// Label text for the Backstage primary menu.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel
+  /// Callback for dynamic label text.
   /// </summary>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   visible
+  /// Show the Backstage primary menu in the UI.
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   getVisible
+  /// Callback for dynamic visibility.
   /// </summary>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   image
+  /// Custom image identifier for the menu icon.
   /// </summary>
   public string? Image { get; set; }
 
   /// <summary>
-  ///   imageMso
+  /// Built-in Office image identifier for the menu icon.
   /// </summary>
   public string? ImageMso { get; set; }
 
   /// <summary>
-  ///   getImage
+  /// Callback for dynamic menu image.
   /// </summary>
   public string? GetImage { get; set; }
 
   /// <summary>
-  ///   keytip
+  /// Keyboard shortcut (keytip) for accessing the menu.
   /// </summary>
   public string? Keytip { get; set; }
 
   /// <summary>
-  ///   getKeytip
+  /// Callback for dynamic keytip.
   /// </summary>
   public string? GetKeytip { get; set; }
 
+  /// <summary>
+  /// Menu group content for the Backstage primary menu.
+  /// </summary>
   public BackstageMenuGroup? BackstageMenuGroup { get; set; }
 }

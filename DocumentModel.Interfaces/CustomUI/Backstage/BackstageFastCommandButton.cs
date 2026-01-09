@@ -1,113 +1,81 @@
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the BackstageFastCommandButton Class.
+/// Represents a fast command button for the Office Backstage view, supporting dynamic state, flexible positioning, and advanced callback integration for custom UI scenarios.
 /// </summary>
-public interface BackstageFastCommandButton
+/// <remarks>
+/// This interface defines a Backstage fast command button with properties for identification, positioning, state, labeling, images, keytips, and definitive action. It enables dynamic visibility, enabled state, labeling, and image selection, supporting comprehensive customization of the Backstage experience in Office applications.
+/// </remarks>
+public interface BackstageFastCommandButton: CustomUIControl, BuiltInControl
 {
-  /// <summary>
-  ///   idMso
-  /// </summary>
-  public string? IdMso { get; set; }
 
   /// <summary>
-  ///   insertAfterMso
-  /// </summary>
-  public string? InsertAfterMso { get; set; }
-
-  /// <summary>
-  ///   insertBeforeMso
-  /// </summary>
-  public string? InsertBeforeMso { get; set; }
-
-  /// <summary>
-  ///   insertAfterQ
-  /// </summary>
-  public string? InsertAfterQualifiedId { get; set; }
-
-  /// <summary>
-  ///   insertBeforeQ
-  /// </summary>
-  public string? InsertBeforeQualifiedId { get; set; }
-
-  /// <summary>
-  ///   id
-  /// </summary>
-  public string? Id { get; set; }
-
-  /// <summary>
-  ///   idQ
-  /// </summary>
-  public string? QualifiedId { get; set; }
-
-  /// <summary>
-  ///   tag
+  /// Arbitrary tag value for custom data storage.
   /// </summary>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   onAction
+  /// Callback executed when the button is clicked.
   /// </summary>
   public string? OnAction { get; set; }
 
   /// <summary>
-  ///   isDefinitive
+  /// Indicates whether the button performs a definitive action.
   /// </summary>
   public bool? IsDefinitive { get; set; }
 
   /// <summary>
-  ///   enabled
+  /// Enable interaction with the fast command button.
   /// </summary>
   public bool? Enabled { get; set; }
 
   /// <summary>
-  ///   getEnabled
+  /// Callback for dynamic enabled state.
   /// </summary>
   public string? GetEnabled { get; set; }
 
   /// <summary>
-  ///   label
+  /// Label text for the fast command button.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel
+  /// Callback for dynamic label text.
   /// </summary>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   visible
+  /// Show the fast command button in the UI.
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   getVisible
+  /// Callback for dynamic visibility.
   /// </summary>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   keytip
+  /// Keyboard shortcut (keytip) for accessing the button.
   /// </summary>
   public string? Keytip { get; set; }
 
   /// <summary>
-  ///   getKeytip
+  /// Callback for dynamic keytip.
   /// </summary>
   public string? GetKeytip { get; set; }
 
   /// <summary>
-  ///   image
+  /// Custom image identifier for the button icon.
   /// </summary>
   public string? Image { get; set; }
 
   /// <summary>
-  ///   imageMso
+  /// Built-in Office image identifier for the button icon.
   /// </summary>
   public string? ImageMso { get; set; }
 
   /// <summary>
-  ///   getImage
+  /// Callback for dynamic button image.
   /// </summary>
   public string? GetImage { get; set; }
 }

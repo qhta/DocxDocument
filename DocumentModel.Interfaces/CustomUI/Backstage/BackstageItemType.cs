@@ -1,23 +1,21 @@
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the BackstageItemType Class.
+/// Represents an item type in the Office Backstage view, supporting dynamic labeling and identification for flexible UI scenarios.
 /// </summary>
-public interface BackstageItemType: CollectionItem
+/// <remarks>
+/// This interface defines a Backstage item type with properties for identification and labeling. It enables dynamic label text and supports collection-based organization for advanced Backstage customization in Office applications.
+/// </remarks>
+public interface BackstageItemType : CollectionItem, IdentifiedElement
 {
-  /// <summary>
-  ///   id
-  /// </summary>
-  public string? Id { get; set; }
 
   /// <summary>
-  ///   label
+  /// Label text for the Backstage item type.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel
+  /// Callback for dynamic label text.
   /// </summary>
   public string? GetLabel { get; set; }
 }
