@@ -1,16 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawing;
 
 /// <summary>
-///   Non-Visual Graphic Frame Properties.
+/// Describes non-visual properties for a graphic frame in chart drawings, including general drawing properties and frame-specific drawing settings.
 /// </summary>
 public interface NonVisualGraphicFrameProperties
 {
   /// <summary>
-  ///   Non-Visual Drawing Properties.
+  /// General non-visual properties for the graphic frame, such as identifier, name, and metadata.
   /// </summary>
   public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
+
   /// <summary>
-  ///   Non-Visual Graphic Frame Drawing Properties.
+  /// Non-visual drawing properties specific to the graphic frame, including locking and editing restrictions.
   /// </summary>
   public NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
 }
