@@ -11,7 +11,7 @@ namespace DocumentModel;
 ///   UI elements. The control supports customizable appearance with images, labels, tooltips, sizing options,
 ///   and can have its state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface ToggleButton
+public interface ToggleButton : BoxContentControl
 {
   /// <summary>
   ///   Gets or sets the size of the toggle button control in the ribbon.

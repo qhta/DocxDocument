@@ -9,7 +9,7 @@ namespace DocumentModel;
 ///   visual selection interfaces with customizable item appearance, dimensions, labels, and images.
 ///   They support both static and dynamic content generation through callback functions.
 /// </remarks>
-public interface Gallery
+public interface Gallery : BoxContentControl
 {
   /// <summary>
   ///   Gets or sets the size of the gallery control in the ribbon.
