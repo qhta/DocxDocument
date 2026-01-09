@@ -1,190 +1,130 @@
 namespace DocumentModel;
 
 /// <summary>
-///   Represents a regular toggle button control that maintains an on/off pressed state, suitable for use within menus and button groups.
+/// Represents a regular toggle button control that maintains an on/off pressed state, suitable for use within menus and button groups, supporting streamlined appearance, dynamic state, and advanced callback integration for flexible UI scenarios.
 /// </summary>
 /// <remarks>
-///   This interface defines a streamlined toggle button control optimized for use
-///   within constrained ribbon contexts such as menus, button groups, and other containers. Unlike the standard
-///   <see cref="ToggleButton"/> control which has additional sizing options, ToggleButtonRegular provides a simplified
-///   toggle button implementation that maintains consistent dimensions appropriate for its context. Like all toggle buttons,
-///   it maintains a pressed (on) or unpressed (off) state to indicate whether a feature or option is currently active.
-///   The control is commonly used for formatting options or to show/hide UI elements in compact contexts, and supports
-///   customizable appearance with images, labels, tooltips, and can have its state and behavior controlled through
-///   static properties or dynamic callbacks.
+/// This interface defines a streamlined toggle button control optimized for use within constrained ribbon contexts such as menus, button groups, and other containers. Unlike the standard <see cref="ToggleButton"/> control which has additional sizing options, ToggleButtonRegular provides a simplified toggle button implementation that maintains consistent dimensions appropriate for its context. Like all toggle buttons, it maintains a pressed (on) or unpressed (off) state to indicate whether a feature or option is currently active. The control is commonly used for formatting options or to show/hide UI elements in compact contexts, and supports customizable appearance with images, labels, tooltips, and can have its state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface ToggleButtonRegular: CustomUIControl, BuiltInControl
+public interface ToggleButtonRegular : CustomUIControl, BuiltInControl
 {
   /// <summary>
-  ///   Gets or sets the name of a callback function that returns the current pressed state of the toggle button.
+  /// Callback for dynamic pressed state of the toggle button.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value: <c>true</c> if the button is pressed (on),
-  ///   <c>false</c> if unpressed (off). This is the primary mechanism for synchronizing the button's
-  ///   visual state with the application's state.
-  /// </remarks>
   public string? GetPressed { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of the callback function executed when the toggle button is clicked.
+  /// Callback executed when the toggle button is clicked.
   /// </summary>
-  /// <remarks>
-  ///   The callback function is invoked each time the button is clicked to toggle its state.
-  /// </remarks>
   public string? OnAction { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the toggle button is enabled and can be clicked.
+  /// Enable interaction with the toggle button.
   /// </summary>
   public bool? Enabled { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines whether the toggle button is enabled.
+  /// Callback for dynamic enabled state.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the button should be enabled.
-  /// </remarks>
   public string? GetEnabled { get; set; }
 
   /// <summary>
-  ///   Gets or sets the description text that provides additional information about the toggle button.
+  /// Description text for the toggle button.
   /// </summary>
   public string? Description { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's description.
+  /// Callback for dynamic description text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the description.
-  /// </remarks>
   public string? GetDescription { get; set; }
 
   /// <summary>
-  ///   Gets or sets the custom image identifier for the toggle button icon.
+  /// Custom image identifier for the toggle button icon.
   /// </summary>
-  /// <remarks>
-  ///   The image identifier references a custom image resource included in the Office add-in.
-  /// </remarks>
   public string? Image { get; set; }
 
   /// <summary>
-  ///   Gets or sets the Microsoft Office image identifier for the toggle button icon.
+  /// Built-in Office image identifier for the toggle button icon.
   /// </summary>
-  /// <remarks>
-  ///   Use this to display a built-in Office icon for the button.
-  /// </remarks>
   public string? ImageMso { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's image.
+  /// Callback for dynamic toggle button image.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return an image object or identifier.
-  /// </remarks>
   public string? GetImage { get; set; }
 
   /// <summary>
-  ///   Gets or sets an arbitrary tag value for custom data storage.
+  /// Arbitrary tag value for custom data storage.
   /// </summary>
-  /// <remarks>
-  ///   The tag can be used to store application-specific information associated with this toggle button.
-  /// </remarks>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   Gets or sets the screentip (tooltip) text for the toggle button.
+  /// Screentip text for the toggle button.
   /// </summary>
   public string? Screentip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's screentip.
+  /// Callback for dynamic screentip text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the screentip.
-  /// </remarks>
   public string? GetScreentip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the supertip (extended tooltip) text for the toggle button.
+  /// Supertip text for the toggle button.
   /// </summary>
-  /// <remarks>
-  ///   Supertips provide more detailed information than screentips.
-  /// </remarks>
   public string? Supertip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's supertip.
+  /// Callback for dynamic supertip text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the supertip.
-  /// </remarks>
   public string? GetSupertip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the display label for the toggle button.
+  /// Label displayed for the toggle button.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's label.
+  /// Callback for dynamic label text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the label.
-  /// </remarks>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the toggle button is visible.
+  /// Show the toggle button in the UI.
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's visibility.
+  /// Callback for dynamic visibility.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the button should be visible.
-  /// </remarks>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   Gets or sets the keyboard shortcut (keytip) for accessing the toggle button.
+  /// Keyboard shortcut (keytip) for accessing the toggle button.
   /// </summary>
-  /// <remarks>
-  ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
-  /// </remarks>
   public string? Keytip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the toggle button's keytip.
+  /// Callback for dynamic keytip.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the keytip.
-  /// </remarks>
   public string? GetKeytip { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the toggle button's label should be displayed.
+  /// Show the toggle button label in the UI.
   /// </summary>
   public bool? ShowLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines whether the label is shown.
+  /// Callback for dynamic label visibility.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the label should be displayed.
-  /// </remarks>
   public string? GetShowLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the toggle button's image should be displayed.
+  /// Show the toggle button image in the UI.
   /// </summary>
   public bool? ShowImage { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines whether the image is shown.
+  /// Callback for dynamic image visibility.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the image should be displayed.
-  /// </remarks>
   public string? GetShowImage { get; set; }
 }

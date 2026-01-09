@@ -11,7 +11,7 @@ namespace DocumentModel;
 ///   between different functional areas of the ribbon. They support positioning relative to other controls
 ///   and can have their visibility controlled statically or dynamically through callbacks.
 /// </remarks>
-public interface Separator: CustomUIControl
+public interface Separator: CustomUIControl, GroupContent
 {
   /// <summary>
   ///   Gets or sets an arbitrary tag value for custom data storage.
