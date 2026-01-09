@@ -10,7 +10,7 @@ namespace DocumentModel;
 ///   They support customizable appearance with images, labels, tooltips, sizing options, and can have
 ///   their state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface Menu
+public interface Menu : BoxContentControl
 {
   /// <summary>
   ///   Gets or sets the size of the menu control in the ribbon.
