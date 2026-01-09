@@ -6,9 +6,8 @@ namespace DocumentModel.Packaging;
 public interface DocumentTasksPart: OpenXmlPart
 {
 
-
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public Tasks? Tasks { get; set; }
+  public TaskCollection? Tasks { get; set; }
 }

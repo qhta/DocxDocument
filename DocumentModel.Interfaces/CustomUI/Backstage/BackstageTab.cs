@@ -92,7 +92,7 @@ public interface BackstageTab: CustomUIControl, BuiltInControl
   /// <summary>
   /// Collection of Backstage groups displayed in the tab.
   /// </summary>
-  public BackstageGroups? BackstageGroups { get; set; }
+  public BackstageGroupCollection? BackstageGroups { get; set; }
 
   /// <summary>
   /// Collection of simple groups displayed in the tab.
