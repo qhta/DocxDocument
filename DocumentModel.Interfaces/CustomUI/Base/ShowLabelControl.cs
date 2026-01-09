@@ -21,5 +21,8 @@ public interface ShowLabelControl
   /// 
   ///   The ShowLabel and GetShowLabel attributes are mutually exclusive. If neither attribute is specified, the control SHOULD default to showing its label.
   /// </summary>
+  /// <remarks>
+  ///   The callback function should return a boolean value indicating whether the label should be displayed.
+  /// </remarks>
   public string? GetShowLabel { get; set; }
 }

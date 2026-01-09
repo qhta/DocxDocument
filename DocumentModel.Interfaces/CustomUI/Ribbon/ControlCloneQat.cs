@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a control clone optimized for the QAT, enabling replication of built-in Office commands or custom controls with tailored appearance, behavior, and positioning. The cloned control inherits base functionality but can override properties such as size, label, image, visibility, enabled state, and QAT-specific layout. All properties can be set statically or determined dynamically through callback functions for responsive UI.
 /// </remarks>
-public interface ControlCloneQat : CustomUIControl, BuiltInControl
+public interface ControlCloneQat : CustomUIControl, BuiltInControl, QatItem
 {
   /// <summary>
   /// Description text for the QAT control.

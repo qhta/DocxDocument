@@ -14,6 +14,9 @@ public interface SelectedItemControl
   ///
   ///   The GetSelectedItemID and GetSelectedItemIndex attributes are mutually exclusive.If neither attribute is specified, the control SHOULD NOT display a selected item.
   /// </summary>
+  /// <remarks>
+  ///   The callback function should return a string identifier of the selected item.
+  /// </remarks>
   public string? GetSelectedItemID { get; set; }
 
   /// <summary>
@@ -21,5 +24,8 @@ public interface SelectedItemControl
   ///
   ///   The GetSelectedItemID and GetSelectedItemIndex attributes are mutually exclusive.If neither attribute is specified, the control SHOULD NOT display a selected item.
   /// </summary>
+  /// <remarks>
+  ///   The callback function should return an integer index of the selected item.
+  /// </remarks>
   public string? GetSelectedItemIndex { get; set; }
 }

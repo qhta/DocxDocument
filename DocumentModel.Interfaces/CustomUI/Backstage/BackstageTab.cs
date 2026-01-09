@@ -6,13 +6,8 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage tab with properties for identification, positioning, state, labeling, layout configuration, and group collections. It enables dynamic visibility, enabled state, labeling, and layout adjustments, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageTab: CustomUIControl, BuiltInControl
+public interface BackstageTab: CustomUIControl, BuiltInControl, TaggedObject
 {
-
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Enable interaction with the Backstage tab.

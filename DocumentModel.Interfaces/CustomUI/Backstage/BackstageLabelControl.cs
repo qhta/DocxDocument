@@ -6,13 +6,8 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage label control with properties for identification, alignment, expansion, state, labeling, and wrapping. It enables dynamic visibility, enabled state, labeling, and layout adjustments, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageLabelControl: QualifiedElement
+public interface BackstageLabelControl: QualifiedElement, TaggedObject
 {
-
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Alignment behavior of the label control.

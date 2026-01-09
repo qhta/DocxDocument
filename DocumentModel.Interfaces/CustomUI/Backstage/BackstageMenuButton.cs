@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage menu button with properties for description, identification, state, labeling, images, keytips, and definitive action. It enables dynamic visibility, enabled state, labeling, and image selection, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageMenuButton: QualifiedElement
+public interface BackstageMenuButton: QualifiedElement, TaggedObject
 {
   /// <summary>
   /// Description text for the Backstage menu button.
@@ -17,11 +17,6 @@ public interface BackstageMenuButton: QualifiedElement
   /// Callback for dynamic description text.
   /// </summary>
   public string? GetDescription { get; set; }
-
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Callback executed when the button is clicked.

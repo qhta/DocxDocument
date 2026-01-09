@@ -11,10 +11,10 @@ public interface QuickAccessToolbar
   /// <summary>
   /// Collection of shared controls displayed in the Quick Access Toolbar for all documents.
   /// </summary>
-  public SharedControlsQatItems? SharedControlsQatItems { get; set; }
+  public QatItemsCollection? SharedControlsQatItems { get; set; }
 
   /// <summary>
   /// Collection of document-specific controls displayed in the Quick Access Toolbar.
   /// </summary>
-  public DocumentControlsQatItems? DocumentControlsQatItems { get; set; }
+  public QatItemsCollection? DocumentControlsQatItems { get; set; }
 }

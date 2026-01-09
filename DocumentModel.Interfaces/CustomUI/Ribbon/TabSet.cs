@@ -8,20 +8,9 @@ namespace DocumentModel;
 ///   that are displayed as a unit in the ribbon interface. Tab sets are typically used for
 ///   contextual tabs that appear when specific objects or elements are selected.
 /// </remarks>
-public interface TabSet : BuiltInControl, CollectionItem, ElementCollection<Tabs>
+public interface TabSet : BuiltInControl, CollectionItem, 
+  VisibleControl,
+  TabsCollection
 {
-
-  /// <summary>
-  ///   Gets or sets a value indicating whether the tab set is visible in the ribbon UI.
-  /// </summary>
-  public bool? Visible { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the tab set's visibility.
-  /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the tab set should be visible.
-  /// </remarks>
-  public string? GetVisible { get; set; }
 
 }

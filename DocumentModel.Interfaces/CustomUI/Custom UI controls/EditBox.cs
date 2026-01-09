@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a text input control that allows users to enter and edit text directly within the ribbon. Unlike a <see cref="ComboBox"/> which combines text input with a dropdown list, the edit box provides a simple text field without predefined options. The control supports text length constraints, change notifications, customizable appearance with images and labels, and can have its state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface EditBox : CustomUIControl, BuiltInControl, BoxContent, GroupContent
+public interface EditBox : CustomUIControl, BuiltInControl, BoxContent, GroupContent, TaggedObject
 {
   /// <summary>
   /// Enable interaction with the edit box.
@@ -52,11 +52,6 @@ public interface EditBox : CustomUIControl, BuiltInControl, BoxContent, GroupCon
   /// String representation of the edit box size in the ribbon.
   /// </summary>
   public string? SizeString { get; set; }
-
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Screentip text for the edit box.

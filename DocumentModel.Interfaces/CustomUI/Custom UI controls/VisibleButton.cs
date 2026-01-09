@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a button that can be placed in various Office UI contexts, supporting dynamic enabled state, labeling, images, tooltips, and flexible positioning. Callback integration enables runtime behavior, accessibility, and context-sensitive actions.
 /// </remarks>
-public interface VisibleButton: CustomUIControl
+public interface VisibleButton: CustomUIControl, TaggedObject
 {
   /// <summary>
   /// Callback executed when the button is clicked.

@@ -6,7 +6,8 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a check box control that can be used within box containers and other layout controls in the ribbon. It supports static and callback-based values for pressed state, enabled state, label, description, tooltips, and visibility. The control can be uniquely identified, supports Office built-in icons, and provides accessibility features through screentip and supertip properties. Check boxes are useful for boolean selection, toggling options, and interactive scenarios within custom UI layouts.
 /// </remarks>
-public interface CheckBox : CustomUIControl, BuiltInControl, BoxContent, ContextMenuContent
+public interface CheckBox : CustomUIControl, BuiltInControl, BoxContent, ContextMenuContent,
+  TaggedObject
 {
   /// <summary>
   /// Callback for dynamic pressed state of the check box.
@@ -37,11 +38,6 @@ public interface CheckBox : CustomUIControl, BuiltInControl, BoxContent, Context
   /// Callback for dynamic description text.
   /// </summary>
   public string? GetDescription { get; set; }
-
-  /// <summary>
-  /// Custom tag for storing additional metadata or for programmatic grouping.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Screentip text for the check box.

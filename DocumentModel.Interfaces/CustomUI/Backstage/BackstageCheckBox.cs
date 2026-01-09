@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage checkbox with properties for expansion, description, tooltips, identification, state, labeling, keytips, and pressed state. It enables dynamic visibility, enabled state, labeling, and pressed state, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageCheckBox: QualifiedElement
+public interface BackstageCheckBox: QualifiedElement, TaggedObject
 {
   /// <summary>
   /// Expansion behavior of the checkbox control.
@@ -42,11 +42,6 @@ public interface BackstageCheckBox: QualifiedElement
   /// Callback for dynamic supertip text.
   /// </summary>
   public string? GetSupertip { get; set; }
-
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Callback executed when the checkbox is clicked.

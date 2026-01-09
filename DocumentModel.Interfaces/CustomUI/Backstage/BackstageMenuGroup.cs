@@ -6,13 +6,8 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage menu group with properties for identification, labeling, item sizing, and access to various menu item types. It enables dynamic labeling, flexible arrangement, and comprehensive customization of Backstage menus in Office applications.
 /// </remarks>
-public interface BackstageMenuGroup: QualifiedElement
+public interface BackstageMenuGroup: QualifiedElement, TaggedObject
 {
-
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Label text for the menu group.

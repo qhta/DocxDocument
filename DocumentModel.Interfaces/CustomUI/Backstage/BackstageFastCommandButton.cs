@@ -6,13 +6,8 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage fast command button with properties for identification, positioning, state, labeling, images, keytips, and definitive action. It enables dynamic visibility, enabled state, labeling, and image selection, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageFastCommandButton: CustomUIControl, BuiltInControl
+public interface BackstageFastCommandButton: CustomUIControl, BuiltInControl, TaggedObject
 {
-
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Callback executed when the button is clicked.

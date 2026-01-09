@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage primary menu with properties for tooltips, identification, state, labeling, images, keytips, and menu group content. It enables dynamic visibility, enabled state, labeling, and image selection, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstagePrimaryMenu: QualifiedElement
+public interface BackstagePrimaryMenu: QualifiedElement, TaggedObject
 {
   /// <summary>
   /// Screentip text for the Backstage primary menu.
@@ -27,11 +27,6 @@ public interface BackstagePrimaryMenu: QualifiedElement
   /// Callback for dynamic supertip text.
   /// </summary>
   public string? GetSupertip { get; set; }
-
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Enable interaction with the Backstage primary menu.

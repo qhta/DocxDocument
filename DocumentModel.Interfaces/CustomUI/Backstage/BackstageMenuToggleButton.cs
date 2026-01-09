@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage menu toggle button with properties for images, description, identification, state, labeling, keytips, and pressed state. It enables dynamic visibility, enabled state, labeling, and image selection, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageMenuToggleButton: QualifiedElement
+public interface BackstageMenuToggleButton: QualifiedElement, TaggedObject
 {
   /// <summary>
   /// Custom image identifier for the toggle button icon.
@@ -32,11 +32,6 @@ public interface BackstageMenuToggleButton: QualifiedElement
   /// Callback for dynamic description text.
   /// </summary>
   public string? GetDescription { get; set; }
-
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Callback executed when the toggle button is clicked.

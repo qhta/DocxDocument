@@ -6,13 +6,8 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage dropdown with properties for identification, alignment, expansion, state, labeling, selection, tooltips, and item management. It enables dynamic visibility, enabled state, labeling, item count, and selection, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageDropDown: QualifiedElement
+public interface BackstageDropDown: QualifiedElement, TaggedObject
 {
-
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Alignment behavior of the label control.

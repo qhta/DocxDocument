@@ -26,5 +26,5 @@ public interface Ribbon
   /// <summary>
   /// Collection of contextual tab sets for dynamic ribbon scenarios.
   /// </summary>
-  public ContextualTabs? ContextualTabs { get; set; }
+  public TabSetCollection? ContextualTabs { get; set; }
 }
