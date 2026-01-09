@@ -1,251 +1,145 @@
 namespace DocumentModel;
 
 /// <summary>
-///   Represents a dynamic menu control that generates menu items at runtime through callback functions.
+/// Represents a dynamic menu control that generates menu items at runtime through callback functions, supporting customizable appearance, dynamic content, and advanced integration for flexible UI scenarios.
 /// </summary>
 /// <remarks>
-///   This interface defines a menu control that creates its content
-///   dynamically rather than using a predefined static list of items. Unlike standard <see cref="Menu"/> controls
-///   with fixed items, dynamic menus use a callback function to generate menu content on-demand when the menu
-///   is opened. This is particularly useful for menus that need to reflect current application state, recently
-///   used items, or context-sensitive commands. The menu content can be invalidated and regenerated as needed,
-///   and the control supports customizable appearance with images, labels, tooltips, sizing options, and can
-///   have its state and behavior controlled through static properties or dynamic callbacks.
+/// This interface defines a menu control that creates its content dynamically rather than using a predefined static list of items. Unlike standard <see cref="Menu"/> controls with fixed items, dynamic menus use a callback function to generate menu content on-demand when the menu is opened. This is particularly useful for menus that need to reflect current application state, recently used items, or context-sensitive commands. The menu content can be invalidated and regenerated as needed, and the control supports customizable appearance with images, labels, tooltips, sizing options, and can have its state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface DynamicMenu: BoxContentControl
+public interface DynamicMenu : BoxContentControl
 {
   /// <summary>
-  ///   Gets or sets the size of the dynamic menu control in the ribbon.
+  /// Size of the dynamic menu control in the ribbon.
   /// </summary>
   public SizeKind? Size { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the dynamic menu's size.
+  /// Callback for dynamic menu size.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a <see cref="SizeKind"/> value.
-  /// </remarks>
   public string? GetSize { get; set; }
 
   /// <summary>
-  ///   Gets or sets the description text for the dynamic menu control.
+  /// Description text for the dynamic menu control.
   /// </summary>
   public string? Description { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the dynamic menu's description.
+  /// Callback for dynamic description text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the description.
-  /// </remarks>
   public string? GetDescription { get; set; }
 
   /// <summary>
-  ///   Gets or sets the unique identifier for this dynamic menu.
+  /// Arbitrary tag value for custom data storage.
   /// </summary>
-  public string? Id { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier for this dynamic menu.
-  /// </summary>
-  /// <remarks>
-  ///   Use this when the identifier needs to be unique across multiple namespaces.
-  /// </remarks>
-  public string? QualifiedId { get; set; }
-
-  /// <summary>
-  ///   Gets or sets an arbitrary tag value for custom data storage.
-  /// </summary>
-  /// <remarks>
-  ///   The tag can be used to store application-specific information associated with this dynamic menu.
-  /// </remarks>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   Gets or sets the identifier for a built-in Microsoft Office dynamic menu.
+  /// Built-in Office identifier for a dynamic menu.
   /// </summary>
   public string? IdMso { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of the callback function that generates the dynamic menu content.
+  /// Callback function that generates the dynamic menu content as XML markup.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return XML markup defining the menu items to display.
-  ///   This is the primary mechanism for creating dynamic menu content.
-  /// </remarks>
   public string? GetContent { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the menu content should be invalidated when the dropdown is closed.
+  /// Invalidate menu content when the dropdown is closed.
   /// </summary>
-  /// <remarks>
-  ///   When enabled, the menu content will be regenerated each time the dropdown is opened.
-  /// </remarks>
   public bool? InvalidateContentOnDrop { get; set; }
 
   /// <summary>
-  ///   Gets or sets the custom image identifier for the dynamic menu button.
+  /// Custom image identifier for the dynamic menu button.
   /// </summary>
-  /// <remarks>
-  ///   The image identifier references a custom image resource included in the Office add-in.
-  /// </remarks>
   public string? Image { get; set; }
 
   /// <summary>
-  ///   Gets or sets the Microsoft Office image identifier for the dynamic menu button.
+  /// Built-in Office image identifier for the dynamic menu button.
   /// </summary>
-  /// <remarks>
-  ///   Use this to display a built-in Office icon for the dynamic menu button.
-  /// </remarks>
   public string? ImageMso { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the dynamic menu's image.
+  /// Callback for dynamic menu image.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return an image object or identifier.
-  /// </remarks>
   public string? GetImage { get; set; }
 
   /// <summary>
-  ///   Gets or sets the screentip (tooltip) text for the dynamic menu.
+  /// Screentip text for the dynamic menu.
   /// </summary>
   public string? Screentip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the dynamic menu's screentip.
+  /// Callback for dynamic screentip text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the screentip.
-  /// </remarks>
   public string? GetScreentip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the supertip (extended tooltip) text for the dynamic menu.
+  /// Supertip text for the dynamic menu.
   /// </summary>
-  /// <remarks>
-  ///   Supertips provide more detailed information than screentips.
-  /// </remarks>
   public string? Supertip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the dynamic menu's supertip.
+  /// Callback for dynamic supertip text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the supertip.
-  /// </remarks>
   public string? GetSupertip { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the dynamic menu is enabled and can be clicked.
+  /// Enable interaction with the dynamic menu.
   /// </summary>
   public bool? Enabled { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines whether the dynamic menu is enabled.
+  /// Callback for dynamic enabled state.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the dynamic menu should be enabled.
-  /// </remarks>
   public string? GetEnabled { get; set; }
 
   /// <summary>
-  ///   Gets or sets the display label for the dynamic menu.
+  /// Label displayed for the dynamic menu.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the dynamic menu's label.
+  /// Callback for dynamic label text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the label.
-  /// </remarks>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets the Microsoft Office identifier after which this dynamic menu should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the dynamic menu relative to a built-in control.
-  /// </remarks>
-  public string? InsertAfterMso { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the Microsoft Office identifier before which this dynamic menu should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the dynamic menu relative to a built-in control.
-  /// </remarks>
-  public string? InsertBeforeMso { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier after which this dynamic menu should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the dynamic menu relative to another custom control.
-  /// </remarks>
-  public string? InsertAfterQualifiedId { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier before which this dynamic menu should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the dynamic menu relative to another custom control.
-  /// </remarks>
-  public string? InsertBeforeQualifiedId { get; set; }
-
-  /// <summary>
-  ///   Gets or sets a value indicating whether the dynamic menu is visible.
+  /// Show the dynamic menu in the UI.
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the dynamic menu's visibility.
+  /// Callback for dynamic visibility.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the dynamic menu should be visible.
-  /// </remarks>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   Gets or sets the keyboard shortcut (keytip) for accessing the dynamic menu.
+  /// Keyboard shortcut (keytip) for accessing the dynamic menu.
   /// </summary>
-  /// <remarks>
-  ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
-  /// </remarks>
   public string? Keytip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the dynamic menu's keytip.
+  /// Callback for dynamic keytip.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the keytip.
-  /// </remarks>
   public string? GetKeytip { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the dynamic menu's label should be displayed.
+  /// Show the dynamic menu label in the UI.
   /// </summary>
   public bool? ShowLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines whether the label is shown.
+  /// Callback for dynamic label visibility.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the label should be displayed.
-  /// </remarks>
   public string? GetShowLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the dynamic menu's image should be displayed.
+  /// Show the dynamic menu image in the UI.
   /// </summary>
   public bool? ShowImage { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines whether the image is shown.
+  /// Callback for dynamic image visibility.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the image should be displayed.
-  /// </remarks>
   public string? GetShowImage { get; set; }
 }

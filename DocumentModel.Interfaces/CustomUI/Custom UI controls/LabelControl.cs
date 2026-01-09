@@ -1,88 +1,80 @@
 namespace DocumentModel;
 
 /// <summary>
-///   Defines the LabelControl Class.
+/// Represents a label control for the ribbon interface, supporting static and dynamic labeling, visibility, tooltips, and advanced callback integration for flexible UI scenarios.
 /// </summary>
-public interface LabelControl: BoxContentControl
+/// <remarks>
+/// This interface defines a label control that can be used within box containers and other layout controls in the ribbon. It supports static and callback-based values for label, visibility, enabled state, tooltips, and show label options. The control can be uniquely identified, supports Office built-in icons, and provides accessibility features through screentip and supertip properties. Label controls are useful for displaying descriptive text, section headers, or instructions within custom UI layouts.
+/// </remarks>
+public interface LabelControl : BoxContentControl
 {
   /// <summary>
-  ///   id
-  /// </summary>
-  public string? Id { get; set; }
-  /// <summary>
-  ///   idQ
-  /// </summary>
-  public string? QualifiedId { get; set; }
-  /// <summary>
-  ///   tag
+  /// Custom tag for storing additional metadata or for programmatic grouping.
   /// </summary>
   public string? Tag { get; set; }
+
   /// <summary>
-  ///   idMso
+  /// Built-in Office identifier for the label control.
   /// </summary>
   public string? IdMso { get; set; }
+
   /// <summary>
-  ///   screentip
+  /// Screentip text for the label control.
   /// </summary>
   public string? Screentip { get; set; }
+
   /// <summary>
-  ///   getScreentip
+  /// Callback for dynamic screentip text.
   /// </summary>
   public string? GetScreentip { get; set; }
+
   /// <summary>
-  ///   supertip
+  /// Supertip text for the label control.
   /// </summary>
   public string? Supertip { get; set; }
+
   /// <summary>
-  ///   getSupertip
+  /// Callback for dynamic supertip text.
   /// </summary>
   public string? GetSupertip { get; set; }
+
   /// <summary>
-  ///   enabled
+  /// Enable interaction with the label control.
   /// </summary>
   public bool? Enabled { get; set; }
+
   /// <summary>
-  ///   getEnabled
+  /// Callback for dynamic enabled state.
   /// </summary>
   public string? GetEnabled { get; set; }
+
   /// <summary>
-  ///   label
+  /// Label text for the control.
   /// </summary>
   public string? Label { get; set; }
+
   /// <summary>
-  ///   getLabel
+  /// Callback for dynamic label text.
   /// </summary>
   public string? GetLabel { get; set; }
+
   /// <summary>
-  ///   insertAfterMso
-  /// </summary>
-  public string? InsertAfterMso { get; set; }
-  /// <summary>
-  ///   insertBeforeMso
-  /// </summary>
-  public string? InsertBeforeMso { get; set; }
-  /// <summary>
-  ///   insertAfterQ
-  /// </summary>
-  public string? InsertAfterQualifiedId { get; set; }
-  /// <summary>
-  ///   insertBeforeQ
-  /// </summary>
-  public string? InsertBeforeQualifiedId { get; set; }
-  /// <summary>
-  ///   visible
+  /// Show the label control in the UI.
   /// </summary>
   public bool? Visible { get; set; }
+
   /// <summary>
-  ///   getVisible
+  /// Callback for dynamic visibility.
   /// </summary>
   public string? GetVisible { get; set; }
+
   /// <summary>
-  ///   showLabel
+  /// Show the label in the UI.
   /// </summary>
   public bool? ShowLabel { get; set; }
+
   /// <summary>
-  ///   getShowLabel
+  /// Callback for dynamic label visibility.
   /// </summary>
   public string? GetShowLabel { get; set; }
 }

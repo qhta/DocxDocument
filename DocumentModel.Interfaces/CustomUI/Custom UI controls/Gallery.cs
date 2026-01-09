@@ -1,375 +1,245 @@
 namespace DocumentModel;
 
 /// <summary>
-///   Represents a gallery control that displays a collection of items in a grid layout within the ribbon.
+/// Represents a gallery control that displays a collection of items in a grid layout within the ribbon, supporting dynamic content, customizable appearance, and advanced callback integration for flexible UI scenarios.
 /// </summary>
 /// <remarks>
-///   This interface defines a gallery control that presents
-///   a visual collection of selectable items arranged in rows and columns. Galleries provide rich
-///   visual selection interfaces with customizable item appearance, dimensions, labels, and images.
-///   They support both static and dynamic content generation through callback functions.
+/// This interface defines a gallery control that presents a visual collection of selectable items arranged in rows and columns. Galleries provide rich visual selection interfaces with customizable item appearance, dimensions, labels, and images. They support both static and dynamic content generation through callback functions.
 /// </remarks>
 public interface Gallery : BoxContentControl
 {
   /// <summary>
-  ///   Gets or sets the size of the gallery control in the ribbon.
+  /// Size of the gallery control in the ribbon.
   /// </summary>
   public SizeKind? Size { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the gallery's size.
+  /// Callback for dynamic gallery size.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a <see cref="SizeKind"/> value.
-  /// </remarks>
   public string? GetSize { get; set; }
 
   /// <summary>
-  ///   Gets or sets the description text for the gallery control.
+  /// Description text for the gallery control.
   /// </summary>
   public string? Description { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the gallery's description.
+  /// Callback for dynamic description text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the description.
-  /// </remarks>
   public string? GetDescription { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the gallery content should be invalidated when the dropdown is closed.
+  /// Invalidate gallery content when the dropdown is closed.
   /// </summary>
-  /// <remarks>
-  ///   When enabled, the gallery content will be refreshed each time the dropdown is opened.
-  /// </remarks>
   public bool? InvalidateContentOnDrop { get; set; }
 
   /// <summary>
-  ///   Gets or sets the number of columns in the gallery layout.
+  /// Number of columns in the gallery layout.
   /// </summary>
   public Int64? Columns { get; set; }
 
   /// <summary>
-  ///   Gets or sets the number of rows in the gallery layout.
+  /// Number of rows in the gallery layout.
   /// </summary>
   public Int64? Rows { get; set; }
 
   /// <summary>
-  ///   Gets or sets the width of each item in the gallery.
+  /// Width of each item in the gallery.
   /// </summary>
   public Int64? ItemWidth { get; set; }
 
   /// <summary>
-  ///   Gets or sets the height of each item in the gallery.
+  /// Height of each item in the gallery.
   /// </summary>
   public Int64? ItemHeight { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the item width.
+  /// Callback for dynamic item width.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return an integer value for the item width.
-  /// </remarks>
   public string? GetItemWidth { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the item height.
+  /// Callback for dynamic item height.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return an integer value for the item height.
-  /// </remarks>
   public string? GetItemHeight { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether item labels are displayed.
+  /// Show item labels in the gallery.
   /// </summary>
   public bool? ShowItemLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets how the gallery is displayed in the ribbon interface.
+  /// Gallery display mode in the ribbon interface.
   /// </summary>
   public GalleryShowInRibbonKind? ShowInRibbon { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of the callback function executed when a gallery item is selected.
+  /// Callback executed when a gallery item is selected.
   /// </summary>
   public string? OnAction { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the gallery is enabled and can be interacted with.
+  /// Enable interaction with the gallery.
   /// </summary>
   public bool? Enabled { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines whether the gallery is enabled.
+  /// Callback for dynamic enabled state.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the gallery should be enabled.
-  /// </remarks>
   public string? GetEnabled { get; set; }
 
   /// <summary>
-  ///   Gets or sets the custom image identifier for the gallery button.
+  /// Custom image identifier for the gallery button.
   /// </summary>
-  /// <remarks>
-  ///   The image identifier references a custom image resource included in the Office add-in.
-  /// </remarks>
   public string? Image { get; set; }
 
   /// <summary>
-  ///   Gets or sets the Microsoft Office image identifier for the gallery button.
+  /// Built-in Office image identifier for the gallery button.
   /// </summary>
-  /// <remarks>
-  ///   Use this to display a built-in Office icon for the gallery button.
-  /// </remarks>
   public string? ImageMso { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the gallery's image.
+  /// Callback for dynamic gallery image.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return an image object or identifier.
-  /// </remarks>
   public string? GetImage { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether item images are displayed.
+  /// Show item images in the gallery.
   /// </summary>
   public bool? ShowItemImage { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that returns the total number of items in the gallery.
+  /// Callback for dynamic item count.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return an integer representing the item count.
-  ///   Use this for dynamically generated gallery content.
-  /// </remarks>
   public string? GetItemCount { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that returns the label for a specific gallery item.
+  /// Callback for dynamic item label.
   /// </summary>
-  /// <remarks>
-  ///   The callback function receives an item index and should return a string label.
-  /// </remarks>
   public string? GetItemLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that returns the screentip for a specific gallery item.
+  /// Callback for dynamic item screentip.
   /// </summary>
-  /// <remarks>
-  ///   The callback function receives an item index and should return a string screentip.
-  /// </remarks>
   public string? GetItemScreentip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that returns the supertip for a specific gallery item.
+  /// Callback for dynamic item supertip.
   /// </summary>
-  /// <remarks>
-  ///   The callback function receives an item index and should return a string supertip (extended tooltip).
-  /// </remarks>
   public string? GetItemSupertip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that returns the image for a specific gallery item.
+  /// Callback for dynamic item image.
   /// </summary>
-  /// <remarks>
-  ///   The callback function receives an item index and should return an image object or identifier.
-  /// </remarks>
   public string? GetItemImage { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that returns the unique identifier for a specific gallery item.
+  /// Callback for dynamic item identifier.
   /// </summary>
-  /// <remarks>
-  ///   The callback function receives an item index and should return a string identifier.
-  /// </remarks>
   public string? GetItemID { get; set; }
 
   /// <summary>
-  ///   Gets or sets the string representation of the gallery size.
+  /// String representation of the gallery size.
   /// </summary>
   public string? SizeString { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that returns the identifier of the currently selected item.
+  /// Callback for dynamic selected item identifier.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string identifier of the selected item.
-  /// </remarks>
   public string? GetSelectedItemID { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that returns the index of the currently selected item.
+  /// Callback for dynamic selected item index.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return an integer index of the selected item.
-  /// </remarks>
   public string? GetSelectedItemIndex { get; set; }
 
   /// <summary>
-  ///   Gets or sets the unique identifier for this gallery.
+  /// Arbitrary tag value for custom data storage.
   /// </summary>
-  public string? Id { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier for this gallery.
-  /// </summary>
-  /// <remarks>
-  ///   Use this when the identifier needs to be unique across multiple namespaces.
-  /// </remarks>
-  public string? QualifiedId { get; set; }
-
-  /// <summary>
-  ///   Gets or sets an arbitrary tag value for custom data storage.
-  /// </summary>
-  /// <remarks>
-  ///   The tag can be used to store application-specific information associated with this gallery.
-  /// </remarks>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   Gets or sets the identifier for a built-in Microsoft Office gallery.
+  /// Built-in Office identifier for a gallery control.
   /// </summary>
   public string? IdMso { get; set; }
 
   /// <summary>
-  ///   Gets or sets the screentip (tooltip) text for the gallery.
+  /// Screentip text for the gallery.
   /// </summary>
   public string? Screentip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the gallery's screentip.
+  /// Callback for dynamic screentip text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the screentip.
-  /// </remarks>
   public string? GetScreentip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the supertip (extended tooltip) text for the gallery.
+  /// Supertip text for the gallery.
   /// </summary>
-  /// <remarks>
-  ///   Supertips provide more detailed information than screentips.
-  /// </remarks>
   public string? Supertip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the gallery's supertip.
+  /// Callback for dynamic supertip text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the supertip.
-  /// </remarks>
   public string? GetSupertip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the display label for the gallery.
+  /// Label text for the gallery.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the gallery's label.
+  /// Callback for dynamic label text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the label.
-  /// </remarks>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets the Microsoft Office identifier after which this gallery should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the gallery relative to a built-in control.
-  /// </remarks>
-  public string? InsertAfterMso { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the Microsoft Office identifier before which this gallery should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the gallery relative to a built-in control.
-  /// </remarks>
-  public string? InsertBeforeMso { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier after which this gallery should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the gallery relative to another custom control.
-  /// </remarks>
-  public string? InsertAfterQualifiedId { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier before which this gallery should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the gallery relative to another custom control.
-  /// </remarks>
-  public string? InsertBeforeQualifiedId { get; set; }
-
-  /// <summary>
-  ///   Gets or sets a value indicating whether the gallery is visible.
+  /// Show the gallery in the UI.
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the gallery's visibility.
+  /// Callback for dynamic visibility.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the gallery should be visible.
-  /// </remarks>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   Gets or sets the keyboard shortcut (keytip) for accessing the gallery.
+  /// Keyboard shortcut (keytip) for accessing the gallery.
   /// </summary>
-  /// <remarks>
-  ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
-  /// </remarks>
   public string? Keytip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the gallery's keytip.
+  /// Callback for dynamic keytip.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the keytip.
-  /// </remarks>
   public string? GetKeytip { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the gallery's label should be displayed.
+  /// Show the gallery label in the UI.
   /// </summary>
   public bool? ShowLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines whether the label is shown.
+  /// Callback for dynamic label visibility.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the label should be displayed.
-  /// </remarks>
   public string? GetShowLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the gallery's image should be displayed.
+  /// Show the gallery image in the UI.
   /// </summary>
   public bool? ShowImage { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines whether the image is shown.
+  /// Callback for dynamic image visibility.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the image should be displayed.
-  /// </remarks>
   public string? GetShowImage { get; set; }
 
   /// <summary>
-  ///   Gets or sets the collection of static items displayed in the gallery.
+  /// Collection of static items displayed in the gallery.
   /// </summary>
   public SelectionItems? Items { get; set; }
 
   /// <summary>
-  ///   Gets or sets the collection of button controls that can be displayed in the gallery.
+  /// Collection of button controls that can be displayed in the gallery.
   /// </summary>
   public ButtonRegulars? ButtonRegulars { get; set; }
 }

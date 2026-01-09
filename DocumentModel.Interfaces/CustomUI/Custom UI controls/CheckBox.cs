@@ -2,127 +2,100 @@ namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the CheckBox Class.
+/// Represents a check box control for the ribbon interface, supporting dynamic state, labeling, tooltips, and advanced callback integration for flexible UI scenarios.
 /// </summary>
+/// <remarks>
+/// This interface defines a check box control that can be used within box containers and other layout controls in the ribbon. It supports static and callback-based values for pressed state, enabled state, label, description, tooltips, and visibility. The control can be uniquely identified, supports Office built-in icons, and provides accessibility features through screentip and supertip properties. Check boxes are useful for boolean selection, toggling options, and interactive scenarios within custom UI layouts.
+/// </remarks>
 public interface CheckBox : BoxContentControl
 {
   /// <summary>
-  ///   getPressed
+  /// Callback for dynamic pressed state of the check box.
   /// </summary>
   public string? GetPressed { get; set; }
 
   /// <summary>
-  ///   onAction
+  /// Callback executed when the check box is clicked.
   /// </summary>
   public string? OnAction { get; set; }
 
   /// <summary>
-  ///   enabled
+  /// Enable interaction with the check box.
   /// </summary>
   public bool? Enabled { get; set; }
 
   /// <summary>
-  ///   getEnabled
+  /// Callback for dynamic enabled state.
   /// </summary>
   public string? GetEnabled { get; set; }
 
   /// <summary>
-  ///   description
+  /// Description text for the check box.
   /// </summary>
   public string? Description { get; set; }
 
   /// <summary>
-  ///   getDescription
+  /// Callback for dynamic description text.
   /// </summary>
   public string? GetDescription { get; set; }
 
   /// <summary>
-  ///   id
-  /// </summary>
-  public string? Id { get; set; }
-
-  /// <summary>
-  ///   idQ
-  /// </summary>
-  public string? QualifiedId { get; set; }
-
-  /// <summary>
-  ///   tag
+  /// Custom tag for storing additional metadata or for programmatic grouping.
   /// </summary>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   idMso
+  /// Built-in Office identifier for the check box control.
   /// </summary>
   public string? IdMso { get; set; }
 
   /// <summary>
-  ///   screentip
+  /// Screentip text for the check box.
   /// </summary>
   public string? Screentip { get; set; }
 
   /// <summary>
-  ///   getScreentip
+  /// Callback for dynamic screentip text.
   /// </summary>
   public string? GetScreentip { get; set; }
 
   /// <summary>
-  ///   supertip
+  /// Supertip text for the check box.
   /// </summary>
   public string? Supertip { get; set; }
 
   /// <summary>
-  ///   getSupertip
+  /// Callback for dynamic supertip text.
   /// </summary>
   public string? GetSupertip { get; set; }
 
   /// <summary>
-  ///   label
+  /// Label text for the check box.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel
+  /// Callback for dynamic label text.
   /// </summary>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   insertAfterMso
-  /// </summary>
-  public string? InsertAfterMso { get; set; }
-
-  /// <summary>
-  ///   insertBeforeMso
-  /// </summary>
-  public string? InsertBeforeMso { get; set; }
-
-  /// <summary>
-  ///   insertAfterQ
-  /// </summary>
-  public string? InsertAfterQulifiedId { get; set; }
-
-  /// <summary>
-  ///   insertBeforeQ
-  /// </summary>
-  public string? InsertBeforeQulifiedId { get; set; }
-
-  /// <summary>
-  ///   visible
+  /// Show the check box in the UI.
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   getVisible
+  /// Callback for dynamic visibility.
   /// </summary>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   keytip
+  /// Keyboard shortcut (keytip) for accessing the check box.
   /// </summary>
   public string? Keytip { get; set; }
 
   /// <summary>
-  ///   getKeytip
+  /// Callback for dynamic keytip.
   /// </summary>
   public string? GetKeytip { get; set; }
 }
