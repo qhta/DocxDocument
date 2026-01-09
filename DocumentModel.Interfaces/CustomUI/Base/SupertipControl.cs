@@ -14,6 +14,9 @@ public interface SupertipControl
   ///
   ///  The Supertip and GetSupertip attributes are mutually exclusive. If neither attribute is specified no supertip for this control SHOULD be shown.
   /// </summary>
+  /// <remarks>
+  ///   Supertips provide more detailed information than screentips.
+  /// </remarks>
   public string? Supertip { get; set; }
 
   /// <summary>
@@ -21,6 +24,9 @@ public interface SupertipControl
   /// 
   ///   The GetSupertip and Supertip attributes are mutually exclusive. If neither attribute is specified, no supertip for this control SHOULD be shown.
   /// </summary>
+  /// <remarks>
+  ///   The callback function should return a string value for the supertip.
+  /// </remarks>
   public string? GetSupertip { get; set; }
 
 }

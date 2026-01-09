@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage submenu with properties for description, identification, state, labeling, images, keytips, and menu group content. It enables dynamic visibility, enabled state, labeling, and menu content generation, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageSubMenu: QualifiedElement
+public interface BackstageSubMenu: QualifiedElement, TaggedObject
 {
   /// <summary>
   /// Description text for the Backstage submenu.
@@ -17,11 +17,6 @@ public interface BackstageSubMenu: QualifiedElement
   /// Callback for dynamic description text.
   /// </summary>
   public string? GetDescription { get; set; }
-
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Enable interaction with the Backstage submenu.

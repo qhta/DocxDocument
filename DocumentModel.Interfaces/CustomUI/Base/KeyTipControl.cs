@@ -15,6 +15,9 @@ public interface KeyTipControl
   /// 
   ///   The GetKeytip and Keytip attributes are mutually exclusive. If neither attribute is specified, the application SHOULD generate a KeyTip for the control automatically.
   /// </summary>
+  /// <remarks>
+  ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
+  /// </remarks>
   public string? Keytip { get; set; }
 
   /// <summary>
@@ -22,6 +25,9 @@ public interface KeyTipControl
   /// 
   ///   The GetKeytip and Keytip attributes are mutually exclusive. If neither attribute is specified, the application SHOULD generate a KeyTip for the control automatically.
   /// </summary>
+  /// <remarks>
+  ///   The callback function should return a string value for the keytip.
+  /// </remarks>
   public string? GetKeytip { get; set; }
 
 

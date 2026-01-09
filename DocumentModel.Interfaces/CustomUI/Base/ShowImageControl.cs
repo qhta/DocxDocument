@@ -21,5 +21,8 @@ public interface ShowImageControl
   ///   
   ///   The ShowImage and GetShowImage attributes are mutually exclusive. If neither attribute is specified, the control SHOULD display its icon.
   /// </summary>
+  /// <remarks>
+  ///   The callback function should return a boolean value indicating whether the image should be displayed.
+  /// </remarks>
   public string? GetShowImage { get; set; }
 }

@@ -6,12 +6,8 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a container that groups related buttons and controls together within the Office ribbon UI. Button groups allow multiple controls to be visually clustered, providing better organization and efficient use of ribbon space by displaying controls in a compact arrangement.
 /// </remarks>
-public interface ButtonGroup : CustomUIControl, BoxContent, GroupContent
+public interface ButtonGroup : CustomUIControl, BoxContent, GroupContent, TaggedObject
 {
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Show the button group in the UI.

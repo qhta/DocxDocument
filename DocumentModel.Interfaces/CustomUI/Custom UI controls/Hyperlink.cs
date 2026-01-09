@@ -6,13 +6,8 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a hyperlink control for use in Office Backstage views (File menu). It supports navigation to external web resources, other documents, or specific document locations, and appears as a clickable text element with optional icon. The control supports static and dynamic target URLs, comprehensive formatting options, tooltips, layout behavior, and state management. The <c>OnAction</c> callback can override default navigation for custom handling. All properties can be set statically or determined dynamically through callback functions for responsive UI.
 /// </remarks>
-public interface Hyperlink: QualifiedElement
+public interface Hyperlink: QualifiedElement, TaggedObject
 {
-
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Alignment behavior of the hyperlink label.

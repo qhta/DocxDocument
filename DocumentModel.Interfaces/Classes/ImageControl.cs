@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ImageControl Class.
 /// </summary>
-public interface ImageControl
+public interface ImageControl : TaggedObject
 {
   /// <summary>
   ///   id
@@ -13,10 +13,6 @@ public interface ImageControl
   ///   idQ
   /// </summary>
   public string? QualifiedId { get; set; }
-  /// <summary>
-  ///   tag
-  /// </summary>
-  public string? Tag { get; set; }
   /// <summary>
   ///   enabled
   /// </summary>

@@ -10,7 +10,7 @@ namespace DocumentModel;
 ///   a streamlined gallery implementation suitable for use within button groups and other constrained
 ///   ribbon contexts. Galleries support both static and dynamic content generation through callback functions.
 /// </remarks>
-public interface GalleryRegular: CustomUIControl, BuiltInControl, ContextMenuContent
+public interface GalleryRegular: CustomUIControl, BuiltInControl, ContextMenuContent, TaggedObject
 {
   /// <summary>
   ///   Gets or sets the description text for the gallery control.
@@ -129,50 +129,31 @@ public interface GalleryRegular: CustomUIControl, BuiltInControl, ContextMenuCon
   /// <summary>
   ///   Gets or sets the name of a callback function that returns the total number of items in the gallery.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return an integer representing the item count.
-  ///   Use this for dynamically generated gallery content.
-  /// </remarks>
   public string? GetItemCount { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that returns the label for a specific gallery item.
   /// </summary>
-  /// <remarks>
-  ///   The callback function receives an item index and should return a string label.
-  /// </remarks>
   public string? GetItemLabel { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that returns the screentip for a specific gallery item.
   /// </summary>
-  /// <remarks>
-  ///   The callback function receives an item index and should return a string screentip.
-  /// </remarks>
   public string? GetItemScreentip { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that returns the supertip for a specific gallery item.
   /// </summary>
-  /// <remarks>
-  ///   The callback function receives an item index and should return a string supertip (extended tooltip).
-  /// </remarks>
   public string? GetItemSupertip { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that returns the image for a specific gallery item.
   /// </summary>
-  /// <remarks>
-  ///   The callback function receives an item index and should return an image object or identifier.
-  /// </remarks>
   public string? GetItemImage { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that returns the unique identifier for a specific gallery item.
   /// </summary>
-  /// <remarks>
-  ///   The callback function receives an item index and should return a string identifier.
-  /// </remarks>
   public string? GetItemID { get; set; }
 
   /// <summary>
@@ -183,26 +164,12 @@ public interface GalleryRegular: CustomUIControl, BuiltInControl, ContextMenuCon
   /// <summary>
   ///   Gets or sets the name of a callback function that returns the identifier of the currently selected item.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string identifier of the selected item.
-  /// </remarks>
   public string? GetSelectedItemID { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that returns the index of the currently selected item.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return an integer index of the selected item.
-  /// </remarks>
   public string? GetSelectedItemIndex { get; set; }
-
-  /// <summary>
-  ///   Gets or sets an arbitrary tag value for custom data storage.
-  /// </summary>
-  /// <remarks>
-  ///   The tag can be used to store application-specific information associated with this gallery.
-  /// </remarks>
-  public string? Tag { get; set; }
 
   /// <summary>
   ///   Gets or sets the screentip (tooltip) text for the gallery.
@@ -212,25 +179,16 @@ public interface GalleryRegular: CustomUIControl, BuiltInControl, ContextMenuCon
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the gallery's screentip.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the screentip.
-  /// </remarks>
   public string? GetScreentip { get; set; }
 
   /// <summary>
   ///   Gets or sets the supertip (extended tooltip) text for the gallery.
   /// </summary>
-  /// <remarks>
-  ///   Supertips provide more detailed information than screentips.
-  /// </remarks>
   public string? Supertip { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the gallery's supertip.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the supertip.
-  /// </remarks>
   public string? GetSupertip { get; set; }
 
   /// <summary>
@@ -241,9 +199,6 @@ public interface GalleryRegular: CustomUIControl, BuiltInControl, ContextMenuCon
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the gallery's label.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the label.
-  /// </remarks>
   public string? GetLabel { get; set; }
 
   /// <summary>
@@ -254,25 +209,16 @@ public interface GalleryRegular: CustomUIControl, BuiltInControl, ContextMenuCon
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the gallery's visibility.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the gallery should be visible.
-  /// </remarks>
   public string? GetVisible { get; set; }
 
   /// <summary>
   ///   Gets or sets the keyboard shortcut (keytip) for accessing the gallery.
   /// </summary>
-  /// <remarks>
-  ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
-  /// </remarks>
   public string? Keytip { get; set; }
 
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines the gallery's keytip.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the keytip.
-  /// </remarks>
   public string? GetKeytip { get; set; }
 
   /// <summary>
@@ -283,9 +229,6 @@ public interface GalleryRegular: CustomUIControl, BuiltInControl, ContextMenuCon
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines whether the label is shown.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the label should be displayed.
-  /// </remarks>
   public string? GetShowLabel { get; set; }
 
   /// <summary>
@@ -296,9 +239,6 @@ public interface GalleryRegular: CustomUIControl, BuiltInControl, ContextMenuCon
   /// <summary>
   ///   Gets or sets the name of a callback function that dynamically determines whether the image is shown.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the image should be displayed.
-  /// </remarks>
   public string? GetShowImage { get; set; }
 
   /// <summary>

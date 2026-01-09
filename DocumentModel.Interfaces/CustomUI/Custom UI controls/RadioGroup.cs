@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a control that presents a set of radio button options where only one item can be selected at a time. Radio groups are commonly used in backstage views and other Office UI contexts to allow users to choose from a predefined set of mutually exclusive options. The control supports both static and dynamic content generation, with options for customizable labels, layout expansion, keyboard shortcuts, and enabled/visible states that can be controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface RadioGroup : IdentifiedElement
+public interface RadioGroup : IdentifiedElement, TaggedObject
 {
   /// <summary>
   /// Arbitrary tag value for custom data storage.
