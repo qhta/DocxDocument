@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a combo box control that allows users to either type text directly or select from a predefined list of options. Unlike a simple dropdown, the combo box provides an editable text field, making it suitable for scenarios where users need flexibility to enter custom values or select from suggestions. The control supports both static and dynamic content generation, customizable appearance with images and labels, text length constraints, and change notifications. It can have its state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface ComboBox : BoxContentControl
+public interface ComboBox : CustomUIControl, BoxContent, BuiltInControl
 {
   /// <summary>
   /// Show item images in the dropdown list.
@@ -97,11 +97,6 @@ public interface ComboBox : BoxContentControl
   /// Arbitrary tag value for custom data storage.
   /// </summary>
   public string? Tag { get; set; }
-
-  /// <summary>
-  /// Built-in Office identifier for a combo box control.
-  /// </summary>
-  public string? IdMso { get; set; }
 
   /// <summary>
   /// Screentip text for the combo box.

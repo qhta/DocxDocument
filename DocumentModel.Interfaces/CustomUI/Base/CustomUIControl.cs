@@ -2,17 +2,11 @@ namespace DocumentModel;
 
 /// <summary>
 ///   Defines the common properties for all custom UI controls.
-///   Reuses the IdentifiedElement interface for the Id property and adds QualifiedId and insertion attributes.
+///   Reuses the IdentifiedElement and QualifiedElement interfaces for the Id and QualifiedId properties
+///   and adds insertion attributes that can be used to control the placement of the control within a collection.
 /// </summary>
-public interface CustomUIControl: IdentifiedElement, CollectionItem
+public interface CustomUIControl: QualifiedElement, CollectionItem
 {
-  /// <summary>
-  ///   Specifies a qualified identifier for a control.
-  ///   The QualifiedId attribute can be used to reference controls or containers created by other Custom UI documents.
-  /// 
-  ///   The Id, QualifiedId, and IdMso attributes are mutually exclusive. At least one of these attributes MUST be specified.
-  /// </summary>
-  public string? QualifiedId { get; set; }
 
   /// <summary>
   ///   Specifies the identifier of a built-in control that this control is to be inserted after. If the value of this attribute is not understood, it SHOULD be ignored.

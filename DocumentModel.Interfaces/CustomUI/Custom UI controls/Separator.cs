@@ -11,21 +11,8 @@ namespace DocumentModel;
 ///   between different functional areas of the ribbon. They support positioning relative to other controls
 ///   and can have their visibility controlled statically or dynamically through callbacks.
 /// </remarks>
-public interface Separator
+public interface Separator: CustomUIControl
 {
-  /// <summary>
-  ///   Gets or sets the unique identifier for this separator.
-  /// </summary>
-  public string? Id { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier for this separator.
-  /// </summary>
-  /// <remarks>
-  ///   Use this when the identifier needs to be unique across multiple namespaces.
-  /// </remarks>
-  public string? QualifiedId { get; set; }
-
   /// <summary>
   ///   Gets or sets an arbitrary tag value for custom data storage.
   /// </summary>
@@ -47,35 +34,4 @@ public interface Separator
   /// </remarks>
   public string? GetVisible { get; set; }
 
-  /// <summary>
-  ///   Gets or sets the Microsoft Office identifier after which this separator should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the separator relative to a built-in control.
-  /// </remarks>
-  public string? InsertAfterMso { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the Microsoft Office identifier before which this separator should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the separator relative to a built-in control.
-  /// </remarks>
-  public string? InsertBeforeMso { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier after which this separator should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the separator relative to another custom control.
-  /// </remarks>
-  public string? InsertAfterQualifiedId { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier before which this separator should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the separator relative to another custom control.
-  /// </remarks>
-  public string? InsertBeforeQualifiedId { get; set; }
 }

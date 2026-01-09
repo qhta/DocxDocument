@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a clickable button control that can be placed in various ribbon locations such as groups, menus, and containers. Buttons support customizable appearance with images, labels, tooltips, keyboard shortcuts, and can have their state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface Button : BoxContentControl
+public interface Button : CustomUIControl, BoxContent, BuiltInControl
 {
   /// <summary>
   /// Callback executed when the button is clicked.
@@ -52,11 +52,6 @@ public interface Button : BoxContentControl
   /// Arbitrary tag value for custom data storage.
   /// </summary>
   public string? Tag { get; set; }
-
-  /// <summary>
-  /// Built-in Office identifier for a button control.
-  /// </summary>
-  public string? IdMso { get; set; }
 
   /// <summary>
   /// Screentip text for the button.
