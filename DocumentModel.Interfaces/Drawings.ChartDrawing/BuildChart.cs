@@ -1,17 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Represents build chart options, including build type, background animation, and additional extension settings for chart elements.
+/// Describes options for building and animating charts, including the build sequence and background animation settings.
 /// </summary>
-public interface BuildChart: ExtendableElement
+public interface BuildChart : ExtendableElement
 {
   /// <summary>
-  /// Build type or sequence for the chart.
+  /// Specifies the build sequence or type for chart elements during animation or rendering.
   /// </summary>
   public string? Build { get; set; }
 
   /// <summary>
-  /// Specifies whether the chart background elements should be animated as well.
+  /// Indicates whether background elements of the chart should be animated along with chart data.
   /// </summary>
   public bool? AnimateBackground { get; set; }
 }
