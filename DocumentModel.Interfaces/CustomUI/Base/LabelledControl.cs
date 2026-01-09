@@ -22,5 +22,8 @@ public interface LabelledControl
   ///
   ///   The Label and GetLabel attributes are mutually exclusive. If neither attribute is specified, no label SHOULD be displayed.
   /// </summary>
+  /// <remarks>
+  ///   The callback function should return a string value for the label.
+  /// </remarks>
   public string? GetLabel { get; set; }
 }
