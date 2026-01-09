@@ -1,223 +1,130 @@
 namespace DocumentModel;
 
 /// <summary>
-///   Represents a button control that executes an action when clicked in the ribbon interface.
+/// Represents a button control that executes an action when clicked in the ribbon interface, supporting customizable appearance, dynamic state, and advanced callback integration for flexible UI scenarios.
 /// </summary>
 /// <remarks>
-///   This interface defines a clickable button control
-///   that can be placed in various ribbon locations such as groups, menus, and containers.
-///   Buttons support customizable appearance with images, labels, tooltips, keyboard shortcuts,
-///   and can have their state and behavior controlled through static properties or dynamic callbacks.
+/// This interface defines a clickable button control that can be placed in various ribbon locations such as groups, menus, and containers. Buttons support customizable appearance with images, labels, tooltips, keyboard shortcuts, and can have their state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface Button: BoxContentControl
+public interface Button : BoxContentControl
 {
   /// <summary>
-  ///   Gets or sets the name of the callback function executed when the button is clicked.
+  /// Callback executed when the button is clicked.
   /// </summary>
   public string? OnAction { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the button is enabled and can be clicked.
+  /// Enable interaction with the button.
   /// </summary>
   public bool? Enabled { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines whether the button is enabled.
+  /// Callback for dynamic enabled state.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the button should be enabled.
-  /// </remarks>
   public string? GetEnabled { get; set; }
 
   /// <summary>
-  ///   Gets or sets the description text that provides additional information about the button.
+  /// Description text that provides additional information about the button.
   /// </summary>
   public string? Description { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the button's description.
+  /// Callback for dynamic description text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the description.
-  /// </remarks>
   public string? GetDescription { get; set; }
 
   /// <summary>
-  ///   Gets or sets the custom image identifier for the button icon.
+  /// Custom image identifier for the button icon.
   /// </summary>
-  /// <remarks>
-  ///   The image identifier references a custom image resource included in the Office add-in.
-  /// </remarks>
   public string? Image { get; set; }
 
   /// <summary>
-  ///   Gets or sets the Microsoft Office image identifier for the button icon.
+  /// Built-in Office image identifier for the button icon.
   /// </summary>
-  /// <remarks>
-  ///   Use this to display a built-in Office icon for the button.
-  /// </remarks>
   public string? ImageMso { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the button's image.
+  /// Callback for dynamic button image.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return an image object or identifier.
-  /// </remarks>
   public string? GetImage { get; set; }
 
   /// <summary>
-  ///   Gets or sets the unique identifier for this button.
+  /// Arbitrary tag value for custom data storage.
   /// </summary>
-  public string? Id { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier for this button.
-  /// </summary>
-  /// <remarks>
-  ///   Use this when the identifier needs to be unique across multiple namespaces.
-  /// </remarks>
-  public string? QualifiedId { get; set; }
-
-  /// <summary>
-  ///   Gets or sets an arbitrary tag value for custom data storage.
-  /// </summary>
-  /// <remarks>
-  ///   The tag can be used to store application-specific information associated with this button.
-  /// </remarks>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   Gets or sets the identifier for a built-in Microsoft Office button.
+  /// Built-in Office identifier for a button control.
   /// </summary>
   public string? IdMso { get; set; }
 
   /// <summary>
-  ///   Gets or sets the screentip (tooltip) text for the button.
+  /// Screentip text for the button.
   /// </summary>
   public string? Screentip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the button's screentip.
+  /// Callback for dynamic screentip text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the screentip.
-  /// </remarks>
   public string? GetScreentip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the supertip (extended tooltip) text for the button.
+  /// Supertip text for the button.
   /// </summary>
-  /// <remarks>
-  ///   Supertips provide more detailed information than screentips.
-  /// </remarks>
   public string? Supertip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the button's supertip.
+  /// Callback for dynamic supertip text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the supertip.
-  /// </remarks>
   public string? GetSupertip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the display label for the button.
+  /// Label text for the button.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the button's label.
+  /// Callback for dynamic label text.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the label.
-  /// </remarks>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets the Microsoft Office identifier after which this button should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the button relative to a built-in control.
-  /// </remarks>
-  public string? InsertAfterMso { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the Microsoft Office identifier before which this button should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the button relative to a built-in control.
-  /// </remarks>
-  public string? InsertBeforeMso { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier after which this button should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the button relative to another custom control.
-  /// </remarks>
-  public string? InsertAfterQualifiedId { get; set; }
-
-  /// <summary>
-  ///   Gets or sets the qualified identifier before which this button should be inserted.
-  /// </summary>
-  /// <remarks>
-  ///   Use this to position the button relative to another custom control.
-  /// </remarks>
-  public string? InsertBeforeQualifiedId { get; set; }
-
-  /// <summary>
-  ///   Gets or sets a value indicating whether the button is visible.
+  /// Show the button in the UI.
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the button's visibility.
+  /// Callback for dynamic visibility.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the button should be visible.
-  /// </remarks>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   Gets or sets the keyboard shortcut (keytip) for accessing the button.
+  /// Keyboard shortcut (keytip) for accessing the button.
   /// </summary>
-  /// <remarks>
-  ///   Keytips are displayed when the user presses the Alt key and provide keyboard-based navigation.
-  /// </remarks>
   public string? Keytip { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines the button's keytip.
+  /// Callback for dynamic keytip.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a string value for the keytip.
-  /// </remarks>
   public string? GetKeytip { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the button's label should be displayed.
+  /// Show the button label in the UI.
   /// </summary>
   public bool? ShowLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines whether the label is shown.
+  /// Callback for dynamic label visibility.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the label should be displayed.
-  /// </remarks>
   public string? GetShowLabel { get; set; }
 
   /// <summary>
-  ///   Gets or sets a value indicating whether the button's image should be displayed.
+  /// Show the button image in the UI.
   /// </summary>
   public bool? ShowImage { get; set; }
 
   /// <summary>
-  ///   Gets or sets the name of a callback function that dynamically determines whether the image is shown.
+  /// Callback for dynamic image visibility.
   /// </summary>
-  /// <remarks>
-  ///   The callback function should return a boolean value indicating whether the image should be displayed.
-  /// </remarks>
   public string? GetShowImage { get; set; }
 }
