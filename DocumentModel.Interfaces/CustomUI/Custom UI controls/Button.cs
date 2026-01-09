@@ -9,7 +9,7 @@ namespace DocumentModel;
 ///   Buttons support customizable appearance with images, labels, tooltips, keyboard shortcuts,
 ///   and can have their state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface Button
+public interface Button: BoxContentControl
 {
   /// <summary>
   ///   Gets or sets the name of the callback function executed when the button is clicked.
