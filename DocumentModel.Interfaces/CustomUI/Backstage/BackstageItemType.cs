@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage item type with properties for identification and labeling. It enables dynamic label text and supports collection-based organization for advanced Backstage customization in Office applications.
 /// </remarks>
-public interface BackstageItemType : CollectionItem, IdentifiedElement
+public interface BackstageItemType : IdentifiedElement, CollectionItem
 {
 
   /// <summary>
