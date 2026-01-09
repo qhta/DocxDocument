@@ -1,24 +1,30 @@
 namespace DocumentModel;
 
 /// <summary>
-///   Defines the ThemeFamily Class.
+/// Represents a theme family definition for Office documents, supporting identification, versioning, and extension metadata for advanced theme management scenarios.
 /// </summary>
+/// <remarks>
+/// This interface provides properties for theme family name, unique identifiers, versioning, and OfficeArt extension metadata. It enables flexible theme organization, compatibility management, and extensibility for Office document processing and customization.
+/// </remarks>
 public interface ThemeFamily
 {
   /// <summary>
-  ///   name
+  /// Name of the theme family.
   /// </summary>
   public string? Name { get; set; }
+
   /// <summary>
-  ///   id
+  /// Unique identifier for the theme family.
   /// </summary>
   public string? Id { get; set; }
+
   /// <summary>
-  ///   vid
+  /// Version identifier for the theme family.
   /// </summary>
   public string? Vid { get; set; }
+
   /// <summary>
-  ///   OfficeArtExtensionList.
+  /// OfficeArt extension metadata for the theme family.
   /// </summary>
   public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

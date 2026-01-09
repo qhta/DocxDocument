@@ -1,120 +1,120 @@
 namespace DocumentModel;
 
 /// <summary>
-///   Defines the VisibleButton Class.
+/// Represents a visible button control for Office UI, supporting dynamic state, customizable appearance, and advanced callback integration for flexible scenarios.
 /// </summary>
-public interface VisibleButton
+/// <remarks>
+/// This interface defines a button that can be placed in various Office UI contexts, supporting dynamic enabled state, labeling, images, tooltips, and flexible positioning. Callback integration enables runtime behavior, accessibility, and context-sensitive actions.
+/// </remarks>
+public interface VisibleButton: CustomUIControl
 {
   /// <summary>
-  ///   onAction
+  /// Callback executed when the button is clicked.
   /// </summary>
   public string? OnAction { get; set; }
+
   /// <summary>
-  ///   enabled
+  /// Enable interaction with the button.
   /// </summary>
   public bool? Enabled { get; set; }
+
   /// <summary>
-  ///   getEnabled
+  /// Callback for dynamic enabled state.
   /// </summary>
   public string? GetEnabled { get; set; }
+
   /// <summary>
-  ///   description
+  /// Description text for the button.
   /// </summary>
   public string? Description { get; set; }
+
   /// <summary>
-  ///   getDescription
+  /// Callback for dynamic description text.
   /// </summary>
   public string? GetDescription { get; set; }
+
   /// <summary>
-  ///   image
+  /// Custom image identifier for the button icon.
   /// </summary>
   public string? Image { get; set; }
+
   /// <summary>
-  ///   imageMso
+  /// Built-in Office image identifier for the button icon.
   /// </summary>
   public string? ImageMso { get; set; }
+
   /// <summary>
-  ///   getImage
+  /// Callback for dynamic button image.
   /// </summary>
   public string? GetImage { get; set; }
+
   /// <summary>
-  ///   id
-  /// </summary>
-  public string? Id { get; set; }
-  /// <summary>
-  ///   idQ
-  /// </summary>
-  public string? QualifiedId { get; set; }
-  /// <summary>
-  ///   tag
+  /// Arbitrary tag value for custom data storage.
   /// </summary>
   public string? Tag { get; set; }
+
   /// <summary>
-  ///   idMso
+  /// Built-in Office identifier for a button control.
   /// </summary>
   public string? IdMso { get; set; }
+
   /// <summary>
-  ///   screentip
+  /// Screentip text for the button.
   /// </summary>
   public string? Screentip { get; set; }
+
   /// <summary>
-  ///   getScreentip
+  /// Callback for dynamic screentip text.
   /// </summary>
   public string? GetScreentip { get; set; }
+
   /// <summary>
-  ///   supertip
+  /// Supertip text for the button.
   /// </summary>
   public string? Supertip { get; set; }
+
   /// <summary>
-  ///   getSupertip
+  /// Callback for dynamic supertip text.
   /// </summary>
   public string? GetSupertip { get; set; }
+
   /// <summary>
-  ///   label
+  /// Label text for the button.
   /// </summary>
   public string? Label { get; set; }
+
   /// <summary>
-  ///   getLabel
+  /// Callback for dynamic label text.
   /// </summary>
   public string? GetLabel { get; set; }
+
   /// <summary>
-  ///   insertAfterMso
-  /// </summary>
-  public string? InsertAfterMso { get; set; }
-  /// <summary>
-  ///   insertBeforeMso
-  /// </summary>
-  public string? InsertBeforeMso { get; set; }
-  /// <summary>
-  ///   insertAfterQ
-  /// </summary>
-  public string? InsertAfterQualifiedId { get; set; }
-  /// <summary>
-  ///   insertBeforeQ
-  /// </summary>
-  public string? InsertBeforeQualifiedId { get; set; }
-  /// <summary>
-  ///   keytip
+  /// Keyboard shortcut (keytip) for accessing the button.
   /// </summary>
   public string? Keytip { get; set; }
+
   /// <summary>
-  ///   getKeytip
+  /// Callback for dynamic keytip.
   /// </summary>
   public string? GetKeytip { get; set; }
+
   /// <summary>
-  ///   showLabel
+  /// Show the button label in the UI.
   /// </summary>
   public bool? ShowLabel { get; set; }
+
   /// <summary>
-  ///   getShowLabel
+  /// Callback for dynamic label visibility.
   /// </summary>
   public string? GetShowLabel { get; set; }
+
   /// <summary>
-  ///   showImage
+  /// Show the button image in the UI.
   /// </summary>
   public bool? ShowImage { get; set; }
+
   /// <summary>
-  ///   getShowImage
+  /// Callback for dynamic image visibility.
   /// </summary>
   public string? GetShowImage { get; set; }
 }
