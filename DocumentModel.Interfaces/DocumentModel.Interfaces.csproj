@@ -28,6 +28,28 @@
     <None Remove="Settings\**" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="CustomUI\Box.cs" />
+    <Compile Remove="CustomUI\Button.cs" />
+    <Compile Remove="CustomUI\ButtonGroup.cs" />
+    <Compile Remove="CustomUI\ButtonRegular.cs" />
+    <Compile Remove="CustomUI\ButtonRegulars.cs" />
+    <Compile Remove="CustomUI\CheckBox.cs" />
+    <Compile Remove="CustomUI\ComboBox.cs" />
+    <Compile Remove="CustomUI\DropDownRegular.cs" />
+    <Compile Remove="CustomUI\DynamicMenu.cs" />
+    <Compile Remove="CustomUI\DynamicMenuRegular.cs" />
+    <Compile Remove="CustomUI\EditBox.cs" />
+    <Compile Remove="CustomUI\Gallery.cs" />
+    <Compile Remove="CustomUI\GalleryRegular.cs" />
+    <Compile Remove="CustomUI\Group.cs" />
+    <Compile Remove="CustomUI\GroupBox.cs" />
+    <Compile Remove="CustomUI\Menu.cs" />
+    <Compile Remove="CustomUI\MenuRegular.cs" />
+    <Compile Remove="CustomUI\MenuSeparator.cs" />
+    <Compile Remove="CustomUI\RadioGroup.cs" />
+    <Compile Remove="CustomUI\Separator.cs" />
+    <Compile Remove="CustomUI\ToggleButton.cs" />
+    <Compile Remove="CustomUI\ToggleButtonRegular.cs" />
     <Compile Remove="Math\Classes\OfficeMathArgumentType.cs" />
     <Compile Remove="Packaging\Classes\CustomizationPart.cs" />
     <Compile Remove="Properties\DigitalSignature.cs" />

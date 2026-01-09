@@ -1,9 +1,10 @@
 namespace DocumentModel;
 
 /// <summary>
-///   Defines the common properties for all Sdt controls
+///   Defines the common properties for all custom UI controls.
+///   Reuses the IdentifiedElement interface for the Id property and adds QualifiedId and insertion attributes.
 /// </summary>
-public interface CustomControlBase: IdentifiedElement
+public interface CustomUIControl: IdentifiedElement, CollectionItem
 {
   /// <summary>
   ///   Specifies a qualified identifier for a control.
