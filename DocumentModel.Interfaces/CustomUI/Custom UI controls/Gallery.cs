@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a gallery control that presents a visual collection of selectable items arranged in rows and columns. Galleries provide rich visual selection interfaces with customizable item appearance, dimensions, labels, and images. They support both static and dynamic content generation through callback functions.
 /// </remarks>
-public interface Gallery : CustomUIControl, BoxContent, BuiltInControl
+public interface Gallery : CustomUIControl, BuiltInControl, BoxContent, GroupContent
 {
   /// <summary>
   /// Size of the gallery control in the ribbon.
@@ -236,5 +236,5 @@ public interface Gallery : CustomUIControl, BoxContent, BuiltInControl
   /// <summary>
   /// Collection of button controls that can be displayed in the gallery.
   /// </summary>
-  public ButtonRegulars? ButtonRegulars { get; set; }
+  public RegularButtonsList? ButtonRegulars { get; set; }
 }

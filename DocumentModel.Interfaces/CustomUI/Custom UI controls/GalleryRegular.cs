@@ -309,5 +309,5 @@ public interface GalleryRegular: CustomUIControl, BuiltInControl
   /// <summary>
   ///   Gets or sets the collection of button controls that can be displayed in the gallery.
   /// </summary>
-  public ButtonRegulars? ButtonRegulars { get; set; }
+  public RegularButtonsList? ButtonRegulars { get; set; }
 }

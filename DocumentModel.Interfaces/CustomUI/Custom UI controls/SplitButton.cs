@@ -7,7 +7,7 @@ namespace DocumentModel;
 /// Split buttons merge a primary button and a dropdown menu, providing quick access to a default action while offering additional choices through the dropdown. They are ideal for commands with multiple variations where one option is used most frequently. The interface supports dynamic sizing, enabled state, visibility, label display, and keytips through callback functions. Split buttons are commonly used for paste operations, format commands, insert operations, save/export, and view modes. The structure consists of a primary action (button or toggle button), a dropdown menu, and visual/positioning properties for seamless ribbon integration.
 /// </remarks>
 
-public interface SplitButton : BoxContent
+public interface SplitButton : CustomUIControl, BoxContent, GroupContent
 {
   /// <summary>
   /// Display size of the split button in the ribbon.
