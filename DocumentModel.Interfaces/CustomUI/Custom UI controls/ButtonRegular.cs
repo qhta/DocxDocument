@@ -11,7 +11,7 @@ namespace DocumentModel;
 ///   customizable appearance with images, labels, tooltips, keyboard shortcuts, and can have its state and
 ///   behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface ButtonRegular: CustomUIControl, BuiltInControl
+public interface ButtonRegular: CustomUIControl, BuiltInControl, ContextMenuContent
 {
   /// <summary>
   ///   Gets or sets the name of the callback function executed when the button is clicked.
