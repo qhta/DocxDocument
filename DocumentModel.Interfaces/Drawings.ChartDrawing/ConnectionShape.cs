@@ -1,28 +1,32 @@
 namespace DocumentModel.Drawings.ChartDrawing;
 
 /// <summary>
-///   Connection Shape.
+/// Describes a connection shape in chart drawings, including macro references, publishing options, non-visual connector properties, shape formatting, and style settings.
 /// </summary>
 public interface ConnectionShape
 {
   /// <summary>
-  ///   Reference to Custom Function
+  /// Macro name or reference for custom functionality associated with the connection shape.
   /// </summary>
   public string? Macro { get; set; }
+
   /// <summary>
-  ///   Publish to Server
+  /// Indicates whether the connection shape should be published to a server or external destination.
   /// </summary>
   public bool? Published { get; set; }
+
   /// <summary>
-  ///   Connector Non Visual Properties.
+  /// Non-visual properties for the connector shape, including drawing and connection settings.
   /// </summary>
   public NonVisualConnectorShapeDrawingProperties? NonVisualConnectorShapeDrawingProperties { get; set; }
+
   /// <summary>
-  ///   Shape Properties.
+  /// Formatting and visual properties for the connection shape.
   /// </summary>
   public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  ///   Connection Shape Style.
+  /// Style settings applied to the connection shape for appearance customization.
   /// </summary>
   public Style? Style { get; set; }
 }
