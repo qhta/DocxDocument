@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a button control that toggles between pressed (on) and unpressed (off) states when clicked. Unlike a standard <see cref="Button"/> which executes a single action, toggle buttons maintain their state to indicate whether a feature or option is currently active. They are commonly used for formatting options (like Bold or Italic) or to show/hide UI elements. The control supports customizable appearance with images, labels, tooltips, sizing options, and can have its state and behavior controlled through static properties or dynamic callbacks.
 /// </remarks>
-public interface ToggleButton : CustomUIControl, BuiltInControl, BoxContent, GroupContent
+public interface ToggleButton : CustomUIControl, BuiltInControl, BoxContent, GroupContent, TaggedObject
 {
   /// <summary>
   /// Size of the toggle button control in the ribbon.

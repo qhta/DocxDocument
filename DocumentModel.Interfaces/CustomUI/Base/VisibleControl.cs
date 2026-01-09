@@ -22,5 +22,8 @@ public interface VisibleControl
   /// 
   ///  The GetVisible and Visible attributes are mutually exclusive. If neither attribute is specified, the control SHOULD default to being visible.
   /// </summary>
+  /// <remarks>
+  ///   The callback function should return a boolean value indicating whether the control should be visible.
+  /// </remarks>
   public string? GetVisible { get; set; }
 }

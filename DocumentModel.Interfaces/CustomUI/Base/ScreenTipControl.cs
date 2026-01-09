@@ -23,6 +23,9 @@ public interface ScreenTipControl
   ///   The GetScreentip and Screentip attributes are mutually exclusive.
   ///   If neither attribute is specified, the application SHOULD display the label of the control as the screentip or display no screentip at all.
   /// </summary>
+  /// <remarks>
+  ///   The callback function should return a string value for the screentip.
+  /// </remarks>
   public string? GetScreentip { get; set; }
 
 }

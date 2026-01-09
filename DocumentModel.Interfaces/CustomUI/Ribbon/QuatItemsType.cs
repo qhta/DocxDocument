@@ -6,20 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines application-level QAT customization, enabling the addition of shared controls, cloned Office commands, and separators that persist across all documents and sessions. It supports streamlined, single-click operations and complements document-level QAT customizations for global workflows, add-in integration, and user preferences.
 /// </remarks>
-public interface SharedControlsQatItems
+public interface QatItemsCollection: ElementCollection<QatItem>
 {
-  /// <summary>
-  /// Reference to a built-in Office control to clone and add to the shared Quick Access Toolbar.
-  /// </summary>
-  public ControlCloneQat? ControlCloneQat { get; set; }
 
-  /// <summary>
-  /// Custom button control to add to the shared Quick Access Toolbar.
-  /// </summary>
-  public ButtonRegular? ButtonRegular { get; set; }
-
-  /// <summary>
-  /// Visual separator to organize and group related commands in the shared Quick Access Toolbar.
-  /// </summary>
-  public Separator? Separator { get; set; }
 }

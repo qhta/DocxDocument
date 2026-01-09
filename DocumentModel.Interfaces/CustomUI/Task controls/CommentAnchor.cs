@@ -6,10 +6,6 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a comment anchor for Office UI, enabling unique identification and flexible linking of comments to document elements, tasks, or extensible features. It supports advanced workflows for annotation, review, and integration in Office add-ins or document solutions.
 /// </remarks>
-public interface CommentAnchor
+public interface CommentAnchor: IdentifiedElement
 {
-  /// <summary>
-  /// Unique identifier for the comment anchor.
-  /// </summary>
-  public string? Id { get; set; }
 }

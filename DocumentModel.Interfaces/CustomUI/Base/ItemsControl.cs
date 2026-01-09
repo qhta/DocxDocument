@@ -23,6 +23,10 @@ public interface IItemControl
   ///   If this attribute is omitted, the control SHOULD display any selection items that are specified as child elements.
   ///   If no such items are specified, the control SHOULD be empty.
   /// </summary>
+  /// <remarks>
+  ///   The callback function should return an integer representing the item count.
+  ///   Use this for dynamically generated gallery content.
+  /// </remarks>
   public string? GetItemCount { get; set; }
 
   /// <summary>
@@ -30,6 +34,9 @@ public interface IItemControl
   /// 
   ///   If this attribute is omitted, dynamically-created selection items SHOULD NOT display labels.
   /// </summary>
+  /// <remarks>
+  ///   The callback function receives an item index and should return a string label.
+  /// </remarks>
   public string? GetItemLabel { get; set; }
 
   /// <summary>
@@ -37,6 +44,9 @@ public interface IItemControl
   /// 
   ///   If this attribute is omitted, dynamically-created selection items SHOULD use their labels as their screentips, or display no screentips at all.
   /// </summary>
+  /// <remarks>
+  ///   The callback function receives an item index and should return a string screentip.
+  /// </remarks>
   public string? GetItemScreentip { get; set; }
 
   /// <summary>
@@ -44,6 +54,9 @@ public interface IItemControl
   /// 
   ///   If this attribute is omitted, dynamically-created selection items SHOULD NOT display supertips.
   /// </summary>
+  /// <remarks>
+  ///   The callback function receives an item index and should return a string supertip (extended tooltip).
+  /// </remarks>
   public string? GetItemSupertip { get; set; }
 
   /// <summary>
@@ -51,6 +64,9 @@ public interface IItemControl
   /// 
   ///   If this attribute is omitted, dynamically-created selection items SHOULD NOT display icons.
   /// </summary>
+  /// <remarks>
+  ///   The callback function receives an item index and should return an image object or identifier.
+  /// </remarks>
   public string? GetItemImage { get; set; }
 
   /// <summary>
@@ -58,5 +74,8 @@ public interface IItemControl
   /// 
   ///   If this attribute is omitted, dynamically-created selection items SHOULD have empty identifiers.
   /// </summary>
+  /// <remarks>
+  ///   The callback function receives an item index and should return a string identifier.
+  /// </remarks>
   public string? GetItemID { get; set; }
 }

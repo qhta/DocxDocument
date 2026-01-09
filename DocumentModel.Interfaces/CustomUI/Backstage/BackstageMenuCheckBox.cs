@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage menu checkbox with properties for description, identification, state, labeling, keytips, and pressed state. It enables dynamic visibility, enabled state, labeling, and pressed state, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageMenuCheckBox: QualifiedElement
+public interface BackstageMenuCheckBox: QualifiedElement, TaggedObject
 {
   /// <summary>
   /// Description text for the Backstage menu checkbox.
@@ -17,11 +17,6 @@ public interface BackstageMenuCheckBox: QualifiedElement
   /// Callback for dynamic description text.
   /// </summary>
   public string? GetDescription { get; set; }
-
-  /// <summary>
-  /// Arbitrary tag value for custom data storage.
-  /// </summary>
-  public string? Tag { get; set; }
 
   /// <summary>
   /// Callback executed when the checkbox is clicked.
