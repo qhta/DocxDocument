@@ -16,5 +16,5 @@ public interface FillTextEffect
   /// <summary>
   ///   GradientFillProperties.
   /// </summary>
-  public GradientFillProperties? GradientFillProperties { get; set; }
+  public DMWD.GradientFillProperties? GradientFillProperties { get; set; }
 }

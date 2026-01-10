@@ -259,7 +259,7 @@ public interface TextFormat
   /// <summary>
   ///   Gets the shading object for background patterns and colors.
   /// </summary>
-  public Shading? Shading { get; }
+  public DMWD.Shading? Shading { get; }
 
   #endregion
 

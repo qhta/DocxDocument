@@ -545,7 +545,7 @@ public interface DocumentSettings : DocumentProperties
   /// This setting freezes the document's presentation such that the ink annotations must exist at the same position 
   /// of the WordprocessingML document irrespective of the monitor on which the WordprocessingML document is rendered.
   /// </summary>
-  public ReadModeInkLockDown? ReadModeInkLockDown { get; set; }
+  public DMWD.ReadModeInkLockDown? ReadModeInkLockDown { get; set; }
   /// <summary>
   /// This element specifies that the date and time information shall be removed from all annotations which are present 
   /// in the current document when it is saved. Annotations store this information in the date attribute on the annotation's XML element.
@@ -627,7 +627,7 @@ public interface DocumentSettings : DocumentProperties
   /// </summary>
   [Category("VML")]
   [Obsolete]
-  public ShapeDefaults? ShapeDefaults { get; set; }
+  public DMWD.ShapeDefaults? ShapeDefaults { get; set; }
   /// <summary>
   /// This element specifies that an e-mail message header shall be displayed when this document is opened, 
   /// if an email header is supported by the application opening the file.
