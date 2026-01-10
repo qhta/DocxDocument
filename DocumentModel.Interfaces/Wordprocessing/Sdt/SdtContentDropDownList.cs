@@ -1,17 +1,14 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the SdtContentDropDownList Class.
+/// Represents the configuration for drop-down list content controls in a structured document tag (SDT) in a Wordprocessing document.
+/// This interface provides properties for the last saved value and the list of items, enabling advanced customization and management of drop-down list options in SDTs.
 /// </summary>
-public interface SdtContentDropDownList
+public interface SdtContentDropDownList: SdtListItems
 {
+  
   /// <summary>
-  ///   Drop-down List Last Saved Value
+  /// Drop-down list last saved value, specifying the most recently selected option.
   /// </summary>
   public string? LastValue { get; set; }
-  public ListItems ListItems { get; set; }
-}
-
-public interface ListItems : ElementCollection<ListItem>
-{
 }
