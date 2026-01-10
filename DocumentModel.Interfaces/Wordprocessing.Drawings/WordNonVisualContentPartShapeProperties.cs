@@ -1,16 +1,19 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
-///   Defines the WordNonVisualContentPartShapeProperties Class.
+/// Represents non-visual properties for a content part shape in a Wordprocessing document.
+/// This interface provides access to drawing properties and ink content part properties, enabling configuration and management of non-visual aspects for content part shapes.
 /// </summary>
 public interface WordNonVisualContentPartShapeProperties
 {
+
   /// <summary>
-  ///   NonVisualDrawingProperties.
+  /// Non-visual properties for the drawing element, including identifiers, names, and descriptive information.
   /// </summary>
   public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
+
   /// <summary>
-  ///   NonVisualInkContentPartProperties.
+  /// Non-visual properties specific to ink content parts, such as comment status and content part locks.
   /// </summary>
   public NonVisualInkContentPartProperties? NonVisualInkContentPartProperties { get; set; }
 }

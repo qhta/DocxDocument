@@ -1,29 +1,35 @@
 using DocumentModel.Drawings;
+
 namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
-///   Defines the GraphicFrameType Class.
+/// Represents the type definition for a graphic frame in a Wordprocessing document.
+/// This interface provides access to non-visual properties, transformation settings, the contained graphic, and extension data, enabling advanced layout, rendering, and extensibility for graphical content.
 /// </summary>
 public interface GraphicFrameType
 {
   /// <summary>
-  ///   NonVisualDrawingProperties.
+  /// Non-visual properties for the graphic frame, including identifiers, names, and descriptive information.
   /// </summary>
   public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
+
   /// <summary>
-  ///   NonVisualGraphicFrameProperties.
+  /// Non-visual properties specific to the graphic frame, such as locking and extension settings.
   /// </summary>
   public NonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get; set; }
+
   /// <summary>
-  ///   Transform2D.
+  /// The 2D transformation applied to the graphic frame, including translation, scaling, rotation, and skew.
   /// </summary>
   public Transform2D? Transform2D { get; set; }
+
   /// <summary>
-  ///   Graphic.
+  /// The graphic content contained within the frame, such as images, charts, or diagrams.
   /// </summary>
   public Graphic? Graphic { get; set; }
+
   /// <summary>
-  ///   OfficeArtExtensionList.
+  /// List of OfficeArt extensions associated with the graphic frame, allowing for additional metadata or custom features.
   /// </summary>
   public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

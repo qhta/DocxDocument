@@ -1,20 +1,25 @@
 using DocumentModel.Drawings;
-namespace DocumentModel.Wordprocessing;
+
+namespace DocumentModel.Wordprocessing.Drawings;
+
 /// <summary>
-///   Defines the Glow Class.
+/// Represents the glow effect applied to a drawing element in a Wordprocessing document.
+/// This interface provides properties for configuring the glow radius and color, enabling visual emphasis and styling for graphical objects.
 /// </summary>
-public interface Glow: TypedModelElement, DrawingProperty
+public interface Glow : TypedModelElement, DrawingProperty
 {
   /// <summary>
-  ///   rad
+  /// The radius of the glow effect, specified in EMUs (English Metric Units), determining the size of the glow around the element.
   /// </summary>
   public Int64? GlowRadius { get; set; }
+
   /// <summary>
-  ///   RgbColorModelHex.
+  /// The RGB color value for the glow effect, allowing precise color specification using hexadecimal notation.
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex { get; set; }
+
   /// <summary>
-  ///   SchemeColor.
+  /// The scheme color for the glow effect, enabling the use of document-defined color schemes for consistent styling.
   /// </summary>
   public SchemeColor? SchemeColor { get; set; }
 }

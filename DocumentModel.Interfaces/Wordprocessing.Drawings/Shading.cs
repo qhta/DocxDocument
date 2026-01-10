@@ -1,20 +1,25 @@
 using DocumentModel.Drawings;
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
+
 /// <summary>
-///   Defines the Shading Class.
+/// Represents shading formatting for a drawing element in a Wordprocessing document.
+/// This interface provides properties for specifying the shading pattern, foreground color, and background color, enabling advanced visual effects for graphical objects.
 /// </summary>
 public interface Shading
 {
+
   /// <summary>
-  ///   Shading Pattern
+  /// The shading pattern applied to the drawing element, determining the style of the fill pattern.
   /// </summary>
   public ShadingPatternKind? Pattern { get; set; }
+
   /// <summary>
-  /// Color of the pattern foreground.
+  /// The color of the pattern foreground, specifying the primary color used in the shading pattern.
   /// </summary>
-  public DM.AbstractColor? ForegroundColor {get; set; }
+  public DM.AbstractColor? ForegroundColor { get; set; }
+
   /// <summary>
-  /// Color of the pattern background.
+  /// The color of the pattern background, specifying the secondary color used in the shading pattern.
   /// </summary>
-  public DM.AbstractColor? BackgroundColor {get; set; }
+  public DM.AbstractColor? BackgroundColor { get; set; }
 }
