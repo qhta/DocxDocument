@@ -1,13 +1,14 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the SdtContentComboBox Class.
+/// Represents the configuration for a combo box content control in a structured document tag (SDT) in a Wordprocessing document.
+/// This interface provides properties for the last saved value and the list of items, enabling advanced customization and management of combo box options in SDTs.
 /// </summary>
-public interface SdtContentComboBox
+public interface SdtContentComboBox: SdtListItems
 {
   /// <summary>
-  ///   Combo Box Last Saved Value
+  /// Combo box last saved value, specifying the most recently selected or entered option.
   /// </summary>
   public string? LastValue { get; set; }
-  public ListItems ListItems { get; set; }
+
 }
