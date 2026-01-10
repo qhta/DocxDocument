@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents a collection of BoxContent elements.
 /// </summary>
-public interface BoxContentList: ElementCollection<BoxContent>
+public interface BoxContentCollection: ElementCollection<BoxContent>
 {
   
 }

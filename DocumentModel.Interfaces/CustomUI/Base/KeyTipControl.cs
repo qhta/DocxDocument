@@ -8,7 +8,7 @@
 /// dynamically via a callback specified by GetKeytip. If neither property is set, the application should generate a
 /// KeyTip automatically. The Keytip and GetKeytip properties are mutually exclusive; only one should be specified for a
 /// given control.</remarks>
-public interface KeyTipControl
+public interface KeytipControl
 {
   /// <summary>
   ///   Specifies a string to be used as the suggested KeyTip for this control.

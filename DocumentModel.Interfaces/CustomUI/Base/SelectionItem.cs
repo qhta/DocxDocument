@@ -12,6 +12,11 @@ public interface SelectionItem: CollectionItem
   public string Id { get; set; }
 
   /// <summary>
+  ///   Specifies a string to be used as the label for this control.
+  /// </summary>
+  public string? Label { get; set; }
+
+  /// <summary>
   ///   Specifies the relationship identifier for an image to be used as the icon for this control.
   ///   This attribute is used to specify an embedded picture that resides locally within the containing file.
   /// 

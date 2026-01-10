@@ -7,7 +7,7 @@
 /// through screentips. The screentip can be set directly or determined dynamically at runtime using a callback. Only
 /// one method of specifying the screentip should be used at a time; if neither is set, the control's label may be used
 /// as the screentip, or no screentip may be shown, depending on application behavior.</remarks>
-public interface ScreenTipControl
+public interface ScreentipControl
 {  
   /// <summary>
   ///   Specifies a string to be shown as the screentip for this control.
