@@ -1,5 +1,5 @@
 using DocumentModel.Drawings;
-namespace DocumentModel.Wordprocessing.Drawings;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the Transform2D Class.

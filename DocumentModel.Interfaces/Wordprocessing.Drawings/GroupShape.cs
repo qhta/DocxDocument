@@ -1,5 +1,4 @@
-using DocumentModel.Wordprocessing.DrawingShape;
-namespace DocumentModel.Wordprocessing.DrawingGroup;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 /// Represents a group shape element within a Wordprocessing document drawing group.

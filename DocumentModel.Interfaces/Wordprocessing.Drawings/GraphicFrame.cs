@@ -1,5 +1,5 @@
 using DocumentModel.Drawings;
-namespace DocumentModel.Wordprocessing.DrawingGroup;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 /// Represents a graphic frame element within a Wordprocessing document drawing group.
