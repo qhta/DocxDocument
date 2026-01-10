@@ -462,7 +462,7 @@ public interface Document
   /// <summary>
   ///   Collection of XML schemas attached to the document.
   /// </summary>
-  public DMCX.XMLSchemas? XMLSchemas { get; set; }
+  public DMCX.SchemaCollection? XMLSchemas { get; set; }
 
   #endregion
 
