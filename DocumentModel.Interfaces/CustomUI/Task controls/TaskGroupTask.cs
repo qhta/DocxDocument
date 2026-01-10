@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a task group task for Office UI, enabling tagging, action callbacks, definitive state, image customization, dynamic state, labeling, visibility, description, and keytip support. It supports advanced workflows for task management, integration, and extensibility in Office add-ins or document solutions.
 /// </remarks>
-public interface TaskGroupTask : CustomUIControl, BuiltInControl, TaggedObject,
+public interface TaskGroupTask : CustomUIControl, BuiltInObject, TaggedObject,
   DescriptionControl, EnableControl, VisibleControl,
   LabelledControl, ImagedControl, 
   KeytipControl,

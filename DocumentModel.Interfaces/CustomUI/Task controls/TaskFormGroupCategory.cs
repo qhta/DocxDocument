@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a logical category for grouping related tasks within a <c>TaskFormGroup</c>. Categories provide organizational structure, labeling, positioning control, and support dynamic behavior through callback functions for advanced Office add-in or document solutions.
 /// </remarks>
-public interface TaskFormGroupCategory : CustomUIControl, BuiltInControl, TaggedObject, 
+public interface TaskFormGroupCategory : CustomUIControl, BuiltInObject, TaggedObject, 
   VisibleControl, LabelledControl,
   TaskFormGroupCollection
 {

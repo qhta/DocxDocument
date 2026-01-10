@@ -6,7 +6,7 @@
 /// <remarks>
 /// This interface defines a ribbon tab for Office applications, enabling organization of commands into logical groups. Tabs can be custom, built-in, or contextual, and support dynamic label, visibility, and keytip through callbacks. The interface allows precise positioning relative to built-in or custom tabs and supports integration of groups for efficient workflows and discoverable UI.
 /// </remarks>
-public interface Tab : CustomUIControl, BuiltInControl, TaggedObject,
+public interface Tab : CustomUIControl, BuiltInObject, TaggedObject,
     VisibleControl, LabelledControl, KeytipControl
 {
 

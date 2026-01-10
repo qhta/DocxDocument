@@ -10,7 +10,7 @@ namespace DocumentModel;
 ///   a streamlined gallery implementation suitable for use within button groups and other constrained
 ///   ribbon contexts. Galleries support both static and dynamic content generation through callback functions.
 /// </remarks>
-public interface GalleryRegular: CustomUIControl, BuiltInControl, TaggedObject, 
+public interface GalleryRegular: CustomUIControl, BuiltInObject, TaggedObject, 
   DescriptionControl,
   EnableControl, VisibleControl,
   LabelledControl, ShowLabelControl,

@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a toggle button that maintains an on/off state and can be placed in various Office UI contexts. It supports dynamic state, labeling, images, tooltips, and flexible positioning, with callback integration for runtime behavior and accessibility.
 /// </remarks>
-public interface VisibleToggleButton : CustomUIControl, BuiltInControl, TaggedObject,
+public interface VisibleToggleButton : CustomUIControl, BuiltInObject, TaggedObject,
     EnableControl, VisibleControl, 
     LabelledControl, ShowLabelControl,
     ImagedControl, ShowImageControl,

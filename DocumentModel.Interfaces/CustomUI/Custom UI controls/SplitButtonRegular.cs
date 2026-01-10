@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// <see cref="SplitButtonRegular"/> is a streamlined version of the split button control for use outside the main Office ribbon. It omits ribbon-specific properties and focuses on core split button functionality, supporting context menus, Backstage, dialogs, and task panes. The interface enables dynamic enabled state, visibility, label display, and keytips through callback functions, and supports custom positioning, metadata, and menu content for efficient and discoverable UI design.
 /// </remarks>
-public interface SplitButtonRegular: CustomUIControl, BuiltInControl, TaggedObject, 
+public interface SplitButtonRegular: CustomUIControl, BuiltInObject, TaggedObject, 
   EnableControl, VisibleControl, 
   KeytipControl,
   ContextMenuContent, MenuContent, MenuRegularContent, ButtonGroupContent

@@ -19,7 +19,7 @@ namespace DocumentModel;
 ///   This streamlined approach is particularly useful for adding built-in Office commands to custom menus or
 ///   reusing complex custom controls across multiple menu locations with slight variations.
 /// </remarks>
-public interface ControlCloneRegular: CustomUIControl, TaggedObject, BuiltInControl,
+public interface ControlCloneRegular: CustomUIControl, TaggedObject, BuiltInObject,
   EnableControl, VisibleControl,
   LabelledControl, ShowLabelControl,
   ImagedControl, ShowImageControl,

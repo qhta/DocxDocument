@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a simplified button control optimized for constrained ribbon contexts. It supports customizable images, labels, tooltips, keyboard shortcuts, and dynamic state or behavior through callback functions. The interface enables efficient UI design for Office add-ins and document solutions.
 /// </remarks>
-public interface ButtonRegular : CustomUIControl, BuiltInControl, TaggedObject, 
+public interface ButtonRegular : CustomUIControl, BuiltInObject, TaggedObject, 
   DescriptionControl,  
   EnableControl, VisibleControl,
   LabelledControl, ShowLabelControl,

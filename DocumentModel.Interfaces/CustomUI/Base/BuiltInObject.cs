@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Gets or sets the identifier of a built-in control, as defined by the application.
+/// Gets or sets the identifier of a built-in object, as defined by the application.
 /// </summary>
 /// <remarks>The IdMso property is mutually exclusive with the Id and QualifiedId properties. At least one of
 /// these identifiers must be specified when defining a control.</remarks>
-public interface BuiltInControl
+public interface BuiltInObject
 {
   /// <summary>
   ///   Specifies the identifier of a built-in control.

@@ -16,7 +16,7 @@ namespace DocumentModel;
 ///   adapts to application state. The control clone references its source through either a built-in Microsoft
 ///   Office identifier (IdMso) or a qualified custom control identifier (QualifiedId).
 /// </remarks>
-public interface ControlClone: CustomUIControl, BuiltInControl, TaggedObject,
+public interface ControlClone: CustomUIControl, BuiltInObject, TaggedObject,
   DescriptionControl,
   EnableControl, VisibleControl,
   LabelledControl, ShowLabelControl,
