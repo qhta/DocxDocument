@@ -1,6 +1,6 @@
 using DocumentFormat.OpenXml.Spreadsheet;
 using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing.DrawingShape;
+using DocumentModel.Wordprocessing.Drawings;
 
 namespace DocumentModel.Wordprocessing;
 

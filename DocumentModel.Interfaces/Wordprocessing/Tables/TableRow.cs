@@ -1,40 +1,49 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Table Row.
+/// Represents a table row in a Wordprocessing document.
+/// This interface provides access to revision identifiers, paragraph and text IDs, property exceptions, row properties, and enables advanced configuration and management of table rows and their content.
 /// </summary>
-public interface TableRow: ElementCollection<TableRowContent>, TableContent, SdtRowContent
+public interface TableRow : ElementCollection<TableRowContent>, TableContent, SdtRowContent
 {
+
   /// <summary>
-  ///   Revision Identifier for Table Row Glyph Formatting
+  /// Revision identifier for table row glyph formatting.
   /// </summary>
   public HexInt? RsidTableRowMarkRevision { get; set; }
+
   /// <summary>
-  ///   Revision Identifier for Table Row
+  /// Revision identifier for table row addition.
   /// </summary>
   public HexInt? RsidTableRowAddition { get; set; }
+
   /// <summary>
-  ///   Revision Identifier for Table Row Deletion
+  /// Revision identifier for table row deletion.
   /// </summary>
   public HexInt? RsidTableRowDeletion { get; set; }
+
   /// <summary>
-  ///   Revision Identifier for Table Row Properties
+  /// Revision identifier for table row properties.
   /// </summary>
   public HexInt? RsidTableRowProperties { get; set; }
+
   /// <summary>
-  ///   paraId
+  /// Paragraph identifier for the row.
   /// </summary>
   public HexInt? ParagraphId { get; set; }
+
   /// <summary>
-  ///   textId
+  /// Text identifier for the row.
   /// </summary>
   public HexInt? TextId { get; set; }
+
   /// <summary>
-  ///   Table-Level Property Exceptions.
+  /// Table-level property exceptions for the row, enabling advanced formatting overrides.
   /// </summary>
   public TablePropertyExceptions? TablePropertyExceptions { get; set; }
+
   /// <summary>
-  ///   Table Row Properties.
+  /// Table row properties, including formatting and layout options for the row.
   /// </summary>
   public TableRowProperties? TableRowProperties { get; set; }
 }
