@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Gets or sets the identifier of a built-in object, as defined by the application.

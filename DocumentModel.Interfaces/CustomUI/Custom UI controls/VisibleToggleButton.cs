@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a visible toggle button control for Office UI, supporting dynamic pressed state, customizable appearance, and advanced callback integration for flexible scenarios.

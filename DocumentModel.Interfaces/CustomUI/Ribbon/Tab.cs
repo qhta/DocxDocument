@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a tab in the Office ribbon interface that organizes groups of related commands and controls, supporting dynamic labeling, positioning, and advanced callback integration for Office UI extensibility.

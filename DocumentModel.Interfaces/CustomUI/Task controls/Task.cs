@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a task element for Office UI, supporting identification, anchoring, history tracking, and extensibility for advanced task management scenarios.

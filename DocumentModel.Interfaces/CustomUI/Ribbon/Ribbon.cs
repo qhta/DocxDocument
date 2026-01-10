@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents the Office ribbon interface, supporting custom tabs, contextual tabs, and Quick Access Toolbar customization for advanced Office UI scenarios.

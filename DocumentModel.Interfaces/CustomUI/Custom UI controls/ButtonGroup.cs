@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a group of buttons and controls within a ribbon group or menu, supporting compact arrangement, visual clustering, and advanced callback integration for flexible UI scenarios.

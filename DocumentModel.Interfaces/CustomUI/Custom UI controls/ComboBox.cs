@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a combo box control that combines text input with a dropdown list of selectable items, supporting dynamic content, customizable appearance, and advanced callback integration for flexible UI scenarios.

@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a label control for the ribbon interface, supporting static and dynamic labeling, visibility, tooltips, and advanced callback integration for flexible UI scenarios.

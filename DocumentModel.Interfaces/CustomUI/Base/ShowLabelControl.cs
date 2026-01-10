@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Defines members that control whether a UI element displays its label, either directly or via a callback function.

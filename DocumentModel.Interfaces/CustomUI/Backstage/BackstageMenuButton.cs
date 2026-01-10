@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a button item in the Office Backstage menu, supporting dynamic state, customizable appearance, and advanced callback integration for flexible UI scenarios.

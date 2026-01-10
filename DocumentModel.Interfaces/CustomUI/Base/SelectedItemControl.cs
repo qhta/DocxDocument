@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Defines members for a control that supports selection of an item, allowing configuration of callbacks to determine

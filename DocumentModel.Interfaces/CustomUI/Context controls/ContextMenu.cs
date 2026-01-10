@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a customizable context menu (right-click menu) in Office applications, supporting dynamic content, context-aware commands, and advanced integration for Office UI extensibility.

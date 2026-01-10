@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a collection of task form group tasks within a form or workflow.

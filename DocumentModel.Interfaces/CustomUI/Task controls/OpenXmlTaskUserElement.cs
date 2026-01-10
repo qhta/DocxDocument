@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a user element for task attribution in Office UI, supporting identification, naming, and provider information for advanced task management and collaboration scenarios.

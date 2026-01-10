@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a collection of tabs elements, providing methods to manage and access individual tabs within a container.

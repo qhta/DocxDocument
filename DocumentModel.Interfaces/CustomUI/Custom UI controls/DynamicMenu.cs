@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a dynamic menu control that generates menu items at runtime through callback functions, supporting customizable appearance, dynamic content, and advanced integration for flexible UI scenarios.

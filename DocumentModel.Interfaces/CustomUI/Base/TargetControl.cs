@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a control that navigates to a specified target URL or location when activated, supporting both static and dynamic target resolution for flexible Office UI scenarios.

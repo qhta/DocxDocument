@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a check box control for the ribbon interface, supporting dynamic state, labeling, tooltips, and advanced callback integration for flexible UI scenarios.

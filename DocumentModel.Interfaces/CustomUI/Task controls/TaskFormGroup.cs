@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a group of controls within a task form in the Office UI, supporting logical organization, dynamic state, and advanced callback integration for flexible task pane scenarios.

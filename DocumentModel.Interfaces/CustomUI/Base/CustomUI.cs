@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents the root element for Office UI customization, enabling definition of custom ribbons, backstage views, and context menus for comprehensive Office add-in or document integration.

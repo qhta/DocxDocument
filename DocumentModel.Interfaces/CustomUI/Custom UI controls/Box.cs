@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 ///   Represents a container control that organizes and layouts child controls within the ribbon interface, supporting flexible arrangement, styling, and nested content for advanced UI scenarios.

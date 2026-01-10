@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a radio group control that provides mutually exclusive selection options, supporting dynamic content, customizable labeling, layout expansion, and advanced callback integration for Office UI scenarios.

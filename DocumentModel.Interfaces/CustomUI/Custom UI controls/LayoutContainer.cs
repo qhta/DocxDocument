@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a container for organizing and arranging controls in the Office Backstage view, supporting flexible layout, alignment, expansion, and integration of various child control types for advanced UI scenarios.

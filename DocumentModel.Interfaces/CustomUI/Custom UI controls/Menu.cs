@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a menu control that displays a dropdown list of commands and controls in the ribbon interface, supporting hierarchical organization, customizable appearance, and dynamic integration for flexible UI scenarios.

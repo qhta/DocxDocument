@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a split button control in the Office ribbon interface that combines a primary action button with a dropdown menu of related options, supporting dynamic behavior, advanced positioning, and flexible UI integration.

@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 ///   Represents a set of contextual tabs that appear together in the ribbon UI.

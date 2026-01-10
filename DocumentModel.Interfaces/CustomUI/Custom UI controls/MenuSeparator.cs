@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a separator control that provides visual division between menu items, supporting section labeling and flexible positioning for improved menu organization.

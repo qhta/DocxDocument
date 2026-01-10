@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Defines members for a control that supports specifying or retrieving a suggested KeyTip, which is a keyboard

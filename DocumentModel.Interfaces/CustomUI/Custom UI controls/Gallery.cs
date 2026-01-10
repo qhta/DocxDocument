@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a gallery control that displays a collection of items in a grid layout within the ribbon, supporting dynamic content, customizable appearance, and advanced callback integration for flexible UI scenarios.

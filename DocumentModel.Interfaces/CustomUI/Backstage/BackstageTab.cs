@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a tab in the Office Backstage view, supporting dynamic state, flexible layout, and advanced callback integration for custom UI scenarios.

@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a container control that visually groups related controls together in the backstage view, supporting hierarchical organization, labeling, and layout customization for Office UI scenarios.

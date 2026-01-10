@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents an image control for Office UI, supporting flexible integration, dynamic state, and advanced callback options for displaying icons, logos, or decorative images in Backstage and layout containers.

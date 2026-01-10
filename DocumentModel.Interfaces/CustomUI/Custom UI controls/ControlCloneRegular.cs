@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 ///   Represents a regular cloned control optimized for use within menus and button groups.

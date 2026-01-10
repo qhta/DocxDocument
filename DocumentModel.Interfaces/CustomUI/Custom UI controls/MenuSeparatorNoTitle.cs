@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a menu separator without a title for Office UI, supporting flexible positioning and organization of context menu items.

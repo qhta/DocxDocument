@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Defines a collection of top-level controls for display within a backstage group, supporting a comprehensive set of UI elements for Office customization.

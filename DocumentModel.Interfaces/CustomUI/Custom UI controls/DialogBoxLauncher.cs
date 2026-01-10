@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 ///   Represents a dialog box launcher button that appears in the lower-right corner of ribbon groups.

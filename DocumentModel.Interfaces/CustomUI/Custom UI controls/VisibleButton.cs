@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a visible button control for Office UI, supporting dynamic state, customizable appearance, and advanced callback integration for flexible scenarios.

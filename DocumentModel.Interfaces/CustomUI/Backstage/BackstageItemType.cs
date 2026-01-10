@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents an item type in the Office Backstage view, supporting dynamic labeling and identification for flexible UI scenarios.

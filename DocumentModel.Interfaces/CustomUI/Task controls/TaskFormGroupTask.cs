@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents an individual task within a task form group category, supporting dynamic state, customizable appearance, and advanced callback integration for flexible task pane scenarios.

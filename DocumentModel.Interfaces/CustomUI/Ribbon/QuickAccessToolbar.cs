@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents the Quick Access Toolbar (QAT) customization for the Office ribbon, supporting shared and document-specific controls for enhanced productivity and user experience.
