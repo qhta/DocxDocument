@@ -8,6 +8,7 @@ namespace DocumentModel.CustomUI;
 /// </remarks>
 public interface BackstageLabelControl: QualifiedElement, TaggedObject,
   EnableControl, VisibleControl,
+  LabelledControl,
   GroupBoxContent, LayoutContent, BackstageGroupContent
 {
 
@@ -20,16 +21,6 @@ public interface BackstageLabelControl: QualifiedElement, TaggedObject,
   /// Expansion behavior of the label control.
   /// </summary>
   public ExpandKind? Expand { get; set; }
-
-  /// <summary>
-  /// Label text for the control.
-  /// </summary>
-  public string? Label { get; set; }
-
-  /// <summary>
-  /// Callback for dynamic label text.
-  /// </summary>
-  public string? GetLabel { get; set; }
 
   /// <summary>
   /// Prevent label text from wrapping.
