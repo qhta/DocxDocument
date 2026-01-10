@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage button with properties for tooltips, identification, state, labeling, images, keytips, and definitive action. It enables dynamic visibility, enabled state, labeling, and image selection, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageRegularButton: QualifiedElement, TaggedObject
+public interface BackstageRegularButton: QualifiedElement, TaggedObject, PrimaryItem
 {
   /// <summary>
   /// Screentip text for the Backstage button.
