@@ -1,5 +1,5 @@
 using DocumentModel.Drawings;
-namespace DocumentModel.Wordprocessing.DrawingGroup;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 ///   Defines the NonVisualGraphicFrameProperties Class.
