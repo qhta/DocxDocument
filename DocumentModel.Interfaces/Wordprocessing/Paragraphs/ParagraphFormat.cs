@@ -168,7 +168,7 @@ public interface ParagraphFormat
   /// <summary>
   ///   Gets the shading object for the paragraph.
   /// </summary>
-  public Shading? Shading { get; }
+  public DMWD.Shading? Shading { get; }
 
   /// <summary>
   ///   Gets or sets the background pattern color.

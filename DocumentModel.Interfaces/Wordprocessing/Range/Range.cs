@@ -1,4 +1,4 @@
-﻿using DocumentModel.Wordprocessing.DrawingShape;
+﻿using DocumentModel.Wordprocessing.Drawings;
 
 namespace DocumentModel.Wordprocessing;
 
@@ -328,7 +328,7 @@ public interface Range
   /// <summary>
   ///   Gets the table cell that contains the range.
   /// </summary>
-  public Cell? Cell { get; }
+  public TableCell? Cell { get; }
 
   /// <summary>
   ///   Gets the column number of the range within a table.

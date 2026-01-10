@@ -241,22 +241,22 @@ public interface RunProperties
   /// <summary>
   ///   Gets or sets the glow effect (Office 2010+).
   /// </summary>
-  public Glow? Glow { get; set; }
+  public DMWD.Glow? Glow { get; set; }
 
   /// <summary>
   ///   Gets or sets the shadow effect (Office 2010+).
   /// </summary>
-  public Shadow2? Shadow14 { get; set; }
+  public DMWD.Shadow? Shadow14 { get; set; }
 
   /// <summary>
   ///   Gets or sets the reflection effect (Office 2010+).
   /// </summary>
-  public Reflection? Reflection { get; set; }
+  public DMWD.Reflection? Reflection { get; set; }
 
   /// <summary>
   ///   Gets or sets the text outline effect (Office 2010+).
   /// </summary>
-  public TextOutlineEffect? TextOutlineEffect { get; set; }
+  public DMWD.TextOutlineEffect? TextOutlineEffect { get; set; }
 
   /// <summary>
   ///   Gets or sets the text fill effect (Office 2010+).
@@ -266,12 +266,12 @@ public interface RunProperties
   /// <summary>
   ///   Gets or sets the 3D scene properties (Office 2010+).
   /// </summary>
-  public Scene3D? Scene3D { get; set; }
+  public DMWD.Scene3D? Scene3D { get; set; }
 
   /// <summary>
   ///   Gets or sets the 3D text properties (Office 2010+).
   /// </summary>
-  public Properties3D? Properties3D { get; set; }
+  public DMWD.Properties3D? Properties3D { get; set; }
 
   /// <summary>
   ///   Gets or sets the OpenType ligatures setting (Office 2010+).

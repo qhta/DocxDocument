@@ -40,7 +40,7 @@ public interface BaseParagraphProperties
   /// <summary>
   ///   Shading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  public DMWD.Shading? Shading { get; set; }
   /// <summary>
   ///   Tabs.
   /// </summary>

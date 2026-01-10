@@ -16,7 +16,7 @@ public interface ContentPart2
   /// <summary>
   ///   WordNonVisualContentPartShapeProperties.
   /// </summary>
-  public WordNonVisualContentPartShapeProperties? WordNonVisualContentPartShapeProperties { get; set; }
+  public DMWD.WordNonVisualContentPartShapeProperties? WordNonVisualContentPartShapeProperties { get; set; }
   /// <summary>
   ///   Transform2D.
   /// </summary>

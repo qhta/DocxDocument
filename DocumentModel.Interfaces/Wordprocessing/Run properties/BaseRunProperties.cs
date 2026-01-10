@@ -205,7 +205,7 @@ public interface BaseRunProperties : ElementCollection<RunProperty>
   ///   The resulting shading is applied by setting the background color behind the paragraph, 
   ///   then applying the pattern color using the mask supplied by the pattern over that background.
   /// </summary>
-  public Shading? Shading { get; set; }
+  public DMWD.Shading? Shading { get; set; }
   /// <summary>
   ///   Specifies information about the border applied to the text in the current run. 
   ///   The first piece of information specified by the bdr element is that the current shall have a border when displayed. 

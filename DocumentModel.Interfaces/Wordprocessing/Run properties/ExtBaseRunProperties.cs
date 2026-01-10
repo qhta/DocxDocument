@@ -1,3 +1,4 @@
+using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Extended BaseRunProperties.
@@ -38,7 +39,7 @@ public interface ExtBaseRunProperties : BaseRunProperties
   /// <summary>
   ///   Specifies the shadow effect.
   /// </summary>
-  public Shadow? Shadow14 { get; set; }
+  public DMWD.Shadow? Shadow14 { get; set; }
   /// <summary>
   ///   Specifies the 3-D properties of text, including bevel, extrusion, contour, and material.
   /// </summary>
@@ -46,7 +47,7 @@ public interface ExtBaseRunProperties : BaseRunProperties
   /// <summary>
   ///   TextOutlineEffect.
   /// </summary>
-  public TextOutlineEffect? TextOutlineEffect { get; set; }
+  public DMWD.TextOutlineEffect? TextOutlineEffect { get; set; }
   /// <summary>
   ///   FillTextEffect.
   /// </summary>
@@ -54,11 +55,11 @@ public interface ExtBaseRunProperties : BaseRunProperties
   /// <summary>
   ///   Scene3D.
   /// </summary>
-  public Scene3D? Scene3D { get; set; }
+  public DMWD.Scene3D? Scene3D { get; set; }
   /// <summary>
   ///   Properties3D.
   /// </summary>
-  public Properties3D? Properties3D { get; set; }
+  public DMWD.Properties3D? Properties3D { get; set; }
   /// <summary>
   ///   Specifies which kinds of ligatures to use when displaying the text.
   /// </summary>
