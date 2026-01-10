@@ -12,7 +12,7 @@ public interface TableStyleConditionalCellProperties
   /// <summary>
   ///   Shading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  public DMWD.Shading? Shading { get; set; }
   /// <summary>
   ///   NoWrap.
   /// </summary>
