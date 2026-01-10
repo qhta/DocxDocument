@@ -1,17 +1,20 @@
 using System.ComponentModel;
 namespace DocumentModel.Wordprocessing;
 
-public partial interface LatentStyleExceptionInfo: INotifyPropertyChanged, INotifyPropertyChanging
+/// <summary>
+/// Represents extended latent style exception information for a Wordprocessing document.
+/// This interface provides properties for the primary style name and alternate style names, enabling advanced management and customization of latent styles. Implements property change notification interfaces.
+/// </summary>
+public partial interface LatentStyleExceptionInfo
 {
+  
   /// <summary>
-  ///   Primary Style Name.
+  /// Primary style name associated with the latent style exception.
   /// </summary>
   public string? StyleName { get; set; }
-
+  
   /// <summary>
-  ///   Alternate Style Names.
+  /// Alternate style names associated with the latent style exception.
   /// </summary>
   public ListOf<String>? Aliases { get; set; }
-
-
 }
