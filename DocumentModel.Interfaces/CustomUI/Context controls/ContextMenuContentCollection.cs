@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents a collection of ContextMenuContent elements.
 /// </summary>
-public interface ContextMenuContentList : ElementCollection<ContextMenuContent>
+public interface ContextMenuContentCollection : ElementCollection<ContextMenuContent>
 {
   
 }
