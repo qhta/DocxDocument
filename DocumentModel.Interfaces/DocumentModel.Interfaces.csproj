@@ -47,7 +47,6 @@
     <Compile Remove="Properties\DigitalSignature.cs" />
     <Compile Remove="Properties\VectorVariantType.cs" />
     <Compile Remove="Wordprocessing\Document\Document.ext.cs" />
-    <Compile Remove="Wordprocessing\Drawings\Color.cs" />
     <Compile Remove="Wordprocessing\Enums\DocumentProtectionKind.cs" />
     <Compile Remove="Wordprocessing\Abstract interfaces\ICommonRunContent.cs" />
     <Compile Remove="Wordprocessing\Run properties\DualBoolTypeConverter.cs" />
