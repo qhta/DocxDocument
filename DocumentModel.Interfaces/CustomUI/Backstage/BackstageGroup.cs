@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage group with properties for identification, positioning, state, labeling, style, helper text, and access to top, bottom, and primary items. It enables dynamic visibility, enabled state, labeling, style selection, and flexible arrangement, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageGroup : CustomUIControl, BuiltInControl, TaggedObject,
+public interface BackstageGroup : CustomUIControl, BuiltInObject, TaggedObject,
   EnableControl, VisibleControl,
   LabelledControl,
   HelperControl,

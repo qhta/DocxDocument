@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// Groups are the main organizational unit in the ribbon, containing collections of related commands, buttons, galleries, and other controls. This interface supports dynamic labeling, images, tooltips, scaling, and dialog box launchers for flexible and adaptive ribbon layouts.
 /// </remarks>
-public interface Group : CustomUIControl, BuiltInControl, TaggedObject, 
+public interface Group : CustomUIControl, BuiltInObject, TaggedObject, 
   VisibleControl,
   LabelledControl, ImagedControl,
   ScreentipControl, SupertipControl, KeytipControl,

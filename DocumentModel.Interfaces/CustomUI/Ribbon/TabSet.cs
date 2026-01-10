@@ -8,7 +8,7 @@ namespace DocumentModel;
 ///   that are displayed as a unit in the ribbon interface. Tab sets are typically used for
 ///   contextual tabs that appear when specific objects or elements are selected.
 /// </remarks>
-public interface TabSet : BuiltInControl, CollectionItem, 
+public interface TabSet : BuiltInObject, CollectionItem, 
   VisibleControl,
   TabsCollection
 {

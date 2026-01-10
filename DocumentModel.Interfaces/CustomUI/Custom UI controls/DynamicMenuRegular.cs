@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface provides a streamlined dynamic menu for context menus, Backstage, and compact UI containers. Menu content is generated on demand via callback, supporting context-sensitive commands, recently used items, and menus that reflect current application state. The interface enables dynamic labeling, images, tooltips, and state, with support for custom metadata and flexible menu regeneration.
 /// </remarks>
-public interface DynamicMenuRegular : CustomUIControl, BuiltInControl, TaggedObject,
+public interface DynamicMenuRegular : CustomUIControl, BuiltInObject, TaggedObject,
   DescriptionControl, EnableControl, VisibleControl,
   LabelledControl, ShowLabelControl,
   ImagedControl, ShowImageControl,
