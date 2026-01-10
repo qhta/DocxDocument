@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// Represents the root element for Office UI customization, enabling definition of custom ribbons, backstage views, and context menus for comprehensive Office add-in or document integration.
 /// </summary>
 /// <remarks>
-/// This interface serves as the top-level container for all Office user interface customizations in an add-in or document. It provides access to major UI components: the <c>Ribbon</c> for tab and control customization, the <c>Backstage</c> for File menu customization, and <c>ContextMenus</c> for right-click menu modifications. Callback properties for initialization and image loading are included, as well as a collection for custom command handlers. This unified structure ensures consistent customization across all Office UI surfaces and supports both static definitions and dynamic behavior through callback functions.
+/// This interface serves as the top-level container for all Office user interface customizations in an add-in or document. It provides access to major UI components: the <c>Ribbon</c> for tab and control customization, the <c>Backstage</c> for File menu customization, and <c>ContextMenuCollection</c> for right-click menu modifications. Callback properties for initialization and image loading are included, as well as a collection for custom command handlers. This unified structure ensures consistent customization across all Office UI surfaces and supports both static definitions and dynamic behavior through callback functions.
 /// </remarks>
 public interface CustomUI
 {
@@ -36,5 +36,5 @@ public interface CustomUI
   /// <summary>
   /// Collection of context menu customizations.
   /// </summary>
-  public ContextMenus? ContextMenus { get; set; }
+  public ContextMenuCollection? ContextMenus { get; set; }
 }

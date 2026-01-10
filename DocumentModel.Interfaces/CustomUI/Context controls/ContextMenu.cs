@@ -13,5 +13,5 @@ public interface ContextMenu : CollectionItem, BuiltInControl
   /// <summary>
   /// List of child controls contained in the context menu.
   /// </summary>
-  public ContextMenuContentList Children { get; set; }
+  public ContextMenuContentCollection Children { get; set; }
 }
