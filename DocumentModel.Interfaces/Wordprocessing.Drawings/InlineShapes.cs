@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 /// Represents a collection of inline shapes within a Wordprocessing document.

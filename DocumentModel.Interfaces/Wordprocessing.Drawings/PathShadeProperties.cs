@@ -1,16 +1,18 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
-///   Defines the PathShadeProperties Class.
+/// Represents the properties for a path-based gradient shade applied to a drawing element in a Wordprocessing document.
+/// This interface provides configuration for the gradient path type and the rectangle area to which the fill is applied, enabling advanced gradient effects and precise control over fill positioning.
 /// </summary>
 public interface PathShadeProperties
 {
   /// <summary>
-  ///   path
+  /// The type of path used for the gradient shade, specifying the shape and direction of the gradient fill.
   /// </summary>
   public PathShadeKind? Path { get; set; }
+
   /// <summary>
-  ///   FillToRectangle.
+  /// The rectangle area to which the gradient fill is applied, allowing precise definition of the fill boundaries.
   /// </summary>
   public FillToRectangle? FillToRectangle { get; set; }
 }

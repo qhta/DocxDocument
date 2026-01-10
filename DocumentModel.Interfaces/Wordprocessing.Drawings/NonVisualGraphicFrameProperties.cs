@@ -1,4 +1,5 @@
 using DocumentModel.Drawings;
+
 namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
@@ -10,6 +11,7 @@ public interface NonVisualGraphicFrameProperties
   ///   Graphic Frame Locks.
   /// </summary>
   public GraphicFrameLocks? GraphicFrameLocks { get; set; }
+
   /// <summary>
   ///   ExtensionList.
   /// </summary>
