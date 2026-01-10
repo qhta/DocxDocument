@@ -25,12 +25,12 @@ public interface SplitButtonRegular: CustomUIControl, BuiltInObject, TaggedObjec
   /// <summary>
   /// Primary button component that executes the default action.
   /// </summary>
-  public VisibleButton? VisibleButton { get; set; }
+  public ButtonRegular? VisibleButton { get; set; }
 
   /// <summary>
   /// Primary toggle button component that toggles a feature on/off.
   /// </summary>
-  public VisibleToggleButton? VisibleToggleButton { get; set; }
+  public ToggleButtonRegular? VisibleToggleButton { get; set; }
 
   /// <summary>
   /// Dropdown menu component containing additional options.

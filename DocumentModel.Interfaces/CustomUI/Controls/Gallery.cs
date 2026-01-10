@@ -77,9 +77,4 @@ public interface Gallery : CustomUIControl, BuiltInObject, TaggedObject,
   /// </summary>
   public string? SizeString { get; set; }
 
-  /// <summary>
-  /// Collection of regular buttons within the gallery.
-  /// </summary>
-  public RegularButtonsCollection RegularButtons { get; set; }
-
 }

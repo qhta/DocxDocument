@@ -23,6 +23,6 @@ public interface Menu : CustomUIControl, BuiltInObject, TaggedObject,
   /// <summary>
   /// Cloned instance of a built-in or custom control.
   /// </summary>
-  public ControlCloneRegular? ControlCloneRegular { get; set; }
+  public ControlClone? ControlClone { get; set; }
 
 }

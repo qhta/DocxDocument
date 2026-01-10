@@ -10,12 +10,6 @@
 /// intended for use in UI frameworks or components that require customizable item selection controls.</remarks>
 public interface ItemsControl
 {
-  /// <summary>
-  ///   Specifies whether this control displays icons on its selection items.
-  ///
-  ///  If this attribute is omitted, the items' icons SHOULD be shown by default.
-  /// </summary>
-  public bool? ShowItemImage { get; set; }
 
   /// <summary>
   ///   Specifies the name of a callback function to be called to determine the number of selection items in this control.
@@ -28,6 +22,16 @@ public interface ItemsControl
   ///   Use this for dynamically generated gallery content.
   /// </remarks>
   public string? GetItemCount { get; set; }
+
+  /// <summary>
+  ///   Specifies the name of a callback function to be called to determine the identifier of a specific dynamically-created selection item, identified by index.
+  /// 
+  ///   If this attribute is omitted, dynamically-created selection items SHOULD have empty identifiers.
+  /// </summary>
+  /// <remarks>
+  ///   The callback function receives an item index and should return a string identifier.
+  /// </remarks>
+  public string? GetItemID { get; set; }
 
   /// <summary>
   ///   Specifies the name of a callback function to be called to determine the label of a specific dynamically-created selection item, identified by index.
@@ -70,12 +74,10 @@ public interface ItemsControl
   public string? GetItemImage { get; set; }
 
   /// <summary>
-  ///   Specifies the name of a callback function to be called to determine the identifier of a specific dynamically-created selection item, identified by index.
-  /// 
-  ///   If this attribute is omitted, dynamically-created selection items SHOULD have empty identifiers.
+  ///   Specifies whether this control displays icons on its selection items.
+  ///
+  ///  If this attribute is omitted, the items' icons SHOULD be shown by default.
   /// </summary>
-  /// <remarks>
-  ///   The callback function receives an item index and should return a string identifier.
-  /// </remarks>
-  public string? GetItemID { get; set; }
+  public bool? ShowItemImage { get; set; }
+
 }
