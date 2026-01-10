@@ -2,56 +2,54 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Represents a style (paragraph style, character style, etc.) in the document.
+///   This interface provides properties for style name, type, base style, next paragraph style, update and visibility flags, paragraph and font formatting, and parent application, enabling advanced style management and formatting for document content.
 /// </summary>
-public interface Style: CollectionItem
+public interface Style : CollectionItem
 {
-  /// <summary>
-  ///   Gets the name of the style.
-  /// </summary>
-  public string? NameLocal { get; }
+    
+    /// <summary>
+    /// Name of the style as defined in the document.
+    /// </summary>
+    public string? NameLocal { get; }
+    
+    /// <summary>
+    /// Built-in style identifier, specifying the predefined style type.
+    /// </summary>
+    public BuiltInStyleKind? BuiltIn { get; }
+    
+    /// <summary>
+    /// Type of style, such as paragraph, character, table, or numbering.
+    /// </summary>
+    public StyleKind? Type { get; }
+    
+    /// <summary>
+    /// Base style on which this style is based, enabling inheritance of formatting.
+    /// </summary>
+    public Style? BaseStyle { get; }
+    
+    /// <summary>
+    /// Next paragraph style to be applied after this style.
+    /// </summary>
+    public Style? NextParagraphStyle { get; }
+    
+    /// <summary>
+    /// Indicates whether the style is automatically updated when formatting changes are made.
+    /// </summary>
+    public bool? AutomaticallyUpdate { get; set; }
+    
+    /// <summary>
+    /// Indicates whether the style is hidden from the style gallery and UI.
+    /// </summary>
+    public bool? Hidden { get; set; }
+    
+    /// <summary>
+    /// Paragraph format settings for the style, specifying alignment, indentation, spacing, and other paragraph-level formatting.
+    /// </summary>
+    public ParagraphFormat? ParagraphFormat { get; }
+    
+    /// <summary>
+    /// Font properties for the style, specifying font family, size, color, and effects.
+    /// </summary>
+    public TextFormat? TextFormat { get; }
 
-  /// <summary>
-  ///   Gets the built-in style identifier.
-  /// </summary>
-  public BuiltInStyleKind? BuiltIn { get; }
-
-  /// <summary>
-  ///   Gets the type of style.
-  /// </summary>
-  public StyleKind? Type { get; }
-
-  /// <summary>
-  ///   Gets the base style on which this style is based.
-  /// </summary>
-  public Style? BaseStyle { get; }
-
-  /// <summary>
-  ///   Gets the next paragraph style.
-  /// </summary>
-  public Style? NextParagraphStyle { get; }
-
-  /// <summary>
-  ///   Gets or sets whether the style is automatically updated.
-  /// </summary>
-  public bool? AutomaticallyUpdate { get; set; }
-
-  /// <summary>
-  ///   Gets or sets whether the style is hidden.
-  /// </summary>
-  public bool? Hidden { get; set; }
-
-  /// <summary>
-  ///   Gets the paragraph format for the style.
-  /// </summary>
-  public ParagraphFormat? ParagraphFormat { get; }
-
-  /// <summary>
-  ///   Gets the font properties for the style.
-  /// </summary>
-  public TextFormat? Font { get; }
-
-  /// <summary>
-  ///   Gets the parent application.
-  /// </summary>
-  public Application? Application { get; }
 }
