@@ -1,34 +1,42 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   This element specifies a set of cell margins for all cells in the parent table row 
-///   via a set of table-level property exceptions. 
-///   These settings can be overridden by the table cell margin definition specified by the tcMar element 
-///   contained within the table cell's properties (§17.4.41). 
+///   Specifies a set of cell margins for all cells in the parent table row 
+///   via table-level property exceptions.
+///   These settings can be overridden by the cell margin definition specified by the tcMar element 
+///   within the table cell's properties.
 /// </summary>
 public interface TableCellMargin
 {
   /// <summary>
-  ///   Table Cell Top Margin.
+  ///   Table cell top margin, specifying the padding at the top edge of the cell.
   /// </summary>
   public TableWidth? TopMargin { get; set; }
+
   /// <summary>
-  ///   Table Cell Left Margin.
+  ///   Table cell left margin, specifying the padding at the left edge of the cell.
   /// </summary>
   public TableWidth? LeftMargin { get; set; }
+
   /// <summary>
-  ///   StartMargin
+  ///   Start margin, specifying the padding at the starting edge of the cell 
+  ///   (contextual to document direction).
   /// </summary>
   public TableWidth? StartMargin { get; set; }
+
   /// <summary>
-  ///   Table Cell Bottom Margin.
+  ///   Table cell bottom margin, specifying the padding at the bottom edge of the cell.
   /// </summary>
   public TableWidth? BottomMargin { get; set; }
+
   /// <summary>
-  ///   Table Cell Right Margin.
+  ///   Table cell right margin, specifying the padding at the right edge of the cell.
   /// </summary>
   public TableWidth? RightMargin { get; set; }
+
   /// <summary>
-  ///   EndMargin
+  ///   End margin, specifying the padding at the ending edge of the cell 
+  ///   (contextual to document direction).
   /// </summary>
   public TableWidth? EndMargin { get; set; }
 }

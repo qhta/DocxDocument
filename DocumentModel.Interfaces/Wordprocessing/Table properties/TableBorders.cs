@@ -1,40 +1,49 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the TableBorders Class.
+/// Represents the set of borders for a table in a Wordprocessing document.
+/// This interface provides properties for configuring the top, left, start, bottom, right, end, inside horizontal, and inside vertical borders, enabling advanced formatting and appearance control for table edges and internal lines.
 /// </summary>
 public interface TableBorders
 {
+
   /// <summary>
-  ///   Table Top Border.
+  /// Table top border, specifying the style and appearance of the top edge of the table.
   /// </summary>
   public Border? TopBorder { get; set; }
+
   /// <summary>
-  ///   Table Left Border.
+  /// Table left border, specifying the style and appearance of the left edge of the table.
   /// </summary>
   public Border? LeftBorder { get; set; }
+
   /// <summary>
-  ///   StartBorder.
+  /// Start border, specifying the style and appearance of the starting edge of the table (contextual to document direction).
   /// </summary>
   public Border? StartBorder { get; set; }
+
   /// <summary>
-  ///   Table Bottom Border.
+  /// Table bottom border, specifying the style and appearance of the bottom edge of the table.
   /// </summary>
   public Border? BottomBorder { get; set; }
+
   /// <summary>
-  ///   Table Right Border.
+  /// Table right border, specifying the style and appearance of the right edge of the table.
   /// </summary>
   public Border? RightBorder { get; set; }
+
   /// <summary>
-  ///   EndBorder.
+  /// End border, specifying the style and appearance of the ending edge of the table (contextual to document direction).
   /// </summary>
   public Border? EndBorder { get; set; }
+
   /// <summary>
-  ///   Table Inside Horizontal Edges Border.
+  /// Table inside horizontal edges border, specifying the style and appearance of horizontal lines between rows.
   /// </summary>
   public Border? InsideHorizontalBorder { get; set; }
+
   /// <summary>
-  ///   Table Inside Vertical Edges Border.
+  /// Table inside vertical edges border, specifying the style and appearance of vertical lines between columns.
   /// </summary>
   public Border? InsideVerticalBorder { get; set; }
 }

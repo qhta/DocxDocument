@@ -1,11 +1,11 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Grid IColumn Definition.
+///  Grid Column Definition.
 /// </summary>
 public interface GridColumn: CollectionItem
 {
   /// <summary>
-  ///   Grid IColumn Width
+  ///   Grid Column Width
   /// </summary>
   public Twips? Width { get; set; }
 }

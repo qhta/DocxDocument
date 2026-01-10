@@ -3,10 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Base Table Grid.
 ///   Contains GridColumns only.
 /// </summary>
-public interface BaseTableGrid
+public interface BaseTableGrid: GridColumns
 {
-  /// <summary>
-  /// Simple collection of <see cref="GridColumn"/>
-  /// </summary>
-  public GridColumns GridColumns { get; set; }
+
 }

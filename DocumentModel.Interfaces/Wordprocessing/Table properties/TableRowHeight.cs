@@ -1,20 +1,20 @@
 using Qhta.Xml.Reflection;
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   This element specifies the height of the current table row within the current table. 
-///   This height shall be used to determine the resulting height of the table row, 
-///   which can be absolute or relative (depending on its attribute values). 
-/// </summary>
-public interface TableRowHeight
-{
-  /// <summary>
-  ///   Table Row Height
-  /// </summary>
-  public Twips Value { get; set; }
-  /// <summary>
-  ///   Table Row Height Type
-  /// </summary>
-  public HeightRuleKind? Type { get; set; }
 
-
-}
+  /// <summary>
+  /// Specifies the height of the current table row within the current table.
+  /// This height is used to determine the resulting height of the table row, which can be absolute or relative depending on its attribute values.
+  /// </summary>
+  public interface TableRowHeight
+  {
+    
+    /// <summary>
+    /// Table row height value, specifying the height in twips.
+    /// </summary>
+    public Twips Value { get; set; }
+    
+    /// <summary>
+    /// Table row height type, specifying whether the height is at least, exactly, or auto.
+    /// </summary>
+    public HeightRuleKind? Type { get; set; }
+  }

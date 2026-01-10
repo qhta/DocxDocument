@@ -1,32 +1,39 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   Extended BaseTableProperties.
-///   Contains these common properties, which are not applied to <see cref="CurrentTableProperties"/>
+/// Extended base table properties interface.
+/// Contains additional common properties for table formatting and metadata, which are not applied to <see cref="CurrentTableProperties"/>.
 /// </summary>
-public interface ExtBaseTableProperties: CurrentTableProperties
+public interface ExtBaseTableProperties : CurrentTableProperties
 {
+
   /// <summary>
-  ///   TableStyle.
+  /// Table style name, specifying the style applied to the table.
   /// </summary>
   public string? TableStyle { get; set; }
+
   /// <summary>
-  ///   TablePositionProperties.
+  /// Table position properties, controlling the positioning of the table within the document.
   /// </summary>
   public TablePositionProperties? TablePositionProperties { get; set; }
+
   /// <summary>
-  ///   TableOverlap.
+  /// Table overlap setting, specifying how the table interacts with other tables or content.
   /// </summary>
   public TableOverlapKind? TableOverlap { get; set; }
+
   /// <summary>
-  ///   BiDiVisual.
+  /// BiDi visual property, indicating whether the table uses bidirectional visual layout.
   /// </summary>
   public bool? BiDiVisual { get; set; }
+
   /// <summary>
-  ///   TableCaption.
+  /// Table caption, providing a descriptive title for the table.
   /// </summary>
   public string? TableCaption { get; set; }
+
   /// <summary>
-  ///   TableDescription.
+  /// Table description, providing additional metadata or explanation for the table.
   /// </summary>
   public string? TableDescription { get; set; }
 }
