@@ -1,42 +1,40 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Represents a row in a table.
+/// Represents a row in a table within a Wordprocessing document.
+/// This interface provides properties and methods for configuring row formatting, height, header status, page break behavior, cell collection, and for manipulating and querying the row's position and relationships within the table structure.
 /// </summary>
 /// <remarks>
-///   A Row is a horizontal series of cells in a table. Rows can have properties
-///   that control height, whether they can break across pages, and whether they
-///   should be repeated as header rows.
+/// 
+/// A Row is a horizontal series of cells in a table. Rows can have properties that control height, whether they can break across pages, and whether they should be repeated as header rows.
+/// 
 /// </remarks>
 public interface Row
 {
   #region Properties
 
   /// <summary>
-  ///   Gets or sets the table row properties.
+  /// Table row properties, including formatting and layout options for the row.
   /// </summary>
   public TableRowProperties? TableRowProperties { get; set; }
 
   /// <summary>
-  ///   Gets or sets the height of the row.
+  /// Height of the row.
   /// </summary>
   public Twips? Height { get; set; }
 
   /// <summary>
-  ///   Gets or sets the height rule for the row.
+  /// Height rule for the row, specifying whether the height is at least, exactly, or auto.
   /// </summary>
   public HeightRuleKind? HeightRule { get; set; }
 
   /// <summary>
-  ///   Gets or sets whether the row is a header row.
+  /// Whether the row is a header row. Header rows are repeated at the top of each page when a table spans multiple pages.
   /// </summary>
-  /// <remarks>
-  ///   Header rows are repeated at the top of each page when a table spans multiple pages.
-  /// </remarks>
   public bool? IsHeader { get; set; }
 
   /// <summary>
-  ///   Gets or sets whether the row can break across pages.
+  /// Whether the row can break across pages.
   /// </summary>
   public bool? AllowBreakAcrossPages { get; set; }
 
@@ -45,22 +43,22 @@ public interface Row
   #region Position
 
   /// <summary>
-  ///   Gets the index of the row in the table.
+  /// Index of the row in the table.
   /// </summary>
   public int Index { get; }
 
   /// <summary>
-  ///   Gets the parent table.
+  /// Parent table containing this row.
   /// </summary>
   public Table? Table { get; }
 
   /// <summary>
-  ///   Gets the next row.
+  /// Next row in the table.
   /// </summary>
   public Row? Next { get; }
 
   /// <summary>
-  ///   Gets the previous row.
+  /// Previous row in the table.
   /// </summary>
   public Row? Previous { get; }
 
@@ -69,12 +67,12 @@ public interface Row
   #region Cells
 
   /// <summary>
-  ///   Gets the collection of cells in the row.
+  /// Collection of cells in the row.
   /// </summary>
   public Cells? Cells { get; }
 
   /// <summary>
-  ///   Gets the range representing the row's content.
+  /// Range representing the row's content.
   /// </summary>
   public Range? Range { get; }
 
@@ -83,24 +81,24 @@ public interface Row
   #region Methods
 
   /// <summary>
-  ///   Selects the row.
+  /// Selects the row.
   /// </summary>
   public void Select();
 
   /// <summary>
-  ///   Deletes the row from the table.
+  /// Deletes the row from the table.
   /// </summary>
   public void Delete();
 
   /// <summary>
-  ///   Converts the row to text.
+  /// Converts the row to text.
   /// </summary>
   /// <param name="separator">Optional separator character.</param>
   /// <returns>Range containing the converted text.</returns>
   public Range? ConvertToText(string? separator = null);
 
   /// <summary>
-  ///   Sets the height of the row.
+  /// Sets the height of the row.
   /// </summary>
   /// <param name="height">Height in points.</param>
   /// <param name="heightRule">Height rule.</param>
@@ -111,12 +109,12 @@ public interface Row
   #region Parent and Application
 
   /// <summary>
-  ///   Gets the parent object.
+  /// Parent object containing this row.
   /// </summary>
   public object? Parent { get; }
 
   /// <summary>
-  ///   Gets the application object.
+  /// Application object associated with this row.
   /// </summary>
   public Application? Application { get; }
 
