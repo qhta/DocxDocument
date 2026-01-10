@@ -4,7 +4,8 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a table element in a Wordprocessing document.
 /// This interface provides access to table properties and grid definitions, enabling configuration and management of table structure, formatting, and layout within the document.
 /// </summary>
-public interface Table : ElementCollection<TableContent>, StoryContent, TableCellContent, SdtBlockContent, CommentContent
+public interface Table : ElementCollection<TableContent>, StoryContent, 
+  TableCellContent, SdtBlockContent, CommentContent, CustomXmlBlockContent
 {
 
   /// <summary>
