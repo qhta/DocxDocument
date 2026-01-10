@@ -1,16 +1,20 @@
 using DocumentModel.Drawings;
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
+
 /// <summary>
-///   Defines the Scene3D Class.
+/// Represents the 3D scene settings for a drawing element in a Wordprocessing document.
+/// This interface provides properties for configuring the camera and lighting rig, enabling advanced 3D rendering and visualization of graphical objects.
 /// </summary>
-public interface Scene3D: TypedModelElement, DrawingProperty
+public interface Scene3D : TypedModelElement, DrawingProperty
 {
+
   /// <summary>
-  ///   Camera.
+  /// The camera settings for the 3D scene, specifying position, orientation, and perspective for rendering.
   /// </summary>
   public Camera? Camera { get; set; }
+
   /// <summary>
-  ///   LightRig.
+  /// The lighting rig configuration for the 3D scene, defining the arrangement and properties of lights used for illumination.
   /// </summary>
   public LightRig? LightRig { get; set; }
 }

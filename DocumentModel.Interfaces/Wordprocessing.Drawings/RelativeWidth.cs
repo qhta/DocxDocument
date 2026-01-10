@@ -10,6 +10,7 @@ public interface RelativeWidth
   /// The reference object used to determine the relative horizontal sizing, such as margin, page, or paragraph.
   /// </summary>
   public SizeRelativeHorizontallyKind? ObjectId { get; set; }
+
   /// <summary>
   /// The percentage value specifying the width of the drawing element relative to the reference object.
   /// </summary>

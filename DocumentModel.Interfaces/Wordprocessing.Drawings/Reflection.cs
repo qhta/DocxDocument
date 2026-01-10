@@ -1,60 +1,75 @@
 using DocumentModel.Drawings;
-namespace DocumentModel.Wordprocessing;
+
+namespace DocumentModel.Wordprocessing.Drawings;
+
 /// <summary>
-///   Defines the Reflection Class.
+/// Represents the reflection effect applied to a drawing element in a Wordprocessing document.
+/// This interface provides properties for configuring blur radius, opacity, position, distance, direction, scaling, skew, and alignment, enabling advanced visual effects for graphical objects.
 /// </summary>
-public interface Reflection: TypedModelElement, DrawingProperty
+public interface Reflection : TypedModelElement, DrawingProperty
 {
   /// <summary>
-  ///   blurRad
+  /// The blur radius of the reflection, specified in EMUs (English Metric Units), determining the softness of the reflected image.
   /// </summary>
   public Int64? BlurRadius { get; set; }
+
   /// <summary>
-  ///   stA
+  /// The starting opacity of the reflection, specified as a percentage, controlling the transparency at the beginning of the reflection.
   /// </summary>
   public Int32? StartingOpacity { get; set; }
+
   /// <summary>
-  ///   stPos
+  /// The start position of the reflection, indicating where the reflection effect begins relative to the object.
   /// </summary>
   public Int32? StartPosition { get; set; }
+
   /// <summary>
-  ///   endA
+  /// The ending opacity of the reflection, specified as a percentage, controlling the transparency at the end of the reflection.
   /// </summary>
   public Int32? EndingOpacity { get; set; }
+
   /// <summary>
-  ///   endPos
+  /// The end position of the reflection, indicating where the reflection effect ends relative to the object.
   /// </summary>
   public Int32? EndPosition { get; set; }
+
   /// <summary>
-  ///   dist
+  /// The distance from the text or object to the start of the reflection, specified in EMUs.
   /// </summary>
   public Int64? DistanceFromText { get; set; }
+
   /// <summary>
-  ///   dir
+  /// The direction angle of the reflection, specified in degrees, determining the orientation of the reflection effect.
   /// </summary>
   public Int32? DirectionAngle { get; set; }
+
   /// <summary>
-  ///   fadeDir
+  /// The fade direction of the reflection, specifying the direction in which the reflection fades out.
   /// </summary>
   public Int32? FadeDirection { get; set; }
+
   /// <summary>
-  ///   sx
+  /// The horizontal scaling factor for the reflection, controlling the width of the reflected image.
   /// </summary>
   public Int32? HorizontalScalingFactor { get; set; }
+
   /// <summary>
-  ///   sy
+  /// The vertical scaling factor for the reflection, controlling the height of the reflected image.
   /// </summary>
   public Int32? VerticalScalingFactor { get; set; }
+
   /// <summary>
-  ///   kx
+  /// The horizontal skew angle for the reflection, specified in degrees, distorting the reflection horizontally.
   /// </summary>
   public Int32? HorizontalSkewAngle { get; set; }
+
   /// <summary>
-  ///   ky
+  /// The vertical skew angle for the reflection, specified in degrees, distorting the reflection vertically.
   /// </summary>
   public Int32? VerticalSkewAngle { get; set; }
+
   /// <summary>
-  ///   algn
+  /// The alignment of the reflection within the bounding rectangle, specifying how the reflection is positioned relative to the object.
   /// </summary>
   public RectangleAlignmentKind? Alignment { get; set; }
 }
