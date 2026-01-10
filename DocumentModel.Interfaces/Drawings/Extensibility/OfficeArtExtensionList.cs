@@ -1,8 +1,11 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel;
 
 /// <summary>
-///   Represents a list of extension elements that allow for future extension of the OfficeArt XML schema.
+/// Represents a collection of DrawingML-specific extensions that enable future compatibility and enhanced
+/// visual features for graphics, charts, diagrams, and other drawing objects in Office Open XML documents.
+/// This specialized extension list focuses on extending Office Art (DrawingML) capabilities while maintaining
+/// backward compatibility with older Office versions.
 /// </summary>
-public interface OfficeArtExtensionList: ElementCollection<Extension>
+public interface OfficeArtExtensionList: ExtensionList
 {
 }

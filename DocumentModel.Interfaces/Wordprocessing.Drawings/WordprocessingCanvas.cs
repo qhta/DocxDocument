@@ -1,6 +1,4 @@
-using DocumentModel.Wordprocessing.DrawingGroup;
-using DocumentModel.Wordprocessing.DrawingShape;
-namespace DocumentModel.Wordprocessing.DrawingCanvas;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 ///   Defines the WordprocessingCanvas Class.
