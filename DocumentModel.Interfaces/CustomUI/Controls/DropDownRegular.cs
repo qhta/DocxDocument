@@ -12,14 +12,10 @@ public interface DropDownRegular : CustomUIControl, BuiltInObject, TaggedObject,
   EnableControl, VisibleControl,
   KeytipControl, ScreentipControl, SupertipControl,
   ItemsControl, SelectedItemControl,
+  ActionControl,
   SelectionItemCollection, 
   BoxContent, GroupContent
 {
-  /// <summary>
-  /// Callback executed when a dropdown item is selected.
-  /// </summary>
-  public string? OnAction { get; set; }
-
   /// <summary>
   /// String representation of the dropdown size.
   /// </summary>
@@ -30,9 +26,10 @@ public interface DropDownRegular : CustomUIControl, BuiltInObject, TaggedObject,
   /// </summary>
   public bool? ShowItemLabel { get; set; }
 
+
   /// <summary>
-  /// Callback for dynamic item label visibility.
+  /// Regular button configuration for the control.
   /// </summary>
-  public RegularButtonsCollection RegularButtons { get; set; }
+  public ButtonRegular Button { get; set; }
 
 }

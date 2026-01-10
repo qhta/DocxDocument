@@ -25,5 +25,5 @@ public interface SplitButton : CustomUIControl, TaggedObject, BuiltInObject,
   /// <summary>
   /// Dropdown menu component containing additional options.
   /// </summary>
-  public MenuRegular? MenuRegular { get; set; }
+  public Menu? Menu{ get; set; }
 }
