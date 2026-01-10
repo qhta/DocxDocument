@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a cloned control specifically designed for the Quick Access Toolbar (QAT) in Office applications, supporting dynamic state, customizable appearance, and advanced callback integration for compact UI scenarios.

@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a category within a task form group that organizes related tasks, supporting logical structure, dynamic state, and advanced callback integration for Office UI scenarios.

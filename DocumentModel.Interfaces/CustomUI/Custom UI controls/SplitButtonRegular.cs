@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Defines a simplified split button control for use in context menus, Backstage menus, dialogs, and other non-ribbon Office UI contexts. Combines a primary action with a dropdown menu of related options, supporting dynamic state, flexible positioning, and advanced callback integration.

@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a group of related tasks displayed in the Office backstage view or task pane, supporting logical organization, dynamic state, and advanced callback integration for flexible task management scenarios.

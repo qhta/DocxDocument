@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a task item within a task group category for Office UI, supporting dynamic state, customizable appearance, and advanced callback integration for flexible task management scenarios.

@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents the primary item for a backstage group in Office UI, supporting integration of regular buttons and primary menus for advanced customization scenarios.

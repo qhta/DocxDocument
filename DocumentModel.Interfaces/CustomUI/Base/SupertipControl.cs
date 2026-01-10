@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Defines members for specifying a supertip—an extended tooltip—for a user interface control. Implementations allow

@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a regular toggle button control that maintains an on/off pressed state, suitable for use within menus and button groups, supporting streamlined appearance, dynamic state, and advanced callback integration for flexible UI scenarios.

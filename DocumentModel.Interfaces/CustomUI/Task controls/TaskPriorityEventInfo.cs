@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents information about a task priority change event in Office UI, supporting tracking of priority values for advanced task management scenarios.

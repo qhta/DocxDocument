@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a toggle button for Office Backstage menus, supporting dynamic pressed state, customizable appearance, and advanced callback integration for flexible UI scenarios.

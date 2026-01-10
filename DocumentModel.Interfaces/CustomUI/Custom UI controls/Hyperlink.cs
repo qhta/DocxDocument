@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a hyperlink control for the Office Backstage view, supporting navigation to external resources or document locations, dynamic state, customizable appearance, and advanced callback integration for flexible UI scenarios.

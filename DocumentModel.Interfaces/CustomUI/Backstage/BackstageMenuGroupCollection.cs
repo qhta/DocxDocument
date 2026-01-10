@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.CustomUI;
 
 public interface BackstageMenuGroupCollection: ElementCollection<BackstageMenuGroup>
 {

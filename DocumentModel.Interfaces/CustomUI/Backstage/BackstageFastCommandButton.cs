@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a fast command button for the Office Backstage view, supporting dynamic state, flexible positioning, and advanced callback integration for custom UI scenarios.
