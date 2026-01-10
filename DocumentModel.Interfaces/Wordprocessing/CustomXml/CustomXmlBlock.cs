@@ -4,10 +4,8 @@ namespace DocumentModel.Wordprocessing;
 ///   (paragraphs, tables, etc.). 
 ///   The attributes on this element shall be used to specify the name and namespace URI of the current custom XML element.
 /// </summary>
-public interface CustomXmlBlock: CustomXmlElement, StoryContent, TableCellContent, SdtBlockContent, CommentContent
+public interface CustomXmlBlock: CustomXmlElement, 
+  CustomXmlBlockContentCollection,
+  StoryContent, TableCellContent, SdtBlockContent, CustomXmlBlockContent, CommentContent
 {
-  //public CustomXmlBlock? ChildCustomXmlBlock { get; set; }
-  //public SdtBlock? SdtBlock { get; set; }
-  //public Paragraphs Paragraphs { get; set; }
-  //public Tables Tables { get; set; }
 }

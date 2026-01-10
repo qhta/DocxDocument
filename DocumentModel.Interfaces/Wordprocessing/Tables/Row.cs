@@ -9,7 +9,7 @@ namespace DocumentModel.Wordprocessing;
 /// A Row is a horizontal series of cells in a table. Rows can have properties that control height, whether they can break across pages, and whether they should be repeated as header rows.
 /// 
 /// </remarks>
-public interface Row
+public partial interface Row
 {
   #region Properties
 
@@ -69,7 +69,7 @@ public interface Row
   /// <summary>
   /// Collection of cells in the row.
   /// </summary>
-  public Cells? Cells { get; }
+  public IEnumerable<TableCell>? Cells { get; }
 
   /// <summary>
   /// Range representing the row's content.
@@ -78,45 +78,4 @@ public interface Row
 
   #endregion
 
-  #region Methods
-
-  /// <summary>
-  /// Selects the row.
-  /// </summary>
-  public void Select();
-
-  /// <summary>
-  /// Deletes the row from the table.
-  /// </summary>
-  public void Delete();
-
-  /// <summary>
-  /// Converts the row to text.
-  /// </summary>
-  /// <param name="separator">Optional separator character.</param>
-  /// <returns>Range containing the converted text.</returns>
-  public Range? ConvertToText(string? separator = null);
-
-  /// <summary>
-  /// Sets the height of the row.
-  /// </summary>
-  /// <param name="height">Height in points.</param>
-  /// <param name="heightRule">Height rule.</param>
-  public void SetHeight(float height, HeightRuleKind heightRule);
-
-  #endregion
-
-  #region Parent and Application
-
-  /// <summary>
-  /// Parent object containing this row.
-  /// </summary>
-  public object? Parent { get; }
-
-  /// <summary>
-  /// Application object associated with this row.
-  /// </summary>
-  public Application? Application { get; }
-
-  #endregion
 }

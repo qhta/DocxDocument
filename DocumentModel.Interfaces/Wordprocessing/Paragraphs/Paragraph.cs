@@ -4,7 +4,8 @@ namespace DocumentModel.Wordprocessing;
 ///   Defines the Paragraph Class.
 /// </summary>
 public partial interface Paragraph: ElementCollection<ParagraphContent>, 
-  StoryContent, TableCellContent, SdtBlockContent, CommentContent, BidirectionalContent
+  StoryContent, TableCellContent, SdtBlockContent, CustomXmlBlockContent, 
+  CommentContent, BidirectionalContent
 {
   /// <summary>
   ///   Specifies an identifier for a paragraph that is unique within the document part, 
