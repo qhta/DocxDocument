@@ -1,16 +1,18 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the TableIndentation Class.
+/// Represents the indentation settings for a table in a Wordprocessing document.
+/// This interface provides properties for specifying the width and unit type of the table's indentation from the leading margin, enabling precise control over table positioning.
 /// </summary>
 public interface TableIndentation
 {
   /// <summary>
-  ///   w
+  /// The width of the table indentation, specifying the distance from the leading margin.
   /// </summary>
   public Int32? Width { get; set; }
+
   /// <summary>
-  ///   type
+  /// The unit type for the table indentation width, such as points, percentage, or other supported units.
   /// </summary>
   public TableWidthUnitType? Type { get; set; }
 }
