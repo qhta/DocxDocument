@@ -1,16 +1,18 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Single Automatic Captioning Setting.
+///   Represents a single automatic captioning setting in a Wordprocessing document.
+///   This interface provides properties for the object identifier and the caption used for automatic captioning, enabling configuration and management of automatic captions for document objects.
 /// </summary>
-public interface AutoCaption
+public interface AutoCaption: CaptionDef
 {
   /// <summary>
-  ///   Identifier of Object to be Automatically Captioned
+  ///   Identifier of the object to be automatically captioned.
   /// </summary>
   public string? Name { get; set; }
+
   /// <summary>
-  ///   Caption Used for Automatic Captioning
+  ///   Caption used for automatic captioning of the object.
   /// </summary>
   public string? Caption { get; set; }
 }

@@ -1,8 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the CompatibilitySettings Class.
+/// Represents a collection of compatibility settings for a Wordprocessing document.
+/// This interface provides access to and management of <see cref="CompatibilitySetting"/> elements, enabling advanced configuration and organization of compatibility options for document processing and rendering.
 /// </summary>
-public interface CompatibilitySettings: ElementCollection<CompatibilitySetting>
+public interface CompatibilitySettings : ElementCollection<CompatibilitySetting>
 {
 }

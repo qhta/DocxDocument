@@ -1,16 +1,18 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Magnification Setting.
+/// Represents the magnification setting for a Wordprocessing document.
+/// This interface provides properties for specifying the zoom type and zoom percentage, enabling control over the document's display magnification.
 /// </summary>
 public interface Zoom
 {
   /// <summary>
-  ///   Zoom Type
+  /// Zoom type, specifying the preset magnification mode.
   /// </summary>
   public PresetZoomKind? Kind { get; set; }
+
   /// <summary>
-  ///   Zoom Percentage
+  /// Zoom percentage, specifying the magnification level as a percentage.
   /// </summary>
   public int? Percent { get; set; }
 }

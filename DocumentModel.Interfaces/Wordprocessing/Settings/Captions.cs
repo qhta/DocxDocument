@@ -12,8 +12,8 @@ namespace DocumentModel.Wordprocessing;
 /// </item>
 /// </list>
 /// </summary>
-public interface Captions
+public interface Captions: ElementCollection<CaptionDef>
 {
-  public Caption? Caption { get; set; }
-  public AutoCaptions? AutoCaptions { get; set; }
+  public IEnumerable<Caption>? Captions { get; set; }
+  public IEnumerable<AutoCaption>? AutoCaptions { get; set; }
 }

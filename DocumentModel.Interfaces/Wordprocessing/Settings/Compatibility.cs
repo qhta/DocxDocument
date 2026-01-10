@@ -1,269 +1,339 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Compatibility Settings.
+/// Represents compatibility settings for a Wordprocessing document.
+/// This interface provides properties for emulating legacy behaviors, adjusting layout, formatting, printing, and other document features to ensure compatibility with various versions of word processing applications.
 /// </summary>
 public interface Compatibility
 {
+  
   /// <summary>
-  ///   Use Simplified Rules For Table Border Conflicts.
+  /// Use simplified rules for table border conflicts.
   /// </summary>
   public bool? UseSingleBorderForContiguousCells { get; set; }
+  
   /// <summary>
-  ///   Emulate WordPerfect 6.x Paragraph Justification.
+  /// Emulate WordPerfect 6.x paragraph justification.
   /// </summary>
   public bool? WordPerfectJustification { get; set; }
+  
   /// <summary>
-  ///   Do Not Create Custom Tab Stop for Hanging Indent.
+  /// Do not create custom tab stop for hanging indent.
   /// </summary>
   public bool? NoTabHangIndent { get; set; }
+  
   /// <summary>
-  ///   Do Not Add Leading Between Lines of Text.
+  /// Do not add leading between lines of text.
   /// </summary>
   public bool? NoLeading { get; set; }
+  
   /// <summary>
-  ///   Add Additional Space Below Baseline For Underlined East Asian Text.
+  /// Add additional space below baseline for underlined East Asian text.
   /// </summary>
   public bool? SpaceForUnderline { get; set; }
+  
   /// <summary>
-  ///   Do Not Balance Text IColumns within a ISection.
+  /// Do not balance text columns within a section.
   /// </summary>
   public bool? NoColumnBalance { get; set; }
+  
   /// <summary>
-  ///   Balance Single Byte and Double Byte Characters.
+  /// Balance single byte and double byte characters.
   /// </summary>
   public bool? BalanceSingleByteDoubleByteWidth { get; set; }
+  
   /// <summary>
-  ///   Do Not Center Content on Lines With Exact Line Height.
+  /// Do not center content on lines with exact line height.
   /// </summary>
   public bool? NoExtraLineSpacing { get; set; }
+  
   /// <summary>
-  ///   Convert Backslash To Yen Sign When Entered.
+  /// Convert backslash to yen sign when entered.
   /// </summary>
   public bool? DoNotLeaveBackslashAlone { get; set; }
+  
   /// <summary>
-  ///   Underline All Trailing Spaces.
+  /// Underline all trailing spaces.
   /// </summary>
   public bool? UnderlineTrailingSpaces { get; set; }
+  
   /// <summary>
-  ///   Don't Justify Lines Ending in Soft Line Break.
+  /// Do not justify lines ending in soft line break.
   /// </summary>
   public bool? DoNotExpandShiftReturn { get; set; }
+  
   /// <summary>
-  ///   Only Expand/Condense Text By Whole Points.
+  /// Only expand/condense text by whole points.
   /// </summary>
   public bool? SpacingInWholePoints { get; set; }
+  
   /// <summary>
-  ///   Emulate Word 6.0 Line Wrapping for East Asian Text.
+  /// Emulate Word 6.0 line wrapping for East Asian text.
   /// </summary>
   public bool? LineWrapLikeWord6 { get; set; }
+  
   /// <summary>
-  ///   Print Body Text before Header/Footer Contents.
+  /// Print body text before header/footer contents.
   /// </summary>
   public bool? PrintBodyTextBeforeHeader { get; set; }
+  
   /// <summary>
-  ///   Print Colors as Black And White without Dithering.
+  /// Print colors as black and white without dithering.
   /// </summary>
   public bool? PrintColorBlackWhite { get; set; }
+  
   /// <summary>
-  ///   Space width.
+  /// Use WordPerfect space width.
   /// </summary>
   public bool? WordPerfectSpaceWidth { get; set; }
+  
   /// <summary>
-  ///   Display Page/IColumn Breaks Present in Frames.
+  /// Display page/column breaks present in frames.
   /// </summary>
   public bool? ShowBreaksInFrames { get; set; }
+  
   /// <summary>
-  ///   Increase Priority Of Font Size During Font Substitution.
+  /// Increase priority of font size during font substitution.
   /// </summary>
   public bool? SubFontBySize { get; set; }
+  
   /// <summary>
-  ///   Ignore Exact Line Height for Last Line on Page.
+  /// Ignore exact line height for last line on page.
   /// </summary>
   public bool? SuppressBottomSpacing { get; set; }
+  
   /// <summary>
-  ///   Ignore Minimum and Exact Line Height for First Line on Page.
+  /// Ignore minimum and exact line height for first line on page.
   /// </summary>
   public bool? SuppressTopSpacing { get; set; }
+  
   /// <summary>
-  ///   Ignore Minimum Line Height for First Line on Page.
+  /// Ignore minimum line height for first line on page.
   /// </summary>
   public bool? SuppressSpacingAtTopOfPage { get; set; }
+  
   /// <summary>
-  ///   Emulate WordPerfect 5.x Line Spacing.
+  /// Emulate WordPerfect 5.x line spacing.
   /// </summary>
   public bool? SuppressTopSpacingWordPerfect { get; set; }
+  
   /// <summary>
-  ///   Do Not Use Space Before On First Line After a Page Break.
+  /// Do not use space before on first line after a page break.
   /// </summary>
   public bool? SuppressSpacingBeforeAfterPageBreak { get; set; }
+  
   /// <summary>
-  ///   Swap Paragraph Borders on Odd Numbered Pages.
+  /// Swap paragraph borders on odd numbered pages.
   /// </summary>
   public bool? SwapBordersFacingPages { get; set; }
+  
   /// <summary>
-  ///   Treat Backslash Quotation Delimiter as Two Quotation Marks.
+  /// Treat backslash quotation delimiter as two quotation marks.
   /// </summary>
   public bool? ConvertMailMergeEscape { get; set; }
+  
   /// <summary>
-  ///   Emulate WordPerfect 6.x Font Height Calculation.
+  /// Emulate WordPerfect 6.x font height calculation.
   /// </summary>
   public bool? TruncateFontHeightsLikeWordPerfect { get; set; }
+  
   /// <summary>
-  ///   Emulate Word 5.x for the Macintosh Small Caps Formatting.
+  /// Emulate Word 5.x for the Macintosh small caps formatting.
   /// </summary>
   public bool? MacWordSmallCaps { get; set; }
+  
   /// <summary>
-  ///   Use Printer Metrics To Display Documents.
+  /// Use printer metrics to display documents.
   /// </summary>
   public bool? UsePrinterMetrics { get; set; }
+  
   /// <summary>
-  ///   Do Not Suppress Paragraph Borders Next To Frames.
+  /// Do not suppress paragraph borders next to frames.
   /// </summary>
   public bool? DoNotSuppressParagraphBorders { get; set; }
+  
   /// <summary>
-  ///   Line Wrap Trailing Spaces.
+  /// Line wrap trailing spaces.
   /// </summary>
   public bool? WrapTrailSpaces { get; set; }
+  
   /// <summary>
-  ///   Emulate Word 6.x/95/97 Footnote Placement.
+  /// Emulate Word 6.x/95/97 footnote placement.
   /// </summary>
   public bool? FootnoteLayoutLikeWord8 { get; set; }
+  
   /// <summary>
-  ///   Emulate Word 97 Text Wrapping Around Floating Objects.
+  /// Emulate Word 97 text wrapping around floating objects.
   /// </summary>
   public bool? ShapeLayoutLikeWord8 { get; set; }
+  
   /// <summary>
-  ///   Align Table Rows Independently.
+  /// Align table rows independently.
   /// </summary>
   public bool? AlignTablesRowByRow { get; set; }
+  
   /// <summary>
-  ///   Ignore Width of Last Tab Stop When Aligning Paragraph If It Is Not Left Aligned.
+  /// Ignore width of last tab stop when aligning paragraph if it is not left aligned.
   /// </summary>
   public bool? ForgetLastTabAlignment { get; set; }
+  
   /// <summary>
-  ///   Add Document Grid Line Pitch To Lines in Table Cells.
+  /// Add document grid line pitch to lines in table cells.
   /// </summary>
   public bool? AdjustLineHeightInTable { get; set; }
+  
   /// <summary>
-  ///   Emulate Word 95 Full-Width Character Spacing.
+  /// Emulate Word 95 full-width character spacing.
   /// </summary>
   public bool? AutoSpaceLikeWord95 { get; set; }
+  
   /// <summary>
-  ///   Do Not Increase Line Height for Raised/Lowered Text.
+  /// Do not increase line height for raised/lowered text.
   /// </summary>
   public bool? NoSpaceRaiseLower { get; set; }
+  
   /// <summary>
-  ///   Use Fixed Paragraph Spacing for HTML Auto Setting.
+  /// Use fixed paragraph spacing for HTML auto setting.
   /// </summary>
   public bool? DoNotUseHTMLParagraphAutoSpacing { get; set; }
+  
   /// <summary>
-  ///   Ignore Space Before Table When Deciding If Table Should Wrap Floating Object.
+  /// Ignore space before table when deciding if table should wrap floating object.
   /// </summary>
   public bool? LayoutRawTableWidth { get; set; }
+  
   /// <summary>
-  ///   Allow Table Rows to Wrap Inline Objects Independently.
+  /// Allow table rows to wrap inline objects independently.
   /// </summary>
   public bool? LayoutTableRowsApart { get; set; }
+  
   /// <summary>
-  ///   Emulate Word 97 East Asian Line Breaking.
+  /// Emulate Word 97 East Asian line breaking.
   /// </summary>
   public bool? UseWord97LineBreakRules { get; set; }
+  
   /// <summary>
-  ///   Do Not Allow Floating Tables To Break Across Pages.
+  /// Do not allow floating tables to break across pages.
   /// </summary>
   public bool? DoNotBreakWrappedTables { get; set; }
+  
   /// <summary>
-  ///   Do Not Snap to Document Grid in Table Cells with Objects.
+  /// Do not snap to document grid in table cells with objects.
   /// </summary>
   public bool? DoNotSnapToGridInCell { get; set; }
+  
   /// <summary>
-  ///   Select Field When First or Last Character Is Selected.
+  /// Select field when first or last character is selected.
   /// </summary>
   public bool? SelectFieldWithFirstOrLastChar { get; set; }
+  
   /// <summary>
-  ///   Use Legacy Ethiopic and Amharic Line Breaking Rules.
+  /// Use legacy Ethiopic and Amharic line breaking rules.
   /// </summary>
   public bool? ApplyBreakingRules { get; set; }
+  
   /// <summary>
-  ///   Do Not Allow Hanging Punctuation With Character Grid.
+  /// Do not allow hanging punctuation with character grid.
   /// </summary>
   public bool? DoNotWrapTextWithPunctuation { get; set; }
+  
   /// <summary>
-  ///   Do Not Compress Compressible Characters When Using Document Grid.
+  /// Do not compress compressible characters when using document grid.
   /// </summary>
   public bool? DoNotUseEastAsianBreakRules { get; set; }
+  
   /// <summary>
-  ///   Emulate Word 2002 Table Style Rules.
+  /// Emulate Word 2002 table style rules.
   /// </summary>
   public bool? UseWord2002TableStyleRules { get; set; }
+  
   /// <summary>
-  ///   Allow Tables to AutoFit Into Page Margins.
+  /// Allow tables to autofit into page margins.
   /// </summary>
   public bool? GrowAutofit { get; set; }
+  
   /// <summary>
-  ///   Do Not Bypass East Asian/Complex Script Layout Code.
+  /// Do not bypass East Asian/complex script layout code.
   /// </summary>
   public bool? UseFarEastLayout { get; set; }
+  
   /// <summary>
-  ///   Do Not Automatically Apply List Paragraph Style To Bulleted/Numbered Text.
+  /// Do not automatically apply list paragraph style to bulleted/numbered text.
   /// </summary>
   public bool? UseNormalStyleForList { get; set; }
+  
   /// <summary>
-  ///   Ignore Hanging Indent When Creating Tab Stop After Numbering.
+  /// Ignore hanging indent when creating tab stop after numbering.
   /// </summary>
   public bool? DoNotUseIndentAsNumberingTabStop { get; set; }
+  
   /// <summary>
-  ///   Use Alternate Set of East Asian Line Breaking Rules.
+  /// Use alternate set of East Asian line breaking rules.
   /// </summary>
   public bool? UseAltKinsokuLineBreakRules { get; set; }
+  
   /// <summary>
-  ///   Allow Contextual Spacing of Paragraphs in Tables.
+  /// Allow contextual spacing of paragraphs in tables.
   /// </summary>
   public bool? AllowSpaceOfSameStyleInTable { get; set; }
+  
   /// <summary>
-  ///   Do Not Ignore Floating Objects When Calculating Paragraph Indentation.
+  /// Do not ignore floating objects when calculating paragraph indentation.
   /// </summary>
   public bool? DoNotSuppressIndentation { get; set; }
+  
   /// <summary>
-  ///   Do Not AutoFit Tables To Fit Next To Wrapped Objects.
+  /// Do not autofit tables to fit next to wrapped objects.
   /// </summary>
   public bool? DoNotAutofitConstrainedTables { get; set; }
+  
   /// <summary>
-  ///   Allow Table IColumns To Exceed Preferred Widths of Constituent Cells.
+  /// Allow table columns to exceed preferred widths of constituent cells.
   /// </summary>
   public bool? AutofitToFirstFixedWidthCell { get; set; }
+  
   /// <summary>
-  ///   Underline Following Character Following Numbering.
+  /// Underline following character following numbering.
   /// </summary>
   public bool? UnderlineTabInNumberingList { get; set; }
+  
   /// <summary>
-  ///   Always Use Fixed Width for Hangul Characters.
+  /// Always use fixed width for Hangul characters.
   /// </summary>
   public bool? DisplayHangulFixedWidth { get; set; }
+  
   /// <summary>
-  ///   Always Move Paragraph Mark to Page after a Page Break.
+  /// Always move paragraph mark to page after a page break.
   /// </summary>
   public bool? SplitPageBreakAndParagraphMark { get; set; }
+  
   /// <summary>
-  ///   Don't Vertically Align Cells Containing Floating Objects.
+  /// Do not vertically align cells containing floating objects.
   /// </summary>
   public bool? DoNotVerticallyAlignCellWithShape { get; set; }
+  
   /// <summary>
-  ///   Don't Break Table Rows Around Floating Tables.
+  /// Do not break table rows around floating tables.
   /// </summary>
   public bool? DoNotBreakConstrainedForcedTable { get; set; }
+  
   /// <summary>
-  ///   Ignore Vertical Alignment in Textboxes.
+  /// Ignore vertical alignment in textboxes.
   /// </summary>
   public bool? DoNotVerticallyAlignInTextBox { get; set; }
+  
   /// <summary>
-  ///   Use ANSI Kerning Pairs from Fonts.
+  /// Use ANSI kerning pairs from fonts.
   /// </summary>
   public bool? UseAnsiKerningPairs { get; set; }
+  
   /// <summary>
-  ///   Use Cached Paragraph Information for IColumn Balancing.
+  /// Use cached paragraph information for column balancing.
   /// </summary>
   public bool? CachedColumnBalance { get; set; }
+  
+  /// <summary>
+  /// Compatibility settings collection for additional options.
+  /// </summary>
   public CompatibilitySettings? CompatibilitySettings { get; set; }
 }

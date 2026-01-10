@@ -1,20 +1,24 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the CompatibilitySetting Class.
+/// Represents a compatibility setting for a Wordprocessing document.
+/// This interface provides properties for the setting name, URI, and value, enabling advanced configuration and management of compatibility options for document processing and rendering.
 /// </summary>
-public interface CompatibilitySetting: CollectionItem
+public interface CompatibilitySetting : CollectionItem
 {
+  
   /// <summary>
-  ///   name
+  /// Name of the compatibility setting, specifying the type of compatibility option.
   /// </summary>
   public CompatSettingNameKind? Name { get; set; }
+  
   /// <summary>
-  ///   uri
+  /// URI associated with the compatibility setting, identifying the namespace or context for the setting.
   /// </summary>
   public string? Uri { get; set; }
+  
   /// <summary>
-  ///   val
+  /// Value of the compatibility setting, specifying the configuration or option value.
   /// </summary>
   public string? Val { get; set; }
 }
