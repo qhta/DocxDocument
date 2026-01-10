@@ -6,58 +6,12 @@ namespace DocumentModel.CustomUI;
 /// <remarks>
 /// This interface defines a Backstage tab with properties for identification, positioning, state, labeling, layout configuration, and group collections. It enables dynamic visibility, enabled state, labeling, and layout adjustments, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageTab: CustomUIControl, BuiltInObject, TaggedObject
+public interface BackstageTab: CustomUIControl, BuiltInObject, TaggedObject,
+  EnableControl, VisibleControl,
+  LabelledControl,
+  KeytipControl,
+  TitleControl
 {
-
-  /// <summary>
-  /// Enable interaction with the Backstage tab.
-  /// </summary>
-  public bool? Enabled { get; set; }
-
-  /// <summary>
-  /// Callback for dynamic enabled state.
-  /// </summary>
-  public string? GetEnabled { get; set; }
-
-  /// <summary>
-  /// Label text for the Backstage tab.
-  /// </summary>
-  public string? Label { get; set; }
-
-  /// <summary>
-  /// Callback for dynamic label text.
-  /// </summary>
-  public string? GetLabel { get; set; }
-
-  /// <summary>
-  /// Show the Backstage tab in the UI.
-  /// </summary>
-  public bool? Visible { get; set; }
-
-  /// <summary>
-  /// Callback for dynamic visibility.
-  /// </summary>
-  public string? GetVisible { get; set; }
-
-  /// <summary>
-  /// Keyboard shortcut (keytip) for accessing the Backstage tab.
-  /// </summary>
-  public string? Keytip { get; set; }
-
-  /// <summary>
-  /// Callback for dynamic keytip.
-  /// </summary>
-  public string? GetKeytip { get; set; }
-
-  /// <summary>
-  /// Title text for the Backstage tab.
-  /// </summary>
-  public string? Title { get; set; }
-
-  /// <summary>
-  /// Callback for dynamic title text.
-  /// </summary>
-  public string? GetTitle { get; set; }
 
   /// <summary>
   /// Percentage width of the first column in the Backstage layout.

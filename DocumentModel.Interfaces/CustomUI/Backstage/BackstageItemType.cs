@@ -6,16 +6,8 @@ namespace DocumentModel.CustomUI;
 /// <remarks>
 /// This interface defines a Backstage item type with properties for identification and labeling. It enables dynamic label text and supports collection-based organization for advanced Backstage customization in Office applications.
 /// </remarks>
-public interface BackstageItemType : IdentifiedElement, CollectionItem
+public interface BackstageItemType : IdentifiedElement, CollectionItem,
+  LabelledControl
 {
 
-  /// <summary>
-  /// Label text for the Backstage item type.
-  /// </summary>
-  public string? Label { get; set; }
-
-  /// <summary>
-  /// Callback for dynamic label text.
-  /// </summary>
-  public string? GetLabel { get; set; }
 }
