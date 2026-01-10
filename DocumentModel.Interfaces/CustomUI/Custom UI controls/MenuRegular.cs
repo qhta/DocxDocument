@@ -10,8 +10,9 @@ public interface MenuRegular : CustomUIControl, BuiltInControl, TaggedObject,
   DescriptionControl, EnableControl, VisibleControl, 
   LabelledControl, ShowLabelControl,
   ImagedControl, ShowImageControl,
+  MenuRegularContentCollection,
   KeytipControl, ScreentipControl, SupertipControl,
-  ContextMenuContent, MenuContent, GroupBoxContent
+  ContextMenuContent, MenuContent, MenuRegularContent, GroupBoxContent
 {
   /// <summary>
   /// Size of items within the menu.
@@ -22,44 +23,4 @@ public interface MenuRegular : CustomUIControl, BuiltInControl, TaggedObject,
   /// Cloned instance of a built-in or custom control.
   /// </summary>
   public ControlCloneRegular? ControlCloneRegular { get; set; }
-
-  /// <summary>
-  /// Regular button control that executes an action when clicked.
-  /// </summary>
-  public ButtonRegular? ButtonRegular { get; set; }
-
-  /// <summary>
-  /// Checkbox control for boolean selection.
-  /// </summary>
-  public CheckBox? CheckBox { get; set; }
-
-  /// <summary>
-  /// Regular gallery control that displays a collection of selectable items.
-  /// </summary>
-  public GalleryRegular? GalleryRegular { get; set; }
-
-  /// <summary>
-  /// Regular toggle button control that maintains an on/off state.
-  /// </summary>
-  public ToggleButtonRegular? ToggleButtonRegular { get; set; }
-
-  /// <summary>
-  /// Separator for visual division between menu items.
-  /// </summary>
-  public MenuSeparator? MenuSeparator { get; set; }
-
-  /// <summary>
-  /// Regular split button control that combines a default action with a dropdown menu.
-  /// </summary>
-  public SplitButtonRegular? SplitButtonRegular { get; set; }
-
-  /// <summary>
-  /// Nested regular menu control for hierarchical menu organization.
-  /// </summary>
-  public MenuRegular? ChildMenuRegular { get; set; }
-
-  /// <summary>
-  /// Dynamic regular menu control that generates menu items at runtime.
-  /// </summary>
-  public DynamicMenuRegular? DynamicMenuRegular { get; set; }
 }

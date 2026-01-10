@@ -8,7 +8,7 @@ namespace DocumentModel;
 /// </remarks>
 public interface MenuSeparator : CustomUIControl, TaggedObject, 
   TitleControl,
-  MenuContent
+  MenuContent, MenuRegularContent
 {
 
 }
