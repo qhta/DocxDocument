@@ -1,15 +1,19 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   Style Table Properties.
+/// Represents style table properties for a table in a Wordprocessing document.
+/// This interface provides properties for row and column band sizes, enabling advanced table styling and formatting options.
 /// </summary>
-public interface StyleTableProperties: BaseTableProperties
+public interface StyleTableProperties : BaseTableProperties
 {
+
   /// <summary>
-  ///   TableStyleRowBandSize.
+  /// Table style row band size, specifying the number of rows in each band for table styling.
   /// </summary>
   public Int32? TableStyleRowBandSize { get; set; }
+
   /// <summary>
-  ///   TableStyleColumnBandSize.
+  /// Table style column band size, specifying the number of columns in each band for table styling.
   /// </summary>
   public Int32? TableStyleColumnBandSize { get; set; }
 }

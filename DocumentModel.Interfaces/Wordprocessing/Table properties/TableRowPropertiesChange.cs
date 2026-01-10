@@ -1,24 +1,29 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   TableRowPropertiesChange interface used in <see cref="TableRowProperties"/>.
-///   Represents <see cref="PreviousTableRowProperties"/> annotated with Author, Date, and AnnotationId.
+/// Represents a change to table row properties, used in <see cref="TableRowProperties"/>.
+/// This interface annotates <see cref="PreviousTableRowProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for table rows.
 /// </summary>
 public interface TableRowPropertiesChange
 {
+  
   /// <summary>
-  ///   Author.
+  /// Author of the change to the table row properties.
   /// </summary>
   public string? Author { get; set; }
+  
   /// <summary>
-  ///   Date.
+  /// Date of the change to the table row properties.
   /// </summary>
   public DateTime? Date { get; set; }
+  
   /// <summary>
-  ///   Annotation Identifier.
+  /// Annotation identifier for the change, used to uniquely identify the revision.
   /// </summary>
   public string? AnnotationId { get; set; }
+  
   /// <summary>
-  ///   Previous Table Row Properties.
+  /// Previous table row properties before the change, enabling comparison and tracking of revisions.
   /// </summary>
   public PreviousTableRowProperties? PreviousTableRowProperties { get; set; }
 }
