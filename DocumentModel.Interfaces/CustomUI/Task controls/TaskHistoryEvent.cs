@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a single historical event that records a change or action performed on a task, supporting detailed attribution, event type, and extensibility for advanced task management scenarios.

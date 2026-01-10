@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents information about a task progress change event in Office UI, supporting tracking of completion percentage for advanced task management scenarios.

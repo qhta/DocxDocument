@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents an anchor for associating comments with document elements or locations in Office UI, supporting identification and integration for advanced annotation scenarios.

@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents the Office Backstage view, supporting event handling and access to tab and fast command button controls for advanced customization scenarios.

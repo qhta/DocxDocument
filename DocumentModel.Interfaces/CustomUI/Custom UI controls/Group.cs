@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a group container for organizing related controls within a ribbon tab, supporting dynamic state, visual customization, and advanced layout for Office UI scenarios.

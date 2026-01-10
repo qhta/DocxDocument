@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents information about a task schedule change event in Office UI, supporting tracking of start and due dates for advanced task management scenarios.

@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents an anchor point for task-related elements in Office UI, supporting extensibility and integration with comment anchors for advanced task management scenarios.

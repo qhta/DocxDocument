@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents information about a task title change event in Office UI, supporting advanced task management and event tracking scenarios.

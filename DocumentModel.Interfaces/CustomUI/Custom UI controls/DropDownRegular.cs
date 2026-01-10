@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a regular dropdown control that displays a list of selectable items, suitable for use within menus and button groups, supporting dynamic content, customizable appearance, and advanced callback integration for flexible UI scenarios.

@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents an undo operation for a task in Office UI, supporting identification and integration for advanced task management and event tracking scenarios.

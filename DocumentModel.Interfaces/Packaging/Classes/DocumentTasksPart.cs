@@ -9,5 +9,5 @@ public interface DocumentTasksPart: OpenXmlPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public TaskCollection? Tasks { get; set; }
+  public DMUI.TaskCollection? Tasks { get; set; }
 }

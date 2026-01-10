@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Represents a collection of custom controls that can be added to the Quick Access Toolbar (QAT) at the application level, shared across all documents for enhanced productivity and workflow efficiency.

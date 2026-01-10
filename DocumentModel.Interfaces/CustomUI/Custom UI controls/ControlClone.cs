@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.CustomUI;
 
 /// <summary>
 ///   Represents a cloned instance of a built-in or custom Office ribbon control with customizable properties.
