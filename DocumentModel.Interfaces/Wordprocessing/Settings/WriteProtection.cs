@@ -1,79 +1,94 @@
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   This element specifies the write protection settings which have been applied to a WordprocessingML document.
-///   Write protection refers to a mode in which the document's contents cannot be edited, and the document cannot
-///   be resaved using the same file name. This setting is independent of the documentProtection (§17.15.1.29)
-///  element, but like document protection, this setting is not intended as a security feature and can be ignored.
-/// </summary>
-public interface WriteProtection
-{
+
   /// <summary>
-  ///   Recommend Write Protection in User Interface
+  /// Represents the write protection settings applied to a WordprocessingML document.
+  /// This interface provides properties for recommending write protection, cryptographic provider and algorithm details, password hash and salt, and extensibility options, enabling configuration and management of document write protection. Write protection restricts editing and saving the document under the same file name, but is not intended as a security feature.
   /// </summary>
-  public bool? Recommended { get; set; }
-  /// <summary>
-  ///   Cryptographic Provider Type
-  /// </summary>
-  public CryptProviderKind? CryptographicProviderType { get; set; }
-  /// <summary>
-  ///   Cryptographic Algorithm Class
-  /// </summary>
-  public CryptAlgorithmClassKind? CryptographicAlgorithmClass { get; set; }
-  /// <summary>
-  ///   Cryptographic Algorithm Type
-  /// </summary>
-  public CryptAlgorithmKind? CryptographicAlgorithmType { get; set; }
-  /// <summary>
-  ///   Cryptographic Hashing Algorithm
-  /// </summary>
-  public Int32? CryptographicAlgorithmSid { get; set; }
-  /// <summary>
-  ///   Iterations to Run Hashing Algorithm
-  /// </summary>
-  public UInt32? CryptographicSpinCount { get; set; }
-  /// <summary>
-  ///   Cryptographic Provider
-  /// </summary>
-  public string? CryptographicProvider { get; set; }
-  /// <summary>
-  ///   Cryptographic Algorithm Extensibility
-  /// </summary>
-  public HexInt? AlgorithmIdExtensibility { get; set; }
-  /// <summary>
-  ///   Algorithm Extensibility Source
-  /// </summary>
-  public string? AlgorithmIdExtensibilitySource { get; set; }
-  /// <summary>
-  ///   Cryptographic Provider Type Extensibility
-  /// </summary>
-  public HexInt? CryptographicProviderTypeExtensibility { get; set; }
-  /// <summary>
-  ///   Provider Type Extensibility Source
-  /// </summary>
-  public string? CryptographicProviderTypeExtSource { get; set; }
-  /// <summary>
-  ///   Password Hash
-  /// </summary>
-  public Base64Binary? Hash { get; set; }
-  /// <summary>
-  ///   Salt for Password Verifier
-  /// </summary>
-  public Base64Binary? Salt { get; set; }
-  /// <summary>
-  ///   Specifies the specific cryptographic hashing algorithm which shall be used along with the
-  ///   salt attribute and input password in order to compute the hash value.
-  /// </summary>
-  public string? AlgorithmName { get; set; }
-  /// <summary>
-  ///   hashValue
-  /// </summary>
-  public Base64Binary? HashValue { get; set; }
-  /// <summary>
-  ///   saltValue
-  /// </summary>
-  public Base64Binary? SaltValue { get; set; }
-  /// <summary>
-  ///   spinCount
-  /// </summary>
-  public Int32? SpinCount { get; set; }
-}
+  public interface WriteProtection
+  {
+    
+    /// <summary>
+    /// Recommend write protection in the user interface.
+    /// </summary>
+    public bool? Recommended { get; set; }
+    
+    /// <summary>
+    /// Cryptographic provider type used for write protection.
+    /// </summary>
+    public CryptProviderKind? CryptographicProviderType { get; set; }
+    
+    /// <summary>
+    /// Cryptographic algorithm class used for write protection.
+    /// </summary>
+    public CryptAlgorithmClassKind? CryptographicAlgorithmClass { get; set; }
+    
+    /// <summary>
+    /// Cryptographic algorithm type used for write protection.
+    /// </summary>
+    public CryptAlgorithmKind? CryptographicAlgorithmType { get; set; }
+    
+    /// <summary>
+    /// Cryptographic hashing algorithm identifier.
+    /// </summary>
+    public Int32? CryptographicAlgorithmSid { get; set; }
+    
+    /// <summary>
+    /// Number of iterations to run the hashing algorithm.
+    /// </summary>
+    public UInt32? CryptographicSpinCount { get; set; }
+    
+    /// <summary>
+    /// Name of the cryptographic provider.
+    /// </summary>
+    public string? CryptographicProvider { get; set; }
+    
+    /// <summary>
+    /// Cryptographic algorithm extensibility identifier.
+    /// </summary>
+    public HexInt? AlgorithmIdExtensibility { get; set; }
+    
+    /// <summary>
+    /// Source for the algorithm extensibility identifier.
+    /// </summary>
+    public string? AlgorithmIdExtensibilitySource { get; set; }
+    
+    /// <summary>
+    /// Cryptographic provider type extensibility identifier.
+    /// </summary>
+    public HexInt? CryptographicProviderTypeExtensibility { get; set; }
+    
+    /// <summary>
+    /// Source for the cryptographic provider type extensibility identifier.
+    /// </summary>
+    public string? CryptographicProviderTypeExtSource { get; set; }
+    
+    /// <summary>
+    /// Password hash value for write protection.
+    /// </summary>
+    public Base64Binary? Hash { get; set; }
+    
+    /// <summary>
+    /// Salt value for password verifier.
+    /// </summary>
+    public Base64Binary? Salt { get; set; }
+    
+    /// <summary>
+    /// Name of the specific cryptographic hashing algorithm used with the salt and input password.
+    /// </summary>
+    public string? AlgorithmName { get; set; }
+    
+    /// <summary>
+    /// Hash value for write protection.
+    /// </summary>
+    public Base64Binary? HashValue { get; set; }
+    
+    /// <summary>
+    /// Salt value for write protection.
+    /// </summary>
+    public Base64Binary? SaltValue { get; set; }
+    
+    /// <summary>
+    /// Number of iterations (spin count) for hashing algorithm.
+    /// </summary>
+    public Int32? SpinCount { get; set; }
+  }

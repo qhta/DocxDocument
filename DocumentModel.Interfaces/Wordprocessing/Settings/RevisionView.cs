@@ -1,28 +1,34 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Visibility of Annotation Types.
+/// Represents the visibility settings for annotation types in a Wordprocessing document.
+/// This interface provides properties for controlling the display of markup areas, comments, content revisions, formatting revisions, and ink annotations, enabling advanced configuration of revision and annotation visibility.
 /// </summary>
 public interface RevisionView
 {
+
   /// <summary>
-  ///   Display Visual Indicator Of Markup Area
+  /// Display visual indicator of the markup area.
   /// </summary>
   public bool? Markup { get; set; }
+
   /// <summary>
-  ///   Display Comments
+  /// Display comments in the document.
   /// </summary>
   public bool? Comments { get; set; }
+
   /// <summary>
-  ///   Display Content Revisions
+  /// Display content revisions in the document.
   /// </summary>
   public bool? DisplayRevision { get; set; }
+
   /// <summary>
-  ///   Display Formatting Revisions
+  /// Display formatting revisions in the document.
   /// </summary>
   public bool? Formatting { get; set; }
+
   /// <summary>
-  ///   Display Ink Annotations
+  /// Display ink annotations in the document.
   /// </summary>
   public bool? InkAnnotations { get; set; }
 }

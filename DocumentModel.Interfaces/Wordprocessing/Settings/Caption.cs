@@ -1,36 +1,44 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Single Caption Type Definition.
+/// Represents a single caption type definition in a Wordprocessing document.
+/// This interface provides properties for caption type name, placement, chapter numbering, heading style, label inclusion, numbering format, and separator, enabling advanced configuration and management of captions.
 /// </summary>
-public interface Caption
+public interface Caption: CaptionDef
 {
+
   /// <summary>
-  ///   Caption Type Name
+  /// Caption type name, specifying the name of the caption type.
   /// </summary>
   public string? Name { get; set; }
+
   /// <summary>
-  ///   Automatic Caption Placement
+  /// Automatic caption placement, specifying where the caption is placed relative to the object.
   /// </summary>
   public CaptionPositionKind? Position { get; set; }
+
   /// <summary>
-  ///   Include Chapter Number in Field for Caption
+  /// Indicates whether the chapter number is included in the field for the caption.
   /// </summary>
   public bool? ChapterNumber { get; set; }
+
   /// <summary>
-  ///   Style for Chapter Headings
+  /// Style for chapter headings, specifying the heading style used for chapter numbering.
   /// </summary>
   public Int32? Heading { get; set; }
+
   /// <summary>
-  ///   Do Not Include Name In Caption
+  /// Indicates whether the name is excluded from the caption.
   /// </summary>
   public bool? NoLabel { get; set; }
+
   /// <summary>
-  ///   Caption Numbering Format
+  /// Caption numbering format, specifying the format used for numbering captions.
   /// </summary>
   public NumberFormatKind? NumberFormat { get; set; }
+
   /// <summary>
-  ///   Chapter Number/Item Index Separator
+  /// Chapter number/item index separator, specifying the separator used between chapter number and item index.
   /// </summary>
   public ChapterSeparatorKind? Separator { get; set; }
 }

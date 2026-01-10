@@ -1,8 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Represents a reference to Printer settings.
+/// Represents a reference to printer settings in a Wordprocessing document.
+/// This interface is used to associate printer configuration data with a document section, enabling advanced printing options and section-specific printer settings.
 /// </summary>
-public interface PrinterSettingsReference: RelationshipType, SectionPropertiesContent
+public interface PrinterSettingsReference : RelationshipType, SectionPropertiesContent
 {
 }
