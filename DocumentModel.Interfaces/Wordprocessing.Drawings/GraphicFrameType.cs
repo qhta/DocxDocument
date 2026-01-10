@@ -1,10 +1,10 @@
 using DocumentModel.Drawings;
-namespace DocumentModel.Wordprocessing.DrawingGroup;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
-///   Defines the GraphicFrame Class.
+///   Defines the GraphicFrameType Class.
 /// </summary>
-public interface GraphicFrame
+public interface GraphicFrameType
 {
   /// <summary>
   ///   NonVisualDrawingProperties.

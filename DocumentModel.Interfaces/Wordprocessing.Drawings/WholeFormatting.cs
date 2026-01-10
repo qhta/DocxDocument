@@ -1,5 +1,5 @@
 using DocumentModel.Drawings;
-namespace DocumentModel.Wordprocessing.DrawingCanvas;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 ///   Defines the WholeFormatting Class.

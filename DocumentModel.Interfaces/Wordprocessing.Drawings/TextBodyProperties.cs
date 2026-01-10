@@ -1,5 +1,5 @@
 using DocumentModel.Drawings;
-namespace DocumentModel.Wordprocessing.DrawingShape;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 /// Represents the set of properties for a text body within a shape in a Wordprocessing document.

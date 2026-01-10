@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing.DrawingShape;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 /// Represents a linked text box within a Wordprocessing document.
