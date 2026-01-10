@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a logical grouping of task categories for organizing commands and controls in the Office backstage view or task pane. Task groups provide structure, labeling, visibility control, sizing options, and support dynamic behavior through callback functions for advanced Office add-in or document solutions.
 /// </remarks>
-public interface TaskGroup : CustomUIControl, BuiltInControl, TaggedObject, 
+public interface TaskGroup : CustomUIControl, BuiltInObject, TaggedObject, 
   VisibleControl, LabelledControl, ShowLabelControl, HelperControl,
   TaskFormGroupCategoryCollection
 {

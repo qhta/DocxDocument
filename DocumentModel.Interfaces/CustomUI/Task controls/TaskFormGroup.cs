@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a logical grouping of controls displayed in a task pane or form. Task form groups organize related controls and provide options for labeling, visibility, sizing, and dynamic behavior through callback functions for advanced Office add-in or document solutions.
 /// </remarks>
-public interface TaskFormGroup : QualifiedElement, BuiltInControl, TaggedObject, 
+public interface TaskFormGroup : QualifiedElement, BuiltInObject, TaggedObject, 
   VisibleControl, LabelledControl, ShowLabelControl, HelperControl,
   TaskFormGroupCategoryCollection
 {
