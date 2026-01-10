@@ -7,8 +7,8 @@
 /// This interface defines a layout container for the Backstage view, enabling structured, responsive interfaces with support for nested containers, alignment control, and a variety of child controls. It provides sophisticated layout capabilities for custom Backstage pages, document management workflows, settings panels, and information displays in Office applications.
 /// </remarks>
 public interface LayoutContainer : QualifiedElement, TaggedObject,
-  GroupBoxContent, LayoutContent,
-  LayoutContentCollection
+  LayoutContentCollection,
+  GroupBoxContent, LayoutContent, BackstageGroupContent
 {
 
   /// <summary>

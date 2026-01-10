@@ -6,7 +6,9 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines an image control for Office UI, enabling unique identification, tagging, dynamic enable/visible state, image customization, and flexible placement in group boxes or layout containers. It supports advanced workflows for branding, information display, and extensibility in Office add-ins or document solutions.
 /// </remarks>
-public interface ImageControl : QualifiedElement, TaggedObject, EnableControl, VisibleControl, ImagedControl, GroupBoxContent, LayoutContent
+public interface ImageControl : QualifiedElement, TaggedObject, 
+  EnableControl, VisibleControl, ImagedControl, 
+  GroupBoxContent, LayoutContent, BackstageGroupContent
 {
   /// <summary>
   /// Alternative text for the image, supporting accessibility and descriptive labeling.

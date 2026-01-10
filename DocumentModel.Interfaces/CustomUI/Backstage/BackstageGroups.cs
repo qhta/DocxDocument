@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface provides access to various group types that can be displayed in the Backstage view, including task form groups, standard Backstage groups, and task groups. It enables comprehensive organization and customization of Backstage layouts in Office applications.
 /// </remarks>
-public interface BackstageGroupCollection
+public interface BackstageGroups
 {
   /// <summary>
   /// Task form group displayed in the Backstage view.

@@ -13,7 +13,7 @@ public interface BackstageDropDown: QualifiedElement, TaggedObject,
   ItemsControl, SelectedItemControl,
   ActionControl,
   BackstageItemCollection,
-  GroupBoxContent, LayoutContent
+  GroupBoxContent, LayoutContent, BackstageGroupContent
 {
 
   /// <summary>
