@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing.DrawingShape;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 /// Represents advanced information for a text box in a Wordprocessing document.
