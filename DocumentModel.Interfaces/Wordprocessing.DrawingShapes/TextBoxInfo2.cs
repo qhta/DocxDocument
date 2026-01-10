@@ -1,20 +1,18 @@
 namespace DocumentModel.Wordprocessing.DrawingShape;
 
 /// <summary>
-///   Defines the TextBoxInfo2 Class.
+/// Represents advanced information for a text box in a Wordprocessing document.
+/// This interface provides properties for identifying the text box, accessing its content, and managing associated OfficeArt extensions.
 /// </summary>
-public interface TextBoxInfo2
+public interface TextBoxInfo2: DMD.OfficeArtExtendableElement
 {
-  /// <summary>
-  ///   id
-  /// </summary>
-  public UInt16? Id { get; set; }
-  /// <summary>
-  ///   TextBoxContent.
-  /// </summary>
-  public TextBoxContent? TextBoxContent { get; set; }
-  /// <summary>
-  ///   OfficeArtExtensionList.
-  /// </summary>
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    /// <summary>
+    /// The unique identifier for the text box, used to distinguish it from other text boxes in the document.
+    /// </summary>
+    public UInt16? Id { get; set; }
+    /// <summary>
+    /// The content of the text box, including text and formatting information.
+    /// </summary>
+    public TextBoxContent? TextBoxContent { get; set; }
+
 }
