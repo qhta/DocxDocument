@@ -12,6 +12,6 @@ public interface ToggleButtonRegular : CustomUIControl, BuiltInControl, TaggedOb
     ImagedControl, ShowImageControl,
     KeytipControl, ScreentipControl, SupertipControl,
     PressedControl, ActionControl,
-    ContextMenuContent, MenuContent, ButtonGroupContent
+    ContextMenuContent, MenuContent, MenuRegularContent, ButtonGroupContent
 {
 }

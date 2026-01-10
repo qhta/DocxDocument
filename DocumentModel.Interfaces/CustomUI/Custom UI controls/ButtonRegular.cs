@@ -13,7 +13,7 @@ public interface ButtonRegular : CustomUIControl, BuiltInControl, TaggedObject,
   ImagedControl, ShowImageControl,
   KeytipControl, ScreentipControl, SupertipControl,
   ActionControl,
-  ContextMenuContent, MenuContent, ButtonGroupContent,
+  ContextMenuContent, MenuContent, MenuRegularContent, ButtonGroupContent,
   QatItem
 {
 

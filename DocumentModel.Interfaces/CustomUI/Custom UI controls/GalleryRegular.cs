@@ -12,14 +12,14 @@ namespace DocumentModel;
 /// </remarks>
 public interface GalleryRegular: CustomUIControl, BuiltInControl, TaggedObject, 
   DescriptionControl,
-  //EnableControl, VisibleControl, 
-  //LabelledControl, ShowLabelControl,
-  //ImagedControl, ShowImageControl,
-  //ScreentipControl, SupertipControl, KeytipControl,
-  //ActionControl,
-  //ItemsControl, SelectedItemControl,
+  EnableControl, VisibleControl,
+  LabelledControl, ShowLabelControl,
+  ImagedControl, ShowImageControl,
+  ScreentipControl, SupertipControl, KeytipControl,
+  ActionControl,
+  ItemsControl, SelectedItemControl,
   SelectionItemCollection,
-  ContextMenuContent, MenuContent, ButtonGroupContent
+  ContextMenuContent, MenuContent, MenuRegularContent, ButtonGroupContent
 {
 
   /// <summary>
