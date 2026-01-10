@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage checkbox with properties for expansion, description, tooltips, identification, state, labeling, keytips, and pressed state. It enables dynamic visibility, enabled state, labeling, and pressed state, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageCheckBox: QualifiedElement, TaggedObject
+public interface BackstageCheckBox: QualifiedElement, TaggedObject, GroupBoxContent, LayoutContent
 {
   /// <summary>
   /// Expansion behavior of the checkbox control.

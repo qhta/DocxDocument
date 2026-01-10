@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage edit box with properties for identification, alignment, expansion, state, labeling, text input, and layout. It enables dynamic visibility, enabled state, labeling, and text value, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageEditBox: QualifiedElement, TaggedObject
+public interface BackstageEditBox: QualifiedElement, TaggedObject, GroupBoxContent, LayoutContent
 {
 
   /// <summary>

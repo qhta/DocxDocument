@@ -22,13 +22,5 @@ public interface DialogBoxLauncher
   /// <summary>
   ///   Gets or sets the button control that defines the dialog box launcher's behavior and appearance.
   /// </summary>
-  /// <remarks>
-  ///   The ButtonRegular control provides all the properties needed to define the dialog box launcher,
-  ///   including the action to perform when clicked (onAction callback), screentip and supertip for
-  ///   describing the launcher's purpose, and enabled/visible state management. The button is automatically
-  ///   styled as a small arrow icon in the group's lower-right corner, so explicit image properties are
-  ///   typically not needed. The onAction callback should open the appropriate dialog, task pane, or
-  ///   backstage view that provides the extended functionality for the ribbon group.
-  /// </remarks>
   public ButtonRegular? ButtonRegular { get; set; }
 }

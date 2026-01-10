@@ -9,7 +9,9 @@ namespace DocumentModel;
 ///   Boxes provide layout capabilities with customizable styling to organize controls in a structured manner.
 ///   They support both horizontal and vertical arrangements depending on the specified box style.
 /// </remarks>
-public interface Box : CustomUIControl, BoxContent, GroupContent
+public interface Box : CustomUIControl,
+  BoxContent, GroupContent,
+  BoxContentCollection
 {
   /// <summary>
   ///   Visual style that determines the layout behavior of the box.
@@ -21,8 +23,4 @@ public interface Box : CustomUIControl, BoxContent, GroupContent
   /// </summary>
   public ControlClone? ControlClone { get; set; }
 
-  /// <summary>
-  ///   Collection of child controls contained in the box.
-  /// </summary>
-  public BoxContentList Children { get; set; }
 }

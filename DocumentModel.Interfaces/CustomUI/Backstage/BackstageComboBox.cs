@@ -6,7 +6,8 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage combo box with properties for identification, alignment, expansion, state, labeling, text input, item management, and layout. It enables dynamic visibility, enabled state, labeling, item count, and text value, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageComboBox: QualifiedElement, TaggedObject
+public interface BackstageComboBox: QualifiedElement, TaggedObject,
+  GroupBoxContent, LayoutContent
 {
 
   /// <summary>
@@ -92,5 +93,5 @@ public interface BackstageComboBox: QualifiedElement, TaggedObject
   /// <summary>
   /// Collection of items displayed in the combo box.
   /// </summary>
-  public BackstageItems? BackstageItems { get; set; }
+  public BackstageItemCollection? BackstageItems { get; set; }
 }

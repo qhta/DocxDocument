@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents a collection of GroupContent elements.
 /// </summary>
-public interface GroupContentList: ElementCollection<GroupContent>
+public interface GroupContentCollection: ElementCollection<GroupContent>
 {
   
 }

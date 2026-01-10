@@ -8,7 +8,7 @@
 /// item labels, images, screentips, and other properties via named callback functions. This enables integration with
 /// data sources or logic that determine the available items and their presentation at runtime. The interface is
 /// intended for use in UI frameworks or components that require customizable item selection controls.</remarks>
-public interface IItemControl
+public interface ItemsControl
 {
   /// <summary>
   ///   Specifies whether this control displays icons on its selection items.

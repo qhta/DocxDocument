@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface defines a Backstage group button with properties for expansion, style, tooltips, identification, state, labeling, images, keytips, and definitive action. It enables dynamic visibility, enabled state, labeling, and image selection, supporting comprehensive customization of the Backstage experience in Office applications.
 /// </remarks>
-public interface BackstageGroupButton: QualifiedElement, TaggedObject
+public interface BackstageGroupButton: QualifiedElement, TaggedObject, GroupBoxContent, LayoutContent
 {
   /// <summary>
   /// Expansion behavior of the group button.
