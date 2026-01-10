@@ -1,16 +1,19 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines SdtElement - the base interface for the sdt elements.
+/// Defines SdtElement, the base interface for structured document tag (SDT) elements in a Wordprocessing document.
+/// This interface provides properties for SDT configuration and end character formatting, enabling advanced management and customization of SDT elements.
 /// </summary>
 public interface SdtElement
 {
+
   /// <summary>
-  ///  Specifies the set of properties which shall be applied to this structured document tag.
+  /// Specifies the set of properties applied to this structured document tag.
   /// </summary>
   public SdtProperties? SdtProperties { get; set; }
+
   /// <summary>
-  /// Specifies the properties which shall be applied to the physical character which delimits the end of a structured document tag.
+  /// Specifies the properties applied to the physical character that delimits the end of a structured document tag.
   /// </summary>
   public SdtEndCharProperties? SdtEndCharProperties { get; set; }
 }

@@ -1,16 +1,20 @@
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   Specifies the presence of a structured document tag around one or more block-level structures (paragraphs, tables, etc.).
-/// </summary>
-public interface SdtBlock: ElementCollection<SdtBlockContent>, 
-  StoryContent, TableCellContent, SdtBlockContent, CustomXmlBlockContent, CommentContent
-{
+
   /// <summary>
-  ///  Specifies the set of properties which shall be applied to this structured document tag.
+  /// Specifies the presence of a structured document tag around one or more block-level structures (paragraphs, tables, etc.).
+  /// This interface provides properties for SDT configuration and end character formatting, enabling advanced management and customization of structured document tags for block-level content.
   /// </summary>
-  public SdtProperties? SdtProperties { get; set; }
-  /// <summary>
-  /// Specifies the properties which shall be applied to the physical character which delimits the end of a structured document tag.
-  /// </summary>
-  public SdtEndCharProperties? SdtEndCharProperties { get; set; }
-}
+  public interface SdtBlock : ElementCollection<SdtBlockContent>,
+    StoryContent, TableCellContent, SdtBlockContent, CustomXmlBlockContent, CommentContent
+  {
+    
+    /// <summary>
+    /// Specifies the set of properties applied to this structured document tag.
+    /// </summary>
+    public SdtProperties? SdtProperties { get; set; }
+    
+    /// <summary>
+    /// Specifies the properties applied to the physical character that delimits the end of a structured document tag.
+    /// </summary>
+    public SdtEndCharProperties? SdtEndCharProperties { get; set; }
+  }

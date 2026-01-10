@@ -1,15 +1,19 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///  Structured document tag around one or more inline-level structures (runs, DrawingML objects, fields, etc.) in the current paragraph. 
+/// Structured document tag around one or more inline-level structures (runs, DrawingML objects, fields, etc.) in the current paragraph.
+/// This interface represents a collection of structured document tag run content and provides properties for tag configuration and end character formatting, enabling advanced handling of inline-level structured document tags.
 /// </summary>
-public interface SdtRun: ElementCollection<SdtRunContent>, ParagraphContent, SdtRunContent, BidirectionalContent, DMM.MathArgumentContent
+public interface SdtRun : ElementCollection<SdtRunContent>, ParagraphContent, SdtRunContent, BidirectionalContent, DMM.MathArgumentContent
 {
+  
   /// <summary>
-  ///  Specifies the set of properties which shall be applied to this structured document tag.
+  /// Specifies the set of properties applied to this structured document tag.
   /// </summary>
   public SdtProperties? SdtProperties { get; set; }
+  
   /// <summary>
-  /// Specifies the properties which shall be applied to the physical character which delimits the end of a structured document tag.
+  /// Specifies the properties applied to the physical character that delimits the end of a structured document tag.
   /// </summary>
   public SdtEndCharProperties? SdtEndCharProperties { get; set; }
 }
