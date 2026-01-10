@@ -8,8 +8,8 @@ namespace DocumentModel;
 /// </remarks>
 public interface GroupBox : TaggedObject,
   LabelledControl,
-  GroupBoxContent, LayoutContent,
-  GroupBoxContentCollection
+  GroupBoxContentCollection,
+  GroupBoxContent, LayoutContent, BackstageGroupContent
 {
   /// <summary>
   /// Expansion behavior of the group box.

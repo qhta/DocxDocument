@@ -12,7 +12,7 @@ public interface Hyperlink: QualifiedElement, TaggedObject,
   ImagedControl,
   KeytipControl, ScreentipControl, SupertipControl,
   ActionControl, TargetControl,
-  GroupBoxContent, LayoutContent
+  GroupBoxContent, LayoutContent, BackstageGroupContent
 {
 
   /// <summary>

@@ -13,7 +13,7 @@ public interface BackstageComboBox: QualifiedElement, TaggedObject,
   ItemsControl,
   ChangeControl,
   BackstageItemCollection,
-  GroupBoxContent, LayoutContent
+  GroupBoxContent, LayoutContent, BackstageGroupContent
 {
 
   /// <summary>

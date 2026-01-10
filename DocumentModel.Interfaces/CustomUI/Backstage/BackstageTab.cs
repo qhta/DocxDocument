@@ -87,7 +87,7 @@ public interface BackstageTab: CustomUIControl, BuiltInControl, TaggedObject
   /// <summary>
   /// Collection of Backstage groups displayed in the tab.
   /// </summary>
-  public BackstageGroupCollection? BackstageGroups { get; set; }
+  public BackstageGroups? BackstageGroups { get; set; }
 
   /// <summary>
   /// Collection of simple groups displayed in the tab.

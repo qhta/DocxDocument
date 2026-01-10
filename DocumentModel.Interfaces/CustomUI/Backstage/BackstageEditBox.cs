@@ -11,7 +11,7 @@ public interface BackstageEditBox: QualifiedElement, TaggedObject,
   LabelledControl,
   KeytipControl, ScreentipControl, SupertipControl,
   ChangeControl,
-  GroupBoxContent, LayoutContent
+  GroupBoxContent, LayoutContent, BackstageGroupContent
 {
 
   /// <summary>
