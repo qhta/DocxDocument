@@ -1,72 +1,88 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Suggested Filtering for List of Document Styles.
+/// Represents suggested filtering options for the list of document styles in a Wordprocessing document.
+/// This interface provides properties for filtering by style type, usage, visibility, formatting, and alternate names, enabling advanced style pane customization and management.
 /// </summary>
 public interface StylePaneFormatFilter
 {
   /// <summary>
-  ///   val
+  /// Hexadecimal value representing the style pane format filter settings.
   /// </summary>
   public HexChar? Val { get; set; }
+
   /// <summary>
-  ///   allStyles
+  /// Indicates whether all styles are included in the filter.
   /// </summary>
   public bool? AllStyles { get; set; }
+
   /// <summary>
-  ///   customStyles
+  /// Indicates whether only custom styles are included in the filter.
   /// </summary>
   public bool? CustomStyles { get; set; }
+
   /// <summary>
-  ///   latentStyles
+  /// Indicates whether latent styles are included in the filter.
   /// </summary>
   public bool? LatentStyles { get; set; }
+
   /// <summary>
-  ///   stylesInUse
+  /// Indicates whether only styles currently in use are included in the filter.
   /// </summary>
   public bool? StylesInUse { get; set; }
+
   /// <summary>
-  ///   headingStyles
+  /// Indicates whether heading styles are included in the filter.
   /// </summary>
   public bool? HeadingStyles { get; set; }
+
   /// <summary>
-  ///   numberingStyles
+  /// Indicates whether numbering styles are included in the filter.
   /// </summary>
   public bool? NumberingStyles { get; set; }
+
   /// <summary>
-  ///   tableStyles
+  /// Indicates whether table styles are included in the filter.
   /// </summary>
   public bool? TableStyles { get; set; }
+
   /// <summary>
-  ///   directFormattingOnRuns
+  /// Indicates whether direct formatting on runs is included in the filter.
   /// </summary>
   public bool? DirectFormattingOnRuns { get; set; }
+
   /// <summary>
-  ///   directFormattingOnParagraphs
+  /// Indicates whether direct formatting on paragraphs is included in the filter.
   /// </summary>
   public bool? DirectFormattingOnParagraphs { get; set; }
+
   /// <summary>
-  ///   directFormattingOnNumbering
+  /// Indicates whether direct formatting on numbering is included in the filter.
   /// </summary>
   public bool? DirectFormattingOnNumbering { get; set; }
+
   /// <summary>
-  ///   directFormattingOnTables
+  /// Indicates whether direct formatting on tables is included in the filter.
   /// </summary>
   public bool? DirectFormattingOnTables { get; set; }
+
   /// <summary>
-  ///   clearFormatting
+  /// Indicates whether clear formatting is included in the filter.
   /// </summary>
   public bool? ClearFormatting { get; set; }
+
   /// <summary>
-  ///   top3HeadingStyles
+  /// Indicates whether the top three heading styles are included in the filter.
   /// </summary>
   public bool? Top3HeadingStyles { get; set; }
+
   /// <summary>
-  ///   visibleStyles
+  /// Indicates whether only visible styles are included in the filter.
   /// </summary>
   public bool? VisibleStyles { get; set; }
+
   /// <summary>
-  ///   alternateStyleNames
+  /// Indicates whether alternate style names are included in the filter.
   /// </summary>
   public bool? AlternateStyleNames { get; set; }
 }

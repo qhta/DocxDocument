@@ -1,38 +1,39 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Latent Style Information.
+/// Represents latent style information for a Wordprocessing document.
+/// This interface provides properties for default style locking, UI priority, visibility, primary style settings, and style count, enabling advanced management and customization of latent styles.
 /// </summary>
 public partial interface LatentStyles
 {
+  
   /// <summary>
-  ///   Default Style Locking Setting
+  /// Default style locking setting, indicating whether styles are locked by default.
   /// </summary>
-  //[DefaultValue(false)]
   public bool? DefaultLockedState { get; set; }
+  
   /// <summary>
-  ///   Default User Interface Priority Setting
+  /// Default user interface priority setting, specifying the default sorting order for styles in the UI.
   /// </summary>
-  //[DefaultValue(0)]
   public Int32? DefaultUiPriority { get; set; }
+  
   /// <summary>
-  ///   Default Semi-Hidden Setting
+  /// Default semi-hidden setting, indicating whether styles are semi-hidden by default.
   /// </summary>
-  //[DefaultValue(false)]
   public bool? DefaultSemiHidden { get; set; }
+  
   /// <summary>
-  ///   Default Hidden Until Used Setting
+  /// Default hidden until used setting, indicating whether styles are hidden until used by default.
   /// </summary>
-  //[DefaultValue(false)]
   public bool? DefaultUnhideWhenUsed { get; set; }
+  
   /// <summary>
-  ///   Default Primary Style Setting
+  /// Default primary style setting, indicating whether styles are primary by default.
   /// </summary>
-  //[DefaultValue(false)]
   public bool? DefaultPrimaryStyle { get; set; }
+  
   /// <summary>
-  ///   Latent Style Count
+  /// Latent style count, specifying the total number of latent styles defined in the document.
   /// </summary>
-  //[DefaultValue(0)]
   public Int32? TotalCount { get; set; }
 }
