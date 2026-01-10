@@ -12,6 +12,6 @@ public interface CheckBox : CustomUIControl, BuiltInControl, TaggedObject,
   LabelledControl,
   PressedControl, ActionControl,
   KeytipControl, ScreentipControl, SupertipControl,
-  BoxContent, ContextMenuContent, MenuContent
+  BoxContent, ContextMenuContent, MenuContent, MenuRegularContent
 {
 }

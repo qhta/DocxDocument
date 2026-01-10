@@ -11,7 +11,7 @@ public interface DynamicMenuRegular : CustomUIControl, BuiltInControl, TaggedObj
   LabelledControl, ShowLabelControl,
   ImagedControl, ShowImageControl,
   KeytipControl, ScreentipControl, SupertipControl,
-  ContextMenuContent, MenuContent, ButtonGroupContent
+  ContextMenuContent, MenuContent, MenuRegularContent, ButtonGroupContent
 {
 
   /// <summary>

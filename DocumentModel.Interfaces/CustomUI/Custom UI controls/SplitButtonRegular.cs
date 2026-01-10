@@ -9,7 +9,7 @@ namespace DocumentModel;
 public interface SplitButtonRegular: CustomUIControl, BuiltInControl, TaggedObject, 
   EnableControl, VisibleControl, 
   KeytipControl,
-  ContextMenuContent, MenuContent, ButtonGroupContent
+  ContextMenuContent, MenuContent, MenuRegularContent, ButtonGroupContent
 {
 
   /// <summary>
