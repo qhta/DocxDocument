@@ -13,7 +13,8 @@ namespace DocumentModel;
 /// </remarks>
 public interface Separator: CustomUIControl, TaggedObject, 
   VisibleControl,
-  GroupContent, QatItem
+  GroupContent, ButtonGroupContent,
+  QatItem
 {
 
 }
