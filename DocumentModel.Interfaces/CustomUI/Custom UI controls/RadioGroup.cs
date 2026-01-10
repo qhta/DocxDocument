@@ -10,7 +10,7 @@ public interface RadioGroup : IdentifiedElement, TaggedObject,
   EnableControl, VisibleControl, LabelledControl, KeytipControl,
   ActionControl,
   BackstageItemCollection,
-  GroupBoxContent, LayoutContent
+  GroupBoxContent, LayoutContent, BackstageGroupContent
 {
 
   /// <summary>

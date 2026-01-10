@@ -11,7 +11,8 @@ public interface BackstageCheckBox: QualifiedElement, TaggedObject,
   EnableControl, VisibleControl,
   LabelledControl,  
   KeytipControl,  ScreentipControl, SupertipControl,
-  ActionControl, PressedControl
+  ActionControl, PressedControl, 
+  BackstageGroupContent
 {
   /// <summary>
   /// Expansion behavior of the checkbox control.
