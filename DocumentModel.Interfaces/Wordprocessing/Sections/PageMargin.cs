@@ -1,36 +1,44 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the PageMargin Class.
+/// Represents the page margin settings for a section in a Wordprocessing document.
+/// This interface provides properties for top, right, bottom, left margins, header and footer spacing, and gutter spacing, enabling advanced configuration of page layout and printing options.
 /// </summary>
-public interface PageMargin: SectionPropertiesContent
+public interface PageMargin : SectionPropertiesContent
 {
+  
   /// <summary>
-  ///   Top Margin Spacing
+  /// Top margin spacing for the page.
   /// </summary>
   public Twips? Top { get; set; }
+  
   /// <summary>
-  ///   Right Margin Spacing
+  /// Right margin spacing for the page.
   /// </summary>
   public Twips? Right { get; set; }
+  
   /// <summary>
-  ///   Page Bottom Spacing
+  /// Bottom margin spacing for the page.
   /// </summary>
   public Twips? Bottom { get; set; }
+  
   /// <summary>
-  ///   Left Margin Spacing
+  /// Left margin spacing for the page.
   /// </summary>
   public Twips? Left { get; set; }
+  
   /// <summary>
-  ///   Spacing to Top of Header
+  /// Spacing to the top of the header.
   /// </summary>
   public Twips? Header { get; set; }
+  
   /// <summary>
-  ///   Spacing to Bottom of Footer
+  /// Spacing to the bottom of the footer.
   /// </summary>
   public Twips? Footer { get; set; }
+  
   /// <summary>
-  ///   Page Gutter Spacing
+  /// Page gutter spacing, specifying additional space for binding.
   /// </summary>
   public Twips? Gutter { get; set; }
 }
