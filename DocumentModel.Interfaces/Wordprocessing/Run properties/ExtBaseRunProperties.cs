@@ -1,80 +1,95 @@
 using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   Extended BaseRunProperties.
-///   Contains these common properties, which are not applied to <see cref="BaseRunProperties"/>
-/// </summary>
-public interface ExtBaseRunProperties : BaseRunProperties
-{
-  #region These properties are defined in ECMA
+
   /// <summary>
-  ///   Specifies the style ID of the character style which shall be used to format the contents of this paragraph.
+  /// Extended base interface for run properties, containing additional character-level formatting properties not applied to <see cref="BaseRunProperties"/>.
+  /// Includes support for complex script, right-to-left text, highlighting, OpenType features, and Office 2010+ advanced effects.
   /// </summary>
-  public string? RunStyle { get; set; }
-  /// <summary>
-  ///   Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run. 
-  /// </summary>
-  public bool? ComplexScript { get; set; }
-  /// <summary>
-  ///   Specifies whether the contents of this run shall have right-to-left characteristics.
-  /// </summary>
-  public bool? RightToLeftText { get; set; }
-  /// <summary>
-  ///   Specifies a highlighting color which is applied as a background behind the contents of this run. 
-  ///   If this run has any background shading specified using the shading, 
-  ///   then the background shading shall be superseded by the highlighting color when the contents of this run are displayed. 
-  ///   This property is not applied to <see cref="BaseRunProperties"/> element.
-  /// </summary>
-  public HighlightColorKind? Highlight { get; set; }
-  #endregion
-  #region These properties are defined in Office Word Extensions (from Office 2010)
-  /// <summary>
-  ///   Specifies whether to display the characters using contextual alternates according to OpenType Font specification.
-  /// </summary>
-  public OnOffKind? ContextualAlternates { get; set; }
-  /// <summary>
-  ///   Specifies the glow effect, a colored, blurred outline that is added outside the edges of text.
-  /// </summary>
-  public Glow? Glow { get; set; }
-  /// <summary>
-  ///   Specifies the shadow effect.
-  /// </summary>
-  public DMWD.Shadow? Shadow14 { get; set; }
-  /// <summary>
-  ///   Specifies the 3-D properties of text, including bevel, extrusion, contour, and material.
-  /// </summary>
-  public Reflection? Reflection { get; set; }
-  /// <summary>
-  ///   TextOutlineEffect.
-  /// </summary>
-  public DMWD.TextOutlineEffect? TextOutlineEffect { get; set; }
-  /// <summary>
-  ///   FillTextEffect.
-  /// </summary>
-  public FillTextEffect? FillTextEffect { get; set; }
-  /// <summary>
-  ///   Scene3D.
-  /// </summary>
-  public DMWD.Scene3D? Scene3D { get; set; }
-  /// <summary>
-  ///   Properties3D.
-  /// </summary>
-  public DMWD.Properties3D? Properties3D { get; set; }
-  /// <summary>
-  ///   Specifies which kinds of ligatures to use when displaying the text.
-  /// </summary>
-  public LigaturesKind? Ligatures { get; set; }
-  /// <summary>
-  ///   NumberingFormat.
-  /// </summary>
-  public NumberFormKind? NumberingFormat { get; set; }
-  /// <summary>
-  ///   NumberSpacing.
-  /// </summary>
-  public NumberSpacingKind? NumberSpacing { get; set; }
-  /// <summary>
-  ///   StylisticSets.
-  /// </summary>
-  public StylisticSets? StylisticSets { get; set; }
-  #endregion
-}
+  public interface ExtBaseRunProperties : BaseRunProperties
+  {
+    #region These properties are defined in ECMA
+    
+    /// <summary>
+    /// Style ID of the character style used to format the contents of this paragraph.
+    /// </summary>
+    public string? RunStyle { get; set; }
+    
+    /// <summary>
+    /// Indicates whether the run contents are treated as complex script text regardless of Unicode values.
+    /// </summary>
+    public bool? ComplexScript { get; set; }
+    
+    /// <summary>
+    /// Indicates whether the run contents have right-to-left characteristics.
+    /// </summary>
+    public bool? RightToLeftText { get; set; }
+    
+    /// <summary>
+    /// Highlighting color applied as a background behind the run contents. Supersedes shading when displayed.
+    /// </summary>
+    public HighlightColorKind? Highlight { get; set; }
+    #endregion
+
+    #region These properties are defined in Office Word Extensions (from Office 2010)
+    
+    /// <summary>
+    /// Indicates whether to display characters using contextual alternates according to OpenType Font specification.
+    /// </summary>
+    public OnOffKind? ContextualAlternates { get; set; }
+    
+    /// <summary>
+    /// Glow effect, a colored, blurred outline added outside the edges of text.
+    /// </summary>
+    public Glow? Glow { get; set; }
+    
+    /// <summary>
+    /// Shadow effect for the run (Office 2010+).
+    /// </summary>
+    public DMWD.Shadow? Shadow14 { get; set; }
+    
+    /// <summary>
+    /// 3-D reflection properties for the run (Office 2010+).
+    /// </summary>
+    public Reflection? Reflection { get; set; }
+    
+    /// <summary>
+    /// Text outline effect for the run (Office 2010+).
+    /// </summary>
+    public DMWD.TextOutlineEffect? TextOutlineEffect { get; set; }
+    
+    /// <summary>
+    /// Text fill effect for the run (Office 2010+).
+    /// </summary>
+    public FillTextEffect? FillTextEffect { get; set; }
+    
+    /// <summary>
+    /// 3D scene properties for the run (Office 2010+).
+    /// </summary>
+    public DMWD.Scene3D? Scene3D { get; set; }
+    
+    /// <summary>
+    /// 3D text properties for the run (Office 2010+).
+    /// </summary>
+    public DMWD.Properties3D? Properties3D { get; set; }
+    
+    /// <summary>
+    /// Specifies which kinds of ligatures to use when displaying the text.
+    /// </summary>
+    public LigaturesKind? Ligatures { get; set; }
+    
+    /// <summary>
+    /// Number form for OpenType fonts, specifies lining or old-style numerals.
+    /// </summary>
+    public NumberFormKind? NumberingFormat { get; set; }
+    
+    /// <summary>
+    /// Number spacing for OpenType fonts, specifies proportional or tabular spacing for numbers.
+    /// </summary>
+    public NumberSpacingKind? NumberSpacing { get; set; }
+    
+    /// <summary>
+    /// Stylistic sets collection for OpenType fonts, enabling alternate glyph sets.
+    /// </summary>
+    public StylisticSets? StylisticSets { get; set; }
+    #endregion
+  }
