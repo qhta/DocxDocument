@@ -1,7 +1,10 @@
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   Font Table Root Element.
-/// </summary>
-public interface Fonts : ElementCollection<FontProperties>
-{
-}
+
+  /// <summary>
+  /// Represents the root element of the font table in a WordprocessingML document.
+  /// This interface provides access to and management of <see cref="FontProperties"/> objects, enabling advanced organization, referencing, and configuration of fonts used throughout the document.
+  /// </summary>
+  public interface Fonts : ElementCollection<FontProperties>
+  {
+    
+  }

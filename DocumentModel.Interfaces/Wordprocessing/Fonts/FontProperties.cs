@@ -1,87 +1,74 @@
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   Specifies the properties for one of the fonts used in this document. 
-///   A font element shall be written out for each font face used in the document, and includes:
-///   <list type="bullet">
-///     <item>
-///       The name of the font as used in the document's stories
-///     </item>
-///     <item>
-///       (optionally) Font metrics allowing other applications to locate appropriate substitute fonts as needed
-///     </item>
-///     <item>
-///       (optionally) Embedded forms of the font
-///     </item>
-///   </list>
-/// </summary>
-public interface FontProperties: CollectionItem
-{
-  /// <summary>
-  ///   Specifies the primary name of the current font. 
-  ///   This name shall be used to link the information stored in this element 
-  ///   with uses of this value in the rFonts element (§17.3.2.26) in document content.
-  /// </summary>
-  public string? Name { get; set; }
-  /// <summary>
-  ///   Specifies a set of alternative names which can be used to locate the font specified by the parent element. 
-  ///   This set of alternative names is stored in a comma-delimited list, with all adjacent commas ignored 
-  ///   (i.e. a value of Name A, Name B is equivalent to Name A,,,,,,,,, Name B). 
-  /// </summary>
-  public StringList? Aliases { get; set; }
-  /// <summary>
-  ///   Specifies the Panose-1 classification number shown in §5.2.7.17 of ISO/IEC 14496-22. 
-  ///   This information can be used as defined in font substitution logic 
-  ///   to locate an appropriate substitute font when this font is not available. 
-  ///   This information is determined by querying the font when present 
-  ///   and shall not be modified when the font is not available.
-  /// </summary>
-  public HexBinary? Panose { get; set; }
-  /// <summary>
-  ///   Specifies the character set which is supported by the parent font. 
-  ///   This information can be used as defined in font substitution logic 
-  ///   to locate an appropriate substitute font when this font is not available. 
-  ///   This information is determined by querying the font when present 
-  ///   and shall not be modified when the font is not available. .
-  /// </summary>
-  public Charset? FontCharSet { get; set; }
-  /// <summary>
-  ///   FontFamily.
-  /// </summary>
-  public FontFamilyKind? FontFamily { get; set; }
-  /// <summary>
-  ///   NotTrueType.
-  /// </summary>
-  public bool? NotTrueType { get; set; }
-  /// <summary>
-  ///   Pitch.
-  /// </summary>
-  public FontPitchKind? Pitch { get; set; }
-  /// <summary>
-  ///   FontSignature.
-  /// </summary>
-  public FontSignature? FontSignature { get; set; }
-  /// <summary>
-  ///   EmbedRegularFont.
-  /// </summary>
-  public EmbeddedFont? EmbedRegularFont { get; set; }
 
   /// <summary>
-  ///   EmbedBoldFont.
+  /// Specifies the properties for a font used in a WordprocessingML document.
+  /// A font element is written for each font face used in the document and includes the font name, optional font metrics for substitution, and optional embedded font forms.
   /// </summary>
-  public EmbeddedFont? EmbedBoldFont { get; set; }
-
-  /// <summary>
-  ///   EmbedItalicFont.
-  /// </summary>
-  public EmbeddedFont? EmbedItalicFont { get; set; }
-
-  /// <summary>
-  ///   EmbedBoldItalicFont.
-  /// </summary>
-  public EmbeddedFont? EmbedBoldItalicFont { get; set; }
-
-  /// <summary>
-  ///   Collection of embedded fonts.
-  /// </summary>
-  public EmbeddedFonts? EmbeddedFonts { get; set; }
-}
+  public interface FontProperties : CollectionItem
+  {
+    
+    /// <summary>
+    /// Primary name of the font, used to link font information with uses in the rFonts element in document content.
+    /// </summary>
+    public string? Name { get; set; }
+    
+    /// <summary>
+    /// Set of alternative names for the font, stored as a comma-delimited list, used to locate the font if the primary name is unavailable.
+    /// </summary>
+    public StringList? Aliases { get; set; }
+    
+    /// <summary>
+    /// Panose-1 classification number, used for font substitution logic to locate appropriate substitute fonts.
+    /// </summary>
+    public HexBinary? Panose { get; set; }
+    
+    /// <summary>
+    /// Character set supported by the font, used for font substitution logic.
+    /// </summary>
+    public Charset? FontCharSet { get; set; }
+    
+    /// <summary>
+    /// Font family classification (e.g., Roman, Swiss, Modern).
+    /// </summary>
+    public FontFamilyKind? FontFamily { get; set; }
+    
+    /// <summary>
+    /// Indicates whether the font is not a TrueType font.
+    /// </summary>
+    public bool? NotTrueType { get; set; }
+    
+    /// <summary>
+    /// Pitch of the font (e.g., fixed, variable).
+    /// </summary>
+    public FontPitchKind? Pitch { get; set; }
+    
+    /// <summary>
+    /// Font signature information, including Unicode subset and code page bitfields.
+    /// </summary>
+    public FontSignature? FontSignature { get; set; }
+    
+    /// <summary>
+    /// Embedded regular font resource for this font face.
+    /// </summary>
+    public EmbeddedFont? EmbedRegularFont { get; set; }
+    
+    /// <summary>
+    /// Embedded bold font resource for this font face.
+    /// </summary>
+    public EmbeddedFont? EmbedBoldFont { get; set; }
+    
+    /// <summary>
+    /// Embedded italic font resource for this font face.
+    /// </summary>
+    public EmbeddedFont? EmbedItalicFont { get; set; }
+    
+    /// <summary>
+    /// Embedded bold italic font resource for this font face.
+    /// </summary>
+    public EmbeddedFont? EmbedBoldItalicFont { get; set; }
+    
+    /// <summary>
+    /// Collection of embedded fonts for this font face, supporting multiple font forms.
+    /// </summary>
+    public EmbeddedFonts? EmbeddedFonts { get; set; }
+  }
