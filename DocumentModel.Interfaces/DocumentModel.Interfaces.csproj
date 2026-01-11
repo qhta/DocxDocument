@@ -52,6 +52,7 @@
     <Compile Remove="Wordprocessing\Document\Document.ext.cs" />
     <Compile Remove="Wordprocessing\Enums\DocumentProtectionKind.cs" />
     <Compile Remove="Wordprocessing\Abstract interfaces\ICommonRunContent.cs" />
+    <Compile Remove="Wordprocessing\Proofing\ProofreadingErrors.cs" />
     <Compile Remove="Wordprocessing\Run properties\DualBoolTypeConverter.cs" />
     <Compile Remove="Wordprocessing\Sdt\ContentControl.cs" />
     <Compile Remove="Wordprocessing\Sdt\ContentControl.Methods.cs" />
