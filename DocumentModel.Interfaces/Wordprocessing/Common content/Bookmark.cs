@@ -1,6 +1,18 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public interface Bookmark: CollectionItem
+/// <summary>
+/// Represents a bookmark in a WordprocessingML document.
+/// This interface extends <see cref="CollectionItem"/> and provides properties for the bookmark start and end elements, enabling advanced referencing, navigation, and content marking within the document.
+/// </summary>
+public interface Bookmark : CollectionItem
 {
-  
+  /// <summary>
+  /// Start element of the bookmark, specifying the location where the bookmark begins.
+  /// </summary>
+  public BookmarkStart Start { get; set; }
+
+  /// <summary>
+  /// End element of the bookmark, specifying the location where the bookmark ends.
+  /// </summary>
+  public BookmarkEnd End { get; set; }
 }

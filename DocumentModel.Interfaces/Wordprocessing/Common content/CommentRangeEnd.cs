@@ -1,8 +1,9 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   This element specifies the end of the range around which a comment is anchored in the content of the WordprocessingML document. 
-///   The Id attribute on this element shall be used to link the corresponding comment anchor range start element and comment reference.
+/// Represents the end of the range around which a comment is anchored in the content of a WordprocessingML document.
+/// The Id attribute on this element is used to link the corresponding comment anchor range start element and comment reference, enabling advanced management and referencing of comment ranges within the document content.
 /// </summary>
-public interface CommentRangeEnd: MarkupRangeElement, RangeMarkupElement, CommonContent
+public interface CommentRangeEnd : MarkupRangeElement, CommonContent
 {
 }

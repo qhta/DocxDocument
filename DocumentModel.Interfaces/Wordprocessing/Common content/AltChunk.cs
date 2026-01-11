@@ -1,20 +1,19 @@
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   This element specifies a location within a document for the insertion of the contents 
-///   of a specified file containing external content to be imported into the main WordprocessingML document. 
-///   The specified file's contents should appear at the specified location within the document, 
-///   and can henceforth be emitted as regular WordprocessingML without distinction to its origin. 
-///   The location of the external content to be imported shall be specified by the relationship 
-///   whose Id attribute matches the Id attribute on this element. 
-/// </summary>
-public interface AltChunk: StoryContent, TableCellContent, CommentContent
-{
+
   /// <summary>
-  ///   Relationship to Part
+  /// Specifies a location within a document for the insertion of the contents of a specified file containing external content to be imported into the main WordprocessingML document.
+  /// The specified file's contents appear at the specified location and are treated as regular WordprocessingML content. The location of the external content is determined by the relationship whose Id attribute matches the Id attribute on this element.
   /// </summary>
-  public string? Id { get; set; }
-  /// <summary>
-  ///   External Content Import Properties.
-  /// </summary>
-  public AltChunkProperties? AltChunkProperties { get; set; }
-}
+  public interface AltChunk : StoryContent, TableCellContent, CommentContent
+  {
+    
+    /// <summary>
+    /// Relationship ID to the part containing the external content to be imported.
+    /// </summary>
+    public string? Id { get; set; }
+    
+    /// <summary>
+    /// Properties for external content import, specifying additional import options and settings.
+    /// </summary>
+    public AltChunkProperties? AltChunkProperties { get; set; }
+  }
