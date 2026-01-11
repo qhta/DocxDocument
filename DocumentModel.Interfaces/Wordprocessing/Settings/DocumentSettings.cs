@@ -332,7 +332,7 @@ public interface DocumentSettings : DocumentProperties
   /// </summary>
   [Category("VML")]
   [Obsolete]
-  public IHeaderShapeDefaults? HeaderShapeDefaults { get; set; }
+  public HeaderShapeDefaults? HeaderShapeDefaults { get; set; }
   
   /// <summary>
   /// Specifies whether a visual cue should be displayed around grammatical errors.
