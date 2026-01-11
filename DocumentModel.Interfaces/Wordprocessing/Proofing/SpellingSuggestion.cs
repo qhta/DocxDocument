@@ -1,22 +1,14 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Represents a single spelling suggestion.
+///   Represents a single spelling suggestion in a WordprocessingML document.
+///   This interface extends <see cref="CollectionItem"/> and provides properties for the suggested spelling text, the parent suggestions collection, and the application object, enabling advanced spelling correction and suggestion workflows.
 /// </summary>
-public interface SpellingSuggestion: CollectionItem
+public interface SpellingSuggestion : CollectionItem
 {
   /// <summary>
-  ///   Gets the suggested spelling.
+  ///   Suggested spelling text for the word or phrase.
   /// </summary>
-  public string? Text { get; }
+  public string? Text { get; set; }
 
-  /// <summary>
-  ///   Gets the parent suggestions collection.
-  /// </summary>
-  public SpellingSuggestions? Parent { get; }
-
-  /// <summary>
-  ///   Gets the application object.
-  /// </summary>
-  public Application? Application { get; }
 }
