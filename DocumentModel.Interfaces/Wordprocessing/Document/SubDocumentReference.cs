@@ -2,11 +2,12 @@ using DocumentModel.Math;
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the Paragraph Class.
+/// Represents a reference to a subdocument in a WordprocessingML document.
+/// This interface extends <see cref="RelationshipType"/>, <see cref="ParagraphContent"/>, <see cref="SdtRunContent"/>, and <see cref="BidirectionalContent"/>, enabling advanced linking, embedding, and referencing of external or modular document content within paragraphs, structured document tags, and bidirectional content flows.
 /// </summary>
-public interface SubDocumentReference: RelationshipType, 
-  ParagraphContent, 
-  SdtRunContent, 
+public interface SubDocumentReference : RelationshipType,
+  ParagraphContent,
+  SdtRunContent,
   BidirectionalContent
 {
 }

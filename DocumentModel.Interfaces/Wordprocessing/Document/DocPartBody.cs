@@ -1,9 +1,9 @@
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   This element specifies the contents of the parent glossary document entry (§17.12.5). 
-///   These contents shall consist of one or more block-level elements, analogous to the body element (§17.2.2)
-///   of the main document story for the current document.
-/// </summary>
-public interface DocPartBody: BodyType
-{
-}
+
+  /// <summary>
+  /// Specifies the contents of the parent glossary document entry in a WordprocessingML document.
+  /// This interface extends <see cref="BodyType"/> and consists of one or more block-level elements, analogous to the body element of the main document story, enabling advanced management and reuse of document parts such as building blocks and autotext entries.
+  /// </summary>
+  public interface DocPartBody : BodyType
+  {
+  }

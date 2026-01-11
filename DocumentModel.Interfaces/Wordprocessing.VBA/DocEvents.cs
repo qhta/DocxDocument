@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.VBA;
 
 /// <summary>
 ///   Defines the DocEvents Class.
