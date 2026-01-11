@@ -94,7 +94,6 @@
     <Folder Include="Drawings\Enums\" />
     <Folder Include="Office.Drawing\" />
     <Folder Include="Office2013.Word.Drawing\" />
-    <Folder Include="Vml\Classes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CustomUI\Ribbon\TabSetCollectioncs.cs" />
