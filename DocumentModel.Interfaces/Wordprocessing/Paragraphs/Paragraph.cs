@@ -1,54 +1,56 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the Paragraph Class.
+/// Represents a paragraph element in a WordprocessingML document.
+/// This interface extends multiple content and collection interfaces, providing properties for unique identification, revision tracking, spell checking, and paragraph formatting. Enables advanced management, revision, and formatting of paragraph content within the document.
 /// </summary>
-public partial interface Paragraph: ElementCollection<ParagraphContent>, 
-  StoryContent, TableCellContent, SdtBlockContent, CustomXmlBlockContent, 
+public partial interface Paragraph : ElementCollection<ParagraphContent>,
+  StoryContent, TableCellContent, SdtBlockContent, CustomXmlBlockContent,
   CommentContent, BidirectionalContent
 {
+    
   /// <summary>
-  ///   Specifies an identifier for a paragraph that is unique within the document part, 
-  ///   with the exception that it need not be unique across the choices or fallback of an Alternate Content block. 
-  ///   Values MUST be greater than 0 and less than 0x80000000. 
+  /// Identifier for the paragraph, unique within the document part (except across Alternate Content blocks). Values must be greater than 0 and less than 0x80000000.
   /// </summary>
   public HexInt? ParagraphId { get; set; }
+    
   /// <summary>
-  ///   Specifies a version identifier for a paragraph. Values MUST be greater than 0 and less than 0x80000000. 
-  ///   Any element having this attribute MUST also have the <see cref="ParagraphId"/> attribute.
-  ///   If two documents have the same docId, then if two paragraphs within the same respective document part 
-  ///   that have the same <see cref="ParagraphId"/> and <see cref="TextId"/> SHOULD contain identical text, although formatting could differ. 
+  /// Version identifier for the paragraph. Values must be greater than 0 and less than 0x80000000. Requires <see cref="ParagraphId"/>. Used for text identity across documents with the same docId.
   /// </summary>
   public HexInt? TextId { get; set; }
+    
   /// <summary>
-  ///   Revision Identifier for Paragraph Glyph Formatting
+  /// Revision identifier for paragraph glyph formatting.
   /// </summary>
   public HexInt? RsidParagraphMarkRevision { get; set; }
+    
   /// <summary>
-  ///   Revision Identifier for Paragraph
+  /// Revision identifier for paragraph addition.
   /// </summary>
   public HexInt? RsidParagraphAddition { get; set; }
+    
   /// <summary>
-  ///   Revision Identifier for Paragraph Deletion
+  /// Revision identifier for paragraph deletion.
   /// </summary>
   public HexInt? RsidParagraphDeletion { get; set; }
+    
   /// <summary>
-  ///   Revision Identifier for Paragraph Properties
+  /// Revision identifier for paragraph properties.
   /// </summary>
   public HexInt? RsidParagraphProperties { get; set; }
+    
   /// <summary>
-  ///   Default Revision Identifier for Runs
+  /// Default revision identifier for runs within the paragraph.
   /// </summary>
   public HexInt? RsidRunAdditionDefault { get; set; }
-  
+    
   /// <summary>
-  ///   Specifies whether the text of that paragraph is free of detected spelling errors. 
+  /// Indicates whether the text of the paragraph is free of detected spelling errors.
   /// </summary>
   public bool? NoSpellError { get; set; }
-  
+    
   /// <summary>
-  ///   Paragraph Properties.
+  /// Paragraph properties, specifying formatting and layout options for the paragraph.
   /// </summary>
   public ParagraphProperties? ParagraphProperties { get; set; }
-
 }
