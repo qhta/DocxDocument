@@ -1,39 +1,49 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   Single Frame Properties.
+/// Represents the properties of a single frame in a WordprocessingML document.
+/// This interface extends <see cref="FramesetItem"/> and provides properties for frame size, name, source file, margins, scrollbar visibility, resize restrictions, and file linking, enabling advanced configuration and management of frames within framesets.
 /// </summary>
-public interface Frame: FramesetItem
+public interface Frame : FramesetItem
 {
+  
   /// <summary>
-  ///   Frame Size.
+  /// Size of the frame, specified as a width or height value depending on the frameset orientation.
   /// </summary>
   public UInt32? FrameSize { get; set; }
+  
   /// <summary>
-  ///   Frame Name.
+  /// Name of the frame, used for identification and targeting within the frameset.
   /// </summary>
   public string? FrameName { get; set; }
+  
   /// <summary>
-  ///   Source File for Frame.
+  /// Source file for the frame, specifying the external content to be displayed within the frame.
   /// </summary>
   public FrameSourceFile? FrameSourceFile { get; set; }
+  
   /// <summary>
-  ///   Left and Right Margin for Frame.
+  /// Left and right margin for the frame, specified in pixels.
   /// </summary>
   public UInt32? MarginWidth { get; set; }
+  
   /// <summary>
-  ///   Top and Bottom Margin for Frame.
+  /// Top and bottom margin for the frame, specified in pixels.
   /// </summary>
   public UInt32? MarginHeight { get; set; }
+  
   /// <summary>
-  ///   Scrollbar Display Option.
+  /// Scrollbar display option for the frame, specifying visibility and behavior of scrollbars.
   /// </summary>
   public FrameScrollbarVisibilityKind? ScrollbarVisibility { get; set; }
+  
   /// <summary>
-  ///   Frame Cannot Be Resized.
+  /// Indicates whether the frame cannot be resized by the user.
   /// </summary>
   public bool? NoResizeAllowed { get; set; }
+  
   /// <summary>
-  ///   Maintain Link to Existing File.
+  /// Indicates whether the frame maintains a link to an existing external file.
   /// </summary>
   public bool? LinkedToFile { get; set; }
 }
