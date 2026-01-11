@@ -1,56 +1,68 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the Indentation Class.
+/// Represents the indentation settings for a paragraph in a WordprocessingML document.
+/// This interface provides properties for configuring left, right, start, and end indentation, as well as first line and hanging indentation, in both point and character units. Enables advanced control over paragraph layout and text alignment.
 /// </summary>
 public interface Indentation
 {
   /// <summary>
-  ///   Left Indentation
+  /// Left indentation of the paragraph, specified in twentieths of a point.
   /// </summary>
   public string? Left { get; set; }
+
   /// <summary>
-  ///   start
+  /// Start indentation of the paragraph, used for bidirectional text, specified in twentieths of a point.
   /// </summary>
   public string? Start { get; set; }
+
   /// <summary>
-  ///   Left Indentation in Character Units
+  /// Left indentation in character units.
   /// </summary>
   public Int32? LeftChars { get; set; }
+
   /// <summary>
-  ///   startChars
+  /// Start indentation in character units, used for bidirectional text.
   /// </summary>
   public Int32? StartCharacters { get; set; }
+
   /// <summary>
-  ///   Right Indentation
+  /// Right indentation of the paragraph, specified in twentieths of a point.
   /// </summary>
   public string? Right { get; set; }
+
   /// <summary>
-  ///   end
+  /// End indentation of the paragraph, used for bidirectional text, specified in twentieths of a point.
   /// </summary>
   public string? End { get; set; }
+
   /// <summary>
-  ///   Right Indentation in Character Units
+  /// Right indentation in character units.
   /// </summary>
   public Int32? RightChars { get; set; }
+
   /// <summary>
-  ///   endChars
+  /// End indentation in character units, used for bidirectional text.
   /// </summary>
   public Int32? EndCharacters { get; set; }
+
   /// <summary>
-  ///   Indentation Removed from First Line
+  /// Hanging indentation, specifying the amount of indentation removed from the first line, in twentieths of a point.
   /// </summary>
   public string? Hanging { get; set; }
+
   /// <summary>
-  ///   Indentation Removed From First Line in Character Units
+  /// Hanging indentation in character units, specifying the amount of indentation removed from the first line.
   /// </summary>
   public Int32? HangingChars { get; set; }
+
   /// <summary>
-  ///   Additional First Line Indentation
+  /// Additional first line indentation, specifying the amount of extra indentation for the first line, in twentieths of a point.
   /// </summary>
   public string? FirstLine { get; set; }
+
   /// <summary>
-  ///   Additional First Line Indentation in Character Units
+  /// Additional first line indentation in character units.
   /// </summary>
   public Int32? FirstLineChars { get; set; }
 }
