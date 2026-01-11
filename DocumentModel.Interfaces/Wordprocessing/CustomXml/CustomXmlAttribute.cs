@@ -1,20 +1,24 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Custom XML Attribute.
+/// Represents a custom XML attribute in a WordprocessingML document.
+/// This interface extends <see cref="CollectionItem"/> and provides properties for the attribute URI, name, and value, enabling advanced storage and management of custom metadata or schema-specific attributes within custom XML parts.
 /// </summary>
-public interface CustomXmlAttribute: CollectionItem
+public interface CustomXmlAttribute : CollectionItem
 {
+  
   /// <summary>
-  ///   uri
+  /// URI of the custom XML attribute, specifying the namespace or schema context.
   /// </summary>
   public string? Uri { get; set; }
+  
   /// <summary>
-  ///   name
+  /// Name of the custom XML attribute.
   /// </summary>
   public string? Name { get; set; }
+  
   /// <summary>
-  ///   val
+  /// Value of the custom XML attribute.
   /// </summary>
   public string? Val { get; set; }
 }

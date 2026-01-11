@@ -1,20 +1,24 @@
-
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   Defines CustomXmlElement - the base interface for the customXml elements.
-/// </summary>
-public interface CustomXmlElement
-{
+
   /// <summary>
-  ///   Gets or sets the custom XML Markup Namespace.
+  /// Defines the base interface for custom XML elements (customXml) in a WordprocessingML document.
+  /// This interface provides properties for the custom XML markup namespace, element name, and associated custom XML properties, enabling advanced schema-based processing, annotation, and integration of custom XML data within document content.
   /// </summary>
-  public string? Uri { get; set; }
-  /// <summary>
-  ///   Gets or sets the element name.
-  /// </summary>
-  public string? Element { get; set; }
-  /// <summary>
-  ///   Gets or sets the CustomXmlProperties which represents the element tag in schema: w:customXmlPr.
-  /// </summary>
-  public CustomXmlProperties? CustomXmlProperties { get; set; }
-}
+  public interface CustomXmlElement
+  {
+    
+    /// <summary>
+    /// Custom XML markup namespace URI associated with the element.
+    /// </summary>
+    public string? Uri { get; set; }
+    
+    /// <summary>
+    /// Name of the custom XML element.
+    /// </summary>
+    public string? Element { get; set; }
+    
+    /// <summary>
+    /// Custom XML properties representing the element tag in the schema (w:customXmlPr).
+    /// </summary>
+    public CustomXmlProperties? CustomXmlProperties { get; set; }
+  }
