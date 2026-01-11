@@ -1,6 +1,10 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public interface Field: CollectionItem
+/// <summary>
+/// Represents a field element in a WordprocessingML document.
+/// This interface extends <see cref="CollectionItem"/> and is used to define dynamic content such as references, calculations, dates, or other automatically updated information within the document. Fields enable advanced document automation, referencing, and content generation features.
+/// </summary>
+public interface Field : CollectionItem
 {
   
 }

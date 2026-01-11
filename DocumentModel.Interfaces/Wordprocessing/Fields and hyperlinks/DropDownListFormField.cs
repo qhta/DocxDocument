@@ -1,17 +1,23 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Drop-Down List Form Field Properties.
+/// Represents the properties of a drop-down list form field in a WordprocessingML document.
+/// This interface provides properties for the selected item, default item index, and the collection of list entries, enabling advanced configuration and management of interactive drop-down lists within forms and documents.
 /// </summary>
 public interface DropDownListFormField
 {
   /// <summary>
-  ///   Drop-Down List Selection.
+  /// Index of the currently selected item in the drop-down list.
   /// </summary>
   public Int32? DropDownListSelection { get; set; }
+
   /// <summary>
-  ///   Default Drop-Down List Item Index.
+  /// Index of the default item to be selected when the form is loaded.
   /// </summary>
   public Int32? DefaultDropDownListItemIndex { get; set; }
+
+  /// <summary>
+  /// Collection of list entry form fields representing the available options in the drop-down list.
+  /// </summary>
   public ListEntryFormFields ListEntryFormFields { get; set; }
 }

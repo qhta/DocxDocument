@@ -1,36 +1,43 @@
-
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   This element specifies the presence of a hyperlink at the current location in the document.
+/// Specifies the presence of a hyperlink at the current location in a WordprocessingML document.
+/// This interface extends <see cref="ParagraphContent"/>, <see cref="SdtRunContent"/>, <see cref="BidirectionalContent"/>, and <see cref="DMM.MathArgumentContent"/>, enabling advanced linking, navigation, and integration of hyperlinks within paragraphs, structured document tags, bidirectional content, and mathematical arguments.
 /// </summary>
-public interface Hyperlink:
-  ParagraphContent, 
-  SdtRunContent, 
-  BidirectionalContent, 
+public interface Hyperlink :
+  ParagraphContent,
+  SdtRunContent,
+  BidirectionalContent,
   DMM.MathArgumentContent
 {
+
   /// <summary>
-  ///   IHyperlink Target Frame
+  /// Target frame for the hyperlink, specifying where the linked content should open.
   /// </summary>
   public string? TargetFrame { get; set; }
+
   /// <summary>
-  ///   Associated String
+  /// Tooltip text associated with the hyperlink, providing additional information to users.
   /// </summary>
   public string? Tooltip { get; set; }
+
   /// <summary>
-  ///   Location in Target Document
+  /// Location in the target document to which the hyperlink points.
   /// </summary>
   public string? DocLocation { get; set; }
+
   /// <summary>
-  ///   Add To Viewed Hyperlinks
+  /// Indicates whether the hyperlink should be added to the list of viewed hyperlinks (history).
   /// </summary>
   public bool? History { get; set; }
+
   /// <summary>
-  ///   IHyperlink Anchor
+  /// Anchor within the target document for the hyperlink.
   /// </summary>
   public string? Anchor { get; set; }
+
   /// <summary>
-  ///   IHyperlink Target
+  /// Target identifier for the hyperlink, referencing the external or internal resource.
   /// </summary>
   public string? Id { get; set; }
 }

@@ -1,35 +1,29 @@
-
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   This element specifies the presence of a simple field at the current location in the document. 
-///   The semantics of this field are defined via its field codes.
-/// </summary>
-public interface SimpleField: ParagraphContent, SdtRunContent, BidirectionalContent, DMM.MathArgumentContent
-{
+
   /// <summary>
-  ///   Specifies the field codes for the simple field. The possible field codes are defined in §17.16.5.
+  /// Specifies the presence of a simple field at the current location in a WordprocessingML document.
+  /// The semantics of this field are defined via its field codes. Simple fields provide a way to insert dynamic content, such as references, calculations, or dates, using a single field code instruction.
   /// </summary>
-  public string? Instruction { get; set; }
-  /// <summary>
-  ///   Specifies that the parent field shall not have its field result recalculated, 
-  ///   even if an application attempts to recalculate the results of all fields in the document 
-  ///   or a recalculation is explicitly requested.
-  /// </summary>
-  public bool? FieldLock { get; set; }
-  /// <summary>
-  ///   Specifies that this field has been flagged by an application to indicate 
-  ///   that its current results are no longer correct (stale) 
-  ///   due to other modifications made to the document, 
-  ///   and these contents should be updated before they are displayed 
-  ///   if this functionality is supported by the next processing application.
-  /// </summary>
-  public bool? Dirty { get; set; }
-  /// <summary>
-  ///   Specifies custom field data which shall be associated with the parent field. 
-  ///   No information or semantics are applied to the contents of this data by ISO/IEC 29500, 
-  ///   and therefore this field can be used as desired to store additional application-defined data with the field. 
-  ///   However, applications should not lose the contents of this custom data if they do not understand or utilize it 
-  ///   (i.e. the information should continue to be saved with the file).
-  /// </summary>
-  public string? FieldData { get; set; }
-}
+  public interface SimpleField : ParagraphContent, SdtRunContent, BidirectionalContent, DMM.MathArgumentContent
+  {
+    
+    /// <summary>
+    /// Field codes for the simple field, as defined in the WordprocessingML schema (§17.16.5).
+    /// </summary>
+    public string? Instruction { get; set; }
+    
+    /// <summary>
+    /// Indicates that the parent field should not have its result recalculated, even if a recalculation is requested.
+    /// </summary>
+    public bool? FieldLock { get; set; }
+    
+    /// <summary>
+    /// Indicates that the field result is invalidated (dirty) and should be updated before display if supported by the application.
+    /// </summary>
+    public bool? Dirty { get; set; }
+    
+    /// <summary>
+    /// Custom field data associated with the parent field, used to store additional application-defined data.
+    /// </summary>
+    public string? FieldData { get; set; }
+  }
