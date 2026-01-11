@@ -1,9 +1,9 @@
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   Specifies the contents of the body of the document - the main document editing surface.
-///   The document body contains what is referred to as block-level markup - 
-///   markup which can exist as a sibling element to paragraphs in a document.
-/// </summary>
-public interface Body : BodyType
-{
-}
+
+  /// <summary>
+  /// Specifies the contents of the body of the document, which serves as the main document editing surface in a WordprocessingML document.
+  /// The document body contains block-level markup, allowing elements such as paragraphs, tables, and other block content to exist as siblings within the document structure.
+  /// </summary>
+  public interface Body : BodyType
+  {
+  }

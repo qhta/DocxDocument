@@ -1,8 +1,11 @@
 using DocumentModel.CustomXml;
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   Additional schemas attached to document.
-/// </summary>
-public interface AttachedSchemas: ElementCollection<Schema>
-{
-}
+
+  /// <summary>
+  /// Represents a collection of additional schemas attached to a WordprocessingML document.
+  /// This interface provides access to and management of <see cref="Schema"/> objects, enabling advanced integration and validation of custom XML data using external or supplementary XML schemas.
+  /// </summary>
+  public interface AttachedSchemas : ElementCollection<Schema>
+  {
+    
+  }
