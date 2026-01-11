@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 /// Represents theme color mappings for a Wordprocessing document.

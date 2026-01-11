@@ -41,15 +41,5 @@ public interface Style : CollectionItem
     /// Indicates whether the style is hidden from the style gallery and UI.
     /// </summary>
     public bool? Hidden { get; set; }
-    
-    /// <summary>
-    /// Paragraph format settings for the style, specifying alignment, indentation, spacing, and other paragraph-level formatting.
-    /// </summary>
-    public ParagraphFormat? ParagraphFormat { get; }
-    
-    /// <summary>
-    /// Font properties for the style, specifying font family, size, color, and effects.
-    /// </summary>
-    public TextFormat? TextFormat { get; }
 
 }

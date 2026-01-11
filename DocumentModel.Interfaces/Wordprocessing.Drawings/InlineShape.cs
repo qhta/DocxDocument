@@ -37,32 +37,4 @@ public interface InlineShape: CollectionItem
   public Range? Range { get; }
 
   #endregion
-
-  #region Methods
-
-  /// <summary>
-  ///   Deletes the inline shape.
-  /// </summary>
-  public void Delete();
-
-  /// <summary>
-  ///   Selects the inline shape.
-  /// </summary>
-  public void Select();
-
-  #endregion
-
-  #region Parent Properties
-
-  /// <summary>
-  ///   Gets the parent object.
-  /// </summary>
-  public object? Parent { get; }
-
-  /// <summary>
-  ///   Gets the application object.
-  /// </summary>
-  public Application? Application { get; }
-
-  #endregion
 }

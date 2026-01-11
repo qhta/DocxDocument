@@ -113,7 +113,7 @@ public interface DocumentSettings : DocumentProperties
   /// <summary>
   /// Specifies the theme color mapping for the document.
   /// </summary>
-  public ColorSchemeMapping? ColorSchemeMapping { get; set; }
+  public DMWD.ColorSchemeMapping? ColorSchemeMapping { get; set; }
   
   /// <summary>
   /// Specifies a set of optional compatibility options for the document.
@@ -332,7 +332,7 @@ public interface DocumentSettings : DocumentProperties
   /// </summary>
   [Category("VML")]
   [Obsolete]
-  public HeaderShapeDefaults? HeaderShapeDefaults { get; set; }
+  public DMWV.HeaderShapeDefaults? HeaderShapeDefaults { get; set; }
   
   /// <summary>
   /// Specifies whether a visual cue should be displayed around grammatical errors.

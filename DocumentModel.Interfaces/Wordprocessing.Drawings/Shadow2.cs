@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 ///   Represents the Office 2010+ advanced shadow effect for text runs in WordprocessingML documents.
