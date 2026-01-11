@@ -10,14 +10,17 @@ public enum DocGridKind
   ///   No Document Grid.
   /// </summary>
   Default,
+
   /// <summary>
   ///   Line Grid Only.
   /// </summary>
   Lines,
+
   /// <summary>
   ///   Line and Character Grid.
   /// </summary>
   LinesAndChars,
+
   /// <summary>
   ///   Character Grid Only.
   /// </summary>

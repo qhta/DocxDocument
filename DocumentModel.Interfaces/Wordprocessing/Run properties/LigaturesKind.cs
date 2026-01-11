@@ -1,73 +1,89 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the LigaturesValues enumeration.
+/// Specifies ligature options for font rendering in WordprocessingML documents.
+/// This enumeration provides values for different types and combinations of ligatures, supporting advanced typographic features and fine control over character joining in text content.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum LigaturesKind
 {
   /// <summary>
-  ///   none.
+  /// No ligatures.
   /// </summary>
   None,
+
   /// <summary>
-  ///   standard.
+  /// Standard ligatures.
   /// </summary>
   Standard,
+
   /// <summary>
-  ///   contextual.
+  /// Contextual ligatures.
   /// </summary>
   Contextual,
+
   /// <summary>
-  ///   historical.
+  /// Historical ligatures.
   /// </summary>
   Historical,
+
   /// <summary>
-  ///   discretional.
+  /// Discretional ligatures.
   /// </summary>
   Discretional,
+
   /// <summary>
-  ///   standardContextual.
+  /// Standard and contextual ligatures.
   /// </summary>
   StandardContextual,
+
   /// <summary>
-  ///   standardHistorical.
+  /// Standard and historical ligatures.
   /// </summary>
   StandardHistorical,
+
   /// <summary>
-  ///   contextualHistorical.
+  /// Contextual and historical ligatures.
   /// </summary>
   ContextualHistorical,
+
   /// <summary>
-  ///   standardDiscretional.
+  /// Standard and discretional ligatures.
   /// </summary>
   StandardDiscretional,
+
   /// <summary>
-  ///   contextualDiscretional.
+  /// Contextual and discretional ligatures.
   /// </summary>
   ContextualDiscretional,
+
   /// <summary>
-  ///   historicalDiscretional.
+  /// Historical and discretional ligatures.
   /// </summary>
   HistoricalDiscretional,
+
   /// <summary>
-  ///   standardContextualHistorical.
+  /// Standard, contextual, and historical ligatures.
   /// </summary>
   StandardContextualHistorical,
+
   /// <summary>
-  ///   standardContextualDiscretional.
+  /// Standard, contextual, and discretional ligatures.
   /// </summary>
   StandardContextualDiscretional,
+
   /// <summary>
-  ///   standardHistoricalDiscretional.
+  /// Standard, historical, and discretional ligatures.
   /// </summary>
   StandardHistoricalDiscretional,
+
   /// <summary>
-  ///   contextualHistoricalDiscretional.
+  /// Contextual, historical, and discretional ligatures.
   /// </summary>
   ContextualHistoricalDiscretional,
+
   /// <summary>
-  ///   all.
+  /// All ligature types enabled.
   /// </summary>
   All
 }
