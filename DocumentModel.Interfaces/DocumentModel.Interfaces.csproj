@@ -20,14 +20,17 @@
     <Compile Remove="Drawings.Charts\Classes\**" />
     <Compile Remove="Properties\Classes\**" />
     <Compile Remove="Settings\**" />
+    <Compile Remove="Wordprocessing\Proofing\**" />
     <Compile Remove="Wordprocessing\Range\**" />
     <EmbeddedResource Remove="Drawings.Charts\Classes\**" />
     <EmbeddedResource Remove="Properties\Classes\**" />
     <EmbeddedResource Remove="Settings\**" />
+    <EmbeddedResource Remove="Wordprocessing\Proofing\**" />
     <EmbeddedResource Remove="Wordprocessing\Range\**" />
     <None Remove="Drawings.Charts\Classes\**" />
     <None Remove="Properties\Classes\**" />
     <None Remove="Settings\**" />
+    <None Remove="Wordprocessing\Proofing\**" />
     <None Remove="Wordprocessing\Range\**" />
   </ItemGroup>
   <ItemGroup>
@@ -52,7 +55,12 @@
     <Compile Remove="Wordprocessing\Document\Document.ext.cs" />
     <Compile Remove="Wordprocessing\Enums\DocumentProtectionKind.cs" />
     <Compile Remove="Wordprocessing\Abstract interfaces\ICommonRunContent.cs" />
-    <Compile Remove="Wordprocessing\Proofing\ProofreadingErrors.cs" />
+    <Compile Remove="Wordprocessing\Paragraphs\ListFormat.cs" />
+    <Compile Remove="Wordprocessing\Paragraphs\ListLevel.cs" />
+    <Compile Remove="Wordprocessing\Paragraphs\ListLevels.cs" />
+    <Compile Remove="Wordprocessing\Paragraphs\ListTemplate.cs" />
+    <Compile Remove="Wordprocessing\Paragraphs\ParagraphFormat.cs" />
+    <Compile Remove="Wordprocessing\Paragraphs\TextFormat.cs" />
     <Compile Remove="Wordprocessing\Run properties\DualBoolTypeConverter.cs" />
     <Compile Remove="Wordprocessing\Sdt\ContentControl.cs" />
     <Compile Remove="Wordprocessing\Sdt\ContentControl.Methods.cs" />
