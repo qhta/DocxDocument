@@ -1,16 +1,19 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   Numbering Format.
+/// Represents the numbering format for a numbering definition in a WordprocessingML document.
+/// This interface provides properties for specifying the standard numbering format type and a custom number format using XSLT syntax, enabling advanced customization of list and outline numbering styles.
 /// </summary>
 public interface NumberingFormat
 {
-  /// <summary>
-  ///   Standard Numbering Format Type
-  /// </summary>
-  public NumberFormatKind? Type { get; set; }
-  /// <summary>
-  ///   Specifies a custom number format using the syntax defined by the XSLT format attribute. This format shall be used for all numbering in the parent object. 
-  ///   [Example: A value of &#x30A2; indicates that a consumer must use Katakana numbering. end example] 
-  /// </summary>
-  public string? Custom { get; set; }
+    
+    /// <summary>
+    /// Standard numbering format type, specifying the built-in numbering style (e.g., decimal, roman, bullet).
+    /// </summary>
+    public NumberFormatKind? Type { get; set; }
+    
+    /// <summary>
+    /// Custom number format using XSLT format attribute syntax. This format is used for all numbering in the parent object (e.g., Katakana numbering).
+    /// </summary>
+    public string? Custom { get; set; }
 }
