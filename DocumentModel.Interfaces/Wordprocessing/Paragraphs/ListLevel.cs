@@ -104,7 +104,7 @@ public interface ListLevel: CollectionItem
   /// <summary>
   ///   Gets the picture bullet for the list level.
   /// </summary>
-  public InlineShape? PictureBullet { get; }
+  public DMWD.InlineShape? PictureBullet { get; }
 
   /// <summary>
   ///   Applies a picture bullet to the list level.

@@ -20,12 +20,15 @@
     <Compile Remove="Drawings.Charts\Classes\**" />
     <Compile Remove="Properties\Classes\**" />
     <Compile Remove="Settings\**" />
+    <Compile Remove="Wordprocessing\Range\**" />
     <EmbeddedResource Remove="Drawings.Charts\Classes\**" />
     <EmbeddedResource Remove="Properties\Classes\**" />
     <EmbeddedResource Remove="Settings\**" />
+    <EmbeddedResource Remove="Wordprocessing\Range\**" />
     <None Remove="Drawings.Charts\Classes\**" />
     <None Remove="Properties\Classes\**" />
     <None Remove="Settings\**" />
+    <None Remove="Wordprocessing\Range\**" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="CustomUI\DropDownRegular.cs" />
@@ -50,8 +53,15 @@
     <Compile Remove="Wordprocessing\Enums\DocumentProtectionKind.cs" />
     <Compile Remove="Wordprocessing\Abstract interfaces\ICommonRunContent.cs" />
     <Compile Remove="Wordprocessing\Run properties\DualBoolTypeConverter.cs" />
+    <Compile Remove="Wordprocessing\Sdt\ContentControl.cs" />
+    <Compile Remove="Wordprocessing\Sdt\ContentControl.Methods.cs" />
+    <Compile Remove="Wordprocessing\Sdt\ContentControls.cs" />
+    <Compile Remove="Wordprocessing\Sdt\ContentControlType.cs" />
+    <Compile Remove="Wordprocessing\Sdt\RepeatingSectionItemCollection.cs" />
     <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyle.cs" />
     <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyleTypeConverter.cs" />
+    <Compile Remove="Wordprocessing\Tables\Cell.cs" />
+    <Compile Remove="Wordprocessing\Tables\Cell.Methods.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DeepEqual" Version="5.1.0" />
@@ -68,6 +78,7 @@
     <Folder Include="Office.Drawing\" />
     <Folder Include="Office2013.Word.Drawing\" />
     <Folder Include="Vml\Classes\" />
+    <Folder Include="Wordprocessing\Range\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CustomUI\Ribbon\TabSetCollectioncs.cs" />

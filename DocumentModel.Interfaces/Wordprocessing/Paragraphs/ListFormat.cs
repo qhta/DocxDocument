@@ -75,7 +75,7 @@ public interface ListFormat
   ///   Returns the InlineShape object that represents the picture bullet,
   ///   if the current list level uses a picture bullet.
   /// </remarks>
-  public InlineShape? ListPictureBullet { get; }
+  public DMWD.InlineShape? ListPictureBullet { get; }
 
   /// <summary>
   ///   Gets or sets the character style applied to the list label.
