@@ -1,57 +1,70 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the TextDirectionValues enumeration.
+/// Specifies the text direction options for content in a WordprocessingML document.
+/// This enumeration provides values for various writing directions and orientations, supporting complex scripts, vertical and horizontal layouts, and compatibility with different Word versions and platforms.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum TextDirectionKind
 {
+
   /// <summary>
-  ///   Left to Right, Top to Bottom.
+  /// Left to Right, Top to Bottom.
   /// </summary>
   LefToRightTopToBottom,
+
   /// <summary>
-  ///   tb.
+  /// Left to Right, Top to Bottom (2010 compatibility).
   /// </summary>
   LeftToRightTopToBottom2010,
+
   /// <summary>
-  ///   Top to Bottom, Right to Left.
+  /// Top to Bottom, Right to Left.
   /// </summary>
   TopToBottomRightToLeft,
+
   /// <summary>
-  ///   rl.
+  /// Top to Bottom, Right to Left (2010 compatibility).
   /// </summary>
   TopToBottomRightToLeft2010,
+
   /// <summary>
-  ///   Bottom to Top, Left to Right.
+  /// Bottom to Top, Left to Right.
   /// </summary>
   BottomToTopLeftToRight,
+
   /// <summary>
-  ///   lr.
+  /// Bottom to Top, Left to Right (2010 compatibility).
   /// </summary>
   BottomToTopLeftToRight2010,
+
   /// <summary>
-  ///   Left to Right, Top to Bottom Rotated.
+  /// Left to Right, Top to Bottom Rotated.
   /// </summary>
   LefttoRightTopToBottomRotated,
+
   /// <summary>
-  ///   tbV.
+  /// Left to Right, Top to Bottom Rotated (2010 compatibility).
   /// </summary>
   LeftToRightTopToBottomRotated2010,
+
   /// <summary>
-  ///   Top to Bottom, Right to Left Rotated.
+  /// Top to Bottom, Right to Left Rotated.
   /// </summary>
   TopToBottomRightToLeftRotated,
+
   /// <summary>
-  ///   rlV.
+  /// Top to Bottom, Right to Left Rotated (2010 compatibility).
   /// </summary>
   TopToBottomRightToLeftRotated2010,
+
   /// <summary>
-  ///   Top to Bottom, Left to Right Rotated.
+  /// Top to Bottom, Left to Right Rotated.
   /// </summary>
   TopToBottomLeftToRightRotated,
+
   /// <summary>
-  ///   lrV.
+  /// Top to Bottom, Left to Right Rotated (2010 compatibility).
   /// </summary>
   TopToBottomLeftToRightRotated2010
 }
