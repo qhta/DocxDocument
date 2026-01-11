@@ -10,10 +10,12 @@ public enum LevelSuffixKind
   ///   Tab Between Numbering and Text.
   /// </summary>
   Tab,
+
   /// <summary>
   ///   Space Between Numbering and Text.
   /// </summary>
   Space,
+
   /// <summary>
   ///   Nothing Between Numbering and Text.
   /// </summary>

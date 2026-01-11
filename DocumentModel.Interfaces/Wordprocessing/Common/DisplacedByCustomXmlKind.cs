@@ -10,6 +10,7 @@ public enum DisplacedByCustomXmlKind
   ///   Displaced by Next Custom XML Markup Tag.
   /// </summary>
   Next,
+
   /// <summary>
   ///   Displaced by Previous Custom XML Markup Tag.
   /// </summary>

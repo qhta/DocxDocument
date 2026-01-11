@@ -12,17 +12,19 @@ public enum DateItem
   ///   Day is presented
   /// </summary>
   Day = 1,
+
   /// <summary>
   ///   Month is presented
   /// </summary>
   Month = 2,
+
   /// <summary>
   ///   Year is presented
   /// </summary>
   Year = 4,
+
   /// <summary>
   ///   Full date is presented
   /// </summary>
   Full = 7,
-
 }

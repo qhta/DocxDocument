@@ -22,6 +22,7 @@
     <Compile Remove="Settings\**" />
     <Compile Remove="Wordprocessing\Application\**" />
     <Compile Remove="Wordprocessing\Bibliography\**" />
+    <Compile Remove="Wordprocessing\Enums unused\**" />
     <Compile Remove="Wordprocessing\Find  and replace\**" />
     <Compile Remove="Wordprocessing\Proofing\**" />
     <EmbeddedResource Remove="Drawings.Charts\Classes\**" />
@@ -29,6 +30,7 @@
     <EmbeddedResource Remove="Settings\**" />
     <EmbeddedResource Remove="Wordprocessing\Application\**" />
     <EmbeddedResource Remove="Wordprocessing\Bibliography\**" />
+    <EmbeddedResource Remove="Wordprocessing\Enums unused\**" />
     <EmbeddedResource Remove="Wordprocessing\Find  and replace\**" />
     <EmbeddedResource Remove="Wordprocessing\Proofing\**" />
     <None Remove="Drawings.Charts\Classes\**" />
@@ -36,6 +38,7 @@
     <None Remove="Settings\**" />
     <None Remove="Wordprocessing\Application\**" />
     <None Remove="Wordprocessing\Bibliography\**" />
+    <None Remove="Wordprocessing\Enums unused\**" />
     <None Remove="Wordprocessing\Find  and replace\**" />
     <None Remove="Wordprocessing\Proofing\**" />
   </ItemGroup>
