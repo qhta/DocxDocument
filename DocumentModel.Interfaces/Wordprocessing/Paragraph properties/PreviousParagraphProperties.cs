@@ -1,7 +1,8 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   Previous Paragraph Properties interface used in <see cref="ParagraphPropertiesChange"/>.
-///   Represents previous version of <see cref="ParagraphProperties"/>.
+/// Represents the previous version of paragraph properties, used in <see cref="ParagraphPropertiesChange"/>.
+ /// This interface extends <see cref="ExtBaseParagraphProperties"/> and is used to store the state of paragraph formatting before a tracked change, enabling comparison and revision management in WordprocessingML documents.
 /// </summary>
 public interface PreviousParagraphProperties : ExtBaseParagraphProperties
 {

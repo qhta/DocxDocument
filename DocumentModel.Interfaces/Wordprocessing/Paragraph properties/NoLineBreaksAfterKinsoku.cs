@@ -1,16 +1,18 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Custom Set of Characters Which Cannot End a Line.
+/// Represents a custom set of characters that cannot end a line in a WordprocessingML document.
+/// This interface provides properties for specifying the language and the set of restricted characters, enabling advanced control over line breaking and kinsoku shori rules for East Asian and other scripts.
 /// </summary>
 public interface NoLineBreaksAfterKinsoku
 {
   /// <summary>
-  ///   lang
+  /// Language code for which the kinsoku rule applies, specifying the script or locale.
   /// </summary>
   public string? Language { get; set; }
+
   /// <summary>
-  ///   val
+  /// Set of characters that cannot end a line, specified as a string of restricted characters.
   /// </summary>
   public string? Val { get; set; }
 }

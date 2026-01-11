@@ -1,24 +1,14 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   ParagraphPropertiesChange interface used in <see cref="ParagraphProperties"/>.
-///   Represents <see cref="PreviousParagraphProperties"/> annotated with Author, Date, and AnnotationId.
+/// Represents a change to paragraph properties, used in <see cref="ParagraphProperties"/>.
+/// This interface annotates <see cref="PreviousParagraphProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for paragraph formatting in WordprocessingML documents.
 /// </summary>
-public interface ParagraphPropertiesChange
+public interface ParagraphPropertiesChange : IdentifiedChange
 {
+  
   /// <summary>
-  ///   Author
-  /// </summary>
-  public string? Author { get; set; }
-  /// <summary>
-  ///   Sate
-  /// </summary>
-  public DateTime? Date { get; set; }
-  /// <summary>
-  ///   Annotation Identifier
-  /// </summary>
-  public string? AnnotationId { get; set; }
-  /// <summary>
-  ///   Previous Paragraph Properties.
+  /// Previous paragraph properties before the change, enabling comparison and tracking of revisions.
   /// </summary>
   public PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
 }
