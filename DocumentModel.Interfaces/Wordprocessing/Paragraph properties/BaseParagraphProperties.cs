@@ -110,7 +110,7 @@ namespace DocumentModel.Wordprocessing;
     /// <summary>
     /// Spacing settings between lines and paragraphs.
     /// </summary>
-    public SpacingBetweenLines? SpacingBetweenLines { get; set; }
+    public ParagraphSpacing? SpacingBetweenLines { get; set; }
     
     /// <summary>
     /// Indentation settings for the paragraph, including left, right, first line, and hanging indents.
