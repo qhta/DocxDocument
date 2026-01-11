@@ -1,40 +1,49 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Office Data Source Object Settings.
+/// Represents Office Data Source Object (ODSO) settings for mail merge in a WordprocessingML document.
+/// This interface provides properties for UDL connection strings, data source table names, file references, delimiters, source types, header row configuration, field mapping, and recipient data references, enabling advanced configuration and management of mail merge data sources.
 /// </summary>
 public interface DataSourceObject
 {
+  
   /// <summary>
-  ///   UDL Connection String.
+  /// UDL connection string used to connect to the data source.
   /// </summary>
   public string? UdlConnectionString { get; set; }
+  
   /// <summary>
-  ///   Data Source Table Name.
+  /// Name of the data source table used for the mail merge.
   /// </summary>
   public string? DataSourceTableName { get; set; }
+  
   /// <summary>
-  ///   ODSO Data Source File Path.
+  /// File path reference to the ODSO data source.
   /// </summary>
   public RelationshipType? SourceReference { get; set; }
+  
   /// <summary>
-  ///   IColumn Delimiter for Data Source.
+  /// Column delimiter used in the data source, specified as a Unicode value.
   /// </summary>
   public UInt32? ColumnDelimiter { get; set; }
+  
   /// <summary>
-  ///   ODSO Data Source Type.
+  /// Type of the ODSO data source (e.g., database, spreadsheet, text file).
   /// </summary>
   public MailMergeSourceKind? MailMergeSource { get; set; }
+  
   /// <summary>
-  ///   First Row of Data Source Contains IColumn Names.
+  /// Indicates whether the first row of the data source contains column names.
   /// </summary>
   public bool? FirstRowHeader { get; set; }
+  
   /// <summary>
-  /// Collection of Field Map Data.
+  /// Collection of field map data, specifying how data source fields are mapped to merge fields.
   /// </summary>
   public FieldMapDataCollection? FieldMap { get; set; }
+  
   /// <summary>
-  /// Recipient Data Reference.
+  /// Reference to recipient data, specifying an external file or data part containing recipient information.
   /// </summary>
   public RelationshipType? RecipientDataReference { get; set; }
 }
