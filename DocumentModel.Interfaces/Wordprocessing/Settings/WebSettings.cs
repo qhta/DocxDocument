@@ -1,4 +1,3 @@
-"""````````csharp
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>

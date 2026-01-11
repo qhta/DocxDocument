@@ -170,60 +170,60 @@ public interface Document
   /// </summary>
   public Sections? Sections { get; set; }
 
-  /// <summary>
-  ///   Collection of paragraphs in the document.
-  /// </summary>
-  public Paragraphs? Paragraphs { get; set; }
+  ///// <summary>
+  /////   Collection of paragraphs in the document.
+  ///// </summary>
+  //public Paragraphs? Paragraphs { get; set; }
 
-  /// <summary>
-  ///   Collection of tables in the document.
-  /// </summary>
-  public Tables? Tables { get; set; }
+  ///// <summary>
+  /////   Collection of tables in the document.
+  ///// </summary>
+  //public Tables? Tables { get; set; }
 
-  /// <summary>
-  ///   Collection of bookmarks in the document.
-  /// </summary>
-  public Bookmarks? Bookmarks { get; set; }
+  ///// <summary>
+  /////   Collection of bookmarks in the document.
+  ///// </summary>
+  //public Bookmarks? Bookmarks { get; set; }
 
-  /// <summary>
-  ///   Collection of variables stored in the document.
-  /// </summary>
-  public Variables? Variables { get; set; }
+  ///// <summary>
+  /////   Collection of variables stored in the document.
+  ///// </summary>
+  //public Variables? Variables { get; set; }
 
-  /// <summary>
-  ///   Collection of fields in the document.
-  /// </summary>
-  public Fields? Fields { get; set; }
+  ///// <summary>
+  /////   Collection of fields in the document.
+  ///// </summary>
+  //public Fields? Fields { get; set; }
 
-  /// <summary>
-  ///   Collection of shapes in the document.
-  /// </summary>
-  public Shapes? Shapes { get; set; }
+  ///// <summary>
+  /////   Collection of shapes in the document.
+  ///// </summary>
+  //public Shapes? Shapes { get; set; }
 
-  /// <summary>
-  ///   Collection of inline shapes in the document.
-  /// </summary>
-  public InlineShapes? InlineShapes { get; set; }
+  ///// <summary>
+  /////   Collection of inline shapes in the document.
+  ///// </summary>
+  //public InlineShapes? InlineShapes { get; set; }
 
-  /// <summary>
-  ///   Collection of footnotes in the document.
-  /// </summary>
-  public Footnotes? Footnotes { get; set; }
+  ///// <summary>
+  /////   Collection of footnotes in the document.
+  ///// </summary>
+  //public Footnotes? Footnotes { get; set; }
 
-  /// <summary>
-  ///   Collection of endnotes in the document.
-  /// </summary>
-  public Endnotes? Endnotes { get; set; }
+  ///// <summary>
+  /////   Collection of endnotes in the document.
+  ///// </summary>
+  //public Endnotes? Endnotes { get; set; }
 
-  /// <summary>
-  ///   Collection of hyperlinks in the document.
-  /// </summary>
-  public Hyperlinks? Hyperlinks { get; set; }
+  ///// <summary>
+  /////   Collection of hyperlinks in the document.
+  ///// </summary>
+  //public Hyperlinks? Hyperlinks { get; set; }
 
-  /// <summary>
-  ///   Collection of content controls in the document.
-  /// </summary>
-  public ContentControls? ContentControls { get; set; }
+  ///// <summary>
+  /////   Collection of content controls in the document.
+  ///// </summary>
+  //public ContentControls? ContentControls { get; set; }
 
   #endregion
 
