@@ -1,7 +1,10 @@
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   This element represents the root element of the Comments part of a WordprocessingML document.
-/// </summary>
-public interface Comments: ElementCollection<Comment>
-{
-}
+
+  /// <summary>
+  /// Represents the root element of the Comments part of a WordprocessingML document.
+  /// This interface provides access to and management of <see cref="Comment"/> objects, enabling advanced tracking, organization, and collaborative review of comments throughout the document.
+  /// </summary>
+  public interface Comments : ElementCollection<Comment>
+  {
+    
+  }
