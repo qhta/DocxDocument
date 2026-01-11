@@ -1,257 +1,258 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
-///   Defines the PresetCameraTypeValues enumeration.
+/// Specifies the preset camera type options for 3D rendering in WordprocessingML drawings.
+/// This enumeration provides values for various camera perspectives and projections, supporting advanced 3D visualization and effects for graphical elements within the document.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum PresetCameraKind
 {
   /// <summary>
-  ///   legacyObliqueTopLeft.
+  /// Legacy oblique top left camera.
   /// </summary>
   LegacyObliqueTopLeft,
   /// <summary>
-  ///   legacyObliqueTop.
+  /// Legacy oblique top camera.
   /// </summary>
   LegacyObliqueTop,
   /// <summary>
-  ///   legacyObliqueTopRight.
+  /// Legacy oblique top right camera.
   /// </summary>
   LegacyObliqueTopRight,
   /// <summary>
-  ///   legacyObliqueLeft.
+  /// Legacy oblique left camera.
   /// </summary>
   LegacyObliqueLeft,
   /// <summary>
-  ///   legacyObliqueFront.
+  /// Legacy oblique front camera.
   /// </summary>
   LegacyObliqueFront,
   /// <summary>
-  ///   legacyObliqueRight.
+  /// Legacy oblique right camera.
   /// </summary>
   LegacyObliqueRight,
   /// <summary>
-  ///   legacyObliqueBottomLeft.
+  /// Legacy oblique bottom left camera.
   /// </summary>
   LegacyObliqueBottomLeft,
   /// <summary>
-  ///   legacyObliqueBottom.
+  /// Legacy oblique bottom camera.
   /// </summary>
   LegacyObliqueBottom,
   /// <summary>
-  ///   legacyObliqueBottomRight.
+  /// Legacy oblique bottom right camera.
   /// </summary>
   LegacyObliqueBottomRight,
   /// <summary>
-  ///   legacyPerspectiveTopLeft.
+  /// Legacy perspective top left camera.
   /// </summary>
   LegacyPerspectiveTopLeft,
   /// <summary>
-  ///   legacyPerspectiveTop.
+  /// Legacy perspective top camera.
   /// </summary>
   LegacyPerspectiveTop,
   /// <summary>
-  ///   legacyPerspectiveTopRight.
+  /// Legacy perspective top right camera.
   /// </summary>
   LegacyPerspectiveTopRight,
   /// <summary>
-  ///   legacyPerspectiveLeft.
+  /// Legacy perspective left camera.
   /// </summary>
   LegacyPerspectiveLeft,
   /// <summary>
-  ///   legacyPerspectiveFront.
+  /// Legacy perspective front camera.
   /// </summary>
   LegacyPerspectiveFront,
   /// <summary>
-  ///   legacyPerspectiveRight.
+  /// Legacy perspective right camera.
   /// </summary>
   LegacyPerspectiveRight,
   /// <summary>
-  ///   legacyPerspectiveBottomLeft.
+  /// Legacy perspective bottom left camera.
   /// </summary>
   LegacyPerspectiveBottomLeft,
   /// <summary>
-  ///   legacyPerspectiveBottom.
+  /// Legacy perspective bottom camera.
   /// </summary>
   LegacyPerspectiveBottom,
   /// <summary>
-  ///   legacyPerspectiveBottomRight.
+  /// Legacy perspective bottom right camera.
   /// </summary>
   LegacyPerspectiveBottomRight,
   /// <summary>
-  ///   orthographicFront.
+  /// Orthographic front camera.
   /// </summary>
   OrthographicFront,
   /// <summary>
-  ///   isometricTopUp.
+  /// Isometric top up camera.
   /// </summary>
   IsometricTopUp,
   /// <summary>
-  ///   isometricTopDown.
+  /// Isometric top down camera.
   /// </summary>
   IsometricTopDown,
   /// <summary>
-  ///   isometricBottomUp.
+  /// Isometric bottom up camera.
   /// </summary>
   IsometricBottomUp,
   /// <summary>
-  ///   isometricBottomDown.
+  /// Isometric bottom down camera.
   /// </summary>
   IsometricBottomDown,
   /// <summary>
-  ///   isometricLeftUp.
+  /// Isometric left up camera.
   /// </summary>
   IsometricLeftUp,
   /// <summary>
-  ///   isometricLeftDown.
+  /// Isometric left down camera.
   /// </summary>
   IsometricLeftDown,
   /// <summary>
-  ///   isometricRightUp.
+  /// Isometric right up camera.
   /// </summary>
   IsometricRightUp,
   /// <summary>
-  ///   isometricRightDown.
+  /// Isometric right down camera.
   /// </summary>
   IsometricRightDown,
   /// <summary>
-  ///   isometricOffAxis1Left.
+  /// Isometric off-axis 1 left camera.
   /// </summary>
   IsometricOffAxis1Left,
   /// <summary>
-  ///   isometricOffAxis1Right.
+  /// Isometric off-axis 1 right camera.
   /// </summary>
   IsometricOffAxis1Right,
   /// <summary>
-  ///   isometricOffAxis1Top.
+  /// Isometric off-axis 1 top camera.
   /// </summary>
   IsometricOffAxis1Top,
   /// <summary>
-  ///   isometricOffAxis2Left.
+  /// Isometric off-axis 2 left camera.
   /// </summary>
   IsometricOffAxis2Left,
   /// <summary>
-  ///   isometricOffAxis2Right.
+  /// Isometric off-axis 2 right camera.
   /// </summary>
   IsometricOffAxis2Right,
   /// <summary>
-  ///   isometricOffAxis2Top.
+  /// Isometric off-axis 2 top camera.
   /// </summary>
   IsometricOffAxis2Top,
   /// <summary>
-  ///   isometricOffAxis3Left.
+  /// Isometric off-axis 3 left camera.
   /// </summary>
   IsometricOffAxis3Left,
   /// <summary>
-  ///   isometricOffAxis3Right.
+  /// Isometric off-axis 3 right camera.
   /// </summary>
   IsometricOffAxis3Right,
   /// <summary>
-  ///   isometricOffAxis3Bottom.
+  /// Isometric off-axis 3 bottom camera.
   /// </summary>
   IsometricOffAxis3Bottom,
   /// <summary>
-  ///   isometricOffAxis4Left.
+  /// Isometric off-axis 4 left camera.
   /// </summary>
   IsometricOffAxis4Left,
   /// <summary>
-  ///   isometricOffAxis4Right.
+  /// Isometric off-axis 4 right camera.
   /// </summary>
   IsometricOffAxis4Right,
   /// <summary>
-  ///   isometricOffAxis4Bottom.
+  /// Isometric off-axis 4 bottom camera.
   /// </summary>
   IsometricOffAxis4Bottom,
   /// <summary>
-  ///   obliqueTopLeft.
+  /// Oblique top left camera.
   /// </summary>
   ObliqueTopLeft,
   /// <summary>
-  ///   obliqueTop.
+  /// Oblique top camera.
   /// </summary>
   ObliqueTop,
   /// <summary>
-  ///   obliqueTopRight.
+  /// Oblique top right camera.
   /// </summary>
   ObliqueTopRight,
   /// <summary>
-  ///   obliqueLeft.
+  /// Oblique left camera.
   /// </summary>
   ObliqueLeft,
   /// <summary>
-  ///   obliqueRight.
+  /// Oblique right camera.
   /// </summary>
   ObliqueRight,
   /// <summary>
-  ///   obliqueBottomLeft.
+  /// Oblique bottom left camera.
   /// </summary>
   ObliqueBottomLeft,
   /// <summary>
-  ///   obliqueBottom.
+  /// Oblique bottom camera.
   /// </summary>
   ObliqueBottom,
   /// <summary>
-  ///   obliqueBottomRight.
+  /// Oblique bottom right camera.
   /// </summary>
   ObliqueBottomRight,
   /// <summary>
-  ///   perspectiveFront.
+  /// Perspective front camera.
   /// </summary>
   PerspectiveFront,
   /// <summary>
-  ///   perspectiveLeft.
+  /// Perspective left camera.
   /// </summary>
   PerspectiveLeft,
   /// <summary>
-  ///   perspectiveRight.
+  /// Perspective right camera.
   /// </summary>
   PerspectiveRight,
   /// <summary>
-  ///   perspectiveAbove.
+  /// Perspective above camera.
   /// </summary>
   PerspectiveAbove,
   /// <summary>
-  ///   perspectiveBelow.
+  /// Perspective below camera.
   /// </summary>
   PerspectiveBelow,
   /// <summary>
-  ///   perspectiveAboveLeftFacing.
+  /// Perspective above left facing camera.
   /// </summary>
   PerspectiveAboveLeftFacing,
   /// <summary>
-  ///   perspectiveAboveRightFacing.
+  /// Perspective above right facing camera.
   /// </summary>
   PerspectiveAboveRightFacing,
   /// <summary>
-  ///   perspectiveContrastingLeftFacing.
+  /// Perspective contrasting left facing camera.
   /// </summary>
   PerspectiveContrastingLeftFacing,
   /// <summary>
-  ///   perspectiveContrastingRightFacing.
+  /// Perspective contrasting right facing camera.
   /// </summary>
   PerspectiveContrastingRightFacing,
   /// <summary>
-  ///   perspectiveHeroicLeftFacing.
+  /// Perspective heroic left facing camera.
   /// </summary>
   PerspectiveHeroicLeftFacing,
   /// <summary>
-  ///   perspectiveHeroicRightFacing.
+  /// Perspective heroic right facing camera.
   /// </summary>
   PerspectiveHeroicRightFacing,
   /// <summary>
-  ///   perspectiveHeroicExtremeLeftFacing.
+  /// Perspective heroic extreme left facing camera.
   /// </summary>
   PerspectiveHeroicExtremeLeftFacing,
   /// <summary>
-  ///   perspectiveHeroicExtremeRightFacing.
+  /// Perspective heroic extreme right facing camera.
   /// </summary>
   PerspectiveHeroicExtremeRightFacing,
   /// <summary>
-  ///   perspectiveRelaxed.
+  /// Perspective relaxed camera.
   /// </summary>
   PerspectiveRelaxed,
   /// <summary>
-  ///   perspectiveRelaxedModerately.
+  /// Perspective relaxed moderately camera.
   /// </summary>
   PerspectiveRelaxedModerately
 }

@@ -1,117 +1,146 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
+
 
 /// <summary>
-///   Defines the LightRigTypeValues enumeration.
+/// Specifies the type of light rig used for 3D rendering and shading effects in WordprocessingML drawings.
+/// This enumeration provides values for various lighting configurations, supporting advanced visual effects and realistic lighting for graphical elements within the document.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum LightRigKind
 {
+  
   /// <summary>
-  ///   legacyFlat1.
+  /// Legacy flat light rig 1.
   /// </summary>
   LegacyFlat1,
+  
   /// <summary>
-  ///   legacyFlat2.
+  /// Legacy flat light rig 2.
   /// </summary>
   LegacyFlat2,
+  
   /// <summary>
-  ///   legacyFlat3.
+  /// Legacy flat light rig 3.
   /// </summary>
   LegacyFlat3,
+  
   /// <summary>
-  ///   legacyFlat4.
+  /// Legacy flat light rig 4.
   /// </summary>
   LegacyFlat4,
+  
   /// <summary>
-  ///   legacyNormal1.
+  /// Legacy normal light rig 1.
   /// </summary>
   LegacyNormal1,
+  
   /// <summary>
-  ///   legacyNormal2.
+  /// Legacy normal light rig 2.
   /// </summary>
   LegacyNormal2,
+  
   /// <summary>
-  ///   legacyNormal3.
+  /// Legacy normal light rig 3.
   /// </summary>
   LegacyNormal3,
+  
   /// <summary>
-  ///   legacyNormal4.
+  /// Legacy normal light rig 4.
   /// </summary>
   LegacyNormal4,
+  
   /// <summary>
-  ///   legacyHarsh1.
+  /// Legacy harsh light rig 1.
   /// </summary>
   LegacyHarsh1,
+  
   /// <summary>
-  ///   legacyHarsh2.
+  /// Legacy harsh light rig 2.
   /// </summary>
   LegacyHarsh2,
+  
   /// <summary>
-  ///   legacyHarsh3.
+  /// Legacy harsh light rig 3.
   /// </summary>
   LegacyHarsh3,
+  
   /// <summary>
-  ///   legacyHarsh4.
+  /// Legacy harsh light rig 4.
   /// </summary>
   LegacyHarsh4,
+  
   /// <summary>
-  ///   threePt.
+  /// Three-point light rig.
   /// </summary>
   ThreePoint,
+  
   /// <summary>
-  ///   balanced.
+  /// Balanced light rig.
   /// </summary>
   Balanced,
+  
   /// <summary>
-  ///   soft.
+  /// Soft light rig.
   /// </summary>
   Soft,
+  
   /// <summary>
-  ///   harsh.
+  /// Harsh light rig.
   /// </summary>
   Harsh,
+  
   /// <summary>
-  ///   flood.
+  /// Flood light rig.
   /// </summary>
   Flood,
+  
   /// <summary>
-  ///   contrasting.
+  /// Contrasting light rig.
   /// </summary>
   Contrasting,
+  
   /// <summary>
-  ///   morning.
+  /// Morning light rig.
   /// </summary>
   Morning,
+  
   /// <summary>
-  ///   sunrise.
+  /// Sunrise light rig.
   /// </summary>
   Sunrise,
+  
   /// <summary>
-  ///   sunset.
+  /// Sunset light rig.
   /// </summary>
   Sunset,
+  
   /// <summary>
-  ///   chilly.
+  /// Chilly light rig.
   /// </summary>
   Chilly,
+  
   /// <summary>
-  ///   freezing.
+  /// Freezing light rig.
   /// </summary>
   Freezing,
+  
   /// <summary>
-  ///   flat.
+  /// Flat light rig.
   /// </summary>
   Flat,
+  
   /// <summary>
-  ///   twoPt.
+  /// Two-point light rig.
   /// </summary>
   TwoPoint,
+  
   /// <summary>
-  ///   glow.
+  /// Glow light rig.
   /// </summary>
   Glow,
+  
   /// <summary>
-  ///   brightRoom.
+  /// Bright room light rig.
   /// </summary>
   BrightRoom
 }
