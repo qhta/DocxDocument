@@ -1,13 +1,13 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Listing of All Revision Save ID Values.
+/// Represents a listing of all revision save ID values in a WordprocessingML document.
 /// </summary>
-public interface Rsids : ValueCollection<IRsid>
+public interface Rsids : ValueCollection<Rsid>
 {
-  ///// <summary>
-  /////   Original Document Revision Save ID.
-  ///// </summary> 
-  //[XmlAttribute]
-  //public Rsid? RsidRoot { get;  set; }
+  /// <summary>
+  /// Original document revision save ID, identifying the root revision of the document.
+  /// </summary>
+  [XmlAttribute]
+  public Rsid? RsidRoot { get; set; }
 }

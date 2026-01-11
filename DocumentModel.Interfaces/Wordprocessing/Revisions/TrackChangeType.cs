@@ -1,20 +1,10 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the TrackChangeType Class.
+/// Represents a tracked change in a WordprocessingML document, such as insertion, deletion, or modification.
+/// This interface extends <see cref="MarkupRangeElement"/> and <see cref="CommonContent"/>, providing properties for author and date to enable revision tracking and review of document changes.
 /// </summary>
-public interface TrackChangeType: RangeMarkupElement, CommonContent
+public interface TrackChangeType : MarkupRangeElement, CommonContent
 {
-  /// <summary>
-  ///   author
-  /// </summary>
-  public string? Author { get; set; }
-  /// <summary>
-  ///   date
-  /// </summary>
-  public DateTime? Date { get; set; }
-  /// <summary>
-  ///   Annotation Identifier
-  /// </summary>
-  public string? Id { get; set; }
+  
 }

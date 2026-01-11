@@ -1,20 +1,11 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 ///   Common base interface for 
-///   <see cref="InsertedRun"/>, <see cref="DeletedRun"/>, <see cref="MoveFromRun"/>, <see cref="MoveToRun"/> classes.
+///   <see cref="InsertedRun"/>, <see cref="DeletedRun"/>, <see cref="MoveFromRun"/>, and <see cref="MoveToRun"/> classes.
+///   This interface extends <see cref="ElementCollection{ParagraphContent}"/> and <see cref="CommonContent"/>, providing properties for author, date, and annotation identifier to enable revision tracking and review of run-level changes in WordprocessingML documents.
 /// </summary>
-public interface RunTrackChangeType: ElementCollection<ParagraphContent>, CommonContent
+public interface RunTrackChangeType : IdentifiedChange, ElementCollection<ParagraphContent>, CommonContent
 {
-  /// <summary>
-  ///   author
-  /// </summary>
-  public string? Author { get; set; }
-  /// <summary>
-  ///   date
-  /// </summary>
-  public DateTime? Date { get; set; }
-  /// <summary>
-  ///   Annotation Identifier
-  /// </summary>
-  public string? Id { get; set; }
+
 }
