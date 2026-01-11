@@ -1,19 +1,19 @@
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   Specifies that a break shall be placed at the current location in the run content. 
-///   A break is a special character which is used to override the normal line breaking 
-///   that would be performed based on the normal layout of the document’s contents. 
-///   The behavior of this break character (the location where text shall be restarted after this break) 
-///   shall be determined by its type and clear attribute values.
-/// </summary>
-public interface Break: RunContent
-{
+
   /// <summary>
-  ///   Break type
+  /// Represents a break element placed at the current location in the run content of a WordprocessingML document.
+  /// A break is a special character used to override normal line breaking, with behavior determined by its type and clear attribute values. This enables advanced control over text flow, line, and page breaks within document content.
   /// </summary>
-  public BreakKind? Type { get; set; }
-  /// <summary>
-  ///   Restart location for text wrapping break
-  /// </summary>
-  public BreakTextRestartLocationKind? Clear { get; set; }
-}
+  public interface Break : RunContent
+  {
+    
+    /// <summary>
+    /// Type of break to insert, specifying the kind of break (e.g., line, page, column, text wrapping).
+    /// </summary>
+    public BreakKind? Type { get; set; }
+    
+    /// <summary>
+    /// Restart location for text wrapping break, specifying where text should resume after the break (e.g., left, right, all).
+    /// </summary>
+    public BreakTextRestartLocationKind? Clear { get; set; }
+  }
