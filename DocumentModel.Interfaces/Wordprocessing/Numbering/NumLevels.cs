@@ -1,7 +1,9 @@
 ﻿namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   Collection of NumLevel elements
-/// </summary>
-public interface NumLevels: ElementCollection<NumLevel>
-{
-}
+
+  /// <summary>
+  /// Represents a collection of numbering level elements in a WordprocessingML document.
+  /// </summary>
+  public interface NumLevels : ElementCollection<NumLevel>
+  {
+    
+  }

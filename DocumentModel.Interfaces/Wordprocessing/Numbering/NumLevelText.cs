@@ -1,23 +1,18 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Specifies the textual content which shall be displayed when displaying a paragraph with the given numbering level. 
-///   All text in this element's val attribute shall be taken as literal text to be repeated in each instance of this numbering level, 
-///   except for any use of the percent symbol (%) followed by a number, 
-///   which shall be used to indicate the one-based index of the number to be used at this level. 
-///   Any number of a level higher than this level shall be ignored. 
-///   When the % syntax is used, the number shall be incremented for each subsequent paragraph of that level (sequential or not), 
-///   until the restart level is seen between two subsequent paragraphs of this level. 
+///   Represents the textual content displayed for a paragraph at a given numbering level in a WordprocessingML document.
+///   This interface provides properties for the literal text to be repeated in each instance of the numbering level, supporting the use of percent symbol (%) followed by a number to indicate the one-based index of the number to be used at this level. Numbers for higher levels are ignored, and the % syntax increments for each subsequent paragraph until a restart occurs.
 /// </summary>
 public interface NumLevelText
 {
   /// <summary>
-  ///   Level Text
+  ///   Textual content for the numbering level, with %x replaced by the appropriate number for the level.
   /// </summary>
   public string? Text { get; set; }
 
   /// <summary>
-  ///   Level Text Is Null Character
+  ///   Indicates whether the level text is a null character.
   /// </summary>
   public Boolean IsNull { get; set; }
 }
