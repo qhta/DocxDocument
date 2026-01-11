@@ -1,31 +1,39 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   Phonetic Guide Properties.
+/// Represents the properties for a phonetic guide (ruby text) in WordprocessingML documents.
+/// This interface provides options for alignment, font size, distance between guide and base text, base text size, language, and field cache status, enabling advanced formatting and localization of ruby annotations.
 /// </summary>
 public interface RubyProperties
 {
+  
   /// <summary>
-  ///   Phonetic Guide Text Alignment.
+  /// Alignment of the phonetic guide text relative to the base text.
   /// </summary>
   public RubyAlignKind? RubyAlign { get; set; }
+  
   /// <summary>
-  ///   Phonetic Guide Text Font Size.
+  /// Font size of the phonetic guide text, specified in half-points.
   /// </summary>
   public HalfPoints? PhoneticGuideTextFontSize { get; set; }
+  
   /// <summary>
-  ///   Distance Between Phonetic Guide Text and Phonetic Guide Base Text.
+  /// Distance between the phonetic guide text and the base text, specified in twips.
   /// </summary>
   public Int16? PhoneticGuideRaise { get; set; }
+  
   /// <summary>
-  ///   Phonetic Guide Base Text Font Size.
+  /// Font size of the phonetic guide base text, specified in half-points.
   /// </summary>
   public HalfPoints? PhoneticGuideBaseTextSize { get; set; }
+  
   /// <summary>
-  ///   Language ID for Phonetic Guide.
+  /// Language ID for the phonetic guide, specifying the language used for annotation.
   /// </summary>
   public string? LanguageId { get; set; }
+  
   /// <summary>
-  ///   Invalidated Field Cache.
+  /// Indicates whether the field cache is invalidated for the phonetic guide.
   /// </summary>
   public bool? Dirty { get; set; }
 }
