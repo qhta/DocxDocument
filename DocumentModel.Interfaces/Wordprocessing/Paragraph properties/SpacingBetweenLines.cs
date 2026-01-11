@@ -8,42 +8,22 @@ public interface SpacingBetweenLines
 {
   
   /// <summary>
-  /// Spacing above the paragraph, specified in twentieths of a point.
+  /// Spacing above the paragraph.
   /// </summary>
-  public string? Before { get; set; }
+  public LinesSpacing? Before { get; set; }
   
   /// <summary>
-  /// Spacing above the paragraph in line units.
+  /// Spacing below the paragraph.
   /// </summary>
-  public Int32? BeforeLines { get; set; }
-  
-  /// <summary>
-  /// Indicates whether spacing above the paragraph is determined automatically.
-  /// </summary>
-  public bool? BeforeAutoSpacing { get; set; }
-  
-  /// <summary>
-  /// Spacing below the paragraph, specified in twentieths of a point.
-  /// </summary>
-  public string? After { get; set; }
-  
-  /// <summary>
-  /// Spacing below the paragraph in line units.
-  /// </summary>
-  public Int32? AfterLines { get; set; }
-  
-  /// <summary>
-  /// Indicates whether spacing below the paragraph is determined automatically.
-  /// </summary>
-  public bool? AfterAutoSpacing { get; set; }
+  public LinesSpacing? After { get; set; }
   
   /// <summary>
   /// Spacing between lines in the paragraph, specified in twentieths of a point or as a multiple of line height.
   /// </summary>
-  public string? Line { get; set; }
+  public Twips? Line { get; set; }
   
   /// <summary>
   /// Type of spacing rule applied between lines (e.g., auto, exact, at least, multiple).
   /// </summary>
   public LineSpacingRuleKind? LineRule { get; set; }
-}
+} 
