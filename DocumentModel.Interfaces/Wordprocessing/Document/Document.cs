@@ -104,8 +104,6 @@ public interface Document
 
   #endregion
 
-  #region Document Properties and Collections
-
   /// <summary>
   /// Compound object of document properties
   /// </summary>
