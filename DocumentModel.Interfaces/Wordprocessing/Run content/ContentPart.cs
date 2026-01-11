@@ -1,25 +1,14 @@
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   This element specifies a reference to XML content in a format not defined by ECMA-376. 
-///   This part allows the native use of other commonly used interchange formats, such as:  
-///   <list type="bullet">
-///    <item>
-///     MathML (http://www.w3.org/TR/MathML2/) 
-///    </item><item>
-///     SMIL (http://www.w3.org/TR/REC-smil/) 
-///    </item><item>
-///     SVG (http://www.w3.org/TR/SVG11/) 
-///    </item>
-///   </list>
-///   The relationship type of the explicit relationship specified by this element shall be  
-///   http://purl.oclc.org/ooxml/officeDocument/relationships/customXml and have a TargetMode attribute value of Internal. 
-///   If an application cannot process content of the content type specified by the targeted part, 
-///   then it should continue to process the file. If possible, it should also provide some indication that unknown content was not imported. 
-/// </summary>
-public interface ContentPart: RunContent, DMM.MathArgumentContent
-{
+
   /// <summary>
-  ///   Specifies the relationship ID to a specified part.
+  /// Represents a reference to XML content in a format not defined by ECMA-376, such as MathML, SMIL, or SVG.
+  /// This element enables the native use of other interchange formats by referencing a custom XML part within the document package. The relationship type must be http://purl.oclc.org/ooxml/officeDocument/relationships/customXml with TargetMode set to Internal. If the content type is not supported, applications should continue processing and may indicate that unknown content was not imported.
   /// </summary>
-  public string? Id { get; set; }
-}
+  public interface ContentPart : RunContent, DMM.MathArgumentContent
+  {
+    
+    /// <summary>
+    /// Relationship ID to the specified custom XML part, identifying the target part containing the referenced content.
+    /// </summary>
+    public string? Id { get; set; }
+  }

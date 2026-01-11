@@ -1,10 +1,10 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///  Represents a carriage return character in a text run. 
-///  A carriage return is the equivalent of Unicode character 000D, and is used to end the current line of text.
-/// The behavior of a carriage return in run content shall be identical to a break character with null type and clear attributes, 
-/// which shall end the current line and find the next available line on which to continue.
+/// Represents a carriage return character in a text run in WordprocessingML documents.
+/// A carriage return is the equivalent of Unicode character 000D and is used to end the current line of text.
+/// Its behavior is identical to a break character with null type and clear attributes, ending the current line and continuing on the next available line.
 /// </summary>
-public interface CarriageReturn: RunContent
+public interface CarriageReturn : RunContent
 {
 }

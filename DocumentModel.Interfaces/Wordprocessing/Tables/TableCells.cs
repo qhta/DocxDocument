@@ -1,8 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Represents a collection of cells in a table row within a Wordprocessing document.
-/// This interface provides access to the parent row and application object, enabling management and navigation of cell collections in table structures.
+/// Represents a collection of table cell elements in a WordprocessingML document.
+/// This interface provides access to and management of <see cref="TableCell"/> objects, enabling advanced organization and manipulation of table cell structures within a table row.
 /// </summary>
 public interface TableCells : ElementCollection<TableCell>
 {
