@@ -1,17 +1,19 @@
 ﻿namespace DocumentModel;
-/// <summary>
-/// Dual HPS. First value is for regular script, second for complex script.
-/// If second value is null, it is assumed to be the first value;
-/// </summary>
-public interface FontSizes
-{
 
   /// <summary>
-  /// Value for regular script.
+  /// Represents dual font size values in half-points for text formatting, where the first value applies to regular script and the second to complex script.
+  /// If the complex script value is null, it is assumed to be the same as the regular script value. Used for specifying font sizes that can differ between regular and complex scripts in WordprocessingML documents.
   /// </summary>
-  public HalfPoints? Val { get; set; }
-  /// <summary>
-  /// Value for complex script.
-  /// </summary>
-  public HalfPoints? ValCS { get; set; }
-}
+  public interface FontSizes
+  {
+    
+    /// <summary>
+    /// Font size value for regular script, specified in half-points.
+    /// </summary>
+    public HalfPoints? Val { get; set; }
+    
+    /// <summary>
+    /// Font size value for complex script, specified in half-points. If null, the regular script value is used.
+    /// </summary>
+    public HalfPoints? ValCS { get; set; }
+  }

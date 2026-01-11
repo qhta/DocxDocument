@@ -1,28 +1,34 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the Underline Class.
+/// Represents underline formatting for a text run in WordprocessingML documents.
+/// This interface provides properties for underline style, color, theme color, and theme color tint/shade, enabling advanced underline customization for character-level formatting.
 /// </summary>
 public interface Underline
 {
+  
   /// <summary>
-  ///   Underline Style
+  /// Underline style, specifying the type of underline applied to the text (e.g., single, double, dotted).
   /// </summary>
   public UnderlineKind? Type { get; set; }
+  
   /// <summary>
-  ///   Underline Color
+  /// Underline color, specified as a hex RGB value or named color.
   /// </summary>
-  public string? Color { get; set; }
+  public Color? Color { get; set; }
+  
   /// <summary>
-  ///   Underline Theme Color
+  /// Theme color index for the underline, enabling theme-aware underline coloring.
   /// </summary>
   public ThemeColorIndex? ThemeColor { get; set; }
+  
   /// <summary>
-  ///   Underline Theme Color Tint
+  /// Theme color tint for the underline, specifying a lighter variation of the theme color.
   /// </summary>
   public string? ThemeTint { get; set; }
+  
   /// <summary>
-  ///   Underline Theme Color Shade
+  /// Theme color shade for the underline, specifying a darker variation of the theme color.
   /// </summary>
   public string? ThemeShade { get; set; }
 }
