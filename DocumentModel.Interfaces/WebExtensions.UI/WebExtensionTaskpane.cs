@@ -1,9 +1,9 @@
 namespace DocumentModel.WebExtensions.UI;
 
 /// <summary>
-///   Defines the WebExtensionTaskpane Class.
+///   Defines the WebExtensionTaskPane Class.
 /// </summary>
-public interface WebExtensionTaskpane: CollectionItem
+public interface WebExtensionTaskPane: CollectionItem
 {
   /// <summary>
   ///   dockstate
