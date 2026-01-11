@@ -1,11 +1,12 @@
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   This element specifies the presence of a custom XML element around a single table cell. 
-///   The attributes on this element shall be used to specify the name and namespace URI of the current custom XML element.
-/// </summary>
-public interface CustomXmlCell: CustomXmlElement, TableRowContent, SdtCellContent
-{
-  //public TableCells TableCells { get; set; }
-  //public CustomXmlCell? ChildCustomXmlCell { get; set; }
-  //public SdtCell? SdtCell { get; set; }
-}
+
+  /// <summary>
+  /// Represents a custom XML element surrounding a single table cell in a WordprocessingML document.
+  /// This interface extends <see cref="CustomXmlElement"/>, <see cref="TableRowContent"/>, and <see cref="SdtCellContent"/>, enabling advanced schema-based processing, annotation, and integration of custom XML data within table cell content. The attributes specify the name and namespace URI of the custom XML element.
+  /// </summary>
+  public interface CustomXmlCell : CustomXmlElement, TableRowContent, SdtCellContent
+  {
+    //public TableCells TableCells { get; set; }
+    //public CustomXmlCell? ChildCustomXmlCell { get; set; }
+    //public SdtCell? SdtCell { get; set; }
+  }
