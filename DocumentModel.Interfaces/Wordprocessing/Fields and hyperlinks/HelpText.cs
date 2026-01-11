@@ -1,16 +1,18 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Associated Help Text.
+/// Represents help text associated with a form field in a WordprocessingML document.
+/// This interface provides properties for the type and value of help text, enabling advanced user guidance and contextual assistance for interactive form fields within documents.
 /// </summary>
 public interface HelpText
 {
   /// <summary>
-  ///   Help Text Type
+  /// Type of help text, specifying the context or display mode (e.g., tooltip, status bar).
   /// </summary>
   public InfoTextKind? Type { get; set; }
+
   /// <summary>
-  ///   Help Text Value
+  /// Value of the help text, containing the actual guidance or information to be displayed to the user.
   /// </summary>
   public string? Val { get; set; }
 }
