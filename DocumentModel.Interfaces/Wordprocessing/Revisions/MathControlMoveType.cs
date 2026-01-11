@@ -1,20 +1,10 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the MathControlMoveType Class.
+/// Represents a tracked move revision for math control elements in a WordprocessingML document.
+/// This interface provides properties for author, date, and annotation identifier, enabling tracking and management of mathematical content moves within the document.
 /// </summary>
-public interface MathControlMoveType
+public interface MathControlMoveType: IdentifiedChange
 {
-  /// <summary>
-  ///   author
-  /// </summary>
-  public string? Author { get; set; }
-  /// <summary>
-  ///   date
-  /// </summary>
-  public DateTime? Date { get; set; }
-  /// <summary>
-  ///   Annotation Identifier
-  /// </summary>
-  public string? Id { get; set; }
+
 }

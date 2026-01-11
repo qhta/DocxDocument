@@ -1,21 +1,14 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the DeletedMathControl Class.
+/// Represents a tracked deletion revision for math control elements in a WordprocessingML document.
+/// This interface provides properties for author, date, annotation identifier, and run formatting, enabling tracking and management of mathematical content deletions within the document.
 /// </summary>
-public interface DeletedMathControl
+public interface DeletedMathControl: IdentifiedChange
 {
+
   /// <summary>
-  ///   author
+  /// Run properties for the deleted math control, specifying character-level formatting.
   /// </summary>
-  public string? Author { get; set; }
-  /// <summary>
-  ///   date
-  /// </summary>
-  public DateTime? Date { get; set; }
-  /// <summary>
-  ///   Annotation Identifier
-  /// </summary>
-  public string? Id { get; set; }
   public RunProperties? RunProperties { get; set; }
 }

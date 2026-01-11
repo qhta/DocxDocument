@@ -25,10 +25,10 @@ public interface TableRowProperties : BaseTableRowProperties
   /// <summary>
   /// Indicates that the parent object has been inserted in conflict with edits made by other users.
   /// </summary>
-  public TrackChangeType2? ConflictInsertion { get; set; }
+  public TrackChangeType? ConflictInsertion { get; set; }
   
   /// <summary>
   /// Indicates that the parent object has been deleted in conflict with edits made by other users.
   /// </summary>
-  public TrackChangeType2? ConflictDeletion { get; set; }
+  public TrackChangeType? ConflictDeletion { get; set; }
 }

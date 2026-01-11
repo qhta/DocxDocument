@@ -30,12 +30,12 @@ public interface BaseParagraphMarkRunProperties : ExtBaseRunProperties
     /// <summary>
     /// Indicates that the paragraph has been inserted in conflict with edits made by other users.
     /// </summary>
-    public TrackChangeType2? ConflictInsertion { get; set; }
+    public TrackChangeType? ConflictInsertion { get; set; }
     
     /// <summary>
     /// Indicates that the paragraph has been deleted in conflict with edits made by other users.
     /// </summary>
-    public TrackChangeType2? ConflictDeletion { get; set; }
+    public TrackChangeType? ConflictDeletion { get; set; }
     
     /// <summary>
     /// Indicates that this run contains WordprocessingML to be handled as Office Open XML Math, allowing equations on empty paragraphs and marking the paragraph as part of an Office Math equation.
