@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 /// Represents the bevel effect properties for a text run or shape, specifying width, height, and preset profile type for the bevel.
