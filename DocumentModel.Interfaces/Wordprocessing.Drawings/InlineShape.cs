@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 ///   Represents an inline shape (picture, diagram, etc.) within the text flow.
