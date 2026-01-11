@@ -41,7 +41,7 @@ public enum TextDirectionKind
   /// <summary>
   /// Left to Right, Top to Bottom Rotated.
   /// </summary>
-  LefttoRightTopToBottomRotated,
+  LeftToRightTopToBottomRotated,
 
   /// <summary>
   /// Left to Right, Top to Bottom Rotated (2010 compatibility).

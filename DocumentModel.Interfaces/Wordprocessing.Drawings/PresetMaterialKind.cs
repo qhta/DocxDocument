@@ -1,73 +1,89 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
-///   Defines the PresetMaterialTypeValues enumeration.
+/// Specifies the preset material type options for 3D rendering in WordprocessingML drawings.
+/// This enumeration provides values for various material effects, supporting advanced visual appearance and surface rendering for 3D shapes and graphical elements within the document.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum PresetMaterialKind
 {
   /// <summary>
-  ///   legacyMatte.
+  /// Legacy matte material.
   /// </summary>
   LegacyMatte,
+    
   /// <summary>
-  ///   legacyPlastic.
+  /// Legacy plastic material.
   /// </summary>
   LegacyPlastic,
+    
   /// <summary>
-  ///   legacyMetal.
+  /// Legacy metal material.
   /// </summary>
   LegacyMetal,
+    
   /// <summary>
-  ///   legacyWireframe.
+  /// Legacy wireframe material.
   /// </summary>
   LegacyWireframe,
+    
   /// <summary>
-  ///   matte.
+  /// Matte material.
   /// </summary>
   Matte,
+    
   /// <summary>
-  ///   plastic.
+  /// Plastic material.
   /// </summary>
   Plastic,
+    
   /// <summary>
-  ///   metal.
+  /// Metal material.
   /// </summary>
   Metal,
+    
   /// <summary>
-  ///   warmMatte.
+  /// Warm matte material.
   /// </summary>
   WarmMatte,
+    
   /// <summary>
-  ///   translucentPowder.
+  /// Translucent powder material.
   /// </summary>
   TranslucentPowder,
+    
   /// <summary>
-  ///   powder.
+  /// Powder material.
   /// </summary>
   Powder,
+    
   /// <summary>
-  ///   dkEdge.
+  /// Dark edge material.
   /// </summary>
   DarkEdge,
+    
   /// <summary>
-  ///   softEdge.
+  /// Soft edge material.
   /// </summary>
   SoftEdge,
+    
   /// <summary>
-  ///   clear.
+  /// Clear material.
   /// </summary>
   Clear,
+    
   /// <summary>
-  ///   flat.
+  /// Flat material.
   /// </summary>
   Flat,
+    
   /// <summary>
-  ///   softmetal.
+  /// Soft metal material.
   /// </summary>
   SoftMetal,
+    
   /// <summary>
-  ///   none.
+  /// No material effect.
   /// </summary>
   None
 }
