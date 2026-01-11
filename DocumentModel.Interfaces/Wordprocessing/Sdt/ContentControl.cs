@@ -59,7 +59,6 @@ public partial interface ContentControl : CollectionItem
   /// </summary>
   public object? PlaceholderText { get; }
 
-
   /// <summary>
   /// Title of the content control.
   /// </summary>
@@ -146,16 +145,6 @@ public partial interface ContentControl : CollectionItem
   public AppearanceKind? Appearance { get; set; }
 
   /// <summary>
-  /// Level of the content control (inline, block, etc.).
-  /// </summary>
-  public int? Level { get; }
-
-  /// <summary>
-  /// Collection of repeating section items.
-  /// </summary>
-  public object? RepeatingSectionItems { get; }
-
-  /// <summary>
   /// Title for a repeating section item.
   /// </summary>
   public string? RepeatingSectionItemTitle { get; set; }
@@ -164,4 +153,14 @@ public partial interface ContentControl : CollectionItem
   /// Indicates whether insert/delete section is allowed in repeating section.
   /// </summary>
   public bool? AllowInsertDeleteSection { get; set; }
+  
+  /// <summary>
+  /// Level of the content control (inline, block, etc.).
+  /// </summary>
+  public int? Level { get; }
+
+  /// <summary>
+  /// Collection of repeating section items.
+  /// </summary>
+  public RepeatingSectionItemCollection? RepeatingSectionItems { get; }
 }
