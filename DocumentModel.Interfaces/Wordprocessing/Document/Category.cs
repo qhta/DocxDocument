@@ -1,16 +1,18 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Entry Categorization.
+/// Represents entry categorization for document parts in a WordprocessingML document.
+/// This interface provides properties for the category name and associated gallery, enabling advanced organization and classification of document entries for templates, building blocks, and other reusable content.
 /// </summary>
 public interface Category
 {
   /// <summary>
-  ///   Category Associated With Entry.
+  /// Name of the category associated with the entry.
   /// </summary>
   public string? Name { get; set; }
+
   /// <summary>
-  ///   Gallery Associated With Entry.
+  /// Gallery associated with the entry, specifying the type of document part gallery.
   /// </summary>
   public DocPartGalleryKind? Gallery { get; set; }
 }

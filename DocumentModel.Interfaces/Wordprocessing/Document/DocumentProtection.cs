@@ -1,83 +1,104 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   Document Editing Restrictions.
+/// Represents document editing restrictions and protection settings in a WordprocessingML document.
+/// This interface provides properties for editing restrictions, formatting limitations, enforcement, cryptographic settings, password protection, and hashing details, enabling advanced security and access control for document editing and formatting.
 /// </summary>
 public interface DocumentProtection
 {
+  
   /// <summary>
-  ///   Document Editing Restrictions
+  /// Document editing restrictions, specifying the allowed editing mode (e.g., read-only, tracked changes, comments).
   /// </summary>
   public DocumentProtectionKind? Edit { get; set; }
+  
   /// <summary>
-  ///   Only Allow Formatting With Unlocked Styles
+  /// Indicates whether only formatting with unlocked styles is allowed.
   /// </summary>
   public bool? Formatting { get; set; }
+  
   /// <summary>
-  ///   Enforce Document Protection Settings
+  /// Indicates whether document protection settings are enforced.
   /// </summary>
   public bool? Enforcement { get; set; }
+  
   /// <summary>
-  ///   Cryptographic Provider Type
+  /// Cryptographic provider type used for document protection.
   /// </summary>
   public CryptProviderKind? CryptographicProviderType { get; set; }
+  
   /// <summary>
-  ///   Cryptographic Algorithm Class
+  /// Cryptographic algorithm class used for document protection.
   /// </summary>
   public CryptAlgorithmClassKind? CryptographicAlgorithmClass { get; set; }
+  
   /// <summary>
-  ///   Cryptographic Algorithm Type
+  /// Cryptographic algorithm type used for document protection.
   /// </summary>
   public CryptAlgorithmKind? CryptographicAlgorithmType { get; set; }
+  
   /// <summary>
-  ///   Cryptographic Hashing Algorithm
+  /// Cryptographic hashing algorithm identifier.
   /// </summary>
   public Int32? CryptographicAlgorithmSid { get; set; }
+  
   /// <summary>
-  ///   Iterations to Run Hashing Algorithm
+  /// Number of iterations to run the hashing algorithm.
   /// </summary>
   public UInt32? CryptographicSpinCount { get; set; }
+  
   /// <summary>
-  ///   Cryptographic Provider
+  /// Name of the cryptographic provider used for document protection.
   /// </summary>
   public string? CryptographicProvider { get; set; }
+  
   /// <summary>
-  ///   Cryptographic Algorithm Extensibility
+  /// Cryptographic algorithm extensibility identifier.
   /// </summary>
   public HexInt? AlgorithmIdExtensibility { get; set; }
+  
   /// <summary>
-  ///   Algorithm Extensibility Source
+  /// Source of the algorithm extensibility identifier.
   /// </summary>
   public string? AlgorithmIdExtensibilitySource { get; set; }
+  
   /// <summary>
-  ///   Cryptographic Provider Type Extensibility
+  /// Cryptographic provider type extensibility identifier.
   /// </summary>
   public HexInt? CryptographicProviderTypeExtensibility { get; set; }
+  
   /// <summary>
-  ///   Provider Type Extensibility Source
+  /// Source of the cryptographic provider type extensibility identifier.
   /// </summary>
   public string? CryptographicProviderTypeExtSource { get; set; }
+  
   /// <summary>
-  ///   Password Hash
+  /// Password hash for document protection.
   /// </summary>
   public Base64Binary? Hash { get; set; }
+  
   /// <summary>
-  ///   Salt for Password Verifier
+  /// Salt value for the password verifier.
   /// </summary>
   public Base64Binary? Salt { get; set; }
+  
   /// <summary>
-  ///   algorithmName
+  /// Name of the cryptographic algorithm used for document protection.
   /// </summary>
   public string? AlgorithmName { get; set; }
+  
   /// <summary>
-  ///   hashValue
+  /// Hash value for document protection.
   /// </summary>
   public Base64Binary? HashValue { get; set; }
+  
   /// <summary>
-  ///   saltValue
+  /// Salt value for document protection.
   /// </summary>
   public Base64Binary? SaltValue { get; set; }
+  
   /// <summary>
-  ///   spinCount
+  /// Number of spin count iterations for hashing.
   /// </summary>
   public Int32? SpinCount { get; set; }
 }
