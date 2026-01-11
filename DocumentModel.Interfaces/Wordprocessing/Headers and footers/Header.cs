@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
-/// <summary>
-///   This element specifies the content for a single header for use within one or more sections of a WordprocessingML document.
-///   Within the hdr element, the content of the element is similar to the content of the body (§17.2.2) element, 
-///   and contains what is referred to as block-level markup - markup which can exist as a sibling element 
-///   to paragraphs in a WordprocessingML document.
-/// </summary>
-public interface Header: HeaderFooter
-{
-}
+
+  /// <summary>
+  /// Represents the content for a single header for use within one or more sections of a WordprocessingML document.
+  /// This interface extends <see cref="HeaderFooter"/> and contains block-level markup similar to the document body, enabling advanced management and formatting of header content for different sections and page types.
+  /// </summary>
+  public interface Header : HeaderFooter
+  {
+  }
