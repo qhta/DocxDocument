@@ -1,8 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the CustomXmlConflictInsertionRangeEnd Class.
+/// Represents the end of a custom XML conflict insertion range in a WordprocessingML document.
+/// This interface extends <see cref="MarkupRangeElement"/> and is used to mark the end of a region where custom XML content has been inserted in conflict with other changes, enabling revision tracking and review of conflicting custom XML insertions.
 /// </summary>
-public interface CustomXmlConflictInsertionRangeEnd: MarkupType2
+public interface CustomXmlConflictInsertionRangeEnd : MarkupRangeElement
 {
 }

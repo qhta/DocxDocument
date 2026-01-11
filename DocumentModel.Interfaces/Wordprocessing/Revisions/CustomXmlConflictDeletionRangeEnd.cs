@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CustomXmlConflictDeletionRangeEnd Class.
 /// </summary>
-public interface CustomXmlConflictDeletionRangeEnd: MarkupType2
+public interface CustomXmlConflictDeletionRangeEnd: MarkupRangeElement
 {
 }

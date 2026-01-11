@@ -1,22 +1,18 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the InsertedMathControl Class.
+/// Represents a tracked insertion revision for math control elements in a WordprocessingML document.
+/// This interface provides properties for author, date, annotation identifier, run formatting, and deleted math control, enabling tracking and management of mathematical content insertions within the document.
 /// </summary>
-public interface InsertedMathControl
+public interface InsertedMathControl: IdentifiedChange
 {
   /// <summary>
-  ///   author
+  /// Run properties for the inserted math control, specifying character-level formatting.
   /// </summary>
-  public string? Author { get; set; }
-  /// <summary>
-  ///   date
-  /// </summary>
-  public DateTime? Date { get; set; }
-  /// <summary>
-  ///   Annotation Identifier
-  /// </summary>
-  public string? Id { get; set; }
   public RunProperties? RunProperties { get; set; }
+
+  /// <summary>
+  /// Deleted math control revision information, tracking removed mathematical content related to the insertion.
+  /// </summary>
   public DeletedMathControl? DeletedMathControl { get; set; }
 }

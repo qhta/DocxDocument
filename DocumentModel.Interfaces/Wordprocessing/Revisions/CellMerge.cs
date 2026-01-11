@@ -1,28 +1,19 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Vertically Merged/Split Table Cells.
+/// Represents a revision for vertically merged or split table cells in a WordprocessingML document.
+/// This interface provides properties for the current and original vertical merge state, author, date, and annotation identifier, enabling tracking and management of cell merge and split revisions in tables.
 /// </summary>
-public interface CellMerge
+public interface CellMerge: IdentifiedChange
 {
   /// <summary>
-  ///   vMerge
+  /// Current vertical merge revision state for the table cell (e.g., continue, restart, none).
   /// </summary>
   public VerticalMergeRevisionKind? VerticalMerge { get; set; }
+
   /// <summary>
-  ///   vMergeOrig
+  /// Original vertical merge revision state for the table cell before the change.
   /// </summary>
   public VerticalMergeRevisionKind? VerticalMergeOriginal { get; set; }
-  /// <summary>
-  ///   author
-  /// </summary>
-  public string? Author { get; set; }
-  /// <summary>
-  ///   date
-  /// </summary>
-  public DateTime? Date { get; set; }
-  /// <summary>
-  ///   Annotation Identifier
-  /// </summary>
-  public string? Id { get; set; }
+
 }

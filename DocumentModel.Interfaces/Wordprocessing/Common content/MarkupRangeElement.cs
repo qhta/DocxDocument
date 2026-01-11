@@ -8,13 +8,8 @@ namespace DocumentModel.Wordprocessing;
 ///   MoveToRangeStart, MoveToRangeEnd.
 /// </summary>
 
-public interface MarkupRangeElement: RangeMarkupElement, CommonContent
+public interface MarkupRangeElement: MarkupElement, CommonContent
 {
-  /// <summary>
-  ///   Specifies a unique identifier for an annotation within a WordprocessingML document. 
-  ///   The restrictions on the id attribute, if any, are defined by the parent XML element. 
-  /// </summary>
-  public Int32? Id { get; set; }
   
   /// <summary>
   ///   Specifies that the parent annotation's placement shall be directly linked 

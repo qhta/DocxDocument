@@ -1,9 +1,9 @@
-
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   This element specifies that the inline-level content contained within it 
-///   shall be treated as deleted content which has been tracked as a revision.
+/// Represents inline-level content that has been deleted and tracked as a revision in a WordprocessingML document.
+/// This interface extends <see cref="RunTrackChangeType"/> and is used to mark content as deleted, enabling revision tracking and review of content removals within the document.
 /// </summary>
-public interface DeletedRun: RunTrackChangeType
+public interface DeletedRun : RunTrackChangeType
 {
 }
