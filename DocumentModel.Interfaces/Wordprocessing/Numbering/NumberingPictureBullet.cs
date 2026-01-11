@@ -1,20 +1,26 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.Wordprocessing;
 
-/// <summary>
-///   Picture Numbering Symbol Definition.
-/// </summary>
-public interface NumberingPictureBullet: CollectionItem
-{
   /// <summary>
-  ///   numPicBulletId
+  /// Represents a picture numbering symbol definition in a WordprocessingML document.
+  /// This interface extends <see cref="CollectionItem"/> and provides properties for the picture bullet ID, base picture bullet definition, and associated drawing, enabling advanced customization of list bullets using images.
   /// </summary>
-  public Int32? NumberingPictureBulletId { get; set; }
-  /// <summary>
-  ///   PictureBulletBase.
-  /// </summary>
-  public PictureBulletBase? PictureBulletBase { get; set; }
-  ///// <summary>
-  /////   Drawing.
-  ///// </summary>
-  //public Drawing? Drawing { get; set; }
-}
+  public interface NumberingPictureBullet : CollectionItem
+  {
+    
+    /// <summary>
+    /// Identifier for the numbering picture bullet, used to reference the picture bullet definition.
+    /// </summary>
+    public Int32? NumberingPictureBulletId { get; set; }
+    
+    /// <summary>
+    /// Base definition for the picture bullet, specifying the image and formatting used for the bullet symbol.
+    /// </summary>
+    public PictureBulletBase? PictureBulletBase { get; set; }
+    
+    /// <summary>
+    /// Drawing element associated with the picture bullet, containing the image data and rendering information.
+    /// </summary>
+    public Drawing? Drawing { get; set; }
+  }

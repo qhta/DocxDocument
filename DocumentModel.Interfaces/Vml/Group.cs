@@ -145,7 +145,7 @@ public interface Group: EmbeddedObjectContent
   public string? TableLimits { get; set; }
   public Group? ChildGroup { get; set; }
   public Shape? Shape { get; set; }
-  public Shapetype? Shapetype { get; set; }
+  public ShapeType? Shapetype { get; set; }
   public Arc? Arc { get; set; }
   public Curve? Curve { get; set; }
   public ImageFile? ImageFile { get; set; }

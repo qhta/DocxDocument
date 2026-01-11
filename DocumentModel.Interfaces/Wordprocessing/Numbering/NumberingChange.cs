@@ -1,24 +1,13 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Previous Paragraph Numbering Properties.
+/// Represents a change to paragraph numbering properties in a WordprocessingML document.
+/// This interface extends <see cref="IdentifiedChange"/> and provides a property for the original numbering value, enabling tracking and management of revisions to paragraph numbering.
 /// </summary>
-public interface NumberingChange
+public interface NumberingChange : IdentifiedChange
 {
   /// <summary>
-  ///   original
+  /// Original numbering value before the change, used for comparison and revision tracking.
   /// </summary>
   public string? Original { get; set; }
-  /// <summary>
-  ///   author
-  /// </summary>
-  public string? Author { get; set; }
-  /// <summary>
-  ///   date
-  /// </summary>
-  public DateTime? Date { get; set; }
-  /// <summary>
-  ///   Annotation Identifier
-  /// </summary>
-  public string? Id { get; set; }
 }

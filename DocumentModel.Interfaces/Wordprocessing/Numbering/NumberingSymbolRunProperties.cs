@@ -1,15 +1,19 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-///   Numbering Symbol Run Properties.
+/// Represents run properties for numbering symbols in a WordprocessingML document.
+/// This interface extends <see cref="BaseRunProperties"/> and provides additional properties for complex script and right-to-left text formatting, enabling advanced control over the appearance of numbering symbols in lists and outlines.
 /// </summary>
-public interface NumberingSymbolRunProperties: BaseRunProperties
+public interface NumberingSymbolRunProperties : BaseRunProperties
 {
+  
   /// <summary>
-  ///   Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run. 
+  /// Indicates whether the contents of this run are treated as complex script text regardless of their Unicode character values when determining formatting.
   /// </summary>
   public bool? ComplexScript { get; set; }
+  
   /// <summary>
-  ///   Specifies whether the contents of this run shall have right-to-left characteristics.
+  /// Indicates whether the contents of this run have right-to-left characteristics.
   /// </summary>
   public bool? RightToLeftText { get; set; }
 }
