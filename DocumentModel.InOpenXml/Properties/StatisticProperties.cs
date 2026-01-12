@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   This set of properties is evaluated on document change.
 /// </summary>
-public class StatisticProperties : DocumentProperties
+public class StatisticProperties
 {
   /// <summary>
   ///   The total number of pages of a document if applicable.
@@ -59,4 +59,5 @@ public class StatisticProperties : DocumentProperties
   ///   Total time that a document has been edited. The default time unit is minutes.
   /// </summary>
   public int? TotalTime { get; set; }
+
 }

@@ -128,9 +128,11 @@ namespace DocumentModel.InOpenXml.Test
 
         static CoreProperties CreateSampleCoreProperties()
         {
-          using (var wordprocessingDocument = WordprocessingHelper.CreateWordDocument("temp.docx"))
+          using 
+            (DocumentModel.Wordprocessing.Document document = 
+            DocumentModel.Wordprocessing.Document.CreateDocument("temp.docx"))
           {
-            var props = new CoreProperties(wordprocessingDocument)
+            var props = new CoreProperties(document)
             {
               Title = "Sample Title",
               Subject = "Sample Subject",

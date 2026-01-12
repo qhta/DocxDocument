@@ -12,10 +12,6 @@ public static class WordprocessingHelper
       var document = mainPart.Document = new WP.Document();
       var body = document.AppendChild(new WP.Body());
 
-      // Add a Paragraph and a Run with the specified Text
-      var para = body.AppendChild(new WP.Paragraph());
-      var run = para.AppendChild(new WP.Run());
-      run.AppendChild(new WP.Text("Hello World"));
     }
     return wordDocument;
   }
@@ -43,11 +39,6 @@ public static class WordprocessingHelper
       var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
       var document = mainPart.Document ?? (mainPart.Document = new WP.Document());
       var body = document.Body ?? (document.Body = document.AppendChild(new WP.Body()));
-
-      // Add a Paragraph and a Run with the specified Text
-      var para = body.AppendChild(new WP.Paragraph());
-      var run = para.AppendChild(new WP.Run());
-      run.AppendChild(new WP.Text("Hello World"));
 
       document.Save();
     }
