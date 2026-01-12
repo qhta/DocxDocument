@@ -2,7 +2,22 @@ namespace DocumentModel;
 /// <summary>
 ///   Heading Pairs.
 /// </summary>
-public class HeadingPairs : ElementCollection<HeadingPair>, ICollectionItem
+public class HeadingPairs : ValueCollection<HeadingPair>, IEquatable<HeadingPairs>
 {
-  public ElementCollection<CollectionItem>? Collection { get; set; }
+  public override bool Equals(object? obj)
+  {
+    if (obj is HeadingPairs other) return Equals(other); return false;
+  }
+
+  public override int GetHashCode()
+  {
+    return base.GetHashCode();
+  }
+
+  public bool Equals(HeadingPairs? other)
+  {
+    if (other == null)
+      return false;
+    return this.SequenceEqual(other);
+  }
 }

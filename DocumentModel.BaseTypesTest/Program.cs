@@ -43,6 +43,14 @@ class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
+    // Run HexLong tests
+    if (!HexLongSerializationTests.Run())
+      allTestsPassed = false;
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
     // Run BaseBinary tests
     if (!Base64BinarySerializationTests.Run())
       allTestsPassed = false;

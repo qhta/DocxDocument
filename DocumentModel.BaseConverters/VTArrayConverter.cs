@@ -23,103 +23,78 @@ public static class VTArrayConverter
     { ArrayBaseValues.Error, VariantType.HexInt }
   };
 
-  public static VariantType? GetBaseType(VTArray openXmlElement)
+  public static VariantType? GetBaseType(this VTArray openXmlElement)
   {
     if (openXmlElement?.BaseType?.Value != null)
       return ArrayBaseTypeConversion.GetValue2(openXmlElement.BaseType.Value);
     return null;
   }
 
-  public static void SetBaseType(VTArray openXmlElement, VariantType? value)
+  public static void SetBaseType(this VTArray openXmlElement, VariantType? value)
   {
-    if (openXmlElement != null)
+
+    if (value != null)
+      openXmlElement.BaseType = ArrayBaseTypeConversion.GetValue1((VariantType)value);
+    else
+      openXmlElement.BaseType = null;
+  }
+
+  public static int? GetLowerBounds(this VTArray openXmlElement)
+  {
+    return (openXmlElement.LowerBounds != null) ? openXmlElement.LowerBounds.Value : null;
+  }
+
+  public static void SetLowerBounds(this VTArray openXmlElement, int? value)
+  {
+    openXmlElement.LowerBounds = value;
+  }
+
+  public static int? GetUpperBounds(this VTArray openXmlElement)
+  {
+    return (openXmlElement.UpperBounds != null) ? openXmlElement.UpperBounds.Value : null;
+  }
+
+  public static void SetUpperBounds(this VTArray openXmlElement, int? value)
+  {
+    openXmlElement.UpperBounds = value;
+  }
+
+  public static ArrayVariant? GetValue(this VTArray openXmlElement)
+  {
+    var baseType = openXmlElement.GetBaseType();
+    var lowerBounds = openXmlElement.GetLowerBounds();
+    var upperBounds = openXmlElement.GetUpperBounds();
+    var itemType = baseType != null ? Variant.ItemTypes[(VariantType)baseType] : null;
+    var _value = new ArrayVariant(baseType ?? VariantType.Variant, lowerBounds ?? 0, upperBounds ?? openXmlElement.Elements().Count() + 1);
+    var i = _value.LowerBounds;
+    foreach (var item in openXmlElement.Elements())
     {
-      if (value != null)
-        openXmlElement.BaseType = ArrayBaseTypeConversion.GetValue1((VariantType)value);
-      else
-        openXmlElement.BaseType = null;
+      var itemVariant = VariantConverter.GetVariant(item);
+      var itemValue = itemType != null ? Convert.ChangeType(itemVariant, itemType) : itemVariant.Value;
+      _value[i] = itemValue;
     }
+    return _value;
   }
 
-  public static int? GetLowerBounds(VTArray openXmlElement)
-  {
-    return openXmlElement?.LowerBounds?.Value != null ? openXmlElement.LowerBounds.Value : null;
-  }
 
-  public static void SetLowerBounds(VTArray openXmlElement, int? value)
+  public static void SetValue(this VTArray openXmlElement, ArrayVariant? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.LowerBounds = value;
-      else
-        openXmlElement.LowerBounds = null;
-    }
-    ;
-  }
-
-  public static int? GetUpperBounds(VTArray openXmlElement)
-  {
-    return openXmlElement?.UpperBounds?.Value != null ? openXmlElement.UpperBounds.Value : null;
-  }
-
-  public static void SetUpperBounds(VTArray openXmlElement, int? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.UpperBounds = value;
-      else
-        openXmlElement.UpperBounds = null;
-    }
-    ;
-  }
-
-  public static VariantArray? GetValue(VTArray openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var baseType = GetBaseType(openXmlElement);
-      var lowerBounds = GetLowerBounds(openXmlElement);
-      var upperBounds = GetUpperBounds(openXmlElement);
-      var itemType = baseType != null ? Variant.ItemTypes[(VariantType)baseType] : null;
-      var _value = new VariantArray(baseType ?? VariantType.Variant, lowerBounds ?? 0, upperBounds ?? openXmlElement.Elements().Count() + 1);
-      var i = _value.LowerBounds;
-      foreach (var item in openXmlElement.Elements())
+    openXmlElement.RemoveAllChildren();
+    if (value != null)
+      foreach (var itemValue in value)
       {
-        var itemVariant = VariantConverter.GetVariant(item);
-        var itemValue = itemType != null ? Convert.ChangeType(itemVariant, itemType) : itemVariant.Value;
-        _value[i] = itemValue;
+        var itemVariant = VariantConverter.CreateOpenXmlElement(itemValue);
+        openXmlElement.AppendChild(itemVariant);
       }
-      return _value;
-    }
-    return null;
   }
 
-  public static void SetValue(VTArray openXmlElement, VariantArray? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren();
-      if (value != null)
-        foreach (var itemValue in value)
-        {
-          var itemVariant = VariantConverter.CreateOpenXmlElement(itemValue);
-          openXmlElement.AppendChild(itemVariant);
-        }
-    }
-  }
-
-  public static VTArray CreateOpenXmlElement(VariantArray? value)
+  public static VTArray CreateOpenXmlElement(this ArrayVariant value)
   {
     var openXmlElement = new VTArray();
-    if (value != null)
-    {
-      SetBaseType(openXmlElement, value.BaseType);
-      SetLowerBounds(openXmlElement, value.LowerBounds);
-      SetUpperBounds(openXmlElement, value.UpperBounds);
-      SetValue(openXmlElement, value);
-    }
+    openXmlElement.SetBaseType(value.BaseType);
+    openXmlElement.SetLowerBounds(value.LowerBounds);
+    openXmlElement.SetUpperBounds(value.UpperBounds);
+    openXmlElement.SetValue(value);
     return openXmlElement;
   }
 }

@@ -41,6 +41,26 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   private readonly int value;
 
   /// <summary>
+  /// Converts the specified hexadecimal string to its <see cref="HexInt"/> equivalent.
+  /// </summary>
+  /// <param name="input">The hexadecimal string to convert.</param>
+  /// <param name="result">The resulting HexInt value.</param>
+  /// <returns>True if the conversion was successful; otherwise, false.</returns>
+  public static bool TryParse(string input, out HexInt result)
+  {
+    result = default;
+    if (string.IsNullOrEmpty(input) || input.Length > 8)
+      return false;
+
+    if (int.TryParse(input, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var intValue))
+    {
+      result = new HexInt(intValue);
+      return true;
+    }
+    return false;
+  }
+
+  /// <summary>
   ///   Initializes a new instance of the <see cref="HexInt"/> struct from a hexadecimal string.
   /// </summary>
   /// <param name="val">

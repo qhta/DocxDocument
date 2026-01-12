@@ -75,7 +75,6 @@ where ElementType: DX.OpenXmlElement;
 /// </summary>
 public static class ElementCollectionConverter2<ItemType, ModelType>
   where ItemType: DX.OpenXmlElement, new()
-  where ModelType : IModelElement
 {
   #region collection object conversion
 
