@@ -53,7 +53,6 @@ global using DMPack = DocumentModel.Packaging;
 //global using DMPt = DocumentModel.Painting;
 //global using DMP = DocumentModel.Presentation;
 //global using DMPV = DocumentModel.Presentation.Vml;
-global using DMPr = DocumentModel.Properties;
 //global using DMP = DocumentModel;
 //global using DMS = DocumentModel.Spreadsheet;
 //global using DMSV = DocumentModel.Spreadsheet.Vml;

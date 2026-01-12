@@ -1,4 +1,3 @@
-using DocumentFormat.OpenXml.Office.Word;
 
 namespace DocumentModel.CustomUI;
 

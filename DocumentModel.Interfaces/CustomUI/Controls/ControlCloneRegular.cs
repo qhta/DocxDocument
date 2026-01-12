@@ -1,7 +1,3 @@
-using DocumentFormat.OpenXml.Spreadsheet;
-
-using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.CustomUI;
 
 /// <summary>

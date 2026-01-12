@@ -1,6 +1,4 @@
-﻿using DocumentFormat.OpenXml;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 ///   Represents a collection of alternate content choices that provide different rendering options for content.

@@ -1,5 +1,3 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.Wordprocessing;
 
   /// <summary>
