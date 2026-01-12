@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -10,8 +10,18 @@
     <Compile Remove="AlternateContentChoiceConverter.cs" />
     <Compile Remove="AlternateContentConverter.cs" />
     <Compile Remove="AlternateContentFallbackConverter.cs" />
+    <Compile Remove="ElementCollectionConverter%28E,T%29.cs" />
+    <Compile Remove="ElementCollectionConverter%28T%29.cs" />
+    <Compile Remove="HexRgbConverter .cs" />
     <Compile Remove="IdPartPairConverter.cs" />
+    <Compile Remove="ModelElementConverter.cs" />
+    <Compile Remove="ModelObjectComparer.cs" />
+    <Compile Remove="NumericValueConverter.cs" />
     <Compile Remove="OpenXmlPackageConverter.cs" />
+    <Compile Remove="OpenXmlPartConverter.cs" />
+    <Compile Remove="ReferenceConverter.cs" />
+    <Compile Remove="ReferenceRelationshipConverter.cs" />
+    <Compile Remove="Utilities\OpenXmlCompositeElementUtils.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,7 @@
-﻿namespace DocumentModel.OpenXml;
+﻿using System.Globalization;
+using System.Runtime.CompilerServices;
+
+namespace DocumentModel;
 
 /// <summary>
 /// This static class contains extension operations to be performed on a DocumentFormat.OpenXml.VariantTypes objects.
@@ -208,11 +211,330 @@ public static class VariantUtils
   }
 
   /// <summary>
+  /// Converts the value of the specified VTInteger variant to a nullable 32-bit integer.
+  /// </summary>
+  /// <remarks>If the inner text of the variant does not represent a valid 32-bit integer, the method returns
+  /// null.</remarks>
+  /// <param name="variant">The VTInteger variant whose value is to be converted.</param>
+  /// <returns>A 32-bit integer value if the conversion succeeds; otherwise, null.</returns>
+  public static long? AsLong(this DXVT.VTInteger variant)
+  {
+    if (long.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTUnsignedInt32 variant to a 32-bit unsigned integer.
+  /// </summary>
+  /// <param name="variant">The VTUnsignedInt32 variant whose value is to be converted.</param>
+  /// <returns>A 32-bit unsigned integer representation of the variant's value, or 0 if the value cannot be parsed as a valid
+  /// UInt32.</returns>
+  public static ulong? AsULong(this DXVT.VTUnsignedInteger variant)
+  {
+    if (ulong.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified <see cref="DXVT.VTBool"/> variant to a Boolean value.
+  /// </summary>
+  /// <param name="variant">The <see cref="DXVT.VTBool"/> variant whose value is to be converted.</param>
+  /// <returns>A Boolean value that represents the parsed value of the variant. Returns <see langword="false"/> if the value
+  /// cannot be parsed as a Boolean.</returns>
+  public static bool? AsBoolean(this DXVT.VTBool variant)
+  {
+    if (bool.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTByte variant to a nullable 8-bit signed integer.
+  /// </summary>
+  /// <param name="variant">The VTByte variant whose value to convert.</param>
+  /// <returns>A nullable 8-bit signed integer containing the converted value if the conversion succeeds; otherwise, null.</returns>
+  public static sbyte? AsSByte(this DXVT.VTByte variant)
+  {
+    if (sbyte.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTShort variant to a nullable 16-bit signed integer.
+  /// </summary>
+  /// <remarks>If the inner text of the variant cannot be parsed as a valid 16-bit signed integer, the method
+  /// returns null.</remarks>
+  /// <param name="variant">The VTShort variant whose value is to be converted.</param>
+  /// <returns>A 16-bit signed integer representing the value of the variant, or null if the conversion fails.</returns>
+  public static short? AsShort(this DXVT.VTShort variant)
+  {
+    if (short.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTInt32 variant to a nullable 32-bit signed integer.
+  /// </summary>
+  /// <param name="variant">The VTInt32 variant whose inner text is to be parsed as an integer.</param>
+  /// <returns>An integer value if the inner text can be successfully parsed; otherwise, null.</returns>
+  public static int? AsInt(this DXVT.VTInt32 variant)
+  {
+    if (int.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the inner text of the specified VTInt64 variant to a 64-bit signed integer.
+  /// </summary>
+  /// <param name="variant">The VTInt64 variant whose inner text is to be converted to a long value.</param>
+  /// <returns>A 64-bit signed integer if the inner text can be successfully parsed; otherwise, null.</returns>
+  public static long? AsLong(this DXVT.VTInt64 variant)
+  {
+    if (long.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTUnsignedByte variant to a nullable 8-bit unsigned integer.
+  /// </summary>
+  /// <param name="variant">The VTUnsignedByte variant whose value is to be converted.</param>
+  /// <returns>An 8-bit unsigned integer containing the converted value if the conversion succeeds; otherwise, null.</returns>
+  public static byte? AsByte(this DXVT.VTUnsignedByte variant)
+  {
+    if (byte.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTUnsignedShort variant to a nullable 16-bit unsigned integer.
+  /// </summary>
+  /// <param name="variant">The VTUnsignedShort variant whose value is to be converted.</param>
+  /// <returns>A 16-bit unsigned integer containing the converted value if the conversion succeeds; otherwise, null.</returns>
+  public static ushort? AsUShort(this DXVT.VTUnsignedShort variant)
+  {
+    if (ushort.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTUnsignedInt32 variant to a nullable 32-bit unsigned integer.    
+  /// </summary>
+  /// <param name="variant">The VTUnsignedInt32 variant whose value is to be converted.</param>
+  /// <returns>A 32-bit unsigned integer containing the converted value if the conversion succeeds; otherwise, null.</returns>
+  public static uint? AsUInt(this DXVT.VTUnsignedInt32 variant)
+  {
+    if (uint.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTUnsignedInt64 variant to a nullable 64-bit unsigned integer.
+  /// </summary>
+  /// <param name="variant">The VTUnsignedInt64 variant whose value is to be converted.</param>
+  /// <returns>A 64-bit unsigned integer containing the converted value if the conversion succeeds; otherwise, null.</returns>
+  public static ulong? AsULong(this DXVT.VTUnsignedInt64 variant)
+  {
+    if (ulong.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTFloat variant to a nullable single-precision floating-point number. 
+  /// </summary>
+  /// <param name="variant">The VTFloat variant whose value is to be converted.</param>
+  /// <returns>A single-precision floating-point number containing the converted value if the conversion succeeds; otherwise, null.</returns>
+  public static float? AsFloat(this DXVT.VTFloat variant)
+  {
+    if (float.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTDouble variant to a nullable double-precision floating-point number.
+  /// </summary>
+  /// <param name="variant">The VTDouble variant whose value is to be converted.</param>
+  /// <returns>A double-precision floating-point number containing the converted value if the conversion succeeds; otherwise, null.</returns>
+  public static double? AsDouble(this DXVT.VTDouble variant)
+  {
+    if (double.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+
+  /// <summary>
+  /// Converts the value of the specified VTDecimal variant to a nullable decimal number.
+  /// </summary>
+  /// <param name="variant">The VTDecimal variant whose value is to be converted.</param>
+  /// <returns>A decimal number containing the converted value if the conversion succeeds; otherwise, null.</returns>
+  public static decimal? AsDecimal(this DXVT.VTDecimal variant)
+  {
+    if (decimal.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTCurrency variant to a nullable decimal number.
+  /// </summary>
+  /// <param name="variant">The VTCurrency variant whose value is to be converted.</param>
+  /// <returns>A decimal number containing the converted value if the conversion succeeds; otherwise, null.</returns>
+  public static decimal? AsDecimal(this DXVT.VTCurrency variant)
+  {
+    if (decimal.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTDate variant to a nullable DateTime object.
+  /// </summary>
+  /// <remarks>This method attempts to parse the inner text of the VTDate variant using standard date and time
+  /// formats. If parsing fails, the method returns null.</remarks>
+  /// <param name="variant">The VTDate variant whose value is to be converted.</param>
+  /// <returns>A DateTime value if the variant's inner text can be parsed as a valid date and time; otherwise, null.</returns>
+  public static DateTime? AsDateTime(this DXVT.VTDate variant)
+  {
+    if (DateTime.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified <see cref="DXVT.VTFileTime"/> to a <see cref="DateTime"/> object, if possible.  
+  /// </summary>
+  /// <remarks>If the <see cref="DXVT.VTFileTime.InnerText"/> property does not contain a valid date and time
+  /// string, the method returns <see langword="null"/>.</remarks>
+  /// <param name="variant">The <see cref="DXVT.VTFileTime"/> instance containing the date and time value to convert.</param>
+  /// <returns>A <see cref="DateTime"/> object that represents the converted value, or <see langword="null"/> if the conversion
+  /// fails.</returns>
+  public static DateTime? AsDateTime(this DXVT.VTFileTime variant)
+  {
+    if (DateTime.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTClassId to a Guid.
+  /// </summary>
+  /// <remarks>This method parses the InnerText property of the VTClassId as a Guid. If the InnerText is not a
+  /// valid Guid representation, the method returns null.</remarks>
+  /// <param name="variant">The VTClassId instance whose value to convert.</param>
+  /// <returns>A Guid that represents the value of the VTClassId if the conversion succeeds; otherwise, null.</returns>
+  public static Guid? AsGuid(this DXVT.VTClassId variant)
+  {
+    if (Guid.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTError variant to a nullable HexInt.
+  /// </summary>
+  /// <param name="variant">The VTError instance whose value to convert.</param>
+  /// <returns>A HexInt that represents the value of the VTError if the conversion succeeds; otherwise, null.</returns>
+  public static HexInt? AsHexInt(this DXVT.VTError variant)
+  {
+    if (HexInt.TryParse(variant.InnerText, out var result))
+      return result;
+    return null;
+  }
+
+
+  /// <summary>
+  /// Converts the value of the specified VTBlob variant to a byte array.
+  /// </summary>
+  /// <param name="variant">The VTBlob instance whose value to convert.</param>
+  /// <returns>A byte array that represents the value of the VTBlob if the conversion succeeds; otherwise, null.</returns>
+  public static byte[]? AsByteArray(this DXVT.VTBlob variant)
+  {
+    var value = Convert.FromBase64String(variant.InnerText);
+    byte[] result = new byte[value.Length - 4];
+    Array.Copy(value, 4, result, 0, result.Length);
+    return result;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTOBlob variant to a byte array.
+  /// </summary>
+  /// <param name="variant">The VTOBlob instance whose value to convert.</param>
+  /// <returns>A byte array that represents the value of the VTOBlob if the conversion succeeds; otherwise, null.</returns>
+  public static byte[]? AsByteArray(this DXVT.VTOBlob variant)
+  {
+    var value = Convert.FromBase64String(variant.InnerText);
+    byte[] result = new byte[value.Length - 4];
+    Array.Copy(value, 4, result, 0, result.Length);
+    return result;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTStorage variant to a byte array.
+  /// </summary>
+  /// <param name="variant">The VTStorage instance whose value to convert.</param>
+  /// <returns>A byte array that represents the value of the VTStorage if the conversion succeeds; otherwise, null.</returns>
+  public static byte[]? AsByteArray(this DXVT.VTStorage variant)
+  {
+    var value = Convert.FromBase64String(variant.InnerText);
+    return value;
+  }
+
+
+  /// <summary>
+  /// Converts the value of the specified VTOStorage variant to a byte array.
+  /// </summary>
+  /// <param name="variant">The VTOStorage instance whose value to convert.</param>
+  /// <returns>A byte array that represents the value of the VTStorage if the conversion succeeds; otherwise, null.</returns>
+  public static byte[]? AsByteArray(this DXVT.VTOStorage variant)
+  {
+    var value = Convert.FromBase64String(variant.InnerText);
+    return value;
+  }
+
+
+  /// <summary>
+  /// Converts the value of the specified VTOStreamData variant to a byte array.
+  /// </summary>
+  /// <param name="variant">The VTOStreamData instance whose value to convert.</param>
+  /// <returns>A byte array that represents the value of the VTOStreamData if the conversion succeeds; otherwise, null.</returns>
+  public static byte[]? AsByteArray(this DXVT.VTOStreamData variant)
+  {
+    var value = Convert.FromBase64String(variant.InnerText);
+    return value;
+  }
+
+  /// <summary>
+  /// Converts the value of the specified VTVStreamData variant to a Guid version number and byte array.
+  /// </summary>
+  /// <param name="variant">The VTVStreamData instance whose value to convert.</param>
+  /// <returns>A pair of Guid and byte array that represents the value of the VTVStreamData if the conversion succeeds; otherwise, null.</returns>
+  public static (Guid, byte[])? AsGuidAndByteArray(this DXVT.VTVStreamData variant)
+  {
+    if (Guid.TryParse(variant.Version?.Value, out Guid guid))
+    {
+      var value = Convert.FromBase64String(variant.InnerText);
+      return (guid, value);
+    }
+    return null;
+  }
+
+  /// <summary>
   /// Converts the specified OpenXmlElement, which must be some of the VTVariant types,
   /// to an object of the proper C# type.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlElement instance to convert.</param>
+  /// <returns>An object that represents the value of the OpenXmlElement if the conversion succeeds; otherwise, null.</returns>
   public static object? AsObject(this DX.OpenXmlElement? element)
   {
     if (element is DXVT.VTInteger vtInt)
@@ -247,10 +569,10 @@ public static class VariantUtils
       return vtDecimal.AsDecimal();
     if (element is DXVT.VTCurrency vtCurrency)
       return vtCurrency.AsDecimal();
-    if (element is DXVT.VTLPSTR vtLpstr)
-      return vtLpstr.InnerText;
-    if (element is DXVT.VTLPWSTR vtLpwstr)
-      return vtLpwstr.InnerText;
+    if (element is DXVT.VTLPSTR vtLPstr)
+      return vtLPstr.InnerText;
+    if (element is DXVT.VTLPWSTR vtLPWSTR)
+      return vtLPWSTR.InnerText;
     if (element is DXVT.VTBString vtBstr)
       return vtBstr.InnerText;
     if (element is DXVT.VTDate vtDate)
@@ -266,9 +588,9 @@ public static class VariantUtils
     if (element is DXVT.VTNull)
       return null;
     if (element is DXVT.VTBlob vtBlob)
-      return vtBlob.AsLByteArray();
+      return vtBlob.AsByteArray();
     if (element is DXVT.VTOBlob vtOBlob)
-      return vtOBlob.AsLByteArray();
+      return vtOBlob.AsByteArray();
     if (element is DXVT.VTStorage vtStorage)
       return vtStorage.AsByteArray();
     if (element is DXVT.VTOStorage vtOStorage)
@@ -276,7 +598,7 @@ public static class VariantUtils
     if (element is DXVT.VTOStreamData vtOStream)
       return vtOStream.AsByteArray();
     if (element is DXVT.VTVStreamData vtVStream)
-      return vtVStream.AsByteArray();
+      return vtVStream.AsGuidAndByteArray();
     return null;
   }
 
@@ -284,8 +606,8 @@ public static class VariantUtils
   /// Converts any object value to an OpenXmlElement
   /// using the specified VectorBaseValues base type.
   /// </summary>
-  /// <param name="value"></param>
-  /// <param name="baseType"></param>
+  /// <param name="value">The object value to convert.</param>
+  /// <param name="baseType">The base type to use for the conversion.</param>
   /// <returns></returns>
   public static DX.OpenXmlElement? AsVTVariant(this object? value, DXVT.VectorBaseValues? baseType = null)
   {
@@ -330,9 +652,9 @@ public static class VariantUtils
     if (baseType == DXVT.VectorBaseValues.Bstr)
       return new DXVT.VTBString(((string)value));
     if (baseType == DXVT.VectorBaseValues.Date)
-      return new DXVT.VTDate(((DateTime)value).ToString());
+      return new DXVT.VTDate(((DateTime)value).ToString(CultureInfo.InvariantCulture));
     if (baseType == DXVT.VectorBaseValues.Filetime)
-      return new DXVT.VTFileTime(((DateTime)value).ToString());
+      return new DXVT.VTFileTime(((DateTime)value).ToString(CultureInfo.InvariantCulture));
     if (baseType == DXVT.VectorBaseValues.Bool)
       return new DXVT.VTBool(((bool)value).ToString());
     if (baseType == DXVT.VectorBaseValues.Currency)
@@ -347,7 +669,7 @@ public static class VariantUtils
   #region conversion methods needed for ExtendedFileProperties read/write
   /// <summary>
   /// Converts an array of items to the string of items separated with commas.
-  /// Items which are strings are emmited enclosed with double-quotes characters.
+  /// Items which are strings are emitted enclosed with double-quotes characters.
   /// </summary>
   /// <param name="array"></param>
   /// <returns></returns>
@@ -420,7 +742,7 @@ public static class VariantUtils
         var item1 = array.GetValue(i * 2);
         var item2 = array.GetValue(i * 2 + 1);
         if (item1 is string str && item2 is int num)
-          result.Add(new HeadingPair { Heading = str, Num = num });
+          result.Add(new HeadingPair { Name = str, Number = num });
       }
       return result;
     }
@@ -442,9 +764,9 @@ public static class VariantUtils
     };
     foreach (var item in value)
     {
-      var childItem1 = new DXVT.VTLPSTR(item.Heading ?? "");
+      var childItem1 = new DXVT.VTLPSTR(item.Name ?? "");
       result.AppendChild(childItem1);
-      var childItem2 = new DXVT.VTInt32(item.Num.ToString());
+      var childItem2 = new DXVT.VTInt32(item.Number.ToString() ?? "");
       result.AppendChild(childItem2);
     }
     return result;
@@ -484,9 +806,9 @@ public static class VariantUtils
               case 3:
                 var n4 = (int)varItem;
                 var n4l = (Int16)(n4 & 0xFFFF);
-                item.Attachment = (HyperlinkAttachment)Enum.ToObject(typeof(HyperlinkAttachment), n4l);
+                item.Attachment = (HyperlinkAttachmentKind)Enum.ToObject(typeof(HyperlinkAttachmentKind), n4l);
                 var n4h = (Int16)(n4 >> 16 & 0xFFFF);
-                item.Action = (HyperlinkAction)Enum.ToObject(typeof(HyperlinkAction), n4h);
+                item.Action = (HyperlinkActionKind)Enum.ToObject(typeof(HyperlinkActionKind), n4h);
                 break;
               case 4:
                 item.Target = (string)varItem;

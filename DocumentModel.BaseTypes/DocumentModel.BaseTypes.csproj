@@ -18,6 +18,11 @@
     <NoWarn>1701;1702;8766;0618</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="VariantTypes\**" />
+    <EmbeddedResource Remove="VariantTypes\**" />
+    <None Remove="VariantTypes\**" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Qhta.Conversion" Version="2.2.1" />
   </ItemGroup>
 

@@ -52,8 +52,12 @@ public partial class CoreProperties : ModelElement
         }
         else
         {
+          var isEmpty = CoreFileProperties == null;
           CoreFileProperties = document.WordprocessingDocument?.GetPackageProperties();
-          SetValuesToCoreFileProperties();
+          if (isEmpty)
+            GetValuesFromCoreFileProperties();
+          else
+            SetValuesToCoreFileProperties();
         }
       }
   }

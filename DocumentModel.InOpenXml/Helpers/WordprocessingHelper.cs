@@ -63,4 +63,12 @@ public static class WordprocessingHelper
     return properties;
   }
 
+  public static EP.Properties GetExtendedFileProperties(this PP.WordprocessingDocument wordDocument)
+  {
+    var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
+    var document = mainPart.Document ?? (mainPart.Document = new WP.Document());
+    PP.ExtendedFilePropertiesPart part = wordDocument.ExtendedFilePropertiesPart ?? wordDocument.AddExtendedFilePropertiesPart();
+    var properties = part.Properties ?? (part.Properties = new EP.Properties());
+    return properties;
+  }
 }

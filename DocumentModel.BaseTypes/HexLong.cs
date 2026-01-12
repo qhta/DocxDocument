@@ -1,12 +1,12 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-///   Represents a 32-bit integer value encoded as an 8-character hexadecimal string for use in Office Open XML documents.
+///   Represents a 64-bit integer value encoded as an 8-character hexadecimal string for use in Office Open XML documents.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   HexInt provides a type-safe wrapper for integer values that are represented as hexadecimal strings
-///   in Office Open XML documents. It stores a 32-bit signed integer value (-2,147,483,648 to 2,147,483,647)
+///   HexLong provides a type-safe wrapper for integer values that are represented as hexadecimal strings
+///   in Office Open XML documents. It stores a 64-bit signed integer value (-2,147,483,648 to 2,147,483,647)
 ///   that is formatted as an 8-character uppercase hexadecimal string.
 ///   </para>
 ///   <para>
@@ -15,19 +15,19 @@
 ///   <item><description>Document revision identifiers and version numbers</description></item>
 ///   <item><description>Unique element identifiers within document structures</description></item>
 ///   <item><description>Hash values and checksums for content verification</description></item>
-///   <item><description>Color values in ARGB format (when representing 32-bit color codes)</description></item>
+///   <item><description>Color values in ARGB format (when representing 64-bit color codes)</description></item>
 ///   <item><description>Binary flags and bitmasks in document properties</description></item>
 ///   </list>
 ///   </para>
 ///   <para>
-///   HexInt values are always formatted as 8-character uppercase hexadecimal strings (e.g., "0000007B" for 123,
+///   HexLong values are always formatted as 8-character uppercase hexadecimal strings (e.g., "0000007B" for 123,
 ///   "FFFFFFFF" for -1). This fixed-width format ensures consistent representation across all Office Open XML
 ///   documents and simplifies parsing and comparison operations.
 ///   </para>
 ///   <para>
 ///   The struct implements <see cref="IConvertible"/> for seamless integration with .NET type conversion
 ///   and <see cref="IEquatable{T}"/> for efficient equality comparisons. It provides implicit conversions
-///   between HexInt and common numeric types (ushort, uint, int, ulong) as well as bidirectional conversion
+///   between HexLong and common numeric types (ushort, uint, int, ulong) as well as bidirectional conversion
 ///   with <see cref="HexBinary"/> for interoperability.
 ///   </para>
 ///   <para>
@@ -35,36 +35,16 @@
 ///   formats including Word, Excel, and PowerPoint documents (Office 2007 and later).
 ///   </para>
 /// </remarks>
-[JsonConverter(typeof(HexIntJsonConverter))]
-public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
+[JsonConverter(typeof(HexLongJsonConverter))]
+public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
 {
-  private readonly int value;
+  private readonly Int64 value;
 
   /// <summary>
-  /// Converts the specified hexadecimal string to its <see cref="HexInt"/> equivalent.
-  /// </summary>
-  /// <param name="input">The hexadecimal string to convert.</param>
-  /// <param name="result">The resulting HexInt value.</param>
-  /// <returns>True if the conversion was successful; otherwise, false.</returns>
-  public static bool TryParse(string input, out HexInt result)
-  {
-    result = default;
-    if (string.IsNullOrEmpty(input) || input.Length > 8)
-      return false;
-
-    if (int.TryParse(input, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var intValue))
-    {
-      result = new HexInt(intValue);
-      return true;
-    }
-    return false;
-  }
-
-  /// <summary>
-  ///   Initializes a new instance of the <see cref="HexInt"/> struct from a hexadecimal string.
+  ///   Initializes a new instance of the <see cref="HexLong"/> struct from a hexadecimal string.
   /// </summary>
   /// <param name="val">
-  ///   A hexadecimal string containing up to 8 hex digits (0-9, A-F, a-f) representing a 32-bit integer.
+  ///   A hexadecimal string containing up to 16 hex digits (0-9, A-F, a-f) representing a 64-bit integer.
   /// </param>
   /// <remarks>
   ///   <para>
@@ -76,56 +56,56 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   ///   Thrown when the string is not a valid hexadecimal number.
   /// </exception>
   /// <exception cref="OverflowException">
-  ///   Thrown when the parsed value exceeds the range of a 32-bit signed integer.
+  ///   Thrown when the parsed value exceeds the range of a 64-bit signed integer.
   /// </exception>
-  public HexInt(string val)
+  public HexLong(string val)
   {
-    value = int.Parse(val, NumberStyles.HexNumber);
+    value = Int64.Parse(val, NumberStyles.HexNumber);
   }
 
   /// <summary>
-  ///   Initializes a new instance of the <see cref="HexInt"/> struct from a 32-bit signed integer.
+  ///   Initializes a new instance of the <see cref="HexLong"/> struct from a 64-bit signed integer.
   /// </summary>
   /// <param name="value">
-  ///   A 32-bit signed integer value (-2,147,483,648 to 2,147,483,647).
+  ///   A 64-bit signed integer value (-2,147,483,648 to 2,147,483,647).
   /// </param>
   /// <remarks>
   ///   This is the primary constructor that directly stores the integer value.
-  ///   Example: new HexInt(123) stores value 123 (0x0000007B).
+  ///   Example: new HexLong(123) stores value 123 (0x0000007B).
   /// </remarks>
-  public HexInt(int value)
+  public HexLong(int value)
   {
-    this.value = value;
+    this.value = (long)value;
   }
 
   /// <summary>
-  ///   Initializes a new instance of the <see cref="HexInt"/> struct from a 32-bit unsigned integer.
+  ///   Initializes a new instance of the <see cref="HexLong"/> struct from a 64-bit unsigned integer.
   /// </summary>
   /// <param name="value">
-  ///   A 32-bit unsigned integer value (0 to 4,294,967,295).
+  ///   A 64-bit unsigned integer value (0 to 4,294,967,295).
   /// </param>
   /// <remarks>
   ///   Values greater than 2,147,483,647 will be interpreted as negative numbers when cast to signed int.
-  ///   Example: new HexInt(0xFFFFFFFF) results in -1.
+  ///   Example: new HexLong(0xFFFFFFFF) results in -1.
   /// </remarks>
-  public HexInt(uint value)
+  public HexLong(uint value)
   {
-    this.value = (int)value;
+    this.value = (long)value;
   }
 
   /// <summary>
-  ///   Initializes a new instance of the <see cref="HexInt"/> struct from a 64-bit unsigned integer.
+  ///   Initializes a new instance of the <see cref="HexLong"/> struct from a 64-bit signed integer.
   /// </summary>
   /// <param name="value">
-  ///   A 64-bit unsigned integer value. Only the lower 32 bits are used.
+  ///   A 64-bit unsigned integer value. Only the lower 64 bits are used.
   /// </param>
   /// <remarks>
-  ///   The value is truncated to 32 bits. Values exceeding the int32 range will wrap around.
-  ///   Example: new HexInt(0x100000001UL) results in 1.
+  ///   The value is truncated to 64 bits. Values exceeding the int64 range will wrap around.
+  ///   Example: new HexLong(0x100000001UL) results in 1.
   /// </remarks>
-  public HexInt(ulong value)
+  public HexLong(long value)
   {
-    this.value = (int)value;
+    this.value = (long)value;
   }
 
   #region IConvertible Implementation
@@ -133,7 +113,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   ///   Returns the <see cref="TypeCode"/> for the underlying value type.
   /// </summary>
   /// <returns>
-  ///   <see cref="TypeCode.Int32"/>, indicating the underlying storage type.
+  ///   <see cref="TypeCode.Int64"/>, indicating the underlying storage type.
   /// </returns>
   public TypeCode GetTypeCode()
   {
@@ -141,7 +121,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a Boolean value.
+  ///   Converts the HexLong value to a Boolean value.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -153,7 +133,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a byte.
+  ///   Converts the HexLong value to a byte.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -168,7 +148,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a character.
+  ///   Converts the HexLong value to a character.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
@@ -180,7 +160,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a DateTime.
+  ///   Converts the HexLong value to a DateTime.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
@@ -195,7 +175,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a decimal.
+  ///   Converts the HexLong value to a decimal.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -207,7 +187,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a double-precision floating-point number.
+  ///   Converts the HexLong value to a double-precision floating-point number.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -219,11 +199,11 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a 16-bit signed integer.
+  ///   Converts the HexLong value to a 16-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
-  ///   A 16-bit signed integer. Values outside the range -32,768 to 32,767 will be truncated.
+  ///   A 16-bit signed integer. Values outside the range -64,768 to 64,767 will be truncated.
   /// </returns>
   public short ToInt16(IFormatProvider? provider)
   {
@@ -231,19 +211,19 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a 32-bit signed integer.
+  ///   Converts the HexLong value to a 32-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
-  ///   The underlying 32-bit signed integer value.
+  ///   The underlying 64-bit signed integer value.
   /// </returns>
   public int ToInt32(IFormatProvider? provider)
   {
-    return value;
+    return (int)value;
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a 64-bit signed integer.
+  ///   Converts the HexLong value to a 64-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -255,7 +235,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a signed byte.
+  ///   Converts the HexLong value to a signed byte.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -267,7 +247,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a single-precision floating-point number.
+  ///   Converts the HexLong value to a single-precision floating-point number.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -279,7 +259,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a string using the specified format provider.
+  ///   Converts the HexLong value to a string using the specified format provider.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
@@ -295,7 +275,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a 16-bit unsigned integer.
+  ///   Converts the HexLong value to a 16-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -307,19 +287,19 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a 32-bit unsigned integer.
+  ///   Converts the HexLong value to a 64-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
-  ///   A 32-bit unsigned integer. Negative values are reinterpreted as unsigned (e.g., -1 becomes 4,294,967,295).
+  ///   A 64-bit unsigned integer. Negative values are reinterpreted as unsigned (e.g., -1 becomes 4,294,967,295).
   /// </returns>
-  public uint ToUInt32(IFormatProvider? provider)
+  public UInt32 ToUInt32(IFormatProvider? provider)
   {
     return (uint)value;
   }
 
   /// <summary>
-  ///   Converts the HexInt value to a 64-bit unsigned integer.
+  ///   Converts the HexLong value to a 64-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -331,7 +311,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value to the specified target type.
+  ///   Converts the HexLong value to the specified target type.
   /// </summary>
   /// <param name="targetType">The type to convert to.</param>
   /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
@@ -342,11 +322,11 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   ///   <para>
   ///   This method provides explicit conversions to common numeric types and string:
   ///   <list type="bullet">
-  ///   <item><description>UInt16, Int32, UInt32, Int64, UInt64: Numeric conversions</description></item>
+  ///   <item><description>UInt16, Int64, UInt64, Int64, UInt64: Numeric conversions</description></item>
   ///   <item><description>Int16, Byte, SByte: Conversions with potential truncation</description></item>
   ///   <item><description>Single, Double, Decimal: Floating-point conversions</description></item>
   ///   <item><description>String: Hexadecimal string representation (8 characters)</description></item>
-  ///   <item><description>HexInt: Creates a new HexInt with the same value</description></item>
+  ///   <item><description>HexLong: Creates a new HexLong with the same value</description></item>
   ///   </list>
   ///   </para>
   /// </remarks>
@@ -357,9 +337,9 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   {
     if (targetType == typeof(UInt16))
       return value;
-    if (targetType == typeof(Int32))
+    if (targetType == typeof(Int64))
       return value;
-    if (targetType == typeof(UInt32))
+    if (targetType == typeof(UInt64))
       return value;
     if (targetType == typeof(Int64))
       return value;
@@ -379,8 +359,8 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
       return value;
     if (targetType == typeof(String))
       return ToString();
-    if (targetType == typeof(HexInt))
-      return new HexInt(value);
+    if (targetType == typeof(HexLong))
+      return new HexLong(value);
     return ((IConvertible)value).ToType(targetType, provider);
   }
 
@@ -388,121 +368,121 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
 
   #region Implicit Conversions
   /// <summary>
-  ///   Implicitly converts a hexadecimal string to a HexInt.
+  ///   Implicitly converts a hexadecimal string to a HexLong.
   /// </summary>
   /// <param name="val">A hexadecimal string (up to 8 hex digits).</param>
-  /// <returns>A HexInt representing the parsed integer value.</returns>
+  /// <returns>A HexLong representing the parsed integer value.</returns>
   /// <remarks>
-  ///   Example: HexInt i = "7B"; // represents 123
+  ///   Example: HexLong i = "7B"; // represents 123
   /// </remarks>
-  public static implicit operator HexInt(string val)
+  public static implicit operator HexLong(string val)
   {
-    return new HexInt(val);
+    return new HexLong(val);
   }
 
   /// <summary>
-  ///   Implicitly converts a HexInt to a 16-bit unsigned integer.
+  ///   Implicitly converts a HexLong to a 16-bit unsigned integer.
   /// </summary>
-  /// <param name="val">A HexInt value.</param>
+  /// <param name="val">A HexLong value.</param>
   /// <returns>The lower 16 bits as a ushort.</returns>
-  public static implicit operator ushort(HexInt val)
+  public static implicit operator ushort(HexLong val)
   {
     return (ushort)val.value;
   }
 
   /// <summary>
-  ///   Implicitly converts a HexInt to a 32-bit unsigned integer.
+  ///   Implicitly converts a HexLong to a 64-bit unsigned integer.
   /// </summary>
-  /// <param name="val">A HexInt value.</param>
+  /// <param name="val">A HexLong value.</param>
   /// <returns>The value reinterpreted as a uint.</returns>
-  public static implicit operator uint(HexInt val)
+  public static implicit operator uint(HexLong val)
   {
     return (uint)val.value;
   }
 
   /// <summary>
-  ///   Implicitly converts a HexInt to a 32-bit signed integer.
+  ///   Implicitly converts a HexLong to a 64-bit signed integer.
   /// </summary>
-  /// <param name="val">A HexInt value.</param>
-  /// <returns>The underlying int32 value.</returns>
-  public static implicit operator Int32(HexInt val)
+  /// <param name="val">A HexLong value.</param>
+  /// <returns>The underlying int64 value.</returns>
+  public static implicit operator Int64(HexLong val)
   {
     return val.value;
   }
 
   /// <summary>
-  ///   Implicitly converts a HexInt to a 64-bit unsigned integer.
+  ///   Implicitly converts a HexLong to a 64-bit unsigned integer.
   /// </summary>
-  /// <param name="val">A HexInt value.</param>
+  /// <param name="val">A HexLong value.</param>
   /// <returns>The value as a ulong.</returns>
-  public static implicit operator ulong(HexInt val)
+  public static implicit operator ulong(HexLong val)
   {
     return (ulong)val.value;
   }
 
   /// <summary>
-  ///   Implicitly converts a 16-bit unsigned integer to a HexInt.
+  ///   Implicitly converts a 16-bit unsigned integer to a HexLong.
   /// </summary>
   /// <param name="val">A ushort value (0 to 65,535).</param>
-  /// <returns>A HexInt representing the value.</returns>
-  public static implicit operator HexInt(ushort val)
+  /// <returns>A HexLong representing the value.</returns>
+  public static implicit operator HexLong(ushort val)
   {
-    return new HexInt((ulong)val);
+    return new HexLong((long)val);
   }
 
   /// <summary>
-  ///   Implicitly converts a 32-bit unsigned integer to a HexInt.
+  ///   Implicitly converts a 64-bit unsigned integer to a HexLong.
   /// </summary>
   /// <param name="val">A uint value (0 to 4,294,967,295).</param>
-  /// <returns>A HexInt representing the value.</returns>
-  public static implicit operator HexInt(uint val)
+  /// <returns>A HexLong representing the value.</returns>
+  public static implicit operator HexLong(uint val)
   {
-    return new HexInt((ulong)val);
+    return new HexLong((long)val);
   }
 
   /// <summary>
-  ///   Implicitly converts a 32-bit signed integer to a HexInt.
+  ///   Implicitly converts a 64-bit signed integer to a HexLong.
   /// </summary>
   /// <param name="val">An int value (-2,147,483,648 to 2,147,483,647).</param>
-  /// <returns>A HexInt representing the value.</returns>
-  public static implicit operator HexInt(Int32 val)
+  /// <returns>A HexLong representing the value.</returns>
+  public static implicit operator HexLong(Int64 val)
   {
-    return new HexInt((ulong)val);
+    return new HexLong((long)val);
   }
 
   /// <summary>
-  ///   Implicitly converts a 64-bit unsigned integer to a HexInt.
+  ///   Implicitly converts a 64-bit unsigned integer to a HexLong.
   /// </summary>
-  /// <param name="val">A ulong value. Only the lower 32 bits are used.</param>
-  /// <returns>A HexInt representing the truncated value.</returns>
-  public static implicit operator HexInt(ulong val)
+  /// <param name="val">A ulong value. Only the lower 64 bits are used.</param>
+  /// <returns>A HexLong representing the truncated value.</returns>
+  public static implicit operator HexLong(UInt64 val)
   {
-    return new HexInt(val);
+    return new HexLong((long)val);
   }
 
   /// <summary>
-  ///   Implicitly converts a HexInt to a HexBinary.
+  ///   Implicitly converts a HexLong to a HexBinary.
   /// </summary>
-  /// <param name="value">A HexInt value.</param>
+  /// <param name="value">A HexLong value.</param>
   /// <returns>A HexBinary containing the 8-character hexadecimal representation.</returns>
   /// <remarks>
-  ///   Example: HexInt(123) converts to HexBinary("0000007B").
+  ///   Example: HexLong(123) converts to HexBinary("0000007B").
   /// </remarks>
-  public static implicit operator HexBinary(HexInt value) => new HexBinary(value.ToString());
+  public static implicit operator HexBinary(HexLong value) => new HexBinary(value.ToString());
 
   /// <summary>
-  ///   Implicitly converts a HexBinary to a HexInt.
+  ///   Implicitly converts a HexBinary to a HexLong.
   /// </summary>
   /// <param name="value">A HexBinary value containing a hexadecimal string.</param>
-  /// <returns>A HexInt parsed from the hexadecimal string.</returns>
+  /// <returns>A HexLong parsed from the hexadecimal string.</returns>
   /// <remarks>
-  ///   Example: HexBinary("0000007B") converts to HexInt(123).
+  ///   Example: HexBinary("0000007B") converts to HexLong(123).
   /// </remarks>
-  public static implicit operator HexInt(HexBinary value) => new HexInt(value.ToString());
+  public static implicit operator HexLong(HexBinary value) => new HexLong(value.ToString());
 
   #endregion
   /// <summary>
-  ///   Converts this HexInt to its 8-character uppercase hexadecimal string representation.
+  ///   Converts this HexLong to its at least 8-character uppercase hexadecimal string representation.
   /// </summary>
   /// <returns>
   ///   An 8-character hexadecimal string with leading zeros (e.g., "0000007B", "FFFFFFFF").
@@ -524,25 +504,25 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Determines whether this HexInt is equal to another HexInt.
+  ///   Determines whether this HexLong is equal to another HexLong.
   /// </summary>
-  /// <param name="other">The HexInt to compare with this instance.</param>
+  /// <param name="other">The HexLong to compare with this instance.</param>
   /// <returns>
   ///   <see langword="true"/> if the integer values are equal; otherwise <see langword="false"/>.
   /// </returns>
-  public bool Equals(HexInt other)
+  public bool Equals(HexLong other)
   {
     return value == other.value;
   }
 
   /// <summary>
-  ///   Returns a hash code for this HexInt.
+  ///   Returns a hash code for this HexLong.
   /// </summary>
   /// <returns>
-  ///   A 32-bit signed integer hash code equal to the underlying integer value.
+  ///   A 64-bit signed integer hash code equal to the underlying integer value.
   /// </returns>
   public override int GetHashCode()
   {
-    return value;
+    return value.GetHashCode();
   }
 }

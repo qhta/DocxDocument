@@ -27,135 +27,108 @@ public static class VTVectorConverter
     { VectorBaseValues.Variant, VariantType.Variant }
   };
 
-  public static UInt32? GetSize(VTVector openXmlElement)
+  public static UInt32? GetSize(this VTVector openXmlElement)
   {
     if (openXmlElement.Size?.Value != null)
       return openXmlElement.Size?.Value;
     return null;
   }
 
-  public static void SetSize(VTVector openXmlElement, UInt32? value)
+  public static void SetSize(this VTVector openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.Size = value;
-      else
-        openXmlElement.Size = null;;
-    }
+    openXmlElement.Size = value;
   }
 
-  public static VariantType? GetBaseType(VTVector openXmlElement)
+  public static VariantType? GetBaseType(this VTVector openXmlElement)
   {
     if (openXmlElement.BaseType?.Value != null)
       return VectorBaseTypeConversion.GetValue2(openXmlElement.BaseType.Value);
     return null;
   }
 
-  public static void SetBaseType(VTVector openXmlElement, VariantType? value)
+  public static void SetBaseType(this VTVector openXmlElement, VariantType? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.BaseType = VectorBaseTypeConversion.GetValue1((VariantType)value);
-      else
-        openXmlElement.BaseType = null;
-    }
+    if (value != null)
+      openXmlElement.BaseType = VectorBaseTypeConversion.GetValue1((VariantType)value);
+    else
+      openXmlElement.BaseType = null;
   }
 
-  public static VariantVector? CreateModelElement(VTVector? openXmlElement)
+  public static VectorVariant? CreateModelElement(this VTVector openXmlElement)
   {
-    if (openXmlElement != null)
+    var baseType = openXmlElement.GetBaseType();
+    var itemType = baseType != null ? Variant.ItemTypes[(VariantType)baseType] : null;
+    var _value = new VectorVariant
     {
-      var baseType = GetBaseType(openXmlElement);
-      var itemType = baseType != null ? Variant.ItemTypes[(VariantType)baseType] : null;
-      var _value = new VariantVector();
-      _value.BaseType = baseType;
-      foreach (var item in openXmlElement.Elements())
+      BaseType = baseType
+    };
+    foreach (var item in openXmlElement.Elements())
+    {
+      var itemValue = VariantConverter.GetValue(item);
+      if (itemType != null)
+        itemValue = Convert.ChangeType(itemValue, itemType);
+      _value.Add(itemValue);
+    }
+    return _value;
+  }
+
+  public static void SetValue(this VTVector openXmlElement, VectorVariant? value)
+  {
+    openXmlElement.RemoveAllChildren();
+    if (value != null)
+      foreach (var itemValue in value)
       {
-        var itemValue = VariantConverter.GetValue(item);
-        if (itemType != null)
-          itemValue = Convert.ChangeType(itemValue, itemType);
-        _value.Add(itemValue);
+        var itemVariant = VariantConverter.CreateOpenXmlElement(itemValue);
+        openXmlElement.AppendChild(itemVariant);
       }
-      return _value;
-    }
-    return null;
   }
 
-  public static void SetValue(VTVector openXmlElement, VariantVector? value)
+  public static StringList? GetStringList(this VTVector openXmlElement)
   {
-    if (openXmlElement != null)
+    var baseType = openXmlElement.GetBaseType();
+    var itemType = typeof(string);
+    var _value = new StringList();
+    foreach (var item in openXmlElement.Elements())
     {
-      openXmlElement.RemoveAllChildren();
-      if (value != null)
-        foreach (var itemValue in value)
-        {
-          var itemVariant = VariantConverter.CreateOpenXmlElement(itemValue);
-          openXmlElement.AppendChild(itemVariant);
-        }
-    }
-  }
-
-  public static StringList? GetStringList(VTVector? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var baseType = GetBaseType(openXmlElement);
-      var itemType = typeof(string);
-      var _value = new StringList();
-      foreach (var item in openXmlElement.Elements())
+      var itemValue = VariantConverter.GetValue(item);
+      if (itemType != null)
       {
-        var itemValue = VariantConverter.GetValue(item);
-        if (itemType != null)
-        {
-          var str = (string?)Convert.ChangeType(itemValue, itemType);
-          if (str == null)
-            str = string.Empty;
-          _value.Add(str);
-        }
+        var str = (string?)Convert.ChangeType(itemValue, itemType);
+        if (str == null)
+          str = string.Empty;
+        _value.Add(str);
       }
-      return _value;
     }
-    return null;
+    return _value;
   }
 
-  public static void SetStringList(VTVector openXmlElement, StringList? value)
+  public static void SetStringList(this VTVector openXmlElement, StringList? value)
   {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren();
-      if (value != null)
-        foreach (var itemValue in value)
-        {
-          var itemVariant = VariantConverter.CreateOpenXmlElement(itemValue);
-          openXmlElement.AppendChild(itemVariant);
-        }
-    }
+    openXmlElement.RemoveAllChildren();
+    if (value != null)
+      foreach (var itemValue in value)
+      {
+        var itemVariant = VariantConverter.CreateOpenXmlElement(itemValue);
+        openXmlElement.AppendChild(itemVariant);
+      }
   }
 
-  public static VTVector CreateOpenXmlElement(VariantVector? value)
+  public static VTVector CreateOpenXmlElement(this VectorVariant value)
   {
     var openXmlElement = new VTVector();
-    if (value != null)
-    {
-      SetSize(openXmlElement, (uint)value.Count);
-      SetBaseType(openXmlElement, value.BaseType);
-      foreach (var item in value)
-        openXmlElement.AppendChild(VariantConverter.CreateOpenXmlElement(item));
-    }
+    openXmlElement.SetSize((uint)value.Count);
+    openXmlElement.SetBaseType(value.BaseType);
+    foreach (var item in value)
+      openXmlElement.AppendChild(VariantConverter.CreateOpenXmlElement(item));
     return openXmlElement;
   }
 
-  public static VTVector CreateOpenXmlElement(StringList? value)
+  public static VTVector CreateOpenXmlElement(this StringList value)
   {
     var openXmlElement = new VTVector();
-    if (value != null)
-    {
-      SetSize(openXmlElement, (uint)value.Count);
-      SetBaseType(openXmlElement, VariantType.Lpwstr);
-      SetStringList(openXmlElement, value);
-    }
+    openXmlElement.SetSize((uint)value.Count);
+    openXmlElement.SetBaseType(VariantType.Lpwstr);
+    openXmlElement.SetStringList(value);
     return openXmlElement;
   }
 }
