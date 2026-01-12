@@ -19,7 +19,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Qhta.Conversion" Version="2.2.1" />
-    <PackageReference Include="Qhta.TypeUtils" Version="1.5.0" />
   </ItemGroup>
 
 </Project>

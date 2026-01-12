@@ -4,7 +4,7 @@
 /// content properties, statistics properties, and custom properties. 
 /// Document settings and web settings are also contained in this collection.
 /// </summary>
-public interface AllDocumentProperties : ICollection<DocumentProperty>
+public class AllDocumentPropertiesClass : Collection<DocumentProperty>
 {
   /// <summary>
   /// Collection of core properties, which represents document properties defined in Dublin Core standard
@@ -23,7 +23,7 @@ public interface AllDocumentProperties : ICollection<DocumentProperty>
   [XmlIgnore]
   public StatisticProperties? StatisticProperties { get; set; }
   /// <summary>
-  /// Collection of document settings, which represent Word document settings.
+  /// Collection of custom-defined document properties.
   /// </summary>
   [XmlIgnore]
   public CustomProperties? CustomProperties { get; set; }

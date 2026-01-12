@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -27,16 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocumentFormat.OpenXml" Version="2.20.0" />
-    <PackageReference Include="Qhta.Collections" Version="2.0.0" />
-    <PackageReference Include="Qhta.TextUtils" Version="3.1.1" />
-    <PackageReference Include="Qhta.TypeUtils" Version="1.3.10" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\MyLib\Qhta.DeepCompare\Qhta.DeepCompare.csproj" />
-    <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXMLTools.csproj" />
-    <ProjectReference Include="..\DocumentModel\DocumentModel.csproj" />
+    <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
+    <ProjectReference Include="..\DocumentModel.Interfaces\DocumentModel.Interfaces.csproj" />
   </ItemGroup>
 
   <ItemGroup>

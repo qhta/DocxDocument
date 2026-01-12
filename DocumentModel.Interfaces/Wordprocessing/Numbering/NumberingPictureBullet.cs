@@ -1,5 +1,3 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.Wordprocessing;
 
   /// <summary>
@@ -17,10 +15,10 @@ namespace DocumentModel.Wordprocessing;
     /// <summary>
     /// Base definition for the picture bullet, specifying the image and formatting used for the bullet symbol.
     /// </summary>
-    public PictureBulletBase? PictureBulletBase { get; set; }
+    public DMWV.PictureBulletBase? PictureBulletBase { get; set; }
     
     /// <summary>
     /// Drawing element associated with the picture bullet, containing the image data and rendering information.
     /// </summary>
-    public Drawing? Drawing { get; set; }
+    public DMDO.Drawing? Drawing { get; set; }
   }

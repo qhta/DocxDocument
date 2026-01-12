@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../DocumentModel.BaseTypes/DocumentModel.BaseTypes.csproj" />
+  <Project Path="../DocumentModel.InOpenXml.Test/DocumentModel.InOpenXml.Test.csproj" Id="edc556fe-37c9-43cf-9462-8defdeac7a4b" />
+  <Project Path="../DocumentModel.Interfaces/DocumentModel.Interfaces.csproj" />
+  <Project Path="DocumentModel.InOpenXml.csproj" />
+</Solution>
