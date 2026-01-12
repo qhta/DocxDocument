@@ -41,6 +41,25 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   }
 
   /// <summary>
+  /// Attempts to parse the specified string into a new StringList instance.
+  /// </summary>
+  /// <param name="str">The string to parse into a StringList.</param>
+  /// <param name="result">When this method returns, contains the resulting StringList if parsing succeeded; otherwise, null.</param>
+  /// <returns>true if the string was successfully parsed; otherwise, false.</returns>
+  public static bool TryParse(string? str, out StringList? result)
+  {
+    try
+    {
+      result = new StringList(str);
+      return true;
+    }
+    catch
+    {
+      result = null;
+      return false;
+    }
+  }
+  /// <summary>
   /// Returns an enumerator that iterates through the collection.
   /// </summary>
   /// <returns>An enumerator that can be used to iterate through the collection.</returns>
@@ -146,7 +165,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <remarks>
   /// Items are joined with ", " (comma and space) as the separator.
   /// </remarks>
-  public static implicit operator string?(StringList? value) => value?.ToString();
+  public static implicit operator string?(StringList? value) => value?.ToString(CultureInfo.InvariantCulture);
 
   /// <summary>
   /// Determines whether the specified object is equal to the current object.

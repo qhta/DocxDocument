@@ -99,7 +99,4 @@
   <ItemGroup>
     <None Include="CustomUI\Ribbon\TabSetCollectioncs.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
-  </ItemGroup>
 </Project>
