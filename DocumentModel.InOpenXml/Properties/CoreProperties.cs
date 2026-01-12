@@ -4,13 +4,13 @@ namespace DocumentModel;
 ///   Collection of core properties, which represents document properties defined in Dublin Core standard
 /// and Open Packaging Conventions
 /// </summary>
-public class CoreProperties : DocumentProperties
+public partial class CoreProperties : ModelElement
 {
   /// <summary>
   /// Documents that owns the core properties.
   /// </summary>
 #pragma warning disable OOXML0001
-  internal PackageProperties? CoreFileProperties { get; }
+  internal PackageProperties? CoreFileProperties { get; private set; }
 #pragma warning restore OOXML0001
 
   /// <summary>
@@ -20,35 +20,73 @@ public class CoreProperties : DocumentProperties
   /// to work with core properties in a temporary context without persisting changes to disk.</remarks>
   public CoreProperties()
   {
-    KnownProperties = new KnownProperties(typeof(CoreProperties));
   }
 
   /// <summary>
   /// Initializing constructor.
   /// </summary>
-  /// <param name="wordprocessingDocument">Package properties from packaging system.</param>
-  public CoreProperties(PP.WordprocessingDocument wordprocessingDocument)
+  /// <param name="document">Wordprocessing document model</param>
+  public CoreProperties(Wordprocessing.Document document)
   {
-    CoreFileProperties = wordprocessingDocument.GetPackageProperties();
-    KnownProperties = new KnownProperties(typeof(CoreProperties));
+    CoreFileProperties = document.WordprocessingDocument?.GetPackageProperties();
+    document.PropertyChanged += Document_PropertyChanged;
   }
 
   /// <summary>
-  /// Initializing constructor.
+  /// Triggered when the underlying document's WordprocessingDocument changes.
   /// </summary>
-  /// <param name="packageProperties">Package properties from packaging system.</param>
-#pragma warning disable OOXML0001
-  public CoreProperties(PackageProperties packageProperties)
-#pragma warning restore OOXML0001
+  /// <param name="sender">Should be the Wordprocessing.Document instance</param>
+  /// <param name="e">PropertyChangedEventArgs with propertyName = "WordprocessingDocument"</param>
+  /// <remarks>
+  /// If new value is null then CoreFileProperties are set to null to avoid errors on properties access.
+  /// If new value is not null then CoreFileProperties are updated to the new document's PackageProperties.
+  /// </remarks>
+  private void Document_PropertyChanged(object? sender, PropertyChangedEventArgs e)
   {
-    CoreFileProperties = packageProperties;
-    KnownProperties = new KnownProperties(typeof(CoreProperties));
+    if (sender is Wordprocessing.Document document)
+      if (e.PropertyName == nameof(Wordprocessing.Document.WordprocessingDocument))
+      {
+        if (document.WordprocessingDocument == null)
+        {
+          CoreFileProperties = null;
+        }
+        else
+        {
+          CoreFileProperties = document.WordprocessingDocument?.GetPackageProperties();
+          SetValuesToCoreFileProperties();
+        }
+      }
+  }
+
+  /// <summary>
+  /// Gets values from CoreFileProperties to this instance.
+  /// </summary>
+  private void GetValuesFromCoreFileProperties()
+  {
+    foreach (var propertyInfo in typeof(CoreProperties).GetProperties())
+    {
+      var value = propertyInfo.GetValue(CoreFileProperties);
+      propertyInfo.SetValue(this, value);
+    }
+  }
+
+  /// <summary>
+  /// Sets values from this instance to CoreFileProperties.
+  /// </summary>
+  private void SetValuesToCoreFileProperties()
+  {
+    foreach (var propertyInfo in typeof(CoreProperties).GetProperties())
+    {
+      var value = propertyInfo.GetValue(this);
+      propertyInfo.SetValue(CoreFileProperties, value);
+    }
   }
 
   /// <summary>
   /// Known properties that can be set in CoreProperties
   /// </summary>
-  public KnownProperties KnownProperties { get; }
+  public static KnownProperties KnownProperties { get; }
+  = new KnownProperties(typeof(CoreProperties));
 
   /// <summary>
   ///   Title the document.
@@ -67,7 +105,7 @@ public class CoreProperties : DocumentProperties
 
       {
         _Title = value;
-        if (CoreFileProperties!=null)
+        if (CoreFileProperties != null)
           CoreFileProperties.Title = value;
         NotifyPropertyChanged(nameof(Title));
       }
@@ -449,4 +487,5 @@ public class CoreProperties : DocumentProperties
     }
   }
   private string? _ContentStatus;
+
 }
