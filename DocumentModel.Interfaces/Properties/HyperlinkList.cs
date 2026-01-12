@@ -1,4 +1,4 @@
-namespace DocumentModel.Properties;
+namespace DocumentModel;
 /// <summary>
 ///   IHyperlink List.
 /// </summary>

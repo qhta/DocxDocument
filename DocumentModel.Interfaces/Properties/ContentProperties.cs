@@ -56,7 +56,7 @@ public interface ContentProperties: DocumentProperties
   /// <summary>
   ///   The set of hyperlinks that were in this document when last saved.
   /// </summary>
-  public DMPr.HyperlinkList? HyperlinkList { get; set; }
+  public HyperlinkList? HyperlinkList { get; set; }
   /// <summary>
   ///   Specifies that one or more hyperlinks in this part were updated exclusively in this part by a producer. 
   ///   The next producer to open this document shall update the hyperlink relationships with the new hyperlinks specified in this part.

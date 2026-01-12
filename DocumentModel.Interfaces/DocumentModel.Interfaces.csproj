@@ -9,6 +9,7 @@
     <Description>Definition of document model based on OpenXML</Description>
     <Authors>Yarreck Qhta</Authors>
     <Version>1.0</Version>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <NoWarn>1701;1702;8766;0618</NoWarn>
@@ -83,9 +84,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DeepEqual" Version="5.1.0" />
-    <PackageReference Include="DocumentFormat.OpenXml" Version="3.3.0" />
-    <PackageReference Include="Qhta.TypeUtils" Version="1.5.0" />
-    <PackageReference Include="Qhta.Xml" Version="3.2.0" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.4.1" />
+    <PackageReference Include="DocumentFormat.OpenXml.Framework" Version="3.4.1" />
+    <PackageReference Include="Qhta.Xml" Version="3.3.0" />
     <PackageReference Include="Qhta.Xml.Serialization" Version="4.2.0" />
     <PackageReference Include="System.IO.Packaging" Version="10.0.1" />
   </ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Properties;
+﻿namespace DocumentModel;
 /// <summary>
 /// Specifies meaning od N4H field of <see cref="HyperlinkInfo"/>.
 /// </summary>

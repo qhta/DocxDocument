@@ -20,17 +20,17 @@ public static class RibbonAndBackstageCustomizationsPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DM.CustomUI? GetCustomUI(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement)
+  private static DocumentModel.CustomUI.CustomUI? GetCustomUI(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement)
   {
       return DMX.CustomUIConverter.CreateModelElement(openXmlElement?.RootElement as DXO10CUI.CustomUI);
   }
   
-  private static bool CmpCustomUI(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement, DM.CustomUI? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  private static bool CmpCustomUI(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement, DocumentModel.CustomUI.CustomUI? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return true;
   }
   
-  private static void SetCustomUI(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement, DM.CustomUI? value)
+  private static void SetCustomUI(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement, DocumentModel.CustomUI.CustomUI? value)
   {
     if (value != null)
     {

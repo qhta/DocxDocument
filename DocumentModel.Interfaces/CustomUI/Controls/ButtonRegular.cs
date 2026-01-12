@@ -1,7 +1,3 @@
-using System.ComponentModel.Design;
-
-using DocumentFormat.OpenXml.Spreadsheet;
-
 namespace DocumentModel.CustomUI;
 
 /// <summary>

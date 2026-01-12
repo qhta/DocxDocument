@@ -1,7 +1,4 @@
 namespace DocumentModel;
-using DocumentModel.Wordprocessing;
-using PP = DocumentFormat.OpenXml.Packaging;
-using WP = DocumentFormat.OpenXml.Wordprocessing;
 /// <summary>
 ///   Collection of core properties, which represents document properties defined in Dublin Core standard
 /// and Open Packaging Conventions

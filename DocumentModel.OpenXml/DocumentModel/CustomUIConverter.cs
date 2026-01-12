@@ -157,11 +157,11 @@ public static class CustomUIConverter
     }
   }
   
-  public static DocumentModel.CustomUI? CreateModelElement(DXO10CUI.CustomUI? openXmlElement)
+  public static DocumentModel.CustomUI.CustomUI? CreateModelElement(DXO10CUI.CustomUI? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.CustomUI();
+      var value = new DocumentModel.CustomUI.CustomUI();
       value.OnLoad = GetOnLoad(openXmlElement);
       value.LoadImage = GetLoadImage(openXmlElement);
       value.Commands = GetCommands(openXmlElement);
@@ -173,7 +173,7 @@ public static class CustomUIConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.CustomUI? openXmlElement, DM.CustomUI? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static bool CompareModelElement(DXO10CUI.CustomUI? openXmlElement, DocumentModel.CustomUI.CustomUI? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -197,7 +197,7 @@ public static class CustomUIConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.CustomUI value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomUI.CustomUI value)
     where OpenXmlElementType: DXO10CUI.CustomUI, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -205,7 +205,7 @@ public static class CustomUIConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO10CUI.CustomUI openXmlElement, DM.CustomUI value)
+  public static void UpdateOpenXmlElement(DXO10CUI.CustomUI openXmlElement, DocumentModel.CustomUI.CustomUI value)
   {
     SetOnLoad(openXmlElement, value?.OnLoad);
     SetLoadImage(openXmlElement, value?.LoadImage);
