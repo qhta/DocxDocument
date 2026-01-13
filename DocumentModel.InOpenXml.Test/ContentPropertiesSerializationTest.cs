@@ -138,6 +138,14 @@ namespace DocumentModel.InOpenXml.Test
                 SharedDocument = true,
                 LinksUpToDate = false,
                 HyperlinksChanged = true,
+                DocumentSecurity = DocumentSecurityKind.ReadOnly | DocumentSecurityKind.PasswordProtected,
+                DigitalSignature = [0x01, 0x02, 0x03, 0x04, 0x05],
+                HeadingPairs = new HeadingPairs
+                {
+                    new HeadingPair{ Name = "Heading 1", Number = 1 },
+                    new HeadingPair{ Name = "Heading 2", Number = 2 },
+                    new HeadingPair{ Name = "Heading 3", Number = 3 }
+                }
             };
             return props;
         }

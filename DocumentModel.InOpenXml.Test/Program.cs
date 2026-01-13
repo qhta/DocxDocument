@@ -33,6 +33,14 @@ internal class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
+    // Run StatisticPropertiesSerialization tests
+    if (!StatisticPropertiesSerializationTest.Run())
+      allTestsPassed = false;
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
     Console.WriteLine(allTestsPassed ? "All tests passed." : "Some tests failed.");
   }
 }

@@ -2,6 +2,7 @@
 /// <summary>
 /// Specifies meaning od N4L field of <see cref="HyperlinkInfo"/>.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum HyperlinkAttachmentKind
 {
   Background,        //  0 - Graphic shown as background of document

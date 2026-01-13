@@ -4,6 +4,7 @@ global using System.Collections;
 global using System.Collections.ObjectModel;
 global using System.Collections.Specialized;
 global using System.ComponentModel;
+global using System.Globalization;
 global using System.Reflection;
 global using System.Xml.Serialization;
 global using System.Text.Json.Serialization;
