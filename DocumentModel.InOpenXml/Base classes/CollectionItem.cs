@@ -23,5 +23,7 @@ public abstract class CollectionItem: ModelElement, ICollectionItem
   /// <summary>
   /// Collection that contains this item.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
   public IElementCollection<CollectionItem>? Collection { get; set; }
 }
