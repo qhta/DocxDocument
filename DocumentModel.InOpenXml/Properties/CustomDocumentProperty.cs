@@ -247,7 +247,7 @@ public class CustomDocumentProperty : DocumentProperty
       var type = _Type;
       if (type == null && _Value != null)
       {
-        type = _Value.GetType();
+        type = _Value.ValueType;
         _Type = type;
       }
       return type?.Name;
@@ -259,7 +259,7 @@ public class CustomDocumentProperty : DocumentProperty
         var type = _Type;
         if (value != null)
           type = TypeHelper.GetType(value);
-        if (type != null && _Value != null && _Value.GetType() != type)
+        if (type != null && _Value != null && _Value.ValueType != type)
         {
           // Try to convert the value to the specified type
           try
