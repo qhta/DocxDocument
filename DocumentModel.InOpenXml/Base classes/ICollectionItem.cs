@@ -7,5 +7,5 @@ public interface ICollectionItem
   /// <summary>
   /// Collection that contains this item.
   /// </summary>
-  public ElementCollection<CollectionItem>? Collection { get; set; }
+  public IElementCollection<CollectionItem>? Collection { get; set; }
 }

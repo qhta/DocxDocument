@@ -7,21 +7,80 @@ namespace DocumentModel;
 /// </summary>
 public class CustomProperties : ElementCollection<CustomDocumentProperty>
 {
-  internal PP.CustomFilePropertiesPart CustomFilePropertiesPart { get; }
+
+  internal CP.Properties? CustomFileProperties { get; private set; }
+
+
+  /// <summary>
+  /// Default constructor.
+  /// </summary>
+  public CustomProperties()
+  {
+  }
 
   /// <summary>
   /// Initializing constructor.
   /// </summary>
-  /// <param name="customFileProperties">Package properties from packaging system.</param>
-  public CustomProperties(PP.CustomFilePropertiesPart customFileProperties)
+  /// <param name="document">Wordprocessing document model</param>
+  public CustomProperties(Wordprocessing.Document document)
   {
-    CustomFilePropertiesPart = customFileProperties;
-    foreach (var element in 
-             CustomFilePropertiesPart.Properties!.ChildElements.OfType<CP.CustomDocumentProperty>())
-    {
+    CustomFileProperties = document.WordprocessingDocument?.GetCustomFileProperties();
+    document.PropertyChanged += Document_PropertyChanged;
+  }
+
+  /// <summary>
+  /// Triggered when the underlying document's WordprocessingDocument changes.
+  /// </summary>
+  /// <param name="sender">Should be the Wordprocessing.Document instance</param>
+  /// <param name="e">PropertyChangedEventArgs with propertyName = "WordprocessingDocument"</param>
+  /// <remarks>
+  /// If new value is null then CustomFileProperties are set to null to avoid errors on properties access.
+  /// If new value is not null then CustomFileProperties are updated to the new document's PackageProperties.
+  /// </remarks>
+  private void Document_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+  {
+    if (sender is Wordprocessing.Document document)
+      if (e.PropertyName == nameof(Wordprocessing.Document.WordprocessingDocument))
       {
-        Add(new CustomDocumentProperty(this, element));
+        if (document.WordprocessingDocument == null)
+        {
+          CustomFileProperties = null;
+        }
+        else
+        {
+          var isEmpty = CustomFileProperties == null;
+          CustomFileProperties = document.WordprocessingDocument?.GetCustomFileProperties();
+          if (isEmpty)
+            GetValuesFromCustomFileProperties();
+          else
+            SetValuesToCustomFileProperties();
+        }
       }
+  }
+
+  /// <summary>
+  /// Gets values from CustomFileProperties to this instance.
+  /// </summary>
+  private void GetValuesFromCustomFileProperties()
+  {
+    this.Clear();
+    foreach (var openXmlCustomDocumentProperty in CustomFileProperties!.ChildElements.Cast<CP.CustomDocumentProperty>())
+    {
+      var customDocumentProperty = new CustomDocumentProperty(this, openXmlCustomDocumentProperty);
+      this.Add(customDocumentProperty); 
     }
   }
+
+  /// <summary>
+  /// Sets values from this instance to CustomFileProperties.
+  /// </summary>
+  private void SetValuesToCustomFileProperties()
+  {
+    CustomFileProperties!.RemoveAllChildren();
+    foreach (var customDocumentProperty in this)
+    {
+      CustomFileProperties.AppendChild(customDocumentProperty.CreateOpenCustomDocumentProperty());
+    }
+  }
+
 }

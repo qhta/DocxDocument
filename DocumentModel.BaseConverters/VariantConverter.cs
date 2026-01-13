@@ -72,8 +72,8 @@ public static class VariantConverter
     if (openXmlElement is VTEmpty vtEmpty)
       return null;
 
-    if (openXmlElement is VTClassId vclassId)
-      return XmlConvert.ToGuid(vclassId.Text);
+    if (openXmlElement is VTClassId classId)
+      return XmlConvert.ToGuid(classId.Text);
 
     if (openXmlElement is VTError vError)
       return new HexInt(vError.Text);
@@ -98,25 +98,23 @@ public static class VariantConverter
 
     if (openXmlElement is VTVStreamData vVStreamData)
       return new Variant(VariantType.VStream, new VStreamData
-      {
-        Data = Convert.FromBase64String(vVStreamData.Text),
-        Version = vVStreamData.Version?.Value != null ? Guid.Parse(vVStreamData.Version.Value) : null
-      });
+      (
+        new Guid(vVStreamData.Version?.Value ?? ""),
+        Convert.FromBase64String(vVStreamData.Text))
+      );
 
     if (openXmlElement is VTClipboardData vtClipboardData)
       return new Variant(VariantType.ClipboardData, new VClipboardData
-      {
-        Data = Convert.FromBase64String(vtClipboardData.Text),
-        Format = vtClipboardData.Format?.Value,
-        Size = vtClipboardData.Size?.Value
-      });
-
+      (
+        vtClipboardData.Format?.Value ?? 0,
+        Convert.FromBase64String(vtClipboardData.Text))
+      );
     if (openXmlElement is VTVector vtVector)
-      return VTVectorConverter.CreateModelElement(vtVector)
+      return vtVector.CreateModelElement()
              ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
     if (openXmlElement is VTArray vtArray)
-      return VTArrayConverter.GetValue(vtArray)
+      return vtArray.GetValue()
              ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
     if (openXmlElement is VTVariant vtVariant)
@@ -220,26 +218,22 @@ public static class VariantConverter
       return new Variant(VariantType.OStream, Convert.FromBase64String(vOStreamData.Text));
 
     if (openXmlElement is VTVStreamData vVStreamData)
-      return new Variant(VariantType.VStream, new VStreamData
-      {
-        Data = Convert.FromBase64String(vVStreamData.Text),
-        Version = vVStreamData.Version?.Value != null ? Guid.Parse(vVStreamData.Version.Value) : null
-      });
+      return new Variant(VariantType.VStream, new VStreamData(
+        vVStreamData.Version?.Value != null ? Guid.Parse(vVStreamData.Version.Value) : Guid.Empty,
+        Convert.FromBase64String(vVStreamData.Text))
+      );
 
     if (openXmlElement is VTClipboardData vtClipboardData)
-      return new Variant(VariantType.ClipboardData, new VClipboardData
-      {
-        Data = Convert.FromBase64String(vtClipboardData.Text),
-        Format = vtClipboardData.Format?.Value,
-        Size = vtClipboardData.Size?.Value
-      });
-
+      return new Variant(VariantType.ClipboardData, new VClipboardData(
+        vtClipboardData.Format?.Value ?? 0,
+        Convert.FromBase64String(vtClipboardData.Text))
+      );
     if (openXmlElement is VTVector vtVector)
-      return VTVectorConverter.CreateModelElement(vtVector)
+      return vtVector.CreateModelElement()
              ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
     if (openXmlElement is VTArray vtArray)
-      return VTArrayConverter.GetValue(vtArray)
+      return vtArray.GetValue()
              ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
     if (openXmlElement is VTVariant vtVariant)
@@ -347,19 +341,17 @@ public static class VariantConverter
         ;
         return variantVariant;
       case VariantType.Vector:
-        if (variant is VariantVector varVector)
+        if (variant is VectorVariant varVector)
         {
-          var vtVector = VTVectorConverter.CreateOpenXmlElement(varVector);
-          if (vtVector != null)
-            return vtVector;
+          var vtVector = varVector.CreateOpenXmlElement();
+          return vtVector;
         }
         throw new InvalidOperationException($"Can't convert value of type {variant.GetType()} to VT vector");
       case VariantType.Array:
-        if (variant is VariantArray varArray)
+        if (variant is ArrayVariant varArray)
         {
-          var vtArray = VTArrayConverter.CreateOpenXmlElement(varArray);
-          if (vtArray != null)
-            return vtArray;
+          var vtArray = varArray.CreateOpenXmlElement();
+          return vtArray;
         }
         throw new InvalidOperationException($"Can't convert value of type {variant.GetType()} to VT array");
     }

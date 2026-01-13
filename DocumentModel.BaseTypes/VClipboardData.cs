@@ -38,10 +38,10 @@
 /// </code>
 /// </example>
 [JsonConverter(typeof(VClipboardDataJsonConverter))]
-public readonly partial struct VClipboardData: IEquatable<VClipboardData>
+public partial struct VClipboardData: IEquatable<VClipboardData>
 {
   private readonly int format;
-  private readonly byte[] data = Array.Empty<byte>();
+  private byte[] data = Array.Empty<byte>();
 
   /// <summary>
   /// Initializes a new instance of the VClipboardData class with the specified clipboard format and associated data. 
@@ -134,7 +134,11 @@ public readonly partial struct VClipboardData: IEquatable<VClipboardData>
   /// For empty clipboard data, this should be an empty array rather than <see langword="null"/>.
   /// </para>
   /// </remarks>
-  public byte[] Data => data;
+  public byte[] Data
+  {
+    get { return data; }
+    set { data = value ?? Array.Empty<byte>(); }
+  }
 
   /// <summary>
   /// Determines whether the current <see cref="VClipboardData"/> instance is equal to another instance.

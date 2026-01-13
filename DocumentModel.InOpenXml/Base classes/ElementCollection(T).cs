@@ -4,7 +4,7 @@
 /// Represents a collection of elements that are associated with a parent model element.
 /// </summary>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
-public class ElementCollection<ItemType> : ObservableCollection<ItemType>, 
+public class ElementCollection<ItemType> : ObservableCollection<ItemType>, IElementCollection<ItemType>,
   INotifyPropertyChanged
   where ItemType: CollectionItem
 {

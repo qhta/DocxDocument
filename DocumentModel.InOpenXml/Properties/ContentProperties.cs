@@ -7,11 +7,9 @@ namespace DocumentModel;
 public class ContentProperties : ModelElement
 {
   /// <summary>
-  /// Documents that owns the core properties.
+  /// Properties from the Open XML Extended File Properties part.
   /// </summary>
-#pragma warning disable OOXML0001
   internal EP.Properties? ExtendedFileProperties { get; private set; }
-#pragma warning restore OOXML0001
 
   /// <summary>
   /// Default constructor.
@@ -50,8 +48,12 @@ public class ContentProperties : ModelElement
         }
         else
         {
+          var isEmpty = ExtendedFileProperties == null;
           ExtendedFileProperties = document.WordprocessingDocument?.GetExtendedFileProperties();
-          SetValuesToExtendedFileProperties();
+          if (isEmpty)
+            GetValuesFromExtendedFileProperties();
+          else
+            SetValuesToExtendedFileProperties();
         }
       }
   }
@@ -81,7 +83,7 @@ public class ContentProperties : ModelElement
   }
 
   /// <summary>
-  /// Known properties that can be set in ExtendedFileProperties
+  /// Known properties that can be set in this class.
   /// </summary>
   public static KnownProperties KnownProperties { get; } = new KnownProperties(typeof(ContentProperties));
 
@@ -275,7 +277,7 @@ public class ContentProperties : ModelElement
         _TitlesOfParts = value;
         if (ExtendedFileProperties != null)
           ExtendedFileProperties.TitlesOfParts = value != null ?
-            new EP.TitlesOfParts(value.ToString(CultureInfo.InvariantCulture)!) : null;
+            new EP.TitlesOfParts(value.ToString(CultureInfo.InvariantCulture)) : null;
         NotifyPropertyChanged(nameof(TitlesOfParts));
       }
     }

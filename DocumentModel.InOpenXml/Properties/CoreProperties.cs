@@ -6,11 +6,12 @@ namespace DocumentModel;
 /// </summary>
 public partial class CoreProperties : ModelElement
 {
+
   /// <summary>
-  /// Documents that owns the core properties.
+  /// Package properties from packaging system.
   /// </summary>
 #pragma warning disable OOXML0001
-  internal PackageProperties? CoreFileProperties { get; private set; }
+  internal PackageProperties? PackageProperties { get; private set; }
 #pragma warning restore OOXML0001
 
  /// <summary>
@@ -26,7 +27,7 @@ public partial class CoreProperties : ModelElement
   /// <param name="document">Wordprocessing document model</param>
   public CoreProperties(Wordprocessing.Document document)
   {
-    CoreFileProperties = document.WordprocessingDocument?.GetPackageProperties();
+    PackageProperties = document.WordprocessingDocument?.GetPackageProperties();
     document.PropertyChanged += Document_PropertyChanged;
   }
 
@@ -46,41 +47,41 @@ public partial class CoreProperties : ModelElement
       {
         if (document.WordprocessingDocument == null)
         {
-          CoreFileProperties = null;
+          PackageProperties = null;
         }
         else
         {
-          var isEmpty = CoreFileProperties == null;
-          CoreFileProperties = document.WordprocessingDocument?.GetPackageProperties();
+          var isEmpty = PackageProperties == null;
+          PackageProperties = document.WordprocessingDocument?.GetPackageProperties();
           if (isEmpty)
-            GetValuesFromCoreFileProperties();
+            GetValuesFromPackageProperties();
           else
-            SetValuesToCoreFileProperties();
+            SetValuesToPackageProperties();
         }
       }
   }
 
   /// <summary>
-  /// Gets values from CoreFileProperties to this instance.
+  /// Gets values from PackageProperties to this instance.
   /// </summary>
-  private void GetValuesFromCoreFileProperties()
+  private void GetValuesFromPackageProperties()
   {
     foreach (var propertyInfo in typeof(CoreProperties).GetProperties())
     {
-      var value = propertyInfo.GetValue(CoreFileProperties);
+      var value = propertyInfo.GetValue(PackageProperties);
       propertyInfo.SetValue(this, value);
     }
   }
 
   /// <summary>
-  /// Sets values from this instance to CoreFileProperties.
+  /// Sets values from this instance to PackageProperties.
   /// </summary>
-  private void SetValuesToCoreFileProperties()
+  private void SetValuesToPackageProperties()
   {
     foreach (var propertyInfo in typeof(CoreProperties).GetProperties())
     {
       var value = propertyInfo.GetValue(this);
-      propertyInfo.SetValue(CoreFileProperties, value);
+      propertyInfo.SetValue(PackageProperties, value);
     }
   }
 
@@ -97,7 +98,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.Title ?? _Title;
+      var value = PackageProperties?.Title ?? _Title;
       _Title = value;
       return value;
     }
@@ -107,8 +108,8 @@ public partial class CoreProperties : ModelElement
 
       {
         _Title = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.Title = value;
+        if (PackageProperties != null)
+          PackageProperties.Title = value;
         NotifyPropertyChanged(nameof(Title));
       }
     }
@@ -122,7 +123,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.Subject ?? _Subject;
+      var value = PackageProperties?.Subject ?? _Subject;
       _Subject = value;
       return value;
     }
@@ -131,8 +132,8 @@ public partial class CoreProperties : ModelElement
       if (value != _Subject)
       {
         _Subject = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.Subject = value;
+        if (PackageProperties != null)
+          PackageProperties.Subject = value;
         NotifyPropertyChanged(nameof(Subject));
       }
     }
@@ -147,7 +148,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.Creator ?? _Creator;
+      var value = PackageProperties?.Creator ?? _Creator;
       _Creator = value;
       return value;
     }
@@ -156,8 +157,8 @@ public partial class CoreProperties : ModelElement
       if (value != _Creator)
       {
         _Creator = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.Creator = value;
+        if (PackageProperties != null)
+          PackageProperties.Creator = value;
         NotifyPropertyChanged(nameof(Creator));
       }
     }
@@ -175,7 +176,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.Keywords ?? _Keywords;
+      var value = PackageProperties?.Keywords ?? _Keywords;
       _Keywords = value;
       return value;
     }
@@ -184,8 +185,8 @@ public partial class CoreProperties : ModelElement
       if (value != _Keywords)
       {
         _Keywords = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.Keywords = value;
+        if (PackageProperties != null)
+          PackageProperties.Keywords = value;
         NotifyPropertyChanged(nameof(Keywords));
       }
     }
@@ -201,7 +202,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.Description ?? _Description;
+      var value = PackageProperties?.Description ?? _Description;
       _Description = value;
       return value;
     }
@@ -210,8 +211,8 @@ public partial class CoreProperties : ModelElement
       if (value != _Description)
       {
         _Description = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.Description = value;
+        if (PackageProperties != null)
+          PackageProperties.Description = value;
         NotifyPropertyChanged(nameof(Description));
       }
     }
@@ -226,7 +227,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.LastModifiedBy ?? _LastModifiedBy;
+      var value = PackageProperties?.LastModifiedBy ?? _LastModifiedBy;
       _LastModifiedBy = value;
       return value;
     }
@@ -235,8 +236,8 @@ public partial class CoreProperties : ModelElement
       if (value != _LastModifiedBy)
       {
         _LastModifiedBy = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.LastModifiedBy = value;
+        if (PackageProperties != null)
+          PackageProperties.LastModifiedBy = value;
         NotifyPropertyChanged(nameof(LastModifiedBy));
       }
     }
@@ -252,7 +253,7 @@ public partial class CoreProperties : ModelElement
     get
     {
       var value = _Revision;
-      if (int.TryParse(CoreFileProperties?.Revision, out var val))
+      if (int.TryParse(PackageProperties?.Revision, out var val))
         value = val;
       _Revision = value;
       return value;
@@ -262,8 +263,8 @@ public partial class CoreProperties : ModelElement
       if (value != _Revision)
       {
         _Revision = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.Revision = value.ToString();
+        if (PackageProperties != null)
+          PackageProperties.Revision = value.ToString();
         NotifyPropertyChanged(nameof(Revision));
       }
     }
@@ -277,7 +278,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.LastPrinted ?? _LastPrinted;
+      var value = PackageProperties?.LastPrinted ?? _LastPrinted;
       _LastPrinted = value;
       return value;
     }
@@ -286,8 +287,8 @@ public partial class CoreProperties : ModelElement
       if (value != _LastPrinted)
       {
         _LastPrinted = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.LastPrinted = value;
+        if (PackageProperties != null)
+          PackageProperties.LastPrinted = value;
         NotifyPropertyChanged(nameof(LastPrinted));
       }
     }
@@ -301,7 +302,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.Created ?? _Created;
+      var value = PackageProperties?.Created ?? _Created;
       _Created = value;
       return value;
     }
@@ -310,8 +311,8 @@ public partial class CoreProperties : ModelElement
       if (value != _Created)
       {
         _Created = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.Created = value;
+        if (PackageProperties != null)
+          PackageProperties.Created = value;
         NotifyPropertyChanged(nameof(Created));
       }
     }
@@ -325,7 +326,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.Modified ?? _Modified;
+      var value = PackageProperties?.Modified ?? _Modified;
       _Modified = value;
       return value;
     }
@@ -334,8 +335,8 @@ public partial class CoreProperties : ModelElement
       if (value != _Modified)
       {
         _Modified = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.Modified = value;
+        if (PackageProperties != null)
+          PackageProperties.Modified = value;
         NotifyPropertyChanged(nameof(Modified));
       }
     }
@@ -352,7 +353,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.Category ?? _Category;
+      var value = PackageProperties?.Category ?? _Category;
       _Category = value;
       return value;
     }
@@ -361,8 +362,8 @@ public partial class CoreProperties : ModelElement
       if (value != _Category)
       {
         _Category = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.Category = value;
+        if (PackageProperties != null)
+          PackageProperties.Category = value;
         NotifyPropertyChanged(nameof(Category));
       }
     }
@@ -376,7 +377,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.Identifier ?? _Identifier;
+      var value = PackageProperties?.Identifier ?? _Identifier;
       _Identifier = value;
       return value;
     }
@@ -385,8 +386,8 @@ public partial class CoreProperties : ModelElement
       if (value != _Identifier)
       {
         _Identifier = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.Identifier = value;
+        if (PackageProperties != null)
+          PackageProperties.Identifier = value;
         NotifyPropertyChanged(nameof(Identifier));
       }
     }
@@ -400,7 +401,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.ContentType ?? _ContentType;
+      var value = PackageProperties?.ContentType ?? _ContentType;
       _ContentType = value;
       return value;
     }
@@ -409,8 +410,8 @@ public partial class CoreProperties : ModelElement
       if (value != _ContentType)
       {
         _ContentType = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.ContentType = value;
+        if (PackageProperties != null)
+          PackageProperties.ContentType = value;
         NotifyPropertyChanged(nameof(ContentType));
       }
     }
@@ -425,7 +426,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.Language ?? _Language;
+      var value = PackageProperties?.Language ?? _Language;
       _Language = value;
       return value;
     }
@@ -434,8 +435,8 @@ public partial class CoreProperties : ModelElement
       if (value != _Language)
       {
         _Language = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.Language = value;
+        if (PackageProperties != null)
+          PackageProperties.Language = value;
         NotifyPropertyChanged(nameof(Language));
       }
     }
@@ -449,7 +450,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.Version ?? _Version;
+      var value = PackageProperties?.Version ?? _Version;
       _Version = value;
       return value;
     }
@@ -458,8 +459,8 @@ public partial class CoreProperties : ModelElement
       if (value != _Version)
       {
         _Version = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.Version = value;
+        if (PackageProperties != null)
+          PackageProperties.Version = value;
         NotifyPropertyChanged(nameof(Version));
       }
     }
@@ -473,7 +474,7 @@ public partial class CoreProperties : ModelElement
   {
     get
     {
-      var value = CoreFileProperties?.ContentStatus ?? _ContentStatus;
+      var value = PackageProperties?.ContentStatus ?? _ContentStatus;
       _ContentStatus = value;
       return value;
     }
@@ -482,8 +483,8 @@ public partial class CoreProperties : ModelElement
       if (value != _ContentStatus)
       {
         _ContentStatus = value;
-        if (CoreFileProperties != null)
-          CoreFileProperties.ContentStatus = value;
+        if (PackageProperties != null)
+          PackageProperties.ContentStatus = value;
         NotifyPropertyChanged(nameof(ContentStatus));
       }
     }
