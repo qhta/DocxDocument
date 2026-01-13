@@ -1,5 +1,3 @@
-using System.Globalization;
-
 namespace DocumentModel;
 
 /// <summary>
@@ -16,10 +14,8 @@ public class ContentProperties : ModelElement
 #pragma warning restore OOXML0001
 
   /// <summary>
-  /// Initializes a new instance of the CoreProperties class.
+  /// Default constructor.
   /// </summary>
-  /// <remarks>This constructor creates an in-memory WordprocessingDocument of type Document. Use this instance
-  /// to work with core properties in a temporary context without persisting changes to disk.</remarks>
   public ContentProperties()
   {
   }
@@ -61,7 +57,7 @@ public class ContentProperties : ModelElement
   }
 
   /// <summary>
-  /// Gets values from CoreFileProperties to this instance.
+  /// Gets values from ExtendedFileProperties to this instance.
   /// </summary>
   private void GetValuesFromExtendedFileProperties()
   {
@@ -73,7 +69,7 @@ public class ContentProperties : ModelElement
   }
 
   /// <summary>
-  /// Sets values from this instance to CoreFileProperties.
+  /// Sets values from this instance to ExtendedFileProperties.
   /// </summary>
   private void SetValuesToExtendedFileProperties()
   {
@@ -85,7 +81,7 @@ public class ContentProperties : ModelElement
   }
 
   /// <summary>
-  /// Known properties that can be set in CoreProperties
+  /// Known properties that can be set in ExtendedFileProperties
   /// </summary>
   public static KnownProperties KnownProperties { get; } = new KnownProperties(typeof(ContentProperties));
 
@@ -223,30 +219,39 @@ public class ContentProperties : ModelElement
   ///   Indicates the grouping of document parts and the number of parts in each group.
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
-  public HeadingPairs? HeadingPairs { get; set; }
-  //{
-  //  get
-  //  {
-  //    var str = ExtendedFileProperties?.HeadingPairs?.VTVector ?? _HeadingPairs?.ToString();
-  //    HeadingPairs? value = null;
-  //    if (HeadingPairs.TryParse(str, out HeadingPairs? val))
-  //      value = val;
-  //    _HeadingPairs = value;
-  //    return value;
-  //  }
-  //  set
-  //  {
-  //    if (value != _HeadingPairs)
-  //    {
-  //      _HeadingPairs = value;
-  //      if (ExtendedFileProperties != null)
-  //        ExtendedFileProperties.HeadingPairs = value != null ?
-  //          new EP.HeadingPairs(value.ToString()!) : null;
-  //      NotifyPropertyChanged(nameof(HeadingPairs));
-  //    }
-  //  }
-  //}
-  //private HeadingPairs? _HeadingPairs;
+  public HeadingPairs? HeadingPairs //{ get; set; }
+  {
+    get
+    {
+      HeadingPairs? value;
+      var vector = ExtendedFileProperties?.HeadingPairs?.VTVector;
+      if (vector != null) 
+        value = vector.AsHeadingPairs(); 
+      else
+        value = _HeadingPairs;
+      _HeadingPairs = value;
+      return value;
+    }
+    set
+    {
+      if (value != _HeadingPairs)
+      {
+        _HeadingPairs = value;
+        if (ExtendedFileProperties != null)
+        {
+          if (value != null)
+          {
+            var vector = value.AsVTVector();
+            ExtendedFileProperties.HeadingPairs = new EP.HeadingPairs(vector!.ToString()!);
+          }
+          else
+            ExtendedFileProperties.HeadingPairs = null;
+        }
+        NotifyPropertyChanged(nameof(HeadingPairs));
+      }
+    }
+  }
+  private HeadingPairs? _HeadingPairs;
 
   /// <summary>
   ///   The title of each document. 
@@ -269,7 +274,7 @@ public class ContentProperties : ModelElement
       {
         _TitlesOfParts = value;
         if (ExtendedFileProperties != null)
-          ExtendedFileProperties.TitlesOfParts = value != null ? 
+          ExtendedFileProperties.TitlesOfParts = value != null ?
             new EP.TitlesOfParts(value.ToString(CultureInfo.InvariantCulture)!) : null;
         NotifyPropertyChanged(nameof(TitlesOfParts));
       }
@@ -389,7 +394,6 @@ public class ContentProperties : ModelElement
       }
     }
   }
-
   private bool? _HyperlinksChanged;
 
   /// <summary>
@@ -400,24 +404,23 @@ public class ContentProperties : ModelElement
   ///   4 - Document is enforced to be opened as read-only.
   ///   8 - Document is locked for annotation
   /// </summary>
-  public int? DocumentSecurity
+  public DocumentSecurityKind? DocumentSecurity
   {
     get
     {
       var str = ExtendedFileProperties?.DocumentSecurity?.InnerText ?? _DocumentSecurity.ToString();
       int? value = null;
-      if (int.TryParse(str, out int val))
+      if (int.TryParse(str, out var val))
         value = val;
       _DocumentSecurity = value;
-      return value;
+      return (DocumentSecurityKind?)value;
     }
     set
     {
-      if (value != _DocumentSecurity)
+      int? val = (int?)value;
+      if (val != _DocumentSecurity)
       {
-        _DocumentSecurity = value;
-        if (ExtendedFileProperties != null)
-          ExtendedFileProperties.DocumentSecurity = value != null ? new EP.DocumentSecurity(value.ToString()!) : null;
+        _DocumentSecurity = val;
         NotifyPropertyChanged(nameof(DocumentSecurity));
       }
     }

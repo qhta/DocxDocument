@@ -2,6 +2,7 @@
 /// <summary>
 /// Specifies meaning od N4H field of <see cref="HyperlinkInfo"/>.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum HyperlinkActionKind
 {
   None,   //  0 - None

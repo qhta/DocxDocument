@@ -13,14 +13,12 @@ public partial class CoreProperties : ModelElement
   internal PackageProperties? CoreFileProperties { get; private set; }
 #pragma warning restore OOXML0001
 
-  /// <summary>
-  /// Initializes a new instance of the CoreProperties class.
-  /// </summary>
-  /// <remarks>This constructor creates an in-memory WordprocessingDocument of type Document. Use this instance
-  /// to work with core properties in a temporary context without persisting changes to disk.</remarks>
-  public CoreProperties()
-  {
-  }
+ /// <summary>
+ /// Default constructor.
+ /// </summary>
+ public CoreProperties()
+ {
+ }
 
   /// <summary>
   /// Initializing constructor.
