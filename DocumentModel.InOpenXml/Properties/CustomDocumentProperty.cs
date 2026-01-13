@@ -1,3 +1,6 @@
+using Qhta.Conversion;
+using Qhta.TypeUtils;
+
 namespace DocumentModel;
 /// <summary>
 ///   Abstract document Property.
@@ -10,11 +13,10 @@ public class CustomDocumentProperty : DocumentProperty
   /// </summary>
   internal CP.CustomDocumentProperty? OpenXmlCustomDocumentProperty { get; private set; }
 
-
   /// <summary>
   /// Default constructor needed for serialization.
   /// </summary>
-  public CustomDocumentProperty(): base()
+  public CustomDocumentProperty() : base()
   {
   }
 
@@ -29,6 +31,13 @@ public class CustomDocumentProperty : DocumentProperty
     OpenXmlCustomDocumentProperty = openXmlCustomDocumentProperty;
   }
 
+  /// <summary>
+  /// Creates and initializes an open custom document property based on the current state of the object.
+  /// </summary>
+  /// <remarks>If the custom document property has already been created, this method returns the existing
+  /// instance. Otherwise, it creates a new property and initializes it with the current values.</remarks>
+  /// <returns>A <see cref="CP.CustomDocumentProperty"/> instance representing the open custom document property with values set
+  /// from the current object.</returns>
   public CP.CustomDocumentProperty CreateOpenCustomDocumentProperty()
   {
     OpenXmlCustomDocumentProperty ??= new CP.CustomDocumentProperty();
@@ -64,12 +73,12 @@ public class CustomDocumentProperty : DocumentProperty
   ///   Property identifier. Should be unique within the document properties.
   ///   In OpenXml property identifiers start from 2.
   /// </summary>
-  [XmlAttribute]
   public int? PropertyId
   {
     get
     {
       var value = OpenXmlCustomDocumentProperty?.PropertyId?.Value ?? _PropertyId;
+      _PropertyId = value;
       return value;
     }
     set
@@ -95,6 +104,7 @@ public class CustomDocumentProperty : DocumentProperty
     get
     {
       var value = OpenXmlCustomDocumentProperty?.Name?.Value ?? _Name;
+      _Name = value;
       return value;
     }
     set
@@ -130,7 +140,7 @@ public class CustomDocumentProperty : DocumentProperty
   /// <see href="https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.customproperties.customdocumentproperty.formatid"/>
   /// </para>
   /// </remarks>
-  [XmlAttribute]
+  //[XmlAttribute]
   public Guid? FormatId
   {
     get
@@ -138,7 +148,10 @@ public class CustomDocumentProperty : DocumentProperty
       Guid? value = _FormatId;
       if (OpenXmlCustomDocumentProperty?.FormatId?.Value != null)
         if (Guid.TryParse(OpenXmlCustomDocumentProperty.FormatId.Value, out var guidValue))
+        {
           value = guidValue;
+          _FormatId = value;
+        }
       return value;
     }
     set
@@ -176,6 +189,7 @@ public class CustomDocumentProperty : DocumentProperty
     get
     {
       var value = OpenXmlCustomDocumentProperty?.LinkTarget?.Value ?? _LinkTarget;
+      _LinkTarget = value;
       return value;
     }
     set
@@ -191,4 +205,81 @@ public class CustomDocumentProperty : DocumentProperty
   }
   private string? _LinkTarget;
 
+  /// <summary>
+  /// Value of the custom document property.
+  /// </summary>
+  public override Variant? Value
+  {
+    get
+    {
+      var value = _Value;
+      var openXmlElement = OpenXmlCustomDocumentProperty?.FirstChild;
+      if (openXmlElement != null)
+      {
+        _Value = value;
+      }
+      return value;
+    }
+    set
+    {
+      if (value != _Value)
+      {
+        _Value = value;
+        if (OpenXmlCustomDocumentProperty != null)
+        {
+          OpenXmlCustomDocumentProperty.RemoveAllChildren();
+          if (value != null)
+            OpenXmlCustomDocumentProperty.AppendChild(value.AsVTVariant());
+        }
+        NotifyPropertyChanged(nameof(Value));
+      }
+    }
+  }
+  private Variant? _Value;
+
+  /// <summary>
+  /// Type of the custom document property.
+  /// </summary>
+  public override string? Type
+  {
+    get
+    {
+      var type = _Type;
+      if (type == null && _Value != null)
+      {
+        type = _Value.GetType();
+        _Type = type;
+      }
+      return type?.Name;
+    }
+    set
+    {
+      if (value != _Type?.Name)
+      {
+        var type = _Type;
+        if (value != null)
+          type = TypeHelper.GetType(value);
+        if (type != null && _Value != null && _Value.GetType() != type)
+        {
+          // Try to convert the value to the specified type
+          try
+          {
+            var convertedValue = _Value.ConvertTo(type);
+            _Value = convertedValue;
+            if (OpenXmlCustomDocumentProperty != null)
+            {
+              OpenXmlCustomDocumentProperty.RemoveAllChildren();
+              OpenXmlCustomDocumentProperty.AppendChild(convertedValue.AsVTVariant());
+            }
+          }
+          catch (Exception)
+          {
+            //Console.WriteLine($"Error converting value of type {_Value?.GetType().Name} to type: " + type?.Name);
+          }
+        }
+        NotifyPropertyChanged(nameof(Value));
+      }
+    }
+  }
+  private Type? _Type;
 }
