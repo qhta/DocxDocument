@@ -2,7 +2,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Abstract document Property.
 /// </summary>
-public abstract class DocumentProperty: CollectionItem, ICollectionItem
+public abstract class DocumentProperty: CollectionItem
 {
   /// <summary>
   /// Default constructor needed for serialization.
@@ -18,17 +18,19 @@ public abstract class DocumentProperty: CollectionItem, ICollectionItem
   /// <summary>
   ///   Property Category.
   /// </summary>
+  [XmlAttribute]
   public virtual string? Category { get; set; }
   /// <summary>
   ///   Property Name.
   /// </summary>
+  [XmlAttribute]
   public virtual string? Name { get; set; }
   /// <summary>
   ///   Value of the property
   /// </summary>
-  public virtual object? Value { get; set; }
+  public virtual Variant? Value { get; set; }
   /// <summary>
   ///   Expected value type
   /// </summary>
-  public virtual Type? Type { get; set; }
+  public virtual string? Type { get; set; }
 }

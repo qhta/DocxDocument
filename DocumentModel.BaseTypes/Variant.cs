@@ -981,6 +981,50 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ChangeType(value, targetType);
   }
 
+  public Variant? ConvertTo(Type destinationType)
+  {
+    if (destinationType == typeof(bool))
+      return new Variant(VariantType.Boolean, ToBoolean());
+    if (destinationType == typeof(string))
+      return new Variant(VariantType.Lpwstr, ToString());
+    if (destinationType == typeof(int))
+      return new Variant(VariantType.Int32, ToInt32());
+    if (destinationType == typeof(double))
+      return new Variant(VariantType.Double, ToDouble());
+    if (destinationType == typeof(DateTime))
+      return new Variant(VariantType.DateTime, ToDateTime());
+    if (destinationType == typeof(Guid))
+      return new Variant(VariantType.Guid, ToGuid());
+    if (destinationType == typeof(byte))
+      return new Variant(VariantType.Byte, ToByte());
+    if (destinationType == typeof(sbyte))
+      return new Variant(VariantType.SByte, ToSByte());
+    if (destinationType == typeof(byte))
+      return new Variant(VariantType.Byte, ToByte());
+    if (destinationType == typeof(short))
+      return new Variant(VariantType.Int16, ToInt16());
+    if (destinationType == typeof(ushort))
+      return new Variant(VariantType.UInt16, ToUInt16());
+    if (destinationType == typeof(uint))
+      return new Variant(VariantType.UInt32, ToUInt32());
+    if (destinationType == typeof(long))
+      return new Variant(VariantType.Int64, ToInt64());
+    if (destinationType == typeof(ulong))
+      return new Variant(VariantType.UInt64, ToUInt64());
+    if (destinationType == typeof(decimal))
+      return new Variant(VariantType.Decimal, ToDecimal());
+    if (destinationType == typeof(float))
+      return new Variant(VariantType.Single, ToSingle());
+    if (destinationType == typeof(DateOnly))
+      return new Variant(VariantType.Date, ToDateOnly());
+    if (destinationType == typeof(Char))
+      return new Variant(VariantType.Char, ToChar());
+    if (destinationType == typeof(byte[]))
+      return new Variant(VariantType.Blob, ToBytes());
+
+    throw new InvalidOperationException($"Can't convert variant value to {destinationType}");
+  }
+
   public static object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
     if (destinationType == typeof(string))

@@ -33,8 +33,9 @@ internal class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
-    // Run StatisticPropertiesSerialization tests
-    if (!StatisticPropertiesSerializationTest.Run())
+
+    // Run CustomPropertiesSerialization tests
+    if (!CustomPropertiesSerializationTest.Run())
       allTestsPassed = false;
 
     Console.WriteLine();
