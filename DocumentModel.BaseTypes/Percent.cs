@@ -32,6 +32,27 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
     this.value = value;
   }
 
+  /// <summary>
+  /// Creates a <see cref="Percent"/> instance from a hexadecimal string representation.
+  /// </summary>
+  /// <param name="hexString"></param>
+  /// <returns></returns>
+  public static Percent FromHexString(string hexString)
+  {
+    if (hexString.EndsWith("%"))
+      hexString = hexString.TrimEnd('%');
+    double val = double.Parse(hexString.Replace(",", "."), CultureInfo.InvariantCulture);
+    return new Percent(val);
+  }
+
+  /// <summary>
+  /// Converts the value of this instance to its hexadecimal string representation.
+  /// </summary>
+  /// <returns>A string that represents the value in uppercase hexadecimal format.</returns>
+  public string ToHexString()
+  {
+    return value.ToString("2X");
+  }
 
   #region IConvertible Implementation
 
@@ -226,7 +247,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
     if (targetType == typeof(Decimal))
       return (decimal)value;
     if (targetType == typeof(String))
-      return ToString(CultureInfo.InvariantCulture,null);
+      return ToString(CultureInfo.InvariantCulture, null);
     if (targetType == typeof(Percent))
       return new Percent(value);
     return ((IConvertible)value).ToType(targetType, provider);

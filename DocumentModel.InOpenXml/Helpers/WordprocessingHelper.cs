@@ -71,4 +71,14 @@ public static class WordprocessingHelper
     var properties = part.Properties ?? (part.Properties = new EP.Properties());
     return properties;
   }
+
+  public static CP.Properties GetCustomFileProperties(this PP.WordprocessingDocument wordDocument)
+  {
+    var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
+    var document = mainPart.Document ?? (mainPart.Document = new WP.Document());
+    PP.CustomFilePropertiesPart part = wordDocument.CustomFilePropertiesPart ?? wordDocument.AddCustomFilePropertiesPart();
+    var properties = part.Properties ?? (part.Properties = new CP.Properties());
+    return properties;
+  }
+
 }

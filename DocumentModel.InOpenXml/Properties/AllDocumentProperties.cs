@@ -5,7 +5,7 @@ using DocumentModel.Wordprocessing;
 /// content properties, statistics properties, and custom properties. 
 /// Document settings and web settings are also contained in this collection.
 /// </summary>
-public partial class AllDocumentProperties : IDocumentProperties
+public partial class AllDocumentProperties : ElementCollection<DocumentProperty>, IDocumentProperties
 {
   /// <summary>
   /// Collection of core properties, which represents document properties defined in Dublin Core standard
