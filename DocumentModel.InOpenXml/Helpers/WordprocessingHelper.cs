@@ -2,15 +2,15 @@
 
 public static class WordprocessingHelper
 {
-  public static PP.WordprocessingDocument CreateWordDocument(string filename)
+  public static DXPP.WordprocessingDocument CreateWordDocument(string filename)
   {
     // Create a document by supplying the filename. 
-    var wordDocument = PP.WordprocessingDocument.Create(filename, OpenXml.WordprocessingDocumentType.Document);
+    var wordDocument = DXPP.WordprocessingDocument.Create(filename, OpenXml.WordprocessingDocumentType.Document);
     {
       // Add the MainDocumentPart, root Document and the Body.
       var mainPart = wordDocument.AddMainDocumentPart();
-      var document = mainPart.Document = new WP.Document();
-      var body = document.AppendChild(new WP.Body());
+      var document = mainPart.Document = new DXWP.Document();
+      var body = document.AppendChild(new DXWP.Body());
 
     }
     return wordDocument;
@@ -30,55 +30,63 @@ public static class WordprocessingHelper
     File.Copy(templateFilename, documentFilename);
 
     // Now open the copied file
-    using (var wordDocument = PP.WordprocessingDocument.Open(documentFilename, true))
+    using (var wordDocument = DXPP.WordprocessingDocument.Open(documentFilename, true))
     {
       // We need to change the file type from template to document.
       wordDocument.ChangeDocumentType(OpenXml.WordprocessingDocumentType.Document);
 
       // MainDocumentPart, root Document and Body already exist just access them
       var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
-      var document = mainPart.Document ?? (mainPart.Document = new WP.Document());
-      var body = document.Body ?? (document.Body = document.AppendChild(new WP.Body()));
+      var document = mainPart.Document ?? (mainPart.Document = new DXWP.Document());
+      var body = document.Body ?? (document.Body = document.AppendChild(new DXWP.Body()));
 
       document.Save();
     }
   }
 
-  public static void EnsureDocumentIsInitialized(this PP.WordprocessingDocument wordDocument)
+  public static void EnsureDocumentIsInitialized(this DXPP.WordprocessingDocument wordDocument)
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
-    var document = mainPart.Document ?? (mainPart.Document = new WP.Document());
+    var document = mainPart.Document ?? (mainPart.Document = new DXWP.Document());
     var properties = mainPart.OpenXmlPackage.PackageProperties;
     var contentProperties = wordDocument.ExtendedFilePropertiesPart ?? wordDocument.AddExtendedFilePropertiesPart();
-    var body = document.Body ?? (document.Body = document.AppendChild(new WP.Body()));
+    var body = document.Body ?? (document.Body = document.AppendChild(new DXWP.Body()));
   }
 
 #pragma warning disable OOXML0001
-  public static PP.IPackageProperties GetPackageProperties(this PP.WordprocessingDocument wordDocument)
+  public static DXPP.IPackageProperties GetPackageProperties(this DXPP.WordprocessingDocument wordDocument)
 #pragma warning restore OOXML0001
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
-    var document = mainPart.Document ?? (mainPart.Document = new WP.Document());
+    var document = mainPart.Document ?? (mainPart.Document = new DXWP.Document());
     var properties = mainPart.OpenXmlPackage.PackageProperties;
     return properties;
   }
 
-  public static EP.Properties GetExtendedFileProperties(this PP.WordprocessingDocument wordDocument)
+  public static DXEP.Properties GetExtendedFileProperties(this DXPP.WordprocessingDocument wordDocument)
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
-    var document = mainPart.Document ?? (mainPart.Document = new WP.Document());
-    PP.ExtendedFilePropertiesPart part = wordDocument.ExtendedFilePropertiesPart ?? wordDocument.AddExtendedFilePropertiesPart();
-    var properties = part.Properties ?? (part.Properties = new EP.Properties());
+    var document = mainPart.Document ?? (mainPart.Document = new DXWP.Document());
+    DXPP.ExtendedFilePropertiesPart part = wordDocument.ExtendedFilePropertiesPart ?? wordDocument.AddExtendedFilePropertiesPart();
+    var properties = part.Properties ?? (part.Properties = new DXEP.Properties());
     return properties;
   }
 
-  public static CP.Properties GetCustomFileProperties(this PP.WordprocessingDocument wordDocument)
+  public static DXCP.Properties GetCustomFileProperties(this DXPP.WordprocessingDocument wordDocument)
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
-    var document = mainPart.Document ?? (mainPart.Document = new WP.Document());
-    PP.CustomFilePropertiesPart part = wordDocument.CustomFilePropertiesPart ?? wordDocument.AddCustomFilePropertiesPart();
-    var properties = part.Properties ?? (part.Properties = new CP.Properties());
+    var document = mainPart.Document ?? (mainPart.Document = new DXWP.Document());
+    DXPP.CustomFilePropertiesPart part = wordDocument.CustomFilePropertiesPart ?? wordDocument.AddCustomFilePropertiesPart();
+    var properties = part.Properties ?? (part.Properties = new DXCP.Properties());
     return properties;
   }
 
+  public static DXWP.Settings GetDocumentSettings(this DXPP.WordprocessingDocument wordDocument)
+  {
+    var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
+    var document = mainPart.Document ?? (mainPart.Document = new DXWP.Document());
+    DXPP.DocumentSettingsPart part = mainPart.DocumentSettingsPart ?? mainPart.AddNewPart<DXPP.DocumentSettingsPart>();
+    var settings = part.Settings ?? (part.Settings = new DXWP.Settings());
+    return settings;
+  }
 }
