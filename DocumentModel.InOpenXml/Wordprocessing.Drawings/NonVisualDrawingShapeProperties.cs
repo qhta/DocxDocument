@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents non-visual properties for a drawing shape in a Wordprocessing document.
 /// This interface provides configuration for text box behavior, shape locking, and extension data, enabling control over shape interaction and extensibility.
 /// </summary>
-public interface NonVisualDrawingShapeProperties : ExtendableElement
+public interface NonVisualDrawingShapeProperties : IExtendableElement
 {
   /// <summary>
   /// Indicates whether the shape functions as a text box, allowing text to be contained within the shape.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents a picture numbering symbol definition in a WordprocessingML document.
   /// This interface extends <see cref="CollectionItem"/> and provides properties for the picture bullet ID, base picture bullet definition, and associated drawing, enabling advanced customization of list bullets using images.
   /// </summary>
-  public interface NumberingPictureBullet : CollectionItem
+  public class NumberingPictureBullet : CollectionItem
   {
     
     /// <summary>

@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
   /// This class is implemented by types such as <see cref="BookmarkStart"/>, <see cref="BookmarkEnd"/>, <see cref="CommentRangeStart"/>, <see cref="CommentRangeEnd"/>, <see cref="MoveFromRangeStart"/>, <see cref="MoveFromRangeEnd"/>, <see cref="MoveToRangeStart"/>, and <see cref="MoveToRangeEnd"/>.
   /// Provides properties for linking annotations and managing the placement of custom XML elements within the document.
   /// </summary>
-  public class MarkupRangeElement : MarkupElement
+  public interface MarkupRangeElement : MarkupElement
   {
     
     /// <summary>

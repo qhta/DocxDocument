@@ -1,4 +1,5 @@
-﻿namespace DocumentModel.OpenXml;
+﻿
+namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides conversion methods for HexInt values (hexadecimal integers) in Open XML.
