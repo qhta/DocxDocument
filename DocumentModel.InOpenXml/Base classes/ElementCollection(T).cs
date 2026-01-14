@@ -5,7 +5,7 @@
 /// </summary>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
 public abstract class ElementCollection<ItemType> : ObservableCollection<ItemType>, 
-  IElementCollection<ItemType>//, IEquatable<ElementCollection<ItemType>>
+  IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>
   where ItemType: ICollectionItem
 {
   /// <summary>
@@ -45,33 +45,33 @@ public abstract class ElementCollection<ItemType> : ObservableCollection<ItemTyp
     OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
   }
 
-//  /// <summary>
-//  /// Compares this collection to another collection for equality.
-//  /// </summary>
-//  /// <param name="other">The other collection to compare to.</param>
-//  /// <returns>true if the collections are equal; otherwise, false.</returns>
-//  public bool Equals(ElementCollection<ItemType>? other)
-//  {
-//    if (this.Count != other?.Count) return false;
-//    for (int i = 0; i < this.Count; i++)
-//    {
-//      if (!this[i].Equals(other[i])) return false;
-//    }
-//    return true;
-//  }
+  /// <summary>
+  /// Compares this collection to another collection for equality.
+  /// </summary>
+  /// <param name="other">The other collection to compare to.</param>
+  /// <returns>true if the collections are equal; otherwise, false.</returns>
+  public bool Equals(ElementCollection<ItemType>? other)
+  {
+    if (this.Count != other?.Count) return false;
+    for (int i = 0; i < this.Count; i++)
+    {
+      if (!this[i].Equals(other[i])) return false;
+    }
+    return true;
+  }
 
-//  /// <summary>
-//  /// Compares this collection to another object for equality.
-//  /// </summary>
-//  /// <param name="obj">The object to compare to.</param>
-//  /// <returns>true if the objects are equal; otherwise, false.</returns>
-//#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
-//  public override bool Equals(object? obj)
-//  {
-//    if (obj is null) return false;
-//    if (ReferenceEquals(this, obj)) return true;
-//    if (obj.GetType() != GetType()) return false;
-//    return Equals((ElementCollection<ItemType>)obj);
-//  }
+  /// <summary>
+  /// Compares this collection to another object for equality.
+  /// </summary>
+  /// <param name="obj">The object to compare to.</param>
+  /// <returns>true if the objects are equal; otherwise, false.</returns>
+#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
+  public override bool Equals(object? obj)
+  {
+    if (obj is null) return false;
+    if (ReferenceEquals(this, obj)) return true;
+    if (obj.GetType() != GetType()) return false;
+    return Equals((ElementCollection<ItemType>)obj);
+  }
 
 }
