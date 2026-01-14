@@ -79,6 +79,7 @@ public class StatisticProperties: ModelElement
     }
   }
 
+
   /// <summary>
   /// Known properties that can be set in StatisticProperties
   /// </summary>
@@ -357,6 +358,7 @@ public class StatisticProperties: ModelElement
   /// <summary>
   ///   Total time that a document has been edited. The default time unit is minutes.
   /// </summary>
+  [Unit("min")]
   public int? TotalTime
   {
     get
