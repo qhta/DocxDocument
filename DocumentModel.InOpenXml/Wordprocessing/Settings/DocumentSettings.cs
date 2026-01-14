@@ -1,5 +1,4 @@
-using DocumentModel.Wordprocessing;
-//using DocumentModel.Wordprocessing.Settings;
+using DocumentModel.CustomXml;
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -133,13 +132,14 @@ public partial class DocumentSettings: ModelElement
   /// </remarks>
   [Category("Captions")]
   public Captions? Captions { get; set; }
-  
+
   /// <summary>
   /// Specifies how full-width characters should be compressed to remove additional whitespace.
   /// </summary>
   /// <remarks>
   /// Represents the following element tag in the schema: w:characterSpacingControl
   /// </remarks>
+  [Category("Wordprocessing")]
   public CharacterSpacingKind? CharacterSpacingControl { get; set; }
   
   /// <summary>
@@ -157,6 +157,7 @@ public partial class DocumentSettings: ModelElement
   /// <remarks>
   /// Represents the following element tag in the schema: w:clickAndTypeStyle
   /// </remarks>
+  [Category("Styling")]
   public string? ClickAndTypeStyle { get; set; }
 
   /// <summary>
@@ -165,6 +166,7 @@ public partial class DocumentSettings: ModelElement
   /// <remarks>
   /// Represents the following element tag in the schema: w:clrSchemeMapping
   /// </remarks>
+  [Category("Conformance")]
   public DMWD.ColorSchemeMapping? ColorSchemeMapping { get; set; }
 
   /// <summary>
@@ -173,14 +175,16 @@ public partial class DocumentSettings: ModelElement
   /// <remarks>
   /// Represents the following element tag in the schema: w:compat
   /// </remarks>
+  [Category("Conformance")]
   public Compatibility? Compatibility { get; set; }
-  
+
   /// <summary>
   /// Specifies that the user was resolving conflicting edits when the document was saved.
   /// </summary>
   /// <remarks>
   /// Represents the following element tag in the schema: w14:conflictMode
   /// </remarks>
+  [Category("Conformance")]
   public bool? ConflictMode { get; set; }
   
   /// <summary>
@@ -191,13 +195,14 @@ public partial class DocumentSettings: ModelElement
   /// </remarks>
   [Category("Hyphenation")]
   public ushort? ConsecutiveHyphenLimit { get; set; }
-  
+
   /// <summary>
   /// Specifies the character to be interpreted as the radix point in fields.
   /// </summary>
   /// <remarks>
   /// Represents the following element tag in the schema: w:decimalSymbol
   /// </remarks>
+  [Category("Conformance")]
   public string? DecimalSymbol { get; set; }
   
   /// <summary>
@@ -217,13 +222,14 @@ public partial class DocumentSettings: ModelElement
   /// </remarks>
   [Category("Styling")]
   public string? DefaultTableStyle { get; set; }
-  
+
   /// <summary>
   /// Specifies the multiplier for automatic tab stops in the document.
   /// </summary>
   /// <remarks>
   /// Represents the following element tag in the schema: w:defaultTabStop
   /// </remarks>
+  [Category("Conformance")]
   public short? DefaultTabStop { get; set; }
   
   /// <summary>
@@ -279,19 +285,15 @@ public partial class DocumentSettings: ModelElement
   /// </remarks>
   [Category("Protection")]
   public DocumentProtection? DocumentProtection { get; set; }
-  
+
   /// <summary>
   /// Specifies the classification of the document for customized UI and formatting behaviors.
   /// </summary>
   /// <remarks>
   /// Represents the following element tag in the schema: w:documentType
   /// </remarks>
+  [Category("Conformance")]
   public DocumentKind? DocumentType { get; set; }
-  
-  ///// <summary>
-  ///// Specifies the presence of document variables in the document.
-  ///// </summary>
-  //public Variables? DocumentVariables { get; set; }
   
   /// <summary>
   /// Specifies that pictures shall not automatically be compressed when saving the document.
@@ -328,21 +330,23 @@ public partial class DocumentSettings: ModelElement
   /// </remarks>
   [Category("Hyphenation")]
   public bool? DoNotHyphenateCaps { get; set; }
-  
+
   /// <summary>
   /// Specifies if content in text boxes, footnotes, and endnotes is excluded from document statistics.
   /// </summary>
   /// <remarks>
   /// Represents the following element tag in the schema: w:doNotIncludeSubdocsInStats
   /// </remarks>
+  [Category("Conformance")]
   public bool? DoNotIncludeSubdocsInStats { get; set; }
-  
+
   /// <summary>
   /// Specifies whether a visual cue should be displayed around form fields.
   /// </summary>
   /// <remarks>
   /// Represents the following element tag in the schema: w:doNotShadeFormData
   /// </remarks>
+  [Category("Conformance")]
   public bool? DoNotShadeFormData { get; set; }
   
   /// <summary>
@@ -434,33 +438,35 @@ public partial class DocumentSettings: ModelElement
   /// </remarks>
   [Category("Fonts")]
   public bool? EmbedTrueTypeFonts { get; set; }
-  
+
   ///// <summary>
   ///// Specifies the endnote properties for the document.
   ///// </summary>
   //[Category("Footnotes and endnotes")]
   //public EndnoteDocumentWideProperties? EndnoteDocumentWideProperties { get; set; }
-  
+
   /// <summary>
   /// Specifies whether sections have different headers and footers for even and odd pages.
   /// </summary>
   /// <remarks>
   /// Represents the following element tag in the schema: w:evenAndOddHeaders
   /// </remarks>
+  [Category("Pagination")]
   public bool? EvenAndOddHeaders { get; set; }
-  
+
   ///// <summary>
   ///// Specifies the footnote properties for the document.
   ///// </summary>
   //[Category("Footnotes and endnotes")]
   //public FootnoteDocumentWideProperties? FootnoteDocumentWideProperties { get; set; }
-  
+
   /// <summary>
   /// Specifies that the document can be upgraded and is not limited to earlier word processing formats.
   /// </summary>
   /// <remarks>
   /// Represents the following element tag in the schema: w:forceUpgrade
   /// </remarks>
+  [Category("Conformance")]
   public bool? ForceUpgrade { get; set; }
   
   /// <summary>
@@ -532,52 +538,45 @@ public partial class DocumentSettings: ModelElement
   /// </remarks>
   [Category("Styling")]
   public bool? LinkStyles { get; set; }
-  
+
   /// <summary>
   /// Specifies the character used as a list item separator in fields.
   /// </summary>
   /// <remarks>
   /// Represents the following element tag in the schema: w:listSeparator
   /// </remarks>
+  [Category("Conformance")]
   public string? ListSeparator { get; set; }
   
-  ///// <summary>
-  ///// Specifies all mail merge information for the document.
-  ///// </summary>
-  //[Category("Mailing")]
-  //public MailMerge? MailMerge { get; set; }
-  
-  ///// <summary>
-  ///// Specifies the document-level properties for all math in the document.
-  ///// </summary>
-  //public MathProperties? MathProperties { get; set; }
-  
+ 
   /// <summary>
   /// Specifies that left and right margins are swapped on every second page.
   /// </summary>
   /// <remarks>
   /// Represents the following element tag in the schema: w:mirrorMargins
   /// </remarks>
+  [Category("Pagination")]
   public bool? MirrorMargins { get; set; }
-  
-  ///// <summary>
-  ///// Specifies the set of characters restricted from ending a line for custom line breaking logic.
-  ///// </summary>
-  //[Category("Kinsoku")]
-  //public NoLineBreaksAfterKinsoku? NoLineBreaksAfterKinsoku { get; set; }
-  
-  ///// <summary>
-  ///// Specifies the set of characters restricted from beginning a new line for custom line breaking logic.
-  ///// </summary>
-  //[Category("Kinsoku")]
-  //public NoLineBreaksBeforeKinsoku? NoLineBreaksBeforeKinsoku { get; set; }
-  
+
+  /// <summary>
+  /// Specifies the set of characters restricted from ending a line for custom line breaking logic.
+  /// </summary>
+  [Category("Kinsoku")]
+  public NoLineBreaksAfterKinsoku? NoLineBreaksAfterKinsoku { get; set; }
+
+  /// <summary>
+  /// Specifies the set of characters restricted from beginning a new line for custom line breaking logic.
+  /// </summary>
+  [Category("Kinsoku")]
+  public NoLineBreaksBeforeKinsoku? NoLineBreaksBeforeKinsoku { get; set; }
+
   /// <summary>
   /// Specifies that punctuation characters are not kerned when kerning is enabled.
   /// </summary>
   /// <remarks>
   /// Represents the following element tag in the schema: w:noPunctuationKerning
   /// </remarks>
+  [Category("Conformance")]
   public bool? NoPunctuationKerning { get; set; }
   
   /// <summary>
@@ -633,12 +632,13 @@ public partial class DocumentSettings: ModelElement
   /// </remarks>
   [Category("Proofing")]
   public ProofState? ProofState { get; set; }
-  
-  ///// <summary>
-  ///// Specifies the exact set of page and text sizing parameters for displaying the document, used for ink annotations.
-  ///// </summary>
-  //public DMWD.ReadModeInkLockDown? ReadModeInkLockDown { get; set; }
-  
+
+  /// <summary>
+  /// Specifies the exact set of page and text sizing parameters for displaying the document, used for ink annotations.
+  /// </summary>
+  [Category("Protection")]
+  public DMWD.ReadModeInkLockDown? ReadModeInkLockDown { get; set; }
+
   /// <summary>
   /// Specifies that date and time information is removed from all annotations when the document is saved.
   /// </summary>
@@ -665,12 +665,6 @@ public partial class DocumentSettings: ModelElement
   /// </remarks>
   [Category("View")]
   public RevisionView? RevisionView { get; set; }
-  
-  ///// <summary>
-  ///// Specifies the set of revision save ID values for the current document.
-  ///// </summary>
-  //[Category("Tracking")]
-  //public Rsids? Rsids { get; set; }
   
   /// <summary>
   /// Specifies that only WordprocessingML form fields are saved in a comma-delimited text format.
@@ -706,32 +700,32 @@ public partial class DocumentSettings: ModelElement
   /// </remarks>
   [Category("Fonts")]
   public bool? SaveSubsetFonts { get; set; }
-  
-  ///// <summary>
-  ///// Specifies the location of a custom XSL transform to be used when saving as a single XML file.
-  ///// </summary>
-  //[Category("Xslt")]
-  //public SaveThroughXslt? SaveThroughXslt { get; set; }
-  
-  ///// <summary>
-  ///// Specifies that only custom XML markup is saved as an XML file.
-  ///// </summary>
-  //[Category("CustomXml")]
-  //public bool? SaveXmlDataOnly { get; set; }
-  
-  ///// <summary>
-  ///// Specifies the set of XML namespaces associated with custom XML markup in the document.
-  ///// </summary>
-  //[Category("CustomXml")]
-  //public SchemaLibrary? SchemaLibrary { get; set; }
-  
-  ///// <summary>
-  ///// Specifies the defaults used when creating new shapes, stored once per document.
-  ///// </summary>
-  //[Category("VML")]
-  //[Obsolete]
-  //public DMWD.ShapeDefaults? ShapeDefaults { get; set; }
-  
+
+  /// <summary>
+  /// Specifies the location of a custom XSL transform to be used when saving as a single XML file.
+  /// </summary>
+  [Category("Xslt")]
+  public SaveThroughXslt? SaveThroughXslt { get; set; }
+
+  /// <summary>
+  /// Specifies that only custom XML markup is saved as an XML file.
+  /// </summary>
+  [Category("CustomXml")]
+  public bool? SaveXmlDataOnly { get; set; }
+
+  /// <summary>
+  /// Specifies the set of XML namespaces associated with custom XML markup in the document.
+  /// </summary>
+  [Category("CustomXml")]
+  public SchemaLibrary? SchemaLibrary { get; set; }
+
+  /// <summary>
+  /// Specifies the defaults used when creating new shapes, stored once per document.
+  /// </summary>
+  [Category("VML")]
+  [Obsolete]
+  public DMWD.ShapeDefaults? ShapeDefaults { get; set; }
+
   /// <summary>
   /// Specifies that an e-mail message header is displayed when the document is opened.
   /// </summary>
@@ -758,13 +752,13 @@ public partial class DocumentSettings: ModelElement
   /// </remarks>
   [Category("Kinsoku")]
   public bool? StrictFirstAndLastChars { get; set; }
-  
-  ///// <summary>
-  ///// Specifies suggested filters to be applied to the list of document styles in the application UI.
-  ///// </summary>
-  //[Category("Styling")]
-  //public StylePaneFormatFilter? StylePaneFormatFilter { get; set; }
-  
+
+  /// <summary>
+  /// Specifies suggested filters to be applied to the list of document styles in the application UI.
+  /// </summary>
+  [Category("Styling")]
+  public StylePaneFormatFilter? StylePaneFormatFilter { get; set; }
+
   /// <summary>
   /// Specifies a sorting to be applied to the list of styles in the document UI.
   /// </summary>
@@ -781,13 +775,13 @@ public partial class DocumentSettings: ModelElement
   /// Represents the following element tag in the schema: w:summaryLength
   /// </remarks>
   public Percent? SummaryLength { get; set; }
-  
-  ///// <summary>
-  ///// Specifies the language used to determine theme fonts in the document's Theme part.
-  ///// </summary>
-  //[Category("Fonts")]
-  //public Languages? ThemeFontLanguages { get; set; }
-  
+
+  /// <summary>
+  /// Specifies the language used to determine theme fonts in the document's Theme part.
+  /// </summary>
+  [Category("Fonts")]
+  public Languages? ThemeFontLanguages { get; set; }
+
   /// <summary>
   /// Specifies that revisions are tracked in the document.
   /// </summary>
@@ -849,4 +843,29 @@ public partial class DocumentSettings: ModelElement
   /// </remarks>
   [Category("View")]
   public Zoom? Zoom { get; set; }
+
+  /// <summary>
+  /// Specifies the presence of document variables in the document.
+  /// </summary>
+  [Category("Variables")]
+  public Variables? DocumentVariables { get; set; }
+
+  /// <summary>
+  /// Specifies all mail merge information for the document.
+  /// </summary>
+  [Category("Mailing")]
+  public MailMerge? MailMerge { get; set; }
+
+  /// <summary>
+  /// Specifies the document-level properties for all math in the document.
+  /// </summary>
+  [Category("Math")]
+  public DMM.MathProperties? MathProperties { get; set; }
+
+
+  ///// <summary>
+  ///// Specifies the set of revision save ID values for the current document.
+  ///// </summary>
+  //[Category("Tracking")]
+  //public Rsids? Rsids { get; set; }
 }
