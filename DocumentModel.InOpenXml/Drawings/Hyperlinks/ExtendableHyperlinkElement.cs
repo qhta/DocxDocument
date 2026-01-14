@@ -3,7 +3,7 @@
 /// <summary>
 ///   Represents a hyperlink element that supports additional extension properties.
 /// </summary>
-public interface ExtendableHyperlinkElement
+public class ExtendableHyperlinkElement: ModelElement
 {
   /// <summary>
   ///   Collection of extension elements for additional hyperlink properties.

@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies properties of the Sub-Superscript object, including the alignment of scripts.
 /// </summary>
-public interface SubSuperscriptProperties
+public class SubSuperscriptProperties: ModelElement
 {
   /// <summary>
   ///   This element specifies the alignment of scripts in the subscript/superscript function. 

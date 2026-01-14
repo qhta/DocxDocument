@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the style settings for a shape in a Wordprocessing document.
 /// This interface provides references to line, fill, effect, and font styles, enabling consistent visual formatting for shapes.
 /// </summary>
-public interface ShapeStyle
+public class ShapeStyle: ModelElement
 {
   /// <summary>
   /// Reference to the line style applied to the shape, specifying line color, width, and pattern.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the indentation settings for a paragraph in a WordprocessingML document.
 /// This interface provides properties for configuring left, right, start, and end indentation, as well as first line and hanging indentation, in both point and character units. Enables advanced control over paragraph layout and text alignment.
 /// </summary>
-public interface Indentation
+public class Indentation: ModelElement
 {
   /// <summary>
   /// Left indentation of the paragraph, specified in twentieths of a point.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the columns layout in a section of a Wordprocessing document.
 /// This interface provides properties for equal column widths, spacing, column count, and separator line, enabling advanced configuration of multi-column layouts within document sections.
 /// </summary>
-public interface TextColumns : SectionPropertiesContent, IElementCollection<TextColumn>
+public interface TextColumns : ISectionPropertiesContent, IElementCollection<TextColumn>
 {
 
   /// <summary>

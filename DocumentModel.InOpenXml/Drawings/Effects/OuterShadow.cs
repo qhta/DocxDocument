@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents an outer shadow effect, including blur, offset, direction, scaling, skew, alignment, rotation, and color options.
 /// </summary>
-public interface OuterShadow
+public class OuterShadow: ModelElement
 {
   /// <summary>
   ///   Blur radius of the shadow.

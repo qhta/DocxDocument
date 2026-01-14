@@ -7,9 +7,9 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface Run : RunContentCollection,
   IParagraphContent,
-  SdtRunContent,
-  RubyContent,
-  BidirectionalContent,
+  ISdtRunContent,
+  IRubyContent,
+  IBidirectionalContent,
   IMathArgumentContent
 {
   /// <summary>

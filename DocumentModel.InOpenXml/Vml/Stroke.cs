@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the Stroke Class.
 /// </summary>
-public interface Stroke
+public class Stroke: ModelElement
 {
   /// <summary>
   ///   Unique Identifier
@@ -32,7 +32,7 @@ public interface Stroke
   /// <summary>
   ///   Miter Joint Limit
   /// </summary>
-  public string? Miterlimit { get; set; }
+  public string? MiterLimit { get; set; }
   /// <summary>
   ///   Line End Join Style
   /// </summary>

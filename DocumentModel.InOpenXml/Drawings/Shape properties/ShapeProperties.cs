@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents visual properties for a shape, including geometry, fill, outline, effects, 2D and 3D transforms, and extension lists.
 /// </summary>
-public interface ShapeProperties
+public class ShapeProperties: ModelElement
 {
   /// <summary>
   ///   Black and white rendering mode for the shape.

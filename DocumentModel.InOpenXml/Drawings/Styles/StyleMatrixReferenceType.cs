@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a reference to a style matrix entry, including index and color information in multiple color models.
 /// </summary>
-public interface StyleMatrixReferenceType
+public class StyleMatrixReferenceType: ModelElement
 {
   /// <summary>
   ///   Index into the style matrix.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents properties for an embedded object, including its identifier, ActiveX status, and link type.
 /// </summary>
-public interface ObjectProperties
+public class ObjectProperties: ModelElement
 {
   /// <summary>
   ///   Identifier for the embedded object.

@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a glow effect that can be applied to a drawing object.
 /// </summary>
-public interface Glow
+public class Glow: ModelElement
 {
   /// <summary>
   ///   Radius

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a 2D transformation, including rotation, flipping, offset, and extents for a drawing element.
 /// </summary>
-public interface Transform2D
+public class Transform2D: ModelElement
 {
   /// <summary>
   ///   Rotation angle for the transformation.

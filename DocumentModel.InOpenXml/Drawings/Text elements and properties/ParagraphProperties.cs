@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents properties for a text paragraph, including margins, indentation, alignment, tab size, line breaks, font alignment, spacing, and other formatting options.
 /// </summary>
-public interface ParagraphProperties
+public class ParagraphProperties: ModelElement
 {
   /// <summary>
   ///   Left margin of the paragraph.

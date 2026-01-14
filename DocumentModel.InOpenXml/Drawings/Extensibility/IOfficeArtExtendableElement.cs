@@ -5,10 +5,10 @@
 /// The extension list along with corresponding future extensions is used to extend the storage capabilities of the DrawingML framework.
 /// This allows for various new types of data to be stored natively within the framework.
 /// </summary>
-public interface OfficeArtExtendableElement
+public interface IOfficeArtExtendableElement
 {
   /// <summary>
   /// Extension list for future extensions of the element type.
   /// </summary>
-  public OfficeArtExtensionList OfficeArtExtensionList { get; set; }
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

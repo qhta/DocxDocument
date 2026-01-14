@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents the background color, supporting multiple color models and types for flexible color specification.
 /// </summary>
-public interface BackgroundColor
+public class BackgroundColor: ModelElement
 {
   /// <summary>
   /// Gets or sets the RGB color model using percentage values for the background color.

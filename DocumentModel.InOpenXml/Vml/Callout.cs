@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the Callout Class.
 /// </summary>
-public interface Callout
+public class Callout: ModelElement
 {
   /// <summary>
   ///   VML Extension Handling Behavior
@@ -40,7 +40,7 @@ public interface Callout
   /// <summary>
   ///   Callout length toggle
   /// </summary>
-  public bool? LengthSpecified { get; set; }
+  public bool? LengthSpec { get; set; }
   /// <summary>
   ///   Callout length
   /// </summary>

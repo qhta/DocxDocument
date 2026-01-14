@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Specifies the set of row-level properties applied to the current table row.
 /// Each unique property is specified by a child element. These properties affect the appearance of all cells in the current row within the parent table, but can be overridden by individual cell-level properties as defined by each property.
 /// </summary>
-public interface TableRowProperties : BaseTableRowProperties
+public class TableRowProperties : BaseTableRowProperties
 {
   
   /// <summary>

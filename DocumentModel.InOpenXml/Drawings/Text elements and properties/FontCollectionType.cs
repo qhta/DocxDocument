@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a collection of font settings for different writing systems, including Latin, East Asian, and complex scripts.
 /// </summary>
-public interface FontCollectionType
+public class FontCollectionType: ModelElement
 {
   /// <summary>
   ///   Font settings for Latin text.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Fill Overlay Effect.
 /// </summary>
-public interface FillOverlay
+public class FillOverlay: ModelElement
 {
   /// <summary>
   ///   Blend

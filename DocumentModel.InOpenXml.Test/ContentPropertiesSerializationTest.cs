@@ -59,7 +59,7 @@ namespace DocumentModel.InOpenXml.Test
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"✗ XML Serialization test FAILED: {ex.Message}\n{ex.StackTrace}");
+                Console.WriteLine($"✗ XML Serialization test FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
                 return false;
             }
         }
@@ -91,7 +91,7 @@ namespace DocumentModel.InOpenXml.Test
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"✗ JSON Serialization test FAILED: {ex.Message}\n{ex.StackTrace}");
+                Console.WriteLine($"✗ JSON Serialization test FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
                 return false;
             }
         }
@@ -121,7 +121,7 @@ namespace DocumentModel.InOpenXml.Test
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"✗ Edge case test FAILED: {ex.Message}\n{ex.StackTrace}");
+                Console.WriteLine($"✗ Edge case test FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
                 return false;
             }
         }

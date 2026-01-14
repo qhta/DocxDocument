@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a reference to various color models and color types used in drawing effects.
 /// </summary>
-public interface EffectReference
+public class EffectReference: ModelElement
 {
   /// <summary>
   /// RGB color model using percentage values.

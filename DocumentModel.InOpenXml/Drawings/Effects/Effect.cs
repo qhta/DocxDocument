@@ -43,7 +43,7 @@ namespace DocumentModel.Drawings;
 ///   </list>
 ///   </para>
 /// </remarks>
-public interface Effect
+public class Effect: ModelElement
 {
   /// <summary>
   ///   Reference identifier that links to a specific effect definition.

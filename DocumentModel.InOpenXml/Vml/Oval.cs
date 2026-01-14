@@ -6,7 +6,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Oval.
 /// </summary>
-public interface Oval: EmbeddedObjectContent
+public interface Oval: IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

@@ -4,12 +4,12 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the presence of a hyperlink at the current location in a WordprocessingML document.
-/// This interface extends <see cref="IParagraphContent"/>, <see cref="SdtRunContent"/>, <see cref="BidirectionalContent"/>, and <see cref="IMathArgumentContent"/>, enabling advanced linking, navigation, and integration of hyperlinks within paragraphs, structured document tags, bidirectional content, and mathematical arguments.
+/// This interface extends <see cref="IParagraphContent"/>, <see cref="ISdtRunContent"/>, <see cref="IBidirectionalContent"/>, and <see cref="IMathArgumentContent"/>, enabling advanced linking, navigation, and integration of hyperlinks within paragraphs, structured document tags, bidirectional content, and mathematical arguments.
 /// </summary>
 public interface Hyperlink :
   IParagraphContent,
-  SdtRunContent,
-  BidirectionalContent,
+  ISdtRunContent,
+  IBidirectionalContent,
   DMM.IMathArgumentContent
 {
 

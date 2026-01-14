@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents language codes for three script types in WordprocessingML documents: regular (normal), complex (bidirectional), and East Asian scripts.
 /// This interface enables specification of language settings for spell checking, grammar checking, and text processing in multilingual documents.
 /// </summary>
-public interface Languages
+public class Languages: ModelElement
 {
   /// <summary>
   /// Language code for all regular (normal) scripts, typically used for Western languages.

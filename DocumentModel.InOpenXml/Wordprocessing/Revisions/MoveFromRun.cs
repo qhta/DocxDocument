@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
   /// Represents inline-level content that has been moved away from this location and tracked as a revision in a WordprocessingML document.
   /// This interface extends <see cref="RunTrackChangeType"/> and is used to mark content as moved from its original location, enabling revision tracking and review of content relocations within the document.
   /// </summary>
-  public interface MoveFromRun : RunTrackChangeType
+  public class MoveFromRun : RunTrackChangeType
   {
   }

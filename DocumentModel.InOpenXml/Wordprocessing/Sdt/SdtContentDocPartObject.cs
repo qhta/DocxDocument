@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the configuration for a document part object content control in a structured document tag (SDT) in a Wordprocessing document.
 /// This interface provides properties for filtering document parts by gallery and category, and for indicating built-in document parts, enabling advanced customization and management of document part selection in SDTs.
 /// </summary>
-public interface SdtContentDocPartObject
+public class SdtContentDocPartObject: ModelElement
 {
   /// <summary>
   /// Document part gallery filter, specifying the gallery to filter document parts.

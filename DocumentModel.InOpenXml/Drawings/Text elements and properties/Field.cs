@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings;
 /// This update type is used so that all applications that did not create this text field can still know what kind of text it should be updated with.
 /// Thus, the new application can then attach an update type to the text field id for continual updating.
 /// </summary>
-public interface Field
+public class Field: ModelElement
 {
   /// <summary>
   ///   Identifier for the field.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a reference to a predecessor drawing element.
 /// </summary>
-public interface PredecessorDrawingElementReference
+public class PredecessorDrawingElementReference: ModelElement
 {
   /// <summary>
   ///   Identifier of the predecessor drawing element.

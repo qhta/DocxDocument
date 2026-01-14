@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the type definition for a graphic frame in a Wordprocessing document.
 /// This interface provides access to non-visual properties, transformation settings, the contained graphic, and extension data, enabling advanced layout, rendering, and extensibility for graphical content.
 /// </summary>
-public interface GraphicFrameType
+public class GraphicFrameType: ModelElement
 {
   /// <summary>
   /// Non-visual properties for the graphic frame, including identifiers, names, and descriptive information.

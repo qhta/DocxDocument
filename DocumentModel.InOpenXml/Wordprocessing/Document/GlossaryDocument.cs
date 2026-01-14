@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Represents the root element of a glossary document in a WordprocessingML document.
 ///   This interface provides properties for the document background and the list of glossary document entries, enabling advanced management, organization, and reuse of building blocks, autotext, and other reusable document content.
 /// </summary>
-public interface GlossaryDocument
+public class GlossaryDocument: ModelElement
 {
   /// <summary>
   ///   Document background, specifying the image or fill for every page of the glossary document.

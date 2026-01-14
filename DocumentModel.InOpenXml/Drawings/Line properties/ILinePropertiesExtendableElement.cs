@@ -3,7 +3,7 @@
 /// <summary>
 ///   Represents an element that supports extensibility for line properties through an extension list.
 /// </summary>
-public interface LinePropertiesExtendableElement
+public interface ILinePropertiesExtendableElement: ICollectionItem
 {
 
   /// <summary>

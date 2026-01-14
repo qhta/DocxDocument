@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a text run, including character properties and the text string.
 /// </summary>
-public interface Run
+public class Run: ModelElement
 {
   /// <summary>
   ///   Character properties applied to the text run.

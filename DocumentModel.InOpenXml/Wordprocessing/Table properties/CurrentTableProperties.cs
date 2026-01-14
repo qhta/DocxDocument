@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Base interface for current table properties.
 /// Contains properties for preferred table width, layout, and conditional formatting settings, enabling advanced configuration and management of table appearance and behavior.
 /// </summary>
-public interface CurrentTableProperties : BaseTableProperties
+public class CurrentTableProperties : BaseTableProperties
 {
 
   /// <summary>

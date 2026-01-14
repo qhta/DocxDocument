@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Represents the properties of a footnote in a WordprocessingML document.
 ///   This interface extends <see cref="SectionPropertiesContent"/> and provides properties for footnote placement, numbering format, starting value, and numbering restart location, enabling advanced configuration and management of footnote behavior and formatting within document sections.
 /// </summary>
-public interface FootnoteProperties : SectionPropertiesContent
+public interface FootnoteProperties : ISectionPropertiesContent
 {
   /// <summary>
   ///   Placement of the footnote, specifying where the footnote appears (e.g., bottom of page, end of document).

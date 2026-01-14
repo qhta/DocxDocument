@@ -19,7 +19,7 @@ namespace DocumentModel;
 /// </list>
 /// </para>
 /// <para>
-/// Each <see cref="IExtension"/> in the collection typically contains a URI identifier, visual properties, metadata, and version information.
+/// Each <see cref="IExtension"/> in the collection typically contains a UriString identifier, visual properties, metadata, and version information.
 /// </para>
 /// </remarks>
 public class ExtensionList : ElementCollection<Extension>

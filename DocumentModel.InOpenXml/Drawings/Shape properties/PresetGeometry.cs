@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a preset geometry for a shape, including the preset type and optional adjustment values.
 /// </summary>
-public interface PresetGeometry
+public class PresetGeometry: ModelElement
 {
   /// <summary>
   ///   Preset shape type.

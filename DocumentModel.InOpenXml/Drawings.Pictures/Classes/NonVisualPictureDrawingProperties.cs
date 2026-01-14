@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Pictures;
 /// <summary>
 ///   Non-Visual Picture Drawing Properties.
 /// </summary>
-public interface NonVisualPictureDrawingProperties
+public class NonVisualPictureDrawingProperties: ModelElement
 {
   /// <summary>
   ///   preferRelativeResize

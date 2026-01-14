@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the spacing settings between lines and paragraphs in a WordprocessingML document.
 /// This interface provides properties for configuring spacing above and below paragraphs, automatic spacing, line spacing, and line spacing rules, enabling advanced control over paragraph layout and readability.
 /// </summary>
-public interface ParagraphSpacing
+public class ParagraphSpacing: ModelElement
 {
   
   /// <summary>

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Camera tool settings for drawing elements.
 /// </summary>
-public interface CameraTool
+public class CameraTool: ModelElement
 {
   /// <summary>
   /// Cell range.

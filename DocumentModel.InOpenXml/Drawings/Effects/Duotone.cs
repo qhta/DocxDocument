@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a duotone effect, allowing colorization using two colors specified in various color models.
 /// </summary>
-public interface Duotone
+public class Duotone: ModelElement
 {
   /// <summary>
   ///   Duotone color specified using the RGB color model with percentage values.

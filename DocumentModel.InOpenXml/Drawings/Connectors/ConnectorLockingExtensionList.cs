@@ -74,7 +74,7 @@ namespace DocumentModel.Drawings;
 ///     {
 ///         new ConnectorLockingExtension
 ///         {
-///             Uri = "{ConnectorEndpointLock}",
+///             UriString = "{ConnectorEndpointLock}",
 ///             // Prevents start and end points from detaching
 ///         }
 ///     }
@@ -87,7 +87,7 @@ namespace DocumentModel.Drawings;
 ///     {
 ///         new ConnectorLockingExtension
 ///         {
-///             Uri = "{ConnectorRoutingLock}",
+///             UriString = "{ConnectorRoutingLock}",
 ///             // Prevents automatic rerouting
 ///         }
 ///     }

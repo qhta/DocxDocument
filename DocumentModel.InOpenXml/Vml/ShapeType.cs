@@ -7,7 +7,7 @@ namespace DocumentModel.Vml;
 /// Represents a shape template in a VML drawing, providing properties for styling, positioning, behavior, and embedded content.
 /// This interface enables advanced customization and management of VML shapes, including hyperlinks, CSS references, coordinate space, borders, fill, stroke, shadow, text, image data, and more.
 /// </summary>
-public interface ShapeType : EmbeddedObjectContent
+public interface ShapeType : IEmbeddedObjectContent
 {
     
     /// <summary>

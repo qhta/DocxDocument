@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a picture attribution source URL, providing an identifier for the attribution source.
 /// </summary>
-public interface PictureAttributionSourceURL
+public class PictureAttributionSourceURL: ModelElement
 {
   /// <summary>
   ///   Identifier for the picture attribution source.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents a symbol character in a text run in WordprocessingML documents.
   /// A symbol character is a special character that does not use any of the run fonts specified in the font table or style hierarchy. Instead, the character is determined by pulling the character with the specified hexadecimal value from the specified font.
   /// </summary>
-  public interface SymbolChar : RunContent
+  public interface SymbolChar : IRunContent
   {
     
     /// <summary>

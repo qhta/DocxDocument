@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the fit text effect for a text run, enabling the text to be compressed or expanded to fit a specified width.
 /// This interface provides properties for identifying the fit text run and specifying the target width in twips, allowing advanced text layout control in WordprocessingML documents.
 /// </summary>
-public interface FitText
+public class FitText: ModelElement
 {
   /// <summary>
   /// Identifier for the fit text run, used to distinguish multiple fit text effects within the same document.

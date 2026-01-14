@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents normal autofit settings for text, including font scaling and line space reduction.
 /// </summary>
-public interface NormalAutoFit
+public class NormalAutoFit: ModelElement
 {
   /// <summary>
   ///   Percentage scale applied to the font size for autofitting text.

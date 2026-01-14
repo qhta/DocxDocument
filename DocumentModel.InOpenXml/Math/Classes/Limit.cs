@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the lower limit of the limLow object and the upper limit of the limUpp function.
 /// </summary>
-public interface Limit: ElementCollection<MathArgumentContent>
+public interface Limit: IElementCollection<IMathArgumentContent>
 {
   /// <summary>
   ///   Specifies properties of argument object.

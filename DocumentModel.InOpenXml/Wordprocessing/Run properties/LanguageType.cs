@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// This interface defines language codes for Latin/ASCII, East Asian, and complex script (bidirectional) text, supporting RFC 1766 or ISO 639 standards (e.g., "en-US", "ja-JP", "ar-SA").
 /// Used to determine dictionaries, hyphenation, sorting, and theme font mapping for text runs and theme font languages.
 /// </summary>
-public interface LanguageType
+public class LanguageType: ModelElement
 {
   /// <summary>
   /// Language code for Latin/ASCII text, typically Western European languages. Used for spell checking, grammar, and theme font mapping (major/minor Ascii/HAnsi).

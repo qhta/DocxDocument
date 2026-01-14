@@ -18,7 +18,7 @@
 ///   chart type, then static image). The choice collection mechanism is fundamental to Office's ability to introduce
 ///   new content types and features while maintaining document compatibility across different application versions.
 ///   Each <see cref="AlternateContentChoice"/> in the collection contains both a requirement specification (typically
-///   a namespace URI) and the actual content items to display when that choice is selected.
+///   a namespace UriString) and the actual content items to display when that choice is selected.
 /// </remarks>
 public interface AlternateContentChoiceCollection: IElementCollection<AlternateContentChoice>
 {

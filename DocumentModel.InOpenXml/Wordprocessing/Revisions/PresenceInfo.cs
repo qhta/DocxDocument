@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents presence information for a user in a WordprocessingML document.
 /// This interface provides properties for the provider and user identifiers, enabling tracking and management of user presence and collaboration metadata.
 /// </summary>
-public interface PresenceInfo
+public class PresenceInfo: ModelElement
 {
   /// <summary>
   /// Identifier for the presence provider, specifying the source of presence information.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents sketch type properties for a line, indicating the presence of various sketch styles.
 /// </summary>
-public interface LineSketchTypeProperties
+public class LineSketchTypeProperties: ModelElement
 {
   /// <summary>
   ///   Indicates whether the "None" sketch style is present.

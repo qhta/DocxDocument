@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents properties for a live feed, including background and extension settings.
 /// </summary>
-public interface LiveFeedProperties: OfficeArtExtendableElement
+public interface LiveFeedProperties: IOfficeArtExtendableElement
 {
   /// <summary>
   ///   Background properties for the live feed.

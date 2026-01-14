@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents an embedded WAV audio file in a drawing object.
 /// </summary>
-public interface EmbeddedWavAudioFileType
+public class EmbeddedWavAudioFileType: ModelElement
 {
   /// <summary>
   ///   Relationship ID that references the embedded audio file.

@@ -7,6 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocumentSettings: ModelElement
 {
+
   /// <summary>
   /// Information about the parameters of the grammar checking performed on the contents of the current document.
   /// </summary>
@@ -439,11 +440,11 @@ public partial class DocumentSettings: ModelElement
   [Category("Fonts")]
   public bool? EmbedTrueTypeFonts { get; set; }
 
-  ///// <summary>
-  ///// Specifies the endnote properties for the document.
-  ///// </summary>
-  //[Category("Footnotes and endnotes")]
-  //public EndnoteDocumentWideProperties? EndnoteDocumentWideProperties { get; set; }
+  /// <summary>
+  /// Specifies the endnote properties for the document.
+  /// </summary>
+  [Category("Footnotes and endnotes")]
+  public EndnoteDocumentWideProperties? EndnoteDocumentWideProperties { get; set; }
 
   /// <summary>
   /// Specifies whether sections have different headers and footers for even and odd pages.
@@ -454,11 +455,11 @@ public partial class DocumentSettings: ModelElement
   [Category("Pagination")]
   public bool? EvenAndOddHeaders { get; set; }
 
-  ///// <summary>
-  ///// Specifies the footnote properties for the document.
-  ///// </summary>
-  //[Category("Footnotes and endnotes")]
-  //public FootnoteDocumentWideProperties? FootnoteDocumentWideProperties { get; set; }
+  /// <summary>
+  /// Specifies the footnote properties for the document.
+  /// </summary>
+  [Category("Footnotes and endnotes")]
+  public FootnoteDocumentWideProperties? FootnoteDocumentWideProperties { get; set; }
 
   /// <summary>
   /// Specifies that the document can be upgraded and is not limited to earlier word processing formats.
@@ -486,14 +487,13 @@ public partial class DocumentSettings: ModelElement
   /// </remarks>
   [Category("Printing")]
   public bool? GutterAtTop { get; set; }
-  
-  ///// <summary>
-  ///// Specifies the default parameters for VML objects inserted in the header and footer.
-  ///// </summary>
-  //[Category("VML")]
-  //[Obsolete]
-  //public DMWV.HeaderShapeDefaults? HeaderShapeDefaults { get; set; }
-  
+
+  /// <summary>
+  /// Specifies the default parameters for VML objects inserted in the header and footer.
+  /// </summary>
+  [Category("VML")]
+  public DMWV.HeaderShapeDefaults? HeaderShapeDefaults { get; set; }
+
   /// <summary>
   /// Specifies whether a visual cue should be displayed around grammatical errors.
   /// </summary>
@@ -868,4 +868,6 @@ public partial class DocumentSettings: ModelElement
   ///// </summary>
   //[Category("Tracking")]
   //public Rsids? Rsids { get; set; }
+
+  public static KnownProperties KnownProperties { get; } = new KnownProperties(typeof(DocumentSettings));
 }

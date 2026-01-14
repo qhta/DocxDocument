@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic diffused glow effect, which simulates a soft glowing appearance with adjustable transparency and intensity.
 /// </summary>
-public interface ArtisticGlowDiffused
+public class ArtisticGlowDiffused: ModelElement
 {
   /// <summary>
   /// Transparency level of the diffused glow effect.

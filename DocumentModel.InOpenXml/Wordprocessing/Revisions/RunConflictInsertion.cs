@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
   /// Represents inline-level content that has been inserted in conflict with edits made by other users in a WordprocessingML document.
   /// This interface extends <see cref="RunTrackChangeType"/> and is used to mark content as a tracked insertion when conflicts occur, enabling revision tracking and review of conflicting inline insertions.
   /// </summary>
-  public interface RunConflictInsertion : RunTrackChangeType
+  public class RunConflictInsertion : RunTrackChangeType
   {
   }

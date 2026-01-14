@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents East Asian typography layout properties for a text run in WordprocessingML documents.
 /// This interface provides options for two lines in one, bracket display, vertical text rotation, and compression, enabling advanced formatting for East Asian scripts.
 /// </summary>
-public interface EastAsianLayout
+public class EastAsianLayout: ModelElement
 {
   /// <summary>
   /// Identifier for the East Asian typography run, used to distinguish multiple layout effects within the same document.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a hyphen character in a text run in WordprocessingML documents.
 /// This interface provides two complementary ways to specify the hyphen: by an enum-typed value or by a visual text string, enabling advanced control over hyphenation and character encoding in document content.
 /// </summary>
-public interface Hyphen : RunContent
+public interface Hyphen : IRunContent
 {
   
   /// <summary>

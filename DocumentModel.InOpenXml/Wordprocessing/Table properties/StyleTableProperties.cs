@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents style table properties for a table in a Wordprocessing document.
 /// This interface provides properties for row and column band sizes, enabling advanced table styling and formatting options.
 /// </summary>
-public interface StyleTableProperties : BaseTableProperties
+public class StyleTableProperties : BaseTableProperties
 {
 
   /// <summary>

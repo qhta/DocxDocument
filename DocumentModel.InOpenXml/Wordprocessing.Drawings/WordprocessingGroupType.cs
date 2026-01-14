@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents a type definition for a group of drawing elements in a Wordprocessing document.
 /// This interface provides access to non-visual properties and group properties, enabling configuration and management of grouped graphical content.
 /// </summary>
-public interface WordprocessingGroupType
+public class WordprocessingGroupType: ModelElement
 {
   /// <summary>
   /// Non-visual properties for the group type, including identifiers, names, and descriptive information.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a format scheme, including name and style lists for fills, lines, effects, and background fills.
 /// </summary>
-public interface FormatScheme
+public class FormatScheme: ModelElement
 {
   /// <summary>
   ///   Name of the format scheme.

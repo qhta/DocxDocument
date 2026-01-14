@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the glow effect applied to a drawing element in a Wordprocessing document.
 /// This interface provides properties for configuring the glow radius and color, enabling visual emphasis and styling for graphical objects.
 /// </summary>
-public interface Glow : TypedModelElement, DrawingProperty
+public class Glow : DrawingProperty
 {
   /// <summary>
   /// The radius of the glow effect, specified in EMUs (English Metric Units), determining the size of the glow around the element.

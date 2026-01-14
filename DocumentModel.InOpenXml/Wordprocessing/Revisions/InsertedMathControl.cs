@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a tracked insertion revision for math control elements in a WordprocessingML document.
 /// This interface provides properties for author, date, annotation identifier, run formatting, and deleted math control, enabling tracking and management of mathematical content insertions within the document.
 /// </summary>
-public interface InsertedMathControl: IdentifiedChange
+public class InsertedMathControl: IdentifiedChange
 {
   /// <summary>
   /// Run properties for the inserted math control, specifying character-level formatting.

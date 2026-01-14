@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents a specialized reference for a footnote separator in a WordprocessingML document.
   /// This interface extends <see cref="CollectionItem"/> and <see cref="FootnoteEndnoteSeparatorReferenceType"/>, providing a property for the target footnote. Enables advanced management and referencing of footnote separators for visual separation and formatting of footnote content.
   /// </summary>
-  public interface FootnoteSeparator: ICollectionItem, FootnoteEndnoteSeparatorReferenceType
+  public class FootnoteSeparator: FootnoteEndnoteSeparatorReferenceType
   {
     
     /// <summary>

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic mosaic bubbles effect, which simulates a mosaic pattern with bubble-like textures and adjustable transparency and pressure.
 /// </summary>
-public interface ArtisticMosaicBubbles
+public class ArtisticMosaicBubbles: ModelElement
 {
   /// <summary>
   /// Transparency level of the mosaic bubbles effect.

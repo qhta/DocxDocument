@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a tint effect, allowing adjustment of hue and amount for color modification.
 /// </summary>
-public interface TintEffect
+public class TintEffect: ModelElement
 {
   /// <summary>
   ///   Hue adjustment value for the tint effect.

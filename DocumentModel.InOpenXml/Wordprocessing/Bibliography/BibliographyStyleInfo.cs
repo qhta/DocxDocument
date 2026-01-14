@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Provides information about a bibliography style.
 /// </summary>
-public interface BibliographyStyleInfo
+public class BibliographyStyleInfo: ModelElement
 {
   /// <summary>
   ///   Gets the internal name of the style.

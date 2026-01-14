@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Complex.
 /// </summary>
-public interface Complex
+public class Complex: ModelElement
 {
   /// <summary>
   ///   VML Extension Handling Behavior

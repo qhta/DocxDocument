@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the properties of the Accent function. 
 ///   If AccentChar is omitted, the default accent character is U+0302 (COMBINING CIRCUMFLEX ACCENT). 
 /// </summary>
-public interface AccentProperties
+public class AccentProperties: ModelElement
 {
   /// <summary>
   ///   Specifies visible accent character.

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a validation issue found in bibliography sources.
 /// </summary>
-public interface ValidationIssue
+public class ValidationIssue: ModelElement
 {
   /// <summary>
   ///   Gets the source tag where the issue was found.

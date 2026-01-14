@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents font settings for text, including typeface, Panose classification, pitch family, and character set.
 /// </summary>
-public interface TextFontType
+public class TextFontType: ModelElement
 {
   /// <summary>
   ///   Typeface name for the font.

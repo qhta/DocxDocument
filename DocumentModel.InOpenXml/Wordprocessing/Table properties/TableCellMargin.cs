@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 ///   These settings can be overridden by the cell margin definition specified by the tcMar element 
 ///   within the table cell's properties.
 /// </summary>
-public interface TableCellMargin
+public class TableCellMargin: ModelElement
 {
   /// <summary>
   ///   Table cell top margin, specifying the padding at the top edge of the cell.

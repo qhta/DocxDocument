@@ -62,7 +62,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public interface SchemeColor: ColorType, DrawingColorModifications
+public class SchemeColor: DrawingColor
 {
   /// <summary>
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.

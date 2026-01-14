@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a 2D point with X and Y coordinates.
 /// </summary>
-public interface Point2DType
+public class Point2DType: ModelElement
 {
   /// <summary>
   ///   X-axis coordinate of the point.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Camera settings for 3D effects in drawing elements.
 /// </summary>
-public interface Camera
+public class Camera: ModelElement
 {
   /// <summary>
   /// Preset camera type.

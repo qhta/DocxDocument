@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic glow edges effect, which simulates glowing edges with adjustable transparency and smoothness.
 /// </summary>
-public interface ArtisticGlowEdges
+public class ArtisticGlowEdges: ModelElement
 {
   /// <summary>
   /// Transparency level of the glow edges effect.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a preset shadow effect, including type, distance, direction, and color options.
 /// </summary>
-public interface PresetShadow
+public class PresetShadow: ModelElement
 {
   /// <summary>
   ///   Preset shadow type.

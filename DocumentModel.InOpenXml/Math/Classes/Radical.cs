@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the radical object, consisting of a radical, a base e and an optional degree deg.
 /// </summary>
-public interface Radical: CommonMathContent
+public interface Radical: ICommonMathContent
 {
   /// <summary>
   ///   Radical Properties.

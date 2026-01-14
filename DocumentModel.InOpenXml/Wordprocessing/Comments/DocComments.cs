@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Specifies all of the comments defined in the current WordprocessingML document.
 /// This interface provides properties for collections of comments, extended comments, comment identifiers, and extensible comments, enabling advanced tracking, organization, and management of comment metadata and content throughout the document.
 /// </summary>
-public interface DocComments
+public class DocComments: ModelElement
 {
   /// <summary>
   /// Collection of comments, providing access to standard comment annotations in the document.

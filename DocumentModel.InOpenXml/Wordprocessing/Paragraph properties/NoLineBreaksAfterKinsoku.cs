@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a custom set of characters that cannot end a line in a WordprocessingML document.
 /// This interface provides properties for specifying the language and the set of restricted characters, enabling advanced control over line breaking and kinsoku shori rules for East Asian and other scripts.
 /// </summary>
-public interface NoLineBreaksAfterKinsoku
+public class NoLineBreaksAfterKinsoku: ModelElement
 {
   /// <summary>
   /// Language code for which the kinsoku rule applies, specifying the script or locale.

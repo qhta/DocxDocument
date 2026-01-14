@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents character-level formatting properties for text, including font, style, language, spacing, underline, strike, and outline settings.
 /// </summary>
-public interface TextCharacterPropertiesType
+public class TextCharacterPropertiesType: ModelElement
 {
   /// <summary>
   ///   Value available for backwards compatibility.

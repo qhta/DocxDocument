@@ -9,7 +9,7 @@ namespace DocumentModel.Drawings;
 /// Text specified to reside within this shape text rectangle can flow outside this bounding box.
 /// Depending on the autofit options within the txBody element the text might not entirely reside within this shape text rectangle. 
 /// </remarks>
-public interface Rectangle
+public class Rectangle: ModelElement
 {
   /// <summary>
   ///   Left position of the rectangle.

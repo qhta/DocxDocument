@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a bevel effect, defining the width, height, and preset style for 3D effects on shapes.
 /// </summary>
-public interface BevelType
+public class BevelType: ModelElement
 {
   /// <summary>
   /// Width of the bevel.

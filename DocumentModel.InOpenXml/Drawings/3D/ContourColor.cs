@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents the color used for the contour of a 3D object, supporting multiple color models.
 /// </summary>
-public interface ContourColor
+public class ContourColor: ModelElement
 {
   /// <summary>
   ///   Color specified using the RGB color model with percentage values.

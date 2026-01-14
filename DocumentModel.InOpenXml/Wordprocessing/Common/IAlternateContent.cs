@@ -20,7 +20,7 @@
 ///   offering high-fidelity and simplified versions, or supporting different rendering engines with appropriate
 ///   content variants.
 /// </remarks>
-public interface IAlternateContent
+public class IAlternateContent: ModelElement
 {
   /// <summary>
   ///   Gets or sets the collection of alternate content choices, each representing a different rendering option.

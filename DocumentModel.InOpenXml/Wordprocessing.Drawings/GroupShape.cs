@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents a group shape element within a Wordprocessing document drawing group.
 /// This interface provides access to non-visual properties, group properties, child shapes, graphic frames, pictures, and extension data, enabling hierarchical organization and advanced layout of graphical content.
 /// </summary>
-public interface GroupShape : DMD.OfficeArtExtendableElement
+public interface GroupShape : DMD.IOfficeArtExtendableElement
 {
   /// <summary>
   /// Non-visual properties for the group shape, including identifiers, names, and descriptive information.

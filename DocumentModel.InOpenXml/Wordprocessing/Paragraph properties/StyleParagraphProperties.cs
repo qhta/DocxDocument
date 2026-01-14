@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the set of paragraph properties that are applied to a paragraph through a style definition in a WordprocessingML document.
 /// This interface extends <see cref="ParagraphProperties"/> and is used to specify formatting, layout, and other paragraph-level settings that are inherited from styles, enabling consistent and reusable paragraph formatting across the document.
 /// </summary>
-public interface StyleParagraphProperties : ParagraphProperties
+public class StyleParagraphProperties : ParagraphProperties
 {
 }

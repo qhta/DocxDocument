@@ -1,5 +1,5 @@
 namespace DocumentModel.Vml;
 
-public interface Proxies: IElementCollection<Proxy>
+public class Proxies: ElementCollection<Proxy>
 {
 }

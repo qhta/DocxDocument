@@ -1,25 +1,32 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-///   Rule.
+/// Represents a VML rule, including rule type, alignment, shape reference, and proxies.
 /// </summary>
-public interface Rule: ICollectionItem
+public class Rule: CollectionItem
 {
   /// <summary>
-  ///   Rule ID
+  /// Rule identifier string.
   /// </summary>
   public string? Id { get; set; }
+
   /// <summary>
-  ///   Rule Type
+  /// Specifies the rule type.
   /// </summary>
   public RuleKind? Type { get; set; }
+
   /// <summary>
-  ///   Alignment Rule Type
+  /// Specifies the alignment rule type.
   /// </summary>
   public AlignmentKind? How { get; set; }
+
   /// <summary>
-  ///   Rule Shape Reference
+  /// Reference to the shape associated with this rule.
   /// </summary>
   public string? ShapeReference { get; set; }
-  public Proxies Proxies { get; set; }
+
+  /// <summary>
+  /// Proxies collection associated with this rule.
+  /// </summary>
+  public Proxies? Proxies { get; set; }
 }

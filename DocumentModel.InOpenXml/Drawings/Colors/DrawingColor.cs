@@ -6,7 +6,7 @@
 /// and so on.
 /// It is a partial interface that all drawing color interfaces extend to provide consistent color transformation capabilities.
 /// </summary>
-public interface DrawingColorModifications
+public class DrawingColor: ColorType
 {
 
   /// <summary>

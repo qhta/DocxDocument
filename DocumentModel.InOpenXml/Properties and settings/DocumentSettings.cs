@@ -7,7 +7,14 @@ namespace DocumentModel;
 public class DocumentSettings: ElementCollection<DocumentSetting>
 {
 
+  /// <summary>
+  /// Open XML settings to get/set values from/to.
+  /// </summary>
   internal DXWP.Settings? OpenXmlSettings { get; private set; }
+  /// <summary>
+  /// Gets the configuration settings for word processing operations.
+  /// </summary>
+  internal DMW.DocumentSettings? WordprocessingSettings { get; private set; }
 
 
   /// <summary>
@@ -23,6 +30,7 @@ public class DocumentSettings: ElementCollection<DocumentSetting>
   /// <param name="document">Wordprocessing document model</param>
   public DocumentSettings(Wordprocessing.Document document)
   {
+    WordprocessingSettings = document.DocumentSettings;
     OpenXmlSettings = document.WordprocessingDocument?.GetDocumentSettings();
     GetValuesFromOpenXmlWordprocessingSettings();
     document.PropertyChanged += Document_PropertyChanged;

@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the name of the function in the Function-Apply object func. 
 ///   For example, function names are sin and cos.
 /// </summary>
-public interface FunctionName: ElementCollection<MathArgumentContent>
+public interface FunctionName: IElementCollection<IMathArgumentContent>
 {
   /// <summary>
   ///   Specifies properties of argument object.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the color settings for the extrusion effect of a drawing element in a Wordprocessing document.
 /// This interface provides properties for specifying the extrusion color using either an RGB value or a scheme color, enabling flexible color customization for 3D effects.
 /// </summary>
-public interface ExtrusionColor
+public class ExtrusionColor: ModelElement
 {
   /// <summary>
   /// The RGB color value used for the extrusion, allowing precise color specification.

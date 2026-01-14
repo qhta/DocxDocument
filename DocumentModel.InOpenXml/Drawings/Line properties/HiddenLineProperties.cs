@@ -1,68 +1,72 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Represents hidden line properties for a drawing element, including width, cap, compound type, alignment, fill, dash, join, end properties, and extensions.
+/// Represents hidden line properties for a drawing element, including width, cap, compound type, alignment, fill, dash, join, end properties, and extensions.
 /// </summary>
-public interface HiddenLineProperties : LinePropertiesExtendableElement
+public class HiddenLineProperties : CollectionItem, ILinePropertiesExtendableElement
 {
   /// <summary>
-  ///   Line width.
+  /// Specifies the line width in EMUs.
   /// </summary>
   public Int32? Width { get; set; }
 
   /// <summary>
-  ///   Line cap type.
+  /// Specifies the line cap type (e.g., flat, round, square).
   /// </summary>
   public LineCapKind? CapType { get; set; }
 
   /// <summary>
-  ///   Compound line type.
+  /// Specifies the compound line type (e.g., single, double, triple).
   /// </summary>
   public CompoundLineKind? CompoundLineType { get; set; }
 
   /// <summary>
-  ///   Pen alignment.
+  /// Specifies the pen alignment for the line.
   /// </summary>
   public PenAlignmentKind? Alignment { get; set; }
 
   /// <summary>
-  ///   Fill formatting for the line.
+  /// Specifies the fill formatting for the line.
   /// </summary>
   public Fill? Fill { get; set; }
 
   /// <summary>
-  ///   Preset dash style for the line.
+  /// Specifies the preset dash style for the line.
   /// </summary>
   public PresetLineDashKind? PresetDash { get; set; }
 
   /// <summary>
-  ///   Custom dash pattern for the line.
+  /// Specifies the custom dash pattern for the line.
   /// </summary>
   public CustomDash? CustomDash { get; set; }
 
   /// <summary>
-  ///   Indicates a round line join.
+  /// Indicates that a round line join is used.
   /// </summary>
   public bool? Round { get; set; }
 
   /// <summary>
-  ///   Indicates an angle (bevel) joint is used to connect lines.
+  /// Indicates that an angle (bevel) joint is used to connect lines.
   /// </summary>
   public bool? LineJoinBevel { get; set; }
 
   /// <summary>
-  ///   Specifies that a line join shall be mitered.
+  /// Specifies that a line join shall be mitered.
   /// </summary>
   public Miter? Miter { get; set; }
 
   /// <summary>
-  ///   Properties for the head end of the line.
+  /// Specifies properties for the head end of the line.
   /// </summary>
   public LineEndPropertiesType? HeadEnd { get; set; }
 
   /// <summary>
-  ///   Properties for the tail end of the line.
+  /// Specifies properties for the tail end of the line.
   /// </summary>
   public LineEndPropertiesType? TailEnd { get; set; }
 
+  /// <summary>
+  /// Specifies the extension list for additional line properties.
+  /// </summary>
+  public LinePropertiesExtensionList? LinePropertiesExtensionList { get; set; }
 }

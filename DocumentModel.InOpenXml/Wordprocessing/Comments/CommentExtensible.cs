@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Specifies additional information about comments in the document.
 /// This interface provides properties for durable identifiers, UTC date information, intelligent placeholder status, and extension data, enabling advanced tracking, management, and extensibility of comment metadata and behaviors in WordprocessingML documents.
 /// </summary>
-public interface CommentExtensible
+public class CommentExtensible: ModelElement
 {
   /// <summary>
   /// Identifier for the associated comment. Values must be greater than 0 and less than 0x7FFFFFFF.

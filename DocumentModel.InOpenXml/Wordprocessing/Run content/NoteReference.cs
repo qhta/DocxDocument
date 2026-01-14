@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents a footnote, endnote, or annotation reference in a text run in WordprocessingML documents.
   /// A note reference is a run of automatically numbered text referencing a specific footnote, endnote, or annotation within the parent document, inheriting the reference mark numbering. Note references within a footnote or endnote are non-conformant.
   /// </summary>
-  public interface NoteReference : RunContent
+  public interface NoteReference : IRunContent
   {
     
     /// <summary>

@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Regroup Entry.
 /// </summary>
-public interface Entry: ICollectionItem
+public class Entry: CollectionItem
 {
   /// <summary>
   ///   New Group ID

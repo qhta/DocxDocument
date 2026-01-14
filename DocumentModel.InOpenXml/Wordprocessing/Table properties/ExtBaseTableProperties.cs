@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Extended base table properties interface.
 /// Contains additional common properties for table formatting and metadata, which are not applied to <see cref="CurrentTableProperties"/>.
 /// </summary>
-public interface ExtBaseTableProperties : CurrentTableProperties
+public class ExtBaseTableProperties : CurrentTableProperties
 {
 
   /// <summary>
