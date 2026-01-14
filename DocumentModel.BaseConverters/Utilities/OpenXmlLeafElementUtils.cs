@@ -7,10 +7,13 @@ public static class OpenXmlLeafElementUtils
 {
 
   /// <summary>
-  /// Gets an enum type value from the specified OpenXml OpenXmlLeafElement parameter
-  /// having OpenXml EnumValue "Val" property.
+  /// Retrieves an enum type value from the specified OpenXmlLeafElement parameter
+  /// which has an OpenXml EnumValue "Val" property.
   /// </summary>
-  /// <param name="_element"></param>
+  /// <typeparam name="EnumType">The target enum type.</typeparam>
+  /// <typeparam name="ElementType">The specific OpenXmlLeafElement type.</typeparam>
+  /// <param name="_element">The OpenXmlLeafElement instance.</param>
+  /// <returns>The converted enum value, or null if retrieval fails.</returns>
   public static EnumType? GetEnumVal<EnumType, ElementType>(this DX.OpenXmlLeafElement _element) where EnumType : struct
   where ElementType : DX.OpenXmlLeafElement
   {

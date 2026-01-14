@@ -6,10 +6,10 @@
 public static class OpenXmlLeafTextElementUtils
 {
   /// <summary>
-  /// Gets a boolean value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves a boolean value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The boolean value, or null if conversion fails.</returns>
   public static bool? AsBoolean(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -22,10 +22,10 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets an int value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves an int value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The int value, or null if conversion fails.</returns>
   public static int? AsInt(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -38,10 +38,10 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets a short int value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves a short int value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The short value, or null if conversion fails.</returns>
   public static short? AsShort(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -54,10 +54,10 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets a long int value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves a long int value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The long value, or null if conversion fails.</returns>
   public static long? AsLong(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -70,10 +70,10 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets a signed byte value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves a signed byte value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The signed byte value, or null if conversion fails.</returns>
   public static sbyte? AsSByte(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -86,10 +86,10 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets an unsigned byte value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves an unsigned byte value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The byte value, or null if conversion fails.</returns>
   public static byte? AsByte(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -102,10 +102,10 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets an unsigned int value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves an unsigned int value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The uint value, or null if conversion fails.</returns>
   public static uint? AsUInt(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -118,10 +118,10 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets an unsigned short int value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves an unsigned short int value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The ushort value, or null if conversion fails.</returns>
   public static ushort? AsUShort(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -134,10 +134,10 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets an unsigned long int value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves an unsigned long int value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The ulong value, or null if conversion fails.</returns>
   public static ulong? AsULong(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -150,10 +150,10 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets a single-precision real value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves a single-precision real value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The float value, or null if conversion fails.</returns>
   public static float? AsFloat(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -166,10 +166,10 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets a double-precision real value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves a double-precision real value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The double value, or null if conversion fails.</returns>
   public static double? AsDouble(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -182,10 +182,10 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets a decimal-precision real value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves a decimal-precision real value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The decimal value, or null if conversion fails.</returns>
   public static decimal? AsDecimal(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -198,10 +198,10 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets a date time value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves a date time value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The DateTime value, or null if conversion fails.</returns>
   public static DateTime? AsDateTime(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -214,10 +214,10 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets a Guid value from the specified OpenXml OpenXmlLeafTextElement parameter.
+  /// Retrieves a Guid value from the specified OpenXml OpenXmlLeafTextElement parameter.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The Guid value, or null if conversion fails.</returns>
   public static Guid? AsGuid(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -230,11 +230,11 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets an int value from the specified OpenXml OpenXmlLeafTextElement parameter
+  /// Retrieves an int value from the specified OpenXml OpenXmlLeafTextElement parameter
   /// having hexadecimal inner text.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The int value parsed from hex, or null if conversion fails.</returns>
   public static int? AsHexInt(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -247,11 +247,11 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets a byte[] array value from the specified OpenXml OpenXmlLeafTextElement parameter
+  /// Retrieves a byte[] array value from the specified OpenXml OpenXmlLeafTextElement parameter
   /// having Base64Binary inner text.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The byte array, or null if conversion fails.</returns>
   public static byte[]? AsByteArray(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;
@@ -264,11 +264,11 @@ public static class OpenXmlLeafTextElementUtils
   }
 
   /// <summary>
-  /// Gets a byte[] array value from the specified OpenXml OpenXmlLeafTextElement parameter
+  /// Retrieves a byte[] array value from the specified OpenXml OpenXmlLeafTextElement parameter
   /// having Base64Binary inner text where the first four bytes specify length of the result.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The byte array with length prefix handled, or null if conversion fails.</returns>
   public static byte[]? AsLByteArray(this DX.OpenXmlLeafTextElement? element)
   {
     var str = element?.InnerText;

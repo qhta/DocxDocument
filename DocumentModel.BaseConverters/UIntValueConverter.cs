@@ -1,22 +1,45 @@
 ﻿namespace DocumentModel.OpenXml;
 
+/// <summary>
+/// Provides conversion methods for unsigned integer values in Open XML.
+/// </summary>
 public static class UIntValueConverter
 {
+  /// <summary>
+  /// Retrieves a UInt32 value from a DC UnsignedIntegerType element.
+  /// </summary>
+  /// <param name="element">The UnsignedIntegerType element to convert.</param>
+  /// <returns>The UInt32 value, or null if element or value is null.</returns>
   public static UInt32? GetValue(DXDC.UnsignedIntegerType element)
   {
     return element.Val?.Value;
   }
 
+  /// <summary>
+  /// Retrieves a UInt32 value from an Office 2016 DC UnsignedIntegerType element.
+  /// </summary>
+  /// <param name="element">The UnsignedIntegerType element to convert.</param>
+  /// <returns>The UInt32 value, or null if element or value is null.</returns>
   public static UInt32? GetValue(DXO16DC.UnsignedIntegerType element)
   {
     return element.Val?.Value;
   }
 
+  /// <summary>
+  /// Retrieves a UInt32 value from an Office 2016 DCD UnsignedIntegerType element.
+  /// </summary>
+  /// <param name="element">The UnsignedIntegerType element to convert.</param>
+  /// <returns>The UInt32 value, or null if element or value is null.</returns>
   public static UInt32? GetValue(DXO16DCD.UnsignedIntegerType element)
   {
     return element.Val?.Value;
   }
 
+  /// <summary>
+  /// Retrieves a UInt32 value from a LongHexNumberType element by parsing the hex string.
+  /// </summary>
+  /// <param name="element">The LongHexNumberType element to convert.</param>
+  /// <returns>The UInt32 value, or null if element or value is null.</returns>
   public static UInt32? GetValue(DXW.LongHexNumberType element)
   {
     if (element.Val?.Value != null)
@@ -24,6 +47,12 @@ public static class UIntValueConverter
     return null;
   }
 
+  /// <summary>
+  /// Creates a specific OpenXml element based on a UInt32 value.
+  /// </summary>
+  /// <typeparam name="OpenXmlElementType">The type of the OpenXml element to create.</typeparam>
+  /// <param name="value">The UInt32 value to set.</param>
+  /// <returns>A new instance of the element type with the value set.</returns>
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(UInt32 value)
     where OpenXmlElementType : OpenXmlElement, new()
   {
@@ -37,10 +66,10 @@ public static class UIntValueConverter
 
   #region StringValue conversion.
   /// <summary>
-  /// Converts StringValue to UInt32.
+  /// Converts a StringValue to UInt32.
   /// </summary>
-  /// <param name="stringValue">StringValue to Convert</param>
-  /// <returns>UInt32 value of element content (or <c>null</c> if element has no content or conversion is impossible).</returns>
+  /// <param name="stringValue">The StringValue to convert.</param>
+  /// <returns>The UInt32 value, or null if element has no content or conversion fails.</returns>
   public static UInt32? GetValue(StringValue? stringValue)
   {
     if (stringValue?.Value != null)
@@ -52,12 +81,24 @@ public static class UIntValueConverter
   }
 
 
+  /// <summary>
+  /// Creates a StringValue from a UInt32 value.
+  /// </summary>
+  /// <param name="value">The UInt32 value to convert.</param>
+  /// <returns>A new StringValue, or null if the input is null.</returns>
   public static StringValue? CreateStringValue(UInt32? value)
   {
     if (value == null) return null;
     return new StringValue { Value = value.ToString() };
   }
 
+  /// <summary>
+  /// Sets a UInt32 value on a specific child element of a composite element.
+  /// Adds the child element if needed, or removes it if the value is null.
+  /// </summary>
+  /// <typeparam name="ElementType">The type of the child element.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <param name="value">The UInt32 value to set.</param>
   public static void SetValue<ElementType>(OpenXmlCompositeElement openXmlElement, UInt32? value)
     where ElementType : OpenXmlLeafElement, new()
   {

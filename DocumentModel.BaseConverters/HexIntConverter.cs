@@ -1,17 +1,20 @@
 ﻿namespace DocumentModel.OpenXml;
 
+/// <summary>
+/// Provides conversion methods for HexInt values (hexadecimal integers) in Open XML.
+/// </summary>
 public static class HexIntConverter
 {
 
   #region HexInt get methods
 
   /// <summary>
-  /// Gets a HexInt value from OpenXmlCompositeElement containing OpenXmlElementType element with a "Val" property.
-  /// This property may be of DXW.LongHexNumberType or any other type which has a string value expressing hexadecimal int.
+  /// Retrieves a HexInt value from a child element within an OpenXmlCompositeElement.
+  /// Checks for LongHexNumberType elements or elements with a "Val" property compatible with hex strings.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <returns></returns>
+  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <returns>A HexInt value, or null if the element or value is not found.</returns>
   public static HexInt? GetHexIntVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where OpenXmlElementType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
@@ -45,13 +48,14 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Sets the specified HexInt value to the OpenXmlCompositeElement containing OpenXmlElementType element with a "Val" property
-  /// This property may be of DXW.LongHexNumberType or HexBinaryValue or StringValue.
+  /// Sets a HexInt value on a child element within an OpenXmlCompositeElement.
+  /// Creates the element if it doesn't exist, or removes it if the value is null.
+  /// Supports LongHexNumberType, HexBinaryValue, and StringValue properties.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <param name="value"></param>
-  /// <exception cref="InvalidOperationException"></exception>
+  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <param name="value">The HexInt value to set.</param>
+  /// <exception cref="InvalidOperationException">Thrown if the "Val" property type is unsupported.</exception>
   public static void SetHexIntVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement openXmlElement, HexInt? value) where OpenXmlElementType : DX.OpenXmlElement
   {
     if (value != null)
@@ -95,10 +99,10 @@ public static class HexIntConverter
   #region HexBinaryValue get/set methods.
 
   /// <summary>
-  /// Gets a HexInt value from the specified OpenXml HexBinaryValue.
+  /// Retrieves a HexInt value from a HexBinaryValue element.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The HexBinaryValue element.</param>
+  /// <returns>A HexInt value, or null if element or value is null.</returns>
   public static HexInt? GetValue(this DX.HexBinaryValue? element)
   {
     if (element?.Value != null)
@@ -107,10 +111,11 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Gets a HexInt value from the specified OpenXml Int32Value.
+  /// Retrieves a HexInt value from an Int32Value element (interpreting integer as hex if applicable, commonly used for indexed colors).
+  /// Note: This method currently returns the string representation of the integer value.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The Int32Value element.</param>
+  /// <returns>A HexInt value, or null if element or value is null.</returns>
   public static HexInt? GetValue(this DX.Int32Value? element)
   {
     if (element?.Value != null)
@@ -119,10 +124,11 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Gets a HexInt value from the specified OpenXml Int32Value.
+  /// Retrieves a HexInt value from a UInt32Value element.
+  /// Note: This method currently returns the string representation of the integer value.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The UInt32Value element.</param>
+  /// <returns>A HexInt value, or null if element or value is null.</returns>
   public static HexInt? GetValue(this DX.UInt32Value? element)
   {
     if (element?.Value != null)
@@ -131,10 +137,10 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Gets a HexInt value from the specified OpenXml LongHexNumberType.
+  /// Retrieves a HexInt value from a LongHexNumberType element.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The LongHexNumberType element.</param>
+  /// <returns>A HexInt value, or null if element or value is null.</returns>
   public static HexInt? GetValue(this DXW.LongHexNumberType? element)
   {
     if (element?.Val?.Value != null)
@@ -143,10 +149,10 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Gets a HexInt value from the specified OpenXml StringValue.
+  /// Retrieves a HexInt value from a StringValue element.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The StringValue element.</param>
+  /// <returns>A HexInt value, or null if element or value is null.</returns>
   public static HexInt? GetValue(this DX.StringValue? element)
   {
     if (element?.Value != null)
@@ -155,11 +161,10 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Gets a HexInt value from the specified OpenXml OpenXmlLeafElement
-  /// which has a property of HexBinaryValue type.
+  /// Retrieves a HexInt value from an OpenXmlLeafElement that has a property of HexBinaryValue type.
   /// </summary>
-  /// <param name="openXmlElement"></param>
-  /// <returns></returns>
+  /// <param name="openXmlElement">The OpenXmlLeafElement.</param>
+  /// <returns>A HexInt value, or null if property not found or value is null.</returns>
   public static HexInt? GetValue(this DX.OpenXmlLeafElement? openXmlElement)
   {
     var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item => item.PropertyType == typeof(HexBinaryValue));
@@ -175,10 +180,10 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Creates a HexBinaryValue from the specified HexInt value.
+  /// Creates a HexBinaryValue from a HexInt value.
   /// </summary>
-  /// <param name="value"></param>
-  /// <returns></returns>
+  /// <param name="value">The HexInt value.</param>
+  /// <returns>A new HexBinaryValue, or null if the input value is null.</returns>
   public static DX.HexBinaryValue? CreateHexBinaryValue(this HexInt? value)
   {
     if (value != null) return new DX.HexBinaryValue(value.ToString());
@@ -186,10 +191,10 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Creates a StringValue from the specified HexInt value.
+  /// Creates a StringValue from a HexInt value.
   /// </summary>
-  /// <param name="value"></param>
-  /// <returns></returns>
+  /// <param name="value">The HexInt value.</param>
+  /// <returns>A new StringValue, or null if the input value is null.</returns>
   public static StringValue? CreateStringValue(this HexInt? value)
   {
     if (value == null) return null;
@@ -198,11 +203,11 @@ public static class HexIntConverter
 
 
   /// <summary>
-  /// Creates a specified HexBinaryType value from the specified HexInt value.
+  /// Creates a specific HexBinaryType element from a HexInt value.
   /// </summary>
-  /// <typeparam name="HexBinaryType"></typeparam>
-  /// <param name="value"></param>
-  /// <returns></returns>
+  /// <typeparam name="HexBinaryType">The type of the element to create (e.g., LongHexNumberType).</typeparam>
+  /// <param name="value">The HexInt value.</param>
+  /// <returns>A new instance of the element type, or null if the input value is null.</returns>
   public static HexBinaryType? CreateValue<HexBinaryType>(this HexInt? value)
     where HexBinaryType : DXW.LongHexNumberType, new()
   {
@@ -216,12 +221,11 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Creates a specified OpenXmlElementType value from the specified HexInt value
-  /// and sets its first property which is of HexBinaryValue type.
+  /// Creates a generic OpenXml element and sets its HexBinaryValue property from a HexInt value.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="value"></param>
-  /// <returns></returns>
+  /// <typeparam name="OpenXmlElementType">The type of the OpenXml element to create.</typeparam>
+  /// <param name="value">The HexInt value.</param>
+  /// <returns>A new instance of the element type, or a default instance if value is null.</returns>
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(this HexInt? value)
     where OpenXmlElementType : DX.OpenXmlElement, new()
   {
@@ -236,6 +240,13 @@ public static class HexIntConverter
 
 
   #region OpenXmlLeafElement with Val property conversion methods
+  /// <summary>
+  /// Retrieves a HexInt value from a specific OpenXmlLeafElement instance using its "Val" property.
+  /// </summary>
+  /// <typeparam name="OpenXmlElementType">The type of the OpenXmlLeafElement.</typeparam>
+  /// <param name="openXmlElement">The element instance.</param>
+  /// <param name="propName">The property name to read from (default is "Val").</param>
+  /// <returns>A HexInt value, or null if not found.</returns>
   public static HexInt? GetHexIntVal<OpenXmlElementType> (this DX.OpenXmlLeafElement? openXmlElement, 
     string? propName = null) 
     where OpenXmlElementType : DX.OpenXmlLeafElement
@@ -266,6 +277,14 @@ public static class HexIntConverter
     return null;
   }
 
+  /// <summary>
+  /// Sets a HexInt value on a specific OpenXmlLeafElement instance using its "Val" property.
+  /// Adds the child element if needed, or removes it if the value is null.
+  /// </summary>
+  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
+  /// <param name="openXmlElement">The parent element.</param>
+  /// <param name="value">The string value to set.</param>
+  /// <param name="propName">The property name to set (default is "Val").</param>
   public static void SetHexIntVal<OpenXmlElementType>(this OpenXmlLeafElement openXmlElement, String? value,
     string? propName = null) 
     where OpenXmlElementType : OpenXmlLeafElement, new()
@@ -293,6 +312,13 @@ public static class HexIntConverter
   #endregion
 
   #region OpenXmlLeafElement with Val property conversion methods
+  /// <summary>
+  /// Retrieves a HexInt value from a specific child element of a composite element.
+  /// </summary>
+  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <param name="propName">The property name to read from (default is "Val").</param>
+  /// <returns>A HexInt value, or null if not found.</returns>
   public static HexInt? GetHexIntVal<OpenXmlElementType> (this DX.OpenXmlCompositeElement? openXmlElement, 
     string? propName = null) 
     where OpenXmlElementType : DX.OpenXmlLeafElement
@@ -323,6 +349,14 @@ public static class HexIntConverter
     return null;
   }
 
+  /// <summary>
+  /// Sets a HexInt value on a specific child element of a composite element.
+  /// Adds the child element if needed, or removes it if the value is null.
+  /// </summary>
+  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <param name="value">The string value to set.</param>
+  /// <param name="propName">The property name to set (default is "Val").</param>
   public static void SetHexIntVal<OpenXmlElementType>(this OpenXmlCompositeElement openXmlElement, String? value,
     string? propName = null) 
     where OpenXmlElementType : OpenXmlLeafElement, new()
@@ -350,11 +384,11 @@ public static class HexIntConverter
   #endregion
 
   /// <summary>
-  /// Sets a HexInt value in the specified OpenXmlCompositeElement containing OpenXmlElementType element with a "Val" property.
+  /// Sets a HexInt value in the specified OpenXmlCompositeElement either by updating an existing child or adding a new one.
   /// </summary>
-  /// <typeparam name="OpenElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <param name="value"></param>
+  /// <typeparam name="OpenElementType">The type of the child element.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <param name="value">The HexInt value to set. If null, the child element is removed.</param>
   public static void SetValue<OpenElementType>(this OpenXmlCompositeElement openXmlElement, HexInt? value)
     where OpenElementType : OpenXmlElement, new()
   {

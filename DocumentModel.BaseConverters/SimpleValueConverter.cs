@@ -1,8 +1,17 @@
 ﻿namespace DocumentModel.OpenXml;
 
+/// <summary>
+/// Provides conversion methods for simple value types in Open XML elements.
+/// </summary>
 public static class SimpleValueConverter
 {
   #region SimpleValue
+  /// <summary>
+  /// Retrieves the value of an OpenXmlComparableSimpleValue element.
+  /// </summary>
+  /// <typeparam name="T">The underlying value type.</typeparam>
+  /// <param name="element">The OpenXmlComparableSimpleValue element.</param>
+  /// <returns>The value of the element, or null if the element or its value is null.</returns>
   public static T? GetValue<T>(OpenXmlComparableSimpleValue<T>? element)
     where T : struct, IComparable, IComparable<T>, IEquatable<T>
   {
@@ -11,6 +20,13 @@ public static class SimpleValueConverter
     return element.Value;
   }
 
+  /// <summary>
+  /// Sets the value of a specific element type within an OpenXmlCompositeElement.
+  /// </summary>
+  /// <typeparam name="ElementType">The type of the OpenXmlElement to set.</typeparam>
+  /// <typeparam name="T">The type of the value to set.</typeparam>
+  /// <param name="openXmlElement">The parent OpenXmlCompositeElement.</param>
+  /// <param name="value">The value to set. If null, the element is removed if it exists.</param>
   public static void SetValue<ElementType, T>(OpenXmlCompositeElement openXmlElement, T? value)
     where ElementType: OpenXmlElement, new()
      where T : struct, IComparable, IComparable<T>, IEquatable<T>
@@ -43,6 +59,11 @@ public static class SimpleValueConverter
     }
   }
 
+  /// <summary>
+  /// Removes a specific element type from an OpenXmlCompositeElement, effectively setting its value to null.
+  /// </summary>
+  /// <typeparam name="ElementType">The type of the OpenXmlElement to remove.</typeparam>
+  /// <param name="openXmlElement">The parent OpenXmlCompositeElement.</param>
   public static void SetNullValue<ElementType>(OpenXmlCompositeElement openXmlElement)
     where ElementType: OpenXmlElement, new()
   {

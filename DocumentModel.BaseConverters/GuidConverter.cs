@@ -8,11 +8,11 @@ public static class GuidConverter
   #region Guid get/set methods
 
   /// <summary>
-  /// Gets a Guid value from OpenXmlCompositeElement containing OpenXmlElementType element with a "Val" property.
+  /// Retrieves a Guid value from a child element within an OpenXmlCompositeElement.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <returns></returns>
+  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <returns>The Guid value, or null if not found.</returns>
   public static Guid? GetGuidVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where OpenXmlElementType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
@@ -40,12 +40,12 @@ public static class GuidConverter
   }
 
   /// <summary>
-  /// Sets the Guid value in OpenXmlCompositeElement containing OpenXmlElementType element with a "Val" property.
+  /// Sets a Guid value on a child element within an OpenXmlCompositeElement.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <param name="value"></param>
-  /// <exception cref="InvalidOperationException"></exception>
+  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <param name="value">The Guid value to set. If null, the child element is removed.</param>
+  /// <exception cref="InvalidOperationException">Thrown if the child element's "Val" property is not of type StringValue.</exception>
   public static void SetGuidVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement openXmlElement, Guid? value) where OpenXmlElementType : DX.OpenXmlLeafElement
   {
     if (value != null)

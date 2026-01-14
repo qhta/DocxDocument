@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Converter of Int64 values
+/// Provides conversion methods for Int64 values in Open XML.
 /// </summary>
 public static class Int64ValueConverter
 {
@@ -9,10 +9,10 @@ public static class Int64ValueConverter
   #region OpenXmlLeafTextElement conversion.
 
   /// <summary>
-  /// Converts text content of LeafTextElement to Int64.
+  /// Converts the text content of an OpenXmlLeafTextElement to an Int64 value.
   /// </summary>
-  /// <param name="element">LeafTextElement to convert.</param>
-  /// <returns>Int64 value of element content (or <c>null</c> if element has no content or conversion is impossible).</returns>
+  /// <param name="element">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The Int64 value of the element content, or null if conversion fails.</returns>
   public static Int64? GetValue(OpenXmlLeafTextElement? element)
   {
     if (element?.Text != null)
@@ -24,11 +24,11 @@ public static class Int64ValueConverter
   }
 
   /// <summary>
-  /// Creates a specific OpenXmlLeafText element based on Int64 value.
+  /// Creates a specific OpenXmlLeafTextElement based on an Int64 value.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType">Can be any OpenXmlLeadTextElement type</typeparam>
-  /// <param name="value">value to convert</param>
-  /// <returns>Newly created OpenXmlElement (or <c>null</c> if conversion is impossible</returns>
+  /// <typeparam name="OpenXmlElementType">The type of the OpenXmlLeafTextElement to create.</typeparam>
+  /// <param name="value">The Int64 value to set.</param>
+  /// <returns>A new instance of the element with the text set to the Int64 value, or null if value is null.</returns>
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Int64? value)
     where OpenXmlElementType : OpenXmlLeafTextElement, new()
   {
@@ -41,10 +41,10 @@ public static class Int64ValueConverter
 
   #region StringValue conversion.
   /// <summary>
-  /// Converts StringValue to Int64.
+  /// Converts a StringValue to an Int64 value.
   /// </summary>
-  /// <param name="stringValue">StringValue to Convert</param>
-  /// <returns>Int64 value of element content (or <c>null</c> if element has no content or conversion is impossible).</returns>
+  /// <param name="stringValue">The StringValue object to convert.</param>
+  /// <returns>The Int64 value, or null if the value is null or conversion fails.</returns>
   public static Int64? GetValue(StringValue? stringValue)
   {
     if (stringValue?.Value != null)
@@ -56,9 +56,10 @@ public static class Int64ValueConverter
   }
 
     /// <summary>
-  /// Sets a specific OpenXml StringValue element based on Int64 value.
+  /// Sets the value of a StringValue element based on an Int64 value.
   /// </summary>
-  /// <param name="value">value to convert</param>
+  /// <param name="openXmlElement">The StringValue element to update.</param>
+  /// <param name="value">The Int64 value to set.</param>
   public static void SetStringValue(DX.StringValue openXmlElement, Int64? value)
   {
     if (value!=null)
@@ -68,9 +69,10 @@ public static class Int64ValueConverter
   }
 
       /// <summary>
-  /// Creates a specific OpenXml StringValue element based on Int64 value.
+  /// Creates a new StringValue element based on an Int64 value.
   /// </summary>
-  /// <param name="value">value to convert</param>
+  /// <param name="value">The Int64 value.</param>
+  /// <returns>A new StringValue element, or null if the input value is null.</returns>
   public static StringValue? CreateStringValue(Int64? value)
   {
     if (value!=null)
