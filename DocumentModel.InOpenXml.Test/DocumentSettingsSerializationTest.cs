@@ -38,7 +38,6 @@ namespace DocumentModel.InOpenXml.Test
           xmlString = stringWriter.ToString();
         }
         Console.WriteLine("Serialized XML:\n" + xmlString);
-        if (xmlString.Length > 1000) Console.WriteLine("...");
 
         DocumentSettings? deserialized;
         using (var stringReader = new StringReader(xmlString))
@@ -74,7 +73,6 @@ namespace DocumentModel.InOpenXml.Test
         var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
         string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
         Console.WriteLine("Serialized JSON:\n" + jsonString);
-        if (jsonString.Length > 1000) Console.WriteLine("...");
 
         var deserialized = JsonSerializer.Deserialize<DocumentSettings>(jsonString, jsonOptions);
         if (deserialized == null)
@@ -199,68 +197,69 @@ namespace DocumentModel.InOpenXml.Test
         UICompatibleWith97To2003 = false,
         UpdateFieldsOnOpen = true,
         UseXsltWhenSaving = false,
-        View = ViewKind.Print
-        //ActiveWritingStyles = new ActiveWritingStyles([
-        //  new ActiveWritingStyle
-        //  {
-        //  ApplicationName = "MyApp",
-        //  CheckStyle = true,
-        //  DllVersion = 1,
-        //  VendorID = 1234,
-        //  Language = "en-US",
-        //  NaturalLanguageGrammarCheck = true
-        //},
-        //new ActiveWritingStyle
-        //  {
-        //    ApplicationName = "AnotherApp",
-        //    CheckStyle = false,
-        //    DllVersion = 2,
-        //    VendorID = 5678,
-        //    Language = "fr-FR",
-        //    NaturalLanguageGrammarCheck = false
-        //  }
-        //]),
-        //AttachedSchemas = new AttachedSchemas([
-        //  new Schema
-        //  {
-        //    Uri = "http://example.com/schema1",
-        //    ManifestLocation = "schema1.xsd",
-        //    SchemaLocation = "Schema1"
-        //  },
-        //  new Schema
-        //  {
-        //    Uri = "http://example.com/schema2",
-        //    ManifestLocation = "schema2.xsd",
-        //    SchemaLocation = "Schema2"
-        //  }
-        //]),
-        //AttachedTemplate = new AttachedTemplate("http://example.com/template.dotx"),
-        //Captions = new Captions{
-        //  CaptionDefinitions = new CaptionDefinitions([
-        //    new CaptionDefinition
-        //    {
-        //      Name = "Figure",
-        //      Position = CaptionPositionKind.Below
-        //    },
-        //    new CaptionDefinition
-        //    {
-        //      Name = "Table",
-        //      Position = CaptionPositionKind.Above
-        //    }
-        //  ]),
-        //  AutoCaptions = new AutoCaptions([
-        //    new AutoCaption
-        //    {
-        //      Name = "Figure",
-        //      Caption = "Fig.",
-        //    },
-        //    new AutoCaption
-        //    {
-        //      Name = "Table",
-        //      Caption = "Tab.",
-        //    }
-        //  ])
-        //}
+        View = ViewKind.Print,
+        ActiveWritingStyles = new ActiveWritingStyles([
+          new ActiveWritingStyle
+          {
+          ApplicationName = "MyApp",
+          CheckStyle = true,
+          DllVersion = 1,
+          VendorID = 1234,
+          Language = "en-US",
+          NaturalLanguageGrammarCheck = true
+        },
+        new ActiveWritingStyle
+        {
+          ApplicationName = "AnotherApp",
+          CheckStyle = false,
+          DllVersion = 2,
+          VendorID = 5678,
+          Language = "fr-FR",
+          NaturalLanguageGrammarCheck = false
+        }
+        ]),
+        AttachedSchemas = new AttachedSchemas([
+          new Schema
+          {
+            Uri = "http://example.com/schema1",
+            ManifestLocation = "schema1.xsd",
+            SchemaLocation = "Schema1"
+          },
+          new Schema
+          {
+            Uri = "http://example.com/schema2",
+            ManifestLocation = "schema2.xsd",
+            SchemaLocation = "Schema2"
+          }
+        ]),
+        AttachedTemplate = new AttachedTemplate("http://example.com/template.dotx"),
+        Captions = new Captions
+        {
+          CaptionDefinitions = new CaptionDefinitions([
+            new CaptionDefinition
+            {
+              Name = "Figure",
+              Position = CaptionPositionKind.Below
+            },
+            new CaptionDefinition
+            {
+              Name = "Table",
+              Position = CaptionPositionKind.Above
+            }
+          ]),
+          AutoCaptions = new AutoCaptions([
+            new AutoCaption
+            {
+              Name = "Figure",
+              Caption = "Fig.",
+            },
+            new AutoCaption
+            {
+              Name = "Table",
+              Caption = "Tab.",
+            }
+          ])
+        }
 
 
       };
@@ -337,8 +336,11 @@ namespace DocumentModel.InOpenXml.Test
              a.UICompatibleWith97To2003 == b.UICompatibleWith97To2003 &&
              a.UpdateFieldsOnOpen == b.UpdateFieldsOnOpen &&
              a.UseXsltWhenSaving == b.UseXsltWhenSaving &&
-             a.View == b.View; //&&
-             //Equals(a.ActiveWritingStyles, b.ActiveWritingStyles);
+             a.View == b.View &&
+             Equals(a.ActiveWritingStyles, b.ActiveWritingStyles) &&
+             Equals(a.AttachedSchemas, b.AttachedSchemas) &&
+             Equals(a.AttachedTemplate, b.AttachedTemplate) &&
+             Equals(a.Captions, b.Captions);
     }
 
     static string SerializeToXml(DocumentSettings settings)
