@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a change to table property exceptions, used in <see cref="TablePropertyExceptions"/>.
 /// This interface annotates <see cref="PreviousTablePropertyExceptions"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for table-level exceptions.
 /// </summary>
-public interface TablePropertyExceptionsChange
+public class TablePropertyExceptionsChange: ModelElement
 {
 
   /// <summary>

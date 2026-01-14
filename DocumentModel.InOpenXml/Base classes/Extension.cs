@@ -6,7 +6,8 @@ namespace DocumentModel;
 public class Extension : CollectionItem
 {
   /// <summary>
-  ///   URI that identifies the extension resource or schema.
+  ///   Uri string that identifies the extension resource or schema.
   /// </summary>
+  [XmlAttribute]
   public string? Uri { get; set; }
 }

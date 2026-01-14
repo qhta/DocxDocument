@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents non-visual properties for an ink content part in a Wordprocessing document.
 /// This interface provides configuration for comment status, content part locks, and extension data, enabling control over editing restrictions and extensibility for ink content parts.
 /// </summary>
-public interface NonVisualInkContentPartProperties
+public class NonVisualInkContentPartProperties: ModelElement
 {
   /// <summary>
   /// Indicates whether the ink content part is associated with a comment, distinguishing it from other ink elements.

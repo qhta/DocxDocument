@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a pattern fill, including preset pattern type and foreground/background colors.
 /// </summary>
-public interface PatternFill
+public class PatternFill: ModelElement
 {
   /// <summary>
   ///   Preset pattern type used for the fill.

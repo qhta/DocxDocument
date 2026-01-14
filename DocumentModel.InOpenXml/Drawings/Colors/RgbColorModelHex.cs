@@ -47,7 +47,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public interface RgbColorModelHex: ColorType, Color2Type, DrawingColorModifications
+public class RgbColorModelHex: DrawingColor
 {
   /// <summary>
   /// Base RGB color value in hexadecimal format.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents an identified relationship type in a WordprocessingML document.
   /// This interface provides a property for the relationship ID, enabling advanced linking and referencing of document parts, external files, or resources within the document structure.
   /// </summary>
-  public interface RelationshipType
+  public class RelationshipType: CollectionItem
   {
     
     /// <summary>

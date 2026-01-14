@@ -4,7 +4,7 @@
   /// Represents line spacing settings for a paragraph in a WordprocessingML document.
   /// This interface provides properties for specifying spacing in twentieths of a point, line units, and automatic spacing, enabling advanced control over paragraph layout and readability.
   /// </summary>
-  public interface SpacingBeforeOrAfter
+  public class SpacingBeforeOrAfter: ModelElement
   {
     
     /// <summary>

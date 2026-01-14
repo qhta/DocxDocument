@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Specifies the background for every page of the document containing the background element in a WordprocessingML document.
   /// The document background is the image or fill for the entire page surface, appearing behind all other document content.
   /// </summary>
-  public interface DocumentBackground
+  public class DocumentBackground: ModelElement
   {
     
     /// <summary>

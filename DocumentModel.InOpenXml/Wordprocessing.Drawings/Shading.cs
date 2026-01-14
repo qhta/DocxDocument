@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents shading formatting for a drawing element in a Wordprocessing document.
 /// This interface provides properties for specifying the shading pattern, foreground color, and background color, enabling advanced visual effects for graphical objects.
 /// </summary>
-public interface Shading
+public class Shading: ModelElement
 {
 
   /// <summary>

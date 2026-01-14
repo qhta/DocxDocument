@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic pencil grayscale effect, which simulates a pencil sketch in grayscale with adjustable transparency and brush size.
 /// </summary>
-public interface ArtisticPencilGrayscale
+public class ArtisticPencilGrayscale: ModelElement
 {
   /// <summary>
   /// Transparency level of the pencil grayscale effect.

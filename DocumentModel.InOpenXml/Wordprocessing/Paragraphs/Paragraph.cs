@@ -5,8 +5,8 @@ namespace DocumentModel.Wordprocessing;
 /// This interface extends multiple content and collection interfaces, providing properties for unique identification, revision tracking, spell checking, and paragraph formatting. Enables advanced management, revision, and formatting of paragraph content within the document.
 /// </summary>
 public partial interface Paragraph: IElementCollection<IParagraphContent>,
-  StoryContent, TableCellContent, SdtBlockContent, CustomXmlBlockContent,
-  CommentContent, BidirectionalContent
+  IStoryContent, ITableCellContent, ISdtBlockContent, ICustomXmlBlockContent,
+  ICommentContent, IBidirectionalContent
 {
     
   /// <summary>

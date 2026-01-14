@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents revision information for section properties in a Wordprocessing document.
 /// This interface provides properties for author, date, annotation identifier, and previous section properties, enabling tracking and management of section property revisions.
 /// </summary>
-public interface SectionPropertiesChange : SectionPropertiesContent
+public interface SectionPropertiesChange : ISectionPropertiesContent
 {
   
   /// <summary>

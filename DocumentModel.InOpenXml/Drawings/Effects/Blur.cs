@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a blur effect, allowing the application of a blur with a specified radius and optional bounds growth.
 /// </summary>
-public interface Blur
+public class Blur: ModelElement
 {
   /// <summary>
   /// Radius of the blur effect.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a preset text wrap, including the wrap shape and optional adjustment values.
 /// </summary>
-public interface PresetTextWrap
+public class PresetTextWrap: ModelElement
 {
   /// <summary>
   ///   Preset wrap shape for the text wrap.

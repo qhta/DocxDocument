@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Document Background.
 /// </summary>
-public interface Background
+public class Background: ModelElement
 {
   /// <summary>
   ///   Unique Identifier

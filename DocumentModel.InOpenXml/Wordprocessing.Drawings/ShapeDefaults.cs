@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the default properties for VML (Vector Markup Language) objects in the main document of a Wordprocessing file.
 /// This interface provides access to child shape defaults and shape layout settings, enabling consistent formatting and layout for VML shapes throughout the document.
 /// </summary>
-public interface ShapeDefaults
+public class ShapeDefaults: ModelElement
 {
 
   /// <summary>

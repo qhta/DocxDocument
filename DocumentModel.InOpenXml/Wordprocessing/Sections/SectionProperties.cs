@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// If it occurs as the last body element, then it specifies the properties of the last section of the document.
 /// For any other section the properties are stored as a child element of the paragraph element corresponding to the last paragraph in the given section.
 /// </summary>
-public interface SectionProperties : BaseSectionProperties, StoryContent
+public interface SectionProperties : BaseSectionProperties, IStoryContent
 {
   
   /// <summary>

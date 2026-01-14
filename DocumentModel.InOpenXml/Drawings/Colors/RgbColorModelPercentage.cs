@@ -53,7 +53,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public interface RgbColorModelPercentage: ColorType, Color2Type, DrawingColorModifications
+public class RgbColorModelPercentage: DrawingColor
 {
   /// <summary>
   /// Red component as a percentage value.

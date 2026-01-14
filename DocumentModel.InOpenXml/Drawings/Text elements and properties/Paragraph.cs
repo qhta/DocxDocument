@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a text paragraph, including properties, runs, breaks, fields, math, and end run formatting.
 /// </summary>
-public interface Paragraph
+public class Paragraph: ModelElement
 {
   /// <summary>
   ///   Properties for the text paragraph.

@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the set of 3D properties for a drawing element in a Wordprocessing document.
 /// This interface provides configuration for extrusion height, contour width, preset material, bevel effects, and color settings, enabling advanced 3D appearance and rendering for graphical objects.
 /// </summary>
-public interface Properties3D : TypedModelElement, DrawingProperty
+public class Properties3D : DrawingProperty
 {
   /// <summary>
   /// The height of the extrusion effect, specified in EMUs (English Metric Units), determining the depth of the 3D extrusion.

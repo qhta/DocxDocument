@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents document-wide properties for endnotes in a WordprocessingML document.
 /// This interface provides properties for endnote placement, numbering format, starting value, restart location, and special endnote references, enabling advanced configuration and management of endnote behavior and formatting across the entire document.
 /// </summary>
-public interface EndnoteDocumentWideProperties
+public class EndnoteDocumentWideProperties: ModelElement
 {
   
   /// <summary>

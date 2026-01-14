@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a reflection effect, including blur, opacity, position, distance, direction, scaling, skew, alignment, and rotation options.
 /// </summary>
-public interface Reflection
+public class Reflection: ModelElement
 {
   /// <summary>
   ///   Blur radius of the reflection.

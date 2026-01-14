@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Extended base interface for paragraph properties, containing additional formatting and metadata properties not applied to <see cref="BaseParagraphProperties"/>.
 /// This interface provides support for paragraph style identification, HTML div mapping, and conditional table style formatting, enabling advanced paragraph layout and compatibility features in WordprocessingML documents.
 /// </summary>
-public interface ExtBaseParagraphProperties : BaseParagraphProperties
+public class ExtBaseParagraphProperties : BaseParagraphProperties
 {
   
   /// <summary>

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents revision information for table grid column definitions in a Wordprocessing document.
   /// This interface provides properties for annotation identification and previous table grid configuration, enabling tracking and management of grid revisions.
   /// </summary>
-  public interface TableGridChange
+  public class TableGridChange: ModelElement
   {
     
     /// <summary>

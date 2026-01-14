@@ -136,7 +136,7 @@ public static class IntValueConverter
   /// </summary>
   /// <param name="hpsValue">The HpsMeasureType element to convert.</param>
   /// <returns>The Int32 value of the element content, or null if empty or conversion is impossible.</returns>
-  public static Int32? GetValue(DXW.HpsMeasureType? hpsValue)
+  public static Int32? GetValue(DXWP.HpsMeasureType? hpsValue)
   {
     if (hpsValue?.Val != null)
     {
@@ -153,7 +153,7 @@ public static class IntValueConverter
   /// <param name="openXmlElement">The parent composite element.</param>
   /// <param name="value">The value to set. If null, the element is removed.</param>
   public static void SetHpsMeasureType<OpenXmlElementType>(OpenXmlCompositeElement openXmlElement, Int32? value)
-    where OpenXmlElementType : DXW.HpsMeasureType, new()
+    where OpenXmlElementType : DXWP.HpsMeasureType, new()
   {
     var element = openXmlElement.GetFirstChild<OpenXmlElementType>();
     if (element != null && value != null)

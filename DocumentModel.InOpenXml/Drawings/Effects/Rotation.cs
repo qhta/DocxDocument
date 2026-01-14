@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents rotation parameters, including latitude, longitude, and revolution values.
 /// </summary>
-public interface Rotation
+public class Rotation: ModelElement
 {
   /// <summary>
   ///   Latitude value for the rotation.

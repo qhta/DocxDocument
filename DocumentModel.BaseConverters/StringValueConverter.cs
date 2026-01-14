@@ -34,7 +34,7 @@ public static class StringValueConverter
   /// </summary>
   /// <param name="element">The StringType element.</param>
   /// <returns>The string value, or an empty string if result cannot be determined.</returns>
-  public static string? GetValue(DXW.StringType? element)
+  public static string? GetValue(DXWP.StringType? element)
   {
     if (element == null)
       return null;
@@ -49,7 +49,7 @@ public static class StringValueConverter
   /// </summary>
   /// <param name="element">The String255Type element.</param>
   /// <returns>The string value, or an empty string if the value is null.</returns>
-  public static string GetValue(DXW.String255Type element)
+  public static string GetValue(DXWP.String255Type element)
   {
     return element.Val?.Value ?? string.Empty;
   }

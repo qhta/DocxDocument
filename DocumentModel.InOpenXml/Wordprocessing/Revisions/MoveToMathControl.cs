@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a tracked move-to revision for math control elements in a WordprocessingML document.
 /// This interface provides properties for run formatting, inserted math control, and deleted math control, enabling revision tracking and management of mathematical content moves within the document.
 /// </summary>
-public interface MoveToMathControl
+public class MoveToMathControl: ModelElement
 {
   /// <summary>
   /// Run properties for the moved math control, specifying character-level formatting.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a unique creation identifier for a drawing element.
 /// </summary>
-public interface CreationId
+public class CreationId: ModelElement
 {
   /// <summary>
   ///   Unique identifier value.

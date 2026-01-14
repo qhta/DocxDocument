@@ -4,13 +4,13 @@
   /// Represents a tracked change with a unique identifier in a WordprocessingML document.
   /// This interface provides properties for the change ID, author, and date, enabling identification, tracking, and review of individual revisions within the document.
   /// </summary>
-  public interface IdentifiedChange
+  public class IdentifiedChange: CollectionItem
   {
     
     /// <summary>
     /// Unique identifier for the tracked change, used to reference and manage the revision.
     /// </summary>
-    public string Id { get; set; }
+    public string? Id { get; set; }
     
     /// <summary>
     /// Author of the tracked change, identifying the user who made the revision.

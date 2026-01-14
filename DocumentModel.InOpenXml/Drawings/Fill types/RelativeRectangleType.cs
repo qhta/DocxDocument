@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a rectangle defined by relative offsets for each side, used for specifying areas within a parent element.
 /// </summary>
-public interface RelativeRectangleType
+public class RelativeRectangleType: ModelElement
 {
   /// <summary>
   ///   Left offset of the rectangle.

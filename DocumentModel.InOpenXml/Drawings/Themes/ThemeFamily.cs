@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface provides properties for theme family name, unique identifiers, versioning, and OfficeArt extension metadata. It enables flexible theme organization, compatibility management, and extensibility for Office document processing and customization.
 /// </remarks>
-public interface ThemeFamily
+public class ThemeFamily: ModelElement
 {
   /// <summary>
   /// Name of the theme family.

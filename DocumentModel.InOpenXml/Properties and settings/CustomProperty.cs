@@ -86,7 +86,7 @@ public class CustomProperty : DocumentProperty
       {
         _PropertyId = value;
         if (OpenXmlCustomDocumentProperty != null)
-          OpenXmlCustomDocumentProperty.PropertyId = value != null ? new OpenXml.Int32Value(value) : null;
+          OpenXmlCustomDocumentProperty.PropertyId = value != null ? new DX.Int32Value(value) : null;
         NotifyPropertyChanged(nameof(PropertyId));
       }
     }
@@ -112,7 +112,7 @@ public class CustomProperty : DocumentProperty
       {
         _Name = value;
         if (OpenXmlCustomDocumentProperty != null)
-          OpenXmlCustomDocumentProperty.Name = value != null ? new OpenXml.StringValue(value) : null;
+          OpenXmlCustomDocumentProperty.Name = value != null ? new DX.StringValue(value) : null;
         NotifyPropertyChanged(nameof(Name));
       }
     }
@@ -159,7 +159,7 @@ public class CustomProperty : DocumentProperty
       {
         _FormatId = value;
         if (OpenXmlCustomDocumentProperty != null)
-          OpenXmlCustomDocumentProperty.FormatId = value != null ? new OpenXml.StringValue(value.ToString()) : null;
+          OpenXmlCustomDocumentProperty.FormatId = value != null ? new DX.StringValue(value.ToString()) : null;
         NotifyPropertyChanged(nameof(FormatId));
       }
     }
@@ -197,7 +197,7 @@ public class CustomProperty : DocumentProperty
       {
         _LinkTarget = value;
         if (OpenXmlCustomDocumentProperty != null)
-          OpenXmlCustomDocumentProperty.LinkTarget = value != null ? new OpenXml.StringValue(value) : null;
+          OpenXmlCustomDocumentProperty.LinkTarget = value != null ? new DX.StringValue(value) : null;
         NotifyPropertyChanged(nameof(LinkTarget));
       }
     }

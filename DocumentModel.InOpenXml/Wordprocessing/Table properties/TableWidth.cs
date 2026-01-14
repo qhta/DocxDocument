@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// The type of the Value is determined with the Type property.
 /// This interface is used in multiple measures according to table horizontal dimension.
 /// </summary>
-public interface TableWidth
+public class TableWidth: ModelElement
 {
   
   /// <summary>

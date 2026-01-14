@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a luminance effect, allowing adjustment of brightness and contrast for a drawing element.
 /// </summary>
-public interface LuminanceEffect
+public class LuminanceEffect: ModelElement
 {
   /// <summary>
   ///   Brightness adjustment value.

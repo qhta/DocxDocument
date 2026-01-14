@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents a collection of document variables in a WordprocessingML document.
   /// This interface provides access to and management of <see cref="Variable"/> objects, enabling advanced storage, retrieval, and organization of custom metadata or automation variables within the document.
   /// </summary>
-  public interface Variables: IElementCollection<Variable>
+  public class Variables: ElementCollection<Variable>
   {
     
   }

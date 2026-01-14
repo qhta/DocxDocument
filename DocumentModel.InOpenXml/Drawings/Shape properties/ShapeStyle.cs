@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a style for a shape, including references to line, fill, effect, and font formatting.
 /// </summary>
-public interface ShapeStyle
+public class ShapeStyle: ModelElement
 {
   /// <summary>
   ///   Reference to the line formatting for the shape.

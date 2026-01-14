@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Specifies the set of properties that define the behavior, appearance, and functionality of a structured document tag (SDT) in a WordprocessingML document.
   /// This interface provides configuration for identity, data binding, appearance, content type, behavior, locking, and specialized controls, enabling advanced management and customization of SDTs at block, inline, row, or cell level.
   /// </summary>
-  public interface SdtProperties : StoryContent
+  public interface SdtProperties : IStoryContent
   {
     
     /// <summary>

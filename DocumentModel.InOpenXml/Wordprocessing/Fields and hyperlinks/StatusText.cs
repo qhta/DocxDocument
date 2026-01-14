@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents status text associated with a form field in a WordprocessingML document.
 /// This interface provides properties for the type and value of status text, enabling advanced user feedback and contextual information for interactive form fields within documents.
 /// </summary>
-public interface StatusText
+public class StatusText: ModelElement
 {
   
   /// <summary>

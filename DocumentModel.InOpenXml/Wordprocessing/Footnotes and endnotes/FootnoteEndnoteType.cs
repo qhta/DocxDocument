@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Common type for footnote and endnote elements in a WordprocessingML document.
   /// This interface extends <see cref="Story"/> and provides properties for the note type and unique identifier, enabling advanced management, referencing, and formatting of footnotes and endnotes throughout the document.
   /// </summary>
-  public interface FootnoteEndnoteType : Story
+  public class FootnoteEndnoteType : Story
   {
     
     /// <summary>

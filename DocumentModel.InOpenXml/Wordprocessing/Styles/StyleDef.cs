@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents a style definition in a Wordprocessing document.
   /// This interface provides properties for style type, identifiers, inheritance, UI settings, revision tracking, and formatting options, enabling advanced style management and customization for document content.
   /// </summary>
-  public partial interface StyleDef : IEquatable<StyleDef>
+  public partial class StyleDef : IEquatable<StyleDef>
   {
     
     /// <summary>

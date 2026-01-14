@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the set of borders for a table in a Wordprocessing document.
 /// This interface provides properties for configuring the top, left, start, bottom, right, end, inside horizontal, and inside vertical borders, enabling advanced formatting and appearance control for table edges and internal lines.
 /// </summary>
-public interface TableBorders
+public class TableBorders: ModelElement
 {
 
   /// <summary>

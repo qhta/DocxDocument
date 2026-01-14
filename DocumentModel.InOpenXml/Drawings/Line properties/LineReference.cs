@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a reference to a line style, including style matrix index and color information in multiple color models.
 /// </summary>
-public interface LineReference
+public class LineReference: ModelElement
 {
   /// <summary>
   ///   Index into the style matrix for the line style.

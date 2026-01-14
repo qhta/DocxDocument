@@ -6,7 +6,7 @@ namespace DocumentModel.CustomXml;
 /// <remarks>
 ///   This class <see cref="CollectionItem"/> and defines a schema
 ///   reference used to validate and describe the structure of custom XML data stored within Office documents.
-///   Each schema reference includes the schema's namespace URI, optional manifest location for schema discovery,
+///   Each schema reference includes the schema's namespace UriString, optional manifest location for schema discovery,
 ///   and the physical location of the schema file. Multiple schemas can be associated with a single custom XML
 ///   data store through a <see cref="SchemaReferences"/> collection, enabling validation of complex XML structures
 ///   that span multiple namespaces. Schema references support both local and remote schema locations, allowing
@@ -15,13 +15,14 @@ namespace DocumentModel.CustomXml;
 public class Schema: CollectionItem
 {
   /// <summary>
-  ///   Gets or sets the namespace URI that uniquely identifies this XML schema.
+  ///   Gets or sets the namespace UriString that uniquely identifies this XML schema.
   /// </summary>
   /// <remarks>
-  ///   The namespace URI identifies the schema and matches the target namespace defined in the schema file.
+  ///   The namespace UriString identifies the schema and matches the target namespace defined in the schema file.
   ///   This is used to associate XML elements in the custom XML data with their corresponding schema definitions.
   /// </remarks>
-  public Uri? Uri { get; set; }
+  [XmlAttribute]
+  public string? Uri{ get; set; }
 
   /// <summary>
   ///   Gets or sets the location of the resource manifest file for this schema.

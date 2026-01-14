@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic marker effect, which simulates a marker drawing style with adjustable transparency and size.
 /// </summary>
-public interface ArtisticMarker
+public class ArtisticMarker: ModelElement
 {
   /// <summary>
   /// Transparency level of the marker effect.

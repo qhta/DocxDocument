@@ -154,6 +154,6 @@ global using DXVO = DocumentFormat.OpenXml.Vml.Office;
 global using DXVP = DocumentFormat.OpenXml.Vml.Presentation;
 //global using DXVS = DocumentFormat.OpenXml.Vml.Spreadsheet;
 global using DXVW = DocumentFormat.OpenXml.Vml.Wordprocessing;
-global using DXW = DocumentFormat.OpenXml.Wordprocessing;
+global using DXWP = DocumentFormat.OpenXml.Wordprocessing;
 
 global using DM = DocumentModel;

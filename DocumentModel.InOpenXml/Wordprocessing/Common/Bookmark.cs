@@ -9,10 +9,10 @@ public class Bookmark : CollectionItem
   /// <summary>
   /// Start element of the bookmark, specifying the location where the bookmark begins.
   /// </summary>
-  public BookmarkStart Start { get; set; }
+  public BookmarkStart? Start { get; set; }
 
   /// <summary>
   /// End element of the bookmark, specifying the location where the bookmark ends.
   /// </summary>
-  public BookmarkEnd End { get; set; }
+  public BookmarkEnd? End { get; set; }
 }

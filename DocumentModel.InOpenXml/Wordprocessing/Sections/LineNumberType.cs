@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents line numbering settings for a section in a Wordprocessing document.
 /// This interface provides properties for line number increments, starting value, distance between text and line numbers, and restart settings, enabling advanced configuration of line numbering behavior and appearance.
 /// </summary>
-public interface LineNumberType : SectionPropertiesContent
+public interface LineNumberType : ISectionPropertiesContent
 {
   
   /// <summary>

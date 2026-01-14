@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic texturizer effect, which simulates a textured appearance with adjustable transparency and scaling.
 /// </summary>
-public interface ArtisticTexturizer
+public class ArtisticTexturizer: ModelElement
 {
   /// <summary>
   /// Transparency level of the texturizer effect.

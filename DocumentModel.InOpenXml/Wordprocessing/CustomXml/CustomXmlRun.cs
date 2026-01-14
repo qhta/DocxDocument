@@ -6,12 +6,12 @@ namespace DocumentModel.Wordprocessing;
 ///   or around an arbitrary run or set of runs within a document (at the inline level) 
 ///   to provide semantics to that content within the context and structures defined by the associated schema definition.
 /// </summary>
-public interface CustomXmlRun: CustomXmlElement, 
+public class CustomXmlRun: CustomXmlElement, 
   IParagraphContent, 
-  RunContent, 
-  SdtRunContent, 
-  TableContent, 
-  BidirectionalContent, 
+  IRunContent, 
+  ISdtRunContent, 
+  ITableContent, 
+  IBidirectionalContent, 
   DMM.IMathArgumentContent
 {
 }

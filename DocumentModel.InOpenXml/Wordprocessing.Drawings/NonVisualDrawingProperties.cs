@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents non-visual properties for a drawing element in a Wordprocessing document.
 /// This interface provides metadata and configuration for graphical objects, including identifiers, descriptive information, visibility, hyperlinks, and extension data.
 /// </summary>
-public interface NonVisualDrawingProperties
+public class NonVisualDrawingProperties: ModelElement
 {
   /// <summary>
   /// Application-defined unique identifier for the drawing element, used to distinguish it from other elements in the document.

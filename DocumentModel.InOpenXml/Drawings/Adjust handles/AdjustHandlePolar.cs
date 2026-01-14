@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a polar adjust handle, providing guides and limits for radial and angular adjustments of a shape.
 /// </summary>
-public interface AdjustHandlePolar
+public class AdjustHandlePolar: ModelElement
 {
   /// <summary>
   /// Radial adjustment guide, which determines how the radial distance is adjusted.

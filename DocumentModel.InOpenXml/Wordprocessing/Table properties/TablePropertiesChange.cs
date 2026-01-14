@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Represents a change to table properties, used in <see cref="TableProperties"/>.
 ///   This interface annotates <see cref="PreviousTableProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for tables.
 /// </summary>
-public interface TablePropertiesChange
+public class TablePropertiesChange: ModelElement
 {
   /// <summary>
   ///   Author of the change to the table properties.

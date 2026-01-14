@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Base interface for all paragraph properties classes in a WordprocessingML document.
   /// Contains common properties for controlling paragraph formatting, layout, alignment, borders, spacing, indentation, and advanced typography features.
   /// </summary>
-  public interface BaseParagraphProperties
+  public class BaseParagraphProperties: ModelElement
   {
     
     /// <summary>

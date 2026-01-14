@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the properties of the Border Box object, which dictate the types of lines that can be drawn as part of the border. 
 /// </summary>
-public interface BorderBoxProperties
+public class BorderBoxProperties: ModelElement
 {
   /// <summary>
   ///   Hide Top Edge.

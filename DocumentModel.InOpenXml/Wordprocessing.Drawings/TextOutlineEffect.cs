@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the outline effect applied to text in a Wordprocessing document.
 /// This interface provides properties for configuring line width, cap type, compound line style, alignment, fill, dash style, and join properties, enabling advanced visual effects for text outlines.
 /// </summary>
-public interface TextOutlineEffect : TypedModelElement, DrawingProperty
+public class TextOutlineEffect : DrawingProperty
 {
 
   /// <summary>

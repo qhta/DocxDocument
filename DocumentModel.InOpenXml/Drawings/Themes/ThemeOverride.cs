@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a theme override, allowing customization of color, font, and format schemes for a document theme.
 /// </summary>
-public interface ThemeOverride
+public class ThemeOverride: ModelElement
 {
   /// <summary>
   ///   Color scheme used for the theme override.

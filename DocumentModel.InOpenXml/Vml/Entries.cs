@@ -1,5 +1,5 @@
 namespace DocumentModel.Vml;
 
-public interface Entries: IElementCollection<Entry>
+public class Entries: ElementCollection<Entry>
 {
 }

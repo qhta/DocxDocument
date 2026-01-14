@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a color using the Hue, Saturation, and Luminance (HSL) color model, with additional color adjustment properties.
 /// </summary>
-public interface HslColor: ColorType, Color2Type, DrawingColorModifications, IExtendableElement
+public class HslColor: DrawingColor
 {
   /// <summary>
   /// Base hue value.

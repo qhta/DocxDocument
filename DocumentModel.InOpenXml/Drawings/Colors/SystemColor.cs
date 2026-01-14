@@ -69,7 +69,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public interface SystemColor: ColorType, Color2Type, DrawingColorModifications
+public class SystemColor: DrawingColor
 {
   /// <summary>
   /// Gets or sets the system color identifier that references a specific OS-defined color.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a command to move the current path to a specified point without drawing a line.
 /// </summary>
-public interface MoveTo
+public class MoveTo: ModelElement
 {
   /// <summary>
   ///   Destination point for the move operation.

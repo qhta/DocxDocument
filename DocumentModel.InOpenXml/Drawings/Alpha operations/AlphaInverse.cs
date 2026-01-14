@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an alpha inverse effect, which inverts the alpha channel of an image or shape and supports various color models.
 /// </summary>
-public interface AlphaInverse
+public class AlphaInverse: ModelElement
 {
   /// <summary>
   /// RGB color model using percentage values for the alpha inverse effect.

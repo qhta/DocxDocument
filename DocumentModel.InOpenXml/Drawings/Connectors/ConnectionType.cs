@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a connection type for connectors, defining an identifier and index for the connection.
 /// </summary>
-public interface ConnectionType
+public class ConnectionType: ModelElement
 {
   /// <summary>
   /// Unique identifier for the connection.
