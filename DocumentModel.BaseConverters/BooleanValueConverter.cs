@@ -1,26 +1,29 @@
 ﻿namespace DocumentModel.OpenXml;
 
+/// <summary>
+/// Provides conversion methods for boolean values in Open XML.
+/// </summary>
 public static class BooleanValueConverter
 {
   #region OnOffValue conversion.
 
   /// <summary>
-  /// Gets a boolean value from the specified OnOffValue element.
+  /// Retrieves a boolean value from the specified OnOffValue element.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OnOffValue element to check.</param>
+  /// <returns>A boolean representing the value, or null if the element is null.</returns>
   public static Boolean? GetValue(this OnOffValue? element)
   {
     return element?.Value;
   }
 
   /// <summary>
-  /// Sets OnOffValue using "false" string and "true" string representation.
+  /// Creates an OnOffValue using specified string representations for false and true.
   /// </summary>
-  /// <param name="value">Boolean value</param>
-  /// <param name="falseString">False value string representation (default "0")</param>
-  /// <param name="trueString">True value string representation (default "1")</param>
-  /// <returns></returns>
+  /// <param name="value">The boolean value to convert.</param>
+  /// <param name="falseString">The string representation for false (default is "0").</param>
+  /// <param name="trueString">The string representation for true (default is "1").</param>
+  /// <returns>A new OnOffValue object, or null if the input value is null.</returns>
   public static OnOffValue? CreateOnOffValue(this Boolean? value, string? falseString = null, string? trueString = null)
   {
     if (value == null) return null;
@@ -38,10 +41,10 @@ public static class BooleanValueConverter
 
   #region OnOffOnlyValue conversion.
   /// <summary>
-  /// Gets a boolean value from the specified OnOffOnlyValues element.
+  /// Retrieves a boolean value from the specified OnOffOnlyValues element.
   /// </summary>
-  /// <param name="openXmlElement"></param>
-  /// <returns></returns>
+  /// <param name="openXmlElement">The OnOffOnlyValues element to check.</param>
+  /// <returns>True if the value is On, otherwise null or false.</returns>
   public static Boolean? GetValue(this DXW.OnOffOnlyValues? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -51,8 +54,8 @@ public static class BooleanValueConverter
   /// <summary>
   /// Creates an OnOffOnlyValues element from the specified boolean value.
   /// </summary>
-  /// <param name="value"></param>
-  /// <returns></returns>
+  /// <param name="value">The boolean value to convert.</param>
+  /// <returns>OnOffOnlyValues.On if true, OnOffOnlyValues.Off if false, otherwise null.</returns>
   public static DXW.OnOffOnlyValues? CreateOnOffOnlyValue(this Boolean? value)
   {
     if (value == true) return DXW.OnOffOnlyValues.On;
@@ -63,10 +66,10 @@ public static class BooleanValueConverter
 
   #region OnOffType conversion.
   /// <summary>
-  /// Gets a boolean value from the specified OnOffType element.
+  /// Retrieves a boolean value from the specified OnOffType element.
   /// </summary>
-  /// <param name="openXmlElement"></param>
-  /// <returns></returns>
+  /// <param name="openXmlElement">The OnOffType element to check.</param>
+  /// <returns>The boolean value, true if element exists but value is null, or null if element is null.</returns>
   public static Boolean? GetValue(this DXW.OnOffType? openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
@@ -77,15 +80,14 @@ public static class BooleanValueConverter
 
 
   /// <summary>
-  /// Sets an OnOffType value of OpenXmlElement using false string and true string representation
-  /// and adds it the the OpenXmlCompositeElement.
+  /// Sets an OnOffType value on an OpenXmlCompositeElement using specified string representations.
+  /// Adds the element if it doesn't exist and value is true or distinct string provided.
+  /// Removes the element if value is false.
   /// </summary>
-  /// <param name="openXmlElement">Composite element to append OnOffType child.</param>
-  /// <param name="value">Boolean value</param>
-  /// <param name="falseString">False value string representation (default "0")</param>
-  /// <param name="trueString">True value string representation (default "1")</param>
-  /// <returns></returns>
-
+  /// <param name="openXmlElement">The composite element to modify.</param>
+  /// <param name="value">The boolean value to set.</param>
+  /// <param name="falseString">The string representation for false (default is "0").</param>
+  /// <param name="trueString">The string representation for true (default is "1").</param>
   public static void SetOnOffType<OpenXmlElementType>(this OpenXmlCompositeElement openXmlElement, Boolean? value,
     string? falseString = null, string? trueString = null)
     where OpenXmlElementType : DXW.OnOffType, new()
@@ -121,10 +123,10 @@ public static class BooleanValueConverter
 
   #region Math OnOffType conversion.
   /// <summary>
-  /// Gets a boolean value from the specified Math OnOffType element.
+  /// Retrieves a boolean value from the specified Math OnOffType element.
   /// </summary>
-  /// <param name="openXmlElement"></param>
-  /// <returns></returns>
+  /// <param name="openXmlElement">The Math OnOffType element to check.</param>
+  /// <returns>The boolean value, true if element exists but value is null, or null if element is null.</returns>
   public static Boolean? GetValue(DXM.OnOffType? openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
@@ -134,12 +136,12 @@ public static class BooleanValueConverter
   }
 
   /// <summary>
-  /// Sets Math OnOffType value of OpenXmlElement using false string and true string representation
-  /// and adds it the the OpenXmlCompositeElement.
+  /// Sets a Math OnOffType value on an OpenXmlCompositeElement.
+  /// Adds the element if value is true, removes it if value is false.
   /// </summary>
-  /// <typeparam name="ElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <param name="value"></param>
+  /// <typeparam name="ElementType">The specific Math OnOffType.</typeparam>
+  /// <param name="openXmlElement">The composite element to modify.</param>
+  /// <param name="value">The boolean value to set.</param>
   public static void SetMathOnOffType<ElementType>(this OpenXmlCompositeElement openXmlElement, Boolean? value)
     where ElementType : DXM.OnOffType, new()
   {
@@ -163,10 +165,10 @@ public static class BooleanValueConverter
   #region OnOffOnlyType conversion.
 
   /// <summary>
-  /// Gets a boolean value from the specified OnOffOnlyType element.
+  /// Retrieves a boolean value from the specified OnOffOnlyType element.
   /// </summary>
-  /// <param name="openXmlElement"></param>
-  /// <returns></returns>
+  /// <param name="openXmlElement">The OnOffOnlyType element to check.</param>
+  /// <returns>True if the value is On, false if the value is Off, or true if the element exists without a value.</returns>
   public static Boolean GetValue(this DXW.OnOffOnlyType? openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
@@ -175,12 +177,12 @@ public static class BooleanValueConverter
   }
 
   /// <summary>
-  /// Sets an OnOffOnlyType value of OpenXmlElement using false string and true string representation
-  /// and adds it the the OpenXmlCompositeElement.
+  /// Sets an OnOffOnlyType value on an OpenXmlCompositeElement.
+  /// Adds the element if value is true, removes it if value is false.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <param name="value"></param>
+  /// <typeparam name="OpenXmlElementType">The specific OnOffOnlyType.</typeparam>
+  /// <param name="openXmlElement">The composite element to modify.</param>
+  /// <param name="value">The boolean value to set.</param>
   public static void SetOnOffOnlyType<OpenXmlElementType>(this OpenXmlCompositeElement openXmlElement, Boolean? value)
     where OpenXmlElementType : DXW.OnOffOnlyType, new()
   {
@@ -204,10 +206,10 @@ public static class BooleanValueConverter
 
   #region Office2010 Word OnOffValues conversion.
   /// <summary>
-  /// Gets a boolean value from the specified Word13 OnOffValue.
+  /// Retrieves a boolean value from the specified Word 2010 OnOffValue.
   /// </summary>
-  /// <param name="openXmlElement"></param>
-  /// <returns></returns>
+  /// <param name="openXmlElement">The EnumValue of OnOffValues to check.</param>
+  /// <returns>True for True/One, false for False/Zero, or null.</returns>
   public static Boolean? GetValue(this DX.EnumValue<DXO10W.OnOffValues>? openXmlElement)
   {
     if (openXmlElement?.Value != null)
@@ -249,10 +251,10 @@ public static class BooleanValueConverter
 
   #region Office2013 Word OnOffType conversion.
   /// <summary>
-  /// Gets a boolean value from the specified Word13 OnOffType.
+  /// Retrieves a boolean value from the specified Word 2013 OnOffType.
   /// </summary>
-  /// <param name="openXmlElement"></param>
-  /// <returns></returns>
+  /// <param name="openXmlElement">The OnOffType element to check.</param>
+  /// <returns>The boolean value, true if element exists but value is null, or null if element is null.</returns>
   public static Boolean? GetValue(this DXO13W.OnOffType? openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
@@ -262,11 +264,12 @@ public static class BooleanValueConverter
   }
 
   /// <summary>
-  /// Sets an Word13 OnOffType value form the specified boolean value.
+  /// Sets a Word 2013 OnOffType value on an OpenXmlCompositeElement.
+  /// Adds the element if value is true, removes it if value is false.
   /// </summary>
-  /// <typeparam name="ElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <param name="value"></param>
+  /// <typeparam name="ElementType">The specific OnOffType.</typeparam>
+  /// <param name="openXmlElement">The composite element to modify.</param>
+  /// <param name="value">The boolean value to set.</param>
   public static void SetO13OnOffType<ElementType>(this OpenXmlCompositeElement openXmlElement, Boolean? value)
     where ElementType : DXO13W.OnOffType, new()
   {
@@ -289,10 +292,10 @@ public static class BooleanValueConverter
 
   #region Math BooleanValues conversion.
   /// <summary>
-  /// Gets a boolean value from the specified EnumValue of BooleanValues.
+  /// Retrieves a boolean value from the specified Math BooleanValues enum value.
   /// </summary>
-  /// <param name="openXmlElement"></param>
-  /// <returns></returns>
+  /// <param name="openXmlElement">The EnumValue of BooleanValues to check.</param>
+  /// <returns>True for True/On/One, false for False/Off/Zero, or null.</returns>
   public static Boolean? GetValue(this DX.EnumValue<DXM.BooleanValues>? openXmlElement)
   {
     if (openXmlElement?.Value != null)
@@ -311,12 +314,12 @@ public static class BooleanValueConverter
   }
 
   /// <summary>
-  /// Updates and OpenXmlElement with the specified OnOffValue.
+  /// Updates an OpenXmlElement with the specified OnOffValue.
   /// </summary>
-  /// <typeparam name="ElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <param name="value"></param>
-  /// <exception cref="InvalidProgramException"></exception>
+  /// <typeparam name="ElementType">The type of the OpenXmlElement.</typeparam>
+  /// <param name="openXmlElement">The element to update.</param>
+  /// <param name="value">The OnOffValue to set.</param>
+  /// <exception cref="InvalidProgramException">Thrown if the "Value" property is not found on the element type.</exception>
   public static void UpdateOpenXmlElement<ElementType>(this ElementType openXmlElement, OnOffValue value)
     where ElementType : DX.OpenXmlElement, new()
   {
@@ -330,10 +333,10 @@ public static class BooleanValueConverter
   /// <summary>
   /// Creates an OpenXmlElement from the specified OnOffValue and sets its "Val" or "Value" property.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="value"></param>
-  /// <returns></returns>
-  /// <exception cref="InvalidProgramException"></exception>
+  /// <typeparam name="OpenXmlElementType">The type of the OpenXmlElement to create.</typeparam>
+  /// <param name="value">The OnOffValue to set.</param>
+  /// <returns>A new instance of the specified OpenXmlElement type.</returns>
+  /// <exception cref="InvalidProgramException">Thrown if the "Val" or "Value" property is not found on the element type.</exception>
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(this OnOffValue value)
   where OpenXmlElementType : DX.OpenXmlElement, new()
   {
@@ -349,10 +352,10 @@ public static class BooleanValueConverter
 
   #region OpenXmlLeafTextElement conversion.
   /// <summary>
-  /// Gets a boolean value from the specified TypedOpenXmlLeaf element.
+  /// Retrieves a boolean value from the text content of a TypedOpenXmlLeaf element.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlLeafTextElement to check.</param>
+  /// <returns>True for "true" or "1", false for "false" or "0", or null.</returns>
   public static bool? GetBoolTextVal(this DX.OpenXmlLeafTextElement? element)
   {
     if (element?.Text != null)
@@ -370,11 +373,11 @@ public static class BooleanValueConverter
   }
 
   /// <summary>
-  /// Creates an OpenXmlLeafTextElementType from the specified boolean value. 
+  /// Creates an OpenXmlLeafTextElementType with text content "1" or "0" based on the boolean value.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="value"></param>
-  /// <returns></returns>
+  /// <typeparam name="OpenXmlLeafTextElementType">The type of the element to create.</typeparam>
+  /// <param name="value">The boolean value to convert.</param>
+  /// <returns>A new element with content "1" or "0", or null if value is null.</returns>
   public static OpenXmlLeafTextElementType? CreateOpenXmlLeafTextElement<OpenXmlLeafTextElementType>(this bool? value)
   where OpenXmlLeafTextElementType : OpenXmlLeafTextElement, new()
   {
@@ -398,10 +401,10 @@ public static class BooleanValueConverter
 
   #region String value conversion.
   /// <summary>
-  /// Gets a boolean value from the specified "0"/"1" string.
+  /// Retrieves a boolean value from a "0" or "1" string.
   /// </summary>
-  /// <param name="str"></param>
-  /// <returns></returns>
+  /// <param name="str">The string to check.</param>
+  /// <returns>True if string is "1", false otherwise (including null).</returns>
   public static Boolean? GetBoolValue(this string? str)
   {
     if (str != null)
@@ -411,10 +414,10 @@ public static class BooleanValueConverter
   }
 
   /// <summary>
-  /// Creates a "0"/"1" string from the specified boolean value. 
+  /// Creates a "0" or "1" string from a boolean value.
   /// </summary>
-  /// <param name="value"></param>
-  /// <returns></returns>
+  /// <param name="value">The boolean value to convert.</param>
+  /// <returns>"1" if true, "0" if false, or null if value is null.</returns>
   public static string? Create01String(this Boolean? value)
   {
     if (value == null) return null;
@@ -424,12 +427,12 @@ public static class BooleanValueConverter
 
   #region Specific Boolean values element conversion.
   /// <summary>
-  /// Creates a Word10 OnOffType element from the specified boolean value.
+  /// Creates a Word 2010 OnOffType element from a boolean value.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="value"></param>
-  /// <returns></returns>
-  /// <exception cref="InvalidProgramException"></exception>
+  /// <typeparam name="OpenXmlElementType">The type of the Word 2010 OnOffType element.</typeparam>
+  /// <param name="value">The boolean value.</param>
+  /// <returns>A new element with the value set.</returns>
+  /// <exception cref="InvalidProgramException">Thrown if "Val" or "Value" property not found.</exception>
   public static OpenXmlElementType CreateWordOpenXmlElement<OpenXmlElementType>(this Boolean value)
   where OpenXmlElementType : DXO10W.OnOffType, new()
   {
@@ -446,12 +449,12 @@ public static class BooleanValueConverter
   }
 
   /// <summary>
-  /// Creates a OpenXmlElement OnOffType element from the specified boolean value.
+  /// Creates a Math OnOffType element from a boolean value.
   /// </summary>
-  /// <typeparam name="ElementType"></typeparam>
-  /// <param name="value"></param>
-  /// <returns></returns>
-  /// <exception cref="InvalidProgramException"></exception>
+  /// <typeparam name="ElementType">The type of the element.</typeparam>
+  /// <param name="value">The boolean value.</param>
+  /// <returns>A new element with the value set.</returns>
+  /// <exception cref="InvalidProgramException">Thrown if "Val" or "Value" property not found.</exception>
   public static ElementType CreateMathOpenXmlElement<ElementType>(this Boolean value)
   where ElementType : DX.OpenXmlElement, new()
   {
@@ -470,12 +473,13 @@ public static class BooleanValueConverter
 
   #region Boolean get/set methods
   /// <summary>
-  /// Gets a boolean value from the specified OpenXml CompositeElement containing specified OnOffType element.
+  /// Retrieves a boolean value from a child OnOffType element within an OpenXml CompositeElement.
+  /// Handles standard Word, Word 2013, and Math OnOffType elements.
   /// </summary>
-  /// <typeparam name="OpenXmlElement"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <returns></returns>
-  /// <exception cref="InvalidDataException"></exception>
+  /// <typeparam name="OpenXmlElement">The type of the child element.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <returns>The boolean value, or null if not found.</returns>
+  /// <exception cref="InvalidDataException">Thrown if an invalid Math OnOffType value is encountered.</exception>
   public static bool? GetBoolVal<OpenXmlElement>(this DX.OpenXmlCompositeElement? openXmlElement) where OpenXmlElement : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
@@ -522,11 +526,12 @@ public static class BooleanValueConverter
   }
 
   /// <summary>
-  /// Sets a boolean value in the specified OpenXml CompositeElement containing specified OnOffType element.
+  /// Sets a boolean value on a child OnOffType element within an OpenXml CompositeElement.
+  /// Creates the element if it doesn't exist, remove if value is null.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <param name="value"></param>
+  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <param name="value">The boolean value to set.</param>
   public static void SetBoolVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement openXmlElement, bool? value) where OpenXmlElementType : DX.OpenXmlLeafElement, new()
   {
     if (value != null)
@@ -561,12 +566,11 @@ public static class BooleanValueConverter
   }
 
   /// <summary>
-  /// Gets a "true" value if the OpenXmlElementType in OpenXml CompositeElement exists,
-  /// and a "false" value otherwise.
+  /// Checks for the existence of a specific OpenXmlEmptyType element.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <returns></returns>
+  /// <typeparam name="OpenXmlElementType">The type of the element to check for.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <returns>True if the element exists, otherwise false (or null if parent is null).</returns>
   public static bool? GetTrueIfExists<OpenXmlElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where OpenXmlElementType : DXW.EmptyType
   {
     if (openXmlElement != null)
@@ -578,12 +582,11 @@ public static class BooleanValueConverter
   }
 
   /// <summary>
-  /// Adds an OpenXmlElementType element in OpenXml CompositeElement when boolean value is true,
-  /// otherwise removes it. 
+  /// Adds or removes an OpenXmlEmptyType element based on a boolean value.
   /// </summary>
-  /// <typeparam name="ElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <param name="value"></param>
+  /// <typeparam name="ElementType">The type of the element to add/remove.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <param name="value">True to add the element, false to remove it.</param>
   public static void SetExistsIfTrue<ElementType>(this DX.OpenXmlCompositeElement openXmlElement, bool? value) where ElementType : DXW.EmptyType, new()
   {
     if (value != null)

@@ -35,7 +35,7 @@ public class CustomProperty : DocumentProperty
   /// </summary>
   /// <remarks>If the custom document property has already been created, this method returns the existing
   /// instance. Otherwise, it creates a new property and initializes it with the current values.</remarks>
-  /// <returns>A <see cref="CustomProperties.CustomDocumentProperty"/> instance representing the open custom document property with values set
+  /// <returns>A <see cref="DXCP.CustomDocumentProperty"/> instance representing the open custom document property with values set
   /// from the current object.</returns>
   public DXCP.CustomDocumentProperty CreateOpenCustomDocumentProperty()
   {

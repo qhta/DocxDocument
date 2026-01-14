@@ -87,17 +87,16 @@ public class DocumentSetting : DocumentProperty
   }
 
   /// <summary>
-  /// Creates and initializes an open custom document property based on the current state of the object.
+  /// Creates an appropriate OpenXml element  based on the current state of the object.
   /// </summary>
-  /// <remarks>If the custom document property has already been created, this method returns the existing
-  /// instance. Otherwise, it creates a new property and initializes it with the current values.</remarks>
-  /// <returns>A <see cref="CP.CustomDocumentProperty"/> instance representing the open custom document property with values set
-  /// from the current object.</returns>
-  public DX.OpenXmlElement? CreateOpenCustomDocumentProperty()
+  /// <remarks>It creates a new OpenXml element and initializes it with the current values.</remarks>
+  /// <returns>A <see cref="DX.OpenXmlElement"/> instance representing the value of this property with values set
+  /// from the current object.
+  /// If the <paramref name="openXmlSettingType"/> is a subclass of <see cref="DXWP.EmptyType"/>
+  /// and the value of this property is null or false, the result is null.</returns>
+  public DX.OpenXmlElement? CreateOpenCustomDocumentProperty(Type openXmlSettingType)
   {
-    Debug.Assert(OpenXmlSettingType is not null,
-      "OpenXmlSettingType must be set before calling CreateOpenCustomDocumentProperty.");
-    if (OpenXmlSettingType.IsSubclassOf(typeof(DXWP.EmptyType)))
+    if (openXmlSettingType.IsSubclassOf(typeof(DXWP.EmptyType)))
     {
       if (Value == null)
         return null;
@@ -113,9 +112,9 @@ public class DocumentSetting : DocumentProperty
   }
 
   /// <summary>
-  /// Gets values from OpenXml CustomDocumentProperty to this instance.
+  /// Gets value from OpenXml element to this instance.
   /// </summary>
-  private void GetValuesFromOpenXmlProperty(DX.OpenXmlElement openXmlCustomDocumentProperty)
+  private void GetValueFromOpenXmlProperty(DX.OpenXmlElement openXmlCustomDocumentProperty)
   {
     foreach (var propertyInfo in typeof(CustomProperty).GetProperties())
     {
@@ -125,8 +124,7 @@ public class DocumentSetting : DocumentProperty
   }
 
   /// <summary>
-  /// Sets the value of this setting to the corresponding properties of the specified
-  /// of the specified OpenXml element.
+  /// Sets the value to the specified OpenXml element.
   /// </summary>
   private void SetValueToOpenXmlProperty(DX.OpenXmlElement openXmlSettingElement)
   {

@@ -2,8 +2,17 @@ namespace DocumentModel.OpenXml;
 
 using VTVariant = DocumentFormat.OpenXml.VariantTypes.Variant;
 
+/// <summary>
+/// Provides conversion methods for Variant types in Open XML.
+/// </summary>
 public static class VariantConverter
 {
+  /// <summary>
+  /// Retrieves the value from an OpenXml element representing a variant type.
+  /// </summary>
+  /// <param name="openXmlElement">The OpenXml element to convert.</param>
+  /// <returns>The value contained in the element, converted to the appropriate .NET type.</returns>
+  /// <exception cref="InvalidOperationException">Thrown when the element type is not supported.</exception>
   public static object? GetValue(OpenXmlElement openXmlElement)
   {
     if (openXmlElement is VTBool vBool)
@@ -121,10 +130,14 @@ public static class VariantConverter
       if (vtVariant.FirstChild != null)
         return GetVariant(vtVariant.FirstChild);
     throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
-
-    throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
   }
 
+  /// <summary>
+  /// Converts an OpenXml element to a Variant object.
+  /// </summary>
+  /// <param name="openXmlElement">The OpenXml element to convert.</param>
+  /// <returns>A Variant object representing the element values and type.</returns>
+  /// <exception cref="InvalidOperationException">Thrown when the element type is not supported.</exception>
   public static Variant GetVariant(OpenXmlElement openXmlElement)
   {
     if (openXmlElement is VTBool vBool)
@@ -244,6 +257,11 @@ public static class VariantConverter
     throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
   }
 
+  /// <summary>
+  /// Creates an OpenXml element from an object value.
+  /// </summary>
+  /// <param name="value">The value to convert. Can be a Variant or a raw object.</param>
+  /// <returns>An OpenXmlElement representing the value.</returns>
   public static OpenXmlElement CreateOpenXmlElement(object? value)
   {
     if (value is Variant variant)
@@ -252,6 +270,12 @@ public static class VariantConverter
     return CreateOpenXmlElement(variant);
   }
 
+  /// <summary>
+  /// Creates an OpenXml element from a Variant object.
+  /// </summary>
+  /// <param name="variant">The Variant object to convert.</param>
+  /// <returns>An OpenXmlElement corresponding to the variant type and value.</returns>
+  /// <exception cref="InvalidOperationException">Thrown when the variant type is not supported.</exception>
   public static OpenXmlElement CreateOpenXmlElement(Variant variant)
   {
     switch (variant.VariantType)

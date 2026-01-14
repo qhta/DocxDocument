@@ -1,7 +1,15 @@
 ﻿namespace DocumentModel.OpenXml;
 
+/// <summary>
+/// Provides conversion methods for HexBinary values in Open XML.
+/// </summary>
 public static class HexBinaryConverter
 {
+  /// <summary>
+  /// Retrieves a HexBinary array from an OpenXmlLeafElement having a "Value" property of type HexBinaryValue.
+  /// </summary>
+  /// <param name="openXmlElement">The OpenXmlLeafElement to retrieve the value from.</param>
+  /// <returns>A HexBinary array, or null if retrieval fails.</returns>
   public static HexBinary? GetValue(DX.OpenXmlLeafElement? openXmlElement)
   {
     var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(HexBinaryValue));
@@ -16,6 +24,11 @@ public static class HexBinaryConverter
     return null;
   }
 
+  /// <summary>
+  /// Converts a hexadecimal string to a HexBinary array.
+  /// </summary>
+  /// <param name="value">The hexadecimal string to convert.</param>
+  /// <returns>A HexBinary array representing the string, or null if the input is null.</returns>
   public static HexBinary? GetValue(string? value)
   {
     if (value != null)
@@ -23,6 +36,12 @@ public static class HexBinaryConverter
     return null;
   }
 
+  /// <summary>
+  /// Creates a specific HexBinaryValue type from a HexBinary array.
+  /// </summary>
+  /// <typeparam name="HexBinaryType">The type of HexBinaryValue to create.</typeparam>
+  /// <param name="value">The HexBinary array to convert.</param>
+  /// <returns>A new instance of HexBinaryType, or null if the input value is null.</returns>
   public static HexBinaryType? CreateValue<HexBinaryType>(HexBinary? value)
     where HexBinaryType : DX.HexBinaryValue, new()
   {
@@ -35,6 +54,12 @@ public static class HexBinaryConverter
     return null;
   }
 
+  /// <summary>
+  /// Creates a generic OpenXml element and sets its HexBinaryValue property from a HexBinary array.
+  /// </summary>
+  /// <typeparam name="OpenXmlElementType">The type of the OpenXml element to create.</typeparam>
+  /// <param name="value">The HexBinary array to set.</param>
+  /// <returns>A new instance of the element type with the value set, or null if the input value is null.</returns>
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(HexBinary? value)
     where OpenXmlElementType : DX.OpenXmlElement, new()
   {
