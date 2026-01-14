@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a command to draw a quadratic Bézier curve in a path geometry.
 ///   The curve is defined by a collection of adjustment points.
 /// </summary>
-public interface QuadraticBezierCurveTo
+public class QuadraticBezierCurveTo: ModelElement
 {
   /// <summary>
   ///   Collection of points that define the quadratic Bézier curve.

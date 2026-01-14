@@ -3,11 +3,11 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Interface for math elements that can be included in many other elements.
 /// </summary>
-public interface CommonMathContent: 
+public interface ICommonMathContent: 
   IParagraphContent, 
-  SdtRunContent, 
-  RubyContent,
-  BidirectionalContent, 
+  ISdtRunContent, 
+  IRubyContent,
+  IBidirectionalContent, 
   IMathArgumentContent, 
   IOfficeMathContent, 
   IMathParagraphContent

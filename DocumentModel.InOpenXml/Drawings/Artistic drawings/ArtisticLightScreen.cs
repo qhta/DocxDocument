@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic light screen effect, which simulates a grid-like light screen with adjustable transparency and grid size.
 /// </summary>
-public interface ArtisticLightScreen
+public class ArtisticLightScreen: ModelElement
 {
   /// <summary>
   /// Transparency level of the light screen effect.

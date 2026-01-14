@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Clipping Path.
 /// </summary>
-public interface ClipPath
+public class ClipPath: ModelElement
 {
   /// <summary>
   ///   Path Definition

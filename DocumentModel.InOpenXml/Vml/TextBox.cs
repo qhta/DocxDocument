@@ -2,25 +2,32 @@ using DocumentModel.Wordprocessing;
 namespace DocumentModel.Vml;
 
 /// <summary>
-///   Defines the TextBox Class.
+/// Represents a VML text box element with styling and content properties.
 /// </summary>
-public interface TextBox
+public class TextBox: ModelElement
 {
   /// <summary>
-  ///   Unique Identifier
+  /// Unique identifier for the text box.
   /// </summary>
   public string? Id { get; set; }
+
   /// <summary>
-  ///   Shape Styling Properties
+  /// CSS-style string specifying shape styling properties for the text box.
   /// </summary>
   public string? Style { get; set; }
+
   /// <summary>
-  ///   Text Box Inset
+  /// Inset margin values for the text box content.
   /// </summary>
   public string? Inset { get; set; }
+
   /// <summary>
-  ///   Text Box Single-Click Selection Toggle
+  /// Indicates whether single-click selection is enabled for the text box.
   /// </summary>
   public bool? SingleClick { get; set; }
+
+  /// <summary>
+  /// Content of the text box, including paragraphs and runs.
+  /// </summary>
   public TextBoxContent? TextBoxContent { get; set; }
 }

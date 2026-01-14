@@ -45,7 +45,7 @@ namespace DocumentModel.Drawings;
 /// <para>
 /// Each <see cref="BlipExtension"/> in the collection typically contains:
 /// <list type="bullet">
-/// <item><description><b>Extension URI:</b> Unique identifier for the image feature or format</description></item>
+/// <item><description><b>Extension UriString:</b> Unique identifier for the image feature or format</description></item>
 /// <item><description><b>Image format data:</b> Format-specific encoding parameters or metadata</description></item>
 /// <item><description><b>Processing instructions:</b> How to decode, render, or transform the image</description></item>
 /// <item><description><b>Fallback information:</b> Alternative representations for unsupported formats</description></item>
@@ -145,7 +145,7 @@ namespace DocumentModel.Drawings;
 ///     {
 ///         new BlipExtension
 ///         {
-///             Uri = "{96DAC541-7B7A-43D3-8B79-37D633B846F1}",
+///             UriString = "{96DAC541-7B7A-43D3-8B79-37D633B846F1}",
 ///             // Contains SVG image data
 ///         }
 ///     }
@@ -158,7 +158,7 @@ namespace DocumentModel.Drawings;
 ///     {
 ///         new BlipExtension
 ///         {
-///             Uri = "{WebPFormat}",
+///             UriString = "{WebPFormat}",
 ///             // Contains WebP encoding parameters
 ///         }
 ///     }
@@ -171,22 +171,22 @@ namespace DocumentModel.Drawings;
 ///     {
 ///         new BlipExtension
 ///         {
-///             Uri = "{HEIF-Format}",
+///             UriString = "{HEIF-Format}",
 ///             // HEIF/HEIC format data from iPhone
 ///         },
 ///         new BlipExtension
 ///         {
-///             Uri = "{HDR-Metadata}",
+///             UriString = "{HDR-Metadata}",
 ///             // High dynamic range tone mapping info
 ///         },
 ///         new BlipExtension
 ///         {
-///             Uri = "{ICC-Profile}",
+///             UriString = "{ICC-Profile}",
 ///             // Color profile for accurate color reproduction
 ///         },
 ///         new BlipExtension
 ///         {
-///             Uri = "{EXIF-Metadata}",
+///             UriString = "{EXIF-Metadata}",
 ///             // Camera metadata (orientation, timestamp, location)
 ///         }
 ///     }
@@ -199,12 +199,12 @@ namespace DocumentModel.Drawings;
 ///     {
 ///         new BlipExtension
 ///         {
-///             Uri = "{AnimatedGIF}",
+///             UriString = "{AnimatedGIF}",
 ///             // Animation frame timing and loop settings
 ///         },
 ///         new BlipExtension
 ///         {
-///             Uri = "{PlaybackControl}",
+///             UriString = "{PlaybackControl}",
 ///             // User control over animation playback
 ///         }
 ///     }

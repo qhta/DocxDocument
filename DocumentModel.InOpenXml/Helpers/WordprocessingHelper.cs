@@ -5,7 +5,7 @@ public static class WordprocessingHelper
   public static DXPP.WordprocessingDocument CreateWordDocument(string filename)
   {
     // Create a document by supplying the filename. 
-    var wordDocument = DXPP.WordprocessingDocument.Create(filename, OpenXml.WordprocessingDocumentType.Document);
+    var wordDocument = DXPP.WordprocessingDocument.Create(filename, DX.WordprocessingDocumentType.Document);
     {
       // Add the MainDocumentPart, root Document and the Body.
       var mainPart = wordDocument.AddMainDocumentPart();
@@ -33,7 +33,7 @@ public static class WordprocessingHelper
     using (var wordDocument = DXPP.WordprocessingDocument.Open(documentFilename, true))
     {
       // We need to change the file type from template to document.
-      wordDocument.ChangeDocumentType(OpenXml.WordprocessingDocumentType.Document);
+      wordDocument.ChangeDocumentType(DX.WordprocessingDocumentType.Document);
 
       // MainDocumentPart, root Document and Body already exist just access them
       var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();

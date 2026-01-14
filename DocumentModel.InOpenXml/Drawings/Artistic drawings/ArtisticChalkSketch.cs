@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic chalk sketch effect, which simulates a chalk drawing with adjustable transparency and pressure.
 /// </summary>
-public interface ArtisticChalkSketch
+public class ArtisticChalkSketch: ModelElement
 {
   /// <summary>
   /// Transparency level of the chalk sketch effect.

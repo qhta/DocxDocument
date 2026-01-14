@@ -4,7 +4,7 @@
   /// Represents dual font size values in half-points for text formatting, where the first value applies to regular script and the second to complex script.
   /// If the complex script value is null, it is assumed to be the same as the regular script value. Used for specifying font sizes that can differ between regular and complex scripts in WordprocessingML documents.
   /// </summary>
-  public interface FontSizes
+  public class FontSizes: ModelElement
   {
     
     /// <summary>

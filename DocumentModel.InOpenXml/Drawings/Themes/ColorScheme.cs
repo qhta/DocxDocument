@@ -15,73 +15,73 @@ public partial interface ColorScheme: IExtendableElement
   /// Dark 1.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Dark1Color { get; set; }
+  public ColorType? Dark1Color { get; set; }
 
   /// <summary>
   /// Light 1.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Light1Color { get; set; }
+  public ColorType? Light1Color { get; set; }
 
   /// <summary>
   /// Dark 2.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Dark2Color { get; set; }
+  public ColorType? Dark2Color { get; set; }
 
   /// <summary>
   /// Light 2.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Light2Color { get; set; }
+  public ColorType? Light2Color { get; set; }
 
   /// <summary>
   /// Accent 1.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Accent1Color { get; set; }
+  public ColorType? Accent1Color { get; set; }
 
   /// <summary>
   /// Accent 2.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Accent2Color { get; set; }
+  public ColorType? Accent2Color { get; set; }
 
   /// <summary>
   /// Accent 3.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Accent3Color { get; set; }
+  public ColorType? Accent3Color { get; set; }
 
   /// <summary>
   /// Accent 4.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Accent4Color { get; set; }
+  public ColorType? Accent4Color { get; set; }
 
   /// <summary>
   /// Accent 5.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Accent5Color { get; set; }
+  public ColorType? Accent5Color { get; set; }
 
   /// <summary>
   /// Accent 6.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Accent6Color { get; set; }
+  public ColorType? Accent6Color { get; set; }
 
   /// <summary>
   /// Hyperlink.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Hyperlink { get; set; }
+  public ColorType? Hyperlink { get; set; }
 
   /// <summary>
   /// Followed hyperlink.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? FollowedHyperlinkColor { get; set; }
+  public ColorType? FollowedHyperlinkColor { get; set; }
   #endregion
 
   /// <summary>

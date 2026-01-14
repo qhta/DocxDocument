@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic cement effect, which simulates a cement texture with adjustable transparency and crack spacing.
 /// </summary>
-public interface ArtisticCement
+public class ArtisticCement: ModelElement
 {
   /// <summary>
   /// Transparency level of the cement effect.

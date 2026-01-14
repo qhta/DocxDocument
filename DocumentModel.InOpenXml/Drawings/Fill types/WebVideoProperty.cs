@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents properties for an embedded web video, including HTML markup and display dimensions.
 /// </summary>
-public interface WebVideoProperty
+public class WebVideoProperty: ModelElement
 {
   /// <summary>
   /// Gets or sets the embedded HTML markup used to render the web video.

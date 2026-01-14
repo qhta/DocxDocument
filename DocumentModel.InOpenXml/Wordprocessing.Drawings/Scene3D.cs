@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the 3D scene settings for a drawing element in a Wordprocessing document.
 /// This interface provides properties for configuring the camera and lighting rig, enabling advanced 3D rendering and visualization of graphical objects.
 /// </summary>
-public interface Scene3D : TypedModelElement, DrawingProperty
+public class Scene3D : DrawingProperty
 {
 
   /// <summary>

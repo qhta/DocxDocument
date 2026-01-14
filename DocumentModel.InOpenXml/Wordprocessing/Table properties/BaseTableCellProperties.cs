@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Base interface for all TableCellProperties classes.
 /// Contains common properties for table cell formatting, including shading, text wrapping, margins, and vertical alignment.
 /// </summary>
-public interface BaseTableCellProperties
+public class BaseTableCellProperties: ModelElement
 {
 
   /// <summary>

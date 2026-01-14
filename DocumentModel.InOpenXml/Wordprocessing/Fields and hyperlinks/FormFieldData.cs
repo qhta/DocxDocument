@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the properties of a form field in a WordprocessingML document.
 /// This interface provides properties for form field name, enabled state, calculation behavior, macros, help and status text, and specific form field types (checkbox, drop-down list, text input), enabling advanced configuration and management of interactive form fields within documents.
 /// </summary>
-public interface FormFieldData
+public class FormFieldData: ModelElement
 {
   /// <summary>
   /// Name of the form field, used for identification and referencing within the document.

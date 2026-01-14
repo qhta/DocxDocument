@@ -6,7 +6,7 @@ namespace DocumentModel;
 public interface IExtension : ICollectionItem
 {
   /// <summary>
-  ///   URI that identifies the extension resource or schema.
+  ///   UriString that identifies the extension resource or schema.
   /// </summary>
-  public string? Uri { get; set; }
+  public string? UriString { get; set; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an auto-numbered bullet, specifying the numbering scheme and starting value for bullet lists.
 /// </summary>
-public interface AutoNumberedBullet
+public class AutoNumberedBullet: ModelElement
 {
   /// <summary>
   /// Bullet autonumbering type.

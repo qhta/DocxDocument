@@ -25,7 +25,7 @@ public interface AlternateContentChoice : ICollectionItem, IElementCollection<Co
   /// </summary>
   /// <remarks>
   ///   This property specifies the condition that an application must meet to use this choice's content.
-  ///   The value is typically a namespace URI that identifies a specific XML schema, content type, or feature set
+  ///   The value is typically a namespace UriString that identifies a specific XML schema, content type, or feature set
   ///   that the application must support. For example, "http://schemas.microsoft.com/office/word/2010/wordml"
   ///   indicates that the application must support Word 2010 features, or "http://schemas.openxmlformats.org/drawingml/2006/picture"
   ///   indicates picture support. When an application encounters alternate content, it evaluates this requirement

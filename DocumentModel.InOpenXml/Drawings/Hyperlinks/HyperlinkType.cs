@@ -3,10 +3,10 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a hyperlink in a drawing object, including relationship information, navigation behavior, and optional sound.
 /// </summary>
-public interface HyperlinkType: ExtendableHyperlinkElement
+public class HyperlinkType: ExtendableHyperlinkElement
 {
   /// <summary>
-  ///   Relationship identifier used to find the target URI.
+  ///   Relationship identifier used to find the target UriString.
   /// </summary>
   public string? Id { get; set; }
 
@@ -21,7 +21,7 @@ public interface HyperlinkType: ExtendableHyperlinkElement
   public string? Action { get; set; }
 
   /// <summary>
-  ///   Target frame for navigating to the URI.
+  ///   Target frame for navigating to the UriString.
   /// </summary>
   public string? TargetFrame { get; set; }
 
@@ -31,7 +31,7 @@ public interface HyperlinkType: ExtendableHyperlinkElement
   public string? Tooltip { get; set; }
 
   /// <summary>
-  ///   Indicates whether to add this URI to the navigation history.
+  ///   Indicates whether to add this UriString to the navigation history.
   /// </summary>
   public bool? History { get; set; }
 

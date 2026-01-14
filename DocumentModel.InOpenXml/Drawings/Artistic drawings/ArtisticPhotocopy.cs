@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic photocopy effect, which simulates a photocopied appearance with adjustable transparency and detail.
 /// </summary>
-public interface ArtisticPhotocopy
+public class ArtisticPhotocopy: ModelElement
 {
   /// <summary>
   /// Transparency level of the photocopy effect.

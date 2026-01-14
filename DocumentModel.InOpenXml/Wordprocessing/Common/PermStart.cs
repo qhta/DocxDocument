@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents the start of a range permission in a WordprocessingML document.
   /// Range permissions are special bookmarks used to control which users or groups can edit a particular region of a document when document protection is enabled and set to read-only or comments. This start marker is matched with the appropriately paired end marker by matching the value of the Id attribute from the associated permEnd element.
   /// </summary>
-  public interface PermStart : MarkupRangeElement, CommonContent
+  public interface PermStart : MarkupRangeElement, ICommonContent
   {
     
     /// <summary>

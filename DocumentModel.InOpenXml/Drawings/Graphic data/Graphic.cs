@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a graphic object, containing graphic data.
 /// </summary>
-public interface Graphic
+public class Graphic: ModelElement
 {
   /// <summary>
   ///   Data associated with the graphic object.

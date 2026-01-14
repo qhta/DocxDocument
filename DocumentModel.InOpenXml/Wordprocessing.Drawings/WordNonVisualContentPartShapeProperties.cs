@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents non-visual properties for a content part shape in a Wordprocessing document.
 /// This interface provides access to drawing properties and ink content part properties, enabling configuration and management of non-visual aspects for content part shapes.
 /// </summary>
-public interface WordNonVisualContentPartShapeProperties
+public class WordNonVisualContentPartShapeProperties: ModelElement
 {
 
   /// <summary>

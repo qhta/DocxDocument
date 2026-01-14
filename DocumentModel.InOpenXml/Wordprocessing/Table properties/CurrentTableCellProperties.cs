@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Base interface for current table cell properties.
 /// Contains properties for conditional formatting, preferred width, grid span, merge states, borders, text direction, fit text, cell mark visibility, and revision tracking for table cells.
 /// </summary>
-public interface CurrentTableCellProperties : BaseTableCellProperties
+public class CurrentTableCellProperties : BaseTableCellProperties
 {
     
     /// <summary>

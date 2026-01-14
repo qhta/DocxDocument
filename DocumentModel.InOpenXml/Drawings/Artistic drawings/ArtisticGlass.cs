@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic glass effect, which simulates a glass-like appearance with adjustable transparency and scaling.
 /// </summary>
-public interface ArtisticGlass
+public class ArtisticGlass: ModelElement
 {
   /// <summary>
   /// Transparency level of the glass effect.

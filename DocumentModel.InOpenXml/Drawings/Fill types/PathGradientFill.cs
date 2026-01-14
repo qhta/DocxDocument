@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a path gradient fill, which uses a gradient that follows a specified path and can be limited to a rectangle.
 /// </summary>
-public interface PathGradientFill : GradientFill
+public class PathGradientFill : GradientFill
 {
   /// <summary>
   ///   Type of path used for the gradient fill.

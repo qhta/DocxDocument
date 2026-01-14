@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a change to paragraph mark run properties, used in <see cref="ParagraphMarkRunProperties"/>.
 /// This interface annotates <see cref="PreviousParagraphMarkRunProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for paragraph mark formatting.
 /// </summary>
-public interface ParagraphMarkRunPropertiesChange
+public class ParagraphMarkRunPropertiesChange: ModelElement
 {
   /// <summary>
   /// Author of the change to the paragraph mark run properties.

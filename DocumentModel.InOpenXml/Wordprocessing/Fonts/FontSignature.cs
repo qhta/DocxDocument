@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the font signature information for an embedded font in a WordprocessingML document.
 /// This interface provides properties for Unicode subset and code page bitfields, enabling advanced identification and compatibility checks for font usage and character support.
 /// </summary>
-public interface FontSignature
+public class FontSignature: ModelElement
 {
   
   /// <summary>
@@ -42,10 +42,10 @@ public interface FontSignature
   /// </summary>
   [XmlAttribute("csb1")]
   public HexInt CodePageSignature1 { get => Items[5]; set => Items[5] = value; }
-  
+
   /// <summary>
   /// Array collecting all six parts of the font signature (Unicode and code page bitfields).
   /// </summary>
   [XmlIgnore]
-  public HexInt[] Items { get; }
+  public HexInt[] Items = new HexInt[6];
 }

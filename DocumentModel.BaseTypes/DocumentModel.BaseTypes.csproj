@@ -23,6 +23,11 @@
     <None Remove="VariantTypes\**" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Converters\UriString.XmlSerialization.cs" />
+    <Compile Remove="Converters\UriStringJsonConverter.cs" />
+    <Compile Remove="UriString.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Qhta.Conversion" Version="2.2.1" />
   </ItemGroup>
 

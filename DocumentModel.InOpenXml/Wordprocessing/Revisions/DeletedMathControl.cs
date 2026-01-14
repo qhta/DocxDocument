@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a tracked deletion revision for math control elements in a WordprocessingML document.
 /// This interface provides properties for author, date, annotation identifier, and run formatting, enabling tracking and management of mathematical content deletions within the document.
 /// </summary>
-public interface DeletedMathControl: IdentifiedChange
+public class DeletedMathControl: IdentifiedChange
 {
 
   /// <summary>

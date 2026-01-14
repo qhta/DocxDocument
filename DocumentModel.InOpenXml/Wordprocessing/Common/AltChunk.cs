@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
   /// The specified file's contents appear at the specified location and are treated as regular WordprocessingML content. The location of the external content is determined by the relationship whose Id attribute matches the Id attribute on this element.
   /// </summary>
   public class AltChunk : CollectionItem,
-    StoryContent, TableCellContent, CommentContent
+    IStoryContent, ITableCellContent, ICommentContent
   {
     
     /// <summary>

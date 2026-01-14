@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the shadow effect applied to a drawing element in a Wordprocessing document.
 /// This interface provides properties for configuring blur radius, distance, direction, scaling, skew, alignment, and color, enabling advanced visual effects for graphical objects.
 /// </summary>
-public interface Shadow : TypedModelElement, DrawingProperty
+public class Shadow :DrawingProperty
 {
 
   /// <summary>

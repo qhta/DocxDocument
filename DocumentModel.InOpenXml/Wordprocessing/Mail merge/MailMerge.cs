@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents mail merge settings for a WordprocessingML document.
 /// This interface provides properties for configuring the main document type, data source, queries, destination, email settings, error reporting, and Office Data Source Object (ODSO) settings, enabling advanced mail merge operations and customization.
 /// </summary>
-public interface MailMerge
+public class MailMerge: ModelElement
 {
   /// <summary>
   /// Source document type for the mail merge (e.g., form letter, email, envelope).

@@ -6,7 +6,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Arc Segment.
 /// </summary>
-public interface Arc: EmbeddedObjectContent
+public interface Arc: IEmbeddedObjectContent
 {
   /// <summary>
   ///   Optional String

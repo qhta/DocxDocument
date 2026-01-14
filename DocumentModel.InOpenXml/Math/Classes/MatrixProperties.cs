@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies properties of the matrix m, including the justification of the matrix and the layout of elements within the matrix.
 /// </summary>
-public interface MatrixProperties
+public class MatrixProperties: ModelElement
 {
   /// <summary>
   ///   Specifies the justification of the matrix. 

@@ -7,7 +7,7 @@ namespace DocumentModel.Math;
 ///   The plcHide tag (§22.1.2.83) can be used to indicate whether the empty arguments should be visible in the matrix 
 ///   (see the plcHide documentation for more information). 
 /// </summary>
-public interface Matrix: ElementCollection<MatrixRow>, CommonMathContent
+public interface Matrix: IElementCollection<MatrixRow>, ICommonMathContent
 {
   /// <summary>
   ///   Matrix Properties.

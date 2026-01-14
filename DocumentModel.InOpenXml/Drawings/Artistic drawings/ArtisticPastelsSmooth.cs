@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic pastels smooth effect, which simulates a smooth pastel drawing style with adjustable transparency and brush size.
 /// </summary>
-public interface ArtisticPastelsSmooth
+public class ArtisticPastelsSmooth: ModelElement
 {
   /// <summary>
   /// Transparency level of the pastels smooth effect.

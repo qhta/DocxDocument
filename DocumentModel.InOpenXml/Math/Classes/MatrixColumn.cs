@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies a single column in a matrix.
 /// </summary>
-public interface MatrixColumn: CollectionItem
+public interface MatrixColumn: ICollectionItem
 {
   /// <summary>
   ///   Matrix IColumn Properties.
