@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents a shape element within a Wordprocessing document.
 /// This interface provides access to visual and non-visual properties, styling, text box information, and linking for shapes embedded in the document.
 /// </summary>
-public interface Shape : CollectionItem, DMD.OfficeArtExtendableElement
+public interface Shape: ICollectionItem, DMD.OfficeArtExtendableElement
 {
   /// <summary>
   /// Style information for the shape, including line, fill, and effect styles.

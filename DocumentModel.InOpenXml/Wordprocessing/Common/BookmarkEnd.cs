@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
   /// Represents the end marker of a bookmark in a WordprocessingML document.
   /// This class extends <see cref="MarkupRangeElement"/> and <see cref="CommonContent"/>, and is used to pair with a corresponding <see cref="BookmarkStart"/> element, marking the end of a bookmarked range within the document content.
   /// </summary>
-  public class BookmarkEnd : MarkupRangeElement, CommonContent
+  public interface BookmarkEnd : MarkupRangeElement, CommonContent
   {
   }

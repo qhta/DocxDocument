@@ -15,7 +15,7 @@ namespace DocumentModel.Wordprocessing;
     /// <summary>
     /// Border color, specified as an abstract color value.
     /// </summary>
-    public DM.AbstractColor? Color { get; set; }
+    public IColor? Color { get; set; }
     
     /// <summary>
     /// Border width, specified in twips.

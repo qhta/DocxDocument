@@ -1,7 +1,5 @@
-﻿using System.Xml.Linq;
+﻿
 
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Bibliography;
 
 namespace DocumentModel.OpenXml;
 
