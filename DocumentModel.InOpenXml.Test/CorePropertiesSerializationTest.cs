@@ -130,7 +130,7 @@ namespace DocumentModel.InOpenXml.Test
     {
       using
         (DocumentModel.Wordprocessing.Document document =
-        DocumentModel.Wordprocessing.Document.CreateDocument("temp.docx"))
+        DocumentModel.Wordprocessing.Document.CreateDocument("temp1.docx"))
       {
         var props = new CoreProperties(document)
         {
