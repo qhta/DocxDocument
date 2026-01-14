@@ -171,4 +171,11 @@ public class PropertyModel: PropertyDescriptor
   /// Gets the display name from propertyInfo.
   /// </summary>
   public override string DisplayName => _propertyInfo.Name;
+
+  /// <summary>
+  /// Gets the unit of measurement associated with the property, if specified.
+  /// </summary>
+  /// <remarks>The unit is determined by the <see cref="UnitAttribute"/> applied to the property. If no unit is
+  /// specified, the value is <see langword="null"/>.</remarks>
+  public string? Unit => _propertyInfo.GetCustomAttribute<UnitAttribute>()?.Unit;
 }
