@@ -3,6 +3,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Text.Json;
+using DocumentModel.CustomXml;
 using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.InOpenXml.Test
@@ -26,17 +27,17 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- XML Serialization ---");
       var testData = CreateSampleDocumentSettings();
-      string xmlString;
       try
       {
         var xmlSerializer = new XmlSerializer(typeof(DocumentSettings));
+        string xmlString;
         using (var stringWriter = new StringWriter())
         using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
         {
           xmlSerializer.Serialize(xmlWriter, testData);
           xmlString = stringWriter.ToString();
         }
-        Console.WriteLine("Serialized XML:\n" + xmlString.Substring(0, System.Math.Min(1000, xmlString.Length)));
+        Console.WriteLine("Serialized XML:\n" + xmlString);
         if (xmlString.Length > 1000) Console.WriteLine("...");
 
         DocumentSettings? deserialized;
@@ -72,7 +73,7 @@ namespace DocumentModel.InOpenXml.Test
       {
         var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
         string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-        Console.WriteLine("Serialized JSON:\n" + jsonString.Substring(0, System.Math.Min(1000, jsonString.Length)));
+        Console.WriteLine("Serialized JSON:\n" + jsonString);
         if (jsonString.Length > 1000) Console.WriteLine("...");
 
         var deserialized = JsonSerializer.Deserialize<DocumentSettings>(jsonString, jsonOptions);
@@ -130,6 +131,7 @@ namespace DocumentModel.InOpenXml.Test
     {
       var settings = new DocumentSettings
       {
+
         AlignBorderAndEdges = true,
         AlwaysMergeEmptyNamespace = true,
         AlwaysShowPlaceholderText = false,
@@ -198,6 +200,69 @@ namespace DocumentModel.InOpenXml.Test
         UpdateFieldsOnOpen = true,
         UseXsltWhenSaving = false,
         View = ViewKind.Print
+        //ActiveWritingStyles = new ActiveWritingStyles([
+        //  new ActiveWritingStyle
+        //  {
+        //  ApplicationName = "MyApp",
+        //  CheckStyle = true,
+        //  DllVersion = 1,
+        //  VendorID = 1234,
+        //  Language = "en-US",
+        //  NaturalLanguageGrammarCheck = true
+        //},
+        //new ActiveWritingStyle
+        //  {
+        //    ApplicationName = "AnotherApp",
+        //    CheckStyle = false,
+        //    DllVersion = 2,
+        //    VendorID = 5678,
+        //    Language = "fr-FR",
+        //    NaturalLanguageGrammarCheck = false
+        //  }
+        //]),
+        //AttachedSchemas = new AttachedSchemas([
+        //  new Schema
+        //  {
+        //    Uri = "http://example.com/schema1",
+        //    ManifestLocation = "schema1.xsd",
+        //    SchemaLocation = "Schema1"
+        //  },
+        //  new Schema
+        //  {
+        //    Uri = "http://example.com/schema2",
+        //    ManifestLocation = "schema2.xsd",
+        //    SchemaLocation = "Schema2"
+        //  }
+        //]),
+        //AttachedTemplate = new AttachedTemplate("http://example.com/template.dotx"),
+        //Captions = new Captions{
+        //  CaptionDefinitions = new CaptionDefinitions([
+        //    new CaptionDefinition
+        //    {
+        //      Name = "Figure",
+        //      Position = CaptionPositionKind.Below
+        //    },
+        //    new CaptionDefinition
+        //    {
+        //      Name = "Table",
+        //      Position = CaptionPositionKind.Above
+        //    }
+        //  ]),
+        //  AutoCaptions = new AutoCaptions([
+        //    new AutoCaption
+        //    {
+        //      Name = "Figure",
+        //      Caption = "Fig.",
+        //    },
+        //    new AutoCaption
+        //    {
+        //      Name = "Table",
+        //      Caption = "Tab.",
+        //    }
+        //  ])
+        //}
+
+
       };
       return settings;
     }
@@ -272,7 +337,8 @@ namespace DocumentModel.InOpenXml.Test
              a.UICompatibleWith97To2003 == b.UICompatibleWith97To2003 &&
              a.UpdateFieldsOnOpen == b.UpdateFieldsOnOpen &&
              a.UseXsltWhenSaving == b.UseXsltWhenSaving &&
-             a.View == b.View;
+             a.View == b.View; //&&
+             //Equals(a.ActiveWritingStyles, b.ActiveWritingStyles);
     }
 
     static string SerializeToXml(DocumentSettings settings)

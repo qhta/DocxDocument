@@ -6,9 +6,24 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class ExternalFile: ModelElement
 {
+  /// <summary>
+  /// Default constructor.
+  /// </summary>
+  public ExternalFile()
+  {
+  }
 
   /// <summary>
-  /// UriString of the external file, specifying the location or filename of the linked resource.
+  /// Initializing constructor.
+  /// </summary>
+  /// <param name="uri"></param>
+  public ExternalFile(string uri)
+  {
+    Uri = uri;
+  }
+
+  /// <summary>
+  /// Uri string of the external file, specifying the location or filename of the linked resource.
   /// </summary>
   public string? Uri{ get; set; }
 }

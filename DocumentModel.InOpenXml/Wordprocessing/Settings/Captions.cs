@@ -1,19 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// This element specifies the presence of information about captions in a given WordprocessingML document. 
-/// This information is divided into two components: 
-/// <list type="bullet">
-/// <item>
-/// The child element caption defines the format for a single type of caption to be automatically added to the document. 
-/// </item>
-/// <item>
-/// The child element autoCaptions defines the types of objects to which a caption format shall automatically be applied. 
-/// </item>
-/// </list>
+/// Represents caption information for a WordprocessingML document, including caption definitions and automatic captioning rules.
 /// </summary>
-public class Captions: ElementCollection<CaptionDef>
+public class Captions : ModelElement
 {
-  public IEnumerable<Caption>? CaptionDefinitions { get; set; }
-  public IEnumerable<AutoCaption>? AutoCaptions { get; set; }
+  /// <summary>
+  /// Contains the collection of caption format definitions for different object types.
+  /// </summary>
+  public CaptionDefinitions? CaptionDefinitions { get; set; }
+
+  /// <summary>
+  /// Contains the collection of automatic captioning rules for objects in the document.
+  /// </summary>
+  public AutoCaptions? AutoCaptions { get; set; }
 }

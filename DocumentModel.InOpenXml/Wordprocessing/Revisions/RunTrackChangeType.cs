@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class RunTrackChangeType : IdentifiedChange, IElementCollection<IParagraphContent>, ICommonContent
 {
-  private readonly ElementCollection<IParagraphContent> _elementCollectionImplementation = new();
+  private readonly ParagraphContentCollection _elementCollectionImplementation = new();
 
   /// <summary>
   /// Returns an enumerator that iterates through the run content collection.
