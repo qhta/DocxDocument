@@ -15,7 +15,7 @@ namespace DocumentModel.CustomXml;
 public class Schema: CollectionItem
 {
   /// <summary>
-  ///   Gets or sets the namespace UriString that uniquely identifies this XML schema.
+  ///  Namespace UriString that uniquely identifies this XML schema.
   /// </summary>
   /// <remarks>
   ///   The namespace UriString identifies the schema and matches the target namespace defined in the schema file.
@@ -25,7 +25,7 @@ public class Schema: CollectionItem
   public string? Uri{ get; set; }
 
   /// <summary>
-  ///   Gets or sets the location of the resource manifest file for this schema.
+  ///   Location of the resource manifest file for this schema.
   /// </summary>
   /// <remarks>
   ///   The manifest location can be used for schema discovery and resolution, particularly in scenarios
@@ -34,7 +34,7 @@ public class Schema: CollectionItem
   public string? ManifestLocation { get; set; }
 
   /// <summary>
-  ///   Gets or sets the physical location of the XML schema file.
+  ///   Physical location of the XML schema file.
   /// </summary>
   /// <remarks>
   ///   The schema location points to the actual XSD (XML Schema Definition) file that contains
