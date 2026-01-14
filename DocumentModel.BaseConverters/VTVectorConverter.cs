@@ -1,5 +1,8 @@
 namespace DocumentModel.OpenXml;
 
+/// <summary>
+/// Provides conversion methods for VTVector types in Open XML.
+/// </summary>
 public static class VTVectorConverter
 {
   private static readonly BiDiDictionary<VectorBaseValues, VariantType> VectorBaseTypeConversion = new()
@@ -27,6 +30,11 @@ public static class VTVectorConverter
     { VectorBaseValues.Variant, VariantType.Variant }
   };
 
+  /// <summary>
+  /// Retrieves the size property from the VTVector element.
+  /// </summary>
+  /// <param name="openXmlElement">The VTVector element.</param>
+  /// <returns>The size as a UInt32, or null if not set.</returns>
   public static UInt32? GetSize(this VTVector openXmlElement)
   {
     if (openXmlElement.Size?.Value != null)
@@ -34,11 +42,21 @@ public static class VTVectorConverter
     return null;
   }
 
+  /// <summary>
+  /// Sets the size property of the VTVector element.
+  /// </summary>
+  /// <param name="openXmlElement">The VTVector element.</param>
+  /// <param name="value">The size value to set.</param>
   public static void SetSize(this VTVector openXmlElement, UInt32? value)
   {
     openXmlElement.Size = value;
   }
 
+  /// <summary>
+  /// Retrieves the base type of the vector from the VTVector element.
+  /// </summary>
+  /// <param name="openXmlElement">The VTVector element.</param>
+  /// <returns>The VariantType representing the base type, or null if not set.</returns>
   public static VariantType? GetBaseType(this VTVector openXmlElement)
   {
     if (openXmlElement.BaseType?.Value != null)
@@ -46,6 +64,11 @@ public static class VTVectorConverter
     return null;
   }
 
+  /// <summary>
+  /// Sets the base type of the VTVector element.
+  /// </summary>
+  /// <param name="openXmlElement">The VTVector element.</param>
+  /// <param name="value">The VariantType to set. Null removes the property.</param>
   public static void SetBaseType(this VTVector openXmlElement, VariantType? value)
   {
     if (value != null)
@@ -54,6 +77,11 @@ public static class VTVectorConverter
       openXmlElement.BaseType = null;
   }
 
+  /// <summary>
+  /// Converts a VTVector element to a VectorVariant model.
+  /// </summary>
+  /// <param name="openXmlElement">The VTVector element to convert.</param>
+  /// <returns>A VectorVariant object containing the vector data.</returns>
   public static VectorVariant? CreateModelElement(this VTVector openXmlElement)
   {
     var baseType = openXmlElement.GetBaseType();
@@ -72,6 +100,11 @@ public static class VTVectorConverter
     return _value;
   }
 
+  /// <summary>
+  /// Populates a VTVector element with data from a VectorVariant model.
+  /// </summary>
+  /// <param name="openXmlElement">The VTVector element to populate.</param>
+  /// <param name="value">The VectorVariant source data.</param>
   public static void SetValue(this VTVector openXmlElement, VectorVariant? value)
   {
     openXmlElement.RemoveAllChildren();
@@ -83,6 +116,11 @@ public static class VTVectorConverter
       }
   }
 
+  /// <summary>
+  /// Retrieves the vector contents as a list of strings.
+  /// </summary>
+  /// <param name="openXmlElement">The VTVector element.</param>
+  /// <returns>A StringList containing the string representation of vector items.</returns>
   public static StringList? GetStringList(this VTVector openXmlElement)
   {
     var baseType = openXmlElement.GetBaseType();
@@ -102,6 +140,11 @@ public static class VTVectorConverter
     return _value;
   }
 
+  /// <summary>
+  /// Populates a VTVector element with data from a StringList.
+  /// </summary>
+  /// <param name="openXmlElement">The VTVector element to populate.</param>
+  /// <param name="value">The StringList source data.</param>
   public static void SetStringList(this VTVector openXmlElement, StringList? value)
   {
     openXmlElement.RemoveAllChildren();
@@ -113,6 +156,11 @@ public static class VTVectorConverter
       }
   }
 
+  /// <summary>
+  /// Creates a VTVector element from a VectorVariant model.
+  /// </summary>
+  /// <param name="value">The VectorVariant data.</param>
+  /// <returns>A new VTVector element.</returns>
   public static VTVector CreateOpenXmlElement(this VectorVariant value)
   {
     var openXmlElement = new VTVector();
@@ -123,6 +171,11 @@ public static class VTVectorConverter
     return openXmlElement;
   }
 
+  /// <summary>
+  /// Creates a VTVector element from a StringList.
+  /// </summary>
+  /// <param name="value">The StringList data.</param>
+  /// <returns>A new VTVector element of base type Lpstr.</returns>
   public static VTVector CreateOpenXmlElement(this StringList value)
   {
     var openXmlElement = new VTVector();

@@ -1,22 +1,22 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Converter of Int values
+/// Provides conversion methods for integer values in Open XML.
 /// </summary>
 public static class IntValueConverter
 {
   #region CompositeElement Int get/set methods
 
   /// <summary>
-  /// Gets an int value from OpenXmlCompositeElement containing OpenXmlElementType element with a "Val" property.
-  /// Returned value IntegerType is specified as a type parameter.
-  /// The read property name can be explicitily specified.
+  /// Retrieves an integer value from a child element within an OpenXmlCompositeElement.
+  /// The returned integer type is specified as a type parameter.
+  /// The property name to read from can be explicitly specified (default is "Val").
   /// </summary>
-  /// <typeparam name="IntegerType"></typeparam>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <param name="propName"></param>
-  /// <returns></returns>
+  /// <typeparam name="IntegerType">The target integer type (e.g., Int32, UInt32).</typeparam>
+  /// <typeparam name="OpenXmlElementType">The type of the child OpenXml element.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <param name="propName">The name of the property to read. Default is "Val".</param>
+  /// <returns>The converted integer value, or null if the element or property is missing.</returns>
   public static IntegerType? GetIntVal<IntegerType, OpenXmlElementType>(this DX.OpenXmlCompositeElement? openXmlElement,
     string? propName = null)
     where IntegerType : struct, IConvertible
@@ -49,16 +49,15 @@ public static class IntValueConverter
   }
 
   /// <summary>
-  /// Sets the int value in OpenXmlCompositeElement containing OpenXmlElementType element with a "Val" property.
-  /// Returned value IntegerType is specified as a type parameter.
-  /// The written property name can be explicitily specified.
+  /// Sets an integer value in the OpenXmlCompositeElement by updating or creating the specified OpenXmlElementType child element.
+  /// The property name to write to can be explicitly specified (default is "Val").
   /// </summary>
-  /// <typeparam name="IntegerType"></typeparam>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <param name="value"></param>
-  /// <param name="propName"></param>
-  /// <exception cref="InvalidCastException"></exception>
+  /// <typeparam name="IntegerType">The type of the input integer value.</typeparam>
+  /// <typeparam name="OpenXmlElementType">The type of the child OpenXml element.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <param name="value">The integer value to set. If null, the child element is removed.</param>
+  /// <param name="propName">The name of the property to write. Default is "Val".</param>
+  /// <exception cref="InvalidCastException">Thrown if the value cannot be converted to the target property type.</exception>
   public static void SetIntVal<IntegerType, OpenXmlElementType>(this DX.OpenXmlCompositeElement openXmlElement, IntegerType? value,
     string? propName = null)
     where IntegerType : struct, IConvertible
@@ -133,10 +132,10 @@ public static class IntValueConverter
 
   #region HpsMeasureType conversion.
   /// <summary>
-  /// Converts HpsMeasureType to Int32.
+  /// Converts an HpsMeasureType value to Int32.
   /// </summary>
-  /// <param name="hpsValue">HpsMeasureType to Convert</param>
-  /// <returns>Int32 value of element content (or <c>null</c> if element has no content or conversion is impossible).</returns>
+  /// <param name="hpsValue">The HpsMeasureType element to convert.</param>
+  /// <returns>The Int32 value of the element content, or null if empty or conversion is impossible.</returns>
   public static Int32? GetValue(DXW.HpsMeasureType? hpsValue)
   {
     if (hpsValue?.Val != null)
@@ -148,11 +147,11 @@ public static class IntValueConverter
   }
 
   /// <summary>
-  /// Creates a specific OpenXml HpsMeasureType element based on Int32 value.
+  /// Sets a specific OpenXml HpsMeasureType element value based on an Int32 value.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType">Can be any OpenXmlElement type</typeparam>
-  /// <param name="value">value to convert</param>
-  /// <returns>Newly created OpenXmlElement (or <c>null</c> if conversion is impossible</returns>
+  /// <typeparam name="OpenXmlElementType">The specific HpsMeasureType subclass.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <param name="value">The value to set. If null, the element is removed.</param>
   public static void SetHpsMeasureType<OpenXmlElementType>(OpenXmlCompositeElement openXmlElement, Int32? value)
     where OpenXmlElementType : DXW.HpsMeasureType, new()
   {
@@ -176,10 +175,10 @@ public static class IntValueConverter
 
   #region IntegerValue conversion.
   /// <summary>
-  /// Converts IntegerValue to Int32.
+  /// Converts an OpenXml IntegerValue to Int32.
   /// </summary>
-  /// <param name="integerValue">IntegerValue to convert</param>
-  /// <returns>Int32 value of element content (or <c>null</c> if element has no content or conversion is impossible).</returns>
+  /// <param name="integerValue">The IntegerValue to convert.</param>
+  /// <returns>The Int32 value, or null if the element has no content.</returns>
   public static Int32? GetValue(IntegerValue? integerValue)
   {
     if (integerValue?.Value != null)
@@ -189,6 +188,11 @@ public static class IntValueConverter
     return null;
   }
 
+  /// <summary>
+  /// Creates an OpenXml IntegerValue from an Int32 value.
+  /// </summary>
+  /// <param name="value">The Int32 value to convert.</param>
+  /// <returns>A new IntegerValue, or null if the input is null.</returns>
   public static IntegerValue? CreateIntegerValue(Int32? value)
   {
     if (value == null) return null;
@@ -198,10 +202,10 @@ public static class IntValueConverter
 
   #region StringValue conversion.
   /// <summary>
-  /// Converts StringValue to Int32 value.
+  /// Converts an OpenXml StringValue to Int32.
   /// </summary>
-  /// <param name="stringValue">StringValue to Convert</param>
-  /// <returns>Int32 value of element content (or <c>null</c> if element has no content or conversion is impossible).</returns>
+  /// <param name="stringValue">The StringValue to convert.</param>
+  /// <returns>The Int32 value, or null if the element has no content or conversion fails.</returns>
   public static Int32? GetValue(StringValue? stringValue)
   {
     if (stringValue?.Value != null)
@@ -213,10 +217,10 @@ public static class IntValueConverter
   }
 
   /// <summary>
-  /// Creates a StringValue from Int32 value.
+  /// Creates an OpenXml StringValue from an Int32 value.
   /// </summary>
-  /// <param name="value"></param>
-  /// <returns></returns>
+  /// <param name="value">The Int32 value to convert.</param>
+  /// <returns>A new StringValue, or null if the input is null.</returns>
   public static StringValue? CreateStringValue(Int32? value)
   {
     if (value == null) return null;
@@ -224,12 +228,12 @@ public static class IntValueConverter
   }
 
   /// <summary>
-  /// Sets the specified Int32 value to the OpenXmlCompositeElement containing OpenXmlElementType element with a "Val" property
-  /// which is of StringValue type.
+  /// Sets an Int32 value as a string on a specific OpenXml leaf element property.
+  /// The element is added to the composite element if it doesn't exist, or removed if the value is null.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType"></typeparam>
-  /// <param name="openXmlElement"></param>
-  /// <param name="value"></param>
+  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
+  /// <param name="openXmlElement">The parent composite element.</param>
+  /// <param name="value">The Int32 value to set.</param>
   public static void SetValue<OpenXmlElementType>(this OpenXmlCompositeElement openXmlElement, Int32? value)
     where OpenXmlElementType : OpenXmlLeafElement, new()
   {
