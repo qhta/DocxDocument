@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the set of properties for a group shape in a Wordprocessing document.
 /// This interface provides configuration for black and white rendering, group transformations, fill settings, visual effects, and 3D scene properties, enabling advanced layout and appearance control for grouped drawing elements.
 /// </summary>
-public interface GroupShapeProperties : ExtendableElement
+public interface GroupShapeProperties : IExtendableElement
 {
   /// <summary>
   /// The black and white rendering mode for the group shape, specifying how it appears when displayed or printed in monochrome.

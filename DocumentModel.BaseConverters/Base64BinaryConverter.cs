@@ -1,4 +1,5 @@
-﻿namespace DocumentModel.OpenXml;
+﻿
+namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides conversion methods for Base64Binary values in Open XML.

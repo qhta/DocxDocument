@@ -1,10 +1,4 @@
-﻿using System.Xml.Linq;
-
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.EMMA;
-using DocumentFormat.OpenXml.Wordprocessing;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// This static class contains extension operations to be performed on a OpenXmlLeafTextElement object.

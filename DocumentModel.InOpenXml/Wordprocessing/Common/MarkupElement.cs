@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a markup element in a WordprocessingML document.
 /// This class extends <see cref="CommonContent"/> and serves as a base for elements that provide additional structure, annotation, or metadata within the document content.
 /// </summary>
-public class MarkupElement : CommonContent
+public interface MarkupElement : CommonContent
 {
   
 }

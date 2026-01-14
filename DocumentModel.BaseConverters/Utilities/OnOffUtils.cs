@@ -1,4 +1,5 @@
-﻿namespace DocumentModel.OpenXml;
+﻿
+namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// This static class contains extension operations to be performed on a OnOffType or OnOffValue element.

@@ -16,10 +16,10 @@ public interface Shading
   /// <summary>
   /// The color of the pattern foreground, specifying the primary color used in the shading pattern.
   /// </summary>
-  public DM.AbstractColor? ForegroundColor { get; set; }
+  public IColor? ForegroundColor { get; set; }
 
   /// <summary>
   /// The color of the pattern background, specifying the secondary color used in the shading pattern.
   /// </summary>
-  public DM.AbstractColor? BackgroundColor { get; set; }
+  public IColor? BackgroundColor { get; set; }
 }

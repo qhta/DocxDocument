@@ -21,4 +21,10 @@ global using DXWP = DocumentFormat.OpenXml.Wordprocessing;
 global using DX = DocumentFormat.OpenXml;
 global using DXVT = DocumentFormat.OpenXml.VariantTypes;
 
+global using DMD = DocumentModel.Drawings;
+global using DMW = DocumentModel.Wordprocessing;
 global using DMWD = DocumentModel.Wordprocessing.Drawings;
+global using DMM = DocumentModel.Math;
+global using DMWV = DocumentModel.Wordprocessing.Vml;
+global using DMDO = DocumentModel.Drawings.Office;
+global using DMV = DocumentModel.Vml;

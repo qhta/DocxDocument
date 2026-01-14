@@ -9,15 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Wordprocessing.Vml\**" />
-    <Compile Remove="Wordprocessing\Sections\**" />
-    <EmbeddedResource Remove="Wordprocessing.Vml\**" />
-    <EmbeddedResource Remove="Wordprocessing\Sections\**" />
-    <None Remove="Wordprocessing.Vml\**" />
-    <None Remove="Wordprocessing\Sections\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Remove="Properties and settings\CoreProperties.IDocumentProperties.cs" />
   </ItemGroup>
 

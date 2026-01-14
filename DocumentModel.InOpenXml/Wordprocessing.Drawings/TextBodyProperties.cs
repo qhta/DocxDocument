@@ -141,5 +141,5 @@ public interface TextBodyProperties
   /// <summary>
   /// List of extensions for text body properties, allowing for additional metadata or custom features.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+  public IExtensionList? ExtensionList { get; set; }
 }

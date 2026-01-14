@@ -5,7 +5,7 @@ namespace DocumentModel;
 /// </summary>
 /// <remarks>
 /// <para>
-/// <see cref="ExtensionList"/> in the <see cref="DocumentModel.Drawings"/> namespace is the general-purpose extension mechanism for DrawingML (Office Art) elements. While specialized extension lists exist for specific scenarios (like <see cref="BlipExtensionList"/> for images or <see cref="ConnectorLockingExtensionList"/>
+/// <see cref="IExtensionList"/> in the <see cref="DocumentModel.Drawings"/> namespace is the general-purpose extension mechanism for DrawingML (Office Art) elements. While specialized extension lists exist for specific scenarios (like <see cref="BlipExtensionList"/> for images or <see cref="ConnectorLockingExtensionList"/>
 /// for connectors), this ExtensionList handles general DrawingML extensions that don't fit specialized categories.
 /// </para>
 /// <para>
@@ -19,7 +19,7 @@ namespace DocumentModel;
 /// </list>
 /// </para>
 /// <para>
-/// Each <see cref="Extension"/> in the collection typically contains a URI identifier, visual properties, metadata, and version information.
+/// Each <see cref="IExtension"/> in the collection typically contains a URI identifier, visual properties, metadata, and version information.
 /// </para>
 /// </remarks>
 public class ExtensionList : ElementCollection<Extension>

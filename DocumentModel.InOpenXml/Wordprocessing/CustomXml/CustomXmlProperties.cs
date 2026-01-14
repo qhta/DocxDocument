@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the set of properties applied to a parent custom XML element in a WordprocessingML document.
 /// This interface extends <see cref="ElementCollection{CustomXmlAttribute}"/> and provides a property for placeholder text, enabling advanced schema-based processing, annotation, and user guidance for custom XML markup.
 /// </summary>
-public interface CustomXmlProperties : ElementCollection<CustomXmlAttribute>
+public interface CustomXmlProperties: IElementCollection<CustomXmlAttribute>
 {
 
   /// <summary>

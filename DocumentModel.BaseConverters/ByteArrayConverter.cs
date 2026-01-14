@@ -1,4 +1,5 @@
-﻿namespace DocumentModel.OpenXml;
+﻿
+namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides conversion methods for byte arrays to and from Open XML binary value types.

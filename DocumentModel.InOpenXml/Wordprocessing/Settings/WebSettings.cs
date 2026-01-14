@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents web page settings for a Wordprocessing document.
 /// This class provides properties for framesets, div elements, encoding, browser optimization, VML reliance, PNG support, CSS usage, file organization, file naming, display settings, and target screen size, enabling advanced configuration and management of web publishing options.
 /// </summary>
-public class WebSettings : DocumentProperties
+public class WebSettings
 {
   
   /// <summary>

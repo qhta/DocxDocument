@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents an optional override applied to one or more levels from the abstract numbering definition for a given numbering definition instance in a WordprocessingML document.
   /// Each instance of this element overrides the appearance and behavior of a specific numbering level definition within the abstract numbering definition, enabling advanced customization of list and outline numbering.
   /// </summary>
-  public interface NumLevelOverride : CollectionItem
+  public interface NumLevelOverride: ICollectionItem
   {
     
     /// <summary>

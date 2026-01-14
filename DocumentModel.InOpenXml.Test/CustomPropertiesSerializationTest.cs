@@ -44,7 +44,7 @@ namespace DocumentModel.InOpenXml.Test
           xmlSerializer.Serialize(xmlWriter, testData);
           xmlString = stringWriter.ToString();
         }
-        Console.WriteLine("Serialized XML:\n" + xmlString.Substring(0, Math.Min(1000, xmlString.Length)));
+        Console.WriteLine("Serialized XML:\n" + xmlString.Substring(0, System.Math.Min(1000, xmlString.Length)));
         if (xmlString.Length > 1000) Console.WriteLine("...");
 
         CustomProperties? deserialized;
@@ -90,7 +90,7 @@ namespace DocumentModel.InOpenXml.Test
       {
         var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
         string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-        Console.WriteLine("Serialized JSON:\n" + jsonString.Substring(0, Math.Min(1000, jsonString.Length)));
+        Console.WriteLine("Serialized JSON:\n" + jsonString.Substring(0, System.Math.Min(1000, jsonString.Length)));
         if (jsonString.Length > 1000) Console.WriteLine("...");
 
         var deserialized = JsonSerializer.Deserialize<CustomProperties>(jsonString, jsonOptions);

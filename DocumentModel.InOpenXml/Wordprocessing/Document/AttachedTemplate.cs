@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
   /// Represents the relationship for an attached document template in a WordprocessingML document.
   /// This interface extends <see cref="ExternalFile"/> and is used to specify the external template file attached to the document, enabling advanced template management and integration for document formatting and styles.
   /// </summary>
-  public class AttachedTemplate : ExternalFile
+  public interface AttachedTemplate : ExternalFile
   {
   }

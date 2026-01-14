@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a relationship to an external file in a WordprocessingML document.
 /// This interface extends <see cref="RelationshipType"/> and provides a property for the file URI, enabling advanced linking and integration of external resources such as templates, images, or data files within the document.
 /// </summary>
-public class ExternalFile
+public interface ExternalFile
 {
   
   /// <summary>

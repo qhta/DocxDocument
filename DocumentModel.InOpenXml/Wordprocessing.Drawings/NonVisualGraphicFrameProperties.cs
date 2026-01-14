@@ -15,5 +15,5 @@ public interface NonVisualGraphicFrameProperties
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+  public IExtensionList? ExtensionList { get; set; }
 }

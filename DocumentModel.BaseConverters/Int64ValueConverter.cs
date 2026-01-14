@@ -1,4 +1,5 @@
-﻿namespace DocumentModel.OpenXml;
+﻿
+namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides conversion methods for Int64 values in Open XML.
