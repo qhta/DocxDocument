@@ -12,6 +12,10 @@ namespace DocumentModel.InOpenXml.Test
   /// </summary>
   public static class CustomPropertiesSerializationTest
   {
+    /// <summary>
+    /// Runs all CustomProperties serialization tests.
+    /// </summary>
+    /// <returns>True if all tests pass; otherwise, false.</returns>
     public static bool Run()
     {
       Console.WriteLine("=== CustomProperties Serialization Test ===\n");
@@ -22,6 +26,10 @@ namespace DocumentModel.InOpenXml.Test
       return true;
     }
 
+    /// <summary>
+    /// Tests XML serialization and deserialization of CustomProperties.
+    /// </summary>
+    /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestXmlSerialization()
     {
       Console.WriteLine("--- XML Serialization ---");
@@ -70,6 +78,10 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Tests JSON serialization and deserialization of CustomProperties.
+    /// </summary>
+    /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestJsonSerialization()
     {
       Console.WriteLine("--- JSON Serialization ---");
@@ -108,6 +120,10 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Tests edge cases like empty CustomProperties object.
+    /// </summary>
+    /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestEdgeCases()
     {
       Console.WriteLine("--- Edge Cases ---");
@@ -144,31 +160,35 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Creates a sample CustomProperties object with various property types.
+    /// </summary>
+    /// <returns>A populated CustomProperties object.</returns>
     static CustomProperties CreateSampleCustomProperties()
     {
       var props = new CustomProperties();
-      props.Add(new CustomDocumentProperty
+      props.Add(new CustomProperty
       {
         Name = "CustomString",
         PropertyId = 2,
         FormatId = new Guid("D5CDD505-2E9C-101B-9397-08002B2CF9AE"),
         Value = "Test String"
       });
-      props.Add(new CustomDocumentProperty
+      props.Add(new CustomProperty
       {
         Name = "CustomInt",
         PropertyId = 3,
         FormatId = new Guid("D5CDD505-2E9C-101B-9397-08002B2CF9AE"),
         Value = 123
       });
-      props.Add(new CustomDocumentProperty
+      props.Add(new CustomProperty
       {
         Name = "CustomDate",
         PropertyId = 4,
         FormatId = new Guid("D5CDD505-2E9C-101B-9397-08002B2CF9AE"),
         Value = new DateTime(2024, 1, 1, 12, 0, 0)
       });
-      props.Add(new CustomDocumentProperty
+      props.Add(new CustomProperty
       {
         Name = "CustomBool",
         PropertyId = 5,
@@ -178,6 +198,12 @@ namespace DocumentModel.InOpenXml.Test
       return props;
     }
 
+    /// <summary>
+    /// Compares two CustomProperties objects for equality.
+    /// </summary>
+    /// <param name="a">The first CustomProperties object.</param>
+    /// <param name="b">The second CustomProperties object.</param>
+    /// <returns>True if both objects are equivalent; otherwise, false.</returns>
     static bool CompareCustomProperties(CustomProperties a, CustomProperties b)
     {
       if (a.Count != b.Count)
@@ -199,6 +225,11 @@ namespace DocumentModel.InOpenXml.Test
       return true;
     }
 
+    /// <summary>
+    /// Serializes a CustomProperties object to an XML string.
+    /// </summary>
+    /// <param name="props">The CustomProperties object to serialize.</param>
+    /// <returns>The serialized XML string.</returns>
     static string SerializeToXml(CustomProperties props)
     {
       var xmlSerializer = new XmlSerializer(typeof(CustomProperties));
@@ -210,6 +241,11 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Deserializes a CustomProperties object from an XML string.
+    /// </summary>
+    /// <param name="xml">The XML string to deserialize.</param>
+    /// <returns>The deserialized CustomProperties object, or null if deserialization fails.</returns>
     static CustomProperties? DeserializeFromXml(string xml)
     {
       var xmlSerializer = new XmlSerializer(typeof(CustomProperties));
@@ -219,12 +255,22 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Serializes a CustomProperties object to a JSON string.
+    /// </summary>
+    /// <param name="props">The CustomProperties object to serialize.</param>
+    /// <returns>The serialized JSON string.</returns>
     static string SerializeToJson(CustomProperties props)
     {
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
       return JsonSerializer.Serialize(props, jsonOptions);
     }
 
+    /// <summary>
+    /// Deserializes a CustomProperties object from a JSON string.
+    /// </summary>
+    /// <param name="json">The JSON string to deserialize.</param>
+    /// <returns>The deserialized CustomProperties object, or null if deserialization fails.</returns>
     static CustomProperties? DeserializeFromJson(string json)
     {
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };

@@ -2,7 +2,7 @@
 
 public class Document : ModelElement, IDisposable
 {
-  internal PP.WordprocessingDocument? WordprocessingDocument { get; private set; }
+  internal DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
   public Document()
   {
