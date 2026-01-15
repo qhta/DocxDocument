@@ -5,6 +5,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>doc\$(MSBuildProjectName.Replace(" ", "_")).xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +16,10 @@
   <ItemGroup>
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.InOpenXml\DocumentModel.InOpenXml.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="doc\" />
   </ItemGroup>
 
 </Project>

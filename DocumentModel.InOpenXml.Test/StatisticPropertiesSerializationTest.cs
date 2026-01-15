@@ -12,6 +12,11 @@ namespace DocumentModel.InOpenXml.Test
   /// </summary>
   public static class StatisticPropertiesSerializationTest
   {
+
+    /// <summary>
+    /// Runs all serialization tests for the StatisticProperties class and reports the results.
+    /// </summary>
+    /// <returns>true if all serialization tests pass; otherwise, false.</returns>
     public static bool Run()
     {
       Console.WriteLine("=== StatisticProperties Serialization Test ===\n");
@@ -26,10 +31,10 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- XML Serialization ---");
       var testData = CreateSampleStatisticProperties();
-      string xmlString;
       try
       {
         var xmlSerializer = new XmlSerializer(typeof(StatisticProperties));
+        string xmlString;
         using (var stringWriter = new StringWriter())
         using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
         {

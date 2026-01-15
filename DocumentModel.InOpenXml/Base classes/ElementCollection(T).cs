@@ -7,6 +7,7 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
 public abstract class ElementCollection<ItemType> : ModelElement,
+ // IEnumerable,
 /*  IElementCollection<ItemType>, */IEquatable<ElementCollection<ItemType>>
   where ItemType : ICollectionItem
 {
@@ -55,6 +56,7 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     }
     return true;
   }
+
 
   /// <summary>
   /// Returns an enumerator that iterates through the collection.

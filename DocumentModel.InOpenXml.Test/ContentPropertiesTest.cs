@@ -4,13 +4,14 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Text.Json;
 using DocumentModel;
+using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
   /// Provides comprehensive serialization tests for <see cref="DocumentModel.ContentProperties"/>.
   /// </summary>
-  public static class ContentPropertiesSerializationTest
+  public static class ContentPropertiesTest
   {
     /// <summary>
     /// Runs all serialization tests for <see cref="ContentProperties"/>.
@@ -22,6 +23,9 @@ namespace DocumentModel.InOpenXml.Test
       if (!TestXmlSerialization()) return false;
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
+      if (!TestNewFromDocument()) return false;
+      if (!TestStoreInDocument()) return false;
+      if (!TestUpdateInDocument()) return false;
       Console.WriteLine("All ContentProperties serialization tests passed.\n");
       return true;
     }
@@ -33,11 +37,11 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestXmlSerialization()
     {
       Console.WriteLine("--- XML Serialization ---");
-      var testData = CreateSampleContentProperties();
-      string xmlString;
+      var testData = CreateSampleContentProperties(true);
       try
       {
         var xmlSerializer = new XmlSerializer(typeof(ContentProperties));
+        string xmlString;
         using (var stringWriter = new StringWriter())
         using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
         {
@@ -78,7 +82,7 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestJsonSerialization()
     {
       Console.WriteLine("--- JSON Serialization ---");
-      var testData = CreateSampleContentProperties();
+      var testData = CreateSampleContentProperties(true);
       try
       {
         var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
@@ -140,11 +144,155 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+
+    /// <summary>
+    /// Tests the creation and serialization of content properties for a new document.
+    /// </summary>
+    /// <remarks>This method creates a new document, retrieves its content properties, serializes them to XML,
+    /// and outputs the result to the console. It is intended for diagnostic or verification purposes and writes status
+    /// messages to the console.</remarks>
+    /// <returns>true if the test completes successfully; otherwise, false.</returns>
+    static bool TestNewFromDocument()
+    {
+      Console.WriteLine("--- New document content properties ---");
+      try
+      {
+        ContentProperties testData;
+        using (var document = Document.CreateDocument("temp.docx"))
+        {
+          testData = document.ContentProperties;
+        }
+        var xmlSerializer = new XmlSerializer(typeof(ContentProperties));
+        string xmlString;
+        using (var stringWriter = new StringWriter())
+        using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+        {
+          xmlSerializer.Serialize(xmlWriter, testData);
+          xmlString = stringWriter.ToString();
+        }
+        Console.WriteLine("New document content properties:\n" + xmlString);
+
+        Console.WriteLine("✓ New document content properties test passed\n");
+        return true;
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"✗ New document content properties FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
+        return false;
+      }
+    }
+
+    /// <summary>
+    /// Tests setting sample content properties to a new document and outputs the result to the console.
+    /// </summary>
+    /// <remarks>This method is intended for use in test scenarios to verify that document content properties can
+    /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
+    /// inspection.</remarks>
+    /// <returns>true if the document content properties are successfully stored and verified; otherwise, false.</returns>
+    static bool TestStoreInDocument()
+    {
+      Console.WriteLine("--- Store sample content properties in new document---");
+      //try
+      {
+        ContentProperties testData = CreateSampleContentProperties(true);
+        using (var document = Document.CreateDocument("temp.docx"))
+        {
+          document.ContentProperties = testData;
+        }
+
+        ContentProperties storedData;
+        using (var document = Document.OpenDocument("temp.docx"))
+        {
+          storedData = document.ContentProperties;
+        }
+
+        var xmlSerializer = new XmlSerializer(typeof(ContentProperties));
+        string xmlString;
+        using (var stringWriter = new StringWriter())
+        using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+        {
+          xmlSerializer.Serialize(xmlWriter, storedData);
+          xmlString = stringWriter.ToString();
+        }
+        Console.WriteLine("content properties stored to new document and reloaded from it:\n" + xmlString);
+
+        if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+        {
+          Console.WriteLine($"✗ Store sample content properties test FAILED - data mismatch in property '{propName}'");
+          return false;
+        }
+
+        Console.WriteLine("✓ Store sample content properties test passed\n");
+        return true;
+      }
+      //catch (Exception ex)
+      //{
+      //  Console.WriteLine($"✗ Store sample content properties FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
+      //  return false;
+      //}
+    }
+
+
+    /// <summary>
+    /// Tests updating the content properties of a document and outputs the result to the console.
+    /// </summary>
+    /// <remarks>This method is intended for use in test scenarios to verify that document content properties can
+    /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
+    /// inspection.</remarks>
+    /// <returns>true if the document content properties are successfully updated and verified; otherwise, false.</returns>
+    static bool TestUpdateInDocument()
+    {
+      Console.WriteLine("--- Update document content properties ---");
+      try
+      {
+        var testData = CreateSampleContentProperties(true);
+        using (var document = Document.CreateDocument("temp.docx"))
+        {
+          document.ContentProperties = testData;
+
+          document.ContentProperties.Application = "Updated Application";
+          testData.Application = "Updated Application";
+        }
+
+        ContentProperties storedData;
+        using (var document = Document.OpenDocument("temp.docx"))
+        {
+          storedData = document.ContentProperties;
+        }
+
+        var xmlSerializer = new XmlSerializer(typeof(ContentProperties));
+        string xmlString;
+        using (var stringWriter = new StringWriter())
+        using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+        {
+          xmlSerializer.Serialize(xmlWriter, storedData);
+          xmlString = stringWriter.ToString();
+        }
+        Console.WriteLine("Updated document content properties:\n" + xmlString);
+
+        if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+        {
+          Console.WriteLine($"✗ Updated document content properties test FAILED - data mismatch in property '{propName}'");
+          return false;
+        }
+
+        Console.WriteLine("✓ Updated document content properties test passed\n");
+        return true;
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"✗ Updated document content properties FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
+        return false;
+      }
+    }
+
+
     /// <summary>
     /// Creates a sample <see cref="ContentProperties"/> instance for testing.
     /// </summary>
+    /// <param name="createCompoundProperties">Whether to create compound properties, like HeadingPairs and TitlesOfParts.</param>
     /// <returns>A populated <see cref="ContentProperties"/> object.</returns>
-    static ContentProperties CreateSampleContentProperties()
+    static ContentProperties CreateSampleContentProperties(bool createCompoundProperties)
     {
       var props = new ContentProperties
       {
@@ -158,12 +306,26 @@ namespace DocumentModel.InOpenXml.Test
         HyperlinksChanged = true,
         DocumentSecurity = DocumentSecurityKind.ReadOnly | DocumentSecurityKind.PasswordProtected,
         DigitalSignature = [0x01, 0x02, 0x03, 0x04, 0x05],
-        HeadingPairs = new HeadingPairs
+        HyperlinkBase = "http://www.example.com/",
+        PresentationFormat = "Print",
+        ScaleCrop = true,
+        HeadingPairs = createCompoundProperties ? new HeadingPairs
         {
-            new HeadingPair{ Name = "Heading 1", Number = 1 },
-            new HeadingPair{ Name = "Heading 2", Number = 2 },
-            new HeadingPair{ Name = "Heading 3", Number = 3 }
-        }
+          new HeadingPair { Name = "Heading 1", Number = 1 },
+          new HeadingPair { Name = "Heading 2", Number = 2 },
+          new HeadingPair { Name = "Heading 3", Number = 3 }
+        } : null,
+        TitlesOfParts = createCompoundProperties ? new StringList
+        {
+          "Introduction",
+          "Chapter 1",
+          "Chapter 2"
+        } : null,
+        HyperlinkList = createCompoundProperties ? new HyperlinkList
+        ([
+          new HyperlinkInfo { Action = HyperlinkActionKind.Change, Attachment = HyperlinkAttachmentKind.Field, Location = "http://www.example.com/link1" },
+          new HyperlinkInfo { Action = HyperlinkActionKind.Remove, Attachment = HyperlinkAttachmentKind.Background, Location = "http://www.example.com/link2" },
+        ]) : null
       };
       return props;
     }
