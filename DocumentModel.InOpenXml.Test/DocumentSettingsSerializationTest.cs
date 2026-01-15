@@ -13,6 +13,13 @@ namespace DocumentModel.InOpenXml.Test
   /// </summary>
   public static class DocumentSettingsSerializationTest
   {
+    /// <summary>
+    /// Runs all serialization tests for the DocumentSettings class and reports the results to the console.
+    /// </summary>
+    /// <remarks>This method executes XML and JSON serialization tests, as well as edge case tests, for the
+    /// DocumentSettings class. It writes the progress and results to the standard output. Use this method to verify
+    /// that DocumentSettings serialization behaves as expected.</remarks>
+    /// <returns>true if all DocumentSettings serialization tests pass; otherwise, false.</returns>
     public static bool Run()
     {
       Console.WriteLine("=== DocumentSettings Serialization Test ===\n");

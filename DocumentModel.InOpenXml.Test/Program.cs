@@ -26,7 +26,7 @@ internal class Program
     //Console.WriteLine();
 
     // Run ContentPropertiesSerialization tests
-    if (!ContentPropertiesSerializationTest.Run())
+    if (!ContentPropertiesTest.Run())
       allTestsPassed = false;
 
     Console.WriteLine();

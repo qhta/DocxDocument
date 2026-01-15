@@ -118,7 +118,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
         var value = openXmlProperty.GetValue(openXmlElement);
         if (value != null && !modelProperty.PropertyType.IsInstanceOfType(value))
         {
-          value = Convert.ChangeType(value, modelProperty.PropertyType.GetNotNullableType());
+          value = ConvertFromOpenXml(value, modelProperty.PropertyType.GetNotNullableType());
         }
         modelProperty.SetValue(this, value);
       }
@@ -204,7 +204,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       var value = modelProperty.GetValue(this);
       if (value != null && !openXmlProperty.PropertyType.IsInstanceOfType(value))
       {
-        value = Convert.ChangeType(value, openXmlProperty.PropertyType);
+        value = ConvertToOpenXml(value, openXmlProperty.PropertyType);
       }
       openXmlProperty.SetValue(openXmlElement, value);
       return;
@@ -232,4 +232,32 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     }
   }
 
+  /// <summary>
+  /// Changes the type of the given value to the specified OpenXml type.
+  /// </summary>
+  /// <param name="value">The value to convert. It should be of model type</param>
+  /// <param name="targetType">The target type to convert to. It should be an OpenXml type</param>
+  /// <returns>The converted value, or null if the conversion is not supported.</returns>
+  public virtual object? ConvertToOpenXml(object? value, Type targetType)
+  {
+    if (value == null)
+      return null;
+
+    return OpenXmlConverter.ConvertToOpenXml(value, targetType);
+  }
+
+
+  /// <summary>
+  /// Changes the type of the given value from the specified OpenXml type.
+  /// </summary>
+  /// <param name="value">The value to convert. It should be of OpenXml type.</param>
+  /// <param name="targetType">The target type to convert to. It should be a model type.</param>
+  /// <returns>The converted value, or null if the conversion is not supported.</returns>
+  public virtual object? ConvertFromOpenXml(object? value, Type targetType)
+  {
+    if (value == null)
+      return null;
+
+    return OpenXmlConverter.ConvertFromOpenXml(value, targetType);
+  }
 }
