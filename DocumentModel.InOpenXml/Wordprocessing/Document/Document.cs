@@ -16,6 +16,7 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
   public Document()
   {
     _CoreProperties = new CoreProperties(this);
+    _ContentProperties = new ContentProperties(this);
   }
 
   /// <summary>
@@ -25,6 +26,7 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
   {
     SetOpenXmlElement(WordprocessingDocument);
     _CoreProperties = new CoreProperties(this);
+    _ContentProperties = new ContentProperties(this);
   }
 
   /// <summary>
@@ -55,6 +57,7 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
   public void Dispose()
   {
     _CoreProperties.Detach(this);
+    _ContentProperties.Detach(this);
     var wordprocessingDocument = GetOpenXmlElement();
     wordprocessingDocument?.Dispose();
     wordprocessingDocument = null;
@@ -78,8 +81,27 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
       }
     }
   }
-
   private CoreProperties _CoreProperties;
+
+
+  /// <summary>
+  /// Provides access to core document properties such as title, author, and subject.
+  /// </summary>
+  public ContentProperties ContentProperties
+  {
+    get => _ContentProperties;
+    set
+    {
+      if (!Equals(_ContentProperties, value))
+      {
+        _ContentProperties.Detach(this);
+        value.AttachAndUpdate(this);
+        _ContentProperties = value;
+
+      }
+    }
+  }
+  private ContentProperties _ContentProperties;
 
 
   /// <summary>

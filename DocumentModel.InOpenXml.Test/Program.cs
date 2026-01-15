@@ -17,21 +17,21 @@ internal class Program
     // ReSharper disable once ReplaceWithSingleAssignment.True
     bool allTestsPassed = true;
 
-    // Run CorePropertiesSerialization tests
-    if (!CorePropertiesTest.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    //// Run ContentPropertiesSerialization tests
-    //if (!ContentPropertiesSerializationTest.Run())
+    //// Run CorePropertiesSerialization tests
+    //if (!CorePropertiesTest.Run())
     //  allTestsPassed = false;
 
     //Console.WriteLine();
     //Console.WriteLine("═══════════════════════════════════════════════════════════");
     //Console.WriteLine();
+
+    // Run ContentPropertiesSerialization tests
+    if (!ContentPropertiesSerializationTest.Run())
+      allTestsPassed = false;
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
 
 
     //// Run CustomPropertiesSerialization tests
