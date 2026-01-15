@@ -70,7 +70,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   {
     if (other is null) return false;
     if (ReferenceEquals(this, other)) return true;
-    return DeepComparer.DeepEqual(this, other);
+    return DeepComparer.Equals(this, other);
   }
 
   /// <summary>
@@ -86,7 +86,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     if (obj is null) return false;
     if (ReferenceEquals(this, obj)) return true;
     if (obj.GetType() != GetType()) return false;
-    return DeepComparer.DeepEqual(this.GetType(), this, obj);
+    return DeepComparer.Equals(this.GetType(), this, obj);
   }
 
   ///// <summary>
