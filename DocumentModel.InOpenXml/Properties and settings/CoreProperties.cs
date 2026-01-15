@@ -6,6 +6,9 @@ namespace DocumentModel;
 /// </summary>
 public partial class CoreProperties : ModelElement<PackageProperties>
 {
+
+  internal DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
+
   /// <summary>
   /// Default constructor.
   /// </summary>
@@ -19,45 +22,50 @@ public partial class CoreProperties : ModelElement<PackageProperties>
   /// <param name="document">Wordprocessing document model</param>
   public CoreProperties(Wordprocessing.Document document)
   {
-    var packageProperties = document.WordprocessingDocument?.GetPackageProperties();
-    if (packageProperties != null)
-      LoadData(packageProperties);
-    SetOpenXmlElement(packageProperties);
-    document.PropertyChanged += Document_PropertyChanged;
+    AttachAndLoad(document);
   }
 
   /// <summary>
-  /// Triggered when the underlying document's WordprocessingDocument changes.
+  /// Attach this instance to the specified document. Data is loaded from the document's PackageProperties.
   /// </summary>
-  /// <param name="sender">Should be the Wordprocessing.Document instance</param>
-  /// <param name="e">PropertyChangedEventArgs with propertyName = "WordprocessingDocument"</param>
-  /// <remarks>
-  /// If new value is null then CoreFileProperties are set to null to avoid errors on properties access.
-  /// If new value is not null then CoreFileProperties are updated to the new document's PackageProperties.
-  /// </remarks>
-  private void Document_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+  /// <param name="document">Document to attach to.</param>
+  public void AttachAndLoad(Wordprocessing.Document document)
   {
-    if (sender is Wordprocessing.Document document)
-      if (e.PropertyName == nameof(Wordprocessing.Document.WordprocessingDocument))
-      {
-        if (document.WordprocessingDocument == null)
-        {
-          SetOpenXmlElement(null);
-        }
-        else
-        {
-          var isEmpty = GetOpenXmlElement() == null;
-          SetOpenXmlElement(document.WordprocessingDocument?.GetPackageProperties());
-          var openXmlElement = GetOpenXmlElement();
-          if (openXmlElement != null)
-          {
-            if (isEmpty)
-              LoadData(openXmlElement);
-            else
-              UpdateData(openXmlElement);
-          }
-        }
-      }
+    WordprocessingDocument = document.WordprocessingDocument;
+    var packageProperties = document.WordprocessingDocument?.GetPackageProperties();
+    if (packageProperties != null)
+    {
+      SetOpenXmlElement(packageProperties);
+      LoadData(packageProperties);
+    }
+  }
+
+  /// <summary>
+  /// Attach this instance to the specified document. Data is stored to the document's PackageProperties.
+  /// </summary>
+  /// <param name="document">Document to attach to.</param>
+  public void AttachAndUpdate(Wordprocessing.Document document)
+  {
+    WordprocessingDocument = document.WordprocessingDocument;
+    var packageProperties = document.WordprocessingDocument?.GetPackageProperties();
+    if (packageProperties != null)
+    {
+      SetOpenXmlElement(packageProperties);
+      UpdateData(packageProperties);
+    }
+  }
+
+  /// <summary>
+  /// Detach this instance from the specified document.
+  /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
+  /// </summary>
+  /// <param name="document">Document to detach from. Must be the same as the one attached.</param>
+  public void Detach(Wordprocessing.Document document)
+  {
+    if (WordprocessingDocument != document.WordprocessingDocument)
+      return;
+    WordprocessingDocument = null;
+    SetOpenXmlElement(null);
   }
 
   /// <summary>
@@ -73,7 +81,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _Title;
     set => UpdateField(ref _Title, value, nameof(Title));
   }
-
   private string? _Title;
 
   /// <summary>
@@ -84,7 +91,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _Subject;
     set => UpdateField(ref _Subject, value, nameof(Subject));
   }
-
   private string? _Subject;
 
   /// <summary>
@@ -95,7 +101,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _Creator;
     set => UpdateField(ref _Creator, value, nameof(Creator));
   }
-
   private string? _Creator;
 
   /// <summary>
@@ -110,7 +115,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _Keywords;
     set => UpdateField(ref _Keywords, value, nameof(Keywords));
   }
-
   private string? _Keywords;
 
   /// <summary>
@@ -123,7 +127,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _Description;
     set => UpdateField(ref _Description, value, nameof(Description));
   }
-
   private string? _Description;
 
   /// <summary>
@@ -135,7 +138,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _LastModifiedBy;
     set => UpdateField(ref _LastModifiedBy, value, nameof(LastModifiedBy));
   }
-
   private string? _LastModifiedBy;
 
   /// <summary>
@@ -147,7 +149,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _Revision;
     set => UpdateField(ref _Revision, value, nameof(Revision));
   }
-
   private int? _Revision;
 
   /// <summary>
@@ -158,7 +159,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _LastPrinted;
     set => UpdateField(ref _LastPrinted, value, nameof(LastPrinted));
   }
-
   private DateTime? _LastPrinted;
 
   /// <summary>
@@ -169,7 +169,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _Created;
     set => UpdateField(ref _Created, value, nameof(Created));
   }
-
   private DateTime? _Created;
 
   /// <summary>
@@ -180,7 +179,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _Modified;
     set => UpdateField(ref _Modified, value, nameof(Modified));
   }
-
   private DateTime? _Modified;
 
   /// <summary>
@@ -194,7 +192,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _Category;
     set => UpdateField(ref _Category, value, nameof(Category));
   }
-
   private string? _Category;
 
   /// <summary>
@@ -205,7 +202,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _Identifier;
     set => UpdateField(ref _Identifier, value, nameof(Identifier));
   }
-
   private string? _Identifier;
 
   /// <summary>
@@ -216,7 +212,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _ContentType;
     set => UpdateField(ref _ContentType, value, nameof(ContentType));
   }
-
   private string? _ContentType;
 
   /// <summary>
@@ -228,7 +223,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _Language;
     set => UpdateField(ref _Language, value, nameof(Language));
   }
-
   private string? _Language;
 
   /// <summary>
@@ -239,7 +233,6 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _Version;
     set => UpdateField(ref _Version, value, nameof(Version));
   }
-
   private string? _Version;
 
   /// <summary>
@@ -250,6 +243,5 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     get => _ContentStatus;
     set => UpdateField(ref _ContentStatus, value, nameof(ContentStatus));
   }
-
   private string? _ContentStatus;
 }
