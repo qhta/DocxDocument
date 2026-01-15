@@ -9,7 +9,7 @@ global using System.Globalization;
 global using System.Reflection;
 global using System.Xml.Serialization;
 global using System.Text.Json.Serialization;
-
+global using Qhta.TypeUtils;
 global using OpenXml = DocumentFormat.OpenXml;
 global using DXPP = DocumentFormat.OpenXml.Packaging;
 global using DXCP = DocumentFormat.OpenXml.CustomProperties;

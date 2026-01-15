@@ -6,7 +6,9 @@ namespace DocumentModel;
 /// </summary>
 public partial class CoreProperties : ModelElement<PackageProperties>
 {
-
+  /// <summary>
+  /// Gets the underlying WordprocessingDocument instance associated with this object.
+  /// </summary>
   internal DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
   /// <summary>
