@@ -1,4 +1,6 @@
-﻿namespace DocumentModel;
+﻿using Qhta.TypeUtils;
+
+namespace DocumentModel;
 
 /// <summary>
 /// Base class for all model elements, providing property change notification support.
@@ -18,7 +20,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   public event PropertyChangedEventHandler? PropertyChanged;
 
   /// <summary>
-  /// Raises a property changed notification for the specified property.
+  /// Updates data and raises a property changed notification for the specified property.
   /// </summary>
   /// <remarks>Call this method to notify listeners that a property value has changed, typically when
   /// implementing the INotifyPropertyChanged interface in data-binding scenarios.</remarks>
@@ -26,6 +28,17 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   public void NotifyPropertyChanged(string propertyName)
   {
     UpdateData(propertyName);
+    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+  }
+
+  /// <summary>
+  /// Raises a property changed notification for the specified property.
+  /// </summary>
+  /// <remarks>Call this method to notify listeners that a property value has changed, typically when
+  /// implementing the INotifyPropertyChanged interface in data-binding scenarios.</remarks>
+  /// <param name="propertyName">The name of the property that has changed. Cannot be null or empty.</param>
+  public void OnPropertyChanged(string propertyName)
+  {
     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
   }
 
@@ -74,7 +87,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     if (obj is null) return false;
     if (ReferenceEquals(this, obj)) return true;
     if (obj.GetType() != GetType()) return false;
-    return Equals((ModelElement)obj);
+    return DeepComparer.DeepEqual(this.GetType(), this, obj);
   }
 
   ///// <summary>
@@ -96,15 +109,17 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   {
     var currentType = GetType();
     var openXmlType = OpenXmlTypeMap.GetOpenXmlTypeForModelElementType(currentType);
+    if (openXmlType == null) return;
     foreach (var modelProperty in currentType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
     {
       if (modelProperty.CanWrite)
       {
         var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
+        if (openXmlProperty is null || !openXmlProperty.CanRead) continue;
         var value = openXmlProperty.GetValue(openXmlElement);
         if (value != null && !modelProperty.PropertyType.IsInstanceOfType(value))
         {
-          value = Convert.ChangeType(value, modelProperty.PropertyType);
+          value = Convert.ChangeType(value, modelProperty.PropertyType.GetNotNullableType());
         }
         modelProperty.SetValue(this, value);
       }
@@ -122,19 +137,10 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   public void UpdateData(object openXmlElement)
   {
     var currentType = GetType();
-    var openXmlType = OpenXmlTypeMap.GetOpenXmlTypeForModelElementType(currentType);
+    var openXmlType = OpenXmlTypeMap.GetOpenXmlTypeForModelElementType(currentType) ?? openXmlElement.GetType();
     foreach (var modelProperty in currentType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
     {
-      if (modelProperty.CanRead)
-      {
-        var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
-        var value = modelProperty.GetValue(this);
-        if (value != null && !openXmlProperty.PropertyType.IsInstanceOfType(value))
-        {
-          value = Convert.ChangeType(value, openXmlProperty.PropertyType);
-        }
-        openXmlProperty.SetValue(openXmlElement, value);
-      }
+      UpdateData(modelProperty, openXmlElement, openXmlType);
     }
   }
 
@@ -177,20 +183,53 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   public void UpdateData(string propertyName, object openXmlElement)
   {
     var currentType = GetType();
-    var openXmlType = OpenXmlTypeMap.GetOpenXmlTypeForModelElementType(currentType);
+    var openXmlType = OpenXmlTypeMap.GetOpenXmlTypeForModelElementType(currentType) ?? openXmlElement.GetType();
     var modelProperty = currentType.GetProperty(propertyName, BindingFlags.Public | BindingFlags.Instance);
-    if (modelProperty is null) throw new ArgumentException($"Property '{propertyName}' not found on type '{currentType.FullName}'");
-    if (modelProperty.CanRead)
+    if (modelProperty is not null && modelProperty.CanRead)
     {
-      var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
+      UpdateData(modelProperty, openXmlElement, openXmlType);
+    }
+  }
+
+  /// <summary>
+  /// Updates the specified Open XML element's property with the value from the given model property.
+  /// </summary>
+  /// <param name="modelProperty">The model property to update from.</param>
+  /// <param name="openXmlElement">The Open XML element to update.</param>
+  /// <param name="openXmlType">The Open XML type of the element.</param>
+  private void UpdateData(PropertyInfo modelProperty, object openXmlElement, Type openXmlType)
+  {
+    var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
+    if (openXmlProperty is not null && openXmlProperty.CanWrite)
+    {
       var value = modelProperty.GetValue(this);
       if (value != null && !openXmlProperty.PropertyType.IsInstanceOfType(value))
       {
-        {
-          value = Convert.ChangeType(value, openXmlProperty.PropertyType);
-        }
+        value = Convert.ChangeType(value, openXmlProperty.PropertyType);
       }
       openXmlProperty.SetValue(openXmlElement, value);
+      return;
+    }
+    var setMappedMethod = OpenXmlPropertyMap.GetMappedMethod(modelProperty);
+    if (setMappedMethod != null)
+    {
+      var targetParameters = setMappedMethod.GetParameters();
+      if (targetParameters.Length == 1)
+      {
+        var value = modelProperty.GetValue(this);
+        if (value != null && !targetParameters[0].ParameterType.IsInstanceOfType(value))
+        {
+          value = Convert.ChangeType(value, targetParameters[0].ParameterType);
+        }
+        if (setMappedMethod.DeclaringType == openXmlElement.GetType())
+        {
+          setMappedMethod.Invoke(openXmlElement, [value]);
+        }
+        else if (setMappedMethod.DeclaringType == this.GetType())
+        {
+          setMappedMethod.Invoke(this, [value]);
+        }
+      }
     }
   }
 
