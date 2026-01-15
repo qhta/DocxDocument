@@ -69,7 +69,7 @@ namespace DocumentModel.InOpenXml.Test
           Console.WriteLine("✗ XML Deserialization returned null");
           return false;
         }
-        if (!CompareCoreProperties(testData, deserialized, out var propName))
+        if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
         {
           Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
           return false;
@@ -109,7 +109,7 @@ namespace DocumentModel.InOpenXml.Test
           Console.WriteLine("✗ JSON Deserialization returned null");
           return false;
         }
-        if (!CompareCoreProperties(testData, deserialized, out var propName))
+        if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
         {
           Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
           return false;
@@ -232,7 +232,7 @@ namespace DocumentModel.InOpenXml.Test
         }
         Console.WriteLine("Core properties stored to new document and reloaded from it:\n" + xmlString);
 
-        if (!CompareCoreProperties(testData, storedData, out var propName))
+        if (!TestHelper.CompareTestData(testData, storedData, out var propName))
         {
           Console.WriteLine($"✗ Store sample core properties test FAILED - data mismatch in property '{propName}'");
           return false;
@@ -286,7 +286,7 @@ namespace DocumentModel.InOpenXml.Test
         }
         Console.WriteLine("Updated document core properties:\n" + xmlString);
 
-        if (!CompareCoreProperties(testData, storedData, out var propName))
+        if (!TestHelper.CompareTestData(testData, storedData, out var propName))
         {
           Console.WriteLine($"✗ Updated document core properties test FAILED - data mismatch in property '{propName}'");
           return false;
@@ -340,31 +340,6 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
-    /// <summary>
-    /// Compares two CoreProperties instances property by property.
-    /// </summary>
-    /// <param name="a">First CoreProperties instance</param>
-    /// <param name="b">Second CoreProperties instance</param>
-    /// <param name="propName">Name of the property that differs, if any</param>
-    /// <returns>True if the properties are equal, false otherwise</returns>
-    static bool CompareCoreProperties(CoreProperties a, CoreProperties b, out string? propName)
-    {
-      foreach(var property in typeof(CoreProperties).GetProperties())
-      {
-        if (property.CanWrite)
-        {
-          var aValue = property.GetValue(a);
-          var bValue = property.GetValue(b);
-          if (!object.Equals(aValue, bValue))
-          {
-            propName = property.Name;
-            return false;
-          }
-        }
-      }
-      propName = null;
-      return true;
-    }
 
     /// <summary>
     /// Serializes the specified CoreProperties object to its XML representation.
