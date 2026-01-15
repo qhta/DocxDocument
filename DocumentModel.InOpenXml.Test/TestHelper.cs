@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.InOpenXml.Test;
+﻿using System.Diagnostics;
+
+namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
 /// Provides helper methods for test scenarios.
@@ -19,11 +21,11 @@ public static class TestHelper
     {
       if (property.CanWrite)
       {
+        propName = property.Name;
         var aValue = property.GetValue(a);
         var bValue = property.GetValue(b);
-        if (!object.Equals(aValue, bValue))
+        if (!DeepComparer.Equals(aValue, bValue))
         {
-          propName = property.Name;
           return false;
         }
       }

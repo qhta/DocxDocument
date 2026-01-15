@@ -835,7 +835,7 @@ public static class VariantUtils
     if (value == null) return null;
     var result = new DXVT.VTVector
     {
-      Size = new DX.UInt32Value((uint)value.Count() * 2),
+      Size = new DX.UInt32Value((uint)value.Count * 2),
       BaseType = new DX.EnumValue<DXVT.VectorBaseValues>(DXVT.VectorBaseValues.Variant)
     };
     foreach (var item in value)

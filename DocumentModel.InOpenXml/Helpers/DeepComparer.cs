@@ -12,26 +12,53 @@ public static class DeepComparer
   /// <param name="obj1">The first object to compare.</param>
   /// <param name="obj2">The second object to compare.</param>
   /// <returns>True if all public properties are deeply equal; otherwise, false.</returns>
-  public static bool DeepEqual<T>(T? obj1, T? obj2)
+  public static bool Equals<T>(T? obj1, T? obj2)
   {
     if (obj1 is null && obj2 is null) return true;
     if (obj1 is null || obj2 is null) return false;
-    if (typeof(T) is IEquatable<T> equatable)
+    if (object.Equals(obj1, obj2))
+      return true;
+    var comparedType = obj1.GetType();
+    if (comparedType == typeof(string))
+      return String.Equals(obj1, obj2);
+    if (comparedType.GetInterface("IEquatable") is not null)
     {
-      return equatable.Equals(obj2!);
+      var equatableMethod = comparedType.GetMethod("Equals", [comparedType]);
+      if (equatableMethod != null)
+      {
+        return (bool)equatableMethod.Invoke(obj1, [obj2])!;
+      }
     }
     // Perform deep comparison of properties
-    var properties = typeof(T).GetProperties(BindingFlags.Instance | BindingFlags.Public);
+
+    var properties = comparedType.GetProperties(BindingFlags.Instance | BindingFlags.Public);
     foreach (var prop in properties)
     {
       if (prop.CanRead && prop.CanWrite)
       {
         var value1 = prop.GetValue(obj1);
         var value2 = prop.GetValue(obj2);
-        if (!DeepEqual(value1, value2)) return false;
+        if (!Equals(value1, value2)) return false;
       }
     }
-    return true;
+    bool result = true;
+    if (comparedType.IsEnumerable(out var itemType))
+    {
+      var enumerator1 = ((IEnumerable)obj1).GetEnumerator();
+      var enumerator2 = ((IEnumerable)obj2).GetEnumerator();
+      while (enumerator1.MoveNext() && enumerator2.MoveNext())
+      {
+        if (!Equals(enumerator1.Current, enumerator2.Current))
+        {
+          result = false;
+          break;
+        }
+      }
+      result = !enumerator1.MoveNext() && !enumerator2.MoveNext();
+      (enumerator1 as IDisposable)?.Dispose();
+      (enumerator2 as IDisposable)?.Dispose();
+    }
+    return result;
   }
 
   /// <summary>
@@ -41,7 +68,7 @@ public static class DeepComparer
   /// <param name="obj1">The first object to compare.</param>
   /// <param name="obj2">The second object to compare.</param>
   /// <returns>True if all public properties are deeply equal; otherwise, false.</returns>
-  public static bool DeepEqual(Type comparedType, object? obj1, object? obj2)
+  public static bool Equals(Type comparedType, object? obj1, object? obj2)
   {
     if (obj1 is null && obj2 is null) return true;
     if (obj1 is null || obj2 is null) return false;
@@ -54,7 +81,7 @@ public static class DeepComparer
       {
         var value1 = prop.GetValue(obj1);
         var value2 = prop.GetValue(obj2);
-        if (!DeepEqual(value1, value2)) 
+        if (!Equals(value1, value2))
           return false;
       }
     }
