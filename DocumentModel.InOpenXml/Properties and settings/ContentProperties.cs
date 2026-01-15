@@ -4,12 +4,8 @@ namespace DocumentModel;
 ///   Predefined set of metadata properties that are applicable to Office Open XML documents. 
 ///   These properties extend the set of core properties which are common to all packages.
 /// </summary>
-public class ContentProperties : ModelElement
+public class ContentProperties : ModelElement<DXEP.Properties>
 {
-  /// <summary>
-  /// Properties from the Open XML Extended File Properties part.
-  /// </summary>
-  internal DXEP.Properties? ExtendedFileProperties { get; private set; }
 
   /// <summary>
   /// Default constructor.
@@ -24,7 +20,11 @@ public class ContentProperties : ModelElement
   /// <param name="document">Wordprocessing document model</param>
   public ContentProperties(Wordprocessing.Document document)
   {
-    ExtendedFileProperties = document.WordprocessingDocument?.GetExtendedFileProperties();
+    var properties = document.WordprocessingDocument?.GetExtendedFileProperties();
+    if (properties != null)
+      LoadData(properties);
+    SetOpenXmlElement(properties);
+
     document.PropertyChanged += Document_PropertyChanged;
   }
 
@@ -44,42 +44,22 @@ public class ContentProperties : ModelElement
       {
         if (document.WordprocessingDocument == null)
         {
-          ExtendedFileProperties = null;
+          SetOpenXmlElement(null);
         }
         else
         {
-          var isEmpty = ExtendedFileProperties == null;
-          ExtendedFileProperties = document.WordprocessingDocument?.GetExtendedFileProperties();
-          if (isEmpty)
-            GetValuesFromExtendedFileProperties();
-          else
-            SetValuesToExtendedFileProperties();
+          var isEmpty = GetOpenXmlElement() == null;
+          SetOpenXmlElement(document.WordprocessingDocument?.GetExtendedFileProperties());
+          var openXmlElement = GetOpenXmlElement();
+          if (openXmlElement != null)
+          {
+            if (isEmpty)
+              LoadData(openXmlElement);
+            else
+              UpdateData(openXmlElement);
+          }
         }
       }
-  }
-
-  /// <summary>
-  /// Gets values from ExtendedFileProperties to this instance.
-  /// </summary>
-  private void GetValuesFromExtendedFileProperties()
-  {
-    foreach (var propertyInfo in typeof(ContentProperties).GetProperties())
-    {
-      var value = propertyInfo.GetValue(ExtendedFileProperties);
-      propertyInfo.SetValue(this, value);
-    }
-  }
-
-  /// <summary>
-  /// Sets values from this instance to ExtendedFileProperties.
-  /// </summary>
-  private void SetValuesToExtendedFileProperties()
-  {
-    foreach (var propertyInfo in typeof(ContentProperties).GetProperties())
-    {
-      var value = propertyInfo.GetValue(this);
-      propertyInfo.SetValue(ExtendedFileProperties, value);
-    }
   }
 
   /// <summary>
@@ -93,23 +73,8 @@ public class ContentProperties : ModelElement
   /// </summary>
   public string? Template
   {
-    get
-    {
-      var value = ExtendedFileProperties?.Template?.InnerText ?? _Template;
-      _Template = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Template)
-
-      {
-        _Template = value;
-        if (ExtendedFileProperties != null)
-          ExtendedFileProperties.Template = (value != null) ? new DXEP.Template(value) : null;
-        NotifyPropertyChanged(nameof(Template));
-      }
-    }
+    get => _Template;
+    set => UpdateField(ref _Template, value, nameof(Template));
   }
   private string? _Template;
 
@@ -118,25 +83,9 @@ public class ContentProperties : ModelElement
   /// </summary>
   public string? Manager
   {
-    get
-    {
-      var value = ExtendedFileProperties?.Manager?.InnerText ?? _Manager;
-      _Manager = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Manager)
-
-      {
-        _Manager = value;
-        if (ExtendedFileProperties != null)
-          ExtendedFileProperties.Manager = (value != null) ? new DXEP.Manager(value) : null;
-        NotifyPropertyChanged(nameof(Manager));
-      }
-    }
+    get => _Manager;
+    set => UpdateField(ref _Manager, value, nameof(Manager));
   }
-
   private string? _Manager;
 
   /// <summary>
@@ -144,22 +93,8 @@ public class ContentProperties : ModelElement
   /// </summary>
   public string? Company
   {
-    get
-    {
-      var value = ExtendedFileProperties?.Company?.InnerText ?? _Company;
-      _Company = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Company)
-      {
-        _Company = value;
-        if (ExtendedFileProperties != null)
-          ExtendedFileProperties.Company = (value != null) ? new DXEP.Company(value) : null;
-        NotifyPropertyChanged(nameof(Company));
-      }
-    }
+    get => _Company;
+    set => UpdateField(ref _Company, value, nameof(Company));
   }
   private string? _Company;
 
@@ -169,22 +104,8 @@ public class ContentProperties : ModelElement
   /// </summary>
   public string? PresentationFormat
   {
-    get
-    {
-      var value = ExtendedFileProperties?.PresentationFormat?.InnerText ?? _PresentationFormat;
-      _PresentationFormat = value;
-      return value;
-    }
-    set
-    {
-      if (value != _PresentationFormat)
-      {
-        _PresentationFormat = value;
-        if (ExtendedFileProperties != null)
-          ExtendedFileProperties.PresentationFormat = (value != null) ? new DXEP.PresentationFormat(value) : null;
-        NotifyPropertyChanged(nameof(PresentationFormat));
-      }
-    }
+    get => _PresentationFormat;
+    set => UpdateField(ref _PresentationFormat, value, nameof(PresentationFormat));
   }
   private string? _PresentationFormat;
 
@@ -195,25 +116,8 @@ public class ContentProperties : ModelElement
   /// </summary>
   public bool? ScaleCrop
   {
-    get
-    {
-      var str = ExtendedFileProperties?.ScaleCrop?.InnerText ?? _ScaleCrop.ToString();
-      bool? value = null;
-      if (bool.TryParse(str, out bool val))
-        value = val;
-      _ScaleCrop = value;
-      return value;
-    }
-    set
-    {
-      if (value != _ScaleCrop)
-      {
-        _ScaleCrop = value;
-        if (ExtendedFileProperties != null)
-          ExtendedFileProperties.ScaleCrop = value != null ? new DXEP.ScaleCrop(value.ToString()!) : null;
-        NotifyPropertyChanged(nameof(ScaleCrop));
-      }
-    }
+    get => _ScaleCrop;
+    set => UpdateField(ref _ScaleCrop, value, nameof(ScaleCrop));
   }
   private bool? _ScaleCrop;
 
@@ -223,35 +127,8 @@ public class ContentProperties : ModelElement
   /// </summary>
   public HeadingPairs? HeadingPairs //{ get; set; }
   {
-    get
-    {
-      HeadingPairs? value;
-      var vector = ExtendedFileProperties?.HeadingPairs?.VTVector;
-      if (vector != null) 
-        value = vector.AsHeadingPairs(); 
-      else
-        value = _HeadingPairs;
-      _HeadingPairs = value;
-      return value;
-    }
-    set
-    {
-      if (value != _HeadingPairs)
-      {
-        _HeadingPairs = value;
-        if (ExtendedFileProperties != null)
-        {
-          if (value != null)
-          {
-            var vector = value.AsVTVector();
-            ExtendedFileProperties.HeadingPairs = new DXEP.HeadingPairs(vector!.ToString()!);
-          }
-          else
-            ExtendedFileProperties.HeadingPairs = null;
-        }
-        NotifyPropertyChanged(nameof(HeadingPairs));
-      }
-    }
+    get => _HeadingPairs;
+    set => UpdateField(ref _HeadingPairs, value, nameof(HeadingPairs));
   }
   private HeadingPairs? _HeadingPairs;
 
@@ -261,26 +138,8 @@ public class ContentProperties : ModelElement
   /// </summary>
   public StringList? TitlesOfParts
   {
-    get
-    {
-      var str = ExtendedFileProperties?.TitlesOfParts?.InnerText ?? _TitlesOfParts?.ToString(CultureInfo.InvariantCulture);
-      StringList? value = null;
-      if (StringList.TryParse(str, out StringList? val))
-        value = val;
-      _TitlesOfParts = value;
-      return value;
-    }
-    set
-    {
-      if (value != _TitlesOfParts)
-      {
-        _TitlesOfParts = value;
-        if (ExtendedFileProperties != null)
-          ExtendedFileProperties.TitlesOfParts = value != null ?
-            new DXEP.TitlesOfParts(value.ToString(CultureInfo.InvariantCulture)) : null;
-        NotifyPropertyChanged(nameof(TitlesOfParts));
-      }
-    }
+    get => _TitlesOfParts;
+    set => UpdateField(ref _TitlesOfParts, value, nameof(TitlesOfParts));
   }
   private StringList? _TitlesOfParts;
 
@@ -290,25 +149,8 @@ public class ContentProperties : ModelElement
   /// </summary>
   public bool? LinksUpToDate
   {
-    get
-    {
-      var str = ExtendedFileProperties?.LinksUpToDate?.InnerText ?? _LinksUpToDate.ToString();
-      bool? value = null;
-      if (bool.TryParse(str, out bool val))
-        value = val;
-      _LinksUpToDate = value;
-      return value;
-    }
-    set
-    {
-      if (value != _LinksUpToDate)
-      {
-        _LinksUpToDate = value;
-        if (ExtendedFileProperties != null)
-          ExtendedFileProperties.LinksUpToDate = value != null ? new DXEP.LinksUpToDate(value.ToString()!) : null;
-        NotifyPropertyChanged(nameof(LinksUpToDate));
-      }
-    }
+    get => _LinksUpToDate;
+    set => UpdateField(ref _LinksUpToDate, value, nameof(LinksUpToDate));
   }
   private bool? _LinksUpToDate;
 
@@ -318,25 +160,8 @@ public class ContentProperties : ModelElement
   /// </summary>
   public bool? SharedDocument
   {
-    get
-    {
-      var str = ExtendedFileProperties?.SharedDocument?.InnerText ?? _SharedDocument.ToString();
-      bool? value = null;
-      if (bool.TryParse(str, out bool val))
-        value = val;
-      _SharedDocument = value;
-      return value;
-    }
-    set
-    {
-      if (value != _SharedDocument)
-      {
-        _SharedDocument = value;
-        if (ExtendedFileProperties != null)
-          ExtendedFileProperties.SharedDocument = value != null ? new DXEP.SharedDocument(value.ToString()!) : null;
-        NotifyPropertyChanged(nameof(SharedDocument));
-      }
-    }
+    get => _SharedDocument;
+    set => UpdateField(ref _SharedDocument, value, nameof(SharedDocument));
   }
   private bool? _SharedDocument;
 
@@ -345,30 +170,20 @@ public class ContentProperties : ModelElement
   /// </summary>
   public string? HyperlinkBase
   {
-    get
-    {
-      var value = ExtendedFileProperties?.HyperlinkBase?.InnerText ?? _HyperlinkBase;
-      _HyperlinkBase = value;
-      return value;
-    }
-    set
-    {
-      if (value != _HyperlinkBase)
-
-      {
-        _HyperlinkBase = value;
-        if (ExtendedFileProperties != null)
-          ExtendedFileProperties.HyperlinkBase = (value != null) ? new DXEP.HyperlinkBase(value) : null;
-        NotifyPropertyChanged(nameof(HyperlinkBase));
-      }
-    }
+    get => _HyperlinkBase;
+    set => UpdateField(ref _HyperlinkBase, value, nameof(HyperlinkBase));
   }
   private string? _HyperlinkBase;
 
   /// <summary>
   ///   The set of hyperlinks that were in this document when last saved.
   /// </summary>
-  public HyperlinkList? HyperlinkList { get; set; }
+  public HyperlinkList? HyperlinkList
+  {
+    get => _HyperlinkList;
+    set => UpdateField(ref _HyperlinkList, value, nameof(HyperlinkList));
+  }
+  private HyperlinkList? _HyperlinkList;
 
   /// <summary>
   ///   Specifies that one or more hyperlinks in this part were updated exclusively in this part by a producer. 
@@ -376,25 +191,8 @@ public class ContentProperties : ModelElement
   /// </summary>
   public bool? HyperlinksChanged
   {
-    get
-    {
-      var str = ExtendedFileProperties?.HyperlinksChanged?.InnerText ?? _HyperlinksChanged.ToString();
-      bool? value = null;
-      if (bool.TryParse(str, out bool val))
-        value = val;
-      _HyperlinksChanged = value;
-      return value;
-    }
-    set
-    {
-      if (value != _HyperlinksChanged)
-      {
-        _HyperlinksChanged = value;
-        if (ExtendedFileProperties != null)
-          ExtendedFileProperties.HyperlinksChanged = value != null ? new DXEP.HyperlinksChanged(value.ToString()!) : null;
-        NotifyPropertyChanged(nameof(HyperlinksChanged));
-      }
-    }
+    get => _HyperlinksChanged;
+    set => UpdateField(ref _HyperlinksChanged, value, nameof(HyperlinksChanged));
   }
   private bool? _HyperlinksChanged;
 
@@ -408,26 +206,9 @@ public class ContentProperties : ModelElement
   /// </summary>
   public DocumentSecurityKind? DocumentSecurity
   {
-    get
-    {
-      var str = ExtendedFileProperties?.DocumentSecurity?.InnerText ?? _DocumentSecurity.ToString();
-      int? value = null;
-      if (int.TryParse(str, out var val))
-        value = val;
-      _DocumentSecurity = value;
-      return (DocumentSecurityKind?)value;
-    }
-    set
-    {
-      int? val = (int?)value;
-      if (val != _DocumentSecurity)
-      {
-        _DocumentSecurity = val;
-        NotifyPropertyChanged(nameof(DocumentSecurity));
-      }
-    }
+    get => (DocumentSecurityKind?)_DocumentSecurity;
+    set => UpdateField(ref _DocumentSecurity, (int?)value, nameof(DocumentSecurity));
   }
-
   private int? _DocumentSecurity;
 
   /// <summary>
@@ -443,25 +224,9 @@ public class ContentProperties : ModelElement
   /// </summary>
   public string? Application
   {
-    get
-    {
-      var value = ExtendedFileProperties?.Application?.InnerText ?? _Application;
-      _Application = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Application)
-
-      {
-        _Application = value;
-        if (ExtendedFileProperties != null)
-          ExtendedFileProperties.Application = (value != null) ? new DXEP.Application(value) : null;
-        NotifyPropertyChanged(nameof(Application));
-      }
-    }
+    get => _Application;
+    set => UpdateField(ref _Application, value, nameof(Application));
   }
-
   private string? _Application;
 
   /// <summary>
@@ -469,24 +234,8 @@ public class ContentProperties : ModelElement
   /// </summary>
   public string? ApplicationVersion
   {
-    get
-    {
-      var value = ExtendedFileProperties?.ApplicationVersion?.InnerText ?? _ApplicationVersion;
-      _ApplicationVersion = value;
-      return value;
-    }
-    set
-    {
-      if (value != _ApplicationVersion)
-
-      {
-        _ApplicationVersion = value;
-        if (ExtendedFileProperties != null)
-          ExtendedFileProperties.ApplicationVersion = (value != null) ? new DXEP.ApplicationVersion(value) : null;
-        NotifyPropertyChanged(nameof(ApplicationVersion));
-      }
-    }
+    get => _ApplicationVersion;
+    set => UpdateField(ref _ApplicationVersion, value, nameof(ApplicationVersion));
   }
-
   private string? _ApplicationVersion;
 }
