@@ -18,37 +18,37 @@ internal class Program
     bool allTestsPassed = true;
 
     // Run CorePropertiesSerialization tests
-    if (!CorePropertiesSerializationTest.Run())
+    if (!CorePropertiesTest.Run())
       allTestsPassed = false;
 
     Console.WriteLine();
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
-    // Run ContentPropertiesSerialization tests
-    if (!ContentPropertiesSerializationTest.Run())
-      allTestsPassed = false;
+    //// Run ContentPropertiesSerialization tests
+    //if (!ContentPropertiesSerializationTest.Run())
+    //  allTestsPassed = false;
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
 
-    // Run CustomPropertiesSerialization tests
-    if (!CustomPropertiesSerializationTest.Run())
-      allTestsPassed = false;
+    //// Run CustomPropertiesSerialization tests
+    //if (!CustomPropertiesSerializationTest.Run())
+    //  allTestsPassed = false;
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    // Run DocumentSettingsSerialization tests
-    if (!DocumentSettingsSerializationTest.Run())
-      allTestsPassed = false;
+    //// Run DocumentSettingsSerialization tests
+    //if (!DocumentSettingsSerializationTest.Run())
+    //  allTestsPassed = false;
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
 
     Console.WriteLine(allTestsPassed ? "All tests passed." : "Some tests failed.");

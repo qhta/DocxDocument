@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
 using System.IO;
+using System.Reflection;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Text.Json;
@@ -10,8 +12,12 @@ namespace DocumentModel.InOpenXml.Test
   /// <summary>
   /// Comprehensive serialization test for DocumentModel.CoreProperties.
   /// </summary>
-  public static class CorePropertiesSerializationTest
+  public static class CorePropertiesTest
   {
+    /// <summary>
+    /// Runs all CoreProperties serialization tests and reports the results.
+    /// </summary>
+    /// <returns>true if all CoreProperties serialization tests pass; otherwise, false.</returns>
     public static bool Run()
     {
       Console.WriteLine("=== CoreProperties Serialization Test ===\n");
@@ -22,22 +28,29 @@ namespace DocumentModel.InOpenXml.Test
       return true;
     }
 
+    /// <summary>
+    /// Tests the XML serialization and deserialization process for the CoreProperties type, verifying that data is
+    /// preserved accurately.
+    /// </summary>
+    /// <remarks>This method writes diagnostic messages to the console indicating the progress and result of
+    /// the test. It is intended for use in validation or debugging scenarios to ensure that XML serialization is
+    /// functioning as expected.</remarks>
+    /// <returns>true if the CoreProperties object is correctly serialized and deserialized without data loss; otherwise, false.</returns>
     static bool TestXmlSerialization()
     {
       Console.WriteLine("--- XML Serialization ---");
       var testData = CreateSampleCoreProperties();
-      string xmlString;
       try
       {
         var xmlSerializer = new XmlSerializer(typeof(CoreProperties));
+        string xmlString;
         using (var stringWriter = new StringWriter())
         using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
         {
           xmlSerializer.Serialize(xmlWriter, testData);
           xmlString = stringWriter.ToString();
         }
-        Console.WriteLine("Serialized XML:\n" + xmlString.Substring(0, System.Math.Min(1000, xmlString.Length)));
-        if (xmlString.Length > 1000) Console.WriteLine("...");
+        Console.WriteLine("Serialized XML:\n" + xmlString);
 
         CoreProperties? deserialized;
         using (var stringReader = new StringReader(xmlString))
@@ -49,9 +62,9 @@ namespace DocumentModel.InOpenXml.Test
           Console.WriteLine("✗ XML Deserialization returned null");
           return false;
         }
-        if (!CompareCoreProperties(testData, deserialized))
+        if (!CompareCoreProperties(testData, deserialized, out var propName))
         {
-          Console.WriteLine("✗ XML Serialization/Deserialization test FAILED - data mismatch");
+          Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
           return false;
         }
         Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
@@ -64,6 +77,15 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Tests the JSON serialization and deserialization process for the CoreProperties object, verifying that data
+    /// integrity is maintained.
+    /// </summary>
+    /// <remarks>This method writes diagnostic output to the console, including details of the serialized JSON
+    /// and any errors encountered during the test. It is intended for use in test scenarios to validate the correctness
+    /// of JSON serialization logic.</remarks>
+    /// <returns>true if the CoreProperties object is correctly serialized and deserialized without data loss or mismatch;
+    /// otherwise, false.</returns>
     static bool TestJsonSerialization()
     {
       Console.WriteLine("--- JSON Serialization ---");
@@ -72,8 +94,7 @@ namespace DocumentModel.InOpenXml.Test
       {
         var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
         string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-        Console.WriteLine("Serialized JSON:\n" + jsonString.Substring(0, System.Math.Min(1000, jsonString.Length)));
-        if (jsonString.Length > 1000) Console.WriteLine("...");
+        Console.WriteLine("Serialized JSON:\n" + jsonString);
 
         var deserialized = JsonSerializer.Deserialize<CoreProperties>(jsonString, jsonOptions);
         if (deserialized == null)
@@ -81,9 +102,9 @@ namespace DocumentModel.InOpenXml.Test
           Console.WriteLine("✗ JSON Deserialization returned null");
           return false;
         }
-        if (!CompareCoreProperties(testData, deserialized))
+        if (!CompareCoreProperties(testData, deserialized, out var propName))
         {
-          Console.WriteLine("✗ JSON Serialization/Deserialization test FAILED - data mismatch");
+          Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
           return false;
         }
         Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
@@ -96,6 +117,13 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Tests serialization and deserialization edge cases for empty objects using both XML and JSON formats.
+    /// </summary>
+    /// <remarks>This method writes diagnostic messages to the console indicating the success or failure of
+    /// each edge case test. It is intended for use in verifying that serialization and deserialization logic correctly
+    /// handles empty objects without errors.</remarks>
+    /// <returns>true if all edge case tests pass; otherwise, false.</returns>
     static bool TestEdgeCases()
     {
       Console.WriteLine("--- Edge Cases ---");
@@ -126,6 +154,15 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Creates a new instance of the CoreProperties class populated with sample metadata values for testing or
+    /// demonstration purposes.
+    /// </summary>
+    /// <remarks>The returned CoreProperties instance contains preset values suitable for use in serialization
+    /// tests or as a template for document property configuration. The associated document is created in a temporary
+    /// file and disposed after the properties are initialized.</remarks>
+    /// <returns>A CoreProperties object initialized with example document metadata such as title, subject, creator, and other
+    /// core properties.</returns>
     static CoreProperties CreateSampleCoreProperties()
     {
       using
@@ -155,26 +192,37 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
-    static bool CompareCoreProperties(CoreProperties a, CoreProperties b)
+    /// <summary>
+    /// Compares two CoreProperties instances property by property.
+    /// </summary>
+    /// <param name="a">First CoreProperties instance</param>
+    /// <param name="b">Second CoreProperties instance</param>
+    /// <param name="propName">Name of the property that differs, if any</param>
+    /// <returns>True if the properties are equal, false otherwise</returns>
+    static bool CompareCoreProperties(CoreProperties a, CoreProperties b, out string? propName)
     {
-      return a.Title == b.Title &&
-             a.Subject == b.Subject &&
-             a.Creator == b.Creator &&
-             a.Keywords == b.Keywords &&
-             a.Description == b.Description &&
-             a.LastModifiedBy == b.LastModifiedBy &&
-             a.Revision == b.Revision &&
-             a.LastPrinted == b.LastPrinted &&
-             a.Created == b.Created &&
-             a.Modified == b.Modified &&
-             a.Category == b.Category &&
-             a.Identifier == b.Identifier &&
-             a.ContentType == b.ContentType &&
-             a.Language == b.Language &&
-             a.Version == b.Version &&
-             a.ContentStatus == b.ContentStatus;
+      foreach(var property in typeof(CoreProperties).GetProperties())
+      {
+        if (property.CanWrite)
+        {
+          var aValue = property.GetValue(a);
+          var bValue = property.GetValue(b);
+          if (!object.Equals(aValue, bValue))
+          {
+            propName = property.Name;
+            return false;
+          }
+        }
+      }
+      propName = null;
+      return true;
     }
 
+    /// <summary>
+    /// Serializes the specified CoreProperties object to its XML representation.
+    /// </summary>
+    /// <param name="props">The CoreProperties instance to serialize. Cannot be null.</param>
+    /// <returns>A string containing the XML representation of the specified CoreProperties object.</returns>
     static string SerializeToXml(CoreProperties props)
     {
       var xmlSerializer = new XmlSerializer(typeof(CoreProperties));
@@ -186,6 +234,12 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Deserializes a string containing XML data into a <see cref="CoreProperties"/> object.
+    /// </summary>
+    /// <param name="xml">A string that contains the XML representation of a <see cref="CoreProperties"/> object. Cannot be null.</param>
+    /// <returns>A <see cref="CoreProperties"/> object deserialized from the specified XML string, or <see langword="null"/> if
+    /// the XML does not represent a valid <see cref="CoreProperties"/> object.</returns>
     static CoreProperties? DeserializeFromXml(string xml)
     {
       var xmlSerializer = new XmlSerializer(typeof(CoreProperties));
@@ -195,12 +249,23 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Serializes the specified CoreProperties object to a formatted JSON string.
+    /// </summary>
+    /// <param name="props">The CoreProperties instance to serialize. Cannot be null.</param>
+    /// <returns>A JSON-formatted string that represents the specified CoreProperties object.</returns>
     static string SerializeToJson(CoreProperties props)
     {
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
       return JsonSerializer.Serialize(props, jsonOptions);
     }
 
+    /// <summary>
+    /// Deserializes the specified JSON string into a CoreProperties object.
+    /// </summary>
+    /// <param name="json">A JSON-formatted string representing the CoreProperties object to deserialize. Cannot be null or empty.</param>
+    /// <returns>A CoreProperties object deserialized from the JSON string, or null if the input is invalid or deserialization
+    /// fails.</returns>
     static CoreProperties? DeserializeFromJson(string json)
     {
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
