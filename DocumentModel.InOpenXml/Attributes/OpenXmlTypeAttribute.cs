@@ -8,7 +8,7 @@
 /// type information is required for reflection or code generation.</remarks>
 /// <param name="type">The OpenXml type to associate with the decorated member. Cannot be null.</param>
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
-public class OpenXmlType(Type type) : Attribute
+public class OpenXmlTypeAttribute(Type type) : Attribute
 {
   /// <summary>
   /// The OpenXml type associated with the decorated member.
