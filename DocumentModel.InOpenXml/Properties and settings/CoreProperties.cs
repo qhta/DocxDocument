@@ -1,25 +1,17 @@
 namespace DocumentModel;
-
+#pragma warning disable OOXML0001
 /// <summary>
 ///   Collection of core properties, which represents document properties defined in Dublin Core standard
 /// and Open Packaging Conventions
 /// </summary>
-public partial class CoreProperties : ModelElement
+public partial class CoreProperties : ModelElement<PackageProperties>
 {
-
   /// <summary>
-  /// Package properties from packaging system.
+  /// Default constructor.
   /// </summary>
-#pragma warning disable OOXML0001
-  internal PackageProperties? PackageProperties { get; private set; }
-#pragma warning restore OOXML0001
-
- /// <summary>
- /// Default constructor.
- /// </summary>
- public CoreProperties()
- {
- }
+  public CoreProperties()
+  {
+  }
 
   /// <summary>
   /// Initializing constructor.
@@ -27,7 +19,10 @@ public partial class CoreProperties : ModelElement
   /// <param name="document">Wordprocessing document model</param>
   public CoreProperties(Wordprocessing.Document document)
   {
-    PackageProperties = document.WordprocessingDocument?.GetPackageProperties();
+    var packageProperties = document.WordprocessingDocument?.GetPackageProperties();
+    if (packageProperties != null)
+      LoadData(packageProperties);
+    SetOpenXmlElement(packageProperties);
     document.PropertyChanged += Document_PropertyChanged;
   }
 
@@ -47,73 +42,38 @@ public partial class CoreProperties : ModelElement
       {
         if (document.WordprocessingDocument == null)
         {
-          PackageProperties = null;
+          SetOpenXmlElement(null);
         }
         else
         {
-          var isEmpty = PackageProperties == null;
-          PackageProperties = document.WordprocessingDocument?.GetPackageProperties();
-          if (isEmpty)
-            GetValuesFromPackageProperties();
-          else
-            SetValuesToPackageProperties();
+          var isEmpty = GetOpenXmlElement() == null;
+          SetOpenXmlElement(document.WordprocessingDocument?.GetPackageProperties());
+          var openXmlElement = GetOpenXmlElement();
+          if (openXmlElement != null)
+          {
+            if (isEmpty)
+              LoadData(openXmlElement);
+            else
+              UpdateData(openXmlElement);
+          }
         }
       }
   }
 
   /// <summary>
-  /// Gets values from PackageProperties to this instance.
-  /// </summary>
-  private void GetValuesFromPackageProperties()
-  {
-    foreach (var propertyInfo in typeof(CoreProperties).GetProperties())
-    {
-      var value = propertyInfo.GetValue(PackageProperties);
-      propertyInfo.SetValue(this, value);
-    }
-  }
-
-  /// <summary>
-  /// Sets values from this instance to PackageProperties.
-  /// </summary>
-  private void SetValuesToPackageProperties()
-  {
-    foreach (var propertyInfo in typeof(CoreProperties).GetProperties())
-    {
-      var value = propertyInfo.GetValue(this);
-      propertyInfo.SetValue(PackageProperties, value);
-    }
-  }
-
-  /// <summary>
   /// Known properties that can be set in CoreProperties
   /// </summary>
-  public static KnownProperties KnownProperties { get; }
-  = new KnownProperties(typeof(CoreProperties));
+  public static KnownProperties KnownProperties { get; } = new KnownProperties(typeof(CoreProperties));
 
   /// <summary>
   ///   Title the document.
   /// </summary>
   public string? Title
   {
-    get
-    {
-      var value = PackageProperties?.Title ?? _Title;
-      _Title = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Title)
-
-      {
-        _Title = value;
-        if (PackageProperties != null)
-          PackageProperties.Title = value;
-        NotifyPropertyChanged(nameof(Title));
-      }
-    }
+    get => _Title;
+    set => UpdateField(ref _Title, value, nameof(Title));
   }
+
   private string? _Title;
 
   /// <summary>
@@ -121,48 +81,21 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public string? Subject
   {
-    get
-    {
-      var value = PackageProperties?.Subject ?? _Subject;
-      _Subject = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Subject)
-      {
-        _Subject = value;
-        if (PackageProperties != null)
-          PackageProperties.Subject = value;
-        NotifyPropertyChanged(nameof(Subject));
-      }
-    }
+    get => _Subject;
+    set => UpdateField(ref _Subject, value, nameof(Subject));
   }
-  private string? _Subject;
 
+  private string? _Subject;
 
   /// <summary>
   ///   An entity primarily responsible for making the content of the resource.
   /// </summary>
   public string? Creator
   {
-    get
-    {
-      var value = PackageProperties?.Creator ?? _Creator;
-      _Creator = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Creator)
-      {
-        _Creator = value;
-        if (PackageProperties != null)
-          PackageProperties.Creator = value;
-        NotifyPropertyChanged(nameof(Creator));
-      }
-    }
+    get => _Creator;
+    set => UpdateField(ref _Creator, value, nameof(Creator));
   }
+
   private string? _Creator;
 
   /// <summary>
@@ -174,23 +107,10 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public string? Keywords
   {
-    get
-    {
-      var value = PackageProperties?.Keywords ?? _Keywords;
-      _Keywords = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Keywords)
-      {
-        _Keywords = value;
-        if (PackageProperties != null)
-          PackageProperties.Keywords = value;
-        NotifyPropertyChanged(nameof(Keywords));
-      }
-    }
+    get => _Keywords;
+    set => UpdateField(ref _Keywords, value, nameof(Keywords));
   }
+
   private string? _Keywords;
 
   /// <summary>
@@ -200,23 +120,10 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public string? Description
   {
-    get
-    {
-      var value = PackageProperties?.Description ?? _Description;
-      _Description = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Description)
-      {
-        _Description = value;
-        if (PackageProperties != null)
-          PackageProperties.Description = value;
-        NotifyPropertyChanged(nameof(Description));
-      }
-    }
+    get => _Description;
+    set => UpdateField(ref _Description, value, nameof(Description));
   }
+
   private string? _Description;
 
   /// <summary>
@@ -225,23 +132,10 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public string? LastModifiedBy
   {
-    get
-    {
-      var value = PackageProperties?.LastModifiedBy ?? _LastModifiedBy;
-      _LastModifiedBy = value;
-      return value;
-    }
-    set
-    {
-      if (value != _LastModifiedBy)
-      {
-        _LastModifiedBy = value;
-        if (PackageProperties != null)
-          PackageProperties.LastModifiedBy = value;
-        NotifyPropertyChanged(nameof(LastModifiedBy));
-      }
-    }
+    get => _LastModifiedBy;
+    set => UpdateField(ref _LastModifiedBy, value, nameof(LastModifiedBy));
   }
+
   private string? _LastModifiedBy;
 
   /// <summary>
@@ -250,25 +144,10 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public int? Revision
   {
-    get
-    {
-      var value = _Revision;
-      if (int.TryParse(PackageProperties?.Revision, out var val))
-        value = val;
-      _Revision = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Revision)
-      {
-        _Revision = value;
-        if (PackageProperties != null)
-          PackageProperties.Revision = value.ToString();
-        NotifyPropertyChanged(nameof(Revision));
-      }
-    }
+    get => _Revision;
+    set => UpdateField(ref _Revision, value, nameof(Revision));
   }
+
   private int? _Revision;
 
   /// <summary>
@@ -276,23 +155,10 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public DateTime? LastPrinted
   {
-    get
-    {
-      var value = PackageProperties?.LastPrinted ?? _LastPrinted;
-      _LastPrinted = value;
-      return value;
-    }
-    set
-    {
-      if (value != _LastPrinted)
-      {
-        _LastPrinted = value;
-        if (PackageProperties != null)
-          PackageProperties.LastPrinted = value;
-        NotifyPropertyChanged(nameof(LastPrinted));
-      }
-    }
+    get => _LastPrinted;
+    set => UpdateField(ref _LastPrinted, value, nameof(LastPrinted));
   }
+
   private DateTime? _LastPrinted;
 
   /// <summary>
@@ -300,23 +166,10 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public DateTime? Created
   {
-    get
-    {
-      var value = PackageProperties?.Created ?? _Created;
-      _Created = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Created)
-      {
-        _Created = value;
-        if (PackageProperties != null)
-          PackageProperties.Created = value;
-        NotifyPropertyChanged(nameof(Created));
-      }
-    }
+    get => _Created;
+    set => UpdateField(ref _Created, value, nameof(Created));
   }
+
   private DateTime? _Created;
 
   /// <summary>
@@ -324,23 +177,10 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public DateTime? Modified
   {
-    get
-    {
-      var value = PackageProperties?.Modified ?? _Modified;
-      _Modified = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Modified)
-      {
-        _Modified = value;
-        if (PackageProperties != null)
-          PackageProperties.Modified = value;
-        NotifyPropertyChanged(nameof(Modified));
-      }
-    }
+    get => _Modified;
+    set => UpdateField(ref _Modified, value, nameof(Modified));
   }
+
   private DateTime? _Modified;
 
   /// <summary>
@@ -351,23 +191,10 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public string? Category
   {
-    get
-    {
-      var value = PackageProperties?.Category ?? _Category;
-      _Category = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Category)
-      {
-        _Category = value;
-        if (PackageProperties != null)
-          PackageProperties.Category = value;
-        NotifyPropertyChanged(nameof(Category));
-      }
-    }
+    get => _Category;
+    set => UpdateField(ref _Category, value, nameof(Category));
   }
+
   private string? _Category;
 
   /// <summary>
@@ -375,23 +202,10 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public string? Identifier
   {
-    get
-    {
-      var value = PackageProperties?.Identifier ?? _Identifier;
-      _Identifier = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Identifier)
-      {
-        _Identifier = value;
-        if (PackageProperties != null)
-          PackageProperties.Identifier = value;
-        NotifyPropertyChanged(nameof(Identifier));
-      }
-    }
+    get => _Identifier;
+    set => UpdateField(ref _Identifier, value, nameof(Identifier));
   }
+
   private string? _Identifier;
 
   /// <summary>
@@ -399,23 +213,10 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public string? ContentType
   {
-    get
-    {
-      var value = PackageProperties?.ContentType ?? _ContentType;
-      _ContentType = value;
-      return value;
-    }
-    set
-    {
-      if (value != _ContentType)
-      {
-        _ContentType = value;
-        if (PackageProperties != null)
-          PackageProperties.ContentType = value;
-        NotifyPropertyChanged(nameof(ContentType));
-      }
-    }
+    get => _ContentType;
+    set => UpdateField(ref _ContentType, value, nameof(ContentType));
   }
+
   private string? _ContentType;
 
   /// <summary>
@@ -424,23 +225,10 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public string? Language
   {
-    get
-    {
-      var value = PackageProperties?.Language ?? _Language;
-      _Language = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Language)
-      {
-        _Language = value;
-        if (PackageProperties != null)
-          PackageProperties.Language = value;
-        NotifyPropertyChanged(nameof(Language));
-      }
-    }
+    get => _Language;
+    set => UpdateField(ref _Language, value, nameof(Language));
   }
+
   private string? _Language;
 
   /// <summary>
@@ -448,23 +236,10 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public string? Version
   {
-    get
-    {
-      var value = PackageProperties?.Version ?? _Version;
-      _Version = value;
-      return value;
-    }
-    set
-    {
-      if (value != _Version)
-      {
-        _Version = value;
-        if (PackageProperties != null)
-          PackageProperties.Version = value;
-        NotifyPropertyChanged(nameof(Version));
-      }
-    }
+    get => _Version;
+    set => UpdateField(ref _Version, value, nameof(Version));
   }
+
   private string? _Version;
 
   /// <summary>
@@ -472,23 +247,9 @@ public partial class CoreProperties : ModelElement
   /// </summary>
   public string? ContentStatus
   {
-    get
-    {
-      var value = PackageProperties?.ContentStatus ?? _ContentStatus;
-      _ContentStatus = value;
-      return value;
-    }
-    set
-    {
-      if (value != _ContentStatus)
-      {
-        _ContentStatus = value;
-        if (PackageProperties != null)
-          PackageProperties.ContentStatus = value;
-        NotifyPropertyChanged(nameof(ContentStatus));
-      }
-    }
+    get => _ContentStatus;
+    set => UpdateField(ref _ContentStatus, value, nameof(ContentStatus));
   }
-  private string? _ContentStatus;
 
+  private string? _ContentStatus;
 }
