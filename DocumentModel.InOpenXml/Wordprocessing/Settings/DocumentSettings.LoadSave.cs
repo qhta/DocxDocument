@@ -1,6 +1,4 @@
-﻿using DocumentModel.OpenXml;
-
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 public partial class DocumentSettings
 {

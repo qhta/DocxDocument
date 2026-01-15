@@ -460,9 +460,7 @@ public static class VariantUtils
   public static byte[]? AsByteArray(this DXVT.VTBlob variant)
   {
     var value = Convert.FromBase64String(variant.InnerText);
-    byte[] result = new byte[value.Length - 4];
-    Array.Copy(value, 4, result, 0, result.Length);
-    return result;
+    return value;
   }
 
   /// <summary>

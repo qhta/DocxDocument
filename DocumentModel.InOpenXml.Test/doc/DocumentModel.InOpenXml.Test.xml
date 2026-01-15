@@ -1,0 +1,328 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DocumentModel.InOpenXml.Test</name>
+    </assembly>
+    <members>
+        <member name="T:DocumentModel.InOpenXml.Test.ContentPropertiesTest">
+            <summary>
+            Provides comprehensive serialization tests for <see cref="T:DocumentModel.ContentProperties"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.Run">
+            <summary>
+            Runs all serialization tests for <see cref="T:DocumentModel.ContentProperties"/>.
+            </summary>
+            <returns>True if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.TestXmlSerialization">
+            <summary>
+            Tests XML serialization and deserialization for <see cref="T:DocumentModel.ContentProperties"/>.
+            </summary>
+            <returns>True if the round-trip succeeds; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.TestJsonSerialization">
+            <summary>
+            Tests JSON serialization and deserialization for <see cref="T:DocumentModel.ContentProperties"/>.
+            </summary>
+            <returns>True if the round-trip succeeds; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.TestEdgeCases">
+            <summary>
+            Tests edge cases for serialization and deserialization of empty <see cref="T:DocumentModel.ContentProperties"/> objects.
+            </summary>
+            <returns>True if all edge case tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.TestNewFromDocument">
+            <summary>
+            Tests the creation and serialization of content properties for a new document.
+            </summary>
+            <remarks>This method creates a new document, retrieves its content properties, serializes them to XML,
+            and outputs the result to the console. It is intended for diagnostic or verification purposes and writes status
+            messages to the console.</remarks>
+            <returns>true if the test completes successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.TestStoreInDocument">
+            <summary>
+            Tests setting sample content properties to a new document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document content properties can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document content properties are successfully stored and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.TestUpdateInDocument">
+            <summary>
+            Tests updating the content properties of a document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document content properties can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document content properties are successfully updated and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.CreateSampleContentProperties(System.Boolean)">
+            <summary>
+            Creates a sample <see cref="T:DocumentModel.ContentProperties"/> instance for testing.
+            </summary>
+            <param name="createCompoundProperties">Whether to create compound properties, like HeadingPairs and TitlesOfParts.</param>
+            <returns>A populated <see cref="T:DocumentModel.ContentProperties"/> object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.SerializeToXml(DocumentModel.ContentProperties)">
+            <summary>
+            Serializes a <see cref="T:DocumentModel.ContentProperties"/> instance to XML.
+            </summary>
+            <param name="props">The <see cref="T:DocumentModel.ContentProperties"/> instance to serialize.</param>
+            <returns>XML string representation.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.DeserializeFromXml(System.String)">
+            <summary>
+            Deserializes a <see cref="T:DocumentModel.ContentProperties"/> instance from XML.
+            </summary>
+            <param name="xml">The XML string to deserialize.</param>
+            <returns>The deserialized <see cref="T:DocumentModel.ContentProperties"/> instance.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.SerializeToJson(DocumentModel.ContentProperties)">
+            <summary>
+            Serializes a <see cref="T:DocumentModel.ContentProperties"/> instance to JSON.
+            </summary>
+            <param name="props">The <see cref="T:DocumentModel.ContentProperties"/> instance to serialize.</param>
+            <returns>JSON string representation.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.DeserializeFromJson(System.String)">
+            <summary>
+            Deserializes a <see cref="T:DocumentModel.ContentProperties"/> instance from JSON.
+            </summary>
+            <param name="json">The JSON string to deserialize.</param>
+            <returns>The deserialized <see cref="T:DocumentModel.ContentProperties"/> instance.</returns>
+        </member>
+        <member name="T:DocumentModel.InOpenXml.Test.CorePropertiesTest">
+            <summary>
+            Comprehensive serialization test for DocumentModel.CoreProperties.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.Run">
+            <summary>
+            Runs all CoreProperties serialization tests and reports the results.
+            </summary>
+            <returns>true if all CoreProperties serialization tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestXmlSerialization">
+            <summary>
+            Tests the XML serialization and deserialization process for the CoreProperties type, verifying that data is
+            preserved accurately.
+            </summary>
+            <remarks>This method writes diagnostic messages to the console indicating the progress and result of
+            the test. It is intended for use in validation or debugging scenarios to ensure that XML serialization is
+            functioning as expected.</remarks>
+            <returns>true if the CoreProperties object is correctly serialized and deserialized without data loss; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestJsonSerialization">
+            <summary>
+            Tests the JSON serialization and deserialization process for the CoreProperties object, verifying that data
+            integrity is maintained.
+            </summary>
+            <remarks>This method writes diagnostic output to the console, including details of the serialized JSON
+            and any errors encountered during the test. It is intended for use in test scenarios to validate the correctness
+            of JSON serialization logic.</remarks>
+            <returns>true if the CoreProperties object is correctly serialized and deserialized without data loss or mismatch;
+            otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestEdgeCases">
+            <summary>
+            Tests serialization and deserialization edge cases for empty objects using both XML and JSON formats.
+            </summary>
+            <remarks>This method writes diagnostic messages to the console indicating the success or failure of
+            each edge case test. It is intended for use in verifying that serialization and deserialization logic correctly
+            handles empty objects without errors.</remarks>
+            <returns>true if all edge case tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestNewFromDocument">
+            <summary>
+            Tests the creation and serialization of core properties for a new document.
+            </summary>
+            <remarks>This method creates a new document, retrieves its core properties, serializes them to XML,
+            and outputs the result to the console. It is intended for diagnostic or verification purposes and writes status
+            messages to the console.</remarks>
+            <returns>true if the test completes successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestStoreInDocument">
+            <summary>
+            Tests setting sample core properties to a new document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document core properties can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document core properties are successfully stored and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestUpdateInDocument">
+            <summary>
+            Tests updating the core properties of a document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document core properties can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document core properties are successfully updated and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.CreateSampleCoreProperties">
+            <summary>
+            Creates a new instance of the CoreProperties class populated with sample metadata values for testing or
+            demonstration purposes.
+            </summary>
+            <remarks>The returned CoreProperties instance contains preset values suitable for use in serialization
+            tests or as a template for document property configuration. The associated document is created in a temporary
+            file and disposed after the properties are initialized.</remarks>
+            <returns>A CoreProperties object initialized with example document metadata such as title, subject, creator, and other
+            core properties.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.SerializeToXml(DocumentModel.CoreProperties)">
+            <summary>
+            Serializes the specified CoreProperties object to its XML representation.
+            </summary>
+            <param name="props">The CoreProperties instance to serialize. Cannot be null.</param>
+            <returns>A string containing the XML representation of the specified CoreProperties object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.DeserializeFromXml(System.String)">
+            <summary>
+            Deserializes a string containing XML data into a <see cref="T:DocumentModel.CoreProperties"/> object.
+            </summary>
+            <param name="xml">A string that contains the XML representation of a <see cref="T:DocumentModel.CoreProperties"/> object. Cannot be null.</param>
+            <returns>A <see cref="T:DocumentModel.CoreProperties"/> object deserialized from the specified XML string, or <see langword="null"/> if
+            the XML does not represent a valid <see cref="T:DocumentModel.CoreProperties"/> object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.SerializeToJson(DocumentModel.CoreProperties)">
+            <summary>
+            Serializes the specified CoreProperties object to a formatted JSON string.
+            </summary>
+            <param name="props">The CoreProperties instance to serialize. Cannot be null.</param>
+            <returns>A JSON-formatted string that represents the specified CoreProperties object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.DeserializeFromJson(System.String)">
+            <summary>
+            Deserializes the specified JSON string into a CoreProperties object.
+            </summary>
+            <param name="json">A JSON-formatted string representing the CoreProperties object to deserialize. Cannot be null or empty.</param>
+            <returns>A CoreProperties object deserialized from the JSON string, or null if the input is invalid or deserialization
+            fails.</returns>
+        </member>
+        <member name="T:DocumentModel.InOpenXml.Test.CustomPropertiesSerializationTest">
+            <summary>
+            Comprehensive serialization test for DocumentModel.CustomProperties.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesSerializationTest.Run">
+            <summary>
+            Runs all CustomProperties serialization tests.
+            </summary>
+            <returns>True if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesSerializationTest.TestXmlSerialization">
+            <summary>
+            Tests XML serialization and deserialization of CustomProperties.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesSerializationTest.TestJsonSerialization">
+            <summary>
+            Tests JSON serialization and deserialization of CustomProperties.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesSerializationTest.TestEdgeCases">
+            <summary>
+            Tests edge cases like empty CustomProperties object.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesSerializationTest.CreateSampleCustomProperties">
+            <summary>
+            Creates a sample CustomProperties object with various property types.
+            </summary>
+            <returns>A populated CustomProperties object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesSerializationTest.CompareCustomProperties(DocumentModel.CustomProperties,DocumentModel.CustomProperties)">
+            <summary>
+            Compares two CustomProperties objects for equality.
+            </summary>
+            <param name="a">The first CustomProperties object.</param>
+            <param name="b">The second CustomProperties object.</param>
+            <returns>True if both objects are equivalent; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesSerializationTest.SerializeToXml(DocumentModel.CustomProperties)">
+            <summary>
+            Serializes a CustomProperties object to an XML string.
+            </summary>
+            <param name="props">The CustomProperties object to serialize.</param>
+            <returns>The serialized XML string.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesSerializationTest.DeserializeFromXml(System.String)">
+            <summary>
+            Deserializes a CustomProperties object from an XML string.
+            </summary>
+            <param name="xml">The XML string to deserialize.</param>
+            <returns>The deserialized CustomProperties object, or null if deserialization fails.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesSerializationTest.SerializeToJson(DocumentModel.CustomProperties)">
+            <summary>
+            Serializes a CustomProperties object to a JSON string.
+            </summary>
+            <param name="props">The CustomProperties object to serialize.</param>
+            <returns>The serialized JSON string.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesSerializationTest.DeserializeFromJson(System.String)">
+            <summary>
+            Deserializes a CustomProperties object from a JSON string.
+            </summary>
+            <param name="json">The JSON string to deserialize.</param>
+            <returns>The deserialized CustomProperties object, or null if deserialization fails.</returns>
+        </member>
+        <member name="T:DocumentModel.InOpenXml.Test.DocumentSettingsSerializationTest">
+            <summary>
+            Comprehensive serialization test for DocumentModel.Wordprocessing.DocumentSettings.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsSerializationTest.Run">
+            <summary>
+            Runs all serialization tests for the DocumentSettings class and reports the results to the console.
+            </summary>
+            <remarks>This method executes XML and JSON serialization tests, as well as edge case tests, for the
+            DocumentSettings class. It writes the progress and results to the standard output. Use this method to verify
+            that DocumentSettings serialization behaves as expected.</remarks>
+            <returns>true if all DocumentSettings serialization tests pass; otherwise, false.</returns>
+        </member>
+        <member name="T:DocumentModel.InOpenXml.Test.StatisticPropertiesSerializationTest">
+            <summary>
+            Comprehensive serialization test for DocumentModel.StatisticProperties.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesSerializationTest.Run">
+            <summary>
+            Runs all serialization tests for the StatisticProperties class and reports the results.
+            </summary>
+            <returns>true if all serialization tests pass; otherwise, false.</returns>
+        </member>
+        <member name="T:DocumentModel.InOpenXml.Test.TestHelper">
+            <summary>
+            Provides helper methods for test scenarios.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.CompareTestData``1(``0,``0,System.String@)">
+            <summary>
+            Compares two test data instances property by property.
+            </summary>
+            <param name="a">First test data instance</param>
+            <param name="b">Second test data instance</param>
+            <param name="propName">Name of the property that differs, if any</param>
+            <returns>True if the properties are equal, false otherwise</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.GetInternalMessages(System.Exception)">
+            <summary>
+            Retrieves a formatted string containing the messages of all inner exceptions for the specified exception.
+            </summary>
+            <remarks>This method is useful for logging or displaying detailed error information, especially when
+            exceptions are nested. The returned string includes each inner exception message on a separate line.</remarks>
+            <param name="ex">The exception from which to extract inner exception messages. Cannot be null.</param>
+            <returns>A string listing the messages of all inner exceptions, each prefixed with "Inner Exception:". Returns "No inner
+            exceptions" if there are none.</returns>
+        </member>
+    </members>
+</doc>

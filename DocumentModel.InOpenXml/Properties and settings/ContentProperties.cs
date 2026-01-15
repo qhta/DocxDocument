@@ -6,6 +6,7 @@ namespace DocumentModel;
 /// </summary>
 public class ContentProperties : ModelElement<DXEP.Properties>
 {
+
   /// <summary>
   /// Gets the underlying WordprocessingDocument instance associated with this object.
   /// </summary>
@@ -68,6 +69,62 @@ public class ContentProperties : ModelElement<DXEP.Properties>
       return;
     WordprocessingDocument = null;
     SetOpenXmlElement(null);
+  }
+
+  public override object? ConvertToOpenXml(object? value, Type targetType)
+  {
+    if (targetType == typeof(DXEP.HeadingPairs))
+    {
+      if (value is DocumentModel.HeadingPairs headingPairs)
+        return new DXEP.HeadingPairs(headingPairs.AsVTVector()!);
+      return null;
+    }
+    if (targetType == typeof(DXEP.TitlesOfParts))
+    {
+      if (value is DocumentModel.StringList titlesOfParts)
+        return new DXEP.TitlesOfParts(titlesOfParts.AsVTVector()!);
+      return null;
+    }
+    if (targetType == typeof(DXEP.HyperlinkList))
+    {
+      if (value is DocumentModel.HyperlinkList hyperlinkList)
+        return new DXEP.HyperlinkList(hyperlinkList.AsVTVector()!);
+      return null;
+    }
+    if (targetType == typeof(DXEP.DigitalSignature))
+    {
+      if (value is byte[] digitalSignature)
+        return new DXEP.DigitalSignature {  VTBlob = 
+          new DXVT.VTBlob(new Base64Binary(digitalSignature)) };
+      return null;
+    }
+    return base.ConvertToOpenXml(value, targetType);
+  }
+
+  public override object? ConvertFromOpenXml(object? value, Type targetType)
+  {
+    if (value == null) return null;
+    if (value is DXEP.HeadingPairs headingPairs)
+    {
+      var variant = headingPairs.VTVector;
+      return variant?.AsHeadingPairs();
+    }
+    if (value is DXEP.TitlesOfParts titlesOfParts)
+    {
+      var variant = titlesOfParts.VTVector;
+      return variant?.AsStringList();
+    }
+    if (value is DXEP.HyperlinkList hyperlinkList)
+    {
+      var variant = hyperlinkList.VTVector;
+      return variant?.AsHyperlinkList();
+    }
+    if (value is DXEP.DigitalSignature digitalSignature)
+    {
+      var variant = digitalSignature.VTBlob;
+      return variant?.AsByteArray();
+    }
+    return base.ConvertFromOpenXml(value, targetType);
   }
 
   /// <summary>

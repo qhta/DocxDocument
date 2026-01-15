@@ -34,7 +34,7 @@ public static class DeepComparer
     var properties = comparedType.GetProperties(BindingFlags.Instance | BindingFlags.Public);
     foreach (var prop in properties)
     {
-      if (prop.CanRead && prop.CanWrite)
+      if (prop.CanRead && prop.CanWrite && !prop.GetIndexParameters().Any())
       {
         var value1 = prop.GetValue(obj1);
         var value2 = prop.GetValue(obj2);
