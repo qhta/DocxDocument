@@ -19,7 +19,7 @@ public static class TestHelper
   {
     foreach (var property in typeof(T).GetProperties())
     {
-      if (property.CanWrite)
+      if (property.CanWrite && property.GetIndexParameters().Length==0)
       {
         propName = property.Name;
         //if (propName == "HyperlinkList") 

@@ -30,6 +30,10 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
     _CoreProperties = new CoreProperties(this);
     _ContentProperties = new ContentProperties(this);
     _StatisticProperties = new StatisticProperties(this);
+    if (WordprocessingDocument?.CustomFilePropertiesPart!=null)
+    {
+      _CustomProperties = new CustomProperties(this);
+    }
   }
 
   /// <summary>
@@ -80,7 +84,6 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
         _CoreProperties.Detach(this);
         value.AttachAndUpdate(this);
         _CoreProperties = value;
-
       }
     }
   }
@@ -99,7 +102,6 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
         _ContentProperties.Detach(this);
         value.AttachAndUpdate(this);
         _ContentProperties = value;
-
       }
     }
   }
@@ -118,12 +120,29 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
         _StatisticProperties.Detach(this);
         value.AttachAndUpdate(this);
         _StatisticProperties = value;
-
       }
     }
   }
-
   private StatisticProperties _StatisticProperties;
+
+
+  /// <summary>
+  /// Provides access to custom document properties.
+  /// </summary>
+  public CustomProperties? CustomProperties
+  {
+    get => _CustomProperties;
+    set
+    {
+      if (!Equals(_CustomProperties, value))
+      {
+        _CustomProperties?.Detach(this);
+        value?.AttachAndUpdate(this);
+        _CustomProperties = value;
+      }
+    }
+  }
+  private CustomProperties? _CustomProperties;
 
   /// <summary>
   /// Provides access to document-level settings and properties.

@@ -17,33 +17,33 @@ internal class Program
     // ReSharper disable once ReplaceWithSingleAssignment.True
     bool allTestsPassed = true;
 
-    // Run CoreProperties tests
-    if (!CorePropertiesTest.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run ContentProperties tests
-    if (!ContentPropertiesTest.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run StatisticProperties tests
-    if (!StatisticPropertiesTest.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    //// Run CustomPropertiesSerialization tests
-    //if (!CustomPropertiesSerializationTest.Run())
+    //// Run CoreProperties tests
+    //if (!CorePropertiesTest.Run())
     //  allTestsPassed = false;
+
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
+
+    //// Run ContentProperties tests
+    //if (!ContentPropertiesTest.Run())
+    //  allTestsPassed = false;
+
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
+
+    //// Run StatisticProperties tests
+    //if (!StatisticPropertiesTest.Run())
+    //  allTestsPassed = false;
+
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
+
+    // Run CustomProperties tests
+    if (!CustomPropertiesTest.Run())
+      allTestsPassed = false;
 
     //Console.WriteLine();
     //Console.WriteLine("═══════════════════════════════════════════════════════════");

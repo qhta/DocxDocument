@@ -19,11 +19,14 @@ namespace DocumentModel.InOpenXml.Test
     /// <returns>True if all serialization tests pass; otherwise, false.</returns>
     public static bool Run()
     {
-      Console.WriteLine("=== StatisticProperties Serialization Test ===\n");
+      Console.WriteLine("=== StatisticProperties Test ===\n");
       if (!TestXmlSerialization()) return false;
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
-      Console.WriteLine("All StatisticProperties serialization tests passed.\n");
+      if (!TestNewFromDocument()) return false;
+      if (!TestStoreInDocument()) return false;
+      if (!TestUpdateInDocument()) return false;
+      Console.WriteLine("All StatisticProperties tests passed.\n");
       return true;
     }
 
