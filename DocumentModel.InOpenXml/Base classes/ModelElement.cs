@@ -1,4 +1,6 @@
-﻿#pragma warning disable CS0659  
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+#pragma warning disable CS0659  
 namespace DocumentModel;
 
 /// <summary>
@@ -107,23 +109,68 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   public virtual void LoadData(object openXmlElement)
   {
     var currentType = GetType();
-    var openXmlType = OpenXmlTypeMap.GetOpenXmlTypeForModelElementType(currentType);
-    if (openXmlType == null) return;
+    var openXmlType = openXmlElement.GetType();
     foreach (var modelProperty in currentType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
     {
       if (modelProperty.CanWrite)
       {
-        var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
-        if (openXmlProperty is null || !openXmlProperty.CanRead) continue;
-        var value = openXmlProperty.GetValue(openXmlElement);
+        LoadData(modelProperty, openXmlElement, openXmlType);
+      }
+    }
+  }
+
+  /// <summary>
+  /// Loads data for the specified property from the given Open XML element.
+  /// </summary>
+  /// <param name="modelProperty">The model property to load data into.</param>
+  /// <param name="openXmlElement">The Open XML element containing the data.</param>
+  /// <param name="openXmlType">The type of the Open XML element.</param>
+  /// <remarks>Property marked with [NotMapped] attribute will be not be loaded.</remarks>
+  public virtual void LoadData(PropertyInfo modelProperty, object openXmlElement, Type openXmlType)
+  {
+    if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
+      return;
+    var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
+    if (openXmlProperty is not null && openXmlProperty.CanRead)
+    {
+      var value = openXmlProperty.GetValue(openXmlElement);
+      if (value != null && !modelProperty.PropertyType.IsInstanceOfType(value))
+      {
+        value = ConvertFromOpenXml(value, modelProperty.PropertyType.GetNotNullableType());
+      }
+      value = ConvertValue(value, modelProperty.PropertyType.GetNotNullableType());
+      modelProperty.SetValue(this, value);
+      return;
+    }
+    var getMappedMethod = OpenXmlPropertyMap.GetGetMethod(modelProperty, openXmlType);
+    if (getMappedMethod != null)
+    {
+      var targetParameters = getMappedMethod.GetParameters();
+      bool valueRetrieved = false;
+      object? value = null;
+      if (getMappedMethod.DeclaringType == openXmlElement.GetType())
+      {
+        value = getMappedMethod.Invoke(openXmlElement, []);
+        valueRetrieved = true;
+
+      }
+      else if (getMappedMethod.DeclaringType == this.GetType() || this.GetType().IsSubclassOf(getMappedMethod.DeclaringType!))
+      {
+        value = getMappedMethod.Invoke(this, []);
+        valueRetrieved = true;
+      }
+
+      if (valueRetrieved)
+      {
         if (value != null && !modelProperty.PropertyType.IsInstanceOfType(value))
         {
-          value = ConvertFromOpenXml(value, modelProperty.PropertyType.GetNotNullableType());
+          value = Convert.ChangeType(value, modelProperty.PropertyType);
         }
         modelProperty.SetValue(this, value);
       }
     }
   }
+
 
   /// <summary>
   /// Updates the specified Open XML element with the current values of this model's public properties.
@@ -196,9 +243,12 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <param name="modelProperty">The model property to update from.</param>
   /// <param name="openXmlElement">The Open XML element to update.</param>
   /// <param name="openXmlType">The Open XML type of the element.</param>
+  /// <remarks>Property marked with [NotMapped] attribute will be not be updated.</remarks>
   protected void UpdateData(PropertyInfo modelProperty, object openXmlElement, Type openXmlType)
   {
     //DXCP.CustomDocumentProperty? customProperty = null;
+    if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
+      return;
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanWrite)
     {
@@ -210,8 +260,8 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       openXmlProperty.SetValue(openXmlElement, value);
       return;
     }
-    if (modelProperty.Name == "Category")
-      Debug.Assert(true);
+    //if (modelProperty.Name == "Category")
+    //  Debug.Assert(true);
     var setMappedMethod = OpenXmlPropertyMap.GetSetMethod(modelProperty, openXmlType);
     if (setMappedMethod != null)
     {
@@ -265,5 +315,40 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       return null;
 
     return OpenXmlConverter.ConvertFromOpenXml(value, targetType);
+  }
+
+  /// <summary>
+  /// Converts the specified value to the given target type, if possible.
+  /// </summary>
+  /// <remarks>If the value is already assignable to the target type, no conversion is performed. When
+  /// converting from a string to a GUID, the string must be in a valid GUID format.</remarks>
+  /// <param name="value">The value to convert. May be null.</param>
+  /// <param name="targetType">The type to which to convert the value. Cannot be null.</param>
+  /// <returns>An object representing the converted value, or the original value if no conversion is necessary. Returns null if
+  /// the input value is null.</returns>
+  /// <exception cref="FormatException">Thrown if the value is a string that cannot be converted to a GUID when the target type is <see cref="Guid"/>.</exception>
+  public virtual object? ConvertValue(object? value, Type targetType)
+  {
+    targetType = targetType.GetNotNullableType();
+    if (value != null && !value.GetType().IsAssignableFrom(targetType))
+    {
+      if (value is string stringValue)
+      {
+        if (targetType == typeof(Guid))
+        {
+          if (Guid.TryParse(stringValue, out var guidValue))
+          {
+            value = guidValue;
+          }
+          else
+          {
+            throw new FormatException($"Invalid GUID format: {stringValue}");
+          }
+
+        }
+      }
+      value = Convert.ChangeType(value, targetType);
+    }
+    return value;
   }
 }

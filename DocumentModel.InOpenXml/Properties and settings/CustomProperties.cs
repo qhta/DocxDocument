@@ -1,10 +1,9 @@
-﻿using System.IO.Packaging;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Custom properties enable users to define custom metadata properties through a set of well-defined data types.
 /// </summary>
+[XmlRoot("CustomProperties")]
 public class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Properties>
 {
 
@@ -18,13 +17,31 @@ public class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Prop
   /// </summary>
   public CustomProperties()
   {
+    base.CollectionChanged += (sender, e) =>
+    {
+      if (isLoading)
+        return;
+      if (e.Action == NotifyCollectionChangedAction.Add || e.Action == NotifyCollectionChangedAction.Remove || e.Action == NotifyCollectionChangedAction.Replace || e.Action == NotifyCollectionChangedAction.Reset)
+      {
+        {
+          // Mark the underlying OpenXml element as changed
+          var openXmlElement = GetUpdatableOpenXmlElement();
+          if (openXmlElement != null)
+          {
+            UpdateData(openXmlElement);
+          }
+        }
+      }
+    };
   }
+
+  private bool isLoading;
 
   /// <summary>
   /// Initializing constructor.
   /// </summary>
   /// <param name="document">Wordprocessing document model</param>
-  public CustomProperties(Wordprocessing.Document document)
+  public CustomProperties(Wordprocessing.Document document) : this()
   {
     AttachAndLoad(document);
   }
@@ -89,12 +106,14 @@ public class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Prop
   /// </summary>
   private void LoadData(DXCP.Properties customFileProperties)
   {
+    isLoading = true;
     this.Clear();
     foreach (var openXmlCustomDocumentProperty in customFileProperties!.ChildElements.Cast<DXCP.CustomDocumentProperty>())
     {
       var customDocumentProperty = new CustomProperty(this, openXmlCustomDocumentProperty);
       this.Add(customDocumentProperty);
     }
+    isLoading = false;
   }
 
   /// <summary>

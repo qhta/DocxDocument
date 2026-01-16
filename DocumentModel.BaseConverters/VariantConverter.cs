@@ -141,7 +141,7 @@ public static class VariantConverter
   public static Variant GetVariant(OpenXmlElement openXmlElement)
   {
     if (openXmlElement is VTBool vBool)
-      return new Variant(VariantType.Boolean, XmlConvert.ToBoolean(vBool.Text));
+      return new Variant(VariantType.Boolean, Boolean.Parse(vBool.Text));
 
     if (openXmlElement is VTLPSTR vLPString)
       return new Variant(VariantType.Lpstr, vLPString.Text);
@@ -153,52 +153,52 @@ public static class VariantConverter
       return new Variant(VariantType.Bstr, vBString.Text);
 
     if (openXmlElement is VTByte vSByte)
-      return new Variant(VariantType.SByte, XmlConvert.ToSByte(vSByte.Text));
+      return new Variant(VariantType.SByte, SByte.Parse(vSByte.Text));
 
     if (openXmlElement is VTUnsignedByte vByte)
-      return new Variant(VariantType.Byte, XmlConvert.ToByte(vByte.Text));
+      return new Variant(VariantType.Byte, Byte.Parse(vByte.Text));
 
     if (openXmlElement is VTShort vShort)
-      return new Variant(VariantType.Int16, XmlConvert.ToInt16(vShort.Text));
+      return new Variant(VariantType.Int16, short.Parse(vShort.Text));
 
     if (openXmlElement is VTUnsignedShort vUShort)
-      return new Variant(VariantType.UInt16, XmlConvert.ToUInt16(vUShort.Text));
+      return new Variant(VariantType.UInt16, ushort.Parse(vUShort.Text));
 
     if (openXmlElement is VTInt32 vInt32)
-      return new Variant(VariantType.Int32, XmlConvert.ToInt32(vInt32.Text));
+      return new Variant(VariantType.Int32, int.Parse(vInt32.Text));
 
     if (openXmlElement is VTUnsignedInt32 vUInt32)
-      return new Variant(VariantType.UInt32, XmlConvert.ToUInt32(vUInt32.Text));
+      return new Variant(VariantType.UInt32, uint.Parse(vUInt32.Text));
 
     if (openXmlElement is VTInt64 vInt64)
-      return new Variant(VariantType.Int64, XmlConvert.ToInt64(vInt64.Text));
+      return new Variant(VariantType.Int64, long.Parse(vInt64.Text));
 
     if (openXmlElement is VTUnsignedInt64 vUInt64)
-      return new Variant(VariantType.UInt64, XmlConvert.ToUInt64(vUInt64.Text));
+      return new Variant(VariantType.UInt64, ulong.Parse(vUInt64.Text));
 
     if (openXmlElement is VTInteger vInteger)
-      return new Variant(VariantType.Integer, XmlConvert.ToDecimal(vInteger.Text));
+      return new Variant(VariantType.Integer, decimal.Parse(vInteger.Text));
 
     if (openXmlElement is VTUnsignedInteger vUInteger)
-      return new Variant(VariantType.Integer, XmlConvert.ToDecimal(vUInteger.Text));
+      return new Variant(VariantType.Integer, decimal.Parse(vUInteger.Text));
 
     if (openXmlElement is VTFloat vFloat)
-      return new Variant(VariantType.Single, XmlConvert.ToSingle(vFloat.Text));
+      return new Variant(VariantType.Single, float.Parse(vFloat.Text));
 
     if (openXmlElement is VTDouble vDouble)
-      return new Variant(VariantType.Double, XmlConvert.ToSingle(vDouble.Text));
+      return new Variant(VariantType.Double, double.Parse(vDouble.Text));
 
     if (openXmlElement is VTDecimal vDecimal)
-      return new Variant(VariantType.Decimal, XmlConvert.ToDecimal(vDecimal.Text));
+      return new Variant(VariantType.Decimal, decimal.Parse(vDecimal.Text));
 
     if (openXmlElement is VTCurrency vCurrency)
-      return new Variant(VariantType.Currency, XmlConvert.ToDecimal(vCurrency.Text));
+      return new Variant(VariantType.Currency, decimal.Parse(vCurrency.Text));
 
     if (openXmlElement is VTDate vDate)
-      return new Variant(VariantType.Date, DateOnly.FromDateTime(XmlConvert.ToDateTime(vDate.Text, XmlDateTimeSerializationMode.Unspecified)));
+      return new Variant(VariantType.Date, DateOnly.FromDateTime(DateTime.Parse(vDate.Text)));
 
     if (openXmlElement is VTFileTime vFileTime)
-      return new Variant(VariantType.DateTime, XmlConvert.ToDateTime(vFileTime.Text, XmlDateTimeSerializationMode.Unspecified));
+      return new Variant(VariantType.DateTime, DateTime.Parse(vFileTime.Text));
 
     if (openXmlElement is VTNull vtNull)
       return new Variant(VariantType.Null, DBNull.Value);
@@ -206,8 +206,8 @@ public static class VariantConverter
     if (openXmlElement is VTEmpty vtEmpty)
       return new Variant(VariantType.Empty, null);
 
-    if (openXmlElement is VTClassId vclassId)
-      return new Variant(VariantType.Guid, XmlConvert.ToGuid(vclassId.Text));
+    if (openXmlElement is VTClassId vtClassId)
+      return new Variant(VariantType.Guid, XmlConvert.ToGuid(vtClassId.Text));
 
     if (openXmlElement is VTError vError)
       return new Variant(VariantType.HexInt, new HexInt(vError.Text));

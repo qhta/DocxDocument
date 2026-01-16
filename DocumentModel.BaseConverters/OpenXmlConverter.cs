@@ -19,7 +19,8 @@ public static class OpenXmlConverter
       return null;
     if (value is DX.OpenXmlElement openXmlElement)
       return OpenXmlElementConverter.ConvertFromOpenXml(openXmlElement, conversionType);
-
+    if (value is DX.OpenXmlSimpleType openXmlSimpleType)
+      return OpenXmlSimpleValueConverter.ConvertFromOpenXml(openXmlSimpleType, conversionType);
     return Convert.ChangeType(value, conversionType);
   }
 

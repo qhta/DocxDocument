@@ -121,4 +121,17 @@ public class RunTrackChangeType : IdentifiedChange, IElementCollection<IParagrap
     get => _elementCollectionImplementation[index];
     set => _elementCollectionImplementation[index] = value;
   }
+
+  /// <summary>
+  /// Occurs when the collection changes, such as when items are added, removed, or the entire collection is refreshed.
+  /// </summary>
+  /// <remarks>Subscribe to this event to receive notifications when the contents of the collection are
+  /// modified. This event is typically used to update user interfaces or perform other actions in response to changes
+  /// in the collection.</remarks>
+
+  public event NotifyCollectionChangedEventHandler? CollectionChanged
+  {
+    add => _elementCollectionImplementation.CollectionChanged += value;
+    remove => _elementCollectionImplementation.CollectionChanged -= value;
+  }
 }

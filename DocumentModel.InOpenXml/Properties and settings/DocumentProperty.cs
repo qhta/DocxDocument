@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace DocumentModel;
 
 /// <summary>
@@ -24,16 +26,8 @@ public abstract class DocumentProperty : CollectionItem
   ///   Property Category.
   /// </summary>
   [XmlAttribute]
+  [NotMapped]
   public virtual string? Category { get; set; }
-
-  /// <summary>
-  /// Category property is defined  but not stored in OpenXml element
-  /// </summary>
-  /// <param name="value">Value to set locally</param>
-  public void SetCategory(string? value)
-  {
-    Category = value;
-  }
 
   /// <summary>
   ///   Property Name.

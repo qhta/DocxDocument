@@ -5,8 +5,9 @@
 /// </summary>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
 public interface IElementCollection<ItemType> : IList<ItemType>, 
-  INotifyPropertyChanged
-  where ItemType: ICollectionItem
+  INotifyPropertyChanged,
+  INotifyCollectionChanged
+//where ItemType: ICollectionItem
 {
   /// <summary>
   /// Gets the first item in the collection, or null if the collection is empty.

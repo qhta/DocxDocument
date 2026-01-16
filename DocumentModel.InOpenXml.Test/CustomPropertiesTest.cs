@@ -207,12 +207,12 @@ namespace DocumentModel.InOpenXml.Test
       try
       {
         CustomProperties testData = CreateSampleCustomProperties();
+        var initialCount = testData.Count;
         using (var document = Document.CreateDocument("temp.docx"))
         {
           document.CustomProperties = testData;
 
           document.CustomProperties.Add(new CustomProperty { Name = "CustomTitle", Value = "Updated Title" });
-          testData.Add(new CustomProperty { Name = "CustomTitle", Value = "Updated Title" });
         }
 
         CustomProperties storedData;
@@ -230,6 +230,13 @@ namespace DocumentModel.InOpenXml.Test
           xmlString = stringWriter.ToString();
         }
         Console.WriteLine("Updated document custom properties:\n" + xmlString);
+
+        var storedCount = storedData.Count;
+        if (storedCount != initialCount+1)
+        {
+          Console.WriteLine($"✗ Updated document custom properties test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
+          return false;
+        }
 
         if (!TestHelper.CompareTestData(testData, storedData, out var propName))
         {
