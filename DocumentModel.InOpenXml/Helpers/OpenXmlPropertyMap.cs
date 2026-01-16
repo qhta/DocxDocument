@@ -15,17 +15,6 @@ public static class OpenXmlPropertyMap
   //    { (typeof(DMW.Document), nameof(DMW.Document.CoreProperties)), (typeof(DXPP.WordprocessingDocument), "M`ainDocumentPart.OpenXmlPackage.PackageProperties") },
   //  };
 
-  /// <summary>
-  /// Provides a mapping between a source type and member name and a corresponding target type and method name.
-  /// </summary>
-  /// <remarks>This dictionary is used to associate specific members of one type with related methods on another
-  /// type, enabling dynamic lookup or invocation scenarios. The mapping is static and intended for internal use to
-  /// facilitate method resolution based on type and member name pairs.</remarks>
-  private static readonly Dictionary<(Type, string), (Type, string)> methodMap = new()
-  {
-#pragma warning disable OOXML0001
- //   { (typeof(DMW.Document), nameof(DMW.Document.CoreProperties)), (typeof(DMW.Document), nameof(DMW.Document.SetCoreProperties)) },
-  };
 
   /// <summary>
   /// Retrieves the corresponding OpenXML property for a given model element property from the specified OpenXML type.
@@ -50,9 +39,12 @@ public static class OpenXmlPropertyMap
   /// Retrieves the mapped method information for the specified member name on the given source type, if a mapping
   /// exists.
   /// </summary>
-  /// <param name="modelElementProperty">The property of the model element for which to find the corresponding OpenXML property. Must not be null.</param>
-  /// <returns>A tuple containing the mapped method's type and name if a mapping exists; otherwise, null.</returns>
-  public static MethodInfo? GetMappedMethod(PropertyInfo modelElementProperty)
+  /// <param name="modelElementProperty">The property of the model element for which to find the appropriate set method. Must not be null.</param>
+  /// <param name="openXmlType">The OpenXml type to search for property set method. Must not be null</param>
+  /// <remarks>Set method is a method with a name of "Set" + propertyName.
+  /// First openXmlType is search for a set method, next declaring type of model property is searched</remarks>
+  /// <returns>A set method info is found; otherwise, null.</returns>
+  public static MethodInfo? GetSetMethod(PropertyInfo modelElementProperty, Type openXmlType)
   {
     var sourceType = modelElementProperty.DeclaringType;
     var memberName = modelElementProperty.Name;
@@ -60,10 +52,14 @@ public static class OpenXmlPropertyMap
     {
       return null;
     }
-    if (methodMap.TryGetValue((sourceType, memberName), out var targetEntry))
-    {
-      return targetEntry.Item1.GetMethod(targetEntry.Item2);
-    }
+
+    var methodName = "Set" + modelElementProperty.Name;
+
+    var methodInfo = openXmlType.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public) ??
+      modelElementProperty.DeclaringType?.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
+    if (methodInfo != null)
+      return methodInfo;
+
     return null;
   }
 }

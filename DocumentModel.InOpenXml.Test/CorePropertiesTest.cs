@@ -23,7 +23,7 @@ namespace DocumentModel.InOpenXml.Test
     /// <returns>true if all CoreProperties serialization tests pass; otherwise, false.</returns>
     public static bool Run()
     {
-      Console.WriteLine("=== CoreProperties Serialization Test ===\n");
+      Console.WriteLine("=== CoreProperties Test ===\n");
       if (!TestXmlSerialization()) return false;
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
@@ -31,7 +31,7 @@ namespace DocumentModel.InOpenXml.Test
       if (!TestStoreInDocument()) return false;
       if (!TestUpdateInDocument()) return false;
 
-      Console.WriteLine("All CoreProperties serialization tests passed.\n");
+      Console.WriteLine("All CoreProperties tests passed.\n");
       return true;
     }
 

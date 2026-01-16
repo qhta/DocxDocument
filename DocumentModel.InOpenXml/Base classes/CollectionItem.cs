@@ -28,4 +28,13 @@ public abstract class CollectionItem: ModelElement, ICollectionItem
   public IElementCollection<CollectionItem>? Collection { get; set; }
 
 
+  /// <summary>
+  /// Collection property is defined  but not stored in OpenXml element
+  /// </summary>
+  /// <param name="value">Value to set locally</param>
+  public void SetCollection(IElementCollection<CollectionItem>? value)
+  {
+    Collection = value;
+  }
+
 }

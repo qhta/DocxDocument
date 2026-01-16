@@ -104,7 +104,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// data loading behavior.</remarks>
   /// <param name="openXmlElement">The Open XML element containing the data to load into the model element. Must be compatible with the current model
   /// element type.</param>
-  public void LoadData(object openXmlElement)
+  public virtual void LoadData(object openXmlElement)
   {
     var currentType = GetType();
     var openXmlType = OpenXmlTypeMap.GetOpenXmlTypeForModelElementType(currentType);
@@ -133,7 +133,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// does not perform validation on the Open XML element; callers should ensure it is compatible with the model
   /// type.</remarks>
   /// <param name="openXmlElement">The Open XML element to update with property values from this model. Must not be null.</param>
-  public void UpdateData(object openXmlElement)
+  public virtual void UpdateData(object openXmlElement)
   {
     var currentType = GetType();
     var openXmlType = OpenXmlTypeMap.GetOpenXmlTypeForModelElementType(currentType) ?? openXmlElement.GetType();
@@ -196,8 +196,9 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <param name="modelProperty">The model property to update from.</param>
   /// <param name="openXmlElement">The Open XML element to update.</param>
   /// <param name="openXmlType">The Open XML type of the element.</param>
-  private void UpdateData(PropertyInfo modelProperty, object openXmlElement, Type openXmlType)
+  protected void UpdateData(PropertyInfo modelProperty, object openXmlElement, Type openXmlType)
   {
+    //DXCP.CustomDocumentProperty? customProperty = null;
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanWrite)
     {
@@ -209,7 +210,9 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       openXmlProperty.SetValue(openXmlElement, value);
       return;
     }
-    var setMappedMethod = OpenXmlPropertyMap.GetMappedMethod(modelProperty);
+    if (modelProperty.Name == "Category")
+      Debug.Assert(true);
+    var setMappedMethod = OpenXmlPropertyMap.GetSetMethod(modelProperty, openXmlType);
     if (setMappedMethod != null)
     {
       var targetParameters = setMappedMethod.GetParameters();
@@ -223,13 +226,16 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
         if (setMappedMethod.DeclaringType == openXmlElement.GetType())
         {
           setMappedMethod.Invoke(openXmlElement, [value]);
+          return;
         }
-        else if (setMappedMethod.DeclaringType == this.GetType())
+        else if (setMappedMethod.DeclaringType == this.GetType() || this.GetType().IsSubclassOf(setMappedMethod.DeclaringType!))
         {
           setMappedMethod.Invoke(this, [value]);
+          return;
         }
       }
     }
+    throw new InvalidOperationException($"Failed to update Open XML element {openXmlElement.GetType()} for {modelProperty.Name}");
   }
 
   /// <summary>

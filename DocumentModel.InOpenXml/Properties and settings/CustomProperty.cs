@@ -63,8 +63,7 @@ public class CustomProperty : DocumentProperty
   {
     foreach (var propertyInfo in typeof(CustomProperty).GetProperties())
     {
-      var value = propertyInfo.GetValue(this);
-      propertyInfo.SetValue(openXmlCustomDocumentProperty, value);
+      base.UpdateData(propertyInfo, openXmlCustomDocumentProperty, typeof(DXCP.CustomDocumentProperty));
     }
   }
 
@@ -237,6 +236,15 @@ public class CustomProperty : DocumentProperty
   private Variant? _Value;
 
   /// <summary>
+  /// Needed to set the value in OpenXml element.
+  /// </summary>
+  /// <param name="value">The new variant value to set.</param>
+  public void SetValue(Variant value)
+  {
+    Value = value;
+  }
+
+  /// <summary>
   /// Type of the custom document property.
   /// </summary>
   public override string? Type
@@ -281,4 +289,15 @@ public class CustomProperty : DocumentProperty
     }
   }
   private Type? _Type;
+
+  /// <summary>
+  /// Needed to set the value type in OpenXml element.
+  /// </summary>
+  /// <param name="value">The new type name to set.</param>
+  public void SetType(string? value)
+  {
+    Type = value;
+  }
+
+
 }

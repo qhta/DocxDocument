@@ -27,6 +27,15 @@ public abstract class DocumentProperty : CollectionItem
   public virtual string? Category { get; set; }
 
   /// <summary>
+  /// Category property is defined  but not stored in OpenXml element
+  /// </summary>
+  /// <param name="value">Value to set locally</param>
+  public void SetCategory(string? value)
+  {
+    Category = value;
+  }
+
+  /// <summary>
   ///   Property Name.
   /// </summary>
   [XmlAttribute]

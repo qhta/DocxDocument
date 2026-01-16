@@ -19,14 +19,14 @@ namespace DocumentModel.InOpenXml.Test
     /// <returns>True if all tests pass; otherwise, false.</returns>
     public static bool Run()
     {
-      Console.WriteLine("=== ContentProperties Serialization Test ===\n");
+      Console.WriteLine("=== ContentProperties Test ===\n");
       if (!TestXmlSerialization()) return false;
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
       if (!TestNewFromDocument()) return false;
       if (!TestStoreInDocument()) return false;
       if (!TestUpdateInDocument()) return false;
-      Console.WriteLine("All ContentProperties serialization tests passed.\n");
+      Console.WriteLine("All ContentProperties tests passed.\n");
       return true;
     }
 
@@ -81,8 +81,6 @@ namespace DocumentModel.InOpenXml.Test
     /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
     static bool TestJsonSerialization()
     {
-      var options = new JsonSerializerOptions();
-      options.Converters.Add(new DocumentModel.ElementCollectionJsonConverterFactory());
       Console.WriteLine("--- JSON Serialization ---");
       var testData = CreateSampleContentProperties(true);
       try
