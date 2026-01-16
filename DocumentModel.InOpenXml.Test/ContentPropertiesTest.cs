@@ -81,6 +81,8 @@ namespace DocumentModel.InOpenXml.Test
     /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
     static bool TestJsonSerialization()
     {
+      var options = new JsonSerializerOptions();
+      options.Converters.Add(new DocumentModel.ElementCollectionJsonConverterFactory());
       Console.WriteLine("--- JSON Serialization ---");
       var testData = CreateSampleContentProperties(true);
       try
@@ -192,7 +194,7 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestStoreInDocument()
     {
       Console.WriteLine("--- Store sample content properties in new document---");
-      //try
+      try
       {
         ContentProperties testData = CreateSampleContentProperties(true);
         using (var document = Document.CreateDocument("temp.docx"))
@@ -225,11 +227,11 @@ namespace DocumentModel.InOpenXml.Test
         Console.WriteLine("✓ Store sample content properties test passed\n");
         return true;
       }
-      //catch (Exception ex)
-      //{
-      //  Console.WriteLine($"✗ Store sample content properties FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
-      //  return false;
-      //}
+      catch (Exception ex)
+      {
+        Console.WriteLine($"✗ Store sample content properties FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
+        return false;
+      }
     }
 
 

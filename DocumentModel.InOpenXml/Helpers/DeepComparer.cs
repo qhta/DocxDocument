@@ -26,7 +26,9 @@ public static class DeepComparer
       var equatableMethod = comparedType.GetMethod("Equals", [comparedType]);
       if (equatableMethod != null)
       {
-        return (bool)equatableMethod.Invoke(obj1, [obj2])!;
+        var isEqual = (bool)equatableMethod.Invoke(obj1, [obj2])!;
+        if (isEqual) return true;
+        return false;
       }
     }
     // Perform deep comparison of properties
