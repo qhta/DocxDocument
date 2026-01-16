@@ -35,14 +35,16 @@ public static class OpenXmlPropertyMap
     return result;
   }
 
+
   /// <summary>
-  /// Retrieves the mapped method information for the specified member name on the given source type, if a mapping
-  /// exists.
+  /// Retrieves the get method information for the model property in the given OpenXml type.
   /// </summary>
   /// <param name="modelElementProperty">The property of the model element for which to find the appropriate set method. Must not be null.</param>
   /// <param name="openXmlType">The OpenXml type to search for property set method. Must not be null</param>
-  /// <remarks>Set method is a method with a name of "Set" + propertyName.
-  /// First openXmlType is search for a set method, next declaring type of model property is searched</remarks>
+  /// <remarks>
+  /// First openXmlType is search for a method with a name of "Set" + propertyName.
+  /// Next modelType type of model property is searched or a method with a name of "Set" + propertyName +"InOpenXml.
+  /// </remarks>
   /// <returns>A set method info is found; otherwise, null.</returns>
   public static MethodInfo? GetSetMethod(PropertyInfo modelElementProperty, Type openXmlType)
   {
@@ -55,8 +57,45 @@ public static class OpenXmlPropertyMap
 
     var methodName = "Set" + modelElementProperty.Name;
 
-    var methodInfo = openXmlType.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public) ??
-      modelElementProperty.DeclaringType?.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
+    var methodInfo = openXmlType.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
+    if (methodInfo == null)
+    {
+      methodName = "Set" + modelElementProperty.Name + "InOpenXml";
+      methodInfo = modelElementProperty.DeclaringType?.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
+    }
+    if (methodInfo != null)
+      return methodInfo;
+
+    return null;
+  }
+
+  /// <summary>
+  /// Retrieves the get method information for the model property in the given OpenXml type.
+  /// </summary>
+  /// <param name="modelElementProperty">The property of the model element for which to find the appropriate get method. Must not be null.</param>
+  /// <param name="openXmlType">The OpenXml type to search for property get method. Must not be null</param>
+  /// <remarks>
+  /// First openXmlType is search for a method with a name of "Get" + propertyName.
+  /// Next modelType type of model property is searched or a method with a name of "Get" + propertyName +"InOpenXml.
+  /// </remarks>
+  /// <returns>A get method info is found; otherwise, null.</returns>
+  public static MethodInfo? GetGetMethod(PropertyInfo modelElementProperty, Type openXmlType)
+  {
+    var sourceType = modelElementProperty.DeclaringType;
+    var memberName = modelElementProperty.Name;
+    if (sourceType == null || string.IsNullOrEmpty(memberName))
+    {
+      return null;
+    }
+
+    var methodName = "Get" + modelElementProperty.Name;
+
+    var methodInfo = openXmlType.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
+    if (methodInfo == null)
+    {
+      methodName = "Get" + modelElementProperty.Name + "InOpenXml";
+      methodInfo = modelElementProperty.DeclaringType?.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
+    }
     if (methodInfo != null)
       return methodInfo;
 
