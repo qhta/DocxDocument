@@ -5,11 +5,13 @@ namespace DocumentModel;
 /// <summary>
 /// Custom properties enable users to define custom metadata properties through a set of well-defined data types.
 /// </summary>
-public class CustomProperties : ElementCollection<CustomProperty>
+public class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Properties>
 {
 
-  internal DXCP.Properties? CustomFileProperties { get; private set; }
-
+  /// <summary>
+  /// Gets the underlying WordprocessingDocument instance associated with this object.
+  /// </summary>
+  internal DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
   /// <summary>
   /// Default constructor.
@@ -24,63 +26,97 @@ public class CustomProperties : ElementCollection<CustomProperty>
   /// <param name="document">Wordprocessing document model</param>
   public CustomProperties(Wordprocessing.Document document)
   {
-    CustomFileProperties = document.WordprocessingDocument?.GetCustomFileProperties();
-    GetValuesFromCustomFileProperties();
-    document.PropertyChanged += Document_PropertyChanged;
+    AttachAndLoad(document);
   }
 
   /// <summary>
-  /// Triggered when the underlying document's WordprocessingDocument changes.
+  /// Attach this instance to the specified document. Data is loaded from the document's PackageProperties.
   /// </summary>
-  /// <param name="sender">Should be the Wordprocessing.Document instance</param>
-  /// <param name="e">PropertyChangedEventArgs with propertyName = "WordprocessingDocument"</param>
-  /// <remarks>
-  /// If new value is null then CustomFileProperties are set to null to avoid errors on properties access.
-  /// If new value is not null then CustomFileProperties are updated to the new document's PackageProperties.
-  /// </remarks>
-  private void Document_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+  /// <param name="document">Document to attach to.</param>
+  public void AttachAndLoad(Wordprocessing.Document document)
   {
-    if (sender is Wordprocessing.Document document)
-      if (e.PropertyName == nameof(Wordprocessing.Document.WordprocessingDocument))
-      {
-        if (document.WordprocessingDocument == null)
-        {
-          CustomFileProperties = null;
-        }
-        else
-        {
-          var isEmpty = CustomFileProperties == null;
-          CustomFileProperties = document.WordprocessingDocument?.GetCustomFileProperties();
-          if (isEmpty)
-            GetValuesFromCustomFileProperties();
-          else
-            SetValuesToCustomFileProperties();
-        }
-      }
+    WordprocessingDocument = document.WordprocessingDocument;
+    var customFileProperties = document.WordprocessingDocument?.GetCustomFileProperties();
+    if (customFileProperties != null)
+    {
+      SetOpenXmlElement(customFileProperties);
+      LoadData(customFileProperties);
+    }
   }
 
   /// <summary>
-  /// Gets values from CustomFileProperties to this instance.
+  /// Attach this instance to the specified document. Data is stored to the document's PackageProperties.
   /// </summary>
-  private void GetValuesFromCustomFileProperties()
+  /// <param name="document">Document to attach to.</param>
+  public void AttachAndUpdate(Wordprocessing.Document document)
+  {
+    WordprocessingDocument = document.WordprocessingDocument;
+    var customFileProperties = document.WordprocessingDocument?.GetCustomFileProperties();
+    if (customFileProperties != null)
+    {
+      SetOpenXmlElement(customFileProperties);
+      UpdateData(customFileProperties);
+    }
+  }
+
+  /// <summary>
+  /// Detach this instance from the specified document.
+  /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
+  /// </summary>
+  /// <param name="document">Document to detach from. Must be the same as the one attached.</param>
+  public void Detach(Wordprocessing.Document document)
+  {
+    if (WordprocessingDocument != document.WordprocessingDocument)
+      return;
+    WordprocessingDocument = null;
+    SetOpenXmlElement(null);
+  }
+
+  /// <summary>
+  /// Override to load data from CustomFileProperties.
+  /// </summary>
+  public override void LoadData(object openXmlElement)
+  {
+    if (openXmlElement is DXCP.Properties customFileProperties)
+    {
+      LoadData(customFileProperties);
+    }
+  }
+
+
+  /// <summary>
+  /// Gets values from customFileProperties to this instance.
+  /// </summary>
+  private void LoadData(DXCP.Properties customFileProperties)
   {
     this.Clear();
-    foreach (var openXmlCustomDocumentProperty in CustomFileProperties!.ChildElements.Cast<DXCP.CustomDocumentProperty>())
+    foreach (var openXmlCustomDocumentProperty in customFileProperties!.ChildElements.Cast<DXCP.CustomDocumentProperty>())
     {
       var customDocumentProperty = new CustomProperty(this, openXmlCustomDocumentProperty);
-      this.Add(customDocumentProperty); 
+      this.Add(customDocumentProperty);
+    }
+  }
+
+  /// <summary>
+  /// Override to set data to CustomFileProperties.
+  /// </summary>
+  public override void UpdateData(object openXmlElement)
+  {
+    if (openXmlElement is DXCP.Properties customFileProperties)
+    {
+      UpdateData(customFileProperties);
     }
   }
 
   /// <summary>
   /// Sets values from this instance to CustomFileProperties.
   /// </summary>
-  private void SetValuesToCustomFileProperties()
+  private void UpdateData(DXCP.Properties customFileProperties)
   {
-    CustomFileProperties!.RemoveAllChildren();
+    customFileProperties!.RemoveAllChildren();
     foreach (var customDocumentProperty in this)
     {
-      CustomFileProperties.AppendChild(customDocumentProperty.CreateOpenCustomDocumentProperty());
+      customFileProperties.AppendChild(customDocumentProperty.CreateOpenCustomDocumentProperty());
     }
   }
 
