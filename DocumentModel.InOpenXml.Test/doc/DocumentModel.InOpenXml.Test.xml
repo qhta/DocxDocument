@@ -257,14 +257,6 @@
             </summary>
             <returns>A populated CustomProperties object.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.CompareCustomProperties(DocumentModel.CustomProperties,DocumentModel.CustomProperties)">
-            <summary>
-            Compares two CustomProperties objects for equality.
-            </summary>
-            <param name="a">The first CustomProperties object.</param>
-            <param name="b">The second CustomProperties object.</param>
-            <returns>True if both objects are equivalent; otherwise, false.</returns>
-        </member>
         <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.SerializeToXml(DocumentModel.CustomProperties)">
             <summary>
             Serializes a CustomProperties object to an XML string.
@@ -406,10 +398,26 @@
             <summary>
             Compares two test data instances property by property.
             </summary>
-            <param name="a">First test data instance</param>
-            <param name="b">Second test data instance</param>
+            <param name="obj1">First test data instance</param>
+            <param name="obj2">Second test data instance</param>
             <param name="propName">Name of the property that differs, if any</param>
             <returns>True if the properties are equal, false otherwise</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.CompareTestData``1(System.Type,``0,``0,System.String@)">
+            <summary>
+            Compares the public writable properties of two objects of the specified type for deep equality.
+            </summary>
+            <remarks>If the specified type represents a collection, the method compares the elements recursively in
+            order. The comparison uses deep equality, including nested properties and collection items. The method does not
+            compare indexer properties or properties that are read-only.</remarks>
+            <typeparam name="T">The type of the objects to compare.</typeparam>
+            <param name="comparedType">The type whose public writable properties are compared between the two objects. Must not be null.</param>
+            <param name="obj1">The first object to compare. Must be of the specified type.</param>
+            <param name="obj2">The second object to compare. Must be of the specified type.</param>
+            <param name="propName">When the method returns <see langword="false"/>, contains the name of the first property or collection element
+            that differs; otherwise, <see langword="null"/>.</param>
+            <returns><see langword="true"/> if all public writable properties of the two objects are equal; otherwise, <see
+            langword="false"/>.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.TestHelper.GetInternalMessages(System.Exception)">
             <summary>

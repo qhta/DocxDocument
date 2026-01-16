@@ -390,29 +390,6 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
     get => _items[index];
     set => _items[index] = value;
   }
-
-  /// <summary>
-  /// Determines whether the specified <see cref="Variant"/> is equal to the current <see cref="VectorVariant"/>.
-  /// </summary>
-  /// <param name="variant">
-  /// The <see cref="Variant"/> to compare with the current instance. Can be <see langword="null"/>.
-  /// </param>
-  /// <returns>
-  /// <see langword="true"/> if the specified variant is a <see cref="VectorVariant"/> and is equal
-  /// to the current instance; otherwise, <see langword="false"/>.
-  /// </returns>
-  /// <remarks>
-  /// This method first checks if the variant is a <see cref="VectorVariant"/>, and if so,
-  /// delegates to the strongly-typed <see cref="Equals(VectorVariant)"/> method.
-  /// Otherwise, it falls back to the base class equality comparison.
-  /// </remarks>
-  public override bool Equals(Variant? variant)
-  {
-    if (variant is VectorVariant other)
-      return this.Equals(other);
-    return base.Equals(variant);
-  }
-
   /// <summary>
   /// Determines whether the specified <see cref="VectorVariant"/> is equal to the current instance.
   /// </summary>
@@ -440,10 +417,10 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   public virtual bool Equals(VectorVariant? other)
   {
     if (other == null) return false;
-    if (this._items == null && other._items == null)
-      return true;
-    if (this._items == null || other._items == null)
-      return false;
+    //if (this._items == null && other._items == null)
+    //  return true;
+    //if (this._items == null || other._items == null)
+    //  return false;
     if (this._items.Count != other._items.Count)
       return false;
     for (int i = 0; i < _items.Count; i++)
