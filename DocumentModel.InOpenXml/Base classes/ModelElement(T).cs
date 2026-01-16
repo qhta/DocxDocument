@@ -4,7 +4,7 @@
 /// Represents a model element that wraps an OpenXml element of the specified type.
 /// </summary>
 /// <typeparam name="OpenXmlType">The type of the underlying OpenXml element.</typeparam>
-public abstract class ModelElement<OpenXmlType> : ModelElement where OpenXmlType : class
+public abstract class ModelElement<OpenXmlType> : ModelElement where OpenXmlType : DX.OpenXmlElement
 {
   private OpenXmlType? _openXmlElement;
 

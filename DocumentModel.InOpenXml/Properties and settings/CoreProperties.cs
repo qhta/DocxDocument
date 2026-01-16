@@ -4,12 +4,14 @@ namespace DocumentModel;
 ///   Collection of core properties, which represents document properties defined in Dublin Core standard
 /// and Open Packaging Conventions
 /// </summary>
-public partial class CoreProperties : ModelElement<PackageProperties>
+public partial class CoreProperties : ModelElement
 {
   /// <summary>
   /// Gets the underlying WordprocessingDocument instance associated with this object.
   /// </summary>
   internal DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
+
+  internal PackageProperties? PackageProperties { get; private set; }
 
   /// <summary>
   /// Default constructor.
@@ -37,7 +39,7 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     var packageProperties = document.WordprocessingDocument?.GetPackageProperties();
     if (packageProperties != null)
     {
-      SetOpenXmlElement(packageProperties);
+      PackageProperties = packageProperties;
       LoadData(packageProperties);
     }
   }
@@ -52,7 +54,7 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     var packageProperties = document.WordprocessingDocument?.GetPackageProperties();
     if (packageProperties != null)
     {
-      SetOpenXmlElement(packageProperties);
+      PackageProperties = packageProperties;
       UpdateData(packageProperties);
     }
   }
@@ -67,7 +69,7 @@ public partial class CoreProperties : ModelElement<PackageProperties>
     if (WordprocessingDocument != document.WordprocessingDocument)
       return;
     WordprocessingDocument = null;
-    SetOpenXmlElement(null);
+    PackageProperties = null;
   }
 
   /// <summary>
