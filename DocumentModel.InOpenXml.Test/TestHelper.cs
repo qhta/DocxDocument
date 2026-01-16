@@ -22,6 +22,10 @@ public static class TestHelper
       if (property.CanWrite)
       {
         propName = property.Name;
+        //if (propName == "HyperlinkList") 
+        //{
+        //  Debug.Assert(true);
+        //}
         var aValue = property.GetValue(a);
         var bValue = property.GetValue(b);
         if (!DeepComparer.Equals(aValue, bValue))

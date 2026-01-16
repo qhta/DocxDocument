@@ -289,16 +289,95 @@
             that DocumentSettings serialization behaves as expected.</remarks>
             <returns>true if all DocumentSettings serialization tests pass; otherwise, false.</returns>
         </member>
-        <member name="T:DocumentModel.InOpenXml.Test.StatisticPropertiesSerializationTest">
+        <member name="T:DocumentModel.InOpenXml.Test.StatisticPropertiesTest">
             <summary>
-            Comprehensive serialization test for DocumentModel.StatisticProperties.
+            Provides comprehensive serialization tests for <see cref="T:DocumentModel.StatisticProperties"/>.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesSerializationTest.Run">
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.Run">
             <summary>
-            Runs all serialization tests for the StatisticProperties class and reports the results.
+            Runs all serialization tests for the <see cref="T:DocumentModel.StatisticProperties"/> class and reports the results.
             </summary>
-            <returns>true if all serialization tests pass; otherwise, false.</returns>
+            <returns>True if all serialization tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestXmlSerialization">
+            <summary>
+            Tests XML serialization and deserialization for <see cref="T:DocumentModel.StatisticProperties"/>.
+            </summary>
+            <returns>True if the round-trip succeeds; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestJsonSerialization">
+            <summary>
+            Tests JSON serialization and deserialization for <see cref="T:DocumentModel.StatisticProperties"/>.
+            </summary>
+            <returns>True if the round-trip succeeds; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestEdgeCases">
+            <summary>
+            Tests edge cases for serialization and deserialization of empty <see cref="T:DocumentModel.StatisticProperties"/> objects.
+            </summary>
+            <returns>True if all edge case tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestNewFromDocument">
+            <summary>
+            Tests the creation and serialization of statistic properties for a new document.
+            </summary>
+            <remarks>This method creates a new document, retrieves its statistic properties, serializes them to XML,
+            and outputs the result to the console. It is intended for diagnostic or verification purposes and writes status
+            messages to the console.</remarks>
+            <returns>true if the test completes successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestStoreInDocument">
+            <summary>
+            Tests setting sample statistic properties to a new document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document statistic properties can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document statistic properties are successfully stored and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestUpdateInDocument">
+            <summary>
+            Tests updating the statistic properties of a document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document statistic properties can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document statistic properties are successfully updated and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.CreateSampleStatisticProperties">
+            <summary>
+            Creates a sample <see cref="T:DocumentModel.StatisticProperties"/> instance for testing.
+            </summary>
+            <returns>A populated <see cref="T:DocumentModel.StatisticProperties"/> object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.SerializeToXml(DocumentModel.StatisticProperties)">
+            <summary>
+            Serializes a <see cref="T:DocumentModel.StatisticProperties"/> instance to XML.
+            </summary>
+            <param name="props">The <see cref="T:DocumentModel.StatisticProperties"/> instance to serialize.</param>
+            <returns>XML string representation.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.DeserializeFromXml(System.String)">
+            <summary>
+            Deserializes a <see cref="T:DocumentModel.StatisticProperties"/> instance from XML.
+            </summary>
+            <param name="xml">The XML string to deserialize.</param>
+            <returns>The deserialized <see cref="T:DocumentModel.StatisticProperties"/> instance.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.SerializeToJson(DocumentModel.StatisticProperties)">
+            <summary>
+            Serializes a <see cref="T:DocumentModel.StatisticProperties"/> instance to JSON.
+            </summary>
+            <param name="props">The <see cref="T:DocumentModel.StatisticProperties"/> instance to serialize.</param>
+            <returns>JSON string representation.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.DeserializeFromJson(System.String)">
+            <summary>
+            Deserializes a <see cref="T:DocumentModel.StatisticProperties"/> instance from JSON.
+            </summary>
+            <param name="json">The JSON string to deserialize.</param>
+            <returns>The deserialized <see cref="T:DocumentModel.StatisticProperties"/> instance.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.TestHelper">
             <summary>
