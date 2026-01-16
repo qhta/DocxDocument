@@ -30,6 +30,13 @@ public static class OpenXmlSimpleValueConverter
   /// <returns>The converted model object.</returns>
   public static object? ConvertFromOpenXml(DX.OpenXmlSimpleType value, Type conversionType)
   {
-    return Convert.ChangeType(value, conversionType);
+    if (value is DX.StringValue stringValue)
+      return stringValue.Value;
+
+    if (value is DX.Int32Value int32Value)
+      return int32Value.Value;
+
+
+    throw new InvalidOperationException($"Cannot convert to Open XML simple type: {conversionType.FullName}");
   }
 }

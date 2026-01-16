@@ -10,7 +10,7 @@ namespace DocumentModel;
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
 public abstract class ElementCollection<ItemType> : ModelElement,
   IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>
-  where ItemType : ICollectionItem
+  //where ItemType : ICollectionItem
 {
   private readonly ObservableCollection<ItemType> _items = new ObservableCollection<ItemType>();
 
@@ -62,7 +62,7 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     if (this.Count != other?.Count) return false;
     for (int i = 0; i < this.Count; i++)
     {
-      if (!this[i].Equals(other[i])) return false;
+      if (!this[i]!.Equals(other[i])) return false;
     }
     return true;
   }
@@ -191,5 +191,17 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     get => _items[index];
     set => _items[index] = value;
+  }
+
+  /// <summary>
+  /// Occurs when the collection changes, such as when items are added, removed, or the entire list is refreshed.
+  /// </summary>
+  /// <remarks>Subscribe to this event to receive notifications about changes to the collection. The event
+  /// provides details about the type of change and the affected items. This event is typically used to update UI
+  /// elements or respond to dynamic data changes in data-binding scenarios.</remarks>
+  public event NotifyCollectionChangedEventHandler? CollectionChanged
+  {
+    add => _items.CollectionChanged += value;
+    remove => _items.CollectionChanged -= value;
   }
 }

@@ -10,7 +10,7 @@ namespace DocumentModel;
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
 /// <typeparam name="OpenXmlType">The type of the associated OpenXml element.</typeparam>
 public abstract class ModelElementCollection<ItemType, OpenXmlType> : ElementCollection<ItemType> 
-  where ItemType : ICollectionItem
+  where ItemType : ModelElement
   where OpenXmlType : DX.OpenXmlElement
 {
   private OpenXmlType? _openXmlElement;
