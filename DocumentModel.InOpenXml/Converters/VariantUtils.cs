@@ -71,7 +71,7 @@ public static class VariantUtils
   /// Table to convert C# type to OpenXml VectorBaseValues value.
   /// Contains default base values. Default for String type is Lpwstr.
   /// </summary>
-  private static Dictionary<Type, DXVT.VectorBaseValues> TypeToVectorBase = new Dictionary<Type, DXVT.VectorBaseValues>
+  private static readonly Dictionary<Type, DXVT.VectorBaseValues> TypeToVectorBase = new Dictionary<Type, DXVT.VectorBaseValues>
   {
     { typeof(object), DXVT.VectorBaseValues.Variant },
     { typeof(sbyte), DXVT.VectorBaseValues.OneByteSignedInteger },
@@ -613,7 +613,20 @@ public static class VariantUtils
     if (value == DBNull.Value)
       return new DXVT.VTEmpty();
     if (baseType == null)
-      baseType = TypeToVectorBase[value.GetType()];
+    {
+      if (value is Variant variant)
+      {
+        if (variant.ValueType!=null)
+        {
+          baseType = TypeToVectorBase[variant.ValueType];
+          value = variant.Value;
+        }
+        else
+          baseType = DXVT.VectorBaseValues.Variant;
+      }
+      else
+        baseType = TypeToVectorBase[value.GetType()];
+    }
     if (baseType == DXVT.VectorBaseValues.Variant)
     {
       var result = new DXVT.Variant();
@@ -622,6 +635,8 @@ public static class VariantUtils
         result.AppendChild(childElement);
       return result;
     }
+    if (value == null)
+      return new DXVT.VTNull();
     if (baseType == DXVT.VectorBaseValues.OneByteSignedInteger)
       return new DXVT.VTByte(value.ToString()!);
     if (baseType == DXVT.VectorBaseValues.TwoBytesSignedInteger)
@@ -808,10 +823,10 @@ public static class VariantUtils
                 item.Action = (HyperlinkActionKind)Enum.ToObject(typeof(HyperlinkActionKind), n4h);
                 break;
               case 4:
-                item.Target = (string)varItem;
+                item.Target = (string?)varItem ?? string.Empty;
                 break;
               case 5:
-                item.Location = (string?)varItem;
+                item.Location = (string?)varItem ?? string.Empty;
                 break;
             }
           }

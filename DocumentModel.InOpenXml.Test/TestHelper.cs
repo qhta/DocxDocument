@@ -1,4 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System.Collections;
+using System.Diagnostics;
+
+using Qhta.TypeUtils;
 
 namespace DocumentModel.InOpenXml.Test;
 
@@ -11,31 +14,96 @@ public static class TestHelper
   /// <summary>
   /// Compares two test data instances property by property.
   /// </summary>
-  /// <param name="a">First test data instance</param>
-  /// <param name="b">Second test data instance</param>
+  /// <param name="obj1">First test data instance</param>
+  /// <param name="obj2">Second test data instance</param>
   /// <param name="propName">Name of the property that differs, if any</param>
   /// <returns>True if the properties are equal, false otherwise</returns>
-  public static bool CompareTestData<T>(T a, T b, out string? propName)
+  public static bool CompareTestData<T>(T obj1, T obj2, out string? propName)
   {
-    foreach (var property in typeof(T).GetProperties())
+    return CompareTestData(typeof(T), obj1, obj2, out propName);
+  }
+
+  /// <summary>
+  /// Compares the public writable properties of two objects of the specified type for deep equality.
+  /// </summary>
+  /// <remarks>If the specified type represents a collection, the method compares the elements recursively in
+  /// order. The comparison uses deep equality, including nested properties and collection items. The method does not
+  /// compare indexer properties or properties that are read-only.</remarks>
+  /// <typeparam name="T">The type of the objects to compare.</typeparam>
+  /// <param name="comparedType">The type whose public writable properties are compared between the two objects. Must not be null.</param>
+  /// <param name="obj1">The first object to compare. Must be of the specified type.</param>
+  /// <param name="obj2">The second object to compare. Must be of the specified type.</param>
+  /// <param name="propName">When the method returns <see langword="false"/>, contains the name of the first property or collection element
+  /// that differs; otherwise, <see langword="null"/>.</param>
+  /// <returns><see langword="true"/> if all public writable properties of the two objects are equal; otherwise, <see
+  /// langword="false"/>.</returns>
+  public static bool CompareTestData<T>(Type comparedType, T obj1, T obj2, out string? propName)
+  {
+    propName = null;
+    bool result;
+    foreach (var property in comparedType.GetProperties())
     {
-      if (property.CanWrite && property.GetIndexParameters().Length==0)
+      if (property.CanWrite && property.GetIndexParameters().Length == 0)
       {
         propName = property.Name;
-        //if (propName == "HyperlinkList") 
-        //{
-        //  Debug.Assert(true);
-        //}
-        var aValue = property.GetValue(a);
-        var bValue = property.GetValue(b);
-        if (!DeepComparer.Equals(aValue, bValue))
+        var obj1Value = property.GetValue(obj1);
+        var obj2Value = property.GetValue(obj2);
+        if (propName == "Value")
         {
-          return false;
+          if (!Equals(obj1Value, obj2Value))
+            Debug.Assert(true);
+        }
+        if (comparedType.IsValueType)
+        {
+          result = Comparer.Equals(obj1Value, obj2Value);
+          if (!result)
+            return false;
+        }
+        else
+        {
+          var equatableType = typeof(IEquatable<>).MakeGenericType(property.PropertyType);
+          if (equatableType.IsInstanceOfType(obj1Value))
+          {
+            result = (bool)equatableType.GetMethod("Equals")!.Invoke(obj1Value, [obj2Value])!;
+            if (!result)
+              return false;
+          }
+          if (!CompareTestData(property.PropertyType, obj1Value, obj2Value, out var childPropName))
+          {
+            if (childPropName != null)
+              propName = $"{propName}.{childPropName}";
+            return false;
+          }
         }
       }
     }
-    propName = null;
-    return true;
+    result = true;
+    if (comparedType.IsEnumerable(out var itemType) && obj1 is IEnumerable obj1Enumerable
+                                                    && obj2 is IEnumerable obj2Enumerable)
+    {
+      var enumerator1 = obj1Enumerable.GetEnumerator();
+      var enumerator2 = obj2Enumerable.GetEnumerator();
+      int itemCount = 0;
+      while (enumerator1.MoveNext() && enumerator2.MoveNext())
+      {
+        if (!CompareTestData(itemType, enumerator1.Current, enumerator2.Current, out var itemPropName))
+        {
+          propName = $"item[{itemCount}].{itemPropName}";
+          result = false;
+          break;
+        }
+      }
+      if (result)
+      {
+        result = !enumerator1.MoveNext() && !enumerator2.MoveNext();
+        if (!result)
+          propName = "Count()";
+      }
+      (enumerator1 as IDisposable)?.Dispose();
+      (enumerator2 as IDisposable)?.Dispose();
+    }
+
+    return result;
   }
 
   /// <summary>

@@ -59,9 +59,9 @@ namespace DocumentModel.InOpenXml.Test
           Console.WriteLine("✗ XML Deserialization returned null");
           return false;
         }
-        if (!CompareCustomProperties(testData, deserialized))
+        if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
         {
-          Console.WriteLine("✗ XML Serialization/Deserialization test FAILED - data mismatch");
+          Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
           return false;
         }
         Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
@@ -94,9 +94,9 @@ namespace DocumentModel.InOpenXml.Test
           Console.WriteLine("✗ JSON Deserialization returned null");
           return false;
         }
-        if (!CompareCustomProperties(testData, deserialized))
+        if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
         {
-          Console.WriteLine("✗ JSON Serialization/Deserialization test FAILED - data mismatch");
+          Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
           return false;
         }
         Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
@@ -179,7 +179,7 @@ namespace DocumentModel.InOpenXml.Test
 
         if (!TestHelper.CompareTestData(testData, storedData, out var propName))
         {
-          Console.WriteLine($"✗ Store sample custom properties test FAILED - data mismatch in property '{propName}'");
+          Console.WriteLine($"✗ Store sample custom properties test FAILED - data mismatch in '{propName}'");
           return false;
         }
 
@@ -233,7 +233,7 @@ namespace DocumentModel.InOpenXml.Test
 
         if (!TestHelper.CompareTestData(testData, storedData, out var propName))
         {
-          Console.WriteLine($"✗ Updated document custom properties test FAILED - data mismatch in property '{propName}'");
+          Console.WriteLine($"✗ Updated document custom properties test FAILED - data mismatch in '{propName}'");
           return false;
         }
 
@@ -284,33 +284,6 @@ namespace DocumentModel.InOpenXml.Test
         Value = true
       });
       return props;
-    }
-
-    /// <summary>
-    /// Compares two CustomProperties objects for equality.
-    /// </summary>
-    /// <param name="a">The first CustomProperties object.</param>
-    /// <param name="b">The second CustomProperties object.</param>
-    /// <returns>True if both objects are equivalent; otherwise, false.</returns>
-    static bool CompareCustomProperties(CustomProperties a, CustomProperties b)
-    {
-      if (a.Count != b.Count)
-        return false;
-      for (int i = 0; i < a.Count; i++)
-      {
-        var propA = a[i];
-        var propB = b[i];
-        if (propA.Name != propB.Name 
-            ||
-            propA.PropertyId != propB.PropertyId
-            ||
-            propA.FormatId != propB.FormatId
-            ||
-            !object.Equals(propA.Value, propB.Value)
-            )
-          return false;
-      }
-      return true;
     }
 
     /// <summary>
