@@ -241,7 +241,12 @@ public class CustomProperty : DocumentProperty
   /// <param name="value">The new variant value to set.</param>
   public void SetValue(Variant value)
   {
-    Value = value;
+    _Value = value;
+    if (OpenXmlCustomDocumentProperty != null)
+    {
+      OpenXmlCustomDocumentProperty.RemoveAllChildren();
+      OpenXmlCustomDocumentProperty.AppendChild(value.AsVTVariant());
+    }
   }
 
   /// <summary>

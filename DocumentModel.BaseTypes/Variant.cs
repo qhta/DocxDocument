@@ -12,11 +12,14 @@ namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Variant implementation. Value is of any type.
+/// Represents a variant value that can hold any supported type, similar to a COM VARIANT.
 /// </summary>
 [JsonConverter(typeof(VariantJsonConverter))]
 public partial class Variant : IConvertible, IEquatable<Variant>
 {
+  /// <summary>
+  /// Maps <see cref="VariantType"/> values to their corresponding .NET types.
+  /// </summary>
   public static Dictionary<VariantType, Type> ItemTypes = new()
   {
     { VariantType.SByte, typeof(SByte) },
@@ -48,16 +51,32 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     { VariantType.Variant, typeof(Variant) }
   };
 
+  /// <summary>
+  /// Stores the value of the variant.
+  /// </summary>
   protected readonly object? _value;
 
+  /// <summary>
+  /// Stores the type of the variant value.
+  /// </summary>
   protected readonly VariantType _variantType;
 
+  /// <summary>
+  /// Stores the .NET type of the value, if known.
+  /// </summary>
   protected readonly Type? _valueType;
 
+  /// <summary>
+  /// Initializes a new, empty variant.
+  /// </summary>
   public Variant()
   {
   }
 
+  /// <summary>
+  /// Initializes a new variant with the specified value. The variant type is inferred from the value.
+  /// </summary>
+  /// <param name="value">The value to store in the variant.</param>
   public Variant(object? value)
   {
     if (value is Boolean vBool)
@@ -228,10 +247,21 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     }
   }
 
+  /// <summary>
+  /// Initializes a new variant with the specified variant type and value.
+  /// </summary>
+  /// <param name="variantType">The variant type.</param>
+  /// <param name="value">The value to store.</param>
   public Variant(VariantType variantType, object? value) : this(variantType, null, value)
   {
   }
 
+  /// <summary>
+  /// Initializes a new variant with the specified variant type, value type, and value.
+  /// </summary>
+  /// <param name="variantType">The variant type.</param>
+  /// <param name="valueType">The .NET type of the value.</param>
+  /// <param name="value">The value to store.</param>
   public Variant(VariantType variantType, Type? valueType, object? value)
   {
     _variantType = variantType;
@@ -246,12 +276,18 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     _value = ConvertValue(variantType, value);
   }
 
+  /// <summary>
+  /// Returns the variant type of the value.
+  /// </summary>
   [XmlIgnore]
   public virtual VariantType VariantType
   {
     get => _variantType;
   }
 
+  /// <summary>
+  /// Returns the type name of the value.
+  /// </summary>
   public virtual string TypeName
   {
     get
@@ -264,14 +300,20 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     }
   }
 
+  /// <summary>
+  /// Returns the .NET type of the value, if known.
+  /// </summary>
   [XmlIgnore]
   public virtual Type? ValueType => _valueType;
 
-  public virtual object? Value
-  {
-    get => GetValue();
-  }
+  /// <summary>
+  /// Returns the value stored in the variant.
+  /// </summary>
+  public virtual object? Value => GetValue();
 
+  /// <summary>
+  /// Returns the <see cref="TypeCode"/> for the value stored in the variant.
+  /// </summary>
   public virtual TypeCode GetTypeCode()
   {
     if (Value is null)
@@ -312,6 +354,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
       return TypeCode.DBNull;
     return TypeCode.Object;
   }
+  /// <summary>
+  /// Returns the <see cref="TypeCode"/> for the specified type.
+  /// </summary>
+  /// <param name="type">The type to evaluate.</param>
+  /// <returns>The corresponding <see cref="TypeCode"/>.</returns>
   public static TypeCode ToTypeCode(Type type)
   {
     if (type.Name.StartsWith("Nullable`"))
@@ -353,6 +400,12 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return TypeCode.Object;
   }
 
+  /// <summary>
+  /// Converts the value to the specified type.
+  /// </summary>
+  /// <param name="conversionType">The target type.</param>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The converted value.</returns>
   public virtual object? ToType(Type conversionType, IFormatProvider? provider)
   {
     if (conversionType.Name.StartsWith("Nullable`"))
@@ -391,6 +444,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     throw new InvalidOperationException($"Can't convert Variant to {conversionType} type");
   }
 
+  /// <summary>
+  /// Converts the value to a boolean.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The boolean value.</returns>
   public virtual bool ToBoolean(IFormatProvider? provider = null)
   {
     if (Value is string str)
@@ -401,6 +459,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToBoolean(Value);
   }
 
+  /// <summary>
+  /// Converts the value to a byte.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The byte value.</returns>
   public virtual byte ToByte(IFormatProvider? provider = null)
   {
     if (VariantType == VariantType.HexInt && Value is string str)
@@ -408,6 +471,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToByte(Value);
   }
 
+  /// <summary>
+  /// Converts the value to an sbyte.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The sbyte value.</returns>
   public virtual sbyte ToSByte(IFormatProvider? provider = null)
   {
     if (VariantType == VariantType.HexInt && Value is string str)
@@ -415,6 +483,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToSByte(Value);
   }
 
+  /// <summary>
+  /// Converts the value to a short.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The short value.</returns>
   public virtual short ToInt16(IFormatProvider? provider = null)
   {
     if (VariantType == VariantType.HexInt && Value is string str)
@@ -422,6 +495,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToInt16(Value);
   }
 
+  /// <summary>
+  /// Converts the value to an unsigned short.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The ushort value.</returns>
   public virtual ushort ToUInt16(IFormatProvider? provider = null)
   {
     if (VariantType == VariantType.HexInt && Value is string str)
@@ -429,6 +507,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToUInt16(Value);
   }
 
+  /// <summary>
+  /// Converts the value to an int.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The int value.</returns>
   public virtual int ToInt32(IFormatProvider? provider = null)
   {
     if (VariantType == VariantType.HexInt && Value is string str)
@@ -436,6 +519,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToInt32(Value);
   }
 
+  /// <summary>
+  /// Converts the value to an unsigned int.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The uint value.</returns>
   public virtual uint ToUInt32(IFormatProvider? provider = null)
   {
     if (VariantType == VariantType.HexInt && Value is string str)
@@ -443,6 +531,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToUInt32(Value);
   }
 
+  /// <summary>
+  /// Converts the value to a long.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The long value.</returns>
   public virtual long ToInt64(IFormatProvider? provider = null)
   {
     if (VariantType == VariantType.HexInt && Value is string str)
@@ -450,6 +543,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToInt64(Value);
   }
 
+  /// <summary>
+  /// Converts the value to an unsigned long.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The ulong value.</returns>
   public virtual ulong ToUInt64(IFormatProvider? provider = null)
   {
     if (VariantType == VariantType.HexInt && Value is string str)
@@ -457,6 +555,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToUInt64(Value);
   }
 
+  /// <summary>
+  /// Converts the value to a decimal.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The decimal value.</returns>
   public virtual decimal ToDecimal(IFormatProvider? provider = null)
   {
     if (_value is string str)
@@ -464,6 +567,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToDecimal(Value);
   }
 
+  /// <summary>
+  /// Converts the value to a float.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The float value.</returns>
   public virtual float ToSingle(IFormatProvider? provider = null)
   {
     if (_value is string str)
@@ -471,6 +579,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToSingle(Value);
   }
 
+  /// <summary>
+  /// Converts the value to a double.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The double value.</returns>
   public virtual double ToDouble(IFormatProvider? provider = null)
   {
     if (_value is string str)
@@ -478,6 +591,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToDouble(Value);
   }
 
+  /// <summary>
+  /// Converts the value to a DateTime.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The DateTime value.</returns>
   public virtual DateTime ToDateTime(IFormatProvider? provider = null)
   {
     if (Value is DateOnly dateOnly)
@@ -485,6 +603,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToDateTime(Value);
   }
 
+  /// <summary>
+  /// Converts the value to a string.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The string value.</returns>
   public virtual string? ToString(IFormatProvider? provider = null)
   {
     if (Value is byte[] bytes)
@@ -502,13 +625,24 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return result;
   }
 
+  /// <summary>
+  /// Converts the value to a char.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The char value.</returns>
   public virtual char ToChar(IFormatProvider? provider = null)
   {
     return Convert.ToChar(Value);
   }
 
+  /// <summary>
+  /// Converts the value to the specified enum type.
+  /// </summary>
+  /// <typeparam name="EnumType">The enum type to convert to.</typeparam>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The enum value.</returns>
   public virtual EnumType ToEnum<EnumType>(IFormatProvider? provider = null)
-  where EnumType : struct, IConvertible
+    where EnumType : struct, IConvertible
   {
     if (Value is string str)
       return Enum.Parse<EnumType>(str);
@@ -517,38 +651,10 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     throw new InvalidOperationException($"ValueType is null when converting variant to Enum");
   }
 
-  public override bool Equals(object? obj)
-  {
-    if (obj == null) return false;
-    if (obj is Variant other)
-      return Equals(other);
-    other = new Variant(obj);
-    return Equals(other);
-  }
-
-  public virtual bool Equals(Variant? other)
-  {
-    if (other == null) return false;
-    var result = false;
-    if (this.Value == null && other.Value == null)
-      return true;
-    if (this.Value is byte[] thisBytes && other.Value is byte[] otherBytes)
-      result = thisBytes.SequenceEqual(otherBytes);
-    else if (this.Value is Variant thisVariant && other.Value is Variant otherVariant)
-      result = thisVariant.Equals(otherVariant);
-    else
-    {
-      result = this.Value?.Equals(other.Value) == true;
-      if (!result)
-      {
-        var thisValueStr = this.ToString(CultureInfo.InvariantCulture);
-        var otherValueStr = other.ToString(CultureInfo.InvariantCulture);
-        result = String.Equals(thisValueStr, otherValueStr);
-      }
-    }
-    return result;
-  }
-
+  /// <summary>
+  /// Returns the value stored in the variant.
+  /// </summary>
+  /// <returns>The value as an object.</returns>
   public object? GetValue()
   {
 #if TraceSetValue
@@ -565,6 +671,12 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return val;
   }
 
+  /// <summary>
+  /// Converts a value to the appropriate type for the specified variant type.
+  /// </summary>
+  /// <param name="variantType">The variant type.</param>
+  /// <param name="value">The value to convert.</param>
+  /// <returns>The converted value.</returns>
   public static object? ConvertValue(VariantType variantType, object? value)
   {
     switch (variantType)
@@ -733,6 +845,15 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     }
   }
 
+  public static implicit operator string(Variant value)
+  {
+    return value.ToString() ?? string.Empty;
+  }
+
+  public static implicit operator Variant(string value)
+  {
+    return new Variant(VariantType.Lpwstr, value);
+  }
 
   public static implicit operator bool(Variant value)
   {
@@ -854,6 +975,21 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return new Variant(VariantType.Double, value);
   }
 
+
+  public static implicit operator DateTime(Variant value)
+  {
+    return value.ToDateTime();
+  }
+
+  public static implicit operator Variant(DateTime value)
+  {
+    return new Variant(VariantType.DateTime, value);
+  }
+  /// <summary>
+  /// Converts the value to a <see cref="DateOnly"/>.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The <see cref="DateOnly"/> value.</returns>
   public virtual DateOnly ToDateOnly(IFormatProvider? provider = null)
   {
     if (Value is DateOnly dateOnly)
@@ -867,46 +1003,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     throw new InvalidOperationException($"Can't convert value of type {Value.GetType()} to DateOnly");
   }
 
-  public static implicit operator DateOnly(Variant value)
-  {
-    return value.ToDateOnly();
-  }
-
-  public static implicit operator Variant(DateOnly value)
-  {
-    return new Variant(VariantType.Date, value);
-  }
-
-  public static implicit operator DateTime(Variant value)
-  {
-    return value.ToDateTime();
-  }
-
-  public static implicit operator Variant(DateTime value)
-  {
-    return new Variant(VariantType.DateTime, value);
-  }
-
-  public static implicit operator string?(Variant value)
-  {
-    return value.ToString();
-  }
-
-  public static implicit operator Variant(string? value)
-  {
-    return new Variant(VariantType.Lpwstr, value);
-  }
-
-  public static implicit operator Char(Variant value)
-  {
-    return value.ToChar();
-  }
-
-  public static implicit operator Variant(Char value)
-  {
-    return new Variant(VariantType.Char, value);
-  }
-
+  /// <summary>
+  /// Converts the value to a <see cref="Guid"/>.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The <see cref="Guid"/> value.</returns>
   public virtual Guid ToGuid(IFormatProvider? provider = null)
   {
     if (Value is null)
@@ -917,70 +1018,32 @@ public partial class Variant : IConvertible, IEquatable<Variant>
       return Guid.Parse(str);
     if (Value is byte[] bytes)
       return new Guid(bytes);
-    throw new InvalidOperationException($"Can't convert value of type {Value.GetType} to Guid");
+    throw new InvalidOperationException($"Can't convert value of type {Value.GetType()} to Guid");
   }
 
-  public static implicit operator Guid(Variant value)
-  {
-    return value.ToGuid();
-  }
-
-  public static implicit operator Variant(Guid value)
-  {
-    return new Variant(VariantType.Guid, value);
-  }
-
+  /// <summary>
+  /// Converts the value to a byte array.
+  /// </summary>
+  /// <param name="provider">The format provider.</param>
+  /// <returns>The byte array value.</returns>
   public virtual byte[] ToBytes(IFormatProvider? provider = null)
   {
     if (Value is null)
-      return new byte[0];
+      return [];
     if (Value is Guid guid)
       return guid.ToByteArray();
     if (Value is String str)
       return Convert.FromBase64String(str);
     if (Value is byte[] bytes)
       return bytes;
-    throw new InvalidOperationException($"Can't convert value of type {Value.GetType} to byte[]");
+    throw new InvalidOperationException($"Can't convert value of type {Value.GetType()} to byte[]");
   }
 
-  public static implicit operator byte[](Variant value)
-  {
-    return value.ToBytes();
-  }
-
-  public static implicit operator Variant(byte[] value)
-  {
-    return new Variant(VariantType.Blob, value);
-  }
-
-  public static object? Convert_ChangeType(object? value, Type targetType)
-  {
-    if (value is DateOnly dateOnly)
-    {
-      if (targetType == typeof(DateOnly))
-        return dateOnly;
-      if (targetType == typeof(DateTime))
-        return dateOnly.ToDateTime(default);
-      if (targetType == typeof(string))
-        return dateOnly.ToString("yyyy-MM-dd");
-
-      //if (Value == null)
-      //  throw new InvalidOperationException($"Can't convert null value to DateOnly");
-      throw new InvalidOperationException($"Can't convert DateOnly to {targetType} type");
-    }
-    if (targetType == typeof(DateOnly))
-    {
-      if (value is DateTime dateTime)
-        return DateOnly.FromDateTime(dateTime);
-      if (value is string str)
-        return DateOnly.Parse(str);
-      if (value == null)
-        throw new InvalidOperationException("Can't convert null value to DateOnly type");
-      throw new InvalidOperationException($"Can't convert value of type {value.GetType()} to DateOnly type");
-    }
-    return Convert.ChangeType(value, targetType);
-  }
-
+  /// <summary>
+  /// Converts the value to the specified type as a <see cref="Variant"/>.
+  /// </summary>
+  /// <param name="destinationType">The destination type.</param>
+  /// <returns>The converted <see cref="Variant"/>.</returns>
   public Variant? ConvertTo(Type destinationType)
   {
     if (destinationType == typeof(bool))
@@ -1025,6 +1088,14 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     throw new InvalidOperationException($"Can't convert variant value to {destinationType}");
   }
 
+  /// <summary>
+  /// Converts a value to the specified type, using the provided context and culture.
+  /// </summary>
+  /// <param name="context">The type descriptor context.</param>
+  /// <param name="culture">The culture info.</param>
+  /// <param name="value">The value to convert.</param>
+  /// <param name="destinationType">The destination type.</param>
+  /// <returns>The converted value.</returns>
   public static object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
     if (destinationType == typeof(string))
@@ -1072,6 +1143,13 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     throw new InvalidOperationException($"Can't convert variant value to {destinationType}");
   }
 
+  /// <summary>
+  /// Converts a value from the specified context and culture.
+  /// </summary>
+  /// <param name="context">The type descriptor context.</param>
+  /// <param name="culture">The culture info.</param>
+  /// <param name="value">The value to convert.</param>
+  /// <returns>The converted value.</returns>
   public static object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
     if (context?.Instance is Variant variant)
@@ -1082,13 +1160,50 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return value;
   }
 
+  /// <summary>
+  /// Returns a hash code for the variant.
+  /// </summary>
+  /// <returns>The hash code.</returns>
   public override int GetHashCode()
   {
-    return HashCode.Combine(VariantType, _value);
+    return HashCode.Combine(_value, (int)_variantType, _valueType);
   }
 
+  /// <summary>
+  /// Returns a string representation of the variant, including its type name.
+  /// </summary>
+  /// <returns>The string representation.</returns>
   public override string? ToString()
   {
     return ToString(CultureInfo.InvariantCulture) + $" ({TypeName})";
+  }
+
+  /// <summary>
+  /// Determines whether the current Variant instance is equal to the specified Variant.
+  /// </summary>
+  /// <remarks>Equality is determined by comparing the underlying value, variant type, and value type of both
+  /// instances.</remarks>
+  /// <param name="other">The Variant instance to compare with the current instance. Can be null.</param>
+  /// <returns>true if the specified Variant is equal to the current instance; otherwise, false.</returns>
+  public bool Equals(Variant? other)
+  {
+    if (other is null) return false;
+    if (ReferenceEquals(this, other)) return true;
+    return Equals(_value, other._value) && _variantType == other._variantType && _valueType == other._valueType;
+  }
+
+  /// <summary>
+  /// Determines whether the specified object is equal to the current Variant instance.
+  /// </summary>
+  /// <remarks>Equality is determined by comparing the type and value of the Variant. If obj is null or of a
+  /// different type, the method returns false.</remarks>
+  /// <param name="obj">The object to compare with the current Variant. Can be null.</param>
+  /// <returns>true if the specified object is a Variant and is equal to the current instance; otherwise, false.</returns>
+  public override bool Equals(object? obj)
+  {
+    if (obj is null) return false;
+    if (ReferenceEquals(this, obj)) return true;
+    if (obj.GetType() != GetType()) return false;
+    return Equals((Variant)obj);
   }
 }

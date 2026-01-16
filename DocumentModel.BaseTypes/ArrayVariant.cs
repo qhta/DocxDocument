@@ -208,7 +208,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   public object? this[int index]
   {
     get => _items?.GetValue(index - _lowerBounds);
-    set => _items?.SetValue(Convert_ChangeType(value, ItemType), index - _lowerBounds);
+    set => _items?.SetValue(Convert.ChangeType(value, ItemType), index - _lowerBounds);
   }
   
   IEnumerator<object?> IEnumerable<object?>.GetEnumerator()
@@ -486,7 +486,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
           _items.CopyTo(newItems, 0);
         else
           for (var i = 0; i < Size && i < newSize; i++)
-            newItems.SetValue(Convert_ChangeType(_items.GetValue(i), newItemType), i);
+            newItems.SetValue(Convert.ChangeType(_items.GetValue(i), newItemType), i);
       }
       _items = newItems;
       _lowerBounds = lowerBounds;
