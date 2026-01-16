@@ -17,31 +17,14 @@ public class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Prop
   /// </summary>
   public CustomProperties()
   {
-    base.CollectionChanged += (sender, e) =>
-    {
-      if (isLoading)
-        return;
-      if (e.Action == NotifyCollectionChangedAction.Add || e.Action == NotifyCollectionChangedAction.Remove || e.Action == NotifyCollectionChangedAction.Replace || e.Action == NotifyCollectionChangedAction.Reset)
-      {
-        {
-          // Mark the underlying OpenXml element as changed
-          var openXmlElement = GetUpdatableOpenXmlElement();
-          if (openXmlElement != null)
-          {
-            UpdateData(openXmlElement);
-          }
-        }
-      }
-    };
   }
 
-  private bool isLoading;
 
   /// <summary>
   /// Initializing constructor.
   /// </summary>
   /// <param name="document">Wordprocessing document model</param>
-  public CustomProperties(Wordprocessing.Document document) : this()
+  public CustomProperties(Wordprocessing.Document document) : base()
   {
     AttachAndLoad(document);
   }
@@ -89,48 +72,25 @@ public class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Prop
     SetOpenXmlElement(null);
   }
 
-  /// <summary>
-  /// Override to load data from CustomFileProperties.
-  /// </summary>
-  public override void LoadData(object openXmlElement)
-  {
-    if (openXmlElement is DXCP.Properties customFileProperties)
-    {
-      LoadData(customFileProperties);
-    }
-  }
-
 
   /// <summary>
-  /// Gets values from customFileProperties to this instance.
+  /// Loads data from customFileProperties to this instance.
   /// </summary>
-  private void LoadData(DXCP.Properties customFileProperties)
+  protected override void LoadDataCollection(DXCP.Properties customFileProperties)
   {
-    isLoading = true;
     this.Clear();
     foreach (var openXmlCustomDocumentProperty in customFileProperties!.ChildElements.Cast<DXCP.CustomDocumentProperty>())
     {
       var customDocumentProperty = new CustomProperty(this, openXmlCustomDocumentProperty);
       this.Add(customDocumentProperty);
     }
-    isLoading = false;
   }
 
-  /// <summary>
-  /// Override to set data to CustomFileProperties.
-  /// </summary>
-  public override void UpdateData(object openXmlElement)
-  {
-    if (openXmlElement is DXCP.Properties customFileProperties)
-    {
-      UpdateData(customFileProperties);
-    }
-  }
 
   /// <summary>
-  /// Sets values from this instance to CustomFileProperties.
+  /// Store data from this instance to CustomFileProperties.
   /// </summary>
-  private void UpdateData(DXCP.Properties customFileProperties)
+  protected override void UpdateDataCollection(DXCP.Properties customFileProperties)
   {
     customFileProperties!.RemoveAllChildren();
     foreach (var customDocumentProperty in this)
