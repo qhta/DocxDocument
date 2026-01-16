@@ -115,7 +115,6 @@ public class ContentProperties : ModelElement<DXEP.Properties>
   /// <param name="value">The value to convert. It should be of OpenXml type.</param>
   /// <param name="targetType">The target type to convert to. It should be a model type.</param>
   /// <returns>The converted value, or null if the conversion is not supported.</returns>
-
   public override object? ConvertFromOpenXml(object? value, Type targetType)
   {
     if (value == null) return null;

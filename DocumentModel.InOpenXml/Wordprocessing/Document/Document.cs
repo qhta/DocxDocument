@@ -3,12 +3,12 @@
 /// <summary>
 /// Represents a Wordprocessing document and provides access to its settings and lifecycle management.
 /// </summary>
-public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
+public class Document : ModelElement, IDisposable
 {
   /// <summary>
   /// Gets the underlying Open XML word processing document associated with this instance.
   /// </summary>
-  public DXPP.WordprocessingDocument? WordprocessingDocument => GetOpenXmlElement();
+  public DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
   /// <summary>
   /// Initializes a new instance of the Document class.
@@ -24,13 +24,13 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
   /// <summary>
   /// Initializes a new instance of the Document class.
   /// </summary>
-  public Document(DXPP.WordprocessingDocument? WordprocessingDocument)
+  public Document(DXPP.WordprocessingDocument? wordprocessingDocument)
   {
-    SetOpenXmlElement(WordprocessingDocument);
+    WordprocessingDocument = wordprocessingDocument;
     _CoreProperties = new CoreProperties(this);
     _ContentProperties = new ContentProperties(this);
     _StatisticProperties = new StatisticProperties(this);
-    if (WordprocessingDocument?.CustomFilePropertiesPart!=null)
+    if (wordprocessingDocument?.CustomFilePropertiesPart!=null)
     {
       _CustomProperties = new CustomProperties(this);
     }
@@ -65,10 +65,9 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
   {
     _CoreProperties.Detach(this);
     _ContentProperties.Detach(this);
-    var wordprocessingDocument = GetOpenXmlElement();
-    wordprocessingDocument?.Dispose();
-    wordprocessingDocument = null;
-    NotifyPropertyChanged(nameof(wordprocessingDocument));
+    WordprocessingDocument?.Dispose();
+    WordprocessingDocument = null;
+    NotifyPropertyChanged(nameof(WordprocessingDocument));
   }
 
   /// <summary>

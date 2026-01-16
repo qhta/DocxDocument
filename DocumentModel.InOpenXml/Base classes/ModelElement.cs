@@ -91,13 +91,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     return DeepComparer.Equals(this.GetType(), this, obj);
   }
 
-  ///// <summary>
-  ///// When implemented in a derived class, loads data from the underlying source into the current instance.
-  ///// </summary>
-  ///// <remarks>This method must be overridden in a derived class to define how data is loaded. The specific data
-  ///// source and loading behavior depend on the implementation.</remarks>
-  //public abstract void LoadData();
-
   /// <summary>
   /// Populates the current model element's properties with values from the specified Open XML element.
   /// </summary>
