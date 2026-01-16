@@ -7,8 +7,7 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
 public abstract class ElementCollection<ItemType> : ModelElement,
- // IEnumerable,
-/*  IElementCollection<ItemType>, */IEquatable<ElementCollection<ItemType>>
+  IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>
   where ItemType : ICollectionItem
 {
   private readonly ObservableCollection<ItemType> _items = new ObservableCollection<ItemType>();
@@ -59,14 +58,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
 
 
   /// <summary>
-  /// Returns an enumerator that iterates through the collection.
-  /// </summary>
-  public IEnumerator<ItemType> GetEnumerator()
-  {
-    return _items.GetEnumerator();
-  }
-
-  /// <summary>
   /// Compares this collection to another object for equality.
   /// </summary>
   /// <param name="obj">The object to compare to.</param>
@@ -79,13 +70,21 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     return Equals((ElementCollection<ItemType>)obj);
   }
 
-  ///// <summary>
-  ///// Returns an enumerator that iterates through the collection (non-generic).
-  ///// </summary>
-  //IEnumerator IEnumerable.GetEnumerator()
-  //{
-  //  return ((IEnumerable)_items).GetEnumerator();
-  //}
+  /// <summary>
+  /// Returns an enumerator that iterates through the collection (non-generic).
+  /// </summary>
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+    return ((IEnumerable)_items).GetEnumerator();
+  }
+
+  /// <summary>
+  /// Returns an enumerator that iterates through the collection.
+  /// </summary>
+  public IEnumerator<ItemType> GetEnumerator()
+  {
+    return _items.GetEnumerator();
+  }
 
   /// <summary>
   /// Adds an item to the collection.

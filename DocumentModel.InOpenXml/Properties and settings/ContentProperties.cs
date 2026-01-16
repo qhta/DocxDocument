@@ -71,6 +71,14 @@ public class ContentProperties : ModelElement<DXEP.Properties>
     SetOpenXmlElement(null);
   }
 
+  /// <summary>
+  /// Converts an OpenXml typed value to a model object.
+  /// Supported types include HeadingPairs, TitlesOfParts, HyperlinkList, and DigitalSignature.
+  /// </summary>
+  /// <param name="value">The OpenXml typed value to convert.</param>
+  /// <param name="targetType">The target type to convert to.</param>
+  /// <returns>An object representing the converted model value, or null if the input value is null or cannot
+  /// be converted.</returns>
   public override object? ConvertToOpenXml(object? value, Type targetType)
   {
     if (targetType == typeof(DXEP.HeadingPairs))
@@ -100,6 +108,13 @@ public class ContentProperties : ModelElement<DXEP.Properties>
     }
     return base.ConvertToOpenXml(value, targetType);
   }
+
+  /// <summary>
+  /// Changes the type of the given value from the specified OpenXml type.
+  /// Supported types include HeadingPairs, TitlesOfParts, HyperlinkList, and DigitalSignature </summary>
+  /// <param name="value">The value to convert. It should be of OpenXml type.</param>
+  /// <param name="targetType">The target type to convert to. It should be a model type.</param>
+  /// <returns>The converted value, or null if the conversion is not supported.</returns>
 
   public override object? ConvertFromOpenXml(object? value, Type targetType)
   {

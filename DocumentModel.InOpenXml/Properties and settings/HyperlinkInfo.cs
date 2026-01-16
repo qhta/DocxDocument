@@ -35,11 +35,11 @@ public class HyperlinkInfo: CollectionItem
   /// </summary>
   public HyperlinkActionKind Action { get; set; }
   /// <summary>
-  /// Specifies the hyperlink target.
+  /// Specifies the hyperlink target. It can't be empty because of Open XML specifications.
   /// </summary>
-  public String? Target { get; set; }
+  public String Target { get; set; } = string.Empty;
   /// <summary>
-  /// Specifies the location of the hyperlink.
+  /// Specifies the location of the hyperlink. It can't be empty because of Open XML specifications.
   /// </summary>
-  public String? Location { get; set; }
+  public String Location { get; set; } = string.Empty;
 }

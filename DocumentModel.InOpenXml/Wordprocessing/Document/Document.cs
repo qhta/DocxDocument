@@ -17,6 +17,8 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
   {
     _CoreProperties = new CoreProperties(this);
     _ContentProperties = new ContentProperties(this);
+    _StatisticProperties = new StatisticProperties(this);
+
   }
 
   /// <summary>
@@ -27,6 +29,7 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
     SetOpenXmlElement(WordprocessingDocument);
     _CoreProperties = new CoreProperties(this);
     _ContentProperties = new ContentProperties(this);
+    _StatisticProperties = new StatisticProperties(this);
   }
 
   /// <summary>
@@ -83,9 +86,8 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
   }
   private CoreProperties _CoreProperties;
 
-
   /// <summary>
-  /// Provides access to core document properties such as title, author, and subject.
+  /// Provides access to content-specific document properties.
   /// </summary>
   public ContentProperties ContentProperties
   {
@@ -103,6 +105,25 @@ public class Document : ModelElement<DXPP.WordprocessingDocument>, IDisposable
   }
   private ContentProperties _ContentProperties;
 
+  /// <summary>
+  /// Provides access to statistical document properties such as word count and page count.
+  /// </summary>
+  public StatisticProperties StatisticProperties
+  {
+    get => _StatisticProperties;
+    set
+    {
+      if (!Equals(_StatisticProperties, value))
+      {
+        _StatisticProperties.Detach(this);
+        value.AttachAndUpdate(this);
+        _StatisticProperties = value;
+
+      }
+    }
+  }
+
+  private StatisticProperties _StatisticProperties;
 
   /// <summary>
   /// Provides access to document-level settings and properties.
