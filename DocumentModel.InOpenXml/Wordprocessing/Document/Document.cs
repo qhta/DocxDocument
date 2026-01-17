@@ -10,12 +10,6 @@ public class Document : ModelElement, IDisposable
   /// </summary>
   public DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
-
-  protected override object? GetUpdatableOpenXmlElement()
-  {
-    return WordprocessingDocument;
-  }
-
   /// <summary>
   /// Initializes a new instance of the Document class.
   /// </summary>
@@ -36,11 +30,10 @@ public class Document : ModelElement, IDisposable
     _CoreProperties = new CoreProperties(this);
     _ContentProperties = new ContentProperties(this);
     _StatisticProperties = new StatisticProperties(this);
-    if (wordprocessingDocument?.CustomFilePropertiesPart!=null)
-    {
-      _CustomProperties = new CustomProperties(this);
-    }
+
   }
+
+
 
   /// <summary>
   /// Creates a new Wordprocessing document at the specified file path.
@@ -76,9 +69,17 @@ public class Document : ModelElement, IDisposable
     NotifyPropertyChanged(nameof(WordprocessingDocument));
   }
 
+
+
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    return WordprocessingDocument;
+  }
+
   /// <summary>
   /// Provides access to core document properties such as title, author, and subject.
   /// </summary>
+  [NotMapped]
   public CoreProperties CoreProperties
   {
     get => _CoreProperties;
@@ -95,6 +96,7 @@ public class Document : ModelElement, IDisposable
   /// <summary>
   /// Provides access to content-specific document properties.
   /// </summary>
+  [NotMapped]
   public ContentProperties ContentProperties
   {
     get => _ContentProperties;
@@ -113,6 +115,7 @@ public class Document : ModelElement, IDisposable
   /// <summary>
   /// Provides access to statistical document properties such as word count and page count.
   /// </summary>
+  [NotMapped]
   public StatisticProperties StatisticProperties
   {
     get => _StatisticProperties;
@@ -134,7 +137,12 @@ public class Document : ModelElement, IDisposable
   /// </summary>
   public CustomProperties? CustomProperties
   {
-    get => _CustomProperties;
+    get
+    {
+      if (_CustomProperties == null && WordprocessingDocument?.CustomFilePropertiesPart != null) 
+        _CustomProperties = new CustomProperties(this);
+      return _CustomProperties;
+    }
     set
     {
       if (!Equals(_CustomProperties, value))
@@ -150,6 +158,24 @@ public class Document : ModelElement, IDisposable
   /// <summary>
   /// Provides access to document-level settings and properties.
   /// </summary>
-  public DocumentSettings DocumentSettings { get; private set; } = new DocumentSettings();
+  public DocumentSettings? DocumentSettings
+  {
+    get
+    {
+      if (_DocumentSettings == null && WordprocessingDocument?.MainDocumentPart?.DocumentSettingsPart != null)
+        _DocumentSettings = new DocumentSettings(this);
+      return _DocumentSettings;
+    }
+    set
+    {
+      if (!Equals(_CustomProperties, value))
+      {
+        _DocumentSettings?.Detach(this);
+        value?.AttachAndUpdate(this);
+        _DocumentSettings = value;
+      }
+    }
+  }
+  private DocumentSettings? _DocumentSettings;
 
 }

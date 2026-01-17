@@ -49,13 +49,13 @@ internal class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
-    //// Run DocumentSettingsSerialization tests
-    //if (!DocumentSettingsSerializationTest.Run())
-    //  allTestsPassed = false;
+    // Run DocumentSettingsSerialization tests
+    if (!DocumentSettingsTest.Run())
+      allTestsPassed = false;
 
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
 
 
     Console.WriteLine(allTestsPassed ? "All tests passed." : "Some tests failed.");

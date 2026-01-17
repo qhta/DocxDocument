@@ -40,6 +40,9 @@ public static class TestHelper
   public static bool CompareTestData<T>(Type comparedType, T obj1, T obj2, out string? propName)
   {
     propName = null;
+    if (obj1 == null && obj2 == null) return true;
+    if (obj1 == null || obj2 == null) return false;
+
     bool result;
     foreach (var property in comparedType.GetProperties())
     {
