@@ -15,4 +15,25 @@ public class Zoom
   /// Zoom percentage, specifying the magnification level as a percentage.
   /// </summary>
   public int? Percent { get; set; }
+
+  /// <summary>
+  /// Converts a value of type PresetZoomKind to a Zoom instance with the specified preset kind.  
+  /// </summary>
+  /// <param name="kind">The preset zoom kind to use when creating the Zoom instance.</param>
+  public static implicit operator Zoom(PresetZoomKind kind)
+  {
+    return new Zoom { Kind = kind };
+  }
+
+  /// <summary>
+  /// Converts an integer percentage value to a Zoom instance.
+  /// </summary>
+  /// <remarks>This operator enables implicit conversion from an integer representing a zoom percentage to a
+  /// Zoom object. This allows assignment of an integer directly to a Zoom variable without explicit casting.</remarks>
+  /// <param name="percent">The zoom level as a percentage. Must be a non-negative integer.</param>
+  public static implicit operator Zoom(int percent)
+  {
+    return new Zoom { Percent = percent };
+  }
+
 }

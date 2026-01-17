@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Diagnostics;
+using System.Runtime.Remoting;
+using DocumentModel.Wordprocessing;
 
 using Qhta.TypeUtils;
 
@@ -40,9 +42,20 @@ public static class TestHelper
   public static bool CompareTestData<T>(Type comparedType, T obj1, T obj2, out string? propName)
   {
     propName = null;
+    return CompareTestData1(comparedType, obj1, obj2, ref propName);
+  }
+  /// <summary>
+  /// The actual implementation of CompareTestData with ref parameter for propName.
+  /// </summary>
+  private static bool CompareTestData1<T>(Type comparedType, T obj1, T obj2, ref string? propName)
+  {
     if (obj1 == null && obj2 == null) return true;
     if (obj1 == null || obj2 == null) return false;
-
+    comparedType = comparedType.GetNotNullableType();
+    if (comparedType.IsEnum)
+    {
+      return object.Equals(obj1, obj2);
+    }
     bool result;
     foreach (var property in comparedType.GetProperties())
     {
@@ -51,11 +64,11 @@ public static class TestHelper
         propName = property.Name;
         var obj1Value = property.GetValue(obj1);
         var obj2Value = property.GetValue(obj2);
-        if (propName == "Value")
-        {
-          if (!Equals(obj1Value, obj2Value))
-            Debug.Assert(true);
-        }
+        //if (propName == "Value")
+        //{
+        //  if (!Equals(obj1Value, obj2Value))
+        //    Debug.Assert(true);
+        //}
         if (comparedType.IsValueType)
         {
           result = Comparer.Equals(obj1Value, obj2Value);
@@ -64,6 +77,7 @@ public static class TestHelper
         }
         else
         {
+
           var equatableType = typeof(IEquatable<>).MakeGenericType(property.PropertyType);
           if (equatableType.IsInstanceOfType(obj1Value))
           {
@@ -71,10 +85,8 @@ public static class TestHelper
             if (!result)
               return false;
           }
-          if (!CompareTestData(property.PropertyType, obj1Value, obj2Value, out var childPropName))
+          if (!CompareTestData1(property.PropertyType, obj1Value, obj2Value, ref propName))
           {
-            if (childPropName != null)
-              propName = $"{propName}.{childPropName}";
             return false;
           }
         }

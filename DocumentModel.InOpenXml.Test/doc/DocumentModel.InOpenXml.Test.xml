@@ -318,7 +318,7 @@
             </summary>
             <returns>True if all edge case tests pass; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.CreateSampleDocumentSettings">
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.CreateSampleDocumentSettings(System.Boolean)">
             <summary>
             Creates a sample <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance for testing.
             </summary>
@@ -479,6 +479,11 @@
             that differs; otherwise, <see langword="null"/>.</param>
             <returns><see langword="true"/> if all public writable properties of the two objects are equal; otherwise, <see
             langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.CompareTestData1``1(System.Type,``0,``0,System.String@)">
+            <summary>
+            The actual implementation of CompareTestData with ref parameter for propName.
+            </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.TestHelper.GetInternalMessages(System.Exception)">
             <summary>
