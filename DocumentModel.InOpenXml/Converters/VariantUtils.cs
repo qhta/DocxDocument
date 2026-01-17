@@ -664,17 +664,17 @@ public static class VariantUtils
     if (baseType == DXVT.VectorBaseValues.Bstr)
       return new DXVT.VTBString(((string)value));
     if (baseType == DXVT.VectorBaseValues.Date)
-      return new DXVT.VTDate(((DateTime)value).ToString(CultureInfo.InvariantCulture));
+      return new DXVT.VTDate(((DateTime)value).ToString("yyyy-MM-dd"));
     if (baseType == DXVT.VectorBaseValues.Filetime)
-      return new DXVT.VTFileTime(((DateTime)value).ToString(CultureInfo.InvariantCulture));
+      return new DXVT.VTFileTime(((DateTime)value).ToString("s"));
     if (baseType == DXVT.VectorBaseValues.Bool)
-      return new DXVT.VTBool(((bool)value).ToString());
+      return new DXVT.VTBool(((bool)value) ? "true" : "false");
     if (baseType == DXVT.VectorBaseValues.Currency)
       return new DXVT.VTCurrency(((decimal)value).ToString(CultureInfo.InvariantCulture)!);
     if (baseType == DXVT.VectorBaseValues.Error)
       return new DXVT.VTError("0x" + ((int)value).ToString("X8"));
     if (baseType == DXVT.VectorBaseValues.ClassId)
-      return new DXVT.VTClassId(((Guid)value).ToString("D"));
+      return new DXVT.VTClassId(((Guid)value).ToString("B"));
     return null;
   }
 

@@ -99,4 +99,18 @@ public class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Prop
     }
   }
 
+  /// <summary>
+  /// Automatically assigns PropertyId if not set, then adds the item to the collection.
+  /// First PropertyId is 2, then increments from the highest existing PropertyId.
+  /// </summary>
+  /// <param name="item"></param>
+  public new void Add(CustomProperty item)
+  {
+    if (item.PropertyId == null)
+    {
+      item.PropertyId = Count == 0 ? 2 : this.Max(p => p.PropertyId)!.Value + 1;
+    }
+    base.Add(item);
+  }
+
 }

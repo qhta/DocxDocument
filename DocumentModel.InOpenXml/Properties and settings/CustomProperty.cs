@@ -10,7 +10,6 @@ public sealed class CustomProperty : ModelElement<DXCP.CustomDocumentProperty>
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-
   private DXCP.CustomDocumentProperty? OpenXmlCustomDocumentProperty
   {
     get => GetOpenXmlElement()!; 
@@ -99,7 +98,7 @@ public sealed class CustomProperty : ModelElement<DXCP.CustomDocumentProperty>
     get => _FormatId;
     set => UpdateField(ref _FormatId, value, nameof(FormatId));
   }
-  private Guid? _FormatId;
+  private Guid? _FormatId = new Guid("D5CDD505-2E9C-101B-9397-08002B2CF9AE");
 
   /// <summary>
   /// Link target for the custom document property in OpenXml.

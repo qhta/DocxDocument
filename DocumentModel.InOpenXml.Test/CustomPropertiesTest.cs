@@ -265,31 +265,24 @@ namespace DocumentModel.InOpenXml.Test
       props.Add(new CustomProperty
       {
         Name = "CustomString",
-        PropertyId = 2,
-        FormatId = new Guid("D5CDD505-2E9C-101B-9397-08002B2CF9AE"),
         Value = "Test String"
       });
       props.Add(new CustomProperty
       {
         Name = "CustomInt",
-        PropertyId = 3,
-        FormatId = new Guid("D5CDD505-2E9C-101B-9397-08002B2CF9AE"),
         Value = 123
       });
       props.Add(new CustomProperty
       {
-        Name = "CustomDate",
-        PropertyId = 4,
-        FormatId = new Guid("D5CDD505-2E9C-101B-9397-08002B2CF9AE"),
-        Value = new DateTime(2024, 1, 1, 12, 0, 0)
+        Name = "CustomBool",
+        Value = true
       });
       props.Add(new CustomProperty
       {
-        Name = "CustomBool",
-        PropertyId = 5,
-        FormatId = new Guid("D5CDD505-2E9C-101B-9397-08002B2CF9AE"),
-        Value = true
+        Name = "CustomDate",
+        Value = DateTime.Parse("2026-01-17T10:00:00Z")
       });
+
       return props;
     }
 
