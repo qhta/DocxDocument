@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a positive 2D size, defined by its length and width.
 /// </summary>
-public class PositiveSize2DType: ModelElement
+public class PositiveSize2DType: ModelElement<DXD.PositiveSize2DType>
 {
   /// <summary>
   ///   Length of the extent.

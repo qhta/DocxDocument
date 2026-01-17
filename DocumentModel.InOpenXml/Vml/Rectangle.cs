@@ -6,7 +6,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Rectangle.
 /// </summary>
-public interface Rectangle: IEmbeddedObjectContent
+public class Rectangle: ModelElement<DXV.Rectangle>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

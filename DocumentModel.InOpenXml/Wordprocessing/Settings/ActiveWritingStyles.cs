@@ -18,4 +18,9 @@ public class ActiveWritingStyles: ElementCollection<ActiveWritingStyle>
   public ActiveWritingStyles(IEnumerable<ActiveWritingStyle> styles): base(styles)
   {
   }
+
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    throw new NotImplementedException();
+  }
 }

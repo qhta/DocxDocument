@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents background properties for a live feed, including normal, removed, blur, custom, and extension settings.
 /// </summary>
-public class LiveFeedBackgroundProperties: ModelElement
+public class LiveFeedBackgroundProperties: ModelElement<DXO21DL.LiveFeedBackgroundProperties>
 {
   /// <summary>
   ///   Properties for a normal background in the live feed.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a shape path, including dimensions, fill and stroke options, and path commands for drawing geometry.
 /// </summary>
-public interface Path: ICollectionItem
+public class Path: ModelElement<DXD.Path>
 {
   /// <summary>
   ///   Width of the path.

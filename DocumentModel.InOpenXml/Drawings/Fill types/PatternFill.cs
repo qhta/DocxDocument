@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a pattern fill, including preset pattern type and foreground/background colors.
 /// </summary>
-public class PatternFill: ModelElement
+public class PatternFill: ModelElement<DXD.PatternFill>
 {
   /// <summary>
   ///   Preset pattern type used for the fill.

@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an extension for a blip (binary large image or picture), providing additional properties and metadata for enhanced image handling.
 /// </summary>
-public interface BlipExtension: IExtension
+public class BlipExtension: ModelElement<DXD.Extension>, IExtension
 {
   /// <summary>
   /// Gets or sets the image properties associated with the blip extension.
@@ -42,4 +42,6 @@ public interface BlipExtension: IExtension
   /// Gets or sets the shared OEmbed data, which provides shared embedded content information.
   /// </summary>
   public OEmbedShared? OEmbedShared { get; set; }
+
+  public string? UriString { get; set; }
 }

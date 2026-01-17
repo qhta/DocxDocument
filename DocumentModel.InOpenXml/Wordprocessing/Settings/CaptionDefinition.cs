@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single caption type definition in a Wordprocessing document.
 /// This class provides properties for caption type name, placement, chapter numbering, heading style, label inclusion, numbering format, and separator, enabling advanced configuration and management of captions.
 /// </summary>
-public class CaptionDefinition: CollectionItem
+public class CaptionDefinition: ModelElement<DXW.Captions>
 {
 
   /// <summary>

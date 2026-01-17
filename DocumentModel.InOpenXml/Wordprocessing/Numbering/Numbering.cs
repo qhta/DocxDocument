@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Numbering Definitions.
 /// </summary>
-public class Numbering: ModelElement
+public class Numbering: ModelElement<DXW.Numbering>
 {
   /// <summary>
   /// Specifies to a consumer the progress in the last attempt made by the application 

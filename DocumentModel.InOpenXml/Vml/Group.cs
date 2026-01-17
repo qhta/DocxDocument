@@ -5,7 +5,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Group.
 /// </summary>
-public interface Group: IEmbeddedObjectContent
+public class Group: ModelElement<DXV.Group>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

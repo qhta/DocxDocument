@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Interface for Ruby elements.
 /// </summary>
-public class RubyElement: ModelElement
+public class RubyElement: ModelElement//<DXW.RubyElement>
 {
   /// <summary>
   /// Specifies whether this is a Ruby element.

@@ -6,4 +6,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class CompatibilitySettings : ElementCollection<CompatibilitySetting>
 {
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    throw new NotImplementedException();
+  }
 }

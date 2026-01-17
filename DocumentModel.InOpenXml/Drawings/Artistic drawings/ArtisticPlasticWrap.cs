@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic plastic wrap effect, which simulates a plastic-wrapped appearance with adjustable transparency and smoothness.
 /// </summary>
-public class ArtisticPlasticWrap: ModelElement
+public class ArtisticPlasticWrap: ModelElement<DXO10D.ArtisticPlasticWrap>
 {
   /// <summary>
   /// Transparency level of the plastic wrap effect.

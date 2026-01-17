@@ -6,5 +6,8 @@
 /// </summary>
 public class Borders : ElementCollection<Border>
 {
-  
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    throw new NotImplementedException();
+  }
 }

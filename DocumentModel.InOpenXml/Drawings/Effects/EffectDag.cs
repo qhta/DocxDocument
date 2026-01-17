@@ -24,7 +24,7 @@ namespace DocumentModel.Drawings;
 ///   requiring sophisticated visual treatments.
 ///   </para>
 /// </remarks>
-public class EffectDag: ModelElement
+public class EffectDag: ModelElement<DXD.EffectDag>
 {
   /// <summary>
   ///   Gets or sets a nested effect container node within the DAG.

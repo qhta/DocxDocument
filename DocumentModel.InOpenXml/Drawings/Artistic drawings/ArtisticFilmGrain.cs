@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic film grain effect, which simulates the appearance of film grain with adjustable transparency and grain size.
 /// </summary>
-public class ArtisticFilmGrain: ModelElement
+public class ArtisticFilmGrain: ModelElement<DXO10D.ArtisticFilmGrain>
 {
   /// <summary>
   /// Transparency level of the film grain effect.

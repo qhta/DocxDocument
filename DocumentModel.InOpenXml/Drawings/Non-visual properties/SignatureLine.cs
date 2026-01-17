@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a signature line, including identification, provider, signer information, instructions, and display options.
 /// </summary>
-public class SignatureLine: ModelElement
+public class SignatureLine: ModelElement<DXO13D.SignatureLine>
 {
   /// <summary>
   ///   Indicates whether this element is a signature line.

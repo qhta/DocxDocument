@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a hyperlink in a drawing object, including relationship information, navigation behavior, and optional sound.
 /// </summary>
-public class HyperlinkType: ExtendableHyperlinkElement
+public class HyperlinkType: ModelElement<DXD.HyperlinkType>, IExtendableHyperlinkElement
 {
   /// <summary>
   ///   Relationship identifier used to find the target UriString.
@@ -49,4 +49,6 @@ public class HyperlinkType: ExtendableHyperlinkElement
   ///   Sound to play when the hyperlink is activated.
   /// </summary>
   public EmbeddedWavAudioFileType? HyperlinkSound { get; set; }
+
+  public HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
 }

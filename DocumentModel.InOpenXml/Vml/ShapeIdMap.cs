@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape ID Map.
 /// </summary>
-public class ShapeIdMap: ModelElement
+public class ShapeIdMap: ModelElement<DXVO.ShapeIdMap>
 {
   /// <summary>
   ///   VML Extension Handling Behavior

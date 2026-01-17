@@ -4,4 +4,8 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class DrawingProperty: CollectionItem
 {
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    throw new NotImplementedException();
+  }
 }

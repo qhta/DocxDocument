@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents document editing restrictions and protection settings in a WordprocessingML document.
 /// This interface provides properties for editing restrictions, formatting limitations, enforcement, cryptographic settings, password protection, and hashing details, enabling advanced security and access control for document editing and formatting.
 /// </summary>
-public class DocumentProtection: ModelElement
+public class DocumentProtection: ModelElement<DXW.DocumentProtection>
 {
   
   /// <summary>

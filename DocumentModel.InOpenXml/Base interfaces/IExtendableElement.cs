@@ -10,5 +10,5 @@ public interface IExtendableElement
   /// <summary>
   /// Extension list for future extensions of the element type.
   /// </summary>
-  public IExtensionList ExtensionList { get; set; }
+  public IExtensionList? ExtensionList { get; set; }
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the properties for a gradient fill applied to a drawing element in a Wordprocessing document.
 /// This interface provides configuration for gradient stops, linear shading, and path shading, enabling advanced gradient effects and color transitions.
 /// </summary>
-public class GradientFillProperties: ModelElement
+public class GradientFillProperties: ModelElement<DXO10W.GradientFillProperties>
 {
   /// <summary>
   /// The list of gradient stops, defining the colors and positions used in the gradient fill.

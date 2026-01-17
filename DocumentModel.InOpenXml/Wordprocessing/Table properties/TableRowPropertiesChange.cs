@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a change to table row properties, used in <see cref="TableRowProperties"/>.
 /// This interface annotates <see cref="PreviousTableRowProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for table rows.
 /// </summary>
-public class TableRowPropertiesChange: ModelElement
+public class TableRowPropertiesChange: ModelElement<DXW.TableRowPropertiesChange>
 {
   
   /// <summary>

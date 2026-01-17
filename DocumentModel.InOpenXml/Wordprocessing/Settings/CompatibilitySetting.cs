@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a compatibility setting for a Wordprocessing document.
 /// This class provides properties for the setting name, UriString, and value, enabling advanced configuration and management of compatibility options for document processing and rendering.
 /// </summary>
-public class CompatibilitySetting : CollectionItem
+public class CompatibilitySetting : ModelElement<DXW.CompatibilitySetting>
 {
   
   /// <summary>

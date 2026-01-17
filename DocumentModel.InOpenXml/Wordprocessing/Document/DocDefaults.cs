@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Represents the default paragraph and run properties for a WordprocessingML document.
 ///   This interface provides properties for specifying the default character-level and paragraph-level formatting applied to all runs and paragraphs in the document unless overridden by more specific formatting.
 /// </summary>
-public class DocDefaults: ModelElement
+public class DocDefaults: ModelElement<DXW.DocDefaults>
 {
   /// <summary>
   ///   Default run properties, specifying the default character-level formatting for text runs.

@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Reference.
 /// </summary>
-public  class Proxy: CollectionItem
+public  class Proxy: ModelElement<DXVO.Proxy>
 {
   /// <summary>
   ///   Start Point Connection Flag

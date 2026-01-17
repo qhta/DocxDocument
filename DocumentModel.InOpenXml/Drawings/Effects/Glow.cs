@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a glow effect that can be applied to a drawing object.
 /// </summary>
-public class Glow: ModelElement
+public class Glow: ModelElement<DXD.Glow>
 {
   /// <summary>
   ///   Radius

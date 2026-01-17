@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents locking options for a group shape, restricting user actions such as grouping, ungrouping, selection, rotation, movement, and resizing.
 /// </summary>
-public interface GroupShapeLocks : IExtendableElement
+public class GroupShapeLocks : ModelElement<DXD.GroupShapeLocks>, IExtendableElement
 {
   /// <summary>
   ///   Disallows grouping of shapes within the group.
@@ -39,4 +39,6 @@ public interface GroupShapeLocks : IExtendableElement
   ///   Disallows resizing the group shape.
   /// </summary>
   public bool? NoResize { get; set; }
+
+  public IExtensionList? ExtensionList { get; set; }
 }

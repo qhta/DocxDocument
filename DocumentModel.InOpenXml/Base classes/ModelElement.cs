@@ -56,6 +56,8 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// notification.</param>
   protected void UpdateField<FieldType>(ref FieldType field, FieldType? newValue, string propertyName)
   {
+    if (newValue is string stringValue && stringValue.Length == 0)
+      newValue = default;
     if (!Equals(field, newValue))
     {
       field = newValue!;

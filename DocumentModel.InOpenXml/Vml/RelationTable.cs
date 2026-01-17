@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Diagram Relationship Table.
 /// </summary>
-public class RelationTable: ModelElement
+public class RelationTable: ModelElement<DXVO.RelationTable>
 {
   /// <summary>
   ///   Collection of diagram relationships.

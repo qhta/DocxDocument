@@ -21,4 +21,9 @@ public class AttachedSchemas : ElementCollection<Schema>
   public AttachedSchemas(IEnumerable<Schema> source) : base(source)
   {
   }
+
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    throw new NotImplementedException();
+  }
 }

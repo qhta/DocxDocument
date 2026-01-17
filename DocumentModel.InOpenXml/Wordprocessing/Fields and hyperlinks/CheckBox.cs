@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the properties of a checkbox form field in a WordprocessingML document.
 /// This interface provides properties for form field size, automatic sizing, default state, and checked state, enabling advanced configuration and management of interactive checkbox fields within forms and documents.
 /// </summary>
-public class CheckBox: ModelElement
+public class CheckBox: ModelElement<DXW.CheckBox>
 {
   /// <summary>
   /// Size of the checkbox form field, specified as a string value (e.g., in points or percent).

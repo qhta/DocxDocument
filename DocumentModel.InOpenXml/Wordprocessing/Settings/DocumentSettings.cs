@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Specifies all document-level properties which affect the handling of the current document.
 /// This class provides access to settings for proofing, borders, custom XML, templates, protection, printing, captions, compatibility, styles, and more, enabling advanced configuration and management of Wordprocessing document behavior and appearance.
 /// </summary>
-public partial class DocumentSettings: ModelElement
+public partial class DocumentSettings: ModelElement<DXW.Settings>
 {
 
   /// <summary>

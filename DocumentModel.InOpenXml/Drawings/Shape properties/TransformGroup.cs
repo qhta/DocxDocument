@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a 2D transformation for grouped objects, including rotation, flipping, offset, extents, and child transformation settings.
 /// </summary>
-public class TransformGroup: ModelElement
+public class TransformGroup: ModelElement<DXD.TransformGroup>
 {
   /// <summary>
   ///   Rotation angle for the group transformation.

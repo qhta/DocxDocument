@@ -6,4 +6,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class DivCollection : ElementCollection<DivElement>
 {
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    throw new NotImplementedException();
+  }
 }

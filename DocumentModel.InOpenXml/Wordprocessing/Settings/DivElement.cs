@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents information about a single HTML div element in a Wordprocessing document.
 /// This class provides properties for div identification, blockquote and body flags, margins, borders, and child div elements, enabling advanced configuration and management of HTML div structures within the document.
 /// </summary>
-public class DivElement : CollectionItem
+public class DivElement : ModelElement<DXW.Div>
 {
     
     /// <summary>

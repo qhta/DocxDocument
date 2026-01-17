@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the fill properties of a shape.
 /// </summary>
-public class Fill: ModelElement
+public class Fill: ModelElement<DXV.Fill>
 {
   /// <summary>
   ///   Unique Identifier

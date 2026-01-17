@@ -36,7 +36,7 @@ namespace DocumentModel.Drawings;
 ///   </list>
 ///   </para>
 /// </remarks>
-public class Anchor: ModelElement
+public class Anchor: ModelElement<DXD.Anchor>
 {
   /// <summary>
   ///   X-coordinate (horizontal position) of the anchor point in 3D space.

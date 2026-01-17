@@ -26,7 +26,7 @@ namespace DocumentModel.Drawings;
 ///   The container supports both direct effect references and nested containers, enabling flexible effect architectures.
 ///   </para>
 /// </remarks>
-public class EffectContainer: ModelElement
+public class EffectContainer: ModelElement<DXD.EffectContainer>
 {
   /// <summary>
   ///   Gets or sets a nested child effect container for hierarchical effect composition.

@@ -24,5 +24,8 @@ namespace DocumentModel;
 /// </remarks>
 public class ExtensionList : ElementCollection<Extension>
 {
-
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    throw new NotImplementedException();
+  }
 }

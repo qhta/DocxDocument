@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents background removal properties, including marquee boundaries and collections of foreground and background marks for image processing.
 /// </summary>
-public class BackgroundRemoval: ModelElement
+public class BackgroundRemoval: ModelElement<DXO10D.BackgroundRemoval>
 {
   /// <summary>
   /// Gets or sets the top boundary of the marquee used for background removal.

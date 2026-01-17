@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a blend effect, allowing the combination of effects using a specified blend mode.
 /// </summary>
-public class Blend: ModelElement
+public class Blend: ModelElement<DXD.Blend>
 {
   /// <summary>
   /// Blend mode used to combine effects.

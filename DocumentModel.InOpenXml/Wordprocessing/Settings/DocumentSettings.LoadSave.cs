@@ -2,13 +2,13 @@
 
 public partial class DocumentSettings
 {
-  internal DXWP.Settings OpenXmlSettings { get; private set; } = new DXWP.Settings();
+  internal DXW.Settings OpenXmlSettings { get; private set; } = new DXW.Settings();
 
   /// <summary>
   /// Loads the document settings from the specified OpenXmlSettings.
   /// </summary>
   /// <param name="settings">The OpenXmlSettings to load from.</param>
-  internal void LoadFromOpenXmlSettings(DXWP.Settings settings)
+  internal void LoadFromOpenXmlSettings(DXW.Settings settings)
   {
     OpenXmlSettings = settings;
     foreach (var DXOpenXmlElement in OpenXmlSettings.ChildElements)
@@ -25,7 +25,7 @@ public partial class DocumentSettings
   /// Saves the current document settings to the specified OpenXmlSettings.
   /// </summary>
   /// <param name="settings">The OpenXmlSettings to save to.</param>
-  internal void SaveToOpenXmlSettings(DXWP.Settings settings)
+  internal void SaveToOpenXmlSettings(DXW.Settings settings)
   {
     foreach (var property in KnownProperties.Values)
     {

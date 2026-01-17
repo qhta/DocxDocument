@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents hidden effects properties for a drawing element, including effect containers.
 /// </summary>
-public class HiddenEffectsProperties: ModelElement
+public class HiddenEffectsProperties: ModelElement<DXO10D.HiddenEffectsProperties>
 {
   /// <summary>
   ///   List of effects applied to the element.

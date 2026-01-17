@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents theme color mappings for a Wordprocessing document.
 /// This interface provides properties for mapping theme color roles (such as background, text, accent, and hyperlink colors) to specific color scheme indexes, enabling flexible and consistent color theming throughout the document.
 /// </summary>
-public class ColorSchemeMapping: ModelElement
+public class ColorSchemeMapping: ModelElement<DXW.ColorSchemeMapping>
 {
     
     /// <summary>

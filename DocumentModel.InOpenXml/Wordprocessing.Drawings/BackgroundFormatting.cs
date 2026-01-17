@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents background formatting settings for a drawing element in a Wordprocessing document.
 /// This interface provides properties for configuring fill, visual effects, and effect graphs applied to the background, enabling advanced visual customization.
 /// </summary>
-public class BackgroundFormatting: ModelElement
+public class BackgroundFormatting: ModelElement<DXO10WDC.BackgroundFormatting>
 {
   /// <summary>
   /// Fill settings for the background, specifying color, gradient, or pattern fills.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic cutout effect, which simulates a cutout style with adjustable transparency and number of shades.
 /// </summary>
-public class ArtisticCutout: ModelElement
+public class ArtisticCutout: ModelElement<DXO10D.ArtisticCutout>
 {
   /// <summary>
   /// Transparency level of the cutout effect.

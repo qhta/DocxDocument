@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents background properties, including black and white rendering modes and target screen size for display.
 /// </summary>
-public class BackgroundProperties: ModelElement
+public class BackgroundProperties: ModelElement<DXO13D.BackgroundProperties>
 {
   /// <summary>
   /// Gets or sets the black and white mode for background rendering.

@@ -6,5 +6,8 @@
 /// </summary>
 public class Bookmarks : ElementCollection<Bookmark>
 {
-  
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    throw new NotImplementedException();
+  }
 }

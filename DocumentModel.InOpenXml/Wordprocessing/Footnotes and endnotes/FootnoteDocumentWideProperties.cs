@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents document-wide properties for footnotes in a WordprocessingML document.
 /// This interface provides properties for footnote placement, numbering format, starting value, restart location, and special footnote references, enabling advanced configuration and management of footnote behavior and formatting across the entire document.
 /// </summary>
-public class FootnoteDocumentWideProperties: ModelElement
+public class FootnoteDocumentWideProperties: ModelElement<DXW.FootnoteDocumentWideProperties>
 {
   
   /// <summary>

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the GroupShapeProperties Class.
 /// </summary>
-public class GroupShapeProperties: ModelElement
+public class GroupShapeProperties: ModelElement<DXOD.GroupShapeProperties>
 {
   /// <summary>
   ///   Black and White Mode
