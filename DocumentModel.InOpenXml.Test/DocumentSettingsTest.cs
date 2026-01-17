@@ -9,27 +9,33 @@ using DocumentModel.Wordprocessing;
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for DocumentModel.Wordprocessing.DocumentSettings.
+  /// Provides comprehensive serialization tests for <see cref="DocumentSettings"/>.
   /// </summary>
-  public static class DocumentSettingsSerializationTest
+  public static class DocumentSettingsTest
   {
     /// <summary>
-    /// Runs all serialization tests for the DocumentSettings class and reports the results to the console.
+    /// Runs all serialization tests for the <see cref="DocumentSettings"/> class and reports the results to the console.
     /// </summary>
-    /// <remarks>This method executes XML and JSON serialization tests, as well as edge case tests, for the
-    /// DocumentSettings class. It writes the progress and results to the standard output. Use this method to verify
-    /// that DocumentSettings serialization behaves as expected.</remarks>
-    /// <returns>true if all DocumentSettings serialization tests pass; otherwise, false.</returns>
+    /// <remarks>
+    /// Executes XML and JSON serialization tests, as well as edge case tests, for the <see cref="DocumentSettings"/> class.
+    /// Writes the progress and results to the standard output. Use this method to verify that <see cref="DocumentSettings"/> serialization behaves as expected.
+    /// </remarks>
+    /// <returns>True if all serialization tests pass; otherwise, false.</returns>
     public static bool Run()
     {
-      Console.WriteLine("=== DocumentSettings Serialization Test ===\n");
+      Console.WriteLine("=== DocumentSettings Test ===\n");
       if (!TestXmlSerialization()) return false;
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
-      Console.WriteLine("All DocumentSettings serialization tests passed.\n");
+      if (!TestStoreInDocument()) return false;
+      Console.WriteLine("All DocumentSettings tests passed.\n");
       return true;
     }
 
+    /// <summary>
+    /// Tests XML serialization and deserialization for <see cref="DocumentSettings"/>.
+    /// </summary>
+    /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
     static bool TestXmlSerialization()
     {
       Console.WriteLine("--- XML Serialization ---");
@@ -71,6 +77,10 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Tests JSON serialization and deserialization for <see cref="DocumentSettings"/>.
+    /// </summary>
+    /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
     static bool TestJsonSerialization()
     {
       Console.WriteLine("--- JSON Serialization ---");
@@ -102,6 +112,10 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Tests edge cases for serialization and deserialization of empty <see cref="DocumentSettings"/> objects.
+    /// </summary>
+    /// <returns>True if all edge case tests pass; otherwise, false.</returns>
     static bool TestEdgeCases()
     {
       Console.WriteLine("--- Edge Cases ---");
@@ -132,11 +146,57 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    static bool TestStoreInDocument()
+    {
+      Console.WriteLine("--- Store sample document settings in new document---");
+      //try
+      {
+        DocumentSettings testData = CreateSampleDocumentSettings();
+        using (var document = Document.CreateDocument("temp.docx"))
+        {
+          document.DocumentSettings = testData;
+        }
+
+        DocumentSettings storedData;
+        using (var document = Document.OpenDocument("temp.docx"))
+        {
+          storedData = document.DocumentSettings!;
+        }
+
+        var xmlSerializer = new XmlSerializer(typeof(DocumentSettings));
+        string xmlString;
+        using (var stringWriter = new StringWriter())
+        using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+        {
+          xmlSerializer.Serialize(xmlWriter, storedData);
+          xmlString = stringWriter.ToString();
+        }
+        Console.WriteLine("document settings stored to new document and reloaded from it:\n" + xmlString);
+
+        if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+        {
+          Console.WriteLine($"✗ Store sample document settings test FAILED - data mismatch in property '{propName}'");
+          return false;
+        }
+
+        Console.WriteLine("✓ Store sample document settings test passed\n");
+        return true;
+      }
+      //catch (Exception ex)
+      //{
+      //  Console.WriteLine($"✗ Store sample document settings FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
+      //  return false;
+      //}
+    }
+
+    /// <summary>
+    /// Creates a sample <see cref="DocumentSettings"/> instance for testing.
+    /// </summary>
+    /// <returns>A populated <see cref="DocumentSettings"/> object.</returns>
     static DocumentSettings CreateSampleDocumentSettings()
     {
       var settings = new DocumentSettings
       {
-
         AlignBorderAndEdges = true,
         AlwaysMergeEmptyNamespace = true,
         AlwaysShowPlaceholderText = false,
@@ -267,12 +327,16 @@ namespace DocumentModel.InOpenXml.Test
             }
           ])
         }
-
-
       };
       return settings;
     }
 
+    /// <summary>
+    /// Compares two <see cref="DocumentSettings"/> instances for equality by checking a representative subset of properties.
+    /// </summary>
+    /// <param name="a">The first <see cref="DocumentSettings"/> instance.</param>
+    /// <param name="b">The second <see cref="DocumentSettings"/> instance.</param>
+    /// <returns>True if the selected properties are equal; otherwise, false.</returns>
     static bool CompareDocumentSettings(DocumentSettings a, DocumentSettings b)
     {
       // Compare a representative subset of properties for equality
@@ -350,6 +414,11 @@ namespace DocumentModel.InOpenXml.Test
              Equals(a.Captions, b.Captions);
     }
 
+    /// <summary>
+    /// Serializes a <see cref="DocumentSettings"/> instance to XML.
+    /// </summary>
+    /// <param name="settings">The <see cref="DocumentSettings"/> instance to serialize.</param>
+    /// <returns>XML string representation.</returns>
     static string SerializeToXml(DocumentSettings settings)
     {
       var xmlSerializer = new XmlSerializer(typeof(DocumentSettings));
@@ -361,6 +430,11 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Deserializes a <see cref="DocumentSettings"/> instance from XML.
+    /// </summary>
+    /// <param name="xml">The XML string to deserialize.</param>
+    /// <returns>The deserialized <see cref="DocumentSettings"/> instance.</returns>
     static DocumentSettings? DeserializeFromXml(string xml)
     {
       var xmlSerializer = new XmlSerializer(typeof(DocumentSettings));
@@ -370,12 +444,22 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
+    /// <summary>
+    /// Serializes a <see cref="DocumentSettings"/> instance to JSON.
+    /// </summary>
+    /// <param name="settings">The <see cref="DocumentSettings"/> instance to serialize.</param>
+    /// <returns>JSON string representation.</returns>
     static string SerializeToJson(DocumentSettings settings)
     {
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
       return JsonSerializer.Serialize(settings, jsonOptions);
     }
 
+    /// <summary>
+    /// Deserializes a <see cref="DocumentSettings"/> instance from JSON.
+    /// </summary>
+    /// <param name="json">The JSON string to deserialize.</param>
+    /// <returns>The deserialized <see cref="DocumentSettings"/> instance.</returns>
     static DocumentSettings? DeserializeFromJson(string json)
     {
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };

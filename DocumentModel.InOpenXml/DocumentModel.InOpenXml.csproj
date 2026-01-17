@@ -14,6 +14,7 @@
     <Compile Remove="Properties and settings\CoreProperties.IDocumentProperties.cs" />
     <Compile Remove="Properties and settings\DocumentSetting.cs" />
     <Compile Remove="Properties and settings\DocumentSettings.cs" />
+    <Compile Remove="Wordprocessing\Settings\Settings.cs" />
   </ItemGroup>
 
   <ItemGroup>
