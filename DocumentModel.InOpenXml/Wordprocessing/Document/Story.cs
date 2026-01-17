@@ -6,5 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class Story: ElementCollection<CommonContent<IStoryContent>>, ICollectionItem
 {
+  [NotMapped]
   public IElementCollection<CollectionItem>? Collection { get; set; }
 }

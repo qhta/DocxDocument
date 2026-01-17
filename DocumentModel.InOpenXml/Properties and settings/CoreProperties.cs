@@ -55,19 +55,43 @@ public partial class CoreProperties : ModelElement
   }
 
   /// <summary>
-  /// Attach this instance to the specified document. Data is stored to the document's PackageProperties.
+  /// Populates the current model element's properties with values from the specified Open XML element.
   /// </summary>
-  /// <param name="document">Document to attach to.</param>
-  public void AttachAndUpdate(Wordprocessing.Document document)
+  /// <remarks>This method maps properties from the provided Open XML element to the corresponding properties of
+  /// the model element. Only writable properties are updated. Override this method in a derived class to customize the
+  /// data loading behavior.</remarks>
+  /// <param name="openXmlElement">The Open XML element containing the data to load into the model element. Must be compatible with the current model
+  /// element type.</param>
+  public override void LoadData(object openXmlElement)
   {
-    WordprocessingDocument = document.WordprocessingDocument;
-    var packageProperties = document.WordprocessingDocument?.GetPackageProperties();
-    if (packageProperties != null)
+    var currentType = GetType();
+    var openXmlType = typeof(PackageProperties);
+    foreach (var modelProperty in currentType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
     {
-      PackageProperties = packageProperties;
-      UpdateData(packageProperties);
+      if (modelProperty.CanWrite)
+      {
+        LoadData(modelProperty, openXmlElement, openXmlType);
+      }
     }
   }
+
+  /// <summary>
+  /// Copies data from the specified CoreProperties instance to this instance.
+  /// </summary>
+  /// <param name="properties">CoreProperties instance containing the model property value.</param>
+  public void CopyFrom(CoreProperties properties)
+  {
+    var currentType = properties.GetType();
+    foreach (var modelProperty in currentType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+    {
+      var value = modelProperty.GetValue(properties);
+      modelProperty.SetValue(this, value);
+    }
+    var updatableElement = GetUpdatableOpenXmlElement();
+    if (updatableElement != null)
+      UpdateData(updatableElement);
+  }
+
 
   /// <summary>
   /// Detach this instance from the specified document.

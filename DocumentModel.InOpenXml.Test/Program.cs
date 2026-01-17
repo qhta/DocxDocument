@@ -25,25 +25,25 @@ internal class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
-    //// Run ContentProperties tests
-    //if (!ContentPropertiesTest.Run())
-    //  allTestsPassed = false;
+    // Run ContentProperties tests
+    if (!ContentPropertiesTest.Run())
+      allTestsPassed = false;
 
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
 
-    //// Run StatisticProperties tests
-    //if (!StatisticPropertiesTest.Run())
-    //  allTestsPassed = false;
+    // Run StatisticProperties tests
+    if (!StatisticPropertiesTest.Run())
+      allTestsPassed = false;
 
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
 
-    //// Run CustomProperties tests
-    //if (!CustomPropertiesTest.Run())
-    //  allTestsPassed = false;
+    // Run CustomProperties tests
+    if (!CustomPropertiesTest.Run())
+      allTestsPassed = false;
 
     //Console.WriteLine();
     //Console.WriteLine("═══════════════════════════════════════════════════════════");
