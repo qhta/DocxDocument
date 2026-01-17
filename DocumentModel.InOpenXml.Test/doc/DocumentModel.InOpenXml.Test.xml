@@ -64,7 +64,7 @@
             <summary>
             Creates a sample <see cref="T:DocumentModel.ContentProperties"/> instance for testing.
             </summary>
-            <param name="createCompoundProperties">Whether to create compound properties, like HeadingPairs and TitlesOfParts.</param>
+            <param name="createAllProperties">Whether to create compound properties, like HeadingPairs and TitlesOfParts.</param>
             <returns>A populated <see cref="T:DocumentModel.ContentProperties"/> object.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.SerializeToXml(DocumentModel.ContentProperties)">

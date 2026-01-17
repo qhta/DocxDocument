@@ -27,7 +27,11 @@ public static class OpenXmlElementConverter
     }
     if (openXmlElementType.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
     {
-      var text = (string?)Convert.ChangeType(value, typeof(string));
+      string text;
+      if (value is bool boolValue)
+        text = boolValue ? "true" : "false";
+      else
+        text=(string?)Convert.ChangeType(value, typeof(string)) ?? string.Empty;
       var constructor = openXmlElementType.GetConstructor([typeof(string)]);
       var instance = (DX.OpenXmlElement)constructor!.Invoke([text])!;
       return instance;

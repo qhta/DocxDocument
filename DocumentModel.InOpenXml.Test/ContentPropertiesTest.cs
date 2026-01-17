@@ -245,7 +245,7 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Update document content properties ---");
       try
       {
-        var testData = CreateSampleContentProperties(true);
+        var testData = CreateSampleContentProperties(false);
         using (var document = Document.CreateDocument("temp.docx"))
         {
           document.ContentProperties = testData;
@@ -290,43 +290,45 @@ namespace DocumentModel.InOpenXml.Test
     /// <summary>
     /// Creates a sample <see cref="ContentProperties"/> instance for testing.
     /// </summary>
-    /// <param name="createCompoundProperties">Whether to create compound properties, like HeadingPairs and TitlesOfParts.</param>
+    /// <param name="createAllProperties">Whether to create compound properties, like HeadingPairs and TitlesOfParts.</param>
     /// <returns>A populated <see cref="ContentProperties"/> object.</returns>
-    static ContentProperties CreateSampleContentProperties(bool createCompoundProperties)
+    static ContentProperties CreateSampleContentProperties(bool createAllProperties)
     {
       var props = new ContentProperties
       {
         Template = "Normal.dotm",
         Application = "Microsoft Word",
-        ApplicationVersion = "16.0.12345.1000",
+        ApplicationVersion = "16.0000",
         Company = "Test Company",
         Manager = "Test Manager",
-        SharedDocument = true,
+        SharedDocument = false,
         LinksUpToDate = false,
-        HyperlinksChanged = true,
-        DocumentSecurity = DocumentSecurityKind.ReadOnly | DocumentSecurityKind.PasswordProtected,
-        DigitalSignature = [0x01, 0x02, 0x03, 0x04, 0x05],
-        HyperlinkBase = "http://www.example.com/",
+        HyperlinksChanged = false,
         PresentationFormat = "Print",
         ScaleCrop = true,
-        HeadingPairs = createCompoundProperties ? new HeadingPairs
+      };
+      if (createAllProperties)
+      {
+        props.DocumentSecurity = DocumentSecurityKind.ReadOnly | DocumentSecurityKind.PasswordProtected;
+        props.DigitalSignature = [0x01, 0x02, 0x03, 0x04, 0x05];
+        props.HyperlinkBase = "http://www.example.com/";
+        props.HeadingPairs = new HeadingPairs
         {
           new HeadingPair { Name = "Heading 1", Number = 1 },
           new HeadingPair { Name = "Heading 2", Number = 2 },
           new HeadingPair { Name = "Heading 3", Number = 3 }
-        } : null,
-        TitlesOfParts = createCompoundProperties ? new StringList
+        };
+        props.TitlesOfParts = new StringList
         {
           "Introduction",
           "Chapter 1",
           "Chapter 2"
-        } : null,
-        HyperlinkList = createCompoundProperties ? new HyperlinkList
-        ([
+        };
+        props.HyperlinkList = new HyperlinkList([
           new HyperlinkInfo { Action = HyperlinkActionKind.Change, Attachment = HyperlinkAttachmentKind.Field, Location = "http://www.example.com/link1" },
           new HyperlinkInfo { Action = HyperlinkActionKind.Remove, Attachment = HyperlinkAttachmentKind.Background, Location = "http://www.example.com/link2" },
-        ]) : null
-      };
+        ]);
+      }
       return props;
     }
 
