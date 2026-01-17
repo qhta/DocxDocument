@@ -239,7 +239,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <remarks>Property marked with [NotMapped] attribute will be not be updated.</remarks>
   protected void UpdateData(PropertyInfo modelProperty, object openXmlElement, Type openXmlType)
   {
-    //DXCP.CustomDocumentProperty? customProperty = null;
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return;
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
@@ -253,8 +252,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       openXmlProperty.SetValue(openXmlElement, value);
       return;
     }
-    //if (modelProperty.Name == "Category")
-    //  Debug.Assert(true);
     var setMappedMethod = OpenXmlPropertyMap.GetSetMethod(modelProperty, openXmlType);
     if (setMappedMethod != null)
     {

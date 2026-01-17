@@ -281,7 +281,7 @@ public static class VariantConverter
     switch (variant.VariantType)
     {
       case VariantType.Boolean:
-        return new VTBool { Text = XmlConvert.ToString(variant.ToBoolean()) };
+        return new VTBool { Text = variant.ToBoolean() ? "true" : "false" };
       case VariantType.Lpstr:
         return new VTLPSTR { Text = (string?)variant.Value ?? String.Empty };
       case VariantType.Lpwstr:

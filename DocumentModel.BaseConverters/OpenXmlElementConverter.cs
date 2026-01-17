@@ -30,8 +30,10 @@ public static class OpenXmlElementConverter
       string text;
       if (value is bool boolValue)
         text = boolValue ? "true" : "false";
+      else if (value is Guid guidValue)
+        text = guidValue.ToString("B").ToUpperInvariant();
       else
-        text=(string?)Convert.ChangeType(value, typeof(string)) ?? string.Empty;
+        text =(string?)Convert.ChangeType(value, typeof(string)) ?? string.Empty;
       var constructor = openXmlElementType.GetConstructor([typeof(string)]);
       var instance = (DX.OpenXmlElement)constructor!.Invoke([text])!;
       return instance;

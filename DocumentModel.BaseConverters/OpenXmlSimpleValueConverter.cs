@@ -14,7 +14,16 @@ public static class OpenXmlSimpleValueConverter
   public static object ConvertToOpenXml(object value, Type conversionType)
   {
     if (conversionType == typeof(DX.StringValue))
-      return new DX.StringValue(Convert.ToString(value));
+    {
+      string text;
+      if (value is bool boolValue)
+        text = boolValue ? "true" : "false";
+      else if (value is Guid guidValue)
+        text = guidValue.ToString("B").ToUpperInvariant();
+      else
+        text = (string?)Convert.ChangeType(value, typeof(string)) ?? string.Empty;
+      return new DX.StringValue(text);
+    }
 
     if (conversionType == typeof(DX.Int32Value))
       return new DX.Int32Value(Convert.ToInt32(value));
