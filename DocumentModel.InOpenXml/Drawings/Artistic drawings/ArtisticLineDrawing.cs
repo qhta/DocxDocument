@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic line drawing effect, which simulates a hand-drawn line style with adjustable transparency and pencil size.
 /// </summary>
-public class ArtisticLineDrawing: ModelElement
+public class ArtisticLineDrawing: ModelElement<DXO10D.ArtisticLineDrawing>
 {
   /// <summary>
   /// Transparency level of the line drawing effect.

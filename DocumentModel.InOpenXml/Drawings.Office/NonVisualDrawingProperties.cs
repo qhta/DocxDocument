@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the NonVisualDrawingProperties Class.
 /// </summary>
-public class NonVisualDrawingProperties: ModelElement
+public class NonVisualDrawingProperties: ModelElement<DXOD.NonVisualDrawingProperties>
 {
   /// <summary>
   ///   Application defined unique identifier.

@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Contains common properties for table cell formatting, including shading, text wrapping, margins, and vertical alignment.
 /// </summary>
 public class BaseTableCellProperties: ModelElement
+ // <OpenXmlType>  where OpenXmlType : DX.OpenXmlElement
 {
 
   /// <summary>

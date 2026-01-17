@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents an extension for non-visual drawing properties, providing additional metadata and configuration options.
 /// </summary>
-public interface NonVisualDrawingPropertiesExtension: IExtension
+public class NonVisualDrawingPropertiesExtension: ModelElement<DXD.NonVisualDrawingPropertiesExtension>, IExtension
 {
 
   /// <summary>
@@ -41,4 +41,6 @@ public interface NonVisualDrawingPropertiesExtension: IExtension
   ///   Script link associated with the drawing element.
   /// </summary>
   public ScriptLink? ScriptLink { get; set; }
+
+  public string? UriString { get; set; }
 }

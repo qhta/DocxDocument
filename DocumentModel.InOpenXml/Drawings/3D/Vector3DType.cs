@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a 3D vector with distances along the X, Y, and Z axes.
 /// </summary>
-public class Vector3DType: ModelElement
+public class Vector3DType: ModelElement<DXD.Vector3DType>
 {
   /// <summary>
   ///   Distance along the X-axis in 3D space.

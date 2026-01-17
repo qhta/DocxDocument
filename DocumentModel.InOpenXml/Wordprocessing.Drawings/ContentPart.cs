@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
   /// Represents a content part in a WordprocessingML document, providing properties for visual and non-visual shape properties, transformation, and extension data.
   /// This interface enables advanced configuration and management of embedded or linked content parts, supporting black-and-white rendering, relationship references, and OfficeArt extensions.
   /// </summary>
-  public interface ContentPart : IOfficeArtExtendableElement
+  public class ContentPart : ModelElement<DXO10W.ContentPart>, IOfficeArtExtendableElement
   {
     
     /// <summary>
@@ -27,4 +27,6 @@ namespace DocumentModel.Wordprocessing.Drawings;
     /// 2D transformation properties for the content part, specifying scaling, rotation, and translation.
     /// </summary>
     public Transform2D? Transform2D { get; set; }
+
+    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
   }

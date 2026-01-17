@@ -11,7 +11,6 @@ public sealed class CustomProperty : ModelElement<DXCP.CustomDocumentProperty>
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public IElementCollection<CollectionItem>? Collection { get; set; }
 
   private DXCP.CustomDocumentProperty? OpenXmlCustomDocumentProperty
   {

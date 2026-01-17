@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents the color used for the contour of a 3D object, supporting multiple color models.
 /// </summary>
-public class ContourColor: ModelElement
+public class ContourColor: ModelElement<DXD.ContourColor>
 {
   /// <summary>
   ///   Color specified using the RGB color model with percentage values.

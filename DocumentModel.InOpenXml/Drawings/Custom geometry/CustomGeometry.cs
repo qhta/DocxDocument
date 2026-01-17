@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents custom geometry for a shape, including adjustment values, guides, handles, connection sites, text rectangle, and paths.
 /// </summary>
-public class CustomGeometry: ModelElement
+public class CustomGeometry: ModelElement<DXD.CustomGeometry>
 {
   /// <summary>
   ///   List of adjustment values for the custom geometry.

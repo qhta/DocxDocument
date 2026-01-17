@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a foreground color, supporting multiple color models for fill formatting.
 /// </summary>
-public class ForegroundColor: ModelElement
+public class ForegroundColor: ModelElement<DXD.ForegroundColor>
 {
   /// <summary>
   ///   Foreground color specified using the RGB color model with percentage values.

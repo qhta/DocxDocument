@@ -10,6 +10,12 @@ public class Document : ModelElement, IDisposable
   /// </summary>
   public DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
+
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    return WordprocessingDocument;
+  }
+
   /// <summary>
   /// Initializes a new instance of the Document class.
   /// </summary>
@@ -147,4 +153,5 @@ public class Document : ModelElement, IDisposable
   /// Provides access to document-level settings and properties.
   /// </summary>
   public DocumentSettings DocumentSettings { get; private set; } = new DocumentSettings();
+
 }

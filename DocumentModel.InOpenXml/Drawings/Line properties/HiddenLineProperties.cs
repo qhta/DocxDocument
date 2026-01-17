@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents hidden line properties for a drawing element, including width, cap, compound type, alignment, fill, dash, join, end properties, and extensions.
 /// </summary>
-public class HiddenLineProperties : CollectionItem, ILinePropertiesExtendableElement
+public class HiddenLineProperties : ModelElement<DXO10D.HiddenLineProperties>, ILinePropertiesExtendableElement
 {
   /// <summary>
   /// Specifies the line width in EMUs.

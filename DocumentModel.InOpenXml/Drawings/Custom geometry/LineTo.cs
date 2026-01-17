@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a command to draw a straight line to a specified point.
 /// </summary>
-public class LineTo: ModelElement
+public class LineTo: ModelElement<DXD.LineTo>
 {
   /// <summary>
   ///   End point of the line.

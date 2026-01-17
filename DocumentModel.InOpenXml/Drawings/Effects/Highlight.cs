@@ -3,12 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Highlight interface.
 /// </summary>
-public class Highlight: ModelElement
+public class Highlight: ColorType
 {
-  public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
-  public RgbColorModelHex? RgbColorModelHex { get; set; }
-  public HslColor? HslColor { get; set; }
-  public SystemColor? SystemColor { get; set; }
-  public SchemeColor? SchemeColor { get; set; }
-  public PresetColor? PresetColor { get; set; }
+
 }

@@ -4,4 +4,8 @@ namespace DocumentModel;
 /// </summary>
 public class ColorType: ModelElement, IColor
 {
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    throw new NotImplementedException();
+  }
 }

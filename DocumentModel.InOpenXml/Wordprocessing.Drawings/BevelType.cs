@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the bevel effect properties for a text run or shape, specifying width, height, and preset profile type for the bevel.
 /// This interface enables advanced 3D formatting and appearance customization in WordprocessingML documents.
 /// </summary>
-public class BevelType: ModelElement
+public class BevelType: ModelElement<DXO10W.BevelType>
 {
     
     /// <summary>

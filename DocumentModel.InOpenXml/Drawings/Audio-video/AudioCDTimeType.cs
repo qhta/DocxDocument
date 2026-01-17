@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an audio CD time type, specifying the track number and time position on an audio CD.
 /// </summary>
-public class AudioCDTimeType: ModelElement
+public class AudioCDTimeType: ModelElement<DXD.AudioCDTimeType>
 {
   /// <summary>
   /// Track number on the audio CD.

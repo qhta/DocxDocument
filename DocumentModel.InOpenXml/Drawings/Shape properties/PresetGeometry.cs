@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a preset geometry for a shape, including the preset type and optional adjustment values.
 /// </summary>
-public class PresetGeometry: ModelElement
+public class PresetGeometry: ModelElement<DXD.PresetGeometry>
 {
   /// <summary>
   ///   Preset shape type.

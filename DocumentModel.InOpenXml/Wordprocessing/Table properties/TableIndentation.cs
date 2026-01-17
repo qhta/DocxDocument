@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the indentation settings for a table in a Wordprocessing document.
 /// This interface provides properties for specifying the width and unit type of the table's indentation from the leading margin, enabling precise control over table positioning.
 /// </summary>
-public class TableIndentation: ModelElement
+public class TableIndentation: ModelElement<DXW.TableIndentation>
 {
   /// <summary>
   /// The width of the table indentation, specifying the distance from the leading margin.

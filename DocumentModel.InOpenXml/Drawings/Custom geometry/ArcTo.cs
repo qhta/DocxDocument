@@ -19,7 +19,7 @@ namespace DocumentModel.Drawings;
 ///   All distance values are expressed as shape coordinate units which are relative to the shape's width and height.
 ///   </para>
 /// </remarks>
-public class ArcTo: ModelElement
+public class ArcTo: ModelElement<DXD.ArcTo>
 {
   /// <summary>
   ///   Horizontal radius (width) of the ellipse from which the arc is drawn.

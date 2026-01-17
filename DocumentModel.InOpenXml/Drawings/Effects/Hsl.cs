@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a hue, saturation, and luminance (HSL) effect for color adjustment.
 /// </summary>
-public class Hsl: ModelElement
+public class Hsl: ColorType
 {
   /// <summary>
   ///   Hue component of the color.

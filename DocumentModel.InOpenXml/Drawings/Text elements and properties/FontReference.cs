@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a reference to a font, including its identifier and color information in various color models.
 /// </summary>
-public class FontReference: ModelElement
+public class FontReference: ModelElement<DXD.FontReference>
 {
   /// <summary>
   ///   Identifier for the font collection index.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a 2D transformation, including rotation, flipping, offset, and extents for a drawing element.
 /// </summary>
-public class Transform2D: ModelElement
+public class Transform2D: ModelElement<DXD.Transform2D>
 {
   /// <summary>
   ///   Rotation angle for the transformation.

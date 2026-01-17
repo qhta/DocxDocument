@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the rectangle area to which a fill is applied in a Wordprocessing drawing element.
 /// This interface provides properties for specifying the left, top, right, and bottom boundaries of the fill area, allowing precise control over the fill's position and dimensions within the drawing.
 /// </summary>
-public class FillToRectangle: ModelElement
+public class FillToRectangle: ModelElement<DXD.FillToRectangle>
 {
   /// <summary>
   /// The left boundary of the fill rectangle, representing the distance from the left edge of the drawing element.

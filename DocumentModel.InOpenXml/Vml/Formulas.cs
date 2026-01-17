@@ -3,6 +3,6 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the Formulas Class.
 /// </summary>
-public interface Formulas: IElementCollection<Formula>
+public class Formulas: ModelElementCollection<Formula, DXV.Formulas, DXV.Formula>
 {
 }

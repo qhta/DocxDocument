@@ -1,9 +1,11 @@
+using DocumentFormat.OpenXml.EMMA;
+
 namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Represents a blip (binary large image or picture), providing references and effects for embedded or linked images in a drawing.
 /// </summary>
-public interface Blip: IExtendableElement
+public class Blip: ModelElement<DXD.Blip>, IExtendableElement
 {
   /// <summary>
   /// Gets or sets the reference to an embedded picture.
@@ -105,4 +107,5 @@ public interface Blip: IExtendableElement
   /// </summary>
   public TintEffect? TintEffect { get; set; }
 
+  public IExtensionList? ExtensionList { get; set; }
 }

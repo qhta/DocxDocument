@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic crisscross etching effect, which simulates a textured etching with adjustable transparency and pressure.
 /// </summary>
-public class ArtisticCrisscrossEtching: ModelElement
+public class ArtisticCrisscrossEtching: ModelElement<DXO10D.ArtisticCrisscrossEtching>
 {
   /// <summary>
   /// Transparency level of the crisscross etching effect.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents visual properties for a shape, including geometry, fill, outline, effects, 2D and 3D transforms, and extension lists.
 /// </summary>
-public class ShapeProperties: ModelElement
+public class ShapeProperties: ModelElement<DXD.ShapeProperties>
 {
   /// <summary>
   ///   Black and white rendering mode for the shape.

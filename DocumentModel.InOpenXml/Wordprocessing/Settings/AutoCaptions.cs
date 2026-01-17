@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents a collection of automatic caption definitions for Wordprocessing documents.
 /// </summary>
-public class AutoCaptions : ElementCollection<AutoCaption>
+public class AutoCaptions : ModelElementCollection<AutoCaption, DXW.AutoCaptions, DXW.AutoCaption>
 {
   /// <summary>
   /// Initializes a new instance of the <see cref="AutoCaptions"/> class.

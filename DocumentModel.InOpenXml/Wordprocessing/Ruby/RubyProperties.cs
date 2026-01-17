@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the properties for a phonetic guide (ruby text) in WordprocessingML documents.
 /// This interface provides options for alignment, font size, distance between guide and base text, base text size, language, and field cache status, enabling advanced formatting and localization of ruby annotations.
 /// </summary>
-public class RubyProperties: ModelElement
+public class RubyProperties: ModelElement<DXW.RubyProperties>
 {
   
   /// <summary>

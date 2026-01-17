@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the DataModelExtensionBlock Class.
 /// </summary>
-public class DataModelExtensionBlock: ModelElement
+public class DataModelExtensionBlock: ModelElement<DXOD.DataModelExtensionBlock>
 {
   /// <summary>
   ///   relId

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Represents the set of locks that can be applied to a content part in a drawing.
 ///   These locks restrict certain user actions such as grouping, selection, rotation, and resizing.
 /// </summary>
-public interface ContentPartLocks : IOfficeArtExtendableElement
+public class ContentPartLocks : ModelElement<DXO10D.ContentPartLocks>, IOfficeArtExtendableElement
 {
   /// <summary>
   ///   Disallows grouping of the content part.
@@ -55,4 +55,6 @@ public interface ContentPartLocks : IOfficeArtExtendableElement
   ///   Disallows changing the shape type of the content part.
   /// </summary>
   public bool? NoChangeShapeType { get; set; }
+
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }
