@@ -151,7 +151,7 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Store sample document settings in new document---");
       //try
       {
-        DocumentSettings testData = CreateSampleDocumentSettings();
+        DocumentSettings testData = CreateSampleDocumentSettings(false);
         using (var document = Document.CreateDocument("temp.docx"))
         {
           document.DocumentSettings = testData;
@@ -193,80 +193,104 @@ namespace DocumentModel.InOpenXml.Test
     /// Creates a sample <see cref="DocumentSettings"/> instance for testing.
     /// </summary>
     /// <returns>A populated <see cref="DocumentSettings"/> object.</returns>
-    static DocumentSettings CreateSampleDocumentSettings()
+    static DocumentSettings CreateSampleDocumentSettings(bool createAllProperties = true)
     {
-      var settings = new DocumentSettings
-      {
-        AlignBorderAndEdges = true,
-        AlwaysMergeEmptyNamespace = true,
-        AlwaysShowPlaceholderText = false,
-        AutoFormatOverride = true,
-        AutoHyphenation = false,
-        BookFoldPrinting = true,
-        BookFoldPrintingSheets = 8,
-        BookFoldReversePrinting = false,
-        BordersDoNotSurroundFooter = true,
-        BordersDoNotSurroundHeader = false,
-        CharacterSpacingControl = CharacterSpacingKind.CompressPunctuation,
-        ChartTrackingRefBased = true,
-        ClickAndTypeStyle = "Normal",
-        ConflictMode = false,
-        ConsecutiveHyphenLimit = 2,
-        DecimalSymbol = ".",
-        DefaultImageDpi = 300,
-        DefaultTableStyle = "TableGrid",
-        DefaultTabStop = 720,
-        DiscardImageEditingData = true,
-        DisplayBackgroundShape = false,
-        DisplayHorizontalDrawingGrid = 5,
-        DisplayVerticalDrawingGrid = 10,
-        DoNotAutoCompressPictures = true,
-        DoNotDemarcateInvalidXml = false,
-        DoNotDisplayPageBoundaries = true,
-        DoNotHyphenateCaps = false,
-        DoNotIncludeSubdocsInStats = true,
-        DoNotShadeFormData = false,
-        DoNotTrackFormatting = true,
-        DoNotTrackMoves = false,
-        DoNotUseMarginsForDrawingGridOrigin = true,
-        DoNotValidateAgainstSchema = false,
-        EmbedSystemFonts = true,
-        EmbedTrueTypeFonts = false,
-        EvenAndOddHeaders = true,
-        ForceUpgrade = false,
-        FormsDesign = true,
-        GutterAtTop = false,
-        HideGrammaticalErrors = true,
-        HideSpellingErrors = false,
-        HyphenationZone = new Twips(360),
-        IgnoreMixedContent = true,
-        LinkStyles = false,
-        ListSeparator = ";",
-        MirrorMargins = true,
-        NoPunctuationKerning = false,
-        PrintFormsData = true,
-        PrintFractionalCharacterWidth = false,
-        PrintPostScriptOverText = true,
-        PrintTwoOnOne = false,
-        RemoveDateAndTime = true,
-        RemovePersonalInformation = false,
-        SaveFormsData = true,
-        SaveInvalidXml = false,
-        SavePreviewPicture = true,
-        SaveSubsetFonts = false,
-        SaveXmlDataOnly = true,
-        ShowEnvelope = false,
-        ShowXmlTags = true,
-        StrictFirstAndLastChars = false,
-        StylePaneSortMethods = "alpha",
-        SummaryLength = new Percent(50),
-        TrackRevisions = true,
-        UICompatibleWith97To2003 = false,
-        UpdateFieldsOnOpen = true,
-        UseXsltWhenSaving = false,
-        View = ViewKind.Print,
-        ActiveWritingStyles = new ActiveWritingStyles([
-          new ActiveWritingStyle
+      if (!createAllProperties)
+        return new DocumentSettings
+        {
+          AlignBorderAndEdges = true,
+          BordersDoNotSurroundFooter = true,
+          BordersDoNotSurroundHeader = false,
+          DisplayBackgroundShape = false,
+          DoNotDisplayPageBoundaries = true,
+          EmbedSystemFonts = true,
+          EmbedTrueTypeFonts = false,
+          GutterAtTop = false,
+          HideGrammaticalErrors = true,
+          HideSpellingErrors = false,
+          MirrorMargins = true,
+          PrintFormsData = true,
+          PrintPostScriptOverText = true,
+          RemoveDateAndTime = true,
+          RemovePersonalInformation = false,
+          SaveFormsData = true,
+          SaveSubsetFonts = false,
+          View = ViewKind.Print,
+          Zoom = PresetZoomKind.FullPage,
+        };
+      else
+        return new DocumentSettings
+        {
+          AlignBorderAndEdges = true,
+          AlwaysMergeEmptyNamespace = true,
+          AlwaysShowPlaceholderText = false,
+          AutoFormatOverride = true,
+          AutoHyphenation = false,
+          BookFoldPrinting = true,
+          BookFoldPrintingSheets = 8,
+          BookFoldReversePrinting = false,
+          BordersDoNotSurroundFooter = true,
+          BordersDoNotSurroundHeader = false,
+          CharacterSpacingControl = CharacterSpacingKind.CompressPunctuation,
+          ChartTrackingRefBased = true,
+          ClickAndTypeStyle = "Normal",
+          ConflictMode = false,
+          ConsecutiveHyphenLimit = 2,
+          DecimalSymbol = ".",
+          DefaultImageDpi = 300,
+          DefaultTableStyle = "TableGrid",
+          DefaultTabStop = 720,
+          DiscardImageEditingData = true,
+          DisplayBackgroundShape = false,
+          DisplayHorizontalDrawingGrid = 5,
+          DisplayVerticalDrawingGrid = 10,
+          DoNotAutoCompressPictures = true,
+          DoNotDemarcateInvalidXml = false,
+          DoNotDisplayPageBoundaries = true,
+          DoNotHyphenateCaps = false,
+          DoNotIncludeSubdocsInStats = true,
+          DoNotShadeFormData = false,
+          DoNotTrackFormatting = true,
+          DoNotTrackMoves = false,
+          DoNotUseMarginsForDrawingGridOrigin = true,
+          DoNotValidateAgainstSchema = false,
+          EmbedSystemFonts = true,
+          EmbedTrueTypeFonts = false,
+          EvenAndOddHeaders = true,
+          ForceUpgrade = false,
+          FormsDesign = true,
+          GutterAtTop = false,
+          HideGrammaticalErrors = true,
+          HideSpellingErrors = false,
+          HyphenationZone = new Twips(360),
+          IgnoreMixedContent = true,
+          LinkStyles = false,
+          ListSeparator = ";",
+          MirrorMargins = true,
+          NoPunctuationKerning = false,
+          PrintFormsData = true,
+          PrintFractionalCharacterWidth = false,
+          PrintPostScriptOverText = true,
+          PrintTwoOnOne = false,
+          RemoveDateAndTime = true,
+          RemovePersonalInformation = false,
+          SaveFormsData = true,
+          SaveInvalidXml = false,
+          SavePreviewPicture = true,
+          SaveSubsetFonts = false,
+          SaveXmlDataOnly = true,
+          ShowEnvelope = false,
+          ShowXmlTags = true,
+          StrictFirstAndLastChars = false,
+          StylePaneSortMethods = "alpha",
+          SummaryLength = new Percent(50),
+          TrackRevisions = true,
+          UICompatibleWith97To2003 = false,
+          UpdateFieldsOnOpen = true,
+          UseXsltWhenSaving = false,
+          View = ViewKind.Print,
+          ActiveWritingStyles = new ActiveWritingStyles([
+            new ActiveWritingStyle
           {
           ApplicationName = "MyApp",
           CheckStyle = true,
@@ -284,9 +308,9 @@ namespace DocumentModel.InOpenXml.Test
           Language = "fr-FR",
           NaturalLanguageGrammarCheck = false
         }
-        ]),
-        AttachedSchemas = new AttachedSchemas([
-          new Schema
+          ]),
+          AttachedSchemas = new AttachedSchemas([
+            new Schema
           {
             Uri = "http://example.com/schema1",
             ManifestLocation = "schema1.xsd",
@@ -298,12 +322,12 @@ namespace DocumentModel.InOpenXml.Test
             ManifestLocation = "schema2.xsd",
             SchemaLocation = "Schema2"
           }
-        ]),
-        AttachedTemplate = new AttachedTemplate("http://example.com/template.dotx"),
-        Captions = new Captions
-        {
-          CaptionDefinitions = new CaptionDefinitions([
-            new CaptionDefinition
+          ]),
+          AttachedTemplate = new AttachedTemplate("http://example.com/template.dotx"),
+          Captions = new Captions
+          {
+            CaptionDefinitions = new CaptionDefinitions([
+              new CaptionDefinition
             {
               Name = "Figure",
               Position = CaptionPositionKind.Below
@@ -313,9 +337,9 @@ namespace DocumentModel.InOpenXml.Test
               Name = "Table",
               Position = CaptionPositionKind.Above
             }
-          ]),
-          AutoCaptions = new AutoCaptions([
-            new AutoCaption
+            ]),
+            AutoCaptions = new AutoCaptions([
+              new AutoCaption
             {
               Name = "Figure",
               Caption = "Fig.",
@@ -325,10 +349,9 @@ namespace DocumentModel.InOpenXml.Test
               Name = "Table",
               Caption = "Tab.",
             }
-          ])
-        }
-      };
-      return settings;
+            ])
+          }
+        };
     }
 
     /// <summary>
