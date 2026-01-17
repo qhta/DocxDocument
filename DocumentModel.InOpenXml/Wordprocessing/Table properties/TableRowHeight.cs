@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Specifies the height of the current table row within the current table.
   /// This height is used to determine the resulting height of the table row, which can be absolute or relative depending on its attribute values.
   /// </summary>
-  public class TableRowHeight: ModelElement
+  public class TableRowHeight: ModelElement<DXW.TableRowHeight>
   {
     
     /// <summary>

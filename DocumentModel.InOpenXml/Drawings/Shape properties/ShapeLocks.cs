@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents locking options for a shape, restricting user actions such as grouping, selection, rotation, resizing, and editing.
 /// </summary>
-public interface ShapeLocks : IExtendableElement
+public class ShapeLocks : ModelElement<DXD.ShapeLocks>, IExtendableElement
 {
   /// <summary>
   ///   Disallows grouping of the shape.
@@ -59,4 +59,6 @@ public interface ShapeLocks : IExtendableElement
   ///   Disallows editing the shape's text.
   /// </summary>
   public bool? NoTextEdit { get; set; }
+
+  public IExtensionList? ExtensionList { get; set; }
 }

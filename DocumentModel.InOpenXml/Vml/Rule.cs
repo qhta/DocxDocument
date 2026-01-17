@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Represents a VML rule, including rule type, alignment, shape reference, and proxies.
 /// </summary>
-public class Rule: CollectionItem
+public class Rule: ModelElement<DXVO.Rule>
 {
   /// <summary>
   /// Rule identifier string.

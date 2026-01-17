@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents a border definition for elements in a WordprocessingML document.
   /// This class provides properties for border style, color, width, spacing, shadow, and frame effect, enabling advanced formatting and visual separation of document content.
   /// </summary>
-  public class Border: CollectionItem
+  public class Border: ModelElement<DXW.Border>
   {
     
     /// <summary>

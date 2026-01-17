@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic pencil sketch effect, which simulates a pencil sketch style with adjustable transparency and pressure.
 /// </summary>
-public class ArtisticPencilSketch: ModelElement
+public class ArtisticPencilSketch: ModelElement<DXO10D.ArtisticPencilSketch>
 {
   /// <summary>
   /// Transparency level of the pencil sketch effect.

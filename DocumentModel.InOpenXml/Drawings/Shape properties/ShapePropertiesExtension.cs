@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents an extension for shape properties, providing additional or hidden formatting and configuration options.
 /// </summary>
-public interface ShapePropertiesExtension: IExtension
+public class ShapePropertiesExtension: ModelElement<DXD.ShapePropertiesExtension>, IExtension
 {
 
   /// <summary>
@@ -35,4 +35,6 @@ public interface ShapePropertiesExtension: IExtension
   ///   Indicates whether the shadow is obscured.
   /// </summary>
   public bool? ShadowObscured { get; set; }
+
+  public string? UriString { get; set; }
 }

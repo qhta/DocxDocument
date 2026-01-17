@@ -1,3 +1,4 @@
+using DocumentFormat.OpenXml.EMMA;
 using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
 
@@ -7,7 +8,7 @@ namespace DocumentModel.Vml;
 /// Represents a shape template in a VML drawing, providing properties for styling, positioning, behavior, and embedded content.
 /// This interface enables advanced customization and management of VML shapes, including hyperlinks, CSS references, coordinate space, borders, fill, stroke, shadow, text, image data, and more.
 /// </summary>
-public interface ShapeType : IEmbeddedObjectContent
+public class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectContent
 {
     
     /// <summary>

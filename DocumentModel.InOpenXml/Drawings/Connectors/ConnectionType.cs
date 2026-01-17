@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a connection type for connectors, defining an identifier and index for the connection.
 /// </summary>
-public class ConnectionType: ModelElement
+public class ConnectionType: ModelElement<DXD.ConnectionType>
 {
   /// <summary>
   /// Unique identifier for the connection.

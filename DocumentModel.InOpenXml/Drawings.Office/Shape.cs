@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the Shape Class.
 /// </summary>
-public class Shape: ModelElement
+public class Shape: ModelElement<DXOD.Shape>
 {
   /// <summary>
   ///   modelId

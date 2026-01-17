@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Specifies that a given numbering level is from an earlier word processing application 
 ///   which did not support the full richness of the numbering properties supported by WordprocessingML.
 /// </summary>
-public class LegacyNumbering: ModelElement
+public class LegacyNumbering: ModelElement<DXW.LegacyNumbering>
 {
   /// <summary>
   ///   Use Legacy Numbering Properties

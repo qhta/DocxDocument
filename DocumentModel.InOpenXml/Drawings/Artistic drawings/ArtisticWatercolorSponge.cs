@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic watercolor sponge effect, which simulates a watercolor texture with adjustable transparency and brush size.
 /// </summary>
-public class ArtisticWatercolorSponge: ModelElement
+public class ArtisticWatercolorSponge: ModelElement<DXO10D.ArtisticWatercolorSponge>
 {
   /// <summary>
   /// Transparency level of the watercolor sponge effect.

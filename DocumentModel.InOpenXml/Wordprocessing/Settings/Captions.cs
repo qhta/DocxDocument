@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents caption information for a WordprocessingML document, including caption definitions and automatic captioning rules.
 /// </summary>
-public class Captions : ModelElement
+public class Captions : ModelElement<DXW.Captions>
 {
   /// <summary>
   /// Contains the collection of caption format definitions for different object types.

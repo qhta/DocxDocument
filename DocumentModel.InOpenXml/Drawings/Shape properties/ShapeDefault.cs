@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents default shape properties, including shape, body, list, and style settings.
 /// </summary>
-public interface ShapeDefault : IExtendableElement
+public class ShapeDefault :ModelElement<DXD.ShapeDefault>, IExtendableElement
 {
   /// <summary>
   ///   Default shape properties.
@@ -24,4 +24,6 @@ public interface ShapeDefault : IExtendableElement
   ///   Default shape style.
   /// </summary>
   public ShapeStyle? ShapeStyle { get; set; }
+
+  public IExtensionList? ExtensionList { get; set; }
 }

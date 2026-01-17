@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a blur effect, allowing the application of a blur with a specified radius and optional bounds growth.
 /// </summary>
-public class Blur: ModelElement
+public class Blur: ModelElement<DXD.Blur>
 {
   /// <summary>
   /// Radius of the blur effect.

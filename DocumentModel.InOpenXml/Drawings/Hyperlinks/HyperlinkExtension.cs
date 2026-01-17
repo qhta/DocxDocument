@@ -3,11 +3,11 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents an extension for hyperlink formatting in a drawing object, specifying additional hyperlink properties such as UriString and color.
 /// </summary>
-public interface HyperlinkExtension: IExtension
+public class HyperlinkExtension: ModelElement<DXD.HyperlinkExtension>
 {
 
   /// <summary>
   ///   Color type for the hyperlink.
   /// </summary>
-  public HyperlinkColorEnum? HyperlinkColor { get; set; }
+  public HyperlinkColorKind? HyperlinkColor { get; set; }
 }

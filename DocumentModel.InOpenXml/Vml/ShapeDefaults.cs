@@ -2,7 +2,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   New Shape Defaults.
 /// </summary>
-public class ShapeDefaults: ModelElement
+public class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
 {
   /// <summary>
   ///   VML Extension Handling Behavior

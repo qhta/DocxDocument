@@ -21,4 +21,9 @@ namespace DocumentModel.Wordprocessing;
     /// Custom XML properties representing the element tag in the schema (w:customXmlPr).
     /// </summary>
     public CustomXmlProperties? CustomXmlProperties { get; set; }
+
+    protected override object? GetUpdatableOpenXmlElement()
+    {
+      throw new NotImplementedException();
+    }
   }

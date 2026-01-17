@@ -30,6 +30,16 @@ public partial class CoreProperties : ModelElement
   }
 
   /// <summary>
+  /// Retrieves the Open XML element that represents the updatable package properties for the current instance.
+  /// </summary>
+  /// <returns>An object representing the updatable Open XML package properties, or <see langword="null"/> if no properties are
+  /// available.</returns>
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    return PackageProperties;
+  }
+
+  /// <summary>
   /// Attach this instance to the specified document. Data is loaded from the document's PackageProperties.
   /// </summary>
   /// <param name="document">Document to attach to.</param>

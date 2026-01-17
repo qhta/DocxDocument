@@ -23,7 +23,7 @@ namespace DocumentModel.Drawings;
 ///   </list>
 ///   </para>
 /// </remarks>
-public class EffectContainerType: ModelElement
+public class EffectContainerType: ModelElement<DXD.EffectContainerType>
 {
   /// <summary>
   ///   Type of the effect container, indicating how effects are grouped or applied.

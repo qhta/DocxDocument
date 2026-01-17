@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic paint strokes effect, which simulates painted strokes with adjustable transparency and intensity.
 /// </summary>
-public class ArtisticPaintStrokes: ModelElement
+public class ArtisticPaintStrokes: ModelElement<DXO10D.ArtisticPaintStrokes>
 {
   /// <summary>
   /// Transparency level of the paint strokes effect.

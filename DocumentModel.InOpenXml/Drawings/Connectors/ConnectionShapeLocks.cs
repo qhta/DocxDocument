@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents locking options for a connection shape, allowing restriction of various editing and formatting actions.
 /// </summary>
-public class ConnectionShapeLocks: ModelElement
+public class ConnectionShapeLocks: ModelElement<DXD.ConnectionShapeLocks>
 {
   /// <summary>
   /// Gets or sets a value indicating whether grouping of the shape is disallowed.

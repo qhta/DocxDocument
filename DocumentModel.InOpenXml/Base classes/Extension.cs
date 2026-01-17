@@ -10,4 +10,9 @@ public class Extension : CollectionItem
   /// </summary>
   [XmlAttribute]
   public string? Uri { get; set; }
+
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    throw new NotImplementedException();
+  }
 }

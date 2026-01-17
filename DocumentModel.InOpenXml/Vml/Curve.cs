@@ -6,7 +6,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Bezier Curve.
 /// </summary>
-public interface Curve: IEmbeddedObjectContent
+public class Curve: ModelElement<DXV.Curve>,  IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

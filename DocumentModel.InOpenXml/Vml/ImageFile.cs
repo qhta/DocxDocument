@@ -1,3 +1,4 @@
+using DocumentFormat.OpenXml.EMMA;
 using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
 
@@ -6,7 +7,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Image File.
 /// </summary>
-public interface ImageFile: IEmbeddedObjectContent
+public class ImageFile: ModelElement<DXV.ImageFile>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

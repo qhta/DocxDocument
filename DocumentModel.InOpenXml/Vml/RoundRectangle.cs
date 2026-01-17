@@ -6,7 +6,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Rounded Rectangle.
 /// </summary>
-public interface RoundRectangle: IEmbeddedObjectContent
+public class RoundRectangle: ModelElement<DXV.RoundRectangle>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

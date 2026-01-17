@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a change to run properties, used in <see cref="RunProperties"/>.
 /// This interface annotates <see cref="PreviousRunProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for text runs.
 /// </summary>
-public class RunPropertiesChange: ModelElement
+public class RunPropertiesChange: ModelElement<DXW.RunPropertiesChange>
 {
   
   /// <summary>

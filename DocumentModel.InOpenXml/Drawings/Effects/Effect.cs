@@ -120,4 +120,9 @@ public class Effect: ModelElement
   ///   </para>
   /// </remarks>
   public string? Reference { get; set; }
+
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    throw new NotImplementedException();
+  }
 }

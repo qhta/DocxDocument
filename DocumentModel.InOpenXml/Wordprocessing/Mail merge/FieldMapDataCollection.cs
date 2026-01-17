@@ -6,5 +6,8 @@
 /// </summary>
 public class FieldMapDataCollection: ElementCollection<FieldMapData>
 {
-  
+  protected override object? GetUpdatableOpenXmlElement()
+  {
+    throw new NotImplementedException();
+  }
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the configuration for a date picker content control in a structured document tag (SDT) in a Wordprocessing document.
 /// This interface provides properties for the last known date, display format, language ID, XML data storage format, and calendar type, enabling advanced customization and management of date input and display in SDTs.
 /// </summary>
-public class SdtContentDate: ModelElement
+public class SdtContentDate: ModelElement<DXW.SdtContentDate>
 {
   /// <summary>
   /// Last known date in XML Schema DateTime format, specifying the most recently selected or stored date value.

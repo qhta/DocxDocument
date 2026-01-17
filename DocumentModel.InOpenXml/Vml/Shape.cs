@@ -6,7 +6,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Definition.
 /// </summary>
-public interface Shape: IEmbeddedObjectContent
+public class Shape: ModelElement<DXV.Shape>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

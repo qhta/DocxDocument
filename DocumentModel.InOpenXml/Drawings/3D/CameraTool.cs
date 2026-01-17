@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Camera tool settings for drawing elements.
 /// </summary>
-public class CameraTool: ModelElement
+public class CameraTool: ModelElement<DXO10D.CameraTool>
 {
   /// <summary>
   /// Cell range.

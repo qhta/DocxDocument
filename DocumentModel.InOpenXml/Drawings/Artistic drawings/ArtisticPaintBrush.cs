@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an artistic paint brush effect, which simulates a paint brush style with adjustable transparency and brush size.
 /// </summary>
-public class ArtisticPaintBrush: ModelElement
+public class ArtisticPaintBrush: ModelElement<DXO10D.ArtisticPaintBrush>
 {
   /// <summary>
   /// Transparency level of the paint brush effect.

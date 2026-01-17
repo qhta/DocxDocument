@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Color change effect for drawing elements.
 /// </summary>
-public class ColorChange: ModelElement
+public class ColorChange: ModelElement<DXD.ColorChange>
 {
   /// <summary>
   /// Consider alpha values.

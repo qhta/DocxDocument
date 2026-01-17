@@ -3,6 +3,6 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   List of Shape Paths.
 /// </summary>
-public interface PathList: IElementCollection<Path>
+public class PathList : ModelElementCollection<Path, DXD.PathList, DXD.Path>
 {
 }

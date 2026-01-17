@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents locking options for a picture, restricting user actions such as grouping, selection, rotation, resizing, cropping, and editing.
 /// </summary>
-public interface PictureLocks : IExtendableElement
+public class PictureLocks : ModelElement<DXD.PictureLocks>, IExtendableElement
 {
   /// <summary>
   ///   Disallows grouping of the picture.
@@ -59,4 +59,6 @@ public interface PictureLocks : IExtendableElement
   ///   Disallows cropping the picture.
   /// </summary>
   public bool? NoCrop { get; set; }
+
+  public IExtensionList? ExtensionList { get; set; }
 }

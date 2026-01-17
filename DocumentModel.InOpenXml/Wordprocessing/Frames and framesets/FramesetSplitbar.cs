@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents the properties for a frameset splitter in a WordprocessingML document.
   /// This interface provides properties for splitter width, color, border visibility, and border style, enabling advanced customization of the appearance and behavior of frameset splitters within document layouts.
   /// </summary>
-  public class FramesetSplitbar: ModelElement
+  public class FramesetSplitbar: ModelElement<DXW.FramesetSplitbar>
   {
     
     /// <summary>

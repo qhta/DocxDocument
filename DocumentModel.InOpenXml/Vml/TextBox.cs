@@ -4,7 +4,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 /// Represents a VML text box element with styling and content properties.
 /// </summary>
-public class TextBox: ModelElement
+public class TextBox: ModelElement<DXV.TextBox>
 {
   /// <summary>
   /// Unique identifier for the text box.
