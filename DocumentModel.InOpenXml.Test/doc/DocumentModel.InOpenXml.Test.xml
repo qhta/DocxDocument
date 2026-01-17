@@ -285,19 +285,80 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized CustomProperties object, or null if deserialization fails.</returns>
         </member>
-        <member name="T:DocumentModel.InOpenXml.Test.DocumentSettingsSerializationTest">
+        <member name="T:DocumentModel.InOpenXml.Test.DocumentSettingsTest">
             <summary>
-            Comprehensive serialization test for DocumentModel.Wordprocessing.DocumentSettings.
+            Provides comprehensive serialization tests for <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/>.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsSerializationTest.Run">
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.Run">
             <summary>
-            Runs all serialization tests for the DocumentSettings class and reports the results to the console.
+            Runs all serialization tests for the <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> class and reports the results to the console.
             </summary>
-            <remarks>This method executes XML and JSON serialization tests, as well as edge case tests, for the
-            DocumentSettings class. It writes the progress and results to the standard output. Use this method to verify
-            that DocumentSettings serialization behaves as expected.</remarks>
-            <returns>true if all DocumentSettings serialization tests pass; otherwise, false.</returns>
+            <remarks>
+            Executes XML and JSON serialization tests, as well as edge case tests, for the <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> class.
+            Writes the progress and results to the standard output. Use this method to verify that <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> serialization behaves as expected.
+            </remarks>
+            <returns>True if all serialization tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestXmlSerialization">
+            <summary>
+            Tests XML serialization and deserialization for <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/>.
+            </summary>
+            <returns>True if the round-trip succeeds; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestJsonSerialization">
+            <summary>
+            Tests JSON serialization and deserialization for <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/>.
+            </summary>
+            <returns>True if the round-trip succeeds; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestEdgeCases">
+            <summary>
+            Tests edge cases for serialization and deserialization of empty <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> objects.
+            </summary>
+            <returns>True if all edge case tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.CreateSampleDocumentSettings">
+            <summary>
+            Creates a sample <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance for testing.
+            </summary>
+            <returns>A populated <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.CompareDocumentSettings(DocumentModel.Wordprocessing.DocumentSettings,DocumentModel.Wordprocessing.DocumentSettings)">
+            <summary>
+            Compares two <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instances for equality by checking a representative subset of properties.
+            </summary>
+            <param name="a">The first <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance.</param>
+            <param name="b">The second <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance.</param>
+            <returns>True if the selected properties are equal; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.SerializeToXml(DocumentModel.Wordprocessing.DocumentSettings)">
+            <summary>
+            Serializes a <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance to XML.
+            </summary>
+            <param name="settings">The <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance to serialize.</param>
+            <returns>XML string representation.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.DeserializeFromXml(System.String)">
+            <summary>
+            Deserializes a <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance from XML.
+            </summary>
+            <param name="xml">The XML string to deserialize.</param>
+            <returns>The deserialized <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.SerializeToJson(DocumentModel.Wordprocessing.DocumentSettings)">
+            <summary>
+            Serializes a <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance to JSON.
+            </summary>
+            <param name="settings">The <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance to serialize.</param>
+            <returns>JSON string representation.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.DeserializeFromJson(System.String)">
+            <summary>
+            Deserializes a <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance from JSON.
+            </summary>
+            <param name="json">The JSON string to deserialize.</param>
+            <returns>The deserialized <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.StatisticPropertiesTest">
             <summary>

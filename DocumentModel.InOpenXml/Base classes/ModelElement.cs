@@ -275,6 +275,11 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
         }
       }
     }
+    var openXmlElementAttribute = modelProperty.GetCustomAttribute<OpenXmlElementAttribute>();
+    if (openXmlElementAttribute != null)
+    {
+      return;
+    }
     throw new InvalidOperationException($"Failed to update Open XML element {openXmlElement.GetType()} property {modelProperty.Name} from model element {this.GetType()}");
   }
 
