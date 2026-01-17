@@ -86,13 +86,11 @@ public class Document : ModelElement, IDisposable
     {
       if (!Equals(_CoreProperties, value))
       {
-        _CoreProperties.Detach(this);
-        value.AttachAndUpdate(this);
-        _CoreProperties = value;
+        _CoreProperties.CopyFrom(value);
       }
     }
   }
-  private CoreProperties _CoreProperties;
+  private readonly CoreProperties _CoreProperties;
 
   /// <summary>
   /// Provides access to content-specific document properties.

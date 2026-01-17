@@ -4,7 +4,8 @@
 /// Represents a model element that wraps an OpenXml element of the specified type.
 /// </summary>
 /// <typeparam name="OpenXmlType">The type of the underlying OpenXml element.</typeparam>
-public abstract class ModelElement<OpenXmlType> : ModelElement, ICollectionItem where OpenXmlType : DX.OpenXmlElement
+public abstract class ModelElement<OpenXmlType> : ModelElement, ICollectionItem
+where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with PackageProperties
 {
   private OpenXmlType? _openXmlElement;
 
@@ -51,5 +52,8 @@ public abstract class ModelElement<OpenXmlType> : ModelElement, ICollectionItem 
     return _openXmlElement;
   }
 
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public IElementCollection<CollectionItem>? Collection { get; set; }
 }

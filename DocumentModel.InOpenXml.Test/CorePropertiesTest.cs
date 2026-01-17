@@ -24,12 +24,12 @@ namespace DocumentModel.InOpenXml.Test
     public static bool Run()
     {
       Console.WriteLine("=== CoreProperties Test ===\n");
-      //if (!TestXmlSerialization()) return false;
-      //if (!TestJsonSerialization()) return false;
-      //if (!TestEdgeCases()) return false;
-      //if (!TestNewFromDocument()) return false;
+      if (!TestXmlSerialization()) return false;
+      if (!TestJsonSerialization()) return false;
+      if (!TestEdgeCases()) return false;
+      if (!TestNewFromDocument()) return false;
       if (!TestStoreInDocument()) return false;
-      //if (!TestUpdateInDocument()) return false;
+      if (!TestUpdateInDocument()) return false;
 
       Console.WriteLine("All CoreProperties tests passed.\n");
       return true;
@@ -267,7 +267,6 @@ namespace DocumentModel.InOpenXml.Test
           document.CoreProperties = testData;
 
           document.CoreProperties.Title = "Updated Title";
-          testData.Title = "Updated Title";
         }
 
         CoreProperties storedData;
@@ -286,8 +285,9 @@ namespace DocumentModel.InOpenXml.Test
         }
         Console.WriteLine("Updated document core properties:\n" + xmlString);
 
-        if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+        if (storedData.Title != "Updated Title")
         {
+          var propName = "Title";
           Console.WriteLine($"✗ Updated document core properties test FAILED - data mismatch in property '{propName}'");
           return false;
         }

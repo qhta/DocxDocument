@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-#pragma warning disable CS0659  
+﻿#pragma warning disable CS0659  
 namespace DocumentModel;
 
 /// <summary>
@@ -280,7 +278,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
         }
       }
     }
-    throw new InvalidOperationException($"Failed to update Open XML element {openXmlElement.GetType()} for {modelProperty.Name}");
+    throw new InvalidOperationException($"Failed to update Open XML element {openXmlElement.GetType()} property {modelProperty.Name} from model element {this.GetType()}");
   }
 
   /// <summary>
