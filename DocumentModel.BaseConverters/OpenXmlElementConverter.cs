@@ -99,7 +99,7 @@ public static class OpenXmlElementConverter
       var valProperty = openXmlElementType.GetProperty("Val");
       if (valProperty != null)
       {
-        var value = valProperty.GetValue(element);
+        var value = valProperty.GetValue(leafElement);
         var convertedValue = ConvertTypeFromOpenXml(value, modelType);
         return convertedValue;
       }
@@ -130,12 +130,29 @@ public static class OpenXmlElementConverter
     if (value == null)
       return null;
     var sourceType = value.GetType();
-    if (sourceType.Name.StartsWith("EnumValue`") && targetType.IsEnum)
+    if (sourceType.Name.StartsWith("EnumValue`"))
     {
       //var enumType = sourceType.GenericTypeArguments[0];
       var valueStr = value.ToString()!;
-      var result = Enum.Parse(targetType, valueStr, true);
-      return result;
+      if (targetType.IsEnum)
+      {
+        var result = Enum.Parse(targetType, valueStr, true);
+        return result;
+      }
+      var implicitOps = targetType.GetMethods(BindingFlags.Public | BindingFlags.Static)
+        .Where(m => m.Name == "op_Implicit" && m.ReturnType == targetType).ToArray();
+      foreach (var op in implicitOps)
+      {
+        var parameters = op.GetParameters();
+        if (parameters.Length == 1 && parameters[0].ParameterType.IsEnum)
+        {
+          if (Enum.TryParse(parameters[0].ParameterType, valueStr, true, out var enumValue))
+          {
+            var result = op.Invoke(null, [enumValue]);
+            return result;
+          }
+        }
+      }
     }
     return Convert.ChangeType(value, targetType);
   }

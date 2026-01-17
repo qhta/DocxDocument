@@ -292,7 +292,7 @@ namespace DocumentModel.InOpenXml.Test
     /// </summary>
     /// <param name="createAllProperties">Whether to create compound properties, like HeadingPairs and TitlesOfParts.</param>
     /// <returns>A populated <see cref="ContentProperties"/> object.</returns>
-    static ContentProperties CreateSampleContentProperties(bool createAllProperties)
+    static ContentProperties CreateSampleContentProperties(bool createAllProperties = true)
     {
       var props = new ContentProperties
       {
