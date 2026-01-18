@@ -1,5 +1,8 @@
 ﻿namespace DocumentModel.OpenXml;
 
+public delegate object? ConvertFromOpenXml(object? openXmlValue, Type modelType);
+public delegate object? ConvertToOpenXml(object? modelValue, Type openXmlType);
+
 /// <summary>
 /// Provides a mapping between DocumentModel element types and their corresponding OpenXML types.
 /// </summary>
