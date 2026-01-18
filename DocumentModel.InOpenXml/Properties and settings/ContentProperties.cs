@@ -4,6 +4,7 @@ namespace DocumentModel;
 ///   Predefined set of metadata properties that are applicable to Office Open XML documents. 
 ///   These properties extend the set of core properties which are common to all packages.
 /// </summary>
+[OpenXmlType(typeof(DXEP.Properties))]
 public class ContentProperties : ModelElement<DXEP.Properties>
 {
 

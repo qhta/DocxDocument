@@ -4,7 +4,8 @@ namespace DocumentModel;
 ///   Collection of core properties, which represents document properties defined in Dublin Core standard
 /// and Open Packaging Conventions
 /// </summary>
-public partial class CoreProperties : ModelElement
+[OpenXmlType(typeof(PackageProperties))]
+public class CoreProperties : ModelElement
 {
   /// <summary>
   /// Gets the underlying WordprocessingDocument instance associated with this object.

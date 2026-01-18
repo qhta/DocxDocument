@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Specifies that the decorated model property or class is mapped to the Open XML child element with the given type name.

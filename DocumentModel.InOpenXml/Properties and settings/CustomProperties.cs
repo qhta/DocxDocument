@@ -4,6 +4,7 @@
 /// Custom properties enable users to define custom metadata properties through a set of well-defined data types.
 /// </summary>
 [XmlRoot("CustomProperties")]
+[OpenXmlType(typeof(DXCP.Properties))]
 public class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Properties>
 {
 
