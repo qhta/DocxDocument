@@ -1,12 +1,23 @@
 ﻿namespace DocumentModel.OpenXml;
 
+
+/// <summary>
+/// Provides conversion methods between model objects and Open XML element types.
+/// </summary>
 public static class OpenXmlElementConverter
 {
 
+  /// <summary>
+  /// Converts a model value to an Open XML element of the specified type.
+  /// </summary>
+  /// <param name="value">The model value to convert.</param>
+  /// <param name="openXmlElementType">The target Open XML element type.</param>
+  /// <returns>The converted Open XML element instance.</returns>
+  /// <exception cref="NotSupportedException">Thrown if the conversion is not supported for the specified type.</exception>
   public static DX.OpenXmlElement ConvertToOpenXml(object? value, Type openXmlElementType)
   {
-    if (openXmlElementType.Name == "View")
-      Debug.Assert(true); ;
+    if (openXmlElementType.Name == "Zoom")
+      Debug.Assert(true);
     if (openXmlElementType.IsSubclassOf(typeof(DXWP.EmptyType)))
     {
       throw new NotSupportedException($"Conversion to {openXmlElementType.Name} is not supported.");
@@ -38,19 +49,43 @@ public static class OpenXmlElementConverter
     }
     if (openXmlElementType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
     {
-      var valProperty = openXmlElementType.GetProperty("Val");
+      var targetProperties = openXmlElementType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
       var constructor = openXmlElementType.GetConstructor([]);
-      if (valProperty != null)
+      var instance = (DX.OpenXmlElement)constructor!.Invoke([])!;
+      foreach (var prop in targetProperties)
       {
-        var instance = (DX.OpenXmlElement)constructor!.Invoke([])!;
-        var convertedValue = ConvertTypeToOpenXml(value, valProperty.PropertyType);
-        valProperty.SetValue(instance, convertedValue);
-        return instance;
+        if (prop.Name == "Val")
+        {
+          var convertedValue = ConvertTypeToOpenXml(value, prop.PropertyType);
+          if (convertedValue != null)
+          {
+            prop.SetValue(instance, convertedValue);
+            return instance;
+          }
+        }
+        else
+        {
+          var sourceProperty = value!.GetType().GetProperty(prop.Name, BindingFlags.Public | BindingFlags.Instance);
+          var propValue = sourceProperty?.GetValue(value);
+          var convertedValue = ConvertTypeToOpenXml(propValue, prop.PropertyType);
+          if (convertedValue != null)
+          {
+            prop.SetValue(instance, convertedValue);
+            return instance;
+          }
+        }
       }
     }
     throw new NotSupportedException($"Conversion to {openXmlElementType.Name} is not supported.");
   }
 
+
+  /// <summary>
+  /// Converts an Open XML element to a corresponding model object based on its type.
+  /// </summary>
+  /// <param name="element">The Open XML element to convert.</param>
+  /// <returns>The corresponding model object, or throws if not supported.</returns>
+  /// <exception cref="NotSupportedException">Thrown if the element type is not supported.</exception>
   public static object? GetObjectByOpenXmlType(this DX.OpenXmlElement element)
   {
     if (element is DXWP.EmptyType)
@@ -68,13 +103,29 @@ public static class OpenXmlElementConverter
     throw new NotSupportedException($"The OpenXmlElement type '{element.GetType().Name}' is not supported.");
   }
 
+  /// <summary>
+  /// Creates an Open XML element instance based on the property name and value.
+  /// </summary>
+  /// <param name="propertyName">The property name to use for mapping.</param>
+  /// <param name="value">The value to convert.</param>
+  /// <returns>The created Open XML element instance.</returns>
+  /// <exception cref="NotImplementedException">Always thrown; not implemented.</exception>
   public static DX.OpenXmlElement? CreateOpenXmlElementByObjectType(string propertyName, object value)
   {
     throw new NotImplementedException();
   }
 
+  /// <summary>
+  /// Converts an Open XML element to a model object of the specified type.
+  /// </summary>
+  /// <param name="element">The Open XML element to convert from.</param>
+  /// <param name="modelType">The target model type.</param>
+  /// <returns>The converted model object.</returns>
+  /// <exception cref="NotSupportedException">Thrown if the conversion is not supported for the element type.</exception>
   public static object? ConvertFromOpenXml(DX.OpenXmlElement element, Type modelType)
   {
+    if (element.GetType().Name == "Zoom")
+      Debug.Assert(true);
     if (element is DXWP.EmptyType)
       return true;
     if (element is DXWP.OnOffType onOffTypeElement)
@@ -96,18 +147,36 @@ public static class OpenXmlElementConverter
     if (element is DX.OpenXmlLeafElement leafElement)
     {
       var openXmlElementType = element.GetType();
-      var valProperty = openXmlElementType.GetProperty("Val");
-      if (valProperty != null)
-      {
-        var value = valProperty.GetValue(leafElement);
-        var convertedValue = ConvertTypeFromOpenXml(value, modelType);
-        return convertedValue;
-      }
 
+      var valueProperties = modelType.GetProperties(BindingFlags.Public | BindingFlags.Instance).Where(prop => prop.CanWrite).ToArray();
+      if (valueProperties.Length == 0)
+      {
+        var openXmlProperties = openXmlElementType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+        foreach (var openXmlProperty in openXmlProperties)
+        {
+          if (openXmlProperty.Name == "Val")
+          {
+            var propValue = openXmlProperty.GetValue(leafElement);
+            var convertedValue = ConvertTypeFromOpenXml(propValue, modelType);
+            return convertedValue;
+          }
+        }
+      }
+      else
+      {
+        var complexValue = OpenXmlComplexTypeConverter.ConvertFromOpenXml(leafElement, modelType);
+        return complexValue;
+      }
     }
     throw new NotSupportedException($"Conversion from {element.GetType()} is not supported.");
   }
 
+  /// <summary>
+  /// Converts a value to the specified Open XML simple value type or enum value type.
+  /// </summary>
+  /// <param name="value">The value to convert.</param>
+  /// <param name="targetType">The target Open XML type.</param>
+  /// <returns>The converted value suitable for Open XML, or null if input is null.</returns>
   public static object? ConvertTypeToOpenXml(object? value, Type targetType)
   {
     //DocumentFormat.OpenXml.Wordprocessing.ViewValues
@@ -118,12 +187,21 @@ public static class OpenXmlElementConverter
       var enumType = targetType.GenericTypeArguments[0];
       var valueStr = value.ToString()!;
       var enumVal = enumType.GetProperty(valueStr, BindingFlags.Public | BindingFlags.Static)?.GetValue(null);
+      if (enumVal == null)
+        return null;
+      //throw new InvalidOperationException($"Unable to convert '{value.GetType()}' to {enumType.Name}. Target '{valueStr}' not found");
       var result = targetType.GetConstructor([enumType])?.Invoke([enumVal]);
       return result;
     }
-    return Convert.ChangeType(value, targetType);
+    return OpenXmlSimpleValueConverter.ConvertToOpenXml(value, targetType);
   }
 
+  /// <summary>
+  /// Converts a value from an Open XML simple value or enum value to the specified model type.
+  /// </summary>
+  /// <param name="value">The Open XML value to convert.</param>
+  /// <param name="targetType">The target model type.</param>
+  /// <returns>The converted model value, or null if input is null.</returns>
   public static object? ConvertTypeFromOpenXml(object? value, Type targetType)
   {
     //DocumentFormat.OpenXml.Wordprocessing.ViewValues
@@ -156,6 +234,11 @@ public static class OpenXmlElementConverter
     }
     return Convert.ChangeType(value, targetType);
   }
+  /// <summary>
+  /// Converts a value to its string representation for Open XML text elements.
+  /// </summary>
+  /// <param name="value">The value to convert to text.</param>
+  /// <returns>The string representation of the value.</returns>
   public static string ConvertToText(object? value)
   {
     if (value == null)

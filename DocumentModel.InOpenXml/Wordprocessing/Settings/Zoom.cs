@@ -4,11 +4,13 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the magnification setting for a Wordprocessing document.
 /// This class provides properties for specifying the zoom type and zoom percentage, enabling control over the document's display magnification.
 /// </summary>
-public class Zoom
+[JsonConverter(typeof(ZoomJsonConverter))]
+public partial class Zoom: ModelElement<DXW.Zoom>
 {
   /// <summary>
   /// Zoom type, specifying the preset magnification mode.
   /// </summary>
+  [OpenXmlProperty("Val")]
   public PresetZoomKind? Kind { get; set; }
 
   /// <summary>
@@ -36,4 +38,12 @@ public class Zoom
     return new Zoom { Percent = percent };
   }
 
+  /// <summary>
+  /// Returns a string representation of the Zoom instance, prioritizing the Kind property if set, otherwise the Percent property.
+  /// </summary>
+  /// <returns></returns>
+  public override string? ToString()
+  {
+    return Kind?.ToString() ?? Percent?.ToString() ?? base.ToString();
+  }
 }

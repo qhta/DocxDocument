@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Specifies the Open XML property name to associate with a class or property for serialization or mapping purposes.
