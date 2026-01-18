@@ -72,7 +72,7 @@ public static class OpenXmlComplexTypeConverter
 
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return;
-    //if (modelProperty.Name == "Title") Debug.Assert(true);
+    if (modelProperty.Name == "ReversePrinting") Debug.Assert(true);
 
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanWrite)
@@ -114,12 +114,12 @@ public static class OpenXmlComplexTypeConverter
     {
       return;
     }
-    var convertedValue = OpenXmlConverter.ConvertFromOpenXml(openXmlElement, modelProperty.PropertyType);
-    if (convertedValue != null)
-    {
-      modelProperty.SetValue(modelObject, convertedValue);
-      return;
-    }
+    //var convertedValue = OpenXmlConverter.ConvertFromOpenXml(openXmlElement, modelProperty.PropertyType);
+    //if (convertedValue != null)
+    //{
+    //  modelProperty.SetValue(modelObject, convertedValue);
+    //  return;
+    //}
     throw new InvalidOperationException($"Failed to update Open XML element {openXmlType} " +
                                         $"property {modelProperty.Name} from model element {modelObject.GetType()}");
   }
