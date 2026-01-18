@@ -72,7 +72,7 @@ public static class OpenXmlComplexTypeConverter
 
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return;
-    if (modelProperty.Name == "ReversePrinting") Debug.Assert(true);
+    if (modelProperty.Name == "Value") Debug.Assert(true);
 
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanWrite)
@@ -94,19 +94,10 @@ public static class OpenXmlComplexTypeConverter
         var value = modelProperty.GetValue(modelObject);
         if (value != null && !targetParameters[0].ParameterType.IsInstanceOfType(value))
         {
-          value = Convert.ChangeType(value, targetParameters[0].ParameterType);
+          value = ConvertValue(value, targetParameters[0].ParameterType);
         }
-        if (setMappedMethod.DeclaringType == openXmlElement.GetType())
-        {
-          setMappedMethod.Invoke(openXmlElement, [value]);
-          return;
-        }
-        else if (setMappedMethod.DeclaringType == modelObject.GetType()
-                 || modelObject.GetType().IsSubclassOf(setMappedMethod.DeclaringType!))
-        {
-          setMappedMethod.Invoke(modelObject, [value]);
-          return;
-        }
+        setMappedMethod.Invoke(modelObject, [openXmlElement]);
+        return;
       }
     }
     var openXmlElementAttribute = modelProperty.GetCustomAttribute<OpenXmlElementAttribute>();
@@ -196,15 +187,9 @@ public static class OpenXmlComplexTypeConverter
       var targetParameters = getMappedMethod.GetParameters();
       bool valueRetrieved = false;
       object? value = null;
-      if (getMappedMethod.DeclaringType == openXmlElement.GetType())
+      if (getMappedMethod.DeclaringType == modelObject.GetType() || modelObject.GetType().IsSubclassOf(getMappedMethod.DeclaringType!))
       {
-        value = getMappedMethod.Invoke(openXmlElement, []);
-        valueRetrieved = true;
-
-      }
-      else if (getMappedMethod.DeclaringType == modelObject.GetType() || modelObject.GetType().IsSubclassOf(getMappedMethod.DeclaringType!))
-      {
-        value = getMappedMethod.Invoke(modelObject, []);
+        value = getMappedMethod.Invoke(modelObject, [openXmlElement]);
         valueRetrieved = true;
       }
 
@@ -271,7 +256,16 @@ public static class OpenXmlComplexTypeConverter
 
         }
       }
-      value = Convert.ChangeType(value, targetType);
+      if (value is Variant variant && targetType == typeof(DX.OpenXmlElement))
+      {
+        value = VariantConverter.CreateOpenXmlElement(variant);
+      }
+      else if (value is DX.OpenXmlElement openXmlVariant && targetType == typeof(Variant))
+      {
+        value = VariantConverter.GetVariant(openXmlVariant);
+      }
+      else
+        value = Convert.ChangeType(value, targetType);
     }
     return value;
   }
