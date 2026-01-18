@@ -80,7 +80,7 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- JSON Serialization ---");
       var testData = CreateSampleDocumentSettings();
       {
-        var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+        var jsonOptions = JsonConfig.Options;
         string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
         Console.WriteLine("Serialized JSON:\n" + jsonString);
 

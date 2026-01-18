@@ -47,7 +47,7 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- XML Serialization ---");
       var testData = CreateSampleCoreProperties();
-            {
+      {
         var xmlSerializer = new XmlSerializer(typeof(CoreProperties));
         string xmlString;
         using (var stringWriter = new StringWriter())
@@ -91,8 +91,8 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- JSON Serialization ---");
       var testData = CreateSampleCoreProperties();
-            {
-        var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+      {
+        var jsonOptions = JsonConfig.Options;
         string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
         Console.WriteLine("Serialized JSON:\n" + jsonString);
 
@@ -122,7 +122,7 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestEdgeCases()
     {
       Console.WriteLine("--- Edge Cases ---");
-            {
+      {
         var empty = new CoreProperties();
         string xml = SerializeToXml(empty);
         var xmlDeserialized = DeserializeFromXml(xml);
@@ -153,25 +153,25 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestNewFromDocument()
     {
       Console.WriteLine("--- New document core properties ---");
-            {
+      {
         CoreProperties testData;
         using (var document = Document.CreateDocument("temp.docx"))
         {
           testData = document.CoreProperties;
         }
         var xmlSerializer = new XmlSerializer(typeof(CoreProperties));
-          string xmlString;
-          using (var stringWriter = new StringWriter())
-          using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-          {
-            xmlSerializer.Serialize(xmlWriter, testData);
-            xmlString = stringWriter.ToString();
-          }
-          Console.WriteLine("New document core properties:\n" + xmlString);
+        string xmlString;
+        using (var stringWriter = new StringWriter())
+        using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+        {
+          xmlSerializer.Serialize(xmlWriter, testData);
+          xmlString = stringWriter.ToString();
+        }
+        Console.WriteLine("New document core properties:\n" + xmlString);
 
         Console.WriteLine("✓ New document core properties test passed\n");
         return true;
-      } 
+      }
     }
 
     /// <summary>
@@ -184,7 +184,7 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestStoreInDocument()
     {
       Console.WriteLine("--- Store sample core properties in new document---");
-            {
+      {
         CoreProperties testData = CreateSampleCoreProperties();
         using (var document = Document.CreateDocument("temp.docx"))
         {
@@ -229,7 +229,7 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestUpdateInDocument()
     {
       Console.WriteLine("--- Update document core properties ---");
-            {
+      {
         CoreProperties testData = CreateSampleCoreProperties();
         using (var document = Document.CreateDocument("temp.docx"))
         {
