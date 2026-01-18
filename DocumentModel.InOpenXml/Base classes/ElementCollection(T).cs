@@ -1,6 +1,4 @@
-﻿using System.Text.Json;
-
-#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
+﻿#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 
 namespace DocumentModel;
 
@@ -13,15 +11,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   //where ItemType : ICollectionItem
 {
   private readonly ObservableCollection<ItemType> _items = new ObservableCollection<ItemType>();
-
-  /// <summary>
-  /// Needed to register the JSON converter for this collection type and all its derived types.
-  /// </summary>
-  static ElementCollection()
-  {
-    var options = new JsonSerializerOptions();
-    options.Converters.Add(new DocumentModel.ElementCollectionJsonConverterFactory());
-  }
 
   /// <summary>
   /// Initializes a new, empty collection.
