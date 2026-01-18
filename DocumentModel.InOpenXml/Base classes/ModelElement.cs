@@ -105,6 +105,8 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     var openXmlType = openXmlElement.GetType();
     foreach (var modelProperty in currentType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
     {
+      if (modelProperty.Name=="Zoom")
+        Debug.Assert(true);
       if (modelProperty.CanWrite)
       {
         LoadData(modelProperty, openXmlElement, openXmlType);
@@ -293,7 +295,8 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   {
     if (value == null)
       return null;
-
+    if (value is DMW.Zoom)
+      Debug.Assert(true);
     return OpenXmlConverter.ConvertToOpenXml(value, targetType);
   }
 

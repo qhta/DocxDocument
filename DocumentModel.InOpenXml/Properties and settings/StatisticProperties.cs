@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   This set of properties is evaluated on document change.
 /// </summary>
+[OpenXmlType(typeof(DXEP.Properties))]
 public class StatisticProperties: ModelElement<DXEP.Properties>
 {
 
