@@ -19,7 +19,7 @@ public static class OpenXmlPropertyMap
   /// <summary>
   /// Retrieves the corresponding OpenXML property for a given model element property from the specified OpenXML type.
   /// </summary>
-  /// <remarks>If the model element property is decorated with an OpenXmlPropertyAttribute, its PropertyName
+  /// <remarks>If the model element property is decorated with an OpenXmlPropertyAttribute, its MethodName
   /// value is used to locate the OpenXML property; otherwise, the property name itself is used. The search is
   /// case-sensitive and limited to public instance properties.</remarks>
   /// <param name="modelElementProperty">The property of the model element for which to find the corresponding OpenXML property. Must not be null.</param>
