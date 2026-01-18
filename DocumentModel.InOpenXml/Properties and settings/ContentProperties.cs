@@ -13,6 +13,12 @@ public class ContentProperties : ModelElement<DXEP.Properties>
   /// </summary>
   internal DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
+  static ContentProperties()
+  {
+    RegisterOpenXmlConversion();
+  }
+
+
   /// <summary>
   /// Default constructor.
   /// </summary>
@@ -72,75 +78,177 @@ public class ContentProperties : ModelElement<DXEP.Properties>
     SetOpenXmlElement(null);
   }
 
-  /// <summary>
-  /// Converts an OpenXml typed value to a model object.
-  /// Supported types include HeadingPairs, TitlesOfParts, HyperlinkList, and DigitalSignature.
-  /// </summary>
-  /// <param name="value">The OpenXml typed value to convert.</param>
-  /// <param name="targetType">The target type to convert to.</param>
-  /// <returns>An object representing the converted model value, or null if the input value is null or cannot
-  /// be converted.</returns>
-  public override object? ConvertToOpenXml(object? value, Type targetType)
+  public override void UpdatePropertyData(string propertyName)
   {
-    if (targetType == typeof(DXEP.HeadingPairs))
-    {
-      if (value is DocumentModel.HeadingPairs headingPairs)
-        return new DXEP.HeadingPairs(headingPairs.AsVTVector()!);
-      return null;
-    }
-    if (targetType == typeof(DXEP.TitlesOfParts))
-    {
-      if (value is DocumentModel.StringList titlesOfParts)
-        return new DXEP.TitlesOfParts(titlesOfParts.AsVTVector()!);
-      return null;
-    }
-    if (targetType == typeof(DXEP.HyperlinkList))
-    {
-      if (value is DocumentModel.HyperlinkList hyperlinkList)
-        return new DXEP.HyperlinkList(hyperlinkList.AsVTVector()!);
-      return null;
-    }
-    if (targetType == typeof(DXEP.DigitalSignature))
-    {
-      if (value is byte[] digitalSignature)
-        return new DXEP.DigitalSignature {  VTBlob = 
-          new DXVT.VTBlob(new Base64Binary(digitalSignature)) };
-      return null;
-    }
-    return base.ConvertToOpenXml(value, targetType);
+    base.UpdatePropertyData(propertyName);
+  }
+
+  #region OpenXml Conversion Registration and Methods
+  /// <summary>
+  /// Registers conversion delegates for OpenXml property types to enable conversion between OpenXml elements and their
+  /// corresponding domain objects.
+  /// </summary>
+  /// <remarks>Call this method before performing conversions using the OpenXmlConverter to ensure that the
+  /// necessary type mappings are available. This method is typically invoked during application initialization to
+  /// configure conversion support for HeadingPairs, TitlesOfParts, HyperlinkList, and DigitalSignature
+  /// elements.</remarks>
+  public new static void RegisterOpenXmlConversion()
+  {
+    OpenXmlConverter.ConvertFromOpenDelegates[typeof(DXEP.HeadingPairs)] = ConvertFromOpenXmlHeadingPairs;
+    OpenXmlConverter.ConvertFromOpenDelegates[typeof(DXEP.TitlesOfParts)] = ConvertFromOpenXmlTitlesOfParts;
+    OpenXmlConverter.ConvertFromOpenDelegates[typeof(DXEP.HyperlinkList)] = ConvertFromOpenXmlHyperlinkList;
+    OpenXmlConverter.ConvertFromOpenDelegates[typeof(DXEP.DigitalSignature)] = ConvertFromOpenXmlDigitalSignature;
+    OpenXmlConverter.ConvertToOpenDelegates[typeof(DXEP.HeadingPairs)] = ConvertToOpenXmlHeadingPairs;
+    OpenXmlConverter.ConvertToOpenDelegates[typeof(DXEP.TitlesOfParts)] = ConvertToOpenXmlTitlesOfParts;
+    OpenXmlConverter.ConvertToOpenDelegates[typeof(DXEP.HyperlinkList)] = ConvertToOpenXmlHyperlinkList;
+    OpenXmlConverter.ConvertToOpenDelegates[typeof(DXEP.DigitalSignature)] = ConvertToOpenXmlDigitalSignature;
   }
 
   /// <summary>
-  /// Changes the type of the given value from the specified OpenXml type.
-  /// Supported types include HeadingPairs, TitlesOfParts, HyperlinkList, and DigitalSignature </summary>
-  /// <param name="value">The value to convert. It should be of OpenXml type.</param>
-  /// <param name="targetType">The target type to convert to. It should be a model type.</param>
-  /// <returns>The converted value, or null if the conversion is not supported.</returns>
-  public override object? ConvertFromOpenXml(object? value, Type targetType)
+  /// Converts an Open XML HeadingPairs element to its corresponding domain model representation.
+  /// </summary>
+  /// <param name="openXmlElement"></param>
+  /// <param name="modelType"></param>
+  /// <returns></returns>
+  private static object? ConvertFromOpenXmlHeadingPairs(object? openXmlElement, Type modelType)
   {
-    if (value == null) return null;
-    if (value is DXEP.HeadingPairs headingPairs)
+    if (openXmlElement is DXEP.HeadingPairs headingPairs)
     {
       var variant = headingPairs.VTVector;
       return variant?.AsHeadingPairs();
     }
-    if (value is DXEP.TitlesOfParts titlesOfParts)
+    return null;
+  }
+  /// <summary>
+  /// Converts a model object representing heading pairs to an Open XML HeadingPairs object if the specified type
+  /// matches.
+  /// </summary>
+  /// <remarks>This method is intended for internal use when mapping model objects to Open XML types. If the
+  /// provided model object is not compatible with the specified Open XML type, the method returns null without throwing
+  /// an exception.</remarks>
+  /// <param name="modelObject">The model object to convert. Must be an instance of DocumentModel.HeadingPairs to perform the conversion;
+  /// otherwise, the method returns null.</param>
+  /// <param name="openXmlType">The target Open XML type. Conversion is performed only if this is typeof(DXEP.HeadingPairs).</param>
+  /// <returns>An Open XML HeadingPairs object if the conversion is successful; otherwise, null.</returns>
+  private static object? ConvertToOpenXmlHeadingPairs(object? modelObject, Type openXmlType)
+  {
+    if (openXmlType == typeof(DXEP.HeadingPairs))
+    {
+      if (modelObject is DocumentModel.HeadingPairs headingPairs)
+        return new DXEP.HeadingPairs(headingPairs.AsVTVector()!);
+    }
+    return null;
+  }
+
+  /// <summary>
+  /// Converts an OpenXml TitlesOfParts element to a list of string titles, if available.
+  /// </summary>
+  /// <param name="openXmlElement">The OpenXml element to convert. If not a TitlesOfParts element, the method returns null.</param>
+  /// <param name="modelType">The target model type for conversion. This parameter is reserved for future extensibility and does not affect the
+  /// current conversion logic.</param>
+  /// <returns>A list of strings representing the titles contained in the OpenXml TitlesOfParts element; or null if the input is
+  /// not a valid TitlesOfParts element or contains no titles.</returns>
+  private static object? ConvertFromOpenXmlTitlesOfParts(object? openXmlElement, Type modelType)
+  {
+    if (openXmlElement is DXEP.TitlesOfParts titlesOfParts)
     {
       var variant = titlesOfParts.VTVector;
       return variant?.AsStringList();
     }
-    if (value is DXEP.HyperlinkList hyperlinkList)
+    return null;
+  }
+
+  /// <summary>
+  /// Converts a model object representing a list of titles of parts to an OpenXml TitlesOfParts instance if the
+  /// specified type matches.
+  /// </summary>
+  /// <remarks>This method returns null if the model object is not a DocumentModel.StringList or if the
+  /// openXmlType does not match DXEP.TitlesOfParts.</remarks>
+  /// <param name="modelObject">The model object to convert. Must be a DocumentModel.StringList representing the titles of parts, or null.</param>
+  /// <param name="openXmlType">The target OpenXml type. Conversion is performed only if this is typeof(DXEP.TitlesOfParts).</param>
+  /// <returns>An instance of DXEP.TitlesOfParts if conversion is successful; otherwise, null.</returns>
+  private static object? ConvertToOpenXmlTitlesOfParts(object? modelObject, Type openXmlType)
+  {
+    if (openXmlType == typeof(DXEP.TitlesOfParts))
+    {
+      if (modelObject is DocumentModel.StringList titlesOfParts)
+        return new DXEP.TitlesOfParts(titlesOfParts.AsVTVector()!);
+    }
+    return null;
+  }
+
+  /// <summary>
+  /// Converts an Open XML HyperlinkList element to its corresponding model representation.
+  /// </summary>
+  /// <param name="openXmlElement">The Open XML element to convert. This should be an instance of a HyperlinkList or null.</param>
+  /// <param name="modelType">The target model type to which the Open XML element should be converted.</param>
+  /// <returns>An object representing the converted HyperlinkList, or null if the input is not a valid HyperlinkList element.</returns>
+  private static object? ConvertFromOpenXmlHyperlinkList(object? openXmlElement, Type modelType)
+  {
+    if (openXmlElement is DXEP.HyperlinkList hyperlinkList)
     {
       var variant = hyperlinkList.VTVector;
       return variant?.AsHyperlinkList();
     }
-    if (value is DXEP.DigitalSignature digitalSignature)
+    return null;
+  }
+
+  /// <summary>
+  /// Converts a model object representing a hyperlink list to an Open XML HyperlinkList instance if the specified type
+  /// matches.
+  /// </summary>
+  /// <remarks>This method is intended for internal use when mapping model hyperlink lists to their Open XML
+  /// equivalents. No conversion is performed if the type does not match or if the model object is not of the expected
+  /// type.</remarks>
+  /// <param name="modelObject">The model object to convert. Expected to be a DocumentModel.HyperlinkList instance if conversion is desired. Can
+  /// be null.</param>
+  /// <param name="openXmlType">The target Open XML type. Conversion is performed only if this is typeof(DXEP.HyperlinkList).</param>
+  /// <returns>An instance of DXEP.HyperlinkList if the conversion is successful; otherwise, null.</returns>
+  private static object? ConvertToOpenXmlHyperlinkList(object? modelObject, Type openXmlType)
+  {
+    if (openXmlType == typeof(DXEP.HyperlinkList))
+    {
+      if (modelObject is DocumentModel.HyperlinkList hyperlinkList)
+        return new DXEP.HyperlinkList(hyperlinkList.AsVTVector()!);
+    }
+    return null;
+  }
+
+  /// <summary>
+  /// Converts an Open XML digital signature element to its corresponding byte array representation, if available.
+  /// </summary>
+  /// <param name="openXmlElement">The Open XML element to convert. Expected to be a digital signature element or null.</param>
+  /// <param name="modelType">The target model type for the conversion. This parameter is reserved for future extensibility and is not currently
+  /// used.</param>
+  /// <returns>A byte array containing the digital signature data if the input is a valid digital signature element with a value;
+  /// otherwise, null.</returns>
+  private static object? ConvertFromOpenXmlDigitalSignature(object? openXmlElement, Type modelType)
+  {
+    if (openXmlElement is DXEP.DigitalSignature digitalSignature)
     {
       var variant = digitalSignature.VTBlob;
       return variant?.AsByteArray();
     }
-    return base.ConvertFromOpenXml(value, targetType);
+    return null;
   }
+
+  /// <summary>
+  /// Converts a model object representing a digital signature to an Open XML DigitalSignature object, if compatible.
+  /// </summary>
+  /// <param name="modelObject">The model object to convert. Must be a byte array representing the digital signature, or null.</param>
+  /// <param name="openXmlType">The target Open XML type for conversion. Must be typeof(DigitalSignature) to perform the conversion.</param>
+  /// <returns>An instance of DigitalSignature if the model object is a byte array and the target type is DigitalSignature;
+  /// otherwise, null.</returns>
+  private static object? ConvertToOpenXmlDigitalSignature(object? modelObject, Type openXmlType)
+  {
+    if (openXmlType == typeof(DXEP.DigitalSignature) && modelObject is byte[] digitalSignature)
+      return new DXEP.DigitalSignature
+      {
+        VTBlob = new DXVT.VTBlob(new Base64Binary(digitalSignature))
+      };
+    return null;
+  }
+  #endregion
 
   /// <summary>
   /// Known properties that can be set in this class.
@@ -205,6 +313,7 @@ public class ContentProperties : ModelElement<DXEP.Properties>
   ///   Indicates the grouping of document parts and the number of parts in each group.
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
+  [OpenXmlType(typeof(DXEP.HeadingPairs))]
   public HeadingPairs? HeadingPairs //{ get; set; }
   {
     get => _HeadingPairs;
@@ -216,6 +325,7 @@ public class ContentProperties : ModelElement<DXEP.Properties>
   ///   The title of each document. 
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
+  [OpenXmlType(typeof(DXEP.TitlesOfParts))]
   public StringList? TitlesOfParts
   {
     get => _TitlesOfParts;
@@ -258,6 +368,7 @@ public class ContentProperties : ModelElement<DXEP.Properties>
   /// <summary>
   ///   The set of hyperlinks that were in this document when last saved.
   /// </summary>
+  [OpenXmlType(typeof(DXEP.HyperlinkList))]
   public HyperlinkList? HyperlinkList
   {
     get => _HyperlinkList;
@@ -297,6 +408,7 @@ public class ContentProperties : ModelElement<DXEP.Properties>
   ///   representation, and should be avoided in favor of the well-defined mechanism defined in Part 2. Any use of this
   ///   property should be for legacy compatibility only, and is application-defined. 
   /// </summary>
+  [OpenXmlType(typeof(DXEP.DigitalSignature))]
   public byte[]? DigitalSignature { get; set; }
 
   /// <summary>

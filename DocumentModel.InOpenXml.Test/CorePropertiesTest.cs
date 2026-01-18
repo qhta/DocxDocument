@@ -47,8 +47,7 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- XML Serialization ---");
       var testData = CreateSampleCoreProperties();
-      try
-      {
+            {
         var xmlSerializer = new XmlSerializer(typeof(CoreProperties));
         string xmlString;
         using (var stringWriter = new StringWriter())
@@ -77,11 +76,6 @@ namespace DocumentModel.InOpenXml.Test
         Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
         return true;
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"✗ XML Serialization test FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
-        return false;
-      }
     }
 
     /// <summary>
@@ -97,8 +91,7 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- JSON Serialization ---");
       var testData = CreateSampleCoreProperties();
-      try
-      {
+            {
         var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
         string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
         Console.WriteLine("Serialized JSON:\n" + jsonString);
@@ -117,11 +110,6 @@ namespace DocumentModel.InOpenXml.Test
         Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
         return true;
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"✗ JSON Serialization test FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
-        return false;
-      }
     }
 
     /// <summary>
@@ -134,8 +122,7 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestEdgeCases()
     {
       Console.WriteLine("--- Edge Cases ---");
-      try
-      {
+            {
         var empty = new CoreProperties();
         string xml = SerializeToXml(empty);
         var xmlDeserialized = DeserializeFromXml(xml);
@@ -154,11 +141,6 @@ namespace DocumentModel.InOpenXml.Test
         Console.WriteLine("✓ Edge case tests passed\n");
         return true;
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"✗ Edge case test FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
-        return false;
-      }
     }
 
     /// <summary>
@@ -171,8 +153,7 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestNewFromDocument()
     {
       Console.WriteLine("--- New document core properties ---");
-      try
-      {
+            {
         CoreProperties testData;
         using (var document = Document.CreateDocument("temp.docx"))
         {
@@ -190,12 +171,7 @@ namespace DocumentModel.InOpenXml.Test
 
         Console.WriteLine("✓ New document core properties test passed\n");
         return true;
-      }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"✗ New document core properties FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
-        return false;
-      }
+      } 
     }
 
     /// <summary>
@@ -208,8 +184,7 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestStoreInDocument()
     {
       Console.WriteLine("--- Store sample core properties in new document---");
-      try
-      {
+            {
         CoreProperties testData = CreateSampleCoreProperties();
         using (var document = Document.CreateDocument("temp.docx"))
         {
@@ -241,11 +216,6 @@ namespace DocumentModel.InOpenXml.Test
         Console.WriteLine("✓ Store sample core properties test passed\n");
         return true;
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"✗ Store sample core properties FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
-        return false;
-      }
     }
 
 
@@ -259,8 +229,7 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestUpdateInDocument()
     {
       Console.WriteLine("--- Update document core properties ---");
-      try
-      {
+            {
         CoreProperties testData = CreateSampleCoreProperties();
         using (var document = Document.CreateDocument("temp.docx"))
         {
@@ -294,11 +263,6 @@ namespace DocumentModel.InOpenXml.Test
 
         Console.WriteLine("✓ Updated document core properties test passed\n");
         return true;
-      }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"✗ Updated document core properties FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
-        return false;
       }
     }
 
