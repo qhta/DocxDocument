@@ -14,12 +14,9 @@ internal class Program
     Console.WriteLine("╚════════════════════════════════════════════════════════════╝");
     Console.WriteLine();
 
-    // ReSharper disable once ReplaceWithSingleAssignment.True
-    bool allTestsPassed = true;
-
     // Run CoreProperties tests
     if (!CorePropertiesTest.Run())
-      allTestsPassed = false;
+      return;
 
     Console.WriteLine();
     Console.WriteLine("═══════════════════════════════════════════════════════════");
@@ -27,7 +24,7 @@ internal class Program
 
     // Run ContentProperties tests
     if (!ContentPropertiesTest.Run())
-      allTestsPassed = false;
+      return;
 
     Console.WriteLine();
     Console.WriteLine("═══════════════════════════════════════════════════════════");
@@ -35,7 +32,7 @@ internal class Program
 
     // Run StatisticProperties tests
     if (!StatisticPropertiesTest.Run())
-      allTestsPassed = false;
+      return;
 
     Console.WriteLine();
     Console.WriteLine("═══════════════════════════════════════════════════════════");
@@ -43,7 +40,7 @@ internal class Program
 
     // Run CustomProperties tests
     if (!CustomPropertiesTest.Run())
-      allTestsPassed = false;
+      return;
 
     Console.WriteLine();
     Console.WriteLine("═══════════════════════════════════════════════════════════");
@@ -51,14 +48,14 @@ internal class Program
 
     // Run DocumentSettingsSerialization tests
     if (!DocumentSettingsTest.Run())
-      allTestsPassed = false;
+      return;
 
     Console.WriteLine();
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
 
-    Console.WriteLine(allTestsPassed ? "All tests passed." : "Some tests failed.");
+    Console.WriteLine("All tests passed.");
   }
 }
 

@@ -38,8 +38,26 @@ public static class OpenXmlComplexTypeConverter
     var currentType = modelObject.GetType();
     foreach (var modelProperty in currentType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
     {
+      //if (modelProperty.Name=="Title") Debug.Assert(true);
       UpdateData(modelObject, modelProperty, openXmlElement, openXmlType);
     }
+  }
+
+  /// <summary>
+  /// Updates the value of a property on an Open XML element to match the value of a corresponding property on a model
+  /// object.
+  /// </summary>
+  /// <param name="modelObject">The source object containing the property value to copy. Cannot be null.</param>
+  /// <param name="modelProperty">The property on the model object whose value will be read and applied to the Open XML element. Cannot be null.</param>
+  /// <param name="openXmlElement">The Open XML element whose property will be updated. Cannot be null.</param>
+  /// <param name="openXmlProperty">The property on the Open XML element to update. Cannot be null.</param>
+  public static void UpdateOpenXmlProperty(object modelObject, PropertyInfo modelProperty,
+    object openXmlElement, PropertyInfo openXmlProperty)
+  {
+
+    var openXmlType = openXmlElement.GetType();
+    UpdateData(modelObject, modelProperty, openXmlElement, openXmlType);
+
   }
 
   /// <summary>
@@ -51,8 +69,11 @@ public static class OpenXmlComplexTypeConverter
   /// <param name="openXmlType">The type of the Open XML element.</param>
   public static void UpdateData(object modelObject, PropertyInfo modelProperty, object openXmlElement, Type openXmlType)
   {
+
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return;
+    //if (modelProperty.Name == "Title") Debug.Assert(true);
+
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanWrite)
     {
@@ -80,7 +101,7 @@ public static class OpenXmlComplexTypeConverter
           setMappedMethod.Invoke(openXmlElement, [value]);
           return;
         }
-        else if (setMappedMethod.DeclaringType == modelObject.GetType() 
+        else if (setMappedMethod.DeclaringType == modelObject.GetType()
                  || modelObject.GetType().IsSubclassOf(setMappedMethod.DeclaringType!))
         {
           setMappedMethod.Invoke(modelObject, [value]);
@@ -93,7 +114,13 @@ public static class OpenXmlComplexTypeConverter
     {
       return;
     }
-    throw new InvalidOperationException($"Failed to update Open XML element {openXmlElement.GetType()} " +
+    var convertedValue = OpenXmlConverter.ConvertFromOpenXml(openXmlElement, modelProperty.PropertyType);
+    if (convertedValue != null)
+    {
+      modelProperty.SetValue(modelObject, convertedValue);
+      return;
+    }
+    throw new InvalidOperationException($"Failed to update Open XML element {openXmlType} " +
                                         $"property {modelProperty.Name} from model element {modelObject.GetType()}");
   }
 
@@ -109,6 +136,23 @@ public static class OpenXmlComplexTypeConverter
       return null;
     var openXmlType = openXmlElement.GetType();
     var modelObject = Activator.CreateInstance(modelType)!;
+    LoadData(modelObject, openXmlElement, modelType);
+    return modelObject;
+  }
+
+  /// <summary>
+  /// Populates the properties of a model object with data from an Open XML element using the specified model type.
+  /// </summary>
+  /// <remarks>This method iterates over all public, writable properties of the specified model type and
+  /// attempts to load corresponding data from the Open XML element into the model object. Only properties that can be
+  /// written to are affected.</remarks>
+  /// <param name="modelObject">The instance of the model object whose properties are to be populated. Must not be null.</param>
+  /// <param name="openXmlElement">The Open XML element that provides the source data. Must not be null.</param>
+  /// <param name="modelType">The type that defines the properties to be populated on the model object. Must not be null and should match the
+  /// type of modelObject.</param>
+  public static void LoadData(object modelObject, object openXmlElement, Type modelType)
+  {
+    var openXmlType = openXmlElement.GetType();
     foreach (var modelProperty in modelType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
     {
       if (modelProperty.CanWrite)
@@ -116,8 +160,8 @@ public static class OpenXmlComplexTypeConverter
         LoadData(modelObject, modelProperty, openXmlElement, openXmlType);
       }
     }
-    return modelObject;
   }
+
   /// <summary>
   /// Loads data from an Open XML element into a model object's property.
   /// </summary>

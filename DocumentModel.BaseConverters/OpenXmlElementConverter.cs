@@ -8,55 +8,58 @@ public static class OpenXmlElementConverter
 {
 
   /// <summary>
-  /// Converts a model value to an Open XML element of the specified type.
+  /// Converts a model modelValue to an Open XML element of the specified type.
   /// </summary>
-  /// <param name="value">The model value to convert.</param>
-  /// <param name="openXmlElementType">The target Open XML element type.</param>
+  /// <param name="modelValue">The model modelValue to convert.</param>
+  /// <param name="openXmlType">The target Open XML element type.</param>
   /// <returns>The converted Open XML element instance.</returns>
   /// <exception cref="NotSupportedException">Thrown if the conversion is not supported for the specified type.</exception>
-  public static DX.OpenXmlElement ConvertToOpenXml(object? value, Type openXmlElementType)
+  public static DX.OpenXmlElement ConvertToOpenXml(object modelValue, Type openXmlType)
   {
-    if (openXmlElementType.Name == "Zoom")
-      Debug.Assert(true);
-    if (openXmlElementType.IsSubclassOf(typeof(DXWP.EmptyType)))
+    //if (openXmlType.Name == "HeadingPairs") Debug.Assert(true);
+    var modelType = modelValue.GetType().GetNotNullableType();
+    if (OpenXmlConverter.ConvertToOpenDelegates.TryGetValue(modelType, out var convertToOpenXml)
+        || OpenXmlConverter.ConvertToOpenDelegates.TryGetValue(openXmlType, out convertToOpenXml))
+      return (OpenXmlElement?)convertToOpenXml(modelValue, openXmlType)!;
+    if (openXmlType.IsSubclassOf(typeof(DXWP.EmptyType)))
     {
-      throw new NotSupportedException($"Conversion to {openXmlElementType.Name} is not supported.");
+      throw new NotSupportedException($"Conversion to {openXmlType.Name} is not supported.");
     }
-    if (openXmlElementType.IsSubclassOf(typeof(DXWP.OnOffType)))
+    if (openXmlType.IsSubclassOf(typeof(DXWP.OnOffType)))
     {
-      var onOffValue = value as bool?;
-      var onOffElement = (DXWP.OnOffType)Activator.CreateInstance(openXmlElementType)!;
+      var onOffValue = modelValue as bool?;
+      var onOffElement = (DXWP.OnOffType)Activator.CreateInstance(openXmlType)!;
       onOffElement.Val = onOffValue.HasValue ? new DX.OnOffValue(onOffValue.Value) : null;
       return onOffElement;
     }
-    if (openXmlElementType.IsSubclassOf(typeof(DXWP.OnOffOnlyType)))
+    if (openXmlType.IsSubclassOf(typeof(DXWP.OnOffOnlyType)))
     {
-      throw new NotSupportedException($"Conversion to {openXmlElementType.Name} is not supported.");
+      throw new NotSupportedException($"Conversion to {openXmlType.Name} is not supported.");
     }
-    if (openXmlElementType.IsSubclassOf(typeof(DXWP.StringType)))
+    if (openXmlType.IsSubclassOf(typeof(DXWP.StringType)))
     {
-      throw new NotSupportedException($"Conversion to {openXmlElementType.Name} is not supported.");
+      throw new NotSupportedException($"Conversion to {openXmlType.Name} is not supported.");
     }
-    if (openXmlElementType.IsSubclassOf(typeof(DXWP.String255Type)))
+    if (openXmlType.IsSubclassOf(typeof(DXWP.String255Type)))
     {
-      throw new NotSupportedException($"Conversion to {openXmlElementType.Name} is not supported.");
+      throw new NotSupportedException($"Conversion to {openXmlType.Name} is not supported.");
     }
-    if (openXmlElementType.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
+    if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
     {
-      var constructor = openXmlElementType.GetConstructor([typeof(string)]);
-      var instance = (DX.OpenXmlElement)constructor!.Invoke([ConvertToText(value)])!;
+      var constructor = openXmlType.GetConstructor([typeof(string)]);
+      var instance = (DX.OpenXmlElement)constructor!.Invoke([ConvertToText(modelValue)])!;
       return instance;
     }
-    if (openXmlElementType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
     {
-      var targetProperties = openXmlElementType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-      var constructor = openXmlElementType.GetConstructor([]);
+      var targetProperties = openXmlType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+      var constructor = openXmlType.GetConstructor([]);
       var instance = (DX.OpenXmlElement)constructor!.Invoke([])!;
       foreach (var prop in targetProperties)
       {
         if (prop.Name == "Val")
         {
-          var convertedValue = ConvertTypeToOpenXml(value, prop.PropertyType);
+          var convertedValue = ConvertTypeToOpenXml(modelValue, prop.PropertyType);
           if (convertedValue != null)
           {
             prop.SetValue(instance, convertedValue);
@@ -65,8 +68,8 @@ public static class OpenXmlElementConverter
         }
         else
         {
-          var sourceProperty = value!.GetType().GetProperty(prop.Name, BindingFlags.Public | BindingFlags.Instance);
-          var propValue = sourceProperty?.GetValue(value);
+          var sourceProperty = modelValue!.GetType().GetProperty(prop.Name, BindingFlags.Public | BindingFlags.Instance);
+          var propValue = sourceProperty?.GetValue(modelValue);
           var convertedValue = ConvertTypeToOpenXml(propValue, prop.PropertyType);
           if (convertedValue != null)
           {
@@ -76,7 +79,7 @@ public static class OpenXmlElementConverter
         }
       }
     }
-    throw new NotSupportedException($"Conversion to {openXmlElementType.Name} is not supported.");
+    throw new NotSupportedException($"Conversion to {openXmlType.Name} is not supported.");
   }
 
 

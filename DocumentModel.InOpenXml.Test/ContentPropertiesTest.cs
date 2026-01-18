@@ -38,7 +38,6 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- XML Serialization ---");
       var testData = CreateSampleContentProperties(true);
-      try
       {
         var xmlSerializer = new XmlSerializer(typeof(ContentProperties));
         string xmlString;
@@ -68,11 +67,6 @@ namespace DocumentModel.InOpenXml.Test
         Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
         return true;
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"✗ XML Serialization test FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
-        return false;
-      }
     }
 
     /// <summary>
@@ -83,7 +77,6 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- JSON Serialization ---");
       var testData = CreateSampleContentProperties(true);
-      try
       {
         var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
         string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
@@ -103,11 +96,6 @@ namespace DocumentModel.InOpenXml.Test
         Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
         return true;
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"✗ JSON Serialization test FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
-        return false;
-      }
     }
 
     /// <summary>
@@ -117,7 +105,6 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestEdgeCases()
     {
       Console.WriteLine("--- Edge Cases ---");
-      try
       {
         var empty = new ContentProperties();
         string xml = SerializeToXml(empty);
@@ -137,11 +124,6 @@ namespace DocumentModel.InOpenXml.Test
         Console.WriteLine("✓ Edge case tests passed\n");
         return true;
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"✗ Edge case test FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
-        return false;
-      }
     }
 
 
@@ -155,7 +137,6 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestNewFromDocument()
     {
       Console.WriteLine("--- New document content properties ---");
-      try
       {
         ContentProperties testData;
         using (var document = Document.CreateDocument("temp.docx"))
@@ -175,11 +156,6 @@ namespace DocumentModel.InOpenXml.Test
         Console.WriteLine("✓ New document content properties test passed\n");
         return true;
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"✗ New document content properties FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
-        return false;
-      }
     }
 
     /// <summary>
@@ -192,7 +168,6 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestStoreInDocument()
     {
       Console.WriteLine("--- Store sample content properties in new document---");
-      try
       {
         ContentProperties testData = CreateSampleContentProperties(true);
         using (var document = Document.CreateDocument("temp.docx"))
@@ -225,11 +200,6 @@ namespace DocumentModel.InOpenXml.Test
         Console.WriteLine("✓ Store sample content properties test passed\n");
         return true;
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"✗ Store sample content properties FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
-        return false;
-      }
     }
 
 
@@ -243,7 +213,6 @@ namespace DocumentModel.InOpenXml.Test
     static bool TestUpdateInDocument()
     {
       Console.WriteLine("--- Update document content properties ---");
-      try
       {
         var testData = CreateSampleContentProperties(false);
         using (var document = Document.CreateDocument("temp.docx"))
@@ -278,11 +247,6 @@ namespace DocumentModel.InOpenXml.Test
 
         Console.WriteLine("✓ Updated document content properties test passed\n");
         return true;
-      }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"✗ Updated document content properties FAILED: {ex.Message}\n{ex.GetInternalMessages()}");
-        return false;
       }
     }
 

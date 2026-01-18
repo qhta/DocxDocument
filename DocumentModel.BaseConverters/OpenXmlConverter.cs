@@ -5,6 +5,9 @@
 /// </summary>
 public static class OpenXmlConverter
 {
+  public static readonly Dictionary<Type, ConvertFromOpenXml> ConvertFromOpenDelegates = new();
+  public static readonly Dictionary<Type, ConvertToOpenXml> ConvertToOpenDelegates = new();
+
   /// <summary>
   /// Converts a model value to the specified Open XML type.
   /// </summary>
@@ -15,6 +18,10 @@ public static class OpenXmlConverter
   {
     if (modelValue == null)
       return null;
+    var modelType = modelValue.GetType().GetNotNullableType();
+    if (ConvertToOpenDelegates.TryGetValue(modelType, out var convertToOpenXml)
+        || ConvertToOpenDelegates.TryGetValue(openXmlType, out convertToOpenXml))
+      return convertToOpenXml(modelValue, openXmlType);
     if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlElement)))
       return OpenXmlElementConverter.ConvertToOpenXml(modelValue, openXmlType);
     if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlSimpleType)))
@@ -32,6 +39,17 @@ public static class OpenXmlConverter
   {
     if (openXmlValue == null)
       return null;
+    modelType = modelType.GetNotNullableType();
+    var openXmlType = openXmlValue.GetType();
+    if (ConvertFromOpenDelegates.TryGetValue(modelType, out var convertFromOpenXml)
+        || ConvertFromOpenDelegates.TryGetValue(openXmlType, out convertFromOpenXml))
+      return convertFromOpenXml(openXmlValue, modelType);
+
+    if (modelType.IsAssignableFrom(openXmlValue.GetType()!))
+    {
+      return openXmlValue;
+    }
+
     if (openXmlValue is DX.OpenXmlElement openXmlElement)
       return OpenXmlElementConverter.ConvertFromOpenXml(openXmlElement, modelType);
     if (openXmlValue is DX.OpenXmlSimpleType openXmlSimpleType)
