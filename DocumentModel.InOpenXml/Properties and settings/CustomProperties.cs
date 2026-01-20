@@ -5,13 +5,8 @@
 /// </summary>
 [XmlRoot("CustomProperties")]
 [OpenXmlType(typeof(DXCP.Properties))]
-public class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Properties>
+public sealed class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Properties>
 {
-
-  /// <summary>
-  /// Gets the underlying Document instance associated with this object.
-  /// </summary>
-  internal DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
   /// <summary>
   /// Default constructor.
@@ -35,9 +30,9 @@ public class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Prop
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
   /// </summary>
   /// <param name="wordprocessingDocument">Document to attach to.</param>
-  public void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
+  public override void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = wordprocessingDocument;
+    base.AttachAndLoad(wordprocessingDocument);
     var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
     SetOpenXmlElement(customFileProperties);
     LoadData(customFileProperties);
@@ -47,24 +42,13 @@ public class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Prop
   /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
   /// </summary>
   /// <param name="wordprocessingDocument">Document to attach to.</param>
-  public void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)
+  public override void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = wordprocessingDocument;
+    base.AttachAndUpdate(wordprocessingDocument);
     var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
     SetOpenXmlElement(customFileProperties);
     UpdateData(customFileProperties);
   }
-
-  /// <summary>
-  /// Detach this instance from the attached document.
-  /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
-  /// </summary>
-  public void Detach()
-  {
-    WordprocessingDocument = null;
-    SetOpenXmlElement(null);
-  }
-
 
   /// <summary>
   /// Loads data from customFileProperties to this instance.

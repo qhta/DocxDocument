@@ -78,8 +78,8 @@ public sealed partial class CustomProperty
   /// <summary>
   /// Value of the custom document property.
   /// </summary>
-  [OpenXmlConvertTo(nameof(SetValueInOpenXml))]
-  [OpenXmlConvertFrom(nameof(GetValueInOpenXml))]
+  [OpenXmlUpdateData(nameof(UpdateValueInOpenXml))]
+  [OpenXmlLoadData(nameof(LoadValueFromOpenXml))]
   public Variant? Value
   {
     get
@@ -115,25 +115,39 @@ public sealed partial class CustomProperty
   /// Needed to set the value in OpenXml element.
   /// </summary>
   /// <param name="openXmlElement">OpenXml element to set the value in.</param>
-  public void SetValueInOpenXml(DX.OpenXmlElement openXmlElement)
+  public void UpdateValueInOpenXml(DX.OpenXmlElement openXmlElement)
   {
     openXmlElement.RemoveAllChildren();
     openXmlElement.AppendChild(Value.AsVTVariant());
   }
 
   /// <summary>
-  /// Needed to get the value from OpenXml element.
+  /// Needed to get the value in OpenXml element.
   /// </summary>
-  /// <param name="openXmlElement">OpenXml element to get the value from.</param>
-  public Variant? GetValueInOpenXml(DX.OpenXmlElement openXmlElement)
+  /// <param name="openXmlElement">OpenXml element to set the value in.</param>
+  public void LoadValueFromOpenXml(DX.OpenXmlElement openXmlElement)
   {
     var firstChild = openXmlElement.FirstChild;
-    if (firstChild == null)
-      return null;
-    var variant = VariantConverter.GetVariant(firstChild);
-    _Value = variant;
-    return variant;
+    if (firstChild != null)
+    {
+      var variant = VariantConverter.GetVariant(firstChild);
+      _Value = variant;
+    }
   }
+
+  ///// <summary>
+  ///// Needed to get the value from OpenXml element.
+  ///// </summary>
+  ///// <param name="openXmlElement">OpenXml element to get the value from.</param>
+  //public Variant? GetValueInOpenXml(DX.OpenXmlElement openXmlElement)
+  //{
+  //  var firstChild = openXmlElement.FirstChild;
+  //  if (firstChild == null)
+  //    return null;
+  //  var variant = VariantConverter.GetVariant(firstChild);
+  //  _Value = variant;
+  //  return variant;
+  //}
 
   /// <summary>
   /// Type of the custom document property.

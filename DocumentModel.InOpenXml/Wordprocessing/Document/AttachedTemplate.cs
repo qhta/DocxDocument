@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the relationship for an attached document template in a WordprocessingML document.
 /// </summary>
-[OpenXmlUpdateDataAttribute(nameof(UpdateData))]
+//[OpenXmlUpdateData(nameof(UpdateData))]
 public class AttachedTemplate : ExternalFile<DXW.AttachedTemplate>
 {
   /// <summary>
@@ -21,12 +21,4 @@ public class AttachedTemplate : ExternalFile<DXW.AttachedTemplate>
   {
   }
 
-  /// <summary>
-  /// Updates the current object's data using the specified Open XML element.
-  /// </summary>
-  /// <param name="openXmlElement">The Open XML element that provides the data to update the current object. Cannot be null.</param>
-  public override void UpdateData(object openXmlElement)
-  {
-    base.UpdateData(openXmlElement);
-  }
 }
