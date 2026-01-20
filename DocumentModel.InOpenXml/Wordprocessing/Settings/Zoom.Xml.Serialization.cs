@@ -20,15 +20,16 @@ public partial class Zoom : IXmlSerializable
   public void ReadXml(XmlReader reader)
   {
     var content = reader.ReadElementContentAsString();
-    if (Enum.TryParse(typeof(PresetZoomKind), content, out var kind))
-    {
-      Kind = (PresetZoomKind)kind!;
-      Percent = null;
-    }
-    else if (int.TryParse(content, out var percent))
+    if (int.TryParse(content, out var percent))
     {
       Percent = percent;
       Kind = null;
     }
+    else if (Enum.TryParse(typeof(PresetZoomKind), content, out var kind))
+    {
+      Kind = (PresetZoomKind)kind!;
+      Percent = null;
+    }
+
   }
 }

@@ -11,12 +11,27 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     RegisterOpenXmlConversion();
   }
 
+  /// <summary>
+  /// Registers conversion delegates for handling Guid values in OpenXml serialization and deserialization operations.
+  /// </summary>
+  /// <remarks>Call this method before performing OpenXml conversions involving Guid types to ensure correct
+  /// serialization and deserialization. This method is typically invoked during application initialization and only
+  /// needs to be called once per process.</remarks>
   public static void RegisterOpenXmlConversion()
   {
     OpenXmlConverter.ConvertFromOpenDelegates[typeof(Guid)] = ConvertGuidFromOpenXml;
     OpenXmlConverter.ConvertToOpenDelegates[typeof(Guid)] = ConvertToGuidOpenXml;
   }
 
+  /// <summary>
+  /// Converts an OpenXml element representing a GUID value to a .NET Guid object if possible.
+  /// </summary>
+  /// <remarks>If the OpenXml element does not contain a valid GUID string or the model type is not Guid, the
+  /// method returns null. This method is intended for scenarios where OpenXml elements are mapped to strongly typed
+  /// .NET models.</remarks>
+  /// <param name="openXmlElement">The OpenXml element to convert. Should be a DX.StringValue containing a valid GUID string, or null.</param>
+  /// <param name="modelType">The target model type. Must be typeof(Guid) to perform the conversion.</param>
+  /// <returns>A Guid object if the OpenXml element contains a valid GUID string and the model type is Guid; otherwise, null.</returns>
   private static object? ConvertGuidFromOpenXml(object? openXmlElement, Type modelType)
   {
     if (modelType == typeof(Guid))
@@ -27,6 +42,18 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       }
     return null;
   }
+
+  /// <summary>
+  /// Converts a <see cref="Guid"/> object to an OpenXml-compatible value if the specified type is supported.
+  /// </summary>
+  /// <remarks>The method returns <see langword="null"/> if the input object is not a <see cref="Guid"/> or if
+  /// the specified OpenXml type is not supported. The string representation uses the "B" format and is converted to
+  /// uppercase.</remarks>
+  /// <param name="modelObject">The object to convert. Must be a <see cref="Guid"/> instance to perform the conversion; otherwise, no conversion
+  /// is performed.</param>
+  /// <param name="openXmlType">The target OpenXml type to convert to. Currently, only <see cref="DX.StringValue"/> is supported.</param>
+  /// <returns>An instance of <see cref="DX.StringValue"/> containing the uppercase, bracketed string representation of the <see
+  /// cref="Guid"/> if conversion is successful; otherwise, <see langword="null"/>.</returns>
   private static object? ConvertToGuidOpenXml(object? modelObject, Type openXmlType)
   {
     if (modelObject is Guid guid)
@@ -58,8 +85,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <param name="propertyName">The name of the property that has changed. Cannot be null or empty.</param>
   public void NotifyPropertyChanged(string propertyName)
   {
-    if (propertyName == "Application")
-      Debug.Assert(true);
     UpdatePropertyData(propertyName);
     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
   }
@@ -80,19 +105,24 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// </summary>
   /// <remarks>This method is typically used in property setters to implement the INotifyPropertyChanged
   /// pattern. The property change notification is only raised if the field value actually changes.</remarks>
-  /// <param name="field">A reference to the field to be updated. The field will be set to <paramref name="newValue"/> if its current value
-  /// is not equal to <paramref name="newValue"/>.</param>
-  /// <param name="newValue">The new value to assign to the field. If the value differs from the current field value, the field is updated and
+  /// <param name="field">A reference to the field to be updated. The field will be set to <paramref name="value"/> if its current value
+  /// is not equal to <paramref name="value"/>.</param>
+  /// <param name="value">The new value to assign to the field. If the value differs from the current field value, the field is updated and
   /// a property change notification is triggered.</param>
   /// <param name="propertyName">The name of the property associated with the field. Used to identify which property has changed when raising the
   /// notification.</param>
-  protected void UpdateField<FieldType>(ref FieldType field, FieldType? newValue, string propertyName)
+  protected void UpdateField<FieldType>(ref FieldType field, FieldType? value, string propertyName)
   {
-    if (newValue is string stringValue && stringValue.Length == 0)
-      newValue = default;
-    if (!Equals(field, newValue))
+    if (value is string stringValue && stringValue.Length == 0)
+      value = default;
+    if (!Equals(field, value))
     {
-      field = newValue!;
+      if (field is IWordprocessingDocumentAware oldValue)
+        oldValue.Detach();
+      if (value is IWordprocessingDocumentAware newValue 
+          && this is IWordprocessingDocumentAware thisElement && thisElement.WordprocessingDocument != null)
+        newValue.AttachAndUpdate(thisElement.WordprocessingDocument);
+      field = value!;
       NotifyPropertyChanged(propertyName);
     }
   }
@@ -138,60 +168,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     OpenXmlComplexTypeConverter.LoadData(this, openXmlElement, this.GetType());
   }
 
-  ///// <summary>
-  ///// Loads data for the specified property from the given Open XML element.
-  ///// </summary>
-  ///// <param name="modelProperty">The model property to load data into.</param>
-  ///// <param name="openXmlElement">The Open XML element containing the data.</param>
-  ///// <param name="openXmlType">The type of the Open XML element.</param>
-  ///// <remarks>Property marked with [NotMapped] attribute will be not be loaded.</remarks>
-  //public virtual void LoadData(PropertyInfo modelProperty, object openXmlElement, Type openXmlType)
-  //{
-  //  if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
-  //    return;
-  //  var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelProperty(modelProperty, openXmlType);
-  //  if (openXmlProperty is not null && openXmlProperty.CanRead)
-  //  {
-  //    var value = openXmlProperty.GetValue(openXmlElement);
-  //    if (value != null && !modelProperty.PropertyType.IsInstanceOfType(value))
-  //    {
-  //      var modePropertyType = modelProperty.PropertyType.GetNotNullableType();
-  //      value = OpenXmlComplexTypeConverter.ConvertValue(value, modelProperty.PropertyType.GetNotNullableType());
-  //      modelProperty.SetValue(this, value);
-  //      return;
-  //    }
-
-  //  }
-  //  var getMappedMethod = OpenXmlPropertyMap.GetGetMethod(modelProperty, openXmlType);
-  //  if (getMappedMethod != null)
-  //  {
-  //    var targetParameters = getMappedMethod.GetParameters();
-  //    bool valueRetrieved = false;
-  //    object? value = null;
-  //    if (getMappedMethod.DeclaringType == openXmlElement.GetType())
-  //    {
-  //      value = getMappedMethod.Invoke(openXmlElement, []);
-  //      valueRetrieved = true;
-
-  //    }
-  //    else if (getMappedMethod.DeclaringType == this.GetType() || this.GetType().IsSubclassOf(getMappedMethod.DeclaringType!))
-  //    {
-  //      value = getMappedMethod.Invoke(this, []);
-  //      valueRetrieved = true;
-  //    }
-
-  //    if (valueRetrieved)
-  //    {
-  //      if (value != null && !modelProperty.PropertyType.IsInstanceOfType(value))
-  //      {
-  //        value = Convert.ChangeType(value, modelProperty.PropertyType);
-  //      }
-  //      modelProperty.SetValue(this, value);
-  //    }
-  //  }
-  //}
-
-
   /// <summary>
   /// Updates the specified Open XML element with the current values of this model's public properties.
   /// </summary>
@@ -234,94 +210,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <returns>An object representing the updatable Open XML element. The specific type and structure depend on the
   /// implementation in the derived class.</returns>
   protected virtual object? GetUpdatableOpenXmlElement() => null;
-
-  ///// <summary>
-  ///// Updates the value of the specified property on the current model and synchronizes it with the corresponding Open
-  ///// XML element.
-  ///// </summary>
-  ///// <remarks>If the specified property is readable, its value is propagated to the corresponding property on
-  ///// the Open XML element. This method does not update write-only properties.</remarks>
-  ///// <param name="propertyName">The name of the property to update and synchronize. Must refer to a public instance property of the current model.</param>
-  ///// <param name="openXmlElement">The Open XML element associated with the property. This parameter is used to identify the target element for
-  ///// synchronization.</param>
-  ///// <exception cref="ArgumentException">Thrown if <paramref name="propertyName"/> does not correspond to a public instance property on the current model
-  ///// type.</exception>
-  //public void UpdateData(string propertyName, object openXmlElement)
-  //{
-  //  var currentType = GetType();
-  //  var openXmlType = OpenXmlTypeMap.GetOpenXmlTypeForModelElementType(currentType) ?? openXmlElement.GetType();
-  //  var modelProperty = currentType.GetProperty(propertyName, BindingFlags.Public | BindingFlags.Instance);
-  //  if (modelProperty is not null && modelProperty.CanRead)
-  //  {
-  //    UpdateData(modelProperty, openXmlElement, openXmlType);
-  //  }
-  //}
-
-  ///// <summary>
-  ///// Updates the specified Open XML element's property with the value from the given model property.
-  ///// </summary>
-  ///// <param name="modelProperty">The model property to update from.</param>
-  ///// <param name="openXmlElement">The Open XML element to update.</param>
-  ///// <param name="openXmlType">The Open XML type of the element.</param>
-  ///// <remarks>Property marked with [NotMapped] attribute will be not be updated.</remarks>
-  //protected void UpdateData(PropertyInfo modelProperty, object openXmlElement, Type openXmlType)
-  //{
-  //  if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
-  //    return;
-  //  var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelProperty(modelProperty, openXmlType);
-  //  if (openXmlProperty is not null && openXmlProperty.CanWrite)
-  //  {
-  //    var value = modelProperty.GetValue(this);
-  //    if (value != null && !openXmlProperty.PropertyType.IsInstanceOfType(value))
-  //    {
-  //      value = ConvertToOpenXml(value, openXmlProperty.PropertyType);
-  //    }
-  //    openXmlProperty.SetValue(openXmlElement, value);
-  //    return;
-  //  }
-  //  var setMappedMethod = OpenXmlPropertyMap.GetSetMethod(modelProperty, openXmlType);
-  //  if (setMappedMethod != null)
-  //  {
-  //    var targetParameters = setMappedMethod.GetParameters();
-  //    if (targetParameters.Length == 1)
-  //    {
-  //      var value = modelProperty.GetValue(this);
-  //      if (value != null && !targetParameters[0].ParameterType.IsInstanceOfType(value))
-  //      {
-  //        value = Convert.ChangeType(value, targetParameters[0].ParameterType);
-  //      }
-  //      if (setMappedMethod.DeclaringType == openXmlElement.GetType())
-  //      {
-  //        setMappedMethod.Invoke(openXmlElement, [value]);
-  //        return;
-  //      }
-  //      else if (setMappedMethod.DeclaringType == this.GetType() || this.GetType().IsSubclassOf(setMappedMethod.DeclaringType!))
-  //      {
-  //        setMappedMethod.Invoke(this, [value]);
-  //        return;
-  //      }
-  //    }
-  //  }
-  //  var openXmlElementAttribute = modelProperty.GetCustomAttribute<OpenXmlElementAttribute>();
-  //  if (openXmlElementAttribute != null)
-  //  {
-  //    return;
-  //  }
-  //  throw new InvalidOperationException($"Failed to update Open XML element {openXmlElement.GetType()} property {modelProperty.Name} from model element {this.GetType()}");
-  //}
-
-  /// <summary>
-  /// Changes the type of the given value to the specified OpenXml type.
-  /// </summary>
-  /// <param name="value">The value to convert. It should be of model type</param>
-  /// <param name="targetType">The target type to convert to. It should be an OpenXml type</param>
-  /// <returns>The converted value, or null if the conversion is not supported.</returns>
-  public virtual object? ConvertToOpenXml(object? value, Type targetType)
-  {
-    if (value == null)
-      return null;
-    return OpenXmlConverter.ConvertToOpenXml(value, targetType);
-  }
 
 
 }

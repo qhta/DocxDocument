@@ -78,8 +78,8 @@ public sealed partial class CustomProperty
   /// <summary>
   /// Value of the custom document property.
   /// </summary>
-  [ConvertToOpenXml(nameof(SetValueInOpenXml))]
-  [ConvertFromOpenXml(nameof(GetValueInOpenXml))]
+  [OpenXmlConvertTo(nameof(SetValueInOpenXml))]
+  [OpenXmlConvertFrom(nameof(GetValueInOpenXml))]
   public Variant? Value
   {
     get

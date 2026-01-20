@@ -7,5 +7,8 @@ public interface ICollectionItem
   /// <summary>
   /// Collection that contains this item.
   /// </summary>
-  public IElementCollection<CollectionItem>? Collection { get; set; }
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public object? Collection { get; set; }
 }

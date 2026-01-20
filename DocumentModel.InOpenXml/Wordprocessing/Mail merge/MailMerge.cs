@@ -34,12 +34,12 @@ public class MailMerge: ModelElement<DXW.MailMerge>
   /// <summary>
   /// File path reference to the data source.
   /// </summary>
-  public RelationshipType? DataSourceReference { get; set; }
+  public DataSourceReference? DataSourceReference { get; set; }
   
   /// <summary>
   /// File path reference to the header definition file.
   /// </summary>
-  public RelationshipType? HeaderSource { get; set; }
+  public HeaderSource? HeaderSource { get; set; }
   
   /// <summary>
   /// Indicates whether blank lines should be removed from merged documents.

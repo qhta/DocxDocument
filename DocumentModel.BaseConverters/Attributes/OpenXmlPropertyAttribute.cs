@@ -13,5 +13,5 @@ public class OpenXmlPropertyAttribute(string propertyName) : Attribute
   /// <summary>
   /// The Open XML property name associated with the decorated member.
   /// </summary>
-  public string PropertyName { get; } = propertyName;
+  public string PropertyName { [DebuggerStepThrough] get; } = propertyName;
 }

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Runtime.Remoting;
+using DocumentModel.CustomXml;
 using DocumentModel.Wordprocessing;
 
 using Qhta.TypeUtils;
@@ -49,6 +51,8 @@ public static class TestHelper
   /// </summary>
   private static bool CompareTestData1<T>(Type comparedType, T obj1, T obj2, ref string? propName)
   {
+    if (propName == "SchemaLibrary") Debug.Assert(true);
+
     if (obj1 == null && obj2 == null) return true;
     if (obj1 == null || obj2 == null) return false;
     comparedType = comparedType.GetNotNullableType();
@@ -56,12 +60,17 @@ public static class TestHelper
     {
       return object.Equals(obj1, obj2);
     }
+    if (comparedType.Implements(typeof(IEquatable<T>)))
+    {
+      return Object.Equals(obj1, obj2);
+    }
     bool result;
     foreach (var property in comparedType.GetProperties())
     {
-      if (property.CanWrite && property.GetIndexParameters().Length == 0)
+      if (propName=="SchemaLibrary") Debug.Assert(true);
+      if (property.CanWrite && property.GetIndexParameters().Length == 0 && !property.IsDefined(typeof(NotMappedAttribute), true))
       {
-        propName = property.Name;
+        propName = property.DeclaringType?.Name +"."+ property.Name;
         var obj1Value = property.GetValue(obj1);
         var obj2Value = property.GetValue(obj2);
         //if (propName == "Value")

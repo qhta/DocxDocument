@@ -324,14 +324,6 @@
             </summary>
             <returns>A populated <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> object.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.CompareDocumentSettings(DocumentModel.Wordprocessing.DocumentSettings,DocumentModel.Wordprocessing.DocumentSettings)">
-            <summary>
-            Compares two <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instances for equality by checking a representative subset of properties.
-            </summary>
-            <param name="a">The first <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance.</param>
-            <param name="b">The second <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance.</param>
-            <returns>True if the selected properties are equal; otherwise, false.</returns>
-        </member>
         <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.SerializeToXml(DocumentModel.Wordprocessing.DocumentSettings)">
             <summary>
             Serializes a <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance to XML.

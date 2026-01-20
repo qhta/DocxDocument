@@ -21,26 +21,26 @@ public static class OpenXmlElementConverter
     if (OpenXmlConverter.ConvertToOpenDelegates.TryGetValue(modelType, out var convertToOpenXml)
         || OpenXmlConverter.ConvertToOpenDelegates.TryGetValue(openXmlType, out convertToOpenXml))
       return (OpenXmlElement?)convertToOpenXml(modelValue, openXmlType)!;
-    if (openXmlType.IsSubclassOf(typeof(DXWP.EmptyType)))
+    if (openXmlType.IsSubclassOf(typeof(DXW.EmptyType)))
     {
       throw new NotSupportedException($"Conversion to {openXmlType.Name} is not supported.");
     }
-    if (openXmlType.IsSubclassOf(typeof(DXWP.OnOffType)))
+    if (openXmlType.IsSubclassOf(typeof(DXW.OnOffType)))
     {
       var onOffValue = modelValue as bool?;
-      var onOffElement = (DXWP.OnOffType)Activator.CreateInstance(openXmlType)!;
+      var onOffElement = (DXW.OnOffType)Activator.CreateInstance(openXmlType)!;
       onOffElement.Val = onOffValue.HasValue ? new DX.OnOffValue(onOffValue.Value) : null;
       return onOffElement;
     }
-    if (openXmlType.IsSubclassOf(typeof(DXWP.OnOffOnlyType)))
+    if (openXmlType.IsSubclassOf(typeof(DXW.OnOffOnlyType)))
     {
       throw new NotSupportedException($"Conversion to {openXmlType.Name} is not supported.");
     }
-    if (openXmlType.IsSubclassOf(typeof(DXWP.StringType)))
+    if (openXmlType.IsSubclassOf(typeof(DXW.StringType)))
     {
       throw new NotSupportedException($"Conversion to {openXmlType.Name} is not supported.");
     }
-    if (openXmlType.IsSubclassOf(typeof(DXWP.String255Type)))
+    if (openXmlType.IsSubclassOf(typeof(DXW.String255Type)))
     {
       throw new NotSupportedException($"Conversion to {openXmlType.Name} is not supported.");
     }
@@ -91,15 +91,15 @@ public static class OpenXmlElementConverter
   /// <exception cref="NotSupportedException">Thrown if the element type is not supported.</exception>
   public static object? GetObjectByOpenXmlType(this DX.OpenXmlElement element)
   {
-    if (element is DXWP.EmptyType)
+    if (element is DXW.EmptyType)
       return true;
-    if (element is DXWP.OnOffType onOffTypeElement)
+    if (element is DXW.OnOffType onOffTypeElement)
       return onOffTypeElement.Val?.GetValue();
-    if (element is DXWP.OnOffOnlyType onOffOnlyTypeElement)
+    if (element is DXW.OnOffOnlyType onOffOnlyTypeElement)
       return onOffOnlyTypeElement.Val?.GetValue();
-    if (element is DXWP.StringType stringTypeElement)
+    if (element is DXW.StringType stringTypeElement)
       return stringTypeElement.Val?.Value;
-    if (element is DXWP.String255Type string255TypeElement)
+    if (element is DXW.String255Type string255TypeElement)
       return string255TypeElement.Val?.Value;
     // Add more type conversions as needed
 
@@ -129,15 +129,15 @@ public static class OpenXmlElementConverter
   {
     if (element.GetType().Name == "Zoom")
       Debug.Assert(true);
-    if (element is DXWP.EmptyType)
+    if (element is DXW.EmptyType)
       return true;
-    if (element is DXWP.OnOffType onOffTypeElement)
+    if (element is DXW.OnOffType onOffTypeElement)
       return onOffTypeElement.Val?.GetValue();
-    if (element is DXWP.OnOffOnlyType onOffOnlyTypeElement)
+    if (element is DXW.OnOffOnlyType onOffOnlyTypeElement)
       return onOffOnlyTypeElement.Val?.GetValue();
-    if (element is DXWP.StringType stringTypeElement)
+    if (element is DXW.StringType stringTypeElement)
       return stringTypeElement.Val?.Value;
-    if (element is DXWP.String255Type string255TypeElement)
+    if (element is DXW.String255Type string255TypeElement)
       return string255TypeElement.Val?.Value;
     if (element is DX.OpenXmlLeafTextElement leafTextElement)
     {

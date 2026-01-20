@@ -5,14 +5,18 @@ namespace DocumentModel;
 /// and Open Packaging Conventions
 /// </summary>
 [OpenXmlType(typeof(PackageProperties))]
-public partial class CoreProperties : ModelElement
+public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
 {
   /// <summary>
-  /// Gets the underlying WordprocessingDocument instance associated with this object.
+  /// Gets the underlying Document instance associated with this object.
   /// </summary>
-  internal DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public DXPack.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
   internal PackageProperties? PackageProperties { get; private set; }
+
 
   /// <summary>
   /// Default constructor.
@@ -27,7 +31,8 @@ public partial class CoreProperties : ModelElement
   /// <param name="document">Wordprocessing document model</param>
   public CoreProperties(Wordprocessing.Document document)
   {
-    AttachAndLoad(document);
+    if (document.WordprocessingDocument != null)
+      AttachAndLoad(document.WordprocessingDocument);
   }
 
   /// <summary>
@@ -41,18 +46,42 @@ public partial class CoreProperties : ModelElement
   }
 
   /// <summary>
-  /// Attach this instance to the specified document. Data is loaded from the document's PackageProperties.
+  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
   /// </summary>
-  /// <param name="document">Document to attach to.</param>
-  public void AttachAndLoad(Wordprocessing.Document document)
+  /// <param name="wordprocessingDocument">Document to attach to.</param>
+  public void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = document.WordprocessingDocument;
-    var packageProperties = document.WordprocessingDocument?.GetPackageProperties();
-    if (packageProperties != null)
+    WordprocessingDocument = wordprocessingDocument;
+    var packageProperties = wordprocessingDocument.GetPackageProperties();
+    PackageProperties = packageProperties;
+    LoadData(packageProperties);
+  }
+
+
+  /// <summary>
+  /// Attach this instance to the specified wordprocessingDocument. Data is updated to the wordprocessingDocument's PackageProperties.
+  /// </summary>
+  /// <param name="wordprocessingDocument">Document to attach to.</param>
+  public void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+    var packageProperties = wordprocessingDocument.GetPackageProperties();
+    PackageProperties = packageProperties;
+    UpdateData(packageProperties);
+  }
+
+  /// <summary>
+  /// Detach this instance from the attached document.
+  /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
+  /// </summary>
+  public void Detach()
+  {
+    if (PackageProperties is IDisposable packageFeature)
     {
-      PackageProperties = packageProperties;
-      LoadData(packageProperties);
+      packageFeature.Dispose();
     }
+    WordprocessingDocument = null;
+    PackageProperties = null;
   }
 
   /// <summary>
@@ -145,18 +174,5 @@ public partial class CoreProperties : ModelElement
       UpdateData(updatableElement);
   }
 
-
-  /// <summary>
-  /// Detach this instance from the specified document.
-  /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
-  /// </summary>
-  /// <param name="document">Document to detach from. Must be the same as the one attached.</param>
-  public void Detach(Wordprocessing.Document document)
-  {
-    if (WordprocessingDocument != document.WordprocessingDocument)
-      return;
-    WordprocessingDocument = null;
-    PackageProperties = null;
-  }
 
 }

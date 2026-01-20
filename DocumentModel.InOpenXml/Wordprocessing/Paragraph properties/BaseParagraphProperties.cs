@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
   /// Contains common properties for controlling paragraph formatting, layout, alignment, borders, spacing, indentation, and advanced typography features.
   /// </summary>
   public abstract class BaseParagraphProperties: ModelElement
-    //<OpenXmlType> where OpenXmlType : DX.OpenXmlElement
+    //<OpenXmlItemType> where OpenXmlItemType : DX.OpenXmlElement
 {
     
     /// <summary>

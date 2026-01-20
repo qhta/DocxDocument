@@ -10,14 +10,14 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   private OpenXmlType? _openXmlElement;
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="ModelElement{OpenXmlType}"/> class.
+  /// Initializes a new instance of the <see cref="ModelElement{OpenXmlItemType}"/> class.
   /// </summary>
   protected ModelElement()
   {
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="ModelElement{OpenXmlType}"/> class with the specified OpenXml element.
+  /// Initializes a new instance of the <see cref="ModelElement{OpenXmlItemType}"/> class with the specified OpenXml element.
   /// </summary>
   /// <param name="openXmlElement">The OpenXml element to wrap.</param>
   protected ModelElement(OpenXmlType? openXmlElement)
@@ -55,5 +55,5 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public IElementCollection<CollectionItem>? Collection { get; set; }
+  public object? Collection { get; set; }
 }

@@ -16,7 +16,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   protected bool isLoading;
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="ModelElement{OpenXmlType}"/> class.
+  /// Initializes a new instance of the <see cref="ModelElement{OpenXmlItemType}"/> class.
   /// </summary>
   protected ModelElementCollection()
   {
@@ -32,7 +32,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="ModelElement{OpenXmlType}"/> class with the specified OpenXml element.
+  /// Initializes a new instance of the <see cref="ModelElement{OpenXmlItemType}"/> class with the specified OpenXml element.
   /// </summary>
   /// <param name="openXmlCollection">The OpenXml element to wrap.</param>
   protected ModelElementCollection(OpenXmlCollectionType? openXmlCollection): this()

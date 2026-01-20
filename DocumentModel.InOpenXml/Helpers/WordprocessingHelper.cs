@@ -9,7 +9,7 @@ public static class WordprocessingHelper
   /// Creates a new Wordprocessing document at the specified file path.
   /// </summary>
   /// <param name="filename">The file path for the new document.</param>
-  /// <returns>A new <c>WordprocessingDocument</c> instance.</returns>
+  /// <returns>A new <c>Document</c> instance.</returns>
   public static DXPP.WordprocessingDocument CreateWordDocument(string filename)
   {
     // Create a document by supplying the filename. 
@@ -28,8 +28,8 @@ public static class WordprocessingHelper
   /// </summary>
   /// <param name="filename">The file path of the document to open.</param>
   /// <param name="editable">Specifies whether the document should be opened in editable mode.</param>
-  /// <returns>An instance of the <c>WordprocessingDocument</c> class.</returns>
-  public static DXPP.WordprocessingDocument OpenWordDocument(string filename, bool editable =true)
+  /// <returns>An instance of the <c>Document</c> class.</returns>
+  public static DXPP.WordprocessingDocument OpenWordDocument(string filename, bool editable = true)
   {
     // Create a document by supplying the filename. 
     var wordDocument = DXPP.WordprocessingDocument.Open(filename, editable);
@@ -49,7 +49,7 @@ public static class WordprocessingHelper
   /// <param name="documentFilename">The output file path for the new document.</param>
   public static void CreateFromTemplate(string templateFilename, string documentFilename)
   {
-    // WordprocessingDocument.Create will overwrite an existing file. 
+    // Document.Create will overwrite an existing file. 
     // If we are using Open we have to delete the file first 
     // if we want to copy that behavior.
     if (File.Exists(documentFilename))
@@ -78,7 +78,7 @@ public static class WordprocessingHelper
   /// <summary>
   /// Ensures that the Wordprocessing document is initialized with required parts and properties.
   /// </summary>
-  /// <param name="wordDocument">The WordprocessingDocument to initialize.</param>
+  /// <param name="wordDocument">The Document to initialize.</param>
   public static void EnsureDocumentIsInitialized(this DXPP.WordprocessingDocument wordDocument)
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
@@ -88,11 +88,27 @@ public static class WordprocessingHelper
     var body = document.Body ?? (document.Body = document.AppendChild(new DXW.Body()));
   }
 
+  /// <summary>
+  /// Retrieves the main document part of the specified Document, creating it if it does not already
+  /// exist.
+  /// </summary>
+  /// <remarks>If the main document part or its root Document element does not exist, they are created
+  /// automatically. This ensures that the returned MainDocumentPart is always initialized and ready for use.</remarks>
+  /// <param name="wordDocument">The Document from which to retrieve or create the main document part. Cannot be null.</param>
+  /// <returns>The MainDocumentPart associated with the specified Document. If the main document part does not
+  /// exist, a new one is created and returned.</returns>
+  public static DXPP.MainDocumentPart GetMainDocumentPart(this DXPP.WordprocessingDocument wordDocument)
+  {
+    var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
+    var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
+    return mainPart;
+  }
+
 #pragma warning disable OOXML0001
   /// <summary>
   /// Retrieves the package properties for the specified Wordprocessing document.
   /// </summary>
-  /// <param name="wordDocument">The WordprocessingDocument instance.</param>
+  /// <param name="wordDocument">The Document instance.</param>
   /// <returns>The package properties interface.</returns>
   public static DXPP.IPackageProperties GetPackageProperties(this DXPP.WordprocessingDocument wordDocument)
 #pragma warning restore OOXML0001
@@ -106,7 +122,7 @@ public static class WordprocessingHelper
   /// <summary>
   /// Retrieves the extended file properties part for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
-  /// <param name="wordDocument">The WordprocessingDocument instance.</param>
+  /// <param name="wordDocument">The Document instance.</param>
   /// <returns>The extended file properties part.</returns>
   public static DXEP.Properties GetExtendedFileProperties(this DXPP.WordprocessingDocument wordDocument)
   {
@@ -120,7 +136,7 @@ public static class WordprocessingHelper
   /// <summary>
   /// Retrieves the custom file properties part for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
-  /// <param name="wordDocument">The WordprocessingDocument instance.</param>
+  /// <param name="wordDocument">The Document instance.</param>
   /// <returns>The custom file properties part.</returns>
   public static DXCP.Properties GetCustomFileProperties(this DXPP.WordprocessingDocument wordDocument)
   {
@@ -134,7 +150,7 @@ public static class WordprocessingHelper
   /// <summary>
   /// Retrieves the document settings part for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
-  /// <param name="wordDocument">The WordprocessingDocument instance.</param>
+  /// <param name="wordDocument">The Document instance.</param>
   /// <returns>The document settings part.</returns>
   public static DXW.Settings GetDocumentSettings(this DXPP.WordprocessingDocument wordDocument)
   {
@@ -143,5 +159,57 @@ public static class WordprocessingHelper
     DXPP.DocumentSettingsPart part = mainPart.DocumentSettingsPart ?? mainPart.AddNewPart<DXPP.DocumentSettingsPart>();
     var settings = part.Settings ?? (part.Settings = new DXW.Settings());
     return settings;
+  }
+
+  /// <summary>
+  /// Retrieves the reference relationship with the specified relationship ID from the main document part of the given
+  /// Document.
+  /// </summary>
+  /// <remarks>If the main document part does not exist, it is created before attempting to retrieve the
+  /// relationship.</remarks>
+  /// <param name="wordDocument">The Document instance from which to retrieve the main document part relationship. Cannot be null.</param>
+  /// <param name="relationshipId">The unique identifier of the relationship to retrieve from the main document part. Cannot be null or empty.</param>
+  /// <returns>A ReferenceRelationship object representing the relationship with the specified ID, or null if no such
+  /// relationship exists.</returns>
+  public static DXPP.ReferenceRelationship GetMainDocumentPartRelationship(this DXPP.WordprocessingDocument wordDocument, string relationshipId)
+  {
+    var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
+    var relationship = mainPart.GetReferenceRelationship(relationshipId);
+    return relationship;
+  }
+
+  /// <summary>
+  /// Retrieves the external relationship with the specified relationship ID from the main document part of the given
+  /// Document.
+  /// </summary>
+  /// <remarks>If the main document part does not exist, it is created before attempting to retrieve the
+  /// external relationship.</remarks>
+  /// <param name="wordDocument">The Document instance from which to retrieve the main document part external relationship. Cannot be
+  /// null.</param>
+  /// <param name="relationshipId">The unique identifier of the external relationship to retrieve. Cannot be null or empty.</param>
+  /// <returns>The ExternalRelationship object associated with the specified relationship ID, or null if no such relationship
+  /// exists.</returns>
+  public static DXPP.ExternalRelationship GetMainDocumentPartExternalRelationship(this DXPP.WordprocessingDocument wordDocument, string relationshipId)
+  {
+    var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
+    var relationship = mainPart.GetExternalRelationship(relationshipId);
+    return relationship;
+  }
+
+  /// <summary>
+  /// Creates an external relationship for the main document part of the specified Document using the
+  /// given relationship ID and target URI.
+  /// </summary>
+  /// <remarks>If the Document does not already contain a main document part, one is created
+  /// automatically before adding the external relationship.</remarks>
+  /// <param name="wordDocument">The Document to which the external relationship will be added. Cannot be null.</param>
+  /// <param name="relationshipId">The unique identifier for the external relationship to create. Must not be null or empty.</param>
+  /// <param name="uri">The target URI of the external resource to associate with the main document part. Must be a valid URI string.</param>
+  /// <returns>An ExternalRelationship object representing the newly created external relationship for the main document part.</returns>
+  public static DXPP.ExternalRelationship CreateMainDocumentPartExternalRelationship(this DXPP.WordprocessingDocument wordDocument, string relationshipId, string uri)
+  {
+    var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
+    var relationship = mainPart.AddExternalRelationship(relationshipId, new Uri(uri));
+    return relationship;
   }
 }

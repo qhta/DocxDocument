@@ -20,7 +20,7 @@ public class DataSourceObject: ModelElement<DXW.DataSourceObject>
   /// <summary>
   /// File path reference to the ODSO data source.
   /// </summary>
-  public RelationshipType? SourceReference { get; set; }
+  public SourceReference? SourceReference { get; set; }
   
   /// <summary>
   /// Column delimiter used in the data source, specified as a Unicode value.
@@ -45,5 +45,5 @@ public class DataSourceObject: ModelElement<DXW.DataSourceObject>
   /// <summary>
   /// Reference to recipient data, specifying an external file or data part containing recipient information.
   /// </summary>
-  public RelationshipType? RecipientDataReference { get; set; }
+  public RecipientDataReference? RecipientDataReference { get; set; }
 }

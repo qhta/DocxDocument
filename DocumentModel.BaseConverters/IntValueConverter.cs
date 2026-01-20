@@ -5,6 +5,17 @@
 /// </summary>
 public static class IntValueConverter
 {
+  public static object? CreateOpenXmlElement(int value, Type elementType)
+  {
+    if (elementType == typeof(Int32Value))
+      return new Int32Value(value);
+    if (elementType == typeof(UInt16Value))
+      return new UInt16Value((UInt16)value);
+
+    throw new InvalidOperationException($"Conversion to {elementType} is not supported.");
+  }
+
+
   #region CompositeElement Int get/set methods
 
   /// <summary>
@@ -136,7 +147,7 @@ public static class IntValueConverter
   /// </summary>
   /// <param name="hpsValue">The HpsMeasureType element to convert.</param>
   /// <returns>The Int32 value of the element content, or null if empty or conversion is impossible.</returns>
-  public static Int32? GetValue(DXWP.HpsMeasureType? hpsValue)
+  public static Int32? GetValue(DXW.HpsMeasureType? hpsValue)
   {
     if (hpsValue?.Val != null)
     {
@@ -153,7 +164,7 @@ public static class IntValueConverter
   /// <param name="openXmlElement">The parent composite element.</param>
   /// <param name="value">The value to set. If null, the element is removed.</param>
   public static void SetHpsMeasureType<OpenXmlElementType>(OpenXmlCompositeElement openXmlElement, Int32? value)
-    where OpenXmlElementType : DXWP.HpsMeasureType, new()
+    where OpenXmlElementType : DXW.HpsMeasureType, new()
   {
     var element = openXmlElement.GetFirstChild<OpenXmlElementType>();
     if (element != null && value != null)

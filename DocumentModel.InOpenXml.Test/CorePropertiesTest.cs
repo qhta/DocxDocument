@@ -277,31 +277,26 @@ namespace DocumentModel.InOpenXml.Test
     /// core properties.</returns>
     static CoreProperties CreateSampleCoreProperties()
     {
-      using
-        (DocumentModel.Wordprocessing.Document document =
-        DocumentModel.Wordprocessing.Document.CreateDocument("temp.docx"))
+      var props = new CoreProperties()
       {
-        var props = new CoreProperties(document)
-        {
-          Title = "Sample Title",
-          Subject = "Sample Subject",
-          Creator = "Test Creator",
-          Keywords = "test,serialization,core",
-          Description = "A test description for serialization.",
-          LastModifiedBy = "TestUser",
-          Revision = 5,
-          LastPrinted = new DateTime(2024, 1, 1, 12, 0, 0),
-          Created = new DateTime(2023, 12, 31, 23, 59, 59),
-          Modified = new DateTime(2024, 1, 2, 8, 30, 0),
-          Category = "TestCategory",
-          Identifier = "ID-12345",
-          ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml",
-          Language = "en-US",
-          Version = "1.0",
-          ContentStatus = "Draft"
-        };
-        return props;
-      }
+        Title = "Sample Title",
+        Subject = "Sample Subject",
+        Creator = "Test Creator",
+        Keywords = "test,serialization,core",
+        Description = "A test description for serialization.",
+        LastModifiedBy = "TestUser",
+        Revision = 5,
+        LastPrinted = new DateTime(2024, 1, 1, 12, 0, 0),
+        Created = new DateTime(2023, 12, 31, 23, 59, 59),
+        Modified = new DateTime(2024, 1, 2, 8, 30, 0),
+        Category = "TestCategory",
+        Identifier = "ID-12345",
+        ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml",
+        Language = "en-US",
+        Version = "1.0",
+        ContentStatus = "Draft"
+      };
+      return props;
     }
 
 
