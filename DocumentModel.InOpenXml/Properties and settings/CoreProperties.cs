@@ -90,7 +90,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   {
     var currentType = GetType();
     var openXmlType = typeof(PackageProperties);
-    foreach (var openXmlProperty in openXmlType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+    foreach (var openXmlProperty in openXmlType.GetOpenXmlProperties())
     {
       var modelProperty = currentType.GetProperty(openXmlProperty.Name);
       if (modelProperty != null && modelProperty.CanWrite)
@@ -113,9 +113,9 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   /// properties corresponding to this model.</param>
   public override void UpdateData(object openXmlElement)
   {
-    var currentType = GetType();
+    var modelType = GetType();
     var openXmlType = typeof(PackageProperties);
-    foreach (var modelProperty in currentType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+    foreach (var modelProperty in modelType.GetModelProperties())
     {
       var openXmlProperty = openXmlType.GetProperty(modelProperty.Name);
       if (openXmlProperty != null && openXmlProperty.CanWrite)
@@ -158,9 +158,8 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   /// <param name="properties">CoreProperties instance containing the model property value.</param>
   public void CopyFrom(CoreProperties properties)
   {
-    var currentType = properties.GetType();
-    foreach (var modelProperty in currentType.GetProperties(BindingFlags.Public | BindingFlags.Instance)
-               .Where(prop=>prop.GetCustomAttribute<NotMappedAttribute>()==null))
+    var modelType = properties.GetType();
+    foreach (var modelProperty in modelType.GetModelProperties())
     {
       var value = modelProperty.GetValue(properties);
       modelProperty.SetValue(this, value);

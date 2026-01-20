@@ -52,7 +52,7 @@ public static class OpenXmlElementConverter
     }
     if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
     {
-      var targetProperties = openXmlType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+      var targetProperties = openXmlType.GetOpenXmlProperties();
       var constructor = openXmlType.GetConstructor([]);
       var instance = (DX.OpenXmlElement)constructor!.Invoke([])!;
       foreach (var prop in targetProperties)
@@ -151,10 +151,10 @@ public static class OpenXmlElementConverter
     {
       var openXmlElementType = element.GetType();
 
-      var valueProperties = modelType.GetProperties(BindingFlags.Public | BindingFlags.Instance).Where(prop => prop.CanWrite).ToArray();
+      var valueProperties = modelType.GetModelProperties();
       if (valueProperties.Length == 0)
       {
-        var openXmlProperties = openXmlElementType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+        var openXmlProperties = openXmlElementType.GetOpenXmlProperties();
         foreach (var openXmlProperty in openXmlProperties)
         {
           if (openXmlProperty.Name == "Val")

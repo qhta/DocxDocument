@@ -47,7 +47,7 @@ public static class OpenXmlComplexTypeConverter
 
       methodInfo.Invoke(modelObject, [openXmlElement]);
     }
-    foreach (var modelProperty in modelType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+    foreach (var modelProperty in modelType.GetModelProperties())
     {
       if (modelProperty.Name == "Template") Debug.Assert(true);
       UpdateData(modelObject, modelProperty, openXmlElement, openXmlType);
@@ -233,12 +233,9 @@ public static class OpenXmlComplexTypeConverter
   public static void LoadData(object modelObject, object openXmlElement, Type modelType)
   {
     var openXmlType = openXmlElement.GetType();
-    foreach (var modelProperty in modelType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+    foreach (var modelProperty in modelType.GetModelProperties())
     {
-      if (modelProperty.CanWrite)
-      {
-        LoadData(modelObject, modelProperty, openXmlElement, openXmlType);
-      }
+      LoadData(modelObject, modelProperty, openXmlElement, openXmlType);
     }
   }
 
@@ -350,5 +347,35 @@ public static class OpenXmlComplexTypeConverter
       return Convert.ChangeType(value, targetType);
     }
     return value;
+  }
+
+  /// <summary>
+  /// Gets the writable model properties of the specified OpenXML type.
+  /// </summary>
+  /// <param name="modelType">The model type to search for properties</param>
+  /// <returns>Array of writable model properties</returns>
+  /// <remarks>Properties with NotMappedAttribute will be ignored</remarks>
+  public static PropertyInfo[] GetModelProperties(this Type modelType)
+  {
+    return modelType.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+      .Where(prop => prop.GetIndexParameters().Length == 0
+                     && prop.CanWrite
+                     && !prop.GetCustomAttributes(typeof(NotMappedAttribute), true).Any()
+                     ).ToArray();
+  }
+
+  /// <summary>
+  /// Gets the writable OpenXML properties of the specified OpenXML type.
+  /// </summary>
+  /// <param name="openXmlType">The OpenXML type to search for properties</param>
+  /// <returns>Array of writable OpenXML properties</returns>
+  /// <remarks>Properties declared in DX.OpenXmlElement are ignored</remarks>
+  public static PropertyInfo[] GetOpenXmlProperties(this Type openXmlType)
+  {
+    return openXmlType.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+      .Where(prop => prop.GetIndexParameters().Length == 0
+                     && prop.CanWrite
+                     && prop.DeclaringType != typeof(DX.OpenXmlElement)
+                     ).ToArray();
   }
 }

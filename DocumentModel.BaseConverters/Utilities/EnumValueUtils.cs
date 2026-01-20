@@ -27,7 +27,7 @@ public static class EnumValueUtils
       }
       else
       {
-        var property = openXmlEnumType.GetProperties(BindingFlags.Static | BindingFlags.Public).FirstOrDefault(prop => value.Equals(prop.GetValue(null)));
+        var property = openXmlEnumType.GetEnumProperties().FirstOrDefault(prop => value.Equals(prop.GetValue(null)));
         if (property != null)
         {
           var s = property.Name;
@@ -130,5 +130,20 @@ public static class EnumValueUtils
     }
     else
       element.Value = default(EnumType2);
+  }
+
+  /// <summary>
+  /// Gets all static public properties of the specified Enum type.
+  /// Enum type is expected to be OpenXml EnumValue type.
+  /// </summary>
+  /// <param name="enumType">The Enum type to inspect.</param>
+  /// <returns>An array of PropertyInfo objects representing the public static properties of the enum type.</returns>
+  public static PropertyInfo[] GetEnumProperties(this Type enumType)
+  {
+
+    var properties = enumType.GetProperties(BindingFlags.Static | BindingFlags.Public)
+      .Where(prop => prop.PropertyType == enumType)
+      .ToArray();
+    return properties;
   }
 }
