@@ -23,7 +23,7 @@ public static class HexCharConverter
   /// </summary>
   /// <param name="element">The LongHexNumberType element to convert.</param>
   /// <returns>A HexChar value, or null if element or inner value is null.</returns>
-  public static HexChar? GetValue(DXWP.LongHexNumberType? element)
+  public static HexChar? GetValue(DXW.LongHexNumberType? element)
   {
     if (element?.Val?.Value != null)
       return element.Val.Value;
@@ -67,7 +67,7 @@ public static class HexCharConverter
   /// <param name="value">The HexChar value.</param>
   /// <returns>A new instance of the element type with its Val property set, or null if value is null.</returns>
   public static HexBinaryType? CreateValue<HexBinaryType>(HexChar? value)
-    where HexBinaryType : DXWP.LongHexNumberType, new()
+    where HexBinaryType : DXW.LongHexNumberType, new()
   {
     if (value is not null)
     {

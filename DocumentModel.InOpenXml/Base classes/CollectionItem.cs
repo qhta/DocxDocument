@@ -25,7 +25,8 @@ public abstract class CollectionItem: ModelElement, ICollectionItem
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
-  public IElementCollection<CollectionItem>? Collection { get; set; }
+  [NotMapped]
+  public object? Collection { get; set; }
 
 
   /// <summary>

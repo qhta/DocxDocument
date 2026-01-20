@@ -12,6 +12,6 @@ namespace DocumentModel.CustomXml;
 ///   within the document package, making documents self-contained and enabling offline validation of custom
 ///   XML data without requiring external schema resolution.
 /// </remarks>
-public class SchemaLibrary : ElementCollection<Schema>
+public class SchemaLibrary : ModelElementCollection<Schema, DXCXSR.SchemaLibrary, DXCXSR.Schema>
 {
 }

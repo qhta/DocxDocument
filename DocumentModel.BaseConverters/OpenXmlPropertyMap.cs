@@ -49,7 +49,7 @@ public static class OpenXmlPropertyMap
       return null;
     }
 
-    var methodName = modelProperty.GetCustomAttribute<ConvertToOpenXmlAttribute>()?.MethodName;
+    var methodName = modelProperty.GetCustomAttribute<OpenXmlConvertToAttribute>()?.MethodName;
     if (methodName != null)
     {
       var methodInfo = modelProperty.DeclaringType?.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
@@ -78,7 +78,7 @@ public static class OpenXmlPropertyMap
       return null;
     }
 
-    var methodName = modelProperty.GetCustomAttribute<ConvertFromOpenXmlAttribute>()?.MethodName;
+    var methodName = modelProperty.GetCustomAttribute<OpenXmlConvertFromAttribute>()?.MethodName;
     if (methodName != null)
     {
       var methodInfo = modelProperty.DeclaringType?.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);

@@ -11,7 +11,7 @@ public static class OpenXmlSimpleValueConverter
   /// <param name="value">The model object to convert.</param>
   /// <param name="conversionType">The target Open XML simple type.</param>
   /// <returns>The converted Open XML simple type.</returns>
-  public static object ConvertToOpenXml(object value, Type conversionType)
+  public static object? ConvertToOpenXml(object value, Type conversionType)
   {
     if (conversionType == typeof(DX.StringValue))
     {
@@ -25,9 +25,15 @@ public static class OpenXmlSimpleValueConverter
       return new DX.StringValue(text);
     }
 
-    if (conversionType == typeof(DX.Int32Value))
-      return new DX.Int32Value(Convert.ToInt32(value));
+    //if (conversionType == typeof(DX.Int32Value))
+    //  return new DX.Int32Value(Convert.ToInt32(value));
 
+    if (value is bool boolValue2)
+      return OpenXml.BooleanValueConverter.CreateOpenXmlElement(boolValue2, conversionType);
+    if (value is int intValue)
+      return OpenXml.IntValueConverter.CreateOpenXmlElement(intValue, conversionType);
+    if (value is UInt16 uint16Value)
+      return OpenXml.IntValueConverter.CreateOpenXmlElement(uint16Value, conversionType);
 
     throw new InvalidOperationException($"Cannot convert to Open XML simple type: {conversionType.FullName}");
   }

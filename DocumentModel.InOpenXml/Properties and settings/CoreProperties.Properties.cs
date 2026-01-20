@@ -1,6 +1,6 @@
 namespace DocumentModel;
 
-public partial class CoreProperties : ModelElement
+public partial class CoreProperties
 {
   public static KnownProperties KnownProperties { get; } = new KnownProperties(typeof(CoreProperties));
 

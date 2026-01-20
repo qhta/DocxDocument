@@ -40,7 +40,7 @@ public static class UIntValueConverter
   /// </summary>
   /// <param name="element">The LongHexNumberType element to convert.</param>
   /// <returns>The UInt32 value, or null if element or value is null.</returns>
-  public static UInt32? GetValue(DXWP.LongHexNumberType element)
+  public static UInt32? GetValue(DXW.LongHexNumberType element)
   {
     if (element.Val?.Value != null)
       return UInt32.Parse(element.Val.Value, NumberStyles.HexNumber);

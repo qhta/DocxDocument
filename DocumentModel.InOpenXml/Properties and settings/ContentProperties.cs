@@ -9,7 +9,7 @@ public partial class ContentProperties : ModelElement<DXEP.Properties>
 {
 
   /// <summary>
-  /// Gets the underlying WordprocessingDocument instance associated with this object.
+  /// Gets the underlying Document instance associated with this object.
   /// </summary>
   internal DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
@@ -32,48 +32,40 @@ public partial class ContentProperties : ModelElement<DXEP.Properties>
   /// <param name="document">Wordprocessing document model</param>
   public ContentProperties(Wordprocessing.Document document)
   {
-    AttachAndLoad(document);
+    if (document.WordprocessingDocument != null)
+      AttachAndLoad(document.WordprocessingDocument);
   }
 
   /// <summary>
   /// Attach this instance to the specified document. Data is loaded from the document's PackageProperties.
   /// </summary>
   /// <param name="document">Document to attach to.</param>
-  public void AttachAndLoad(Wordprocessing.Document document)
+  public void AttachAndLoad(DXPack.WordprocessingDocument document)
   {
-    WordprocessingDocument = document.WordprocessingDocument;
-    var extendedFileProperties = document.WordprocessingDocument?.GetExtendedFileProperties();
-    if (extendedFileProperties != null)
-    {
-      SetOpenXmlElement(extendedFileProperties);
-      LoadData(extendedFileProperties);
-    }
+    WordprocessingDocument = document;
+    var extendedFileProperties = document.GetExtendedFileProperties();
+    SetOpenXmlElement(extendedFileProperties);
+    LoadData(extendedFileProperties);
   }
 
   /// <summary>
   /// Attach this instance to the specified document. Data is stored to the document's PackageProperties.
   /// </summary>
   /// <param name="document">Document to attach to.</param>
-  public void AttachAndUpdate(Wordprocessing.Document document)
+  public void AttachAndUpdate(DXPack.WordprocessingDocument document)
   {
-    WordprocessingDocument = document.WordprocessingDocument;
-    var extendedFileProperties = document.WordprocessingDocument?.GetExtendedFileProperties();
-    if (extendedFileProperties != null)
-    {
-      SetOpenXmlElement(extendedFileProperties);
-      UpdateData(extendedFileProperties);
-    }
+    WordprocessingDocument = document;
+    var extendedFileProperties = document.GetExtendedFileProperties();
+    SetOpenXmlElement(extendedFileProperties);
+    UpdateData(extendedFileProperties);
   }
 
   /// <summary>
-  /// Detach this instance from the specified document.
+  /// Detach this instance from the attached document.
   /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
   /// </summary>
-  /// <param name="document">Document to detach from. Must be the same as the one attached.</param>
-  public void Detach(Wordprocessing.Document document)
+  public void Detach()
   {
-    if (WordprocessingDocument != document.WordprocessingDocument)
-      return;
     WordprocessingDocument = null;
     SetOpenXmlElement(null);
   }

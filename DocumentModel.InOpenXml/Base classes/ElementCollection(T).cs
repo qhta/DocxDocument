@@ -10,13 +10,31 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>
   //where ItemType : ICollectionItem
 {
-  private readonly ObservableCollection<ItemType> _items = new ObservableCollection<ItemType>();
+  private readonly ObservableCollection<ItemType> _items = new();
 
   /// <summary>
   /// Initializes a new, empty collection.
   /// </summary>
   protected ElementCollection()
   {
+    _items.CollectionChanged += _items_CollectionChanged;
+  }
+
+  private void _items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+  {
+    if (e.Action == NotifyCollectionChangedAction.Add)
+    {
+      if (e.NewItems != null)
+      {
+        foreach (var newItem in e.NewItems)
+        {
+          if (newItem is ICollectionItem collectionItem)
+          {
+            collectionItem.Collection = this;
+          }
+        }
+      }
+    }
   }
 
   /// <summary>

@@ -21,7 +21,7 @@ public static class HexIntConverter
     if (openXmlElement != null)
     {
       var element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
-      if (element is DXWP.LongHexNumberType longHexNumberType)
+      if (element is DXW.LongHexNumberType longHexNumberType)
       {
         if (longHexNumberType.Val?.Value != null)
           return new HexInt(longHexNumberType.Val.Value!);
@@ -72,9 +72,9 @@ public static class HexIntConverter
       var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
       Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(OpenXmlElementType)} not found");
       var valType = valProperty.PropertyType;
-      if (valType == typeof(DXWP.LongHexNumberType))
+      if (valType == typeof(DXW.LongHexNumberType))
       {
-        DXWP.LongHexNumberType? propElement = (DXWP.LongHexNumberType?)valType.GetConstructor(new Type[0])?.Invoke(new object[0]);
+        DXW.LongHexNumberType? propElement = (DXW.LongHexNumberType?)valType.GetConstructor(new Type[0])?.Invoke(new object[0]);
         Debug.Assert(propElement != null, $"\"{valType}\" type must have a parameterless constructor");
         propElement.Val = new DX.HexBinaryValue(value.ToString());
         valProperty.SetValue(element, propElement);
@@ -142,7 +142,7 @@ public static class HexIntConverter
   /// </summary>
   /// <param name="element">The LongHexNumberType element.</param>
   /// <returns>A HexInt value, or null if element or value is null.</returns>
-  public static HexInt? GetValue(this DXWP.LongHexNumberType? element)
+  public static HexInt? GetValue(this DXW.LongHexNumberType? element)
   {
     if (element?.Val?.Value != null)
       return element.Val.Value;
@@ -210,7 +210,7 @@ public static class HexIntConverter
   /// <param name="value">The HexInt value.</param>
   /// <returns>A new instance of the element type, or null if the input value is null.</returns>
   public static HexBinaryType? CreateValue<HexBinaryType>(this HexInt? value)
-    where HexBinaryType : DXWP.LongHexNumberType, new()
+    where HexBinaryType : DXW.LongHexNumberType, new()
   {
     if (value != null)
     {

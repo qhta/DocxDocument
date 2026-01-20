@@ -12,7 +12,9 @@ namespace DocumentModel.CustomXml;
 ///   that span multiple namespaces. Schema references support both local and remote schema locations, allowing
 ///   documents to reference standard industry schemas or custom validation rules.
 /// </remarks>
-public class Schema: CollectionItem
+
+[OpenXmlTypeAttribute(typeof(DXCXSR.Schema))]
+public class Schema: ModelElement<DXCXSR.Schema>
 {
   /// <summary>
   ///  Namespace UriString that uniquely identifies this XML schema.
@@ -31,6 +33,7 @@ public class Schema: CollectionItem
   ///   The manifest location can be used for schema discovery and resolution, particularly in scenarios
   ///   where multiple related schemas need to be loaded or when schema catalogs are employed.
   /// </remarks>
+  [XmlAttribute]
   public string? ManifestLocation { get; set; }
 
   /// <summary>
@@ -41,5 +44,6 @@ public class Schema: CollectionItem
   ///   the validation rules and structure definitions. This can be a local file path, a relative path
   ///   within the document package, or a URL to a remote schema location.
   /// </remarks>
+  [XmlAttribute]
   public string? SchemaLocation { get; set; }
 }

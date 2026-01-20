@@ -61,9 +61,9 @@ namespace DocumentModel.InOpenXml.Test
           Console.WriteLine("✗ XML Deserialization returned null");
           return false;
         }
-        if (!CompareDocumentSettings(testData, deserialized))
+        if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
         {
-          Console.WriteLine("✗ XML Serialization/Deserialization test FAILED - data mismatch");
+          Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
           return false;
         }
         Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
@@ -90,9 +90,9 @@ namespace DocumentModel.InOpenXml.Test
           Console.WriteLine("✗ JSON Deserialization returned null");
           return false;
         }
-        if (!CompareDocumentSettings(testData, deserialized))
+        if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
         {
-          Console.WriteLine("✗ JSON Serialization/Deserialization test FAILED - data mismatch");
+          Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
           return false;
         }
         Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
@@ -132,7 +132,7 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- Store sample document settings in new document---");
       {
-        DocumentSettings testData = CreateSampleDocumentSettings(false);
+        DocumentSettings testData = CreateSampleDocumentSettings(true);
         using (var document = Document.CreateDocument("temp.docx"))
         {
           document.DocumentSettings = testData;
@@ -197,7 +197,7 @@ namespace DocumentModel.InOpenXml.Test
           SaveFormsData = true,
           SaveSubsetFonts = false,
           View = ViewKind.Print,
-          Zoom = 100,//PresetZoomKind.FullPage,
+          Zoom = 100, //PresetZoomKind.FullPage,
         };
       else
         return new DocumentSettings
@@ -272,153 +272,154 @@ namespace DocumentModel.InOpenXml.Test
           View = ViewKind.Print,
           Zoom = 100, // PresetZoomKind.FullPage,
 
-          ActiveWritingStyles = new ActiveWritingStyles([
+          ActiveWritingStyles =
+          [
             new ActiveWritingStyle
-          {
-          ApplicationName = "MyApp",
-          CheckStyle = true,
-          DllVersion = 1,
-          VendorID = 1234,
-          Language = "en-US",
-          NaturalLanguageGrammarCheck = true
-        },
-        new ActiveWritingStyle
-        {
-          ApplicationName = "AnotherApp",
-          CheckStyle = false,
-          DllVersion = 2,
-          VendorID = 5678,
-          Language = "fr-FR",
-          NaturalLanguageGrammarCheck = false
-        }
-          ]),
+            {
+              ApplicationName = "MyApp",
+              CheckStyle = true,
+              DllVersion = 1,
+              VendorID = 1234,
+              Language = "en-US",
+              NaturalLanguageGrammarCheck = true
+            },
+            new ActiveWritingStyle
+            {
+              ApplicationName = "AnotherApp",
+              CheckStyle = false,
+              DllVersion = 2,
+              VendorID = 5678,
+              Language = "fr-FR",
+              NaturalLanguageGrammarCheck = false
+            }
+          ],
           AttachedSchemas = new AttachedSchemas([
             new Schema
-          {
-            Uri = "http://example.com/schema1",
-            ManifestLocation = "schema1.xsd",
-            SchemaLocation = "Schema1"
-          },
-          new Schema
-          {
-            Uri = "http://example.com/schema2",
-            ManifestLocation = "schema2.xsd",
-            SchemaLocation = "Schema2"
-          }
+            {
+              Uri = "http://example.com/schema1",
+              ManifestLocation = "schema1.xsd",
+              SchemaLocation = "Schema1"
+            },
+            new Schema
+            {
+              Uri = "http://example.com/schema2",
+              ManifestLocation = "schema2.xsd",
+              SchemaLocation = "Schema2"
+            }
           ]),
           AttachedTemplate = new AttachedTemplate("http://example.com/template.dotx"),
           Captions = new Captions
           {
             CaptionDefinitions = new CaptionDefinitions([
               new CaptionDefinition
-            {
-              Name = "Figure",
-              Position = CaptionPositionKind.Below
-            },
-            new CaptionDefinition
-            {
-              Name = "Table",
-              Position = CaptionPositionKind.Above
-            }
+              {
+                Name = "Figure",
+                Position = CaptionPositionKind.Below
+              },
+              new CaptionDefinition
+              {
+                Name = "Table",
+                Position = CaptionPositionKind.Above
+              }
             ]),
             AutoCaptions = new AutoCaptions([
               new AutoCaption
-            {
-              Name = "Figure",
-              Caption = "Fig.",
-            },
-            new AutoCaption
-            {
-              Name = "Table",
-              Caption = "Tab.",
-            }
+              {
+                Name = "Figure",
+                Caption = "Fig.",
+              },
+              new AutoCaption
+              {
+                Name = "Table",
+                Caption = "Tab.",
+              }
             ])
           }
         };
     }
 
-    /// <summary>
-    /// Compares two <see cref="DocumentSettings"/> instances for equality by checking a representative subset of properties.
-    /// </summary>
-    /// <param name="a">The first <see cref="DocumentSettings"/> instance.</param>
-    /// <param name="b">The second <see cref="DocumentSettings"/> instance.</param>
-    /// <returns>True if the selected properties are equal; otherwise, false.</returns>
-    static bool CompareDocumentSettings(DocumentSettings a, DocumentSettings b)
-    {
-      // Compare a representative subset of properties for equality
-      return a.AlignBorderAndEdges == b.AlignBorderAndEdges &&
-             a.AlwaysMergeEmptyNamespace == b.AlwaysMergeEmptyNamespace &&
-             a.AlwaysShowPlaceholderText == b.AlwaysShowPlaceholderText &&
-             a.AutoFormatOverride == b.AutoFormatOverride &&
-             a.AutoHyphenation == b.AutoHyphenation &&
-             a.BookFoldPrinting == b.BookFoldPrinting &&
-             a.BookFoldPrintingSheets == b.BookFoldPrintingSheets &&
-             a.BookFoldReversePrinting == b.BookFoldReversePrinting &&
-             a.BordersDoNotSurroundFooter == b.BordersDoNotSurroundFooter &&
-             a.BordersDoNotSurroundHeader == b.BordersDoNotSurroundHeader &&
-             a.CharacterSpacingControl == b.CharacterSpacingControl &&
-             a.ChartTrackingRefBased == b.ChartTrackingRefBased &&
-             a.ClickAndTypeStyle == b.ClickAndTypeStyle &&
-             a.ConflictMode == b.ConflictMode &&
-             a.ConsecutiveHyphenLimit == b.ConsecutiveHyphenLimit &&
-             a.DecimalSymbol == b.DecimalSymbol &&
-             a.DefaultImageDpi == b.DefaultImageDpi &&
-             a.DefaultTableStyle == b.DefaultTableStyle &&
-             a.DefaultTabStop == b.DefaultTabStop &&
-             a.DiscardImageEditingData == b.DiscardImageEditingData &&
-             a.DisplayBackgroundShape == b.DisplayBackgroundShape &&
-             a.DisplayHorizontalDrawingGrid == b.DisplayHorizontalDrawingGrid &&
-             a.DisplayVerticalDrawingGrid == b.DisplayVerticalDrawingGrid &&
-             a.DoNotAutoCompressPictures == b.DoNotAutoCompressPictures &&
-             a.DoNotDemarcateInvalidXml == b.DoNotDemarcateInvalidXml &&
-             a.DoNotDisplayPageBoundaries == b.DoNotDisplayPageBoundaries &&
-             a.DoNotHyphenateCaps == b.DoNotHyphenateCaps &&
-             a.DoNotIncludeSubdocsInStats == b.DoNotIncludeSubdocsInStats &&
-             a.DoNotShadeFormData == b.DoNotShadeFormData &&
-             a.DoNotTrackFormatting == b.DoNotTrackFormatting &&
-             a.DoNotTrackMoves == b.DoNotTrackMoves &&
-             a.DoNotUseMarginsForDrawingGridOrigin == b.DoNotUseMarginsForDrawingGridOrigin &&
-             a.DoNotValidateAgainstSchema == b.DoNotValidateAgainstSchema &&
-             a.EmbedSystemFonts == b.EmbedSystemFonts &&
-             a.EmbedTrueTypeFonts == b.EmbedTrueTypeFonts &&
-             a.EvenAndOddHeaders == b.EvenAndOddHeaders &&
-             a.ForceUpgrade == b.ForceUpgrade &&
-             a.FormsDesign == b.FormsDesign &&
-             a.GutterAtTop == b.GutterAtTop &&
-             a.HideGrammaticalErrors == b.HideGrammaticalErrors &&
-             a.HideSpellingErrors == b.HideSpellingErrors &&
-             Equals(a.HyphenationZone, b.HyphenationZone) &&
-             a.IgnoreMixedContent == b.IgnoreMixedContent &&
-             a.LinkStyles == b.LinkStyles &&
-             a.ListSeparator == b.ListSeparator &&
-             a.MirrorMargins == b.MirrorMargins &&
-             a.NoPunctuationKerning == b.NoPunctuationKerning &&
-             a.PrintFormsData == b.PrintFormsData &&
-             a.PrintFractionalCharacterWidth == b.PrintFractionalCharacterWidth &&
-             a.PrintPostScriptOverText == b.PrintPostScriptOverText &&
-             a.PrintTwoOnOne == b.PrintTwoOnOne &&
-             a.RemoveDateAndTime == b.RemoveDateAndTime &&
-             a.RemovePersonalInformation == b.RemovePersonalInformation &&
-             a.SaveFormsData == b.SaveFormsData &&
-             a.SaveInvalidXml == b.SaveInvalidXml &&
-             a.SavePreviewPicture == b.SavePreviewPicture &&
-             a.SaveSubsetFonts == b.SaveSubsetFonts &&
-             a.SaveXmlDataOnly == b.SaveXmlDataOnly &&
-             a.ShowEnvelope == b.ShowEnvelope &&
-             a.ShowXmlTags == b.ShowXmlTags &&
-             a.StrictFirstAndLastChars == b.StrictFirstAndLastChars &&
-             a.StylePaneSortMethods == b.StylePaneSortMethods &&
-             Equals(a.SummaryLength, b.SummaryLength) &&
-             a.TrackRevisions == b.TrackRevisions &&
-             a.UICompatibleWith97To2003 == b.UICompatibleWith97To2003 &&
-             a.UpdateFieldsOnOpen == b.UpdateFieldsOnOpen &&
-             a.UseXsltWhenSaving == b.UseXsltWhenSaving &&
-             a.View == b.View &&
-             Equals(a.ActiveWritingStyles, b.ActiveWritingStyles) &&
-             Equals(a.AttachedSchemas, b.AttachedSchemas) &&
-             Equals(a.AttachedTemplate, b.AttachedTemplate) &&
-             Equals(a.Captions, b.Captions);
-    }
+    ///// <summary>
+    ///// Compares two <see cref="DocumentSettings"/> instances for equality by checking a representative subset of properties.
+    ///// </summary>
+    ///// <param name="a">The first <see cref="DocumentSettings"/> instance.</param>
+    ///// <param name="b">The second <see cref="DocumentSettings"/> instance.</param>
+    ///// <returns>True if the selected properties are equal; otherwise, false.</returns>
+    //static bool CompareDocumentSettings(DocumentSettings a, DocumentSettings b)
+    //{
+    //  // Compare a representative subset of properties for equality
+    //  return a.AlignBorderAndEdges == b.AlignBorderAndEdges &&
+    //         a.AlwaysMergeEmptyNamespace == b.AlwaysMergeEmptyNamespace &&
+    //         a.AlwaysShowPlaceholderText == b.AlwaysShowPlaceholderText &&
+    //         a.AutoFormatOverride == b.AutoFormatOverride &&
+    //         a.AutoHyphenation == b.AutoHyphenation &&
+    //         a.BookFoldPrinting == b.BookFoldPrinting &&
+    //         a.BookFoldPrintingSheets == b.BookFoldPrintingSheets &&
+    //         a.BookFoldReversePrinting == b.BookFoldReversePrinting &&
+    //         a.BordersDoNotSurroundFooter == b.BordersDoNotSurroundFooter &&
+    //         a.BordersDoNotSurroundHeader == b.BordersDoNotSurroundHeader &&
+    //         a.CharacterSpacingControl == b.CharacterSpacingControl &&
+    //         a.ChartTrackingRefBased == b.ChartTrackingRefBased &&
+    //         a.ClickAndTypeStyle == b.ClickAndTypeStyle &&
+    //         a.ConflictMode == b.ConflictMode &&
+    //         a.ConsecutiveHyphenLimit == b.ConsecutiveHyphenLimit &&
+    //         a.DecimalSymbol == b.DecimalSymbol &&
+    //         a.DefaultImageDpi == b.DefaultImageDpi &&
+    //         a.DefaultTableStyle == b.DefaultTableStyle &&
+    //         a.DefaultTabStop == b.DefaultTabStop &&
+    //         a.DiscardImageEditingData == b.DiscardImageEditingData &&
+    //         a.DisplayBackgroundShape == b.DisplayBackgroundShape &&
+    //         a.DisplayHorizontalDrawingGrid == b.DisplayHorizontalDrawingGrid &&
+    //         a.DisplayVerticalDrawingGrid == b.DisplayVerticalDrawingGrid &&
+    //         a.DoNotAutoCompressPictures == b.DoNotAutoCompressPictures &&
+    //         a.DoNotDemarcateInvalidXml == b.DoNotDemarcateInvalidXml &&
+    //         a.DoNotDisplayPageBoundaries == b.DoNotDisplayPageBoundaries &&
+    //         a.DoNotHyphenateCaps == b.DoNotHyphenateCaps &&
+    //         a.DoNotIncludeSubdocsInStats == b.DoNotIncludeSubdocsInStats &&
+    //         a.DoNotShadeFormData == b.DoNotShadeFormData &&
+    //         a.DoNotTrackFormatting == b.DoNotTrackFormatting &&
+    //         a.DoNotTrackMoves == b.DoNotTrackMoves &&
+    //         a.DoNotUseMarginsForDrawingGridOrigin == b.DoNotUseMarginsForDrawingGridOrigin &&
+    //         a.DoNotValidateAgainstSchema == b.DoNotValidateAgainstSchema &&
+    //         a.EmbedSystemFonts == b.EmbedSystemFonts &&
+    //         a.EmbedTrueTypeFonts == b.EmbedTrueTypeFonts &&
+    //         a.EvenAndOddHeaders == b.EvenAndOddHeaders &&
+    //         a.ForceUpgrade == b.ForceUpgrade &&
+    //         a.FormsDesign == b.FormsDesign &&
+    //         a.GutterAtTop == b.GutterAtTop &&
+    //         a.HideGrammaticalErrors == b.HideGrammaticalErrors &&
+    //         a.HideSpellingErrors == b.HideSpellingErrors &&
+    //         Equals(a.HyphenationZone, b.HyphenationZone) &&
+    //         a.IgnoreMixedContent == b.IgnoreMixedContent &&
+    //         a.LinkStyles == b.LinkStyles &&
+    //         a.ListSeparator == b.ListSeparator &&
+    //         a.MirrorMargins == b.MirrorMargins &&
+    //         a.NoPunctuationKerning == b.NoPunctuationKerning &&
+    //         a.PrintFormsData == b.PrintFormsData &&
+    //         a.PrintFractionalCharacterWidth == b.PrintFractionalCharacterWidth &&
+    //         a.PrintPostScriptOverText == b.PrintPostScriptOverText &&
+    //         a.PrintTwoOnOne == b.PrintTwoOnOne &&
+    //         a.RemoveDateAndTime == b.RemoveDateAndTime &&
+    //         a.RemovePersonalInformation == b.RemovePersonalInformation &&
+    //         a.SaveFormsData == b.SaveFormsData &&
+    //         a.SaveInvalidXml == b.SaveInvalidXml &&
+    //         a.SavePreviewPicture == b.SavePreviewPicture &&
+    //         a.SaveSubsetFonts == b.SaveSubsetFonts &&
+    //         a.SaveXmlDataOnly == b.SaveXmlDataOnly &&
+    //         a.ShowEnvelope == b.ShowEnvelope &&
+    //         a.ShowXmlTags == b.ShowXmlTags &&
+    //         a.StrictFirstAndLastChars == b.StrictFirstAndLastChars &&
+    //         a.StylePaneSortMethods == b.StylePaneSortMethods &&
+    //         Equals(a.SummaryLength, b.SummaryLength) &&
+    //         a.TrackRevisions == b.TrackRevisions &&
+    //         a.UICompatibleWith97To2003 == b.UICompatibleWith97To2003 &&
+    //         a.UpdateFieldsOnOpen == b.UpdateFieldsOnOpen &&
+    //         a.UseXsltWhenSaving == b.UseXsltWhenSaving &&
+    //         a.View == b.View &&
+    //         Equals(a.ActiveWritingStyle, b.ActiveWritingStyle) &&
+    //         Equals(a.AttachedSchemas, b.AttachedSchemas) &&
+    //         Equals(a.AttachedTemplate, b.AttachedTemplate) &&
+    //         Equals(a.Captions, b.Captions);
+    //}
 
     /// <summary>
     /// Serializes a <see cref="DocumentSettings"/> instance to XML.

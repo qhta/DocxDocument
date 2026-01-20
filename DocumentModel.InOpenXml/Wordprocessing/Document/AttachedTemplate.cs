@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the relationship for an attached document template in a WordprocessingML document.
-/// This interface extends <see cref="ExternalFile"/> and is used to specify the external template file attached to the document, enabling advanced template management and integration for document formatting and styles.
 /// </summary>
-public class AttachedTemplate : ExternalFile
+[OpenXmlUpdateDataAttribute(nameof(UpdateData))]
+public class AttachedTemplate : ExternalFile<DXW.AttachedTemplate>
 {
   /// <summary>
   /// Default constructor.
@@ -14,10 +14,19 @@ public class AttachedTemplate : ExternalFile
   }
 
   /// <summary>
-  /// Initializing constructor.
+  /// Initializes a new instance of the AttachedTemplate class with the specified template URI.
   /// </summary>
-  /// <param name="uri"></param>
-  public AttachedTemplate(string uri) : base(uri)
+  /// <param name="uri">The URI that identifies the template to attach. Cannot be null or empty.</param>
+  public AttachedTemplate(string uri): base(uri)
   {
+  }
+
+  /// <summary>
+  /// Updates the current object's data using the specified Open XML element.
+  /// </summary>
+  /// <param name="openXmlElement">The Open XML element that provides the data to update the current object. Cannot be null.</param>
+  public override void UpdateData(object openXmlElement)
+  {
+    base.UpdateData(openXmlElement);
   }
 }

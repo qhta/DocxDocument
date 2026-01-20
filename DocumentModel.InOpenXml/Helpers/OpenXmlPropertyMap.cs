@@ -12,7 +12,7 @@ public static class OpenXmlPropertyMap
   //  private static readonly Dictionary<(Type, string), (Type, string)> propertyMap = new()
   //  {
   //#pragma warning disable OOXML0001
-  //    { (typeof(DMW.Document), nameof(DMW.Document.CoreProperties)), (typeof(DXPP.WordprocessingDocument), "M`ainDocumentPart.OpenXmlPackage.PackageProperties") },
+  //    { (typeof(DMW.Document), nameof(DMW.Document.CoreProperties)), (typeof(DXPP.Document), "M`ainDocumentPart.OpenXmlPackage.PackageProperties") },
   //  };
 
 

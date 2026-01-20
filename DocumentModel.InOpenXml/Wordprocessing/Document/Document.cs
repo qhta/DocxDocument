@@ -3,12 +3,8 @@
 /// <summary>
 /// Represents a Wordprocessing document and provides access to its settings and lifecycle management.
 /// </summary>
-public class Document : ModelElement, IDisposable
+public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
 {
-  /// <summary>
-  /// Gets the underlying Open XML word processing document associated with this instance.
-  /// </summary>
-  public DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
   /// <summary>
   /// Initializes a new instance of the Document class.
@@ -33,6 +29,52 @@ public class Document : ModelElement, IDisposable
 
   }
 
+  /// <summary>
+  /// Gets the underlying Open XML word processing document associated with this instance.
+  /// </summary>
+  public DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
+
+  /// <summary>
+  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
+  /// </summary>
+  /// <param name="wordprocessingDocument"></param>
+  public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+    _CoreProperties.AttachAndLoad(wordprocessingDocument);
+    _ContentProperties.AttachAndLoad(wordprocessingDocument);
+    _StatisticProperties.AttachAndLoad(wordprocessingDocument);
+    _CustomProperties?.AttachAndLoad(wordprocessingDocument);
+  }
+
+  /// <summary>
+  /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
+  /// </summary>
+  /// <param name="wordprocessingDocument"></param>
+  public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+    _CoreProperties.AttachAndUpdate(wordprocessingDocument);
+    _ContentProperties.AttachAndUpdate(wordprocessingDocument);
+    _StatisticProperties.AttachAndUpdate(wordprocessingDocument);
+    _CustomProperties?.AttachAndUpdate(wordprocessingDocument);
+  }
+
+  /// <summary>
+  /// Detaches the document and all associated property objects from their underlying data sources, releasing any held
+  /// resources.  
+  /// </summary>
+  /// <remarks>After calling this method, the document and its property objects are no longer connected to their
+  /// original data. Further operations on these objects may not be valid until they are reattached or
+  /// reinitialized.</remarks>
+  public void Detach()
+  {
+    WordprocessingDocument = null;
+    _CoreProperties.Detach();
+    _ContentProperties.Detach();
+    _StatisticProperties.Detach();
+    _CustomProperties?.Detach();
+  }
 
 
   /// <summary>
@@ -62,14 +104,11 @@ public class Document : ModelElement, IDisposable
   /// </summary>
   public void Dispose()
   {
-    _CoreProperties.Detach(this);
-    _ContentProperties.Detach(this);
+    Detach();
     WordprocessingDocument?.Dispose();
     WordprocessingDocument = null;
     NotifyPropertyChanged(nameof(WordprocessingDocument));
   }
-
-
 
   protected override object? GetUpdatableOpenXmlElement()
   {
@@ -100,15 +139,7 @@ public class Document : ModelElement, IDisposable
   public ContentProperties ContentProperties
   {
     get => _ContentProperties;
-    set
-    {
-      if (!Equals(_ContentProperties, value))
-      {
-        _ContentProperties.Detach(this);
-        value.AttachAndUpdate(this);
-        _ContentProperties = value;
-      }
-    }
+    set => UpdateField(ref _ContentProperties, value, nameof(ContentProperties));
   }
   private ContentProperties _ContentProperties;
 
@@ -119,15 +150,7 @@ public class Document : ModelElement, IDisposable
   public StatisticProperties StatisticProperties
   {
     get => _StatisticProperties;
-    set
-    {
-      if (!Equals(_StatisticProperties, value))
-      {
-        _StatisticProperties.Detach(this);
-        value.AttachAndUpdate(this);
-        _StatisticProperties = value;
-      }
-    }
+    set => UpdateField(ref _StatisticProperties, value, nameof(StatisticProperties));
   }
   private StatisticProperties _StatisticProperties;
 
@@ -139,19 +162,11 @@ public class Document : ModelElement, IDisposable
   {
     get
     {
-      if (_CustomProperties == null && WordprocessingDocument?.CustomFilePropertiesPart != null) 
+      if (_CustomProperties == null && WordprocessingDocument?.CustomFilePropertiesPart != null)
         _CustomProperties = new CustomProperties(this);
       return _CustomProperties;
     }
-    set
-    {
-      if (!Equals(_CustomProperties, value))
-      {
-        _CustomProperties?.Detach(this);
-        value?.AttachAndUpdate(this);
-        _CustomProperties = value;
-      }
-    }
+    set => UpdateField(ref _CustomProperties, value, nameof(CustomProperties));
   }
   private CustomProperties? _CustomProperties;
 
@@ -166,15 +181,7 @@ public class Document : ModelElement, IDisposable
         _DocumentSettings = new DocumentSettings(this);
       return _DocumentSettings;
     }
-    set
-    {
-      if (!Equals(_CustomProperties, value))
-      {
-        _DocumentSettings?.Detach(this);
-        value?.AttachAndUpdate(this);
-        _DocumentSettings = value;
-      }
-    }
+    set => UpdateField(ref _DocumentSettings, value, nameof(DocumentSettings));
   }
   private DocumentSettings? _DocumentSettings;
 
