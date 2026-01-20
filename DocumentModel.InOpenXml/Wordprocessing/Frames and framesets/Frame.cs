@@ -20,7 +20,7 @@ public interface Frame : FramesetItem
   /// <summary>
   /// Source file for the frame, specifying the external content to be displayed within the frame.
   /// </summary>
-  public FrameSourceFile? FrameSourceFile { get; set; }
+  public SourceReference? SourceFileReference { get; set; }
   
   /// <summary>
   /// Left and right margin for the frame, specified in pixels.

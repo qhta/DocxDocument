@@ -14,6 +14,8 @@ global using System.Text.Json.Serialization;
 global using DocumentModel.OpenXml;
 global using Qhta.TypeUtils;
 global using OpenXml = DocumentFormat.OpenXml;
+
+global using DXPack = DocumentFormat.OpenXml.Packaging;
 global using DXPP = DocumentFormat.OpenXml.Packaging;
 global using DXCP = DocumentFormat.OpenXml.CustomProperties;
 global using DXEP = DocumentFormat.OpenXml.ExtendedProperties;
@@ -44,6 +46,7 @@ global using DXO19D = DocumentFormat.OpenXml.Office2019.Drawing;
 global using DXO19DS = DocumentFormat.OpenXml.Office2019.Drawing.SVG;
 global using DXO21DDC = DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification;
 global using DXOY21SL = DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink;
+global using DXCXSR = DocumentFormat.OpenXml.CustomXmlSchemaReferences;
 
 global using DMD = DocumentModel.Drawings;
 global using DMW = DocumentModel.Wordprocessing;

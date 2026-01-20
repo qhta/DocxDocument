@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for specifying the zoom type and zoom percentage, enabling control over the document's display magnification.
 /// </summary>
 [JsonConverter(typeof(ZoomJsonConverter))]
-public partial class Zoom: ModelElement<DXW.Zoom>
+public partial class Zoom: ModelElement<DXW.Zoom>, IEquatable<Zoom>
 {
   /// <summary>
   /// Zoom type, specifying the preset magnification mode.
@@ -17,15 +17,6 @@ public partial class Zoom: ModelElement<DXW.Zoom>
   /// Zoom percentage, specifying the magnification level as a percentage.
   /// </summary>
   public int? Percent { get; set; }
-
-  /// <summary>
-  /// Converts a value of type PresetZoomKind to a Zoom instance with the specified preset kind.  
-  /// </summary>
-  /// <param name="kind">The preset zoom kind to use when creating the Zoom instance.</param>
-  public static implicit operator Zoom(PresetZoomKind kind)
-  {
-    return new Zoom { Kind = kind };
-  }
 
   /// <summary>
   /// Converts an integer percentage value to a Zoom instance.
@@ -46,4 +37,18 @@ public partial class Zoom: ModelElement<DXW.Zoom>
   {
     return Kind?.ToString() ?? Percent?.ToString() ?? base.ToString();
   }
+
+  /// <summary>
+  /// Implements equality comparison between two Zoom instances.
+  /// </summary>
+  /// <param name="other">Other Zoom instance to compare with.</param>
+  /// <remarks>Compares the Kind and Percent properties for equality.</remarks>
+  /// <returns>True if the two Zoom instances are equal; otherwise, false.</returns>
+  public bool Equals(Zoom? other)
+  {
+    if (other is null) return false;
+    if (ReferenceEquals(this, other)) return true;
+    return base.Equals(other) && Kind == other.Kind && Percent == other.Percent;
+  }
+
 }

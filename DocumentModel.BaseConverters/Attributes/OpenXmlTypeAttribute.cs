@@ -13,5 +13,5 @@ public class OpenXmlTypeAttribute(Type type) : Attribute
   /// <summary>
   /// The OpenXml type associated with the decorated member.
   /// </summary>
-  public Type Type { get; } = type;
+  public Type Type { [DebuggerStepThrough] get; } = type;
 }

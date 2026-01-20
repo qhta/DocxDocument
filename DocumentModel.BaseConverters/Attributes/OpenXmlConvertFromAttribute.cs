@@ -6,10 +6,10 @@
 /// <param name="methodName">The name of the method to be called to convert the property from Open XML.
 /// Cannot be null or empty.</param>
 [AttributeUsage(AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
-public class ConvertFromOpenXmlAttribute(string methodName) : Attribute
+public class OpenXmlConvertFromAttribute(string methodName) : Attribute
 {
   /// <summary>
   /// The Open XML property name associated with the decorated member.
   /// </summary>
-  public string MethodName { get; } = methodName;
+  public string MethodName { [DebuggerStepThrough] get; } = methodName;
 }

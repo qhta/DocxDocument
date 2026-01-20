@@ -9,7 +9,7 @@ public class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Prop
 {
 
   /// <summary>
-  /// Gets the underlying WordprocessingDocument instance associated with this object.
+  /// Gets the underlying Document instance associated with this object.
   /// </summary>
   internal DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
@@ -27,48 +27,40 @@ public class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Prop
   /// <param name="document">Wordprocessing document model</param>
   public CustomProperties(Wordprocessing.Document document) : base()
   {
-    AttachAndLoad(document);
+    if (document.WordprocessingDocument != null)
+       AttachAndLoad(document.WordprocessingDocument);
   }
 
   /// <summary>
-  /// Attach this instance to the specified document. Data is loaded from the document's PackageProperties.
+  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
   /// </summary>
-  /// <param name="document">Document to attach to.</param>
-  public void AttachAndLoad(Wordprocessing.Document document)
+  /// <param name="wordprocessingDocument">Document to attach to.</param>
+  public void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = document.WordprocessingDocument;
-    var customFileProperties = document.WordprocessingDocument?.GetCustomFileProperties();
-    if (customFileProperties != null)
-    {
-      SetOpenXmlElement(customFileProperties);
-      LoadData(customFileProperties);
-    }
+    WordprocessingDocument = wordprocessingDocument;
+    var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
+    SetOpenXmlElement(customFileProperties);
+    LoadData(customFileProperties);
   }
 
   /// <summary>
-  /// Attach this instance to the specified document. Data is stored to the document's PackageProperties.
+  /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
   /// </summary>
-  /// <param name="document">Document to attach to.</param>
-  public void AttachAndUpdate(Wordprocessing.Document document)
+  /// <param name="wordprocessingDocument">Document to attach to.</param>
+  public void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = document.WordprocessingDocument;
-    var customFileProperties = document.WordprocessingDocument?.GetCustomFileProperties();
-    if (customFileProperties != null)
-    {
-      SetOpenXmlElement(customFileProperties);
-      UpdateData(customFileProperties);
-    }
+    WordprocessingDocument = wordprocessingDocument;
+    var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
+    SetOpenXmlElement(customFileProperties);
+    UpdateData(customFileProperties);
   }
 
   /// <summary>
-  /// Detach this instance from the specified document.
+  /// Detach this instance from the attached document.
   /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
   /// </summary>
-  /// <param name="document">Document to detach from. Must be the same as the one attached.</param>
-  public void Detach(Wordprocessing.Document document)
+  public void Detach()
   {
-    if (WordprocessingDocument != document.WordprocessingDocument)
-      return;
     WordprocessingDocument = null;
     SetOpenXmlElement(null);
   }
