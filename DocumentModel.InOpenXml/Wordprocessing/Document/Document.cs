@@ -20,9 +20,10 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
   /// <summary>
   /// Initializes a new instance of the Document class.
   /// </summary>
-  public Document(DXPP.WordprocessingDocument? wordprocessingDocument)
+  public Document(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
+    wordprocessingDocument.GetPackageProperties();
     _CoreProperties = new CoreProperties(this);
     _ContentProperties = new ContentProperties(this);
     _StatisticProperties = new StatisticProperties(this);
@@ -32,7 +33,7 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
   /// <summary>
   /// Gets the underlying Open XML word processing document associated with this instance.
   /// </summary>
-  public DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
+  public DXPP.WordprocessingDocument? WordprocessingDocument { [DebuggerStepThrough] get; [DebuggerStepThrough] private set; }
 
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
@@ -45,6 +46,7 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
     _ContentProperties.AttachAndLoad(wordprocessingDocument);
     _StatisticProperties.AttachAndLoad(wordprocessingDocument);
     _CustomProperties?.AttachAndLoad(wordprocessingDocument);
+    _DocumentSettings?.AttachAndLoad(wordprocessingDocument);
   }
 
   /// <summary>
@@ -58,6 +60,7 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
     _ContentProperties.AttachAndUpdate(wordprocessingDocument);
     _StatisticProperties.AttachAndUpdate(wordprocessingDocument);
     _CustomProperties?.AttachAndUpdate(wordprocessingDocument);
+    _DocumentSettings?.AttachAndUpdate(wordprocessingDocument);
   }
 
   /// <summary>
@@ -104,9 +107,9 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
   /// </summary>
   public void Dispose()
   {
-    Detach();
     WordprocessingDocument?.Dispose();
     WordprocessingDocument = null;
+    Detach();
     NotifyPropertyChanged(nameof(WordprocessingDocument));
   }
 

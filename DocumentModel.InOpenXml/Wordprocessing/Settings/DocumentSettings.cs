@@ -8,12 +8,8 @@ namespace DocumentModel.Wordprocessing;
 /// templates, protection, printing, captions, compatibility, styles, and more,
 /// enabling advanced configuration and management of Wordprocessing document behavior and appearance.
 /// </summary>
-public partial class DocumentSettings : ModelElement<DXW.Settings>
+public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
 {
-  /// <summary>
-  /// Gets the underlying Document instance associated with this object.
-  /// </summary>
-  internal DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
   /// <summary>
   /// Default constructor.
@@ -28,50 +24,32 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// <param name="document">Wordprocessing document model</param>
   public DocumentSettings(Wordprocessing.Document document)
   {
-    AttachAndLoad(document);
+    if (document.WordprocessingDocument != null)
+      AttachAndLoad(document.WordprocessingDocument);
   }
 
   /// <summary>
-  /// Attach this instance to the specified document. Data is loaded from the document's PackageProperties.
+  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
   /// </summary>
-  /// <param name="document">Document to attach to.</param>
-  public void AttachAndLoad(Wordprocessing.Document document)
+  /// <param name="wordprocessingDocument">Document to attach to.</param>
+  public override void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = document.WordprocessingDocument;
-    var documentSettings = document.WordprocessingDocument?.GetDocumentSettings();
-    if (documentSettings != null)
-    {
-      SetOpenXmlElement(documentSettings);
-      LoadData(documentSettings);
-    }
+    base.AttachAndLoad(wordprocessingDocument);
+    var documentSettings = wordprocessingDocument.GetDocumentSettings();
+    SetOpenXmlElement(documentSettings);
+    LoadData(documentSettings);
   }
 
   /// <summary>
   /// Attach this instance to the specified document. Data is stored to the document's PackageProperties.
   /// </summary>
-  /// <param name="document">Document to attach to.</param>
-  public void AttachAndUpdate(Wordprocessing.Document document)
+  /// <param name="wordprocessingDocument">Document to attach to.</param>
+  public override void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = document.WordprocessingDocument;
-    var documentSettings = document.WordprocessingDocument?.GetDocumentSettings();
-    if (documentSettings != null)
-    {
-      SetOpenXmlElement(documentSettings);
-      UpdateData(documentSettings);
-    }
-  }
-
-  /// <summary>
-  /// Detach this instance from the specified document.
-  /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
-  /// </summary>
-  /// <param name="document">Document to detach from. Must be the same as the one attached.</param>
-  public void Detach(Wordprocessing.Document document)
-  {
-    if (WordprocessingDocument != document.WordprocessingDocument)
-      return;
-    WordprocessingDocument = null;
-    SetOpenXmlElement(null);
+    base.AttachAndUpdate(wordprocessingDocument);
+    var documentSettings = wordprocessingDocument.GetDocumentSettings();
+    SetOpenXmlElement(documentSettings);
+    UpdateData(documentSettings);
   }
 
   /// <summary>
@@ -225,7 +203,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:bookFoldPrintingSheets
   /// </remarks>
   [Category("Printing")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.BookFoldPrintingSheets))]
   public short? BookFoldPrintingSheets
   {
     get => _BookFoldPrintingSheets;
@@ -289,7 +267,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:captions
   /// </remarks>
   [Category("Captions")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.Captions))]
   public Captions? Captions
   {
     get => _Captions;
@@ -305,7 +283,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:characterSpacingControl
   /// </remarks>
   [Category("Wordprocessing")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.CharacterSpacingControl))]
   public CharacterSpacingKind? CharacterSpacingControl
   {
     get => _CharacterSpacingControl;
@@ -337,7 +315,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:clickAndTypeStyle
   /// </remarks>
   [Category("Styling")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.ClickAndTypeStyle))]
   public string? ClickAndTypeStyle
   {
     get => _ClickAndTypeStyle;
@@ -353,7 +331,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:clrSchemeMapping
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DMWD.ColorSchemeMapping))]
   public DMWD.ColorSchemeMapping? ColorSchemeMapping
   {
     get => _ColorSchemeMapping;
@@ -369,7 +347,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:compat
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.Compatibility))]
   public Compatibility? Compatibility
   {
     get => _Compatibility;
@@ -401,7 +379,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:consecutiveHyphenLimit
   /// </remarks>
   [Category("Hyphenation")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.ConsecutiveHyphenLimit))]
   public ushort? ConsecutiveHyphenLimit
   {
     get => _ConsecutiveHyphenLimit;
@@ -417,7 +395,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:decimalSymbol
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.DecimalSymbol))]
   public string? DecimalSymbol
   {
     get => _DecimalSymbol;
@@ -433,7 +411,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w14:defaultImageDpi
   /// </remarks>
   [Category("Images")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXO10W.DefaultImageDpi))]
   public int? DefaultImageDpi
   {
     get => _DefaultImageDpi;
@@ -449,7 +427,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:defaultTableStyle
   /// </remarks>
   [Category("Styling")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.DefaultTableStyle))]
   public string? DefaultTableStyle
   {
     get => _DefaultTableStyle;
@@ -465,7 +443,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:defaultTabStop
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.DefaultTabStop))]
   public short? DefaultTabStop
   {
     get => _DefaultTabStop;
@@ -513,7 +491,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:displayHorizontalDrawingGridEvery
   /// </remarks>
   [Category("Document grid")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.DisplayHorizontalDrawingGrid))]
   public int? DisplayHorizontalDrawingGrid
   {
     get => _DisplayHorizontalDrawingGrid;
@@ -529,7 +507,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:displayVerticalDrawingGridEvery
   /// </remarks>
   [Category("Document grid")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.DisplayVerticalDrawingGrid))]
   public int? DisplayVerticalDrawingGrid
   {
     get => _DisplayVerticalDrawingGrid;
@@ -545,7 +523,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w14:docId or w15:docId
   /// </remarks>
   [Category("Identification")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXO10W.DocumentId))]
   public HexInt? DocumentId
   {
     get => _DocumentId;
@@ -561,7 +539,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:documentProtection
   /// </remarks>
   [Category("Protection")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.DocumentProtection))]
   public DocumentProtection? DocumentProtection
   {
     get => _DocumentProtection;
@@ -577,7 +555,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:documentType
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.DocumentType))]
   public DocumentKind? DocumentType
   {
     get => _DocumentType;
@@ -801,7 +779,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:drawingGridVerticalSpacing
   /// </remarks>
   [Category("Document grid")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.DrawingGridVerticalSpacing))]
   public Twips? DrawingGridVerticalSpacing
   {
     get => _DrawingGridVerticalSpacing;
@@ -846,7 +824,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Specifies the endnote properties for the document.
   /// </summary>
   [Category("Footnotes and endnotes")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.EndnoteDocumentWideProperties))]
   public EndnoteDocumentWideProperties? EndnoteDocumentWideProperties
   {
     get => _EndnoteDocumentWideProperties;
@@ -936,7 +914,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Specifies the default parameters for VML objects inserted in the header and footer.
   /// </summary>
   [Category("VML")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DMWV.HeaderShapeDefaults))]
   public DMWV.HeaderShapeDefaults? HeaderShapeDefaults
   {
     get => _HeaderShapeDefaults;
@@ -984,7 +962,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:hyphenationZone
   /// </remarks>
   [Category("Hyphenation")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.HyphenationZone))]
   public Twips? HyphenationZone
   {
     get => _HyphenationZone;
@@ -1032,7 +1010,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:listSeparator
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.ListSeparator))]
   public string? ListSeparator
   {
     get => _ListSeparator;
@@ -1048,7 +1026,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:mirrorMargins
   /// </remarks>
   [Category("Pagination")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.MirrorMargins))]
   public bool? MirrorMargins
   {
     get => _MirrorMargins;
@@ -1061,7 +1039,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Specifies the set of characters restricted from ending a line for custom line breaking logic.
   /// </summary>
   [Category("Kinsoku")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.NoLineBreaksAfterKinsoku))]
   public NoLineBreaksAfterKinsoku? NoLineBreaksAfterKinsoku
   {
     get => _NoLineBreaksAfterKinsoku;
@@ -1074,7 +1052,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Specifies the set of characters restricted from beginning a new line for custom line breaking logic.
   /// </summary>
   [Category("Kinsoku")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.NoLineBreaksBeforeKinsoku))]
   public NoLineBreaksBeforeKinsoku? NoLineBreaksBeforeKinsoku
   {
     get => _NoLineBreaksBeforeKinsoku;
@@ -1106,7 +1084,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w15:persistentDocumentId
   /// </remarks>
   [Category("Identification")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXO13W.PersistentDocumentId))]
   public Guid? PersistentDocumentId
   {
     get => _PersistentDocumentId;
@@ -1121,7 +1099,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// <remarks>
   /// Represents the following element tag in the schema: w:printFormsData
   /// </remarks>
-  [Category("Printing")] 
+  [Category("Printing")]
   //[OpenXmlElement]
   public bool? PrintFormsData
   {
@@ -1186,7 +1164,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:proofState
   /// </remarks>
   [Category("Proofing")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.ProofState))]
   public ProofState? ProofState
   {
     get => _ProofState;
@@ -1199,7 +1177,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Specifies the exact set of page and text sizing parameters for displaying the document, used for ink annotations.
   /// </summary>
   [Category("Protection")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DMWD.ReadModeInkLockDown))]
   public DMWD.ReadModeInkLockDown? ReadModeInkLockDown
   {
     get => _ReadModeInkLockDown;
@@ -1247,7 +1225,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:revisionView
   /// </remarks>
   [Category("View")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.RevisionView))]
   public RevisionView? RevisionView
   {
     get => _RevisionView;
@@ -1324,7 +1302,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Specifies the location of a custom XSL transform to be used when saving as a single XML file.
   /// </summary>
   [Category("Save")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.SaveThroughXslt))]
   public SaveThroughXslt? SaveThroughXslt
   {
     get => _SaveThroughXslt;
@@ -1350,11 +1328,11 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Specifies the set of XML namespaces associated with custom XML markup in the document.
   /// </summary>
   [Category("CustomXml")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXCXSR.SchemaLibrary))]
   public SchemaLibrary? SchemaLibrary
   {
     get => _SchemaLibrary;
-    set => UpdateField(ref _SchemaLibrary, (value!=null && value.Count>0) ? value : null, nameof(SchemaLibrary));
+    set => UpdateField(ref _SchemaLibrary, (value != null && value.Count > 0) ? value : null, nameof(SchemaLibrary));
   }
 
   private SchemaLibrary? _SchemaLibrary;
@@ -1364,7 +1342,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// </summary>
   [Category("Drawings")]
   [Obsolete]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DMWD.ShapeDefaults))]
   public DMWD.ShapeDefaults? ShapeDefaults
   {
     get => _ShapeDefaults;
@@ -1412,7 +1390,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:strictFirstAndLastChars
   /// </remarks>
   [Category("Kinsoku")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.StrictFirstAndLastChars))]
   public bool? StrictFirstAndLastChars
   {
     get => _StrictFirstAndLastChars;
@@ -1425,7 +1403,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Specifies suggested filters to be applied to the list of document styles in the application UI.
   /// </summary>
   [Category("Styling")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
   public StylePaneFormatFilter? StylePaneFormatFilter
   {
     get => _StylePaneFormatFilter;
@@ -1462,7 +1440,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Performing an automatic document summary is a runtime operation outside the scope of /IEC 29500.
   /// </remarks>
   [Category("Automation")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.SummaryLength))]
   public Percent? SummaryLength
   {
     get => _SummaryLength;
@@ -1475,7 +1453,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Specifies the language used to determine theme fonts in the document's Theme part.
   /// </summary>
   [Category("Theme")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.ThemeFontLanguages))]
   public Languages? ThemeFontLanguages
   {
     get => _ThemeFontLanguages;
@@ -1600,7 +1578,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Specifies the presence of document variables in the document.
   /// </summary>
   [Category("Variables")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.DocumentVariables))]
   public Variables? DocumentVariables
   {
     get => _DocumentVariables;
@@ -1613,7 +1591,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Specifies all mail merge information for the document.
   /// </summary>
   [Category("Mailing")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DXW.MailMerge))]
   public MailMerge? MailMerge
   {
     get => _MailMerge;
@@ -1626,7 +1604,7 @@ public partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Specifies the document-level properties for all math in the document.
   /// </summary>
   [Category("Math")]
-  [OpenXmlElement]
+  [OpenXmlElement(typeof(DMM.MathProperties))]
   public DMM.MathProperties? MathProperties
   {
     get => _MathProperties;

@@ -34,8 +34,14 @@ public static class OpenXmlSimpleValueConverter
       return OpenXml.IntValueConverter.CreateOpenXmlElement(intValue, conversionType);
     if (value is UInt16 uint16Value)
       return OpenXml.IntValueConverter.CreateOpenXmlElement(uint16Value, conversionType);
+    var valueType = value.GetType();
 
-    throw new InvalidOperationException($"Cannot convert to Open XML simple type: {conversionType.FullName}");
+    if (valueType.IsEnum)
+    {
+      return OpenXml.EnumValueConverter.CreateOpenXmlElement(value, conversionType);
+    }
+
+    throw new InvalidOperationException($"Cannot convert {value} of type {valueType} to Open XML simple type: {conversionType}");
   }
   /// <summary>
   /// Converts an Open XML simple type to a model object.

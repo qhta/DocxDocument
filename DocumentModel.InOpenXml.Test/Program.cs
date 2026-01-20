@@ -9,9 +9,9 @@ internal class Program
     // Ensure Unicode characters display correctly
     Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-    Console.WriteLine("╔════════════════════════════════════════════════════════════╗");
-    Console.WriteLine("║   DocumentModel Base Types Serialization Test Suite        ║");
-    Console.WriteLine("╚════════════════════════════════════════════════════════════╝");
+    Console.WriteLine("╔═════════════════════════════════════════════╗");
+    Console.WriteLine("║   DocumentModel InOpenXml Test Suite        ║");
+    Console.WriteLine("╚═════════════════════════════════════════════╝");
     Console.WriteLine();
 
     // Run CoreProperties tests

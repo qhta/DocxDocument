@@ -15,7 +15,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   [NotMapped]
   public DXPack.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
-  internal PackageProperties? PackageProperties { get; private set; }
+  //internal PackageProperties? PackageProperties { get; private set; }
 
 
   /// <summary>
@@ -42,7 +42,9 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   /// available.</returns>
   protected override object? GetUpdatableOpenXmlElement()
   {
-    return PackageProperties;
+    if (WordprocessingDocument!=null)
+      return WordprocessingDocument.GetPackageProperties();
+    return null;
   }
 
   /// <summary>
@@ -53,7 +55,6 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   {
     WordprocessingDocument = wordprocessingDocument;
     var packageProperties = wordprocessingDocument.GetPackageProperties();
-    PackageProperties = packageProperties;
     LoadData(packageProperties);
   }
 
@@ -66,7 +67,6 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   {
     WordprocessingDocument = wordprocessingDocument;
     var packageProperties = wordprocessingDocument.GetPackageProperties();
-    PackageProperties = packageProperties;
     UpdateData(packageProperties);
   }
 
@@ -76,12 +76,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   /// </summary>
   public void Detach()
   {
-    if (PackageProperties is IDisposable packageFeature)
-    {
-      packageFeature.Dispose();
-    }
     WordprocessingDocument = null;
-    PackageProperties = null;
   }
 
   /// <summary>
@@ -164,7 +159,8 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   public void CopyFrom(CoreProperties properties)
   {
     var currentType = properties.GetType();
-    foreach (var modelProperty in currentType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+    foreach (var modelProperty in currentType.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+               .Where(prop=>prop.GetCustomAttribute<NotMappedAttribute>()==null))
     {
       var value = modelProperty.GetValue(properties);
       modelProperty.SetValue(this, value);
