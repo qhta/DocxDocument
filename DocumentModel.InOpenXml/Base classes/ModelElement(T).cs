@@ -4,10 +4,15 @@
 /// Represents a model element that wraps an OpenXml element of the specified type.
 /// </summary>
 /// <typeparam name="OpenXmlType">The type of the underlying OpenXml element.</typeparam>
-public abstract class ModelElement<OpenXmlType> : ModelElement, ICollectionItem
+public abstract class ModelElement<OpenXmlType> : ModelElement, ICollectionItem, IWordprocessingDocumentAware
 where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with PackageProperties
 {
   private OpenXmlType? _openXmlElement;
+
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public DXPP.WordprocessingDocument? WordprocessingDocument { [DebuggerStepThrough] get; [DebuggerStepThrough] private set; }
 
   /// <summary>
   /// Initializes a new instance of the <see cref="ModelElement{OpenXmlItemType}"/> class.
@@ -16,6 +21,34 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   {
   }
 
+  /// <summary>
+  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
+  /// </summary>
+  /// <param name="wordprocessingDocument">Document to attach to.</param>
+  public virtual void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+  }
+
+  /// <summary>
+  /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
+  /// </summary>
+  /// <param name="wordprocessingDocument">Document to attach to.</param>
+  public virtual void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+  }
+
+  /// <summary>
+  /// Detach this instance from the attached document.
+  /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
+  /// </summary>
+  public virtual void Detach()
+  {
+    WordprocessingDocument = null;
+    SetOpenXmlElement(null);
+  }
+  
   /// <summary>
   /// Initializes a new instance of the <see cref="ModelElement{OpenXmlItemType}"/> class with the specified OpenXml element.
   /// </summary>
@@ -29,7 +62,7 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   /// Returns the wrapped OpenXml element instance.
   /// </summary>
   /// <returns>The OpenXml element instance, or null if not set.</returns>
-  public OpenXmlType? GetOpenXmlElement()
+  public virtual OpenXmlType? GetOpenXmlElement()
   {
     return _openXmlElement;
   }
@@ -38,7 +71,7 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   /// Assigns the wrapped OpenXml element instance.
   /// </summary>
   /// <param name="element">The OpenXml element to assign.</param>
-  public void SetOpenXmlElement(OpenXmlType? element)
+  public virtual void SetOpenXmlElement(OpenXmlType? element)
   {
     _openXmlElement = element;
   }

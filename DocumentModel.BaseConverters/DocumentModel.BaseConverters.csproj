@@ -10,6 +10,8 @@
     <Compile Remove="AlternateContentChoiceConverter.cs" />
     <Compile Remove="AlternateContentConverter.cs" />
     <Compile Remove="AlternateContentFallbackConverter.cs" />
+    <Compile Remove="Attributes\OpenXmlConvertFromAttribute.cs" />
+    <Compile Remove="Attributes\OpenXmlConvertToAttribute.cs" />
     <Compile Remove="ElementCollectionConverter%28E,T%29.cs" />
     <Compile Remove="ElementCollectionConverter%28T%29.cs" />
     <Compile Remove="HexRgbConverter .cs" />

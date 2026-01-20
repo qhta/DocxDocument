@@ -14,7 +14,7 @@ public static class OpenXmlPropertyMap
   /// <summary>
   /// Retrieves the corresponding OpenXML property for a given model element property from the specified OpenXML type.
   /// </summary>
-  /// <remarks>If the model element property is decorated with an OpenXmlPropertyAttribute, its MethodName
+  /// <remarks>If the model element property is decorated with an OpenXmlPropertyAttribute, its Method
   /// value is used to locate the OpenXML property; otherwise, the property name itself is used. The search is
   /// case-sensitive and limited to public instance properties.</remarks>
   /// <param name="modelProperty">The property of the model element for which to find the corresponding OpenXML property. Must not be null.</param>
@@ -32,15 +32,16 @@ public static class OpenXmlPropertyMap
 
 
   /// <summary>
-  /// Retrieves the get method information for the model property in the given OpenXml type.
+  /// Retrieves the update data method information for the model property.
+  /// This method is used to update the OpenXml element with the model property value.
   /// </summary>
-  /// <param name="modelProperty">The property of the model element for which to find the appropriate set method. Must not be null.</param>
-  /// <param name="openXmlType">The OpenXml type to search for property set method. Must not be null</param>
+  /// <param name="modelProperty">The property of the model element for which to find the appropriate method.</param>
+  /// <param name="openXmlType">The OpenXml type to update data.</param>
   /// <remarks>
-  /// Attempts to find a method name specified in the ConvertFromOpenXmlAttribute applied to the model property.
+  /// Attempts to find a method name specified in the OpenXmlUpdateDataAttribute applied to the model property.
   /// </remarks>
-  /// <returns>A set method info is found; otherwise, null.</returns>
-  public static MethodInfo? GetSetMethod(PropertyInfo modelProperty, Type openXmlType)
+  /// <returns>A method info is found; otherwise, null.</returns>
+  public static MethodInfo? GetUpdateDataMethod(PropertyInfo modelProperty, Type openXmlType)
   {
     var sourceType = modelProperty.DeclaringType;
     var memberName = modelProperty.Name;
@@ -49,10 +50,11 @@ public static class OpenXmlPropertyMap
       return null;
     }
 
-    var methodName = modelProperty.GetCustomAttribute<OpenXmlConvertToAttribute>()?.MethodName;
+    var methodName = modelProperty.GetCustomAttribute<OpenXmlUpdateDataAttribute>()?.MethodName;
     if (methodName != null)
     {
-      var methodInfo = modelProperty.DeclaringType?.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
+      var methodInfo = modelProperty.DeclaringType?
+        .GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
       if (methodInfo != null)
         return methodInfo;
     }
@@ -61,15 +63,16 @@ public static class OpenXmlPropertyMap
   }
 
   /// <summary>
-  /// Retrieves the get method information for the model property in the given OpenXml type.
+  /// Retrieves the load data method information for the model property.
+  /// This method is used to load data from the OpenXml element with the model property value.
   /// </summary>
-  /// <param name="modelProperty">The property of the model element for which to find the appropriate get method. Must not be null.</param>
-  /// <param name="openXmlType">The OpenXml type to search for property get method. Must not be null</param>
+  /// <param name="modelProperty">The property of the model element for which to find the appropriate method.</param>
+  /// <param name="openXmlType">The OpenXml type to update data.</param>
   /// <remarks>
-  /// Attempts to find a method name specified in the ConvertToOpenXmlAttribute applied to the model property.
+  /// Attempts to find a method name specified in the OpenXmlLoadDataAttribute applied to the model property.
   /// </remarks>
-  /// <returns>A get method info is found; otherwise, null.</returns>
-  public static MethodInfo? GetGetMethod(PropertyInfo modelProperty, Type openXmlType)
+  /// <returns>A method info is found; otherwise, null.</returns>
+  public static MethodInfo? GetLoadDataMethod(PropertyInfo modelProperty, Type openXmlType)
   {
     var sourceType = modelProperty.DeclaringType;
     var memberName = modelProperty.Name;
@@ -78,7 +81,7 @@ public static class OpenXmlPropertyMap
       return null;
     }
 
-    var methodName = modelProperty.GetCustomAttribute<OpenXmlConvertFromAttribute>()?.MethodName;
+    var methodName = modelProperty.GetCustomAttribute<OpenXmlLoadDataAttribute>()?.MethodName;
     if (methodName != null)
     {
       var methodInfo = modelProperty.DeclaringType?.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);

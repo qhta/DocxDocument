@@ -78,7 +78,7 @@ public static class EnumValueConverter
   /// <typeparam name="ModelEnumType">The target model enum type.</typeparam>
   /// <param name="value">The UInt16 value.</param>
   /// <returns>The converted enum value, or null if the input is null.</returns>
-  public static ModelEnumType? CreateEnumValue<ModelEnumType>(this UInt16? value)
+  public static ModelEnumType? CreateEnum<ModelEnumType>(this UInt16? value)
     where ModelEnumType : struct, IConvertible
   {
     if (value != null)
@@ -308,6 +308,37 @@ public static class EnumValueConverter
   }
 
   #endregion
+
+  /// <summary>
+  /// Creates an OpenXmlElement based on the provided value and conversion type.
+  /// </summary>
+  /// <param name="value">The value to convert. It should be an enum value.</param>
+  /// <param name="conversionType">The target Open XML element type.</param>
+  /// <returns>The created Open XML element, or null if the value is null.</returns>
+  /// <exception cref="InvalidOperationException"></exception>
+  public static object? CreateOpenXmlElement(object? value, Type conversionType)
+  {
+    //DXW.CaptionPositionValues
+    //DX.EnumValue<DXW.CaptionPositionValues> enumValue = null;
+    if (value == null) return null;
+
+    if (conversionType.Name.StartsWith("EnumValue`"))
+    {
+      var paramType = conversionType.GetGenericArguments()[0];
+      var valueName = Enum.GetName(value.GetType(), value)!;
+      var targetProp = paramType.GetProperty(valueName, BindingFlags.Public | BindingFlags.Static | BindingFlags.IgnoreCase);
+      if (targetProp != null)
+      {
+        var targetValue = targetProp.GetValue(null, []);
+        var enumValueType = typeof(DX.EnumValue<>).MakeGenericType(paramType);
+        var enumValueInstance = Activator.CreateInstance(enumValueType, targetValue);
+        return enumValueInstance;
+
+      }
+    }
+
+    throw new InvalidOperationException($"Cannot create Open XML element for {value} of type {value.GetType()}");
+  }
 
 
 }

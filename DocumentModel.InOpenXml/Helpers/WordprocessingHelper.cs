@@ -17,6 +17,7 @@ public static class WordprocessingHelper
     {
       // Add the MainDocumentPart, root Document and the Body.
       var mainPart = wordDocument.AddMainDocumentPart();
+      var properties = mainPart.OpenXmlPackage.PackageProperties;
       var document = mainPart.Document = new DXW.Document();
       var body = document.AppendChild(new DXW.Body());
     }
@@ -36,6 +37,8 @@ public static class WordprocessingHelper
     {
       // Add the MainDocumentPart, root Document and the Body.
       var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
+      var packageProperties = wordDocument.GetPackageProperties();
+
       var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
       var body = document.Body ?? (document.Body = document.AppendChild(new DXW.Body()));
     }

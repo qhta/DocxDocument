@@ -51,20 +51,28 @@ public static class TestHelper
   /// </summary>
   private static bool CompareTestData1<T>(Type comparedType, T obj1, T obj2, ref string? propName)
   {
+    if (obj1 is DocumentSettings) Debug.Assert(true);
     if (propName == "SchemaLibrary") Debug.Assert(true);
+    bool result;
 
     if (obj1 == null && obj2 == null) return true;
     if (obj1 == null || obj2 == null) return false;
     comparedType = comparedType.GetNotNullableType();
     if (comparedType.IsEnum)
     {
-      return object.Equals(obj1, obj2);
+      result = object.Equals(obj1, obj2);
+      if (!result)
+        return false;
+      return result;
     }
     if (comparedType.Implements(typeof(IEquatable<T>)))
     {
-      return Object.Equals(obj1, obj2);
+      result = Object.Equals(obj1, obj2);
+      if (!result)
+        return false;
+      return result;
     }
-    bool result;
+
     foreach (var property in comparedType.GetProperties())
     {
       if (propName=="SchemaLibrary") Debug.Assert(true);

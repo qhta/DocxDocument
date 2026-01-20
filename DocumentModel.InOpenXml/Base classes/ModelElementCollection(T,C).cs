@@ -7,13 +7,49 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
 /// <typeparam name="OpenXmlCollectionType">The type of the associated OpenXml element.</typeparam>
-public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : ElementCollection<ItemType> 
+public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : ElementCollection<ItemType>,
+  IWordprocessingDocumentAware
   where ItemType : ModelElement
   where OpenXmlCollectionType : DX.OpenXmlElement
 {
   private OpenXmlCollectionType? _openXmlCollection;
 
   protected bool isLoading;
+
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
+
+  /// <summary>
+  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
+  /// </summary>
+  /// <param name="wordprocessingDocument">Document to attach to.</param>
+  public virtual void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+  }
+
+  /// <summary>
+  /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
+  /// </summary>
+  /// <param name="wordprocessingDocument">Document to attach to.</param>
+  public virtual void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+  }
+
+
+  /// <summary>
+  /// Detach this instance from the attached document.
+  /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
+  /// </summary>
+  public virtual void Detach()
+  {
+    WordprocessingDocument = null;
+    SetOpenXmlElement(null);
+  }
+
 
   /// <summary>
   /// Initializes a new instance of the <see cref="ModelElement{OpenXmlItemType}"/> class.
@@ -24,7 +60,10 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
     {
       if (isLoading || _openXmlCollection == null)
         return;
-      if (e.Action == NotifyCollectionChangedAction.Add || e.Action == NotifyCollectionChangedAction.Remove || e.Action == NotifyCollectionChangedAction.Replace || e.Action == NotifyCollectionChangedAction.Reset)
+      if (e.Action == NotifyCollectionChangedAction.Add 
+          || e.Action == NotifyCollectionChangedAction.Remove 
+          || e.Action == NotifyCollectionChangedAction.Replace 
+          || e.Action == NotifyCollectionChangedAction.Reset)
       {
         UpdateData(_openXmlCollection);
       }
@@ -117,4 +156,5 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   /// </summary>
   /// <param name="openXmlModeledCollection">The OpenXml collection to store data to.</param>
   protected abstract void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection);
+
 }

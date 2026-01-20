@@ -1,12 +1,12 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Specifies the model method name that is used to update Open XML element with model data.
+/// Specifies the model method name that is used to load data from Open XML element.
 /// </summary>
 /// <param name="methodName">The name of the method to be called to update Open XML element with model data.
 /// Cannot be null or empty.</param>
 [AttributeUsage(AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
-public class OpenXmlUpdateDataAttribute(string methodName) : Attribute
+public class OpenXmlLoadDataAttribute(string methodName) : Attribute
 {
   /// <summary>
   /// The Open XML property name associated with the decorated member.

@@ -119,7 +119,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     {
       if (field is IWordprocessingDocumentAware oldValue)
         oldValue.Detach();
-      if (value is IWordprocessingDocumentAware newValue 
+      if (value is IWordprocessingDocumentAware newValue
           && this is IWordprocessingDocumentAware thisElement && thisElement.WordprocessingDocument != null)
         newValue.AttachAndUpdate(thisElement.WordprocessingDocument);
       field = value!;
