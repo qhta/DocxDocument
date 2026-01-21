@@ -11,6 +11,7 @@ public class AutoCaption: ModelElement<DXW.AutoCaption>
   /// Specifies a unique identifier which can be used to associate objects inserted into the document
   /// which are to be automatically labeled with a caption when inserted into the WordprocessingML document.
   /// </summary>
+  [OpenXmlProperty(nameof(DXW.Caption.Name))]
   public string? Name
   {
     get => _Name;
@@ -24,6 +25,7 @@ public class AutoCaption: ModelElement<DXW.AutoCaption>
   /// document. The caption settings are linked by matching the value of this attribute with
   /// the name attribute of the corresponding caption element.
   /// </summary>
+  [OpenXmlProperty(nameof(DXW.AutoCaption.Caption))]
   public string? Caption
   {
     get => _Caption;

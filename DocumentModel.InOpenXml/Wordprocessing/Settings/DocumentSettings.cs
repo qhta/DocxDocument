@@ -85,7 +85,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:alignBordersAndEdges
   /// </remarks>
   [Category("Page layout")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.AlignBorderAndEdges))]
   public bool? AlignBorderAndEdges
   {
     get => _AlignBorderAndEdges;
@@ -245,7 +245,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:bordersDoNotSurroundFooter
   /// </remarks>
   [Category("Page layout")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.BordersDoNotSurroundFooter))]
   public bool? BordersDoNotSurroundFooter
   {
     get => _BordersDoNotSurroundFooter;
@@ -261,7 +261,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:bordersDoNotSurroundHeader
   /// </remarks>
   [Category("Page layout")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.BordersDoNotSurroundHeader))]
   public bool? BordersDoNotSurroundHeader
   {
     get => _BordersDoNotSurroundHeader;
@@ -485,7 +485,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:displayBackgroundShape
   /// </remarks>
   [Category("View")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.DisplayBackgroundShape))]
   public bool? DisplayBackgroundShape
   {
     get => _DisplayBackgroundShape;
@@ -613,7 +613,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:doNotDisplayPageBoundaries
   /// </remarks>
   [Category("View")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.DoNotDisplayPageBoundaries))]
   public bool? DoNotDisplayPageBoundaries
   {
     get => _DoNotDisplayPageBoundaries;
@@ -805,7 +805,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:embedSystemFonts
   /// </remarks>
   [Category("Fonts")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.EmbedSystemFonts))]
   public bool? EmbedSystemFonts
   {
     get => _EmbedSystemFonts;
@@ -821,7 +821,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:embedTrueTypeFonts
   /// </remarks>
   [Category("Fonts")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.EmbedTrueTypeFonts))]
   public bool? EmbedTrueTypeFonts
   {
     get => _EmbedTrueTypeFonts;
@@ -911,7 +911,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:gutterAtTop
   /// </remarks>
   [Category("Printing")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.GutterAtTop))]
   public bool? GutterAtTop
   {
     get => _GutterAtTop;
@@ -940,7 +940,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:hideGrammaticalErrors
   /// </remarks>
   [Category("Proofing")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.HideGrammaticalErrors))]
   public bool? HideGrammaticalErrors
   {
     get => _HideGrammaticalErrors;
@@ -956,7 +956,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:hideSpellingErrors
   /// </remarks>
   [Category("Proofing")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.HideSpellingErrors))]
   public bool? HideSpellingErrors
   {
     get => _HideSpellingErrors;
@@ -1110,7 +1110,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:printFormsData
   /// </remarks>
   [Category("Printing")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.PrintFormsData))]
   public bool? PrintFormsData
   {
     get => _PrintFormsData;
@@ -1126,7 +1126,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:printFractionalCharacterWidth
   /// </remarks>
   [Category("Printing")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.PrintFractionalCharacterWidth))]
   public bool? PrintFractionalCharacterWidth
   {
     get => _PrintFractionalCharacterWidth;
@@ -1142,7 +1142,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:printPostScriptOverText
   /// </remarks>
   [Category("Printing")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.PrintPostScriptOverText))]
   public bool? PrintPostScriptOverText
   {
     get => _PrintPostScriptOverText;
@@ -1203,7 +1203,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:removeDateAndTime
   /// </remarks>
   [Category("Protection")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.RemoveDateAndTime))]
   public bool? RemoveDateAndTime
   {
     get => _RemoveDateAndTime;
@@ -1219,7 +1219,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:removePersonalInformation
   /// </remarks>
   [Category("Protection")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.RemovePersonalInformation))]
   public bool? RemovePersonalInformation
   {
     get => _RemovePersonalInformation;
@@ -1251,7 +1251,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:saveFormsData
   /// </remarks>
   [Category("Forms")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.SaveFormsData))]
   public bool? SaveFormsData
   {
     get => _SaveFormsData;
@@ -1543,7 +1543,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:view
   /// </remarks>
   [Category("View")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.View))]
   public ViewKind? View
   {
     get => _View;
@@ -1559,7 +1559,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:writeProtection
   /// </remarks>
   [Category("Protection")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.WriteProtection))]
   public WriteProtection? WriteProtection
   {
     get => _WriteProtection;
@@ -1575,7 +1575,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:zoom
   /// </remarks>
   [Category("View")]
-  //[OpenXmlElement]
+  [OpenXmlProperty(nameof(DXW.Settings.Zoom))]
   public Zoom? Zoom
   {
     get => _Zoom;
