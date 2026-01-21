@@ -142,7 +142,7 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
   public ContentProperties ContentProperties
   {
     get => _ContentProperties;
-    set => UpdateField(ref _ContentProperties, value, nameof(ContentProperties));
+    set => UpdateField(ref _ContentProperties!, value, nameof(ContentProperties));
   }
   private ContentProperties _ContentProperties;
 
@@ -153,7 +153,7 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
   public StatisticProperties StatisticProperties
   {
     get => _StatisticProperties;
-    set => UpdateField(ref _StatisticProperties, value, nameof(StatisticProperties));
+    set => UpdateField(ref _StatisticProperties!, value, nameof(StatisticProperties));
   }
   private StatisticProperties _StatisticProperties;
 

@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// <summary>
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
-public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>
+public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem
 {
   static ModelElement()
   {
@@ -111,18 +111,23 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// a property change notification is triggered.</param>
   /// <param name="propertyName">The name of the property associated with the field. Used to identify which property has changed when raising the
   /// notification.</param>
-  protected void UpdateField<FieldType>(ref FieldType field, FieldType? value, string propertyName)
+  protected void UpdateField<FieldType>(ref FieldType? field, FieldType? value, string propertyName)
   {
+    if (typeof(FieldType).Name.StartsWith("AttachedTemplate")) Debug.Assert(true);
+
     if (value is string stringValue && stringValue.Length == 0)
       value = default;
     if (!Equals(field, value))
     {
       if (field is IWordprocessingDocumentAware oldValue)
         oldValue.Detach();
+      if (value is IChildItem childItem && childItem.Parent == null)
+        if (!Object.ReferenceEquals(value, this))
+          childItem.Parent = this;
       if (value is IWordprocessingDocumentAware newValue
           && this is IWordprocessingDocumentAware thisElement && thisElement.WordprocessingDocument != null)
         newValue.AttachAndUpdate(thisElement.WordprocessingDocument);
-      field = value!;
+      field = value;
       NotifyPropertyChanged(propertyName);
     }
   }
@@ -212,4 +217,20 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   protected virtual object? GetUpdatableOpenXmlElement() => null;
 
 
+  /// <summary>
+  /// Parent object that contains this item.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public object? Parent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+
+
+  /// <summary>
+  /// Optional collection that contains this item.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public object? Collection { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -19,8 +19,13 @@ public class ActiveWritingStyles: ElementCollection<ActiveWritingStyle>
   {
   }
 
-  protected override object? GetUpdatableOpenXmlElement()
+  public override void UpdateData(object openXmlElement)
   {
-    throw new NotImplementedException();
+    base.UpdateData(openXmlElement);
+  }
+
+  public override void LoadData(object openXmlElement)
+  {
+    base.LoadData(openXmlElement);
   }
 }

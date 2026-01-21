@@ -20,22 +20,22 @@ public abstract class CollectionItem: ModelElement, ICollectionItem
     Collection = collection;
   }
 
-  /// <summary>
-  /// Collection that contains this item.
-  /// </summary>
-  [XmlIgnore]
-  [JsonIgnore]
-  [NotMapped]
-  public object? Collection { get; set; }
+  ///// <summary>
+  ///// Collection that contains this item.
+  ///// </summary>
+  //[XmlIgnore]
+  //[JsonIgnore]
+  //[NotMapped]
+  //public object? Collection { get; set; }
 
 
-  /// <summary>
-  /// Collection property is defined  but not stored in OpenXml element
-  /// </summary>
-  /// <param name="value">Value to set locally</param>
-  public void SetCollection(IElementCollection<CollectionItem>? value)
-  {
-    Collection = value;
-  }
+  ///// <summary>
+  ///// Collection property is defined  but not stored in OpenXml element
+  ///// </summary>
+  ///// <param name="value">Value to set locally</param>
+  //public void SetCollection(IElementCollection<CollectionItem>? value)
+  //{
+  //  Collection = value;
+  //}
 
 }

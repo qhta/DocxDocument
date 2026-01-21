@@ -6,8 +6,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class Story: ElementCollection<CommonContent<IStoryContent>>, ICollectionItem
 {
-  [XmlIgnore]
-  [NotMapped]
-  [JsonIgnore]
-  public object? Collection { get; set; }
 }

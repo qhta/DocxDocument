@@ -3,6 +3,7 @@
 /// <summary>
 /// Represents a collection of automatic caption definitions for Wordprocessing documents.
 /// </summary>
+[XmlRoot("AutoCaptions")]
 public class AutoCaptions : ModelElementCollection<AutoCaption, DXW.AutoCaptions, DXW.AutoCaption>
 {
   /// <summary>

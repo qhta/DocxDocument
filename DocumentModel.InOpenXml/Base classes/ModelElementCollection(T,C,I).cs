@@ -14,8 +14,12 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   {
   }
 
-  protected ModelElementCollection(IEnumerable<ItemType>? itemTypeCollection) : base()
+  protected ModelElementCollection(IEnumerable<ItemType> itemTypeCollection) : base()
   {
+    foreach (var item in itemTypeCollection)
+    {
+      this.Add(item);
+    }
   }
 
   protected override void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)

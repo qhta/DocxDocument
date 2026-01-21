@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides conversion methods for complex types between model objects and Open XML types.
@@ -12,6 +10,7 @@ public static class OpenXmlComplexTypeConverter
   /// </summary>
   /// <param name="modelObject">The model object to convert.</param>
   /// <param name="openXmlType">The target Open XML type.</param>
+  /// <remarks>This method creates a new instance of the specified Open XML type and populates it with data from the model object.</remarks>
   /// <returns>The created Open XML element, or null if the input is null.</returns>
   public static object? ConvertObjectToOpenXml(object? modelObject, Type openXmlType)
   {
@@ -19,10 +18,47 @@ public static class OpenXmlComplexTypeConverter
       return null;
 
     var currentType = modelObject.GetType();
-    if (currentType.Name == "AttachedTemplate") Debug.Assert(true);
+    if (openXmlType.Name == "CharacterSpacingControl") Debug.Assert(true);
+    if (modelObject is string stringValue)
+      return OpenXmlSimpleValueConverter.ConvertToOpenXml(modelObject, openXmlType);
+    if (modelObject.GetType().IsEnum)
+    {
+      var enumValue = (Enum)modelObject;
+      return OpenXmlSimpleValueConverter.ConvertToOpenXml(enumValue, openXmlType);
+    }
     var openXmlElement = Activator.CreateInstance(openXmlType)!;
     UpdateData(modelObject, openXmlElement, openXmlType);
     return openXmlElement;
+  }
+
+  /// <summary>
+  /// Converts an OpenXML element to an instance of the specified model type.
+  /// </summary>
+  /// <remarks>The returned object is created using the default constructor of the specified model type. Ensure
+  /// that <paramref name="modelType"/> has a public parameterless constructor and is compatible with the data in
+  /// <paramref name="openXmlElement"/>.</remarks>
+  /// <param name="openXmlElement">The OpenXML element to convert. Can be null.</param>
+  /// <param name="modelType">The type of the model object to create and populate from the OpenXML element. Must not be null.</param>
+  /// <returns>An object of the specified model type populated with data from the OpenXML element, or null if <paramref
+  /// name="openXmlElement"/> is null.</returns>
+  public static object? ConvertObjectFromOpenXml(object? openXmlElement, Type modelType)
+  {
+    if (openXmlElement == null)
+      return null;
+
+    var currentType = openXmlElement.GetType();
+    if (currentType.Name == "CharacterSpacingControl") Debug.Assert(true);
+    if (modelType == typeof(string))
+    {
+      return OpenXmlSimpleValueConverter.ConvertFromOpenXml(openXmlElement, typeof(string));
+    }
+    if (modelType.IsEnum)
+    {
+      return OpenXmlSimpleValueConverter.ConvertFromOpenXml(openXmlElement, modelType);
+    }
+    var modelObject = Activator.CreateInstance(modelType)!;
+    LoadData(modelObject, openXmlElement, modelType);
+    return modelObject;
   }
 
   /// <summary>
@@ -49,7 +85,7 @@ public static class OpenXmlComplexTypeConverter
     }
     foreach (var modelProperty in modelType.GetModelProperties())
     {
-      if (modelProperty.Name == "Template") Debug.Assert(true);
+      if (modelProperty.Name == "CharacterSpacingControl") Debug.Assert(true);
       UpdateData(modelObject, modelProperty, openXmlElement, openXmlType);
     }
   }
@@ -80,7 +116,7 @@ public static class OpenXmlComplexTypeConverter
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return;
 
-    if (modelProperty.Name == "Value") Debug.Assert(true);
+    if (modelProperty.Name == "CharacterSpacingControl") Debug.Assert(true);
 
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanWrite)
@@ -93,7 +129,7 @@ public static class OpenXmlComplexTypeConverter
       openXmlProperty.SetValue(openXmlElement, modelValue);
       return;
     }
-    if (modelProperty.Name == "Uri") Debug.Assert(true);
+    if (modelProperty.Name == "CharacterSpacingControl") Debug.Assert(true);
     var updateDataMethod = OpenXmlPropertyMap.GetUpdateDataMethod(modelProperty, openXmlType);
     if (updateDataMethod != null)
     {
@@ -110,7 +146,7 @@ public static class OpenXmlComplexTypeConverter
       }
       throw new InvalidOperationException($"Invalid number of parameters in method {updateDataMethod.DeclaringType}.{updateDataMethod.Name}");
     }
-    if (modelProperty.Name == "Uri") Debug.Assert(true);
+    if (modelProperty.Name == "CharacterSpacingControl") Debug.Assert(true);
     var openXmlElementAttribute = modelProperty.GetCustomAttribute<OpenXmlElementAttribute>();
     if (openXmlElementAttribute != null)
     {
@@ -123,7 +159,8 @@ public static class OpenXmlComplexTypeConverter
       UpdateChildElementCollection(modelObject, modelProperty, (OpenXmlElement)openXmlElement, openXmlType);
       return;
     }
-    throw new InvalidOperationException($"Failed to update Open XML element {openXmlType} " + $"property {modelProperty.Name} from model element {modelObject.GetType()}");
+    throw new InvalidOperationException($"Failed to update Open XML element {openXmlType} " +
+                                        $"from model element {modelObject.GetType()} property {modelProperty.Name} ");
   }
 
   /// <summary>
@@ -155,6 +192,7 @@ public static class OpenXmlComplexTypeConverter
     if (modelValue == null)
       return;
 
+    if (modelProperty.Name == "CharacterSpacingControl") Debug.Assert(true);
     var openXmlChildElement = ConvertObjectToOpenXml(modelValue, openXmlChildType);
     if (openXmlChildElement is not DX.OpenXmlElement o)
       throw new InvalidOperationException($"Converted Open XML child element " + $"is not of type DX.OpenXmlElement for model property {modelProperty.Name}");
@@ -176,14 +214,14 @@ public static class OpenXmlComplexTypeConverter
     if (modelValue == null)
       return;
 
-    var modelPropertyPropertyType = modelProperty.PropertyType.GetNotNullableType();
-    var collectionInterface = modelPropertyPropertyType.GetInterfaces().FirstOrDefault(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(ICollection<>));
+    var modelPropertyType = modelProperty.PropertyType.GetNotNullableType();
+    var collectionInterface = modelPropertyType.GetInterfaces().FirstOrDefault(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(ICollection<>));
     if (collectionInterface == null)
       throw new InvalidOperationException($"Model property {modelProperty.Name} is not a collection.");
 
     var modelItemType = collectionInterface.GetGenericArguments().FirstOrDefault();
     if (modelItemType == null)
-      throw new InvalidOperationException($"No item type declared in {modelValue.GetType()}.");
+      throw new InvalidOperationException($"No item type declared in {modelPropertyType}.");
 
     var openXmlChildType = OpenXmlTypeMap.GetOpenXmlTypeForModelType(modelItemType);
     if (openXmlChildType == null)
@@ -248,9 +286,7 @@ public static class OpenXmlComplexTypeConverter
   /// <param name="openXmlType">The type of the Open XML element.</param>
   public static void LoadData(object modelObject, PropertyInfo modelProperty, object openXmlElement, Type openXmlType)
   {
-    if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
-      return;
-
+    if (modelProperty.Name== "AttachedSchemas") Debug.Assert(true);
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanRead)
     {
@@ -276,7 +312,87 @@ public static class OpenXmlComplexTypeConverter
       {
         getMappedMethod.Invoke(modelObject, [openXmlElement]);
       }
+      return;
     }
+    var openXmlElementAttribute = modelProperty.GetCustomAttribute<OpenXmlElementAttribute>();
+    if (openXmlElementAttribute != null)
+    {
+      LoadChildElement(modelObject, modelProperty, (OpenXmlElement)openXmlElement, openXmlType, openXmlElementAttribute.OpenXmlType);
+      return;
+    }
+    var openXmlElementCollectionAttribute = modelProperty.GetCustomAttribute<OpenXmlElementCollectionAttribute>();
+    if (openXmlElementCollectionAttribute != null)
+    {
+      LoadChildElementCollection(modelObject, modelProperty, (OpenXmlElement)openXmlElement, openXmlType);
+      return;
+    }
+    throw new InvalidOperationException($"Failed to load data from Open XML element {openXmlType} " +
+                                        $"to model element {modelObject.GetType()}property {modelProperty.Name}");
+  }
+
+  public static void LoadChildElement(object modelObject, PropertyInfo modelProperty, DX.OpenXmlElement openXmlElement, Type openXmlType, Type? openXmlChildType)
+  {
+    var modelPropertyType = modelProperty.PropertyType.GetNotNullableType();
+    if (openXmlChildType == null)
+    {
+      // If no specific openXmlChildType is provided, use the model property's type to determine the Open XML type.
+      openXmlChildType = OpenXmlTypeMap.GetOpenXmlTypeForModelType(modelPropertyType);
+      if (openXmlChildType == null)
+        throw new InvalidOperationException($"No Open XML type mapping found " + $"for model property {modelProperty.Name} of type {modelPropertyType}");
+    }
+    var children = openXmlElement.ChildElements.Where(item => item.GetType() == openXmlChildType).ToArray();
+    if (children.Length > 1)
+      throw new InvalidOperationException($"Multiple child elements of type {openXmlChildType} " + $"found in Open XML element {openXmlType} for model property {modelProperty.Name}");
+
+    foreach (var childElement in children)
+    {
+      var modelValue = ConvertObjectFromOpenXml(childElement, modelPropertyType);
+      if (!modelPropertyType.IsInstanceOfType(modelValue))
+        throw new InvalidOperationException($"Converted value {modelValue} is not of type {modelPropertyType} for model property {modelProperty.Name}");
+      modelProperty.SetValue(modelObject, modelValue);
+      return;
+    }
+  }
+
+  public static void LoadChildElementCollection(object modelObject, PropertyInfo modelProperty, DX.OpenXmlElement openXmlElement, Type openXmlType)
+  {
+    var modelPropertyType = modelProperty.PropertyType.GetNotNullableType();
+    var collectionInterface = modelPropertyType.GetInterfaces().FirstOrDefault(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(ICollection<>));
+    if (collectionInterface == null)
+      throw new InvalidOperationException($"Model property {modelProperty.Name} is not a collection.");
+
+    var modelItemType = collectionInterface.GetGenericArguments().FirstOrDefault();
+    if (modelItemType == null)
+      throw new InvalidOperationException($"No item type declared in {modelPropertyType}.");
+
+    var openXmlChildType = OpenXmlTypeMap.GetOpenXmlTypeForModelType(modelItemType);
+    if (openXmlChildType == null)
+      throw new InvalidOperationException($"No Open XML type mapping found for type {modelItemType}");
+
+    var modelAddMethod = modelPropertyType.GetMethod("Add", [modelItemType]);
+    if (modelAddMethod == null)
+      throw new InvalidOperationException($"No Add method found in collection type {modelPropertyType}");
+    var modelClearMethod = modelPropertyType.GetMethod("Clear", []);
+    if (modelClearMethod == null)
+      throw new InvalidOperationException($"No Clear method found in collection type {modelPropertyType}");
+
+
+    object? modelValue = modelProperty.GetValue(modelObject);
+    if (modelValue != null)
+      modelClearMethod.Invoke(modelValue, []);
+    if (modelProperty.Name== "AttachedSchemas") Debug.Assert(true);
+    var children = openXmlElement.ChildElements.Where(item => item.GetType() == openXmlChildType).ToArray();
+    foreach (var openXmlChildElement in children)
+    {
+      var modelItem = ConvertObjectFromOpenXml(openXmlChildElement, modelItemType);
+      if (!modelItemType.IsInstanceOfType(modelItem))
+        throw new InvalidOperationException($"Converted model Item is not compatible to {modelItemType}");
+      if (modelValue == null)
+        modelValue = Activator.CreateInstance(modelPropertyType)!;
+      modelAddMethod.Invoke(modelValue, [modelItem]);
+    }
+    if (modelValue != null)
+      modelProperty.SetValue(modelObject, modelValue);
   }
 
   /// <summary>

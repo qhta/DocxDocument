@@ -33,15 +33,12 @@ public static class DeepComparer
     }
     // Perform deep comparison of properties
 
-    var properties = comparedType.GetProperties(BindingFlags.Instance | BindingFlags.Public);
+    var properties = comparedType.GetModelProperties();
     foreach (var prop in properties)
     {
-      if (prop.CanRead && prop.CanWrite && !prop.GetIndexParameters().Any())
-      {
-        var value1 = prop.GetValue(obj1);
-        var value2 = prop.GetValue(obj2);
-        if (!Equals(value1, value2)) return false;
-      }
+      var value1 = prop.GetValue(obj1);
+      var value2 = prop.GetValue(obj2);
+      if (!Equals(value1, value2)) return false;
     }
     bool result = true;
     if (comparedType.IsEnumerable(out var itemType))
@@ -76,16 +73,13 @@ public static class DeepComparer
     if (obj1 is null || obj2 is null) return false;
 
     // Perform deep comparison of properties
-    var properties = comparedType.GetProperties(BindingFlags.Instance | BindingFlags.Public);
+    var properties = comparedType.GetModelProperties();
     foreach (var prop in properties)
     {
-      if (prop.CanRead && prop.CanWrite)
-      {
-        var value1 = prop.GetValue(obj1);
-        var value2 = prop.GetValue(obj2);
-        if (!Equals(value1, value2))
-          return false;
-      }
+      var value1 = prop.GetValue(obj1);
+      var value2 = prop.GetValue(obj2);
+      if (!Equals(value1, value2))
+        return false;
     }
     return true;
   }

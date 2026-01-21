@@ -8,8 +8,15 @@ public class Captions : ModelElement<DXW.Captions>
   /// <summary>
   /// Contains the collection of caption format definitions for different object types.
   /// </summary>
+  [OpenXmlLoadData(nameof(LoadCaptionsInOpenXml))]
   [OpenXmlUpdateData(nameof(UpdateCaptionDefinitionsInOpenXml))]
-  public CaptionDefinitions? CaptionDefinitions { get; set; }
+  public CaptionDefinitions? CaptionDefinitions
+  {
+    get => _CaptionDefinitions;
+    set => UpdateField(ref _CaptionDefinitions, value, nameof(CaptionDefinitions));
+  }
+
+  private CaptionDefinitions? _CaptionDefinitions;
 
   /// <summary>
   /// Updates the caption definitions in the specified Open XML <see cref="DXW.Captions"/> element to match the current
@@ -33,10 +40,38 @@ public class Captions : ModelElement<DXW.Captions>
   }
 
   /// <summary>
+  /// Loads caption definitions from the specified Open XML captions element into the current collection.
+  /// </summary>
+  /// <remarks>This method parses each <see cref="DXW.Caption"/> element within the provided <paramref
+  /// name="wordCaptions"/> and adds the corresponding caption definitions to the <c>CaptionDefinitions</c> collection.
+  /// Existing items in the collection are preserved, and new items are appended. If the collection is null, it will be
+  /// initialized.</remarks>
+  /// <param name="wordCaptions">The Open XML captions element containing one or more caption definitions to load. Cannot be null.</param>
+  public void LoadCaptionsInOpenXml(DXW.Captions wordCaptions)
+  {
+    foreach (var openXmlItem in wordCaptions.Elements<DXW.Caption>())
+    {
+      var modelItem = OpenXmlComplexTypeConverter.ConvertObjectFromOpenXml(openXmlItem, typeof(DMW.CaptionDefinition));
+      if (modelItem is DMW.CaptionDefinition captionDefinition)
+      {
+        CaptionDefinitions ??= new CaptionDefinitions();
+        CaptionDefinitions.Add(captionDefinition);
+      }
+    }
+  }
+
+  /// <summary>
   /// Contains the collection of automatic captioning rules for objects in the document.
   /// </summary>
+  [OpenXmlLoadData(nameof(LoadAutoCaptionsInOpenXml))]
   [OpenXmlUpdateData(nameof(UpdateAutoCaptionsInOpenXml))]
-  public AutoCaptions? AutoCaptions { get; set; }
+  public AutoCaptions? AutoCaptions
+  {
+    get => _AutoCaptions;
+    set => UpdateField(ref _AutoCaptions, value, nameof(AutoCaptions));
+  }
+
+  private AutoCaptions? _AutoCaptions;
 
   /// <summary>
   /// Updates the specified Open XML captions collection to reflect the current set of automatic captions.
@@ -47,14 +82,39 @@ public class Captions : ModelElement<DXW.Captions>
   /// replaced with the current set.</param>
   public void UpdateAutoCaptionsInOpenXml(DXW.Captions wordCaptions)
   {
-    wordCaptions.RemoveAllChildren<DXW.AutoCaption>();
+    wordCaptions.RemoveAllChildren<DXW.AutoCaptions>();
     if (AutoCaptions == null)
       return;
-    foreach (var item in AutoCaptions)
+    if (AutoCaptions.Count>0)
     {
-      var newChild = OpenXmlComplexTypeConverter.ConvertObjectToOpenXml(item, typeof(DXW.AutoCaption));
-      if (newChild is DXW.AutoCaption autoCaption)
-        wordCaptions.AppendChild(autoCaption);
+      var modelAutoCaptions = new DXW.AutoCaptions();
+      foreach (var modelItem in AutoCaptions)
+      {
+        var openXmlItem = OpenXmlComplexTypeConverter.ConvertObjectToOpenXml(modelItem, typeof(DXW.AutoCaption));
+        if (openXmlItem is DXW.AutoCaption autoCaption)
+          modelAutoCaptions.AppendChild(autoCaption);
+      }
+      wordCaptions.AppendChild(modelAutoCaptions);
+    }
+  }
+
+  /// <summary>
+  /// Loads automatic caption definitions from the specified Open XML captions collection into the current model.
+  /// </summary>
+  /// <param name="wordCaptions"></param>
+  public void LoadAutoCaptionsInOpenXml(DXW.Captions wordCaptions)
+  {
+    var autoCaptions = wordCaptions.Elements<DXW.AutoCaptions>().FirstOrDefault();
+    if (autoCaptions != null) {
+      foreach (var openXmlItem in autoCaptions.Elements<DXW.AutoCaption>())
+      {
+        var modelItem = OpenXmlComplexTypeConverter.ConvertObjectFromOpenXml(openXmlItem, typeof(DMW.AutoCaption));
+        if (modelItem is DMW.AutoCaption autoCaption)
+        {
+          AutoCaptions ??= new AutoCaptions();
+          AutoCaptions.Add(autoCaption);
+        }
+      }
     }
   }
 }

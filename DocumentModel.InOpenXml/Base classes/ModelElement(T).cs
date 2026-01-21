@@ -4,7 +4,7 @@
 /// Represents a model element that wraps an OpenXml element of the specified type.
 /// </summary>
 /// <typeparam name="OpenXmlType">The type of the underlying OpenXml element.</typeparam>
-public abstract class ModelElement<OpenXmlType> : ModelElement, ICollectionItem, IWordprocessingDocumentAware
+public abstract class ModelElement<OpenXmlType> : ModelElement, IWordprocessingDocumentAware
 where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with PackageProperties
 {
   private OpenXmlType? _openXmlElement;
@@ -12,7 +12,27 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public DXPP.WordprocessingDocument? WordprocessingDocument { [DebuggerStepThrough] get; [DebuggerStepThrough] private set; }
+  public DXPP.WordprocessingDocument? WordprocessingDocument
+  {
+    get
+    {
+      if (_WordprocessingDocument != null)
+        return _WordprocessingDocument;
+      if (Collection != null)
+        if (Collection is IWordprocessingDocumentAware collectionAware)
+          return collectionAware.WordprocessingDocument;
+      if (Parent != null)
+        if (Parent is IWordprocessingDocumentAware parentAware)
+          return parentAware.WordprocessingDocument;
+
+      return null;
+    }
+
+    [DebuggerStepThrough]
+    private set => _WordprocessingDocument = value;
+  }
+
+  private DXPP.WordprocessingDocument? _WordprocessingDocument;
 
   /// <summary>
   /// Initializes a new instance of the <see cref="ModelElement{OpenXmlItemType}"/> class.
@@ -48,7 +68,7 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
     WordprocessingDocument = null;
     SetOpenXmlElement(null);
   }
-  
+
   /// <summary>
   /// Initializes a new instance of the <see cref="ModelElement{OpenXmlItemType}"/> class with the specified OpenXml element.
   /// </summary>
@@ -85,8 +105,5 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
     return _openXmlElement;
   }
 
-  [XmlIgnore]
-  [JsonIgnore]
-  [NotMapped]
-  public object? Collection { get; set; }
+
 }
