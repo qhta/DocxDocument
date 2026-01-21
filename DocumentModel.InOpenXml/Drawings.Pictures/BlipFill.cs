@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Pictures;
-
 /// <summary>
 ///   Picture Fill.
 /// </summary>
-public class BlipFill: ModelElement<DXDP.BlipFill>
+public partial class BlipFill : ModelElement<DXDP.BlipFill>
 {
   /// <summary>
   ///   DPI Setting

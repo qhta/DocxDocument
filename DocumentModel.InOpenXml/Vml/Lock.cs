@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Defines the Lock Class.
 /// </summary>
-public class Lock: ModelElement<DXVO.Lock>
+public partial class Lock : ModelElement<DXVO.Lock>
 {
   /// <summary>
   ///   VML Extension Handling Behavior

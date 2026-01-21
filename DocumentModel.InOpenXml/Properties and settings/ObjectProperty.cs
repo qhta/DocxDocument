@@ -1,14 +1,11 @@
-﻿namespace DocumentModel;
-
+namespace DocumentModel;
 /// <summary>
 /// Model for an object property.
 /// </summary>
-public abstract class ObjectProperty
+public abstract partial class ObjectProperty
 {
   /// <summary>
   /// Name of the property.
   /// </summary>
   public string? Name { get; set; }
-
-
 }

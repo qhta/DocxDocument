@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Office.ScriptLink;
-
 /// <summary>
 ///   Defines the ScriptLink Class.
 /// </summary>
-public class ScriptLink: ModelElement<DXOY21SL.ScriptLink>
+public partial class ScriptLink : ModelElement<DXOY21SL.ScriptLink>
 {
   /// <summary>
   ///   val

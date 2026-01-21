@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Office.OEmbed;
-
 /// <summary>
 ///   Defines the OEmbedShared Class.
 /// </summary>
-public class OEmbedShared: ModelElement<DXODY21OE.OEmbedShared>
+public partial class OEmbedShared : ModelElement<DXODY21OE.OEmbedShared>
 {
   /// <summary>
   ///   srcUrl

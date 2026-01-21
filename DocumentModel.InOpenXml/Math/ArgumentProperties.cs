@@ -35,7 +35,7 @@ namespace DocumentModel.Math;
 ///    </item>
 ///   </list>
 /// </summary>
-public class ArgumentProperties: ModelElement<DXM.ArgumentProperties>
+public partial class ArgumentProperties : ModelElement<DXM.ArgumentProperties>
 {
   /// <summary>
   ///   Argument Size.

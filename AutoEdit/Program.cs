@@ -26,8 +26,8 @@ public static class Program
           {
             var filename = Path.GetFileNameWithoutExtension(filePath);
             var ShouldSerializeFile = filename + ".ShouldSerialize.cs";
-            if (File.Exists(Path.Combine(Path.GetDirectoryName(filePath)!, ShouldSerializeFile)))
-              continue;
+            //if (File.Exists(Path.Combine(Path.GetDirectoryName(filePath)!, ShouldSerializeFile)))
+            //  continue;
             GenerateShouldSerializeFunctions.Run(filePath);
           }
         }

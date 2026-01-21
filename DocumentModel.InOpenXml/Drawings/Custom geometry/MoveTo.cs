@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Represents a command to move the current path to a specified point without drawing a line.
 /// </summary>
-public class MoveTo: ModelElement<DXD.MoveTo>
+public partial class MoveTo : ModelElement<DXD.MoveTo>
 {
   /// <summary>
   ///   Destination point for the move operation.

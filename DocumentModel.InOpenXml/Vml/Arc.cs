@@ -2,11 +2,10 @@ using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
 
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Arc Segment.
 /// </summary>
-public class Arc: ModelElement<DXV.Arc>, IEmbeddedObjectContent
+public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Optional String

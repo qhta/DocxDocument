@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Represents a color that references a system-defined color from the operating system's color scheme
 /// with optional transformations. System colors enable documents to adapt to the user's operating system
@@ -27,7 +26,7 @@ namespace DocumentModel.Drawings;
 /// </list>
 /// </para>
 /// <para>
-/// The <see cref="LastColor"/> property stores the most recently resolved RGB value for the system color.
+/// The <see cref = "LastColor"/> property stores the most recently resolved RGB value for the system color.
 /// This serves as a fallback when the document is viewed on systems where the system color cannot be
 /// resolved (e.g., non-Windows platforms, or when specific system colors are unavailable). Applications
 /// can use this cached value to provide consistent appearance across different environments.
@@ -69,7 +68,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public class SystemColor: DrawingColor
+public partial class SystemColor : DrawingColor
 {
   /// <summary>
   /// Gets or sets the system color identifier that references a specific OS-defined color.
@@ -106,7 +105,6 @@ public class SystemColor: DrawingColor
   /// </para>
   /// </remarks>
   public SystemColorKind? Val { get; set; }
-  
   /// <summary>
   /// Gets or sets the last known RGB value for this system color, used as a fallback.
   /// </summary>
@@ -130,11 +128,11 @@ public class SystemColor: DrawingColor
   /// </list>
   /// </para>
   /// <para>
-  /// When rendering a document, applications should prefer the live system color (via <see cref="Val"/>)
-  /// but fall back to <see cref="LastColor"/> if the system color cannot be resolved.
+  /// When rendering a document, applications should prefer the live system color (via <see cref = "Val"/>)
+  /// but fall back to <see cref = "LastColor"/> if the system color cannot be resolved.
   /// This ensures the best possible appearance in all environments while maintaining a reasonable
   /// fallback for non-Windows or incompatible systems.
   /// </para>
   /// </remarks>
   public RGB? LastColor { get; set; }
-  }
+}

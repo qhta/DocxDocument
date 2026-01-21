@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the properties of the array object, including the vertical justification of the object and layout inside the object. 
 /// </summary>
-public class EquationArrayProperties: ModelElement<DXM.EquationArrayProperties>
+public partial class EquationArrayProperties : ModelElement<DXM.EquationArrayProperties>
 {
   /// <summary>
   ///   Equation Array Base Justification.

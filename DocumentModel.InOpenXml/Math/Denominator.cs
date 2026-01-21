@@ -1,9 +1,10 @@
 using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the denominator of a fraction.
 /// </summary>
-public class Denominator: OfficeMathArgumentType<DXM.Denominator>
+public partial class Denominator : OfficeMathArgumentType<DXM.Denominator>
 {
   /// <summary>
   ///   Specifies properties of argument object.

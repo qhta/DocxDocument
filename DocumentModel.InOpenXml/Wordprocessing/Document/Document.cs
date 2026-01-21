@@ -1,11 +1,9 @@
-﻿namespace DocumentModel.Wordprocessing;
-
+namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a Wordprocessing document and provides access to its settings and lifecycle management.
 /// </summary>
-public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
+public partial class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
 {
-
   /// <summary>
   /// Initializes a new instance of the Document class.
   /// </summary>
@@ -14,7 +12,6 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
     _CoreProperties = new CoreProperties(this);
     _ContentProperties = new ContentProperties(this);
     _StatisticProperties = new StatisticProperties(this);
-
   }
 
   /// <summary>
@@ -27,18 +24,19 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
     _CoreProperties = new CoreProperties(this);
     _ContentProperties = new ContentProperties(this);
     _StatisticProperties = new StatisticProperties(this);
-
   }
 
   /// <summary>
   /// Gets the underlying Open XML word processing document associated with this instance.
   /// </summary>
-  public DXPP.WordprocessingDocument? WordprocessingDocument { [DebuggerStepThrough] get; [DebuggerStepThrough] private set; }
+  public DXPP.WordprocessingDocument? WordprocessingDocument {[DebuggerStepThrough]
+    get; [DebuggerStepThrough]
+    private set; }
 
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
   /// </summary>
-  /// <param name="wordprocessingDocument"></param>
+  /// <param name = "wordprocessingDocument"></param>
   public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
@@ -52,7 +50,7 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
   /// </summary>
-  /// <param name="wordprocessingDocument"></param>
+  /// <param name = "wordprocessingDocument"></param>
   public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
@@ -79,11 +77,10 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
     _CustomProperties?.Detach();
   }
 
-
   /// <summary>
   /// Creates a new Wordprocessing document at the specified file path.
   /// </summary>
-  /// <param name="filePath">The file path for the new document.</param>
+  /// <param name = "filePath">The file path for the new document.</param>
   /// <returns>A new Document instance.</returns>
   public static Document CreateDocument(string filePath)
   {
@@ -94,7 +91,7 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
   /// <summary>
   /// Opens a document from the specified file path and returns a new Document instance representing it.
   /// </summary>
-  /// <param name="filePath">The full path to the file to open. The file must exist and be a valid Word document.</param>
+  /// <param name = "filePath">The full path to the file to open. The file must exist and be a valid Word document.</param>
   /// <returns>A Document instance representing the opened file.</returns>
   public static Document OpenDocument(string filePath)
   {
@@ -133,31 +130,22 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
       }
     }
   }
-  private readonly CoreProperties _CoreProperties;
 
+  private readonly CoreProperties _CoreProperties;
   /// <summary>
   /// Provides access to content-specific document properties.
   /// </summary>
   [NotMapped]
-  public ContentProperties ContentProperties
-  {
-    get => _ContentProperties;
-    set => UpdateField(ref _ContentProperties!, value, nameof(ContentProperties));
-  }
-  private ContentProperties _ContentProperties;
+  public ContentProperties ContentProperties { get => _ContentProperties; set => UpdateField(ref _ContentProperties!, value, nameof(ContentProperties)); }
 
+  private ContentProperties _ContentProperties;
   /// <summary>
   /// Provides access to statistical document properties such as word count and page count.
   /// </summary>
   [NotMapped]
-  public StatisticProperties StatisticProperties
-  {
-    get => _StatisticProperties;
-    set => UpdateField(ref _StatisticProperties!, value, nameof(StatisticProperties));
-  }
+  public StatisticProperties StatisticProperties { get => _StatisticProperties; set => UpdateField(ref _StatisticProperties!, value, nameof(StatisticProperties)); }
+
   private StatisticProperties _StatisticProperties;
-
-
   /// <summary>
   /// Provides access to custom document properties.
   /// </summary>
@@ -169,10 +157,11 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
         _CustomProperties = new CustomProperties(this);
       return _CustomProperties;
     }
+
     set => UpdateField(ref _CustomProperties, value, nameof(CustomProperties));
   }
-  private CustomProperties? _CustomProperties;
 
+  private CustomProperties? _CustomProperties;
   /// <summary>
   /// Provides access to document-level settings and properties.
   /// </summary>
@@ -184,8 +173,9 @@ public class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
         _DocumentSettings = new DocumentSettings(this);
       return _DocumentSettings;
     }
+
     set => UpdateField(ref _DocumentSettings, value, nameof(DocumentSettings));
   }
-  private DocumentSettings? _DocumentSettings;
 
+  private DocumentSettings? _DocumentSettings;
 }

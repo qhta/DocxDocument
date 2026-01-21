@@ -1,20 +1,17 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Color change effect for drawing elements.
 /// </summary>
-public class ColorChange: ModelElement<DXD.ColorChange>
+public partial class ColorChange : ModelElement<DXD.ColorChange>
 {
   /// <summary>
   /// Consider alpha values.
   /// </summary>
   public bool? UseAlpha { get; set; }
-
   /// <summary>
   /// Change color from.
   /// </summary>
   public ColorType? ColorFrom { get; set; }
-
   /// <summary>
   /// Change color to.
   /// </summary>

@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Office;
-
 /// <summary>
 ///   Defines the ShapeStyle Class.
 /// </summary>
-public class ShapeStyle: ModelElement<DXOD.ShapeStyle>
+public partial class ShapeStyle : ModelElement<DXOD.ShapeStyle>
 {
   /// <summary>
   ///   LineReference.

@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
-///   Represents a command to draw a quadratic Bézier curve in a path geometry.
+///   Represents a command to draw a quadratic Bï¿½zier curve in a path geometry.
 ///   The curve is defined by a collection of adjustment points.
 /// </summary>
-public class QuadraticBezierCurveTo: ModelElement<DXD.QuadraticBezierCurveTo>
+public partial class QuadraticBezierCurveTo : ModelElement<DXD.QuadraticBezierCurveTo>
 {
   /// <summary>
-  ///   Collection of points that define the quadratic Bézier curve.
+  ///   Collection of points that define the quadratic Bï¿½zier curve.
   ///   Typically includes a control point and an endpoint.
   /// </summary>
   public AdjustPoints? Points { get; set; }

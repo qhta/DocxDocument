@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Defines the Path Class.
 /// </summary>
-public class Path: ModelElement<DXV.Path>
+public partial class Path : ModelElement<DXV.Path>
 {
   /// <summary>
   ///   Unique Identifier

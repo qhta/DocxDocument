@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Represents an alpha bi-level effect, which applies a threshold to the alpha channel of an image or shape.
 /// </summary>
-public class AlphaBiLevel: ModelElement<DXD.AlphaBiLevel>
+public partial class AlphaBiLevel : ModelElement<DXD.AlphaBiLevel>
 {
   /// <summary>
   /// Threshold value used to determine the bi-level separation of the alpha channel.

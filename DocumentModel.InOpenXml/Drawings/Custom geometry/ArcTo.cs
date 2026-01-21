@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Represents an arc path command that draws an elliptical arc from the current point to a new point.
 /// </summary>
@@ -15,11 +14,11 @@ namespace DocumentModel.Drawings;
 ///   StartAngle and SwingAngle.
 ///   </para>
 ///   <para>
-///   All angle values are expressed in 60,000ths of a degree (e.g., 90° = 5,400,000).
+///   All angle values are expressed in 60,000ths of a degree (e.g., 90ï¿½ = 5,400,000).
 ///   All distance values are expressed as shape coordinate units which are relative to the shape's width and height.
 ///   </para>
 /// </remarks>
-public class ArcTo: ModelElement<DXD.ArcTo>
+public partial class ArcTo : ModelElement<DXD.ArcTo>
 {
   /// <summary>
   ///   Horizontal radius (width) of the ellipse from which the arc is drawn.
@@ -43,7 +42,6 @@ public class ArcTo: ModelElement<DXD.ArcTo>
   ///   </para>
   /// </remarks>
   public string? WidthRadius { get; set; }
-
   /// <summary>
   ///   Vertical radius (height) of the ellipse from which the arc is drawn.
   /// </summary>
@@ -66,7 +64,6 @@ public class ArcTo: ModelElement<DXD.ArcTo>
   ///   </para>
   /// </remarks>
   public string? HeightRadius { get; set; }
-
   /// <summary>
   ///   Starting angle of the arc on the ellipse.
   /// </summary>
@@ -78,10 +75,10 @@ public class ArcTo: ModelElement<DXD.ArcTo>
   ///   <para>
   ///   Common angle values:
   ///   <list type="bullet">
-  ///     <item><description>0° (0) - 3 o'clock position (right)</description></item>
-  ///     <item><description>90° (5,400,000) - 6 o'clock position (bottom)</description></item>
-  ///     <item><description>180° (10,800,000) - 9 o'clock position (left)</description></item>
-  ///     <item><description>270° (16,200,000) - 12 o'clock position (top)</description></item>
+  ///     <item><description>0ï¿½ (0) - 3 o'clock position (right)</description></item>
+  ///     <item><description>90ï¿½ (5,400,000) - 6 o'clock position (bottom)</description></item>
+  ///     <item><description>180ï¿½ (10,800,000) - 9 o'clock position (left)</description></item>
+  ///     <item><description>270ï¿½ (16,200,000) - 12 o'clock position (top)</description></item>
   ///   </list>
   ///   </para>
   ///   <para>
@@ -97,7 +94,6 @@ public class ArcTo: ModelElement<DXD.ArcTo>
   ///   </para>
   /// </remarks>
   public string? StartAngle { get; set; }
-
   /// <summary>
   ///   Angular extent through which the arc sweeps.
   /// </summary>
@@ -110,10 +106,10 @@ public class ArcTo: ModelElement<DXD.ArcTo>
   ///   The swing angle determines the length of the arc:
   ///   <list type="bullet">
   ///     <item><description>Positive values sweep clockwise</description></item>
-  ///     <item><description>90° (5,400,000) creates a quarter arc</description></item>
-  ///     <item><description>180° (10,800,000) creates a half arc (semicircle)</description></item>
-  ///     <item><description>270° (16,200,000) creates a three-quarter arc</description></item>
-  ///     <item><description>360° (21,600,000) creates a full ellipse</description></item>
+  ///     <item><description>90ï¿½ (5,400,000) creates a quarter arc</description></item>
+  ///     <item><description>180ï¿½ (10,800,000) creates a half arc (semicircle)</description></item>
+  ///     <item><description>270ï¿½ (16,200,000) creates a three-quarter arc</description></item>
+  ///     <item><description>360ï¿½ (21,600,000) creates a full ellipse</description></item>
   ///   </list>
   ///   </para>
   ///   <para>

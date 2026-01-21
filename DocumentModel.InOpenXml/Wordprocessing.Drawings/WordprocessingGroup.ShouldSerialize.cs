@@ -1,0 +1,13 @@
+namespace DocumentModel.Wordprocessing.Drawings;
+
+public partial class WordprocessingGroup
+{
+  public bool ShouldSerializeNonVisualDrawingProperties() => NonVisualDrawingProperties is not null;
+  public bool ShouldSerializeNonVisualGroupDrawingShapeProperties() => NonVisualGroupDrawingShapeProperties is not null;
+  public bool ShouldSerializeGroupShapeProperties() => GroupShapeProperties is not null;
+  public bool ShouldSerializeWordprocessingShape() => WordprocessingShape is not null;
+  public bool ShouldSerializeGroupShape() => GroupShape is not null;
+  public bool ShouldSerializeGraphicFrame() => GraphicFrame is not null;
+  public bool ShouldSerializePicture() => Picture is not null;
+  public bool ShouldSerializeOfficeArtExtensionList() => OfficeArtExtensionList is not null;
+}

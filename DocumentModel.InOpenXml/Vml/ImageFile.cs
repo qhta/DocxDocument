@@ -3,11 +3,10 @@ using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
 
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Image File.
 /// </summary>
-public class ImageFile: ModelElement<DXV.ImageFile>, IEmbeddedObjectContent
+public partial class ImageFile : ModelElement<DXV.ImageFile>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier
