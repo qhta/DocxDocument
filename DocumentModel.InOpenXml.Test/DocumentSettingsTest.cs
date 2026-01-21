@@ -304,12 +304,16 @@ namespace DocumentModel.InOpenXml.Test
               new CaptionDefinition
               {
                 Name = "Figure",
-                Position = CaptionPositionKind.Below
+                Position = CaptionPositionKind.Below,
+                ChapterNumber = true,
+                NumberFormat = NumberFormatKind.Decimal,
               },
               new CaptionDefinition
               {
                 Name = "Table",
-                Position = CaptionPositionKind.Above
+                Position = CaptionPositionKind.Above,
+                ChapterNumber = false,
+                NoLabel = true,
               }
             ]),
             AutoCaptions = new AutoCaptions([
