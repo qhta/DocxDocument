@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   3D Extrusion.
 /// </summary>
-public class Extrusion: ModelElement<DXVO.Extrusion>
+public partial class Extrusion : ModelElement<DXVO.Extrusion>
 {
   /// <summary>
   ///   VML Extension Handling Behavior

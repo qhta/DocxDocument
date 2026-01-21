@@ -1,11 +1,11 @@
 using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
-namespace DocumentModel.Vml;
 
+namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Group.
 /// </summary>
-public class Group: ModelElement<DXV.Group>, IEmbeddedObjectContent
+public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

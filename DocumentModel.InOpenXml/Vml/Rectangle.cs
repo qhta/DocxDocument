@@ -2,11 +2,10 @@ using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
 
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Rectangle.
 /// </summary>
-public class Rectangle: ModelElement<DXV.Rectangle>, IEmbeddedObjectContent
+public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

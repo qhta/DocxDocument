@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Represents metadata describing a container for visual effects in DrawingML.
 /// </summary>
@@ -23,7 +22,7 @@ namespace DocumentModel.Drawings;
 ///   </list>
 ///   </para>
 /// </remarks>
-public class EffectContainerType: ModelElement<DXD.EffectContainerType>
+public partial class EffectContainerType : ModelElement<DXD.EffectContainerType>
 {
   /// <summary>
   ///   Type of the effect container, indicating how effects are grouped or applied.
@@ -44,7 +43,6 @@ public class EffectContainerType: ModelElement<DXD.EffectContainerType>
   ///   </para>
   /// </remarks>
   public EffectContainerKind? Type { get; set; }
-
   /// <summary>
   ///   Name of the effect container for identification or documentation purposes.
   /// </summary>

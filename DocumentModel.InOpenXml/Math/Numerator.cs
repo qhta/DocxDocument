@@ -1,11 +1,12 @@
 using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the numerator of the Fraction object f. 
 /// </summary>
-public class Numerator: OfficeMathArgumentType<DXM.Numerator>
+public partial class Numerator : OfficeMathArgumentType<DXM.Numerator>
 {
-   /// <summary>
+  /// <summary>
   ///   Specifies properties of argument object.
   /// </summary>
   public ArgumentProperties? ArgumentProperties { get; set; }

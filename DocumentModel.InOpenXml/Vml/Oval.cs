@@ -2,11 +2,10 @@ using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
 
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Oval.
 /// </summary>
-public class Oval: ModelElement<DXV.Oval>, IEmbeddedObjectContent
+public partial class Oval : ModelElement<DXV.Oval>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

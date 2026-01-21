@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Represents a color that references a theme color scheme with optional transformations.
 /// This class enables dynamic color theming in Word documents by referencing colors from the 
@@ -35,7 +34,7 @@ namespace DocumentModel.Drawings;
 /// <para>
 /// This interface is part of the WordprocessingML color system and is typically used for text colors,
 /// borders, shading, and other document formatting. For DrawingML objects (shapes, charts),
-/// use <see cref="DocumentModel.Drawings.SchemeColor"/> instead.
+/// use <see cref = "DocumentModel.Drawings.SchemeColor"/> instead.
 /// </para>
 /// </remarks>
 /// <example>
@@ -62,7 +61,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public class SchemeColor: DrawingColor
+public partial class SchemeColor : DrawingColor
 {
   /// <summary>
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.

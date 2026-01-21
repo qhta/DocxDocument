@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Defines the ImageData Class.
 /// </summary>
-public class ImageData: ModelElement<DXV.ImageData>
+public partial class ImageData : ModelElement<DXV.ImageData>
 {
   /// <summary>
   ///   Unique Identifier

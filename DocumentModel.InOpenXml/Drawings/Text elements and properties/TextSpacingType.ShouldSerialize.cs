@@ -1,0 +1,7 @@
+namespace DocumentModel.Drawings;
+
+public partial class TextSpacingType
+{
+  public bool ShouldSerializeSpacingPercent() => SpacingPercent is not null;
+  public bool ShouldSerializeSpacingPoints() => SpacingPoints is not null;
+}

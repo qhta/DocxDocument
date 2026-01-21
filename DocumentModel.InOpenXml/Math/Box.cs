@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 ///   serve as a line break point, have associated argSz, or be grouped such as not to allow line breaks within. 
 ///   If boxPr is omitted, all properties will be “false” by default.
 /// </summary>
-public class Box: ModelElement<DXM.Box>, ICommonMathContent
+public partial class Box : ModelElement<DXM.Box>, ICommonMathContent
 {
   /// <summary>
   ///   Specifies properties of box object.

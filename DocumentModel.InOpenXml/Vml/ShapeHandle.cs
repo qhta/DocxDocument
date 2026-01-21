@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Shape Handle.
 /// </summary>
-public class ShapeHandle: ModelElement<DXV.ShapeHandle>
+public partial class ShapeHandle : ModelElement<DXV.ShapeHandle>
 {
   /// <summary>
   ///   Handle Position

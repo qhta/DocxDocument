@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Upper Limit Properties.
 /// </summary>
-public class LimitUpperProperties: ModelElement<DXM.LimitUpperProperties>
+public partial class LimitUpperProperties : ModelElement<DXM.LimitUpperProperties>
 {
   /// <summary>
   ///   ControlProperties.

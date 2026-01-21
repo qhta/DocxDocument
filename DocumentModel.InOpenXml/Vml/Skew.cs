@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Skew Transform.
 /// </summary>
-public class Skew: ModelElement<DXVO.Skew>
+public partial class Skew : ModelElement<DXVO.Skew>
 {
   /// <summary>
   ///   VML Extension Handling Behavior

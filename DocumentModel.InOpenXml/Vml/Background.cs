@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Document Background.
 /// </summary>
-public class Background: ModelElement<DXV.Background>
+public partial class Background : ModelElement<DXV.Background>
 {
   /// <summary>
   ///   Unique Identifier

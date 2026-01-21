@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Pictures;
-
 /// <summary>
 ///   Picture.
 /// </summary>
-public class Picture: ModelElement<DXDP.NonVisualDrawingProperties>
+public partial class Picture : ModelElement<DXDP.NonVisualDrawingProperties>
 {
   /// <summary>
   ///   Non-Visual Picture Properties.

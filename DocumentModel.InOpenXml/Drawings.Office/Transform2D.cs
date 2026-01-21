@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Office;
-
 /// <summary>
 ///   Defines the Transform2D Class.
 /// </summary>
-public class Transform2D: ModelElement<DXOD.Transform2D>
+public partial class Transform2D : ModelElement<DXOD.Transform2D>
 {
   /// <summary>
   ///   Rotation

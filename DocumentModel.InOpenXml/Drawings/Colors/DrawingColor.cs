@@ -1,14 +1,12 @@
-﻿namespace DocumentModel.Drawings;
-
+namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a set of color modification operations that can be applied to a base color.
 /// These modifications include tinting, shading, alpha transparency, hue/saturation/luminance adjustments
 /// and so on.
 /// It is a partial interface that all drawing color interfaces extend to provide consistent color transformation capabilities.
 /// </summary>
-public class DrawingColor: ColorType
+public partial class DrawingColor : ColorType
 {
-
   /// <summary>
   /// Tint value to lighten the color.
   /// </summary>
@@ -28,7 +26,6 @@ public class DrawingColor: ColorType
   /// </para>
   /// </remarks>
   public Int32? Tint { get; set; }
-
   /// <summary>
   /// Shade value to darken the color.
   /// </summary>
@@ -77,7 +74,6 @@ public class DrawingColor: ColorType
   /// </remarks>
   [DefaultValue(false)]
   public Boolean Gray { get; set; }
-
   /// <summary>
   /// Absolute alpha (transparency) value.
   /// </summary>
@@ -86,7 +82,6 @@ public class DrawingColor: ColorType
   /// Values between create semi-transparent colors. If null, full opacity (100000) is assumed.
   /// </remarks>
   public Int32? Alpha { get; set; }
-
   /// <summary>
   /// Alpha (transparency) offset adjustment.
   /// </summary>
@@ -95,7 +90,6 @@ public class DrawingColor: ColorType
   /// Positive values increase opacity, negative values increase transparency.
   /// </remarks>
   public Int32? AlphaOffset { get; set; }
-
   /// <summary>
   /// Alpha (transparency) modulation percentage.
   /// </summary>
@@ -104,7 +98,6 @@ public class DrawingColor: ColorType
   /// Range is 0 to 100000, where 100000 means no change.
   /// </remarks>
   public Int32? AlphaModulation { get; set; }
-
   /// <summary>
   /// Absolute hue value in the HSL color space.
   /// </summary>
@@ -113,7 +106,6 @@ public class DrawingColor: ColorType
   /// Hue represents the color's position on the color wheel: 0=red, 60=yellow, 120=green, 180=cyan, 240=blue, 300=magenta.
   /// </remarks>
   public Int32? Hue { get; set; }
-
   /// <summary>
   /// Hue offset adjustment in the HSL color space.
   /// </summary>
@@ -122,7 +114,6 @@ public class DrawingColor: ColorType
   /// Values wrap around (adding 360 degrees returns to the same hue).
   /// </remarks>
   public Int32? HueOffset { get; set; }
-
   /// <summary>
   /// Hue modulation percentage.
   /// </summary>
@@ -131,7 +122,6 @@ public class DrawingColor: ColorType
   /// Range is 0 to 100000, where 100000 means no change.
   /// </remarks>
   public Int32? HueModulation { get; set; }
-
   /// <summary>
   /// Absolute saturation value in the HSL color space.
   /// </summary>
@@ -140,7 +130,6 @@ public class DrawingColor: ColorType
   /// Saturation determines the intensity or vividness of the color.
   /// </remarks>
   public Int32? Saturation { get; set; }
-
   /// <summary>
   /// Saturation offset adjustment.
   /// </summary>
@@ -149,7 +138,6 @@ public class DrawingColor: ColorType
   /// Positive values make colors more vivid, negative values make them more gray.
   /// </remarks>
   public Int32? SaturationOffset { get; set; }
-
   /// <summary>
   /// Saturation modulation percentage.
   /// </summary>
@@ -158,7 +146,6 @@ public class DrawingColor: ColorType
   /// Range is 0 to 100000, where 100000 means no change. Commonly used to create muted color variations.
   /// </remarks>
   public Int32? SaturationModulation { get; set; }
-
   /// <summary>
   /// Absolute luminance value in the HSL color space.
   /// </summary>
@@ -167,7 +154,6 @@ public class DrawingColor: ColorType
   /// and 100000 is white. Luminance determines how light or dark the color appears.
   /// </remarks>
   public Int32? Luminance { get; set; }
-
   /// <summary>
   /// Luminance offset adjustment.
   /// </summary>
@@ -176,7 +162,6 @@ public class DrawingColor: ColorType
   /// Positive values make colors lighter, negative values make them darker.
   /// </remarks>
   public Int32? LuminanceOffset { get; set; }
-
   /// <summary>
   /// Luminance modulation percentage.
   /// </summary>
@@ -185,7 +170,6 @@ public class DrawingColor: ColorType
   /// Range is 0 to 100000, where 100000 means no change. Commonly used to create lighter or darker variations.
   /// </remarks>
   public Int32? LuminanceModulation { get; set; }
-
   /// <summary>
   /// Absolute red channel value.
   /// </summary>
@@ -194,7 +178,6 @@ public class DrawingColor: ColorType
   /// Use this to set an explicit red value independent of the base RGB color.
   /// </remarks>
   public Int32? Red { get; set; }
-
   /// <summary>
   /// Red channel offset adjustment.
   /// </summary>
@@ -202,7 +185,6 @@ public class DrawingColor: ColorType
   /// Adds or subtracts from the red channel value. Range is typically -100000 to +100000.
   /// </remarks>
   public Int32? RedOffset { get; set; }
-
   /// <summary>
   /// Red channel modulation percentage.
   /// </summary>
@@ -211,7 +193,6 @@ public class DrawingColor: ColorType
   /// A value of 50000 (50%) reduces the red component by half.
   /// </remarks>
   public Int32? RedModulation { get; set; }
-
   /// <summary>
   /// Absolute green channel value.
   /// </summary>
@@ -220,7 +201,6 @@ public class DrawingColor: ColorType
   /// Use this to set an explicit green value independent of the base RGB color.
   /// </remarks>
   public Int32? Green { get; set; }
-
   /// <summary>
   /// Green channel offset adjustment.
   /// </summary>
@@ -228,7 +208,6 @@ public class DrawingColor: ColorType
   /// Adds or subtracts from the green channel value. Range is typically -100000 to +100000.
   /// </remarks>
   public Int32? GreenOffset { get; set; }
-
   /// <summary>
   /// Green channel modulation percentage.
   /// </summary>
@@ -237,7 +216,6 @@ public class DrawingColor: ColorType
   /// A value of 50000 (50%) reduces the green component by half.
   /// </remarks>
   public Int32? GreenModulation { get; set; }
-
   /// <summary>
   /// Absolute blue channel value.
   /// </summary>
@@ -246,7 +224,6 @@ public class DrawingColor: ColorType
   /// Use this to set an explicit blue value independent of the base RGB color.
   /// </remarks>
   public Int32? Blue { get; set; }
-
   /// <summary>
   /// Blue channel offset adjustment.
   /// </summary>
@@ -254,7 +231,6 @@ public class DrawingColor: ColorType
   /// Adds or subtracts from the blue channel value. Range is typically -100000 to +100000.
   /// </remarks>
   public Int32? BlueOffset { get; set; }
-
   /// <summary>
   /// Blue channel modulation percentage.
   /// </summary>

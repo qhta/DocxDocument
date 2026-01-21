@@ -1,9 +1,8 @@
 namespace DocumentModel;
-
 /// <summary>
 /// Represents an RGB color using hexadecimal notation for Wordprocessing.
 /// </summary>
-public class RgbColor: ModelElement, IColor
+public partial class RgbColor : ModelElement, IColor
 {
   /// <summary>
   /// Gets or sets the base RGB color value in hexadecimal format.
@@ -20,4 +19,4 @@ public class RgbColor: ModelElement, IColor
   /// </para>
   /// </remarks>
   public RGB? Val { get; set; }
-  }
+}
