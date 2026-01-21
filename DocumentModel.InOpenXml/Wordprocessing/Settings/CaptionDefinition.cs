@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single caption type definition in a Wordprocessing document.
 /// This class provides properties for caption type name, placement, chapter numbering, heading style, label inclusion, numbering format, and separator, enabling advanced configuration and management of captions.
 /// </summary>
-public partial class CaptionDefinition: ModelElement<DXW.Captions>
+public partial class CaptionDefinition: ModelElement<DXW.Caption>
 {
 
   /// <summary>
@@ -18,6 +18,7 @@ public partial class CaptionDefinition: ModelElement<DXW.Captions>
   /// <item>It can be used to label this caption type in a user interface.</item>
   /// </list>
   /// </summary>
+  [OpenXmlProperty(nameof(DXW.Caption.Name))]
   public string? Name
   {
     get => _Name;
@@ -28,6 +29,7 @@ public partial class CaptionDefinition: ModelElement<DXW.Captions>
   /// <summary>
   /// Specifies how an automatically inserted caption shall be positioned relative to the object that it is captioning.
   /// </summary>
+  [OpenXmlProperty(nameof(DXW.Caption.Position))]
   public CaptionPositionKind? Position
   {
     get => _Position;
@@ -41,6 +43,7 @@ public partial class CaptionDefinition: ModelElement<DXW.Captions>
   /// is a paragraph of text within a WordprocessingML document that is formatted with a
   ///  style that has been specified by the heading attribute to demarcate chapters in documents.
   /// </summary>
+  [OpenXmlProperty(nameof(DXW.Caption.ChapterNumber))]
   public bool? ChapterNumber
   {
     get => _ChapterNumber;
@@ -53,6 +56,7 @@ public partial class CaptionDefinition: ModelElement<DXW.Captions>
   /// Values from 1 to 9 correspond to the built-in heading styles Heading 1 to Heading 9.
   /// Any other value are application-defined and can be ignored.
   /// </summary>
+  [OpenXmlProperty(nameof(DXW.Caption.Heading))]
   public int? Heading
   {
     get => _Heading;
@@ -65,6 +69,7 @@ public partial class CaptionDefinition: ModelElement<DXW.Captions>
   /// caption when it is automatically added to the document. If set to true, then the label text
   /// in the name attribute is omitted when adding the caption.
   /// </summary>
+  [OpenXmlProperty(nameof(DXW.Caption.NoLabel))]
   public bool? NoLabel
   {
     get => _NoLabel;
@@ -75,6 +80,7 @@ public partial class CaptionDefinition: ModelElement<DXW.Captions>
   /// <summary>
   /// Caption numbering format, specifying the format used for numbering captions.
   /// </summary>
+  [OpenXmlProperty(nameof(DXW.Caption.NumberFormat))]
   public NumberFormatKind? NumberFormat
   {
     get => _NumberFormat;
@@ -94,6 +100,7 @@ public partial class CaptionDefinition: ModelElement<DXW.Captions>
   /// If this attribute is omitted, then its default value shall be a hyphen.
   /// If the chapter number is not part of the caption format, then this parameter shall be ignored.
   /// </summary>
+  [OpenXmlProperty(nameof(DXW.Caption.Separator))]
   public ChapterSeparatorKind? Separator
   {
     get => _Separator;
