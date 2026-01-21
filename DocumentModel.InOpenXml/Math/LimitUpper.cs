@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the Upper-Limit object, consisting of text on the baseline and reduced-size text immediately above it.
 /// </summary>
-public class LimitUpper: ModelElement<DXM.LimitUpper>, ICommonMathContent
+public partial class LimitUpper : ModelElement<DXM.LimitUpper>, ICommonMathContent
 {
   /// <summary>
   ///   Upper Limit Properties.

@@ -1,9 +1,9 @@
 namespace DocumentModel.Math;
 /// <summary>
-///   Specifies the properties of <see cref="Delimiter"/>, including the enclosing and separating characters, 
+///   Specifies the properties of <see cref = "Delimiter"/>, including the enclosing and separating characters, 
 ///   and the properties that affect the shape of the delimiters.
 /// </summary>
-public class DelimiterProperties: ModelElement<DXM.DelimiterProperties>
+public partial class DelimiterProperties : ModelElement<DXM.DelimiterProperties>
 {
   /// <summary>
   ///   Delimiter Beginning Character.

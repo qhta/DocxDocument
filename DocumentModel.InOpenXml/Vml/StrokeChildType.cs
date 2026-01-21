@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Defines the StrokeChildType Class.
 /// </summary>
-public class StrokeChildType: ModelElement<DXVO.StrokeChildType>
+public partial class StrokeChildType : ModelElement<DXVO.StrokeChildType>
 {
   /// <summary>
   ///   VML Extension Handling Behavior

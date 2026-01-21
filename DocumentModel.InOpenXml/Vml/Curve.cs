@@ -2,11 +2,10 @@ using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
 
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Bezier Curve.
 /// </summary>
-public class Curve: ModelElement<DXV.Curve>,  IEmbeddedObjectContent
+public partial class Curve : ModelElement<DXV.Curve>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

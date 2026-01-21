@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Wordprocessing;
-
+namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents the bibliography and citation management system in a document.
 /// </summary>
@@ -8,10 +7,9 @@
 ///   used for managing references in academic and professional documents. It corresponds
 ///   to the Microsoft.Office.Interop.Word.Bibliography interface.
 /// </remarks>
-public class Bibliography: ModelElement
+public partial class Bibliography : ModelElement
 {
-  #region Sources Management
-
+#region Sources Management
   /// <summary>
   ///   Gets the collection of all sources (references) available in the document.
   /// </summary>
@@ -20,7 +18,6 @@ public class Bibliography: ModelElement
   ///   Each source contains metadata such as author, title, year, publisher, etc.
   /// </remarks>
   public Sources? Sources { get; set; }
-
   /// <summary>
   ///   Gets or sets the master list of all sources across all documents.
   /// </summary>
@@ -29,7 +26,6 @@ public class Bibliography: ModelElement
   ///   multiple documents. It's typically stored separately from individual documents.
   /// </remarks>
   public Sources? MasterList { get; set; }
-
   /// <summary>
   ///   Gets or sets the current list of sources in the active document.
   /// </summary>
@@ -38,11 +34,8 @@ public class Bibliography: ModelElement
   ///   or referenced in the active document.
   /// </remarks>
   public Sources? CurrentList { get; set; }
-
-  #endregion
-
-  #region Bibliography Style and Formatting
-
+#endregion
+#region Bibliography Style and Formatting
   /// <summary>
   ///   Gets or sets the bibliographic style used for formatting citations and bibliography.
   /// </summary>
@@ -51,7 +44,6 @@ public class Bibliography: ModelElement
   ///   The style determines how citations appear in-text and how the bibliography is formatted.
   /// </remarks>
   public string? BibliographyStyle { get; set; }
-
   /// <summary>
   ///   Gets or sets the sort order for the bibliography entries.
   /// </summary>
@@ -60,7 +52,6 @@ public class Bibliography: ModelElement
   ///   by appearance in document, by year, etc.).
   /// </remarks>
   public BibliographySortOrderKind? SortOrder { get; set; }
-
   /// <summary>
   ///   Gets or sets whether to show all bibliography sources or only cited sources.
   /// </summary>
@@ -69,7 +60,5 @@ public class Bibliography: ModelElement
   ///   When false, displays only sources that are actually cited in the document.
   /// </remarks>
   public bool ShowAllSources { get; set; }
-
-  #endregion
-
+#endregion
 }

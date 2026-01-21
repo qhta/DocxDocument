@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomXml;
-
 /// <summary>
 ///   Represents a custom XML data item stored within a document with associated schema information.
 /// </summary>
@@ -11,7 +10,7 @@ namespace DocumentModel.CustomXml;
 ///   define the structure and validation rules for the contained XML data. This functionality enables
 ///   data-driven documents, content control binding, and integration with external data sources.
 /// </remarks>
-public class DataStoreItem
+public partial class DataStoreItem
 {
   /// <summary>
   ///   Gets or sets the unique identifier for this custom XML data item.
@@ -22,7 +21,6 @@ public class DataStoreItem
   ///   to the XML data.
   /// </remarks>
   public string? ItemId { get; set; }
-
   /// <summary>
   ///   Gets or sets the collection of XML schema references associated with this custom XML data.
   /// </summary>

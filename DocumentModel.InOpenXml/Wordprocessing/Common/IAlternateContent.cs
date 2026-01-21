@@ -1,5 +1,4 @@
-﻿namespace DocumentModel;
-
+namespace DocumentModel;
 /// <summary>
 ///   Represents an alternate content container that provides multiple rendering options with a fallback mechanism.
 /// </summary>
@@ -9,8 +8,8 @@
 ///   application versions, features, or rendering capabilities. The alternate content mechanism is fundamental to
 ///   Office's forward compatibility strategy, allowing documents created with newer Office versions to remain
 ///   functional when opened in older versions that may not support all features. The structure consists of a
-///   collection of choices (<see cref="Choices"/>), where each choice is associated with specific requirements
-///   (such as namespace support or feature availability), and a fallback option (<see cref="Fallback"/>) that
+///   collection of choices (<see cref = "Choices"/>), where each choice is associated with specific requirements
+///   (such as namespace support or feature availability), and a fallback option (<see cref = "Fallback"/>) that
 ///   provides a simplified or alternative representation when none of the choices can be satisfied. When an
 ///   application processes alternate content, it evaluates each choice in order, selecting the first one whose
 ///   requirements are met. If no choice is suitable, the fallback content is used. This mechanism enables
@@ -20,7 +19,7 @@
 ///   offering high-fidelity and simplified versions, or supporting different rendering engines with appropriate
 ///   content variants.
 /// </remarks>
-public class IAlternateContent: ModelElement
+public partial class IAlternateContent : ModelElement
 {
   /// <summary>
   ///   Gets or sets the collection of alternate content choices, each representing a different rendering option.
@@ -31,20 +30,19 @@ public class IAlternateContent: ModelElement
   ///   with the first choice meeting its requirements being selected for rendering. Each choice typically contains
   ///   content optimized for specific application versions or features, such as new content types, advanced
   ///   formatting, or enhanced functionality. If no choice in the collection has its requirements met, the
-  ///   application falls back to the <see cref="Fallback"/> content. Common choice requirements include namespace
+  ///   application falls back to the <see cref = "Fallback"/> content. Common choice requirements include namespace
   ///   support (indicating the application can process specific XML namespaces), feature availability (such as
   ///   support for specific content types or rendering capabilities), or version checks. The choice mechanism
   ///   enables documents to leverage new features when available while maintaining compatibility with older
   ///   applications through the fallback mechanism.
   /// </remarks>
   public AlternateContentChoiceCollection? Choices { get; set; }
-
   /// <summary>
   ///   Gets or sets the fallback content to use when none of the choices can be satisfied.
   /// </summary>
   /// <remarks>
   ///   The fallback content provides an alternative representation that is used when the application cannot
-  ///   satisfy the requirements of any choice in the <see cref="Choices"/> collection. This typically occurs
+  ///   satisfy the requirements of any choice in the <see cref = "Choices"/> collection. This typically occurs
   ///   when opening a document in an older Office version that doesn't support the namespaces or features
   ///   required by the choices. Fallback content should provide a meaningful representation of the original
   ///   content, even if it's simplified or lacks some functionality. For example, a 3D model choice might have

@@ -1,15 +1,13 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Represents an auto-numbered bullet, specifying the numbering scheme and starting value for bullet lists.
 /// </summary>
-public class AutoNumberedBullet: ModelElement<DXD.AutoNumberedBullet>
+public partial class AutoNumberedBullet : ModelElement<DXD.AutoNumberedBullet>
 {
   /// <summary>
   /// Bullet autonumbering type.
   /// </summary>
   public TextAutoNumberSchemeKind? Type { get; set; }
-
   /// <summary>
   /// Starting value for numbering.
   /// </summary>

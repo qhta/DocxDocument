@@ -2,7 +2,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the lower limit of the limLow object and the upper limit of the limUpp function.
 /// </summary>
-public class Limit: OfficeMathArgumentType<DXM.Limit>
+public partial class Limit : OfficeMathArgumentType<DXM.Limit>
 {
   /// <summary>
   ///   Specifies properties of argument object.

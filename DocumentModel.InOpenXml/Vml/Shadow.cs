@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Defines the Shadow Class.
 /// </summary>
-public class Shadow: ModelElement<DXV.Shadow>
+public partial class Shadow : ModelElement<DXV.Shadow>
 {
   /// <summary>
   ///   Unique Identifier

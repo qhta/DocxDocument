@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Defines the Stroke Class.
 /// </summary>
-public class Stroke: ModelElement<DXV.Stroke>
+public partial class Stroke : ModelElement<DXV.Stroke>
 {
   /// <summary>
   ///   Unique Identifier

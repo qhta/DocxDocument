@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Represents a color using a predefined color name with optional transformations.
 /// This is the preset color variant used in Office Open XML DrawingML, allowing colors to be 
@@ -62,7 +61,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public class PresetColor: DrawingColor
+public partial class PresetColor : DrawingColor
 {
   /// <summary>
   /// Gets or sets the preset color name that defines the base color.
@@ -82,5 +81,4 @@ public class PresetColor: DrawingColor
   /// </para>
   /// </remarks>
   public PresetColorKind? Val { get; set; }
-  
 }

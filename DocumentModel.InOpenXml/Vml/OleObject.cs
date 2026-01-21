@@ -1,10 +1,10 @@
 using DocumentModel.Wordprocessing;
-namespace DocumentModel.Vml;
 
+namespace DocumentModel.Vml;
 /// <summary>
 ///   Embedded OLE Object.
 /// </summary>
-public class OleObject: ModelElement<DXVO.OleObject>, IEmbeddedObjectContent
+public partial class OleObject : ModelElement<DXVO.OleObject>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   OLE Object Type

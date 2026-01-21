@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   This element specifies the rectangular bounding box for text within a custom geometry.
 ///   The default for this rectangle is the bounding box for the shape.
@@ -9,23 +8,20 @@ namespace DocumentModel.Drawings;
 /// Text specified to reside within this shape text rectangle can flow outside this bounding box.
 /// Depending on the autofit options within the txBody element the text might not entirely reside within this shape text rectangle. 
 /// </remarks>
-public class Rectangle: ModelElement<DXD.Rectangle>
+public partial class Rectangle : ModelElement<DXD.Rectangle>
 {
   /// <summary>
   ///   Left position of the rectangle.
   /// </summary>
   public string? Left { get; set; }
-
   /// <summary>
   ///   Top position of the rectangle.
   /// </summary>
   public string? Top { get; set; }
-
   /// <summary>
   ///   Right position of the rectangle.
   /// </summary>
   public string? Right { get; set; }
-
   /// <summary>
   ///   Bottom position of the rectangle.
   /// </summary>

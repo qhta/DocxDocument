@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Represents a saturation effect, allowing adjustment of color saturation for a drawing element.
 /// </summary>
-public class Saturation: ModelElement
+public partial class Saturation : ModelElement
 {
   /// <summary>
   ///   Amount of saturation adjustment.

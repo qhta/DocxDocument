@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Pictures;
-
 /// <summary>
 ///   Non-Visual Drawing Properties.
 /// </summary>
-public class NonVisualDrawingProperties: ModelElement<DXDP.NonVisualDrawingProperties>
+public partial class NonVisualDrawingProperties : ModelElement<DXDP.NonVisualDrawingProperties>
 {
   /// <summary>
   ///   Application defined unique identifier.

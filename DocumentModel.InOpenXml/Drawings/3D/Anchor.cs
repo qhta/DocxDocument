@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Represents a 3D anchor point that defines a position in three-dimensional space.
 /// </summary>
@@ -36,7 +35,7 @@ namespace DocumentModel.Drawings;
 ///   </list>
 ///   </para>
 /// </remarks>
-public class Anchor: ModelElement<DXD.Anchor>
+public partial class Anchor : ModelElement<DXD.Anchor>
 {
   /// <summary>
   ///   X-coordinate (horizontal position) of the anchor point in 3D space.
@@ -70,7 +69,6 @@ public class Anchor: ModelElement<DXD.Anchor>
   ///   </para>
   /// </remarks>
   public Int64? X { get; set; }
-
   /// <summary>
   ///   Y-coordinate (vertical position) of the anchor point in 3D space.
   /// </summary>
@@ -100,7 +98,6 @@ public class Anchor: ModelElement<DXD.Anchor>
   ///   </para>
   /// </remarks>
   public Int64? Y { get; set; }
-
   /// <summary>
   ///   Z-coordinate (depth position) of the anchor point in 3D space.
   /// </summary>

@@ -1,0 +1,10 @@
+namespace DocumentModel.Drawings;
+
+public partial class Transform2D
+{
+  public bool ShouldSerializeRotation() => Rotation is not null;
+  public bool ShouldSerializeHorizontalFlip() => HorizontalFlip is not null;
+  public bool ShouldSerializeVerticalFlip() => VerticalFlip is not null;
+  public bool ShouldSerializeOffset() => Offset is not null;
+  public bool ShouldSerializeExtents() => Extents is not null;
+}

@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Compile Remove="Base interfaces\ITypedModelElement.cs" />
-    <Compile Remove="Properties and settings\AllDocumentProperties.cs" />
     <Compile Remove="Properties and settings\CoreProperties.IDocumentProperties.cs" />
     <Compile Remove="Properties and settings\DocumentSetting.cs" />
     <Compile Remove="Properties and settings\DocumentSettings.cs" />

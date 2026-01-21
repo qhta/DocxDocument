@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Shape Grouping History.
 /// </summary>
-public class RegroupTable: ModelElement<DXVO.RegroupTable>
+public partial class RegroupTable : ModelElement<DXVO.RegroupTable>
 {
   /// <summary>
   ///   VML Extension Handling Behavior

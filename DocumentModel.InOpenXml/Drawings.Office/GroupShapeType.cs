@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Office;
-
 /// <summary>
 ///   Defines the GroupShapeType Class.
 /// </summary>
-public class GroupShapeType: ModelElement<DXOD.GroupShapeType>
+public partial class GroupShapeType : ModelElement<DXOD.GroupShapeType>
 {
   /// <summary>
   ///   GroupShapeNonVisualProperties.

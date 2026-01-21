@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Fill Overlay Effect.
 /// </summary>
-public class FillOverlay: ModelElement<DXD.FillOverlay>
+public partial class FillOverlay : ModelElement<DXD.FillOverlay>
 {
   /// <summary>
   ///   Blend

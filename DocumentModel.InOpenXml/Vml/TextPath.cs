@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Defines the TextPath Class.
 /// </summary>
-public class TextPath: ModelElement<DXV.TextPath>
+public partial class TextPath : ModelElement<DXV.TextPath>
 {
   /// <summary>
   ///   Unique Identifier

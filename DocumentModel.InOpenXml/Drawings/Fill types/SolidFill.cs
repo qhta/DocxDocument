@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Specifies a solid color fill. The shape is filled entirely with the specified color. 
 /// </summary>
-public class SolidFill: Fill
+public partial class SolidFill : Fill
 {
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

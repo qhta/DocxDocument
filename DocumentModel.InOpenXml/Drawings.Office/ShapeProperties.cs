@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Office;
-
 /// <summary>
 ///   Defines the ShapeProperties Class.
 /// </summary>
-public class ShapeProperties: ModelElement<DXOD.ShapeProperties>
+public partial class ShapeProperties : ModelElement<DXOD.ShapeProperties>
 {
   /// <summary>
   ///   Black and White Mode

@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Drawings;
-
+namespace DocumentModel.Drawings;
 /// <summary>
 /// Specifies a position coordinate within the shape bounding box.
 /// It should be noted that this coordinate is placed within the shape bounding box using the transform coordinate system
@@ -10,7 +9,7 @@
 /// When specifying a point coordinate in path coordinate space it should be noted that the top left of the coordinate space is x=0, y=0
 /// and the coordinate points for x grow to the right and for y grow down.
 /// </remarks>
-public class AdjustCoordinate: ModelElement
+public partial class AdjustCoordinate : ModelElement
 {
   /// <summary>
   ///   Value of the coordinate within the shape bounding box.

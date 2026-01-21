@@ -1,15 +1,13 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Represents line spacing settings for text, allowing specification as a percentage or in points.
 /// </summary>
-public class LineSpacing: ModelElement
+public partial class LineSpacing : ModelElement
 {
   /// <summary>
   ///   Line spacing value specified as a percentage.
   /// </summary>
   public Int32? SpacingPercent { get; set; }
-
   /// <summary>
   ///   Line spacing value specified in points.
   /// </summary>

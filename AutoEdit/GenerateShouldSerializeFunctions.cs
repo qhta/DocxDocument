@@ -1,14 +1,15 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Collections.Generic;
 
-using System.IO;
 using System.Linq;
 
 namespace AutoEdit;
 
 internal class GenerateShouldSerializeFunctions
 {
+  private static readonly string[] ignoredAttributes = [ "XmlIgnore", "JsonIgnore", "NotMapped"];
   public static void Run(string filePath)
   {
     var code = File.ReadAllText(filePath);
@@ -24,27 +25,76 @@ internal class GenerateShouldSerializeFunctions
       namespaceName = fileScopedNamespaceNode?.Name.ToString();
     }
 
-    var classNode = root.DescendantNodes().OfType<ClassDeclarationSyntax>().First();
+    var classNode = root.DescendantNodes().OfType<ClassDeclarationSyntax>().FirstOrDefault();
+    if (classNode == null)
+      return;
     var className = classNode.Identifier.Text;
-//var baseClassNode = classNode.BaseList?.Types.FirstOrDefault();
-//if (baseClassNode?.Type is GenericNameSyntax genericName)
-//{
-//  // It's a generic class
-//  var genericTypeName = genericName.Identifier.Text; // e.g., "ModelElement"
-//  var typeArguments = genericName.TypeArgumentList.Arguments; // list of type arguments
+    //var baseClassNode = classNode.BaseList?.Types.FirstOrDefault();
+    //if (baseClassNode?.Type is GenericNameSyntax genericName)
+    //{
+    //  // It's a generic class
+    //  var genericTypeName = genericName.Identifier.Text; // e.g., "ModelElement"
+    //  var typeArguments = genericName.TypeArgumentList.Arguments; // list of type arguments
 
-//  // You can process typeArguments as needed
-//}
+    //  // You can process typeArguments as needed
+    //}
 
 
 
-    var properties = classNode.Members.OfType<PropertyDeclarationSyntax>().Where(p => p.Modifiers.Any(m => m.Text == "public")).Select(p => p.Identifier.Text).ToList();
+    var properties = classNode.Members.OfType<PropertyDeclarationSyntax>()
+      .Where(p =>
+        p.Modifiers.Any(m => m.Text == "public") &&
+        p.Modifiers.All(m => m.Text != "static") &&
+        !p.AttributeLists.Any(alist => alist.Attributes
+          .Any(a => ignoredAttributes.Contains(a.Name.ToString()))) &&
+        p.AccessorList != null &&
+        p.AccessorList.Accessors.Any(a => a.Kind() == SyntaxKind.SetAccessorDeclaration))
+
+      .ToList();
+    Dictionary<string, string> propertyTypes = new();
+    foreach (var prop in properties)
+    {
+      var propName = prop.Identifier.Text;
+      var propType = prop.Type;
+      if (propType is NullableTypeSyntax)
+      {
+        propertyTypes[propName] = $"{propName} is not null";
+      }
+      else if (propType is PredefinedTypeSyntax predefinedType)
+      {
+        var typeKeyword = predefinedType.Keyword.Text;
+        switch (typeKeyword)
+        {
+          //case "int":
+          //case "long":
+          //case "float":
+          //case "double":
+          //case "decimal":
+          //  propertyTypes[propName] = $"{propName} != 0";
+          //  break;
+          case "bool":
+            propertyTypes[propName] = $"{propName} == true";
+            break;
+          //case "char":
+          //  propertyTypes[propName] = $"{propName} != '\\0'";
+          //  break;
+          default:
+            break;
+        }
+      }
+    }
+
+    if (propertyTypes.Count == 0)
+      return;
+
+    var typeParams = classNode.TypeParameterList?.ToFullString() ?? "";
+    var classDecl = $"{className}{typeParams}";
 
     var shouldSerializeCode = $@"namespace {namespaceName};
 
-public partial class {className}
+public partial class {classDecl}
 {{
-{string.Join("\r\n", properties.Select(p => $"  public bool ShouldSerialize{p}() => {p} != null;"))}
+{string.Join("\r\n", propertyTypes.Select(p => $"  public bool ShouldSerialize{p.Key}() => {p.Value};"))}
 }}
 ";
 

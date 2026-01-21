@@ -1,10 +1,11 @@
 using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the name of the function in the Function-Apply object func. 
 ///   For example, function names are sin and cos.
 /// </summary>
-public class FunctionName: OfficeMathArgumentType<DXM.FunctionName>
+public partial class FunctionName : OfficeMathArgumentType<DXM.FunctionName>
 {
   /// <summary>
   ///   Specifies properties of argument object.

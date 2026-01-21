@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Represents an RGB color using hexadecimal notation with optional color transformations.
 /// This is one of several color model variants used in Office Open XML DrawingML, 
@@ -47,7 +46,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public class RgbColorModelHex: DrawingColor
+public partial class RgbColorModelHex : DrawingColor
 {
   /// <summary>
   /// Base RGB color value in hexadecimal format.
@@ -57,5 +56,4 @@ public class RgbColorModelHex: DrawingColor
   /// Common values include 0xFF0000 (red), 0x00FF00 (green), 0x0000FF (blue), 0x000000 (black), and 0xFFFFFF (white).
   /// </remarks>
   public RGB? Val { get; set; }
-  
 }

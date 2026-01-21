@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Ink.
 /// </summary>
-public class Ink: ModelElement<DXVO.Ink>
+public partial class Ink : ModelElement<DXVO.Ink>
 {
   /// <summary>
   ///   Ink Data

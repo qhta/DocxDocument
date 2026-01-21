@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Pictures;
-
 /// <summary>
 ///   Shape Properties.
 /// </summary>
-public class ShapeProperties: ModelElement<DXDP.ShapeProperties>
+public partial class ShapeProperties : ModelElement<DXDP.ShapeProperties>
 {
   /// <summary>
   ///   Black and White Mode

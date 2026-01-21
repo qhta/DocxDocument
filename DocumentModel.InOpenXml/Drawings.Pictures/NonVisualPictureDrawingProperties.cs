@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Pictures;
-
 /// <summary>
 ///   Non-Visual Picture Drawing Properties.
 /// </summary>
-public class NonVisualPictureDrawingProperties: ModelElement<DXDP.NonVisualDrawingProperties>
+public partial class NonVisualPictureDrawingProperties : ModelElement<DXDP.NonVisualDrawingProperties>
 {
   /// <summary>
   ///   preferRelativeResize

@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Diagram Relationship.
 /// </summary>
-public class Relation: ModelElement<DXVO.Relation>
+public partial class Relation : ModelElement<DXVO.Relation>
 {
   /// <summary>
   ///   VML Extension Handling Behavior

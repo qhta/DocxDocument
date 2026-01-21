@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Office;
-
 /// <summary>
 ///   Defines the GroupShapeNonVisualProperties Class.
 /// </summary>
-public class GroupShapeNonVisualProperties: ModelElement<DXOD.GroupShapeNonVisualProperties>
+public partial class GroupShapeNonVisualProperties : ModelElement<DXOD.GroupShapeNonVisualProperties>
 {
   /// <summary>
   ///   NonVisualDrawingProperties.

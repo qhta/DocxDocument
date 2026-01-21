@@ -2,11 +2,10 @@ using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
 
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Line.
 /// </summary>
-public class Line: ModelElement<DXV.Line>, IEmbeddedObjectContent
+public partial class Line : ModelElement<DXV.Line>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

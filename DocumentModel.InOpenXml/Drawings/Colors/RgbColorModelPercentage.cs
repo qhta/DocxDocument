@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Represents an RGB color using percentage values with optional color transformations.
 /// This is the percentage variant of the RGB color model used in Office Open XML DrawingML, 
@@ -53,7 +52,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public class RgbColorModelPercentage: DrawingColor
+public partial class RgbColorModelPercentage : DrawingColor
 {
   /// <summary>
   /// Red component as a percentage value.
@@ -64,7 +63,6 @@ public class RgbColorModelPercentage: DrawingColor
   /// Common values: 0 (no red), 50000 (50% red), 100000 (full red).
   /// </remarks>
   public Int32? RedPortion { get; set; }
-  
   /// <summary>
   /// Green component as a percentage value.
   /// </summary>
@@ -74,7 +72,6 @@ public class RgbColorModelPercentage: DrawingColor
   /// Common values: 0 (no green), 50000 (50% green), 100000 (full green).
   /// </remarks>
   public Int32? GreenPortion { get; set; }
-  
   /// <summary>
   /// Blue component as a percentage value.
   /// </summary>
@@ -84,4 +81,4 @@ public class RgbColorModelPercentage: DrawingColor
   /// Common values: 0 (no blue), 50000 (50% blue), 100000 (full blue).
   /// </remarks>
   public Int32? BluePortion { get; set; }
- }
+}

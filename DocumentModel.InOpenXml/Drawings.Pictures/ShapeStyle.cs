@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Pictures;
-
 /// <summary>
 ///   Defines the ShapeStyle Class.
 /// </summary>
-public class ShapeStyle: ModelElement<DXO10DP.ShapeStyle>
+public partial class ShapeStyle : ModelElement<DXO10DP.ShapeStyle>
 {
   /// <summary>
   ///   LineReference.

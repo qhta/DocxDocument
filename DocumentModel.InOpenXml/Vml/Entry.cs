@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Regroup Entry.
 /// </summary>
-public class Entry: ModelElement<DXVO.Entry>
+public partial class Entry : ModelElement<DXVO.Entry>
 {
   /// <summary>
   ///   New Group ID

@@ -2,11 +2,10 @@ using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
 
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Multiple Path Line.
 /// </summary>
-public class PolyLine: ModelElement<DXV.PolyLine>, IEmbeddedObjectContent
+public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

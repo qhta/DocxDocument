@@ -1,15 +1,13 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Camera tool settings for drawing elements.
 /// </summary>
-public class CameraTool: ModelElement<DXO10D.CameraTool>
+public partial class CameraTool : ModelElement<DXO10D.CameraTool>
 {
   /// <summary>
   /// Cell range.
   /// </summary>
   public string? CellRange { get; set; }
-
   /// <summary>
   /// Shape ID.
   /// </summary>

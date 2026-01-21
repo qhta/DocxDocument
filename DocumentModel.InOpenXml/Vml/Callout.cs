@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Defines the Callout Class.
 /// </summary>
-public class Callout: ModelElement<DXVO.Callout>
+public partial class Callout : ModelElement<DXVO.Callout>
 {
   /// <summary>
   ///   VML Extension Handling Behavior

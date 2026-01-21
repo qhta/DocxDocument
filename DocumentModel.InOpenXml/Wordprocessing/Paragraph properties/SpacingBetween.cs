@@ -1,17 +1,14 @@
-﻿namespace DocumentModel.Wordprocessing;
-
+namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the spacing settings between lines in a paragraph for a WordprocessingML document.
 /// This interface provides properties for specifying the spacing value and the rule used to determine line spacing, enabling advanced control over paragraph layout and readability.
 /// </summary>
-public class SpacingBetween: ModelElement//<DXW.SpacingBetween>
+public partial class SpacingBetween : ModelElement //<DXW.SpacingBetween>
 {
-  
   /// <summary>
   /// Spacing between lines in the paragraph, specified in twentieths of a point or as a multiple of line height.
   /// </summary>
   public Twips? Line { get; set; }
-  
   /// <summary>
   /// Type of spacing rule applied between lines (e.g., auto, exact, at least, multiple).
   /// </summary>

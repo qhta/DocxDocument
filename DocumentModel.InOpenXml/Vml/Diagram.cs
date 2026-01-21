@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   VML Diagram.
 /// </summary>
-public class Diagram: ModelElement<DXVO.Diagram>
+public partial class Diagram : ModelElement<DXVO.Diagram>
 {
   /// <summary>
   ///   VML Extension Handling Behavior

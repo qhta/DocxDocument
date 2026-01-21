@@ -2,11 +2,10 @@ using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
 
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Shape Definition.
 /// </summary>
-public class Shape: ModelElement<DXV.Shape>, IEmbeddedObjectContent
+public partial class Shape : ModelElement<DXV.Shape>, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier

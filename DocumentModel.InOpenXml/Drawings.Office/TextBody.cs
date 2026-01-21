@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Office;
-
 /// <summary>
 ///   Defines the TextBody Class.
 /// </summary>
-public class TextBody: ModelElement<DXOD.TextBody>
+public partial class TextBody : ModelElement<DXOD.TextBody>
 {
   /// <summary>
   ///   Body Properties.

@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 ///   including whether the phantom is hidden or visible 
 ///   and the amount of space that is considered when laying out text and objects around phantoms.
 /// </summary>
-public class PhantomProperties: ModelElement<DXM.PhantomProperties>
+public partial class PhantomProperties : ModelElement<DXM.PhantomProperties>
 {
   /// <summary>
   ///   Specifies the show property of the phantom phant. When 0 or false, the phant base e is hidden. 

@@ -2,10 +2,10 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class ActiveWritingStyle
 {
-  public bool ShouldSerializeApplicationName() => ApplicationName != null;
-  public bool ShouldSerializeCheckStyle() => CheckStyle != null;
-  public bool ShouldSerializeDllVersion() => DllVersion != null;
-  public bool ShouldSerializeVendorID() => VendorID != null;
-  public bool ShouldSerializeLanguage() => Language != null;
-  public bool ShouldSerializeNaturalLanguageGrammarCheck() => NaturalLanguageGrammarCheck != null;
+  public bool ShouldSerializeApplicationName() => ApplicationName is not null;
+  public bool ShouldSerializeCheckStyle() => CheckStyle is not null;
+  public bool ShouldSerializeDllVersion() => DllVersion is not null;
+  public bool ShouldSerializeVendorID() => VendorID is not null;
+  public bool ShouldSerializeLanguage() => Language is not null;
+  public bool ShouldSerializeNaturalLanguageGrammarCheck() => NaturalLanguageGrammarCheck is not null;
 }

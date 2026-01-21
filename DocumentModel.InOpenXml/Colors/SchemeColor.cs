@@ -1,12 +1,11 @@
 namespace DocumentModel;
-
 /// <summary>
 /// Represents a color that references a theme color scheme with optional transformations.
 /// This class enables dynamic color theming in Word documents by referencing colors from the 
 /// document's theme (e.g., Accent1, Dark1, Light2) rather than using fixed RGB values.
 /// When the document theme changes, scheme colors automatically update to match the new theme.
 /// </summary>
-public class SchemeColor : ModelElement, IColor
+public partial class SchemeColor : ModelElement, IColor
 {
   /// <summary>
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.
@@ -34,4 +33,4 @@ public class SchemeColor : ModelElement, IColor
   /// </para>
   /// </remarks>
   public SchemeColorKind? Val { get; set; }
-  }
+}

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Represents a reference to a visual effect that can be applied to drawing objects.
 /// </summary>
@@ -43,7 +42,7 @@ namespace DocumentModel.Drawings;
 ///   </list>
 ///   </para>
 /// </remarks>
-public class Effect: ModelElement
+public partial class Effect : ModelElement
 {
   /// <summary>
   ///   Reference identifier that links to a specific effect definition.

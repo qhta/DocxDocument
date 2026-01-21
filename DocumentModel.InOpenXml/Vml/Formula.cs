@@ -1,9 +1,8 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Single Formula.
 /// </summary>
-public class Formula: ModelElement<DXV.Formula>
+public partial class Formula : ModelElement<DXV.Formula>
 {
   /// <summary>
   ///   Equation

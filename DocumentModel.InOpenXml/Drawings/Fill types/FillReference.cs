@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Fill Reference.
 /// </summary>
-public class FillReference: ModelElement<DXD.FillReference>
+public partial class FillReference : ModelElement<DXD.FillReference>
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
   public RgbColorModelHex? RgbColorModelHex { get; set; }

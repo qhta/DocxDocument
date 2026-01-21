@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Defines the NonVisualGroupProperties interface.
 /// </summary>
-public class NonVisualGroupProperties: ModelElement<DXO13D.NonVisualGroupProperties>
+public partial class NonVisualGroupProperties : ModelElement<DXO13D.NonVisualGroupProperties>
 {
   /// <summary>
   ///   isLegacyGroup

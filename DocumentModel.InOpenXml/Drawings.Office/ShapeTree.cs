@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings.Office;
-
 /// <summary>
 ///   Defines the ShapeTree Class.
 /// </summary>
-public class ShapeTree: ModelElement<DXOD.ShapeTree>
+public partial class ShapeTree : ModelElement<DXOD.ShapeTree>
 {
   public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get; set; }
   public GroupShapeProperties? GroupShapeProperties { get; set; }
