@@ -69,7 +69,9 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     if (this.Count != other?.Count) return false;
     for (int i = 0; i < this.Count; i++)
     {
-      if (!this[i]!.Equals(other[i])) return false;
+      var thisItem = this[i];
+      var otherItem = other[i];
+      if (!thisItem!.Equals(otherItem)) return false;
     }
     return true;
   }

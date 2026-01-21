@@ -1,5 +1,7 @@
 ﻿using DocumentFormat.OpenXml;
 
+using DocumentModel.Packaging;
+
 namespace DocumentModel.Wordprocessing;
 
 //[OpenXmlUpdateData(nameof(ModelElement.UpdateData))]
@@ -82,7 +84,7 @@ public abstract class ExternalFile<T> : RelationshipType<DXW.RelationshipType>
   /// <summary>
   /// Uri string of the relationship target.
   /// </summary>
-  //[OpenXmlConvertFrom(nameof(GetTemplateUri))]
+  [OpenXmlLoadData(nameof(LoadUriFromOpenXml))]
   [OpenXmlUpdateData(nameof(UpdateUriInOpenXml))]
   public string? Uri
   {
@@ -95,14 +97,15 @@ public abstract class ExternalFile<T> : RelationshipType<DXW.RelationshipType>
   /// <summary>
   /// Sets the template relationship in the document and stores the relationship Id.
   /// </summary>
-  public void UpdateUriInOpenXml(object OpenXmlElement)
+  public void UpdateUriInOpenXml(object openXmlElement)
   {
     if (Uri == null)
       return;
 
     var doc = WordprocessingDocument;
     if (doc == null)
-      return;
+      throw new InvalidOperationException($"No WordprocessingDocument is known for model element {this}");
+
     // Remove old relationship if present
     if (!string.IsNullOrEmpty(Id))
     {
@@ -119,6 +122,38 @@ public abstract class ExternalFile<T> : RelationshipType<DXW.RelationshipType>
         new Uri(Uri));
 
     Id = rel?.Id;
+  }
+
+  /// <summary>
+  /// Loads the URI associated with the current relationship from the specified Open XML element.
+  /// </summary>
+  /// <remarks>This method updates the <c>Uri</c> property if a matching external relationship is found in the
+  /// main document part of the underlying WordprocessingDocument. If the document or relationship is not found, the
+  /// <c>Uri</c> property remains unchanged.</remarks>
+  /// <param name="openXmlElement">The Open XML element from which to load the relationship URI. This parameter is not validated and is used as a
+  /// context for the operation.</param>
+  public void LoadUriFromOpenXml(object openXmlElement)
+  {
+    if (openXmlElement is not DX.OpenXmlElement element)
+      throw new InvalidOperationException($"OpenXmlElement expected in {nameof(LoadUriFromOpenXml) }");
+
+    var doc = element.GetWordprocessingDocument();
+    if (doc == null)
+      throw new InvalidOperationException($"No WordprocessingDocument is known for {element} of type {element.GetType()}");
+
+    if (openXmlElement is DXW.RelationshipType relationshipType)
+      Id = relationshipType.Id;
+    else
+      throw new InvalidOperationException($"OpenXmlElement is a {openXmlElement.GetType()} but not RelationshipType");
+
+    if (Id == null)
+      throw new InvalidOperationException($"No Id property in {element} of type {element.GetType()}");
+    var foundRel = doc.MainDocumentPart?
+      .ExternalRelationships
+      .FirstOrDefault(r => r.Id == Id);
+    if (foundRel == null)
+      throw new InvalidOperationException($"Relationship '{Id}' not found in WordprocessingDocument");
+    Uri = foundRel.Uri?.ToString();
   }
 
   ///// <summary>
