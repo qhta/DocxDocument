@@ -215,4 +215,23 @@ public static class WordprocessingHelper
     var relationship = mainPart.AddExternalRelationship(relationshipId, new Uri(uri));
     return relationship;
   }
+
+  /// <summary>
+  /// Gets the WordprocessingDocument that contains the specified OpenXmlElement.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <returns></returns>
+  public static DXPack.WordprocessingDocument? GetWordprocessingDocument(this DX.OpenXmlElement element)
+  {
+    // Walk up to the root element
+    DX.OpenXmlElement? current = element;
+    while (current != null && !(current is DX.OpenXmlPartRootElement))
+      current = current.Parent;
+
+    if (current is DX.OpenXmlPartRootElement root && root.OpenXmlPart != null)
+    {
+      return root.OpenXmlPart.OpenXmlPackage as DXPack.WordprocessingDocument;
+    }
+    return null;
+  }
 }

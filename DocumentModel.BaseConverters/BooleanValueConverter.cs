@@ -325,31 +325,58 @@ public static class BooleanValueConverter
   /// Converts a boolean value to the specified OpenXmlElement type.
   /// </summary>
   /// <param name="value">The boolean value to convert.</param>
-  /// <param name="elementType">The target OpenXmlElement type.</param>
+  /// <param name="openXmlType">The target OpenXmlElement type.</param>
   /// <returns>The converted OpenXmlElement, or null if the conversion failed.</returns>
-  /// <exception cref="InvalidOperationException">Thrown if  conversion to the elementType is not supported.</exception>
-  public static object? CreateOpenXmlElement(bool value, Type elementType)
+  /// <exception cref="InvalidOperationException">Thrown if  conversion to the openXmlType is not supported.</exception>
+  public static object? CreateOpenXmlElement(bool value, Type openXmlType)
   {
-    if (elementType == typeof(DX.BooleanValue))
+    if (openXmlType == typeof(DX.BooleanValue))
       return new DX.BooleanValue(value);
-    if (elementType == typeof(DX.EnumValue<DXM.BooleanValues>))
+    if (openXmlType == typeof(DX.EnumValue<DXM.BooleanValues>))
       return new DX.EnumValue<DXM.BooleanValues>(value ? DXM.BooleanValues.True : DXM.BooleanValues.False);
-    if (elementType == typeof(DX.OnOffValue))
+    if (openXmlType == typeof(DX.OnOffValue))
       return DX.OnOffValue.FromBoolean(value);
-    if (elementType.IsSubclassOf(typeof(DXW.OnOffType)))
+    if (openXmlType.IsSubclassOf(typeof(DXW.OnOffType)))
     {
-      var onOffTypeValue = (DXW.OnOffType)Activator.CreateInstance(elementType)!;
+      var onOffTypeValue = (DXW.OnOffType)Activator.CreateInstance(openXmlType)!;
       onOffTypeValue.Val = new DX.OnOffValue(value);
       return onOffTypeValue;
     }
-    if (elementType.IsSubclassOf(typeof(DXW.OnOffOnlyType)))
+    if (openXmlType.IsSubclassOf(typeof(DXW.OnOffOnlyType)))
     {
-      var onOffOnlyTypeValue = (DXW.OnOffOnlyType)Activator.CreateInstance(elementType)!;
+      var onOffOnlyTypeValue = (DXW.OnOffOnlyType)Activator.CreateInstance(openXmlType)!;
       onOffOnlyTypeValue.Val = value ? DXW.OnOffOnlyValues.On : DXW.OnOffOnlyValues.Off;
       return onOffOnlyTypeValue;
     }
 
-    throw new InvalidOperationException($"Cannot create OpenXmlElement of type {elementType}");
+    throw new InvalidOperationException($"Cannot create OpenXmlElement of type {openXmlType} from boolean value.");
+  }
+
+  /// <summary>
+  /// Retrieves the boolean value represented by the specified Open XML element, if available.  
+  /// </summary>
+  /// <remarks>This method is intended for use with Open XML SDK types that represent boolean values. If the
+  /// element is not one of the supported types, an exception is thrown.</remarks>
+  /// <param name="openXmlElement">The Open XML element from which to extract the boolean value. This can be an instance of BooleanValue,
+  /// EnumValue&lt;BooleanValues&gt;, OnOffValue, OnOffType, or OnOffOnlyType. Can be null.</param>
+  /// <returns>A nullable boolean value representing the value of the specified element, or null if the element is null or does
+  /// not contain a value.</returns>
+  /// <exception cref="InvalidOperationException">Thrown if the specified element is not a supported type for extracting a boolean value.</exception>
+  public static bool? GetBoolValue(this object? openXmlElement)
+  {
+    var openXmlType = openXmlElement?.GetType();
+    if (openXmlElement is DX.BooleanValue booleanValue)
+      return booleanValue.Value;
+    if (openXmlElement is DX.EnumValue<DXM.BooleanValues> enumValue)
+      return enumValue.GetValue();
+    if (openXmlElement is DX.OnOffValue onOffValue)
+      return onOffValue.GetValue();
+    if (openXmlElement is DXW.OnOffType onOffType)
+      return onOffType.GetValue();
+    if (openXmlElement is DXW.OnOffOnlyType onOffOnlyType)
+      return onOffOnlyType.GetValue();
+    throw new InvalidOperationException($"Cannot get boolean value from type {openXmlType}");
+
   }
 
   /// <summary>
@@ -498,11 +525,11 @@ public static class BooleanValueConverter
   /// Retrieves a boolean value from a child OnOffType element within an OpenXml CompositeElement.
   /// Handles standard Word, Word 2013, and Math OnOffType elements.
   /// </summary>
-  /// <typeparam name="OpenXmlElement">The type of the child element.</typeparam>
+  /// <typeparam name="OpenXmlType">The type of the child element.</typeparam>
   /// <param name="openXmlElement">The parent composite element.</param>
   /// <returns>The boolean value, or null if not found.</returns>
   /// <exception cref="InvalidDataException">Thrown if an invalid Math OnOffType value is encountered.</exception>
-  public static bool? GetBoolVal<OpenXmlElement>(this DX.OpenXmlCompositeElement? openXmlElement) where OpenXmlElement : DX.OpenXmlLeafElement
+  public static bool? GetBoolVal<OpenXmlType>(this DX.OpenXmlCompositeElement? openXmlElement) where OpenXmlType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
