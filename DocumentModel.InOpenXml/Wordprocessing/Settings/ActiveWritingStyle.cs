@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This element specifies information about the parameters of the grammar checking 
 ///   which was performed on the contents of the current WordprocessingML document. 
 /// </summary>
-public class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
+public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
 {
   /// <summary>
   ///   Specifies the name of the application which specified the grammatical settings 

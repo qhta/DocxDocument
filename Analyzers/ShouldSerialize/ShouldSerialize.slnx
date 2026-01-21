@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="../../AutoEdit/AutoEdit.csproj" />
+  <Project Path="ShouldSerialize.CodeFixes/ShouldSerialize.CodeFixes.csproj" />
+  <Project Path="ShouldSerialize.Package/ShouldSerialize.Package.csproj" />
+  <Project Path="ShouldSerialize.Test/ShouldSerialize.Test.csproj" />
+  <Project Path="ShouldSerialize.Vsix/ShouldSerialize.Vsix.csproj" />
+  <Project Path="ShouldSerialize/ShouldSerialize.csproj" />
+</Solution>
