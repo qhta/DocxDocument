@@ -4,8 +4,10 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class Formula : ModelElement<DXV.Formula>
 {
-  /// <summary>
-  ///   Equation
-  /// </summary>
-  public string? Equation { get; set; }
+    /// <summary>
+    ///   Equation
+    /// </summary>
+    public string? Equation { get => _Equation; set => UpdateField(ref _Equation, value, nameof(Equation)); }
+
+    private string? _Equation;
 }

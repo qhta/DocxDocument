@@ -8,24 +8,26 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Field : ModelElement<DXD.Field>
 {
-  /// <summary>
-  ///   Identifier for the field.
-  /// </summary>
-  public string? Id { get; set; }
-  /// <summary>
-  ///   Type of the field.
-  /// </summary>
-  public string? Type { get; set; }
-  /// <summary>
-  ///   Character properties applied to the field text.
-  /// </summary>
-  public RunProperties? RunProperties { get; set; }
-  /// <summary>
-  ///   Paragraph properties applied to the field text.
-  /// </summary>
-  public ParagraphProperties? ParagraphProperties { get; set; }
-  /// <summary>
-  ///   Text content of the field.
-  /// </summary>
-  public string? Text { get; set; }
+    /// <summary>
+    ///   Identifier for the field.
+    /// </summary>
+    public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+
+    private string? _Id;
+    /// <summary>
+    ///   Type of the field.
+    /// </summary>
+    public string? Type { get; set; }
+    /// <summary>
+    ///   Character properties applied to the field text.
+    /// </summary>
+    public RunProperties? RunProperties { get; set; }
+    /// <summary>
+    ///   Paragraph properties applied to the field text.
+    /// </summary>
+    public ParagraphProperties? ParagraphProperties { get; set; }
+    /// <summary>
+    ///   Text content of the field.
+    /// </summary>
+    public string? Text { get; set; }
 }

@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ArtisticFilmGrain : ModelElement<DXO10D.ArtisticFilmGrain>
 {
-  /// <summary>
-  /// Transparency level of the film grain effect.
-  /// </summary>
-  public Int32? Transparency { get; set; }
-  /// <summary>
-  /// Size of the grain in the film grain effect, influencing the texture's coarseness.
-  /// </summary>
-  public Int32? GrainSize { get; set; }
+    /// <summary>
+    /// Transparency level of the film grain effect.
+    /// </summary>
+    public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
+
+    private Int32? _Transparency;
+    /// <summary>
+    /// Size of the grain in the film grain effect, influencing the texture's coarseness.
+    /// </summary>
+    public Int32? GrainSize { get; set; }
 }

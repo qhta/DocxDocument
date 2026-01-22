@@ -5,24 +5,26 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableStyleConditionalCellProperties : ModelElement //<DXO10W.TableStyleConditionalCellProperties>
 {
-  /// <summary>
-  /// Table cell borders, specifying the style and appearance of cell edges.
-  /// </summary>
-  public TableCellBorders? TableCellBorders { get; set; }
-  /// <summary>
-  /// Shading applied to the table cell, specifying background and pattern formatting.
-  /// </summary>
-  public DMWD.Shading? Shading { get; set; }
-  /// <summary>
-  /// Indicates whether text wrapping is disabled for the cell.
-  /// </summary>
-  public bool? NoWrap { get; set; }
-  /// <summary>
-  /// Margins for the table cell, specifying padding on each side.
-  /// </summary>
-  public TableCellMargin? TableCellMargin { get; set; }
-  /// <summary>
-  /// Vertical alignment of content within the table cell.
-  /// </summary>
-  public TableVerticalAlignmentKind? TableCellVerticalAlignment { get; set; }
+    /// <summary>
+    /// Table cell borders, specifying the style and appearance of cell edges.
+    /// </summary>
+    public TableCellBorders? TableCellBorders { get => _TableCellBorders; set => UpdateField(ref _TableCellBorders, value, nameof(TableCellBorders)); }
+
+    private TableCellBorders? _TableCellBorders;
+    /// <summary>
+    /// Shading applied to the table cell, specifying background and pattern formatting.
+    /// </summary>
+    public DMWD.Shading? Shading { get; set; }
+    /// <summary>
+    /// Indicates whether text wrapping is disabled for the cell.
+    /// </summary>
+    public bool? NoWrap { get; set; }
+    /// <summary>
+    /// Margins for the table cell, specifying padding on each side.
+    /// </summary>
+    public TableCellMargin? TableCellMargin { get; set; }
+    /// <summary>
+    /// Vertical alignment of content within the table cell.
+    /// </summary>
+    public TableVerticalAlignmentKind? TableCellVerticalAlignment { get; set; }
 }

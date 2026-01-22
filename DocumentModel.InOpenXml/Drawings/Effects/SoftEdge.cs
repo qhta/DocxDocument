@@ -4,8 +4,10 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class SoftEdge : ModelElement
 {
-  /// <summary>
-  ///   Radius of the soft edge effect.
-  /// </summary>
-  public Int64? Radius { get; set; }
+    /// <summary>
+    ///   Radius of the soft edge effect.
+    /// </summary>
+    public Int64? Radius { get => _Radius; set => UpdateField(ref _Radius, value, nameof(Radius)); }
+
+    private Int64? _Radius;
 }

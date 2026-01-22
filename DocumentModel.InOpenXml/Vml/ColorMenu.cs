@@ -4,24 +4,26 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ColorMenu : ModelElement<DXVO.ColorMenu>
 {
-  /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
-  /// <summary>
-  ///   Default stroke color
-  /// </summary>
-  public string? StrokeColor { get; set; }
-  /// <summary>
-  ///   Default fill color
-  /// </summary>
-  public string? FillColor { get; set; }
-  /// <summary>
-  ///   Default shadow color
-  /// </summary>
-  public string? ShadowColor { get; set; }
-  /// <summary>
-  ///   Default extrusion color
-  /// </summary>
-  public string? ExtrusionColor { get; set; }
+    /// <summary>
+    ///   VML Extension Handling Behavior
+    /// </summary>
+    public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
+
+    private ExtensionHandlingBehaviorKind? _Extension;
+    /// <summary>
+    ///   Default stroke color
+    /// </summary>
+    public string? StrokeColor { get; set; }
+    /// <summary>
+    ///   Default fill color
+    /// </summary>
+    public string? FillColor { get; set; }
+    /// <summary>
+    ///   Default shadow color
+    /// </summary>
+    public string? ShadowColor { get; set; }
+    /// <summary>
+    ///   Default extrusion color
+    /// </summary>
+    public string? ExtrusionColor { get; set; }
 }

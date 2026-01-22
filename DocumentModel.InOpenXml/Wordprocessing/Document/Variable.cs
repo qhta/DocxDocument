@@ -5,15 +5,16 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Variable : ModelElement<DXW.DocumentVariable>
 {
-  /// <summary>
-  /// Name of the document variable, specifying the unique identifier for the variable.
-  /// </summary>
-  [XmlAttribute]
-  public string? Name { get; set; }
+    /// <summary>
+    /// Name of the document variable, specifying the unique identifier for the variable.
+    /// </summary>
+    [XmlAttribute]
+    public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
-  /// <summary>
-  /// Value of the document variable, specified as a string.
-  /// </summary>
-  [XmlAttribute]
-  public string? Val { get; set; }
+    private string? _Name;
+    /// <summary>
+    /// Value of the document variable, specified as a string.
+    /// </summary>
+    [XmlAttribute]
+    public string? Val { get; set; }
 }

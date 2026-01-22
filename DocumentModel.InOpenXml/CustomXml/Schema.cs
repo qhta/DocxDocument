@@ -14,34 +14,35 @@ namespace DocumentModel.CustomXml;
 [OpenXmlTypeAttribute(typeof(DXCXSR.Schema))]
 public partial class Schema : ModelElement<DXCXSR.Schema>
 {
-  /// <summary>
-  ///  Namespace UriString that uniquely identifies this XML schema.
-  /// </summary>
-  /// <remarks>
-  ///   The namespace UriString identifies the schema and matches the target namespace defined in the schema file.
-  ///   This is used to associate XML elements in the custom XML data with their corresponding schema definitions.
-  /// </remarks>
-  [XmlAttribute]
-  public string? Uri { get; set; }
+    /// <summary>
+    ///  Namespace UriString that uniquely identifies this XML schema.
+    /// </summary>
+    /// <remarks>
+    ///   The namespace UriString identifies the schema and matches the target namespace defined in the schema file.
+    ///   This is used to associate XML elements in the custom XML data with their corresponding schema definitions.
+    /// </remarks>
+    [XmlAttribute]
+    public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
 
-  /// <summary>
-  ///   Location of the resource manifest file for this schema.
-  /// </summary>
-  /// <remarks>
-  ///   The manifest location can be used for schema discovery and resolution, particularly in scenarios
-  ///   where multiple related schemas need to be loaded or when schema catalogs are employed.
-  /// </remarks>
-  [XmlAttribute]
-  public string? ManifestLocation { get; set; }
+    private string? _Uri;
+    /// <summary>
+    ///   Location of the resource manifest file for this schema.
+    /// </summary>
+    /// <remarks>
+    ///   The manifest location can be used for schema discovery and resolution, particularly in scenarios
+    ///   where multiple related schemas need to be loaded or when schema catalogs are employed.
+    /// </remarks>
+    [XmlAttribute]
+    public string? ManifestLocation { get; set; }
 
-  /// <summary>
-  ///   Physical location of the XML schema file.
-  /// </summary>
-  /// <remarks>
-  ///   The schema location points to the actual XSD (XML Schema Definition) file that contains
-  ///   the validation rules and structure definitions. This can be a local file path, a relative path
-  ///   within the document package, or a URL to a remote schema location.
-  /// </remarks>
-  [XmlAttribute]
-  public string? SchemaLocation { get; set; }
+    /// <summary>
+    ///   Physical location of the XML schema file.
+    /// </summary>
+    /// <remarks>
+    ///   The schema location points to the actual XSD (XML Schema Definition) file that contains
+    ///   the validation rules and structure definitions. This can be a local file path, a relative path
+    ///   within the document package, or a URL to a remote schema location.
+    /// </remarks>
+    [XmlAttribute]
+    public string? SchemaLocation { get; set; }
 }

@@ -5,8 +5,10 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Behaviors : ModelElement<DXW.Behaviors>
 {
-  /// <summary>
-  /// Entry insertion behavior type, specifying how the document part behaves during insertion.
-  /// </summary>
-  public DocPartBehaviorKind? Behavior { get; set; }
+    /// <summary>
+    /// Entry insertion behavior type, specifying how the document part behaves during insertion.
+    /// </summary>
+    public DocPartBehaviorKind? Behavior { get => _Behavior; set => UpdateField(ref _Behavior, value, nameof(Behavior)); }
+
+    private DocPartBehaviorKind? _Behavior;
 }

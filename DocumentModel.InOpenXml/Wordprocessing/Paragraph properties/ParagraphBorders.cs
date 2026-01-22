@@ -5,28 +5,30 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ParagraphBorders : ModelElement<DXW.ParagraphBorders>
 {
-  /// <summary>
-  /// Border above identical paragraphs, specifying the top border of the paragraph.
-  /// </summary>
-  public Border? TopBorder { get; set; }
-  /// <summary>
-  /// Left border of the paragraph.
-  /// </summary>
-  public Border? LeftBorder { get; set; }
-  /// <summary>
-  /// Border between identical paragraphs, specifying the bottom border of the paragraph.
-  /// </summary>
-  public Border? BottomBorder { get; set; }
-  /// <summary>
-  /// Right border of the paragraph.
-  /// </summary>
-  public Border? RightBorder { get; set; }
-  /// <summary>
-  /// Border between identical paragraphs, used to visually separate consecutive paragraphs with the same formatting.
-  /// </summary>
-  public Border? BetweenBorder { get; set; }
-  /// <summary>
-  /// Border between facing pages, specifying a vertical bar border for the paragraph.
-  /// </summary>
-  public Border? BarBorder { get; set; }
+    /// <summary>
+    /// Border above identical paragraphs, specifying the top border of the paragraph.
+    /// </summary>
+    public Border? TopBorder { get => _TopBorder; set => UpdateField(ref _TopBorder, value, nameof(TopBorder)); }
+
+    private Border? _TopBorder;
+    /// <summary>
+    /// Left border of the paragraph.
+    /// </summary>
+    public Border? LeftBorder { get; set; }
+    /// <summary>
+    /// Border between identical paragraphs, specifying the bottom border of the paragraph.
+    /// </summary>
+    public Border? BottomBorder { get; set; }
+    /// <summary>
+    /// Right border of the paragraph.
+    /// </summary>
+    public Border? RightBorder { get; set; }
+    /// <summary>
+    /// Border between identical paragraphs, used to visually separate consecutive paragraphs with the same formatting.
+    /// </summary>
+    public Border? BetweenBorder { get; set; }
+    /// <summary>
+    /// Border between facing pages, specifying a vertical bar border for the paragraph.
+    /// </summary>
+    public Border? BarBorder { get; set; }
 }

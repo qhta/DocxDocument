@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class NoLineBreaksAfterKinsoku : ModelElement<DXW.NoLineBreaksAfterKinsoku>
 {
-  /// <summary>
-  /// Language code for which the kinsoku rule applies, specifying the script or locale.
-  /// </summary>
-  public string? Language { get; set; }
-  /// <summary>
-  /// Set of characters that cannot end a line, specified as a string of restricted characters.
-  /// </summary>
-  public string? Val { get; set; }
+    /// <summary>
+    /// Language code for which the kinsoku rule applies, specifying the script or locale.
+    /// </summary>
+    public string? Language { get => _Language; set => UpdateField(ref _Language, value, nameof(Language)); }
+
+    private string? _Language;
+    /// <summary>
+    /// Set of characters that cannot end a line, specified as a string of restricted characters.
+    /// </summary>
+    public string? Val { get; set; }
 }

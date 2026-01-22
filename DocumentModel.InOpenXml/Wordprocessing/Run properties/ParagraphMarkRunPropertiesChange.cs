@@ -5,20 +5,22 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ParagraphMarkRunPropertiesChange : ModelElement<DXW.ParagraphMarkRunPropertiesChange>
 {
-  /// <summary>
-  /// Author of the change to the paragraph mark run properties.
-  /// </summary>
-  public string? Author { get; set; }
-  /// <summary>
-  /// Date of the change to the paragraph mark run properties.
-  /// </summary>
-  public DateTime? Date { get; set; }
-  /// <summary>
-  /// Annotation identifier for the change, used to uniquely identify the revision.
-  /// </summary>
-  public string? AnnotationId { get; set; }
-  /// <summary>
-  /// Previous run properties for the paragraph mark before the change, enabling comparison and tracking of revisions.
-  /// </summary>
-  public PreviousParagraphMarkRunProperties? PreviousParagraphMarkRunProperties { get; set; }
+    /// <summary>
+    /// Author of the change to the paragraph mark run properties.
+    /// </summary>
+    public string? Author { get => _Author; set => UpdateField(ref _Author, value, nameof(Author)); }
+
+    private string? _Author;
+    /// <summary>
+    /// Date of the change to the paragraph mark run properties.
+    /// </summary>
+    public DateTime? Date { get; set; }
+    /// <summary>
+    /// Annotation identifier for the change, used to uniquely identify the revision.
+    /// </summary>
+    public string? AnnotationId { get; set; }
+    /// <summary>
+    /// Previous run properties for the paragraph mark before the change, enabling comparison and tracking of revisions.
+    /// </summary>
+    public PreviousParagraphMarkRunProperties? PreviousParagraphMarkRunProperties { get; set; }
 }

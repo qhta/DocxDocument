@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ArtisticCement : ModelElement<DXO10D.ArtisticCement>
 {
-  /// <summary>
-  /// Transparency level of the cement effect.
-  /// </summary>
-  public Int32? Transparency { get; set; }
-  /// <summary>
-  /// Spacing between cracks in the cement effect.
-  /// </summary>
-  public Int32? CrackSpacing { get; set; }
+    /// <summary>
+    /// Transparency level of the cement effect.
+    /// </summary>
+    public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
+
+    private Int32? _Transparency;
+    /// <summary>
+    /// Spacing between cracks in the cement effect.
+    /// </summary>
+    public Int32? CrackSpacing { get; set; }
 }

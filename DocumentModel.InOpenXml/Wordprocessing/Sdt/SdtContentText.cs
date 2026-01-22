@@ -5,8 +5,10 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtContentText : ModelElement<DXW.SdtContentText>
 {
-  /// <summary>
-  /// Indicates whether soft line breaks (multiline input) are allowed in the text content control.
-  /// </summary>
-  public bool? MultiLine { get; set; }
+    /// <summary>
+    /// Indicates whether soft line breaks (multiline input) are allowed in the text content control.
+    /// </summary>
+    public bool? MultiLine { get => _MultiLine; set => UpdateField(ref _MultiLine, value, nameof(MultiLine)); }
+
+    private bool? _MultiLine;
 }

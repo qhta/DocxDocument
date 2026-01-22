@@ -5,8 +5,10 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SaveThroughXslt : ModelElement<DXW.SaveThroughXslt>
 {
-  /// <summary>
-  /// Local identifier for the XSL transform, specifying the unique solution or transform to apply.
-  /// </summary>
-  public string? SolutionId { get; set; }
+    /// <summary>
+    /// Local identifier for the XSL transform, specifying the unique solution or transform to apply.
+    /// </summary>
+    public string? SolutionId { get => _SolutionId; set => UpdateField(ref _SolutionId, value, nameof(SolutionId)); }
+
+    private string? _SolutionId;
 }

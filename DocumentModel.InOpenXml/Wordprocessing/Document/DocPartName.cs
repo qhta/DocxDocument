@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocPartName : ModelElement<DXW.DocPartName>
 {
-  /// <summary>
-  /// Name value of the entry, specifying the unique identifier or display name for the glossary document entry.
-  /// </summary>
-  public string? Val { get; set; }
-  /// <summary>
-  /// Indicates whether the entry is a built-in (decorated) entry.
-  /// </summary>
-  public bool? Decorated { get; set; }
+    /// <summary>
+    /// Name value of the entry, specifying the unique identifier or display name for the glossary document entry.
+    /// </summary>
+    public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+
+    private string? _Val;
+    /// <summary>
+    /// Indicates whether the entry is a built-in (decorated) entry.
+    /// </summary>
+    public bool? Decorated { get; set; }
 }

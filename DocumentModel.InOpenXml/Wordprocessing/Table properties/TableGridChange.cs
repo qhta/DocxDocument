@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableGridChange : ModelElement<DXW.TableGridChange>
 {
-  /// <summary>
-  /// Annotation identifier for the table grid change, used to uniquely identify the revision.
-  /// </summary>
-  public string? AnnotationId { get; set; }
-  /// <summary>
-  /// Previous table grid configuration before the change, enabling comparison and tracking of grid revisions.
-  /// </summary>
-  public PreviousTableGrid? PreviousTableGrid { get; set; }
+    /// <summary>
+    /// Annotation identifier for the table grid change, used to uniquely identify the revision.
+    /// </summary>
+    public string? AnnotationId { get => _AnnotationId; set => UpdateField(ref _AnnotationId, value, nameof(AnnotationId)); }
+
+    private string? _AnnotationId;
+    /// <summary>
+    /// Previous table grid configuration before the change, enabling comparison and tracking of grid revisions.
+    /// </summary>
+    public PreviousTableGrid? PreviousTableGrid { get; set; }
 }

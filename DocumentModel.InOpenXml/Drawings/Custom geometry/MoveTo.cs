@@ -4,8 +4,10 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class MoveTo : ModelElement<DXD.MoveTo>
 {
-  /// <summary>
-  ///   Destination point for the move operation.
-  /// </summary>
-  public AdjustPoint2DType? Point { get; set; }
+    /// <summary>
+    ///   Destination point for the move operation.
+    /// </summary>
+    public AdjustPoint2DType? Point { get => _Point; set => UpdateField(ref _Point, value, nameof(Point)); }
+
+    private AdjustPoint2DType? _Point;
 }

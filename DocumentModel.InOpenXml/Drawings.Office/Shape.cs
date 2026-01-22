@@ -4,32 +4,34 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class Shape : ModelElement<DXOD.Shape>
 {
-  /// <summary>
-  ///   modelId
-  /// </summary>
-  public string? ModelId { get; set; }
-  /// <summary>
-  ///   ShapeNonVisualProperties.
-  /// </summary>
-  public ShapeNonVisualProperties? ShapeNonVisualProperties { get; set; }
-  /// <summary>
-  ///   ShapeProperties.
-  /// </summary>
-  public ShapeProperties? ShapeProperties { get; set; }
-  /// <summary>
-  ///   ShapeStyle.
-  /// </summary>
-  public ShapeStyle? ShapeStyle { get; set; }
-  /// <summary>
-  ///   TextBody.
-  /// </summary>
-  public TextBody? TextBody { get; set; }
-  /// <summary>
-  ///   Transform2D.
-  /// </summary>
-  public Transform2D? Transform2D { get; set; }
-  /// <summary>
-  ///   OfficeArtExtensionList.
-  /// </summary>
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    /// <summary>
+    ///   modelId
+    /// </summary>
+    public string? ModelId { get => _ModelId; set => UpdateField(ref _ModelId, value, nameof(ModelId)); }
+
+    private string? _ModelId;
+    /// <summary>
+    ///   ShapeNonVisualProperties.
+    /// </summary>
+    public ShapeNonVisualProperties? ShapeNonVisualProperties { get; set; }
+    /// <summary>
+    ///   ShapeProperties.
+    /// </summary>
+    public ShapeProperties? ShapeProperties { get; set; }
+    /// <summary>
+    ///   ShapeStyle.
+    /// </summary>
+    public ShapeStyle? ShapeStyle { get; set; }
+    /// <summary>
+    ///   TextBody.
+    /// </summary>
+    public TextBody? TextBody { get; set; }
+    /// <summary>
+    ///   Transform2D.
+    /// </summary>
+    public Transform2D? Transform2D { get; set; }
+    /// <summary>
+    ///   OfficeArtExtensionList.
+    /// </summary>
+    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

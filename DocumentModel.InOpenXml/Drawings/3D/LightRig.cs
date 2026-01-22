@@ -4,16 +4,18 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LightRig : ModelElement<DXD.LightRig>
 {
-  /// <summary>
-  ///   Preset type of the light rig.
-  /// </summary>
-  public LightRigKind? Rig { get; set; }
-  /// <summary>
-  ///   Direction of the light rig.
-  /// </summary>
-  public LightRigDirectionKind? Direction { get; set; }
-  /// <summary>
-  ///   Rotation settings for the light rig.
-  /// </summary>
-  public Rotation? Rotation { get; set; }
+    /// <summary>
+    ///   Preset type of the light rig.
+    /// </summary>
+    public LightRigKind? Rig { get => _Rig; set => UpdateField(ref _Rig, value, nameof(Rig)); }
+
+    private LightRigKind? _Rig;
+    /// <summary>
+    ///   Direction of the light rig.
+    /// </summary>
+    public LightRigDirectionKind? Direction { get; set; }
+    /// <summary>
+    ///   Rotation settings for the light rig.
+    /// </summary>
+    public Rotation? Rotation { get; set; }
 }

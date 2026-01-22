@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LuminanceEffect : ModelElement
 {
-  /// <summary>
-  ///   Brightness adjustment value.
-  /// </summary>
-  public Int32? Brightness { get; set; }
-  /// <summary>
-  ///   Contrast adjustment value.
-  /// </summary>
-  public Int32? Contrast { get; set; }
+    /// <summary>
+    ///   Brightness adjustment value.
+    /// </summary>
+    public Int32? Brightness { get => _Brightness; set => UpdateField(ref _Brightness, value, nameof(Brightness)); }
+
+    private Int32? _Brightness;
+    /// <summary>
+    ///   Contrast adjustment value.
+    /// </summary>
+    public Int32? Contrast { get; set; }
 }

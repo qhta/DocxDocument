@@ -4,9 +4,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LiveFeedProperties : ModelElement<DXO21DL.LiveFeedProperties>, IOfficeArtExtendableElement
 {
-  /// <summary>
-  ///   Background properties for the live feed.
-  /// </summary>
-  public LiveFeedBackgroundProperties? LiveFeedBackgroundProperties { get; set; }
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    /// <summary>
+    ///   Background properties for the live feed.
+    /// </summary>
+    public LiveFeedBackgroundProperties? LiveFeedBackgroundProperties { get => _LiveFeedBackgroundProperties; set => UpdateField(ref _LiveFeedBackgroundProperties, value, nameof(LiveFeedBackgroundProperties)); }
+
+    private LiveFeedBackgroundProperties? _LiveFeedBackgroundProperties;
+    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

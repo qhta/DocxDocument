@@ -4,28 +4,30 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BackgroundColor : ModelElement<DXD.BackgroundColor>
 {
-  /// <summary>
-  /// Gets or sets the RGB color model using percentage values for the background color.
-  /// </summary>
-  public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
-  /// <summary>
-  /// Gets or sets the RGB color model using hexadecimal values for the background color.
-  /// </summary>
-  public RgbColorModelHex? RgbColorModelHex { get; set; }
-  /// <summary>
-  /// Gets or sets the HSL (Hue, Saturation, Lightness) color model for the background color.
-  /// </summary>
-  public HslColor? HslColor { get; set; }
-  /// <summary>
-  /// Gets or sets the system color for the background color.
-  /// </summary>
-  public SystemColor? SystemColor { get; set; }
-  /// <summary>
-  /// Gets or sets the scheme color for the background color.
-  /// </summary>
-  public SchemeColor? SchemeColor { get; set; }
-  /// <summary>
-  /// Gets or sets the preset color for the background color.
-  /// </summary>
-  public PresetColor? PresetColor { get; set; }
+    /// <summary>
+    /// Gets or sets the RGB color model using percentage values for the background color.
+    /// </summary>
+    public RgbColorModelPercentage? RgbColorModelPercentage { get => _RgbColorModelPercentage; set => UpdateField(ref _RgbColorModelPercentage, value, nameof(RgbColorModelPercentage)); }
+
+    private RgbColorModelPercentage? _RgbColorModelPercentage;
+    /// <summary>
+    /// Gets or sets the RGB color model using hexadecimal values for the background color.
+    /// </summary>
+    public RgbColorModelHex? RgbColorModelHex { get; set; }
+    /// <summary>
+    /// Gets or sets the HSL (Hue, Saturation, Lightness) color model for the background color.
+    /// </summary>
+    public HslColor? HslColor { get; set; }
+    /// <summary>
+    /// Gets or sets the system color for the background color.
+    /// </summary>
+    public SystemColor? SystemColor { get; set; }
+    /// <summary>
+    /// Gets or sets the scheme color for the background color.
+    /// </summary>
+    public SchemeColor? SchemeColor { get; set; }
+    /// <summary>
+    /// Gets or sets the preset color for the background color.
+    /// </summary>
+    public PresetColor? PresetColor { get; set; }
 }

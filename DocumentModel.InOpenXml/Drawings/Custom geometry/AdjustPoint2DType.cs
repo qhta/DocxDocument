@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AdjustPoint2DType : ModelElement<DXD.AdjustPoint2DType>
 {
-  /// <summary>
-  /// X-coordinate of the adjustment point.
-  /// </summary>
-  public AdjustCoordinate? X { get; set; }
-  /// <summary>
-  /// Y-coordinate of the adjustment point.
-  /// </summary>
-  public AdjustCoordinate? Y { get; set; }
+    /// <summary>
+    /// X-coordinate of the adjustment point.
+    /// </summary>
+    public AdjustCoordinate? X { get => _X; set => UpdateField(ref _X, value, nameof(X)); }
+
+    private AdjustCoordinate? _X;
+    /// <summary>
+    /// Y-coordinate of the adjustment point.
+    /// </summary>
+    public AdjustCoordinate? Y { get; set; }
 }

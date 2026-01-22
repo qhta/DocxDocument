@@ -5,45 +5,47 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ContentPartLocks : ModelElement<DXO10D.ContentPartLocks>, IOfficeArtExtendableElement
 {
-  /// <summary>
-  ///   Disallows grouping of the content part.
-  /// </summary>
-  public bool? NoGrouping { get; set; }
-  /// <summary>
-  ///   Disallows selection of the content part.
-  /// </summary>
-  public bool? NoSelection { get; set; }
-  /// <summary>
-  ///   Disallows rotation of the content part.
-  /// </summary>
-  public bool? NoRotation { get; set; }
-  /// <summary>
-  ///   Disallows changing the aspect ratio of the content part.
-  /// </summary>
-  public bool? NoChangeAspect { get; set; }
-  /// <summary>
-  ///   Disallows moving the content part.
-  /// </summary>
-  public bool? NoMove { get; set; }
-  /// <summary>
-  ///   Disallows resizing the content part.
-  /// </summary>
-  public bool? NoResize { get; set; }
-  /// <summary>
-  ///   Disallows editing the points of the content part.
-  /// </summary>
-  public bool? NoEditPoints { get; set; }
-  /// <summary>
-  ///   Disallows showing adjustment handles on the content part.
-  /// </summary>
-  public bool? NoAdjustHandles { get; set; }
-  /// <summary>
-  ///   Disallows changing arrowheads on the content part.
-  /// </summary>
-  public bool? NoChangeArrowheads { get; set; }
-  /// <summary>
-  ///   Disallows changing the shape type of the content part.
-  /// </summary>
-  public bool? NoChangeShapeType { get; set; }
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    /// <summary>
+    ///   Disallows grouping of the content part.
+    /// </summary>
+    public bool? NoGrouping { get => _NoGrouping; set => UpdateField(ref _NoGrouping, value, nameof(NoGrouping)); }
+
+    private bool? _NoGrouping;
+    /// <summary>
+    ///   Disallows selection of the content part.
+    /// </summary>
+    public bool? NoSelection { get; set; }
+    /// <summary>
+    ///   Disallows rotation of the content part.
+    /// </summary>
+    public bool? NoRotation { get; set; }
+    /// <summary>
+    ///   Disallows changing the aspect ratio of the content part.
+    /// </summary>
+    public bool? NoChangeAspect { get; set; }
+    /// <summary>
+    ///   Disallows moving the content part.
+    /// </summary>
+    public bool? NoMove { get; set; }
+    /// <summary>
+    ///   Disallows resizing the content part.
+    /// </summary>
+    public bool? NoResize { get; set; }
+    /// <summary>
+    ///   Disallows editing the points of the content part.
+    /// </summary>
+    public bool? NoEditPoints { get; set; }
+    /// <summary>
+    ///   Disallows showing adjustment handles on the content part.
+    /// </summary>
+    public bool? NoAdjustHandles { get; set; }
+    /// <summary>
+    ///   Disallows changing arrowheads on the content part.
+    /// </summary>
+    public bool? NoChangeArrowheads { get; set; }
+    /// <summary>
+    ///   Disallows changing the shape type of the content part.
+    /// </summary>
+    public bool? NoChangeShapeType { get; set; }
+    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

@@ -4,8 +4,10 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AlphaOutset : ModelElement<DXD.AlphaOutset>
 {
-  /// <summary>
-  /// Radius value that determines the extent of the alpha inset or outset effect.
-  /// </summary>
-  public Int64? Radius { get; set; }
+    /// <summary>
+    /// Radius value that determines the extent of the alpha inset or outset effect.
+    /// </summary>
+    public Int64? Radius { get => _Radius; set => UpdateField(ref _Radius, value, nameof(Radius)); }
+
+    private Int64? _Radius;
 }

@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class TintEffect : ModelElement
 {
-  /// <summary>
-  ///   Hue adjustment value for the tint effect.
-  /// </summary>
-  public Int32? Hue { get; set; }
-  /// <summary>
-  ///   Amount of tint to apply.
-  /// </summary>
-  public Int32? Amount { get; set; }
+    /// <summary>
+    ///   Hue adjustment value for the tint effect.
+    /// </summary>
+    public Int32? Hue { get => _Hue; set => UpdateField(ref _Hue, value, nameof(Hue)); }
+
+    private Int32? _Hue;
+    /// <summary>
+    ///   Amount of tint to apply.
+    /// </summary>
+    public Int32? Amount { get; set; }
 }

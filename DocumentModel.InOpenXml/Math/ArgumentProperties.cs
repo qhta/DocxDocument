@@ -37,8 +37,10 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class ArgumentProperties : ModelElement<DXM.ArgumentProperties>
 {
-  /// <summary>
-  ///   Argument Size.
-  /// </summary>
-  public Int32? ArgumentSize { get; set; }
+    /// <summary>
+    ///   Argument Size.
+    /// </summary>
+    public Int32? ArgumentSize { get => _ArgumentSize; set => UpdateField(ref _ArgumentSize, value, nameof(ArgumentSize)); }
+
+    private Int32? _ArgumentSize;
 }

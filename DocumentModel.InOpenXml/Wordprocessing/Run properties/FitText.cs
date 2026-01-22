@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FitText : ModelElement<DXW.FitText>
 {
-  /// <summary>
-  /// Identifier for the fit text run, used to distinguish multiple fit text effects within the same document.
-  /// </summary>
-  public Int32? Id { get; set; }
-  /// <summary>
-  /// Target width for the fit text effect, specified in twips. The text is compressed or expanded to fit this width.
-  /// </summary>
-  public Twips? Value { get; set; }
+    /// <summary>
+    /// Identifier for the fit text run, used to distinguish multiple fit text effects within the same document.
+    /// </summary>
+    public Int32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+
+    private Int32? _Id;
+    /// <summary>
+    /// Target width for the fit text effect, specified in twips. The text is compressed or expanded to fit this width.
+    /// </summary>
+    public Twips? Value { get; set; }
 }

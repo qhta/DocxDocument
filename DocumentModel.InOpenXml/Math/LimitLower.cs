@@ -5,16 +5,18 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class LimitLower : ModelElement<DXM.LimitLower>, ICommonMathContent
 {
-  /// <summary>
-  ///   Lower Limit Properties.
-  /// </summary>
-  public LimitLowerProperties? LimitLowerProperties { get; set; }
-  /// <summary>
-  ///   argument.
-  /// </summary>
-  public Argument? Argument { get; set; }
-  /// <summary>
-  ///   Limit (lower.
-  /// </summary>
-  public Limit? Limit { get; set; }
+    /// <summary>
+    ///   Lower Limit Properties.
+    /// </summary>
+    public LimitLowerProperties? LimitLowerProperties { get => _LimitLowerProperties; set => UpdateField(ref _LimitLowerProperties, value, nameof(LimitLowerProperties)); }
+
+    private LimitLowerProperties? _LimitLowerProperties;
+    /// <summary>
+    ///   argument.
+    /// </summary>
+    public Argument? Argument { get; set; }
+    /// <summary>
+    ///   Limit (lower.
+    /// </summary>
+    public Limit? Limit { get; set; }
 }

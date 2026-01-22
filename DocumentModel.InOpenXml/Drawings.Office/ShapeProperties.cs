@@ -4,21 +4,23 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class ShapeProperties : ModelElement<DXOD.ShapeProperties>
 {
-  /// <summary>
-  ///   Black and White Mode
-  /// </summary>
-  public BlackWhiteMode? BlackWhiteMode { get; set; }
-  /// <summary>
-  ///   2D Transform for Individual Objects.
-  /// </summary>
-  public Drawings.Transform2D? Transform2D { get; set; }
-  public CustomGeometry? CustomGeometry { get; set; }
-  public PresetGeometry? PresetGeometry { get; set; }
-  public Fill? Fill { get; set; }
-  public LineProperties? Outline { get; set; }
-  public EffectList? EffectList { get; set; }
-  public EffectDag? EffectDag { get; set; }
-  public Scene3DType? Scene3DType { get; set; }
-  public Shape3DType? Shape3DType { get; set; }
-  public ShapePropertiesExtensionList? ShapePropertiesExtensionList { get; set; }
+    /// <summary>
+    ///   Black and White Mode
+    /// </summary>
+    public BlackWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
+
+    private BlackWhiteMode? _BlackWhiteMode;
+    /// <summary>
+    ///   2D Transform for Individual Objects.
+    /// </summary>
+    public Drawings.Transform2D? Transform2D { get; set; }
+    public CustomGeometry? CustomGeometry { get; set; }
+    public PresetGeometry? PresetGeometry { get; set; }
+    public Fill? Fill { get; set; }
+    public LineProperties? Outline { get; set; }
+    public EffectList? EffectList { get; set; }
+    public EffectDag? EffectDag { get; set; }
+    public Scene3DType? Scene3DType { get; set; }
+    public Shape3DType? Shape3DType { get; set; }
+    public ShapePropertiesExtensionList? ShapePropertiesExtensionList { get; set; }
 }

@@ -8,33 +8,35 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BlipExtension : ModelElement<DXD.Extension>, IExtension
 {
-  /// <summary>
-  /// Gets or sets the image properties associated with the blip extension.
-  /// </summary>
-  public ImageProperties? ImageProperties { get; set; }
-  /// <summary>
-  /// Gets or sets a value indicating whether to use the local DPI (dots per inch) setting for image rendering.
-  /// </summary>
-  public bool? UseLocalDpi { get; set; }
-  /// <summary>
-  /// Gets or sets the web video property, which provides metadata for embedded web videos.
-  /// </summary>
-  public WebVideoProperty? WebVideoProperty { get; set; }
-  /// <summary>
-  /// Gets or sets the SVG blip, which contains SVG image data for the extension.
-  /// </summary>
-  public SVGBlip? SVGBlip { get; set; }
-  /// <summary>
-  /// Gets or sets the picture attribution source URL, which provides attribution information for the image.
-  /// </summary>
-  public PictureAttributionSourceURL? PictureAttributionSourceURL { get; set; }
-  /// <summary>
-  /// Gets or sets the OEmbed data, which provides embedded content information using the OEmbed standard.
-  /// </summary>
-  public OEmbed? OEmbed { get; set; }
-  /// <summary>
-  /// Gets or sets the shared OEmbed data, which provides shared embedded content information.
-  /// </summary>
-  public OEmbedShared? OEmbedShared { get; set; }
-  public string? UriString { get; set; }
+    /// <summary>
+    /// Gets or sets the image properties associated with the blip extension.
+    /// </summary>
+    public ImageProperties? ImageProperties { get => _ImageProperties; set => UpdateField(ref _ImageProperties, value, nameof(ImageProperties)); }
+
+    private ImageProperties? _ImageProperties;
+    /// <summary>
+    /// Gets or sets a value indicating whether to use the local DPI (dots per inch) setting for image rendering.
+    /// </summary>
+    public bool? UseLocalDpi { get; set; }
+    /// <summary>
+    /// Gets or sets the web video property, which provides metadata for embedded web videos.
+    /// </summary>
+    public WebVideoProperty? WebVideoProperty { get; set; }
+    /// <summary>
+    /// Gets or sets the SVG blip, which contains SVG image data for the extension.
+    /// </summary>
+    public SVGBlip? SVGBlip { get; set; }
+    /// <summary>
+    /// Gets or sets the picture attribution source URL, which provides attribution information for the image.
+    /// </summary>
+    public PictureAttributionSourceURL? PictureAttributionSourceURL { get; set; }
+    /// <summary>
+    /// Gets or sets the OEmbed data, which provides embedded content information using the OEmbed standard.
+    /// </summary>
+    public OEmbed? OEmbed { get; set; }
+    /// <summary>
+    /// Gets or sets the shared OEmbed data, which provides shared embedded content information.
+    /// </summary>
+    public OEmbedShared? OEmbedShared { get; set; }
+    public string? UriString { get; set; }
 }

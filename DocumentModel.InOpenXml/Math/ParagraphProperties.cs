@@ -4,8 +4,10 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class ParagraphProperties : ModelElement
 {
-  /// <summary>
-  ///   Justification.
-  /// </summary>
-  public JustificationKind? Justification { get; set; }
+    /// <summary>
+    ///   Justification.
+    /// </summary>
+    public JustificationKind? Justification { get => _Justification; set => UpdateField(ref _Justification, value, nameof(Justification)); }
+
+    private JustificationKind? _Justification;
 }

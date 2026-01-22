@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtRepeatedSection : ModelElement<DXO13W.SdtRepeatedSection>
 {
-  /// <summary>
-  ///   Title of the repeated section, used for identification and display purposes.
-  /// </summary>
-  public string? SectionTitle { get; set; }
-  /// <summary>
-  ///   Indicates whether insertion or deletion of sections is disallowed.
-  /// </summary>
-  public bool? DoNotAllowInsertDeleteSection { get; set; }
+    /// <summary>
+    ///   Title of the repeated section, used for identification and display purposes.
+    /// </summary>
+    public string? SectionTitle { get => _SectionTitle; set => UpdateField(ref _SectionTitle, value, nameof(SectionTitle)); }
+
+    private string? _SectionTitle;
+    /// <summary>
+    ///   Indicates whether insertion or deletion of sections is disallowed.
+    /// </summary>
+    public bool? DoNotAllowInsertDeleteSection { get; set; }
 }

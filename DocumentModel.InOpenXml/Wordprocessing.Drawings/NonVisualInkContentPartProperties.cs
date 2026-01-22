@@ -7,16 +7,18 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class NonVisualInkContentPartProperties : ModelElement
 {
-  /// <summary>
-  /// Indicates whether the ink content part is associated with a comment, distinguishing it from other ink elements.
-  /// </summary>
-  public bool? IsComment { get; set; }
-  /// <summary>
-  /// The set of locks applied to the content part, restricting modifications or interactions as defined by the document.
-  /// </summary>
-  public ContentPartLocks? ContentPartLocks { get; set; }
-  /// <summary>
-  /// List of OfficeArt extensions associated with the ink content part, allowing for additional metadata or custom features.
-  /// </summary>
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    /// <summary>
+    /// Indicates whether the ink content part is associated with a comment, distinguishing it from other ink elements.
+    /// </summary>
+    public bool? IsComment { get => _IsComment; set => UpdateField(ref _IsComment, value, nameof(IsComment)); }
+
+    private bool? _IsComment;
+    /// <summary>
+    /// The set of locks applied to the content part, restricting modifications or interactions as defined by the document.
+    /// </summary>
+    public ContentPartLocks? ContentPartLocks { get; set; }
+    /// <summary>
+    /// List of OfficeArt extensions associated with the ink content part, allowing for additional metadata or custom features.
+    /// </summary>
+    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

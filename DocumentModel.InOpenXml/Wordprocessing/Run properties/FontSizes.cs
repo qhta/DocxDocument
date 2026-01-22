@@ -5,12 +5,14 @@ namespace DocumentModel;
 /// </summary>
 public partial class FontSizes : ModelElement
 {
-  /// <summary>
-  /// Font size value for regular script, specified in half-points.
-  /// </summary>
-  public HalfPoints? Val { get; set; }
-  /// <summary>
-  /// Font size value for complex script, specified in half-points. If null, the regular script value is used.
-  /// </summary>
-  public HalfPoints? ValCS { get; set; }
+    /// <summary>
+    /// Font size value for regular script, specified in half-points.
+    /// </summary>
+    public HalfPoints? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+
+    private HalfPoints? _Val;
+    /// <summary>
+    /// Font size value for complex script, specified in half-points. If null, the regular script value is used.
+    /// </summary>
+    public HalfPoints? ValCS { get; set; }
 }

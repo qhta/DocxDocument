@@ -5,20 +5,22 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TextInput : ModelElement<DXW.TextInput>
 {
-  /// <summary>
-  /// Type of the text box form field, specifying the kind of input allowed (e.g., regular text, number, date).
-  /// </summary>
-  public TextBoxFormFieldKind? TextBoxFormFieldType { get; set; }
-  /// <summary>
-  /// Default string value for the text box form field, displayed when the form is loaded.
-  /// </summary>
-  public string? DefaultTextBoxFormFieldString { get; set; }
-  /// <summary>
-  /// Maximum length of input allowed in the text box form field.
-  /// </summary>
-  public Int16? MaxLength { get; set; }
-  /// <summary>
-  /// Formatting string for the text box form field, specifying input or display formatting.
-  /// </summary>
-  public string? Format { get; set; }
+    /// <summary>
+    /// Type of the text box form field, specifying the kind of input allowed (e.g., regular text, number, date).
+    /// </summary>
+    public TextBoxFormFieldKind? TextBoxFormFieldType { get => _TextBoxFormFieldType; set => UpdateField(ref _TextBoxFormFieldType, value, nameof(TextBoxFormFieldType)); }
+
+    private TextBoxFormFieldKind? _TextBoxFormFieldType;
+    /// <summary>
+    /// Default string value for the text box form field, displayed when the form is loaded.
+    /// </summary>
+    public string? DefaultTextBoxFormFieldString { get; set; }
+    /// <summary>
+    /// Maximum length of input allowed in the text box form field.
+    /// </summary>
+    public Int16? MaxLength { get; set; }
+    /// <summary>
+    /// Formatting string for the text box form field, specifying input or display formatting.
+    /// </summary>
+    public string? Format { get; set; }
 }

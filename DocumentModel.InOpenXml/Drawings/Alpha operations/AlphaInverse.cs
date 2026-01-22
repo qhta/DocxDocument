@@ -4,28 +4,30 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AlphaInverse : ModelElement<DXD.AlphaInverse>
 {
-  /// <summary>
-  /// RGB color model using percentage values for the alpha inverse effect.
-  /// </summary>
-  public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
-  /// <summary>
-  /// RGB color model using hexadecimal values for the alpha inverse effect.
-  /// </summary>
-  public RgbColorModelHex? RgbColorModelHex { get; set; }
-  /// <summary>
-  /// HSL (Hue, Saturation, Luminance) color model for the alpha inverse effect.
-  /// </summary>
-  public HslColor? HslColor { get; set; }
-  /// <summary>
-  /// System color for the alpha inverse effect.
-  /// </summary>
-  public SystemColor? SystemColor { get; set; }
-  /// <summary>
-  /// Scheme color for the alpha inverse effect.
-  /// </summary>
-  public SchemeColor? SchemeColor { get; set; }
-  /// <summary>
-  /// Preset color for the alpha inverse effect.
-  /// </summary>
-  public PresetColor? PresetColor { get; set; }
+    /// <summary>
+    /// RGB color model using percentage values for the alpha inverse effect.
+    /// </summary>
+    public RgbColorModelPercentage? RgbColorModelPercentage { get => _RgbColorModelPercentage; set => UpdateField(ref _RgbColorModelPercentage, value, nameof(RgbColorModelPercentage)); }
+
+    private RgbColorModelPercentage? _RgbColorModelPercentage;
+    /// <summary>
+    /// RGB color model using hexadecimal values for the alpha inverse effect.
+    /// </summary>
+    public RgbColorModelHex? RgbColorModelHex { get; set; }
+    /// <summary>
+    /// HSL (Hue, Saturation, Luminance) color model for the alpha inverse effect.
+    /// </summary>
+    public HslColor? HslColor { get; set; }
+    /// <summary>
+    /// System color for the alpha inverse effect.
+    /// </summary>
+    public SystemColor? SystemColor { get; set; }
+    /// <summary>
+    /// Scheme color for the alpha inverse effect.
+    /// </summary>
+    public SchemeColor? SchemeColor { get; set; }
+    /// <summary>
+    /// Preset color for the alpha inverse effect.
+    /// </summary>
+    public PresetColor? PresetColor { get; set; }
 }

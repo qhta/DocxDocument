@@ -7,21 +7,23 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class ContentPart : ModelElement<DXO10W.ContentPart>, IOfficeArtExtendableElement
 {
-  /// <summary>
-  /// Black-and-white rendering mode for the content part.
-  /// </summary>
-  public BlackWhiteMode? BlackWhiteMode { get; set; }
-  /// <summary>
-  /// Relationship ID referencing the associated content part.
-  /// </summary>
-  public string? RelationshipId { get; set; }
-  /// <summary>
-  /// Non-visual shape properties for the content part, specifying metadata and configuration not directly affecting rendering.
-  /// </summary>
-  public DMWD.WordNonVisualContentPartShapeProperties? WordNonVisualContentPartShapeProperties { get; set; }
-  /// <summary>
-  /// 2D transformation properties for the content part, specifying scaling, rotation, and translation.
-  /// </summary>
-  public Transform2D? Transform2D { get; set; }
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    /// <summary>
+    /// Black-and-white rendering mode for the content part.
+    /// </summary>
+    public BlackWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
+
+    private BlackWhiteMode? _BlackWhiteMode;
+    /// <summary>
+    /// Relationship ID referencing the associated content part.
+    /// </summary>
+    public string? RelationshipId { get; set; }
+    /// <summary>
+    /// Non-visual shape properties for the content part, specifying metadata and configuration not directly affecting rendering.
+    /// </summary>
+    public DMWD.WordNonVisualContentPartShapeProperties? WordNonVisualContentPartShapeProperties { get; set; }
+    /// <summary>
+    /// 2D transformation properties for the content part, specifying scaling, rotation, and translation.
+    /// </summary>
+    public Transform2D? Transform2D { get; set; }
+    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

@@ -11,8 +11,10 @@ namespace DocumentModel.Drawings;
 /// </remarks>
 public partial class AdjustCoordinate : ModelElement
 {
-  /// <summary>
-  ///   Value of the coordinate within the shape bounding box.
-  /// </summary>
-  public Int32? Value { get; set; }
+    /// <summary>
+    ///   Value of the coordinate within the shape bounding box.
+    /// </summary>
+    public Int32? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
+
+    private Int32? _Value;
 }

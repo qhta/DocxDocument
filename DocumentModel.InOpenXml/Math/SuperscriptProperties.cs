@@ -4,8 +4,10 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class SuperscriptProperties : ModelElement
 {
-  /// <summary>
-  ///   Specifies formatting of Superscript object argument.
-  /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+    /// <summary>
+    ///   Specifies formatting of Superscript object argument.
+    /// </summary>
+    public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
+    private ControlProperties? _ControlProperties;
 }

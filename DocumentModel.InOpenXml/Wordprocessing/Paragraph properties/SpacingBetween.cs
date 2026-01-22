@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SpacingBetween : ModelElement //<DXW.SpacingBetween>
 {
-  /// <summary>
-  /// Spacing between lines in the paragraph, specified in twentieths of a point or as a multiple of line height.
-  /// </summary>
-  public Twips? Line { get; set; }
-  /// <summary>
-  /// Type of spacing rule applied between lines (e.g., auto, exact, at least, multiple).
-  /// </summary>
-  public LineSpacingRuleKind? LineRule { get; set; }
+    /// <summary>
+    /// Spacing between lines in the paragraph, specified in twentieths of a point or as a multiple of line height.
+    /// </summary>
+    public Twips? Line { get => _Line; set => UpdateField(ref _Line, value, nameof(Line)); }
+
+    private Twips? _Line;
+    /// <summary>
+    /// Type of spacing rule applied between lines (e.g., auto, exact, at least, multiple).
+    /// </summary>
+    public LineSpacingRuleKind? LineRule { get; set; }
 }
