@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a theme, including its name, identifier, theme elements, object defaults, color schemes, custom colors, and extension lists.
 /// </summary>
-public interface Theme: IOfficeStyleSheetExtendableElement
+public class Theme: ModelElement<DXD.Theme>, IOfficeStyleSheetExtendableElement
 {
   /// <summary>
   ///   Name of the theme.
@@ -34,4 +34,9 @@ public interface Theme: IOfficeStyleSheetExtendableElement
   ///   List of custom colors defined for the theme.
   /// </summary>
   public CustomColorList? CustomColorList { get; set; }
+
+  /// <summary>
+  ///   List of Office style sheet extensions associated with the theme.
+  /// </summary>
+  public OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get; set; }
 }

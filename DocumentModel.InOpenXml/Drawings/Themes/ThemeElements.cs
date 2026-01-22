@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents the main elements of a theme, including color scheme, font scheme, and format scheme.
 /// </summary>
-public interface ThemeElements : IExtendableElement
+public class ThemeElements : ModelElement<DXD.ThemeElements>, IExtendableElement
 {
   /// <summary>
   ///   Color scheme for the theme.
@@ -19,4 +19,9 @@ public interface ThemeElements : IExtendableElement
   ///   Format scheme for the theme.
   /// </summary>
   public FormatScheme? FormatScheme { get; set; }
+
+  /// <summary>
+  /// List of extensions for the theme elements.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

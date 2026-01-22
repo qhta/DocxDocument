@@ -24,7 +24,9 @@ public static class Program
           var fileList = GetFiles(projectPath);
           foreach (var filePath in fileList)
           {
-            AddOpenXmlPropertyAttribute.Run(filePath);
+            GenerateShouldSerializeFunctions.Run(filePath);
+            AddPrivateFieldsWithUpdate.Run(filePath);
+            //AddOpenXmlPropertyAttribute.Run(filePath);
           }
         }
       }
@@ -55,8 +57,9 @@ public static class Program
         continue;
       if (filename.Contains(".") && !filename.EndsWith(".Properties", StringComparison.OrdinalIgnoreCase))
         continue;
-      if (filename == "StatisticProperties")
-        result.Add(file);
+      //if (filename == "StatisticProperties")
+      //  result.Add(file);
+      if (path.EndsWith("Themes")) result.Add(file);
     }
     foreach (var dir in Directory.GetDirectories(path))
     {
