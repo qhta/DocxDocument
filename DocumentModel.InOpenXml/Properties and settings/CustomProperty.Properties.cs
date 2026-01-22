@@ -73,7 +73,6 @@ public sealed partial class CustomProperty
     set => UpdateField(ref _LinkTarget, value, nameof(LinkTarget));
   }
   private string? _LinkTarget;
-  public bool ShouldSerializeLinkTarget() => LinkTarget is not null;
 
   /// <summary>
   /// Value of the custom document property.

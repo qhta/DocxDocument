@@ -24,11 +24,11 @@ public static class Program
           var fileList = GetFiles(projectPath);
           foreach (var filePath in fileList)
           {
-            //var filename = Path.GetFileNameWithoutExtension(filePath);
-            //var ShouldSerializeFile = filename + ".ShouldSerialize.cs";
-            //if (File.Exists(Path.Combine(Path.GetDirectoryName(filePath)!, ShouldSerializeFile)))
-            //  continue;
-            AddPrivateFieldsWithUpdate.Run(filePath);
+            var filename = Path.GetFileNameWithoutExtension(filePath);
+            var ShouldSerializeFile = filename + ".ShouldSerialize.cs";
+            if (File.Exists(Path.Combine(Path.GetDirectoryName(filePath)!, ShouldSerializeFile)))
+              continue;
+            GenerateShouldSerializeFunctions.Run(filePath);
           }
         }
       }
@@ -55,7 +55,7 @@ public static class Program
       if (filename.Equals("GlobalUsings", StringComparison.OrdinalIgnoreCase)
           || filename.Equals("Program", StringComparison.OrdinalIgnoreCase))
         continue;
-      if (filename.Contains(".") || filename.EndsWith(".Properties", StringComparison.OrdinalIgnoreCase))
+      if (filename.Contains(".") && !filename.EndsWith(".Properties", StringComparison.OrdinalIgnoreCase))
         continue;
       result.Add(file);
     }
