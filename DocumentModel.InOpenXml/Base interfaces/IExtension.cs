@@ -8,5 +8,5 @@ public interface IExtension : ICollectionItem
   /// <summary>
   ///   UriString that identifies the extension resource or schema.
   /// </summary>
-  public string? UriString { get; set; }
+  public string? Uri { get; set; }
 }

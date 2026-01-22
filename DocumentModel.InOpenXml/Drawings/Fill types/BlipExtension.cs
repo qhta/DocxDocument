@@ -38,5 +38,9 @@ public partial class BlipExtension : ModelElement<DXD.Extension>, IExtension
     /// Gets or sets the shared OEmbed data, which provides shared embedded content information.
     /// </summary>
     public OEmbedShared? OEmbedShared { get; set; }
-    public string? UriString { get; set; }
+
+  /// <summary>
+  /// Uri string associated with the blip extension.
+  /// </summary>
+  public string? Uri { get; set; }
 }
