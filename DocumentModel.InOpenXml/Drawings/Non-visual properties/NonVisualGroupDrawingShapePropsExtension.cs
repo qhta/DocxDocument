@@ -7,5 +7,9 @@ public partial class NonVisualGroupDrawingShapePropsExtension : ModelElement<DXD
     public NonVisualGroupProperties? NonVisualGroupProperties { get => _NonVisualGroupProperties; set => UpdateField(ref _NonVisualGroupProperties, value, nameof(NonVisualGroupProperties)); }
 
     private NonVisualGroupProperties? _NonVisualGroupProperties;
-    public string? UriString { get; set; }
+
+    /// <summary>
+    /// Uri
+    /// </summary>
+    public string? Uri { get; set; }
 }

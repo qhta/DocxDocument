@@ -8,5 +8,5 @@ public partial class ShapePropertiesExtension
   public bool ShouldSerializeHiddenScene3D() => HiddenScene3D is not null;
   public bool ShouldSerializeHiddenShape3D() => HiddenShape3D is not null;
   public bool ShouldSerializeShadowObscured() => ShadowObscured is not null;
-  public bool ShouldSerializeUriString() => UriString is not null;
+  public bool ShouldSerializeUri() => Uri is not null;
 }

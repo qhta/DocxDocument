@@ -26,7 +26,7 @@ public static class Program
           {
             GenerateShouldSerializeFunctions.Run(filePath);
             AddPrivateFieldsWithUpdate.Run(filePath);
-            //AddOpenXmlPropertyAttribute.Run(filePath);
+            AddOpenXmlPropertyAttribute.Run(filePath);
           }
         }
       }

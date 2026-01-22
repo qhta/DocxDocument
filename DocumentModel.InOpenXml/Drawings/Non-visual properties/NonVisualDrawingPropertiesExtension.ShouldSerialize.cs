@@ -9,5 +9,5 @@ public partial class NonVisualDrawingPropertiesExtension
   public bool ShouldSerializeDecorative() => Decorative is not null;
   public bool ShouldSerializeClassificationOutcome() => ClassificationOutcome is not null;
   public bool ShouldSerializeScriptLink() => ScriptLink is not null;
-  public bool ShouldSerializeUriString() => UriString is not null;
+  public bool ShouldSerializeUri() => Uri is not null;
 }

@@ -10,5 +10,9 @@ public partial class NonVisualPicturePropertiesExtension : ModelElement<DXD.NonV
     public SignatureLine? SignatureLine { get; set; }
     public ObjectProperties? ObjectProperties { get; set; }
     public LiveFeedProperties? LiveFeedProperties { get; set; }
-    public string? UriString { get; set; }
+
+    /// <summary>
+    /// Gets or sets the URI associated with this instance.
+    /// </summary>
+    public string? Uri { get; set; }
 }
