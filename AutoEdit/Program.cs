@@ -24,11 +24,7 @@ public static class Program
           var fileList = GetFiles(projectPath);
           foreach (var filePath in fileList)
           {
-            var filename = Path.GetFileNameWithoutExtension(filePath);
-            var ShouldSerializeFile = filename + ".ShouldSerialize.cs";
-            if (File.Exists(Path.Combine(Path.GetDirectoryName(filePath)!, ShouldSerializeFile)))
-              continue;
-            GenerateShouldSerializeFunctions.Run(filePath);
+            AddOpenXmlPropertyAttribute.Run(filePath);
           }
         }
       }
@@ -52,12 +48,15 @@ public static class Program
     foreach (var file in Directory.GetFiles(path, "*.cs"))
     {
       var filename = Path.GetFileNameWithoutExtension(file);
+      if (filename == "StatisticProperties")
+        result.Add(file);
       if (filename.Equals("GlobalUsings", StringComparison.OrdinalIgnoreCase)
           || filename.Equals("Program", StringComparison.OrdinalIgnoreCase))
         continue;
       if (filename.Contains(".") && !filename.EndsWith(".Properties", StringComparison.OrdinalIgnoreCase))
         continue;
-      result.Add(file);
+      if (filename == "StatisticProperties")
+        result.Add(file);
     }
     foreach (var dir in Directory.GetDirectories(path))
     {
