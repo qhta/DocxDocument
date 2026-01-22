@@ -9,24 +9,26 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class ControlProperties : ModelElement<DXM.ControlProperties>
 {
-  /// <summary>
-  /// Specifies formatting differences between the control character and the paragraph formatting.
-  /// </summary>
-  public DMW.RunProperties? RunProperties { get; set; }
-  /// <summary>
-  /// Specifies revision information about inserted ControlProperties.
-  /// </summary>
-  public DMW.InsertedMathControl? InsertedMathControl { get; set; }
-  /// <summary>
-  /// Specifies revision information about deleted ControlProperties.
-  /// </summary>
-  public DMW.DeletedMathControl? DeletedMathControl { get; set; }
-  /// <summary>
-  /// Specifies revision information about move source of ControlProperties.
-  /// </summary>
-  public DMW.MoveFromMathControl? MoveFromMathControl { get; set; }
-  /// <summary>
-  /// Specifies revision information about move target of ControlProperties.
-  /// </summary>
-  public DMW.MoveToMathControl? MoveToMathControl { get; set; }
+    /// <summary>
+    /// Specifies formatting differences between the control character and the paragraph formatting.
+    /// </summary>
+    public DMW.RunProperties? RunProperties { get => _RunProperties; set => UpdateField(ref _RunProperties, value, nameof(RunProperties)); }
+
+    private DMW.RunProperties? _RunProperties;
+    /// <summary>
+    /// Specifies revision information about inserted ControlProperties.
+    /// </summary>
+    public DMW.InsertedMathControl? InsertedMathControl { get; set; }
+    /// <summary>
+    /// Specifies revision information about deleted ControlProperties.
+    /// </summary>
+    public DMW.DeletedMathControl? DeletedMathControl { get; set; }
+    /// <summary>
+    /// Specifies revision information about move source of ControlProperties.
+    /// </summary>
+    public DMW.MoveFromMathControl? MoveFromMathControl { get; set; }
+    /// <summary>
+    /// Specifies revision information about move target of ControlProperties.
+    /// </summary>
+    public DMW.MoveToMathControl? MoveToMathControl { get; set; }
 }

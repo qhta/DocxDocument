@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocumentBackground : ModelElement<DXW.DocumentBackground>
 {
-  /// <summary>
-  /// Color for the background of the document, specifying the fill color applied to all pages.
-  /// </summary>
-  public Color? Color { get; set; }
-  /// <summary>
-  /// Background element, specifying additional background properties such as images or patterns.
-  /// </summary>
-  public DMV.Background? Background { get; set; }
+    /// <summary>
+    /// Color for the background of the document, specifying the fill color applied to all pages.
+    /// </summary>
+    public Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+
+    private Color? _Color;
+    /// <summary>
+    /// Background element, specifying additional background properties such as images or patterns.
+    /// </summary>
+    public DMV.Background? Background { get; set; }
 }

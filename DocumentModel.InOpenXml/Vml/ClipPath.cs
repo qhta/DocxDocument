@@ -4,8 +4,10 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ClipPath : ModelElement<DXVO.ClipPath>
 {
-  /// <summary>
-  ///   Path Definition
-  /// </summary>
-  public string? Value { get; set; }
+    /// <summary>
+    ///   Path Definition
+    /// </summary>
+    public string? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
+
+    private string? _Value;
 }

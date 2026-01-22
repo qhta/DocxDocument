@@ -4,16 +4,18 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class BevelType : ModelElement<DXD.BevelType>
 {
-  /// <summary>
-  /// Width of the bevel.
-  /// </summary>
-  public Int64? Width { get; set; }
-  /// <summary>
-  /// Height of the bevel.
-  /// </summary>
-  public Int64? Height { get; set; }
-  /// <summary>
-  /// Preset bevel style.
-  /// </summary>
-  public BevelPresetKind? Preset { get; set; }
+    /// <summary>
+    /// Width of the bevel.
+    /// </summary>
+    public Int64? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+
+    private Int64? _Width;
+    /// <summary>
+    /// Height of the bevel.
+    /// </summary>
+    public Int64? Height { get; set; }
+    /// <summary>
+    /// Preset bevel style.
+    /// </summary>
+    public BevelPresetKind? Preset { get; set; }
 }

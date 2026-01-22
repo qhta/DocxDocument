@@ -5,8 +5,10 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableLayout : ModelElement<DXW.TableLayout>
 {
-  /// <summary>
-  /// Table layout setting, specifying the type of layout algorithm used for the table.
-  /// </summary>
-  public TableLayoutKind? Type { get; set; }
+    /// <summary>
+    /// Table layout setting, specifying the type of layout algorithm used for the table.
+    /// </summary>
+    public TableLayoutKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+
+    private TableLayoutKind? _Type;
 }

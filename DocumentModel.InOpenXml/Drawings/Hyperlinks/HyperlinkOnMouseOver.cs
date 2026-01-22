@@ -4,9 +4,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class HyperlinkOnMouseOver : ModelElement<DXD.HyperlinkOnMouseOver>, IExtendableHyperlinkElement
 {
-  /// <summary>
-  ///   Embedded sound to play when the hyperlink is activated on mouse over.
-  /// </summary>
-  public EmbeddedWavAudioFileType? HyperlinkSound { get; set; }
-  public HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
+    /// <summary>
+    ///   Embedded sound to play when the hyperlink is activated on mouse over.
+    /// </summary>
+    public EmbeddedWavAudioFileType? HyperlinkSound { get => _HyperlinkSound; set => UpdateField(ref _HyperlinkSound, value, nameof(HyperlinkSound)); }
+
+    private EmbeddedWavAudioFileType? _HyperlinkSound;
+    public HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
 }

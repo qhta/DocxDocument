@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableIndentation : ModelElement<DXW.TableIndentation>
 {
-  /// <summary>
-  /// The width of the table indentation, specifying the distance from the leading margin.
-  /// </summary>
-  public Int32? Width { get; set; }
-  /// <summary>
-  /// The unit type for the table indentation width, such as points, percentage, or other supported units.
-  /// </summary>
-  public TableWidthUnitType? Type { get; set; }
+    /// <summary>
+    /// The width of the table indentation, specifying the distance from the leading margin.
+    /// </summary>
+    public Int32? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+
+    private Int32? _Width;
+    /// <summary>
+    /// The unit type for the table indentation width, such as points, percentage, or other supported units.
+    /// </summary>
+    public TableWidthUnitType? Type { get; set; }
 }

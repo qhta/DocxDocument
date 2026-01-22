@@ -4,8 +4,10 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Stretch : ModelElement
 {
-  /// <summary>
-  ///   Rectangle that defines the area to fill when stretching content.
-  /// </summary>
-  public RelativeRectangleType? FillRectangle { get; set; }
+    /// <summary>
+    ///   Rectangle that defines the area to fill when stretching content.
+    /// </summary>
+    public RelativeRectangleType? FillRectangle { get => _FillRectangle; set => UpdateField(ref _FillRectangle, value, nameof(FillRectangle)); }
+
+    private RelativeRectangleType? _FillRectangle;
 }

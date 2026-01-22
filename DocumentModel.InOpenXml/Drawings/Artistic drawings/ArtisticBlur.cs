@@ -4,8 +4,10 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ArtisticBlur : ModelElement<DXO10D.ArtisticBlur>
 {
-  /// <summary>
-  /// Radius of the artistic blur effect.
-  /// </summary>
-  public Int32? Radius { get; set; }
+    /// <summary>
+    /// Radius of the artistic blur effect.
+    /// </summary>
+    public Int32? Radius { get => _Radius; set => UpdateField(ref _Radius, value, nameof(Radius)); }
+
+    private Int32? _Radius;
 }

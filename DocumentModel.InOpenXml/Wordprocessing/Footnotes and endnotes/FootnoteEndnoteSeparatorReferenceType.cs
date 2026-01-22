@@ -5,8 +5,10 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FootnoteEndnoteSeparatorReferenceType : ModelElement<DXW.FootnoteEndnoteSeparatorReferenceType>
 {
-  /// <summary>
-  ///   Identifier for the footnote or endnote associated with this separator reference.
-  /// </summary>
-  public Int32? Id { get; set; }
+    /// <summary>
+    ///   Identifier for the footnote or endnote associated with this separator reference.
+    /// </summary>
+    public Int32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+
+    private Int32? _Id;
 }

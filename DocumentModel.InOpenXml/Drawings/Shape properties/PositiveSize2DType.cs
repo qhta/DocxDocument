@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PositiveSize2DType : ModelElement<DXD.PositiveSize2DType>
 {
-  /// <summary>
-  ///   Length of the extent.
-  /// </summary>
-  public Int64? Cx { get; set; }
-  /// <summary>
-  ///   Width of the extent.
-  /// </summary>
-  public Int64? Cy { get; set; }
+    /// <summary>
+    ///   Length of the extent.
+    /// </summary>
+    public Int64? Cx { get => _Cx; set => UpdateField(ref _Cx, value, nameof(Cx)); }
+
+    private Int64? _Cx;
+    /// <summary>
+    ///   Width of the extent.
+    /// </summary>
+    public Int64? Cy { get; set; }
 }

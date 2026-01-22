@@ -5,20 +5,22 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class NumberingProperties : ModelElement<DXW.NumberingProperties>
 {
-  /// <summary>
-  /// Reference to the numbering level applied to the paragraph or list item.
-  /// </summary>
-  public Int32? NumberingLevelReference { get; set; }
-  /// <summary>
-  /// Reference to the numbering definition instance used for the paragraph or list item.
-  /// </summary>
-  public Int32? NumberingId { get; set; }
-  /// <summary>
-  /// Previous paragraph numbering properties, enabling tracking and management of numbering revisions.
-  /// </summary>
-  public NumberingChange? NumberingChange { get; set; }
-  /// <summary>
-  /// Inserted numbering properties, used to track newly added numbering information as part of revisions.
-  /// </summary>
-  public TrackChangeType? Inserted { get; set; }
+    /// <summary>
+    /// Reference to the numbering level applied to the paragraph or list item.
+    /// </summary>
+    public Int32? NumberingLevelReference { get => _NumberingLevelReference; set => UpdateField(ref _NumberingLevelReference, value, nameof(NumberingLevelReference)); }
+
+    private Int32? _NumberingLevelReference;
+    /// <summary>
+    /// Reference to the numbering definition instance used for the paragraph or list item.
+    /// </summary>
+    public Int32? NumberingId { get; set; }
+    /// <summary>
+    /// Previous paragraph numbering properties, enabling tracking and management of numbering revisions.
+    /// </summary>
+    public NumberingChange? NumberingChange { get; set; }
+    /// <summary>
+    /// Inserted numbering properties, used to track newly added numbering information as part of revisions.
+    /// </summary>
+    public TrackChangeType? Inserted { get; set; }
 }

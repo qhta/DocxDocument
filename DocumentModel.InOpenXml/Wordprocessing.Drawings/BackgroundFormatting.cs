@@ -7,16 +7,18 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class BackgroundFormatting : ModelElement<DXO10WDC.BackgroundFormatting>
 {
-  /// <summary>
-  /// Fill settings for the background, specifying color, gradient, or pattern fills.
-  /// </summary>
-  public Fill? Fill { get; set; }
-  /// <summary>
-  /// List of visual effects applied to the background, such as shadows, glows, and reflections.
-  /// </summary>
-  public EffectList? EffectList { get; set; }
-  /// <summary>
-  /// Effect DAG (Directed Acyclic Graph) for advanced effect sequencing and layering on the background.
-  /// </summary>
-  public EffectDag? EffectDag { get; set; }
+    /// <summary>
+    /// Fill settings for the background, specifying color, gradient, or pattern fills.
+    /// </summary>
+    public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
+
+    private Fill? _Fill;
+    /// <summary>
+    /// List of visual effects applied to the background, such as shadows, glows, and reflections.
+    /// </summary>
+    public EffectList? EffectList { get; set; }
+    /// <summary>
+    /// Effect DAG (Directed Acyclic Graph) for advanced effect sequencing and layering on the background.
+    /// </summary>
+    public EffectDag? EffectDag { get; set; }
 }

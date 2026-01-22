@@ -6,12 +6,14 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class NonVisualGraphicFrameProperties : ModelElement
 {
-  /// <summary>
-  ///   Graphic Frame Locks.
-  /// </summary>
-  public GraphicFrameLocks? GraphicFrameLocks { get; set; }
-  /// <summary>
-  ///   ExtensionList.
-  /// </summary>
-  public IExtensionList? ExtensionList { get; set; }
+    /// <summary>
+    ///   Graphic Frame Locks.
+    /// </summary>
+    public GraphicFrameLocks? GraphicFrameLocks { get => _GraphicFrameLocks; set => UpdateField(ref _GraphicFrameLocks, value, nameof(GraphicFrameLocks)); }
+
+    private GraphicFrameLocks? _GraphicFrameLocks;
+    /// <summary>
+    ///   ExtensionList.
+    /// </summary>
+    public IExtensionList? ExtensionList { get; set; }
 }

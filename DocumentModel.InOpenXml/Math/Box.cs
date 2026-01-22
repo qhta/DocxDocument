@@ -7,12 +7,14 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class Box : ModelElement<DXM.Box>, ICommonMathContent
 {
-  /// <summary>
-  ///   Specifies properties of box object.
-  /// </summary>
-  public BoxProperties? BoxProperties { get; set; }
-  /// <summary>
-  ///   Specifies argument of box object.
-  /// </summary>
-  public Argument? Argument { get; set; }
+    /// <summary>
+    ///   Specifies properties of box object.
+    /// </summary>
+    public BoxProperties? BoxProperties { get => _BoxProperties; set => UpdateField(ref _BoxProperties, value, nameof(BoxProperties)); }
+
+    private BoxProperties? _BoxProperties;
+    /// <summary>
+    ///   Specifies argument of box object.
+    /// </summary>
+    public Argument? Argument { get; set; }
 }

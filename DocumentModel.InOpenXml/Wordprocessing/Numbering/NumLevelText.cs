@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class NumLevelText : ModelElement //<DXW.NumLevelText>
 {
-  /// <summary>
-  ///   Textual content for the numbering level, with %x replaced by the appropriate number for the level.
-  /// </summary>
-  public string? Text { get; set; }
-  /// <summary>
-  ///   Indicates whether the level text is a null character.
-  /// </summary>
-  public Boolean IsNull { get; set; }
+    /// <summary>
+    ///   Textual content for the numbering level, with %x replaced by the appropriate number for the level.
+    /// </summary>
+    public string? Text { get => _Text; set => UpdateField(ref _Text, value, nameof(Text)); }
+
+    private string? _Text;
+    /// <summary>
+    ///   Indicates whether the level text is a null character.
+    /// </summary>
+    public Boolean IsNull { get; set; }
 }

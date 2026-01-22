@@ -5,24 +5,26 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class TableStyleConditionalRowProperties : ModelElement //<DXW.TableStyleConditionalRowProperties>
 {
-  /// <summary>
-  /// Indicates whether the row is hidden from view in the table.
-  /// </summary>
-  public bool? Hidden { get; set; }
-  /// <summary>
-  /// Indicates whether the row cannot be split across pages.
-  /// </summary>
-  public bool? CantSplit { get; set; }
-  /// <summary>
-  /// Indicates whether the row is styled as a table header row.
-  /// </summary>
-  public bool? TableHeader { get; set; }
-  /// <summary>
-  /// Cell spacing for the row, specifying the space between adjacent cells.
-  /// </summary>
-  public TableWidth? TableCellSpacing { get; set; }
-  /// <summary>
-  /// Table row justification, specifying horizontal alignment of the row within the table.
-  /// </summary>
-  public TableRowAlignmentKind? TableJustification { get; set; }
+    /// <summary>
+    /// Indicates whether the row is hidden from view in the table.
+    /// </summary>
+    public bool? Hidden { get => _Hidden; set => UpdateField(ref _Hidden, value, nameof(Hidden)); }
+
+    private bool? _Hidden;
+    /// <summary>
+    /// Indicates whether the row cannot be split across pages.
+    /// </summary>
+    public bool? CantSplit { get; set; }
+    /// <summary>
+    /// Indicates whether the row is styled as a table header row.
+    /// </summary>
+    public bool? TableHeader { get; set; }
+    /// <summary>
+    /// Cell spacing for the row, specifying the space between adjacent cells.
+    /// </summary>
+    public TableWidth? TableCellSpacing { get; set; }
+    /// <summary>
+    /// Table row justification, specifying horizontal alignment of the row within the table.
+    /// </summary>
+    public TableRowAlignmentKind? TableJustification { get; set; }
 }

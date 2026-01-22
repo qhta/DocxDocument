@@ -5,16 +5,18 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class BevelType : ModelElement<DXO10W.BevelType>
 {
-  /// <summary>
-  /// Width of the bevel effect, specifying the horizontal size in EMUs.
-  /// </summary>
-  public Int64? Width { get; set; }
-  /// <summary>
-  /// Height of the bevel effect, specifying the vertical size in EMUs.
-  /// </summary>
-  public Int64? Height { get; set; }
-  /// <summary>
-  /// Preset profile type for the bevel, specifying the predefined bevel style.
-  /// </summary>
-  public BevelPresetKind? PresetProfileType { get; set; }
+    /// <summary>
+    /// Width of the bevel effect, specifying the horizontal size in EMUs.
+    /// </summary>
+    public Int64? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+
+    private Int64? _Width;
+    /// <summary>
+    /// Height of the bevel effect, specifying the vertical size in EMUs.
+    /// </summary>
+    public Int64? Height { get; set; }
+    /// <summary>
+    /// Preset profile type for the bevel, specifying the predefined bevel style.
+    /// </summary>
+    public BevelPresetKind? PresetProfileType { get; set; }
 }

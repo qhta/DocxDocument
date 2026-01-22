@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ArtisticCrisscrossEtching : ModelElement<DXO10D.ArtisticCrisscrossEtching>
 {
-  /// <summary>
-  /// Transparency level of the crisscross etching effect.
-  /// </summary>
-  public Int32? Transparency { get; set; }
-  /// <summary>
-  /// Pressure applied in the crisscross etching effect, influencing the intensity of the etched lines.
-  /// </summary>
-  public Int32? Pressure { get; set; }
+    /// <summary>
+    /// Transparency level of the crisscross etching effect.
+    /// </summary>
+    public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
+
+    private Int32? _Transparency;
+    /// <summary>
+    /// Pressure applied in the crisscross etching effect, influencing the intensity of the etched lines.
+    /// </summary>
+    public Int32? Pressure { get; set; }
 }

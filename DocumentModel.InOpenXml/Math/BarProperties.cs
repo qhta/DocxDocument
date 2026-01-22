@@ -5,12 +5,14 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class BarProperties : ModelElement<DXM.BarProperties>
 {
-  /// <summary>
-  ///   Specifies vertical position of the bar.
-  /// </summary>
-  public VerticalJustificationKind? Position { get; set; }
-  /// <summary>
-  ///   Specifies formatting of bar function argument.
-  /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+    /// <summary>
+    ///   Specifies vertical position of the bar.
+    /// </summary>
+    public VerticalJustificationKind? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
+
+    private VerticalJustificationKind? _Position;
+    /// <summary>
+    ///   Specifies formatting of bar function argument.
+    /// </summary>
+    public ControlProperties? ControlProperties { get; set; }
 }

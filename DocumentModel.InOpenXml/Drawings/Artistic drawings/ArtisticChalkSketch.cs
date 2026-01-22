@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ArtisticChalkSketch : ModelElement<DXO10D.ArtisticChalkSketch>
 {
-  /// <summary>
-  /// Transparency level of the chalk sketch effect.
-  /// </summary>
-  public Int32? Transparency { get; set; }
-  /// <summary>
-  /// Pressure applied in the chalk sketch effect, influencing the intensity of the strokes.
-  /// </summary>
-  public Int32? Pressure { get; set; }
+    /// <summary>
+    /// Transparency level of the chalk sketch effect.
+    /// </summary>
+    public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
+
+    private Int32? _Transparency;
+    /// <summary>
+    /// Pressure applied in the chalk sketch effect, influencing the intensity of the strokes.
+    /// </summary>
+    public Int32? Pressure { get; set; }
 }

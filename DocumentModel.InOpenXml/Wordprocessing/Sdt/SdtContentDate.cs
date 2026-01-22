@@ -5,24 +5,26 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtContentDate : ModelElement<DXW.SdtContentDate>
 {
-  /// <summary>
-  /// Last known date in XML Schema DateTime format, specifying the most recently selected or stored date value.
-  /// </summary>
-  public DateTime? FullDate { get; set; }
-  /// <summary>
-  /// Date display mask, specifying the format string used to display the date in the control.
-  /// </summary>
-  public string? DateFormat { get; set; }
-  /// <summary>
-  /// Date picker language ID, specifying the locale for date formatting and calendar display.
-  /// </summary>
-  public string? LanguageId { get; set; }
-  /// <summary>
-  /// Custom XML data date storage format, specifying how the date is stored in the underlying XML data.
-  /// </summary>
-  public DateFormatKind? SdtDateMappingType { get; set; }
-  /// <summary>
-  /// Date picker calendar type, specifying the calendar system used for date selection (e.g., Gregorian, Hijri).
-  /// </summary>
-  public CalendarKind? Calendar { get; set; }
+    /// <summary>
+    /// Last known date in XML Schema DateTime format, specifying the most recently selected or stored date value.
+    /// </summary>
+    public DateTime? FullDate { get => _FullDate; set => UpdateField(ref _FullDate, value, nameof(FullDate)); }
+
+    private DateTime? _FullDate;
+    /// <summary>
+    /// Date display mask, specifying the format string used to display the date in the control.
+    /// </summary>
+    public string? DateFormat { get; set; }
+    /// <summary>
+    /// Date picker language ID, specifying the locale for date formatting and calendar display.
+    /// </summary>
+    public string? LanguageId { get; set; }
+    /// <summary>
+    /// Custom XML data date storage format, specifying how the date is stored in the underlying XML data.
+    /// </summary>
+    public DateFormatKind? SdtDateMappingType { get; set; }
+    /// <summary>
+    /// Date picker calendar type, specifying the calendar system used for date selection (e.g., Gregorian, Hijri).
+    /// </summary>
+    public CalendarKind? Calendar { get; set; }
 }

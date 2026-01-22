@@ -44,84 +44,85 @@ namespace DocumentModel.Drawings;
 /// </remarks>
 public partial class Effect : ModelElement
 {
-  /// <summary>
-  ///   Reference identifier that links to a specific effect definition.
-  /// </summary>
-  /// <remarks>
-  ///   <para>
-  ///   Specifies a unique identifier string that references a particular effect definition within
-  ///   the document's effect system. This identifier establishes a link between the Effect reference
-  ///   and the actual effect implementation or definition.
-  ///   </para>
-  ///   <para>
-  ///   The reference string typically contains:
-  ///   <list type="bullet">
-  ///     <item><description>A unique identifier (GUID, numeric ID, or named reference)</description></item>
-  ///     <item><description>A pointer to an effect definition in an effect container</description></item>
-  ///     <item><description>A key that maps to a predefined effect in the document's effect library</description></item>
-  ///   </list>
-  ///   </para>
-  ///   <para>
-  ///   Usage patterns:
-  ///   <list type="bullet">
-  ///     <item>
-  ///       <description>
-  ///         <strong>Direct reference:</strong> Points to a specific effect by ID 
-  ///         (e.g., "effect1", "shadow-outer-1", "{guid}")
-  ///       </description>
-  ///     </item>
-  ///     <item>
-  ///       <description>
-  ///         <strong>Named reference:</strong> Uses a human-readable name 
-  ///         (e.g., "DropShadow", "GlowEffect", "Reflection")
-  ///       </description>
-  ///     </item>
-  ///     <item>
-  ///       <description>
-  ///         <strong>Indexed reference:</strong> References effects by position in an effect collection
-  ///       </description>
-  ///     </item>
-  ///   </list>
-  ///   </para>
-  ///   <para>
-  ///   The reference mechanism enables several important capabilities:
-  ///   <list type="bullet">
-  ///     <item><description><strong>Effect reuse:</strong> Multiple objects can reference the same effect definition</description></item>
-  ///     <item><description><strong>Effect inheritance:</strong> Objects can inherit effects from parent containers</description></item>
-  ///     <item><description><strong>Effect composition:</strong> Complex effects built from simpler referenced effects</description></item>
-  ///     <item><description><strong>Memory efficiency:</strong> Avoids duplicating effect definitions</description></item>
-  ///     <item><description><strong>Dynamic updates:</strong> Changing the referenced effect updates all objects using it</description></item>
-  ///   </list>
-  ///   </para>
-  ///   <para>
-  ///   When the Reference is null or empty, it typically indicates:
-  ///   <list type="bullet">
-  ///     <item><description>No effect is applied</description></item>
-  ///     <item><description>The effect is defined inline rather than referenced</description></item>
-  ///     <item><description>A default or inherited effect should be used</description></item>
-  ///   </list>
-  ///   </para>
-  ///   <para>
-  ///   Example reference formats:
-  ///   <code>
-  ///   // GUID-based reference:
-  ///   Reference = "{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}";
-  ///   
-  ///   // Named reference:
-  ///   Reference = "OuterShadowEffect";
-  ///   
-  ///   // Indexed reference:
-  ///   Reference = "effect[0]";
-  ///   
-  ///   // Hierarchical reference:
-  ///   Reference = "effects/shadows/outer";
-  ///   </code>
-  ///   </para>
-  /// </remarks>
-  public string? Reference { get; set; }
+    /// <summary>
+    ///   Reference identifier that links to a specific effect definition.
+    /// </summary>
+    /// <remarks>
+    ///   <para>
+    ///   Specifies a unique identifier string that references a particular effect definition within
+    ///   the document's effect system. This identifier establishes a link between the Effect reference
+    ///   and the actual effect implementation or definition.
+    ///   </para>
+    ///   <para>
+    ///   The reference string typically contains:
+    ///   <list type="bullet">
+    ///     <item><description>A unique identifier (GUID, numeric ID, or named reference)</description></item>
+    ///     <item><description>A pointer to an effect definition in an effect container</description></item>
+    ///     <item><description>A key that maps to a predefined effect in the document's effect library</description></item>
+    ///   </list>
+    ///   </para>
+    ///   <para>
+    ///   Usage patterns:
+    ///   <list type="bullet">
+    ///     <item>
+    ///       <description>
+    ///         <strong>Direct reference:</strong> Points to a specific effect by ID 
+    ///         (e.g., "effect1", "shadow-outer-1", "{guid}")
+    ///       </description>
+    ///     </item>
+    ///     <item>
+    ///       <description>
+    ///         <strong>Named reference:</strong> Uses a human-readable name 
+    ///         (e.g., "DropShadow", "GlowEffect", "Reflection")
+    ///       </description>
+    ///     </item>
+    ///     <item>
+    ///       <description>
+    ///         <strong>Indexed reference:</strong> References effects by position in an effect collection
+    ///       </description>
+    ///     </item>
+    ///   </list>
+    ///   </para>
+    ///   <para>
+    ///   The reference mechanism enables several important capabilities:
+    ///   <list type="bullet">
+    ///     <item><description><strong>Effect reuse:</strong> Multiple objects can reference the same effect definition</description></item>
+    ///     <item><description><strong>Effect inheritance:</strong> Objects can inherit effects from parent containers</description></item>
+    ///     <item><description><strong>Effect composition:</strong> Complex effects built from simpler referenced effects</description></item>
+    ///     <item><description><strong>Memory efficiency:</strong> Avoids duplicating effect definitions</description></item>
+    ///     <item><description><strong>Dynamic updates:</strong> Changing the referenced effect updates all objects using it</description></item>
+    ///   </list>
+    ///   </para>
+    ///   <para>
+    ///   When the Reference is null or empty, it typically indicates:
+    ///   <list type="bullet">
+    ///     <item><description>No effect is applied</description></item>
+    ///     <item><description>The effect is defined inline rather than referenced</description></item>
+    ///     <item><description>A default or inherited effect should be used</description></item>
+    ///   </list>
+    ///   </para>
+    ///   <para>
+    ///   Example reference formats:
+    ///   <code>
+    ///   // GUID-based reference:
+    ///   Reference = "{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}";
+    ///   
+    ///   // Named reference:
+    ///   Reference = "OuterShadowEffect";
+    ///   
+    ///   // Indexed reference:
+    ///   Reference = "effect[0]";
+    ///   
+    ///   // Hierarchical reference:
+    ///   Reference = "effects/shadows/outer";
+    ///   </code>
+    ///   </para>
+    /// </remarks>
+    public string? Reference { get => _Reference; set => UpdateField(ref _Reference, value, nameof(Reference)); }
 
-  protected override object? GetUpdatableOpenXmlElement()
-  {
-    throw new NotImplementedException();
-  }
+    private string? _Reference;
+    protected override object? GetUpdatableOpenXmlElement()
+    {
+        throw new NotImplementedException();
+    }
 }

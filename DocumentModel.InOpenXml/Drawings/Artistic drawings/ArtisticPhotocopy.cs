@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ArtisticPhotocopy : ModelElement<DXO10D.ArtisticPhotocopy>
 {
-  /// <summary>
-  /// Transparency level of the photocopy effect.
-  /// </summary>
-  public Int32? Transparency { get; set; }
-  /// <summary>
-  /// Detail level of the photocopy effect, influencing the sharpness and clarity of the simulated photocopy.
-  /// </summary>
-  public Int32? Detail { get; set; }
+    /// <summary>
+    /// Transparency level of the photocopy effect.
+    /// </summary>
+    public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
+
+    private Int32? _Transparency;
+    /// <summary>
+    /// Detail level of the photocopy effect, influencing the sharpness and clarity of the simulated photocopy.
+    /// </summary>
+    public Int32? Detail { get; set; }
 }

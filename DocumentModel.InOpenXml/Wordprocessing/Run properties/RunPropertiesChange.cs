@@ -5,20 +5,22 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class RunPropertiesChange : ModelElement<DXW.RunPropertiesChange>
 {
-  /// <summary>
-  /// Author of the change to the run properties.
-  /// </summary>
-  public string? Author { get; set; }
-  /// <summary>
-  /// Date of the change to the run properties.
-  /// </summary>
-  public DateTime? Date { get; set; }
-  /// <summary>
-  /// Annotation identifier for the change, used to uniquely identify the revision.
-  /// </summary>
-  public string? AnnotationId { get; set; }
-  /// <summary>
-  /// Previous run properties before the change, enabling comparison and tracking of revisions.
-  /// </summary>
-  public PreviousRunProperties? PreviousRunProperties { get; set; }
+    /// <summary>
+    /// Author of the change to the run properties.
+    /// </summary>
+    public string? Author { get => _Author; set => UpdateField(ref _Author, value, nameof(Author)); }
+
+    private string? _Author;
+    /// <summary>
+    /// Date of the change to the run properties.
+    /// </summary>
+    public DateTime? Date { get; set; }
+    /// <summary>
+    /// Annotation identifier for the change, used to uniquely identify the revision.
+    /// </summary>
+    public string? AnnotationId { get; set; }
+    /// <summary>
+    /// Previous run properties before the change, enabling comparison and tracking of revisions.
+    /// </summary>
+    public PreviousRunProperties? PreviousRunProperties { get; set; }
 }

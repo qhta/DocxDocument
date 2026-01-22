@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocPartTypes : ModelElement<DXW.DocPartTypes>
 {
-  /// <summary>
-  /// Indicates whether the entry is of all types.
-  /// </summary>
-  public bool? All { get; set; }
-  /// <summary>
-  /// Specific document part type associated with the entry.
-  /// </summary>
-  public DocPartKind? DocPartType { get; set; }
+    /// <summary>
+    /// Indicates whether the entry is of all types.
+    /// </summary>
+    public bool? All { get => _All; set => UpdateField(ref _All, value, nameof(All)); }
+
+    private bool? _All;
+    /// <summary>
+    /// Specific document part type associated with the entry.
+    /// </summary>
+    public DocPartKind? DocPartType { get; set; }
 }

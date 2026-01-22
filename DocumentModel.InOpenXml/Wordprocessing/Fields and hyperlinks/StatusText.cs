@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class StatusText : ModelElement<DXW.StatusText>
 {
-  /// <summary>
-  /// Type of status text, specifying the context or display mode (e.g., tooltip, status bar).
-  /// </summary>
-  public InfoTextKind? Type { get; set; }
-  /// <summary>
-  /// Value of the status text, containing the actual information or message to be displayed to the user.
-  /// </summary>
-  public string? Val { get; set; }
+    /// <summary>
+    /// Type of status text, specifying the context or display mode (e.g., tooltip, status bar).
+    /// </summary>
+    public InfoTextKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+
+    private InfoTextKind? _Type;
+    /// <summary>
+    /// Value of the status text, containing the actual information or message to be displayed to the user.
+    /// </summary>
+    public string? Val { get; set; }
 }

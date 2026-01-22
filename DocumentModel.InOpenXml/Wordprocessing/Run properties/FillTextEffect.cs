@@ -5,16 +5,18 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FillTextEffect : ModelElement<DXO10W.FillTextEffect>
 {
-  /// <summary>
-  /// Indicates that no fill is applied to the text.
-  /// </summary>
-  public bool? NoFillEmpty { get; set; }
-  /// <summary>
-  /// Solid color fill properties for the text, specifying a single color fill effect.
-  /// </summary>
-  public SolidColorFillProperties? SolidColorFillProperties { get; set; }
-  /// <summary>
-  /// Gradient fill properties for the text, specifying a gradient color fill effect.
-  /// </summary>
-  public DMWD.GradientFillProperties? GradientFillProperties { get; set; }
+    /// <summary>
+    /// Indicates that no fill is applied to the text.
+    /// </summary>
+    public bool? NoFillEmpty { get => _NoFillEmpty; set => UpdateField(ref _NoFillEmpty, value, nameof(NoFillEmpty)); }
+
+    private bool? _NoFillEmpty;
+    /// <summary>
+    /// Solid color fill properties for the text, specifying a single color fill effect.
+    /// </summary>
+    public SolidColorFillProperties? SolidColorFillProperties { get; set; }
+    /// <summary>
+    /// Gradient fill properties for the text, specifying a gradient color fill effect.
+    /// </summary>
+    public DMWD.GradientFillProperties? GradientFillProperties { get; set; }
 }

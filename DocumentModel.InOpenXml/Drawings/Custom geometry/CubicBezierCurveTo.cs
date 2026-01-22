@@ -5,9 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CubicBezierCurveTo : ModelElement<DXD.CubicBezierCurveTo>
 {
-  /// <summary>
-  ///   Collection of points that define the cubic B�zier curve.
-  ///   Typically includes two control points and an endpoint.
-  /// </summary>
-  public AdjustPoints? Points { get; set; }
+    /// <summary>
+    ///   Collection of points that define the cubic B�zier curve.
+    ///   Typically includes two control points and an endpoint.
+    /// </summary>
+    public AdjustPoints? Points { get => _Points; set => UpdateField(ref _Points, value, nameof(Points)); }
+
+    private AdjustPoints? _Points;
 }

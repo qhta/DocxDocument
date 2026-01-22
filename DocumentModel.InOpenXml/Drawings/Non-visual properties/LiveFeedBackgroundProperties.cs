@@ -4,24 +4,26 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LiveFeedBackgroundProperties : ModelElement<DXO21DL.LiveFeedBackgroundProperties>
 {
-  /// <summary>
-  ///   Properties for a normal background in the live feed.
-  /// </summary>
-  public BackgroundNormalProperties? BackgroundNormalProperties { get; set; }
-  /// <summary>
-  ///   Properties for a removed background in the live feed.
-  /// </summary>
-  public BackgroundRemovedProperties? BackgroundRemovedProperties { get; set; }
-  /// <summary>
-  ///   Properties for a blurred background in the live feed.
-  /// </summary>
-  public BackgroundBlurProperties? BackgroundBlurProperties { get; set; }
-  /// <summary>
-  ///   Properties for a custom background in the live feed.
-  /// </summary>
-  public BackgroundCustomProperties? BackgroundCustomProperties { get; set; }
-  /// <summary>
-  ///   List of extension elements for additional background properties.
-  /// </summary>
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    /// <summary>
+    ///   Properties for a normal background in the live feed.
+    /// </summary>
+    public BackgroundNormalProperties? BackgroundNormalProperties { get => _BackgroundNormalProperties; set => UpdateField(ref _BackgroundNormalProperties, value, nameof(BackgroundNormalProperties)); }
+
+    private BackgroundNormalProperties? _BackgroundNormalProperties;
+    /// <summary>
+    ///   Properties for a removed background in the live feed.
+    /// </summary>
+    public BackgroundRemovedProperties? BackgroundRemovedProperties { get; set; }
+    /// <summary>
+    ///   Properties for a blurred background in the live feed.
+    /// </summary>
+    public BackgroundBlurProperties? BackgroundBlurProperties { get; set; }
+    /// <summary>
+    ///   Properties for a custom background in the live feed.
+    /// </summary>
+    public BackgroundCustomProperties? BackgroundCustomProperties { get; set; }
+    /// <summary>
+    ///   List of extension elements for additional background properties.
+    /// </summary>
+    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

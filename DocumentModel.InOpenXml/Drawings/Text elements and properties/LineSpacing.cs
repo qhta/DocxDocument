@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LineSpacing : ModelElement
 {
-  /// <summary>
-  ///   Line spacing value specified as a percentage.
-  /// </summary>
-  public Int32? SpacingPercent { get; set; }
-  /// <summary>
-  ///   Line spacing value specified in points.
-  /// </summary>
-  public Int32? SpacingPoints { get; set; }
+    /// <summary>
+    ///   Line spacing value specified as a percentage.
+    /// </summary>
+    public Int32? SpacingPercent { get => _SpacingPercent; set => UpdateField(ref _SpacingPercent, value, nameof(SpacingPercent)); }
+
+    private Int32? _SpacingPercent;
+    /// <summary>
+    ///   Line spacing value specified in points.
+    /// </summary>
+    public Int32? SpacingPoints { get; set; }
 }

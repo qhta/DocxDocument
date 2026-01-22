@@ -5,16 +5,18 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DropDownListFormField : ModelElement<DXW.DropDownListFormField>
 {
-  /// <summary>
-  /// Index of the currently selected item in the drop-down list.
-  /// </summary>
-  public Int32? DropDownListSelection { get; set; }
-  /// <summary>
-  /// Index of the default item to be selected when the form is loaded.
-  /// </summary>
-  public Int32? DefaultDropDownListItemIndex { get; set; }
-  /// <summary>
-  /// Collection of list entry form fields representing the available options in the drop-down list.
-  /// </summary>
-  public ListEntryFormFields? ListEntryFormFields { get; set; }
+    /// <summary>
+    /// Index of the currently selected item in the drop-down list.
+    /// </summary>
+    public Int32? DropDownListSelection { get => _DropDownListSelection; set => UpdateField(ref _DropDownListSelection, value, nameof(DropDownListSelection)); }
+
+    private Int32? _DropDownListSelection;
+    /// <summary>
+    /// Index of the default item to be selected when the form is loaded.
+    /// </summary>
+    public Int32? DefaultDropDownListItemIndex { get; set; }
+    /// <summary>
+    /// Collection of list entry form fields representing the available options in the drop-down list.
+    /// </summary>
+    public ListEntryFormFields? ListEntryFormFields { get; set; }
 }

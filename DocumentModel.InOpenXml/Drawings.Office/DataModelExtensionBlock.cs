@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class DataModelExtensionBlock : ModelElement<DXOD.DataModelExtensionBlock>
 {
-  /// <summary>
-  ///   relId
-  /// </summary>
-  public string? RelId { get; set; }
-  /// <summary>
-  ///   minVer
-  /// </summary>
-  public string? MinVer { get; set; }
+    /// <summary>
+    ///   relId
+    /// </summary>
+    public string? RelId { get => _RelId; set => UpdateField(ref _RelId, value, nameof(RelId)); }
+
+    private string? _RelId;
+    /// <summary>
+    ///   minVer
+    /// </summary>
+    public string? MinVer { get; set; }
 }

@@ -7,12 +7,14 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// </summary>
 public partial class HeaderShapeDefaults : ModelElement<DXW.HeaderShapeDefaults>
 {
-  /// <summary>
-  /// Default shape properties for VML shapes in the header and footer.
-  /// </summary>
-  public ShapeDefaults? ShapeDefaults { get; set; }
-  /// <summary>
-  /// Default shape layout for VML shapes in the header and footer.
-  /// </summary>
-  public ShapeLayout? ShapeLayout { get; set; }
+    /// <summary>
+    /// Default shape properties for VML shapes in the header and footer.
+    /// </summary>
+    public ShapeDefaults? ShapeDefaults { get => _ShapeDefaults; set => UpdateField(ref _ShapeDefaults, value, nameof(ShapeDefaults)); }
+
+    private ShapeDefaults? _ShapeDefaults;
+    /// <summary>
+    /// Default shape layout for VML shapes in the header and footer.
+    /// </summary>
+    public ShapeLayout? ShapeLayout { get; set; }
 }

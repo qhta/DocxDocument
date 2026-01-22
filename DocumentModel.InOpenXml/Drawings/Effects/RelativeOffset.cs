@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class RelativeOffset : ModelElement
 {
-  /// <summary>
-  ///   X offset value.
-  /// </summary>
-  public Int32? OffsetX { get; set; }
-  /// <summary>
-  ///   Y offset value.
-  /// </summary>
-  public Int32? OffsetY { get; set; }
+    /// <summary>
+    ///   X offset value.
+    /// </summary>
+    public Int32? OffsetX { get => _OffsetX; set => UpdateField(ref _OffsetX, value, nameof(OffsetX)); }
+
+    private Int32? _OffsetX;
+    /// <summary>
+    ///   Y offset value.
+    /// </summary>
+    public Int32? OffsetY { get; set; }
 }

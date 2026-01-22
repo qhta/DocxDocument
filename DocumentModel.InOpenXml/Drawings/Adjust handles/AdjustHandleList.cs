@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AdjustHandleList : ModelElement<DXD.AdjustHandleList>
 {
-  /// <summary>
-  /// XY adjust handle, which provides guides and limits for horizontal and vertical adjustments.
-  /// </summary>
-  public AdjustHandleXY? AdjustHandleXY { get; set; }
-  /// <summary>
-  /// Polar adjust handle, which provides guides and limits for radial and angular adjustments.
-  /// </summary>
-  public AdjustHandlePolar? AdjustHandlePolar { get; set; }
+    /// <summary>
+    /// XY adjust handle, which provides guides and limits for horizontal and vertical adjustments.
+    /// </summary>
+    public AdjustHandleXY? AdjustHandleXY { get => _AdjustHandleXY; set => UpdateField(ref _AdjustHandleXY, value, nameof(AdjustHandleXY)); }
+
+    private AdjustHandleXY? _AdjustHandleXY;
+    /// <summary>
+    /// Polar adjust handle, which provides guides and limits for radial and angular adjustments.
+    /// </summary>
+    public AdjustHandlePolar? AdjustHandlePolar { get; set; }
 }

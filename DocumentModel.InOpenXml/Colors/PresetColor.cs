@@ -5,8 +5,10 @@ namespace DocumentModel;
 /// </summary>
 public partial class PresetColor : ModelElement, IColor
 {
-  /// <summary>
-  /// Gets or sets the preset color name that defines the base color.
-  /// </summary>
-  public PresetColorKind? Val { get; set; }
+    /// <summary>
+    /// Gets or sets the preset color name that defines the base color.
+    /// </summary>
+    public PresetColorKind? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+
+    private PresetColorKind? _Val;
 }
