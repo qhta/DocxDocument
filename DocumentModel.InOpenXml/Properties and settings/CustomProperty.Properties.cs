@@ -6,6 +6,7 @@ public sealed partial class CustomProperty
   ///   Property identifier. Should be unique within the document properties.
   ///   In OpenXml property identifiers start from 2.
   /// </summary>
+  [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.PropertyId))]
   public int? PropertyId
   {
     get => _PropertyId;
@@ -17,6 +18,7 @@ public sealed partial class CustomProperty
   /// <summary>
   ///   Property name. Should be unique within the document properties.
   /// </summary>
+  [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.Name))]
   public string? Name
   {
     get => _Name;
@@ -44,6 +46,7 @@ public sealed partial class CustomProperty
   /// <see href="https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.customproperties.customdocumentproperty.formatid"/>
   /// </para>
   /// </remarks>
+  [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.FormatId))]
   public Guid? FormatId
   {
     get => _FormatId;
@@ -67,6 +70,7 @@ public sealed partial class CustomProperty
   /// <see href="https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.customproperties.customdocumentproperty.linktarget"/>
   /// </para>
   /// </remarks>
+  [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.LinkTarget))]
   public string? LinkTarget
   {
     get => _LinkTarget;

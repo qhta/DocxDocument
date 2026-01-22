@@ -12,6 +12,10 @@ internal class GenerateShouldSerializeFunctions
   private static readonly string[] ignoredAttributes = [ "XmlIgnore", "JsonIgnore", "NotMapped"];
   public static void Run(string filePath)
   {
+    var filename = Path.GetFileNameWithoutExtension(filePath);
+    var ShouldSerializeFile = filename + ".ShouldSerialize.cs";
+    if (File.Exists(Path.Combine(Path.GetDirectoryName(filePath)!, ShouldSerializeFile)))
+      return;
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
     var root = tree.GetRoot();
