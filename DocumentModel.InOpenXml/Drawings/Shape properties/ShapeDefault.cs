@@ -22,5 +22,8 @@ public partial class ShapeDefault : ModelElement<DXD.ShapeDefault>, IExtendableE
     ///   Default shape style.
     /// </summary>
     public ShapeStyle? ShapeStyle { get; set; }
-    public IExtensionList? ExtensionList { get; set; }
+    /// <summary>
+    /// List of extension elements.
+    /// </summary>
+    public ExtensionList? ExtensionList { get; set; }
 }

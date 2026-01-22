@@ -50,5 +50,8 @@ public partial class ShapeLocks : ModelElement<DXD.ShapeLocks>, IExtendableEleme
     ///   Disallows editing the shape's text.
     /// </summary>
     public bool? NoTextEdit { get; set; }
-    public IExtensionList? ExtensionList { get; set; }
+    /// <summary>
+    /// List of extension elements.
+    /// </summary>
+    public ExtensionList? ExtensionList { get; set; }
 }

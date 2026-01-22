@@ -50,5 +50,8 @@ public partial class PictureLocks : ModelElement<DXD.PictureLocks>, IExtendableE
     ///   Disallows cropping the picture.
     /// </summary>
     public bool? NoCrop { get; set; }
-    public IExtensionList? ExtensionList { get; set; }
+    /// <summary>
+    /// List of extension elements.
+    /// </summary>
+    public ExtensionList? ExtensionList { get; set; }
 }
