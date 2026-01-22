@@ -5,24 +5,37 @@ namespace DocumentModel;
 /// <remarks>
 /// This interface provides properties for theme family name, unique identifiers, versioning, and OfficeArt extension metadata. It enables flexible theme organization, compatibility management, and extensibility for Office document processing and customization.
 /// </remarks>
+[OpenXmlType(typeof(DXO13T.ThemeFamily))]
+/// <summary>
+/// Represents a theme family definition for Office documents, supporting identification, versioning, and extension metadata for advanced theme management scenarios.
+/// </summary>
+/// <remarks>
+/// This interface provides properties for theme family name, unique identifiers, versioning, and OfficeArt extension metadata. It enables flexible theme organization, compatibility management, and extensibility for Office document processing and customization.
+/// </remarks>
 public partial class ThemeFamily : ModelElement<DXO13T.ThemeFamily>
 {
     /// <summary>
     /// Name of the theme family.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Name))]
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
     private string? _Name;
     /// <summary>
     /// Unique identifier for the theme family.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Id))]
     public string? Id { get; set; }
+
     /// <summary>
     /// Version identifier for the theme family.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Vid))]
     public string? Vid { get; set; }
+
     /// <summary>
     /// OfficeArt extension metadata for the theme family.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO13T.ThemeFamily.OfficeArtExtensionList))]
     public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

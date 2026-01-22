@@ -6,5 +6,5 @@ public partial class NonVisualPicturePropertiesExtension
   public bool ShouldSerializeSignatureLine() => SignatureLine is not null;
   public bool ShouldSerializeObjectProperties() => ObjectProperties is not null;
   public bool ShouldSerializeLiveFeedProperties() => LiveFeedProperties is not null;
-  public bool ShouldSerializeUriString() => UriString is not null;
+  public bool ShouldSerializeUri() => Uri is not null;
 }
