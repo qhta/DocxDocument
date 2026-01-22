@@ -90,6 +90,7 @@ public partial class {classDecl}
 
     var outputPath = Path.Combine(Path.GetDirectoryName(filePath)!, $"{className}.ShouldSerialize.cs");
     File.WriteAllText(outputPath, shouldSerializeCode);
+    Console.WriteLine($"Generated ShouldSerialize functions: {outputPath}");
     AddPartialToClass.Run(filePath);
   }
 }
