@@ -82,16 +82,23 @@ public class AddOpenXmlPropertyAttributeRewriter : CSharpSyntaxRewriter
     {
       if (member is PropertyDeclarationSyntax prop)
       {
-        // Check if already has OpenXmlProperty attribute
-        bool hasAttr = prop.AttributeLists
-            .SelectMany(al => al.Attributes)
-            .Any(attr => attr.Name.ToString().Contains("OpenXmlProperty"));
+        // only touch properties that have a setter
+        var hasSetter = prop.AccessorList?.Accessors
+          .Any(a => a.Kind() == SyntaxKind.SetAccessorDeclaration) == true;
+        if (!hasSetter)
+          return member;
+
+        var hasAttr = prop.AttributeLists
+          .SelectMany(al => al.Attributes)
+          .Any(attr => attr.Name.ToString().Contains("OpenXmlProperty"));
 
         if (!hasAttr)
         {
-          // Split leading trivia into doc comments and other trivia
           var leadingTrivia = prop.GetLeadingTrivia();
-          var docTrivia = leadingTrivia.Where(t => t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) || t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia)).ToList();
+          var docTrivia = leadingTrivia.Where(t =>
+              t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) ||
+              t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia))
+            .ToList();
           var otherTrivia = leadingTrivia.Except(docTrivia).ToList();
 
           var attr = SyntaxFactory.Attribute(
@@ -100,26 +107,21 @@ public class AddOpenXmlPropertyAttributeRewriter : CSharpSyntaxRewriter
               SyntaxFactory.SingletonSeparatedList(
                 SyntaxFactory.AttributeArgument(
                   SyntaxFactory.ParseExpression($"nameof({openXmlType}.{prop.Identifier.Text})")
-                )
-              )
-            )
-          );
-          var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attr));
+                ))));
 
-          // Remove doc comments from leading trivia, add attribute, then re-add doc comments as leading trivia
-         
+          var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attr))
+            .WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
           var newProp = prop
-            .WithLeadingTrivia(docTrivia)
+            .WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia))
             .WithAttributeLists(prop.AttributeLists.Add(attrList))
             .WithTrailingTrivia(prop.GetTrailingTrivia());
 
           Changed = true;
-          return (MemberDeclarationSyntax)newProp;
+          return newProp;
         }
       }
       return member;
     }).ToList();
-
     return newClassNode.WithMembers(SyntaxFactory.List(newMembers));
   }
 }
