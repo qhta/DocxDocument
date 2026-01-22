@@ -4,16 +4,18 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class LimitUpper : ModelElement<DXM.LimitUpper>, ICommonMathContent
 {
-  /// <summary>
-  ///   Upper Limit Properties.
-  /// </summary>
-  public LimitUpperProperties? LimitUpperProperties { get; set; }
-  /// <summary>
-  ///   Argument.
-  /// </summary>
-  public Argument? Argument { get; set; }
-  /// <summary>
-  ///   Limit (Upper).
-  /// </summary>
-  public Limit? Limit { get; set; }
+    /// <summary>
+    ///   Upper Limit Properties.
+    /// </summary>
+    public LimitUpperProperties? LimitUpperProperties { get => _LimitUpperProperties; set => UpdateField(ref _LimitUpperProperties, value, nameof(LimitUpperProperties)); }
+
+    private LimitUpperProperties? _LimitUpperProperties;
+    /// <summary>
+    ///   Argument.
+    /// </summary>
+    public Argument? Argument { get; set; }
+    /// <summary>
+    ///   Limit (Upper).
+    /// </summary>
+    public Limit? Limit { get; set; }
 }

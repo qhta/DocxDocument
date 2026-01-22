@@ -5,16 +5,18 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtDataBinding : ModelElement //<DXO10W.SdtDataBinding>
 {
-  /// <summary>
-  /// XML namespace prefix mappings, specifying the prefixes used in XPath expressions for XML data binding.
-  /// </summary>
-  public string? PrefixMappings { get; set; }
-  /// <summary>
-  /// XPath expression used to locate the XML element for data binding.
-  /// </summary>
-  public string? XPath { get; set; }
-  /// <summary>
-  /// Custom XML data storage ID, identifying the XML data part to which the SDT is bound.
-  /// </summary>
-  public string? StoreItemId { get; set; }
+    /// <summary>
+    /// XML namespace prefix mappings, specifying the prefixes used in XPath expressions for XML data binding.
+    /// </summary>
+    public string? PrefixMappings { get => _PrefixMappings; set => UpdateField(ref _PrefixMappings, value, nameof(PrefixMappings)); }
+
+    private string? _PrefixMappings;
+    /// <summary>
+    /// XPath expression used to locate the XML element for data binding.
+    /// </summary>
+    public string? XPath { get; set; }
+    /// <summary>
+    /// Custom XML data storage ID, identifying the XML data part to which the SDT is bound.
+    /// </summary>
+    public string? StoreItemId { get; set; }
 }

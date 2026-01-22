@@ -7,16 +7,18 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class WholeFormatting : ModelElement
 {
-  /// <summary>
-  /// Outline properties for the drawing element, including line style, color, and width.
-  /// </summary>
-  public LineProperties? Outline { get; set; }
-  /// <summary>
-  /// List of visual effects applied to the drawing element, such as shadows, glows, and reflections.
-  /// </summary>
-  public EffectList? EffectList { get; set; }
-  /// <summary>
-  /// Effect DAG (Directed Acyclic Graph) for advanced effect sequencing and layering on the drawing element.
-  /// </summary>
-  public EffectDag? EffectDag { get; set; }
+    /// <summary>
+    /// Outline properties for the drawing element, including line style, color, and width.
+    /// </summary>
+    public LineProperties? Outline { get => _Outline; set => UpdateField(ref _Outline, value, nameof(Outline)); }
+
+    private LineProperties? _Outline;
+    /// <summary>
+    /// List of visual effects applied to the drawing element, such as shadows, glows, and reflections.
+    /// </summary>
+    public EffectList? EffectList { get; set; }
+    /// <summary>
+    /// Effect DAG (Directed Acyclic Graph) for advanced effect sequencing and layering on the drawing element.
+    /// </summary>
+    public EffectDag? EffectDag { get; set; }
 }

@@ -4,28 +4,30 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Paragraph : ModelElement
 {
-  /// <summary>
-  ///   Properties for the text paragraph.
-  /// </summary>
-  public ParagraphProperties? ParagraphProperties { get; set; }
-  /// <summary>
-  ///   Text run within the paragraph.
-  /// </summary>
-  public Run? Run { get; set; }
-  /// <summary>
-  ///   Line break within the paragraph.
-  /// </summary>
-  public Break? Break { get; set; }
-  /// <summary>
-  ///   Field element within the paragraph.
-  /// </summary>
-  public Field? Field { get; set; }
-  /// <summary>
-  ///   Indicates whether the paragraph contains mathematical text.
-  /// </summary>
-  public bool? TextMath { get; set; }
-  /// <summary>
-  ///   Formatting properties for the last run in the paragraph.
-  /// </summary>
-  public EndParagraphRunProperties? EndParagraphRunProperties { get; set; }
+    /// <summary>
+    ///   Properties for the text paragraph.
+    /// </summary>
+    public ParagraphProperties? ParagraphProperties { get => _ParagraphProperties; set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties)); }
+
+    private ParagraphProperties? _ParagraphProperties;
+    /// <summary>
+    ///   Text run within the paragraph.
+    /// </summary>
+    public Run? Run { get; set; }
+    /// <summary>
+    ///   Line break within the paragraph.
+    /// </summary>
+    public Break? Break { get; set; }
+    /// <summary>
+    ///   Field element within the paragraph.
+    /// </summary>
+    public Field? Field { get; set; }
+    /// <summary>
+    ///   Indicates whether the paragraph contains mathematical text.
+    /// </summary>
+    public bool? TextMath { get; set; }
+    /// <summary>
+    ///   Formatting properties for the last run in the paragraph.
+    /// </summary>
+    public EndParagraphRunProperties? EndParagraphRunProperties { get; set; }
 }

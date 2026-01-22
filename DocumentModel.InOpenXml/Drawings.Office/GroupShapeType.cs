@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class GroupShapeType : ModelElement<DXOD.GroupShapeType>
 {
-  /// <summary>
-  ///   GroupShapeNonVisualProperties.
-  /// </summary>
-  public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get; set; }
-  /// <summary>
-  ///   GroupShapeProperties.
-  /// </summary>
-  public GroupShapeProperties? GroupShapeProperties { get; set; }
+    /// <summary>
+    ///   GroupShapeNonVisualProperties.
+    /// </summary>
+    public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get => _GroupShapeNonVisualProperties; set => UpdateField(ref _GroupShapeNonVisualProperties, value, nameof(GroupShapeNonVisualProperties)); }
+
+    private GroupShapeNonVisualProperties? _GroupShapeNonVisualProperties;
+    /// <summary>
+    ///   GroupShapeProperties.
+    /// </summary>
+    public GroupShapeProperties? GroupShapeProperties { get; set; }
 }

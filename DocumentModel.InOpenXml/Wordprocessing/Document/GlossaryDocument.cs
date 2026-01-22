@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class GlossaryDocument : ModelElement<DXW.GlossaryDocument>
 {
-  /// <summary>
-  ///   Document background, specifying the image or fill for every page of the glossary document.
-  /// </summary>
-  public DocumentBackground? DocumentBackground { get; set; }
-  /// <summary>
-  ///   List of glossary document entries, providing access to and management of reusable document parts.
-  /// </summary>
-  public DocParts? DocParts { get; set; }
+    /// <summary>
+    ///   Document background, specifying the image or fill for every page of the glossary document.
+    /// </summary>
+    public DocumentBackground? DocumentBackground { get => _DocumentBackground; set => UpdateField(ref _DocumentBackground, value, nameof(DocumentBackground)); }
+
+    private DocumentBackground? _DocumentBackground;
+    /// <summary>
+    ///   List of glossary document entries, providing access to and management of reusable document parts.
+    /// </summary>
+    public DocParts? DocParts { get; set; }
 }

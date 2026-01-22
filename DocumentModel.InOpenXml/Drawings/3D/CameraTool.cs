@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CameraTool : ModelElement<DXO10D.CameraTool>
 {
-  /// <summary>
-  /// Cell range.
-  /// </summary>
-  public string? CellRange { get; set; }
-  /// <summary>
-  /// Shape ID.
-  /// </summary>
-  public string? ShapeId { get; set; }
+    /// <summary>
+    /// Cell range.
+    /// </summary>
+    public string? CellRange { get => _CellRange; set => UpdateField(ref _CellRange, value, nameof(CellRange)); }
+
+    private string? _CellRange;
+    /// <summary>
+    /// Shape ID.
+    /// </summary>
+    public string? ShapeId { get; set; }
 }

@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class HelpText : ModelElement<DXW.HelpText>
 {
-  /// <summary>
-  /// Type of help text, specifying the context or display mode (e.g., tooltip, status bar).
-  /// </summary>
-  public InfoTextKind? Type { get; set; }
-  /// <summary>
-  /// Value of the help text, containing the actual guidance or information to be displayed to the user.
-  /// </summary>
-  public string? Val { get; set; }
+    /// <summary>
+    /// Type of help text, specifying the context or display mode (e.g., tooltip, status bar).
+    /// </summary>
+    public InfoTextKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+
+    private InfoTextKind? _Type;
+    /// <summary>
+    /// Value of the help text, containing the actual guidance or information to be displayed to the user.
+    /// </summary>
+    public string? Val { get; set; }
 }

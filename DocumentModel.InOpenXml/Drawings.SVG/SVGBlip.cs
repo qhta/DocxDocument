@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings.SVG;
 /// </summary>
 public partial class SVGBlip : ModelElement<DXO19DS.SVGBlip>
 {
-  /// <summary>
-  ///   Embedded Picture Reference
-  /// </summary>
-  public string? Embed { get; set; }
-  /// <summary>
-  ///   Linked Picture Reference
-  /// </summary>
-  public string? Link { get; set; }
+    /// <summary>
+    ///   Embedded Picture Reference
+    /// </summary>
+    public string? Embed { get => _Embed; set => UpdateField(ref _Embed, value, nameof(Embed)); }
+
+    private string? _Embed;
+    /// <summary>
+    ///   Linked Picture Reference
+    /// </summary>
+    public string? Link { get; set; }
 }

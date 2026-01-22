@@ -4,12 +4,14 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class MatrixColumnProperties : ModelElement
 {
-  /// <summary>
-  ///   Matrix IColumn Count.
-  /// </summary>
-  public Int32? MatrixColumnCount { get; set; }
-  /// <summary>
-  ///   Matrix IColumn Justification.
-  /// </summary>
-  public HorizontalAlignmentKind? MatrixColumnJustification { get; set; }
+    /// <summary>
+    ///   Matrix IColumn Count.
+    /// </summary>
+    public Int32? MatrixColumnCount { get => _MatrixColumnCount; set => UpdateField(ref _MatrixColumnCount, value, nameof(MatrixColumnCount)); }
+
+    private Int32? _MatrixColumnCount;
+    /// <summary>
+    ///   Matrix IColumn Justification.
+    /// </summary>
+    public HorizontalAlignmentKind? MatrixColumnJustification { get; set; }
 }

@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CheckBoxSymbolType : ModelElement<DXO10W.CheckBoxSymbolType>
 {
-  /// <summary>
-  /// Font used to display the checkbox symbol.
-  /// </summary>
-  public string? Font { get; set; }
-  /// <summary>
-  /// Symbol value (as a hexadecimal character) used for the checkbox.
-  /// </summary>
-  public HexChar? Val { get; set; }
+    /// <summary>
+    /// Font used to display the checkbox symbol.
+    /// </summary>
+    public string? Font { get => _Font; set => UpdateField(ref _Font, value, nameof(Font)); }
+
+    private string? _Font;
+    /// <summary>
+    /// Symbol value (as a hexadecimal character) used for the checkbox.
+    /// </summary>
+    public HexChar? Val { get; set; }
 }

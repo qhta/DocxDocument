@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Extent : ModelElement<DXDW.Extent>
 {
-  /// <summary>
-  ///   Width of the extent in EMUs.
-  /// </summary>
-  public EMU? Cx { get; set; }
-  /// <summary>
-  ///   Height of the extent in EMUs.
-  /// </summary>
-  public EMU? Cy { get; set; }
+    /// <summary>
+    ///   Width of the extent in EMUs.
+    /// </summary>
+    public EMU? Cx { get => _Cx; set => UpdateField(ref _Cx, value, nameof(Cx)); }
+
+    private EMU? _Cx;
+    /// <summary>
+    ///   Height of the extent in EMUs.
+    /// </summary>
+    public EMU? Cy { get; set; }
 }

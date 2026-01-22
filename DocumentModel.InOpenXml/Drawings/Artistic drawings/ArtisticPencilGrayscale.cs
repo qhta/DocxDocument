@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ArtisticPencilGrayscale : ModelElement<DXO10D.ArtisticPencilGrayscale>
 {
-  /// <summary>
-  /// Transparency level of the pencil grayscale effect.
-  /// </summary>
-  public Int32? Transparency { get; set; }
-  /// <summary>
-  /// Size of the brush used in the pencil grayscale effect, influencing the thickness and coverage of the strokes.
-  /// </summary>
-  public Int32? BrushSize { get; set; }
+    /// <summary>
+    /// Transparency level of the pencil grayscale effect.
+    /// </summary>
+    public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
+
+    private Int32? _Transparency;
+    /// <summary>
+    /// Size of the brush used in the pencil grayscale effect, influencing the thickness and coverage of the strokes.
+    /// </summary>
+    public Int32? BrushSize { get; set; }
 }

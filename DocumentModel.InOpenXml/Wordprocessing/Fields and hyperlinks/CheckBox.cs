@@ -5,20 +5,22 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class CheckBox : ModelElement<DXW.CheckBox>
 {
-  /// <summary>
-  /// Size of the checkbox form field, specified as a string value (e.g., in points or percent).
-  /// </summary>
-  public string? FormFieldSize { get; set; }
-  /// <summary>
-  /// Indicates whether the checkbox form field should be automatically sized.
-  /// </summary>
-  public bool? AutomaticallySizeFormField { get; set; }
-  /// <summary>
-  /// Default state of the checkbox form field when the form is loaded (checked or unchecked).
-  /// </summary>
-  public bool? DefaultCheckBoxFormFieldState { get; set; }
-  /// <summary>
-  /// Indicates whether the checkbox is currently checked.
-  /// </summary>
-  public bool? Checked { get; set; }
+    /// <summary>
+    /// Size of the checkbox form field, specified as a string value (e.g., in points or percent).
+    /// </summary>
+    public string? FormFieldSize { get => _FormFieldSize; set => UpdateField(ref _FormFieldSize, value, nameof(FormFieldSize)); }
+
+    private string? _FormFieldSize;
+    /// <summary>
+    /// Indicates whether the checkbox form field should be automatically sized.
+    /// </summary>
+    public bool? AutomaticallySizeFormField { get; set; }
+    /// <summary>
+    /// Default state of the checkbox form field when the form is loaded (checked or unchecked).
+    /// </summary>
+    public bool? DefaultCheckBoxFormFieldState { get; set; }
+    /// <summary>
+    /// Indicates whether the checkbox is currently checked.
+    /// </summary>
+    public bool? Checked { get; set; }
 }

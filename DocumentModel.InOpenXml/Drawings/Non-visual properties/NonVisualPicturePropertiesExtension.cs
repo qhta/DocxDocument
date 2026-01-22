@@ -4,9 +4,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class NonVisualPicturePropertiesExtension : ModelElement<DXD.NonVisualPicturePropertiesExtension>, IExtension
 {
-  public CameraTool? CameraTool { get; set; }
-  public SignatureLine? SignatureLine { get; set; }
-  public ObjectProperties? ObjectProperties { get; set; }
-  public LiveFeedProperties? LiveFeedProperties { get; set; }
-  public string? UriString { get; set; }
+    public CameraTool? CameraTool { get => _CameraTool; set => UpdateField(ref _CameraTool, value, nameof(CameraTool)); }
+
+    private CameraTool? _CameraTool;
+    public SignatureLine? SignatureLine { get; set; }
+    public ObjectProperties? ObjectProperties { get; set; }
+    public LiveFeedProperties? LiveFeedProperties { get; set; }
+    public string? UriString { get; set; }
 }

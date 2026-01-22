@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class ExtrusionColor : ModelElement<DXO10W.ExtrusionColor>
 {
-  /// <summary>
-  /// The RGB color value used for the extrusion, allowing precise color specification.
-  /// </summary>
-  public RgbColor? RgbColor { get; set; }
-  /// <summary>
-  /// The scheme color used for the extrusion, enabling the use of document-defined color schemes.
-  /// </summary>
-  public SchemeColor? SchemeColor { get; set; }
+    /// <summary>
+    /// The RGB color value used for the extrusion, allowing precise color specification.
+    /// </summary>
+    public RgbColor? RgbColor { get => _RgbColor; set => UpdateField(ref _RgbColor, value, nameof(RgbColor)); }
+
+    private RgbColor? _RgbColor;
+    /// <summary>
+    /// The scheme color used for the extrusion, enabling the use of document-defined color schemes.
+    /// </summary>
+    public SchemeColor? SchemeColor { get; set; }
 }

@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class AltChunk : ModelElement<DXW.AltChunk>, IStoryContent, ITableCellContent, ICommentContent
 {
-  /// <summary>
-  /// Relationship ID to the part containing the external content to be imported.
-  /// </summary>
-  public string? Id { get; set; }
-  /// <summary>
-  /// Properties for external content import, specifying additional import options and settings.
-  /// </summary>
-  public AltChunkProperties? AltChunkProperties { get; set; }
+    /// <summary>
+    /// Relationship ID to the part containing the external content to be imported.
+    /// </summary>
+    public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+
+    private string? _Id;
+    /// <summary>
+    /// Properties for external content import, specifying additional import options and settings.
+    /// </summary>
+    public AltChunkProperties? AltChunkProperties { get; set; }
 }

@@ -5,16 +5,18 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class SphereCoordinates : ModelElement
 {
-  /// <summary>
-  /// The latitude value, specifying the north-south position in the spherical coordinate system.
-  /// </summary>
-  public Int32? Latitude { get; set; }
-  /// <summary>
-  /// The longitude value, specifying the east-west position in the spherical coordinate system.
-  /// </summary>
-  public Int32? Longitude { get; set; }
-  /// <summary>
-  /// The revolution value, specifying the rotation around the sphere's axis.
-  /// </summary>
-  public Int32? Revolution { get; set; }
+    /// <summary>
+    /// The latitude value, specifying the north-south position in the spherical coordinate system.
+    /// </summary>
+    public Int32? Latitude { get => _Latitude; set => UpdateField(ref _Latitude, value, nameof(Latitude)); }
+
+    private Int32? _Latitude;
+    /// <summary>
+    /// The longitude value, specifying the east-west position in the spherical coordinate system.
+    /// </summary>
+    public Int32? Longitude { get; set; }
+    /// <summary>
+    /// The revolution value, specifying the rotation around the sphere's axis.
+    /// </summary>
+    public Int32? Revolution { get; set; }
 }

@@ -6,8 +6,10 @@ namespace DocumentModel.VariantTypes;
 /// </summary>
 public partial class VTVStreamData : ModelElement
 {
-  /// <summary>
-  ///   VSTREAM Version Attribute
-  /// </summary>
-  public string? Version { get; set; }
+    /// <summary>
+    ///   VSTREAM Version Attribute
+    /// </summary>
+    public string? Version { get => _Version; set => UpdateField(ref _Version, value, nameof(Version)); }
+
+    private string? _Version;
 }

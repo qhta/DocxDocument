@@ -5,40 +5,42 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DivElement : ModelElement<DXW.Div>
 {
-  /// <summary>
-  /// Data ID for the HTML div element.
-  /// </summary>
-  public Int32? Id { get; set; }
-  /// <summary>
-  /// Indicates whether the div represents an HTML blockquote element.
-  /// </summary>
-  public bool? IsBlockQuote { get; set; }
-  /// <summary>
-  /// Indicates whether the div represents an HTML body element.
-  /// </summary>
-  public bool? IsBody { get; set; }
-  /// <summary>
-  /// Left margin for the HTML div element.
-  /// </summary>
-  public Twips? LeftMargin { get; set; }
-  /// <summary>
-  /// Right margin for the HTML div element.
-  /// </summary>
-  public Twips? RightMargin { get; set; }
-  /// <summary>
-  /// Top margin for the HTML div element.
-  /// </summary>
-  public Twips? TopMargin { get; set; }
-  /// <summary>
-  /// Bottom margin for the HTML div element.
-  /// </summary>
-  public Twips? BottomMargin { get; set; }
-  /// <summary>
-  /// Set of borders for the HTML div element.
-  /// </summary>
-  public DivBorders? DivBorder { get; set; }
-  /// <summary>
-  /// Collection of child div elements nested within this div.
-  /// </summary>
-  public DivCollection? Children { get; set; }
+    /// <summary>
+    /// Data ID for the HTML div element.
+    /// </summary>
+    public Int32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+
+    private Int32? _Id;
+    /// <summary>
+    /// Indicates whether the div represents an HTML blockquote element.
+    /// </summary>
+    public bool? IsBlockQuote { get; set; }
+    /// <summary>
+    /// Indicates whether the div represents an HTML body element.
+    /// </summary>
+    public bool? IsBody { get; set; }
+    /// <summary>
+    /// Left margin for the HTML div element.
+    /// </summary>
+    public Twips? LeftMargin { get; set; }
+    /// <summary>
+    /// Right margin for the HTML div element.
+    /// </summary>
+    public Twips? RightMargin { get; set; }
+    /// <summary>
+    /// Top margin for the HTML div element.
+    /// </summary>
+    public Twips? TopMargin { get; set; }
+    /// <summary>
+    /// Bottom margin for the HTML div element.
+    /// </summary>
+    public Twips? BottomMargin { get; set; }
+    /// <summary>
+    /// Set of borders for the HTML div element.
+    /// </summary>
+    public DivBorders? DivBorder { get; set; }
+    /// <summary>
+    /// Collection of child div elements nested within this div.
+    /// </summary>
+    public DivCollection? Children { get; set; }
 }

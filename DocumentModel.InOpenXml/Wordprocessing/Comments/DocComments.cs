@@ -5,20 +5,22 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocComments : ModelElement
 {
-  /// <summary>
-  /// Collection of comments, providing access to standard comment annotations in the document.
-  /// </summary>
-  public Comments? Comments { get; set; }
-  /// <summary>
-  /// Collection of extended comments, providing access to additional metadata and behaviors for comments.
-  /// </summary>
-  public CommentsEx? CommentsEx { get; set; }
-  /// <summary>
-  /// Collection of comment identifiers, enabling persistent and stable references to comments for tracking and synchronization.
-  /// </summary>
-  public CommentsIds? CommentsIds { get; set; }
-  /// <summary>
-  /// Collection of extensible comments, supporting advanced extensibility and custom metadata for comments.
-  /// </summary>
-  public CommentsExtensible? CommentsExtensible { get; set; }
+    /// <summary>
+    /// Collection of comments, providing access to standard comment annotations in the document.
+    /// </summary>
+    public Comments? Comments { get => _Comments; set => UpdateField(ref _Comments, value, nameof(Comments)); }
+
+    private Comments? _Comments;
+    /// <summary>
+    /// Collection of extended comments, providing access to additional metadata and behaviors for comments.
+    /// </summary>
+    public CommentsEx? CommentsEx { get; set; }
+    /// <summary>
+    /// Collection of comment identifiers, enabling persistent and stable references to comments for tracking and synchronization.
+    /// </summary>
+    public CommentsIds? CommentsIds { get; set; }
+    /// <summary>
+    /// Collection of extensible comments, supporting advanced extensibility and custom metadata for comments.
+    /// </summary>
+    public CommentsExtensible? CommentsExtensible { get; set; }
 }

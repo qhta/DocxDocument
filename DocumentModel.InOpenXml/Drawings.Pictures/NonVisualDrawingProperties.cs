@@ -4,36 +4,38 @@ namespace DocumentModel.Drawings.Pictures;
 /// </summary>
 public partial class NonVisualDrawingProperties : ModelElement<DXDP.NonVisualDrawingProperties>
 {
-  /// <summary>
-  ///   Application defined unique identifier.
-  /// </summary>
-  public UInt32? Id { get; set; }
-  /// <summary>
-  ///   Name compatible with Object Model (non-unique).
-  /// </summary>
-  public string? Name { get; set; }
-  /// <summary>
-  ///   Description of the drawing element.
-  /// </summary>
-  public string? Description { get; set; }
-  /// <summary>
-  ///   Flag determining to show or hide this element.
-  /// </summary>
-  public bool? Hidden { get; set; }
-  /// <summary>
-  ///   Title
-  /// </summary>
-  public string? Title { get; set; }
-  /// <summary>
-  ///   IHyperlink associated with clicking or selecting the element..
-  /// </summary>
-  public HyperlinkOnClick? HyperlinkOnClick { get; set; }
-  /// <summary>
-  ///   IHyperlink associated with hovering over the element..
-  /// </summary>
-  public HyperlinkOnHover? HyperlinkOnHover { get; set; }
-  /// <summary>
-  ///   Future extension.
-  /// </summary>
-  public NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get; set; }
+    /// <summary>
+    ///   Application defined unique identifier.
+    /// </summary>
+    public UInt32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+
+    private UInt32? _Id;
+    /// <summary>
+    ///   Name compatible with Object Model (non-unique).
+    /// </summary>
+    public string? Name { get; set; }
+    /// <summary>
+    ///   Description of the drawing element.
+    /// </summary>
+    public string? Description { get; set; }
+    /// <summary>
+    ///   Flag determining to show or hide this element.
+    /// </summary>
+    public bool? Hidden { get; set; }
+    /// <summary>
+    ///   Title
+    /// </summary>
+    public string? Title { get; set; }
+    /// <summary>
+    ///   IHyperlink associated with clicking or selecting the element..
+    /// </summary>
+    public HyperlinkOnClick? HyperlinkOnClick { get; set; }
+    /// <summary>
+    ///   IHyperlink associated with hovering over the element..
+    /// </summary>
+    public HyperlinkOnHover? HyperlinkOnHover { get; set; }
+    /// <summary>
+    ///   Future extension.
+    /// </summary>
+    public NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get; set; }
 }

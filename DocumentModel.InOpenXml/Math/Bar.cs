@@ -4,12 +4,14 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class Bar : ModelElement<DXM.Bar>, ICommonMathContent
 {
-  /// <summary>
-  ///   Specifies formatting properties of bar function.
-  /// </summary>
-  public BarProperties? BarProperties { get; set; }
-  /// <summary>
-  ///   Specifies argument of bar function.
-  /// </summary>
-  public Argument? Argument { get; set; }
+    /// <summary>
+    ///   Specifies formatting properties of bar function.
+    /// </summary>
+    public BarProperties? BarProperties { get => _BarProperties; set => UpdateField(ref _BarProperties, value, nameof(BarProperties)); }
+
+    private BarProperties? _BarProperties;
+    /// <summary>
+    ///   Specifies argument of bar function.
+    /// </summary>
+    public Argument? Argument { get; set; }
 }

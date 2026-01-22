@@ -5,16 +5,18 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtContentCheckBox : ModelElement<DXO10W.SdtContentCheckBox>
 {
-  /// <summary>
-  /// Indicates whether the checkbox is checked.
-  /// </summary>
-  public OnOffKind? Checked { get; set; }
-  /// <summary>
-  /// Symbol used to represent the checked state of the checkbox.
-  /// </summary>
-  public CheckBoxSymbolType? CheckedState { get; set; }
-  /// <summary>
-  /// Symbol used to represent the unchecked state of the checkbox.
-  /// </summary>
-  public CheckBoxSymbolType? UncheckedState { get; set; }
+    /// <summary>
+    /// Indicates whether the checkbox is checked.
+    /// </summary>
+    public OnOffKind? Checked { get => _Checked; set => UpdateField(ref _Checked, value, nameof(Checked)); }
+
+    private OnOffKind? _Checked;
+    /// <summary>
+    /// Symbol used to represent the checked state of the checkbox.
+    /// </summary>
+    public CheckBoxSymbolType? CheckedState { get; set; }
+    /// <summary>
+    /// Symbol used to represent the unchecked state of the checkbox.
+    /// </summary>
+    public CheckBoxSymbolType? UncheckedState { get; set; }
 }

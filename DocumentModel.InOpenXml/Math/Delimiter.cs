@@ -6,8 +6,10 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class Delimiter : ModelElement<DXM.Delimiter> //, IElementCollection<Argument>, ICommonMathContent
 {
-  /// <summary>
-  ///   Specifies Delimiter object properties.
-  /// </summary>
-  public DelimiterProperties? DelimiterProperties { get; set; }
+    /// <summary>
+    ///   Specifies Delimiter object properties.
+    /// </summary>
+    public DelimiterProperties? DelimiterProperties { get => _DelimiterProperties; set => UpdateField(ref _DelimiterProperties, value, nameof(DelimiterProperties)); }
+
+    private DelimiterProperties? _DelimiterProperties;
 }

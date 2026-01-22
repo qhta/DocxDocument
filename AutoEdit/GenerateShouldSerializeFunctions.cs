@@ -29,17 +29,7 @@ internal class GenerateShouldSerializeFunctions
     if (classNode == null)
       return;
     var className = classNode.Identifier.Text;
-    //var baseClassNode = classNode.BaseList?.Types.FirstOrDefault();
-    //if (baseClassNode?.Type is GenericNameSyntax genericName)
-    //{
-    //  // It's a generic class
-    //  var genericTypeName = genericName.Identifier.Text; // e.g., "ModelElement"
-    //  var typeArguments = genericName.TypeArgumentList.Arguments; // list of type arguments
-
-    //  // You can process typeArguments as needed
-    //}
-
-
+    
 
     var properties = classNode.Members.OfType<PropertyDeclarationSyntax>()
       .Where(p =>

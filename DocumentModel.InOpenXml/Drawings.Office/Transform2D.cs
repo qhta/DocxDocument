@@ -4,24 +4,26 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class Transform2D : ModelElement<DXOD.Transform2D>
 {
-  /// <summary>
-  ///   Rotation
-  /// </summary>
-  public Int32? Rotation { get; set; }
-  /// <summary>
-  ///   Horizontal Flip
-  /// </summary>
-  public bool? HorizontalFlip { get; set; }
-  /// <summary>
-  ///   Vertical Flip
-  /// </summary>
-  public bool? VerticalFlip { get; set; }
-  /// <summary>
-  ///   Offset.
-  /// </summary>
-  public Point2DType? Offset { get; set; }
-  /// <summary>
-  ///   Extents.
-  /// </summary>
-  public PositiveSize2DType? Extents { get; set; }
+    /// <summary>
+    ///   Rotation
+    /// </summary>
+    public Int32? Rotation { get => _Rotation; set => UpdateField(ref _Rotation, value, nameof(Rotation)); }
+
+    private Int32? _Rotation;
+    /// <summary>
+    ///   Horizontal Flip
+    /// </summary>
+    public bool? HorizontalFlip { get; set; }
+    /// <summary>
+    ///   Vertical Flip
+    /// </summary>
+    public bool? VerticalFlip { get; set; }
+    /// <summary>
+    ///   Offset.
+    /// </summary>
+    public Point2DType? Offset { get; set; }
+    /// <summary>
+    ///   Extents.
+    /// </summary>
+    public PositiveSize2DType? Extents { get; set; }
 }

@@ -5,16 +5,18 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SpacingBeforeOrAfter : ModelElement //<DXW.SpacingBeforeOrAfter>
 {
-  /// <summary>
-  /// Spacing specified in twentieths of a point.
-  /// </summary>
-  public Twips? Val { get; set; }
-  /// <summary>
-  /// Spacing between lines, specified in line units.
-  /// </summary>
-  public Int32? Lines { get; set; }
-  /// <summary>
-  /// Indicates whether spacing is determined automatically.
-  /// </summary>
-  public bool? AutoSpacing { get; set; }
+    /// <summary>
+    /// Spacing specified in twentieths of a point.
+    /// </summary>
+    public Twips? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+
+    private Twips? _Val;
+    /// <summary>
+    /// Spacing between lines, specified in line units.
+    /// </summary>
+    public Int32? Lines { get; set; }
+    /// <summary>
+    /// Indicates whether spacing is determined automatically.
+    /// </summary>
+    public bool? AutoSpacing { get; set; }
 }

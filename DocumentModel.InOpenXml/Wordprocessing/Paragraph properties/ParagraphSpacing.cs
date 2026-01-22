@@ -5,16 +5,18 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class ParagraphSpacing : ModelElement //<DXW.ParagraphSpacing>
 {
-  /// <summary>
-  /// Spacing above the paragraph.
-  /// </summary>
-  public SpacingBeforeOrAfter? Before { get; set; }
-  /// <summary>
-  /// Spacing below the paragraph.
-  /// </summary>
-  public SpacingBeforeOrAfter? After { get; set; }
-  /// <summary>
-  /// Spacing between lines within the paragraph.
-  /// </summary>
-  public SpacingBetween? Between { get; set; }
+    /// <summary>
+    /// Spacing above the paragraph.
+    /// </summary>
+    public SpacingBeforeOrAfter? Before { get => _Before; set => UpdateField(ref _Before, value, nameof(Before)); }
+
+    private SpacingBeforeOrAfter? _Before;
+    /// <summary>
+    /// Spacing below the paragraph.
+    /// </summary>
+    public SpacingBeforeOrAfter? After { get; set; }
+    /// <summary>
+    /// Spacing between lines within the paragraph.
+    /// </summary>
+    public SpacingBetween? Between { get; set; }
 }

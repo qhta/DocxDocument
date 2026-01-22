@@ -4,16 +4,18 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ObjectProperties : ModelElement<DXO13D.ObjectProperties>
 {
-  /// <summary>
-  ///   Identifier for the embedded object.
-  /// </summary>
-  public string? Id { get; set; }
-  /// <summary>
-  ///   Indicates whether the object is an ActiveX control.
-  /// </summary>
-  public bool? IsActiveX { get; set; }
-  /// <summary>
-  ///   Type of link associated with the object.
-  /// </summary>
-  public string? LinkType { get; set; }
+    /// <summary>
+    ///   Identifier for the embedded object.
+    /// </summary>
+    public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+
+    private string? _Id;
+    /// <summary>
+    ///   Indicates whether the object is an ActiveX control.
+    /// </summary>
+    public bool? IsActiveX { get; set; }
+    /// <summary>
+    ///   Type of link associated with the object.
+    /// </summary>
+    public string? LinkType { get; set; }
 }

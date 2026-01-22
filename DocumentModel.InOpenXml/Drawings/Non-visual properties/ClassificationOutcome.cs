@@ -4,9 +4,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ClassificationOutcome : ModelElement<DXO21DDC.ClassificationOutcome>, IExtendableElement
 {
-  /// <summary>
-  /// Classification outcome type.
-  /// </summary>
-  public ClassificationOutcomeKind? ClassificationOutcomeType { get; set; }
-  public IExtensionList? ExtensionList { get; set; }
+    /// <summary>
+    /// Classification outcome type.
+    /// </summary>
+    public ClassificationOutcomeKind? ClassificationOutcomeType { get => _ClassificationOutcomeType; set => UpdateField(ref _ClassificationOutcomeType, value, nameof(ClassificationOutcomeType)); }
+
+    private ClassificationOutcomeKind? _ClassificationOutcomeType;
+    public IExtensionList? ExtensionList { get; set; }
 }

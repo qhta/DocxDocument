@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class PathShadeProperties : ModelElement<DXO10W.PathShadeProperties>
 {
-  /// <summary>
-  /// The type of path used for the gradient shade, specifying the shape and direction of the gradient fill.
-  /// </summary>
-  public PathShadeKind? Path { get; set; }
-  /// <summary>
-  /// The rectangle area to which the gradient fill is applied, allowing precise definition of the fill boundaries.
-  /// </summary>
-  public FillToRectangle? FillToRectangle { get; set; }
+    /// <summary>
+    /// The type of path used for the gradient shade, specifying the shape and direction of the gradient fill.
+    /// </summary>
+    public PathShadeKind? Path { get => _Path; set => UpdateField(ref _Path, value, nameof(Path)); }
+
+    private PathShadeKind? _Path;
+    /// <summary>
+    /// The rectangle area to which the gradient fill is applied, allowing precise definition of the fill boundaries.
+    /// </summary>
+    public FillToRectangle? FillToRectangle { get; set; }
 }

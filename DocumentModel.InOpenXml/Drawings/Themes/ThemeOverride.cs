@@ -4,16 +4,18 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ThemeOverride : ModelElement
 {
-  /// <summary>
-  ///   Color scheme used for the theme override.
-  /// </summary>
-  public ColorScheme? ColorScheme { get; set; }
-  /// <summary>
-  ///   Font scheme used for the theme override.
-  /// </summary>
-  public FontScheme? FontScheme { get; set; }
-  /// <summary>
-  ///   Format scheme used for the theme override.
-  /// </summary>
-  public FormatScheme? FormatScheme { get; set; }
+    /// <summary>
+    ///   Color scheme used for the theme override.
+    /// </summary>
+    public ColorScheme? ColorScheme { get => _ColorScheme; set => UpdateField(ref _ColorScheme, value, nameof(ColorScheme)); }
+
+    private ColorScheme? _ColorScheme;
+    /// <summary>
+    ///   Font scheme used for the theme override.
+    /// </summary>
+    public FontScheme? FontScheme { get; set; }
+    /// <summary>
+    ///   Format scheme used for the theme override.
+    /// </summary>
+    public FormatScheme? FormatScheme { get; set; }
 }

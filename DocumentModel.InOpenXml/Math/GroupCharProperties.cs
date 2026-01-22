@@ -4,20 +4,22 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class GroupCharProperties : ModelElement<DXM.GroupCharProperties>
 {
-  /// <summary>
-  ///   Group Character (Grouping Character).
-  /// </summary>
-  public string? AccentChar { get; set; }
-  /// <summary>
-  ///   Position (Group Character).
-  /// </summary>
-  public VerticalJustificationKind? Position { get; set; }
-  /// <summary>
-  ///   Vertical Justification.
-  /// </summary>
-  public VerticalJustificationKind? VerticalJustification { get; set; }
-  /// <summary>
-  ///   Specifies formatting of group-char object argument.
-  /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+    /// <summary>
+    ///   Group Character (Grouping Character).
+    /// </summary>
+    public string? AccentChar { get => _AccentChar; set => UpdateField(ref _AccentChar, value, nameof(AccentChar)); }
+
+    private string? _AccentChar;
+    /// <summary>
+    ///   Position (Group Character).
+    /// </summary>
+    public VerticalJustificationKind? Position { get; set; }
+    /// <summary>
+    ///   Vertical Justification.
+    /// </summary>
+    public VerticalJustificationKind? VerticalJustification { get; set; }
+    /// <summary>
+    ///   Specifies formatting of group-char object argument.
+    /// </summary>
+    public ControlProperties? ControlProperties { get; set; }
 }

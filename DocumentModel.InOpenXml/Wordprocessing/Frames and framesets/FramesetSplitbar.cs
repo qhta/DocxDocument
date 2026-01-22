@@ -5,20 +5,22 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class FramesetSplitbar : ModelElement<DXW.FramesetSplitbar>
 {
-  /// <summary>
-  /// Width of the frameset splitter, specified in twips.
-  /// </summary>
-  public Twips? Width { get; set; }
-  /// <summary>
-  /// Color of the frameset splitter, specified as an abstract color value.
-  /// </summary>
-  public IColor? Color { get; set; }
-  /// <summary>
-  /// Indicates whether frameset splitters should not be displayed (no border).
-  /// </summary>
-  public bool? NoBorder { get; set; }
-  /// <summary>
-  /// Indicates whether the frameset splitter uses a flat border style.
-  /// </summary>
-  public bool? FlatBorders { get; set; }
+    /// <summary>
+    /// Width of the frameset splitter, specified in twips.
+    /// </summary>
+    public Twips? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+
+    private Twips? _Width;
+    /// <summary>
+    /// Color of the frameset splitter, specified as an abstract color value.
+    /// </summary>
+    public IColor? Color { get; set; }
+    /// <summary>
+    /// Indicates whether frameset splitters should not be displayed (no border).
+    /// </summary>
+    public bool? NoBorder { get; set; }
+    /// <summary>
+    /// Indicates whether the frameset splitter uses a flat border style.
+    /// </summary>
+    public bool? FlatBorders { get; set; }
 }

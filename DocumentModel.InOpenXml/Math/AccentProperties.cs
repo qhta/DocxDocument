@@ -5,12 +5,14 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class AccentProperties : ModelElement<DXM.AccentProperties>
 {
-  /// <summary>
-  ///   Specifies visible accent character.
-  /// </summary>
-  public string? AccentChar { get; set; }
-  /// <summary>
-  ///   Specifies formatting of accent character.
-  /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+    /// <summary>
+    ///   Specifies visible accent character.
+    /// </summary>
+    public string? AccentChar { get => _AccentChar; set => UpdateField(ref _AccentChar, value, nameof(AccentChar)); }
+
+    private string? _AccentChar;
+    /// <summary>
+    ///   Specifies formatting of accent character.
+    /// </summary>
+    public ControlProperties? ControlProperties { get; set; }
 }

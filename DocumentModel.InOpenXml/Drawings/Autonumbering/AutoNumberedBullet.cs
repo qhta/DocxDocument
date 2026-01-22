@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AutoNumberedBullet : ModelElement<DXD.AutoNumberedBullet>
 {
-  /// <summary>
-  /// Bullet autonumbering type.
-  /// </summary>
-  public TextAutoNumberSchemeKind? Type { get; set; }
-  /// <summary>
-  /// Starting value for numbering.
-  /// </summary>
-  public Int32? StartAt { get; set; }
+    /// <summary>
+    /// Bullet autonumbering type.
+    /// </summary>
+    public TextAutoNumberSchemeKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+
+    private TextAutoNumberSchemeKind? _Type;
+    /// <summary>
+    /// Starting value for numbering.
+    /// </summary>
+    public Int32? StartAt { get; set; }
 }

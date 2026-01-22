@@ -4,9 +4,11 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class RegroupTable : ModelElement<DXVO.RegroupTable>
 {
-  /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
-  public Entries? Entries { get; set; }
+    /// <summary>
+    ///   VML Extension Handling Behavior
+    /// </summary>
+    public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
+
+    private ExtensionHandlingBehaviorKind? _Extension;
+    public Entries? Entries { get; set; }
 }

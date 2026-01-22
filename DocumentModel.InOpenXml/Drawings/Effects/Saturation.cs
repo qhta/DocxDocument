@@ -4,8 +4,10 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Saturation : ModelElement
 {
-  /// <summary>
-  ///   Amount of saturation adjustment.
-  /// </summary>
-  public Int32? SaturationAmount { get; set; }
+    /// <summary>
+    ///   Amount of saturation adjustment.
+    /// </summary>
+    public Int32? SaturationAmount { get => _SaturationAmount; set => UpdateField(ref _SaturationAmount, value, nameof(SaturationAmount)); }
+
+    private Int32? _SaturationAmount;
 }

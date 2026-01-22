@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class PresenceInfo : ModelElement<DXO13W.PresenceInfo>
 {
-  /// <summary>
-  /// Identifier for the presence provider, specifying the source of presence information.
-  /// </summary>
-  public string? ProviderId { get; set; }
-  /// <summary>
-  /// Identifier for the user whose presence is being tracked.
-  /// </summary>
-  public string? UserId { get; set; }
+    /// <summary>
+    /// Identifier for the presence provider, specifying the source of presence information.
+    /// </summary>
+    public string? ProviderId { get => _ProviderId; set => UpdateField(ref _ProviderId, value, nameof(ProviderId)); }
+
+    private string? _ProviderId;
+    /// <summary>
+    /// Identifier for the user whose presence is being tracked.
+    /// </summary>
+    public string? UserId { get; set; }
 }

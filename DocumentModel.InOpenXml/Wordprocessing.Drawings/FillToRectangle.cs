@@ -5,20 +5,22 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class FillToRectangle : ModelElement<DXD.FillToRectangle>
 {
-  /// <summary>
-  /// The left boundary of the fill rectangle, representing the distance from the left edge of the drawing element.
-  /// </summary>
-  public Int32? Left { get; set; }
-  /// <summary>
-  /// The top boundary of the fill rectangle, representing the distance from the top edge of the drawing element.
-  /// </summary>
-  public Int32? Top { get; set; }
-  /// <summary>
-  /// The right boundary of the fill rectangle, representing the distance from the right edge of the drawing element.
-  /// </summary>
-  public Int32? Right { get; set; }
-  /// <summary>
-  /// The bottom boundary of the fill rectangle, representing the distance from the bottom edge of the drawing element.
-  /// </summary>
-  public Int32? Bottom { get; set; }
+    /// <summary>
+    /// The left boundary of the fill rectangle, representing the distance from the left edge of the drawing element.
+    /// </summary>
+    public Int32? Left { get => _Left; set => UpdateField(ref _Left, value, nameof(Left)); }
+
+    private Int32? _Left;
+    /// <summary>
+    /// The top boundary of the fill rectangle, representing the distance from the top edge of the drawing element.
+    /// </summary>
+    public Int32? Top { get; set; }
+    /// <summary>
+    /// The right boundary of the fill rectangle, representing the distance from the right edge of the drawing element.
+    /// </summary>
+    public Int32? Right { get; set; }
+    /// <summary>
+    /// The bottom boundary of the fill rectangle, representing the distance from the bottom edge of the drawing element.
+    /// </summary>
+    public Int32? Bottom { get; set; }
 }

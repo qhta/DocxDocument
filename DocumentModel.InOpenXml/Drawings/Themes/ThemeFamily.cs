@@ -7,20 +7,22 @@ namespace DocumentModel;
 /// </remarks>
 public partial class ThemeFamily : ModelElement
 {
-  /// <summary>
-  /// Name of the theme family.
-  /// </summary>
-  public string? Name { get; set; }
-  /// <summary>
-  /// Unique identifier for the theme family.
-  /// </summary>
-  public string? Id { get; set; }
-  /// <summary>
-  /// Version identifier for the theme family.
-  /// </summary>
-  public string? Vid { get; set; }
-  /// <summary>
-  /// OfficeArt extension metadata for the theme family.
-  /// </summary>
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    /// <summary>
+    /// Name of the theme family.
+    /// </summary>
+    public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+
+    private string? _Name;
+    /// <summary>
+    /// Unique identifier for the theme family.
+    /// </summary>
+    public string? Id { get; set; }
+    /// <summary>
+    /// Version identifier for the theme family.
+    /// </summary>
+    public string? Vid { get; set; }
+    /// <summary>
+    /// OfficeArt extension metadata for the theme family.
+    /// </summary>
+    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

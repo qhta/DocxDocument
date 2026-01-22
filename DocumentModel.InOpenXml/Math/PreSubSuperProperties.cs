@@ -5,8 +5,10 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class PreSubSuperProperties : ModelElement
 {
-  /// <summary>
-  ///   Specifies formatting of pre-sub-superscript object argument.
-  /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+    /// <summary>
+    ///   Specifies formatting of pre-sub-superscript object argument.
+    /// </summary>
+    public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
+    private ControlProperties? _ControlProperties;
 }

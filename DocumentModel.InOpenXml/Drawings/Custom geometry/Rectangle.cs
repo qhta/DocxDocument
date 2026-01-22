@@ -10,20 +10,22 @@ namespace DocumentModel.Drawings;
 /// </remarks>
 public partial class Rectangle : ModelElement<DXD.Rectangle>
 {
-  /// <summary>
-  ///   Left position of the rectangle.
-  /// </summary>
-  public string? Left { get; set; }
-  /// <summary>
-  ///   Top position of the rectangle.
-  /// </summary>
-  public string? Top { get; set; }
-  /// <summary>
-  ///   Right position of the rectangle.
-  /// </summary>
-  public string? Right { get; set; }
-  /// <summary>
-  ///   Bottom position of the rectangle.
-  /// </summary>
-  public string? Bottom { get; set; }
+    /// <summary>
+    ///   Left position of the rectangle.
+    /// </summary>
+    public string? Left { get => _Left; set => UpdateField(ref _Left, value, nameof(Left)); }
+
+    private string? _Left;
+    /// <summary>
+    ///   Top position of the rectangle.
+    /// </summary>
+    public string? Top { get; set; }
+    /// <summary>
+    ///   Right position of the rectangle.
+    /// </summary>
+    public string? Right { get; set; }
+    /// <summary>
+    ///   Bottom position of the rectangle.
+    /// </summary>
+    public string? Bottom { get; set; }
 }

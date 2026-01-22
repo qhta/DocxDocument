@@ -4,12 +4,14 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class ShapeIdMap : ModelElement<DXVO.ShapeIdMap>
 {
-  /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
-  /// <summary>
-  ///   Shape IDs
-  /// </summary>
-  public string? Data { get; set; }
+    /// <summary>
+    ///   VML Extension Handling Behavior
+    /// </summary>
+    public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
+
+    private ExtensionHandlingBehaviorKind? _Extension;
+    /// <summary>
+    ///   Shape IDs
+    /// </summary>
+    public string? Data { get; set; }
 }

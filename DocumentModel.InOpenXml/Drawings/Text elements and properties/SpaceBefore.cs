@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class SpaceBefore : ModelElement
 {
-  /// <summary>
-  ///   Space before the paragraph specified as a percentage.
-  /// </summary>
-  public Int32? SpacingPercent { get; set; }
-  /// <summary>
-  ///   Space before the paragraph specified in points.
-  /// </summary>
-  public Int32? SpacingPoints { get; set; }
+    /// <summary>
+    ///   Space before the paragraph specified as a percentage.
+    /// </summary>
+    public Int32? SpacingPercent { get => _SpacingPercent; set => UpdateField(ref _SpacingPercent, value, nameof(SpacingPercent)); }
+
+    private Int32? _SpacingPercent;
+    /// <summary>
+    ///   Space before the paragraph specified in points.
+    /// </summary>
+    public Int32? SpacingPoints { get; set; }
 }

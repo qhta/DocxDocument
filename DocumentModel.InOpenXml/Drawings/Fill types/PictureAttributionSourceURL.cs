@@ -4,8 +4,10 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class PictureAttributionSourceURL : ModelElement<DXO19D.PictureAttributionSourceURL>
 {
-  /// <summary>
-  ///   Identifier for the picture attribution source.
-  /// </summary>
-  public string? Id { get; set; }
+    /// <summary>
+    ///   Identifier for the picture attribution source.
+    /// </summary>
+    public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+
+    private string? _Id;
 }

@@ -6,28 +6,30 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class BoxProperties : ModelElement<DXM.BoxProperties>
 {
-  /// <summary>
-  ///   Operator Emulator.
-  /// </summary>
-  public bool? OperatorEmulator { get; set; }
-  /// <summary>
-  ///   No Break.
-  /// </summary>
-  public bool? NoBreak { get; set; }
-  /// <summary>
-  ///   Differential.
-  /// </summary>
-  public bool? Differential { get; set; }
-  /// <summary>
-  ///   Break.
-  /// </summary>
-  public Break? Break { get; set; }
-  /// <summary>
-  ///   Alignment.
-  /// </summary>
-  public bool? Alignment { get; set; }
-  /// <summary>
-  ///   Specifies formatting of box object argument.
-  /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+    /// <summary>
+    ///   Operator Emulator.
+    /// </summary>
+    public bool? OperatorEmulator { get => _OperatorEmulator; set => UpdateField(ref _OperatorEmulator, value, nameof(OperatorEmulator)); }
+
+    private bool? _OperatorEmulator;
+    /// <summary>
+    ///   No Break.
+    /// </summary>
+    public bool? NoBreak { get; set; }
+    /// <summary>
+    ///   Differential.
+    /// </summary>
+    public bool? Differential { get; set; }
+    /// <summary>
+    ///   Break.
+    /// </summary>
+    public Break? Break { get; set; }
+    /// <summary>
+    ///   Alignment.
+    /// </summary>
+    public bool? Alignment { get; set; }
+    /// <summary>
+    ///   Specifies formatting of box object argument.
+    /// </summary>
+    public ControlProperties? ControlProperties { get; set; }
 }

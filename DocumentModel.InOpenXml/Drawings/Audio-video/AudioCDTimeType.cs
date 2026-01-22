@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AudioCDTimeType : ModelElement<DXD.AudioCDTimeType>
 {
-  /// <summary>
-  /// Track number on the audio CD.
-  /// </summary>
-  public Byte? Track { get; set; }
-  /// <summary>
-  /// Time position on the audio CD, typically in milliseconds or frames.
-  /// </summary>
-  public UInt32? Time { get; set; }
+    /// <summary>
+    /// Track number on the audio CD.
+    /// </summary>
+    public Byte? Track { get => _Track; set => UpdateField(ref _Track, value, nameof(Track)); }
+
+    private Byte? _Track;
+    /// <summary>
+    /// Time position on the audio CD, typically in milliseconds or frames.
+    /// </summary>
+    public UInt32? Time { get; set; }
 }

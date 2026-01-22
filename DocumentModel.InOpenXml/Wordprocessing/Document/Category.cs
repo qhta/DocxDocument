@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Category : ModelElement<DXW.Category>
 {
-  /// <summary>
-  /// Name of the category associated with the entry.
-  /// </summary>
-  public string? Name { get; set; }
-  /// <summary>
-  /// Gallery associated with the entry, specifying the type of document part gallery.
-  /// </summary>
-  public DocPartGalleryKind? Gallery { get; set; }
+    /// <summary>
+    /// Name of the category associated with the entry.
+    /// </summary>
+    public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+
+    private string? _Name;
+    /// <summary>
+    /// Gallery associated with the entry, specifying the type of document part gallery.
+    /// </summary>
+    public DocPartGalleryKind? Gallery { get; set; }
 }

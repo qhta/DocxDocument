@@ -4,8 +4,10 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class LineTo : ModelElement<DXD.LineTo>
 {
-  /// <summary>
-  ///   End point of the line.
-  /// </summary>
-  public AdjustPoint2DType? Point { get; set; }
+    /// <summary>
+    ///   End point of the line.
+    /// </summary>
+    public AdjustPoint2DType? Point { get => _Point; set => UpdateField(ref _Point, value, nameof(Point)); }
+
+    private AdjustPoint2DType? _Point;
 }

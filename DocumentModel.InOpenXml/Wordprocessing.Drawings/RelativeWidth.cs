@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class RelativeWidth : ModelElement
 {
-  /// <summary>
-  /// The reference object used to determine the relative horizontal sizing, such as margin, page, or paragraph.
-  /// </summary>
-  public SizeRelativeHorizontallyKind? ObjectId { get; set; }
-  /// <summary>
-  /// The percentage value specifying the width of the drawing element relative to the reference object.
-  /// </summary>
-  public string? PercentageWidth { get; set; }
+    /// <summary>
+    /// The reference object used to determine the relative horizontal sizing, such as margin, page, or paragraph.
+    /// </summary>
+    public SizeRelativeHorizontallyKind? ObjectId { get => _ObjectId; set => UpdateField(ref _ObjectId, value, nameof(ObjectId)); }
+
+    private SizeRelativeHorizontallyKind? _ObjectId;
+    /// <summary>
+    /// The percentage value specifying the width of the drawing element relative to the reference object.
+    /// </summary>
+    public string? PercentageWidth { get; set; }
 }

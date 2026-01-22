@@ -4,8 +4,10 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class GraphicData : ModelElement<DXD.GraphicData>
 {
-  /// <summary>
-  ///   Uniform Resource Identifier for the graphic object.
-  /// </summary>
-  public string? UriString { get; set; }
+    /// <summary>
+    ///   Uniform Resource Identifier for the graphic object.
+    /// </summary>
+    public string? UriString { get => _UriString; set => UpdateField(ref _UriString, value, nameof(UriString)); }
+
+    private string? _UriString;
 }

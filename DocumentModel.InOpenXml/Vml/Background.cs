@@ -4,36 +4,38 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class Background : ModelElement<DXV.Background>
 {
-  /// <summary>
-  ///   Unique Identifier
-  /// </summary>
-  public string? Id { get; set; }
-  /// <summary>
-  ///   Shape Fill Toggle
-  /// </summary>
-  public bool? Filled { get; set; }
-  /// <summary>
-  ///   Fill Color
-  /// </summary>
-  public string? Fillcolor { get; set; }
-  /// <summary>
-  ///   Black-and-White Mode
-  /// </summary>
-  public BlackAndWhiteMode? BlackWhiteMode { get; set; }
-  /// <summary>
-  ///   Pure Black-and-White Mode
-  /// </summary>
-  public BlackAndWhiteMode? PureBlackWhiteMode { get; set; }
-  /// <summary>
-  ///   Normal Black-and-White Mode
-  /// </summary>
-  public BlackAndWhiteMode? NormalBlackWhiteMode { get; set; }
-  /// <summary>
-  ///   Target Screen Size
-  /// </summary>
-  public ScreenSizeKind? TargetScreenSize { get; set; }
-  /// <summary>
-  ///   Fill.
-  /// </summary>
-  public Fill? Fill { get; set; }
+    /// <summary>
+    ///   Unique Identifier
+    /// </summary>
+    public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+
+    private string? _Id;
+    /// <summary>
+    ///   Shape Fill Toggle
+    /// </summary>
+    public bool? Filled { get; set; }
+    /// <summary>
+    ///   Fill Color
+    /// </summary>
+    public string? Fillcolor { get; set; }
+    /// <summary>
+    ///   Black-and-White Mode
+    /// </summary>
+    public BlackAndWhiteMode? BlackWhiteMode { get; set; }
+    /// <summary>
+    ///   Pure Black-and-White Mode
+    /// </summary>
+    public BlackAndWhiteMode? PureBlackWhiteMode { get; set; }
+    /// <summary>
+    ///   Normal Black-and-White Mode
+    /// </summary>
+    public BlackAndWhiteMode? NormalBlackWhiteMode { get; set; }
+    /// <summary>
+    ///   Target Screen Size
+    /// </summary>
+    public ScreenSizeKind? TargetScreenSize { get; set; }
+    /// <summary>
+    ///   Fill.
+    /// </summary>
+    public Fill? Fill { get; set; }
 }

@@ -1,0 +1,128 @@
+﻿namespace AutoEdit;
+
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.IO;
+using System.Linq;
+
+public class AddPrivateFieldsWithUpdate
+{
+  public static void Run(string filePath)
+  {
+    var code = File.ReadAllText(filePath);
+    var tree = CSharpSyntaxTree.ParseText(code);
+    var root = tree.GetRoot();
+
+    var namespaceNode = root.DescendantNodes().OfType<NamespaceDeclarationSyntax>().FirstOrDefault();
+    var namespaceName = namespaceNode?.Name.ToString();
+    if (namespaceName == null)
+    {
+      var fileScopedNamespaceNode = root.DescendantNodes().OfType<FileScopedNamespaceDeclarationSyntax>().FirstOrDefault();
+      namespaceName = fileScopedNamespaceNode?.Name.ToString();
+    }
+
+    var classNode = root.DescendantNodes().OfType<ClassDeclarationSyntax>().FirstOrDefault();
+    if (classNode == null)
+      return;
+
+    var rewriter = new ModelElementPropertyRewriter();
+    var newRoot = rewriter.Visit(root);
+
+    if (rewriter.Changed)
+    {
+      File.WriteAllText(filePath, newRoot.NormalizeWhitespace().ToFullString());
+      Console.WriteLine($"Updated: {filePath}");
+    }
+  }
+}
+
+public class ModelElementPropertyRewriter : CSharpSyntaxRewriter
+{
+  public bool Changed { get; private set; } = false;
+
+  public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
+  {
+    // Check if class inherits from ModelElement (with or without generic)
+    var inheritsModelElement = node.BaseList?.Types.Any(bt => bt.Type is IdentifierNameSyntax id && id.Identifier.Text == "ModelElement" || bt.Type is GenericNameSyntax g && g.Identifier.Text == "ModelElement") ?? false;
+
+    if (!inheritsModelElement)
+      return base.VisitClassDeclaration(node);
+
+    var newMembers = node.Members.ToList();
+    var toReplace = new List<(PropertyDeclarationSyntax, int)>();
+    var toInsert = new List<(FieldDeclarationSyntax, int)>();
+
+    for (int i = 0; i < newMembers.Count; i++)
+    {
+      if (newMembers[i] is PropertyDeclarationSyntax prop)
+      {
+        // Only auto-properties: { get; set; }
+        if (prop.AccessorList != null && prop.AccessorList.Accessors.Count == 2 && prop.AccessorList.Accessors.All(a => a.Body == null && a.ExpressionBody == null) && prop.AccessorList.Accessors.Any(a => a.Kind() == SyntaxKind.GetAccessorDeclaration) && prop.AccessorList.Accessors.Any(a => a.Kind() == SyntaxKind.SetAccessorDeclaration))
+        {
+          var propName = prop.Identifier.Text;
+          var fieldName = "_" + propName;
+
+          // New property with backing field and UpdateField in setter
+          var newProp = prop.WithAccessorList(
+              SyntaxFactory.AccessorList(
+                SyntaxFactory.List(new[]
+                {
+                  SyntaxFactory.AccessorDeclaration(
+                      SyntaxKind.GetAccessorDeclaration)
+                    .WithExpressionBody(
+                      SyntaxFactory.ArrowExpressionClause(
+                        SyntaxFactory.IdentifierName(fieldName)))
+                    .WithSemicolonToken(
+                      SyntaxFactory.Token(SyntaxKind.SemicolonToken)),
+                  SyntaxFactory.AccessorDeclaration(SyntaxKind.SetAccessorDeclaration)
+                    .WithExpressionBody(
+                      SyntaxFactory.ArrowExpressionClause(
+                        SyntaxFactory.InvocationExpression(
+                            SyntaxFactory.IdentifierName("UpdateField"))
+                          .WithArgumentList(
+                            SyntaxFactory.ArgumentList(
+                              SyntaxFactory.SeparatedList<ArgumentSyntax>(new SyntaxNodeOrToken[]
+                              {
+                                SyntaxFactory.Argument(
+                                  SyntaxFactory.RefExpression(
+                                    SyntaxFactory.IdentifierName(fieldName))),
+                                SyntaxFactory.Token(SyntaxKind.CommaToken),
+                                SyntaxFactory.Argument(SyntaxFactory.IdentifierName("value")),
+                                SyntaxFactory.Token(SyntaxKind.CommaToken),
+                                SyntaxFactory.Argument(
+                                  SyntaxFactory.InvocationExpression(
+                                      SyntaxFactory.IdentifierName("nameof"))
+                                    .WithArgumentList(
+                                      SyntaxFactory.ArgumentList(
+                                        SyntaxFactory.SingletonSeparatedList(
+                                          SyntaxFactory.Argument(
+                                            SyntaxFactory.IdentifierName(propName)))))),
+                              })))))
+                    .WithSemicolonToken(
+                      SyntaxFactory.Token(SyntaxKind.SemicolonToken))
+                })))
+            .WithTrailingTrivia(prop.GetTrailingTrivia());
+
+
+          // New private field
+          var field = SyntaxFactory.FieldDeclaration(SyntaxFactory.VariableDeclaration(prop.Type).WithVariables(SyntaxFactory.SingletonSeparatedList(SyntaxFactory.VariableDeclarator(fieldName)))).WithModifiers(SyntaxFactory.TokenList(SyntaxFactory.Token(SyntaxKind.PrivateKeyword))).WithTrailingTrivia(SyntaxFactory.ElasticCarriageReturnLineFeed);
+
+          toReplace.Add((newProp, i));
+          toInsert.Add((field, i + 1));
+          Changed = true;
+        }
+      }
+
+      // Replace properties and insert fields
+      foreach (var (newProp, idx) in toReplace.OrderByDescending(x => x.Item2))
+        newMembers[idx] = newProp;
+      foreach (var (field, idx) in toInsert.OrderByDescending(x => x.Item2))
+        newMembers.Insert(idx, field);
+
+      return node.WithMembers(SyntaxFactory.List(newMembers));
+    }
+    return base.VisitClassDeclaration(node);
+  }
+
+}

@@ -5,28 +5,30 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Border : ModelElement<DXW.Border>
 {
-  /// <summary>
-  /// Border style, specifying the type of border (e.g., single, double, dashed).
-  /// </summary>
-  public BorderKind? Type { get; set; }
-  /// <summary>
-  /// Border color, specified as an abstract color value.
-  /// </summary>
-  public IColor? Color { get; set; }
-  /// <summary>
-  /// Border width, specified in twips.
-  /// </summary>
-  public Twips? Width { get; set; }
-  /// <summary>
-  /// Border spacing measurement, specifying the space between the border and the content.
-  /// </summary>
-  public Twips? Space { get; set; }
-  /// <summary>
-  /// Indicates whether the border has a shadow effect.
-  /// </summary>
-  public bool? Shadow { get; set; }
-  /// <summary>
-  /// Indicates whether the border has a frame effect.
-  /// </summary>
-  public bool? Frame { get; set; }
+    /// <summary>
+    /// Border style, specifying the type of border (e.g., single, double, dashed).
+    /// </summary>
+    public BorderKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+
+    private BorderKind? _Type;
+    /// <summary>
+    /// Border color, specified as an abstract color value.
+    /// </summary>
+    public IColor? Color { get; set; }
+    /// <summary>
+    /// Border width, specified in twips.
+    /// </summary>
+    public Twips? Width { get; set; }
+    /// <summary>
+    /// Border spacing measurement, specifying the space between the border and the content.
+    /// </summary>
+    public Twips? Space { get; set; }
+    /// <summary>
+    /// Indicates whether the border has a shadow effect.
+    /// </summary>
+    public bool? Shadow { get; set; }
+    /// <summary>
+    /// Indicates whether the border has a frame effect.
+    /// </summary>
+    public bool? Frame { get; set; }
 }

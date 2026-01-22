@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class SdtElement : ModelElement<DXW.SdtElement>
 {
-  /// <summary>
-  /// Specifies the set of properties applied to this structured document tag.
-  /// </summary>
-  public SdtProperties? SdtProperties { get; set; }
-  /// <summary>
-  /// Specifies the properties applied to the physical character that delimits the end of a structured document tag.
-  /// </summary>
-  public SdtEndCharProperties? SdtEndCharProperties { get; set; }
+    /// <summary>
+    /// Specifies the set of properties applied to this structured document tag.
+    /// </summary>
+    public SdtProperties? SdtProperties { get => _SdtProperties; set => UpdateField(ref _SdtProperties, value, nameof(SdtProperties)); }
+
+    private SdtProperties? _SdtProperties;
+    /// <summary>
+    /// Specifies the properties applied to the physical character that delimits the end of a structured document tag.
+    /// </summary>
+    public SdtEndCharProperties? SdtEndCharProperties { get; set; }
 }

@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class ShapeGuide : ModelElement<DXD.ShapeGuide>
 {
-  /// <summary>
-  ///   Name of the shape guide.
-  /// </summary>
-  public string? Name { get; set; }
-  /// <summary>
-  ///   Formula used by the shape guide for geometry calculations.
-  /// </summary>
-  public string? Formula { get; set; }
+    /// <summary>
+    ///   Name of the shape guide.
+    /// </summary>
+    public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+
+    private string? _Name;
+    /// <summary>
+    ///   Formula used by the shape guide for geometry calculations.
+    /// </summary>
+    public string? Formula { get; set; }
 }

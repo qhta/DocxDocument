@@ -4,8 +4,10 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class AlphaModulationEffect : ModelElement<DXD.AlphaModulationEffect>
 {
-  /// <summary>
-  /// Effect container that defines the parameters for alpha modulation.
-  /// </summary>
-  public EffectContainer? EffectContainer { get; set; }
+    /// <summary>
+    /// Effect container that defines the parameters for alpha modulation.
+    /// </summary>
+    public EffectContainer? EffectContainer { get => _EffectContainer; set => UpdateField(ref _EffectContainer, value, nameof(EffectContainer)); }
+
+    private EffectContainer? _EffectContainer;
 }

@@ -4,12 +4,14 @@ namespace DocumentModel.Vml;
 /// </summary>
 public partial class FillExtendedProperties : ModelElement<DXVO.FillExtendedProperties>
 {
-  /// <summary>
-  ///   VML Extension Handling Behavior
-  /// </summary>
-  public ExtensionHandlingBehaviorKind? Extension { get; set; }
-  /// <summary>
-  ///   Fill Type
-  /// </summary>
-  public FillTypeKind? Type { get; set; }
+    /// <summary>
+    ///   VML Extension Handling Behavior
+    /// </summary>
+    public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
+
+    private ExtensionHandlingBehaviorKind? _Extension;
+    /// <summary>
+    ///   Fill Type
+    /// </summary>
+    public FillTypeKind? Type { get; set; }
 }

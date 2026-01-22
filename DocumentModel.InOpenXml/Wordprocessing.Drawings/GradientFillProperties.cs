@@ -5,16 +5,18 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class GradientFillProperties : ModelElement<DXO10W.GradientFillProperties>
 {
-  /// <summary>
-  /// The list of gradient stops, defining the colors and positions used in the gradient fill.
-  /// </summary>
-  public GradientStopList? GradientStopList { get; set; }
-  /// <summary>
-  /// Properties for linear shading, specifying the direction and behavior of a linear gradient fill.
-  /// </summary>
-  public LinearShadeProperties? LinearShadeProperties { get; set; }
-  /// <summary>
-  /// Properties for path shading, specifying the shape and behavior of a path-based gradient fill.
-  /// </summary>
-  public PathShadeProperties? PathShadeProperties { get; set; }
+    /// <summary>
+    /// The list of gradient stops, defining the colors and positions used in the gradient fill.
+    /// </summary>
+    public GradientStopList? GradientStopList { get => _GradientStopList; set => UpdateField(ref _GradientStopList, value, nameof(GradientStopList)); }
+
+    private GradientStopList? _GradientStopList;
+    /// <summary>
+    /// Properties for linear shading, specifying the direction and behavior of a linear gradient fill.
+    /// </summary>
+    public LinearShadeProperties? LinearShadeProperties { get; set; }
+    /// <summary>
+    /// Properties for path shading, specifying the shape and behavior of a path-based gradient fill.
+    /// </summary>
+    public PathShadeProperties? PathShadeProperties { get; set; }
 }

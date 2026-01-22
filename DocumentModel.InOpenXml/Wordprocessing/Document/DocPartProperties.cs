@@ -5,32 +5,34 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class DocPartProperties : ModelElement<DXW.DocPartProperties>
 {
-  /// <summary>
-  /// Entry name, specifying the unique identifier or display name for the glossary document entry.
-  /// </summary>
-  public DocPartName? DocPartName { get; set; }
-  /// <summary>
-  /// Associated paragraph style name for the entry, linking the entry to a specific style.
-  /// </summary>
-  public string? StyleId { get; set; }
-  /// <summary>
-  /// Entry categorization, specifying the category and gallery for the entry.
-  /// </summary>
-  public Category? Category { get; set; }
-  /// <summary>
-  /// Entry types, specifying the types of document parts represented by the entry.
-  /// </summary>
-  public DocPartTypes? DocPartTypes { get; set; }
-  /// <summary>
-  /// Entry insertion behaviors, specifying how the entry behaves when inserted into a document.
-  /// </summary>
-  public Behaviors? Behaviors { get; set; }
-  /// <summary>
-  /// Description for the entry, providing additional information or context.
-  /// </summary>
-  public string? Description { get; set; }
-  /// <summary>
-  /// Unique identifier for the entry.
-  /// </summary>
-  public string? DocPartId { get; set; }
+    /// <summary>
+    /// Entry name, specifying the unique identifier or display name for the glossary document entry.
+    /// </summary>
+    public DocPartName? DocPartName { get => _DocPartName; set => UpdateField(ref _DocPartName, value, nameof(DocPartName)); }
+
+    private DocPartName? _DocPartName;
+    /// <summary>
+    /// Associated paragraph style name for the entry, linking the entry to a specific style.
+    /// </summary>
+    public string? StyleId { get; set; }
+    /// <summary>
+    /// Entry categorization, specifying the category and gallery for the entry.
+    /// </summary>
+    public Category? Category { get; set; }
+    /// <summary>
+    /// Entry types, specifying the types of document parts represented by the entry.
+    /// </summary>
+    public DocPartTypes? DocPartTypes { get; set; }
+    /// <summary>
+    /// Entry insertion behaviors, specifying how the entry behaves when inserted into a document.
+    /// </summary>
+    public Behaviors? Behaviors { get; set; }
+    /// <summary>
+    /// Description for the entry, providing additional information or context.
+    /// </summary>
+    public string? Description { get; set; }
+    /// <summary>
+    /// Unique identifier for the entry.
+    /// </summary>
+    public string? DocPartId { get; set; }
 }

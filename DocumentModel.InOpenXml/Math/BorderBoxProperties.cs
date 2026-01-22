@@ -4,40 +4,42 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class BorderBoxProperties : ModelElement<DXM.BorderBoxProperties>
 {
-  /// <summary>
-  ///   Hide Top Edge.
-  /// </summary>
-  public bool? HideTop { get; set; }
-  /// <summary>
-  ///   Hide Bottom Edge.
-  /// </summary>
-  public bool? HideBottom { get; set; }
-  /// <summary>
-  ///   Hide Left Edge.
-  /// </summary>
-  public bool? HideLeft { get; set; }
-  /// <summary>
-  ///   Hide Right Edge.
-  /// </summary>
-  public bool? HideRight { get; set; }
-  /// <summary>
-  ///   Border Box Strikethrough Horizontal.
-  /// </summary>
-  public bool? StrikeHorizontal { get; set; }
-  /// <summary>
-  ///   Border Box Strikethrough Vertical.
-  /// </summary>
-  public bool? StrikeVertical { get; set; }
-  /// <summary>
-  ///   Border Box Strikethrough Bottom-Left to Top-Right.
-  /// </summary>
-  public bool? StrikeBottomLeftToTopRight { get; set; }
-  /// <summary>
-  ///   Border Box Strikethrough Top-Left to Bottom-Right.
-  /// </summary>
-  public bool? StrikeTopLeftToBottomRight { get; set; }
-  /// <summary>
-  ///   Specifies formatting of border-box object argument.
-  /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+    /// <summary>
+    ///   Hide Top Edge.
+    /// </summary>
+    public bool? HideTop { get => _HideTop; set => UpdateField(ref _HideTop, value, nameof(HideTop)); }
+
+    private bool? _HideTop;
+    /// <summary>
+    ///   Hide Bottom Edge.
+    /// </summary>
+    public bool? HideBottom { get; set; }
+    /// <summary>
+    ///   Hide Left Edge.
+    /// </summary>
+    public bool? HideLeft { get; set; }
+    /// <summary>
+    ///   Hide Right Edge.
+    /// </summary>
+    public bool? HideRight { get; set; }
+    /// <summary>
+    ///   Border Box Strikethrough Horizontal.
+    /// </summary>
+    public bool? StrikeHorizontal { get; set; }
+    /// <summary>
+    ///   Border Box Strikethrough Vertical.
+    /// </summary>
+    public bool? StrikeVertical { get; set; }
+    /// <summary>
+    ///   Border Box Strikethrough Bottom-Left to Top-Right.
+    /// </summary>
+    public bool? StrikeBottomLeftToTopRight { get; set; }
+    /// <summary>
+    ///   Border Box Strikethrough Top-Left to Bottom-Right.
+    /// </summary>
+    public bool? StrikeTopLeftToBottomRight { get; set; }
+    /// <summary>
+    ///   Specifies formatting of border-box object argument.
+    /// </summary>
+    public ControlProperties? ControlProperties { get; set; }
 }

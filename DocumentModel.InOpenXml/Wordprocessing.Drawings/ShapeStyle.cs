@@ -7,20 +7,22 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class ShapeStyle : ModelElement
 {
-  /// <summary>
-  /// Reference to the line style applied to the shape, specifying line color, width, and pattern.
-  /// </summary>
-  public LineReference? LineReference { get; set; }
-  /// <summary>
-  /// Reference to the fill style applied to the shape, specifying fill color, gradient, or pattern.
-  /// </summary>
-  public FillReference? FillReference { get; set; }
-  /// <summary>
-  /// Reference to the effect style applied to the shape, such as shadow, glow, or reflection effects.
-  /// </summary>
-  public EffectReference? EffectReference { get; set; }
-  /// <summary>
-  /// Reference to the font style used for text within the shape, specifying font family, size, and formatting.
-  /// </summary>
-  public FontReference? FontReference { get; set; }
+    /// <summary>
+    /// Reference to the line style applied to the shape, specifying line color, width, and pattern.
+    /// </summary>
+    public LineReference? LineReference { get => _LineReference; set => UpdateField(ref _LineReference, value, nameof(LineReference)); }
+
+    private LineReference? _LineReference;
+    /// <summary>
+    /// Reference to the fill style applied to the shape, specifying fill color, gradient, or pattern.
+    /// </summary>
+    public FillReference? FillReference { get; set; }
+    /// <summary>
+    /// Reference to the effect style applied to the shape, such as shadow, glow, or reflection effects.
+    /// </summary>
+    public EffectReference? EffectReference { get; set; }
+    /// <summary>
+    /// Reference to the font style used for text within the shape, specifying font family, size, and formatting.
+    /// </summary>
+    public FontReference? FontReference { get; set; }
 }

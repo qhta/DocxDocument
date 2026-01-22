@@ -5,16 +5,18 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class MoveFromMathControl : ModelElement<DXW.MoveFromMathControl>
 {
-  /// <summary>
-  /// Run properties for the moved-from math control, specifying character-level formatting.
-  /// </summary>
-  public RunProperties? RunProperties { get; set; }
-  /// <summary>
-  /// Inserted math control revision information, tracking newly added mathematical content.
-  /// </summary>
-  public InsertedMathControl? InsertedMathControl { get; set; }
-  /// <summary>
-  /// Deleted math control revision information, tracking removed mathematical content.
-  /// </summary>
-  public DeletedMathControl? DeletedMathControl { get; set; }
+    /// <summary>
+    /// Run properties for the moved-from math control, specifying character-level formatting.
+    /// </summary>
+    public RunProperties? RunProperties { get => _RunProperties; set => UpdateField(ref _RunProperties, value, nameof(RunProperties)); }
+
+    private RunProperties? _RunProperties;
+    /// <summary>
+    /// Inserted math control revision information, tracking newly added mathematical content.
+    /// </summary>
+    public InsertedMathControl? InsertedMathControl { get; set; }
+    /// <summary>
+    /// Deleted math control revision information, tracking removed mathematical content.
+    /// </summary>
+    public DeletedMathControl? DeletedMathControl { get; set; }
 }

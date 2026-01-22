@@ -4,12 +4,14 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class Blur : ModelElement<DXD.Blur>
 {
-  /// <summary>
-  /// Radius of the blur effect.
-  /// </summary>
-  public Int64? Radius { get; set; }
-  /// <summary>
-  /// Gets or sets a value indicating whether the bounds should grow to accommodate the blur.
-  /// </summary>
-  public bool? Grow { get; set; }
+    /// <summary>
+    /// Radius of the blur effect.
+    /// </summary>
+    public Int64? Radius { get => _Radius; set => UpdateField(ref _Radius, value, nameof(Radius)); }
+
+    private Int64? _Radius;
+    /// <summary>
+    /// Gets or sets a value indicating whether the bounds should grow to accommodate the blur.
+    /// </summary>
+    public bool? Grow { get; set; }
 }

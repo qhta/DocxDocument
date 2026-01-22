@@ -5,12 +5,14 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class LinearShadeProperties : ModelElement
 {
-  /// <summary>
-  /// The angle of the linear gradient, specified in degrees, determining the direction of the gradient fill.
-  /// </summary>
-  public Int32? Angle { get; set; }
-  /// <summary>
-  /// Indicates whether the gradient is scaled to fit the shape, affecting how the gradient is rendered within the element.
-  /// </summary>
-  public OnOffKind? Scaled { get; set; }
+    /// <summary>
+    /// The angle of the linear gradient, specified in degrees, determining the direction of the gradient fill.
+    /// </summary>
+    public Int32? Angle { get => _Angle; set => UpdateField(ref _Angle, value, nameof(Angle)); }
+
+    private Int32? _Angle;
+    /// <summary>
+    /// Indicates whether the gradient is scaled to fit the shape, affecting how the gradient is rendered within the element.
+    /// </summary>
+    public OnOffKind? Scaled { get; set; }
 }

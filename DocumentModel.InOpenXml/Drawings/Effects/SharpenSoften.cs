@@ -4,8 +4,10 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class SharpenSoften : ModelElement
 {
-  /// <summary>
-  ///   Amount of sharpening or softening applied.
-  /// </summary>
-  public Int32? Amount { get; set; }
+    /// <summary>
+    ///   Amount of sharpening or softening applied.
+    /// </summary>
+    public Int32? Amount { get => _Amount; set => UpdateField(ref _Amount, value, nameof(Amount)); }
+
+    private Int32? _Amount;
 }

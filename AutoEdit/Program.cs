@@ -24,11 +24,11 @@ public static class Program
           var fileList = GetFiles(projectPath);
           foreach (var filePath in fileList)
           {
-            var filename = Path.GetFileNameWithoutExtension(filePath);
-            var ShouldSerializeFile = filename + ".ShouldSerialize.cs";
+            //var filename = Path.GetFileNameWithoutExtension(filePath);
+            //var ShouldSerializeFile = filename + ".ShouldSerialize.cs";
             //if (File.Exists(Path.Combine(Path.GetDirectoryName(filePath)!, ShouldSerializeFile)))
             //  continue;
-            GenerateShouldSerializeFunctions.Run(filePath);
+            AddPrivateFieldsWithUpdate.Run(filePath);
           }
         }
       }

@@ -5,16 +5,18 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 public partial class WordprocessingGroupType : ModelElement
 {
-  /// <summary>
-  /// Non-visual properties for the group type, including identifiers, names, and descriptive information.
-  /// </summary>
-  public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
-  /// <summary>
-  /// Non-visual properties specific to group drawing shapes, such as locking and extension settings.
-  /// </summary>
-  public NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get; set; }
-  /// <summary>
-  /// Properties for the group shape, including layout, transformation, and grouping behavior.
-  /// </summary>
-  public GroupShapeProperties? GroupShapeProperties { get; set; }
+    /// <summary>
+    /// Non-visual properties for the group type, including identifiers, names, and descriptive information.
+    /// </summary>
+    public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
+
+    private NonVisualDrawingProperties? _NonVisualDrawingProperties;
+    /// <summary>
+    /// Non-visual properties specific to group drawing shapes, such as locking and extension settings.
+    /// </summary>
+    public NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get; set; }
+    /// <summary>
+    /// Properties for the group shape, including layout, transformation, and grouping behavior.
+    /// </summary>
+    public GroupShapeProperties? GroupShapeProperties { get; set; }
 }

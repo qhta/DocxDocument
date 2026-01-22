@@ -5,12 +5,14 @@ namespace DocumentModel.Math;
 /// </summary>
 public partial class BorderBox : ModelElement<DXM.BorderBox>, ICommonMathContent
 {
-  /// <summary>
-  ///   Specifies properties of border-box object.
-  /// </summary>
-  public BorderBoxProperties? BorderBoxProperties { get; set; }
-  /// <summary>
-  ///   Specifies argument of border-box object.
-  /// </summary>
-  public Argument? Argument { get; set; }
+    /// <summary>
+    ///   Specifies properties of border-box object.
+    /// </summary>
+    public BorderBoxProperties? BorderBoxProperties { get => _BorderBoxProperties; set => UpdateField(ref _BorderBoxProperties, value, nameof(BorderBoxProperties)); }
+
+    private BorderBoxProperties? _BorderBoxProperties;
+    /// <summary>
+    ///   Specifies argument of border-box object.
+    /// </summary>
+    public Argument? Argument { get; set; }
 }
