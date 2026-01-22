@@ -8,8 +8,8 @@ public partial class FormatScheme : ModelElement<DXD.FormatScheme>
     ///   Name of the format scheme.
     /// </summary>
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
-
     private string? _Name;
+
     /// <summary>
     ///   List of fill styles used in the format scheme.
     /// </summary>

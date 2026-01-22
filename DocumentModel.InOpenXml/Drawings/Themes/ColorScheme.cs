@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the color scheme for drawing elements.
 /// </summary>
-public partial interface ColorScheme: IExtendableElement
+public partial class ColorScheme: ModelElement<DXD.ColorScheme>, IExtendableElement
 {
   /// <summary>
   /// Name.
@@ -85,7 +85,13 @@ public partial interface ColorScheme: IExtendableElement
   #endregion
 
   /// <summary>
+  /// List of extensions associated with this object.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
+
+  /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
   public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+
 }

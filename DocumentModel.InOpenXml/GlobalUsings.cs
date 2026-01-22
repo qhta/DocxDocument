@@ -35,6 +35,7 @@ global using DXO10D = DocumentFormat.OpenXml.Office2010.Drawing;
 global using DXO10WDC = DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas;
 global using DXO13W = DocumentFormat.OpenXml.Office2013.Word;
 global using DXO21WCE =DocumentFormat.OpenXml.Office2021.Word.CommentsExt;
+global using DXO13T = DocumentFormat.OpenXml.Office2013.Theme;
 global using DXO13D =DocumentFormat.OpenXml.Office2013.Drawing;
 global using DXO21DL =DocumentFormat.OpenXml.Office2021.Drawing.Livefeed;
 global using DXV = DocumentFormat.OpenXml.Vml;

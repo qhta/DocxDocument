@@ -34,5 +34,8 @@ public partial class GroupShapeLocks : ModelElement<DXD.GroupShapeLocks>, IExten
     ///   Disallows resizing the group shape.
     /// </summary>
     public bool? NoResize { get; set; }
-    public IExtensionList? ExtensionList { get; set; }
+    /// <summary>
+    /// List of extension elements.
+    /// </summary>
+    public ExtensionList? ExtensionList { get; set; }
 }

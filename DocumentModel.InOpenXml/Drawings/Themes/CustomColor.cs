@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Custom color.
 /// </summary>
-public interface CustomColor: ICollectionItem
+public class CustomColor: ModelElement<DXD.CustomColor>
 {
   /// <summary>
   ///   Name
