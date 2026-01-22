@@ -1,4 +1,5 @@
 namespace DocumentModel;
+#pragma warning disable OOXML0001
 
 public partial class CoreProperties
 {
@@ -7,6 +8,7 @@ public partial class CoreProperties
   /// <summary>
   ///   Title the document.
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.Title))]
   public string? Title
   {
     get => _Title;
@@ -17,6 +19,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The topic of the content of the resource.
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.Subject))]
   public string? Subject
   {
     get => _Subject;
@@ -27,6 +30,7 @@ public partial class CoreProperties
   /// <summary>
   ///   An entity primarily responsible for making the content of the resource.
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.Creator))]
   public string? Creator
   {
     get => _Creator;
@@ -41,6 +45,7 @@ public partial class CoreProperties
   ///   Use of the xml:lang attribute to identify languages 
   ///   A mixed content model, such that keywords can be flagged individually 
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.Keywords))]
   public string? Keywords
   {
     get => _Keywords;
@@ -53,6 +58,7 @@ public partial class CoreProperties
   ///   an abstract, table of contents, reference to a graphical representation of content, 
   ///   and a free-text account of the content. 
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.Description))]
   public string? Description
   {
     get => _Description;
@@ -64,6 +70,7 @@ public partial class CoreProperties
   ///   The user who performed the last modification. The identification is environment-specific. 
   ///   A name, email address, or employee ID. It is recommended that this value be as concise as possible.
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.LastModifiedBy))]
   public string? LastModifiedBy
   {
     get => _LastModifiedBy;
@@ -75,6 +82,7 @@ public partial class CoreProperties
   ///   The revision number. This value might indicate the number of saves or revisions, 
   ///   provided the application updates it after each revision.
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.Revision))]
   public int? Revision
   {
     get => _Revision;
@@ -85,6 +93,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The date and time of the last printing.
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.LastPrinted))]
   public DateTime? LastPrinted
   {
     get => _LastPrinted;
@@ -95,6 +104,7 @@ public partial class CoreProperties
   /// <summary>
   ///   Date of creation of the resource.
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.Created))]
   public DateTime? Created
   {
     get => _Created;
@@ -105,6 +115,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The date and time of the last modification.
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.Modified))]
   public DateTime? Modified
   {
     get => _Modified;
@@ -118,6 +129,7 @@ public partial class CoreProperties
   ///   Resume, Letter, Financial Forecast, Proposal, Technical Presentation, and so on.
   ///   This value might be used by an application's user class toClass facilitate navigation of a large set of documents.
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.Category))]
   public string? Category
   {
     get => _Category;
@@ -128,6 +140,7 @@ public partial class CoreProperties
   /// <summary>
   ///   An unambiguous reference to the resource within a given context.
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.Identifier))]
   public string? Identifier
   {
     get => _Identifier;
@@ -138,6 +151,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The type of content represented, generally defined by a specific application.
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.ContentType))]
   public string? ContentType
   {
     get => _ContentType;
@@ -149,6 +163,7 @@ public partial class CoreProperties
   ///   The language of the intellectual content of the resource. 
   ///   IETF RFC 3066 provides guidance on encoding to represent languages. 
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.Language))]
   public string? Language
   {
     get => _Language;
@@ -159,6 +174,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The version number. This value is set by the user or by the application.
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.Modified))]
   public string? Version
   {
     get => _Version;
@@ -169,6 +185,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The status of the content. Values might include “Draft”, “Reviewed”, and “Final”.
   /// </summary>
+  [OpenXmlProperty(nameof(PackageProperties.Modified))]
   public string? ContentStatus
   {
     get => _ContentStatus;

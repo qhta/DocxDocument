@@ -31,6 +31,7 @@ public static class AddPartialToClass
 
       // Write the updated code back to the file
       File.WriteAllText(filePath, newRoot.NormalizeWhitespace("  ").ToFullString());
+      Console.WriteLine($"Added Partial modifier: {filePath}");
     }
   }
 }
