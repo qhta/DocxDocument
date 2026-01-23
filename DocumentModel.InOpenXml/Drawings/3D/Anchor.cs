@@ -68,6 +68,7 @@ public partial class Anchor : ModelElement<DXD.Anchor>
     ///   </list>
     ///   </para>
     /// </remarks>
+    [OpenXmlProperty(nameof(DXD.Anchor.X))]
     public Int64? X { get => _X; set => UpdateField(ref _X, value, nameof(X)); }
 
     private Int64? _X;
@@ -99,6 +100,7 @@ public partial class Anchor : ModelElement<DXD.Anchor>
     ///   but in screen-based contexts, +Y typically points downward.
     ///   </para>
     /// </remarks>
+    [OpenXmlProperty(nameof(DXD.Anchor.Y))]
     public Int64? Y { get => _Y; set => UpdateField(ref _Y, value, nameof(Y)); }
 
     private Int64? _Y;
@@ -135,6 +137,7 @@ public partial class Anchor : ModelElement<DXD.Anchor>
     ///   </list>
     ///   </para>
     /// </remarks>
+    [OpenXmlProperty(nameof(DXD.Anchor.Z))]
     public Int64? Z { get => _Z; set => UpdateField(ref _Z, value, nameof(Z)); }
 
     private Int64? _Z;

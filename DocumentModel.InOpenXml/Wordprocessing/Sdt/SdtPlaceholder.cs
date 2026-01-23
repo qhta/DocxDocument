@@ -8,6 +8,7 @@ public partial class SdtPlaceholder : ModelElement<DXW.SdtPlaceholder>
     /// <summary>
     /// Document part reference used as placeholder text for the SDT.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.SdtPlaceholder.DocPartReference))]
     public string? DocPartReference { get => _DocPartReference; set => UpdateField(ref _DocPartReference, value, nameof(DocPartReference)); }
 
     private string? _DocPartReference;

@@ -43,6 +43,7 @@ public partial class ShapePropertiesExtension : ModelElement<DXD.ShapeProperties
     /// <summary>
     /// Gets or sets the URI associated with the resource.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.ShapePropertiesExtension.Uri))]
     public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
 
     private string? _Uri;

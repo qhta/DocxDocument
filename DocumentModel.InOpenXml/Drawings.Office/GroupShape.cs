@@ -4,9 +4,11 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class GroupShape : ModelElement<DXOD.GroupShape>
 {
+    [OpenXmlProperty(nameof(DXOD.GroupShape.GroupShapeNonVisualProperties))]
     public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get => _GroupShapeNonVisualProperties; set => UpdateField(ref _GroupShapeNonVisualProperties, value, nameof(GroupShapeNonVisualProperties)); }
 
     private GroupShapeNonVisualProperties? _GroupShapeNonVisualProperties;
+    [OpenXmlProperty(nameof(DXOD.GroupShape.GroupShapeProperties))]
     public GroupShapeProperties? GroupShapeProperties { get => _GroupShapeProperties; set => UpdateField(ref _GroupShapeProperties, value, nameof(GroupShapeProperties)); }
 
     private GroupShapeProperties? _GroupShapeProperties;

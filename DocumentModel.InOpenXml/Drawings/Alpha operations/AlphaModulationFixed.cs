@@ -7,6 +7,7 @@ public partial class AlphaModulationFixed : ModelElement<DXD.AlphaModulationFixe
     /// <summary>
     /// Fixed amount by which the alpha channel is modulated.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.AlphaModulationFixed.Amount))]
     public Int32? Amount { get => _Amount; set => UpdateField(ref _Amount, value, nameof(Amount)); }
 
     private Int32? _Amount;

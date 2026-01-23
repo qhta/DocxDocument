@@ -9,18 +9,21 @@ public partial class Fraction : ModelElement<DXM.Fraction>, ICommonMathContent
     /// <summary>
     ///   Fraction Properties.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.Fraction.FractionProperties))]
     public FractionProperties? FractionProperties { get => _FractionProperties; set => UpdateField(ref _FractionProperties, value, nameof(FractionProperties)); }
 
     private FractionProperties? _FractionProperties;
     /// <summary>
     ///   Numerator.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.Fraction.Numerator))]
     public Numerator? Numerator { get => _Numerator; set => UpdateField(ref _Numerator, value, nameof(Numerator)); }
 
     private Numerator? _Numerator;
     /// <summary>
     ///   Denominator.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.Fraction.Denominator))]
     public Denominator? Denominator { get => _Denominator; set => UpdateField(ref _Denominator, value, nameof(Denominator)); }
 
     private Denominator? _Denominator;

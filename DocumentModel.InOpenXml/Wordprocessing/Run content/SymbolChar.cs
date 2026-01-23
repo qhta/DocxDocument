@@ -8,12 +8,14 @@ public partial class SymbolChar : ModelElement<DXW.SymbolChar>, IRunContent
     /// <summary>
     /// Font name from which the symbol character is selected.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.SymbolChar.Font))]
     public string? Font { get => _Font; set => UpdateField(ref _Font, value, nameof(Font)); }
 
     private string? _Font;
     /// <summary>
     /// Hexadecimal character code specifying the symbol to display from the given font.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.SymbolChar.Char))]
     public HexChar? Char { get => _Char; set => UpdateField(ref _Char, value, nameof(Char)); }
 
     private HexChar? _Char;

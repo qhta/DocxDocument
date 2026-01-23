@@ -13,6 +13,7 @@ public partial class ArtisticPlasticWrap : ModelElement<DXO10D.ArtisticPlasticWr
     /// <summary>
     /// Smoothness of the plastic wrap effect, influencing the softness and clarity of the simulated plastic texture.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO10D.ArtisticPlasticWrap.Smoothness))]
     public Int32? Smoothness { get => _Smoothness; set => UpdateField(ref _Smoothness, value, nameof(Smoothness)); }
 
     private Int32? _Smoothness;

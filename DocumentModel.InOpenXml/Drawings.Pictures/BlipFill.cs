@@ -7,24 +7,28 @@ public partial class BlipFill : ModelElement<DXDP.BlipFill>
     /// <summary>
     ///   DPI Setting
     /// </summary>
+    [OpenXmlProperty(nameof(DXDP.BlipFill.Dpi))]
     public UInt32? Dpi { get => _Dpi; set => UpdateField(ref _Dpi, value, nameof(Dpi)); }
 
     private UInt32? _Dpi;
     /// <summary>
     ///   Rotate With Shape
     /// </summary>
+    [OpenXmlProperty(nameof(DXDP.BlipFill.RotateWithShape))]
     public bool? RotateWithShape { get => _RotateWithShape; set => UpdateField(ref _RotateWithShape, value, nameof(RotateWithShape)); }
 
     private bool? _RotateWithShape;
     /// <summary>
     ///   Blip.
     /// </summary>
+    [OpenXmlProperty(nameof(DXDP.BlipFill.Blip))]
     public Blip? Blip { get => _Blip; set => UpdateField(ref _Blip, value, nameof(Blip)); }
 
     private Blip? _Blip;
     /// <summary>
     ///   Source Rectangle.
     /// </summary>
+    [OpenXmlProperty(nameof(DXDP.BlipFill.SourceRectangle))]
     public RelativeRectangleType? SourceRectangle { get => _SourceRectangle; set => UpdateField(ref _SourceRectangle, value, nameof(SourceRectangle)); }
 
     private RelativeRectangleType? _SourceRectangle;

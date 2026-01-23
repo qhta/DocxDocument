@@ -8,6 +8,7 @@ public partial class BorderBox : ModelElement<DXM.BorderBox>, ICommonMathContent
     /// <summary>
     ///   Specifies properties of border-box object.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.BorderBox.BorderBoxProperties))]
     public BorderBoxProperties? BorderBoxProperties { get => _BorderBoxProperties; set => UpdateField(ref _BorderBoxProperties, value, nameof(BorderBoxProperties)); }
 
     private BorderBoxProperties? _BorderBoxProperties;
