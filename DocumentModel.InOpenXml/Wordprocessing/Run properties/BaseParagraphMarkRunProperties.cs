@@ -3,7 +3,8 @@ namespace DocumentModel.Wordprocessing;
 /// Base interface for ParagraphMarkRunProperties classes, containing properties specific to paragraph mark runs that are not applied to <see cref = "ExtBaseRunProperties"/>.
 /// Provides support for revision tracking, conflict handling, and Office Math indication on paragraph marks.
 /// </summary>
-public abstract partial class BaseParagraphMarkRunProperties<T> : ExtBaseRunProperties<T> where T : DX.OpenXmlElement
+public abstract partial class BaseParagraphMarkRunProperties<T> : ExtBaseRunProperties<T> 
+  where T : DX.OpenXmlCompositeElement
 {
   /// <summary>
   /// Indicates that the paragraph has been inserted, with revision tracking information.
