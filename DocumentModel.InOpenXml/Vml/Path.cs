@@ -8,6 +8,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Unique Identifier
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.Id))]
+    /// <summary>
+    ///   Unique Identifier
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
     private string? _Id;
@@ -15,6 +19,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Path Definition
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.Value))]
+    /// <summary>
+    ///   Path Definition
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public string? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
 
     private string? _Value;
@@ -22,6 +30,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Limo Stretch Point
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.Limo))]
+    /// <summary>
+    ///   Limo Stretch Point
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public string? Limo { get => _Limo; set => UpdateField(ref _Limo, value, nameof(Limo)); }
 
     private string? _Limo;
@@ -29,6 +41,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Text Box Bounding Box
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.TextboxRectangle))]
+    /// <summary>
+    ///   Text Box Bounding Box
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public string? TextboxRectangle { get => _TextboxRectangle; set => UpdateField(ref _TextboxRectangle, value, nameof(TextboxRectangle)); }
 
     private string? _TextboxRectangle;
@@ -36,6 +52,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Shape Fill Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.AllowFill))]
+    /// <summary>
+    ///   Shape Fill Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public bool? AllowFill { get => _AllowFill; set => UpdateField(ref _AllowFill, value, nameof(AllowFill)); }
 
     private bool? _AllowFill;
@@ -43,6 +63,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Stroke Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.AllowStroke))]
+    /// <summary>
+    ///   Stroke Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public bool? AllowStroke { get => _AllowStroke; set => UpdateField(ref _AllowStroke, value, nameof(AllowStroke)); }
 
     private bool? _AllowStroke;
@@ -50,6 +74,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Shadow Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.AllowShading))]
+    /// <summary>
+    ///   Shadow Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public bool? AllowShading { get => _AllowShading; set => UpdateField(ref _AllowShading, value, nameof(AllowShading)); }
 
     private bool? _AllowShading;
@@ -57,6 +85,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Arrowhead Display Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.ShowArrowhead))]
+    /// <summary>
+    ///   Arrowhead Display Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public bool? ShowArrowhead { get => _ShowArrowhead; set => UpdateField(ref _ShowArrowhead, value, nameof(ShowArrowhead)); }
 
     private bool? _ShowArrowhead;
@@ -64,6 +96,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Gradient Shape Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.AllowGradientShape))]
+    /// <summary>
+    ///   Gradient Shape Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public bool? AllowGradientShape { get => _AllowGradientShape; set => UpdateField(ref _AllowGradientShape, value, nameof(AllowGradientShape)); }
 
     private bool? _AllowGradientShape;
@@ -71,6 +107,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Text Path Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.AllowTextPath))]
+    /// <summary>
+    ///   Text Path Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public bool? AllowTextPath { get => _AllowTextPath; set => UpdateField(ref _AllowTextPath, value, nameof(AllowTextPath)); }
 
     private bool? _AllowTextPath;
@@ -78,6 +118,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Inset Stroke From Path Flag
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.AllowInsetPen))]
+    /// <summary>
+    ///   Inset Stroke From Path Flag
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public bool? AllowInsetPen { get => _AllowInsetPen; set => UpdateField(ref _AllowInsetPen, value, nameof(AllowInsetPen)); }
 
     private bool? _AllowInsetPen;
@@ -85,6 +129,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Connection Point Type
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.ConnectionPointType))]
+    /// <summary>
+    ///   Connection Point Type
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public ConnectKind? ConnectionPointType { get => _ConnectionPointType; set => UpdateField(ref _ConnectionPointType, value, nameof(ConnectionPointType)); }
 
     private ConnectKind? _ConnectionPointType;
@@ -92,6 +140,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Connection Points
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.ConnectionPoints))]
+    /// <summary>
+    ///   Connection Points
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public string? ConnectionPoints { get => _ConnectionPoints; set => UpdateField(ref _ConnectionPoints, value, nameof(ConnectionPoints)); }
 
     private string? _ConnectionPoints;
@@ -99,6 +151,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Connection Point Connect Angles
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.ConnectAngles))]
+    /// <summary>
+    ///   Connection Point Connect Angles
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public string? ConnectAngles { get => _ConnectAngles; set => UpdateField(ref _ConnectAngles, value, nameof(ConnectAngles)); }
 
     private string? _ConnectAngles;
@@ -106,6 +162,10 @@ public partial class Path : ModelElement<DXV.Path>
     ///   Extrusion Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXV.Path.AllowExtrusion))]
+    /// <summary>
+    ///   Extrusion Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.Path))]
     public bool? AllowExtrusion { get => _AllowExtrusion; set => UpdateField(ref _AllowExtrusion, value, nameof(AllowExtrusion)); }
 
     private bool? _AllowExtrusion;

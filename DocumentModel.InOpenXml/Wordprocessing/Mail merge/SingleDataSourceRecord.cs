@@ -9,6 +9,10 @@ public partial class SingleDataSourceRecord : ModelElement<DXOW.SingleDataSource
     /// Indicates whether the record is included in the mail merge.
     /// </summary>
     [OpenXmlProperty(nameof(DXOW.SingleDataSourceRecord.RecordIncluded))]
+    /// <summary>
+    /// Indicates whether the record is included in the mail merge.
+    /// </summary>
+    [OpenXmlElement(typeof(DXOW.SingleDataSourceRecord))]
     public bool? RecordIncluded { get => _RecordIncluded; set => UpdateField(ref _RecordIncluded, value, nameof(RecordIncluded)); }
 
     private bool? _RecordIncluded;
@@ -16,6 +20,10 @@ public partial class SingleDataSourceRecord : ModelElement<DXOW.SingleDataSource
     /// Unique hash code for the record, used to identify and track the record in the data source.
     /// </summary>
     [OpenXmlProperty(nameof(DXOW.SingleDataSourceRecord.RecordHashCode))]
+    /// <summary>
+    /// Unique hash code for the record, used to identify and track the record in the data source.
+    /// </summary>
+    [OpenXmlElement(typeof(DXOW.SingleDataSourceRecord))]
     public Int64? RecordHashCode { get => _RecordHashCode; set => UpdateField(ref _RecordHashCode, value, nameof(RecordHashCode)); }
 
     private Int64? _RecordHashCode;

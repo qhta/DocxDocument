@@ -10,6 +10,10 @@ public partial class Delimiter : ModelElement<DXM.Delimiter> //, IElementCollect
     ///   Specifies Delimiter object properties.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.Delimiter.DelimiterProperties))]
+    /// <summary>
+    ///   Specifies Delimiter object properties.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.Delimiter))]
     public DelimiterProperties? DelimiterProperties { get => _DelimiterProperties; set => UpdateField(ref _DelimiterProperties, value, nameof(DelimiterProperties)); }
 
     private DelimiterProperties? _DelimiterProperties;

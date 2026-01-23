@@ -20,7 +20,7 @@ public static class AddOpenXmlTypeAttribute
 
     if (rewriter.Changed)
     {
-      File.WriteAllText(filePath, newRoot.NormalizeWhitespace().ToFullString());
+      File.WriteAllText(filePath, newRoot.NormalizeWhitespace(" ").ToFullString());
       Console.WriteLine($"Updated: {filePath}");
     }
   }

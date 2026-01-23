@@ -8,6 +8,10 @@ public partial class NonVisualGroupProperties : ModelElement<DXO13D.NonVisualGro
     ///   isLegacyGroup
     /// </summary>
     [OpenXmlProperty(nameof(DXO13D.NonVisualGroupProperties.IsLegacyGroup))]
+    /// <summary>
+    ///   isLegacyGroup
+    /// </summary>
+    [OpenXmlElement(typeof(DXO13D.NonVisualGroupProperties))]
     public bool? IsLegacyGroup { get => _IsLegacyGroup; set => UpdateField(ref _IsLegacyGroup, value, nameof(IsLegacyGroup)); }
 
     private bool? _IsLegacyGroup;

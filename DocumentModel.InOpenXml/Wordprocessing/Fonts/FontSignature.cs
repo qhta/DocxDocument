@@ -13,6 +13,10 @@ public class FontSignature : ModelElement<DXW.FontSignature>
     /// First 32 bits of the Unicode subset bitfield, indicating supported Unicode ranges (usb0).
     /// </summary>
     [OpenXmlProperty(nameof(DXW.FontSignature.UnicodeSignature0))]
+    /// <summary>
+    /// First 32 bits of the Unicode subset bitfield, indicating supported Unicode ranges (usb0).
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.FontSignature))]
     public HexInt UnicodeSignature0 { get => Items[0]; set => Items[0] = value; }
 
     /// <summary>
@@ -23,6 +27,10 @@ public class FontSignature : ModelElement<DXW.FontSignature>
     /// Second 32 bits of the Unicode subset bitfield, indicating supported Unicode ranges (usb1).
     /// </summary>
     [OpenXmlProperty(nameof(DXW.FontSignature.UnicodeSignature1))]
+    /// <summary>
+    /// Second 32 bits of the Unicode subset bitfield, indicating supported Unicode ranges (usb1).
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.FontSignature))]
     public HexInt UnicodeSignature1 { get => Items[1]; set => Items[1] = value; }
 
     /// <summary>
@@ -33,6 +41,10 @@ public class FontSignature : ModelElement<DXW.FontSignature>
     /// Third 32 bits of the Unicode subset bitfield, indicating supported Unicode ranges (usb2).
     /// </summary>
     [OpenXmlProperty(nameof(DXW.FontSignature.UnicodeSignature2))]
+    /// <summary>
+    /// Third 32 bits of the Unicode subset bitfield, indicating supported Unicode ranges (usb2).
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.FontSignature))]
     public HexInt UnicodeSignature2 { get => Items[2]; set => Items[2] = value; }
 
     /// <summary>
@@ -43,6 +55,10 @@ public class FontSignature : ModelElement<DXW.FontSignature>
     /// Fourth 32 bits of the Unicode subset bitfield, indicating supported Unicode ranges (usb3).
     /// </summary>
     [OpenXmlProperty(nameof(DXW.FontSignature.UnicodeSignature3))]
+    /// <summary>
+    /// Fourth 32 bits of the Unicode subset bitfield, indicating supported Unicode ranges (usb3).
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.FontSignature))]
     public HexInt UnicodeSignature3 { get => Items[3]; set => Items[3] = value; }
 
     /// <summary>
@@ -53,6 +69,10 @@ public class FontSignature : ModelElement<DXW.FontSignature>
     /// Lower 32 bits of the code page bitfield, indicating supported code pages (csb0).
     /// </summary>
     [OpenXmlProperty(nameof(DXW.FontSignature.CodePageSignature0))]
+    /// <summary>
+    /// Lower 32 bits of the code page bitfield, indicating supported code pages (csb0).
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.FontSignature))]
     public HexInt CodePageSignature0 { get => Items[4]; set => Items[4] = value; }
 
     /// <summary>
@@ -63,6 +83,10 @@ public class FontSignature : ModelElement<DXW.FontSignature>
     /// Upper 32 bits of the code page bitfield, indicating supported code pages (csb1).
     /// </summary>
     [OpenXmlProperty(nameof(DXW.FontSignature.CodePageSignature1))]
+    /// <summary>
+    /// Upper 32 bits of the code page bitfield, indicating supported code pages (csb1).
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.FontSignature))]
     public HexInt CodePageSignature1 { get => Items[5]; set => Items[5] = value; }
 
     /// <summary>

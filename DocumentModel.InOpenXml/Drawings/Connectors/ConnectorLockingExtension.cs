@@ -7,6 +7,7 @@ public partial class ConnectorLockingExtension : ModelElement<DXD.ConnectorLocki
     /// <summary>
     /// Graphic element associated with the connector locking extension.
     /// </summary>
+    [OpenXmlElement(typeof(DXD.ConnectorLockingExtension))]
     public Graphic? Graphic { get => _Graphic; set => UpdateField(ref _Graphic, value, nameof(Graphic)); }
 
     private Graphic? _Graphic;
@@ -14,6 +15,10 @@ public partial class ConnectorLockingExtension : ModelElement<DXD.ConnectorLocki
     /// List of extension elements.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ConnectorLockingExtension.Uri))]
+    /// <summary>
+    /// List of extension elements.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ConnectorLockingExtension))]
     public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
 
     private string? _Uri;

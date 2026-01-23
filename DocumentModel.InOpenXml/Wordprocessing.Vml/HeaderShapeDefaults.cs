@@ -7,16 +7,18 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// </summary>
 public partial class HeaderShapeDefaults : ModelElement<DXW.HeaderShapeDefaults>
 {
-    /// <summary>
-    /// Default shape properties for VML shapes in the header and footer.
-    /// </summary>
-    public ShapeDefaults? ShapeDefaults { get => _ShapeDefaults; set => UpdateField(ref _ShapeDefaults, value, nameof(ShapeDefaults)); }
+  /// <summary>
+  /// Default shape properties for VML shapes in the header and footer.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.HeaderShapeDefaults))]
+  public ShapeDefaults? ShapeDefaults { get => _ShapeDefaults; set => UpdateField(ref _ShapeDefaults, value, nameof(ShapeDefaults)); }
 
-    private ShapeDefaults? _ShapeDefaults;
-    /// <summary>
-    /// Default shape layout for VML shapes in the header and footer.
-    /// </summary>
-    public ShapeLayout? ShapeLayout { get => _ShapeLayout; set => UpdateField(ref _ShapeLayout, value, nameof(ShapeLayout)); }
+  private ShapeDefaults? _ShapeDefaults;
+  /// <summary>
+  /// Default shape layout for VML shapes in the header and footer.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.HeaderShapeDefaults))]
+  public ShapeLayout? ShapeLayout { get => _ShapeLayout; set => UpdateField(ref _ShapeLayout, value, nameof(ShapeLayout)); }
 
-    private ShapeLayout? _ShapeLayout;
+  private ShapeLayout? _ShapeLayout;
 }

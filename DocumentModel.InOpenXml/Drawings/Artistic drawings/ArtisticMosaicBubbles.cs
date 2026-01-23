@@ -7,6 +7,7 @@ public partial class ArtisticMosaicBubbles : ModelElement<DXO10D.ArtisticMosaicB
     /// <summary>
     /// Transparency level of the mosaic bubbles effect.
     /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ArtisticMosaicBubbles))]
     public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
 
     private Int32? _Transparency;
@@ -14,6 +15,10 @@ public partial class ArtisticMosaicBubbles : ModelElement<DXO10D.ArtisticMosaicB
     /// Pressure applied in the mosaic bubbles effect, influencing the intensity and appearance of the bubbles.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ArtisticMosaicBubbles.Pressure))]
+    /// <summary>
+    /// Pressure applied in the mosaic bubbles effect, influencing the intensity and appearance of the bubbles.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ArtisticMosaicBubbles))]
     public Int32? Pressure { get => _Pressure; set => UpdateField(ref _Pressure, value, nameof(Pressure)); }
 
     private Int32? _Pressure;

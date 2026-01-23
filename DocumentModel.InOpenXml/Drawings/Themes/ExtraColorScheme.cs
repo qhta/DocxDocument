@@ -12,6 +12,10 @@ public partial class ExtraColorScheme : ModelElement<DXD.ExtraColorScheme>
     ///   Color scheme definition for the extra color scheme.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ExtraColorScheme.ColorScheme))]
+    /// <summary>
+    ///   Color scheme definition for the extra color scheme.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ExtraColorScheme))]
     public ColorScheme? ColorScheme { get => _ColorScheme; set => UpdateField(ref _ColorScheme, value, nameof(ColorScheme)); }
 
     private ColorScheme? _ColorScheme;
@@ -19,6 +23,10 @@ public partial class ExtraColorScheme : ModelElement<DXD.ExtraColorScheme>
     ///   Color map associated with the extra color scheme.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ExtraColorScheme.ColorMap))]
+    /// <summary>
+    ///   Color map associated with the extra color scheme.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ExtraColorScheme))]
     public ColorMap? ColorMap { get => _ColorMap; set => UpdateField(ref _ColorMap, value, nameof(ColorMap)); }
 
     private ColorMap? _ColorMap;

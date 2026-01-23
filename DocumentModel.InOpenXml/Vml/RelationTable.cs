@@ -7,6 +7,7 @@ public partial class RelationTable : ModelElement<DXVO.RelationTable>
     /// <summary>
     ///   Collection of diagram relationships.
     /// </summary>
+    [OpenXmlElement(typeof(DXVO.RelationTable))]
     public Relations? Relations { get => _Relations; set => UpdateField(ref _Relations, value, nameof(Relations)); }
 
     private Relations? _Relations;
@@ -14,6 +15,10 @@ public partial class RelationTable : ModelElement<DXVO.RelationTable>
     ///   VML Extension Handling Behavior
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.RelationTable.Extension))]
+    /// <summary>
+    ///   VML Extension Handling Behavior
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.RelationTable))]
     public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
     private ExtensionHandlingBehaviorKind? _Extension;

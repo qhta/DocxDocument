@@ -19,9 +19,14 @@ public partial class OfficeStyleSheetExtension : ModelElement<DXD.OfficeStyleShe
     /// Uri string associated with the extension.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.OfficeStyleSheetExtension.Uri))]
+    /// <summary>
+    /// Uri string associated with the extension.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.OfficeStyleSheetExtension))]
     public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
 
     private string? _Uri;
+    [OpenXmlElement(typeof(DXD.OfficeStyleSheetExtension))]
     public string? UriString { get => _UriString; set => UpdateField(ref _UriString, value, nameof(UriString)); }
 
     private string? _UriString;

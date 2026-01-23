@@ -9,6 +9,10 @@ public partial class PageSize : ModelElement<DXW.PageSize>, ISectionPropertiesCo
     /// Page width, specified in twips.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.PageSize.Width))]
+    /// <summary>
+    /// Page width, specified in twips.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.PageSize))]
     public Twips? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
 
     private Twips? _Width;
@@ -16,6 +20,10 @@ public partial class PageSize : ModelElement<DXW.PageSize>, ISectionPropertiesCo
     /// Page height, specified in twips.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.PageSize.Height))]
+    /// <summary>
+    /// Page height, specified in twips.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.PageSize))]
     public Twips? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
 
     private Twips? _Height;
@@ -23,12 +31,17 @@ public partial class PageSize : ModelElement<DXW.PageSize>, ISectionPropertiesCo
     /// Page orientation, such as portrait or landscape.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.PageSize.Orient))]
+    /// <summary>
+    /// Page orientation, such as portrait or landscape.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.PageSize))]
     public PageOrientationKind? Orient { get => _Orient; set => UpdateField(ref _Orient, value, nameof(Orient)); }
 
     private PageOrientationKind? _Orient;
     /// <summary>
     /// Printer paper size, mapped from the printer paper code.
     /// </summary>
+    [OpenXmlElement(typeof(DXW.PageSize))]
     public PaperSize? PaperSize { get => _PaperSize; set => UpdateField(ref _PaperSize, value, nameof(PaperSize)); }
 
     private PaperSize? _PaperSize;
