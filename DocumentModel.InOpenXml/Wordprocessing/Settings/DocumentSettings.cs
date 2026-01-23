@@ -26,15 +26,15 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
             AttachAndLoad(document.WordprocessingDocument);
     }
 
-    public override void LoadData(object openXmlElement)
-    {
-        base.LoadData(openXmlElement);
-    }
+    //public override void LoadData(object openXmlElement)
+    //{
+    //    base.LoadData(openXmlElement);
+    //}
 
-    public override void UpdateData(object openXmlElement)
-    {
-        base.UpdateData(openXmlElement);
-    }
+    //public override void UpdateData(object openXmlElement)
+    //{
+    //    base.UpdateData(openXmlElement);
+    //}
 
     /// <summary>
     /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.

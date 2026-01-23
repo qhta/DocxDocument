@@ -3,7 +3,7 @@
 public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, OpenXmlItemType>: 
   ModelElementCollection<ItemType, OpenXmlCollectionType>
   where ItemType : ModelElement
-  where OpenXmlCollectionType: DX.OpenXmlElement
+  where OpenXmlCollectionType: DX.OpenXmlCompositeElement
   where OpenXmlItemType: DX.OpenXmlElement
 {
   protected ModelElementCollection()
@@ -25,16 +25,35 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   protected override void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
     this.Clear();
-    foreach (var openXmlCustomDocumentProperty in openXmlModeledCollection!.ChildElements.Cast<OpenXmlItemType>())
+    foreach (var openXmlElement in openXmlModeledCollection!.ChildElements.Cast<OpenXmlItemType>())
     {
       var constructor = typeof(ItemType).GetConstructor([typeof(ModelElement<OpenXmlItemType>), typeof(OpenXmlItemType)]);
-      ItemType modelObject = (ItemType)constructor!.Invoke([this, openXmlCustomDocumentProperty]);
+      ItemType modelObject;
+      if (constructor != null)
+      {
+        modelObject = (ItemType)constructor.Invoke([this, openXmlElement]);
+      }
+      else
+      {
+        modelObject = Activator.CreateInstance<ItemType>();
+        modelObject.LoadData(openXmlElement);
+      }
       this.Add(modelObject);
     }
   }
 
   protected override void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
-    throw new NotImplementedException();
+    var children = openXmlModeledCollection.Elements().Where(item => item is OpenXmlItemType).ToArray();
+    foreach (var child in children)
+    {
+      child.Remove();
+    }
+    foreach (var item in this)
+    {
+      OpenXmlItemType openXmlElement = Activator.CreateInstance<OpenXmlItemType>();
+      item.UpdateData(openXmlElement);
+      openXmlModeledCollection.AppendChild(openXmlElement);
+    }
   }
 }

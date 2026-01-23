@@ -83,6 +83,10 @@ public static class OpenXmlSimpleValueConverter
     {
       return OpenXml.EnumValueConverter.CreateOpenXmlElement(modelValue, openXmlType);
     }
+    if (modelValue is HexInt hexIntValue)
+    {
+      return HexIntConverter.CreateOpenXmlElement(hexIntValue, openXmlType);
+    }
 
     throw new InvalidOperationException($"Cannot convert {modelValue} of type {modelType} to Open XML simple type {openXmlType}");
   }
