@@ -35,6 +35,7 @@ public partial class AlternateContentChoice : ModelElement<DX.AlternateContentCh
     ///   requirement-based selection mechanism is fundamental to Office's forward compatibility, allowing new features
     ///   to be introduced while ensuring documents remain functional in older application versions.
     /// </remarks>
+    [OpenXmlProperty(nameof(DX.AlternateContentChoice.Requires))]
     public string? Requires { get => _Requires; set => UpdateField(ref _Requires, value, nameof(Requires)); }
 
     private string? _Requires;

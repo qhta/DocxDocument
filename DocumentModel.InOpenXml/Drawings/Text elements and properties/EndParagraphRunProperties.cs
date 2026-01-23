@@ -9,6 +9,7 @@ public partial class EndParagraphRunProperties : ModelElement<DXD.EndParagraphRu
     /// <summary>
     ///   Outline properties for the text.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.EndParagraphRunProperties.Outline))]
     public LineProperties? Outline { get => _Outline; set => UpdateField(ref _Outline, value, nameof(Outline)); }
 
     private LineProperties? _Outline;
@@ -45,6 +46,7 @@ public partial class EndParagraphRunProperties : ModelElement<DXD.EndParagraphRu
     /// <summary>
     ///   Underline properties for the text.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.EndParagraphRunProperties.Underline))]
     public LineProperties? Underline { get => _Underline; set => UpdateField(ref _Underline, value, nameof(Underline)); }
 
     private LineProperties? _Underline;

@@ -7,12 +7,14 @@ public partial class ShapeProperties : ModelElement<DXD.ShapeProperties>
     /// <summary>
     ///   Black and white rendering mode for the shape.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.ShapeProperties.BlackWhiteMode))]
     public BlackWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
 
     private BlackWhiteMode? _BlackWhiteMode;
     /// <summary>
     ///   2D transformation applied to the shape.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.ShapeProperties.Transform2D))]
     public Transform2D? Transform2D { get => _Transform2D; set => UpdateField(ref _Transform2D, value, nameof(Transform2D)); }
 
     private Transform2D? _Transform2D;

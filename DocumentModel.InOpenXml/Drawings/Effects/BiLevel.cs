@@ -7,6 +7,7 @@ public partial class BiLevel : ModelElement<DXD.BiLevel>
     /// <summary>
     /// Threshold value used to determine the separation between the two levels.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.BiLevel.Threshold))]
     public Int32? Threshold { get => _Threshold; set => UpdateField(ref _Threshold, value, nameof(Threshold)); }
 
     private Int32? _Threshold;

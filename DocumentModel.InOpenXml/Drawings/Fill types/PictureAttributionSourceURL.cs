@@ -7,6 +7,7 @@ public partial class PictureAttributionSourceURL : ModelElement<DXO19D.PictureAt
     /// <summary>
     ///   Identifier for the picture attribution source.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO19D.PictureAttributionSourceURL.Id))]
     public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
     private string? _Id;

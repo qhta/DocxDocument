@@ -20,6 +20,7 @@ public partial class Languages : ModelElement<DXW.Languages>
     /// <summary>
     /// Language code for East Asian scripts, such as Chinese, Japanese, or Korean.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.Languages.EastAsia))]
     public string? EastAsia { get => _EastAsia; set => UpdateField(ref _EastAsia, value, nameof(EastAsia)); }
 
     private string? _EastAsia;

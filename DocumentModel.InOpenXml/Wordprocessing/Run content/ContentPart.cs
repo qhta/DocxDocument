@@ -8,6 +8,7 @@ public partial class ContentPart : ModelElement<DXW.ContentPart>, IRunContent, D
     /// <summary>
     /// Relationship ID to the specified custom XML part, identifying the target part containing the referenced content.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.ContentPart.Id))]
     public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
     private string? _Id;

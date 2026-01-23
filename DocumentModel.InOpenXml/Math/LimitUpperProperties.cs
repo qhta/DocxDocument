@@ -7,6 +7,7 @@ public partial class LimitUpperProperties : ModelElement<DXM.LimitUpperPropertie
     /// <summary>
     ///   ControlProperties.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.LimitUpperProperties.ControlProperties))]
     public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
 
     private ControlProperties? _ControlProperties;

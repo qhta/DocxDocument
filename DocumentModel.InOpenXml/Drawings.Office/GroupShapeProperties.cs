@@ -7,12 +7,14 @@ public partial class GroupShapeProperties : ModelElement<DXOD.GroupShapeProperti
     /// <summary>
     ///   Black and White Mode
     /// </summary>
+    [OpenXmlProperty(nameof(DXOD.GroupShapeProperties.BlackWhiteMode))]
     public BlackWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
 
     private BlackWhiteMode? _BlackWhiteMode;
     /// <summary>
     ///   2D Transform for Grouped Objects.
     /// </summary>
+    [OpenXmlProperty(nameof(DXOD.GroupShapeProperties.TransformGroup))]
     public TransformGroup? TransformGroup { get => _TransformGroup; set => UpdateField(ref _TransformGroup, value, nameof(TransformGroup)); }
 
     private TransformGroup? _TransformGroup;
