@@ -7,6 +7,7 @@ public partial class Bar : ModelElement<DXM.Bar>, ICommonMathContent
     /// <summary>
     ///   Specifies formatting properties of bar function.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.Bar.BarProperties))]
     public BarProperties? BarProperties { get => _BarProperties; set => UpdateField(ref _BarProperties, value, nameof(BarProperties)); }
 
     private BarProperties? _BarProperties;

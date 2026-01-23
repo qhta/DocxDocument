@@ -19,32 +19,36 @@ public static class AddOpenXmlPropertyAttribute
     var root = tree.GetCompilationUnitRoot();
 
     var aliasMap = AliasHelper.BuildAliasMap(filePath, root);
-    var rewriter = new AddOpenXmlPropertyAttributeRewriter(aliasMap);
-    var newRoot = rewriter.Visit(root);
-
-    if (rewriter.Changed)
+    try
     {
-      File.WriteAllText(filePath, newRoot.NormalizeWhitespace().ToFullString());
-      Console.WriteLine($"Updated: {filePath}");
+      var rewriter = new AddOpenXmlPropertyAttributeRewriter(aliasMap);
+      var newRoot = rewriter.Visit(root);
+
+      if (rewriter.Changed)
+      {
+        File.WriteAllText(filePath, newRoot.NormalizeWhitespace().ToFullString());
+        Console.WriteLine($"Updated: {filePath}");
+      }
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"Error processing {filePath}\n {ex.Message}");
+      throw;
     }
   }
 }
 
-public class AddOpenXmlPropertyAttributeRewriter : CSharpSyntaxRewriter
+public class AddOpenXmlPropertyAttributeRewriter(Dictionary<string, string> aliasMap) : CSharpSyntaxRewriter
 {
-  private readonly Dictionary<string, string> _aliasMap;
-  private readonly Dictionary<string, Type?> _typeCache = new(StringComparer.Ordinal);
-  private static readonly Assembly? OpenXmlAssembly = typeof(OpenXmlElement).Assembly;
-
   public bool Changed { get; private set; } = false;
-
-  public AddOpenXmlPropertyAttributeRewriter(Dictionary<string, string> aliasMap)
-  {
-    _aliasMap = aliasMap;
-  }
 
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
   {
+
+    // Skip abstract classes
+    if (node.Modifiers.Any(m => m.IsKind(SyntaxKind.AbstractKeyword)))
+      return node;
+
     // Check if class inherits from ModelElement<T>
     var baseType = node.BaseList?.Types
         .Select(bt => bt.Type)
@@ -75,33 +79,21 @@ public class AddOpenXmlPropertyAttributeRewriter : CSharpSyntaxRewriter
         if (!hasAttr)
         {
           var leadingTrivia = prop.GetLeadingTrivia();
-          var docTrivia = leadingTrivia.Where(t =>
-              t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) ||
-              t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia))
-            .ToList();
+          var docTrivia = leadingTrivia.Where(t => t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) || t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia)).ToList();
           var otherTrivia = leadingTrivia.Except(docTrivia).ToList();
 
-          var attributeName = PropertyExistsInOpenXmlType(openXmlType, prop.Identifier.Text)
-            ? "OpenXmlProperty"
-            : "OpenXmlElement";
+          if (PropertyExistsInOpenXmlType(openXmlType, prop.Identifier.Text))
+          {
+            var attributeName = "OpenXmlProperty";
 
-          var attr = SyntaxFactory.Attribute(
-            SyntaxFactory.IdentifierName(attributeName),
-            SyntaxFactory.AttributeArgumentList(
-              SyntaxFactory.SingletonSeparatedList(
-                SyntaxFactory.AttributeArgument(
-                  SyntaxFactory.ParseExpression($"nameof({openXmlType}.{prop.Identifier.Text})")
-                ))));
+            var attr = SyntaxFactory.Attribute(SyntaxFactory.IdentifierName(attributeName), SyntaxFactory.AttributeArgumentList(SyntaxFactory.SingletonSeparatedList(SyntaxFactory.AttributeArgument(SyntaxFactory.ParseExpression($"nameof({openXmlType}.{prop.Identifier.Text})")))));
 
-          var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attr))
-            .WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
-          var newProp = prop
-            .WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia))
-            .WithAttributeLists(prop.AttributeLists.Add(attrList))
-            .WithTrailingTrivia(prop.GetTrailingTrivia());
+            var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attr)).WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
+            var newProp = prop.WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia)).WithAttributeLists(prop.AttributeLists.Add(attrList)).WithTrailingTrivia(prop.GetTrailingTrivia());
 
-          Changed = true;
-          return newProp;
+            Changed = true;
+            return newProp;
+          }
         }
       }
       return member;
@@ -119,28 +111,25 @@ public class AddOpenXmlPropertyAttributeRewriter : CSharpSyntaxRewriter
 
   private bool TryResolveOpenXmlType(string typeName, out Type? type)
   {
-    if (_typeCache.TryGetValue(typeName, out var cached))
+    if (TypeCache.TryResolveType(typeName, out var cached))
     {
       type = cached!;
       return cached != null;
     }
 
     var resolvedName = ResolveAlias(typeName);
-    type = Type.GetType(resolvedName, throwOnError: false, ignoreCase: false) ??
-            OpenXmlAssembly?.GetType(resolvedName, throwOnError: false, ignoreCase: false);
+    type = TypeCache.ResolveType(resolvedName);
+    //{
+    //  foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
+    //  {
+    //    type = asm.GetType(resolvedName, false, false);
+    //    if (type != null)
+    //      break;
+    //  }
+    //}
 
-    if (type == null)
-    {
-      foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
-      {
-        type = asm.GetType(resolvedName, false, false);
-        if (type != null)
-          break;
-      }
-    }
-
-    _typeCache[typeName] = type;
-    return type != null;
+    //_typeCache[typeName] = type;
+    return type!=null;
   }
 
   private string ResolveAlias(string typeName)
@@ -149,7 +138,7 @@ public class AddOpenXmlPropertyAttributeRewriter : CSharpSyntaxRewriter
     if (dotIndex > 0)
     {
       var alias = typeName.Substring(0, dotIndex);
-      if (_aliasMap.TryGetValue(alias, out var ns))
+      if (aliasMap.TryGetValue(alias, out var ns))
         return ns + "." + typeName[(dotIndex + 1)..];
     }
     return typeName;

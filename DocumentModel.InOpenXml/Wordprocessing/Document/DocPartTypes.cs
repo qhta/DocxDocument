@@ -8,6 +8,7 @@ public partial class DocPartTypes : ModelElement<DXW.DocPartTypes>
     /// <summary>
     /// Indicates whether the entry is of all types.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.DocPartTypes.All))]
     public bool? All { get => _All; set => UpdateField(ref _All, value, nameof(All)); }
 
     private bool? _All;

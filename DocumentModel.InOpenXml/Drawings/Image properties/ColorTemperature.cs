@@ -7,6 +7,7 @@ public partial class ColorTemperature : ModelElement<DXO10D.ColorTemperature>, I
     /// <summary>
     /// Color temperature value.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO10D.ColorTemperature.ColorTemperatureValue))]
     public Int32? ColorTemperatureValue { get => _ColorTemperatureValue; set => UpdateField(ref _ColorTemperatureValue, value, nameof(ColorTemperatureValue)); }
 
     private Int32? _ColorTemperatureValue;

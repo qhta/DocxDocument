@@ -9,18 +9,21 @@ public partial class Blip : ModelElement<DXD.Blip>, IExtendableElement
     /// <summary>
     /// Gets or sets the reference to an embedded picture.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.Blip.Embed))]
     public string? Embed { get => _Embed; set => UpdateField(ref _Embed, value, nameof(Embed)); }
 
     private string? _Embed;
     /// <summary>
     /// Gets or sets the reference to a linked picture.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.Blip.Link))]
     public string? Link { get => _Link; set => UpdateField(ref _Link, value, nameof(Link)); }
 
     private string? _Link;
     /// <summary>
     /// Gets or sets the compression state for the blip.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.Blip.CompressionState))]
     public BlipCompressionKind? CompressionState { get => _CompressionState; set => UpdateField(ref _CompressionState, value, nameof(CompressionState)); }
 
     private BlipCompressionKind? _CompressionState;

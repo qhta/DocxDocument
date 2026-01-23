@@ -41,6 +41,7 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
     ///   the arc segment is extracted. Equal width and height radii produce a circular arc.
     ///   </para>
     /// </remarks>
+    [OpenXmlProperty(nameof(DXD.ArcTo.WidthRadius))]
     public string? WidthRadius { get => _WidthRadius; set => UpdateField(ref _WidthRadius, value, nameof(WidthRadius)); }
 
     private string? _WidthRadius;
@@ -65,6 +66,7 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
     ///   the arc segment is extracted. Equal width and height radii produce a circular arc.
     ///   </para>
     /// </remarks>
+    [OpenXmlProperty(nameof(DXD.ArcTo.HeightRadius))]
     public string? HeightRadius { get => _HeightRadius; set => UpdateField(ref _HeightRadius, value, nameof(HeightRadius)); }
 
     private string? _HeightRadius;
@@ -97,6 +99,7 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
     ///   The arc is then drawn from this starting point through the angle specified by SwingAngle.
     ///   </para>
     /// </remarks>
+    [OpenXmlProperty(nameof(DXD.ArcTo.StartAngle))]
     public string? StartAngle { get => _StartAngle; set => UpdateField(ref _StartAngle, value, nameof(StartAngle)); }
 
     private string? _StartAngle;
@@ -130,6 +133,7 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
     ///   The arc is drawn along the ellipse's perimeter from the starting point to this endpoint.
     ///   </para>
     /// </remarks>
+    [OpenXmlProperty(nameof(DXD.ArcTo.SwingAngle))]
     public string? SwingAngle { get => _SwingAngle; set => UpdateField(ref _SwingAngle, value, nameof(SwingAngle)); }
 
     private string? _SwingAngle;

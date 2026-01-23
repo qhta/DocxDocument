@@ -16,6 +16,7 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
     /// <summary>
     /// Zoom percentage, specifying the magnification level as a percentage.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.Zoom.Percent))]
     public int? Percent { get => _Percent; set => UpdateField(ref _Percent, value, nameof(Percent)); }
 
     private int? _Percent;

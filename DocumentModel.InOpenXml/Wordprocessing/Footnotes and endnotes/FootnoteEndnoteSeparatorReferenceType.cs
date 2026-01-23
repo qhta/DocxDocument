@@ -8,6 +8,7 @@ public partial class FootnoteEndnoteSeparatorReferenceType : ModelElement<DXW.Fo
     /// <summary>
     ///   Identifier for the footnote or endnote associated with this separator reference.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FootnoteEndnoteSeparatorReferenceType.Id))]
     public Int32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
     private Int32? _Id;

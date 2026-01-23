@@ -8,6 +8,7 @@ public partial class GradientFillProperties : ModelElement<DXO10W.GradientFillPr
     /// <summary>
     /// The list of gradient stops, defining the colors and positions used in the gradient fill.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO10W.GradientFillProperties.GradientStopList))]
     public GradientStopList? GradientStopList { get => _GradientStopList; set => UpdateField(ref _GradientStopList, value, nameof(GradientStopList)); }
 
     private GradientStopList? _GradientStopList;

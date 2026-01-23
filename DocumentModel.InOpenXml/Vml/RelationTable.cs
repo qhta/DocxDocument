@@ -13,6 +13,7 @@ public partial class RelationTable : ModelElement<DXVO.RelationTable>
     /// <summary>
     ///   VML Extension Handling Behavior
     /// </summary>
+    [OpenXmlProperty(nameof(DXVO.RelationTable.Extension))]
     public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
     private ExtensionHandlingBehaviorKind? _Extension;

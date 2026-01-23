@@ -9,6 +9,10 @@ public partial class Variable : ModelElement<DXW.DocumentVariable>
     /// Name of the document variable, specifying the unique identifier for the variable.
     /// </summary>
     [XmlAttribute]
+    /// <summary>
+    /// Name of the document variable, specifying the unique identifier for the variable.
+    /// </summary>
+    [OpenXmlProperty(nameof(DXW.DocumentVariable.Name))]
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
     private string? _Name;
@@ -16,6 +20,10 @@ public partial class Variable : ModelElement<DXW.DocumentVariable>
     /// Value of the document variable, specified as a string.
     /// </summary>
     [XmlAttribute]
+    /// <summary>
+    /// Value of the document variable, specified as a string.
+    /// </summary>
+    [OpenXmlProperty(nameof(DXW.DocumentVariable.Val))]
     public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
     private string? _Val;

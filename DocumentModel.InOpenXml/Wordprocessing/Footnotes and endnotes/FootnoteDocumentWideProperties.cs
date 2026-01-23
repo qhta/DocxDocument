@@ -8,24 +8,28 @@ public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteD
     /// <summary>
     /// Placement of footnotes in the document, specifying where footnotes appear (e.g., bottom of page, end of document).
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FootnoteDocumentWideProperties.FootnotePosition))]
     public FootnotePositionKind? FootnotePosition { get => _FootnotePosition; set => UpdateField(ref _FootnotePosition, value, nameof(FootnotePosition)); }
 
     private FootnotePositionKind? _FootnotePosition;
     /// <summary>
     /// Numbering format for footnotes, specifying the style of numbering (e.g., Arabic, Roman, letters).
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FootnoteDocumentWideProperties.NumberingFormat))]
     public NumberingFormat? NumberingFormat { get => _NumberingFormat; set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat)); }
 
     private NumberingFormat? _NumberingFormat;
     /// <summary>
     /// Starting value for footnote numbering, specifying the initial number used for the first footnote.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FootnoteDocumentWideProperties.NumberingStart))]
     public UInt16? NumberingStart { get => _NumberingStart; set => UpdateField(ref _NumberingStart, value, nameof(NumberingStart)); }
 
     private UInt16? _NumberingStart;
     /// <summary>
     /// Location where footnote numbering restarts (e.g., each section, each page, continuous).
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FootnoteDocumentWideProperties.NumberingRestart))]
     public RestartNumberKind? NumberingRestart { get => _NumberingRestart; set => UpdateField(ref _NumberingRestart, value, nameof(NumberingRestart)); }
 
     private RestartNumberKind? _NumberingRestart;

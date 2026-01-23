@@ -7,12 +7,14 @@ public partial class Scene3D : ModelElement<DXO10W.Scene3D>, IExtendableElement
     /// <summary>
     ///   Camera settings for the 3-D scene.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO10W.Scene3D.Camera))]
     public Camera? Camera { get => _Camera; set => UpdateField(ref _Camera, value, nameof(Camera)); }
 
     private Camera? _Camera;
     /// <summary>
     ///   Light rig configuration for the 3-D scene.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO10W.Scene3D.LightRig))]
     public LightRig? LightRig { get => _LightRig; set => UpdateField(ref _LightRig, value, nameof(LightRig)); }
 
     private LightRig? _LightRig;

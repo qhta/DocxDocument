@@ -7,18 +7,21 @@ public partial class Source : ModelElement<DXB.Source>
     /// <summary>
     ///   Gets or sets the unique identifier (tag) for the source.
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.Tag))]
     public string? Tag { get => _Tag; set => UpdateField(ref _Tag, value, nameof(Tag)); }
 
     private string? _Tag;
     /// <summary>
     ///   Gets or sets the type of source (book, journal article, website, etc.).
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.SourceType))]
     public SourceTypeKind? SourceType { get => _SourceType; set => UpdateField(ref _SourceType, value, nameof(SourceType)); }
 
     private SourceTypeKind? _SourceType;
     /// <summary>
     ///   Gets or sets the title of the source.
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.Title))]
     public string? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
 
     private string? _Title;
@@ -43,66 +46,77 @@ public partial class Source : ModelElement<DXB.Source>
     /// <summary>
     ///   Gets or sets the year of publication.
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.Year))]
     public string? Year { get => _Year; set => UpdateField(ref _Year, value, nameof(Year)); }
 
     private string? _Year;
     /// <summary>
     ///   Gets or sets the month of publication.
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.Month))]
     public string? Month { get => _Month; set => UpdateField(ref _Month, value, nameof(Month)); }
 
     private string? _Month;
     /// <summary>
     ///   Gets or sets the day of publication.
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.Day))]
     public string? Day { get => _Day; set => UpdateField(ref _Day, value, nameof(Day)); }
 
     private string? _Day;
     /// <summary>
     ///   Gets or sets the publisher name.
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.Publisher))]
     public string? Publisher { get => _Publisher; set => UpdateField(ref _Publisher, value, nameof(Publisher)); }
 
     private string? _Publisher;
     /// <summary>
     ///   Gets or sets the city of publication.
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.City))]
     public string? City { get => _City; set => UpdateField(ref _City, value, nameof(City)); }
 
     private string? _City;
     /// <summary>
     ///   Gets or sets the state or province of publication.
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.StateProvince))]
     public string? StateProvince { get => _StateProvince; set => UpdateField(ref _StateProvince, value, nameof(StateProvince)); }
 
     private string? _StateProvince;
     /// <summary>
     ///   Gets or sets the country or region of publication.
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.CountryRegion))]
     public string? CountryRegion { get => _CountryRegion; set => UpdateField(ref _CountryRegion, value, nameof(CountryRegion)); }
 
     private string? _CountryRegion;
     /// <summary>
     ///   Gets or sets the volume number (for journals, series, etc.).
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.Volume))]
     public string? Volume { get => _Volume; set => UpdateField(ref _Volume, value, nameof(Volume)); }
 
     private string? _Volume;
     /// <summary>
     ///   Gets or sets the issue number (for journals).
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.Issue))]
     public string? Issue { get => _Issue; set => UpdateField(ref _Issue, value, nameof(Issue)); }
 
     private string? _Issue;
     /// <summary>
     ///   Gets or sets the page range.
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.Pages))]
     public string? Pages { get => _Pages; set => UpdateField(ref _Pages, value, nameof(Pages)); }
 
     private string? _Pages;
     /// <summary>
     ///   Gets or sets the edition information.
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.Edition))]
     public string? Edition { get => _Edition; set => UpdateField(ref _Edition, value, nameof(Edition)); }
 
     private string? _Edition;
@@ -145,6 +159,7 @@ public partial class Source : ModelElement<DXB.Source>
     /// <summary>
     ///   Gets or sets additional comments or notes.
     /// </summary>
+    [OpenXmlProperty(nameof(DXB.Source.Comments))]
     public string? Comments { get => _Comments; set => UpdateField(ref _Comments, value, nameof(Comments)); }
 
     private string? _Comments;

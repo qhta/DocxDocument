@@ -7,6 +7,7 @@ public partial class LineSketchStyleProperties : ModelElement<DXO21DSS.LineSketc
     /// <summary>
     ///   Sketch style definition identifier.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO21DSS.LineSketchStyleProperties.Sd))]
     public UInt32? Sd { get => _Sd; set => UpdateField(ref _Sd, value, nameof(Sd)); }
 
     private UInt32? _Sd;

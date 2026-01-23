@@ -8,24 +8,28 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
     /// <summary>
     /// Placement of endnotes in the document, specifying where endnotes appear (e.g., end of section, end of document).
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.EndnoteDocumentWideProperties.EndnotePosition))]
     public EndnotePositionKind? EndnotePosition { get => _EndnotePosition; set => UpdateField(ref _EndnotePosition, value, nameof(EndnotePosition)); }
 
     private EndnotePositionKind? _EndnotePosition;
     /// <summary>
     /// Numbering format for endnotes, specifying the style of numbering (e.g., Arabic, Roman, letters).
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.EndnoteDocumentWideProperties.NumberingFormat))]
     public NumberingFormat? NumberingFormat { get => _NumberingFormat; set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat)); }
 
     private NumberingFormat? _NumberingFormat;
     /// <summary>
     /// Starting value for endnote numbering, specifying the initial number used for the first endnote.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.EndnoteDocumentWideProperties.NumberingStart))]
     public UInt16? NumberingStart { get => _NumberingStart; set => UpdateField(ref _NumberingStart, value, nameof(NumberingStart)); }
 
     private UInt16? _NumberingStart;
     /// <summary>
     /// Location where endnote numbering restarts (e.g., each section, each page, continuous).
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.EndnoteDocumentWideProperties.NumberingRestart))]
     public RestartNumberKind? NumberingRestart { get => _NumberingRestart; set => UpdateField(ref _NumberingRestart, value, nameof(NumberingRestart)); }
 
     private RestartNumberKind? _NumberingRestart;

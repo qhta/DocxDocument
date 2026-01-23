@@ -10,6 +10,7 @@ public partial class Box : ModelElement<DXM.Box>, ICommonMathContent
     /// <summary>
     ///   Specifies properties of box object.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.Box.BoxProperties))]
     public BoxProperties? BoxProperties { get => _BoxProperties; set => UpdateField(ref _BoxProperties, value, nameof(BoxProperties)); }
 
     private BoxProperties? _BoxProperties;

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace AutoEdit;
@@ -18,7 +19,8 @@ static class AliasHelper
 
     foreach (var u in root.Usings.Where(u => u.Alias != null))
     {
-      map[u.Alias!.Name.Identifier.Text] = u.Name.ToString();
+      if (u.Name != null)
+        map[u.Alias!.Name.Identifier.Text] = u.Name.ToString();
     }
 
     foreach (var kvp in GetGlobalAliases(filePath))

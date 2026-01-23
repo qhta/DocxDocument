@@ -13,6 +13,7 @@ public partial class ArtisticCement : ModelElement<DXO10D.ArtisticCement>
     /// <summary>
     /// Spacing between cracks in the cement effect.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO10D.ArtisticCement.CrackSpacing))]
     public Int32? CrackSpacing { get => _CrackSpacing; set => UpdateField(ref _CrackSpacing, value, nameof(CrackSpacing)); }
 
     private Int32? _CrackSpacing;

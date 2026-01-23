@@ -7,24 +7,28 @@ public partial class HiddenLineProperties : ModelElement<DXO10D.HiddenLineProper
     /// <summary>
     /// Specifies the line width in EMUs.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO10D.HiddenLineProperties.Width))]
     public Int32? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
 
     private Int32? _Width;
     /// <summary>
     /// Specifies the line cap type (e.g., flat, round, square).
     /// </summary>
+    [OpenXmlProperty(nameof(DXO10D.HiddenLineProperties.CapType))]
     public LineCapKind? CapType { get => _CapType; set => UpdateField(ref _CapType, value, nameof(CapType)); }
 
     private LineCapKind? _CapType;
     /// <summary>
     /// Specifies the compound line type (e.g., single, double, triple).
     /// </summary>
+    [OpenXmlProperty(nameof(DXO10D.HiddenLineProperties.CompoundLineType))]
     public CompoundLineKind? CompoundLineType { get => _CompoundLineType; set => UpdateField(ref _CompoundLineType, value, nameof(CompoundLineType)); }
 
     private CompoundLineKind? _CompoundLineType;
     /// <summary>
     /// Specifies the pen alignment for the line.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO10D.HiddenLineProperties.Alignment))]
     public PenAlignmentKind? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
 
     private PenAlignmentKind? _Alignment;

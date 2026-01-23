@@ -7,6 +7,7 @@ public partial class ImageProperties : ModelElement<DXO10D.ImageProperties>, IEx
     /// <summary>
     /// Image layer, which defines the base image and its properties.
     /// </summary>
+    [OpenXmlProperty(nameof(DXO10D.ImageProperties.ImageLayer))]
     public ImageLayer? ImageLayer { get => _ImageLayer; set => UpdateField(ref _ImageLayer, value, nameof(ImageLayer)); }
 
     private ImageLayer? _ImageLayer;

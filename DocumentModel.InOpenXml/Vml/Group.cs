@@ -10,204 +10,238 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
     /// <summary>
     ///   Unique Identifier
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.Id))]
     public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
     private string? _Id;
     /// <summary>
     ///   Shape Styling Properties
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.Style))]
     public string? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
 
     private string? _Style;
     /// <summary>
     ///   IHyperlink Target
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.Href))]
     public string? Href { get => _Href; set => UpdateField(ref _Href, value, nameof(Href)); }
 
     private string? _Href;
     /// <summary>
     ///   IHyperlink Display Target
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.Target))]
     public string? Target { get => _Target; set => UpdateField(ref _Target, value, nameof(Target)); }
 
     private string? _Target;
     /// <summary>
     ///   CSS Reference
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.Class))]
     public string? Class { get => _Class; set => UpdateField(ref _Class, value, nameof(Class)); }
 
     private string? _Class;
     /// <summary>
     ///   Shape Title
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.Title))]
     public string? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
 
     private string? _Title;
     /// <summary>
     ///   Alternate Text
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.Alternate))]
     public string? Alternate { get => _Alternate; set => UpdateField(ref _Alternate, value, nameof(Alternate)); }
 
     private string? _Alternate;
     /// <summary>
     ///   Coordinate Space Size
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.CoordinateSize))]
     public string? CoordinateSize { get => _CoordinateSize; set => UpdateField(ref _CoordinateSize, value, nameof(CoordinateSize)); }
 
     private string? _CoordinateSize;
     /// <summary>
     ///   Coordinate Space Origin
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.CoordinateOrigin))]
     public string? CoordinateOrigin { get => _CoordinateOrigin; set => UpdateField(ref _CoordinateOrigin, value, nameof(CoordinateOrigin)); }
 
     private string? _CoordinateOrigin;
     /// <summary>
     ///   Shape Bounding Polygon
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.WrapCoordinates))]
     public string? WrapCoordinates { get => _WrapCoordinates; set => UpdateField(ref _WrapCoordinates, value, nameof(WrapCoordinates)); }
 
     private string? _WrapCoordinates;
     /// <summary>
     ///   Print Toggle
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.Print))]
     public bool? Print { get => _Print; set => UpdateField(ref _Print, value, nameof(Print)); }
 
     private bool? _Print;
     /// <summary>
     ///   spid
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.OptionalString))]
     public string? OptionalString { get => _OptionalString; set => UpdateField(ref _OptionalString, value, nameof(OptionalString)); }
 
     private string? _OptionalString;
     /// <summary>
     ///   oned
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.Oned))]
     public bool? Oned { get => _Oned; set => UpdateField(ref _Oned, value, nameof(Oned)); }
 
     private bool? _Oned;
     /// <summary>
     ///   regroupid
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.RegroupId))]
     public Int64? RegroupId { get => _RegroupId; set => UpdateField(ref _RegroupId, value, nameof(RegroupId)); }
 
     private Int64? _RegroupId;
     /// <summary>
     ///   doubleclicknotify
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.DoubleClickNotify))]
     public bool? DoubleClickNotify { get => _DoubleClickNotify; set => UpdateField(ref _DoubleClickNotify, value, nameof(DoubleClickNotify)); }
 
     private bool? _DoubleClickNotify;
     /// <summary>
     ///   button
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.Button))]
     public bool? Button { get => _Button; set => UpdateField(ref _Button, value, nameof(Button)); }
 
     private bool? _Button;
     /// <summary>
     ///   userhidden
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.UserHidden))]
     public bool? UserHidden { get => _UserHidden; set => UpdateField(ref _UserHidden, value, nameof(UserHidden)); }
 
     private bool? _UserHidden;
     /// <summary>
     ///   bullet
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.Bullet))]
     public bool? Bullet { get => _Bullet; set => UpdateField(ref _Bullet, value, nameof(Bullet)); }
 
     private bool? _Bullet;
     /// <summary>
     ///   hr
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.Horizontal))]
     public bool? Horizontal { get => _Horizontal; set => UpdateField(ref _Horizontal, value, nameof(Horizontal)); }
 
     private bool? _Horizontal;
     /// <summary>
     ///   hrstd
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.HorizontalStandard))]
     public bool? HorizontalStandard { get => _HorizontalStandard; set => UpdateField(ref _HorizontalStandard, value, nameof(HorizontalStandard)); }
 
     private bool? _HorizontalStandard;
     /// <summary>
     ///   hrnoshade
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.HorizontalNoShade))]
     public bool? HorizontalNoShade { get => _HorizontalNoShade; set => UpdateField(ref _HorizontalNoShade, value, nameof(HorizontalNoShade)); }
 
     private bool? _HorizontalNoShade;
     /// <summary>
     ///   hrpct
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.HorizontalPercentage))]
     public Single? HorizontalPercentage { get => _HorizontalPercentage; set => UpdateField(ref _HorizontalPercentage, value, nameof(HorizontalPercentage)); }
 
     private Single? _HorizontalPercentage;
     /// <summary>
     ///   hralign
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.HorizontalAlignment))]
     public HorizontalRuleAlignmentKind? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
 
     private HorizontalRuleAlignmentKind? _HorizontalAlignment;
     /// <summary>
     ///   allowincell
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.AllowInCell))]
     public bool? AllowInCell { get => _AllowInCell; set => UpdateField(ref _AllowInCell, value, nameof(AllowInCell)); }
 
     private bool? _AllowInCell;
     /// <summary>
     ///   allowoverlap
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.AllowOverlap))]
     public bool? AllowOverlap { get => _AllowOverlap; set => UpdateField(ref _AllowOverlap, value, nameof(AllowOverlap)); }
 
     private bool? _AllowOverlap;
     /// <summary>
     ///   userdrawn
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.UserDrawn))]
     public bool? UserDrawn { get => _UserDrawn; set => UpdateField(ref _UserDrawn, value, nameof(UserDrawn)); }
 
     private bool? _UserDrawn;
     /// <summary>
     ///   dgmlayout
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.DiagramLayout))]
     public Int64? DiagramLayout { get => _DiagramLayout; set => UpdateField(ref _DiagramLayout, value, nameof(DiagramLayout)); }
 
     private Int64? _DiagramLayout;
     /// <summary>
     ///   dgmnodekind
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.DiagramNodeKind))]
     public Int64? DiagramNodeKind { get => _DiagramNodeKind; set => UpdateField(ref _DiagramNodeKind, value, nameof(DiagramNodeKind)); }
 
     private Int64? _DiagramNodeKind;
     /// <summary>
     ///   dgmlayoutmru
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.DiagramLayoutMostRecentUsed))]
     public Int64? DiagramLayoutMostRecentUsed { get => _DiagramLayoutMostRecentUsed; set => UpdateField(ref _DiagramLayoutMostRecentUsed, value, nameof(DiagramLayoutMostRecentUsed)); }
 
     private Int64? _DiagramLayoutMostRecentUsed;
     /// <summary>
     ///   insetmode
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.InsetMode))]
     public InsetMarginKind? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
 
     private InsetMarginKind? _InsetMode;
     /// <summary>
     ///   Encoded Package
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.Gfxdata))]
     public Base64Binary? Gfxdata { get => _Gfxdata; set => UpdateField(ref _Gfxdata, value, nameof(Gfxdata)); }
 
     private Base64Binary? _Gfxdata;
     /// <summary>
     ///   Group Diagram Type
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.EditAs))]
     public EditAsKind? EditAs { get => _EditAs; set => UpdateField(ref _EditAs, value, nameof(EditAs)); }
 
     private EditAsKind? _EditAs;
     /// <summary>
     ///   Table Properties
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.TableProperties))]
     public string? TableProperties { get => _TableProperties; set => UpdateField(ref _TableProperties, value, nameof(TableProperties)); }
 
     private string? _TableProperties;
     /// <summary>
     ///   Table Row Height Limits
     /// </summary>
+    [OpenXmlProperty(nameof(DXV.Group.TableLimits))]
     public string? TableLimits { get => _TableLimits; set => UpdateField(ref _TableLimits, value, nameof(TableLimits)); }
 
     private string? _TableLimits;

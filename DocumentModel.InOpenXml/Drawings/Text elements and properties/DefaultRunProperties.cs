@@ -7,6 +7,7 @@ public partial class DefaultRunProperties : ModelElement<DXD.DefaultRunPropertie
     /// <summary>
     ///   Outline properties for the text run.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.DefaultRunProperties.Outline))]
     public LineProperties? Outline { get => _Outline; set => UpdateField(ref _Outline, value, nameof(Outline)); }
 
     private LineProperties? _Outline;
@@ -43,6 +44,7 @@ public partial class DefaultRunProperties : ModelElement<DXD.DefaultRunPropertie
     /// <summary>
     ///   Underline properties for the text run.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.DefaultRunProperties.Underline))]
     public LineProperties? Underline { get => _Underline; set => UpdateField(ref _Underline, value, nameof(Underline)); }
 
     private LineProperties? _Underline;

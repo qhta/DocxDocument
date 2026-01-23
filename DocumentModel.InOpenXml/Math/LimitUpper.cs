@@ -7,6 +7,7 @@ public partial class LimitUpper : ModelElement<DXM.LimitUpper>, ICommonMathConte
     /// <summary>
     ///   Upper Limit Properties.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.LimitUpper.LimitUpperProperties))]
     public LimitUpperProperties? LimitUpperProperties { get => _LimitUpperProperties; set => UpdateField(ref _LimitUpperProperties, value, nameof(LimitUpperProperties)); }
 
     private LimitUpperProperties? _LimitUpperProperties;
@@ -19,6 +20,7 @@ public partial class LimitUpper : ModelElement<DXM.LimitUpper>, ICommonMathConte
     /// <summary>
     ///   Limit (Upper).
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.LimitUpper.Limit))]
     public Limit? Limit { get => _Limit; set => UpdateField(ref _Limit, value, nameof(Limit)); }
 
     private Limit? _Limit;

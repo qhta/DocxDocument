@@ -16,18 +16,21 @@ public partial class GraphicFrame : ModelElement<DXD.GraphicFrame>, IOfficeArtEx
     /// <summary>
     /// Non-visual properties specific to the graphic frame, such as locking and extension settings for advanced configuration.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.GraphicFrame.NonVisualGraphicFrameProperties))]
     public NonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get => _NonVisualGraphicFrameProperties; set => UpdateField(ref _NonVisualGraphicFrameProperties, value, nameof(NonVisualGraphicFrameProperties)); }
 
     private NonVisualGraphicFrameProperties? _NonVisualGraphicFrameProperties;
     /// <summary>
     /// The 2D transformation applied to the graphic frame, including translation, scaling, rotation, and skew, which determines the frame's position and orientation.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.GraphicFrame.Transform2D))]
     public Transform2D? Transform2D { get => _Transform2D; set => UpdateField(ref _Transform2D, value, nameof(Transform2D)); }
 
     private Transform2D? _Transform2D;
     /// <summary>
     /// The graphic content contained within the frame, which may include images, charts, diagrams, or other graphical objects.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.GraphicFrame.Graphic))]
     public Graphic? Graphic { get => _Graphic; set => UpdateField(ref _Graphic, value, nameof(Graphic)); }
 
     private Graphic? _Graphic;

@@ -7,6 +7,7 @@ public partial class CharacterBullet : ModelElement<DXD.CharacterBullet>, IExten
     /// <summary>
     /// Bullet character.
     /// </summary>
+    [OpenXmlProperty(nameof(DXD.CharacterBullet.Char))]
     public string? Char { get => _Char; set => UpdateField(ref _Char, value, nameof(Char)); }
 
     private string? _Char;

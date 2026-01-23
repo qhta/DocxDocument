@@ -12,6 +12,7 @@ public partial class PhantomProperties : ModelElement<DXM.PhantomProperties>
     ///   Whether the element is absent or present without the val attribute, 
     ///   the default of the val attribute is 1 meaning that this property is applied.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.PhantomProperties.ShowPhantom))]
     public bool? ShowPhantom { get => _ShowPhantom; set => UpdateField(ref _ShowPhantom, value, nameof(ShowPhantom)); }
 
     private bool? _ShowPhantom;
@@ -23,6 +24,7 @@ public partial class PhantomProperties : ModelElement<DXM.PhantomProperties>
     ///   When the element is present and the val attribute is absent, 
     ///   the default of the val attribute is 1 meaning that this property is applied.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.PhantomProperties.ZeroWidth))]
     public bool? ZeroWidth { get => _ZeroWidth; set => UpdateField(ref _ZeroWidth, value, nameof(ZeroWidth)); }
 
     private bool? _ZeroWidth;
@@ -34,6 +36,7 @@ public partial class PhantomProperties : ModelElement<DXM.PhantomProperties>
     ///   When the element is present and the val attribute is absent, 
     ///   the default of the val attribute is 1 meaning that this property is applied.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.PhantomProperties.ZeroAscent))]
     public bool? ZeroAscent { get => _ZeroAscent; set => UpdateField(ref _ZeroAscent, value, nameof(ZeroAscent)); }
 
     private bool? _ZeroAscent;
@@ -45,6 +48,7 @@ public partial class PhantomProperties : ModelElement<DXM.PhantomProperties>
     ///   When the element is present and the val attribute is absent, 
     ///   the default of the val attribute is 1 meaning that this property is applied.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.PhantomProperties.ZeroDescent))]
     public bool? ZeroDescent { get => _ZeroDescent; set => UpdateField(ref _ZeroDescent, value, nameof(ZeroDescent)); }
 
     private bool? _ZeroDescent;
@@ -59,12 +63,14 @@ public partial class PhantomProperties : ModelElement<DXM.PhantomProperties>
     ///   When the element is present and the val attribute is absent, 
     ///   the default of the val attribute is 1 meaning that this property is applied.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.PhantomProperties.Transparent))]
     public bool? Transparent { get => _Transparent; set => UpdateField(ref _Transparent, value, nameof(Transparent)); }
 
     private bool? _Transparent;
     /// <summary>
     ///   Specifies formatting of phantom object argument.
     /// </summary>
+    [OpenXmlProperty(nameof(DXM.PhantomProperties.ControlProperties))]
     public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
 
     private ControlProperties? _ControlProperties;

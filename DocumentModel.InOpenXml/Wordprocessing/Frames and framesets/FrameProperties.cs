@@ -8,90 +8,105 @@ public partial class FrameProperties : ModelElement<DXW.FrameProperties>
     /// <summary>
     ///   Drop cap frame location, specifying the position of the drop cap within the frame.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.DropCap))]
     public DropCapLocationKind? DropCap { get => _DropCap; set => UpdateField(ref _DropCap, value, nameof(DropCap)); }
 
     private DropCapLocationKind? _DropCap;
     /// <summary>
     ///   Drop cap vertical height, specified in lines.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.Lines))]
     public Int32? Lines { get => _Lines; set => UpdateField(ref _Lines, value, nameof(Lines)); }
 
     private Int32? _Lines;
     /// <summary>
     ///   Width of the frame, specified as a string value (e.g., in points or percent).
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.Width))]
     public string? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
 
     private string? _Width;
     /// <summary>
     ///   Height of the frame, specified as an unsigned integer value.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.Height))]
     public UInt32? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
 
     private UInt32? _Height;
     /// <summary>
     ///   Vertical padding for the frame, specifying space above and below the frame.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.VerticalSpace))]
     public string? VerticalSpace { get => _VerticalSpace; set => UpdateField(ref _VerticalSpace, value, nameof(VerticalSpace)); }
 
     private string? _VerticalSpace;
     /// <summary>
     ///   Horizontal padding for the frame, specifying space to the left and right of the frame.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.HorizontalSpace))]
     public string? HorizontalSpace { get => _HorizontalSpace; set => UpdateField(ref _HorizontalSpace, value, nameof(HorizontalSpace)); }
 
     private string? _HorizontalSpace;
     /// <summary>
     ///   Text wrapping option around the frame, specifying how text flows around the frame.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.Wrap))]
     public TextWrappingKind? Wrap { get => _Wrap; set => UpdateField(ref _Wrap, value, nameof(Wrap)); }
 
     private TextWrappingKind? _Wrap;
     /// <summary>
     ///   Horizontal positioning base for the frame, specifying the reference point for horizontal alignment.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.HorizontalPosition))]
     public HorizontalAnchorKind? HorizontalPosition { get => _HorizontalPosition; set => UpdateField(ref _HorizontalPosition, value, nameof(HorizontalPosition)); }
 
     private HorizontalAnchorKind? _HorizontalPosition;
     /// <summary>
     ///   Vertical positioning base for the frame, specifying the reference point for vertical alignment.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.VerticalPosition))]
     public VerticalAnchorKind? VerticalPosition { get => _VerticalPosition; set => UpdateField(ref _VerticalPosition, value, nameof(VerticalPosition)); }
 
     private VerticalAnchorKind? _VerticalPosition;
     /// <summary>
     ///   Absolute horizontal position of the frame, specified as a string value.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.X))]
     public string? X { get => _X; set => UpdateField(ref _X, value, nameof(X)); }
 
     private string? _X;
     /// <summary>
     ///   Relative horizontal position of the frame, specifying alignment relative to the horizontal anchor.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.XAlign))]
     public HorizontalAlignmentKind? XAlign { get => _XAlign; set => UpdateField(ref _XAlign, value, nameof(XAlign)); }
 
     private HorizontalAlignmentKind? _XAlign;
     /// <summary>
     ///   Absolute vertical position of the frame, specified as a string value.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.Y))]
     public string? Y { get => _Y; set => UpdateField(ref _Y, value, nameof(Y)); }
 
     private string? _Y;
     /// <summary>
     ///   Relative vertical position of the frame, specifying alignment relative to the vertical anchor.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.YAlign))]
     public VerticalAlignmentKind? YAlign { get => _YAlign; set => UpdateField(ref _YAlign, value, nameof(YAlign)); }
 
     private VerticalAlignmentKind? _YAlign;
     /// <summary>
     ///   Height rule for the frame, specifying how the frame height is determined.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.HeightType))]
     public HeightRuleKind? HeightType { get => _HeightType; set => UpdateField(ref _HeightType, value, nameof(HeightType)); }
 
     private HeightRuleKind? _HeightType;
     /// <summary>
     ///   Indicates whether the frame anchor is locked to the paragraph, preventing movement.
     /// </summary>
+    [OpenXmlProperty(nameof(DXW.FrameProperties.AnchorLock))]
     public bool? AnchorLock { get => _AnchorLock; set => UpdateField(ref _AnchorLock, value, nameof(AnchorLock)); }
 
     private bool? _AnchorLock;

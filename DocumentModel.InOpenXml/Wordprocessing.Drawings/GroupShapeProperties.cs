@@ -10,12 +10,14 @@ public partial class GroupShapeProperties : ModelElement<DXOD.GroupShapeProperti
     /// <summary>
     /// The black and white rendering mode for the group shape, specifying how it appears when displayed or printed in monochrome.
     /// </summary>
+    [OpenXmlProperty(nameof(DXOD.GroupShapeProperties.BlackWhiteMode))]
     public BlackWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
 
     private BlackWhiteMode? _BlackWhiteMode;
     /// <summary>
     /// The 2D transformation applied to the group, including translation, scaling, rotation, and skew for grouped objects.
     /// </summary>
+    [OpenXmlProperty(nameof(DXOD.GroupShapeProperties.TransformGroup))]
     public TransformGroup? TransformGroup { get => _TransformGroup; set => UpdateField(ref _TransformGroup, value, nameof(TransformGroup)); }
 
     private TransformGroup? _TransformGroup;
