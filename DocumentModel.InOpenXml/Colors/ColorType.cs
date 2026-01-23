@@ -2,10 +2,6 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ColorType Class.
 /// </summary>
-public class ColorType: ModelElement, IColor
+public abstract class ColorType<T>: Color<T> where T : DX.OpenXmlElement
 {
-  protected override object? GetUpdatableOpenXmlElement()
-  {
-    throw new NotImplementedException();
-  }
 }

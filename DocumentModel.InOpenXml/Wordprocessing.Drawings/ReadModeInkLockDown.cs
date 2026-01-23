@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents settings for freezing the document layout in read mode for ink content in a Wordprocessing document.
-/// This interface provides properties for controlling page usage, virtual page dimensions, and font size scaling, enabling consistent rendering and layout preservation when displaying ink annotations or drawings.
+/// This class provides properties for controlling page usage, virtual page dimensions, and font size scaling, enabling consistent rendering and layout preservation when displaying ink annotations or drawings.
 /// </summary>
 public partial class ReadModeInkLockDown : ModelElement
 {

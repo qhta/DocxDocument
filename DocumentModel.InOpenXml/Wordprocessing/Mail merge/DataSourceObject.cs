@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents Office Data Source Object (ODSO) settings for mail merge in a WordprocessingML document.
-/// This interface provides properties for UDL connection strings, data source table names, file references, delimiters, source types, header row configuration, field mapping, and recipient data references, enabling advanced configuration and management of mail merge data sources.
+/// This class provides properties for UDL connection strings, data source table names, file references, delimiters, source types, header row configuration, field mapping, and recipient data references, enabling advanced configuration and management of mail merge data sources.
 /// </summary>
 public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
 {

@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the table layout settings for a table in a Wordprocessing document.
-/// This interface provides a property for specifying the layout type, enabling control over table rendering and structure (such as fixed or auto layout).
+/// This class provides a property for specifying the layout type, enabling control over table rendering and structure (such as fixed or auto layout).
 /// </summary>
 public partial class TableLayout : ModelElement<DXW.TableLayout>
 {

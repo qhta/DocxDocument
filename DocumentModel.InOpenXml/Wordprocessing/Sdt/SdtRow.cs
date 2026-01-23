@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the presence of a structured document tag around a single table row.
-/// This interface represents a collection of structured document tag row content and provides properties for tag configuration and end character formatting, enabling advanced handling of structured document tags for table rows.
+/// This class represents a collection of structured document tag row content and provides properties for tag configuration and end character formatting, enabling advanced handling of structured document tags for table rows.
 /// </summary>
-public interface SdtRow: IElementCollection<ISdtRowContent>, ITableContent, ISdtRowContent
+public class SdtRow: ModelElement<DXW.SdtRow>, ITableContent, ISdtRowContent
 {
   
   /// <summary>

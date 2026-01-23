@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 /// Represents a linked text box within a Wordprocessing document.
-/// This interface provides properties for identifying and sequencing linked text boxes, enabling the chaining of text across multiple text boxes for advanced text flow and layout scenarios.
+/// This class provides properties for identifying and sequencing linked text boxes, enabling the chaining of text across multiple text boxes for advanced text flow and layout scenarios.
 /// </summary>
-public interface LinkedTextBox : DMD.IOfficeArtExtendableElement
+public class LinkedTextBox : ModelElement<DXO10WDS.LinkedTextBox>, DMD.IOfficeArtExtendableElement
 {
   /// <summary>
   /// The unique identifier for the linked text box, used to distinguish it from other text boxes in the document.
@@ -15,4 +15,6 @@ public interface LinkedTextBox : DMD.IOfficeArtExtendableElement
   /// The sequence number of the linked text box, indicating its order in a chain of linked text boxes for text flow.
   /// </summary>
   public UInt16? Sequence { get; set; }
+
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

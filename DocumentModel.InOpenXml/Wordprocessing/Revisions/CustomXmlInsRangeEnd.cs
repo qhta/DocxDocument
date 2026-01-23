@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CustomXmlInsRangeEnd Class.
 /// </summary>
-public interface CustomXmlInsRangeEnd: IMarkupElement
+public class CustomXmlInsRangeEnd: MarkupEndRangeElement<DXW.CustomXmlInsRangeEnd, DXW.CustomXmlInsRangeStart>
 {
 }

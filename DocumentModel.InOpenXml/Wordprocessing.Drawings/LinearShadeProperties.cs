@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the properties for a linear gradient shade applied to a drawing element in a Wordprocessing document.
-/// This interface provides configuration for the angle and scaling of the linear gradient, enabling precise control over gradient direction and behavior.
+/// This class provides configuration for the angle and scaling of the linear gradient, enabling precise control over gradient direction and behavior.
 /// </summary>
 public partial class LinearShadeProperties : ModelElement
 {

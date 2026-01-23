@@ -1,5 +1,5 @@
 namespace DocumentModel.Vml;
 
-public interface Relations: IElementCollection<Relation>
+public class Relations: ElementCollection<Relation>
 {
 }

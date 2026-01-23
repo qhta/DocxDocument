@@ -5,7 +5,7 @@ using DocumentModel.Wordprocessing.Vml;
 namespace DocumentModel.Vml;
 /// <summary>
 /// Represents a shape template in a VML drawing, providing properties for styling, positioning, behavior, and embedded content.
-/// This interface enables advanced customization and management of VML shapes, including hyperlinks, CSS references, coordinate space, borders, fill, stroke, shadow, text, image data, and more.
+/// This class enables advanced customization and management of VML shapes, including hyperlinks, CSS references, coordinate space, borders, fill, stroke, shadow, text, image data, and more.
 /// </summary>
 public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectContent
 {
@@ -242,7 +242,7 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
     /// <summary>
     /// Fill element for the shape, specifying fill formatting.
     /// </summary>
-    public Fill? Fill { get; set; }
+    public DMD.Fill? Fill { get; set; }
     /// <summary>
     /// Stroke element for the shape, specifying stroke formatting.
     /// </summary>

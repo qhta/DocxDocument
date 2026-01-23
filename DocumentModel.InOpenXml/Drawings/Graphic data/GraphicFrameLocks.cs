@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents locking options for a graphic frame, restricting user actions such as grouping, selection, movement, and resizing.
 /// </summary>
-public interface GraphicFrameLocks : IExtendableElement
+public class GraphicFrameLocks : ModelElement<DXD.GraphicFrameLocks>, IExtendableElement
 {
   /// <summary>
   ///   Disallows grouping of the graphic frame.
@@ -34,4 +34,9 @@ public interface GraphicFrameLocks : IExtendableElement
   ///   Disallows resizing the graphic frame.
   /// </summary>
   public bool? NoResize { get; set; }
+
+  /// <summary>
+  /// List of extensions for the graphic frame locks.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

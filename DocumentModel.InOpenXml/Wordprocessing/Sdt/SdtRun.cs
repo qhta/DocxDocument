@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Structured document tag around one or more inline-level structures (runs, DrawingML objects, fields, etc.) in the current paragraph.
-/// This interface represents a collection of structured document tag run content and provides properties for tag configuration and end character formatting, enabling advanced handling of inline-level structured document tags.
+/// This class represents a collection of structured document tag run content and provides properties for tag configuration and end character formatting, enabling advanced handling of inline-level structured document tags.
 /// </summary>
-public interface SdtRun: IElementCollection<ISdtRunContent>, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
+public class SdtRun: ModelElement<DXW.SdtRun>, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
 {
   
   /// <summary>

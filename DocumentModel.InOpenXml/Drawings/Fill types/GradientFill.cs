@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings;
 /// <summary>
-///   Defines the GradientFill interface.
+///   Defines the GradientFill class.
 /// </summary>
-public partial class GradientFill : Fill
+public partial class GradientFill : Fill<DXD.GradientFill>
 {
   /// <summary>
   ///   Tile Flip

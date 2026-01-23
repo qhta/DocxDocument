@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ClassificationLabel Class.
 /// </summary>
-public interface ClassificationLabel: ICollectionItem
+public class ClassificationLabel: ModelElement<DXO21MLMD.ClassificationLabel>
 {
   /// <summary>
   ///   id

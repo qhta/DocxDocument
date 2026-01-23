@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a textual element within a text run in WordprocessingML documents.
-/// This interface is used for inline text content, such as <see cref="Text"/> and <see cref="FieldCode"/>, and provides properties for the text value and deletion status.
+/// This class is used for inline text content, such as <see cref="Text"/> and <see cref="FieldCode"/>, and provides properties for the text value and deletion status.
 /// </summary>
-public interface TextualElement : IRunContent
+public abstract class TextualElement<T> : ModelElement<T>, IRunContent where T : DX.OpenXmlElement
 {
   
   /// <summary>
@@ -17,5 +17,5 @@ public interface TextualElement : IRunContent
   /// The text value represented by this element.
   /// </summary>
   [XmlText]
-  public string Text { get; set; }
+  public string? Text { get; set; }
 }

@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents latent style exception information for a Wordprocessing document.
-/// This interface provides properties for style name, locking, UI priority, visibility, and primary style settings, enabling advanced management and customization of latent styles.
+/// This class provides properties for style name, locking, UI priority, visibility, and primary style settings, enabling advanced management and customization of latent styles.
 /// </summary>
-public partial interface LatentStyleExceptionInfo
+public partial class LatentStyleExceptionInfo : ModelElement<DXW.LatentStyleExceptionInfo>
 {
   /// <summary>
   /// Primary style name associated with the latent style exception.

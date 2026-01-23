@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents a canvas element in a Wordprocessing document for grouping and organizing graphical content.
-/// This interface provides access to background formatting, whole formatting, shapes, pictures, groups, graphic frames, and extension data, enabling advanced layout and rendering of graphical objects within the document.
+/// This class provides access to background formatting, whole formatting, shapes, pictures, groups, graphic frames, and extension data, enabling advanced layout and rendering of graphical objects within the document.
 /// </summary>
 public partial class WordprocessingCanvas : ModelElement
 {

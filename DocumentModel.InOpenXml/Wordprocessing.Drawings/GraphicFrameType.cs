@@ -3,7 +3,7 @@ using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the type definition for a graphic frame in a Wordprocessing document.
-/// This interface provides access to non-visual properties, transformation settings, the contained graphic, and extension data, enabling advanced layout, rendering, and extensibility for graphical content.
+/// This class provides access to non-visual properties, transformation settings, the contained graphic, and extension data, enabling advanced layout, rendering, and extensibility for graphical content.
 /// </summary>
 public partial class GraphicFrameType : ModelElement<DXO10WDC.GraphicFrameType>
 {

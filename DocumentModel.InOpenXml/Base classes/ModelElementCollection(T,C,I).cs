@@ -2,7 +2,7 @@
 
 public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, OpenXmlItemType>: 
   ModelElementCollection<ItemType, OpenXmlCollectionType>
-  where ItemType : ModelElement<OpenXmlItemType>
+  where ItemType : ModelElement
   where OpenXmlCollectionType: DX.OpenXmlElement
   where OpenXmlItemType: DX.OpenXmlElement
 {

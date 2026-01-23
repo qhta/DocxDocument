@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies additional information for a single comment in the current document.
-/// This interface extends <see cref="CollectionItem"/> and provides properties for the paragraph identifier of the last paragraph in the comment, the parent comment's last paragraph identifier, and the completion status, enabling advanced tracking and management of comment threads and resolution status.
+/// This class extends <see cref="CollectionItem"/> and provides properties for the paragraph identifier of the last paragraph in the comment, the parent comment's last paragraph identifier, and the completion status, enabling advanced tracking and management of comment threads and resolution status.
 /// </summary>
-public interface CommentEx: ICollectionItem
+public class CommentEx: ModelElement<DXO13W.CommentEx>
 {
   
   /// <summary>

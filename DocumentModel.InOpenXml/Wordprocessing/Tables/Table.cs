@@ -2,10 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a table element in a Wordprocessing document.
-/// This interface provides access to table properties and grid definitions, enabling configuration and management of table structure, formatting, and layout within the document.
+/// This class provides access to table properties and grid definitions, enabling configuration and management of table structure, formatting, and layout within the document.
 /// </summary>
-public interface Table: IElementCollection<ITableContent>, IStoryContent, 
-  ITableCellContent, ISdtBlockContent, ICommentContent, ICustomXmlBlockContent
+public class Table: ModelElement<DXW.Table>, IStoryContent, ITableCellContent, ISdtBlockContent, ICommentContent, ICustomXmlBlockContent
 {
 
   /// <summary>

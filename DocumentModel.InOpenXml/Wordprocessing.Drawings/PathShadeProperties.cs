@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the properties for a path-based gradient shade applied to a drawing element in a Wordprocessing document.
-/// This interface provides configuration for the gradient path type and the rectangle area to which the fill is applied, enabling advanced gradient effects and precise control over fill positioning.
+/// This class provides configuration for the gradient path type and the rectangle area to which the fill is applied, enabling advanced gradient effects and precise control over fill positioning.
 /// </summary>
 public partial class PathShadeProperties : ModelElement<DXO10W.PathShadeProperties>
 {

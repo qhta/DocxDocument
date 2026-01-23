@@ -3,7 +3,7 @@ using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents shading formatting for a drawing element in a Wordprocessing document.
-/// This interface provides properties for specifying the shading pattern, foreground color, and background color, enabling advanced visual effects for graphical objects.
+/// This class provides properties for specifying the shading pattern, foreground color, and background color, enabling advanced visual effects for graphical objects.
 /// </summary>
 public partial class Shading : ModelElement
 {
@@ -16,9 +16,9 @@ public partial class Shading : ModelElement
     /// <summary>
     /// The color of the pattern foreground, specifying the primary color used in the shading pattern.
     /// </summary>
-    public IColor? ForegroundColor { get; set; }
+    public DocumentModel.Color? ForegroundColor { get; set; }
     /// <summary>
     /// The color of the pattern background, specifying the secondary color used in the shading pattern.
     /// </summary>
-    public IColor? BackgroundColor { get; set; }
+    public DocumentModel.Color? BackgroundColor { get; set; }
 }

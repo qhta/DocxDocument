@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents the properties of a text body in a drawing, including layout, overflow, wrapping, insets, columns, anchoring, and 3D effects.
 /// </summary>
-public interface BodyProperties: IExtendableElement
+public class BodyProperties: ModelElement, IExtendableElement
 {
   /// <summary>
   /// Rotation of the text body.
@@ -134,4 +134,9 @@ public interface BodyProperties: IExtendableElement
   /// Flat text properties.
   /// </summary>
   public FlatText? FlatText { get; set; }
+
+  /// <summary>
+  /// List of extensions for additional properties.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

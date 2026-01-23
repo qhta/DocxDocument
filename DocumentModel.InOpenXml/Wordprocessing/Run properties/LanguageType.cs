@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents language codes for spell checking and grammar checking in different script contexts in WordprocessingML documents.
-/// This interface defines language codes for Latin/ASCII, East Asian, and complex script (bidirectional) text, supporting RFC 1766 or ISO 639 standards (e.g., "en-US", "ja-JP", "ar-SA").
+/// This class defines language codes for Latin/ASCII, East Asian, and complex script (bidirectional) text, supporting RFC 1766 or ISO 639 standards (e.g., "en-US", "ja-JP", "ar-SA").
 /// Used to determine dictionaries, hyphenation, sorting, and theme font mapping for text runs and theme font languages.
 /// </summary>
 public partial class LanguageType : ModelElement<DXW.LanguageType>

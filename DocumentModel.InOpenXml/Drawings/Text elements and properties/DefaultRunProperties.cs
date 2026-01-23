@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents default formatting properties for text runs, including outline, fill, effects, highlight, underline, font, hyperlink, and text direction settings.
 /// </summary>
-public interface DefaultRunProperties : IExtendableElement
+public class DefaultRunProperties : ModelElement<DXD.DefaultRunProperties>, IExtendableElement
 {
   /// <summary>
   ///   Outline properties for the text run.
@@ -84,4 +84,9 @@ public interface DefaultRunProperties : IExtendableElement
   ///   Indicates whether the text direction is right-to-left.
   /// </summary>
   public bool? RightToLeft { get; set; }
+
+  /// <summary>
+  /// List of extension properties for additional or future extensibility.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

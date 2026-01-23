@@ -13,9 +13,9 @@ public partial class ColorChange : ModelElement<DXD.ColorChange>
     /// <summary>
     /// Change color from.
     /// </summary>
-    public ColorType? ColorFrom { get; set; }
+    public Color? ColorFrom { get; set; }
     /// <summary>
     /// Change color to.
     /// </summary>
-    public ColorType? ColorTo { get; set; }
+    public Color? ColorTo { get; set; }
 }

@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the page number type settings for a section in a Wordprocessing document.
-/// This interface provides properties for page number format, starting page number, chapter heading style, and chapter separator character, enabling advanced configuration of page numbering and chapter formatting.
+/// This class provides properties for page number format, starting page number, chapter heading style, and chapter separator character, enabling advanced configuration of page numbering and chapter formatting.
 /// </summary>
-public interface PageNumberType : ISectionPropertiesContent
+public class PageNumberType : ModelElement<DXW.PageNumberType>, ISectionPropertiesContent
 {
 
   /// <summary>

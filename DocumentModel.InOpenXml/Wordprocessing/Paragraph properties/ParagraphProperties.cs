@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the properties for a paragraph in a WordprocessingML document.
-/// This interface extends <see cref = "ExtBaseParagraphProperties"/> and provides properties for paragraph mark run formatting, section properties, and tracked changes to paragraph properties, enabling advanced formatting, layout, and revision management for paragraphs.
+/// This class extends <see cref = "ExtBaseParagraphProperties"/> and provides properties for paragraph mark run formatting, section properties, and tracked changes to paragraph properties, enabling advanced formatting, layout, and revision management for paragraphs.
 /// </summary>
 public partial class ParagraphProperties : ExtBaseParagraphProperties
 {

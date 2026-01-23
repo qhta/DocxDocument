@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Specifies the start of a bookmark within a WordprocessingML document.
 /// This start marker is matched with the appropriately paired end marker by matching the value of the Id attribute from the associated bookmarkEnd element.
 /// </summary>
-public interface BookmarkStart : MarkupRangeElement
+public class BookmarkStart : MarkupStartRangeElement<DXW.BookmarkStart, DXW.BookmarkEnd>
 {
   
   /// <summary>

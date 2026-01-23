@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a table row in a Wordprocessing document.
-/// This interface provides access to revision identifiers, paragraph and text IDs, property exceptions, row properties, and enables advanced configuration and management of table rows and their content.
+/// This class provides access to revision identifiers, paragraph and text IDs, property exceptions, row properties, and enables advanced configuration and management of table rows and their content.
 /// </summary>
 public partial interface TableRow: IElementCollection<ITableRowContent>, ITableContent, ISdtRowContent
 {

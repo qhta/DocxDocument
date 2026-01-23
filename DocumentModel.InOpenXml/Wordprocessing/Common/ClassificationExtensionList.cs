@@ -66,7 +66,8 @@ namespace DocumentModel;
 /// </list>
 /// </para>
 /// </remarks>
-public interface ClassificationExtensionList: IElementCollection<ClassificationExtension>
+public class ClassificationExtensionList: ModelElementCollection<ClassificationExtension, 
+  DXO21MLMD.ClassificationExtensionList, DXO21MLMD.ClassificationExtension>
 {
 
 }

@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the numbering properties for a paragraph or list item in a WordprocessingML document.
-/// This interface provides properties for referencing numbering levels, numbering definition instances, previous numbering changes, and inserted numbering properties, enabling advanced list and outline numbering management and revision tracking.
+/// This class provides properties for referencing numbering levels, numbering definition instances, previous numbering changes, and inserted numbering properties, enabling advanced list and outline numbering management and revision tracking.
 /// </summary>
 public partial class NumberingProperties : ModelElement<DXW.NumberingProperties>
 {
@@ -19,8 +19,8 @@ public partial class NumberingProperties : ModelElement<DXW.NumberingProperties>
     /// Previous paragraph numbering properties, enabling tracking and management of numbering revisions.
     /// </summary>
     public NumberingChange? NumberingChange { get; set; }
-    /// <summary>
-    /// Inserted numbering properties, used to track newly added numbering information as part of revisions.
-    /// </summary>
-    public TrackChangeType? Inserted { get; set; }
+  /// <summary>
+  /// Inserted numbering properties, used to track newly added numbering information as part of revisions.
+  /// </summary>
+  public Inserted? Inserted { get; set; }
 }

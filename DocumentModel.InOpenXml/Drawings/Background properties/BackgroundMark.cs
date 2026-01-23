@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a background mark defined by two coordinate points, typically used to specify a rectangular region or line in the background.
 /// </summary>
-public interface BackgroundMark: ICollectionItem
+public class BackgroundMark: ModelElement<DXO10D.BackgroundMark>
 {
   /// <summary>
   /// Gets or sets the X coordinate of the first point.

@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
   /// <summary>
   /// Represents the properties of an endnote in a WordprocessingML document.
-  /// This interface extends <see cref="SectionPropertiesContent"/> and provides properties for endnote placement, numbering format, starting value, and numbering restart location, enabling advanced configuration and management of endnote behavior and formatting within document sections.
+  /// This class extends <see cref="SectionPropertiesContent"/> and provides properties for endnote placement, numbering format, starting value, and numbering restart location, enabling advanced configuration and management of endnote behavior and formatting within document sections.
   /// </summary>
-  public interface EndnoteProperties : ISectionPropertiesContent
+  public class EndnoteProperties : ModelElement<DXW.EndnoteProperties>, ISectionPropertiesContent
   {
     
     /// <summary>

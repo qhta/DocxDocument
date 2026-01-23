@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the configuration for a checkbox content control in a structured document tag (SDT) in a Wordprocessing document.
-/// This interface provides properties for checked state, checked symbol, and unchecked symbol, enabling advanced customization and management of checkbox controls in SDTs.
+/// This class provides properties for checked state, checked symbol, and unchecked symbol, enabling advanced customization and management of checkbox controls in SDTs.
 /// </summary>
 public partial class SdtContentCheckBox : ModelElement<DXO10W.SdtContentCheckBox>
 {

@@ -2,7 +2,7 @@ namespace DocumentModel;
 /// <summary>
 /// Represents an RGB color using hexadecimal notation for Wordprocessing.
 /// </summary>
-public partial class RgbColor : ModelElement, IColor
+public partial class RgbColor : Color<DXD.RgbColorModelHex>
 {
     /// <summary>
     /// Gets or sets the base RGB color value in hexadecimal format.

@@ -4,7 +4,7 @@
 ///   Represents a single content choice within an alternate content container, selected when specific requirements are met.
 /// </summary>
 /// <remarks>
-///   This interface defines a content choice option within an <see cref="IAlternateContent"/>
+///   This class defines a content choice option within an <see cref="IAlternateContent"/>
 ///   structure. Each choice represents a specific way to render or represent content, associated with requirements
 ///   that must be met for the choice to be selected. The requirements, specified through the <see cref="Requires"/>
 ///   property, typically identify namespaces, features, or capabilities that the application must support to use
@@ -18,7 +18,7 @@
 ///   with older versions through the alternate content fallback mechanism. For example, a choice might require
 ///   3D model support and contain a 3D shape, while a fallback provides a 2D image for older applications.
 /// </remarks>
-public interface AlternateContentChoice : ICollectionItem, IElementCollection<CollectionItem>
+public class AlternateContentChoice : ModelElement<DX.AlternateContentChoice>//, IElementCollection<ModelElement>
 {
   /// <summary>
   ///   Gets or sets the requirement condition that must be satisfied for this choice to be selected.

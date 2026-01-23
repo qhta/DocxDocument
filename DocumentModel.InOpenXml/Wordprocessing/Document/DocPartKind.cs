@@ -32,7 +32,7 @@ public enum DocPartKind
   Speller,
 
   /// <summary>
-  ///   Form Field Help Text.
+  ///   Form IField Help Text.
   /// </summary>
   FormField,
 

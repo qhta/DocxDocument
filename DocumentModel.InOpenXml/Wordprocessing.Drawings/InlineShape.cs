@@ -7,7 +7,8 @@ namespace DocumentModel.Wordprocessing.Drawings;
 ///   Inline shapes flow with surrounding text like characters, as opposed to
 ///   floating shapes which can be positioned independently.
 /// </remarks>
-public interface InlineShape: ICollectionItem
+[OpenXmlType(typeof(DXDW.Inline))]
+public class InlineShape: ModelElement<DXDW.Inline>
 {
   #region Properties
 
@@ -31,10 +32,6 @@ public interface InlineShape: ICollectionItem
   /// </summary>
   public string? AlternativeText { get; set; }
 
-  /// <summary>
-  ///   Gets the range that contains the inline shape.
-  /// </summary>
-  public Range? Range { get; }
 
   #endregion
 }

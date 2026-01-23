@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents underline formatting for a text run in WordprocessingML documents.
-/// This interface provides properties for underline style, color, theme color, and theme color tint/shade, enabling advanced underline customization for character-level formatting.
+/// This class provides properties for underline style, color, theme color, and theme color tint/shade, enabling advanced underline customization for character-level formatting.
 /// </summary>
 public partial class Underline : ModelElement<DXW.Underline>
 {

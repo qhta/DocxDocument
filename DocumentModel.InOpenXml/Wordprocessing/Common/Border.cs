@@ -14,7 +14,7 @@ public partial class Border : ModelElement<DXW.Border>
     /// <summary>
     /// Border color, specified as an abstract color value.
     /// </summary>
-    public IColor? Color { get; set; }
+    public DocumentModel.Color? Color { get; set; }
     /// <summary>
     /// Border width, specified in twips.
     /// </summary>

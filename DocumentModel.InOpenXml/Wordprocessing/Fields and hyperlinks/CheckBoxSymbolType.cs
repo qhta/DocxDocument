@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the symbol settings for a checkbox form field in a WordprocessingML document.
-/// This interface provides properties for specifying the font and symbol value used to display the checkbox, enabling advanced customization of checkbox appearance in forms and documents.
+/// This class provides properties for specifying the font and symbol value used to display the checkbox, enabling advanced customization of checkbox appearance in forms and documents.
 /// </summary>
 public partial class CheckBoxSymbolType : ModelElement<DXO10W.CheckBoxSymbolType>
 {

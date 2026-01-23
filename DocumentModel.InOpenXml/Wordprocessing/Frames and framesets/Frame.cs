@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the properties of a single frame in a WordprocessingML document.
-/// This interface extends <see cref="FramesetItem"/> and provides properties for frame size, name, source file, margins, scrollbar visibility, resize restrictions, and file linking, enabling advanced configuration and management of frames within framesets.
+/// This class extends <see cref="IFramesetItem"/> and provides properties for frame size, name, source file, margins, scrollbar visibility, resize restrictions, and file linking, enabling advanced configuration and management of frames within framesets.
 /// </summary>
-public interface Frame : FramesetItem
+public class Frame : ModelElement<DXW.Frame>, IFramesetItem
 {
   
   /// <summary>

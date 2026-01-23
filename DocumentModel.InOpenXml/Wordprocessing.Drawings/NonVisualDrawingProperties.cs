@@ -3,7 +3,7 @@ using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents non-visual properties for a drawing element in a Wordprocessing document.
-/// This interface provides metadata and configuration for graphical objects, including identifiers, descriptive information, visibility, hyperlinks, and extension data.
+/// This class provides metadata and configuration for graphical objects, including identifiers, descriptive information, visibility, hyperlinks, and extension data.
 /// </summary>
 public partial class NonVisualDrawingProperties : ModelElement
 {

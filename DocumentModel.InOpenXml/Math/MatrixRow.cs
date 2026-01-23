@@ -3,6 +3,6 @@ namespace DocumentModel.Math;
 ///   This element specifies a single row of the matrix.
 /// </summary>
 
-public interface MatrixRow: IElementCollection<Argument>, ICollectionItem
+public class MatrixRow: ModelElement<DXM.MatrixRow>, IArgumentCollection, ICollectionItem
 {
 }

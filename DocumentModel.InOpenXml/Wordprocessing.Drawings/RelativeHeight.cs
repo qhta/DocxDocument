@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the relative height settings for a drawing element in a Wordprocessing document.
-/// This interface provides configuration for vertical size adjustment, including the reference point and percentage height relative to another element.
+/// This class provides configuration for vertical size adjustment, including the reference point and percentage height relative to another element.
 /// </summary>
 public partial class RelativeHeight : ModelElement
 {

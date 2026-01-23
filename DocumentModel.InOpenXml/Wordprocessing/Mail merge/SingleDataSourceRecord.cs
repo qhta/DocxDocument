@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a single data source record for mail merge in a WordprocessingML document.
-/// This interface extends <see cref="CollectionItem"/> and provides properties for record inclusion and a unique hash code, enabling advanced configuration and management of individual recipient records in mail merge operations.
+/// This class extends <see cref="CollectionItem"/> and provides properties for record inclusion and a unique hash code, enabling advanced configuration and management of individual recipient records in mail merge operations.
 /// </summary>
-public interface SingleDataSourceRecord: ICollectionItem
+public class SingleDataSourceRecord: ModelElement<DXOW.SingleDataSourceRecord>
 {
   /// <summary>
   /// Indicates whether the record is included in the mail merge.

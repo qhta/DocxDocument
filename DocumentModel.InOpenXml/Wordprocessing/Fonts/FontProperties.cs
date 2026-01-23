@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Specifies the properties for a font used in a WordprocessingML document.
   /// A font element is written for each font face used in the document and includes the font name, optional font metrics for substitution, and optional embedded font forms.
   /// </summary>
-  public interface FontProperties: ICollectionItem
+  public class FontProperties: ModelElement
   {
     
     /// <summary>
@@ -47,28 +47,28 @@ namespace DocumentModel.Wordprocessing;
     /// </summary>
     public FontSignature? FontSignature { get; set; }
     
-    /// <summary>
-    /// Embedded regular font resource for this font face.
-    /// </summary>
-    public EmbeddedFont? EmbedRegularFont { get; set; }
+    ///// <summary>
+    ///// Embedded regular font resource for this font face.
+    ///// </summary>
+    //public EmbeddedFont? EmbedRegularFont { get; set; }
     
-    /// <summary>
-    /// Embedded bold font resource for this font face.
-    /// </summary>
-    public EmbeddedFont? EmbedBoldFont { get; set; }
+    ///// <summary>
+    ///// Embedded bold font resource for this font face.
+    ///// </summary>
+    //public EmbeddedFont? EmbedBoldFont { get; set; }
     
-    /// <summary>
-    /// Embedded italic font resource for this font face.
-    /// </summary>
-    public EmbeddedFont? EmbedItalicFont { get; set; }
+    ///// <summary>
+    ///// Embedded italic font resource for this font face.
+    ///// </summary>
+    //public EmbeddedFont? EmbedItalicFont { get; set; }
     
-    /// <summary>
-    /// Embedded bold italic font resource for this font face.
-    /// </summary>
-    public EmbeddedFont? EmbedBoldItalicFont { get; set; }
+    ///// <summary>
+    ///// Embedded bold italic font resource for this font face.
+    ///// </summary>
+    //public EmbeddedFont? EmbedBoldItalicFont { get; set; }
     
-    /// <summary>
-    /// Collection of embedded fonts for this font face, supporting multiple font forms.
-    /// </summary>
-    public EmbeddedFonts? EmbeddedFonts { get; set; }
+    ///// <summary>
+    ///// Collection of embedded fonts for this font face, supporting multiple font forms.
+    ///// </summary>
+    //public EmbeddedFonts? EmbeddedFonts { get; set; }
   }
