@@ -318,6 +318,27 @@
             </summary>
             <returns>True if all edge case tests pass; otherwise, false.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestStoreInDocument">
+            <summary>
+            Tests storing and retrieving document settings in a new document to verify data integrity.
+            </summary>
+            <remarks>This method creates a new document, saves sample document settings to it, and then reloads
+            the settings to ensure they match the original data. It outputs the serialized XML of the reloaded settings and
+            reports the result to the console. Use this method to validate the persistence of document settings in the
+            document format.</remarks>
+            <returns>true if the document settings are stored and reloaded correctly; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestPerformance">
+            <summary>
+            Measures and reports the performance of <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> update.
+            </summary>
+            <returns>True if performance tests complete without error; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.UpdateMethodForPerformanceTest">
+            <summary>
+            Single-step update method for performance testing.
+            </summary>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.CreateSampleDocumentSettings(System.Boolean)">
             <summary>
             Creates a sample <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance for testing.
@@ -557,6 +578,44 @@
             <summary>
             The actual implementation of CompareTestData with ref parameter for propName.
             </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.ChangeTestData``1(``0)">
+            <summary>
+            Changes test data in the given instance.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="instance">The test data to modify.</param>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.ChangeBoolProperty(System.Object,System.Reflection.PropertyInfo)">
+            <summary>
+            Changes a boolean property value for testing purposes.
+            </summary>
+            <param name="obj">The object containing the property.</param>
+            <param name="prop">The property to change.</param>
+            <returns>The new value of the property.</returns>
+            <remarks>
+            If the property is null, a random boolean value will be returned.
+            Otherwise, the boolean value will be toggled.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.ChangeIntProperty(System.Object,System.Reflection.PropertyInfo)">
+            <summary>
+            Changes the value of an integer property on the specified object and returns the new value.
+            </summary>
+            <param name="obj">The object whose property value is to be changed. Must not be null.</param>
+            <param name="prop">The property to change. Must be a readable property of <paramref name="obj"/>.</param>
+            <returns>A nullable integer representing the new value of the property.</returns>
+            <remarks>If the original value is null, returns a random integer.
+            If the original value is an integer, returns its value incremented by one.
+            </remarks>remarks
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.CopyTestData``1(``0,``0)">
+            <summary>
+            Copies test data from one instance to another.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="fromInstance">The instance to copy data from.</param>
+            <param name="toInstance"></param>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.TestHelper.GetInternalMessages(System.Exception)">
             <summary>
