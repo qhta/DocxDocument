@@ -54,7 +54,13 @@ internal class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
+    // Run Rsids tests
+    if (!RsidsTest.Run())
+      return;
 
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
     Console.WriteLine("All tests passed.");
   }
 }

@@ -411,4 +411,23 @@ public static class HexIntConverter
       openXmlElement.AppendChild(itemElement);
     }
   }
+
+  /// <summary>
+  /// Creates an Open XML element of the specified type from a HexInt value.
+  /// </summary>
+  /// <param name="hexIntVal">The HexInt value to convert.</param>
+  /// <param name="conversionType">The target Open XML element type.</param>
+  /// <returns>The created Open XML element, or null if the input is null.</returns>
+  /// <exception cref="InvalidOperationException"></exception>
+  public static object? CreateOpenXmlElement(HexInt? hexIntVal, Type conversionType)
+  {
+    if (hexIntVal == null) return null;
+
+    if (conversionType == typeof(DX.HexBinaryValue))
+    {
+      return new DX.HexBinaryValue(hexIntVal.ToString());
+    }
+
+    throw new InvalidOperationException($"Cannot create Open XML element for {hexIntVal} of type {hexIntVal.GetType()}");
+  }
 }

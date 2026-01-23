@@ -85,7 +85,7 @@ public static class OpenXmlComplexTypeConverter
     }
     foreach (var modelProperty in modelType.GetModelProperties())
     {
-      if (modelProperty.Name == "CharacterSpacingControl") Debug.Assert(true);
+      if (modelProperty.Name == "Id") Debug.Assert(true);
       UpdateData(modelObject, modelProperty, openXmlElement, openXmlType);
     }
   }
@@ -116,7 +116,7 @@ public static class OpenXmlComplexTypeConverter
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return;
 
-    if (modelProperty.Name == "CharacterSpacingControl") Debug.Assert(true);
+    if (modelProperty.Name == "Id") Debug.Assert(true);
 
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanWrite)
@@ -297,7 +297,7 @@ public static class OpenXmlComplexTypeConverter
         var modelValue = ConvertValueFromOpenXml(openXmlValue, modelPropertyType);
         if (modelValue != null && !modelPropertyType.IsInstanceOfType(modelValue))
         {
-          modelValue = Convert.ChangeType(modelValue, modelPropertyType);
+          modelValue = SimpleValueConverter.ChangeType(modelValue, modelPropertyType);
         }
         modelValue = ConvertValue(modelValue, modelPropertyType);
         modelProperty.SetValue(modelObject, modelValue);
