@@ -13,5 +13,7 @@ public partial class ColorMostRecentlyUsed : ModelElement<DXVO.ColorMostRecently
     /// <summary>
     ///   Recent colors
     /// </summary>
-    public string? Colors { get; set; }
+    public string? Colors { get => _Colors; set => UpdateField(ref _Colors, value, nameof(Colors)); }
+
+    private string? _Colors;
 }

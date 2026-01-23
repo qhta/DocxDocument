@@ -13,9 +13,13 @@ public partial class EmbeddedWavAudioFileType : ModelElement<DXD.EmbeddedWavAudi
     /// <summary>
     ///   Name of the sound.
     /// </summary>
-    public string? Name { get; set; }
+    public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+
+    private string? _Name;
     /// <summary>
     ///   Determines whether it is a recognized Built-In Sound.
     /// </summary>
-    public bool? BuiltIn { get; set; }
+    public bool? BuiltIn { get => _BuiltIn; set => UpdateField(ref _BuiltIn, value, nameof(BuiltIn)); }
+
+    private bool? _BuiltIn;
 }

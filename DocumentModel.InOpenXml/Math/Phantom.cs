@@ -4,14 +4,18 @@ namespace DocumentModel.Math;
 ///   adding the spacing of the phantom base element e without displaying that base; 
 ///   and suppressing part of the glyph for spacing considerations.
 /// </summary>
-public class Phantom: ModelElement<DXM.Phantom>, ICommonMathContent
+public partial class Phantom : ModelElement<DXM.Phantom>, ICommonMathContent
 {
-  /// <summary>
-  ///   Phantom Properties.
-  /// </summary>
-  public PhantomProperties? PhantomProperties { get; set; }
-  /// <summary>
-  ///   Phantom object argument.
-  /// </summary>
-  public Argument? Argument { get; set; }
+    /// <summary>
+    ///   Phantom Properties.
+    /// </summary>
+    public PhantomProperties? PhantomProperties { get => _PhantomProperties; set => UpdateField(ref _PhantomProperties, value, nameof(PhantomProperties)); }
+
+    private PhantomProperties? _PhantomProperties;
+    /// <summary>
+    ///   Phantom object argument.
+    /// </summary>
+    public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
+
+    private Argument? _Argument;
 }

@@ -14,5 +14,7 @@ public partial class NumberingFormat : ModelElement<DXW.NumberingFormat>
     /// <summary>
     /// Custom number format using XSLT format attribute syntax. This format is used for all numbering in the parent object (e.g., Katakana numbering).
     /// </summary>
-    public string? Custom { get; set; }
+    public string? Custom { get => _Custom; set => UpdateField(ref _Custom, value, nameof(Custom)); }
+
+    private string? _Custom;
 }

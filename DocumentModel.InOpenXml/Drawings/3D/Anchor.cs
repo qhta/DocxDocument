@@ -99,7 +99,9 @@ public partial class Anchor : ModelElement<DXD.Anchor>
     ///   but in screen-based contexts, +Y typically points downward.
     ///   </para>
     /// </remarks>
-    public Int64? Y { get; set; }
+    public Int64? Y { get => _Y; set => UpdateField(ref _Y, value, nameof(Y)); }
+
+    private Int64? _Y;
     /// <summary>
     ///   Z-coordinate (depth position) of the anchor point in 3D space.
     /// </summary>
@@ -133,5 +135,7 @@ public partial class Anchor : ModelElement<DXD.Anchor>
     ///   </list>
     ///   </para>
     /// </remarks>
-    public Int64? Z { get; set; }
+    public Int64? Z { get => _Z; set => UpdateField(ref _Z, value, nameof(Z)); }
+
+    private Int64? _Z;
 }

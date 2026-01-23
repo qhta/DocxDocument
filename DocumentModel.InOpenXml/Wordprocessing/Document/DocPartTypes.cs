@@ -14,5 +14,7 @@ public partial class DocPartTypes : ModelElement<DXW.DocPartTypes>
     /// <summary>
     /// Specific document part type associated with the entry.
     /// </summary>
-    public DocPartKind? DocPartType { get; set; }
+    public DocPartKind? DocPartType { get => _DocPartType; set => UpdateField(ref _DocPartType, value, nameof(DocPartType)); }
+
+    private DocPartKind? _DocPartType;
 }

@@ -14,9 +14,13 @@ public partial class SpacingBeforeOrAfter : ModelElement //<DXW.SpacingBeforeOrA
     /// <summary>
     /// Spacing between lines, specified in line units.
     /// </summary>
-    public Int32? Lines { get; set; }
+    public Int32? Lines { get => _Lines; set => UpdateField(ref _Lines, value, nameof(Lines)); }
+
+    private Int32? _Lines;
     /// <summary>
     /// Indicates whether spacing is determined automatically.
     /// </summary>
-    public bool? AutoSpacing { get; set; }
+    public bool? AutoSpacing { get => _AutoSpacing; set => UpdateField(ref _AutoSpacing, value, nameof(AutoSpacing)); }
+
+    private bool? _AutoSpacing;
 }

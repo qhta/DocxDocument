@@ -1,45 +1,52 @@
 using DocumentModel.Drawings;
 
 namespace DocumentModel.Wordprocessing.Drawings;
-
 /// <summary>
 /// Represents the set of properties for a group shape in a Wordprocessing document.
 /// This class provides configuration for black and white rendering, group transformations, fill settings, visual effects, and 3D scene properties, enabling advanced layout and appearance control for grouped drawing elements.
 /// </summary>
-public class GroupShapeProperties : ModelElement<DXOD.GroupShapeProperties>, IExtendableElement
+public partial class GroupShapeProperties : ModelElement<DXOD.GroupShapeProperties>, IExtendableElement
 {
-  /// <summary>
-  /// The black and white rendering mode for the group shape, specifying how it appears when displayed or printed in monochrome.
-  /// </summary>
-  public BlackWhiteMode? BlackWhiteMode { get; set; }
+    /// <summary>
+    /// The black and white rendering mode for the group shape, specifying how it appears when displayed or printed in monochrome.
+    /// </summary>
+    public BlackWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
 
-  /// <summary>
-  /// The 2D transformation applied to the group, including translation, scaling, rotation, and skew for grouped objects.
-  /// </summary>
-  public TransformGroup? TransformGroup { get; set; }
+    private BlackWhiteMode? _BlackWhiteMode;
+    /// <summary>
+    /// The 2D transformation applied to the group, including translation, scaling, rotation, and skew for grouped objects.
+    /// </summary>
+    public TransformGroup? TransformGroup { get => _TransformGroup; set => UpdateField(ref _TransformGroup, value, nameof(TransformGroup)); }
 
-  /// <summary>
-  /// Fill settings for the group shape, specifying color, gradient, or pattern fills.
-  /// </summary>
-  public Fill? Fill { get; set; }
+    private TransformGroup? _TransformGroup;
+    /// <summary>
+    /// Fill settings for the group shape, specifying color, gradient, or pattern fills.
+    /// </summary>
+    public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
 
-  /// <summary>
-  /// List of visual effects applied to the group shape, such as shadows, glows, and reflections.
-  /// </summary>
-  public EffectList? EffectList { get; set; }
+    private Fill? _Fill;
+    /// <summary>
+    /// List of visual effects applied to the group shape, such as shadows, glows, and reflections.
+    /// </summary>
+    public EffectList? EffectList { get => _EffectList; set => UpdateField(ref _EffectList, value, nameof(EffectList)); }
 
-  /// <summary>
-  /// Effect DAG (Directed Acyclic Graph) for advanced effect sequencing and layering on the group shape.
-  /// </summary>
-  public EffectDag? EffectDag { get; set; }
+    private EffectList? _EffectList;
+    /// <summary>
+    /// Effect DAG (Directed Acyclic Graph) for advanced effect sequencing and layering on the group shape.
+    /// </summary>
+    public EffectDag? EffectDag { get => _EffectDag; set => UpdateField(ref _EffectDag, value, nameof(EffectDag)); }
 
-  /// <summary>
-  /// 3D scene settings for the group shape, defining camera, lighting, and perspective.
-  /// </summary>
-  public Scene3DType? Scene3DType { get; set; }
+    private EffectDag? _EffectDag;
+    /// <summary>
+    /// 3D scene settings for the group shape, defining camera, lighting, and perspective.
+    /// </summary>
+    public Scene3DType? Scene3DType { get => _Scene3DType; set => UpdateField(ref _Scene3DType, value, nameof(Scene3DType)); }
 
-  /// <summary>
-  /// List of extensions for the group shape, allowing for additional properties and behaviors to be defined.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+    private Scene3DType? _Scene3DType;
+    /// <summary>
+    /// List of extensions for the group shape, allowing for additional properties and behaviors to be defined.
+    /// </summary>
+    public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+    private ExtensionList? _ExtensionList;
 }

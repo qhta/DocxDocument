@@ -14,5 +14,7 @@ public partial class SdtRepeatedSection : ModelElement<DXO13W.SdtRepeatedSection
     /// <summary>
     ///   Indicates whether insertion or deletion of sections is disallowed.
     /// </summary>
-    public bool? DoNotAllowInsertDeleteSection { get; set; }
+    public bool? DoNotAllowInsertDeleteSection { get => _DoNotAllowInsertDeleteSection; set => UpdateField(ref _DoNotAllowInsertDeleteSection, value, nameof(DoNotAllowInsertDeleteSection)); }
+
+    private bool? _DoNotAllowInsertDeleteSection;
 }

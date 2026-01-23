@@ -13,5 +13,7 @@ public partial class GroupShapeType : ModelElement<DXOD.GroupShapeType>
     /// <summary>
     ///   GroupShapeProperties.
     /// </summary>
-    public GroupShapeProperties? GroupShapeProperties { get; set; }
+    public GroupShapeProperties? GroupShapeProperties { get => _GroupShapeProperties; set => UpdateField(ref _GroupShapeProperties, value, nameof(GroupShapeProperties)); }
+
+    private GroupShapeProperties? _GroupShapeProperties;
 }

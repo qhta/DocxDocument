@@ -13,5 +13,7 @@ public partial class SolidColorFillProperties : ModelElement
     /// <summary>
     ///   SchemeColor.
     /// </summary>
-    public SchemeColor? SchemeColor { get; set; }
+    public SchemeColor? SchemeColor { get => _SchemeColor; set => UpdateField(ref _SchemeColor, value, nameof(SchemeColor)); }
+
+    private SchemeColor? _SchemeColor;
 }

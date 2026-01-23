@@ -4,14 +4,16 @@ namespace DocumentModel.Drawings.Office;
 /// </summary>
 public partial class NonVisualGroupDrawingShapeProperties : ModelElement<DXOD.NonVisualGroupDrawingShapeProperties>
 {
-  /// <summary>
-  ///   GroupShapeLocks.
-  /// </summary>
-  public GroupShapeLocks? GroupShapeLocks { get => _GroupShapeLocks; set => UpdateField(ref _GroupShapeLocks, value, nameof(GroupShapeLocks)); }
+    /// <summary>
+    ///   GroupShapeLocks.
+    /// </summary>
+    public GroupShapeLocks? GroupShapeLocks { get => _GroupShapeLocks; set => UpdateField(ref _GroupShapeLocks, value, nameof(GroupShapeLocks)); }
 
-  private GroupShapeLocks? _GroupShapeLocks;
-  /// <summary>
-  ///   NonVisualGroupDrawingShapePropsExtensionList.
-  /// </summary>
-  public NonVisualGroupDrawingShapePropsExtensionList? NonVisualGroupDrawingShapePropsExtensionList { get; set; }
+    private GroupShapeLocks? _GroupShapeLocks;
+    /// <summary>
+    ///   NonVisualGroupDrawingShapePropsExtensionList.
+    /// </summary>
+    public NonVisualGroupDrawingShapePropsExtensionList? NonVisualGroupDrawingShapePropsExtensionList { get => _NonVisualGroupDrawingShapePropsExtensionList; set => UpdateField(ref _NonVisualGroupDrawingShapePropsExtensionList, value, nameof(NonVisualGroupDrawingShapePropsExtensionList)); }
+
+    private NonVisualGroupDrawingShapePropsExtensionList? _NonVisualGroupDrawingShapePropsExtensionList;
 }

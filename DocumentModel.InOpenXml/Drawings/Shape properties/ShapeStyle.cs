@@ -13,13 +13,19 @@ public partial class ShapeStyle : ModelElement<DXD.ShapeStyle>
     /// <summary>
     ///   Reference to the fill formatting for the shape.
     /// </summary>
-    public FillReference? FillReference { get; set; }
+    public FillReference? FillReference { get => _FillReference; set => UpdateField(ref _FillReference, value, nameof(FillReference)); }
+
+    private FillReference? _FillReference;
     /// <summary>
     ///   Reference to the effect formatting for the shape.
     /// </summary>
-    public EffectReference? EffectReference { get; set; }
+    public EffectReference? EffectReference { get => _EffectReference; set => UpdateField(ref _EffectReference, value, nameof(EffectReference)); }
+
+    private EffectReference? _EffectReference;
     /// <summary>
     ///   Reference to the font formatting for the shape.
     /// </summary>
-    public FontReference? FontReference { get; set; }
+    public FontReference? FontReference { get => _FontReference; set => UpdateField(ref _FontReference, value, nameof(FontReference)); }
+
+    private FontReference? _FontReference;
 }

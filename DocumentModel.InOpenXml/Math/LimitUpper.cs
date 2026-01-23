@@ -13,9 +13,13 @@ public partial class LimitUpper : ModelElement<DXM.LimitUpper>, ICommonMathConte
     /// <summary>
     ///   Argument.
     /// </summary>
-    public Argument? Argument { get; set; }
+    public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
+
+    private Argument? _Argument;
     /// <summary>
     ///   Limit (Upper).
     /// </summary>
-    public Limit? Limit { get; set; }
+    public Limit? Limit { get => _Limit; set => UpdateField(ref _Limit, value, nameof(Limit)); }
+
+    private Limit? _Limit;
 }

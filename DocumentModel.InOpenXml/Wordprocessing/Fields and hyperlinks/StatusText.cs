@@ -14,5 +14,7 @@ public partial class StatusText : ModelElement<DXW.StatusText>
     /// <summary>
     /// Value of the status text, containing the actual information or message to be displayed to the user.
     /// </summary>
-    public string? Val { get; set; }
+    public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+
+    private string? _Val;
 }

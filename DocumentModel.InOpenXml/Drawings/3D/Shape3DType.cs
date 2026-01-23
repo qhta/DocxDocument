@@ -1,45 +1,61 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Apply 3D shape properties.
 /// </summary>
-public class Shape3DType: ModelElement<DXD.Shape3DType>,IExtendableElement
+public partial class Shape3DType : ModelElement<DXD.Shape3DType>, IExtendableElement
 {
-  /// <summary>
-  ///   Shape Depth
-  /// </summary>
-  public Int64? Z { get; set; }
-  /// <summary>
-  ///   Extrusion Height
-  /// </summary>
-  public Int64? ExtrusionHeight { get; set; }
-  /// <summary>
-  ///   Contour Width
-  /// </summary>
-  public Int64? ContourWidth { get; set; }
-  /// <summary>
-  ///   Preset Material Type
-  /// </summary>
-  public PresetMaterialKind? PresetMaterial { get; set; }
-  /// <summary>
-  ///   Top Bevel.
-  /// </summary>
-  public BevelType? BevelTop { get; set; }
-  /// <summary>
-  ///   Bottom Bevel.
-  /// </summary>
-  public BevelType? BevelBottom { get; set; }
-  /// <summary>
-  ///   Extrusion Color.
-  /// </summary>
-  public ExtrusionColor? ExtrusionColor { get; set; }
-  /// <summary>
-  ///   Contour Color.
-  /// </summary>
-  public ContourColor? ContourColor { get; set; }
+    /// <summary>
+    ///   Shape Depth
+    /// </summary>
+    public Int64? Z { get => _Z; set => UpdateField(ref _Z, value, nameof(Z)); }
 
-  /// <summary>
-  /// List of extension elements.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+    private Int64? _Z;
+    /// <summary>
+    ///   Extrusion Height
+    /// </summary>
+    public Int64? ExtrusionHeight { get => _ExtrusionHeight; set => UpdateField(ref _ExtrusionHeight, value, nameof(ExtrusionHeight)); }
+
+    private Int64? _ExtrusionHeight;
+    /// <summary>
+    ///   Contour Width
+    /// </summary>
+    public Int64? ContourWidth { get => _ContourWidth; set => UpdateField(ref _ContourWidth, value, nameof(ContourWidth)); }
+
+    private Int64? _ContourWidth;
+    /// <summary>
+    ///   Preset Material Type
+    /// </summary>
+    public PresetMaterialKind? PresetMaterial { get => _PresetMaterial; set => UpdateField(ref _PresetMaterial, value, nameof(PresetMaterial)); }
+
+    private PresetMaterialKind? _PresetMaterial;
+    /// <summary>
+    ///   Top Bevel.
+    /// </summary>
+    public BevelType? BevelTop { get => _BevelTop; set => UpdateField(ref _BevelTop, value, nameof(BevelTop)); }
+
+    private BevelType? _BevelTop;
+    /// <summary>
+    ///   Bottom Bevel.
+    /// </summary>
+    public BevelType? BevelBottom { get => _BevelBottom; set => UpdateField(ref _BevelBottom, value, nameof(BevelBottom)); }
+
+    private BevelType? _BevelBottom;
+    /// <summary>
+    ///   Extrusion Color.
+    /// </summary>
+    public ExtrusionColor? ExtrusionColor { get => _ExtrusionColor; set => UpdateField(ref _ExtrusionColor, value, nameof(ExtrusionColor)); }
+
+    private ExtrusionColor? _ExtrusionColor;
+    /// <summary>
+    ///   Contour Color.
+    /// </summary>
+    public ContourColor? ContourColor { get => _ContourColor; set => UpdateField(ref _ContourColor, value, nameof(ContourColor)); }
+
+    private ContourColor? _ContourColor;
+    /// <summary>
+    /// List of extension elements.
+    /// </summary>
+    public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+    private ExtensionList? _ExtensionList;
 }

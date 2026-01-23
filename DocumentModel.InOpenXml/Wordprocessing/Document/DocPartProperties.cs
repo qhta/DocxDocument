@@ -14,25 +14,37 @@ public partial class DocPartProperties : ModelElement<DXW.DocPartProperties>
     /// <summary>
     /// Associated paragraph style name for the entry, linking the entry to a specific style.
     /// </summary>
-    public string? StyleId { get; set; }
+    public string? StyleId { get => _StyleId; set => UpdateField(ref _StyleId, value, nameof(StyleId)); }
+
+    private string? _StyleId;
     /// <summary>
     /// Entry categorization, specifying the category and gallery for the entry.
     /// </summary>
-    public Category? Category { get; set; }
+    public Category? Category { get => _Category; set => UpdateField(ref _Category, value, nameof(Category)); }
+
+    private Category? _Category;
     /// <summary>
     /// Entry types, specifying the types of document parts represented by the entry.
     /// </summary>
-    public DocPartTypes? DocPartTypes { get; set; }
+    public DocPartTypes? DocPartTypes { get => _DocPartTypes; set => UpdateField(ref _DocPartTypes, value, nameof(DocPartTypes)); }
+
+    private DocPartTypes? _DocPartTypes;
     /// <summary>
     /// Entry insertion behaviors, specifying how the entry behaves when inserted into a document.
     /// </summary>
-    public Behaviors? Behaviors { get; set; }
+    public Behaviors? Behaviors { get => _Behaviors; set => UpdateField(ref _Behaviors, value, nameof(Behaviors)); }
+
+    private Behaviors? _Behaviors;
     /// <summary>
     /// Description for the entry, providing additional information or context.
     /// </summary>
-    public string? Description { get; set; }
+    public string? Description { get => _Description; set => UpdateField(ref _Description, value, nameof(Description)); }
+
+    private string? _Description;
     /// <summary>
     /// Unique identifier for the entry.
     /// </summary>
-    public string? DocPartId { get; set; }
+    public string? DocPartId { get => _DocPartId; set => UpdateField(ref _DocPartId, value, nameof(DocPartId)); }
+
+    private string? _DocPartId;
 }

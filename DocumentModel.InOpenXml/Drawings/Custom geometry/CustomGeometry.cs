@@ -4,30 +4,40 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class CustomGeometry : ModelElement<DXD.CustomGeometry>
 {
-  /// <summary>
-  ///   List of adjustment values for the custom geometry.
-  /// </summary>
-  public AdjustValueList? AdjustValueList { get => _AdjustValueList; set => UpdateField(ref _AdjustValueList, value, nameof(AdjustValueList)); }
-  private AdjustValueList? _AdjustValueList;
-  
-  /// <summary>
-  ///   List of shape guides used to define geometry.
-  /// </summary>
-  public ShapeGuideList? ShapeGuideList { get; set; }
-  /// <summary>
-  ///   List of shape adjust handles for interactive adjustments.
-  /// </summary>
-  public AdjustHandleList? AdjustHandleList { get; set; }
-  /// <summary>
-  ///   List of connection sites for attaching connectors.
-  /// </summary>
-  public ConnectionSiteList? ConnectionSiteList { get; set; }
-  /// <summary>
-  ///   Rectangle that defines the text area within the shape.
-  /// </summary>
-  public Rectangle? Rectangle { get; set; }
-  /// <summary>
-  ///   List of paths that describe the outline of the custom geometry.
-  /// </summary>
-  public PathList? PathList { get; set; }
+    /// <summary>
+    ///   List of adjustment values for the custom geometry.
+    /// </summary>
+    public AdjustValueList? AdjustValueList { get => _AdjustValueList; set => UpdateField(ref _AdjustValueList, value, nameof(AdjustValueList)); }
+
+    private AdjustValueList? _AdjustValueList;
+    /// <summary>
+    ///   List of shape guides used to define geometry.
+    /// </summary>
+    public ShapeGuideList? ShapeGuideList { get => _ShapeGuideList; set => UpdateField(ref _ShapeGuideList, value, nameof(ShapeGuideList)); }
+
+    private ShapeGuideList? _ShapeGuideList;
+    /// <summary>
+    ///   List of shape adjust handles for interactive adjustments.
+    /// </summary>
+    public AdjustHandleList? AdjustHandleList { get => _AdjustHandleList; set => UpdateField(ref _AdjustHandleList, value, nameof(AdjustHandleList)); }
+
+    private AdjustHandleList? _AdjustHandleList;
+    /// <summary>
+    ///   List of connection sites for attaching connectors.
+    /// </summary>
+    public ConnectionSiteList? ConnectionSiteList { get => _ConnectionSiteList; set => UpdateField(ref _ConnectionSiteList, value, nameof(ConnectionSiteList)); }
+
+    private ConnectionSiteList? _ConnectionSiteList;
+    /// <summary>
+    ///   Rectangle that defines the text area within the shape.
+    /// </summary>
+    public Rectangle? Rectangle { get => _Rectangle; set => UpdateField(ref _Rectangle, value, nameof(Rectangle)); }
+
+    private Rectangle? _Rectangle;
+    /// <summary>
+    ///   List of paths that describe the outline of the custom geometry.
+    /// </summary>
+    public PathList? PathList { get => _PathList; set => UpdateField(ref _PathList, value, nameof(PathList)); }
+
+    private PathList? _PathList;
 }

@@ -16,5 +16,7 @@ public partial class Box : ModelElement<DXM.Box>, ICommonMathContent
     /// <summary>
     ///   Specifies argument of box object.
     /// </summary>
-    public Argument? Argument { get; set; }
+    public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
+
+    private Argument? _Argument;
 }

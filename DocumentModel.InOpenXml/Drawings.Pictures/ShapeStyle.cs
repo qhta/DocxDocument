@@ -13,13 +13,19 @@ public partial class ShapeStyle : ModelElement<DXO10DP.ShapeStyle>
     /// <summary>
     ///   FillReference.
     /// </summary>
-    public FillReference? FillReference { get; set; }
+    public FillReference? FillReference { get => _FillReference; set => UpdateField(ref _FillReference, value, nameof(FillReference)); }
+
+    private FillReference? _FillReference;
     /// <summary>
     ///   EffectReference.
     /// </summary>
-    public EffectReference? EffectReference { get; set; }
+    public EffectReference? EffectReference { get => _EffectReference; set => UpdateField(ref _EffectReference, value, nameof(EffectReference)); }
+
+    private EffectReference? _EffectReference;
     /// <summary>
     ///   Font Reference.
     /// </summary>
-    public FontReference? FontReference { get; set; }
+    public FontReference? FontReference { get => _FontReference; set => UpdateField(ref _FontReference, value, nameof(FontReference)); }
+
+    private FontReference? _FontReference;
 }

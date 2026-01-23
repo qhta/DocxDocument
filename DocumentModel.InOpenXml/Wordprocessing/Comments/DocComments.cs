@@ -14,13 +14,19 @@ public partial class DocComments : ModelElement
     /// <summary>
     /// Collection of extended comments, providing access to additional metadata and behaviors for comments.
     /// </summary>
-    public CommentsEx? CommentsEx { get; set; }
+    public CommentsEx? CommentsEx { get => _CommentsEx; set => UpdateField(ref _CommentsEx, value, nameof(CommentsEx)); }
+
+    private CommentsEx? _CommentsEx;
     /// <summary>
     /// Collection of comment identifiers, enabling persistent and stable references to comments for tracking and synchronization.
     /// </summary>
-    public CommentsIds? CommentsIds { get; set; }
+    public CommentsIds? CommentsIds { get => _CommentsIds; set => UpdateField(ref _CommentsIds, value, nameof(CommentsIds)); }
+
+    private CommentsIds? _CommentsIds;
     /// <summary>
     /// Collection of extensible comments, supporting advanced extensibility and custom metadata for comments.
     /// </summary>
-    public CommentsExtensible? CommentsExtensible { get; set; }
+    public CommentsExtensible? CommentsExtensible { get => _CommentsExtensible; set => UpdateField(ref _CommentsExtensible, value, nameof(CommentsExtensible)); }
+
+    private CommentsExtensible? _CommentsExtensible;
 }

@@ -14,5 +14,7 @@ public partial class CheckBoxSymbolType : ModelElement<DXO10W.CheckBoxSymbolType
     /// <summary>
     /// Symbol value (as a hexadecimal character) used for the checkbox.
     /// </summary>
-    public HexChar? Val { get; set; }
+    public HexChar? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+
+    private HexChar? _Val;
 }

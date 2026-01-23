@@ -4,18 +4,24 @@ namespace DocumentModel.Math;
 ///   It is often applied using a form of linear format. 
 /// </summary>
 [OpenXmlType(typeof(DXM.MathFunction))]
-public class Function: ModelElement<DXM.MathFunction>, ICommonMathContent
+public partial class Function : ModelElement<DXM.MathFunction>, ICommonMathContent
 {
-  /// <summary>
-  ///   Function Properties.
-  /// </summary>
-  public FunctionProperties? FunctionProperties { get; set; }
-  /// <summary>
-  ///   Function Name.
-  /// </summary>
-  public FunctionName? FunctionName { get; set; }
-  /// <summary>
-  ///   Base (Argument).
-  /// </summary>
-  public Argument? Argument { get; set; }
+    /// <summary>
+    ///   Function Properties.
+    /// </summary>
+    public FunctionProperties? FunctionProperties { get => _FunctionProperties; set => UpdateField(ref _FunctionProperties, value, nameof(FunctionProperties)); }
+
+    private FunctionProperties? _FunctionProperties;
+    /// <summary>
+    ///   Function Name.
+    /// </summary>
+    public FunctionName? FunctionName { get => _FunctionName; set => UpdateField(ref _FunctionName, value, nameof(FunctionName)); }
+
+    private FunctionName? _FunctionName;
+    /// <summary>
+    ///   Base (Argument).
+    /// </summary>
+    public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
+
+    private Argument? _Argument;
 }

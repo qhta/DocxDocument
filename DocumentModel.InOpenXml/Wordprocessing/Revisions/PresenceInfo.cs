@@ -14,5 +14,7 @@ public partial class PresenceInfo : ModelElement<DXO13W.PresenceInfo>
     /// <summary>
     /// Identifier for the user whose presence is being tracked.
     /// </summary>
-    public string? UserId { get; set; }
+    public string? UserId { get => _UserId; set => UpdateField(ref _UserId, value, nameof(UserId)); }
+
+    private string? _UserId;
 }

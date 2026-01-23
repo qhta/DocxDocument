@@ -13,5 +13,7 @@ public partial class ArtisticFilmGrain : ModelElement<DXO10D.ArtisticFilmGrain>
     /// <summary>
     /// Size of the grain in the film grain effect, influencing the texture's coarseness.
     /// </summary>
-    public Int32? GrainSize { get; set; }
+    public Int32? GrainSize { get => _GrainSize; set => UpdateField(ref _GrainSize, value, nameof(GrainSize)); }
+
+    private Int32? _GrainSize;
 }

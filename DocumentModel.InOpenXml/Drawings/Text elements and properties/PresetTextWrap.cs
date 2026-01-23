@@ -13,5 +13,7 @@ public partial class PresetTextWrap : ModelElement
     /// <summary>
     ///   List of adjustment values for the preset text wrap.
     /// </summary>
-    public AdjustValueList? AdjustValueList { get; set; }
+    public AdjustValueList? AdjustValueList { get => _AdjustValueList; set => UpdateField(ref _AdjustValueList, value, nameof(AdjustValueList)); }
+
+    private AdjustValueList? _AdjustValueList;
 }

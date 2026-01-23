@@ -13,5 +13,7 @@ public partial class ShapeGuide : ModelElement<DXD.ShapeGuide>
     /// <summary>
     ///   Formula used by the shape guide for geometry calculations.
     /// </summary>
-    public string? Formula { get; set; }
+    public string? Formula { get => _Formula; set => UpdateField(ref _Formula, value, nameof(Formula)); }
+
+    private string? _Formula;
 }

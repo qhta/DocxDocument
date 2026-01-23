@@ -14,5 +14,7 @@ public partial class GlossaryDocument : ModelElement<DXW.GlossaryDocument>
     /// <summary>
     ///   List of glossary document entries, providing access to and management of reusable document parts.
     /// </summary>
-    public DocParts? DocParts { get; set; }
+    public DocParts? DocParts { get => _DocParts; set => UpdateField(ref _DocParts, value, nameof(DocParts)); }
+
+    private DocParts? _DocParts;
 }

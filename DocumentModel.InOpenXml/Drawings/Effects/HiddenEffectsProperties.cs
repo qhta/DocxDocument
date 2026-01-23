@@ -13,5 +13,7 @@ public partial class HiddenEffectsProperties : ModelElement<DXO10D.HiddenEffects
     /// <summary>
     ///   Effect DAG (Directed Acyclic Graph) for advanced effect composition.
     /// </summary>
-    public EffectDag? EffectDag { get; set; }
+    public EffectDag? EffectDag { get => _EffectDag; set => UpdateField(ref _EffectDag, value, nameof(EffectDag)); }
+
+    private EffectDag? _EffectDag;
 }

@@ -13,57 +13,85 @@ public partial class Path : ModelElement<DXV.Path>
     /// <summary>
     ///   Path Definition
     /// </summary>
-    public string? Value { get; set; }
+    public string? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
+
+    private string? _Value;
     /// <summary>
     ///   Limo Stretch Point
     /// </summary>
-    public string? Limo { get; set; }
+    public string? Limo { get => _Limo; set => UpdateField(ref _Limo, value, nameof(Limo)); }
+
+    private string? _Limo;
     /// <summary>
     ///   Text Box Bounding Box
     /// </summary>
-    public string? TextboxRectangle { get; set; }
+    public string? TextboxRectangle { get => _TextboxRectangle; set => UpdateField(ref _TextboxRectangle, value, nameof(TextboxRectangle)); }
+
+    private string? _TextboxRectangle;
     /// <summary>
     ///   Shape Fill Toggle
     /// </summary>
-    public bool? AllowFill { get; set; }
+    public bool? AllowFill { get => _AllowFill; set => UpdateField(ref _AllowFill, value, nameof(AllowFill)); }
+
+    private bool? _AllowFill;
     /// <summary>
     ///   Stroke Toggle
     /// </summary>
-    public bool? AllowStroke { get; set; }
+    public bool? AllowStroke { get => _AllowStroke; set => UpdateField(ref _AllowStroke, value, nameof(AllowStroke)); }
+
+    private bool? _AllowStroke;
     /// <summary>
     ///   Shadow Toggle
     /// </summary>
-    public bool? AllowShading { get; set; }
+    public bool? AllowShading { get => _AllowShading; set => UpdateField(ref _AllowShading, value, nameof(AllowShading)); }
+
+    private bool? _AllowShading;
     /// <summary>
     ///   Arrowhead Display Toggle
     /// </summary>
-    public bool? ShowArrowhead { get; set; }
+    public bool? ShowArrowhead { get => _ShowArrowhead; set => UpdateField(ref _ShowArrowhead, value, nameof(ShowArrowhead)); }
+
+    private bool? _ShowArrowhead;
     /// <summary>
     ///   Gradient Shape Toggle
     /// </summary>
-    public bool? AllowGradientShape { get; set; }
+    public bool? AllowGradientShape { get => _AllowGradientShape; set => UpdateField(ref _AllowGradientShape, value, nameof(AllowGradientShape)); }
+
+    private bool? _AllowGradientShape;
     /// <summary>
     ///   Text Path Toggle
     /// </summary>
-    public bool? AllowTextPath { get; set; }
+    public bool? AllowTextPath { get => _AllowTextPath; set => UpdateField(ref _AllowTextPath, value, nameof(AllowTextPath)); }
+
+    private bool? _AllowTextPath;
     /// <summary>
     ///   Inset Stroke From Path Flag
     /// </summary>
-    public bool? AllowInsetPen { get; set; }
+    public bool? AllowInsetPen { get => _AllowInsetPen; set => UpdateField(ref _AllowInsetPen, value, nameof(AllowInsetPen)); }
+
+    private bool? _AllowInsetPen;
     /// <summary>
     ///   Connection Point Type
     /// </summary>
-    public ConnectKind? ConnectionPointType { get; set; }
+    public ConnectKind? ConnectionPointType { get => _ConnectionPointType; set => UpdateField(ref _ConnectionPointType, value, nameof(ConnectionPointType)); }
+
+    private ConnectKind? _ConnectionPointType;
     /// <summary>
     ///   Connection Points
     /// </summary>
-    public string? ConnectionPoints { get; set; }
+    public string? ConnectionPoints { get => _ConnectionPoints; set => UpdateField(ref _ConnectionPoints, value, nameof(ConnectionPoints)); }
+
+    private string? _ConnectionPoints;
     /// <summary>
     ///   Connection Point Connect Angles
     /// </summary>
-    public string? ConnectAngles { get; set; }
+    public string? ConnectAngles { get => _ConnectAngles; set => UpdateField(ref _ConnectAngles, value, nameof(ConnectAngles)); }
+
+    private string? _ConnectAngles;
     /// <summary>
     ///   Extrusion Toggle
     /// </summary>
-    public bool? AllowExtrusion { get; set; }
+    public bool? AllowExtrusion { get => _AllowExtrusion; set => UpdateField(ref _AllowExtrusion, value, nameof(AllowExtrusion)); }
+
+    private bool? _AllowExtrusion;
 }

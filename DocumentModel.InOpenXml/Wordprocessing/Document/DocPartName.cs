@@ -14,5 +14,7 @@ public partial class DocPartName : ModelElement<DXW.DocPartName>
     /// <summary>
     /// Indicates whether the entry is a built-in (decorated) entry.
     /// </summary>
-    public bool? Decorated { get; set; }
+    public bool? Decorated { get => _Decorated; set => UpdateField(ref _Decorated, value, nameof(Decorated)); }
+
+    private bool? _Decorated;
 }

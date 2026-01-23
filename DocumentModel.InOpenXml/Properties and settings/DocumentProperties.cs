@@ -20,17 +20,21 @@ public partial class DocumentProperties : ModelElement
     /// Collection of content properties, which represents document properties defined in Microsoft Office standard.
     /// </summary>
     [XmlIgnore]
-    public ContentProperties? ContentProperties { get; set; }
+    public ContentProperties? ContentProperties { get => _ContentProperties; set => UpdateField(ref _ContentProperties, value, nameof(ContentProperties)); }
 
+    private ContentProperties? _ContentProperties;
     /// <summary>
     /// Collection of statistic properties, which represents document metrics like characters count.
     /// </summary>
     [XmlIgnore]
-    public StatisticProperties? StatisticProperties { get; set; }
+    public StatisticProperties? StatisticProperties { get => _StatisticProperties; set => UpdateField(ref _StatisticProperties, value, nameof(StatisticProperties)); }
 
+    private StatisticProperties? _StatisticProperties;
     /// <summary>
     /// Collection of custom-defined document properties.
     /// </summary>
     [XmlIgnore]
-    public CustomProperties? CustomProperties { get; set; }
+    public CustomProperties? CustomProperties { get => _CustomProperties; set => UpdateField(ref _CustomProperties, value, nameof(CustomProperties)); }
+
+    private CustomProperties? _CustomProperties;
 }

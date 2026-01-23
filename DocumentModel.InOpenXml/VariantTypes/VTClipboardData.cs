@@ -15,5 +15,7 @@ public partial class VTClipboardData : ModelElement
     /// <summary>
     ///   size
     /// </summary>
-    public UInt32? Size { get; set; }
+    public UInt32? Size { get => _Size; set => UpdateField(ref _Size, value, nameof(Size)); }
+
+    private UInt32? _Size;
 }

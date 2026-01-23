@@ -15,21 +15,31 @@ public partial class BoxProperties : ModelElement<DXM.BoxProperties>
     /// <summary>
     ///   No Break.
     /// </summary>
-    public bool? NoBreak { get; set; }
+    public bool? NoBreak { get => _NoBreak; set => UpdateField(ref _NoBreak, value, nameof(NoBreak)); }
+
+    private bool? _NoBreak;
     /// <summary>
     ///   Differential.
     /// </summary>
-    public bool? Differential { get; set; }
+    public bool? Differential { get => _Differential; set => UpdateField(ref _Differential, value, nameof(Differential)); }
+
+    private bool? _Differential;
     /// <summary>
     ///   Break.
     /// </summary>
-    public Break? Break { get; set; }
+    public Break? Break { get => _Break; set => UpdateField(ref _Break, value, nameof(Break)); }
+
+    private Break? _Break;
     /// <summary>
     ///   Alignment.
     /// </summary>
-    public bool? Alignment { get; set; }
+    public bool? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
+
+    private bool? _Alignment;
     /// <summary>
     ///   Specifies formatting of box object argument.
     /// </summary>
-    public ControlProperties? ControlProperties { get; set; }
+    public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
+    private ControlProperties? _ControlProperties;
 }

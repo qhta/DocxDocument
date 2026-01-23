@@ -14,9 +14,13 @@ public partial class BevelType : ModelElement<DXO10W.BevelType>
     /// <summary>
     /// Height of the bevel effect, specifying the vertical size in EMUs.
     /// </summary>
-    public Int64? Height { get; set; }
+    public Int64? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
+
+    private Int64? _Height;
     /// <summary>
     /// Preset profile type for the bevel, specifying the predefined bevel style.
     /// </summary>
-    public BevelPresetKind? PresetProfileType { get; set; }
+    public BevelPresetKind? PresetProfileType { get => _PresetProfileType; set => UpdateField(ref _PresetProfileType, value, nameof(PresetProfileType)); }
+
+    private BevelPresetKind? _PresetProfileType;
 }

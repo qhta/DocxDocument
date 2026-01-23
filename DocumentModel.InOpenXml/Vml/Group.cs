@@ -16,149 +16,247 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
     /// <summary>
     ///   Shape Styling Properties
     /// </summary>
-    public string? Style { get; set; }
+    public string? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
+
+    private string? _Style;
     /// <summary>
     ///   IHyperlink Target
     /// </summary>
-    public string? Href { get; set; }
+    public string? Href { get => _Href; set => UpdateField(ref _Href, value, nameof(Href)); }
+
+    private string? _Href;
     /// <summary>
     ///   IHyperlink Display Target
     /// </summary>
-    public string? Target { get; set; }
+    public string? Target { get => _Target; set => UpdateField(ref _Target, value, nameof(Target)); }
+
+    private string? _Target;
     /// <summary>
     ///   CSS Reference
     /// </summary>
-    public string? Class { get; set; }
+    public string? Class { get => _Class; set => UpdateField(ref _Class, value, nameof(Class)); }
+
+    private string? _Class;
     /// <summary>
     ///   Shape Title
     /// </summary>
-    public string? Title { get; set; }
+    public string? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
+
+    private string? _Title;
     /// <summary>
     ///   Alternate Text
     /// </summary>
-    public string? Alternate { get; set; }
+    public string? Alternate { get => _Alternate; set => UpdateField(ref _Alternate, value, nameof(Alternate)); }
+
+    private string? _Alternate;
     /// <summary>
     ///   Coordinate Space Size
     /// </summary>
-    public string? CoordinateSize { get; set; }
+    public string? CoordinateSize { get => _CoordinateSize; set => UpdateField(ref _CoordinateSize, value, nameof(CoordinateSize)); }
+
+    private string? _CoordinateSize;
     /// <summary>
     ///   Coordinate Space Origin
     /// </summary>
-    public string? CoordinateOrigin { get; set; }
+    public string? CoordinateOrigin { get => _CoordinateOrigin; set => UpdateField(ref _CoordinateOrigin, value, nameof(CoordinateOrigin)); }
+
+    private string? _CoordinateOrigin;
     /// <summary>
     ///   Shape Bounding Polygon
     /// </summary>
-    public string? WrapCoordinates { get; set; }
+    public string? WrapCoordinates { get => _WrapCoordinates; set => UpdateField(ref _WrapCoordinates, value, nameof(WrapCoordinates)); }
+
+    private string? _WrapCoordinates;
     /// <summary>
     ///   Print Toggle
     /// </summary>
-    public bool? Print { get; set; }
+    public bool? Print { get => _Print; set => UpdateField(ref _Print, value, nameof(Print)); }
+
+    private bool? _Print;
     /// <summary>
     ///   spid
     /// </summary>
-    public string? OptionalString { get; set; }
+    public string? OptionalString { get => _OptionalString; set => UpdateField(ref _OptionalString, value, nameof(OptionalString)); }
+
+    private string? _OptionalString;
     /// <summary>
     ///   oned
     /// </summary>
-    public bool? Oned { get; set; }
+    public bool? Oned { get => _Oned; set => UpdateField(ref _Oned, value, nameof(Oned)); }
+
+    private bool? _Oned;
     /// <summary>
     ///   regroupid
     /// </summary>
-    public Int64? RegroupId { get; set; }
+    public Int64? RegroupId { get => _RegroupId; set => UpdateField(ref _RegroupId, value, nameof(RegroupId)); }
+
+    private Int64? _RegroupId;
     /// <summary>
     ///   doubleclicknotify
     /// </summary>
-    public bool? DoubleClickNotify { get; set; }
+    public bool? DoubleClickNotify { get => _DoubleClickNotify; set => UpdateField(ref _DoubleClickNotify, value, nameof(DoubleClickNotify)); }
+
+    private bool? _DoubleClickNotify;
     /// <summary>
     ///   button
     /// </summary>
-    public bool? Button { get; set; }
+    public bool? Button { get => _Button; set => UpdateField(ref _Button, value, nameof(Button)); }
+
+    private bool? _Button;
     /// <summary>
     ///   userhidden
     /// </summary>
-    public bool? UserHidden { get; set; }
+    public bool? UserHidden { get => _UserHidden; set => UpdateField(ref _UserHidden, value, nameof(UserHidden)); }
+
+    private bool? _UserHidden;
     /// <summary>
     ///   bullet
     /// </summary>
-    public bool? Bullet { get; set; }
+    public bool? Bullet { get => _Bullet; set => UpdateField(ref _Bullet, value, nameof(Bullet)); }
+
+    private bool? _Bullet;
     /// <summary>
     ///   hr
     /// </summary>
-    public bool? Horizontal { get; set; }
+    public bool? Horizontal { get => _Horizontal; set => UpdateField(ref _Horizontal, value, nameof(Horizontal)); }
+
+    private bool? _Horizontal;
     /// <summary>
     ///   hrstd
     /// </summary>
-    public bool? HorizontalStandard { get; set; }
+    public bool? HorizontalStandard { get => _HorizontalStandard; set => UpdateField(ref _HorizontalStandard, value, nameof(HorizontalStandard)); }
+
+    private bool? _HorizontalStandard;
     /// <summary>
     ///   hrnoshade
     /// </summary>
-    public bool? HorizontalNoShade { get; set; }
+    public bool? HorizontalNoShade { get => _HorizontalNoShade; set => UpdateField(ref _HorizontalNoShade, value, nameof(HorizontalNoShade)); }
+
+    private bool? _HorizontalNoShade;
     /// <summary>
     ///   hrpct
     /// </summary>
-    public Single? HorizontalPercentage { get; set; }
+    public Single? HorizontalPercentage { get => _HorizontalPercentage; set => UpdateField(ref _HorizontalPercentage, value, nameof(HorizontalPercentage)); }
+
+    private Single? _HorizontalPercentage;
     /// <summary>
     ///   hralign
     /// </summary>
-    public HorizontalRuleAlignmentKind? HorizontalAlignment { get; set; }
+    public HorizontalRuleAlignmentKind? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
+
+    private HorizontalRuleAlignmentKind? _HorizontalAlignment;
     /// <summary>
     ///   allowincell
     /// </summary>
-    public bool? AllowInCell { get; set; }
+    public bool? AllowInCell { get => _AllowInCell; set => UpdateField(ref _AllowInCell, value, nameof(AllowInCell)); }
+
+    private bool? _AllowInCell;
     /// <summary>
     ///   allowoverlap
     /// </summary>
-    public bool? AllowOverlap { get; set; }
+    public bool? AllowOverlap { get => _AllowOverlap; set => UpdateField(ref _AllowOverlap, value, nameof(AllowOverlap)); }
+
+    private bool? _AllowOverlap;
     /// <summary>
     ///   userdrawn
     /// </summary>
-    public bool? UserDrawn { get; set; }
+    public bool? UserDrawn { get => _UserDrawn; set => UpdateField(ref _UserDrawn, value, nameof(UserDrawn)); }
+
+    private bool? _UserDrawn;
     /// <summary>
     ///   dgmlayout
     /// </summary>
-    public Int64? DiagramLayout { get; set; }
+    public Int64? DiagramLayout { get => _DiagramLayout; set => UpdateField(ref _DiagramLayout, value, nameof(DiagramLayout)); }
+
+    private Int64? _DiagramLayout;
     /// <summary>
     ///   dgmnodekind
     /// </summary>
-    public Int64? DiagramNodeKind { get; set; }
+    public Int64? DiagramNodeKind { get => _DiagramNodeKind; set => UpdateField(ref _DiagramNodeKind, value, nameof(DiagramNodeKind)); }
+
+    private Int64? _DiagramNodeKind;
     /// <summary>
     ///   dgmlayoutmru
     /// </summary>
-    public Int64? DiagramLayoutMostRecentUsed { get; set; }
+    public Int64? DiagramLayoutMostRecentUsed { get => _DiagramLayoutMostRecentUsed; set => UpdateField(ref _DiagramLayoutMostRecentUsed, value, nameof(DiagramLayoutMostRecentUsed)); }
+
+    private Int64? _DiagramLayoutMostRecentUsed;
     /// <summary>
     ///   insetmode
     /// </summary>
-    public InsetMarginKind? InsetMode { get; set; }
+    public InsetMarginKind? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
+
+    private InsetMarginKind? _InsetMode;
     /// <summary>
     ///   Encoded Package
     /// </summary>
-    public Base64Binary? Gfxdata { get; set; }
+    public Base64Binary? Gfxdata { get => _Gfxdata; set => UpdateField(ref _Gfxdata, value, nameof(Gfxdata)); }
+
+    private Base64Binary? _Gfxdata;
     /// <summary>
     ///   Group Diagram Type
     /// </summary>
-    public EditAsKind? EditAs { get; set; }
+    public EditAsKind? EditAs { get => _EditAs; set => UpdateField(ref _EditAs, value, nameof(EditAs)); }
+
+    private EditAsKind? _EditAs;
     /// <summary>
     ///   Table Properties
     /// </summary>
-    public string? TableProperties { get; set; }
+    public string? TableProperties { get => _TableProperties; set => UpdateField(ref _TableProperties, value, nameof(TableProperties)); }
+
+    private string? _TableProperties;
     /// <summary>
     ///   Table Row Height Limits
     /// </summary>
-    public string? TableLimits { get; set; }
-    public Group? ChildGroup { get; set; }
-    public Shape? Shape { get; set; }
-    public ShapeType? Shapetype { get; set; }
-    public Arc? Arc { get; set; }
-    public Curve? Curve { get; set; }
-    public ImageFile? ImageFile { get; set; }
-    public Line? Line { get; set; }
-    public Oval? Oval { get; set; }
-    public PolyLine? PolyLine { get; set; }
-    public Rectangle? Rectangle { get; set; }
-    public RoundRectangle? RoundRectangle { get; set; }
-    public Diagram? Diagram { get; set; }
-    public Lock? Lock { get; set; }
-    public ClipPath? ClipPath { get; set; }
-    public TextWrap? TextWrap { get; set; }
-    public bool? AnchorLock { get; set; }
+    public string? TableLimits { get => _TableLimits; set => UpdateField(ref _TableLimits, value, nameof(TableLimits)); }
+
+    private string? _TableLimits;
+    public Group? ChildGroup { get => _ChildGroup; set => UpdateField(ref _ChildGroup, value, nameof(ChildGroup)); }
+
+    private Group? _ChildGroup;
+    public Shape? Shape { get => _Shape; set => UpdateField(ref _Shape, value, nameof(Shape)); }
+
+    private Shape? _Shape;
+    public ShapeType? Shapetype { get => _Shapetype; set => UpdateField(ref _Shapetype, value, nameof(Shapetype)); }
+
+    private ShapeType? _Shapetype;
+    public Arc? Arc { get => _Arc; set => UpdateField(ref _Arc, value, nameof(Arc)); }
+
+    private Arc? _Arc;
+    public Curve? Curve { get => _Curve; set => UpdateField(ref _Curve, value, nameof(Curve)); }
+
+    private Curve? _Curve;
+    public ImageFile? ImageFile { get => _ImageFile; set => UpdateField(ref _ImageFile, value, nameof(ImageFile)); }
+
+    private ImageFile? _ImageFile;
+    public Line? Line { get => _Line; set => UpdateField(ref _Line, value, nameof(Line)); }
+
+    private Line? _Line;
+    public Oval? Oval { get => _Oval; set => UpdateField(ref _Oval, value, nameof(Oval)); }
+
+    private Oval? _Oval;
+    public PolyLine? PolyLine { get => _PolyLine; set => UpdateField(ref _PolyLine, value, nameof(PolyLine)); }
+
+    private PolyLine? _PolyLine;
+    public Rectangle? Rectangle { get => _Rectangle; set => UpdateField(ref _Rectangle, value, nameof(Rectangle)); }
+
+    private Rectangle? _Rectangle;
+    public RoundRectangle? RoundRectangle { get => _RoundRectangle; set => UpdateField(ref _RoundRectangle, value, nameof(RoundRectangle)); }
+
+    private RoundRectangle? _RoundRectangle;
+    public Diagram? Diagram { get => _Diagram; set => UpdateField(ref _Diagram, value, nameof(Diagram)); }
+
+    private Diagram? _Diagram;
+    public Lock? Lock { get => _Lock; set => UpdateField(ref _Lock, value, nameof(Lock)); }
+
+    private Lock? _Lock;
+    public ClipPath? ClipPath { get => _ClipPath; set => UpdateField(ref _ClipPath, value, nameof(ClipPath)); }
+
+    private ClipPath? _ClipPath;
+    public TextWrap? TextWrap { get => _TextWrap; set => UpdateField(ref _TextWrap, value, nameof(TextWrap)); }
+
+    private TextWrap? _TextWrap;
+    public bool? AnchorLock { get => _AnchorLock; set => UpdateField(ref _AnchorLock, value, nameof(AnchorLock)); }
+
+    private bool? _AnchorLock;
 }

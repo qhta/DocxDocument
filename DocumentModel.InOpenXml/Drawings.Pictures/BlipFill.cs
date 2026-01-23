@@ -13,15 +13,25 @@ public partial class BlipFill : ModelElement<DXDP.BlipFill>
     /// <summary>
     ///   Rotate With Shape
     /// </summary>
-    public bool? RotateWithShape { get; set; }
+    public bool? RotateWithShape { get => _RotateWithShape; set => UpdateField(ref _RotateWithShape, value, nameof(RotateWithShape)); }
+
+    private bool? _RotateWithShape;
     /// <summary>
     ///   Blip.
     /// </summary>
-    public Blip? Blip { get; set; }
+    public Blip? Blip { get => _Blip; set => UpdateField(ref _Blip, value, nameof(Blip)); }
+
+    private Blip? _Blip;
     /// <summary>
     ///   Source Rectangle.
     /// </summary>
-    public RelativeRectangleType? SourceRectangle { get; set; }
-    public Tile? Tile { get; set; }
-    public Stretch? Stretch { get; set; }
+    public RelativeRectangleType? SourceRectangle { get => _SourceRectangle; set => UpdateField(ref _SourceRectangle, value, nameof(SourceRectangle)); }
+
+    private RelativeRectangleType? _SourceRectangle;
+    public Tile? Tile { get => _Tile; set => UpdateField(ref _Tile, value, nameof(Tile)); }
+
+    private Tile? _Tile;
+    public Stretch? Stretch { get => _Stretch; set => UpdateField(ref _Stretch, value, nameof(Stretch)); }
+
+    private Stretch? _Stretch;
 }

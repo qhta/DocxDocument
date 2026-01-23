@@ -13,13 +13,19 @@ public partial class ShapeLayout : ModelElement<DXVO.ShapeLayout>
     /// <summary>
     ///   Shape ID Map.
     /// </summary>
-    public ShapeIdMap? ShapeIdMap { get; set; }
+    public ShapeIdMap? ShapeIdMap { get => _ShapeIdMap; set => UpdateField(ref _ShapeIdMap, value, nameof(ShapeIdMap)); }
+
+    private ShapeIdMap? _ShapeIdMap;
     /// <summary>
     ///   Shape Grouping History.
     /// </summary>
-    public RegroupTable? RegroupTable { get; set; }
+    public RegroupTable? RegroupTable { get => _RegroupTable; set => UpdateField(ref _RegroupTable, value, nameof(RegroupTable)); }
+
+    private RegroupTable? _RegroupTable;
     /// <summary>
     ///   Rule Set.
     /// </summary>
-    public Rules? Rules { get; set; }
+    public Rules? Rules { get => _Rules; set => UpdateField(ref _Rules, value, nameof(Rules)); }
+
+    private Rules? _Rules;
 }

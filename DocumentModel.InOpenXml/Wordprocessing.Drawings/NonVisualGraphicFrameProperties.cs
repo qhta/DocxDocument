@@ -15,5 +15,7 @@ public partial class NonVisualGraphicFrameProperties : ModelElement
     /// <summary>
     ///   ExtensionList.
     /// </summary>
-    public IExtensionList? ExtensionList { get; set; }
+    public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+    private IExtensionList? _ExtensionList;
 }

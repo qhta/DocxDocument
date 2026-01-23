@@ -19,11 +19,14 @@ public partial class ThemeOverride : ModelElement<DXD.ThemeOverride>
     ///   Font scheme used for the theme override.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ThemeOverride.FontScheme))]
-    public FontScheme? FontScheme { get; set; }
+    public FontScheme? FontScheme { get => _FontScheme; set => UpdateField(ref _FontScheme, value, nameof(FontScheme)); }
 
+    private FontScheme? _FontScheme;
     /// <summary>
     ///   Format scheme used for the theme override.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ThemeOverride.FormatScheme))]
-    public FormatScheme? FormatScheme { get; set; }
+    public FormatScheme? FormatScheme { get => _FormatScheme; set => UpdateField(ref _FormatScheme, value, nameof(FormatScheme)); }
+
+    private FormatScheme? _FormatScheme;
 }

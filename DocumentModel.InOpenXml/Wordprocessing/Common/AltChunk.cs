@@ -14,5 +14,7 @@ public partial class AltChunk : ModelElement<DXW.AltChunk>, IStoryContent, ITabl
     /// <summary>
     /// Properties for external content import, specifying additional import options and settings.
     /// </summary>
-    public AltChunkProperties? AltChunkProperties { get; set; }
+    public AltChunkProperties? AltChunkProperties { get => _AltChunkProperties; set => UpdateField(ref _AltChunkProperties, value, nameof(AltChunkProperties)); }
+
+    private AltChunkProperties? _AltChunkProperties;
 }

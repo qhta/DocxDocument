@@ -14,5 +14,7 @@ public partial class NoLineBreaksBeforeKinsoku : ModelElement<DXW.NoLineBreaksBe
     /// <summary>
     ///   Set of characters that cannot begin a line, specified as a string of restricted characters.
     /// </summary>
-    public string? Val { get; set; }
+    public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+
+    private string? _Val;
 }

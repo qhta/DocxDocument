@@ -14,13 +14,19 @@ public partial class CommentExtensible : ModelElement<DXO21WCE.CommentExtensible
     /// <summary>
     /// Date information for the comment, defined in the UTC time zone.
     /// </summary>
-    public DateTime? DateUtc { get; set; }
+    public DateTime? DateUtc { get => _DateUtc; set => UpdateField(ref _DateUtc, value, nameof(DateUtc)); }
+
+    private DateTime? _DateUtc;
     /// <summary>
     /// Indicates whether the comment is a follow-up (intelligent placeholder). If true, the content of the comment should be ignored. Must not be present on comments that are replies.
     /// </summary>
-    public bool? IntelligentPlaceholder { get; set; }
+    public bool? IntelligentPlaceholder { get => _IntelligentPlaceholder; set => UpdateField(ref _IntelligentPlaceholder, value, nameof(IntelligentPlaceholder)); }
+
+    private bool? _IntelligentPlaceholder;
     /// <summary>
     /// Additional information about a single comment, provided as an extension list.
     /// </summary>
-    public IExtensionList? ExtensionList { get; set; }
+    public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+    private IExtensionList? _ExtensionList;
 }

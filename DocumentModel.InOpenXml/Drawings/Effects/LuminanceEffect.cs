@@ -13,5 +13,7 @@ public partial class LuminanceEffect : ModelElement
     /// <summary>
     ///   Contrast adjustment value.
     /// </summary>
-    public Int32? Contrast { get; set; }
+    public Int32? Contrast { get => _Contrast; set => UpdateField(ref _Contrast, value, nameof(Contrast)); }
+
+    private Int32? _Contrast;
 }

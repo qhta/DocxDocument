@@ -13,5 +13,7 @@ public partial class ShapeNonVisualProperties : ModelElement<DXOD.ShapeNonVisual
     /// <summary>
     ///   NonVisualDrawingShapeProperties.
     /// </summary>
-    public NonVisualDrawingShapeProperties? NonVisualDrawingShapeProperties { get; set; }
+    public NonVisualDrawingShapeProperties? NonVisualDrawingShapeProperties { get => _NonVisualDrawingShapeProperties; set => UpdateField(ref _NonVisualDrawingShapeProperties, value, nameof(NonVisualDrawingShapeProperties)); }
+
+    private NonVisualDrawingShapeProperties? _NonVisualDrawingShapeProperties;
 }

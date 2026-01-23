@@ -14,9 +14,13 @@ public partial class DropDownListFormField : ModelElement<DXW.DropDownListFormFi
     /// <summary>
     /// Index of the default item to be selected when the form is loaded.
     /// </summary>
-    public Int32? DefaultDropDownListItemIndex { get; set; }
+    public Int32? DefaultDropDownListItemIndex { get => _DefaultDropDownListItemIndex; set => UpdateField(ref _DefaultDropDownListItemIndex, value, nameof(DefaultDropDownListItemIndex)); }
+
+    private Int32? _DefaultDropDownListItemIndex;
     /// <summary>
     /// Collection of list entry form fields representing the available options in the drop-down list.
     /// </summary>
-    public ListEntryFormFields? ListEntryFormFields { get; set; }
+    public ListEntryFormFields? ListEntryFormFields { get => _ListEntryFormFields; set => UpdateField(ref _ListEntryFormFields, value, nameof(ListEntryFormFields)); }
+
+    private ListEntryFormFields? _ListEntryFormFields;
 }

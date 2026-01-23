@@ -19,5 +19,7 @@ public partial class RadicalProperties : ModelElement
     /// <summary>
     ///   Specifies formatting of radical object argument.
     /// </summary>
-    public ControlProperties? ControlProperties { get; set; }
+    public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
+    private ControlProperties? _ControlProperties;
 }

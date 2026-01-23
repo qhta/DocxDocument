@@ -16,23 +16,33 @@ public partial class TableCellMargin : ModelElement<DXW.TableCellMargin>
     /// <summary>
     ///   Table cell left margin, specifying the padding at the left edge of the cell.
     /// </summary>
-    public TableWidth? LeftMargin { get; set; }
+    public TableWidth? LeftMargin { get => _LeftMargin; set => UpdateField(ref _LeftMargin, value, nameof(LeftMargin)); }
+
+    private TableWidth? _LeftMargin;
     /// <summary>
     ///   Start margin, specifying the padding at the starting edge of the cell 
     ///   (contextual to document direction).
     /// </summary>
-    public TableWidth? StartMargin { get; set; }
+    public TableWidth? StartMargin { get => _StartMargin; set => UpdateField(ref _StartMargin, value, nameof(StartMargin)); }
+
+    private TableWidth? _StartMargin;
     /// <summary>
     ///   Table cell bottom margin, specifying the padding at the bottom edge of the cell.
     /// </summary>
-    public TableWidth? BottomMargin { get; set; }
+    public TableWidth? BottomMargin { get => _BottomMargin; set => UpdateField(ref _BottomMargin, value, nameof(BottomMargin)); }
+
+    private TableWidth? _BottomMargin;
     /// <summary>
     ///   Table cell right margin, specifying the padding at the right edge of the cell.
     /// </summary>
-    public TableWidth? RightMargin { get; set; }
+    public TableWidth? RightMargin { get => _RightMargin; set => UpdateField(ref _RightMargin, value, nameof(RightMargin)); }
+
+    private TableWidth? _RightMargin;
     /// <summary>
     ///   End margin, specifying the padding at the ending edge of the cell 
     ///   (contextual to document direction).
     /// </summary>
-    public TableWidth? EndMargin { get; set; }
+    public TableWidth? EndMargin { get => _EndMargin; set => UpdateField(ref _EndMargin, value, nameof(EndMargin)); }
+
+    private TableWidth? _EndMargin;
 }

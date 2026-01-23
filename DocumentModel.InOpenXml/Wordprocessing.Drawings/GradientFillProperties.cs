@@ -14,9 +14,13 @@ public partial class GradientFillProperties : ModelElement<DXO10W.GradientFillPr
     /// <summary>
     /// Properties for linear shading, specifying the direction and behavior of a linear gradient fill.
     /// </summary>
-    public LinearShadeProperties? LinearShadeProperties { get; set; }
+    public LinearShadeProperties? LinearShadeProperties { get => _LinearShadeProperties; set => UpdateField(ref _LinearShadeProperties, value, nameof(LinearShadeProperties)); }
+
+    private LinearShadeProperties? _LinearShadeProperties;
     /// <summary>
     /// Properties for path shading, specifying the shape and behavior of a path-based gradient fill.
     /// </summary>
-    public PathShadeProperties? PathShadeProperties { get; set; }
+    public PathShadeProperties? PathShadeProperties { get => _PathShadeProperties; set => UpdateField(ref _PathShadeProperties, value, nameof(PathShadeProperties)); }
+
+    private PathShadeProperties? _PathShadeProperties;
 }

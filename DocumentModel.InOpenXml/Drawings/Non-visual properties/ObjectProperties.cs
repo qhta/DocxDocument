@@ -13,9 +13,13 @@ public partial class ObjectProperties : ModelElement<DXO13D.ObjectProperties>
     /// <summary>
     ///   Indicates whether the object is an ActiveX control.
     /// </summary>
-    public bool? IsActiveX { get; set; }
+    public bool? IsActiveX { get => _IsActiveX; set => UpdateField(ref _IsActiveX, value, nameof(IsActiveX)); }
+
+    private bool? _IsActiveX;
     /// <summary>
     ///   Type of link associated with the object.
     /// </summary>
-    public string? LinkType { get; set; }
+    public string? LinkType { get => _LinkType; set => UpdateField(ref _LinkType, value, nameof(LinkType)); }
+
+    private string? _LinkType;
 }

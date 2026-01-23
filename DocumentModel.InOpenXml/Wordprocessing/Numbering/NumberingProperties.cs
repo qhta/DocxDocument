@@ -14,13 +14,19 @@ public partial class NumberingProperties : ModelElement<DXW.NumberingProperties>
     /// <summary>
     /// Reference to the numbering definition instance used for the paragraph or list item.
     /// </summary>
-    public Int32? NumberingId { get; set; }
+    public Int32? NumberingId { get => _NumberingId; set => UpdateField(ref _NumberingId, value, nameof(NumberingId)); }
+
+    private Int32? _NumberingId;
     /// <summary>
     /// Previous paragraph numbering properties, enabling tracking and management of numbering revisions.
     /// </summary>
-    public NumberingChange? NumberingChange { get; set; }
-  /// <summary>
-  /// Inserted numbering properties, used to track newly added numbering information as part of revisions.
-  /// </summary>
-  public Inserted? Inserted { get; set; }
+    public NumberingChange? NumberingChange { get => _NumberingChange; set => UpdateField(ref _NumberingChange, value, nameof(NumberingChange)); }
+
+    private NumberingChange? _NumberingChange;
+    /// <summary>
+    /// Inserted numbering properties, used to track newly added numbering information as part of revisions.
+    /// </summary>
+    public Inserted? Inserted { get => _Inserted; set => UpdateField(ref _Inserted, value, nameof(Inserted)); }
+
+    private Inserted? _Inserted;
 }

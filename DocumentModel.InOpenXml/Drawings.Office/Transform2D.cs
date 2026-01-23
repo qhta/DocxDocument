@@ -13,17 +13,25 @@ public partial class Transform2D : ModelElement<DXOD.Transform2D>
     /// <summary>
     ///   Horizontal Flip
     /// </summary>
-    public bool? HorizontalFlip { get; set; }
+    public bool? HorizontalFlip { get => _HorizontalFlip; set => UpdateField(ref _HorizontalFlip, value, nameof(HorizontalFlip)); }
+
+    private bool? _HorizontalFlip;
     /// <summary>
     ///   Vertical Flip
     /// </summary>
-    public bool? VerticalFlip { get; set; }
+    public bool? VerticalFlip { get => _VerticalFlip; set => UpdateField(ref _VerticalFlip, value, nameof(VerticalFlip)); }
+
+    private bool? _VerticalFlip;
     /// <summary>
     ///   Offset.
     /// </summary>
-    public Point2DType? Offset { get; set; }
+    public Point2DType? Offset { get => _Offset; set => UpdateField(ref _Offset, value, nameof(Offset)); }
+
+    private Point2DType? _Offset;
     /// <summary>
     ///   Extents.
     /// </summary>
-    public PositiveSize2DType? Extents { get; set; }
+    public PositiveSize2DType? Extents { get => _Extents; set => UpdateField(ref _Extents, value, nameof(Extents)); }
+
+    private PositiveSize2DType? _Extents;
 }

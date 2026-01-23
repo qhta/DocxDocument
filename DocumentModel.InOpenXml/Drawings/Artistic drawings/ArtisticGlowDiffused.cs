@@ -13,5 +13,7 @@ public partial class ArtisticGlowDiffused : ModelElement<DXO10D.ArtisticGlowDiff
     /// <summary>
     /// Intensity of the diffused glow effect, influencing the strength of the glow.
     /// </summary>
-    public Int32? Intensity { get; set; }
+    public Int32? Intensity { get => _Intensity; set => UpdateField(ref _Intensity, value, nameof(Intensity)); }
+
+    private Int32? _Intensity;
 }

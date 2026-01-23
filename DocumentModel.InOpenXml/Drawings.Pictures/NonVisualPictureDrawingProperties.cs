@@ -13,9 +13,13 @@ public partial class NonVisualPictureDrawingProperties : ModelElement<DXDP.NonVi
     /// <summary>
     ///   PictureLocks.
     /// </summary>
-    public PictureLocks? PictureLocks { get; set; }
+    public PictureLocks? PictureLocks { get => _PictureLocks; set => UpdateField(ref _PictureLocks, value, nameof(PictureLocks)); }
+
+    private PictureLocks? _PictureLocks;
     /// <summary>
     ///   NonVisualPicturePropertiesExtensionList.
     /// </summary>
-    public NonVisualPicturePropertiesExtensionList? NonVisualPicturePropertiesExtensionList { get; set; }
+    public NonVisualPicturePropertiesExtensionList? NonVisualPicturePropertiesExtensionList { get => _NonVisualPicturePropertiesExtensionList; set => UpdateField(ref _NonVisualPicturePropertiesExtensionList, value, nameof(NonVisualPicturePropertiesExtensionList)); }
+
+    private NonVisualPicturePropertiesExtensionList? _NonVisualPicturePropertiesExtensionList;
 }

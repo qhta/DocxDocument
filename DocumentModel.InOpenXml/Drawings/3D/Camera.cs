@@ -13,13 +13,19 @@ public partial class Camera : ModelElement<DXD.Camera>
     /// <summary>
     /// Field of view.
     /// </summary>
-    public Int32? FieldOfView { get; set; }
+    public Int32? FieldOfView { get => _FieldOfView; set => UpdateField(ref _FieldOfView, value, nameof(FieldOfView)); }
+
+    private Int32? _FieldOfView;
     /// <summary>
     /// Zoom factor.
     /// </summary>
-    public Int32? Zoom { get; set; }
+    public Int32? Zoom { get => _Zoom; set => UpdateField(ref _Zoom, value, nameof(Zoom)); }
+
+    private Int32? _Zoom;
     /// <summary>
     /// Camera rotation.
     /// </summary>
-    public Rotation? Rotation { get; set; }
+    public Rotation? Rotation { get => _Rotation; set => UpdateField(ref _Rotation, value, nameof(Rotation)); }
+
+    private Rotation? _Rotation;
 }

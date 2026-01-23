@@ -19,13 +19,19 @@ public partial class Rectangle : ModelElement<DXD.Rectangle>
     /// <summary>
     ///   Top position of the rectangle.
     /// </summary>
-    public string? Top { get; set; }
+    public string? Top { get => _Top; set => UpdateField(ref _Top, value, nameof(Top)); }
+
+    private string? _Top;
     /// <summary>
     ///   Right position of the rectangle.
     /// </summary>
-    public string? Right { get; set; }
+    public string? Right { get => _Right; set => UpdateField(ref _Right, value, nameof(Right)); }
+
+    private string? _Right;
     /// <summary>
     ///   Bottom position of the rectangle.
     /// </summary>
-    public string? Bottom { get; set; }
+    public string? Bottom { get => _Bottom; set => UpdateField(ref _Bottom, value, nameof(Bottom)); }
+
+    private string? _Bottom;
 }

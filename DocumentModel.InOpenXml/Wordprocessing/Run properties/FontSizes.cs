@@ -14,5 +14,7 @@ public partial class FontSizes : ModelElement
     /// <summary>
     /// Font size value for complex script, specified in half-points. If null, the regular script value is used.
     /// </summary>
-    public HalfPoints? ValCS { get; set; }
+    public HalfPoints? ValCS { get => _ValCS; set => UpdateField(ref _ValCS, value, nameof(ValCS)); }
+
+    private HalfPoints? _ValCS;
 }

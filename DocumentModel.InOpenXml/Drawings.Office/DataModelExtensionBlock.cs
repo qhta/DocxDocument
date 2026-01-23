@@ -13,5 +13,7 @@ public partial class DataModelExtensionBlock : ModelElement<DXOD.DataModelExtens
     /// <summary>
     ///   minVer
     /// </summary>
-    public string? MinVer { get; set; }
+    public string? MinVer { get => _MinVer; set => UpdateField(ref _MinVer, value, nameof(MinVer)); }
+
+    private string? _MinVer;
 }

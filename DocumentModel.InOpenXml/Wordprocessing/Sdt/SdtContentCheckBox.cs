@@ -14,9 +14,13 @@ public partial class SdtContentCheckBox : ModelElement<DXO10W.SdtContentCheckBox
     /// <summary>
     /// Symbol used to represent the checked state of the checkbox.
     /// </summary>
-    public CheckBoxSymbolType? CheckedState { get; set; }
+    public CheckBoxSymbolType? CheckedState { get => _CheckedState; set => UpdateField(ref _CheckedState, value, nameof(CheckedState)); }
+
+    private CheckBoxSymbolType? _CheckedState;
     /// <summary>
     /// Symbol used to represent the unchecked state of the checkbox.
     /// </summary>
-    public CheckBoxSymbolType? UncheckedState { get; set; }
+    public CheckBoxSymbolType? UncheckedState { get => _UncheckedState; set => UpdateField(ref _UncheckedState, value, nameof(UncheckedState)); }
+
+    private CheckBoxSymbolType? _UncheckedState;
 }

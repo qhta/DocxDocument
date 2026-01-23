@@ -13,21 +13,31 @@ public partial class Paragraph : ModelElement
     /// <summary>
     ///   Text run within the paragraph.
     /// </summary>
-    public Run? Run { get; set; }
+    public Run? Run { get => _Run; set => UpdateField(ref _Run, value, nameof(Run)); }
+
+    private Run? _Run;
     /// <summary>
     ///   Line break within the paragraph.
     /// </summary>
-    public Break? Break { get; set; }
+    public Break? Break { get => _Break; set => UpdateField(ref _Break, value, nameof(Break)); }
+
+    private Break? _Break;
     /// <summary>
     ///   Field element within the paragraph.
     /// </summary>
-    public Field? Field { get; set; }
+    public Field? Field { get => _Field; set => UpdateField(ref _Field, value, nameof(Field)); }
+
+    private Field? _Field;
     /// <summary>
     ///   Indicates whether the paragraph contains mathematical text.
     /// </summary>
-    public bool? TextMath { get; set; }
+    public bool? TextMath { get => _TextMath; set => UpdateField(ref _TextMath, value, nameof(TextMath)); }
+
+    private bool? _TextMath;
     /// <summary>
     ///   Formatting properties for the last run in the paragraph.
     /// </summary>
-    public EndParagraphRunProperties? EndParagraphRunProperties { get; set; }
+    public EndParagraphRunProperties? EndParagraphRunProperties { get => _EndParagraphRunProperties; set => UpdateField(ref _EndParagraphRunProperties, value, nameof(EndParagraphRunProperties)); }
+
+    private EndParagraphRunProperties? _EndParagraphRunProperties;
 }

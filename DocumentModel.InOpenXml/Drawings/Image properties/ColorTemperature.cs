@@ -1,17 +1,19 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Defines the color temperature effect for drawing elements.
 /// </summary>
-public class ColorTemperature: ModelElement<DXO10D.ColorTemperature>, IExtendableElement
+public partial class ColorTemperature : ModelElement<DXO10D.ColorTemperature>, IExtendableElement
 {
-  /// <summary>
-  /// Color temperature value.
-  /// </summary>
-  public Int32? ColorTemperatureValue { get; set; }
+    /// <summary>
+    /// Color temperature value.
+    /// </summary>
+    public Int32? ColorTemperatureValue { get => _ColorTemperatureValue; set => UpdateField(ref _ColorTemperatureValue, value, nameof(ColorTemperatureValue)); }
 
-  /// <summary>
-  /// List of extensions for the color temperature effect.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+    private Int32? _ColorTemperatureValue;
+    /// <summary>
+    /// List of extensions for the color temperature effect.
+    /// </summary>
+    public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+    private ExtensionList? _ExtensionList;
 }

@@ -55,5 +55,7 @@ public partial class IAlternateContent : ModelElement
     ///   it to be properly rendered when the document is subsequently opened in an application that supports the
     ///   advanced features.
     /// </remarks>
-    public AlternateContentFallback? Fallback { get; set; }
+    public AlternateContentFallback? Fallback { get => _Fallback; set => UpdateField(ref _Fallback, value, nameof(Fallback)); }
+
+    private AlternateContentFallback? _Fallback;
 }

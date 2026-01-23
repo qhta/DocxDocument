@@ -13,9 +13,13 @@ public partial class LightRig : ModelElement<DXD.LightRig>
     /// <summary>
     ///   Direction of the light rig.
     /// </summary>
-    public LightRigDirectionKind? Direction { get; set; }
+    public LightRigDirectionKind? Direction { get => _Direction; set => UpdateField(ref _Direction, value, nameof(Direction)); }
+
+    private LightRigDirectionKind? _Direction;
     /// <summary>
     ///   Rotation settings for the light rig.
     /// </summary>
-    public Rotation? Rotation { get; set; }
+    public Rotation? Rotation { get => _Rotation; set => UpdateField(ref _Rotation, value, nameof(Rotation)); }
+
+    private Rotation? _Rotation;
 }

@@ -19,23 +19,28 @@ public partial class FormatScheme : ModelElement<DXD.FormatScheme>
     ///   List of fill styles used in the format scheme.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.FormatScheme.FillStyleList))]
-    public FillStyleList? FillStyleList { get; set; }
+    public FillStyleList? FillStyleList { get => _FillStyleList; set => UpdateField(ref _FillStyleList, value, nameof(FillStyleList)); }
 
+    private FillStyleList? _FillStyleList;
     /// <summary>
     ///   List of line styles used in the format scheme.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.FormatScheme.LineStyleList))]
-    public LineStyleList? LineStyleList { get; set; }
+    public LineStyleList? LineStyleList { get => _LineStyleList; set => UpdateField(ref _LineStyleList, value, nameof(LineStyleList)); }
 
+    private LineStyleList? _LineStyleList;
     /// <summary>
     ///   List of effect styles used in the format scheme.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.FormatScheme.EffectStyleList))]
-    public EffectStyleList? EffectStyleList { get; set; }
+    public EffectStyleList? EffectStyleList { get => _EffectStyleList; set => UpdateField(ref _EffectStyleList, value, nameof(EffectStyleList)); }
 
+    private EffectStyleList? _EffectStyleList;
     /// <summary>
     ///   List of background fill styles used in the format scheme.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.FormatScheme.BackgroundFillStyleList))]
-    public FillStyleList? BackgroundFillStyleList { get; set; }
+    public FillStyleList? BackgroundFillStyleList { get => _BackgroundFillStyleList; set => UpdateField(ref _BackgroundFillStyleList, value, nameof(BackgroundFillStyleList)); }
+
+    private FillStyleList? _BackgroundFillStyleList;
 }

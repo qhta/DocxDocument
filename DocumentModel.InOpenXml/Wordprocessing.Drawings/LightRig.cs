@@ -14,9 +14,13 @@ public partial class LightRig : ModelElement
     /// <summary>
     /// The direction of the light rig, specifying the orientation of the lighting relative to the 3D object.
     /// </summary>
-    public LightRigDirectionKind? LightDirectionType { get; set; }
+    public LightRigDirectionKind? LightDirectionType { get => _LightDirectionType; set => UpdateField(ref _LightDirectionType, value, nameof(LightDirectionType)); }
+
+    private LightRigDirectionKind? _LightDirectionType;
     /// <summary>
     /// The sphere coordinates for the light rig, allowing precise positioning of the light source in 3D space.
     /// </summary>
-    public SphereCoordinates? SphereCoordinates { get; set; }
+    public SphereCoordinates? SphereCoordinates { get => _SphereCoordinates; set => UpdateField(ref _SphereCoordinates, value, nameof(SphereCoordinates)); }
+
+    private SphereCoordinates? _SphereCoordinates;
 }

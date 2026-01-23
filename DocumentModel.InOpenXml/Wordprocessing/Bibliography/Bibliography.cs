@@ -27,7 +27,9 @@ public partial class Bibliography : ModelElement
     ///   The master list is a shared repository of sources that can be used across
     ///   multiple documents. It's typically stored separately from individual documents.
     /// </remarks>
-    public Sources? MasterList { get; set; }
+    public Sources? MasterList { get => _MasterList; set => UpdateField(ref _MasterList, value, nameof(MasterList)); }
+
+    private Sources? _MasterList;
     /// <summary>
     ///   Gets or sets the current list of sources in the active document.
     /// </summary>
@@ -35,7 +37,9 @@ public partial class Bibliography : ModelElement
     ///   The current list contains only the sources that are currently being used
     ///   or referenced in the active document.
     /// </remarks>
-    public Sources? CurrentList { get; set; }
+    public Sources? CurrentList { get => _CurrentList; set => UpdateField(ref _CurrentList, value, nameof(CurrentList)); }
+
+    private Sources? _CurrentList;
 #endregion
 #region Bibliography Style and Formatting
     /// <summary>
@@ -45,7 +49,9 @@ public partial class Bibliography : ModelElement
     ///   Common styles include APA, MLA, Chicago, Turabian, IEEE, etc.
     ///   The style determines how citations appear in-text and how the bibliography is formatted.
     /// </remarks>
-    public string? BibliographyStyle { get; set; }
+    public string? BibliographyStyle { get => _BibliographyStyle; set => UpdateField(ref _BibliographyStyle, value, nameof(BibliographyStyle)); }
+
+    private string? _BibliographyStyle;
     /// <summary>
     ///   Gets or sets the sort order for the bibliography entries.
     /// </summary>
@@ -53,7 +59,9 @@ public partial class Bibliography : ModelElement
     ///   Determines how bibliography entries are ordered (alphabetically by author,
     ///   by appearance in document, by year, etc.).
     /// </remarks>
-    public BibliographySortOrderKind? SortOrder { get; set; }
+    public BibliographySortOrderKind? SortOrder { get => _SortOrder; set => UpdateField(ref _SortOrder, value, nameof(SortOrder)); }
+
+    private BibliographySortOrderKind? _SortOrder;
     /// <summary>
     ///   Gets or sets whether to show all bibliography sources or only cited sources.
     /// </summary>
@@ -61,6 +69,8 @@ public partial class Bibliography : ModelElement
     ///   When true, displays all sources in the current list.
     ///   When false, displays only sources that are actually cited in the document.
     /// </remarks>
-    public bool ShowAllSources { get; set; }
+    public bool ShowAllSources { get => _ShowAllSources; set => UpdateField(ref _ShowAllSources, value, nameof(ShowAllSources)); }
+
+    private bool _ShowAllSources;
 #endregion
 }

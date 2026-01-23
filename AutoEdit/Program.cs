@@ -26,7 +26,7 @@ public static class Program
           {
             GenerateShouldSerializeFunctions.Run(filePath);
             AddPrivateFieldsWithUpdate.Run(filePath);
-            AddOpenXmlPropertyAttribute.Run(filePath);
+            //AddOpenXmlPropertyAttribute.Run(filePath);
           }
         }
       }
@@ -50,16 +50,12 @@ public static class Program
     foreach (var file in Directory.GetFiles(path, "*.cs"))
     {
       var filename = Path.GetFileNameWithoutExtension(file);
-      if (filename == "StatisticProperties")
-        result.Add(file);
       if (filename.Equals("GlobalUsings", StringComparison.OrdinalIgnoreCase)
           || filename.Equals("Program", StringComparison.OrdinalIgnoreCase))
         continue;
       if (filename.Contains(".") && !filename.EndsWith(".Properties", StringComparison.OrdinalIgnoreCase))
         continue;
-      //if (filename == "StatisticProperties")
-      //  result.Add(file);
-      if (path.EndsWith("Themes")) result.Add(file);
+      result.Add(file);
     }
     foreach (var dir in Directory.GetDirectories(path))
     {

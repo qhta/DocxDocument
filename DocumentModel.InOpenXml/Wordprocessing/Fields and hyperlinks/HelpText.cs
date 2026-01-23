@@ -14,5 +14,7 @@ public partial class HelpText : ModelElement<DXW.HelpText>
     /// <summary>
     /// Value of the help text, containing the actual guidance or information to be displayed to the user.
     /// </summary>
-    public string? Val { get; set; }
+    public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+
+    private string? _Val;
 }

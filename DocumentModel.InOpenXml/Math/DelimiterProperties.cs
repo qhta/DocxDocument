@@ -14,22 +14,32 @@ public partial class DelimiterProperties : ModelElement<DXM.DelimiterProperties>
     /// <summary>
     ///   Delimiter Separator Character.
     /// </summary>
-    public string? SeparatorChar { get; set; }
+    public string? SeparatorChar { get => _SeparatorChar; set => UpdateField(ref _SeparatorChar, value, nameof(SeparatorChar)); }
+
+    private string? _SeparatorChar;
     /// <summary>
     ///   Delimiter Ending Character.
     /// </summary>
-    public string? EndChar { get; set; }
+    public string? EndChar { get => _EndChar; set => UpdateField(ref _EndChar, value, nameof(EndChar)); }
+
+    private string? _EndChar;
     /// <summary>
     ///   Allows separators to grow according to operator size.
     /// </summary>
-    public bool? GrowOperators { get; set; }
+    public bool? GrowOperators { get => _GrowOperators; set => UpdateField(ref _GrowOperators, value, nameof(GrowOperators)); }
+
+    private bool? _GrowOperators;
     /// <summary>
     ///   Specifies if delimiter are vertically centered around the delimited expression,
     ///   or they are matched to the baseline of the expression.
     /// </summary>
-    public ShapeDelimiterKind? Shape { get; set; }
+    public ShapeDelimiterKind? Shape { get => _Shape; set => UpdateField(ref _Shape, value, nameof(Shape)); }
+
+    private ShapeDelimiterKind? _Shape;
     /// <summary>
     ///   Specifies formatting of delimiter object argument.
     /// </summary>
-    public ControlProperties? ControlProperties { get; set; }
+    public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
+    private ControlProperties? _ControlProperties;
 }

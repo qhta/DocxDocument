@@ -13,5 +13,7 @@ public partial class LineSpacing : ModelElement
     /// <summary>
     ///   Line spacing value specified in points.
     /// </summary>
-    public Int32? SpacingPoints { get; set; }
+    public Int32? SpacingPoints { get => _SpacingPoints; set => UpdateField(ref _SpacingPoints, value, nameof(SpacingPoints)); }
+
+    private Int32? _SpacingPoints;
 }

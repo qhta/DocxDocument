@@ -10,5 +10,7 @@ public partial class LiveFeedProperties : ModelElement<DXO21DL.LiveFeedPropertie
     public LiveFeedBackgroundProperties? LiveFeedBackgroundProperties { get => _LiveFeedBackgroundProperties; set => UpdateField(ref _LiveFeedBackgroundProperties, value, nameof(LiveFeedBackgroundProperties)); }
 
     private LiveFeedBackgroundProperties? _LiveFeedBackgroundProperties;
-    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
+
+    private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

@@ -14,9 +14,13 @@ public partial class SdtDataBinding : ModelElement //<DXO10W.SdtDataBinding>
     /// <summary>
     /// XPath expression used to locate the XML element for data binding.
     /// </summary>
-    public string? XPath { get; set; }
+    public string? XPath { get => _XPath; set => UpdateField(ref _XPath, value, nameof(XPath)); }
+
+    private string? _XPath;
     /// <summary>
     /// Custom XML data storage ID, identifying the XML data part to which the SDT is bound.
     /// </summary>
-    public string? StoreItemId { get; set; }
+    public string? StoreItemId { get => _StoreItemId; set => UpdateField(ref _StoreItemId, value, nameof(StoreItemId)); }
+
+    private string? _StoreItemId;
 }

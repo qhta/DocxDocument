@@ -19,17 +19,21 @@ public partial class ThemeElements : ModelElement<DXD.ThemeElements>, IExtendabl
     ///   Font scheme for the theme.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ThemeElements.FontScheme))]
-    public FontScheme? FontScheme { get; set; }
+    public FontScheme? FontScheme { get => _FontScheme; set => UpdateField(ref _FontScheme, value, nameof(FontScheme)); }
 
+    private FontScheme? _FontScheme;
     /// <summary>
     ///   Format scheme for the theme.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ThemeElements.FormatScheme))]
-    public FormatScheme? FormatScheme { get; set; }
+    public FormatScheme? FormatScheme { get => _FormatScheme; set => UpdateField(ref _FormatScheme, value, nameof(FormatScheme)); }
 
+    private FormatScheme? _FormatScheme;
     /// <summary>
     /// List of extensions for the theme elements.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ThemeElements.ExtensionList))]
-    public ExtensionList? ExtensionList { get; set; }
+    public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+    private ExtensionList? _ExtensionList;
 }

@@ -13,5 +13,7 @@ public partial class FillOverlay : ModelElement<DXD.FillOverlay>
     /// <summary>
     ///   NoFill.
     /// </summary>
-    public Fill? Fill { get; set; }
+    public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
+
+    private Fill? _Fill;
 }

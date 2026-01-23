@@ -13,34 +13,52 @@ public partial class HyperlinkType : ModelElement<DXD.HyperlinkType>, IExtendabl
     /// <summary>
     ///   Stores the URL if it is invalid and a relationship cannot be created; r:id will point to a NULL relationship.
     /// </summary>
-    public string? InvalidUrl { get; set; }
+    public string? InvalidUrl { get => _InvalidUrl; set => UpdateField(ref _InvalidUrl, value, nameof(InvalidUrl)); }
+
+    private string? _InvalidUrl;
     /// <summary>
     ///   Action to take when the hyperlink is activated; may require r:id to specify an action target.
     /// </summary>
-    public string? Action { get; set; }
+    public string? Action { get => _Action; set => UpdateField(ref _Action, value, nameof(Action)); }
+
+    private string? _Action;
     /// <summary>
     ///   Target frame for navigating to the UriString.
     /// </summary>
-    public string? TargetFrame { get; set; }
+    public string? TargetFrame { get => _TargetFrame; set => UpdateField(ref _TargetFrame, value, nameof(TargetFrame)); }
+
+    private string? _TargetFrame;
     /// <summary>
     ///   Tooltip text for display.
     /// </summary>
-    public string? Tooltip { get; set; }
+    public string? Tooltip { get => _Tooltip; set => UpdateField(ref _Tooltip, value, nameof(Tooltip)); }
+
+    private string? _Tooltip;
     /// <summary>
     ///   Indicates whether to add this UriString to the navigation history.
     /// </summary>
-    public bool? History { get; set; }
+    public bool? History { get => _History; set => UpdateField(ref _History, value, nameof(History)); }
+
+    private bool? _History;
     /// <summary>
     ///   Indicates whether to highlight the hyperlink when a shape is clicked.
     /// </summary>
-    public bool? HighlightClick { get; set; }
+    public bool? HighlightClick { get => _HighlightClick; set => UpdateField(ref _HighlightClick, value, nameof(HighlightClick)); }
+
+    private bool? _HighlightClick;
     /// <summary>
     ///   Indicates whether to stop any previous sound when the hyperlink is clicked.
     /// </summary>
-    public bool? EndSound { get; set; }
+    public bool? EndSound { get => _EndSound; set => UpdateField(ref _EndSound, value, nameof(EndSound)); }
+
+    private bool? _EndSound;
     /// <summary>
     ///   Sound to play when the hyperlink is activated.
     /// </summary>
-    public EmbeddedWavAudioFileType? HyperlinkSound { get; set; }
-    public HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
+    public EmbeddedWavAudioFileType? HyperlinkSound { get => _HyperlinkSound; set => UpdateField(ref _HyperlinkSound, value, nameof(HyperlinkSound)); }
+
+    private EmbeddedWavAudioFileType? _HyperlinkSound;
+    public HyperlinkExtensionList? HyperlinkExtensionList { get => _HyperlinkExtensionList; set => UpdateField(ref _HyperlinkExtensionList, value, nameof(HyperlinkExtensionList)); }
+
+    private HyperlinkExtensionList? _HyperlinkExtensionList;
 }

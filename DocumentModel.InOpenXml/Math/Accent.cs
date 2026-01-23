@@ -14,5 +14,7 @@ public partial class Accent : ModelElement<DXM.Accent>, ICommonMathContent
     /// <summary>
     ///   Specifies the argument of accent function.
     /// </summary>
-    public Argument? Argument { get; set; }
+    public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
+
+    private Argument? _Argument;
 }

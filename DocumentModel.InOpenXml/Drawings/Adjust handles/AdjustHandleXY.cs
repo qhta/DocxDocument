@@ -13,25 +13,37 @@ public partial class AdjustHandleXY : ModelElement<DXD.AdjustHandleXY>
     /// <summary>
     /// Minimum allowed value for horizontal adjustment.
     /// </summary>
-    public string? MinX { get; set; }
+    public string? MinX { get => _MinX; set => UpdateField(ref _MinX, value, nameof(MinX)); }
+
+    private string? _MinX;
     /// <summary>
     /// Maximum allowed value for horizontal adjustment.
     /// </summary>
-    public string? MaxX { get; set; }
+    public string? MaxX { get => _MaxX; set => UpdateField(ref _MaxX, value, nameof(MaxX)); }
+
+    private string? _MaxX;
     /// <summary>
     /// Vertical adjustment guide, which determines how the Y coordinate is adjusted.
     /// </summary>
-    public string? YAdjustmentGuide { get; set; }
+    public string? YAdjustmentGuide { get => _YAdjustmentGuide; set => UpdateField(ref _YAdjustmentGuide, value, nameof(YAdjustmentGuide)); }
+
+    private string? _YAdjustmentGuide;
     /// <summary>
     /// Minimum allowed value for vertical adjustment.
     /// </summary>
-    public string? MinY { get; set; }
+    public string? MinY { get => _MinY; set => UpdateField(ref _MinY, value, nameof(MinY)); }
+
+    private string? _MinY;
     /// <summary>
     /// Maximum allowed value for vertical adjustment.
     /// </summary>
-    public string? MaxY { get; set; }
+    public string? MaxY { get => _MaxY; set => UpdateField(ref _MaxY, value, nameof(MaxY)); }
+
+    private string? _MaxY;
     /// <summary>
     /// Position of the adjust handle as a two-dimensional point.
     /// </summary>
-    public AdjustPoint2DType? Position { get; set; }
+    public AdjustPoint2DType? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
+
+    private AdjustPoint2DType? _Position;
 }

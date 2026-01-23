@@ -13,5 +13,7 @@ public partial class PresetGeometry : ModelElement<DXD.PresetGeometry>
     /// <summary>
     ///   List of adjustment values for the preset shape.
     /// </summary>
-    public AdjustValueList? AdjustValueList { get; set; }
+    public AdjustValueList? AdjustValueList { get => _AdjustValueList; set => UpdateField(ref _AdjustValueList, value, nameof(AdjustValueList)); }
+
+    private AdjustValueList? _AdjustValueList;
 }

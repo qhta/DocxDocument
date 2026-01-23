@@ -14,5 +14,7 @@ public partial class FitText : ModelElement<DXW.FitText>
     /// <summary>
     /// Target width for the fit text effect, specified in twips. The text is compressed or expanded to fit this width.
     /// </summary>
-    public Twips? Value { get; set; }
+    public Twips? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
+
+    private Twips? _Value;
 }

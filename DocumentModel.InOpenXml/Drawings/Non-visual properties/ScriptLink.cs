@@ -13,5 +13,7 @@ public partial class ScriptLink : ModelElement<DXOY21SL.ScriptLink>
     /// <summary>
     ///   OfficeArtExtensionList.
     /// </summary>
-    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
+
+    private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

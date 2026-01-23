@@ -14,5 +14,7 @@ public partial class ContourColor : ModelElement<DXO10W.ContourColor>
     /// <summary>
     /// The scheme color used for the contour, enabling the use of document-defined color schemes.
     /// </summary>
-    public SchemeColor? SchemeColor { get; set; }
+    public SchemeColor? SchemeColor { get => _SchemeColor; set => UpdateField(ref _SchemeColor, value, nameof(SchemeColor)); }
+
+    private SchemeColor? _SchemeColor;
 }

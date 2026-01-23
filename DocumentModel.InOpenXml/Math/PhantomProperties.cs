@@ -23,7 +23,9 @@ public partial class PhantomProperties : ModelElement<DXM.PhantomProperties>
     ///   When the element is present and the val attribute is absent, 
     ///   the default of the val attribute is 1 meaning that this property is applied.
     /// </summary>
-    public bool? ZeroWidth { get; set; }
+    public bool? ZeroWidth { get => _ZeroWidth; set => UpdateField(ref _ZeroWidth, value, nameof(ZeroWidth)); }
+
+    private bool? _ZeroWidth;
     /// <summary>
     ///   This element specifies that the phantom has zero ascent. 
     ///   The ascent of the contents of the phantom is not considered during layout. 
@@ -32,7 +34,9 @@ public partial class PhantomProperties : ModelElement<DXM.PhantomProperties>
     ///   When the element is present and the val attribute is absent, 
     ///   the default of the val attribute is 1 meaning that this property is applied.
     /// </summary>
-    public bool? ZeroAscent { get; set; }
+    public bool? ZeroAscent { get => _ZeroAscent; set => UpdateField(ref _ZeroAscent, value, nameof(ZeroAscent)); }
+
+    private bool? _ZeroAscent;
     /// <summary>
     ///   This element specifies that the phantom has zero descent. 
     ///   The descent of the contents of the phantom is not considered during layout. 
@@ -41,7 +45,9 @@ public partial class PhantomProperties : ModelElement<DXM.PhantomProperties>
     ///   When the element is present and the val attribute is absent, 
     ///   the default of the val attribute is 1 meaning that this property is applied.
     /// </summary>
-    public bool? ZeroDescent { get; set; }
+    public bool? ZeroDescent { get => _ZeroDescent; set => UpdateField(ref _ZeroDescent, value, nameof(ZeroDescent)); }
+
+    private bool? _ZeroDescent;
     /// <summary>
     ///   This element specifies that the phantom is transparent for spacing. 
     ///   This means that if the contents of the phantom are belonging to a special spacing interface 
@@ -53,9 +59,13 @@ public partial class PhantomProperties : ModelElement<DXM.PhantomProperties>
     ///   When the element is present and the val attribute is absent, 
     ///   the default of the val attribute is 1 meaning that this property is applied.
     /// </summary>
-    public bool? Transparent { get; set; }
+    public bool? Transparent { get => _Transparent; set => UpdateField(ref _Transparent, value, nameof(Transparent)); }
+
+    private bool? _Transparent;
     /// <summary>
     ///   Specifies formatting of phantom object argument.
     /// </summary>
-    public ControlProperties? ControlProperties { get; set; }
+    public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
+    private ControlProperties? _ControlProperties;
 }

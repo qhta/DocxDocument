@@ -13,5 +13,7 @@ public partial class FillExtendedProperties : ModelElement<DXVO.FillExtendedProp
     /// <summary>
     ///   Fill Type
     /// </summary>
-    public FillTypeKind? Type { get; set; }
+    public FillTypeKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+
+    private FillTypeKind? _Type;
 }

@@ -13,5 +13,7 @@ public partial class ConnectionType : ModelElement<DXD.ConnectionType>
     /// <summary>
     /// Index of the connection.
     /// </summary>
-    public UInt32? Index { get; set; }
+    public UInt32? Index { get => _Index; set => UpdateField(ref _Index, value, nameof(Index)); }
+
+    private UInt32? _Index;
 }
