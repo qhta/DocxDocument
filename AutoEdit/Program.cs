@@ -24,8 +24,9 @@ public static class Program
           var fileList = GetFiles(projectPath);
           foreach (var filePath in fileList)
           {
-            GenerateShouldSerializeFunctions.Run(filePath);
-            AddPrivateFieldsWithUpdate.Run(filePath);
+            MoveEnumType.Run(filePath);
+            //GenerateShouldSerializeFunctions.Run(filePath);
+            //AddPrivateFieldsWithUpdate.Run(filePath);
             //AddOpenXmlPropertyAttribute.Run(filePath);
           }
         }
