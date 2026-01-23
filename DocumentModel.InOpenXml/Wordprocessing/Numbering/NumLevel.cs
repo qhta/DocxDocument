@@ -100,12 +100,7 @@ public partial class NumLevel : ModelElement<DXW.Level>
     public LevelJustificationKind? LevelJustification { get => _LevelJustification; set => UpdateField(ref _LevelJustification, value, nameof(LevelJustification)); }
 
     private LevelJustificationKind? _LevelJustification;
-    /// <summary>
-    /// Paragraph properties associated with this numbering level, specifying formatting for paragraphs at this level.
-    /// </summary>
-    public PreviousParagraphProperties? NumberingLevelParagraphProperties { get => _NumberingLevelParagraphProperties; set => UpdateField(ref _NumberingLevelParagraphProperties, value, nameof(NumberingLevelParagraphProperties)); }
 
-    private PreviousParagraphProperties? _NumberingLevelParagraphProperties;
     /// <summary>
     /// Run properties for the numbering symbol at this level, specifying formatting for the symbol.
     /// </summary>

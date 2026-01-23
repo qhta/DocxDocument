@@ -1,6 +1,6 @@
 namespace DocumentModel.Wordprocessing;
 
-public partial class BaseParagraphProperties
+public partial class BaseParagraphProperties<T>
 {
   public bool ShouldSerializeKeepNext() => KeepNext is not null;
   public bool ShouldSerializeKeepLines() => KeepLines is not null;
