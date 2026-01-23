@@ -1,11 +1,14 @@
 ﻿namespace AutoEdit;
 
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using DocumentFormat.OpenXml;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-
-using System.IO;
-using System.Linq;
 
 public static class AddOpenXmlPropertyAttribute
 {
@@ -13,9 +16,10 @@ public static class AddOpenXmlPropertyAttribute
   {
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
-    var root = tree.GetRoot();
+    var root = tree.GetCompilationUnitRoot();
 
-    var rewriter = new AddOpenXmlPropertyAttributeRewriter();
+    var aliasMap = AliasHelper.BuildAliasMap(filePath, root);
+    var rewriter = new AddOpenXmlPropertyAttributeRewriter(aliasMap);
     var newRoot = rewriter.Visit(root);
 
     if (rewriter.Changed)
@@ -24,12 +28,20 @@ public static class AddOpenXmlPropertyAttribute
       Console.WriteLine($"Updated: {filePath}");
     }
   }
-  
 }
 
 public class AddOpenXmlPropertyAttributeRewriter : CSharpSyntaxRewriter
 {
+  private readonly Dictionary<string, string> _aliasMap;
+  private readonly Dictionary<string, Type?> _typeCache = new(StringComparer.Ordinal);
+  private static readonly Assembly? OpenXmlAssembly = typeof(OpenXmlElement).Assembly;
+
   public bool Changed { get; private set; } = false;
+
+  public AddOpenXmlPropertyAttributeRewriter(Dictionary<string, string> aliasMap)
+  {
+    _aliasMap = aliasMap;
+  }
 
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
   {
@@ -45,44 +57,12 @@ public class AddOpenXmlPropertyAttributeRewriter : CSharpSyntaxRewriter
     // Get the type parameter (OpenXml type)
     var openXmlType = baseType.TypeArgumentList.Arguments.First().ToString();
 
-    // --- Add [OpenXmlType(typeof(OpenXmlType))] attribute to the class ---
-    bool hasClassAttr = node.AttributeLists
-      .SelectMany(al => al.Attributes)
-      .Any(attr => attr.Name.ToString().Contains("OpenXmlType"));
-
-    ClassDeclarationSyntax newClassNode = node;
-    if (!hasClassAttr)
-    {
-      var openXmlTypeAttr = SyntaxFactory.Attribute(
-        SyntaxFactory.IdentifierName("OpenXmlType"),
-        SyntaxFactory.AttributeArgumentList(
-          SyntaxFactory.SingletonSeparatedList(
-            SyntaxFactory.AttributeArgument(
-              SyntaxFactory.ParseExpression($"typeof({openXmlType})")
-            )
-          )
-        )
-      );
-      var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(openXmlTypeAttr));
-
-      // Insert attribute after XML doc comments, before class keyword
-      var leadingTrivia = node.GetLeadingTrivia();
-      var docCommentTrivia = leadingTrivia.Where(t => t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) || t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia)).ToList();
-      var otherTrivia = leadingTrivia.Except(docCommentTrivia).ToList();
-
-      // Attach doc comments to the class, and attribute after them
-      newClassNode = node
-        .WithAttributeLists(node.AttributeLists.Insert(0, attrList))
-        .WithLeadingTrivia(leadingTrivia);
-      Changed = true;
-    }
-
-    // --- Add [OpenXmlProperty(nameof(OpenXmlType.PropertyName))] to each property ---
-    var newMembers = newClassNode.Members.Select(member =>
+    // Add [OpenXmlProperty(nameof(OpenXmlType.PropertyName))] to each property
+    var newMembers = node.Members.Select(member =>
     {
       if (member is PropertyDeclarationSyntax prop)
       {
-        // only touch properties that have a setter
+        // Only touch properties that have a setter
         var hasSetter = prop.AccessorList?.Accessors
           .Any(a => a.Kind() == SyntaxKind.SetAccessorDeclaration) == true;
         if (!hasSetter)
@@ -101,8 +81,12 @@ public class AddOpenXmlPropertyAttributeRewriter : CSharpSyntaxRewriter
             .ToList();
           var otherTrivia = leadingTrivia.Except(docTrivia).ToList();
 
+          var attributeName = PropertyExistsInOpenXmlType(openXmlType, prop.Identifier.Text)
+            ? "OpenXmlProperty"
+            : "OpenXmlElement";
+
           var attr = SyntaxFactory.Attribute(
-            SyntaxFactory.IdentifierName("OpenXmlProperty"),
+            SyntaxFactory.IdentifierName(attributeName),
             SyntaxFactory.AttributeArgumentList(
               SyntaxFactory.SingletonSeparatedList(
                 SyntaxFactory.AttributeArgument(
@@ -122,6 +106,52 @@ public class AddOpenXmlPropertyAttributeRewriter : CSharpSyntaxRewriter
       }
       return member;
     }).ToList();
-    return newClassNode.WithMembers(SyntaxFactory.List(newMembers));
+    return node.WithMembers(SyntaxFactory.List(newMembers));
+  }
+
+  private bool PropertyExistsInOpenXmlType(string openXmlTypeName, string propertyName)
+  {
+    if (!TryResolveOpenXmlType(openXmlTypeName, out var type))
+      return false;
+
+    return type!.GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase) != null;
+  }
+
+  private bool TryResolveOpenXmlType(string typeName, out Type? type)
+  {
+    if (_typeCache.TryGetValue(typeName, out var cached))
+    {
+      type = cached!;
+      return cached != null;
+    }
+
+    var resolvedName = ResolveAlias(typeName);
+    type = Type.GetType(resolvedName, throwOnError: false, ignoreCase: false) ??
+            OpenXmlAssembly?.GetType(resolvedName, throwOnError: false, ignoreCase: false);
+
+    if (type == null)
+    {
+      foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
+      {
+        type = asm.GetType(resolvedName, false, false);
+        if (type != null)
+          break;
+      }
+    }
+
+    _typeCache[typeName] = type;
+    return type != null;
+  }
+
+  private string ResolveAlias(string typeName)
+  {
+    var dotIndex = typeName.IndexOf('.');
+    if (dotIndex > 0)
+    {
+      var alias = typeName.Substring(0, dotIndex);
+      if (_aliasMap.TryGetValue(alias, out var ns))
+        return ns + "." + typeName[(dotIndex + 1)..];
+    }
+    return typeName;
   }
 }
