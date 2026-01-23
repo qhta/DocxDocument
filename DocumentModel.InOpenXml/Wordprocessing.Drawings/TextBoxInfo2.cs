@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 /// Represents advanced information for a text box in a Wordprocessing document.
-/// This interface provides properties for identifying the text box, accessing its content, and managing associated OfficeArt extensions, enabling advanced text box configuration and extensibility.
+/// This class provides properties for identifying the text box, accessing its content, and managing associated OfficeArt extensions, enabling advanced text box configuration and extensibility.
 /// </summary>
-public interface TextBoxInfo2 : DMD.IOfficeArtExtendableElement
+public class TextBoxInfo2 : ModelElement<DXO10WDS.TextBoxInfo2>, DMD.IOfficeArtExtendableElement
 {
 
   /// <summary>
@@ -17,4 +17,8 @@ public interface TextBoxInfo2 : DMD.IOfficeArtExtendableElement
   /// </summary>
   public TextBoxContent? TextBoxContent { get; set; }
 
+  /// <summary>
+  /// List of OfficeArt extensions associated with the text box, allowing for additional properties and behaviors to be defined.
+  /// </summary>
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

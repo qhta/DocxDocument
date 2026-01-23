@@ -27,6 +27,7 @@ global using DX = DocumentFormat.OpenXml;
 global using DXVT = DocumentFormat.OpenXml.VariantTypes;
 global using DXM = DocumentFormat.OpenXml.Math;
 global using DXD = DocumentFormat.OpenXml.Drawing;
+global using DXDD = DocumentFormat.OpenXml.Drawing.Diagrams;
 global using DXDP = DocumentFormat.OpenXml.Drawing.Pictures;
 global using DXO10DP = DocumentFormat.OpenXml.Office2010.Drawing.Pictures;
 global using DXDW = DocumentFormat.OpenXml.Drawing.Wordprocessing;
@@ -41,13 +42,19 @@ global using DXO21DL =DocumentFormat.OpenXml.Office2021.Drawing.Livefeed;
 global using DXV = DocumentFormat.OpenXml.Vml;
 global using DXVO = DocumentFormat.OpenXml.Vml.Office;
 global using DXO10W = DocumentFormat.OpenXml.Office2010.Word;
+global using DXO10WDS = DocumentFormat.OpenXml.Office2010.Word.DrawingShape;
 global using DXO16D = DocumentFormat.OpenXml.Office2016.Drawing;
 global using DXODY21OE = DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed;
 global using DXO19D = DocumentFormat.OpenXml.Office2019.Drawing;
 global using DXO19DS = DocumentFormat.OpenXml.Office2019.Drawing.SVG;
 global using DXO21DDC = DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification;
+global using DXO21DSS = DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes;
 global using DXOY21SL = DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink;
 global using DXCXSR = DocumentFormat.OpenXml.CustomXmlSchemaReferences;
+global using DXB = DocumentFormat.OpenXml.Bibliography;
+global using DXO19WC = DocumentFormat.OpenXml.Office2019.Word.Cid;
+global using DXO21MLMD = DocumentFormat.OpenXml.Office2021.MipLabelMetaData;
+global using DXOW = DocumentFormat.OpenXml.Office.Word;
 
 global using DMD = DocumentModel.Drawings;
 global using DMW = DocumentModel.Wordprocessing;
@@ -56,4 +63,5 @@ global using DMM = DocumentModel.Math;
 global using DMWV = DocumentModel.Wordprocessing.Vml;
 global using DMDO = DocumentModel.Drawings.Office;
 global using DMV = DocumentModel.Vml;
+
 

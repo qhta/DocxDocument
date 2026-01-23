@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the name of a glossary document entry or building block in a WordprocessingML document.
-/// This interface provides properties for the entry name value and a flag indicating whether the entry is built-in, enabling advanced management and identification of reusable document parts.
+/// This class provides properties for the entry name value and a flag indicating whether the entry is built-in, enabling advanced management and identification of reusable document parts.
 /// </summary>
 public partial class DocPartName : ModelElement<DXW.DocPartName>
 {

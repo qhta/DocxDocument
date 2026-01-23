@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents spherical coordinates for positioning or orienting elements in a 3D space within a Wordprocessing document.
-/// This interface provides properties for latitude, longitude, and revolution, enabling precise control over 3D placement and rotation.
+/// This class provides properties for latitude, longitude, and revolution, enabling precise control over 3D placement and rotation.
 /// </summary>
 public partial class SphereCoordinates : ModelElement
 {

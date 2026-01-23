@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CustomXmlMoveToRangeEnd Class.
 /// </summary>
-public interface CustomXmlMoveToRangeEnd: IMarkupElement
+public class CustomXmlMoveToRangeEnd: MarkupEndRangeElement<DXW.CustomXmlMoveToRangeEnd, DXW.CustomXmlMoveToRangeStart>
 {
 }

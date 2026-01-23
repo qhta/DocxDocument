@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents a collection of background marks, which indicate areas to remove during background removal processing.
 /// </summary>
-public interface BackgroundMarks: IElementCollection<BackgroundMark>
+public class BackgroundMarks: ElementCollection<BackgroundMark>
 {
 
 }

@@ -3,7 +3,7 @@ using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the set of properties for a text body within a shape in a Wordprocessing document.
-/// This interface provides configuration for text layout, rotation, paragraph spacing, overflow behavior, insets, columns, anchoring, auto-fit, 3D settings, and extension data.
+/// This class provides configuration for text layout, rotation, paragraph spacing, overflow behavior, insets, columns, anchoring, auto-fit, 3D settings, and extension data.
 /// </summary>
 public partial class TextBodyProperties : ModelElement
 {

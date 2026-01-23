@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a hue, saturation, and luminance (HSL) effect for color adjustment.
 /// </summary>
-public partial class Hsl : ColorType
+public partial class Hsl : ColorType<DXD.Hsl>
 {
   /// <summary>
   ///   Hue component of the color.

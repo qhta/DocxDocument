@@ -3,8 +3,10 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a single contributor (author, editor, etc.).
 /// </summary>
-public interface Contributor: ICollectionItem
+[OpenXmlType(typeof(DXB.Person))]
+public class Contributor: ModelElement<DXB.Person>
 {
+
   /// <summary>
   ///   Gets or sets the first name.
   /// </summary>
@@ -33,12 +35,6 @@ public interface Contributor: ICollectionItem
   /// <summary>
   ///   Gets whether this is a corporate contributor.
   /// </summary>
-  public bool IsCorporate { get; }
+  public bool IsCorporate => !string.IsNullOrEmpty(Corporate);
 
-  /// <summary>
-  ///   Gets the full name formatted according to style.
-  /// </summary>
-  /// <param name="style">The bibliography style for formatting.</param>
-  /// <returns>Formatted full name.</returns>
-  public string GetFormattedName(string style);
 }

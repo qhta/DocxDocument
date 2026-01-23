@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents sketch style properties for a line, including geometry, type, and seed information.
 /// </summary>
-public interface LineSketchStyleProperties : IOfficeArtExtendableElement
+public class LineSketchStyleProperties : ModelElement<DXO21DSS.LineSketchStyleProperties>, IOfficeArtExtendableElement
 {
   /// <summary>
   ///   Sketch style definition identifier.
@@ -29,4 +29,6 @@ public interface LineSketchStyleProperties : IOfficeArtExtendableElement
   ///   Seed value for generating the sketch style.
   /// </summary>
   public string? LineSketchSeed { get; set; }
+
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

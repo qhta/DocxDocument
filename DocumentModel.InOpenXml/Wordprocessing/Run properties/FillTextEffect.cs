@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the fill text effect for a text run, providing options for no fill, solid color fill, or gradient fill.
-/// This interface enables advanced text fill formatting in WordprocessingML documents.
+/// This class enables advanced text fill formatting in WordprocessingML documents.
 /// </summary>
 public partial class FillTextEffect : ModelElement<DXO10W.FillTextEffect>
 {

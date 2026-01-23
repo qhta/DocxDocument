@@ -3,7 +3,7 @@ namespace DocumentModel;
 ///   Represents an alternate content container that provides multiple rendering options with a fallback mechanism.
 /// </summary>
 /// <remarks>
-///   This interface defines an alternate content structure that enables
+///   This class defines an alternate content structure that enables
 ///   documents to specify multiple ways of representing the same content, with each option tailored for different
 ///   application versions, features, or rendering capabilities. The alternate content mechanism is fundamental to
 ///   Office's forward compatibility strategy, allowing documents created with newer Office versions to remain

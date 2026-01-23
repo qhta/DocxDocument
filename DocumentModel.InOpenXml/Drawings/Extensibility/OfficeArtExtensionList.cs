@@ -6,6 +6,6 @@ namespace DocumentModel;
 /// This specialized extension list focuses on extending Office Art (DrawingML) capabilities while maintaining
 /// backward compatibility with older Office versions.
 /// </summary>
-public interface OfficeArtExtensionList: IExtensionList
+public class OfficeArtExtensionList: ModelElementCollection<OfficeArtExtension, DXOD.OfficeArtExtensionList, DXD.Extension>
 {
 }

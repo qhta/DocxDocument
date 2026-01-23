@@ -4,9 +4,11 @@ namespace DocumentModel.Wordprocessing;
 /// Defines an abstract bidirectional element for WordprocessingML documents.
 /// This class extends <see cref="ElementCollection{BidirectionalContent}"/>, <see cref="IParagraphContent"/>, <see cref="ISdtRunContent"/>, and <see cref="BidirectionalContent"/>, enabling advanced management of content that supports both left-to-right and right-to-left text flows within paragraphs and structured document tags.
 /// </summary>
-public interface IBidirectionalElement : IElementCollection<IBidirectionalContent>,
+public abstract class BidirectionalElement<T> : ModelElement<T>,
+//IElementCollection<IBidirectionalContent>,
   IParagraphContent,
   ISdtRunContent
+where T: DX.OpenXmlElement
 {
     
   /// <summary>

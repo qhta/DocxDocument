@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents font selection and theme font mapping for a text run in WordprocessingML documents.
-/// This interface enables specification of font names and theme fonts for ASCII, High ANSI, East Asian, and complex script character ranges, as well as font type hints for advanced font selection and rendering.
+/// This class enables specification of font names and theme fonts for ASCII, High ANSI, East Asian, and complex script character ranges, as well as font type hints for advanced font selection and rendering.
 /// </summary>
 public partial class RunFonts : RunProperty
 {

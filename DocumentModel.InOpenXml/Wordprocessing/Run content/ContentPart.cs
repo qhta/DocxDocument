@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents a reference to XML content in a format not defined by ECMA-376, such as MathML, SMIL, or SVG.
   /// This element enables the native use of other interchange formats by referencing a custom XML part within the document package. The relationship type must be http://purl.oclc.org/ooxml/officeDocument/relationships/customXml with TargetMode set to Internal. If the content type is not supported, applications should continue processing and may indicate that unknown content was not imported.
   /// </summary>
-  public interface ContentPart : IRunContent, DMM.IMathArgumentContent
+  public class ContentPart : ModelElement<DXW.ContentPart>, IRunContent, DMM.IMathArgumentContent
   {
     
     /// <summary>

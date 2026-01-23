@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Defines the color map for drawing elements.
 /// </summary>
-public interface ColorMap: IExtendableElement
+public class ColorMap: ModelElement<DXD.ColorMap>
 {
   /// <summary>
   /// Background 1 color mapping.

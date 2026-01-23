@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the lighting rig configuration for 3D effects in a Wordprocessing drawing element.
-/// This interface provides properties for specifying the type and direction of the light rig, as well as sphere coordinates for advanced lighting control, enabling realistic rendering of 3D objects.
+/// This class provides properties for specifying the type and direction of the light rig, as well as sphere coordinates for advanced lighting control, enabling realistic rendering of 3D objects.
 /// </summary>
 public partial class LightRig : ModelElement
 {

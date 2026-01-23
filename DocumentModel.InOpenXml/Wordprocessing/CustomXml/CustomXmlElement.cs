@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the base interface for custom XML elements (customXml) in a WordprocessingML document.
-/// This interface provides properties for the custom XML markup namespace, element name, and associated custom XML properties, enabling advanced schema-based processing, annotation, and integration of custom XML data within document content.
+/// This class provides properties for the custom XML markup namespace, element name, and associated custom XML properties, enabling advanced schema-based processing, annotation, and integration of custom XML data within document content.
 /// </summary>
 public partial class CustomXmlElement : CollectionItem
 {

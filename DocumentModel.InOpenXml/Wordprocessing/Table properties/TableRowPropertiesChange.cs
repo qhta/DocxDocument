@@ -1,20 +1,10 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a change to table row properties, used in <see cref = "TableRowProperties"/>.
-/// This interface annotates <see cref = "PreviousTableRowProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for table rows.
+/// This class annotates <see cref = "PreviousTableRowProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for table rows.
 /// </summary>
-public partial class TableRowPropertiesChange : ModelElement<DXW.TableRowPropertiesChange>
+public partial class TableRowPropertiesChange : IdentifiedChange<DXW.TableRowPropertiesChange>
 {
-    /// <summary>
-    /// Author of the change to the table row properties.
-    /// </summary>
-    public string? Author { get => _Author; set => UpdateField(ref _Author, value, nameof(Author)); }
-
-    private string? _Author;
-    /// <summary>
-    /// Date of the change to the table row properties.
-    /// </summary>
-    public DateTime? Date { get; set; }
     /// <summary>
     /// Annotation identifier for the change, used to uniquely identify the revision.
     /// </summary>

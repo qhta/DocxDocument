@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an absolute position tab character in a text run in WordprocessingML documents.
 /// An absolute position tab advances the position on the current line of text to a specified alignment and base, regardless of custom tab stops or default tab stop width. If the alignment location cannot be found on the current line, the tab advances to that location on the next available line.
 /// </summary>
-public interface PositionalTab : IRunContent
+public class PositionalTab : ModelElement<DXW.PositionalTab>, IRunContent
 {
 
   /// <summary>

@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents extended style collection information for a Wordprocessing document.
-/// This interface provides access to all styles, paragraph styles, character styles, table styles, and numbering styles, enabling advanced querying and management of style collections.
+/// This class provides access to all styles, paragraph styles, character styles, table styles, and numbering styles, enabling advanced querying and management of style collections.
 /// </summary>
 public partial interface Styles
 {

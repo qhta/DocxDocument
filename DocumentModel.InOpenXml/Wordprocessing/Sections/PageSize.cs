@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the page size settings for a section in a Wordprocessing document.
-/// This interface provides properties for page width, height, orientation, printer paper code, and paper size, enabling advanced configuration of page layout and printing options.
+/// This class provides properties for page width, height, orientation, printer paper code, and paper size, enabling advanced configuration of page layout and printing options.
 /// </summary>
-public interface PageSize : ISectionPropertiesContent
+public class PageSize : ModelElement<DXW.PageSize>, ISectionPropertiesContent
 {
   /// <summary>
   /// Page width, specified in twips.

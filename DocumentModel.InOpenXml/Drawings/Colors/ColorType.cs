@@ -1,8 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Base type for a color for drawing elements.
-///   All drawing color types derive from this type.
+///   All drawing color types derive from class..
 /// </summary>
-public interface ColorType: IColor
+public class ColorType: Color<DXD.ColorType>
 {
 }

@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 ///   If a reference mark is specified within a run which is not part of an endnote, 
 ///   footnote or annotation, then that reference mark can be ignored.
 /// </summary>
-public interface NoteReferenceMark : IRunContent
+public abstract class NoteReferenceMark<T> : ModelElement<T>, IRunContent where T: DX.OpenXmlElement
 {
   /// <summary>
   /// Specifies that the element refers to: endnote / footnote or annotation.

@@ -3,9 +3,8 @@ namespace DocumentModel.Drawings;
 /// Represents a set of color modification operations that can be applied to a base color.
 /// These modifications include tinting, shading, alpha transparency, hue/saturation/luminance adjustments
 /// and so on.
-/// It is a partial interface that all drawing color interfaces extend to provide consistent color transformation capabilities.
 /// </summary>
-public partial class DrawingColor : ColorType
+public partial class DrawingColor<T> : Color<T> where T: DX.OpenXmlElement
 {
   /// <summary>
   /// Tint value to lighten the color.

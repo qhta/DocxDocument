@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a paragraph element in a WordprocessingML document.
-/// This interface extends multiple content and collection interfaces, providing properties for unique identification, revision tracking, spell checking, and paragraph formatting. Enables advanced management, revision, and formatting of paragraph content within the document.
+/// This class extends multiple content and collection interfaces, providing properties for unique identification, revision tracking, spell checking, and paragraph formatting. Enables advanced management, revision, and formatting of paragraph content within the document.
 /// </summary>
 public partial interface Paragraph: IElementCollection<IParagraphContent>,
   IStoryContent, ITableCellContent, ISdtBlockContent, ICustomXmlBlockContent,

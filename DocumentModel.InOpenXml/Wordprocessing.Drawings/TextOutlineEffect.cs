@@ -3,9 +3,9 @@ using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the outline effect applied to text in a Wordprocessing document.
-/// This interface provides properties for configuring line width, cap type, compound line style, alignment, fill, dash style, and join properties, enabling advanced visual effects for text outlines.
+/// This class provides properties for configuring line width, cap type, compound line style, alignment, fill, dash style, and join properties, enabling advanced visual effects for text outlines.
 /// </summary>
-public partial class TextOutlineEffect : DrawingProperty
+public partial class TextOutlineEffect : IDrawingProperty
 {
   /// <summary>
   /// The width of the outline line, specified in units relevant to the document.

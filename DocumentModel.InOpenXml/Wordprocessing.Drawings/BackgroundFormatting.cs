@@ -3,7 +3,7 @@ using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents background formatting settings for a drawing element in a Wordprocessing document.
-/// This interface provides properties for configuring fill, visual effects, and effect graphs applied to the background, enabling advanced visual customization.
+/// This class provides properties for configuring fill, visual effects, and effect graphs applied to the background, enabling advanced visual customization.
 /// </summary>
 public partial class BackgroundFormatting : ModelElement<DXO10WDC.BackgroundFormatting>
 {

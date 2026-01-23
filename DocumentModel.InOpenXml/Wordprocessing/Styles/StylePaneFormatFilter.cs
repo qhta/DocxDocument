@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents suggested filtering options for the list of document styles in a Wordprocessing document.
-/// This interface provides properties for filtering by style type, usage, visibility, formatting, and alternate names, enabling advanced style pane customization and management.
+/// This class provides properties for filtering by style type, usage, visibility, formatting, and alternate names, enabling advanced style pane customization and management.
 /// </summary>
 public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFilter>
 {

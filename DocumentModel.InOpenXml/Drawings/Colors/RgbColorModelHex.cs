@@ -46,7 +46,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public partial class RgbColorModelHex : DrawingColor
+public partial class RgbColorModelHex : DrawingColor<DXD.RgbColorModelHex>
 {
   /// <summary>
   /// Base RGB color value in hexadecimal format.

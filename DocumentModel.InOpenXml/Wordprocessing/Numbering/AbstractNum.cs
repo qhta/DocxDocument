@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 ///   (hence the use of abstract). Instead, these properties shall be inherited by a numbering definition instance using the num element, 
 ///   which can then itself be referenced by content.
 /// </summary>
-public interface AbstractNum: ICollectionItem
+public class AbstractNum: ModelElement<DXW.AbstractNum>
 {
   /// <summary>
   ///   Specifies a unique number which shall be used as the identifier for this abstract numbering definition. 

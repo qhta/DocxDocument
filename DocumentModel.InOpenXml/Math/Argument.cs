@@ -4,8 +4,9 @@ namespace DocumentModel.Math;
 ///   of a mathematical object or function, the elements in an array, and the elements in boxes. 
 ///   If all subelements are omitted, this element specifies the presence of an empty argument. 
 /// </summary>
-public interface Argument: IElementCollection<IMathArgumentContent>, ICollectionItem
+public class Argument: ElementCollection<IMathArgumentContent>
 {
+
   /// <summary>
   /// Specifies properties of the base argument.
   /// </summary>

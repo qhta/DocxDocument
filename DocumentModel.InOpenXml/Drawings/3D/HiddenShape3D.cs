@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents hidden 3D shape properties, including depth, extrusion, contour, material, bevels, and color settings.
 /// </summary>
-public interface HiddenShape3D : IExtendableElement
+public class HiddenShape3D : ModelElement<DXO10D.HiddenShape3D>, IExtendableElement
 {
   /// <summary>
   ///   Shape depth along the Z-axis.
@@ -44,4 +44,9 @@ public interface HiddenShape3D : IExtendableElement
   ///   Color used for the contour.
   /// </summary>
   public ContourColor? ContourColor { get; set; }
+
+  /// <summary>
+  /// List of extension elements.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

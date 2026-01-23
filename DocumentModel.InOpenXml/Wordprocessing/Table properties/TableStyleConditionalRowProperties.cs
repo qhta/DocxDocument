@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents table style conditional formatting properties for a table row in a Wordprocessing document.
-/// This interface provides properties for row visibility, splitting, header status, cell spacing, and justification, enabling advanced styling and formatting options for table rows based on conditional formatting rules.
+/// This class provides properties for row visibility, splitting, header status, cell spacing, and justification, enabling advanced styling and formatting options for table rows based on conditional formatting rules.
 /// </summary>
 public partial class TableStyleConditionalRowProperties : ModelElement //<DXW.TableStyleConditionalRowProperties>
 {

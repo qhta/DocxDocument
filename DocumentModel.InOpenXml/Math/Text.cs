@@ -2,6 +2,6 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Text.
 /// </summary>
-public interface Text: DMW.TextualElement
+public class Text: DMW.TextualElement<DXM.Text> 
 {
 }

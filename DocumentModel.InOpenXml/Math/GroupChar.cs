@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the Group-Character object, consisting of a character drawn above or below text, 
 ///   often with the purpose of visually grouping items.
 /// </summary>
-public interface GroupChar: ICommonMathContent
+public class GroupChar: ModelElement<DXM.GroupChar>, ICommonMathContent
 {
   /// <summary>
   ///   Group-Character Properties.

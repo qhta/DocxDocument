@@ -4,7 +4,7 @@
 /// Represents a collection of objects that can be accessed by name and provides notification when the collection
 /// changes.
 /// </summary>
-/// <remarks>This interface combines name-based indexing with standard collection functionality and change
+/// <remarks>This class combines name-based indexing with standard collection functionality and change
 /// notification. It is suitable for scenarios where objects need to be retrieved or managed by their unique names, and
 /// where clients should be notified of changes to the collection. Implementations must ensure that each element's name
 /// is unique within the collection.</remarks>

@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a row in a table within a Wordprocessing document.
-/// This interface provides properties and methods for configuring row formatting, height, header status, page break behavior, cell collection, and for manipulating and querying the row's position and relationships within the table structure.
+/// This class provides properties and methods for configuring row formatting, height, header status, page break behavior, cell collection, and for manipulating and querying the row's position and relationships within the table structure.
 /// </summary>
 /// <remarks>
 /// 

@@ -3,7 +3,7 @@ using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents a content part in a WordprocessingML document, providing properties for visual and non-visual shape properties, transformation, and extension data.
-/// This interface enables advanced configuration and management of embedded or linked content parts, supporting black-and-white rendering, relationship references, and OfficeArt extensions.
+/// This class enables advanced configuration and management of embedded or linked content parts, supporting black-and-white rendering, relationship references, and OfficeArt extensions.
 /// </summary>
 public partial class ContentPart : ModelElement<DXO10W.ContentPart>, IOfficeArtExtendableElement
 {

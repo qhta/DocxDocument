@@ -3,6 +3,6 @@
 /// <summary>
 ///   Collection of AbstractNum elements.
 /// </summary>
-public interface AbstractNums: IElementCollection<AbstractNum>
+public class AbstractNums: ElementCollection<AbstractNum>
 {
 }

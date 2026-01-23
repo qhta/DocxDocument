@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
   /// <summary>
   /// Specifies the set of properties that define the behavior, appearance, and functionality of a structured document tag (SDT) in a WordprocessingML document.
-  /// This interface provides configuration for identity, data binding, appearance, content type, behavior, locking, and specialized controls, enabling advanced management and customization of SDTs at block, inline, row, or cell level.
+  /// This class provides configuration for identity, data binding, appearance, content type, behavior, locking, and specialized controls, enabling advanced management and customization of SDTs at block, inline, row, or cell level.
   /// </summary>
-  public interface SdtProperties : IStoryContent
+  public class SdtProperties : ModelElement<DXW.SdtProperties>, IStoryContent
   {
     
     /// <summary>
@@ -55,7 +55,7 @@ namespace DocumentModel.Wordprocessing;
     /// <summary>
     /// Color used for visual highlighting or borders of the SDT.
     /// </summary>
-    public IColor? Color { get; set; }
+    public DocumentModel.Color? Color { get; set; }
     
     /// <summary>
     /// Visual appearance style for this structured document tag.

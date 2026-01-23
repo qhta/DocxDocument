@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Specifies additional information about comments in the document.
-/// This interface provides properties for durable identifiers, UTC date information, intelligent placeholder status, and extension data, enabling advanced tracking, management, and extensibility of comment metadata and behaviors in WordprocessingML documents.
+/// This class provides properties for durable identifiers, UTC date information, intelligent placeholder status, and extension data, enabling advanced tracking, management, and extensibility of comment metadata and behaviors in WordprocessingML documents.
 /// </summary>
 public partial class CommentExtensible : ModelElement<DXO21WCE.CommentExtensible>
 {

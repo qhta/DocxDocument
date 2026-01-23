@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a list style, including default and per-level paragraph formatting for multi-level lists.
 /// </summary>
-public interface ListStyle : IExtendableElement
+public class ListStyle : ModelElement, IExtendableElement
 {
   /// <summary>
   ///   Default paragraph style for the list.
@@ -54,4 +54,9 @@ public interface ListStyle : IExtendableElement
   ///   Paragraph style for list level 9.
   /// </summary>
   public ParagraphProperties? Level9ParagraphProperties { get; set; }
+
+  /// <summary>
+  /// List of extension properties for the list style, used for extensibility scenarios.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

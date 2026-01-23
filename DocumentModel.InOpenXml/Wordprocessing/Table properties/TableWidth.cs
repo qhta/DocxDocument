@@ -1,8 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Defines the TableWidth interface. Its Value can be absolute (in twips) or relative (in fiftieth of percent), or "auto" or "nil".
+/// Defines the TableWidth class. Its Value can be absolute (in twips) or relative (in fiftieth of percent), or "auto" or "nil".
 /// The type of the Value is determined with the Type property.
-/// This interface is used in multiple measures according to table horizontal dimension.
+/// This class is used in multiple measures according to table horizontal dimension.
 /// </summary>
 public partial class TableWidth : ModelElement<DXW.TableWidth>
 {

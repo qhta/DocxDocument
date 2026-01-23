@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
   /// <summary>
   /// Represents a frameset definition in a WordprocessingML document.
-  /// This interface extends <see cref="ElementCollection{FramesetItem}"/> and provides properties for advisory information, nested frameset size, splitter properties, and layout, enabling advanced configuration and management of frameset structures within documents.
+  /// This class extends <see cref="ElementCollection{IFramesetItem}"/> and provides properties for advisory information, nested frameset size, splitter properties, and layout, enabling advanced configuration and management of frameset structures within documents.
   /// </summary>
-  public interface Frameset: IElementCollection<FramesetItem>
+  public class Frameset: ModelElementCollection<ModelElement, DXW.Frameset, DX.OpenXmlElement>, IFramesetItem
   {
     
     /// <summary>

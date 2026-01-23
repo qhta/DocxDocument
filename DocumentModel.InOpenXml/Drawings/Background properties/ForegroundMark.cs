@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a foreground mark defined by two coordinate points, typically used to specify areas to retain during background removal processing.
 /// </summary>
-public interface ForegroundMark: ICollectionItem
+public class ForegroundMark: ModelElement<DXO10D.ForegroundMark>
 {
   /// <summary>
   /// Gets or sets the X coordinate of the first point.

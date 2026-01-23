@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a repeated section structured document tag in a Wordprocessing document.
-///   This interface provides properties for the section title and options to restrict insertion or deletion of sections, enabling advanced configuration and management of repeated sections in structured document tags.
+///   This class provides properties for the section title and options to restrict insertion or deletion of sections, enabling advanced configuration and management of repeated sections in structured document tags.
 /// </summary>
 public partial class SdtRepeatedSection : ModelElement<DXO13W.SdtRepeatedSection>
 {

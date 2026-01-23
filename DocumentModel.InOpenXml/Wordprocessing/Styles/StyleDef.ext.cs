@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents extended style definition information for a Wordprocessing document.
-/// This interface provides properties for the primary style name, alternative names, and status flags, enabling advanced management and customization of style definitions. Implements aliasing and property state checks.
+/// This class provides properties for the primary style name, alternative names, and status flags, enabling advanced management and customization of style definitions. Implements aliasing and property state checks.
 /// </summary>
 public partial class StyleDef : IAliasedObject
 {

@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a blip fill, providing properties for image fill effects in drawing elements.
 /// </summary>
-public partial class BlipFill : Fill
+public partial class BlipFill : Fill<DXD.BlipFill>
 {
   /// <summary>
   /// DPI (dots per inch) setting for the blip fill.

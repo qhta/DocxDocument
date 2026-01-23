@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents a phonetic guide (ruby text) at the current location in the document.
   /// A phonetic guide is a run of content with base text at the normal baseline and phonetic guide text displayed above it. This construct is typically used to map words in one language to another phonetically, enabling pronunciation aids for East Asian scripts and other language learning scenarios.
   /// </summary>
-  public interface Ruby : IRunContent, IRubyContent
+  public class Ruby : ModelElement<DXW.Ruby>, IRunContent, IRubyContent
   {
     
     /// <summary>

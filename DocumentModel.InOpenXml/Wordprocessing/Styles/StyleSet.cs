@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a style set in a Wordprocessing document.
-/// This interface provides properties for the style set identifier and value, enabling management and configuration of style sets for document formatting.
+/// This class provides properties for the style set identifier and value, enabling management and configuration of style sets for document formatting.
 /// </summary>
-public interface StyleSet: ICollectionItem
+public class StyleSet: ModelElement<DXO10W.StyleSet>
 {
   /// <summary>
   /// Identifier for the style set.

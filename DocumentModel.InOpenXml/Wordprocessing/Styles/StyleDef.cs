@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
   /// <summary>
   /// Represents a style definition in a Wordprocessing document.
-  /// This interface provides properties for style type, identifiers, inheritance, UI settings, revision tracking, and formatting options, enabling advanced style management and customization for document content.
+  /// This class provides properties for style type, identifiers, inheritance, UI settings, revision tracking, and formatting options, enabling advanced style management and customization for document content.
   /// </summary>
   public partial class StyleDef : IEquatable<StyleDef>
   {
@@ -53,12 +53,12 @@ namespace DocumentModel.Wordprocessing;
     public Boolean IsAutoRedefined { get; set; }
     
     /// <summary>
-    /// Indicates whether the style is hidden from the user interface.
+    /// Indicates whether the style is hidden from the user class.
     /// </summary>
     public Boolean IsHidden { get; set; }
     
     /// <summary>
-    /// Indicates whether the style is hidden from the main user interface.
+    /// Indicates whether the style is hidden from the main user class.
     /// </summary>
     public Boolean IsSemiHidden { get; set; }
     

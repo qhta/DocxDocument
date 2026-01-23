@@ -57,72 +57,63 @@ public class ModelElementPropertyRewriter : CSharpSyntaxRewriter
     {
       if (newMembers[i] is PropertyDeclarationSyntax prop)
       {
-        // Only auto-properties: { get; set; }
-        if (prop.AccessorList != null && prop.AccessorList.Accessors.Count == 2 && prop.AccessorList.Accessors.All(a => a.Body == null && a.ExpressionBody == null) && prop.AccessorList.Accessors.Any(a => a.Kind() == SyntaxKind.GetAccessorDeclaration) && prop.AccessorList.Accessors.Any(a => a.Kind() == SyntaxKind.SetAccessorDeclaration))
+        if (prop.AccessorList != null &&
+            prop.AccessorList.Accessors.Count == 2 &&
+            prop.AccessorList.Accessors.All(a => a.Body == null && a.ExpressionBody == null) &&
+            prop.AccessorList.Accessors.Any(a => a.Kind() == SyntaxKind.GetAccessorDeclaration) &&
+            prop.AccessorList.Accessors.Any(a => a.Kind() == SyntaxKind.SetAccessorDeclaration))
         {
           var propName = prop.Identifier.Text;
           var fieldName = "_" + propName;
 
-          // New property with backing field and UpdateField in setter
           var newProp = prop.WithAccessorList(
               SyntaxFactory.AccessorList(
-                SyntaxFactory.List(new[]
-                {
-                  SyntaxFactory.AccessorDeclaration(
-                      SyntaxKind.GetAccessorDeclaration)
-                    .WithExpressionBody(
-                      SyntaxFactory.ArrowExpressionClause(
-                        SyntaxFactory.IdentifierName(fieldName)))
-                    .WithSemicolonToken(
-                      SyntaxFactory.Token(SyntaxKind.SemicolonToken)),
-                  SyntaxFactory.AccessorDeclaration(SyntaxKind.SetAccessorDeclaration)
-                    .WithExpressionBody(
-                      SyntaxFactory.ArrowExpressionClause(
-                        SyntaxFactory.InvocationExpression(
-                            SyntaxFactory.IdentifierName("UpdateField"))
-                          .WithArgumentList(
-                            SyntaxFactory.ArgumentList(
-                              SyntaxFactory.SeparatedList<ArgumentSyntax>(new SyntaxNodeOrToken[]
-                              {
-                                SyntaxFactory.Argument(
-                                  SyntaxFactory.RefExpression(
-                                    SyntaxFactory.IdentifierName(fieldName))),
-                                SyntaxFactory.Token(SyntaxKind.CommaToken),
-                                SyntaxFactory.Argument(SyntaxFactory.IdentifierName("value")),
-                                SyntaxFactory.Token(SyntaxKind.CommaToken),
-                                SyntaxFactory.Argument(
-                                  SyntaxFactory.InvocationExpression(
-                                      SyntaxFactory.IdentifierName("nameof"))
-                                    .WithArgumentList(
-                                      SyntaxFactory.ArgumentList(
-                                        SyntaxFactory.SingletonSeparatedList(
-                                          SyntaxFactory.Argument(
-                                            SyntaxFactory.IdentifierName(propName)))))),
-                              })))))
-                    .WithSemicolonToken(
-                      SyntaxFactory.Token(SyntaxKind.SemicolonToken))
-                })))
-            .WithTrailingTrivia(prop.GetTrailingTrivia());
+                  SyntaxFactory.List([
+                    SyntaxFactory.AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
+                            .WithExpressionBody(SyntaxFactory.ArrowExpressionClause(SyntaxFactory.IdentifierName(fieldName)))
+                            .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken)),
+                        SyntaxFactory.AccessorDeclaration(SyntaxKind.SetAccessorDeclaration)
+                            .WithExpressionBody(
+                                SyntaxFactory.ArrowExpressionClause(
+                                    SyntaxFactory.InvocationExpression(SyntaxFactory.IdentifierName("UpdateField"))
+                                        .WithArgumentList(
+                                            SyntaxFactory.ArgumentList(
+                                                SyntaxFactory.SeparatedList<ArgumentSyntax>(new SyntaxNodeOrToken[]
+                                                {
+                                                    SyntaxFactory.Argument(SyntaxFactory.RefExpression(SyntaxFactory.IdentifierName(fieldName))),
+                                                    SyntaxFactory.Token(SyntaxKind.CommaToken),
+                                                    SyntaxFactory.Argument(SyntaxFactory.IdentifierName("value")),
+                                                    SyntaxFactory.Token(SyntaxKind.CommaToken),
+                                                    SyntaxFactory.Argument(
+                                                        SyntaxFactory.InvocationExpression(SyntaxFactory.IdentifierName("nameof"))
+                                                            .WithArgumentList(
+                                                                SyntaxFactory.ArgumentList(
+                                                                    SyntaxFactory.SingletonSeparatedList(
+                                                                        SyntaxFactory.Argument(SyntaxFactory.IdentifierName(propName)))))),
+                                                })))))
+                            .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken))
+                  ])))
+              .WithTrailingTrivia(prop.GetTrailingTrivia());
 
-
-          // New private field
-          var field = SyntaxFactory.FieldDeclaration(SyntaxFactory.VariableDeclaration(prop.Type).WithVariables(SyntaxFactory.SingletonSeparatedList(SyntaxFactory.VariableDeclarator(fieldName)))).WithModifiers(SyntaxFactory.TokenList(SyntaxFactory.Token(SyntaxKind.PrivateKeyword))).WithTrailingTrivia(SyntaxFactory.ElasticCarriageReturnLineFeed);
+          var field = SyntaxFactory.FieldDeclaration(
+                  SyntaxFactory.VariableDeclaration(prop.Type)
+                      .WithVariables(SyntaxFactory.SingletonSeparatedList(SyntaxFactory.VariableDeclarator(fieldName))))
+              .WithModifiers(SyntaxFactory.TokenList(SyntaxFactory.Token(SyntaxKind.PrivateKeyword)))
+              .WithTrailingTrivia(SyntaxFactory.ElasticCarriageReturnLineFeed);
 
           toReplace.Add((newProp, i));
           toInsert.Add((field, i + 1));
           Changed = true;
         }
       }
-
-      // Replace properties and insert fields
-      foreach (var (newProp, idx) in toReplace.OrderByDescending(x => x.Item2))
-        newMembers[idx] = newProp;
-      foreach (var (field, idx) in toInsert.OrderByDescending(x => x.Item2))
-        newMembers.Insert(idx, field);
-
-      return node.WithMembers(SyntaxFactory.List(newMembers));
     }
-    return base.VisitClassDeclaration(node);
+
+    foreach (var (newProp, idx) in toReplace.OrderByDescending(x => x.Item2))
+      newMembers[idx] = newProp;
+    foreach (var (field, idx) in toInsert.OrderByDescending(x => x.Item2))
+      newMembers.Insert(idx, field);
+
+    return node.WithMembers(SyntaxFactory.List(newMembers));
   }
 
 }

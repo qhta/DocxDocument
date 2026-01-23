@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents default line properties, including shape, body, list, and style settings.
 /// </summary>
-public interface LineDefault : IExtendableElement
+public class LineDefault : ModelElement<DXD.LineDefault>, IExtendableElement
 {
   /// <summary>
   ///   Default shape properties for the line.
@@ -24,4 +24,9 @@ public interface LineDefault : IExtendableElement
   ///   Default shape style for the line.
   /// </summary>
   public ShapeStyle? ShapeStyle { get; set; }
+
+  /// <summary>
+  /// List of extensions for additional line default properties.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

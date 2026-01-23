@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the color settings for the contour of a drawing element in a Wordprocessing document.
-/// This interface provides properties for specifying the contour color using either an RGB value or a scheme color, enabling flexible color customization.
+/// This class provides properties for specifying the contour color using either an RGB value or a scheme color, enabling flexible color customization.
 /// </summary>
 public partial class ContourColor : ModelElement<DXO10W.ContourColor>
 {
