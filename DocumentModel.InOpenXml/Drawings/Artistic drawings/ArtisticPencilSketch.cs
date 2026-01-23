@@ -13,5 +13,7 @@ public partial class ArtisticPencilSketch : ModelElement<DXO10D.ArtisticPencilSk
     /// <summary>
     /// Pressure applied in the pencil sketch effect, influencing the intensity and darkness of the strokes.
     /// </summary>
-    public Int32? Pressure { get; set; }
+    public Int32? Pressure { get => _Pressure; set => UpdateField(ref _Pressure, value, nameof(Pressure)); }
+
+    private Int32? _Pressure;
 }

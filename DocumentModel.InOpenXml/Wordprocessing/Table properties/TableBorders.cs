@@ -14,29 +14,43 @@ public partial class TableBorders : ModelElement<DXW.TableBorders>
     /// <summary>
     /// Table left border, specifying the style and appearance of the left edge of the table.
     /// </summary>
-    public Border? LeftBorder { get; set; }
+    public Border? LeftBorder { get => _LeftBorder; set => UpdateField(ref _LeftBorder, value, nameof(LeftBorder)); }
+
+    private Border? _LeftBorder;
     /// <summary>
     /// Start border, specifying the style and appearance of the starting edge of the table (contextual to document direction).
     /// </summary>
-    public Border? StartBorder { get; set; }
+    public Border? StartBorder { get => _StartBorder; set => UpdateField(ref _StartBorder, value, nameof(StartBorder)); }
+
+    private Border? _StartBorder;
     /// <summary>
     /// Table bottom border, specifying the style and appearance of the bottom edge of the table.
     /// </summary>
-    public Border? BottomBorder { get; set; }
+    public Border? BottomBorder { get => _BottomBorder; set => UpdateField(ref _BottomBorder, value, nameof(BottomBorder)); }
+
+    private Border? _BottomBorder;
     /// <summary>
     /// Table right border, specifying the style and appearance of the right edge of the table.
     /// </summary>
-    public Border? RightBorder { get; set; }
+    public Border? RightBorder { get => _RightBorder; set => UpdateField(ref _RightBorder, value, nameof(RightBorder)); }
+
+    private Border? _RightBorder;
     /// <summary>
     /// End border, specifying the style and appearance of the ending edge of the table (contextual to document direction).
     /// </summary>
-    public Border? EndBorder { get; set; }
+    public Border? EndBorder { get => _EndBorder; set => UpdateField(ref _EndBorder, value, nameof(EndBorder)); }
+
+    private Border? _EndBorder;
     /// <summary>
     /// Table inside horizontal edges border, specifying the style and appearance of horizontal lines between rows.
     /// </summary>
-    public Border? InsideHorizontalBorder { get; set; }
+    public Border? InsideHorizontalBorder { get => _InsideHorizontalBorder; set => UpdateField(ref _InsideHorizontalBorder, value, nameof(InsideHorizontalBorder)); }
+
+    private Border? _InsideHorizontalBorder;
     /// <summary>
     /// Table inside vertical edges border, specifying the style and appearance of vertical lines between columns.
     /// </summary>
-    public Border? InsideVerticalBorder { get; set; }
+    public Border? InsideVerticalBorder { get => _InsideVerticalBorder; set => UpdateField(ref _InsideVerticalBorder, value, nameof(InsideVerticalBorder)); }
+
+    private Border? _InsideVerticalBorder;
 }

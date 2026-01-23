@@ -13,5 +13,7 @@ public partial class ArtisticLineDrawing : ModelElement<DXO10D.ArtisticLineDrawi
     /// <summary>
     /// Size of the pencil used in the line drawing effect, influencing the thickness of the lines.
     /// </summary>
-    public Int32? PencilSize { get; set; }
+    public Int32? PencilSize { get => _PencilSize; set => UpdateField(ref _PencilSize, value, nameof(PencilSize)); }
+
+    private Int32? _PencilSize;
 }

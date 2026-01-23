@@ -13,5 +13,7 @@ public partial class ArtisticChalkSketch : ModelElement<DXO10D.ArtisticChalkSket
     /// <summary>
     /// Pressure applied in the chalk sketch effect, influencing the intensity of the strokes.
     /// </summary>
-    public Int32? Pressure { get; set; }
+    public Int32? Pressure { get => _Pressure; set => UpdateField(ref _Pressure, value, nameof(Pressure)); }
+
+    private Int32? _Pressure;
 }

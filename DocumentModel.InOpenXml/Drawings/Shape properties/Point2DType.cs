@@ -13,5 +13,7 @@ public partial class Point2DType : ModelElement<DXD.Point2DType>
     /// <summary>
     ///   Y-axis coordinate of the point.
     /// </summary>
-    public Int64? Y { get; set; }
+    public Int64? Y { get => _Y; set => UpdateField(ref _Y, value, nameof(Y)); }
+
+    private Int64? _Y;
 }

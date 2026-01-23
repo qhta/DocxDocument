@@ -13,5 +13,7 @@ public partial class AdjustPoint2DType : ModelElement<DXD.AdjustPoint2DType>
     /// <summary>
     /// Y-coordinate of the adjustment point.
     /// </summary>
-    public AdjustCoordinate? Y { get; set; }
+    public AdjustCoordinate? Y { get => _Y; set => UpdateField(ref _Y, value, nameof(Y)); }
+
+    private AdjustCoordinate? _Y;
 }

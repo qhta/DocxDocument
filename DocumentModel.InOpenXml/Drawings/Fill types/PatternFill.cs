@@ -13,9 +13,13 @@ public partial class PatternFill : ModelElement<DXD.PatternFill>
     /// <summary>
     ///   Foreground color of the pattern.
     /// </summary>
-    public ForegroundColor? ForegroundColor { get; set; }
+    public ForegroundColor? ForegroundColor { get => _ForegroundColor; set => UpdateField(ref _ForegroundColor, value, nameof(ForegroundColor)); }
+
+    private ForegroundColor? _ForegroundColor;
     /// <summary>
     ///   Background color of the pattern.
     /// </summary>
-    public BackgroundColor? BackgroundColor { get; set; }
+    public BackgroundColor? BackgroundColor { get => _BackgroundColor; set => UpdateField(ref _BackgroundColor, value, nameof(BackgroundColor)); }
+
+    private BackgroundColor? _BackgroundColor;
 }

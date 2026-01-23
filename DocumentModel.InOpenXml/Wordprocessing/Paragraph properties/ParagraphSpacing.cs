@@ -14,9 +14,13 @@ public partial class ParagraphSpacing : ModelElement //<DXW.ParagraphSpacing>
     /// <summary>
     /// Spacing below the paragraph.
     /// </summary>
-    public SpacingBeforeOrAfter? After { get; set; }
+    public SpacingBeforeOrAfter? After { get => _After; set => UpdateField(ref _After, value, nameof(After)); }
+
+    private SpacingBeforeOrAfter? _After;
     /// <summary>
     /// Spacing between lines within the paragraph.
     /// </summary>
-    public SpacingBetween? Between { get; set; }
+    public SpacingBetween? Between { get => _Between; set => UpdateField(ref _Between, value, nameof(Between)); }
+
+    private SpacingBetween? _Between;
 }

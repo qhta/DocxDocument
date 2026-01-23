@@ -16,5 +16,7 @@ public partial class HeaderShapeDefaults : ModelElement<DXW.HeaderShapeDefaults>
     /// <summary>
     /// Default shape layout for VML shapes in the header and footer.
     /// </summary>
-    public ShapeLayout? ShapeLayout { get; set; }
+    public ShapeLayout? ShapeLayout { get => _ShapeLayout; set => UpdateField(ref _ShapeLayout, value, nameof(ShapeLayout)); }
+
+    private ShapeLayout? _ShapeLayout;
 }

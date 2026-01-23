@@ -13,17 +13,25 @@ public partial class EquationArrayProperties : ModelElement<DXM.EquationArrayPro
     /// <summary>
     ///   Maximum Distribution.
     /// </summary>
-    public bool? MaxDistribution { get; set; }
+    public bool? MaxDistribution { get => _MaxDistribution; set => UpdateField(ref _MaxDistribution, value, nameof(MaxDistribution)); }
+
+    private bool? _MaxDistribution;
     /// <summary>
     ///   Object Distribution.
     /// </summary>
-    public bool? ObjectDistribution { get; set; }
+    public bool? ObjectDistribution { get => _ObjectDistribution; set => UpdateField(ref _ObjectDistribution, value, nameof(ObjectDistribution)); }
+
+    private bool? _ObjectDistribution;
     /// <summary>
     ///   Row Spacing (Equation Array). The meaning of the value is unspecified.
     /// </summary>
-    public RowSpacing? RowSpacing { get; set; }
+    public RowSpacing? RowSpacing { get => _RowSpacing; set => UpdateField(ref _RowSpacing, value, nameof(RowSpacing)); }
+
+    private RowSpacing? _RowSpacing;
     /// <summary>
     ///   Specifies formatting of equation array object argument.
     /// </summary>
-    public ControlProperties? ControlProperties { get; set; }
+    public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
+    private ControlProperties? _ControlProperties;
 }

@@ -13,9 +13,13 @@ public partial class BevelType : ModelElement<DXD.BevelType>
     /// <summary>
     /// Height of the bevel.
     /// </summary>
-    public Int64? Height { get; set; }
+    public Int64? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
+
+    private Int64? _Height;
     /// <summary>
     /// Preset bevel style.
     /// </summary>
-    public BevelPresetKind? Preset { get; set; }
+    public BevelPresetKind? Preset { get => _Preset; set => UpdateField(ref _Preset, value, nameof(Preset)); }
+
+    private BevelPresetKind? _Preset;
 }

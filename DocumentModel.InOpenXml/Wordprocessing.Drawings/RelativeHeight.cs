@@ -14,5 +14,7 @@ public partial class RelativeHeight : ModelElement
     /// <summary>
     /// The percentage value specifying the height of the drawing element relative to the reference point.
     /// </summary>
-    public string? PercentageHeight { get; set; }
+    public string? PercentageHeight { get => _PercentageHeight; set => UpdateField(ref _PercentageHeight, value, nameof(PercentageHeight)); }
+
+    private string? _PercentageHeight;
 }

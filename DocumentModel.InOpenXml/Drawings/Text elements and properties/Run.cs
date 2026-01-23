@@ -13,5 +13,7 @@ public partial class Run : ModelElement
     /// <summary>
     ///   Text string content of the run.
     /// </summary>
-    public string? Text { get; set; }
+    public string? Text { get => _Text; set => UpdateField(ref _Text, value, nameof(Text)); }
+
+    private string? _Text;
 }

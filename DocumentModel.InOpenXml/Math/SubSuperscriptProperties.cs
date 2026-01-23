@@ -18,5 +18,7 @@ public partial class SubSuperscriptProperties : ModelElement
     /// <summary>
     ///   Specifies formatting of SubSuperscript object argument.
     /// </summary>
-    public ControlProperties? ControlProperties { get; set; }
+    public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
+    private ControlProperties? _ControlProperties;
 }

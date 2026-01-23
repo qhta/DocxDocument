@@ -13,5 +13,7 @@ public partial class AudioCDTimeType : ModelElement<DXD.AudioCDTimeType>
     /// <summary>
     /// Time position on the audio CD, typically in milliseconds or frames.
     /// </summary>
-    public UInt32? Time { get; set; }
+    public UInt32? Time { get => _Time; set => UpdateField(ref _Time, value, nameof(Time)); }
+
+    private UInt32? _Time;
 }

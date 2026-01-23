@@ -13,9 +13,13 @@ public partial class LineEndPropertiesType : ModelElement
     /// <summary>
     ///   Width of the line head or end.
     /// </summary>
-    public LineEndWidthKind? Width { get; set; }
+    public LineEndWidthKind? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+
+    private LineEndWidthKind? _Width;
     /// <summary>
     ///   Length of the line head or end.
     /// </summary>
-    public LineEndLengthKind? Length { get; set; }
+    public LineEndLengthKind? Length { get => _Length; set => UpdateField(ref _Length, value, nameof(Length)); }
+
+    private LineEndLengthKind? _Length;
 }

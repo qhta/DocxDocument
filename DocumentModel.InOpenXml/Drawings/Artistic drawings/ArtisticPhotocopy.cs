@@ -13,5 +13,7 @@ public partial class ArtisticPhotocopy : ModelElement<DXO10D.ArtisticPhotocopy>
     /// <summary>
     /// Detail level of the photocopy effect, influencing the sharpness and clarity of the simulated photocopy.
     /// </summary>
-    public Int32? Detail { get; set; }
+    public Int32? Detail { get => _Detail; set => UpdateField(ref _Detail, value, nameof(Detail)); }
+
+    private Int32? _Detail;
 }

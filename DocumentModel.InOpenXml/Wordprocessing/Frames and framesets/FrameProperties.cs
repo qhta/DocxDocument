@@ -14,57 +14,85 @@ public partial class FrameProperties : ModelElement<DXW.FrameProperties>
     /// <summary>
     ///   Drop cap vertical height, specified in lines.
     /// </summary>
-    public Int32? Lines { get; set; }
+    public Int32? Lines { get => _Lines; set => UpdateField(ref _Lines, value, nameof(Lines)); }
+
+    private Int32? _Lines;
     /// <summary>
     ///   Width of the frame, specified as a string value (e.g., in points or percent).
     /// </summary>
-    public string? Width { get; set; }
+    public string? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+
+    private string? _Width;
     /// <summary>
     ///   Height of the frame, specified as an unsigned integer value.
     /// </summary>
-    public UInt32? Height { get; set; }
+    public UInt32? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
+
+    private UInt32? _Height;
     /// <summary>
     ///   Vertical padding for the frame, specifying space above and below the frame.
     /// </summary>
-    public string? VerticalSpace { get; set; }
+    public string? VerticalSpace { get => _VerticalSpace; set => UpdateField(ref _VerticalSpace, value, nameof(VerticalSpace)); }
+
+    private string? _VerticalSpace;
     /// <summary>
     ///   Horizontal padding for the frame, specifying space to the left and right of the frame.
     /// </summary>
-    public string? HorizontalSpace { get; set; }
+    public string? HorizontalSpace { get => _HorizontalSpace; set => UpdateField(ref _HorizontalSpace, value, nameof(HorizontalSpace)); }
+
+    private string? _HorizontalSpace;
     /// <summary>
     ///   Text wrapping option around the frame, specifying how text flows around the frame.
     /// </summary>
-    public TextWrappingKind? Wrap { get; set; }
+    public TextWrappingKind? Wrap { get => _Wrap; set => UpdateField(ref _Wrap, value, nameof(Wrap)); }
+
+    private TextWrappingKind? _Wrap;
     /// <summary>
     ///   Horizontal positioning base for the frame, specifying the reference point for horizontal alignment.
     /// </summary>
-    public HorizontalAnchorKind? HorizontalPosition { get; set; }
+    public HorizontalAnchorKind? HorizontalPosition { get => _HorizontalPosition; set => UpdateField(ref _HorizontalPosition, value, nameof(HorizontalPosition)); }
+
+    private HorizontalAnchorKind? _HorizontalPosition;
     /// <summary>
     ///   Vertical positioning base for the frame, specifying the reference point for vertical alignment.
     /// </summary>
-    public VerticalAnchorKind? VerticalPosition { get; set; }
+    public VerticalAnchorKind? VerticalPosition { get => _VerticalPosition; set => UpdateField(ref _VerticalPosition, value, nameof(VerticalPosition)); }
+
+    private VerticalAnchorKind? _VerticalPosition;
     /// <summary>
     ///   Absolute horizontal position of the frame, specified as a string value.
     /// </summary>
-    public string? X { get; set; }
+    public string? X { get => _X; set => UpdateField(ref _X, value, nameof(X)); }
+
+    private string? _X;
     /// <summary>
     ///   Relative horizontal position of the frame, specifying alignment relative to the horizontal anchor.
     /// </summary>
-    public HorizontalAlignmentKind? XAlign { get; set; }
+    public HorizontalAlignmentKind? XAlign { get => _XAlign; set => UpdateField(ref _XAlign, value, nameof(XAlign)); }
+
+    private HorizontalAlignmentKind? _XAlign;
     /// <summary>
     ///   Absolute vertical position of the frame, specified as a string value.
     /// </summary>
-    public string? Y { get; set; }
+    public string? Y { get => _Y; set => UpdateField(ref _Y, value, nameof(Y)); }
+
+    private string? _Y;
     /// <summary>
     ///   Relative vertical position of the frame, specifying alignment relative to the vertical anchor.
     /// </summary>
-    public VerticalAlignmentKind? YAlign { get; set; }
+    public VerticalAlignmentKind? YAlign { get => _YAlign; set => UpdateField(ref _YAlign, value, nameof(YAlign)); }
+
+    private VerticalAlignmentKind? _YAlign;
     /// <summary>
     ///   Height rule for the frame, specifying how the frame height is determined.
     /// </summary>
-    public HeightRuleKind? HeightType { get; set; }
+    public HeightRuleKind? HeightType { get => _HeightType; set => UpdateField(ref _HeightType, value, nameof(HeightType)); }
+
+    private HeightRuleKind? _HeightType;
     /// <summary>
     ///   Indicates whether the frame anchor is locked to the paragraph, preventing movement.
     /// </summary>
-    public bool? AnchorLock { get; set; }
+    public bool? AnchorLock { get => _AnchorLock; set => UpdateField(ref _AnchorLock, value, nameof(AnchorLock)); }
+
+    private bool? _AnchorLock;
 }

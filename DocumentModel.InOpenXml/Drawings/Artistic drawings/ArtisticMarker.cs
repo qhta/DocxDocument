@@ -13,5 +13,7 @@ public partial class ArtisticMarker : ModelElement<DXO10D.ArtisticMarker>
     /// <summary>
     /// Size of the marker used in the effect, influencing the thickness of the strokes.
     /// </summary>
-    public Int32? Size { get; set; }
+    public Int32? Size { get => _Size; set => UpdateField(ref _Size, value, nameof(Size)); }
+
+    private Int32? _Size;
 }

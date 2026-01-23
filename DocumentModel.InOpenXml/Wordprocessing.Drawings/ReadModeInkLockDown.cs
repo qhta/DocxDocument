@@ -14,13 +14,19 @@ public partial class ReadModeInkLockDown : ModelElement
     /// <summary>
     /// The width of the virtual page, specified in units relevant to the document, used for layout calculations in read mode.
     /// </summary>
-    public UInt32? Width { get; set; }
+    public UInt32? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+
+    private UInt32? _Width;
     /// <summary>
     /// The height of the virtual page, specified in units relevant to the document, used for layout calculations in read mode.
     /// </summary>
-    public UInt32? Height { get; set; }
+    public UInt32? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
+
+    private UInt32? _Height;
     /// <summary>
     /// The scaling factor for font size, specified as a string, used to adjust text size for consistent appearance in read mode.
     /// </summary>
-    public string? FontSize { get; set; }
+    public string? FontSize { get => _FontSize; set => UpdateField(ref _FontSize, value, nameof(FontSize)); }
+
+    private string? _FontSize;
 }

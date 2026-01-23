@@ -1,27 +1,31 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Represents hidden 3D scene properties, including camera, lighting, and backdrop configuration.
 /// </summary>
-public class HiddenScene3D : ModelElement<DXO10D.HiddenScene3D>, IExtendableElement
+public partial class HiddenScene3D : ModelElement<DXO10D.HiddenScene3D>, IExtendableElement
 {
-  /// <summary>
-  ///   Camera settings for the hidden 3D scene.
-  /// </summary>
-  public Camera? Camera { get; set; }
+    /// <summary>
+    ///   Camera settings for the hidden 3D scene.
+    /// </summary>
+    public Camera? Camera { get => _Camera; set => UpdateField(ref _Camera, value, nameof(Camera)); }
 
-  /// <summary>
-  ///   Light rig configuration for the hidden 3D scene.
-  /// </summary>
-  public LightRig? LightRig { get; set; }
+    private Camera? _Camera;
+    /// <summary>
+    ///   Light rig configuration for the hidden 3D scene.
+    /// </summary>
+    public LightRig? LightRig { get => _LightRig; set => UpdateField(ref _LightRig, value, nameof(LightRig)); }
 
-  /// <summary>
-  ///   Backdrop plane for the hidden 3D scene.
-  /// </summary>
-  public Backdrop? Backdrop { get; set; }
+    private LightRig? _LightRig;
+    /// <summary>
+    ///   Backdrop plane for the hidden 3D scene.
+    /// </summary>
+    public Backdrop? Backdrop { get => _Backdrop; set => UpdateField(ref _Backdrop, value, nameof(Backdrop)); }
 
-  /// <summary>
-  /// List of extension elements.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+    private Backdrop? _Backdrop;
+    /// <summary>
+    /// List of extension elements.
+    /// </summary>
+    public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+    private ExtensionList? _ExtensionList;
 }

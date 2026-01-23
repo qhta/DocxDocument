@@ -13,5 +13,7 @@ public partial class PositiveSize2DType : ModelElement<DXD.PositiveSize2DType>
     /// <summary>
     ///   Width of the extent.
     /// </summary>
-    public Int64? Cy { get; set; }
+    public Int64? Cy { get => _Cy; set => UpdateField(ref _Cy, value, nameof(Cy)); }
+
+    private Int64? _Cy;
 }

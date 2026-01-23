@@ -13,5 +13,7 @@ public partial class GroupShapeNonVisualProperties : ModelElement<DXOD.GroupShap
     /// <summary>
     ///   NonVisualGroupDrawingShapeProperties.
     /// </summary>
-    public NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get; set; }
+    public NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get => _NonVisualGroupDrawingShapeProperties; set => UpdateField(ref _NonVisualGroupDrawingShapeProperties, value, nameof(NonVisualGroupDrawingShapeProperties)); }
+
+    private NonVisualGroupDrawingShapeProperties? _NonVisualGroupDrawingShapeProperties;
 }

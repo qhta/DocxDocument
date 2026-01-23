@@ -13,5 +13,7 @@ public partial class Ink : ModelElement<DXVO.Ink>
     /// <summary>
     ///   Annotation Flag
     /// </summary>
-    public bool? AnnotationFlag { get; set; }
+    public bool? AnnotationFlag { get => _AnnotationFlag; set => UpdateField(ref _AnnotationFlag, value, nameof(AnnotationFlag)); }
+
+    private bool? _AnnotationFlag;
 }

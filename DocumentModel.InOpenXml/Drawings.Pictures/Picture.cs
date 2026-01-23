@@ -13,17 +13,25 @@ public partial class Picture : ModelElement<DXDP.NonVisualDrawingProperties>
     /// <summary>
     ///   Picture Fill.
     /// </summary>
-    public BlipFill? BlipFill { get; set; }
+    public BlipFill? BlipFill { get => _BlipFill; set => UpdateField(ref _BlipFill, value, nameof(BlipFill)); }
+
+    private BlipFill? _BlipFill;
     /// <summary>
     ///   Shape Properties.
     /// </summary>
-    public ShapeProperties? ShapeProperties { get; set; }
+    public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
+
+    private ShapeProperties? _ShapeProperties;
     /// <summary>
     ///   ShapeStyle.
     /// </summary>
-    public ShapeStyle? ShapeStyle { get; set; }
+    public ShapeStyle? ShapeStyle { get => _ShapeStyle; set => UpdateField(ref _ShapeStyle, value, nameof(ShapeStyle)); }
+
+    private ShapeStyle? _ShapeStyle;
     /// <summary>
     ///   OfficeArtExtensionList.
     /// </summary>
-    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
+
+    private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

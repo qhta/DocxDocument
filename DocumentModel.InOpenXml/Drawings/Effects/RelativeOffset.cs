@@ -13,5 +13,7 @@ public partial class RelativeOffset : ModelElement
     /// <summary>
     ///   Y offset value.
     /// </summary>
-    public Int32? OffsetY { get; set; }
+    public Int32? OffsetY { get => _OffsetY; set => UpdateField(ref _OffsetY, value, nameof(OffsetY)); }
+
+    private Int32? _OffsetY;
 }

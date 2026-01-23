@@ -14,5 +14,7 @@ public partial class WordNonVisualContentPartShapeProperties : ModelElement
     /// <summary>
     /// Non-visual properties specific to ink content parts, such as comment status and content part locks.
     /// </summary>
-    public NonVisualInkContentPartProperties? NonVisualInkContentPartProperties { get; set; }
+    public NonVisualInkContentPartProperties? NonVisualInkContentPartProperties { get => _NonVisualInkContentPartProperties; set => UpdateField(ref _NonVisualInkContentPartProperties, value, nameof(NonVisualInkContentPartProperties)); }
+
+    private NonVisualInkContentPartProperties? _NonVisualInkContentPartProperties;
 }

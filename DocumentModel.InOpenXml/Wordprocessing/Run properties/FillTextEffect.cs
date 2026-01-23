@@ -14,9 +14,13 @@ public partial class FillTextEffect : ModelElement<DXO10W.FillTextEffect>
     /// <summary>
     /// Solid color fill properties for the text, specifying a single color fill effect.
     /// </summary>
-    public SolidColorFillProperties? SolidColorFillProperties { get; set; }
+    public SolidColorFillProperties? SolidColorFillProperties { get => _SolidColorFillProperties; set => UpdateField(ref _SolidColorFillProperties, value, nameof(SolidColorFillProperties)); }
+
+    private SolidColorFillProperties? _SolidColorFillProperties;
     /// <summary>
     /// Gradient fill properties for the text, specifying a gradient color fill effect.
     /// </summary>
-    public DMWD.GradientFillProperties? GradientFillProperties { get; set; }
+    public DMWD.GradientFillProperties? GradientFillProperties { get => _GradientFillProperties; set => UpdateField(ref _GradientFillProperties, value, nameof(GradientFillProperties)); }
+
+    private DMWD.GradientFillProperties? _GradientFillProperties;
 }

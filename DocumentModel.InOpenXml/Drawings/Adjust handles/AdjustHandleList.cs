@@ -13,5 +13,7 @@ public partial class AdjustHandleList : ModelElement<DXD.AdjustHandleList>
     /// <summary>
     /// Polar adjust handle, which provides guides and limits for radial and angular adjustments.
     /// </summary>
-    public AdjustHandlePolar? AdjustHandlePolar { get; set; }
+    public AdjustHandlePolar? AdjustHandlePolar { get => _AdjustHandlePolar; set => UpdateField(ref _AdjustHandlePolar, value, nameof(AdjustHandlePolar)); }
+
+    private AdjustHandlePolar? _AdjustHandlePolar;
 }

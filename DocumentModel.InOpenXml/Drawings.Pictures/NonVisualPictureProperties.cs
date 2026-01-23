@@ -13,5 +13,7 @@ public partial class NonVisualPictureProperties : ModelElement<DXDP.NonVisualDra
     /// <summary>
     ///   Non-Visual Picture Drawing Properties.
     /// </summary>
-    public NonVisualPictureDrawingProperties? NonVisualPictureDrawingProperties { get; set; }
+    public NonVisualPictureDrawingProperties? NonVisualPictureDrawingProperties { get => _NonVisualPictureDrawingProperties; set => UpdateField(ref _NonVisualPictureDrawingProperties, value, nameof(NonVisualPictureDrawingProperties)); }
+
+    private NonVisualPictureDrawingProperties? _NonVisualPictureDrawingProperties;
 }

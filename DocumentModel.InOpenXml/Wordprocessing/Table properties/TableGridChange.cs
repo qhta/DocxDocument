@@ -14,5 +14,7 @@ public partial class TableGridChange : ModelElement<DXW.TableGridChange>
     /// <summary>
     /// Previous table grid configuration before the change, enabling comparison and tracking of grid revisions.
     /// </summary>
-    public PreviousTableGrid? PreviousTableGrid { get; set; }
+    public PreviousTableGrid? PreviousTableGrid { get => _PreviousTableGrid; set => UpdateField(ref _PreviousTableGrid, value, nameof(PreviousTableGrid)); }
+
+    private PreviousTableGrid? _PreviousTableGrid;
 }

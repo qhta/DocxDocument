@@ -14,9 +14,13 @@ public partial class Languages : ModelElement<DXW.Languages>
     /// <summary>
     /// Language code for complex (bidirectional) scripts, such as Arabic, Hebrew, or Thai.
     /// </summary>
-    public string? ComplexScript { get; set; }
+    public string? ComplexScript { get => _ComplexScript; set => UpdateField(ref _ComplexScript, value, nameof(ComplexScript)); }
+
+    private string? _ComplexScript;
     /// <summary>
     /// Language code for East Asian scripts, such as Chinese, Japanese, or Korean.
     /// </summary>
-    public string? EastAsia { get; set; }
+    public string? EastAsia { get => _EastAsia; set => UpdateField(ref _EastAsia, value, nameof(EastAsia)); }
+
+    private string? _EastAsia;
 }

@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings;
 
-public partial class DrawingColor<T>
+public partial class DrawingColor<T> 
 {
-  public bool ShouldSerializeTint() => this.Tint is not null;
+  public bool ShouldSerializeTint() => Tint is not null;
   public bool ShouldSerializeShade() => Shade is not null;
   public bool ShouldSerializeAlpha() => Alpha is not null;
   public bool ShouldSerializeAlphaOffset() => AlphaOffset is not null;

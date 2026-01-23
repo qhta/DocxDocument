@@ -13,29 +13,43 @@ public partial class NonVisualDrawingProperties : ModelElement<DXOD.NonVisualDra
     /// <summary>
     ///   Name compatible with Object Model (non-unique).
     /// </summary>
-    public string? Name { get; set; }
+    public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+
+    private string? _Name;
     /// <summary>
     ///   Description of the drawing element.
     /// </summary>
-    public string? Description { get; set; }
+    public string? Description { get => _Description; set => UpdateField(ref _Description, value, nameof(Description)); }
+
+    private string? _Description;
     /// <summary>
     ///   Flag determining to show or hide this element.
     /// </summary>
-    public bool? Hidden { get; set; }
+    public bool? Hidden { get => _Hidden; set => UpdateField(ref _Hidden, value, nameof(Hidden)); }
+
+    private bool? _Hidden;
     /// <summary>
     ///   Title
     /// </summary>
-    public string? Title { get; set; }
+    public string? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
+
+    private string? _Title;
     /// <summary>
     ///   IHyperlink associated with clicking or selecting the element..
     /// </summary>
-    public HyperlinkOnClick? HyperlinkOnClick { get; set; }
+    public HyperlinkOnClick? HyperlinkOnClick { get => _HyperlinkOnClick; set => UpdateField(ref _HyperlinkOnClick, value, nameof(HyperlinkOnClick)); }
+
+    private HyperlinkOnClick? _HyperlinkOnClick;
     /// <summary>
     ///   IHyperlink associated with hovering over the element..
     /// </summary>
-    public HyperlinkOnHover? HyperlinkOnHover { get; set; }
+    public HyperlinkOnHover? HyperlinkOnHover { get => _HyperlinkOnHover; set => UpdateField(ref _HyperlinkOnHover, value, nameof(HyperlinkOnHover)); }
+
+    private HyperlinkOnHover? _HyperlinkOnHover;
     /// <summary>
     ///   Future extension.
     /// </summary>
-    public NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get; set; }
+    public NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get => _NonVisualDrawingPropertiesExtensionList; set => UpdateField(ref _NonVisualDrawingPropertiesExtensionList, value, nameof(NonVisualDrawingPropertiesExtensionList)); }
+
+    private NonVisualDrawingPropertiesExtensionList? _NonVisualDrawingPropertiesExtensionList;
 }

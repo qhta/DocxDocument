@@ -14,5 +14,7 @@ public partial class NumLevelText : ModelElement //<DXW.NumLevelText>
     /// <summary>
     ///   Indicates whether the level text is a null character.
     /// </summary>
-    public Boolean IsNull { get; set; }
+    public Boolean IsNull { get => _IsNull; set => UpdateField(ref _IsNull, value, nameof(IsNull)); }
+
+    private Boolean _IsNull;
 }

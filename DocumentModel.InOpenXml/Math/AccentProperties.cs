@@ -14,5 +14,7 @@ public partial class AccentProperties : ModelElement<DXM.AccentProperties>
     /// <summary>
     ///   Specifies formatting of accent character.
     /// </summary>
-    public ControlProperties? ControlProperties { get; set; }
+    public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
+    private ControlProperties? _ControlProperties;
 }

@@ -14,13 +14,19 @@ public partial class CheckBox : ModelElement<DXW.CheckBox>
     /// <summary>
     /// Indicates whether the checkbox form field should be automatically sized.
     /// </summary>
-    public bool? AutomaticallySizeFormField { get; set; }
+    public bool? AutomaticallySizeFormField { get => _AutomaticallySizeFormField; set => UpdateField(ref _AutomaticallySizeFormField, value, nameof(AutomaticallySizeFormField)); }
+
+    private bool? _AutomaticallySizeFormField;
     /// <summary>
     /// Default state of the checkbox form field when the form is loaded (checked or unchecked).
     /// </summary>
-    public bool? DefaultCheckBoxFormFieldState { get; set; }
+    public bool? DefaultCheckBoxFormFieldState { get => _DefaultCheckBoxFormFieldState; set => UpdateField(ref _DefaultCheckBoxFormFieldState, value, nameof(DefaultCheckBoxFormFieldState)); }
+
+    private bool? _DefaultCheckBoxFormFieldState;
     /// <summary>
     /// Indicates whether the checkbox is currently checked.
     /// </summary>
-    public bool? Checked { get; set; }
+    public bool? Checked { get => _Checked; set => UpdateField(ref _Checked, value, nameof(Checked)); }
+
+    private bool? _Checked;
 }

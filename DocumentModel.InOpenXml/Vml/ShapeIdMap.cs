@@ -13,5 +13,7 @@ public partial class ShapeIdMap : ModelElement<DXVO.ShapeIdMap>
     /// <summary>
     ///   Shape IDs
     /// </summary>
-    public string? Data { get; set; }
+    public string? Data { get => _Data; set => UpdateField(ref _Data, value, nameof(Data)); }
+
+    private string? _Data;
 }

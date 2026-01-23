@@ -4,27 +4,34 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial class DefaultShapeDefinitionType : ModelElement<DXD.DefaultShapeDefinitionType>, IExtendableElement
 {
-  /// <summary>
-  ///   Visual properties for the default shape.
-  /// </summary>
-  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
+    /// <summary>
+    ///   Visual properties for the default shape.
+    /// </summary>
+    public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
 
-  private ShapeProperties? _ShapeProperties;
-  /// <summary>
-  ///   Body properties for the default shape.
-  /// </summary>
-  public BodyProperties? BodyProperties { get; set; }
-  /// <summary>
-  ///   List style for the default shape.
-  /// </summary>
-  public ListStyle? ListStyle { get; set; }
-  /// <summary>
-  ///   Shape style for the default shape.
-  /// </summary>
-  public ShapeStyle? ShapeStyle { get; set; }
+    private ShapeProperties? _ShapeProperties;
+    /// <summary>
+    ///   Body properties for the default shape.
+    /// </summary>
+    public BodyProperties? BodyProperties { get => _BodyProperties; set => UpdateField(ref _BodyProperties, value, nameof(BodyProperties)); }
 
-  /// <summary>
-  /// List of extension elements.
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+    private BodyProperties? _BodyProperties;
+    /// <summary>
+    ///   List style for the default shape.
+    /// </summary>
+    public ListStyle? ListStyle { get => _ListStyle; set => UpdateField(ref _ListStyle, value, nameof(ListStyle)); }
+
+    private ListStyle? _ListStyle;
+    /// <summary>
+    ///   Shape style for the default shape.
+    /// </summary>
+    public ShapeStyle? ShapeStyle { get => _ShapeStyle; set => UpdateField(ref _ShapeStyle, value, nameof(ShapeStyle)); }
+
+    private ShapeStyle? _ShapeStyle;
+    /// <summary>
+    /// List of extension elements.
+    /// </summary>
+    public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+    private ExtensionList? _ExtensionList;
 }

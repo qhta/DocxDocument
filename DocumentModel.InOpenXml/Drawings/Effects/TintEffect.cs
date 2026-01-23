@@ -13,5 +13,7 @@ public partial class TintEffect : ModelElement
     /// <summary>
     ///   Amount of tint to apply.
     /// </summary>
-    public Int32? Amount { get; set; }
+    public Int32? Amount { get => _Amount; set => UpdateField(ref _Amount, value, nameof(Amount)); }
+
+    private Int32? _Amount;
 }

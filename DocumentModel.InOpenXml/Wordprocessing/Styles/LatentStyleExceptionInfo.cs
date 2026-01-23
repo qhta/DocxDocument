@@ -1,38 +1,44 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Represents latent style exception information for a Wordprocessing document.
 /// This class provides properties for style name, locking, UI priority, visibility, and primary style settings, enabling advanced management and customization of latent styles.
 /// </summary>
 public partial class LatentStyleExceptionInfo : ModelElement<DXW.LatentStyleExceptionInfo>
 {
-  /// <summary>
-  /// Primary style name associated with the latent style exception.
-  /// </summary>
-  public string? Name { get; set; }
+    /// <summary>
+    /// Primary style name associated with the latent style exception.
+    /// </summary>
+    public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
-  /// <summary>
-  /// Indicates whether the latent style is locked and cannot be modified.
-  /// </summary>
-  public bool? Locked { get; set; }
+    private string? _Name;
+    /// <summary>
+    /// Indicates whether the latent style is locked and cannot be modified.
+    /// </summary>
+    public bool? Locked { get => _Locked; set => UpdateField(ref _Locked, value, nameof(Locked)); }
 
-  /// <summary>
-  /// Override for the default sorting order in the UI, specifying the priority of the style.
-  /// </summary>
-  public Int32? UiPriority { get; set; }
+    private bool? _Locked;
+    /// <summary>
+    /// Override for the default sorting order in the UI, specifying the priority of the style.
+    /// </summary>
+    public Int32? UiPriority { get => _UiPriority; set => UpdateField(ref _UiPriority, value, nameof(UiPriority)); }
 
-  /// <summary>
-  /// Indicates whether the style is semi-hidden, overriding default visibility settings.
-  /// </summary>
-  public bool? SemiHidden { get; set; }
+    private Int32? _UiPriority;
+    /// <summary>
+    /// Indicates whether the style is semi-hidden, overriding default visibility settings.
+    /// </summary>
+    public bool? SemiHidden { get => _SemiHidden; set => UpdateField(ref _SemiHidden, value, nameof(SemiHidden)); }
 
-  /// <summary>
-  /// Indicates whether the style should be unhidden when used in the document.
-  /// </summary>
-  public bool? UnhideWhenUsed { get; set; }
+    private bool? _SemiHidden;
+    /// <summary>
+    /// Indicates whether the style should be unhidden when used in the document.
+    /// </summary>
+    public bool? UnhideWhenUsed { get => _UnhideWhenUsed; set => UpdateField(ref _UnhideWhenUsed, value, nameof(UnhideWhenUsed)); }
 
-  /// <summary>
-  /// Indicates whether the style is a primary style in the latent style set.
-  /// </summary>
-  public bool? PrimaryStyle { get; set; }
+    private bool? _UnhideWhenUsed;
+    /// <summary>
+    /// Indicates whether the style is a primary style in the latent style set.
+    /// </summary>
+    public bool? PrimaryStyle { get => _PrimaryStyle; set => UpdateField(ref _PrimaryStyle, value, nameof(PrimaryStyle)); }
+
+    private bool? _PrimaryStyle;
 }

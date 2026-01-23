@@ -16,5 +16,7 @@ public partial class ShapeDefaults : ModelElement
     /// <summary>
     /// The layout settings for shapes, controlling arrangement, positioning, and other layout-related properties for VML objects.
     /// </summary>
-    public ShapeLayout? ShapeLayout { get; set; }
+    public ShapeLayout? ShapeLayout { get => _ShapeLayout; set => UpdateField(ref _ShapeLayout, value, nameof(ShapeLayout)); }
+
+    private ShapeLayout? _ShapeLayout;
 }

@@ -13,5 +13,7 @@ public partial class Entry : ModelElement<DXVO.Entry>
     /// <summary>
     ///   Old Group ID
     /// </summary>
-    public Int32? Old { get; set; }
+    public Int32? Old { get => _Old; set => UpdateField(ref _Old, value, nameof(Old)); }
+
+    private Int32? _Old;
 }

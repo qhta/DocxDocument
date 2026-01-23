@@ -14,9 +14,13 @@ public partial class WordprocessingGroupType : ModelElement
     /// <summary>
     /// Non-visual properties specific to group drawing shapes, such as locking and extension settings.
     /// </summary>
-    public NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get; set; }
+    public NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get => _NonVisualGroupDrawingShapeProperties; set => UpdateField(ref _NonVisualGroupDrawingShapeProperties, value, nameof(NonVisualGroupDrawingShapeProperties)); }
+
+    private NonVisualGroupDrawingShapeProperties? _NonVisualGroupDrawingShapeProperties;
     /// <summary>
     /// Properties for the group shape, including layout, transformation, and grouping behavior.
     /// </summary>
-    public GroupShapeProperties? GroupShapeProperties { get; set; }
+    public GroupShapeProperties? GroupShapeProperties { get => _GroupShapeProperties; set => UpdateField(ref _GroupShapeProperties, value, nameof(GroupShapeProperties)); }
+
+    private GroupShapeProperties? _GroupShapeProperties;
 }

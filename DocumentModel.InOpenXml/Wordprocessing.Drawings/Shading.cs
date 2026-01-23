@@ -16,9 +16,13 @@ public partial class Shading : ModelElement
     /// <summary>
     /// The color of the pattern foreground, specifying the primary color used in the shading pattern.
     /// </summary>
-    public DocumentModel.Color? ForegroundColor { get; set; }
+    public DocumentModel.Color? ForegroundColor { get => _ForegroundColor; set => UpdateField(ref _ForegroundColor, value, nameof(ForegroundColor)); }
+
+    private DocumentModel.Color? _ForegroundColor;
     /// <summary>
     /// The color of the pattern background, specifying the secondary color used in the shading pattern.
     /// </summary>
-    public DocumentModel.Color? BackgroundColor { get; set; }
+    public DocumentModel.Color? BackgroundColor { get => _BackgroundColor; set => UpdateField(ref _BackgroundColor, value, nameof(BackgroundColor)); }
+
+    private DocumentModel.Color? _BackgroundColor;
 }

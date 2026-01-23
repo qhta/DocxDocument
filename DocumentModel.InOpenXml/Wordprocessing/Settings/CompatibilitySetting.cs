@@ -14,9 +14,13 @@ public partial class CompatibilitySetting : ModelElement<DXW.CompatibilitySettin
     /// <summary>
     /// UriString associated with the compatibility setting, identifying the namespace or context for the setting.
     /// </summary>
-    public string? UriString { get; set; }
+    public string? UriString { get => _UriString; set => UpdateField(ref _UriString, value, nameof(UriString)); }
+
+    private string? _UriString;
     /// <summary>
     /// Value of the compatibility setting, specifying the configuration or option value.
     /// </summary>
-    public string? Val { get; set; }
+    public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+
+    private string? _Val;
 }

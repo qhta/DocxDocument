@@ -14,5 +14,7 @@ public partial class LinearShadeProperties : ModelElement
     /// <summary>
     /// Indicates whether the gradient is scaled to fit the shape, affecting how the gradient is rendered within the element.
     /// </summary>
-    public OnOffKind? Scaled { get; set; }
+    public OnOffKind? Scaled { get => _Scaled; set => UpdateField(ref _Scaled, value, nameof(Scaled)); }
+
+    private OnOffKind? _Scaled;
 }

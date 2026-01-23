@@ -1,27 +1,31 @@
 using DocumentModel.Drawings;
 
 namespace DocumentModel.Wordprocessing.Drawings;
-
 /// <summary>
 /// Represents non-visual properties for connector shapes in a Wordprocessing document.
 /// This class provides access to connection locks, start and end connection information, and extension data for connectors.
 /// </summary>
-public class NonVisualConnectorProperties : ModelElement<DXO10WDS.NonVisualConnectorProperties>, IExtendableElement
+public partial class NonVisualConnectorProperties : ModelElement<DXO10WDS.NonVisualConnectorProperties>, IExtendableElement
 {
-  /// <summary>
-  /// The set of locks applied to the connector shape, restricting certain types of modifications or interactions.
-  /// </summary>
-  public ConnectionShapeLocks? ConnectionShapeLocks { get; set; }
+    /// <summary>
+    /// The set of locks applied to the connector shape, restricting certain types of modifications or interactions.
+    /// </summary>
+    public ConnectionShapeLocks? ConnectionShapeLocks { get => _ConnectionShapeLocks; set => UpdateField(ref _ConnectionShapeLocks, value, nameof(ConnectionShapeLocks)); }
 
-  /// <summary>
-  /// The definition of the starting connection point for the connector, specifying how it attaches to other shapes.
-  /// </summary>
-  public ConnectionType? StartConnection { get; set; }
+    private ConnectionShapeLocks? _ConnectionShapeLocks;
+    /// <summary>
+    /// The definition of the starting connection point for the connector, specifying how it attaches to other shapes.
+    /// </summary>
+    public ConnectionType? StartConnection { get => _StartConnection; set => UpdateField(ref _StartConnection, value, nameof(StartConnection)); }
 
-  /// <summary>
-  /// The definition of the ending connection point for the connector, specifying how it attaches to other shapes.
-  /// </summary>
-  public ConnectionType? EndConnection { get; set; }
+    private ConnectionType? _StartConnection;
+    /// <summary>
+    /// The definition of the ending connection point for the connector, specifying how it attaches to other shapes.
+    /// </summary>
+    public ConnectionType? EndConnection { get => _EndConnection; set => UpdateField(ref _EndConnection, value, nameof(EndConnection)); }
 
-  public ExtensionList? ExtensionList { get; set; }
+    private ConnectionType? _EndConnection;
+    public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+    private ExtensionList? _ExtensionList;
 }

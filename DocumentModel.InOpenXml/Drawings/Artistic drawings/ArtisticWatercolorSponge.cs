@@ -13,5 +13,7 @@ public partial class ArtisticWatercolorSponge : ModelElement<DXO10D.ArtisticWate
     /// <summary>
     /// Size of the brush used in the watercolor sponge effect, influencing the coverage and texture.
     /// </summary>
-    public Int32? BrushSize { get; set; }
+    public Int32? BrushSize { get => _BrushSize; set => UpdateField(ref _BrushSize, value, nameof(BrushSize)); }
+
+    private Int32? _BrushSize;
 }

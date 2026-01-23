@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing.Drawings;
-
 /// <summary>
 ///   Represents an inline shape (picture, diagram, etc.) within the text flow.
 /// </summary>
@@ -8,30 +7,30 @@ namespace DocumentModel.Wordprocessing.Drawings;
 ///   floating shapes which can be positioned independently.
 /// </remarks>
 [OpenXmlType(typeof(DXDW.Inline))]
-public class InlineShape: ModelElement<DXDW.Inline>
+public partial class InlineShape : ModelElement<DXDW.Inline>
 {
-  #region Properties
+#region Properties
+    /// <summary>
+    ///   Gets or sets the width of the inline shape in points.
+    /// </summary>
+    public float Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
 
-  /// <summary>
-  ///   Gets or sets the width of the inline shape in points.
-  /// </summary>
-  public float Width { get; set; }
+    private float _Width;
+    /// <summary>
+    ///   Gets or sets the height of the inline shape in points.
+    /// </summary>
+    public float Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
 
-  /// <summary>
-  ///   Gets or sets the height of the inline shape in points.
-  /// </summary>
-  public float Height { get; set; }
+    private float _Height;
+    /// <summary>
+    ///   Gets the type of the inline shape.
+    /// </summary>
+    public InlineShapeKind Type { get; }
+    /// <summary>
+    ///   Gets or sets the alternative text for the shape.
+    /// </summary>
+    public string? AlternativeText { get => _AlternativeText; set => UpdateField(ref _AlternativeText, value, nameof(AlternativeText)); }
 
-  /// <summary>
-  ///   Gets the type of the inline shape.
-  /// </summary>
-  public InlineShapeKind Type { get; }
-
-  /// <summary>
-  ///   Gets or sets the alternative text for the shape.
-  /// </summary>
-  public string? AlternativeText { get; set; }
-
-
-  #endregion
+    private string? _AlternativeText;
+#endregion
 }

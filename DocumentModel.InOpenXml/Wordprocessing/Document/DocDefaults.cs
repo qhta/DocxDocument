@@ -14,5 +14,7 @@ public partial class DocDefaults : ModelElement<DXW.DocDefaults>
     /// <summary>
     ///   Default paragraph properties, specifying the default paragraph-level formatting for paragraphs.
     /// </summary>
-    public DefaultParagraphProperties? ParagraphPropertiesDefault { get; set; }
+    public DefaultParagraphProperties? ParagraphPropertiesDefault { get => _ParagraphPropertiesDefault; set => UpdateField(ref _ParagraphPropertiesDefault, value, nameof(ParagraphPropertiesDefault)); }
+
+    private DefaultParagraphProperties? _ParagraphPropertiesDefault;
 }

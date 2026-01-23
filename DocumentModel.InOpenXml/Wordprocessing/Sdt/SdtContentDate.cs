@@ -14,17 +14,25 @@ public partial class SdtContentDate : ModelElement<DXW.SdtContentDate>
     /// <summary>
     /// Date display mask, specifying the format string used to display the date in the control.
     /// </summary>
-    public string? DateFormat { get; set; }
+    public string? DateFormat { get => _DateFormat; set => UpdateField(ref _DateFormat, value, nameof(DateFormat)); }
+
+    private string? _DateFormat;
     /// <summary>
     /// Date picker language ID, specifying the locale for date formatting and calendar display.
     /// </summary>
-    public string? LanguageId { get; set; }
+    public string? LanguageId { get => _LanguageId; set => UpdateField(ref _LanguageId, value, nameof(LanguageId)); }
+
+    private string? _LanguageId;
     /// <summary>
     /// Custom XML data date storage format, specifying how the date is stored in the underlying XML data.
     /// </summary>
-    public DateFormatKind? SdtDateMappingType { get; set; }
+    public DateFormatKind? SdtDateMappingType { get => _SdtDateMappingType; set => UpdateField(ref _SdtDateMappingType, value, nameof(SdtDateMappingType)); }
+
+    private DateFormatKind? _SdtDateMappingType;
     /// <summary>
     /// Date picker calendar type, specifying the calendar system used for date selection (e.g., Gregorian, Hijri).
     /// </summary>
-    public CalendarKind? Calendar { get; set; }
+    public CalendarKind? Calendar { get => _Calendar; set => UpdateField(ref _Calendar, value, nameof(Calendar)); }
+
+    private CalendarKind? _Calendar;
 }

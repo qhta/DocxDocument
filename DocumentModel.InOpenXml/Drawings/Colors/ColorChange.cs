@@ -13,9 +13,13 @@ public partial class ColorChange : ModelElement<DXD.ColorChange>
     /// <summary>
     /// Change color from.
     /// </summary>
-    public Color? ColorFrom { get; set; }
+    public Color? ColorFrom { get => _ColorFrom; set => UpdateField(ref _ColorFrom, value, nameof(ColorFrom)); }
+
+    private Color? _ColorFrom;
     /// <summary>
     /// Change color to.
     /// </summary>
-    public Color? ColorTo { get; set; }
+    public Color? ColorTo { get => _ColorTo; set => UpdateField(ref _ColorTo, value, nameof(ColorTo)); }
+
+    private Color? _ColorTo;
 }

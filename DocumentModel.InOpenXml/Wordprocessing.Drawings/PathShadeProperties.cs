@@ -14,5 +14,7 @@ public partial class PathShadeProperties : ModelElement<DXO10W.PathShadeProperti
     /// <summary>
     /// The rectangle area to which the gradient fill is applied, allowing precise definition of the fill boundaries.
     /// </summary>
-    public FillToRectangle? FillToRectangle { get; set; }
+    public FillToRectangle? FillToRectangle { get => _FillToRectangle; set => UpdateField(ref _FillToRectangle, value, nameof(FillToRectangle)); }
+
+    private FillToRectangle? _FillToRectangle;
 }

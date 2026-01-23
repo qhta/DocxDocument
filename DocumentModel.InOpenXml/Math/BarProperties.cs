@@ -14,5 +14,7 @@ public partial class BarProperties : ModelElement<DXM.BarProperties>
     /// <summary>
     ///   Specifies formatting of bar function argument.
     /// </summary>
-    public ControlProperties? ControlProperties { get; set; }
+    public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
+    private ControlProperties? _ControlProperties;
 }

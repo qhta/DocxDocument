@@ -13,5 +13,7 @@ public partial class CameraTool : ModelElement<DXO10D.CameraTool>
     /// <summary>
     /// Shape ID.
     /// </summary>
-    public string? ShapeId { get; set; }
+    public string? ShapeId { get => _ShapeId; set => UpdateField(ref _ShapeId, value, nameof(ShapeId)); }
+
+    private string? _ShapeId;
 }

@@ -14,17 +14,25 @@ public partial class TableStyleConditionalCellProperties : ModelElement //<DXO10
     /// <summary>
     /// Shading applied to the table cell, specifying background and pattern formatting.
     /// </summary>
-    public DMWD.Shading? Shading { get; set; }
+    public DMWD.Shading? Shading { get => _Shading; set => UpdateField(ref _Shading, value, nameof(Shading)); }
+
+    private DMWD.Shading? _Shading;
     /// <summary>
     /// Indicates whether text wrapping is disabled for the cell.
     /// </summary>
-    public bool? NoWrap { get; set; }
+    public bool? NoWrap { get => _NoWrap; set => UpdateField(ref _NoWrap, value, nameof(NoWrap)); }
+
+    private bool? _NoWrap;
     /// <summary>
     /// Margins for the table cell, specifying padding on each side.
     /// </summary>
-    public TableCellMargin? TableCellMargin { get; set; }
+    public TableCellMargin? TableCellMargin { get => _TableCellMargin; set => UpdateField(ref _TableCellMargin, value, nameof(TableCellMargin)); }
+
+    private TableCellMargin? _TableCellMargin;
     /// <summary>
     /// Vertical alignment of content within the table cell.
     /// </summary>
-    public TableVerticalAlignmentKind? TableCellVerticalAlignment { get; set; }
+    public TableVerticalAlignmentKind? TableCellVerticalAlignment { get => _TableCellVerticalAlignment; set => UpdateField(ref _TableCellVerticalAlignment, value, nameof(TableCellVerticalAlignment)); }
+
+    private TableVerticalAlignmentKind? _TableCellVerticalAlignment;
 }

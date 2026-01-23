@@ -13,17 +13,25 @@ public partial class Transform2D : ModelElement<DXD.Transform2D>
     /// <summary>
     ///   Indicates whether the element is flipped horizontally.
     /// </summary>
-    public bool? HorizontalFlip { get; set; }
+    public bool? HorizontalFlip { get => _HorizontalFlip; set => UpdateField(ref _HorizontalFlip, value, nameof(HorizontalFlip)); }
+
+    private bool? _HorizontalFlip;
     /// <summary>
     ///   Indicates whether the element is flipped vertically.
     /// </summary>
-    public bool? VerticalFlip { get; set; }
+    public bool? VerticalFlip { get => _VerticalFlip; set => UpdateField(ref _VerticalFlip, value, nameof(VerticalFlip)); }
+
+    private bool? _VerticalFlip;
     /// <summary>
     ///   Offset point for the transformation.
     /// </summary>
-    public Point2DType? Offset { get; set; }
+    public Point2DType? Offset { get => _Offset; set => UpdateField(ref _Offset, value, nameof(Offset)); }
+
+    private Point2DType? _Offset;
     /// <summary>
     ///   Extents (width and height) for the transformation.
     /// </summary>
-    public PositiveSize2DType? Extents { get; set; }
+    public PositiveSize2DType? Extents { get => _Extents; set => UpdateField(ref _Extents, value, nameof(Extents)); }
+
+    private PositiveSize2DType? _Extents;
 }

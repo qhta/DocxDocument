@@ -11,10 +11,12 @@ namespace DocumentModel.Math;
 ///   Within each argument in the array, every odd ampersand is an align value and every even ampersand is a spacer value 
 ///   (as well, the beginning of each argument provides an implied spacer value).
 /// </summary>
-public class EquationArray: ModelElement<DXM.EquationArray>, IArgumentCollection, ICommonMathContent
+public partial class EquationArray : ModelElement<DXM.EquationArray>, IArgumentCollection, ICommonMathContent
 {
-  /// <summary>
-  ///   Specifies Equation Array properties.
-  /// </summary>
-  public EquationArrayProperties? EquationArrayProperties { get; set; }
+    /// <summary>
+    ///   Specifies Equation Array properties.
+    /// </summary>
+    public EquationArrayProperties? EquationArrayProperties { get => _EquationArrayProperties; set => UpdateField(ref _EquationArrayProperties, value, nameof(EquationArrayProperties)); }
+
+    private EquationArrayProperties? _EquationArrayProperties;
 }

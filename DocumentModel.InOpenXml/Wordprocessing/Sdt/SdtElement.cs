@@ -14,5 +14,7 @@ public partial class SdtElement : ModelElement<DXW.SdtElement>
     /// <summary>
     /// Specifies the properties applied to the physical character that delimits the end of a structured document tag.
     /// </summary>
-    public SdtEndCharProperties? SdtEndCharProperties { get; set; }
+    public SdtEndCharProperties? SdtEndCharProperties { get => _SdtEndCharProperties; set => UpdateField(ref _SdtEndCharProperties, value, nameof(SdtEndCharProperties)); }
+
+    private SdtEndCharProperties? _SdtEndCharProperties;
 }

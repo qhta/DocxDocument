@@ -13,5 +13,7 @@ public partial class AutoNumberedBullet : ModelElement<DXD.AutoNumberedBullet>
     /// <summary>
     /// Starting value for numbering.
     /// </summary>
-    public Int32? StartAt { get; set; }
+    public Int32? StartAt { get => _StartAt; set => UpdateField(ref _StartAt, value, nameof(StartAt)); }
+
+    private Int32? _StartAt;
 }

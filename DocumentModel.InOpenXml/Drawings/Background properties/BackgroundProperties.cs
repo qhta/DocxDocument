@@ -13,13 +13,19 @@ public partial class BackgroundProperties : ModelElement<DXO13D.BackgroundProper
     /// <summary>
     /// Gets or sets the pure black and white mode for background rendering.
     /// </summary>
-    public BlackWhiteMode? Pure { get; set; }
+    public BlackWhiteMode? Pure { get => _Pure; set => UpdateField(ref _Pure, value, nameof(Pure)); }
+
+    private BlackWhiteMode? _Pure;
     /// <summary>
     /// Gets or sets the normal black and white mode for background rendering.
     /// </summary>
-    public BlackWhiteMode? Normal { get; set; }
+    public BlackWhiteMode? Normal { get => _Normal; set => UpdateField(ref _Normal, value, nameof(Normal)); }
+
+    private BlackWhiteMode? _Normal;
     /// <summary>
     /// Gets or sets the target screen size for which the background is optimized.
     /// </summary>
-    public TargetScreenSize? TargetScreenSize { get; set; }
+    public TargetScreenSize? TargetScreenSize { get => _TargetScreenSize; set => UpdateField(ref _TargetScreenSize, value, nameof(TargetScreenSize)); }
+
+    private TargetScreenSize? _TargetScreenSize;
 }

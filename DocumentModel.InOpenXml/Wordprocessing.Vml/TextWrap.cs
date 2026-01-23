@@ -14,13 +14,19 @@ public partial class TextWrap : ModelElement
     /// <summary>
     /// The side of the shape where text wrapping occurs, specifying whether text wraps on both, left, or right sides.
     /// </summary>
-    public WrapSideKind? Side { get; set; }
+    public WrapSideKind? Side { get => _Side; set => UpdateField(ref _Side, value, nameof(Side)); }
+
+    private WrapSideKind? _Side;
     /// <summary>
     /// The horizontal positioning anchor for the wrapped shape, indicating the reference point for horizontal alignment.
     /// </summary>
-    public HorizontalAnchorKind? AnchorX { get; set; }
+    public HorizontalAnchorKind? AnchorX { get => _AnchorX; set => UpdateField(ref _AnchorX, value, nameof(AnchorX)); }
+
+    private HorizontalAnchorKind? _AnchorX;
     /// <summary>
     /// The vertical positioning anchor for the wrapped shape, indicating the reference point for vertical alignment.
     /// </summary>
-    public VerticalAnchorKind? AnchorY { get; set; }
+    public VerticalAnchorKind? AnchorY { get => _AnchorY; set => UpdateField(ref _AnchorY, value, nameof(AnchorY)); }
+
+    private VerticalAnchorKind? _AnchorY;
 }
