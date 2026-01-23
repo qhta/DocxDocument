@@ -1,10 +1,13 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Text.Json;
 using DocumentModel.CustomXml;
 using DocumentModel.Wordprocessing;
+
+using Qhta.TypeUtils;
 
 namespace DocumentModel.InOpenXml.Test
 {
@@ -28,6 +31,9 @@ namespace DocumentModel.InOpenXml.Test
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
       if (!TestStoreInDocument()) return false;
+      if (!TestUpdateInDocument()) return false;
+
+      if (!TestPerformance()) return false;
       Console.WriteLine("All DocumentSettings tests passed.\n");
       return true;
     }
@@ -123,6 +129,14 @@ namespace DocumentModel.InOpenXml.Test
       return true;
     }
 
+    /// <summary>
+    /// Tests storing and retrieving document settings in a new document to verify data integrity.
+    /// </summary>
+    /// <remarks>This method creates a new document, saves sample document settings to it, and then reloads
+    /// the settings to ensure they match the original data. It outputs the serialized XML of the reloaded settings and
+    /// reports the result to the console. Use this method to validate the persistence of document settings in the
+    /// document format.</remarks>
+    /// <returns>true if the document settings are stored and reloaded correctly; otherwise, false.</returns>
     static bool TestStoreInDocument()
     {
       Console.WriteLine("--- Store sample document settings in new document---");
@@ -163,6 +177,94 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("✓ Store sample document settings test passed\n");
       return true;
     }
+
+    static bool TestUpdateInDocument()
+    {
+      Console.WriteLine("--- Update document settings stored in document---");
+      DocumentSettings testData = CreateSampleDocumentSettings(true);
+      using (var document = Document.CreateDocument("temp.docx"))
+      {
+        document.DocumentSettings = testData;
+      }
+
+      TestHelper.ChangeTestData(testData);
+      DocumentSettings? storedData;
+      using (var document = Document.OpenDocument("temp.docx"))
+      {
+        storedData = document.DocumentSettings;
+        if (storedData != null)
+        {
+          TestHelper.CopyTestData(testData, storedData);
+        }
+      }
+
+      var xmlSerializer = new XmlSerializer(typeof(DocumentSettings));
+      string xmlString;
+      using (var stringWriter = new StringWriter())
+      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+      {
+        xmlSerializer.Serialize(xmlWriter, storedData);
+        xmlString = stringWriter.ToString();
+      }
+      Console.WriteLine("document settings stored to new document and reloaded from it:\n" + xmlString);
+
+      if (storedData == null)
+      {
+        Console.WriteLine("✗ XML Deserialization returned null");
+        return false;
+      }
+
+      if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+      {
+        Console.WriteLine($"✗ Store sample document settings test FAILED - data mismatch in property '{propName}'");
+        return false;
+      }
+
+      Console.WriteLine("✓ Store sample document settings test passed\n");
+      return true;
+    }
+
+    /// <summary>
+    /// Measures and reports the performance of <see cref="DocumentSettings"/> update.
+    /// </summary>
+    /// <returns>True if performance tests complete without error; otherwise, false.</returns>
+    static bool TestPerformance()
+    {
+      Console.WriteLine("--- Performance Test ---");
+      var sw = new System.Diagnostics.Stopwatch();
+      int iterations = 100;
+      sw.Start();
+      for (int i = 0; i < iterations; i++)
+      {
+        UpdateMethodForPerformanceTest();
+      }
+      sw.Stop();
+      Console.WriteLine($"UpdateMethodForPerformanceTest executed {iterations} times in {sw.ElapsedMilliseconds} ms");
+      return true;
+    }
+
+    /// <summary>
+    /// Single-step update method for performance testing.
+    /// </summary>
+    static void UpdateMethodForPerformanceTest()
+    {
+      DocumentSettings testData = CreateSampleDocumentSettings(true);
+      using (var document = Document.CreateDocument("temp.docx"))
+      {
+        document.DocumentSettings = testData;
+      }
+
+      TestHelper.ChangeTestData(testData);
+      using (var document = Document.OpenDocument("temp.docx"))
+      {
+        var storedData = document.DocumentSettings;
+        if (storedData != null)
+        {
+          TestHelper.CopyTestData(testData, storedData);
+        }
+      }
+    }
+
 
     /// <summary>
     /// Creates a sample <see cref="DocumentSettings"/> instance for testing.
@@ -331,6 +433,7 @@ namespace DocumentModel.InOpenXml.Test
           }
         };
     }
+
 
     /// <summary>
     /// Serializes a <see cref="DocumentSettings"/> instance to XML.

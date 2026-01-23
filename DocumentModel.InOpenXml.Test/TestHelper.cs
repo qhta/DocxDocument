@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.Remoting;
 using DocumentModel.CustomXml;
 using DocumentModel.Wordprocessing;
@@ -136,6 +137,90 @@ public static class TestHelper
     }
 
     return result;
+  }
+
+  /// <summary>
+  /// Changes test data in the given instance.
+  /// </summary>
+  /// <typeparam name="T"></typeparam>
+  /// <param name="instance">The test data to modify.</param>
+  public static void ChangeTestData<T>(T instance)
+  {
+    var properties = typeof(T).GetProperties().Where(prop => prop.CanWrite);
+    foreach (var prop in properties)
+    {
+      var propType = prop.PropertyType.GetNotNullableType();
+      // Update each property with new test data
+      if (prop.PropertyType == typeof(bool))
+      {
+        prop.SetValue(instance, ChangeBoolProperty(instance, prop));
+      }
+      else if (prop.PropertyType == typeof(int))
+      {
+        prop.SetValue(instance, ChangeIntProperty(instance, prop));
+      }
+      else if (prop.PropertyType == typeof(string))
+      {
+        prop.SetValue(instance, prop.GetValue(instance) + "_updated");
+      }
+    }
+  }
+
+  /// <summary>
+  /// Changes a boolean property value for testing purposes.
+  /// </summary>
+  /// <param name="obj">The object containing the property.</param>
+  /// <param name="prop">The property to change.</param>
+  /// <returns>The new value of the property.</returns>
+  /// <remarks>
+  /// If the property is null, a random boolean value will be returned.
+  /// Otherwise, the boolean value will be toggled.
+  /// </remarks>
+  static bool? ChangeBoolProperty(object obj, PropertyInfo prop)
+  {
+    var value = prop.GetValue(obj);
+    if (value == null)
+      return Random.Shared.NextDouble() < 0.5;
+    else
+    if (value is bool boolValue)
+      return !boolValue;
+    return (bool?)value;
+  }
+
+  /// <summary>
+  /// Changes the value of an integer property on the specified object and returns the new value.
+  /// </summary>
+  /// <param name="obj">The object whose property value is to be changed. Must not be null.</param>
+  /// <param name="prop">The property to change. Must be a readable property of <paramref name="obj"/>.</param>
+  /// <returns>A nullable integer representing the new value of the property.</returns>
+  /// <remarks>If the original value is null, returns a random integer.
+  /// If the original value is an integer, returns its value incremented by one.
+  /// </remarks>remarks
+  static int? ChangeIntProperty(object obj, PropertyInfo prop)
+  {
+    var value = prop.GetValue(obj);
+    if (value == null)
+      return Random.Shared.Next();
+    else
+    if (value is int intValue)
+      return intValue + 1;
+    return (int?)value;
+  }
+
+  /// <summary>
+  /// Copies test data from one instance to another.
+  /// </summary>
+  /// <typeparam name="T"></typeparam>
+  /// <param name="fromInstance">The instance to copy data from.</param>
+  /// <param name="toInstance"></param>
+  public static void CopyTestData<T>(T fromInstance, T toInstance)
+  {
+    var properties = typeof(T).GetProperties().Where(prop => prop.CanRead && prop.CanWrite);
+    foreach (var prop in properties)
+    {
+      var value = prop.GetValue(fromInstance);
+      prop.SetValue(toInstance, value);
+    }
   }
 
   /// <summary>
