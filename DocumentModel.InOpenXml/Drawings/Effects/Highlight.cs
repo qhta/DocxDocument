@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Defines the Highlight interface.
+///   Defines the Highlight class.
 /// </summary>
-public class Highlight: ColorType
+public class Highlight: ColorType<DXD.Highlight>
 {
 
 }

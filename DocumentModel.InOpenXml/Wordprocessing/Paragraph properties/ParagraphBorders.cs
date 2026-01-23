@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the border settings for a paragraph in a WordprocessingML document.
-/// This interface provides properties for configuring borders on all sides of a paragraph, as well as between identical paragraphs and between facing pages, enabling advanced formatting and visual separation of paragraph content.
+/// This class provides properties for configuring borders on all sides of a paragraph, as well as between identical paragraphs and between facing pages, enabling advanced formatting and visual separation of paragraph content.
 /// </summary>
 public partial class ParagraphBorders : ModelElement<DXW.ParagraphBorders>
 {

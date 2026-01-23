@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Apply 3D shape properties.
 /// </summary>
-public interface Shape3DType: IExtendableElement
+public class Shape3DType: ModelElement<DXD.Shape3DType>,IExtendableElement
 {
   /// <summary>
   ///   Shape Depth
@@ -37,4 +37,9 @@ public interface Shape3DType: IExtendableElement
   ///   Contour Color.
   /// </summary>
   public ContourColor? ContourColor { get; set; }
+
+  /// <summary>
+  /// List of extension elements.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

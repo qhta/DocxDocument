@@ -1,14 +1,15 @@
 namespace DocumentModel.Wordprocessing;
 
-  /// <summary>
-  /// Specifies the appearance and behavior of a numbering level within a given abstract numbering definition in a WordprocessingML document.
-  /// A numbering level contains a set of properties for the display of numbering for a given level, including formatting, starting value, restart behavior, text, picture bullets, and associated paragraph/run properties.
-  /// </summary>
-  /// <remarks>
-  /// A numbering level definition is identical to a numbering level override definition, except it is defined as part of a numbering definition instance using the abstractNum element rather than as part of an abstract numbering definition using the num element.
-  /// </remarks>
-  public interface NumLevel: ICollectionItem
-  {
+/// <summary>
+/// Specifies the appearance and behavior of a numbering level within a given abstract numbering definition in a WordprocessingML document.
+/// A numbering level contains a set of properties for the display of numbering for a given level, including formatting, starting value, restart behavior, text, picture bullets, and associated paragraph/run properties.
+/// </summary>
+/// <remarks>
+/// A numbering level definition is identical to a numbering level override definition, except it is defined as part of a numbering definition instance using the abstractNum element rather than as part of an abstract numbering definition using the num element.
+/// </remarks>
+[OpenXmlType(typeof(DXW.Level))]
+  public class NumLevel: ModelElement<DXW.Level>
+{
     
     /// <summary>
     /// Zero-based index of the numbering level defined by this set of properties (e.g., 2 is the 3rd list level).

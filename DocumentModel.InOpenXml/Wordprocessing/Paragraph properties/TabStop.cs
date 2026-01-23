@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a custom tab stop in a paragraph for WordprocessingML documents.
-/// This interface extends <see cref="CollectionItem"/> and provides properties for tab stop type, leader character, and position, enabling advanced control over tab alignment and formatting within paragraphs.
+/// This class extends <see cref="CollectionItem"/> and provides properties for tab stop type, leader character, and position, enabling advanced control over tab alignment and formatting within paragraphs.
 /// </summary>
-public interface TabStop: ICollectionItem
+public class TabStop: ModelElement<DXW.TabStop>
 {
   
   /// <summary>

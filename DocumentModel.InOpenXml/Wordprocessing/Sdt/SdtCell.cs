@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a cell-level structured document tag in a Wordprocessing document.
-/// This interface provides properties for SDT configuration and end character formatting, enabling advanced management and customization of structured document tags for table cells.
+/// This class provides properties for SDT configuration and end character formatting, enabling advanced management and customization of structured document tags for table cells.
 /// </summary>
-public interface SdtCell: IElementCollection<ISdtCellContent>, ITableRowContent, ISdtCellContent
+public class SdtCell: ModelElement<DXW.SdtCell>, ITableRowContent, ISdtCellContent
 {
   
   /// <summary>

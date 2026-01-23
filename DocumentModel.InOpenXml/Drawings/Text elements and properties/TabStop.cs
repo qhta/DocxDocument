@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a tab stop in text, including its position and alignment.
 /// </summary>
-public interface TabStop: ICollectionItem
+public class TabStop: ModelElement<DXD.TabStop>
 {
   /// <summary>
   ///   Position of the tab stop.

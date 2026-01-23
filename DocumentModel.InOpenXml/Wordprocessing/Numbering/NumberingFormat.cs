@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the numbering format for a numbering definition in a WordprocessingML document.
-/// This interface provides properties for specifying the standard numbering format type and a custom number format using XSLT syntax, enabling advanced customization of list and outline numbering styles.
+/// This class provides properties for specifying the standard numbering format type and a custom number format using XSLT syntax, enabling advanced customization of list and outline numbering styles.
 /// </summary>
 public partial class NumberingFormat : ModelElement<DXW.NumberingFormat>
 {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the color mapping type for drawing elements.
 /// </summary>
-public interface ColorMappingType: IExtendableElement
+public class ColorMappingType: ModelElement<DXD.ColorMappingType>, IExtendableElement
 {
   /// <summary>
   /// Background 1.
@@ -69,4 +69,6 @@ public interface ColorMappingType: IExtendableElement
   /// Name.
   /// </summary>
   public string? Name { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

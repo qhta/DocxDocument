@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a custom set of characters that cannot begin a line in a WordprocessingML document.
-///   This interface provides properties for specifying the language and the set of restricted characters, enabling advanced control over line breaking and kinsoku shori rules for East Asian and other scripts.
+///   This class provides properties for specifying the language and the set of restricted characters, enabling advanced control over line breaking and kinsoku shori rules for East Asian and other scripts.
 /// </summary>
 public partial class NoLineBreaksBeforeKinsoku : ModelElement<DXW.NoLineBreaksBeforeKinsoku>
 {

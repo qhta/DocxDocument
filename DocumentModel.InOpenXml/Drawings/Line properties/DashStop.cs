@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a stop in a custom dash pattern, defining the length of a dash and the following space.
 /// </summary>
-public interface DashStop: ICollectionItem
+public class DashStop: ModelElement<DXD.DashStop>
 {
   /// <summary>
   ///   Length of the dash segment.

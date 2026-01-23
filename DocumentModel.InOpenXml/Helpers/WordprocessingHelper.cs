@@ -112,7 +112,7 @@ public static class WordprocessingHelper
   /// Retrieves the package properties for the specified Wordprocessing document.
   /// </summary>
   /// <param name="wordDocument">The Document instance.</param>
-  /// <returns>The package properties interface.</returns>
+  /// <returns>The package properties class.</returns>
   public static DXPP.IPackageProperties GetPackageProperties(this DXPP.WordprocessingDocument wordDocument)
 #pragma warning restore OOXML0001
   {

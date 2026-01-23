@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Represents a comprehensive collection of classification labels and their extensions that define
 /// document sensitivity levels, compliance requirements, and information protection policies.
-/// This interface combines human-readable classification labels with extensible metadata to support
+/// This class combines human-readable classification labels with extensible metadata to support
 /// enterprise information governance, data loss prevention, and regulatory compliance scenarios.
 /// </summary>
 /// <remarks>
@@ -20,7 +20,7 @@ namespace DocumentModel;
 /// </list>
 /// </para>
 /// <para>
-/// This interface combines two complementary mechanisms for classification:
+/// This class combines two complementary mechanisms for classification:
 /// <list type="bullet">
 /// <item><description><b>Classification Labels:</b> Structured, user-facing labels that represent sensitivity levels
 ///     (Public, Internal, Confidential, Highly Confidential, Restricted)</description></item>
@@ -209,7 +209,8 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public interface ClassificationLabelList: IElementCollection<ClassificationLabel>
+public class ClassificationLabelList: ModelElementCollection<ClassificationLabel, 
+  DXO21MLMD.ClassificationLabelList, DXO21MLMD.ClassificationLabel>
 {
   /// <summary>
   /// Gets or sets the classification extension list containing technical metadata, policy references,

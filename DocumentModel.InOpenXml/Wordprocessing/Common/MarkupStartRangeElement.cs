@@ -6,7 +6,8 @@ namespace DocumentModel.Wordprocessing;
   /// This class is implemented by types such as <see cref="BookmarkStart"/>, <see cref="BookmarkEnd"/>, <see cref="CommentRangeStart"/>, <see cref="CommentRangeEnd"/>, <see cref="MoveFromRangeStart"/>, <see cref="MoveFromRangeEnd"/>, <see cref="MoveToRangeStart"/>, and <see cref="MoveToRangeEnd"/>.
   /// Provides properties for linking annotations and managing the placement of custom XML elements within the document.
   /// </summary>
-  public interface MarkupRangeElement : IMarkupElement
+  public abstract class MarkupStartRangeElement<T1, T2> : ModelElement<T1>, IIdentifiedChange, IMarkupElement 
+    where T1 : DX.OpenXmlElement where T2: DX.OpenXmlElement
   {
     
     /// <summary>
@@ -18,6 +19,9 @@ namespace DocumentModel.Wordprocessing;
     /// <summary>
     /// Gets the element that forms the matching pair for this markup range element, if one exists.
     /// </summary>
-    public MarkupRangeElement? PairedElement { get; set; }
+    public MarkupEndRangeElement<T2, T1>? PairedElement { get; set; }
 
+    public string? Id { get; set; }
+    public string? Author { get; set; }
+    public DateTime? Date { get; set; }
   }

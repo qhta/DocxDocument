@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies an n-ary object, consisting of an n-ary object, a base (or operand) and optional upper and lower limits.
 ///   Examples of n-ary objects are: integral, sum, product.
 /// </summary>
-public interface Nary: ICommonMathContent
+public class Nary: ModelElement<DXM.Nary>, ICommonMathContent
 {
   /// <summary>
   ///   n-ary Properties.

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Base Table Grid.
 ///   Contains GridColumns only.
 /// </summary>
-public interface BaseTableGrid: GridColumns
+public class BaseTableGrid<T>: GridColumns<T> where T : DX.OpenXmlElement
 {
 
 }

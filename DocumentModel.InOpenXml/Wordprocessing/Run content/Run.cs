@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 ///   A run allows the producer to specify a single set of formatting properties, 
 ///   applying the same information to all the contents of the run. .
 /// </summary>
-public interface Run : RunContentCollection,
+public class Run : ModelElement<DXW.Run>, //RunContentCollection,
   IParagraphContent,
   ISdtRunContent,
   IRubyContent,

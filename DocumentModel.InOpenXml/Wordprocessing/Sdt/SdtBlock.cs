@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
   /// <summary>
   /// Specifies the presence of a structured document tag around one or more block-level structures (paragraphs, tables, etc.).
-  /// This interface provides properties for SDT configuration and end character formatting, enabling advanced management and customization of structured document tags for block-level content.
+  /// This class provides properties for SDT configuration and end character formatting, enabling advanced management and customization of structured document tags for block-level content.
   /// </summary>
-  public interface SdtBlock: IElementCollection<ISdtBlockContent>,
+  public class SdtBlock: ModelElement<DXW.SdtBlock>,
     IStoryContent, ITableCellContent, ISdtBlockContent, ICustomXmlBlockContent, ICommentContent
   {
     

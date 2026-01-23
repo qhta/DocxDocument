@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a shape connection site, defining the angle and position where a connector attaches to a shape.
 /// </summary>
-public interface ConnectionSite: ICollectionItem
+public class ConnectionSite: ModelElement<DXD.ConnectionSite>
 {
   /// <summary>
   /// Angle of the connection site.

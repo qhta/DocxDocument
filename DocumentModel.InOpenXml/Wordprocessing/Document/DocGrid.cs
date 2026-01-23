@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the document grid settings for a section in a WordprocessingML document.
-/// This interface extends <see cref="SectionPropertiesContent"/> and provides properties for grid type, line pitch, and character pitch, enabling advanced control over text layout, alignment, and grid-based formatting in East Asian and other grid-based document scenarios.
+/// This class extends <see cref="SectionPropertiesContent"/> and provides properties for grid type, line pitch, and character pitch, enabling advanced control over text layout, alignment, and grid-based formatting in East Asian and other grid-based document scenarios.
 /// </summary>
-public interface DocGrid : ISectionPropertiesContent
+public class DocGrid : ModelElement<DXW.DocGrid>, ISectionPropertiesContent
 {
 
   /// <summary>

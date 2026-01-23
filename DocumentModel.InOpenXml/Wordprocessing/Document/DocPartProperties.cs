@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the properties of a glossary document entry (DocPart) in a WordprocessingML document.
-/// This interface provides properties for entry name, associated style, categorization, types, behaviors, description, and unique identifier, enabling advanced management, classification, and configuration of reusable document parts such as building blocks and autotext entries.
+/// This class provides properties for entry name, associated style, categorization, types, behaviors, description, and unique identifier, enabling advanced management, classification, and configuration of reusable document parts such as building blocks and autotext entries.
 /// </summary>
 public partial class DocPartProperties : ModelElement<DXW.DocPartProperties>
 {

@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents data about a single data source record for mail merge in a WordprocessingML document.
-/// This interface provides properties for record inclusion, unique column index, and unique value, enabling advanced configuration and management of recipient data for mail merge operations.
+/// This class provides properties for record inclusion, unique column index, and unique value, enabling advanced configuration and management of recipient data for mail merge operations.
 /// </summary>
 public interface RecipientData: ICollectionItem
 {

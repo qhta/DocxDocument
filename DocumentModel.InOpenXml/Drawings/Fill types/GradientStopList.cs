@@ -2,6 +2,6 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Gradient Stop List.
 /// </summary>
-public interface GradientStopList: IElementCollection<GradientStop>
+public class GradientStopList: ModelElementCollection<GradientStop, DXD.GradientStopList, DXD.GradientStop>
 {
 }

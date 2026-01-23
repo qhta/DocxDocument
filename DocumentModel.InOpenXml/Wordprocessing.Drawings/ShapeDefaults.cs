@@ -3,7 +3,7 @@ using DocumentModel.Vml;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the default properties for VML (Vector Markup Language) objects in the main document of a Wordprocessing file.
-/// This interface provides access to child shape defaults and shape layout settings, enabling consistent formatting and layout for VML shapes throughout the document.
+/// This class provides access to child shape defaults and shape layout settings, enabling consistent formatting and layout for VML shapes throughout the document.
 /// </summary>
 public partial class ShapeDefaults : ModelElement
 {

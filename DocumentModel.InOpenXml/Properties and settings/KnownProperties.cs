@@ -69,7 +69,7 @@ public class KnownProperties : Dictionary<string, PropertyModel>
   }
 
   /// <summary>
-  /// Adds the specified item to the collection if it is a supported type. Needed to implement non-generic ICollection interface.
+  /// Adds the specified item to the collection if it is a supported type. Needed to implement non-generic ICollection class.
   /// </summary>
   /// <remarks>If the specified item is not of a supported type, the method performs no action.</remarks>
   /// <param name="item">The object to add to the collection. Must be of a supported type, such as a DocumentProperty.</param>

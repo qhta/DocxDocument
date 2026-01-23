@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
   /// <summary>
   /// Counterpart of <see cref="SdtRun"/> interface in the Ruby domain.
-  /// This interface represents a collection of ruby content elements and provides properties for structured document tag configuration and end character formatting, enabling advanced handling of ruby annotations in structured document tags.
+  /// This class represents a collection of ruby content elements and provides properties for structured document tag configuration and end character formatting, enabling advanced handling of ruby annotations in structured document tags.
   /// </summary>
-  public interface SdtRunRuby: IElementCollection<IRubyContent>, IRubyContent
+  public class SdtRunRuby: ModelElement<DXW.SdtRunRuby>, IRubyContent
   {
     
     /// <summary>

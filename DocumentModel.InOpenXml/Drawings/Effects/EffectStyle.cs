@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a style that defines a set of effects and 3D properties for a drawing element.
 /// </summary>
-public interface EffectStyle : ICollectionItem, IExtendableElement
+public class EffectStyle : ModelElement<DXD.EffectStyle>, IExtendableElement
 {
   /// <summary>
   /// List of effects applied to the drawing element.
@@ -24,4 +24,9 @@ public interface EffectStyle : ICollectionItem, IExtendableElement
   /// Gets or sets the 3D shape type, specifying the 3D geometry for the drawing element.
   /// </summary>
   public Shape3DType? Shape3DType { get; set; }
+
+  /// <summary>
+  /// List of extension elements.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

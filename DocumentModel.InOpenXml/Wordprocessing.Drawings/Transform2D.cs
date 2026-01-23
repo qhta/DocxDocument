@@ -3,7 +3,7 @@ using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents a 2D transformation applied to a drawing element in a Wordprocessing document.
-/// This interface provides properties for configuring rotation, flipping, offset, and extents, enabling advanced positioning and sizing of graphical objects.
+/// This class provides properties for configuring rotation, flipping, offset, and extents, enabling advanced positioning and sizing of graphical objects.
 /// </summary>
 public partial class Transform2D : ModelElement
 {

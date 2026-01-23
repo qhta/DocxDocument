@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents entry categorization for document parts in a WordprocessingML document.
-/// This interface provides properties for the category name and associated gallery, enabling advanced organization and classification of document entries for templates, building blocks, and other reusable content.
+/// This class provides properties for the category name and associated gallery, enabling advanced organization and classification of document entries for templates, building blocks, and other reusable content.
 /// </summary>
 public partial class Category : ModelElement<DXW.Category>
 {

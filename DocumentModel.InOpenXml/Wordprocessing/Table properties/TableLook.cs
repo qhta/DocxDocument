@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the table look settings for a table in a Wordprocessing document.
-/// This interface provides properties for configuring visual appearance flags, such as row and column banding, header and footer rows, and other style options, enabling advanced table styling and formatting.
+/// This class provides properties for configuring visual appearance flags, such as row and column banding, header and footer rows, and other style options, enabling advanced table styling and formatting.
 /// </summary>
 public partial class TableLook : ModelElement<DXW.TableLook>
 {

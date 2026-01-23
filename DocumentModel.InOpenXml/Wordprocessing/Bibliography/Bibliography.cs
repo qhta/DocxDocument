@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 ///   The Bibliography interface provides access to the sources, citations, and formatting
 ///   used for managing references in academic and professional documents. It corresponds
-///   to the Microsoft.Office.Interop.Word.Bibliography interface.
+///   to the Microsoft.Office.Interop.Word.Bibliography class.
 /// </remarks>
 public partial class Bibliography : ModelElement
 {

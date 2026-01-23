@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents audio sourced from a CD, including start and end times and optional extension data.
 /// </summary>
-public interface AudioFromCD: IExtendableElement
+public class AudioFromCD: ModelElement<DXD.AudioFromCD>
 {
   /// <summary>
   /// Start time of the audio segment from the CD.

@@ -61,7 +61,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public partial class PresetColor : DrawingColor
+public partial class PresetColor : DrawingColor<DXD.PresetColor>
 {
   /// <summary>
   /// Gets or sets the preset color name that defines the base color.

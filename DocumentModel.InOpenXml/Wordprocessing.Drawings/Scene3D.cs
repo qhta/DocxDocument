@@ -3,9 +3,9 @@ using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the 3D scene settings for a drawing element in a Wordprocessing document.
-/// This interface provides properties for configuring the camera and lighting rig, enabling advanced 3D rendering and visualization of graphical objects.
+/// This class provides properties for configuring the camera and lighting rig, enabling advanced 3D rendering and visualization of graphical objects.
 /// </summary>
-public partial class Scene3D : DrawingProperty
+public partial class Scene3D : IDrawingProperty
 {
   /// <summary>
   /// The camera settings for the 3D scene, specifying position, orientation, and perspective for rendering.

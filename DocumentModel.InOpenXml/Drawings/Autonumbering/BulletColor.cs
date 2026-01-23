@@ -1,9 +1,11 @@
+using DocumentFormat.OpenXml.EMMA;
+
 namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Represents a specified color for bullets, supporting multiple color models and extension options.
 /// </summary>
-public interface BulletColor: IExtendableElement
+public class BulletColor: ModelElement<DXD.BulletColor>, IExtendableElement
 {
   /// <summary>
   /// RGB color model using percentage values.
@@ -34,4 +36,9 @@ public interface BulletColor: IExtendableElement
   /// Preset color.
   /// </summary>
   public PresetColor? PresetColor { get; set; }
+
+  /// <summary>
+  /// List of extensions for the bullet color.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

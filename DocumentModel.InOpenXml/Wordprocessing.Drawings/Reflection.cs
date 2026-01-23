@@ -3,9 +3,9 @@ using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the reflection effect applied to a drawing element in a Wordprocessing document.
-/// This interface provides properties for configuring blur radius, opacity, position, distance, direction, scaling, skew, and alignment, enabling advanced visual effects for graphical objects.
+/// This class provides properties for configuring blur radius, opacity, position, distance, direction, scaling, skew, and alignment, enabling advanced visual effects for graphical objects.
 /// </summary>
-public partial class Reflection : DrawingProperty
+public partial class Reflection : IDrawingProperty
 {
   /// <summary>
   /// The blur radius of the reflection, specified in EMUs (English Metric Units), determining the softness of the reflected image.

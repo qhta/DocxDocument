@@ -3,15 +3,15 @@ namespace DocumentModel;
 /// Represents a theme family definition for Office documents, supporting identification, versioning, and extension metadata for advanced theme management scenarios.
 /// </summary>
 /// <remarks>
-/// This interface provides properties for theme family name, unique identifiers, versioning, and OfficeArt extension metadata. It enables flexible theme organization, compatibility management, and extensibility for Office document processing and customization.
+/// This class provides properties for theme family name, unique identifiers, versioning, and OfficeArt extension metadata. It enables flexible theme organization, compatibility management, and extensibility for Office document processing and customization.
 /// </remarks>
-[OpenXmlType(typeof(DXO13T.ThemeFamily))]
 /// <summary>
 /// Represents a theme family definition for Office documents, supporting identification, versioning, and extension metadata for advanced theme management scenarios.
 /// </summary>
 /// <remarks>
-/// This interface provides properties for theme family name, unique identifiers, versioning, and OfficeArt extension metadata. It enables flexible theme organization, compatibility management, and extensibility for Office document processing and customization.
+/// This class provides properties for theme family name, unique identifiers, versioning, and OfficeArt extension metadata. It enables flexible theme organization, compatibility management, and extensibility for Office document processing and customization.
 /// </remarks>
+[OpenXmlType(typeof(DXO13T.ThemeFamily))]
 public partial class ThemeFamily : ModelElement<DXO13T.ThemeFamily>
 {
     /// <summary>

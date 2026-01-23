@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the data binding configuration for a structured document tag (SDT) in a Wordprocessing document.
-/// This interface provides properties for XML namespace prefix mappings, XPath expressions, and custom XML data storage IDs, enabling advanced binding of SDT content to XML data sources.
+/// This class provides properties for XML namespace prefix mappings, XPath expressions, and custom XML data storage IDs, enabling advanced binding of SDT content to XML data sources.
 /// </summary>
 public partial class SdtDataBinding : ModelElement //<DXO10W.SdtDataBinding>
 {

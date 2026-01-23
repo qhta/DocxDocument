@@ -4,7 +4,7 @@
 ///   Represents a collection of alternate content choices that provide different rendering options for content.
 /// </summary>
 /// <remarks>
-///   This interface extends <see cref="ElementCollection{ItemType}"/> of <see cref="AlternateContentChoice"/> and defines
+///   This class extends <see cref="ElementCollection{ItemType}"/> of <see cref="AlternateContentChoice"/> and defines
 ///   a collection of content choice options within an <see cref="IAlternateContent"/> structure. Each choice in the
 ///   collection represents a different way to render or represent content, with associated requirements that specify
 ///   when that choice should be selected. The collection is evaluated in order, with the first choice whose requirements
@@ -20,7 +20,7 @@
 ///   Each <see cref="AlternateContentChoice"/> in the collection contains both a requirement specification (typically
 ///   a namespace UriString) and the actual content items to display when that choice is selected.
 /// </remarks>
-public interface AlternateContentChoiceCollection: IElementCollection<AlternateContentChoice>
+public class AlternateContentChoiceCollection: ElementCollection<AlternateContentChoice>
 {
 
 }

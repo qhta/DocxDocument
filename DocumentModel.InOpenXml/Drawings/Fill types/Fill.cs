@@ -1,9 +1,15 @@
 using System.Runtime.Serialization;
+using DocumentFormat.OpenXml.EMMA;
+
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Abstract Fill interface.
+/// Abstract Fill class.
 /// </summary>
-public class Fill: DrawingProperty
+public abstract class Fill: ModelElement, IDrawingProperty
+{
+}
+
+public abstract class Fill<T> : Fill where T : DX.OpenXmlElement
 {
 }

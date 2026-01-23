@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the mapping between an external data source column and a merge field in a WordprocessingML mail merge operation.
-/// This interface extends <see cref = "CollectionItem"/> and provides properties for field type, data source column name, mapped merge field name, column index, language ID, and dynamic address ordering, enabling advanced configuration of mail merge field mappings.
+/// This class extends <see cref = "CollectionItem"/> and provides properties for field type, data source column name, mapped merge field name, column index, language ID, and dynamic address ordering, enabling advanced configuration of mail merge field mappings.
 /// </summary>
 public partial class FieldMapData : ModelElement<DXW.FieldMapData>
 {

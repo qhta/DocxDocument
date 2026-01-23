@@ -15,7 +15,7 @@ public partial class CaptionDefinition: ModelElement<DXW.Caption>
   /// object when a caption is automatically added to the document.</item>
   /// <item>It is used to uniquely label this caption type, allowing it to be linked with classes
   /// of objects via the AutoCaption element</item>
-  /// <item>It can be used to label this caption type in a user interface.</item>
+  /// <item>It can be used to label this caption type in a user class.</item>
   /// </list>
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Caption.Name))]

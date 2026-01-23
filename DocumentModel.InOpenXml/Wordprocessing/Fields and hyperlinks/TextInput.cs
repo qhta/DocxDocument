@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the properties of a text box form field in a WordprocessingML document.
-/// This interface provides properties for the form field type, default value, maximum length, and formatting, enabling advanced configuration and management of interactive text input fields within forms and documents.
+/// This class provides properties for the form field type, default value, maximum length, and formatting, enabling advanced configuration and management of interactive text input fields within forms and documents.
 /// </summary>
 public partial class TextInput : ModelElement<DXW.TextInput>
 {

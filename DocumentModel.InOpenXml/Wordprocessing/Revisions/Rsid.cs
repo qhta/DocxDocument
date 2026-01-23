@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a revision identifier in a WordprocessingML document.
-/// This interface provides a hexadecimal identifier for a tracked change, enabling unique identification and management of document revisions.
+/// This class provides a hexadecimal identifier for a tracked change, enabling unique identification and management of document revisions.
 /// </summary>
 public class Rsid : ModelElement<DXW.Rsid>
 {

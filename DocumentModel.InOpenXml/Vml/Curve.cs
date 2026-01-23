@@ -236,7 +236,7 @@ public partial class Curve : ModelElement<DXV.Curve>, IEmbeddedObjectContent
     public Path? Path { get; set; }
     public Formulas? Formulas { get; set; }
     public ShapeHandles? ShapeHandles { get; set; }
-    public Fill? Fill { get; set; }
+    public DMD.Fill? Fill { get; set; }
     public Stroke? Stroke { get; set; }
     public Shadow? Shadow { get; set; }
     public TextBox? TextBox { get; set; }

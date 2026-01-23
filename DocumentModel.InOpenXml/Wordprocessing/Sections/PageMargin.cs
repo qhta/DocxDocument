@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the page margin settings for a section in a Wordprocessing document.
-/// This interface provides properties for top, right, bottom, left margins, header and footer spacing, and gutter spacing, enabling advanced configuration of page layout and printing options.
+/// This class provides properties for top, right, bottom, left margins, header and footer spacing, and gutter spacing, enabling advanced configuration of page layout and printing options.
 /// </summary>
-public interface PageMargin : ISectionPropertiesContent
+public class PageMargin : ModelElement<DXW.PageMargin>, ISectionPropertiesContent
 {
   
   /// <summary>

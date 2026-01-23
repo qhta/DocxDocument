@@ -4,9 +4,9 @@ namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 /// Represents a graphic frame element in a Wordprocessing document.
-/// This interface provides access to non-visual properties, transformation settings, and the contained graphic, enabling advanced layout and rendering of graphical content such as images, charts, or diagrams within the document.
+/// This class provides access to non-visual properties, transformation settings, and the contained graphic, enabling advanced layout and rendering of graphical content such as images, charts, or diagrams within the document.
 /// </summary>
-public interface GraphicFrame : IOfficeArtExtendableElement
+public class GraphicFrame : ModelElement<DXD.GraphicFrame>, IOfficeArtExtendableElement
 {
   /// <summary>
   /// Non-visual properties for the graphic frame, including identifiers, names, and descriptive information for the frame element.
@@ -27,4 +27,9 @@ public interface GraphicFrame : IOfficeArtExtendableElement
   /// The graphic content contained within the frame, which may include images, charts, diagrams, or other graphical objects.
   /// </summary>
   public Graphic? Graphic { get; set; }
+
+  /// <summary>
+  /// List of OfficeArt extensions associated with the graphic frame, allowing for additional properties and behaviors to be defined.
+  /// </summary>
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

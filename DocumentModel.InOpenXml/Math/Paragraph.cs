@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 ///   that contains one or more oMath elements that are in display mode. 
 ///   The oMath containers of a display math zone are not themselves considered inline math zones.
 /// </summary>
-public interface Paragraph: IElementCollection<IMathParagraphContent>, ICommonMathContent
+public class Paragraph: ModelElement<DXM.Paragraph>, ICommonMathContent
 {
   /// <summary>
   ///   Office Math Paragraph Properties.

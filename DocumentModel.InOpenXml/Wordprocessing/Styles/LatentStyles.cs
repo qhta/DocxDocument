@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents latent style information for a Wordprocessing document.
-/// This interface provides properties for default style locking, UI priority, visibility, primary style settings, and style count, enabling advanced management and customization of latent styles.
+/// This class provides properties for default style locking, UI priority, visibility, primary style settings, and style count, enabling advanced management and customization of latent styles.
 /// </summary>
-public partial interface LatentStyles
+public partial class LatentStyles
 {
   
   /// <summary>

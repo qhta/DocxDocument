@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the paper source settings for a section in a Wordprocessing document.
-/// This interface provides properties for specifying printer tray codes for the first page and non-first pages, enabling advanced configuration of paper source selection during printing.
+/// This class provides properties for specifying printer tray codes for the first page and non-first pages, enabling advanced configuration of paper source selection during printing.
 /// </summary>
-public interface PaperSource : ISectionPropertiesContent
+public class PaperSource : ModelElement<DXW.PaperSource>, ISectionPropertiesContent
 {
   /// <summary>
   /// Printer tray code for the first page.

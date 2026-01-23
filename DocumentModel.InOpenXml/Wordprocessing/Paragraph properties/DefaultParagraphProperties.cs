@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
   /// <summary>
   /// Represents the default paragraph properties for text formatting in a WordprocessingML document.
-  /// This interface extends <see cref="BaseParagraphProperties"/> and is used in <see cref="DocDefaults"/> to specify the default paragraph-level formatting applied to all paragraphs in the document unless overridden by more specific formatting.
+  /// This class extends <see cref="BaseParagraphProperties"/> and is used in <see cref="DocDefaults"/> to specify the default paragraph-level formatting applied to all paragraphs in the document unless overridden by more specific formatting.
   /// </summary>
   public class DefaultParagraphProperties : BaseParagraphProperties//<DXW.DefaultP>
   {

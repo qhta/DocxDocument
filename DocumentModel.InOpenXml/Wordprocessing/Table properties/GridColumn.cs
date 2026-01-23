@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///  Grid Column Definition.
 /// </summary>
-public interface GridColumn: ICollectionItem
+public class GridColumn: ModelElement<DXW.GridColumn>
 {
   /// <summary>
   ///   Grid Column Width

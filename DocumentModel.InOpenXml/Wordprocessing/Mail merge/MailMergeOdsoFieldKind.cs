@@ -7,11 +7,11 @@ namespace DocumentModel.Wordprocessing;
 public enum MailMergeOdsoFieldKind
 {
   /// <summary>
-  ///   Field Not Mapped.
+  ///   IField Not Mapped.
   /// </summary>
   Null,
   /// <summary>
-  ///   Field Mapping to Data Source IColumn.
+  ///   IField Mapping to Data Source IColumn.
   /// </summary>
   DbColumn
 }

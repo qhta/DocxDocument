@@ -11,11 +11,11 @@ public enum MultiLevelKind
   /// </summary>
   SingleLevel,
   /// <summary>
-  ///   Multilevel Numbering Definition.
+  ///   MultiLevelType Numbering Definition.
   /// </summary>
   Multilevel,
   /// <summary>
-  ///   Hybrid Multilevel Numbering Definition.
+  ///   Hybrid MultiLevelType Numbering Definition.
   /// </summary>
   HybridMultilevel
 }

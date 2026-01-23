@@ -4,9 +4,9 @@ namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
 /// Represents non-visual properties for connector shapes in a Wordprocessing document.
-/// This interface provides access to connection locks, start and end connection information, and extension data for connectors.
+/// This class provides access to connection locks, start and end connection information, and extension data for connectors.
 /// </summary>
-public interface NonVisualConnectorProperties : IExtendableElement
+public class NonVisualConnectorProperties : ModelElement<DXO10WDS.NonVisualConnectorProperties>, IExtendableElement
 {
   /// <summary>
   /// The set of locks applied to the connector shape, restricting certain types of modifications or interactions.
@@ -22,4 +22,6 @@ public interface NonVisualConnectorProperties : IExtendableElement
   /// The definition of the ending connection point for the connector, specifying how it attaches to other shapes.
   /// </summary>
   public ConnectionType? EndConnection { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

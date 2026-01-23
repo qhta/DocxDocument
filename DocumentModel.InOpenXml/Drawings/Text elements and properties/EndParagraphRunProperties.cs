@@ -1,9 +1,11 @@
+using DocumentFormat.OpenXml.EMMA;
+
 namespace DocumentModel.Drawings;
 
 /// <summary>
 ///   Represents formatting properties applied to the last run in a paragraph, including outline, fill, effects, highlight, underline, font, hyperlink, and text direction settings.
 /// </summary>
-public interface EndParagraphRunProperties : IExtendableElement
+public class EndParagraphRunProperties : ModelElement<DXD.EndParagraphRunProperties>, IExtendableElement
 {
   /// <summary>
   ///   Outline properties for the text.
@@ -84,4 +86,9 @@ public interface EndParagraphRunProperties : IExtendableElement
   ///   Indicates whether the text direction is right-to-left.
   /// </summary>
   public bool? RightToLeft { get; set; }
+
+  /// <summary>
+  /// List of extension properties for additional or future extensibility.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

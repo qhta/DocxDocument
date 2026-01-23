@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents formatting properties for a text run, including outline, fill, effects, highlight, underline, font, hyperlink, text direction, and collected drawing properties.
 /// </summary>
-public interface RunProperties : IExtendableElement
+public class RunProperties : ModelElement<DXD.RunProperties>, IExtendableElement
 {
   /// <summary>
   ///   Outline properties for the text run.
@@ -89,4 +89,9 @@ public interface RunProperties : IExtendableElement
   ///   Collected drawing properties for a text run.
   /// </summary>
   public DrawingProperties? DrawingProperties { get; set; }
+
+  /// <summary>
+  /// List of extension properties for the run properties, used for extensibility scenarios.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

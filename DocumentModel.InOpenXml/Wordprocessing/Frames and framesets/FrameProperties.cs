@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents the properties for a frame in a WordprocessingML document.
-///   This interface provides properties for drop caps, frame size, padding, text wrapping, positioning, alignment, height rules, and anchor locking, enabling advanced configuration and management of frames within document content.
+///   This class provides properties for drop caps, frame size, padding, text wrapping, positioning, alignment, height rules, and anchor locking, enabling advanced configuration and management of frames within document content.
 /// </summary>
 public partial class FrameProperties : ModelElement<DXW.FrameProperties>
 {

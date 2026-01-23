@@ -3,7 +3,7 @@ using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents non-visual properties for a group drawing shape in a Wordprocessing document.
-/// This interface provides configuration for group shape locks and extension data, enabling control over editing restrictions and extensibility for grouped shapes.
+/// This class provides configuration for group shape locks and extension data, enabling control over editing restrictions and extensibility for grouped shapes.
 /// </summary>
 public partial class NonVisualGroupDrawingShapeProperties : ModelElement
 {

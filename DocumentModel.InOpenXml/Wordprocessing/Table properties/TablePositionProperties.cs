@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the position properties for a table in a Wordprocessing document.
-/// This interface provides properties for specifying distances from text, anchor settings, and alignment, enabling precise control over table placement and layout within the document.
+/// This class provides properties for specifying distances from text, anchor settings, and alignment, enabling precise control over table placement and layout within the document.
 /// </summary>
 public partial class TablePositionProperties : ModelElement<DXW.TablePositionProperties>
 {

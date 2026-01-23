@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the font signature information for an embedded font in a WordprocessingML document.
-/// This interface provides properties for Unicode subset and code page bitfields, enabling advanced identification and compatibility checks for font usage and character support.
+/// This class provides properties for Unicode subset and code page bitfields, enabling advanced identification and compatibility checks for font usage and character support.
 /// </summary>
 public class FontSignature: ModelElement<DXW.FontSignature>
 {

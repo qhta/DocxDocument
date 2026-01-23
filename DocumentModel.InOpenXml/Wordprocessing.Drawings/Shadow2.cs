@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 ///   Represents the Office 2010+ advanced shadow effect for text runs in WordprocessingML documents.
-///   This interface provides comprehensive shadow effect capabilities, including blur, distance, direction, scaling, skewing, alignment, and color options, enabling sophisticated shadow rendering for text.
+///   This class provides comprehensive shadow effect capabilities, including blur, distance, direction, scaling, skewing, alignment, and color options, enabling sophisticated shadow rendering for text.
 /// </summary>
 public partial class Shadow2 : ModelElement
 {

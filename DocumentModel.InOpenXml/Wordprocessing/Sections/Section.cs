@@ -3,10 +3,10 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a section in a Word document.
 /// </summary>
-public interface Section : ICollectionItem
+public class Section : ModelElement
 {
-  /// <summary>
-  ///   Content of the section.
-  /// </summary>
-  public IStory Content { get; set; }
+  ///// <summary>
+  /////   Content of the section.
+  ///// </summary>
+  //public IStory Content { get; set; }
 }

@@ -3,6 +3,6 @@
 /// <summary>
 ///   Collection of NumberingInstance elements
 /// </summary>
-public interface NumberingInstances: IElementCollection<NumberingInstance>
+public class NumberingInstances: ElementCollection<NumberingInstance>
 {
 }

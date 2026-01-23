@@ -6,7 +6,7 @@ namespace DocumentModel;
 ///   Represents a collection of fallback content items used when no alternate content choice requirements can be satisfied.
 /// </summary>
 /// <remarks>
-///   This interface and defines the
+///   This class and defines the
 ///   fallback content within an <see cref="IAlternateContent"/> structure. The fallback serves as the default content
 ///   representation that is rendered when an Office application cannot satisfy the requirements of any choice in the
 ///   <see cref="IAlternateContent.Choices"/> collection. This typically occurs when a document created with a newer
@@ -24,6 +24,6 @@ namespace DocumentModel;
 ///   restored and properly rendered. This ensures no data loss occurs during the roundtrip between different Office
 ///   versions, even when some applications must use fallback representations.
 /// </remarks>
-public interface AlternateContentFallback: IElementCollection<CollectionItem>
+public class AlternateContentFallback: ModelElement<DX.AlternateContentFallback> //IElementCollection<CollectionItem>
 {
 }

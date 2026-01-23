@@ -2,26 +2,6 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents metadata describing a container for visual effects in DrawingML.
 /// </summary>
-/// <remarks>
-///   <para>
-///   The <b>EffectContainerType</b> interface defines the type and name of an effect container, which organizes
-///   and groups multiple visual effects (such as shadows, glows, blurs, and color transformations) for shapes,
-///   images, and other graphical elements in DrawingML.
-///   </para>
-///   <para>
-///   Effect containers enable hierarchical and sequential composition of effects, allowing complex visual treatments
-///   to be built from simpler effect primitives. The container type determines how effects are grouped and applied,
-///   while the name provides a human-readable identifier for referencing or documentation.
-///   </para>
-///   <para>
-///   Typical use cases include:
-///   <list type="bullet">
-///     <item><description>Distinguishing between effect groups (e.g., "outerEffects", "innerEffects")</description></item>
-///     <item><description>Identifying effect containers for reuse or inheritance</description></item>
-///     <item><description>Providing semantic meaning for effect collections</description></item>
-///   </list>
-///   </para>
-/// </remarks>
 public partial class EffectContainerType : ModelElement<DXD.EffectContainerType>
 {
     /// <summary>

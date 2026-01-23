@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents default text properties for a shape, including shape, body, list, and style settings.
 /// </summary>
-public interface TextDefault : IExtendableElement
+public class TextDefault : ModelElement<DXD.TextDefault>, IExtendableElement
 {
   /// <summary>
   ///   Default shape properties for text.
@@ -24,4 +24,9 @@ public interface TextDefault : IExtendableElement
   ///   Default shape style for text.
   /// </summary>
   public ShapeStyle? ShapeStyle { get; set; }
+
+  /// <summary>
+  /// List of extension properties for the text default, used for extensibility scenarios.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

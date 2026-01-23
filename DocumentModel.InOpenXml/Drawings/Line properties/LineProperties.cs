@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents line formatting properties, including width, cap, compound type, alignment, fill, dash, join, end properties, and extensions.
 /// </summary>
-public partial class LineProperties : DrawingProperty, ILinePropertiesExtendableElement
+public partial class LineProperties : ElementCollection<IDrawingProperty>, ILinePropertiesExtendableElement
 {
   /// <summary>
   ///   Specifies the line width in EMUs.

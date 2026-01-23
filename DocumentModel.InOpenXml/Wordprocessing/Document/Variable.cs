@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a document variable with a name and a string value in a WordprocessingML document.
-/// This interface extends <see cref = "CollectionItem"/> and provides properties for the variable name and value, enabling advanced storage and retrieval of custom metadata or automation variables within the document.
+/// This class extends <see cref = "CollectionItem"/> and provides properties for the variable name and value, enabling advanced storage and retrieval of custom metadata or automation variables within the document.
 /// </summary>
 public partial class Variable : ModelElement<DXW.DocumentVariable>
 {

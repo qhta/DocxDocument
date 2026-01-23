@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Interface for Run property
 /// </summary>
-public class RunProperty: CollectionItem
+public class RunProperty: ModelElement
 {
 
 }

@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 ///   Represents a position that delimited the end of a page 
 ///   when this document was last saved by an application which paginates its content. 
 /// </summary>
-public interface LastRenderedPageBreak: IRunContent
+public class LastRenderedPageBreak: ModelElement<DXW.LastRenderedPageBreak>, IRunContent
 {
 }

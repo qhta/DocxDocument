@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the collection of styles in a Wordprocessing document.
-/// This interface provides access to document default paragraph and run properties, latent style information, and defined styles, enabling advanced style management and formatting for document content.
+/// This class provides access to document default paragraph and run properties, latent style information, and defined styles, enabling advanced style management and formatting for document content.
 /// </summary>
 public partial interface Styles
 {

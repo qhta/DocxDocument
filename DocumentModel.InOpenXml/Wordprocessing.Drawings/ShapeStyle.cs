@@ -3,7 +3,7 @@ using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the style settings for a shape in a Wordprocessing document.
-/// This interface provides references to line, fill, effect, and font styles, enabling consistent visual formatting for shapes.
+/// This class provides references to line, fill, effect, and font styles, enabling consistent visual formatting for shapes.
 /// </summary>
 public partial class ShapeStyle : ModelElement
 {

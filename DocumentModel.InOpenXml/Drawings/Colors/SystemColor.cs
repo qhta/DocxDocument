@@ -4,71 +4,7 @@ namespace DocumentModel.Drawings;
 /// with optional transformations. System colors enable documents to adapt to the user's operating system
 /// theme and accessibility settings, providing better integration with the desktop environment.
 /// </summary>
-/// <remarks>
-/// <para>
-/// The System Color model allows Office documents to reference colors defined by the operating system,
-/// such as window background colors, button face colors, menu text colors, and other UI elements.
-/// This provides several benefits:
-/// <list type="bullet">
-/// <item><description><b>OS integration:</b> Documents adapt to the user's Windows theme (Light, Dark, High Contrast)</description></item>
-/// <item><description><b>Accessibility:</b> Automatically respects user accessibility settings and color preferences</description></item>
-/// <item><description><b>Consistency:</b> Matches the look and feel of other applications on the system</description></item>
-/// <item><description><b>Dynamic updates:</b> Changes when the user switches system themes or color schemes</description></item>
-/// </list>
-/// </para>
-/// <para>
-/// System colors are particularly important for:
-/// <list type="bullet">
-/// <item><description>High contrast mode support for visually impaired users</description></item>
-/// <item><description>Dark mode integration on Windows 10/11</description></item>
-/// <item><description>Custom Windows themes that override default colors</description></item>
-/// <item><description>Terminal Services/Remote Desktop environments with user-specific themes</description></item>
-/// </list>
-/// </para>
-/// <para>
-/// The <see cref = "LastColor"/> property stores the most recently resolved RGB value for the system color.
-/// This serves as a fallback when the document is viewed on systems where the system color cannot be
-/// resolved (e.g., non-Windows platforms, or when specific system colors are unavailable). Applications
-/// can use this cached value to provide consistent appearance across different environments.
-/// </para>
-/// <para>
-/// In addition to the base system color reference, this model supports the full range of color transformations
-/// (tint, shade, alpha, HSL adjustments, RGB modulation, etc.) allowing fine-tuned variations of
-/// system colors while maintaining the connection to OS-level settings.
-/// </para>
-/// <para>
-/// System colors are defined by Windows API constants (e.g., COLOR_WINDOW, COLOR_MENUTEXT, COLOR_HIGHLIGHT)
-/// and their values can vary significantly depending on the user's Windows theme, high contrast settings,
-/// and personalization preferences.
-/// </para>
-/// </remarks>
-/// <example>
-/// <code>
-/// // Use the system window background color
-/// var windowBackground = new SystemColor 
-/// { 
-///     Val = SystemColorKind.Window,
-///     LastColor = new RGB(0xFFFFFF)  // Fallback: white
-/// };
-/// 
-/// // Use the system highlight color with transparency
-/// var transparentHighlight = new SystemColor
-/// {
-///     Val = SystemColorKind.Highlight,
-///     Alpha = 50000,                // 50% transparent
-///     LastColor = new RGB(0x0078D4)  // Fallback: blue
-/// };
-/// 
-/// // Create a lighter version of the system button face color
-/// var lightButtonFace = new SystemColor
-/// {
-///     Val = SystemColorKind.ButtonFace,
-///     Tint = new Percent(40),       // 40% lighter
-///     LastColor = new RGB(0xF0F0F0)  // Fallback: light gray
-/// };
-/// </code>
-/// </example>
-public partial class SystemColor : DrawingColor
+public partial class SystemColor : DrawingColor<DXD.SystemColor>
 {
   /// <summary>
   /// Gets or sets the system color identifier that references a specific OS-defined color.

@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the page borders settings for a section in a Wordprocessing document.
-/// This interface provides properties for z-ordering, display options, border positioning, and individual borders for each page edge, enabling advanced configuration of page border appearance and behavior.
+/// This class provides properties for z-ordering, display options, border positioning, and individual borders for each page edge, enabling advanced configuration of page border appearance and behavior.
 /// </summary>
-public interface PageBorders : ISectionPropertiesContent
+public class PageBorders : ModelElement<DXW.PageBorders>, ISectionPropertiesContent
 {
   
   /// <summary>

@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the table grid configuration for a table in a Wordprocessing document.
-/// This interface provides access to grid definitions and change tracking, enabling management of column structure and historical grid revisions.
+/// This class provides access to grid definitions and change tracking, enabling management of column structure and historical grid revisions.
 /// </summary>
-public interface TableGrid : BaseTableGrid
+public class TableGrid : BaseTableGrid<DXW.TableGrid>
 {
   
   /// <summary>

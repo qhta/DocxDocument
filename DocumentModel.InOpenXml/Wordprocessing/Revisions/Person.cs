@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a person associated with a revision in a WordprocessingML document.
-/// This interface extends <see cref="CollectionItem"/> and provides properties for contact information, author name, and presence information, enabling tracking and management of user metadata for collaborative editing and revision history.
+/// This class extends <see cref="CollectionItem"/> and provides properties for contact information, author name, and presence information, enabling tracking and management of user metadata for collaborative editing and revision history.
 /// </summary>
-public interface Person: ICollectionItem
+public class Person: ModelElement<DXO13W.Person>, ICollectionItem
 {
 
   /// <summary>

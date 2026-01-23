@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
   /// Provides complete control over character-level formatting including font name, size, style, color, spacing, effects, and advanced typography features.
   /// Corresponds to the DocumentFormat.OpenXml.Wordprocessing.RunProperties class and contains all properties for comprehensive run formatting.
   /// </summary>
-  public interface RunProperties: BaseRunProperties
+  public class RunProperties: BaseRunProperties<DXW.RunProperties>
   {
     
     /// <summary>

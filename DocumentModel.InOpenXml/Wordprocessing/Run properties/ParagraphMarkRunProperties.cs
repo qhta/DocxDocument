@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
   /// <summary>
   /// Represents run properties for the paragraph mark, used in <see cref="ParagraphProperties"/>.
-  /// This interface extends <see cref="BaseParagraphMarkRunProperties"/> and provides support for revision tracking of paragraph mark formatting changes.
+  /// This class extends <see cref="BaseParagraphMarkRunProperties"/> and provides support for revision tracking of paragraph mark formatting changes.
   /// </summary>
-  public interface ParagraphMarkRunProperties : BaseParagraphMarkRunProperties
+  public class ParagraphMarkRunProperties : BaseParagraphMarkRunProperties<DXW.ParagraphMarkRunProperties>
   {
     
     /// <summary>

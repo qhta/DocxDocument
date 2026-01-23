@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the set of borders for a table cell in a Wordprocessing document.
-/// This interface provides properties for configuring the top, left, start, bottom, right, end, inside horizontal, inside vertical, and diagonal borders, enabling advanced formatting and appearance control for cell edges and internal lines.
+/// This class provides properties for configuring the top, left, start, bottom, right, end, inside horizontal, inside vertical, and diagonal borders, enabling advanced formatting and appearance control for cell edges and internal lines.
 /// </summary>
 public partial class TableCellBorders : ModelElement<DXW.TableCellBorders>
 {

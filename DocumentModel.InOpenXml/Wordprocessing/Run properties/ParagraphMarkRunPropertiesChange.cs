@@ -1,20 +1,10 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a change to paragraph mark run properties, used in <see cref = "ParagraphMarkRunProperties"/>.
-/// This interface annotates <see cref = "PreviousParagraphMarkRunProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for paragraph mark formatting.
+/// This class annotates <see cref = "PreviousParagraphMarkRunProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for paragraph mark formatting.
 /// </summary>
-public partial class ParagraphMarkRunPropertiesChange : ModelElement<DXW.ParagraphMarkRunPropertiesChange>
+public partial class ParagraphMarkRunPropertiesChange : IdentifiedChange<DXW.ParagraphMarkRunPropertiesChange>
 {
-    /// <summary>
-    /// Author of the change to the paragraph mark run properties.
-    /// </summary>
-    public string? Author { get => _Author; set => UpdateField(ref _Author, value, nameof(Author)); }
-
-    private string? _Author;
-    /// <summary>
-    /// Date of the change to the paragraph mark run properties.
-    /// </summary>
-    public DateTime? Date { get; set; }
     /// <summary>
     /// Annotation identifier for the change, used to uniquely identify the revision.
     /// </summary>

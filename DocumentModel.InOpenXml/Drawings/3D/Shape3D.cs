@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Defines properties for a 3-D shape, including depth, extrusion, contour, material, bevels, and color settings.
 /// </summary>
-public interface Shape3D : IExtendableElement
+public class Shape3D : ModelElement<DXDD.Shape3D>, IExtendableElement
 {
   /// <summary>
   ///   Shape depth along the Z-axis.
@@ -44,4 +44,9 @@ public interface Shape3D : IExtendableElement
   ///   Color used for the contour.
   /// </summary>
   public ContourColor? ContourColor { get; set; }
+
+  /// <summary>
+  /// Gets or sets the list of extensions associated with this object.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

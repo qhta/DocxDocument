@@ -3,7 +3,7 @@ using DocumentModel.Vml;
 
 /// <summary>
 /// Represents the base definition for a picture bullet in a WordprocessingML document.
-/// This interface provides properties for various VML shapes and image elements that can be used as the visual representation of a picture bullet, enabling advanced customization of list bullets using images and vector graphics.
+/// This class provides properties for various VML shapes and image elements that can be used as the visual representation of a picture bullet, enabling advanced customization of list bullets using images and vector graphics.
 /// </summary>
 public partial class PictureBulletBase : ModelElement
 {

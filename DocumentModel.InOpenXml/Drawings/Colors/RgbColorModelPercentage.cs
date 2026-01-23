@@ -52,7 +52,7 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
-public partial class RgbColorModelPercentage : DrawingColor
+public partial class RgbColorModelPercentage : DrawingColor<DXD.RgbColorModelPercentage>
 {
   /// <summary>
   /// Red component as a percentage value.

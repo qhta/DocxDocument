@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a custom XML attribute in a WordprocessingML document.
-/// This interface extends <see cref="CollectionItem"/> and provides properties for the attribute UriString, name, and value, enabling advanced storage and management of custom metadata or schema-specific attributes within custom XML parts.
+/// This class extends <see cref="CollectionItem"/> and provides properties for the attribute UriString, name, and value, enabling advanced storage and management of custom metadata or schema-specific attributes within custom XML parts.
 /// </summary>
-public interface CustomXmlAttribute: ICollectionItem
+public class CustomXmlAttribute: ModelElement<DXW.CustomXmlAttribute>
 {
   
   /// <summary>

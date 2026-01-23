@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents hidden 3D scene properties, including camera, lighting, and backdrop configuration.
 /// </summary>
-public interface HiddenScene3D : IExtendableElement
+public class HiddenScene3D : ModelElement<DXO10D.HiddenScene3D>, IExtendableElement
 {
   /// <summary>
   ///   Camera settings for the hidden 3D scene.
@@ -19,4 +19,9 @@ public interface HiddenScene3D : IExtendableElement
   ///   Backdrop plane for the hidden 3D scene.
   /// </summary>
   public Backdrop? Backdrop { get; set; }
+
+  /// <summary>
+  /// List of extension elements.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

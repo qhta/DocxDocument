@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents an image effect, including visibility, a variety of artistic effects, image adjustments, and extension options.
 /// </summary>
-public interface ImageEffect: ICollectionItem, IExtendableElement
+public class ImageEffect: ModelElement<DXO10D.ImageEffect>, IExtendableElement
 {
   /// <summary>
   /// Gets or sets a value indicating whether the effect is visible.
@@ -144,4 +144,9 @@ public interface ImageEffect: ICollectionItem, IExtendableElement
   /// Sharpen or soften adjustment.
   /// </summary>
   public SharpenSoften? SharpenSoften { get; set; }
+
+  /// <summary>
+  /// List of extensions for the image effect.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

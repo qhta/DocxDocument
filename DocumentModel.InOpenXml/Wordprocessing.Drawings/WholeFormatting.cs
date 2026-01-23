@@ -3,7 +3,7 @@ using DocumentModel.Drawings;
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents formatting settings that apply to an entire drawing element in a Wordprocessing document.
-/// This interface provides properties for configuring outline, visual effects, and effect graphs, enabling consistent and advanced appearance for the whole drawing object.
+/// This class provides properties for configuring outline, visual effects, and effect graphs, enabling consistent and advanced appearance for the whole drawing object.
 /// </summary>
 public partial class WholeFormatting : ModelElement
 {

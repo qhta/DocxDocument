@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// Basic color type. Contains name and RGB values.
 /// </summary>
 
-public interface IColor
+public class Color: ModelElement
 {
   ///// <summary>
   /////   Gets RGB value of the color.
@@ -28,5 +28,8 @@ public interface IColor
   ///// </summary>
   ///// <returns></returns>
   //public string? ToString();
+}
 
+public class Color<T> : ModelElement<T> where T : DX.OpenXmlElement
+{
 }

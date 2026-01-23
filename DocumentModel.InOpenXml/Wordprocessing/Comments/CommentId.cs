@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Represents identifiers for a comment in a WordprocessingML document, providing both paragraph-level and durable identification.
-///   This interface extends <see cref="CollectionItem"/> and enables stable references to comments for tracking, synchronization, and platform transitions. It supports paragraph-level tracking and global identification for collaborative editing and document operations.
+///   This class extends <see cref="CollectionItem"/> and enables stable references to comments for tracking, synchronization, and platform transitions. It supports paragraph-level tracking and global identification for collaborative editing and document operations.
 /// </summary>
-public interface CommentId: ICollectionItem
+public class CommentId: ModelElement<DXO19WC.CommentId>
 {
   
   /// <summary>

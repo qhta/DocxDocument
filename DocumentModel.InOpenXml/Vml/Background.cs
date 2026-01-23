@@ -37,5 +37,5 @@ public partial class Background : ModelElement<DXV.Background>
     /// <summary>
     ///   Fill.
     /// </summary>
-    public Fill? Fill { get; set; }
+    public DMD.Fill? Fill { get; set; }
 }

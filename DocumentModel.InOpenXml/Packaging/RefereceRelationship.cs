@@ -3,7 +3,7 @@ using DocumentFormat.OpenXml.EMMA;
 namespace DocumentModel.Packaging;
 /// <summary>
 /// Represents an identified relationship type in a WordprocessingML document.
-/// This interface provides a property for the relationship ID, enabling advanced linking and referencing of document parts, external files, or resources within the document structure.
+/// This class provides a property for the relationship ID, enabling advanced linking and referencing of document parts, external files, or resources within the document structure.
 /// </summary>
 public abstract partial class ReferenceRelationship<T> : ModelElement where T : DXPack.ReferenceRelationship
 {

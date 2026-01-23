@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a proofing error anchor in a WordprocessingML document.
 /// This class extends <see cref="ICommonContent"/> and provides a property for the proofing error type, enabling advanced tracking and management of spelling, grammar, or other proofing errors within the document content.
 /// </summary>
-public interface ProofError : ICommonContent
+public class ProofError : ModelElement<DXW.ProofError>
 {
   
   /// <summary>

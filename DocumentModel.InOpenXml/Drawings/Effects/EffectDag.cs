@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 /// <remarks>
 ///   <para>
-///   The <b>EffectDag</b> interface models a complex effect composition system where multiple effects and effect containers
+///   The <b>EffectDag</b> models a complex effect composition system where multiple effects and effect containers
 ///   are connected in a directed acyclic graph. This allows for advanced layering, dependency management, and non-linear
 ///   effect application to shapes, images, and other graphical elements.
 ///   </para>

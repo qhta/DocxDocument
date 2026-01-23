@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the relative width settings for a drawing element in a Wordprocessing document.
-/// This interface provides configuration for horizontal size adjustment, including the reference object and percentage width relative to another element.
+/// This class provides configuration for horizontal size adjustment, including the reference object and percentage width relative to another element.
 /// </summary>
 public partial class RelativeWidth : ModelElement
 {

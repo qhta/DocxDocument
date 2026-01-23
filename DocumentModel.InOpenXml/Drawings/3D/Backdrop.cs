@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a backdrop plane in 3D drawing space, defined by an anchor point, normal vector, and up vector.
 /// </summary>
-public interface Backdrop: IExtendableElement
+public class Backdrop: ModelElement<DXD.Backdrop>, IExtendableElement
 {
   /// <summary>
   /// Anchor point of the backdrop plane.
@@ -19,4 +19,9 @@ public interface Backdrop: IExtendableElement
   /// Up vector of the backdrop plane.
   /// </summary>
   public Vector3DType? UpVector { get; set; }
+
+  /// <summary>
+  /// L
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

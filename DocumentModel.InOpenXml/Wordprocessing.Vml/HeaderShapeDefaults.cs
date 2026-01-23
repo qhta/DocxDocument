@@ -3,7 +3,7 @@ using DocumentModel.Vml;
 namespace DocumentModel.Wordprocessing.Vml;
 /// <summary>
 /// Represents the default properties for VML objects in the header and footer of a WordprocessingML document.
-/// This interface provides properties for default shape properties and layout, enabling consistent formatting and positioning of VML shapes in document headers and footers.
+/// This class provides properties for default shape properties and layout, enabling consistent formatting and positioning of VML shapes in document headers and footers.
 /// </summary>
 public partial class HeaderShapeDefaults : ModelElement<DXW.HeaderShapeDefaults>
 {

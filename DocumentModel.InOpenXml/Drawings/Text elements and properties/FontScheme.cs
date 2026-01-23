@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a font scheme, including its name and definitions for major and minor fonts.
 /// </summary>
-public interface FontScheme : IExtendableElement
+public class FontScheme : ModelElement<DXD.FontScheme>, IExtendableElement
 {
   /// <summary>
   ///   Name of the font scheme.
@@ -19,4 +19,9 @@ public interface FontScheme : IExtendableElement
   ///   Minor font definition.
   /// </summary>
   public MinorFont? MinorFont { get; set; }
+
+  /// <summary>
+  /// List of extension properties for the font scheme, used for extensibility scenarios.
+  /// </summary>
+  public ExtensionList? ExtensionList { get; set; }
 }

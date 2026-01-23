@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents style conditional table formatting properties for a table in a Wordprocessing document.
-/// This interface provides properties for conditional formatting type, paragraph and run properties, and conditional formatting for tables, rows, and cells, enabling advanced styling and formatting options based on table style rules.
+/// This class provides properties for conditional formatting type, paragraph and run properties, and conditional formatting for tables, rows, and cells, enabling advanced styling and formatting options based on table style rules.
 /// </summary>
-public interface TableStyleProperties: ICollectionItem
+public class TableStyleProperties: ModelElement<DXW.TableStyleProperties>
 {
   
   /// <summary>

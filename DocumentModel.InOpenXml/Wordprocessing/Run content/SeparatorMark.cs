@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a separator mark within the current run in a WordprocessingML document.
 /// A separator mark is a horizontal line used to separate the main document story from the contents of footnotes or endnotes on a page. It is typically used in the context of separator footnotes or endnotes, and can indicate either a standard or continuation separator.
 /// </summary>
-public interface SeparatorMark : IRunContent
+public class SeparatorMark : ModelElement<DXW.SeparatorMark>, IRunContent
 {
   
   /// <summary>
