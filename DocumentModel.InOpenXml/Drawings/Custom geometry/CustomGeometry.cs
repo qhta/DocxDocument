@@ -8,6 +8,10 @@ public partial class CustomGeometry : ModelElement<DXD.CustomGeometry>
     ///   List of adjustment values for the custom geometry.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomGeometry.AdjustValueList))]
+    /// <summary>
+    ///   List of adjustment values for the custom geometry.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.CustomGeometry))]
     public AdjustValueList? AdjustValueList { get => _AdjustValueList; set => UpdateField(ref _AdjustValueList, value, nameof(AdjustValueList)); }
 
     private AdjustValueList? _AdjustValueList;
@@ -15,6 +19,10 @@ public partial class CustomGeometry : ModelElement<DXD.CustomGeometry>
     ///   List of shape guides used to define geometry.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomGeometry.ShapeGuideList))]
+    /// <summary>
+    ///   List of shape guides used to define geometry.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.CustomGeometry))]
     public ShapeGuideList? ShapeGuideList { get => _ShapeGuideList; set => UpdateField(ref _ShapeGuideList, value, nameof(ShapeGuideList)); }
 
     private ShapeGuideList? _ShapeGuideList;
@@ -22,6 +30,10 @@ public partial class CustomGeometry : ModelElement<DXD.CustomGeometry>
     ///   List of shape adjust handles for interactive adjustments.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomGeometry.AdjustHandleList))]
+    /// <summary>
+    ///   List of shape adjust handles for interactive adjustments.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.CustomGeometry))]
     public AdjustHandleList? AdjustHandleList { get => _AdjustHandleList; set => UpdateField(ref _AdjustHandleList, value, nameof(AdjustHandleList)); }
 
     private AdjustHandleList? _AdjustHandleList;
@@ -29,6 +41,10 @@ public partial class CustomGeometry : ModelElement<DXD.CustomGeometry>
     ///   List of connection sites for attaching connectors.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomGeometry.ConnectionSiteList))]
+    /// <summary>
+    ///   List of connection sites for attaching connectors.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.CustomGeometry))]
     public ConnectionSiteList? ConnectionSiteList { get => _ConnectionSiteList; set => UpdateField(ref _ConnectionSiteList, value, nameof(ConnectionSiteList)); }
 
     private ConnectionSiteList? _ConnectionSiteList;
@@ -36,6 +52,10 @@ public partial class CustomGeometry : ModelElement<DXD.CustomGeometry>
     ///   Rectangle that defines the text area within the shape.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomGeometry.Rectangle))]
+    /// <summary>
+    ///   Rectangle that defines the text area within the shape.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.CustomGeometry))]
     public Rectangle? Rectangle { get => _Rectangle; set => UpdateField(ref _Rectangle, value, nameof(Rectangle)); }
 
     private Rectangle? _Rectangle;
@@ -43,6 +63,10 @@ public partial class CustomGeometry : ModelElement<DXD.CustomGeometry>
     ///   List of paths that describe the outline of the custom geometry.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomGeometry.PathList))]
+    /// <summary>
+    ///   List of paths that describe the outline of the custom geometry.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.CustomGeometry))]
     public PathList? PathList { get => _PathList; set => UpdateField(ref _PathList, value, nameof(PathList)); }
 
     private PathList? _PathList;

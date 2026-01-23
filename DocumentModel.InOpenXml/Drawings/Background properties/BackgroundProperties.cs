@@ -8,6 +8,10 @@ public partial class BackgroundProperties : ModelElement<DXO13D.BackgroundProper
     /// Gets or sets the black and white mode for background rendering.
     /// </summary>
     [OpenXmlProperty(nameof(DXO13D.BackgroundProperties.Mode))]
+    /// <summary>
+    /// Gets or sets the black and white mode for background rendering.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO13D.BackgroundProperties))]
     public BlackWhiteMode? Mode { get => _Mode; set => UpdateField(ref _Mode, value, nameof(Mode)); }
 
     private BlackWhiteMode? _Mode;
@@ -15,6 +19,10 @@ public partial class BackgroundProperties : ModelElement<DXO13D.BackgroundProper
     /// Gets or sets the pure black and white mode for background rendering.
     /// </summary>
     [OpenXmlProperty(nameof(DXO13D.BackgroundProperties.Pure))]
+    /// <summary>
+    /// Gets or sets the pure black and white mode for background rendering.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO13D.BackgroundProperties))]
     public BlackWhiteMode? Pure { get => _Pure; set => UpdateField(ref _Pure, value, nameof(Pure)); }
 
     private BlackWhiteMode? _Pure;
@@ -22,6 +30,10 @@ public partial class BackgroundProperties : ModelElement<DXO13D.BackgroundProper
     /// Gets or sets the normal black and white mode for background rendering.
     /// </summary>
     [OpenXmlProperty(nameof(DXO13D.BackgroundProperties.Normal))]
+    /// <summary>
+    /// Gets or sets the normal black and white mode for background rendering.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO13D.BackgroundProperties))]
     public BlackWhiteMode? Normal { get => _Normal; set => UpdateField(ref _Normal, value, nameof(Normal)); }
 
     private BlackWhiteMode? _Normal;
@@ -29,6 +41,10 @@ public partial class BackgroundProperties : ModelElement<DXO13D.BackgroundProper
     /// Gets or sets the target screen size for which the background is optimized.
     /// </summary>
     [OpenXmlProperty(nameof(DXO13D.BackgroundProperties.TargetScreenSize))]
+    /// <summary>
+    /// Gets or sets the target screen size for which the background is optimized.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO13D.BackgroundProperties))]
     public TargetScreenSize? TargetScreenSize { get => _TargetScreenSize; set => UpdateField(ref _TargetScreenSize, value, nameof(TargetScreenSize)); }
 
     private TargetScreenSize? _TargetScreenSize;

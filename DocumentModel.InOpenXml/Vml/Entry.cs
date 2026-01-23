@@ -8,6 +8,10 @@ public partial class Entry : ModelElement<DXVO.Entry>
     ///   New Group ID
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Entry.New))]
+    /// <summary>
+    ///   New Group ID
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Entry))]
     public Int32? New { get => _New; set => UpdateField(ref _New, value, nameof(New)); }
 
     private Int32? _New;
@@ -15,6 +19,10 @@ public partial class Entry : ModelElement<DXVO.Entry>
     ///   Old Group ID
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Entry.Old))]
+    /// <summary>
+    ///   Old Group ID
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Entry))]
     public Int32? Old { get => _Old; set => UpdateField(ref _Old, value, nameof(Old)); }
 
     private Int32? _Old;

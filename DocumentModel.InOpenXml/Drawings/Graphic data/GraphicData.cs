@@ -7,6 +7,7 @@ public partial class GraphicData : ModelElement<DXD.GraphicData>
     /// <summary>
     ///   Uniform Resource Identifier for the graphic object.
     /// </summary>
+    [OpenXmlElement(typeof(DXD.GraphicData))]
     public string? UriString { get => _UriString; set => UpdateField(ref _UriString, value, nameof(UriString)); }
 
     private string? _UriString;

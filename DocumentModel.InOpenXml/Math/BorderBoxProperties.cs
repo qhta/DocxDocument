@@ -8,6 +8,10 @@ public partial class BorderBoxProperties : ModelElement<DXM.BorderBoxProperties>
     ///   Hide Top Edge.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.BorderBoxProperties.HideTop))]
+    /// <summary>
+    ///   Hide Top Edge.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.BorderBoxProperties))]
     public bool? HideTop { get => _HideTop; set => UpdateField(ref _HideTop, value, nameof(HideTop)); }
 
     private bool? _HideTop;
@@ -15,6 +19,10 @@ public partial class BorderBoxProperties : ModelElement<DXM.BorderBoxProperties>
     ///   Hide Bottom Edge.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.BorderBoxProperties.HideBottom))]
+    /// <summary>
+    ///   Hide Bottom Edge.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.BorderBoxProperties))]
     public bool? HideBottom { get => _HideBottom; set => UpdateField(ref _HideBottom, value, nameof(HideBottom)); }
 
     private bool? _HideBottom;
@@ -22,6 +30,10 @@ public partial class BorderBoxProperties : ModelElement<DXM.BorderBoxProperties>
     ///   Hide Left Edge.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.BorderBoxProperties.HideLeft))]
+    /// <summary>
+    ///   Hide Left Edge.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.BorderBoxProperties))]
     public bool? HideLeft { get => _HideLeft; set => UpdateField(ref _HideLeft, value, nameof(HideLeft)); }
 
     private bool? _HideLeft;
@@ -29,6 +41,10 @@ public partial class BorderBoxProperties : ModelElement<DXM.BorderBoxProperties>
     ///   Hide Right Edge.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.BorderBoxProperties.HideRight))]
+    /// <summary>
+    ///   Hide Right Edge.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.BorderBoxProperties))]
     public bool? HideRight { get => _HideRight; set => UpdateField(ref _HideRight, value, nameof(HideRight)); }
 
     private bool? _HideRight;
@@ -36,6 +52,10 @@ public partial class BorderBoxProperties : ModelElement<DXM.BorderBoxProperties>
     ///   Border Box Strikethrough Horizontal.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.BorderBoxProperties.StrikeHorizontal))]
+    /// <summary>
+    ///   Border Box Strikethrough Horizontal.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.BorderBoxProperties))]
     public bool? StrikeHorizontal { get => _StrikeHorizontal; set => UpdateField(ref _StrikeHorizontal, value, nameof(StrikeHorizontal)); }
 
     private bool? _StrikeHorizontal;
@@ -43,6 +63,10 @@ public partial class BorderBoxProperties : ModelElement<DXM.BorderBoxProperties>
     ///   Border Box Strikethrough Vertical.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.BorderBoxProperties.StrikeVertical))]
+    /// <summary>
+    ///   Border Box Strikethrough Vertical.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.BorderBoxProperties))]
     public bool? StrikeVertical { get => _StrikeVertical; set => UpdateField(ref _StrikeVertical, value, nameof(StrikeVertical)); }
 
     private bool? _StrikeVertical;
@@ -50,6 +74,10 @@ public partial class BorderBoxProperties : ModelElement<DXM.BorderBoxProperties>
     ///   Border Box Strikethrough Bottom-Left to Top-Right.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.BorderBoxProperties.StrikeBottomLeftToTopRight))]
+    /// <summary>
+    ///   Border Box Strikethrough Bottom-Left to Top-Right.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.BorderBoxProperties))]
     public bool? StrikeBottomLeftToTopRight { get => _StrikeBottomLeftToTopRight; set => UpdateField(ref _StrikeBottomLeftToTopRight, value, nameof(StrikeBottomLeftToTopRight)); }
 
     private bool? _StrikeBottomLeftToTopRight;
@@ -57,6 +85,10 @@ public partial class BorderBoxProperties : ModelElement<DXM.BorderBoxProperties>
     ///   Border Box Strikethrough Top-Left to Bottom-Right.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.BorderBoxProperties.StrikeTopLeftToBottomRight))]
+    /// <summary>
+    ///   Border Box Strikethrough Top-Left to Bottom-Right.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.BorderBoxProperties))]
     public bool? StrikeTopLeftToBottomRight { get => _StrikeTopLeftToBottomRight; set => UpdateField(ref _StrikeTopLeftToBottomRight, value, nameof(StrikeTopLeftToBottomRight)); }
 
     private bool? _StrikeTopLeftToBottomRight;
@@ -64,6 +96,10 @@ public partial class BorderBoxProperties : ModelElement<DXM.BorderBoxProperties>
     ///   Specifies formatting of border-box object argument.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.BorderBoxProperties.ControlProperties))]
+    /// <summary>
+    ///   Specifies formatting of border-box object argument.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.BorderBoxProperties))]
     public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
 
     private ControlProperties? _ControlProperties;

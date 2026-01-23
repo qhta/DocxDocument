@@ -8,6 +8,10 @@ public partial class Scene3DType : ModelElement<DXD.Scene3DType>, IExtendableEle
     ///   Camera settings for the 3-D scene.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.Scene3DType.Camera))]
+    /// <summary>
+    ///   Camera settings for the 3-D scene.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.Scene3DType))]
     public Camera? Camera { get => _Camera; set => UpdateField(ref _Camera, value, nameof(Camera)); }
 
     private Camera? _Camera;
@@ -15,6 +19,10 @@ public partial class Scene3DType : ModelElement<DXD.Scene3DType>, IExtendableEle
     ///   Light rig configuration for the 3-D scene.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.Scene3DType.LightRig))]
+    /// <summary>
+    ///   Light rig configuration for the 3-D scene.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.Scene3DType))]
     public LightRig? LightRig { get => _LightRig; set => UpdateField(ref _LightRig, value, nameof(LightRig)); }
 
     private LightRig? _LightRig;
@@ -22,6 +30,10 @@ public partial class Scene3DType : ModelElement<DXD.Scene3DType>, IExtendableEle
     ///   Backdrop plane for the 3-D scene.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.Scene3DType.Backdrop))]
+    /// <summary>
+    ///   Backdrop plane for the 3-D scene.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.Scene3DType))]
     public Backdrop? Backdrop { get => _Backdrop; set => UpdateField(ref _Backdrop, value, nameof(Backdrop)); }
 
     private Backdrop? _Backdrop;
@@ -29,6 +41,10 @@ public partial class Scene3DType : ModelElement<DXD.Scene3DType>, IExtendableEle
     /// List of extension elements.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.Scene3DType.ExtensionList))]
+    /// <summary>
+    /// List of extension elements.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.Scene3DType))]
     public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
     private ExtensionList? _ExtensionList;

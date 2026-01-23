@@ -9,12 +9,17 @@ public partial class DocPartTypes : ModelElement<DXW.DocPartTypes>
     /// Indicates whether the entry is of all types.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.DocPartTypes.All))]
+    /// <summary>
+    /// Indicates whether the entry is of all types.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.DocPartTypes))]
     public bool? All { get => _All; set => UpdateField(ref _All, value, nameof(All)); }
 
     private bool? _All;
     /// <summary>
     /// Specific document part type associated with the entry.
     /// </summary>
+    [OpenXmlElement(typeof(DXW.DocPartTypes))]
     public DocPartKind? DocPartType { get => _DocPartType; set => UpdateField(ref _DocPartType, value, nameof(DocPartType)); }
 
     private DocPartKind? _DocPartType;

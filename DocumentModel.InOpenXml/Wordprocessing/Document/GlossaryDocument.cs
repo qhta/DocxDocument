@@ -9,6 +9,10 @@ public partial class GlossaryDocument : ModelElement<DXW.GlossaryDocument>
     ///   Document background, specifying the image or fill for every page of the glossary document.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.GlossaryDocument.DocumentBackground))]
+    /// <summary>
+    ///   Document background, specifying the image or fill for every page of the glossary document.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.GlossaryDocument))]
     public DocumentBackground? DocumentBackground { get => _DocumentBackground; set => UpdateField(ref _DocumentBackground, value, nameof(DocumentBackground)); }
 
     private DocumentBackground? _DocumentBackground;
@@ -16,6 +20,10 @@ public partial class GlossaryDocument : ModelElement<DXW.GlossaryDocument>
     ///   List of glossary document entries, providing access to and management of reusable document parts.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.GlossaryDocument.DocParts))]
+    /// <summary>
+    ///   List of glossary document entries, providing access to and management of reusable document parts.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.GlossaryDocument))]
     public DocParts? DocParts { get => _DocParts; set => UpdateField(ref _DocParts, value, nameof(DocParts)); }
 
     private DocParts? _DocParts;

@@ -9,6 +9,10 @@ public partial class StyleSet : ModelElement<DXO10W.StyleSet>
     /// Identifier for the style set.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10W.StyleSet.Id))]
+    /// <summary>
+    /// Identifier for the style set.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10W.StyleSet))]
     public UInt32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
     private UInt32? _Id;
@@ -16,6 +20,10 @@ public partial class StyleSet : ModelElement<DXO10W.StyleSet>
     /// Value indicating the state or setting of the style set.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10W.StyleSet.Val))]
+    /// <summary>
+    /// Value indicating the state or setting of the style set.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10W.StyleSet))]
     public OnOffKind? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
     private OnOffKind? _Val;

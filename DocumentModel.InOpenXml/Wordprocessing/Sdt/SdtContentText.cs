@@ -9,6 +9,10 @@ public partial class SdtContentText : ModelElement<DXW.SdtContentText>
     /// Indicates whether soft line breaks (multiline input) are allowed in the text content control.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.SdtContentText.MultiLine))]
+    /// <summary>
+    /// Indicates whether soft line breaks (multiline input) are allowed in the text content control.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.SdtContentText))]
     public bool? MultiLine { get => _MultiLine; set => UpdateField(ref _MultiLine, value, nameof(MultiLine)); }
 
     private bool? _MultiLine;

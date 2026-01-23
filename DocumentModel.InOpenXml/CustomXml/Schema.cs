@@ -30,6 +30,14 @@ public partial class Schema : ModelElement<DXCXSR.Schema>
     ///   This is used to associate XML elements in the custom XML data with their corresponding schema definitions.
     /// </remarks>
     [OpenXmlProperty(nameof(DXCXSR.Schema.Uri))]
+    /// <summary>
+    ///  Namespace UriString that uniquely identifies this XML schema.
+    /// </summary>
+    /// <remarks>
+    ///   The namespace UriString identifies the schema and matches the target namespace defined in the schema file.
+    ///   This is used to associate XML elements in the custom XML data with their corresponding schema definitions.
+    /// </remarks>
+    [OpenXmlElement(typeof(DXCXSR.Schema))]
     public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
 
     private string? _Uri;
@@ -49,6 +57,14 @@ public partial class Schema : ModelElement<DXCXSR.Schema>
     ///   where multiple related schemas need to be loaded or when schema catalogs are employed.
     /// </remarks>
     [OpenXmlProperty(nameof(DXCXSR.Schema.ManifestLocation))]
+    /// <summary>
+    ///   Location of the resource manifest file for this schema.
+    /// </summary>
+    /// <remarks>
+    ///   The manifest location can be used for schema discovery and resolution, particularly in scenarios
+    ///   where multiple related schemas need to be loaded or when schema catalogs are employed.
+    /// </remarks>
+    [OpenXmlElement(typeof(DXCXSR.Schema))]
     public string? ManifestLocation { get => _ManifestLocation; set => UpdateField(ref _ManifestLocation, value, nameof(ManifestLocation)); }
 
     private string? _ManifestLocation;
@@ -70,6 +86,15 @@ public partial class Schema : ModelElement<DXCXSR.Schema>
     ///   within the document package, or a URL to a remote schema location.
     /// </remarks>
     [OpenXmlProperty(nameof(DXCXSR.Schema.SchemaLocation))]
+    /// <summary>
+    ///   Physical location of the XML schema file.
+    /// </summary>
+    /// <remarks>
+    ///   The schema location points to the actual XSD (XML Schema Definition) file that contains
+    ///   the validation rules and structure definitions. This can be a local file path, a relative path
+    ///   within the document package, or a URL to a remote schema location.
+    /// </remarks>
+    [OpenXmlElement(typeof(DXCXSR.Schema))]
     public string? SchemaLocation { get => _SchemaLocation; set => UpdateField(ref _SchemaLocation, value, nameof(SchemaLocation)); }
 
     private string? _SchemaLocation;

@@ -7,6 +7,7 @@ public partial class ArtisticCutout : ModelElement<DXO10D.ArtisticCutout>
     /// <summary>
     /// Transparency level of the cutout effect.
     /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ArtisticCutout))]
     public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
 
     private Int32? _Transparency;
@@ -14,6 +15,10 @@ public partial class ArtisticCutout : ModelElement<DXO10D.ArtisticCutout>
     /// Number of shades used in the cutout effect, influencing the visual depth and contrast.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ArtisticCutout.NumberOfShades))]
+    /// <summary>
+    /// Number of shades used in the cutout effect, influencing the visual depth and contrast.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ArtisticCutout))]
     public Int32? NumberOfShades { get => _NumberOfShades; set => UpdateField(ref _NumberOfShades, value, nameof(NumberOfShades)); }
 
     private Int32? _NumberOfShades;

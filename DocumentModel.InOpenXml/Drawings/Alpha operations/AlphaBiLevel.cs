@@ -8,6 +8,10 @@ public partial class AlphaBiLevel : ModelElement<DXD.AlphaBiLevel>
     /// Threshold value used to determine the bi-level separation of the alpha channel.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.AlphaBiLevel.Threshold))]
+    /// <summary>
+    /// Threshold value used to determine the bi-level separation of the alpha channel.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.AlphaBiLevel))]
     public Int32? Threshold { get => _Threshold; set => UpdateField(ref _Threshold, value, nameof(Threshold)); }
 
     private Int32? _Threshold;

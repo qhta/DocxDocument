@@ -9,6 +9,10 @@ public partial class SdtElement : ModelElement<DXW.SdtElement>
     /// Specifies the set of properties applied to this structured document tag.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.SdtElement.SdtProperties))]
+    /// <summary>
+    /// Specifies the set of properties applied to this structured document tag.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.SdtElement))]
     public SdtProperties? SdtProperties { get => _SdtProperties; set => UpdateField(ref _SdtProperties, value, nameof(SdtProperties)); }
 
     private SdtProperties? _SdtProperties;
@@ -16,6 +20,10 @@ public partial class SdtElement : ModelElement<DXW.SdtElement>
     /// Specifies the properties applied to the physical character that delimits the end of a structured document tag.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.SdtElement.SdtEndCharProperties))]
+    /// <summary>
+    /// Specifies the properties applied to the physical character that delimits the end of a structured document tag.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.SdtElement))]
     public SdtEndCharProperties? SdtEndCharProperties { get => _SdtEndCharProperties; set => UpdateField(ref _SdtEndCharProperties, value, nameof(SdtEndCharProperties)); }
 
     private SdtEndCharProperties? _SdtEndCharProperties;

@@ -15,6 +15,5 @@ public partial class NumLevel
   public bool ShouldSerializeTemplateCode() => TemplateCode is not null;
   public bool ShouldSerializeLegacyNumbering() => LegacyNumbering is not null;
   public bool ShouldSerializeLevelJustification() => LevelJustification is not null;
-  public bool ShouldSerializeNumberingLevelParagraphProperties() => NumberingLevelParagraphProperties is not null;
   public bool ShouldSerializeNumberingSymbolRunProperties() => NumberingSymbolRunProperties is not null;
 }

@@ -9,6 +9,10 @@ public partial class AccentProperties : ModelElement<DXM.AccentProperties>
     ///   Specifies visible accent character.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.AccentProperties.AccentChar))]
+    /// <summary>
+    ///   Specifies visible accent character.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.AccentProperties))]
     public string? AccentChar { get => _AccentChar; set => UpdateField(ref _AccentChar, value, nameof(AccentChar)); }
 
     private string? _AccentChar;
@@ -16,6 +20,10 @@ public partial class AccentProperties : ModelElement<DXM.AccentProperties>
     ///   Specifies formatting of accent character.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.AccentProperties.ControlProperties))]
+    /// <summary>
+    ///   Specifies formatting of accent character.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.AccentProperties))]
     public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
 
     private ControlProperties? _ControlProperties;

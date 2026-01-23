@@ -8,6 +8,10 @@ public partial class GraphicFrameLocks : ModelElement<DXD.GraphicFrameLocks>, IE
     ///   Disallows grouping of the graphic frame.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.GraphicFrameLocks.NoGrouping))]
+    /// <summary>
+    ///   Disallows grouping of the graphic frame.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.GraphicFrameLocks))]
     public bool? NoGrouping { get => _NoGrouping; set => UpdateField(ref _NoGrouping, value, nameof(NoGrouping)); }
 
     private bool? _NoGrouping;
@@ -15,6 +19,10 @@ public partial class GraphicFrameLocks : ModelElement<DXD.GraphicFrameLocks>, IE
     ///   Disallows selection of child shapes within the graphic frame.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.GraphicFrameLocks.NoDrilldown))]
+    /// <summary>
+    ///   Disallows selection of child shapes within the graphic frame.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.GraphicFrameLocks))]
     public bool? NoDrilldown { get => _NoDrilldown; set => UpdateField(ref _NoDrilldown, value, nameof(NoDrilldown)); }
 
     private bool? _NoDrilldown;
@@ -22,6 +30,10 @@ public partial class GraphicFrameLocks : ModelElement<DXD.GraphicFrameLocks>, IE
     ///   Disallows selection of the graphic frame.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.GraphicFrameLocks.NoSelection))]
+    /// <summary>
+    ///   Disallows selection of the graphic frame.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.GraphicFrameLocks))]
     public bool? NoSelection { get => _NoSelection; set => UpdateField(ref _NoSelection, value, nameof(NoSelection)); }
 
     private bool? _NoSelection;
@@ -29,6 +41,10 @@ public partial class GraphicFrameLocks : ModelElement<DXD.GraphicFrameLocks>, IE
     ///   Disallows changing the aspect ratio of the graphic frame.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.GraphicFrameLocks.NoChangeAspect))]
+    /// <summary>
+    ///   Disallows changing the aspect ratio of the graphic frame.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.GraphicFrameLocks))]
     public bool? NoChangeAspect { get => _NoChangeAspect; set => UpdateField(ref _NoChangeAspect, value, nameof(NoChangeAspect)); }
 
     private bool? _NoChangeAspect;
@@ -36,6 +52,10 @@ public partial class GraphicFrameLocks : ModelElement<DXD.GraphicFrameLocks>, IE
     ///   Disallows moving the graphic frame.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.GraphicFrameLocks.NoMove))]
+    /// <summary>
+    ///   Disallows moving the graphic frame.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.GraphicFrameLocks))]
     public bool? NoMove { get => _NoMove; set => UpdateField(ref _NoMove, value, nameof(NoMove)); }
 
     private bool? _NoMove;
@@ -43,6 +63,10 @@ public partial class GraphicFrameLocks : ModelElement<DXD.GraphicFrameLocks>, IE
     ///   Disallows resizing the graphic frame.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.GraphicFrameLocks.NoResize))]
+    /// <summary>
+    ///   Disallows resizing the graphic frame.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.GraphicFrameLocks))]
     public bool? NoResize { get => _NoResize; set => UpdateField(ref _NoResize, value, nameof(NoResize)); }
 
     private bool? _NoResize;
@@ -50,6 +74,10 @@ public partial class GraphicFrameLocks : ModelElement<DXD.GraphicFrameLocks>, IE
     /// List of extensions for the graphic frame locks.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.GraphicFrameLocks.ExtensionList))]
+    /// <summary>
+    /// List of extensions for the graphic frame locks.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.GraphicFrameLocks))]
     public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
     private ExtensionList? _ExtensionList;

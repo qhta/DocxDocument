@@ -8,6 +8,10 @@ public partial class DashStop : ModelElement<DXD.DashStop>
     ///   Length of the dash segment.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.DashStop.DashLength))]
+    /// <summary>
+    ///   Length of the dash segment.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.DashStop))]
     public Int32? DashLength { get => _DashLength; set => UpdateField(ref _DashLength, value, nameof(DashLength)); }
 
     private Int32? _DashLength;
@@ -15,6 +19,10 @@ public partial class DashStop : ModelElement<DXD.DashStop>
     ///   Length of the space segment following the dash.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.DashStop.SpaceLength))]
+    /// <summary>
+    ///   Length of the space segment following the dash.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.DashStop))]
     public Int32? SpaceLength { get => _SpaceLength; set => UpdateField(ref _SpaceLength, value, nameof(SpaceLength)); }
 
     private Int32? _SpaceLength;

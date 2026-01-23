@@ -8,6 +8,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   VML Extension Handling Behavior
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.Extension))]
+    /// <summary>
+    ///   VML Extension Handling Behavior
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
     private ExtensionHandlingBehaviorKind? _Extension;
@@ -15,6 +19,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Extrusion Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.On))]
+    /// <summary>
+    ///   Extrusion Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public bool? On { get => _On; set => UpdateField(ref _On, value, nameof(On)); }
 
     private bool? _On;
@@ -22,6 +30,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Extrusion Type
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.Type))]
+    /// <summary>
+    ///   Extrusion Type
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public ExtrusionKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
     private ExtrusionKind? _Type;
@@ -29,6 +41,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Extrusion Render Mode
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.Render))]
+    /// <summary>
+    ///   Extrusion Render Mode
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public ExtrusionRenderKind? Render { get => _Render; set => UpdateField(ref _Render, value, nameof(Render)); }
 
     private ExtrusionRenderKind? _Render;
@@ -36,6 +52,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Extrusion Viewpoint Origin
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.ViewpointOrigin))]
+    /// <summary>
+    ///   Extrusion Viewpoint Origin
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? ViewpointOrigin { get => _ViewpointOrigin; set => UpdateField(ref _ViewpointOrigin, value, nameof(ViewpointOrigin)); }
 
     private string? _ViewpointOrigin;
@@ -43,6 +63,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Extrusion Viewpoint
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.Viewpoint))]
+    /// <summary>
+    ///   Extrusion Viewpoint
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? Viewpoint { get => _Viewpoint; set => UpdateField(ref _Viewpoint, value, nameof(Viewpoint)); }
 
     private string? _Viewpoint;
@@ -50,6 +74,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Extrusion Skew Angle
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.SkewAngle))]
+    /// <summary>
+    ///   Extrusion Skew Angle
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public Single? SkewAngle { get => _SkewAngle; set => UpdateField(ref _SkewAngle, value, nameof(SkewAngle)); }
 
     private Single? _SkewAngle;
@@ -57,6 +85,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Extrusion Skew
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.SkewAmount))]
+    /// <summary>
+    ///   Extrusion Skew
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? SkewAmount { get => _SkewAmount; set => UpdateField(ref _SkewAmount, value, nameof(SkewAmount)); }
 
     private string? _SkewAmount;
@@ -64,6 +96,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Forward Extrusion
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.ForceDepth))]
+    /// <summary>
+    ///   Forward Extrusion
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? ForceDepth { get => _ForceDepth; set => UpdateField(ref _ForceDepth, value, nameof(ForceDepth)); }
 
     private string? _ForceDepth;
@@ -71,6 +107,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Backward Extrusion Depth
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.BackDepth))]
+    /// <summary>
+    ///   Backward Extrusion Depth
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? BackDepth { get => _BackDepth; set => UpdateField(ref _BackDepth, value, nameof(BackDepth)); }
 
     private string? _BackDepth;
@@ -78,6 +118,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Rotation Axis
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.Orientation))]
+    /// <summary>
+    ///   Rotation Axis
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? Orientation { get => _Orientation; set => UpdateField(ref _Orientation, value, nameof(Orientation)); }
 
     private string? _Orientation;
@@ -85,6 +129,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Rotation Around Axis
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.OrientationAngle))]
+    /// <summary>
+    ///   Rotation Around Axis
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public Single? OrientationAngle { get => _OrientationAngle; set => UpdateField(ref _OrientationAngle, value, nameof(OrientationAngle)); }
 
     private Single? _OrientationAngle;
@@ -92,6 +140,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Rotation Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.LockRotationCenter))]
+    /// <summary>
+    ///   Rotation Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public bool? LockRotationCenter { get => _LockRotationCenter; set => UpdateField(ref _LockRotationCenter, value, nameof(LockRotationCenter)); }
 
     private bool? _LockRotationCenter;
@@ -99,6 +151,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Center of Rotation Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.AutoRotationCenter))]
+    /// <summary>
+    ///   Center of Rotation Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public bool? AutoRotationCenter { get => _AutoRotationCenter; set => UpdateField(ref _AutoRotationCenter, value, nameof(AutoRotationCenter)); }
 
     private bool? _AutoRotationCenter;
@@ -106,6 +162,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Rotation Center
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.RotationCenter))]
+    /// <summary>
+    ///   Rotation Center
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? RotationCenter { get => _RotationCenter; set => UpdateField(ref _RotationCenter, value, nameof(RotationCenter)); }
 
     private string? _RotationCenter;
@@ -113,6 +173,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   X-Y Rotation Angle
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.RotationAngle))]
+    /// <summary>
+    ///   X-Y Rotation Angle
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? RotationAngle { get => _RotationAngle; set => UpdateField(ref _RotationAngle, value, nameof(RotationAngle)); }
 
     private string? _RotationAngle;
@@ -120,6 +184,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Extrusion Color
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.Color))]
+    /// <summary>
+    ///   Extrusion Color
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
 
     private string? _Color;
@@ -127,6 +195,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Shininess
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.Shininess))]
+    /// <summary>
+    ///   Shininess
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public Single? Shininess { get => _Shininess; set => UpdateField(ref _Shininess, value, nameof(Shininess)); }
 
     private Single? _Shininess;
@@ -134,6 +206,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Specularity
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.Specularity))]
+    /// <summary>
+    ///   Specularity
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? Specularity { get => _Specularity; set => UpdateField(ref _Specularity, value, nameof(Specularity)); }
 
     private string? _Specularity;
@@ -141,6 +217,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Diffuse Reflection
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.Diffusity))]
+    /// <summary>
+    ///   Diffuse Reflection
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? Diffusity { get => _Diffusity; set => UpdateField(ref _Diffusity, value, nameof(Diffusity)); }
 
     private string? _Diffusity;
@@ -148,6 +228,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Metallic Surface Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.Metal))]
+    /// <summary>
+    ///   Metallic Surface Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public bool? Metal { get => _Metal; set => UpdateField(ref _Metal, value, nameof(Metal)); }
 
     private bool? _Metal;
@@ -155,6 +239,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Simulated Bevel
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.Edge))]
+    /// <summary>
+    ///   Simulated Bevel
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? Edge { get => _Edge; set => UpdateField(ref _Edge, value, nameof(Edge)); }
 
     private string? _Edge;
@@ -162,6 +250,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Faceting Quality
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.Facet))]
+    /// <summary>
+    ///   Faceting Quality
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? Facet { get => _Facet; set => UpdateField(ref _Facet, value, nameof(Facet)); }
 
     private string? _Facet;
@@ -169,6 +261,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Shape Face Lighting Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.LightFace))]
+    /// <summary>
+    ///   Shape Face Lighting Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public bool? LightFace { get => _LightFace; set => UpdateField(ref _LightFace, value, nameof(LightFace)); }
 
     private bool? _LightFace;
@@ -176,6 +272,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Brightness
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.Brightness))]
+    /// <summary>
+    ///   Brightness
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? Brightness { get => _Brightness; set => UpdateField(ref _Brightness, value, nameof(Brightness)); }
 
     private string? _Brightness;
@@ -183,6 +283,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Primary Light Position
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.LightPosition))]
+    /// <summary>
+    ///   Primary Light Position
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? LightPosition { get => _LightPosition; set => UpdateField(ref _LightPosition, value, nameof(LightPosition)); }
 
     private string? _LightPosition;
@@ -190,6 +294,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Primary Light Intensity
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.LightLevel))]
+    /// <summary>
+    ///   Primary Light Intensity
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? LightLevel { get => _LightLevel; set => UpdateField(ref _LightLevel, value, nameof(LightLevel)); }
 
     private string? _LightLevel;
@@ -197,6 +305,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Primary Light Harshness Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.LightHarsh))]
+    /// <summary>
+    ///   Primary Light Harshness Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public bool? LightHarsh { get => _LightHarsh; set => UpdateField(ref _LightHarsh, value, nameof(LightHarsh)); }
 
     private bool? _LightHarsh;
@@ -204,6 +316,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Secondary Light Position
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.LightPosition2))]
+    /// <summary>
+    ///   Secondary Light Position
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? LightPosition2 { get => _LightPosition2; set => UpdateField(ref _LightPosition2, value, nameof(LightPosition2)); }
 
     private string? _LightPosition2;
@@ -211,6 +327,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Secondary Light Intensity
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.LightLevel2))]
+    /// <summary>
+    ///   Secondary Light Intensity
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public string? LightLevel2 { get => _LightLevel2; set => UpdateField(ref _LightLevel2, value, nameof(LightLevel2)); }
 
     private string? _LightLevel2;
@@ -218,6 +338,10 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
     ///   Secondary Light Harshness Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXVO.Extrusion.LightHarsh2))]
+    /// <summary>
+    ///   Secondary Light Harshness Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXVO.Extrusion))]
     public bool? LightHarsh2 { get => _LightHarsh2; set => UpdateField(ref _LightHarsh2, value, nameof(LightHarsh2)); }
 
     private bool? _LightHarsh2;

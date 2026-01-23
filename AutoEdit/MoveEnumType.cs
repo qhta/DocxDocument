@@ -32,23 +32,5 @@ public static class MoveEnumType
     var newPath = Path.Combine(enumsDir, Path.GetFileName(filePath));
     File.Move(filePath, newPath, overwrite: true);
     Console.WriteLine($"Moved {filePath} to {newPath}");
-
-    //    // split: remove enums from original filePath
-    //    var newRoot = root.RemoveNodes(enums, SyntaxRemoveOptions.KeepNoTrivia);
-    //#pragma warning disable CS8631 // The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match constraint type.
-    //    File.WriteAllText(filePath, newRoot.NormalizeWhitespace("  ")!.ToFullString());
-    //#pragma warning restore CS8631 // The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match constraint type.
-
-    //    foreach (var @enum in enums)
-    //    {
-    //      var enumSyntax = SyntaxFactory.CompilationUnit()
-    //        .WithUsings(root.Usings)
-    //        .WithMembers(SyntaxFactory.SingletonList<MemberDeclarationSyntax>(
-    //          SyntaxFactory.NamespaceDeclaration(((NamespaceDeclarationSyntax)root.Members.First(m => m is NamespaceDeclarationSyntax))).WithMembers(SyntaxFactory.SingletonList<MemberDeclarationSyntax>(@enum))))
-    //        .NormalizeWhitespace();
-
-    //      var enumPath = Path.Combine(enumsDir, $"{@enum.Identifier.Text}.cs");
-    //      File.WriteAllText(enumPath, enumSyntax.ToFullString());
-    //    }
   }
 }

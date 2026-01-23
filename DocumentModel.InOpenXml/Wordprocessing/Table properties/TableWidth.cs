@@ -9,6 +9,7 @@ public partial class TableWidth : ModelElement<DXW.TableWidth>
     /// <summary>
     /// Table width value, which can be absolute (in twips) or relative (in fiftieth of percent).
     /// </summary>
+    [OpenXmlElement(typeof(DXW.TableWidth))]
     public Int64 Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
 
     private Int64 _Value;
@@ -16,6 +17,10 @@ public partial class TableWidth : ModelElement<DXW.TableWidth>
     /// Table width type, determining whether the value is absolute, relative, "auto", or "nil".
     /// </summary>
     [OpenXmlProperty(nameof(DXW.TableWidth.Type))]
+    /// <summary>
+    /// Table width type, determining whether the value is absolute, relative, "auto", or "nil".
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.TableWidth))]
     public TableWidthUnitType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
     private TableWidthUnitType? _Type;

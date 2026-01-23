@@ -8,6 +8,10 @@ public partial class TextPath : ModelElement<DXV.TextPath>
     ///   Unique Identifier
     /// </summary>
     [OpenXmlProperty(nameof(DXV.TextPath.Id))]
+    /// <summary>
+    ///   Unique Identifier
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.TextPath))]
     public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
     private string? _Id;
@@ -15,6 +19,10 @@ public partial class TextPath : ModelElement<DXV.TextPath>
     ///   Shape Styling Properties
     /// </summary>
     [OpenXmlProperty(nameof(DXV.TextPath.Style))]
+    /// <summary>
+    ///   Shape Styling Properties
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.TextPath))]
     public string? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
 
     private string? _Style;
@@ -22,6 +30,10 @@ public partial class TextPath : ModelElement<DXV.TextPath>
     ///   Text Path Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXV.TextPath.On))]
+    /// <summary>
+    ///   Text Path Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.TextPath))]
     public bool? On { get => _On; set => UpdateField(ref _On, value, nameof(On)); }
 
     private bool? _On;
@@ -29,6 +41,10 @@ public partial class TextPath : ModelElement<DXV.TextPath>
     ///   Shape Fit Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXV.TextPath.FitShape))]
+    /// <summary>
+    ///   Shape Fit Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.TextPath))]
     public bool? FitShape { get => _FitShape; set => UpdateField(ref _FitShape, value, nameof(FitShape)); }
 
     private bool? _FitShape;
@@ -36,6 +52,10 @@ public partial class TextPath : ModelElement<DXV.TextPath>
     ///   Path Fit Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXV.TextPath.FitPath))]
+    /// <summary>
+    ///   Path Fit Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.TextPath))]
     public bool? FitPath { get => _FitPath; set => UpdateField(ref _FitPath, value, nameof(FitPath)); }
 
     private bool? _FitPath;
@@ -43,6 +63,10 @@ public partial class TextPath : ModelElement<DXV.TextPath>
     ///   Text Path Trim Toggle
     /// </summary>
     [OpenXmlProperty(nameof(DXV.TextPath.Trim))]
+    /// <summary>
+    ///   Text Path Trim Toggle
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.TextPath))]
     public bool? Trim { get => _Trim; set => UpdateField(ref _Trim, value, nameof(Trim)); }
 
     private bool? _Trim;
@@ -50,6 +74,10 @@ public partial class TextPath : ModelElement<DXV.TextPath>
     ///   Text X-Scaling
     /// </summary>
     [OpenXmlProperty(nameof(DXV.TextPath.XScale))]
+    /// <summary>
+    ///   Text X-Scaling
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.TextPath))]
     public bool? XScale { get => _XScale; set => UpdateField(ref _XScale, value, nameof(XScale)); }
 
     private bool? _XScale;
@@ -57,6 +85,10 @@ public partial class TextPath : ModelElement<DXV.TextPath>
     ///   Text Path Text
     /// </summary>
     [OpenXmlProperty(nameof(DXV.TextPath.String))]
+    /// <summary>
+    ///   Text Path Text
+    /// </summary>
+    [OpenXmlElement(typeof(DXV.TextPath))]
     public string? String { get => _String; set => UpdateField(ref _String, value, nameof(String)); }
 
     private string? _String;
