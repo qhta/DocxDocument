@@ -14,5 +14,7 @@ public partial class TableRowHeight : ModelElement<DXW.TableRowHeight>
     /// <summary>
     /// Table row height type, specifying whether the height is at least, exactly, or auto.
     /// </summary>
-    public HeightRuleKind? Type { get; set; }
+    public HeightRuleKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+
+    private HeightRuleKind? _Type;
 }

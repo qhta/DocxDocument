@@ -14,17 +14,25 @@ public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteD
     /// <summary>
     /// Numbering format for footnotes, specifying the style of numbering (e.g., Arabic, Roman, letters).
     /// </summary>
-    public NumberingFormat? NumberingFormat { get; set; }
+    public NumberingFormat? NumberingFormat { get => _NumberingFormat; set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat)); }
+
+    private NumberingFormat? _NumberingFormat;
     /// <summary>
     /// Starting value for footnote numbering, specifying the initial number used for the first footnote.
     /// </summary>
-    public UInt16? NumberingStart { get; set; }
+    public UInt16? NumberingStart { get => _NumberingStart; set => UpdateField(ref _NumberingStart, value, nameof(NumberingStart)); }
+
+    private UInt16? _NumberingStart;
     /// <summary>
     /// Location where footnote numbering restarts (e.g., each section, each page, continuous).
     /// </summary>
-    public RestartNumberKind? NumberingRestart { get; set; }
+    public RestartNumberKind? NumberingRestart { get => _NumberingRestart; set => UpdateField(ref _NumberingRestart, value, nameof(NumberingRestart)); }
+
+    private RestartNumberKind? _NumberingRestart;
     /// <summary>
     /// Special references for footnotes, such as separators and continuation notices.
     /// </summary>
-    public FootnoteSeparators? FootnoteSeparators { get; set; }
+    public FootnoteSeparators? FootnoteSeparators { get => _FootnoteSeparators; set => UpdateField(ref _FootnoteSeparators, value, nameof(FootnoteSeparators)); }
+
+    private FootnoteSeparators? _FootnoteSeparators;
 }

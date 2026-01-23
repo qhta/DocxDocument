@@ -13,21 +13,31 @@ public partial class ExtrusionColor : ModelElement<DXD.ExtrusionColor>
     /// <summary>
     ///   Extrusion color specified using the RGB color model with hexadecimal values.
     /// </summary>
-    public RgbColorModelHex? RgbColorModelHex { get; set; }
+    public RgbColorModelHex? RgbColorModelHex { get => _RgbColorModelHex; set => UpdateField(ref _RgbColorModelHex, value, nameof(RgbColorModelHex)); }
+
+    private RgbColorModelHex? _RgbColorModelHex;
     /// <summary>
     ///   Extrusion color specified using the hue, saturation, luminance (HSL) color model.
     /// </summary>
-    public HslColor? HslColor { get; set; }
+    public HslColor? HslColor { get => _HslColor; set => UpdateField(ref _HslColor, value, nameof(HslColor)); }
+
+    private HslColor? _HslColor;
     /// <summary>
     ///   Extrusion color specified using a system-defined color.
     /// </summary>
-    public SystemColor? SystemColor { get; set; }
+    public SystemColor? SystemColor { get => _SystemColor; set => UpdateField(ref _SystemColor, value, nameof(SystemColor)); }
+
+    private SystemColor? _SystemColor;
     /// <summary>
     ///   Extrusion color specified using a color scheme.
     /// </summary>
-    public SchemeColor? SchemeColor { get; set; }
+    public SchemeColor? SchemeColor { get => _SchemeColor; set => UpdateField(ref _SchemeColor, value, nameof(SchemeColor)); }
+
+    private SchemeColor? _SchemeColor;
     /// <summary>
     ///   Extrusion color specified using a preset color.
     /// </summary>
-    public PresetColor? PresetColor { get; set; }
+    public PresetColor? PresetColor { get => _PresetColor; set => UpdateField(ref _PresetColor, value, nameof(PresetColor)); }
+
+    private PresetColor? _PresetColor;
 }

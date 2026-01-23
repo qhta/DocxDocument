@@ -13,9 +13,13 @@ public partial class NonVisualDrawingShapeProperties : ModelElement<DXOD.NonVisu
     /// <summary>
     ///   Shape Locks.
     /// </summary>
-    public ShapeLocks? ShapeLocks { get; set; }
+    public ShapeLocks? ShapeLocks { get => _ShapeLocks; set => UpdateField(ref _ShapeLocks, value, nameof(ShapeLocks)); }
+
+    private ShapeLocks? _ShapeLocks;
     /// <summary>
     ///   ExtensionList.
     /// </summary>
-    public IExtensionList? ExtensionList { get; set; }
+    public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+    private IExtensionList? _ExtensionList;
 }

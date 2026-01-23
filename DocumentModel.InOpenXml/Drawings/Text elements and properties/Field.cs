@@ -17,17 +17,25 @@ public partial class Field : ModelElement<DXD.Field>
     /// <summary>
     ///   Type of the field.
     /// </summary>
-    public string? Type { get; set; }
+    public string? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+
+    private string? _Type;
     /// <summary>
     ///   Character properties applied to the field text.
     /// </summary>
-    public RunProperties? RunProperties { get; set; }
+    public RunProperties? RunProperties { get => _RunProperties; set => UpdateField(ref _RunProperties, value, nameof(RunProperties)); }
+
+    private RunProperties? _RunProperties;
     /// <summary>
     ///   Paragraph properties applied to the field text.
     /// </summary>
-    public ParagraphProperties? ParagraphProperties { get; set; }
+    public ParagraphProperties? ParagraphProperties { get => _ParagraphProperties; set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties)); }
+
+    private ParagraphProperties? _ParagraphProperties;
     /// <summary>
     ///   Text content of the field.
     /// </summary>
-    public string? Text { get; set; }
+    public string? Text { get => _Text; set => UpdateField(ref _Text, value, nameof(Text)); }
+
+    private string? _Text;
 }

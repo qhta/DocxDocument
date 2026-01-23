@@ -13,9 +13,13 @@ public partial class FontCollectionType : ModelElement<DXD.FontCollectionType>
     /// <summary>
     ///   Font settings for East Asian text.
     /// </summary>
-    public TextFontType? EastAsianFont { get; set; }
+    public TextFontType? EastAsianFont { get => _EastAsianFont; set => UpdateField(ref _EastAsianFont, value, nameof(EastAsianFont)); }
+
+    private TextFontType? _EastAsianFont;
     /// <summary>
     ///   Font settings for complex script text.
     /// </summary>
-    public TextFontType? ComplexScriptFont { get; set; }
+    public TextFontType? ComplexScriptFont { get => _ComplexScriptFont; set => UpdateField(ref _ComplexScriptFont, value, nameof(ComplexScriptFont)); }
+
+    private TextFontType? _ComplexScriptFont;
 }

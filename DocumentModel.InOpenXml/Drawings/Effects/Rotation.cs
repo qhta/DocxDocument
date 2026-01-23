@@ -13,9 +13,13 @@ public partial class Rotation : ModelElement
     /// <summary>
     ///   Longitude value for the rotation.
     /// </summary>
-    public Int32? Longitude { get; set; }
+    public Int32? Longitude { get => _Longitude; set => UpdateField(ref _Longitude, value, nameof(Longitude)); }
+
+    private Int32? _Longitude;
     /// <summary>
     ///   Revolution value for the rotation.
     /// </summary>
-    public Int32? Revolution { get; set; }
+    public Int32? Revolution { get => _Revolution; set => UpdateField(ref _Revolution, value, nameof(Revolution)); }
+
+    private Int32? _Revolution;
 }

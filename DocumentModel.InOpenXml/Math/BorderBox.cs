@@ -14,5 +14,7 @@ public partial class BorderBox : ModelElement<DXM.BorderBox>, ICommonMathContent
     /// <summary>
     ///   Specifies argument of border-box object.
     /// </summary>
-    public Argument? Argument { get; set; }
+    public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
+
+    private Argument? _Argument;
 }

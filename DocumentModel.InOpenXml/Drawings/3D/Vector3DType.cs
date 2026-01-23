@@ -13,9 +13,13 @@ public partial class Vector3DType : ModelElement<DXD.Vector3DType>
     /// <summary>
     ///   Distance along the Y-axis in 3D space.
     /// </summary>
-    public Int64? Dy { get; set; }
+    public Int64? Dy { get => _Dy; set => UpdateField(ref _Dy, value, nameof(Dy)); }
+
+    private Int64? _Dy;
     /// <summary>
     ///   Distance along the Z-axis in 3D space.
     /// </summary>
-    public Int64? Dz { get; set; }
+    public Int64? Dz { get => _Dz; set => UpdateField(ref _Dz, value, nameof(Dz)); }
+
+    private Int64? _Dz;
 }

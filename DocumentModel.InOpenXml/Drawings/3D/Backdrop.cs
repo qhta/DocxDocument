@@ -1,27 +1,31 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Represents a backdrop plane in 3D drawing space, defined by an anchor point, normal vector, and up vector.
 /// </summary>
-public class Backdrop: ModelElement<DXD.Backdrop>, IExtendableElement
+public partial class Backdrop : ModelElement<DXD.Backdrop>, IExtendableElement
 {
-  /// <summary>
-  /// Anchor point of the backdrop plane.
-  /// </summary>
-  public Anchor? Anchor { get; set; }
+    /// <summary>
+    /// Anchor point of the backdrop plane.
+    /// </summary>
+    public Anchor? Anchor { get => _Anchor; set => UpdateField(ref _Anchor, value, nameof(Anchor)); }
 
-  /// <summary>
-  /// Normal vector of the backdrop plane.
-  /// </summary>
-  public Vector3DType? Normal { get; set; }
+    private Anchor? _Anchor;
+    /// <summary>
+    /// Normal vector of the backdrop plane.
+    /// </summary>
+    public Vector3DType? Normal { get => _Normal; set => UpdateField(ref _Normal, value, nameof(Normal)); }
 
-  /// <summary>
-  /// Up vector of the backdrop plane.
-  /// </summary>
-  public Vector3DType? UpVector { get; set; }
+    private Vector3DType? _Normal;
+    /// <summary>
+    /// Up vector of the backdrop plane.
+    /// </summary>
+    public Vector3DType? UpVector { get => _UpVector; set => UpdateField(ref _UpVector, value, nameof(UpVector)); }
 
-  /// <summary>
-  /// L
-  /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+    private Vector3DType? _UpVector;
+    /// <summary>
+    /// L
+    /// </summary>
+    public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+    private ExtensionList? _ExtensionList;
 }

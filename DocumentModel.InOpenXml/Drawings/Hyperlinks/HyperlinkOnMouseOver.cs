@@ -10,5 +10,7 @@ public partial class HyperlinkOnMouseOver : ModelElement<DXD.HyperlinkOnMouseOve
     public EmbeddedWavAudioFileType? HyperlinkSound { get => _HyperlinkSound; set => UpdateField(ref _HyperlinkSound, value, nameof(HyperlinkSound)); }
 
     private EmbeddedWavAudioFileType? _HyperlinkSound;
-    public HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
+    public HyperlinkExtensionList? HyperlinkExtensionList { get => _HyperlinkExtensionList; set => UpdateField(ref _HyperlinkExtensionList, value, nameof(HyperlinkExtensionList)); }
+
+    private HyperlinkExtensionList? _HyperlinkExtensionList;
 }

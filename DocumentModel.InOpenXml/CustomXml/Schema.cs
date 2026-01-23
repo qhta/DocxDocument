@@ -33,8 +33,9 @@ public partial class Schema : ModelElement<DXCXSR.Schema>
     ///   where multiple related schemas need to be loaded or when schema catalogs are employed.
     /// </remarks>
     [XmlAttribute]
-    public string? ManifestLocation { get; set; }
+    public string? ManifestLocation { get => _ManifestLocation; set => UpdateField(ref _ManifestLocation, value, nameof(ManifestLocation)); }
 
+    private string? _ManifestLocation;
     /// <summary>
     ///   Physical location of the XML schema file.
     /// </summary>
@@ -44,5 +45,7 @@ public partial class Schema : ModelElement<DXCXSR.Schema>
     ///   within the document package, or a URL to a remote schema location.
     /// </remarks>
     [XmlAttribute]
-    public string? SchemaLocation { get; set; }
+    public string? SchemaLocation { get => _SchemaLocation; set => UpdateField(ref _SchemaLocation, value, nameof(SchemaLocation)); }
+
+    private string? _SchemaLocation;
 }

@@ -16,5 +16,7 @@ public partial class Variable : ModelElement<DXW.DocumentVariable>
     /// Value of the document variable, specified as a string.
     /// </summary>
     [XmlAttribute]
-    public string? Val { get; set; }
+    public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+
+    private string? _Val;
 }

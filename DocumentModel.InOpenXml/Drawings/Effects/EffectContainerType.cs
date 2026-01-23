@@ -43,5 +43,7 @@ public partial class EffectContainerType : ModelElement<DXD.EffectContainerType>
     ///   </list>
     ///   </para>
     /// </remarks>
-    public string? Name { get; set; }
+    public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+
+    private string? _Name;
 }

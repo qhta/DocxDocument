@@ -25,17 +25,21 @@ public partial class ThemeFamily : ModelElement<DXO13T.ThemeFamily>
     /// Unique identifier for the theme family.
     /// </summary>
     [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Id))]
-    public string? Id { get; set; }
+    public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
+    private string? _Id;
     /// <summary>
     /// Version identifier for the theme family.
     /// </summary>
     [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Vid))]
-    public string? Vid { get; set; }
+    public string? Vid { get => _Vid; set => UpdateField(ref _Vid, value, nameof(Vid)); }
 
+    private string? _Vid;
     /// <summary>
     /// OfficeArt extension metadata for the theme family.
     /// </summary>
     [OpenXmlProperty(nameof(DXO13T.ThemeFamily.OfficeArtExtensionList))]
-    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
+
+    private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

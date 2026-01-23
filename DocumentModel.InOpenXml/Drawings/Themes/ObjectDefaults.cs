@@ -19,17 +19,21 @@ public partial class ObjectDefaults : ModelElement<DXD.ObjectDefaults>, IExtenda
     ///   Default formatting properties for lines.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ObjectDefaults.LineDefault))]
-    public LineDefault? LineDefault { get; set; }
+    public LineDefault? LineDefault { get => _LineDefault; set => UpdateField(ref _LineDefault, value, nameof(LineDefault)); }
 
+    private LineDefault? _LineDefault;
     /// <summary>
     ///   Default formatting properties for text.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ObjectDefaults.TextDefault))]
-    public TextDefault? TextDefault { get; set; }
+    public TextDefault? TextDefault { get => _TextDefault; set => UpdateField(ref _TextDefault, value, nameof(TextDefault)); }
 
+    private TextDefault? _TextDefault;
     /// <summary>
     /// List of extensions for future extensions of the element type.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ObjectDefaults.ExtensionList))]
-    public ExtensionList? ExtensionList { get; set; }
+    public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+    private ExtensionList? _ExtensionList;
 }

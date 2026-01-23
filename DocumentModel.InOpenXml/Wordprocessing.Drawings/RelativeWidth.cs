@@ -14,5 +14,7 @@ public partial class RelativeWidth : ModelElement
     /// <summary>
     /// The percentage value specifying the width of the drawing element relative to the reference object.
     /// </summary>
-    public string? PercentageWidth { get; set; }
+    public string? PercentageWidth { get => _PercentageWidth; set => UpdateField(ref _PercentageWidth, value, nameof(PercentageWidth)); }
+
+    private string? _PercentageWidth;
 }

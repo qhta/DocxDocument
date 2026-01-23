@@ -13,6 +13,10 @@ public partial class TextBody : ModelElement<DXOD.TextBody>
     /// <summary>
     ///   Text List Styles.
     /// </summary>
-    public ListStyle? ListStyle { get; set; }
-    public Paragraph? Paragraph { get; set; }
+    public ListStyle? ListStyle { get => _ListStyle; set => UpdateField(ref _ListStyle, value, nameof(ListStyle)); }
+
+    private ListStyle? _ListStyle;
+    public Paragraph? Paragraph { get => _Paragraph; set => UpdateField(ref _Paragraph, value, nameof(Paragraph)); }
+
+    private Paragraph? _Paragraph;
 }

@@ -13,5 +13,7 @@ public partial class ArtisticPaintStrokes : ModelElement<DXO10D.ArtisticPaintStr
     /// <summary>
     /// Intensity of the paint strokes effect, influencing the strength and visibility of the strokes.
     /// </summary>
-    public Int32? Intensity { get; set; }
+    public Int32? Intensity { get => _Intensity; set => UpdateField(ref _Intensity, value, nameof(Intensity)); }
+
+    private Int32? _Intensity;
 }

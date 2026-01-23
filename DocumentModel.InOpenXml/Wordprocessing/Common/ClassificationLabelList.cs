@@ -1,5 +1,4 @@
 namespace DocumentModel;
-
 /// <summary>
 /// Represents a comprehensive collection of classification labels and their extensions that define
 /// document sensitivity levels, compliance requirements, and information protection policies.
@@ -8,7 +7,7 @@ namespace DocumentModel;
 /// </summary>
 /// <remarks>
 /// <para>
-/// <see cref="ClassificationLabelList"/> serves as the primary container for document classification
+/// <see cref = "ClassificationLabelList"/> serves as the primary container for document classification
 /// information in Office Open XML documents, integrating with Microsoft's information protection
 /// ecosystem and organizational governance frameworks. It provides:
 /// <list type="bullet">
@@ -209,8 +208,7 @@ namespace DocumentModel;
 /// };
 /// </code>
 /// </example>
-public class ClassificationLabelList: ModelElementCollection<ClassificationLabel, 
-  DXO21MLMD.ClassificationLabelList, DXO21MLMD.ClassificationLabel>
+public partial class ClassificationLabelList : ModelElementCollection<ClassificationLabel, DXO21MLMD.ClassificationLabelList, DXO21MLMD.ClassificationLabel>
 {
   /// <summary>
   /// Gets or sets the classification extension list containing technical metadata, policy references,

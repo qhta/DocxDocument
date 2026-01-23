@@ -13,5 +13,7 @@ public partial class MatrixColumnProperties : ModelElement
     /// <summary>
     ///   Matrix IColumn Justification.
     /// </summary>
-    public HorizontalAlignmentKind? MatrixColumnJustification { get; set; }
+    public HorizontalAlignmentKind? MatrixColumnJustification { get => _MatrixColumnJustification; set => UpdateField(ref _MatrixColumnJustification, value, nameof(MatrixColumnJustification)); }
+
+    private HorizontalAlignmentKind? _MatrixColumnJustification;
 }

@@ -13,13 +13,19 @@ public partial class Relation : ModelElement<DXVO.Relation>
     /// <summary>
     ///   Diagram Relationship Source Shape
     /// </summary>
-    public string? SourceId { get; set; }
+    public string? SourceId { get => _SourceId; set => UpdateField(ref _SourceId, value, nameof(SourceId)); }
+
+    private string? _SourceId;
     /// <summary>
     ///   Diagram Relationship Destination Shape
     /// </summary>
-    public string? DestinationId { get; set; }
+    public string? DestinationId { get => _DestinationId; set => UpdateField(ref _DestinationId, value, nameof(DestinationId)); }
+
+    private string? _DestinationId;
     /// <summary>
     ///   Diagram Relationship Center Shape
     /// </summary>
-    public string? CenterShapeId { get; set; }
+    public string? CenterShapeId { get => _CenterShapeId; set => UpdateField(ref _CenterShapeId, value, nameof(CenterShapeId)); }
+
+    private string? _CenterShapeId;
 }

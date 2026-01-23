@@ -14,21 +14,31 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
     /// <summary>
     /// Name of the data source column being mapped.
     /// </summary>
-    public string? Name { get; set; }
+    public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+
+    private string? _Name;
     /// <summary>
     /// Predefined merge field name to which the data source column is mapped.
     /// </summary>
-    public string? MappedName { get; set; }
+    public string? MappedName { get => _MappedName; set => UpdateField(ref _MappedName, value, nameof(MappedName)); }
+
+    private string? _MappedName;
     /// <summary>
     /// Index of the data source column being mapped, specified as a zero-based index.
     /// </summary>
-    public UInt32? ColumnIndex { get; set; }
+    public UInt32? ColumnIndex { get => _ColumnIndex; set => UpdateField(ref _ColumnIndex, value, nameof(ColumnIndex)); }
+
+    private UInt32? _ColumnIndex;
     /// <summary>
     /// Language ID for the merge field name, specifying the language context for the mapping.
     /// </summary>
-    public string? LanguageId { get; set; }
+    public string? LanguageId { get => _LanguageId; set => UpdateField(ref _LanguageId, value, nameof(LanguageId)); }
+
+    private string? _LanguageId;
     /// <summary>
     /// Indicates whether country/region-based address field ordering is used for the mapping.
     /// </summary>
-    public bool? DynamicAddress { get; set; }
+    public bool? DynamicAddress { get => _DynamicAddress; set => UpdateField(ref _DynamicAddress, value, nameof(DynamicAddress)); }
+
+    private bool? _DynamicAddress;
 }

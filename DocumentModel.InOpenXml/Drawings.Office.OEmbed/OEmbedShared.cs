@@ -13,9 +13,13 @@ public partial class OEmbedShared : ModelElement<DXODY21OE.OEmbedShared>
     /// <summary>
     ///   type
     /// </summary>
-    public string? Type { get; set; }
+    public string? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+
+    private string? _Type;
     /// <summary>
     ///   OfficeArtExtensionList.
     /// </summary>
-    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
+
+    private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

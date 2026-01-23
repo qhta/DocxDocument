@@ -1,29 +1,32 @@
 namespace DocumentModel.Wordprocessing;
-
-  /// <summary>
-  /// Represents the properties of an endnote in a WordprocessingML document.
-  /// This class extends <see cref="SectionPropertiesContent"/> and provides properties for endnote placement, numbering format, starting value, and numbering restart location, enabling advanced configuration and management of endnote behavior and formatting within document sections.
-  /// </summary>
-  public class EndnoteProperties : ModelElement<DXW.EndnoteProperties>, ISectionPropertiesContent
-  {
-    
+/// <summary>
+/// Represents the properties of an endnote in a WordprocessingML document.
+/// This class extends <see cref = "SectionPropertiesContent"/> and provides properties for endnote placement, numbering format, starting value, and numbering restart location, enabling advanced configuration and management of endnote behavior and formatting within document sections.
+/// </summary>
+public partial class EndnoteProperties : ModelElement<DXW.EndnoteProperties>, ISectionPropertiesContent
+{
     /// <summary>
     /// Placement of the endnote, specifying where the endnote appears (e.g., end of section, end of document).
     /// </summary>
-    public EndnotePositionKind? EndnotePosition { get; set; }
-    
+    public EndnotePositionKind? EndnotePosition { get => _EndnotePosition; set => UpdateField(ref _EndnotePosition, value, nameof(EndnotePosition)); }
+
+    private EndnotePositionKind? _EndnotePosition;
     /// <summary>
     /// Numbering format for the endnote, specifying the style of numbering (e.g., Arabic, Roman, letters).
     /// </summary>
-    public NumberingFormat? NumberingFormat { get; set; }
-    
+    public NumberingFormat? NumberingFormat { get => _NumberingFormat; set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat)); }
+
+    private NumberingFormat? _NumberingFormat;
     /// <summary>
     /// Starting value for footnote and endnote numbering, specifying the initial number used for the first note.
     /// </summary>
-    public UInt16? NumberingStart { get; set; }
-    
+    public UInt16? NumberingStart { get => _NumberingStart; set => UpdateField(ref _NumberingStart, value, nameof(NumberingStart)); }
+
+    private UInt16? _NumberingStart;
     /// <summary>
     /// Location where footnote and endnote numbering restarts (e.g., each section, each page, continuous).
     /// </summary>
-    public RestartNumberKind? NumberingRestart { get; set; }
-  }
+    public RestartNumberKind? NumberingRestart { get => _NumberingRestart; set => UpdateField(ref _NumberingRestart, value, nameof(NumberingRestart)); }
+
+    private RestartNumberKind? _NumberingRestart;
+}

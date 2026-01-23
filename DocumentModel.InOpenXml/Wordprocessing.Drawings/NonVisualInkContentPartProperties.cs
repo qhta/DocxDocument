@@ -16,9 +16,13 @@ public partial class NonVisualInkContentPartProperties : ModelElement
     /// <summary>
     /// The set of locks applied to the content part, restricting modifications or interactions as defined by the document.
     /// </summary>
-    public ContentPartLocks? ContentPartLocks { get; set; }
+    public ContentPartLocks? ContentPartLocks { get => _ContentPartLocks; set => UpdateField(ref _ContentPartLocks, value, nameof(ContentPartLocks)); }
+
+    private ContentPartLocks? _ContentPartLocks;
     /// <summary>
     /// List of OfficeArt extensions associated with the ink content part, allowing for additional metadata or custom features.
     /// </summary>
-    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
+
+    private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

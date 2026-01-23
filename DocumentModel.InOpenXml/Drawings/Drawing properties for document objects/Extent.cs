@@ -13,5 +13,7 @@ public partial class Extent : ModelElement<DXDW.Extent>
     /// <summary>
     ///   Height of the extent in EMUs.
     /// </summary>
-    public EMU? Cy { get; set; }
+    public EMU? Cy { get => _Cy; set => UpdateField(ref _Cy, value, nameof(Cy)); }
+
+    private EMU? _Cy;
 }

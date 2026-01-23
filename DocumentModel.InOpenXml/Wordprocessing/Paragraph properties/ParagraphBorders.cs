@@ -14,21 +14,31 @@ public partial class ParagraphBorders : ModelElement<DXW.ParagraphBorders>
     /// <summary>
     /// Left border of the paragraph.
     /// </summary>
-    public Border? LeftBorder { get; set; }
+    public Border? LeftBorder { get => _LeftBorder; set => UpdateField(ref _LeftBorder, value, nameof(LeftBorder)); }
+
+    private Border? _LeftBorder;
     /// <summary>
     /// Border between identical paragraphs, specifying the bottom border of the paragraph.
     /// </summary>
-    public Border? BottomBorder { get; set; }
+    public Border? BottomBorder { get => _BottomBorder; set => UpdateField(ref _BottomBorder, value, nameof(BottomBorder)); }
+
+    private Border? _BottomBorder;
     /// <summary>
     /// Right border of the paragraph.
     /// </summary>
-    public Border? RightBorder { get; set; }
+    public Border? RightBorder { get => _RightBorder; set => UpdateField(ref _RightBorder, value, nameof(RightBorder)); }
+
+    private Border? _RightBorder;
     /// <summary>
     /// Border between identical paragraphs, used to visually separate consecutive paragraphs with the same formatting.
     /// </summary>
-    public Border? BetweenBorder { get; set; }
+    public Border? BetweenBorder { get => _BetweenBorder; set => UpdateField(ref _BetweenBorder, value, nameof(BetweenBorder)); }
+
+    private Border? _BetweenBorder;
     /// <summary>
     /// Border between facing pages, specifying a vertical bar border for the paragraph.
     /// </summary>
-    public Border? BarBorder { get; set; }
+    public Border? BarBorder { get => _BarBorder; set => UpdateField(ref _BarBorder, value, nameof(BarBorder)); }
+
+    private Border? _BarBorder;
 }

@@ -16,5 +16,7 @@ public partial class NonVisualGroupDrawingShapeProperties : ModelElement
     /// <summary>
     /// List of extensions for non-visual group drawing shape properties, allowing for additional metadata or custom features.
     /// </summary>
-    public NonVisualGroupDrawingShapePropsExtensionList? NonVisualGroupDrawingShapePropsExtensionList { get; set; }
+    public NonVisualGroupDrawingShapePropsExtensionList? NonVisualGroupDrawingShapePropsExtensionList { get => _NonVisualGroupDrawingShapePropsExtensionList; set => UpdateField(ref _NonVisualGroupDrawingShapePropsExtensionList, value, nameof(NonVisualGroupDrawingShapePropsExtensionList)); }
+
+    private NonVisualGroupDrawingShapePropsExtensionList? _NonVisualGroupDrawingShapePropsExtensionList;
 }

@@ -1,29 +1,32 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 ///   Represents the properties of a footnote in a WordprocessingML document.
-///   This class extends <see cref="SectionPropertiesContent"/> and provides properties for footnote placement, numbering format, starting value, and numbering restart location, enabling advanced configuration and management of footnote behavior and formatting within document sections.
+///   This class extends <see cref = "SectionPropertiesContent"/> and provides properties for footnote placement, numbering format, starting value, and numbering restart location, enabling advanced configuration and management of footnote behavior and formatting within document sections.
 /// </summary>
-public class FootnoteProperties : ModelElement<DXW.FootnoteProperties>,
-  ISectionPropertiesContent
+public partial class FootnoteProperties : ModelElement<DXW.FootnoteProperties>, ISectionPropertiesContent
 {
-  /// <summary>
-  ///   Placement of the footnote, specifying where the footnote appears (e.g., bottom of page, end of document).
-  /// </summary>
-  public FootnotePositionKind? FootnotePosition { get; set; }
+    /// <summary>
+    ///   Placement of the footnote, specifying where the footnote appears (e.g., bottom of page, end of document).
+    /// </summary>
+    public FootnotePositionKind? FootnotePosition { get => _FootnotePosition; set => UpdateField(ref _FootnotePosition, value, nameof(FootnotePosition)); }
 
-  /// <summary>
-  ///   Numbering format for the footnote, specifying the style of numbering (e.g., Arabic, Roman, letters).
-  /// </summary>
-  public NumberingFormat? NumberingFormat { get; set; }
+    private FootnotePositionKind? _FootnotePosition;
+    /// <summary>
+    ///   Numbering format for the footnote, specifying the style of numbering (e.g., Arabic, Roman, letters).
+    /// </summary>
+    public NumberingFormat? NumberingFormat { get => _NumberingFormat; set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat)); }
 
-  /// <summary>
-  ///   Starting value for footnote and endnote numbering, specifying the initial number used for the first note.
-  /// </summary>
-  public UInt16? NumberingStart { get; set; }
+    private NumberingFormat? _NumberingFormat;
+    /// <summary>
+    ///   Starting value for footnote and endnote numbering, specifying the initial number used for the first note.
+    /// </summary>
+    public UInt16? NumberingStart { get => _NumberingStart; set => UpdateField(ref _NumberingStart, value, nameof(NumberingStart)); }
 
-  /// <summary>
-  ///   Location where footnote and endnote numbering restarts (e.g., each section, each page, continuous).
-  /// </summary>
-  public RestartNumberKind? NumberingRestart { get; set; }
+    private UInt16? _NumberingStart;
+    /// <summary>
+    ///   Location where footnote and endnote numbering restarts (e.g., each section, each page, continuous).
+    /// </summary>
+    public RestartNumberKind? NumberingRestart { get => _NumberingRestart; set => UpdateField(ref _NumberingRestart, value, nameof(NumberingRestart)); }
+
+    private RestartNumberKind? _NumberingRestart;
 }

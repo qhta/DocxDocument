@@ -13,9 +13,13 @@ public partial class WebVideoProperty : ModelElement
     /// <summary>
     /// Gets or sets the height of the web video display area, in pixels.
     /// </summary>
-    public UInt32? Height { get; set; }
+    public UInt32? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
+
+    private UInt32? _Height;
     /// <summary>
     /// Gets or sets the width of the web video display area, in pixels.
     /// </summary>
-    public UInt32? Width { get; set; }
+    public UInt32? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+
+    private UInt32? _Width;
 }

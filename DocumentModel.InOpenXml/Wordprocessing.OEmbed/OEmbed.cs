@@ -14,9 +14,13 @@ public partial class OEmbed : ModelElement
     /// <summary>
     /// The media type of the embedded content, such as image, video, or rich media.
     /// </summary>
-    public string? MediaType { get; set; }
+    public string? MediaType { get => _MediaType; set => UpdateField(ref _MediaType, value, nameof(MediaType)); }
+
+    private string? _MediaType;
     /// <summary>
     /// Indicates whether picture locking is automatically applied for oEmbed content, controlling edit restrictions on the embedded media.
     /// </summary>
-    public bool? PicLocksAutoForOEmbed { get; set; }
+    public bool? PicLocksAutoForOEmbed { get => _PicLocksAutoForOEmbed; set => UpdateField(ref _PicLocksAutoForOEmbed, value, nameof(PicLocksAutoForOEmbed)); }
+
+    private bool? _PicLocksAutoForOEmbed;
 }

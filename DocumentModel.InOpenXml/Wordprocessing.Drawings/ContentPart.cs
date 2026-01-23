@@ -16,14 +16,22 @@ public partial class ContentPart : ModelElement<DXO10W.ContentPart>, IOfficeArtE
     /// <summary>
     /// Relationship ID referencing the associated content part.
     /// </summary>
-    public string? RelationshipId { get; set; }
+    public string? RelationshipId { get => _RelationshipId; set => UpdateField(ref _RelationshipId, value, nameof(RelationshipId)); }
+
+    private string? _RelationshipId;
     /// <summary>
     /// Non-visual shape properties for the content part, specifying metadata and configuration not directly affecting rendering.
     /// </summary>
-    public DMWD.WordNonVisualContentPartShapeProperties? WordNonVisualContentPartShapeProperties { get; set; }
+    public DMWD.WordNonVisualContentPartShapeProperties? WordNonVisualContentPartShapeProperties { get => _WordNonVisualContentPartShapeProperties; set => UpdateField(ref _WordNonVisualContentPartShapeProperties, value, nameof(WordNonVisualContentPartShapeProperties)); }
+
+    private DMWD.WordNonVisualContentPartShapeProperties? _WordNonVisualContentPartShapeProperties;
     /// <summary>
     /// 2D transformation properties for the content part, specifying scaling, rotation, and translation.
     /// </summary>
-    public Transform2D? Transform2D { get; set; }
-    public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+    public Transform2D? Transform2D { get => _Transform2D; set => UpdateField(ref _Transform2D, value, nameof(Transform2D)); }
+
+    private Transform2D? _Transform2D;
+    public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
+
+    private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

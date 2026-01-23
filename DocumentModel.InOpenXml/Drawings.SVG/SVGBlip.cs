@@ -13,5 +13,7 @@ public partial class SVGBlip : ModelElement<DXO19DS.SVGBlip>
     /// <summary>
     ///   Linked Picture Reference
     /// </summary>
-    public string? Link { get; set; }
+    public string? Link { get => _Link; set => UpdateField(ref _Link, value, nameof(Link)); }
+
+    private string? _Link;
 }

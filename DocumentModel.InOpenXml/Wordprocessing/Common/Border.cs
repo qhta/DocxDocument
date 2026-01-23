@@ -14,21 +14,31 @@ public partial class Border : ModelElement<DXW.Border>
     /// <summary>
     /// Border color, specified as an abstract color value.
     /// </summary>
-    public DocumentModel.Color? Color { get; set; }
+    public DocumentModel.Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+
+    private DocumentModel.Color? _Color;
     /// <summary>
     /// Border width, specified in twips.
     /// </summary>
-    public Twips? Width { get; set; }
+    public Twips? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+
+    private Twips? _Width;
     /// <summary>
     /// Border spacing measurement, specifying the space between the border and the content.
     /// </summary>
-    public Twips? Space { get; set; }
+    public Twips? Space { get => _Space; set => UpdateField(ref _Space, value, nameof(Space)); }
+
+    private Twips? _Space;
     /// <summary>
     /// Indicates whether the border has a shadow effect.
     /// </summary>
-    public bool? Shadow { get; set; }
+    public bool? Shadow { get => _Shadow; set => UpdateField(ref _Shadow, value, nameof(Shadow)); }
+
+    private bool? _Shadow;
     /// <summary>
     /// Indicates whether the border has a frame effect.
     /// </summary>
-    public bool? Frame { get; set; }
+    public bool? Frame { get => _Frame; set => UpdateField(ref _Frame, value, nameof(Frame)); }
+
+    private bool? _Frame;
 }

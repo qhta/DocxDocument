@@ -14,13 +14,19 @@ public partial class TextInput : ModelElement<DXW.TextInput>
     /// <summary>
     /// Default string value for the text box form field, displayed when the form is loaded.
     /// </summary>
-    public string? DefaultTextBoxFormFieldString { get; set; }
+    public string? DefaultTextBoxFormFieldString { get => _DefaultTextBoxFormFieldString; set => UpdateField(ref _DefaultTextBoxFormFieldString, value, nameof(DefaultTextBoxFormFieldString)); }
+
+    private string? _DefaultTextBoxFormFieldString;
     /// <summary>
     /// Maximum length of input allowed in the text box form field.
     /// </summary>
-    public Int16? MaxLength { get; set; }
+    public Int16? MaxLength { get => _MaxLength; set => UpdateField(ref _MaxLength, value, nameof(MaxLength)); }
+
+    private Int16? _MaxLength;
     /// <summary>
     /// Formatting string for the text box form field, specifying input or display formatting.
     /// </summary>
-    public string? Format { get; set; }
+    public string? Format { get => _Format; set => UpdateField(ref _Format, value, nameof(Format)); }
+
+    private string? _Format;
 }

@@ -13,5 +13,7 @@ public partial class Blend : ModelElement<DXD.Blend>
     /// <summary>
     /// Effect container that is blended using the specified blend mode.
     /// </summary>
-    public EffectContainer? EffectContainer { get; set; }
+    public EffectContainer? EffectContainer { get => _EffectContainer; set => UpdateField(ref _EffectContainer, value, nameof(EffectContainer)); }
+
+    private EffectContainer? _EffectContainer;
 }

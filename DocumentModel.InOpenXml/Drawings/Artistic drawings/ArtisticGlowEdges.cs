@@ -13,5 +13,7 @@ public partial class ArtisticGlowEdges : ModelElement<DXO10D.ArtisticGlowEdges>
     /// <summary>
     /// Smoothness of the glow edges effect, influencing the softness of the glow.
     /// </summary>
-    public Int32? Smoothness { get; set; }
+    public Int32? Smoothness { get => _Smoothness; set => UpdateField(ref _Smoothness, value, nameof(Smoothness)); }
+
+    private Int32? _Smoothness;
 }

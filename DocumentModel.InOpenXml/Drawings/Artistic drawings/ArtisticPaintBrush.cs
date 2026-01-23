@@ -13,5 +13,7 @@ public partial class ArtisticPaintBrush : ModelElement<DXO10D.ArtisticPaintBrush
     /// <summary>
     /// Size of the brush used in the paint brush effect, influencing the thickness and coverage of the strokes.
     /// </summary>
-    public Int32? BrushSize { get; set; }
+    public Int32? BrushSize { get => _BrushSize; set => UpdateField(ref _BrushSize, value, nameof(BrushSize)); }
+
+    private Int32? _BrushSize;
 }

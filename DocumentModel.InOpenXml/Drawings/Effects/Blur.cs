@@ -13,5 +13,7 @@ public partial class Blur : ModelElement<DXD.Blur>
     /// <summary>
     /// Gets or sets a value indicating whether the bounds should grow to accommodate the blur.
     /// </summary>
-    public bool? Grow { get; set; }
+    public bool? Grow { get => _Grow; set => UpdateField(ref _Grow, value, nameof(Grow)); }
+
+    private bool? _Grow;
 }

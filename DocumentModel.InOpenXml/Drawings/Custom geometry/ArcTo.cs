@@ -65,7 +65,9 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
     ///   the arc segment is extracted. Equal width and height radii produce a circular arc.
     ///   </para>
     /// </remarks>
-    public string? HeightRadius { get; set; }
+    public string? HeightRadius { get => _HeightRadius; set => UpdateField(ref _HeightRadius, value, nameof(HeightRadius)); }
+
+    private string? _HeightRadius;
     /// <summary>
     ///   Starting angle of the arc on the ellipse.
     /// </summary>
@@ -95,7 +97,9 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
     ///   The arc is then drawn from this starting point through the angle specified by SwingAngle.
     ///   </para>
     /// </remarks>
-    public string? StartAngle { get; set; }
+    public string? StartAngle { get => _StartAngle; set => UpdateField(ref _StartAngle, value, nameof(StartAngle)); }
+
+    private string? _StartAngle;
     /// <summary>
     ///   Angular extent through which the arc sweeps.
     /// </summary>
@@ -126,5 +130,7 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
     ///   The arc is drawn along the ellipse's perimeter from the starting point to this endpoint.
     ///   </para>
     /// </remarks>
-    public string? SwingAngle { get; set; }
+    public string? SwingAngle { get => _SwingAngle; set => UpdateField(ref _SwingAngle, value, nameof(SwingAngle)); }
+
+    private string? _SwingAngle;
 }

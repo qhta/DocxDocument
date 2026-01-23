@@ -13,5 +13,7 @@ public partial class NormalAutoFit : ModelElement<DXD.NormalAutoFit>
     /// <summary>
     ///   Percentage reduction applied to line spacing for autofitting text.
     /// </summary>
-    public Int32? LineSpaceReduction { get; set; }
+    public Int32? LineSpaceReduction { get => _LineSpaceReduction; set => UpdateField(ref _LineSpaceReduction, value, nameof(LineSpaceReduction)); }
+
+    private Int32? _LineSpaceReduction;
 }

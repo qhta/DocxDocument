@@ -13,5 +13,7 @@ public partial class ArtisticCrisscrossEtching : ModelElement<DXO10D.ArtisticCri
     /// <summary>
     /// Pressure applied in the crisscross etching effect, influencing the intensity of the etched lines.
     /// </summary>
-    public Int32? Pressure { get; set; }
+    public Int32? Pressure { get => _Pressure; set => UpdateField(ref _Pressure, value, nameof(Pressure)); }
+
+    private Int32? _Pressure;
 }
