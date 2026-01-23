@@ -7,6 +7,7 @@ public partial class ArtisticCement : ModelElement<DXO10D.ArtisticCement>
     /// <summary>
     /// Transparency level of the cement effect.
     /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ArtisticCement))]
     public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
 
     private Int32? _Transparency;
@@ -14,6 +15,10 @@ public partial class ArtisticCement : ModelElement<DXO10D.ArtisticCement>
     /// Spacing between cracks in the cement effect.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ArtisticCement.CrackSpacing))]
+    /// <summary>
+    /// Spacing between cracks in the cement effect.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ArtisticCement))]
     public Int32? CrackSpacing { get => _CrackSpacing; set => UpdateField(ref _CrackSpacing, value, nameof(CrackSpacing)); }
 
     private Int32? _CrackSpacing;

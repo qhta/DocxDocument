@@ -8,6 +8,10 @@ public partial class ShapeNonVisualProperties : ModelElement<DXOD.ShapeNonVisual
     ///   NonVisualDrawingProperties.
     /// </summary>
     [OpenXmlProperty(nameof(DXOD.ShapeNonVisualProperties.NonVisualDrawingProperties))]
+    /// <summary>
+    ///   NonVisualDrawingProperties.
+    /// </summary>
+    [OpenXmlElement(typeof(DXOD.ShapeNonVisualProperties))]
     public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
 
     private NonVisualDrawingProperties? _NonVisualDrawingProperties;
@@ -15,6 +19,10 @@ public partial class ShapeNonVisualProperties : ModelElement<DXOD.ShapeNonVisual
     ///   NonVisualDrawingShapeProperties.
     /// </summary>
     [OpenXmlProperty(nameof(DXOD.ShapeNonVisualProperties.NonVisualDrawingShapeProperties))]
+    /// <summary>
+    ///   NonVisualDrawingShapeProperties.
+    /// </summary>
+    [OpenXmlElement(typeof(DXOD.ShapeNonVisualProperties))]
     public NonVisualDrawingShapeProperties? NonVisualDrawingShapeProperties { get => _NonVisualDrawingShapeProperties; set => UpdateField(ref _NonVisualDrawingShapeProperties, value, nameof(NonVisualDrawingShapeProperties)); }
 
     private NonVisualDrawingShapeProperties? _NonVisualDrawingShapeProperties;

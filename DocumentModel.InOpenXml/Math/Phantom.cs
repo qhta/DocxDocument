@@ -10,12 +10,17 @@ public partial class Phantom : ModelElement<DXM.Phantom>, ICommonMathContent
     ///   Phantom Properties.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.Phantom.PhantomProperties))]
+    /// <summary>
+    ///   Phantom Properties.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.Phantom))]
     public PhantomProperties? PhantomProperties { get => _PhantomProperties; set => UpdateField(ref _PhantomProperties, value, nameof(PhantomProperties)); }
 
     private PhantomProperties? _PhantomProperties;
     /// <summary>
     ///   Phantom object argument.
     /// </summary>
+    [OpenXmlElement(typeof(DXM.Phantom))]
     public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
 
     private Argument? _Argument;

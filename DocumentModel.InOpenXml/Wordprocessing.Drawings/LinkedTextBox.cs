@@ -9,6 +9,10 @@ public partial class LinkedTextBox : ModelElement<DXO10WDS.LinkedTextBox>, DMD.I
     /// The unique identifier for the linked text box, used to distinguish it from other text boxes in the document.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10WDS.LinkedTextBox.Id))]
+    /// <summary>
+    /// The unique identifier for the linked text box, used to distinguish it from other text boxes in the document.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10WDS.LinkedTextBox))]
     public UInt16? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
     private UInt16? _Id;
@@ -16,10 +20,15 @@ public partial class LinkedTextBox : ModelElement<DXO10WDS.LinkedTextBox>, DMD.I
     /// The sequence number of the linked text box, indicating its order in a chain of linked text boxes for text flow.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10WDS.LinkedTextBox.Sequence))]
+    /// <summary>
+    /// The sequence number of the linked text box, indicating its order in a chain of linked text boxes for text flow.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10WDS.LinkedTextBox))]
     public UInt16? Sequence { get => _Sequence; set => UpdateField(ref _Sequence, value, nameof(Sequence)); }
 
     private UInt16? _Sequence;
     [OpenXmlProperty(nameof(DXO10WDS.LinkedTextBox.OfficeArtExtensionList))]
+    [OpenXmlElement(typeof(DXO10WDS.LinkedTextBox))]
     public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
 
     private OfficeArtExtensionList? _OfficeArtExtensionList;

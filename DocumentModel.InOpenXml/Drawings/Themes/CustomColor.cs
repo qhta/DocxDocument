@@ -12,6 +12,10 @@ public partial class CustomColor : ModelElement<DXD.CustomColor>
     ///   Name
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomColor.Name))]
+    /// <summary>
+    ///   Name
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.CustomColor))]
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
     private string? _Name;
@@ -19,6 +23,10 @@ public partial class CustomColor : ModelElement<DXD.CustomColor>
     ///   RGB Color Model - Percentage Variant.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomColor.RgbColorModelPercentage))]
+    /// <summary>
+    ///   RGB Color Model - Percentage Variant.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.CustomColor))]
     public RgbColorModelPercentage? RgbColorModelPercentage { get => _RgbColorModelPercentage; set => UpdateField(ref _RgbColorModelPercentage, value, nameof(RgbColorModelPercentage)); }
 
     private RgbColorModelPercentage? _RgbColorModelPercentage;
@@ -26,6 +34,10 @@ public partial class CustomColor : ModelElement<DXD.CustomColor>
     ///   RGB Color Model - Hex Variant.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomColor.RgbColorModelHex))]
+    /// <summary>
+    ///   RGB Color Model - Hex Variant.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.CustomColor))]
     public RgbColorModelHex? RgbColorModelHex { get => _RgbColorModelHex; set => UpdateField(ref _RgbColorModelHex, value, nameof(RgbColorModelHex)); }
 
     private RgbColorModelHex? _RgbColorModelHex;
@@ -33,6 +45,10 @@ public partial class CustomColor : ModelElement<DXD.CustomColor>
     ///   Hue, Saturation, Luminance Color Model.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomColor.HslColor))]
+    /// <summary>
+    ///   Hue, Saturation, Luminance Color Model.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.CustomColor))]
     public HslColor? HslColor { get => _HslColor; set => UpdateField(ref _HslColor, value, nameof(HslColor)); }
 
     private HslColor? _HslColor;
@@ -40,6 +56,10 @@ public partial class CustomColor : ModelElement<DXD.CustomColor>
     ///   System Color.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomColor.SystemColor))]
+    /// <summary>
+    ///   System Color.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.CustomColor))]
     public SystemColor? SystemColor { get => _SystemColor; set => UpdateField(ref _SystemColor, value, nameof(SystemColor)); }
 
     private SystemColor? _SystemColor;
@@ -47,6 +67,10 @@ public partial class CustomColor : ModelElement<DXD.CustomColor>
     ///   Scheme Color.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomColor.SchemeColor))]
+    /// <summary>
+    ///   Scheme Color.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.CustomColor))]
     public SchemeColor? SchemeColor { get => _SchemeColor; set => UpdateField(ref _SchemeColor, value, nameof(SchemeColor)); }
 
     private SchemeColor? _SchemeColor;
@@ -54,6 +78,10 @@ public partial class CustomColor : ModelElement<DXD.CustomColor>
     ///   Preset Color.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomColor.PresetColor))]
+    /// <summary>
+    ///   Preset Color.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.CustomColor))]
     public PresetColor? PresetColor { get => _PresetColor; set => UpdateField(ref _PresetColor, value, nameof(PresetColor)); }
 
     private PresetColor? _PresetColor;

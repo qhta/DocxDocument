@@ -7,6 +7,7 @@ public partial class ArtisticPlasticWrap : ModelElement<DXO10D.ArtisticPlasticWr
     /// <summary>
     /// Transparency level of the plastic wrap effect.
     /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ArtisticPlasticWrap))]
     public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
 
     private Int32? _Transparency;
@@ -14,6 +15,10 @@ public partial class ArtisticPlasticWrap : ModelElement<DXO10D.ArtisticPlasticWr
     /// Smoothness of the plastic wrap effect, influencing the softness and clarity of the simulated plastic texture.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ArtisticPlasticWrap.Smoothness))]
+    /// <summary>
+    /// Smoothness of the plastic wrap effect, influencing the softness and clarity of the simulated plastic texture.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ArtisticPlasticWrap))]
     public Int32? Smoothness { get => _Smoothness; set => UpdateField(ref _Smoothness, value, nameof(Smoothness)); }
 
     private Int32? _Smoothness;

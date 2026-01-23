@@ -10,6 +10,10 @@ public partial class TextColumn : ModelElement<DXW.Column>
     /// Column width, specifying the width of the column.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.Column.Width))]
+    /// <summary>
+    /// Column width, specifying the width of the column.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.Column))]
     public string? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
 
     private string? _Width;
@@ -17,6 +21,10 @@ public partial class TextColumn : ModelElement<DXW.Column>
     /// Space before the following column, specifying the spacing between columns.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.Column.Space))]
+    /// <summary>
+    /// Space before the following column, specifying the spacing between columns.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.Column))]
     public string? Space { get => _Space; set => UpdateField(ref _Space, value, nameof(Space)); }
 
     private string? _Space;

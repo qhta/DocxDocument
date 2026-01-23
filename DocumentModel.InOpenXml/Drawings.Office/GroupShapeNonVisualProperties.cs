@@ -8,6 +8,10 @@ public partial class GroupShapeNonVisualProperties : ModelElement<DXOD.GroupShap
     ///   NonVisualDrawingProperties.
     /// </summary>
     [OpenXmlProperty(nameof(DXOD.GroupShapeNonVisualProperties.NonVisualDrawingProperties))]
+    /// <summary>
+    ///   NonVisualDrawingProperties.
+    /// </summary>
+    [OpenXmlElement(typeof(DXOD.GroupShapeNonVisualProperties))]
     public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
 
     private NonVisualDrawingProperties? _NonVisualDrawingProperties;
@@ -15,6 +19,10 @@ public partial class GroupShapeNonVisualProperties : ModelElement<DXOD.GroupShap
     ///   NonVisualGroupDrawingShapeProperties.
     /// </summary>
     [OpenXmlProperty(nameof(DXOD.GroupShapeNonVisualProperties.NonVisualGroupDrawingShapeProperties))]
+    /// <summary>
+    ///   NonVisualGroupDrawingShapeProperties.
+    /// </summary>
+    [OpenXmlElement(typeof(DXOD.GroupShapeNonVisualProperties))]
     public NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get => _NonVisualGroupDrawingShapeProperties; set => UpdateField(ref _NonVisualGroupDrawingShapeProperties, value, nameof(NonVisualGroupDrawingShapeProperties)); }
 
     private NonVisualGroupDrawingShapeProperties? _NonVisualGroupDrawingShapeProperties;

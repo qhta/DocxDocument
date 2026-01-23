@@ -9,6 +9,10 @@ public partial class ContentPartLocks : ModelElement<DXO10D.ContentPartLocks>, I
     ///   Disallows grouping of the content part.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ContentPartLocks.NoGrouping))]
+    /// <summary>
+    ///   Disallows grouping of the content part.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ContentPartLocks))]
     public bool? NoGrouping { get => _NoGrouping; set => UpdateField(ref _NoGrouping, value, nameof(NoGrouping)); }
 
     private bool? _NoGrouping;
@@ -16,6 +20,10 @@ public partial class ContentPartLocks : ModelElement<DXO10D.ContentPartLocks>, I
     ///   Disallows selection of the content part.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ContentPartLocks.NoSelection))]
+    /// <summary>
+    ///   Disallows selection of the content part.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ContentPartLocks))]
     public bool? NoSelection { get => _NoSelection; set => UpdateField(ref _NoSelection, value, nameof(NoSelection)); }
 
     private bool? _NoSelection;
@@ -23,6 +31,10 @@ public partial class ContentPartLocks : ModelElement<DXO10D.ContentPartLocks>, I
     ///   Disallows rotation of the content part.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ContentPartLocks.NoRotation))]
+    /// <summary>
+    ///   Disallows rotation of the content part.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ContentPartLocks))]
     public bool? NoRotation { get => _NoRotation; set => UpdateField(ref _NoRotation, value, nameof(NoRotation)); }
 
     private bool? _NoRotation;
@@ -30,6 +42,10 @@ public partial class ContentPartLocks : ModelElement<DXO10D.ContentPartLocks>, I
     ///   Disallows changing the aspect ratio of the content part.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ContentPartLocks.NoChangeAspect))]
+    /// <summary>
+    ///   Disallows changing the aspect ratio of the content part.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ContentPartLocks))]
     public bool? NoChangeAspect { get => _NoChangeAspect; set => UpdateField(ref _NoChangeAspect, value, nameof(NoChangeAspect)); }
 
     private bool? _NoChangeAspect;
@@ -37,6 +53,10 @@ public partial class ContentPartLocks : ModelElement<DXO10D.ContentPartLocks>, I
     ///   Disallows moving the content part.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ContentPartLocks.NoMove))]
+    /// <summary>
+    ///   Disallows moving the content part.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ContentPartLocks))]
     public bool? NoMove { get => _NoMove; set => UpdateField(ref _NoMove, value, nameof(NoMove)); }
 
     private bool? _NoMove;
@@ -44,6 +64,10 @@ public partial class ContentPartLocks : ModelElement<DXO10D.ContentPartLocks>, I
     ///   Disallows resizing the content part.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ContentPartLocks.NoResize))]
+    /// <summary>
+    ///   Disallows resizing the content part.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ContentPartLocks))]
     public bool? NoResize { get => _NoResize; set => UpdateField(ref _NoResize, value, nameof(NoResize)); }
 
     private bool? _NoResize;
@@ -51,6 +75,10 @@ public partial class ContentPartLocks : ModelElement<DXO10D.ContentPartLocks>, I
     ///   Disallows editing the points of the content part.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ContentPartLocks.NoEditPoints))]
+    /// <summary>
+    ///   Disallows editing the points of the content part.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ContentPartLocks))]
     public bool? NoEditPoints { get => _NoEditPoints; set => UpdateField(ref _NoEditPoints, value, nameof(NoEditPoints)); }
 
     private bool? _NoEditPoints;
@@ -58,6 +86,10 @@ public partial class ContentPartLocks : ModelElement<DXO10D.ContentPartLocks>, I
     ///   Disallows showing adjustment handles on the content part.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ContentPartLocks.NoAdjustHandles))]
+    /// <summary>
+    ///   Disallows showing adjustment handles on the content part.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ContentPartLocks))]
     public bool? NoAdjustHandles { get => _NoAdjustHandles; set => UpdateField(ref _NoAdjustHandles, value, nameof(NoAdjustHandles)); }
 
     private bool? _NoAdjustHandles;
@@ -65,6 +97,10 @@ public partial class ContentPartLocks : ModelElement<DXO10D.ContentPartLocks>, I
     ///   Disallows changing arrowheads on the content part.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ContentPartLocks.NoChangeArrowheads))]
+    /// <summary>
+    ///   Disallows changing arrowheads on the content part.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ContentPartLocks))]
     public bool? NoChangeArrowheads { get => _NoChangeArrowheads; set => UpdateField(ref _NoChangeArrowheads, value, nameof(NoChangeArrowheads)); }
 
     private bool? _NoChangeArrowheads;
@@ -72,10 +108,15 @@ public partial class ContentPartLocks : ModelElement<DXO10D.ContentPartLocks>, I
     ///   Disallows changing the shape type of the content part.
     /// </summary>
     [OpenXmlProperty(nameof(DXO10D.ContentPartLocks.NoChangeShapeType))]
+    /// <summary>
+    ///   Disallows changing the shape type of the content part.
+    /// </summary>
+    [OpenXmlElement(typeof(DXO10D.ContentPartLocks))]
     public bool? NoChangeShapeType { get => _NoChangeShapeType; set => UpdateField(ref _NoChangeShapeType, value, nameof(NoChangeShapeType)); }
 
     private bool? _NoChangeShapeType;
     [OpenXmlProperty(nameof(DXO10D.ContentPartLocks.OfficeArtExtensionList))]
+    [OpenXmlElement(typeof(DXO10D.ContentPartLocks))]
     public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
 
     private OfficeArtExtensionList? _OfficeArtExtensionList;

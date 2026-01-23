@@ -8,12 +8,14 @@ public partial class SeparatorMark : ModelElement<DXW.SeparatorMark>, IRunConten
     /// <summary>
     /// Specifies whether the separator mark occurs in an endnote, footnote, or annotation.
     /// </summary>
+    [OpenXmlElement(typeof(DXW.SeparatorMark))]
     public NoteReferenceKind? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
 
     private NoteReferenceKind? _Value;
     /// <summary>
     /// Indicates whether this instance is a continuation separator mark, used when footnotes or endnotes continue across pages.
     /// </summary>
+    [OpenXmlElement(typeof(DXW.SeparatorMark))]
     public bool Continuation { get => _Continuation; set => UpdateField(ref _Continuation, value, nameof(Continuation)); }
 
     private bool _Continuation;

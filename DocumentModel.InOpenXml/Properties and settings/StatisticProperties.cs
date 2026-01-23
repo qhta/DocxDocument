@@ -55,6 +55,10 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
     ///   The total number of pages of a document if applicable.
     /// </summary>
     [OpenXmlProperty(nameof(DXEP.Properties.Pages))]
+    /// <summary>
+    ///   The total number of pages of a document if applicable.
+    /// </summary>
+    [OpenXmlElement(typeof(DXEP.Properties))]
     public int? Pages { get => _Pages; set => UpdateField(ref _Pages, value, nameof(Pages)); }
 
     private int? _Pages;
@@ -62,6 +66,10 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
     ///   The total number of words of a document if applicable.
     /// </summary>
     [OpenXmlProperty(nameof(DXEP.Properties.Words))]
+    /// <summary>
+    ///   The total number of words of a document if applicable.
+    /// </summary>
+    [OpenXmlElement(typeof(DXEP.Properties))]
     public int? Words { get => _Words; set => UpdateField(ref _Words, value, nameof(Words)); }
 
     private int? _Words;
@@ -69,6 +77,10 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
     ///   The total number of characters in a document.
     /// </summary>
     [OpenXmlProperty(nameof(DXEP.Properties.Characters))]
+    /// <summary>
+    ///   The total number of characters in a document.
+    /// </summary>
+    [OpenXmlElement(typeof(DXEP.Properties))]
     public int? Characters { get => _Characters; set => UpdateField(ref _Characters, value, nameof(Characters)); }
 
     private int? _Characters;
@@ -76,6 +88,10 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
     ///   The total number of lines in a document when last saved by a conforming producer if applicable.
     /// </summary>
     [OpenXmlProperty(nameof(DXEP.Properties.Lines))]
+    /// <summary>
+    ///   The total number of lines in a document when last saved by a conforming producer if applicable.
+    /// </summary>
+    [OpenXmlElement(typeof(DXEP.Properties))]
     public int? Lines { get => _Lines; set => UpdateField(ref _Lines, value, nameof(Lines)); }
 
     private int? _Lines;
@@ -83,6 +99,10 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
     ///   The total number of paragraphs found in a document if applicable.
     /// </summary>
     [OpenXmlProperty(nameof(DXEP.Properties.Paragraphs))]
+    /// <summary>
+    ///   The total number of paragraphs found in a document if applicable.
+    /// </summary>
+    [OpenXmlElement(typeof(DXEP.Properties))]
     public int? Paragraphs { get => _Paragraphs; set => UpdateField(ref _Paragraphs, value, nameof(Paragraphs)); }
 
     private int? _Paragraphs;
@@ -90,6 +110,10 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
     ///   The last count of the number of characters (including spaces) in this document.
     /// </summary>
     [OpenXmlProperty(nameof(DXEP.Properties.CharactersWithSpaces))]
+    /// <summary>
+    ///   The last count of the number of characters (including spaces) in this document.
+    /// </summary>
+    [OpenXmlElement(typeof(DXEP.Properties))]
     public int? CharactersWithSpaces { get => _CharactersWithSpaces; set => UpdateField(ref _CharactersWithSpaces, value, nameof(CharactersWithSpaces)); }
 
     private int? _CharactersWithSpaces;
@@ -97,6 +121,10 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
     ///  The total number of slides in a presentation document.
     /// </summary>
     [OpenXmlProperty(nameof(DXEP.Properties.Slides))]
+    /// <summary>
+    ///  The total number of slides in a presentation document.
+    /// </summary>
+    [OpenXmlElement(typeof(DXEP.Properties))]
     public int? Slides { get => _Slides; set => UpdateField(ref _Slides, value, nameof(Slides)); }
 
     private int? _Slides;
@@ -104,6 +132,10 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
     ///  The number of slides in a presentation containing notes.
     /// </summary>
     [OpenXmlProperty(nameof(DXEP.Properties.Notes))]
+    /// <summary>
+    ///  The number of slides in a presentation containing notes.
+    /// </summary>
+    [OpenXmlElement(typeof(DXEP.Properties))]
     public int? Notes { get => _Notes; set => UpdateField(ref _Notes, value, nameof(Notes)); }
 
     private int? _Notes;
@@ -111,6 +143,10 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
     ///   The number of hidden slides in a presentation document.
     /// </summary>
     [OpenXmlProperty(nameof(DXEP.Properties.HiddenSlides))]
+    /// <summary>
+    ///   The number of hidden slides in a presentation document.
+    /// </summary>
+    [OpenXmlElement(typeof(DXEP.Properties))]
     public int? HiddenSlides { get => _HiddenSlides; set => UpdateField(ref _HiddenSlides, value, nameof(HiddenSlides)); }
 
     private int? _HiddenSlides;
@@ -118,6 +154,10 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
     ///   The total number of sound or video clips that are present in the document.
     /// </summary>
     [OpenXmlProperty(nameof(DXEP.Properties.MultimediaClips))]
+    /// <summary>
+    ///   The total number of sound or video clips that are present in the document.
+    /// </summary>
+    [OpenXmlElement(typeof(DXEP.Properties))]
     public int? MultimediaClips { get => _MultimediaClips; set => UpdateField(ref _MultimediaClips, value, nameof(MultimediaClips)); }
 
     private int? _MultimediaClips;
@@ -129,6 +169,10 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
     ///   Total time that a document has been edited. The default time unit is minutes.
     /// </summary>
     [OpenXmlProperty(nameof(DXEP.Properties.TotalTime))]
+    /// <summary>
+    ///   Total time that a document has been edited. The default time unit is minutes.
+    /// </summary>
+    [OpenXmlElement(typeof(DXEP.Properties))]
     public int? TotalTime { get => _TotalTime; set => UpdateField(ref _TotalTime, value, nameof(TotalTime)); }
 
     private int? _TotalTime;

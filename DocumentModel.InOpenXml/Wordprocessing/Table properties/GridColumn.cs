@@ -8,6 +8,10 @@ public partial class GridColumn : ModelElement<DXW.GridColumn>
     ///   Grid Column Width
     /// </summary>
     [OpenXmlProperty(nameof(DXW.GridColumn.Width))]
+    /// <summary>
+    ///   Grid Column Width
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.GridColumn))]
     public Twips? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
 
     private Twips? _Width;

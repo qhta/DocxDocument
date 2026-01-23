@@ -9,6 +9,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Source document type for the mail merge (e.g., form letter, email, envelope).
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.MainDocumentType))]
+    /// <summary>
+    /// Source document type for the mail merge (e.g., form letter, email, envelope).
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public MailMergeDocumentKind? MainDocumentType { get => _MainDocumentType; set => UpdateField(ref _MainDocumentType, value, nameof(MainDocumentType)); }
 
     private MailMergeDocumentKind? _MainDocumentType;
@@ -16,6 +20,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Indicates whether the query contains a link to an external query file.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.LinkToQuery))]
+    /// <summary>
+    /// Indicates whether the query contains a link to an external query file.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public bool? LinkToQuery { get => _LinkToQuery; set => UpdateField(ref _LinkToQuery, value, nameof(LinkToQuery)); }
 
     private bool? _LinkToQuery;
@@ -23,6 +31,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Data source type for the mail merge (e.g., database, spreadsheet, text file).
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.DataType))]
+    /// <summary>
+    /// Data source type for the mail merge (e.g., database, spreadsheet, text file).
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public MailMergeDataKind? DataType { get => _DataType; set => UpdateField(ref _DataType, value, nameof(DataType)); }
 
     private MailMergeDataKind? _DataType;
@@ -30,6 +42,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Connection string used to connect to the data source.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.ConnectString))]
+    /// <summary>
+    /// Connection string used to connect to the data source.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public string? ConnectString { get => _ConnectString; set => UpdateField(ref _ConnectString, value, nameof(ConnectString)); }
 
     private string? _ConnectString;
@@ -37,6 +53,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Query used to select records from the data source for merging.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.Query))]
+    /// <summary>
+    /// Query used to select records from the data source for merging.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public string? Query { get => _Query; set => UpdateField(ref _Query, value, nameof(Query)); }
 
     private string? _Query;
@@ -44,6 +64,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// File path reference to the data source.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.DataSourceReference))]
+    /// <summary>
+    /// File path reference to the data source.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public DataSourceReference? DataSourceReference { get => _DataSourceReference; set => UpdateField(ref _DataSourceReference, value, nameof(DataSourceReference)); }
 
     private DataSourceReference? _DataSourceReference;
@@ -51,6 +75,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// File path reference to the header definition file.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.HeaderSource))]
+    /// <summary>
+    /// File path reference to the header definition file.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public HeaderSource? HeaderSource { get => _HeaderSource; set => UpdateField(ref _HeaderSource, value, nameof(HeaderSource)); }
 
     private HeaderSource? _HeaderSource;
@@ -58,6 +86,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Indicates whether blank lines should be removed from merged documents.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.DoNotSuppressBlankLines))]
+    /// <summary>
+    /// Indicates whether blank lines should be removed from merged documents.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public bool? DoNotSuppressBlankLines { get => _DoNotSuppressBlankLines; set => UpdateField(ref _DoNotSuppressBlankLines, value, nameof(DoNotSuppressBlankLines)); }
 
     private bool? _DoNotSuppressBlankLines;
@@ -65,6 +97,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Destination for the merged document (e.g., new document, printer, email).
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.Destination))]
+    /// <summary>
+    /// Destination for the merged document (e.g., new document, printer, email).
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public MailMergeDestinationKind? Destination { get => _Destination; set => UpdateField(ref _Destination, value, nameof(Destination)); }
 
     private MailMergeDestinationKind? _Destination;
@@ -72,6 +108,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Name of the column containing email addresses for email merges.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.AddressFieldName))]
+    /// <summary>
+    /// Name of the column containing email addresses for email merges.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public string? AddressFieldName { get => _AddressFieldName; set => UpdateField(ref _AddressFieldName, value, nameof(AddressFieldName)); }
 
     private string? _AddressFieldName;
@@ -79,6 +119,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Subject line for merged email or fax messages.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.MailSubject))]
+    /// <summary>
+    /// Subject line for merged email or fax messages.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public string? MailSubject { get => _MailSubject; set => UpdateField(ref _MailSubject, value, nameof(MailSubject)); }
 
     private string? _MailSubject;
@@ -86,6 +130,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Indicates whether the merged document should be sent as an email attachment.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.MailAsAttachment))]
+    /// <summary>
+    /// Indicates whether the merged document should be sent as an email attachment.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public bool? MailAsAttachment { get => _MailAsAttachment; set => UpdateField(ref _MailAsAttachment, value, nameof(MailAsAttachment)); }
 
     private bool? _MailAsAttachment;
@@ -93,6 +141,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Indicates whether merged data should be displayed within the document.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.ViewMergedData))]
+    /// <summary>
+    /// Indicates whether merged data should be displayed within the document.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public bool? ViewMergedData { get => _ViewMergedData; set => UpdateField(ref _ViewMergedData, value, nameof(ViewMergedData)); }
 
     private bool? _ViewMergedData;
@@ -100,6 +152,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Record currently displayed in the merged document.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.ActiveRecord))]
+    /// <summary>
+    /// Record currently displayed in the merged document.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public Int32? ActiveRecord { get => _ActiveRecord; set => UpdateField(ref _ActiveRecord, value, nameof(ActiveRecord)); }
 
     private Int32? _ActiveRecord;
@@ -107,6 +163,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Mail merge error reporting setting, specifying the error handling mode.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.CheckErrors))]
+    /// <summary>
+    /// Mail merge error reporting setting, specifying the error handling mode.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public Int32? CheckErrors { get => _CheckErrors; set => UpdateField(ref _CheckErrors, value, nameof(CheckErrors)); }
 
     private Int32? _CheckErrors;
@@ -114,6 +174,10 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
     /// Office Data Source Object (ODSO) settings for advanced mail merge configuration.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.DataSourceObject))]
+    /// <summary>
+    /// Office Data Source Object (ODSO) settings for advanced mail merge configuration.
+    /// </summary>
+    [OpenXmlElement(typeof(DXW.MailMerge))]
     public DataSourceObject? DataSourceObject { get => _DataSourceObject; set => UpdateField(ref _DataSourceObject, value, nameof(DataSourceObject)); }
 
     private DataSourceObject? _DataSourceObject;

@@ -9,12 +9,17 @@ public partial class LimitLower : ModelElement<DXM.LimitLower>, ICommonMathConte
     ///   Lower Limit Properties.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.LimitLower.LimitLowerProperties))]
+    /// <summary>
+    ///   Lower Limit Properties.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.LimitLower))]
     public LimitLowerProperties? LimitLowerProperties { get => _LimitLowerProperties; set => UpdateField(ref _LimitLowerProperties, value, nameof(LimitLowerProperties)); }
 
     private LimitLowerProperties? _LimitLowerProperties;
     /// <summary>
     ///   argument.
     /// </summary>
+    [OpenXmlElement(typeof(DXM.LimitLower))]
     public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
 
     private Argument? _Argument;
@@ -22,6 +27,10 @@ public partial class LimitLower : ModelElement<DXM.LimitLower>, ICommonMathConte
     ///   Limit (lower.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.LimitLower.Limit))]
+    /// <summary>
+    ///   Limit (lower.
+    /// </summary>
+    [OpenXmlElement(typeof(DXM.LimitLower))]
     public Limit? Limit { get => _Limit; set => UpdateField(ref _Limit, value, nameof(Limit)); }
 
     private Limit? _Limit;

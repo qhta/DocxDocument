@@ -8,6 +8,10 @@ public partial class ConnectionShapeLocks : ModelElement<DXD.ConnectionShapeLock
     /// Gets or sets a value indicating whether grouping of the shape is disallowed.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ConnectionShapeLocks.NoGrouping))]
+    /// <summary>
+    /// Gets or sets a value indicating whether grouping of the shape is disallowed.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ConnectionShapeLocks))]
     public bool? NoGrouping { get => _NoGrouping; set => UpdateField(ref _NoGrouping, value, nameof(NoGrouping)); }
 
     private bool? _NoGrouping;
@@ -15,6 +19,10 @@ public partial class ConnectionShapeLocks : ModelElement<DXD.ConnectionShapeLock
     /// Gets or sets a value indicating whether selection of the shape is disallowed.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ConnectionShapeLocks.NoSelection))]
+    /// <summary>
+    /// Gets or sets a value indicating whether selection of the shape is disallowed.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ConnectionShapeLocks))]
     public bool? NoSelection { get => _NoSelection; set => UpdateField(ref _NoSelection, value, nameof(NoSelection)); }
 
     private bool? _NoSelection;
@@ -22,6 +30,10 @@ public partial class ConnectionShapeLocks : ModelElement<DXD.ConnectionShapeLock
     /// Gets or sets a value indicating whether rotation of the shape is disallowed.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ConnectionShapeLocks.NoRotation))]
+    /// <summary>
+    /// Gets or sets a value indicating whether rotation of the shape is disallowed.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ConnectionShapeLocks))]
     public bool? NoRotation { get => _NoRotation; set => UpdateField(ref _NoRotation, value, nameof(NoRotation)); }
 
     private bool? _NoRotation;
@@ -29,6 +41,10 @@ public partial class ConnectionShapeLocks : ModelElement<DXD.ConnectionShapeLock
     /// Gets or sets a value indicating whether changing the aspect ratio of the shape is disallowed.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ConnectionShapeLocks.NoChangeAspect))]
+    /// <summary>
+    /// Gets or sets a value indicating whether changing the aspect ratio of the shape is disallowed.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ConnectionShapeLocks))]
     public bool? NoChangeAspect { get => _NoChangeAspect; set => UpdateField(ref _NoChangeAspect, value, nameof(NoChangeAspect)); }
 
     private bool? _NoChangeAspect;
@@ -36,6 +52,10 @@ public partial class ConnectionShapeLocks : ModelElement<DXD.ConnectionShapeLock
     /// Gets or sets a value indicating whether moving the shape is disallowed.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ConnectionShapeLocks.NoMove))]
+    /// <summary>
+    /// Gets or sets a value indicating whether moving the shape is disallowed.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ConnectionShapeLocks))]
     public bool? NoMove { get => _NoMove; set => UpdateField(ref _NoMove, value, nameof(NoMove)); }
 
     private bool? _NoMove;
@@ -43,6 +63,10 @@ public partial class ConnectionShapeLocks : ModelElement<DXD.ConnectionShapeLock
     /// Gets or sets a value indicating whether resizing the shape is disallowed.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ConnectionShapeLocks.NoResize))]
+    /// <summary>
+    /// Gets or sets a value indicating whether resizing the shape is disallowed.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ConnectionShapeLocks))]
     public bool? NoResize { get => _NoResize; set => UpdateField(ref _NoResize, value, nameof(NoResize)); }
 
     private bool? _NoResize;
@@ -50,6 +74,10 @@ public partial class ConnectionShapeLocks : ModelElement<DXD.ConnectionShapeLock
     /// Gets or sets a value indicating whether editing the shape's points is disallowed.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ConnectionShapeLocks.NoEditPoints))]
+    /// <summary>
+    /// Gets or sets a value indicating whether editing the shape's points is disallowed.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ConnectionShapeLocks))]
     public bool? NoEditPoints { get => _NoEditPoints; set => UpdateField(ref _NoEditPoints, value, nameof(NoEditPoints)); }
 
     private bool? _NoEditPoints;
@@ -57,6 +85,10 @@ public partial class ConnectionShapeLocks : ModelElement<DXD.ConnectionShapeLock
     /// Gets or sets a value indicating whether showing adjust handles on the shape is disallowed.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ConnectionShapeLocks.NoAdjustHandles))]
+    /// <summary>
+    /// Gets or sets a value indicating whether showing adjust handles on the shape is disallowed.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ConnectionShapeLocks))]
     public bool? NoAdjustHandles { get => _NoAdjustHandles; set => UpdateField(ref _NoAdjustHandles, value, nameof(NoAdjustHandles)); }
 
     private bool? _NoAdjustHandles;
@@ -64,6 +96,10 @@ public partial class ConnectionShapeLocks : ModelElement<DXD.ConnectionShapeLock
     /// Gets or sets a value indicating whether changing the arrowheads of the connector is disallowed.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ConnectionShapeLocks.NoChangeArrowheads))]
+    /// <summary>
+    /// Gets or sets a value indicating whether changing the arrowheads of the connector is disallowed.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ConnectionShapeLocks))]
     public bool? NoChangeArrowheads { get => _NoChangeArrowheads; set => UpdateField(ref _NoChangeArrowheads, value, nameof(NoChangeArrowheads)); }
 
     private bool? _NoChangeArrowheads;
@@ -71,6 +107,10 @@ public partial class ConnectionShapeLocks : ModelElement<DXD.ConnectionShapeLock
     /// Gets or sets a value indicating whether changing the shape type is disallowed.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ConnectionShapeLocks.NoChangeShapeType))]
+    /// <summary>
+    /// Gets or sets a value indicating whether changing the shape type is disallowed.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ConnectionShapeLocks))]
     public bool? NoChangeShapeType { get => _NoChangeShapeType; set => UpdateField(ref _NoChangeShapeType, value, nameof(NoChangeShapeType)); }
 
     private bool? _NoChangeShapeType;
@@ -78,6 +118,10 @@ public partial class ConnectionShapeLocks : ModelElement<DXD.ConnectionShapeLock
     /// Extension list for additional connector locking options.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ConnectionShapeLocks.ConnectorLockingExtensionList))]
+    /// <summary>
+    /// Extension list for additional connector locking options.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.ConnectionShapeLocks))]
     public ConnectorLockingExtensionList? ConnectorLockingExtensionList { get => _ConnectorLockingExtensionList; set => UpdateField(ref _ConnectorLockingExtensionList, value, nameof(ConnectorLockingExtensionList)); }
 
     private ConnectorLockingExtensionList? _ConnectorLockingExtensionList;

@@ -8,6 +8,10 @@ public partial class Graphic : ModelElement<DXD.Graphic>
     ///   Data associated with the graphic object.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.Graphic.GraphicData))]
+    /// <summary>
+    ///   Data associated with the graphic object.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.Graphic))]
     public GraphicData? GraphicData { get => _GraphicData; set => UpdateField(ref _GraphicData, value, nameof(GraphicData)); }
 
     private GraphicData? _GraphicData;

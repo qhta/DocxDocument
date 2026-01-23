@@ -31,7 +31,7 @@ public class AddPrivateFieldsWithUpdate
 
     if (rewriter.Changed)
     {
-      File.WriteAllText(filePath, newRoot.NormalizeWhitespace().ToFullString());
+      File.WriteAllText(filePath, newRoot.NormalizeWhitespace("  ").ToFullString());
       Console.WriteLine($"Updated: {filePath}");
     }
   }

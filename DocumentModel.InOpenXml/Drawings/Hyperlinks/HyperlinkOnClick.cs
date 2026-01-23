@@ -8,10 +8,15 @@ public partial class HyperlinkOnClick : ModelElement<DXD.HyperlinkOnClick>, IExt
     ///   Embedded sound to play when the hyperlink is activated.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.HyperlinkOnClick.HyperlinkSound))]
+    /// <summary>
+    ///   Embedded sound to play when the hyperlink is activated.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.HyperlinkOnClick))]
     public EmbeddedWavAudioFileType? HyperlinkSound { get => _HyperlinkSound; set => UpdateField(ref _HyperlinkSound, value, nameof(HyperlinkSound)); }
 
     private EmbeddedWavAudioFileType? _HyperlinkSound;
     [OpenXmlProperty(nameof(DXD.HyperlinkOnClick.HyperlinkExtensionList))]
+    [OpenXmlElement(typeof(DXD.HyperlinkOnClick))]
     public HyperlinkExtensionList? HyperlinkExtensionList { get => _HyperlinkExtensionList; set => UpdateField(ref _HyperlinkExtensionList, value, nameof(HyperlinkExtensionList)); }
 
     private HyperlinkExtensionList? _HyperlinkExtensionList;

@@ -8,6 +8,10 @@ public partial class AutoNumberedBullet : ModelElement<DXD.AutoNumberedBullet>
     /// Bullet autonumbering type.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.AutoNumberedBullet.Type))]
+    /// <summary>
+    /// Bullet autonumbering type.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.AutoNumberedBullet))]
     public TextAutoNumberSchemeKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
     private TextAutoNumberSchemeKind? _Type;
@@ -15,6 +19,10 @@ public partial class AutoNumberedBullet : ModelElement<DXD.AutoNumberedBullet>
     /// Starting value for numbering.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.AutoNumberedBullet.StartAt))]
+    /// <summary>
+    /// Starting value for numbering.
+    /// </summary>
+    [OpenXmlElement(typeof(DXD.AutoNumberedBullet))]
     public Int32? StartAt { get => _StartAt; set => UpdateField(ref _StartAt, value, nameof(StartAt)); }
 
     private Int32? _StartAt;
