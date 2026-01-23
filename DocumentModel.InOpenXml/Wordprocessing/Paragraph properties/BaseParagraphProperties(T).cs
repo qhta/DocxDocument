@@ -3,8 +3,8 @@ namespace DocumentModel.Wordprocessing;
 /// Base interface for all paragraph properties classes in a WordprocessingML document.
 /// Contains common properties for controlling paragraph formatting, layout, alignment, borders, spacing, indentation, and advanced typography features.
 /// </summary>
-public abstract partial class BaseParagraphProperties : ModelElement
-//<OpenXmlItemType> where OpenXmlItemType : DX.OpenXmlElement
+public abstract partial class BaseParagraphProperties<T> : ModelElement<T>
+  where T : DX.OpenXmlElement
 {
     /// <summary>
     /// Indicates whether the paragraph should be kept on the same page as the next paragraph.
