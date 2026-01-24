@@ -186,7 +186,7 @@ namespace DocumentModel.InOpenXml.Test
 				using (var document = Document.CreateDocument("temp.docx"))
 				{
 					document.Rsids = testData;
-    			document.Rsids.Add(new Rsid { Id = Random.Shared.Next() });
+    			document.Rsids.Add(Random.Shared.Next() );
 				}
 
 				Rsids storedData;
@@ -233,10 +233,7 @@ namespace DocumentModel.InOpenXml.Test
 			var props = new Rsids();
 			for (int i=1; i<=10; i++)
 			{
-				props.Add(new Rsid
-				{
-					Id = i
-				});
+				props.Add(i);
 			}
 			return props;
 		}
