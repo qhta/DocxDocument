@@ -146,6 +146,8 @@ public static class TestHelper
   /// <param name="instance">The test data to modify.</param>
   public static void ChangeTestData<T>(T instance)
   {
+    if (instance == null)
+      throw new ArgumentNullException(nameof(instance));  
     var properties = typeof(T).GetProperties().Where(prop => prop.CanWrite);
     foreach (var prop in properties)
     {
@@ -153,15 +155,23 @@ public static class TestHelper
       // Update each property with new test data
       if (prop.PropertyType == typeof(bool))
       {
-        prop.SetValue(instance, ChangeBoolProperty(instance, prop));
+        prop.SetValue(instance, Random.Shared.NextDouble() < 0.5);
       }
       else if (prop.PropertyType == typeof(int))
       {
-        prop.SetValue(instance, ChangeIntProperty(instance, prop));
+        prop.SetValue(instance, Random.Shared.Next());
+      }
+      else if (prop.PropertyType == typeof(HexInt))
+      {
+        prop.SetValue(instance, new HexInt(Random.Shared.Next()));
       }
       else if (prop.PropertyType == typeof(string))
       {
-        prop.SetValue(instance, prop.GetValue(instance) + "_updated");
+        prop.SetValue(instance, prop.GetValue(instance) + " updated");
+      }
+      else if (prop.PropertyType == typeof(DateTime))
+      {
+        prop.SetValue(instance, DateTime.Now);
       }
     }
   }
