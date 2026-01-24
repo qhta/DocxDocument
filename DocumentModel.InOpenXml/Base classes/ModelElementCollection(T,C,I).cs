@@ -48,7 +48,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   protected override void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
     this.Clear();
-    foreach (var openXmlElement in openXmlModeledCollection!.ChildElements.Cast<OpenXmlItemType>())
+    foreach (var openXmlElement in openXmlModeledCollection!.ChildElements.OfType<OpenXmlItemType>())
     {
       var constructor = typeof(ItemType).GetConstructor([typeof(ModelElement<OpenXmlItemType>), typeof(OpenXmlItemType)]);
       ItemType modelObject;
