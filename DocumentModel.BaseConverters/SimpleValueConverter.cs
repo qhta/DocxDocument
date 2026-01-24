@@ -15,6 +15,8 @@ public static class SimpleValueConverter
   /// <returns>The converted value, or null if the input is null.</returns>
   public static object? ChangeType(object? value, Type targetType)
   {
+    if (value is HexBinaryValue hexBinaryValue && targetType == typeof(HexInt))
+      return new HexInt(hexBinaryValue.Value!);
     if (TryImplicitConvert(value, targetType, out var result))
       return result;
     return Convert.ChangeType(value, targetType);
@@ -35,7 +37,7 @@ public static class SimpleValueConverter
 
     var sourceType = source.GetType();
     var methods = sourceType.GetMethods(BindingFlags.Public | BindingFlags.Static)
-      .Concat(targetType.GetMethods(BindingFlags.Public | BindingFlags.Static));
+      .Concat(targetType.GetMethods(BindingFlags.Public | BindingFlags.Static)).ToArray();
 
     var op = methods.FirstOrDefault(m =>
       m.Name == "op_Implicit" &&

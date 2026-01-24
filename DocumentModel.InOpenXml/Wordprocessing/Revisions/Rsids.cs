@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a listing of all revision save ID values in a WordprocessingML document.
 /// </summary>
 [XmlRoot("Rsids")]
-public sealed partial class Rsids : ModelElementCollection<Rsid, DXW.Rsids, DXW.Rsid>
+public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
 {
 
   /// <summary>
@@ -23,16 +23,6 @@ public sealed partial class Rsids : ModelElementCollection<Rsid, DXW.Rsids, DXW.
       AttachAndLoad(document.WordprocessingDocument);
   }
 
-  public override void LoadData(object openXmlElement)
-  {
-    base.LoadData(openXmlElement);
-  }
-
-  public override void UpdateData(object openXmlElement)
-  {
-    base.UpdateData(openXmlElement);
-  }
-
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
   /// </summary>
@@ -48,6 +38,14 @@ public sealed partial class Rsids : ModelElementCollection<Rsid, DXW.Rsids, DXW.
     }
     SetOpenXmlElement(rsids);
     LoadData(rsids);
+    if (rsids.RsidRoot != null)
+    {
+      // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+      if (this.Count == 0 || this[0].ToString() != rsids.RsidRoot.Val?.Value)
+      {
+        this.Insert(0, new HexInt(rsids.RsidRoot.Val?.Value!));
+      }
+    }
   }
 
   /// <summary>
@@ -66,14 +64,19 @@ public sealed partial class Rsids : ModelElementCollection<Rsid, DXW.Rsids, DXW.
     }
     SetOpenXmlElement(rsids);
     UpdateData(rsids);
+    if (this.Count>0)
+    {
+      // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+      rsids.RsidRoot = new DXW.RsidRoot { Val = new DX.HexBinaryValue(this[0].ToString()) };
+      if (rsids.Elements<DXW.Rsid>().Any())
+      {
+        var rsid = rsids.Elements<DXW.Rsid>().First();
+        if (rsid.Val == rsids.RsidRoot.Val) rsid.Remove();
+      }
+    }
+    else
+      rsids.RsidRoot = null;
+
   }
 
-
-  /// <summary>
-  /// Original document revision save ID, identifying the root revision of the document.
-  /// </summary>
-  [OpenXmlProperty(nameof(Rsids.RsidRoot))]
-  public Rsid? RsidRoot { get => _RsidRoot; set => UpdateField(ref _RsidRoot, value, nameof(RsidRoot)); }
-
-  private Rsid? _RsidRoot;
 }

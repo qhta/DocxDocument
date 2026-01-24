@@ -404,7 +404,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   ///   Implicitly converts a HexInt to a 16-bit unsigned integer.
   /// </summary>
   /// <param name="val">A HexInt value.</param>
-  /// <returns>The lower 16 bits as a ushort.</returns>
+  /// <returns>The lower 16 bits as ushort.</returns>
   public static implicit operator ushort(HexInt val)
   {
     return (ushort)val.value;
