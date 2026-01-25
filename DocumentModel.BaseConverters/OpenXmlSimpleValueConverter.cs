@@ -22,9 +22,11 @@ public static class OpenXmlSimpleValueConverter
     if (modelValue is string stringValue && StringOpenXmlConverter.SupportedTypes.Contains(openXmlType))
       return StringOpenXmlConverter.ConvertToOpenXml(stringValue, openXmlType);
 
-    if (openXmlType == typeof(DX.Int32Value) && typeof(Int32).IsAssignableFrom(modelType)
-                                             && Int32OpenXmlConverter.SupportedTypes.Contains(openXmlType))
-      return Int32OpenXmlConverter.ConvertToOpenXml((Int32?)modelValue, openXmlType);
+    if (modelValue is Enum enumValue && EnumOpenXmlConverter.SupportsType(openXmlType))
+      return EnumOpenXmlConverter.ConvertToOpenXml(enumValue, openXmlType);
+
+    if (modelValue is Int32 int32Value && Int32OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return Int32OpenXmlConverter.ConvertToOpenXml(int32Value, openXmlType);
 
 
     throw new InvalidOperationException($"Cannot convert {modelValue} of type {modelType} to Open XML simple type {openXmlType}");
@@ -48,8 +50,12 @@ public static class OpenXmlSimpleValueConverter
     if (modelType == typeof(string) && StringOpenXmlConverter.SupportedTypes.Contains(openXmlType))
       return StringOpenXmlConverter.ConvertFromOpenXml(openXmlValue);
 
+    if (modelType.IsEnum && EnumOpenXmlConverter.SupportsType(openXmlType))
+      return EnumOpenXmlConverter.ConvertFromOpenXml(openXmlValue, modelType);
+
     if (modelType == typeof(Int32) && openXmlType ==  typeof(DX.Int32Value)
                                     && Int32OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+
       return Int32OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
 
 
