@@ -51,7 +51,7 @@ public static class UInt16OpenXmlConverterTest
     0,
     0,
     1,
-    123,
+    12345,
     UInt16.MaxValue
   ];
 
