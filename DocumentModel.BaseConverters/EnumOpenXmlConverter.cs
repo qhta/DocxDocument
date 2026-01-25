@@ -7,6 +7,25 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class EnumOpenXmlConverter
 {
+  /// <summary>
+  /// Checks if the specified type is supported for conversion here
+  /// (i.e., if it is an OpenXml EnumValue type
+  /// or OpenXmlLeafElement with Val or Value property that is an OpenXml EnumValue).
+  /// </summary>
+  /// <param name="aType">The type to check</param>
+  /// <returns>True if, and only if the type is supported by this converter.</returns>
+  public static bool SupportsType(Type aType)
+  {
+    if (aType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    {
+      var valProp = aType.GetProperty("Val") ?? aType.GetProperty("Value");
+      if (valProp == null)
+        return false;
+      aType = valProp.PropertyType;
+    }
+    return aType.Name.StartsWith("EnumValue`");
+  }
+
   #region Strongly-typed conversion
 
   /// <summary>
@@ -16,27 +35,13 @@ public static class EnumOpenXmlConverter
   /// <typeparam name="ModelEnumType">The model enum type.</typeparam>
   /// <param name="openXmlElement">The OpenXmlElement to retrieve the value from.</param>
   /// <returns>The converted enum value, or null if retrieval or conversion fails.</returns>
-  public static ModelEnumType? GetEnumValue<OpenXmlEnumType, ModelEnumType>(this DX.OpenXmlElement openXmlElement)
-    where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
-    where ModelEnumType: Enum
+  public static ModelEnumType? GetEnumValue<OpenXmlEnumType, ModelEnumType>(this DX.OpenXmlLeafElement openXmlElement)
+    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
+    where ModelEnumType : struct, Enum
   {
 
     var result = GetEnumValue(openXmlElement, typeof(ModelEnumType));
     return (ModelEnumType)result!;
-
-    //DX.EnumValue<OpenXmlEnumType>? element = openXmlElement as DX.EnumValue<OpenXmlEnumType>;
-    //if (element == null)
-    //{
-    //  var valProp = openXmlElement.GetType().GetProperty("Val");
-    //  element = valProp?.PropertyType as DX.EnumValue<OpenXmlEnumType>;
-    //}
-    //if (element?.Value != null)
-    //{
-    //  var n = (int)System.Convert.ChangeType(element.Value, typeof(int));
-    //  var result = (ModelEnumType)Enum.ToObject(typeof(ModelEnumType), n);
-    //  return result;
-    //}
-    //return null;
   }
 
   /// <summary>
@@ -47,8 +52,8 @@ public static class EnumOpenXmlConverter
   /// <param name="element">The OpenXml EnumValue object.</param>
   /// <returns>The converted enum value, or null if the input is null.</returns>
   public static ModelEnumType? GetEnumValue<OpenXmlEnumType, ModelEnumType>(this DX.EnumValue<OpenXmlEnumType> element)
-    where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
-    where ModelEnumType: struct, IConvertible
+    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
+    where ModelEnumType : struct, IConvertible
   {
     if (element?.Value == null)
       return null;
@@ -65,8 +70,8 @@ public static class EnumOpenXmlConverter
   /// <param name="value">The value to convert.</param>
   /// <returns>The converted enum value, or null if the input is null.</returns>
   public static ModelEnumType? Convert<ModelEnumType, OpenXmlEnumValue>(OpenXmlEnumValue? value)
-    where OpenXmlEnumValue: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumValue>
-    where ModelEnumType: struct, IConvertible
+    where OpenXmlEnumValue : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumValue>
+    where ModelEnumType : struct, IConvertible
   {
     if (value == null)
       return null;
@@ -86,7 +91,7 @@ public static class EnumOpenXmlConverter
   /// <typeparam name="ModelEnumType">The target model enum type.</typeparam>
   /// <param name="value">The UInt16 value.</param>
   /// <returns>The converted enum value, or null if the input is null.</returns>
-  public static ModelEnumType? CreateEnum<ModelEnumType>(this UInt16? value) where ModelEnumType: struct, IConvertible
+  public static ModelEnumType? CreateEnum<ModelEnumType>(this UInt16? value) where ModelEnumType : struct, IConvertible
   {
     if (value != null)
     {
@@ -106,7 +111,7 @@ public static class EnumOpenXmlConverter
   ///// <returns>A new OpenXml EnumValue object, or null if the input is null.</returns>
   //public static DX.EnumValue<OpenXmlEnumType>? CreateOpenXmlEnumValue<OpenXmlEnumType, ModelEnumType>
   //  (this ModelEnumType? value) where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
-  //  where ModelEnumType: Enum
+  //  where ModelEnumType: struct, Enum
   //{
   //  if (value == null) return null;
 
@@ -123,9 +128,9 @@ public static class EnumOpenXmlConverter
   /// <param name="value">The model enum value.</param>
   /// <returns>A new instance of the OpenXml element with the "Val" property set.</returns>
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType, OpenXmlEnumType, ModelEnumType>
-    (this ModelEnumType value) where OpenXmlElementType: DX.OpenXmlLeafElement, new()
-    where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
-    where ModelEnumType: Enum
+    (this ModelEnumType value) where OpenXmlElementType : DX.OpenXmlLeafElement, new()
+    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
+    where ModelEnumType : struct, Enum
   {
     var element = new OpenXmlElementType();
     var result = CreateOpenXmlElement(value, typeof(OpenXmlElementType));
@@ -144,8 +149,8 @@ public static class EnumOpenXmlConverter
   /// <param name="openXmlElement">The parent composite element.</param>
   /// <returns>The enum value, or null if not found or conversion fails.</returns>
   public static EnumType? GetEnumVal<EnumType, OpenXmlElementType>
-    (this DX.OpenXmlCompositeElement? openXmlElement) where EnumType: struct
-    where OpenXmlElementType: DX.OpenXmlLeafElement
+    (this DX.OpenXmlCompositeElement? openXmlElement) where EnumType : struct, Enum
+    where OpenXmlElementType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
@@ -205,9 +210,9 @@ public static class EnumOpenXmlConverter
   /// <param name="openXmlElement">The parent composite element.</param>
   /// <param name="value">The enum value to set. If null, the child element is removed.</param>
   public static void SetEnumVal<EnumType, OpenXmlEnumType, ElementType>
-    (this DX.OpenXmlCompositeElement openXmlElement, EnumType? value) where EnumType: struct
-    where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
-    where ElementType: DX.OpenXmlLeafElement
+    (this DX.OpenXmlCompositeElement openXmlElement, EnumType? value) where EnumType : struct
+    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
+    where ElementType : DX.OpenXmlLeafElement
   {
     if (value != null)
     {
@@ -244,7 +249,7 @@ public static class EnumOpenXmlConverter
   /// <returns>The enum value, or null if the element is null.</returns>
   public static OpenXmlEnumType? GetValue<OpenXmlEnumType>
     (this DX.EnumValue<OpenXmlEnumType>? element)
-    where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
+    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
   {
     if (element == null) return null;
 
@@ -260,8 +265,8 @@ public static class EnumOpenXmlConverter
   /// <param name="element">The OpenXml EnumValue object.</param>
   /// <returns>The converted enum value, or null if the element is null.</returns>
   public static EnumType? GetValue<EnumType, OpenXmlEnumType>(this DX.EnumValue<OpenXmlEnumType>? element)
-    where EnumType: struct
-    where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
+    where EnumType : struct
+    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
   {
     if (element == null) return null;
 
@@ -282,8 +287,8 @@ public static class EnumOpenXmlConverter
   /// <param name="value">The enum value to convert.</param>
   /// <returns>A new DX.EnumValue containing the converted value, or null if the input is null.</returns>
   public static DX.EnumValue<OpenXmlEnumType>? CreateOpenXmlEnumValue<OpenXmlEnumType, EnumType>(this EnumType? value)
-    where EnumType: Enum
-    where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
+    where EnumType : Enum
+    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
   {
     if (value == null)
       return null;
@@ -377,7 +382,7 @@ public static class EnumOpenXmlConverter
 
   #endregion
 
-  #region Generic OpenXmlElement conversion
+  #region Generic OpenXmlLeafElement conversion
 
   /// <summary>
   /// Creates an Open XML element instance corresponding to the specified enumeration value and target type.
@@ -386,20 +391,20 @@ public static class EnumOpenXmlConverter
   /// underlying enumeration value. If neither property is found, or if the value is missing, an exception is
   /// thrown.</remarks>
   /// <param name="enumVal">The enumeration value to convert to an Open XML element. May be null.</param>
-  /// <param name="targetType">The target type of the Open XML element to create. Must be a subclass of DX.OpenXmlElement.</param>
+  /// <param name="openXmlType">The target type of the Open XML element to create. Must be a subclass of DX.OpenXmlElement.</param>
   /// <returns>An object representing the Open XML element corresponding to the specified enumeration value and target type, or
   /// null if <paramref name="enumVal"/> is null.</returns>
   /// <exception cref="InvalidOperationException">Thrown if the target type does not have a suitable property (Val, Value, or Type), if the value cannot be
   /// retrieved from the enumeration, or if the target type is not a subclass of DX.OpenXmlElement.</exception>
-  public static DX.OpenXmlElement? CreateOpenXmlElement(Enum? enumVal, Type targetType)
+  public static DX.OpenXmlLeafElement? CreateOpenXmlElement(Enum? enumVal, Type openXmlType)
   {
     if (enumVal == null) return null;
 
-    if (targetType.IsSubclassOf(typeof(DX.OpenXmlElement)))
+    if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
     {
-      var valProperty = targetType.GetProperty("Val") ?? targetType.GetProperty("Value");
+      var valProperty = openXmlType.GetProperty("Val") ?? openXmlType.GetProperty("Value");
       if (valProperty == null)
-        throw new InvalidOperationException($"Cannot find Val/Value/Type property in {targetType}");
+        throw new InvalidOperationException($"Cannot find Val/Value/Type property in {openXmlType}");
 
       var valPropertyType = valProperty.PropertyType!;
       if (!valPropertyType.Name.StartsWith("EnumValue`"))
@@ -410,7 +415,7 @@ public static class EnumOpenXmlConverter
       if (targetValue == null)
         throw new InvalidOperationException($"Cannot create EnumValue from {enumVal} for property {valProperty.Name}");
 
-      var openXmlElement = (DX.OpenXmlElement)Activator.CreateInstance(targetType)!;
+      var openXmlElement = (DX.OpenXmlLeafElement)Activator.CreateInstance(openXmlType)!;
       valProperty.SetValue(openXmlElement, targetValue);
       return openXmlElement;
     }
@@ -441,6 +446,57 @@ public static class EnumOpenXmlConverter
       throw new InvalidOperationException($"{openXmlElement} has no Value");
 
     return GetEnumValue(enumValue, modelType);
+  }
+
+  #endregion
+
+  #region Generic OpenXml conversion
+
+  /// <summary>
+  /// Converts a generic enum value to an Open XML type.
+  /// </summary>
+  /// <param name="enumVal">The enum value to convert.</param>
+  /// <param name="openXmlType">The target Open XML type.</param>
+  /// <returns>The converted Open XML type or value, or null if the conversion failed.</returns>
+  /// <exception cref="InvalidOperationException">Thrown if the conversion is not supported.</exception>
+  public static object? ConvertToOpenXml(Enum? enumVal, Type openXmlType)
+  {
+
+    if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+      return CreateOpenXmlElement(enumVal, openXmlType);
+
+    if (openXmlType.Name.StartsWith("EnumValue`"))
+      return CreateOpenXmlEnumValue(enumVal, openXmlType);
+
+    throw new InvalidOperationException($"Cannot convert {enumVal} of type {enumVal?.GetType()} to Open XML type {openXmlType}");
+  }
+
+  /// <summary>
+  /// Converts an Open XML value to its corresponding enumeration value of the specified model type.
+  /// </summary>
+  /// <remarks>This method supports conversion from common Open XML enum representation to model enum type. The
+  /// caller should ensure that the model type is an enumeration and that the Open XML value is compatible with the
+  /// expected type.</remarks>
+  /// <param name="openXmlValue">The Open XML value to convert. This can be an OpenXmlLeafElement, an EnumValue, or another supported Open XML
+  /// representation. Can be null.</param>
+  /// <param name="modelType">The target enumeration type to convert to. Must be a valid enum type.</param>
+  /// <returns>An enumeration value of the specified model type that corresponds to the provided Open XML value, or null if the
+  /// input value is null.</returns>
+  /// <exception cref="InvalidOperationException">Thrown if the provided value cannot be converted to the specified model type.</exception>
+  public static Enum? ConvertFromOpenXml(object? openXmlValue, Type modelType)
+  {
+    if (openXmlValue == null) return null;
+
+    var openXmlType = openXmlValue.GetType();
+
+    if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+      return EnumOpenXmlConverter.GetEnumValue((DX.OpenXmlLeafElement)openXmlValue, modelType);
+
+    if (openXmlType.Name.StartsWith("EnumValue`"))
+      return EnumOpenXmlConverter.GetEnumValue(openXmlValue, modelType);
+
+
+    throw new InvalidOperationException($"Cannot convert {openXmlValue} of type {openXmlType} to model type {modelType.FullName}");
   }
 
   #endregion

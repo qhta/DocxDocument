@@ -27,6 +27,7 @@ public static class BooleanOpenXmlConverter
     typeof(DX.OpenXmlLeafTextElement),
   ];
 
+
   #region DXW.EmptyType conversion.
 
   /// <summary>
@@ -844,7 +845,7 @@ public static class BooleanOpenXmlConverter
     if (targetType.IsEqualOrSubclassOf(typeof(DXO13W.OnOffType)))
       return CreateOnOff13Type(value, targetType);
     if (targetType.IsEqualOrSubclassOf(typeof(DX.BooleanValue)))
-      return ConvertToMathBooleanValue(value);
+      return ConvertToBooleanValue(value);
     if (targetType.IsEqualOrSubclassOf(typeof(DXM.BooleanValues)))
       return ConvertToMathBooleanValue(value);
     if (targetType.IsEqualOrSubclassOf(typeof(DX.EnumValue<DXM.BooleanValues>)))
