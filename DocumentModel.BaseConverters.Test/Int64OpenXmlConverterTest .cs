@@ -8,7 +8,7 @@ using DX = DocumentFormat.OpenXml;
 
 namespace DocumentModel.BaseConverters.Test;
 
-public static class Int32OpenXmlConverterTest
+public static class Int64OpenXmlConverterTest
 {
   public static Type[] SupportedTypes { get; } =
   [
@@ -31,8 +31,8 @@ public static class Int32OpenXmlConverterTest
 
     foreach (var type in SupportedTypes)
     {
-      Console.Write($"TestInt32OpenXmlConversion with {type.Name} ");
-      if (!TestInt32OpenXmlConversion(type))
+      Console.Write($"TestInt64OpenXmlConversion with {type.Name} ");
+      if (!TestInt64OpenXmlConversion(type))
       {
         Console.WriteLine("failed.");
         testResult = false;
@@ -44,32 +44,32 @@ public static class Int32OpenXmlConverterTest
     return testResult;
   }
 
-  static readonly Int32[] testValues =
+  static readonly Int64[] testValues =
   [
-    Int32.MinValue,
-    -123456,
-    -1,
-    0,
-    1,
-    123456,
-    Int32.MaxValue
+    Int64.MinValue,
+    -123456L,
+    -1L,
+    0L,
+    1L,
+    123456L,
+    Int64.MaxValue
   ];
 
-  public static Dictionary<Type, (Int32 min, Int32 max)> typeRanges = new()
+  public static Dictionary<Type, (Int64 min, Int64 max)> typeRanges = new()
   {
-    { typeof(DX.SByteValue), (SByte.MinValue, SByte.MaxValue) },
+    { typeof(DX.ByteValue), (0, Byte.MaxValue) },
     { typeof(DX.Int16Value), (Int16.MinValue, Int16.MaxValue) },
     { typeof(DX.Int32Value), (Int32.MinValue, Int32.MaxValue) },
-    { typeof(DX.Int64Value), (Int32.MinValue, Int32.MaxValue) },
-    { typeof(DX.IntegerValue), (Int32.MinValue, Int32.MaxValue) },
-    { typeof(DX.ByteValue), (0, Byte.MaxValue) },
+    { typeof(DX.Int64Value), (Int64.MinValue, Int64.MaxValue) },
+    { typeof(DX.IntegerValue), (Int64.MinValue, Int64.MaxValue) },
+    { typeof(DX.SByteValue), (SByte.MinValue, SByte.MaxValue) },
     { typeof(DX.UInt16Value), (0, UInt16.MaxValue) },
-    { typeof(DX.UInt32Value), (0, Int32.MaxValue) },
-    { typeof(DX.UInt64Value), (0, Int32.MaxValue) },
-    { typeof(DX.StringValue), (Int32.MinValue, Int32.MaxValue) }
+    { typeof(DX.UInt32Value), (0, UInt32.MaxValue) },
+    { typeof(DX.UInt64Value), (0, Int64.MaxValue) },
+    { typeof(DX.StringValue), (Int64.MinValue, Int64.MaxValue) }
   };
 
-  public static bool TestInt32OpenXmlConversion(Type openXmlType)
+  public static bool TestInt64OpenXmlConversion(Type openXmlType)
   {
     foreach (var testValue in testValues)
     {
@@ -79,7 +79,7 @@ public static class Int32OpenXmlConverterTest
           Debug.Assert(true);
 
         // Convert to OpenXml
-        var openXmlValue = Int32OpenXmlConverter.ConvertToOpenXml(testValue, openXmlType);
+        var openXmlValue = Int64OpenXmlConverter.ConvertToOpenXml(testValue, openXmlType);
         if (openXmlValue == null)
         {
           Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
@@ -91,11 +91,11 @@ public static class Int32OpenXmlConverterTest
           Console.WriteLine("Out-of-range value did not throw an exception. ");
           return false; // Expected exception for out-of-range value
         }
-        // Convert back to Int32
-        var convertedBackValue = Int32OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
+        // Convert back to Int64
+        var convertedBackValue = Int64OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back to Int32 returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to Int64 returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

@@ -26,9 +26,6 @@ public static class OpenXmlSimpleValueConverter
                                              && Int32OpenXmlConverter.SupportedTypes.Contains(openXmlType))
       return Int32OpenXmlConverter.ConvertToOpenXml((Int32?)modelValue, openXmlType);
 
-    if (openXmlType == typeof(DX.IntegerValue) && typeof(long).IsAssignableFrom(modelType) 
-                                               && IntegerValueConverter.SupportedTypes.Contains(openXmlType))
-      return IntegerValueConverter.ConvertToOpenXml((long?)modelValue, openXmlType);
 
     throw new InvalidOperationException($"Cannot convert {modelValue} of type {modelType} to Open XML simple type {openXmlType}");
   }
@@ -55,9 +52,6 @@ public static class OpenXmlSimpleValueConverter
                                     && Int32OpenXmlConverter.SupportedTypes.Contains(openXmlType))
       return Int32OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
 
-    if (modelType == typeof(long) && openXmlType ==  typeof(DX.IntegerValue)
-                                    && IntegerValueConverter.SupportedTypes.Contains(openXmlType))
-      return IntegerValueConverter.ConvertFromOpenXml(openXmlValue);
 
     throw new InvalidOperationException($"Cannot convert {openXmlValue} of type {openXmlType} to model type {modelType.FullName}");
   }
