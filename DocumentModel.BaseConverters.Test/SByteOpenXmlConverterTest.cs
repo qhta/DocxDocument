@@ -91,7 +91,7 @@ public static class SByteOpenXmlConverterTest
           Console.WriteLine("Out-of-range value did not throw an exception. ");
           return false; // Expected exception for out-of-range value
         }
-        // Convert back to Int16
+        // Convert back to SByte
         var convertedBackValue = SByteOpenXmlConverter.ConvertFromOpenXml(openXmlValue);
         if (convertedBackValue == null)
         {

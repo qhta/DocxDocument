@@ -91,7 +91,7 @@ public static class UInt32OpenXmlConverterTest
           Console.WriteLine("Out-of-range value did not throw an exception. ");
           return false; // Expected exception for out-of-range value
         }
-        // Convert back to Int32
+        // Convert back to UInt32
         var convertedBackValue = UInt32OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
         if (convertedBackValue == null)
         {
