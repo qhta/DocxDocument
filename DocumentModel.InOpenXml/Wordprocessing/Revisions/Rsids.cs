@@ -24,7 +24,7 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
   }
 
   /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
+  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's DocumentSettings.
   /// </summary>
   /// <param name = "wordprocessingDocument">Document to attach to.</param>
   public override void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
@@ -49,7 +49,7 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
   }
 
   /// <summary>
-  /// Attach this instance to the specified document. Data is stored to the document's PackageProperties.
+  /// Attach this instance to the specified document. Data is stored to the document's DocumentSettings.
   /// </summary>
   /// <param name = "wordprocessingDocument">Document to attach to.</param>
   public override void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)

@@ -14,7 +14,6 @@ internal class Program
     Console.WriteLine("╚═════════════════════════════════════════════╝");
     Console.WriteLine();
 
-    // Run CoreProperties tests
     if (!CorePropertiesTest.Run())
       return;
 
@@ -22,7 +21,6 @@ internal class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
-    // Run ContentProperties tests
     if (!ContentPropertiesTest.Run())
       return;
 
@@ -30,7 +28,6 @@ internal class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
-    // Run StatisticProperties tests
     if (!StatisticPropertiesTest.Run())
       return;
 
@@ -38,7 +35,6 @@ internal class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
-    // Run CustomProperties tests
     if (!CustomPropertiesTest.Run())
       return;
 
@@ -46,7 +42,6 @@ internal class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
-    // Run DocumentSettingsSerialization tests
     if (!DocumentSettingsTest.Run())
       return;
 
@@ -54,8 +49,14 @@ internal class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
-    // Run Rsids tests
     if (!RsidsTest.Run())
+      return;
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    if (!FontsTest.Run())
       return;
 
     Console.WriteLine();

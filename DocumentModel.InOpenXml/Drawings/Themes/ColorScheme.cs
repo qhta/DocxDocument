@@ -11,11 +11,11 @@ namespace DocumentModel.Drawings;
 public partial class ColorScheme : ModelElement<DXD.ColorScheme>, IExtendableElement
 {
     /// <summary>
-    /// Name.
+    /// FontName.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.ColorScheme.Name))]
     /// <summary>
-    /// Name.
+    /// FontName.
     /// </summary>
     [OpenXmlElement(typeof(DXD.ColorScheme))]
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

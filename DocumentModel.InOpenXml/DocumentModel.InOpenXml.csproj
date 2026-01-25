@@ -8,6 +8,14 @@
     <AppDesignerFolder>Properties and settings</AppDesignerFolder>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;0659</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;0659</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Base interfaces\ITypedModelElement.cs" />
     <Compile Remove="Properties and settings\CoreProperties.IDocumentProperties.cs" />

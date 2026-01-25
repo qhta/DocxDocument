@@ -137,7 +137,7 @@ public partial class ColorMappingType : ModelElement<DXD.ColorMappingType>, IExt
 
     private ColorSchemeIndexKind? _FollowedHyperlink;
     /// <summary>
-    /// Name.
+    /// FontName.
     /// </summary>
     [OpenXmlElement(typeof(DXD.ColorMappingType))]
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

@@ -15,10 +15,32 @@ public static class SimpleValueConverter
   /// <returns>The converted value, or null if the input is null.</returns>
   public static object? ChangeType(object? value, Type targetType)
   {
-    if (value is HexBinaryValue hexBinaryValue && targetType == typeof(HexInt))
+    //DX.HexBinaryValue
+    if (value == null) return null;
+    if (value is DX.HexBinaryValue hexBinaryValue && targetType == typeof(HexInt))
       return new HexInt(hexBinaryValue.Value!);
     if (TryImplicitConvert(value, targetType, out var result))
       return result;
+
+    if (value.GetType().IsEnum)
+    {
+      if (targetType.Name.StartsWith("EnumValue`"))
+        return EnumValueConverter.CreateOpenXmlElement(value, targetType);
+      return Enum.ToObject(targetType, value);
+    }
+    if (targetType.IsEnum)
+    {
+      if (value.GetType().Name.StartsWith("EnumValue`"))
+        return EnumValueConverter.CreateOpenXmlElement(value, targetType);
+
+      var str = value.ToString()!;
+      return Enum.Parse(targetType, str, true);
+      //return Enum.ToObject(targetType, value);
+    }
+    if (value is DX.OpenXmlElement openXmlElement)
+    {
+      return OpenXmlConverter.ConvertFromOpenXml(openXmlElement, targetType);
+    }
     return Convert.ChangeType(value, targetType);
 
   }

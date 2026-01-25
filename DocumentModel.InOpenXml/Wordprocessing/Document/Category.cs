@@ -6,11 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public partial class Category : ModelElement<DXW.Category>
 {
     /// <summary>
-    /// Name of the category associated with the entry.
+    /// FontName of the category associated with the entry.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.Category.Name))]
     /// <summary>
-    /// Name of the category associated with the entry.
+    /// FontName of the category associated with the entry.
     /// </summary>
     [OpenXmlElement(typeof(DXW.Category))]
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

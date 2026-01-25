@@ -144,7 +144,7 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
 //    //if (doc == null || string.IsNullOrEmpty(Id))
 //    //  return null;
 //    //var rel = doc.MainDocumentPart?.ExternalRelationships.FirstOrDefault(r => r.Id == Id);
-//    return updatedElement.GetType().GetProperty("Uri")?.GetValue(updatedElement) as Uri;
+//    return updatedElement.GetType().GetProperty("Uri")?.ConvertToBool(updatedElement) as Uri;
 //  }
 //  return null;
 //}

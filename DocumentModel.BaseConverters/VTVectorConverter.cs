@@ -5,29 +5,29 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class VTVectorConverter
 {
-  private static readonly BiDiDictionary<VectorBaseValues, VariantType> VectorBaseTypeConversion = new()
+  private static readonly BiDiDictionary<DXVT.VectorBaseValues, VariantType> VectorBaseTypeConversion = new()
   {
-    { VectorBaseValues.OneByteSignedInteger, VariantType.Byte },
-    { VectorBaseValues.TwoBytesSignedInteger, VariantType.Int16 },
-    { VectorBaseValues.FourBytesSignedInteger, VariantType.Int32 },
-    { VectorBaseValues.EightBytesSignedInteger, VariantType.Int64 },
-    { VectorBaseValues.OneByteUnsignedInteger, VariantType.Byte },
-    { VectorBaseValues.TwoBytesUnsignedInteger, VariantType.UInt16 },
-    { VectorBaseValues.FourBytesUnsignedInteger, VariantType.UInt32 },
-    { VectorBaseValues.EightBytesUnsignedInteger, VariantType.UInt64 },
-    { VectorBaseValues.FourBytesReal, VariantType.Single },
-    { VectorBaseValues.EightBytesReal, VariantType.Double },
-    { VectorBaseValues.Bstr, VariantType.Bstr },
-    { VectorBaseValues.Lpstr, VariantType.Lpstr },
-    { VectorBaseValues.Lpwstr, VariantType.Lpwstr },
-    { VectorBaseValues.Date, VariantType.Date },
-    { VectorBaseValues.Filetime, VariantType.DateTime },
-    { VectorBaseValues.Bool, VariantType.Boolean },
-    { VectorBaseValues.Currency, VariantType.Currency },
-    { VectorBaseValues.Error, VariantType.HexInt },
-    { VectorBaseValues.ClassId, VariantType.Guid },
-    { VectorBaseValues.ClipboardData, VariantType.ClipboardData },
-    { VectorBaseValues.Variant, VariantType.Variant }
+    { DXVT.VectorBaseValues.OneByteSignedInteger, VariantType.Byte },
+    { DXVT.VectorBaseValues.TwoBytesSignedInteger, VariantType.Int16 },
+    { DXVT.VectorBaseValues.FourBytesSignedInteger, VariantType.Int32 },
+    { DXVT.VectorBaseValues.EightBytesSignedInteger, VariantType.Int64 },
+    { DXVT.VectorBaseValues.OneByteUnsignedInteger, VariantType.Byte },
+    { DXVT.VectorBaseValues.TwoBytesUnsignedInteger, VariantType.UInt16 },
+    { DXVT.VectorBaseValues.FourBytesUnsignedInteger, VariantType.UInt32 },
+    { DXVT.VectorBaseValues.EightBytesUnsignedInteger, VariantType.UInt64 },
+    { DXVT.VectorBaseValues.FourBytesReal, VariantType.Single },
+    { DXVT.VectorBaseValues.EightBytesReal, VariantType.Double },
+    { DXVT.VectorBaseValues.Bstr, VariantType.Bstr },
+    { DXVT.VectorBaseValues.Lpstr, VariantType.Lpstr },
+    { DXVT.VectorBaseValues.Lpwstr, VariantType.Lpwstr },
+    { DXVT.VectorBaseValues.Date, VariantType.Date },
+    { DXVT.VectorBaseValues.Filetime, VariantType.DateTime },
+    { DXVT.VectorBaseValues.Bool, VariantType.Boolean },
+    { DXVT.VectorBaseValues.Currency, VariantType.Currency },
+    { DXVT.VectorBaseValues.Error, VariantType.HexInt },
+    { DXVT.VectorBaseValues.ClassId, VariantType.Guid },
+    { DXVT.VectorBaseValues.ClipboardData, VariantType.ClipboardData },
+    { DXVT.VectorBaseValues.Variant, VariantType.Variant }
   };
 
   /// <summary>
@@ -35,7 +35,7 @@ public static class VTVectorConverter
   /// </summary>
   /// <param name="openXmlElement">The VTVector element.</param>
   /// <returns>The size as a UInt32, or null if not set.</returns>
-  public static UInt32? GetSize(this VTVector openXmlElement)
+  public static UInt32? GetSize(this DXVT.VTVector openXmlElement)
   {
     if (openXmlElement.Size?.Value != null)
       return openXmlElement.Size?.Value;
@@ -47,7 +47,7 @@ public static class VTVectorConverter
   /// </summary>
   /// <param name="openXmlElement">The VTVector element.</param>
   /// <param name="value">The size value to set.</param>
-  public static void SetSize(this VTVector openXmlElement, UInt32? value)
+  public static void SetSize(this DXVT.VTVector openXmlElement, UInt32? value)
   {
     openXmlElement.Size = value;
   }
@@ -57,7 +57,7 @@ public static class VTVectorConverter
   /// </summary>
   /// <param name="openXmlElement">The VTVector element.</param>
   /// <returns>The VariantType representing the base type, or null if not set.</returns>
-  public static VariantType? GetBaseType(this VTVector openXmlElement)
+  public static VariantType? GetBaseType(this DXVT.VTVector openXmlElement)
   {
     if (openXmlElement.BaseType?.Value != null)
       return VectorBaseTypeConversion.GetValue2(openXmlElement.BaseType.Value);
@@ -69,7 +69,7 @@ public static class VTVectorConverter
   /// </summary>
   /// <param name="openXmlElement">The VTVector element.</param>
   /// <param name="value">The VariantType to set. Null removes the property.</param>
-  public static void SetBaseType(this VTVector openXmlElement, VariantType? value)
+  public static void SetBaseType(this DXVT.VTVector openXmlElement, VariantType? value)
   {
     if (value != null)
       openXmlElement.BaseType = VectorBaseTypeConversion.GetValue1((VariantType)value);
@@ -82,7 +82,7 @@ public static class VTVectorConverter
   /// </summary>
   /// <param name="openXmlElement">The VTVector element to convert.</param>
   /// <returns>A VectorVariant object containing the vector data.</returns>
-  public static VectorVariant? CreateModelElement(this VTVector openXmlElement)
+  public static VectorVariant? CreateModelElement(this DXVT.VTVector openXmlElement)
   {
     var baseType = openXmlElement.GetBaseType();
     var itemType = baseType != null ? Variant.ItemTypes[(VariantType)baseType] : null;
@@ -105,7 +105,7 @@ public static class VTVectorConverter
   /// </summary>
   /// <param name="openXmlElement">The VTVector element to populate.</param>
   /// <param name="value">The VectorVariant source data.</param>
-  public static void SetValue(this VTVector openXmlElement, VectorVariant? value)
+  public static void SetValue(this DXVT.VTVector openXmlElement, VectorVariant? value)
   {
     openXmlElement.RemoveAllChildren();
     if (value != null)
@@ -121,7 +121,7 @@ public static class VTVectorConverter
   /// </summary>
   /// <param name="openXmlElement">The VTVector element.</param>
   /// <returns>A StringList containing the string representation of vector items.</returns>
-  public static StringList? GetStringList(this VTVector openXmlElement)
+  public static StringList? GetStringList(this DXVT.VTVector openXmlElement)
   {
     var baseType = openXmlElement.GetBaseType();
     var itemType = typeof(string);
@@ -145,7 +145,7 @@ public static class VTVectorConverter
   /// </summary>
   /// <param name="openXmlElement">The VTVector element to populate.</param>
   /// <param name="value">The StringList source data.</param>
-  public static void SetStringList(this VTVector openXmlElement, StringList? value)
+  public static void SetStringList(this DXVT.VTVector openXmlElement, StringList? value)
   {
     openXmlElement.RemoveAllChildren();
     if (value != null)
@@ -161,9 +161,9 @@ public static class VTVectorConverter
   /// </summary>
   /// <param name="value">The VectorVariant data.</param>
   /// <returns>A new VTVector element.</returns>
-  public static VTVector CreateOpenXmlElement(this VectorVariant value)
+  public static DXVT.VTVector CreateOpenXmlElement(this VectorVariant value)
   {
-    var openXmlElement = new VTVector();
+    var openXmlElement = new DXVT.VTVector();
     openXmlElement.SetSize((uint)value.Count);
     openXmlElement.SetBaseType(value.BaseType);
     foreach (var item in value)
@@ -176,9 +176,9 @@ public static class VTVectorConverter
   /// </summary>
   /// <param name="value">The StringList data.</param>
   /// <returns>A new VTVector element of base type Lpstr.</returns>
-  public static VTVector CreateOpenXmlElement(this StringList value)
+  public static DXVT.VTVector CreateOpenXmlElement(this StringList value)
   {
-    var openXmlElement = new VTVector();
+    var openXmlElement = new DXVT.VTVector();
     openXmlElement.SetSize((uint)value.Count);
     openXmlElement.SetBaseType(VariantType.Lpwstr);
     openXmlElement.SetStringList(value);

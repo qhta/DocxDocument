@@ -18,11 +18,11 @@ public partial class Function : ModelElement<DXM.MathFunction>, ICommonMathConte
 
     private FunctionProperties? _FunctionProperties;
     /// <summary>
-    ///   Function Name.
+    ///   Function FontName.
     /// </summary>
     [OpenXmlProperty(nameof(DXM.MathFunction.FunctionName))]
     /// <summary>
-    ///   Function Name.
+    ///   Function FontName.
     /// </summary>
     [OpenXmlElement(typeof(DXM.MathFunction))]
     public FunctionName? FunctionName { get => _FunctionName; set => UpdateField(ref _FunctionName, value, nameof(FunctionName)); }

@@ -67,6 +67,8 @@ public partial class HexBinary : IEquatable<HexBinary>
       return;
     }
 
+    val = val.Replace("-", string.Empty).Replace(" ", string.Empty);
+
     if (val.Length % 2 != 0)
       throw new InvalidOperationException("HexBinary length must be even to convert from string to bytes");
 

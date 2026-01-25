@@ -21,7 +21,7 @@ public static class TestHelper
   /// </summary>
   /// <param name="obj1">First test data instance</param>
   /// <param name="obj2">Second test data instance</param>
-  /// <param name="propName">Name of the property that differs, if any</param>
+  /// <param name="propName">FontName of the property that differs, if any</param>
   /// <returns>True if the properties are equal, false otherwise</returns>
   public static bool CompareTestData<T>(T obj1, T obj2, out string? propName)
   {

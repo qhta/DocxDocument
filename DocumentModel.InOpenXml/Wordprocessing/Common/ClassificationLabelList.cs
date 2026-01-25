@@ -105,7 +105,7 @@ namespace DocumentModel;
 ///         new ClassificationLabel
 ///         {
 ///             Id = "Confidential",
-///             Name = "Confidential",
+///             FontName = "Confidential",
 ///             Description = "Sensitive business information - internal use only",
 ///             Color = "#FF0000"
 ///         }
@@ -116,13 +116,13 @@ namespace DocumentModel;
 ///         {
 ///             new ClassificationExtension
 ///             {
-///                 Name = "MIPLabel",
+///                 FontName = "MIPLabel",
 ///                 Id = "{GUID-for-Confidential-label}",
 ///                 Value = "Confidential"
 ///             },
 ///             new ClassificationExtension
 ///             {
-///                 Name = "ProtectionType",
+///                 FontName = "ProtectionType",
 ///                 Id = "Encrypt",
 ///                 Value = "Apply encryption and restrict external sharing"
 ///             }
@@ -138,20 +138,20 @@ namespace DocumentModel;
 ///         new ClassificationLabel
 ///         {
 ///             Id = "Confidential",
-///             Name = "Confidential",
+///             FontName = "Confidential",
 ///             Description = "Confidential business information"
 ///         },
 ///         new ClassificationLabel
 ///         {
 ///             Id = "Confidential-Finance",
-///             Name = "Confidential - Finance",
+///             FontName = "Confidential - Finance",
 ///             ParentId = "Confidential",
 ///             Description = "Confidential financial data"
 ///         },
 ///         new ClassificationLabel
 ///         {
 ///             Id = "Confidential-HR",
-///             Name = "Confidential - HR",
+///             FontName = "Confidential - HR",
 ///             ParentId = "Confidential",
 ///             Description = "Confidential employee information"
 ///         }
@@ -162,7 +162,7 @@ namespace DocumentModel;
 ///         {
 ///             new ClassificationExtension
 ///             {
-///                 Name = "DepartmentScope",
+///                 FontName = "DepartmentScope",
 ///                 Value = "Finance and HR departments only"
 ///             }
 ///         }
@@ -177,7 +177,7 @@ namespace DocumentModel;
 ///         new ClassificationLabel
 ///         {
 ///             Id = "GDPR-PersonalData",
-///             Name = "GDPR - Personal Data",
+///             FontName = "GDPR - Personal Data",
 ///             Description = "Contains EU citizen personal data subject to GDPR"
 ///         }
 ///     },
@@ -187,19 +187,19 @@ namespace DocumentModel;
 ///         {
 ///             new ClassificationExtension
 ///             {
-///                 Name = "RegulatoryFramework",
+///                 FontName = "RegulatoryFramework",
 ///                 Id = "GDPR",
 ///                 Value = "EU General Data Protection Regulation"
 ///             },
 ///             new ClassificationExtension
 ///             {
-///                 Name = "RetentionPeriod",
+///                 FontName = "RetentionPeriod",
 ///                 Id = "DataSubjectRights",
 ///                 Value = "Must honor data subject access and deletion requests"
 ///             },
 ///             new ClassificationExtension
 ///             {
-///                 Name = "GeographicRestriction",
+///                 FontName = "GeographicRestriction",
 ///                 Id = "EUOnly",
 ///                 Value = "Data must remain within EU boundaries"
 ///             }

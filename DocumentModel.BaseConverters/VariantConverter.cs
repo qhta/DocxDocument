@@ -13,116 +13,116 @@ public static class VariantConverter
   /// <param name="openXmlElement">The OpenXml element to convert.</param>
   /// <returns>The value contained in the element, converted to the appropriate .NET type.</returns>
   /// <exception cref="InvalidOperationException">Thrown when the element type is not supported.</exception>
-  public static object? GetValue(OpenXmlElement openXmlElement)
+  public static object? GetValue(DX.OpenXmlElement openXmlElement)
   {
-    if (openXmlElement is VTBool vBool)
+    if (openXmlElement is DXVT.VTBool vBool)
       return XmlConvert.ToBoolean(vBool.Text);
 
-    if (openXmlElement is VTLPSTR vLPString)
+    if (openXmlElement is DXVT.VTLPSTR vLPString)
       return vLPString.Text;
 
-    if (openXmlElement is VTLPWSTR vLPWString)
+    if (openXmlElement is DXVT.VTLPWSTR vLPWString)
       return vLPWString.Text;
 
-    if (openXmlElement is VTBString vBString)
+    if (openXmlElement is DXVT.VTBString vBString)
       return vBString.Text;
 
-    if (openXmlElement is VTByte vSByte)
+    if (openXmlElement is DXVT.VTByte vSByte)
       return XmlConvert.ToSByte(vSByte.Text);
 
-    if (openXmlElement is VTUnsignedByte vByte)
+    if (openXmlElement is DXVT.VTUnsignedByte vByte)
       return XmlConvert.ToByte(vByte.Text);
 
-    if (openXmlElement is VTShort vShort)
+    if (openXmlElement is DXVT.VTShort vShort)
       return XmlConvert.ToInt16(vShort.Text);
 
-    if (openXmlElement is VTUnsignedShort vUShort)
+    if (openXmlElement is DXVT.VTUnsignedShort vUShort)
       return XmlConvert.ToUInt16(vUShort.Text);
 
-    if (openXmlElement is VTInt32 vInt32)
+    if (openXmlElement is DXVT.VTInt32 vInt32)
       return XmlConvert.ToInt32(vInt32.Text);
 
-    if (openXmlElement is VTUnsignedInt32 vUInt32)
+    if (openXmlElement is DXVT.VTUnsignedInt32 vUInt32)
       return XmlConvert.ToUInt32(vUInt32.Text);
 
-    if (openXmlElement is VTInt64 vInt64)
+    if (openXmlElement is DXVT.VTInt64 vInt64)
       return XmlConvert.ToInt64(vInt64.Text);
 
-    if (openXmlElement is VTUnsignedInt64 vUInt64)
+    if (openXmlElement is DXVT.VTUnsignedInt64 vUInt64)
       return XmlConvert.ToUInt64(vUInt64.Text);
 
-    if (openXmlElement is VTInteger vInteger)
+    if (openXmlElement is DXVT.VTInteger vInteger)
       return XmlConvert.ToDecimal(vInteger.Text);
 
-    if (openXmlElement is VTUnsignedInteger vUInteger)
+    if (openXmlElement is DXVT.VTUnsignedInteger vUInteger)
       return XmlConvert.ToDecimal(vUInteger.Text);
 
-    if (openXmlElement is VTFloat vFloat)
+    if (openXmlElement is DXVT.VTFloat vFloat)
       return XmlConvert.ToSingle(vFloat.Text);
 
-    if (openXmlElement is VTDouble vDouble)
+    if (openXmlElement is DXVT.VTDouble vDouble)
       return XmlConvert.ToSingle(vDouble.Text);
 
-    if (openXmlElement is VTDecimal vDecimal)
+    if (openXmlElement is DXVT.VTDecimal vDecimal)
       return XmlConvert.ToDecimal(vDecimal.Text);
 
-    if (openXmlElement is VTCurrency vCurrency)
+    if (openXmlElement is DXVT.VTCurrency vCurrency)
       return XmlConvert.ToDecimal(vCurrency.Text);
 
-    if (openXmlElement is VTDate vDate)
+    if (openXmlElement is DXVT.VTDate vDate)
       return DateOnly.FromDateTime(XmlConvert.ToDateTime(vDate.Text, XmlDateTimeSerializationMode.Unspecified));
 
-    if (openXmlElement is VTFileTime vFileTime)
+    if (openXmlElement is DXVT.VTFileTime vFileTime)
       return XmlConvert.ToDateTime(vFileTime.Text, XmlDateTimeSerializationMode.Unspecified);
 
-    if (openXmlElement is VTNull vtNull)
+    if (openXmlElement is DXVT.VTNull vtNull)
       return DBNull.Value;
 
-    if (openXmlElement is VTEmpty vtEmpty)
+    if (openXmlElement is DXVT.VTEmpty vtEmpty)
       return null;
 
-    if (openXmlElement is VTClassId classId)
+    if (openXmlElement is DXVT.VTClassId classId)
       return XmlConvert.ToGuid(classId.Text);
 
-    if (openXmlElement is VTError vError)
+    if (openXmlElement is DXVT.VTError vError)
       return new HexInt(vError.Text);
 
-    if (openXmlElement is VTBlob vBlob)
+    if (openXmlElement is DXVT.VTBlob vBlob)
       return new Variant(VariantType.Blob, Convert.FromBase64String(vBlob.Text));
 
-    if (openXmlElement is VTOBlob vOBlob)
+    if (openXmlElement is DXVT.VTOBlob vOBlob)
       return new Variant(VariantType.OBlob, Convert.FromBase64String(vOBlob.Text));
 
-    if (openXmlElement is VTStorage vStorage)
+    if (openXmlElement is DXVT.VTStorage vStorage)
       return new Variant(VariantType.Storage, Convert.FromBase64String(vStorage.Text));
 
-    if (openXmlElement is VTOStorage vOStorage)
+    if (openXmlElement is DXVT.VTOStorage vOStorage)
       return new Variant(VariantType.OStorage, Convert.FromBase64String(vOStorage.Text));
 
-    if (openXmlElement is VTStreamData vStreamData)
+    if (openXmlElement is DXVT.VTStreamData vStreamData)
       return new Variant(VariantType.Stream, Convert.FromBase64String(vStreamData.Text));
 
-    if (openXmlElement is VTOStreamData vOStreamData)
+    if (openXmlElement is DXVT.VTOStreamData vOStreamData)
       return new Variant(VariantType.OStream, Convert.FromBase64String(vOStreamData.Text));
 
-    if (openXmlElement is VTVStreamData vVStreamData)
+    if (openXmlElement is DXVT.VTVStreamData vVStreamData)
       return new Variant(VariantType.VStream, new VStreamData
       (
         new Guid(vVStreamData.Version?.Value ?? ""),
         Convert.FromBase64String(vVStreamData.Text))
       );
 
-    if (openXmlElement is VTClipboardData vtClipboardData)
+    if (openXmlElement is DXVT.VTClipboardData vtClipboardData)
       return new Variant(VariantType.ClipboardData, new VClipboardData
       (
         vtClipboardData.Format?.Value ?? 0,
         Convert.FromBase64String(vtClipboardData.Text))
       );
-    if (openXmlElement is VTVector vtVector)
+    if (openXmlElement is DXVT.VTVector vtVector)
       return vtVector.CreateModelElement()
              ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
-    if (openXmlElement is VTArray vtArray)
+    if (openXmlElement is DXVT.VTArray vtArray)
       return vtArray.GetValue()
              ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
@@ -138,114 +138,114 @@ public static class VariantConverter
   /// <param name="openXmlElement">The OpenXml element to convert.</param>
   /// <returns>A Variant object representing the element values and type.</returns>
   /// <exception cref="InvalidOperationException">Thrown when the element type is not supported.</exception>
-  public static Variant GetVariant(OpenXmlElement openXmlElement)
+  public static Variant GetVariant(DX.OpenXmlElement openXmlElement)
   {
-    if (openXmlElement is VTBool vBool)
+    if (openXmlElement is DXVT.VTBool vBool)
       return new Variant(VariantType.Boolean, Boolean.Parse(vBool.Text));
 
-    if (openXmlElement is VTLPSTR vLPString)
+    if (openXmlElement is DXVT.VTLPSTR vLPString)
       return new Variant(VariantType.Lpstr, vLPString.Text);
 
-    if (openXmlElement is VTLPWSTR vLPWString)
+    if (openXmlElement is DXVT.VTLPWSTR vLPWString)
       return new Variant(VariantType.Lpwstr, vLPWString.Text);
 
-    if (openXmlElement is VTBString vBString)
+    if (openXmlElement is DXVT.VTBString vBString)
       return new Variant(VariantType.Bstr, vBString.Text);
 
-    if (openXmlElement is VTByte vSByte)
+    if (openXmlElement is DXVT.VTByte vSByte)
       return new Variant(VariantType.SByte, SByte.Parse(vSByte.Text));
 
-    if (openXmlElement is VTUnsignedByte vByte)
+    if (openXmlElement is DXVT.VTUnsignedByte vByte)
       return new Variant(VariantType.Byte, Byte.Parse(vByte.Text));
 
-    if (openXmlElement is VTShort vShort)
+    if (openXmlElement is DXVT.VTShort vShort)
       return new Variant(VariantType.Int16, short.Parse(vShort.Text));
 
-    if (openXmlElement is VTUnsignedShort vUShort)
+    if (openXmlElement is DXVT.VTUnsignedShort vUShort)
       return new Variant(VariantType.UInt16, ushort.Parse(vUShort.Text));
 
-    if (openXmlElement is VTInt32 vInt32)
+    if (openXmlElement is DXVT.VTInt32 vInt32)
       return new Variant(VariantType.Int32, int.Parse(vInt32.Text));
 
-    if (openXmlElement is VTUnsignedInt32 vUInt32)
+    if (openXmlElement is DXVT.VTUnsignedInt32 vUInt32)
       return new Variant(VariantType.UInt32, uint.Parse(vUInt32.Text));
 
-    if (openXmlElement is VTInt64 vInt64)
+    if (openXmlElement is DXVT.VTInt64 vInt64)
       return new Variant(VariantType.Int64, long.Parse(vInt64.Text));
 
-    if (openXmlElement is VTUnsignedInt64 vUInt64)
+    if (openXmlElement is DXVT.VTUnsignedInt64 vUInt64)
       return new Variant(VariantType.UInt64, ulong.Parse(vUInt64.Text));
 
-    if (openXmlElement is VTInteger vInteger)
+    if (openXmlElement is DXVT.VTInteger vInteger)
       return new Variant(VariantType.Integer, decimal.Parse(vInteger.Text));
 
-    if (openXmlElement is VTUnsignedInteger vUInteger)
+    if (openXmlElement is DXVT.VTUnsignedInteger vUInteger)
       return new Variant(VariantType.Integer, decimal.Parse(vUInteger.Text));
 
-    if (openXmlElement is VTFloat vFloat)
+    if (openXmlElement is DXVT.VTFloat vFloat)
       return new Variant(VariantType.Single, float.Parse(vFloat.Text));
 
-    if (openXmlElement is VTDouble vDouble)
+    if (openXmlElement is DXVT.VTDouble vDouble)
       return new Variant(VariantType.Double, double.Parse(vDouble.Text));
 
-    if (openXmlElement is VTDecimal vDecimal)
+    if (openXmlElement is DXVT.VTDecimal vDecimal)
       return new Variant(VariantType.Decimal, decimal.Parse(vDecimal.Text));
 
-    if (openXmlElement is VTCurrency vCurrency)
+    if (openXmlElement is DXVT.VTCurrency vCurrency)
       return new Variant(VariantType.Currency, decimal.Parse(vCurrency.Text));
 
-    if (openXmlElement is VTDate vDate)
+    if (openXmlElement is DXVT.VTDate vDate)
       return new Variant(VariantType.Date, DateOnly.FromDateTime(DateTime.Parse(vDate.Text)));
 
-    if (openXmlElement is VTFileTime vFileTime)
+    if (openXmlElement is DXVT.VTFileTime vFileTime)
       return new Variant(VariantType.DateTime, DateTime.Parse(vFileTime.Text));
 
-    if (openXmlElement is VTNull vtNull)
+    if (openXmlElement is DXVT.VTNull vtNull)
       return new Variant(VariantType.Null, DBNull.Value);
 
-    if (openXmlElement is VTEmpty vtEmpty)
+    if (openXmlElement is DXVT.VTEmpty vtEmpty)
       return new Variant(VariantType.Empty, null);
 
-    if (openXmlElement is VTClassId vtClassId)
+    if (openXmlElement is DXVT.VTClassId vtClassId)
       return new Variant(VariantType.Guid, XmlConvert.ToGuid(vtClassId.Text));
 
-    if (openXmlElement is VTError vError)
+    if (openXmlElement is DXVT.VTError vError)
       return new Variant(VariantType.HexInt, new HexInt(vError.Text));
 
-    if (openXmlElement is VTBlob vBlob)
+    if (openXmlElement is DXVT.VTBlob vBlob)
       return new Variant(VariantType.Blob, Convert.FromBase64String(vBlob.Text));
 
-    if (openXmlElement is VTOBlob vOBlob)
+    if (openXmlElement is DXVT.VTOBlob vOBlob)
       return new Variant(VariantType.OBlob, Convert.FromBase64String(vOBlob.Text));
 
-    if (openXmlElement is VTStorage vStorage)
+    if (openXmlElement is DXVT.VTStorage vStorage)
       return new Variant(VariantType.Storage, Convert.FromBase64String(vStorage.Text));
 
-    if (openXmlElement is VTOStorage vOStorage)
+    if (openXmlElement is DXVT.VTOStorage vOStorage)
       return new Variant(VariantType.OStorage, Convert.FromBase64String(vOStorage.Text));
 
-    if (openXmlElement is VTStreamData vStreamData)
+    if (openXmlElement is DXVT.VTStreamData vStreamData)
       return new Variant(VariantType.Stream, Convert.FromBase64String(vStreamData.Text));
 
-    if (openXmlElement is VTOStreamData vOStreamData)
+    if (openXmlElement is DXVT.VTOStreamData vOStreamData)
       return new Variant(VariantType.OStream, Convert.FromBase64String(vOStreamData.Text));
 
-    if (openXmlElement is VTVStreamData vVStreamData)
+    if (openXmlElement is DXVT.VTVStreamData vVStreamData)
       return new Variant(VariantType.VStream, new VStreamData(
         vVStreamData.Version?.Value != null ? Guid.Parse(vVStreamData.Version.Value) : Guid.Empty,
         Convert.FromBase64String(vVStreamData.Text))
       );
 
-    if (openXmlElement is VTClipboardData vtClipboardData)
+    if (openXmlElement is DXVT.VTClipboardData vtClipboardData)
       return new Variant(VariantType.ClipboardData, new VClipboardData(
         vtClipboardData.Format?.Value ?? 0,
         Convert.FromBase64String(vtClipboardData.Text))
       );
-    if (openXmlElement is VTVector vtVector)
+    if (openXmlElement is DXVT.VTVector vtVector)
       return vtVector.CreateModelElement()
              ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
-    if (openXmlElement is VTArray vtArray)
+    if (openXmlElement is DXVT.VTArray vtArray)
       return vtArray.GetValue()
              ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
@@ -262,7 +262,7 @@ public static class VariantConverter
   /// </summary>
   /// <param name="value">The value to convert. Can be a Variant or a raw object.</param>
   /// <returns>An OpenXmlElement representing the value.</returns>
-  public static OpenXmlElement CreateOpenXmlElement(object? value)
+  public static DX.OpenXmlElement CreateOpenXmlElement(object? value)
   {
     if (value is Variant variant)
       return CreateOpenXmlElement(variant);
@@ -276,72 +276,72 @@ public static class VariantConverter
   /// <param name="variant">The Variant object to convert.</param>
   /// <returns>An OpenXmlElement corresponding to the variant type and value.</returns>
   /// <exception cref="InvalidOperationException">Thrown when the variant type is not supported.</exception>
-  public static OpenXmlElement CreateOpenXmlElement(Variant variant)
+  public static DX.OpenXmlElement CreateOpenXmlElement(Variant variant)
   {
     switch (variant.VariantType)
     {
       case VariantType.Boolean:
-        return new VTBool { Text = variant.ToBoolean() ? "true" : "false" };
+        return new DXVT.VTBool { Text = variant.ToBoolean() ? "true" : "false" };
       case VariantType.Lpstr:
-        return new VTLPSTR { Text = (string?)variant.Value ?? String.Empty };
+        return new DXVT.VTLPSTR { Text = (string?)variant.Value ?? String.Empty };
       case VariantType.Lpwstr:
-        return new VTLPWSTR { Text = (string?)variant.Value ?? String.Empty };
+        return new DXVT.VTLPWSTR { Text = (string?)variant.Value ?? String.Empty };
       case VariantType.Bstr:
-        return new VTBString { Text = (string?)variant.Value ?? String.Empty };
+        return new DXVT.VTBString { Text = (string?)variant.Value ?? String.Empty };
       case VariantType.SByte:
-        return new VTByte { Text = XmlConvert.ToString(variant.ToSByte()) };
+        return new DXVT.VTByte { Text = XmlConvert.ToString(variant.ToSByte()) };
       case VariantType.Byte:
-        return new VTUnsignedByte { Text = XmlConvert.ToString(variant.ToByte()) };
+        return new DXVT.VTUnsignedByte { Text = XmlConvert.ToString(variant.ToByte()) };
       case VariantType.Int16:
-        return new VTShort { Text = XmlConvert.ToString(variant.ToInt16()) };
+        return new DXVT.VTShort { Text = XmlConvert.ToString(variant.ToInt16()) };
       case VariantType.UInt16:
-        return new VTUnsignedShort { Text = XmlConvert.ToString(variant.ToUInt16()) };
+        return new DXVT.VTUnsignedShort { Text = XmlConvert.ToString(variant.ToUInt16()) };
       case VariantType.Int32:
-        return new VTInt32 { Text = XmlConvert.ToString(variant.ToInt32()) };
+        return new DXVT.VTInt32 { Text = XmlConvert.ToString(variant.ToInt32()) };
       case VariantType.UInt32:
-        return new VTUnsignedInt32 { Text = XmlConvert.ToString(variant.ToUInt32()) };
+        return new DXVT.VTUnsignedInt32 { Text = XmlConvert.ToString(variant.ToUInt32()) };
       case VariantType.Int64:
-        return new VTInt64 { Text = XmlConvert.ToString(variant.ToInt64()) };
+        return new DXVT.VTInt64 { Text = XmlConvert.ToString(variant.ToInt64()) };
       case VariantType.UInt64:
-        return new VTUnsignedInt64 { Text = XmlConvert.ToString(variant.ToUInt64()) };
+        return new DXVT.VTUnsignedInt64 { Text = XmlConvert.ToString(variant.ToUInt64()) };
       case VariantType.Integer:
-        return new VTInt64 { Text = XmlConvert.ToString(variant.ToDecimal()) };
+        return new DXVT.VTInt64 { Text = XmlConvert.ToString(variant.ToDecimal()) };
       case VariantType.UnsignedInteger:
-        return new VTUnsignedInt64 { Text = XmlConvert.ToString(variant.ToDecimal()) };
+        return new DXVT.VTUnsignedInt64 { Text = XmlConvert.ToString(variant.ToDecimal()) };
       case VariantType.Single:
-        return new VTFloat { Text = XmlConvert.ToString(variant.ToSingle()) };
+        return new DXVT.VTFloat { Text = XmlConvert.ToString(variant.ToSingle()) };
       case VariantType.Double:
-        return new VTDouble { Text = XmlConvert.ToString(variant.ToDouble()) };
+        return new DXVT.VTDouble { Text = XmlConvert.ToString(variant.ToDouble()) };
       case VariantType.Decimal:
-        return new VTDecimal { Text = XmlConvert.ToString(variant.ToDecimal()) };
+        return new DXVT.VTDecimal { Text = XmlConvert.ToString(variant.ToDecimal()) };
       case VariantType.Currency:
-        return new VTCurrency { Text = XmlConvert.ToString(variant.ToDecimal()) };
+        return new DXVT.VTCurrency { Text = XmlConvert.ToString(variant.ToDecimal()) };
       case VariantType.Date:
-        return new VTDate { Text = XmlConvert.ToString(variant.ToDateTime(), "yyyy-MM-dd") };
+        return new DXVT.VTDate { Text = XmlConvert.ToString(variant.ToDateTime(), "yyyy-MM-dd") };
       case VariantType.DateTime:
-        return new VTFileTime { Text = XmlConvert.ToString(variant.ToDateTime(), XmlDateTimeSerializationMode.Unspecified) };
+        return new DXVT.VTFileTime { Text = XmlConvert.ToString(variant.ToDateTime(), XmlDateTimeSerializationMode.Unspecified) };
       case VariantType.Null:
-        return new VTNull();
+        return new DXVT.VTNull();
       case VariantType.Empty:
-        return new VTEmpty();
+        return new DXVT.VTEmpty();
       case VariantType.Guid:
-        return new VTClassId { Text = XmlConvert.ToString(variant.ToGuid()) };
+        return new DXVT.VTClassId { Text = XmlConvert.ToString(variant.ToGuid()) };
       case VariantType.HexInt:
-        return new VTError { Text = variant.Value is HexInt HexLong ? HexLong.ToString() : string.Empty };
+        return new DXVT.VTError { Text = variant.Value is HexInt HexLong ? HexLong.ToString() : string.Empty };
       case VariantType.Blob:
-        return new VTBlob { Text = variant.Value is byte[] blob ? Convert.ToBase64String(blob) : String.Empty };
+        return new DXVT.VTBlob { Text = variant.Value is byte[] blob ? Convert.ToBase64String(blob) : String.Empty };
       case VariantType.OBlob:
-        return new VTOBlob { Text = variant.Value is byte[] oBlob ? Convert.ToBase64String(oBlob) : String.Empty };
+        return new DXVT.VTOBlob { Text = variant.Value is byte[] oBlob ? Convert.ToBase64String(oBlob) : String.Empty };
       case VariantType.Storage:
-        return new VTStorage { Text = variant.Value is byte[] storage ? Convert.ToBase64String(storage) : String.Empty };
+        return new DXVT.VTStorage { Text = variant.Value is byte[] storage ? Convert.ToBase64String(storage) : String.Empty };
       case VariantType.OStorage:
-        return new VTOStorage { Text = variant.Value is byte[] oStorage ? Convert.ToBase64String(oStorage) : String.Empty };
+        return new DXVT.VTOStorage { Text = variant.Value is byte[] oStorage ? Convert.ToBase64String(oStorage) : String.Empty };
       case VariantType.Stream:
-        return new VTStreamData { Text = variant.Value is byte[] streamData ? Convert.ToBase64String(streamData) : String.Empty };
+        return new DXVT.VTStreamData { Text = variant.Value is byte[] streamData ? Convert.ToBase64String(streamData) : String.Empty };
       case VariantType.OStream:
-        return new VTOStreamData { Text = variant.Value is byte[] oStreamData ? Convert.ToBase64String(oStreamData) : String.Empty };
+        return new DXVT.VTOStreamData { Text = variant.Value is byte[] oStreamData ? Convert.ToBase64String(oStreamData) : String.Empty };
       case VariantType.VStream:
-        var vStreamDataVariant = new VTVStreamData();
+        var vStreamDataVariant = new DXVT.VTVStreamData();
         if (variant.Value is VStreamData vStreamData)
         {
           vStreamDataVariant.Text = Convert.ToBase64String(vStreamData.Data);
@@ -350,7 +350,7 @@ public static class VariantConverter
         ;
         return vStreamDataVariant;
       case VariantType.ClipboardData:
-        var vClipboardDataVariant = new VTClipboardData();
+        var vClipboardDataVariant = new DXVT.VTClipboardData();
         if (variant.Value is VClipboardData vClipboardData)
         {
           vClipboardDataVariant.Text = Convert.ToBase64String(vClipboardData.Data);

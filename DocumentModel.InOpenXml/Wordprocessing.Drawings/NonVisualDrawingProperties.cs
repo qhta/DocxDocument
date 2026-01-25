@@ -14,7 +14,7 @@ public partial class NonVisualDrawingProperties : ModelElement
 
     private UInt32? _Id;
     /// <summary>
-    /// Name of the drawing element, compatible with the object model but not required to be unique.
+    /// FontName of the drawing element, compatible with the object model but not required to be unique.
     /// </summary>
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 

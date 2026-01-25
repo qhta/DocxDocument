@@ -13,7 +13,7 @@ public static class EnumValueUtils
   /// <param name="enumValue">The OpenXml EnumValue to convert.</param>
   /// <returns>The converted Enum value, or null if conversion fails.</returns>
   public static EnumType? EnumValueToEnumType<EnumType, OpenXmlEnumType>(this DX.EnumValue<OpenXmlEnumType> enumValue) where EnumType : struct
-    where OpenXmlEnumType : struct, IEnumValue, IEnumValueFactory<OpenXmlEnumType>
+    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
   {
     var value = enumValue.Value;
     var openXmlEnumType = typeof(OpenXmlEnumType);
@@ -49,7 +49,7 @@ public static class EnumValueUtils
   /// <typeparam name="OpenXmlEnumType">The target OpenXml Enum type.</typeparam>
   /// <param name="value">The Enum value to convert.</param>
   /// <returns>A new OpenXml EnumValue containing the converted value, or null if conversion fails.</returns>
-  public static EnumValue<OpenXmlEnumType>? EnumTypeToEnumValue<EnumType, OpenXmlEnumType>(EnumType value) where EnumType : struct where OpenXmlEnumType : struct, IEnumValue, IEnumValueFactory<OpenXmlEnumType>
+  public static DX.EnumValue<OpenXmlEnumType>? EnumTypeToEnumValue<EnumType, OpenXmlEnumType>(EnumType value) where EnumType : struct where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
   {
     var s = value.ToString();
     OpenXmlEnumType? newValue = null;
@@ -68,7 +68,7 @@ public static class EnumValueUtils
     }
     if (newValue != null)
     {
-      var enumValue = new EnumValue<OpenXmlEnumType>(newValue);
+      var enumValue = new DX.EnumValue<OpenXmlEnumType>(newValue);
       return enumValue;
     }
     return null;
@@ -82,7 +82,7 @@ public static class EnumValueUtils
   /// <param name="element">The OpenXml EnumValue element.</param>
   /// <returns>The converted Enum value.</returns>
   public static EnumType? GetEnumValue<EnumType, OpenXmlEnumType>(this DX.EnumValue<OpenXmlEnumType> element) where EnumType : struct
-  where OpenXmlEnumType : struct, IEnumValue, IEnumValueFactory<OpenXmlEnumType>
+  where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
   {
     var value = (OpenXmlEnumType)element.Value;
     return EnumValueToEnumType<EnumType, OpenXmlEnumType>(value);
@@ -98,7 +98,7 @@ public static class EnumValueUtils
   /// <param name="value">The Enum value to set. If null, the default value is set.</param>
   /// <exception cref="ArgumentException">Thrown if the property is not found on the object.</exception>
   public static void SetEnumValue<EnumType, OpenXmlEnumType>(object element, string propName, EnumType? value) where EnumType : struct
-  where OpenXmlEnumType : struct, IEnumValue, IEnumValueFactory<OpenXmlEnumType>
+  where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
   {
     var propInfo = element.GetType().GetProperty(propName);
     if (propInfo == null)

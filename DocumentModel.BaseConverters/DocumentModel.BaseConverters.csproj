@@ -16,6 +16,7 @@
     <Compile Remove="ElementCollectionConverter%28T%29.cs" />
     <Compile Remove="HexRgbConverter .cs" />
     <Compile Remove="IdPartPairConverter.cs" />
+    <Compile Remove="Int64ValueConverter.cs" />
     <Compile Remove="ModelElementConverter.cs" />
     <Compile Remove="ModelObjectComparer.cs" />
     <Compile Remove="NumericValueConverter.cs" />
