@@ -45,7 +45,7 @@ public static class BooleanOpenXmlConverterTest
 
     foreach (var type in SupportedTypes)
     {
-      Console.Write($"TestBoolOpenXmlConversion with {type.Name} ");
+      Console.Write($"TestInt32OpenXmlConversion with {type.Name} ");
       if (!TestBoolOpenXmlConversion(type))
       {
         Console.WriteLine("failed.");

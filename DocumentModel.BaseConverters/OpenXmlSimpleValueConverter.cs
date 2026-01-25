@@ -23,8 +23,8 @@ public static class OpenXmlSimpleValueConverter
       return StringOpenXmlConverter.ConvertToOpenXml(stringValue, openXmlType);
 
     if (openXmlType == typeof(DX.Int32Value) && typeof(Int32).IsAssignableFrom(modelType)
-                                             && Int32ValueConverter.SupportedTypes.Contains(openXmlType))
-      return Int32ValueConverter.ConvertToOpenXml((Int32?)modelValue, openXmlType);
+                                             && Int32OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return Int32OpenXmlConverter.ConvertToOpenXml((Int32?)modelValue, openXmlType);
 
     if (openXmlType == typeof(DX.IntegerValue) && typeof(long).IsAssignableFrom(modelType) 
                                                && IntegerValueConverter.SupportedTypes.Contains(openXmlType))
@@ -52,8 +52,8 @@ public static class OpenXmlSimpleValueConverter
       return StringOpenXmlConverter.ConvertFromOpenXml(openXmlValue);
 
     if (modelType == typeof(Int32) && openXmlType ==  typeof(DX.Int32Value)
-                                    && Int32ValueConverter.SupportedTypes.Contains(openXmlType))
-      return Int32ValueConverter.ConvertFromOpenXml(openXmlValue);
+                                    && Int32OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return Int32OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
 
     if (modelType == typeof(long) && openXmlType ==  typeof(DX.IntegerValue)
                                     && IntegerValueConverter.SupportedTypes.Contains(openXmlType))
