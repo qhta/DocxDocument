@@ -41,6 +41,17 @@ internal class Program
     Console.WriteLine();
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
+
+    if (!Int64OpenXmlConverterTest.Run())
+    {
+      Console.WriteLine("\nSome tests failed.");
+      return;
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
     Console.WriteLine("All tests passed.");
   }
 }

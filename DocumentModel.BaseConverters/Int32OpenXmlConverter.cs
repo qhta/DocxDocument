@@ -7,24 +7,25 @@ public static class Int32OpenXmlConverter
 {
   public static Type[] SupportedTypes { get; } =
   [
+    typeof(DX.SByteValue),
+    typeof(DX.Int16Value),
     typeof(DX.Int32Value),
     typeof(DX.Int64Value),
-    typeof(DX.Int16Value),
-    typeof(DX.SByteValue),
+    typeof(DX.IntegerValue),
+    typeof(DX.ByteValue),
+    typeof(DX.UInt16Value),
     typeof(DX.UInt32Value),
     typeof(DX.UInt64Value),
-    typeof(DX.UInt16Value),
-    typeof(DX.ByteValue),
     typeof(DX.StringValue)
   ];
 
   #region SByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml SByteValue to SByte.
+  /// Converts an OpenXml SByteValue to Int32.
   /// </summary>
   /// <param name="SByteValue">The SByteValue to convert.</param>
-  /// <returns>The SByte value, or null if the element has no content.</returns>
+  /// <returns>The Int32 value, or null if the element has no content.</returns>
   public static Int32? ConvertToInt32(DX.SByteValue? SByteValue)
   {
     if (SByteValue == null) return null;
@@ -33,9 +34,9 @@ public static class Int32OpenXmlConverter
   }
 
   /// <summary>
-  /// Creates an OpenXml SByteValue from an SByte value.
+  /// Creates an OpenXml SByteValue from an Int32 value.
   /// </summary>
-  /// <param name="value">The SByte value to convert.</param>
+  /// <param name="value">The Int32 value to convert.</param>
   /// <returns>A new SByteValue, or null if the input is null.</returns>
   public static DX.SByteValue? CreateSByteValue(Int32? value)
   {
@@ -51,10 +52,10 @@ public static class Int32OpenXmlConverter
   #region Int16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int16Value to Int16.
+  /// Converts an OpenXml Int16Value to Int32.
   /// </summary>
   /// <param name="Int16Value">The Int16Value to convert.</param>
-  /// <returns>The Int16 value, or null if the element has no content.</returns>
+  /// <returns>The Int32 value, or null if the element has no content.</returns>
   public static Int32? ConvertToInt32(DX.Int16Value? Int16Value)
   {
     if (Int16Value == null) return null;
@@ -63,9 +64,9 @@ public static class Int32OpenXmlConverter
   }
 
   /// <summary>
-  /// Creates an OpenXml Int16Value from an Int16 value.
+  /// Creates an OpenXml Int16Value from an Int32 value.
   /// </summary>
-  /// <param name="value">The Int16 value to convert.</param>
+  /// <param name="value">The Int32 value to convert.</param>
   /// <returns>A new Int16Value, or null if the input is null.</returns>
   public static DX.Int16Value? CreateInt16Value(Int32? value)
   {
@@ -109,10 +110,10 @@ public static class Int32OpenXmlConverter
   #region Int64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int64Value to Int64.
+  /// Converts an OpenXml Int64Value to Int32.
   /// </summary>
   /// <param name="Int64Value">The Int64Value to convert.</param>
-  /// <returns>The Int64 value, or null if the element has no content.</returns>
+  /// <returns>The Int32 value, or null if the element has no content.</returns>
   public static Int32? ConvertToInt32(DX.Int64Value? Int64Value)
   {
     if (Int64Value == null) return null;
@@ -123,9 +124,9 @@ public static class Int32OpenXmlConverter
   }
 
   /// <summary>
-  /// Creates an OpenXml Int64Value from an Int64 value.
+  /// Creates an OpenXml Int64Value from an Int32 value.
   /// </summary>
-  /// <param name="value">The Int64 value to convert.</param>
+  /// <param name="value">The Int32 value to convert.</param>
   /// <returns>A new Int64Value, or null if the input is null.</returns>
   public static DX.Int64Value? CreateInt64Value(Int32? value)
   {
@@ -139,10 +140,10 @@ public static class Int32OpenXmlConverter
   #region IntegerValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml IntegerValue to Integer.
+  /// Converts an OpenXml IntegerValue to Int32.
   /// </summary>
   /// <param name="IntegerValue">The IntegerValue to convert.</param>
-  /// <returns>The Integer value, or null if the element has no content.</returns>
+  /// <returns>The Int32 value, or null if the element has no content.</returns>
   public static Int32? ConvertToInt32(DX.IntegerValue? IntegerValue)
   {
     if (IntegerValue == null) return null;
@@ -153,9 +154,9 @@ public static class Int32OpenXmlConverter
   }
 
   /// <summary>
-  /// Creates an OpenXml IntegerValue from an Integer value.
+  /// Creates an OpenXml IntegerValue from an Int32 value.
   /// </summary>
-  /// <param name="value">The Integer value to convert.</param>
+  /// <param name="value">The Int32 value to convert.</param>
   /// <returns>A new IntegerValue, or null if the input is null.</returns>
   public static DX.IntegerValue? CreateIntegerValue(Int32? value)
   {
@@ -169,10 +170,10 @@ public static class Int32OpenXmlConverter
   #region ByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml ByteValue to Byte.
+  /// Converts an OpenXml ByteValue to Int32.
   /// </summary>
   /// <param name="ByteValue">The ByteValue to convert.</param>
-  /// <returns>The Byte value, or null if the element has no content.</returns>
+  /// <returns>The Int32 value, or null if the element has no content.</returns>
   public static Int32? ConvertToInt32(DX.ByteValue? ByteValue)
   {
     if (ByteValue == null) return null;
@@ -181,9 +182,9 @@ public static class Int32OpenXmlConverter
   }
 
   /// <summary>
-  /// Creates an OpenXml ByteValue from an Byte value.
+  /// Creates an OpenXml ByteValue from an Int32 value.
   /// </summary>
-  /// <param name="value">The Byte value to convert.</param>
+  /// <param name="value">The Int32 value to convert.</param>
   /// <returns>A new ByteValue, or null if the input is null.</returns>
   public static DX.ByteValue? CreateByteValue(Int32? value)
   {
@@ -199,10 +200,10 @@ public static class Int32OpenXmlConverter
   #region UInt16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt16Value to UInt16.
+  /// Converts an OpenXml UInt16Value to Int32.
   /// </summary>
   /// <param name="UInt16Value">The UInt16Value to convert.</param>
-  /// <returns>The UInt16 value, or null if the element has no content.</returns>
+  /// <returns>The Int32 value, or null if the element has no content.</returns>
   public static Int32? ConvertToInt32(DX.UInt16Value? UInt16Value)
   {
     if (UInt16Value == null) return null;
@@ -211,14 +212,14 @@ public static class Int32OpenXmlConverter
   }
 
   /// <summary>
-  /// Creates an OpenXml UInt16Value from an UInt16 value.
+  /// Creates an OpenXml UInt16Value from an Int32 value.
   /// </summary>
-  /// <param name="value">The UInt16 value to convert.</param>
+  /// <param name="value">The Int32 value to convert.</param>
   /// <returns>A new UInt16Value, or null if the input is null.</returns>
   public static DX.UInt16Value? CreateUInt16Value(Int32? value)
   {
     if (value == null) return null;
-    if (value < 0|| value > UInt16.MaxValue)
+    if (value < 0 || value > UInt16.MaxValue)
       throw new OverflowException($"Value {value} is out of range for UInt16.");
 
     return new DX.UInt16Value { Value = (UInt16)value };
@@ -229,7 +230,7 @@ public static class Int32OpenXmlConverter
   #region UInt32Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt32Value to UInt32.
+  /// Converts an OpenXml UInt32Value to Int32.
   /// </summary>
   /// <param name="UInt32Value">The UInt32Value to convert.</param>
   /// <returns>The Int32 value, or null if the element has no content.</returns>
@@ -260,10 +261,10 @@ public static class Int32OpenXmlConverter
   #region UInt64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt64Value to UInt64.
+  /// Converts an OpenXml UInt64Value to Int32.
   /// </summary>
   /// <param name="UInt64Value">The UInt64Value to convert.</param>
-  /// <returns>The UInt64 value, or null if the element has no content.</returns>
+  /// <returns>The Int32 value, or null if the element has no content.</returns>
   public static Int32? ConvertToInt32(DX.UInt64Value? UInt64Value)
   {
     if (UInt64Value == null) return null;
@@ -274,9 +275,9 @@ public static class Int32OpenXmlConverter
   }
 
   /// <summary>
-  /// Creates an OpenXml UInt64Value from an UInt64 value.
+  /// Creates an OpenXml UInt64Value from an Int32 value.
   /// </summary>
-  /// <param name="value">The UInt64 value to convert.</param>
+  /// <param name="value">The Int32 value to convert.</param>
   /// <returns>A new UInt64Value, or null if the input is null.</returns>
   public static DX.UInt64Value? CreateUInt64Value(Int32? value)
   {
@@ -329,13 +330,13 @@ public static class Int32OpenXmlConverter
   }
 
   /// <summary>
-  /// Converts an Open XML value to a nullable 32-bit integer, if possible.
+  /// Converts an Open XML value to a nullable Int32 integer, if possible.
   /// </summary>
-  /// <remarks>If value is a StringValue, the method attempts to parse its contents as a 32-bit integer. If
+  /// <remarks>If value is a StringValue, the method attempts to parse its contents as an Int32 integer. If
   /// parsing fails, the method returns null.</remarks>
   /// <param name="value">The value to convert. Supported types include SByteValue, ByteValue, Int16Value, UInt16Value, Int32Value,
   /// UInt32Value, UInt64Value, and StringValue. May be null.</param>
-  /// <returns>A 32-bit integer representation of the input value, or null if the input is null or cannot be converted.</returns>
+  /// <returns>An Int32 representation of the input value, or null if the input is null or cannot be converted.</returns>
   /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>
   public static Int32? ConvertFromOpenXml(object? value)
   {
