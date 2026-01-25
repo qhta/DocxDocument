@@ -30,7 +30,7 @@ public static class ByteOpenXmlConverter
   {
     if (SByteValue == null) return null;
     if (SByteValue.Value < 0)
-      throw new OverflowException($"Value {SByteValue.Value} is out of range for Byte.");
+      throw new OverflowException($"Value {SByteValue.Value} is out of range for Byte");
 
     return (Byte)SByteValue.Value;
   }
@@ -44,7 +44,7 @@ public static class ByteOpenXmlConverter
   {
     if (value == null) return null;
     if (value > SByte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range for SByte.");
+      throw new OverflowException($"Value {value} is out of range for SByte");
 
     return new DX.SByteValue { Value = (SByte)value };
   }
@@ -62,7 +62,7 @@ public static class ByteOpenXmlConverter
   {
     if (int16Value == null) return null;
     if (int16Value < 0 || int16Value > Byte.MaxValue)
-      throw new OverflowException($"Value {int16Value} is out of range for Byte.");
+      throw new OverflowException($"Value {int16Value} is out of range for Byte");
 
     return (Byte)int16Value.Value;
   }
@@ -92,7 +92,7 @@ public static class ByteOpenXmlConverter
   {
     if (Int32Value == null) return null;
     if (Int32Value.Value< 0 || Int32Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {Int32Value.Value} is out of range for Byte.");
+      throw new OverflowException($"Value {Int32Value.Value} is out of range for Byte");
 
     return (Byte)Int32Value.Value;
   }
@@ -122,7 +122,7 @@ public static class ByteOpenXmlConverter
   {
     if (Int64Value == null) return null;
     if (Int64Value.Value < 0 || Int64Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {Int64Value.Value} is out of range for Byte.");
+      throw new OverflowException($"Value {Int64Value.Value} is out of range for Byte");
 
     return (Byte)Int64Value.Value;
   }
@@ -152,7 +152,7 @@ public static class ByteOpenXmlConverter
   {
     if (IntegerValue == null) return null;
     if (IntegerValue.Value < 0 || IntegerValue.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {IntegerValue.Value} is out of range for Byte.");
+      throw new OverflowException($"Value {IntegerValue.Value} is out of range for Byte");
 
     return (Byte)IntegerValue.Value;
   }
@@ -194,7 +194,7 @@ public static class ByteOpenXmlConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range for Byte.");
+      throw new OverflowException($"Value {value} is out of range for Byte");
 
     return new DX.ByteValue { Value = (Byte)value };
   }
@@ -212,7 +212,7 @@ public static class ByteOpenXmlConverter
   {
     if (UInt16Value == null) return null;
     if (UInt16Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {UInt16Value.Value} is out of range for Byte.");
+      throw new OverflowException($"Value {UInt16Value.Value} is out of range for Byte");
     return (Byte)UInt16Value.Value;
   }
 
@@ -225,7 +225,7 @@ public static class ByteOpenXmlConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range for UInt16.");
+      throw new OverflowException($"Value {value} is out of range for UInt16");
 
     return new DX.UInt16Value { Value = (UInt16)value };
   }
@@ -243,7 +243,7 @@ public static class ByteOpenXmlConverter
   {
     if (UInt32Value == null) return null;
     if ( UInt32Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {UInt32Value.Value} is out of range for Byte.");
+      throw new OverflowException($"Value {UInt32Value.Value} is out of range for Byte");
 
     return (Byte)UInt32Value.Value;
   }
@@ -257,7 +257,7 @@ public static class ByteOpenXmlConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range for UInt32.");
+      throw new OverflowException($"Value {value} is out of range for UInt32");
     return new DX.UInt32Value { Value = (UInt32)value };
   }
 
@@ -274,7 +274,7 @@ public static class ByteOpenXmlConverter
   {
     if (UInt64Value == null) return null;
     if (UInt64Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {UInt64Value.Value} is out of range for Byte.");
+      throw new OverflowException($"Value {UInt64Value.Value} is out of range for Byte");
 
     return (Byte)UInt64Value.Value;
   }
@@ -288,7 +288,7 @@ public static class ByteOpenXmlConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range for UInt64.");
+      throw new OverflowException($"Value {value} is out of range for UInt64");
     return new DX.UInt64Value { Value = (UInt64)value };
   }
 
@@ -331,7 +331,7 @@ public static class ByteOpenXmlConverter
     if (targetType == typeof(DX.StringValue))
       return new DX.StringValue(value.ToString());
 
-    throw new InvalidOperationException($"Conversion to {targetType} is not supported.");
+    throw new InvalidOperationException($"Conversion to {targetType} is not supported");
   }
 
   /// <summary>
@@ -377,7 +377,7 @@ public static class ByteOpenXmlConverter
       return null;
     }
 
-    throw new InvalidOperationException($"Conversion from {sourceType} is not supported.");
+    throw new InvalidOperationException($"Conversion from {sourceType} is not supported");
   }
 
   #endregion
