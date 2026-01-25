@@ -42,7 +42,7 @@ public static class Int16OpenXmlConverter
   {
     if (value == null) return null;
     if (value < SByte.MinValue || value > SByte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range for SByte.");
+      throw new OverflowException($"Value {value} is out of range for SByte");
 
     return new DX.SByteValue { Value = (SByte)value };
   }
@@ -88,7 +88,7 @@ public static class Int16OpenXmlConverter
   {
     if (Int32Value == null) return null;
     if (Int32Value.Value< Int16.MinValue || Int32Value.Value > Int16.MaxValue)
-      throw new OverflowException($"Value {Int32Value.Value} is out of range for Int16.");
+      throw new OverflowException($"Value {Int32Value.Value} is out of range for Int16");
 
     return (Int16)Int32Value.Value;
   }
@@ -118,7 +118,7 @@ public static class Int16OpenXmlConverter
   {
     if (Int64Value == null) return null;
     if (Int64Value.Value < Int16.MinValue || Int64Value.Value > Int16.MaxValue)
-      throw new OverflowException($"Value {Int64Value.Value} is out of range for Int16.");
+      throw new OverflowException($"Value {Int64Value.Value} is out of range for Int16");
 
     return (Int16)Int64Value.Value;
   }
@@ -148,7 +148,7 @@ public static class Int16OpenXmlConverter
   {
     if (IntegerValue == null) return null;
     if (IntegerValue.Value < Int16.MinValue || IntegerValue.Value > Int16.MaxValue)
-      throw new OverflowException($"Value {IntegerValue.Value} is out of range for Int16.");
+      throw new OverflowException($"Value {IntegerValue.Value} is out of range for Int16");
 
     return (Int16)IntegerValue.Value;
   }
@@ -190,7 +190,7 @@ public static class Int16OpenXmlConverter
   {
     if (value == null) return null;
     if (value < 0 || value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range for Byte.");
+      throw new OverflowException($"Value {value} is out of range for Byte");
 
     return new DX.ByteValue { Value = (Byte)value };
   }
@@ -208,7 +208,7 @@ public static class Int16OpenXmlConverter
   {
     if (UInt16Value == null) return null;
     if (UInt16Value.Value > Int16.MaxValue)
-      throw new OverflowException($"Value {UInt16Value.Value} is out of range for Int16.");
+      throw new OverflowException($"Value {UInt16Value.Value} is out of range for Int16");
     return (Int16)UInt16Value.Value;
   }
 
@@ -221,7 +221,7 @@ public static class Int16OpenXmlConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range for UInt16.");
+      throw new OverflowException($"Value {value} is out of range for UInt16");
 
     return new DX.UInt16Value { Value = (UInt16)value };
   }
@@ -239,7 +239,7 @@ public static class Int16OpenXmlConverter
   {
     if (UInt32Value == null) return null;
     if ( UInt32Value.Value > Int16.MaxValue)
-      throw new OverflowException($"Value {UInt32Value.Value} is out of range for Int16.");
+      throw new OverflowException($"Value {UInt32Value.Value} is out of range for Int16");
 
     return (Int16)UInt32Value.Value;
   }
@@ -253,7 +253,7 @@ public static class Int16OpenXmlConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range for UInt32.");
+      throw new OverflowException($"Value {value} is out of range for UInt32");
     return new DX.UInt32Value { Value = (UInt32)value };
   }
 
@@ -270,7 +270,7 @@ public static class Int16OpenXmlConverter
   {
     if (UInt64Value == null) return null;
     if (UInt64Value.Value > (UInt16)Int16.MaxValue)
-      throw new OverflowException($"Value {UInt64Value.Value} is out of range for Int16.");
+      throw new OverflowException($"Value {UInt64Value.Value} is out of range for Int16");
 
     return (Int16)UInt64Value.Value;
   }
@@ -284,7 +284,7 @@ public static class Int16OpenXmlConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range for UInt64.");
+      throw new OverflowException($"Value {value} is out of range for UInt64");
     return new DX.UInt64Value { Value = (UInt64)value };
   }
 
@@ -327,7 +327,7 @@ public static class Int16OpenXmlConverter
     if (targetType == typeof(DX.StringValue))
       return new DX.StringValue(value.ToString());
 
-    throw new InvalidOperationException($"Conversion to {targetType} is not supported.");
+    throw new InvalidOperationException($"Conversion to {targetType} is not supported");
   }
 
   /// <summary>
@@ -373,7 +373,7 @@ public static class Int16OpenXmlConverter
       return null;
     }
 
-    throw new InvalidOperationException($"Conversion from {sourceType} is not supported.");
+    throw new InvalidOperationException($"Conversion from {sourceType} is not supported");
   }
 
   #endregion
