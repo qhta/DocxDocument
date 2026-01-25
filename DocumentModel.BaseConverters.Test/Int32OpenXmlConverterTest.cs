@@ -12,15 +12,17 @@ public static class Int32OpenXmlConverterTest
 {
   public static Type[] SupportedTypes { get; } =
   [
+    typeof(DX.SByteValue),
+    typeof(DX.Int16Value),
     typeof(DX.Int32Value),
     typeof(DX.Int64Value),
-    typeof(DX.Int16Value),
-    typeof(DX.SByteValue),
+    typeof(DX.IntegerValue),
+    typeof(DX.ByteValue),
+    typeof(DX.UInt16Value),
     typeof(DX.UInt32Value),
     typeof(DX.UInt64Value),
-    typeof(DX.UInt16Value),
-    typeof(DX.ByteValue),
     typeof(DX.StringValue)
+
   ];
 
   public static bool Run()
@@ -55,14 +57,15 @@ public static class Int32OpenXmlConverterTest
 
   public static Dictionary<Type, (Int32 min, Int32 max)> typeRanges = new()
   {
+    { typeof(DX.SByteValue), (SByte.MinValue, SByte.MaxValue) },
+    { typeof(DX.Int16Value), (Int16.MinValue, Int16.MaxValue) },
     { typeof(DX.Int32Value), (Int32.MinValue, Int32.MaxValue) },
     { typeof(DX.Int64Value), (Int32.MinValue, Int32.MaxValue) },
-    { typeof(DX.Int16Value), (Int16.MinValue, Int16.MaxValue) },
-    { typeof(DX.SByteValue), (SByte.MinValue, SByte.MaxValue) },
+    { typeof(DX.IntegerValue), (Int32.MinValue, Int32.MaxValue) },
+    { typeof(DX.ByteValue), (0, Byte.MaxValue) },
+    { typeof(DX.UInt16Value), (0, UInt16.MaxValue) },
     { typeof(DX.UInt32Value), (0, Int32.MaxValue) },
     { typeof(DX.UInt64Value), (0, Int32.MaxValue) },
-    { typeof(DX.UInt16Value), (0, UInt16.MaxValue) },
-    { typeof(DX.ByteValue), (0, Byte.MaxValue) },
     { typeof(DX.StringValue), (Int32.MinValue, Int32.MaxValue) }
   };
 
