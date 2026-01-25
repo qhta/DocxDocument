@@ -1,9 +1,9 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for Byte value to/from Open XML.
+/// Provides conversion methods for UInt16 value to/from Open XML.
 /// </summary>
-public static class ByteOpenXmlConverter
+public static class UInt16OpenXmlConverter
 {
   public static Type[] SupportedTypes { get; } =
   [
@@ -22,25 +22,25 @@ public static class ByteOpenXmlConverter
   #region SByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml SByteValue to Byte.
+  /// Converts an OpenXml SByteValue to UInt16.
   /// </summary>
   /// <param name="SByteValue">The SByteValue to convert.</param>
-  /// <returns>The Byte value, or null if the element has no content.</returns>
-  public static Byte? ConvertToByte(DX.SByteValue? SByteValue)
+  /// <returns>The UInt16 value, or null if the element has no content.</returns>
+  public static UInt16? ConvertToUInt16(DX.SByteValue? SByteValue)
   {
     if (SByteValue == null) return null;
     if (SByteValue.Value < 0)
-      throw new OverflowException($"Value {SByteValue.Value} is out of range for Byte");
+      throw new OverflowException($"Value {SByteValue.Value} is out of range for UInt16");
 
-    return (Byte)SByteValue.Value;
+    return (UInt16)SByteValue.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml SByteValue from an Byte value.
+  /// Creates an OpenXml SByteValue from an UInt16 value.
   /// </summary>
-  /// <param name="value">The Byte value to convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new SByteValue, or null if the input is null.</returns>
-  public static DX.SByteValue? CreateSByteValue(Byte? value)
+  public static DX.SByteValue? CreateSByteValue(UInt16? value)
   {
     if (value == null) return null;
     if (value > SByte.MaxValue)
@@ -54,29 +54,31 @@ public static class ByteOpenXmlConverter
   #region Int16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int16Value to Byte.
+  /// Converts an OpenXml Int16Value to UInt16.
   /// </summary>
   /// <param name="int16Value">The Int16Value to convert.</param>
-  /// <returns>The Byte int16Value, or null if the element has no content.</returns>
-  public static Byte? ConvertToByte(DX.Int16Value? int16Value)
+  /// <returns>The UInt16 int16Value, or null if the element has no content.</returns>
+  public static UInt16? ConvertToUInt16(DX.Int16Value? int16Value)
   {
     if (int16Value == null) return null;
-    if (int16Value < 0 || int16Value > Byte.MaxValue)
-      throw new OverflowException($"Value {int16Value} is out of range for Byte");
+    if (int16Value < 0 || int16Value > UInt16.MaxValue)
+      throw new OverflowException($"Value {int16Value} is out of range for UInt16");
 
-    return (Byte)int16Value.Value;
+    return (UInt16)int16Value.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml Int16Value from an Byte value.
+  /// Creates an OpenXml Int16Value from an UInt16 value.
   /// </summary>
-  /// <param name="value">The Byte value to convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new Int16Value, or null if the input is null.</returns>
-  public static DX.Int16Value? CreateInt16Value(Byte? value)
+  public static DX.Int16Value? CreateInt16Value(UInt16? value)
   {
     if (value == null) return null;
+    if (value > Int16.MaxValue)
+      throw new OverflowException($"Value {value} is out of range for Int16");
 
-    return new DX.Int16Value { Value = (Byte)value };
+    return new DX.Int16Value { Value = (Int16)value };
   }
 
   #endregion
@@ -84,29 +86,29 @@ public static class ByteOpenXmlConverter
   #region Int32Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int32Value to Byte.
+  /// Converts an OpenXml Int32Value to UInt16.
   /// </summary>
   /// <param name="Int32Value">The Int32Value to convert.</param>
-  /// <returns>The Byte value, or null if the element has no content.</returns>
-  public static Byte? ConvertToByte(DX.Int32Value? Int32Value)
+  /// <returns>The UInt16 value, or null if the element has no content.</returns>
+  public static UInt16? ConvertToUInt16(DX.Int32Value? Int32Value)
   {
     if (Int32Value == null) return null;
-    if (Int32Value.Value< 0 || Int32Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {Int32Value.Value} is out of range for Byte");
+    if (Int32Value.Value< 0 || Int32Value.Value > UInt16.MaxValue)
+      throw new OverflowException($"Value {Int32Value.Value} is out of range for UInt16");
 
-    return (Byte)Int32Value.Value;
+    return (UInt16)Int32Value.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml Int32Value from an Byte value.
+  /// Creates an OpenXml Int32Value from an UInt16 value.
   /// </summary>
-  /// <param name="value">The Byte value to convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new Int32Value, or null if the input is null.</returns>
-  public static DX.Int32Value? CreateInt32Value(Byte? value)
+  public static DX.Int32Value? CreateInt32Value(UInt16? value)
   {
     if (value == null) return null;
 
-    return new DX.Int32Value { Value = (Byte)value };
+    return new DX.Int32Value { Value = (UInt16)value };
   }
 
   #endregion
@@ -114,25 +116,25 @@ public static class ByteOpenXmlConverter
   #region Int64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int64Value to Byte.
+  /// Converts an OpenXml Int64Value to UInt16.
   /// </summary>
   /// <param name="Int64Value">The Int64Value to convert.</param>
-  /// <returns>The Byte value, or null if the element has no content.</returns>
-  public static Byte? ConvertToByte(DX.Int64Value? Int64Value)
+  /// <returns>The UInt16 value, or null if the element has no content.</returns>
+  public static UInt16? ConvertToUInt16(DX.Int64Value? Int64Value)
   {
     if (Int64Value == null) return null;
-    if (Int64Value.Value < 0 || Int64Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {Int64Value.Value} is out of range for Byte");
+    if (Int64Value.Value < 0 || Int64Value.Value > UInt16.MaxValue)
+      throw new OverflowException($"Value {Int64Value.Value} is out of range for UInt16");
 
-    return (Byte)Int64Value.Value;
+    return (UInt16)Int64Value.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml Int64Value from an Byte value.
+  /// Creates an OpenXml Int64Value from an UInt16 value.
   /// </summary>
-  /// <param name="value">The Byte value to convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new Int64Value, or null if the input is null.</returns>
-  public static DX.Int64Value? CreateInt64Value(Byte? value)
+  public static DX.Int64Value? CreateInt64Value(UInt16? value)
   {
     if (value == null) return null;
 
@@ -144,29 +146,29 @@ public static class ByteOpenXmlConverter
   #region IntegerValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml IntegerValue to Byte.
+  /// Converts an OpenXml IntegerValue to UInt16.
   /// </summary>
   /// <param name="IntegerValue">The IntegerValue to convert.</param>
-  /// <returns>The Byte value, or null if the element has no content.</returns>
-  public static Byte? ConvertToByte(DX.IntegerValue? IntegerValue)
+  /// <returns>The UInt16 value, or null if the element has no content.</returns>
+  public static UInt16? ConvertToUInt16(DX.IntegerValue? IntegerValue)
   {
     if (IntegerValue == null) return null;
-    if (IntegerValue.Value < 0 || IntegerValue.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {IntegerValue.Value} is out of range for Byte");
+    if (IntegerValue.Value < 0 || IntegerValue.Value > UInt16.MaxValue)
+      throw new OverflowException($"Value {IntegerValue.Value} is out of range for UInt16");
 
-    return (Byte)IntegerValue.Value;
+    return (UInt16)IntegerValue.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml IntegerValue from an Byte value.
+  /// Creates an OpenXml IntegerValue from an UInt16 value.
   /// </summary>
-  /// <param name="value">The Byte value to convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new IntegerValue, or null if the input is null.</returns>
-  public static DX.IntegerValue? CreateIntegerValue(Byte? value)
+  public static DX.IntegerValue? CreateIntegerValue(UInt16? value)
   {
     if (value == null) return null;
 
-    return new DX.IntegerValue { Value = (Byte)value };
+    return new DX.IntegerValue { Value = (UInt16)value };
   }
 
   #endregion
@@ -174,26 +176,26 @@ public static class ByteOpenXmlConverter
   #region ByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml ByteValue to Byte.
+  /// Converts an OpenXml ByteValue to UInt16.
   /// </summary>
   /// <param name="ByteValue">The ByteValue to convert.</param>
-  /// <returns>The Byte value, or null if the element has no content.</returns>
-  public static Byte? ConvertToByte(DX.ByteValue? ByteValue)
+  /// <returns>The UInt16 value, or null if the element has no content.</returns>
+  public static UInt16? ConvertToUInt16(DX.ByteValue? ByteValue)
   {
     if (ByteValue == null) return null;
 
-    return (Byte)ByteValue.Value;
+    return (UInt16)ByteValue.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml ByteValue from an Byte value.
+  /// Creates an OpenXml ByteValue from an UInt16 value.
   /// </summary>
-  /// <param name="value">The Byte value to convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new ByteValue, or null if the input is null.</returns>
-  public static DX.ByteValue? CreateByteValue(Byte? value)
+  public static DX.ByteValue? CreateByteValue(UInt16? value)
   {
     if (value == null) return null;
-    if (value < 0)
+    if (value < 0 || value > Byte.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Byte");
 
     return new DX.ByteValue { Value = (Byte)value };
@@ -204,24 +206,24 @@ public static class ByteOpenXmlConverter
   #region UInt16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt16Value to Byte.
+  /// Converts an OpenXml UInt16Value to UInt16.
   /// </summary>
   /// <param name="UInt16Value">The UInt16Value to convert.</param>
-  /// <returns>The Byte value, or null if the element has no content.</returns>
-  public static Byte? ConvertToByte(DX.UInt16Value? UInt16Value)
+  /// <returns>The UInt16 value, or null if the element has no content.</returns>
+  public static UInt16? ConvertToUInt16(DX.UInt16Value? UInt16Value)
   {
     if (UInt16Value == null) return null;
-    if (UInt16Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {UInt16Value.Value} is out of range for Byte");
-    return (Byte)UInt16Value.Value;
+    if (UInt16Value.Value > UInt16.MaxValue)
+      throw new OverflowException($"Value {UInt16Value.Value} is out of range for UInt16");
+    return (UInt16)UInt16Value.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml UInt16Value from an Byte value.
+  /// Creates an OpenXml UInt16Value from an UInt16 value.
   /// </summary>
-  /// <param name="value">The Byte value to convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new UInt16Value, or null if the input is null.</returns>
-  public static DX.UInt16Value? CreateUInt16Value(Byte? value)
+  public static DX.UInt16Value? CreateUInt16Value(UInt16? value)
   {
     if (value == null) return null;
     if (value < 0)
@@ -235,17 +237,17 @@ public static class ByteOpenXmlConverter
   #region UInt32Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt32Value to Byte.
+  /// Converts an OpenXml UInt32Value to UInt16.
   /// </summary>
   /// <param name="UInt32Value">The UInt32Value to convert.</param>
-  /// <returns>The Byte value, or null if the element has no content.</returns>
-  public static Byte? ConvertToByte(DX.UInt32Value? UInt32Value)
+  /// <returns>The UInt16 value, or null if the element has no content.</returns>
+  public static UInt16? ConvertToUInt16(DX.UInt32Value? UInt32Value)
   {
     if (UInt32Value == null) return null;
-    if ( UInt32Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {UInt32Value.Value} is out of range for Byte");
+    if ( UInt32Value.Value > UInt16.MaxValue)
+      throw new OverflowException($"Value {UInt32Value.Value} is out of range for UInt16");
 
-    return (Byte)UInt32Value.Value;
+    return (UInt16)UInt32Value.Value;
   }
 
   /// <summary>
@@ -253,7 +255,7 @@ public static class ByteOpenXmlConverter
   /// </summary>
   /// <param name="value">The UInt32 value to convert.</param>
   /// <returns>A new UInt32Value, or null if the input is null.</returns>
-  public static DX.UInt32Value? CreateUInt32Value(Byte? value)
+  public static DX.UInt32Value? CreateUInt32Value(UInt16? value)
   {
     if (value == null) return null;
     if (value < 0)
@@ -266,25 +268,25 @@ public static class ByteOpenXmlConverter
   #region UInt64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt64Value to Byte.
+  /// Converts an OpenXml UInt64Value to UInt16.
   /// </summary>
   /// <param name="UInt64Value">The UInt64Value to convert.</param>
-  /// <returns>The Byte value, or null if the element has no content.</returns>
-  public static Byte? ConvertToByte(DX.UInt64Value? UInt64Value)
+  /// <returns>The UInt16 value, or null if the element has no content.</returns>
+  public static UInt16? ConvertToUInt16(DX.UInt64Value? UInt64Value)
   {
     if (UInt64Value == null) return null;
-    if (UInt64Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {UInt64Value.Value} is out of range for Byte");
+    if (UInt64Value.Value > UInt16.MaxValue)
+      throw new OverflowException($"Value {UInt64Value.Value} is out of range for UInt16");
 
-    return (Byte)UInt64Value.Value;
+    return (UInt16)UInt64Value.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml UInt64Value from an Byte value.
+  /// Creates an OpenXml UInt64Value from an UInt16 value.
   /// </summary>
-  /// <param name="value">The Byte value to convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new UInt64Value, or null if the input is null.</returns>
-  public static DX.UInt64Value? CreateUInt64Value(Byte? value)
+  public static DX.UInt64Value? CreateUInt64Value(UInt16? value)
   {
     if (value == null) return null;
     if (value < 0)
@@ -303,7 +305,7 @@ public static class ByteOpenXmlConverter
   /// <param name="targetType">The target type to convert to.</param>
   /// <returns>The converted value, or null if the element has no content.</returns>
   /// <exception cref="InvalidOperationException">Thrown if the conversion is not supported.</exception>
-  public static object? ConvertToOpenXml(Byte? value, Type targetType)
+  public static object? ConvertToOpenXml(UInt16? value, Type targetType)
   {
     if (value == null)
       return null;
@@ -335,44 +337,44 @@ public static class ByteOpenXmlConverter
   }
 
   /// <summary>
-  /// Converts an Open XML value to a nullable Byte integer, if possible.
+  /// Converts an Open XML value to a nullable UInt16 integer, if possible.
   /// </summary>
-  /// <remarks>If value is a StringValue, the method attempts to parse its contents as an Byte integer. If
+  /// <remarks>If value is a StringValue, the method attempts to parse its contents as an UInt16 integer. If
   /// parsing fails, the method returns null.</remarks>
   /// <param name="value">The value to convert. Supported types include SByteValue, ByteValue, Int16Value, UInt16Value, Int32Value,
   /// UInt32Value, UInt64Value, and StringValue. May be null.</param>
-  /// <returns>An Byte representation of the input value, or null if the input is null or cannot be converted.</returns>
+  /// <returns>An UInt16 representation of the input value, or null if the input is null or cannot be converted.</returns>
   /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>
-  public static Byte? ConvertFromOpenXml(object? value)
+  public static UInt16? ConvertFromOpenXml(object? value)
   {
     if (value == null)
       return null;
 
     var sourceType = value.GetType();
     if (value is DX.SByteValue sbyteValue)
-      return ConvertToByte(sbyteValue);
+      return ConvertToUInt16(sbyteValue);
     if (value is DX.Int16Value int16Value)
-      return ConvertToByte(int16Value);
+      return ConvertToUInt16(int16Value);
     if (value is DX.Int32Value int32Value)
-      return ConvertToByte(int32Value);
+      return ConvertToUInt16(int32Value);
     if (value is DX.Int64Value int64Value)
-      return ConvertToByte(int64Value);
+      return ConvertToUInt16(int64Value);
 
     if (value is DX.IntegerValue integerValue)
-      return ConvertToByte(integerValue);
+      return ConvertToUInt16(integerValue);
 
     if (value is DX.ByteValue byteValue)
-      return ConvertToByte(byteValue);
+      return ConvertToUInt16(byteValue);
     if (value is DX.UInt16Value uInt16Value)
-      return ConvertToByte(uInt16Value);
+      return ConvertToUInt16(uInt16Value);
     if (value is DX.UInt32Value uintValue)
-      return ConvertToByte(uintValue);
+      return ConvertToUInt16(uintValue);
     if (value is DX.UInt64Value uInt64Value)
-      return ConvertToByte(uInt64Value);
+      return ConvertToUInt16(uInt64Value);
 
     if (value is DX.StringValue stringValue)
     {
-      if (Byte.TryParse(stringValue.Value, out var result))
+      if (UInt16.TryParse(stringValue.Value, out var result))
         return result;
       return null;
     }
