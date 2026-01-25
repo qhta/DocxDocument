@@ -81,12 +81,12 @@ public static class ListValueConverter
   /// <returns>A new ListValue containing the enum values.</returns>
   public static DX.ListValue<DX.EnumValue<OpenXmlEnumType>>? CreateListValue<OpenXmlEnumType, EnumKind>(ListOf<EnumKind> value)
     where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
-    where EnumKind : struct, IConvertible
+    where EnumKind : struct, Enum
   {
     var resultList = new List<DX.EnumValue<OpenXmlEnumType>>();
     foreach (var item in value)
     {
-      var itemObject = EnumOpenXmlConverter.CreateEnumValue<OpenXmlEnumType, EnumKind>(item);
+      var itemObject = EnumOpenXmlConverter.CreateOpenXmlEnumValue<OpenXmlEnumType, EnumKind>(item);
       if (itemObject != null)
         resultList.Add(itemObject);
     }

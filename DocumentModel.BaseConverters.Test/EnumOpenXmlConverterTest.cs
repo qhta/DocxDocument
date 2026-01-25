@@ -41,6 +41,72 @@ public static class EnumOpenXmlConverterTest
       testResult = false;
     }
 
+    Console.Write("EnumOpenXmlConverterTest TestStronglyTypedGetEnumValueFromElement ");
+    if (TestStronglyTypedGetEnumValueFromElement())
+    {
+      Console.WriteLine("passed.");
+    }
+    else
+    {
+      Console.WriteLine("failed.");
+      testResult = false;
+    }
+
+    Console.Write("EnumOpenXmlConverterTest TestStronglyTypedGetEnumValueFromEnumValue ");
+    if (TestStronglyTypedGetEnumValueFromEnumValue())
+    {
+      Console.WriteLine("passed.");
+    }
+    else
+    {
+      Console.WriteLine("failed.");
+      testResult = false;
+    }
+
+    Console.Write("EnumOpenXmlConverterTest TestStronglyTypedConvert ");
+    if (TestStronglyTypedConvert())
+    {
+      Console.WriteLine("passed.");
+    }
+    else
+    {
+      Console.WriteLine("failed.");
+      testResult = false;
+    }
+
+    Console.Write("EnumOpenXmlConverterTest TestCreateEnumFromUInt16 ");
+    if (TestCreateEnumFromUInt16())
+    {
+      Console.WriteLine("passed.");
+    }
+    else
+    {
+      Console.WriteLine("failed.");
+      testResult = false;
+    }
+
+    Console.Write("EnumOpenXmlConverterTest TestCreateOpenXmlEnumValueFromModel ");
+    if (TestCreateOpenXmlEnumValueFromModel())
+    {
+      Console.WriteLine("passed.");
+    }
+    else
+    {
+      Console.WriteLine("failed.");
+      testResult = false;
+    }
+
+    Console.Write("EnumOpenXmlConverterTest TestCreateOpenXmlElementFromModel ");
+    if (TestCreateOpenXmlElementFromModel())
+    {
+      Console.WriteLine("passed.");
+    }
+    else
+    {
+      Console.WriteLine("failed.");
+      testResult = false;
+    }
+
     return testResult;
   }
 
@@ -81,5 +147,47 @@ public static class EnumOpenXmlConverterTest
     }
     return true;
   }
+
+  private static bool TestStronglyTypedGetEnumValueFromElement()
+  {
+    var underline = new DXW.Underline { Val = DXW.UnderlineValues.Wave };
+    var converted = underline.GetEnumValue<DXW.UnderlineValues, DMW.UnderlineKind>();
+    return converted == DMW.UnderlineKind.Wave;
+  }
+
+  private static bool TestStronglyTypedGetEnumValueFromEnumValue()
+  {
+    var enumValue = new DX.EnumValue<DXW.UnderlineValues>(DXW.UnderlineValues.DotDash);
+    var converted = enumValue.GetEnumValue<DXW.UnderlineValues, DMW.UnderlineKind>();
+    return converted.HasValue && converted.Value == DMW.UnderlineKind.DotDash;
+  }
+
+  private static bool TestStronglyTypedConvert()
+  {
+    var converted = EnumOpenXmlConverter.Convert<DMW.UnderlineKind, DXW.UnderlineValues>(DXW.UnderlineValues.DashDotDotHeavy);
+    return converted.HasValue && converted.Value == DMW.UnderlineKind.DashDotDotHeavy;
+  }
+
+  private static bool TestCreateEnumFromUInt16()
+  {
+    ushort? source = (ushort)DMW.UnderlineKind.DashLongHeavy;
+    var converted = source.CreateEnum<DMW.UnderlineKind>();
+    return converted.HasValue && converted.Value == DMW.UnderlineKind.DashLongHeavy;
+  }
+
+  private static bool TestCreateOpenXmlEnumValueFromModel()
+  {
+    DMW.UnderlineKind source = DMW.UnderlineKind.DottedHeavy;
+    var enumValue = source.CreateOpenXmlEnumValue<DXW.UnderlineValues, DMW.UnderlineKind>();
+    return enumValue != null && enumValue.Value == DXW.UnderlineValues.DottedHeavy;
+  }
+
+  private static bool TestCreateOpenXmlElementFromModel()
+  {
+    var modelValue = DMW.UnderlineKind.Thick;
+    var element = modelValue.CreateOpenXmlElement<DXW.Underline, DXW.UnderlineValues, DMW.UnderlineKind>();
+    return element.Val?.Value == DXW.UnderlineValues.Thick;
+  }
+
 
 }
