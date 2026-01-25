@@ -8,6 +8,45 @@ public static class EnumValueConverter
   /// <summary>
   /// Retrieves an EnumValue from the specified OpenXmlElement that has a "Val" property of OpenXml EnumValue type.
   /// </summary>
+  /// <param name="openXmlElement">The OpenXmlElement to retrieve the value from.</param>
+  /// <param name="enumType">The target enum type to convert the value to.</param>
+  /// <returns>The converted enum value, or null if retrieval or conversion fails.</returns>
+  public static Enum? GetEnumValue(this DX.OpenXmlElement? openXmlElement, Type enumType)
+  {
+    if (openXmlElement == null) return null;
+
+    var valProp = openXmlElement.GetType().GetProperty("Val");
+    if (valProp == null)
+      valProp = openXmlElement.GetType().GetProperty("Value");
+    if (valProp == null)
+      throw new InvalidOperationException($"Unable to find 'Val' or 'Value' property on {openXmlElement.GetType().Name}");
+
+    var openXmlEnumValue = valProp.GetValue(openXmlElement);
+    if (openXmlEnumValue == null)
+      throw new InvalidOperationException($"Unable to retrieve 'Val' or 'Value' property from {openXmlElement.GetType().Name}");
+
+    var openXmlValueType = openXmlEnumValue.GetType()!;
+    if (!openXmlValueType.Name.StartsWith("EnumValue`"))
+      throw new InvalidOperationException($"'Val' or 'Value' property on {openXmlElement.GetType().Name} is not of EnumValue<> type");
+    if (!openXmlValueType.IsGenericType)
+      throw new InvalidOperationException($"'Val' or 'Value' property on {openXmlElement.GetType().Name} is not a generic type");
+
+    var enumValuesType = openXmlValueType.GenericTypeArguments[0];
+
+    var enumValueStaticProperty = enumValuesType.GetProperties(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(p => object.ReferenceEquals(p, openXmlEnumValue));
+    if (enumValueStaticProperty == null)
+      throw new InvalidOperationException($"Unable to convert '{openXmlEnumValue.GetType()}' to {enumValuesType.Name}. Target static property '{openXmlEnumValue}' not found");
+
+    var enumValueStaticPropertyName = enumValueStaticProperty.Name;
+    if (!Enum.TryParse(enumType, enumValueStaticPropertyName, out var result))
+      throw new InvalidOperationException($"Unable to parse '{enumValueStaticPropertyName}' to {enumType}");
+
+    return (Enum)result;
+  }
+
+  /// <summary>
+  /// Retrieves an EnumValue from the specified OpenXmlElement that has a "Val" property of OpenXml EnumValue type.
+  /// </summary>
   /// <typeparam name="OpenXmlEnumType">The OpenXml enum type.</typeparam>
   /// <typeparam name="ModelEnumType">The model enum type.</typeparam>
   /// <param name="openXmlElement">The OpenXmlElement to retrieve the value from.</param>
