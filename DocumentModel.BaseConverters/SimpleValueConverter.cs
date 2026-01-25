@@ -25,13 +25,13 @@ public static class SimpleValueConverter
     if (value.GetType().IsEnum)
     {
       if (targetType.Name.StartsWith("EnumValue`"))
-        return EnumValueConverter.CreateOpenXmlElement(value, targetType);
+        return EnumOpenXmlConverter.CreateOpenXmlElement((Enum?)value, targetType);
       return Enum.ToObject(targetType, value);
     }
     if (targetType.IsEnum)
     {
       if (value.GetType().Name.StartsWith("EnumValue`"))
-        return EnumValueConverter.CreateOpenXmlElement(value, targetType);
+        return EnumOpenXmlConverter.CreateOpenXmlElement((Enum?)value, targetType);
 
       var str = value.ToString()!;
       return Enum.Parse(targetType, str, true);
