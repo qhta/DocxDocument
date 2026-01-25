@@ -22,7 +22,6 @@ public static class ByteOpenXmlConverterTest
     typeof(DX.UInt32Value),
     typeof(DX.UInt64Value),
     typeof(DX.StringValue)
-
   ];
 
   public static bool Run()
