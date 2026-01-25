@@ -61,7 +61,7 @@ public static class UInt16OpenXmlConverter
   public static UInt16? ConvertToUInt16(DX.Int16Value? int16Value)
   {
     if (int16Value == null) return null;
-    if (int16Value < 0 || int16Value > UInt16.MaxValue)
+    if (int16Value < 0)
       throw new OverflowException($"Value {int16Value} is out of range for UInt16");
 
     return (UInt16)int16Value.Value;
