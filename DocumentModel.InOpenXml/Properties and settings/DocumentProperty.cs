@@ -27,7 +27,7 @@ public abstract partial class DocumentProperty : CollectionItem
   public virtual string? Category { get; set; }
 
   /// <summary>
-  ///   Property Name.
+  ///   Property FontName.
   /// </summary>
   [XmlAttribute]
   public virtual string? Name { get; set; }

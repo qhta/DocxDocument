@@ -191,7 +191,7 @@ public sealed partial class CustomProperty
           }
           //catch (Exception)
           //{
-          //  //Console.WriteLine($"Error converting value of type {_Value?.GetType().Name} to type: " + type?.Name);
+          //  //Console.WriteLine($"Error converting value of type {_Value?.GetType().FontName} to type: " + type?.FontName);
           //}
         }
         NotifyPropertyChanged(nameof(Value));

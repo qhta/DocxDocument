@@ -9,11 +9,11 @@ namespace DocumentModel.Drawings;
 public partial class Theme : ModelElement<DXD.Theme>, IOfficeStyleSheetExtendableElement
 {
     /// <summary>
-    ///   Name of the theme.
+    ///   FontName of the theme.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.Theme.Name))]
     /// <summary>
-    ///   Name of the theme.
+    ///   FontName of the theme.
     /// </summary>
     [OpenXmlElement(typeof(DXD.Theme))]
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

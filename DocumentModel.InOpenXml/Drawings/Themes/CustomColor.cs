@@ -9,11 +9,11 @@ namespace DocumentModel.Drawings;
 public partial class CustomColor : ModelElement<DXD.CustomColor>
 {
     /// <summary>
-    ///   Name
+    ///   FontName
     /// </summary>
     [OpenXmlProperty(nameof(DXD.CustomColor.Name))]
     /// <summary>
-    ///   Name
+    ///   FontName
     /// </summary>
     [OpenXmlElement(typeof(DXD.CustomColor))]
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

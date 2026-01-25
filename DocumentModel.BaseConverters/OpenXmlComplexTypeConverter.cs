@@ -116,7 +116,7 @@ public static class OpenXmlComplexTypeConverter
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return;
 
-    if (modelProperty.Name == "Id") Debug.Assert(true);
+    if (modelProperty.Name == "Panose") Debug.Assert(true);
 
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanWrite)
@@ -136,7 +136,7 @@ public static class OpenXmlComplexTypeConverter
       var targetParameters = updateDataMethod.GetParameters();
       if (targetParameters.Length == 1)
       {
-        //var value = modelProperty.GetValue(modelObject);
+        //var value = modelProperty.ConvertToBool(modelObject);
         //if (value != null && !targetParameters[0].ParameterType.IsInstanceOfType(value))
         //{
         //  value = ConvertValue(value, targetParameters[0].ParameterType);
@@ -150,13 +150,13 @@ public static class OpenXmlComplexTypeConverter
     var openXmlElementAttribute = modelProperty.GetCustomAttribute<OpenXmlElementAttribute>();
     if (openXmlElementAttribute != null)
     {
-      UpdateChildElement(modelObject, modelProperty, (OpenXmlElement)openXmlElement, openXmlType, openXmlElementAttribute.OpenXmlType);
+      UpdateChildElement(modelObject, modelProperty, (DX.OpenXmlElement)openXmlElement, openXmlType, openXmlElementAttribute.OpenXmlType);
       return;
     }
     var openXmlElementCollectionAttribute = modelProperty.GetCustomAttribute<OpenXmlElementCollectionAttribute>();
     if (openXmlElementCollectionAttribute != null)
     {
-      UpdateChildElementCollection(modelObject, modelProperty, (OpenXmlElement)openXmlElement, openXmlType);
+      UpdateChildElementCollection(modelObject, modelProperty, (DX.OpenXmlElement)openXmlElement, openXmlType);
       return;
     }
     throw new InvalidOperationException($"Failed to update Open XML element {openXmlType} " +
@@ -308,7 +308,7 @@ public static class OpenXmlComplexTypeConverter
     if (getMappedMethod != null)
     {
       var targetParameters = getMappedMethod.GetParameters();
-      if (getMappedMethod.DeclaringType == modelObject.GetType() || modelObject.GetType().IsSubclassOf(getMappedMethod.DeclaringType!))
+      if (getMappedMethod.DeclaringType == modelObject.GetType() || modelObject.GetType().IsEqualOrSubclassOf(getMappedMethod.DeclaringType!))
       {
         getMappedMethod.Invoke(modelObject, [openXmlElement]);
       }
@@ -317,13 +317,13 @@ public static class OpenXmlComplexTypeConverter
     var openXmlElementAttribute = modelProperty.GetCustomAttribute<OpenXmlElementAttribute>();
     if (openXmlElementAttribute != null)
     {
-      LoadChildElement(modelObject, modelProperty, (OpenXmlElement)openXmlElement, openXmlType, openXmlElementAttribute.OpenXmlType);
+      LoadChildElement(modelObject, modelProperty, (DX.OpenXmlElement)openXmlElement, openXmlType, openXmlElementAttribute.OpenXmlType);
       return;
     }
     var openXmlElementCollectionAttribute = modelProperty.GetCustomAttribute<OpenXmlElementCollectionAttribute>();
     if (openXmlElementCollectionAttribute != null)
     {
-      LoadChildElementCollection(modelObject, modelProperty, (OpenXmlElement)openXmlElement, openXmlType);
+      LoadChildElementCollection(modelObject, modelProperty, (DX.OpenXmlElement)openXmlElement, openXmlType);
       return;
     }
     throw new InvalidOperationException($"Failed to load data from Open XML element {openXmlType} " +

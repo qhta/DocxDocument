@@ -117,8 +117,8 @@ public static class HexLongConverter
   /// <typeparam name="OpenElementType">The type of the child element.</typeparam>
   /// <param name="openXmlElement">The parent composite element.</param>
   /// <param name="value">The HexLong value to set.</param>
-  public static void SetValue<OpenElementType>(this OpenXmlCompositeElement openXmlElement, HexLong? value)
-    where OpenElementType : OpenXmlElement, new()
+  public static void SetValue<OpenElementType>(this DX.OpenXmlCompositeElement openXmlElement, HexLong? value)
+    where OpenElementType : DX.OpenXmlElement, new()
   {
     var valProperty = typeof(OpenElementType).GetProperty("Val") ?? typeof(OpenElementType).GetProperty("Value");
     Debug.Assert(valProperty != null);
@@ -134,7 +134,7 @@ public static class HexLongConverter
     if (value != null)
     {
       itemElement = new OpenElementType();
-      valProperty.SetValue(itemElement, new HexBinaryValue(value.ToString()));
+      valProperty.SetValue(itemElement, new DX.HexBinaryValue(value.ToString()));
       openXmlElement.AppendChild(itemElement);
     }
   }
@@ -183,13 +183,13 @@ public static class HexLongConverter
   /// <returns>A HexLong value, or null if property not found or value is null.</returns>
   public static HexLong? GetValue(this DX.OpenXmlLeafElement? openXmlElement)
   {
-    var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item => item.PropertyType == typeof(HexBinaryValue));
+    var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item => item.PropertyType == typeof(DX.HexBinaryValue));
     if (valProperty != null)
     {
       var value = valProperty.GetValue(openXmlElement);
       if (value is string valStr)
         return valStr;
-      if (value is HexBinaryValue hexBinaryValue && hexBinaryValue.Value != null)
+      if (value is DX.HexBinaryValue hexBinaryValue && hexBinaryValue.Value != null)
         return hexBinaryValue.Value;
     }
     return null;
@@ -211,10 +211,10 @@ public static class HexLongConverter
   /// </summary>
   /// <param name="value">The HexLong value.</param>
   /// <returns>A new StringValue, or null if the input value is null.</returns>
-  public static StringValue? CreateStringValue(this HexLong? value)
+  public static DX.StringValue? CreateStringValue(this HexLong? value)
   {
     if (value == null) return null;
-    return new StringValue { Value = value.ToString() };
+    return new DX.StringValue { Value = value.ToString() };
   }
 
 
@@ -247,7 +247,7 @@ public static class HexLongConverter
   {
     var newValue = new DX.HexBinaryValue(value.ToString());
     var element = new OpenXmlElementType();
-    var valProperty = typeof(OpenXmlElementType).GetProperties().FirstOrDefault(item => item.PropertyType == typeof(HexBinaryValue));
+    var valProperty = typeof(OpenXmlElementType).GetProperties().FirstOrDefault(item => item.PropertyType == typeof(DX.HexBinaryValue));
     if (valProperty != null)
       valProperty.SetValue(element, newValue);
     return element;
@@ -300,9 +300,9 @@ public static class HexLongConverter
   /// <param name="openXmlElement">The parent element.</param>
   /// <param name="value">The string value to set.</param>
   /// <param name="propName">The property name to set (default is "Val").</param>
-  public static void SetHexLongVal<OpenXmlElementType>(this OpenXmlLeafElement openXmlElement, String? value,
+  public static void SetHexLongVal<OpenXmlElementType>(this DX.OpenXmlLeafElement openXmlElement, String? value,
     string? propName = null) 
-    where OpenXmlElementType : OpenXmlLeafElement, new()
+    where OpenXmlElementType : DX.OpenXmlLeafElement, new()
   {
     if (propName==null)
       propName = "Val";
@@ -312,7 +312,7 @@ public static class HexLongConverter
     if (itemElement != null)
     {
       if (value != null)
-        valProperty.SetValue(itemElement, new HexBinaryValue(value));
+        valProperty.SetValue(itemElement, new DX.HexBinaryValue(value));
       else
         itemElement.Remove();
     }
@@ -320,7 +320,7 @@ public static class HexLongConverter
     if (value != null)
     {
       itemElement = new OpenXmlElementType();
-      valProperty.SetValue(itemElement, new StringValue(value));
+      valProperty.SetValue(itemElement, new DX.StringValue(value));
       openXmlElement.AppendChild(itemElement);
     }
   }
@@ -372,9 +372,9 @@ public static class HexLongConverter
   /// <param name="openXmlElement">The parent composite element.</param>
   /// <param name="value">The string value to set.</param>
   /// <param name="propName">The property name to set (default is "Val").</param>
-  public static void SetHexLongVal<OpenXmlElementType>(this OpenXmlCompositeElement openXmlElement, String? value,
+  public static void SetHexLongVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement openXmlElement, String? value,
     string? propName = null) 
-    where OpenXmlElementType : OpenXmlLeafElement, new()
+    where OpenXmlElementType : DX.OpenXmlLeafElement, new()
   {
     if (propName==null)
       propName = "Val";
@@ -384,7 +384,7 @@ public static class HexLongConverter
     if (itemElement != null)
     {
       if (value != null)
-        valProperty.SetValue(itemElement, new HexBinaryValue(value));
+        valProperty.SetValue(itemElement, new DX.HexBinaryValue(value));
       else
         itemElement.Remove();
     }
@@ -392,7 +392,7 @@ public static class HexLongConverter
     if (value != null)
     {
       itemElement = new OpenXmlElementType();
-      valProperty.SetValue(itemElement, new StringValue(value));
+      valProperty.SetValue(itemElement, new DX.StringValue(value));
       openXmlElement.AppendChild(itemElement);
     }
   }

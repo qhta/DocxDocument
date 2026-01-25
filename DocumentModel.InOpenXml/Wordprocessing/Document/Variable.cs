@@ -6,15 +6,15 @@ namespace DocumentModel.Wordprocessing;
 public partial class Variable : ModelElement<DXW.DocumentVariable>
 {
     /// <summary>
-    /// Name of the document variable, specifying the unique identifier for the variable.
+    /// FontName of the document variable, specifying the unique identifier for the variable.
     /// </summary>
     [XmlAttribute]
     /// <summary>
-    /// Name of the document variable, specifying the unique identifier for the variable.
+    /// FontName of the document variable, specifying the unique identifier for the variable.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.DocumentVariable.Name))]
     /// <summary>
-    /// Name of the document variable, specifying the unique identifier for the variable.
+    /// FontName of the document variable, specifying the unique identifier for the variable.
     /// </summary>
     [OpenXmlElement(typeof(DXW.DocumentVariable))]
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
