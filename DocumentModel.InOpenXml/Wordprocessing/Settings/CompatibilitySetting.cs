@@ -6,11 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public partial class CompatibilitySetting : ModelElement<DXW.CompatibilitySetting>
 {
     /// <summary>
-    /// Name of the compatibility setting, specifying the type of compatibility option.
+    /// FontName of the compatibility setting, specifying the type of compatibility option.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.CompatibilitySetting.Name))]
     /// <summary>
-    /// Name of the compatibility setting, specifying the type of compatibility option.
+    /// FontName of the compatibility setting, specifying the type of compatibility option.
     /// </summary>
     [OpenXmlElement(typeof(DXW.CompatibilitySetting))]
     public CompatSettingNameKind? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

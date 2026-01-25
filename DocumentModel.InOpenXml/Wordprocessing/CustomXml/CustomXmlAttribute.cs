@@ -13,11 +13,11 @@ public partial class CustomXmlAttribute : ModelElement<DXW.CustomXmlAttribute>
 
     private string? _UriString;
     /// <summary>
-    /// Name of the custom XML attribute.
+    /// FontName of the custom XML attribute.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.CustomXmlAttribute.Name))]
     /// <summary>
-    /// Name of the custom XML attribute.
+    /// FontName of the custom XML attribute.
     /// </summary>
     [OpenXmlElement(typeof(DXW.CustomXmlAttribute))]
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

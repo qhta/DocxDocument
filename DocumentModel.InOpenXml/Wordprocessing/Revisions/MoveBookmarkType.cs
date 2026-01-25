@@ -8,7 +8,7 @@ public abstract partial class MoveBookmarkType<T1, T2> : MarkupStartRangeElement
   where T2: DX.OpenXmlElement
 {
   /// <summary>
-  /// Name of the move bookmark, used to link move source and destination content.
+  /// FontName of the move bookmark, used to link move source and destination content.
   /// </summary>
   public string? Name { get; set; }
   /// <summary>

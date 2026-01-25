@@ -17,7 +17,7 @@ public enum DocPartKind
   Normal,
 
   /// <summary>
-  ///   Automatically Replace Name With Content.
+  ///   Automatically Replace FontName With Content.
   /// </summary>
   AutoExp,
 

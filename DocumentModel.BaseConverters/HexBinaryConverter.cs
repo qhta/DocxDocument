@@ -12,13 +12,14 @@ public static class HexBinaryConverter
   /// <returns>A HexBinary array, or null if retrieval fails.</returns>
   public static HexBinary? GetValue(DX.OpenXmlLeafElement? openXmlElement)
   {
-    var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(HexBinaryValue));
+    var valProperty = openXmlElement?.GetType().GetProperties()
+      .FirstOrDefault(item=>item.PropertyType==typeof(DX.HexBinaryValue));
     if (valProperty != null)
     {
       var valPropertyValue = valProperty.GetValue(openXmlElement);
       if (valPropertyValue is string valStr)
         return Convert.FromHexString(valStr);
-      if (valPropertyValue is HexBinaryValue hexBinaryValue && hexBinaryValue.Value != null)
+      if (valPropertyValue is DX.HexBinaryValue hexBinaryValue && hexBinaryValue.Value != null)
         return Convert.FromHexString(hexBinaryValue.Value);
     }
     return null;
@@ -63,17 +64,39 @@ public static class HexBinaryConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(HexBinary? value)
     where OpenXmlElementType : DX.OpenXmlElement, new()
   {
-    if (value != null)
+    if (value == null)
+      return null;
+    var element = new OpenXmlElementType();
+    if (value.Length > 0)
     {
-      var element = new OpenXmlElementType();
-      if (value.Length > 0)
-      {
-        var valProperty = typeof(OpenXmlElementType).GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(HexBinaryValue));
-        if (valProperty != null)
-          valProperty.SetValue(element, CreateValue<DX.HexBinaryValue>(value));
-      }
-      return element;
+      var openXmlType = typeof(OpenXmlElementType);
+      var valProperty = openXmlType.GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(DX.HexBinaryValue));
+      if (valProperty != null)
+        valProperty.SetValue(element, CreateValue<DX.HexBinaryValue>(value));
+      else
+        throw new InvalidOperationException($"The specified {openXmlType.Name} type does not have a HexBinaryValue property.");
     }
-    return null;
+    return element;
+  }
+
+  /// <summary>
+  /// Creates a new Open XML element of the specified type and assigns the provided hex binary value, if present.
+  /// </summary>
+  /// <remarks>The created element will have its first property of type HexBinaryValue set to the provided
+  /// value, if such a property exists. If the value is empty, the property is not set.</remarks>
+  /// <param name="value">The hex binary value to assign to the Open XML element. If null, the method returns null.</param>
+  /// <param name="openXmlType">The type of the Open XML element to create. Must be a type that has a property of type HexBinaryValue.</param>
+  /// <returns>An instance of the specified Open XML element type with the value assigned, or null if the input value is null.</returns>
+  public static object? CreateOpenXmlElement(HexBinary? value, Type openXmlType)
+  {
+    if (value == null)
+      return null;
+    var element = Activator.CreateInstance(openXmlType);
+    var valProperty = openXmlType.GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(DX.HexBinaryValue));
+    if (valProperty != null)
+      valProperty.SetValue(element, HexBinaryConverter.CreateValue<DX.HexBinaryValue>(value));
+    else
+      throw new InvalidOperationException($"The specified {openXmlType.Name} type does not have a HexBinaryValue property.");
+    return element;
   }
 }

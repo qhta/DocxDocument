@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 public partial class FormFieldData : ModelElement<DXW.FormFieldData>
 {
     /// <summary>
-    /// Name of the form field, used for identification and referencing within the document.
+    /// FontName of the form field, used for identification and referencing within the document.
     /// </summary>
     [OpenXmlElement(typeof(DXW.FormFieldData))]
     public string? FormFieldName { get => _FormFieldName; set => UpdateField(ref _FormFieldName, value, nameof(FormFieldName)); }

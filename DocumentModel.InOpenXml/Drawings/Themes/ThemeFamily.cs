@@ -15,11 +15,11 @@ namespace DocumentModel;
 public partial class ThemeFamily : ModelElement<DXO13T.ThemeFamily>
 {
     /// <summary>
-    /// Name of the theme family.
+    /// FontName of the theme family.
     /// </summary>
     [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Name))]
     /// <summary>
-    /// Name of the theme family.
+    /// FontName of the theme family.
     /// </summary>
     [OpenXmlElement(typeof(DXO13T.ThemeFamily))]
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

@@ -43,7 +43,7 @@ public static class HexCharConverter
       var value = valProperty.GetValue(openXmlElement);
       if (value is string valStr)
         return valStr;
-      if (value is HexBinaryValue hexBinaryValue && hexBinaryValue.Value != null)
+      if (value is DX.HexBinaryValue hexBinaryValue && hexBinaryValue.Value != null)
         return hexBinaryValue.Value;
     }
     return null;

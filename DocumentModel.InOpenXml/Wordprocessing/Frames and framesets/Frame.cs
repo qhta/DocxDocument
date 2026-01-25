@@ -17,11 +17,11 @@ public partial class Frame : ModelElement<DXW.Frame>, IFramesetItem
 
     private UInt32? _FrameSize;
     /// <summary>
-    /// Name of the frame, used for identification and targeting within the frameset.
+    /// FontName of the frame, used for identification and targeting within the frameset.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.Frame.FrameName))]
     /// <summary>
-    /// Name of the frame, used for identification and targeting within the frameset.
+    /// FontName of the frame, used for identification and targeting within the frameset.
     /// </summary>
     [OpenXmlElement(typeof(DXW.Frame))]
     public string? FrameName { get => _FrameName; set => UpdateField(ref _FrameName, value, nameof(FrameName)); }

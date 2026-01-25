@@ -5,11 +5,11 @@ namespace DocumentModel.Drawings;
 public partial class FontScheme : ModelElement<DXD.FontScheme>, IExtendableElement
 {
     /// <summary>
-    ///   Name of the font scheme.
+    ///   FontName of the font scheme.
     /// </summary>
     [OpenXmlProperty(nameof(DXD.FontScheme.Name))]
     /// <summary>
-    ///   Name of the font scheme.
+    ///   FontName of the font scheme.
     /// </summary>
     [OpenXmlElement(typeof(DXD.FontScheme))]
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

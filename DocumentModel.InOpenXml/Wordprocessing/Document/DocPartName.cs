@@ -6,11 +6,11 @@ namespace DocumentModel.Wordprocessing;
 public partial class DocPartName : ModelElement<DXW.DocPartName>
 {
     /// <summary>
-    /// Name value of the entry, specifying the unique identifier or display name for the glossary document entry.
+    /// FontName value of the entry, specifying the unique identifier or display name for the glossary document entry.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.DocPartName.Val))]
     /// <summary>
-    /// Name value of the entry, specifying the unique identifier or display name for the glossary document entry.
+    /// FontName value of the entry, specifying the unique identifier or display name for the glossary document entry.
     /// </summary>
     [OpenXmlElement(typeof(DXW.DocPartName))]
     public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }

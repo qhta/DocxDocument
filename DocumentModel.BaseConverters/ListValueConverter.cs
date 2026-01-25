@@ -16,17 +16,16 @@ public static class ListValueConverter
   /// <returns>A ListOf strings, or null if the input is null.</returns>
   public static ListOf<String>? GetValue(DX.ListValue<DX.StringValue>? element)
   {
-    if (element != null)
+    if (element == null) return null;
+
+    var result = new ListOf<String>();
+    foreach (var item in element)
     {
-      var result = new ListOf<String>();
-      foreach (var item in element)
-      {
-        var str = StringValueConverter.GetValue(item);
-        if (str!=null)
-          result.Add(str);
-      }
+      var str = StringOpenXmlConverter.GetValue(item);
+      if (str!=null)
+        result.Add(str);
     }
-    return null;
+    return result;
   }
 
   /// <summary>
@@ -57,7 +56,7 @@ public static class ListValueConverter
   /// <param name="element">The ListValue element to convert.</param>
   /// <returns>A ListOf enums, or null if the input is null.</returns>
   public static ListOf<EnumKind>? GetValue<OpenXmlEnumType, EnumKind>(DX.ListValue<DX.EnumValue<OpenXmlEnumType>>? element)
-    where OpenXmlEnumType : struct, IEnumValue, IEnumValueFactory<OpenXmlEnumType>
+    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
     where EnumKind : struct, IConvertible
   {
     if (element != null)
@@ -81,7 +80,7 @@ public static class ListValueConverter
   /// <param name="value">The list of enum values to convert.</param>
   /// <returns>A new ListValue containing the enum values.</returns>
   public static DX.ListValue<DX.EnumValue<OpenXmlEnumType>>? CreateListValue<OpenXmlEnumType, EnumKind>(ListOf<EnumKind> value)
-    where OpenXmlEnumType : struct, IEnumValue, IEnumValueFactory<OpenXmlEnumType>
+    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
     where EnumKind : struct, IConvertible
   {
     var resultList = new List<DX.EnumValue<OpenXmlEnumType>>();

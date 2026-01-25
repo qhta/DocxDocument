@@ -123,10 +123,10 @@ public static class WordprocessingHelper
   }
 
   /// <summary>
-  /// Retrieves the extended file properties part for the specified Wordprocessing document, creating it if necessary.
+  /// Retrieves the extended file properties for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
   /// <param name="wordDocument">The Document instance.</param>
-  /// <returns>The extended file properties part.</returns>
+  /// <returns>The extended file properties element.</returns>
   public static DXEP.Properties GetExtendedFileProperties(this DXPP.WordprocessingDocument wordDocument)
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
@@ -137,10 +137,10 @@ public static class WordprocessingHelper
   }
 
   /// <summary>
-  /// Retrieves the custom file properties part for the specified Wordprocessing document, creating it if necessary.
+  /// Retrieves the custom file properties for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
   /// <param name="wordDocument">The Document instance.</param>
-  /// <returns>The custom file properties part.</returns>
+  /// <returns>The custom file properties element.</returns>
   public static DXCP.Properties GetCustomFileProperties(this DXPP.WordprocessingDocument wordDocument)
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
@@ -151,10 +151,10 @@ public static class WordprocessingHelper
   }
 
   /// <summary>
-  /// Retrieves the document settings part for the specified Wordprocessing document, creating it if necessary.
+  /// Retrieves the document settings for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
   /// <param name="wordDocument">The Document instance.</param>
-  /// <returns>The document settings part.</returns>
+  /// <returns>The document settings element.</returns>
   public static DXW.Settings GetDocumentSettings(this DXPP.WordprocessingDocument wordDocument)
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
@@ -219,8 +219,8 @@ public static class WordprocessingHelper
   /// <summary>
   /// Gets the WordprocessingDocument that contains the specified OpenXmlElement.
   /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
+  /// <param name="element">The OpenXmlElement to search for.</param>
+  /// <returns>The WordprocessingDocument that contains the specified OpenXmlElement, or null if not found.</returns>
   public static DXPack.WordprocessingDocument? GetWordprocessingDocument(this DX.OpenXmlElement element)
   {
     // Walk up to the root element
@@ -233,5 +233,20 @@ public static class WordprocessingHelper
       return root.OpenXmlPart.OpenXmlPackage as DXPack.WordprocessingDocument;
     }
     return null;
+  }
+
+
+  /// <summary>
+  /// Retrieves the font table for the specified Wordprocessing document, creating it if necessary.
+  /// </summary>
+  /// <param name="wordDocument">The Document instance.</param>
+  /// <returns>The font table element.</returns>
+  public static DXW.Fonts GetFontTable(this DXPP.WordprocessingDocument wordDocument)
+  {
+    var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
+    var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
+    DXPP.FontTablePart part = mainPart.FontTablePart ?? mainPart.AddNewPart<DXPP.FontTablePart>();
+    var fonts = part.Fonts ?? (part.Fonts = new DXW.Fonts());
+    return fonts;
   }
 }

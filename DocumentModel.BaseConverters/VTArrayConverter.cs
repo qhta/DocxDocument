@@ -5,25 +5,25 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class VTArrayConverter
 {
-  private static readonly BiDiDictionary<ArrayBaseValues, VariantType> ArrayBaseTypeConversion = new()
+  private static readonly BiDiDictionary<DXVT.ArrayBaseValues, VariantType> ArrayBaseTypeConversion = new()
   {
-    { ArrayBaseValues.Variant, VariantType.Variant },
-    { ArrayBaseValues.OneByteSignedInteger, VariantType.SByte },
-    { ArrayBaseValues.TwoBytesSignedInteger, VariantType.Int16 },
-    { ArrayBaseValues.FourBytesSignedInteger, VariantType.Int32 },
-    { ArrayBaseValues.Integer, VariantType.Integer },
-    { ArrayBaseValues.OneByteUnsignedInteger, VariantType.Byte },
-    { ArrayBaseValues.TwoBytesUnsignedInteger, VariantType.UInt16 },
-    { ArrayBaseValues.FourBytesUnsignedInteger, VariantType.UInt32 },
-    { ArrayBaseValues.UnsignedInteger, VariantType.UnsignedInteger },
-    { ArrayBaseValues.FourBytesReal, VariantType.Single },
-    { ArrayBaseValues.EightBytesReal, VariantType.Double },
-    { ArrayBaseValues.Decimal, VariantType.Decimal },
-    { ArrayBaseValues.Bstr, VariantType.Bstr },
-    { ArrayBaseValues.Date, VariantType.Date },
-    { ArrayBaseValues.Bool, VariantType.Boolean },
-    { ArrayBaseValues.Currency, VariantType.Currency },
-    { ArrayBaseValues.Error, VariantType.HexInt }
+    { DXVT.ArrayBaseValues.Variant, VariantType.Variant },
+    { DXVT.ArrayBaseValues.OneByteSignedInteger, VariantType.SByte },
+    { DXVT.ArrayBaseValues.TwoBytesSignedInteger, VariantType.Int16 },
+    { DXVT.ArrayBaseValues.FourBytesSignedInteger, VariantType.Int32 },
+    { DXVT.ArrayBaseValues.Integer, VariantType.Integer },
+    { DXVT.ArrayBaseValues.OneByteUnsignedInteger, VariantType.Byte },
+    { DXVT.ArrayBaseValues.TwoBytesUnsignedInteger, VariantType.UInt16 },
+    { DXVT.ArrayBaseValues.FourBytesUnsignedInteger, VariantType.UInt32 },
+    { DXVT.ArrayBaseValues.UnsignedInteger, VariantType.UnsignedInteger },
+    { DXVT.ArrayBaseValues.FourBytesReal, VariantType.Single },
+    { DXVT.ArrayBaseValues.EightBytesReal, VariantType.Double },
+    { DXVT.ArrayBaseValues.Decimal, VariantType.Decimal },
+    { DXVT.ArrayBaseValues.Bstr, VariantType.Bstr },
+    { DXVT.ArrayBaseValues.Date, VariantType.Date },
+    { DXVT.ArrayBaseValues.Bool, VariantType.Boolean },
+    { DXVT.ArrayBaseValues.Currency, VariantType.Currency },
+    { DXVT.ArrayBaseValues.Error, VariantType.HexInt }
   };
 
   /// <summary>
@@ -31,7 +31,7 @@ public static class VTArrayConverter
   /// </summary>
   /// <param name="openXmlElement">The VTArray element to query.</param>
   /// <returns>The base VariantType, or null if not set.</returns>
-  public static VariantType? GetBaseType(this VTArray openXmlElement)
+  public static VariantType? GetBaseType(this DXVT.VTArray openXmlElement)
   {
     if (openXmlElement?.BaseType?.Value != null)
       return ArrayBaseTypeConversion.GetValue2(openXmlElement.BaseType.Value);
@@ -43,7 +43,7 @@ public static class VTArrayConverter
   /// </summary>
   /// <param name="openXmlElement">The VTArray element to modify.</param>
   /// <param name="value">The VariantType to set. Null removes the property.</param>
-  public static void SetBaseType(this VTArray openXmlElement, VariantType? value)
+  public static void SetBaseType(this DXVT.VTArray openXmlElement, VariantType? value)
   {
 
     if (value != null)
@@ -57,7 +57,7 @@ public static class VTArrayConverter
   /// </summary>
   /// <param name="openXmlElement">The VTArray element to query.</param>
   /// <returns>The lower bounds integer, or null if not set.</returns>
-  public static int? GetLowerBounds(this VTArray openXmlElement)
+  public static int? GetLowerBounds(this DXVT.VTArray openXmlElement)
   {
     return (openXmlElement.LowerBounds != null) ? openXmlElement.LowerBounds.Value : null;
   }
@@ -67,7 +67,7 @@ public static class VTArrayConverter
   /// </summary>
   /// <param name="openXmlElement">The VTArray element to modify.</param>
   /// <param name="value">The lower bounds value.</param>
-  public static void SetLowerBounds(this VTArray openXmlElement, int? value)
+  public static void SetLowerBounds(this DXVT.VTArray openXmlElement, int? value)
   {
     openXmlElement.LowerBounds = value;
   }
@@ -77,7 +77,7 @@ public static class VTArrayConverter
   /// </summary>
   /// <param name="openXmlElement">The VTArray element to query.</param>
   /// <returns>The upper bounds integer, or null if not set.</returns>
-  public static int? GetUpperBounds(this VTArray openXmlElement)
+  public static int? GetUpperBounds(this DXVT.VTArray openXmlElement)
   {
     return (openXmlElement.UpperBounds != null) ? openXmlElement.UpperBounds.Value : null;
   }
@@ -87,7 +87,7 @@ public static class VTArrayConverter
   /// </summary>
   /// <param name="openXmlElement">The VTArray element to modify.</param>
   /// <param name="value">The upper bounds value.</param>
-  public static void SetUpperBounds(this VTArray openXmlElement, int? value)
+  public static void SetUpperBounds(this DXVT.VTArray openXmlElement, int? value)
   {
     openXmlElement.UpperBounds = value;
   }
@@ -97,7 +97,7 @@ public static class VTArrayConverter
   /// </summary>
   /// <param name="openXmlElement">The VTArray element to convert.</param>
   /// <returns>An ArrayVariant object populated with the array data.</returns>
-  public static ArrayVariant? GetValue(this VTArray openXmlElement)
+  public static ArrayVariant? GetValue(this DXVT.VTArray openXmlElement)
   {
     var baseType = openXmlElement.GetBaseType();
     var lowerBounds = openXmlElement.GetLowerBounds();
@@ -120,7 +120,7 @@ public static class VTArrayConverter
   /// </summary>
   /// <param name="openXmlElement">The VTArray element to populate.</param>
   /// <param name="value">The ArrayVariant source data.</param>
-  public static void SetValue(this VTArray openXmlElement, ArrayVariant? value)
+  public static void SetValue(this DXVT.VTArray openXmlElement, ArrayVariant? value)
   {
     openXmlElement.RemoveAllChildren();
     if (value != null)
@@ -136,9 +136,9 @@ public static class VTArrayConverter
   /// </summary>
   /// <param name="value">The ArrayVariant object to convert.</param>
   /// <returns>A new VTArray element populated with the array data.</returns>
-  public static VTArray CreateOpenXmlElement(this ArrayVariant value)
+  public static DXVT.VTArray CreateOpenXmlElement(this ArrayVariant value)
   {
-    var openXmlElement = new VTArray();
+    var openXmlElement = new DXVT.VTArray();
     openXmlElement.SetBaseType(value.BaseType);
     openXmlElement.SetLowerBounds(value.LowerBounds);
     openXmlElement.SetUpperBounds(value.UpperBounds);

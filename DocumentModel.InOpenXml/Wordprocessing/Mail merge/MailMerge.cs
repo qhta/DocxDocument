@@ -105,11 +105,11 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
 
     private MailMergeDestinationKind? _Destination;
     /// <summary>
-    /// Name of the column containing email addresses for email merges.
+    /// FontName of the column containing email addresses for email merges.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.MailMerge.AddressFieldName))]
     /// <summary>
-    /// Name of the column containing email addresses for email merges.
+    /// FontName of the column containing email addresses for email merges.
     /// </summary>
     [OpenXmlElement(typeof(DXW.MailMerge))]
     public string? AddressFieldName { get => _AddressFieldName; set => UpdateField(ref _AddressFieldName, value, nameof(AddressFieldName)); }

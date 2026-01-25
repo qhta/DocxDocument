@@ -179,7 +179,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   private CustomProperties? _CustomProperties;
 
   /// <summary>
-  /// Provides access to document-level settings and properties.
+  /// Provides access to document-level settings.
   /// </summary>
   public DocumentSettings? DocumentSettings
   {
@@ -194,6 +194,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
 
   private DocumentSettings? _DocumentSettings;
 
+  /// <summary>
+  /// Collection of revision IDs for tracked changes in the document.
+  /// </summary>
   public Rsids? Rsids
   {
     get
@@ -206,4 +209,20 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   private Rsids? _Rsids;
+
+  /// <summary>
+  /// Font table for the document, providing access to font definitions used within the document.
+  /// </summary>
+  public Fonts? Fonts
+  {
+    get
+    {
+      if (_Fonts == null && WordprocessingDocument?.MainDocumentPart?.FontTablePart != null)
+        _Fonts = new Fonts(this);
+      return _Fonts;
+    }
+    set => UpdateField(ref _Fonts, value, nameof(Fonts));
+  }
+
+  private Fonts? _Fonts;
 }

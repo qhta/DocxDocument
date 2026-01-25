@@ -9,7 +9,7 @@ public class Color: ModelElement
   ///// <summary>
   /////   Gets RGB value of the color.
   ///// </summary>
-  //public RGB? GetValue();
+  //public RGB? ConvertToBool();
 
   ///// <summary>
   ///// Sets RGB value of the color.

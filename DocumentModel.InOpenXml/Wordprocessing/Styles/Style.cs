@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 public partial class Style : ModelElement<DXW.Style>
 {
     /// <summary>
-    /// Name of the style as defined in the document.
+    /// FontName of the style as defined in the document.
     /// </summary>
     [OpenXmlElement(typeof(DXW.Style))]
     public string? NameLocal { get => _NameLocal; set => UpdateField(ref _NameLocal, value, nameof(NameLocal)); }

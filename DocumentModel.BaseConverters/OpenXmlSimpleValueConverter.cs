@@ -16,131 +16,49 @@ public static class OpenXmlSimpleValueConverter
     //DXW.CharacterSpacingControl
     var modelType = modelValue.GetType();
 
-    if (openXmlType == typeof(DX.StringValue))
-    {
-      string text;
-      if (modelValue is bool boolValue)
-        text = boolValue ? "true" : "false";
-      else if (modelValue is Guid guidValue)
-        text = guidValue.ToString("B").ToUpperInvariant();
-      else
-        text = (string?)Convert.ChangeType(modelValue, typeof(string)) ?? string.Empty;
-      return new DX.StringValue(text);
-    }
-    if (openXmlType.IsSubclassOf(typeof(DXW.StringType)))
-    {
-      string text = (string?)Convert.ChangeType(modelValue, typeof(string)) ?? string.Empty;
-      var stringInstance = (DXW.StringType)Activator.CreateInstance(openXmlType)!;
-      stringInstance.Val = new DX.StringValue(text);
-      return stringInstance;
-    }
-    if (openXmlType.IsSubclassOf(typeof(DXW.String253Type)))
-    {
-      string text = (string?)Convert.ChangeType(modelValue, typeof(string)) ?? string.Empty;
-        var string253Instance = (DXW.String253Type)Activator.CreateInstance(openXmlType)!;
-      string253Instance.Val = new DX.StringValue(text);
-      return string253Instance;
-    }
-    if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
-    {
-      string text = (string?)Convert.ChangeType(modelValue, typeof(string)) ?? string.Empty;
-      var openXmlLeafTextElement = (DX.OpenXmlLeafTextElement)Activator.CreateInstance(openXmlType, [text])!;
-      return openXmlLeafTextElement;
-    }
-    if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
-    {
-      var valProperty = openXmlType.GetProperty("Val");
-      if (valProperty!=null)
-      {
-        var openXmlLeafElement = (DX.OpenXmlLeafElement)Activator.CreateInstance(openXmlType)!;
-        if (valProperty.PropertyType == typeof(DX.StringValue))
-        {
-          string text = (string?)Convert.ChangeType(modelValue, typeof(string)) ?? string.Empty;
-          valProperty.SetValue(openXmlLeafElement, new DX.StringValue(text));
-          return openXmlLeafElement;
-        }
-        if (valProperty.PropertyType.Name.StartsWith("EnumValue`"))
-        {
-          var enumValue = (Enum)modelValue;
-          var enumVal = EnumValueConverter.CreateOpenXmlElement(enumValue, valProperty.PropertyType);
-          valProperty.SetValue(openXmlLeafElement, enumVal);
-          return openXmlLeafElement;
-        }
-        throw new InvalidOperationException($"Unexpected property type {valProperty.PropertyType} for Open XML element {openXmlType}");
-      }
-    }
-    //if (openXmlType == typeof(DX.Int32Value))
-    //  return new DX.Int32Value(Convert.ToInt32(modelValue));
+    if (modelValue is bool boolValue && BooleanOpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return BooleanOpenXmlConverter.ConvertToOpenXml(boolValue, openXmlType);
 
-    if (modelValue is bool boolValue2)
-      return OpenXml.BooleanValueConverter.CreateOpenXmlElement(boolValue2, openXmlType);
-    if (modelValue is int intValue)
-      return OpenXml.IntValueConverter.CreateOpenXmlElement(intValue, openXmlType);
-    if (modelValue is UInt16 uint16Value)
-      return OpenXml.IntValueConverter.CreateOpenXmlElement(uint16Value, openXmlType);
+    if (modelValue is string stringValue && StringOpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return StringOpenXmlConverter.ConvertToOpenXml(stringValue, openXmlType);
 
-    if (modelType.IsEnum)
-    {
-      return OpenXml.EnumValueConverter.CreateOpenXmlElement(modelValue, openXmlType);
-    }
-    if (modelValue is HexInt hexIntValue)
-    {
-      return HexIntConverter.CreateOpenXmlElement(hexIntValue, openXmlType);
-    }
+    if (openXmlType == typeof(DX.Int32Value) && typeof(Int32).IsAssignableFrom(modelType)
+                                             && Int32ValueConverter.SupportedTypes.Contains(openXmlType))
+      return Int32ValueConverter.ConvertToOpenXml((Int32?)modelValue, openXmlType);
+
+    if (openXmlType == typeof(DX.IntegerValue) && typeof(long).IsAssignableFrom(modelType) 
+                                               && IntegerValueConverter.SupportedTypes.Contains(openXmlType))
+      return IntegerValueConverter.ConvertToOpenXml((long?)modelValue, openXmlType);
 
     throw new InvalidOperationException($"Cannot convert {modelValue} of type {modelType} to Open XML simple type {openXmlType}");
   }
   /// <summary>
   /// Converts an Open XML simple type to a model object.
   /// </summary>
-  /// <param name="openXmlElement">The Open XML simple type to convert.</param>
+  /// <param name="openXmlValue">The Open XML simple type to convert.</param>
   /// <param name="modelType">The target model type.</param>
   /// <returns>The converted model object.</returns>
-  public static object? ConvertFromOpenXml(object openXmlElement, Type modelType)
+  public static object? ConvertFromOpenXml(object? openXmlValue, Type modelType)
   {
-    var openXmlType = openXmlElement.GetType();
-    if (openXmlElement is DX.StringValue stringValue)
-      return stringValue.Value;
+    if (openXmlValue == null)
+      return null;
 
-    if (openXmlElement is DXW.StringType stringTypeValue)
-      return stringTypeValue.Val?.Value;
+    var openXmlType = openXmlValue.GetType();
 
-    if (openXmlElement is DXW.String253Type string253TypeValue)
-      return string253TypeValue.Val?.Value;
+    if (modelType == typeof(bool) && BooleanOpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return BooleanOpenXmlConverter.ConvertFromOpenXml(openXmlValue);
 
-    if (openXmlElement is DX.OpenXmlLeafTextElement openXmlLeafTextElement)
-      return openXmlLeafTextElement.InnerText;
+    if (modelType == typeof(string) && StringOpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return StringOpenXmlConverter.ConvertFromOpenXml(openXmlValue);
 
+    if (modelType == typeof(Int32) && openXmlType ==  typeof(DX.Int32Value)
+                                    && Int32ValueConverter.SupportedTypes.Contains(openXmlType))
+      return Int32ValueConverter.ConvertFromOpenXml(openXmlValue);
 
-    if (openXmlElement is DX.OpenXmlLeafElement openXmlLeafElement)
-    {
-      var valProperty = openXmlType.GetProperty("Val");
-      if (valProperty != null)
-      {
-        var value = valProperty.GetValue(openXmlLeafElement);
-        if (value == null)
-          return null;
-        if (value is DX.StringValue valStringValue)
-          return valStringValue.Value;
-        if (value.GetType().Name.StartsWith("EnumValue`"))
-          return EnumValueConverter.GetEnumValue(value, modelType);
-        throw new InvalidOperationException($"Unexpected value type {value?.GetType()} for Open XML element {openXmlLeafElement.GetType()}");
-      }
-    }
+    if (modelType == typeof(long) && openXmlType ==  typeof(DX.IntegerValue)
+                                    && IntegerValueConverter.SupportedTypes.Contains(openXmlType))
+      return IntegerValueConverter.ConvertFromOpenXml(openXmlValue);
 
-    if (openXmlElement is DX.Int32Value int32Value)
-      return int32Value.Value;
-
-    if (openXmlElement is DX.UInt16Value uInt16Value)
-      return uInt16Value.Value;
-
-    if (modelType == typeof(bool))
-      return openXmlElement.GetBoolValue();
-
-    if (modelType.IsEnum)
-    {
-      return OpenXml.EnumValueConverter.GetEnumValue(openXmlElement, modelType);
-    }
-    throw new InvalidOperationException($"Cannot convert {openXmlElement} of type {openXmlType} to model type {modelType.FullName}");
+    throw new InvalidOperationException($"Cannot convert {openXmlValue} of type {openXmlType} to model type {modelType.FullName}");
   }
 }

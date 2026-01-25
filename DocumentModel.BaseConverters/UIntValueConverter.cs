@@ -54,7 +54,7 @@ public static class UIntValueConverter
   /// <param name="value">The UInt32 value to set.</param>
   /// <returns>A new instance of the element type with the value set.</returns>
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(UInt32 value)
-    where OpenXmlElementType : OpenXmlElement, new()
+    where OpenXmlElementType : DX.OpenXmlElement, new()
   {
     var element = new OpenXmlElementType();
     var valProperty = typeof(OpenXmlElementType).GetProperty("Value");
@@ -70,7 +70,7 @@ public static class UIntValueConverter
   /// </summary>
   /// <param name="stringValue">The StringValue to convert.</param>
   /// <returns>The UInt32 value, or null if element has no content or conversion fails.</returns>
-  public static UInt32? GetValue(StringValue? stringValue)
+  public static UInt32? GetValue(DX.StringValue? stringValue)
   {
     if (stringValue?.Value != null)
     {
@@ -86,10 +86,10 @@ public static class UIntValueConverter
   /// </summary>
   /// <param name="value">The UInt32 value to convert.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
-  public static StringValue? CreateStringValue(UInt32? value)
+  public static DX.StringValue? CreateStringValue(UInt32? value)
   {
     if (value == null) return null;
-    return new StringValue { Value = value.ToString() };
+    return new DX.StringValue { Value = value.ToString() };
   }
 
   /// <summary>
@@ -99,8 +99,8 @@ public static class UIntValueConverter
   /// <typeparam name="ElementType">The type of the child element.</typeparam>
   /// <param name="openXmlElement">The parent composite element.</param>
   /// <param name="value">The UInt32 value to set.</param>
-  public static void SetValue<ElementType>(OpenXmlCompositeElement openXmlElement, UInt32? value)
-    where ElementType : OpenXmlLeafElement, new()
+  public static void SetValue<ElementType>(DX.OpenXmlCompositeElement openXmlElement, UInt32? value)
+    where ElementType : DX.OpenXmlLeafElement, new()
   {
     var valProperty = typeof(ElementType).GetProperty("Val") ?? typeof(ElementType).GetProperty("Value");
     Debug.Assert(valProperty != null);
@@ -116,7 +116,7 @@ public static class UIntValueConverter
     if (value != null)
     {
       itemElement = new ElementType();
-      valProperty.SetValue(itemElement, new StringValue(value.ToString()));
+      valProperty.SetValue(itemElement, new DX.StringValue(value.ToString()));
       openXmlElement.AppendChild(itemElement);
     }
   }

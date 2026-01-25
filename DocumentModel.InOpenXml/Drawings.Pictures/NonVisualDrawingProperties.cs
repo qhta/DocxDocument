@@ -16,11 +16,11 @@ public partial class NonVisualDrawingProperties : ModelElement<DXDP.NonVisualDra
 
     private UInt32? _Id;
     /// <summary>
-    ///   Name compatible with Object Model (non-unique).
+    ///   FontName compatible with Object Model (non-unique).
     /// </summary>
     [OpenXmlProperty(nameof(DXDP.NonVisualDrawingProperties.Name))]
     /// <summary>
-    ///   Name compatible with Object Model (non-unique).
+    ///   FontName compatible with Object Model (non-unique).
     /// </summary>
     [OpenXmlElement(typeof(DXDP.NonVisualDrawingProperties))]
     public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

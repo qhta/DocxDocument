@@ -94,11 +94,11 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
 
     private UInt32? _CryptographicSpinCount;
     /// <summary>
-    /// Name of the cryptographic provider used for document protection.
+    /// FontName of the cryptographic provider used for document protection.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.DocumentProtection.CryptographicProvider))]
     /// <summary>
-    /// Name of the cryptographic provider used for document protection.
+    /// FontName of the cryptographic provider used for document protection.
     /// </summary>
     [OpenXmlElement(typeof(DXW.DocumentProtection))]
     public string? CryptographicProvider { get => _CryptographicProvider; set => UpdateField(ref _CryptographicProvider, value, nameof(CryptographicProvider)); }
@@ -171,11 +171,11 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
 
     private Base64Binary? _Salt;
     /// <summary>
-    /// Name of the cryptographic algorithm used for document protection.
+    /// FontName of the cryptographic algorithm used for document protection.
     /// </summary>
     [OpenXmlProperty(nameof(DXW.DocumentProtection.AlgorithmName))]
     /// <summary>
-    /// Name of the cryptographic algorithm used for document protection.
+    /// FontName of the cryptographic algorithm used for document protection.
     /// </summary>
     [OpenXmlElement(typeof(DXW.DocumentProtection))]
     public string? AlgorithmName { get => _AlgorithmName; set => UpdateField(ref _AlgorithmName, value, nameof(AlgorithmName)); }

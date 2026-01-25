@@ -46,11 +46,11 @@ public partial class EffectContainerType : ModelElement<DXD.EffectContainerType>
 
     private EffectContainerKind? _Type;
     /// <summary>
-    ///   Name of the effect container for identification or documentation purposes.
+    ///   FontName of the effect container for identification or documentation purposes.
     /// </summary>
     /// <remarks>
     ///   <para>
-    ///   The <b>Name</b> property provides a human-readable identifier for the effect container, which can be used
+    ///   The <b>FontName</b> property provides a human-readable identifier for the effect container, which can be used
     ///   for referencing, documentation, or semantic grouping of effects. Names help distinguish between different
     ///   effect containers within a document or drawing context.
     ///   </para>
@@ -65,11 +65,11 @@ public partial class EffectContainerType : ModelElement<DXD.EffectContainerType>
     /// </remarks>
     [OpenXmlProperty(nameof(DXD.EffectContainerType.Name))]
     /// <summary>
-    ///   Name of the effect container for identification or documentation purposes.
+    ///   FontName of the effect container for identification or documentation purposes.
     /// </summary>
     /// <remarks>
     ///   <para>
-    ///   The <b>Name</b> property provides a human-readable identifier for the effect container, which can be used
+    ///   The <b>FontName</b> property provides a human-readable identifier for the effect container, which can be used
     ///   for referencing, documentation, or semantic grouping of effects. Names help distinguish between different
     ///   effect containers within a document or drawing context.
     ///   </para>

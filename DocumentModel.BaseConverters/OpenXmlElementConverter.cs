@@ -20,37 +20,30 @@ public static class OpenXmlElementConverter
     var modelType = modelValue.GetType().GetNotNullableType();
     if (OpenXmlConverter.ConvertToOpenDelegates.TryGetValue(modelType, out var convertToOpenXml)
         || OpenXmlConverter.ConvertToOpenDelegates.TryGetValue(openXmlType, out convertToOpenXml))
-      return (OpenXmlElement?)convertToOpenXml(modelValue, openXmlType)!;
-    if (openXmlType.IsSubclassOf(typeof(DXW.EmptyType)))
+      return (DX.OpenXmlElement?)convertToOpenXml(modelValue, openXmlType)!;
+    if (openXmlType.IsEqualOrSubclassOf(typeof(DXW.EmptyType)))
     {
       throw new NotSupportedException($"Conversion to {openXmlType.Name} is not supported.");
     }
-    if (openXmlType.IsSubclassOf(typeof(DXW.OnOffType)))
+    if (openXmlType.IsEqualOrSubclassOf(typeof(DXW.OnOffType)))
     {
       var onOffValue = modelValue as bool?;
       var onOffElement = (DXW.OnOffType)Activator.CreateInstance(openXmlType)!;
       onOffElement.Val = onOffValue.HasValue ? new DX.OnOffValue(onOffValue.Value) : null;
       return onOffElement;
     }
-    if (openXmlType.IsSubclassOf(typeof(DXW.OnOffOnlyType)))
-    {
-      throw new NotSupportedException($"Conversion to {openXmlType.Name} is not supported.");
-    }
-    if (openXmlType.IsSubclassOf(typeof(DXW.StringType)))
-    {
-      throw new NotSupportedException($"Conversion to {openXmlType.Name} is not supported.");
-    }
-    if (openXmlType.IsSubclassOf(typeof(DXW.String255Type)))
-    {
-      throw new NotSupportedException($"Conversion to {openXmlType.Name} is not supported.");
-    }
-    if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
+    if (modelValue is string stringValue)
+      return (DX.OpenXmlElement)OpenXmlSimpleValueConverter.ConvertToOpenXml(stringValue, openXmlType)!;
+    if (modelValue is HexBinary hexBinaryValue)
+      return (DX.OpenXmlElement)HexBinaryConverter.CreateOpenXmlElement(hexBinaryValue, openXmlType)!;
+
+    if (openXmlType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
     {
       var constructor = openXmlType.GetConstructor([typeof(string)]);
       var instance = (DX.OpenXmlElement)constructor!.Invoke([ConvertToText(modelValue)])!;
       return instance;
     }
-    if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    if (openXmlType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafElement)))
     {
       var targetProperties = openXmlType.GetOpenXmlProperties();
       var constructor = openXmlType.GetConstructor([]);
@@ -93,14 +86,7 @@ public static class OpenXmlElementConverter
   {
     if (element is DXW.EmptyType)
       return true;
-    if (element is DXW.OnOffType onOffTypeElement)
-      return onOffTypeElement.Val?.GetValue();
-    if (element is DXW.OnOffOnlyType onOffOnlyTypeElement)
-      return onOffOnlyTypeElement.Val?.GetValue();
-    if (element is DXW.StringType stringTypeElement)
-      return stringTypeElement.Val?.Value;
-    if (element is DXW.String255Type string255TypeElement)
-      return string255TypeElement.Val?.Value;
+
     // Add more type conversions as needed
 
     throw new NotSupportedException($"The OpenXmlElement type '{element.GetType().Name}' is not supported.");
@@ -127,50 +113,50 @@ public static class OpenXmlElementConverter
   /// <exception cref="NotSupportedException">Thrown if the conversion is not supported for the element type.</exception>
   public static object? ConvertFromOpenXml(DX.OpenXmlElement element, Type modelType)
   {
-    if (element.GetType().Name == "Zoom")
-      Debug.Assert(true);
-    if (element is DXW.EmptyType)
-      return true;
-    if (element is DXW.OnOffType onOffTypeElement)
-      return onOffTypeElement.Val?.GetValue();
-    if (element is DXW.OnOffOnlyType onOffOnlyTypeElement)
-      return onOffOnlyTypeElement.Val?.GetValue();
-    if (element is DXW.StringType stringTypeElement)
-      return stringTypeElement.Val?.Value;
-    if (element is DXW.String255Type string255TypeElement)
-      return string255TypeElement.Val?.Value;
-    if (element is DX.OpenXmlLeafTextElement leafTextElement)
-    {
-      var text = leafTextElement.Text;
-      if (modelType.IsEnum)
-        return Enum.Parse(modelType, text);
-      var value = Convert.ChangeType(text, modelType);
-      return value;
-    }
-    if (element is DX.OpenXmlLeafElement leafElement)
-    {
-      var openXmlElementType = element.GetType();
+    //if (element.GetType().Name == "Zoom")
+    //  Debug.Assert(true);
+    //if (element is DXW.EmptyType)
+    //  return true;
+    //if (element is DXW.OnOffType onOffTypeElement)
+    //  return onOffTypeElement.Val?.ConvertToBool();
+    //if (element is DXW.OnOffOnlyType onOffOnlyTypeElement)
+    //  return onOffOnlyTypeElement.Val?.ConvertToBool();
+    //if (element is DXW.StringType stringTypeElement)
+    //  return stringTypeElement.Val?.Value;
+    //if (element is DXW.String255Type string255TypeElement)
+    //  return string255TypeElement.Val?.Value;
+    //if (element is DX.OpenXmlLeafTextElement leafTextElement)
+    //{
+    //  var text = leafTextElement.Text;
+    //  if (modelType.IsEnum)
+    //    return Enum.Parse(modelType, text);
+    //  var value = Convert.ChangeType(text, modelType);
+    //  return value;
+    //}
+    //if (element is DX.OpenXmlLeafElement leafElement)
+    //{
+    //  var openXmlElementType = element.GetType();
 
-      var valueProperties = modelType.GetModelProperties();
-      if (valueProperties.Length == 0)
-      {
-        var openXmlProperties = openXmlElementType.GetOpenXmlProperties();
-        foreach (var openXmlProperty in openXmlProperties)
-        {
-          if (openXmlProperty.Name == "Val")
-          {
-            var propValue = openXmlProperty.GetValue(leafElement);
-            var convertedValue = ConvertTypeFromOpenXml(propValue, modelType);
-            return convertedValue;
-          }
-        }
-      }
-      else
-      {
-        var complexValue = OpenXmlComplexTypeConverter.ConvertFromOpenXml(leafElement, modelType);
-        return complexValue;
-      }
-    }
+    //  var valueProperties = modelType.GetModelProperties();
+    //  if (valueProperties.Length == 0)
+    //  {
+    //    var openXmlProperties = openXmlElementType.GetOpenXmlProperties();
+    //    foreach (var openXmlProperty in openXmlProperties)
+    //    {
+    //      if (openXmlProperty.Name == "Val")
+    //      {
+    //        var propValue = openXmlProperty.ConvertToBool(leafElement);
+    //        var convertedValue = ConvertTypeFromOpenXml(propValue, modelType);
+    //        return convertedValue;
+    //      }
+    //    }
+    //  }
+    //  else
+    //  {
+    //    var complexValue = OpenXmlComplexTypeConverter.ConvertFromOpenXml(leafElement, modelType);
+    //    return complexValue;
+    //  }
+    //}
     throw new NotSupportedException($"Conversion from {element.GetType()} is not supported.");
   }
 
