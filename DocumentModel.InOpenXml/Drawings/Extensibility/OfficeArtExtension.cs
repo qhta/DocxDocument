@@ -1,6 +1,5 @@
-﻿namespace DocumentModel;
-
-public class OfficeArtExtension: ModelElement<DXD.Extension>
+namespace DocumentModel;
+[OpenXmlType(typeof(DXD.Extension))]
+public class OfficeArtExtension : ModelElement<DXD.Extension>
 {
-  
 }

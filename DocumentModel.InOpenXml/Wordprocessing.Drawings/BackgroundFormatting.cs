@@ -5,27 +5,28 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents background formatting settings for a drawing element in a Wordprocessing document.
 /// This class provides properties for configuring fill, visual effects, and effect graphs applied to the background, enabling advanced visual customization.
 /// </summary>
+[OpenXmlType(typeof(DXO10WDC.BackgroundFormatting))]
 public partial class BackgroundFormatting : ModelElement<DXO10WDC.BackgroundFormatting>
 {
-    /// <summary>
-    /// Fill settings for the background, specifying color, gradient, or pattern fills.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO10WDC.BackgroundFormatting))]
-    public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
+ /// <summary>
+ /// Fill settings for the background, specifying color, gradient, or pattern fills.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO10WDC.BackgroundFormatting))]
+ public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
 
-    private Fill? _Fill;
-    /// <summary>
-    /// List of visual effects applied to the background, such as shadows, glows, and reflections.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO10WDC.BackgroundFormatting))]
-    public EffectList? EffectList { get => _EffectList; set => UpdateField(ref _EffectList, value, nameof(EffectList)); }
+ private Fill? _Fill;
+ /// <summary>
+ /// List of visual effects applied to the background, such as shadows, glows, and reflections.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO10WDC.BackgroundFormatting))]
+ public EffectList? EffectList { get => _EffectList; set => UpdateField(ref _EffectList, value, nameof(EffectList)); }
 
-    private EffectList? _EffectList;
-    /// <summary>
-    /// Effect DAG (Directed Acyclic Graph) for advanced effect sequencing and layering on the background.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO10WDC.BackgroundFormatting))]
-    public EffectDag? EffectDag { get => _EffectDag; set => UpdateField(ref _EffectDag, value, nameof(EffectDag)); }
+ private EffectList? _EffectList;
+ /// <summary>
+ /// Effect DAG (Directed Acyclic Graph) for advanced effect sequencing and layering on the background.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO10WDC.BackgroundFormatting))]
+ public EffectDag? EffectDag { get => _EffectDag; set => UpdateField(ref _EffectDag, value, nameof(EffectDag)); }
 
-    private EffectDag? _EffectDag;
+ private EffectDag? _EffectDag;
 }

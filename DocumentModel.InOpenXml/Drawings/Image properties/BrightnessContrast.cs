@@ -2,35 +2,36 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents brightness and contrast adjustment settings for a drawing element.
 /// </summary>
+[OpenXmlType(typeof(DXO10D.BrightnessContrast))]
 public partial class BrightnessContrast : ModelElement<DXO10D.BrightnessContrast>, IExtendableElement
 {
-    /// <summary>
-    /// Brightness adjustment value.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXO10D.BrightnessContrast.Bright))]
-    /// <summary>
-    /// Brightness adjustment value.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO10D.BrightnessContrast))]
-    public Int32? Bright { get => _Bright; set => UpdateField(ref _Bright, value, nameof(Bright)); }
+ /// <summary>
+ /// Brightness adjustment value.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO10D.BrightnessContrast.Bright))]
+ /// <summary>
+ /// Brightness adjustment value.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO10D.BrightnessContrast))]
+ public Int32? Bright { get => _Bright; set => UpdateField(ref _Bright, value, nameof(Bright)); }
 
-    private Int32? _Bright;
-    /// <summary>
-    /// Contrast adjustment value.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXO10D.BrightnessContrast.Contrast))]
-    /// <summary>
-    /// Contrast adjustment value.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO10D.BrightnessContrast))]
-    public Int32? Contrast { get => _Contrast; set => UpdateField(ref _Contrast, value, nameof(Contrast)); }
+ private Int32? _Bright;
+ /// <summary>
+ /// Contrast adjustment value.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO10D.BrightnessContrast.Contrast))]
+ /// <summary>
+ /// Contrast adjustment value.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO10D.BrightnessContrast))]
+ public Int32? Contrast { get => _Contrast; set => UpdateField(ref _Contrast, value, nameof(Contrast)); }
 
-    private Int32? _Contrast;
-    /// <summary>
-    /// List of extensions for additional brightness and contrast settings.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO10D.BrightnessContrast))]
-    public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private Int32? _Contrast;
+ /// <summary>
+ /// List of extensions for additional brightness and contrast settings.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO10D.BrightnessContrast))]
+ public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
-    private ExtensionList? _ExtensionList;
+ private ExtensionList? _ExtensionList;
 }

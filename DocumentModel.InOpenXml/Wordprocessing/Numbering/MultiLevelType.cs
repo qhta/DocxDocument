@@ -1,6 +1,5 @@
-﻿namespace DocumentModel.Wordprocessing;
-
-public class MultiLevelType: ModelElement<DXW.MultiLevelType>
+namespace DocumentModel.Wordprocessing;
+[OpenXmlType(typeof(DXW.MultiLevelType))]
+public class MultiLevelType : ModelElement<DXW.MultiLevelType>
 {
-  
 }

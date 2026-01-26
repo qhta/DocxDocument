@@ -1,8 +1,8 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Represents custom background properties, including an optional list of OfficeArt extensions for additional customization.
 /// </summary>
-public class BackgroundCustomProperties: ModelElement<DXO21DL.BackgroundCustomProperties>
+[OpenXmlType(typeof(DXO21DL.BackgroundCustomProperties))]
+public class BackgroundCustomProperties : ModelElement<DXO21DL.BackgroundCustomProperties>
 {
 }

@@ -3,28 +3,29 @@ namespace DocumentModel.Wordprocessing;
 /// Represents help text associated with a form field in a WordprocessingML document.
 /// This class provides properties for the type and value of help text, enabling advanced user guidance and contextual assistance for interactive form fields within documents.
 /// </summary>
+[OpenXmlType(typeof(DXW.HelpText))]
 public partial class HelpText : ModelElement<DXW.HelpText>
 {
-    /// <summary>
-    /// Type of help text, specifying the context or display mode (e.g., tooltip, status bar).
-    /// </summary>
-    [OpenXmlProperty(nameof(DXW.HelpText.Type))]
-    /// <summary>
-    /// Type of help text, specifying the context or display mode (e.g., tooltip, status bar).
-    /// </summary>
-    [OpenXmlElement(typeof(DXW.HelpText))]
-    public InfoTextKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ /// <summary>
+ /// Type of help text, specifying the context or display mode (e.g., tooltip, status bar).
+ /// </summary>
+ [OpenXmlProperty(nameof(DXW.HelpText.Type))]
+ /// <summary>
+ /// Type of help text, specifying the context or display mode (e.g., tooltip, status bar).
+ /// </summary>
+ [OpenXmlElement(typeof(DXW.HelpText))]
+ public InfoTextKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
-    private InfoTextKind? _Type;
-    /// <summary>
-    /// Value of the help text, containing the actual guidance or information to be displayed to the user.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXW.HelpText.Val))]
-    /// <summary>
-    /// Value of the help text, containing the actual guidance or information to be displayed to the user.
-    /// </summary>
-    [OpenXmlElement(typeof(DXW.HelpText))]
-    public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+ private InfoTextKind? _Type;
+ /// <summary>
+ /// Value of the help text, containing the actual guidance or information to be displayed to the user.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXW.HelpText.Val))]
+ /// <summary>
+ /// Value of the help text, containing the actual guidance or information to be displayed to the user.
+ /// </summary>
+ [OpenXmlElement(typeof(DXW.HelpText))]
+ public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
-    private string? _Val;
+ private string? _Val;
 }
