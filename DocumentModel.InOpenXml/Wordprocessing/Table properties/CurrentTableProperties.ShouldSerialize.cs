@@ -1,6 +1,6 @@
 namespace DocumentModel.Wordprocessing;
 
-public partial class CurrentTableProperties
+public partial class CurrentTableProperties<T>
 {
   public bool ShouldSerializeTableWidth() => TableWidth is not null;
   public bool ShouldSerializeTableLayout() => TableLayout is not null;

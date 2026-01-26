@@ -1,6 +1,6 @@
 namespace DocumentModel.Drawings;
 
-public partial class Transform2D
+public partial class Transform2D<T>
 {
   public bool ShouldSerializeRotation() => Rotation is not null;
   public bool ShouldSerializeHorizontalFlip() => HorizontalFlip is not null;

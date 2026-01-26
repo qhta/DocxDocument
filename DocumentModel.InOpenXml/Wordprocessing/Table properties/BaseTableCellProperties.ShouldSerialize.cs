@@ -1,6 +1,6 @@
 namespace DocumentModel.Wordprocessing;
 
-public partial class BaseTableCellProperties
+public partial class BaseTableCellProperties<T>
 {
   public bool ShouldSerializeShading() => Shading is not null;
   public bool ShouldSerializeNoWrap() => NoWrap is not null;

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Base interface for current table cell properties.
 /// Contains properties for conditional formatting, preferred width, grid span, merge states, borders, text direction, fit text, cell mark visibility, and revision tracking for table cells.
 /// </summary>
-public partial class CurrentTableCellProperties : BaseTableCellProperties
+public partial class CurrentTableCellProperties<T> : BaseTableCellProperties<T> where T : DX.OpenXmlElement
 {
   /// <summary>
   /// Set of conditional table style formatting properties applied to this table cell, used for style hierarchy and optimization.

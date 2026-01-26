@@ -1,6 +1,6 @@
 namespace DocumentModel.Wordprocessing;
 
-public partial class ExtBaseTableProperties
+public partial class ExtBaseTableProperties<T>
 {
   public bool ShouldSerializeTableStyle() => TableStyle is not null;
   public bool ShouldSerializeTablePositionProperties() => TablePositionProperties is not null;
