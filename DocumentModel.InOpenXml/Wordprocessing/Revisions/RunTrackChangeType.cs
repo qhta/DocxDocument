@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Provides run-level revision tracking, including author, date, annotation identifier, and run content collection.
 ///   Implements <see cref = "IElementCollection{IParagraphContent}"/> and <see cref = "ICommonContent"/>.
 /// </summary>
+[OpenXmlType(typeof(DXW.RunTrackChangeType))]
 public partial class RunTrackChangeType : TrackChangeType<DXW.RunTrackChangeType>
 {
 }

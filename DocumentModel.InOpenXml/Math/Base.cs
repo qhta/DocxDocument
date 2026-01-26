@@ -1,6 +1,5 @@
-﻿namespace DocumentModel.Math;
-
-public class Base: OfficeMathArgumentType<DXM.Base>
+namespace DocumentModel.Math;
+[OpenXmlType(typeof(DXM.Base))]
+public class Base : OfficeMathArgumentType<DXM.Base>
 {
-  
 }

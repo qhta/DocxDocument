@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Defines the Highlight class.
 /// </summary>
-public class Highlight: ColorType<DXD.Highlight>
+[OpenXmlType(typeof(DXD.Highlight))]
+public class Highlight : ColorType<DXD.Highlight>
 {
-
 }

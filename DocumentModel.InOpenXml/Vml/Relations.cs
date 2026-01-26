@@ -1,5 +1,5 @@
 namespace DocumentModel.Vml;
-
-public class Relations: ElementCollection<Relation>
+[OpenXmlType(typeof(Relation))]
+public class Relations : ElementCollection<Relation>
 {
 }

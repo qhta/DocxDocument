@@ -1,9 +1,9 @@
 namespace DocumentModel.Vml;
-
-public class Entries: ElementCollection<Entry>
+[OpenXmlType(typeof(Entry))]
+public class Entries : ElementCollection<Entry>
 {
-  protected override object? GetUpdatableOpenXmlElement()
-  {
-    throw new NotImplementedException();
-  }
+ protected override object? GetUpdatableOpenXmlElement()
+ {
+  throw new NotImplementedException();
+ }
 }

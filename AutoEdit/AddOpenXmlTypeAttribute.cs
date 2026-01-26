@@ -4,6 +4,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -38,14 +39,22 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
     if (node.ConstraintClauses.Any())
       return node;
 
+    var typeParameterNames = node.TypeParameterList?.Parameters
+      .Select(p => p.Identifier.Text)
+      .ToHashSet(StringComparer.Ordinal);
+
     var baseType = node.BaseList?.Types
         .Select(bt => bt.Type)
         .OfType<GenericNameSyntax>()
-        .FirstOrDefault(g => g.Identifier.Text == "ModelElement");
+        .FirstOrDefault(g => g.Identifier.Text == "ModelElement" || HasConcreteTypeArgument(g, typeParameterNames));
 
     if (baseType == null)
       return base.VisitClassDeclaration(node);
-    var openXmlType = baseType.TypeArgumentList.Arguments.First().ToString();
+    var openXmlArgument = baseType.TypeArgumentList.Arguments.FirstOrDefault();
+    if (!IsConcreteTypeArgument(openXmlArgument, typeParameterNames))
+      return base.VisitClassDeclaration(node);
+
+    var openXmlType = openXmlArgument!.ToString();
 
     bool hasClassAttr = node.AttributeLists
       .SelectMany(al => al.Attributes)
@@ -90,6 +99,28 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
     return trivia.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia)
            || trivia.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia)
            || trivia.IsKind(SyntaxKind.DocumentationCommentExteriorTrivia);
+  }
+
+  private static bool HasConcreteTypeArgument(GenericNameSyntax genericName, HashSet<string>? typeParameterNames)
+  {
+    var firstArgument = genericName.TypeArgumentList.Arguments.FirstOrDefault();
+    return IsConcreteTypeArgument(firstArgument, typeParameterNames);
+  }
+
+  private static bool IsConcreteTypeArgument(TypeSyntax? typeSyntax, HashSet<string>? typeParameterNames)
+  {
+    if (typeSyntax == null)
+      return false;
+
+    if (typeSyntax is IdentifierNameSyntax identifierName)
+    {
+      return typeParameterNames == null || !typeParameterNames.Contains(identifierName.Identifier.Text);
+    }
+
+    if (typeSyntax is NullableTypeSyntax nullableType)
+      return IsConcreteTypeArgument(nullableType.ElementType, typeParameterNames);
+
+    return true;
   }
 
   private static (SyntaxTriviaList docTrivia, SyntaxTriviaList remainingTrivia) SplitDocumentationTrivia(SyntaxTriviaList leadingTrivia)
