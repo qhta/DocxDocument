@@ -19,6 +19,11 @@ public abstract class ModelElementCollection<ItemType> : ElementCollection<ItemT
     
   }
 
+  /// <summary>
+  /// Initializes a new instance of the ModelElementCollection class that contains elements copied from the specified
+  /// collection.
+  /// </summary>
+  /// <param name="items">The collection of items to copy into the new collection. Cannot be null.</param>
   protected ModelElementCollection(IEnumerable<ItemType> items) : this()
   {
     foreach (var item in items)
