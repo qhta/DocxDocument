@@ -2,17 +2,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a graphic object, containing graphic data.
 /// </summary>
+[OpenXmlType(typeof(DXD.Graphic))]
 public partial class Graphic : ModelElement<DXD.Graphic>
 {
-    /// <summary>
-    ///   Data associated with the graphic object.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXD.Graphic.GraphicData))]
-    /// <summary>
-    ///   Data associated with the graphic object.
-    /// </summary>
-    [OpenXmlElement(typeof(DXD.Graphic))]
-    public GraphicData? GraphicData { get => _GraphicData; set => UpdateField(ref _GraphicData, value, nameof(GraphicData)); }
+ /// <summary>
+ ///   Data associated with the graphic object.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXD.Graphic.GraphicData))]
+ /// <summary>
+ ///   Data associated with the graphic object.
+ /// </summary>
+ [OpenXmlElement(typeof(DXD.Graphic))]
+ public GraphicData? GraphicData { get => _GraphicData; set => UpdateField(ref _GraphicData, value, nameof(GraphicData)); }
 
-    private GraphicData? _GraphicData;
+ private GraphicData? _GraphicData;
 }

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   This element defines a set of three fill styles that are used within a theme. 
 ///   The three fill styles are arranged in order from subtle to moderate to intense.
 /// </summary>
-public class FillStyleList: ModelElement<DXD.FillStyleList>
+[OpenXmlType(typeof(DXD.FillStyleList))]
+public class FillStyleList : ModelElement<DXD.FillStyleList>
 {
 }

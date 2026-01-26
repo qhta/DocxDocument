@@ -2,28 +2,29 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the ShapeNonVisualProperties Class.
 /// </summary>
+[OpenXmlType(typeof(DXOD.ShapeNonVisualProperties))]
 public partial class ShapeNonVisualProperties : ModelElement<DXOD.ShapeNonVisualProperties>
 {
-    /// <summary>
-    ///   NonVisualDrawingProperties.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXOD.ShapeNonVisualProperties.NonVisualDrawingProperties))]
-    /// <summary>
-    ///   NonVisualDrawingProperties.
-    /// </summary>
-    [OpenXmlElement(typeof(DXOD.ShapeNonVisualProperties))]
-    public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
+ /// <summary>
+ ///   NonVisualDrawingProperties.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXOD.ShapeNonVisualProperties.NonVisualDrawingProperties))]
+ /// <summary>
+ ///   NonVisualDrawingProperties.
+ /// </summary>
+ [OpenXmlElement(typeof(DXOD.ShapeNonVisualProperties))]
+ public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
 
-    private NonVisualDrawingProperties? _NonVisualDrawingProperties;
-    /// <summary>
-    ///   NonVisualDrawingShapeProperties.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXOD.ShapeNonVisualProperties.NonVisualDrawingShapeProperties))]
-    /// <summary>
-    ///   NonVisualDrawingShapeProperties.
-    /// </summary>
-    [OpenXmlElement(typeof(DXOD.ShapeNonVisualProperties))]
-    public NonVisualDrawingShapeProperties? NonVisualDrawingShapeProperties { get => _NonVisualDrawingShapeProperties; set => UpdateField(ref _NonVisualDrawingShapeProperties, value, nameof(NonVisualDrawingShapeProperties)); }
+ private NonVisualDrawingProperties? _NonVisualDrawingProperties;
+ /// <summary>
+ ///   NonVisualDrawingShapeProperties.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXOD.ShapeNonVisualProperties.NonVisualDrawingShapeProperties))]
+ /// <summary>
+ ///   NonVisualDrawingShapeProperties.
+ /// </summary>
+ [OpenXmlElement(typeof(DXOD.ShapeNonVisualProperties))]
+ public NonVisualDrawingShapeProperties? NonVisualDrawingShapeProperties { get => _NonVisualDrawingShapeProperties; set => UpdateField(ref _NonVisualDrawingShapeProperties, value, nameof(NonVisualDrawingShapeProperties)); }
 
-    private NonVisualDrawingShapeProperties? _NonVisualDrawingShapeProperties;
+ private NonVisualDrawingShapeProperties? _NonVisualDrawingShapeProperties;
 }

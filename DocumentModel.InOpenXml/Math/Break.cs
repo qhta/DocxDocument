@@ -9,17 +9,18 @@ namespace DocumentModel.Math;
 ///   When the element is present and the val attribute is absent, the default of the val attribute is 0 
 ///   meaning that this property’s parent structure manually breaks onto the next line and is aligned with the beginning of the previous line. 
 /// </summary>
+[OpenXmlType(typeof(DXW.Break))]
 public partial class Break : ModelElement<DXW.Break>
 {
-    /// <summary>
-    ///   Specifies the index of the operator on the previous line of mathematical text which shall be used 
-    ///   as the alignment point for the current line of mathematical text . 
-    ///   A line can be aligned to any operator on the previous line; 
-    ///   this attribute specifies exactly which operator shall be the target of that alignment in cases where there are multiple operators. 
-    ///   If alnAt is omitted, then all runs (r tag) that follow a brk tag will align with the left margin of the first run of mathematical text.
-    /// </summary>
-    [OpenXmlElement(typeof(DXW.Break))]
-    public Int32? AlignAt { get => _AlignAt; set => UpdateField(ref _AlignAt, value, nameof(AlignAt)); }
+ /// <summary>
+ ///   Specifies the index of the operator on the previous line of mathematical text which shall be used 
+ ///   as the alignment point for the current line of mathematical text . 
+ ///   A line can be aligned to any operator on the previous line; 
+ ///   this attribute specifies exactly which operator shall be the target of that alignment in cases where there are multiple operators. 
+ ///   If alnAt is omitted, then all runs (r tag) that follow a brk tag will align with the left margin of the first run of mathematical text.
+ /// </summary>
+ [OpenXmlElement(typeof(DXW.Break))]
+ public Int32? AlignAt { get => _AlignAt; set => UpdateField(ref _AlignAt, value, nameof(AlignAt)); }
 
-    private Int32? _AlignAt;
+ private Int32? _AlignAt;
 }

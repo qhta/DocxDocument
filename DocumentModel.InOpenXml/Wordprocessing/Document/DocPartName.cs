@@ -3,28 +3,29 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the name of a glossary document entry or building block in a WordprocessingML document.
 /// This class provides properties for the entry name value and a flag indicating whether the entry is built-in, enabling advanced management and identification of reusable document parts.
 /// </summary>
+[OpenXmlType(typeof(DXW.DocPartName))]
 public partial class DocPartName : ModelElement<DXW.DocPartName>
 {
-    /// <summary>
-    /// FontName value of the entry, specifying the unique identifier or display name for the glossary document entry.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXW.DocPartName.Val))]
-    /// <summary>
-    /// FontName value of the entry, specifying the unique identifier or display name for the glossary document entry.
-    /// </summary>
-    [OpenXmlElement(typeof(DXW.DocPartName))]
-    public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+ /// <summary>
+ /// FontName value of the entry, specifying the unique identifier or display name for the glossary document entry.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXW.DocPartName.Val))]
+ /// <summary>
+ /// FontName value of the entry, specifying the unique identifier or display name for the glossary document entry.
+ /// </summary>
+ [OpenXmlElement(typeof(DXW.DocPartName))]
+ public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
-    private string? _Val;
-    /// <summary>
-    /// Indicates whether the entry is a built-in (decorated) entry.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXW.DocPartName.Decorated))]
-    /// <summary>
-    /// Indicates whether the entry is a built-in (decorated) entry.
-    /// </summary>
-    [OpenXmlElement(typeof(DXW.DocPartName))]
-    public bool? Decorated { get => _Decorated; set => UpdateField(ref _Decorated, value, nameof(Decorated)); }
+ private string? _Val;
+ /// <summary>
+ /// Indicates whether the entry is a built-in (decorated) entry.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXW.DocPartName.Decorated))]
+ /// <summary>
+ /// Indicates whether the entry is a built-in (decorated) entry.
+ /// </summary>
+ [OpenXmlElement(typeof(DXW.DocPartName))]
+ public bool? Decorated { get => _Decorated; set => UpdateField(ref _Decorated, value, nameof(Decorated)); }
 
-    private bool? _Decorated;
+ private bool? _Decorated;
 }

@@ -1,15 +1,12 @@
-﻿
-
 namespace DocumentModel;
-
 /// <summary>
 ///   Represents a collection of fallback content items used when no alternate content choice requirements can be satisfied.
 /// </summary>
 /// <remarks>
 ///   This class and defines the
-///   fallback content within an <see cref="IAlternateContent"/> structure. The fallback serves as the default content
+///   fallback content within an <see cref = "IAlternateContent"/> structure. The fallback serves as the default content
 ///   representation that is rendered when an Office application cannot satisfy the requirements of any choice in the
-///   <see cref="IAlternateContent.Choices"/> collection. This typically occurs when a document created with a newer
+///   <see cref = "IAlternateContent.Choices"/> collection. This typically occurs when a document created with a newer
 ///   Office version containing advanced features is opened in an older version that doesn't support those features.
 ///   The fallback content provides a meaningful, albeit potentially simplified, representation of the original content
 ///   to ensure the document remains readable and functional across different Office versions. The collection contains
@@ -24,6 +21,7 @@ namespace DocumentModel;
 ///   restored and properly rendered. This ensures no data loss occurs during the roundtrip between different Office
 ///   versions, even when some applications must use fallback representations.
 /// </remarks>
-public class AlternateContentFallback: ModelElement<DX.AlternateContentFallback> //IElementCollection<CollectionItem>
+[OpenXmlType(typeof(DX.AlternateContentFallback))]
+public class AlternateContentFallback : ModelElement<DX.AlternateContentFallback> //IElementCollection<CollectionItem>
 {
 }

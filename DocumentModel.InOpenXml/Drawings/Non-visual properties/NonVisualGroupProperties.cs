@@ -2,17 +2,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the NonVisualGroupProperties class.
 /// </summary>
+[OpenXmlType(typeof(DXO13D.NonVisualGroupProperties))]
 public partial class NonVisualGroupProperties : ModelElement<DXO13D.NonVisualGroupProperties>
 {
-    /// <summary>
-    ///   isLegacyGroup
-    /// </summary>
-    [OpenXmlProperty(nameof(DXO13D.NonVisualGroupProperties.IsLegacyGroup))]
-    /// <summary>
-    ///   isLegacyGroup
-    /// </summary>
-    [OpenXmlElement(typeof(DXO13D.NonVisualGroupProperties))]
-    public bool? IsLegacyGroup { get => _IsLegacyGroup; set => UpdateField(ref _IsLegacyGroup, value, nameof(IsLegacyGroup)); }
+ /// <summary>
+ ///   isLegacyGroup
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO13D.NonVisualGroupProperties.IsLegacyGroup))]
+ /// <summary>
+ ///   isLegacyGroup
+ /// </summary>
+ [OpenXmlElement(typeof(DXO13D.NonVisualGroupProperties))]
+ public bool? IsLegacyGroup { get => _IsLegacyGroup; set => UpdateField(ref _IsLegacyGroup, value, nameof(IsLegacyGroup)); }
 
-    private bool? _IsLegacyGroup;
+ private bool? _IsLegacyGroup;
 }

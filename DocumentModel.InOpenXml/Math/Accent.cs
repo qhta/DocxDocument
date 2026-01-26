@@ -3,24 +3,25 @@ namespace DocumentModel.Math;
 ///   This element specifies the accent function, consisting of a base and a combining diacritical mark. 
 ///   If AccentProperties is omitted, the default accent is U+0302 (COMBINING CIRCUMFLEX ACCENT).
 /// </summary>
+[OpenXmlType(typeof(DXM.Accent))]
 public partial class Accent : ModelElement<DXM.Accent>, ICommonMathContent
 {
-    /// <summary>
-    ///   Specifies formatting properties of accent function.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXM.Accent.AccentProperties))]
-    /// <summary>
-    ///   Specifies formatting properties of accent function.
-    /// </summary>
-    [OpenXmlElement(typeof(DXM.Accent))]
-    public AccentProperties? AccentProperties { get => _AccentProperties; set => UpdateField(ref _AccentProperties, value, nameof(AccentProperties)); }
+ /// <summary>
+ ///   Specifies formatting properties of accent function.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXM.Accent.AccentProperties))]
+ /// <summary>
+ ///   Specifies formatting properties of accent function.
+ /// </summary>
+ [OpenXmlElement(typeof(DXM.Accent))]
+ public AccentProperties? AccentProperties { get => _AccentProperties; set => UpdateField(ref _AccentProperties, value, nameof(AccentProperties)); }
 
-    private AccentProperties? _AccentProperties;
-    /// <summary>
-    ///   Specifies the argument of accent function.
-    /// </summary>
-    [OpenXmlElement(typeof(DXM.Accent))]
-    public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
+ private AccentProperties? _AccentProperties;
+ /// <summary>
+ ///   Specifies the argument of accent function.
+ /// </summary>
+ [OpenXmlElement(typeof(DXM.Accent))]
+ public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
 
-    private Argument? _Argument;
+ private Argument? _Argument;
 }

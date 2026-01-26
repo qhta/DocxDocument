@@ -2,28 +2,29 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a QuickTime video sourced from a file, including a reference to the linked relationship.
 /// </summary>
+[OpenXmlType(typeof(DXD.QuickTimeFromFile))]
 public partial class QuickTimeFromFile : ModelElement<DXD.QuickTimeFromFile>, IExtendableElement
 {
-    /// <summary>
-    ///   Relationship ID that links to the QuickTime video file.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXD.QuickTimeFromFile.Link))]
-    /// <summary>
-    ///   Relationship ID that links to the QuickTime video file.
-    /// </summary>
-    [OpenXmlElement(typeof(DXD.QuickTimeFromFile))]
-    public string? Link { get => _Link; set => UpdateField(ref _Link, value, nameof(Link)); }
+ /// <summary>
+ ///   Relationship ID that links to the QuickTime video file.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXD.QuickTimeFromFile.Link))]
+ /// <summary>
+ ///   Relationship ID that links to the QuickTime video file.
+ /// </summary>
+ [OpenXmlElement(typeof(DXD.QuickTimeFromFile))]
+ public string? Link { get => _Link; set => UpdateField(ref _Link, value, nameof(Link)); }
 
-    private string? _Link;
-    /// <summary>
-    /// List of extension elements.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXD.QuickTimeFromFile.ExtensionList))]
-    /// <summary>
-    /// List of extension elements.
-    /// </summary>
-    [OpenXmlElement(typeof(DXD.QuickTimeFromFile))]
-    public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private string? _Link;
+ /// <summary>
+ /// List of extension elements.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXD.QuickTimeFromFile.ExtensionList))]
+ /// <summary>
+ /// List of extension elements.
+ /// </summary>
+ [OpenXmlElement(typeof(DXD.QuickTimeFromFile))]
+ public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
-    private ExtensionList? _ExtensionList;
+ private ExtensionList? _ExtensionList;
 }

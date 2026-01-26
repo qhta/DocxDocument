@@ -2,24 +2,25 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents the outcome of a classification process, including the outcome type and any additional extension data.
 /// </summary>
+[OpenXmlType(typeof(DXO21DDC.ClassificationOutcome))]
 public partial class ClassificationOutcome : ModelElement<DXO21DDC.ClassificationOutcome>, IExtendableElement
 {
-    /// <summary>
-    /// Classification outcome type.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXO21DDC.ClassificationOutcome.ClassificationOutcomeType))]
-    /// <summary>
-    /// Classification outcome type.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO21DDC.ClassificationOutcome))]
-    public ClassificationOutcomeKind? ClassificationOutcomeType { get => _ClassificationOutcomeType; set => UpdateField(ref _ClassificationOutcomeType, value, nameof(ClassificationOutcomeType)); }
+ /// <summary>
+ /// Classification outcome type.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO21DDC.ClassificationOutcome.ClassificationOutcomeType))]
+ /// <summary>
+ /// Classification outcome type.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO21DDC.ClassificationOutcome))]
+ public ClassificationOutcomeKind? ClassificationOutcomeType { get => _ClassificationOutcomeType; set => UpdateField(ref _ClassificationOutcomeType, value, nameof(ClassificationOutcomeType)); }
 
-    private ClassificationOutcomeKind? _ClassificationOutcomeType;
-    /// <summary>
-    /// List of extensions for additional data.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO21DDC.ClassificationOutcome))]
-    public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private ClassificationOutcomeKind? _ClassificationOutcomeType;
+ /// <summary>
+ /// List of extensions for additional data.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO21DDC.ClassificationOutcome))]
+ public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
-    private ExtensionList? _ExtensionList;
+ private ExtensionList? _ExtensionList;
 }
