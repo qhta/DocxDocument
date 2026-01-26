@@ -63,7 +63,6 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
           )
         )
       );
-//      var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(openXmlTypeAttr));
 
       var leadingTrivia = node.GetLeadingTrivia();
       var docTrivia = leadingTrivia.Where(t =>
@@ -71,15 +70,6 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
           t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia))
         .ToList();
       var otherTrivia = leadingTrivia.Except(docTrivia).ToList();
-
-      //var attr = SyntaxFactory.Attribute(
-      //  SyntaxFactory.IdentifierName("OpenXmlElement"),
-      //  SyntaxFactory.AttributeArgumentList(
-      //    SyntaxFactory.SingletonSeparatedList(
-      //      SyntaxFactory.AttributeArgument(
-      //        SyntaxFactory.TypeOfExpression(
-      //          SyntaxFactory.ParseTypeName(openXmlType))
-      //      ))));
 
       var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(openXmlTypeAttr))
         .WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
