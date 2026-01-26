@@ -22,7 +22,8 @@ namespace DocumentModel;
 /// Each <see cref="IExtension"/> in the collection typically contains a UriString identifier, visual properties, metadata, and version information.
 /// </para>
 /// </remarks>
-public class ExtensionList : ElementCollection<Extension>
+[OpenXmlType(typeof(DXD.ExtensionList))]
+public class ExtensionList : ModelElementCollection<Extension, DXD.ExtensionList, DXD.Extension>
 {
   protected override object? GetUpdatableOpenXmlElement()
   {
