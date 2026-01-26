@@ -63,16 +63,67 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
           )
         )
       );
-      var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(openXmlTypeAttr));
+//      var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(openXmlTypeAttr));
 
       var leadingTrivia = node.GetLeadingTrivia();
+      var docTrivia = leadingTrivia.Where(t =>
+          t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) ||
+          t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia))
+        .ToList();
+      var otherTrivia = leadingTrivia.Except(docTrivia).ToList();
+
+      //var attr = SyntaxFactory.Attribute(
+      //  SyntaxFactory.IdentifierName("OpenXmlElement"),
+      //  SyntaxFactory.AttributeArgumentList(
+      //    SyntaxFactory.SingletonSeparatedList(
+      //      SyntaxFactory.AttributeArgument(
+      //        SyntaxFactory.TypeOfExpression(
+      //          SyntaxFactory.ParseTypeName(openXmlType))
+      //      ))));
+
+      var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(openXmlTypeAttr))
+        .WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
       var newClassNode = node
-        .WithAttributeLists(node.AttributeLists.Insert(0, attrList))
-        .WithLeadingTrivia(leadingTrivia);
+        .WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia))
+        .WithAttributeLists(node.AttributeLists.Add(attrList))
+        .WithTrailingTrivia(node.GetTrailingTrivia());
+
 
       Changed = true;
       return newClassNode;
     }
     return node;
+  }
+
+  private static bool IsDocumentationTrivia(SyntaxTrivia trivia)
+  {
+    return trivia.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia)
+           || trivia.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia)
+           || trivia.IsKind(SyntaxKind.DocumentationCommentExteriorTrivia);
+  }
+
+  private static (SyntaxTriviaList docTrivia, SyntaxTriviaList remainingTrivia) SplitDocumentationTrivia(SyntaxTriviaList leadingTrivia)
+  {
+    int lastDocIndex = -1;
+    for (int i = 0; i < leadingTrivia.Count; i++)
+    {
+      if (IsDocumentationTrivia(leadingTrivia[i]))
+      {
+        lastDocIndex = i;
+      }
+    }
+
+    if (lastDocIndex == -1)
+      return (SyntaxFactory.TriviaList(), leadingTrivia);
+
+    int includeUpTo = lastDocIndex;
+    if (includeUpTo + 1 < leadingTrivia.Count && leadingTrivia[includeUpTo + 1].IsKind(SyntaxKind.EndOfLineTrivia))
+    {
+      includeUpTo++;
+    }
+
+    var docTrivia = SyntaxFactory.TriviaList(leadingTrivia.Take(includeUpTo + 1));
+    var remainingTrivia = SyntaxFactory.TriviaList(leadingTrivia.Skip(includeUpTo + 1));
+    return (docTrivia, remainingTrivia);
   }
 }

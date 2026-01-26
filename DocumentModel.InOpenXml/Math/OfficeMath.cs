@@ -1,4 +1,5 @@
 using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies an instance of mathematical text. 
@@ -13,6 +14,7 @@ namespace DocumentModel.Math;
 ///   When an oMath block is not part of a display math zone, it is interpreted as its own inline math zone. 
 ///   The contents of an oMath block do not differ between display zone containers and independent inline math zones.
 /// </summary>
-public class OfficeMath: ModelElement<DXM.OfficeMath>, /*IElementCollection<IOfficeMathContent>, */ICommonMathContent, IMathParagraphContent
+[OpenXmlType(typeof(DXM.OfficeMath))]
+public class OfficeMath : ModelElement<DXM.OfficeMath>, /*IElementCollection<IOfficeMathContent>, */ ICommonMathContent, IMathParagraphContent
 {
 }

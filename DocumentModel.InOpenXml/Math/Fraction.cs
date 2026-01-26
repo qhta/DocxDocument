@@ -4,39 +4,40 @@ namespace DocumentModel.Math;
 ///   The fraction bar can be horizontal or diagonal, depending on the fraction properties. 
 ///   The fraction object is also used to represent the stack function, which places one element above another, with no fraction bar. .
 /// </summary>
+[OpenXmlType(typeof(DXM.Fraction))]
 public partial class Fraction : ModelElement<DXM.Fraction>, ICommonMathContent
 {
-    /// <summary>
-    ///   Fraction Properties.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXM.Fraction.FractionProperties))]
-    /// <summary>
-    ///   Fraction Properties.
-    /// </summary>
-    [OpenXmlElement(typeof(DXM.Fraction))]
-    public FractionProperties? FractionProperties { get => _FractionProperties; set => UpdateField(ref _FractionProperties, value, nameof(FractionProperties)); }
+ /// <summary>
+ ///   Fraction Properties.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXM.Fraction.FractionProperties))]
+ /// <summary>
+ ///   Fraction Properties.
+ /// </summary>
+ [OpenXmlElement(typeof(DXM.Fraction))]
+ public FractionProperties? FractionProperties { get => _FractionProperties; set => UpdateField(ref _FractionProperties, value, nameof(FractionProperties)); }
 
-    private FractionProperties? _FractionProperties;
-    /// <summary>
-    ///   Numerator.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXM.Fraction.Numerator))]
-    /// <summary>
-    ///   Numerator.
-    /// </summary>
-    [OpenXmlElement(typeof(DXM.Fraction))]
-    public Numerator? Numerator { get => _Numerator; set => UpdateField(ref _Numerator, value, nameof(Numerator)); }
+ private FractionProperties? _FractionProperties;
+ /// <summary>
+ ///   Numerator.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXM.Fraction.Numerator))]
+ /// <summary>
+ ///   Numerator.
+ /// </summary>
+ [OpenXmlElement(typeof(DXM.Fraction))]
+ public Numerator? Numerator { get => _Numerator; set => UpdateField(ref _Numerator, value, nameof(Numerator)); }
 
-    private Numerator? _Numerator;
-    /// <summary>
-    ///   Denominator.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXM.Fraction.Denominator))]
-    /// <summary>
-    ///   Denominator.
-    /// </summary>
-    [OpenXmlElement(typeof(DXM.Fraction))]
-    public Denominator? Denominator { get => _Denominator; set => UpdateField(ref _Denominator, value, nameof(Denominator)); }
+ private Numerator? _Numerator;
+ /// <summary>
+ ///   Denominator.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXM.Fraction.Denominator))]
+ /// <summary>
+ ///   Denominator.
+ /// </summary>
+ [OpenXmlElement(typeof(DXM.Fraction))]
+ public Denominator? Denominator { get => _Denominator; set => UpdateField(ref _Denominator, value, nameof(Denominator)); }
 
-    private Denominator? _Denominator;
+ private Denominator? _Denominator;
 }

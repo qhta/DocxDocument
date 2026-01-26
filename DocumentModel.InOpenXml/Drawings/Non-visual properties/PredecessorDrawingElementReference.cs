@@ -2,13 +2,14 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a reference to a predecessor drawing element.
 /// </summary>
+[OpenXmlType(typeof(DXO16D.PredecessorDrawingElementReference))]
 public partial class PredecessorDrawingElementReference : ModelElement<DXO16D.PredecessorDrawingElementReference>
 {
-    /// <summary>
-    ///   Identifier of the predecessor drawing element.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO16D.PredecessorDrawingElementReference))]
-    public string? Predecessor { get => _Predecessor; set => UpdateField(ref _Predecessor, value, nameof(Predecessor)); }
+ /// <summary>
+ ///   Identifier of the predecessor drawing element.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO16D.PredecessorDrawingElementReference))]
+ public string? Predecessor { get => _Predecessor; set => UpdateField(ref _Predecessor, value, nameof(Predecessor)); }
 
-    private string? _Predecessor;
+ private string? _Predecessor;
 }

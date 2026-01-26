@@ -35,17 +35,18 @@ namespace DocumentModel.Math;
 ///    </item>
 ///   </list>
 /// </summary>
+[OpenXmlType(typeof(DXM.ArgumentProperties))]
 public partial class ArgumentProperties : ModelElement<DXM.ArgumentProperties>
 {
-    /// <summary>
-    ///   Argument Size.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXM.ArgumentProperties.ArgumentSize))]
-    /// <summary>
-    ///   Argument Size.
-    /// </summary>
-    [OpenXmlElement(typeof(DXM.ArgumentProperties))]
-    public Int32? ArgumentSize { get => _ArgumentSize; set => UpdateField(ref _ArgumentSize, value, nameof(ArgumentSize)); }
+ /// <summary>
+ ///   Argument Size.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXM.ArgumentProperties.ArgumentSize))]
+ /// <summary>
+ ///   Argument Size.
+ /// </summary>
+ [OpenXmlElement(typeof(DXM.ArgumentProperties))]
+ public Int32? ArgumentSize { get => _ArgumentSize; set => UpdateField(ref _ArgumentSize, value, nameof(ArgumentSize)); }
 
-    private Int32? _ArgumentSize;
+ private Int32? _ArgumentSize;
 }

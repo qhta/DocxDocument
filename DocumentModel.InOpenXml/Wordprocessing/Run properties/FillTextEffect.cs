@@ -3,39 +3,40 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the fill text effect for a text run, providing options for no fill, solid color fill, or gradient fill.
 /// This class enables advanced text fill formatting in WordprocessingML documents.
 /// </summary>
+[OpenXmlType(typeof(DXO10W.FillTextEffect))]
 public partial class FillTextEffect : ModelElement<DXO10W.FillTextEffect>
 {
-    /// <summary>
-    /// Indicates that no fill is applied to the text.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXO10W.FillTextEffect.NoFillEmpty))]
-    /// <summary>
-    /// Indicates that no fill is applied to the text.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO10W.FillTextEffect))]
-    public bool? NoFillEmpty { get => _NoFillEmpty; set => UpdateField(ref _NoFillEmpty, value, nameof(NoFillEmpty)); }
+ /// <summary>
+ /// Indicates that no fill is applied to the text.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO10W.FillTextEffect.NoFillEmpty))]
+ /// <summary>
+ /// Indicates that no fill is applied to the text.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO10W.FillTextEffect))]
+ public bool? NoFillEmpty { get => _NoFillEmpty; set => UpdateField(ref _NoFillEmpty, value, nameof(NoFillEmpty)); }
 
-    private bool? _NoFillEmpty;
-    /// <summary>
-    /// Solid color fill properties for the text, specifying a single color fill effect.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXO10W.FillTextEffect.SolidColorFillProperties))]
-    /// <summary>
-    /// Solid color fill properties for the text, specifying a single color fill effect.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO10W.FillTextEffect))]
-    public SolidColorFillProperties? SolidColorFillProperties { get => _SolidColorFillProperties; set => UpdateField(ref _SolidColorFillProperties, value, nameof(SolidColorFillProperties)); }
+ private bool? _NoFillEmpty;
+ /// <summary>
+ /// Solid color fill properties for the text, specifying a single color fill effect.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO10W.FillTextEffect.SolidColorFillProperties))]
+ /// <summary>
+ /// Solid color fill properties for the text, specifying a single color fill effect.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO10W.FillTextEffect))]
+ public SolidColorFillProperties? SolidColorFillProperties { get => _SolidColorFillProperties; set => UpdateField(ref _SolidColorFillProperties, value, nameof(SolidColorFillProperties)); }
 
-    private SolidColorFillProperties? _SolidColorFillProperties;
-    /// <summary>
-    /// Gradient fill properties for the text, specifying a gradient color fill effect.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXO10W.FillTextEffect.GradientFillProperties))]
-    /// <summary>
-    /// Gradient fill properties for the text, specifying a gradient color fill effect.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO10W.FillTextEffect))]
-    public DMWD.GradientFillProperties? GradientFillProperties { get => _GradientFillProperties; set => UpdateField(ref _GradientFillProperties, value, nameof(GradientFillProperties)); }
+ private SolidColorFillProperties? _SolidColorFillProperties;
+ /// <summary>
+ /// Gradient fill properties for the text, specifying a gradient color fill effect.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO10W.FillTextEffect.GradientFillProperties))]
+ /// <summary>
+ /// Gradient fill properties for the text, specifying a gradient color fill effect.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO10W.FillTextEffect))]
+ public DMWD.GradientFillProperties? GradientFillProperties { get => _GradientFillProperties; set => UpdateField(ref _GradientFillProperties, value, nameof(GradientFillProperties)); }
 
-    private DMWD.GradientFillProperties? _GradientFillProperties;
+ private DMWD.GradientFillProperties? _GradientFillProperties;
 }

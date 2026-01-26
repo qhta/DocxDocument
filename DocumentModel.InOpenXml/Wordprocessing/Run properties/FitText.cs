@@ -3,24 +3,25 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the fit text effect for a text run, enabling the text to be compressed or expanded to fit a specified width.
 /// This class provides properties for identifying the fit text run and specifying the target width in twips, allowing advanced text layout control in WordprocessingML documents.
 /// </summary>
+[OpenXmlType(typeof(DXW.FitText))]
 public partial class FitText : ModelElement<DXW.FitText>
 {
-    /// <summary>
-    /// Identifier for the fit text run, used to distinguish multiple fit text effects within the same document.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXW.FitText.Id))]
-    /// <summary>
-    /// Identifier for the fit text run, used to distinguish multiple fit text effects within the same document.
-    /// </summary>
-    [OpenXmlElement(typeof(DXW.FitText))]
-    public Int32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+ /// <summary>
+ /// Identifier for the fit text run, used to distinguish multiple fit text effects within the same document.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXW.FitText.Id))]
+ /// <summary>
+ /// Identifier for the fit text run, used to distinguish multiple fit text effects within the same document.
+ /// </summary>
+ [OpenXmlElement(typeof(DXW.FitText))]
+ public Int32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
-    private Int32? _Id;
-    /// <summary>
-    /// Target width for the fit text effect, specified in twips. The text is compressed or expanded to fit this width.
-    /// </summary>
-    [OpenXmlElement(typeof(DXW.FitText))]
-    public Twips? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
+ private Int32? _Id;
+ /// <summary>
+ /// Target width for the fit text effect, specified in twips. The text is compressed or expanded to fit this width.
+ /// </summary>
+ [OpenXmlElement(typeof(DXW.FitText))]
+ public Twips? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
 
-    private Twips? _Value;
+ private Twips? _Value;
 }

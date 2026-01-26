@@ -3,28 +3,29 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a symbol character in a text run in WordprocessingML documents.
 /// A symbol character is a special character that does not use any of the run fonts specified in the font table or style hierarchy. Instead, the character is determined by pulling the character with the specified hexadecimal value from the specified font.
 /// </summary>
+[OpenXmlType(typeof(DXW.SymbolChar))]
 public partial class SymbolChar : ModelElement<DXW.SymbolChar>, IRunContent
 {
-    /// <summary>
-    /// Font name from which the symbol character is selected.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXW.SymbolChar.Font))]
-    /// <summary>
-    /// Font name from which the symbol character is selected.
-    /// </summary>
-    [OpenXmlElement(typeof(DXW.SymbolChar))]
-    public string? Font { get => _Font; set => UpdateField(ref _Font, value, nameof(Font)); }
+ /// <summary>
+ /// Font name from which the symbol character is selected.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXW.SymbolChar.Font))]
+ /// <summary>
+ /// Font name from which the symbol character is selected.
+ /// </summary>
+ [OpenXmlElement(typeof(DXW.SymbolChar))]
+ public string? Font { get => _Font; set => UpdateField(ref _Font, value, nameof(Font)); }
 
-    private string? _Font;
-    /// <summary>
-    /// Hexadecimal character code specifying the symbol to display from the given font.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXW.SymbolChar.Char))]
-    /// <summary>
-    /// Hexadecimal character code specifying the symbol to display from the given font.
-    /// </summary>
-    [OpenXmlElement(typeof(DXW.SymbolChar))]
-    public HexChar? Char { get => _Char; set => UpdateField(ref _Char, value, nameof(Char)); }
+ private string? _Font;
+ /// <summary>
+ /// Hexadecimal character code specifying the symbol to display from the given font.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXW.SymbolChar.Char))]
+ /// <summary>
+ /// Hexadecimal character code specifying the symbol to display from the given font.
+ /// </summary>
+ [OpenXmlElement(typeof(DXW.SymbolChar))]
+ public HexChar? Char { get => _Char; set => UpdateField(ref _Char, value, nameof(Char)); }
 
-    private HexChar? _Char;
+ private HexChar? _Char;
 }

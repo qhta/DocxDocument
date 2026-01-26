@@ -11,17 +11,18 @@ namespace DocumentModel.Math;
 ///   Within each argument in the array, every odd ampersand is an align value and every even ampersand is a spacer value 
 ///   (as well, the beginning of each argument provides an implied spacer value).
 /// </summary>
+[OpenXmlType(typeof(DXM.EquationArray))]
 public partial class EquationArray : ModelElement<DXM.EquationArray>, IArgumentCollection, ICommonMathContent
 {
-    /// <summary>
-    ///   Specifies Equation Array properties.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXM.EquationArray.EquationArrayProperties))]
-    /// <summary>
-    ///   Specifies Equation Array properties.
-    /// </summary>
-    [OpenXmlElement(typeof(DXM.EquationArray))]
-    public EquationArrayProperties? EquationArrayProperties { get => _EquationArrayProperties; set => UpdateField(ref _EquationArrayProperties, value, nameof(EquationArrayProperties)); }
+ /// <summary>
+ ///   Specifies Equation Array properties.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXM.EquationArray.EquationArrayProperties))]
+ /// <summary>
+ ///   Specifies Equation Array properties.
+ /// </summary>
+ [OpenXmlElement(typeof(DXM.EquationArray))]
+ public EquationArrayProperties? EquationArrayProperties { get => _EquationArrayProperties; set => UpdateField(ref _EquationArrayProperties, value, nameof(EquationArrayProperties)); }
 
-    private EquationArrayProperties? _EquationArrayProperties;
+ private EquationArrayProperties? _EquationArrayProperties;
 }

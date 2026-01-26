@@ -3,24 +3,25 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the color settings for the contour of a drawing element in a Wordprocessing document.
 /// This class provides properties for specifying the contour color using either an RGB value or a scheme color, enabling flexible color customization.
 /// </summary>
+[OpenXmlType(typeof(DXO10W.ContourColor))]
 public partial class ContourColor : ModelElement<DXO10W.ContourColor>
 {
-    /// <summary>
-    /// The RGB color value used for the contour, allowing precise color specification.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO10W.ContourColor))]
-    public RgbColor? RgbColor { get => _RgbColor; set => UpdateField(ref _RgbColor, value, nameof(RgbColor)); }
+ /// <summary>
+ /// The RGB color value used for the contour, allowing precise color specification.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO10W.ContourColor))]
+ public RgbColor? RgbColor { get => _RgbColor; set => UpdateField(ref _RgbColor, value, nameof(RgbColor)); }
 
-    private RgbColor? _RgbColor;
-    /// <summary>
-    /// The scheme color used for the contour, enabling the use of document-defined color schemes.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXO10W.ContourColor.SchemeColor))]
-    /// <summary>
-    /// The scheme color used for the contour, enabling the use of document-defined color schemes.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO10W.ContourColor))]
-    public SchemeColor? SchemeColor { get => _SchemeColor; set => UpdateField(ref _SchemeColor, value, nameof(SchemeColor)); }
+ private RgbColor? _RgbColor;
+ /// <summary>
+ /// The scheme color used for the contour, enabling the use of document-defined color schemes.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO10W.ContourColor.SchemeColor))]
+ /// <summary>
+ /// The scheme color used for the contour, enabling the use of document-defined color schemes.
+ /// </summary>
+ [OpenXmlElement(typeof(DXO10W.ContourColor))]
+ public SchemeColor? SchemeColor { get => _SchemeColor; set => UpdateField(ref _SchemeColor, value, nameof(SchemeColor)); }
 
-    private SchemeColor? _SchemeColor;
+ private SchemeColor? _SchemeColor;
 }
