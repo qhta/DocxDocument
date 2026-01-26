@@ -12,9 +12,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Unique Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Id))]
- /// <summary>
- ///   Unique Identifier
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
@@ -23,9 +20,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Shape Styling Properties
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Style))]
- /// <summary>
- ///   Shape Styling Properties
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
 
@@ -34,9 +28,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   IHyperlink Target
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Href))]
- /// <summary>
- ///   IHyperlink Target
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? Href { get => _Href; set => UpdateField(ref _Href, value, nameof(Href)); }
 
@@ -45,9 +36,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   IHyperlink Display Target
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Target))]
- /// <summary>
- ///   IHyperlink Display Target
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? Target { get => _Target; set => UpdateField(ref _Target, value, nameof(Target)); }
 
@@ -56,9 +44,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   CSS Reference
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Class))]
- /// <summary>
- ///   CSS Reference
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? Class { get => _Class; set => UpdateField(ref _Class, value, nameof(Class)); }
 
@@ -67,9 +52,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Shape Title
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Title))]
- /// <summary>
- ///   Shape Title
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
 
@@ -78,9 +60,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Alternate Text
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Alternate))]
- /// <summary>
- ///   Alternate Text
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? Alternate { get => _Alternate; set => UpdateField(ref _Alternate, value, nameof(Alternate)); }
 
@@ -89,9 +68,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Coordinate Space Size
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.CoordinateSize))]
- /// <summary>
- ///   Coordinate Space Size
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? CoordinateSize { get => _CoordinateSize; set => UpdateField(ref _CoordinateSize, value, nameof(CoordinateSize)); }
 
@@ -100,9 +76,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Coordinate Space Origin
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.CoordinateOrigin))]
- /// <summary>
- ///   Coordinate Space Origin
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? CoordinateOrigin { get => _CoordinateOrigin; set => UpdateField(ref _CoordinateOrigin, value, nameof(CoordinateOrigin)); }
 
@@ -111,9 +84,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Shape Bounding Polygon
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.WrapCoordinates))]
- /// <summary>
- ///   Shape Bounding Polygon
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? WrapCoordinates { get => _WrapCoordinates; set => UpdateField(ref _WrapCoordinates, value, nameof(WrapCoordinates)); }
 
@@ -122,9 +92,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Print Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Print))]
- /// <summary>
- ///   Print Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? Print { get => _Print; set => UpdateField(ref _Print, value, nameof(Print)); }
 
@@ -133,9 +100,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Optional String
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.OptionalString))]
- /// <summary>
- ///   Optional String
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? OptionalString { get => _OptionalString; set => UpdateField(ref _OptionalString, value, nameof(OptionalString)); }
 
@@ -144,9 +108,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Shape Handle Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Oned))]
- /// <summary>
- ///   Shape Handle Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? Oned { get => _Oned; set => UpdateField(ref _Oned, value, nameof(Oned)); }
 
@@ -155,9 +116,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Regroup ID
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.RegroupId))]
- /// <summary>
- ///   Regroup ID
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public Int64? RegroupId { get => _RegroupId; set => UpdateField(ref _RegroupId, value, nameof(RegroupId)); }
 
@@ -166,9 +124,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Double-click Notification Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.DoubleClickNotify))]
- /// <summary>
- ///   Double-click Notification Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? DoubleClickNotify { get => _DoubleClickNotify; set => UpdateField(ref _DoubleClickNotify, value, nameof(DoubleClickNotify)); }
 
@@ -177,9 +132,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Button Behavior Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Button))]
- /// <summary>
- ///   Button Behavior Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? Button { get => _Button; set => UpdateField(ref _Button, value, nameof(Button)); }
 
@@ -188,9 +140,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Hide Script Anchors
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.UserHidden))]
- /// <summary>
- ///   Hide Script Anchors
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? UserHidden { get => _UserHidden; set => UpdateField(ref _UserHidden, value, nameof(UserHidden)); }
 
@@ -199,9 +148,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Graphical Bullet
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Bullet))]
- /// <summary>
- ///   Graphical Bullet
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? Bullet { get => _Bullet; set => UpdateField(ref _Bullet, value, nameof(Bullet)); }
 
@@ -210,9 +156,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Horizontal Rule Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Horizontal))]
- /// <summary>
- ///   Horizontal Rule Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? Horizontal { get => _Horizontal; set => UpdateField(ref _Horizontal, value, nameof(Horizontal)); }
 
@@ -221,9 +164,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Horizontal Rule Standard Display Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.HorizontalStandard))]
- /// <summary>
- ///   Horizontal Rule Standard Display Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? HorizontalStandard { get => _HorizontalStandard; set => UpdateField(ref _HorizontalStandard, value, nameof(HorizontalStandard)); }
 
@@ -232,9 +172,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Horizontal Rule 3D Shading Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.HorizontalNoShade))]
- /// <summary>
- ///   Horizontal Rule 3D Shading Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? HorizontalNoShade { get => _HorizontalNoShade; set => UpdateField(ref _HorizontalNoShade, value, nameof(HorizontalNoShade)); }
 
@@ -243,9 +180,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Horizontal Rule Length Percentage
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.HorizontalPercentage))]
- /// <summary>
- ///   Horizontal Rule Length Percentage
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public Single? HorizontalPercentage { get => _HorizontalPercentage; set => UpdateField(ref _HorizontalPercentage, value, nameof(HorizontalPercentage)); }
 
@@ -254,9 +188,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Horizontal Rule Alignment
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.HorizontalAlignment))]
- /// <summary>
- ///   Horizontal Rule Alignment
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public HorizontalRuleAlignmentKind? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
 
@@ -265,9 +196,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Allow in Table Cell
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.AllowInCell))]
- /// <summary>
- ///   Allow in Table Cell
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? AllowInCell { get => _AllowInCell; set => UpdateField(ref _AllowInCell, value, nameof(AllowInCell)); }
 
@@ -276,9 +204,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Allow Shape Overlap
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.AllowOverlap))]
- /// <summary>
- ///   Allow Shape Overlap
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? AllowOverlap { get => _AllowOverlap; set => UpdateField(ref _AllowOverlap, value, nameof(AllowOverlap)); }
 
@@ -287,9 +212,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Exists In Master Slide
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.UserDrawn))]
- /// <summary>
- ///   Exists In Master Slide
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? UserDrawn { get => _UserDrawn; set => UpdateField(ref _UserDrawn, value, nameof(UserDrawn)); }
 
@@ -298,9 +220,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Border Top Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.BorderTopColor))]
- /// <summary>
- ///   Border Top Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? BorderTopColor { get => _BorderTopColor; set => UpdateField(ref _BorderTopColor, value, nameof(BorderTopColor)); }
 
@@ -309,9 +228,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Border Left Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.BorderLeftColor))]
- /// <summary>
- ///   Border Left Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? BorderLeftColor { get => _BorderLeftColor; set => UpdateField(ref _BorderLeftColor, value, nameof(BorderLeftColor)); }
 
@@ -320,9 +236,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Bottom Border Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.BorderBottomColor))]
- /// <summary>
- ///   Bottom Border Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? BorderBottomColor { get => _BorderBottomColor; set => UpdateField(ref _BorderBottomColor, value, nameof(BorderBottomColor)); }
 
@@ -331,9 +244,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Border Right Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.BorderRightColor))]
- /// <summary>
- ///   Border Right Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? BorderRightColor { get => _BorderRightColor; set => UpdateField(ref _BorderRightColor, value, nameof(BorderRightColor)); }
 
@@ -342,9 +252,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Diagram Node Layout Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.DiagramLayout))]
- /// <summary>
- ///   Diagram Node Layout Identifier
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public Int64? DiagramLayout { get => _DiagramLayout; set => UpdateField(ref _DiagramLayout, value, nameof(DiagramLayout)); }
 
@@ -353,9 +260,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Diagram Node Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.DiagramNodeKind))]
- /// <summary>
- ///   Diagram Node Identifier
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public Int64? DiagramNodeKind { get => _DiagramNodeKind; set => UpdateField(ref _DiagramNodeKind, value, nameof(DiagramNodeKind)); }
 
@@ -364,9 +268,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Diagram Node Recent Layout Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.DiagramLayoutMostRecentUsed))]
- /// <summary>
- ///   Diagram Node Recent Layout Identifier
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public Int64? DiagramLayoutMostRecentUsed { get => _DiagramLayoutMostRecentUsed; set => UpdateField(ref _DiagramLayoutMostRecentUsed, value, nameof(DiagramLayoutMostRecentUsed)); }
 
@@ -375,9 +276,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Text Inset Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.InsetMode))]
- /// <summary>
- ///   Text Inset Mode
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public InsetMarginKind? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
 
@@ -386,9 +284,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Shape Fill Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Filled))]
- /// <summary>
- ///   Shape Fill Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? Filled { get => _Filled; set => UpdateField(ref _Filled, value, nameof(Filled)); }
 
@@ -397,9 +292,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Fill Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.FillColor))]
- /// <summary>
- ///   Fill Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? FillColor { get => _FillColor; set => UpdateField(ref _FillColor, value, nameof(FillColor)); }
 
@@ -408,9 +300,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Shape Stroke Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Stroked))]
- /// <summary>
- ///   Shape Stroke Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? Stroked { get => _Stroked; set => UpdateField(ref _Stroked, value, nameof(Stroked)); }
 
@@ -419,9 +308,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Shape Stroke Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.StrokeColor))]
- /// <summary>
- ///   Shape Stroke Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? StrokeColor { get => _StrokeColor; set => UpdateField(ref _StrokeColor, value, nameof(StrokeColor)); }
 
@@ -430,9 +316,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Shape Stroke Weight
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.StrokeWeight))]
- /// <summary>
- ///   Shape Stroke Weight
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? StrokeWeight { get => _StrokeWeight; set => UpdateField(ref _StrokeWeight, value, nameof(StrokeWeight)); }
 
@@ -441,9 +324,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Inset Border From Path
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.InsetPen))]
- /// <summary>
- ///   Inset Border From Path
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? InsetPen { get => _InsetPen; set => UpdateField(ref _InsetPen, value, nameof(InsetPen)); }
 
@@ -452,9 +332,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Optional Number
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.OptionalNumber))]
- /// <summary>
- ///   Optional Number
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public Int32? OptionalNumber { get => _OptionalNumber; set => UpdateField(ref _OptionalNumber, value, nameof(OptionalNumber)); }
 
@@ -463,9 +340,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Shape Connector Type
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.ConnectorType))]
- /// <summary>
- ///   Shape Connector Type
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public ConnectorKind? ConnectorType { get => _ConnectorType; set => UpdateField(ref _ConnectorType, value, nameof(ConnectorType)); }
 
@@ -474,9 +348,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Black-and-White Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.BlackWhiteMode))]
- /// <summary>
- ///   Black-and-White Mode
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public BlackAndWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
 
@@ -485,9 +356,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Pure Black-and-White Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.PureBlackWhiteMode))]
- /// <summary>
- ///   Pure Black-and-White Mode
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public BlackAndWhiteMode? PureBlackWhiteMode { get => _PureBlackWhiteMode; set => UpdateField(ref _PureBlackWhiteMode, value, nameof(PureBlackWhiteMode)); }
 
@@ -496,9 +364,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Normal Black-and-White Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.NormalBlackWhiteMode))]
- /// <summary>
- ///   Normal Black-and-White Mode
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public BlackAndWhiteMode? NormalBlackWhiteMode { get => _NormalBlackWhiteMode; set => UpdateField(ref _NormalBlackWhiteMode, value, nameof(NormalBlackWhiteMode)); }
 
@@ -507,9 +372,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Force Dashed Outline
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.ForceDash))]
- /// <summary>
- ///   Force Dashed Outline
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? ForceDash { get => _ForceDash; set => UpdateField(ref _ForceDash, value, nameof(ForceDash)); }
 
@@ -518,9 +380,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Embedded Object Icon Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.OleIcon))]
- /// <summary>
- ///   Embedded Object Icon Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? OleIcon { get => _OleIcon; set => UpdateField(ref _OleIcon, value, nameof(OleIcon)); }
 
@@ -529,9 +388,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Embedded Object Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Ole))]
- /// <summary>
- ///   Embedded Object Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? Ole { get => _Ole; set => UpdateField(ref _Ole, value, nameof(Ole)); }
 
@@ -540,9 +396,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Relative Resize Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.PreferRelative))]
- /// <summary>
- ///   Relative Resize Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? PreferRelative { get => _PreferRelative; set => UpdateField(ref _PreferRelative, value, nameof(PreferRelative)); }
 
@@ -551,9 +404,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Clip to Wrapping Polygon
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.ClipToWrap))]
- /// <summary>
- ///   Clip to Wrapping Polygon
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? ClipToWrap { get => _ClipToWrap; set => UpdateField(ref _ClipToWrap, value, nameof(ClipToWrap)); }
 
@@ -562,9 +412,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Clipping Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Clip))]
- /// <summary>
- ///   Clipping Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public bool? Clip { get => _Clip; set => UpdateField(ref _Clip, value, nameof(Clip)); }
 
@@ -573,9 +420,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Encoded Package
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Gfxdata))]
- /// <summary>
- ///   Encoded Package
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public Base64Binary? Gfxdata { get => _Gfxdata; set => UpdateField(ref _Gfxdata, value, nameof(Gfxdata)); }
 
@@ -584,9 +428,6 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Points for Compound Line
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Points))]
- /// <summary>
- ///   Points for Compound Line
- /// </summary>
  [OpenXmlElement(typeof(DXV.PolyLine))]
  public string? Points { get => _Points; set => UpdateField(ref _Points, value, nameof(Points)); }
 

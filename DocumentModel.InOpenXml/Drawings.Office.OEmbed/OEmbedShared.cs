@@ -9,9 +9,6 @@ public partial class OEmbedShared : ModelElement<DXODY21OE.OEmbedShared>
  ///   srcUrl
  /// </summary>
  [OpenXmlProperty(nameof(DXODY21OE.OEmbedShared.SrcUrl))]
- /// <summary>
- ///   srcUrl
- /// </summary>
  [OpenXmlElement(typeof(DXODY21OE.OEmbedShared))]
  public string? SrcUrl { get => _SrcUrl; set => UpdateField(ref _SrcUrl, value, nameof(SrcUrl)); }
 
@@ -20,9 +17,6 @@ public partial class OEmbedShared : ModelElement<DXODY21OE.OEmbedShared>
  ///   type
  /// </summary>
  [OpenXmlProperty(nameof(DXODY21OE.OEmbedShared.Type))]
- /// <summary>
- ///   type
- /// </summary>
  [OpenXmlElement(typeof(DXODY21OE.OEmbedShared))]
  public string? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
@@ -31,9 +25,6 @@ public partial class OEmbedShared : ModelElement<DXODY21OE.OEmbedShared>
  ///   OfficeArtExtensionList.
  /// </summary>
  [OpenXmlProperty(nameof(DXODY21OE.OEmbedShared.OfficeArtExtensionList))]
- /// <summary>
- ///   OfficeArtExtensionList.
- /// </summary>
  [OpenXmlElement(typeof(DXODY21OE.OEmbedShared))]
  public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
 

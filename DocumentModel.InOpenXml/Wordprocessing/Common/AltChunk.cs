@@ -10,9 +10,6 @@ public partial class AltChunk : ModelElement<DXW.AltChunk>, IStoryContent, ITabl
  /// Relationship ID to the part containing the external content to be imported.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AltChunk.Id))]
- /// <summary>
- /// Relationship ID to the part containing the external content to be imported.
- /// </summary>
  [OpenXmlElement(typeof(DXW.AltChunk))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
@@ -21,9 +18,6 @@ public partial class AltChunk : ModelElement<DXW.AltChunk>, IStoryContent, ITabl
  /// Properties for external content import, specifying additional import options and settings.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AltChunk.AltChunkProperties))]
- /// <summary>
- /// Properties for external content import, specifying additional import options and settings.
- /// </summary>
  [OpenXmlElement(typeof(DXW.AltChunk))]
  public AltChunkProperties? AltChunkProperties { get => _AltChunkProperties; set => UpdateField(ref _AltChunkProperties, value, nameof(AltChunkProperties)); }
 

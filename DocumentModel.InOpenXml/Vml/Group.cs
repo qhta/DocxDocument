@@ -12,9 +12,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   Unique Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.Id))]
- /// <summary>
- ///   Unique Identifier
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
@@ -23,9 +20,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   Shape Styling Properties
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.Style))]
- /// <summary>
- ///   Shape Styling Properties
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public string? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
 
@@ -34,9 +28,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   IHyperlink Target
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.Href))]
- /// <summary>
- ///   IHyperlink Target
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public string? Href { get => _Href; set => UpdateField(ref _Href, value, nameof(Href)); }
 
@@ -45,9 +36,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   IHyperlink Display Target
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.Target))]
- /// <summary>
- ///   IHyperlink Display Target
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public string? Target { get => _Target; set => UpdateField(ref _Target, value, nameof(Target)); }
 
@@ -56,9 +44,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   CSS Reference
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.Class))]
- /// <summary>
- ///   CSS Reference
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public string? Class { get => _Class; set => UpdateField(ref _Class, value, nameof(Class)); }
 
@@ -67,9 +52,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   Shape Title
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.Title))]
- /// <summary>
- ///   Shape Title
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public string? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
 
@@ -78,9 +60,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   Alternate Text
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.Alternate))]
- /// <summary>
- ///   Alternate Text
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public string? Alternate { get => _Alternate; set => UpdateField(ref _Alternate, value, nameof(Alternate)); }
 
@@ -89,9 +68,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   Coordinate Space Size
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.CoordinateSize))]
- /// <summary>
- ///   Coordinate Space Size
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public string? CoordinateSize { get => _CoordinateSize; set => UpdateField(ref _CoordinateSize, value, nameof(CoordinateSize)); }
 
@@ -100,9 +76,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   Coordinate Space Origin
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.CoordinateOrigin))]
- /// <summary>
- ///   Coordinate Space Origin
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public string? CoordinateOrigin { get => _CoordinateOrigin; set => UpdateField(ref _CoordinateOrigin, value, nameof(CoordinateOrigin)); }
 
@@ -111,9 +84,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   Shape Bounding Polygon
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.WrapCoordinates))]
- /// <summary>
- ///   Shape Bounding Polygon
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public string? WrapCoordinates { get => _WrapCoordinates; set => UpdateField(ref _WrapCoordinates, value, nameof(WrapCoordinates)); }
 
@@ -122,9 +92,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   Print Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.Print))]
- /// <summary>
- ///   Print Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public bool? Print { get => _Print; set => UpdateField(ref _Print, value, nameof(Print)); }
 
@@ -133,9 +100,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   spid
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.OptionalString))]
- /// <summary>
- ///   spid
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public string? OptionalString { get => _OptionalString; set => UpdateField(ref _OptionalString, value, nameof(OptionalString)); }
 
@@ -144,9 +108,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   oned
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.Oned))]
- /// <summary>
- ///   oned
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public bool? Oned { get => _Oned; set => UpdateField(ref _Oned, value, nameof(Oned)); }
 
@@ -155,9 +116,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   regroupid
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.RegroupId))]
- /// <summary>
- ///   regroupid
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public Int64? RegroupId { get => _RegroupId; set => UpdateField(ref _RegroupId, value, nameof(RegroupId)); }
 
@@ -166,9 +124,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   doubleclicknotify
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.DoubleClickNotify))]
- /// <summary>
- ///   doubleclicknotify
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public bool? DoubleClickNotify { get => _DoubleClickNotify; set => UpdateField(ref _DoubleClickNotify, value, nameof(DoubleClickNotify)); }
 
@@ -177,9 +132,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   button
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.Button))]
- /// <summary>
- ///   button
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public bool? Button { get => _Button; set => UpdateField(ref _Button, value, nameof(Button)); }
 
@@ -188,9 +140,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   userhidden
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.UserHidden))]
- /// <summary>
- ///   userhidden
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public bool? UserHidden { get => _UserHidden; set => UpdateField(ref _UserHidden, value, nameof(UserHidden)); }
 
@@ -199,9 +148,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   bullet
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.Bullet))]
- /// <summary>
- ///   bullet
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public bool? Bullet { get => _Bullet; set => UpdateField(ref _Bullet, value, nameof(Bullet)); }
 
@@ -210,9 +156,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   hr
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.Horizontal))]
- /// <summary>
- ///   hr
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public bool? Horizontal { get => _Horizontal; set => UpdateField(ref _Horizontal, value, nameof(Horizontal)); }
 
@@ -221,9 +164,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   hrstd
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.HorizontalStandard))]
- /// <summary>
- ///   hrstd
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public bool? HorizontalStandard { get => _HorizontalStandard; set => UpdateField(ref _HorizontalStandard, value, nameof(HorizontalStandard)); }
 
@@ -232,9 +172,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   hrnoshade
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.HorizontalNoShade))]
- /// <summary>
- ///   hrnoshade
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public bool? HorizontalNoShade { get => _HorizontalNoShade; set => UpdateField(ref _HorizontalNoShade, value, nameof(HorizontalNoShade)); }
 
@@ -243,9 +180,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   hrpct
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.HorizontalPercentage))]
- /// <summary>
- ///   hrpct
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public Single? HorizontalPercentage { get => _HorizontalPercentage; set => UpdateField(ref _HorizontalPercentage, value, nameof(HorizontalPercentage)); }
 
@@ -254,9 +188,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   hralign
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.HorizontalAlignment))]
- /// <summary>
- ///   hralign
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public HorizontalRuleAlignmentKind? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
 
@@ -265,9 +196,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   allowincell
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.AllowInCell))]
- /// <summary>
- ///   allowincell
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public bool? AllowInCell { get => _AllowInCell; set => UpdateField(ref _AllowInCell, value, nameof(AllowInCell)); }
 
@@ -276,9 +204,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   allowoverlap
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.AllowOverlap))]
- /// <summary>
- ///   allowoverlap
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public bool? AllowOverlap { get => _AllowOverlap; set => UpdateField(ref _AllowOverlap, value, nameof(AllowOverlap)); }
 
@@ -287,9 +212,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   userdrawn
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.UserDrawn))]
- /// <summary>
- ///   userdrawn
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public bool? UserDrawn { get => _UserDrawn; set => UpdateField(ref _UserDrawn, value, nameof(UserDrawn)); }
 
@@ -298,9 +220,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   dgmlayout
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.DiagramLayout))]
- /// <summary>
- ///   dgmlayout
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public Int64? DiagramLayout { get => _DiagramLayout; set => UpdateField(ref _DiagramLayout, value, nameof(DiagramLayout)); }
 
@@ -309,9 +228,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   dgmnodekind
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.DiagramNodeKind))]
- /// <summary>
- ///   dgmnodekind
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public Int64? DiagramNodeKind { get => _DiagramNodeKind; set => UpdateField(ref _DiagramNodeKind, value, nameof(DiagramNodeKind)); }
 
@@ -320,9 +236,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   dgmlayoutmru
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.DiagramLayoutMostRecentUsed))]
- /// <summary>
- ///   dgmlayoutmru
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public Int64? DiagramLayoutMostRecentUsed { get => _DiagramLayoutMostRecentUsed; set => UpdateField(ref _DiagramLayoutMostRecentUsed, value, nameof(DiagramLayoutMostRecentUsed)); }
 
@@ -331,9 +244,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   insetmode
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.InsetMode))]
- /// <summary>
- ///   insetmode
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public InsetMarginKind? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
 
@@ -342,9 +252,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   Encoded Package
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.Gfxdata))]
- /// <summary>
- ///   Encoded Package
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public Base64Binary? Gfxdata { get => _Gfxdata; set => UpdateField(ref _Gfxdata, value, nameof(Gfxdata)); }
 
@@ -353,9 +260,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   Group Diagram Type
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.EditAs))]
- /// <summary>
- ///   Group Diagram Type
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public EditAsKind? EditAs { get => _EditAs; set => UpdateField(ref _EditAs, value, nameof(EditAs)); }
 
@@ -364,9 +268,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   Table Properties
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.TableProperties))]
- /// <summary>
- ///   Table Properties
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public string? TableProperties { get => _TableProperties; set => UpdateField(ref _TableProperties, value, nameof(TableProperties)); }
 
@@ -375,9 +276,6 @@ public partial class Group : ModelElement<DXV.Group>, IEmbeddedObjectContent
  ///   Table Row Height Limits
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.TableLimits))]
- /// <summary>
- ///   Table Row Height Limits
- /// </summary>
  [OpenXmlElement(typeof(DXV.Group))]
  public string? TableLimits { get => _TableLimits; set => UpdateField(ref _TableLimits, value, nameof(TableLimits)); }
 

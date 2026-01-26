@@ -9,9 +9,6 @@ public partial class SVGBlip : ModelElement<DXO19DS.SVGBlip>
  ///   Embedded Picture Reference
  /// </summary>
  [OpenXmlProperty(nameof(DXO19DS.SVGBlip.Embed))]
- /// <summary>
- ///   Embedded Picture Reference
- /// </summary>
  [OpenXmlElement(typeof(DXO19DS.SVGBlip))]
  public string? Embed { get => _Embed; set => UpdateField(ref _Embed, value, nameof(Embed)); }
 
@@ -20,9 +17,6 @@ public partial class SVGBlip : ModelElement<DXO19DS.SVGBlip>
  ///   Linked Picture Reference
  /// </summary>
  [OpenXmlProperty(nameof(DXO19DS.SVGBlip.Link))]
- /// <summary>
- ///   Linked Picture Reference
- /// </summary>
  [OpenXmlElement(typeof(DXO19DS.SVGBlip))]
  public string? Link { get => _Link; set => UpdateField(ref _Link, value, nameof(Link)); }
 

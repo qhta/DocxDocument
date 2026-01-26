@@ -9,9 +9,6 @@ public partial class Ink : ModelElement<DXVO.Ink>
  ///   Ink Data
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Ink.InkData))]
- /// <summary>
- ///   Ink Data
- /// </summary>
  [OpenXmlElement(typeof(DXVO.Ink))]
  public Base64Binary? InkData { get => _InkData; set => UpdateField(ref _InkData, value, nameof(InkData)); }
 
@@ -20,9 +17,6 @@ public partial class Ink : ModelElement<DXVO.Ink>
  ///   Annotation Flag
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Ink.AnnotationFlag))]
- /// <summary>
- ///   Annotation Flag
- /// </summary>
  [OpenXmlElement(typeof(DXVO.Ink))]
  public bool? AnnotationFlag { get => _AnnotationFlag; set => UpdateField(ref _AnnotationFlag, value, nameof(AnnotationFlag)); }
 

@@ -62,9 +62,6 @@ public partial class BlipExtension : ModelElement<DXD.Extension>, IExtension
  /// Uri string associated with the blip extension.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Extension.Uri))]
- /// <summary>
- /// Uri string associated with the blip extension.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Extension))]
  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
 

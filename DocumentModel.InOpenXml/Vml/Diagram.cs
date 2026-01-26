@@ -9,9 +9,6 @@ public partial class Diagram : ModelElement<DXVO.Diagram>
  ///   VML Extension Handling Behavior
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Diagram.Extension))]
- /// <summary>
- ///   VML Extension Handling Behavior
- /// </summary>
  [OpenXmlElement(typeof(DXVO.Diagram))]
  public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
@@ -20,9 +17,6 @@ public partial class Diagram : ModelElement<DXVO.Diagram>
  ///   Diagram Style Options
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Diagram.Style))]
- /// <summary>
- ///   Diagram Style Options
- /// </summary>
  [OpenXmlElement(typeof(DXVO.Diagram))]
  public Int64? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
 
@@ -31,9 +25,6 @@ public partial class Diagram : ModelElement<DXVO.Diagram>
  ///   Diagram Automatic Format
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Diagram.AutoFormat))]
- /// <summary>
- ///   Diagram Automatic Format
- /// </summary>
  [OpenXmlElement(typeof(DXVO.Diagram))]
  public bool? AutoFormat { get => _AutoFormat; set => UpdateField(ref _AutoFormat, value, nameof(AutoFormat)); }
 
@@ -42,9 +33,6 @@ public partial class Diagram : ModelElement<DXVO.Diagram>
  ///   Diagram Reverse Direction
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Diagram.Reverse))]
- /// <summary>
- ///   Diagram Reverse Direction
- /// </summary>
  [OpenXmlElement(typeof(DXVO.Diagram))]
  public bool? Reverse { get => _Reverse; set => UpdateField(ref _Reverse, value, nameof(Reverse)); }
 
@@ -53,9 +41,6 @@ public partial class Diagram : ModelElement<DXVO.Diagram>
  ///   Diagram Automatic Layout
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Diagram.AutoLayout))]
- /// <summary>
- ///   Diagram Automatic Layout
- /// </summary>
  [OpenXmlElement(typeof(DXVO.Diagram))]
  public bool? AutoLayout { get => _AutoLayout; set => UpdateField(ref _AutoLayout, value, nameof(AutoLayout)); }
 
@@ -64,9 +49,6 @@ public partial class Diagram : ModelElement<DXVO.Diagram>
  ///   Diagram Layout X Scale
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Diagram.ScaleX))]
- /// <summary>
- ///   Diagram Layout X Scale
- /// </summary>
  [OpenXmlElement(typeof(DXVO.Diagram))]
  public Int64? ScaleX { get => _ScaleX; set => UpdateField(ref _ScaleX, value, nameof(ScaleX)); }
 
@@ -75,9 +57,6 @@ public partial class Diagram : ModelElement<DXVO.Diagram>
  ///   Diagram Layout Y Scale
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Diagram.ScaleY))]
- /// <summary>
- ///   Diagram Layout Y Scale
- /// </summary>
  [OpenXmlElement(typeof(DXVO.Diagram))]
  public Int64? ScaleY { get => _ScaleY; set => UpdateField(ref _ScaleY, value, nameof(ScaleY)); }
 
@@ -86,9 +65,6 @@ public partial class Diagram : ModelElement<DXVO.Diagram>
  ///   Diagram Font Size
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Diagram.FontSize))]
- /// <summary>
- ///   Diagram Font Size
- /// </summary>
  [OpenXmlElement(typeof(DXVO.Diagram))]
  public Int64? FontSize { get => _FontSize; set => UpdateField(ref _FontSize, value, nameof(FontSize)); }
 
@@ -97,9 +73,6 @@ public partial class Diagram : ModelElement<DXVO.Diagram>
  ///   Diagram Layout Extents
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Diagram.ConstrainBounds))]
- /// <summary>
- ///   Diagram Layout Extents
- /// </summary>
  [OpenXmlElement(typeof(DXVO.Diagram))]
  public string? ConstrainBounds { get => _ConstrainBounds; set => UpdateField(ref _ConstrainBounds, value, nameof(ConstrainBounds)); }
 
@@ -108,9 +81,6 @@ public partial class Diagram : ModelElement<DXVO.Diagram>
  ///   Diagram Base Font Size
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Diagram.BaseTextScale))]
- /// <summary>
- ///   Diagram Base Font Size
- /// </summary>
  [OpenXmlElement(typeof(DXVO.Diagram))]
  public Int64? BaseTextScale { get => _BaseTextScale; set => UpdateField(ref _BaseTextScale, value, nameof(BaseTextScale)); }
 
@@ -119,9 +89,6 @@ public partial class Diagram : ModelElement<DXVO.Diagram>
  ///   Diagram Relationship Table.
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Diagram.RelationTable))]
- /// <summary>
- ///   Diagram Relationship Table.
- /// </summary>
  [OpenXmlElement(typeof(DXVO.Diagram))]
  public RelationTable? RelationTable { get => _RelationTable; set => UpdateField(ref _RelationTable, value, nameof(RelationTable)); }
 

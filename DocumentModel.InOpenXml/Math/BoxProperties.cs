@@ -11,9 +11,6 @@ public partial class BoxProperties : ModelElement<DXM.BoxProperties>
  ///   Operator Emulator.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.BoxProperties.OperatorEmulator))]
- /// <summary>
- ///   Operator Emulator.
- /// </summary>
  [OpenXmlElement(typeof(DXM.BoxProperties))]
  public bool? OperatorEmulator { get => _OperatorEmulator; set => UpdateField(ref _OperatorEmulator, value, nameof(OperatorEmulator)); }
 
@@ -22,9 +19,6 @@ public partial class BoxProperties : ModelElement<DXM.BoxProperties>
  ///   No Break.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.BoxProperties.NoBreak))]
- /// <summary>
- ///   No Break.
- /// </summary>
  [OpenXmlElement(typeof(DXM.BoxProperties))]
  public bool? NoBreak { get => _NoBreak; set => UpdateField(ref _NoBreak, value, nameof(NoBreak)); }
 
@@ -33,9 +27,6 @@ public partial class BoxProperties : ModelElement<DXM.BoxProperties>
  ///   Differential.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.BoxProperties.Differential))]
- /// <summary>
- ///   Differential.
- /// </summary>
  [OpenXmlElement(typeof(DXM.BoxProperties))]
  public bool? Differential { get => _Differential; set => UpdateField(ref _Differential, value, nameof(Differential)); }
 
@@ -44,9 +35,6 @@ public partial class BoxProperties : ModelElement<DXM.BoxProperties>
  ///   Break.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.BoxProperties.Break))]
- /// <summary>
- ///   Break.
- /// </summary>
  [OpenXmlElement(typeof(DXM.BoxProperties))]
  public Break? Break { get => _Break; set => UpdateField(ref _Break, value, nameof(Break)); }
 
@@ -55,9 +43,6 @@ public partial class BoxProperties : ModelElement<DXM.BoxProperties>
  ///   Alignment.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.BoxProperties.Alignment))]
- /// <summary>
- ///   Alignment.
- /// </summary>
  [OpenXmlElement(typeof(DXM.BoxProperties))]
  public bool? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
 
@@ -66,9 +51,6 @@ public partial class BoxProperties : ModelElement<DXM.BoxProperties>
  ///   Specifies formatting of box object argument.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.BoxProperties.ControlProperties))]
- /// <summary>
- ///   Specifies formatting of box object argument.
- /// </summary>
  [OpenXmlElement(typeof(DXM.BoxProperties))]
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
 

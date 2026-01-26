@@ -9,9 +9,6 @@ public partial class BackgroundRemoval : ModelElement<DXO10D.BackgroundRemoval>
  /// Gets or sets the top boundary of the marquee used for background removal.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.BackgroundRemoval.MarqueeTop))]
- /// <summary>
- /// Gets or sets the top boundary of the marquee used for background removal.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.BackgroundRemoval))]
  public Int32? MarqueeTop { get => _MarqueeTop; set => UpdateField(ref _MarqueeTop, value, nameof(MarqueeTop)); }
 
@@ -20,9 +17,6 @@ public partial class BackgroundRemoval : ModelElement<DXO10D.BackgroundRemoval>
  /// Gets or sets the bottom boundary of the marquee used for background removal.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.BackgroundRemoval.MarqueeBottom))]
- /// <summary>
- /// Gets or sets the bottom boundary of the marquee used for background removal.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.BackgroundRemoval))]
  public Int32? MarqueeBottom { get => _MarqueeBottom; set => UpdateField(ref _MarqueeBottom, value, nameof(MarqueeBottom)); }
 
@@ -31,9 +25,6 @@ public partial class BackgroundRemoval : ModelElement<DXO10D.BackgroundRemoval>
  /// Gets or sets the left boundary of the marquee used for background removal.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.BackgroundRemoval.MarqueeLeft))]
- /// <summary>
- /// Gets or sets the left boundary of the marquee used for background removal.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.BackgroundRemoval))]
  public Int32? MarqueeLeft { get => _MarqueeLeft; set => UpdateField(ref _MarqueeLeft, value, nameof(MarqueeLeft)); }
 
@@ -42,9 +33,6 @@ public partial class BackgroundRemoval : ModelElement<DXO10D.BackgroundRemoval>
  /// Gets or sets the right boundary of the marquee used for background removal.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.BackgroundRemoval.MarqueeRight))]
- /// <summary>
- /// Gets or sets the right boundary of the marquee used for background removal.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.BackgroundRemoval))]
  public Int32? MarqueeRight { get => _MarqueeRight; set => UpdateField(ref _MarqueeRight, value, nameof(MarqueeRight)); }
 

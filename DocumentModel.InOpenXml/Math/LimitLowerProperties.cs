@@ -9,9 +9,6 @@ public partial class LimitLowerProperties : ModelElement<DXM.LimitLowerPropertie
  ///   ControlProperties.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.LimitLowerProperties.ControlProperties))]
- /// <summary>
- ///   ControlProperties.
- /// </summary>
  [OpenXmlElement(typeof(DXM.LimitLowerProperties))]
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
 

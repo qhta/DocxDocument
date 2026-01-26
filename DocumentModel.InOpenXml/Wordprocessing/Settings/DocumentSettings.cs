@@ -78,12 +78,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Page layout")]
  [OpenXmlProperty(nameof(DXW.Settings.AlignBorderAndEdges))]
- /// <summary>
- /// Specifies that paragraph and table borders shall be adjusted to align with page borders if spacing is less than or equal to 10.5 points.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:alignBordersAndEdges
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? AlignBorderAndEdges { get => _AlignBorderAndEdges; set => UpdateField(ref _AlignBorderAndEdges, value, nameof(AlignBorderAndEdges)); }
 
@@ -195,12 +189,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Page layout")]
  [OpenXmlProperty(nameof(DXW.Settings.BordersDoNotSurroundFooter))]
- /// <summary>
- /// Specifies that the page border should not surround contents of the footer.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:bordersDoNotSurroundFooter
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? BordersDoNotSurroundFooter { get => _BordersDoNotSurroundFooter; set => UpdateField(ref _BordersDoNotSurroundFooter, value, nameof(BordersDoNotSurroundFooter)); }
 
@@ -213,12 +201,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Page layout")]
  [OpenXmlProperty(nameof(DXW.Settings.BordersDoNotSurroundHeader))]
- /// <summary>
- /// Specifies that the page border should not surround contents of the header.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:bordersDoNotSurroundHeader
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? BordersDoNotSurroundHeader { get => _BordersDoNotSurroundHeader; set => UpdateField(ref _BordersDoNotSurroundHeader, value, nameof(BordersDoNotSurroundHeader)); }
 
@@ -374,12 +356,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("View")]
  [OpenXmlProperty(nameof(DXW.Settings.DisplayBackgroundShape))]
- /// <summary>
- /// Specifies whether background images and colors are displayed in print layout view.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:displayBackgroundShape
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? DisplayBackgroundShape { get => _DisplayBackgroundShape; set => UpdateField(ref _DisplayBackgroundShape, value, nameof(DisplayBackgroundShape)); }
 
@@ -469,12 +445,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("View")]
  [OpenXmlProperty(nameof(DXW.Settings.DoNotDisplayPageBoundaries))]
- /// <summary>
- /// Specifies whether header and footer contents are displayed in print layout view.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:doNotDisplayPageBoundaries
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? DoNotDisplayPageBoundaries { get => _DoNotDisplayPageBoundaries; set => UpdateField(ref _DoNotDisplayPageBoundaries, value, nameof(DoNotDisplayPageBoundaries)); }
 
@@ -608,12 +578,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Fonts")]
  [OpenXmlProperty(nameof(DXW.Settings.EmbedSystemFonts))]
- /// <summary>
- /// Specifies that system fonts are embedded when font embedding is enabled.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:embedSystemFonts
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? EmbedSystemFonts { get => _EmbedSystemFonts; set => UpdateField(ref _EmbedSystemFonts, value, nameof(EmbedSystemFonts)); }
 
@@ -626,12 +590,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Fonts")]
  [OpenXmlProperty(nameof(DXW.Settings.EmbedTrueTypeFonts))]
- /// <summary>
- /// Specifies that fonts in use are embedded when the document is saved.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:embedTrueTypeFonts
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? EmbedTrueTypeFonts { get => _EmbedTrueTypeFonts; set => UpdateField(ref _EmbedTrueTypeFonts, value, nameof(EmbedTrueTypeFonts)); }
 
@@ -693,12 +651,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Printing")]
  [OpenXmlProperty(nameof(DXW.Settings.GutterAtTop))]
- /// <summary>
- /// Specifies that the gutter is positioned at the top of the document's pages.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:gutterAtTop
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? GutterAtTop { get => _GutterAtTop; set => UpdateField(ref _GutterAtTop, value, nameof(GutterAtTop)); }
 
@@ -719,12 +671,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Proofing")]
  [OpenXmlProperty(nameof(DXW.Settings.HideGrammaticalErrors))]
- /// <summary>
- /// Specifies whether a visual cue should be displayed around grammatical errors.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:hideGrammaticalErrors
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? HideGrammaticalErrors { get => _HideGrammaticalErrors; set => UpdateField(ref _HideGrammaticalErrors, value, nameof(HideGrammaticalErrors)); }
 
@@ -737,12 +683,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Proofing")]
  [OpenXmlProperty(nameof(DXW.Settings.HideSpellingErrors))]
- /// <summary>
- /// Specifies whether a visual cue should be displayed around spelling errors.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:hideSpellingErrors
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? HideSpellingErrors { get => _HideSpellingErrors; set => UpdateField(ref _HideSpellingErrors, value, nameof(HideSpellingErrors)); }
 
@@ -855,12 +795,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Printing")]
  [OpenXmlProperty(nameof(DXW.Settings.PrintFormsData))]
- /// <summary>
- /// Specifies that only WordprocessingML form fields are printed, suppressing all other content.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:printFormsData
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? PrintFormsData { get => _PrintFormsData; set => UpdateField(ref _PrintFormsData, value, nameof(PrintFormsData)); }
 
@@ -873,12 +807,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Printing")]
  [OpenXmlProperty(nameof(DXW.Settings.PrintFractionalCharacterWidth))]
- /// <summary>
- /// Specifies that fractional character widths are used when printing the document.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:printFractionalCharacterWidth
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? PrintFractionalCharacterWidth { get => _PrintFractionalCharacterWidth; set => UpdateField(ref _PrintFractionalCharacterWidth, value, nameof(PrintFractionalCharacterWidth)); }
 
@@ -891,12 +819,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Printing")]
  [OpenXmlProperty(nameof(DXW.Settings.PrintPostScriptOverText))]
- /// <summary>
- /// Specifies that PostScript codes are included in foreground with printed data.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:printPostScriptOverText
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? PrintPostScriptOverText { get => _PrintPostScriptOverText; set => UpdateField(ref _PrintPostScriptOverText, value, nameof(PrintPostScriptOverText)); }
 
@@ -939,12 +861,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Protection")]
  [OpenXmlProperty(nameof(DXW.Settings.RemoveDateAndTime))]
- /// <summary>
- /// Specifies that date and time information is removed from all annotations when the document is saved.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:removeDateAndTime
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? RemoveDateAndTime { get => _RemoveDateAndTime; set => UpdateField(ref _RemoveDateAndTime, value, nameof(RemoveDateAndTime)); }
 
@@ -957,12 +873,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Protection")]
  [OpenXmlProperty(nameof(DXW.Settings.RemovePersonalInformation))]
- /// <summary>
- /// Specifies that all personal information of document authors is removed upon saving.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:removePersonalInformation
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? RemovePersonalInformation { get => _RemovePersonalInformation; set => UpdateField(ref _RemovePersonalInformation, value, nameof(RemovePersonalInformation)); }
 
@@ -986,12 +896,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Forms")]
  [OpenXmlProperty(nameof(DXW.Settings.SaveFormsData))]
- /// <summary>
- /// Specifies that only WordprocessingML form fields are saved in a comma-delimited text format.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:saveFormsData
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public bool? SaveFormsData { get => _SaveFormsData; set => UpdateField(ref _SaveFormsData, value, nameof(SaveFormsData)); }
 
@@ -1197,12 +1101,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("View")]
  [OpenXmlProperty(nameof(DXW.Settings.View))]
- /// <summary>
- /// Specifies the manner in which the document should be displayed when opened by an application.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:view
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public ViewKind? View { get => _View; set => UpdateField(ref _View, value, nameof(View)); }
 
@@ -1215,12 +1113,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("Protection")]
  [OpenXmlProperty(nameof(DXW.Settings.WriteProtection))]
- /// <summary>
- /// Specifies the write protection settings applied to the document.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:writeProtection
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public WriteProtection? WriteProtection { get => _WriteProtection; set => UpdateField(ref _WriteProtection, value, nameof(WriteProtection)); }
 
@@ -1233,12 +1125,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("View")]
  [OpenXmlProperty(nameof(DXW.Settings.Zoom))]
- /// <summary>
- /// Specifies the magnification level to be applied when the document is displayed.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:zoom
- /// </remarks>
  [OpenXmlElement(typeof(DXW.Settings))]
  public Zoom? Zoom { get => _Zoom; set => UpdateField(ref _Zoom, value, nameof(Zoom)); }
 

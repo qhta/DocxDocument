@@ -10,9 +10,6 @@ public partial class CheckBoxSymbolType : ModelElement<DXO10W.CheckBoxSymbolType
  /// Font used to display the checkbox symbol.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.CheckBoxSymbolType.Font))]
- /// <summary>
- /// Font used to display the checkbox symbol.
- /// </summary>
  [OpenXmlElement(typeof(DXO10W.CheckBoxSymbolType))]
  public string? Font { get => _Font; set => UpdateField(ref _Font, value, nameof(Font)); }
 
@@ -21,9 +18,6 @@ public partial class CheckBoxSymbolType : ModelElement<DXO10W.CheckBoxSymbolType
  /// Symbol value (as a hexadecimal character) used for the checkbox.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.CheckBoxSymbolType.Val))]
- /// <summary>
- /// Symbol value (as a hexadecimal character) used for the checkbox.
- /// </summary>
  [OpenXmlElement(typeof(DXO10W.CheckBoxSymbolType))]
  public HexChar? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 

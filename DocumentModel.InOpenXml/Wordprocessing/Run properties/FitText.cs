@@ -10,9 +10,6 @@ public partial class FitText : ModelElement<DXW.FitText>
  /// Identifier for the fit text run, used to distinguish multiple fit text effects within the same document.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FitText.Id))]
- /// <summary>
- /// Identifier for the fit text run, used to distinguish multiple fit text effects within the same document.
- /// </summary>
  [OpenXmlElement(typeof(DXW.FitText))]
  public Int32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 

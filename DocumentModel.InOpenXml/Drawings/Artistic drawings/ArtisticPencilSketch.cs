@@ -16,9 +16,6 @@ public partial class ArtisticPencilSketch : ModelElement<DXO10D.ArtisticPencilSk
  /// Pressure applied in the pencil sketch effect, influencing the intensity and darkness of the strokes.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticPencilSketch.Pressure))]
- /// <summary>
- /// Pressure applied in the pencil sketch effect, influencing the intensity and darkness of the strokes.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.ArtisticPencilSketch))]
  public Int32? Pressure { get => _Pressure; set => UpdateField(ref _Pressure, value, nameof(Pressure)); }
 

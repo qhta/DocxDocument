@@ -10,9 +10,6 @@ public partial class GroupChar : ModelElement<DXM.GroupChar>, ICommonMathContent
  ///   Group-Character Properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.GroupChar.GroupCharProperties))]
- /// <summary>
- ///   Group-Character Properties.
- /// </summary>
  [OpenXmlElement(typeof(DXM.GroupChar))]
  public GroupCharProperties? GroupCharProperties { get => _GroupCharProperties; set => UpdateField(ref _GroupCharProperties, value, nameof(GroupCharProperties)); }
 

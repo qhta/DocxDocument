@@ -9,9 +9,6 @@ public partial class Formula : ModelElement<DXV.Formula>
  ///   Equation
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Formula.Equation))]
- /// <summary>
- ///   Equation
- /// </summary>
  [OpenXmlElement(typeof(DXV.Formula))]
  public string? Equation { get => _Equation; set => UpdateField(ref _Equation, value, nameof(Equation)); }
 

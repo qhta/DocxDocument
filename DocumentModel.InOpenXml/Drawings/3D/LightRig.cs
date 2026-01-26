@@ -9,9 +9,6 @@ public partial class LightRig : ModelElement<DXD.LightRig>
  ///   Preset type of the light rig.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LightRig.Rig))]
- /// <summary>
- ///   Preset type of the light rig.
- /// </summary>
  [OpenXmlElement(typeof(DXD.LightRig))]
  public LightRigKind? Rig { get => _Rig; set => UpdateField(ref _Rig, value, nameof(Rig)); }
 
@@ -20,9 +17,6 @@ public partial class LightRig : ModelElement<DXD.LightRig>
  ///   Direction of the light rig.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LightRig.Direction))]
- /// <summary>
- ///   Direction of the light rig.
- /// </summary>
  [OpenXmlElement(typeof(DXD.LightRig))]
  public LightRigDirectionKind? Direction { get => _Direction; set => UpdateField(ref _Direction, value, nameof(Direction)); }
 
@@ -31,9 +25,6 @@ public partial class LightRig : ModelElement<DXD.LightRig>
  ///   Rotation settings for the light rig.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LightRig.Rotation))]
- /// <summary>
- ///   Rotation settings for the light rig.
- /// </summary>
  [OpenXmlElement(typeof(DXD.LightRig))]
  public Rotation? Rotation { get => _Rotation; set => UpdateField(ref _Rotation, value, nameof(Rotation)); }
 

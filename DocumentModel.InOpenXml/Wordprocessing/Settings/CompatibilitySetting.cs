@@ -10,9 +10,6 @@ public partial class CompatibilitySetting : ModelElement<DXW.CompatibilitySettin
  /// FontName of the compatibility setting, specifying the type of compatibility option.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.CompatibilitySetting.Name))]
- /// <summary>
- /// FontName of the compatibility setting, specifying the type of compatibility option.
- /// </summary>
  [OpenXmlElement(typeof(DXW.CompatibilitySetting))]
  public CompatSettingNameKind? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
@@ -28,9 +25,6 @@ public partial class CompatibilitySetting : ModelElement<DXW.CompatibilitySettin
  /// Value of the compatibility setting, specifying the configuration or option value.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.CompatibilitySetting.Val))]
- /// <summary>
- /// Value of the compatibility setting, specifying the configuration or option value.
- /// </summary>
  [OpenXmlElement(typeof(DXW.CompatibilitySetting))]
  public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 

@@ -25,9 +25,6 @@ public partial class NonVisualPicturePropertiesExtension : ModelElement<DXD.NonV
  /// Gets or sets the URI associated with this instance.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.NonVisualPicturePropertiesExtension.Uri))]
- /// <summary>
- /// Gets or sets the URI associated with this instance.
- /// </summary>
  [OpenXmlElement(typeof(DXD.NonVisualPicturePropertiesExtension))]
  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
 

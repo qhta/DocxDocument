@@ -13,9 +13,6 @@ public partial class Paragraph : ModelElement<DXM.Paragraph>, ICommonMathContent
  ///   Office Math Paragraph Properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.Paragraph.ParagraphProperties))]
- /// <summary>
- ///   Office Math Paragraph Properties.
- /// </summary>
  [OpenXmlElement(typeof(DXM.Paragraph))]
  public ParagraphProperties? ParagraphProperties { get => _ParagraphProperties; set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties)); }
 

@@ -16,9 +16,6 @@ public partial class ConnectorLockingExtension : ModelElement<DXD.ConnectorLocki
  /// List of extension elements.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ConnectorLockingExtension.Uri))]
- /// <summary>
- /// List of extension elements.
- /// </summary>
  [OpenXmlElement(typeof(DXD.ConnectorLockingExtension))]
  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
 

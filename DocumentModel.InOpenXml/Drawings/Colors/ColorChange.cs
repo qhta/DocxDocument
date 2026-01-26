@@ -9,9 +9,6 @@ public partial class ColorChange : ModelElement<DXD.ColorChange>
  /// Consider alpha values.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ColorChange.UseAlpha))]
- /// <summary>
- /// Consider alpha values.
- /// </summary>
  [OpenXmlElement(typeof(DXD.ColorChange))]
  public bool? UseAlpha { get => _UseAlpha; set => UpdateField(ref _UseAlpha, value, nameof(UseAlpha)); }
 
@@ -20,9 +17,6 @@ public partial class ColorChange : ModelElement<DXD.ColorChange>
  /// Change color from.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ColorChange.ColorFrom))]
- /// <summary>
- /// Change color from.
- /// </summary>
  [OpenXmlElement(typeof(DXD.ColorChange))]
  public Color? ColorFrom { get => _ColorFrom; set => UpdateField(ref _ColorFrom, value, nameof(ColorFrom)); }
 
@@ -31,9 +25,6 @@ public partial class ColorChange : ModelElement<DXD.ColorChange>
  /// Change color to.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ColorChange.ColorTo))]
- /// <summary>
- /// Change color to.
- /// </summary>
  [OpenXmlElement(typeof(DXD.ColorChange))]
  public Color? ColorTo { get => _ColorTo; set => UpdateField(ref _ColorTo, value, nameof(ColorTo)); }
 

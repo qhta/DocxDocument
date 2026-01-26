@@ -6,33 +6,27 @@ namespace DocumentModel.Math;
 [OpenXmlType(typeof(DXM.MathFunction))]
 public partial class Function : ModelElement<DXM.MathFunction>, ICommonMathContent
 {
-    /// <summary>
-    ///   Function Properties.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXM.MathFunction.FunctionProperties))]
-    /// <summary>
-    ///   Function Properties.
-    /// </summary>
-    [OpenXmlElement(typeof(DXM.MathFunction))]
-    public FunctionProperties? FunctionProperties { get => _FunctionProperties; set => UpdateField(ref _FunctionProperties, value, nameof(FunctionProperties)); }
+ /// <summary>
+ ///   Function Properties.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXM.MathFunction.FunctionProperties))]
+ [OpenXmlElement(typeof(DXM.MathFunction))]
+ public FunctionProperties? FunctionProperties { get => _FunctionProperties; set => UpdateField(ref _FunctionProperties, value, nameof(FunctionProperties)); }
 
-    private FunctionProperties? _FunctionProperties;
-    /// <summary>
-    ///   Function FontName.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXM.MathFunction.FunctionName))]
-    /// <summary>
-    ///   Function FontName.
-    /// </summary>
-    [OpenXmlElement(typeof(DXM.MathFunction))]
-    public FunctionName? FunctionName { get => _FunctionName; set => UpdateField(ref _FunctionName, value, nameof(FunctionName)); }
+ private FunctionProperties? _FunctionProperties;
+ /// <summary>
+ ///   Function FontName.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXM.MathFunction.FunctionName))]
+ [OpenXmlElement(typeof(DXM.MathFunction))]
+ public FunctionName? FunctionName { get => _FunctionName; set => UpdateField(ref _FunctionName, value, nameof(FunctionName)); }
 
-    private FunctionName? _FunctionName;
-    /// <summary>
-    ///   Base (Argument).
-    /// </summary>
-    [OpenXmlElement(typeof(DXM.MathFunction))]
-    public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
+ private FunctionName? _FunctionName;
+ /// <summary>
+ ///   Base (Argument).
+ /// </summary>
+ [OpenXmlElement(typeof(DXM.MathFunction))]
+ public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
 
-    private Argument? _Argument;
+ private Argument? _Argument;
 }

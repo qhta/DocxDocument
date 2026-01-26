@@ -10,9 +10,6 @@ public partial class DocumentBackground : ModelElement<DXW.DocumentBackground>
  /// Color for the background of the document, specifying the fill color applied to all pages.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentBackground.Color))]
- /// <summary>
- /// Color for the background of the document, specifying the fill color applied to all pages.
- /// </summary>
  [OpenXmlElement(typeof(DXW.DocumentBackground))]
  public Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
 
@@ -21,9 +18,6 @@ public partial class DocumentBackground : ModelElement<DXW.DocumentBackground>
  /// Background element, specifying additional background properties such as images or patterns.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentBackground.Background))]
- /// <summary>
- /// Background element, specifying additional background properties such as images or patterns.
- /// </summary>
  [OpenXmlElement(typeof(DXW.DocumentBackground))]
  public DMV.Background? Background { get => _Background; set => UpdateField(ref _Background, value, nameof(Background)); }
 

@@ -42,9 +42,6 @@ public partial class ArgumentProperties : ModelElement<DXM.ArgumentProperties>
  ///   Argument Size.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.ArgumentProperties.ArgumentSize))]
- /// <summary>
- ///   Argument Size.
- /// </summary>
  [OpenXmlElement(typeof(DXM.ArgumentProperties))]
  public Int32? ArgumentSize { get => _ArgumentSize; set => UpdateField(ref _ArgumentSize, value, nameof(ArgumentSize)); }
 
