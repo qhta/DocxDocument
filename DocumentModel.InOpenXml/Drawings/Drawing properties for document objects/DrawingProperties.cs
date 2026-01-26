@@ -1,9 +1,8 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Collects drawing properties for a document object.
 /// </summary>
-public class DrawingProperties: ElementCollection<IDrawingProperty>
+[OpenXmlType(typeof(IDrawingProperty))]
+public class DrawingProperties : ElementCollection<IDrawingProperty>
 {
-
 }

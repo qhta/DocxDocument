@@ -1,8 +1,8 @@
-﻿namespace DocumentModel.Wordprocessing;
-
+namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Collection of NumberingInstance elements
 /// </summary>
-public class NumberingInstances: ElementCollection<NumberingInstance>
+[OpenXmlType(typeof(NumberingInstance))]
+public class NumberingInstances : ElementCollection<NumberingInstance>
 {
 }

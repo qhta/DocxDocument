@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="../AnalyzeModelTypeMapping/AnalyzeModelTypeMapping.csproj" />
   <Project Path="../AutoEdit/AutoEdit.csproj" />
   <Project Path="../DocumentModel.BaseConverters.Test/DocumentModel.BaseConverters.Test.csproj" Id="5e745e67-8641-4f7b-8fe5-f8b94a192bd3" />
   <Project Path="../DocumentModel.BaseConverters/DocumentModel.BaseConverters.csproj" />

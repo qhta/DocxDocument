@@ -1,8 +1,8 @@
-﻿namespace DocumentModel.Wordprocessing;
-
+namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Collection of AbstractNum elements.
 /// </summary>
-public class AbstractNums: ElementCollection<AbstractNum>
+[OpenXmlType(typeof(AbstractNum))]
+public class AbstractNums : ElementCollection<AbstractNum>
 {
 }

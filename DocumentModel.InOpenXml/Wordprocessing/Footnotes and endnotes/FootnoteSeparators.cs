@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
-
-  /// <summary>
-  /// Represents a collection of footnote separator references in a WordprocessingML document.
-  /// This class provides access to and management of <see cref="FootnoteSeparator"/> objects, enabling advanced organization and referencing of footnote separators for visual separation and formatting of footnote content.
-  /// </summary>
-  public class FootnoteSeparators: ElementCollection<FootnoteSeparator>
-  {
-    
-  }
+/// <summary>
+/// Represents a collection of footnote separator references in a WordprocessingML document.
+/// This class provides access to and management of <see cref = "FootnoteSeparator"/> objects, enabling advanced organization and referencing of footnote separators for visual separation and formatting of footnote content.
+/// </summary>
+[OpenXmlType(typeof(FootnoteSeparator))]
+public class FootnoteSeparators : ElementCollection<FootnoteSeparator>
+{
+}

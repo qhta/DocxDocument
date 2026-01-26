@@ -1,6 +1,5 @@
-﻿namespace DocumentModel.Wordprocessing;
-
-public class ParagraphContentCollection: ElementCollection<IParagraphContent>
+namespace DocumentModel.Wordprocessing;
+[OpenXmlType(typeof(IParagraphContent))]
+public class ParagraphContentCollection : ElementCollection<IParagraphContent>
 {
-  
 }

@@ -5,14 +5,15 @@ namespace DocumentModel.Math;
 ///   This element specifies the degree in the mathematical radical. This element is optional. 
 ///   When omitted, the square root function, as in √x, is assumed.
 /// </summary>
+[OpenXmlType(typeof(DXM.Degree))]
 public partial class Degree : OfficeMathArgumentType<DXM.Degree>
 {
-  /// <summary>
-  /// Specifies properties of the degree argument.
-  /// </summary>
-  public ArgumentProperties? ArgumentProperties { get; set; }
-  /// <summary>
-  /// Specifies formatting of degree argument.
-  /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+ /// <summary>
+ /// Specifies properties of the degree argument.
+ /// </summary>
+ public ArgumentProperties? ArgumentProperties { get; set; }
+ /// <summary>
+ /// Specifies formatting of degree argument.
+ /// </summary>
+ public ControlProperties? ControlProperties { get; set; }
 }

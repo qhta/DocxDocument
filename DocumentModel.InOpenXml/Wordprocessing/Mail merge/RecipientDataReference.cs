@@ -1,6 +1,5 @@
-﻿namespace DocumentModel.Wordprocessing;
-
-public class RecipientDataReference: RelationshipType<DXW.RecipientDataReference>
+namespace DocumentModel.Wordprocessing;
+[OpenXmlType(typeof(DXW.RecipientDataReference))]
+public class RecipientDataReference : RelationshipType<DXW.RecipientDataReference>
 {
-  
 }

@@ -1,5 +1,4 @@
 namespace DocumentModel;
-
 /// <summary>
 /// Represents a collection of classification extensions that define custom metadata classifications
 /// for Office documents. Classification extensions enable organizations to implement document classification
@@ -30,7 +29,7 @@ namespace DocumentModel;
 /// </list>
 /// </para>
 /// <para>
-/// Each <see cref="ClassificationExtension"/> in the collection typically defines:
+/// Each <see cref = "ClassificationExtension"/> in the collection typically defines:
 /// <list type="bullet">
 /// <item><description><b>Classification identifier:</b> Unique ID for the classification scheme or label</description></item>
 /// <item><description><b>Display name:</b> User-friendly label for the classification</description></item>
@@ -66,8 +65,7 @@ namespace DocumentModel;
 /// </list>
 /// </para>
 /// </remarks>
-public class ClassificationExtensionList: ModelElementCollection<ClassificationExtension, 
-  DXO21MLMD.ClassificationExtensionList, DXO21MLMD.ClassificationExtension>
+[OpenXmlType(typeof(ClassificationExtension))]
+public class ClassificationExtensionList : ModelElementCollection<ClassificationExtension, DXO21MLMD.ClassificationExtensionList, DXO21MLMD.ClassificationExtension>
 {
-
 }

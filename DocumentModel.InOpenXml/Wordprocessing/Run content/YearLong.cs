@@ -1,6 +1,5 @@
-﻿namespace DocumentModel.Wordprocessing;
-
-public class YearLong: RunDate<DXW.YearLong>
+namespace DocumentModel.Wordprocessing;
+[OpenXmlType(typeof(DXW.YearLong))]
+public class YearLong : RunDate<DXW.YearLong>
 {
-  
 }
