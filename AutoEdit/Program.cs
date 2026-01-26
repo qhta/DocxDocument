@@ -29,7 +29,8 @@ public static class Program
             //AddPrivateFieldsWithUpdate.Run(filePath);
             //AddOpenXmlPropertyAttribute.Run(filePath);
             //AddOpenXmlElementAttribute.Run(filePath);
-            AddOpenXmlTypeAttribute.Run(filePath);
+            //AddOpenXmlTypeAttribute.Run(filePath);
+            RemoveDuplicateDocComments.Run(filePath);
           }
         }
       }

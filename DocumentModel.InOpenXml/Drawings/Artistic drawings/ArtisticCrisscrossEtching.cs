@@ -16,9 +16,6 @@ public partial class ArtisticCrisscrossEtching : ModelElement<DXO10D.ArtisticCri
  /// Pressure applied in the crisscross etching effect, influencing the intensity of the etched lines.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticCrisscrossEtching.Pressure))]
- /// <summary>
- /// Pressure applied in the crisscross etching effect, influencing the intensity of the etched lines.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.ArtisticCrisscrossEtching))]
  public Int32? Pressure { get => _Pressure; set => UpdateField(ref _Pressure, value, nameof(Pressure)); }
 

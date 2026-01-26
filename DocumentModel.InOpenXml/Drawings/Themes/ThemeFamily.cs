@@ -14,48 +14,36 @@ namespace DocumentModel;
 [OpenXmlType(typeof(DXO13T.ThemeFamily))]
 public partial class ThemeFamily : ModelElement<DXO13T.ThemeFamily>
 {
-    /// <summary>
-    /// FontName of the theme family.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Name))]
-    /// <summary>
-    /// FontName of the theme family.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO13T.ThemeFamily))]
-    public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+ /// <summary>
+ /// FontName of the theme family.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Name))]
+ [OpenXmlElement(typeof(DXO13T.ThemeFamily))]
+ public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
-    private string? _Name;
-    /// <summary>
-    /// Unique identifier for the theme family.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Id))]
-    /// <summary>
-    /// Unique identifier for the theme family.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO13T.ThemeFamily))]
-    public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+ private string? _Name;
+ /// <summary>
+ /// Unique identifier for the theme family.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Id))]
+ [OpenXmlElement(typeof(DXO13T.ThemeFamily))]
+ public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
-    private string? _Id;
-    /// <summary>
-    /// Version identifier for the theme family.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Vid))]
-    /// <summary>
-    /// Version identifier for the theme family.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO13T.ThemeFamily))]
-    public string? Vid { get => _Vid; set => UpdateField(ref _Vid, value, nameof(Vid)); }
+ private string? _Id;
+ /// <summary>
+ /// Version identifier for the theme family.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Vid))]
+ [OpenXmlElement(typeof(DXO13T.ThemeFamily))]
+ public string? Vid { get => _Vid; set => UpdateField(ref _Vid, value, nameof(Vid)); }
 
-    private string? _Vid;
-    /// <summary>
-    /// OfficeArt extension metadata for the theme family.
-    /// </summary>
-    [OpenXmlProperty(nameof(DXO13T.ThemeFamily.OfficeArtExtensionList))]
-    /// <summary>
-    /// OfficeArt extension metadata for the theme family.
-    /// </summary>
-    [OpenXmlElement(typeof(DXO13T.ThemeFamily))]
-    public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
+ private string? _Vid;
+ /// <summary>
+ /// OfficeArt extension metadata for the theme family.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO13T.ThemeFamily.OfficeArtExtensionList))]
+ [OpenXmlElement(typeof(DXO13T.ThemeFamily))]
+ public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
 
-    private OfficeArtExtensionList? _OfficeArtExtensionList;
+ private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

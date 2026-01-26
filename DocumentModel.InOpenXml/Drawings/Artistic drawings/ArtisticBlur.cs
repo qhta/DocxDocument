@@ -9,9 +9,6 @@ public partial class ArtisticBlur : ModelElement<DXO10D.ArtisticBlur>
  /// Radius of the artistic blur effect.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticBlur.Radius))]
- /// <summary>
- /// Radius of the artistic blur effect.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.ArtisticBlur))]
  public Int32? Radius { get => _Radius; set => UpdateField(ref _Radius, value, nameof(Radius)); }
 

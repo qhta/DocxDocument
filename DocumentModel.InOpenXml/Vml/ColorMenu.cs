@@ -9,9 +9,6 @@ public partial class ColorMenu : ModelElement<DXVO.ColorMenu>
  ///   VML Extension Handling Behavior
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ColorMenu.Extension))]
- /// <summary>
- ///   VML Extension Handling Behavior
- /// </summary>
  [OpenXmlElement(typeof(DXVO.ColorMenu))]
  public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
@@ -20,9 +17,6 @@ public partial class ColorMenu : ModelElement<DXVO.ColorMenu>
  ///   Default stroke color
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ColorMenu.StrokeColor))]
- /// <summary>
- ///   Default stroke color
- /// </summary>
  [OpenXmlElement(typeof(DXVO.ColorMenu))]
  public string? StrokeColor { get => _StrokeColor; set => UpdateField(ref _StrokeColor, value, nameof(StrokeColor)); }
 
@@ -31,9 +25,6 @@ public partial class ColorMenu : ModelElement<DXVO.ColorMenu>
  ///   Default fill color
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ColorMenu.FillColor))]
- /// <summary>
- ///   Default fill color
- /// </summary>
  [OpenXmlElement(typeof(DXVO.ColorMenu))]
  public string? FillColor { get => _FillColor; set => UpdateField(ref _FillColor, value, nameof(FillColor)); }
 
@@ -42,9 +33,6 @@ public partial class ColorMenu : ModelElement<DXVO.ColorMenu>
  ///   Default shadow color
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ColorMenu.ShadowColor))]
- /// <summary>
- ///   Default shadow color
- /// </summary>
  [OpenXmlElement(typeof(DXVO.ColorMenu))]
  public string? ShadowColor { get => _ShadowColor; set => UpdateField(ref _ShadowColor, value, nameof(ShadowColor)); }
 
@@ -53,9 +41,6 @@ public partial class ColorMenu : ModelElement<DXVO.ColorMenu>
  ///   Default extrusion color
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ColorMenu.ExtrusionColor))]
- /// <summary>
- ///   Default extrusion color
- /// </summary>
  [OpenXmlElement(typeof(DXVO.ColorMenu))]
  public string? ExtrusionColor { get => _ExtrusionColor; set => UpdateField(ref _ExtrusionColor, value, nameof(ExtrusionColor)); }
 

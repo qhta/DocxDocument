@@ -9,9 +9,6 @@ public partial class HyperlinkType : ModelElement<DXD.HyperlinkType>, IExtendabl
  ///   Relationship identifier used to find the target UriString.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkType.Id))]
- /// <summary>
- ///   Relationship identifier used to find the target UriString.
- /// </summary>
  [OpenXmlElement(typeof(DXD.HyperlinkType))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
@@ -20,9 +17,6 @@ public partial class HyperlinkType : ModelElement<DXD.HyperlinkType>, IExtendabl
  ///   Stores the URL if it is invalid and a relationship cannot be created; r:id will point to a NULL relationship.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkType.InvalidUrl))]
- /// <summary>
- ///   Stores the URL if it is invalid and a relationship cannot be created; r:id will point to a NULL relationship.
- /// </summary>
  [OpenXmlElement(typeof(DXD.HyperlinkType))]
  public string? InvalidUrl { get => _InvalidUrl; set => UpdateField(ref _InvalidUrl, value, nameof(InvalidUrl)); }
 
@@ -31,9 +25,6 @@ public partial class HyperlinkType : ModelElement<DXD.HyperlinkType>, IExtendabl
  ///   Action to take when the hyperlink is activated; may require r:id to specify an action target.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkType.Action))]
- /// <summary>
- ///   Action to take when the hyperlink is activated; may require r:id to specify an action target.
- /// </summary>
  [OpenXmlElement(typeof(DXD.HyperlinkType))]
  public string? Action { get => _Action; set => UpdateField(ref _Action, value, nameof(Action)); }
 
@@ -42,9 +33,6 @@ public partial class HyperlinkType : ModelElement<DXD.HyperlinkType>, IExtendabl
  ///   Target frame for navigating to the UriString.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkType.TargetFrame))]
- /// <summary>
- ///   Target frame for navigating to the UriString.
- /// </summary>
  [OpenXmlElement(typeof(DXD.HyperlinkType))]
  public string? TargetFrame { get => _TargetFrame; set => UpdateField(ref _TargetFrame, value, nameof(TargetFrame)); }
 
@@ -53,9 +41,6 @@ public partial class HyperlinkType : ModelElement<DXD.HyperlinkType>, IExtendabl
  ///   Tooltip text for display.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkType.Tooltip))]
- /// <summary>
- ///   Tooltip text for display.
- /// </summary>
  [OpenXmlElement(typeof(DXD.HyperlinkType))]
  public string? Tooltip { get => _Tooltip; set => UpdateField(ref _Tooltip, value, nameof(Tooltip)); }
 
@@ -64,9 +49,6 @@ public partial class HyperlinkType : ModelElement<DXD.HyperlinkType>, IExtendabl
  ///   Indicates whether to add this UriString to the navigation history.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkType.History))]
- /// <summary>
- ///   Indicates whether to add this UriString to the navigation history.
- /// </summary>
  [OpenXmlElement(typeof(DXD.HyperlinkType))]
  public bool? History { get => _History; set => UpdateField(ref _History, value, nameof(History)); }
 
@@ -75,9 +57,6 @@ public partial class HyperlinkType : ModelElement<DXD.HyperlinkType>, IExtendabl
  ///   Indicates whether to highlight the hyperlink when a shape is clicked.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkType.HighlightClick))]
- /// <summary>
- ///   Indicates whether to highlight the hyperlink when a shape is clicked.
- /// </summary>
  [OpenXmlElement(typeof(DXD.HyperlinkType))]
  public bool? HighlightClick { get => _HighlightClick; set => UpdateField(ref _HighlightClick, value, nameof(HighlightClick)); }
 
@@ -86,9 +65,6 @@ public partial class HyperlinkType : ModelElement<DXD.HyperlinkType>, IExtendabl
  ///   Indicates whether to stop any previous sound when the hyperlink is clicked.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkType.EndSound))]
- /// <summary>
- ///   Indicates whether to stop any previous sound when the hyperlink is clicked.
- /// </summary>
  [OpenXmlElement(typeof(DXD.HyperlinkType))]
  public bool? EndSound { get => _EndSound; set => UpdateField(ref _EndSound, value, nameof(EndSound)); }
 
@@ -97,9 +73,6 @@ public partial class HyperlinkType : ModelElement<DXD.HyperlinkType>, IExtendabl
  ///   Sound to play when the hyperlink is activated.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkType.HyperlinkSound))]
- /// <summary>
- ///   Sound to play when the hyperlink is activated.
- /// </summary>
  [OpenXmlElement(typeof(DXD.HyperlinkType))]
  public EmbeddedWavAudioFileType? HyperlinkSound { get => _HyperlinkSound; set => UpdateField(ref _HyperlinkSound, value, nameof(HyperlinkSound)); }
 

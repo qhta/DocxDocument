@@ -9,9 +9,6 @@ public partial class TransformGroup : ModelElement<DXD.TransformGroup>
  ///   Rotation angle for the group transformation.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TransformGroup.Rotation))]
- /// <summary>
- ///   Rotation angle for the group transformation.
- /// </summary>
  [OpenXmlElement(typeof(DXD.TransformGroup))]
  public Int32? Rotation { get => _Rotation; set => UpdateField(ref _Rotation, value, nameof(Rotation)); }
 
@@ -20,9 +17,6 @@ public partial class TransformGroup : ModelElement<DXD.TransformGroup>
  ///   Indicates whether the group is flipped horizontally.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TransformGroup.HorizontalFlip))]
- /// <summary>
- ///   Indicates whether the group is flipped horizontally.
- /// </summary>
  [OpenXmlElement(typeof(DXD.TransformGroup))]
  public bool? HorizontalFlip { get => _HorizontalFlip; set => UpdateField(ref _HorizontalFlip, value, nameof(HorizontalFlip)); }
 
@@ -31,9 +25,6 @@ public partial class TransformGroup : ModelElement<DXD.TransformGroup>
  ///   Indicates whether the group is flipped vertically.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TransformGroup.VerticalFlip))]
- /// <summary>
- ///   Indicates whether the group is flipped vertically.
- /// </summary>
  [OpenXmlElement(typeof(DXD.TransformGroup))]
  public bool? VerticalFlip { get => _VerticalFlip; set => UpdateField(ref _VerticalFlip, value, nameof(VerticalFlip)); }
 
@@ -42,9 +33,6 @@ public partial class TransformGroup : ModelElement<DXD.TransformGroup>
  ///   Offset point for the group transformation.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TransformGroup.Offset))]
- /// <summary>
- ///   Offset point for the group transformation.
- /// </summary>
  [OpenXmlElement(typeof(DXD.TransformGroup))]
  public Point2DType? Offset { get => _Offset; set => UpdateField(ref _Offset, value, nameof(Offset)); }
 
@@ -53,9 +41,6 @@ public partial class TransformGroup : ModelElement<DXD.TransformGroup>
  ///   Extents (width and height) for the group transformation.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TransformGroup.Extents))]
- /// <summary>
- ///   Extents (width and height) for the group transformation.
- /// </summary>
  [OpenXmlElement(typeof(DXD.TransformGroup))]
  public PositiveSize2DType? Extents { get => _Extents; set => UpdateField(ref _Extents, value, nameof(Extents)); }
 
@@ -64,9 +49,6 @@ public partial class TransformGroup : ModelElement<DXD.TransformGroup>
  ///   Offset point for child elements within the group.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TransformGroup.ChildOffset))]
- /// <summary>
- ///   Offset point for child elements within the group.
- /// </summary>
  [OpenXmlElement(typeof(DXD.TransformGroup))]
  public Point2DType? ChildOffset { get => _ChildOffset; set => UpdateField(ref _ChildOffset, value, nameof(ChildOffset)); }
 
@@ -75,9 +57,6 @@ public partial class TransformGroup : ModelElement<DXD.TransformGroup>
  ///   Extents (width and height) for child elements within the group.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TransformGroup.ChildExtents))]
- /// <summary>
- ///   Extents (width and height) for child elements within the group.
- /// </summary>
  [OpenXmlElement(typeof(DXD.TransformGroup))]
  public PositiveSize2DType? ChildExtents { get => _ChildExtents; set => UpdateField(ref _ChildExtents, value, nameof(ChildExtents)); }
 

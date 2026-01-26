@@ -17,9 +17,6 @@ public partial class TableGridChange : ModelElement<DXW.TableGridChange>
  /// Previous table grid configuration before the change, enabling comparison and tracking of grid revisions.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableGridChange.PreviousTableGrid))]
- /// <summary>
- /// Previous table grid configuration before the change, enabling comparison and tracking of grid revisions.
- /// </summary>
  [OpenXmlElement(typeof(DXW.TableGridChange))]
  public PreviousTableGrid? PreviousTableGrid { get => _PreviousTableGrid; set => UpdateField(ref _PreviousTableGrid, value, nameof(PreviousTableGrid)); }
 

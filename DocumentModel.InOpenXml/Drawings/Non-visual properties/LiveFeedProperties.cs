@@ -9,9 +9,6 @@ public partial class LiveFeedProperties : ModelElement<DXO21DL.LiveFeedPropertie
  ///   Background properties for the live feed.
  /// </summary>
  [OpenXmlProperty(nameof(DXO21DL.LiveFeedProperties.LiveFeedBackgroundProperties))]
- /// <summary>
- ///   Background properties for the live feed.
- /// </summary>
  [OpenXmlElement(typeof(DXO21DL.LiveFeedProperties))]
  public LiveFeedBackgroundProperties? LiveFeedBackgroundProperties { get => _LiveFeedBackgroundProperties; set => UpdateField(ref _LiveFeedBackgroundProperties, value, nameof(LiveFeedBackgroundProperties)); }
 

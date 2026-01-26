@@ -10,9 +10,6 @@ public partial class SdtContentDate : ModelElement<DXW.SdtContentDate>
  /// Last known date in XML Schema DateTime format, specifying the most recently selected or stored date value.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtContentDate.FullDate))]
- /// <summary>
- /// Last known date in XML Schema DateTime format, specifying the most recently selected or stored date value.
- /// </summary>
  [OpenXmlElement(typeof(DXW.SdtContentDate))]
  public DateTime? FullDate { get => _FullDate; set => UpdateField(ref _FullDate, value, nameof(FullDate)); }
 
@@ -21,9 +18,6 @@ public partial class SdtContentDate : ModelElement<DXW.SdtContentDate>
  /// Date display mask, specifying the format string used to display the date in the control.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtContentDate.DateFormat))]
- /// <summary>
- /// Date display mask, specifying the format string used to display the date in the control.
- /// </summary>
  [OpenXmlElement(typeof(DXW.SdtContentDate))]
  public string? DateFormat { get => _DateFormat; set => UpdateField(ref _DateFormat, value, nameof(DateFormat)); }
 
@@ -32,9 +26,6 @@ public partial class SdtContentDate : ModelElement<DXW.SdtContentDate>
  /// Date picker language ID, specifying the locale for date formatting and calendar display.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtContentDate.LanguageId))]
- /// <summary>
- /// Date picker language ID, specifying the locale for date formatting and calendar display.
- /// </summary>
  [OpenXmlElement(typeof(DXW.SdtContentDate))]
  public string? LanguageId { get => _LanguageId; set => UpdateField(ref _LanguageId, value, nameof(LanguageId)); }
 
@@ -43,9 +34,6 @@ public partial class SdtContentDate : ModelElement<DXW.SdtContentDate>
  /// Custom XML data date storage format, specifying how the date is stored in the underlying XML data.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtContentDate.SdtDateMappingType))]
- /// <summary>
- /// Custom XML data date storage format, specifying how the date is stored in the underlying XML data.
- /// </summary>
  [OpenXmlElement(typeof(DXW.SdtContentDate))]
  public DateFormatKind? SdtDateMappingType { get => _SdtDateMappingType; set => UpdateField(ref _SdtDateMappingType, value, nameof(SdtDateMappingType)); }
 
@@ -54,9 +42,6 @@ public partial class SdtContentDate : ModelElement<DXW.SdtContentDate>
  /// Date picker calendar type, specifying the calendar system used for date selection (e.g., Gregorian, Hijri).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtContentDate.Calendar))]
- /// <summary>
- /// Date picker calendar type, specifying the calendar system used for date selection (e.g., Gregorian, Hijri).
- /// </summary>
  [OpenXmlElement(typeof(DXW.SdtContentDate))]
  public CalendarKind? Calendar { get => _Calendar; set => UpdateField(ref _Calendar, value, nameof(Calendar)); }
 

@@ -9,9 +9,6 @@ public partial class TextBody : ModelElement<DXOD.TextBody>
  ///   Body Properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXOD.TextBody.BodyProperties))]
- /// <summary>
- ///   Body Properties.
- /// </summary>
  [OpenXmlElement(typeof(DXOD.TextBody))]
  public BodyProperties? BodyProperties { get => _BodyProperties; set => UpdateField(ref _BodyProperties, value, nameof(BodyProperties)); }
 
@@ -20,9 +17,6 @@ public partial class TextBody : ModelElement<DXOD.TextBody>
  ///   Text List Styles.
  /// </summary>
  [OpenXmlProperty(nameof(DXOD.TextBody.ListStyle))]
- /// <summary>
- ///   Text List Styles.
- /// </summary>
  [OpenXmlElement(typeof(DXOD.TextBody))]
  public ListStyle? ListStyle { get => _ListStyle; set => UpdateField(ref _ListStyle, value, nameof(ListStyle)); }
 

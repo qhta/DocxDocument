@@ -9,9 +9,6 @@ public partial class CameraTool : ModelElement<DXO10D.CameraTool>
  /// Cell range.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.CameraTool.CellRange))]
- /// <summary>
- /// Cell range.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.CameraTool))]
  public string? CellRange { get => _CellRange; set => UpdateField(ref _CellRange, value, nameof(CellRange)); }
 
@@ -20,9 +17,6 @@ public partial class CameraTool : ModelElement<DXO10D.CameraTool>
  /// Shape ID.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.CameraTool.ShapeId))]
- /// <summary>
- /// Shape ID.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.CameraTool))]
  public string? ShapeId { get => _ShapeId; set => UpdateField(ref _ShapeId, value, nameof(ShapeId)); }
 

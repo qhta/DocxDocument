@@ -9,9 +9,6 @@ public partial class Backdrop : ModelElement<DXD.Backdrop>, IExtendableElement
  /// Anchor point of the backdrop plane.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Backdrop.Anchor))]
- /// <summary>
- /// Anchor point of the backdrop plane.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Backdrop))]
  public Anchor? Anchor { get => _Anchor; set => UpdateField(ref _Anchor, value, nameof(Anchor)); }
 
@@ -20,9 +17,6 @@ public partial class Backdrop : ModelElement<DXD.Backdrop>, IExtendableElement
  /// Normal vector of the backdrop plane.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Backdrop.Normal))]
- /// <summary>
- /// Normal vector of the backdrop plane.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Backdrop))]
  public Vector3DType? Normal { get => _Normal; set => UpdateField(ref _Normal, value, nameof(Normal)); }
 
@@ -31,9 +25,6 @@ public partial class Backdrop : ModelElement<DXD.Backdrop>, IExtendableElement
  /// Up vector of the backdrop plane.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Backdrop.UpVector))]
- /// <summary>
- /// Up vector of the backdrop plane.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Backdrop))]
  public Vector3DType? UpVector { get => _UpVector; set => UpdateField(ref _UpVector, value, nameof(UpVector)); }
 
@@ -42,9 +33,6 @@ public partial class Backdrop : ModelElement<DXD.Backdrop>, IExtendableElement
  /// L
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Backdrop.ExtensionList))]
- /// <summary>
- /// L
- /// </summary>
  [OpenXmlElement(typeof(DXD.Backdrop))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 

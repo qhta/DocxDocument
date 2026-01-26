@@ -9,9 +9,6 @@ public partial class ShapeHandle : ModelElement<DXV.ShapeHandle>
  ///   Handle Position
  /// </summary>
  [OpenXmlProperty(nameof(DXV.ShapeHandle.Position))]
- /// <summary>
- ///   Handle Position
- /// </summary>
  [OpenXmlElement(typeof(DXV.ShapeHandle))]
  public string? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
 
@@ -20,9 +17,6 @@ public partial class ShapeHandle : ModelElement<DXV.ShapeHandle>
  ///   Handle Polar Center
  /// </summary>
  [OpenXmlProperty(nameof(DXV.ShapeHandle.Polar))]
- /// <summary>
- ///   Handle Polar Center
- /// </summary>
  [OpenXmlElement(typeof(DXV.ShapeHandle))]
  public string? Polar { get => _Polar; set => UpdateField(ref _Polar, value, nameof(Polar)); }
 
@@ -31,9 +25,6 @@ public partial class ShapeHandle : ModelElement<DXV.ShapeHandle>
  ///   Handle Coordinate Mapping
  /// </summary>
  [OpenXmlProperty(nameof(DXV.ShapeHandle.Map))]
- /// <summary>
- ///   Handle Coordinate Mapping
- /// </summary>
  [OpenXmlElement(typeof(DXV.ShapeHandle))]
  public string? Map { get => _Map; set => UpdateField(ref _Map, value, nameof(Map)); }
 
@@ -42,9 +33,6 @@ public partial class ShapeHandle : ModelElement<DXV.ShapeHandle>
  ///   Invert Handle's X Position
  /// </summary>
  [OpenXmlProperty(nameof(DXV.ShapeHandle.InvertX))]
- /// <summary>
- ///   Invert Handle's X Position
- /// </summary>
  [OpenXmlElement(typeof(DXV.ShapeHandle))]
  public bool? InvertX { get => _InvertX; set => UpdateField(ref _InvertX, value, nameof(InvertX)); }
 
@@ -53,9 +41,6 @@ public partial class ShapeHandle : ModelElement<DXV.ShapeHandle>
  ///   Invert Handle's Y Position
  /// </summary>
  [OpenXmlProperty(nameof(DXV.ShapeHandle.InvertY))]
- /// <summary>
- ///   Invert Handle's Y Position
- /// </summary>
  [OpenXmlElement(typeof(DXV.ShapeHandle))]
  public bool? InvertY { get => _InvertY; set => UpdateField(ref _InvertY, value, nameof(InvertY)); }
 
@@ -64,9 +49,6 @@ public partial class ShapeHandle : ModelElement<DXV.ShapeHandle>
  ///   Handle Inversion Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.ShapeHandle.Switch))]
- /// <summary>
- ///   Handle Inversion Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.ShapeHandle))]
  public bool? Switch { get => _Switch; set => UpdateField(ref _Switch, value, nameof(Switch)); }
 
@@ -75,9 +57,6 @@ public partial class ShapeHandle : ModelElement<DXV.ShapeHandle>
  ///   Handle X Position Range
  /// </summary>
  [OpenXmlProperty(nameof(DXV.ShapeHandle.XRange))]
- /// <summary>
- ///   Handle X Position Range
- /// </summary>
  [OpenXmlElement(typeof(DXV.ShapeHandle))]
  public string? XRange { get => _XRange; set => UpdateField(ref _XRange, value, nameof(XRange)); }
 
@@ -86,9 +65,6 @@ public partial class ShapeHandle : ModelElement<DXV.ShapeHandle>
  ///   Handle Y Position Range
  /// </summary>
  [OpenXmlProperty(nameof(DXV.ShapeHandle.YRange))]
- /// <summary>
- ///   Handle Y Position Range
- /// </summary>
  [OpenXmlElement(typeof(DXV.ShapeHandle))]
  public string? YRange { get => _YRange; set => UpdateField(ref _YRange, value, nameof(YRange)); }
 
@@ -97,9 +73,6 @@ public partial class ShapeHandle : ModelElement<DXV.ShapeHandle>
  ///   Handle Polar Radius Range
  /// </summary>
  [OpenXmlProperty(nameof(DXV.ShapeHandle.RadiusRange))]
- /// <summary>
- ///   Handle Polar Radius Range
- /// </summary>
  [OpenXmlElement(typeof(DXV.ShapeHandle))]
  public string? RadiusRange { get => _RadiusRange; set => UpdateField(ref _RadiusRange, value, nameof(RadiusRange)); }
 

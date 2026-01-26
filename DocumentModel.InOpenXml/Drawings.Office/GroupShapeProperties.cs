@@ -9,9 +9,6 @@ public partial class GroupShapeProperties : ModelElement<DXOD.GroupShapeProperti
  ///   Black and White Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXOD.GroupShapeProperties.BlackWhiteMode))]
- /// <summary>
- ///   Black and White Mode
- /// </summary>
  [OpenXmlElement(typeof(DXOD.GroupShapeProperties))]
  public BlackWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
 
@@ -20,9 +17,6 @@ public partial class GroupShapeProperties : ModelElement<DXOD.GroupShapeProperti
  ///   2D Transform for Grouped Objects.
  /// </summary>
  [OpenXmlProperty(nameof(DXOD.GroupShapeProperties.TransformGroup))]
- /// <summary>
- ///   2D Transform for Grouped Objects.
- /// </summary>
  [OpenXmlElement(typeof(DXOD.GroupShapeProperties))]
  public TransformGroup? TransformGroup { get => _TransformGroup; set => UpdateField(ref _TransformGroup, value, nameof(TransformGroup)); }
 

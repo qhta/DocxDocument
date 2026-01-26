@@ -60,9 +60,6 @@ public partial class NonVisualDrawingPropertiesExtension : ModelElement<DXD.NonV
  /// Uri string associated with the extension.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.NonVisualDrawingPropertiesExtension.Uri))]
- /// <summary>
- /// Uri string associated with the extension.
- /// </summary>
  [OpenXmlElement(typeof(DXD.NonVisualDrawingPropertiesExtension))]
  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
 

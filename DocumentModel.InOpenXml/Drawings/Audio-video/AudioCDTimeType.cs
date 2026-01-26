@@ -9,9 +9,6 @@ public partial class AudioCDTimeType : ModelElement<DXD.AudioCDTimeType>
  /// Track number on the audio CD.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AudioCDTimeType.Track))]
- /// <summary>
- /// Track number on the audio CD.
- /// </summary>
  [OpenXmlElement(typeof(DXD.AudioCDTimeType))]
  public Byte? Track { get => _Track; set => UpdateField(ref _Track, value, nameof(Track)); }
 
@@ -20,9 +17,6 @@ public partial class AudioCDTimeType : ModelElement<DXD.AudioCDTimeType>
  /// Time position on the audio CD, typically in milliseconds or frames.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AudioCDTimeType.Time))]
- /// <summary>
- /// Time position on the audio CD, typically in milliseconds or frames.
- /// </summary>
  [OpenXmlElement(typeof(DXD.AudioCDTimeType))]
  public UInt32? Time { get => _Time; set => UpdateField(ref _Time, value, nameof(Time)); }
 

@@ -9,9 +9,6 @@ public partial class HyperlinkOnMouseOver : ModelElement<DXD.HyperlinkOnMouseOve
  ///   Embedded sound to play when the hyperlink is activated on mouse over.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkOnMouseOver.HyperlinkSound))]
- /// <summary>
- ///   Embedded sound to play when the hyperlink is activated on mouse over.
- /// </summary>
  [OpenXmlElement(typeof(DXD.HyperlinkOnMouseOver))]
  public EmbeddedWavAudioFileType? HyperlinkSound { get => _HyperlinkSound; set => UpdateField(ref _HyperlinkSound, value, nameof(HyperlinkSound)); }
 

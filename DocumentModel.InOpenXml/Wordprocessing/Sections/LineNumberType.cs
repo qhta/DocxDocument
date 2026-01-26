@@ -10,9 +10,6 @@ public partial class LineNumberType : ModelElement<DXW.LineNumberType>, ISection
  /// Line number increments to display, specifying the interval between displayed line numbers.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LineNumberType.CountBy))]
- /// <summary>
- /// Line number increments to display, specifying the interval between displayed line numbers.
- /// </summary>
  [OpenXmlElement(typeof(DXW.LineNumberType))]
  public Int16? CountBy { get => _CountBy; set => UpdateField(ref _CountBy, value, nameof(CountBy)); }
 
@@ -21,9 +18,6 @@ public partial class LineNumberType : ModelElement<DXW.LineNumberType>, ISection
  /// Line numbering starting value, specifying the initial line number for the section.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LineNumberType.Start))]
- /// <summary>
- /// Line numbering starting value, specifying the initial line number for the section.
- /// </summary>
  [OpenXmlElement(typeof(DXW.LineNumberType))]
  public Int16? Start { get => _Start; set => UpdateField(ref _Start, value, nameof(Start)); }
 
@@ -32,9 +26,6 @@ public partial class LineNumberType : ModelElement<DXW.LineNumberType>, ISection
  /// Distance between text and line numbering, specifying the spacing for line number placement.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LineNumberType.Distance))]
- /// <summary>
- /// Distance between text and line numbering, specifying the spacing for line number placement.
- /// </summary>
  [OpenXmlElement(typeof(DXW.LineNumberType))]
  public string? Distance { get => _Distance; set => UpdateField(ref _Distance, value, nameof(Distance)); }
 
@@ -43,9 +34,6 @@ public partial class LineNumberType : ModelElement<DXW.LineNumberType>, ISection
  /// Line numbering restart setting, specifying when line numbering should restart (e.g., each page or section).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LineNumberType.Restart))]
- /// <summary>
- /// Line numbering restart setting, specifying when line numbering should restart (e.g., each page or section).
- /// </summary>
  [OpenXmlElement(typeof(DXW.LineNumberType))]
  public LineNumberRestartKind? Restart { get => _Restart; set => UpdateField(ref _Restart, value, nameof(Restart)); }
 

@@ -13,9 +13,6 @@ public partial class NonVisualGroupDrawingShapePropsExtension : ModelElement<DXD
  /// Uri
  /// </summary>
  [OpenXmlProperty(nameof(DXD.NonVisualGroupDrawingShapePropsExtension.Uri))]
- /// <summary>
- /// Uri
- /// </summary>
  [OpenXmlElement(typeof(DXD.NonVisualGroupDrawingShapePropsExtension))]
  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
 

@@ -10,9 +10,6 @@ public partial class PathShadeProperties : ModelElement<DXO10W.PathShadeProperti
  /// The type of path used for the gradient shade, specifying the shape and direction of the gradient fill.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.PathShadeProperties.Path))]
- /// <summary>
- /// The type of path used for the gradient shade, specifying the shape and direction of the gradient fill.
- /// </summary>
  [OpenXmlElement(typeof(DXO10W.PathShadeProperties))]
  public PathShadeKind? Path { get => _Path; set => UpdateField(ref _Path, value, nameof(Path)); }
 
@@ -21,9 +18,6 @@ public partial class PathShadeProperties : ModelElement<DXO10W.PathShadeProperti
  /// The rectangle area to which the gradient fill is applied, allowing precise definition of the fill boundaries.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.PathShadeProperties.FillToRectangle))]
- /// <summary>
- /// The rectangle area to which the gradient fill is applied, allowing precise definition of the fill boundaries.
- /// </summary>
  [OpenXmlElement(typeof(DXO10W.PathShadeProperties))]
  public FillToRectangle? FillToRectangle { get => _FillToRectangle; set => UpdateField(ref _FillToRectangle, value, nameof(FillToRectangle)); }
 
