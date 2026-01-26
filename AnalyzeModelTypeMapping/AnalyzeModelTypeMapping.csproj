@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
+    <ProjectReference Include="..\DocumentModel.InOpenXml\DocumentModel.InOpenXml.csproj" />
+  </ItemGroup>
+
+</Project>

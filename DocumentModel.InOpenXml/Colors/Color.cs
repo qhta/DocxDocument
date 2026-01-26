@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// Basic color type. Contains name and RGB values.
 /// </summary>
 
-public class Color: ModelElement
+public abstract class Color: ModelElement
 {
   ///// <summary>
   /////   Gets RGB value of the color.
