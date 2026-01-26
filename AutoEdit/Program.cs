@@ -28,7 +28,8 @@ public static class Program
             //GenerateShouldSerializeFunctions.Run(filePath);
             //AddPrivateFieldsWithUpdate.Run(filePath);
             //AddOpenXmlPropertyAttribute.Run(filePath);
-            AddOpenXmlElementAttribute.Run(filePath);
+            //AddOpenXmlElementAttribute.Run(filePath);
+            AddOpenXmlTypeAttribute.Run(filePath);
           }
         }
       }

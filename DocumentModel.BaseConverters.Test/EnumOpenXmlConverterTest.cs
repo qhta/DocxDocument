@@ -8,7 +8,7 @@ using DX = DocumentFormat.OpenXml;
 
 using DXW = DocumentFormat.OpenXml.Wordprocessing;
 
-using DMW = DocumentModel.Wordprocessing;
+using DMW = DocumentModel.Wordprocessing.Test;
 
 namespace DocumentModel.BaseConverters.Test;
 

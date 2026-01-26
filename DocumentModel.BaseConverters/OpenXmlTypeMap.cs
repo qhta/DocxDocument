@@ -29,12 +29,10 @@ public static class OpenXmlTypeMap
       return openXmlItemAttr.Type;
 
     var typeCandidates = typeof(DXW.Document).Assembly.GetTypes().Where(t => t.Name == modelType.Name).ToList();
-    if (typeCandidates.Count == 1)
-      return typeCandidates[0];
 
     if (typeCandidates.Count > 1)
       throw new InvalidOperationException($"Ambiguous OpenXML type mapping for model element type {modelType}");
 
-    return null;
+    return typeCandidates.FirstOrDefault();
   }
 }
