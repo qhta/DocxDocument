@@ -9,9 +9,6 @@ public partial class CompatExtension : ModelElement<DXO10D.CompatExtension>, IEx
  /// Shape identifier.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.CompatExtension.ShapeId))]
- /// <summary>
- /// Shape identifier.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.CompatExtension))]
  public string? ShapeId { get => _ShapeId; set => UpdateField(ref _ShapeId, value, nameof(ShapeId)); }
 

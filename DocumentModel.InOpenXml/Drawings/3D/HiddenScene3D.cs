@@ -9,9 +9,6 @@ public partial class HiddenScene3D : ModelElement<DXO10D.HiddenScene3D>, IExtend
  ///   Camera settings for the hidden 3D scene.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.HiddenScene3D.Camera))]
- /// <summary>
- ///   Camera settings for the hidden 3D scene.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.HiddenScene3D))]
  public Camera? Camera { get => _Camera; set => UpdateField(ref _Camera, value, nameof(Camera)); }
 
@@ -20,9 +17,6 @@ public partial class HiddenScene3D : ModelElement<DXO10D.HiddenScene3D>, IExtend
  ///   Light rig configuration for the hidden 3D scene.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.HiddenScene3D.LightRig))]
- /// <summary>
- ///   Light rig configuration for the hidden 3D scene.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.HiddenScene3D))]
  public LightRig? LightRig { get => _LightRig; set => UpdateField(ref _LightRig, value, nameof(LightRig)); }
 
@@ -31,9 +25,6 @@ public partial class HiddenScene3D : ModelElement<DXO10D.HiddenScene3D>, IExtend
  ///   Backdrop plane for the hidden 3D scene.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.HiddenScene3D.Backdrop))]
- /// <summary>
- ///   Backdrop plane for the hidden 3D scene.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.HiddenScene3D))]
  public Backdrop? Backdrop { get => _Backdrop; set => UpdateField(ref _Backdrop, value, nameof(Backdrop)); }
 
@@ -42,9 +33,6 @@ public partial class HiddenScene3D : ModelElement<DXO10D.HiddenScene3D>, IExtend
  /// List of extension elements.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.HiddenScene3D.ExtensionList))]
- /// <summary>
- /// List of extension elements.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.HiddenScene3D))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 

@@ -10,9 +10,6 @@ public partial class Accent : ModelElement<DXM.Accent>, ICommonMathContent
  ///   Specifies formatting properties of accent function.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.Accent.AccentProperties))]
- /// <summary>
- ///   Specifies formatting properties of accent function.
- /// </summary>
  [OpenXmlElement(typeof(DXM.Accent))]
  public AccentProperties? AccentProperties { get => _AccentProperties; set => UpdateField(ref _AccentProperties, value, nameof(AccentProperties)); }
 

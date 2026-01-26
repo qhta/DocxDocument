@@ -9,9 +9,6 @@ public partial class FillExtendedProperties : ModelElement<DXVO.FillExtendedProp
  ///   VML Extension Handling Behavior
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.FillExtendedProperties.Extension))]
- /// <summary>
- ///   VML Extension Handling Behavior
- /// </summary>
  [OpenXmlElement(typeof(DXVO.FillExtendedProperties))]
  public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
@@ -20,9 +17,6 @@ public partial class FillExtendedProperties : ModelElement<DXVO.FillExtendedProp
  ///   Fill Type
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.FillExtendedProperties.Type))]
- /// <summary>
- ///   Fill Type
- /// </summary>
  [OpenXmlElement(typeof(DXVO.FillExtendedProperties))]
  public FillTypeKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 

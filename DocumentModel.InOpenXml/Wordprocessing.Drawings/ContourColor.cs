@@ -17,9 +17,6 @@ public partial class ContourColor : ModelElement<DXO10W.ContourColor>
  /// The scheme color used for the contour, enabling the use of document-defined color schemes.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.ContourColor.SchemeColor))]
- /// <summary>
- /// The scheme color used for the contour, enabling the use of document-defined color schemes.
- /// </summary>
  [OpenXmlElement(typeof(DXO10W.ContourColor))]
  public SchemeColor? SchemeColor { get => _SchemeColor; set => UpdateField(ref _SchemeColor, value, nameof(SchemeColor)); }
 

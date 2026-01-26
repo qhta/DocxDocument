@@ -10,9 +10,6 @@ public partial class PageNumberType : ModelElement<DXW.PageNumberType>, ISection
  /// Page number format, specifying the numbering style for pages.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageNumberType.Format))]
- /// <summary>
- /// Page number format, specifying the numbering style for pages.
- /// </summary>
  [OpenXmlElement(typeof(DXW.PageNumberType))]
  public NumberFormatKind? Format { get => _Format; set => UpdateField(ref _Format, value, nameof(Format)); }
 
@@ -21,9 +18,6 @@ public partial class PageNumberType : ModelElement<DXW.PageNumberType>, ISection
  /// Starting page number for the section.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageNumberType.Start))]
- /// <summary>
- /// Starting page number for the section.
- /// </summary>
  [OpenXmlElement(typeof(DXW.PageNumberType))]
  public Int32? Start { get => _Start; set => UpdateField(ref _Start, value, nameof(Start)); }
 
@@ -32,9 +26,6 @@ public partial class PageNumberType : ModelElement<DXW.PageNumberType>, ISection
  /// Chapter heading style, specifying the style used for chapter numbering.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageNumberType.ChapterStyle))]
- /// <summary>
- /// Chapter heading style, specifying the style used for chapter numbering.
- /// </summary>
  [OpenXmlElement(typeof(DXW.PageNumberType))]
  public Byte? ChapterStyle { get => _ChapterStyle; set => UpdateField(ref _ChapterStyle, value, nameof(ChapterStyle)); }
 
@@ -43,9 +34,6 @@ public partial class PageNumberType : ModelElement<DXW.PageNumberType>, ISection
  /// Chapter separator character, specifying the character used to separate chapter numbers from page numbers.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageNumberType.ChapterSeparator))]
- /// <summary>
- /// Chapter separator character, specifying the character used to separate chapter numbers from page numbers.
- /// </summary>
  [OpenXmlElement(typeof(DXW.PageNumberType))]
  public ChapterSeparatorKind? ChapterSeparator { get => _ChapterSeparator; set => UpdateField(ref _ChapterSeparator, value, nameof(ChapterSeparator)); }
 

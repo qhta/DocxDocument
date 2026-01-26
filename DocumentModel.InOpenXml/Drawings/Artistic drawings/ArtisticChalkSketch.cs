@@ -16,9 +16,6 @@ public partial class ArtisticChalkSketch : ModelElement<DXO10D.ArtisticChalkSket
  /// Pressure applied in the chalk sketch effect, influencing the intensity of the strokes.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticChalkSketch.Pressure))]
- /// <summary>
- /// Pressure applied in the chalk sketch effect, influencing the intensity of the strokes.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.ArtisticChalkSketch))]
  public Int32? Pressure { get => _Pressure; set => UpdateField(ref _Pressure, value, nameof(Pressure)); }
 

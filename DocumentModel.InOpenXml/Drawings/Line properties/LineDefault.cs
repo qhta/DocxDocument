@@ -9,9 +9,6 @@ public partial class LineDefault : ModelElement<DXD.LineDefault>, IExtendableEle
  ///   Default shape properties for the line.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LineDefault.ShapeProperties))]
- /// <summary>
- ///   Default shape properties for the line.
- /// </summary>
  [OpenXmlElement(typeof(DXD.LineDefault))]
  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
 
@@ -20,9 +17,6 @@ public partial class LineDefault : ModelElement<DXD.LineDefault>, IExtendableEle
  ///   Default body properties for the line.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LineDefault.BodyProperties))]
- /// <summary>
- ///   Default body properties for the line.
- /// </summary>
  [OpenXmlElement(typeof(DXD.LineDefault))]
  public BodyProperties? BodyProperties { get => _BodyProperties; set => UpdateField(ref _BodyProperties, value, nameof(BodyProperties)); }
 
@@ -31,9 +25,6 @@ public partial class LineDefault : ModelElement<DXD.LineDefault>, IExtendableEle
  ///   Default list style for the line.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LineDefault.ListStyle))]
- /// <summary>
- ///   Default list style for the line.
- /// </summary>
  [OpenXmlElement(typeof(DXD.LineDefault))]
  public ListStyle? ListStyle { get => _ListStyle; set => UpdateField(ref _ListStyle, value, nameof(ListStyle)); }
 
@@ -42,9 +33,6 @@ public partial class LineDefault : ModelElement<DXD.LineDefault>, IExtendableEle
  ///   Default shape style for the line.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LineDefault.ShapeStyle))]
- /// <summary>
- ///   Default shape style for the line.
- /// </summary>
  [OpenXmlElement(typeof(DXD.LineDefault))]
  public ShapeStyle? ShapeStyle { get => _ShapeStyle; set => UpdateField(ref _ShapeStyle, value, nameof(ShapeStyle)); }
 
@@ -53,9 +41,6 @@ public partial class LineDefault : ModelElement<DXD.LineDefault>, IExtendableEle
  /// List of extensions for additional line default properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LineDefault.ExtensionList))]
- /// <summary>
- /// List of extensions for additional line default properties.
- /// </summary>
  [OpenXmlElement(typeof(DXD.LineDefault))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 

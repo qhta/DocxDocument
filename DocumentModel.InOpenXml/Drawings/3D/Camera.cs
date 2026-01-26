@@ -9,9 +9,6 @@ public partial class Camera : ModelElement<DXD.Camera>
  /// Preset camera type.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Camera.Preset))]
- /// <summary>
- /// Preset camera type.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Camera))]
  public PresetCameraKind? Preset { get => _Preset; set => UpdateField(ref _Preset, value, nameof(Preset)); }
 
@@ -20,9 +17,6 @@ public partial class Camera : ModelElement<DXD.Camera>
  /// Field of view.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Camera.FieldOfView))]
- /// <summary>
- /// Field of view.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Camera))]
  public Int32? FieldOfView { get => _FieldOfView; set => UpdateField(ref _FieldOfView, value, nameof(FieldOfView)); }
 
@@ -31,9 +25,6 @@ public partial class Camera : ModelElement<DXD.Camera>
  /// Zoom factor.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Camera.Zoom))]
- /// <summary>
- /// Zoom factor.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Camera))]
  public Int32? Zoom { get => _Zoom; set => UpdateField(ref _Zoom, value, nameof(Zoom)); }
 
@@ -42,9 +33,6 @@ public partial class Camera : ModelElement<DXD.Camera>
  /// Camera rotation.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Camera.Rotation))]
- /// <summary>
- /// Camera rotation.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Camera))]
  public Rotation? Rotation { get => _Rotation; set => UpdateField(ref _Rotation, value, nameof(Rotation)); }
 

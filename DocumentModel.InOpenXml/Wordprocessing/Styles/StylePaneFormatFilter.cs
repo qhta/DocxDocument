@@ -10,9 +10,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Hexadecimal value representing the style pane format filter settings.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.Val))]
- /// <summary>
- /// Hexadecimal value representing the style pane format filter settings.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public HexChar? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
@@ -21,9 +18,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether all styles are included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.AllStyles))]
- /// <summary>
- /// Indicates whether all styles are included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? AllStyles { get => _AllStyles; set => UpdateField(ref _AllStyles, value, nameof(AllStyles)); }
 
@@ -32,9 +26,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether only custom styles are included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.CustomStyles))]
- /// <summary>
- /// Indicates whether only custom styles are included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? CustomStyles { get => _CustomStyles; set => UpdateField(ref _CustomStyles, value, nameof(CustomStyles)); }
 
@@ -43,9 +34,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether latent styles are included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.LatentStyles))]
- /// <summary>
- /// Indicates whether latent styles are included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? LatentStyles { get => _LatentStyles; set => UpdateField(ref _LatentStyles, value, nameof(LatentStyles)); }
 
@@ -54,9 +42,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether only styles currently in use are included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.StylesInUse))]
- /// <summary>
- /// Indicates whether only styles currently in use are included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? StylesInUse { get => _StylesInUse; set => UpdateField(ref _StylesInUse, value, nameof(StylesInUse)); }
 
@@ -65,9 +50,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether heading styles are included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.HeadingStyles))]
- /// <summary>
- /// Indicates whether heading styles are included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? HeadingStyles { get => _HeadingStyles; set => UpdateField(ref _HeadingStyles, value, nameof(HeadingStyles)); }
 
@@ -76,9 +58,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether numbering styles are included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.NumberingStyles))]
- /// <summary>
- /// Indicates whether numbering styles are included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? NumberingStyles { get => _NumberingStyles; set => UpdateField(ref _NumberingStyles, value, nameof(NumberingStyles)); }
 
@@ -87,9 +66,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether table styles are included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.TableStyles))]
- /// <summary>
- /// Indicates whether table styles are included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? TableStyles { get => _TableStyles; set => UpdateField(ref _TableStyles, value, nameof(TableStyles)); }
 
@@ -98,9 +74,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether direct formatting on runs is included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.DirectFormattingOnRuns))]
- /// <summary>
- /// Indicates whether direct formatting on runs is included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? DirectFormattingOnRuns { get => _DirectFormattingOnRuns; set => UpdateField(ref _DirectFormattingOnRuns, value, nameof(DirectFormattingOnRuns)); }
 
@@ -109,9 +82,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether direct formatting on paragraphs is included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.DirectFormattingOnParagraphs))]
- /// <summary>
- /// Indicates whether direct formatting on paragraphs is included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? DirectFormattingOnParagraphs { get => _DirectFormattingOnParagraphs; set => UpdateField(ref _DirectFormattingOnParagraphs, value, nameof(DirectFormattingOnParagraphs)); }
 
@@ -120,9 +90,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether direct formatting on numbering is included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.DirectFormattingOnNumbering))]
- /// <summary>
- /// Indicates whether direct formatting on numbering is included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? DirectFormattingOnNumbering { get => _DirectFormattingOnNumbering; set => UpdateField(ref _DirectFormattingOnNumbering, value, nameof(DirectFormattingOnNumbering)); }
 
@@ -131,9 +98,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether direct formatting on tables is included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.DirectFormattingOnTables))]
- /// <summary>
- /// Indicates whether direct formatting on tables is included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? DirectFormattingOnTables { get => _DirectFormattingOnTables; set => UpdateField(ref _DirectFormattingOnTables, value, nameof(DirectFormattingOnTables)); }
 
@@ -142,9 +106,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether clear formatting is included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.ClearFormatting))]
- /// <summary>
- /// Indicates whether clear formatting is included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? ClearFormatting { get => _ClearFormatting; set => UpdateField(ref _ClearFormatting, value, nameof(ClearFormatting)); }
 
@@ -153,9 +114,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether the top three heading styles are included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.Top3HeadingStyles))]
- /// <summary>
- /// Indicates whether the top three heading styles are included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? Top3HeadingStyles { get => _Top3HeadingStyles; set => UpdateField(ref _Top3HeadingStyles, value, nameof(Top3HeadingStyles)); }
 
@@ -164,9 +122,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether only visible styles are included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.VisibleStyles))]
- /// <summary>
- /// Indicates whether only visible styles are included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? VisibleStyles { get => _VisibleStyles; set => UpdateField(ref _VisibleStyles, value, nameof(VisibleStyles)); }
 
@@ -175,9 +130,6 @@ public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFil
  /// Indicates whether alternate style names are included in the filter.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StylePaneFormatFilter.AlternateStyleNames))]
- /// <summary>
- /// Indicates whether alternate style names are included in the filter.
- /// </summary>
  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
  public bool? AlternateStyleNames { get => _AlternateStyleNames; set => UpdateField(ref _AlternateStyleNames, value, nameof(AlternateStyleNames)); }
 

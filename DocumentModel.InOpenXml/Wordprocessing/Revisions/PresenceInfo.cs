@@ -10,9 +10,6 @@ public partial class PresenceInfo : ModelElement<DXO13W.PresenceInfo>
  /// Identifier for the presence provider, specifying the source of presence information.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13W.PresenceInfo.ProviderId))]
- /// <summary>
- /// Identifier for the presence provider, specifying the source of presence information.
- /// </summary>
  [OpenXmlElement(typeof(DXO13W.PresenceInfo))]
  public string? ProviderId { get => _ProviderId; set => UpdateField(ref _ProviderId, value, nameof(ProviderId)); }
 
@@ -21,9 +18,6 @@ public partial class PresenceInfo : ModelElement<DXO13W.PresenceInfo>
  /// Identifier for the user whose presence is being tracked.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13W.PresenceInfo.UserId))]
- /// <summary>
- /// Identifier for the user whose presence is being tracked.
- /// </summary>
  [OpenXmlElement(typeof(DXO13W.PresenceInfo))]
  public string? UserId { get => _UserId; set => UpdateField(ref _UserId, value, nameof(UserId)); }
 

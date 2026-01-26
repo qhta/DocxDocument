@@ -10,9 +10,6 @@ public partial class Break : ModelElement<DXW.Break>, IRunContent
  /// Type of break to insert, specifying the kind of break (e.g., line, page, column, text wrapping).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Break.Type))]
- /// <summary>
- /// Type of break to insert, specifying the kind of break (e.g., line, page, column, text wrapping).
- /// </summary>
  [OpenXmlElement(typeof(DXW.Break))]
  public BreakKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
@@ -21,9 +18,6 @@ public partial class Break : ModelElement<DXW.Break>, IRunContent
  /// Restart location for text wrapping break, specifying where text should resume after the break (e.g., left, right, all).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Break.Clear))]
- /// <summary>
- /// Restart location for text wrapping break, specifying where text should resume after the break (e.g., left, right, all).
- /// </summary>
  [OpenXmlElement(typeof(DXW.Break))]
  public BreakTextRestartLocationKind? Clear { get => _Clear; set => UpdateField(ref _Clear, value, nameof(Clear)); }
 

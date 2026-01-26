@@ -10,9 +10,6 @@ public partial class Shape : ModelElement<DXD.Shape>, DMD.IOfficeArtExtendableEl
  /// Style information for the shape, including line, fill, and effect styles.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape.ShapeStyle))]
- /// <summary>
- /// Style information for the shape, including line, fill, and effect styles.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Shape))]
  public ShapeStyle? ShapeStyle { get => _ShapeStyle; set => UpdateField(ref _ShapeStyle, value, nameof(ShapeStyle)); }
 
@@ -42,9 +39,6 @@ public partial class Shape : ModelElement<DXD.Shape>, DMD.IOfficeArtExtendableEl
  /// Visual properties of the shape, such as geometry, fill, and effects.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape.ShapeProperties))]
- /// <summary>
- /// Visual properties of the shape, such as geometry, fill, and effects.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Shape))]
  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
 

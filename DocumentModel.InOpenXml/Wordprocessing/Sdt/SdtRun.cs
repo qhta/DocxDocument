@@ -10,9 +10,6 @@ public partial class SdtRun : ModelElement<DXW.SdtRun>, IParagraphContent, ISdtR
  /// Specifies the set of properties applied to this structured document tag.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtRun.SdtProperties))]
- /// <summary>
- /// Specifies the set of properties applied to this structured document tag.
- /// </summary>
  [OpenXmlElement(typeof(DXW.SdtRun))]
  public SdtProperties? SdtProperties { get => _SdtProperties; set => UpdateField(ref _SdtProperties, value, nameof(SdtProperties)); }
 
@@ -21,9 +18,6 @@ public partial class SdtRun : ModelElement<DXW.SdtRun>, IParagraphContent, ISdtR
  /// Specifies the properties applied to the physical character that delimits the end of a structured document tag.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtRun.SdtEndCharProperties))]
- /// <summary>
- /// Specifies the properties applied to the physical character that delimits the end of a structured document tag.
- /// </summary>
  [OpenXmlElement(typeof(DXW.SdtRun))]
  public SdtEndCharProperties? SdtEndCharProperties { get => _SdtEndCharProperties; set => UpdateField(ref _SdtEndCharProperties, value, nameof(SdtEndCharProperties)); }
 

@@ -9,9 +9,6 @@ public partial class ShapeStyle : ModelElement<DXD.ShapeStyle>
  ///   Reference to the line formatting for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ShapeStyle.LineReference))]
- /// <summary>
- ///   Reference to the line formatting for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXD.ShapeStyle))]
  public LineReference? LineReference { get => _LineReference; set => UpdateField(ref _LineReference, value, nameof(LineReference)); }
 
@@ -20,9 +17,6 @@ public partial class ShapeStyle : ModelElement<DXD.ShapeStyle>
  ///   Reference to the fill formatting for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ShapeStyle.FillReference))]
- /// <summary>
- ///   Reference to the fill formatting for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXD.ShapeStyle))]
  public FillReference? FillReference { get => _FillReference; set => UpdateField(ref _FillReference, value, nameof(FillReference)); }
 
@@ -31,9 +25,6 @@ public partial class ShapeStyle : ModelElement<DXD.ShapeStyle>
  ///   Reference to the effect formatting for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ShapeStyle.EffectReference))]
- /// <summary>
- ///   Reference to the effect formatting for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXD.ShapeStyle))]
  public EffectReference? EffectReference { get => _EffectReference; set => UpdateField(ref _EffectReference, value, nameof(EffectReference)); }
 
@@ -42,9 +33,6 @@ public partial class ShapeStyle : ModelElement<DXD.ShapeStyle>
  ///   Reference to the font formatting for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ShapeStyle.FontReference))]
- /// <summary>
- ///   Reference to the font formatting for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXD.ShapeStyle))]
  public FontReference? FontReference { get => _FontReference; set => UpdateField(ref _FontReference, value, nameof(FontReference)); }
 

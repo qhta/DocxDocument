@@ -9,9 +9,6 @@ public partial class Blend : ModelElement<DXD.Blend>
  /// Blend mode used to combine effects.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Blend.BlendMode))]
- /// <summary>
- /// Blend mode used to combine effects.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Blend))]
  public BlendMode? BlendMode { get => _BlendMode; set => UpdateField(ref _BlendMode, value, nameof(BlendMode)); }
 
@@ -20,9 +17,6 @@ public partial class Blend : ModelElement<DXD.Blend>
  /// Effect container that is blended using the specified blend mode.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Blend.EffectContainer))]
- /// <summary>
- /// Effect container that is blended using the specified blend mode.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Blend))]
  public EffectContainer? EffectContainer { get => _EffectContainer; set => UpdateField(ref _EffectContainer, value, nameof(EffectContainer)); }
 

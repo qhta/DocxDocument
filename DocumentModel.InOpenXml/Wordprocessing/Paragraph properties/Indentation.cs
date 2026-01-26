@@ -10,9 +10,6 @@ public partial class Indentation : ModelElement<DXW.Indentation>
  /// Left indentation of the paragraph, specified in twentieths of a point.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Indentation.Left))]
- /// <summary>
- /// Left indentation of the paragraph, specified in twentieths of a point.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Indentation))]
  public string? Left { get => _Left; set => UpdateField(ref _Left, value, nameof(Left)); }
 
@@ -21,9 +18,6 @@ public partial class Indentation : ModelElement<DXW.Indentation>
  /// Start indentation of the paragraph, used for bidirectional text, specified in twentieths of a point.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Indentation.Start))]
- /// <summary>
- /// Start indentation of the paragraph, used for bidirectional text, specified in twentieths of a point.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Indentation))]
  public string? Start { get => _Start; set => UpdateField(ref _Start, value, nameof(Start)); }
 
@@ -32,9 +26,6 @@ public partial class Indentation : ModelElement<DXW.Indentation>
  /// Left indentation in character units.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Indentation.LeftChars))]
- /// <summary>
- /// Left indentation in character units.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Indentation))]
  public Int32? LeftChars { get => _LeftChars; set => UpdateField(ref _LeftChars, value, nameof(LeftChars)); }
 
@@ -43,9 +34,6 @@ public partial class Indentation : ModelElement<DXW.Indentation>
  /// Start indentation in character units, used for bidirectional text.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Indentation.StartCharacters))]
- /// <summary>
- /// Start indentation in character units, used for bidirectional text.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Indentation))]
  public Int32? StartCharacters { get => _StartCharacters; set => UpdateField(ref _StartCharacters, value, nameof(StartCharacters)); }
 
@@ -54,9 +42,6 @@ public partial class Indentation : ModelElement<DXW.Indentation>
  /// Right indentation of the paragraph, specified in twentieths of a point.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Indentation.Right))]
- /// <summary>
- /// Right indentation of the paragraph, specified in twentieths of a point.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Indentation))]
  public string? Right { get => _Right; set => UpdateField(ref _Right, value, nameof(Right)); }
 
@@ -65,9 +50,6 @@ public partial class Indentation : ModelElement<DXW.Indentation>
  /// End indentation of the paragraph, used for bidirectional text, specified in twentieths of a point.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Indentation.End))]
- /// <summary>
- /// End indentation of the paragraph, used for bidirectional text, specified in twentieths of a point.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Indentation))]
  public string? End { get => _End; set => UpdateField(ref _End, value, nameof(End)); }
 
@@ -76,9 +58,6 @@ public partial class Indentation : ModelElement<DXW.Indentation>
  /// Right indentation in character units.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Indentation.RightChars))]
- /// <summary>
- /// Right indentation in character units.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Indentation))]
  public Int32? RightChars { get => _RightChars; set => UpdateField(ref _RightChars, value, nameof(RightChars)); }
 
@@ -87,9 +66,6 @@ public partial class Indentation : ModelElement<DXW.Indentation>
  /// End indentation in character units, used for bidirectional text.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Indentation.EndCharacters))]
- /// <summary>
- /// End indentation in character units, used for bidirectional text.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Indentation))]
  public Int32? EndCharacters { get => _EndCharacters; set => UpdateField(ref _EndCharacters, value, nameof(EndCharacters)); }
 
@@ -98,9 +74,6 @@ public partial class Indentation : ModelElement<DXW.Indentation>
  /// Hanging indentation, specifying the amount of indentation removed from the first line, in twentieths of a point.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Indentation.Hanging))]
- /// <summary>
- /// Hanging indentation, specifying the amount of indentation removed from the first line, in twentieths of a point.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Indentation))]
  public string? Hanging { get => _Hanging; set => UpdateField(ref _Hanging, value, nameof(Hanging)); }
 
@@ -109,9 +82,6 @@ public partial class Indentation : ModelElement<DXW.Indentation>
  /// Hanging indentation in character units, specifying the amount of indentation removed from the first line.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Indentation.HangingChars))]
- /// <summary>
- /// Hanging indentation in character units, specifying the amount of indentation removed from the first line.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Indentation))]
  public Int32? HangingChars { get => _HangingChars; set => UpdateField(ref _HangingChars, value, nameof(HangingChars)); }
 
@@ -120,9 +90,6 @@ public partial class Indentation : ModelElement<DXW.Indentation>
  /// Additional first line indentation, specifying the amount of extra indentation for the first line, in twentieths of a point.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Indentation.FirstLine))]
- /// <summary>
- /// Additional first line indentation, specifying the amount of extra indentation for the first line, in twentieths of a point.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Indentation))]
  public string? FirstLine { get => _FirstLine; set => UpdateField(ref _FirstLine, value, nameof(FirstLine)); }
 
@@ -131,9 +98,6 @@ public partial class Indentation : ModelElement<DXW.Indentation>
  /// Additional first line indentation in character units.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Indentation.FirstLineChars))]
- /// <summary>
- /// Additional first line indentation in character units.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Indentation))]
  public Int32? FirstLineChars { get => _FirstLineChars; set => UpdateField(ref _FirstLineChars, value, nameof(FirstLineChars)); }
 

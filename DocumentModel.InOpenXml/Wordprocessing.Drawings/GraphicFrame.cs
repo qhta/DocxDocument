@@ -19,9 +19,6 @@ public partial class GraphicFrame : ModelElement<DXD.GraphicFrame>, IOfficeArtEx
  /// Non-visual properties specific to the graphic frame, such as locking and extension settings for advanced configuration.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GraphicFrame.NonVisualGraphicFrameProperties))]
- /// <summary>
- /// Non-visual properties specific to the graphic frame, such as locking and extension settings for advanced configuration.
- /// </summary>
  [OpenXmlElement(typeof(DXD.GraphicFrame))]
  public NonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get => _NonVisualGraphicFrameProperties; set => UpdateField(ref _NonVisualGraphicFrameProperties, value, nameof(NonVisualGraphicFrameProperties)); }
 
@@ -30,9 +27,6 @@ public partial class GraphicFrame : ModelElement<DXD.GraphicFrame>, IOfficeArtEx
  /// The 2D transformation applied to the graphic frame, including translation, scaling, rotation, and skew, which determines the frame's position and orientation.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GraphicFrame.Transform2D))]
- /// <summary>
- /// The 2D transformation applied to the graphic frame, including translation, scaling, rotation, and skew, which determines the frame's position and orientation.
- /// </summary>
  [OpenXmlElement(typeof(DXD.GraphicFrame))]
  public Transform2D? Transform2D { get => _Transform2D; set => UpdateField(ref _Transform2D, value, nameof(Transform2D)); }
 
@@ -41,9 +35,6 @@ public partial class GraphicFrame : ModelElement<DXD.GraphicFrame>, IOfficeArtEx
  /// The graphic content contained within the frame, which may include images, charts, diagrams, or other graphical objects.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GraphicFrame.Graphic))]
- /// <summary>
- /// The graphic content contained within the frame, which may include images, charts, diagrams, or other graphical objects.
- /// </summary>
  [OpenXmlElement(typeof(DXD.GraphicFrame))]
  public Graphic? Graphic { get => _Graphic; set => UpdateField(ref _Graphic, value, nameof(Graphic)); }
 

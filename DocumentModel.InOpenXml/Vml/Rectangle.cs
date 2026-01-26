@@ -12,9 +12,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Unique Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Id))]
- /// <summary>
- ///   Unique Identifier
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
@@ -23,9 +20,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Shape Styling Properties
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Style))]
- /// <summary>
- ///   Shape Styling Properties
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
 
@@ -34,9 +28,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   IHyperlink Target
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Href))]
- /// <summary>
- ///   IHyperlink Target
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? Href { get => _Href; set => UpdateField(ref _Href, value, nameof(Href)); }
 
@@ -45,9 +36,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   IHyperlink Display Target
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Target))]
- /// <summary>
- ///   IHyperlink Display Target
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? Target { get => _Target; set => UpdateField(ref _Target, value, nameof(Target)); }
 
@@ -56,9 +44,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   CSS Reference
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Class))]
- /// <summary>
- ///   CSS Reference
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? Class { get => _Class; set => UpdateField(ref _Class, value, nameof(Class)); }
 
@@ -67,9 +52,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Shape Title
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Title))]
- /// <summary>
- ///   Shape Title
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
 
@@ -78,9 +60,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Alternate Text
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Alternate))]
- /// <summary>
- ///   Alternate Text
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? Alternate { get => _Alternate; set => UpdateField(ref _Alternate, value, nameof(Alternate)); }
 
@@ -89,9 +68,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Coordinate Space Size
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.CoordinateSize))]
- /// <summary>
- ///   Coordinate Space Size
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? CoordinateSize { get => _CoordinateSize; set => UpdateField(ref _CoordinateSize, value, nameof(CoordinateSize)); }
 
@@ -100,9 +76,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Coordinate Space Origin
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.CoordinateOrigin))]
- /// <summary>
- ///   Coordinate Space Origin
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? CoordinateOrigin { get => _CoordinateOrigin; set => UpdateField(ref _CoordinateOrigin, value, nameof(CoordinateOrigin)); }
 
@@ -111,9 +84,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Shape Bounding Polygon
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.WrapCoordinates))]
- /// <summary>
- ///   Shape Bounding Polygon
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? WrapCoordinates { get => _WrapCoordinates; set => UpdateField(ref _WrapCoordinates, value, nameof(WrapCoordinates)); }
 
@@ -122,9 +92,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Print Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Print))]
- /// <summary>
- ///   Print Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? Print { get => _Print; set => UpdateField(ref _Print, value, nameof(Print)); }
 
@@ -133,9 +100,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Optional String
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.OptionalString))]
- /// <summary>
- ///   Optional String
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? OptionalString { get => _OptionalString; set => UpdateField(ref _OptionalString, value, nameof(OptionalString)); }
 
@@ -144,9 +108,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Shape Handle Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Oned))]
- /// <summary>
- ///   Shape Handle Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? Oned { get => _Oned; set => UpdateField(ref _Oned, value, nameof(Oned)); }
 
@@ -155,9 +116,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Regroup ID
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.RegroupId))]
- /// <summary>
- ///   Regroup ID
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public Int64? RegroupId { get => _RegroupId; set => UpdateField(ref _RegroupId, value, nameof(RegroupId)); }
 
@@ -166,9 +124,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Double-click Notification Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.DoubleClickNotify))]
- /// <summary>
- ///   Double-click Notification Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? DoubleClickNotify { get => _DoubleClickNotify; set => UpdateField(ref _DoubleClickNotify, value, nameof(DoubleClickNotify)); }
 
@@ -177,9 +132,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Button Behavior Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Button))]
- /// <summary>
- ///   Button Behavior Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? Button { get => _Button; set => UpdateField(ref _Button, value, nameof(Button)); }
 
@@ -188,9 +140,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Hide Script Anchors
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.UserHidden))]
- /// <summary>
- ///   Hide Script Anchors
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? UserHidden { get => _UserHidden; set => UpdateField(ref _UserHidden, value, nameof(UserHidden)); }
 
@@ -199,9 +148,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Graphical Bullet
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Bullet))]
- /// <summary>
- ///   Graphical Bullet
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? Bullet { get => _Bullet; set => UpdateField(ref _Bullet, value, nameof(Bullet)); }
 
@@ -210,9 +156,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Horizontal Rule Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Horizontal))]
- /// <summary>
- ///   Horizontal Rule Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? Horizontal { get => _Horizontal; set => UpdateField(ref _Horizontal, value, nameof(Horizontal)); }
 
@@ -221,9 +164,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Horizontal Rule Standard Display Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.HorizontalStandard))]
- /// <summary>
- ///   Horizontal Rule Standard Display Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? HorizontalStandard { get => _HorizontalStandard; set => UpdateField(ref _HorizontalStandard, value, nameof(HorizontalStandard)); }
 
@@ -232,9 +172,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Horizontal Rule 3D Shading Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.HorizontalNoShade))]
- /// <summary>
- ///   Horizontal Rule 3D Shading Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? HorizontalNoShade { get => _HorizontalNoShade; set => UpdateField(ref _HorizontalNoShade, value, nameof(HorizontalNoShade)); }
 
@@ -243,9 +180,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Horizontal Rule Length Percentage
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.HorizontalPercentage))]
- /// <summary>
- ///   Horizontal Rule Length Percentage
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public Single? HorizontalPercentage { get => _HorizontalPercentage; set => UpdateField(ref _HorizontalPercentage, value, nameof(HorizontalPercentage)); }
 
@@ -254,9 +188,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Horizontal Rule Alignment
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.HorizontalAlignment))]
- /// <summary>
- ///   Horizontal Rule Alignment
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public HorizontalRuleAlignmentKind? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
 
@@ -265,9 +196,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Allow in Table Cell
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.AllowInCell))]
- /// <summary>
- ///   Allow in Table Cell
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? AllowInCell { get => _AllowInCell; set => UpdateField(ref _AllowInCell, value, nameof(AllowInCell)); }
 
@@ -276,9 +204,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Allow Shape Overlap
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.AllowOverlap))]
- /// <summary>
- ///   Allow Shape Overlap
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? AllowOverlap { get => _AllowOverlap; set => UpdateField(ref _AllowOverlap, value, nameof(AllowOverlap)); }
 
@@ -287,9 +212,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Exists In Master Slide
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.UserDrawn))]
- /// <summary>
- ///   Exists In Master Slide
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? UserDrawn { get => _UserDrawn; set => UpdateField(ref _UserDrawn, value, nameof(UserDrawn)); }
 
@@ -298,9 +220,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Border Top Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.BorderTopColor))]
- /// <summary>
- ///   Border Top Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? BorderTopColor { get => _BorderTopColor; set => UpdateField(ref _BorderTopColor, value, nameof(BorderTopColor)); }
 
@@ -309,9 +228,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Border Left Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.BorderLeftColor))]
- /// <summary>
- ///   Border Left Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? BorderLeftColor { get => _BorderLeftColor; set => UpdateField(ref _BorderLeftColor, value, nameof(BorderLeftColor)); }
 
@@ -320,9 +236,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Bottom Border Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.BorderBottomColor))]
- /// <summary>
- ///   Bottom Border Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? BorderBottomColor { get => _BorderBottomColor; set => UpdateField(ref _BorderBottomColor, value, nameof(BorderBottomColor)); }
 
@@ -331,9 +244,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Border Right Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.BorderRightColor))]
- /// <summary>
- ///   Border Right Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? BorderRightColor { get => _BorderRightColor; set => UpdateField(ref _BorderRightColor, value, nameof(BorderRightColor)); }
 
@@ -342,9 +252,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Diagram Node Layout Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.DiagramLayout))]
- /// <summary>
- ///   Diagram Node Layout Identifier
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public Int64? DiagramLayout { get => _DiagramLayout; set => UpdateField(ref _DiagramLayout, value, nameof(DiagramLayout)); }
 
@@ -353,9 +260,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Diagram Node Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.DiagramNodeKind))]
- /// <summary>
- ///   Diagram Node Identifier
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public Int64? DiagramNodeKind { get => _DiagramNodeKind; set => UpdateField(ref _DiagramNodeKind, value, nameof(DiagramNodeKind)); }
 
@@ -364,9 +268,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Diagram Node Recent Layout Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.DiagramLayoutMostRecentUsed))]
- /// <summary>
- ///   Diagram Node Recent Layout Identifier
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public Int64? DiagramLayoutMostRecentUsed { get => _DiagramLayoutMostRecentUsed; set => UpdateField(ref _DiagramLayoutMostRecentUsed, value, nameof(DiagramLayoutMostRecentUsed)); }
 
@@ -375,9 +276,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Text Inset Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.InsetMode))]
- /// <summary>
- ///   Text Inset Mode
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public InsetMarginKind? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
 
@@ -386,9 +284,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Shape Fill Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Filled))]
- /// <summary>
- ///   Shape Fill Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? Filled { get => _Filled; set => UpdateField(ref _Filled, value, nameof(Filled)); }
 
@@ -397,9 +292,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Fill Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.FillColor))]
- /// <summary>
- ///   Fill Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? FillColor { get => _FillColor; set => UpdateField(ref _FillColor, value, nameof(FillColor)); }
 
@@ -408,9 +300,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Shape Stroke Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Stroked))]
- /// <summary>
- ///   Shape Stroke Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? Stroked { get => _Stroked; set => UpdateField(ref _Stroked, value, nameof(Stroked)); }
 
@@ -419,9 +308,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Shape Stroke Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.StrokeColor))]
- /// <summary>
- ///   Shape Stroke Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? StrokeColor { get => _StrokeColor; set => UpdateField(ref _StrokeColor, value, nameof(StrokeColor)); }
 
@@ -430,9 +316,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Shape Stroke Weight
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.StrokeWeight))]
- /// <summary>
- ///   Shape Stroke Weight
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public string? StrokeWeight { get => _StrokeWeight; set => UpdateField(ref _StrokeWeight, value, nameof(StrokeWeight)); }
 
@@ -441,9 +324,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Inset Border From Path
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.InsetPen))]
- /// <summary>
- ///   Inset Border From Path
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? InsetPen { get => _InsetPen; set => UpdateField(ref _InsetPen, value, nameof(InsetPen)); }
 
@@ -452,9 +332,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Optional Number
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.OptionalNumber))]
- /// <summary>
- ///   Optional Number
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public Int32? OptionalNumber { get => _OptionalNumber; set => UpdateField(ref _OptionalNumber, value, nameof(OptionalNumber)); }
 
@@ -463,9 +340,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Shape Connector Type
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.ConnectorType))]
- /// <summary>
- ///   Shape Connector Type
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public ConnectorKind? ConnectorType { get => _ConnectorType; set => UpdateField(ref _ConnectorType, value, nameof(ConnectorType)); }
 
@@ -474,9 +348,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Black-and-White Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.BlackWhiteMode))]
- /// <summary>
- ///   Black-and-White Mode
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public BlackAndWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
 
@@ -485,9 +356,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Pure Black-and-White Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.PureBlackWhiteMode))]
- /// <summary>
- ///   Pure Black-and-White Mode
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public BlackAndWhiteMode? PureBlackWhiteMode { get => _PureBlackWhiteMode; set => UpdateField(ref _PureBlackWhiteMode, value, nameof(PureBlackWhiteMode)); }
 
@@ -496,9 +364,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Normal Black-and-White Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.NormalBlackWhiteMode))]
- /// <summary>
- ///   Normal Black-and-White Mode
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public BlackAndWhiteMode? NormalBlackWhiteMode { get => _NormalBlackWhiteMode; set => UpdateField(ref _NormalBlackWhiteMode, value, nameof(NormalBlackWhiteMode)); }
 
@@ -507,9 +372,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Force Dashed Outline
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.ForceDash))]
- /// <summary>
- ///   Force Dashed Outline
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? ForceDash { get => _ForceDash; set => UpdateField(ref _ForceDash, value, nameof(ForceDash)); }
 
@@ -518,9 +380,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Embedded Object Icon Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.OleIcon))]
- /// <summary>
- ///   Embedded Object Icon Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? OleIcon { get => _OleIcon; set => UpdateField(ref _OleIcon, value, nameof(OleIcon)); }
 
@@ -529,9 +388,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Embedded Object Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Ole))]
- /// <summary>
- ///   Embedded Object Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? Ole { get => _Ole; set => UpdateField(ref _Ole, value, nameof(Ole)); }
 
@@ -540,9 +396,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Relative Resize Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.PreferRelative))]
- /// <summary>
- ///   Relative Resize Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? PreferRelative { get => _PreferRelative; set => UpdateField(ref _PreferRelative, value, nameof(PreferRelative)); }
 
@@ -551,9 +404,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Clip to Wrapping Polygon
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.ClipToWrap))]
- /// <summary>
- ///   Clip to Wrapping Polygon
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? ClipToWrap { get => _ClipToWrap; set => UpdateField(ref _ClipToWrap, value, nameof(ClipToWrap)); }
 
@@ -562,9 +412,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Clipping Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Clip))]
- /// <summary>
- ///   Clipping Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public bool? Clip { get => _Clip; set => UpdateField(ref _Clip, value, nameof(Clip)); }
 
@@ -573,9 +420,6 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Encoded Package
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Gfxdata))]
- /// <summary>
- ///   Encoded Package
- /// </summary>
  [OpenXmlElement(typeof(DXV.Rectangle))]
  public Base64Binary? Gfxdata { get => _Gfxdata; set => UpdateField(ref _Gfxdata, value, nameof(Gfxdata)); }
 

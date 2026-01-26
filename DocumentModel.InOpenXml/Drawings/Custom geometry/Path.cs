@@ -9,9 +9,6 @@ public partial class Path : ModelElement<DXD.Path>
  ///   Width of the path.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Path.Width))]
- /// <summary>
- ///   Width of the path.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Path))]
  public Int64? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
 
@@ -20,9 +17,6 @@ public partial class Path : ModelElement<DXD.Path>
  ///   Height of the path.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Path.Height))]
- /// <summary>
- ///   Height of the path.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Path))]
  public Int64? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
 
@@ -31,9 +25,6 @@ public partial class Path : ModelElement<DXD.Path>
  ///   Fill mode for the path.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Path.Fill))]
- /// <summary>
- ///   Fill mode for the path.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Path))]
  public PathFillMode? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
 
@@ -42,9 +33,6 @@ public partial class Path : ModelElement<DXD.Path>
  ///   Indicates whether the path is stroked.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Path.Stroke))]
- /// <summary>
- ///   Indicates whether the path is stroked.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Path))]
  public bool? Stroke { get => _Stroke; set => UpdateField(ref _Stroke, value, nameof(Stroke)); }
 
@@ -53,9 +41,6 @@ public partial class Path : ModelElement<DXD.Path>
  ///   Indicates whether 3D extrusion is allowed for the path.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Path.ExtrusionOk))]
- /// <summary>
- ///   Indicates whether 3D extrusion is allowed for the path.
- /// </summary>
  [OpenXmlElement(typeof(DXD.Path))]
  public bool? ExtrusionOk { get => _ExtrusionOk; set => UpdateField(ref _ExtrusionOk, value, nameof(ExtrusionOk)); }
 

@@ -16,9 +16,6 @@ public partial class ArtisticTexturizer : ModelElement<DXO10D.ArtisticTexturizer
  /// Scaling factor for the texturizer effect, influencing the size and intensity of the texture.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticTexturizer.Scaling))]
- /// <summary>
- /// Scaling factor for the texturizer effect, influencing the size and intensity of the texture.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.ArtisticTexturizer))]
  public Int32? Scaling { get => _Scaling; set => UpdateField(ref _Scaling, value, nameof(Scaling)); }
 

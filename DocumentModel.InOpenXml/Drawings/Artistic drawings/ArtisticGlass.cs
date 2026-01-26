@@ -16,9 +16,6 @@ public partial class ArtisticGlass : ModelElement<DXO10D.ArtisticGlass>
  /// Scaling factor for the glass effect, influencing the distortion and texture.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticGlass.Scaling))]
- /// <summary>
- /// Scaling factor for the glass effect, influencing the distortion and texture.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.ArtisticGlass))]
  public Int32? Scaling { get => _Scaling; set => UpdateField(ref _Scaling, value, nameof(Scaling)); }
 

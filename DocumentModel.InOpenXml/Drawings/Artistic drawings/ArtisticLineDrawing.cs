@@ -16,9 +16,6 @@ public partial class ArtisticLineDrawing : ModelElement<DXO10D.ArtisticLineDrawi
  /// Size of the pencil used in the line drawing effect, influencing the thickness of the lines.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticLineDrawing.PencilSize))]
- /// <summary>
- /// Size of the pencil used in the line drawing effect, influencing the thickness of the lines.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.ArtisticLineDrawing))]
  public Int32? PencilSize { get => _PencilSize; set => UpdateField(ref _PencilSize, value, nameof(PencilSize)); }
 

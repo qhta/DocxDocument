@@ -12,9 +12,6 @@ public partial class ContentPart : ModelElement<DXO10W.ContentPart>, IOfficeArtE
  /// Black-and-white rendering mode for the content part.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.ContentPart.BlackWhiteMode))]
- /// <summary>
- /// Black-and-white rendering mode for the content part.
- /// </summary>
  [OpenXmlElement(typeof(DXO10W.ContentPart))]
  public BlackWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
 
@@ -23,9 +20,6 @@ public partial class ContentPart : ModelElement<DXO10W.ContentPart>, IOfficeArtE
  /// Relationship ID referencing the associated content part.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.ContentPart.RelationshipId))]
- /// <summary>
- /// Relationship ID referencing the associated content part.
- /// </summary>
  [OpenXmlElement(typeof(DXO10W.ContentPart))]
  public string? RelationshipId { get => _RelationshipId; set => UpdateField(ref _RelationshipId, value, nameof(RelationshipId)); }
 
@@ -34,9 +28,6 @@ public partial class ContentPart : ModelElement<DXO10W.ContentPart>, IOfficeArtE
  /// Non-visual shape properties for the content part, specifying metadata and configuration not directly affecting rendering.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.ContentPart.WordNonVisualContentPartShapeProperties))]
- /// <summary>
- /// Non-visual shape properties for the content part, specifying metadata and configuration not directly affecting rendering.
- /// </summary>
  [OpenXmlElement(typeof(DXO10W.ContentPart))]
  public DMWD.WordNonVisualContentPartShapeProperties? WordNonVisualContentPartShapeProperties { get => _WordNonVisualContentPartShapeProperties; set => UpdateField(ref _WordNonVisualContentPartShapeProperties, value, nameof(WordNonVisualContentPartShapeProperties)); }
 
@@ -45,9 +36,6 @@ public partial class ContentPart : ModelElement<DXO10W.ContentPart>, IOfficeArtE
  /// 2D transformation properties for the content part, specifying scaling, rotation, and translation.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.ContentPart.Transform2D))]
- /// <summary>
- /// 2D transformation properties for the content part, specifying scaling, rotation, and translation.
- /// </summary>
  [OpenXmlElement(typeof(DXO10W.ContentPart))]
  public Transform2D? Transform2D { get => _Transform2D; set => UpdateField(ref _Transform2D, value, nameof(Transform2D)); }
 

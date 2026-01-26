@@ -10,9 +10,6 @@ public partial class PositionalTab : ModelElement<DXW.PositionalTab>, IRunConten
  /// Alignment for the positional tab stop, specifying how the tab aligns relative to the target position.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PositionalTab.Alignment))]
- /// <summary>
- /// Alignment for the positional tab stop, specifying how the tab aligns relative to the target position.
- /// </summary>
  [OpenXmlElement(typeof(DXW.PositionalTab))]
  public AbsolutePositionTabAlignmentKind? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
 
@@ -21,9 +18,6 @@ public partial class PositionalTab : ModelElement<DXW.PositionalTab>, IRunConten
  /// Base for the positional tab stop, specifying the reference point for tab alignment (e.g., margin, indent).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PositionalTab.RelativeTo))]
- /// <summary>
- /// Base for the positional tab stop, specifying the reference point for tab alignment (e.g., margin, indent).
- /// </summary>
  [OpenXmlElement(typeof(DXW.PositionalTab))]
  public AbsolutePositionTabPositioningBaseKind? RelativeTo { get => _RelativeTo; set => UpdateField(ref _RelativeTo, value, nameof(RelativeTo)); }
 
@@ -32,9 +26,6 @@ public partial class PositionalTab : ModelElement<DXW.PositionalTab>, IRunConten
  /// Leader character for the tab, specifying the character used to fill the space advanced by the tab.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PositionalTab.Leader))]
- /// <summary>
- /// Leader character for the tab, specifying the character used to fill the space advanced by the tab.
- /// </summary>
  [OpenXmlElement(typeof(DXW.PositionalTab))]
  public AbsolutePositionTabLeaderCharKind? Leader { get => _Leader; set => UpdateField(ref _Leader, value, nameof(Leader)); }
 

@@ -16,9 +16,6 @@ public partial class ArtisticPencilGrayscale : ModelElement<DXO10D.ArtisticPenci
  /// Size of the brush used in the pencil grayscale effect, influencing the thickness and coverage of the strokes.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticPencilGrayscale.BrushSize))]
- /// <summary>
- /// Size of the brush used in the pencil grayscale effect, influencing the thickness and coverage of the strokes.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.ArtisticPencilGrayscale))]
  public Int32? BrushSize { get => _BrushSize; set => UpdateField(ref _BrushSize, value, nameof(BrushSize)); }
 

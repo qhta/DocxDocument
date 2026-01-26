@@ -11,9 +11,6 @@ public partial class TextBox : ModelElement<DXV.TextBox>
  /// Unique identifier for the text box.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.TextBox.Id))]
- /// <summary>
- /// Unique identifier for the text box.
- /// </summary>
  [OpenXmlElement(typeof(DXV.TextBox))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
@@ -22,9 +19,6 @@ public partial class TextBox : ModelElement<DXV.TextBox>
  /// CSS-style string specifying shape styling properties for the text box.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.TextBox.Style))]
- /// <summary>
- /// CSS-style string specifying shape styling properties for the text box.
- /// </summary>
  [OpenXmlElement(typeof(DXV.TextBox))]
  public string? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
 
@@ -33,9 +27,6 @@ public partial class TextBox : ModelElement<DXV.TextBox>
  /// Inset margin values for the text box content.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.TextBox.Inset))]
- /// <summary>
- /// Inset margin values for the text box content.
- /// </summary>
  [OpenXmlElement(typeof(DXV.TextBox))]
  public string? Inset { get => _Inset; set => UpdateField(ref _Inset, value, nameof(Inset)); }
 
@@ -44,9 +35,6 @@ public partial class TextBox : ModelElement<DXV.TextBox>
  /// Indicates whether single-click selection is enabled for the text box.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.TextBox.SingleClick))]
- /// <summary>
- /// Indicates whether single-click selection is enabled for the text box.
- /// </summary>
  [OpenXmlElement(typeof(DXV.TextBox))]
  public bool? SingleClick { get => _SingleClick; set => UpdateField(ref _SingleClick, value, nameof(SingleClick)); }
 

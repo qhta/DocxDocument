@@ -24,9 +24,6 @@ public partial class Style : ModelElement<DXW.Style>
  /// Type of style, such as paragraph, character, table, or numbering.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.Type))]
- /// <summary>
- /// Type of style, such as paragraph, character, table, or numbering.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Style))]
  public StyleKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
@@ -42,9 +39,6 @@ public partial class Style : ModelElement<DXW.Style>
  /// Next paragraph style to be applied after this style.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.NextParagraphStyle))]
- /// <summary>
- /// Next paragraph style to be applied after this style.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Style))]
  public Style? NextParagraphStyle { get => _NextParagraphStyle; set => UpdateField(ref _NextParagraphStyle, value, nameof(NextParagraphStyle)); }
 

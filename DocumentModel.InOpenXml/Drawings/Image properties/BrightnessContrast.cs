@@ -9,9 +9,6 @@ public partial class BrightnessContrast : ModelElement<DXO10D.BrightnessContrast
  /// Brightness adjustment value.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.BrightnessContrast.Bright))]
- /// <summary>
- /// Brightness adjustment value.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.BrightnessContrast))]
  public Int32? Bright { get => _Bright; set => UpdateField(ref _Bright, value, nameof(Bright)); }
 
@@ -20,9 +17,6 @@ public partial class BrightnessContrast : ModelElement<DXO10D.BrightnessContrast
  /// Contrast adjustment value.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.BrightnessContrast.Contrast))]
- /// <summary>
- /// Contrast adjustment value.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.BrightnessContrast))]
  public Int32? Contrast { get => _Contrast; set => UpdateField(ref _Contrast, value, nameof(Contrast)); }
 

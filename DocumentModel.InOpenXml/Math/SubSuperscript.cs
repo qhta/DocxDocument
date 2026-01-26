@@ -9,9 +9,6 @@ public partial class SubSuperscript : ModelElement<DXM.SubSuperscript>, ICommonM
  ///   Sub-Superscript Properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.SubSuperscript.SubSuperscriptProperties))]
- /// <summary>
- ///   Sub-Superscript Properties.
- /// </summary>
  [OpenXmlElement(typeof(DXM.SubSuperscript))]
  public SubSuperscriptProperties? SubSuperscriptProperties { get => _SubSuperscriptProperties; set => UpdateField(ref _SubSuperscriptProperties, value, nameof(SubSuperscriptProperties)); }
 
@@ -20,9 +17,6 @@ public partial class SubSuperscript : ModelElement<DXM.SubSuperscript>, ICommonM
  ///   Base argument.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.SubSuperscript.Base))]
- /// <summary>
- ///   Base argument.
- /// </summary>
  [OpenXmlElement(typeof(DXM.SubSuperscript))]
  public Argument? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
 
@@ -31,9 +25,6 @@ public partial class SubSuperscript : ModelElement<DXM.SubSuperscript>, ICommonM
  ///   Subscript (Sub-Superscript).
  /// </summary>
  [OpenXmlProperty(nameof(DXM.SubSuperscript.SubArgument))]
- /// <summary>
- ///   Subscript (Sub-Superscript).
- /// </summary>
  [OpenXmlElement(typeof(DXM.SubSuperscript))]
  public SubArgument? SubArgument { get => _SubArgument; set => UpdateField(ref _SubArgument, value, nameof(SubArgument)); }
 
@@ -42,9 +33,6 @@ public partial class SubSuperscript : ModelElement<DXM.SubSuperscript>, ICommonM
  ///   Superscript (Sub-Superscript function).
  /// </summary>
  [OpenXmlProperty(nameof(DXM.SubSuperscript.SuperArgument))]
- /// <summary>
- ///   Superscript (Sub-Superscript function).
- /// </summary>
  [OpenXmlElement(typeof(DXM.SubSuperscript))]
  public SuperArgument? SuperArgument { get => _SuperArgument; set => UpdateField(ref _SuperArgument, value, nameof(SuperArgument)); }
 

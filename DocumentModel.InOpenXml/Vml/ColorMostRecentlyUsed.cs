@@ -9,9 +9,6 @@ public partial class ColorMostRecentlyUsed : ModelElement<DXVO.ColorMostRecently
  ///   VML Extension Handling Behavior
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ColorMostRecentlyUsed.Extension))]
- /// <summary>
- ///   VML Extension Handling Behavior
- /// </summary>
  [OpenXmlElement(typeof(DXVO.ColorMostRecentlyUsed))]
  public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
@@ -20,9 +17,6 @@ public partial class ColorMostRecentlyUsed : ModelElement<DXVO.ColorMostRecently
  ///   Recent colors
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ColorMostRecentlyUsed.Colors))]
- /// <summary>
- ///   Recent colors
- /// </summary>
  [OpenXmlElement(typeof(DXVO.ColorMostRecentlyUsed))]
  public string? Colors { get => _Colors; set => UpdateField(ref _Colors, value, nameof(Colors)); }
 

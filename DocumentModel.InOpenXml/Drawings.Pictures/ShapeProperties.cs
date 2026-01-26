@@ -9,9 +9,6 @@ public partial class ShapeProperties : ModelElement<DXDP.ShapeProperties>
  ///   Black and White Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXDP.ShapeProperties.BlackWhiteMode))]
- /// <summary>
- ///   Black and White Mode
- /// </summary>
  [OpenXmlElement(typeof(DXDP.ShapeProperties))]
  public BlackWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
 
@@ -20,9 +17,6 @@ public partial class ShapeProperties : ModelElement<DXDP.ShapeProperties>
  ///   2D Transform for Individual Objects.
  /// </summary>
  [OpenXmlProperty(nameof(DXDP.ShapeProperties.Transform2D))]
- /// <summary>
- ///   2D Transform for Individual Objects.
- /// </summary>
  [OpenXmlElement(typeof(DXDP.ShapeProperties))]
  public Transform2D? Transform2D { get => _Transform2D; set => UpdateField(ref _Transform2D, value, nameof(Transform2D)); }
 

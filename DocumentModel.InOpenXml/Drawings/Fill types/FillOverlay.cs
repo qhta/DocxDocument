@@ -9,9 +9,6 @@ public partial class FillOverlay : ModelElement<DXD.FillOverlay>
  ///   Blend
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FillOverlay.Blend))]
- /// <summary>
- ///   Blend
- /// </summary>
  [OpenXmlElement(typeof(DXD.FillOverlay))]
  public BlendMode? Blend { get => _Blend; set => UpdateField(ref _Blend, value, nameof(Blend)); }
 

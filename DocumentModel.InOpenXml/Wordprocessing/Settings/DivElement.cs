@@ -10,9 +10,6 @@ public partial class DivElement : ModelElement<DXW.Div>
  /// Data ID for the HTML div element.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Div.Id))]
- /// <summary>
- /// Data ID for the HTML div element.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Div))]
  public Int32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
@@ -63,9 +60,6 @@ public partial class DivElement : ModelElement<DXW.Div>
  /// Set of borders for the HTML div element.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Div.DivBorder))]
- /// <summary>
- /// Set of borders for the HTML div element.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Div))]
  public DivBorders? DivBorder { get => _DivBorder; set => UpdateField(ref _DivBorder, value, nameof(DivBorder)); }
 

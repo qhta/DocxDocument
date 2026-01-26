@@ -17,9 +17,6 @@ public partial class ExtrusionColor : ModelElement<DXO10W.ExtrusionColor>
  /// The scheme color used for the extrusion, enabling the use of document-defined color schemes.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.ExtrusionColor.SchemeColor))]
- /// <summary>
- /// The scheme color used for the extrusion, enabling the use of document-defined color schemes.
- /// </summary>
  [OpenXmlElement(typeof(DXO10W.ExtrusionColor))]
  public SchemeColor? SchemeColor { get => _SchemeColor; set => UpdateField(ref _SchemeColor, value, nameof(SchemeColor)); }
 

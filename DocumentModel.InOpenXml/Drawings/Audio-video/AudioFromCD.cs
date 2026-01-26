@@ -9,9 +9,6 @@ public partial class AudioFromCD : ModelElement<DXD.AudioFromCD>
  /// Start time of the audio segment from the CD.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AudioFromCD.StartTime))]
- /// <summary>
- /// Start time of the audio segment from the CD.
- /// </summary>
  [OpenXmlElement(typeof(DXD.AudioFromCD))]
  public AudioCDTimeType? StartTime { get => _StartTime; set => UpdateField(ref _StartTime, value, nameof(StartTime)); }
 
@@ -20,9 +17,6 @@ public partial class AudioFromCD : ModelElement<DXD.AudioFromCD>
  /// End time of the audio segment from the CD.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AudioFromCD.EndTime))]
- /// <summary>
- /// End time of the audio segment from the CD.
- /// </summary>
  [OpenXmlElement(typeof(DXD.AudioFromCD))]
  public AudioCDTimeType? EndTime { get => _EndTime; set => UpdateField(ref _EndTime, value, nameof(EndTime)); }
 

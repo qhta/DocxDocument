@@ -16,9 +16,6 @@ public partial class ArtisticFilmGrain : ModelElement<DXO10D.ArtisticFilmGrain>
  /// Size of the grain in the film grain effect, influencing the texture's coarseness.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticFilmGrain.GrainSize))]
- /// <summary>
- /// Size of the grain in the film grain effect, influencing the texture's coarseness.
- /// </summary>
  [OpenXmlElement(typeof(DXO10D.ArtisticFilmGrain))]
  public Int32? GrainSize { get => _GrainSize; set => UpdateField(ref _GrainSize, value, nameof(GrainSize)); }
 

@@ -10,9 +10,6 @@ public partial class Nary : ModelElement<DXM.Nary>, ICommonMathContent
  ///   n-ary Properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.Nary.NaryProperties))]
- /// <summary>
- ///   n-ary Properties.
- /// </summary>
  [OpenXmlElement(typeof(DXM.Nary))]
  public NaryProperties? NaryProperties { get => _NaryProperties; set => UpdateField(ref _NaryProperties, value, nameof(NaryProperties)); }
 
@@ -21,9 +18,6 @@ public partial class Nary : ModelElement<DXM.Nary>, ICommonMathContent
  ///   Lower limit (n-ary) .
  /// </summary>
  [OpenXmlProperty(nameof(DXM.Nary.SubArgument))]
- /// <summary>
- ///   Lower limit (n-ary) .
- /// </summary>
  [OpenXmlElement(typeof(DXM.Nary))]
  public SubArgument? SubArgument { get => _SubArgument; set => UpdateField(ref _SubArgument, value, nameof(SubArgument)); }
 
@@ -32,9 +26,6 @@ public partial class Nary : ModelElement<DXM.Nary>, ICommonMathContent
  ///   Upper limit (n-ary).
  /// </summary>
  [OpenXmlProperty(nameof(DXM.Nary.SuperArgument))]
- /// <summary>
- ///   Upper limit (n-ary).
- /// </summary>
  [OpenXmlElement(typeof(DXM.Nary))]
  public SuperArgument? SuperArgument { get => _SuperArgument; set => UpdateField(ref _SuperArgument, value, nameof(SuperArgument)); }
 

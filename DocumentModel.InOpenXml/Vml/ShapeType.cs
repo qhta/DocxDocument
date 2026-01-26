@@ -14,9 +14,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Unique identifier for the shape template.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Id))]
- /// <summary>
- /// Unique identifier for the shape template.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
@@ -25,9 +22,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Shape styling properties, specified as a CSS style string.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Style))]
- /// <summary>
- /// Shape styling properties, specified as a CSS style string.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
 
@@ -36,9 +30,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Hyperlink target for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Href))]
- /// <summary>
- /// Hyperlink target for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? Href { get => _Href; set => UpdateField(ref _Href, value, nameof(Href)); }
 
@@ -47,9 +38,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Hyperlink display target for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Target))]
- /// <summary>
- /// Hyperlink display target for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? Target { get => _Target; set => UpdateField(ref _Target, value, nameof(Target)); }
 
@@ -58,9 +46,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// CSS class reference for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Class))]
- /// <summary>
- /// CSS class reference for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? Class { get => _Class; set => UpdateField(ref _Class, value, nameof(Class)); }
 
@@ -69,9 +54,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Title of the shape, used for accessibility and tooltips.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Title))]
- /// <summary>
- /// Title of the shape, used for accessibility and tooltips.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
 
@@ -80,9 +62,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Alternate text for the shape, used for accessibility.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Alternate))]
- /// <summary>
- /// Alternate text for the shape, used for accessibility.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? Alternate { get => _Alternate; set => UpdateField(ref _Alternate, value, nameof(Alternate)); }
 
@@ -91,9 +70,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Coordinate space size for the shape, specifying the width and height of the coordinate system.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.CoordinateSize))]
- /// <summary>
- /// Coordinate space size for the shape, specifying the width and height of the coordinate system.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? CoordinateSize { get => _CoordinateSize; set => UpdateField(ref _CoordinateSize, value, nameof(CoordinateSize)); }
 
@@ -102,9 +78,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Coordinate space origin for the shape, specifying the starting point of the coordinate system.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.CoordinateOrigin))]
- /// <summary>
- /// Coordinate space origin for the shape, specifying the starting point of the coordinate system.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? CoordinateOrigin { get => _CoordinateOrigin; set => UpdateField(ref _CoordinateOrigin, value, nameof(CoordinateOrigin)); }
 
@@ -113,9 +86,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Shape bounding polygon coordinates for text wrapping.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.WrapCoordinates))]
- /// <summary>
- /// Shape bounding polygon coordinates for text wrapping.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? WrapCoordinates { get => _WrapCoordinates; set => UpdateField(ref _WrapCoordinates, value, nameof(WrapCoordinates)); }
 
@@ -124,9 +94,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether the shape should be printed.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Print))]
- /// <summary>
- /// Indicates whether the shape should be printed.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? Print { get => _Print; set => UpdateField(ref _Print, value, nameof(Print)); }
 
@@ -135,9 +102,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Optional string for additional shape data.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.OptionalString))]
- /// <summary>
- /// Optional string for additional shape data.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? OptionalString { get => _OptionalString; set => UpdateField(ref _OptionalString, value, nameof(OptionalString)); }
 
@@ -146,9 +110,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether the shape handle is enabled.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Oned))]
- /// <summary>
- /// Indicates whether the shape handle is enabled.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? Oned { get => _Oned; set => UpdateField(ref _Oned, value, nameof(Oned)); }
 
@@ -157,9 +118,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Regroup ID for the shape, used for grouping shapes.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.RegroupId))]
- /// <summary>
- /// Regroup ID for the shape, used for grouping shapes.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public Int64? RegroupId { get => _RegroupId; set => UpdateField(ref _RegroupId, value, nameof(RegroupId)); }
 
@@ -168,9 +126,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether double-click notification is enabled for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.DoubleClickNotify))]
- /// <summary>
- /// Indicates whether double-click notification is enabled for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? DoubleClickNotify { get => _DoubleClickNotify; set => UpdateField(ref _DoubleClickNotify, value, nameof(DoubleClickNotify)); }
 
@@ -179,9 +134,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether button behavior is enabled for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Button))]
- /// <summary>
- /// Indicates whether button behavior is enabled for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? Button { get => _Button; set => UpdateField(ref _Button, value, nameof(Button)); }
 
@@ -190,9 +142,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether script anchors are hidden for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.UserHidden))]
- /// <summary>
- /// Indicates whether script anchors are hidden for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? UserHidden { get => _UserHidden; set => UpdateField(ref _UserHidden, value, nameof(UserHidden)); }
 
@@ -201,9 +150,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether the shape is a graphical bullet.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Bullet))]
- /// <summary>
- /// Indicates whether the shape is a graphical bullet.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? Bullet { get => _Bullet; set => UpdateField(ref _Bullet, value, nameof(Bullet)); }
 
@@ -212,9 +158,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether the shape is a horizontal rule.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Horizontal))]
- /// <summary>
- /// Indicates whether the shape is a horizontal rule.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? Horizontal { get => _Horizontal; set => UpdateField(ref _Horizontal, value, nameof(Horizontal)); }
 
@@ -223,9 +166,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether the horizontal rule is displayed in standard mode.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.HorizontalStandard))]
- /// <summary>
- /// Indicates whether the horizontal rule is displayed in standard mode.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? HorizontalStandard { get => _HorizontalStandard; set => UpdateField(ref _HorizontalStandard, value, nameof(HorizontalStandard)); }
 
@@ -234,9 +174,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether 3D shading is applied to the horizontal rule.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.HorizontalNoShade))]
- /// <summary>
- /// Indicates whether 3D shading is applied to the horizontal rule.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? HorizontalNoShade { get => _HorizontalNoShade; set => UpdateField(ref _HorizontalNoShade, value, nameof(HorizontalNoShade)); }
 
@@ -245,9 +182,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Length percentage of the horizontal rule.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.HorizontalPercentage))]
- /// <summary>
- /// Length percentage of the horizontal rule.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public Single? HorizontalPercentage { get => _HorizontalPercentage; set => UpdateField(ref _HorizontalPercentage, value, nameof(HorizontalPercentage)); }
 
@@ -256,9 +190,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Alignment of the horizontal rule.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.HorizontalAlignment))]
- /// <summary>
- /// Alignment of the horizontal rule.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public HorizontalRuleAlignmentKind? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
 
@@ -267,9 +198,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether the shape is allowed in a table cell.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.AllowInCell))]
- /// <summary>
- /// Indicates whether the shape is allowed in a table cell.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? AllowInCell { get => _AllowInCell; set => UpdateField(ref _AllowInCell, value, nameof(AllowInCell)); }
 
@@ -278,9 +206,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether shape overlap is allowed.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.AllowOverlap))]
- /// <summary>
- /// Indicates whether shape overlap is allowed.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? AllowOverlap { get => _AllowOverlap; set => UpdateField(ref _AllowOverlap, value, nameof(AllowOverlap)); }
 
@@ -289,9 +214,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether the shape exists in the master slide.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.UserDrawn))]
- /// <summary>
- /// Indicates whether the shape exists in the master slide.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? UserDrawn { get => _UserDrawn; set => UpdateField(ref _UserDrawn, value, nameof(UserDrawn)); }
 
@@ -300,9 +222,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Top border color of the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.BorderTopColor))]
- /// <summary>
- /// Top border color of the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? BorderTopColor { get => _BorderTopColor; set => UpdateField(ref _BorderTopColor, value, nameof(BorderTopColor)); }
 
@@ -311,9 +230,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Left border color of the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.BorderLeftColor))]
- /// <summary>
- /// Left border color of the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? BorderLeftColor { get => _BorderLeftColor; set => UpdateField(ref _BorderLeftColor, value, nameof(BorderLeftColor)); }
 
@@ -322,9 +238,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Bottom border color of the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.BorderBottomColor))]
- /// <summary>
- /// Bottom border color of the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? BorderBottomColor { get => _BorderBottomColor; set => UpdateField(ref _BorderBottomColor, value, nameof(BorderBottomColor)); }
 
@@ -333,9 +246,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Right border color of the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.BorderRightColor))]
- /// <summary>
- /// Right border color of the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? BorderRightColor { get => _BorderRightColor; set => UpdateField(ref _BorderRightColor, value, nameof(BorderRightColor)); }
 
@@ -344,9 +254,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Diagram node layout identifier for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.DiagramLayout))]
- /// <summary>
- /// Diagram node layout identifier for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public Int64? DiagramLayout { get => _DiagramLayout; set => UpdateField(ref _DiagramLayout, value, nameof(DiagramLayout)); }
 
@@ -355,9 +262,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Diagram node kind identifier for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.DiagramNodeKind))]
- /// <summary>
- /// Diagram node kind identifier for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public Int64? DiagramNodeKind { get => _DiagramNodeKind; set => UpdateField(ref _DiagramNodeKind, value, nameof(DiagramNodeKind)); }
 
@@ -366,9 +270,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Diagram node recent layout identifier for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.DiagramLayoutMostRecentUsed))]
- /// <summary>
- /// Diagram node recent layout identifier for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public Int64? DiagramLayoutMostRecentUsed { get => _DiagramLayoutMostRecentUsed; set => UpdateField(ref _DiagramLayoutMostRecentUsed, value, nameof(DiagramLayoutMostRecentUsed)); }
 
@@ -377,9 +278,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Text inset mode for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.InsetMode))]
- /// <summary>
- /// Text inset mode for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public InsetMarginKind? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
 
@@ -388,9 +286,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether the shape is filled.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Filled))]
- /// <summary>
- /// Indicates whether the shape is filled.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? Filled { get => _Filled; set => UpdateField(ref _Filled, value, nameof(Filled)); }
 
@@ -399,9 +294,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Fill color for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.FillColor))]
- /// <summary>
- /// Fill color for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? FillColor { get => _FillColor; set => UpdateField(ref _FillColor, value, nameof(FillColor)); }
 
@@ -410,9 +302,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether the shape is stroked.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Stroked))]
- /// <summary>
- /// Indicates whether the shape is stroked.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? Stroked { get => _Stroked; set => UpdateField(ref _Stroked, value, nameof(Stroked)); }
 
@@ -421,9 +310,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Stroke color for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.StrokeColor))]
- /// <summary>
- /// Stroke color for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? StrokeColor { get => _StrokeColor; set => UpdateField(ref _StrokeColor, value, nameof(StrokeColor)); }
 
@@ -432,9 +318,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Stroke weight for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.StrokeWeight))]
- /// <summary>
- /// Stroke weight for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? StrokeWeight { get => _StrokeWeight; set => UpdateField(ref _StrokeWeight, value, nameof(StrokeWeight)); }
 
@@ -443,9 +326,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether the border is inset from the path.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.InsetPen))]
- /// <summary>
- /// Indicates whether the border is inset from the path.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? InsetPen { get => _InsetPen; set => UpdateField(ref _InsetPen, value, nameof(InsetPen)); }
 
@@ -454,9 +334,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Optional number for additional shape data.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.OptionalNumber))]
- /// <summary>
- /// Optional number for additional shape data.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public Int32? OptionalNumber { get => _OptionalNumber; set => UpdateField(ref _OptionalNumber, value, nameof(OptionalNumber)); }
 
@@ -465,9 +342,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Connector type for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.ConnectorType))]
- /// <summary>
- /// Connector type for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public ConnectorKind? ConnectorType { get => _ConnectorType; set => UpdateField(ref _ConnectorType, value, nameof(ConnectorType)); }
 
@@ -476,9 +350,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Black-and-white mode for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.BlackWhiteMode))]
- /// <summary>
- /// Black-and-white mode for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public BlackAndWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
 
@@ -487,9 +358,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Pure black-and-white mode for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.PureBlackWhiteMode))]
- /// <summary>
- /// Pure black-and-white mode for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public BlackAndWhiteMode? PureBlackWhiteMode { get => _PureBlackWhiteMode; set => UpdateField(ref _PureBlackWhiteMode, value, nameof(PureBlackWhiteMode)); }
 
@@ -498,9 +366,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Normal black-and-white mode for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.NormalBlackWhiteMode))]
- /// <summary>
- /// Normal black-and-white mode for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public BlackAndWhiteMode? NormalBlackWhiteMode { get => _NormalBlackWhiteMode; set => UpdateField(ref _NormalBlackWhiteMode, value, nameof(NormalBlackWhiteMode)); }
 
@@ -509,9 +374,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether a dashed outline is forced for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.ForceDash))]
- /// <summary>
- /// Indicates whether a dashed outline is forced for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? ForceDash { get => _ForceDash; set => UpdateField(ref _ForceDash, value, nameof(ForceDash)); }
 
@@ -520,9 +382,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether the shape is an embedded object icon.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.OleIcon))]
- /// <summary>
- /// Indicates whether the shape is an embedded object icon.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? OleIcon { get => _OleIcon; set => UpdateField(ref _OleIcon, value, nameof(OleIcon)); }
 
@@ -531,9 +390,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether the shape is an embedded object.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Ole))]
- /// <summary>
- /// Indicates whether the shape is an embedded object.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? Ole { get => _Ole; set => UpdateField(ref _Ole, value, nameof(Ole)); }
 
@@ -542,9 +398,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether relative resize is preferred for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.PreferRelative))]
- /// <summary>
- /// Indicates whether relative resize is preferred for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? PreferRelative { get => _PreferRelative; set => UpdateField(ref _PreferRelative, value, nameof(PreferRelative)); }
 
@@ -553,9 +406,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether the shape should be clipped to the wrapping polygon.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.ClipToWrap))]
- /// <summary>
- /// Indicates whether the shape should be clipped to the wrapping polygon.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? ClipToWrap { get => _ClipToWrap; set => UpdateField(ref _ClipToWrap, value, nameof(ClipToWrap)); }
 
@@ -564,9 +414,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Indicates whether clipping is enabled for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Clip))]
- /// <summary>
- /// Indicates whether clipping is enabled for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public bool? Clip { get => _Clip; set => UpdateField(ref _Clip, value, nameof(Clip)); }
 
@@ -575,9 +422,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Adjustment parameters for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Adjustment))]
- /// <summary>
- /// Adjustment parameters for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? Adjustment { get => _Adjustment; set => UpdateField(ref _Adjustment, value, nameof(Adjustment)); }
 
@@ -586,9 +430,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Edge path for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.EdgePath))]
- /// <summary>
- /// Edge path for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? EdgePath { get => _EdgePath; set => UpdateField(ref _EdgePath, value, nameof(EdgePath)); }
 
@@ -597,9 +438,6 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Master element toggle for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.Master))]
- /// <summary>
- /// Master element toggle for the shape.
- /// </summary>
  [OpenXmlElement(typeof(DXV.Shapetype))]
  public string? Master { get => _Master; set => UpdateField(ref _Master, value, nameof(Master)); }
 

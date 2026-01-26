@@ -17,9 +17,6 @@ public partial class Border : ModelElement<DXW.Border>
  /// Border color, specified as an abstract color value.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Border.Color))]
- /// <summary>
- /// Border color, specified as an abstract color value.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Border))]
  public DocumentModel.Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
 
@@ -35,9 +32,6 @@ public partial class Border : ModelElement<DXW.Border>
  /// Border spacing measurement, specifying the space between the border and the content.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Border.Space))]
- /// <summary>
- /// Border spacing measurement, specifying the space between the border and the content.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Border))]
  public Twips? Space { get => _Space; set => UpdateField(ref _Space, value, nameof(Space)); }
 
@@ -46,9 +40,6 @@ public partial class Border : ModelElement<DXW.Border>
  /// Indicates whether the border has a shadow effect.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Border.Shadow))]
- /// <summary>
- /// Indicates whether the border has a shadow effect.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Border))]
  public bool? Shadow { get => _Shadow; set => UpdateField(ref _Shadow, value, nameof(Shadow)); }
 
@@ -57,9 +48,6 @@ public partial class Border : ModelElement<DXW.Border>
  /// Indicates whether the border has a frame effect.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Border.Frame))]
- /// <summary>
- /// Indicates whether the border has a frame effect.
- /// </summary>
  [OpenXmlElement(typeof(DXW.Border))]
  public bool? Frame { get => _Frame; set => UpdateField(ref _Frame, value, nameof(Frame)); }
 

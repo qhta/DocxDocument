@@ -12,9 +12,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Optional String
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.OptionalString))]
- /// <summary>
- ///   Optional String
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? OptionalString { get => _OptionalString; set => UpdateField(ref _OptionalString, value, nameof(OptionalString)); }
 
@@ -23,9 +20,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Shape Handle Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Oned))]
- /// <summary>
- ///   Shape Handle Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? Oned { get => _Oned; set => UpdateField(ref _Oned, value, nameof(Oned)); }
 
@@ -34,9 +28,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Regroup ID
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.RegroupId))]
- /// <summary>
- ///   Regroup ID
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public Int64? RegroupId { get => _RegroupId; set => UpdateField(ref _RegroupId, value, nameof(RegroupId)); }
 
@@ -45,9 +36,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Double-click Notification Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.DoubleClickNotify))]
- /// <summary>
- ///   Double-click Notification Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? DoubleClickNotify { get => _DoubleClickNotify; set => UpdateField(ref _DoubleClickNotify, value, nameof(DoubleClickNotify)); }
 
@@ -56,9 +44,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Button Behavior Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Button))]
- /// <summary>
- ///   Button Behavior Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? Button { get => _Button; set => UpdateField(ref _Button, value, nameof(Button)); }
 
@@ -67,9 +52,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Hide Script Anchors
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.UserHidden))]
- /// <summary>
- ///   Hide Script Anchors
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? UserHidden { get => _UserHidden; set => UpdateField(ref _UserHidden, value, nameof(UserHidden)); }
 
@@ -78,9 +60,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Graphical Bullet
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Bullet))]
- /// <summary>
- ///   Graphical Bullet
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? Bullet { get => _Bullet; set => UpdateField(ref _Bullet, value, nameof(Bullet)); }
 
@@ -89,9 +68,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Horizontal Rule Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Horizontal))]
- /// <summary>
- ///   Horizontal Rule Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? Horizontal { get => _Horizontal; set => UpdateField(ref _Horizontal, value, nameof(Horizontal)); }
 
@@ -100,9 +76,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Horizontal Rule Standard Display Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.HorizontalStandard))]
- /// <summary>
- ///   Horizontal Rule Standard Display Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? HorizontalStandard { get => _HorizontalStandard; set => UpdateField(ref _HorizontalStandard, value, nameof(HorizontalStandard)); }
 
@@ -111,9 +84,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Horizontal Rule 3D Shading Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.HorizontalNoShade))]
- /// <summary>
- ///   Horizontal Rule 3D Shading Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? HorizontalNoShade { get => _HorizontalNoShade; set => UpdateField(ref _HorizontalNoShade, value, nameof(HorizontalNoShade)); }
 
@@ -122,9 +92,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Horizontal Rule Length Percentage
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.HorizontalPercentage))]
- /// <summary>
- ///   Horizontal Rule Length Percentage
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public Single? HorizontalPercentage { get => _HorizontalPercentage; set => UpdateField(ref _HorizontalPercentage, value, nameof(HorizontalPercentage)); }
 
@@ -133,9 +100,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Horizontal Rule Alignment
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.HorizontalAlignment))]
- /// <summary>
- ///   Horizontal Rule Alignment
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public HorizontalRuleAlignmentKind? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
 
@@ -144,9 +108,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Allow in Table Cell
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.AllowInCell))]
- /// <summary>
- ///   Allow in Table Cell
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? AllowInCell { get => _AllowInCell; set => UpdateField(ref _AllowInCell, value, nameof(AllowInCell)); }
 
@@ -155,9 +116,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Allow Shape Overlap
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.AllowOverlap))]
- /// <summary>
- ///   Allow Shape Overlap
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? AllowOverlap { get => _AllowOverlap; set => UpdateField(ref _AllowOverlap, value, nameof(AllowOverlap)); }
 
@@ -166,9 +124,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Exists In Master Slide
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.UserDrawn))]
- /// <summary>
- ///   Exists In Master Slide
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? UserDrawn { get => _UserDrawn; set => UpdateField(ref _UserDrawn, value, nameof(UserDrawn)); }
 
@@ -177,9 +132,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Border Top Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.BorderTopColor))]
- /// <summary>
- ///   Border Top Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? BorderTopColor { get => _BorderTopColor; set => UpdateField(ref _BorderTopColor, value, nameof(BorderTopColor)); }
 
@@ -188,9 +140,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Border Left Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.BorderLeftColor))]
- /// <summary>
- ///   Border Left Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? BorderLeftColor { get => _BorderLeftColor; set => UpdateField(ref _BorderLeftColor, value, nameof(BorderLeftColor)); }
 
@@ -199,9 +148,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Bottom Border Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.BorderBottomColor))]
- /// <summary>
- ///   Bottom Border Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? BorderBottomColor { get => _BorderBottomColor; set => UpdateField(ref _BorderBottomColor, value, nameof(BorderBottomColor)); }
 
@@ -210,9 +156,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Border Right Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.BorderRightColor))]
- /// <summary>
- ///   Border Right Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? BorderRightColor { get => _BorderRightColor; set => UpdateField(ref _BorderRightColor, value, nameof(BorderRightColor)); }
 
@@ -221,9 +164,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Diagram Node Layout Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.DiagramLayout))]
- /// <summary>
- ///   Diagram Node Layout Identifier
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public Int64? DiagramLayout { get => _DiagramLayout; set => UpdateField(ref _DiagramLayout, value, nameof(DiagramLayout)); }
 
@@ -232,9 +172,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Diagram Node Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.DiagramNodeKind))]
- /// <summary>
- ///   Diagram Node Identifier
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public Int64? DiagramNodeKind { get => _DiagramNodeKind; set => UpdateField(ref _DiagramNodeKind, value, nameof(DiagramNodeKind)); }
 
@@ -243,9 +180,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Diagram Node Recent Layout Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.DiagramLayoutMostRecentUsed))]
- /// <summary>
- ///   Diagram Node Recent Layout Identifier
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public Int64? DiagramLayoutMostRecentUsed { get => _DiagramLayoutMostRecentUsed; set => UpdateField(ref _DiagramLayoutMostRecentUsed, value, nameof(DiagramLayoutMostRecentUsed)); }
 
@@ -254,9 +188,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Text Inset Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.InsetMode))]
- /// <summary>
- ///   Text Inset Mode
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public InsetMarginKind? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
 
@@ -265,9 +196,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Shape Fill Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Filled))]
- /// <summary>
- ///   Shape Fill Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? Filled { get => _Filled; set => UpdateField(ref _Filled, value, nameof(Filled)); }
 
@@ -276,9 +204,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Fill Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.FillColor))]
- /// <summary>
- ///   Fill Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? FillColor { get => _FillColor; set => UpdateField(ref _FillColor, value, nameof(FillColor)); }
 
@@ -287,9 +212,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Shape Stroke Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Stroked))]
- /// <summary>
- ///   Shape Stroke Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? Stroked { get => _Stroked; set => UpdateField(ref _Stroked, value, nameof(Stroked)); }
 
@@ -298,9 +220,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Shape Stroke Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.StrokeColor))]
- /// <summary>
- ///   Shape Stroke Color
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? StrokeColor { get => _StrokeColor; set => UpdateField(ref _StrokeColor, value, nameof(StrokeColor)); }
 
@@ -309,9 +228,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Shape Stroke Weight
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.StrokeWeight))]
- /// <summary>
- ///   Shape Stroke Weight
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? StrokeWeight { get => _StrokeWeight; set => UpdateField(ref _StrokeWeight, value, nameof(StrokeWeight)); }
 
@@ -320,9 +236,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Inset Border From Path
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.InsetPen))]
- /// <summary>
- ///   Inset Border From Path
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? InsetPen { get => _InsetPen; set => UpdateField(ref _InsetPen, value, nameof(InsetPen)); }
 
@@ -331,9 +244,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Optional Number
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.OptionalNumber))]
- /// <summary>
- ///   Optional Number
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public Int32? OptionalNumber { get => _OptionalNumber; set => UpdateField(ref _OptionalNumber, value, nameof(OptionalNumber)); }
 
@@ -342,9 +252,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Shape Connector Type
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.ConnectorType))]
- /// <summary>
- ///   Shape Connector Type
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public ConnectorKind? ConnectorType { get => _ConnectorType; set => UpdateField(ref _ConnectorType, value, nameof(ConnectorType)); }
 
@@ -353,9 +260,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Black-and-White Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.BlackWhiteMode))]
- /// <summary>
- ///   Black-and-White Mode
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public BlackAndWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
 
@@ -364,9 +268,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Pure Black-and-White Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.PureBlackWhiteMode))]
- /// <summary>
- ///   Pure Black-and-White Mode
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public BlackAndWhiteMode? PureBlackWhiteMode { get => _PureBlackWhiteMode; set => UpdateField(ref _PureBlackWhiteMode, value, nameof(PureBlackWhiteMode)); }
 
@@ -375,9 +276,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Normal Black-and-White Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.NormalBlackWhiteMode))]
- /// <summary>
- ///   Normal Black-and-White Mode
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public BlackAndWhiteMode? NormalBlackWhiteMode { get => _NormalBlackWhiteMode; set => UpdateField(ref _NormalBlackWhiteMode, value, nameof(NormalBlackWhiteMode)); }
 
@@ -386,9 +284,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Force Dashed Outline
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.ForceDash))]
- /// <summary>
- ///   Force Dashed Outline
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? ForceDash { get => _ForceDash; set => UpdateField(ref _ForceDash, value, nameof(ForceDash)); }
 
@@ -397,9 +292,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Embedded Object Icon Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.OleIcon))]
- /// <summary>
- ///   Embedded Object Icon Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? OleIcon { get => _OleIcon; set => UpdateField(ref _OleIcon, value, nameof(OleIcon)); }
 
@@ -408,9 +300,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Embedded Object Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Ole))]
- /// <summary>
- ///   Embedded Object Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? Ole { get => _Ole; set => UpdateField(ref _Ole, value, nameof(Ole)); }
 
@@ -419,9 +308,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Relative Resize Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.PreferRelative))]
- /// <summary>
- ///   Relative Resize Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? PreferRelative { get => _PreferRelative; set => UpdateField(ref _PreferRelative, value, nameof(PreferRelative)); }
 
@@ -430,9 +316,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Clip to Wrapping Polygon
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.ClipToWrap))]
- /// <summary>
- ///   Clip to Wrapping Polygon
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? ClipToWrap { get => _ClipToWrap; set => UpdateField(ref _ClipToWrap, value, nameof(ClipToWrap)); }
 
@@ -441,9 +324,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Clipping Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Clip))]
- /// <summary>
- ///   Clipping Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? Clip { get => _Clip; set => UpdateField(ref _Clip, value, nameof(Clip)); }
 
@@ -452,9 +332,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Encoded Package
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Gfxdata))]
- /// <summary>
- ///   Encoded Package
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public Base64Binary? Gfxdata { get => _Gfxdata; set => UpdateField(ref _Gfxdata, value, nameof(Gfxdata)); }
 
@@ -463,9 +340,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Unique Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Id))]
- /// <summary>
- ///   Unique Identifier
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
@@ -474,9 +348,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Shape Styling Properties
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Style))]
- /// <summary>
- ///   Shape Styling Properties
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
 
@@ -485,9 +356,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   IHyperlink Target
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Href))]
- /// <summary>
- ///   IHyperlink Target
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? Href { get => _Href; set => UpdateField(ref _Href, value, nameof(Href)); }
 
@@ -496,9 +364,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   IHyperlink Display Target
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Target))]
- /// <summary>
- ///   IHyperlink Display Target
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? Target { get => _Target; set => UpdateField(ref _Target, value, nameof(Target)); }
 
@@ -507,9 +372,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Shape Title
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Title))]
- /// <summary>
- ///   Shape Title
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
 
@@ -518,9 +380,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Alternate Text
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Alternate))]
- /// <summary>
- ///   Alternate Text
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? Alternate { get => _Alternate; set => UpdateField(ref _Alternate, value, nameof(Alternate)); }
 
@@ -529,9 +388,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Coordinate Space Size
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.CoordinateSize))]
- /// <summary>
- ///   Coordinate Space Size
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? CoordinateSize { get => _CoordinateSize; set => UpdateField(ref _CoordinateSize, value, nameof(CoordinateSize)); }
 
@@ -540,9 +396,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Coordinate Space Origin
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.CoordinateOrigin))]
- /// <summary>
- ///   Coordinate Space Origin
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? CoordinateOrigin { get => _CoordinateOrigin; set => UpdateField(ref _CoordinateOrigin, value, nameof(CoordinateOrigin)); }
 
@@ -551,9 +404,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Shape Bounding Polygon
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Wrapcoords))]
- /// <summary>
- ///   Shape Bounding Polygon
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public string? Wrapcoords { get => _Wrapcoords; set => UpdateField(ref _Wrapcoords, value, nameof(Wrapcoords)); }
 
@@ -562,9 +412,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Print Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.Print))]
- /// <summary>
- ///   Print Toggle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public bool? Print { get => _Print; set => UpdateField(ref _Print, value, nameof(Print)); }
 
@@ -573,9 +420,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Starting Angle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.StartAngle))]
- /// <summary>
- ///   Starting Angle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public Decimal? StartAngle { get => _StartAngle; set => UpdateField(ref _StartAngle, value, nameof(StartAngle)); }
 
@@ -584,9 +428,6 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Ending Angle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.EndAngle))]
- /// <summary>
- ///   Ending Angle
- /// </summary>
  [OpenXmlElement(typeof(DXV.Arc))]
  public Decimal? EndAngle { get => _EndAngle; set => UpdateField(ref _EndAngle, value, nameof(EndAngle)); }
 

@@ -9,9 +9,6 @@ public partial class MoveTo : ModelElement<DXD.MoveTo>
  ///   Destination point for the move operation.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.MoveTo.Point))]
- /// <summary>
- ///   Destination point for the move operation.
- /// </summary>
  [OpenXmlElement(typeof(DXD.MoveTo))]
  public AdjustPoint2DType? Point { get => _Point; set => UpdateField(ref _Point, value, nameof(Point)); }
 

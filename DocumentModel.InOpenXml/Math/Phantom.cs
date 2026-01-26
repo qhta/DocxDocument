@@ -11,9 +11,6 @@ public partial class Phantom : ModelElement<DXM.Phantom>, ICommonMathContent
  ///   Phantom Properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.Phantom.PhantomProperties))]
- /// <summary>
- ///   Phantom Properties.
- /// </summary>
  [OpenXmlElement(typeof(DXM.Phantom))]
  public PhantomProperties? PhantomProperties { get => _PhantomProperties; set => UpdateField(ref _PhantomProperties, value, nameof(PhantomProperties)); }
 
