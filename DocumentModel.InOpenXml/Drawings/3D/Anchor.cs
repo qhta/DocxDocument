@@ -70,37 +70,6 @@ public partial class Anchor : ModelElement<DXD.Anchor>
  ///   </para>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.Anchor.X))]
- /// <summary>
- ///   X-coordinate (horizontal position) of the anchor point in 3D space.
- /// </summary>
- /// <remarks>
- ///   <para>
- ///   Specifies the horizontal position along the X-axis in EMUs (English Metric Units).
- ///   In the standard 3D coordinate system, positive X values extend to the right,
- ///   and negative X values extend to the left.
- ///   </para>
- ///   <para>
- ///   The X-coordinate is measured from the origin (0, 0, 0) of the 3D scene.
- ///   When used in camera positioning, this represents the horizontal position of the camera
- ///   or the point the camera is looking at.
- ///   </para>
- ///   <para>
- ///   Common usage examples:
- ///   <list type="bullet">
- ///     <item><description>0 - Center position on the X-axis</description></item>
- ///     <item><description>Positive values - Right side of center</description></item>
- ///     <item><description>Negative values - Left side of center</description></item>
- ///   </list>
- ///   </para>
- ///   <para>
- ///   To convert from common units to EMUs:
- ///   <list type="bullet">
- ///     <item><description>Inches to EMUs: multiply by 914,400</description></item>
- ///     <item><description>Millimeters to EMUs: multiply by 36,000</description></item>
- ///     <item><description>Points to EMUs: multiply by 12,700</description></item>
- ///   </list>
- ///   </para>
- /// </remarks>
  [OpenXmlElement(typeof(DXD.Anchor))]
  public Int64? X { get => _X; set => UpdateField(ref _X, value, nameof(X)); }
 
@@ -134,34 +103,6 @@ public partial class Anchor : ModelElement<DXD.Anchor>
  ///   </para>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.Anchor.Y))]
- /// <summary>
- ///   Y-coordinate (vertical position) of the anchor point in 3D space.
- /// </summary>
- /// <remarks>
- ///   <para>
- ///   Specifies the vertical position along the Y-axis in EMUs (English Metric Units).
- ///   In DrawingML's 3D coordinate system, positive Y values typically extend downward,
- ///   and negative Y values extend upward (following screen coordinate conventions).
- ///   </para>
- ///   <para>
- ///   The Y-coordinate is measured from the origin (0, 0, 0) of the 3D scene.
- ///   When used in camera positioning, this represents the vertical position of the camera
- ///   or the vertical component of the look-at point.
- ///   </para>
- ///   <para>
- ///   Common usage examples:
- ///   <list type="bullet">
- ///     <item><description>0 - Center position on the Y-axis</description></item>
- ///     <item><description>Positive values - Below center (downward in most contexts)</description></item>
- ///     <item><description>Negative values - Above center (upward in most contexts)</description></item>
- ///   </list>
- ///   </para>
- ///   <para>
- ///   Note: The Y-axis direction may vary depending on the specific DrawingML context.
- ///   In some 3D modeling contexts, +Y points upward (standard mathematical convention),
- ///   but in screen-based contexts, +Y typically points downward.
- ///   </para>
- /// </remarks>
  [OpenXmlElement(typeof(DXD.Anchor))]
  public Int64? Y { get => _Y; set => UpdateField(ref _Y, value, nameof(Y)); }
 
@@ -200,39 +141,6 @@ public partial class Anchor : ModelElement<DXD.Anchor>
  ///   </para>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.Anchor.Z))]
- /// <summary>
- ///   Z-coordinate (depth position) of the anchor point in 3D space.
- /// </summary>
- /// <remarks>
- ///   <para>
- ///   Specifies the depth position along the Z-axis in EMUs (English Metric Units).
- ///   In the standard 3D coordinate system, positive Z values extend toward the viewer
- ///   (out of the screen), and negative Z values extend away from the viewer (into the screen).
- ///   </para>
- ///   <para>
- ///   The Z-coordinate is measured from the origin (0, 0, 0) of the 3D scene.
- ///   This dimension is critical for creating depth perception in 3D visualizations.
- ///   When used in camera positioning, this represents the distance of the camera from
- ///   the viewing plane or the depth of the look-at point.
- ///   </para>
- ///   <para>
- ///   Common usage examples:
- ///   <list type="bullet">
- ///     <item><description>0 - Position on the viewing plane</description></item>
- ///     <item><description>Positive values - Closer to the viewer (forward)</description></item>
- ///     <item><description>Negative values - Farther from the viewer (backward)</description></item>
- ///   </list>
- ///   </para>
- ///   <para>
- ///   The Z-coordinate is essential for:
- ///   <list type="bullet">
- ///     <item><description>Depth sorting and occlusion (which objects appear in front)</description></item>
- ///     <item><description>3D transformations and rotations</description></item>
- ///     <item><description>Camera positioning and field of view calculations</description></item>
- ///     <item><description>Lighting effects and shadows in 3D scenes</description></item>
- ///   </list>
- ///   </para>
- /// </remarks>
  [OpenXmlElement(typeof(DXD.Anchor))]
  public Int64? Z { get => _Z; set => UpdateField(ref _Z, value, nameof(Z)); }
 

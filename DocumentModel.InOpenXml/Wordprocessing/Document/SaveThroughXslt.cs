@@ -10,9 +10,6 @@ public partial class SaveThroughXslt : ModelElement<DXW.SaveThroughXslt>
  /// Local identifier for the XSL transform, specifying the unique solution or transform to apply.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SaveThroughXslt.SolutionId))]
- /// <summary>
- /// Local identifier for the XSL transform, specifying the unique solution or transform to apply.
- /// </summary>
  [OpenXmlElement(typeof(DXW.SaveThroughXslt))]
  public string? SolutionId { get => _SolutionId; set => UpdateField(ref _SolutionId, value, nameof(SolutionId)); }
 
