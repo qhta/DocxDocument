@@ -32,6 +32,12 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
 
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
   {
+    if (node.Modifiers.Any(SyntaxKind.AbstractKeyword))
+      return node;
+
+    if (node.ConstraintClauses.Any())
+      return node;
+
     var baseType = node.BaseList?.Types
         .Select(bt => bt.Type)
         .OfType<GenericNameSyntax>()
@@ -39,7 +45,6 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
 
     if (baseType == null)
       return base.VisitClassDeclaration(node);
-
     var openXmlType = baseType.TypeArgumentList.Arguments.First().ToString();
 
     bool hasClassAttr = node.AttributeLists
