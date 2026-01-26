@@ -1,11 +1,13 @@
 using DocumentModel.Drawings;
 
 namespace DocumentModel.Wordprocessing.Drawings;
+
 /// <summary>
 /// Represents the shadow effect applied to a drawing element in a Wordprocessing document.
 /// This class provides properties for configuring blur radius, distance, direction, scaling, skew, alignment, and color, enabling advanced visual effects for graphical objects.
 /// </summary>
-public partial class Shadow : IDrawingProperty
+[OpenXmlType(typeof(DXW.Shadow))]
+public partial class Shadow : ModelElement<DXW.Shadow>, IDrawingProperty
 {
   /// <summary>
   /// The blur radius of the shadow, specified in EMUs (English Metric Units), determining the softness of the shadow's edges.

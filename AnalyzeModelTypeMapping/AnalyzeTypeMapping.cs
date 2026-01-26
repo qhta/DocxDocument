@@ -59,11 +59,15 @@ public class AnalyzeTypeMapping
     {
       foreach (var prop in type.GetProperties())
       {
-        var propOpenXmlType = DocumentModel.OpenXml.OpenXmlTypeMap.GetOpenXmlTypeForModelType(prop.PropertyType);
-        if (propOpenXmlType != null && propOpenXmlType.Assembly == OpenXmlAssembly)
+        var propType = prop.PropertyType;
+        if (!propType.IsEnum && !propType.IsAbstract && !propType.IsInterface && !propType.IsGenericTypeDefinition)
         {
-          var mapping = new TypeMapping(prop.PropertyType, propOpenXmlType);
-          PropTypeMappings[mapping] = PropTypeMappings.TryGetValue(mapping, out var count) ? count + 1 : 1;
+          var propOpenXmlType = DocumentModel.OpenXml.OpenXmlTypeMap.GetOpenXmlTypeForModelType(propType);
+          if (propOpenXmlType != null && propOpenXmlType.Assembly == OpenXmlAssembly)
+          {
+            var mapping = new TypeMapping(propType, propOpenXmlType);
+            PropTypeMappings[mapping] = PropTypeMappings.TryGetValue(mapping, out var count) ? count + 1 : 1;
+          }
         }
       }
     }
