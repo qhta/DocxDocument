@@ -3,7 +3,8 @@ namespace DocumentModel.Wordprocessing;
 /// Represents style table properties for a table in a Wordprocessing document.
 /// This class provides properties for row and column band sizes, enabling advanced table styling and formatting options.
 /// </summary>
-public partial class StyleTableProperties : BaseTableProperties
+[OpenXmlType(typeof(DXW.StyleTableProperties))]
+public partial class StyleTableProperties : BaseTableProperties<DXW.StyleTableProperties>
 {
   /// <summary>
   /// Table style row band size, specifying the number of rows in each band for table styling.

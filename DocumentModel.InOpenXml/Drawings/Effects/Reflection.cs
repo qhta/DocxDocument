@@ -2,7 +2,8 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a reflection effect, including blur, opacity, position, distance, direction, scaling, skew, alignment, and rotation options.
 /// </summary>
-public partial class Reflection : ModelElement
+[OpenXmlType(typeof(DXD.Reflection))]
+public partial class Reflection : ModelElement<DXD.Reflection>
 {
     /// <summary>
     ///   Blur radius of the reflection.

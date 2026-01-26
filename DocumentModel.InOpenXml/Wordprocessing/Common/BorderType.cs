@@ -3,7 +3,8 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a border type definition in a WordprocessingML document.
 /// This class provides properties for border style, width, and shadow effect, enabling advanced formatting and visual separation of document content.
 /// </summary>
-public partial class BorderType
+[OpenXmlType(typeof(DXW.BorderType))]
+public partial class BorderType: ModelElement<DXW.BorderType>
 {
   /// <summary>
   /// Border style, specifying the type of border (e.g., single, double, dashed).

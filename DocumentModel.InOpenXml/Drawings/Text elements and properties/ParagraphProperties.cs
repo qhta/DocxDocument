@@ -2,7 +2,8 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents properties for a text paragraph, including margins, indentation, alignment, tab size, line breaks, font alignment, spacing, and other formatting options.
 /// </summary>
-public partial class ParagraphProperties : ModelElement
+[OpenXmlType(typeof(DXD.ParagraphProperties))]
+public partial class ParagraphProperties : ModelElement<DXD.ParagraphProperties>
 {
     /// <summary>
     ///   Left margin of the paragraph.

@@ -5,7 +5,8 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the reflection effect applied to a drawing element in a Wordprocessing document.
 /// This class provides properties for configuring blur radius, opacity, position, distance, direction, scaling, skew, and alignment, enabling advanced visual effects for graphical objects.
 /// </summary>
-public partial class Reflection : IDrawingProperty
+[OpenXmlType(typeof(DXO10W.Reflection))]
+public partial class Reflection : ModelElement<DXO10W.Reflection>, IDrawingProperty
 {
   /// <summary>
   /// The blur radius of the reflection, specified in EMUs (English Metric Units), determining the softness of the reflected image.

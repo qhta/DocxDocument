@@ -2,7 +2,8 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the properties of the math run r.
 /// </summary>
-public partial class RunProperties : ModelElement
+[OpenXmlType(typeof(DXM.RunProperties))]
+public partial class RunProperties : ModelElement<DXM.RunProperties>
 {
     /// <summary>
     ///   Specifies that the characters in the run are literal; that is, they are to be interpreted literally 

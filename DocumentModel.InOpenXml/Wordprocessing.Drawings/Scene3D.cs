@@ -5,7 +5,8 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the 3D scene settings for a drawing element in a Wordprocessing document.
 /// This class provides properties for configuring the camera and lighting rig, enabling advanced 3D rendering and visualization of graphical objects.
 /// </summary>
-public partial class Scene3D : IDrawingProperty
+[OpenXmlType(typeof(DXO10W.Scene3D))]
+public partial class Scene3D : ModelElement<DXO10W.Scene3D>, IDrawingProperty
 {
   /// <summary>
   /// The camera settings for the 3D scene, specifying position, orientation, and perspective for rendering.

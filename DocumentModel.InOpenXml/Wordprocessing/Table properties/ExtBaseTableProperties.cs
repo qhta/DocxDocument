@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Extended base table properties class.
 /// Contains additional common properties for table formatting and metadata, which are not applied to <see cref = "CurrentTableProperties"/>.
 /// </summary>
-public partial class ExtBaseTableProperties : CurrentTableProperties
+public partial class ExtBaseTableProperties<T> : CurrentTableProperties<T> where T : DX.OpenXmlElement
 {
   /// <summary>
   /// Table style name, specifying the style applied to the table.

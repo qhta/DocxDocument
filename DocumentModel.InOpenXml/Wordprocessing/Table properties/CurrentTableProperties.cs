@@ -3,7 +3,8 @@ namespace DocumentModel.Wordprocessing;
 /// Base interface for current table properties.
 /// Contains properties for preferred table width, layout, and conditional formatting settings, enabling advanced configuration and management of table appearance and behavior.
 /// </summary>
-public partial class CurrentTableProperties : BaseTableProperties
+[OpenXmlType(typeof(DXW.TableProperties))]
+public partial class CurrentTableProperties<T> : BaseTableProperties<T> where T : DX.OpenXmlElement
 {
   /// <summary>
   /// Preferred table width, used in table layout algorithms to determine the optimal width of the table.
