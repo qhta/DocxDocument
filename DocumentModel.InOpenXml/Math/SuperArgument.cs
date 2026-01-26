@@ -1,8 +1,10 @@
 using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Math;
 /// <summary>
 ///   Super (upper) argument in PreSubSuper and N-ary objects.
 /// </summary>
-public class SuperArgument: OfficeMathArgumentType<DXM.SuperArgument>
+[OpenXmlType(typeof(DXM.SuperArgument))]
+public class SuperArgument : OfficeMathArgumentType<DXM.SuperArgument>
 {
 }

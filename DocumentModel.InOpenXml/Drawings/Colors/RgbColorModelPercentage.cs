@@ -52,33 +52,34 @@ namespace DocumentModel.Drawings;
 /// };
 /// </code>
 /// </example>
+[OpenXmlType(typeof(DXD.RgbColorModelPercentage))]
 public partial class RgbColorModelPercentage : DrawingColor<DXD.RgbColorModelPercentage>
 {
-  /// <summary>
-  /// Red component as a percentage value.
-  /// </summary>
-  /// <remarks>
-  /// Specifies the amount of red in the color where 0 is no red and 100000 is maximum red (100%).
-  /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
-  /// Common values: 0 (no red), 50000 (50% red), 100000 (full red).
-  /// </remarks>
-  public Int32? RedPortion { get; set; }
-  /// <summary>
-  /// Green component as a percentage value.
-  /// </summary>
-  /// <remarks>
-  /// Specifies the amount of green in the color where 0 is no green and 100000 is maximum green (100%).
-  /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
-  /// Common values: 0 (no green), 50000 (50% green), 100000 (full green).
-  /// </remarks>
-  public Int32? GreenPortion { get; set; }
-  /// <summary>
-  /// Blue component as a percentage value.
-  /// </summary>
-  /// <remarks>
-  /// Specifies the amount of blue in the color where 0 is no blue and 100000 is maximum blue (100%).
-  /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
-  /// Common values: 0 (no blue), 50000 (50% blue), 100000 (full blue).
-  /// </remarks>
-  public Int32? BluePortion { get; set; }
+ /// <summary>
+ /// Red component as a percentage value.
+ /// </summary>
+ /// <remarks>
+ /// Specifies the amount of red in the color where 0 is no red and 100000 is maximum red (100%).
+ /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
+ /// Common values: 0 (no red), 50000 (50% red), 100000 (full red).
+ /// </remarks>
+ public Int32? RedPortion { get; set; }
+ /// <summary>
+ /// Green component as a percentage value.
+ /// </summary>
+ /// <remarks>
+ /// Specifies the amount of green in the color where 0 is no green and 100000 is maximum green (100%).
+ /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
+ /// Common values: 0 (no green), 50000 (50% green), 100000 (full green).
+ /// </remarks>
+ public Int32? GreenPortion { get; set; }
+ /// <summary>
+ /// Blue component as a percentage value.
+ /// </summary>
+ /// <remarks>
+ /// Specifies the amount of blue in the color where 0 is no blue and 100000 is maximum blue (100%).
+ /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
+ /// Common values: 0 (no blue), 50000 (50% blue), 100000 (full blue).
+ /// </remarks>
+ public Int32? BluePortion { get; set; }
 }

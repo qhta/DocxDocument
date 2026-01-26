@@ -5,14 +5,15 @@ namespace DocumentModel.Math;
 ///   This element specifies the name of the function in the Function-Apply object func. 
 ///   For example, function names are sin and cos.
 /// </summary>
+[OpenXmlType(typeof(DXM.FunctionName))]
 public partial class FunctionName : OfficeMathArgumentType<DXM.FunctionName>
 {
-  /// <summary>
-  ///   Specifies properties of argument object.
-  /// </summary>
-  public ArgumentProperties? ArgumentProperties { get; set; }
-  /// <summary>
-  ///   Specifies formatting of argument object.
-  /// </summary>
-  public ControlProperties? ControlProperties { get; set; }
+ /// <summary>
+ ///   Specifies properties of argument object.
+ /// </summary>
+ public ArgumentProperties? ArgumentProperties { get; set; }
+ /// <summary>
+ ///   Specifies formatting of argument object.
+ /// </summary>
+ public ControlProperties? ControlProperties { get; set; }
 }

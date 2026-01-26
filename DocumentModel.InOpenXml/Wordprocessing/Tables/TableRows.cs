@@ -1,10 +1,9 @@
-﻿namespace DocumentModel.Wordprocessing;
-
+namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a collection of table row elements in a WordprocessingML document.
-/// This class provides access to and management of <see cref="TableRow"/> objects, enabling advanced organization and manipulation of table row structures within a table.
+/// This class provides access to and management of <see cref = "TableRow"/> objects, enabling advanced organization and manipulation of table row structures within a table.
 /// </summary>
-public class TableRows: ElementCollection<TableRow>
+[OpenXmlType(typeof(TableRow))]
+public class TableRows : ElementCollection<TableRow>
 {
-  
 }
