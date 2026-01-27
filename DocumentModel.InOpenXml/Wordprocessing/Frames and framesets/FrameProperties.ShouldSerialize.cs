@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class FrameProperties
 {
   public bool ShouldSerializeDropCap() => DropCap is not null;

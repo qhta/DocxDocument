@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class CommentExtensible
 {
   public bool ShouldSerializeDurableId() => DurableId is not null;

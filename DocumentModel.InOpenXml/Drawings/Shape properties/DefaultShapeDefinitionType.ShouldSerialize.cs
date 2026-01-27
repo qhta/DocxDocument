@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class DefaultShapeDefinitionType
 {
   public bool ShouldSerializeShapeProperties() => ShapeProperties is not null;

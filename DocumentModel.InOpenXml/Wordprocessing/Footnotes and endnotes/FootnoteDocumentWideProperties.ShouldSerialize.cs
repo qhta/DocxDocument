@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class FootnoteDocumentWideProperties
 {
   public bool ShouldSerializeFootnotePosition() => FootnotePosition is not null;

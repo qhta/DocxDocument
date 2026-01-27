@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class Comment
 {
   public bool ShouldSerializeId() => Id is not null;

@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings.Pictures;
 
+#pragma warning disable CS1591
+
 public partial class BlipFill
 {
   public bool ShouldSerializeDpi() => Dpi is not null;

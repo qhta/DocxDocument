@@ -1,6 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 
-public partial class RelationshipType<T> 
+#pragma warning disable CS1591
+
+public partial class RelationshipType<T>
 {
   public bool ShouldSerializeId() => Id is not null;
 }

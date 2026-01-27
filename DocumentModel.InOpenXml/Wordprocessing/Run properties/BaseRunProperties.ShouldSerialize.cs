@@ -1,6 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 
-public partial class BaseRunProperties<T>
+#pragma warning disable CS1591
+
+public partial class BaseRunProperties<T> 
 {
   public bool ShouldSerializeBold() => Bold is not null;
   public bool ShouldSerializeItalic() => Italic is not null;

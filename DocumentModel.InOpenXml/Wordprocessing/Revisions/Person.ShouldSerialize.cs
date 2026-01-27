@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class Person
 {
   public bool ShouldSerializeContact() => Contact is not null;

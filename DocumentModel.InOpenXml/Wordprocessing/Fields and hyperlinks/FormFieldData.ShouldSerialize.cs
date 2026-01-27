@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class FormFieldData
 {
   public bool ShouldSerializeFormFieldName() => FormFieldName is not null;

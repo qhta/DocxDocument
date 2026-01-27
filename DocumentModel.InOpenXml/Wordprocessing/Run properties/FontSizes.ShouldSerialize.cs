@@ -1,5 +1,7 @@
 namespace DocumentModel;
 
+#pragma warning disable CS1591
+
 public partial class FontSizes
 {
   public bool ShouldSerializeVal() => Val is not null;
