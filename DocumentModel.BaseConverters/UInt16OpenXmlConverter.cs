@@ -333,7 +333,7 @@ public static class UInt16OpenXmlConverter
     if (targetType == typeof(DX.StringValue))
       return new DX.StringValue(value.ToString());
 
-    throw new InvalidOperationException($"Conversion to {targetType} is not supported");
+    throw new InvalidOperationException($"Conversion from UInt16 to {targetType} is not supported");
   }
 
   /// <summary>
@@ -379,7 +379,7 @@ public static class UInt16OpenXmlConverter
       return null;
     }
 
-    throw new InvalidOperationException($"Conversion from {sourceType} is not supported");
+    throw new InvalidOperationException($"Conversion from {sourceType} to UInt16 is not supported");
   }
 
   #endregion

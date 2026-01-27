@@ -322,7 +322,7 @@ public static class Int64OpenXmlConverter
     if (targetType == typeof(DX.StringValue))
       return new DX.StringValue(value.ToString());
 
-    throw new InvalidOperationException($"Conversion to {targetType} is not supported");
+    throw new InvalidOperationException($"Conversion from Int64 to {targetType} is not supported");
   }
 
   /// <summary>
@@ -368,7 +368,7 @@ public static class Int64OpenXmlConverter
       return null;
     }
 
-    throw new InvalidOperationException($"Conversion from {sourceType} is not supported");
+    throw new InvalidOperationException($"Conversion from {sourceType} to Int64 is not supported");
   }
 
   #endregion

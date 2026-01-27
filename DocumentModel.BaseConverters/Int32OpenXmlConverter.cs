@@ -16,7 +16,8 @@ public static class Int32OpenXmlConverter
     typeof(DX.UInt16Value),
     typeof(DX.UInt32Value),
     typeof(DX.UInt64Value),
-    typeof(DX.StringValue)
+    typeof(DX.StringValue),
+    typeof(DX.OpenXmlLeafTextElement)
   ];
 
   #region SByteValue conversion.
@@ -289,6 +290,78 @@ public static class Int32OpenXmlConverter
 
   #endregion
 
+  #region StringValue conversion.
+
+  /// <summary>
+  /// Converts an OpenXml StringValue to Int32.
+  /// </summary>
+  /// <param name="StringValue">The StringValue to convert.</param>
+  /// <returns>The Int32 value, or null if the element has no content.</returns>
+  public static Int32? ConvertToInt32(DX.StringValue? StringValue)
+  {
+    if (StringValue == null) return null;
+    var text = StringValue.Value;
+
+    if (!Int32.TryParse(text, out var result))
+      return null;
+
+    return result;
+  }
+
+  /// <summary>
+  /// Creates an OpenXml StringValue from an Int32 value.
+  /// </summary>
+  /// <param name="value">The Int32 value to convert.</param>
+  /// <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+  /// <returns>A new StringValue, or null if the input is null.</returns>
+  public static DX.StringValue? CreateStringValue(Int32? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    var text = value.ToString()!;
+    var element = (DX.StringValue)Activator.CreateInstance(targetType)!;
+    element.Value = text;
+    return element;
+  }
+
+  #endregion
+
+  #region OpenXmlLeafTextElement conversion.
+
+  /// <summary>
+  /// Converts an OpenXml OpenXmlLeafTextElement to Int32.
+  /// </summary>
+  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The Int32 value, or null if the element has no content.</returns>
+  public static Int32? ConvertToInt32(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
+  {
+    if (OpenXmlLeafTextElement == null) return null;
+    var text = OpenXmlLeafTextElement.Text;
+
+    if (!Int32.TryParse(text, out var result))
+      return null;
+
+    return result;
+  }
+
+  /// <summary>
+  /// Creates an OpenXml OpenXmlLeafTextElement from an Int32 value.
+  /// </summary>
+  /// <param name="value">The Int32 value to convert.</param>
+  /// <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+  public static DX.OpenXmlLeafTextElement? CreateOpenXmlLeafTextElement(Int32? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    var text = value.ToString()!;
+    var element = (DX.OpenXmlLeafTextElement)Activator.CreateInstance(targetType)!;
+    element.Text = text;
+    return element;
+  }
+
+  #endregion
+
   #region Generic OpenXml conversion methods
 
   /// <summary>
@@ -324,9 +397,12 @@ public static class Int32OpenXmlConverter
       return CreateUInt64Value(value);
 
     if (targetType == typeof(DX.StringValue))
-      return new DX.StringValue(value.ToString());
+      return CreateStringValue(value, targetType);
 
-    throw new InvalidOperationException($"Conversion to {targetType} is not supported");
+    if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
+      return CreateOpenXmlLeafTextElement(value, targetType);
+
+    throw new InvalidOperationException($"Conversion of Int32 to {targetType} is not supported");
   }
 
   /// <summary>
@@ -366,13 +442,12 @@ public static class Int32OpenXmlConverter
       return ConvertToInt32(uInt64Value);
 
     if (value is DX.StringValue stringValue)
-    {
-      if (Int32.TryParse(stringValue.Value, out var result))
-        return result;
-      return null;
-    }
+      return ConvertToInt32(stringValue);
 
-    throw new InvalidOperationException($"Conversion from {sourceType} is not supported");
+    if (value is DX.OpenXmlLeafTextElement openXmlLeafTextElement)
+      return ConvertToInt32(openXmlLeafTextElement);
+    
+    throw new InvalidOperationException($"Conversion from {sourceType} to Int32 is not supported");
   }
 
   #endregion

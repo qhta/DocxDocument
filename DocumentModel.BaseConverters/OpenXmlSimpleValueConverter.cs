@@ -5,6 +5,9 @@
 /// </summary>
 public static class OpenXmlSimpleValueConverter
 {
+  /// <summary>
+  /// Supported model types for conversion.
+  /// </summary>
   public static Type[] SupportedModelTypes { get; } =
   [
     typeof(bool),
@@ -18,7 +21,9 @@ public static class OpenXmlSimpleValueConverter
     typeof(Byte),
     typeof(SByte),
     typeof(UInt64),
+    typeof(Guid),
   ];
+
   /// <summary>
   /// Converts a model object to an Open XML simple type.
   /// </summary>
@@ -62,6 +67,9 @@ public static class OpenXmlSimpleValueConverter
 
     if (modelValue is UInt64 uint64Value && UInt64OpenXmlConverter.SupportedTypes.Contains(openXmlType))
       return UInt64OpenXmlConverter.ConvertToOpenXml(uint64Value, openXmlType);
+
+    if (modelValue is Guid guidValue && GuidOpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return GuidOpenXmlConverter.ConvertToOpenXml(guidValue, openXmlType);
 
     throw new InvalidOperationException($"Cannot convert {modelValue} of type {modelType} to Open XML simple type {openXmlType}");
   }
@@ -111,6 +119,9 @@ public static class OpenXmlSimpleValueConverter
 
     if (modelType == typeof(UInt64) && UInt64OpenXmlConverter.SupportedTypes.Contains(openXmlType))
       return UInt64OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
+
+    if (modelType == typeof(Guid) && GuidOpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return GuidOpenXmlConverter.ConvertFromOpenXml(openXmlValue);
 
     throw new InvalidOperationException($"Cannot convert {openXmlValue} of type {openXmlType} to model type {modelType.FullName}");
   }

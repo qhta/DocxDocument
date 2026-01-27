@@ -1,36 +1,35 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics;
-using System.Reflection;
+﻿namespace AnalyzeModelTypeMapping;
 
-using DX = DocumentFormat.OpenXml;
-
-using DocumentModel.OpenXml;
-
-using Qhta.TypeUtils;
-
-namespace AnalyzeModelTypeMapping;
 
 /// <summary>
-/// Indicates a mapping between a model type and an Open XML type.
+///   Represents a mapping between a model type and an Open XML type for analysis and reporting purposes.
 /// </summary>
-/// <param name="ModelType"></param>
-/// <param name="OpenXmlType"></param>
+/// <param name="ModelType">The fully qualified name of the model type.</param>
+/// <param name="OpenXmlType">The fully qualified name of the corresponding Open XML type.</param>
 public record struct TypeMapping(string ModelType, string OpenXmlType)
 {
+  /// <summary>
+  ///   The fully qualified name of the model type.
+  /// </summary>
   public string ModelType { get; } = ModelType;
+  /// <summary>
+  ///   The fully qualified name of the corresponding Open XML type.
+  /// </summary>
   public string OpenXmlType { get; } = OpenXmlType;
-
 }
 
+
 /// <summary>
-/// Represents a collection that maps <see cref="TypeMapping"/> instances to their count of occurrences.
+///   Represents a collection that maps <see cref="TypeMapping"/> instances to their count of occurrences.
+///   Used for aggregating and reporting type mapping statistics.
 /// </summary>
 public class TypeMappings : Dictionary<TypeMapping, int>
 {
 }
 
 /// <summary>
-/// This class gets all types from the dependent project and analyzes their mappings to Open XML elements and attributes.
+///   Analyzes model types and their mappings to Open XML elements and attributes, generating reports on type correspondence and usage statistics.
+///   Uses reflection to inspect types, properties, and mapping attributes in the dependent project.
 /// </summary>
 public class AnalyzeTypeMapping
 {
@@ -38,6 +37,11 @@ public class AnalyzeTypeMapping
   private readonly TypeMappings PropTypeMappings = new();
   private static readonly Assembly OpenXmlAssembly = typeof(DocumentFormat.OpenXml.Wordprocessing.DocPart).Assembly;
 
+
+  /// <summary>
+  ///   Scans all non-abstract, non-enum, non-interface, non-generic types in the specified assembly and analyzes their property type mappings.
+  /// </summary>
+  /// <param name="modelAssembly">The assembly containing model types to analyze.</param>
   public void ScanPropTypeMappings(Assembly modelAssembly)
   {
     foreach (var type in modelAssembly.GetTypes().Where(type =>
@@ -50,11 +54,11 @@ public class AnalyzeTypeMapping
     }
   }
 
+
   /// <summary>
-  /// Generates a report of the type mappings and their counts to a specified file.
-  /// Uses tab-delimited format.
+  ///   Generates a report of the type mappings and their counts to a specified file in tab-delimited format.
   /// </summary>
-  /// <param name="filePath"></param>
+  /// <param name="filePath">The file path to write the report to.</param>
   public void GenerateReport(string filePath)
   {
     using var writer = new StreamWriter(filePath);
@@ -67,9 +71,9 @@ public class AnalyzeTypeMapping
 
 
   /// <summary>
-  /// Analyzes a given type to find its properties and their corresponding Open XML types.
+  ///   Analyzes a given type to find its properties and their corresponding Open XML types, recursively analyzing nested types as needed.
   /// </summary>
-  /// <param name="type"></param>
+  /// <param name="type">The model type to analyze for property-to-OpenXml type mappings.</param>
   private void AnalyzeType(Type type)
   {
     if (VisitedTypes.Contains(type))
@@ -83,6 +87,9 @@ public class AnalyzeTypeMapping
     {
       foreach (var prop in type.GetModelProperties())
       {
+        var openXmlPropertyAttribute = prop.GetCustomAttribute<OpenXmlPropertyAttribute>();
+        if (openXmlPropertyAttribute == null)
+          continue;
         var propType = prop.PropertyType.GetNotNullableType();
         if (propType == typeof(Uri)) Debug.Assert(true);
 
@@ -90,14 +97,13 @@ public class AnalyzeTypeMapping
         {
           if (propType.Namespace?.StartsWith("DocumentFormat.OpenXml") == true)
             continue;
+          
           if (propType.IsClass && propType.GetModelProperties().Any() && propType.GetCustomAttribute<SimpleTypeAttribute>() == null)
           {
             AnalyzeType(propType);
             return;
           }
-
-
-
+          
           var openXmlProp = DocumentModel.OpenXml.OpenXmlPropertyMap.GetOpenXmlProperty(prop, openXmlType);
           if (openXmlProp == null)
             continue;
@@ -108,6 +114,8 @@ public class AnalyzeTypeMapping
           if (propType == typeof(string) && openXmlPropType.BaseType == typeof(DX.OpenXmlLeafElement)) Debug.Assert(true);
         
           var openXmlPropTypeNameBaseType = GetOpenXmlTypeName(openXmlPropType);
+          if (openXmlPropTypeNameBaseType.EndsWith("Dx.DX.OpenXmlCompositeElement"))
+            continue;
           var mapping = new TypeMapping(FormatTypeName(propType), openXmlPropTypeNameBaseType);
           PropTypeMappings[mapping] = PropTypeMappings.TryGetValue(mapping, out var count) ? count + 1 : 1;
         }
@@ -116,10 +124,10 @@ public class AnalyzeTypeMapping
   }
 
   /// <summary>
-  /// Gets the Open XML type name for a given type.
+  ///   Gets the Open XML type name for a given type, including base type and property declarations if applicable.
   /// </summary>
   /// <param name="type">The type to get the Open XML type name for.</param>
-  /// <returns></returns>
+  /// <returns>A formatted string representing the Open XML type name and its structure.</returns>
   private string GetOpenXmlTypeName(Type type)
   {
     if (type.Namespace=="DocumentFormat.OpenXml" || type.Namespace=="System")
@@ -134,11 +142,10 @@ public class AnalyzeTypeMapping
         var valPropType = valProp.PropertyType.GetNotNullableType()!;
         valPropDeclarations.Add($"{valProp.Name}: {FormatTypeName(valPropType)}");
       }
-      if (valPropDeclarations.Count > 0)
-        return
-          $"base: {FormatTypeName(baseType)} {{ {string.Join(", ", valPropDeclarations)} }}";
+      if (valPropDeclarations.Count == 1)
+          return $"{FormatTypeName(baseType)} {{ {string.Join(", ", valPropDeclarations)} }}";
       else
-        return $"base: {FormatTypeName(baseType)}";
+        return $"{FormatTypeName(baseType)}";
     }
 
     return FormatTypeName(type);
@@ -184,11 +191,17 @@ public class AnalyzeTypeMapping
     { "DocumentFormat.OpenXml.Packaging", "DXPP" },
     { "DocumentFormat.OpenXml.Vml", "DXV" },
     { "DocumentFormat.OpenXml.Vml.Office", "DXVO" },
+    { "DocumentFormat.OpenXml.Vml.Spreadsheet", "DXVS" },
     { "DocumentFormat.OpenXml.VariantTypes", "DXVT" },
     { "DocumentFormat.OpenXml.Vml.Wordprocessing", "DXVW" },
     { "DocumentFormat.OpenXml.Wordprocessing", "DXW" },
   };
 
+  /// <summary>
+  ///   Formats the type name, including generic arguments, using namespace abbreviations for Open XML types.
+  /// </summary>
+  /// <param name="type">The type to format.</param>
+  /// <returns>A formatted type name string.</returns>
   private string FormatTypeName(Type type)
   {
     if (type.IsGenericType)
@@ -201,6 +214,11 @@ public class AnalyzeTypeMapping
     }
     return SimpleTypeName(type);
   }
+  /// <summary>
+  ///   Returns the simple type name with namespace abbreviation for Open XML types.
+  /// </summary>
+  /// <param name="type">The type to format.</param>
+  /// <returns>A simple type name string with namespace abbreviation.</returns>
   private string SimpleTypeName(Type type)
   {
     var ns = type.Namespace!;
@@ -213,6 +231,11 @@ public class AnalyzeTypeMapping
     return $"{ns}.{typeName}";
   }
 
+  /// <summary>
+  ///   Recursively finds the most relevant base type for an OpenXml property type, skipping common base types.
+  /// </summary>
+  /// <param name="openXmlPropType">The OpenXml property type to analyze.</param>
+  /// <returns>The most relevant base type for the property type.</returns>
   private Type GetBaseType(Type openXmlPropType)
   {
     var baseType = openXmlPropType.BaseType;

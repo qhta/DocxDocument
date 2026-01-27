@@ -327,7 +327,7 @@ public static class Int16OpenXmlConverter
     if (targetType == typeof(DX.StringValue))
       return new DX.StringValue(value.ToString());
 
-    throw new InvalidOperationException($"Conversion to {targetType} is not supported");
+    throw new InvalidOperationException($"Conversion from Int16 to {targetType} is not supported");
   }
 
   /// <summary>
@@ -373,7 +373,7 @@ public static class Int16OpenXmlConverter
       return null;
     }
 
-    throw new InvalidOperationException($"Conversion from {sourceType} is not supported");
+    throw new InvalidOperationException($"Conversion from {sourceType} to Int16 is not supported");
   }
 
   #endregion

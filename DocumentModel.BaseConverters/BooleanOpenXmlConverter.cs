@@ -803,7 +803,6 @@ public static class BooleanOpenXmlConverter
 
   #endregion
 
-
   #region Generic OpenXml boolean converter
 
   /// <summary>
@@ -855,7 +854,7 @@ public static class BooleanOpenXmlConverter
     if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
       return CreateOpenXmlLeafTextElement(value, targetType);
 
-    throw new NotSupportedException($"Conversion to type {targetType} is not supported.");
+    throw new NotSupportedException($"Conversion from Boolean to type {targetType} is not supported.");
   }
 
   /// <summary>
@@ -908,7 +907,7 @@ public static class BooleanOpenXmlConverter
     if (value is DX.OpenXmlLeafTextElement openXmlLeafTextElement)
       return ConvertToBool(openXmlLeafTextElement);
 
-    throw new NotSupportedException($"Conversion to type {sourceType} is not supported.");
+    throw new NotSupportedException($"Conversion from type {sourceType} to Boolean is not supported.");
   }
 
   #endregion
