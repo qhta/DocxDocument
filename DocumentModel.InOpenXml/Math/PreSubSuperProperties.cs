@@ -3,12 +3,13 @@ namespace DocumentModel.Math;
 ///   This element specifies the Pre-Sub-Superscript object, 
 ///   which consists of a base e and a subscript and superscript placed to the left of the base, as in {_1^2}A. 
 /// </summary>
+[OpenXmlType(typeof(DXM.PreSubSuperProperties))]
 public partial class PreSubSuperProperties : ModelElement<DXM.PreSubSuperProperties>
 {
-    /// <summary>
-    ///   Specifies formatting of pre-sub-superscript object argument.
-    /// </summary>
-    public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+ /// <summary>
+ ///   Specifies formatting of pre-sub-superscript object argument.
+ /// </summary>
+ public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
 
-    private ControlProperties? _ControlProperties;
+ private ControlProperties? _ControlProperties;
 }
