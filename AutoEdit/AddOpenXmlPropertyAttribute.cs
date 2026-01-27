@@ -42,27 +42,43 @@ public class AddOpenXmlPropertyAttributeRewriter(Dictionary<string, string> alia
 {
   public bool Changed { get; private set; } = false;
 
-  public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
+  public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax classNode)
   {
 
     // Skip abstract classes
-    if (node.Modifiers.Any(m => m.IsKind(SyntaxKind.AbstractKeyword)))
-      return node;
+    if (classNode.Modifiers.Any(m => m.IsKind(SyntaxKind.AbstractKeyword)))
+      return classNode;
 
     // Check if class inherits from ModelElement<T>
-    var baseType = node.BaseList?.Types
+    var baseTypeNode = classNode.BaseList?.Types
         .Select(bt => bt.Type)
         .OfType<GenericNameSyntax>()
         .FirstOrDefault(g => g.Identifier.Text == "ModelElement");
 
-    if (baseType == null)
-      return base.VisitClassDeclaration(node);
+    if (baseTypeNode == null)
+      return base.VisitClassDeclaration(classNode);
 
     // Get the type parameter (OpenXml type)
-    var openXmlType = baseType.TypeArgumentList.Arguments.First().ToString();
+    var argumentTypeNode = baseTypeNode.TypeArgumentList.Arguments.First();
+    var openXmlTypeName = argumentTypeNode.ToString();
+    if (openXmlTypeName == "T")
+    {
+      var typeParamClause = classNode.ConstraintClauses.FirstOrDefault(clause => clause.Name.Identifier.Text == openXmlTypeName);
+      if (typeParamClause?.Constraints == null)
+        return base.VisitClassDeclaration(classNode);
 
+      var constraint = typeParamClause.Constraints.OfType<TypeConstraintSyntax>().FirstOrDefault();
+      if (constraint == null)
+        return base.VisitClassDeclaration(classNode);
+
+      var qualifiedName = constraint.Type is QualifiedNameSyntax constraintType ? constraintType.ToString() : constraint.Type.ToString();
+      if (qualifiedName == "DX.OpenXmlElement")
+        return base.VisitClassDeclaration(classNode);
+
+      openXmlTypeName = qualifiedName;
+    }
     // Add [OpenXmlProperty(nameof(OpenXmlType.PropertyName))] to each property
-    var newMembers = node.Members.Select(member =>
+    var newMembers = classNode.Members.Select(member =>
     {
       if (member is PropertyDeclarationSyntax prop)
       {
@@ -82,11 +98,11 @@ public class AddOpenXmlPropertyAttributeRewriter(Dictionary<string, string> alia
           var docTrivia = leadingTrivia.Where(t => t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) || t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia)).ToList();
           var otherTrivia = leadingTrivia.Except(docTrivia).ToList();
 
-          if (PropertyExistsInOpenXmlType(openXmlType, prop.Identifier.Text))
+          if (PropertyExistsInOpenXmlType(openXmlTypeName, prop.Identifier.Text))
           {
             var attributeName = "OpenXmlProperty";
 
-            var attr = SyntaxFactory.Attribute(SyntaxFactory.IdentifierName(attributeName), SyntaxFactory.AttributeArgumentList(SyntaxFactory.SingletonSeparatedList(SyntaxFactory.AttributeArgument(SyntaxFactory.ParseExpression($"nameof({openXmlType}.{prop.Identifier.Text})")))));
+            var attr = SyntaxFactory.Attribute(SyntaxFactory.IdentifierName(attributeName), SyntaxFactory.AttributeArgumentList(SyntaxFactory.SingletonSeparatedList(SyntaxFactory.AttributeArgument(SyntaxFactory.ParseExpression($"nameof({openXmlTypeName}.{prop.Identifier.Text})")))));
 
             var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attr)).WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
             var newProp = prop.WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia)).WithAttributeLists(prop.AttributeLists.Add(attrList)).WithTrailingTrivia(prop.GetTrailingTrivia());
@@ -98,7 +114,7 @@ public class AddOpenXmlPropertyAttributeRewriter(Dictionary<string, string> alia
       }
       return member;
     }).ToList();
-    return node.WithMembers(SyntaxFactory.List(newMembers));
+    return classNode.WithMembers(SyntaxFactory.List(newMembers));
   }
 
   private bool PropertyExistsInOpenXmlType(string openXmlTypeName, string propertyName)
