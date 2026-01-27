@@ -9,7 +9,6 @@ public partial class CreationId : ModelElement<DXO16D.CreationId>
  ///   Unique identifier value.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16D.CreationId.Id))]
- [OpenXmlElement(typeof(DXO16D.CreationId))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
  private string? _Id;

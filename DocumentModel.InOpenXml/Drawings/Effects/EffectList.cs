@@ -9,7 +9,6 @@ public partial class EffectList : ModelElement<DXD.EffectList>
  /// Blur effect applied to the element.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.EffectList.Blur))]
- [OpenXmlElement(typeof(DXD.EffectList))]
  public Blur? Blur { get => _Blur; set => UpdateField(ref _Blur, value, nameof(Blur)); }
 
  private Blur? _Blur;
@@ -17,7 +16,6 @@ public partial class EffectList : ModelElement<DXD.EffectList>
  /// Fill overlay effect, which overlays a fill on the element.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.EffectList.FillOverlay))]
- [OpenXmlElement(typeof(DXD.EffectList))]
  public FillOverlay? FillOverlay { get => _FillOverlay; set => UpdateField(ref _FillOverlay, value, nameof(FillOverlay)); }
 
  private FillOverlay? _FillOverlay;
@@ -25,7 +23,6 @@ public partial class EffectList : ModelElement<DXD.EffectList>
  /// Glow effect, which adds a glowing outline to the element.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.EffectList.Glow))]
- [OpenXmlElement(typeof(DXD.EffectList))]
  public Glow? Glow { get => _Glow; set => UpdateField(ref _Glow, value, nameof(Glow)); }
 
  private Glow? _Glow;
@@ -33,7 +30,6 @@ public partial class EffectList : ModelElement<DXD.EffectList>
  /// Inner shadow effect, which adds a shadow inside the boundaries of the element.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.EffectList.InnerShadow))]
- [OpenXmlElement(typeof(DXD.EffectList))]
  public InnerShadow? InnerShadow { get => _InnerShadow; set => UpdateField(ref _InnerShadow, value, nameof(InnerShadow)); }
 
  private InnerShadow? _InnerShadow;
@@ -41,7 +37,6 @@ public partial class EffectList : ModelElement<DXD.EffectList>
  /// Outer shadow effect, which adds a shadow outside the boundaries of the element.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.EffectList.OuterShadow))]
- [OpenXmlElement(typeof(DXD.EffectList))]
  public OuterShadow? OuterShadow { get => _OuterShadow; set => UpdateField(ref _OuterShadow, value, nameof(OuterShadow)); }
 
  private OuterShadow? _OuterShadow;
@@ -49,7 +44,6 @@ public partial class EffectList : ModelElement<DXD.EffectList>
  /// Preset shadow effect, which applies a predefined shadow style to the element.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.EffectList.PresetShadow))]
- [OpenXmlElement(typeof(DXD.EffectList))]
  public PresetShadow? PresetShadow { get => _PresetShadow; set => UpdateField(ref _PresetShadow, value, nameof(PresetShadow)); }
 
  private PresetShadow? _PresetShadow;
@@ -57,7 +51,6 @@ public partial class EffectList : ModelElement<DXD.EffectList>
  /// Reflection effect, which creates a mirrored reflection of the element.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.EffectList.Reflection))]
- [OpenXmlElement(typeof(DXD.EffectList))]
  public Reflection? Reflection { get => _Reflection; set => UpdateField(ref _Reflection, value, nameof(Reflection)); }
 
  private Reflection? _Reflection;
@@ -65,7 +58,6 @@ public partial class EffectList : ModelElement<DXD.EffectList>
  /// Soft edge effect, which softens the edges of the element.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.EffectList.SoftEdge))]
- [OpenXmlElement(typeof(DXD.EffectList))]
  public SoftEdge? SoftEdge { get => _SoftEdge; set => UpdateField(ref _SoftEdge, value, nameof(SoftEdge)); }
 
  private SoftEdge? _SoftEdge;

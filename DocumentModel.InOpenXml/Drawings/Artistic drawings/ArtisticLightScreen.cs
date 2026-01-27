@@ -8,7 +8,6 @@ public partial class ArtisticLightScreen : ModelElement<DXO10D.ArtisticLightScre
  /// <summary>
  /// Transparency level of the light screen effect.
  /// </summary>
- [OpenXmlElement(typeof(DXO10D.ArtisticLightScreen))]
  public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
 
  private Int32? _Transparency;
@@ -16,7 +15,6 @@ public partial class ArtisticLightScreen : ModelElement<DXO10D.ArtisticLightScre
  /// Size of the grid in the light screen effect, influencing the pattern's appearance.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticLightScreen.GridSize))]
- [OpenXmlElement(typeof(DXO10D.ArtisticLightScreen))]
  public Int32? GridSize { get => _GridSize; set => UpdateField(ref _GridSize, value, nameof(GridSize)); }
 
  private Int32? _GridSize;

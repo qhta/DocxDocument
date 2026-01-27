@@ -20,7 +20,6 @@ public partial class AdjustPoint2DType : ModelElement<DXD.AdjustPoint2DType>
  /// X-coordinate of the adjustment point.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AdjustPoint2DType.X))]
- [OpenXmlElement(typeof(DXD.AdjustPoint2DType))]
  public EMU? X { get => _X; set => UpdateField(ref _X, value, nameof(X)); }
 
  private EMU? _X;
@@ -28,7 +27,6 @@ public partial class AdjustPoint2DType : ModelElement<DXD.AdjustPoint2DType>
  /// Y-coordinate of the adjustment point.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AdjustPoint2DType.Y))]
- [OpenXmlElement(typeof(DXD.AdjustPoint2DType))]
  public EMU? Y { get => _Y; set => UpdateField(ref _Y, value, nameof(Y)); }
 
  private EMU? _Y;

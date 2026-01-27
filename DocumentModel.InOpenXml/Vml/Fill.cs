@@ -9,7 +9,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Unique Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Id))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
  private string? _Id;
@@ -17,7 +16,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Fill Type
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Type))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public FillTypeKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
  private FillTypeKind? _Type;
@@ -25,7 +23,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Fill Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.On))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public bool? On { get => _On; set => UpdateField(ref _On, value, nameof(On)); }
 
  private bool? _On;
@@ -33,7 +30,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Primary Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Color))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
 
  private string? _Color;
@@ -41,7 +37,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Primary Color Opacity
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Opacity))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? Opacity { get => _Opacity; set => UpdateField(ref _Opacity, value, nameof(Opacity)); }
 
  private string? _Opacity;
@@ -49,7 +44,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Secondary Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Color2))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? Color2 { get => _Color2; set => UpdateField(ref _Color2, value, nameof(Color2)); }
 
  private string? _Color2;
@@ -57,7 +51,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Fill Image Source
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Source))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? Source { get => _Source; set => UpdateField(ref _Source, value, nameof(Source)); }
 
  private string? _Source;
@@ -65,7 +58,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   IHyperlink Target
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Href))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? Href { get => _Href; set => UpdateField(ref _Href, value, nameof(Href)); }
 
  private string? _Href;
@@ -73,7 +65,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Alternate Image Reference Location
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.AlternateImageReference))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? AlternateImageReference { get => _AlternateImageReference; set => UpdateField(ref _AlternateImageReference, value, nameof(AlternateImageReference)); }
 
  private string? _AlternateImageReference;
@@ -81,7 +72,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Fill Image Size
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Size))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? Size { get => _Size; set => UpdateField(ref _Size, value, nameof(Size)); }
 
  private string? _Size;
@@ -89,7 +79,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Fill Image Origin
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Origin))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? Origin { get => _Origin; set => UpdateField(ref _Origin, value, nameof(Origin)); }
 
  private string? _Origin;
@@ -97,7 +86,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Fill Image Position
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Position))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
 
  private string? _Position;
@@ -105,7 +93,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Image Aspect Ratio
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Aspect))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public ImageAspectKind? Aspect { get => _Aspect; set => UpdateField(ref _Aspect, value, nameof(Aspect)); }
 
  private ImageAspectKind? _Aspect;
@@ -113,7 +100,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Intermediate Colors
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Colors))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? Colors { get => _Colors; set => UpdateField(ref _Colors, value, nameof(Colors)); }
 
  private string? _Colors;
@@ -121,7 +107,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Gradient Angle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Angle))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public Decimal? Angle { get => _Angle; set => UpdateField(ref _Angle, value, nameof(Angle)); }
 
  private Decimal? _Angle;
@@ -129,7 +114,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Align Image With Shape
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.AlignShape))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public bool? AlignShape { get => _AlignShape; set => UpdateField(ref _AlignShape, value, nameof(AlignShape)); }
 
  private bool? _AlignShape;
@@ -137,7 +121,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Gradient Center
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Focus))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? Focus { get => _Focus; set => UpdateField(ref _Focus, value, nameof(Focus)); }
 
  private string? _Focus;
@@ -145,7 +128,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Radial Gradient Size
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.FocusSize))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? FocusSize { get => _FocusSize; set => UpdateField(ref _FocusSize, value, nameof(FocusSize)); }
 
  private string? _FocusSize;
@@ -153,7 +135,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Radial Gradient Center
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.FocusPosition))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? FocusPosition { get => _FocusPosition; set => UpdateField(ref _FocusPosition, value, nameof(FocusPosition)); }
 
  private string? _FocusPosition;
@@ -161,7 +142,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Gradient Fill Method
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Method))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public FillMethodKind? Method { get => _Method; set => UpdateField(ref _Method, value, nameof(Method)); }
 
  private FillMethodKind? _Method;
@@ -169,7 +149,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Detect Mouse Click
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.DetectMouseClick))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public bool? DetectMouseClick { get => _DetectMouseClick; set => UpdateField(ref _DetectMouseClick, value, nameof(DetectMouseClick)); }
 
  private bool? _DetectMouseClick;
@@ -177,7 +156,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Title
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Title))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
 
  private string? _Title;
@@ -185,7 +163,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Secondary Color Opacity
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Opacity2))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? Opacity2 { get => _Opacity2; set => UpdateField(ref _Opacity2, value, nameof(Opacity2)); }
 
  private string? _Opacity2;
@@ -193,7 +170,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Recolor Fill as Picture
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Recolor))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public bool? Recolor { get => _Recolor; set => UpdateField(ref _Recolor, value, nameof(Recolor)); }
 
  private bool? _Recolor;
@@ -201,7 +177,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Rotate Fill with Shape
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Rotate))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public bool? Rotate { get => _Rotate; set => UpdateField(ref _Rotate, value, nameof(Rotate)); }
 
  private bool? _Rotate;
@@ -209,7 +184,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Relationship to Part
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.RelationshipId))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public string? RelationshipId { get => _RelationshipId; set => UpdateField(ref _RelationshipId, value, nameof(RelationshipId)); }
 
  private string? _RelationshipId;
@@ -217,7 +191,6 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   FillExtendedProperties.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.FillExtendedProperties))]
- [OpenXmlElement(typeof(DXV.Fill))]
  public FillExtendedProperties? FillExtendedProperties { get => _FillExtendedProperties; set => UpdateField(ref _FillExtendedProperties, value, nameof(FillExtendedProperties)); }
 
  private FillExtendedProperties? _FillExtendedProperties;

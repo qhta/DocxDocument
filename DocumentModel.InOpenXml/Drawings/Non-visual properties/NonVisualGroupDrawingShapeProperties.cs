@@ -10,7 +10,6 @@ public abstract partial class NonVisualGroupDrawingShapeProperties<T>:
  ///   GroupShapeLocks.
  /// </summary>
  [OpenXmlProperty(nameof(DXOD.NonVisualGroupDrawingShapeProperties.GroupShapeLocks))]
- [OpenXmlElement(typeof(DXOD.NonVisualGroupDrawingShapeProperties))]
  public GroupShapeLocks? GroupShapeLocks { get => _GroupShapeLocks; set => UpdateField(ref _GroupShapeLocks, value, nameof(GroupShapeLocks)); }
 
  private GroupShapeLocks? _GroupShapeLocks;
@@ -18,7 +17,6 @@ public abstract partial class NonVisualGroupDrawingShapeProperties<T>:
  ///   NonVisualGroupDrawingShapePropsExtensionList.
  /// </summary>
  [OpenXmlProperty(nameof(DXOD.NonVisualGroupDrawingShapeProperties.NonVisualGroupDrawingShapePropsExtensionList))]
- [OpenXmlElement(typeof(DXOD.NonVisualGroupDrawingShapeProperties))]
  public NonVisualGroupDrawingShapePropsExtensionList? NonVisualGroupDrawingShapePropsExtensionList { get => _NonVisualGroupDrawingShapePropsExtensionList; set => UpdateField(ref _NonVisualGroupDrawingShapePropsExtensionList, value, nameof(NonVisualGroupDrawingShapePropsExtensionList)); }
 
  private NonVisualGroupDrawingShapePropsExtensionList? _NonVisualGroupDrawingShapePropsExtensionList;

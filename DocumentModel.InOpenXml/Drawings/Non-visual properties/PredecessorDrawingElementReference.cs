@@ -8,7 +8,6 @@ public partial class PredecessorDrawingElementReference : ModelElement<DXO16D.Pr
  /// <summary>
  ///   Identifier of the predecessor drawing element.
  /// </summary>
- [OpenXmlElement(typeof(DXO16D.PredecessorDrawingElementReference))]
  public string? Predecessor { get => _Predecessor; set => UpdateField(ref _Predecessor, value, nameof(Predecessor)); }
 
  private string? _Predecessor;

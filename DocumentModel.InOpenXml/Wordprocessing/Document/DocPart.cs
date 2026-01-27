@@ -10,7 +10,6 @@ public partial class DocPart : ModelElement<DXW.DocPart>
  /// Properties of the glossary document entry, specifying metadata and configuration for the entry.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocPart.DocPartProperties))]
- [OpenXmlElement(typeof(DXW.DocPart))]
  public DocPartProperties? DocPartProperties { get => _DocPartProperties; set => UpdateField(ref _DocPartProperties, value, nameof(DocPartProperties)); }
 
  private DocPartProperties? _DocPartProperties;
@@ -18,7 +17,6 @@ public partial class DocPart : ModelElement<DXW.DocPart>
  /// Contents of the glossary document entry, containing the actual content or body of the entry.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocPart.DocPartBody))]
- [OpenXmlElement(typeof(DXW.DocPart))]
  public DocPartBody? DocPartBody { get => _DocPartBody; set => UpdateField(ref _DocPartBody, value, nameof(DocPartBody)); }
 
  private DocPartBody? _DocPartBody;

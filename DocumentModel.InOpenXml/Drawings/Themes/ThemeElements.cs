@@ -12,7 +12,6 @@ public partial class ThemeElements : ModelElement<DXD.ThemeElements>, IExtendabl
  ///   Color scheme for the theme.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ThemeElements.ColorScheme))]
- [OpenXmlElement(typeof(DXD.ThemeElements))]
  public ColorScheme? ColorScheme { get => _ColorScheme; set => UpdateField(ref _ColorScheme, value, nameof(ColorScheme)); }
 
  private ColorScheme? _ColorScheme;
@@ -20,7 +19,6 @@ public partial class ThemeElements : ModelElement<DXD.ThemeElements>, IExtendabl
  ///   Font scheme for the theme.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ThemeElements.FontScheme))]
- [OpenXmlElement(typeof(DXD.ThemeElements))]
  public FontScheme? FontScheme { get => _FontScheme; set => UpdateField(ref _FontScheme, value, nameof(FontScheme)); }
 
  private FontScheme? _FontScheme;
@@ -28,7 +26,6 @@ public partial class ThemeElements : ModelElement<DXD.ThemeElements>, IExtendabl
  ///   Format scheme for the theme.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ThemeElements.FormatScheme))]
- [OpenXmlElement(typeof(DXD.ThemeElements))]
  public FormatScheme? FormatScheme { get => _FormatScheme; set => UpdateField(ref _FormatScheme, value, nameof(FormatScheme)); }
 
  private FormatScheme? _FormatScheme;
@@ -36,7 +33,6 @@ public partial class ThemeElements : ModelElement<DXD.ThemeElements>, IExtendabl
  /// List of extensions for the theme elements.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ThemeElements.ExtensionList))]
- [OpenXmlElement(typeof(DXD.ThemeElements))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
  private ExtensionList? _ExtensionList;

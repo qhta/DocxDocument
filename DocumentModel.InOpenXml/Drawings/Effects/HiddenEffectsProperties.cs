@@ -9,7 +9,6 @@ public partial class HiddenEffectsProperties : ModelElement<DXO10D.HiddenEffects
  ///   List of effects applied to the element.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.HiddenEffectsProperties.EffectList))]
- [OpenXmlElement(typeof(DXO10D.HiddenEffectsProperties))]
  public EffectList? EffectList { get => _EffectList; set => UpdateField(ref _EffectList, value, nameof(EffectList)); }
 
  private EffectList? _EffectList;
@@ -17,7 +16,6 @@ public partial class HiddenEffectsProperties : ModelElement<DXO10D.HiddenEffects
  ///   Effect DAG (Directed Acyclic Graph) for advanced effect composition.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.HiddenEffectsProperties.EffectDag))]
- [OpenXmlElement(typeof(DXO10D.HiddenEffectsProperties))]
  public EffectDag? EffectDag { get => _EffectDag; set => UpdateField(ref _EffectDag, value, nameof(EffectDag)); }
 
  private EffectDag? _EffectDag;

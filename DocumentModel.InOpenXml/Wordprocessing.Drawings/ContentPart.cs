@@ -12,7 +12,6 @@ public partial class ContentPart : ModelElement<DXO10W.ContentPart>, IOfficeArtE
  /// Black-and-white rendering mode for the content part.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.ContentPart.BlackWhiteMode))]
- [OpenXmlElement(typeof(DXO10W.ContentPart))]
  public BlackWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
 
  private BlackWhiteMode? _BlackWhiteMode;
@@ -20,7 +19,6 @@ public partial class ContentPart : ModelElement<DXO10W.ContentPart>, IOfficeArtE
  /// Relationship ID referencing the associated content part.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.ContentPart.RelationshipId))]
- [OpenXmlElement(typeof(DXO10W.ContentPart))]
  public string? RelationshipId { get => _RelationshipId; set => UpdateField(ref _RelationshipId, value, nameof(RelationshipId)); }
 
  private string? _RelationshipId;
@@ -28,7 +26,6 @@ public partial class ContentPart : ModelElement<DXO10W.ContentPart>, IOfficeArtE
  /// Non-visual shape properties for the content part, specifying metadata and configuration not directly affecting rendering.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.ContentPart.WordNonVisualContentPartShapeProperties))]
- [OpenXmlElement(typeof(DXO10W.ContentPart))]
  public DMWD.WordNonVisualContentPartShapeProperties? WordNonVisualContentPartShapeProperties { get => _WordNonVisualContentPartShapeProperties; set => UpdateField(ref _WordNonVisualContentPartShapeProperties, value, nameof(WordNonVisualContentPartShapeProperties)); }
 
  private DMWD.WordNonVisualContentPartShapeProperties? _WordNonVisualContentPartShapeProperties;
@@ -36,12 +33,10 @@ public partial class ContentPart : ModelElement<DXO10W.ContentPart>, IOfficeArtE
  /// 2D transformation properties for the content part, specifying scaling, rotation, and translation.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.ContentPart.Transform2D))]
- [OpenXmlElement(typeof(DXO10W.ContentPart))]
  public Transform2D? Transform2D { get => _Transform2D; set => UpdateField(ref _Transform2D, value, nameof(Transform2D)); }
 
  private Transform2D? _Transform2D;
  [OpenXmlProperty(nameof(DXO10W.ContentPart.OfficeArtExtensionList))]
- [OpenXmlElement(typeof(DXO10W.ContentPart))]
  public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
 
  private OfficeArtExtensionList? _OfficeArtExtensionList;

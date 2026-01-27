@@ -9,7 +9,6 @@ public partial class QuickTimeFromFile : ModelElement<DXD.QuickTimeFromFile>, IE
  ///   Relationship ID that links to the QuickTime video file.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.QuickTimeFromFile.Link))]
- [OpenXmlElement(typeof(DXD.QuickTimeFromFile))]
  public string? Link { get => _Link; set => UpdateField(ref _Link, value, nameof(Link)); }
 
  private string? _Link;
@@ -17,7 +16,6 @@ public partial class QuickTimeFromFile : ModelElement<DXD.QuickTimeFromFile>, IE
  /// List of extension elements.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.QuickTimeFromFile.ExtensionList))]
- [OpenXmlElement(typeof(DXD.QuickTimeFromFile))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
  private ExtensionList? _ExtensionList;

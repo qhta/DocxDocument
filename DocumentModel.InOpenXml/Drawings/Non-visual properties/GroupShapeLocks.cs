@@ -9,7 +9,6 @@ public partial class GroupShapeLocks : ModelElement<DXD.GroupShapeLocks>, IExten
  ///   Disallows grouping of shapes within the group.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GroupShapeLocks.NoGrouping))]
- [OpenXmlElement(typeof(DXD.GroupShapeLocks))]
  public bool? NoGrouping { get => _NoGrouping; set => UpdateField(ref _NoGrouping, value, nameof(NoGrouping)); }
 
  private bool? _NoGrouping;
@@ -17,7 +16,6 @@ public partial class GroupShapeLocks : ModelElement<DXD.GroupShapeLocks>, IExten
  ///   Disallows ungrouping of the group shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GroupShapeLocks.NoUngrouping))]
- [OpenXmlElement(typeof(DXD.GroupShapeLocks))]
  public bool? NoUngrouping { get => _NoUngrouping; set => UpdateField(ref _NoUngrouping, value, nameof(NoUngrouping)); }
 
  private bool? _NoUngrouping;
@@ -25,7 +23,6 @@ public partial class GroupShapeLocks : ModelElement<DXD.GroupShapeLocks>, IExten
  ///   Disallows selection of the group shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GroupShapeLocks.NoSelection))]
- [OpenXmlElement(typeof(DXD.GroupShapeLocks))]
  public bool? NoSelection { get => _NoSelection; set => UpdateField(ref _NoSelection, value, nameof(NoSelection)); }
 
  private bool? _NoSelection;
@@ -33,7 +30,6 @@ public partial class GroupShapeLocks : ModelElement<DXD.GroupShapeLocks>, IExten
  ///   Disallows rotation of the group shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GroupShapeLocks.NoRotation))]
- [OpenXmlElement(typeof(DXD.GroupShapeLocks))]
  public bool? NoRotation { get => _NoRotation; set => UpdateField(ref _NoRotation, value, nameof(NoRotation)); }
 
  private bool? _NoRotation;
@@ -41,7 +37,6 @@ public partial class GroupShapeLocks : ModelElement<DXD.GroupShapeLocks>, IExten
  ///   Disallows changing the aspect ratio of the group shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GroupShapeLocks.NoChangeAspect))]
- [OpenXmlElement(typeof(DXD.GroupShapeLocks))]
  public bool? NoChangeAspect { get => _NoChangeAspect; set => UpdateField(ref _NoChangeAspect, value, nameof(NoChangeAspect)); }
 
  private bool? _NoChangeAspect;
@@ -49,7 +44,6 @@ public partial class GroupShapeLocks : ModelElement<DXD.GroupShapeLocks>, IExten
  ///   Disallows moving the group shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GroupShapeLocks.NoMove))]
- [OpenXmlElement(typeof(DXD.GroupShapeLocks))]
  public bool? NoMove { get => _NoMove; set => UpdateField(ref _NoMove, value, nameof(NoMove)); }
 
  private bool? _NoMove;
@@ -57,7 +51,6 @@ public partial class GroupShapeLocks : ModelElement<DXD.GroupShapeLocks>, IExten
  ///   Disallows resizing the group shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GroupShapeLocks.NoResize))]
- [OpenXmlElement(typeof(DXD.GroupShapeLocks))]
  public bool? NoResize { get => _NoResize; set => UpdateField(ref _NoResize, value, nameof(NoResize)); }
 
  private bool? _NoResize;
@@ -65,7 +58,6 @@ public partial class GroupShapeLocks : ModelElement<DXD.GroupShapeLocks>, IExten
  /// List of extension elements.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GroupShapeLocks.ExtensionList))]
- [OpenXmlElement(typeof(DXD.GroupShapeLocks))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
  private ExtensionList? _ExtensionList;

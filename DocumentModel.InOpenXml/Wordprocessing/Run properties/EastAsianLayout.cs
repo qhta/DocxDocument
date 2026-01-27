@@ -10,7 +10,6 @@ public partial class EastAsianLayout : ModelElement<DXW.EastAsianLayout>
  /// Identifier for the East Asian typography run, used to distinguish multiple layout effects within the same document.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EastAsianLayout.Id))]
- [OpenXmlElement(typeof(DXW.EastAsianLayout))]
  public Int32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
  private Int32? _Id;
@@ -18,7 +17,6 @@ public partial class EastAsianLayout : ModelElement<DXW.EastAsianLayout>
  /// Indicates whether two lines in one layout is applied, displaying text as two sub-lines within a single line.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EastAsianLayout.Combine))]
- [OpenXmlElement(typeof(DXW.EastAsianLayout))]
  public bool? Combine { get => _Combine; set => UpdateField(ref _Combine, value, nameof(Combine)); }
 
  private bool? _Combine;
@@ -26,7 +24,6 @@ public partial class EastAsianLayout : ModelElement<DXW.EastAsianLayout>
  /// Specifies the type of brackets to display around two lines in one layout.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EastAsianLayout.CombineBrackets))]
- [OpenXmlElement(typeof(DXW.EastAsianLayout))]
  public CombineBracketKind? CombineBrackets { get => _CombineBrackets; set => UpdateField(ref _CombineBrackets, value, nameof(CombineBrackets)); }
 
  private CombineBracketKind? _CombineBrackets;
@@ -34,7 +31,6 @@ public partial class EastAsianLayout : ModelElement<DXW.EastAsianLayout>
  /// Indicates whether horizontal text is rotated for vertical layout.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EastAsianLayout.Vertical))]
- [OpenXmlElement(typeof(DXW.EastAsianLayout))]
  public bool? Vertical { get => _Vertical; set => UpdateField(ref _Vertical, value, nameof(Vertical)); }
 
  private bool? _Vertical;
@@ -42,7 +38,6 @@ public partial class EastAsianLayout : ModelElement<DXW.EastAsianLayout>
  /// Indicates whether rotated text is compressed to fit the line height in vertical layout.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EastAsianLayout.VerticalCompress))]
- [OpenXmlElement(typeof(DXW.EastAsianLayout))]
  public bool? VerticalCompress { get => _VerticalCompress; set => UpdateField(ref _VerticalCompress, value, nameof(VerticalCompress)); }
 
  private bool? _VerticalCompress;

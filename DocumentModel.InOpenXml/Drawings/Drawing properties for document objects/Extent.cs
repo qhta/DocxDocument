@@ -9,7 +9,6 @@ public partial class Extent : ModelElement<DXDW.Extent>
  ///   Width of the extent in EMUs.
  /// </summary>
  [OpenXmlProperty(nameof(DXDW.Extent.Cx))]
- [OpenXmlElement(typeof(DXDW.Extent))]
  public EMU? Cx { get => _Cx; set => UpdateField(ref _Cx, value, nameof(Cx)); }
 
  private EMU? _Cx;
@@ -17,7 +16,6 @@ public partial class Extent : ModelElement<DXDW.Extent>
  ///   Height of the extent in EMUs.
  /// </summary>
  [OpenXmlProperty(nameof(DXDW.Extent.Cy))]
- [OpenXmlElement(typeof(DXDW.Extent))]
  public EMU? Cy { get => _Cy; set => UpdateField(ref _Cy, value, nameof(Cy)); }
 
  private EMU? _Cy;

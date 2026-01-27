@@ -15,7 +15,6 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
  /// Zoom type, specifying the preset magnification mode.
  /// </summary>
  [OpenXmlProperty("Val")]
- [OpenXmlElement(typeof(DXW.Zoom))]
  public PresetZoomKind? Kind { get => _Kind; set => UpdateField(ref _Kind, value, nameof(Kind)); }
 
  private PresetZoomKind? _Kind;
@@ -23,7 +22,6 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
  /// Zoom percentage, specifying the magnification level as a percentage.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Zoom.Percent))]
- [OpenXmlElement(typeof(DXW.Zoom))]
  public int? Percent { get => _Percent; set => UpdateField(ref _Percent, value, nameof(Percent)); }
 
  private int? _Percent;

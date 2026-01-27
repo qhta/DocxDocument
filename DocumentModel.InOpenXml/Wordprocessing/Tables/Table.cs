@@ -10,7 +10,6 @@ public partial class Table : ModelElement<DXW.Table>, IStoryContent, ITableCellC
  /// Table properties, including borders, cell spacing, alignment, and other formatting options.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Table.TableProperties))]
- [OpenXmlElement(typeof(DXW.Table))]
  public TableProperties? TableProperties { get => _TableProperties; set => UpdateField(ref _TableProperties, value, nameof(TableProperties)); }
 
  private TableProperties? _TableProperties;
@@ -18,7 +17,6 @@ public partial class Table : ModelElement<DXW.Table>, IStoryContent, ITableCellC
  /// Table grid definition, specifying the column structure and widths for the table.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Table.TableGrid))]
- [OpenXmlElement(typeof(DXW.Table))]
  public TableGrid? TableGrid { get => _TableGrid; set => UpdateField(ref _TableGrid, value, nameof(TableGrid)); }
 
  private TableGrid? _TableGrid;

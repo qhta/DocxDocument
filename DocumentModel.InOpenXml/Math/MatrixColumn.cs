@@ -9,7 +9,6 @@ public partial class MatrixColumn : ModelElement<DXM.MatrixColumn>
  ///   Matrix IColumn Properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.MatrixColumn.MatrixColumnProperties))]
- [OpenXmlElement(typeof(DXM.MatrixColumn))]
  public MatrixColumnProperties? MatrixColumnProperties { get => _MatrixColumnProperties; set => UpdateField(ref _MatrixColumnProperties, value, nameof(MatrixColumnProperties)); }
 
  private MatrixColumnProperties? _MatrixColumnProperties;

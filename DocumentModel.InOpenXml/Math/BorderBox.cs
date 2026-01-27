@@ -10,14 +10,12 @@ public partial class BorderBox : ModelElement<DXM.BorderBox>, ICommonMathContent
  ///   Specifies properties of border-box object.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.BorderBox.BorderBoxProperties))]
- [OpenXmlElement(typeof(DXM.BorderBox))]
  public BorderBoxProperties? BorderBoxProperties { get => _BorderBoxProperties; set => UpdateField(ref _BorderBoxProperties, value, nameof(BorderBoxProperties)); }
 
  private BorderBoxProperties? _BorderBoxProperties;
  /// <summary>
  ///   Specifies argument of border-box object.
  /// </summary>
- [OpenXmlElement(typeof(DXM.BorderBox))]
  public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
 
  private Argument? _Argument;

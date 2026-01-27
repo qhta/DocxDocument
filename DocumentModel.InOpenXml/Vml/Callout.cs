@@ -9,7 +9,6 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   VML Extension Handling Behavior
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.Extension))]
- [OpenXmlElement(typeof(DXVO.Callout))]
  public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
  private ExtensionHandlingBehaviorKind? _Extension;
@@ -17,7 +16,6 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   Callout toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.On))]
- [OpenXmlElement(typeof(DXVO.Callout))]
  public bool? On { get => _On; set => UpdateField(ref _On, value, nameof(On)); }
 
  private bool? _On;
@@ -25,7 +23,6 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   Callout type
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.Type))]
- [OpenXmlElement(typeof(DXVO.Callout))]
  public string? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
  private string? _Type;
@@ -33,7 +30,6 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   Callout gap
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.Gap))]
- [OpenXmlElement(typeof(DXVO.Callout))]
  public string? Gap { get => _Gap; set => UpdateField(ref _Gap, value, nameof(Gap)); }
 
  private string? _Gap;
@@ -41,7 +37,6 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   Callout angle
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.Angle))]
- [OpenXmlElement(typeof(DXVO.Callout))]
  public AngleKind? Angle { get => _Angle; set => UpdateField(ref _Angle, value, nameof(Angle)); }
 
  private AngleKind? _Angle;
@@ -49,7 +44,6 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   Callout automatic drop toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.DropAuto))]
- [OpenXmlElement(typeof(DXVO.Callout))]
  public bool? DropAuto { get => _DropAuto; set => UpdateField(ref _DropAuto, value, nameof(DropAuto)); }
 
  private bool? _DropAuto;
@@ -57,7 +51,6 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   Callout drop position
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.Drop))]
- [OpenXmlElement(typeof(DXVO.Callout))]
  public string? Drop { get => _Drop; set => UpdateField(ref _Drop, value, nameof(Drop)); }
 
  private string? _Drop;
@@ -65,14 +58,12 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   Callout drop distance
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.Distance))]
- [OpenXmlElement(typeof(DXVO.Callout))]
  public string? Distance { get => _Distance; set => UpdateField(ref _Distance, value, nameof(Distance)); }
 
  private string? _Distance;
  /// <summary>
  ///   Callout length toggle
  /// </summary>
- [OpenXmlElement(typeof(DXVO.Callout))]
  public bool? LengthSpec { get => _LengthSpec; set => UpdateField(ref _LengthSpec, value, nameof(LengthSpec)); }
 
  private bool? _LengthSpec;
@@ -80,7 +71,6 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   Callout length
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.Length))]
- [OpenXmlElement(typeof(DXVO.Callout))]
  public string? Length { get => _Length; set => UpdateField(ref _Length, value, nameof(Length)); }
 
  private string? _Length;
@@ -88,7 +78,6 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   Callout accent bar toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.AccentBar))]
- [OpenXmlElement(typeof(DXVO.Callout))]
  public bool? AccentBar { get => _AccentBar; set => UpdateField(ref _AccentBar, value, nameof(AccentBar)); }
 
  private bool? _AccentBar;
@@ -96,7 +85,6 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   Callout text border toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.TextBorder))]
- [OpenXmlElement(typeof(DXVO.Callout))]
  public bool? TextBorder { get => _TextBorder; set => UpdateField(ref _TextBorder, value, nameof(TextBorder)); }
 
  private bool? _TextBorder;
@@ -104,7 +92,6 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   Callout flip x
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.MinusX))]
- [OpenXmlElement(typeof(DXVO.Callout))]
  public bool? MinusX { get => _MinusX; set => UpdateField(ref _MinusX, value, nameof(MinusX)); }
 
  private bool? _MinusX;
@@ -112,7 +99,6 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   Callout flip y
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.MinusY))]
- [OpenXmlElement(typeof(DXVO.Callout))]
  public bool? MinusY { get => _MinusY; set => UpdateField(ref _MinusY, value, nameof(MinusY)); }
 
  private bool? _MinusY;

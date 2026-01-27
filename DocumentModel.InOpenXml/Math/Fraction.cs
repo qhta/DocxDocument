@@ -11,7 +11,6 @@ public partial class Fraction : ModelElement<DXM.Fraction>, ICommonMathContent
  ///   Fraction Properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.Fraction.FractionProperties))]
- [OpenXmlElement(typeof(DXM.Fraction))]
  public FractionProperties? FractionProperties { get => _FractionProperties; set => UpdateField(ref _FractionProperties, value, nameof(FractionProperties)); }
 
  private FractionProperties? _FractionProperties;
@@ -19,7 +18,6 @@ public partial class Fraction : ModelElement<DXM.Fraction>, ICommonMathContent
  ///   Numerator.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.Fraction.Numerator))]
- [OpenXmlElement(typeof(DXM.Fraction))]
  public Numerator? Numerator { get => _Numerator; set => UpdateField(ref _Numerator, value, nameof(Numerator)); }
 
  private Numerator? _Numerator;
@@ -27,7 +25,6 @@ public partial class Fraction : ModelElement<DXM.Fraction>, ICommonMathContent
  ///   Denominator.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.Fraction.Denominator))]
- [OpenXmlElement(typeof(DXM.Fraction))]
  public Denominator? Denominator { get => _Denominator; set => UpdateField(ref _Denominator, value, nameof(Denominator)); }
 
  private Denominator? _Denominator;

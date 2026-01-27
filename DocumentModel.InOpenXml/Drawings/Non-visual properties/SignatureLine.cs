@@ -9,7 +9,6 @@ public partial class SignatureLine : ModelElement<DXO13D.SignatureLine>
  ///   Indicates whether this element is a signature line.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.SignatureLine.IsSignatureLine))]
- [OpenXmlElement(typeof(DXO13D.SignatureLine))]
  public bool? IsSignatureLine { get => _IsSignatureLine; set => UpdateField(ref _IsSignatureLine, value, nameof(IsSignatureLine)); }
 
  private bool? _IsSignatureLine;
@@ -17,7 +16,6 @@ public partial class SignatureLine : ModelElement<DXO13D.SignatureLine>
  ///   Unique identifier for the signature line.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.SignatureLine.Id))]
- [OpenXmlElement(typeof(DXO13D.SignatureLine))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
  private string? _Id;
@@ -25,7 +23,6 @@ public partial class SignatureLine : ModelElement<DXO13D.SignatureLine>
  ///   Provider identifier for the signature line.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.SignatureLine.ProviderId))]
- [OpenXmlElement(typeof(DXO13D.SignatureLine))]
  public string? ProviderId { get => _ProviderId; set => UpdateField(ref _ProviderId, value, nameof(ProviderId)); }
 
  private string? _ProviderId;
@@ -33,7 +30,6 @@ public partial class SignatureLine : ModelElement<DXO13D.SignatureLine>
  ///   Indicates whether signing instructions are set.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.SignatureLine.SigningInstructionsSet))]
- [OpenXmlElement(typeof(DXO13D.SignatureLine))]
  public bool? SigningInstructionsSet { get => _SigningInstructionsSet; set => UpdateField(ref _SigningInstructionsSet, value, nameof(SigningInstructionsSet)); }
 
  private bool? _SigningInstructionsSet;
@@ -41,7 +37,6 @@ public partial class SignatureLine : ModelElement<DXO13D.SignatureLine>
  ///   Indicates whether comments are allowed.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.SignatureLine.AllowComments))]
- [OpenXmlElement(typeof(DXO13D.SignatureLine))]
  public bool? AllowComments { get => _AllowComments; set => UpdateField(ref _AllowComments, value, nameof(AllowComments)); }
 
  private bool? _AllowComments;
@@ -49,7 +44,6 @@ public partial class SignatureLine : ModelElement<DXO13D.SignatureLine>
  ///   Indicates whether to show the signing date.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.SignatureLine.ShowSignDate))]
- [OpenXmlElement(typeof(DXO13D.SignatureLine))]
  public bool? ShowSignDate { get => _ShowSignDate; set => UpdateField(ref _ShowSignDate, value, nameof(ShowSignDate)); }
 
  private bool? _ShowSignDate;
@@ -57,7 +51,6 @@ public partial class SignatureLine : ModelElement<DXO13D.SignatureLine>
  ///   Suggested signer name.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.SignatureLine.SuggestedSigner))]
- [OpenXmlElement(typeof(DXO13D.SignatureLine))]
  public string? SuggestedSigner { get => _SuggestedSigner; set => UpdateField(ref _SuggestedSigner, value, nameof(SuggestedSigner)); }
 
  private string? _SuggestedSigner;
@@ -65,7 +58,6 @@ public partial class SignatureLine : ModelElement<DXO13D.SignatureLine>
  ///   Additional suggested signer name.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.SignatureLine.SuggestedSigner2))]
- [OpenXmlElement(typeof(DXO13D.SignatureLine))]
  public string? SuggestedSigner2 { get => _SuggestedSigner2; set => UpdateField(ref _SuggestedSigner2, value, nameof(SuggestedSigner2)); }
 
  private string? _SuggestedSigner2;
@@ -73,7 +65,6 @@ public partial class SignatureLine : ModelElement<DXO13D.SignatureLine>
  ///   Suggested signer email address.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.SignatureLine.SuggestedSignerEmail))]
- [OpenXmlElement(typeof(DXO13D.SignatureLine))]
  public string? SuggestedSignerEmail { get => _SuggestedSignerEmail; set => UpdateField(ref _SuggestedSignerEmail, value, nameof(SuggestedSignerEmail)); }
 
  private string? _SuggestedSignerEmail;
@@ -81,7 +72,6 @@ public partial class SignatureLine : ModelElement<DXO13D.SignatureLine>
  ///   Instructions for signing.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.SignatureLine.SigningInstructions))]
- [OpenXmlElement(typeof(DXO13D.SignatureLine))]
  public string? SigningInstructions { get => _SigningInstructions; set => UpdateField(ref _SigningInstructions, value, nameof(SigningInstructions)); }
 
  private string? _SigningInstructions;
@@ -89,7 +79,6 @@ public partial class SignatureLine : ModelElement<DXO13D.SignatureLine>
  ///   Additional XML data for the signature line.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.SignatureLine.AdditionalXml))]
- [OpenXmlElement(typeof(DXO13D.SignatureLine))]
  public string? AdditionalXml { get => _AdditionalXml; set => UpdateField(ref _AdditionalXml, value, nameof(AdditionalXml)); }
 
  private string? _AdditionalXml;
@@ -97,7 +86,6 @@ public partial class SignatureLine : ModelElement<DXO13D.SignatureLine>
  ///   URL for the signature provider.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.SignatureLine.SignatureProviderUrl))]
- [OpenXmlElement(typeof(DXO13D.SignatureLine))]
  public string? SignatureProviderUrl { get => _SignatureProviderUrl; set => UpdateField(ref _SignatureProviderUrl, value, nameof(SignatureProviderUrl)); }
 
  private string? _SignatureProviderUrl;

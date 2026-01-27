@@ -10,7 +10,6 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
  /// UDL connection string used to connect to the data source.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DataSourceObject.UdlConnectionString))]
- [OpenXmlElement(typeof(DXW.DataSourceObject))]
  public string? UdlConnectionString { get => _UdlConnectionString; set => UpdateField(ref _UdlConnectionString, value, nameof(UdlConnectionString)); }
 
  private string? _UdlConnectionString;
@@ -18,7 +17,6 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
  /// FontName of the data source table used for the mail merge.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DataSourceObject.DataSourceTableName))]
- [OpenXmlElement(typeof(DXW.DataSourceObject))]
  public string? DataSourceTableName { get => _DataSourceTableName; set => UpdateField(ref _DataSourceTableName, value, nameof(DataSourceTableName)); }
 
  private string? _DataSourceTableName;
@@ -26,7 +24,6 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
  /// File path reference to the ODSO data source.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DataSourceObject.SourceReference))]
- [OpenXmlElement(typeof(DXW.DataSourceObject))]
  public SourceReference? SourceReference { get => _SourceReference; set => UpdateField(ref _SourceReference, value, nameof(SourceReference)); }
 
  private SourceReference? _SourceReference;
@@ -34,7 +31,6 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
  /// Column delimiter used in the data source, specified as a Unicode value.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DataSourceObject.ColumnDelimiter))]
- [OpenXmlElement(typeof(DXW.DataSourceObject))]
  public UInt32? ColumnDelimiter { get => _ColumnDelimiter; set => UpdateField(ref _ColumnDelimiter, value, nameof(ColumnDelimiter)); }
 
  private UInt32? _ColumnDelimiter;
@@ -42,7 +38,6 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
  /// Type of the ODSO data source (e.g., database, spreadsheet, text file).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DataSourceObject.MailMergeSource))]
- [OpenXmlElement(typeof(DXW.DataSourceObject))]
  public MailMergeSourceKind? MailMergeSource { get => _MailMergeSource; set => UpdateField(ref _MailMergeSource, value, nameof(MailMergeSource)); }
 
  private MailMergeSourceKind? _MailMergeSource;
@@ -50,21 +45,18 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
  /// Indicates whether the first row of the data source contains column names.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DataSourceObject.FirstRowHeader))]
- [OpenXmlElement(typeof(DXW.DataSourceObject))]
  public bool? FirstRowHeader { get => _FirstRowHeader; set => UpdateField(ref _FirstRowHeader, value, nameof(FirstRowHeader)); }
 
  private bool? _FirstRowHeader;
  /// <summary>
  /// Collection of field map data, specifying how data source fields are mapped to merge fields.
  /// </summary>
- [OpenXmlElement(typeof(DXW.DataSourceObject))]
  public FieldMapDataCollection? FieldMap { get => _FieldMap; set => UpdateField(ref _FieldMap, value, nameof(FieldMap)); }
 
  private FieldMapDataCollection? _FieldMap;
  /// <summary>
  /// Reference to recipient data, specifying an external file or data part containing recipient information.
  /// </summary>
- [OpenXmlElement(typeof(DXW.DataSourceObject))]
  public RecipientDataReference? RecipientDataReference { get => _RecipientDataReference; set => UpdateField(ref _RecipientDataReference, value, nameof(RecipientDataReference)); }
 
  private RecipientDataReference? _RecipientDataReference;

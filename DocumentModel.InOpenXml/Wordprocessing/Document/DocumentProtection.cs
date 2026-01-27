@@ -10,7 +10,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Document editing restrictions, specifying the allowed editing mode (e.g., read-only, tracked changes, comments).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.Edit))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public DocumentProtectionKind? Edit { get => _Edit; set => UpdateField(ref _Edit, value, nameof(Edit)); }
 
  private DocumentProtectionKind? _Edit;
@@ -18,7 +17,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Indicates whether only formatting with unlocked styles is allowed.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.Formatting))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public bool? Formatting { get => _Formatting; set => UpdateField(ref _Formatting, value, nameof(Formatting)); }
 
  private bool? _Formatting;
@@ -26,7 +24,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Indicates whether document protection settings are enforced.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.Enforcement))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public bool? Enforcement { get => _Enforcement; set => UpdateField(ref _Enforcement, value, nameof(Enforcement)); }
 
  private bool? _Enforcement;
@@ -34,7 +31,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Cryptographic provider type used for document protection.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.CryptographicProviderType))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public CryptProviderKind? CryptographicProviderType { get => _CryptographicProviderType; set => UpdateField(ref _CryptographicProviderType, value, nameof(CryptographicProviderType)); }
 
  private CryptProviderKind? _CryptographicProviderType;
@@ -42,7 +38,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Cryptographic algorithm class used for document protection.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.CryptographicAlgorithmClass))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public CryptAlgorithmClassKind? CryptographicAlgorithmClass { get => _CryptographicAlgorithmClass; set => UpdateField(ref _CryptographicAlgorithmClass, value, nameof(CryptographicAlgorithmClass)); }
 
  private CryptAlgorithmClassKind? _CryptographicAlgorithmClass;
@@ -50,7 +45,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Cryptographic algorithm type used for document protection.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.CryptographicAlgorithmType))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public CryptAlgorithmKind? CryptographicAlgorithmType { get => _CryptographicAlgorithmType; set => UpdateField(ref _CryptographicAlgorithmType, value, nameof(CryptographicAlgorithmType)); }
 
  private CryptAlgorithmKind? _CryptographicAlgorithmType;
@@ -58,7 +52,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Cryptographic hashing algorithm identifier.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.CryptographicAlgorithmSid))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public Int32? CryptographicAlgorithmSid { get => _CryptographicAlgorithmSid; set => UpdateField(ref _CryptographicAlgorithmSid, value, nameof(CryptographicAlgorithmSid)); }
 
  private Int32? _CryptographicAlgorithmSid;
@@ -66,7 +59,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Number of iterations to run the hashing algorithm.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.CryptographicSpinCount))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public UInt32? CryptographicSpinCount { get => _CryptographicSpinCount; set => UpdateField(ref _CryptographicSpinCount, value, nameof(CryptographicSpinCount)); }
 
  private UInt32? _CryptographicSpinCount;
@@ -74,7 +66,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// FontName of the cryptographic provider used for document protection.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.CryptographicProvider))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public string? CryptographicProvider { get => _CryptographicProvider; set => UpdateField(ref _CryptographicProvider, value, nameof(CryptographicProvider)); }
 
  private string? _CryptographicProvider;
@@ -82,7 +73,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Cryptographic algorithm extensibility identifier.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.AlgorithmIdExtensibility))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public HexInt? AlgorithmIdExtensibility { get => _AlgorithmIdExtensibility; set => UpdateField(ref _AlgorithmIdExtensibility, value, nameof(AlgorithmIdExtensibility)); }
 
  private HexInt? _AlgorithmIdExtensibility;
@@ -90,7 +80,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Source of the algorithm extensibility identifier.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.AlgorithmIdExtensibilitySource))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public string? AlgorithmIdExtensibilitySource { get => _AlgorithmIdExtensibilitySource; set => UpdateField(ref _AlgorithmIdExtensibilitySource, value, nameof(AlgorithmIdExtensibilitySource)); }
 
  private string? _AlgorithmIdExtensibilitySource;
@@ -98,7 +87,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Cryptographic provider type extensibility identifier.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.CryptographicProviderTypeExtensibility))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public HexInt? CryptographicProviderTypeExtensibility { get => _CryptographicProviderTypeExtensibility; set => UpdateField(ref _CryptographicProviderTypeExtensibility, value, nameof(CryptographicProviderTypeExtensibility)); }
 
  private HexInt? _CryptographicProviderTypeExtensibility;
@@ -106,7 +94,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Source of the cryptographic provider type extensibility identifier.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.CryptographicProviderTypeExtSource))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public string? CryptographicProviderTypeExtSource { get => _CryptographicProviderTypeExtSource; set => UpdateField(ref _CryptographicProviderTypeExtSource, value, nameof(CryptographicProviderTypeExtSource)); }
 
  private string? _CryptographicProviderTypeExtSource;
@@ -114,7 +101,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Password hash for document protection.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.Hash))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public Base64Binary? Hash { get => _Hash; set => UpdateField(ref _Hash, value, nameof(Hash)); }
 
  private Base64Binary? _Hash;
@@ -122,7 +108,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Salt value for the password verifier.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.Salt))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public Base64Binary? Salt { get => _Salt; set => UpdateField(ref _Salt, value, nameof(Salt)); }
 
  private Base64Binary? _Salt;
@@ -130,7 +115,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// FontName of the cryptographic algorithm used for document protection.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.AlgorithmName))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public string? AlgorithmName { get => _AlgorithmName; set => UpdateField(ref _AlgorithmName, value, nameof(AlgorithmName)); }
 
  private string? _AlgorithmName;
@@ -138,7 +122,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Hash value for document protection.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.HashValue))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public Base64Binary? HashValue { get => _HashValue; set => UpdateField(ref _HashValue, value, nameof(HashValue)); }
 
  private Base64Binary? _HashValue;
@@ -146,7 +129,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Salt value for document protection.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.SaltValue))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public Base64Binary? SaltValue { get => _SaltValue; set => UpdateField(ref _SaltValue, value, nameof(SaltValue)); }
 
  private Base64Binary? _SaltValue;
@@ -154,7 +136,6 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Number of spin count iterations for hashing.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.SpinCount))]
- [OpenXmlElement(typeof(DXW.DocumentProtection))]
  public Int32? SpinCount { get => _SpinCount; set => UpdateField(ref _SpinCount, value, nameof(SpinCount)); }
 
  private Int32? _SpinCount;

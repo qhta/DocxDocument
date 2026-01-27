@@ -10,7 +10,6 @@ public partial class BaseTableCellProperties<T>: ModelElement<T> where T: DX.Ope
   /// <summary>
   /// Shading applied to the table cell, specifying background and pattern formatting.
   /// </summary>
-  [OpenXmlElement(typeof(Shading))]
   public Shading? Shading
   {
     get => _Shading;
@@ -22,7 +21,6 @@ public partial class BaseTableCellProperties<T>: ModelElement<T> where T: DX.Ope
   /// <summary>
   /// Indicates whether text wrapping is disabled for the cell.
   /// </summary>
-  [OpenXmlElement(typeof(DXW.NoWrap))]
   public bool? NoWrap
   {
     get => _NoWrap;
@@ -34,7 +32,6 @@ public partial class BaseTableCellProperties<T>: ModelElement<T> where T: DX.Ope
   /// <summary>
   /// Margins for the table cell, specifying padding on each side.
   /// </summary>
-  [OpenXmlElement(typeof(DXW.TableCellMargin))]
   public TableCellMargin? TableCellMargin
   {
     get => _TableCellMargin;
@@ -46,7 +43,6 @@ public partial class BaseTableCellProperties<T>: ModelElement<T> where T: DX.Ope
   /// <summary>
   /// Vertical alignment of content within the table cell.
   /// </summary>
-  [OpenXmlElement(typeof(DXW.TableCellVerticalAlignment))]
   public TableVerticalAlignmentKind? TableCellVerticalAlignment
   {
     get => _TableCellVerticalAlignment;

@@ -12,7 +12,6 @@ public partial class NumberingInstance : ModelElement<DXW.NumberingInstance>
  ///   at a particular level in the style hierarchy (typically via direct formatting). 
  /// </summary>
  [OpenXmlProperty(nameof(DXW.NumberingInstance.NumberID))]
- [OpenXmlElement(typeof(DXW.NumberingInstance))]
  public Int32? NumberID { get => _NumberID; set => UpdateField(ref _NumberID, value, nameof(NumberID)); }
 
  private Int32? _NumberID;
@@ -20,7 +19,6 @@ public partial class NumberingInstance : ModelElement<DXW.NumberingInstance>
  ///   Associates a unique hexadecimal ID to the numbering definition instance.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.NumberingInstance.DurableId))]
- [OpenXmlElement(typeof(DXW.NumberingInstance))]
  public Int32? DurableId { get => _DurableId; set => UpdateField(ref _DurableId, value, nameof(DurableId)); }
 
  private Int32? _DurableId;
@@ -29,14 +27,12 @@ public partial class NumberingInstance : ModelElement<DXW.NumberingInstance>
  ///   whose properties shall be inherited by the parent numbering definition instance.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.NumberingInstance.AbstractNumId))]
- [OpenXmlElement(typeof(DXW.NumberingInstance))]
  public Int32? AbstractNumId { get => _AbstractNumId; set => UpdateField(ref _AbstractNumId, value, nameof(AbstractNumId)); }
 
  private Int32? _AbstractNumId;
  /// <summary>
  ///  Collection of NumLevelOverride elements
  /// </summary>
- [OpenXmlElement(typeof(DXW.NumberingInstance))]
  public NumLevelOverrides? LevelOverrides { get => _LevelOverrides; set => UpdateField(ref _LevelOverrides, value, nameof(LevelOverrides)); }
 
  private NumLevelOverrides? _LevelOverrides;

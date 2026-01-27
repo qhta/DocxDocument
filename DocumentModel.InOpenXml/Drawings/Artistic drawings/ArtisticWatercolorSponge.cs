@@ -8,7 +8,6 @@ public partial class ArtisticWatercolorSponge : ModelElement<DXO10D.ArtisticWate
  /// <summary>
  /// Transparency level of the watercolor sponge effect.
  /// </summary>
- [OpenXmlElement(typeof(DXO10D.ArtisticWatercolorSponge))]
  public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
 
  private Int32? _Transparency;
@@ -16,7 +15,6 @@ public partial class ArtisticWatercolorSponge : ModelElement<DXO10D.ArtisticWate
  /// Size of the brush used in the watercolor sponge effect, influencing the coverage and texture.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticWatercolorSponge.BrushSize))]
- [OpenXmlElement(typeof(DXO10D.ArtisticWatercolorSponge))]
  public Int32? BrushSize { get => _BrushSize; set => UpdateField(ref _BrushSize, value, nameof(BrushSize)); }
 
  private Int32? _BrushSize;

@@ -9,7 +9,6 @@ public partial class AlphaModulationEffect : ModelElement<DXD.AlphaModulationEff
  /// Effect container that defines the parameters for alpha modulation.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AlphaModulationEffect.EffectContainer))]
- [OpenXmlElement(typeof(DXD.AlphaModulationEffect))]
  public EffectContainer? EffectContainer { get => _EffectContainer; set => UpdateField(ref _EffectContainer, value, nameof(EffectContainer)); }
 
  private EffectContainer? _EffectContainer;

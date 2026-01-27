@@ -10,7 +10,6 @@ public partial class SdtContentDocPartObject : ModelElement<DXW.SdtContentDocPar
  /// Document part gallery filter, specifying the gallery to filter document parts.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtContentDocPartObject.DocPartGallery))]
- [OpenXmlElement(typeof(DXW.SdtContentDocPartObject))]
  public string? DocPartGallery { get => _DocPartGallery; set => UpdateField(ref _DocPartGallery, value, nameof(DocPartGallery)); }
 
  private string? _DocPartGallery;
@@ -18,7 +17,6 @@ public partial class SdtContentDocPartObject : ModelElement<DXW.SdtContentDocPar
  /// Document part category filter, specifying the category to filter document parts.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtContentDocPartObject.DocPartCategory))]
- [OpenXmlElement(typeof(DXW.SdtContentDocPartObject))]
  public string? DocPartCategory { get => _DocPartCategory; set => UpdateField(ref _DocPartCategory, value, nameof(DocPartCategory)); }
 
  private string? _DocPartCategory;
@@ -26,7 +24,6 @@ public partial class SdtContentDocPartObject : ModelElement<DXW.SdtContentDocPar
  /// Indicates whether the document part is built-in and unique.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtContentDocPartObject.DocPartUnique))]
- [OpenXmlElement(typeof(DXW.SdtContentDocPartObject))]
  public bool? DocPartUnique { get => _DocPartUnique; set => UpdateField(ref _DocPartUnique, value, nameof(DocPartUnique)); }
 
  private bool? _DocPartUnique;

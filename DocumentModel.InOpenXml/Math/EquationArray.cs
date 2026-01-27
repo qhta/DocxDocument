@@ -18,7 +18,6 @@ public partial class EquationArray : ModelElement<DXM.EquationArray>, IArgumentC
  ///   Specifies Equation Array properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.EquationArray.EquationArrayProperties))]
- [OpenXmlElement(typeof(DXM.EquationArray))]
  public EquationArrayProperties? EquationArrayProperties { get => _EquationArrayProperties; set => UpdateField(ref _EquationArrayProperties, value, nameof(EquationArrayProperties)); }
 
  private EquationArrayProperties? _EquationArrayProperties;

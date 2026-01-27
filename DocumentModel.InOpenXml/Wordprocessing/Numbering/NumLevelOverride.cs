@@ -10,7 +10,6 @@ public partial class NumLevelOverride : ModelElement<DXW.LevelOverride>
  /// Numbering level ID, specifying the zero-based index of the level being overridden.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LevelOverride.LevelIndex))]
- [OpenXmlElement(typeof(DXW.LevelOverride))]
  public Int32? LevelIndex { get => _LevelIndex; set => UpdateField(ref _LevelIndex, value, nameof(LevelIndex)); }
 
  private Int32? _LevelIndex;
@@ -18,7 +17,6 @@ public partial class NumLevelOverride : ModelElement<DXW.LevelOverride>
  /// Starting value override for the numbering level, specifying a new starting value for the overridden level.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LevelOverride.StartOverrideNumberingValue))]
- [OpenXmlElement(typeof(DXW.LevelOverride))]
  public Int32? StartOverrideNumberingValue { get => _StartOverrideNumberingValue; set => UpdateField(ref _StartOverrideNumberingValue, value, nameof(StartOverrideNumberingValue)); }
 
  private Int32? _StartOverrideNumberingValue;
@@ -26,7 +24,6 @@ public partial class NumLevelOverride : ModelElement<DXW.LevelOverride>
  /// Numbering level override definition, providing the set of properties that override the abstract numbering definition for this level.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LevelOverride.Level))]
- [OpenXmlElement(typeof(DXW.LevelOverride))]
  public NumLevel? Level { get => _Level; set => UpdateField(ref _Level, value, nameof(Level)); }
 
  private NumLevel? _Level;

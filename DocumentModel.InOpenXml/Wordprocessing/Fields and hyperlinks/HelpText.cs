@@ -10,7 +10,6 @@ public partial class HelpText : ModelElement<DXW.HelpText>
  /// Type of help text, specifying the context or display mode (e.g., tooltip, status bar).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.HelpText.Type))]
- [OpenXmlElement(typeof(DXW.HelpText))]
  public InfoTextKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
  private InfoTextKind? _Type;
@@ -18,7 +17,6 @@ public partial class HelpText : ModelElement<DXW.HelpText>
  /// Value of the help text, containing the actual guidance or information to be displayed to the user.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.HelpText.Val))]
- [OpenXmlElement(typeof(DXW.HelpText))]
  public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
  private string? _Val;

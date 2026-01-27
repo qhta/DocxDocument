@@ -9,7 +9,6 @@ public partial class ShapeGuide : ModelElement<DXD.ShapeGuide>
  ///   FontName of the shape guide.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ShapeGuide.Name))]
- [OpenXmlElement(typeof(DXD.ShapeGuide))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
  private string? _Name;
@@ -17,7 +16,6 @@ public partial class ShapeGuide : ModelElement<DXD.ShapeGuide>
  ///   Formula used by the shape guide for geometry calculations.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ShapeGuide.Formula))]
- [OpenXmlElement(typeof(DXD.ShapeGuide))]
  public string? Formula { get => _Formula; set => UpdateField(ref _Formula, value, nameof(Formula)); }
 
  private string? _Formula;

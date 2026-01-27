@@ -9,7 +9,6 @@ public partial class Proxy : ModelElement<DXVO.Proxy>
  ///   Start Point Connection Flag
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Proxy.Start))]
- [OpenXmlElement(typeof(DXVO.Proxy))]
  public bool? Start { get => _Start; set => UpdateField(ref _Start, value, nameof(Start)); }
 
  private bool? _Start;
@@ -17,7 +16,6 @@ public partial class Proxy : ModelElement<DXVO.Proxy>
  ///   End Point Connection Flag
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Proxy.End))]
- [OpenXmlElement(typeof(DXVO.Proxy))]
  public bool? End { get => _End; set => UpdateField(ref _End, value, nameof(End)); }
 
  private bool? _End;
@@ -25,7 +23,6 @@ public partial class Proxy : ModelElement<DXVO.Proxy>
  ///   Proxy Shape Reference
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Proxy.ShapeReference))]
- [OpenXmlElement(typeof(DXVO.Proxy))]
  public string? ShapeReference { get => _ShapeReference; set => UpdateField(ref _ShapeReference, value, nameof(ShapeReference)); }
 
  private string? _ShapeReference;
@@ -33,7 +30,6 @@ public partial class Proxy : ModelElement<DXVO.Proxy>
  ///   Connection Location
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Proxy.ConnectionLocation))]
- [OpenXmlElement(typeof(DXVO.Proxy))]
  public Int32? ConnectionLocation { get => _ConnectionLocation; set => UpdateField(ref _ConnectionLocation, value, nameof(ConnectionLocation)); }
 
  private Int32? _ConnectionLocation;

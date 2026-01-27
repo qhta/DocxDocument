@@ -8,7 +8,6 @@ public partial class ArtisticPhotocopy : ModelElement<DXO10D.ArtisticPhotocopy>
  /// <summary>
  /// Transparency level of the photocopy effect.
  /// </summary>
- [OpenXmlElement(typeof(DXO10D.ArtisticPhotocopy))]
  public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
 
  private Int32? _Transparency;
@@ -16,7 +15,6 @@ public partial class ArtisticPhotocopy : ModelElement<DXO10D.ArtisticPhotocopy>
  /// Detail level of the photocopy effect, influencing the sharpness and clarity of the simulated photocopy.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticPhotocopy.Detail))]
- [OpenXmlElement(typeof(DXO10D.ArtisticPhotocopy))]
  public Int32? Detail { get => _Detail; set => UpdateField(ref _Detail, value, nameof(Detail)); }
 
  private Int32? _Detail;

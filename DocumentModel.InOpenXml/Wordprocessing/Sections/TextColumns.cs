@@ -10,7 +10,6 @@ public partial class TextColumns : ModelElement<DXW.Columns>, ISectionProperties
  /// Indicates whether columns have equal widths.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Columns.EqualWidth))]
- [OpenXmlElement(typeof(DXW.Columns))]
  public bool? EqualWidth { get => _EqualWidth; set => UpdateField(ref _EqualWidth, value, nameof(EqualWidth)); }
 
  private bool? _EqualWidth;
@@ -18,7 +17,6 @@ public partial class TextColumns : ModelElement<DXW.Columns>, ISectionProperties
  /// Spacing between equal width columns, specified in twips.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Columns.Space))]
- [OpenXmlElement(typeof(DXW.Columns))]
  public Twips? Space { get => _Space; set => UpdateField(ref _Space, value, nameof(Space)); }
 
  private Twips? _Space;
@@ -26,7 +24,6 @@ public partial class TextColumns : ModelElement<DXW.Columns>, ISectionProperties
  /// Number of equal width columns in the section.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Columns.ColumnCount))]
- [OpenXmlElement(typeof(DXW.Columns))]
  public int? ColumnCount { get => _ColumnCount; set => UpdateField(ref _ColumnCount, value, nameof(ColumnCount)); }
 
  private int? _ColumnCount;
@@ -34,7 +31,6 @@ public partial class TextColumns : ModelElement<DXW.Columns>, ISectionProperties
  /// Indicates whether a line is drawn between columns.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Columns.Separator))]
- [OpenXmlElement(typeof(DXW.Columns))]
  public bool? Separator { get => _Separator; set => UpdateField(ref _Separator, value, nameof(Separator)); }
 
  private bool? _Separator;

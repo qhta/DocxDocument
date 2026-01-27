@@ -18,7 +18,6 @@ public partial class ThemeFamily : ModelElement<DXO13T.ThemeFamily>
  /// FontName of the theme family.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Name))]
- [OpenXmlElement(typeof(DXO13T.ThemeFamily))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
  private string? _Name;
@@ -26,7 +25,6 @@ public partial class ThemeFamily : ModelElement<DXO13T.ThemeFamily>
  /// Unique identifier for the theme family.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Id))]
- [OpenXmlElement(typeof(DXO13T.ThemeFamily))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
  private string? _Id;
@@ -34,7 +32,6 @@ public partial class ThemeFamily : ModelElement<DXO13T.ThemeFamily>
  /// Version identifier for the theme family.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Vid))]
- [OpenXmlElement(typeof(DXO13T.ThemeFamily))]
  public string? Vid { get => _Vid; set => UpdateField(ref _Vid, value, nameof(Vid)); }
 
  private string? _Vid;
@@ -42,7 +39,6 @@ public partial class ThemeFamily : ModelElement<DXO13T.ThemeFamily>
  /// OfficeArt extension metadata for the theme family.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13T.ThemeFamily.OfficeArtExtensionList))]
- [OpenXmlElement(typeof(DXO13T.ThemeFamily))]
  public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
 
  private OfficeArtExtensionList? _OfficeArtExtensionList;

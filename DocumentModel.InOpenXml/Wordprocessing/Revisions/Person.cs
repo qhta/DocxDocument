@@ -9,7 +9,6 @@ public partial class Person : ModelElement<DXO13W.Person>, ICollectionItem
  /// <summary>
  /// Contact information for the person, available for backwards compatibility.
  /// </summary>
- [OpenXmlElement(typeof(DXO13W.Person))]
  public string? Contact { get => _Contact; set => UpdateField(ref _Contact, value, nameof(Contact)); }
 
  private string? _Contact;
@@ -17,7 +16,6 @@ public partial class Person : ModelElement<DXO13W.Person>, ICollectionItem
  /// FontName of the author associated with the revision or document change.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13W.Person.Author))]
- [OpenXmlElement(typeof(DXO13W.Person))]
  public string? Author { get => _Author; set => UpdateField(ref _Author, value, nameof(Author)); }
 
  private string? _Author;
@@ -25,7 +23,6 @@ public partial class Person : ModelElement<DXO13W.Person>, ICollectionItem
  /// Presence information for the person, providing metadata about user presence and collaboration status.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13W.Person.PresenceInfo))]
- [OpenXmlElement(typeof(DXO13W.Person))]
  public PresenceInfo? PresenceInfo { get => _PresenceInfo; set => UpdateField(ref _PresenceInfo, value, nameof(PresenceInfo)); }
 
  private PresenceInfo? _PresenceInfo;

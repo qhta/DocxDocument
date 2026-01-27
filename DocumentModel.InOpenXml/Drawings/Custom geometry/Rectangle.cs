@@ -15,7 +15,6 @@ public partial class Rectangle : ModelElement<DXD.Rectangle>
  ///   Left position of the rectangle.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Rectangle.Left))]
- [OpenXmlElement(typeof(DXD.Rectangle))]
  public string? Left { get => _Left; set => UpdateField(ref _Left, value, nameof(Left)); }
 
  private string? _Left;
@@ -23,7 +22,6 @@ public partial class Rectangle : ModelElement<DXD.Rectangle>
  ///   Top position of the rectangle.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Rectangle.Top))]
- [OpenXmlElement(typeof(DXD.Rectangle))]
  public string? Top { get => _Top; set => UpdateField(ref _Top, value, nameof(Top)); }
 
  private string? _Top;
@@ -31,7 +29,6 @@ public partial class Rectangle : ModelElement<DXD.Rectangle>
  ///   Right position of the rectangle.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Rectangle.Right))]
- [OpenXmlElement(typeof(DXD.Rectangle))]
  public string? Right { get => _Right; set => UpdateField(ref _Right, value, nameof(Right)); }
 
  private string? _Right;
@@ -39,7 +36,6 @@ public partial class Rectangle : ModelElement<DXD.Rectangle>
  ///   Bottom position of the rectangle.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Rectangle.Bottom))]
- [OpenXmlElement(typeof(DXD.Rectangle))]
  public string? Bottom { get => _Bottom; set => UpdateField(ref _Bottom, value, nameof(Bottom)); }
 
  private string? _Bottom;

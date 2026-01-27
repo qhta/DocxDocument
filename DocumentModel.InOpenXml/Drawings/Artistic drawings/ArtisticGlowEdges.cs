@@ -8,7 +8,6 @@ public partial class ArtisticGlowEdges : ModelElement<DXO10D.ArtisticGlowEdges>
  /// <summary>
  /// Transparency level of the glow edges effect.
  /// </summary>
- [OpenXmlElement(typeof(DXO10D.ArtisticGlowEdges))]
  public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
 
  private Int32? _Transparency;
@@ -16,7 +15,6 @@ public partial class ArtisticGlowEdges : ModelElement<DXO10D.ArtisticGlowEdges>
  /// Smoothness of the glow edges effect, influencing the softness of the glow.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticGlowEdges.Smoothness))]
- [OpenXmlElement(typeof(DXO10D.ArtisticGlowEdges))]
  public Int32? Smoothness { get => _Smoothness; set => UpdateField(ref _Smoothness, value, nameof(Smoothness)); }
 
  private Int32? _Smoothness;

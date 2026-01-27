@@ -9,7 +9,6 @@ public partial class Blur : ModelElement<DXD.Blur>
  /// Radius of the blur effect.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Blur.Radius))]
- [OpenXmlElement(typeof(DXD.Blur))]
  public Int64? Radius { get => _Radius; set => UpdateField(ref _Radius, value, nameof(Radius)); }
 
  private Int64? _Radius;
@@ -17,7 +16,6 @@ public partial class Blur : ModelElement<DXD.Blur>
  /// Gets or sets a value indicating whether the bounds should grow to accommodate the blur.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Blur.Grow))]
- [OpenXmlElement(typeof(DXD.Blur))]
  public bool? Grow { get => _Grow; set => UpdateField(ref _Grow, value, nameof(Grow)); }
 
  private bool? _Grow;

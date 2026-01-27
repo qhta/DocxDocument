@@ -9,7 +9,6 @@ public partial class EmbeddedWavAudioFileType : ModelElement<DXD.EmbeddedWavAudi
  ///   Relationship ID that references the embedded audio file.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.EmbeddedWavAudioFileType.Embed))]
- [OpenXmlElement(typeof(DXD.EmbeddedWavAudioFileType))]
  public string? Embed { get => _Embed; set => UpdateField(ref _Embed, value, nameof(Embed)); }
 
  private string? _Embed;
@@ -17,7 +16,6 @@ public partial class EmbeddedWavAudioFileType : ModelElement<DXD.EmbeddedWavAudi
  ///   FontName of the sound.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.EmbeddedWavAudioFileType.Name))]
- [OpenXmlElement(typeof(DXD.EmbeddedWavAudioFileType))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
  private string? _Name;
@@ -25,7 +23,6 @@ public partial class EmbeddedWavAudioFileType : ModelElement<DXD.EmbeddedWavAudi
  ///   Determines whether it is a recognized Built-In Sound.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.EmbeddedWavAudioFileType.BuiltIn))]
- [OpenXmlElement(typeof(DXD.EmbeddedWavAudioFileType))]
  public bool? BuiltIn { get => _BuiltIn; set => UpdateField(ref _BuiltIn, value, nameof(BuiltIn)); }
 
  private bool? _BuiltIn;

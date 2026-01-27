@@ -10,7 +10,6 @@ public partial class SdtRepeatedSection : ModelElement<DXO13W.SdtRepeatedSection
  ///   Title of the repeated section, used for identification and display purposes.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13W.SdtRepeatedSection.SectionTitle))]
- [OpenXmlElement(typeof(DXO13W.SdtRepeatedSection))]
  public string? SectionTitle { get => _SectionTitle; set => UpdateField(ref _SectionTitle, value, nameof(SectionTitle)); }
 
  private string? _SectionTitle;
@@ -18,7 +17,6 @@ public partial class SdtRepeatedSection : ModelElement<DXO13W.SdtRepeatedSection
  ///   Indicates whether insertion or deletion of sections is disallowed.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13W.SdtRepeatedSection.DoNotAllowInsertDeleteSection))]
- [OpenXmlElement(typeof(DXO13W.SdtRepeatedSection))]
  public bool? DoNotAllowInsertDeleteSection { get => _DoNotAllowInsertDeleteSection; set => UpdateField(ref _DoNotAllowInsertDeleteSection, value, nameof(DoNotAllowInsertDeleteSection)); }
 
  private bool? _DoNotAllowInsertDeleteSection;

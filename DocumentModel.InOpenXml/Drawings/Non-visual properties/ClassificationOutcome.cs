@@ -9,14 +9,12 @@ public partial class ClassificationOutcome : ModelElement<DXO21DDC.Classificatio
  /// Classification outcome type.
  /// </summary>
  [OpenXmlProperty(nameof(DXO21DDC.ClassificationOutcome.ClassificationOutcomeType))]
- [OpenXmlElement(typeof(DXO21DDC.ClassificationOutcome))]
  public ClassificationOutcomeKind? ClassificationOutcomeType { get => _ClassificationOutcomeType; set => UpdateField(ref _ClassificationOutcomeType, value, nameof(ClassificationOutcomeType)); }
 
  private ClassificationOutcomeKind? _ClassificationOutcomeType;
  /// <summary>
  /// List of extensions for additional data.
  /// </summary>
- [OpenXmlElement(typeof(DXO21DDC.ClassificationOutcome))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
  private ExtensionList? _ExtensionList;

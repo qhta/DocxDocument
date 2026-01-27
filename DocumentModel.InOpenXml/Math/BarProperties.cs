@@ -10,7 +10,6 @@ public partial class BarProperties : ModelElement<DXM.BarProperties>
  ///   Specifies vertical position of the bar.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.BarProperties.Position))]
- [OpenXmlElement(typeof(DXM.BarProperties))]
  public VerticalJustificationKind? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
 
  private VerticalJustificationKind? _Position;
@@ -18,7 +17,6 @@ public partial class BarProperties : ModelElement<DXM.BarProperties>
  ///   Specifies formatting of bar function argument.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.BarProperties.ControlProperties))]
- [OpenXmlElement(typeof(DXM.BarProperties))]
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
 
  private ControlProperties? _ControlProperties;

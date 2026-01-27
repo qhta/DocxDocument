@@ -9,7 +9,6 @@ public partial class BackgroundRemovedProperties : ModelElement<DXO21DL.Backgrou
  /// List of OfficeArt extension elements.
  /// </summary>
  [OpenXmlProperty(nameof(DXO21DL.BackgroundRemovedProperties.OfficeArtExtensionList))]
- [OpenXmlElement(typeof(DXO21DL.BackgroundRemovedProperties))]
  public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
 
  private OfficeArtExtensionList? _OfficeArtExtensionList;

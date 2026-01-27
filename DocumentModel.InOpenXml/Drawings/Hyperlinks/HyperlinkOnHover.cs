@@ -9,12 +9,10 @@ public partial class HyperlinkOnHover : ModelElement<DXD.HyperlinkOnHover>, IExt
  ///   Embedded sound to play when the hyperlink is activated on hover.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkOnHover.HyperlinkSound))]
- [OpenXmlElement(typeof(DXD.HyperlinkOnHover))]
  public EmbeddedWavAudioFileType? HyperlinkSound { get => _HyperlinkSound; set => UpdateField(ref _HyperlinkSound, value, nameof(HyperlinkSound)); }
 
  private EmbeddedWavAudioFileType? _HyperlinkSound;
  [OpenXmlProperty(nameof(DXD.HyperlinkOnHover.HyperlinkExtensionList))]
- [OpenXmlElement(typeof(DXD.HyperlinkOnHover))]
  public HyperlinkExtensionList? HyperlinkExtensionList { get => _HyperlinkExtensionList; set => UpdateField(ref _HyperlinkExtensionList, value, nameof(HyperlinkExtensionList)); }
 
  private HyperlinkExtensionList? _HyperlinkExtensionList;

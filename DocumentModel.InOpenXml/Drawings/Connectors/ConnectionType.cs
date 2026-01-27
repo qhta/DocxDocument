@@ -9,7 +9,6 @@ public partial class ConnectionType : ModelElement<DXD.ConnectionType>
  /// Unique identifier for the connection.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ConnectionType.Id))]
- [OpenXmlElement(typeof(DXD.ConnectionType))]
  public UInt32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
  private UInt32? _Id;
@@ -17,7 +16,6 @@ public partial class ConnectionType : ModelElement<DXD.ConnectionType>
  /// Index of the connection.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ConnectionType.Index))]
- [OpenXmlElement(typeof(DXD.ConnectionType))]
  public UInt32? Index { get => _Index; set => UpdateField(ref _Index, value, nameof(Index)); }
 
  private UInt32? _Index;

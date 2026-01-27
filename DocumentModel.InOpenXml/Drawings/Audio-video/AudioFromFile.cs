@@ -9,12 +9,10 @@ public partial class AudioFromFile : ModelElement<DXD.AudioFromFile>, IExtendabl
  /// Linked relationship ID that references the audio file.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AudioFromFile.Link))]
- [OpenXmlElement(typeof(DXD.AudioFromFile))]
  public string? Link { get => _Link; set => UpdateField(ref _Link, value, nameof(Link)); }
 
  private string? _Link;
  [OpenXmlProperty(nameof(DXD.AudioFromFile.ExtensionList))]
- [OpenXmlElement(typeof(DXD.AudioFromFile))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
  private ExtensionList? _ExtensionList;

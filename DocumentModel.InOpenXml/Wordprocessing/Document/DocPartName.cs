@@ -10,7 +10,6 @@ public partial class DocPartName : ModelElement<DXW.DocPartName>
  /// FontName value of the entry, specifying the unique identifier or display name for the glossary document entry.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocPartName.Val))]
- [OpenXmlElement(typeof(DXW.DocPartName))]
  public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
  private string? _Val;
@@ -18,7 +17,6 @@ public partial class DocPartName : ModelElement<DXW.DocPartName>
  /// Indicates whether the entry is a built-in (decorated) entry.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocPartName.Decorated))]
- [OpenXmlElement(typeof(DXW.DocPartName))]
  public bool? Decorated { get => _Decorated; set => UpdateField(ref _Decorated, value, nameof(Decorated)); }
 
  private bool? _Decorated;

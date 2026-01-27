@@ -9,7 +9,6 @@ public partial class FontReference : ModelElement<DXD.FontReference>
  ///   Identifier for the font collection index.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontReference.Index))]
- [OpenXmlElement(typeof(DXD.FontReference))]
  public FontCollectionIndexKind? Index { get => _Index; set => UpdateField(ref _Index, value, nameof(Index)); }
 
  private FontCollectionIndexKind? _Index;
@@ -17,7 +16,6 @@ public partial class FontReference : ModelElement<DXD.FontReference>
  ///   Color specified using the RGB color model with percentage values.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontReference.RgbColorModelPercentage))]
- [OpenXmlElement(typeof(DXD.FontReference))]
  public RgbColorModelPercentage? RgbColorModelPercentage { get => _RgbColorModelPercentage; set => UpdateField(ref _RgbColorModelPercentage, value, nameof(RgbColorModelPercentage)); }
 
  private RgbColorModelPercentage? _RgbColorModelPercentage;
@@ -25,7 +23,6 @@ public partial class FontReference : ModelElement<DXD.FontReference>
  ///   Color specified using the RGB color model with hexadecimal values.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontReference.RgbColorModelHex))]
- [OpenXmlElement(typeof(DXD.FontReference))]
  public RgbColorModelHex? RgbColorModelHex { get => _RgbColorModelHex; set => UpdateField(ref _RgbColorModelHex, value, nameof(RgbColorModelHex)); }
 
  private RgbColorModelHex? _RgbColorModelHex;
@@ -33,7 +30,6 @@ public partial class FontReference : ModelElement<DXD.FontReference>
  ///   Color specified using the Hue, Saturation, Luminance (HSL) color model.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontReference.HslColor))]
- [OpenXmlElement(typeof(DXD.FontReference))]
  public HslColor? HslColor { get => _HslColor; set => UpdateField(ref _HslColor, value, nameof(HslColor)); }
 
  private HslColor? _HslColor;
@@ -41,7 +37,6 @@ public partial class FontReference : ModelElement<DXD.FontReference>
  ///   Color specified using a system-defined color.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontReference.SystemColor))]
- [OpenXmlElement(typeof(DXD.FontReference))]
  public SystemColor? SystemColor { get => _SystemColor; set => UpdateField(ref _SystemColor, value, nameof(SystemColor)); }
 
  private SystemColor? _SystemColor;
@@ -49,7 +44,6 @@ public partial class FontReference : ModelElement<DXD.FontReference>
  ///   Color specified using a color scheme.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontReference.SchemeColor))]
- [OpenXmlElement(typeof(DXD.FontReference))]
  public SchemeColor? SchemeColor { get => _SchemeColor; set => UpdateField(ref _SchemeColor, value, nameof(SchemeColor)); }
 
  private SchemeColor? _SchemeColor;
@@ -57,7 +51,6 @@ public partial class FontReference : ModelElement<DXD.FontReference>
  ///   Color specified using a preset color.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontReference.PresetColor))]
- [OpenXmlElement(typeof(DXD.FontReference))]
  public PresetColor? PresetColor { get => _PresetColor; set => UpdateField(ref _PresetColor, value, nameof(PresetColor)); }
 
  private PresetColor? _PresetColor;

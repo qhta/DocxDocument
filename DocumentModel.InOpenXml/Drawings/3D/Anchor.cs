@@ -70,7 +70,6 @@ public partial class Anchor : ModelElement<DXD.Anchor>
  ///   </para>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.Anchor.X))]
- [OpenXmlElement(typeof(DXD.Anchor))]
  public Int64? X { get => _X; set => UpdateField(ref _X, value, nameof(X)); }
 
  private Int64? _X;
@@ -103,7 +102,6 @@ public partial class Anchor : ModelElement<DXD.Anchor>
  ///   </para>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.Anchor.Y))]
- [OpenXmlElement(typeof(DXD.Anchor))]
  public Int64? Y { get => _Y; set => UpdateField(ref _Y, value, nameof(Y)); }
 
  private Int64? _Y;
@@ -141,7 +139,6 @@ public partial class Anchor : ModelElement<DXD.Anchor>
  ///   </para>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.Anchor.Z))]
- [OpenXmlElement(typeof(DXD.Anchor))]
  public Int64? Z { get => _Z; set => UpdateField(ref _Z, value, nameof(Z)); }
 
  private Int64? _Z;

@@ -9,7 +9,6 @@ public partial class Drawing : ModelElement<DXOD.Drawing>
  ///   ShapeTree.
  /// </summary>
  [OpenXmlProperty(nameof(DXOD.Drawing.ShapeTree))]
- [OpenXmlElement(typeof(DXOD.Drawing))]
  public ShapeTree? ShapeTree { get => _ShapeTree; set => UpdateField(ref _ShapeTree, value, nameof(ShapeTree)); }
 
  private ShapeTree? _ShapeTree;

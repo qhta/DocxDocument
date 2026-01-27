@@ -10,7 +10,6 @@ public partial class DelimiterProperties : ModelElement<DXM.DelimiterProperties>
  ///   Delimiter Beginning Character.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.DelimiterProperties.BeginChar))]
- [OpenXmlElement(typeof(DXM.DelimiterProperties))]
  public string? BeginChar { get => _BeginChar; set => UpdateField(ref _BeginChar, value, nameof(BeginChar)); }
 
  private string? _BeginChar;
@@ -18,7 +17,6 @@ public partial class DelimiterProperties : ModelElement<DXM.DelimiterProperties>
  ///   Delimiter Separator Character.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.DelimiterProperties.SeparatorChar))]
- [OpenXmlElement(typeof(DXM.DelimiterProperties))]
  public string? SeparatorChar { get => _SeparatorChar; set => UpdateField(ref _SeparatorChar, value, nameof(SeparatorChar)); }
 
  private string? _SeparatorChar;
@@ -26,7 +24,6 @@ public partial class DelimiterProperties : ModelElement<DXM.DelimiterProperties>
  ///   Delimiter Ending Character.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.DelimiterProperties.EndChar))]
- [OpenXmlElement(typeof(DXM.DelimiterProperties))]
  public string? EndChar { get => _EndChar; set => UpdateField(ref _EndChar, value, nameof(EndChar)); }
 
  private string? _EndChar;
@@ -34,7 +31,6 @@ public partial class DelimiterProperties : ModelElement<DXM.DelimiterProperties>
  ///   Allows separators to grow according to operator size.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.DelimiterProperties.GrowOperators))]
- [OpenXmlElement(typeof(DXM.DelimiterProperties))]
  public bool? GrowOperators { get => _GrowOperators; set => UpdateField(ref _GrowOperators, value, nameof(GrowOperators)); }
 
  private bool? _GrowOperators;
@@ -43,7 +39,6 @@ public partial class DelimiterProperties : ModelElement<DXM.DelimiterProperties>
  ///   or they are matched to the baseline of the expression.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.DelimiterProperties.Shape))]
- [OpenXmlElement(typeof(DXM.DelimiterProperties))]
  public ShapeDelimiterKind? Shape { get => _Shape; set => UpdateField(ref _Shape, value, nameof(Shape)); }
 
  private ShapeDelimiterKind? _Shape;
@@ -51,7 +46,6 @@ public partial class DelimiterProperties : ModelElement<DXM.DelimiterProperties>
  ///   Specifies formatting of delimiter object argument.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.DelimiterProperties.ControlProperties))]
- [OpenXmlElement(typeof(DXM.DelimiterProperties))]
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
 
  private ControlProperties? _ControlProperties;

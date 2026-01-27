@@ -30,7 +30,6 @@ public partial class Schema : ModelElement<DXCXSR.Schema>
  ///   This is used to associate XML elements in the custom XML data with their corresponding schema definitions.
  /// </remarks>
  [OpenXmlProperty(nameof(DXCXSR.Schema.Uri))]
- [OpenXmlElement(typeof(DXCXSR.Schema))]
  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
 
  private string? _Uri;
@@ -50,7 +49,6 @@ public partial class Schema : ModelElement<DXCXSR.Schema>
  ///   where multiple related schemas need to be loaded or when schema catalogs are employed.
  /// </remarks>
  [OpenXmlProperty(nameof(DXCXSR.Schema.ManifestLocation))]
- [OpenXmlElement(typeof(DXCXSR.Schema))]
  public string? ManifestLocation { get => _ManifestLocation; set => UpdateField(ref _ManifestLocation, value, nameof(ManifestLocation)); }
 
  private string? _ManifestLocation;
@@ -72,7 +70,6 @@ public partial class Schema : ModelElement<DXCXSR.Schema>
  ///   within the document package, or a URL to a remote schema location.
  /// </remarks>
  [OpenXmlProperty(nameof(DXCXSR.Schema.SchemaLocation))]
- [OpenXmlElement(typeof(DXCXSR.Schema))]
  public string? SchemaLocation { get => _SchemaLocation; set => UpdateField(ref _SchemaLocation, value, nameof(SchemaLocation)); }
 
  private string? _SchemaLocation;
