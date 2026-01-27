@@ -10,7 +10,6 @@ public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteD
  /// Placement of footnotes in the document, specifying where footnotes appear (e.g., bottom of page, end of document).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FootnoteDocumentWideProperties.FootnotePosition))]
- [OpenXmlElement(typeof(DXW.FootnoteDocumentWideProperties))]
  public FootnotePositionKind? FootnotePosition { get => _FootnotePosition; set => UpdateField(ref _FootnotePosition, value, nameof(FootnotePosition)); }
 
  private FootnotePositionKind? _FootnotePosition;
@@ -18,7 +17,6 @@ public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteD
  /// Numbering format for footnotes, specifying the style of numbering (e.g., Arabic, Roman, letters).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FootnoteDocumentWideProperties.NumberingFormat))]
- [OpenXmlElement(typeof(DXW.FootnoteDocumentWideProperties))]
  public NumberingFormat? NumberingFormat { get => _NumberingFormat; set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat)); }
 
  private NumberingFormat? _NumberingFormat;
@@ -26,7 +24,6 @@ public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteD
  /// Starting value for footnote numbering, specifying the initial number used for the first footnote.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FootnoteDocumentWideProperties.NumberingStart))]
- [OpenXmlElement(typeof(DXW.FootnoteDocumentWideProperties))]
  public UInt16? NumberingStart { get => _NumberingStart; set => UpdateField(ref _NumberingStart, value, nameof(NumberingStart)); }
 
  private UInt16? _NumberingStart;
@@ -34,14 +31,12 @@ public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteD
  /// Location where footnote numbering restarts (e.g., each section, each page, continuous).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FootnoteDocumentWideProperties.NumberingRestart))]
- [OpenXmlElement(typeof(DXW.FootnoteDocumentWideProperties))]
  public RestartNumberKind? NumberingRestart { get => _NumberingRestart; set => UpdateField(ref _NumberingRestart, value, nameof(NumberingRestart)); }
 
  private RestartNumberKind? _NumberingRestart;
  /// <summary>
  /// Special references for footnotes, such as separators and continuation notices.
  /// </summary>
- [OpenXmlElement(typeof(DXW.FootnoteDocumentWideProperties))]
  public FootnoteSeparators? FootnoteSeparators { get => _FootnoteSeparators; set => UpdateField(ref _FootnoteSeparators, value, nameof(FootnoteSeparators)); }
 
  private FootnoteSeparators? _FootnoteSeparators;

@@ -9,7 +9,6 @@ public partial class CustomXmlAttribute : ModelElement<DXW.CustomXmlAttribute>
  /// <summary>
  /// UriString of the custom XML attribute, specifying the namespace or schema context.
  /// </summary>
- [OpenXmlElement(typeof(DXW.CustomXmlAttribute))]
  public string? UriString { get => _UriString; set => UpdateField(ref _UriString, value, nameof(UriString)); }
 
  private string? _UriString;
@@ -17,7 +16,6 @@ public partial class CustomXmlAttribute : ModelElement<DXW.CustomXmlAttribute>
  /// FontName of the custom XML attribute.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.CustomXmlAttribute.Name))]
- [OpenXmlElement(typeof(DXW.CustomXmlAttribute))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
  private string? _Name;
@@ -25,7 +23,6 @@ public partial class CustomXmlAttribute : ModelElement<DXW.CustomXmlAttribute>
  /// Value of the custom XML attribute.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.CustomXmlAttribute.Val))]
- [OpenXmlElement(typeof(DXW.CustomXmlAttribute))]
  public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
  private string? _Val;

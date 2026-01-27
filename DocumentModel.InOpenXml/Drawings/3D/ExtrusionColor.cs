@@ -9,7 +9,6 @@ public partial class ExtrusionColor : ModelElement<DXD.ExtrusionColor>
  ///   Extrusion color specified using the RGB color model with percentage values.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ExtrusionColor.RgbColorModelPercentage))]
- [OpenXmlElement(typeof(DXD.ExtrusionColor))]
  public RgbColorModelPercentage? RgbColorModelPercentage { get => _RgbColorModelPercentage; set => UpdateField(ref _RgbColorModelPercentage, value, nameof(RgbColorModelPercentage)); }
 
  private RgbColorModelPercentage? _RgbColorModelPercentage;
@@ -17,7 +16,6 @@ public partial class ExtrusionColor : ModelElement<DXD.ExtrusionColor>
  ///   Extrusion color specified using the RGB color model with hexadecimal values.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ExtrusionColor.RgbColorModelHex))]
- [OpenXmlElement(typeof(DXD.ExtrusionColor))]
  public RgbColorModelHex? RgbColorModelHex { get => _RgbColorModelHex; set => UpdateField(ref _RgbColorModelHex, value, nameof(RgbColorModelHex)); }
 
  private RgbColorModelHex? _RgbColorModelHex;
@@ -25,7 +23,6 @@ public partial class ExtrusionColor : ModelElement<DXD.ExtrusionColor>
  ///   Extrusion color specified using the hue, saturation, luminance (HSL) color model.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ExtrusionColor.HslColor))]
- [OpenXmlElement(typeof(DXD.ExtrusionColor))]
  public HslColor? HslColor { get => _HslColor; set => UpdateField(ref _HslColor, value, nameof(HslColor)); }
 
  private HslColor? _HslColor;
@@ -33,7 +30,6 @@ public partial class ExtrusionColor : ModelElement<DXD.ExtrusionColor>
  ///   Extrusion color specified using a system-defined color.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ExtrusionColor.SystemColor))]
- [OpenXmlElement(typeof(DXD.ExtrusionColor))]
  public SystemColor? SystemColor { get => _SystemColor; set => UpdateField(ref _SystemColor, value, nameof(SystemColor)); }
 
  private SystemColor? _SystemColor;
@@ -41,7 +37,6 @@ public partial class ExtrusionColor : ModelElement<DXD.ExtrusionColor>
  ///   Extrusion color specified using a color scheme.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ExtrusionColor.SchemeColor))]
- [OpenXmlElement(typeof(DXD.ExtrusionColor))]
  public SchemeColor? SchemeColor { get => _SchemeColor; set => UpdateField(ref _SchemeColor, value, nameof(SchemeColor)); }
 
  private SchemeColor? _SchemeColor;
@@ -49,7 +44,6 @@ public partial class ExtrusionColor : ModelElement<DXD.ExtrusionColor>
  ///   Extrusion color specified using a preset color.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ExtrusionColor.PresetColor))]
- [OpenXmlElement(typeof(DXD.ExtrusionColor))]
  public PresetColor? PresetColor { get => _PresetColor; set => UpdateField(ref _PresetColor, value, nameof(PresetColor)); }
 
  private PresetColor? _PresetColor;

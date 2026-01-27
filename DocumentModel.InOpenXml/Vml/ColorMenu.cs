@@ -9,7 +9,6 @@ public partial class ColorMenu : ModelElement<DXVO.ColorMenu>
  ///   VML Extension Handling Behavior
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ColorMenu.Extension))]
- [OpenXmlElement(typeof(DXVO.ColorMenu))]
  public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
  private ExtensionHandlingBehaviorKind? _Extension;
@@ -17,7 +16,6 @@ public partial class ColorMenu : ModelElement<DXVO.ColorMenu>
  ///   Default stroke color
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ColorMenu.StrokeColor))]
- [OpenXmlElement(typeof(DXVO.ColorMenu))]
  public string? StrokeColor { get => _StrokeColor; set => UpdateField(ref _StrokeColor, value, nameof(StrokeColor)); }
 
  private string? _StrokeColor;
@@ -25,7 +23,6 @@ public partial class ColorMenu : ModelElement<DXVO.ColorMenu>
  ///   Default fill color
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ColorMenu.FillColor))]
- [OpenXmlElement(typeof(DXVO.ColorMenu))]
  public string? FillColor { get => _FillColor; set => UpdateField(ref _FillColor, value, nameof(FillColor)); }
 
  private string? _FillColor;
@@ -33,7 +30,6 @@ public partial class ColorMenu : ModelElement<DXVO.ColorMenu>
  ///   Default shadow color
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ColorMenu.ShadowColor))]
- [OpenXmlElement(typeof(DXVO.ColorMenu))]
  public string? ShadowColor { get => _ShadowColor; set => UpdateField(ref _ShadowColor, value, nameof(ShadowColor)); }
 
  private string? _ShadowColor;
@@ -41,7 +37,6 @@ public partial class ColorMenu : ModelElement<DXVO.ColorMenu>
  ///   Default extrusion color
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ColorMenu.ExtrusionColor))]
- [OpenXmlElement(typeof(DXVO.ColorMenu))]
  public string? ExtrusionColor { get => _ExtrusionColor; set => UpdateField(ref _ExtrusionColor, value, nameof(ExtrusionColor)); }
 
  private string? _ExtrusionColor;

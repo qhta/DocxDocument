@@ -5,7 +5,6 @@ namespace DocumentModel.Drawings;
 [OpenXmlType(typeof(DXD.NonVisualGroupDrawingShapePropsExtension))]
 public partial class NonVisualGroupDrawingShapePropsExtension : ModelElement<DXD.NonVisualGroupDrawingShapePropsExtension>, IExtension
 {
- [OpenXmlElement(typeof(DXD.NonVisualGroupDrawingShapePropsExtension))]
  public NonVisualGroupProperties? NonVisualGroupProperties { get => _NonVisualGroupProperties; set => UpdateField(ref _NonVisualGroupProperties, value, nameof(NonVisualGroupProperties)); }
 
  private NonVisualGroupProperties? _NonVisualGroupProperties;
@@ -13,7 +12,6 @@ public partial class NonVisualGroupDrawingShapePropsExtension : ModelElement<DXD
  /// Uri
  /// </summary>
  [OpenXmlProperty(nameof(DXD.NonVisualGroupDrawingShapePropsExtension.Uri))]
- [OpenXmlElement(typeof(DXD.NonVisualGroupDrawingShapePropsExtension))]
  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
 
  private string? _Uri;

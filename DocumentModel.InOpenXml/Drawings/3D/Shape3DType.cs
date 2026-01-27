@@ -9,7 +9,6 @@ public partial class Shape3DType : ModelElement<DXD.Shape3DType>, IExtendableEle
  ///   Shape Depth
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape3DType.Z))]
- [OpenXmlElement(typeof(DXD.Shape3DType))]
  public Int64? Z { get => _Z; set => UpdateField(ref _Z, value, nameof(Z)); }
 
  private Int64? _Z;
@@ -17,7 +16,6 @@ public partial class Shape3DType : ModelElement<DXD.Shape3DType>, IExtendableEle
  ///   Extrusion Height
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape3DType.ExtrusionHeight))]
- [OpenXmlElement(typeof(DXD.Shape3DType))]
  public Int64? ExtrusionHeight { get => _ExtrusionHeight; set => UpdateField(ref _ExtrusionHeight, value, nameof(ExtrusionHeight)); }
 
  private Int64? _ExtrusionHeight;
@@ -25,7 +23,6 @@ public partial class Shape3DType : ModelElement<DXD.Shape3DType>, IExtendableEle
  ///   Contour Width
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape3DType.ContourWidth))]
- [OpenXmlElement(typeof(DXD.Shape3DType))]
  public Int64? ContourWidth { get => _ContourWidth; set => UpdateField(ref _ContourWidth, value, nameof(ContourWidth)); }
 
  private Int64? _ContourWidth;
@@ -33,7 +30,6 @@ public partial class Shape3DType : ModelElement<DXD.Shape3DType>, IExtendableEle
  ///   Preset Material Type
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape3DType.PresetMaterial))]
- [OpenXmlElement(typeof(DXD.Shape3DType))]
  public PresetMaterialKind? PresetMaterial { get => _PresetMaterial; set => UpdateField(ref _PresetMaterial, value, nameof(PresetMaterial)); }
 
  private PresetMaterialKind? _PresetMaterial;
@@ -41,7 +37,6 @@ public partial class Shape3DType : ModelElement<DXD.Shape3DType>, IExtendableEle
  ///   Top Bevel.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape3DType.BevelTop))]
- [OpenXmlElement(typeof(DXD.Shape3DType))]
  public BevelType? BevelTop { get => _BevelTop; set => UpdateField(ref _BevelTop, value, nameof(BevelTop)); }
 
  private BevelType? _BevelTop;
@@ -49,7 +44,6 @@ public partial class Shape3DType : ModelElement<DXD.Shape3DType>, IExtendableEle
  ///   Bottom Bevel.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape3DType.BevelBottom))]
- [OpenXmlElement(typeof(DXD.Shape3DType))]
  public BevelType? BevelBottom { get => _BevelBottom; set => UpdateField(ref _BevelBottom, value, nameof(BevelBottom)); }
 
  private BevelType? _BevelBottom;
@@ -57,7 +51,6 @@ public partial class Shape3DType : ModelElement<DXD.Shape3DType>, IExtendableEle
  ///   Extrusion Color.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape3DType.ExtrusionColor))]
- [OpenXmlElement(typeof(DXD.Shape3DType))]
  public ExtrusionColor? ExtrusionColor { get => _ExtrusionColor; set => UpdateField(ref _ExtrusionColor, value, nameof(ExtrusionColor)); }
 
  private ExtrusionColor? _ExtrusionColor;
@@ -65,7 +58,6 @@ public partial class Shape3DType : ModelElement<DXD.Shape3DType>, IExtendableEle
  ///   Contour Color.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape3DType.ContourColor))]
- [OpenXmlElement(typeof(DXD.Shape3DType))]
  public ContourColor? ContourColor { get => _ContourColor; set => UpdateField(ref _ContourColor, value, nameof(ContourColor)); }
 
  private ContourColor? _ContourColor;
@@ -73,7 +65,6 @@ public partial class Shape3DType : ModelElement<DXD.Shape3DType>, IExtendableEle
  /// List of extension elements.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape3DType.ExtensionList))]
- [OpenXmlElement(typeof(DXD.Shape3DType))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
  private ExtensionList? _ExtensionList;

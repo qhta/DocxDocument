@@ -10,7 +10,6 @@ public partial class SdtRunRuby : ModelElement<DXW.SdtRunRuby>, IRubyContent
  /// Specifies the set of properties applied to this structured document tag.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtRunRuby.SdtProperties))]
- [OpenXmlElement(typeof(DXW.SdtRunRuby))]
  public SdtProperties? SdtProperties { get => _SdtProperties; set => UpdateField(ref _SdtProperties, value, nameof(SdtProperties)); }
 
  private SdtProperties? _SdtProperties;
@@ -18,7 +17,6 @@ public partial class SdtRunRuby : ModelElement<DXW.SdtRunRuby>, IRubyContent
  /// Specifies the properties applied to the physical character that delimits the end of a structured document tag.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtRunRuby.SdtEndCharProperties))]
- [OpenXmlElement(typeof(DXW.SdtRunRuby))]
  public SdtEndCharProperties? SdtEndCharProperties { get => _SdtEndCharProperties; set => UpdateField(ref _SdtEndCharProperties, value, nameof(SdtEndCharProperties)); }
 
  private SdtEndCharProperties? _SdtEndCharProperties;

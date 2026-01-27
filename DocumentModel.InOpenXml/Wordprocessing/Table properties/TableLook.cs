@@ -10,7 +10,6 @@ public partial class TableLook : ModelElement<DXW.TableLook>
  /// Hexadecimal value representing the table look settings.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableLook.Val))]
- [OpenXmlElement(typeof(DXW.TableLook))]
  public HexChar? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
  private HexChar? _Val;
@@ -18,7 +17,6 @@ public partial class TableLook : ModelElement<DXW.TableLook>
  /// Indicates whether the first row is styled as a header row.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableLook.FirstRow))]
- [OpenXmlElement(typeof(DXW.TableLook))]
  public bool? FirstRow { get => _FirstRow; set => UpdateField(ref _FirstRow, value, nameof(FirstRow)); }
 
  private bool? _FirstRow;
@@ -26,7 +24,6 @@ public partial class TableLook : ModelElement<DXW.TableLook>
  /// Indicates whether the last row is styled as a footer row.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableLook.LastRow))]
- [OpenXmlElement(typeof(DXW.TableLook))]
  public bool? LastRow { get => _LastRow; set => UpdateField(ref _LastRow, value, nameof(LastRow)); }
 
  private bool? _LastRow;
@@ -34,7 +31,6 @@ public partial class TableLook : ModelElement<DXW.TableLook>
  /// Indicates whether the first column is styled as a header column.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableLook.FirstColumn))]
- [OpenXmlElement(typeof(DXW.TableLook))]
  public bool? FirstColumn { get => _FirstColumn; set => UpdateField(ref _FirstColumn, value, nameof(FirstColumn)); }
 
  private bool? _FirstColumn;
@@ -42,7 +38,6 @@ public partial class TableLook : ModelElement<DXW.TableLook>
  /// Indicates whether the last column is styled as a footer column.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableLook.LastColumn))]
- [OpenXmlElement(typeof(DXW.TableLook))]
  public bool? LastColumn { get => _LastColumn; set => UpdateField(ref _LastColumn, value, nameof(LastColumn)); }
 
  private bool? _LastColumn;
@@ -50,7 +45,6 @@ public partial class TableLook : ModelElement<DXW.TableLook>
  /// Indicates whether horizontal banding is disabled for the table.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableLook.NoHorizontalBand))]
- [OpenXmlElement(typeof(DXW.TableLook))]
  public bool? NoHorizontalBand { get => _NoHorizontalBand; set => UpdateField(ref _NoHorizontalBand, value, nameof(NoHorizontalBand)); }
 
  private bool? _NoHorizontalBand;
@@ -58,7 +52,6 @@ public partial class TableLook : ModelElement<DXW.TableLook>
  /// Indicates whether vertical banding is disabled for the table.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableLook.NoVerticalBand))]
- [OpenXmlElement(typeof(DXW.TableLook))]
  public bool? NoVerticalBand { get => _NoVerticalBand; set => UpdateField(ref _NoVerticalBand, value, nameof(NoVerticalBand)); }
 
  private bool? _NoVerticalBand;

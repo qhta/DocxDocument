@@ -10,7 +10,6 @@ public partial class PageMargin : ModelElement<DXW.PageMargin>, ISectionProperti
  /// Top margin spacing for the page.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageMargin.Top))]
- [OpenXmlElement(typeof(DXW.PageMargin))]
  public Twips? Top { get => _Top; set => UpdateField(ref _Top, value, nameof(Top)); }
 
  private Twips? _Top;
@@ -18,7 +17,6 @@ public partial class PageMargin : ModelElement<DXW.PageMargin>, ISectionProperti
  /// Right margin spacing for the page.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageMargin.Right))]
- [OpenXmlElement(typeof(DXW.PageMargin))]
  public Twips? Right { get => _Right; set => UpdateField(ref _Right, value, nameof(Right)); }
 
  private Twips? _Right;
@@ -26,7 +24,6 @@ public partial class PageMargin : ModelElement<DXW.PageMargin>, ISectionProperti
  /// Bottom margin spacing for the page.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageMargin.Bottom))]
- [OpenXmlElement(typeof(DXW.PageMargin))]
  public Twips? Bottom { get => _Bottom; set => UpdateField(ref _Bottom, value, nameof(Bottom)); }
 
  private Twips? _Bottom;
@@ -34,7 +31,6 @@ public partial class PageMargin : ModelElement<DXW.PageMargin>, ISectionProperti
  /// Left margin spacing for the page.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageMargin.Left))]
- [OpenXmlElement(typeof(DXW.PageMargin))]
  public Twips? Left { get => _Left; set => UpdateField(ref _Left, value, nameof(Left)); }
 
  private Twips? _Left;
@@ -42,7 +38,6 @@ public partial class PageMargin : ModelElement<DXW.PageMargin>, ISectionProperti
  /// Spacing to the top of the header.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageMargin.Header))]
- [OpenXmlElement(typeof(DXW.PageMargin))]
  public Twips? Header { get => _Header; set => UpdateField(ref _Header, value, nameof(Header)); }
 
  private Twips? _Header;
@@ -50,7 +45,6 @@ public partial class PageMargin : ModelElement<DXW.PageMargin>, ISectionProperti
  /// Spacing to the bottom of the footer.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageMargin.Footer))]
- [OpenXmlElement(typeof(DXW.PageMargin))]
  public Twips? Footer { get => _Footer; set => UpdateField(ref _Footer, value, nameof(Footer)); }
 
  private Twips? _Footer;
@@ -58,7 +52,6 @@ public partial class PageMargin : ModelElement<DXW.PageMargin>, ISectionProperti
  /// Page gutter spacing, specifying additional space for binding.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageMargin.Gutter))]
- [OpenXmlElement(typeof(DXW.PageMargin))]
  public Twips? Gutter { get => _Gutter; set => UpdateField(ref _Gutter, value, nameof(Gutter)); }
 
  private Twips? _Gutter;

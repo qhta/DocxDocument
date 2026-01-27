@@ -8,12 +8,10 @@ public partial class ColorMappingType : DMD.ColorMap<DXD.ColorMappingType>, IExt
   /// <summary>
   /// FontName.
   /// </summary>
-  [OpenXmlElement(typeof(DXD.ColorMappingType))]
   public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
   private string? _Name;
   [OpenXmlProperty(nameof(DXD.ColorMappingType.ExtensionList))]
-  [OpenXmlElement(typeof(DXD.ColorMappingType))]
   public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
   private ExtensionList? _ExtensionList;

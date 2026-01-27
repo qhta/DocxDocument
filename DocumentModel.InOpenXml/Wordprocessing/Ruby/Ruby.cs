@@ -10,7 +10,6 @@ public partial class Ruby : ModelElement<DXW.Ruby>, IRunContent, IRubyContent
  /// Properties for the phonetic guide, specifying formatting and alignment options for the ruby text.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Ruby.RubyProperties))]
- [OpenXmlElement(typeof(DXW.Ruby))]
  public RubyProperties? RubyProperties { get => _RubyProperties; set => UpdateField(ref _RubyProperties, value, nameof(RubyProperties)); }
 
  private RubyProperties? _RubyProperties;
@@ -18,7 +17,6 @@ public partial class Ruby : ModelElement<DXW.Ruby>, IRunContent, IRubyContent
  /// Phonetic guide text content, displayed above the base text.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Ruby.RubyContent))]
- [OpenXmlElement(typeof(DXW.Ruby))]
  public IRubyContent? RubyContent { get => _RubyContent; set => UpdateField(ref _RubyContent, value, nameof(RubyContent)); }
 
  private IRubyContent? _RubyContent;
@@ -26,7 +24,6 @@ public partial class Ruby : ModelElement<DXW.Ruby>, IRunContent, IRubyContent
  /// Base text for the phonetic guide, displayed at the normal baseline location.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Ruby.RubyBase))]
- [OpenXmlElement(typeof(DXW.Ruby))]
  public RubyBase? RubyBase { get => _RubyBase; set => UpdateField(ref _RubyBase, value, nameof(RubyBase)); }
 
  private RubyBase? _RubyBase;

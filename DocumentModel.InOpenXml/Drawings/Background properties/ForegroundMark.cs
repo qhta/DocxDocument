@@ -9,7 +9,6 @@ public partial class ForegroundMark : ModelElement<DXO10D.ForegroundMark>
  /// Gets or sets the X coordinate of the first point.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ForegroundMark.FirstXCoordinate))]
- [OpenXmlElement(typeof(DXO10D.ForegroundMark))]
  public Int32? FirstXCoordinate { get => _FirstXCoordinate; set => UpdateField(ref _FirstXCoordinate, value, nameof(FirstXCoordinate)); }
 
  private Int32? _FirstXCoordinate;
@@ -17,7 +16,6 @@ public partial class ForegroundMark : ModelElement<DXO10D.ForegroundMark>
  /// Gets or sets the Y coordinate of the first point.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ForegroundMark.FirstYCoordinate))]
- [OpenXmlElement(typeof(DXO10D.ForegroundMark))]
  public Int32? FirstYCoordinate { get => _FirstYCoordinate; set => UpdateField(ref _FirstYCoordinate, value, nameof(FirstYCoordinate)); }
 
  private Int32? _FirstYCoordinate;
@@ -25,7 +23,6 @@ public partial class ForegroundMark : ModelElement<DXO10D.ForegroundMark>
  /// Gets or sets the X coordinate of the second point.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ForegroundMark.SecondXCoordinate))]
- [OpenXmlElement(typeof(DXO10D.ForegroundMark))]
  public Int32? SecondXCoordinate { get => _SecondXCoordinate; set => UpdateField(ref _SecondXCoordinate, value, nameof(SecondXCoordinate)); }
 
  private Int32? _SecondXCoordinate;
@@ -33,7 +30,6 @@ public partial class ForegroundMark : ModelElement<DXO10D.ForegroundMark>
  /// Gets or sets the Y coordinate of the second point.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ForegroundMark.SecondYCoordinate))]
- [OpenXmlElement(typeof(DXO10D.ForegroundMark))]
  public Int32? SecondYCoordinate { get => _SecondYCoordinate; set => UpdateField(ref _SecondYCoordinate, value, nameof(SecondYCoordinate)); }
 
  private Int32? _SecondYCoordinate;

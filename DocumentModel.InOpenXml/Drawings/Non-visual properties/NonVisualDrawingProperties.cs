@@ -10,7 +10,6 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
   ///   Application defined unique identifier.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.NonVisualDrawingProperties.Id))]
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingProperties))]
   public UInt32? Id
   {
     get => _Id;
@@ -23,7 +22,6 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
   ///   FontName compatible with Object Model (non-unique).
   /// </summary>
   [OpenXmlProperty(nameof(DXD.NonVisualDrawingProperties.Name))]
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingProperties))]
   public string? Name
   {
     get => _Name;
@@ -36,7 +34,6 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
   ///   Description of the drawing element.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.NonVisualDrawingProperties.Description))]
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingProperties))]
   public string? Description
   {
     get => _Description;
@@ -49,7 +46,6 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
   ///   Flag determining to show or hide this element.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.NonVisualDrawingProperties.Hidden))]
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingProperties))]
   public bool? Hidden
   {
     get => _Hidden;
@@ -62,7 +58,6 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
   ///   Title
   /// </summary>
   [OpenXmlProperty(nameof(DXD.NonVisualDrawingProperties.Title))]
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingProperties))]
   public string? Title
   {
     get => _Title;
@@ -75,7 +70,6 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
   ///   IHyperlink associated with clicking or selecting the element..
   /// </summary>
   [OpenXmlProperty(nameof(DXD.NonVisualDrawingProperties.HyperlinkOnClick))]
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingProperties))]
   public HyperlinkOnClick? HyperlinkOnClick
   {
     get => _HyperlinkOnClick;
@@ -88,7 +82,6 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
   ///   IHyperlink associated with hovering over the element..
   /// </summary>
   [OpenXmlProperty(nameof(DXD.NonVisualDrawingProperties.HyperlinkOnHover))]
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingProperties))]
   public HyperlinkOnHover? HyperlinkOnHover
   {
     get => _HyperlinkOnHover;
@@ -101,7 +94,6 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
   ///   Future extension.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.NonVisualDrawingProperties.NonVisualDrawingPropertiesExtensionList))]
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingProperties))]
   public NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList
   {
     get => _NonVisualDrawingPropertiesExtensionList;

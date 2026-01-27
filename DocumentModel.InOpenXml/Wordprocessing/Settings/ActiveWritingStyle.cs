@@ -11,7 +11,6 @@ public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
  ///   contained on the attributes for this element.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.ActiveWritingStyle.ApplicationName))]
- [OpenXmlElement(typeof(DXW.ActiveWritingStyle))]
  public string? ApplicationName { get => _ApplicationName; set => UpdateField(ref _ApplicationName, value, nameof(ApplicationName)); }
 
  private string? _ApplicationName;
@@ -22,7 +21,6 @@ public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
  ///   as well as grammatical ones when checking the grammatical content of this document. 
  /// </summary>
  [OpenXmlProperty(nameof(DXW.ActiveWritingStyle.CheckStyle))]
- [OpenXmlElement(typeof(DXW.ActiveWritingStyle))]
  public bool? CheckStyle { get => _CheckStyle; set => UpdateField(ref _CheckStyle, value, nameof(CheckStyle)); }
 
  private bool? _CheckStyle;
@@ -31,7 +29,6 @@ public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
  ///   of the WordprocessingML document.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.ActiveWritingStyle.DllVersion))]
- [OpenXmlElement(typeof(DXW.ActiveWritingStyle))]
  public Int32? DllVersion { get => _DllVersion; set => UpdateField(ref _DllVersion, value, nameof(DllVersion)); }
 
  private Int32? _DllVersion;
@@ -40,7 +37,6 @@ public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
  ///   that was used to check the grammatical content of the WordprocessingML document.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.ActiveWritingStyle.VendorID))]
- [OpenXmlElement(typeof(DXW.ActiveWritingStyle))]
  public UInt16? VendorID { get => _VendorID; set => UpdateField(ref _VendorID, value, nameof(VendorID)); }
 
  private UInt16? _VendorID;
@@ -48,7 +44,6 @@ public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
  ///   Specifies the language of the engine used to perform the grammatical content checking.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.ActiveWritingStyle.Language))]
- [OpenXmlElement(typeof(DXW.ActiveWritingStyle))]
  public string? Language { get => _Language; set => UpdateField(ref _Language, value, nameof(Language)); }
 
  private string? _Language;
@@ -57,7 +52,6 @@ public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
  ///   of the WordprocessingML document performed natural language-based analysis.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.ActiveWritingStyle.NaturalLanguageGrammarCheck))]
- [OpenXmlElement(typeof(DXW.ActiveWritingStyle))]
  public bool? NaturalLanguageGrammarCheck { get => _NaturalLanguageGrammarCheck; set => UpdateField(ref _NaturalLanguageGrammarCheck, value, nameof(NaturalLanguageGrammarCheck)); }
 
  private bool? _NaturalLanguageGrammarCheck;

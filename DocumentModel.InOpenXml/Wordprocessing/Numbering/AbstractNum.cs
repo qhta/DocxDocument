@@ -16,7 +16,6 @@ public partial class AbstractNum : ModelElement<DXW.AbstractNum>
  ///   in order to inherit the properties specified by this abstract numbering definition.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AbstractNum.AbstractNumberId))]
- [OpenXmlElement(typeof(DXW.AbstractNum))]
  public Int32? AbstractNumberId { get => _AbstractNumberId; set => UpdateField(ref _AbstractNumberId, value, nameof(AbstractNumberId)); }
 
  private Int32? _AbstractNumberId;
@@ -26,7 +25,6 @@ public partial class AbstractNum : ModelElement<DXW.AbstractNum>
  ///   - if a document is repurposed and the underlying numbering definition is changed, it shall maintain its original nsid.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AbstractNum.Nsid))]
- [OpenXmlElement(typeof(DXW.AbstractNum))]
  public HexInt? NsId { get => _NsId; set => UpdateField(ref _NsId, value, nameof(NsId)); }
 
  private HexInt? _NsId;
@@ -37,7 +35,6 @@ public partial class AbstractNum : ModelElement<DXW.AbstractNum>
  ///   (i.e. a list with multiple levels marked as singleLevel shall not be prevented from using levels 2 through 9).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AbstractNum.MultiLevelType))]
- [OpenXmlElement(typeof(DXW.AbstractNum))]
  public MultiLevelKind? MultiLevelType { get => _MultiLevelType; set => UpdateField(ref _MultiLevelType, value, nameof(MultiLevelType)); }
 
  private MultiLevelKind? _MultiLevelType;
@@ -47,7 +44,6 @@ public partial class AbstractNum : ModelElement<DXW.AbstractNum>
  ///   but shall not influence the behavior of the list - two identical definitions with different name elements shall behave identically.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AbstractNum.AbstractNumDefinitionName))]
- [OpenXmlElement(typeof(DXW.AbstractNum))]
  public string? AbstractNumDefinitionName { get => _AbstractNumDefinitionName; set => UpdateField(ref _AbstractNumDefinitionName, value, nameof(AbstractNumDefinitionName)); }
 
  private string? _AbstractNumDefinitionName;
@@ -56,7 +52,6 @@ public partial class AbstractNum : ModelElement<DXW.AbstractNum>
  ///   in which this abstract numbering definition shall be displayed.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AbstractNum.TemplateCode))]
- [OpenXmlElement(typeof(DXW.AbstractNum))]
  public HexInt? TemplateCode { get => _TemplateCode; set => UpdateField(ref _TemplateCode, value, nameof(TemplateCode)); }
 
  private HexInt? _TemplateCode;
@@ -65,7 +60,6 @@ public partial class AbstractNum : ModelElement<DXW.AbstractNum>
  ///    for the specified numbering style referenced in its val attribute.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AbstractNum.StyleLink))]
- [OpenXmlElement(typeof(DXW.AbstractNum))]
  public string? StyleLink { get => _StyleLink; set => UpdateField(ref _StyleLink, value, nameof(StyleLink)); }
 
  private string? _StyleLink;
@@ -75,21 +69,18 @@ public partial class AbstractNum : ModelElement<DXW.AbstractNum>
  ///   which shall be applied when this abstract numbering definition is referenced, 
  ///   and itself points at the actual underlying abstract numbering definition to be used.  /// </summary>
  [OpenXmlProperty(nameof(DXW.AbstractNum.NumberingStyleLink))]
- [OpenXmlElement(typeof(DXW.AbstractNum))]
  public string? NumberingStyleLink { get => _NumberingStyleLink; set => UpdateField(ref _NumberingStyleLink, value, nameof(NumberingStyleLink)); }
 
  private string? _NumberingStyleLink;
  /// <summary>
  ///   Specifies that numbering will restart in the next section.
  /// </summary>
- [OpenXmlElement(typeof(DXW.AbstractNum))]
  public bool? RestartNumberingAfterBreak { get => _RestartNumberingAfterBreak; set => UpdateField(ref _RestartNumberingAfterBreak, value, nameof(RestartNumberingAfterBreak)); }
 
  private bool? _RestartNumberingAfterBreak;
  /// <summary>
  ///   Definitions of abstract numbering levels.
  /// </summary>
- [OpenXmlElement(typeof(DXW.AbstractNum))]
  public NumLevels? Levels { get => _Levels; set => UpdateField(ref _Levels, value, nameof(Levels)); }
 
  private NumLevels? _Levels;

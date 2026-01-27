@@ -10,7 +10,6 @@ public partial class CommentId : ModelElement<DXO19WC.CommentId>
  ///   Hexadecimal identifier of the paragraph associated with this comment, used for precise paragraph-level tracking and navigation.
  /// </summary>
  [OpenXmlProperty(nameof(DXO19WC.CommentId.ParaId))]
- [OpenXmlElement(typeof(DXO19WC.CommentId))]
  public HexInt? ParaId { get => _ParaId; set => UpdateField(ref _ParaId, value, nameof(ParaId)); }
 
  private HexInt? _ParaId;
@@ -18,7 +17,6 @@ public partial class CommentId : ModelElement<DXO19WC.CommentId>
  ///   Durable identifier that persists across document versions, platforms, and synchronization operations, providing a globally unique reference to the comment.
  /// </summary>
  [OpenXmlProperty(nameof(DXO19WC.CommentId.DurableId))]
- [OpenXmlElement(typeof(DXO19WC.CommentId))]
  public HexInt? DurableId { get => _DurableId; set => UpdateField(ref _DurableId, value, nameof(DurableId)); }
 
  private HexInt? _DurableId;

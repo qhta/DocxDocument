@@ -43,7 +43,6 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
  ///   </para>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.ArcTo.WidthRadius))]
- [OpenXmlElement(typeof(DXD.ArcTo))]
  public string? WidthRadius { get => _WidthRadius; set => UpdateField(ref _WidthRadius, value, nameof(WidthRadius)); }
 
  private string? _WidthRadius;
@@ -69,7 +68,6 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
  ///   </para>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.ArcTo.HeightRadius))]
- [OpenXmlElement(typeof(DXD.ArcTo))]
  public string? HeightRadius { get => _HeightRadius; set => UpdateField(ref _HeightRadius, value, nameof(HeightRadius)); }
 
  private string? _HeightRadius;
@@ -103,7 +101,6 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
  ///   </para>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.ArcTo.StartAngle))]
- [OpenXmlElement(typeof(DXD.ArcTo))]
  public string? StartAngle { get => _StartAngle; set => UpdateField(ref _StartAngle, value, nameof(StartAngle)); }
 
  private string? _StartAngle;
@@ -138,7 +135,6 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
  ///   </para>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.ArcTo.SwingAngle))]
- [OpenXmlElement(typeof(DXD.ArcTo))]
  public string? SwingAngle { get => _SwingAngle; set => UpdateField(ref _SwingAngle, value, nameof(SwingAngle)); }
 
  private string? _SwingAngle;
