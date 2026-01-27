@@ -106,7 +106,7 @@ public abstract partial class ColorMap<T> : ModelElement<T> where T : DX.OpenXml
 /// <summary>
 /// Specific DXD.ColorMap mapping type.
 /// </summary>
-public class ColorMap: ColorMap<DXD.ColorMap>
+[OpenXmlType(typeof(DXD.ColorMap))]
+public class ColorMap : ColorMap<DXD.ColorMap>
 {
-
 }

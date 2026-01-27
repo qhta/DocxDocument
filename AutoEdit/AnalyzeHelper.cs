@@ -41,10 +41,15 @@ public static class AnalyzeHelper
           var qualifiedName = constraint.Type is QualifiedNameSyntax constraintType
             ? constraintType.ToString()
             : constraint.Type.ToString();
-          if (qualifiedName != "DX.OpenXmlElement")
+          if (qualifiedName != "DX.OpenXmlElement" && qualifiedName != "DX.OpenXmlCompositeElement")
             argTypeName = qualifiedName;
         }
       }
+    }
+    else
+    {
+      if (openXmlTypeName != "DX.OpenXmlElement" && openXmlTypeName != "DX.OpenXmlCompositeElement")
+        argTypeName = openXmlTypeName;
     }
     return true;
   }
