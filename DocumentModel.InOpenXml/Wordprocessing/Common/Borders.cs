@@ -6,8 +6,5 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(Border))]
 public class Borders : ElementCollection<Border>
 {
- protected override object? GetUpdatableOpenXmlElement()
- {
-  throw new NotImplementedException();
- }
+
 }

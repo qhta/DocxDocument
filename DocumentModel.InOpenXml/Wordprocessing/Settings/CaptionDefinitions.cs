@@ -24,8 +24,4 @@ public class CaptionDefinitions : ElementCollection<CaptionDefinition>
  {
  }
 
- protected override object? GetUpdatableOpenXmlElement()
- {
-  throw new NotImplementedException();
- }
 }

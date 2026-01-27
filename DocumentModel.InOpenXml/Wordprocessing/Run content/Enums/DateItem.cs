@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Specifies, which part of date is presented.
-///   Used in element <see cref="RunDate"/>
+///   Used in element RunDate.
 /// </summary>
 [Flags]
 [JsonConverter(typeof(StringEnumConverter))]

@@ -12,8 +12,4 @@ public class Extension : ModelElement<DXD.Extension>
   [XmlAttribute]
   public string? Uri { get; set; }
 
-  protected override object? GetUpdatableOpenXmlElement()
-  {
-    throw new NotImplementedException();
-  }
 }

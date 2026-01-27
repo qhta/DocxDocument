@@ -1,11 +1,16 @@
 namespace DocumentModel;
 /// <summary>
-///   Heading Pairs.
+///   Represents a collection of heading pair values, typically used for document property metadata.
 /// </summary>
 [SimpleType]
 [OpenXmlType(typeof(HeadingPair))]
 public class HeadingPairs : ValueCollection<HeadingPair>, IEquatable<HeadingPairs>
 {
+ /// <summary>
+ ///   Determines whether the specified object is equal to the current HeadingPairs collection.
+ /// </summary>
+ /// <param name="obj">The object to compare with the current collection.</param>
+ /// <returns>True if the specified object is a HeadingPairs collection with the same sequence of values; otherwise, false.</returns>
  public override bool Equals(object? obj)
  {
   if (obj is HeadingPairs other)
@@ -13,11 +18,20 @@ public class HeadingPairs : ValueCollection<HeadingPair>, IEquatable<HeadingPair
   return false;
  }
 
+ /// <summary>
+ ///   Returns a hash code for the HeadingPairs collection.
+ /// </summary>
+ /// <returns>A hash code for the current collection.</returns>
  public override int GetHashCode()
  {
   return base.GetHashCode();
  }
 
+ /// <summary>
+ ///   Determines whether the specified HeadingPairs collection is equal to the current collection.
+ /// </summary>
+ /// <param name="other">The HeadingPairs collection to compare with the current collection.</param>
+ /// <returns>True if the collections contain the same sequence of values; otherwise, false.</returns>
  public bool Equals(HeadingPairs? other)
  {
   if (other == null)

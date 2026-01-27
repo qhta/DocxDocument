@@ -1,12 +1,13 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Represents a Wordprocessing document and provides access to its settings and lifecycle management.
+///   Represents a WordprocessingML document, providing access to its settings, properties, and lifecycle management.
+///   Enables loading, saving, and manipulating document-level metadata, content, and configuration for Open XML word processing documents.
 /// </summary>
 public partial class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
 {
   /// <summary>
-  /// Initializes a new instance of the Document class.
+  ///   Initializes a new instance of the <see cref="Document"/> class with default property objects.
   /// </summary>
   public Document()
   {
@@ -16,8 +17,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   /// <summary>
-  /// Initializes a new instance of the Document class.
+  ///   Initializes a new instance of the <see cref="Document"/> class and attaches it to the specified Open XML word processing document.
   /// </summary>
+  /// <param name="wordprocessingDocument">The Open XML word processing document to attach to.</param>
   public Document(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
@@ -28,7 +30,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   /// <summary>
-  /// Gets the underlying Open XML word processing document associated with this instance.
+  ///   The underlying Open XML word processing document associated with this instance.
   /// </summary>
   public DXPP.WordprocessingDocument? WordprocessingDocument
   {
@@ -39,9 +41,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   private DXPP.WordprocessingDocument? _WordprocessingDocument;
 
   /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
+  ///   Attaches this instance to the specified word processing document and loads data from its package properties and settings.
   /// </summary>
-  /// <param name = "wordprocessingDocument">Wordprocessing document to attach.</param>
+  /// <param name="wordprocessingDocument">The word processing document to attach and load from.</param>
   public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
@@ -53,9 +55,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
+  ///   Attaches this instance to the specified word processing document and updates its package properties and settings with current data.
   /// </summary>
-  /// <param name = "wordprocessingDocument"></param>
+  /// <param name="wordprocessingDocument">The word processing document to attach and update.</param>
   public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
@@ -67,12 +69,10 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   /// <summary>
-  /// Detaches the document and all associated property objects from their underlying data sources, releasing any held
-  /// resources.  
+  ///   Detaches the document and all associated property objects from their underlying data sources, releasing any held resources.
+  ///   After calling this method, the document and its property objects are no longer connected to their original data.
+  ///   Further operations on these objects may not be valid until they are reattached or reinitialized.
   /// </summary>
-  /// <remarks>After calling this method, the document and its property objects are no longer connected to their
-  /// original data. Further operations on these objects may not be valid until they are reattached or
-  /// reinitialized.</remarks>
   public void Detach()
   {
     WordprocessingDocument = null;
@@ -83,10 +83,10 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   /// <summary>
-  /// Creates a new Wordprocessing document at the specified file path.
+  ///   Creates a new WordprocessingML document at the specified file path.
   /// </summary>
-  /// <param name = "filePath">The file path for the new document.</param>
-  /// <returns>A new Document instance.</returns>
+  /// <param name="filePath">The file path for the new document.</param>
+  /// <returns>A new <see cref="Document"/> instance representing the created file.</returns>
   public static Document CreateDocument(string filePath)
   {
     var newDocument = new Document(WordprocessingHelper.CreateWordDocument(filePath));
@@ -94,10 +94,10 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   /// <summary>
-  /// Opens a document from the specified file path and returns a new Document instance representing it.
+  ///   Opens a WordprocessingML document from the specified file path and returns a new <see cref="Document"/> instance representing it.
   /// </summary>
-  /// <param name = "filePath">The full path to the file to open. The file must exist and be a valid Word document.</param>
-  /// <returns>A Document instance representing the opened file.</returns>
+  /// <param name="filePath">The full path to the file to open. The file must exist and be a valid Word document.</param>
+  /// <returns>A <see cref="Document"/> instance representing the opened file.</returns>
   public static Document OpenDocument(string filePath)
   {
     var newDocument = new Document(WordprocessingHelper.OpenWordDocument(filePath));
@@ -105,7 +105,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   /// <summary>
-  /// Releases resources used by the document and notifies property change.
+  ///   Releases resources used by the document and notifies property change.
+  ///   Disposes the underlying Open XML document and detaches all property objects.
   /// </summary>
   public void Dispose()
   {
@@ -115,13 +116,17 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     NotifyPropertyChanged(nameof(WordprocessingDocument));
   }
 
+  /// <summary>
+  ///   Returns the updatable Open XML element associated with this document (the underlying <see cref="DXPP.WordprocessingDocument"/>).
+  /// </summary>
+  /// <returns>The updatable Open XML element for this document.</returns>
   protected override object? GetUpdatableOpenXmlElement()
   {
     return WordprocessingDocument;
   }
 
   /// <summary>
-  /// Provides access to core document properties such as title, author, and subject.
+  ///   Core document properties such as title, author, and subject.
   /// </summary>
   [NotMapped]
   public CoreProperties CoreProperties
@@ -139,7 +144,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   private readonly CoreProperties _CoreProperties;
 
   /// <summary>
-  /// Provides access to content-specific document properties.
+  ///   Content-specific document properties, such as content type and structure.
   /// </summary>
   [NotMapped]
   public ContentProperties ContentProperties
@@ -151,7 +156,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   private ContentProperties _ContentProperties;
 
   /// <summary>
-  /// Provides access to statistical document properties such as word count and page count.
+  ///   Statistical document properties such as word count and page count.
   /// </summary>
   [NotMapped]
   public StatisticProperties StatisticProperties
@@ -163,7 +168,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   private StatisticProperties _StatisticProperties;
 
   /// <summary>
-  /// Provides access to custom document properties.
+  ///   Custom document properties, allowing storage of user-defined metadata.
   /// </summary>
   public CustomProperties? CustomProperties
   {
@@ -179,7 +184,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   private CustomProperties? _CustomProperties;
 
   /// <summary>
-  /// Provides access to document-level settings.
+  ///   Document-level settings, including compatibility, protection, and view options.
   /// </summary>
   public DocumentSettings? DocumentSettings
   {
@@ -195,7 +200,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   private DocumentSettings? _DocumentSettings;
 
   /// <summary>
-  /// Collection of revision IDs for tracked changes in the document.
+  ///   Collection of revision IDs for tracked changes in the document.
   /// </summary>
   public Rsids? Rsids
   {
@@ -211,7 +216,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   private Rsids? _Rsids;
 
   /// <summary>
-  /// Font table for the document, providing access to font definitions used within the document.
+  ///   Font table for the document, providing access to font definitions used within the document.
   /// </summary>
   public Fonts? Fonts
   {

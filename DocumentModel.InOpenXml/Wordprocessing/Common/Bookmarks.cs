@@ -6,8 +6,5 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(Bookmark))]
 public class Bookmarks : ElementCollection<Bookmark>
 {
- protected override object? GetUpdatableOpenXmlElement()
- {
-  throw new NotImplementedException();
- }
+
 }
