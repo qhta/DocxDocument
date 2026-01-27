@@ -10,7 +10,6 @@ public partial class FillTextEffect : ModelElement<DXO10W.FillTextEffect>
  /// Indicates that no fill is applied to the text.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.FillTextEffect.NoFillEmpty))]
- [OpenXmlElement(typeof(DXO10W.FillTextEffect))]
  public bool? NoFillEmpty { get => _NoFillEmpty; set => UpdateField(ref _NoFillEmpty, value, nameof(NoFillEmpty)); }
 
  private bool? _NoFillEmpty;
@@ -18,7 +17,6 @@ public partial class FillTextEffect : ModelElement<DXO10W.FillTextEffect>
  /// Solid color fill properties for the text, specifying a single color fill effect.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.FillTextEffect.SolidColorFillProperties))]
- [OpenXmlElement(typeof(DXO10W.FillTextEffect))]
  public SolidColorFillProperties? SolidColorFillProperties { get => _SolidColorFillProperties; set => UpdateField(ref _SolidColorFillProperties, value, nameof(SolidColorFillProperties)); }
 
  private SolidColorFillProperties? _SolidColorFillProperties;
@@ -26,7 +24,6 @@ public partial class FillTextEffect : ModelElement<DXO10W.FillTextEffect>
  /// Gradient fill properties for the text, specifying a gradient color fill effect.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.FillTextEffect.GradientFillProperties))]
- [OpenXmlElement(typeof(DXO10W.FillTextEffect))]
  public DMWD.GradientFillProperties? GradientFillProperties { get => _GradientFillProperties; set => UpdateField(ref _GradientFillProperties, value, nameof(GradientFillProperties)); }
 
  private DMWD.GradientFillProperties? _GradientFillProperties;

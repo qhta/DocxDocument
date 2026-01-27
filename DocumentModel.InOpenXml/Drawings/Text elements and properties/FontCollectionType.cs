@@ -9,7 +9,6 @@ public partial class FontCollectionType : ModelElement<DXD.FontCollectionType>
  ///   Font settings for Latin text.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontCollectionType.LatinFont))]
- [OpenXmlElement(typeof(DXD.FontCollectionType))]
  public TextFontType? LatinFont { get => _LatinFont; set => UpdateField(ref _LatinFont, value, nameof(LatinFont)); }
 
  private TextFontType? _LatinFont;
@@ -17,7 +16,6 @@ public partial class FontCollectionType : ModelElement<DXD.FontCollectionType>
  ///   Font settings for East Asian text.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontCollectionType.EastAsianFont))]
- [OpenXmlElement(typeof(DXD.FontCollectionType))]
  public TextFontType? EastAsianFont { get => _EastAsianFont; set => UpdateField(ref _EastAsianFont, value, nameof(EastAsianFont)); }
 
  private TextFontType? _EastAsianFont;
@@ -25,7 +23,6 @@ public partial class FontCollectionType : ModelElement<DXD.FontCollectionType>
  ///   Font settings for complex script text.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontCollectionType.ComplexScriptFont))]
- [OpenXmlElement(typeof(DXD.FontCollectionType))]
  public TextFontType? ComplexScriptFont { get => _ComplexScriptFont; set => UpdateField(ref _ComplexScriptFont, value, nameof(ComplexScriptFont)); }
 
  private TextFontType? _ComplexScriptFont;

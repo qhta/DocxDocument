@@ -9,14 +9,12 @@ public partial class CharacterBullet : ModelElement<DXD.CharacterBullet>, IExten
  /// Bullet character.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.CharacterBullet.Char))]
- [OpenXmlElement(typeof(DXD.CharacterBullet))]
  public string? Char { get => _Char; set => UpdateField(ref _Char, value, nameof(Char)); }
 
  private string? _Char;
  /// <summary>
  /// List of extension elements.
  /// </summary>
- [OpenXmlElement(typeof(DXD.CharacterBullet))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
  private ExtensionList? _ExtensionList;

@@ -9,7 +9,6 @@ public partial class ShapeDefault : ModelElement<DXD.ShapeDefault>, IExtendableE
  ///   Default shape properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ShapeDefault.ShapeProperties))]
- [OpenXmlElement(typeof(DXD.ShapeDefault))]
  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
 
  private ShapeProperties? _ShapeProperties;
@@ -17,7 +16,6 @@ public partial class ShapeDefault : ModelElement<DXD.ShapeDefault>, IExtendableE
  ///   Default body properties for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ShapeDefault.BodyProperties))]
- [OpenXmlElement(typeof(DXD.ShapeDefault))]
  public BodyProperties? BodyProperties { get => _BodyProperties; set => UpdateField(ref _BodyProperties, value, nameof(BodyProperties)); }
 
  private BodyProperties? _BodyProperties;
@@ -25,7 +23,6 @@ public partial class ShapeDefault : ModelElement<DXD.ShapeDefault>, IExtendableE
  ///   Default list style for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ShapeDefault.ListStyle))]
- [OpenXmlElement(typeof(DXD.ShapeDefault))]
  public ListStyle? ListStyle { get => _ListStyle; set => UpdateField(ref _ListStyle, value, nameof(ListStyle)); }
 
  private ListStyle? _ListStyle;
@@ -33,7 +30,6 @@ public partial class ShapeDefault : ModelElement<DXD.ShapeDefault>, IExtendableE
  ///   Default shape style.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ShapeDefault.ShapeStyle))]
- [OpenXmlElement(typeof(DXD.ShapeDefault))]
  public ShapeStyle? ShapeStyle { get => _ShapeStyle; set => UpdateField(ref _ShapeStyle, value, nameof(ShapeStyle)); }
 
  private ShapeStyle? _ShapeStyle;
@@ -41,7 +37,6 @@ public partial class ShapeDefault : ModelElement<DXD.ShapeDefault>, IExtendableE
  /// List of extension elements.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ShapeDefault.ExtensionList))]
- [OpenXmlElement(typeof(DXD.ShapeDefault))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
  private ExtensionList? _ExtensionList;

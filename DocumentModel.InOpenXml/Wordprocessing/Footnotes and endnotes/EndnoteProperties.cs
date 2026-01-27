@@ -10,7 +10,6 @@ public partial class EndnoteProperties : ModelElement<DXW.EndnoteProperties>, IS
  /// Placement of the endnote, specifying where the endnote appears (e.g., end of section, end of document).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EndnoteProperties.EndnotePosition))]
- [OpenXmlElement(typeof(DXW.EndnoteProperties))]
  public EndnotePositionKind? EndnotePosition { get => _EndnotePosition; set => UpdateField(ref _EndnotePosition, value, nameof(EndnotePosition)); }
 
  private EndnotePositionKind? _EndnotePosition;
@@ -18,7 +17,6 @@ public partial class EndnoteProperties : ModelElement<DXW.EndnoteProperties>, IS
  /// Numbering format for the endnote, specifying the style of numbering (e.g., Arabic, Roman, letters).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EndnoteProperties.NumberingFormat))]
- [OpenXmlElement(typeof(DXW.EndnoteProperties))]
  public NumberingFormat? NumberingFormat { get => _NumberingFormat; set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat)); }
 
  private NumberingFormat? _NumberingFormat;
@@ -26,7 +24,6 @@ public partial class EndnoteProperties : ModelElement<DXW.EndnoteProperties>, IS
  /// Starting value for footnote and endnote numbering, specifying the initial number used for the first note.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EndnoteProperties.NumberingStart))]
- [OpenXmlElement(typeof(DXW.EndnoteProperties))]
  public UInt16? NumberingStart { get => _NumberingStart; set => UpdateField(ref _NumberingStart, value, nameof(NumberingStart)); }
 
  private UInt16? _NumberingStart;
@@ -34,7 +31,6 @@ public partial class EndnoteProperties : ModelElement<DXW.EndnoteProperties>, IS
  /// Location where footnote and endnote numbering restarts (e.g., each section, each page, continuous).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EndnoteProperties.NumberingRestart))]
- [OpenXmlElement(typeof(DXW.EndnoteProperties))]
  public RestartNumberKind? NumberingRestart { get => _NumberingRestart; set => UpdateField(ref _NumberingRestart, value, nameof(NumberingRestart)); }
 
  private RestartNumberKind? _NumberingRestart;

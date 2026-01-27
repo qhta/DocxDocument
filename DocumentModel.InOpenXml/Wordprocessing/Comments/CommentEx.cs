@@ -10,7 +10,6 @@ public partial class CommentEx : ModelElement<DXO13W.CommentEx>
  /// Paragraph identifier (paraId) of the last paragraph in the associated comment.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13W.CommentEx.ParaId))]
- [OpenXmlElement(typeof(DXO13W.CommentEx))]
  public HexInt? ParaId { get => _ParaId; set => UpdateField(ref _ParaId, value, nameof(ParaId)); }
 
  private HexInt? _ParaId;
@@ -18,7 +17,6 @@ public partial class CommentEx : ModelElement<DXO13W.CommentEx>
  /// Paragraph identifier (paraId) of the last paragraph in the parent comment to which the associated comment is a reply.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13W.CommentEx.ParaIdParent))]
- [OpenXmlElement(typeof(DXO13W.CommentEx))]
  public HexInt? ParaIdParent { get => _ParaIdParent; set => UpdateField(ref _ParaIdParent, value, nameof(ParaIdParent)); }
 
  private HexInt? _ParaIdParent;
@@ -26,7 +24,6 @@ public partial class CommentEx : ModelElement<DXO13W.CommentEx>
  /// Indicates whether the associated comment is marked as done (resolved).
  /// </summary>
  [OpenXmlProperty(nameof(DXO13W.CommentEx.Done))]
- [OpenXmlElement(typeof(DXO13W.CommentEx))]
  public bool? Done { get => _Done; set => UpdateField(ref _Done, value, nameof(Done)); }
 
  private bool? _Done;

@@ -9,7 +9,6 @@ public partial class GroupCharProperties : ModelElement<DXM.GroupCharProperties>
  ///   Group Character (Grouping Character).
  /// </summary>
  [OpenXmlProperty(nameof(DXM.GroupCharProperties.AccentChar))]
- [OpenXmlElement(typeof(DXM.GroupCharProperties))]
  public string? AccentChar { get => _AccentChar; set => UpdateField(ref _AccentChar, value, nameof(AccentChar)); }
 
  private string? _AccentChar;
@@ -17,7 +16,6 @@ public partial class GroupCharProperties : ModelElement<DXM.GroupCharProperties>
  ///   Position (Group Character).
  /// </summary>
  [OpenXmlProperty(nameof(DXM.GroupCharProperties.Position))]
- [OpenXmlElement(typeof(DXM.GroupCharProperties))]
  public VerticalJustificationKind? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
 
  private VerticalJustificationKind? _Position;
@@ -25,7 +23,6 @@ public partial class GroupCharProperties : ModelElement<DXM.GroupCharProperties>
  ///   Vertical Justification.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.GroupCharProperties.VerticalJustification))]
- [OpenXmlElement(typeof(DXM.GroupCharProperties))]
  public VerticalJustificationKind? VerticalJustification { get => _VerticalJustification; set => UpdateField(ref _VerticalJustification, value, nameof(VerticalJustification)); }
 
  private VerticalJustificationKind? _VerticalJustification;
@@ -33,7 +30,6 @@ public partial class GroupCharProperties : ModelElement<DXM.GroupCharProperties>
  ///   Specifies formatting of group-char object argument.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.GroupCharProperties.ControlProperties))]
- [OpenXmlElement(typeof(DXM.GroupCharProperties))]
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
 
  private ControlProperties? _ControlProperties;

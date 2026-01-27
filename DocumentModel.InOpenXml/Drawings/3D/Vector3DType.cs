@@ -9,7 +9,6 @@ public partial class Vector3DType : ModelElement<DXD.Vector3DType>
  ///   Distance along the X-axis in 3D space.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Vector3DType.Dx))]
- [OpenXmlElement(typeof(DXD.Vector3DType))]
  public Int64? Dx { get => _Dx; set => UpdateField(ref _Dx, value, nameof(Dx)); }
 
  private Int64? _Dx;
@@ -17,7 +16,6 @@ public partial class Vector3DType : ModelElement<DXD.Vector3DType>
  ///   Distance along the Y-axis in 3D space.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Vector3DType.Dy))]
- [OpenXmlElement(typeof(DXD.Vector3DType))]
  public Int64? Dy { get => _Dy; set => UpdateField(ref _Dy, value, nameof(Dy)); }
 
  private Int64? _Dy;
@@ -25,7 +23,6 @@ public partial class Vector3DType : ModelElement<DXD.Vector3DType>
  ///   Distance along the Z-axis in 3D space.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Vector3DType.Dz))]
- [OpenXmlElement(typeof(DXD.Vector3DType))]
  public Int64? Dz { get => _Dz; set => UpdateField(ref _Dz, value, nameof(Dz)); }
 
  private Int64? _Dz;

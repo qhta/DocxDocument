@@ -10,14 +10,12 @@ public partial class GroupChar : ModelElement<DXM.GroupChar>, ICommonMathContent
  ///   Group-Character Properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.GroupChar.GroupCharProperties))]
- [OpenXmlElement(typeof(DXM.GroupChar))]
  public GroupCharProperties? GroupCharProperties { get => _GroupCharProperties; set => UpdateField(ref _GroupCharProperties, value, nameof(GroupCharProperties)); }
 
  private GroupCharProperties? _GroupCharProperties;
  /// <summary>
  ///   Arugment of the group-character object.
  /// </summary>
- [OpenXmlElement(typeof(DXM.GroupChar))]
  public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
 
  private Argument? _Argument;

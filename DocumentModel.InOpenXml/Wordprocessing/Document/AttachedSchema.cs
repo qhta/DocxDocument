@@ -6,7 +6,6 @@ public partial class AttachedSchema : ModelElement<DXW.AttachedSchema>
 {
  [OpenXmlLoadData(nameof(LoadUriFromOpenXml))]
  [OpenXmlUpdateData(nameof(UpdateUriInOpenXml))]
- [OpenXmlElement(typeof(DXW.AttachedSchema))]
  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
 
  private string? _Uri;

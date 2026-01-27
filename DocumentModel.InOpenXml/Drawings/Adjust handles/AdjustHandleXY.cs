@@ -9,7 +9,6 @@ public partial class AdjustHandleXY : ModelElement<DXD.AdjustHandleXY>
  /// Horizontal adjustment guide, which determines how the X coordinate is adjusted.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AdjustHandleXY.XAdjustmentGuide))]
- [OpenXmlElement(typeof(DXD.AdjustHandleXY))]
  public string? XAdjustmentGuide { get => _XAdjustmentGuide; set => UpdateField(ref _XAdjustmentGuide, value, nameof(XAdjustmentGuide)); }
 
  private string? _XAdjustmentGuide;
@@ -17,7 +16,6 @@ public partial class AdjustHandleXY : ModelElement<DXD.AdjustHandleXY>
  /// Minimum allowed value for horizontal adjustment.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AdjustHandleXY.MinX))]
- [OpenXmlElement(typeof(DXD.AdjustHandleXY))]
  public string? MinX { get => _MinX; set => UpdateField(ref _MinX, value, nameof(MinX)); }
 
  private string? _MinX;
@@ -25,7 +23,6 @@ public partial class AdjustHandleXY : ModelElement<DXD.AdjustHandleXY>
  /// Maximum allowed value for horizontal adjustment.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AdjustHandleXY.MaxX))]
- [OpenXmlElement(typeof(DXD.AdjustHandleXY))]
  public string? MaxX { get => _MaxX; set => UpdateField(ref _MaxX, value, nameof(MaxX)); }
 
  private string? _MaxX;
@@ -33,7 +30,6 @@ public partial class AdjustHandleXY : ModelElement<DXD.AdjustHandleXY>
  /// Vertical adjustment guide, which determines how the Y coordinate is adjusted.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AdjustHandleXY.YAdjustmentGuide))]
- [OpenXmlElement(typeof(DXD.AdjustHandleXY))]
  public string? YAdjustmentGuide { get => _YAdjustmentGuide; set => UpdateField(ref _YAdjustmentGuide, value, nameof(YAdjustmentGuide)); }
 
  private string? _YAdjustmentGuide;
@@ -41,7 +37,6 @@ public partial class AdjustHandleXY : ModelElement<DXD.AdjustHandleXY>
  /// Minimum allowed value for vertical adjustment.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AdjustHandleXY.MinY))]
- [OpenXmlElement(typeof(DXD.AdjustHandleXY))]
  public string? MinY { get => _MinY; set => UpdateField(ref _MinY, value, nameof(MinY)); }
 
  private string? _MinY;
@@ -49,7 +44,6 @@ public partial class AdjustHandleXY : ModelElement<DXD.AdjustHandleXY>
  /// Maximum allowed value for vertical adjustment.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AdjustHandleXY.MaxY))]
- [OpenXmlElement(typeof(DXD.AdjustHandleXY))]
  public string? MaxY { get => _MaxY; set => UpdateField(ref _MaxY, value, nameof(MaxY)); }
 
  private string? _MaxY;
@@ -57,7 +51,6 @@ public partial class AdjustHandleXY : ModelElement<DXD.AdjustHandleXY>
  /// Position of the adjust handle as a two-dimensional point.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AdjustHandleXY.Position))]
- [OpenXmlElement(typeof(DXD.AdjustHandleXY))]
  public AdjustPoint2DType? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
 
  private AdjustPoint2DType? _Position;

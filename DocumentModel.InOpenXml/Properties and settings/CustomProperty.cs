@@ -8,7 +8,6 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
  [XmlIgnore]
  [JsonIgnore]
  [NotMapped]
- [OpenXmlElement(typeof(DXCP.CustomDocumentProperty))]
  private DXCP.CustomDocumentProperty? OpenXmlCustomDocumentProperty { get => GetOpenXmlElement()!; set => SetOpenXmlElement(value); }
 
  /// <summary>

@@ -12,7 +12,6 @@ public abstract partial class NonVisualDrawingShapeProperties<T>:
   ///   Text Box
   /// </summary>
   [OpenXmlProperty(nameof(DXOD.NonVisualDrawingShapeProperties.TextBox))]
-  [OpenXmlElement(typeof(DXOD.NonVisualDrawingShapeProperties))]
   public bool? TextBox
   {
     get => _TextBox;
@@ -25,7 +24,6 @@ public abstract partial class NonVisualDrawingShapeProperties<T>:
   ///   Shape Locks.
   /// </summary>
   [OpenXmlProperty(nameof(DXOD.NonVisualDrawingShapeProperties.ShapeLocks))]
-  [OpenXmlElement(typeof(DXOD.NonVisualDrawingShapeProperties))]
   public ShapeLocks? ShapeLocks
   {
     get => _ShapeLocks;
@@ -38,7 +36,6 @@ public abstract partial class NonVisualDrawingShapeProperties<T>:
   ///   ExtensionList.
   /// </summary>
   [OpenXmlProperty(nameof(DXOD.NonVisualDrawingShapeProperties.ExtensionList))]
-  [OpenXmlElement(typeof(DXOD.NonVisualDrawingShapeProperties))]
   public ExtensionList? ExtensionList
   {
     get => _ExtensionList;

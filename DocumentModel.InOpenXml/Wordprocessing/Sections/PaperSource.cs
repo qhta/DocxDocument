@@ -10,7 +10,6 @@ public partial class PaperSource : ModelElement<DXW.PaperSource>, ISectionProper
  /// Printer tray code for the first page.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PaperSource.First))]
- [OpenXmlElement(typeof(DXW.PaperSource))]
  public UInt16? First { get => _First; set => UpdateField(ref _First, value, nameof(First)); }
 
  private UInt16? _First;
@@ -18,7 +17,6 @@ public partial class PaperSource : ModelElement<DXW.PaperSource>, ISectionProper
  /// Printer tray code for non-first pages.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PaperSource.Other))]
- [OpenXmlElement(typeof(DXW.PaperSource))]
  public UInt16? Other { get => _Other; set => UpdateField(ref _Other, value, nameof(Other)); }
 
  private UInt16? _Other;

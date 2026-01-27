@@ -9,7 +9,6 @@ public partial class PreSubSuper : ModelElement<DXM.PreSubSuper>, ICommonMathCon
  ///   Pre-Sub-Superscript Properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.PreSubSuper.PreSubSuperProperties))]
- [OpenXmlElement(typeof(DXM.PreSubSuper))]
  public PreSubSuperProperties? PreSubSuperProperties { get => _PreSubSuperProperties; set => UpdateField(ref _PreSubSuperProperties, value, nameof(PreSubSuperProperties)); }
 
  private PreSubSuperProperties? _PreSubSuperProperties;
@@ -17,7 +16,6 @@ public partial class PreSubSuper : ModelElement<DXM.PreSubSuper>, ICommonMathCon
  ///   Subscript (Pre-Sub-Superscript).
  /// </summary>
  [OpenXmlProperty(nameof(DXM.PreSubSuper.SubArgument))]
- [OpenXmlElement(typeof(DXM.PreSubSuper))]
  public SubArgument? SubArgument { get => _SubArgument; set => UpdateField(ref _SubArgument, value, nameof(SubArgument)); }
 
  private SubArgument? _SubArgument;
@@ -25,7 +23,6 @@ public partial class PreSubSuper : ModelElement<DXM.PreSubSuper>, ICommonMathCon
  ///   Superscript(Pre-Sub-Superscript function).
  /// </summary>
  [OpenXmlProperty(nameof(DXM.PreSubSuper.SuperArgument))]
- [OpenXmlElement(typeof(DXM.PreSubSuper))]
  public SuperArgument? SuperArgument { get => _SuperArgument; set => UpdateField(ref _SuperArgument, value, nameof(SuperArgument)); }
 
  private SuperArgument? _SuperArgument;
@@ -33,7 +30,6 @@ public partial class PreSubSuper : ModelElement<DXM.PreSubSuper>, ICommonMathCon
  ///   Base argument.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.PreSubSuper.Base))]
- [OpenXmlElement(typeof(DXM.PreSubSuper))]
  public Argument? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
 
  private Argument? _Base;

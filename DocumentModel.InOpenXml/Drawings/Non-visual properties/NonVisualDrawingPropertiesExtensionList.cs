@@ -12,7 +12,6 @@ public class NonVisualDrawingPropertiesExtensionList :
   /// <summary>
   ///   Compatibility extension for handling legacy or platform-specific features.
   /// </summary>
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingPropertiesExtension))]
   public CompatExtension? CompatExtension
   {
     get => _CompatExtension;
@@ -24,7 +23,6 @@ public class NonVisualDrawingPropertiesExtensionList :
   /// <summary>
   ///   Background properties for the drawing element.
   /// </summary>
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingPropertiesExtension))]
   public BackgroundProperties? BackgroundProperties
   {
     get => _BackgroundProperties;
@@ -36,7 +34,6 @@ public class NonVisualDrawingPropertiesExtensionList :
   /// <summary>
   ///   Unique creation identifier for the drawing element.
   /// </summary>
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingPropertiesExtension))]
   public CreationId? CreationId
   {
     get => _CreationId;
@@ -48,7 +45,6 @@ public class NonVisualDrawingPropertiesExtensionList :
   /// <summary>
   ///   Reference to a predecessor drawing element.
   /// </summary>
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingPropertiesExtension))]
   public PredecessorDrawingElementReference? PredecessorDrawingElementReference
   {
     get => _PredecessorDrawingElementReference;
@@ -60,7 +56,6 @@ public class NonVisualDrawingPropertiesExtensionList :
   /// <summary>
   ///   Indicates whether the element is decorative.
   /// </summary>
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingPropertiesExtension))]
   public bool? Decorative
   {
     get => _Decorative;
@@ -72,7 +67,6 @@ public class NonVisualDrawingPropertiesExtensionList :
   /// <summary>
   ///   Classification outcome for accessibility or categorization.
   /// </summary>
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingPropertiesExtension))]
   public ClassificationOutcome? ClassificationOutcome
   {
     get => _ClassificationOutcome;
@@ -84,7 +78,6 @@ public class NonVisualDrawingPropertiesExtensionList :
   /// <summary>
   ///   Script link associated with the drawing element.
   /// </summary>
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingPropertiesExtension))]
   public ScriptLink? ScriptLink
   {
     get => _ScriptLink;
@@ -97,7 +90,6 @@ public class NonVisualDrawingPropertiesExtensionList :
   /// Uri string associated with the extension.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.NonVisualDrawingPropertiesExtension.Uri))]
-  [OpenXmlElement(typeof(DXD.NonVisualDrawingPropertiesExtension))]
   public string? Uri
   {
     get => _Uri;

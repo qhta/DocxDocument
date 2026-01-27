@@ -9,7 +9,6 @@ public partial class FontScheme : ModelElement<DXD.FontScheme>, IExtendableEleme
  ///   FontName of the font scheme.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontScheme.Name))]
- [OpenXmlElement(typeof(DXD.FontScheme))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
  private string? _Name;
@@ -17,7 +16,6 @@ public partial class FontScheme : ModelElement<DXD.FontScheme>, IExtendableEleme
  ///   Major font definition.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontScheme.MajorFont))]
- [OpenXmlElement(typeof(DXD.FontScheme))]
  public MajorFont? MajorFont { get => _MajorFont; set => UpdateField(ref _MajorFont, value, nameof(MajorFont)); }
 
  private MajorFont? _MajorFont;
@@ -25,7 +23,6 @@ public partial class FontScheme : ModelElement<DXD.FontScheme>, IExtendableEleme
  ///   Minor font definition.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontScheme.MinorFont))]
- [OpenXmlElement(typeof(DXD.FontScheme))]
  public MinorFont? MinorFont { get => _MinorFont; set => UpdateField(ref _MinorFont, value, nameof(MinorFont)); }
 
  private MinorFont? _MinorFont;
@@ -33,7 +30,6 @@ public partial class FontScheme : ModelElement<DXD.FontScheme>, IExtendableEleme
  /// List of extension properties for the font scheme, used for extensibility scenarios.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontScheme.ExtensionList))]
- [OpenXmlElement(typeof(DXD.FontScheme))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
  private ExtensionList? _ExtensionList;

@@ -19,7 +19,6 @@ public partial class Break : ModelElement<DXW.Break>
  ///   this attribute specifies exactly which operator shall be the target of that alignment in cases where there are multiple operators. 
  ///   If alnAt is omitted, then all runs (r tag) that follow a brk tag will align with the left margin of the first run of mathematical text.
  /// </summary>
- [OpenXmlElement(typeof(DXW.Break))]
  public Int32? AlignAt { get => _AlignAt; set => UpdateField(ref _AlignAt, value, nameof(AlignAt)); }
 
  private Int32? _AlignAt;

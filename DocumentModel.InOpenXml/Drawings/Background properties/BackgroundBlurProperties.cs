@@ -9,7 +9,6 @@ public partial class BackgroundBlurProperties : ModelElement<DXO21DL.BackgroundB
  /// List of OfficeArt extension elements.
  /// </summary>
  [OpenXmlProperty(nameof(DXO21DL.BackgroundBlurProperties.OfficeArtExtensionList))]
- [OpenXmlElement(typeof(DXO21DL.BackgroundBlurProperties))]
  public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
 
  private OfficeArtExtensionList? _OfficeArtExtensionList;

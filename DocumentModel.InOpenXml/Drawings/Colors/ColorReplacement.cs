@@ -1,63 +1,91 @@
 namespace DocumentModel.Drawings;
+
 /// <summary>
 /// Defines the color replacement effect for drawing elements.
 /// </summary>
 [OpenXmlType(typeof(DXD.ColorReplacement))]
-public partial class ColorReplacement : ModelElement<DXD.ColorReplacement>, IExtendableElement
+public partial class ColorReplacement: ModelElement<DXD.ColorReplacement>, IExtendableElement
 {
- /// <summary>
- /// RGB color model - percentage variant.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.ColorReplacement.RgbColorModelPercentage))]
- [OpenXmlElement(typeof(DXD.ColorReplacement))]
- public RgbColorModelPercentage? RgbColorModelPercentage { get => _RgbColorModelPercentage; set => UpdateField(ref _RgbColorModelPercentage, value, nameof(RgbColorModelPercentage)); }
+  /// <summary>
+  /// RGB color model - percentage variant.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.ColorReplacement.RgbColorModelPercentage))]
+  public RgbColorModelPercentage? RgbColorModelPercentage
+  {
+    get => _RgbColorModelPercentage;
+    set => UpdateField(ref _RgbColorModelPercentage, value, nameof(RgbColorModelPercentage));
+  }
 
- private RgbColorModelPercentage? _RgbColorModelPercentage;
- /// <summary>
- /// RGB color model - hex variant.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.ColorReplacement.RgbColorModelHex))]
- [OpenXmlElement(typeof(DXD.ColorReplacement))]
- public RgbColorModelHex? RgbColorModelHex { get => _RgbColorModelHex; set => UpdateField(ref _RgbColorModelHex, value, nameof(RgbColorModelHex)); }
+  private RgbColorModelPercentage? _RgbColorModelPercentage;
 
- private RgbColorModelHex? _RgbColorModelHex;
- /// <summary>
- /// Hue, saturation, luminance color model.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.ColorReplacement.HslColor))]
- [OpenXmlElement(typeof(DXD.ColorReplacement))]
- public HslColor? HslColor { get => _HslColor; set => UpdateField(ref _HslColor, value, nameof(HslColor)); }
+  /// <summary>
+  /// RGB color model - hex variant.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.ColorReplacement.RgbColorModelHex))]
+  public RgbColorModelHex? RgbColorModelHex
+  {
+    get => _RgbColorModelHex;
+    set => UpdateField(ref _RgbColorModelHex, value, nameof(RgbColorModelHex));
+  }
 
- private HslColor? _HslColor;
- /// <summary>
- /// System color.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.ColorReplacement.SystemColor))]
- [OpenXmlElement(typeof(DXD.ColorReplacement))]
- public SystemColor? SystemColor { get => _SystemColor; set => UpdateField(ref _SystemColor, value, nameof(SystemColor)); }
+  private RgbColorModelHex? _RgbColorModelHex;
 
- private SystemColor? _SystemColor;
- /// <summary>
- /// Scheme color.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.ColorReplacement.SchemeColor))]
- [OpenXmlElement(typeof(DXD.ColorReplacement))]
- public SchemeColor? SchemeColor { get => _SchemeColor; set => UpdateField(ref _SchemeColor, value, nameof(SchemeColor)); }
+  /// <summary>
+  /// Hue, saturation, luminance color model.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.ColorReplacement.HslColor))]
+  public HslColor? HslColor
+  {
+    get => _HslColor;
+    set => UpdateField(ref _HslColor, value, nameof(HslColor));
+  }
 
- private SchemeColor? _SchemeColor;
- /// <summary>
- /// Preset color.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.ColorReplacement.PresetColor))]
- [OpenXmlElement(typeof(DXD.ColorReplacement))]
- public PresetColor? PresetColor { get => _PresetColor; set => UpdateField(ref _PresetColor, value, nameof(PresetColor)); }
+  private HslColor? _HslColor;
 
- private PresetColor? _PresetColor;
- /// <summary>
- /// List of extension elements.
- /// </summary>
- [OpenXmlElement(typeof(DXD.ColorReplacement))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+  /// <summary>
+  /// System color.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.ColorReplacement.SystemColor))]
+  public SystemColor? SystemColor
+  {
+    get => _SystemColor;
+    set => UpdateField(ref _SystemColor, value, nameof(SystemColor));
+  }
 
- private ExtensionList? _ExtensionList;
+  private SystemColor? _SystemColor;
+
+  /// <summary>
+  /// Scheme color.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.ColorReplacement.SchemeColor))]
+  public SchemeColor? SchemeColor
+  {
+    get => _SchemeColor;
+    set => UpdateField(ref _SchemeColor, value, nameof(SchemeColor));
+  }
+
+  private SchemeColor? _SchemeColor;
+
+  /// <summary>
+  /// Preset color.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.ColorReplacement.PresetColor))]
+  public PresetColor? PresetColor
+  {
+    get => _PresetColor;
+    set => UpdateField(ref _PresetColor, value, nameof(PresetColor));
+  }
+
+  private PresetColor? _PresetColor;
+
+  /// <summary>
+  /// List of extension elements.
+  /// </summary>
+  public ExtensionList? ExtensionList
+  {
+    get => _ExtensionList;
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
+
+  private ExtensionList? _ExtensionList;
 }

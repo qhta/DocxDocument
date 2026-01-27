@@ -9,14 +9,12 @@ public partial class TableRowHeight : ModelElement<DXW.TableRowHeight>
  /// <summary>
  /// Table row height value, specifying the height in twips.
  /// </summary>
- [OpenXmlElement(typeof(DXW.TableRowHeight))]
  public Twips Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
 
  private Twips _Value;
  /// <summary>
  /// Table row height type, specifying whether the height is at least, exactly, or auto.
  /// </summary>
- [OpenXmlElement(typeof(DXW.TableRowHeight))]
  public HeightRuleKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
  private HeightRuleKind? _Type;

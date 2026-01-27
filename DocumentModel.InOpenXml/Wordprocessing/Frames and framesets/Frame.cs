@@ -10,7 +10,6 @@ public partial class Frame : ModelElement<DXW.Frame>, IFramesetItem
  /// Size of the frame, specified as a width or height value depending on the frameset orientation.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Frame.FrameSize))]
- [OpenXmlElement(typeof(DXW.Frame))]
  public UInt32? FrameSize { get => _FrameSize; set => UpdateField(ref _FrameSize, value, nameof(FrameSize)); }
 
  private UInt32? _FrameSize;
@@ -18,7 +17,6 @@ public partial class Frame : ModelElement<DXW.Frame>, IFramesetItem
  /// FontName of the frame, used for identification and targeting within the frameset.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Frame.FrameName))]
- [OpenXmlElement(typeof(DXW.Frame))]
  public string? FrameName { get => _FrameName; set => UpdateField(ref _FrameName, value, nameof(FrameName)); }
 
  private string? _FrameName;
@@ -26,7 +24,6 @@ public partial class Frame : ModelElement<DXW.Frame>, IFramesetItem
  /// Source file for the frame, specifying the external content to be displayed within the frame.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Frame.SourceFileReference))]
- [OpenXmlElement(typeof(DXW.Frame))]
  public SourceReference? SourceFileReference { get => _SourceFileReference; set => UpdateField(ref _SourceFileReference, value, nameof(SourceFileReference)); }
 
  private SourceReference? _SourceFileReference;
@@ -34,7 +31,6 @@ public partial class Frame : ModelElement<DXW.Frame>, IFramesetItem
  /// Left and right margin for the frame, specified in pixels.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Frame.MarginWidth))]
- [OpenXmlElement(typeof(DXW.Frame))]
  public UInt32? MarginWidth { get => _MarginWidth; set => UpdateField(ref _MarginWidth, value, nameof(MarginWidth)); }
 
  private UInt32? _MarginWidth;
@@ -42,7 +38,6 @@ public partial class Frame : ModelElement<DXW.Frame>, IFramesetItem
  /// Top and bottom margin for the frame, specified in pixels.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Frame.MarginHeight))]
- [OpenXmlElement(typeof(DXW.Frame))]
  public UInt32? MarginHeight { get => _MarginHeight; set => UpdateField(ref _MarginHeight, value, nameof(MarginHeight)); }
 
  private UInt32? _MarginHeight;
@@ -50,7 +45,6 @@ public partial class Frame : ModelElement<DXW.Frame>, IFramesetItem
  /// Scrollbar display option for the frame, specifying visibility and behavior of scrollbars.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Frame.ScrollbarVisibility))]
- [OpenXmlElement(typeof(DXW.Frame))]
  public FrameScrollbarVisibilityKind? ScrollbarVisibility { get => _ScrollbarVisibility; set => UpdateField(ref _ScrollbarVisibility, value, nameof(ScrollbarVisibility)); }
 
  private FrameScrollbarVisibilityKind? _ScrollbarVisibility;
@@ -58,7 +52,6 @@ public partial class Frame : ModelElement<DXW.Frame>, IFramesetItem
  /// Indicates whether the frame cannot be resized by the user.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Frame.NoResizeAllowed))]
- [OpenXmlElement(typeof(DXW.Frame))]
  public bool? NoResizeAllowed { get => _NoResizeAllowed; set => UpdateField(ref _NoResizeAllowed, value, nameof(NoResizeAllowed)); }
 
  private bool? _NoResizeAllowed;
@@ -66,7 +59,6 @@ public partial class Frame : ModelElement<DXW.Frame>, IFramesetItem
  /// Indicates whether the frame maintains a link to an existing external file.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Frame.LinkedToFile))]
- [OpenXmlElement(typeof(DXW.Frame))]
  public bool? LinkedToFile { get => _LinkedToFile; set => UpdateField(ref _LinkedToFile, value, nameof(LinkedToFile)); }
 
  private bool? _LinkedToFile;

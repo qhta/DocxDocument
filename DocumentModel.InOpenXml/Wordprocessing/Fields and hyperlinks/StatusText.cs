@@ -10,7 +10,6 @@ public partial class StatusText : ModelElement<DXW.StatusText>
  /// Type of status text, specifying the context or display mode (e.g., tooltip, status bar).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StatusText.Type))]
- [OpenXmlElement(typeof(DXW.StatusText))]
  public InfoTextKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
  private InfoTextKind? _Type;
@@ -18,7 +17,6 @@ public partial class StatusText : ModelElement<DXW.StatusText>
  /// Value of the status text, containing the actual information or message to be displayed to the user.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StatusText.Val))]
- [OpenXmlElement(typeof(DXW.StatusText))]
  public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
  private string? _Val;

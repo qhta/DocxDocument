@@ -10,7 +10,6 @@ public partial class TableLayout : ModelElement<DXW.TableLayout>
  /// Table layout setting, specifying the type of layout algorithm used for the table.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableLayout.Type))]
- [OpenXmlElement(typeof(DXW.TableLayout))]
  public TableLayoutKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
  private TableLayoutKind? _Type;

@@ -10,7 +10,6 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
  /// Placement of endnotes in the document, specifying where endnotes appear (e.g., end of section, end of document).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EndnoteDocumentWideProperties.EndnotePosition))]
- [OpenXmlElement(typeof(DXW.EndnoteDocumentWideProperties))]
  public EndnotePositionKind? EndnotePosition { get => _EndnotePosition; set => UpdateField(ref _EndnotePosition, value, nameof(EndnotePosition)); }
 
  private EndnotePositionKind? _EndnotePosition;
@@ -18,7 +17,6 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
  /// Numbering format for endnotes, specifying the style of numbering (e.g., Arabic, Roman, letters).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EndnoteDocumentWideProperties.NumberingFormat))]
- [OpenXmlElement(typeof(DXW.EndnoteDocumentWideProperties))]
  public NumberingFormat? NumberingFormat { get => _NumberingFormat; set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat)); }
 
  private NumberingFormat? _NumberingFormat;
@@ -26,7 +24,6 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
  /// Starting value for endnote numbering, specifying the initial number used for the first endnote.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EndnoteDocumentWideProperties.NumberingStart))]
- [OpenXmlElement(typeof(DXW.EndnoteDocumentWideProperties))]
  public UInt16? NumberingStart { get => _NumberingStart; set => UpdateField(ref _NumberingStart, value, nameof(NumberingStart)); }
 
  private UInt16? _NumberingStart;
@@ -34,14 +31,12 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
  /// Location where endnote numbering restarts (e.g., each section, each page, continuous).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EndnoteDocumentWideProperties.NumberingRestart))]
- [OpenXmlElement(typeof(DXW.EndnoteDocumentWideProperties))]
  public RestartNumberKind? NumberingRestart { get => _NumberingRestart; set => UpdateField(ref _NumberingRestart, value, nameof(NumberingRestart)); }
 
  private RestartNumberKind? _NumberingRestart;
  /// <summary>
  /// Special references for endnotes, such as separators and continuation notices.
  /// </summary>
- [OpenXmlElement(typeof(DXW.EndnoteDocumentWideProperties))]
  public EndnoteSeparators? EndnoteSeparators { get => _EndnoteSeparators; set => UpdateField(ref _EndnoteSeparators, value, nameof(EndnoteSeparators)); }
 
  private EndnoteSeparators? _EndnoteSeparators;

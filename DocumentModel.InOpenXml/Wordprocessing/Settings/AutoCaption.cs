@@ -11,7 +11,6 @@ public partial class AutoCaption : ModelElement<DXW.AutoCaption>
  /// which are to be automatically labeled with a caption when inserted into the WordprocessingML document.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Caption.Name))]
- [OpenXmlElement(typeof(DXW.AutoCaption))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
  private string? _Name;
@@ -22,7 +21,6 @@ public partial class AutoCaption : ModelElement<DXW.AutoCaption>
  /// the name attribute of the corresponding caption element.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AutoCaption.Caption))]
- [OpenXmlElement(typeof(DXW.AutoCaption))]
  public string? Caption { get => _Caption; set => UpdateField(ref _Caption, value, nameof(Caption)); }
 
  private string? _Caption;

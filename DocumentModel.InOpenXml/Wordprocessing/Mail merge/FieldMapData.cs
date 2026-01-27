@@ -10,7 +10,6 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
  /// Type of merge field mapping, specifying how the data source column is mapped to the merge field.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FieldMapData.MailMergeFieldType))]
- [OpenXmlElement(typeof(DXW.FieldMapData))]
  public MailMergeOdsoFieldKind? MailMergeFieldType { get => _MailMergeFieldType; set => UpdateField(ref _MailMergeFieldType, value, nameof(MailMergeFieldType)); }
 
  private MailMergeOdsoFieldKind? _MailMergeFieldType;
@@ -18,7 +17,6 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
  /// FontName of the data source column being mapped.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FieldMapData.Name))]
- [OpenXmlElement(typeof(DXW.FieldMapData))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
  private string? _Name;
@@ -26,7 +24,6 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
  /// Predefined merge field name to which the data source column is mapped.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FieldMapData.MappedName))]
- [OpenXmlElement(typeof(DXW.FieldMapData))]
  public string? MappedName { get => _MappedName; set => UpdateField(ref _MappedName, value, nameof(MappedName)); }
 
  private string? _MappedName;
@@ -34,7 +31,6 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
  /// Index of the data source column being mapped, specified as a zero-based index.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FieldMapData.ColumnIndex))]
- [OpenXmlElement(typeof(DXW.FieldMapData))]
  public UInt32? ColumnIndex { get => _ColumnIndex; set => UpdateField(ref _ColumnIndex, value, nameof(ColumnIndex)); }
 
  private UInt32? _ColumnIndex;
@@ -42,7 +38,6 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
  /// Language ID for the merge field name, specifying the language context for the mapping.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FieldMapData.LanguageId))]
- [OpenXmlElement(typeof(DXW.FieldMapData))]
  public string? LanguageId { get => _LanguageId; set => UpdateField(ref _LanguageId, value, nameof(LanguageId)); }
 
  private string? _LanguageId;
@@ -50,7 +45,6 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
  /// Indicates whether country/region-based address field ordering is used for the mapping.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FieldMapData.DynamicAddress))]
- [OpenXmlElement(typeof(DXW.FieldMapData))]
  public bool? DynamicAddress { get => _DynamicAddress; set => UpdateField(ref _DynamicAddress, value, nameof(DynamicAddress)); }
 
  private bool? _DynamicAddress;

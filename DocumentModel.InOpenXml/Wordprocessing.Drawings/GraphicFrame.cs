@@ -11,7 +11,6 @@ public partial class GraphicFrame : ModelElement<DXD.GraphicFrame>, IOfficeArtEx
  /// <summary>
  /// Non-visual properties for the graphic frame, including identifiers, names, and descriptive information for the frame element.
  /// </summary>
- [OpenXmlElement(typeof(DXD.GraphicFrame))]
  public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
 
  private NonVisualDrawingProperties? _NonVisualDrawingProperties;
@@ -19,7 +18,6 @@ public partial class GraphicFrame : ModelElement<DXD.GraphicFrame>, IOfficeArtEx
  /// Non-visual properties specific to the graphic frame, such as locking and extension settings for advanced configuration.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GraphicFrame.NonVisualGraphicFrameProperties))]
- [OpenXmlElement(typeof(DXD.GraphicFrame))]
  public NonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get => _NonVisualGraphicFrameProperties; set => UpdateField(ref _NonVisualGraphicFrameProperties, value, nameof(NonVisualGraphicFrameProperties)); }
 
  private NonVisualGraphicFrameProperties? _NonVisualGraphicFrameProperties;
@@ -27,7 +25,6 @@ public partial class GraphicFrame : ModelElement<DXD.GraphicFrame>, IOfficeArtEx
  /// The 2D transformation applied to the graphic frame, including translation, scaling, rotation, and skew, which determines the frame's position and orientation.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GraphicFrame.Transform2D))]
- [OpenXmlElement(typeof(DXD.GraphicFrame))]
  public Transform2D? Transform2D { get => _Transform2D; set => UpdateField(ref _Transform2D, value, nameof(Transform2D)); }
 
  private Transform2D? _Transform2D;
@@ -35,14 +32,12 @@ public partial class GraphicFrame : ModelElement<DXD.GraphicFrame>, IOfficeArtEx
  /// The graphic content contained within the frame, which may include images, charts, diagrams, or other graphical objects.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.GraphicFrame.Graphic))]
- [OpenXmlElement(typeof(DXD.GraphicFrame))]
  public Graphic? Graphic { get => _Graphic; set => UpdateField(ref _Graphic, value, nameof(Graphic)); }
 
  private Graphic? _Graphic;
  /// <summary>
  /// List of OfficeArt extensions associated with the graphic frame, allowing for additional properties and behaviors to be defined.
  /// </summary>
- [OpenXmlElement(typeof(DXD.GraphicFrame))]
  public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
 
  private OfficeArtExtensionList? _OfficeArtExtensionList;

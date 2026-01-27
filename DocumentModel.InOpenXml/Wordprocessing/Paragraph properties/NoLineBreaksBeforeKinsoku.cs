@@ -10,7 +10,6 @@ public partial class NoLineBreaksBeforeKinsoku : ModelElement<DXW.NoLineBreaksBe
  ///   Language code for which the kinsoku rule applies, specifying the script or locale.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.NoLineBreaksBeforeKinsoku.Language))]
- [OpenXmlElement(typeof(DXW.NoLineBreaksBeforeKinsoku))]
  public string? Language { get => _Language; set => UpdateField(ref _Language, value, nameof(Language)); }
 
  private string? _Language;
@@ -18,7 +17,6 @@ public partial class NoLineBreaksBeforeKinsoku : ModelElement<DXW.NoLineBreaksBe
  ///   Set of characters that cannot begin a line, specified as a string of restricted characters.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.NoLineBreaksBeforeKinsoku.Val))]
- [OpenXmlElement(typeof(DXW.NoLineBreaksBeforeKinsoku))]
  public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
  private string? _Val;

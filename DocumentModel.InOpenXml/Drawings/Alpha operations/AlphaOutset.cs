@@ -9,7 +9,6 @@ public partial class AlphaOutset : ModelElement<DXD.AlphaOutset>
  /// Radius value that determines the extent of the alpha inset or outset effect.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AlphaOutset.Radius))]
- [OpenXmlElement(typeof(DXD.AlphaOutset))]
  public Int64? Radius { get => _Radius; set => UpdateField(ref _Radius, value, nameof(Radius)); }
 
  private Int64? _Radius;

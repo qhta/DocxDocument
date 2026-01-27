@@ -9,7 +9,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Unique Identifier
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.Id))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
  private string? _Id;
@@ -17,7 +16,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Toggle
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.On))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public bool? On { get => _On; set => UpdateField(ref _On, value, nameof(On)); }
 
  private bool? _On;
@@ -25,7 +23,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Weight
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.Weight))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public string? Weight { get => _Weight; set => UpdateField(ref _Weight, value, nameof(Weight)); }
 
  private string? _Weight;
@@ -33,7 +30,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.Color))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public string? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
 
  private string? _Color;
@@ -41,7 +37,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Opacity
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.Opacity))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public string? Opacity { get => _Opacity; set => UpdateField(ref _Opacity, value, nameof(Opacity)); }
 
  private string? _Opacity;
@@ -49,7 +44,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Line Style
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.LineStyle))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeLineStyleKind? LineStyle { get => _LineStyle; set => UpdateField(ref _LineStyle, value, nameof(LineStyle)); }
 
  private StrokeLineStyleKind? _LineStyle;
@@ -57,7 +51,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Miter Joint Limit
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.Miterlimit))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public string? MiterLimit { get => _MiterLimit; set => UpdateField(ref _MiterLimit, value, nameof(MiterLimit)); }
 
  private string? _MiterLimit;
@@ -65,7 +58,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Line End Join Style
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.JoinStyle))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeJoinStyleKind? JoinStyle { get => _JoinStyle; set => UpdateField(ref _JoinStyle, value, nameof(JoinStyle)); }
 
  private StrokeJoinStyleKind? _JoinStyle;
@@ -73,7 +65,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Line End Cap
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.EndCap))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeEndCapKind? EndCap { get => _EndCap; set => UpdateField(ref _EndCap, value, nameof(EndCap)); }
 
  private StrokeEndCapKind? _EndCap;
@@ -81,7 +72,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Dash Pattern
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.DashStyle))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public string? DashStyle { get => _DashStyle; set => UpdateField(ref _DashStyle, value, nameof(DashStyle)); }
 
  private string? _DashStyle;
@@ -89,7 +79,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Image Style
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.FillType))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeFillKind? FillType { get => _FillType; set => UpdateField(ref _FillType, value, nameof(FillType)); }
 
  private StrokeFillKind? _FillType;
@@ -97,7 +86,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Image Location
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.Source))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public string? Source { get => _Source; set => UpdateField(ref _Source, value, nameof(Source)); }
 
  private string? _Source;
@@ -105,7 +93,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Image Aspect Ratio
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.ImageAspect))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public ImageAspectKind? ImageAspect { get => _ImageAspect; set => UpdateField(ref _ImageAspect, value, nameof(ImageAspect)); }
 
  private ImageAspectKind? _ImageAspect;
@@ -113,7 +100,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Image Size
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.ImageSize))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public string? ImageSize { get => _ImageSize; set => UpdateField(ref _ImageSize, value, nameof(ImageSize)); }
 
  private string? _ImageSize;
@@ -121,7 +107,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stoke Image Alignment
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.ImageAlignShape))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public bool? ImageAlignShape { get => _ImageAlignShape; set => UpdateField(ref _ImageAlignShape, value, nameof(ImageAlignShape)); }
 
  private bool? _ImageAlignShape;
@@ -129,7 +114,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Alternate Pattern Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.Color2))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public string? Color2 { get => _Color2; set => UpdateField(ref _Color2, value, nameof(Color2)); }
 
  private string? _Color2;
@@ -137,7 +121,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Line Start Arrowhead
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.StartArrow))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeArrowKind? StartArrow { get => _StartArrow; set => UpdateField(ref _StartArrow, value, nameof(StartArrow)); }
 
  private StrokeArrowKind? _StartArrow;
@@ -145,7 +128,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Line Start Arrowhead Width
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.StartArrowWidth))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeArrowWidthKind? StartArrowWidth { get => _StartArrowWidth; set => UpdateField(ref _StartArrowWidth, value, nameof(StartArrowWidth)); }
 
  private StrokeArrowWidthKind? _StartArrowWidth;
@@ -153,7 +135,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Line Start Arrowhead Length
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.StartArrowLength))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeArrowLengthKind? StartArrowLength { get => _StartArrowLength; set => UpdateField(ref _StartArrowLength, value, nameof(StartArrowLength)); }
 
  private StrokeArrowLengthKind? _StartArrowLength;
@@ -161,7 +142,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Line End Arrowhead
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.EndArrow))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeArrowKind? EndArrow { get => _EndArrow; set => UpdateField(ref _EndArrow, value, nameof(EndArrow)); }
 
  private StrokeArrowKind? _EndArrow;
@@ -169,7 +149,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Line End Arrowhead Width
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.EndArrowWidth))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeArrowWidthKind? EndArrowWidth { get => _EndArrowWidth; set => UpdateField(ref _EndArrowWidth, value, nameof(EndArrowWidth)); }
 
  private StrokeArrowWidthKind? _EndArrowWidth;
@@ -177,7 +156,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Line End Arrowhead Length
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.EndArrowLength))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeArrowLengthKind? EndArrowLength { get => _EndArrowLength; set => UpdateField(ref _EndArrowLength, value, nameof(EndArrowLength)); }
 
  private StrokeArrowLengthKind? _EndArrowLength;
@@ -185,7 +163,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Original Image Reference
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.Href))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public string? Href { get => _Href; set => UpdateField(ref _Href, value, nameof(Href)); }
 
  private string? _Href;
@@ -193,7 +170,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Alternate Image Reference
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.AlternateImageReference))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public string? AlternateImageReference { get => _AlternateImageReference; set => UpdateField(ref _AlternateImageReference, value, nameof(AlternateImageReference)); }
 
  private string? _AlternateImageReference;
@@ -201,7 +177,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Title
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.Title))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public string? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
 
  private string? _Title;
@@ -209,7 +184,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Force Dashed Outline
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.ForceDash))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public bool? ForceDash { get => _ForceDash; set => UpdateField(ref _ForceDash, value, nameof(ForceDash)); }
 
  private bool? _ForceDash;
@@ -217,7 +191,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Relationship
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.RelationshipId))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public string? RelationshipId { get => _RelationshipId; set => UpdateField(ref _RelationshipId, value, nameof(RelationshipId)); }
 
  private string? _RelationshipId;
@@ -225,7 +198,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Inset Border From Path
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.Insetpen))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public bool? Insetpen { get => _Insetpen; set => UpdateField(ref _Insetpen, value, nameof(Insetpen)); }
 
  private bool? _Insetpen;
@@ -233,7 +205,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   LeftStroke.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.LeftStroke))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeChildType? LeftStroke { get => _LeftStroke; set => UpdateField(ref _LeftStroke, value, nameof(LeftStroke)); }
 
  private StrokeChildType? _LeftStroke;
@@ -241,7 +212,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   TopStroke.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.TopStroke))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeChildType? TopStroke { get => _TopStroke; set => UpdateField(ref _TopStroke, value, nameof(TopStroke)); }
 
  private StrokeChildType? _TopStroke;
@@ -249,7 +219,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   RightStroke.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.RightStroke))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeChildType? RightStroke { get => _RightStroke; set => UpdateField(ref _RightStroke, value, nameof(RightStroke)); }
 
  private StrokeChildType? _RightStroke;
@@ -257,7 +226,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   BottomStroke.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.BottomStroke))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeChildType? BottomStroke { get => _BottomStroke; set => UpdateField(ref _BottomStroke, value, nameof(BottomStroke)); }
 
  private StrokeChildType? _BottomStroke;
@@ -265,7 +233,6 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   ColumnStroke.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.ColumnStroke))]
- [OpenXmlElement(typeof(DXV.Stroke))]
  public StrokeChildType? ColumnStroke { get => _ColumnStroke; set => UpdateField(ref _ColumnStroke, value, nameof(ColumnStroke)); }
 
  private StrokeChildType? _ColumnStroke;

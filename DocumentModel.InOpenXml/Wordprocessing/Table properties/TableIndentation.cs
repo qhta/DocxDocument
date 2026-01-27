@@ -10,7 +10,6 @@ public partial class TableIndentation : ModelElement<DXW.TableIndentation>
  /// The width of the table indentation, specifying the distance from the leading margin.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableIndentation.Width))]
- [OpenXmlElement(typeof(DXW.TableIndentation))]
  public Int32? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
 
  private Int32? _Width;
@@ -18,7 +17,6 @@ public partial class TableIndentation : ModelElement<DXW.TableIndentation>
  /// The unit type for the table indentation width, such as points, percentage, or other supported units.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableIndentation.Type))]
- [OpenXmlElement(typeof(DXW.TableIndentation))]
  public TableWidthUnitType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
  private TableWidthUnitType? _Type;

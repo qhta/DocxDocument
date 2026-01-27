@@ -10,7 +10,6 @@ public partial class LatentStyleExceptionInfo : ModelElement<DXW.LatentStyleExce
  /// Primary style name associated with the latent style exception.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LatentStyleExceptionInfo.Name))]
- [OpenXmlElement(typeof(DXW.LatentStyleExceptionInfo))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
  private string? _Name;
@@ -18,7 +17,6 @@ public partial class LatentStyleExceptionInfo : ModelElement<DXW.LatentStyleExce
  /// Indicates whether the latent style is locked and cannot be modified.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LatentStyleExceptionInfo.Locked))]
- [OpenXmlElement(typeof(DXW.LatentStyleExceptionInfo))]
  public bool? Locked { get => _Locked; set => UpdateField(ref _Locked, value, nameof(Locked)); }
 
  private bool? _Locked;
@@ -26,7 +24,6 @@ public partial class LatentStyleExceptionInfo : ModelElement<DXW.LatentStyleExce
  /// Override for the default sorting order in the UI, specifying the priority of the style.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LatentStyleExceptionInfo.UiPriority))]
- [OpenXmlElement(typeof(DXW.LatentStyleExceptionInfo))]
  public Int32? UiPriority { get => _UiPriority; set => UpdateField(ref _UiPriority, value, nameof(UiPriority)); }
 
  private Int32? _UiPriority;
@@ -34,7 +31,6 @@ public partial class LatentStyleExceptionInfo : ModelElement<DXW.LatentStyleExce
  /// Indicates whether the style is semi-hidden, overriding default visibility settings.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LatentStyleExceptionInfo.SemiHidden))]
- [OpenXmlElement(typeof(DXW.LatentStyleExceptionInfo))]
  public bool? SemiHidden { get => _SemiHidden; set => UpdateField(ref _SemiHidden, value, nameof(SemiHidden)); }
 
  private bool? _SemiHidden;
@@ -42,7 +38,6 @@ public partial class LatentStyleExceptionInfo : ModelElement<DXW.LatentStyleExce
  /// Indicates whether the style should be unhidden when used in the document.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LatentStyleExceptionInfo.UnhideWhenUsed))]
- [OpenXmlElement(typeof(DXW.LatentStyleExceptionInfo))]
  public bool? UnhideWhenUsed { get => _UnhideWhenUsed; set => UpdateField(ref _UnhideWhenUsed, value, nameof(UnhideWhenUsed)); }
 
  private bool? _UnhideWhenUsed;
@@ -50,7 +45,6 @@ public partial class LatentStyleExceptionInfo : ModelElement<DXW.LatentStyleExce
  /// Indicates whether the style is a primary style in the latent style set.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LatentStyleExceptionInfo.PrimaryStyle))]
- [OpenXmlElement(typeof(DXW.LatentStyleExceptionInfo))]
  public bool? PrimaryStyle { get => _PrimaryStyle; set => UpdateField(ref _PrimaryStyle, value, nameof(PrimaryStyle)); }
 
  private bool? _PrimaryStyle;

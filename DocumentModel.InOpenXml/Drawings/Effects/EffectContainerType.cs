@@ -24,7 +24,6 @@ public partial class EffectContainerType : ModelElement<DXD.EffectContainerType>
  ///   </para>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.EffectContainerType.Type))]
- [OpenXmlElement(typeof(DXD.EffectContainerType))]
  public EffectContainerKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
  private EffectContainerKind? _Type;
@@ -47,7 +46,6 @@ public partial class EffectContainerType : ModelElement<DXD.EffectContainerType>
  ///   </para>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.EffectContainerType.Name))]
- [OpenXmlElement(typeof(DXD.EffectContainerType))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
  private string? _Name;
