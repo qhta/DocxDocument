@@ -2,6 +2,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Heading Pairs.
 /// </summary>
+[SimpleType]
 [OpenXmlType(typeof(HeadingPair))]
 public class HeadingPairs : ValueCollection<HeadingPair>, IEquatable<HeadingPairs>
 {

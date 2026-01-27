@@ -10,6 +10,7 @@
 /// - Bits 0-7 represent the Blue component
 /// </remarks>
 [JsonConverter(typeof(RGBJsonConverter))]
+[SimpleType]
 public readonly partial struct RGB : IEquatable<RGB>, IConvertible
 {
   /// <summary>

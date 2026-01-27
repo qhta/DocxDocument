@@ -2,7 +2,8 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents character-level formatting properties for text, including font, style, language, spacing, underline, strike, and outline settings.
 /// </summary>
-public partial class TextCharacterPropertiesType : ModelElement
+[OpenXmlType(typeof(DXD.TextCharacterPropertiesType))]
+public partial class TextCharacterPropertiesType : ModelElement<DXD.TextCharacterPropertiesType>
 {
     /// <summary>
     ///   Value available for backwards compatibility.

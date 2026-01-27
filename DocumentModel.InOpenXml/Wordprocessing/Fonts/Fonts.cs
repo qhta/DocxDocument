@@ -28,7 +28,7 @@ public  sealed class Fonts : ModelElementCollection<FontDef, DXW.Fonts, DXW.Font
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's FontTable.
   /// </summary>
   /// <param name = "wordprocessingDocument">Document to attach to.</param>
-  public override void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
+  public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     base.AttachAndLoad(wordprocessingDocument);
     var fontTable = wordprocessingDocument.GetFontTable();
@@ -40,7 +40,7 @@ public  sealed class Fonts : ModelElementCollection<FontDef, DXW.Fonts, DXW.Font
   /// Attach this instance to the specified document. Data is stored to the document's FontTable.
   /// </summary>
   /// <param name = "wordprocessingDocument">Document to attach to.</param>
-  public override void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)
+  public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     base.AttachAndUpdate(wordprocessingDocument);
     var fontTable = wordprocessingDocument.GetFontTable();

@@ -13,9 +13,9 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
     [XmlIgnore]
     [JsonIgnore]
     [NotMapped]
-    public DXPack.WordprocessingDocument? WordprocessingDocument { get => _WordprocessingDocument; set => UpdateField(ref _WordprocessingDocument, value, nameof(WordprocessingDocument)); }
+    public DXPP.WordprocessingDocument? WordprocessingDocument { get => _WordprocessingDocument; set => UpdateField(ref _WordprocessingDocument, value, nameof(WordprocessingDocument)); }
 
-    private DXPack.WordprocessingDocument? _WordprocessingDocument;
+    private DXPP.WordprocessingDocument? _WordprocessingDocument;
     //internal PackageProperties? PackageProperties { get; private set; }
     /// <summary>
     /// Default constructor.
@@ -50,7 +50,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
     /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
     /// </summary>
     /// <param name = "wordprocessingDocument">Document to attach to.</param>
-    public void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
+    public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
     {
         WordprocessingDocument = wordprocessingDocument;
         var packageProperties = wordprocessingDocument.GetPackageProperties();
@@ -61,7 +61,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
     /// Attach this instance to the specified wordprocessingDocument. Data is updated to the wordprocessingDocument's PackageProperties.
     /// </summary>
     /// <param name = "wordprocessingDocument">Document to attach to.</param>
-    public void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)
+    public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
     {
         WordprocessingDocument = wordprocessingDocument;
         var packageProperties = wordprocessingDocument.GetPackageProperties();

@@ -39,7 +39,7 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   /// Attach this instance to the specified document. Data is loaded from the document's PackageProperties.
   /// </summary>
   /// <param name="document">Document to attach to.</param>
-  public override void AttachAndLoad(DXPack.WordprocessingDocument document)
+  public override void AttachAndLoad(DXPP.WordprocessingDocument document)
   {
     base.AttachAndLoad(document);
     var extendedFileProperties = document.GetExtendedFileProperties();
@@ -51,7 +51,7 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   /// Attach this instance to the specified document. Data is stored to the document's PackageProperties.
   /// </summary>
   /// <param name="document">Document to attach to.</param>
-  public override void AttachAndUpdate(DXPack.WordprocessingDocument document)
+  public override void AttachAndUpdate(DXPP.WordprocessingDocument document)
   {
     base.AttachAndUpdate(document);
     var extendedFileProperties = document.GetExtendedFileProperties();

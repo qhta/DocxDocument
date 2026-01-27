@@ -34,7 +34,7 @@ public class RemoveDuplicateDocCommentsRewriter : CSharpSyntaxRewriter
 
   public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node)
   {
-    node = (PropertyDeclarationSyntax)base.VisitPropertyDeclaration(node);
+    node = (PropertyDeclarationSyntax)base.VisitPropertyDeclaration(node)!;
 
     if (node.AttributeLists.Count < 2)
       return node;

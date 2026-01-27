@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a style for a shape, including references to line, fill, effect, and font formatting.
 /// </summary>
 [OpenXmlType(typeof(DXD.ShapeStyle))]
-public partial class ShapeStyle : ModelElement<DXD.ShapeStyle>
+public abstract partial class ShapeStyle<T>: ModelElement<T> where T : DX.OpenXmlElement
 {
  /// <summary>
  ///   Reference to the line formatting for the shape.
@@ -37,4 +37,11 @@ public partial class ShapeStyle : ModelElement<DXD.ShapeStyle>
  public FontReference? FontReference { get => _FontReference; set => UpdateField(ref _FontReference, value, nameof(FontReference)); }
 
  private FontReference? _FontReference;
+}
+
+/// <summary>
+/// Specifies DXD.ShapeStyle mapping type.
+/// </summary>
+public class ShapeStyle : ShapeStyle<DXD.ShapeStyle>
+{
 }
