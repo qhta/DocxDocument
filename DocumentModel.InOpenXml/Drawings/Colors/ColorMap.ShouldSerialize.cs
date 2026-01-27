@@ -1,6 +1,8 @@
 namespace DocumentModel.Drawings;
 
-public partial class ColorMap<T>
+#pragma warning disable CS1591
+
+public partial class ColorMap<T> 
 {
   public bool ShouldSerializeBackground1() => Background1 is not null;
   public bool ShouldSerializeText1() => Text1 is not null;

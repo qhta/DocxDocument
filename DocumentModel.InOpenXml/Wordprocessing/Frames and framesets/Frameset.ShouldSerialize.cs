@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class Frameset
 {
   public bool ShouldSerializeTitle() => Title is not null;

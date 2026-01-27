@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class EffectDag
 {
   public bool ShouldSerializeEffectContainer() => EffectContainer is not null;

@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings.Diagrams;
 
+#pragma warning disable CS1591
+
 public partial class Shape3D
 {
   public bool ShouldSerializeZ() => Z is not null;

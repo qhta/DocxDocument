@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class CustomColor
 {
   public bool ShouldSerializeName() => Name is not null;

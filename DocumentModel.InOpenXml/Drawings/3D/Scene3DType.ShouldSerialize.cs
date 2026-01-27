@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class Scene3DType
 {
   public bool ShouldSerializeCamera() => Camera is not null;

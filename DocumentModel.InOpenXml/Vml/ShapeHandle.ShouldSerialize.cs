@@ -1,5 +1,7 @@
 namespace DocumentModel.Vml;
 
+#pragma warning disable CS1591
+
 public partial class ShapeHandle
 {
   public bool ShouldSerializePosition() => Position is not null;

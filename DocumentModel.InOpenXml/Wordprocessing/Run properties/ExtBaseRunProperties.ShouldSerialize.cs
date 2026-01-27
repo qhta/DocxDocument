@@ -1,6 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 
-public partial class ExtBaseRunProperties<T> 
+#pragma warning disable CS1591
+
+public partial class ExtBaseRunProperties<T>
 {
   public bool ShouldSerializeRunStyle() => RunStyle is not null;
   public bool ShouldSerializeComplexScript() => ComplexScript is not null;

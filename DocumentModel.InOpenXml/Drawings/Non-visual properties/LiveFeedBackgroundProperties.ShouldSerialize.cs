@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class LiveFeedBackgroundProperties
 {
   public bool ShouldSerializeBackgroundNormalProperties() => BackgroundNormalProperties is not null;

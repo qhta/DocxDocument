@@ -1,5 +1,7 @@
 namespace DocumentModel.Math;
 
+#pragma warning disable CS1591
+
 public partial class ControlProperties
 {
   public bool ShouldSerializeRunProperties() => RunProperties is not null;

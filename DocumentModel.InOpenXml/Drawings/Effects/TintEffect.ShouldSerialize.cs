@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class TintEffect
 {
   public bool ShouldSerializeHue() => Hue is not null;

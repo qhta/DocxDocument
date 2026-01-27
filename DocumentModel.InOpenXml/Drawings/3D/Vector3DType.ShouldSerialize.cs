@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class Vector3DType
 {
   public bool ShouldSerializeDx() => Dx is not null;

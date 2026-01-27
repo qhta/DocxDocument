@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class Zoom
 {
   public bool ShouldSerializeKind() => Kind is not null;

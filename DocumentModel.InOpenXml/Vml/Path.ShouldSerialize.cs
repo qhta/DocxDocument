@@ -1,5 +1,7 @@
 namespace DocumentModel.Vml;
 
+#pragma warning disable CS1591
+
 public partial class Path
 {
   public bool ShouldSerializeId() => Id is not null;

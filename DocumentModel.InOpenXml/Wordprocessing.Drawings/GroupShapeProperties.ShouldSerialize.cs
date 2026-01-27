@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class GroupShapeProperties
 {
   public bool ShouldSerializeBlackWhiteMode() => BlackWhiteMode is not null;

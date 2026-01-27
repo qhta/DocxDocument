@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class PageMargin
 {
   public bool ShouldSerializeTop() => Top is not null;

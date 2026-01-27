@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class TransformGroup
 {
   public bool ShouldSerializeRotation() => Rotation is not null;

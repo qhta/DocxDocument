@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class RevisionView
 {
   public bool ShouldSerializeMarkup() => Markup is not null;

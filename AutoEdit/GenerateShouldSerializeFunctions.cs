@@ -2,7 +2,7 @@
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 using System.Linq;
 
 namespace AutoEdit;
@@ -14,22 +14,22 @@ internal class GenerateShouldSerializeFunctions
   {
     var filename = Path.GetFileNameWithoutExtension(filePath);
     var ShouldSerializeFile = filename + ".ShouldSerialize.cs";
-    if (File.Exists(Path.Combine(Path.GetDirectoryName(filePath)!, ShouldSerializeFile)))
-      return;
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
     var root = tree.GetRoot();
-
-
-    var namespaceNode = root.DescendantNodes().OfType<NamespaceDeclarationSyntax>().FirstOrDefault();
-    var namespaceName = namespaceNode?.Name.ToString();
-    if (namespaceName == null)
+    if (filename==("Rectangle")) Debug.Assert(true);
+    
+    BaseNamespaceDeclarationSyntax? namespaceNode = root.DescendantNodes().OfType<NamespaceDeclarationSyntax>().FirstOrDefault();
+    if (namespaceNode == null)
     {
-      var fileScopedNamespaceNode = root.DescendantNodes().OfType<FileScopedNamespaceDeclarationSyntax>().FirstOrDefault();
-      namespaceName = fileScopedNamespaceNode?.Name.ToString();
+      namespaceNode = root.DescendantNodes().OfType<FileScopedNamespaceDeclarationSyntax>().FirstOrDefault();
     }
+    if (namespaceNode == null)
+      return;
+    var namespaceName = namespaceNode.Name.ToString();
 
-    var classNode = root.DescendantNodes().OfType<ClassDeclarationSyntax>().FirstOrDefault();
+
+    var classNode = namespaceNode.DescendantNodes().OfType<ClassDeclarationSyntax>().FirstOrDefault();
     if (classNode == null)
       return;
     var className = classNode.Identifier.Text;

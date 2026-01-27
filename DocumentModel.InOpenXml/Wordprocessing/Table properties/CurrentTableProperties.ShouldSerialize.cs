@@ -1,6 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 
-public partial class CurrentTableProperties<T>
+#pragma warning disable CS1591
+
+public partial class CurrentTableProperties<T> 
 {
   public bool ShouldSerializeTableWidth() => TableWidth is not null;
   public bool ShouldSerializeTableLayout() => TableLayout is not null;

@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class EffectList
 {
   public bool ShouldSerializeBlur() => Blur is not null;

@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class LineSketchStyleProperties
 {
   public bool ShouldSerializeSd() => Sd is not null;

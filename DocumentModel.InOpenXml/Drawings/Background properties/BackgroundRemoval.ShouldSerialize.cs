@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class BackgroundRemoval
 {
   public bool ShouldSerializeMarqueeTop() => MarqueeTop is not null;

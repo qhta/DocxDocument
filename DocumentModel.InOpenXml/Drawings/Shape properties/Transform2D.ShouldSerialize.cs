@@ -1,6 +1,8 @@
 namespace DocumentModel.Drawings;
 
-public partial class Transform2D<T>
+#pragma warning disable CS1591
+
+public partial class Transform2D<T> 
 {
   public bool ShouldSerializeRotation() => Rotation is not null;
   public bool ShouldSerializeHorizontalFlip() => HorizontalFlip is not null;

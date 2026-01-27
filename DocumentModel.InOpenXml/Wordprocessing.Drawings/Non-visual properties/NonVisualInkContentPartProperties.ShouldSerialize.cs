@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class NonVisualInkContentPartProperties
 {
   public bool ShouldSerializeIsComment() => IsComment is not null;

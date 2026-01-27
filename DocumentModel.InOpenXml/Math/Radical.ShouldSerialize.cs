@@ -1,5 +1,7 @@
 namespace DocumentModel.Math;
 
+#pragma warning disable CS1591
+
 public partial class Radical
 {
   public bool ShouldSerializeRadicalProperties() => RadicalProperties is not null;

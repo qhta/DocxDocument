@@ -1,5 +1,7 @@
 namespace DocumentModel.Math;
 
+#pragma warning disable CS1591
+
 public partial class PhantomProperties
 {
   public bool ShouldSerializeShowPhantom() => ShowPhantom is not null;

@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class MailMerge
 {
   public bool ShouldSerializeMainDocumentType() => MainDocumentType is not null;

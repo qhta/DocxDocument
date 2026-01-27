@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class Reflection
 {
   public bool ShouldSerializeBlurRadius() => BlurRadius is not null;

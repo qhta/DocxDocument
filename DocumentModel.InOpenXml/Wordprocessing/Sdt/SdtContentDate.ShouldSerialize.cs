@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class SdtContentDate
 {
   public bool ShouldSerializeFullDate() => FullDate is not null;

@@ -1,5 +1,7 @@
 namespace DocumentModel.Vml;
 
+#pragma warning disable CS1591
+
 public partial class ColorMenu
 {
   public bool ShouldSerializeExtension() => Extension is not null;

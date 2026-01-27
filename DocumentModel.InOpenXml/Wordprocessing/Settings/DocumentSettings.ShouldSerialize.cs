@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class DocumentSettings
 {
   public bool ShouldSerializeActiveWritingStyles() => ActiveWritingStyles is not null;
@@ -84,7 +86,6 @@ public partial class DocumentSettings
   public bool ShouldSerializeSaveThroughXslt() => SaveThroughXslt is not null;
   public bool ShouldSerializeSaveXmlDataOnly() => SaveXmlDataOnly is not null;
   public bool ShouldSerializeSchemaLibrary() => SchemaLibrary is not null;
-  [Obsolete("Obsolete")]
   public bool ShouldSerializeShapeDefaults() => ShapeDefaults is not null;
   public bool ShouldSerializeShowEnvelope() => ShowEnvelope is not null;
   public bool ShouldSerializeShowXmlTags() => ShowXmlTags is not null;
