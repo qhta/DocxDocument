@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.OEmbed;
 /// Represents an oEmbed element for embedding external media content in a Wordprocessing document.
 /// This class provides properties for specifying the oEmbed URL, media type, and picture locking behavior for embedded content.
 /// </summary>
-public partial class OEmbed : ModelElement
+public partial class OEmbed : ModelElement<DXOWY20OE.OEmbed>
 {
     /// <summary>
     /// The URL used for oEmbed, referencing the external media resource to be embedded in the document.

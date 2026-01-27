@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// Defines text wrapping behavior for VML shapes in a Wordprocessing document.
 /// This class specifies how text flows around shapes, including wrapping type, side, and positioning anchors.
 /// </summary>
-public partial class TextWrap : ModelElement
+public partial class TextWrap : ModelElement<DXVW.TextWrap>
 {
     /// <summary>
     /// The wrapping type applied to the shape, determining how text interacts with the object (e.g., square, tight, through).

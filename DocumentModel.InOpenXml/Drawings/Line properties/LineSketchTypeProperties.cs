@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents sketch type properties for a line, indicating the presence of various sketch styles.
 /// </summary>
-public partial class LineSketchTypeProperties : ModelElement
+public partial class LineSketchTypeProperties : ModelElement<DXO21DSS.LineSketchTypeProperties>
 {
     /// <summary>
     ///   Indicates whether the "None" sketch style is present.

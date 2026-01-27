@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents text spacing settings, allowing specification of spacing as a percentage or in points.
 /// </summary>
-public partial class TextSpacingType : ModelElement
+public partial class TextSpacingType : ModelElement<DXD.TextSpacingType>
 {
     /// <summary>
     ///   Spacing value specified as a percentage.

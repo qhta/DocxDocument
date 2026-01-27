@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a reference to a style matrix entry, including index and color information in multiple color models.
 /// </summary>
 [OpenXmlType(typeof(DXD.StyleMatrixReferenceType))]
-public partial class StyleMatrixReferenceType: ModelElement
+public partial class StyleMatrixReferenceType: ModelElement<DXD.StyleMatrixReferenceType>
 {
   /// <summary>
   ///   Index into the style matrix.

@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a relative offset effect, specifying X and Y offset values for positioning.
 /// </summary>
-public partial class RelativeOffset : ModelElement
+public partial class RelativeOffset : ModelElement<DXD.RelativeOffset>
 {
     /// <summary>
     ///   X offset value.

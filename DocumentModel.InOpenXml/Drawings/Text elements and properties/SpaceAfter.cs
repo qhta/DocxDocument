@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents the space after a paragraph, allowing specification as a percentage or in points.
 /// </summary>
-public partial class SpaceAfter : ModelElement
+public partial class SpaceAfter : ModelElement<DXD.SpaceAfter>
 {
     /// <summary>
     ///   Space after the paragraph specified as a percentage.

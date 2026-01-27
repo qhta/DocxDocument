@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents the space before a paragraph, allowing specification as a percentage or in points.
 /// </summary>
-public partial class SpaceBefore : ModelElement
+public partial class SpaceBefore : ModelElement<DXD.SpaceBefore>
 {
     /// <summary>
     ///   Space before the paragraph specified as a percentage.

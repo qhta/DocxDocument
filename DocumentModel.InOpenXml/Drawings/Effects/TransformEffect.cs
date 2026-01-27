@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a transform effect, allowing adjustment of scaling, skew, and shift for a drawing element.
 /// </summary>
-public partial class TransformEffect : ModelElement
+public partial class TransformEffect : ModelElement<DXD.TransformEffect>
 {
     /// <summary>
     ///   Horizontal scaling ratio.

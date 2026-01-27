@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents non-visual properties for a content part shape in a Wordprocessing document.
 /// This class provides access to drawing properties and ink content part properties, enabling configuration and management of non-visual aspects for content part shapes.
 /// </summary>
-public partial class WordNonVisualContentPartShapeProperties : ModelElement
+public partial class WordNonVisualContentPartShapeProperties : ModelElement<DXO10W.WordNonVisualContentPartShapeProperties>
 {
     /// <summary>
     /// Non-visual properties for the drawing element, including identifiers, names, and descriptive information.
