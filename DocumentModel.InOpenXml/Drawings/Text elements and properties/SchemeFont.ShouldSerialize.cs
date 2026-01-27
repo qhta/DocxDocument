@@ -1,6 +1,6 @@
 namespace DocumentModel.Drawings;
 
-public partial class SchemeFont<T>
+public partial class SchemeFont<T> 
 {
   public bool ShouldSerializeLatinFont() => LatinFont is not null;
   public bool ShouldSerializeEastAsianFont() => EastAsianFont is not null;
