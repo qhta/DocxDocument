@@ -33,35 +33,27 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
 {
   public bool Changed { get; private set; } = false;
 
-  public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
+  public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax classNode)
   {
-    if (node.Identifier.Text.Contains("ITextualElement")) Debug.Assert(true);
-    if (node.Identifier.Text.Contains("RelationshipType")) Debug.Assert(true);
+    if (classNode.Identifier.Text.Contains("RelationshipType")) Debug.Assert(true);
 
-    //if (node.Modifiers.Any(SyntaxKind.AbstractKeyword))
-    //  return node;
+    //if (classNode.Modifiers.Any(SyntaxKind.AbstractKeyword))
+    //  return classNode;
 
-    //if (node.ConstraintClauses.Any())
-    //  return node;
+    //if (classNode.ConstraintClauses.Any())
+    //  return classNode;
 
-    var typeParameterNames = node.TypeParameterList?.Parameters
+    var typeParameterNames = classNode.TypeParameterList?.Parameters
       .Select(p => p.Identifier.Text)
       .ToHashSet(StringComparer.Ordinal);
 
-    var baseType = node.BaseList?.Types
-        .Select(bt => bt.Type)
-        .OfType<GenericNameSyntax>()
-        .FirstOrDefault(g => g.Identifier.Text == "ModelElement" || HasConcreteTypeArgument(g, typeParameterNames));
+    if (classNode.InheritsFromGenericType(out var argTypeName) && argTypeName == null)
+      return base.VisitClassDeclaration(classNode);
 
-    if (baseType == null)
-      return base.VisitClassDeclaration(node);
-    var openXmlArgument = baseType.TypeArgumentList.Arguments.FirstOrDefault();
-    //if (!IsConcreteTypeArgument(openXmlArgument, typeParameterNames))
-    //  return base.VisitClassDeclaration(node);
-
-    var openXmlType = openXmlArgument!.ToString();
-
-    bool hasClassAttr = node.AttributeLists
+    var targetTypeName = argTypeName ?? classNode.GetBaseTypeName();
+    if (targetTypeName == null)
+      return base.VisitClassDeclaration(classNode);
+    bool hasClassAttr = classNode.AttributeLists
       .SelectMany(al => al.Attributes)
       .Any(attr => attr.Name.ToString().Contains("OpenXmlType"));
 
@@ -72,13 +64,13 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
         SyntaxFactory.AttributeArgumentList(
           SyntaxFactory.SingletonSeparatedList(
             SyntaxFactory.AttributeArgument(
-              SyntaxFactory.ParseExpression($"typeof({openXmlType})")
+              SyntaxFactory.ParseExpression($"typeof({targetTypeName})")
             )
           )
         )
       );
 
-      var leadingTrivia = node.GetLeadingTrivia();
+      var leadingTrivia = classNode.GetLeadingTrivia();
       var docTrivia = leadingTrivia.Where(t =>
           t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) ||
           t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia))
@@ -87,15 +79,15 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
 
       var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(openXmlTypeAttr))
         .WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
-      var newClassNode = node
+      var newClassNode = classNode
         .WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia))
-        .WithAttributeLists(node.AttributeLists.Add(attrList))
-        .WithTrailingTrivia(node.GetTrailingTrivia());
+        .WithAttributeLists(classNode.AttributeLists.Add(attrList))
+        .WithTrailingTrivia(classNode.GetTrailingTrivia());
 
       Changed = true;
       return newClassNode;
     }
-    return node;
+    return classNode;
   }
 
   private static bool IsDocumentationTrivia(SyntaxTrivia trivia)

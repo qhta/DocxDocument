@@ -4,9 +4,9 @@ namespace DocumentModel;
 /// </summary>
 /// <remarks>
 ///   This class and defines the
-///   fallback content within an <see cref = "IAlternateContent"/> structure. The fallback serves as the default content
+///   fallback content within an <see cref = "AlternateContent"/> structure. The fallback serves as the default content
 ///   representation that is rendered when an Office application cannot satisfy the requirements of any choice in the
-///   <see cref = "IAlternateContent.Choices"/> collection. This typically occurs when a document created with a newer
+///   <see cref = "AlternateContent.Choices"/> collection. This typically occurs when a document created with a newer
 ///   Office version containing advanced features is opened in an older version that doesn't support those features.
 ///   The fallback content provides a meaningful, albeit potentially simplified, representation of the original content
 ///   to ensure the document remains readable and functional across different Office versions. The collection contains

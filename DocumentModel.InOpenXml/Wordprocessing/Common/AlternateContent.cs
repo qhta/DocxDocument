@@ -19,7 +19,7 @@ namespace DocumentModel;
 ///   offering high-fidelity and simplified versions, or supporting different rendering engines with appropriate
 ///   content variants.
 /// </remarks>
-public partial class IAlternateContent : ModelElement
+public partial class AlternateContent : ModelElement
 {
     /// <summary>
     ///   Gets or sets the collection of alternate content choices, each representing a different rendering option.

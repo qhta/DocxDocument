@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents tiling options for a fill, including offset, scaling, flipping, and alignment.
 /// </summary>
-public partial class Tile : ModelElement
+public partial class Tile : ModelElement<DXD.Tile>
 {
     /// <summary>
     ///   Horizontal offset for the tile.

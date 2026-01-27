@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// A font element is written for each font face used in the document and includes the font name, optional font metrics for substitution, and optional embedded font forms.
 /// </summary>
 [OpenXmlType(typeof(DXW.Font))]
-public partial class FontDef : ModelElement
+public partial class FontDef : ModelElement<DXW.Font>
 {
   /// <summary>
   /// Primary name of the font, used to link font information with uses in the rFonts element in document content.

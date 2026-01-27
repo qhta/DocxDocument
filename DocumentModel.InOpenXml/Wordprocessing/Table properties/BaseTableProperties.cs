@@ -39,7 +39,7 @@ public partial class BaseTableProperties<T> : ModelElement<T> where T: DX.OpenXm
     /// <summary>
     /// Shading applied to the table, specifying background and pattern formatting.
     /// </summary>
-    public DMWD.Shading? Shading { get => _Shading; set => UpdateField(ref _Shading, value, nameof(Shading)); }
+    public Shading? Shading { get => _Shading; set => UpdateField(ref _Shading, value, nameof(Shading)); }
 
-    private DMWD.Shading? _Shading;
+    private Shading? _Shading;
 }
