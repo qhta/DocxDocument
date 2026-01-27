@@ -6,18 +6,23 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.BorderType))]
 public partial class BorderType : ModelElement<DXW.BorderType>
 {
- /// <summary>
- /// Border style, specifying the type of border (e.g., single, double, dashed).
- /// </summary>
- public BorderKind? Type { get; set; }
- /// <summary>
- /// Border width, specified as a 64-bit integer value.
- /// </summary>
- public Int64? Width { get; set; }
+  /// <summary>
+  /// Border style, specifying the type of border (e.g., single, double, dashed).
+  /// </summary>
+  public BorderKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- /// <summary>
- /// Indicates whether the border has a shadow effect.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.BorderType.Shadow))]
- public bool? Shadow { get; set; }
+  private BorderKind? _Type;
+  /// <summary>
+  /// Border width, specified as a 64-bit integer value.
+  /// </summary>
+  public Int64? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+
+  private Int64? _Width;
+  /// <summary>
+  /// Indicates whether the border has a shadow effect.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.BorderType.Shadow))]
+  public bool? Shadow { get => _Shadow; set => UpdateField(ref _Shadow, value, nameof(Shadow)); }
+
+  private bool? _Shadow;
 }
