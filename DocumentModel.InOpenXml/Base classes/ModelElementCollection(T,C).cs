@@ -3,10 +3,11 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Represents a collection of model elements that is associated with an OpenXml element.
+///   Represents a collection of model elements associated with an OpenXml element, providing synchronization between the document model and OpenXml elements.
+///   Supports loading, updating, and detaching data from WordprocessingML or other OpenXml-based collections.
 /// </summary>
-/// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
-/// <typeparam name="OpenXmlCollectionType">The type of the associated OpenXml element.</typeparam>
+/// <typeparam name="ItemType">Specifies the type of model elements contained in the collection.</typeparam>
+/// <typeparam name="OpenXmlCollectionType">Specifies the type of the associated OpenXml element being wrapped and synchronized.</typeparam>
 public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : ElementCollection<ItemType>,
   IWordprocessingDocumentAware
   where ItemType : ModelElement
@@ -14,26 +15,32 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
 {
   private OpenXmlCollectionType? _openXmlCollection;
 
+  /// <summary>
+  /// Indicates whether a loading operation is currently in progress.
+  /// </summary>
   protected bool isLoading;
 
+  /// <summary>
+  ///   The WordprocessingDocument instance to which this model element collection is attached, or null if not attached.
+  /// </summary>
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
   public DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
   /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
+  ///   Attaches this model element collection to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
   /// </summary>
-  /// <param name="wordprocessingDocument">Document to attach to.</param>
+  /// <param name="wordprocessingDocument">The WordprocessingDocument to attach to and load data from.</param>
   public virtual void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
   }
 
   /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
+  ///   Attaches this model element collection to the specified WordprocessingDocument and updates the document's package properties or OpenXml part with current data.
   /// </summary>
-  /// <param name="wordprocessingDocument">Document to attach to.</param>
+  /// <param name="wordprocessingDocument">The WordprocessingDocument to attach to and update.</param>
   public virtual void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
@@ -41,8 +48,8 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
 
 
   /// <summary>
-  /// Detach this instance from the attached document.
-  /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
+  ///   Detaches this model element collection from the attached document, clearing the underlying OpenXml element reference.
+  ///   After detaching, further access to OpenXml properties is not possible until re-attached.
   /// </summary>
   public virtual void Detach()
   {
@@ -52,7 +59,8 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
 
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="ModelElement{OpenXmlItemType}"/> class.
+  ///   Initializes a new instance of the <see cref="ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class.
+  ///   Subscribes to collection change events to synchronize with the underlying OpenXml collection.
   /// </summary>
   protected ModelElementCollection()
   {
@@ -71,14 +79,18 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="ModelElement{OpenXmlItemType}"/> class with the specified OpenXml element.
+  ///   Initializes a new instance of the <see cref="ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class with the specified OpenXml element.
   /// </summary>
-  /// <param name="openXmlCollection">The OpenXml element to wrap.</param>
+  /// <param name="openXmlCollection">The OpenXml collection element to wrap and synchronize with.</param>
   protected ModelElementCollection(OpenXmlCollectionType? openXmlCollection): this()
   {
     _openXmlCollection = openXmlCollection;
   }
 
+  /// <summary>
+  ///   Initializes a new instance of the <see cref="ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class with the specified items.
+  /// </summary>
+  /// <param name="items">The items to add to the collection.</param>
   protected ModelElementCollection(IEnumerable<ItemType> items): this()
   {
     foreach (var item in items)
@@ -88,27 +100,27 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   }
 
   /// <summary>
-  /// Returns the wrapped OpenXml element instance.
+  ///   Returns the wrapped OpenXml collection element instance, or null if not set.
   /// </summary>
-  /// <returns>The OpenXml element instance, or null if not set.</returns>
+  /// <returns>The OpenXml collection element instance, or null if not set.</returns>
   public OpenXmlCollectionType? GetOpenXmlElement()
   {
     return _openXmlCollection;
   }
 
   /// <summary>
-  /// Assigns the wrapped OpenXml element instance.
+  ///   Assigns the wrapped OpenXml collection element instance.
   /// </summary>
-  /// <param name="element">The OpenXml element to assign.</param>
+  /// <param name="element">The OpenXml collection element to assign.</param>
   public void SetOpenXmlElement(OpenXmlCollectionType? element)
   {
     _openXmlCollection = element;
   }
 
   /// <summary>
-  /// Returns the OpenXml element instance for update operations.
+  ///   Returns the OpenXml collection element instance for update operations, or null if not set.
   /// </summary>
-  /// <returns>The OpenXml element instance, or null if not set.</returns>
+  /// <returns>The OpenXml collection element instance, or null if not set.</returns>
   protected override object? GetUpdatableOpenXmlElement()
   {
     return _openXmlCollection;
@@ -116,11 +128,10 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
 
 
   /// <summary>
-  /// Override to load data using the specified OpenXml element.
+  ///   Loads data from the specified OpenXml element into this model element collection.
+  ///   Sets the isLoading flag to true while loading data to avoid unnecessary updates by collection change events.
   /// </summary>
   /// <param name="openXmlElement">The OpenXml element to load data from.</param>
-  /// <remarks>Sets the isLoading flag to true while loading data.
-  /// It avoids unnecessary updates by OnCollectionChanged event.</remarks>
   public override void LoadData(object openXmlElement)
   {
     isLoading = true;
@@ -133,14 +144,16 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
 
 
   /// <summary>
-  /// Abstract method to load data from the modeled OpenXml collection to this instance.
+  ///   Loads data from the modeled OpenXml collection into this model element collection instance.
+  ///   Must be implemented by derived classes to define the mapping logic.
   /// </summary>
   /// <param name="openXmlModeledCollection">The OpenXml collection to load data from.</param>
   protected abstract void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection);
 
 
   /// <summary>
-  /// Override to store data to the specified OpenXml element.
+  ///   Stores data from this model element collection to the specified OpenXml element.
+  ///   Calls the abstract <see cref="UpdateDataCollection"/> method for the actual mapping logic.
   /// </summary>
   /// <param name="openXmlElement">The OpenXml element to store data to.</param>
   public override void UpdateData(object openXmlElement)
@@ -152,7 +165,8 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   }
 
   /// <summary>
-  /// Abstract method to store data from this instance to the modeled OpenXml collection.
+  ///   Stores data from this model element collection instance to the modeled OpenXml collection.
+  ///   Must be implemented by derived classes to define the mapping logic.
   /// </summary>
   /// <param name="openXmlModeledCollection">The OpenXml collection to store data to.</param>
   protected abstract void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection);

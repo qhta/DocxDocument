@@ -30,6 +30,11 @@ public abstract class Color: ModelElement
   //public string? ToString();
 }
 
-public class Color<T> : ModelElement<T> where T : DX.OpenXmlElement
+/// <summary>
+/// Represents a color model element with a generic underlying Open XML element type.
+/// </summary>
+/// <typeparam name="T">The type of the underlying Open XML element represented by this color model element. Must derive from
+/// DX.OpenXmlElement.</typeparam>
+public abstract class Color<T> : ModelElement<T> where T : DX.OpenXmlElement
 {
 }

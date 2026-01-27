@@ -20,13 +20,4 @@ public class ActiveWritingStyles : ElementCollection<ActiveWritingStyle>
  {
  }
 
- public override void UpdateData(object openXmlElement)
- {
-  base.UpdateData(openXmlElement);
- }
-
- public override void LoadData(object openXmlElement)
- {
-  base.LoadData(openXmlElement);
- }
 }

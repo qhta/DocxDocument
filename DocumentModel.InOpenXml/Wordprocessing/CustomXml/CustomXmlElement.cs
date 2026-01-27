@@ -18,8 +18,4 @@ public partial class CustomXmlElement : CollectionItem
   /// </summary>
   public CustomXmlProperties? CustomXmlProperties { get; set; }
 
-  protected override object? GetUpdatableOpenXmlElement()
-  {
-    throw new NotImplementedException();
-  }
 }

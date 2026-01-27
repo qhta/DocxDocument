@@ -25,8 +25,5 @@ namespace DocumentModel;
 [OpenXmlType(typeof(DXD.ExtensionList))]
 public class ExtensionList : ModelElementCollection<Extension, DXD.ExtensionList, DXD.Extension>
 {
-  protected override object? GetUpdatableOpenXmlElement()
-  {
-    throw new NotImplementedException();
-  }
+
 }

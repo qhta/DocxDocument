@@ -1,5 +1,8 @@
 namespace DocumentModel.Vml;
-[OpenXmlType(typeof(Relation))]
-public class Relations : ElementCollection<Relation>
+
+/// <summary>
+/// It is a collection of Relation elements.
+/// </summary>
+public class Relations: ElementCollection<Relation>
 {
 }

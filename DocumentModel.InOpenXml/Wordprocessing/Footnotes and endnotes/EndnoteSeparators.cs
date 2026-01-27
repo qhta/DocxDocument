@@ -6,8 +6,5 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(EndnoteSeparator))]
 public class EndnoteSeparators : ElementCollection<EndnoteSeparator>
 {
- protected override object? GetUpdatableOpenXmlElement()
- {
-  throw new NotImplementedException();
- }
+
 }
