@@ -848,12 +848,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// Represents the following element tag in the schema: w:saveSubsetFonts
  /// </remarks>
  [Category("Save")]
- /// <summary>
- /// Specifies that fonts are subsetted when font embedding is enabled.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:saveSubsetFonts
- /// </remarks>
  [OpenXmlProperty(nameof(DXW.Settings.SaveSubsetFonts))]
  public bool? SaveSubsetFonts { get => _SaveSubsetFonts; set => UpdateField(ref _SaveSubsetFonts, value, nameof(SaveSubsetFonts)); }
 
