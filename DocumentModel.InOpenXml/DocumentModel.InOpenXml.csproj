@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <RootNamespace>DocumentModel</RootNamespace>
     <AppDesignerFolder>Properties and settings</AppDesignerFolder>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -3,9 +3,6 @@ namespace DocumentModel.Drawings;
 ///   Represents a format scheme, including name and style lists for fills, lines, effects, and background fills.
 /// </summary>
 [OpenXmlType(typeof(DXD.FormatScheme))]
-/// <summary>
-///   Represents a format scheme, including name and style lists for fills, lines, effects, and background fills.
-/// </summary>
 public partial class FormatScheme : ModelElement<DXD.FormatScheme>
 {
  /// <summary>

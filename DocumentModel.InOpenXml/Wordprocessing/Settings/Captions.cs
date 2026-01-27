@@ -10,9 +10,6 @@ public partial class Captions : ModelElement<DXW.Captions>
  /// </summary>
  [OpenXmlLoadData(nameof(LoadCaptionsInOpenXml))]
  [OpenXmlUpdateData(nameof(UpdateCaptionDefinitionsInOpenXml))]
- /// <summary>
- /// Contains the collection of caption format definitions for different object types.
- /// </summary>
  public CaptionDefinitions? CaptionDefinitions { get => _CaptionDefinitions; set => UpdateField(ref _CaptionDefinitions, value, nameof(CaptionDefinitions)); }
 
  private CaptionDefinitions? _CaptionDefinitions;
@@ -63,9 +60,6 @@ public partial class Captions : ModelElement<DXW.Captions>
  /// </summary>
  [OpenXmlLoadData(nameof(LoadAutoCaptionsInOpenXml))]
  [OpenXmlUpdateData(nameof(UpdateAutoCaptionsInOpenXml))]
- /// <summary>
- /// Contains the collection of automatic captioning rules for objects in the document.
- /// </summary>
  public AutoCaptions? AutoCaptions { get => _AutoCaptions; set => UpdateField(ref _AutoCaptions, value, nameof(AutoCaptions)); }
 
  private AutoCaptions? _AutoCaptions;

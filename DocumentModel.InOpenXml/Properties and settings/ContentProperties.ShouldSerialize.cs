@@ -1,5 +1,7 @@
 namespace DocumentModel;
 
+#pragma warning disable CS1591
+
 public partial class ContentProperties
 {
   public bool ShouldSerializeTemplate() => Template is not null;
