@@ -30,7 +30,7 @@ public sealed class CustomProperties : ModelElementCollection<CustomProperty, DX
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
   /// </summary>
   /// <param name="wordprocessingDocument">Document to attach to.</param>
-  public override void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
+  public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     base.AttachAndLoad(wordprocessingDocument);
     var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
@@ -42,7 +42,7 @@ public sealed class CustomProperties : ModelElementCollection<CustomProperty, DX
   /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
   /// </summary>
   /// <param name="wordprocessingDocument">Document to attach to.</param>
-  public override void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)
+  public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     base.AttachAndUpdate(wordprocessingDocument);
     var customFileProperties = wordprocessingDocument.GetCustomFileProperties();

@@ -8,7 +8,7 @@ public interface IIdentifiedChange
   /// <summary>
   /// Unique identifier for the tracked change, used to reference and manage the revision.
   /// </summary>
-  public string? Id { get; set; }
+  public int? Id { get; set; }
   /// <summary>
   /// Author of the tracked change, identifying the user who made the revision.
   /// </summary>

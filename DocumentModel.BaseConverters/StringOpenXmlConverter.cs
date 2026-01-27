@@ -12,8 +12,34 @@ public static class StringOpenXmlConverter
     typeof(DXW.String255Type),
     typeof(DXW.String253Type),
     typeof(DX.OpenXmlLeafTextElement),
-    typeof(DX.OpenXmlLeafElement)
+    typeof(DX.OpenXmlLeafElement),
+    typeof(DX.EnumValue<>),
   ];
+
+  /// <summary>
+  /// Checks if the specified OpenXml type is supported for conversion to/from string.
+  /// </summary>
+  /// <param name="openXmlType">The OpenXml type to check.</param>
+  /// <returns></returns>
+  public static bool SupportsType(Type openXmlType)
+  {
+    if (openXmlType.IsGenericType)
+    {
+      var genericType = openXmlType.GetGenericTypeDefinition();
+      return SupportedTypes.Contains(genericType);
+    }
+
+    if (openXmlType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    {
+      var valProperty = openXmlType.GetProperty("Val");
+      return (valProperty != null && valProperty.PropertyType == typeof(DX.StringValue));
+    }
+
+    if (SupportedTypes.Contains(openXmlType))
+      return true;
+
+    return false;
+  }
 
   #region StringValue conversion methods
 
@@ -206,6 +232,46 @@ public static class StringOpenXmlConverter
 
   #endregion
 
+  #region DX.EnumValue<> conversion methods
+
+  /// <summary>
+  /// Retrieves the text content from an OpenXml EnumValue.
+  /// </summary>
+  /// <param name="element">The OpenXml EnumValue.</param>
+  /// <returns>The text content of the element, or null if the element is null.</returns>
+  public static string? GetValue(DX.OpenXmlSimpleType? element)
+  {
+    if (element == null) return null;
+
+    var valProperty = element.GetType().GetProperty("Value");
+    if (valProperty == null)
+      throw new InvalidOperationException($"Property 'Value' not found on {element.GetType().Name}");
+
+    var value = valProperty.GetValue(element);
+    return value?.ToString();
+  }
+
+  /// <summary>
+  /// Creates an OpenXml EnumValue and sets its value or text property.
+  /// </summary>
+  /// <param name="value">The string value to set.</param>
+  /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXml EnumValue.</param>
+  /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
+  public static DX.OpenXmlSimpleType? CreateOpenXmlEnumValue(string? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    var element = (DX.OpenXmlSimpleType)Activator.CreateInstance(targetType)!;
+    var valProperty = element.GetType().GetProperty("Value");
+    if (valProperty == null)
+      throw new InvalidOperationException($"Property 'Value' not found on {element.GetType().Name}");
+
+    valProperty.SetValue(element, new DX.StringValue(value));
+    return element;
+  }
+
+  #endregion
+
   #region Generic OpenXml conversion methods
 
   /// <summary>
@@ -233,6 +299,8 @@ public static class StringOpenXmlConverter
       return CreateOpenXmlLeafTextElement(value, targetType);
     if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafElement)))
       return CreateOpenXmlLeafElement(value, targetType);
+    if (targetType.IsGenericType && targetType.GetGenericTypeDefinition() == typeof(DX.EnumValue<>))
+      return CreateOpenXmlEnumValue(value, targetType);
 
     throw new NotSupportedException($"Conversion to type {targetType} is not supported.");
   }
@@ -261,6 +329,9 @@ public static class StringOpenXmlConverter
       return GetValue(textElement);
     if (value is DX.OpenXmlLeafElement leafElement)
       return GetValue(leafElement);
+    
+    if (sourceType.IsGenericType && sourceType.GetGenericTypeDefinition() == typeof(DX.EnumValue<>) && value is DX.OpenXmlSimpleType enumValue)
+      return GetValue(enumValue);
 
     throw new NotSupportedException($"Conversion to type {sourceType} is not supported.");
   }

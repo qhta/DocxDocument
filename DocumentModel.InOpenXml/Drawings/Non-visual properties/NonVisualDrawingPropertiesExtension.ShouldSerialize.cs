@@ -1,6 +1,6 @@
 namespace DocumentModel.Drawings;
 
-public partial class NonVisualDrawingPropertiesExtension
+public partial class NonVisualDrawingPropertiesExtension<T>
 {
   public bool ShouldSerializeCompatExtension() => CompatExtension is not null;
   public bool ShouldSerializeBackgroundProperties() => BackgroundProperties is not null;

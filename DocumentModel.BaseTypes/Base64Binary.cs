@@ -36,6 +36,7 @@
 ///   </para>
 /// </remarks>
 [JsonConverter(typeof(Base64BinaryJsonConverter))]
+[SimpleType]
 public partial class Base64Binary : IEquatable<Base64Binary>
 {
   private readonly byte[] value = Array.Empty<byte>();

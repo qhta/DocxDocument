@@ -1,9 +1,10 @@
-namespace DocumentModel.Drawings.Office;
+namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the NonVisualGroupDrawingShapeProperties Class.
 /// </summary>
 [OpenXmlType(typeof(DXOD.NonVisualGroupDrawingShapeProperties))]
-public partial class NonVisualGroupDrawingShapeProperties : ModelElement<DXOD.NonVisualGroupDrawingShapeProperties>
+public abstract partial class NonVisualGroupDrawingShapeProperties<T>: 
+  ModelElement<DXOD.NonVisualGroupDrawingShapeProperties>
 {
  /// <summary>
  ///   GroupShapeLocks.

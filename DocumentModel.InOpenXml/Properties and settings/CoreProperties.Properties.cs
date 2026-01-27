@@ -174,7 +174,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The version number. This value is set by the user or by the application.
   /// </summary>
-  [OpenXmlProperty(nameof(PackageProperties.Modified))]
+  [OpenXmlProperty(nameof(PackageProperties.Version))]
   public string? Version
   {
     get => _Version;
@@ -185,7 +185,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The status of the content. Values might include “Draft”, “Reviewed”, and “Final”.
   /// </summary>
-  [OpenXmlProperty(nameof(PackageProperties.Modified))]
+  [OpenXmlProperty(nameof(PackageProperties.ContentStatus))]
   public string? ContentStatus
   {
     get => _ContentStatus;

@@ -1,6 +1,6 @@
-namespace DocumentModel.Wordprocessing.Drawings;
+namespace DocumentModel.Drawings;
 
-public partial class NonVisualDrawingProperties
+public partial class NonVisualDrawingProperties<T>
 {
   public bool ShouldSerializeId() => Id is not null;
   public bool ShouldSerializeName() => Name is not null;

@@ -2,6 +2,7 @@ namespace DocumentModel;
 /// <summary>
 ///   IHyperlink List.
 /// </summary>
+[SimpleType]
 [OpenXmlType(typeof(HyperlinkInfo))]
 public class HyperlinkList : ElementCollection<HyperlinkInfo>
 {
