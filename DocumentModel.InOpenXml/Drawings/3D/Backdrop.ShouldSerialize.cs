@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class Backdrop
 {
   public bool ShouldSerializeAnchor() => Anchor is not null;

@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class Source
 {
   public bool ShouldSerializeTag() => Tag is not null;

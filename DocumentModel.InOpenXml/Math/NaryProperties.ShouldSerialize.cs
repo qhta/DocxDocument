@@ -1,5 +1,7 @@
 namespace DocumentModel.Math;
 
+#pragma warning disable CS1591
+
 public partial class NaryProperties
 {
   public bool ShouldSerializeOperator() => Operator is not null;

@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class BaseTableCellProperties<T>
 {
   public bool ShouldSerializeShading() => Shading is not null;

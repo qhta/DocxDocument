@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class BaseTableRowProperties
 {
   public bool ShouldSerializeRowHeight() => RowHeight is not null;

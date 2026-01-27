@@ -1,5 +1,7 @@
 namespace DocumentModel;
 
+#pragma warning disable CS1591
+
 public partial class AlternateContent
 {
   public bool ShouldSerializeChoices() => Choices is not null;

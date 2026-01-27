@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class NumberingProperties
 {
   public bool ShouldSerializeNumberingLevelReference() => NumberingLevelReference is not null;

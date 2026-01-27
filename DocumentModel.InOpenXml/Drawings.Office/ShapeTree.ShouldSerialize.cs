@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings.Office;
 
+#pragma warning disable CS1591
+
 public partial class ShapeTree
 {
   public bool ShouldSerializeGroupShapeNonVisualProperties() => GroupShapeNonVisualProperties is not null;

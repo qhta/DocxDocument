@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class NonVisualDrawingShapeProperties<T>
 {
   public bool ShouldSerializeTextBox() => TextBox is not null;

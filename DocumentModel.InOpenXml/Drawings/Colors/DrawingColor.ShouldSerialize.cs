@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class DrawingColor<T> 
 {
   public bool ShouldSerializeTint() => Tint is not null;

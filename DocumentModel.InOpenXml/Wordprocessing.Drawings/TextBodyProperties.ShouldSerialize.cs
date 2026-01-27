@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class TextBodyProperties
 {
   public bool ShouldSerializeRotation() => Rotation is not null;

@@ -1,5 +1,7 @@
 namespace DocumentModel.Drawings;
 
+#pragma warning disable CS1591
+
 public partial class Rotation
 {
   public bool ShouldSerializeLatitude() => Latitude is not null;

@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class LatentStyles
 {
   public bool ShouldSerializeDefaultLockedState() => DefaultLockedState is not null;
