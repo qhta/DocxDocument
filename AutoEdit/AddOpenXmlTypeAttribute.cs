@@ -1,4 +1,6 @@
-﻿namespace AutoEdit;
+﻿using System.Diagnostics;
+
+namespace AutoEdit;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -33,11 +35,14 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
 
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
   {
-    if (node.Modifiers.Any(SyntaxKind.AbstractKeyword))
-      return node;
+    if (node.Identifier.Text.Contains("ITextualElement")) Debug.Assert(true);
+    if (node.Identifier.Text.Contains("RelationshipType")) Debug.Assert(true);
 
-    if (node.ConstraintClauses.Any())
-      return node;
+    //if (node.Modifiers.Any(SyntaxKind.AbstractKeyword))
+    //  return node;
+
+    //if (node.ConstraintClauses.Any())
+    //  return node;
 
     var typeParameterNames = node.TypeParameterList?.Parameters
       .Select(p => p.Identifier.Text)
@@ -51,8 +56,8 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
     if (baseType == null)
       return base.VisitClassDeclaration(node);
     var openXmlArgument = baseType.TypeArgumentList.Arguments.FirstOrDefault();
-    if (!IsConcreteTypeArgument(openXmlArgument, typeParameterNames))
-      return base.VisitClassDeclaration(node);
+    //if (!IsConcreteTypeArgument(openXmlArgument, typeParameterNames))
+    //  return base.VisitClassDeclaration(node);
 
     var openXmlType = openXmlArgument!.ToString();
 
@@ -86,7 +91,6 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
         .WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia))
         .WithAttributeLists(node.AttributeLists.Add(attrList))
         .WithTrailingTrivia(node.GetTrailingTrivia());
-
 
       Changed = true;
       return newClassNode;
