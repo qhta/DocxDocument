@@ -1,25 +1,24 @@
-﻿
-
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 using DocumentModel.OpenXml;
-
-using DX = DocumentFormat.OpenXml;
-
-using DXW = DocumentFormat.OpenXml.Wordprocessing;
 
 using DMW = DocumentModel.Wordprocessing.Test;
 
 namespace DocumentModel.BaseConverters.Test;
 
+/// <summary>
+///   Provides unit tests for verifying the correctness of <see cref="OpenXmlSimpleValueConverter"/> conversions between .NET types and Open XML value types.
+///   Tests round-trip conversion for boolean, string, enum, and integer values.
+/// </summary>
 public static class OpenXmlSimpleValueConverterTest
 {
-
-
+  /// <summary>
+  ///   Runs all OpenXmlSimpleValueConverter tests and reports results to the console.
+  /// </summary>
+  /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
     bool testResult = true;
-
     Console.Write("OpenXmlSimpleValueConverterTest TestBoolValueConversion ");
     if (TestBoolValueConversion())
     {
@@ -60,10 +59,13 @@ public static class OpenXmlSimpleValueConverterTest
       Console.WriteLine("failed.");
       testResult = false;
     }
-
     return testResult;
   }
 
+  /// <summary>
+  ///   Tests round-trip conversion of boolean values to and from <see cref="DX.BooleanValue"/>.
+  /// </summary>
+  /// <returns>True if the conversion is correct; otherwise, false.</returns>
   private static bool TestBoolValueConversion()
   {
     const bool inputTrue = true;
@@ -84,6 +86,10 @@ public static class OpenXmlSimpleValueConverterTest
     return roundTripFalse is bool falseResult && falseResult == inputFalse;
   }
 
+  /// <summary>
+  ///   Tests round-trip conversion of string values to and from <see cref="DX.StringValue"/>.
+  /// </summary>
+  /// <returns>True if the conversion is correct; otherwise, false.</returns>
   private static bool TestStringValueConversion()
   {
     const string input = "SampleText";
@@ -95,6 +101,10 @@ public static class OpenXmlSimpleValueConverterTest
     return roundTrip is string str && str == input;
   }
 
+  /// <summary>
+  ///   Tests round-trip conversion of enum values to and from <see cref="DX.EnumValue{T}"/>.
+  /// </summary>
+  /// <returns>True if the conversion is correct; otherwise, false.</returns>
   private static bool TestEnumValueConversion()
   {
     var input = DMW.UnderlineKind.WavyDouble;
@@ -106,6 +116,10 @@ public static class OpenXmlSimpleValueConverterTest
     return roundTrip is DMW.UnderlineKind enumResult && enumResult == input;
   }
 
+  /// <summary>
+  ///   Tests round-trip conversion of integer values to and from <see cref="DX.Int32Value"/>.
+  /// </summary>
+  /// <returns>True if the conversion is correct; otherwise, false.</returns>
   private static bool TestIntValueConversion()
   {
     const int input = 12345;
@@ -116,5 +130,4 @@ public static class OpenXmlSimpleValueConverterTest
     var roundTrip = OpenXmlSimpleValueConverter.ConvertFromOpenXml(openXml, typeof(int));
     return roundTrip is int value && value == input;
   }
-
 }

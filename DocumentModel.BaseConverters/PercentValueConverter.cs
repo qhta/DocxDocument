@@ -129,7 +129,7 @@ public static class PercentValueConverter
     if (value is DX.OpenXmlLeafElement openXmlLeafElement)
       return GetPercentFromOpenXml(openXmlLeafElement);
 
-    throw new NotSupportedException($"Conversion to type {sourceType} is not supported.");
+    throw new NotSupportedException($"Conversion from type {sourceType} is not supported.");
   }
 
   #endregion

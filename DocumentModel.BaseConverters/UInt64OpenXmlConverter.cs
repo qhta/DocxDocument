@@ -336,7 +336,7 @@ public static class UInt64OpenXmlConverter
     if (targetType == typeof(DX.StringValue))
       return new DX.StringValue(value.ToString());
 
-    throw new InvalidOperationException($"Conversion to {targetType} is not supported");
+    throw new InvalidOperationException($"Conversion from UInt64 to {targetType} is not supported");
   }
 
   /// <summary>
@@ -382,7 +382,7 @@ public static class UInt64OpenXmlConverter
       return null;
     }
 
-    throw new InvalidOperationException($"Conversion from {sourceType} is not supported");
+    throw new InvalidOperationException($"Conversion from {sourceType} to UInt64 is not supported");
   }
 
   #endregion

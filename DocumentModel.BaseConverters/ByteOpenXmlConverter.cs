@@ -331,7 +331,7 @@ public static class ByteOpenXmlConverter
     if (targetType == typeof(DX.StringValue))
       return new DX.StringValue(value.ToString());
 
-    throw new InvalidOperationException($"Conversion to {targetType} is not supported");
+    throw new InvalidOperationException($"Conversion from Byte to {targetType} is not supported");
   }
 
   /// <summary>
@@ -377,7 +377,7 @@ public static class ByteOpenXmlConverter
       return null;
     }
 
-    throw new InvalidOperationException($"Conversion from {sourceType} is not supported");
+    throw new InvalidOperationException($"Conversion from {sourceType} to is not supported");
   }
 
   #endregion
