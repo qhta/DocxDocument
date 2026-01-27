@@ -8,12 +8,15 @@ namespace DocumentModel.Wordprocessing.Drawings;
 [OpenXmlType(typeof(DXO10W.Scene3D))]
 public partial class Scene3D : ModelElement<DXO10W.Scene3D>, IDrawingProperty
 {
-  /// <summary>
-  /// The camera settings for the 3D scene, specifying position, orientation, and perspective for rendering.
-  /// </summary>
-  public Camera? Camera { get; set; }
-  /// <summary>
-  /// The lighting rig configuration for the 3D scene, defining the arrangement and properties of lights used for illumination.
-  /// </summary>
-  public LightRig? LightRig { get; set; }
+ /// <summary>
+ /// The camera settings for the 3D scene, specifying position, orientation, and perspective for rendering.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO10W.Scene3D.Camera))]
+ public Camera? Camera { get; set; }
+
+ /// <summary>
+ /// The lighting rig configuration for the 3D scene, defining the arrangement and properties of lights used for illumination.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO10W.Scene3D.LightRig))]
+ public LightRig? LightRig { get; set; }
 }

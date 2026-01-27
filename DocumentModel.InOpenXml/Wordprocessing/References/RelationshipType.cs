@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 /// Represents an abstract base class for defining a strongly-typed relationship element within a document model.
 /// </summary>
@@ -7,18 +8,20 @@ namespace DocumentModel.Wordprocessing;
 /// relationships.</remarks>
 /// <typeparam name = "T">The type of the underlying relationship element represented by this class. Must be a type derived from
 /// DXW.RelationshipType.</typeparam>
-public abstract partial class RelationshipType<T> : ModelElement<T> where T : DXW.RelationshipType
+[OpenXmlType(typeof(DXW.RelationshipType))]
+public abstract partial class RelationshipType<T>: ModelElement<T> where T: DXW.RelationshipType
 {
   /// <summary>
   /// Gets the underlying Document instance associated with this object.
   /// </summary>
-   
-  /// <summary>
-  /// Unique identifier for the relationship.
-  /// </summary>
-  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+  public string? Id
+  {
+    get => _Id;
+    set => UpdateField(ref _Id, value, nameof(Id));
+  }
 
   private string? _Id;
+
   /// <summary>
   /// Attaches the specified WordprocessingDocument and loads its data into the current instance.
   /// </summary>
@@ -28,6 +31,7 @@ public abstract partial class RelationshipType<T> : ModelElement<T> where T : DX
     base.AttachAndLoad(wordprocessingDocument);
     if (WordprocessingDocument == null)
       return;
+
     LoadData(WordprocessingDocument);
   }
 
@@ -40,6 +44,7 @@ public abstract partial class RelationshipType<T> : ModelElement<T> where T : DX
     base.AttachAndUpdate(wordprocessingDocument);
     if (WordprocessingDocument == null)
       return;
+
     UpdateData(WordprocessingDocument);
   }
 
@@ -54,6 +59,7 @@ public abstract partial class RelationshipType<T> : ModelElement<T> where T : DX
   {
     if (WordprocessingDocument == null)
       return;
+
     UpdateData(WordprocessingDocument);
   }
 
@@ -66,7 +72,7 @@ public abstract partial class RelationshipType<T> : ModelElement<T> where T : DX
   /// <param name = "document">The Document from which to load data.</param>
   public virtual void LoadData(DXPP.WordprocessingDocument document)
   {
-    DXW.RelationshipType? updatedElement = (DXW.RelationshipType? )GetUpdatableOpenXmlElement();
+    DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableOpenXmlElement();
     if (updatedElement != null)
     {
       Id = updatedElement.Id;
@@ -82,7 +88,7 @@ public abstract partial class RelationshipType<T> : ModelElement<T> where T : DX
   /// <param name = "document">The Document to update with new relationship data. Cannot be null.</param>
   public virtual void UpdateData(DXPP.WordprocessingDocument document)
   {
-    DXW.RelationshipType? updatedElement = (DXW.RelationshipType? )GetUpdatableOpenXmlElement();
+    DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableOpenXmlElement();
     if (updatedElement != null)
     {
       updatedElement.Id = Id;

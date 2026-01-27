@@ -10,7 +10,7 @@ public class ExternalRelationship : ReferenceRelationship<DXPP.ExternalRelations
  /// <param name = "id">The relationship ID.</param>
  public ExternalRelationship(Uri? externalUri, string? relationshipType, string? id) : base()
  {
-  Uri = externalUri;
+  Uri = externalUri?.ToString();
   RelationshipType = relationshipType;
   Id = id;
   IsExternal = true;

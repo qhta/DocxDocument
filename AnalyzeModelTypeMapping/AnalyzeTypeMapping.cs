@@ -83,8 +83,9 @@ public class AnalyzeTypeMapping
     {
       foreach (var prop in type.GetModelProperties())
       {
-        if (prop.Name=="Version") Debug.Assert(true);
         var propType = prop.PropertyType.GetNotNullableType();
+        if (propType == typeof(Uri)) Debug.Assert(true);
+
         if (!propType.IsEnum && !propType.IsAbstract && !propType.IsInterface && !propType.IsGenericTypeDefinition)
         {
           if (propType.Namespace?.StartsWith("DocumentFormat.OpenXml") == true)
@@ -103,10 +104,10 @@ public class AnalyzeTypeMapping
 
           var openXmlPropType = openXmlProp.PropertyType.GetNotNullableType()!;
           if (propType == typeof(string) && openXmlPropType.BaseType == typeof(DX.OpenXmlLeafTextElement)) Debug.Assert(true);
-          var baseType = GetBaseType(openXmlPropType);
+          //var baseType = GetBaseType(openXmlPropType);
           if (propType == typeof(string) && openXmlPropType.BaseType == typeof(DX.OpenXmlLeafElement)) Debug.Assert(true);
         
-          var openXmlPropTypeNameBaseType = GetOpenXmlTypeName(baseType);
+          var openXmlPropTypeNameBaseType = GetOpenXmlTypeName(openXmlPropType);
           var mapping = new TypeMapping(FormatTypeName(propType), openXmlPropTypeNameBaseType);
           PropTypeMappings[mapping] = PropTypeMappings.TryGetValue(mapping, out var count) ? count + 1 : 1;
         }
@@ -121,7 +122,10 @@ public class AnalyzeTypeMapping
   /// <returns></returns>
   private string GetOpenXmlTypeName(Type type)
   {
-    if (type.BaseType == typeof(DX.OpenXmlLeafElement))
+    if (type.Namespace=="DocumentFormat.OpenXml" || type.Namespace=="System")
+      return FormatTypeName(type);
+    var baseType = type.BaseType;
+    if (baseType != null)
     {
       var valPropDeclarations = new List<string>();
       foreach (var valProp in type
@@ -131,27 +135,12 @@ public class AnalyzeTypeMapping
         valPropDeclarations.Add($"{valProp.Name}: {FormatTypeName(valPropType)}");
       }
       if (valPropDeclarations.Count > 0)
-      {
-        return $"{FormatTypeName(type)} -> {FormatTypeName(type.BaseType)} {{ {string.Join(", ", valPropDeclarations)} }}";
-      }
-    }
-    if (type.BaseType == typeof(DX.OpenXmlLeafTextElement))
-    {
-      var valPropDeclarations = new List<string>();
-      foreach (var valProp in type
-                 .GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
-      {
-        var valPropType = valProp.PropertyType.GetNotNullableType()!;
-        valPropDeclarations.Add($"{valProp.Name}: {FormatTypeName(valPropType)}");
-      }
-      if (valPropDeclarations.Count > 0)
-      {
-        return $"{FormatTypeName(type)} {{ {string.Join(", ", valPropDeclarations)} }}";
-      }
+        return
+          $"base: {FormatTypeName(baseType)} {{ {string.Join(", ", valPropDeclarations)} }}";
       else
-        return FormatTypeName(type.BaseType);
-
+        return $"base: {FormatTypeName(baseType)}";
     }
+
     return FormatTypeName(type);
   }
 
