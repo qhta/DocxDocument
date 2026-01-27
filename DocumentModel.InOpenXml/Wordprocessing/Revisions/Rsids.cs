@@ -3,9 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a listing of all revision save ID values in a WordprocessingML document.
 /// </summary>
 [XmlRoot("Rsids")]
-/// <summary>
-/// Represents a listing of all revision save ID values in a WordprocessingML document.
-/// </summary>
 [OpenXmlType(typeof(HexInt))]
 public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
 {

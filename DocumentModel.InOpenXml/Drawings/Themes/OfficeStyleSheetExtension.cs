@@ -3,9 +3,6 @@ namespace DocumentModel.Drawings;
 ///   Represents an extension for an office style sheet, providing additional theme or formatting information.
 /// </summary>
 [OpenXmlType(typeof(DXD.OfficeStyleSheetExtension))]
-/// <summary>
-///   Represents an extension for an office style sheet, providing additional theme or formatting information.
-/// </summary>
 public partial class OfficeStyleSheetExtension : ModelElement<DXD.OfficeStyleSheetExtension>, IExtension
 {
  /// <summary>

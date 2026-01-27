@@ -84,7 +84,10 @@ internal class GenerateShouldSerializeFunctions
     var typeParams = classNode.TypeParameterList?.ToFullString() ?? "";
     var classDecl = $"{className}{typeParams}";
 
+    var pragma = "#pragma warning disable CS1591";
     var shouldSerializeCode = $@"namespace {namespaceName};
+
+{pragma}
 
 public partial class {classDecl}
 {{

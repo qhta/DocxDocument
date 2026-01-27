@@ -3,9 +3,6 @@ namespace DocumentModel.Drawings;
 ///   Represents default formatting properties for objects in a theme, including shape, line, and text defaults.
 /// </summary>
 [OpenXmlType(typeof(DXD.ObjectDefaults))]
-/// <summary>
-///   Represents default formatting properties for objects in a theme, including shape, line, and text defaults.
-/// </summary>
 public partial class ObjectDefaults : ModelElement<DXD.ObjectDefaults>, IExtendableElement
 {
  /// <summary>

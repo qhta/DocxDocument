@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+#pragma warning disable CS1591
+
 public partial class BaseParagraphProperties<T> 
 {
   public bool ShouldSerializeKeepNext() => KeepNext is not null;

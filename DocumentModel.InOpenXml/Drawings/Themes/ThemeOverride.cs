@@ -3,9 +3,6 @@ namespace DocumentModel.Drawings;
 ///   Represents a theme override, allowing customization of color, font, and format schemes for a document theme.
 /// </summary>
 [OpenXmlType(typeof(DXD.ThemeOverride))]
-/// <summary>
-///   Represents a theme override, allowing customization of color, font, and format schemes for a document theme.
-/// </summary>
 public partial class ThemeOverride : ModelElement<DXD.ThemeOverride>
 {
  /// <summary>

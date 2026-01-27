@@ -680,12 +680,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// Represents the following element tag in the schema: w:mirrorMargins
  /// </remarks>
  [Category("Pagination")]
- /// <summary>
- /// Specifies that left and right margins are swapped on every second page.
- /// </summary>
- /// <remarks>
- /// Represents the following element tag in the schema: w:mirrorMargins
- /// </remarks>
  [OpenXmlProperty(nameof(DXW.Settings.MirrorMargins))]
  public bool? MirrorMargins { get => _MirrorMargins; set => UpdateField(ref _MirrorMargins, value, nameof(MirrorMargins)); }
 

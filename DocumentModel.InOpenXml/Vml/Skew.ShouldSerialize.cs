@@ -1,5 +1,6 @@
 namespace DocumentModel.Vml;
 
+
 public partial class Skew
 {
   public bool ShouldSerializeExtension() => Extension is not null;
