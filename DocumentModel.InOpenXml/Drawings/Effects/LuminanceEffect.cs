@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a luminance effect, allowing adjustment of brightness and contrast for a drawing element.
 /// </summary>
-public partial class LuminanceEffect : ModelElement
+public partial class LuminanceEffect : ModelElement<DXD.LuminanceEffect>
 {
     /// <summary>
     ///   Brightness adjustment value.

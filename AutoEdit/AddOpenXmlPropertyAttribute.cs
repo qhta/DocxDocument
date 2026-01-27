@@ -46,8 +46,8 @@ public class AddOpenXmlPropertyAttributeRewriter(Dictionary<string, string> alia
   {
 
     // Skip abstract classes
-    if (classNode.Modifiers.Any(m => m.IsKind(SyntaxKind.AbstractKeyword)))
-      return classNode;
+    //if (classNode.Modifiers.Any(m => m.IsKind(SyntaxKind.AbstractKeyword)))
+    //  return classNode;
 
     // Check if class inherits from ModelElement<T>
     var baseTypeNode = classNode.BaseList?.Types

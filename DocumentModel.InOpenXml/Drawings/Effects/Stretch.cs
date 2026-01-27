@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a stretch effect, specifying a fill rectangle for stretching content within a shape or element.
 /// </summary>
-public partial class Stretch : ModelElement
+public partial class Stretch : ModelElement<DXD.Stretch>
 {
     /// <summary>
     ///   Rectangle that defines the area to fill when stretching content.

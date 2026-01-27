@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents line spacing settings for text, allowing specification as a percentage or in points.
 /// </summary>
-public partial class LineSpacing : ModelElement
+public partial class LineSpacing : ModelElement<DXD.LineSpacing>
 {
     /// <summary>
     ///   Line spacing value specified as a percentage.

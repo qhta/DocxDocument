@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the relative height settings for a drawing element in a Wordprocessing document.
 /// This class provides configuration for vertical size adjustment, including the reference point and percentage height relative to another element.
 /// </summary>
-public partial class RelativeHeight : ModelElement
+public partial class RelativeHeight : ModelElement<DXO10WD.RelativeHeight>
 {
     /// <summary>
     /// The reference point used to determine the relative vertical sizing, such as margin, page, or paragraph.

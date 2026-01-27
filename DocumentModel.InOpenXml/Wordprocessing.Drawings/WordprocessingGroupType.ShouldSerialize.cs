@@ -1,6 +1,6 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 
-public partial class WordprocessingGroupType
+public partial class WordprocessingGroupType<T>
 {
   public bool ShouldSerializeNonVisualDrawingProperties() => NonVisualDrawingProperties is not null;
   public bool ShouldSerializeNonVisualGroupDrawingShapeProperties() => NonVisualGroupDrawingShapeProperties is not null;

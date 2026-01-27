@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents rotation parameters, including latitude, longitude, and revolution values.
 /// </summary>
-public partial class Rotation : ModelElement
+public partial class Rotation : ModelElement<DXD.Rotation>
 {
     /// <summary>
     ///   Latitude value for the rotation.

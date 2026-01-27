@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a soft edge effect, allowing adjustment of the edge radius for a drawing element.
 /// </summary>
-public partial class SoftEdge : ModelElement
+public partial class SoftEdge : ModelElement<DXD.SoftEdge>
 {
     /// <summary>
     ///   Radius of the soft edge effect.

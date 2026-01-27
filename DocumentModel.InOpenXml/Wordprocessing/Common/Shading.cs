@@ -1,11 +1,11 @@
 using DocumentModel.Drawings;
 
-namespace DocumentModel.Wordprocessing.Drawings;
+namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents shading formatting for a drawing element in a Wordprocessing document.
 /// This class provides properties for specifying the shading pattern, foreground color, and background color, enabling advanced visual effects for graphical objects.
 /// </summary>
-public partial class Shading : ModelElement
+public partial class Shading : ModelElement<DXW.Shading>
 {
     /// <summary>
     /// The shading pattern applied to the drawing element, determining the style of the fill pattern.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing.Drawings;
+namespace DocumentModel.Wordprocessing;
 
   /// <summary>
   /// Specifies the shading pattern options for graphical elements in WordprocessingML drawings.

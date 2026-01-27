@@ -101,7 +101,7 @@ public partial class BaseRunProperties<T> : ModelElementCollection<RunProperty, 
   /// <summary>
   /// Shading applied to the run, including background color, pattern, and pattern color.
   /// </summary>
-  public DMWD.Shading? Shading { get; set; }
+  public Shading? Shading { get; set; }
   /// <summary>
   /// Border information for the run, including grouping and rendering details.
   /// </summary>

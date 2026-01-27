@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents formatting settings that apply to an entire drawing element in a Wordprocessing document.
 /// This class provides properties for configuring outline, visual effects, and effect graphs, enabling consistent and advanced appearance for the whole drawing object.
 /// </summary>
-public partial class WholeFormatting : ModelElement
+public partial class WholeFormatting : ModelElement<DXO10WDC.WholeFormatting>
 {
     /// <summary>
     /// Outline properties for the drawing element, including line style, color, and width.

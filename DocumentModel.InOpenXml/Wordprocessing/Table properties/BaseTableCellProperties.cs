@@ -10,14 +10,14 @@ public partial class BaseTableCellProperties<T>: ModelElement<T> where T: DX.Ope
   /// <summary>
   /// Shading applied to the table cell, specifying background and pattern formatting.
   /// </summary>
-  [OpenXmlElement(typeof(DMWD.Shading))]
-  public DMWD.Shading? Shading
+  [OpenXmlElement(typeof(Shading))]
+  public Shading? Shading
   {
     get => _Shading;
     set => UpdateField(ref _Shading, value, nameof(Shading));
   }
 
-  private DMWD.Shading? _Shading;
+  private Shading? _Shading;
 
   /// <summary>
   /// Indicates whether text wrapping is disabled for the cell.

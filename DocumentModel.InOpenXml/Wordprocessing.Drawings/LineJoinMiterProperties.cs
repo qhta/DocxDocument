@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the properties for a miter line join in a drawing element within a Wordprocessing document.
 /// This class provides configuration for the miter limit, which determines how sharp a mitered corner can be before it is beveled.
 /// </summary>
-public partial class LineJoinMiterProperties : ModelElement
+public partial class LineJoinMiterProperties : ModelElement<DXO10W.LineJoinMiterProperties>
 {
     /// <summary>
     /// The miter limit value, specifying the maximum allowed ratio of miter length to line width before the join is beveled.

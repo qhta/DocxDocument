@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a miter line join, specifying the miter limit for the join.
 /// </summary>
-public partial class Miter : ModelElement
+public partial class Miter : ModelElement<DXD.Miter>
 {
     /// <summary>
     ///   Miter join limit value.

@@ -2,7 +2,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the SolidColorFillProperties Class.
 /// </summary>
-public partial class SolidColorFillProperties : ModelElement
+public partial class SolidColorFillProperties : ModelElement<DXO10W.SolidColorFillProperties>
 {
     /// <summary>
     ///   RgbColorModelHex.

@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a preset text wrap, including the wrap shape and optional adjustment values.
 /// </summary>
-public partial class PresetTextWrap : ModelElement
+public partial class PresetTextWrap : ModelElement<DXD.PresetTextWarp>
 {
     /// <summary>
     ///   Preset wrap shape for the text wrap.

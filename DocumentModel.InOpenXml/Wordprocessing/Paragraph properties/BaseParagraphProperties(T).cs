@@ -57,9 +57,9 @@ public abstract partial class BaseParagraphProperties<T> : ModelElement<T>
     /// <summary>
     /// Shading (background color and pattern) for the paragraph.
     /// </summary>
-    public DMWD.Shading? Shading { get => _Shading; set => UpdateField(ref _Shading, value, nameof(Shading)); }
+    public Shading? Shading { get => _Shading; set => UpdateField(ref _Shading, value, nameof(Shading)); }
 
-    private DMWD.Shading? _Shading;
+    private Shading? _Shading;
     /// <summary>
     /// Tab stop settings for the paragraph.
     /// </summary>

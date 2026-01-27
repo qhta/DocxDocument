@@ -3,7 +3,7 @@ namespace DocumentModel;
 ///   Represents a single content choice within an alternate content container, selected when specific requirements are met.
 /// </summary>
 /// <remarks>
-///   This class defines a content choice option within an <see cref = "IAlternateContent"/>
+///   This class defines a content choice option within an <see cref = "AlternateContent"/>
 ///   structure. Each choice represents a specific way to render or represent content, associated with requirements
 ///   that must be met for the choice to be selected. The requirements, specified through the <see cref = "Requires"/>
 ///   property, typically identify namespaces, features, or capabilities that the application must support to use
@@ -31,7 +31,7 @@ public partial class AlternateContentChoice : ModelElement<DX.AlternateContentCh
  ///   indicates picture support. When an application encounters alternate content, it evaluates this requirement
  ///   by checking if it recognizes and can process the specified namespace or feature. If the requirement is
  ///   satisfied, this choice's content is used; otherwise, the application continues to the next choice or falls
- ///   back to the <see cref = "IAlternateContent.Fallback"/> content. Multiple requirements can sometimes be specified
+ ///   back to the <see cref = "AlternateContent.Fallback"/> content. Multiple requirements can sometimes be specified
  ///   using space-separated namespace URIs, indicating that all listed namespaces must be supported. This
  ///   requirement-based selection mechanism is fundamental to Office's forward compatibility, allowing new features
  ///   to be introduced while ensuring documents remain functional in older application versions.

@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 
 [OpenXmlType(typeof(DXO10WDS.TextBodyProperties))]
-public partial class TextBodyProperties : ModelElement
+public partial class TextBodyProperties : ModelElement<DXO10WDS.TextBodyProperties>
 {
     /// <summary>
     /// The rotation angle applied to the text body, specified in degrees.

@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents properties for the line end, including type, width, and length of the line head or end.
 /// </summary>
-public partial class LineEndPropertiesType : ModelElement
+public partial class LineEndPropertiesType : ModelElement<DXD.LineEndPropertiesType>
 {
     /// <summary>
     ///   Type of the line head or end.

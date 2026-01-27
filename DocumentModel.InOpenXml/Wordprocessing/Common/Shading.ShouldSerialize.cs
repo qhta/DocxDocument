@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing.Drawings;
+namespace DocumentModel.Wordprocessing;
 
 public partial class Shading
 {
