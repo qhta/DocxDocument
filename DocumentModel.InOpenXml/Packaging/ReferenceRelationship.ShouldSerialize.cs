@@ -1,5 +1,7 @@
 namespace DocumentModel.Packaging;
 
+#pragma warning disable CS1591
+
 public partial class ReferenceRelationship<T>
 {
   public bool ShouldSerializeRelationshipType() => RelationshipType is not null;

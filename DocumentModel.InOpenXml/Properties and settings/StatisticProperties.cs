@@ -125,9 +125,6 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
  ///   Total time that a document has been edited. The default time unit is minutes.
  /// </summary>
  [Unit("min")]
- /// <summary>
- ///   Total time that a document has been edited. The default time unit is minutes.
- /// </summary>
  [OpenXmlProperty(nameof(DXEP.Properties.TotalTime))]
  public int? TotalTime { get => _TotalTime; set => UpdateField(ref _TotalTime, value, nameof(TotalTime)); }
 

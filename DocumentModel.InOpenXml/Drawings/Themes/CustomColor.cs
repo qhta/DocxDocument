@@ -3,9 +3,6 @@ namespace DocumentModel.Drawings;
 ///   Custom color.
 /// </summary>
 [OpenXmlType(typeof(DXD.CustomColor))]
-/// <summary>
-///   Custom color.
-/// </summary>
 public partial class CustomColor : ModelElement<DXD.CustomColor>
 {
  /// <summary>
