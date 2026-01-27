@@ -14,6 +14,8 @@ public static class AddOpenXmlTypeAttribute
 {
   public static void Run(string filePath)
   {
+    //Console.WriteLine($"Checking: {filePath}");
+
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
     var root = tree.GetRoot();
@@ -35,7 +37,7 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
 
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax classNode)
   {
-    if (classNode.Identifier.Text.Contains("RelationshipType")) Debug.Assert(true);
+    if (classNode.Identifier.Text.Contains("TransformEffect")) Debug.Assert(true);
 
     //if (classNode.Modifiers.Any(SyntaxKind.AbstractKeyword))
     //  return classNode;
@@ -51,8 +53,9 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
       return base.VisitClassDeclaration(classNode);
 
     var targetTypeName = argTypeName ?? classNode.GetBaseTypeName();
-    if (targetTypeName == null)
+    if (targetTypeName == null || !targetTypeName.StartsWith("DX"))
       return base.VisitClassDeclaration(classNode);
+
     bool hasClassAttr = classNode.AttributeLists
       .SelectMany(al => al.Attributes)
       .Any(attr => attr.Name.ToString().Contains("OpenXmlType"));
