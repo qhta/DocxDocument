@@ -129,7 +129,7 @@ public static class BytePercentValueConverter
     if (value is DX.OpenXmlLeafElement openXmlLeafElement)
       return GetBytePercentFromOpenXml(openXmlLeafElement);
 
-    throw new NotSupportedException($"Conversion to type {sourceType} is not supported.");
+    throw new NotSupportedException($"Conversion from type {sourceType} is not supported.");
   }
 
   #endregion

@@ -232,7 +232,7 @@ public static class StringOpenXmlConverter
 
   #endregion
 
-  #region DX.EnumValue<> conversion methods
+  #region OpenXmlSimpleType conversion methods
 
   /// <summary>
   /// Retrieves the text content from an OpenXml EnumValue.
@@ -302,7 +302,7 @@ public static class StringOpenXmlConverter
     if (targetType.IsGenericType && targetType.GetGenericTypeDefinition() == typeof(DX.EnumValue<>))
       return CreateOpenXmlEnumValue(value, targetType);
 
-    throw new NotSupportedException($"Conversion to type {targetType} is not supported.");
+    throw new NotSupportedException($"Conversion from String to type {targetType} is not supported.");
   }
 
   /// <summary>
@@ -333,7 +333,7 @@ public static class StringOpenXmlConverter
     if (sourceType.IsGenericType && sourceType.GetGenericTypeDefinition() == typeof(DX.EnumValue<>) && value is DX.OpenXmlSimpleType enumValue)
       return GetValue(enumValue);
 
-    throw new NotSupportedException($"Conversion to type {sourceType} is not supported.");
+    throw new NotSupportedException($"Conversion from type {sourceType} to String is not supported.");
   }
 
   #endregion

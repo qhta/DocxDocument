@@ -1,15 +1,18 @@
-﻿
-
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 using DocumentModel.OpenXml;
 
-using DX = DocumentFormat.OpenXml;
-
 namespace DocumentModel.BaseConverters.Test;
 
+/// <summary>
+///   Provides unit tests for verifying the correctness of <see cref="SByteOpenXmlConverter"/> conversions between .NET SByte values and various Open XML numeric types.
+///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
+/// </summary>
 public static class SByteOpenXmlConverterTest
 {
+  /// <summary>
+  ///   List of Open XML types supported for SByte value conversion tests.
+  /// </summary>
   public static Type[] SupportedTypes { get; } =
   [
     typeof(DX.SByteValue),
@@ -22,13 +25,15 @@ public static class SByteOpenXmlConverterTest
     typeof(DX.UInt32Value),
     typeof(DX.UInt64Value),
     typeof(DX.StringValue)
-
   ];
 
+  /// <summary>
+  ///   Runs all SByteOpenXmlConverter tests for supported types and reports results to the console.
+  /// </summary>
+  /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
     bool testResult = true;
-
     foreach (var type in SupportedTypes)
     {
       Console.Write($"TestSByteOpenXmlConversion with {type.Name} ");
@@ -40,10 +45,12 @@ public static class SByteOpenXmlConverterTest
       else
         Console.WriteLine("passed.");
     }
-
     return testResult;
   }
 
+  /// <summary>
+  ///   Test values used for SByte conversion tests, including boundary and typical values.
+  /// </summary>
   static readonly SByte[] testValues =
   [
     SByte.MinValue,
@@ -54,7 +61,9 @@ public static class SByteOpenXmlConverterTest
     123,
     SByte.MaxValue
   ];
-
+  /// <summary>
+  ///   Dictionary mapping Open XML types to their valid SByte value ranges (min, max) for conversion tests.
+  /// </summary>
   public static Dictionary<Type, (SByte min, SByte max)> typeRanges = new()
   {
     { typeof(DX.SByteValue), (SByte.MinValue, SByte.MaxValue) },
@@ -69,6 +78,12 @@ public static class SByteOpenXmlConverterTest
     { typeof(DX.StringValue), (SByte.MinValue, SByte.MaxValue) }
   };
 
+  /// <summary>
+  ///   Tests round-trip conversion of SByte values to and from the specified Open XML numeric type.
+  ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
+  /// </summary>
+  /// <param name="openXmlType">The Open XML type to test SByte conversion for.</param>
+  /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestSByteOpenXmlConversion(Type openXmlType)
   {
     foreach (var testValue in testValues)
@@ -91,6 +106,7 @@ public static class SByteOpenXmlConverterTest
           Console.WriteLine("Out-of-range value did not throw an exception. ");
           return false; // Expected exception for out-of-range value
         }
+
         // Convert back to SByte
         var convertedBackValue = SByteOpenXmlConverter.ConvertFromOpenXml(openXmlValue);
         if (convertedBackValue == null)
@@ -108,13 +124,11 @@ public static class SByteOpenXmlConverterTest
         var (min, max) = typeRanges[openXmlType];
         if (testValue < min || testValue > max)
           return true; // Expected exception for out-of-range value
-        Console.WriteLine(e.Message+". ");
+
+        Console.WriteLine(e.Message + ". ");
         return false;
       }
-
     }
     return true;
   }
-
-
 }
