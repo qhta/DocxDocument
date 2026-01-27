@@ -1,6 +1,6 @@
 namespace DocumentModel.Packaging;
 
-public partial class ReferenceRelationship<T> 
+public partial class ReferenceRelationship<T>
 {
   public bool ShouldSerializeRelationshipType() => RelationshipType is not null;
   public bool ShouldSerializeIsExternal() => IsExternal == true;
