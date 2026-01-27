@@ -13,6 +13,7 @@
 /// </list>
 /// </remarks>
 [JsonConverter(typeof(StringListJsonConverter))]
+[SimpleType]
 public partial class StringList : ICollection, ICollection<string>, IEquatable<StringList>, IConvertible
 {
   private readonly List<string> _list = new();

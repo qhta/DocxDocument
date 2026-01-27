@@ -1,6 +1,6 @@
 namespace DocumentModel.Packaging;
-[OpenXmlType(typeof(DXPack.ExternalRelationship))]
-public class ExternalRelationship : ReferenceRelationship<DXPack.ExternalRelationship>
+[OpenXmlType(typeof(DXPP.ExternalRelationship))]
+public class ExternalRelationship : ReferenceRelationship<DXPP.ExternalRelationship>
 {
  /// <summary>
  /// Initializes a new instance of the ExternalRelationship.

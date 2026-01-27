@@ -21,9 +21,9 @@ public abstract partial class MarkupStartRangeElement<T1, T2> : ModelElement<T1>
     public MarkupEndRangeElement<T2, T1>? PairedElement { get => _PairedElement; set => UpdateField(ref _PairedElement, value, nameof(PairedElement)); }
 
     private MarkupEndRangeElement<T2, T1>? _PairedElement;
-    public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+    public int? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
-    private string? _Id;
+    private int? _Id;
     public string? Author { get => _Author; set => UpdateField(ref _Author, value, nameof(Author)); }
 
     private string? _Author;

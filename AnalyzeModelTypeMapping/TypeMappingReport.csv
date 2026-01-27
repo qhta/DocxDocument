@@ -1,0 +1,107 @@
+ModelType;OpenXmlType;Count
+System.String;DX.StringValue;563
+DocumentModel.RGB;DX.StringValue;4
+DocumentModel.OfficeArtExtensionList;DX.OpenXmlCompositeElement;9
+System.String;DX.OpenXmlLeafTextElement;29
+System.Boolean;DX.OpenXmlLeafTextElement;4
+DocumentModel.HeadingPairs;DX.OpenXmlCompositeElement;1
+DocumentModel.StringList;DX.OpenXmlCompositeElement;1
+DocumentModel.HyperlinkList;DX.OpenXmlCompositeElement;1
+System.Byte[];DX.OpenXmlCompositeElement;1
+System.String;System.String;22
+System.Int32;System.String;1
+System.DateTime;System.DateTime;3
+System.Int32;DX.Int32Value;195
+System.Guid;DX.StringValue;1
+System.Int32;DX.OpenXmlLeafTextElement;11
+System.Boolean;DX.BooleanValue;120
+System.UInt32;DX.UInt32Value;22
+System.Boolean;DX.TrueFalseValue;284
+System.Int64;DX.IntegerValue;50
+System.Single;DX.SingleValue;14
+System.Boolean;DX.TrueFalseBlankValue;15
+DocumentModel.Base64Binary;DX.StringValue;19
+System.Decimal;DX.DecimalValue;4
+System.Boolean;System.Boolean;12
+System.Uri;System.Uri;1
+System.String;DXM.CharType -> DX.OpenXmlLeafElement { Val: DX.StringValue };5
+System.String;DXW.String253Type -> DX.OpenXmlLeafElement { Val: DX.StringValue };6
+System.Boolean;DXW.OnOffType -> DX.OpenXmlLeafElement { Val: DX.OnOffValue };90
+System.String;DXW.HpsMeasureType -> DX.OpenXmlLeafElement { Val: DX.StringValue };1
+System.Int32;DXM.ArgumentSize -> DX.OpenXmlLeafElement { Val: DX.IntegerValue };1
+System.Boolean;DXM.OnOffType -> DX.OpenXmlLeafElement { Val: DX.EnumValue<DXM.BooleanValues> };28
+DocumentModel.Math.RowSpacing;DXM.UnsignedShortType -> DX.OpenXmlLeafElement { Val: DX.UInt16Value };2
+System.String;DXM.MathFont -> DX.OpenXmlLeafElement { Val: DX.StringValue };1
+DocumentModel.Twips;DXM.TwipsMeasureType -> DX.OpenXmlLeafElement { Val: DX.UInt32Value };6
+System.Int64;DXM.SpacingRuleType -> DX.OpenXmlLeafElement { Val: DX.IntegerValue };1
+System.UInt32;DXM.TwipsMeasureType -> DX.OpenXmlLeafElement { Val: DX.UInt32Value };1
+System.UInt16;DXM.UnsignedShortType -> DX.OpenXmlLeafElement { Val: DX.UInt16Value };1
+DocumentModel.Math.MatrixColumns;DX.OpenXmlCompositeElement;1
+System.Int32;DXM.MatrixColumnCount -> DX.OpenXmlLeafElement { Val: DX.IntegerValue };1
+DocumentModel.ExtensionList;DX.OpenXmlCompositeElement;9
+System.DateTime;DX.DateTimeValue;12
+DocumentModel.HexInt;DX.StringValue;16
+System.Boolean;DX.OnOffValue;65
+System.Int32;DX.StringValue;14
+DocumentModel.Twips;DX.UInt32Value;8
+System.String;DXW.StringType -> DX.OpenXmlLeafElement { Val: DX.StringValue };16
+DocumentModel.Wordprocessing.RunFont;DX.StringValue;3
+DocumentModel.Twips;DX.Int32Value;4
+DocumentModel.Wordprocessing.Color;DX.StringValue;2
+DocumentModel.HexChar;DX.StringValue;6
+System.Int32;DXW.DecimalNumberType -> DX.OpenXmlLeafElement { Val: DX.Int32Value };3
+System.Int32;DXW.DefaultDropDownListItemIndex -> DX.OpenXmlLeafElement { Val: DX.Int32Value };1
+System.String;DXW.String255Type -> DX.OpenXmlLeafElement { Val: DX.StringValue };2
+System.Int16;DXW.MaxLength -> DX.OpenXmlLeafElement { Val: DX.Int16Value };1
+System.String;DXW.Format -> DX.OpenXmlLeafElement { Val: DX.StringValue };1
+DocumentModel.StringList;DXW.StringType -> DX.OpenXmlLeafElement { Val: DX.StringValue };1
+DocumentModel.HexBinary;DXW.Panose1Number -> DX.OpenXmlLeafElement { Val: DX.HexBinaryValue };1
+DocumentModel.HexBinary;DXW.FontSignature -> DX.OpenXmlLeafElement { UnicodeSignature0: DX.HexBinaryValue, UnicodeSignature1: DX.HexBinaryValue, UnicodeSignature2: DX.HexBinaryValue, UnicodeSignature3: DX.HexBinaryValue, CodePageSignature0: DX.HexBinaryValue, CodePageSignature1: DX.HexBinaryValue };1
+System.Int32;DX.IntegerValue;1
+System.UInt32;DXW.StringType -> DX.OpenXmlLeafElement { Val: DX.StringValue };1
+DocumentModel.Twips;DXW.TwipsMeasureType -> DX.OpenXmlLeafElement { Val: DX.StringValue };1
+System.Boolean;DXW.OnOffOnlyType -> DX.OpenXmlLeafElement { Val: DX.EnumValue<DXW.OnOffOnlyValues> };2
+System.UInt32;DXW.UnsignedDecimalNumberType -> DX.OpenXmlLeafElement { Val: DX.UInt32Value };1
+System.String;DXW.LanguageId -> DX.OpenXmlLeafElement { Val: DX.StringValue };3
+System.Boolean;DXOW.RecordIncluded -> DX.OpenXmlLeafElement { Val: DX.OnOffValue };1
+System.Int64;DXOW.RecordHashCode -> DX.OpenXmlLeafElement { Val: DX.IntegerValue };1
+DocumentModel.HexInt;DXW.LongHexNumberType -> DX.OpenXmlLeafElement { Val: DX.HexBinaryValue };2
+System.Int32;DXW.NonNegativeDecimalNumberType -> DX.OpenXmlLeafElement { Val: DX.Int32Value };3
+System.Int32;DXW.NumberingLevelReference -> DX.OpenXmlLeafElement { Val: DX.Int32Value };1
+DocumentModel.Wordprocessing.Inserted;DXW.TrackChangeType -> DX.OpenXmlLeafElement { Author: DX.StringValue, Date: DX.DateTimeValue, DateUtc: DX.DateTimeValue, Id: DX.StringValue };1
+DocumentModel.Wordprocessing.Deleted;DXW.TrackChangeType -> DX.OpenXmlLeafElement { Author: DX.StringValue, Date: DX.DateTimeValue, DateUtc: DX.DateTimeValue, Id: DX.StringValue };1
+DocumentModel.Wordprocessing.MoveFrom;DXW.TrackChangeType -> DX.OpenXmlLeafElement { Author: DX.StringValue, Date: DX.DateTimeValue, DateUtc: DX.DateTimeValue, Id: DX.StringValue };1
+DocumentModel.Wordprocessing.MoveTo;DXW.TrackChangeType -> DX.OpenXmlLeafElement { Author: DX.StringValue, Date: DX.DateTimeValue, DateUtc: DX.DateTimeValue, Id: DX.StringValue };1
+System.Int64;DX.Int64Value;46
+DocumentModel.HalfPoints;DXW.HpsMeasureType -> DX.OpenXmlLeafElement { Val: DX.StringValue };2
+System.Int16;DXW.PhoneticGuideRaise -> DX.OpenXmlLeafElement { Val: DX.Int16Value };1
+System.Boolean;DXO10W.EmptyType;1
+System.String;DXO13W.SectionTitle -> DX.OpenXmlLeafElement { Val: DX.StringValue };1
+System.Boolean;DXO13W.OnOffType -> DX.OpenXmlLeafElement { Val: DX.OnOffValue };1
+System.Int16;DX.Int16Value;6
+System.Byte;DX.ByteValue;2
+System.UInt16;DX.UInt16Value;6
+System.Int32;DXO13W.FootnoteColumns -> DX.OpenXmlLeafElement { Val: DX.Int32Value };1
+DocumentModel.Twips;DX.StringValue;2
+System.Int32;DX.Int16Value;1
+System.Int32;System.Int32;1
+DocumentModel.HexInt;DocumentModel.HexInt;1
+System.Int32;DXW.UnsignedDecimalNumberMax3Type -> DX.OpenXmlLeafElement { Val: DX.Int32Value };2
+DocumentModel.Wordprocessing.PreviousTableGrid;DX.OpenXmlCompositeElement;1
+DocumentModel.Wordprocessing.Drawings.GradientStopList;DX.OpenXmlCompositeElement;1
+DocumentModel.Drawings.ConnectorLockingExtensionList;DX.OpenXmlCompositeElement;1
+DocumentModel.Wordprocessing.TextBoxContent;DX.OpenXmlCompositeElement;1
+DocumentModel.CustomXml.SchemaReferences;DX.OpenXmlCompositeElement;1
+DocumentModel.Drawings.AdjustValueList;DX.OpenXmlCompositeElement;2
+DocumentModel.Drawings.ShapeGuideList;DX.OpenXmlCompositeElement;1
+DocumentModel.EMU;DX.Int64Value;2
+DocumentModel.ExtensionList;DocumentModel.ModelElement;1
+DocumentModel.Drawings.GradientStopList;DX.OpenXmlCompositeElement;2
+System.Boolean;DXO21DSS.OpenXmlEmptyElement;4
+DocumentModel.HexBinary;DX.StringValue;1
+System.SByte;DX.SByteValue;2
+System.Int32;DXD.SpacingPercent -> DX.OpenXmlLeafElement { Val: DX.Int32Value };4
+System.Int32;DXD.SpacingPoints -> DX.OpenXmlLeafElement { Val: DX.Int32Value };4
+DocumentModel.Drawings.FillStyleList;DX.OpenXmlCompositeElement;2
+DocumentModel.Drawings.LineStyleList;DX.OpenXmlCompositeElement;1
+DocumentModel.Drawings.EffectStyleList;DX.OpenXmlCompositeElement;1

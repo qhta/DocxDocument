@@ -118,7 +118,7 @@ public static class OpenXmlComplexTypeConverter
 
     if (modelProperty.Name == "Panose") Debug.Assert(true);
 
-    var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
+    var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanWrite)
     {
       var modelValue = modelProperty.GetValue(modelObject);
@@ -287,7 +287,7 @@ public static class OpenXmlComplexTypeConverter
   public static void LoadData(object modelObject, PropertyInfo modelProperty, object openXmlElement, Type openXmlType)
   {
     if (modelProperty.Name== "AttachedSchemas") Debug.Assert(true);
-    var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelElementProperty(modelProperty, openXmlType);
+    var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanRead)
     {
       var openXmlValue = openXmlProperty.GetValue(openXmlElement);

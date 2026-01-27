@@ -221,7 +221,7 @@ public static class WordprocessingHelper
   /// </summary>
   /// <param name="element">The OpenXmlElement to search for.</param>
   /// <returns>The WordprocessingDocument that contains the specified OpenXmlElement, or null if not found.</returns>
-  public static DXPack.WordprocessingDocument? GetWordprocessingDocument(this DX.OpenXmlElement element)
+  public static DXPP.WordprocessingDocument? GetWordprocessingDocument(this DX.OpenXmlElement element)
   {
     // Walk up to the root element
     DX.OpenXmlElement? current = element;
@@ -230,7 +230,7 @@ public static class WordprocessingHelper
 
     if (current is DX.OpenXmlPartRootElement root && root.OpenXmlPart != null)
     {
-      return root.OpenXmlPart.OpenXmlPackage as DXPack.WordprocessingDocument;
+      return root.OpenXmlPart.OpenXmlPackage as DXPP.WordprocessingDocument;
     }
     return null;
   }

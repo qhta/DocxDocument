@@ -23,7 +23,7 @@ public abstract partial class RelationshipType<T> : ModelElement<T> where T : DX
   /// Attaches the specified WordprocessingDocument and loads its data into the current instance.
   /// </summary>
   /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach and load.</param>
-  public override void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
+  public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     base.AttachAndLoad(wordprocessingDocument);
     if (WordprocessingDocument == null)
@@ -35,7 +35,7 @@ public abstract partial class RelationshipType<T> : ModelElement<T> where T : DX
   /// Attaches the specified WordprocessingDocument and updates the associated data.
   /// </summary>
   /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach and use for updating data.</param>
-  public override void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)
+  public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     base.AttachAndUpdate(wordprocessingDocument);
     if (WordprocessingDocument == null)
@@ -64,7 +64,7 @@ public abstract partial class RelationshipType<T> : ModelElement<T> where T : DX
   /// provided document, if available. If the relevant relationship is not present, the properties remain
   /// unchanged.</remarks>
   /// <param name = "document">The Document from which to load data.</param>
-  public virtual void LoadData(DXPack.WordprocessingDocument document)
+  public virtual void LoadData(DXPP.WordprocessingDocument document)
   {
     DXW.RelationshipType? updatedElement = (DXW.RelationshipType? )GetUpdatableOpenXmlElement();
     if (updatedElement != null)
@@ -80,7 +80,7 @@ public abstract partial class RelationshipType<T> : ModelElement<T> where T : DX
   /// within the provided document. The document must contain a relationship element compatible with the update
   /// operation.</remarks>
   /// <param name = "document">The Document to update with new relationship data. Cannot be null.</param>
-  public virtual void UpdateData(DXPack.WordprocessingDocument document)
+  public virtual void UpdateData(DXPP.WordprocessingDocument document)
   {
     DXW.RelationshipType? updatedElement = (DXW.RelationshipType? )GetUpdatableOpenXmlElement();
     if (updatedElement != null)

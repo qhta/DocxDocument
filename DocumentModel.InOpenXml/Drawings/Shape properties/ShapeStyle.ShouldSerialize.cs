@@ -1,6 +1,6 @@
 namespace DocumentModel.Drawings;
 
-public partial class ShapeStyle
+public partial class ShapeStyle<T>
 {
   public bool ShouldSerializeLineReference() => LineReference is not null;
   public bool ShouldSerializeFillReference() => FillReference is not null;

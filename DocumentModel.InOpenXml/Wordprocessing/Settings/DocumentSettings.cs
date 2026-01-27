@@ -39,7 +39,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
  /// </summary>
  /// <param name = "wordprocessingDocument">Document to attach to.</param>
- public override void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
+ public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
  {
   base.AttachAndLoad(wordprocessingDocument);
   var documentSettings = wordprocessingDocument.GetDocumentSettings();
@@ -51,7 +51,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// Attach this instance to the specified document. Data is stored to the document's PackageProperties.
  /// </summary>
  /// <param name = "wordprocessingDocument">Document to attach to.</param>
- public override void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)
+ public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
  {
   base.AttachAndUpdate(wordprocessingDocument);
   var documentSettings = wordprocessingDocument.GetDocumentSettings();
@@ -66,7 +66,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// Represents the following element tag in the schema: w:activeWritingStyle
  /// </remarks>
  [Category("Proofing")]
- [OpenXmlElementCollection]
+ [OpenXmlElementCollection(typeof(DXW.ActiveWritingStyle))]
  public ActiveWritingStyles? ActiveWritingStyles { get => _ActiveWritingStyles; set => UpdateField(ref _ActiveWritingStyles, value, nameof(ActiveWritingStyle)); }
 
  private ActiveWritingStyles? _ActiveWritingStyles;
@@ -111,7 +111,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// Represents the following element tag in the schema: w:attachedSchema
  /// </remarks>
  [Category("CustomXml")]
- [OpenXmlElementCollection]
+ [OpenXmlElementCollection(typeof(AttachedSchema))]
  public AttachedSchemas? AttachedSchemas { get => _AttachedSchemas; set => UpdateField(ref _AttachedSchemas, value, nameof(AttachedSchemas)); }
 
  private AttachedSchemas? _AttachedSchemas;

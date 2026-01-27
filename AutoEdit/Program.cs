@@ -25,12 +25,12 @@ public static class Program
           foreach (var filePath in fileList)
           {
             //MoveEnumType.Run(filePath);
-            //GenerateShouldSerializeFunctions.Run(filePath);
+            GenerateShouldSerializeFunctions.Run(filePath);
             //AddPrivateFieldsWithUpdate.Run(filePath);
             //AddOpenXmlPropertyAttribute.Run(filePath);
             //AddOpenXmlElementAttribute.Run(filePath);
             //AddOpenXmlTypeAttribute.Run(filePath);
-            RemoveDuplicateDocComments.Run(filePath);
+            //RemoveDuplicateDocComments.Run(filePath);
           }
         }
       }
@@ -59,6 +59,7 @@ public static class Program
         continue;
       if (filename.Contains(".") && !filename.EndsWith(".Properties", StringComparison.OrdinalIgnoreCase))
         continue;
+      if (filename.EndsWith("NonVisualDrawingShapeExtensionList"))
       result.Add(file);
     }
     foreach (var dir in Directory.GetDirectories(path))

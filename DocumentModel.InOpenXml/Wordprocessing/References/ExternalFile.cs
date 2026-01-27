@@ -43,7 +43,7 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
   /// provided document, if available. If the relevant relationship is not present, the properties remain
   /// unchanged.</remarks>
   /// <param name = "document">The Document from which to load data.</param>
-  public override void LoadData(DXPack.WordprocessingDocument document)
+  public override void LoadData(DXPP.WordprocessingDocument document)
   {
     DXW.RelationshipType? updatedElement = (DXW.RelationshipType? )GetUpdatableOpenXmlElement();
     if (updatedElement != null)
@@ -64,7 +64,7 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
   /// within the provided document. The document must contain a relationship element compatible with the update
   /// operation.</remarks>
   /// <param name = "document">The Document to update with new relationship data. Cannot be null.</param>
-  public override void UpdateData(DXPack.WordprocessingDocument document)
+  public override void UpdateData(DXPP.WordprocessingDocument document)
   {
     DXW.RelationshipType? updatedElement = (DXW.RelationshipType? )GetUpdatableOpenXmlElement();
     if (updatedElement != null)

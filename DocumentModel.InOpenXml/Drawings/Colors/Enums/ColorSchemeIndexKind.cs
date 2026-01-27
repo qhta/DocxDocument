@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 ///   Defines the ColorSchemeIndexValues enumeration.

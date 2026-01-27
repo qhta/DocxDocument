@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// Represents an identified relationship type in a WordprocessingML document.
 /// This class provides a property for the relationship ID, enabling advanced linking and referencing of document parts, external files, or resources within the document structure.
 /// </summary>
-public abstract partial class ReferenceRelationship<T> : ModelElement where T : DXPack.ReferenceRelationship
+public abstract partial class ReferenceRelationship<T> : ModelElement where T : DXPP.ReferenceRelationship
 {
     /// <summary>
     /// Gets the type of the relationship represented by this instance.

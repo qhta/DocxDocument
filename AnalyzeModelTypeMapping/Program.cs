@@ -8,7 +8,9 @@ public static class Program
   {
     var analyzer = new AnalyzeTypeMapping();
     analyzer.ScanPropTypeMappings(typeof(DocumentModel.Wordprocessing.Document).Assembly);
-    var reportFileName = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "TypeMappingReport.txt"));
+    var basePath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", ".."));
+    var reportFileName = Path.Combine(basePath, "TypeMappingReport.csv");
     analyzer.GenerateReport(reportFileName);
+    //analyzer.GenerateUnmappedReport(Path.Combine(basePath, "UnmappedPropTypes.txt"));
   }
 }

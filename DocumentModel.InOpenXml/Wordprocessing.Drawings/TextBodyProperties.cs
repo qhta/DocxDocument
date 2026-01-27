@@ -5,6 +5,8 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the set of properties for a text body within a shape in a Wordprocessing document.
 /// This class provides configuration for text layout, rotation, paragraph spacing, overflow behavior, insets, columns, anchoring, auto-fit, 3D settings, and extension data.
 /// </summary>
+
+[OpenXmlType(typeof(DXO10WDS.TextBodyProperties))]
 public partial class TextBodyProperties : ModelElement
 {
     /// <summary>

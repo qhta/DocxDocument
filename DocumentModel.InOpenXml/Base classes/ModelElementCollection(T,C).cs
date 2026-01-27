@@ -25,7 +25,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
   /// </summary>
   /// <param name="wordprocessingDocument">Document to attach to.</param>
-  public virtual void AttachAndLoad(DXPack.WordprocessingDocument wordprocessingDocument)
+  public virtual void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
   }
@@ -34,7 +34,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
   /// </summary>
   /// <param name="wordprocessingDocument">Document to attach to.</param>
-  public virtual void AttachAndUpdate(DXPack.WordprocessingDocument wordprocessingDocument)
+  public virtual void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
   }

@@ -5,6 +5,20 @@
 /// </summary>
 public static class OpenXmlSimpleValueConverter
 {
+  public static Type[] SupportedModelTypes { get; } =
+  [
+    typeof(bool),
+    typeof(string),
+    typeof(Enum),
+    typeof(Int32),
+    typeof(Int64),
+    typeof(UInt32),
+    typeof(UInt16),
+    typeof(Int16),
+    typeof(Byte),
+    typeof(SByte),
+    typeof(UInt64),
+  ];
   /// <summary>
   /// Converts a model object to an Open XML simple type.
   /// </summary>
@@ -28,6 +42,26 @@ public static class OpenXmlSimpleValueConverter
     if (modelValue is Int32 int32Value && Int32OpenXmlConverter.SupportedTypes.Contains(openXmlType))
       return Int32OpenXmlConverter.ConvertToOpenXml(int32Value, openXmlType);
 
+    if (modelValue is Int64 int64Value && Int64OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return Int64OpenXmlConverter.ConvertToOpenXml(int64Value, openXmlType);
+
+    if (modelValue is UInt32 uint32Value && UInt32OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return UInt32OpenXmlConverter.ConvertToOpenXml(uint32Value, openXmlType);
+
+    if (modelValue is UInt16 uint16Value && UInt16OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return UInt16OpenXmlConverter.ConvertToOpenXml(uint16Value, openXmlType);
+
+    if (modelValue is Int16 int16Value && Int16OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return Int16OpenXmlConverter.ConvertToOpenXml(int16Value, openXmlType);
+
+    if (modelValue is Byte byteValue && ByteOpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return ByteOpenXmlConverter.ConvertToOpenXml(byteValue, openXmlType);
+
+    if (modelValue is SByte sbyteValue && SByteOpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return SByteOpenXmlConverter.ConvertToOpenXml(sbyteValue, openXmlType);
+
+    if (modelValue is UInt64 uint64Value && UInt64OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return UInt64OpenXmlConverter.ConvertToOpenXml(uint64Value, openXmlType);
 
     throw new InvalidOperationException($"Cannot convert {modelValue} of type {modelType} to Open XML simple type {openXmlType}");
   }
@@ -53,11 +87,30 @@ public static class OpenXmlSimpleValueConverter
     if (modelType.IsEnum && EnumOpenXmlConverter.SupportsType(openXmlType))
       return EnumOpenXmlConverter.ConvertFromOpenXml(openXmlValue, modelType);
 
-    if (modelType == typeof(Int32) && openXmlType ==  typeof(DX.Int32Value)
-                                    && Int32OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+    if (modelType == typeof(Int32) && Int32OpenXmlConverter.SupportedTypes.Contains(openXmlType))
 
       return Int32OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
 
+    if (modelType == typeof(Int64) && Int64OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return Int64OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
+
+    if (modelType == typeof(UInt32) && UInt32OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return UInt32OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
+
+    if (modelType == typeof(UInt16) && UInt16OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return UInt16OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
+
+    if (modelType == typeof(Int16) && Int16OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return Int16OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
+
+    if (modelType == typeof(Byte) && ByteOpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return ByteOpenXmlConverter.ConvertFromOpenXml(openXmlValue);
+
+    if (modelType == typeof(SByte) && SByteOpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return SByteOpenXmlConverter.ConvertFromOpenXml(openXmlValue);
+
+    if (modelType == typeof(UInt64) && UInt64OpenXmlConverter.SupportedTypes.Contains(openXmlType))
+      return UInt64OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
 
     throw new InvalidOperationException($"Cannot convert {openXmlValue} of type {openXmlType} to model type {modelType.FullName}");
   }
