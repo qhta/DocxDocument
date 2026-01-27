@@ -1,14 +1,16 @@
 using DocumentModel.Drawings.Office.ScriptLink;
 
 namespace DocumentModel.Drawings;
+
 /// <summary>
 /// Defines a collection of non-visual drawing properties extensions.
 /// </summary>
 [OpenXmlType(typeof(NonVisualDrawingPropertiesExtension))]
-public class NonVisualDrawingPropertiesExtensionList : 
-  ModelElementCollection<NonVisualDrawingPropertiesExtension, DXD.NonVisualDrawingPropertiesExtensionList, DXD.NonVisualDrawingPropertiesExtension>
+public partial class NonVisualDrawingPropertiesExtensionList: 
+  ModelElementCollection<NonVisualDrawingPropertiesExtension, 
+    DXD.NonVisualDrawingPropertiesExtensionList, 
+    DXD.NonVisualDrawingPropertiesExtension>
 {
-
   /// <summary>
   ///   Compatibility extension for handling legacy or platform-specific features.
   /// </summary>
