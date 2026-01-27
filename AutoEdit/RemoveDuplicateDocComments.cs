@@ -44,10 +44,7 @@ public class RemoveDuplicateDocCommentsRewriter : CSharpSyntaxRewriter
 
     for (int i = 0; i < attributeLists.Count; i++)
     {
-      if (!ContainsAttribute(attributeLists[i], "OpenXmlElement"))
-        continue;
-
-      if (i == 0 || !ContainsAttribute(attributeLists[i - 1], "OpenXmlProperty"))
+      if (i == 0)
         continue;
 
       var leadingTrivia = attributeLists[i].GetLeadingTrivia();
