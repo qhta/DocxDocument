@@ -1,25 +1,45 @@
 namespace DocumentModel.Drawings.Office;
 /// <summary>
-///   Defines the GroupShape Class.
+///   Represents a DrawingML group shape in Office documents, providing a container for grouping multiple shapes and graphical elements.
+///   Enables hierarchical organization, transformation, and formatting of grouped shapes in Office drawings.
 /// </summary>
 [OpenXmlType(typeof(DXOD.GroupShape))]
 public partial class GroupShape : ModelElement<DXOD.GroupShape>
 {
- [OpenXmlProperty(nameof(DXOD.GroupShape.GroupShapeNonVisualProperties))]
- public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get => _GroupShapeNonVisualProperties; set => UpdateField(ref _GroupShapeNonVisualProperties, value, nameof(GroupShapeNonVisualProperties)); }
+  /// <summary>
+  ///   Non-visual properties for the group shape, including IDs, names, and locking information.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXOD.GroupShape.GroupShapeNonVisualProperties))]
+  public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get => _GroupShapeNonVisualProperties; set => UpdateField(ref _GroupShapeNonVisualProperties, value, nameof(GroupShapeNonVisualProperties)); }
 
- private GroupShapeNonVisualProperties? _GroupShapeNonVisualProperties;
- [OpenXmlProperty(nameof(DXOD.GroupShape.GroupShapeProperties))]
- public GroupShapeProperties? GroupShapeProperties { get => _GroupShapeProperties; set => UpdateField(ref _GroupShapeProperties, value, nameof(GroupShapeProperties)); }
+  private GroupShapeNonVisualProperties? _GroupShapeNonVisualProperties;
 
- private GroupShapeProperties? _GroupShapeProperties;
- public Shape? Shape { get => _Shape; set => UpdateField(ref _Shape, value, nameof(Shape)); }
+  /// <summary>
+  ///   Properties for the group shape, specifying layout, transformation, and formatting for the shape group.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXOD.GroupShape.GroupShapeProperties))]
+  public GroupShapeProperties? GroupShapeProperties { get => _GroupShapeProperties; set => UpdateField(ref _GroupShapeProperties, value, nameof(GroupShapeProperties)); }
 
- private Shape? _Shape;
- public GroupShape? ChildGroupShape { get => _ChildGroupShape; set => UpdateField(ref _ChildGroupShape, value, nameof(ChildGroupShape)); }
+  private GroupShapeProperties? _GroupShapeProperties;
 
- private GroupShape? _ChildGroupShape;
- public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
+  /// <summary>
+  ///   A single shape contained within the group shape, representing an individual graphical element.
+  /// </summary>
+  public Shape? Shape { get => _Shape; set => UpdateField(ref _Shape, value, nameof(Shape)); }
 
- private OfficeArtExtensionList? _OfficeArtExtensionList;
+  private Shape? _Shape;
+
+  /// <summary>
+  ///   A nested group shape contained within this group shape, enabling hierarchical grouping of shapes.
+  /// </summary>
+  public GroupShape? ChildGroupShape { get => _ChildGroupShape; set => UpdateField(ref _ChildGroupShape, value, nameof(ChildGroupShape)); }
+
+  private GroupShape? _ChildGroupShape;
+
+  /// <summary>
+  ///   List of OfficeArt extension elements for the group shape, supporting extensibility and application-specific data.
+  /// </summary>
+  public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
+
+  private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

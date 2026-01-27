@@ -1,6 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Base interface for ParagraphMarkRunProperties classes, containing properties specific to paragraph mark runs that are not applied to <see cref = "ExtBaseRunProperties"/>.
+/// Base interface for ParagraphMarkRunProperties classes, containing properties specific to paragraph mark runs
+/// that are not applied to <see cref = "ExtBaseRunProperties"/>.
 /// Provides support for revision tracking, conflict handling, and Office Math indication on paragraph marks.
 /// </summary>
 public abstract partial class BaseParagraphMarkRunProperties<T> : ExtBaseRunProperties<T> 

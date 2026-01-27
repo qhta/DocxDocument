@@ -34,13 +34,13 @@ public partial class Group
   public bool ShouldSerializeDiagramNodeKind() => DiagramNodeKind is not null;
   public bool ShouldSerializeDiagramLayoutMostRecentUsed() => DiagramLayoutMostRecentUsed is not null;
   public bool ShouldSerializeInsetMode() => InsetMode is not null;
-  public bool ShouldSerializeGfxdata() => Gfxdata is not null;
+  public bool ShouldSerializeGfxData() => GfxData is not null;
   public bool ShouldSerializeEditAs() => EditAs is not null;
   public bool ShouldSerializeTableProperties() => TableProperties is not null;
   public bool ShouldSerializeTableLimits() => TableLimits is not null;
   public bool ShouldSerializeChildGroup() => ChildGroup is not null;
   public bool ShouldSerializeShape() => Shape is not null;
-  public bool ShouldSerializeShapetype() => Shapetype is not null;
+  public bool ShouldSerializeShapeType() => ShapeType is not null;
   public bool ShouldSerializeArc() => Arc is not null;
   public bool ShouldSerializeCurve() => Curve is not null;
   public bool ShouldSerializeImageFile() => ImageFile is not null;

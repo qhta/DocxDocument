@@ -2,25 +2,24 @@ using DocumentModel.CustomXml;
 
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Specifies all document-level properties which affect the handling of the current document.
-/// This class provides access to settings for proofing, borders, custom XML,
-/// templates, protection, printing, captions, compatibility, styles, and more,
-/// enabling advanced configuration and management of Wordprocessing document behavior and appearance.
+///   Specifies all document-level properties that affect the handling, behavior, and appearance of the current Wordprocessing document.
+///   Provides access to settings for proofing, borders, custom XML, templates, protection, printing, captions, compatibility, styles, and more.
+///   Enables advanced configuration and management of Wordprocessing document features.
 /// </summary>
 [OpenXmlType(typeof(DXW.Settings))]
 public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
 {
  /// <summary>
- /// Default constructor.
+ ///   Initializes a new instance of the <see cref="DocumentSettings"/> class with default values.
  /// </summary>
  public DocumentSettings()
  {
  }
 
  /// <summary>
- /// Initializing constructor.
+ ///   Initializes a new instance of the <see cref="DocumentSettings"/> class and attaches it to the specified Wordprocessing document model.
  /// </summary>
- /// <param name = "document">Wordprocessing document model</param>
+ /// <param name="document">The Wordprocessing document model to attach to.</param>
  public DocumentSettings(Wordprocessing.Document document)
  {
   if (document.WordprocessingDocument != null)
@@ -36,9 +35,9 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  //    base.UpdateData(openXmlElement);
  //}
  /// <summary>
- /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
+ ///   Attaches this instance to the specified Wordprocessing document and loads data from the document's settings part.
  /// </summary>
- /// <param name = "wordprocessingDocument">Document to attach to.</param>
+ /// <param name="wordprocessingDocument">The document to attach to.</param>
  public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
  {
   base.AttachAndLoad(wordprocessingDocument);
@@ -48,9 +47,9 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  }
 
  /// <summary>
- /// Attach this instance to the specified document. Data is stored to the document's PackageProperties.
+ ///   Attaches this instance to the specified Wordprocessing document and updates the document's settings part with current data.
  /// </summary>
- /// <param name = "wordprocessingDocument">Document to attach to.</param>
+ /// <param name="wordprocessingDocument">The document to attach to.</param>
  public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
  {
   base.AttachAndUpdate(wordprocessingDocument);
@@ -1044,8 +1043,12 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  public DMM.MathProperties? MathProperties { get => _MathProperties; set => UpdateField(ref _MathProperties, value, nameof(MathProperties)); }
 
  private DMM.MathProperties? _MathProperties;
- [XmlIgnore]
- [JsonIgnore]
- [NotMapped]
- public static KnownProperties KnownProperties { get; } = new KnownProperties(typeof(DocumentSettings));
+
+  /// <summary>
+  ///   Provides a registry of known property definitions for <see cref="DocumentSettings"/>.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped] 
+  public static KnownProperties KnownProperties { get; } = new KnownProperties(typeof(DocumentSettings));
 }

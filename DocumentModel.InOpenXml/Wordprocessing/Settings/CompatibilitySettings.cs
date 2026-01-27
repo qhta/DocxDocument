@@ -6,8 +6,5 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(CompatibilitySetting))]
 public class CompatibilitySettings : ElementCollection<CompatibilitySetting>
 {
- protected override object? GetUpdatableOpenXmlElement()
- {
-  throw new NotImplementedException();
- }
+
 }

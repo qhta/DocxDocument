@@ -1,27 +1,44 @@
 namespace DocumentModel.Drawings;
 /// <summary>
-///   Defines the NonVisualPicturePropertiesExtension class.
+///   Represents an extension element for non-visual picture properties in DrawingML, providing additional metadata and configuration for images and shapes.
+///   Supports camera tool settings, signature lines, object properties, live feed properties, and extension URI association.
 /// </summary>
 [OpenXmlType(typeof(DXD.NonVisualPicturePropertiesExtension))]
 public partial class NonVisualPicturePropertiesExtension : ModelElement<DXD.NonVisualPicturePropertiesExtension>, IExtension
 {
- public CameraTool? CameraTool { get => _CameraTool; set => UpdateField(ref _CameraTool, value, nameof(CameraTool)); }
+  /// <summary>
+  ///   Camera tool settings associated with the picture, enabling advanced camera and perspective effects.
+  /// </summary>
+  public CameraTool? CameraTool { get => _CameraTool; set => UpdateField(ref _CameraTool, value, nameof(CameraTool)); }
 
- private CameraTool? _CameraTool;
- public SignatureLine? SignatureLine { get => _SignatureLine; set => UpdateField(ref _SignatureLine, value, nameof(SignatureLine)); }
+  private CameraTool? _CameraTool;
 
- private SignatureLine? _SignatureLine;
- public ObjectProperties? ObjectProperties { get => _ObjectProperties; set => UpdateField(ref _ObjectProperties, value, nameof(ObjectProperties)); }
+  /// <summary>
+  ///   Signature line information for the picture, supporting digital signatures and approval workflows.
+  /// </summary>
+  public SignatureLine? SignatureLine { get => _SignatureLine; set => UpdateField(ref _SignatureLine, value, nameof(SignatureLine)); }
 
- private ObjectProperties? _ObjectProperties;
- public LiveFeedProperties? LiveFeedProperties { get => _LiveFeedProperties; set => UpdateField(ref _LiveFeedProperties, value, nameof(LiveFeedProperties)); }
+  private SignatureLine? _SignatureLine;
 
- private LiveFeedProperties? _LiveFeedProperties;
- /// <summary>
- /// Gets or sets the URI associated with this instance.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.NonVisualPicturePropertiesExtension.Uri))]
- public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
+  /// <summary>
+  ///   Object properties for the picture, providing additional metadata and configuration for embedded or linked objects.
+  /// </summary>
+  public ObjectProperties? ObjectProperties { get => _ObjectProperties; set => UpdateField(ref _ObjectProperties, value, nameof(ObjectProperties)); }
 
- private string? _Uri;
+  private ObjectProperties? _ObjectProperties;
+
+  /// <summary>
+  ///   Live feed properties for the picture, enabling integration with live video or dynamic content sources.
+  /// </summary>
+  public LiveFeedProperties? LiveFeedProperties { get => _LiveFeedProperties; set => UpdateField(ref _LiveFeedProperties, value, nameof(LiveFeedProperties)); }
+
+  private LiveFeedProperties? _LiveFeedProperties;
+
+  /// <summary>
+  ///   URI string associated with this extension, identifying the extension type or schema for the non-visual picture properties extension.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.NonVisualPicturePropertiesExtension.Uri))]
+  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
+
+  private string? _Uri;
 }

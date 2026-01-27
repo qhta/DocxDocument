@@ -1,32 +1,31 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Extended base table properties class.
-/// Contains additional common properties for table formatting and metadata, which are not applied to <see cref = "CurrentTableProperties"/>.
+///   Provides extended base table properties for WordprocessingML tables, including additional formatting and metadata not present in <see cref="CurrentTableProperties{T}"/>.
 /// </summary>
 public partial class ExtBaseTableProperties<T> : CurrentTableProperties<T> where T : DX.OpenXmlElement
 {
   /// <summary>
-  /// Table style name, specifying the style applied to the table.
+  ///   Name of the table style applied to this table.
   /// </summary>
   public string? TableStyle { get; set; }
   /// <summary>
-  /// Table position properties, controlling the positioning of the table within the document.
+  ///   Properties controlling the positioning of the table within the document layout.
   /// </summary>
   public TablePositionProperties? TablePositionProperties { get; set; }
   /// <summary>
-  /// Table overlap setting, specifying how the table interacts with other tables or content.
+  ///   Specifies how the table interacts or overlaps with other tables or document content.
   /// </summary>
   public TableOverlapKind? TableOverlap { get; set; }
   /// <summary>
-  /// BiDi visual property, indicating whether the table uses bidirectional visual layout.
+  ///   Indicates whether the table uses bidirectional (BiDi) visual layout for right-to-left scripts.
   /// </summary>
   public bool? BiDiVisual { get; set; }
   /// <summary>
-  /// Table caption, providing a descriptive title for the table.
+  ///   Caption text providing a descriptive title for the table.
   /// </summary>
   public string? TableCaption { get; set; }
   /// <summary>
-  /// Table description, providing additional metadata or explanation for the table.
+  ///   Additional description or metadata for the table, used for accessibility or documentation.
   /// </summary>
   public string? TableDescription { get; set; }
 }

@@ -14,8 +14,4 @@ public partial class Bookmark : CollectionItem
   /// </summary>
   public BookmarkEnd? End { get; set; }
 
-  protected override object? GetUpdatableOpenXmlElement()
-  {
-    throw new NotImplementedException();
-  }
 }
