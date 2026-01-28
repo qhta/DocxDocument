@@ -18,11 +18,30 @@ public static class SimpleValueConverter
   public static object? ChangeType(object? value, Type targetType)
   {
     //DX.HexBinaryValue
-    if (value == null) return null;
-    if (value is DX.HexBinaryValue hexBinaryValue && targetType == typeof(HexInt))
-      return new HexInt(hexBinaryValue.Value!);
-    if (TryImplicitConvert(value, targetType, out var result))
-      return result;
+    if (value == null)
+    {
+      if (targetType==typeof(string))
+        return string.Empty;
+      return null;
+    }
+    var sourceType = value.GetType();
+
+    #region Boolean Conversion
+    if (value is Boolean booleanValue)
+    {
+      if (targetType == typeof(string))
+        return booleanValue.ToString();
+      if (BooleanOpenXmlConverter.SupportsType(targetType))
+        return BooleanOpenXmlConverter.ConvertToOpenXml(booleanValue, targetType);
+    }
+    if (targetType == typeof(Boolean))
+    {
+      if (value is string booleanStr)
+        return Boolean.Parse(booleanStr);
+      if (BooleanOpenXmlConverter.SupportsType(sourceType))
+        return BooleanOpenXmlConverter.ConvertFromOpenXml(value);
+    }
+    #endregion
 
     #region Enum Conversion
     if (value.GetType().IsEnum)
@@ -76,13 +95,15 @@ public static class SimpleValueConverter
     {
       if (targetType == typeof(string))
         return int32Value.ToString();
-      return Int32OpenXmlConverter.ConvertToOpenXml(int32Value, targetType);
+      if (Int32OpenXmlConverter.SupportsType(targetType))
+        return Int32OpenXmlConverter.ConvertToOpenXml(int32Value, targetType);
     }
     if (targetType == typeof(Int32))
     {
       if (value is string int32Str)
         return Int32.Parse(int32Str);
-      return Int32OpenXmlConverter.ConvertFromOpenXml(value);
+      if (Int32OpenXmlConverter.SupportsType(sourceType))
+        return Int32OpenXmlConverter.ConvertFromOpenXml(value);
     }
     #endregion
 
@@ -177,11 +198,57 @@ public static class SimpleValueConverter
     }
     #endregion
 
+    #region Base64Binary Conversion
+    if (value is Base64Binary base64binaryValue)
+    {
+      if (targetType == typeof(string))
+        return base64binaryValue.ToString();
+      return Base64BinaryOpenXmlConverter.ConvertToOpenXml(base64binaryValue, targetType);
+    }
+    if (targetType == typeof(Base64Binary))
+    {
+      if (value is string base64binaryStr)
+        return new Base64Binary(base64binaryStr);
+      return Base64BinaryOpenXmlConverter.ConvertFromOpenXml(value);
+    }
+    #endregion
+
+    #region String Conversion
+    if (value is String stringValue)
+    {
+      if (targetType == typeof(string))
+        return stringValue;
+      if (targetType == typeof(Uri))
+      {
+        if (string.IsNullOrWhiteSpace(stringValue))
+          return null;
+        if (Uri.TryCreate(stringValue, UriKind.RelativeOrAbsolute, out var uri))
+          return uri;
+        throw new UriFormatException($"Invalid URI value '{stringValue}'.");
+      }
+      if (StringOpenXmlConverter.SupportsType(targetType))
+        return StringOpenXmlConverter.ConvertToOpenXml(stringValue, targetType);
+    }
+    if (targetType == typeof(String))
+    {
+      if (value is string stringVal)
+        return stringVal;
+      if (value is Uri uriVal)
+        return uriVal.ToString();
+      if (StringOpenXmlConverter.SupportsType(sourceType))
+        return StringOpenXmlConverter.ConvertFromOpenXml(value);
+
+      return value.ToString();
+    }
+    #endregion
+
     if (value is DX.OpenXmlElement openXmlElement)
     {
       return OpenXmlConverter.ConvertFromOpenXml(openXmlElement, targetType);
     }
 
+    if (TryImplicitConvert(value, targetType, out var result))
+      return result;
     return Convert.ChangeType(value, targetType);
 
   }

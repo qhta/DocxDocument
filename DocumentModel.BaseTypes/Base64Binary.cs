@@ -37,9 +37,9 @@
 /// </remarks>
 [JsonConverter(typeof(Base64BinaryJsonConverter))]
 [SimpleType]
-public partial class Base64Binary : IEquatable<Base64Binary>
+public readonly partial struct Base64Binary : IEquatable<Base64Binary>, IEquatable<object>
 {
-  private readonly byte[] value = Array.Empty<byte>();
+  internal readonly byte[] value = Array.Empty<byte>();
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="Base64Binary"/> class with an empty byte array.
@@ -57,12 +57,6 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   /// <param name="val">A Base64-encoded string.</param>
   public Base64Binary(string val)
   {
-    if (string.IsNullOrEmpty(val))
-    {
-      value = Array.Empty<byte>();
-      return;
-    }
-
     value = Convert.FromBase64String(val);
   }
 
@@ -73,7 +67,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   /// <param name="val">The byte array to wrap.</param>
   public Base64Binary(byte[] val)
   {
-    value = val ?? Array.Empty<byte>();
+    value = val;
   }
 
   /// <summary>
@@ -188,11 +182,19 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   ///   are considered equal even if they were created from different sources (byte array vs. Base64 string).
   ///   </para>
   /// </remarks>
-  public bool Equals(Base64Binary? other)
+  public bool Equals(Base64Binary other)
   {
-    if (other == null)
-      return false;
     return Enumerable.SequenceEqual(value, other.value);
+  }
+
+  /// <summary>
+  /// Needed to correctly compare with object instances.
+  /// </summary>
+  /// <param name="obj"></param>
+  /// <returns></returns>
+  public override bool Equals(object? obj)
+  {
+    return obj is Base64Binary other && Equals(other);
   }
 
   /// <summary>

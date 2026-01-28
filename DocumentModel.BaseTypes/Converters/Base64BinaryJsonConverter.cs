@@ -69,17 +69,17 @@ public class Base64BinaryJsonConverter : JsonConverter<Base64Binary>
   ///   Thrown when the JSON token is not a string or null, or when the string cannot be parsed
   ///   as a valid Base64 value (invalid characters or improper padding).
   /// </exception>
-  public override Base64Binary? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+  public override Base64Binary Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
   {
     if (reader.TokenType == JsonTokenType.Null)
-      return null;
+      return new Base64Binary();
 
     if (reader.TokenType != JsonTokenType.String)
       throw new JsonException($"Expected string token for Base64Binary, but got {reader.TokenType}");
 
     string? base64String = reader.GetString();
     if (string.IsNullOrEmpty(base64String))
-      return null;
+      return new Base64Binary();
 
     try
     {
@@ -120,14 +120,8 @@ public class Base64BinaryJsonConverter : JsonConverter<Base64Binary>
   ///   </list>
   ///   </para>
   /// </remarks>
-  public override void Write(Utf8JsonWriter writer, Base64Binary? value, JsonSerializerOptions options)
+  public override void Write(Utf8JsonWriter writer, Base64Binary value, JsonSerializerOptions options)
   {
-    if (value == null)
-    {
-      writer.WriteNullValue();
-      return;
-    }
-
     string base64String = value.ToString();
     writer.WriteStringValue(base64String);
   }

@@ -5,67 +5,79 @@ public static class SimpleValueConverterTest
   private static readonly Assembly OpenXmlFrameworkAssembly = typeof(DocumentFormat.OpenXml.OpenXmlElement).Assembly;
   private static readonly Assembly OpenXmlAssembly = typeof(DocumentFormat.OpenXml.Wordprocessing.Document).Assembly;
   private static readonly Assembly SystemAssembly = typeof(System.String).Assembly;
-  private static (Type modelType, string otherTypeExpression)[] SupportedTypes { get; } =
+  private static readonly Assembly UriAssembly = typeof(System.Uri).Assembly;
+
+
+  private static readonly (Type modelType, string otherTypeExpression)[] SupportedTypes  =
   [
-( typeof(System.String), "DX.StringValue" ),
-( typeof(System.String), "System.String" ),
-( typeof(System.Int32), "System.String" ),
-( typeof(System.DateTime), "System.DateTime" ),
-( typeof(System.Int32), "DX.Int32Value" ),
-( typeof(System.Guid), "DX.StringValue" ),
-( typeof(System.Int32), "DX.OpenXmlLeafTextElement" ),
-( typeof(System.Boolean), "DX.BooleanValue" ),
-( typeof(System.UInt32), "DX.UInt32Value" ),
-( typeof(System.Boolean), "DX.TrueFalseValue" ),
-( typeof(System.Int64), "DX.IntegerValue" ),
-( typeof(System.Single), "DX.SingleValue" ),
-( typeof(System.Boolean), "DX.TrueFalseBlankValue" ),
-( typeof(DocumentModel.Base64Binary), "DX.Base64BinaryValue" ),
-( typeof(System.Decimal), "DX.DecimalValue" ),
-( typeof(System.String), "DX.OpenXmlLeafTextElement" ),
-( typeof(System.String), "System.Uri" ),
-( typeof(System.String), "DXM.CharType" ),
-( typeof(System.Int32), "DX.OpenXmlLeafElement { Val: DX.IntegerValue }" ),
-( typeof(System.Boolean), "DXM.OnOffType" ),
-( typeof(System.DateTime), "DX.DateTimeValue" ),
-( typeof(DocumentModel.HexInt), "DX.HexBinaryValue" ),
-( typeof(System.Boolean), "DX.OnOffValue" ),
-( typeof(DocumentModel.Twips), "DX.UInt32Value" ),
-( typeof(System.String), "DXW.StringType" ),
-( typeof(DocumentModel.Twips), "DX.Int32Value" ),
-( typeof(DocumentModel.HexChar), "DX.HexBinaryValue" ),
-( typeof(System.Int32), "DXW.DecimalNumberType" ),
-( typeof(System.Int32), "DX.OpenXmlLeafElement { Val: DX.Int32Value }" ),
-( typeof(System.String), "DXW.String255Type" ),
-( typeof(System.Int16), "DX.OpenXmlLeafElement { Val: DX.Int16Value }" ),
-( typeof(System.String), "DX.OpenXmlLeafElement { Val: DX.StringValue }" ),
-( typeof(DocumentModel.StringList), "DXW.StringType" ),
-( typeof(DocumentModel.HexBinary), "DX.OpenXmlLeafElement { Val: DX.HexBinaryValue }" ),
-( typeof(System.Boolean), "DXW.OnOffType" ),
-( typeof(DocumentModel.HexBinary), "DX.OpenXmlLeafElement" ),
-( typeof(System.Int32), "DX.IntegerValue" ),
-( typeof(System.UInt32), "DXW.StringType" ),
-( typeof(DocumentModel.Twips), "DXW.TwipsMeasureType" ),
-( typeof(System.Boolean), "DXW.OnOffOnlyType" ),
-( typeof(System.UInt32), "DXW.UnsignedDecimalNumberType" ),
-( typeof(System.Boolean), "DX.OpenXmlLeafElement { Val: DX.OnOffValue }" ),
-( typeof(System.Int64), "DX.OpenXmlLeafElement { Val: DX.IntegerValue }" ),
-( typeof(DocumentModel.HexInt), "DXW.LongHexNumberType" ),
-( typeof(System.String), "DXW.String253Type" ),
-( typeof(System.Int32), "DXW.NonNegativeDecimalNumberType" ),
-( typeof(DocumentModel.HalfPoints), "DXW.HpsMeasureType" ),
-( typeof(System.Boolean), "DXO10W.EmptyType" ),
-( typeof(System.Boolean), "DXO13W.OnOffType" ),
-( typeof(System.Int16), "DX.Int16Value" ),
-( typeof(System.Byte), "DX.ByteValue" ),
-( typeof(System.UInt16), "DX.UInt16Value" ),
-( typeof(DocumentModel.Twips), "DX.StringValue" ),
-( typeof(System.Int32), "DX.Int16Value" ),
-( typeof(System.Int32), "DX.StringValue" ),
-( typeof(System.Int64), "DX.Int64Value" ),
-( typeof(DocumentModel.EMU), "DX.StringValue" ),
-( typeof(DocumentModel.EMU), "DX.Int64Value" ),
+    ( typeof(System.String), "DX.StringValue" ),
+    ( typeof(System.String), "System.String" ),
+    ( typeof(System.Int32), "System.String" ),
+    ( typeof(System.DateTime), "System.DateTime" ),
+    ( typeof(System.Int32), "DX.Int32Value" ),
+    ( typeof(System.Guid), "DX.StringValue" ),
+    ( typeof(System.Int32), "DX.OpenXmlLeafTextElement" ),
+    ( typeof(System.Boolean), "DX.BooleanValue" ),
+    ( typeof(System.UInt32), "DX.UInt32Value" ),
+    ( typeof(System.Boolean), "DX.TrueFalseValue" ),
+    ( typeof(System.Int64), "DX.IntegerValue" ),
+    ( typeof(System.Single), "DX.SingleValue" ),
+    ( typeof(System.Boolean), "DX.TrueFalseBlankValue" ),
+    ( typeof(DocumentModel.Base64Binary), "DX.Base64BinaryValue" ),
+    ( typeof(System.Decimal), "DX.DecimalValue" ),
+    ( typeof(System.String), "DX.OpenXmlLeafTextElement" ),
+    ( typeof(System.String), "System.Uri" ),
+    ( typeof(System.String), "DXM.CharType" ),
+    ( typeof(System.Int32), "DX.OpenXmlLeafElement { Val: DX.IntegerValue }" ),
+    ( typeof(System.Boolean), "DXM.OnOffType" ),
+    ( typeof(System.DateTime), "DX.DateTimeValue" ),
+    ( typeof(DocumentModel.HexInt), "DX.HexBinaryValue" ),
+    ( typeof(System.Boolean), "DX.OnOffValue" ),
+    ( typeof(DocumentModel.Twips), "DX.UInt32Value" ),
+    ( typeof(System.String), "DXW.StringType" ),
+    ( typeof(DocumentModel.Twips), "DX.Int32Value" ),
+    ( typeof(DocumentModel.HexChar), "DX.HexBinaryValue" ),
+    ( typeof(System.Int32), "DXW.DecimalNumberType" ),
+    ( typeof(System.Int32), "DX.OpenXmlLeafElement { Val: DX.Int32Value }" ),
+    ( typeof(System.String), "DXW.String255Type" ),
+    ( typeof(System.Int16), "DX.OpenXmlLeafElement { Val: DX.Int16Value }" ),
+    ( typeof(System.String), "DX.OpenXmlLeafElement { Val: DX.StringValue }" ),
+    ( typeof(DocumentModel.StringList), "DXW.StringType" ),
+    ( typeof(DocumentModel.HexBinary), "DX.OpenXmlLeafElement { Val: DX.HexBinaryValue }" ),
+    ( typeof(System.Boolean), "DXW.OnOffType" ),
+    ( typeof(DocumentModel.HexBinary), "DX.OpenXmlLeafElement" ),
+    ( typeof(System.Int32), "DX.IntegerValue" ),
+    ( typeof(System.UInt32), "DXW.StringType" ),
+    ( typeof(DocumentModel.Twips), "DXW.TwipsMeasureType" ),
+    ( typeof(System.Boolean), "DXW.OnOffOnlyType" ),
+    ( typeof(System.UInt32), "DXW.UnsignedDecimalNumberType" ),
+    ( typeof(System.Boolean), "DX.OpenXmlLeafElement { Val: DX.OnOffValue }" ),
+    ( typeof(System.Int64), "DX.OpenXmlLeafElement { Val: DX.IntegerValue }" ),
+    ( typeof(DocumentModel.HexInt), "DXW.LongHexNumberType" ),
+    ( typeof(System.String), "DXW.String253Type" ),
+    ( typeof(System.Int32), "DXW.NonNegativeDecimalNumberType" ),
+    ( typeof(DocumentModel.HalfPoints), "DXW.HpsMeasureType" ),
+    ( typeof(System.Boolean), "DXO10W.EmptyType" ),
+    ( typeof(System.Boolean), "DXO13W.OnOffType" ),
+    ( typeof(System.Int16), "DX.Int16Value" ),
+    ( typeof(System.Byte), "DX.ByteValue" ),
+    ( typeof(System.UInt16), "DX.UInt16Value" ),
+    ( typeof(DocumentModel.Twips), "DX.StringValue" ),
+    ( typeof(System.Int32), "DX.Int16Value" ),
+    ( typeof(System.Int32), "DX.StringValue" ),
+    ( typeof(System.Int64), "DX.Int64Value" ),
+    ( typeof(DocumentModel.EMU), "DX.StringValue" ),
+    ( typeof(DocumentModel.EMU), "DX.Int64Value" ),
   ];
+
+
+  private static readonly Dictionary<string, Type> OpenXmlLeafElementConcreteTypes = new Dictionary<string, Type>
+  {
+    { "DX.Int32Value", typeof(DXD.AlphaBiLevel) },
+    { "DX.IntegerValue", typeof(DXD.AlphaBiLevel) },
+
+  };
+
 
   /// <summary>
   ///   Runs all TestSimpleValueConversion tests for supported types and reports results to the console.
@@ -81,11 +93,11 @@ public static class SimpleValueConverterTest
       Console.Write($"TestSimpleValueConverter with {type.Name} and {otherTypeExpression}");
       if (!TestSimpleValueConversion(type, otherTypeExpression))
       {
-        Console.WriteLine("failed.");
+        Console.WriteLine(" failed.");
         testResult = false;
       }
       else
-        Console.WriteLine("passed.");
+        Console.WriteLine(" passed.");
     }
     return testResult;
   }
@@ -101,33 +113,56 @@ public static class SimpleValueConverterTest
   /// <returns></returns>
   public static bool TestSimpleValueConversion(Type modelType, string otherTypeExpression)
   {
-    if (otherTypeExpression.Contains("{"))
-    {
-      return false;
-    }
-    else
-    {
-      Type otherType = GetType(otherTypeExpression);
-      object[] testValues = GetTestData(modelType);
-      //object[] convertedValues = GetTestData(otherType);
+    Type otherType = GetType(otherTypeExpression);
+    object[] testValues = GetTestData(modelType);
+    //object[] convertedValues = GetTestData(otherType);
 
-      foreach (var testValue in testValues)
+    foreach (var testValue in testValues)
+    {
+      if (modelType == typeof(string)) Debug.Assert(true);
+      if (otherType == typeof(DXW.Text)) Debug.Assert(true);
+      var convertedValue = SimpleValueConverter.ChangeType(testValue, otherType);
+      var roundTripValue = SimpleValueConverter.ChangeType(convertedValue, modelType);
+      if (!testValue.Equals(roundTripValue))
       {
-        var convertedValue = SimpleValueConverter.ChangeType(testValue, otherType);
-        var roundTripValue = SimpleValueConverter.ChangeType(convertedValue, modelType);
-        if (!object.Equals(testValue, roundTripValue))
-        {
-          Console.WriteLine($" - Conversion failed for value {testValue ?? "null"} of type {modelType.Name}");
-          return false;
-        }
+        Console.WriteLine($" - Conversion failed for value {testValue ?? "null"} of type {modelType.Name}");
+        return false;
       }
+
     }
     return true;
   }
 
-  private static Type GetType(string fullTypeName)
+  private static Type GetType(string otherTypeExpression)
   {
-    var ss = fullTypeName.Split('.');
+    string[] ss;
+    if (otherTypeExpression.Contains("{"))
+    {
+      ss = otherTypeExpression.Split(['{', '}'], StringSplitOptions.RemoveEmptyEntries);
+      if (ss.Length != 2)
+        throw new InvalidOperationException($"Invalid other type expression: {otherTypeExpression}");
+      var genericTypeName = ss[0].Trim();
+      if (genericTypeName != "DX.OpenXmlLeafElement")
+        throw new NotSupportedException($"Only DX.OpenXmlLeafElement with property initialization is supported, but got: {otherTypeExpression}");
+      var propertyInitialization = ss[1];
+      ss = propertyInitialization.Split(':', StringSplitOptions.RemoveEmptyEntries);
+      if (ss.Length != 2)
+        throw new InvalidOperationException($"Invalid other type expression: {otherTypeExpression}");
+
+      var valueTypeName = ss[1].Trim();
+      Type valueType = OpenXmlLeafElementConcreteTypes[valueTypeName];
+      return valueType;
+    }
+    var fullTypeName = otherTypeExpression;
+
+    if (fullTypeName == "DX.OpenXmlLeafTextElement")
+      return typeof(DXW.Text);
+    if (fullTypeName == "DXM.CharType")
+      return typeof(DXM.SeparatorChar);
+    if (fullTypeName == "DXM.OnOffType")
+      return typeof(DXM.AlignScripts);
+
+    ss = fullTypeName.Split('.');
     if (ss.Length == 2)
     {
       var ns = ss[0].Trim();
@@ -136,7 +171,8 @@ public static class SimpleValueConverterTest
       var namespaceQualifiedName = $"{fullNamespace}.{typeName}";
       var type = OpenXmlAssembly.GetType(namespaceQualifiedName)
                  ?? OpenXmlFrameworkAssembly.GetType(namespaceQualifiedName)
-                   ?? SystemAssembly.GetType(namespaceQualifiedName);
+                   ?? SystemAssembly.GetType(namespaceQualifiedName)
+                    ?? UriAssembly.GetType(namespaceQualifiedName);
 
       if (type != null)
         return type;
@@ -165,7 +201,7 @@ public static class SimpleValueConverterTest
     if (testedType == typeof(Int32))
       return [Int32.MinValue, -123456789, 0, 123456789, Int32.MaxValue];
     if (testedType == typeof(Int64))
-      return [Int64.MinValue, -1234567890123456789, 0, 1234567890123456789, Int64.MaxValue];
+      return [Int64.MinValue, -1234567890123456789, 0L, 1234567890123456789, Int64.MaxValue];
     if (testedType == typeof(UInt32))
       return [UInt32.MinValue, 0u, 1234567890u, UInt32.MaxValue];
     if (testedType == typeof(Single))
@@ -177,7 +213,9 @@ public static class SimpleValueConverterTest
     if (testedType == typeof(Guid))
       return [Guid.Empty, Guid.NewGuid(), Guid.NewGuid()];
     if (testedType == typeof(DocumentModel.Base64Binary))
-      return [new DocumentModel.Base64Binary(new byte[] { }), new DocumentModel.Base64Binary(new byte[] { 1, 2, 3, 4, 5 }), new DocumentModel.Base64Binary(new byte[] { 255, 254, 253, 252 })];
+      return [new DocumentModel.Base64Binary(new byte[] { }),
+        new DocumentModel.Base64Binary(new byte[] { 1, 2, 3, 4, 5 }),
+        new DocumentModel.Base64Binary(new byte[] { 255, 254, 253, 252 })];
     if (testedType == typeof(DocumentModel.HexInt))
       return [new DocumentModel.HexInt(0), new DocumentModel.HexInt(305419896), new DocumentModel.HexInt(-1)];
     if (testedType == typeof(DocumentModel.Twips))
