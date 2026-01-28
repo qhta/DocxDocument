@@ -29,16 +29,22 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <param name="str">A comma-separated string to parse into individual string items.</param>
   /// <remarks>
   /// The string is split by commas, and each resulting substring is added as a separate item in the list.
-  /// If <paramref name="str"/> is null, an empty list is created.
   /// </remarks>
-  public StringList(string? str)
+  public StringList(string str)
   {
-    if (str != null)
-    {
-      var ss = str.Split(',');
-      foreach (var s in ss)
-      { _list.Add(s.Trim()); }
-    }
+    var ss = str.Split(',');
+    foreach (var s in ss)
+    { _list.Add(s.Trim()); }
+  }
+
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="StringList"/> class with a list of strings
+  /// </summary>
+  public StringList(IEnumerable<string> strs)
+  {
+    foreach (var s in strs)
+    { _list.Add(s.Trim()); }
   }
 
   /// <summary>
@@ -47,7 +53,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <param name="str">The string to parse into a StringList.</param>
   /// <param name="result">When this method returns, contains the resulting StringList if parsing succeeded; otherwise, null.</param>
   /// <returns>true if the string was successfully parsed; otherwise, false.</returns>
-  public static bool TryParse(string? str, out StringList? result)
+  public static bool TryParse(string str, out StringList? result)
   {
     try
     {

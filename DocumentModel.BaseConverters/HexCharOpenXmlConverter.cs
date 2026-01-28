@@ -1,22 +1,21 @@
-﻿
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for HexInt values (hexadecimal integers) in Open XML.
+/// Provides conversion methods for HexChar values (hexadecimal integers) in Open XML.
 /// </summary>
-public static class HexIntConverter
+public static class HexCharOpenXmlConverter
 {
-
-  #region HexInt get methods
+  #region HexChar get methods
 
   /// <summary>
-  /// Retrieves a HexInt value from a child element within an OpenXmlCompositeElement.
+  /// Retrieves a HexChar value from a child element within an OpenXmlCompositeElement.
   /// Checks for LongHexNumberType elements or elements with a "Val" property compatible with hex strings.
   /// </summary>
   /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
   /// <param name="openXmlElement">The parent composite element.</param>
-  /// <returns>A HexInt value, or null if the element or value is not found.</returns>
-  public static HexInt? GetHexIntVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where OpenXmlElementType : DX.OpenXmlLeafElement
+  /// <returns>A HexChar value, or null if the element or value is not found.</returns>
+  public static HexChar? GetHexCharVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement? openXmlElement)
+    where OpenXmlElementType: DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
@@ -24,10 +23,9 @@ public static class HexIntConverter
       if (element is DXW.LongHexNumberType longHexNumberType)
       {
         if (longHexNumberType.Val?.Value != null)
-          return new HexInt(longHexNumberType.Val.Value!);
+          return new HexChar(longHexNumberType.Val.Value!);
       }
-      else
-      if (element != null)
+      else if (element != null)
       {
         var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
         Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(OpenXmlElementType)} not found");
@@ -40,7 +38,7 @@ public static class HexIntConverter
           var value = valueProperty.GetValue(val);
           if (value is string str)
           {
-            return new HexInt(str);
+            return new HexChar(str);
           }
         }
       }
@@ -49,24 +47,25 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Sets a HexInt value on a child element within an OpenXmlCompositeElement.
+  /// Sets a HexChar value on a child element within an OpenXmlCompositeElement.
   /// Creates the element if it doesn't exist, or removes it if the value is null.
   /// Supports LongHexNumberType, HexBinaryValue, and StringValue properties.
   /// </summary>
   /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
   /// <param name="openXmlElement">The parent composite element.</param>
-  /// <param name="value">The HexInt value to set.</param>
+  /// <param name="value">The HexChar value to set.</param>
   /// <exception cref="InvalidOperationException">Thrown if the "Val" property type is unsupported.</exception>
-  public static void SetHexIntVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement openXmlElement, HexInt? value) where OpenXmlElementType : DX.OpenXmlElement
+  public static void SetHexCharVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement openXmlElement, HexChar? value)
+    where OpenXmlElementType: DX.OpenXmlElement
   {
-    if (value != null)
+    if (value is not null)
     {
       var element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
       if (element == null)
       {
-        var constructor = typeof(OpenXmlElementType).GetConstructor(new Type[0]);
+        var constructor = typeof(OpenXmlElementType).GetConstructor([]);
         Debug.Assert(constructor != null, $"Type {typeof(OpenXmlElementType)} must have constructor with no parameters");
-        element = (OpenXmlElementType)constructor.Invoke(new object[0]);
+        element = (OpenXmlElementType)constructor.Invoke([]);
         openXmlElement.AppendChild(element);
       }
       var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
@@ -74,16 +73,14 @@ public static class HexIntConverter
       var valType = valProperty.PropertyType;
       if (valType == typeof(DXW.LongHexNumberType))
       {
-        DXW.LongHexNumberType? propElement = (DXW.LongHexNumberType?)valType.GetConstructor(new Type[0])?.Invoke(new object[0]);
+        DXW.LongHexNumberType? propElement = (DXW.LongHexNumberType?)valType.GetConstructor([])?.Invoke([]);
         Debug.Assert(propElement != null, $"\"{valType}\" type must have a parameterless constructor");
         propElement.Val = new DX.HexBinaryValue(value.ToString());
         valProperty.SetValue(element, propElement);
       }
-      else
-      if (valType == typeof(DX.HexBinaryValue))
+      else if (valType == typeof(DX.HexBinaryValue))
         valProperty.SetValue(element, new DX.HexBinaryValue(value.ToString()));
-      else
-      if (valType == typeof(DX.StringValue))
+      else if (valType == typeof(DX.StringValue))
         valProperty.SetValue(element, new DX.StringValue(value.ToString()));
       else
         throw new InvalidOperationException($"\"Value\" property of type {valType} unsupported");
@@ -95,81 +92,45 @@ public static class HexIntConverter
         _element.Remove();
     }
   }
+
   #endregion
 
   #region HexBinaryValue get/set methods.
 
   /// <summary>
-  /// Retrieves a HexInt value from a HexBinaryValue element.
+  /// Retrieves a HexChar value from a HexBinaryValue element.
   /// </summary>
   /// <param name="element">The HexBinaryValue element.</param>
-  /// <returns>A HexInt value, or null if element or value is null.</returns>
-  public static HexInt? GetValue(this DX.HexBinaryValue? element)
+  /// <returns>A HexChar value, or null if element or value is null.</returns>
+  public static HexChar? GetValue(this DX.HexBinaryValue? element)
   {
     if (element?.Value != null)
       return element.Value;
+
     return null;
   }
 
   /// <summary>
-  /// Retrieves a HexInt value from an Int32Value element (interpreting integer as hex if applicable, commonly used for indexed colors).
-  /// Note: This method currently returns the string representation of the integer value.
-  /// </summary>
-  /// <param name="element">The Int32Value element.</param>
-  /// <returns>A HexInt value, or null if element or value is null.</returns>
-  public static HexInt? GetValue(this DX.Int32Value? element)
-  {
-    if (element?.Value != null)
-      return element.Value;
-    return null;
-  }
-
-  /// <summary>
-  /// Retrieves a HexInt value from a UInt32Value element.
-  /// Note: This method currently returns the string representation of the integer value.
-  /// </summary>
-  /// <param name="element">The UInt32Value element.</param>
-  /// <returns>A HexInt value, or null if element or value is null.</returns>
-  public static HexInt? GetValue(this DX.UInt32Value? element)
-  {
-    if (element?.Value != null)
-      return element.Value;
-    return null;
-  }
-
-  /// <summary>
-  /// Retrieves a HexInt value from a LongHexNumberType element.
-  /// </summary>
-  /// <param name="element">The LongHexNumberType element.</param>
-  /// <returns>A HexInt value, or null if element or value is null.</returns>
-  public static HexInt? GetValue(this DXW.LongHexNumberType? element)
-  {
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    return null;
-  }
-
-  /// <summary>
-  /// Retrieves a HexInt value from a StringValue element.
+  /// Retrieves a HexChar value from a StringValue element.
   /// </summary>
   /// <param name="element">The StringValue element.</param>
-  /// <returns>A HexInt value, or null if element or value is null.</returns>
-  public static HexInt? GetValue(this DX.StringValue? element)
+  /// <returns>A HexChar value, or null if element or value is null.</returns>
+  public static HexChar? GetValue(this DX.StringValue? element)
   {
     if (element?.Value != null)
       return element.Value;
+
     return null;
   }
 
   /// <summary>
-  /// Retrieves a HexInt value from an OpenXmlLeafElement that has a property of HexBinaryValue type.
+  /// Retrieves a HexChar value from an OpenXmlLeafElement that has a property of HexBinaryValue type.
   /// </summary>
   /// <param name="openXmlElement">The OpenXmlLeafElement.</param>
-  /// <returns>A HexInt value, or null if property not found or value is null.</returns>
-  public static HexInt? GetValue(this DX.OpenXmlLeafElement? openXmlElement)
+  /// <returns>A HexChar value, or null if property not found or value is null.</returns>
+  public static HexChar? GetValue(this DX.OpenXmlLeafElement? openXmlElement)
   {
-    var valProperty = openXmlElement?.GetType().GetProperties()
-      .FirstOrDefault(item => item.PropertyType == typeof(DX.HexBinaryValue));
+    var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item => item.PropertyType == typeof(DX.HexBinaryValue));
     if (valProperty != null)
     {
       var value = valProperty.GetValue(openXmlElement);
@@ -182,54 +143,53 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Creates a HexBinaryValue from a HexInt value.
+  /// Creates a HexBinaryValue from a HexChar value.
   /// </summary>
-  /// <param name="value">The HexInt value.</param>
+  /// <param name="value">The HexChar value.</param>
   /// <returns>A new HexBinaryValue, or null if the input value is null.</returns>
-  public static DX.HexBinaryValue? CreateHexBinaryValue(this HexInt? value)
+  public static DX.HexBinaryValue? CreateHexBinaryValue(this HexChar? value)
   {
-    if (value != null) return new DX.HexBinaryValue(value.ToString());
-    return null;
+    if (value is null) return null;
+
+    return new DX.HexBinaryValue(value.ToString());
   }
 
   /// <summary>
-  /// Creates a StringValue from a HexInt value.
+  /// Creates a StringValue from a HexChar value.
   /// </summary>
-  /// <param name="value">The HexInt value.</param>
+  /// <param name="value">The HexChar value.</param>
   /// <returns>A new StringValue, or null if the input value is null.</returns>
-  public static DX.StringValue? CreateStringValue(this HexInt? value)
+  public static DX.StringValue? CreateStringValue(this HexChar? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
+
     return new DX.StringValue { Value = value.ToString() };
   }
 
-
   /// <summary>
-  /// Creates a specific HexBinaryType element from a HexInt value.
+  /// Creates a specific HexBinaryType element from a HexChar value.
   /// </summary>
   /// <typeparam name="HexBinaryType">The type of the element to create (e.g., LongHexNumberType).</typeparam>
-  /// <param name="value">The HexInt value.</param>
+  /// <param name="value">The HexChar value.</param>
   /// <returns>A new instance of the element type, or null if the input value is null.</returns>
-  public static HexBinaryType? CreateValue<HexBinaryType>(this HexInt? value)
-    where HexBinaryType : DXW.LongHexNumberType, new()
+  public static HexBinaryType? CreateValue<HexBinaryType>(this HexChar? value)
+    where HexBinaryType: DXW.LongHexNumberType, new()
   {
-    if (value != null)
-    {
-      var element = new HexBinaryType();
-      element.Val = new DX.HexBinaryValue(value.ToString());
-      return element;
-    }
-    return null;
+    if (value is null) return null;
+
+    var element = new HexBinaryType();
+    element.Val = new DX.HexBinaryValue(value.ToString());
+    return element;
   }
 
   /// <summary>
-  /// Creates a generic OpenXml element and sets its HexBinaryValue property from a HexInt value.
+  /// Creates a generic OpenXml element and sets its HexBinaryValue property from a HexChar value.
   /// </summary>
   /// <typeparam name="OpenXmlElementType">The type of the OpenXml element to create.</typeparam>
-  /// <param name="value">The HexInt value.</param>
+  /// <param name="value">The HexChar value.</param>
   /// <returns>A new instance of the element type, or a default instance if value is null.</returns>
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(this HexInt? value)
-    where OpenXmlElementType : DX.OpenXmlElement, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(this HexChar? value)
+    where OpenXmlElementType: DX.OpenXmlElement, new()
   {
     var newValue = new DX.HexBinaryValue(value.ToString());
     var element = new OpenXmlElementType();
@@ -238,27 +198,27 @@ public static class HexIntConverter
       valProperty.SetValue(element, newValue);
     return element;
   }
+
   #endregion
 
-
   #region OpenXmlLeafElement with Val property conversion methods
+
   /// <summary>
-  /// Retrieves a HexInt value from a specific OpenXmlLeafElement instance using its "Val" property.
+  /// Retrieves a HexChar value from a specific OpenXmlLeafElement instance using its "Val" property.
   /// </summary>
   /// <typeparam name="OpenXmlElementType">The type of the OpenXmlLeafElement.</typeparam>
   /// <param name="openXmlElement">The element instance.</param>
   /// <param name="propName">The property name to read from (default is "Val").</param>
-  /// <returns>A HexInt value, or null if not found.</returns>
-  public static HexInt? GetHexIntVal<OpenXmlElementType> (this DX.OpenXmlLeafElement? openXmlElement, 
-    string? propName = null) 
-    where OpenXmlElementType : DX.OpenXmlLeafElement
+  /// <returns>A HexChar value, or null if not found.</returns>
+  public static HexChar? GetHexCharVal<OpenXmlElementType>(this DX.OpenXmlLeafElement? openXmlElement, string? propName = null)
+    where OpenXmlElementType: DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
       var element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
       if (element != null)
       {
-        if (propName==null) propName = "Val";
+        if (propName == null) propName = "Val";
         var valProperty = typeof(OpenXmlElementType).GetProperty(propName);
         Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(OpenXmlElementType)} not found");
         var val = valProperty.GetValue(element);
@@ -280,57 +240,56 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Sets a HexInt value on a specific OpenXmlLeafElement instance using its "Val" property.
+  /// Sets a HexChar value on a specific OpenXmlLeafElement instance using its "Val" property.
   /// Adds the child element if needed, or removes it if the value is null.
   /// </summary>
   /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
   /// <param name="openXmlElement">The parent element.</param>
   /// <param name="value">The string value to set.</param>
   /// <param name="propName">The property name to set (default is "Val").</param>
-  public static void SetHexIntVal<OpenXmlElementType>(this DX.OpenXmlLeafElement openXmlElement, String? value,
-    string? propName = null) 
-    where OpenXmlElementType : DX.OpenXmlLeafElement, new()
+  public static void SetHexCharVal<OpenXmlElementType>(this DX.OpenXmlLeafElement openXmlElement, String? value, string? propName = null)
+    where OpenXmlElementType: DX.OpenXmlLeafElement, new()
   {
-    if (propName==null)
+    if (propName == null)
       propName = "Val";
     var valProperty = typeof(OpenXmlElementType).GetProperty(propName);
     Debug.Assert(valProperty != null);
     var itemElement = openXmlElement.GetFirstChild<OpenXmlElementType>();
     if (itemElement != null)
     {
-      if (value != null)
+      if (value is not null)
         valProperty.SetValue(itemElement, new DX.HexBinaryValue(value));
       else
         itemElement.Remove();
     }
-    else
-    if (value != null)
+    else if (value is not null)
     {
       itemElement = new OpenXmlElementType();
       valProperty.SetValue(itemElement, new DX.StringValue(value));
       openXmlElement.AppendChild(itemElement);
     }
   }
+
   #endregion
 
   #region OpenXmlLeafElement with Val property conversion methods
+
   /// <summary>
-  /// Retrieves a HexInt value from a specific child element of a composite element.
+  /// Retrieves a HexChar value from a specific child element of a composite element.
   /// </summary>
   /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
   /// <param name="openXmlElement">The parent composite element.</param>
   /// <param name="propName">The property name to read from (default is "Val").</param>
-  /// <returns>A HexInt value, or null if not found.</returns>
-  public static HexInt? GetHexIntVal<OpenXmlElementType> (this DX.OpenXmlCompositeElement? openXmlElement, 
-    string? propName = null) 
-    where OpenXmlElementType : DX.OpenXmlLeafElement
+  /// <returns>A HexChar value, or null if not found.</returns>
+  public static HexChar? GetHexCharVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement? openXmlElement, string? propName)
+    where OpenXmlElementType: DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
       var element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
       if (element != null)
       {
-        if (propName==null) propName = "Val";
+        if (propName == null) propName = "Val";
         var valProperty = typeof(OpenXmlElementType).GetProperty(propName);
         Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(OpenXmlElementType)} not found");
         var val = valProperty.GetValue(element);
@@ -352,60 +311,58 @@ public static class HexIntConverter
   }
 
   /// <summary>
-  /// Sets a HexInt value on a specific child element of a composite element.
+  /// Sets a HexChar value on a specific child element of a composite element.
   /// Adds the child element if needed, or removes it if the value is null.
   /// </summary>
   /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
   /// <param name="openXmlElement">The parent composite element.</param>
   /// <param name="value">The string value to set.</param>
   /// <param name="propName">The property name to set (default is "Val").</param>
-  public static void SetHexIntVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement openXmlElement, String? value,
-    string? propName = null) 
-    where OpenXmlElementType : DX.OpenXmlLeafElement, new()
+  public static void SetHexCharVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement openXmlElement, String? value, string? propName = null)
+    where OpenXmlElementType: DX.OpenXmlLeafElement, new()
   {
-    if (propName==null)
+    if (propName == null)
       propName = "Val";
     var valProperty = typeof(OpenXmlElementType).GetProperty(propName);
     Debug.Assert(valProperty != null);
     var itemElement = openXmlElement.GetFirstChild<OpenXmlElementType>();
     if (itemElement != null)
     {
-      if (value != null)
+      if (value is not null)
         valProperty.SetValue(itemElement, new DX.HexBinaryValue(value));
       else
         itemElement.Remove();
     }
-    else
-    if (value != null)
+    else if (value is not null)
     {
       itemElement = new OpenXmlElementType();
       valProperty.SetValue(itemElement, new DX.StringValue(value));
       openXmlElement.AppendChild(itemElement);
     }
   }
+
   #endregion
 
   /// <summary>
-  /// Sets a HexInt value in the specified OpenXmlCompositeElement either by updating an existing child or adding a new one.
+  /// Sets a HexChar value in the specified OpenXmlCompositeElement either by updating an existing child or adding a new one.
   /// </summary>
   /// <typeparam name="OpenElementType">The type of the child element.</typeparam>
   /// <param name="openXmlElement">The parent composite element.</param>
-  /// <param name="value">The HexInt value to set. If null, the child element is removed.</param>
-  public static void SetValue<OpenElementType>(this DX.OpenXmlCompositeElement openXmlElement, HexInt? value)
-    where OpenElementType : DX.OpenXmlElement, new()
+  /// <param name="value">The HexChar value to set. If null, the child element is removed.</param>
+  public static void SetValue<OpenElementType>(this DX.OpenXmlCompositeElement openXmlElement, HexChar? value)
+    where OpenElementType: DX.OpenXmlElement, new()
   {
     var valProperty = typeof(OpenElementType).GetProperty("Val") ?? typeof(OpenElementType).GetProperty("Value");
     Debug.Assert(valProperty != null);
     var itemElement = openXmlElement.GetFirstChild<OpenElementType>();
     if (itemElement != null)
     {
-      if (value != null)
-        valProperty.SetValue(itemElement, HexIntConverter.CreateHexBinaryValue(value));
+      if (value is not null)
+        valProperty.SetValue(itemElement, HexCharOpenXmlConverter.CreateHexBinaryValue((HexChar)value));
       else
         itemElement.Remove();
     }
-    else
-    if (value != null)
+    else if (value is not null)
     {
       itemElement = new OpenElementType();
       valProperty.SetValue(itemElement, new DX.HexBinaryValue(value.ToString()));
@@ -413,22 +370,44 @@ public static class HexIntConverter
     }
   }
 
+  #region Generic conversion methods
+
   /// <summary>
-  /// Creates an Open XML element of the specified type from a HexInt value.
+  /// Creates an Open XML element of the specified type from a HexChar value.
   /// </summary>
-  /// <param name="hexIntVal">The HexInt value to convert.</param>
+  /// <param name="HexCharVal">The HexChar value to convert.</param>
   /// <param name="conversionType">The target Open XML element type.</param>
   /// <returns>The created Open XML element, or null if the input is null.</returns>
   /// <exception cref="InvalidOperationException"></exception>
-  public static object? CreateOpenXmlElement(HexInt? hexIntVal, Type conversionType)
+  public static object? ConvertToOpenXml(HexChar? HexCharVal, Type conversionType)
   {
-    if (hexIntVal == null) return null;
+    if (HexCharVal is null) return null;
 
     if (conversionType == typeof(DX.HexBinaryValue))
     {
-      return new DX.HexBinaryValue(hexIntVal.ToString());
+      return new DX.HexBinaryValue(HexCharVal.ToString());
     }
-
-    throw new InvalidOperationException($"Cannot create Open XML element for {hexIntVal} of type {hexIntVal.GetType()}");
+    throw new NotSupportedException($"Conversion from HexChar to {conversionType} is not supported");
   }
+
+  /// <summary>
+  /// Converts an Open XML value to its string representation, if supported.
+  /// </summary>
+  /// <param name="value">The Open XML value to convert. This can be an instance of StringValue, DXW.StringType, DXW.String255Type,
+  /// DXW.String253Type, OpenXmlLeafTextElement, or OpenXmlLeafElement. May be null.</param>
+  /// <returns>A string representation of the specified Open XML value, or null if <paramref name="value"/> is null.</returns>
+  /// <exception cref="NotSupportedException">Thrown if <paramref name="value"/> is not a supported Open XML type.</exception>
+  public static HexChar? ConvertFromOpenXml(object? value)
+  {
+    if (value == null) return null;
+
+    var sourceType = value.GetType();
+    if (value is DX.HexBinaryValue hexBinaryValue)
+    {
+      return new HexChar(hexBinaryValue.Value!);
+    }
+    throw new NotSupportedException($"Conversion from type {sourceType} to HexChar is not supported.");
+  }
+
+  #endregion
 }

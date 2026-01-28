@@ -5,7 +5,7 @@
 /// </summary>
 public static class BooleanOpenXmlConverter
 {
-  public static Type[] SupportedTypes { get; } =
+  public static readonly Type[] SupportedTypes =
   [
     typeof(DXW.EmptyType),
     typeof(DX.OnOffValue),
@@ -21,29 +21,23 @@ public static class BooleanOpenXmlConverter
     typeof(DX.BooleanValue),
     typeof(DXM.BooleanValues),
     typeof(DX.TrueFalseValue),
-    typeof(DX.TrueFalseBlankValue),
     typeof(DX.EnumValue<DXM.BooleanValues>),
     typeof(DX.OpenXmlLeafTextElement),
-    typeof(DX.OpenXmlLeafElement)
+    typeof(DX.OpenXmlLeafElement),
+    typeof(string),
   ];
 
   /// <summary>
   /// Checks if the specified type is supported for Boolean conversion.
-  /// It supports types derived from DX.OpenXmlLeafElement with a Boolean Val property, or types in the SupportedTypes list.
+  /// It supports types derived from DX.OpenXmlLeafElement with a Val property
+  /// or a singular property of one of the supported types,
+  /// or types in the SupportedTypes list.
   /// </summary>
   /// <param name="type">The type to check.</param>
   /// <returns>True if and only if the conversion to/from OpenXml type is supported.</returns>
   public static bool SupportsType(Type type)
   {
-    if (type.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
-    {
-      var valProp = type.GetProperty("Val");
-      if (valProp != null && valProp.PropertyType == typeof(Boolean))
-        return true;
-
-      return false;
-    }
-    return SupportedTypes.Contains(type);
+    return OpenXmlConverterHelper.SupportsType(type, SupportedTypes);
   }
 
   #region DXW.EmptyType conversion.
@@ -260,34 +254,6 @@ public static class BooleanOpenXmlConverter
 
   #endregion
 
-  #region TrueFalseOnlyValue conversion.
-
-  /// <summary>
-  /// Retrieves a boolean value from the specified TrueFalseBlankValue element.
-  /// </summary>
-  /// <param name="value">The TrueFalseBlankValue element to check.</param>
-  /// <returns>True if the value is On, otherwise null or false.</returns>
-  public static Boolean? ConvertToBool(DX.TrueFalseBlankValue? value)
-  {
-    if (value == null) return null;
-
-    return DX.TrueFalseBlankValue.ToBoolean(value);
-  }
-
-  /// <summary>
-  /// Creates an TrueFalseBlankValue element from the specified boolean value.
-  /// </summary>
-  /// <param name="value">The boolean value to convert.</param>
-  /// <returns>TrueFalseBlankValue.On if true, TrueFalseBlankValue.Off if false, otherwise null.</returns>
-  public static DX.TrueFalseBlankValue? ConvertBoolToTrueFalseBlankValue(Boolean? value)
-  {
-    if (value == null) return null;
-
-    return DX.TrueFalseBlankValue.FromBoolean((bool)value!);
-  }
-
-  #endregion
-
   #region DXW.OnOffType conversion.
 
   /// <summary>
@@ -299,7 +265,7 @@ public static class BooleanOpenXmlConverter
   {
     if (openXmlElement == null) return true;
 
-    return openXmlElement.Val?.Value;
+    return openXmlElement.Val?.Value ?? true;
   }
 
   /// <summary>
@@ -336,7 +302,7 @@ public static class BooleanOpenXmlConverter
 
     var enumVal = openXmlElement.Val?.Value;
     if (enumVal == null)
-      throw new InvalidOperationException("Missing OnOffType value.");
+      return true;
 
     if (enumVal == DXO10W.OnOffValues.True
         || enumVal== DXO10W.OnOffValues.One) 
@@ -382,7 +348,7 @@ public static class BooleanOpenXmlConverter
 
     var enumVal = openXmlElement.Val?.Value;
     if (enumVal == null)
-      throw new InvalidOperationException("Missing OnOffType value.");
+      return true;
 
     return enumVal;
 
@@ -423,7 +389,7 @@ public static class BooleanOpenXmlConverter
 
     var enumVal = openXmlElement.Val?.Value;
     if (enumVal == null)
-      throw new InvalidOperationException("Missing OnOffType value.");
+      return true;
 
     if (enumVal == DXM.BooleanValues.True
         || enumVal == DXM.BooleanValues.One
@@ -859,6 +825,51 @@ public static class BooleanOpenXmlConverter
 
   #endregion
 
+
+  #region string conversion.
+
+  /// <summary>
+  /// Converts the specified string representation of a logical value to its nullable Boolean equivalent.
+  /// </summary>
+  /// <remarks>If <paramref name="value"/> is <see langword="null"/>, the method returns <see langword="true"/>.
+  /// Any other input that does not match the accepted values results in <see langword="null"/>.</remarks>
+  /// <param name="value">The string to convert. Accepts "true", "false", "1", or "0" (case-insensitive).</param>
+  /// <returns>A nullable Boolean value: <see langword="true"/> if <paramref name="value"/> is "true" or "1"; <see
+  /// langword="false"/> if <paramref name="value"/> is "false" or "0"; otherwise, <see langword="null"/>.</returns>
+  public static Boolean? ConvertToBool(string? value)
+  {
+    if (value == null) return true;
+
+    value = value.ToLower();
+
+    if (value == "true" || value == "1")
+      return true;
+    if (value == "false" || value == "0")
+      return false;
+    return null;
+  }
+
+  /// <summary>
+  /// Creates a new instance of the specified DXW.OnOffType and sets its value to the provided Boolean value.
+  /// </summary>
+  /// <param name="value">The Boolean value to create the OnOffType element. If <see langword="null"/>, the method returns <see
+  /// langword="null"/>.</param>
+  /// <param name="targetType">The type of OnOffType to instantiate. Must be a type derived from DXW.OnOffType.</param>
+  /// <returns>A new instance of the specified OnOffType with its value set to <paramref name="value"/>; or <see
+  /// langword="null"/> if <paramref name="value"/> is <see langword="null"/>.</returns>
+  public static DXW.OnOffType? CreateOnOffType(Boolean? value, Type targetType)
+  {
+    if (value == null) return null;
+    if (targetType.GetConstructor([typeof(Boolean)]) != null)
+      return (DXW.OnOffType)Activator.CreateInstance(targetType, value)!;
+
+    var element = (DXW.OnOffType)Activator.CreateInstance(targetType)!;
+    element.Val = value;
+    return element;
+  }
+
+  #endregion
+
   #region Generic OpenXml boolean converter
 
   /// <summary>
@@ -885,8 +896,6 @@ public static class BooleanOpenXmlConverter
       return ConvertBoolToOnOffOnlyValue(value);
     if (targetType.IsEqualOrSubclassOf(typeof(DX.TrueFalseValue)))
       return ConvertBoolToTrueFalseValue(value);
-    if (targetType.IsEqualOrSubclassOf(typeof(DX.TrueFalseBlankValue)))
-      return ConvertBoolToTrueFalseBlankValue(value);
     if (targetType.IsEqualOrSubclassOf(typeof(DXW.OnOffType)))
       return CreateOnOffType(value, targetType);
     if (targetType.IsEqualOrSubclassOf(typeof(DXW.OnOffOnlyType)))
@@ -944,8 +953,6 @@ public static class BooleanOpenXmlConverter
       return ConvertToBool(onOffOnlyTypeValue);
     if (value is DX.TrueFalseValue trueFalseValue)
       return ConvertToBool(trueFalseValue);
-    if (value is DX.TrueFalseBlankValue trueFalseBlankValue)
-      return ConvertToBool(trueFalseBlankValue);
     if (value is DXO10W.OnOffValues onOff10Value)
       return ConvertToBool((DXO10W.OnOffValues?)onOff10Value);
     if (value is DX.EnumValue<DXO10W.OnOffValues> onOff10EnumValue)
