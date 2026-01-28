@@ -381,6 +381,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
       return ToString();
     if (targetType == typeof(HexInt))
       return new HexInt(value);
+
     return ((IConvertible)value).ToType(targetType, provider);
   }
 

@@ -5,7 +5,7 @@ using DocumentModel.OpenXml;
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="BooleanOpenXmlConverter"/> conversions between .NET boolean values and various Open XML boolean types.
+///   Provides unit tests for verifying the correctness of <see cref="OpenXml.BooleanOpenXmlConverter"/> conversions between .NET boolean values and various Open XML boolean types.
 ///   Tests round-trip conversion for supported Open XML boolean types, including special cases for empty types.
 /// </summary>
 public static class BooleanOpenXmlConverterTest
@@ -68,14 +68,14 @@ public static class BooleanOpenXmlConverterTest
     if (openXmlType.Name.StartsWith("TrueFalse"))
       Debug.Assert(true);
     bool trueInput = true;
-    var trueOpenXml = BooleanOpenXmlConverter.ConvertToOpenXml(trueInput, openXmlType);
-    var trueOutput = BooleanOpenXmlConverter.ConvertFromOpenXml(trueOpenXml);
+    var trueOpenXml = OpenXml.BooleanOpenXmlConverter.ConvertToOpenXml(trueInput, openXmlType);
+    var trueOutput = OpenXml.BooleanOpenXmlConverter.ConvertFromOpenXml(trueOpenXml);
     if (trueOutput is not bool trueBool || trueBool != true)
       return false;
 
     bool falseInput = false;
-    var falseOpenXml = BooleanOpenXmlConverter.ConvertToOpenXml(falseInput, openXmlType);
-    var falseOutput = BooleanOpenXmlConverter.ConvertFromOpenXml(falseOpenXml);
+    var falseOpenXml = OpenXml.BooleanOpenXmlConverter.ConvertToOpenXml(falseInput, openXmlType);
+    var falseOutput = OpenXml.BooleanOpenXmlConverter.ConvertFromOpenXml(falseOpenXml);
     if (openXmlType.BaseType?.Name == "EmptyType")
     {
       // Special case: EmptyType converts false to null
@@ -86,8 +86,8 @@ public static class BooleanOpenXmlConverterTest
       return false;
 
     bool? nullInput = null;
-    var nullOpenXml = BooleanOpenXmlConverter.ConvertToOpenXml(nullInput, openXmlType);
-    var nullOutput = BooleanOpenXmlConverter.ConvertFromOpenXml(nullOpenXml);
+    var nullOpenXml = OpenXml.BooleanOpenXmlConverter.ConvertToOpenXml(nullInput, openXmlType);
+    var nullOutput = OpenXml.BooleanOpenXmlConverter.ConvertFromOpenXml(nullOpenXml);
     if (nullOutput is not null)
       return false;
 

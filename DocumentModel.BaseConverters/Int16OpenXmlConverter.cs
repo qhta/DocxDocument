@@ -16,8 +16,45 @@ public static class Int16OpenXmlConverter
     typeof(DX.UInt16Value),
     typeof(DX.UInt32Value),
     typeof(DX.UInt64Value),
-    typeof(DX.StringValue)
+    typeof(DX.StringValue),
+    typeof(DX.OpenXmlLeafTextElement),
+    typeof(DX.OpenXmlLeafElement)
   ];
+
+
+  /// <summary>
+  /// Checks if the specified type is supported for Int16 conversion.
+  /// It supports types derived from DX.OpenXmlLeafElement with an Int16 Val property
+  /// or a singular property of one of the supported types,
+  /// or types in the SupportedTypes list.
+  /// </summary>
+  /// <param name="type">The type to check.</param>
+  /// <returns>True if and only if the conversion to/from OpenXml type is supported.</returns>
+  public static bool SupportsType(Type type)
+  {
+    if (type.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
+      return true;
+    if (type.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    {
+      var valProp = type.GetProperty("Val");
+      if (valProp == null)
+      {
+        var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+        if (allProps.Length == 1)
+          valProp = allProps[0];
+        else
+          return false;
+
+      }
+      if (valProp.PropertyType == typeof(Int16)
+          || SupportsType(valProp.PropertyType))
+        return true;
+
+      return false;
+    }
+
+    return SupportedTypes.Contains(type);
+  }
 
   #region SByteValue conversion.
 
@@ -290,6 +327,142 @@ public static class Int16OpenXmlConverter
 
   #endregion
 
+  #region StringValue conversion.
+
+  /// <summary>
+  /// Converts an OpenXml StringValue to Int16.
+  /// </summary>
+  /// <param name="StringValue">The StringValue to convert.</param>
+  /// <returns>The Int16 value, or null if the element has no content.</returns>
+  public static Int16? ConvertToInt16(DX.StringValue? StringValue)
+  {
+    if (StringValue == null) return null;
+    var text = StringValue.Value;
+
+    if (text == null)
+      throw new InvalidOperationException("StringValue has no content.");
+
+    return Int16.Parse(text);
+  }
+
+  /// <summary>
+  /// Creates an OpenXml StringValue from an Int16 value.
+  /// </summary>
+  /// <param name="value">The Int16 value to convert.</param>
+  /// <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+  /// <returns>A new StringValue, or null if the input is null.</returns>
+  public static DX.StringValue? CreateStringValue(Int16? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    var text = value.ToString()!;
+    var element = (DX.StringValue)Activator.CreateInstance(targetType)!;
+    element.Value = text;
+    return element;
+  }
+
+  #endregion
+
+  #region OpenXmlLeafTextElement conversion.
+
+  /// <summary>
+  /// Converts an OpenXml OpenXmlLeafTextElement to Int16.
+  /// </summary>
+  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The Int16 value, or null if the element has no content.</returns>
+  public static Int16? ConvertToInt16(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
+  {
+    if (OpenXmlLeafTextElement == null) return null;
+    var text = OpenXmlLeafTextElement.Text;
+
+    if (!Int16.TryParse(text, out var result))
+      return null;
+
+    return result;
+  }
+
+  /// <summary>
+  /// Creates an OpenXml OpenXmlLeafTextElement from an Int16 value.
+  /// </summary>
+  /// <param name="value">The Int16 value to convert.</param>
+  /// <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+  public static DX.OpenXmlLeafTextElement? CreateOpenXmlLeafTextElement(Int16? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    var text = value.ToString()!;
+    var element = (DX.OpenXmlLeafTextElement)Activator.CreateInstance(targetType)!;
+    element.Text = text;
+    return element;
+  }
+
+  #endregion
+
+  #region OpenXmlLeafElement conversion.
+
+  /// <summary>
+  /// Converts an OpenXml OpenXmlLeafElement to Int16.
+  /// </summary>
+  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+  /// <returns>The Int16 value, or null if the element has no content.</returns>
+  public static Int16? ConvertToInt16(DX.OpenXmlLeafElement? OpenXmlLeafElement)
+  {
+    if (OpenXmlLeafElement == null) return null;
+
+    var sourceType = OpenXmlLeafElement.GetType();
+    var valProp = OpenXmlLeafElement.GetType().GetProperty("Val");
+    if (valProp == null)
+    {
+      var allProps = sourceType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+      if (allProps.Length == 1)
+        valProp = allProps[0];
+      else
+        throw new InvalidOperationException($"OpenXmlLeafElement of type {sourceType} does not have a string Val property");
+    }
+    if (valProp.PropertyType != typeof(Int16) && SupportsType(valProp.PropertyType))
+    {
+      var value = valProp.GetValue(OpenXmlLeafElement);
+      var convertedValue = ConvertFromOpenXml(value);
+      return (Int16)convertedValue!;
+    }
+
+    return (Int16)valProp.GetValue(OpenXmlLeafElement)!;
+  }
+
+  /// <summary>
+  /// Creates an OpenXml OpenXmlLeafElement from an Int16 value.
+  /// </summary>
+  /// <param name="value">The Int16 value to convert.</param>
+  /// <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
+  public static DX.OpenXmlLeafElement? CreateOpenXmlLeafElement(Int16? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    var element = (DX.OpenXmlLeafElement)Activator.CreateInstance(targetType)!;
+    var valProp = element.GetType().GetProperty("Val");
+    if (valProp == null)
+    {
+      var allProps = targetType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+      if (allProps.Length == 1)
+        valProp = allProps[0];
+      else
+        throw new InvalidOperationException($"OpenXmlLeafElement of type {element.GetType()} does not have a string Val property");
+    }
+    if (valProp.PropertyType != typeof(Int16) && SupportsType(valProp.PropertyType))
+    {
+      var convertedValue = ConvertToOpenXml(value, valProp.PropertyType);
+      valProp.SetValue(element, convertedValue);
+      return element;
+    }
+    valProp.SetValue(element, value);
+    return element;
+  }
+
+  #endregion
+
+
   #region Generic OpenXml conversion methods
 
   /// <summary>
@@ -325,7 +498,13 @@ public static class Int16OpenXmlConverter
       return CreateUInt64Value(value);
 
     if (targetType == typeof(DX.StringValue))
-      return new DX.StringValue(value.ToString());
+      return CreateStringValue(value, targetType);
+
+    if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
+      return CreateOpenXmlLeafTextElement(value, targetType);
+
+    if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafElement)))
+      return CreateOpenXmlLeafElement(value, targetType);
 
     throw new InvalidOperationException($"Conversion from Int16 to {targetType} is not supported");
   }
@@ -367,11 +546,13 @@ public static class Int16OpenXmlConverter
       return ConvertToInt16(uInt64Value);
 
     if (value is DX.StringValue stringValue)
-    {
-      if (Int16.TryParse(stringValue.Value, out var result))
-        return result;
-      return null;
-    }
+      return ConvertToInt16(stringValue);
+
+    if (value is DX.OpenXmlLeafTextElement openXmlLeafTextElement)
+      return ConvertToInt16(openXmlLeafTextElement);
+
+    if (value is DX.OpenXmlLeafElement openXmlLeafElement)
+      return ConvertToInt16(openXmlLeafElement);
 
     throw new InvalidOperationException($"Conversion from {sourceType} to Int16 is not supported");
   }
