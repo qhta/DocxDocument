@@ -19,6 +19,42 @@ public static class ByteOpenXmlConverter
     typeof(DX.StringValue)
   ];
 
+
+  /// <summary>
+  /// Checks if the specified type is supported for Int32 conversion.
+  /// It supports types derived from DX.OpenXmlLeafElement with a Byte Val property
+  /// or a singular property of one of the supported types,
+  /// or types in the SupportedTypes list.
+  /// </summary>
+  /// <param name="type">The type to check.</param>
+  /// <returns>True if and only if the conversion to/from OpenXml type is supported.</returns>
+  public static bool SupportsType(Type type)
+  {
+    if (type.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
+      return true;
+    if (type.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    {
+      var valProp = type.GetProperty("Val");
+      if (valProp == null)
+      {
+        var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+        if (allProps.Length == 1)
+          valProp = allProps[0];
+        else
+          return false;
+
+      }
+      if (valProp.PropertyType == typeof(Byte)
+          || SupportsType(valProp.PropertyType))
+        return true;
+
+      return false;
+    }
+
+    return SupportedTypes.Contains(type);
+  }
+
+
   #region SByteValue conversion.
 
   /// <summary>

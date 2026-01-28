@@ -19,14 +19,14 @@ public static class Int32OpenXmlConverter
     typeof(DX.UInt32Value),
     typeof(DX.UInt64Value),
     typeof(DX.StringValue),
-    typeof(DX.OpenXmlLeafTextElement),
     typeof(DX.HexBinaryValue),
-    typeof(DX.OpenXmlLeafElement)
+    typeof(DX.OpenXmlLeafTextElement),
+    typeof(DX.OpenXmlLeafElement),
   ];
 
   /// <summary>
   /// Checks if the specified type is supported for Int32 conversion.
-  /// It supports types derived from DX.OpenXmlLeafElement with an Int32 Val property
+  /// It supports types derived from DX.OpenXmlLeafElement with a Val property
   /// or a singular property of one of the supported types,
   /// or types in the SupportedTypes list.
   /// </summary>
@@ -34,28 +34,7 @@ public static class Int32OpenXmlConverter
   /// <returns>True if and only if the conversion to/from OpenXml type is supported.</returns>
   public static bool SupportsType(Type type)
   {
-    if (type.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
-      return true;
-    if (type.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
-    {
-      var valProp = type.GetProperty("Val");
-      if (valProp == null)
-      {
-        var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-        if (allProps.Length == 1)
-          valProp = allProps[0];
-        else
-          return false;
-
-      }
-      if (valProp.PropertyType == typeof(Int32) 
-          || SupportsType(valProp.PropertyType))
-        return true;
-
-      return false;
-    }
-
-    return SupportedTypes.Contains(type);
+    return OpenXmlConverterHelper.SupportsType(type, SupportedTypes);
   }
 
   #region SByteValue conversion.
@@ -340,10 +319,10 @@ public static class Int32OpenXmlConverter
     if (StringValue == null) return null;
     var text = StringValue.Value;
 
-    if (!Int32.TryParse(text, out var result))
-      return null;
+    if (text == null)
+      throw new InvalidOperationException("StringValue has no content.");
 
-    return result;
+    return Int32.Parse(text);
   }
 
   /// <summary>
@@ -400,42 +379,6 @@ public static class Int32OpenXmlConverter
 
   #endregion
 
-  #region HexBinaryValue conversion.
-
-  /// <summary>
-  /// Converts an OpenXml HexBinaryValue to Int32.
-  /// </summary>
-  /// <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
-  /// <returns>The Int32 value, or null if the element has no content.</returns>
-  public static Int32? ConvertToInt32(DX.HexBinaryValue? HexBinaryValue)
-  {
-    if (HexBinaryValue == null) return null;
-    var text = HexBinaryValue.Value;
-
-    if (!Int32.TryParse(text, NumberStyles.HexNumber, null, out var result))
-      throw new InvalidOperationException($"Conversion of {text} to Int32 failed.");
-
-    return result;
-  }
-
-  /// <summary>
-  /// Creates an OpenXml HexBinaryValue from an Int32 value.
-  /// </summary>
-  /// <param name="value">The Int32 value to convert.</param>
-  /// <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
-  /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
-  public static DX.HexBinaryValue? CreateHexBinaryValue(Int32? value, Type targetType)
-  {
-    if (value == null) return null;
-
-    var text = ((Int32)value).ToString("X8")!;
-    var element = (DX.HexBinaryValue)Activator.CreateInstance(targetType)!;
-    element.Value = text;
-    return element;
-  }
-
-  #endregion
-
   #region OpenXmlLeafElement conversion.
 
   /// <summary>
@@ -487,7 +430,7 @@ public static class Int32OpenXmlConverter
       else
         throw new InvalidOperationException($"OpenXmlLeafElement of type {element.GetType()} does not have a string Val property");
     }
-    if (valProp.PropertyType!=typeof(Int32) && SupportsType(valProp.PropertyType))
+    if (valProp.PropertyType != typeof(Int32) && SupportsType(valProp.PropertyType))
     {
       var convertedValue = ConvertToOpenXml(value, valProp.PropertyType);
       valProp.SetValue(element, convertedValue);
@@ -498,6 +441,43 @@ public static class Int32OpenXmlConverter
   }
 
   #endregion
+
+  #region HexBinaryValue conversion.
+
+  /// <summary>
+  /// Converts an OpenXml HexBinaryValue to Int32.
+  /// </summary>
+  /// <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
+  /// <returns>The Int32 value, or null if the element has no content.</returns>
+  public static Int32? ConvertToInt32(DX.HexBinaryValue? HexBinaryValue)
+  {
+    if (HexBinaryValue == null) return null;
+    var text = HexBinaryValue.Value;
+
+    if (!Int32.TryParse(text, NumberStyles.HexNumber, null, out var result))
+      throw new InvalidOperationException($"Conversion of {text} to Int32 failed.");
+
+    return result;
+  }
+
+  /// <summary>
+  /// Creates an OpenXml HexBinaryValue from an Int32 value.
+  /// </summary>
+  /// <param name="value">The Int32 value to convert.</param>
+  /// <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+  /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
+  public static DX.HexBinaryValue? CreateHexBinaryValue(Int32? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    var text = ((Int32)value).ToString("X8")!;
+    var element = (DX.HexBinaryValue)Activator.CreateInstance(targetType)!;
+    element.Value = text;
+    return element;
+  }
+
+  #endregion
+
 
   #region Generic OpenXml conversion methods
 

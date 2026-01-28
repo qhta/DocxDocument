@@ -17,23 +17,29 @@ public static class SimpleValueConverter
   /// <returns>The converted value, or null if the input is null.</returns>
   public static object? ChangeType(object? value, Type targetType)
   {
-    //DX.HexBinaryValue
     if (value == null)
     {
       if (targetType==typeof(string))
         return string.Empty;
       return null;
     }
+
     var sourceType = value.GetType();
 
-    #region Boolean Conversion
-    if (value is Boolean booleanValue)
+    if (targetType == sourceType)
+      return value;
+
+    if (targetType == typeof(string))
     {
-      if (targetType == typeof(string))
-        return booleanValue.ToString();
-      if (BooleanOpenXmlConverter.SupportsType(targetType))
-        return BooleanOpenXmlConverter.ConvertToOpenXml(booleanValue, targetType);
+      if (value is Guid guid)
+        return guid.ToString("B");
+      return value.ToString();
     }
+
+    #region Boolean Conversion
+    if (value is Boolean booleanValue && BooleanOpenXmlConverter.SupportsType(targetType))
+        return BooleanOpenXmlConverter.ConvertToOpenXml(booleanValue, targetType);
+    
     if (targetType == typeof(Boolean))
     {
       if (value is string booleanStr)
@@ -60,13 +66,10 @@ public static class SimpleValueConverter
     }
     #endregion
 
-    #region SByte Conversion
-    if (value is SByte sByteValue)
-    {
-      if (targetType == typeof(string))
-        return sByteValue.ToString();
+    #region SByte Conversion && 
+    if (value is SByte sByteValue && SByteOpenXmlConverter.SupportsType(targetType))
       return SByteOpenXmlConverter.ConvertToOpenXml(sByteValue, targetType);
-    }
+
     if (targetType == typeof(SByte))
     {
       if (value is string sByteStr)
@@ -91,13 +94,8 @@ public static class SimpleValueConverter
     #endregion
 
     #region Int32 Conversion
-    if (value is Int32 int32Value)
-    {
-      if (targetType == typeof(string))
-        return int32Value.ToString();
-      if (Int32OpenXmlConverter.SupportsType(targetType))
+    if (value is Int32 int32Value && Int32OpenXmlConverter.SupportsType(targetType))
         return Int32OpenXmlConverter.ConvertToOpenXml(int32Value, targetType);
-    }
     if (targetType == typeof(Int32))
     {
       if (value is string int32Str)
@@ -198,6 +196,55 @@ public static class SimpleValueConverter
     }
     #endregion
 
+    #region HexInt Conversion
+    if (value is HexInt HexIntValue)
+    {
+      if (targetType == typeof(string))
+        // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+        return HexIntValue.ToString();
+      return HexIntOpenXmlConverter.ConvertToOpenXml(HexIntValue, targetType);
+    }
+    if (targetType == typeof(HexInt))
+    {
+      if (value is string HexIntStr)
+        return new HexInt(HexIntStr);
+      return HexIntOpenXmlConverter.ConvertFromOpenXml(value);
+    }
+    #endregion
+
+
+    #region HexChar Conversion
+    if (value is HexChar HexCharValue)
+    {
+      if (targetType == typeof(string))
+        // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+        return HexCharValue.ToString();
+      return HexCharOpenXmlConverter.ConvertToOpenXml(HexCharValue, targetType);
+    }
+    if (targetType == typeof(HexChar))
+    {
+      if (value is string HexCharStr)
+        return new HexChar(HexCharStr);
+      return HexCharOpenXmlConverter.ConvertFromOpenXml(value);
+    }
+    #endregion
+
+    #region Twips Conversion
+    if (value is Twips TwipsValue)
+    {
+      if (targetType == typeof(string))
+        // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+        return TwipsValue.ToString();
+      return TwipsOpenXmlConverter.ConvertToOpenXml(TwipsValue, targetType);
+    }
+    if (targetType == typeof(Twips))
+    {
+      if (value is string TwipsStr)
+        return new Twips(TwipsStr);
+      return TwipsOpenXmlConverter.ConvertFromOpenXml(value);
+    }
+    #endregion
+
     #region Base64Binary Conversion
     if (value is Base64Binary base64binaryValue)
     {
@@ -242,6 +289,25 @@ public static class SimpleValueConverter
     }
     #endregion
 
+    #region StringList Conversion
+    if (value is StringList stringList)
+    {
+      if (targetType == typeof(string))
+        // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+        return stringList.ToString();
+      if (StringListOpenXmlConverter.SupportsType(targetType))
+        return StringListOpenXmlConverter.ConvertToOpenXml(stringList, targetType);
+    }
+    if (targetType == typeof(String))
+    {
+      if (value is string stringVal)
+        return stringVal;
+      if (StringListOpenXmlConverter.SupportsType(sourceType))
+        return StringListOpenXmlConverter.ConvertFromOpenXml(value);
+
+      return value.ToString();
+    }
+    #endregion
     if (value is DX.OpenXmlElement openXmlElement)
     {
       return OpenXmlConverter.ConvertFromOpenXml(openXmlElement, targetType);

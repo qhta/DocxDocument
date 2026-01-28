@@ -18,9 +18,12 @@ public static class StringOpenXmlConverter
 
   /// <summary>
   /// Checks if the specified OpenXml type is supported for conversion to/from string.
+  /// It supports types derived from DX.OpenXmlLeafElement with a StringValue Val property
+  /// or a singular property of one of the supported types,
+  /// or types in the SupportedTypes list.
   /// </summary>
   /// <param name="openXmlType">The OpenXml type to check.</param>
-  /// <returns></returns>
+  /// <returns>True if and only if the conversion to/from OpenXml type is supported.</returns>
   public static bool SupportsType(Type openXmlType)
   {
     if (openXmlType.IsGenericType)
