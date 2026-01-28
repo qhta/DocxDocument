@@ -23,10 +23,28 @@ public static class BooleanOpenXmlConverter
     typeof(DX.TrueFalseValue),
     typeof(DX.TrueFalseBlankValue),
     typeof(DX.EnumValue<DXM.BooleanValues>),
-    typeof(DXM.OnOffType),
     typeof(DX.OpenXmlLeafTextElement),
+    typeof(DX.OpenXmlLeafElement)
   ];
 
+  /// <summary>
+  /// Checks if the specified type is supported for Boolean conversion.
+  /// It supports types derived from DX.OpenXmlLeafElement with a Boolean Val property, or types in the SupportedTypes list.
+  /// </summary>
+  /// <param name="type">The type to check.</param>
+  /// <returns>True if and only if the conversion to/from OpenXml type is supported.</returns>
+  public static bool SupportsType(Type type)
+  {
+    if (type.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    {
+      var valProp = type.GetProperty("Val");
+      if (valProp != null && valProp.PropertyType == typeof(Boolean))
+        return true;
+
+      return false;
+    }
+    return SupportedTypes.Contains(type);
+  }
 
   #region DXW.EmptyType conversion.
 
@@ -803,6 +821,44 @@ public static class BooleanOpenXmlConverter
 
   #endregion
 
+  #region DXW.OpenXmlLeafElement conversion.
+
+  /// <summary>
+  /// Retrieves a boolean value from the specified DX.OpenXmlLeafElement element.
+  /// </summary>
+  /// <param name="openXmlElement">The OpenXmlLeafElement to check.</param>
+  /// <returns>The boolean value, true if element exists but value is null, or null if element is null.</returns>
+  public static Boolean? ConvertToBool(DX.OpenXmlLeafElement? openXmlElement)
+  {
+    if (openXmlElement == null) return true;
+
+    var valProp = openXmlElement.GetType().GetProperty("Val");
+    if (valProp == null)
+      throw new InvalidOperationException("The Val property is not found in " + openXmlElement.GetType().Name);
+    return valProp.GetValue(openXmlElement) as Boolean?;
+  }
+
+  /// <summary>
+  /// Creates a new instance of the specified DX.OpenXmlLeafElement and sets its value to the provided Boolean value.
+  /// </summary>
+  /// <param name="value">The Boolean value to create the OpenXmlLeafElement element. If <see langword="null"/>, the method returns <see
+  /// langword="null"/>.</param>
+  /// <param name="targetType">The type of OpenXmlLeafElement to instantiate. Must be a type derived from DX.OpenXmlLeafElement.</param>
+  /// <returns>A new instance of the specified OpenXmlLeafElement with its value set to <paramref name="value"/>; or <see
+  /// langword="null"/> if <paramref name="value"/> is <see langword="null"/>.</returns>
+  public static DXW.OnOffType? CreateOpenXmlLeafElement(Boolean? value, Type targetType)
+  {
+    if (value == null) return null;
+    if (targetType.GetConstructor([typeof(Boolean)]) != null)
+      return (DXW.OnOffType)Activator.CreateInstance(targetType, value)!;
+
+    var element = (DXW.OnOffType)Activator.CreateInstance(targetType)!;
+    element.Val = value;
+    return element;
+  }
+
+  #endregion
+
   #region Generic OpenXml boolean converter
 
   /// <summary>
@@ -853,6 +909,8 @@ public static class BooleanOpenXmlConverter
       return CreateMathOnOffType(value, targetType);
     if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
       return CreateOpenXmlLeafTextElement(value, targetType);
+    if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafElement)))
+      return CreateOpenXmlLeafElement(value, targetType);
 
     throw new NotSupportedException($"Conversion from Boolean to type {targetType} is not supported.");
   }
@@ -906,6 +964,8 @@ public static class BooleanOpenXmlConverter
       return ConvertToBool(onOffMathTypeValue);
     if (value is DX.OpenXmlLeafTextElement openXmlLeafTextElement)
       return ConvertToBool(openXmlLeafTextElement);
+    if (value is DX.OpenXmlLeafElement openXmlLeafElement)
+      return ConvertToBool(openXmlLeafElement);
 
     throw new NotSupportedException($"Conversion from type {sourceType} to Boolean is not supported.");
   }

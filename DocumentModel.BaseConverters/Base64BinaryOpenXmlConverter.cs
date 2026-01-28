@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides conversion methods for Base64Binary values to/from Open XML.
 /// </summary>
-public static class Base64BinaryConverter
+public static class Base64BinaryOpenXmlConverter
 {
 
   public static Type[] SupportedTypes { get; } =
@@ -12,7 +12,7 @@ public static class Base64BinaryConverter
     typeof(DX.OpenXmlLeafElement)
   ];
 
-  #region Base64Binary conversion.
+  #region Base64BinaryValueconversion.
 
   /// <summary>
   /// Retrieves a Base64Binary from a Base64BinaryValue.
@@ -104,7 +104,7 @@ public static class Base64BinaryConverter
   public static object? ConvertToOpenXml(Base64Binary? value, Type targetType)
   {
     if (value == null) return null;
-    if (targetType.IsEqualOrSubclassOf(typeof(Base64Binary)))
+    if (targetType.IsEqualOrSubclassOf(typeof(DX.Base64BinaryValue)))
       return ConvertBase64BinaryToBase64BinaryValue(value);
     if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafElement)))
       return CreateOpenOpenXmlLeafElement(value, targetType);
