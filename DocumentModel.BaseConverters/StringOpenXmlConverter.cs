@@ -26,15 +26,22 @@ public static class StringOpenXmlConverter
     if (openXmlType.IsGenericType)
     {
       var genericType = openXmlType.GetGenericTypeDefinition();
-      return SupportedTypes.Contains(genericType);
+      if (SupportedTypes.Contains(genericType))
+        return true;
     }
-
+    else
+    if (openXmlType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
+    {
+      return true;
+    }
+    else
     if (openXmlType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafElement)))
     {
       var valProperty = openXmlType.GetProperty("Val");
-      return (valProperty != null && valProperty.PropertyType == typeof(DX.StringValue));
+      if (valProperty != null && valProperty.PropertyType == typeof(DX.StringValue))
+        return true;
     }
-
+    else
     if (SupportedTypes.Contains(openXmlType))
       return true;
 

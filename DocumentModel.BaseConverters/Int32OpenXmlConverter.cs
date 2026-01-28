@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.OpenXml;
+﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
+
+namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides conversion methods for Int32 value to/from Open XML.
@@ -17,8 +19,44 @@ public static class Int32OpenXmlConverter
     typeof(DX.UInt32Value),
     typeof(DX.UInt64Value),
     typeof(DX.StringValue),
-    typeof(DX.OpenXmlLeafTextElement)
+    typeof(DX.OpenXmlLeafTextElement),
+    typeof(DX.HexBinaryValue),
+    typeof(DX.OpenXmlLeafElement)
   ];
+
+  /// <summary>
+  /// Checks if the specified type is supported for Int32 conversion.
+  /// It supports types derived from DX.OpenXmlLeafElement with an Int32 Val property
+  /// or a singular property of one of the supported types,
+  /// or types in the SupportedTypes list.
+  /// </summary>
+  /// <param name="type">The type to check.</param>
+  /// <returns>True if and only if the conversion to/from OpenXml type is supported.</returns>
+  public static bool SupportsType(Type type)
+  {
+    if (type.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
+      return true;
+    if (type.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    {
+      var valProp = type.GetProperty("Val");
+      if (valProp == null)
+      {
+        var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+        if (allProps.Length == 1)
+          valProp = allProps[0];
+        else
+          return false;
+
+      }
+      if (valProp.PropertyType == typeof(Int32) 
+          || SupportsType(valProp.PropertyType))
+        return true;
+
+      return false;
+    }
+
+    return SupportedTypes.Contains(type);
+  }
 
   #region SByteValue conversion.
 
@@ -72,7 +110,7 @@ public static class Int32OpenXmlConverter
   public static DX.Int16Value? CreateInt16Value(Int32? value)
   {
     if (value == null) return null;
-    if (value< Int16.MinValue || value > Int16.MaxValue)
+    if (value < Int16.MinValue || value > Int16.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Int16");
 
     return new DX.Int16Value { Value = (Int16)value };
@@ -238,7 +276,7 @@ public static class Int32OpenXmlConverter
   public static Int32? ConvertToInt32(DX.UInt32Value? UInt32Value)
   {
     if (UInt32Value == null) return null;
-    if ( UInt32Value.Value > Int32.MaxValue)
+    if (UInt32Value.Value > Int32.MaxValue)
       throw new OverflowException($"Value {UInt32Value.Value} is out of range for Int32");
 
     return (Int32)UInt32Value.Value;
@@ -362,6 +400,105 @@ public static class Int32OpenXmlConverter
 
   #endregion
 
+  #region HexBinaryValue conversion.
+
+  /// <summary>
+  /// Converts an OpenXml HexBinaryValue to Int32.
+  /// </summary>
+  /// <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
+  /// <returns>The Int32 value, or null if the element has no content.</returns>
+  public static Int32? ConvertToInt32(DX.HexBinaryValue? HexBinaryValue)
+  {
+    if (HexBinaryValue == null) return null;
+    var text = HexBinaryValue.Value;
+
+    if (!Int32.TryParse(text, NumberStyles.HexNumber, null, out var result))
+      throw new InvalidOperationException($"Conversion of {text} to Int32 failed.");
+
+    return result;
+  }
+
+  /// <summary>
+  /// Creates an OpenXml HexBinaryValue from an Int32 value.
+  /// </summary>
+  /// <param name="value">The Int32 value to convert.</param>
+  /// <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+  /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
+  public static DX.HexBinaryValue? CreateHexBinaryValue(Int32? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    var text = ((Int32)value).ToString("X8")!;
+    var element = (DX.HexBinaryValue)Activator.CreateInstance(targetType)!;
+    element.Value = text;
+    return element;
+  }
+
+  #endregion
+
+  #region OpenXmlLeafElement conversion.
+
+  /// <summary>
+  /// Converts an OpenXml OpenXmlLeafElement to Int32.
+  /// </summary>
+  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+  /// <returns>The Int32 value, or null if the element has no content.</returns>
+  public static Int32? ConvertToInt32(DX.OpenXmlLeafElement? OpenXmlLeafElement)
+  {
+    if (OpenXmlLeafElement == null) return null;
+
+    var sourceType = OpenXmlLeafElement.GetType();
+    var valProp = OpenXmlLeafElement.GetType().GetProperty("Val");
+    if (valProp == null)
+    {
+      var allProps = sourceType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+      if (allProps.Length == 1)
+        valProp = allProps[0];
+      else
+        throw new InvalidOperationException($"OpenXmlLeafElement of type {sourceType} does not have a string Val property");
+    }
+    if (valProp.PropertyType != typeof(Int32) && SupportsType(valProp.PropertyType))
+    {
+      var value = valProp.GetValue(OpenXmlLeafElement);
+      var convertedValue = ConvertFromOpenXml(value);
+      return (Int32)convertedValue!;
+    }
+
+    return (Int32)valProp.GetValue(OpenXmlLeafElement)!;
+  }
+
+  /// <summary>
+  /// Creates an OpenXml OpenXmlLeafElement from an Int32 value.
+  /// </summary>
+  /// <param name="value">The Int32 value to convert.</param>
+  /// <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
+  public static DX.OpenXmlLeafElement? CreateOpenXmlLeafElement(Int32? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    var element = (DX.OpenXmlLeafElement)Activator.CreateInstance(targetType)!;
+    var valProp = element.GetType().GetProperty("Val");
+    if (valProp == null)
+    {
+      var allProps = targetType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+      if (allProps.Length == 1)
+        valProp = allProps[0];
+      else
+        throw new InvalidOperationException($"OpenXmlLeafElement of type {element.GetType()} does not have a string Val property");
+    }
+    if (valProp.PropertyType!=typeof(Int32) && SupportsType(valProp.PropertyType))
+    {
+      var convertedValue = ConvertToOpenXml(value, valProp.PropertyType);
+      valProp.SetValue(element, convertedValue);
+      return element;
+    }
+    valProp.SetValue(element, value);
+    return element;
+  }
+
+  #endregion
+
   #region Generic OpenXml conversion methods
 
   /// <summary>
@@ -399,8 +536,14 @@ public static class Int32OpenXmlConverter
     if (targetType == typeof(DX.StringValue))
       return CreateStringValue(value, targetType);
 
+    if (targetType == typeof(DX.HexBinaryValue))
+      return CreateHexBinaryValue(value, targetType);
+
     if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
       return CreateOpenXmlLeafTextElement(value, targetType);
+
+    if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafElement)))
+      return CreateOpenXmlLeafElement(value, targetType);
 
     throw new InvalidOperationException($"Conversion of Int32 to {targetType} is not supported");
   }
@@ -444,9 +587,15 @@ public static class Int32OpenXmlConverter
     if (value is DX.StringValue stringValue)
       return ConvertToInt32(stringValue);
 
+    if (value is DX.HexBinaryValue hexBinaryValue)
+      return ConvertToInt32(hexBinaryValue);
+
     if (value is DX.OpenXmlLeafTextElement openXmlLeafTextElement)
       return ConvertToInt32(openXmlLeafTextElement);
-    
+
+    if (value is DX.OpenXmlLeafElement openXmlLeafElement)
+      return ConvertToInt32(openXmlLeafElement);
+
     throw new InvalidOperationException($"Conversion from {sourceType} to Int32 is not supported");
   }
 
