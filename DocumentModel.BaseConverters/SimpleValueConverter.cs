@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.OpenXml;
+﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
+
+namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides utility methods for converting simple values between types, including support for implicit conversion operators.
@@ -11,7 +13,9 @@ public static class SimpleValueConverter
   static SimpleValueConverter()
   {
     ConversionToMap = ConversionToMap.Concat(BooleanConverter.ConversionToMap).ToDictionary();
+    ConversionToMap = ConversionToMap.Concat(TSBooleanConverter.ConversionToMap).ToDictionary();
     ConversionFromMap = ConversionFromMap.Concat(BooleanConverter.ConversionFromMap).ToDictionary();
+    ConversionFromMap = ConversionFromMap.Concat(TSBooleanConverter.ConversionFromMap).ToDictionary();
   }
 
   /// <summary>
@@ -43,7 +47,18 @@ public static class SimpleValueConverter
     if (TryImplicitConvert(value, targetType, out var result))
       return result;
 
-    return Convert.ChangeType(value, targetType);
+    if (targetType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    {
+      var valProp = GetValProperty(targetType);
+      if (valProp == null)
+        throw new NotSupportedException($"Val property in {targetType.FullName} not found.");
+      var valValue = ConvertTo(value, valProp.PropertyType);
+      var targetInstance = Activator.CreateInstance(targetType);
+      valProp.SetValue(targetInstance, valValue);
+      return targetInstance;
+    }
+    throw new NotSupportedException($"Conversion from {sourceType.FullName} to {targetType.FullName} is not supported.");
+    // return Convert.ChangeType(value, targetType);
   }
 
   /// <summary>
@@ -76,7 +91,16 @@ public static class SimpleValueConverter
     if (TryImplicitConvert(value, targetType, out var result))
       return result;
 
-    return Convert.ChangeType(value, targetType);
+    if (sourceType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    {
+      var valProp = GetValProperty(sourceType);
+      if (valProp == null)
+        throw new NotSupportedException($"Val property in {sourceType.FullName} not found.");
+      var valValue = valProp.GetValue(value);
+      return ConvertFrom(valValue, targetType);
+    }
+    throw new NotSupportedException($"Conversion from {sourceType.FullName} to {targetType.FullName} is not supported.");
+    // return Convert.ChangeType(value, targetType);
   }
 
   /// <summary>
@@ -98,5 +122,25 @@ public static class SimpleValueConverter
 
     result = op.Invoke(null, [source]);
     return true;
+  }
+
+  public static PropertyInfo? GetValProperty(Type type)
+  {
+    if (type.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    {
+      var valProp = type.GetProperty("Val");
+      if (valProp == null)
+      {
+        var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+        if (allProps.Length == 1)
+          valProp = allProps[0];
+        else
+          return null;
+
+      }
+      return valProp;
+    }
+
+    return null;
   }
 }
