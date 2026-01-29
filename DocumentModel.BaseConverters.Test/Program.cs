@@ -17,7 +17,35 @@ internal class Program
     Console.WriteLine("║   DocumentModel BaseConverters Test Suite        ║");
     Console.WriteLine("╚══════════════════════════════════════════════════╝");
     Console.WriteLine();
+    
     if (!BooleanConverterTest.Run())
+    {
+      Console.WriteLine("\nSome tests failed.");
+      return;
+    }
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+    
+    if (!TSBooleanConverterTest.Run())
+    {
+      Console.WriteLine("\nSome tests failed.");
+      return;
+    }
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    if (!StringConverterTest.Run())
+    {
+      Console.WriteLine("\nSome tests failed.");
+      return;
+    }
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    if (!Int32ConverterTest.Run())
     {
       Console.WriteLine("\nSome tests failed.");
       return;
@@ -33,6 +61,7 @@ internal class Program
     Console.WriteLine();
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
+    
     Console.WriteLine("All tests passed.");
   }
 }
