@@ -290,13 +290,7 @@ public static class StringConverter
   /// <exception cref="NotSupportedException">Raised when no conversion is registered for <paramref name="targetType"/>.</exception>
   public static object? ConvertTo(string? value, Type targetType)
   {
-    if (value == null) return null;
-
-    if (ConversionToMap.TryGetValue((typeof(string), targetType), out var conversionFunc))
-    {
-      return conversionFunc(value, targetType);
-    }
-    throw new NotSupportedException($"Conversion from String to type {targetType} is not supported.");
+    return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
   }
 
   /// <summary>
@@ -307,14 +301,7 @@ public static class StringConverter
   /// <exception cref="NotSupportedException">Raised when the source type has no registered converter.</exception>
   public static string? ConvertFrom(object? value)
   {
-    if (value == null) return null;
-
-    var sourceType = value.GetType();
-    if (ConversionFromMap.TryGetValue((sourceType, typeof(String)), out var conversionFunc))
-    {
-      return (String)conversionFunc(value)!;
-    }
-    throw new NotSupportedException($"Conversion from type {sourceType} to String is not supported.");
+    return (string?)ConverterBase.ConvertFrom(value, typeof(string), ConversionFromMap);
   }
 
   #endregion

@@ -6,7 +6,7 @@ namespace DocumentModel.BaseConverters.Test;
 ///   Provides unit tests for verifying the correctness of <see cref="OpenXml.StringConverter"/> conversions between .NET string values and various Open XML string types.
 ///   Tests round-trip conversion for different Open XML string representations, including null and empty values.
 /// </summary>
-public static class StringOpenXmlConverterTest
+public static class StringConverterTest
 {
   /// <summary>
   ///   Runs all StringOpenXmlConverter tests and reports results to the console.
