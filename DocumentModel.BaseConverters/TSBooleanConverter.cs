@@ -5,38 +5,18 @@
 /// </summary>
 public static class TSBooleanConverter
 {
-  private static readonly (Type TargetType, string ConvertFromMethod, string ConvertToMethod)[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedTypes =
   [
-    (typeof(DX.TrueFalseBlankValue), nameof(ConvertFromTrueFalseBlankValue), nameof(ConvertToTrueFalseBlankValue)),
-    (typeof(string), nameof(TSBooleanFromString), nameof(TSBooleanToString)),
+    new ConversionMethodInfo(typeof(DX.TrueFalseBlankValue), nameof(ConvertFromTrueFalseBlankValue), nameof(ConvertToTrueFalseBlankValue)),
+    new ConversionMethodInfo(typeof(string), nameof(TSBooleanFromString), nameof(TSBooleanToString)),
   ];
 
-  internal static readonly Dictionary<(Type Source, Type Target), Func<object, Type, object?>> ConversionToMap = new();
-  internal static readonly Dictionary<(Type Source, Type Target), Func<object, object?>> ConversionFromMap = new();
+  internal static readonly ConversionToMap ConversionToMap = new();
+  internal static readonly ConversionFromMap ConversionFromMap = new();
 
   static TSBooleanConverter()
   {
-    //// Register conversion functions
-    foreach (var item in supportedTypes)
-    {
-      var fromMethod = typeof(TSBooleanConverter).GetMethod(item.ConvertFromMethod, BindingFlags.Public | BindingFlags.Static);
-      var toMethod = typeof(TSBooleanConverter).GetMethod(item.ConvertToMethod, BindingFlags.Public | BindingFlags.Static);
-      if (fromMethod != null)
-      {
-        ConversionFromMap[(item.TargetType, typeof(TSBoolean))] = value => fromMethod.Invoke(null, [value])!;
-      }
-      if (toMethod != null)
-      {
-        ConversionToMap[(typeof(TSBoolean), item.TargetType)] = (value, targetType) =>
-        {
-          var parameters = toMethod.GetParameters();
-          if (parameters.Length == 1)
-            return toMethod.Invoke(null, [value])!;
-
-          return toMethod.Invoke(null, [value, targetType])!;
-        };
-      }
-    }
+    ConverterBase.RegisterConversionMethods(typeof(TSBooleanConverter), typeof(TSBoolean), supportedTypes, ConversionToMap, ConversionFromMap);
   }
 
   #region TrueFalseOnlyValue conversion.
@@ -119,7 +99,7 @@ public static class TSBooleanConverter
   /// <exception cref="NotSupportedException"></exception>
   public static object? ConvertToOpenXml(TSBoolean value, Type targetType)
   {
-    if (ConversionToMap.TryGetValue((typeof(bool), targetType), out var conversionFunc))
+    if (ConversionToMap.TryGetValue((typeof(TSBoolean), targetType), out var conversionFunc))
     {
       return conversionFunc(value, targetType);
     }
@@ -136,7 +116,7 @@ public static class TSBooleanConverter
   public static TSBoolean ConvertFromOpenXml(object value)
   {
     var sourceType = value.GetType();
-    if (ConversionFromMap.TryGetValue((sourceType, typeof(bool)), out var conversionFunc))
+    if (ConversionFromMap.TryGetValue((sourceType, typeof(TSBoolean)), out var conversionFunc))
     {
       return (TSBoolean)conversionFunc(value)!;
     }

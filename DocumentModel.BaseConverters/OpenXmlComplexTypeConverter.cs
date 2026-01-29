@@ -297,7 +297,7 @@ public static class OpenXmlComplexTypeConverter
         var modelValue = ConvertValueFromOpenXml(openXmlValue, modelPropertyType);
         if (modelValue != null && !modelPropertyType.IsInstanceOfType(modelValue))
         {
-          modelValue = SimpleValueOpenXmlConverter.ChangeType(modelValue, modelPropertyType);
+          modelValue = SimpleValueConverter.ConvertFrom(modelValue, modelPropertyType);
         }
         modelValue = ConvertValue(modelValue, modelPropertyType);
         modelProperty.SetValue(modelObject, modelValue);

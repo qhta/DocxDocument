@@ -5,48 +5,29 @@
 /// </summary>
 public static class BooleanConverter
 {
-  private static readonly (Type TargetType, string ConvertFromMethod, string ConvertToMethod)[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedTypes =
   [
-    (typeof(DX.OnOffValue), nameof(ConvertFromOnOffValue), nameof(ConvertToOnOffValue)),
-    (typeof(DXW.OnOffOnlyValues), nameof(ConvertFromOnOffOnlyValues), nameof(ConvertToOnOffOnlyValues)),
-    (typeof(DXO10W.OnOffValues), nameof(ConvertFromO10WOnOffValues), nameof(ConvertToO10WOnOffValues)),
-    (typeof(DXW.OnOffType), nameof(ConvertFromOnOffType), nameof(ConvertToOnOffType)),
-    (typeof(DXM.OnOffType), nameof(ConvertFromMathOnOffType), nameof(ConvertToMathOnOffType)),
-    (typeof(DXO10W.OnOffType), nameof(ConvertFromO10WOnOffType), nameof(ConvertToO10WOnOffType)),
-    (typeof(DXO13W.OnOffType), nameof(ConvertFromO13WOnOffType), nameof(ConvertToO13WOnOffType)),
-    (typeof(DXW.OnOffOnlyType), nameof(ConvertFromOnOffOnlyType), nameof(ConvertToOnOffOnlyType)),
-    (typeof(DX.BooleanValue), nameof(ConvertFromBooleanValue), nameof(ConvertToBooleanValue)),
-    (typeof(DXM.BooleanValues), nameof(ConvertFromBooleanValues), nameof(ConvertToBooleanValues)),
-    (typeof(DX.TrueFalseValue), nameof(ConvertFromTrueFalseValue), nameof(ConvertToTrueFalseValue)),
-    (typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
+    new ConversionMethodInfo(typeof(DX.OnOffValue), nameof(ConvertFromOnOffValue), nameof(ConvertToOnOffValue)),
+    new ConversionMethodInfo(typeof(DXW.OnOffOnlyValues), nameof(ConvertFromOnOffOnlyValues), nameof(ConvertToOnOffOnlyValues)),
+    new ConversionMethodInfo(typeof(DXO10W.OnOffValues), nameof(ConvertFromO10WOnOffValues), nameof(ConvertToO10WOnOffValues)),
+    new ConversionMethodInfo(typeof(DXW.OnOffType), nameof(ConvertFromOnOffType), nameof(ConvertToOnOffType)),
+    new ConversionMethodInfo(typeof(DXM.OnOffType), nameof(ConvertFromMathOnOffType), nameof(ConvertToMathOnOffType)),
+    new ConversionMethodInfo(typeof(DXO10W.OnOffType), nameof(ConvertFromO10WOnOffType), nameof(ConvertToO10WOnOffType)),
+    new ConversionMethodInfo(typeof(DXO13W.OnOffType), nameof(ConvertFromO13WOnOffType), nameof(ConvertToO13WOnOffType)),
+    new ConversionMethodInfo(typeof(DXW.OnOffOnlyType), nameof(ConvertFromOnOffOnlyType), nameof(ConvertToOnOffOnlyType)),
+    new ConversionMethodInfo(typeof(DX.BooleanValue), nameof(ConvertFromBooleanValue), nameof(ConvertToBooleanValue)),
+    new ConversionMethodInfo(typeof(DXM.BooleanValues), nameof(ConvertFromBooleanValues), nameof(ConvertToBooleanValues)),
+    new ConversionMethodInfo(typeof(DX.TrueFalseValue), nameof(ConvertFromTrueFalseValue), nameof(ConvertToTrueFalseValue)),
+    new ConversionMethodInfo(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
   ];
 
-  internal static readonly Dictionary<(Type Source, Type Target), Func<object, Type, object?>> ConversionToMap = new();
-  internal static readonly Dictionary<(Type Source, Type Target), Func<object, object?>> ConversionFromMap = new();
+  internal static readonly ConversionToMap ConversionToMap = new();
+  internal static readonly ConversionFromMap ConversionFromMap = new();
 
   static BooleanConverter()
   {
     //// Register conversion functions
-    foreach (var item in supportedTypes)
-    {
-      var fromMethod = typeof(BooleanConverter).GetMethod(item.ConvertFromMethod, BindingFlags.Public | BindingFlags.Static);
-      var toMethod = typeof(BooleanConverter).GetMethod(item.ConvertToMethod, BindingFlags.Public | BindingFlags.Static);
-      if (fromMethod != null)
-      {
-        ConversionFromMap[(item.TargetType, typeof(Boolean))] = value => fromMethod.Invoke(null, [value])!;
-      }
-      if (toMethod != null)
-      {
-        ConversionToMap[(typeof(Boolean), item.TargetType)] = (value, targetType) =>
-        {
-          var parameters = toMethod.GetParameters();
-          if (parameters.Length == 1)
-            return toMethod.Invoke(null, [value])!;
-
-          return toMethod.Invoke(null, [value, targetType])!;
-        };
-      }
-    }
+    ConverterBase.RegisterConversionMethods(typeof(BooleanConverter), typeof(bool), supportedTypes, ConversionToMap, ConversionFromMap);
   }
 
 
