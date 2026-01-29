@@ -3,52 +3,26 @@
 /// <summary>
 /// Provides helper methods for converting string values to and from OpenXml.
 /// </summary>
-public static class StringOpenXmlConverter
+public static class StringConverter
 {
-  public static Type[] SupportedTypes { get; } =
+  private static readonly ConversionMethodInfo[] supportedTypes =
   [
-    typeof(DX.StringValue),
-    typeof(DXW.StringType),
-    typeof(DXW.String255Type),
-    typeof(DXW.String253Type),
-    typeof(DX.OpenXmlLeafTextElement),
-    typeof(DX.OpenXmlLeafElement),
-    typeof(DX.EnumValue<>),
+    new ConversionMethodInfo(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
+    new ConversionMethodInfo(typeof(DXW.StringType), nameof(ConvertFromStringType), nameof(ConvertToStringType)),
+    new ConversionMethodInfo(typeof(DXW.String255Type), nameof(ConvertFromString255Type), nameof(ConvertToString255Type)),
+    new ConversionMethodInfo(typeof(DXW.String253Type), nameof(ConvertFromString253Type), nameof(ConvertToString253Type)),
+    new ConversionMethodInfo(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
+    new ConversionMethodInfo(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
+    new ConversionMethodInfo(typeof(DX.OpenXmlSimpleType), nameof(ConvertFromOpenXmlSimpleType), nameof(ConvertToOpenXmlSimpleType)),
+    new ConversionMethodInfo(typeof(Uri), nameof(ConvertFromUri), nameof(ConvertToUri)),
   ];
 
-  /// <summary>
-  /// Checks if the specified OpenXml type is supported for conversion to/from string.
-  /// It supports types derived from DX.OpenXmlLeafElement with a StringValue Val property
-  /// or a singular property of one of the supported types,
-  /// or types in the SupportedTypes list.
-  /// </summary>
-  /// <param name="openXmlType">The OpenXml type to check.</param>
-  /// <returns>True if and only if the conversion to/from OpenXml type is supported.</returns>
-  public static bool SupportsType(Type openXmlType)
-  {
-    if (openXmlType.IsGenericType)
-    {
-      var genericType = openXmlType.GetGenericTypeDefinition();
-      if (SupportedTypes.Contains(genericType))
-        return true;
-    }
-    else
-    if (openXmlType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
-    {
-      return true;
-    }
-    else
-    if (openXmlType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafElement)))
-    {
-      var valProperty = openXmlType.GetProperty("Val");
-      if (valProperty != null && valProperty.PropertyType == typeof(DX.StringValue))
-        return true;
-    }
-    else
-    if (SupportedTypes.Contains(openXmlType))
-      return true;
+  internal static readonly ConversionToMap ConversionToMap = new();
+  internal static readonly ConversionFromMap ConversionFromMap = new();
 
-    return false;
+  static StringConverter()
+  {
+    ConverterBase.RegisterConversionMethods(typeof(StringConverter), typeof(String), supportedTypes, ConversionToMap, ConversionFromMap);
   }
 
   #region StringValue conversion methods
@@ -58,17 +32,14 @@ public static class StringOpenXmlConverter
   /// </summary>
   /// <param name="element">The StringValue to convert.</param>
   /// <returns>The string value or null if the element is null.</returns>
-  public static string? GetValue(DX.StringValue? element)
-  {
-    return element?.Value;
-  }
+  public static string? ConvertFromStringValue(DX.StringValue element) { return element.Value; }
 
   /// <summary>
   /// Creates a StringValue from a nullable string.
   /// </summary>
   /// <param name="value">The string value.</param>
   /// <returns>A new StringValue containing the string, or null if the input string is null.</returns>
-  public static DX.StringValue? CreateStringType(String? value)
+  public static DX.StringValue? ConvertToStringValue(String? value)
   {
     if (value == null) return null;
 
@@ -84,13 +55,7 @@ public static class StringOpenXmlConverter
   /// </summary>
   /// <param name="element">The StringType element.</param>
   /// <returns>The string value, or null if result cannot be determined.</returns>
-  public static string? GetValue(DXW.StringType? element)
-  {
-    if (element == null)
-      return null;
-
-    return element?.Val?.Value;
-  }
+  public static string? ConvertFromStringType(DXW.StringType element) { return element.Val?.Value; }
 
   /// <summary>
   /// Creates an instance of StringType and sets its Val property.
@@ -98,7 +63,7 @@ public static class StringOpenXmlConverter
   /// <param name="value">The string value to set.</param>
   /// <param name="targetType">The target type for the created StringType instance. Must be a subclass of StringType.</param>
   /// <returns>Created StringType instance or null if element is null.</returns>
-  public static DXW.StringType? CreateStringType(String? value, Type targetType)
+  public static DXW.StringType? ConvertToStringType(String? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -116,7 +81,7 @@ public static class StringOpenXmlConverter
   /// </summary>
   /// <param name="element">The String255Type element.</param>
   /// <returns>The string value, or null if result cannot be determined.</returns>
-  public static string? GetValue(DXW.String255Type? element)
+  public static string? ConvertFromString255Type(DXW.String255Type? element)
   {
     if (element == null) return null;
 
@@ -129,7 +94,7 @@ public static class StringOpenXmlConverter
   /// <param name="value">The string value to set</param>
   /// <param name="targetType">The target type for the created target instance. Must be a subclass of String255Type.</param>
   /// <returns>Created String255Type instance or null if value is null.</returns>
-  public static DXW.String255Type? CreateString255Type(String? value, Type targetType)
+  public static DXW.String255Type? ConvertToString255Type(String? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -147,7 +112,7 @@ public static class StringOpenXmlConverter
   /// </summary>
   /// <param name="element">The String253Type element.</param>
   /// <returns>The string value, or null if result cannot be determined.</returns>
-  public static string? GetValue(DXW.String253Type? element)
+  public static string? ConvertFromString253Type(DXW.String253Type? element)
   {
     if (element == null) return null;
 
@@ -160,7 +125,7 @@ public static class StringOpenXmlConverter
   /// <param name="value">The string value to set</param>
   /// <param name="targetType">The target type for the created target instance. Must be a subclass of String253Type.</param>
   /// <returns>Created String253Type instance or null if value is null.</returns>
-  public static DXW.String253Type? CreateString253Type(String? value, Type targetType)
+  public static DXW.String253Type? ConvertToString253Type(String? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -178,7 +143,7 @@ public static class StringOpenXmlConverter
   /// </summary>
   /// <param name="element">The OpenXmlLeafTextElement.</param>
   /// <returns>The text content of the element, or null if the element is null.</returns>
-  public static string? GetValue(DX.OpenXmlLeafTextElement? element)
+  public static string? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? element)
   {
     if (element == null) return null;
 
@@ -191,7 +156,7 @@ public static class StringOpenXmlConverter
   /// <param name="value">The string value to set.</param>
   /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
-  public static DX.OpenXmlLeafTextElement? CreateOpenXmlLeafTextElement(string? value, Type targetType)
+  public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(string? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -209,7 +174,7 @@ public static class StringOpenXmlConverter
   /// </summary>
   /// <param name="element">The OpenXmlLeafElement.</param>
   /// <returns>The text content of the element, or null if the element is null.</returns>
-  public static string? GetValue(DX.OpenXmlLeafElement? element)
+  public static string? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? element)
   {
     if (element == null) return null;
 
@@ -227,7 +192,7 @@ public static class StringOpenXmlConverter
   /// <param name="value">The string value to set.</param>
   /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
-  public static DX.OpenXmlLeafElement? CreateOpenXmlLeafElement(string? value, Type targetType)
+  public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(string? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -249,7 +214,7 @@ public static class StringOpenXmlConverter
   /// </summary>
   /// <param name="element">The OpenXml EnumValue.</param>
   /// <returns>The text content of the element, or null if the element is null.</returns>
-  public static string? GetValue(DX.OpenXmlSimpleType? element)
+  public static string? ConvertFromOpenXmlSimpleType(DX.OpenXmlSimpleType? element)
   {
     if (element == null) return null;
 
@@ -267,7 +232,7 @@ public static class StringOpenXmlConverter
   /// <param name="value">The string value to set.</param>
   /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXml EnumValue.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
-  public static DX.OpenXmlSimpleType? CreateOpenXmlEnumValue(string? value, Type targetType)
+  public static DX.OpenXmlSimpleType? ConvertToOpenXmlSimpleType(string? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -282,67 +247,73 @@ public static class StringOpenXmlConverter
 
   #endregion
 
+  #region Uri conversion methods
+
+  /// <summary>
+  /// Converts a <see cref="Uri"/> into its string representation for storage in Open XML values.
+  /// </summary>
+  /// <param name="uri">The URI instance to serialize.</param>
+  /// <returns>The absolute or relative string form of <paramref name="uri"/>, or null when <paramref name="uri"/> is null.</returns>
+  public static string? ConvertFromUri(Uri? uri)
+  {
+    if (uri == null) return null;
+
+    return uri.ToString();
+  }
+
+  /// <summary>
+  /// Parses a string into a <see cref="Uri"/> instance compatible with the requested target type.
+  /// </summary>
+  /// <param name="value">The textual URI to parse.</param>
+  /// <param name="targetType">The requested URI type (currently informational only).</param>
+  /// <returns>A new <see cref="Uri"/> matching <paramref name="value"/>, or null when <paramref name="value"/> is null.</returns>
+  /// <exception cref="UriFormatException">Thrown when <paramref name="value"/> is not a valid URI.</exception>
+  public static Uri? ConvertToUri(string? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    if (value == String.Empty) return null;
+
+    return new Uri(value);
+  }
+
+  #endregion
+
   #region Generic OpenXml conversion methods
 
   /// <summary>
-  /// Converts the specified string value to an Open XML object of the given target type.
+  /// Converts a CLR string into the requested Open XML type using the registered converter map.
   /// </summary>
-  /// <remarks>Supported target types include subclasses of StringValue, DXW.StringType, DXW.String255Type,
-  /// DXW.String253Type, OpenXmlLeafTextElement, and OpenXmlLeafElement. The method returns null if the input value is
-  /// null.</remarks>
-  /// <param name="value">The string value to convert. If null, the method returns null.</param>
-  /// <param name="targetType">The target Open XML type to convert the value to. Must be a subclass of a supported Open XML type.</param>
-  /// <returns>An object representing the converted Open XML value, or null if the input value is null.</returns>
-  /// <exception cref="NotSupportedException">Thrown if the specified target type is not supported for conversion.</exception>
-  public static object? ConvertToOpenXml(string? value, Type targetType)
+  /// <param name="value">Source string to translate.</param>
+  /// <param name="targetType">Destination Open XML type.</param>
+  /// <returns>The converted object instance.</returns>
+  /// <exception cref="NotSupportedException">Raised when no conversion is registered for <paramref name="targetType"/>.</exception>
+  public static object? ConvertTo(string? value, Type targetType)
   {
     if (value == null) return null;
-    if (targetType.IsEqualOrSubclassOf(typeof(DX.StringValue)))
-      return CreateStringType(value);
-    if (targetType.IsEqualOrSubclassOf(typeof(DXW.StringType)))
-      return CreateStringType(value, targetType);
-    if (targetType.IsEqualOrSubclassOf(typeof(DXW.String255Type)))
-      return CreateString255Type(value, targetType);
-    if (targetType.IsEqualOrSubclassOf(typeof(DXW.String253Type)))
-      return CreateString253Type(value, targetType);
-    if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
-      return CreateOpenXmlLeafTextElement(value, targetType);
-    if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafElement)))
-      return CreateOpenXmlLeafElement(value, targetType);
-    if (targetType.IsGenericType && targetType.GetGenericTypeDefinition() == typeof(DX.EnumValue<>))
-      return CreateOpenXmlEnumValue(value, targetType);
 
+    if (ConversionToMap.TryGetValue((typeof(string), targetType), out var conversionFunc))
+    {
+      return conversionFunc(value, targetType);
+    }
     throw new NotSupportedException($"Conversion from String to type {targetType} is not supported.");
   }
 
   /// <summary>
-  /// Converts an Open XML value to its string representation, if supported.
+  /// Converts any registered Open XML instance back to a CLR string.
   /// </summary>
-  /// <param name="value">The Open XML value to convert. This can be an instance of StringValue, DXW.StringType, DXW.String255Type,
-  /// DXW.String253Type, OpenXmlLeafTextElement, or OpenXmlLeafElement. May be null.</param>
-  /// <returns>A string representation of the specified Open XML value, or null if <paramref name="value"/> is null.</returns>
-  /// <exception cref="NotSupportedException">Thrown if <paramref name="value"/> is not a supported Open XML type.</exception>
-  public static string? ConvertFromOpenXml(object? value)
+  /// <param name="value">Source Open XML object to convert.</param>
+  /// <returns>The extracted string representation.</returns>
+  /// <exception cref="NotSupportedException">Raised when the source type has no registered converter.</exception>
+  public static string? ConvertFrom(object? value)
   {
     if (value == null) return null;
 
     var sourceType = value.GetType();
-    if (value is DX.StringValue stringValue)
-      return GetValue(stringValue);
-    if (value is DXW.StringType stringTypeValue)
-      return GetValue(stringTypeValue);
-    if (value is DXW.String255Type string255Value)
-      return GetValue(string255Value);
-    if (value is DXW.String253Type string253Value)
-      return GetValue(string253Value);
-    if (value is DX.OpenXmlLeafTextElement textElement)
-      return GetValue(textElement);
-    if (value is DX.OpenXmlLeafElement leafElement)
-      return GetValue(leafElement);
-    
-    if (sourceType.IsGenericType && sourceType.GetGenericTypeDefinition() == typeof(DX.EnumValue<>) && value is DX.OpenXmlSimpleType enumValue)
-      return GetValue(enumValue);
-
+    if (ConversionFromMap.TryGetValue((sourceType, typeof(String)), out var conversionFunc))
+    {
+      return (String)conversionFunc(value)!;
+    }
     throw new NotSupportedException($"Conversion from type {sourceType} to String is not supported.");
   }
 

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for TSBoolean values to/from Open XML.
+/// Translates between the tri-state <see cref="TSBoolean"/> model value and supported Open XML representations.
 /// </summary>
 public static class TSBooleanConverter
 {
@@ -14,18 +14,15 @@ public static class TSBooleanConverter
   internal static readonly ConversionToMap ConversionToMap = new();
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
-  static TSBooleanConverter()
-  {
-    ConverterBase.RegisterConversionMethods(typeof(TSBooleanConverter), typeof(TSBoolean), supportedTypes, ConversionToMap, ConversionFromMap);
-  }
+  static TSBooleanConverter() { ConverterBase.RegisterConversionMethods(typeof(TSBooleanConverter), typeof(TSBoolean), supportedTypes, ConversionToMap, ConversionFromMap); }
 
   #region TrueFalseOnlyValue conversion.
 
   /// <summary>
-  /// Retrieves a boolean value from the specified TrueFalseBlankValue element.
+  /// Converts a <see cref="DX.TrueFalseBlankValue"/> into its <see cref="TSBoolean"/> counterpart, preserving the blank state.
   /// </summary>
-  /// <param name="value">The TrueFalseBlankValue element to check.</param>
-  /// <returns>True if the value is On, otherwise null or false.</returns>
+  /// <param name="value">The Open XML three-state value to interpret.</param>
+  /// <returns>The equivalent <see cref="TSBoolean"/> value.</returns>
   public static TSBoolean ConvertFromTrueFalseBlankValue(DX.TrueFalseBlankValue value)
   {
     if (!value.HasValue) return TSBoolean.Blank;
@@ -34,14 +31,15 @@ public static class TSBooleanConverter
   }
 
   /// <summary>
-  /// Creates an TrueFalseBlankValue element from the specified boolean value.
+  /// Creates a <see cref="DX.TrueFalseBlankValue"/> that mirrors the supplied <see cref="TSBoolean"/> state.
   /// </summary>
-  /// <param name="value">The boolean value to convert.</param>
-  /// <returns>TrueFalseBlankValue.On if true, TrueFalseBlankValue.Off if false, otherwise null.</returns>
+  /// <param name="value">The tri-state value to serialize.</param>
+  /// <returns>A new <see cref="DX.TrueFalseBlankValue"/> instance representing the same logical state.</returns>
   public static DX.TrueFalseBlankValue? ConvertToTrueFalseBlankValue(TSBoolean value)
   {
-    if (value== TSBoolean.Blank)
+    if (value == TSBoolean.Blank)
       return new DX.TrueFalseBlankValue();
+
     return DX.TrueFalseBlankValue.FromBoolean(value == TSBoolean.True);
   }
 
@@ -50,20 +48,16 @@ public static class TSBooleanConverter
   #region string conversion.
 
   /// <summary>
-  /// Converts the specified string representation of a logical value to its nullable Boolean equivalent.
+  /// Parses textual representations of a tri-state boolean (true/false/blank) into <see cref="TSBoolean"/>.
   /// </summary>
-  /// <remarks>If <paramref name="value"/> is <see langword="null"/>, the method returns <see langword="true"/>.
-  /// Any other input that does not match the accepted values results in <see langword="null"/>.</remarks>
-  /// <param name="value">The string to convert. Accepts "true", "false", "1", or "0" (case-insensitive).</param>
-  /// <returns>A nullable Boolean value: <see langword="true"/> if <paramref name="value"/> is "true" or "1"; <see
-  /// langword="false"/> if <paramref name="value"/> is "false" or "0"; otherwise, Blank.</returns>
+  /// <param name="value">The string to interpret. Null or unrecognized text yields <see cref="TSBoolean.Blank"/>.</param>
+  /// <returns>The parsed <see cref="TSBoolean"/> value.</returns>
   public static TSBoolean TSBooleanFromString(string? value)
   {
     if (value == null)
       return TSBoolean.Blank;
 
     value = value.ToLower();
-
     if (value == "true" || value == "1")
       return TSBoolean.True;
     if (value == "false" || value == "0")
@@ -73,54 +67,58 @@ public static class TSBooleanConverter
   }
 
   /// <summary>
-  /// Converts the specified <see cref="TSBoolean"/> value to its string representation.
+  /// Serializes a <see cref="TSBoolean"/> into a human-readable token.
   /// </summary>
-  /// <param name="value">The <see cref="TSBoolean"/> value to convert.</param>
-  /// <returns>A string that represents the specified <see cref="TSBoolean"/> value: "true" if the value is <see
-  /// cref="TSBoolean.True"/>; "false" if the value is <see cref="TSBoolean.False"/>; otherwise, "blank".</returns>
+  /// <param name="value">The tri-state value to serialize.</param>
+  /// <returns>"true", "false", or "blank" according to <paramref name="value"/>.</returns>
   public static string TSBooleanToString(TSBoolean value)
   {
     if (value == TSBoolean.True)
       return "true";
     if (value == TSBoolean.False)
       return "false";
+
     return "blank";
   }
 
   #endregion
+
   #region Generic OpenXml three-state boolean converter
 
   /// <summary>
-  /// Converts a boolean value to an OpenXml value or element of the specified type.
+  /// Converts the specified <see cref="TSBoolean"/> value to the specified target type, if a supported conversion exists.
   /// </summary>
-  /// <param name="value">The boolean value to convert.</param>
-  /// <param name="targetType">The type of the OpenXml element to create.</param>
-  /// <returns>An OpenXml element representing the TSBoolean value.</returns>
-  /// <exception cref="NotSupportedException"></exception>
-  public static object? ConvertToOpenXml(TSBoolean value, Type targetType)
+  /// <param name="value">The tri-state source value.</param>
+  /// <param name="targetType">The desired Open XML target type.</param>
+  /// <returns>The converted object suitable for the specified target type.</returns>
+  /// <exception cref="NotSupportedException">Thrown when no converter exists for <paramref name="targetType"/>.</exception>
+  public static object? ConvertFrom(TSBoolean? value, Type targetType)
   {
+    if (value == null) return null;
+
     if (ConversionToMap.TryGetValue((typeof(TSBoolean), targetType), out var conversionFunc))
     {
       return conversionFunc(value, targetType);
     }
-
     throw new NotSupportedException($"Conversion from TSBoolean to type {targetType} is not supported.");
   }
 
   /// <summary>
-  /// Converts an OpenXml value or element to a TSBoolean value.
+  /// Converts the specified value to a <see cref="TSBoolean"/> instance, if a supported conversion exists. 
   /// </summary>
-  /// <param name="value">The OpenXml value or element to convert.</param>
-  /// <returns>The boolean value represented by the element.</returns>
-  /// <exception cref="NotSupportedException"></exception>
-  public static TSBoolean ConvertFromOpenXml(object value)
+  /// <param name="value">The value to convert to <see cref="TSBoolean"/>. Can be <see langword="null"/>.</param>
+  /// <returns>A <see cref="TSBoolean"/> representation of the specified value, or <see langword="null"/> if <paramref
+  /// name="value"/> is <see langword="null"/>.</returns>
+  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="TSBoolean"/> is not supported.</exception>
+  public static TSBoolean? ConvertTo(object? value)
   {
+    if (value == null) return null;
+
     var sourceType = value.GetType();
     if (ConversionFromMap.TryGetValue((sourceType, typeof(TSBoolean)), out var conversionFunc))
     {
       return (TSBoolean)conversionFunc(value)!;
     }
-
     throw new NotSupportedException($"Conversion from type {sourceType} to TSBoolean is not supported.");
   }
 
