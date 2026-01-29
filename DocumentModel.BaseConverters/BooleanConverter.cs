@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides conversion methods for boolean values to/from Open XML.
 /// </summary>
-public static class BooleanConverter/* : BaseConverter<Boolean>*/
+public static class BooleanConverter
 {
   private static readonly (Type TargetType, string ConvertFromMethod, string ConvertToMethod)[] supportedTypes =
   [
@@ -18,27 +18,15 @@ public static class BooleanConverter/* : BaseConverter<Boolean>*/
     (typeof(DX.BooleanValue), nameof(ConvertFromBooleanValue), nameof(ConvertToBooleanValue)),
     (typeof(DXM.BooleanValues), nameof(ConvertFromBooleanValues), nameof(ConvertToBooleanValues)),
     (typeof(DX.TrueFalseValue), nameof(ConvertFromTrueFalseValue), nameof(ConvertToTrueFalseValue)),
-
-    //(typeof(DX.EnumValue<DXW.OnOffOnlyValues>), nameof(ConvertFromEnumValueOfOnOffOnlyValues), nameof(ConvertToEnumValueOfOnOffOnlyValues)),
-    //(typeof(DX.EnumValue<DXO10W.OnOffValues>), nameof(ConvertFromEnumValueOfO10WOnOffValues), nameof(ConvertToEnumValueOfO10WOnOffValues)),
-    ////(typeof(DX.EnumValue<DXM.BooleanValues>), nameof(ConvertFromEnumValueOfBooleanValues), nameof(ConvertToEnumValueOfBooleanValues)),
-
-
-    //(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
-    //(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
-    //(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
+    (typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
   ];
 
-  //public override Type[] SupportedTypes => supportedTypes.Select(item=>item.TargetType).ToArray();
-
-  internal static readonly Dictionary<(Type Source, Type Target), Func<object,  Type, object?>> ConversionToMap = new();
+  internal static readonly Dictionary<(Type Source, Type Target), Func<object, Type, object?>> ConversionToMap = new();
   internal static readonly Dictionary<(Type Source, Type Target), Func<object, object?>> ConversionFromMap = new();
 
   static BooleanConverter()
   {
     //// Register conversion functions
-    //RegisterConversion<string, Boolean>(value => Boolean.Parse(value.ToString()!));
-    //RegisterConversion<Boolean, string>(value => value.ToString());
     foreach (var item in supportedTypes)
     {
       var fromMethod = typeof(BooleanConverter).GetMethod(item.ConvertFromMethod, BindingFlags.Public | BindingFlags.Static);
@@ -701,21 +689,15 @@ public static class BooleanConverter/* : BaseConverter<Boolean>*/
   }
 
   /// <summary>
-  /// Creates a new instance of the specified DXW.OnOffType and sets its value to the provided Boolean value.
+  /// Converts the specified Boolean value to its string representation ("true" or "false").
   /// </summary>
-  /// <param name="value">The Boolean value to create the OnOffType element. If <see langword="null"/>, the method returns <see
-  /// langword="null"/>.</param>
-  /// <param name="targetType">The type of OnOffType to instantiate. Must be a type derived from DXW.OnOffType.</param>
-  /// <returns>A new instance of the specified OnOffType with its value set to <paramref name="value"/>; or <see
-  /// langword="null"/> if <paramref name="value"/> is <see langword="null"/>.</returns>
-  public static DXW.OnOffType ConvertToString(Boolean value, Type targetType)
+  /// <param name="value">The value to convert</param>
+  /// <returns>"true" or "false"</returns>
+  public static string ConvertToString(Boolean value)
   {
-    if (targetType.GetConstructor([typeof(Boolean)]) != null)
-      return (DXW.OnOffType)Activator.CreateInstance(targetType, value)!;
-
-    var element = (DXW.OnOffType)Activator.CreateInstance(targetType)!;
-    element.Val = value;
-    return element;
+    if (value)
+      return "true";
+    return "false";
   }
 
   #endregion
@@ -743,7 +725,7 @@ public static class BooleanConverter/* : BaseConverter<Boolean>*/
   /// Converts an OpenXml value or element to a boolean value.
   /// </summary>
   /// <param name="value">The OpenXml value or element to convert.</param>
-  /// <returns>The boolean value represented by the element, or null if the element is null.</returns>
+  /// <returns>The boolean value represented by the element.</returns>
   /// <exception cref="NotSupportedException"></exception>
   public static bool ConvertFromOpenXml(object value)
   {
