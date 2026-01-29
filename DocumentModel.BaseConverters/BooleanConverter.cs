@@ -559,7 +559,7 @@ public static class BooleanConverter
     var valProp = openXmlElement.GetType().GetProperty("Val");
     if (valProp == null)
       throw new InvalidOperationException("The Val property is not found in " + openXmlElement.GetType().Name);
-    
+
     var valValue = valProp.GetValue(openXmlElement)!;
     return ConvertFrom(valValue);
   }
@@ -638,13 +638,7 @@ public static class BooleanConverter
   /// <exception cref="NotSupportedException"></exception>
   public static object? ConvertTo(bool? value, Type targetType)
   {
-    if (value == null) return null;
-
-    if (ConversionToMap.TryGetValue((typeof(bool), targetType), out var conversionFunc))
-    {
-      return conversionFunc(value, targetType);
-    }
-    throw new NotSupportedException($"Conversion from Boolean to type {targetType} is not supported.");
+    return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
   }
 
   /// <summary>
@@ -655,14 +649,7 @@ public static class BooleanConverter
   /// <exception cref="NotSupportedException"></exception>
   public static bool? ConvertFrom(object? value)
   {
-    if (value == null) return null;
-
-    var sourceType = value.GetType();
-    if (ConversionFromMap.TryGetValue((sourceType, typeof(bool)), out var conversionFunc))
-    {
-      return (bool)conversionFunc(value)!;
-    }
-    throw new NotSupportedException($"Conversion from type {sourceType} to Boolean is not supported.");
+    return (bool?)ConverterBase.ConvertFrom(value, typeof(bool), ConversionFromMap);
   }
 
   #endregion
