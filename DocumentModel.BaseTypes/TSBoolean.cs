@@ -3,7 +3,7 @@
 /// <summary>
 /// Enumeration representing True, False, or Blank values.
 /// </summary>
-public enum TrueFalseBlank
+public enum TSBoolean
 {
   /// <summary>
   /// Indicates a negative or disabled state.

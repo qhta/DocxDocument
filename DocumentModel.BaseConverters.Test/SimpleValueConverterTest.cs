@@ -25,7 +25,7 @@ public static class SimpleValueConverterTest
     ( typeof(System.Boolean), typeof(DXW.OnOffOnlyType) ),
     ( typeof(System.Boolean), typeof(DXM.BooleanValues) ),
     ( typeof(System.Boolean), typeof(DX.TrueFalseValue) ),
-    //( typeof(System.Boolean), "DX.TrueFalseBlankValue" ),
+    ( typeof(DocumentModel.TSBoolean), typeof(DX.TrueFalseBlankValue) ),
 
     //( typeof(System.Boolean), "DX.OpenXmlLeafElement { Val: DX.OnOffValue }" ),
 
@@ -103,16 +103,21 @@ public static class SimpleValueConverterTest
     { typeof(DXW.String255Type), typeof(DXW.DefaultTextBoxFormFieldString) },
   };
 
-  private static readonly Dictionary<string, Type> OpenXmlLeafElementConcreteTypes = new Dictionary<string, Type>
+  private static readonly Dictionary<Type, Type> OpenXmlLeafElementConcreteTypes = new Dictionary<Type, Type>
   {
-    { "DX.OnOffValue", typeof(DXW.Active) },
-    { "DX.StringValue", typeof(DXM.MathFont) },
-    { "DX.Int16Value", typeof(DXW.MaxLength) },
-    { "DX.Int32Value", typeof(DXD.AlphaBiLevel) },
-    { "DX.IntegerValue", typeof(DXM.ArgumentSize) },
-    { "DX.HexBinaryValue", typeof(DXO10W.DocumentId) },
+    { typeof(DX.OnOffValue), typeof(DXOW.RecordIncluded) },
+    { typeof(DX.StringValue), typeof(DXM.MathFont) },
+    { typeof(DX.Int16Value), typeof(DXW.MaxLength) },
+    { typeof(DX.Int32Value), typeof(DXD.AlphaBiLevel) },
+    { typeof(DX.IntegerValue), typeof(DXM.ArgumentSize) },
+    { typeof(DX.HexBinaryValue), typeof(DXO10W.DocumentId) },
   };
 
+  private enum TestStage
+  {
+    DirectConversion,
+    OpenXmlLeafElementConversion,
+  }
   /// <summary>
   ///   Runs all TestSimpleValueConversion tests for supported types and reports results to the console.
   /// </summary>
@@ -124,16 +129,23 @@ public static class SimpleValueConverterTest
     {
       Type type = testPair.modelType;
       var otherType = testPair.otherType;
-      Console.Write($"TestSimpleValueConverter with {type.Name} and {otherType.Name}");
-      if (!TestSimpleValueConversion(type, otherType))
+      if (!TestValueConversion(type, otherType))
       {
-        Console.WriteLine(" failed.");
         testResult = false;
+        break;
       }
-      else
-        Console.WriteLine(" passed.");
     }
     return testResult;
+  }
+
+  public static bool TestValueConversion(Type modelType, Type otherType)
+  {
+    if (!TestSimpleValueConversion(modelType, otherType))
+      return false;
+    if (TestOpenXmlLeafElementConversion(modelType, otherType) == false)
+      return false;
+
+    return true;
   }
 
   /// <summary>
@@ -142,10 +154,14 @@ public static class SimpleValueConverterTest
   /// </summary>
   /// <param name="modelType">The model type to convert from and back</param>
   /// <param name="otherType">Target type to convert to</param>
+  /// <param name="testValues">Optional test values to use for the conversion tests</param>
   /// <returns></returns>
-  public static bool TestSimpleValueConversion(Type modelType, Type otherType)
+  public static bool TestSimpleValueConversion(Type modelType, Type otherType, 
+    object[]? testValues = null)
   {
-    object[] testValues = GetTestData(modelType);
+    Console.Write($"TestSimpleValueConverter with {modelType.Name} and {otherType.Name}");
+    bool testResult = true;
+    if (testValues == null) testValues = GetTestData(modelType);
     if (otherType.IsAbstract)
       otherType = ConcreteTypesMap[otherType];
 
@@ -169,7 +185,8 @@ public static class SimpleValueConverterTest
         {
           {
             Console.WriteLine($" - Conversion failed for value {testValue ?? "null"} of type {modelType.Name}");
-            return false;
+            testResult = false;
+            break;
           }
         }
       }
@@ -187,60 +204,36 @@ public static class SimpleValueConverterTest
         else
         {
           Console.WriteLine($" - Exception during conversion for value {testValue ?? "null"} of type {modelType.Name}: {ex.Message}");
-          return false;
+          testResult = false;
+          break;
         }
       }
     }
-    return true;
+    Console.WriteLine(testResult ? " passed." : " failed.");
+    return testResult;
   }
 
-  private static Type GetType(string otherTypeExpression)
+
+  /// <summary>
+  /// Tests conversion between a model type and another type expression.
+  /// Uses sample values to verify correct conversion in both directions.
+  /// </summary>
+  /// <param name="modelType">The model type to convert from and back</param>
+  /// <param name="otherType">Target type to convert to</param>
+  /// <returns></returns>
+  public static bool? TestOpenXmlLeafElementConversion(Type modelType, Type otherType)
   {
-    string[] ss;
-    if (otherTypeExpression.Contains("{"))
-    {
-      ss = otherTypeExpression.Split(['{', '}'], StringSplitOptions.RemoveEmptyEntries);
-      if (ss.Length != 2)
-        throw new InvalidOperationException($"Invalid other type expression: {otherTypeExpression}");
-      var genericTypeName = ss[0].Trim();
-      if (genericTypeName != "DX.OpenXmlLeafElement")
-        throw new NotSupportedException($"Only DX.OpenXmlLeafElement with property initialization is supported, but got: {otherTypeExpression}");
-      var propertyInitialization = ss[1];
-      ss = propertyInitialization.Split(':', StringSplitOptions.RemoveEmptyEntries);
-      if (ss.Length != 2)
-        throw new InvalidOperationException($"Invalid other type expression: {otherTypeExpression}");
-
-      var valueTypeName = ss[1].Trim();
-      Type valueType = OpenXmlLeafElementConcreteTypes[valueTypeName];
-      return valueType;
-    }
-    var fullTypeName = otherTypeExpression;
-
-    //if (ConcreteTypesMap.TryGetValue(fullTypeName, out var concreteType))
-    //  return concreteType;
-
-    ss = fullTypeName.Split('.');
-    if (ss.Length == 2)
-    {
-      var ns = ss[0].Trim();
-      var typeName = ss[1].Trim();
-      var fullNamespace = Namespaces.Map.GetValueOrDefault(ns, ns);
-      var namespaceQualifiedName = $"{fullNamespace}.{typeName}";
-      var type = OpenXmlAssembly.GetType(namespaceQualifiedName)
-                 ?? OpenXmlFrameworkAssembly.GetType(namespaceQualifiedName)
-                   ?? SystemAssembly.GetType(namespaceQualifiedName)
-                    ?? UriAssembly.GetType(namespaceQualifiedName);
-
-      if (type != null)
-        return type;
-    }
-    throw new InvalidOperationException($"Cannot find type {fullTypeName}");
+    object[] testValues = GetTestData(modelType);
+    if (OpenXmlLeafElementConcreteTypes.TryGetValue(otherType, out var concreteType))
+      return TestSimpleValueConversion(modelType, concreteType, testValues);
+    return null;
   }
-
   private static object[] GetTestData(Type testedType)
   {
     if (testedType == typeof(Boolean))
       return [true, false];
+    if (testedType == typeof(TSBoolean))
+      return [TSBoolean.True, TSBoolean.False, TSBoolean.Blank];
     if (testedType == typeof(String))
       return ["", "Test String", "Another String"];
     if (testedType == typeof(Byte))
