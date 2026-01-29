@@ -35,7 +35,7 @@ public abstract class BaseConverter<ModelType>
       var valProp = type.GetProperty("Val");
       if (valProp == null)
       {
-        var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+        var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
         if (allProps.Length == 1)
           valProp = allProps[0];
         else

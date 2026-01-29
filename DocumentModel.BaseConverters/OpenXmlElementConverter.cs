@@ -33,7 +33,7 @@ public static class OpenXmlElementConverter
       return onOffElement;
     }
     if (modelValue is string stringValue)
-      return (DX.OpenXmlElement)OpenXmlSimpleValueConverter.ConvertToOpenXml(stringValue, openXmlType)!;
+      return (DX.OpenXmlElement)SimpleValueConverter.ConvertTo(stringValue, openXmlType)!;
     if (modelValue is HexBinary hexBinaryValue)
       return (DX.OpenXmlElement)HexBinaryConverter.CreateOpenXmlElement(hexBinaryValue, openXmlType)!;
 
@@ -153,7 +153,7 @@ public static class OpenXmlElementConverter
     //  }
     //  else
     //  {
-    //    var complexValue = OpenXmlComplexTypeConverter.ConvertFromOpenXml(leafElement, modelType);
+    //    var complexValue = OpenXmlComplexTypeConverter.ConvertFrom(leafElement, modelType);
     //    return complexValue;
     //  }
     //}
@@ -182,7 +182,7 @@ public static class OpenXmlElementConverter
       var result = targetType.GetConstructor([enumType])?.Invoke([enumVal]);
       return result;
     }
-    return OpenXmlSimpleValueConverter.ConvertToOpenXml(value, targetType);
+    return SimpleValueConverter.ConvertTo(value, targetType);
   }
 
   /// <summary>

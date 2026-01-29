@@ -49,8 +49,8 @@ public static class ConverterBase
   {
     foreach (var item in supportedTypes)
     {
-      var fromMethod = converterType.GetMethod(item.ConvertFromMethod, BindingFlags.Public | BindingFlags.Static);
-      var toMethod = converterType.GetMethod(item.ConvertToMethod, BindingFlags.Public | BindingFlags.Static);
+      var fromMethod = converterType.GetMethod(item.ConvertFromMethod, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+      var toMethod = converterType.GetMethod(item.ConvertToMethod, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
       if (fromMethod != null)
       {
         conversionFromMap[(item.TargetType, modelType)] = value => fromMethod.Invoke(null, [value])!;

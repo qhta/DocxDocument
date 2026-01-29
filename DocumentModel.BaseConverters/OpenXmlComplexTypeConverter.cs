@@ -20,11 +20,11 @@ public static class OpenXmlComplexTypeConverter
     var currentType = modelObject.GetType();
     if (openXmlType.Name == "CharacterSpacingControl") Debug.Assert(true);
     if (modelObject is string stringValue)
-      return OpenXmlSimpleValueConverter.ConvertToOpenXml(modelObject, openXmlType);
+      return SimpleValueConverter.ConvertTo(modelObject, openXmlType);
     if (modelObject.GetType().IsEnum)
     {
       var enumValue = (Enum)modelObject;
-      return OpenXmlSimpleValueConverter.ConvertToOpenXml(enumValue, openXmlType);
+      return SimpleValueConverter.ConvertTo(enumValue, openXmlType);
     }
     var openXmlElement = Activator.CreateInstance(openXmlType)!;
     UpdateData(modelObject, openXmlElement, openXmlType);
@@ -50,11 +50,11 @@ public static class OpenXmlComplexTypeConverter
     if (currentType.Name == "CharacterSpacingControl") Debug.Assert(true);
     if (modelType == typeof(string))
     {
-      return OpenXmlSimpleValueConverter.ConvertFromOpenXml(openXmlElement, typeof(string));
+      return SimpleValueConverter.ConvertFrom(openXmlElement, typeof(string));
     }
     if (modelType.IsEnum)
     {
-      return OpenXmlSimpleValueConverter.ConvertFromOpenXml(openXmlElement, modelType);
+      return SimpleValueConverter.ConvertFrom(openXmlElement, modelType);
     }
     var modelObject = Activator.CreateInstance(modelType)!;
     LoadData(modelObject, openXmlElement, modelType);
