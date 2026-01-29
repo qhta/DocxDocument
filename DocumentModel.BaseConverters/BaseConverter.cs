@@ -9,12 +9,102 @@
 /// <typeparam name="ModelType">The type of the model to which Open XML elements are converted.</typeparam>
 public abstract class BaseConverter<ModelType>
 {
+
+  /// <summary>
+  /// Initializes a new instance of the BaseConverter class. Registers conversion methods for the specified model type.
+  /// </summary>
+  protected BaseConverter()
+  {
+    RegisterConversionMethods(typeof(ModelType));
+  }
+
   /// <summary>
   /// Gets the collection of data types supported by this instance.
   /// </summary>
   /// <remarks>Use this property to determine which types can be processed or handled by the current
   /// implementation. The returned array may be empty if no types are supported.</remarks>
-  public abstract Type[] SupportedTypes { get; }
+  public Type[] SupportedTypes
+  {
+    get
+    {
+      var converterType = this.GetType();
+      var field = converterType.GetField("_ConversionToMap", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+      if (field != null)
+      {
+        if (field.GetValue(null) is ConversionToMap map)
+          return map.Select(item => item.Key.Source).ToArray();
+      }
+      return Array.Empty<Type>();
+    }
+  }
+
+  /// <summary>
+  /// Gets the collection of conversion methods associated with the current converter type.
+  /// </summary>
+  /// <remarks>The returned array is determined by the presence of a static field named "_ConversionMethods" on
+  /// the converter type. If the field is not found or does not contain any methods, an empty array is
+  /// returned.</remarks>
+  public ConversionMethodInfo[] ConversionMethods
+  {
+    get
+    {
+      if (_conversionMethods == null)
+      {
+        var converterType = this.GetType();
+        var field = converterType.GetField("_ConversionMethods", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+        if (field != null && field.GetValue(null) is ConversionMethodInfo[] methods)
+          _conversionMethods = methods;
+        else
+          _conversionMethods = Array.Empty<ConversionMethodInfo>();
+      }
+      return _conversionMethods!;
+    }
+  }
+  private ConversionMethodInfo[]? _conversionMethods;
+
+  /// <summary>
+  /// Collection of conversion functions to convert from model types to Open XML types.
+  /// </summary>
+  public ConversionToMap ConversionToMap
+  {
+    get
+    {
+      if (_conversionToMap == null)
+      {
+        var converterType = this.GetType();
+        var field = converterType.GetField("_ConversionToMap", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+        if (field != null && field.GetValue(null) is ConversionToMap map)
+          _conversionToMap = map;
+        else
+          _conversionToMap = new ConversionToMap();
+      }
+      return _conversionToMap!;
+    }
+    set => _conversionToMap = value;
+  }
+  private ConversionToMap? _conversionToMap;
+
+  /// <summary>
+  /// Collection of conversion functions to convert from Open XML types to model types.
+  /// </summary>
+  public ConversionFromMap ConversionFromMap
+  {
+    get
+    {
+      if (_conversionFromMap == null)
+      {
+        var converterType = this.GetType();
+        var field = converterType.GetField("_ConversionFromMap", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+        if (field != null && field.GetValue(null) is ConversionFromMap map)
+          _conversionFromMap = map;
+        else
+          _conversionFromMap = new ConversionFromMap();
+      }
+      return _conversionFromMap!;
+    }
+    set => _conversionFromMap = value;
+  }
+  private ConversionFromMap? _conversionFromMap;
 
   /// <summary>
   /// Determines whether the specified type is supported, either directly or through inheritance, based on the provided
@@ -87,51 +177,16 @@ public abstract class BaseConverter<ModelType>
     return supportedTypes.Contains(type);
   }
 
-  protected ConversionMethodInfo[] ConversionMethods
-  {
-    get
-    {
-      var converterType = this.GetType();
-      var field = converterType.GetField("_ConversionMethods", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-      if (field != null)
-      {
-        if (field.GetValue(null) is ConversionMethodInfo[] methods)
-          return methods;
-      }
-      return Array.Empty<ConversionMethodInfo>();
-    }
-  }
 
-  protected ConversionToMap ConversionToMap
-  {
-    get
-    {
-      var converterType = this.GetType();
-      var field = converterType.GetField("_ConversionToMap", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-      if (field != null)
-      {
-        if (field.GetValue(null) is ConversionToMap map)
-          return map;
-      }
-      return new ConversionToMap();
-    }
-  }
-
-  protected ConversionFromMap ConversionFromMap
-  {
-    get
-    {
-      var converterType = this.GetType();
-      var field = converterType.GetField("_ConversionFromMap", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-      if (field != null)
-      {
-        if (field.GetValue(null) is ConversionFromMap map)
-          return map;
-      }
-      return new ConversionFromMap();
-    }
-  }
-
+  /// <summary>
+  /// Registers conversion methods for the specified model type, enabling type conversions between the model and
+  /// supported target types.
+  /// </summary>
+  /// <remarks>This method associates conversion delegates for the given model type based on the configured
+  /// conversion methods. After registration, conversions to and from the specified model type can be performed using
+  /// the registered delegates. This method is typically called during initialization to set up type conversion
+  /// infrastructure.</remarks>
+  /// <param name="modelType">The type representing the model for which conversion methods should be registered.</param>
   public void RegisterConversionMethods(Type modelType)
   {
     var converterType = this.GetType();
@@ -224,8 +279,11 @@ public abstract class BaseConverter<ModelType>
   /// <param name="value">The value to convert.</param>
   /// <param name="targetType">The type to convert the value to.</param>
   /// <returns>The converted value, or null if the input is null.</returns>
-  public object? ConvertFrom(object? value, Type targetType)
+  public object? ConvertFrom(object? value, Type? targetType = null)
   {
+    if (targetType == null)
+      targetType = typeof(ModelType);
+
     if (value == null) return null;
 
     var sourceType = value.GetType();
@@ -284,7 +342,7 @@ public abstract class BaseConverter<ModelType>
     var sourceType = source.GetType();
     var methods = sourceType.GetMethods(BindingFlags.Public | BindingFlags.Static)
       .Concat(targetType.GetMethods(BindingFlags.Public | BindingFlags.Static)).ToArray();
-    var op = methods.FirstOrDefault(m => m.Name == "op_Implicit" 
+    var op = methods.FirstOrDefault(m => m.Name == "op_Implicit"
            && m.ReturnType == targetType && m.GetParameters() is [{ ParameterType: var p }] && p.IsAssignableFrom(sourceType));
     if (op == null) return false;
 
