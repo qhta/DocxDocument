@@ -17,6 +17,14 @@ internal class Program
     Console.WriteLine("║   DocumentModel BaseConverters Test Suite        ║");
     Console.WriteLine("╚══════════════════════════════════════════════════╝");
     Console.WriteLine();
+    if (!BooleanConverterTest.Run())
+    {
+      Console.WriteLine("\nSome tests failed.");
+      return;
+    }
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
     if (!SimpleValueConverterTest.Run())
     {
       Console.WriteLine("\nSome tests failed.");
