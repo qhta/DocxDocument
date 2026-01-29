@@ -1,10 +1,34 @@
 ﻿namespace DocumentModel.OpenXml;
 
+/// <summary>
+/// Single conversion method information.
+/// </summary>
+/// <param name="TargetType"></param>
+/// <param name="ConvertFromMethod"></param>
+/// <param name="ConvertToMethod"></param>
 public record ConversionMethodInfo(Type TargetType, string ConvertFromMethod, string ConvertToMethod);
 
-public class ConversionToMap: Dictionary<(Type Source, Type Target), Func<object, Type, object?>>;
+public class ConversionToMap : Dictionary<(Type Source, Type Target), Func<object, Type, object?>>
+{
+  public void Append(ConversionToMap source)
+  {
+    foreach (var item in source)
+    {
+      this[(item.Key.Source, item.Key.Target)] = item.Value;
+    }
+  }
+}
 
-public class ConversionFromMap: Dictionary<(Type Source, Type Target), Func<object, object?>>;
+public class ConversionFromMap : Dictionary<(Type Source, Type Target), Func<object, object?>>
+{
+  public void Append(ConversionFromMap source)
+  {
+    foreach (var item in source)
+    {
+      this[(item.Key.Source, item.Key.Target)] = item.Value;
+    }
+  }
+}
 
 public static class ConverterBase
 {
@@ -69,7 +93,7 @@ public static class ConverterBase
     return supportedTypes.Contains(type);
   }
 
-  public static void RegisterConversionMethods(Type converterType, Type modelType, ConversionMethodInfo[] supportedTypes, 
+  public static void RegisterConversionMethods(Type converterType, Type modelType, ConversionMethodInfo[] supportedTypes,
     ConversionToMap conversionToMap, ConversionFromMap conversionFromMap)
   {
     foreach (var item in supportedTypes)
@@ -93,16 +117,139 @@ public static class ConverterBase
             return toMethod.Invoke(null, [value, targetType])!;
           };
         }
-      } 
+      }
       catch (TargetInvocationException ex)
       {
-        if (ex.InnerException!=null)
+        if (ex.InnerException != null)
           throw ex.InnerException;
 
         throw;
       }
+    }
+  }
 
+  /// <summary>
+  /// Converts a value to the specified target type using standard type conversion.
+  /// </summary>
+  /// <param name="value">The value to convert.</param>
+  /// <param name="targetType">The type to convert the value to.</param>
+  /// <param name="conversionToMap">Conversion map for forward conversions.</param>
+  /// <returns>The converted value, or null if the input is null.</returns>
+  public static object? ConvertTo(object? value, Type targetType, ConversionToMap conversionToMap)
+  {
+    if (value == null) return null;
+
+    var sourceType = value.GetType();
+    Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
+
+    var targetSubType = Nullable.GetUnderlyingType(targetType) ?? targetType;
+    while (targetSubType != null)
+    {
+      Debug.WriteLine($"Search for conversion from {sourceType.FullName} to {targetSubType.FullName}");
+
+      if (conversionToMap.TryGetValue((sourceType, targetSubType), out var conversionFunc))
+      {
+        Debug.WriteLine($"Converting from {sourceType.FullName} to {targetSubType.FullName}");
+        return conversionFunc(value, targetType);
+      }
+
+      targetSubType = targetSubType.BaseType;
+    }
+    if (TryImplicitConvert(value, targetType, out var result))
+      return result;
+
+    if (targetType.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
+    {
+      var targetInstance = (DX.OpenXmlLeafTextElement)Activator.CreateInstance(targetType)!;
+      targetInstance.Text = value.ToString()!;
+      return targetInstance;
+    }
+    else
+    if (targetType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    {
+      var valProp = targetType.GetValProperty();
+      if (valProp == null)
+        throw new NotSupportedException($"Val property in {targetType.FullName} not found.");
+      var valValue = ConvertTo(value, valProp.PropertyType, conversionToMap);
+      var targetInstance = Activator.CreateInstance(targetType);
+      valProp.SetValue(targetInstance, valValue);
+      return targetInstance;
+    }
+    throw new NotSupportedException($"Conversion from {sourceType.FullName} to {targetType.FullName} is not supported.");
+  }
+
+  /// <summary>
+  /// Converts a value to the specified target type using standard type conversion.
+  /// </summary>
+  /// <param name="value">The value to convert.</param>
+  /// <param name="targetType">The type to convert the value to.</param>
+  /// <param name="conversionFromMap">Conversion map for reverse conversions.</param>
+  /// <returns>The converted value, or null if the input is null.</returns>
+  public static object? ConvertFrom(object? value, Type targetType, ConversionFromMap conversionFromMap)
+  {
+    if (value == null) return null;
+
+    var sourceType = value.GetType();
+    if (sourceType == targetType)
+      return value;
+
+    Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
+
+    var sourceSubType = Nullable.GetUnderlyingType(sourceType) ?? sourceType;
+    while (sourceSubType != null)
+    {
+      Debug.WriteLine($"Search for conversion from {sourceSubType.FullName} to {targetType.FullName}");
+
+      if (conversionFromMap.TryGetValue((sourceSubType, targetType), out var conversionFunc))
+      {
+        Debug.WriteLine($"Converting from {sourceType.FullName} to {sourceSubType.FullName}");
+        return conversionFunc(value);
+      }
+
+      sourceSubType = sourceSubType.BaseType;
     }
 
+    if (TryImplicitConvert(value, targetType, out var result))
+      return result;
+
+    if (value is DX.OpenXmlLeafTextElement textElement)
+    {
+      var valValue = textElement.Text;
+      return ConvertFrom(valValue, targetType, conversionFromMap);
+    }
+    else
+    if (sourceType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    {
+      var valProp = sourceType.GetValProperty();
+      if (valProp == null)
+        throw new NotSupportedException($"Val property in {sourceType.FullName} not found.");
+      var valValue = valProp.GetValue(value);
+      return ConvertFrom(valValue, targetType, conversionFromMap);
+    }
+    throw new NotSupportedException($"Conversion from {sourceType.FullName} to {targetType.FullName} is not supported.");
   }
+
+  /// <summary>
+  /// Attempts to convert a value to the specified target type using an implicit conversion operator, if available.
+  /// </summary>
+  /// <param name="source">The source value to convert.</param>
+  /// <param name="targetType">The type to convert the value to.</param>
+  /// <param name="result">The converted value if the conversion succeeds; otherwise, null.</param>
+  /// <returns>True if an implicit conversion was performed; otherwise, false.</returns>
+  public static bool TryImplicitConvert(object? source, Type targetType, out object? result)
+  {
+    result = null;
+    if (source == null) return true;
+
+    var sourceType = source.GetType();
+    var methods = sourceType.GetMethods(BindingFlags.Public | BindingFlags.Static)
+      .Concat(targetType.GetMethods(BindingFlags.Public | BindingFlags.Static)).ToArray();
+    var op = methods.FirstOrDefault(m => m.Name == "op_Implicit"
+           && m.ReturnType == targetType && m.GetParameters() is [{ ParameterType: var p }] && p.IsAssignableFrom(sourceType));
+    if (op == null) return false;
+
+    result = op.Invoke(null, [source]);
+    return true;
+  }
+
 }
