@@ -8,6 +8,31 @@ public class ConversionFromMap: Dictionary<(Type Source, Type Target), Func<obje
 
 public static class ConverterBase
 {
+
+  /// <summary>
+  /// Retrieves the public instance property named "Val" from the specified type, or returns the single declared public
+  /// instance property if only one exists.
+  /// </summary>
+  /// <remarks>If the specified type does not declare a property named "Val", and declares exactly one public
+  /// instance property, that property is returned. If there are no public instance properties or more than one (other
+  /// than "Val"), the method returns <see langword="null"/>.</remarks>
+  /// <param name="type">The type to search for a public instance property named "Val" or a single declared public instance property.</param>
+  /// <returns>A <see cref="PropertyInfo"/> representing the "Val" property, or the single declared public instance property if
+  /// only one exists; otherwise, <see langword="null"/>.</returns>
+  public static PropertyInfo? GetValProperty(this Type type)
+  {
+    var valProp = type.GetProperty("Val");
+    if (valProp == null)
+    {
+      var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+      if (allProps.Length == 1)
+        valProp = allProps[0];
+      else
+        return null;
+    }
+    return valProp;
+  }
+
   /// <summary>
   /// Determines whether the specified type is supported, either directly or through inheritance, based on the provided
   /// list of supported types.
