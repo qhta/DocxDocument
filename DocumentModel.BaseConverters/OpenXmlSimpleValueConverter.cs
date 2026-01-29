@@ -35,9 +35,6 @@ public static class OpenXmlSimpleValueConverter
     //DXW.CharacterSpacingControl
     var modelType = modelValue.GetType();
 
-    if (modelValue is bool boolValue && BooleanOpenXmlConverter.SupportedTypes.Contains(openXmlType))
-      return BooleanOpenXmlConverter.ConvertToOpenXml(boolValue, openXmlType);
-
     if (modelValue is string stringValue && StringOpenXmlConverter.SupportedTypes.Contains(openXmlType))
       return StringOpenXmlConverter.ConvertToOpenXml(stringValue, openXmlType);
 
@@ -86,8 +83,6 @@ public static class OpenXmlSimpleValueConverter
 
     var openXmlType = openXmlValue.GetType();
 
-    if (modelType == typeof(bool) && BooleanOpenXmlConverter.SupportedTypes.Contains(openXmlType))
-      return BooleanOpenXmlConverter.ConvertFromOpenXml(openXmlValue);
 
     if (modelType == typeof(string) && StringOpenXmlConverter.SupportedTypes.Contains(openXmlType))
       return StringOpenXmlConverter.ConvertFromOpenXml(openXmlValue);

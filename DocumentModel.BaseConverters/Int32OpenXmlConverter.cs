@@ -34,7 +34,7 @@ public static class Int32OpenXmlConverter
   /// <returns>True if and only if the conversion to/from OpenXml type is supported.</returns>
   public static bool SupportsType(Type type)
   {
-    return OpenXmlConverterHelper.SupportsType(type, SupportedTypes);
+    return ConverterBase.SupportsType(type, SupportedTypes);
   }
 
   #region SByteValue conversion.

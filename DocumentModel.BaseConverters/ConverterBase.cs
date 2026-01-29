@@ -1,6 +1,12 @@
 ﻿namespace DocumentModel.OpenXml;
 
-public static class OpenXmlConverterHelper
+public record ConversionMethodInfo(Type TargetType, string ConvertFromMethod, string ConvertToMethod);
+
+public class ConversionToMap: Dictionary<(Type Source, Type Target), Func<object, Type, object?>>;
+
+public class ConversionFromMap: Dictionary<(Type Source, Type Target), Func<object, object?>>;
+
+public static class ConverterBase
 {
   /// <summary>
   /// Determines whether the specified type is supported, either directly or through inheritance, based on the provided
@@ -36,5 +42,31 @@ public static class OpenXmlConverterHelper
     }
 
     return supportedTypes.Contains(type);
+  }
+
+  public static void RegisterConversionMethods(Type converterType, Type modelType, ConversionMethodInfo[] supportedTypes, 
+    ConversionToMap conversionToMap, ConversionFromMap conversionFromMap)
+  {
+    foreach (var item in supportedTypes)
+    {
+      var fromMethod = converterType.GetMethod(item.ConvertFromMethod, BindingFlags.Public | BindingFlags.Static);
+      var toMethod = converterType.GetMethod(item.ConvertToMethod, BindingFlags.Public | BindingFlags.Static);
+      if (fromMethod != null)
+      {
+        conversionFromMap[(item.TargetType, modelType)] = value => fromMethod.Invoke(null, [value])!;
+      }
+      if (toMethod != null)
+      {
+        conversionToMap[(modelType, item.TargetType)] = (value, targetType) =>
+        {
+          var parameters = toMethod.GetParameters();
+          if (parameters.Length == 1)
+            return toMethod.Invoke(null, [value])!;
+
+          return toMethod.Invoke(null, [value, targetType])!;
+        };
+      }
+    }
+
   }
 }
