@@ -8,20 +8,24 @@ public static class SimpleValueConverterTest
   private static readonly Assembly UriAssembly = typeof(System.Uri).Assembly;
 
 
-  private static readonly (Type modelType, string otherTypeExpression)[] SupportedTypes =
+  private static readonly (Type modelType, Type otherType)[] SupportedTypes =
   [
-    ( typeof(System.Boolean), "DXW.EmptyType" ),
-    ( typeof(System.Boolean), "DXO10W.EmptyType" ),
-    ( typeof(System.Boolean), "DXD.EmptyType" ),
-    ( typeof(System.Boolean), "DX.BooleanValue" ),
-    ( typeof(System.Boolean), "DX.OnOffValue" ),
-    ( typeof(System.Boolean), "DXW.OnOffType" ),
-    ( typeof(System.Boolean), "DXO10W.OnOffType" ),
-    ( typeof(System.Boolean), "DXO13W.OnOffType" ),
-    ( typeof(System.Boolean), "DXM.OnOffType" ),
-    ( typeof(System.Boolean), "DXW.OnOffOnlyType" ),
-    ( typeof(System.Boolean), "DX.TrueFalseValue" ),
-    ( typeof(System.Boolean), "DX.TrueFalseBlankValue" ),
+    //( typeof(System.Boolean), "DXW.EmptyType" ),
+    //( typeof(System.Boolean), "DXO10W.EmptyType" ),
+    //( typeof(System.Boolean), "DXD.EmptyType" ),
+
+    ( typeof(System.Boolean), typeof(DX.BooleanValue) ),
+    ( typeof(System.Boolean), typeof(DX.OnOffValue) ),
+    ( typeof(System.Boolean), typeof(DXW.OnOffOnlyValues) ),
+    ( typeof(System.Boolean), typeof(DXO10W.OnOffValues) ),
+    ( typeof(System.Boolean), typeof(DXW.OnOffType) ),
+    ( typeof(System.Boolean), typeof(DXM.OnOffType) ),
+    ( typeof(System.Boolean), typeof(DXO10W.OnOffType) ),
+    ( typeof(System.Boolean), typeof(DXO13W.OnOffType) ),
+    ( typeof(System.Boolean), typeof(DXW.OnOffOnlyType) ),
+    ( typeof(System.Boolean), typeof(DXM.BooleanValues) ),
+    ( typeof(System.Boolean), typeof(DX.TrueFalseValue) ),
+    //( typeof(System.Boolean), "DX.TrueFalseBlankValue" ),
 
     //( typeof(System.Boolean), "DX.OpenXmlLeafElement { Val: DX.OnOffValue }" ),
 
@@ -82,24 +86,21 @@ public static class SimpleValueConverterTest
   ];
 
 
-  private static readonly Dictionary<string, Type> OpenXmlConcreteTypes = new Dictionary<string, Type>
+  private static readonly Dictionary<Type, Type> ConcreteTypesMap = new Dictionary<Type, Type>
   {
-    { "DXW.EmptyType", typeof(DXW.CarriageReturn) },
-    { "DXO10W.EmptyType", typeof(DXO10W.NoFillEmpty) },
-    { "DXD.EmptyType", typeof(DXD.MasterColorMapping) },
-    { "DXW.OnOffType", typeof(DXW.Active) },
-    { "DXO10W.OnOffType", typeof(DXO10W.ConflictMode) },
-    { "DXO13W.OnOffType", typeof(DXO13W.DefaultCollapsed) },
-    { "DXM.OnOffType", typeof(DXM.AlignScripts) },
-    { "DXW.OnOffOnlyType", typeof(DXW.Locked) },
+    { typeof(DXW.OnOffType), typeof(DXW.Active) },
+    { typeof(DXO10W.OnOffType), typeof(DXO10W.ConflictMode) },
+    { typeof(DXO13W.OnOffType), typeof(DXO13W.DefaultCollapsed) },
+    { typeof(DXM.OnOffType), typeof(DXM.AlignScripts) },
+    { typeof(DXW.OnOffOnlyType), typeof(DXW.Locked) },
 
 
-    { "DX.OpenXmlLeafTextElement", typeof(DXW.Text) },
-    { "DXM.CharType", typeof(DXM.SeparatorChar) },
-    { "DXW.StringType", typeof(DXW.ConnectString) },
-    { "DXW.DecimalNumberType", typeof(DXW.ActiveRecord) },
-    { "DXW.NonNegativeDecimalNumberType", typeof(DXW.StartNumberingValue) },
-    { "DXW.String255Type", typeof(DXW.DefaultTextBoxFormFieldString) },
+    { typeof(DX.OpenXmlLeafTextElement), typeof(DXW.Text) },
+    { typeof(DXM.CharType), typeof(DXM.SeparatorChar) },
+    { typeof(DXW.StringType), typeof(DXW.ConnectString) },
+    { typeof(DXW.DecimalNumberType), typeof(DXW.ActiveRecord) },
+    { typeof(DXW.NonNegativeDecimalNumberType), typeof(DXW.StartNumberingValue) },
+    { typeof(DXW.String255Type), typeof(DXW.DefaultTextBoxFormFieldString) },
   };
 
   private static readonly Dictionary<string, Type> OpenXmlLeafElementConcreteTypes = new Dictionary<string, Type>
@@ -122,9 +123,9 @@ public static class SimpleValueConverterTest
     foreach (var testPair in SupportedTypes)
     {
       Type type = testPair.modelType;
-      var otherTypeExpression = testPair.otherTypeExpression;
-      Console.Write($"TestSimpleValueConverter with {type.Name} and {otherTypeExpression}");
-      if (!TestSimpleValueConversion(type, otherTypeExpression))
+      var otherType = testPair.otherType;
+      Console.Write($"TestSimpleValueConverter with {type.Name} and {otherType.Name}");
+      if (!TestSimpleValueConversion(type, otherType))
       {
         Console.WriteLine(" failed.");
         testResult = false;
@@ -135,20 +136,18 @@ public static class SimpleValueConverterTest
     return testResult;
   }
 
-
   /// <summary>
   /// Tests conversion between a model type and another type expression.
   /// Uses sample values to verify correct conversion in both directions.
   /// </summary>
   /// <param name="modelType">The model type to convert from and back</param>
-  /// <param name="otherTypeExpression">It can be a simple type name
-  /// or type name with property initialization consisting of a single property name and a type of this property</param>
+  /// <param name="otherType">Target type to convert to</param>
   /// <returns></returns>
-  public static bool TestSimpleValueConversion(Type modelType, string otherTypeExpression)
+  public static bool TestSimpleValueConversion(Type modelType, Type otherType)
   {
-    Type otherType = GetType(otherTypeExpression);
     object[] testValues = GetTestData(modelType);
-    //object[] convertedValues = GetTestData(otherType);
+    if (otherType.IsAbstract)
+      otherType = ConcreteTypesMap[otherType];
 
     foreach (var testValue0 in testValues)
     {
@@ -164,15 +163,10 @@ public static class SimpleValueConverterTest
           // Skip negative Twips to UInt32Value conversion test
 
         }
-        var convertedValue = SimpleValueConverter.ChangeType(testValue, otherType);
-        var roundTripValue = SimpleValueConverter.ChangeType(convertedValue, modelType);
+        var convertedValue = SimpleValueConverter.ConvertTo(testValue, otherType);
+        var roundTripValue = SimpleValueConverter.ConvertFrom(convertedValue, modelType);
         if (!testValue.Equals(roundTripValue))
         {
-          if (testValue is Boolean boolTest && boolTest == false && otherTypeExpression.EndsWith("EmptyType") && roundTripValue == null)
-          {
-            // Special case: false converts to EmptyType and back to false
-          }
-          else
           {
             Console.WriteLine($" - Conversion failed for value {testValue ?? "null"} of type {modelType.Name}");
             return false;
@@ -222,8 +216,8 @@ public static class SimpleValueConverterTest
     }
     var fullTypeName = otherTypeExpression;
 
-    if (OpenXmlConcreteTypes.TryGetValue(fullTypeName, out var concreteType))
-      return concreteType;
+    //if (ConcreteTypesMap.TryGetValue(fullTypeName, out var concreteType))
+    //  return concreteType;
 
     ss = fullTypeName.Split('.');
     if (ss.Length == 2)

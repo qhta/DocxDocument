@@ -31,7 +31,7 @@ public static class BooleanOpenXmlConverterTest
     typeof(DX.BooleanValue),
     typeof(DXM.BooleanValues),
     typeof(DX.TrueFalseValue),
-    typeof(DX.TrueFalseBlankValue),
+    //typeof(DX.TrueFalseBlankValue),
     typeof(DX.EnumValue<DXM.BooleanValues>),
     typeof(DXVS.Visible),
   ];

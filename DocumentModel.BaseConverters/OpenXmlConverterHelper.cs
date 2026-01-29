@@ -29,7 +29,7 @@ public static class OpenXmlConverterHelper
           return false;
 
       }
-      if (SupportsType(valProp.PropertyType supportedTypes))
+      if (SupportsType(valProp.PropertyType, supportedTypes))
         return true;
 
       return false;
