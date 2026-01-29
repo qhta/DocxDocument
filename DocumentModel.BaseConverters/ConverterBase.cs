@@ -51,21 +51,32 @@ public static class ConverterBase
     {
       var fromMethod = converterType.GetMethod(item.ConvertFromMethod, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
       var toMethod = converterType.GetMethod(item.ConvertToMethod, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-      if (fromMethod != null)
+      try
       {
-        conversionFromMap[(item.TargetType, modelType)] = value => fromMethod.Invoke(null, [value])!;
-      }
-      if (toMethod != null)
-      {
-        conversionToMap[(modelType, item.TargetType)] = (value, targetType) =>
+        if (fromMethod != null)
         {
-          var parameters = toMethod.GetParameters();
-          if (parameters.Length == 1)
-            return toMethod.Invoke(null, [value])!;
+          conversionFromMap[(item.TargetType, modelType)] = value => fromMethod.Invoke(null, [value])!;
+        }
+        if (toMethod != null)
+        {
+          conversionToMap[(modelType, item.TargetType)] = (value, targetType) =>
+          {
+            var parameters = toMethod.GetParameters();
+            if (parameters.Length == 1)
+              return toMethod.Invoke(null, [value])!;
 
-          return toMethod.Invoke(null, [value, targetType])!;
-        };
+            return toMethod.Invoke(null, [value, targetType])!;
+          };
+        }
+      } 
+      catch (TargetInvocationException ex)
+      {
+        if (ex.InnerException!=null)
+          throw ex.InnerException;
+
+        throw;
       }
+
     }
 
   }

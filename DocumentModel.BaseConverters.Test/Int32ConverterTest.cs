@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="Int32OpenXmlConverter"/> conversions between .NET Int32 values and various Open XML numeric types.
+///   Provides unit tests for verifying the correctness of <see cref="OpenXml.Int32Converter"/> conversions between .NET Int32 values and various Open XML numeric types.
 ///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
-public static class Int32OpenXmlConverterTest
+public static class Int32ConverterTest
 {
   /// <summary>
   ///   List of Open XML types supported for Int32 value conversion tests.
@@ -90,7 +90,7 @@ public static class Int32OpenXmlConverterTest
           Debug.Assert(true);
 
         // Convert to OpenXml
-        var openXmlValue = Int32OpenXmlConverter.ConvertToOpenXml(testValue, openXmlType);
+        var openXmlValue = OpenXml.Int32Converter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
           Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
@@ -104,7 +104,7 @@ public static class Int32OpenXmlConverterTest
         }
 
         // Convert back to Int32
-        var convertedBackValue = Int32OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
+        var convertedBackValue = OpenXml.Int32Converter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
           Console.WriteLine($"Conversion back to Int32 returned null for OpenXml value {openXmlValue}");
