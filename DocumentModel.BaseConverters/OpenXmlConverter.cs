@@ -25,7 +25,7 @@ public static class OpenXmlConverter
     if (openXmlType.IsEqualOrSubclassOf(typeof(DX.OpenXmlElement)))
       return OpenXmlElementConverter.ConvertToOpenXml(modelValue, openXmlType);
     if (openXmlType.IsEqualOrSubclassOf(typeof(DX.OpenXmlSimpleType)))
-      return OpenXmlSimpleValueConverter.ConvertToOpenXml(modelValue, openXmlType);
+      return SimpleValueConverter.ConvertTo(modelValue, openXmlType);
     return Convert.ChangeType(modelValue, openXmlType);
   }
 
@@ -53,7 +53,7 @@ public static class OpenXmlConverter
     if (openXmlValue is DX.OpenXmlElement openXmlElement)
       return OpenXmlElementConverter.ConvertFromOpenXml(openXmlElement, modelType);
     if (openXmlValue is DX.OpenXmlSimpleType openXmlSimpleType)
-      return OpenXmlSimpleValueConverter.ConvertFromOpenXml(openXmlSimpleType, modelType);
+      return SimpleValueConverter.ConvertFrom(openXmlSimpleType, modelType);
     return Convert.ChangeType(openXmlValue, modelType);
   }
 

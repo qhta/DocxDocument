@@ -21,7 +21,7 @@ public static class ListValueConverter
     var result = new ListOf<String>();
     foreach (var item in element)
     {
-      var str = StringOpenXmlConverter.GetValue(item);
+      var str = StringConverter.ConvertFrom(item);
       if (str!=null)
         result.Add(str);
     }

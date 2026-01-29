@@ -14,8 +14,10 @@ public static class SimpleValueConverter
   {
     ConversionToMap = ConversionToMap.Concat(BooleanConverter.ConversionToMap).ToDictionary();
     ConversionToMap = ConversionToMap.Concat(TSBooleanConverter.ConversionToMap).ToDictionary();
+    ConversionToMap = ConversionToMap.Concat(StringConverter.ConversionToMap).ToDictionary();
     ConversionFromMap = ConversionFromMap.Concat(BooleanConverter.ConversionFromMap).ToDictionary();
     ConversionFromMap = ConversionFromMap.Concat(TSBooleanConverter.ConversionFromMap).ToDictionary();
+    ConversionFromMap = ConversionFromMap.Concat(StringConverter.ConversionFromMap).ToDictionary();
   }
 
   /// <summary>
@@ -47,6 +49,13 @@ public static class SimpleValueConverter
     if (TryImplicitConvert(value, targetType, out var result))
       return result;
 
+    if (targetType.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
+    {
+      var targetInstance = (DX.OpenXmlLeafTextElement)Activator.CreateInstance(targetType)!;
+      targetInstance.Text = value.ToString()!;
+      return targetInstance;
+    }
+    else
     if (targetType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
     {
       var valProp = GetValProperty(targetType);
@@ -72,6 +81,9 @@ public static class SimpleValueConverter
     if (value == null) return null;
 
     var sourceType = value.GetType();
+    if (sourceType == targetType)
+      return value;
+
     Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
 
     var sourceSubType = Nullable.GetUnderlyingType(sourceType) ?? sourceType;
@@ -91,6 +103,12 @@ public static class SimpleValueConverter
     if (TryImplicitConvert(value, targetType, out var result))
       return result;
 
+    if (value is DX.OpenXmlLeafTextElement textElement)
+    {
+      var valValue = textElement.Text;
+      return ConvertFrom(valValue, targetType);
+    }
+    else
     if (sourceType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
     {
       var valProp = GetValProperty(sourceType);
