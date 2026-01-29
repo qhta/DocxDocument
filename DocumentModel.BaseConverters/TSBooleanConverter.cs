@@ -94,13 +94,7 @@ public static class TSBooleanConverter
   /// <exception cref="NotSupportedException">Thrown when no converter exists for <paramref name="targetType"/>.</exception>
   public static object? ConvertFrom(TSBoolean? value, Type targetType)
   {
-    if (value == null) return null;
-
-    if (ConversionToMap.TryGetValue((typeof(TSBoolean), targetType), out var conversionFunc))
-    {
-      return conversionFunc(value, targetType);
-    }
-    throw new NotSupportedException($"Conversion from TSBoolean to type {targetType} is not supported.");
+    return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
   }
 
   /// <summary>
@@ -112,14 +106,7 @@ public static class TSBooleanConverter
   /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="TSBoolean"/> is not supported.</exception>
   public static TSBoolean? ConvertTo(object? value)
   {
-    if (value == null) return null;
-
-    var sourceType = value.GetType();
-    if (ConversionFromMap.TryGetValue((sourceType, typeof(TSBoolean)), out var conversionFunc))
-    {
-      return (TSBoolean)conversionFunc(value)!;
-    }
-    throw new NotSupportedException($"Conversion from type {sourceType} to TSBoolean is not supported.");
+    return (TSBoolean?)ConverterBase.ConvertFrom(value, typeof(TSBoolean), ConversionFromMap);
   }
 
   #endregion

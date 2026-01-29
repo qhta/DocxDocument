@@ -510,13 +510,7 @@ public static class Int32Converter
   /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
   public static object? ConvertTo(Int32? value, Type targetType)
   {
-    if (value == null) return null;
-
-    if (ConversionToMap.TryGetValue((typeof(Int32), targetType), out var conversionFunc))
-    {
-      return conversionFunc(value, targetType);
-    }
-    throw new NotSupportedException($"Conversion from Int32 to type {targetType} is not supported.");
+    return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
   }
 
   /// <summary>
@@ -528,14 +522,7 @@ public static class Int32Converter
   /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="Int32"/> is not supported.</exception>
   public static Int32? ConvertFrom(object? value)
   {
-    if (value == null) return null;
-
-    var sourceType = value.GetType();
-    if (ConversionFromMap.TryGetValue((sourceType, typeof(Int32)), out var conversionFunc))
-    {
-      return (Int32)conversionFunc(value)!;
-    }
-    throw new NotSupportedException($"Conversion from type {sourceType} to Int32 is not supported.");
+    return (Int32?)ConverterBase.ConvertFrom(value, typeof(Int32), ConversionFromMap);
   }
 
   #endregion
