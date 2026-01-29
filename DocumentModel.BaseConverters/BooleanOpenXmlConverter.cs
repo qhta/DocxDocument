@@ -857,7 +857,7 @@ public static class BooleanOpenXmlConverter
   /// <param name="targetType">The type of OnOffType to instantiate. Must be a type derived from DXW.OnOffType.</param>
   /// <returns>A new instance of the specified OnOffType with its value set to <paramref name="value"/>; or <see
   /// langword="null"/> if <paramref name="value"/> is <see langword="null"/>.</returns>
-  public static DXW.OnOffType? CreateOnOffType(Boolean? value, Type targetType)
+  public static DXW.OnOffType? CreateWordOnOffType(Boolean? value, Type targetType)
   {
     if (value == null) return null;
     if (targetType.GetConstructor([typeof(Boolean)]) != null)

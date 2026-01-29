@@ -221,7 +221,7 @@ public static class OpenXmlElementConverter
         }
       }
     }
-    return SimpleValueConverter.ChangeType(value, targetType);
+    return SimpleValueOpenXmlConverter.ChangeType(value, targetType);
   }
   /// <summary>
   /// Converts a value to its string representation for Open XML text elements.
