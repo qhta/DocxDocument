@@ -15,9 +15,11 @@ public static class SimpleValueConverter
     ConversionToMap = ConversionToMap.Concat(BooleanConverter.ConversionToMap).ToDictionary();
     ConversionToMap = ConversionToMap.Concat(TSBooleanConverter.ConversionToMap).ToDictionary();
     ConversionToMap = ConversionToMap.Concat(StringConverter.ConversionToMap).ToDictionary();
+    ConversionToMap = ConversionToMap.Concat(Int32Converter.ConversionToMap).ToDictionary();
     ConversionFromMap = ConversionFromMap.Concat(BooleanConverter.ConversionFromMap).ToDictionary();
     ConversionFromMap = ConversionFromMap.Concat(TSBooleanConverter.ConversionFromMap).ToDictionary();
     ConversionFromMap = ConversionFromMap.Concat(StringConverter.ConversionFromMap).ToDictionary();
+    ConversionFromMap = ConversionFromMap.Concat(Int32Converter.ConversionFromMap).ToDictionary();
   }
 
   /// <summary>

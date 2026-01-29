@@ -36,14 +36,14 @@ public static class SimpleValueConverterTest
 
 
 
-    //( typeof(System.Int32), typeof(DX.Int16Value) ),
-    //( typeof(System.Int32), typeof(DX.Int32Value) ),
-    //( typeof(System.Int32), typeof(DX.IntegerValue) ),
-    //( typeof(System.Int32), typeof(DX.OpenXmlLeafTextElement) ),
-    //( typeof(System.Int32), typeof(DX.StringValue) ),
-    //( typeof(System.Int32), typeof(DXW.DecimalNumberType) ),
-    //( typeof(System.Int32), typeof(DXW.NonNegativeDecimalNumberType) ),
-    //( typeof(System.Int32), typeof(System.String) ),
+    ( typeof(System.Int32), typeof(DX.Int16Value) ),
+    ( typeof(System.Int32), typeof(DX.Int32Value) ),
+    ( typeof(System.Int32), typeof(DX.IntegerValue) ),
+    ( typeof(System.Int32), typeof(DX.OpenXmlLeafTextElement) ),
+    ( typeof(System.Int32), typeof(DX.StringValue) ),
+    ( typeof(System.Int32), typeof(DXW.DecimalNumberType) ),
+    ( typeof(System.Int32), typeof(DXW.NonNegativeDecimalNumberType) ),
+    ( typeof(System.Int32), typeof(System.String) ),
 
     //( typeof(DocumentModel.Base64Binary), typeof(DX.Base64BinaryValue) ),
     //( typeof(DocumentModel.EMU), typeof(DX.Int64Value) ),
@@ -150,9 +150,10 @@ public static class SimpleValueConverterTest
   /// </summary>
   /// <param name="modelType">The model type to convert from and back</param>
   /// <param name="otherType">Target type to convert to</param>
+  /// <param name="baseType">Base type for test. If null, the model type is used.</param>
   /// <param name="testValues">Optional test values to use for the conversion tests</param>
   /// <returns></returns>
-  public static bool TestSimpleValueConversion(Type modelType, Type otherType, 
+  public static bool TestSimpleValueConversion(Type modelType, Type otherType, Type? baseType = null,
     object[]? testValues = null)
   {
     Console.Write($"TestSimpleValueConverter with {modelType.Name} and {otherType.Name}");
@@ -192,14 +193,15 @@ public static class SimpleValueConverterTest
       }
       catch (Exception ex)
       {
-        if (testValue is Int32 intValue && otherType == typeof(DX.Int16Value) && (intValue < Int16.MinValue || intValue > Int16.MaxValue))
+        var testedOtherType = baseType ?? otherType;
+        if (testValue is Int32 intValue && testedOtherType == typeof(DX.Int16Value) && (intValue < Int16.MinValue || intValue > Int16.MaxValue))
         {
-          // Expected exception for Int32 to Int16Value conversion
+          Debug.WriteLine("Expected exception for Int32 to Int16Value conversion");
         }
         else
-        if (modelType == typeof(Twips) && otherType == typeof(DX.UInt32Value) && (Int64)(Twips)testValue < 0)
+        if (modelType == typeof(Twips) && testedOtherType == typeof(DX.UInt32Value) && (Int64)(Twips)testValue < 0)
         {
-          // Expected exception for negative Twips to UInt32Value conversion
+          Debug.WriteLine("Expected exception for negative Twips to UInt32Value conversion");
         }
         else
         {
@@ -225,7 +227,7 @@ public static class SimpleValueConverterTest
   {
     object[] testValues = GetTestData(modelType);
     if (OpenXmlLeafElementConcreteTypes.TryGetValue(otherType, out var concreteType))
-      return TestSimpleValueConversion(modelType, concreteType, testValues);
+      return TestSimpleValueConversion(modelType, concreteType, otherType, testValues);
     return null;
   }
 
