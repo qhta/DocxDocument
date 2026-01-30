@@ -7,28 +7,30 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class Int32Converter
 {
-
   private static readonly ConversionMethodInfo[] supportedTypes =
   [
-    new ConversionMethodInfo(typeof(DX.SByteValue), nameof(ConvertFromSByteValue), nameof(ConvertToSByteValue)),
-    new ConversionMethodInfo(typeof(DX.Int16Value), nameof(ConvertFromInt16Value), nameof(ConvertToInt16Value)),
-    new ConversionMethodInfo(typeof(DX.Int32Value), nameof(ConvertFromInt32Value), nameof(ConvertToInt32Value)),
-    new ConversionMethodInfo(typeof(DX.Int64Value), nameof(ConvertFromInt64Value), nameof(ConvertToInt64Value)),
-    new ConversionMethodInfo(typeof(DX.IntegerValue), nameof(ConvertFromIntegerValue), nameof(ConvertToIntegerValue)),
-    new ConversionMethodInfo(typeof(DX.ByteValue), nameof(ConvertFromByteValue), nameof(ConvertToByteValue)),
-    new ConversionMethodInfo(typeof(DX.UInt16Value), nameof(ConvertFromUInt16Value), nameof(ConvertToUInt16Value)),
-    new ConversionMethodInfo(typeof(DX.UInt32Value), nameof(ConvertFromUInt32Value), nameof(ConvertToUInt32Value)),
-    new ConversionMethodInfo(typeof(DX.UInt64Value), nameof(ConvertFromUInt64Value), nameof(ConvertToUInt64Value)),
-    new ConversionMethodInfo(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
-    new ConversionMethodInfo(typeof(DX.HexBinaryValue), nameof(ConvertFromHexBinaryValue), nameof(ConvertToHexBinaryValue)),
-    new ConversionMethodInfo(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
-    new ConversionMethodInfo(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
-    new ConversionMethodInfo(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
+    new(typeof(DX.SByteValue), nameof(ConvertFromSByteValue), nameof(ConvertToSByteValue)),
+    new(typeof(DX.Int16Value), nameof(ConvertFromInt16Value), nameof(ConvertToInt16Value)),
+    new(typeof(DX.Int32Value), nameof(ConvertFromInt32Value), nameof(ConvertToInt32Value)),
+    new(typeof(DX.Int64Value), nameof(ConvertFromInt64Value), nameof(ConvertToInt64Value)),
+    new(typeof(DX.IntegerValue), nameof(ConvertFromIntegerValue), nameof(ConvertToIntegerValue)),
+    new(typeof(DX.ByteValue), nameof(ConvertFromByteValue), nameof(ConvertToByteValue)),
+    new(typeof(DX.UInt16Value), nameof(ConvertFromUInt16Value), nameof(ConvertToUInt16Value)),
+    new(typeof(DX.UInt32Value), nameof(ConvertFromUInt32Value), nameof(ConvertToUInt32Value)),
+    new(typeof(DX.UInt64Value), nameof(ConvertFromUInt64Value), nameof(ConvertToUInt64Value)),
+    new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
+    new(typeof(DX.HexBinaryValue), nameof(ConvertFromHexBinaryValue), nameof(ConvertToHexBinaryValue)),
+    new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
+    new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
+    new(typeof(string), nameof(ConvertFromString), nameof(ConvertToString))
   ];
 
   internal static readonly ConversionToMap ConversionToMap = new();
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
+  /// <summary>
+  /// Initializes the conversion maps for <see cref="Int32Converter"/>.
+  /// </summary>
   static Int32Converter()
   {
     ConverterBase.RegisterConversionMethods(typeof(Int32Converter), typeof(Int32), supportedTypes, ConversionToMap, ConversionFromMap);
@@ -56,6 +58,7 @@ public static class Int32Converter
   private static DX.SByteValue? ConvertToSByteValue(Int32? value)
   {
     if (value == null) return null;
+
     if (value < SByte.MinValue || value > SByte.MaxValue)
       throw new OverflowException($"Value {value} is out of range for SByte");
 
@@ -86,6 +89,7 @@ public static class Int32Converter
   private static DX.Int16Value? ConvertToInt16Value(Int32? value)
   {
     if (value == null) return null;
+
     if (value < Int16.MinValue || value > Int16.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Int16");
 
@@ -132,6 +136,7 @@ public static class Int32Converter
   private static Int32? ConvertFromInt64Value(DX.Int64Value? Int64Value)
   {
     if (Int64Value == null) return null;
+
     if (Int64Value.Value < Int32.MinValue || Int64Value.Value > Int32.MaxValue)
       throw new OverflowException($"Value {Int64Value.Value} is out of range for Int32");
 
@@ -162,6 +167,7 @@ public static class Int32Converter
   private static Int32? ConvertFromIntegerValue(DX.IntegerValue? IntegerValue)
   {
     if (IntegerValue == null) return null;
+
     if (IntegerValue.Value < Int32.MinValue || IntegerValue.Value > Int32.MaxValue)
       throw new OverflowException($"Value {IntegerValue.Value} is out of range for Int32");
 
@@ -204,6 +210,7 @@ public static class Int32Converter
   private static DX.ByteValue? ConvertToByteValue(Int32? value)
   {
     if (value == null) return null;
+
     if (value < 0 || value > Byte.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Byte");
 
@@ -234,6 +241,7 @@ public static class Int32Converter
   private static DX.UInt16Value? ConvertToUInt16Value(Int32? value)
   {
     if (value == null) return null;
+
     if (value < 0 || value > UInt16.MaxValue)
       throw new OverflowException($"Value {value} is out of range for UInt16");
 
@@ -252,6 +260,7 @@ public static class Int32Converter
   private static Int32? ConvertFromUInt32Value(DX.UInt32Value? UInt32Value)
   {
     if (UInt32Value == null) return null;
+
     if (UInt32Value.Value > Int32.MaxValue)
       throw new OverflowException($"Value {UInt32Value.Value} is out of range for Int32");
 
@@ -266,8 +275,10 @@ public static class Int32Converter
   private static DX.UInt32Value? ConvertToUInt32Value(Int32? value)
   {
     if (value == null) return null;
+
     if (value < 0)
       throw new OverflowException($"Value {value} is out of range for UInt32");
+
     return new DX.UInt32Value { Value = (UInt32)value };
   }
 
@@ -283,6 +294,7 @@ public static class Int32Converter
   private static Int32? ConvertFromUInt64Value(DX.UInt64Value? UInt64Value)
   {
     if (UInt64Value == null) return null;
+
     if (UInt64Value.Value > Int32.MaxValue)
       throw new OverflowException($"Value {UInt64Value.Value} is out of range for Int32");
 
@@ -297,8 +309,10 @@ public static class Int32Converter
   private static DX.UInt64Value? ConvertToUInt64Value(Int32? value)
   {
     if (value == null) return null;
+
     if (value < 0)
       throw new OverflowException($"Value {value} is out of range for UInt64");
+
     return new DX.UInt64Value { Value = (UInt64)value };
   }
 
@@ -314,8 +328,8 @@ public static class Int32Converter
   private static Int32? ConvertFromStringValue(DX.StringValue? StringValue)
   {
     if (StringValue == null) return null;
-    var text = StringValue.Value;
 
+    var text = StringValue.Value;
     if (text == null)
       throw new InvalidOperationException("StringValue has no content.");
 
@@ -351,7 +365,6 @@ public static class Int32Converter
   private static Int32? ConvertFromString(string? value)
   {
     if (value == null) return null;
-
     if (!Int32.TryParse(value, out var result))
       return null;
 
@@ -383,8 +396,8 @@ public static class Int32Converter
   private static Int32? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
   {
     if (OpenXmlLeafTextElement == null) return null;
-    var text = OpenXmlLeafTextElement.Text;
 
+    var text = OpenXmlLeafTextElement.Text;
     if (!Int32.TryParse(text, out var result))
       return null;
 
@@ -472,8 +485,8 @@ public static class Int32Converter
   private static Int32? ConvertFromHexBinaryValue(DX.HexBinaryValue? HexBinaryValue)
   {
     if (HexBinaryValue == null) return null;
-    var text = HexBinaryValue.Value;
 
+    var text = HexBinaryValue.Value;
     if (!Int32.TryParse(text, NumberStyles.HexNumber, null, out var result))
       throw new InvalidOperationException($"Conversion of {text} to Int32 failed.");
 
@@ -497,7 +510,6 @@ public static class Int32Converter
   }
 
   #endregion
-
 
   #region Generic OpenXml conversion methods
 

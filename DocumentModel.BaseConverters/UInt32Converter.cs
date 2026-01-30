@@ -3,62 +3,36 @@
 /// <summary>
 /// Provides conversion methods for UInt32 value to/from Open XML.
 /// </summary>
-public static class UInt32OpenXmlConverter
+public static class UInt32Converter
 {
-  /// <summary>
-  /// Gets the supported Open XML types for conversion.
-  /// </summary>
-  public static Type[] SupportedTypes { get; } =
+  private static readonly ConversionMethodInfo[] supportedTypes =
   [
-    typeof(DX.SByteValue),
-    typeof(DX.Int16Value),
-    typeof(DX.Int32Value),
-    typeof(DX.Int64Value),
-    typeof(DX.IntegerValue),
-    typeof(DX.ByteValue),
-    typeof(DX.UInt16Value),
-    typeof(DX.UInt32Value),
-    typeof(DX.UInt64Value),
-    typeof(DX.StringValue),
-    typeof(DX.OpenXmlLeafTextElement),
-    typeof(DX.HexBinaryValue),
-    typeof(DX.OpenXmlLeafElement)
+    new(typeof(DX.SByteValue), nameof(ConvertFromSByteValue), nameof(ConvertToSByteValue)),
+    new(typeof(DX.Int16Value), nameof(ConvertFromInt16Value), nameof(ConvertToInt16Value)),
+    new(typeof(DX.Int32Value), nameof(ConvertFromInt32Value), nameof(ConvertToInt32Value)),
+    new(typeof(DX.Int64Value), nameof(ConvertFromInt64Value), nameof(ConvertToInt64Value)),
+    new(typeof(DX.IntegerValue), nameof(ConvertFromIntegerValue), nameof(ConvertToIntegerValue)),
+    new(typeof(DX.ByteValue), nameof(ConvertFromByteValue), nameof(ConvertToByteValue)),
+    new(typeof(DX.UInt16Value), nameof(ConvertFromUInt16Value), nameof(ConvertToUInt16Value)),
+    new(typeof(DX.UInt32Value), nameof(ConvertFromUInt32Value), nameof(ConvertToUInt32Value)),
+    new(typeof(DX.UInt64Value), nameof(ConvertFromUInt64Value), nameof(ConvertToUInt64Value)),
+    new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
+    new(typeof(DX.HexBinaryValue), nameof(ConvertFromHexBinaryValue), nameof(ConvertToHexBinaryValue)),
+    new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
+    new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
+    new(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
   ];
 
+  internal static readonly ConversionToMap ConversionToMap = new();
+  internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Checks if the specified type is supported for Int32 conversion.
-  /// It supports types derived from DX.OpenXmlLeafElement with a singular property of one of the supported types,
-  /// or types in the SupportedTypes list.
+  /// Initializes the conversion maps for <see cref="UInt32Converter"/>.
   /// </summary>
-  /// <param name="type">The type to check.</param>
-  /// <returns>True if and only if the conversion to/from OpenXml type is supported.</returns>
-  public static bool SupportsType(Type type)
+  static UInt32Converter()
   {
-    if (type.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
-      return true;
-    if (type.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
-    {
-      var valProp = type.GetProperty("Val");
-      if (valProp == null)
-      {
-        var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-        if (allProps.Length == 1)
-          valProp = allProps[0];
-        else
-          return false;
-
-      }
-      if (valProp.PropertyType == typeof(UInt32)
-          || SupportsType(valProp.PropertyType))
-        return true;
-
-      return false;
-    }
-
-    return SupportedTypes.Contains(type);
+    ConverterBase.RegisterConversionMethods(typeof(UInt32Converter), typeof(UInt32), supportedTypes, ConversionToMap, ConversionFromMap);
   }
-
 
 
   #region SByteValue conversion.
@@ -68,7 +42,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="SByteValue">The SByteValue to convert.</param>
   /// <returns>The UInt32 value, or null if the element has no content.</returns>
-  public static UInt32? ConvertToUInt32(DX.SByteValue? SByteValue)
+  public static UInt32? ConvertFromSByteValue(DX.SByteValue? SByteValue)
   {
     if (SByteValue == null) return null;
     if (SByteValue.Value < 0)
@@ -82,7 +56,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="value">The UInt32 value to convert.</param>
   /// <returns>A new SByteValue, or null if the input is null.</returns>
-  public static DX.SByteValue? CreateSByteValue(UInt32? value)
+  public static DX.SByteValue? ConvertToSByteValue(UInt32? value)
   {
     if (value == null) return null;
     if (value > SByte.MaxValue)
@@ -100,7 +74,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="int16Value">The Int16Value to convert.</param>
   /// <returns>The UInt32 int16Value, or null if the element has no content.</returns>
-  public static UInt32? ConvertToUInt32(DX.Int16Value? int16Value)
+  public static UInt32? ConvertFromInt16Value(DX.Int16Value? int16Value)
   {
     if (int16Value == null) return null;
     if (int16Value < 0)
@@ -114,7 +88,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="value">The UInt32 value to convert.</param>
   /// <returns>A new Int16Value, or null if the input is null.</returns>
-  public static DX.Int16Value? CreateInt16Value(UInt32? value)
+  public static DX.Int16Value? ConvertToInt16Value(UInt32? value)
   {
     if (value == null) return null;
     if (value > Int16.MaxValue)
@@ -132,10 +106,10 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="Int32Value">The Int32Value to convert.</param>
   /// <returns>The UInt32 value, or null if the element has no content.</returns>
-  public static UInt32? ConvertToUInt32(DX.Int32Value? Int32Value)
+  public static UInt32? ConvertFromInt32Value(DX.Int32Value? Int32Value)
   {
     if (Int32Value == null) return null;
-    if (Int32Value.Value< 0)
+    if (Int32Value.Value < 0)
       throw new OverflowException($"Value {Int32Value.Value} is out of range for UInt32");
 
     return (UInt32)Int32Value.Value;
@@ -146,7 +120,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="value">The UInt32 value to convert.</param>
   /// <returns>A new Int32Value, or null if the input is null.</returns>
-  public static DX.Int32Value? CreateInt32Value(UInt32? value)
+  public static DX.Int32Value? ConvertToInt32Value(UInt32? value)
   {
     if (value == null) return null;
     if (value > Int32.MaxValue)
@@ -164,7 +138,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="Int64Value">The Int64Value to convert.</param>
   /// <returns>The UInt32 value, or null if the element has no content.</returns>
-  public static UInt32? ConvertToUInt32(DX.Int64Value? Int64Value)
+  public static UInt32? ConvertFromInt64Value(DX.Int64Value? Int64Value)
   {
     if (Int64Value == null) return null;
     if (Int64Value.Value < 0 || Int64Value.Value > UInt32.MaxValue)
@@ -178,7 +152,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="value">The UInt32 value to convert.</param>
   /// <returns>A new Int64Value, or null if the input is null.</returns>
-  public static DX.Int64Value? CreateInt64Value(UInt32? value)
+  public static DX.Int64Value? ConvertToInt64Value(UInt32? value)
   {
     if (value == null) return null;
 
@@ -194,7 +168,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="IntegerValue">The IntegerValue to convert.</param>
   /// <returns>The UInt32 value, or null if the element has no content.</returns>
-  public static UInt32? ConvertToUInt32(DX.IntegerValue? IntegerValue)
+  public static UInt32? ConvertFromIntegerValue(DX.IntegerValue? IntegerValue)
   {
     if (IntegerValue == null) return null;
     if (IntegerValue.Value < 0 || IntegerValue.Value > UInt32.MaxValue)
@@ -208,7 +182,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="value">The UInt32 value to convert.</param>
   /// <returns>A new IntegerValue, or null if the input is null.</returns>
-  public static DX.IntegerValue? CreateIntegerValue(UInt32? value)
+  public static DX.IntegerValue? ConvertToIntegerValue(UInt32? value)
   {
     if (value == null) return null;
 
@@ -224,7 +198,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="ByteValue">The ByteValue to convert.</param>
   /// <returns>The UInt32 value, or null if the element has no content.</returns>
-  public static UInt32? ConvertToUInt32(DX.ByteValue? ByteValue)
+  public static UInt32? ConvertFromByteValue(DX.ByteValue? ByteValue)
   {
     if (ByteValue == null) return null;
 
@@ -236,7 +210,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="value">The UInt32 value to convert.</param>
   /// <returns>A new ByteValue, or null if the input is null.</returns>
-  public static DX.ByteValue? CreateByteValue(UInt32? value)
+  public static DX.ByteValue? ConvertToByteValue(UInt32? value)
   {
     if (value == null) return null;
     if (value < 0 || value > Byte.MaxValue)
@@ -254,7 +228,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="UInt16Value">The UInt16Value to convert.</param>
   /// <returns>The UInt32 value, or null if the element has no content.</returns>
-  public static UInt32? ConvertToUInt32(DX.UInt16Value? UInt16Value)
+  public static UInt32? ConvertFromUInt16Value(DX.UInt16Value? UInt16Value)
   {
     if (UInt16Value == null) return null;
 
@@ -266,7 +240,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="value">The UInt32 value to convert.</param>
   /// <returns>A new UInt16Value, or null if the input is null.</returns>
-  public static DX.UInt16Value? CreateUInt16Value(UInt32? value)
+  public static DX.UInt16Value? ConvertToUInt16Value(UInt32? value)
   {
     if (value == null) return null;
     if (value > UInt16.MaxValue)
@@ -284,7 +258,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="UInt32Value">The UInt32Value to convert.</param>
   /// <returns>The UInt32 value, or null if the element has no content.</returns>
-  public static UInt32? ConvertToUInt32(DX.UInt32Value? UInt32Value)
+  public static UInt32? ConvertFromUInt32Value(DX.UInt32Value? UInt32Value)
   {
     if (UInt32Value == null) return null;
 
@@ -296,7 +270,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="value">The UInt32 value to convert.</param>
   /// <returns>A new UInt32Value, or null if the input is null.</returns>
-  public static DX.UInt32Value? CreateUInt32Value(UInt32? value)
+  public static DX.UInt32Value? ConvertToUInt32Value(UInt32? value)
   {
     if (value == null) return null;
     if (value < 0)
@@ -313,7 +287,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="UInt64Value">The UInt64Value to convert.</param>
   /// <returns>The UInt32 value, or null if the element has no content.</returns>
-  public static UInt32? ConvertToUInt32(DX.UInt64Value? UInt64Value)
+  public static UInt32? ConvertFromUInt64Value(DX.UInt64Value? UInt64Value)
   {
     if (UInt64Value == null) return null;
     if (UInt64Value.Value > UInt32.MaxValue)
@@ -327,7 +301,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="value">The UInt32 value to convert.</param>
   /// <returns>A new UInt64Value, or null if the input is null.</returns>
-  public static DX.UInt64Value? CreateUInt64Value(UInt32? value)
+  public static DX.UInt64Value? ConvertToUInt64Value(UInt32? value)
   {
     if (value == null) return null;
     if (value < 0)
@@ -344,7 +318,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="StringValue">The StringValue to convert.</param>
   /// <returns>The UInt32 value, or null if the element has no content.</returns>
-  public static UInt32? ConvertToUInt32(DX.StringValue? StringValue)
+  public static UInt32? ConvertFromStringValue(DX.StringValue? StringValue)
   {
     if (StringValue == null) return null;
     var text = StringValue.Value;
@@ -361,7 +335,7 @@ public static class UInt32OpenXmlConverter
   /// <param name="value">The UInt32 value to convert.</param>
   /// <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
-  public static DX.StringValue? CreateStringValue(UInt32? value, Type targetType)
+  public static DX.StringValue? ConvertToStringValue(UInt32? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -380,7 +354,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
   /// <returns>The UInt32 value, or null if the element has no content.</returns>
-  public static UInt32? ConvertToUInt32(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
+  public static UInt32? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
   {
     if (OpenXmlLeafTextElement == null) return null;
     var text = OpenXmlLeafTextElement.Text;
@@ -397,7 +371,7 @@ public static class UInt32OpenXmlConverter
   /// <param name="value">The UInt32 value to convert.</param>
   /// <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
-  public static DX.OpenXmlLeafTextElement? CreateOpenXmlLeafTextElement(UInt32? value, Type targetType)
+  public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(UInt32? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -416,7 +390,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
   /// <returns>The UInt32 value, or null if the element has no content.</returns>
-  public static UInt32? ConvertToUInt32(DX.HexBinaryValue? HexBinaryValue)
+  public static UInt32? ConvertFromHexBinaryValue(DX.HexBinaryValue? HexBinaryValue)
   {
     if (HexBinaryValue == null) return null;
     var text = HexBinaryValue.Value;
@@ -433,7 +407,7 @@ public static class UInt32OpenXmlConverter
   /// <param name="value">The UInt32 value to convert.</param>
   /// <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
-  public static DX.HexBinaryValue? CreateHexBinaryValue(UInt32? value, Type targetType)
+  public static DX.HexBinaryValue? ConvertToHexBinaryValue(UInt32? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -452,7 +426,7 @@ public static class UInt32OpenXmlConverter
   /// </summary>
   /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
   /// <returns>The UInt32 value, or null if the element has no content.</returns>
-  public static UInt32? ConvertToUInt32(DX.OpenXmlLeafElement? OpenXmlLeafElement)
+  public static UInt32? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
   {
     if (OpenXmlLeafElement == null) return null;
 
@@ -466,14 +440,10 @@ public static class UInt32OpenXmlConverter
       else
         throw new InvalidOperationException($"OpenXmlLeafElement of type {sourceType} does not have a string Val property");
     }
-    if (valProp.PropertyType != typeof(UInt32) && SupportsType(valProp.PropertyType))
-    {
-      var value = valProp.GetValue(OpenXmlLeafElement);
-      var convertedValue = ConvertFromOpenXml(value);
-      return (UInt32)convertedValue!;
-    }
 
-    return (UInt32)valProp.GetValue(OpenXmlLeafElement)!;
+    var value = valProp.GetValue(OpenXmlLeafElement);
+    var convertedValue = ConvertFrom(value);
+    return (UInt32)convertedValue!;
   }
 
   /// <summary>
@@ -482,7 +452,7 @@ public static class UInt32OpenXmlConverter
   /// <param name="value">The UInt32 value to convert.</param>
   /// <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
-  public static DX.OpenXmlLeafElement? CreateOpenXmlLeafElement(UInt32? value, Type targetType)
+  public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(UInt32? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -496,14 +466,41 @@ public static class UInt32OpenXmlConverter
       else
         throw new InvalidOperationException($"OpenXmlLeafElement of type {element.GetType()} does not have a string Val property");
     }
-    if (valProp.PropertyType != typeof(UInt32) && SupportsType(valProp.PropertyType))
-    {
-      var convertedValue = ConvertToOpenXml(value, valProp.PropertyType);
-      valProp.SetValue(element, convertedValue);
-      return element;
-    }
-    valProp.SetValue(element, value);
+    var convertedValue = ConvertTo(value, valProp.PropertyType);
+    valProp.SetValue(element, convertedValue);
     return element;
+  }
+
+  #endregion
+
+  #region String conversion.
+
+  /// <summary>
+  /// Converts the specified string representation of a number to its UInt32equivalent.
+  /// </summary>
+  /// <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+  /// <returns>A UInt32 integer equivalent to the number contained in the input string, or null if the input is null or
+  /// not a valid integer.</returns>
+  private static UInt32? ConvertFromString(string? value)
+  {
+    if (value == null) return null;
+    if (!UInt32.TryParse(value, out var result))
+      return null;
+
+    return result;
+  }
+
+  /// <summary>
+  /// Converts a nullable UInt32 value to its string representation.
+  /// </summary>
+  /// <param name="value">The nullable UInt32 value to convert. If null, the method returns null.</param>
+  /// <returns>A string representation of the specified value, or null if the value is null.</returns>
+  private static String? ConvertToString(UInt32? value)
+  {
+    if (value == null) return null;
+
+    var text = value.ToString()!;
+    return text;
   }
 
   #endregion
@@ -511,101 +508,27 @@ public static class UInt32OpenXmlConverter
   #region Generic OpenXml conversion methods
 
   /// <summary>
-  /// Converts a value to a specified target type.
+  /// Converts an UInt32 value to the specified target type using standard type conversion.
   /// </summary>
-  /// <param name="value">The value to convert.</param>
+  /// <param name="value">The UInt32 value to convert.</param>
   /// <param name="targetType">The target type to convert to.</param>
-  /// <returns>The converted value, or null if the element has no content.</returns>
-  /// <exception cref="InvalidOperationException">Thrown if the conversion is not supported.</exception>
-  public static object? ConvertToOpenXml(UInt32? value, Type targetType)
+  /// <returns>The converted value, or null if the input is null.</returns>
+  /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
+  public static object? ConvertTo(UInt32? value, Type targetType)
   {
-    if (value == null)
-      return null;
-    if (targetType == typeof(DX.SByteValue))
-      return CreateSByteValue(value);
-    if (targetType == typeof(DX.Int16Value))
-      return CreateInt16Value(value);
-    if (targetType == typeof(DX.Int32Value))
-      return CreateInt32Value(value);
-    if (targetType == typeof(DX.Int64Value))
-      return CreateInt64Value(value);
-
-    if (targetType == typeof(DX.IntegerValue))
-      return CreateIntegerValue(value);
-
-    if (targetType == typeof(DX.ByteValue))
-      return CreateByteValue(value);
-    if (targetType == typeof(DX.UInt16Value))
-      return CreateUInt16Value(value);
-    if (targetType == typeof(DX.UInt32Value))
-      return CreateUInt32Value(value);
-    if (targetType == typeof(DX.UInt64Value))
-      return CreateUInt64Value(value);
-
-    if (targetType == typeof(DX.StringValue))
-      return CreateStringValue(value, targetType);
-
-    if (targetType == typeof(DX.HexBinaryValue))
-      return CreateHexBinaryValue(value, targetType);
-
-    if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
-      return CreateOpenXmlLeafTextElement(value, targetType);
-
-    if (targetType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafElement)))
-      return CreateOpenXmlLeafElement(value, targetType);
-
-    throw new InvalidOperationException($"Conversion from UInt32 to {targetType} is not supported");
+    return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
   }
 
   /// <summary>
-  /// Converts an Open XML value to a nullable UInt32 integer, if possible.
+  /// Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
   /// </summary>
-  /// <remarks>If value is a StringValue, the method attempts to parse its contents as an UInt32 integer. If
-  /// parsing fails, the method returns null.</remarks>
-  /// <param name="value">The value to convert. Supported types include SByteValue, ByteValue, Int16Value, UInt16Value, Int32Value,
-  /// UInt32Value, UInt64Value, and StringValue. May be null.</param>
-  /// <returns>An UInt32 representation of the input value, or null if the input is null or cannot be converted.</returns>
-  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>
-  public static UInt32? ConvertFromOpenXml(object? value)
+  /// <param name="value">The value to convert to an <see cref="UInt32"/>. Can be <see langword="null"/>.</param>
+  /// <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
+  /// is <see langword="null"/>.</returns>
+  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="UInt32"/> is not supported.</exception>
+  public static UInt32? ConvertFrom(object? value)
   {
-    if (value == null)
-      return null;
-
-    var sourceType = value.GetType();
-    if (value is DX.SByteValue sbyteValue)
-      return ConvertToUInt32(sbyteValue);
-    if (value is DX.Int16Value int16Value)
-      return ConvertToUInt32(int16Value);
-    if (value is DX.Int32Value int32Value)
-      return ConvertToUInt32(int32Value);
-    if (value is DX.Int64Value int64Value)
-      return ConvertToUInt32(int64Value);
-
-    if (value is DX.IntegerValue integerValue)
-      return ConvertToUInt32(integerValue);
-
-    if (value is DX.ByteValue byteValue)
-      return ConvertToUInt32(byteValue);
-    if (value is DX.UInt16Value uInt16Value)
-      return ConvertToUInt32(uInt16Value);
-    if (value is DX.UInt32Value uintValue)
-      return ConvertToUInt32(uintValue);
-    if (value is DX.UInt64Value uInt64Value)
-      return ConvertToUInt32(uInt64Value);
-
-    if (value is DX.StringValue stringValue)
-      return ConvertToUInt32(stringValue);
-
-    if (value is DX.HexBinaryValue hexBinaryValue)
-      return ConvertToUInt32(hexBinaryValue);
-
-    if (value is DX.OpenXmlLeafTextElement openXmlLeafTextElement)
-      return ConvertToUInt32(openXmlLeafTextElement);
-
-    if (value is DX.OpenXmlLeafElement openXmlLeafElement)
-      return ConvertToUInt32(openXmlLeafElement);
-
-    throw new InvalidOperationException($"Conversion from {sourceType} to UInt32 is not supported");
+    return (UInt32?)ConverterBase.ConvertFrom(value, typeof(UInt32), ConversionFromMap);
   }
 
   #endregion

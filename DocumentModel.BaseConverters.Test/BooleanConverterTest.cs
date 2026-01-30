@@ -39,7 +39,7 @@ public static class BooleanConverterTest
     foreach (var type in SupportedTypes)
     {
       Console.Write($"TestBooleanConversion with {type.Name} ");
-      if (!TestBoolOpenXmlConversion(type))
+      if (!TestBoolConversion(type))
       {
         Console.WriteLine("failed.");
         testResult = false;
@@ -56,7 +56,7 @@ public static class BooleanConverterTest
   /// </summary>
   /// <param name="openXmlType">The Open XML type to test boolean conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
-  public static bool TestBoolOpenXmlConversion(Type openXmlType)
+  public static bool TestBoolConversion(Type openXmlType)
   {
     bool trueInput = true;
     var trueOpenXml = OpenXml.BooleanConverter.ConvertTo(trueInput, openXmlType);
