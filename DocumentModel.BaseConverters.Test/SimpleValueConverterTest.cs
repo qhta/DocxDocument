@@ -45,6 +45,18 @@ public static class SimpleValueConverterTest
     ( typeof(System.Int32), typeof(DXW.NonNegativeDecimalNumberType) ),
     ( typeof(System.Int32), typeof(System.String) ),
 
+    ( typeof(System.Int64), typeof(DX.Int64Value) ),
+    ( typeof(System.Int64), typeof(DX.IntegerValue) ),
+
+    ( typeof(System.Int16), typeof(DX.Int16Value) ),
+    ( typeof(System.SByte), typeof(DX.SByteValue) ),
+
+    ( typeof(System.Byte), typeof(DX.ByteValue) ),
+    ( typeof(System.UInt16), typeof(DX.UInt16Value) ),
+    ( typeof(System.UInt32), typeof(DX.UInt32Value) ),
+    ( typeof(System.UInt32), typeof(DXW.StringType) ),
+    ( typeof(System.UInt64), typeof(DX.UInt64Value) ),
+
     //( typeof(DocumentModel.Base64Binary), typeof(DX.Base64BinaryValue) ),
     //( typeof(DocumentModel.EMU), typeof(DX.Int64Value) ),
     //( typeof(DocumentModel.EMU), typeof(DX.StringValue) ),
@@ -60,22 +72,13 @@ public static class SimpleValueConverterTest
     //( typeof(DocumentModel.Twips), typeof(DX.UInt32Value) ),
     //( typeof(DocumentModel.Twips), typeof(DXW.TwipsMeasureType) ),
 
-    //( typeof(System.Byte), typeof(DX.ByteValue) ),
     //( typeof(System.DateTime), typeof(DX.DateTimeValue) ),
     //( typeof(System.DateTime), typeof(System.DateTime) ),
     //( typeof(System.Decimal), typeof(DX.DecimalValue) ),
     //( typeof(System.Guid), typeof(DX.StringValue) ),
-    //( typeof(System.Int16), typeof(DX.Int16Value) ),
-    //( typeof(System.Int16), typeof(DX.OpenXmlLeafElement { Val: DX.Int16Value }) ),
 
-    //( typeof(System.Int64), typeof(DX.Int64Value) ),
-    //( typeof(System.Int64), typeof(DX.IntegerValue) ),
-    //( typeof(System.Int64), typeof(DX.OpenXmlLeafElement { Val: DX.IntegerValue }) ),
+
     //( typeof(System.Single), typeof(DX.SingleValue) ),
-    //( typeof(System.UInt16), typeof(DX.UInt16Value) ),
-    //( typeof(System.UInt32), typeof(DX.UInt32Value) ),
-    //( typeof(System.UInt32), typeof(DXW.StringType) ),
-    //( typeof(System.UInt32), typeof(DXW.UnsignedDecimalNumberType) ),
   ];
 
 
@@ -92,6 +95,7 @@ public static class SimpleValueConverterTest
     { typeof(DXM.CharType), typeof(DXM.SeparatorChar) },
     { typeof(DXW.StringType), typeof(DXW.ConnectString) },
     { typeof(DXW.DecimalNumberType), typeof(DXW.ActiveRecord) },
+    { typeof(DXW.UnsignedDecimalNumberType), typeof(DXW.ColumnIndex) },
     { typeof(DXW.NonNegativeDecimalNumberType), typeof(DXW.StartNumberingValue) },
     { typeof(DXW.String255Type), typeof(DXW.DefaultTextBoxFormFieldString) },
     { typeof(DXW.String253Type), typeof(DXW.Aliases) },
@@ -101,9 +105,13 @@ public static class SimpleValueConverterTest
   {
     { typeof(DX.OnOffValue), typeof(DXOW.RecordIncluded) },
     { typeof(DX.StringValue), typeof(DXM.MathFont) },
+    { typeof(DX.SByteValue), typeof(DXD.Charts.Overlap ) },
     { typeof(DX.Int16Value), typeof(DXW.MaxLength) },
     { typeof(DX.Int32Value), typeof(DXD.AlphaBiLevel) },
+    { typeof(DX.Int64Value), typeof(DXD.AlphaOutset)},
     { typeof(DX.IntegerValue), typeof(DXM.ArgumentSize) },
+    { typeof(DX.ByteValue), typeof(DXD.Charts.Size ) },
+    { typeof(DX.UInt16Value), typeof(DXW.NumberingStart ) },
     { typeof(DX.HexBinaryValue), typeof(DXO10W.DocumentId) },
   };
 

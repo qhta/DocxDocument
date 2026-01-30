@@ -175,6 +175,12 @@ public static class ConverterBase
       valProp.SetValue(targetInstance, valValue);
       return targetInstance;
     }
+    if (targetType.IsEqualOrSubclassOf(typeof(DX.StringValue)))
+    {
+      var targetInstance = (DX.StringValue)Activator.CreateInstance(targetType)!;
+      targetInstance.Value = value.ToString()!;
+      return targetInstance;
+    }
     throw new NotSupportedException($"Conversion from {sourceType.FullName} to {targetType.FullName} is not supported.");
   }
 
@@ -217,8 +223,16 @@ public static class ConverterBase
       var valValue = textElement.Text;
       return ConvertFrom(valValue, targetType, conversionFromMap);
     }
-    else
+
     if (sourceType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    {
+      var valProp = sourceType.GetValProperty();
+      if (valProp == null)
+        throw new NotSupportedException($"Val property in {sourceType.FullName} not found.");
+      var valValue = valProp.GetValue(value);
+      return ConvertFrom(valValue, targetType, conversionFromMap);
+    }
+    if (sourceType.IsEqualOrSubclassOf(typeof(DX.StringValue)))
     {
       var valProp = sourceType.GetValProperty();
       if (valProp == null)

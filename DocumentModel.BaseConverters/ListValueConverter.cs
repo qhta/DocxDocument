@@ -1,7 +1,4 @@
-﻿
-
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides conversion methods for ListValue types in Open XML.
@@ -9,6 +6,7 @@ namespace DocumentModel.OpenXml;
 public static class ListValueConverter
 {
   #region ListOf<String> access methods
+
   /// <summary>
   /// Retrieves a list of strings from a ListValue of StringValue elements.
   /// </summary>
@@ -22,7 +20,7 @@ public static class ListValueConverter
     foreach (var item in element)
     {
       var str = StringConverter.ConvertFrom(item);
-      if (str!=null)
+      if (str != null)
         result.Add(str);
     }
     return result;
@@ -45,9 +43,11 @@ public static class ListValueConverter
     var element = new DX.ListValue<DX.StringValue>(resultList);
     return element;
   }
+
   #endregion
 
   #region ListOf<EnumKind> access methods
+
   /// <summary>
   /// Retrieves a list of enum values from a ListValue of EnumValue elements.
   /// </summary>
@@ -56,8 +56,8 @@ public static class ListValueConverter
   /// <param name="element">The ListValue element to convert.</param>
   /// <returns>A ListOf enums, or null if the input is null.</returns>
   public static ListOf<EnumKind>? GetValue<OpenXmlEnumType, EnumKind>(DX.ListValue<DX.EnumValue<OpenXmlEnumType>>? element)
-    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
-    where EnumKind : struct, IConvertible
+    where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
+    where EnumKind: struct, IConvertible
   {
     if (element != null)
     {
@@ -80,8 +80,8 @@ public static class ListValueConverter
   /// <param name="value">The list of enum values to convert.</param>
   /// <returns>A new ListValue containing the enum values.</returns>
   public static DX.ListValue<DX.EnumValue<OpenXmlEnumType>>? CreateListValue<OpenXmlEnumType, EnumKind>(ListOf<EnumKind> value)
-    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
-    where EnumKind : struct, Enum
+    where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
+    where EnumKind: struct, Enum
   {
     var resultList = new List<DX.EnumValue<OpenXmlEnumType>>();
     foreach (var item in value)
@@ -93,9 +93,11 @@ public static class ListValueConverter
     var element = new DX.ListValue<DX.EnumValue<OpenXmlEnumType>>(resultList);
     return element;
   }
+
   #endregion
 
   #region ListOf<Boolean> access methods
+
   /// <summary>
   /// Retrieves a list of boolean values from a ListValue of BooleanValue elements.
   /// </summary>
@@ -128,9 +130,11 @@ public static class ListValueConverter
     var element = new DX.ListValue<DX.BooleanValue>(resultList);
     return element;
   }
+
   #endregion
 
   #region ListOf<Int32> access methods
+
   /// <summary>
   /// Retrieves a list of Int32 values from a ListValue of Int32Value elements.
   /// </summary>
@@ -163,9 +167,11 @@ public static class ListValueConverter
     var element = new DX.ListValue<DX.Int32Value>(resultList);
     return element;
   }
+
   #endregion
 
   #region ListOf<UInt32> access methods
+
   /// <summary>
   /// Retrieves a list of UInt32 values from a ListValue of UInt32Value elements.
   /// </summary>
@@ -198,5 +204,6 @@ public static class ListValueConverter
     var element = new DX.ListValue<DX.UInt32Value>(resultList);
     return element;
   }
+
   #endregion
 }

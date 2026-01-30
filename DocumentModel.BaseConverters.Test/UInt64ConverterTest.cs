@@ -2,16 +2,18 @@
 
 using DocumentModel.OpenXml;
 
+using UInt64Converter = DocumentModel.OpenXml.UInt64Converter;
+
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="Int64OpenXmlConverter"/> conversions between .NET Int64 values and various Open XML numeric types.
+///   Provides unit tests for verifying the correctness of <see cref="OpenXml.UInt64Converter"/> conversions between .NET UInt64 values and various Open XML numeric types.
 ///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
-public static class Int64OpenXmlConverterTest
+public static class UInt64ConverterTest
 {
   /// <summary>
-  ///   List of Open XML types supported for Int64 value conversion tests.
+  ///   List of Open XML types supported for UInt64 value conversion tests.
   /// </summary>
   public static Type[] SupportedTypes { get; } =
   [
@@ -28,7 +30,7 @@ public static class Int64OpenXmlConverterTest
   ];
 
   /// <summary>
-  ///   Runs all Int64OpenXmlConverter tests for supported types and reports results to the console.
+  ///   Runs all UInt64Converter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -36,8 +38,8 @@ public static class Int64OpenXmlConverterTest
     bool testResult = true;
     foreach (var type in SupportedTypes)
     {
-      Console.Write($"TestInt64OpenXmlConversion with {type.Name} ");
-      if (!TestInt64OpenXmlConversion(type))
+      Console.Write($"TestUInt64Conversion with {type.Name} ");
+      if (!TestUInt64Conversion(type))
       {
         Console.WriteLine("failed.");
         testResult = false;
@@ -49,52 +51,52 @@ public static class Int64OpenXmlConverterTest
   }
 
   /// <summary>
-  ///   Test values used for Int64 conversion tests, including boundary and typical values.
+  ///   Test values used for UInt64 conversion tests, including boundary and typical values.
   /// </summary>
-  static readonly Int64[] testValues =
+  static readonly UInt64[] testValues =
   [
-    Int64.MinValue,
-    -123456L,
-    -1L,
-    0L,
-    1L,
-    123456L,
-    Int64.MaxValue
+    0,
+    0,
+    0,
+    0,
+    1,
+    12345678901234567890,
+    UInt64.MaxValue
   ];
   /// <summary>
-  ///   Dictionary mapping Open XML types to their valid Int64 value ranges (min, max) for conversion tests.
+  ///   Dictionary mapping Open XML types to their valid UInt64 value ranges (min, max) for conversion tests.
   /// </summary>
-  public static Dictionary<Type, (Int64 min, Int64 max)> typeRanges = new()
+  public static Dictionary<Type, (UInt64 min, UInt64 max)> typeRanges = new()
   {
+    { typeof(DX.SByteValue), (0, (UInt64)SByte.MaxValue) },
+    { typeof(DX.Int16Value), (0, (UInt64)Int16.MaxValue) },
+    { typeof(DX.Int32Value), (0, (UInt64)Int32.MaxValue) },
+    { typeof(DX.Int64Value), (0, Int64.MaxValue) },
+    { typeof(DX.IntegerValue), (0, Int64.MaxValue) },
     { typeof(DX.ByteValue), (0, Byte.MaxValue) },
-    { typeof(DX.Int16Value), (Int16.MinValue, Int16.MaxValue) },
-    { typeof(DX.Int32Value), (Int32.MinValue, Int32.MaxValue) },
-    { typeof(DX.Int64Value), (Int64.MinValue, Int64.MaxValue) },
-    { typeof(DX.IntegerValue), (Int64.MinValue, Int64.MaxValue) },
-    { typeof(DX.SByteValue), (SByte.MinValue, SByte.MaxValue) },
     { typeof(DX.UInt16Value), (0, UInt16.MaxValue) },
     { typeof(DX.UInt32Value), (0, UInt32.MaxValue) },
-    { typeof(DX.UInt64Value), (0, Int64.MaxValue) },
-    { typeof(DX.StringValue), (Int64.MinValue, Int64.MaxValue) }
+    { typeof(DX.UInt64Value), (0, UInt64.MaxValue) },
+    { typeof(DX.StringValue), (0, UInt64.MaxValue) }
   };
 
   /// <summary>
-  ///   Tests round-trip conversion of Int64 values to and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of UInt64 values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type to test Int64 conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test UInt64 conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
-  public static bool TestInt64OpenXmlConversion(Type openXmlType)
+  public static bool TestUInt64Conversion(Type openXmlType)
   {
     foreach (var testValue in testValues)
     {
       try
       {
-        if (openXmlType == typeof(DX.Int16Value))
+        if (openXmlType == typeof(DX.StringValue))
           Debug.Assert(true);
 
         // Convert to OpenXml
-        var openXmlValue = Int64OpenXmlConverter.ConvertToOpenXml(testValue, openXmlType);
+        var openXmlValue = UInt64Converter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
           Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
@@ -107,11 +109,11 @@ public static class Int64OpenXmlConverterTest
           return false; // Expected exception for out-of-range value
         }
 
-        // Convert back to Int64
-        var convertedBackValue = Int64OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
+        // Convert back to UInt64
+        var convertedBackValue = UInt64Converter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back to Int64 returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to UInt64 returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))
