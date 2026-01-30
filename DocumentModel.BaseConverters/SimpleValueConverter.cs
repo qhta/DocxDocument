@@ -10,16 +10,30 @@ public static class SimpleValueConverter
   private static readonly ConversionToMap ConversionToMap = new();
   private static readonly ConversionFromMap ConversionFromMap = new();
 
+  /// <summary>
+  /// Static constructor to initialize the conversion maps.
+  /// </summary>
   static SimpleValueConverter()
   {
     ConversionToMap.Append(BooleanConverter.ConversionToMap);
     ConversionToMap.Append(TSBooleanConverter.ConversionToMap);
     ConversionToMap.Append(StringConverter.ConversionToMap);
+    ConversionToMap.Append(SByteConverter.ConversionToMap);
     ConversionToMap.Append(Int32Converter.ConversionToMap);
+    ConversionToMap.Append(Int64Converter.ConversionToMap);
+    ConversionToMap.Append(ByteConverter.ConversionToMap);
+    ConversionToMap.Append(UInt16Converter.ConversionToMap);
+    ConversionToMap.Append(UInt32Converter.ConversionToMap);
+    ConversionToMap.Append(UInt64Converter.ConversionToMap);
     ConversionFromMap.Append(BooleanConverter.ConversionFromMap);
     ConversionFromMap.Append(TSBooleanConverter.ConversionFromMap);
     ConversionFromMap.Append(StringConverter.ConversionFromMap);
+    ConversionFromMap.Append(SByteConverter.ConversionFromMap);
     ConversionFromMap.Append(Int32Converter.ConversionFromMap);
+    ConversionFromMap.Append(Int64Converter.ConversionFromMap);
+    ConversionFromMap.Append(UInt16Converter.ConversionFromMap);
+    ConversionFromMap.Append(UInt32Converter.ConversionFromMap);
+    ConversionFromMap.Append(UInt64Converter.ConversionFromMap);
   }
 
   /// <summary>

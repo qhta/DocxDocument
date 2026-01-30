@@ -32,8 +32,8 @@ public static class Int32ConverterTest
     bool testResult = true;
     foreach (var type in SupportedTypes)
     {
-      Console.Write($"TestInt32OpenXmlConversion with {type.Name} ");
-      if (!TestInt32OpenXmlConversion(type))
+      Console.Write($"TestInt32Conversion with {type.Name} ");
+      if (!TestInt32Conversion(type))
       {
         Console.WriteLine("failed.");
         testResult = false;
@@ -80,7 +80,7 @@ public static class Int32ConverterTest
   /// </summary>
   /// <param name="openXmlType">The Open XML type to test Int32 conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
-  public static bool TestInt32OpenXmlConversion(Type openXmlType)
+  public static bool TestInt32Conversion(Type openXmlType)
   {
     foreach (var testValue in testValues)
     {

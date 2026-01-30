@@ -2,16 +2,18 @@
 
 using DocumentModel.OpenXml;
 
+using Int16Converter = DocumentModel.OpenXml.Int16Converter;
+
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="UInt64OpenXmlConverter"/> conversions between .NET UInt64 values and various Open XML numeric types.
+///   Provides unit tests for verifying the correctness of <see cref="OpenXml.Int16Converter"/> conversions between .NET Int16 values and various Open XML numeric types.
 ///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
-public static class UInt64OpenXmlConverterTest
+public static class Int16ConverterTest
 {
   /// <summary>
-  ///   List of Open XML types supported for UInt64 value conversion tests.
+  ///   List of Open XML types supported for Int16 value conversion tests.
   /// </summary>
   public static Type[] SupportedTypes { get; } =
   [
@@ -28,7 +30,7 @@ public static class UInt64OpenXmlConverterTest
   ];
 
   /// <summary>
-  ///   Runs all UInt64OpenXmlConverter tests for supported types and reports results to the console.
+  ///   Runs all Int16Converter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -36,8 +38,8 @@ public static class UInt64OpenXmlConverterTest
     bool testResult = true;
     foreach (var type in SupportedTypes)
     {
-      Console.Write($"TestUInt64OpenXmlConversion with {type.Name} ");
-      if (!TestUInt64OpenXmlConversion(type))
+      Console.Write($"TestInt16Conversion with {type.Name} ");
+      if (!TestInt16Conversion(type))
       {
         Console.WriteLine("failed.");
         testResult = false;
@@ -49,52 +51,52 @@ public static class UInt64OpenXmlConverterTest
   }
 
   /// <summary>
-  ///   Test values used for UInt64 conversion tests, including boundary and typical values.
+  ///   Test values used for Int16 conversion tests, including boundary and typical values.
   /// </summary>
-  static readonly UInt64[] testValues =
+  static readonly Int16[] testValues =
   [
-    0,
-    0,
-    0,
+    Int16.MinValue,
+    -12345,
+    -1,
     0,
     1,
-    12345678901234567890,
-    UInt64.MaxValue
+    12345,
+    Int16.MaxValue
   ];
   /// <summary>
-  ///   Dictionary mapping Open XML types to their valid UInt64 value ranges (min, max) for conversion tests.
+  ///   Dictionary mapping Open XML types to their valid Int16 value ranges (min, max) for conversion tests.
   /// </summary>
-  public static Dictionary<Type, (UInt64 min, UInt64 max)> typeRanges = new()
+  public static Dictionary<Type, (Int16 min, Int16 max)> typeRanges = new()
   {
-    { typeof(DX.SByteValue), (0, (UInt64)SByte.MaxValue) },
-    { typeof(DX.Int16Value), (0, (UInt64)Int16.MaxValue) },
-    { typeof(DX.Int32Value), (0, (UInt64)Int32.MaxValue) },
-    { typeof(DX.Int64Value), (0, Int64.MaxValue) },
-    { typeof(DX.IntegerValue), (0, Int64.MaxValue) },
+    { typeof(DX.SByteValue), (SByte.MinValue, SByte.MaxValue) },
+    { typeof(DX.Int16Value), (Int16.MinValue, Int16.MaxValue) },
+    { typeof(DX.Int32Value), (Int16.MinValue, Int16.MaxValue) },
+    { typeof(DX.Int64Value), (Int16.MinValue, Int16.MaxValue) },
+    { typeof(DX.IntegerValue), (Int16.MinValue, Int16.MaxValue) },
     { typeof(DX.ByteValue), (0, Byte.MaxValue) },
-    { typeof(DX.UInt16Value), (0, UInt16.MaxValue) },
-    { typeof(DX.UInt32Value), (0, UInt32.MaxValue) },
-    { typeof(DX.UInt64Value), (0, UInt64.MaxValue) },
-    { typeof(DX.StringValue), (0, UInt64.MaxValue) }
+    { typeof(DX.UInt16Value), (0, Int16.MaxValue) },
+    { typeof(DX.UInt32Value), (0, Int16.MaxValue) },
+    { typeof(DX.UInt64Value), (0, Int16.MaxValue) },
+    { typeof(DX.StringValue), (Int16.MinValue, Int16.MaxValue) }
   };
 
   /// <summary>
-  ///   Tests round-trip conversion of UInt64 values to and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of Int16 values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type to test UInt64 conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test Int16 conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
-  public static bool TestUInt64OpenXmlConversion(Type openXmlType)
+  public static bool TestInt16Conversion(Type openXmlType)
   {
     foreach (var testValue in testValues)
     {
       try
       {
-        if (openXmlType == typeof(DX.StringValue))
+        if (openXmlType == typeof(DX.Int16Value))
           Debug.Assert(true);
 
         // Convert to OpenXml
-        var openXmlValue = UInt64OpenXmlConverter.ConvertToOpenXml(testValue, openXmlType);
+        var openXmlValue = Int16Converter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
           Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
@@ -107,11 +109,11 @@ public static class UInt64OpenXmlConverterTest
           return false; // Expected exception for out-of-range value
         }
 
-        // Convert back to UInt64
-        var convertedBackValue = UInt64OpenXmlConverter.ConvertFromOpenXml(openXmlValue);
+        // Convert back to Int16
+        var convertedBackValue = Int16Converter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back to UInt64 returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to Int16 returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

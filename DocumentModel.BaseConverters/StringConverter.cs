@@ -7,14 +7,14 @@ public static class StringConverter
 {
   private static readonly ConversionMethodInfo[] supportedTypes =
   [
-    new ConversionMethodInfo(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
-    new ConversionMethodInfo(typeof(DXW.StringType), nameof(ConvertFromStringType), nameof(ConvertToStringType)),
-    new ConversionMethodInfo(typeof(DXW.String255Type), nameof(ConvertFromString255Type), nameof(ConvertToString255Type)),
-    new ConversionMethodInfo(typeof(DXW.String253Type), nameof(ConvertFromString253Type), nameof(ConvertToString253Type)),
-    new ConversionMethodInfo(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
-    new ConversionMethodInfo(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
-    new ConversionMethodInfo(typeof(DX.OpenXmlSimpleType), nameof(ConvertFromOpenXmlSimpleType), nameof(ConvertToOpenXmlSimpleType)),
-    new ConversionMethodInfo(typeof(Uri), nameof(ConvertFromUri), nameof(ConvertToUri)),
+    new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
+    new(typeof(DXW.StringType), nameof(ConvertFromStringType), nameof(ConvertToStringType)),
+    new(typeof(DXW.String255Type), nameof(ConvertFromString255Type), nameof(ConvertToString255Type)),
+    new(typeof(DXW.String253Type), nameof(ConvertFromString253Type), nameof(ConvertToString253Type)),
+    new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
+    new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
+    new(typeof(DX.OpenXmlSimpleType), nameof(ConvertFromOpenXmlSimpleType), nameof(ConvertToOpenXmlSimpleType)),
+    new(typeof(Uri), nameof(ConvertFromUri), nameof(ConvertToUri))
   ];
 
   internal static readonly ConversionToMap ConversionToMap = new();

@@ -2,16 +2,18 @@
 
 using DocumentModel.OpenXml;
 
+using ByteConverter = DocumentModel.OpenXml.ByteConverter;
+
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="SByteOpenXmlConverter"/> conversions between .NET SByte values and various Open XML numeric types.
+///   Provides unit tests for verifying the correctness of <see cref="OpenXml.ByteConverter"/> conversions between .NET byte values and various Open XML numeric types.
 ///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
-public static class SByteOpenXmlConverterTest
+public static class ByteConverterTest
 {
   /// <summary>
-  ///   List of Open XML types supported for SByte value conversion tests.
+  ///   List of Open XML types supported for byte value conversion tests.
   /// </summary>
   public static Type[] SupportedTypes { get; } =
   [
@@ -28,7 +30,7 @@ public static class SByteOpenXmlConverterTest
   ];
 
   /// <summary>
-  ///   Runs all SByteOpenXmlConverter tests for supported types and reports results to the console.
+  ///   Runs all ByteConverter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -36,8 +38,8 @@ public static class SByteOpenXmlConverterTest
     bool testResult = true;
     foreach (var type in SupportedTypes)
     {
-      Console.Write($"TestSByteOpenXmlConversion with {type.Name} ");
-      if (!TestSByteOpenXmlConversion(type))
+      Console.Write($"TestByteConversion with {type.Name} ");
+      if (!TestByteConversion(type))
       {
         Console.WriteLine("failed.");
         testResult = false;
@@ -49,42 +51,42 @@ public static class SByteOpenXmlConverterTest
   }
 
   /// <summary>
-  ///   Test values used for SByte conversion tests, including boundary and typical values.
+  ///   Test values used for byte conversion tests, including boundary and typical values.
   /// </summary>
-  static readonly SByte[] testValues =
+  static readonly Byte[] testValues =
   [
-    SByte.MinValue,
-    -123,
-    -1,
+    0,
+    0,
+    0,
     0,
     1,
     123,
-    SByte.MaxValue
+    Byte.MaxValue
   ];
   /// <summary>
-  ///   Dictionary mapping Open XML types to their valid SByte value ranges (min, max) for conversion tests.
+  ///   Dictionary mapping Open XML types to their valid byte value ranges (min, max) for conversion tests.
   /// </summary>
-  public static Dictionary<Type, (SByte min, SByte max)> typeRanges = new()
+  public static Dictionary<Type, (Byte min, Byte max)> typeRanges = new()
   {
-    { typeof(DX.SByteValue), (SByte.MinValue, SByte.MaxValue) },
-    { typeof(DX.Int16Value), (SByte.MinValue, SByte.MaxValue) },
-    { typeof(DX.Int32Value), (SByte.MinValue, SByte.MaxValue) },
-    { typeof(DX.Int64Value), (SByte.MinValue, SByte.MaxValue) },
-    { typeof(DX.IntegerValue), (SByte.MinValue, SByte.MaxValue) },
-    { typeof(DX.ByteValue), (0, SByte.MaxValue) },
-    { typeof(DX.UInt16Value), (0, SByte.MaxValue) },
-    { typeof(DX.UInt32Value), (0, SByte.MaxValue) },
-    { typeof(DX.UInt64Value), (0, SByte.MaxValue) },
-    { typeof(DX.StringValue), (SByte.MinValue, SByte.MaxValue) }
+    { typeof(DX.SByteValue), (0, (Byte)SByte.MaxValue) },
+    { typeof(DX.Int16Value), (0, Byte.MaxValue) },
+    { typeof(DX.Int32Value), (0, Byte.MaxValue) },
+    { typeof(DX.Int64Value), (0, Byte.MaxValue) },
+    { typeof(DX.IntegerValue), (0, Byte.MaxValue) },
+    { typeof(DX.ByteValue), (0, Byte.MaxValue) },
+    { typeof(DX.UInt16Value), (0, Byte.MaxValue) },
+    { typeof(DX.UInt32Value), (0, Byte.MaxValue) },
+    { typeof(DX.UInt64Value), (0, Byte.MaxValue) },
+    { typeof(DX.StringValue), (0, Byte.MaxValue) }
   };
 
   /// <summary>
-  ///   Tests round-trip conversion of SByte values to and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of byte values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type to test SByte conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test byte conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
-  public static bool TestSByteOpenXmlConversion(Type openXmlType)
+  public static bool TestByteConversion(Type openXmlType)
   {
     foreach (var testValue in testValues)
     {
@@ -94,7 +96,7 @@ public static class SByteOpenXmlConverterTest
           Debug.Assert(true);
 
         // Convert to OpenXml
-        var openXmlValue = SByteOpenXmlConverter.ConvertToOpenXml(testValue, openXmlType);
+        var openXmlValue = ByteConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
           Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
@@ -107,11 +109,11 @@ public static class SByteOpenXmlConverterTest
           return false; // Expected exception for out-of-range value
         }
 
-        // Convert back to SByte
-        var convertedBackValue = SByteOpenXmlConverter.ConvertFromOpenXml(openXmlValue);
+        // Convert back to Int16
+        var convertedBackValue = ByteConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back to SByte returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to Byte returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))
