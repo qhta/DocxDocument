@@ -5,7 +5,7 @@ using DocumentModel.OpenXml;
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="OpenXml.BooleanOpenXmlConverter"/> conversions between .NET boolean values and various Open XML boolean types.
+///   Provides unit tests for verifying the correctness of <see cref="OpenXml.BooleanConverter"/> conversions between .NET boolean values and various Open XML boolean types.
 ///   Tests round-trip conversion for supported Open XML boolean types, including special cases for empty types.
 /// </summary>
 public static class BooleanConverterTest
@@ -30,7 +30,7 @@ public static class BooleanConverterTest
   ];
 
   /// <summary>
-  ///   Runs all BooleanOpenXmlConverter tests for supported types and reports results to the console.
+  ///   Runs all BooleanConverter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()

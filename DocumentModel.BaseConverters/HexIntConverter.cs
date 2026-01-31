@@ -1,9 +1,9 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for HexLong value to/from Open XML.
+/// Provides conversion methods for HexInt value to/from Open XML.
 /// </summary>
-public static class HexLongConverter
+public static class HexIntConverter
 {
   private static readonly ConversionMethodInfo[] supportedTypes =
   [
@@ -27,36 +27,36 @@ public static class HexLongConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps for <see cref="HexLongConverter"/>.
+  /// Initializes the conversion maps for <see cref="HexIntConverter"/>.
   /// </summary>
-  static HexLongConverter()
+  static HexIntConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(HexLongConverter), typeof(HexLong), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(HexIntConverter), typeof(HexInt), supportedTypes, ConversionToMap, ConversionFromMap);
   }
 
 
   #region SByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml sByteValue to HexLong.
+  /// Converts an OpenXml SByteValue to HexInt.
   /// </summary>
-  /// <param name="sByteValue">The sByteValue to convert.</param>
-  /// <returns>The HexLong value, or null if the element has no content.</returns>
-  public static HexLong? ConvertFromSByteValue(DX.SByteValue? sByteValue)
+  /// <param name="SByteValue">The SByteValue to convert.</param>
+  /// <returns>The HexInt value, or null if the element has no content.</returns>
+  public static HexInt? ConvertFromSByteValue(DX.SByteValue? SByteValue)
   {
-    if (sByteValue == null) return null;
-    if (sByteValue.Value < 0)
-      throw new OverflowException($"Value {sByteValue.Value} is out of range for HexLong");
+    if (SByteValue == null) return null;
+    if (SByteValue.Value < 0)
+      throw new OverflowException($"Value {SByteValue.Value} is out of range for HexInt");
 
-    return (HexLong)sByteValue.Value;
+    return (HexInt)SByteValue.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml SByteValue from an HexLong value.
+  /// Creates an OpenXml SByteValue from an HexInt value.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="value">The HexInt value to convert.</param>
   /// <returns>A new SByteValue, or null if the input is null.</returns>
-  public static DX.SByteValue? ConvertToSByteValue(HexLong? value)
+  public static DX.SByteValue? ConvertToSByteValue(HexInt? value)
   {
     if (value == null) return null;
     if (value > SByte.MaxValue)
@@ -70,28 +70,28 @@ public static class HexLongConverter
   #region Int16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int16Value to HexLong.
+  /// Converts an OpenXml Int16Value to HexInt.
   /// </summary>
   /// <param name="int16Value">The Int16Value to convert.</param>
-  /// <returns>The HexLong int16Value, or null if the element has no content.</returns>
-  public static HexLong? ConvertFromInt16Value(DX.Int16Value? int16Value)
+  /// <returns>The HexInt int16Value, or null if the element has no content.</returns>
+  public static HexInt? ConvertFromInt16Value(DX.Int16Value? int16Value)
   {
     if (int16Value == null) return null;
     if (int16Value < 0)
-      throw new OverflowException($"Value {int16Value} is out of range for HexLong");
+      throw new OverflowException($"Value {int16Value} is out of range for HexInt");
 
-    return (HexLong)int16Value.Value;
+    return (HexInt)int16Value.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml Int16Value from an HexLong value.
+  /// Creates an OpenXml Int16Value from an HexInt value.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="value">The HexInt value to convert.</param>
   /// <returns>A new Int16Value, or null if the input is null.</returns>
-  public static DX.Int16Value? ConvertToInt16Value(HexLong? value)
+  public static DX.Int16Value? ConvertToInt16Value(HexInt? value)
   {
     if (value == null) return null;
-    if (value > (UInt64)Int16.MaxValue)
+    if (value > Int16.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Int16");
 
     return new DX.Int16Value { Value = (Int16)value };
@@ -102,28 +102,31 @@ public static class HexLongConverter
   #region Int32Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml int32Value to HexLong.
+  /// Converts an OpenXml Int32Value to HexInt.
   /// </summary>
-  /// <param name="int32Value">The int32Value to convert.</param>
-  /// <returns>The HexLong value, or null if the element has no content.</returns>
-  public static HexLong? ConvertFromInt32Value(DX.Int32Value? int32Value)
+  /// <param name="Int32Value">The Int32Value to convert.</param>
+  /// <returns>The HexInt value, or null if the element has no content.</returns>
+  public static HexInt? ConvertFromInt32Value(DX.Int32Value? Int32Value)
   {
-    if (int32Value == null) return null;
-    return new HexLong(int32Value.Value);
+    if (Int32Value == null) return null;
+    if (Int32Value.Value < 0)
+      throw new OverflowException($"Value {Int32Value.Value} is out of range for HexInt");
+
+    return (HexInt)Int32Value.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml Int32Value from an HexLong value.
+  /// Creates an OpenXml Int32Value from an HexInt value.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="value">The HexInt value to convert.</param>
   /// <returns>A new Int32Value, or null if the input is null.</returns>
-  public static DX.Int32Value? ConvertToInt32Value(HexLong? value)
+  public static DX.Int32Value? ConvertToInt32Value(HexInt? value)
   {
     if (value == null) return null;
-    if (value > (UInt64)Int32.MaxValue)
+    if (value > Int32.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Int32");
 
-    return new DX.Int32Value { Value = (Int32)(UInt32)value };
+    return new DX.Int32Value { Value = (Int32)value };
   }
 
   #endregion
@@ -131,27 +134,29 @@ public static class HexLongConverter
   #region Int64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml int64Value to HexLong.
+  /// Converts an OpenXml Int64Value to HexInt.
   /// </summary>
-  /// <param name="int64Value">The int64Value to convert.</param>
-  /// <returns>The HexLong value, or null if the element has no content.</returns>
-  public static HexLong? ConvertFromInt64Value(DX.Int64Value? int64Value)
+  /// <param name="Int64Value">The Int64Value to convert.</param>
+  /// <returns>The HexInt value, or null if the element has no content.</returns>
+  public static HexInt? ConvertFromInt64Value(DX.Int64Value? Int64Value)
   {
-    if (int64Value == null) return null;
+    if (Int64Value == null) return null;
+    if (Int64Value.Value < 0 || Int64Value.Value > UInt32.MaxValue)
+      throw new OverflowException($"Value {Int64Value.Value} is out of range for HexInt");
 
-    return new HexLong(int64Value.Value);
+    return (HexInt)(UInt32)Int64Value.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml Int64Value from an HexLong value.
+  /// Creates an OpenXml Int64Value from an HexInt value.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="value">The HexInt value to convert.</param>
   /// <returns>A new Int64Value, or null if the input is null.</returns>
-  public static DX.Int64Value? ConvertToInt64Value(HexLong? value)
+  public static DX.Int64Value? ConvertToInt64Value(HexInt? value)
   {
     if (value == null) return null;
 
-    return new DX.Int64Value { Value = (Int64)(UInt64)value };
+    return new DX.Int64Value { Value = (UInt32)value };
   }
 
   #endregion
@@ -159,26 +164,29 @@ public static class HexLongConverter
   #region IntegerValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml integerValue to HexLong.
+  /// Converts an OpenXml IntegerValue to HexInt.
   /// </summary>
-  /// <param name="integerValue">The integerValue to convert.</param>
-  /// <returns>The HexLong value, or null if the element has no content.</returns>
-  public static HexLong? ConvertFromIntegerValue(DX.IntegerValue? integerValue)
+  /// <param name="IntegerValue">The IntegerValue to convert.</param>
+  /// <returns>The HexInt value, or null if the element has no content.</returns>
+  public static HexInt? ConvertFromIntegerValue(DX.IntegerValue? IntegerValue)
   {
-    if (integerValue == null) return null;
-    return new HexLong(integerValue.Value);
+    if (IntegerValue == null) return null;
+    if (IntegerValue.Value < 0 || IntegerValue.Value > UInt32.MaxValue)
+      throw new OverflowException($"Value {IntegerValue.Value} is out of range for HexInt");
+
+    return (UInt32)IntegerValue.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml IntegerValue from an HexLong value.
+  /// Creates an OpenXml IntegerValue from an HexInt value.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="value">The HexInt value to convert.</param>
   /// <returns>A new IntegerValue, or null if the input is null.</returns>
-  public static DX.IntegerValue? ConvertToIntegerValue(HexLong? value)
+  public static DX.IntegerValue? ConvertToIntegerValue(HexInt? value)
   {
     if (value == null) return null;
 
-    return new DX.IntegerValue { Value = (Int64)(UInt64)value };
+    return new DX.IntegerValue { Value = (UInt32)value };
   }
 
   #endregion
@@ -186,23 +194,23 @@ public static class HexLongConverter
   #region ByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml byteValue to HexLong.
+  /// Converts an OpenXml ByteValue to HexInt.
   /// </summary>
-  /// <param name="byteValue">The byteValue to convert.</param>
-  /// <returns>The HexLong value, or null if the element has no content.</returns>
-  public static HexLong? ConvertFromByteValue(DX.ByteValue? byteValue)
+  /// <param name="ByteValue">The ByteValue to convert.</param>
+  /// <returns>The HexInt value, or null if the element has no content.</returns>
+  public static HexInt? ConvertFromByteValue(DX.ByteValue? ByteValue)
   {
-    if (byteValue == null) return null;
+    if (ByteValue == null) return null;
 
-    return new HexLong(byteValue.Value);
+    return (HexInt)ByteValue.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml ByteValue from an HexLong value.
+  /// Creates an OpenXml ByteValue from an HexInt value.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="value">The HexInt value to convert.</param>
   /// <returns>A new ByteValue, or null if the input is null.</returns>
-  public static DX.ByteValue? ConvertToByteValue(HexLong? value)
+  public static DX.ByteValue? ConvertToByteValue(HexInt? value)
   {
     if (value == null) return null;
     if (value < 0 || value > Byte.MaxValue)
@@ -216,26 +224,26 @@ public static class HexLongConverter
   #region UInt16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt16Value to HexLong.
+  /// Converts an OpenXml UInt16Value to HexInt.
   /// </summary>
-  /// <param name="uInt16Value">The uInt16Value to convert.</param>
-  /// <returns>The HexLong value, or null if the element has no content.</returns>
-  public static HexLong? ConvertFromUInt16Value(DX.UInt16Value? uInt16Value)
+  /// <param name="UInt16Value">The UInt16Value to convert.</param>
+  /// <returns>The HexInt value, or null if the element has no content.</returns>
+  public static HexInt? ConvertFromUInt16Value(DX.UInt16Value? UInt16Value)
   {
-    if (uInt16Value == null) return null;
+    if (UInt16Value == null) return null;
 
-    return new HexLong(uInt16Value.Value);
+    return (HexInt)UInt16Value.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml UInt16Value from an HexLong value.
+  /// Creates an OpenXml UInt16Value from an HexInt value.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="value">The HexInt value to convert.</param>
   /// <returns>A new UInt16Value, or null if the input is null.</returns>
-  public static DX.UInt16Value? ConvertToUInt16Value(HexLong? value)
+  public static DX.UInt16Value? ConvertToUInt16Value(HexInt? value)
   {
     if (value == null) return null;
-    if ((UInt64)value > UInt16.MaxValue)
+    if (value > UInt16.MaxValue)
       throw new OverflowException($"Value {value} is out of range for UInt16");
 
     return new DX.UInt16Value { Value = (UInt16)value };
@@ -243,31 +251,31 @@ public static class HexLongConverter
 
   #endregion
 
-  #region UInt32Value conversion.
+  #region HexIntValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml uInt32Value to HexLong.
+  /// Converts an OpenXml HexIntValue to HexInt.
   /// </summary>
-  /// <param name="uInt32Value">The uInt32Value to convert.</param>
-  /// <returns>The HexLong value, or null if the element has no content.</returns>
-  public static HexLong? ConvertFromUInt32Value(DX.UInt32Value? uInt32Value)
+  /// <param name="HexIntValue">The HexIntValue to convert.</param>
+  /// <returns>The HexInt value, or null if the element has no content.</returns>
+  public static HexInt? ConvertFromUInt32Value(DX.UInt32Value? HexIntValue)
   {
-    if (uInt32Value == null) return null;
+    if (HexIntValue == null) return null;
 
-    return new HexLong(uInt32Value.Value);
+    return (HexInt)HexIntValue.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml HexLongValue from an HexLong value.
+  /// Creates an OpenXml HexIntValue from an HexInt value.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
-  /// <returns>A new HexLongValue, or null if the input is null.</returns>
-  public static DX.UInt32Value? ConvertToUInt32Value(HexLong? value)
+  /// <param name="value">The HexInt value to convert.</param>
+  /// <returns>A new HexIntValue, or null if the input is null.</returns>
+  public static DX.UInt32Value? ConvertToUInt32Value(HexInt? value)
   {
     if (value == null) return null;
-    if ((UInt64)value > UInt32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range for UInt32");
-    return new DX.UInt32Value { Value = (UInt32)(UInt64)value };
+    if (value < 0)
+      throw new OverflowException($"Value {value} is out of range for HexInt");
+    return new DX.UInt32Value { Value = (UInt32)value };
   }
 
   #endregion
@@ -275,26 +283,29 @@ public static class HexLongConverter
   #region UInt64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt64Value to HexLong.
+  /// Converts an OpenXml UInt64Value to HexInt.
   /// </summary>
-  /// <param name="uInt64Value">The uInt64Value to convert.</param>
-  /// <returns>The HexLong value, or null if the element has no content.</returns>
-  public static HexLong? ConvertFromUInt64Value(DX.UInt64Value? uInt64Value)
+  /// <param name="UInt64Value">The UInt64Value to convert.</param>
+  /// <returns>The HexInt value, or null if the element has no content.</returns>
+  public static HexInt? ConvertFromUInt64Value(DX.UInt64Value? UInt64Value)
   {
-    if (uInt64Value == null) return null;
+    if (UInt64Value == null) return null;
+    if (UInt64Value.Value > UInt32.MaxValue)
+      throw new OverflowException($"Value {UInt64Value.Value} is out of range for HexInt");
 
-    return new HexLong(uInt64Value.Value);
+    return (HexInt)UInt64Value.Value;
   }
 
   /// <summary>
-  /// Creates an OpenXml UInt64Value from an HexLong value.
+  /// Creates an OpenXml UInt64Value from an HexInt value.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="value">The HexInt value to convert.</param>
   /// <returns>A new UInt64Value, or null if the input is null.</returns>
-  public static DX.UInt64Value? ConvertToUInt64Value(HexLong? value)
+  public static DX.UInt64Value? ConvertToUInt64Value(HexInt? value)
   {
     if (value == null) return null;
-
+    if (value < 0)
+      throw new OverflowException($"Value {value} is out of range for UInt64");
     return new DX.UInt64Value { Value = (UInt64)value };
   }
 
@@ -303,11 +314,11 @@ public static class HexLongConverter
   #region StringValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml StringValue to HexLong.
+  /// Converts an OpenXml StringValue to HexInt.
   /// </summary>
   /// <param name="StringValue">The StringValue to convert.</param>
-  /// <returns>The HexLong value, or null if the element has no content.</returns>
-  public static HexLong? ConvertFromStringValue(DX.StringValue? StringValue)
+  /// <returns>The HexInt value, or null if the element has no content.</returns>
+  public static HexInt? ConvertFromStringValue(DX.StringValue? StringValue)
   {
     if (StringValue == null) return null;
     var text = StringValue.Value;
@@ -315,16 +326,16 @@ public static class HexLongConverter
     if (text == null)
       throw new InvalidOperationException("StringValue has no content.");
 
-    return new HexLong(text);
+    return new HexInt(text);
   }
 
   /// <summary>
-  /// Creates an OpenXml StringValue from an HexLong value.
+  /// Creates an OpenXml StringValue from an HexInt value.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="value">The HexInt value to convert.</param>
   /// <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
-  public static DX.StringValue? ConvertToStringValue(HexLong? value, Type targetType)
+  public static DX.StringValue? ConvertToStringValue(HexInt? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -339,30 +350,33 @@ public static class HexLongConverter
   #region OpenXmlLeafTextElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafTextElement to HexLong.
+  /// Converts an OpenXml OpenXmlLeafTextElement to HexInt.
   /// </summary>
   /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
-  /// <returns>The HexLong value, or null if the element has no content.</returns>
-  public static HexLong? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
+  /// <returns>The HexInt value, or null if the element has no content.</returns>
+  public static HexInt? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
   {
     if (OpenXmlLeafTextElement == null) return null;
     var text = OpenXmlLeafTextElement.Text;
 
-    return new HexLong(text);
+    if (!HexInt.TryParse(text, out var result))
+      return null;
+
+    return result;
   }
 
   /// <summary>
-  /// Creates an OpenXml OpenXmlLeafTextElement from an HexLong value.
+  /// Creates an OpenXml OpenXmlLeafTextElement from an HexInt value.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="value">The HexInt value to convert.</param>
   /// <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
-  public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexLong? value, Type targetType)
+  public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexInt? value, Type targetType)
   {
     if (value == null) return null;
 
     // ReSharper disable once SpecifyACultureInStringConversionExplicitly
-    var text = ((HexLong)value).ToString()!;
+    var text = ((HexInt)value).ToString()!;
     var element = (DX.OpenXmlLeafTextElement)Activator.CreateInstance(targetType)!;
     element.Text = text;
     return element;
@@ -373,32 +387,35 @@ public static class HexLongConverter
   #region HexBinaryValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml HexBinaryValue to HexLong.
+  /// Converts an OpenXml HexBinaryValue to HexInt.
   /// </summary>
   /// <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
-  /// <returns>The HexLong value, or null if the element has no content.</returns>
-  public static HexLong? ConvertFromHexBinaryValue(DX.HexBinaryValue? HexBinaryValue)
+  /// <returns>The HexInt value, or null if the element has no content.</returns>
+  public static HexInt? ConvertFromHexBinaryValue(DX.HexBinaryValue? HexBinaryValue)
   {
     if (HexBinaryValue == null) return null;
     var text = HexBinaryValue.Value;
     if (text==null)
       throw new InvalidOperationException("HexBinaryValue has no content.");
 
-    return new HexLong(text);
+    if (!HexInt.TryParse(text, out var result))
+      throw new InvalidOperationException($"Conversion of {text} to HexInt failed.");
+
+    return result;
   }
 
   /// <summary>
-  /// Creates an OpenXml HexBinaryValue from an HexLong value.
+  /// Creates an OpenXml HexBinaryValue from an HexInt value.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="value">The HexInt value to convert.</param>
   /// <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
-  public static DX.HexBinaryValue? ConvertToHexBinaryValue(HexLong? value, Type targetType)
+  public static DX.HexBinaryValue? ConvertToHexBinaryValue(HexInt? value, Type targetType)
   {
     if (value == null) return null;
 
     // ReSharper disable once SpecifyACultureInStringConversionExplicitly
-    var text = ((HexLong)value).ToString()!;
+    var text = ((HexInt)value).ToString()!;
     var element = (DX.HexBinaryValue)Activator.CreateInstance(targetType)!;
     element.Value = text;
     return element;
@@ -409,11 +426,11 @@ public static class HexLongConverter
   #region OpenXmlLeafElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafElement to HexLong.
+  /// Converts an OpenXml OpenXmlLeafElement to HexInt.
   /// </summary>
   /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
-  /// <returns>The HexLong value, or null if the element has no content.</returns>
-  public static HexLong? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
+  /// <returns>The HexInt value, or null if the element has no content.</returns>
+  public static HexInt? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
   {
     if (OpenXmlLeafElement == null) return null;
 
@@ -430,16 +447,16 @@ public static class HexLongConverter
 
     var value = valProp.GetValue(OpenXmlLeafElement);
     var convertedValue = ConvertFrom(value);
-    return (HexLong)convertedValue!;
+    return (HexInt)convertedValue!;
   }
 
   /// <summary>
-  /// Creates an OpenXml OpenXmlLeafElement from an HexLong value.
+  /// Creates an OpenXml OpenXmlLeafElement from an HexInt value.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="value">The HexInt value to convert.</param>
   /// <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
-  public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(HexLong? value, Type targetType)
+  public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(HexInt? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -463,23 +480,26 @@ public static class HexLongConverter
   #region String conversion.
 
   /// <summary>
-  /// Converts the specified string representation of a number to its HexLongequivalent.
+  /// Converts the specified string representation of a number to its HexIntequivalent.
   /// </summary>
   /// <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A HexLong integer equivalent to the number contained in the input string, or null if the input is null or
+  /// <returns>A HexInt integer equivalent to the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
-  private static HexLong? ConvertFromString(string? value)
+  private static HexInt? ConvertFromString(string? value)
   {
     if (value == null) return null;
-    return new HexLong(value);
+    if (!HexInt.TryParse(value, out var result))
+      return null;
+
+    return result;
   }
 
   /// <summary>
-  /// Converts a nullable HexLong value to its string representation.
+  /// Converts a nullable HexInt value to its string representation.
   /// </summary>
-  /// <param name="value">The nullable HexLong value to convert. If null, the method returns null.</param>
+  /// <param name="value">The nullable HexInt value to convert. If null, the method returns null.</param>
   /// <returns>A string representation of the specified value, or null if the value is null.</returns>
-  private static String? ConvertToString(HexLong? value)
+  private static String? ConvertToString(HexInt? value)
   {
     if (value == null) return null;
 
@@ -492,13 +512,13 @@ public static class HexLongConverter
   #region Generic OpenXml conversion methods
 
   /// <summary>
-  /// Converts an HexLong value to the specified target type using standard type conversion.
+  /// Converts an HexInt value to the specified target type using standard type conversion.
   /// </summary>
-  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="value">The HexInt value to convert.</param>
   /// <param name="targetType">The target type to convert to.</param>
   /// <returns>The converted value, or null if the input is null.</returns>
   /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
-  public static object? ConvertTo(HexLong? value, Type targetType)
+  public static object? ConvertTo(HexInt? value, Type targetType)
   {
     return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
   }
@@ -506,13 +526,13 @@ public static class HexLongConverter
   /// <summary>
   /// Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
   /// </summary>
-  /// <param name="value">The value to convert to an <see cref="HexLong"/>. Can be <see langword="null"/>.</param>
+  /// <param name="value">The value to convert to an <see cref="HexInt"/>. Can be <see langword="null"/>.</param>
   /// <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
   /// is <see langword="null"/>.</returns>
-  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="HexLong"/> is not supported.</exception>
-  public static HexLong? ConvertFrom(object? value)
+  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="HexInt"/> is not supported.</exception>
+  public static HexInt? ConvertFrom(object? value)
   {
-    return (HexLong?)ConverterBase.ConvertFrom(value, typeof(HexLong), ConversionFromMap);
+    return (HexInt?)ConverterBase.ConvertFrom(value, typeof(HexInt), ConversionFromMap);
   }
 
   #endregion

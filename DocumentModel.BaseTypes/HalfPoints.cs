@@ -49,7 +49,7 @@ public readonly partial struct HalfPoints : IComparable<HalfPoints>
   /// <summary>
   /// The internal value storing the measurement in half-points.
   /// </summary>
-  private readonly Int64 value;
+  private readonly UInt64 value;
 
   /// <summary>
   /// Initializes a new instance of the <see cref="HalfPoints"/> struct from a string value.
@@ -72,27 +72,27 @@ public readonly partial struct HalfPoints : IComparable<HalfPoints>
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HalfPointsInMM;
-      value = (Int64)val;
+      value = (UInt64)val;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HalfPointsInCM;
-      value = (Int64)val;
+      value = (UInt64)val;
     }
     else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HalfPointsInInch;
-      value = (int)val;
+      value = (UInt64)val;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HalfPointsInPoint;
-      value = (Int64)val;
+      value = (UInt64)val;
     }
-    else value = Int32.Parse(str);
+    else value = UInt64.Parse(str);
   }
 
   /// <summary>
@@ -110,7 +110,7 @@ public readonly partial struct HalfPoints : IComparable<HalfPoints>
   /// <param name="value">The value in half-points.</param>
   public HalfPoints(Int32 value)
   {
-    this.value = value;
+    this.value = (UInt64)value;
   }
 
   /// <summary>
@@ -119,7 +119,7 @@ public readonly partial struct HalfPoints : IComparable<HalfPoints>
   /// <param name="value">The value in half-points.</param>
   public HalfPoints(UInt64 value)
   {
-    this.value = (Int64)value;
+    this.value = (UInt64)value;
   }
 
   /// <summary>
@@ -128,7 +128,7 @@ public readonly partial struct HalfPoints : IComparable<HalfPoints>
   /// <param name="value">The value in half-points.</param>
   public HalfPoints(Int64 value)
   {
-    this.value = value;
+    this.value = (UInt64)value;
   }
 
   /// <summary>

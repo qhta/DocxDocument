@@ -74,7 +74,7 @@ public partial struct HexLong : IXmlSerializable
       if (!string.IsNullOrEmpty(hexString))
       {
         // Parse the hex string to long
-        var parsedValue = long.Parse(hexString, NumberStyles.HexNumber);
+        var parsedValue = ulong.Parse(hexString, NumberStyles.HexNumber);
 
         // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;

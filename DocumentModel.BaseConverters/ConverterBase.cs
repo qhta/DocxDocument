@@ -140,22 +140,25 @@ public static class ConverterBase
     if (value == null) return null;
 
     var sourceType = value.GetType();
-    Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
+    if (sourceType == targetType)
+      return value;
+
+    //Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
 
     var targetSubType = Nullable.GetUnderlyingType(targetType) ?? targetType;
     while (targetSubType != null)
     {
-      Debug.WriteLine($"Search for conversion from {sourceType.FullName} to {targetSubType.FullName}");
+      //Debug.WriteLine($"Search for conversion from {sourceType.FullName} to {targetSubType.FullName}");
 
       if (conversionToMap.TryGetValue((sourceType, targetSubType), out var conversionFunc))
       {
-        Debug.WriteLine($"Converting from {sourceType.FullName} to {targetSubType.FullName}");
+        //Debug.WriteLine($"Converting from {sourceType.FullName} to {targetSubType.FullName}");
         return conversionFunc(value, targetType);
       }
 
       targetSubType = targetSubType.BaseType;
     }
-    if (TryImplicitConvert(value, targetType, out var result))
+    if (TryImplicitConvertTo(value, targetType, out var result))
       return result;
 
     if (targetType.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
@@ -199,23 +202,23 @@ public static class ConverterBase
     if (sourceType == targetType)
       return value;
 
-    Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
+    //Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
 
     var sourceSubType = Nullable.GetUnderlyingType(sourceType) ?? sourceType;
     while (sourceSubType != null)
     {
-      Debug.WriteLine($"Search for conversion from {sourceSubType.FullName} to {targetType.FullName}");
+      //Debug.WriteLine($"Search for conversion from {sourceSubType.FullName} to {targetType.FullName}");
 
       if (conversionFromMap.TryGetValue((sourceSubType, targetType), out var conversionFunc))
       {
-        Debug.WriteLine($"Converting from {sourceType.FullName} to {sourceSubType.FullName}");
+        //Debug.WriteLine($"Converting from {sourceType.FullName} to {sourceSubType.FullName}");
         return conversionFunc(value);
       }
 
       sourceSubType = sourceSubType.BaseType;
     }
 
-    if (TryImplicitConvert(value, targetType, out var result))
+    if (TryImplicitConvertFrom(value, targetType, out var result))
       return result;
 
     if (value is DX.OpenXmlLeafTextElement textElement)
@@ -250,20 +253,58 @@ public static class ConverterBase
   /// <param name="targetType">The type to convert the value to.</param>
   /// <param name="result">The converted value if the conversion succeeds; otherwise, null.</param>
   /// <returns>True if an implicit conversion was performed; otherwise, false.</returns>
-  public static bool TryImplicitConvert(object? source, Type targetType, out object? result)
+  public static bool TryImplicitConvertTo(object? source, Type targetType, out object? result)
   {
     result = null;
     if (source == null) return true;
 
     var sourceType = source.GetType();
+    if (targetType == sourceType)
+    {
+      result = source;
+      return true;
+    }
+
+    var methods = sourceType.GetMethods(BindingFlags.Public | BindingFlags.Static)
+    .Concat(targetType.GetMethods(BindingFlags.Public | BindingFlags.Static)).ToArray();
+    var op = methods.FirstOrDefault(m => m.Name == "op_Implicit"
+           && m.ReturnType == targetType && m.GetParameters() is [{ ParameterType: var p }] && p.IsAssignableFrom(sourceType));
+    if (op != null)
+    {
+      result = op.Invoke(null, [source]);
+      return true;
+    }
+    return false;
+  }
+  /// <summary>
+  /// Attempts to convert a value from the specified target type using an implicit conversion operator, if available.
+  /// </summary>
+  /// <param name="source">The source value to convert.</param>
+  /// <param name="targetType">The type to convert the value From.</param>
+  /// <param name="result">The converted value if the conversion succeeds; otherwise, null.</param>
+  /// <returns>True if an implicit conversion was performed; otherwise, false.</returns>
+  public static bool TryImplicitConvertFrom(object? source, Type targetType, out object? result)
+  {
+    result = null;
+    if (source == null) return true;
+
+    var sourceType = source.GetType();
+    if (targetType == sourceType)
+    {
+      result = source;
+      return true;
+    }
+
     var methods = sourceType.GetMethods(BindingFlags.Public | BindingFlags.Static)
       .Concat(targetType.GetMethods(BindingFlags.Public | BindingFlags.Static)).ToArray();
     var op = methods.FirstOrDefault(m => m.Name == "op_Implicit"
-           && m.ReturnType == targetType && m.GetParameters() is [{ ParameterType: var p }] && p.IsAssignableFrom(sourceType));
-    if (op == null) return false;
-
-    result = op.Invoke(null, [source]);
-    return true;
+                                         && m.ReturnType == targetType && m.GetParameters() is [{ ParameterType: var p }] && p.IsAssignableFrom(sourceType));
+    if (op != null)
+    {
+      result = op.Invoke(null, [source]);
+      return true;
+    }
+    return false;
   }
 
 }

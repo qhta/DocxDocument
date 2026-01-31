@@ -24,7 +24,7 @@ public static class Int32ConverterTest
   ];
 
   /// <summary>
-  ///   Runs all Int32OpenXmlConverter tests for supported types and reports results to the console.
+  ///   Runs all Int32Converter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -121,7 +121,7 @@ public static class Int32ConverterTest
         if (testValue < min || testValue > max)
           return true; // Expected exception for out-of-range value
 
-        Console.WriteLine(e.Message + ". ");
+        Console.WriteLine(e.Message);
         return false;
       }
     }

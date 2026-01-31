@@ -9,7 +9,7 @@ namespace DocumentModel.BaseConverters.Test;
 public static class StringConverterTest
 {
   /// <summary>
-  ///   Runs all StringOpenXmlConverter tests and reports results to the console.
+  ///   Runs all StringConverter tests and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()

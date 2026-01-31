@@ -74,7 +74,7 @@ public partial struct HexInt : IXmlSerializable
       if (!string.IsNullOrEmpty(hexString))
       {
         // Parse the hex string to int
-        int parsedValue = int.Parse(hexString, NumberStyles.HexNumber);
+        uint parsedValue = uint.Parse(hexString, NumberStyles.HexNumber);
 
         // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
