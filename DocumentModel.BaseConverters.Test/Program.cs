@@ -144,15 +144,35 @@ internal class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
-    //if (!SimpleValueConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
+    if (!HexCharConverterTest.Run())
+    {
+      Console.WriteLine("\nSome tests failed.");
+      return;
+    }
 
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    if (!StringListConverterTest.Run())
+    {
+      Console.WriteLine("\nSome tests failed.");
+      return;
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    if (!SimpleValueConverterTest.Run())
+    {
+      Console.WriteLine("\nSome tests failed.");
+      return;
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
 
     Console.WriteLine("All tests passed.");
   }

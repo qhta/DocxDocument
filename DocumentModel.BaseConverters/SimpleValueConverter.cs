@@ -30,6 +30,7 @@ public static class SimpleValueConverter
     ConversionToMap.Append(GuidConverter.ConversionToMap);
     ConversionToMap.Append(DateTimeConverter.ConversionToMap);
     ConversionToMap.Append(HexLongConverter.ConversionToMap);
+    ConversionToMap.Append(StringListConverter.ConversionToMap);
 
     ConversionFromMap.Append(BooleanConverter.ConversionFromMap);
     ConversionFromMap.Append(TSBooleanConverter.ConversionFromMap);
@@ -44,7 +45,7 @@ public static class SimpleValueConverter
     ConversionFromMap.Append(GuidConverter.ConversionFromMap);
     ConversionFromMap.Append(DateTimeConverter.ConversionFromMap);
     ConversionFromMap.Append(HexIntConverter.ConversionFromMap);
-    ConversionFromMap.Append(HexLongConverter.ConversionFromMap);
+    ConversionFromMap.Append(StringListConverter.ConversionFromMap);
 
   }
 

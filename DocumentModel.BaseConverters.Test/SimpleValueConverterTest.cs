@@ -76,9 +76,9 @@ public static class SimpleValueConverterTest
     ( typeof(DocumentModel.HexInt), typeof(DX.HexBinaryValue) ),
     ( typeof(DocumentModel.HexInt), typeof(DXW.LongHexNumberType) ),
 
-    //( typeof(DocumentModel.HexBinary), typeof(DX.OpenXmlLeafElement) ),
-    //( typeof(DocumentModel.HexChar), typeof(DX.HexBinaryValue) ),
-    //( typeof(DocumentModel.StringList), typeof(DXW.StringType) ),
+  
+    ( typeof(DocumentModel.HexChar), typeof(DX.HexBinaryValue) ),
+    ( typeof(DocumentModel.StringList), typeof(DX.StringValue) ),
   ];
 
 
@@ -120,11 +120,7 @@ public static class SimpleValueConverterTest
     { typeof(DX.HexBinaryValue), typeof(DXW.Panose1Number) },
   };
 
-  private enum TestStage
-  {
-    DirectConversion,
-    OpenXmlLeafElementConversion,
-  }
+
   /// <summary>
   ///   Runs all TestSimpleValueConversion tests for supported types and reports results to the console.
   /// </summary>
@@ -178,6 +174,11 @@ public static class SimpleValueConverterTest
     {
       testValues = ["", "https://sample.uri"];
     }
+    else
+    if (modelType == typeof(StringList))
+    {
+      testValues = [new StringList("", "Test String", "Another String")];
+    }
     foreach (var testValue0 in testValues)
     {
       object testValue = testValue0;
@@ -192,6 +193,8 @@ public static class SimpleValueConverterTest
           // Skip negative Twips to UInt32Value conversion test
 
         }
+        if (modelType == typeof(DocumentModel.StringList)) Debug.Assert(true);
+
         var convertedValue = SimpleValueConverter.ConvertTo(testValue, otherType);
         var roundTripValue = SimpleValueConverter.ConvertFrom(convertedValue, modelType);
         if (!testValue.Equals(roundTripValue))
