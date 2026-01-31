@@ -57,28 +57,28 @@ public static class SimpleValueConverterTest
     ( typeof(System.UInt32), typeof(DXW.StringType) ),
     ( typeof(System.UInt64), typeof(DX.UInt64Value) ),
 
-    //( typeof(DocumentModel.Base64Binary), typeof(DX.Base64BinaryValue) ),
-    //( typeof(DocumentModel.EMU), typeof(DX.Int64Value) ),
-    //( typeof(DocumentModel.EMU), typeof(DX.StringValue) ),
-    //( typeof(DocumentModel.HalfPoints), typeof(DXW.HpsMeasureType) ),
-    //( typeof(DocumentModel.HexBinary), typeof(DX.OpenXmlLeafElement { Val: DX.HexBinaryValue }) ),
+    ( typeof(DocumentModel.Twips), typeof(DX.Int32Value) ),
+    ( typeof(DocumentModel.Twips), typeof(DX.StringValue) ),
+    ( typeof(DocumentModel.Twips), typeof(DX.UInt32Value) ),
+    ( typeof(DocumentModel.Twips), typeof(DXW.TwipsMeasureType) ),
+
+    ( typeof(DocumentModel.EMU), typeof(DX.Int64Value) ),
+    ( typeof(DocumentModel.EMU), typeof(DX.StringValue) ),
+    ( typeof(DocumentModel.HalfPoints), typeof(DXW.HpsMeasureType) ),
+    ( typeof(System.Decimal), typeof(DX.DecimalValue) ),
+    ( typeof(System.Single), typeof(DX.SingleValue) ),
+    ( typeof(System.DateTime), typeof(DX.DateTimeValue) ),
+    ( typeof(System.DateTime), typeof(System.DateTime) ),
+    ( typeof(System.Guid), typeof(DX.StringValue) ),
+
+    ( typeof(DocumentModel.Base64Binary), typeof(DX.Base64BinaryValue) ),
+    ( typeof(DocumentModel.HexBinary), typeof(DXW.Panose1Number) ),
+    ( typeof(DocumentModel.HexInt), typeof(DX.HexBinaryValue) ),
+    ( typeof(DocumentModel.HexInt), typeof(DXW.LongHexNumberType) ),
+
     //( typeof(DocumentModel.HexBinary), typeof(DX.OpenXmlLeafElement) ),
     //( typeof(DocumentModel.HexChar), typeof(DX.HexBinaryValue) ),
-    //( typeof(DocumentModel.HexInt), typeof(DX.HexBinaryValue) ),
-    //( typeof(DocumentModel.HexInt), typeof(DXW.LongHexNumberType) ),
     //( typeof(DocumentModel.StringList), typeof(DXW.StringType) ),
-    //( typeof(DocumentModel.Twips), typeof(DX.Int32Value) ),
-    //( typeof(DocumentModel.Twips), typeof(DX.StringValue) ),
-    //( typeof(DocumentModel.Twips), typeof(DX.UInt32Value) ),
-    //( typeof(DocumentModel.Twips), typeof(DXW.TwipsMeasureType) ),
-
-    //( typeof(System.DateTime), typeof(DX.DateTimeValue) ),
-    //( typeof(System.DateTime), typeof(System.DateTime) ),
-    //( typeof(System.Decimal), typeof(DX.DecimalValue) ),
-    //( typeof(System.Guid), typeof(DX.StringValue) ),
-
-
-    //( typeof(System.Single), typeof(DX.SingleValue) ),
   ];
 
 
@@ -99,6 +99,9 @@ public static class SimpleValueConverterTest
     { typeof(DXW.NonNegativeDecimalNumberType), typeof(DXW.StartNumberingValue) },
     { typeof(DXW.String255Type), typeof(DXW.DefaultTextBoxFormFieldString) },
     { typeof(DXW.String253Type), typeof(DXW.Aliases) },
+    { typeof(DXW.TwipsMeasureType), typeof(DXM.ColumnSpacing) },
+    { typeof(DXW.HpsMeasureType), typeof(DXW.FontSize) },
+    { typeof(DXW.LongHexNumberType), typeof(DXW.Nsid) },
   };
 
   private static readonly Dictionary<Type, Type> OpenXmlLeafElementConcreteTypes = new Dictionary<Type, Type>
@@ -112,7 +115,9 @@ public static class SimpleValueConverterTest
     { typeof(DX.IntegerValue), typeof(DXM.ArgumentSize) },
     { typeof(DX.ByteValue), typeof(DXD.Charts.Size ) },
     { typeof(DX.UInt16Value), typeof(DXW.NumberingStart ) },
-    { typeof(DX.HexBinaryValue), typeof(DXO10W.DocumentId) },
+    { typeof(DX.DecimalValue), typeof(DX.InkML.Latency ) },
+    { typeof(DX.Base64BinaryValue), typeof(DXW.UniqueTag) },
+    { typeof(DX.HexBinaryValue), typeof(DXW.Panose1Number) },
   };
 
   private enum TestStage

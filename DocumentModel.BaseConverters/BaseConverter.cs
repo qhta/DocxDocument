@@ -234,16 +234,16 @@ public abstract class BaseConverter<ModelType>
     if (value == null) return null;
 
     var sourceType = value.GetType();
-    Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
+    //Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
 
     var targetSubType = Nullable.GetUnderlyingType(targetType) ?? targetType;
     while (targetSubType != null)
     {
-      Debug.WriteLine($"Search for conversion from {sourceType.FullName} to {targetSubType.FullName}");
+      //Debug.WriteLine($"Search for conversion from {sourceType.FullName} to {targetSubType.FullName}");
 
       if (ConversionToMap.TryGetValue((sourceType, targetSubType), out var conversionFunc))
       {
-        Debug.WriteLine($"Converting from {sourceType.FullName} to {targetSubType.FullName}");
+        //Debug.WriteLine($"Converting from {sourceType.FullName} to {targetSubType.FullName}");
         return conversionFunc(value, targetType);
       }
 
@@ -290,16 +290,16 @@ public abstract class BaseConverter<ModelType>
     if (sourceType == targetType)
       return value;
 
-    Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
+    //Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
 
     var sourceSubType = Nullable.GetUnderlyingType(sourceType) ?? sourceType;
     while (sourceSubType != null)
     {
-      Debug.WriteLine($"Search for conversion from {sourceSubType.FullName} to {targetType.FullName}");
+      //Debug.WriteLine($"Search for conversion from {sourceSubType.FullName} to {targetType.FullName}");
 
       if (ConversionFromMap.TryGetValue((sourceSubType, targetType), out var conversionFunc))
       {
-        Debug.WriteLine($"Converting from {sourceType.FullName} to {sourceSubType.FullName}");
+        //Debug.WriteLine($"Converting from {sourceType.FullName} to {sourceSubType.FullName}");
         return conversionFunc(value);
       }
 

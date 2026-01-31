@@ -38,7 +38,7 @@
 [JsonConverter(typeof(HexIntJsonConverter))]
 public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
 {
-  private readonly int value;
+  private readonly uint value;
 
   /// <summary>
   /// Converts the specified hexadecimal string to its <see cref="HexInt"/> equivalent.
@@ -80,7 +80,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </exception>
   public HexInt(string val)
   {
-    value = int.Parse(val, NumberStyles.HexNumber);
+    value = uint.Parse(val, NumberStyles.HexNumber);
   }
 
   /// <summary>
@@ -95,7 +95,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </remarks>
   public HexInt(int value)
   {
-    this.value = value;
+    this.value = (uint)value;
   }
 
   /// <summary>
@@ -110,7 +110,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </remarks>
   public HexInt(uint value)
   {
-    this.value = (int)value;
+    this.value = (uint)value;
   }
 
   /// <summary>
@@ -125,7 +125,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </remarks>
   public HexInt(ulong value)
   {
-    this.value = (int)value;
+    this.value = (uint)value;
   }
 
   #region IConvertible Implementation
@@ -239,7 +239,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public int ToInt32(IFormatProvider? provider)
   {
-    return value;
+    return (Int32)value;
   }
 
   /// <summary>
@@ -428,7 +428,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// <returns>The underlying int32 value.</returns>
   public static implicit operator Int32(HexInt val)
   {
-    return val.value;
+    return (Int32)val.value;
   }
 
   /// <summary>
@@ -544,6 +544,6 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </returns>
   public override int GetHashCode()
   {
-    return value;
+    return (Int32)value;
   }
 }

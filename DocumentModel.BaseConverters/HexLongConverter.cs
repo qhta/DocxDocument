@@ -1,401 +1,519 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for HexLong values (large hexadecimal integers) in Open XML.
+/// Provides conversion methods for HexLong value to/from Open XML.
 /// </summary>
 public static class HexLongConverter
 {
+  private static readonly ConversionMethodInfo[] supportedTypes =
+  [
+    new(typeof(DX.SByteValue), nameof(ConvertFromSByteValue), nameof(ConvertToSByteValue)),
+    new(typeof(DX.Int16Value), nameof(ConvertFromInt16Value), nameof(ConvertToInt16Value)),
+    new(typeof(DX.Int32Value), nameof(ConvertFromInt32Value), nameof(ConvertToInt32Value)),
+    new(typeof(DX.Int64Value), nameof(ConvertFromInt64Value), nameof(ConvertToInt64Value)),
+    new(typeof(DX.IntegerValue), nameof(ConvertFromIntegerValue), nameof(ConvertToIntegerValue)),
+    new(typeof(DX.ByteValue), nameof(ConvertFromByteValue), nameof(ConvertToByteValue)),
+    new(typeof(DX.UInt16Value), nameof(ConvertFromUInt16Value), nameof(ConvertToUInt16Value)),
+    new(typeof(DX.UInt32Value), nameof(ConvertFromUInt32Value), nameof(ConvertToUInt32Value)),
+    new(typeof(DX.UInt64Value), nameof(ConvertFromUInt64Value), nameof(ConvertToUInt64Value)),
+    new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
+    new(typeof(DX.HexBinaryValue), nameof(ConvertFromHexBinaryValue), nameof(ConvertToHexBinaryValue)),
+    new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
+    new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
+    new(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
+  ];
 
-  #region HexLong get/set methods
+  internal static readonly ConversionToMap ConversionToMap = new();
+  internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Retrieves a HexLong value from a child element within an OpenXmlCompositeElement.
-  /// Checks for LongHexNumberType elements or elements with a "Val" property compatible with hex strings.
+  /// Initializes the conversion maps for <see cref="HexLongConverter"/>.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
-  /// <param name="openXmlElement">The parent composite element.</param>
-  /// <returns>A HexLong value, or null if the element or value is not found.</returns>
-  public static HexLong? GetHexLongVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where OpenXmlElementType : DX.OpenXmlLeafElement
+  static HexLongConverter()
   {
-    if (openXmlElement != null)
-    {
-      var element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
-      if (element is DXW.LongHexNumberType longHexNumberType)
-      {
-        if (longHexNumberType.Val?.Value != null)
-          return new HexLong(longHexNumberType.Val.Value!);
-      }
-      else
-      if (element != null)
-      {
-        var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
-        Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(OpenXmlElementType)} not found");
-        var val = valProperty.GetValue(element);
-        if (val != null)
-        {
-          var valType = val.GetType();
-          var valueProperty = valType.GetProperty("Value");
-          Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
-          var value = valueProperty.GetValue(val);
-          if (value is string str)
-          {
-            return new HexLong(str);
-          }
-        }
-      }
-    }
-    return null;
+    ConverterBase.RegisterConversionMethods(typeof(HexLongConverter), typeof(HexLong), supportedTypes, ConversionToMap, ConversionFromMap);
+  }
+
+
+  #region SByteValue conversion.
+
+  /// <summary>
+  /// Converts an OpenXml sByteValue to HexLong.
+  /// </summary>
+  /// <param name="sByteValue">The sByteValue to convert.</param>
+  /// <returns>The HexLong value, or null if the element has no content.</returns>
+  public static HexLong? ConvertFromSByteValue(DX.SByteValue? sByteValue)
+  {
+    if (sByteValue == null) return null;
+    if (sByteValue.Value < 0)
+      throw new OverflowException($"Value {sByteValue.Value} is out of range for HexLong");
+
+    return (HexLong)sByteValue.Value;
   }
 
   /// <summary>
-  /// Sets a HexLong value on a child element within an OpenXmlCompositeElement.
-  /// Creates the element if it doesn't exist, or removes it if the value is null.
-  /// Supports LongHexNumberType, HexBinaryValue, and StringValue properties.
+  /// Creates an OpenXml SByteValue from an HexLong value.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
-  /// <param name="openXmlElement">The parent composite element.</param>
-  /// <param name="value">The HexLong value to set.</param>
-  /// <exception cref="InvalidOperationException">Thrown if the "Val" property type is unsupported.</exception>
-  public static void SetHexLongVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement openXmlElement, HexLong? value) where OpenXmlElementType : DX.OpenXmlElement
-  {
-    if (value != null)
-    {
-      var element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
-      if (element == null)
-      {
-        var constructor = typeof(OpenXmlElementType).GetConstructor(new Type[0]);
-        Debug.Assert(constructor != null, $"Type {typeof(OpenXmlElementType)} must have constructor with no parameters");
-        element = (OpenXmlElementType)constructor.Invoke(new object[0]);
-        openXmlElement.AppendChild(element);
-      }
-      var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
-      Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(OpenXmlElementType)} not found");
-      var valType = valProperty.PropertyType;
-      if (valType == typeof(DXW.LongHexNumberType))
-      {
-        DXW.LongHexNumberType? propElement = (DXW.LongHexNumberType?)valType.GetConstructor(new Type[0])?.Invoke(new object[0]);
-        Debug.Assert(propElement != null, $"\"{valType}\" type must have a parameterless constructor");
-        propElement.Val = new DX.HexBinaryValue(value.ToString());
-        valProperty.SetValue(element, propElement);
-      }
-      else
-      if (valType == typeof(DX.HexBinaryValue))
-        valProperty.SetValue(element, new DX.HexBinaryValue(value.ToString()));
-      else
-      if (valType == typeof(DX.StringValue))
-        valProperty.SetValue(element, new DX.StringValue(value.ToString()));
-      else
-        throw new InvalidOperationException($"\"Value\" property of type {valType} unsupported");
-    }
-    else
-    {
-      var _element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
-      if (_element != null)
-        _element.Remove();
-    }
-  }
-  #endregion
-
-  #region HexBinaryValue get/set methods.
-
-  /// <summary>
-  /// Retrieves a HexLong value from a HexBinaryValue element.
-  /// </summary>
-  /// <param name="element">The HexBinaryValue element.</param>
-  /// <returns>A HexLong value, or null if element or value is null.</returns>
-  public static HexLong? GetValue(this DX.HexBinaryValue? element)
-  {
-    if (element?.Value != null)
-      return element.Value;
-    return null;
-  }
-
-  /// <summary>
-  /// Sets a HexLong value on a child element within an OpenXmlCompositeElement.
-  /// Creates or updates the child element based on the value.
-  /// </summary>
-  /// <typeparam name="OpenElementType">The type of the child element.</typeparam>
-  /// <param name="openXmlElement">The parent composite element.</param>
-  /// <param name="value">The HexLong value to set.</param>
-  public static void SetValue<OpenElementType>(this DX.OpenXmlCompositeElement openXmlElement, HexLong? value)
-    where OpenElementType : DX.OpenXmlElement, new()
-  {
-    var valProperty = typeof(OpenElementType).GetProperty("Val") ?? typeof(OpenElementType).GetProperty("Value");
-    Debug.Assert(valProperty != null);
-    var itemElement = openXmlElement.GetFirstChild<OpenElementType>();
-    if (itemElement != null)
-    {
-      if (value != null)
-        valProperty.SetValue(itemElement, HexLongConverter.CreateHexBinaryValue(value));
-      else
-        itemElement.Remove();
-    }
-    else
-    if (value != null)
-    {
-      itemElement = new OpenElementType();
-      valProperty.SetValue(itemElement, new DX.HexBinaryValue(value.ToString()));
-      openXmlElement.AppendChild(itemElement);
-    }
-  }
-
-  /// <summary>
-  /// Retrieves a HexLong value from an Int32Value element (interpreting integer as hex if applicable).
-  /// Note: This method currently returns the string representation of the integer value.
-  /// </summary>
-  /// <param name="element">The Int32Value element.</param>
-  /// <returns>A HexLong value, or null if element or value is null.</returns>
-  public static HexLong? GetValue(this DX.Int32Value? element)
-  {
-    if (element?.Value != null)
-      return element.Value;
-    return null;
-  }
-
-  /// <summary>
-  /// Retrieves a HexLong value from a LongHexNumberType element.
-  /// </summary>
-  /// <param name="element">The LongHexNumberType element.</param>
-  /// <returns>A HexLong value, or null if element or value is null.</returns>
-  public static HexLong? GetValue(this DXW.LongHexNumberType? element)
-  {
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    return null;
-  }
-
-  /// <summary>
-  /// Retrieves a HexLong value from a StringValue element.
-  /// </summary>
-  /// <param name="element">The StringValue element.</param>
-  /// <returns>A HexLong value, or null if element or value is null.</returns>
-  public static HexLong? GetValue(this DX.StringValue? element)
-  {
-    if (element?.Value != null)
-      return element.Value;
-    return null;
-  }
-
-  /// <summary>
-  /// Retrieves a HexLong value from an OpenXmlLeafElement that has a property of HexBinaryValue type.
-  /// </summary>
-  /// <param name="openXmlElement">The OpenXmlLeafElement.</param>
-  /// <returns>A HexLong value, or null if property not found or value is null.</returns>
-  public static HexLong? GetValue(this DX.OpenXmlLeafElement? openXmlElement)
-  {
-    var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item => item.PropertyType == typeof(DX.HexBinaryValue));
-    if (valProperty != null)
-    {
-      var value = valProperty.GetValue(openXmlElement);
-      if (value is string valStr)
-        return valStr;
-      if (value is DX.HexBinaryValue hexBinaryValue && hexBinaryValue.Value != null)
-        return hexBinaryValue.Value;
-    }
-    return null;
-  }
-
-  /// <summary>
-  /// Creates a HexBinaryValue from a HexLong value.
-  /// </summary>
-  /// <param name="value">The HexLong value.</param>
-  /// <returns>A new HexBinaryValue, or null if the input value is null.</returns>
-  public static DX.HexBinaryValue? CreateHexBinaryValue(this HexLong? value)
-  {
-    if (value != null) return new DX.HexBinaryValue(value.ToString());
-    return null;
-  }
-
-  /// <summary>
-  /// Creates a StringValue from a HexLong value.
-  /// </summary>
-  /// <param name="value">The HexLong value.</param>
-  /// <returns>A new StringValue, or null if the input value is null.</returns>
-  public static DX.StringValue? CreateStringValue(this HexLong? value)
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <returns>A new SByteValue, or null if the input is null.</returns>
+  public static DX.SByteValue? ConvertToSByteValue(HexLong? value)
   {
     if (value == null) return null;
-    return new DX.StringValue { Value = value.ToString() };
+    if (value > SByte.MaxValue)
+      throw new OverflowException($"Value {value} is out of range for SByte");
+
+    return new DX.SByteValue { Value = (SByte)value };
   }
 
+  #endregion
+
+  #region Int16Value conversion.
 
   /// <summary>
-  /// Creates a specific HexBinaryType element from a HexLong value.
+  /// Converts an OpenXml Int16Value to HexLong.
   /// </summary>
-  /// <typeparam name="HexBinaryType">The type of the element to create (e.g., LongHexNumberType).</typeparam>
-  /// <param name="value">The HexLong value.</param>
-  /// <returns>A new instance of the element type, or null if the input value is null.</returns>
-  public static HexBinaryType? CreateValue<HexBinaryType>(this HexLong? value)
-    where HexBinaryType : DXW.LongHexNumberType, new()
+  /// <param name="int16Value">The Int16Value to convert.</param>
+  /// <returns>The HexLong int16Value, or null if the element has no content.</returns>
+  public static HexLong? ConvertFromInt16Value(DX.Int16Value? int16Value)
   {
-    if (value != null)
-    {
-      var element = new HexBinaryType();
-      element.Val = new DX.HexBinaryValue(value.ToString());
-      return element;
-    }
-    return null;
+    if (int16Value == null) return null;
+    if (int16Value < 0)
+      throw new OverflowException($"Value {int16Value} is out of range for HexLong");
+
+    return (HexLong)int16Value.Value;
   }
 
   /// <summary>
-  /// Creates a generic OpenXml element and sets its HexBinaryValue property from a HexLong value.
+  /// Creates an OpenXml Int16Value from an HexLong value.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType">The type of the OpenXml element to create.</typeparam>
-  /// <param name="value">The HexLong value.</param>
-  /// <returns>A new instance of the element type, or a default instance if value is null.</returns>
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(this HexLong? value)
-    where OpenXmlElementType : DX.OpenXmlElement, new()
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <returns>A new Int16Value, or null if the input is null.</returns>
+  public static DX.Int16Value? ConvertToInt16Value(HexLong? value)
   {
-    var newValue = new DX.HexBinaryValue(value.ToString());
-    var element = new OpenXmlElementType();
-    var valProperty = typeof(OpenXmlElementType).GetProperties().FirstOrDefault(item => item.PropertyType == typeof(DX.HexBinaryValue));
-    if (valProperty != null)
-      valProperty.SetValue(element, newValue);
+    if (value == null) return null;
+    if (value > (UInt64)Int16.MaxValue)
+      throw new OverflowException($"Value {value} is out of range for Int16");
+
+    return new DX.Int16Value { Value = (Int16)value };
+  }
+
+  #endregion
+
+  #region Int32Value conversion.
+
+  /// <summary>
+  /// Converts an OpenXml int32Value to HexLong.
+  /// </summary>
+  /// <param name="int32Value">The int32Value to convert.</param>
+  /// <returns>The HexLong value, or null if the element has no content.</returns>
+  public static HexLong? ConvertFromInt32Value(DX.Int32Value? int32Value)
+  {
+    if (int32Value == null) return null;
+    return new HexLong(int32Value.Value);
+  }
+
+  /// <summary>
+  /// Creates an OpenXml Int32Value from an HexLong value.
+  /// </summary>
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <returns>A new Int32Value, or null if the input is null.</returns>
+  public static DX.Int32Value? ConvertToInt32Value(HexLong? value)
+  {
+    if (value == null) return null;
+    if (value > (UInt64)Int32.MaxValue)
+      throw new OverflowException($"Value {value} is out of range for Int32");
+
+    return new DX.Int32Value { Value = (Int32)(UInt32)value };
+  }
+
+  #endregion
+
+  #region Int64Value conversion.
+
+  /// <summary>
+  /// Converts an OpenXml int64Value to HexLong.
+  /// </summary>
+  /// <param name="int64Value">The int64Value to convert.</param>
+  /// <returns>The HexLong value, or null if the element has no content.</returns>
+  public static HexLong? ConvertFromInt64Value(DX.Int64Value? int64Value)
+  {
+    if (int64Value == null) return null;
+
+    return new HexLong(int64Value.Value);
+  }
+
+  /// <summary>
+  /// Creates an OpenXml Int64Value from an HexLong value.
+  /// </summary>
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <returns>A new Int64Value, or null if the input is null.</returns>
+  public static DX.Int64Value? ConvertToInt64Value(HexLong? value)
+  {
+    if (value == null) return null;
+
+    return new DX.Int64Value { Value = (Int64)(UInt64)value };
+  }
+
+  #endregion
+
+  #region IntegerValue conversion.
+
+  /// <summary>
+  /// Converts an OpenXml integerValue to HexLong.
+  /// </summary>
+  /// <param name="integerValue">The integerValue to convert.</param>
+  /// <returns>The HexLong value, or null if the element has no content.</returns>
+  public static HexLong? ConvertFromIntegerValue(DX.IntegerValue? integerValue)
+  {
+    if (integerValue == null) return null;
+    return new HexLong(integerValue.Value);
+  }
+
+  /// <summary>
+  /// Creates an OpenXml IntegerValue from an HexLong value.
+  /// </summary>
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <returns>A new IntegerValue, or null if the input is null.</returns>
+  public static DX.IntegerValue? ConvertToIntegerValue(HexLong? value)
+  {
+    if (value == null) return null;
+
+    return new DX.IntegerValue { Value = (Int64)(UInt64)value };
+  }
+
+  #endregion
+
+  #region ByteValue conversion.
+
+  /// <summary>
+  /// Converts an OpenXml byteValue to HexLong.
+  /// </summary>
+  /// <param name="byteValue">The byteValue to convert.</param>
+  /// <returns>The HexLong value, or null if the element has no content.</returns>
+  public static HexLong? ConvertFromByteValue(DX.ByteValue? byteValue)
+  {
+    if (byteValue == null) return null;
+
+    return new HexLong(byteValue.Value);
+  }
+
+  /// <summary>
+  /// Creates an OpenXml ByteValue from an HexLong value.
+  /// </summary>
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <returns>A new ByteValue, or null if the input is null.</returns>
+  public static DX.ByteValue? ConvertToByteValue(HexLong? value)
+  {
+    if (value == null) return null;
+    if (value < 0 || value > Byte.MaxValue)
+      throw new OverflowException($"Value {value} is out of range for Byte");
+
+    return new DX.ByteValue { Value = (Byte)value };
+  }
+
+  #endregion
+
+  #region UInt16Value conversion.
+
+  /// <summary>
+  /// Converts an OpenXml UInt16Value to HexLong.
+  /// </summary>
+  /// <param name="uInt16Value">The uInt16Value to convert.</param>
+  /// <returns>The HexLong value, or null if the element has no content.</returns>
+  public static HexLong? ConvertFromUInt16Value(DX.UInt16Value? uInt16Value)
+  {
+    if (uInt16Value == null) return null;
+
+    return new HexLong(uInt16Value.Value);
+  }
+
+  /// <summary>
+  /// Creates an OpenXml UInt16Value from an HexLong value.
+  /// </summary>
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <returns>A new UInt16Value, or null if the input is null.</returns>
+  public static DX.UInt16Value? ConvertToUInt16Value(HexLong? value)
+  {
+    if (value == null) return null;
+    if ((UInt64)value > UInt16.MaxValue)
+      throw new OverflowException($"Value {value} is out of range for UInt16");
+
+    return new DX.UInt16Value { Value = (UInt16)value };
+  }
+
+  #endregion
+
+  #region UInt32Value conversion.
+
+  /// <summary>
+  /// Converts an OpenXml uInt32Value to HexLong.
+  /// </summary>
+  /// <param name="uInt32Value">The uInt32Value to convert.</param>
+  /// <returns>The HexLong value, or null if the element has no content.</returns>
+  public static HexLong? ConvertFromUInt32Value(DX.UInt32Value? uInt32Value)
+  {
+    if (uInt32Value == null) return null;
+
+    return new HexLong(uInt32Value.Value);
+  }
+
+  /// <summary>
+  /// Creates an OpenXml HexLongValue from an HexLong value.
+  /// </summary>
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <returns>A new HexLongValue, or null if the input is null.</returns>
+  public static DX.UInt32Value? ConvertToUInt32Value(HexLong? value)
+  {
+    if (value == null) return null;
+    if ((UInt64)value > UInt32.MaxValue)
+      throw new OverflowException($"Value {value} is out of range for UInt32");
+    return new DX.UInt32Value { Value = (UInt32)(UInt64)value };
+  }
+
+  #endregion
+
+  #region UInt64Value conversion.
+
+  /// <summary>
+  /// Converts an OpenXml UInt64Value to HexLong.
+  /// </summary>
+  /// <param name="uInt64Value">The uInt64Value to convert.</param>
+  /// <returns>The HexLong value, or null if the element has no content.</returns>
+  public static HexLong? ConvertFromUInt64Value(DX.UInt64Value? uInt64Value)
+  {
+    if (uInt64Value == null) return null;
+
+    return new HexLong(uInt64Value.Value);
+  }
+
+  /// <summary>
+  /// Creates an OpenXml UInt64Value from an HexLong value.
+  /// </summary>
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <returns>A new UInt64Value, or null if the input is null.</returns>
+  public static DX.UInt64Value? ConvertToUInt64Value(HexLong? value)
+  {
+    if (value == null) return null;
+
+    return new DX.UInt64Value { Value = (UInt64)value };
+  }
+
+  #endregion
+
+  #region StringValue conversion.
+
+  /// <summary>
+  /// Converts an OpenXml StringValue to HexLong.
+  /// </summary>
+  /// <param name="StringValue">The StringValue to convert.</param>
+  /// <returns>The HexLong value, or null if the element has no content.</returns>
+  public static HexLong? ConvertFromStringValue(DX.StringValue? StringValue)
+  {
+    if (StringValue == null) return null;
+    var text = StringValue.Value;
+
+    if (text == null)
+      throw new InvalidOperationException("StringValue has no content.");
+
+    return new HexLong(text);
+  }
+
+  /// <summary>
+  /// Creates an OpenXml StringValue from an HexLong value.
+  /// </summary>
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+  /// <returns>A new StringValue, or null if the input is null.</returns>
+  public static DX.StringValue? ConvertToStringValue(HexLong? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    var text = value.ToString()!;
+    var element = (DX.StringValue)Activator.CreateInstance(targetType)!;
+    element.Value = text;
     return element;
   }
+
   #endregion
 
-  #region OpenXmlLeafElement with Val property conversion methods
+  #region OpenXmlLeafTextElement conversion.
+
   /// <summary>
-  /// Retrieves a HexLong value from a specific OpenXmlLeafElement instance using its "Val" property.
+  /// Converts an OpenXml OpenXmlLeafTextElement to HexLong.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType">The type of the OpenXmlLeafElement.</typeparam>
-  /// <param name="openXmlElement">The element instance.</param>
-  /// <param name="propName">The property name to read from (default is "Val").</param>
-  /// <returns>A HexLong value, or null if not found.</returns>
-  public static HexLong? GetHexLongVal<OpenXmlElementType> (this DX.OpenXmlLeafElement? openXmlElement, 
-    string? propName = null) 
-    where OpenXmlElementType : DX.OpenXmlLeafElement
+  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The HexLong value, or null if the element has no content.</returns>
+  public static HexLong? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
   {
-    if (openXmlElement != null)
-    {
-      var element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
-      if (element != null)
-      {
-        if (propName==null) propName = "Val";
-        var valProperty = typeof(OpenXmlElementType).GetProperty(propName);
-        Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(OpenXmlElementType)} not found");
-        var val = valProperty.GetValue(element);
-        if (val != null)
-        {
-          var valType = val.GetType();
-          var valueProperty = valType.GetProperty("Value");
-          Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
-          var value = valueProperty.GetValue(val);
-          if (value is not null)
-          {
-            if (value is string str)
-              return str;
-          }
-        }
-      }
-    }
-    return null;
+    if (OpenXmlLeafTextElement == null) return null;
+    var text = OpenXmlLeafTextElement.Text;
+
+    return new HexLong(text);
   }
 
   /// <summary>
-  /// Sets a HexLong value on a specific OpenXmlLeafElement instance using its "Val" property.
-  /// Adds the child element if needed, or removes it if the value is null.
+  /// Creates an OpenXml OpenXmlLeafTextElement from an HexLong value.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
-  /// <param name="openXmlElement">The parent element.</param>
-  /// <param name="value">The string value to set.</param>
-  /// <param name="propName">The property name to set (default is "Val").</param>
-  public static void SetHexLongVal<OpenXmlElementType>(this DX.OpenXmlLeafElement openXmlElement, String? value,
-    string? propName = null) 
-    where OpenXmlElementType : DX.OpenXmlLeafElement, new()
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+  public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexLong? value, Type targetType)
   {
-    if (propName==null)
-      propName = "Val";
-    var valProperty = typeof(OpenXmlElementType).GetProperty(propName);
-    Debug.Assert(valProperty != null);
-    var itemElement = openXmlElement.GetFirstChild<OpenXmlElementType>();
-    if (itemElement != null)
+    if (value == null) return null;
+
+    // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+    var text = ((HexLong)value).ToString()!;
+    var element = (DX.OpenXmlLeafTextElement)Activator.CreateInstance(targetType)!;
+    element.Text = text;
+    return element;
+  }
+
+  #endregion
+
+  #region HexBinaryValue conversion.
+
+  /// <summary>
+  /// Converts an OpenXml HexBinaryValue to HexLong.
+  /// </summary>
+  /// <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
+  /// <returns>The HexLong value, or null if the element has no content.</returns>
+  public static HexLong? ConvertFromHexBinaryValue(DX.HexBinaryValue? HexBinaryValue)
+  {
+    if (HexBinaryValue == null) return null;
+    var text = HexBinaryValue.Value;
+    if (text==null)
+      throw new InvalidOperationException("HexBinaryValue has no content.");
+
+    return new HexLong(text);
+  }
+
+  /// <summary>
+  /// Creates an OpenXml HexBinaryValue from an HexLong value.
+  /// </summary>
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+  /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
+  public static DX.HexBinaryValue? ConvertToHexBinaryValue(HexLong? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+    var text = ((HexLong)value).ToString()!;
+    var element = (DX.HexBinaryValue)Activator.CreateInstance(targetType)!;
+    element.Value = text;
+    return element;
+  }
+
+  #endregion
+
+  #region OpenXmlLeafElement conversion.
+
+  /// <summary>
+  /// Converts an OpenXml OpenXmlLeafElement to HexLong.
+  /// </summary>
+  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+  /// <returns>The HexLong value, or null if the element has no content.</returns>
+  public static HexLong? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
+  {
+    if (OpenXmlLeafElement == null) return null;
+
+    var sourceType = OpenXmlLeafElement.GetType();
+    var valProp = OpenXmlLeafElement.GetType().GetProperty("Val");
+    if (valProp == null)
     {
-      if (value != null)
-        valProperty.SetValue(itemElement, new DX.HexBinaryValue(value));
+      var allProps = sourceType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+      if (allProps.Length == 1)
+        valProp = allProps[0];
       else
-        itemElement.Remove();
+        throw new InvalidOperationException($"OpenXmlLeafElement of type {sourceType} does not have a string Val property");
     }
-    else
-    if (value != null)
-    {
-      itemElement = new OpenXmlElementType();
-      valProperty.SetValue(itemElement, new DX.StringValue(value));
-      openXmlElement.AppendChild(itemElement);
-    }
-  }
-  #endregion
 
-  #region OpenXmlLeafElement with Val property conversion methods
-  /// <summary>
-  /// Retrieves a HexLong value from a specific child element of a composite element.
-  /// </summary>
-  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
-  /// <param name="openXmlElement">The parent composite element.</param>
-  /// <param name="propName">The property name to read from (default is "Val").</param>
-  /// <returns>A HexLong value, or null if not found.</returns>
-  public static HexLong? GetHexLongVal<OpenXmlElementType> (this DX.OpenXmlCompositeElement? openXmlElement, 
-    string? propName = null) 
-    where OpenXmlElementType : DX.OpenXmlLeafElement
-  {
-    if (openXmlElement != null)
-    {
-      var element = openXmlElement.Elements<OpenXmlElementType>().FirstOrDefault();
-      if (element != null)
-      {
-        if (propName==null) propName = "Val";
-        var valProperty = typeof(OpenXmlElementType).GetProperty(propName);
-        Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(OpenXmlElementType)} not found");
-        var val = valProperty.GetValue(element);
-        if (val != null)
-        {
-          var valType = val.GetType();
-          var valueProperty = valType.GetProperty("Value");
-          Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
-          var value = valueProperty.GetValue(val);
-          if (value is not null)
-          {
-            if (value is string str)
-              return str;
-          }
-        }
-      }
-    }
-    return null;
+    var value = valProp.GetValue(OpenXmlLeafElement);
+    var convertedValue = ConvertFrom(value);
+    return (HexLong)convertedValue!;
   }
 
   /// <summary>
-  /// Sets a HexLong value on a specific child element of a composite element.
-  /// Adds the child element if needed, or removes it if the value is null.
+  /// Creates an OpenXml OpenXmlLeafElement from an HexLong value.
   /// </summary>
-  /// <typeparam name="OpenXmlElementType">The type of the child element.</typeparam>
-  /// <param name="openXmlElement">The parent composite element.</param>
-  /// <param name="value">The string value to set.</param>
-  /// <param name="propName">The property name to set (default is "Val").</param>
-  public static void SetHexLongVal<OpenXmlElementType>(this DX.OpenXmlCompositeElement openXmlElement, String? value,
-    string? propName = null) 
-    where OpenXmlElementType : DX.OpenXmlLeafElement, new()
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
+  public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(HexLong? value, Type targetType)
   {
-    if (propName==null)
-      propName = "Val";
-    var valProperty = typeof(OpenXmlElementType).GetProperty(propName);
-    Debug.Assert(valProperty != null);
-    var itemElement = openXmlElement.GetFirstChild<OpenXmlElementType>();
-    if (itemElement != null)
+    if (value == null) return null;
+
+    var element = (DX.OpenXmlLeafElement)Activator.CreateInstance(targetType)!;
+    var valProp = element.GetType().GetProperty("Val");
+    if (valProp == null)
     {
-      if (value != null)
-        valProperty.SetValue(itemElement, new DX.HexBinaryValue(value));
+      var allProps = targetType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+      if (allProps.Length == 1)
+        valProp = allProps[0];
       else
-        itemElement.Remove();
+        throw new InvalidOperationException($"OpenXmlLeafElement of type {element.GetType()} does not have a string Val property");
     }
-    else
-    if (value != null)
-    {
-      itemElement = new OpenXmlElementType();
-      valProperty.SetValue(itemElement, new DX.StringValue(value));
-      openXmlElement.AppendChild(itemElement);
-    }
+    var convertedValue = ConvertTo(value, valProp.PropertyType);
+    valProp.SetValue(element, convertedValue);
+    return element;
   }
+
   #endregion
 
+  #region String conversion.
+
+  /// <summary>
+  /// Converts the specified string representation of a number to its HexLongequivalent.
+  /// </summary>
+  /// <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+  /// <returns>A HexLong integer equivalent to the number contained in the input string, or null if the input is null or
+  /// not a valid integer.</returns>
+  private static HexLong? ConvertFromString(string? value)
+  {
+    if (value == null) return null;
+    return new HexLong(value);
+  }
+
+  /// <summary>
+  /// Converts a nullable HexLong value to its string representation.
+  /// </summary>
+  /// <param name="value">The nullable HexLong value to convert. If null, the method returns null.</param>
+  /// <returns>A string representation of the specified value, or null if the value is null.</returns>
+  private static String? ConvertToString(HexLong? value)
+  {
+    if (value == null) return null;
+
+    var text = value.ToString()!;
+    return text;
+  }
+
+  #endregion
+
+  #region Generic OpenXml conversion methods
+
+  /// <summary>
+  /// Converts an HexLong value to the specified target type using standard type conversion.
+  /// </summary>
+  /// <param name="value">The HexLong value to convert.</param>
+  /// <param name="targetType">The target type to convert to.</param>
+  /// <returns>The converted value, or null if the input is null.</returns>
+  /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
+  public static object? ConvertTo(HexLong? value, Type targetType)
+  {
+    return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
+  }
+
+  /// <summary>
+  /// Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
+  /// </summary>
+  /// <param name="value">The value to convert to an <see cref="HexLong"/>. Can be <see langword="null"/>.</param>
+  /// <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
+  /// is <see langword="null"/>.</returns>
+  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="HexLong"/> is not supported.</exception>
+  public static HexLong? ConvertFrom(object? value)
+  {
+    return (HexLong?)ConverterBase.ConvertFrom(value, typeof(HexLong), ConversionFromMap);
+  }
+
+  #endregion
 }
