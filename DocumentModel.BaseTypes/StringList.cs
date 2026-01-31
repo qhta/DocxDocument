@@ -30,11 +30,13 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <remarks>
   /// The string is split by commas, and each resulting substring is added as a separate item in the list.
   /// </remarks>
-  public StringList(string str)
+  public StringList(string? str)
   {
+    if (str == null)
+      return;
     var ss = str.Split(',');
     foreach (var s in ss)
-    { _list.Add(s.Trim()); }
+    { _list.Add(s); }
   }
 
 
@@ -44,7 +46,17 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   public StringList(IEnumerable<string> strs)
   {
     foreach (var s in strs)
-    { _list.Add(s.Trim()); }
+    { _list.Add(s); }
+  }
+
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="StringList"/> class with an array of strings.
+  /// </summary>
+  public StringList(params string[] strs)
+  {
+    foreach (var s in strs)
+    { _list.Add(s); }
   }
 
   /// <summary>
@@ -151,7 +163,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// </remarks>
   public override string ToString()
   {
-    return String.Join(", ", _list.ToArray());
+    return String.Join(",", _list.ToArray());
   }
 
   /// <summary>
