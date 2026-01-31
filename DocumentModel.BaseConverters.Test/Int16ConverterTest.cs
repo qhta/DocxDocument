@@ -127,7 +127,7 @@ public static class Int16ConverterTest
         if (testValue < min || testValue > max)
           return true; // Expected exception for out-of-range value
 
-        Console.WriteLine(e.Message + ". ");
+        Console.WriteLine(e.Message);
         return false;
       }
     }

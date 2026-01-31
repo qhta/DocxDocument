@@ -7,7 +7,7 @@ using UInt32Converter = DocumentModel.OpenXml.UInt32Converter;
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="UInt32OpenXmlConverter"/> conversions between .NET UInt32 values and various Open XML numeric types.
+///   Provides unit tests for verifying the correctness of <see cref="UInt32Converter"/> conversions between .NET UInt32 values and various Open XML numeric types.
 ///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
 public static class UInt32ConverterTest
@@ -30,7 +30,7 @@ public static class UInt32ConverterTest
   ];
 
   /// <summary>
-  ///   Runs all UInt32OpenXmlConverter tests for supported types and reports results to the console.
+  ///   Runs all UInt32Converter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -108,7 +108,6 @@ public static class UInt32ConverterTest
           Console.WriteLine("Out-of-range value did not throw an exception. ");
           return false; // Expected exception for out-of-range value
         }
-
         // Convert back to UInt32
         var convertedBackValue = UInt32Converter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
@@ -127,7 +126,7 @@ public static class UInt32ConverterTest
         if (testValue < min || testValue > max)
           return true; // Expected exception for out-of-range value
 
-        Console.WriteLine(e.Message + ". ");
+        Console.WriteLine(e.Message);
         return false;
       }
     }
