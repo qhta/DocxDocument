@@ -2,7 +2,7 @@
 {
   public static void Main(string[] args)
   {
-    ListOpenXmlLeafElements(typeof(DX.HexBinaryValue));
+    ListOpenXmlLeafElements(typeof(DX.SingleValue));
 
     //var analyzer = new AnalyzeTypeMapping();
     //analyzer.ScanPropTypeMappings(typeof(DocumentModel.Wordprocessing.Document).Assembly);
