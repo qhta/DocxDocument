@@ -9,10 +9,19 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace AutoEdit;
 
+/// <summary>
+/// Provides helper methods for discovering namespace aliases in individual source files and project-wide global usings.
+/// </summary>
 static class AliasHelper
 {
   private static readonly ConcurrentDictionary<string, Dictionary<string, string>> GlobalAliasCache = new(StringComparer.OrdinalIgnoreCase);
 
+  /// <summary>
+  /// Builds an alias map from local <c>using</c> directives and cached global aliases for the containing project.
+  /// </summary>
+  /// <param name="filePath">Path to the source file currently being processed.</param>
+  /// <param name="root">The parsed compilation unit for the file.</param>
+  /// <returns>A dictionary mapping alias identifiers to fully-qualified namespaces.</returns>
   public static Dictionary<string, string> BuildAliasMap(string filePath, CompilationUnitSyntax root)
   {
     var map = new Dictionary<string, string>(StringComparer.Ordinal);
@@ -32,6 +41,9 @@ static class AliasHelper
     return map;
   }
 
+  /// <summary>
+  /// Retrieves project-level alias mappings defined in <c>GlobalUsings.cs</c> if present.
+  /// </summary>
   private static Dictionary<string, string> GetGlobalAliases(string filePath)
   {
     var projectDir = FindProjectRoot(Path.GetDirectoryName(filePath)!);
@@ -62,6 +74,11 @@ static class AliasHelper
     });
   }
 
+  /// <summary>
+  /// Finds the nearest ancestor directory that contains a <c>.csproj</c> file.
+  /// </summary>
+  /// <param name="startDir">Directory used as the starting point for the search.</param>
+  /// <returns>The project root directory, or <see langword="null"/> when not found.</returns>
   private static string? FindProjectRoot(string startDir)
   {
     var current = startDir;

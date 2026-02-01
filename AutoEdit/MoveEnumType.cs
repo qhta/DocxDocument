@@ -4,9 +4,16 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace AutoEdit;
 
+/// <summary>
+/// Moves files containing enum declarations into an <c>Enums</c> subdirectory to keep models organized.
+/// </summary>
 public static class MoveEnumType
 {
 
+  /// <summary>
+  /// Relocates the specified file when it contains one or more enum declarations.
+  /// </summary>
+  /// <param name="filePath">Absolute or relative path to the source file to inspect.</param>
   public static void Run(string filePath)
   {
     var code = File.ReadAllText(filePath);

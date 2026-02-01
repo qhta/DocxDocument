@@ -9,8 +9,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+/// <summary>
+/// Scans C# files and removes duplicate XML documentation comments preceding attribute lists.
+/// </summary>
 public static class RemoveDuplicateDocComments
 {
+  /// <summary>
+  /// Runs the duplicate-comment remover over the specified file.
+  /// </summary>
+  /// <param name="filePath">Absolute or relative path to the C# source file.</param>
   public static void Run(string filePath)
   {
     var code = File.ReadAllText(filePath);
@@ -28,10 +35,19 @@ public static class RemoveDuplicateDocComments
   }
 }
 
+/// <summary>
+/// Roslyn rewriter that strips redundant XML documentation trivia before attribute lists.
+/// </summary>
 public class RemoveDuplicateDocCommentsRewriter : CSharpSyntaxRewriter
 {
+  /// <summary>
+  /// Indicates whether the rewriter produced modifications.
+  /// </summary>
   public bool Changed { get; private set; }
 
+  /// <summary>
+  /// Removes duplicate documentation trivia between attribute lists on a property declaration.
+  /// </summary>
   public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node)
   {
     node = (PropertyDeclarationSyntax)base.VisitPropertyDeclaration(node)!;
@@ -66,11 +82,6 @@ public class RemoveDuplicateDocCommentsRewriter : CSharpSyntaxRewriter
     return node;
   }
 
-  private static bool ContainsAttribute(AttributeListSyntax attributeList, string attributeName)
-  {
-    return attributeList.Attributes.Any(attr => attr.Name.ToString().Contains(attributeName, StringComparison.Ordinal));
-  }
-
   private static SyntaxTriviaList RemoveDocTrivia(SyntaxTriviaList triviaList)
   {
     var filtered = new List<SyntaxTrivia>();
@@ -97,6 +108,9 @@ public class RemoveDuplicateDocCommentsRewriter : CSharpSyntaxRewriter
     return SyntaxFactory.TriviaList(filtered);
   }
 
+  /// <summary>
+  /// Determines whether the supplied trivia represents XML documentation.
+  /// </summary>
   private static bool IsDocumentationTrivia(SyntaxTrivia trivia)
   {
     return trivia.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia)
