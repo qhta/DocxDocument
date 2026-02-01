@@ -102,7 +102,6 @@ public static class Base64BinaryConverter
 
   #endregion
 
-
   #region String conversion.
 
   /// <summary>

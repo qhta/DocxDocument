@@ -32,6 +32,7 @@
 public partial class HexBinary : IEquatable<HexBinary>
 {
   private readonly byte[] value = Array.Empty<byte>();
+  private string? mask = null;
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="HexBinary"/> class with an empty byte array.
@@ -67,7 +68,17 @@ public partial class HexBinary : IEquatable<HexBinary>
       return;
     }
 
-    val = val.Replace("-", string.Empty).Replace(" ", string.Empty);
+    if (val.Contains('-'))
+    {
+      var chars = val.ToCharArray();
+      for (int i=0; i < chars.Length; i++)
+      {
+        if (chars[i]!= '-')
+          chars[i] = 'X';
+      }
+      mask = new string(chars);
+      val = val.Replace("-", string.Empty);
+    }
 
     if (val.Length % 2 != 0)
       throw new InvalidOperationException("HexBinary length must be even to convert from string to bytes");
@@ -193,12 +204,31 @@ public partial class HexBinary : IEquatable<HexBinary>
     if (value.Length == 0)
       return string.Empty;
 
-    var sb = new StringBuilder(value.Length * 2);
-    foreach (var b in value)
+    if (mask != null)
     {
-      sb.Append(b.ToString("X2"));
+      var sb = new StringBuilder(mask);
+      int byteIndex = 0;
+      for (int i = 0; i < sb.Length; i++)
+      {
+        if (sb[i] != 'X')
+          continue;
+
+        sb[i] = value[byteIndex].ToString("X2")[0];
+        i++;
+        sb[i] = value[byteIndex].ToString("X2")[1];
+        byteIndex++;
+      }
+      return sb.ToString();
     }
-    return sb.ToString();
+    else
+    {
+      var sb = new StringBuilder(value.Length * 2);
+      foreach (var b in value)
+      {
+        sb.Append(b.ToString("X2"));
+      }
+      return sb.ToString();
+    }
   }
 
   /// <summary>

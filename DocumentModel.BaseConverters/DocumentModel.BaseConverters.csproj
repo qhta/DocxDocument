@@ -14,7 +14,6 @@
     <Compile Remove="Attributes\OpenXmlConvertToAttribute.cs" />
     <Compile Remove="ElementCollectionConverter%28E,T%29.cs" />
     <Compile Remove="ElementCollectionConverter%28T%29.cs" />
-    <Compile Remove="HexRgbConverter .cs" />
     <Compile Remove="IdPartPairConverter.cs" />
     <Compile Remove="Int64ValueConverter.cs" />
     <Compile Remove="ModelElementConverter.cs" />

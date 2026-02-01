@@ -17,7 +17,7 @@ internal class Program
     Console.WriteLine("║   DocumentModel BaseConverters Test Suite        ║");
     Console.WriteLine("╚══════════════════════════════════════════════════╝");
     Console.WriteLine();
-    
+
     if (!BooleanConverterTest.Run())
     {
       Console.WriteLine("\nSome tests failed.");
@@ -26,7 +26,7 @@ internal class Program
     Console.WriteLine();
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
-    
+
     if (!TSBooleanConverterTest.Run())
     {
       Console.WriteLine("\nSome tests failed.");
@@ -155,6 +155,26 @@ internal class Program
     Console.WriteLine();
 
     if (!StringListConverterTest.Run())
+    {
+      Console.WriteLine("\nSome tests failed.");
+      return;
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+    
+    if (!RgbConverterTest.Run())
+    {
+      Console.WriteLine("\nSome tests failed.");
+      return;
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
+    if (!HexBinaryConverterTest.Run())
     {
       Console.WriteLine("\nSome tests failed.");
       return;

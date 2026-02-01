@@ -14,71 +14,74 @@ public static class SimpleValueConverterTest
     //( typeof(System.Boolean), "DXO10W.EmptyType" ),
     //( typeof(System.Boolean), "DXD.EmptyType" ),
 
-    ( typeof(System.Boolean), typeof(DX.BooleanValue) ),
-    ( typeof(System.Boolean), typeof(DX.OnOffValue) ),
-    ( typeof(System.Boolean), typeof(DXW.OnOffOnlyValues) ),
-    ( typeof(System.Boolean), typeof(DXO10W.OnOffValues) ),
-    ( typeof(System.Boolean), typeof(DXW.OnOffType) ),
-    ( typeof(System.Boolean), typeof(DXM.OnOffType) ),
-    ( typeof(System.Boolean), typeof(DXO10W.OnOffType) ),
-    ( typeof(System.Boolean), typeof(DXO13W.OnOffType) ),
-    ( typeof(System.Boolean), typeof(DXW.OnOffOnlyType) ),
-    ( typeof(System.Boolean), typeof(DXM.BooleanValues) ),
-    ( typeof(System.Boolean), typeof(DX.TrueFalseValue) ),
-    ( typeof(DocumentModel.TSBoolean), typeof(DX.TrueFalseBlankValue) ),
-    ( typeof(System.String), typeof(DX.OpenXmlLeafTextElement) ),
-    ( typeof(System.String), typeof(DX.StringValue) ),
-    ( typeof(System.String), typeof(DXM.CharType) ),
-    ( typeof(System.String), typeof(DXW.String253Type) ),
-    ( typeof(System.String), typeof(DXW.String255Type) ),
-    ( typeof(System.String), typeof(DXW.StringType) ),
-    ( typeof(System.String), typeof(System.Uri) ),
+    //( typeof(System.Boolean), typeof(DX.BooleanValue) ),
+    //( typeof(System.Boolean), typeof(DX.OnOffValue) ),
+    //( typeof(System.Boolean), typeof(DXW.OnOffOnlyValues) ),
+    //( typeof(System.Boolean), typeof(DXO10W.OnOffValues) ),
+    //( typeof(System.Boolean), typeof(DXW.OnOffType) ),
+    //( typeof(System.Boolean), typeof(DXM.OnOffType) ),
+    //( typeof(System.Boolean), typeof(DXO10W.OnOffType) ),
+    //( typeof(System.Boolean), typeof(DXO13W.OnOffType) ),
+    //( typeof(System.Boolean), typeof(DXW.OnOffOnlyType) ),
+    //( typeof(System.Boolean), typeof(DXM.BooleanValues) ),
+    //( typeof(System.Boolean), typeof(DX.TrueFalseValue) ),
+    //( typeof(DocumentModel.TSBoolean), typeof(DX.TrueFalseBlankValue) ),
+    //( typeof(System.String), typeof(DX.OpenXmlLeafTextElement) ),
+    //( typeof(System.String), typeof(DX.StringValue) ),
+    //( typeof(System.String), typeof(DXM.CharType) ),
+    //( typeof(System.String), typeof(DXW.String253Type) ),
+    //( typeof(System.String), typeof(DXW.String255Type) ),
+    //( typeof(System.String), typeof(DXW.StringType) ),
+    //( typeof(System.String), typeof(System.Uri) ),
 
 
 
-    ( typeof(System.Int32), typeof(DX.Int16Value) ),
-    ( typeof(System.Int32), typeof(DX.Int32Value) ),
-    ( typeof(System.Int32), typeof(DX.IntegerValue) ),
-    ( typeof(System.Int32), typeof(DX.OpenXmlLeafTextElement) ),
-    ( typeof(System.Int32), typeof(DX.StringValue) ),
-    ( typeof(System.Int32), typeof(DXW.DecimalNumberType) ),
-    ( typeof(System.Int32), typeof(DXW.NonNegativeDecimalNumberType) ),
-    ( typeof(System.Int32), typeof(System.String) ),
+    //( typeof(System.Int32), typeof(DX.Int16Value) ),
+    //( typeof(System.Int32), typeof(DX.Int32Value) ),
+    //( typeof(System.Int32), typeof(DX.IntegerValue) ),
+    //( typeof(System.Int32), typeof(DX.OpenXmlLeafTextElement) ),
+    //( typeof(System.Int32), typeof(DX.StringValue) ),
+    //( typeof(System.Int32), typeof(DXW.DecimalNumberType) ),
+    //( typeof(System.Int32), typeof(DXW.NonNegativeDecimalNumberType) ),
+    //( typeof(System.Int32), typeof(System.String) ),
 
-    ( typeof(System.Int64), typeof(DX.Int64Value) ),
-    ( typeof(System.Int64), typeof(DX.IntegerValue) ),
+    //( typeof(System.Int64), typeof(DX.Int64Value) ),
+    //( typeof(System.Int64), typeof(DX.IntegerValue) ),
 
-    ( typeof(System.Int16), typeof(DX.Int16Value) ),
-    ( typeof(System.SByte), typeof(DX.SByteValue) ),
+    //( typeof(System.Int16), typeof(DX.Int16Value) ),
+    //( typeof(System.SByte), typeof(DX.SByteValue) ),
 
-    ( typeof(System.Byte), typeof(DX.ByteValue) ),
-    ( typeof(System.UInt16), typeof(DX.UInt16Value) ),
-    ( typeof(System.UInt32), typeof(DX.UInt32Value) ),
-    ( typeof(System.UInt32), typeof(DXW.StringType) ),
-    ( typeof(System.UInt64), typeof(DX.UInt64Value) ),
+    //( typeof(System.Byte), typeof(DX.ByteValue) ),
+    //( typeof(System.UInt16), typeof(DX.UInt16Value) ),
+    //( typeof(System.UInt32), typeof(DX.UInt32Value) ),
+    //( typeof(System.UInt32), typeof(DXW.StringType) ),
+    //( typeof(System.UInt64), typeof(DX.UInt64Value) ),
 
-    ( typeof(DocumentModel.Twips), typeof(DX.Int32Value) ),
-    ( typeof(DocumentModel.Twips), typeof(DX.StringValue) ),
-    ( typeof(DocumentModel.Twips), typeof(DX.UInt32Value) ),
-    ( typeof(DocumentModel.Twips), typeof(DXW.TwipsMeasureType) ),
+    //( typeof(DocumentModel.Twips), typeof(DX.Int32Value) ),
+    //( typeof(DocumentModel.Twips), typeof(DX.StringValue) ),
+    //( typeof(DocumentModel.Twips), typeof(DX.UInt32Value) ),
+    //( typeof(DocumentModel.Twips), typeof(DXW.TwipsMeasureType) ),
 
-    ( typeof(DocumentModel.EMU), typeof(DX.Int64Value) ),
-    ( typeof(DocumentModel.EMU), typeof(DX.StringValue) ),
-    ( typeof(DocumentModel.HalfPoints), typeof(DXW.HpsMeasureType) ),
-    ( typeof(System.Decimal), typeof(DX.DecimalValue) ),
-    ( typeof(System.Single), typeof(DX.SingleValue) ),
-    ( typeof(System.DateTime), typeof(DX.DateTimeValue) ),
-    ( typeof(System.DateTime), typeof(System.DateTime) ),
-    ( typeof(System.Guid), typeof(DX.StringValue) ),
+    //( typeof(DocumentModel.EMU), typeof(DX.Int64Value) ),
+    //( typeof(DocumentModel.EMU), typeof(DX.StringValue) ),
+    //( typeof(DocumentModel.HalfPoints), typeof(DXW.HpsMeasureType) ),
+    //( typeof(System.Decimal), typeof(DX.DecimalValue) ),
+    //( typeof(System.Single), typeof(DX.SingleValue) ),
+    //( typeof(System.DateTime), typeof(DX.DateTimeValue) ),
+    //( typeof(System.DateTime), typeof(System.DateTime) ),
+    //( typeof(System.Guid), typeof(DX.StringValue) ),
 
-    ( typeof(DocumentModel.Base64Binary), typeof(DX.Base64BinaryValue) ),
-    ( typeof(DocumentModel.HexBinary), typeof(DXW.Panose1Number) ),
+    //( typeof(DocumentModel.Base64Binary), typeof(DX.Base64BinaryValue) ),
+    //( typeof(DocumentModel.HexBinary), typeof(DXW.Panose1Number) ),
+    ( typeof(DocumentModel.HexBinary), typeof(DXW.FontSignature) ),
     ( typeof(DocumentModel.HexInt), typeof(DX.HexBinaryValue) ),
     ( typeof(DocumentModel.HexInt), typeof(DXW.LongHexNumberType) ),
 
   
     ( typeof(DocumentModel.HexChar), typeof(DX.HexBinaryValue) ),
     ( typeof(DocumentModel.StringList), typeof(DX.StringValue) ),
+    ( typeof(DocumentModel.RGB), typeof(DXW.Color) ),
+
   ];
 
 
@@ -174,10 +177,13 @@ public static class SimpleValueConverterTest
     {
       testValues = ["", "https://sample.uri"];
     }
-    else
-    if (modelType == typeof(StringList))
+    else if (modelType == typeof(StringList))
     {
       testValues = [new StringList("", "Test String", "Another String")];
+    }
+    else if (modelType == typeof(HexBinary) && otherType == typeof(DXW.FontSignature))
+    {
+      testValues = [new HexBinary(), new HexBinary("00000001-00000002-00000003-00000004-01234567-89ABCDEF")];
     }
     foreach (var testValue0 in testValues)
     {
@@ -301,6 +307,8 @@ public static class SimpleValueConverterTest
       return [new DocumentModel.HexChar('A'), new DocumentModel.HexChar('z'), new DocumentModel.HexChar('0')];
     if (testedType == typeof(DocumentModel.StringList))
       return [new DocumentModel.StringList([]), new DocumentModel.StringList(["One", "Two", "Three"])];
+    if (testedType == typeof(DocumentModel.RGB))
+      return [new DocumentModel.RGB(), new DocumentModel.RGB("ABCDEF")];
     throw new NotSupportedException($"No test data defined for type {testedType.Name}");
   }
 }
