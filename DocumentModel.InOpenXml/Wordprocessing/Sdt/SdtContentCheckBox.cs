@@ -10,9 +10,9 @@ public partial class SdtContentCheckBox : ModelElement<DXO10W.SdtContentCheckBox
  /// Indicates whether the checkbox is checked.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.SdtContentCheckBox.Checked))]
- public OnOffKind? Checked { get => _Checked; set => UpdateField(ref _Checked, value, nameof(Checked)); }
+ public Boolean? Checked { get => _Checked; set => UpdateField(ref _Checked, value, nameof(Checked)); }
 
- private OnOffKind? _Checked;
+ private Boolean? _Checked;
  /// <summary>
  /// Symbol used to represent the checked state of the checkbox.
  /// </summary>

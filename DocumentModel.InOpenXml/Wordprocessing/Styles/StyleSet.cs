@@ -17,7 +17,7 @@ public partial class StyleSet : ModelElement<DXO10W.StyleSet>
  /// Value indicating the state or setting of the style set.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.StyleSet.Val))]
- public OnOffKind? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+ public Boolean? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
- private OnOffKind? _Val;
+ private Boolean? _Val;
 }
