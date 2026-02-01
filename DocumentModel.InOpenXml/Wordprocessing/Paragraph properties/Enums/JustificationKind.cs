@@ -1,15 +1,16 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Specifies paragraph justification options for text alignment in WordprocessingML documents.
 /// This enumeration provides values for left, center, right, start, end, justified, Kashida, distributed, and other alignment modes, supporting advanced formatting and layout control for paragraphs and text blocks within document content.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXM.JustificationValues))]
 public enum JustificationKind
 {
   /// <summary>
   /// Align left.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXM.JustificationValues.Left))]
   Left,
   /// <summary>
   /// Align start (logical start of the text direction).
@@ -18,10 +19,12 @@ public enum JustificationKind
   /// <summary>
   /// Align center.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXM.JustificationValues.Center))]
   Center,
   /// <summary>
   /// Align right.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXM.JustificationValues.Right))]
   Right,
   /// <summary>
   /// Align end (logical end of the text direction).

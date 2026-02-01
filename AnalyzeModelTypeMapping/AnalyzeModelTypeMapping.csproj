@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
     <ProjectReference Include="..\DocumentModel.InOpenXml\DocumentModel.InOpenXml.csproj" />
+    <ProjectReference Include="..\NamespaceMappings\NamespaceMappings.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,22 +1,25 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Text Alignment Types
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXDD.TextAlignmentValues))]
 public enum TextAlignmentKind
 {
   /// <summary>
   ///   Text Alignment Enum ( Left ).
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXDD.TextAlignmentValues.Left))]
   Left,
   /// <summary>
   ///   Text Alignment Enum ( Center ).
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXDD.TextAlignmentValues.Center))]
   Center,
   /// <summary>
   ///   Text Alignment Enum ( Right ).
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXDD.TextAlignmentValues.Right))]
   Right,
   /// <summary>
   ///   Text Alignment Enum ( Justified ).
