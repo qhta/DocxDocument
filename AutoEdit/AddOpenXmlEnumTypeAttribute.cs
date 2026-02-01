@@ -65,7 +65,8 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
   /// <returns>The original node when no changes were required, otherwise the updated declaration.</returns>
   public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
   {
-    string? enumTypeName;
+    List<string> enumTypeNameCandidates = new();
+    string? enumTypeName = null;
     AttributeSyntax? enumTypeAttribute = node.AttributeLists.SelectMany(al => al.Attributes)
       .FirstOrDefault(attr =>
         attr.Name.ToString().Contains("OpenXmlEnumType", StringComparison.Ordinal));
@@ -74,25 +75,31 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
     {
       var argument = enumTypeAttribute.ArgumentList?.Arguments.FirstOrDefault();
       if (argument?.Expression is TypeOfExpressionSyntax typeOfExpressionSyntax)
-        enumTypeName = typeOfExpressionSyntax.Type.ToString();
+        enumTypeNameCandidates.Add(typeOfExpressionSyntax.Type.ToString());
       else
-        enumTypeName = argument?.Expression?.ToString();
-
-      if (string.IsNullOrWhiteSpace(enumTypeName))
-        return base.VisitEnumDeclaration(node);
+        enumTypeNameCandidates.Add(argument!.Expression!.ToString());
     }
     else
     {
       enumTypeName = node.Identifier.Text;
       if (enumTypeName.EndsWith("Kind"))
         enumTypeName = enumTypeName.Substring(0, enumTypeName.Length - 4);
-      enumTypeName += "Values";
+      enumTypeNameCandidates.Add(enumTypeName + "Values");
+      enumTypeNameCandidates.Add(enumTypeName);
     }
-    Console.WriteLine($"Searching for OpenXml type: {enumTypeName}");
-    if (!TryResolveOpenXmlType(enumTypeName, out var openXmlEnumType) || openXmlEnumType == null)
-      return base.VisitEnumDeclaration(node);
 
-    //PresetColorValues;
+    Type? openXmlEnumType = null;
+    foreach (var enumTypeNameCandidate in enumTypeNameCandidates)
+    {
+      if (TryResolveOpenXmlType(enumTypeNameCandidate, out openXmlEnumType) && openXmlEnumType != null)
+      {
+        enumTypeName = enumTypeNameCandidate;
+        break;
+      }
+    }
+    if (openXmlEnumType == null)
+      return base.VisitEnumDeclaration(node);
+    
     var isEnumValueType = openXmlEnumType.GetInterface("IEnumValue") != null;
     if (!openXmlEnumType.IsEnum && !isEnumValueType)
       return base.VisitEnumDeclaration(node);
