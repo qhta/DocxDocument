@@ -2,6 +2,10 @@
 
 using System.Xml.Linq;
 
+using DocumentFormat.OpenXml.Drawing;
+
+using Path = System.IO.Path;
+
 /// <summary>
 /// Entry point for the AutoEdit utilities used to process project source files.
 /// </summary>
