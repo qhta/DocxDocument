@@ -35,7 +35,7 @@ public static class OpenXmlElementConverter
     if (modelValue is string stringValue)
       return (DX.OpenXmlElement)SimpleValueConverter.ConvertTo(stringValue, openXmlType)!;
     if (modelValue is HexBinary hexBinaryValue)
-      return (DX.OpenXmlElement)HexBinaryConverter.CreateOpenXmlElement(hexBinaryValue, openXmlType)!;
+      return (DX.OpenXmlElement)HexBinaryConverter.ConvertTo(hexBinaryValue, openXmlType)!;
 
     if (openXmlType.IsEqualOrSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
     {
