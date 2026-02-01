@@ -7,7 +7,7 @@ public static class HexBinaryConverter
 {
 
 
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.HexBinaryValue), nameof(ConvertFromHexBinaryValue), nameof(ConvertToHexBinaryValue)),
     new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
@@ -25,7 +25,7 @@ public static class HexBinaryConverter
   /// </summary>
   static HexBinaryConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(HexBinaryConverter), typeof(HexBinary), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(HexBinaryConverter), typeof(HexBinary), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
   #region HexBinaryValue conversion.

@@ -170,7 +170,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// element type.</param>
   public virtual void LoadData(object openXmlElement)
   {
-    OpenXmlComplexTypeConverter.LoadData(this, openXmlElement, this.GetType());
+    OpenXmlModelConverter.LoadData(this, openXmlElement, this.GetType());
   }
 
   /// <summary>
@@ -184,7 +184,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   public virtual void UpdateData(object openXmlElement)
   {
     var openXmlType = this.GetType().GetCustomAttribute<OpenXmlTypeAttribute>()?.Type ?? openXmlElement.GetType();
-    OpenXmlComplexTypeConverter.UpdateData(this, openXmlElement, openXmlType);
+    OpenXmlModelConverter.UpdateData(this, openXmlElement, openXmlType);
   }
 
   /// <summary>
@@ -203,7 +203,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     var openXmlType = updatableElement.GetType()!;
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlPropertyForModelProperty(modelProperty, openXmlType);
     if (openXmlProperty == null) return;
-    OpenXmlComplexTypeConverter.UpdateOpenXmlProperty(this, modelProperty, updatableElement, openXmlProperty);
+    OpenXmlModelConverter.UpdateOpenXmlProperty(this, modelProperty, updatableElement, openXmlProperty);
   }
 
   /// <summary>

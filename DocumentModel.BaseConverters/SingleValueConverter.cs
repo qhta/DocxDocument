@@ -5,7 +5,7 @@
 /// </summary>
 public static class SingleConverter
 {
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.SingleValue), nameof(ConvertFromSingleValue), nameof(ConvertToSingleValue)),
     new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
@@ -18,7 +18,7 @@ public static class SingleConverter
 
   static SingleConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(SingleConverter), typeof(Single), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(SingleConverter), typeof(Single), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
   #region SingleValue conversion methods

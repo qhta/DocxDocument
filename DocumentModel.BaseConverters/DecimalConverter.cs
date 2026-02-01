@@ -7,7 +7,7 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class DecimalConverter
 {
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
 
     new(typeof(DX.DecimalValue), nameof(ConvertFromDecimalValue), nameof(ConvertToDecimalValue)),
@@ -25,7 +25,7 @@ public static class DecimalConverter
   /// </summary>
   static DecimalConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(DecimalConverter), typeof(Decimal), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(DecimalConverter), typeof(Decimal), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
   #region DecimalValue conversion.

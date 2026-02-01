@@ -23,7 +23,7 @@ public static class OpenXmlConverter
         || ConvertToOpenDelegates.TryGetValue(openXmlType, out convertToOpenXml))
       return convertToOpenXml(modelValue, openXmlType);
     if (openXmlType.IsEqualOrSubclassOf(typeof(DX.OpenXmlElement)))
-      return OpenXmlElementConverter.ConvertToOpenXml(modelValue, openXmlType);
+      return OpenXmlElementConverter.ConvertTo(modelValue, openXmlType);
     if (openXmlType.IsEqualOrSubclassOf(typeof(DX.OpenXmlSimpleType)))
       return SimpleValueConverter.ConvertTo(modelValue, openXmlType);
     return Convert.ChangeType(modelValue, openXmlType);
@@ -51,7 +51,7 @@ public static class OpenXmlConverter
     }
 
     if (openXmlValue is DX.OpenXmlElement openXmlElement)
-      return OpenXmlElementConverter.ConvertFromOpenXml(openXmlElement, modelType);
+      return OpenXmlElementConverter.ConvertFrom(openXmlElement, modelType);
     if (openXmlValue is DX.OpenXmlSimpleType openXmlSimpleType)
       return SimpleValueConverter.ConvertFrom(openXmlSimpleType, modelType);
     return Convert.ChangeType(openXmlValue, modelType);

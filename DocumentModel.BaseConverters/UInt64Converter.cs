@@ -5,7 +5,7 @@
 /// </summary>
 public static class UInt64Converter
 {
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.SByteValue), nameof(ConvertFromSByteValue), nameof(ConvertToSByteValue)),
     new(typeof(DX.Int16Value), nameof(ConvertFromInt16Value), nameof(ConvertToInt16Value)),
@@ -31,7 +31,7 @@ public static class UInt64Converter
   /// </summary>
   static UInt64Converter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(UInt64Converter), typeof(UInt64), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(UInt64Converter), typeof(UInt64), supportedConversions, ConversionToMap, ConversionFromMap);
   }
   
   #region SByteValue conversion.

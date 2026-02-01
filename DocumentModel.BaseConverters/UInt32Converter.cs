@@ -5,7 +5,7 @@
 /// </summary>
 public static class UInt32Converter
 {
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.SByteValue), nameof(ConvertFromSByteValue), nameof(ConvertToSByteValue)),
     new(typeof(DX.Int16Value), nameof(ConvertFromInt16Value), nameof(ConvertToInt16Value)),
@@ -31,7 +31,7 @@ public static class UInt32Converter
   /// </summary>
   static UInt32Converter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(UInt32Converter), typeof(UInt32), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(UInt32Converter), typeof(UInt32), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
 

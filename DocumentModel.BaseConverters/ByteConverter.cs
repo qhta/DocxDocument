@@ -6,7 +6,7 @@
 public static class ByteConverter
 {
 
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.SByteValue), nameof(ConvertFromSByteValue), nameof(ConvertToSByteValue)),
     new(typeof(DX.Int16Value), nameof(ConvertFromInt16Value), nameof(ConvertToInt16Value)),
@@ -32,7 +32,7 @@ public static class ByteConverter
   /// </summary>
   static ByteConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(ByteConverter), typeof(Byte), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(ByteConverter), typeof(Byte), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
   #region SByteValue conversion.

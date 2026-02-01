@@ -5,7 +5,7 @@
 /// </summary>
 public static class RgbConverter
 {
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.SByteValue), nameof(ConvertFromSByteValue), nameof(ConvertToSByteValue)),
     new(typeof(DX.Int16Value), nameof(ConvertFromInt16Value), nameof(ConvertToInt16Value)),
@@ -31,7 +31,7 @@ public static class RgbConverter
   /// </summary>
   static RgbConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(RgbConverter), typeof(RGB), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(RgbConverter), typeof(RGB), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
 

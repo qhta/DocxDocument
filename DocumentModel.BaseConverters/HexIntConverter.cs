@@ -5,7 +5,7 @@
 /// </summary>
 public static class HexIntConverter
 {
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.SByteValue), nameof(ConvertFromSByteValue), nameof(ConvertToSByteValue)),
     new(typeof(DX.Int16Value), nameof(ConvertFromInt16Value), nameof(ConvertToInt16Value)),
@@ -31,7 +31,7 @@ public static class HexIntConverter
   /// </summary>
   static HexIntConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(HexIntConverter), typeof(HexInt), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(HexIntConverter), typeof(HexInt), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
 

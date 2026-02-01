@@ -7,7 +7,7 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class Int32Converter
 {
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.SByteValue), nameof(ConvertFromSByteValue), nameof(ConvertToSByteValue)),
     new(typeof(DX.Int16Value), nameof(ConvertFromInt16Value), nameof(ConvertToInt16Value)),
@@ -33,7 +33,7 @@ public static class Int32Converter
   /// </summary>
   static Int32Converter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(Int32Converter), typeof(Int32), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(Int32Converter), typeof(Int32), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
   #region SByteValue conversion.

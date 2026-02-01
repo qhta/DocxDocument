@@ -6,7 +6,7 @@
 public static class BytePercentValueConverter
 {
 
-  public static Type[] SupportedTypes { get; } =
+  public static Type[] supportedConversions { get; } =
   [
     typeof(DX.StringValue),
     typeof(DX.OpenXmlLeafElement)

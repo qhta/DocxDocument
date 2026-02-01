@@ -5,7 +5,7 @@
 /// </summary>
 public static class StringConverter
 {
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
     new(typeof(DXW.StringType), nameof(ConvertFromStringType), nameof(ConvertToStringType)),
@@ -22,7 +22,7 @@ public static class StringConverter
 
   static StringConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(StringConverter), typeof(String), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(StringConverter), typeof(String), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
   #region StringValue conversion methods

@@ -5,7 +5,7 @@
 /// </summary>
 public static class TSBooleanConverter
 {
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.TrueFalseBlankValue), nameof(ConvertFromTrueFalseBlankValue), nameof(ConvertToTrueFalseBlankValue)),
     new(typeof(string), nameof(TSBooleanFromString), nameof(TSBooleanToString))
@@ -19,7 +19,7 @@ public static class TSBooleanConverter
   /// </summary>
   static TSBooleanConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(TSBooleanConverter), typeof(TSBoolean), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(TSBooleanConverter), typeof(TSBoolean), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
   #region TrueFalseOnlyValue conversion.

@@ -5,7 +5,7 @@
 /// </summary>
 public static class BooleanConverter
 {
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.OnOffValue), nameof(ConvertFromOnOffValue), nameof(ConvertToOnOffValue)),
     new(typeof(DXW.OnOffOnlyValues), nameof(ConvertFromOnOffOnlyValues), nameof(ConvertToOnOffOnlyValues)),
@@ -34,7 +34,7 @@ public static class BooleanConverter
   /// </summary>
   static BooleanConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(BooleanConverter), typeof(bool), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(BooleanConverter), typeof(bool), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
   #region OnOffValue conversion.

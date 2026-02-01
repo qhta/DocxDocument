@@ -6,7 +6,7 @@ namespace DocumentModel.OpenXml;
 public static class GuidConverter
 {
 
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
     new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
@@ -22,7 +22,7 @@ public static class GuidConverter
   /// </summary>
   static GuidConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(GuidConverter), typeof(Guid), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(GuidConverter), typeof(Guid), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
   #region StringValue conversion.
