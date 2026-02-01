@@ -118,10 +118,14 @@ public class AddOpenXmlPropertyAttributeRewriter(Dictionary<string, string> alia
           {
             var attributeName = "OpenXmlProperty";
 
-            var attr = SyntaxFactory.Attribute(SyntaxFactory.IdentifierName(attributeName), SyntaxFactory.AttributeArgumentList(SyntaxFactory.SingletonSeparatedList(SyntaxFactory.AttributeArgument(SyntaxFactory.ParseExpression($"nameof({openXmlTypeName}.{prop.Identifier.Text})")))));
+            var attr = SyntaxFactory.Attribute(SyntaxFactory.IdentifierName(attributeName), 
+              SyntaxFactory.AttributeArgumentList(SyntaxFactory.SingletonSeparatedList
+                (SyntaxFactory.AttributeArgument(SyntaxFactory.ParseExpression($"nameof({openXmlTypeName}.{prop.Identifier.Text})")))));
 
-            var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attr)).WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
-            var newProp = prop.WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia)).WithAttributeLists(prop.AttributeLists.Add(attrList)).WithTrailingTrivia(prop.GetTrailingTrivia());
+            var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attr))
+              .WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
+            var newProp = prop.WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia))
+              .WithAttributeLists(prop.AttributeLists.Add(attrList)).WithTrailingTrivia(prop.GetTrailingTrivia());
 
             Changed = true;
             return newProp;

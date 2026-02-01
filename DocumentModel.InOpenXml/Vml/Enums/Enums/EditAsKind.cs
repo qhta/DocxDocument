@@ -1,9 +1,9 @@
 namespace DocumentModel.Vml;
-
 /// <summary>
 ///   Shape Grouping Types
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXDS.EditAsValues))]
 public enum EditAsKind
 {
   /// <summary>

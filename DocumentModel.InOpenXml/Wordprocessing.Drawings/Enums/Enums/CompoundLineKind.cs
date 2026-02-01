@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 ///   Defines the CompoundLineValues enumeration.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXD.CompoundLineValues))]
 public enum CompoundLineKind
 {
   /// <summary>
@@ -12,17 +13,21 @@ public enum CompoundLineKind
   /// <summary>
   ///   dbl.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXD.CompoundLineValues.Double))]
   Double,
   /// <summary>
   ///   thickThin.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXD.CompoundLineValues.ThickThin))]
   ThickThin,
   /// <summary>
   ///   thinThick.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXD.CompoundLineValues.ThinThick))]
   ThinThick,
   /// <summary>
   ///   triple
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXD.CompoundLineValues.Triple))]
   Triple
 }

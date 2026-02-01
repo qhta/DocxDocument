@@ -1,9 +1,9 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 ///   Defines the ViewValues enumeration.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXP.ViewValues))]
 public enum ViewKind
 {
   /// <summary>

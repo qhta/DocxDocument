@@ -1,6 +1,5 @@
 ﻿namespace AnalyzeModelTypeMapping;
 
-
 /// <summary>
 ///   Represents a mapping between a model type and an Open XML type for analysis and reporting purposes.
 /// </summary>
@@ -151,52 +150,6 @@ public class AnalyzeTypeMapping
     return FormatTypeName(type);
   }
 
-  private static Dictionary<string, string> namespaces = new Dictionary<string, string>
-  {
-    { "DocumentFormat.OpenXml", "DX" },
-    { "DocumentFormat.OpenXml.Bibliography", "DXB" },
-    { "DocumentFormat.OpenXml.CustomProperties", "DXCP" },
-    { "DocumentFormat.OpenXml.CustomXmlSchemaReferences", "DXCXSR" },
-    { "DocumentFormat.OpenXml.Drawing", "DXD" },
-    { "DocumentFormat.OpenXml.Drawing.Diagrams", "DXDD" },
-    { "DocumentFormat.OpenXml.Drawing.Pictures", "DXDP" },
-    { "DocumentFormat.OpenXml.Drawing.Wordprocessing", "DXDW" },
-    { "DocumentFormat.OpenXml.ExtendedProperties", "DXEP" },
-    { "DocumentFormat.OpenXml.Math", "DXM" },
-    { "DocumentFormat.OpenXml.Office2010.Drawing", "DXO10D" },
-    { "DocumentFormat.OpenXml.Office2010.Drawing.Pictures", "DXO10DP" },
-    { "DocumentFormat.OpenXml.Office2010.Word", "DXO10W" },
-    { "DocumentFormat.OpenXml.Office2010.Word.Drawing", "DXO10WD" },
-    { "DocumentFormat.OpenXml.Office2010.Word.DrawingCanvas", "DXO10WDC" },
-    { "DocumentFormat.OpenXml.Office2010.Word.DrawingGroup", "DXO10WDG" },
-    { "DocumentFormat.OpenXml.Office2010.Word.DrawingShape", "DXO10WDS" },
-    { "DocumentFormat.OpenXml.Office2013.Drawing", "DXO13D" },
-    { "DocumentFormat.OpenXml.Office2013.Theme", "DXO13T" },
-    { "DocumentFormat.OpenXml.Office2013.Word", "DXO13W" },
-    { "DocumentFormat.OpenXml.Office2013.Word.Drawing", "DXO13WD" },
-    { "DocumentFormat.OpenXml.Office2016.Drawing", "DXO16D" },
-    { "DocumentFormat.OpenXml.Office2019.Drawing", "DXO19D" },
-    { "DocumentFormat.OpenXml.Office2019.Drawing.SVG", "DXO19DS" },
-    { "DocumentFormat.OpenXml.Office2019.Word.Cid", "DXO19WC" },
-    { "DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification", "DXO21DDC" },
-    { "DocumentFormat.OpenXml.Office2021.Drawing.Livefeed", "DXO21DL" },
-    { "DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes", "DXO21DSS" },
-    { "DocumentFormat.OpenXml.Office2021.MipLabelMetaData", "DXO21MLMD" },
-    { "DocumentFormat.OpenXml.Office2021.Word.CommentsExt", "DXO21WCE" },
-    { "DocumentFormat.OpenXml.Office.Drawing", "DXOD" },
-    { "DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed", "DXODY21OE" },
-    { "DocumentFormat.OpenXml.Office.Word", "DXOW" },
-    { "DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed", "DXOWY20OE" },
-    { "DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink", "DXOY21SL" },
-    { "DocumentFormat.OpenXml.Packaging", "DXPP" },
-    { "DocumentFormat.OpenXml.Vml", "DXV" },
-    { "DocumentFormat.OpenXml.Vml.Office", "DXVO" },
-    { "DocumentFormat.OpenXml.Vml.Spreadsheet", "DXVS" },
-    { "DocumentFormat.OpenXml.VariantTypes", "DXVT" },
-    { "DocumentFormat.OpenXml.Vml.Wordprocessing", "DXVW" },
-    { "DocumentFormat.OpenXml.Wordprocessing", "DXW" },
-  };
-
   /// <summary>
   ///   Formats the type name, including generic arguments, using namespace abbreviations for Open XML types.
   /// </summary>
@@ -222,7 +175,7 @@ public class AnalyzeTypeMapping
   private string SimpleTypeName(Type type)
   {
     var ns = type.Namespace!;
-    if (namespaces.TryGetValue(ns, out var ns1))
+    if (Namespaces.Map.TryGetValue(ns, out var ns1))
       ns = ns1;
     var typeName = type.Name;
     var k = typeName.IndexOf('`');

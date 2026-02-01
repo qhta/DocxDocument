@@ -1,9 +1,12 @@
+using System.Diagnostics;
+
+using DocumentFormat.OpenXml.Drawing;
+
 namespace AutoEdit;
 
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 
 using DocumentFormat.OpenXml;
@@ -22,7 +25,7 @@ public static class AddOpenXmlEnumTypeAttribute
   /// Rewrites the specified source file, inserting Open XML metadata attributes where needed.
   /// </summary>
   /// <param name="filePath">Absolute or relative path to the C# file to update.</param>
-  public static void Run(string filePath)
+  public static bool Run(string filePath)
   {
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
@@ -34,7 +37,9 @@ public static class AddOpenXmlEnumTypeAttribute
     {
       File.WriteAllText(filePath, newRoot.NormalizeWhitespace("  ").ToFullString());
       Console.WriteLine($"Updated: {filePath}");
+      return true;
     }
+    return false;
   }
 }
 
@@ -63,8 +68,8 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
     string? enumTypeName;
     AttributeSyntax? enumTypeAttribute = node.AttributeLists.SelectMany(al => al.Attributes)
       .FirstOrDefault(attr =>
-        attr.Name.ToString().Contains("OpenXmlEnumTypeAttribute", StringComparison.Ordinal));
-    var hasEnumTypeAttribute = enumTypeAttribute != null;
+        attr.Name.ToString().Contains("OpenXmlEnumType", StringComparison.Ordinal));
+    var hasOpenXmlEnumTypeAttribute = enumTypeAttribute != null;
     if (enumTypeAttribute != null)
     {
       var argument = enumTypeAttribute.ArgumentList?.Arguments.FirstOrDefault();
@@ -80,17 +85,22 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
     {
       enumTypeName = node.Identifier.Text;
       if (enumTypeName.EndsWith("Kind"))
-        enumTypeName = enumTypeName.Substring(0, enumTypeName.Length - 4) + "Type";
+        enumTypeName = enumTypeName.Substring(0, enumTypeName.Length - 4);
+      enumTypeName += "Values";
     }
+    Console.WriteLine($"Searching for OpenXml type: {enumTypeName}");
     if (!TryResolveOpenXmlType(enumTypeName, out var openXmlEnumType) || openXmlEnumType == null)
       return base.VisitEnumDeclaration(node);
 
-    if (!openXmlEnumType.IsSubclassOf(typeof(EnumValue<>)))
+    //PresetColorValues;
+    var isEnumValueType = openXmlEnumType.GetInterface("IEnumValue") != null;
+    if (!openXmlEnumType.IsEnum && !isEnumValueType)
       return base.VisitEnumDeclaration(node);
 
-    var enumValuesType = openXmlEnumType.GetGenericArguments().FirstOrDefault();
-    if (enumValuesType == null)
-      return base.VisitEnumDeclaration(node);
+    var enumValues = (isEnumValueType)
+      ? openXmlEnumType.GetProperties(BindingFlags.Static | BindingFlags.Public).Select(prop => prop.Name).ToArray() 
+      : openXmlEnumType.GetEnumNames();
+
 
     var openXmlEnumTypeSyntax = SyntaxFactory.ParseTypeName(GetTypeDisplayName(openXmlEnumType));
     var membersChanged = false;
@@ -104,33 +114,32 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
         continue;
       }
 
-      var hasElementAttr = prop.AttributeLists.SelectMany(al => al.Attributes)
-        .Any(attr => attr.Name.ToString().Contains("OpenXmlElement", StringComparison.Ordinal));
-      if (hasElementAttr || PropertyExistsInOpenXmlType(enumValuesType, prop.Identifier.Text))
+      var hasOpenXmlEnumValueAttribute = prop.AttributeLists.SelectMany(al => al.Attributes)
+        .Any(attr => attr.Name.ToString().Contains("OpenXmlEnumValue", StringComparison.Ordinal));
+      if (hasOpenXmlEnumValueAttribute || !enumValues.Contains(prop.Identifier.Text))
       {
         updatedMembers.Add(prop);
         continue;
       }
 
       var leadingTrivia = prop.GetLeadingTrivia();
-      var docTrivia = leadingTrivia
-        .Where(t => t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) || t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia))
-        .ToList();
+      var docTrivia = leadingTrivia.Where(t => t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) || t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia)).ToList();
       var otherTrivia = leadingTrivia.Except(docTrivia).ToList();
-      var attr = SyntaxFactory.Attribute(
-        SyntaxFactory.IdentifierName("OpenXmlEnumElement"),
-        SyntaxFactory.AttributeArgumentList(
-          SyntaxFactory.SingletonSeparatedList(
-            SyntaxFactory.AttributeArgument(
-              SyntaxFactory.TypeOfExpression(openXmlEnumTypeSyntax)))));
-      var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attr))
-        .WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
-      var newProp = prop
-        .WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia))
-        .WithAttributeLists(prop.AttributeLists.Add(attrList))
-        .WithTrailingTrivia(prop.GetTrailingTrivia());
-      membersChanged = true;
-      updatedMembers.Add(newProp);
+
+
+        var attributeName = "OpenXmlEnumValue";
+
+        var attr = SyntaxFactory.Attribute(SyntaxFactory.IdentifierName(attributeName),
+          SyntaxFactory.AttributeArgumentList(SyntaxFactory.SingletonSeparatedList
+            (SyntaxFactory.AttributeArgument(SyntaxFactory.ParseExpression($"nameof({NamespaceMappings.Namespaces.Map[openXmlEnumType.Namespace!]}.{openXmlEnumType.Name}.{prop.Identifier.Text})")))));
+
+        var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attr))
+          .WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
+        var newProp = prop.WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia))
+          .WithAttributeLists(prop.AttributeLists.Add(attrList)).WithTrailingTrivia(prop.GetTrailingTrivia());
+
+        membersChanged = true;
+        updatedMembers.Add(newProp);
     }
 
     var updatedNode = node;
@@ -141,7 +150,7 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
       Changed = true;
     }
 
-    if (!hasEnumTypeAttribute)
+    if (!hasOpenXmlEnumTypeAttribute)
     {
       var attrList = CreateOpenXmlTypeAttribute(openXmlEnumType);
       updatedNode = updatedNode.AddAttributeLists(attrList);
@@ -158,14 +167,23 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
   /// <returns>An attribute list syntax node representing <c>[OpenXmlType]</c>.</returns>
   private static AttributeListSyntax CreateOpenXmlTypeAttribute(Type openXmlEnumType)
   {
-    var typeSyntax = SyntaxFactory.ParseTypeName(GetTypeDisplayName(openXmlEnumType));
-    var attribute = SyntaxFactory.Attribute(
-      SyntaxFactory.IdentifierName("OpenXmlType"),
-      SyntaxFactory.AttributeArgumentList(
-        SyntaxFactory.SingletonSeparatedList(
-          SyntaxFactory.AttributeArgument(
-            SyntaxFactory.TypeOfExpression(typeSyntax)))));
-    return SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attribute));
+    try
+    {
+      var typeSyntax = SyntaxFactory.ParseTypeName(
+        NamespaceMappings.Namespaces.Map[openXmlEnumType.Namespace!] + "." + openXmlEnumType.Name);
+      var attribute = SyntaxFactory.Attribute(
+        SyntaxFactory.IdentifierName("OpenXmlEnumType"),
+        SyntaxFactory.AttributeArgumentList(
+          SyntaxFactory.SingletonSeparatedList(
+            SyntaxFactory.AttributeArgument(
+              SyntaxFactory.TypeOfExpression(typeSyntax)))));
+      return SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attribute));
+    } catch (Exception ex)
+    {
+      Console.WriteLine($"Error occurred while creating OpenXmlType attribute for {openXmlEnumType}: {ex.Message}");
+      throw;
+    }
+
   }
 
   /// <summary>
@@ -221,13 +239,15 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
   /// <returns><see langword="true"/> when the type was found; otherwise <see langword="false"/>.</returns>
   private bool TryResolveOpenXmlType(string typeName, out Type? type)
   {
+    //if (typeName.StartsWith("Bevel")) ;
     if (_typeCache.TryGetValue(typeName, out var cached))
     {
       type = cached!;
       return cached != null;
     }
     var resolvedName = ResolveAlias(typeName);
-    type = Type.GetType(resolvedName, throwOnError: false, ignoreCase: false) ?? OpenXmlAssembly?.GetType(resolvedName, throwOnError: false, ignoreCase: false) ?? OpenXmlFrameworkAssembly?.GetType(resolvedName, throwOnError: false, ignoreCase: false);
+    var types = OpenXmlAssembly?.GetTypes().Where(type => type.Name.StartsWith("Bevel"));
+    type = OpenXmlAssembly?.GetTypes().FirstOrDefault(type => type.Name == resolvedName) ?? OpenXmlFrameworkAssembly?.GetTypes().FirstOrDefault(type => type.Name == resolvedName);
     if (type == null)
     {
       foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())

@@ -1,9 +1,9 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Preset Shape Types
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXDC.ShapeValues))]
 public enum ShapeKind
 {
   /// <summary>

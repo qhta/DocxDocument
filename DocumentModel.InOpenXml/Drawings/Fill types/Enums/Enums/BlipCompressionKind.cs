@@ -1,29 +1,34 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Blip Compression Type
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXD.BlipCompressionValues))]
 public enum BlipCompressionKind
 {
   /// <summary>
   ///   Email Compression.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXD.BlipCompressionValues.Email))]
   Email,
   /// <summary>
   ///   Screen Viewing Compression.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXD.BlipCompressionValues.Screen))]
   Screen,
   /// <summary>
   ///   Printing Compression.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXD.BlipCompressionValues.Print))]
   Print,
   /// <summary>
   ///   High Quality Printing Compression.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXD.BlipCompressionValues.HighQualityPrint))]
   HighQualityPrint,
   /// <summary>
   ///   No Compression.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXD.BlipCompressionValues.None))]
   None
 }

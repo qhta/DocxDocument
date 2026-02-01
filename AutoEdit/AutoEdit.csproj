@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DocumentModel.InOpenXml\DocumentModel.InOpenXml.csproj" />
+    <ProjectReference Include="..\NamespaceMappings\NamespaceMappings.csproj" />
   </ItemGroup>
 
 </Project>

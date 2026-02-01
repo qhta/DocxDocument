@@ -1,14 +1,15 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 ///   Defines the VerticalJustificationValues enumeration.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXM.VerticalJustificationValues))]
 public enum VerticalJustificationKind
 {
   /// <summary>
   ///   Align Top.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXM.VerticalJustificationValues.Top))]
   Top,
   /// <summary>
   ///   Align Center.
@@ -21,5 +22,6 @@ public enum VerticalJustificationKind
   /// <summary>
   ///   Align Bottom.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXM.VerticalJustificationValues.Bottom))]
   Bottom
 }
