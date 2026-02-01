@@ -184,6 +184,16 @@ internal class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
+    if (!SingleConverterTest.Run())
+    {
+      Console.WriteLine("\nSome tests failed.");
+      return;
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+
     if (!SimpleValueConverterTest.Run())
     {
       Console.WriteLine("\nSome tests failed.");
