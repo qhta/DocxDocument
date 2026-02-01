@@ -23,7 +23,7 @@ public abstract class BaseConverter<ModelType>
   /// </summary>
   /// <remarks>Use this property to determine which types can be processed or handled by the current
   /// implementation. The returned array may be empty if no types are supported.</remarks>
-  public Type[] SupportedTypes
+  public Type[] supportedConversions
   {
     get
     {
@@ -111,7 +111,7 @@ public abstract class BaseConverter<ModelType>
   /// list of supported types.
   /// </summary>
   /// <remarks>This method checks if the given type is a subclass of OpenXmlLeafTextElement or
-  /// OpenXmlLeafElement, or if it matches any of the types in the supportedTypes array. For types derived from
+  /// OpenXmlLeafElement, or if it matches any of the types in the supportedConversions array. For types derived from
   /// OpenXmlLeafElement, the method inspects the 'Val' property or, if absent, the only declared property to determine
   /// support based on its type.</remarks>
   /// <param name="type">The type to evaluate for support. Cannot be null.</param>
@@ -138,7 +138,7 @@ public abstract class BaseConverter<ModelType>
       return false;
     }
 
-    return SupportedTypes.Contains(type);
+    return supportedConversions.Contains(type);
   }
 
   /// <summary>
@@ -146,13 +146,13 @@ public abstract class BaseConverter<ModelType>
   /// list of supported types.
   /// </summary>
   /// <remarks>This method checks if the given type is a subclass of OpenXmlLeafTextElement or
-  /// OpenXmlLeafElement, or if it matches any of the types in the supportedTypes array. For types derived from
+  /// OpenXmlLeafElement, or if it matches any of the types in the supportedConversions array. For types derived from
   /// OpenXmlLeafElement, the method inspects the 'Val' property or, if absent, the only declared property to determine
   /// support based on its type.</remarks>
   /// <param name="type">The type to evaluate for support. Cannot be null.</param>
-  /// <param name="supportedTypes">An array of types that are considered supported. Cannot be null or empty.</param>
+  /// <param name="supportedConversions">An array of types that are considered supported. Cannot be null or empty.</param>
   /// <returns>true if the specified type or its relevant property type is supported; otherwise, false.</returns>
-  public static bool SupportsType(Type type, Type[] supportedTypes)
+  public static bool SupportsType(Type type, Type[] supportedConversions)
   {
     if (type.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
       return true;
@@ -168,13 +168,13 @@ public abstract class BaseConverter<ModelType>
           return false;
 
       }
-      if (SupportsType(valProp.PropertyType, supportedTypes))
+      if (SupportsType(valProp.PropertyType, supportedConversions))
         return true;
 
       return false;
     }
 
-    return supportedTypes.Contains(type);
+    return supportedConversions.Contains(type);
   }
 
 

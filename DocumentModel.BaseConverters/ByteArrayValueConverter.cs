@@ -5,7 +5,7 @@
 /// </summary>
 public static class ByteArrayValueConverter
 {
-  public static Type[] SupportedTypes { get; } =
+  public static Type[] supportedConversions { get; } =
   [
     typeof(DX.Base64BinaryValue),
     typeof(DX.OpenXmlLeafElement)

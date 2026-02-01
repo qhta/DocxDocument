@@ -7,7 +7,7 @@ public static class Base64BinaryConverter
 {
 
 
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.Base64BinaryValue), nameof(ConvertFromBase64BinaryValue), nameof(ConvertToBase64BinaryValue)),
     new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
@@ -24,7 +24,7 @@ public static class Base64BinaryConverter
   /// </summary>
   static Base64BinaryConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(Base64BinaryConverter), typeof(Base64Binary), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(Base64BinaryConverter), typeof(Base64Binary), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
   #region Base64BinaryValue conversion.
