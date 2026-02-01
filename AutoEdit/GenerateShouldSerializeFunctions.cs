@@ -7,9 +7,16 @@ using System.Linq;
 
 namespace AutoEdit;
 
+/// <summary>
+/// Generates partial files containing ShouldSerialize helpers for model classes by analyzing their properties.
+/// </summary>
 internal class GenerateShouldSerializeFunctions
 {
   private static readonly string[] ignoredAttributes = [ "XmlIgnore", "JsonIgnore", "NotMapped"];
+  /// <summary>
+  /// Entry point for generating ShouldSerialize helpers for the specified source file.
+  /// </summary>
+  /// <param name="filePath">Path to the C# file to analyze.</param>
   public static void Run(string filePath)
   {
     var filename = Path.GetFileNameWithoutExtension(filePath);

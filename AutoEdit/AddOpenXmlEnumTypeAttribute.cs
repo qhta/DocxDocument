@@ -1,0 +1,260 @@
+namespace AutoEdit;
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Wordprocessing;
+
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+
+/// <summary>
+/// Automates annotating enum declarations with Open XML helper attributes.
+/// </summary>
+public static class AddOpenXmlEnumTypeAttribute
+{
+  /// <summary>
+  /// Rewrites the specified source file, inserting Open XML metadata attributes where needed.
+  /// </summary>
+  /// <param name="filePath">Absolute or relative path to the C# file to update.</param>
+  public static void Run(string filePath)
+  {
+    var code = File.ReadAllText(filePath);
+    var tree = CSharpSyntaxTree.ParseText(code);
+    var root = tree.GetCompilationUnitRoot();
+    var aliasMap = AliasHelper.BuildAliasMap(filePath, root);
+    var rewriter = new AddOpenXmlEnumTypeAttributeRewriter(aliasMap);
+    var newRoot = rewriter.Visit(root);
+    if (rewriter.Changed)
+    {
+      File.WriteAllText(filePath, newRoot.NormalizeWhitespace("  ").ToFullString());
+      Console.WriteLine($"Updated: {filePath}");
+    }
+  }
+}
+
+/// <summary>
+/// Roslyn syntax rewriter that augments enums and members with OpenXmlType/OpenXmlEnumElement attributes.
+/// </summary>
+/// <param name="aliasMap">Namespace aliases detected within the file being processed.</param>
+public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> aliasMap): CSharpSyntaxRewriter
+{
+  private readonly Dictionary<string, Type?> _typeCache = new(StringComparer.Ordinal);
+  private static readonly Assembly? OpenXmlFrameworkAssembly = typeof(OpenXmlElement).Assembly;
+  private static readonly Assembly? OpenXmlAssembly = typeof(Document).Assembly;
+
+  /// <summary>
+  /// Indicates when the rewriter produced updated syntax.
+  /// </summary>
+  public bool Changed { get; private set; } = false;
+
+  /// <summary>
+  /// Updates enum declarations by injecting missing OpenXml metadata and returns the resulting syntax node.
+  /// </summary>
+  /// <param name="node">Enum declaration currently being visited.</param>
+  /// <returns>The original node when no changes were required, otherwise the updated declaration.</returns>
+  public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
+  {
+    string? enumTypeName;
+    AttributeSyntax? enumTypeAttribute = node.AttributeLists.SelectMany(al => al.Attributes)
+      .FirstOrDefault(attr =>
+        attr.Name.ToString().Contains("OpenXmlEnumTypeAttribute", StringComparison.Ordinal));
+    var hasEnumTypeAttribute = enumTypeAttribute != null;
+    if (enumTypeAttribute != null)
+    {
+      var argument = enumTypeAttribute.ArgumentList?.Arguments.FirstOrDefault();
+      if (argument?.Expression is TypeOfExpressionSyntax typeOfExpressionSyntax)
+        enumTypeName = typeOfExpressionSyntax.Type.ToString();
+      else
+        enumTypeName = argument?.Expression?.ToString();
+
+      if (string.IsNullOrWhiteSpace(enumTypeName))
+        return base.VisitEnumDeclaration(node);
+    }
+    else
+    {
+      enumTypeName = node.Identifier.Text;
+      if (enumTypeName.EndsWith("Kind"))
+        enumTypeName = enumTypeName.Substring(0, enumTypeName.Length - 4) + "Type";
+    }
+    if (!TryResolveOpenXmlType(enumTypeName, out var openXmlEnumType) || openXmlEnumType == null)
+      return base.VisitEnumDeclaration(node);
+
+    if (!openXmlEnumType.IsSubclassOf(typeof(EnumValue<>)))
+      return base.VisitEnumDeclaration(node);
+
+    var enumValuesType = openXmlEnumType.GetGenericArguments().FirstOrDefault();
+    if (enumValuesType == null)
+      return base.VisitEnumDeclaration(node);
+
+    var openXmlEnumTypeSyntax = SyntaxFactory.ParseTypeName(GetTypeDisplayName(openXmlEnumType));
+    var membersChanged = false;
+    var updatedMembers = new List<EnumMemberDeclarationSyntax>();
+
+    foreach (var member in node.Members)
+    {
+      if (member is not EnumMemberDeclarationSyntax prop)
+      {
+        updatedMembers.Add(member);
+        continue;
+      }
+
+      var hasElementAttr = prop.AttributeLists.SelectMany(al => al.Attributes)
+        .Any(attr => attr.Name.ToString().Contains("OpenXmlElement", StringComparison.Ordinal));
+      if (hasElementAttr || PropertyExistsInOpenXmlType(enumValuesType, prop.Identifier.Text))
+      {
+        updatedMembers.Add(prop);
+        continue;
+      }
+
+      var leadingTrivia = prop.GetLeadingTrivia();
+      var docTrivia = leadingTrivia
+        .Where(t => t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) || t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia))
+        .ToList();
+      var otherTrivia = leadingTrivia.Except(docTrivia).ToList();
+      var attr = SyntaxFactory.Attribute(
+        SyntaxFactory.IdentifierName("OpenXmlEnumElement"),
+        SyntaxFactory.AttributeArgumentList(
+          SyntaxFactory.SingletonSeparatedList(
+            SyntaxFactory.AttributeArgument(
+              SyntaxFactory.TypeOfExpression(openXmlEnumTypeSyntax)))));
+      var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attr))
+        .WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
+      var newProp = prop
+        .WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia))
+        .WithAttributeLists(prop.AttributeLists.Add(attrList))
+        .WithTrailingTrivia(prop.GetTrailingTrivia());
+      membersChanged = true;
+      updatedMembers.Add(newProp);
+    }
+
+    var updatedNode = node;
+    if (membersChanged)
+    {
+      var separatedMembers = SyntaxFactory.SeparatedList(updatedMembers, node.Members.GetSeparators());
+      updatedNode = updatedNode.WithMembers(separatedMembers);
+      Changed = true;
+    }
+
+    if (!hasEnumTypeAttribute)
+    {
+      var attrList = CreateOpenXmlTypeAttribute(openXmlEnumType);
+      updatedNode = updatedNode.AddAttributeLists(attrList);
+      Changed = true;
+    }
+
+    return base.VisitEnumDeclaration(updatedNode);
+  }
+
+  /// <summary>
+  /// Builds an <c>[OpenXmlType(typeof(...))]</c> attribute list for a resolved Open XML enum value type.
+  /// </summary>
+  /// <param name="openXmlEnumType">The Open XML enum value type to reference.</param>
+  /// <returns>An attribute list syntax node representing <c>[OpenXmlType]</c>.</returns>
+  private static AttributeListSyntax CreateOpenXmlTypeAttribute(Type openXmlEnumType)
+  {
+    var typeSyntax = SyntaxFactory.ParseTypeName(GetTypeDisplayName(openXmlEnumType));
+    var attribute = SyntaxFactory.Attribute(
+      SyntaxFactory.IdentifierName("OpenXmlType"),
+      SyntaxFactory.AttributeArgumentList(
+        SyntaxFactory.SingletonSeparatedList(
+          SyntaxFactory.AttributeArgument(
+            SyntaxFactory.TypeOfExpression(typeSyntax)))));
+    return SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attribute));
+  }
+
+  /// <summary>
+  /// Creates a fully-qualified type display name that preserves generic arguments for <c>typeof</c> expressions.
+  /// </summary>
+  /// <param name="type">Type to format.</param>
+  /// <returns>A string suitable for <c>typeof</c> expressions.</returns>
+  private static string GetTypeDisplayName(Type type)
+  {
+    if (type.IsGenericType)
+    {
+      var genericName = GetNonGenericTypeName(type.GetGenericTypeDefinition());
+      var arguments = string.Join(
+        ", ",
+        type.GetGenericArguments().Select(GetTypeDisplayName));
+      return $"{genericName}<{arguments}>";
+    }
+
+    return GetNonGenericTypeName(type);
+  }
+
+  /// <summary>
+  /// Returns the full metadata name for a non-generic type using the <c>global::</c> prefix.
+  /// </summary>
+  /// <param name="type">Type to format.</param>
+  /// <returns>Fully-qualified non-generic type name.</returns>
+  private static string GetNonGenericTypeName(Type type)
+  {
+    var name = type.FullName ?? type.Name;
+    name = name.Replace('+', '.');
+    var tickIndex = name.IndexOf('`');
+    if (tickIndex > 0)
+      name = name[..tickIndex];
+    return $"global::{name}";
+  }
+
+  /// <summary>
+  /// Determines whether a matching static property already exists on the Open XML EnumValues type.
+  /// </summary>
+  /// <param name="type">The reflected EnumValues type.</param>
+  /// <param name="propertyName">Property name to look up.</param>
+  /// <returns><see langword="true"/> when the property exists; otherwise <see langword="false"/>.</returns>
+  private bool PropertyExistsInOpenXmlType(Type type, string propertyName)
+  {
+    return type!.GetProperty(propertyName, BindingFlags.Static | BindingFlags.Public | BindingFlags.IgnoreCase) != null;
+  }
+
+  /// <summary>
+  /// Resolves a type name via alias table, loaded assemblies, and Open XML references.
+  /// </summary>
+  /// <param name="typeName">Type name to resolve.</param>
+  /// <param name="type">Resolved <see cref="Type"/> when successful.</param>
+  /// <returns><see langword="true"/> when the type was found; otherwise <see langword="false"/>.</returns>
+  private bool TryResolveOpenXmlType(string typeName, out Type? type)
+  {
+    if (_typeCache.TryGetValue(typeName, out var cached))
+    {
+      type = cached!;
+      return cached != null;
+    }
+    var resolvedName = ResolveAlias(typeName);
+    type = Type.GetType(resolvedName, throwOnError: false, ignoreCase: false) ?? OpenXmlAssembly?.GetType(resolvedName, throwOnError: false, ignoreCase: false) ?? OpenXmlFrameworkAssembly?.GetType(resolvedName, throwOnError: false, ignoreCase: false);
+    if (type == null)
+    {
+      foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
+      {
+        type = asm.GetType(resolvedName, false, false);
+        if (type != null)
+          break;
+      }
+    }
+    _typeCache[typeName] = type;
+    return type != null;
+  }
+
+  /// <summary>
+  /// Expands namespace aliases used within the processed file.
+  /// </summary>
+  /// <param name="typeName">Type name that may include an alias prefix.</param>
+  /// <returns>The fully-qualified type name once the alias is resolved.</returns>
+  private string ResolveAlias(string typeName)
+  {
+    var dotIndex = typeName.IndexOf('.');
+    if (dotIndex > 0)
+    {
+      var alias = typeName.Substring(0, dotIndex);
+      if (aliasMap.TryGetValue(alias, out var ns))
+        return ns + "." + typeName[(dotIndex + 1)..];
+    }
+    return typeName;
+  }
+}

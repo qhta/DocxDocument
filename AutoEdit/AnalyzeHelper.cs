@@ -10,13 +10,11 @@ namespace AutoEdit;
 public static class AnalyzeHelper
 {
   /// <summary>
-  /// Checks if the given class declaration syntax node inherits from a generic type and retrieves the argument type name.
-  /// The argument type name is extracted from the first type argument of the generic base type.
-  /// "DX.OpenXmlElement" is excluded if the type parameter is constrained to it.
+  /// Determines whether the class inherits from a generic base type and captures its first type argument when it refers to a concrete Open XML type.
   /// </summary>
-  /// <param name="classNode"></param>
-  /// <param name="argTypeName"></param>
-  /// <returns></returns>
+  /// <param name="classNode">Class declaration to inspect.</param>
+  /// <param name="argTypeName">Set to the concrete Open XML type argument when available; otherwise <see langword="null"/>.</param>
+  /// <returns><see langword="true"/> when the class inherits from a generic base type, regardless of whether an Open XML type could be resolved.</returns>
   public static bool InheritsFromGenericType(this ClassDeclarationSyntax classNode, out string? argTypeName)
   {
     argTypeName = null;
@@ -55,10 +53,10 @@ public static class AnalyzeHelper
   }
 
   /// <summary>
-  /// Gets the base type name of the given class declaration syntax node.
+  /// Retrieves the textual representation of a class' first base type, if any.
   /// </summary>
-  /// <param name="classNode"></param>
-  /// <returns></returns>
+  /// <param name="classNode">Class declaration whose base type is requested.</param>
+  /// <returns>The base type name or <see langword="null"/> when the class does not declare one.</returns>
   public static string? GetBaseTypeName(this ClassDeclarationSyntax classNode)
   {
 

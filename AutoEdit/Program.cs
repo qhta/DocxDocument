@@ -2,8 +2,15 @@
 
 using System.Xml.Linq;
 
+/// <summary>
+/// Entry point for the AutoEdit utilities used to process project source files.
+/// </summary>
 public static class Program
 {
+  /// <summary>
+  /// Discovers the primary project referenced by the tooling project and runs selected transformers over its C# files.
+  /// </summary>
+  /// <param name="args">Optional command-line arguments (currently unused).</param>
   public static void Main(string[] args)
   {
     // Load the main project file
@@ -25,12 +32,13 @@ public static class Program
           foreach (var filePath in fileList)
           {
             //MoveEnumType.Run(filePath);
-            GenerateShouldSerializeFunctions.Run(filePath);
+            //GenerateShouldSerializeFunctions.Run(filePath);
             //AddPrivateFieldsWithUpdate.Run(filePath);
             //AddOpenXmlPropertyAttribute.Run(filePath);
-            //AddOpenXmlElementAttribute.Run(filePath);
+            //AddOpenXmlEnumTypeAttribute.Run(filePath);
             //AddOpenXmlTypeAttribute.Run(filePath);
             //RemoveDuplicateDocComments.Run(filePath);
+            AddOpenXmlEnumTypeAttribute.Run(filePath);
           }
         }
       }
@@ -48,6 +56,11 @@ public static class Program
     "Helpers",
   ];
 
+  /// <summary>
+  /// Recursively collects C# files under the specified directory, skipping ignored folders and helper files.
+  /// </summary>
+  /// <param name="path">Root directory to scan.</param>
+  /// <returns>List of file paths that satisfy the inclusion rules.</returns>
   static List<string> GetFiles(string path)
   {
     var result = new List<string>();
