@@ -28,7 +28,7 @@ public partial class Captions : ModelElement<DXW.Captions>
    return;
   foreach (var item in CaptionDefinitions)
   {
-   var newChild = OpenXmlComplexTypeConverter.ConvertObjectToOpenXml(item, typeof(DXW.Caption));
+   var newChild = OpenXmlModelConverter.ConvertTo(item, typeof(DXW.Caption));
    if (newChild is DXW.Caption caption)
     wordCaptions.AppendChild(caption);
   }
@@ -46,7 +46,7 @@ public partial class Captions : ModelElement<DXW.Captions>
  {
   foreach (var openXmlItem in wordCaptions.Elements<DXW.Caption>())
   {
-   var modelItem = OpenXmlComplexTypeConverter.ConvertObjectFromOpenXml(openXmlItem, typeof(DMW.CaptionDefinition));
+   var modelItem = OpenXmlModelConverter.ConvertFrom(openXmlItem, typeof(DMW.CaptionDefinition));
    if (modelItem is DMW.CaptionDefinition captionDefinition)
    {
     CaptionDefinitions ??= new CaptionDefinitions();
@@ -80,7 +80,7 @@ public partial class Captions : ModelElement<DXW.Captions>
    var modelAutoCaptions = new DXW.AutoCaptions();
    foreach (var modelItem in AutoCaptions)
    {
-    var openXmlItem = OpenXmlComplexTypeConverter.ConvertObjectToOpenXml(modelItem, typeof(DXW.AutoCaption));
+    var openXmlItem = OpenXmlModelConverter.ConvertTo(modelItem, typeof(DXW.AutoCaption));
     if (openXmlItem is DXW.AutoCaption autoCaption)
      modelAutoCaptions.AppendChild(autoCaption);
    }
@@ -100,7 +100,7 @@ public partial class Captions : ModelElement<DXW.Captions>
   {
    foreach (var openXmlItem in autoCaptions.Elements<DXW.AutoCaption>())
    {
-    var modelItem = OpenXmlComplexTypeConverter.ConvertObjectFromOpenXml(openXmlItem, typeof(DMW.AutoCaption));
+    var modelItem = OpenXmlModelConverter.ConvertFrom(openXmlItem, typeof(DMW.AutoCaption));
     if (modelItem is DMW.AutoCaption autoCaption)
     {
      AutoCaptions ??= new AutoCaptions();

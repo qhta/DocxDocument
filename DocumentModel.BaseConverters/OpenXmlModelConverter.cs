@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides conversion methods for complex types between model objects and Open XML types.
 /// </summary>
-public static class OpenXmlComplexTypeConverter
+public static class OpenXmlModelConverter
 {
   /// <summary>
   /// Converts a model object to an Open XML element of the specified type.
@@ -12,20 +12,17 @@ public static class OpenXmlComplexTypeConverter
   /// <param name="openXmlType">The target Open XML type.</param>
   /// <remarks>This method creates a new instance of the specified Open XML type and populates it with data from the model object.</remarks>
   /// <returns>The created Open XML element, or null if the input is null.</returns>
-  public static object? ConvertObjectToOpenXml(object? modelObject, Type openXmlType)
+  public static object? ConvertTo(object? modelObject, Type openXmlType)
   {
     if (modelObject == null)
       return null;
 
-    var currentType = modelObject.GetType();
-    if (openXmlType.Name == "CharacterSpacingControl") Debug.Assert(true);
-    if (modelObject is string stringValue)
-      return SimpleValueConverter.ConvertTo(modelObject, openXmlType);
-    if (modelObject.GetType().IsEnum)
-    {
-      var enumValue = (Enum)modelObject;
-      return SimpleValueConverter.ConvertTo(enumValue, openXmlType);
-    }
+    var modelType = modelObject.GetType().GetNotNullableType();
+    if (modelType == openXmlType)
+      return modelObject;
+    if (SimpleValueConverter.TryConvertTo(modelObject, openXmlType, out var result))
+      return result;
+
     var openXmlElement = Activator.CreateInstance(openXmlType)!;
     UpdateData(modelObject, openXmlElement, openXmlType);
     return openXmlElement;
@@ -41,21 +38,17 @@ public static class OpenXmlComplexTypeConverter
   /// <param name="modelType">The type of the model object to create and populate from the OpenXML element. Must not be null.</param>
   /// <returns>An object of the specified model type populated with data from the OpenXML element, or null if <paramref
   /// name="openXmlElement"/> is null.</returns>
-  public static object? ConvertObjectFromOpenXml(object? openXmlElement, Type modelType)
+  public static object? ConvertFrom(object? openXmlElement, Type modelType)
   {
     if (openXmlElement == null)
       return null;
 
-    var currentType = openXmlElement.GetType();
-    if (currentType.Name == "CharacterSpacingControl") Debug.Assert(true);
-    if (modelType == typeof(string))
-    {
-      return SimpleValueConverter.ConvertFrom(openXmlElement, typeof(string));
-    }
-    if (modelType.IsEnum)
-    {
-      return SimpleValueConverter.ConvertFrom(openXmlElement, modelType);
-    }
+    var openXmlType = openXmlElement.GetType().GetNotNullableType();
+    if (modelType == openXmlType)
+      return openXmlElement;
+    if (!SimpleValueConverter.TryConvertFrom(openXmlElement, modelType, out var result))
+      return result;
+
     var modelObject = Activator.CreateInstance(modelType)!;
     LoadData(modelObject, openXmlElement, modelType);
     return modelObject;
@@ -193,7 +186,7 @@ public static class OpenXmlComplexTypeConverter
       return;
 
     if (modelProperty.Name == "CharacterSpacingControl") Debug.Assert(true);
-    var openXmlChildElement = ConvertObjectToOpenXml(modelValue, openXmlChildType);
+    var openXmlChildElement = ConvertTo(modelValue, openXmlChildType);
     if (openXmlChildElement is not DX.OpenXmlElement o)
       throw new InvalidOperationException($"Converted Open XML child element " + $"is not of type DX.OpenXmlElement for model property {modelProperty.Name}");
 
@@ -233,7 +226,7 @@ public static class OpenXmlComplexTypeConverter
     var modelElementsCollection = (IEnumerable<object>)modelValue;
     foreach (var modelElement in modelElementsCollection)
     {
-      var openXmlChildElement = ConvertObjectToOpenXml(modelElement, openXmlChildType);
+      var openXmlChildElement = ConvertTo(modelElement, openXmlChildType);
       if (openXmlChildElement is not DX.OpenXmlElement o)
         throw new InvalidOperationException($"Converted Open XML child element is not of type DX.OpenXmlElement " + $"for model property {modelProperty.Name}");
 
@@ -346,7 +339,7 @@ public static class OpenXmlComplexTypeConverter
 
     foreach (var childElement in children)
     {
-      var modelValue = ConvertObjectFromOpenXml(childElement, modelPropertyType);
+      var modelValue = ConvertFrom(childElement, modelPropertyType);
       if (!modelPropertyType.IsInstanceOfType(modelValue))
         throw new InvalidOperationException($"Converted value {modelValue} is not of type {modelPropertyType} for model property {modelProperty.Name}");
       modelProperty.SetValue(modelObject, modelValue);
@@ -384,7 +377,7 @@ public static class OpenXmlComplexTypeConverter
     var children = openXmlElement.ChildElements.Where(item => item.GetType() == openXmlChildType).ToArray();
     foreach (var openXmlChildElement in children)
     {
-      var modelItem = ConvertObjectFromOpenXml(openXmlChildElement, modelItemType);
+      var modelItem = ConvertFrom(openXmlChildElement, modelItemType);
       if (!modelItemType.IsInstanceOfType(modelItem))
         throw new InvalidOperationException($"Converted model Item is not compatible to {modelItemType}");
       if (modelValue == null)

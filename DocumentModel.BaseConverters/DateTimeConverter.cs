@@ -6,7 +6,7 @@ namespace DocumentModel.OpenXml;
 public static class DateTimeConverter
 {
 
-  private static readonly ConversionMethodInfo[] supportedTypes =
+  private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
     new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
@@ -22,7 +22,7 @@ public static class DateTimeConverter
   /// </summary>
   static DateTimeConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(DateTimeConverter), typeof(DateTime), supportedTypes, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(DateTimeConverter), typeof(DateTime), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
   #region StringValue conversion.
