@@ -37,7 +37,7 @@ public partial class ExtBaseRunProperties<T>: BaseRunProperties<T> where T: DX.O
   /// <summary>
   /// Indicates whether to display characters using contextual alternates according to OpenType Font specification.
   /// </summary>
-  public OnOffKind? ContextualAlternates { get; set; }
+  public Boolean? ContextualAlternates { get; set; }
 
   /// <summary>
   /// Glow effect, a colored, blurred outline added outside the edges of text.

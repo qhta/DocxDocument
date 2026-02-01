@@ -86,7 +86,7 @@ public partial class RunProperties : BaseRunProperties<DXW.RunProperties>
  /// <summary>
  /// Indicates whether to use contextual alternates (Office 2010+), adjusts glyphs based on surrounding characters.
  /// </summary>
- public OnOffKind? ContextualAlternatives { get; set; }
+ public Boolean? ContextualAlternatives { get; set; }
  /// <summary>
  /// Run properties change tracking information, records the previous state of run properties when changes are tracked.
  /// </summary>

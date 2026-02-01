@@ -4,15 +4,17 @@ namespace DocumentModel.Wordprocessing;
 /// This enumeration provides values for left-to-right and right-to-left text flows, supporting bidirectional text, internationalization, and advanced layout scenarios for languages with different writing directions.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXP.DirectionValues))]
+[OpenXmlEnumType(typeof(DXW.DirectionValues))]
 public enum DirectionKind
 {
   /// <summary>
   /// Left-to-right text direction.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.DirectionValues.Ltr))]
   Ltr,
   /// <summary>
   /// Right-to-left text direction.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.DirectionValues.Rtl))]
   Rtl
 }
