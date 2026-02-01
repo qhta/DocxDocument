@@ -7,8 +7,15 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.IO;
 using System.Linq;
 
+/// <summary>
+/// Adds the <c>partial</c> modifier to the first class declaration contained in a source file when missing.
+/// </summary>
 public static class AddPartialToClass
 {
+  /// <summary>
+  /// Reads the specified C# file and ensures its first class declaration is marked as <c>partial</c>.
+  /// </summary>
+  /// <param name="filePath">The path to the file to update.</param>
   public static void Run(string filePath)
   {
     var code = File.ReadAllText(filePath);

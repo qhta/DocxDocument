@@ -10,8 +10,15 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
+/// <summary>
+/// Adds <c>[OpenXmlElement]</c> attributes to model classes based on their Open XML backing types.
+/// </summary>
 public static class AddOpenXmlElementAttribute
 {
+  /// <summary>
+  /// Processes the supplied C# file, rewriting properties that require an <c>[OpenXmlElement]</c> attribute.
+  /// </summary>
+  /// <param name="filePath">The path to the source file to inspect and update.</param>
   public static void Run(string filePath)
   {
     var code = File.ReadAllText(filePath);
@@ -30,13 +37,25 @@ public static class AddOpenXmlElementAttribute
   }
 }
 
+/// <summary>
+/// Syntax rewriter that annotates properties inside <c>ModelElement&lt;TOpenXml&gt;</c> classes with <c>[OpenXmlElement]</c> attributes.
+/// </summary>
+/// <param name="aliasMap">Namespace aliases discovered in the processed file.</param>
 public class AddOpenXmlElementAttributeRewriter(Dictionary<string, string> aliasMap) : CSharpSyntaxRewriter
 {
   private readonly Dictionary<string, Type?> _typeCache = new(StringComparer.Ordinal);
   private static readonly Assembly? OpenXmlAssembly = typeof(OpenXmlElement).Assembly;
 
+  /// <summary>
+  /// Indicates whether the rewriter produced any modifications.
+  /// </summary>
   public bool Changed { get; private set; } = false;
 
+  /// <summary>
+  /// Visits model classes and adds missing <c>[OpenXmlElement]</c> attributes to eligible properties.
+  /// </summary>
+  /// <param name="node">The class declaration being analyzed.</param>
+  /// <returns>The updated class declaration, or the original node when no changes were required.</returns>
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
   {
     if (node.Modifiers.Any(m => m.IsKind(SyntaxKind.AbstractKeyword)))
@@ -103,6 +122,12 @@ public class AddOpenXmlElementAttributeRewriter(Dictionary<string, string> alias
     return node.WithMembers(SyntaxFactory.List(newMembers));
   }
 
+  /// <summary>
+  /// Determines when an Open XML type already exposes a property with the supplied name.
+  /// </summary>
+  /// <param name="openXmlTypeName">Fully-qualified Open XML type name.</param>
+  /// <param name="propertyName">Property name to search for.</param>
+  /// <returns><see langword="true"/> if the property exists; otherwise <see langword="false"/>.</returns>
   private bool PropertyExistsInOpenXmlType(string openXmlTypeName, string propertyName)
   {
     if (!TryResolveOpenXmlType(openXmlTypeName, out var type))
@@ -111,6 +136,12 @@ public class AddOpenXmlElementAttributeRewriter(Dictionary<string, string> alias
     return type!.GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase) != null;
   }
 
+  /// <summary>
+  /// Attempts to resolve a type using alias expansion and loaded assemblies.
+  /// </summary>
+  /// <param name="typeName">Candidate type name, possibly using an alias.</param>
+  /// <param name="type">Resolved <see cref="Type"/> when successful.</param>
+  /// <returns><see langword="true"/> if the type is resolved; otherwise <see langword="false"/>.</returns>
   private bool TryResolveOpenXmlType(string typeName, out Type? type)
   {
     if (_typeCache.TryGetValue(typeName, out var cached))
@@ -137,6 +168,11 @@ public class AddOpenXmlElementAttributeRewriter(Dictionary<string, string> alias
     return type != null;
   }
 
+  /// <summary>
+  /// Expands namespace aliases referenced in the current file.
+  /// </summary>
+  /// <param name="typeName">Type name that may use an alias prefix.</param>
+  /// <returns>The fully-qualified type name.</returns>
   private string ResolveAlias(string typeName)
   {
     var dotIndex = typeName.IndexOf('.');

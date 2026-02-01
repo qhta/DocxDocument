@@ -10,8 +10,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+/// <summary>
+/// Adds <c>[OpenXmlType]</c> annotations to classes that derive from Open XML-backed model types.
+/// </summary>
 public static class AddOpenXmlTypeAttribute
 {
+  /// <summary>
+  /// Processes the supplied C# file, inserting <c>[OpenXmlType]</c> attributes where needed.
+  /// </summary>
+  /// <param name="filePath">Absolute or relative path to the file to rewrite.</param>
   public static void Run(string filePath)
   {
     //Console.WriteLine($"Checking: {filePath}");
@@ -31,10 +38,21 @@ public static class AddOpenXmlTypeAttribute
   }
 }
 
+/// <summary>
+/// Roslyn rewriter that annotates model classes with <c>[OpenXmlType]</c> metadata.
+/// </summary>
 public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
 {
+  /// <summary>
+  /// Indicates whether the current rewrite produced modifications.
+  /// </summary>
   public bool Changed { get; private set; } = false;
 
+  /// <summary>
+  /// Adds an <c>[OpenXmlType]</c> attribute to classes inheriting from Open XML model base types when missing.
+  /// </summary>
+  /// <param name="classNode">The class declaration being inspected.</param>
+  /// <returns>The updated class declaration, or the original when no changes are needed.</returns>
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax classNode)
   {
     if (classNode.Identifier.Text.Contains("TransformEffect")) Debug.Assert(true);
@@ -93,6 +111,9 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
     return classNode;
   }
 
+  /// <summary>
+  /// Determines whether the trivia represents XML documentation content.
+  /// </summary>
   private static bool IsDocumentationTrivia(SyntaxTrivia trivia)
   {
     return trivia.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia)
@@ -100,12 +121,18 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
            || trivia.IsKind(SyntaxKind.DocumentationCommentExteriorTrivia);
   }
 
+  /// <summary>
+  /// Checks whether a generic argument refers to a concrete type rather than a type parameter.
+  /// </summary>
   private static bool HasConcreteTypeArgument(GenericNameSyntax genericName, HashSet<string>? typeParameterNames)
   {
     var firstArgument = genericName.TypeArgumentList.Arguments.FirstOrDefault();
     return IsConcreteTypeArgument(firstArgument, typeParameterNames);
   }
 
+  /// <summary>
+  /// Determines if the provided type syntax maps to a concrete type.
+  /// </summary>
   private static bool IsConcreteTypeArgument(TypeSyntax? typeSyntax, HashSet<string>? typeParameterNames)
   {
     if (typeSyntax == null)
@@ -122,6 +149,9 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
     return true;
   }
 
+  /// <summary>
+  /// Splits leading trivia into documentation and non-documentation sections.
+  /// </summary>
   private static (SyntaxTriviaList docTrivia, SyntaxTriviaList remainingTrivia) SplitDocumentationTrivia(SyntaxTriviaList leadingTrivia)
   {
     int lastDocIndex = -1;

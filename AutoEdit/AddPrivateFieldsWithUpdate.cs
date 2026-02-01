@@ -6,8 +6,15 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.IO;
 using System.Linq;
 
+/// <summary>
+/// Rewrites model classes so auto-properties become backed by private fields with UpdateField notifications.
+/// </summary>
 public class AddPrivateFieldsWithUpdate
 {
+  /// <summary>
+  /// Processes the specified C# file, updating eligible properties to use backing fields.
+  /// </summary>
+  /// <param name="filePath">The file to rewrite in place.</param>
   public static void Run(string filePath)
   {
     var code = File.ReadAllText(filePath);
@@ -37,10 +44,21 @@ public class AddPrivateFieldsWithUpdate
   }
 }
 
+/// <summary>
+/// Syntax rewriter that transforms auto-properties in ModelElement-derived classes into backed properties.
+/// </summary>
 public class ModelElementPropertyRewriter : CSharpSyntaxRewriter
 {
+  /// <summary>
+  /// Indicates whether any modifications were produced during rewriting.
+  /// </summary>
   public bool Changed { get; private set; } = false;
 
+  /// <summary>
+  /// Identifies auto-properties that require backing fields and emits the updated members.
+  /// </summary>
+  /// <param name="node">Class declaration currently being visited.</param>
+  /// <returns>The updated class declaration or the original when no changes were necessary.</returns>
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
   {
     // Check if class inherits from ModelElement (with or without generic)
