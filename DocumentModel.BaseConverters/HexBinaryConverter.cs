@@ -1,102 +1,300 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for HexBinary values in Open XML.
+/// Provides conversion methods for HexBinary values to/from Open XML.
 /// </summary>
 public static class HexBinaryConverter
 {
-  /// <summary>
-  /// Retrieves a HexBinary array from an OpenXmlLeafElement having a "Value" property of type HexBinaryValue.
-  /// </summary>
-  /// <param name="openXmlElement">The OpenXmlLeafElement to retrieve the value from.</param>
-  /// <returns>A HexBinary array, or null if retrieval fails.</returns>
-  public static HexBinary? GetValue(DX.OpenXmlLeafElement? openXmlElement)
-  {
-    var valProperty = openXmlElement?.GetType().GetProperties()
-      .FirstOrDefault(item=>item.PropertyType==typeof(DX.HexBinaryValue));
-    if (valProperty != null)
-    {
-      var valPropertyValue = valProperty.GetValue(openXmlElement);
-      if (valPropertyValue is string valStr)
-        return Convert.FromHexString(valStr);
-      if (valPropertyValue is DX.HexBinaryValue hexBinaryValue && hexBinaryValue.Value != null)
-        return Convert.FromHexString(hexBinaryValue.Value);
-    }
-    return null;
-  }
+
+
+  private static readonly ConversionMethodInfo[] supportedTypes =
+  [
+    new(typeof(DX.HexBinaryValue), nameof(ConvertFromHexBinaryValue), nameof(ConvertToHexBinaryValue)),
+    new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
+    new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
+    new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
+    new(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
+    new(typeof(DXW.FontSignature), nameof(ConvertFromFontSignature), nameof(ConvertToFontSignature)),
+  ];
+
+  internal static readonly ConversionToMap ConversionToMap = new();
+  internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Converts a hexadecimal string to a HexBinary array.
+  /// Initializes the conversion maps for <see cref="HexBinaryConverter"/>.
   /// </summary>
-  /// <param name="value">The hexadecimal string to convert.</param>
-  /// <returns>A HexBinary array representing the string, or null if the input is null.</returns>
-  public static HexBinary? GetValue(string? value)
+  static HexBinaryConverter()
   {
+    ConverterBase.RegisterConversionMethods(typeof(HexBinaryConverter), typeof(HexBinary), supportedTypes, ConversionToMap, ConversionFromMap);
+  }
+
+  #region HexBinaryValue conversion.
+
+  /// <summary>
+  /// Retrieves a HexBinary from a HexBinaryValue.
+  /// </summary>
+  /// <param name="val">The HexBinaryValue to convert.</param>
+  /// <returns>A HexBinary representing the value, or null if the input is null.</returns>
+  public static HexBinary? ConvertFromHexBinaryValue(DX.HexBinaryValue? val)
+  {
+    if (val == null)
+      return null;
+
+    var value = val.Value;
     if (value != null)
-      return Convert.FromHexString(value);
+      return new HexBinary(value);
+
     return null;
   }
 
   /// <summary>
-  /// Creates a specific HexBinaryValue type from a HexBinary array.
+  /// Creates a HexBinaryValue from a HexBinary.
   /// </summary>
-  /// <typeparam name="HexBinaryType">The type of HexBinaryValue to create.</typeparam>
-  /// <param name="value">The HexBinary array to convert.</param>
-  /// <returns>A new instance of HexBinaryType, or null if the input value is null.</returns>
-  public static HexBinaryType? CreateValue<HexBinaryType>(HexBinary? value)
-    where HexBinaryType : DX.HexBinaryValue, new()
-  {
-    if (value != null)
-    {
-      var element = new HexBinaryType();
-      element.Value = Convert.ToHexString(value);
-      return element;
-    }
-    return null;
-  }
-
-  /// <summary>
-  /// Creates a generic OpenXml element and sets its HexBinaryValue property from a HexBinary array.
-  /// </summary>
-  /// <typeparam name="OpenXmlElementType">The type of the OpenXml element to create.</typeparam>
-  /// <param name="value">The HexBinary array to set.</param>
-  /// <returns>A new instance of the element type with the value set, or null if the input value is null.</returns>
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(HexBinary? value)
-    where OpenXmlElementType : DX.OpenXmlElement, new()
+  /// <param name="value">The HexBinary to convert.</param>
+  /// <returns>A HexBinaryValue element, or null if the input value is null.</returns>
+  public static DX.HexBinaryValue? ConvertToHexBinaryValue(HexBinary? value)
   {
     if (value == null)
       return null;
-    var element = new OpenXmlElementType();
-    if (value.Length > 0)
+
+    var element = new DX.HexBinaryValue
     {
-      var openXmlType = typeof(OpenXmlElementType);
-      var valProperty = openXmlType.GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(DX.HexBinaryValue));
-      if (valProperty != null)
-        valProperty.SetValue(element, CreateValue<DX.HexBinaryValue>(value));
-      else
-        throw new InvalidOperationException($"The specified {openXmlType.Name} type does not have a HexBinaryValue property.");
-    }
+      InnerText = value.ToString()
+    };
     return element;
   }
 
+  #endregion
+
+
+  #region StringValue conversion.
+
   /// <summary>
-  /// Creates a new Open XML element of the specified type and assigns the provided hex binary value, if present.
+  /// Converts an OpenXml StringValue to HexBinary.
   /// </summary>
-  /// <remarks>The created element will have its first property of type HexBinaryValue set to the provided
-  /// value, if such a property exists. If the value is empty, the property is not set.</remarks>
-  /// <param name="value">The hex binary value to assign to the Open XML element. If null, the method returns null.</param>
-  /// <param name="openXmlType">The type of the Open XML element to create. Must be a type that has a property of type HexBinaryValue.</param>
-  /// <returns>An instance of the specified Open XML element type with the value assigned, or null if the input value is null.</returns>
-  public static object? CreateOpenXmlElement(HexBinary? value, Type openXmlType)
+  /// <param name="StringValue">The StringValue to convert.</param>
+  /// <returns>The HexBinary value, or null if the element has no content.</returns>
+  public static HexBinary? ConvertFromStringValue(DX.StringValue? StringValue)
+  {
+    if (StringValue == null) return null;
+
+    var text = StringValue.Value;
+    if (text == null)
+      throw new InvalidOperationException("StringValue has no content.");
+
+    return new HexBinary(text);
+  }
+
+  /// <summary>
+  /// Creates an OpenXml StringValue from an HexBinary value.
+  /// </summary>
+  /// <param name="value">The HexBinary value to convert.</param>
+  /// <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+  /// <returns>A new StringValue, or null if the input is null.</returns>
+  public static DX.StringValue? ConvertToStringValue(HexBinary? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    var text = ((HexBinary)value).ToString();
+    var element = (DX.StringValue)Activator.CreateInstance(targetType)!;
+    element.Value = text;
+    return element;
+  }
+
+  #endregion
+
+  #region String conversion.
+
+  /// <summary>
+  /// Converts the specified string representation of a number to its 16-bit signed integer equivalent.
+  /// </summary>
+  /// <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+  /// <returns>A 16-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
+  /// not a valid integer.</returns>
+  private static HexBinary? ConvertFromString(string? value)
+  {
+    if (value == null) return null;
+    return new HexBinary(value);
+  }
+
+  /// <summary>
+  /// Converts a nullable 16-bit integer value to its string representation.
+  /// </summary>
+  /// <param name="value">The nullable 16-bit integer value to convert. If null, the method returns null.</param>
+  /// <returns>A string representation of the specified value, or null if the value is null.</returns>
+  private static String? ConvertToString(HexBinary? value)
+  {
+    if (value == null) return null;
+
+    var text = ((HexBinary)value).ToString();
+    return text;
+  }
+
+  #endregion
+
+  #region OpenXmlLeafTextElement conversion.
+
+  /// <summary>
+  /// Converts an OpenXml OpenXmlLeafTextElement to HexBinary.
+  /// </summary>
+  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+  /// <returns>The HexBinary value, or null if the element has no content.</returns>
+  public static HexBinary? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
+  {
+    if (OpenXmlLeafTextElement == null) return null;
+
+    var text = OpenXmlLeafTextElement.Text;
+    return new HexBinary(text);
+  }
+
+  /// <summary>
+  /// Creates an OpenXml OpenXmlLeafTextElement from an HexBinary value.
+  /// </summary>
+  /// <param name="value">The HexBinary value to convert.</param>
+  /// <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+  public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexBinary? value, Type targetType)
+  {
+    if (value == null) return null;
+
+    var text = ((HexBinary)value).ToString();
+    var element = (DX.OpenXmlLeafTextElement)Activator.CreateInstance(targetType)!;
+    element.Text = text;
+    return element;
+  }
+
+  #endregion
+
+  #region OpenXmlLeafElement conversion.
+
+  /// <summary>
+  /// Retrieves a HexBinary from an OpenXmlLeafElement having a "Value" property containing a base64 string.
+  /// </summary>
+  /// <param name="element">The element to retrieve the value from.</param>
+  /// <returns>A HexBinary representing the value, or null if the element is null.</returns>
+  public static HexBinary? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? element)
+  {
+    if (element == null)
+      return null;
+
+    var valProperty = element.GetType().GetProperty("Value");
+    if (valProperty != null)
+    {
+      var value = (string?)valProperty.GetValue(element);
+      if (value != null)
+        return new HexBinary(value);
+    }
+    throw new InvalidOperationException($"The OpenXml element of type {element.GetType()} does not have a valid 'Value' property.");
+  }
+
+  /// <summary>
+  /// Creates an OpenXmlLeafElement element containing a base64 string "Value" property from a HexBinary.
+  /// </summary>
+  /// <param name="value">The HexBinary to convert.</param>
+  /// <param name="targetType">The type of OpenXml element to create.</param>
+  /// <returns>An instance of the element type, or null if the input value is null.</returns>
+  public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(HexBinary? value, Type targetType)
   {
     if (value == null)
       return null;
-    var element = Activator.CreateInstance(openXmlType);
-    var valProperty = openXmlType.GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(DX.HexBinaryValue));
+
+    var element = (DX.OpenXmlLeafElement)Activator.CreateInstance(targetType)!;
+    var valProperty = targetType.GetProperty("Value");
     if (valProperty != null)
-      valProperty.SetValue(element, HexBinaryConverter.CreateValue<DX.HexBinaryValue>(value));
-    else
-      throw new InvalidOperationException($"The specified {openXmlType.Name} type does not have a HexBinaryValue property.");
+      valProperty.SetValue(element, value.ToString());
     return element;
   }
+
+  #endregion
+
+
+  #region FontSignature conversion.
+
+  /// <summary>
+  /// Retrieves a HexBinary from an FontSignature.
+  /// </summary>
+  /// <param name="element">The element to retrieve the value from.</param>
+  /// <returns>A HexBinary representing the value, or null if the element is null.</returns>
+  public static HexBinary? ConvertFromFontSignature(DXW.FontSignature? element)
+  {
+    if (element == null)
+      return null;
+
+    List<string> parts = new();
+    if (element.UnicodeSignature0?.Value!=null)
+      parts.Add(element.UnicodeSignature0!.Value!);
+    if (element.UnicodeSignature1?.Value!=null)
+      parts.Add(element.UnicodeSignature1!.Value!);
+    if (element.UnicodeSignature2?.Value!=null)
+      parts.Add(element.UnicodeSignature2!.Value!);
+    if (element.UnicodeSignature3?.Value!=null)
+      parts.Add(element.UnicodeSignature3!.Value!);
+    if (element.CodePageSignature0?.Value!=null)
+      parts.Add(element.CodePageSignature0!.Value!);
+    if (element.CodePageSignature1?.Value!=null)
+      parts.Add(element.CodePageSignature1!.Value!);
+    var text = String.Join("-", parts);
+    return new HexBinary(text);
+  }
+
+  /// <summary>
+  /// Creates an FontSignature property from a HexBinary.
+  /// </summary>
+  /// <param name="value">The HexBinary to convert.</param>
+  /// <param name="targetType">The type of OpenXml element to create.</param>
+  /// <returns>An instance of the element type, or null if the input value is null.</returns>
+  public static DXW.FontSignature? ConvertToFontSignature(HexBinary? value, Type targetType)
+  {
+    if (value == null)
+      return null;
+
+    var element = (DXW.FontSignature)Activator.CreateInstance(targetType)!;
+    var text = ((HexBinary)value).ToString();
+    string[] parts = text.Split('-');
+    if (parts.Length>0)
+      element.UnicodeSignature0 = new DX.HexBinaryValue(parts[0]);
+    if (parts.Length>1)
+      element.UnicodeSignature1 = new DX.HexBinaryValue(parts[1]);
+    if (parts.Length>2)
+      element.UnicodeSignature2 = new DX.HexBinaryValue(parts[2]);
+    if (parts.Length>3)
+      element.UnicodeSignature3 = new DX.HexBinaryValue(parts[3]);
+    if (parts.Length>4)
+      element.CodePageSignature0 = new DX.HexBinaryValue(parts[4]);
+    if (parts.Length>5)
+      element.CodePageSignature1 = new DX.HexBinaryValue(parts[5]);
+    return element;
+  }
+
+  #endregion
+
+  #region Generic OpenXml conversion methods
+
+  /// <summary>
+  /// Converts a value to a specified target type.
+  /// </summary>
+  /// <param name="value">The value to convert.</param>
+  /// <param name="targetType">The target type to convert to.</param>
+  /// <returns>The converted value, or null if the element has no content.</returns>
+  /// <exception cref="InvalidOperationException">Thrown if the conversion is not supported.</exception>
+  public static object? ConvertTo(HexBinary? value, Type targetType)
+  {
+    return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
+  }
+
+  /// <summary>
+  /// Converts an Open XML value to a nullable HexBinary, if possible.
+  /// </summary>
+  /// <remarks>If value is a StringValue, the method attempts to parse its contents as an HexBinary integer. If
+  /// parsing fails, the method returns null.</remarks>
+  /// <param name="value">The value to convert. Supported types include HexBinaryValue, HexBinaryValue, HexBinaryValue, UHexBinaryValue, HexBinaryValue,
+  /// UHexBinaryValue, UHexBinaryValue, and StringValue. May be null.</param>
+  /// <returns>An HexBinary representation of the input value, or null if the input is null or cannot be converted.</returns>
+  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>
+  public static HexBinary? ConvertFrom(object? value)
+  {
+    return (HexBinary?)ConverterBase.ConvertFrom(value, typeof(HexBinary), ConversionFromMap);
+  }
+
+  #endregion
 }

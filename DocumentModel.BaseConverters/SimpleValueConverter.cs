@@ -31,6 +31,8 @@ public static class SimpleValueConverter
     ConversionToMap.Append(DateTimeConverter.ConversionToMap);
     ConversionToMap.Append(HexLongConverter.ConversionToMap);
     ConversionToMap.Append(StringListConverter.ConversionToMap);
+    ConversionToMap.Append(RgbConverter.ConversionToMap);
+    ConversionToMap.Append(HexBinaryConverter.ConversionToMap);
 
     ConversionFromMap.Append(BooleanConverter.ConversionFromMap);
     ConversionFromMap.Append(TSBooleanConverter.ConversionFromMap);
@@ -46,6 +48,8 @@ public static class SimpleValueConverter
     ConversionFromMap.Append(DateTimeConverter.ConversionFromMap);
     ConversionFromMap.Append(HexIntConverter.ConversionFromMap);
     ConversionFromMap.Append(StringListConverter.ConversionFromMap);
+    ConversionFromMap.Append(RgbConverter.ConversionFromMap);
+    ConversionFromMap.Append(HexBinaryConverter.ConversionFromMap);
 
   }
 
