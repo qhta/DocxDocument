@@ -3,6 +3,7 @@
 /// <summary>
 /// Information types for range queries.
 /// </summary>
+[OpenXmlNotMapped]
 public enum InformationKind
 {
   /// <summary>Active end adjusted</summary>

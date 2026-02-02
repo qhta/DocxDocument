@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the sort order for bibliography entries.
 /// </summary>
+[OpenXmlNotMapped]
 public enum BibliographySortOrderKind
 {
   /// <summary>Alphabetically by author last name</summary>

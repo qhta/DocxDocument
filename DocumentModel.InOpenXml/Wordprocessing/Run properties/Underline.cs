@@ -23,9 +23,9 @@ public partial class Underline : ModelElement<DXW.Underline>
  /// Theme color index for the underline, enabling theme-aware underline coloring.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Underline.ThemeColor))]
- public ThemeColorIndex? ThemeColor { get => _ThemeColor; set => UpdateField(ref _ThemeColor, value, nameof(ThemeColor)); }
+ public ThemeColorKind? ThemeColor { get => _ThemeColor; set => UpdateField(ref _ThemeColor, value, nameof(ThemeColor)); }
 
- private ThemeColorIndex? _ThemeColor;
+ private ThemeColorKind? _ThemeColor;
  /// <summary>
  /// Theme color tint for the underline, specifying a lighter variation of the theme color.
  /// </summary>

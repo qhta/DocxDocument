@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the bullet style for bulleted lists.
 /// </summary>
+[OpenXmlNotMapped]
 public enum BulletStyleKind
 {
   /// <summary>Solid round bullet</summary>

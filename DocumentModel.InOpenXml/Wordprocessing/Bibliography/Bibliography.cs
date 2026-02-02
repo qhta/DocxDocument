@@ -7,6 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   used for managing references in academic and professional documents. It corresponds
 ///   to the Microsoft.Office.Interop.Word.Bibliography class.
 /// </remarks>
+[OpenXmlNotMapped]
 public partial class Bibliography : ModelElement
 {
 #region Sources Management

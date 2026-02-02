@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies color index values for legacy color support.
 /// </summary>
+[OpenXmlNotMapped]
 public enum ColorIndexKind
 {
   /// <summary>Automatic color</summary>

@@ -3,6 +3,7 @@
 /// <summary>
 /// Story types in a document.
 /// </summary>
+[OpenXmlNotMapped]
 public enum StoryKind
 {
   /// <summary>Main text story</summary>

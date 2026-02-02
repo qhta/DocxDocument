@@ -7,7 +7,7 @@
 /// used by libraries or tools that process OpenXml documents. This attribute is intended for use in scenarios where
 /// type information is required for reflection or code generation.</remarks>
 /// <param name="type">The OpenXml type to associate with the decorated member. Cannot be null.</param>
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Class | AttributeTargets.Enum, Inherited = true, AllowMultiple = false)]
 public class OpenXmlTypeAttribute(Type type) : Attribute
 {
   /// <summary>

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Specifies which font properties to apply when using SetRange method.
 /// </summary>
 [Flags]
+[OpenXmlNotMapped]
 public enum FontPropertiesKind
 {
   /// <summary>Font name</summary>

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Base interface for all TableRowProperties classes.
 /// Contains common properties for table row formatting, layout, and behavior, including height, splitting, header status, alignment, cell spacing, grid columns, preferred widths, HTML div association, and conditional formatting.
 /// </summary>
-public partial class BaseTableRowProperties : ModelElement // <OpenXmlItemType> where OpenXmlItemType : DX.OpenXmlElement
+public abstract partial  class BaseTableRowProperties<T> : ModelElement<T> where T : DX.OpenXmlElement
 {
     /// <summary>
     /// Specifies the height of the current table row within the current table. This height is used to determine the resulting height of the table row, which can be absolute or relative.

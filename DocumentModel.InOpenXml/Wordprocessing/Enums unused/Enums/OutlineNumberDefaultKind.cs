@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the default outline numbering scheme.
 /// </summary>
+[OpenXmlNotMapped]
 public enum OutlineNumberDefaultKind
 {
   /// <summary>Arabic outline numbering (1., 1.1., 1.1.1...)</summary>

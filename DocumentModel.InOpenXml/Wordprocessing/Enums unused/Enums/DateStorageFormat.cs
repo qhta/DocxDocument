@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing
   /// <summary>
   /// Specifies the date storage format for a content control, corresponding to Microsoft.Office.Interop.Word.WdContentControlDateStorageFormat.
   /// </summary>
+  [OpenXmlNotMapped]
   public enum DateStorageFormat
   {
     /// <summary>Store date as date/time value (ISO 8601 format).</summary>

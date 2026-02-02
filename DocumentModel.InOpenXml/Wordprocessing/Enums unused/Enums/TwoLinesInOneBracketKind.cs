@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the bracket style for two lines in one text.
 /// </summary>
+[OpenXmlNotMapped]
 public enum TwoLinesInOneBracketKind
 {
   /// <summary>No brackets</summary>

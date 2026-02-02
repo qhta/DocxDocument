@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing
   /// <summary>
   /// Specifies the type of building block, corresponding to Microsoft.Office.Interop.Word.WdBuildingBlockTypes.
   /// </summary>
+  [OpenXmlNotMapped]
   public enum BuildingBlockType
   {
     /// <summary>AutoText building block.</summary>

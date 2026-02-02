@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the type of style.
 /// </summary>
+[OpenXmlNotMapped]
 public enum InteropStyleKind
 {
   /// <summary>Paragraph style</summary>
