@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies built-in style identifiers.
 /// </summary>
+[OpenXmlNotMapped]
 public enum BuiltInStyleKind
 {
   /// <summary>Normal style</summary>

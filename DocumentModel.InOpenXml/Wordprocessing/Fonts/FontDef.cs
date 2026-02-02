@@ -31,9 +31,9 @@ public partial class FontDef : ModelElement<DXW.Font>
  /// Character set supported by the font, used for font substitution logic.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.FontCharSet))]
- public Charset? Charset { get => _charset; set => UpdateField(ref _charset, value, nameof(Charset)); }
+ public FontCharSet? Charset { get => _charset; set => UpdateField(ref _charset, value, nameof(Charset)); }
 
- private Charset? _charset;
+ private FontCharSet? _charset;
  /// <summary>
  /// Font family classification (e.g., Roman, Swiss, Modern).
  /// </summary>

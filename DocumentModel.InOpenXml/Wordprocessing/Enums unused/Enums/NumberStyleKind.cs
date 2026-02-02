@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the number style for numbered lists.
 /// </summary>
+[OpenXmlNotMapped]
 public enum NumberStyleKind
 {
   /// <summary>Arabic numbers (1, 2, 3...)</summary>

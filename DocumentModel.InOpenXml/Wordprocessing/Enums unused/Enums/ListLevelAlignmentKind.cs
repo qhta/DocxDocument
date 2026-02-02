@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the alignment for numbers in a list level.
 /// </summary>
+[OpenXmlNotMapped]
 public enum ListLevelAlignmentKind
 {
   /// <summary>Left-aligned</summary>

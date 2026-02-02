@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 #pragma warning disable CS1591
 
-public partial class BaseTableRowProperties
+public partial class BaseTableRowProperties<T>
 {
   public bool ShouldSerializeRowHeight() => RowHeight is not null;
   public bool ShouldSerializeCantSplit() => CantSplit is not null;

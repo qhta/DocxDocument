@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the severity level of a validation issue.
 /// </summary>
+[OpenXmlNotMapped]
 public enum ValidationSeverityKind
 {
   /// <summary>Informational message</summary>

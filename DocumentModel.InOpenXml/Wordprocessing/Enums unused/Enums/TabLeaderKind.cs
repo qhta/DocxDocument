@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the leader character for tab stops.
 /// </summary>
+[OpenXmlNotMapped]
 public enum TabLeaderKind
 {
   /// <summary>No leader</summary>

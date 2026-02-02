@@ -3,6 +3,7 @@
 /// <summary>
 /// Measurement units.
 /// </summary>
+[OpenXmlNotMapped]
 public enum MeasurementUnitsKind
 {
   /// <summary>Inches</summary>

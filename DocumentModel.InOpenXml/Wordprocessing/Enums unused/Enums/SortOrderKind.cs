@@ -3,6 +3,7 @@
 /// <summary>
 /// Sort orders.
 /// </summary>
+[OpenXmlNotMapped]
 public enum SortOrderKind
 {
   /// <summary>Ascending order</summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the type of number conversion when converting numbers to text.
 /// </summary>
+[OpenXmlNotMapped]
 public enum NumberConversionKind
 {
   /// <summary>Convert to Arabic numerals</summary>

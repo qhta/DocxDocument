@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Specifies how the width of a table, row, or cell is determined.
 /// </summary>
 [JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlNotMapped]
 public enum WidthRuleKind
 {
   /// <summary>Width adjusts automatically based on content</summary>

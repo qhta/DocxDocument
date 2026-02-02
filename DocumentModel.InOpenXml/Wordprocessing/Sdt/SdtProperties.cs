@@ -69,9 +69,9 @@ public partial class SdtProperties : ModelElement<DXW.SdtProperties>, IStoryCont
  /// <summary>
  /// Visual appearance style for this structured document tag.
  /// </summary>
- public AppearanceKind? Appearance { get => _Appearance; set => UpdateField(ref _Appearance, value, nameof(Appearance)); }
+ public SdtAppearanceKind? Appearance { get => _Appearance; set => UpdateField(ref _Appearance, value, nameof(Appearance)); }
 
- private AppearanceKind? _Appearance;
+ private SdtAppearanceKind? _Appearance;
  /// <summary>
  /// Indicates whether this SDT is linked to a web extension (Office Add-in).
  /// </summary>

@@ -6,7 +6,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [Flags]
 [JsonConverter(typeof(StringEnumConverter))]
-public enum DateItem
+[OpenXmlNotMapped]
+public enum DateItemKind
 {
   /// <summary>
   ///   Day is presented

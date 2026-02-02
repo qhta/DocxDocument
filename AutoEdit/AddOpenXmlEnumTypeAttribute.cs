@@ -67,6 +67,13 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
   {
     List<string> enumTypeNameCandidates = new();
     string? enumTypeName = null;
+    if (node.AttributeLists.SelectMany(al => al.Attributes)
+          .FirstOrDefault(attr => attr.Name.ToString().Contains("OpenXmlType", StringComparison.Ordinal)) != null)
+      return base.VisitEnumDeclaration(node);
+    if (node.AttributeLists.SelectMany(al => al.Attributes)
+          .FirstOrDefault(attr => attr.Name.ToString().Contains("OpenXmlNotMapped", StringComparison.Ordinal)) != null)
+      return base.VisitEnumDeclaration(node);
+
     AttributeSyntax? enumTypeAttribute = node.AttributeLists.SelectMany(al => al.Attributes)
       .FirstOrDefault(attr =>
         attr.Name.ToString().Contains("OpenXmlEnumType", StringComparison.Ordinal));
@@ -85,6 +92,9 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
       if (enumTypeName.EndsWith("Kind"))
         enumTypeName = enumTypeName.Substring(0, enumTypeName.Length - 4);
       enumTypeNameCandidates.Add(enumTypeName + "Values");
+      enumTypeNameCandidates.Add(enumTypeName + "TypeValues");
+      enumTypeNameCandidates.Add(enumTypeName + "Type");
+      enumTypeNameCandidates.Add(enumTypeName + "Enum");
       enumTypeNameCandidates.Add(enumTypeName);
     }
 
@@ -98,18 +108,21 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
       }
     }
     if (openXmlEnumType == null)
+    {
+      Console.WriteLine($"Failed to resolve Open XML enum type for {enumTypeName}");
       return base.VisitEnumDeclaration(node);
-    
+    }    
     var isEnumValueType = openXmlEnumType.GetInterface("IEnumValue") != null;
     if (!openXmlEnumType.IsEnum && !isEnumValueType)
+    {
+      Console.WriteLine($"Resolved Open XML type {openXmlEnumType.FullName} is not an enum nor EnumValue type.");
       return base.VisitEnumDeclaration(node);
-
+    }
     var enumValues = (isEnumValueType)
       ? openXmlEnumType.GetProperties(BindingFlags.Static | BindingFlags.Public).Select(prop => prop.Name).ToArray() 
       : openXmlEnumType.GetEnumNames();
 
 
-    var openXmlEnumTypeSyntax = SyntaxFactory.ParseTypeName(GetTypeDisplayName(openXmlEnumType));
     var membersChanged = false;
     var updatedMembers = new List<EnumMemberDeclarationSyntax>();
 

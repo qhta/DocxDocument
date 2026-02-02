@@ -3,6 +3,7 @@
 /// <summary>
 /// Text orientation.
 /// </summary>
+[OpenXmlNotMapped]
 public enum TextOrientationKind
 {
   /// <summary>Horizontal text</summary>

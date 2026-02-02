@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the number style for legal or simplified legal numbering.
 /// </summary>
+[OpenXmlNotMapped]
 public enum ListLevelNumberStyleKind
 {
   /// <summary>Standard numbering</summary>

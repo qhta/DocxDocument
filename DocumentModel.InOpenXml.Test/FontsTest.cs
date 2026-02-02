@@ -191,7 +191,7 @@ namespace DocumentModel.InOpenXml.Test
             FontName = "Windings",
             Aliases = "Courier",
             FontFamily = FontFamilyKind.Auto,
-            Charset = Charset.Symbol,
+            Charset = FontCharSet.Symbol,
             Pitch = FontPitchKind.Fixed,
             Panose = "05000000000000000000",
             FontSignature = "00000000-10000000-00000000-00000000-80000000-00000000"
@@ -245,7 +245,7 @@ namespace DocumentModel.InOpenXml.Test
           Aliases = "Helvetica, Swiss", 
           FontFamily = FontFamilyKind.Swiss,
 					Pitch = FontPitchKind.Variable,
-					Charset = Charset.EastEurope,
+					Charset = FontCharSet.EastEurope,
           Panose = "020B0604020202020204",
 					FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
         });
@@ -255,7 +255,7 @@ namespace DocumentModel.InOpenXml.Test
           Aliases = "Times",
           FontFamily = FontFamilyKind.Roman,
           Pitch = FontPitchKind.Variable,
-          Charset = Charset.Ansi,
+          Charset = FontCharSet.Ansi,
           Panose = "02020603050405020304",
           FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
         });

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Defines the hyphen enumeration for <see cref="Hyphen"/> element
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlNotMapped]
 public enum HyphenKind
 {
   /// <summary>

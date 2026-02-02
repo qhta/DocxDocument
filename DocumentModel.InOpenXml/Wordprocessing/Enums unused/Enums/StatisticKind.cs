@@ -3,6 +3,7 @@
 /// <summary>
 /// Statistics types.
 /// </summary>
+[OpenXmlNotMapped]
 public enum StatisticKind
 {
   /// <summary>Character count</summary>

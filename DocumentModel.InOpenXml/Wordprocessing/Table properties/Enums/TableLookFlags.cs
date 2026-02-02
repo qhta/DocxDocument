@@ -4,6 +4,7 @@
 /// Binary values are declared as in OpenXml
 /// </summary>
 [Flags]
+[OpenXmlNotMapped]
 public enum TableLookFlags
 {
   /// <summary>

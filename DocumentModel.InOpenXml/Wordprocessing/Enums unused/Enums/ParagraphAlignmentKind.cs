@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies paragraph alignment.
 /// </summary>
+[OpenXmlNotMapped]
 public enum ParagraphAlignmentKind
 {
   /// <summary>Left-aligned</summary>

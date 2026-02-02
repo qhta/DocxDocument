@@ -3,6 +3,7 @@
 /// <summary>
 /// Color types.
 /// </summary>
+[OpenXmlNotMapped]
 public enum ColorKind
 {
   /// <summary>Auto color</summary>

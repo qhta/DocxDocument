@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the outline level for a paragraph.
 /// </summary>
+[OpenXmlNotMapped]
 public enum OutlineLevelKind
 {
   /// <summary>Body text (no outline level)</summary>

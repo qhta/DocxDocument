@@ -3,6 +3,7 @@
 /// <summary>
 /// Comparison results.
 /// </summary>
+[OpenXmlNotMapped]
 public enum ComparisonKind
 {
   /// <summary>Range is before the other range</summary>

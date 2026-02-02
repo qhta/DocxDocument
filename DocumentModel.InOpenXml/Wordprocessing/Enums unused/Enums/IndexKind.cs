@@ -3,6 +3,7 @@
 /// <summary>
 /// Index types.
 /// </summary>
+[OpenXmlNotMapped]
 public enum IndexKind
 {
   /// <summary>Standard index</summary>

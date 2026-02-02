@@ -3,6 +3,7 @@
 /// <summary>
 /// Unit types for range operations.
 /// </summary>
+[OpenXmlNotMapped]
 public enum UnitKind
 {
   /// <summary>Character</summary>

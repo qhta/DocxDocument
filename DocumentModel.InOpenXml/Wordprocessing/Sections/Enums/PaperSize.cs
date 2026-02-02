@@ -4,6 +4,7 @@
 ///   Specifies the paper size for a section or page in a WordprocessingML document.
 ///   Values correspond to standard ISO, ANSI, and regional paper sizes used for printing and layout.
 /// </summary>
+[OpenXmlNotMapped]
 public enum PaperSize {
   /// <summary>Letter (8.5 x 11 in, North American standard)</summary>
   Letter = 1,

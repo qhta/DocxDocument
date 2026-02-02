@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the default behavior when applying a list template.
 /// </summary>
+[OpenXmlNotMapped]
 public enum ListApplyDefaultBehaviorKind
 {
   /// <summary>Apply Word 2002 and earlier behavior</summary>
