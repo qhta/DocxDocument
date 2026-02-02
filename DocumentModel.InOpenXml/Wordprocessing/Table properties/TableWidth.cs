@@ -1,6 +1,6 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Defines the TableWidth class. Its Value can be absolute (in twips) or relative (in fiftieth of percent), or "auto" or "nil".
+/// Defines the TableWidthType class. Its Value can be absolute (in twips) or relative (in fiftieth of percent), or "auto" or "nil".
 /// The type of the Value is determined with the Type property.
 /// This class is used in multiple measures according to table horizontal dimension.
 /// </summary>
