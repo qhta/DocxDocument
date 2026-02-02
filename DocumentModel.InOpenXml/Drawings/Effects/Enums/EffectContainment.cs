@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXD.EffectContainerValues))]
-public enum EffectContaining
+public enum EffectContainment
 {
   /// <summary>
   ///   Sibling.

@@ -14,7 +14,7 @@ public partial class EffectContainerType : ModelElement<DXD.EffectContainerType>
  ///   nesting them hierarchically, or defining special effect regions (e.g., outer, inner, background).
  ///   </para>
  ///   <para>
- ///   The value is typically an enumeration (EffectContaining) that may include options like:
+ ///   The value is typically an enumeration (EffectContainment) that may include options like:
  ///   <list type="bullet">
  ///     <item><description>Outer - effects applied outside the object</description></item>
  ///     <item><description>Inner - effects applied inside the object</description></item>
@@ -24,9 +24,9 @@ public partial class EffectContainerType : ModelElement<DXD.EffectContainerType>
  ///   </para>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.EffectContainerType.Type))]
- public EffectContaining? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public EffectContainment? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private EffectContaining? _Type;
+ private EffectContainment? _Type;
  /// <summary>
  ///   FontName of the effect container for identification or documentation purposes.
  /// </summary>

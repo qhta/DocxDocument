@@ -1,209 +1,77 @@
-﻿using DMW = DocumentModel.Wordprocessing.Test;
+﻿using System.Diagnostics;
+
+using DocumentFormat.OpenXml.Office2016.ExcelAc;
+
+using DocumentModel.OpenXml;
+
+using EnumConverter = DocumentModel.OpenXml.EnumConverter;
 
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="EnumConverter"/> conversions between .NET enum values and Open XML enum types.
-///   Tests round-trip conversion, strongly-typed helpers, and Open XML element creation for enum values.
+///   Provides unit tests for verifying the correctness of <see cref="EnumConverter"/> conversions between .NET Enum values and various Open XML numeric types.
+///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
 public static class EnumConverterTest
 {
-    /// <summary>
-    ///   Runs all EnumConverter tests and reports results to the console.
-    /// </summary>
-    /// <returns>True if all tests pass; otherwise, false.</returns>
-    public static bool Run()
-    {
-        bool testResult = true;
-        Console.Write("EnumConverterTest TestEnumValueConversion ");
-        if (TestEnumValueConversion())
-        {
-            Console.WriteLine("passed.");
-        }
-        else
-        {
-            Console.WriteLine("failed.");
-            testResult = false;
-        }
-        Console.Write("EnumConverterTest TestEnumTypeConversion ");
-        if (TestEnumTypeConversion())
-        {
-            Console.WriteLine("passed.");
-        }
-        else
-        {
-            Console.WriteLine("failed.");
-            testResult = false;
-        }
-        Console.Write("EnumConverterTest TestStronglyTypedGetEnumValueFromElement ");
-        if (TestStronglyTypedGetEnumValueFromElement())
-        {
-            Console.WriteLine("passed.");
-        }
-        else
-        {
-            Console.WriteLine("failed.");
-            testResult = false;
-        }
-        Console.Write("EnumConverterTest TestStronglyTypedGetEnumValueFromEnumValue ");
-        if (TestStronglyTypedGetEnumValueFromEnumValue())
-        {
-            Console.WriteLine("passed.");
-        }
-        else
-        {
-            Console.WriteLine("failed.");
-            testResult = false;
-        }
-        Console.Write("EnumConverterTest TestStronglyTypedConvert ");
-        if (TestStronglyTypedConvert())
-        {
-            Console.WriteLine("passed.");
-        }
-        else
-        {
-            Console.WriteLine("failed.");
-            testResult = false;
-        }
-        Console.Write("EnumConverterTest TestCreateEnumFromUInt16 ");
-        if (TestCreateEnumFromUInt16())
-        {
-            Console.WriteLine("passed.");
-        }
-        else
-        {
-            Console.WriteLine("failed.");
-            testResult = false;
-        }
-        Console.Write("EnumConverterTest TestCreateOpenXmlEnumValueFromModel ");
-        if (TestCreateOpenXmlEnumValueFromModel())
-        {
-            Console.WriteLine("passed.");
-        }
-        else
-        {
-            Console.WriteLine("failed.");
-            testResult = false;
-        }
-        Console.Write("EnumConverterTest TestCreateOpenXmlElementFromModel ");
-        if (TestCreateOpenXmlElementFromModel())
-        {
-            Console.WriteLine("passed.");
-        }
-        else
-        {
-            Console.WriteLine("failed.");
-            testResult = false;
-        }
-        return testResult;
-    }
+  /// <summary>
+  ///   List of Open XML types supported for Enum value conversion tests.
+  /// </summary>
+  public static (object modelValue, Type openXmlType)[] TestData { get; } =
+  [
+    (DocumentModel.PresetColors.AliceBlue, typeof(DX.EnumValue<DXD.PresetColorValues>)),
+  ];
 
-    /// <summary>
-    ///   Tests round-trip conversion of a model enum value to an OpenXml enum value and back.
-    /// </summary>
-    /// <returns>True if the conversion is correct; otherwise, false.</returns>
-    private static bool TestEnumValueConversion()
+  /// <summary>
+  ///   Runs all EnumConverter tests for supported types and reports results to the console.
+  /// </summary>
+  /// <returns>True if all tests pass; otherwise, false.</returns>
+  public static bool Run()
+  {
+    bool testResult = true;
+    foreach (var pair in TestData)
     {
-        var modelValue = DMW.UnderlineKind.Dash;
-        var openXmlEnumValue = EnumConverter.CreateOpenXmlEnumValue(modelValue, typeof(DX.EnumValue<DXW.UnderlineValues>));
-        if (openXmlEnumValue is not DX.EnumValue<DXW.UnderlineValues> openXmlEnumValueCasted || openXmlEnumValueCasted.Value != DXW.UnderlineValues.Dash)
-        {
-            Console.WriteLine("Failed to convert Model Enum to OpenXml Enum");
-            return false;
-        }
-        var convertedBackValue = EnumConverter.GetEnumValue((DX.EnumValue<DXW.UnderlineValues>)openXmlEnumValue, modelValue.GetType());
-        if (convertedBackValue is not DMW.UnderlineKind convertedBackValueCasted || convertedBackValueCasted != modelValue)
-        {
-            Console.WriteLine("Failed to convert OpenXml Enum back to Model Enum");
-            return false;
-        }
-        return true;
+      Console.Write($"TestEnumConversion with {pair.modelValue.GetType().Name} and {pair.openXmlType.Name}");
+      if (!TestEnumConversion(pair))
+      {
+        Console.WriteLine(" failed.");
+        testResult = false;
+      }
+      else
+        Console.WriteLine(" passed.");
     }
+    return testResult;
+  }
 
-    /// <summary>
-    ///   Tests round-trip conversion of a model enum value to an OpenXml element and back.
-    /// </summary>
-    /// <returns>True if the conversion is correct; otherwise, false.</returns>
-    private static bool TestEnumTypeConversion()
-    {
-        var modelValue = DMW.UnderlineKind.Dash;
-        var openXmlEnumValue = EnumConverter.CreateOpenXmlElement(modelValue, typeof(DXW.Underline));
-        if (openXmlEnumValue is not DXW.Underline openXmlEnumValueCasted || openXmlEnumValueCasted.Val?.Value != DXW.UnderlineValues.Dash)
-        {
-            Console.WriteLine("Failed to convert Model Enum to OpenXml Enum");
-            return false;
-        }
-        var convertedBackValue = EnumConverter.GetEnumValue((DXW.Underline)openXmlEnumValue, modelValue.GetType());
-        if (convertedBackValue is not DMW.UnderlineKind convertedBackValueCasted || convertedBackValueCasted != modelValue)
-        {
-            Console.WriteLine("Failed to convert OpenXml Enum back to Model Enum");
-            return false;
-        }
-        return true;
-    }
+  /// <summary>
+  ///   Tests round-trip conversion of Enum values to and from the specified Open XML numeric type.
+  ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
+  /// </summary>
+  /// <param name="pair">The pair of test data type</param>
+  /// <returns>True if the conversion is correct; otherwise, false.</returns>
+  public static bool TestEnumConversion((object testValue, Type openXmlType) pair)
+  {
 
-    /// <summary>
-    ///   Tests strongly-typed extension method for getting a model enum value from an OpenXml element.
-    /// </summary>
-    /// <returns>True if the conversion is correct; otherwise, false.</returns>
-    private static bool TestStronglyTypedGetEnumValueFromElement()
+    var testValue = (Enum)pair.testValue;
+    // Convert to OpenXml
+    var openXmlValue = EnumConverter.ConvertTo(testValue, pair.openXmlType);
+    if (openXmlValue == null)
     {
-        var underline = new DXW.Underline { Val = DXW.UnderlineValues.Wave };
-        var converted = underline.GetEnumValue<DXW.UnderlineValues, DMW.UnderlineKind>();
-        return converted == DMW.UnderlineKind.Wave;
+      Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
+      return false;
     }
-
-    /// <summary>
-    ///   Tests strongly-typed extension method for getting a model enum value from an OpenXml EnumValue.
-    /// </summary>
-    /// <returns>True if the conversion is correct; otherwise, false.</returns>
-    private static bool TestStronglyTypedGetEnumValueFromEnumValue()
+    // Convert back to Enum
+    var convertedBackValue = EnumConverter.ConvertFrom(openXmlValue, testValue.GetType());
+    if (convertedBackValue == null)
     {
-        var enumValue = new DX.EnumValue<DXW.UnderlineValues>(DXW.UnderlineValues.DotDash);
-        var converted = enumValue.GetEnumValue<DXW.UnderlineValues, DMW.UnderlineKind>();
-        return converted.HasValue && converted.Value == DMW.UnderlineKind.DotDash;
+      Console.WriteLine($"Conversion back to Enum returned null for OpenXml value {openXmlValue}");
+      return false;
     }
-
-    /// <summary>
-    ///   Tests strongly-typed conversion from an OpenXml enum value to a model enum value.
-    /// </summary>
-    /// <returns>True if the conversion is correct; otherwise, false.</returns>
-    private static bool TestStronglyTypedConvert()
+    if (!testValue.Equals(convertedBackValue))
     {
-        var converted = EnumConverter.Convert<DMW.UnderlineKind, DXW.UnderlineValues>(DXW.UnderlineValues.DashDotDotHeavy);
-        return converted.HasValue && converted.Value == DMW.UnderlineKind.DashDotDotHeavy;
+      Console.WriteLine($"Mismatch: original {testValue}, converted back {convertedBackValue}");
+      return false;
     }
-
-    /// <summary>
-    ///   Tests conversion from a nullable ushort to a model enum value.
-    /// </summary>
-    /// <returns>True if the conversion is correct; otherwise, false.</returns>
-    private static bool TestCreateEnumFromUInt16()
-    {
-        ushort? source = (ushort)DMW.UnderlineKind.DashLongHeavy;
-        var converted = source.CreateEnum<DMW.UnderlineKind>();
-        return converted.HasValue && converted.Value == DMW.UnderlineKind.DashLongHeavy;
-    }
-
-    /// <summary>
-    ///   Tests creation of an OpenXml EnumValue from a model enum value.
-    /// </summary>
-    /// <returns>True if the conversion is correct; otherwise, false.</returns>
-    private static bool TestCreateOpenXmlEnumValueFromModel()
-    {
-        DMW.UnderlineKind source = DMW.UnderlineKind.DottedHeavy;
-        var enumValue = source.CreateOpenXmlEnumValue<DXW.UnderlineValues, DMW.UnderlineKind>();
-        return enumValue != null && enumValue.Value == DXW.UnderlineValues.DottedHeavy;
-    }
-
-    /// <summary>
-    ///   Tests creation of an OpenXml element from a model enum value.
-    /// </summary>
-    /// <returns>True if the conversion is correct; otherwise, false.</returns>
-    private static bool TestCreateOpenXmlElementFromModel()
-    {
-        var modelValue = DMW.UnderlineKind.Thick;
-        var element = modelValue.CreateOpenXmlElement<DXW.Underline, DXW.UnderlineValues, DMW.UnderlineKind>();
-        return element.Val?.Value == DXW.UnderlineValues.Thick;
-    }
+    return true;
+  }
 }

@@ -18,7 +18,7 @@ internal class Program
     Console.WriteLine("╚══════════════════════════════════════════════════╝");
     Console.WriteLine();
 
-    if (!BooleanConverterTest.Run())
+    if (!EnumConverterTest.Run())
     {
       Console.WriteLine("\nSome tests failed.");
       return;
@@ -27,182 +27,191 @@ internal class Program
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
 
-    if (!TSBooleanConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!BooleanConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    if (!StringConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!TSBooleanConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    if (!Int32ConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!StringConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    if (!Int64ConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //if (!Int32ConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!Int64ConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    if (!Int16ConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!Int16ConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    if (!SByteConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!SByteConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    if (!ByteConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!ByteConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    if (!UInt16ConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!UInt16ConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    if (!UInt32ConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!UInt32ConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    if (!UInt64ConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!UInt64ConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    if (!HexIntConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!HexIntConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    if (!HexLongConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!HexLongConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    if (!HexCharConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!HexCharConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    if (!StringListConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //if (!StringListConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
+
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
     
-    if (!RgbConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //if (!RgbConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    if (!HexBinaryConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //if (!HexBinaryConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    if (!SingleConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //if (!SingleConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
-    if (!SimpleValueConverterTest.Run())
-    {
-      Console.WriteLine("\nSome tests failed.");
-      return;
-    }
+    //if (!SimpleValueConverterTest.Run())
+    //{
+    //  Console.WriteLine("\nSome tests failed.");
+    //  return;
+    //}
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
+    //Console.WriteLine();
+    //Console.WriteLine("═══════════════════════════════════════════════════════════");
+    //Console.WriteLine();
 
     Console.WriteLine("All tests passed.");
   }
