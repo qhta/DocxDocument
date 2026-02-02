@@ -32,7 +32,7 @@ public partial class TableStyleConditionalCellProperties : ModelElement //<DXO10
     /// <summary>
     /// Vertical alignment of content within the table cell.
     /// </summary>
-    public TableVerticalAlignmentKind? TableCellVerticalAlignment { get => _TableCellVerticalAlignment; set => UpdateField(ref _TableCellVerticalAlignment, value, nameof(TableCellVerticalAlignment)); }
+    public TableVerticalAlignment? TableCellVerticalAlignment { get => _TableCellVerticalAlignment; set => UpdateField(ref _TableCellVerticalAlignment, value, nameof(TableCellVerticalAlignment)); }
 
-    private TableVerticalAlignmentKind? _TableCellVerticalAlignment;
+    private TableVerticalAlignment? _TableCellVerticalAlignment;
 }

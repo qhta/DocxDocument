@@ -10,9 +10,9 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
  /// Type of merge field mapping, specifying how the data source column is mapped to the merge field.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FieldMapData.MailMergeFieldType))]
- public MailMergeOdsoFieldKind? MailMergeFieldType { get => _MailMergeFieldType; set => UpdateField(ref _MailMergeFieldType, value, nameof(MailMergeFieldType)); }
+ public MailMergeOdsoField? MailMergeFieldType { get => _MailMergeFieldType; set => UpdateField(ref _MailMergeFieldType, value, nameof(MailMergeFieldType)); }
 
- private MailMergeOdsoFieldKind? _MailMergeFieldType;
+ private MailMergeOdsoField? _MailMergeFieldType;
  /// <summary>
  /// FontName of the data source column being mapped.
  /// </summary>

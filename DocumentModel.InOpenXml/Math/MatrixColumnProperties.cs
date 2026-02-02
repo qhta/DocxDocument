@@ -14,7 +14,7 @@ public partial class MatrixColumnProperties : ModelElement<DXM.MatrixColumnPrope
  /// <summary>
  ///   Matrix IColumn Justification.
  /// </summary>
- public HorizontalAlignmentKind? MatrixColumnJustification { get => _MatrixColumnJustification; set => UpdateField(ref _MatrixColumnJustification, value, nameof(MatrixColumnJustification)); }
+ public HorizontalAlignment? MatrixColumnJustification { get => _MatrixColumnJustification; set => UpdateField(ref _MatrixColumnJustification, value, nameof(MatrixColumnJustification)); }
 
- private HorizontalAlignmentKind? _MatrixColumnJustification;
+ private HorizontalAlignment? _MatrixColumnJustification;
 }

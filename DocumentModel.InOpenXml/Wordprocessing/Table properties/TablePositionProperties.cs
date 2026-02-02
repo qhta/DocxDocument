@@ -38,23 +38,23 @@ public partial class TablePositionProperties : ModelElement<DXW.TablePositionPro
  /// Table vertical anchor, specifying the reference point for vertical positioning.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TablePositionProperties.VerticalAnchor))]
- public VerticalAnchorKind? VerticalAnchor { get => _VerticalAnchor; set => UpdateField(ref _VerticalAnchor, value, nameof(VerticalAnchor)); }
+ public VerticalAnchor? VerticalAnchor { get => _VerticalAnchor; set => UpdateField(ref _VerticalAnchor, value, nameof(VerticalAnchor)); }
 
- private VerticalAnchorKind? _VerticalAnchor;
+ private VerticalAnchor? _VerticalAnchor;
  /// <summary>
  /// Table horizontal anchor, specifying the reference point for horizontal positioning.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TablePositionProperties.HorizontalAnchor))]
- public HorizontalAnchorKind? HorizontalAnchor { get => _HorizontalAnchor; set => UpdateField(ref _HorizontalAnchor, value, nameof(HorizontalAnchor)); }
+ public HorizontalAnchor? HorizontalAnchor { get => _HorizontalAnchor; set => UpdateField(ref _HorizontalAnchor, value, nameof(HorizontalAnchor)); }
 
- private HorizontalAnchorKind? _HorizontalAnchor;
+ private HorizontalAnchor? _HorizontalAnchor;
  /// <summary>
  /// Relative horizontal alignment from anchor, specifying how the table is aligned horizontally relative to its anchor.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TablePositionProperties.TablePositionXAlignment))]
- public HorizontalAlignmentKind? TablePositionXAlignment { get => _TablePositionXAlignment; set => UpdateField(ref _TablePositionXAlignment, value, nameof(TablePositionXAlignment)); }
+ public HorizontalAlignment? TablePositionXAlignment { get => _TablePositionXAlignment; set => UpdateField(ref _TablePositionXAlignment, value, nameof(TablePositionXAlignment)); }
 
- private HorizontalAlignmentKind? _TablePositionXAlignment;
+ private HorizontalAlignment? _TablePositionXAlignment;
  /// <summary>
  /// Absolute horizontal distance from anchor, specifying the offset from the anchor point.
  /// </summary>
@@ -66,9 +66,9 @@ public partial class TablePositionProperties : ModelElement<DXW.TablePositionPro
  /// Relative vertical alignment from anchor, specifying how the table is aligned vertically relative to its anchor.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TablePositionProperties.TablePositionYAlignment))]
- public VerticalAlignmentKind? TablePositionYAlignment { get => _TablePositionYAlignment; set => UpdateField(ref _TablePositionYAlignment, value, nameof(TablePositionYAlignment)); }
+ public VerticalAlignment? TablePositionYAlignment { get => _TablePositionYAlignment; set => UpdateField(ref _TablePositionYAlignment, value, nameof(TablePositionYAlignment)); }
 
- private VerticalAlignmentKind? _TablePositionYAlignment;
+ private VerticalAlignment? _TablePositionYAlignment;
  /// <summary>
  /// Absolute vertical distance from anchor, specifying the offset from the anchor point.
  /// </summary>

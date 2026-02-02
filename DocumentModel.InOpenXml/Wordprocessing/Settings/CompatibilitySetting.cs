@@ -10,9 +10,9 @@ public partial class CompatibilitySetting : ModelElement<DXW.CompatibilitySettin
  /// FontName of the compatibility setting, specifying the type of compatibility option.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.CompatibilitySetting.Name))]
- public CompatSettingNameKind? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+ public CompatSettingName? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
 
- private CompatSettingNameKind? _Name;
+ private CompatSettingName? _Name;
  /// <summary>
  /// UriString associated with the compatibility setting, identifying the namespace or context for the setting.
  /// </summary>

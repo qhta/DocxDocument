@@ -25,9 +25,9 @@ public partial class Blip : ModelElement<DXD.Blip>, IExtendableElement
  /// Gets or sets the compression state for the blip.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Blip.CompressionState))]
- public BlipCompressionKind? CompressionState { get => _CompressionState; set => UpdateField(ref _CompressionState, value, nameof(CompressionState)); }
+ public BlipCompression? CompressionState { get => _CompressionState; set => UpdateField(ref _CompressionState, value, nameof(CompressionState)); }
 
- private BlipCompressionKind? _CompressionState;
+ private BlipCompression? _CompressionState;
  /// <summary>
  /// Gets or sets the alpha bi-level effect, which applies a threshold to the alpha channel.
  /// </summary>

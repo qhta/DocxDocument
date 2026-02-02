@@ -159,27 +159,27 @@ public abstract partial class BaseParagraphProperties<T> : ModelElement<T>
     /// <summary>
     /// Justification setting for the paragraph (e.g., left, right, center, both).
     /// </summary>
-    public JustificationKind? Justification { get => _Justification; set => UpdateField(ref _Justification, value, nameof(Justification)); }
+    public Justification? Justification { get => _Justification; set => UpdateField(ref _Justification, value, nameof(Justification)); }
 
-    private JustificationKind? _Justification;
+    private Justification? _Justification;
     /// <summary>
     /// Text direction for the paragraph (e.g., left-to-right, right-to-left, top-to-bottom).
     /// </summary>
-    public TextDirectionKind? TextDirection { get => _TextDirection; set => UpdateField(ref _TextDirection, value, nameof(TextDirection)); }
+    public TextDirection? TextDirection { get => _TextDirection; set => UpdateField(ref _TextDirection, value, nameof(TextDirection)); }
 
-    private TextDirectionKind? _TextDirection;
+    private TextDirection? _TextDirection;
     /// <summary>
     /// Vertical text alignment for the paragraph (e.g., baseline, top, center, bottom).
     /// </summary>
-    public VerticalTextAlignmentKind? TextAlignment { get => _TextAlignment; set => UpdateField(ref _TextAlignment, value, nameof(TextAlignment)); }
+    public VerticalTextAlignment? TextAlignment { get => _TextAlignment; set => UpdateField(ref _TextAlignment, value, nameof(TextAlignment)); }
 
-    private VerticalTextAlignmentKind? _TextAlignment;
+    private VerticalTextAlignment? _TextAlignment;
     /// <summary>
     /// Text box tight wrap setting for the paragraph.
     /// </summary>
-    public TextBoxTightWrapKind? TextBoxTightWrap { get => _TextBoxTightWrap; set => UpdateField(ref _TextBoxTightWrap, value, nameof(TextBoxTightWrap)); }
+    public TextBoxTightWrap? TextBoxTightWrap { get => _TextBoxTightWrap; set => UpdateField(ref _TextBoxTightWrap, value, nameof(TextBoxTightWrap)); }
 
-    private TextBoxTightWrapKind? _TextBoxTightWrap;
+    private TextBoxTightWrap? _TextBoxTightWrap;
     /// <summary>
     /// Outline level for the paragraph, used for document structure and navigation.
     /// </summary>

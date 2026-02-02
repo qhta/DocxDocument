@@ -24,9 +24,9 @@ public partial class EastAsianLayout : ModelElement<DXW.EastAsianLayout>
  /// Specifies the type of brackets to display around two lines in one layout.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EastAsianLayout.CombineBrackets))]
- public CombineBracketKind? CombineBrackets { get => _CombineBrackets; set => UpdateField(ref _CombineBrackets, value, nameof(CombineBrackets)); }
+ public CombineBracket? CombineBrackets { get => _CombineBrackets; set => UpdateField(ref _CombineBrackets, value, nameof(CombineBrackets)); }
 
- private CombineBracketKind? _CombineBrackets;
+ private CombineBracket? _CombineBrackets;
  /// <summary>
  /// Indicates whether horizontal text is rotated for vertical layout.
  /// </summary>

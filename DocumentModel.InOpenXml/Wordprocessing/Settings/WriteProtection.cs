@@ -12,15 +12,15 @@ public partial class WriteProtection
   /// <summary>
   /// Cryptographic provider type used for write protection.
   /// </summary>
-  public CryptProviderKind? CryptographicProviderType { get; set; }
+  public CryptProvider? CryptographicProviderType { get; set; }
   /// <summary>
   /// Cryptographic algorithm class used for write protection.
   /// </summary>
-  public CryptAlgorithmClassKind? CryptographicAlgorithmClass { get; set; }
+  public CryptAlgorithmClass? CryptographicAlgorithmClass { get; set; }
   /// <summary>
   /// Cryptographic algorithm type used for write protection.
   /// </summary>
-  public CryptAlgorithmKind? CryptographicAlgorithmType { get; set; }
+  public CryptAlgorithm? CryptographicAlgorithmType { get; set; }
   /// <summary>
   /// Cryptographic hashing algorithm identifier.
   /// </summary>

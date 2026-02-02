@@ -9,9 +9,9 @@ public partial class Underline : ModelElement<DXW.Underline>
  /// <summary>
  /// Underline style, specifying the type of underline applied to the text (e.g., single, double, dotted).
  /// </summary>
- public UnderlineKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public UnderlineType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private UnderlineKind? _Type;
+ private UnderlineType? _Type;
  /// <summary>
  /// Underline color, specified as a hex RGB value or named color.
  /// </summary>
@@ -23,9 +23,9 @@ public partial class Underline : ModelElement<DXW.Underline>
  /// Theme color index for the underline, enabling theme-aware underline coloring.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Underline.ThemeColor))]
- public ThemeColorKind? ThemeColor { get => _ThemeColor; set => UpdateField(ref _ThemeColor, value, nameof(ThemeColor)); }
+ public ThemeColors? ThemeColor { get => _ThemeColor; set => UpdateField(ref _ThemeColor, value, nameof(ThemeColor)); }
 
- private ThemeColorKind? _ThemeColor;
+ private ThemeColors? _ThemeColor;
  /// <summary>
  /// Theme color tint for the underline, specifying a lighter variation of the theme color.
  /// </summary>

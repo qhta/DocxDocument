@@ -9,9 +9,9 @@ public partial class FractionProperties : ModelElement<DXM.FractionProperties>
  ///   Fraction type.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.FractionProperties.FractionType))]
- public FractionKind? FractionType { get => _FractionType; set => UpdateField(ref _FractionType, value, nameof(FractionType)); }
+ public FractionType? FractionType { get => _FractionType; set => UpdateField(ref _FractionType, value, nameof(FractionType)); }
 
- private FractionKind? _FractionType;
+ private FractionType? _FractionType;
  /// <summary>
  ///   ControlProperties.
  /// </summary>

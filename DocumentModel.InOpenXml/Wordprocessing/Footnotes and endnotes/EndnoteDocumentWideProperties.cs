@@ -10,9 +10,9 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
  /// Placement of endnotes in the document, specifying where endnotes appear (e.g., end of section, end of document).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EndnoteDocumentWideProperties.EndnotePosition))]
- public EndnotePositionKind? EndnotePosition { get => _EndnotePosition; set => UpdateField(ref _EndnotePosition, value, nameof(EndnotePosition)); }
+ public EndnotePosition? EndnotePosition { get => _EndnotePosition; set => UpdateField(ref _EndnotePosition, value, nameof(EndnotePosition)); }
 
- private EndnotePositionKind? _EndnotePosition;
+ private EndnotePosition? _EndnotePosition;
  /// <summary>
  /// Numbering format for endnotes, specifying the style of numbering (e.g., Arabic, Roman, letters).
  /// </summary>
@@ -31,9 +31,9 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
  /// Location where endnote numbering restarts (e.g., each section, each page, continuous).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EndnoteDocumentWideProperties.NumberingRestart))]
- public RestartNumberKind? NumberingRestart { get => _NumberingRestart; set => UpdateField(ref _NumberingRestart, value, nameof(NumberingRestart)); }
+ public RestartNumber? NumberingRestart { get => _NumberingRestart; set => UpdateField(ref _NumberingRestart, value, nameof(NumberingRestart)); }
 
- private RestartNumberKind? _NumberingRestart;
+ private RestartNumber? _NumberingRestart;
  /// <summary>
  /// Special references for endnotes, such as separators and continuation notices.
  /// </summary>

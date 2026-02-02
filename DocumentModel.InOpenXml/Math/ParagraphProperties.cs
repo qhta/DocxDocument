@@ -9,7 +9,7 @@ public partial class ParagraphProperties : ModelElement<DXM.ParagraphProperties>
  ///   Justification.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.ParagraphProperties.Justification))]
- public JustificationKind? Justification { get => _Justification; set => UpdateField(ref _Justification, value, nameof(Justification)); }
+ public Justification? Justification { get => _Justification; set => UpdateField(ref _Justification, value, nameof(Justification)); }
 
- private JustificationKind? _Justification;
+ private Justification? _Justification;
 }

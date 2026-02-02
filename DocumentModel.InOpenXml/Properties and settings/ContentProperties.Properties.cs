@@ -159,9 +159,9 @@ public partial class ContentProperties
   ///   4 - Document is enforced to be opened as read-only.
   ///   8 - Document is locked for annotation
   /// </summary>
-  public DocumentSecurityKind? DocumentSecurity
+  public DocumentSecurity? DocumentSecurity
   {
-    get => (DocumentSecurityKind?)_DocumentSecurity;
+    get => (DocumentSecurity?)_DocumentSecurity;
     set => UpdateField(ref _DocumentSecurity, (int?)value, nameof(DocumentSecurity));
   }
 

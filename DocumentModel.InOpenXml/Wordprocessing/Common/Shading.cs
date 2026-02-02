@@ -11,9 +11,9 @@ public partial class Shading : ModelElement<DXW.Shading>
  /// <summary>
  /// The shading pattern applied to the drawing element, determining the style of the fill pattern.
  /// </summary>
- public ShadingPatternKind? Pattern { get => _Pattern; set => UpdateField(ref _Pattern, value, nameof(Pattern)); }
+ public ShadingPattern? Pattern { get => _Pattern; set => UpdateField(ref _Pattern, value, nameof(Pattern)); }
 
- private ShadingPatternKind? _Pattern;
+ private ShadingPattern? _Pattern;
  /// <summary>
  /// The color of the pattern foreground, specifying the primary color used in the shading pattern.
  /// </summary>

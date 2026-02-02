@@ -33,5 +33,5 @@ public partial class SchemeColor : DrawingColor<DXD.SchemeColor>
  /// require compatibility with Office 2010 or higher to display correctly.
  /// </para>
  /// </remarks>
- public SchemeColorKind? Val { get; set; }
+ public SchemeColors? Val { get; set; }
 }

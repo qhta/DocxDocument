@@ -44,9 +44,9 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Line Style
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.LineStyle))]
- public StrokeLineStyleKind? LineStyle { get => _LineStyle; set => UpdateField(ref _LineStyle, value, nameof(LineStyle)); }
+ public StrokeLineStyle? LineStyle { get => _LineStyle; set => UpdateField(ref _LineStyle, value, nameof(LineStyle)); }
 
- private StrokeLineStyleKind? _LineStyle;
+ private StrokeLineStyle? _LineStyle;
  /// <summary>
  ///   Miter Joint Limit
  /// </summary>
@@ -58,16 +58,16 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Line End Join Style
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.JoinStyle))]
- public StrokeJoinStyleKind? JoinStyle { get => _JoinStyle; set => UpdateField(ref _JoinStyle, value, nameof(JoinStyle)); }
+ public StrokeJoinStyle? JoinStyle { get => _JoinStyle; set => UpdateField(ref _JoinStyle, value, nameof(JoinStyle)); }
 
- private StrokeJoinStyleKind? _JoinStyle;
+ private StrokeJoinStyle? _JoinStyle;
  /// <summary>
  ///   Line End Cap
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.EndCap))]
- public StrokeEndCapKind? EndCap { get => _EndCap; set => UpdateField(ref _EndCap, value, nameof(EndCap)); }
+ public StrokeEndCap? EndCap { get => _EndCap; set => UpdateField(ref _EndCap, value, nameof(EndCap)); }
 
- private StrokeEndCapKind? _EndCap;
+ private StrokeEndCap? _EndCap;
  /// <summary>
  ///   Stroke Dash Pattern
  /// </summary>
@@ -79,9 +79,9 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Image Style
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.FillType))]
- public StrokeFillKind? FillType { get => _FillType; set => UpdateField(ref _FillType, value, nameof(FillType)); }
+ public StrokeFill? FillType { get => _FillType; set => UpdateField(ref _FillType, value, nameof(FillType)); }
 
- private StrokeFillKind? _FillType;
+ private StrokeFill? _FillType;
  /// <summary>
  ///   Stroke Image Location
  /// </summary>
@@ -93,9 +93,9 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Image Aspect Ratio
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.ImageAspect))]
- public ImageAspectKind? ImageAspect { get => _ImageAspect; set => UpdateField(ref _ImageAspect, value, nameof(ImageAspect)); }
+ public ImageAspectType? ImageAspect { get => _ImageAspect; set => UpdateField(ref _ImageAspect, value, nameof(ImageAspect)); }
 
- private ImageAspectKind? _ImageAspect;
+ private ImageAspectType? _ImageAspect;
  /// <summary>
  ///   Stroke Image Size
  /// </summary>
@@ -121,44 +121,44 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Line Start Arrowhead
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.StartArrow))]
- public StrokeArrowKind? StartArrow { get => _StartArrow; set => UpdateField(ref _StartArrow, value, nameof(StartArrow)); }
+ public StrokeArrowStyle? StartArrow { get => _StartArrow; set => UpdateField(ref _StartArrow, value, nameof(StartArrow)); }
 
- private StrokeArrowKind? _StartArrow;
+ private StrokeArrowStyle? _StartArrow;
  /// <summary>
  ///   Line Start Arrowhead Width
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.StartArrowWidth))]
- public StrokeArrowWidthKind? StartArrowWidth { get => _StartArrowWidth; set => UpdateField(ref _StartArrowWidth, value, nameof(StartArrowWidth)); }
+ public StrokeArrowWidth? StartArrowWidth { get => _StartArrowWidth; set => UpdateField(ref _StartArrowWidth, value, nameof(StartArrowWidth)); }
 
- private StrokeArrowWidthKind? _StartArrowWidth;
+ private StrokeArrowWidth? _StartArrowWidth;
  /// <summary>
  ///   Line Start Arrowhead Length
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.StartArrowLength))]
- public StrokeArrowLengthKind? StartArrowLength { get => _StartArrowLength; set => UpdateField(ref _StartArrowLength, value, nameof(StartArrowLength)); }
+ public StrokeArrowLength? StartArrowLength { get => _StartArrowLength; set => UpdateField(ref _StartArrowLength, value, nameof(StartArrowLength)); }
 
- private StrokeArrowLengthKind? _StartArrowLength;
+ private StrokeArrowLength? _StartArrowLength;
  /// <summary>
  ///   Line End Arrowhead
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.EndArrow))]
- public StrokeArrowKind? EndArrow { get => _EndArrow; set => UpdateField(ref _EndArrow, value, nameof(EndArrow)); }
+ public StrokeArrowStyle? EndArrow { get => _EndArrow; set => UpdateField(ref _EndArrow, value, nameof(EndArrow)); }
 
- private StrokeArrowKind? _EndArrow;
+ private StrokeArrowStyle? _EndArrow;
  /// <summary>
  ///   Line End Arrowhead Width
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.EndArrowWidth))]
- public StrokeArrowWidthKind? EndArrowWidth { get => _EndArrowWidth; set => UpdateField(ref _EndArrowWidth, value, nameof(EndArrowWidth)); }
+ public StrokeArrowWidth? EndArrowWidth { get => _EndArrowWidth; set => UpdateField(ref _EndArrowWidth, value, nameof(EndArrowWidth)); }
 
- private StrokeArrowWidthKind? _EndArrowWidth;
+ private StrokeArrowWidth? _EndArrowWidth;
  /// <summary>
  ///   Line End Arrowhead Length
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.EndArrowLength))]
- public StrokeArrowLengthKind? EndArrowLength { get => _EndArrowLength; set => UpdateField(ref _EndArrowLength, value, nameof(EndArrowLength)); }
+ public StrokeArrowLength? EndArrowLength { get => _EndArrowLength; set => UpdateField(ref _EndArrowLength, value, nameof(EndArrowLength)); }
 
- private StrokeArrowLengthKind? _EndArrowLength;
+ private StrokeArrowLength? _EndArrowLength;
  /// <summary>
  ///   Original Image Reference
  /// </summary>

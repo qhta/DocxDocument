@@ -190,9 +190,9 @@ namespace DocumentModel.InOpenXml.Test
           {
             FontName = "Windings",
             Aliases = "Courier",
-            FontFamily = FontFamilyKind.Auto,
+            FontFamily = FontFamily.Auto,
             Charset = FontCharSet.Symbol,
-            Pitch = FontPitchKind.Fixed,
+            Pitch = FontPitch.Fixed,
             Panose = "05000000000000000000",
             FontSignature = "00000000-10000000-00000000-00000000-80000000-00000000"
           });
@@ -243,8 +243,8 @@ namespace DocumentModel.InOpenXml.Test
         { 
           FontName = "Arial", 
           Aliases = "Helvetica, Swiss", 
-          FontFamily = FontFamilyKind.Swiss,
-					Pitch = FontPitchKind.Variable,
+          FontFamily = FontFamily.Swiss,
+					Pitch = FontPitch.Variable,
 					Charset = FontCharSet.EastEurope,
           Panose = "020B0604020202020204",
 					FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
@@ -253,8 +253,8 @@ namespace DocumentModel.InOpenXml.Test
         {
           FontName = "Times New Roman",
           Aliases = "Times",
-          FontFamily = FontFamilyKind.Roman,
-          Pitch = FontPitchKind.Variable,
+          FontFamily = FontFamily.Roman,
+          Pitch = FontPitch.Variable,
           Charset = FontCharSet.Ansi,
           Panose = "02020603050405020304",
           FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
@@ -263,8 +263,8 @@ namespace DocumentModel.InOpenXml.Test
         {
           FontName = "Courier New",
           Aliases = "Courier",
-          FontFamily = FontFamilyKind.Modern,
-          Pitch = FontPitchKind.Fixed,
+          FontFamily = FontFamily.Modern,
+          Pitch = FontPitch.Fixed,
           Panose = "02070309020205020404",
           FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
         });

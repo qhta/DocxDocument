@@ -18,7 +18,7 @@ public partial class Properties3D : IDrawingProperty
   /// <summary>
   /// The preset material type used for rendering the 3D object, defining surface appearance such as matte, plastic, or metal.
   /// </summary>
-  public PresetMaterialKind? PresetMaterialType { get; set; }
+  public PresetMaterial? PresetMaterialType { get; set; }
   /// <summary>
   /// The bevel effect applied to the top face of the 3D object, specifying shape and size.
   /// </summary>

@@ -292,8 +292,8 @@ namespace DocumentModel.InOpenXml.Test
           RemovePersonalInformation = false,
           SaveFormsData = true,
           SaveSubsetFonts = false,
-          View = ViewKind.Print,
-          Zoom = 100, //PresetZoomKind.FullPage,
+          View = ViewType.Print,
+          Zoom = 100, //PresetZoom.FullPage,
         };
       else
         return new DocumentSettings
@@ -308,7 +308,7 @@ namespace DocumentModel.InOpenXml.Test
           BookFoldReversePrinting = false,
           BordersDoNotSurroundFooter = true,
           BordersDoNotSurroundHeader = false,
-          CharacterSpacingControl = CharacterSpacingKind.CompressPunctuation,
+          CharacterSpacingControl = CharacterSpacing.CompressPunctuation,
           ChartTrackingRefBased = true,
           ClickAndTypeStyle = "Normal",
           ConflictMode = false,
@@ -365,8 +365,8 @@ namespace DocumentModel.InOpenXml.Test
           UICompatibleWith97To2003 = false,
           UpdateFieldsOnOpen = true,
           UseXsltWhenSaving = false,
-          View = ViewKind.Print,
-          Zoom = 100, // PresetZoomKind.FullPage,
+          View = ViewType.Print,
+          Zoom = 100, // PresetZoom.FullPage,
 
           ActiveWritingStyles =
           [
@@ -406,14 +406,14 @@ namespace DocumentModel.InOpenXml.Test
               new CaptionDefinition
               {
                 Name = "Figure",
-                Position = CaptionPositionKind.Below,
+                Position = CaptionPosition.Below,
                 ChapterNumber = true,
-                NumberFormat = NumberFormatKind.Decimal,
+                NumberFormat = NumberFormat.Decimal,
               },
               new CaptionDefinition
               {
                 Name = "Table",
-                Position = CaptionPositionKind.Above,
+                Position = CaptionPosition.Above,
                 ChapterNumber = false,
                 NoLabel = true,
               }

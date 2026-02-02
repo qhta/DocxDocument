@@ -10,9 +10,9 @@ public partial class FrameProperties : ModelElement<DXW.FrameProperties>
  ///   Drop cap frame location, specifying the position of the drop cap within the frame.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FrameProperties.DropCap))]
- public DropCapLocationKind? DropCap { get => _DropCap; set => UpdateField(ref _DropCap, value, nameof(DropCap)); }
+ public DropCapLocation? DropCap { get => _DropCap; set => UpdateField(ref _DropCap, value, nameof(DropCap)); }
 
- private DropCapLocationKind? _DropCap;
+ private DropCapLocation? _DropCap;
  /// <summary>
  ///   Drop cap vertical height, specified in lines.
  /// </summary>
@@ -52,23 +52,23 @@ public partial class FrameProperties : ModelElement<DXW.FrameProperties>
  ///   Text wrapping option around the frame, specifying how text flows around the frame.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FrameProperties.Wrap))]
- public TextWrappingKind? Wrap { get => _Wrap; set => UpdateField(ref _Wrap, value, nameof(Wrap)); }
+ public TextWrapping? Wrap { get => _Wrap; set => UpdateField(ref _Wrap, value, nameof(Wrap)); }
 
- private TextWrappingKind? _Wrap;
+ private TextWrapping? _Wrap;
  /// <summary>
  ///   Horizontal positioning base for the frame, specifying the reference point for horizontal alignment.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FrameProperties.HorizontalPosition))]
- public HorizontalAnchorKind? HorizontalPosition { get => _HorizontalPosition; set => UpdateField(ref _HorizontalPosition, value, nameof(HorizontalPosition)); }
+ public HorizontalAnchor? HorizontalPosition { get => _HorizontalPosition; set => UpdateField(ref _HorizontalPosition, value, nameof(HorizontalPosition)); }
 
- private HorizontalAnchorKind? _HorizontalPosition;
+ private HorizontalAnchor? _HorizontalPosition;
  /// <summary>
  ///   Vertical positioning base for the frame, specifying the reference point for vertical alignment.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FrameProperties.VerticalPosition))]
- public VerticalAnchorKind? VerticalPosition { get => _VerticalPosition; set => UpdateField(ref _VerticalPosition, value, nameof(VerticalPosition)); }
+ public VerticalAnchor? VerticalPosition { get => _VerticalPosition; set => UpdateField(ref _VerticalPosition, value, nameof(VerticalPosition)); }
 
- private VerticalAnchorKind? _VerticalPosition;
+ private VerticalAnchor? _VerticalPosition;
  /// <summary>
  ///   Absolute horizontal position of the frame, specified as a string value.
  /// </summary>
@@ -80,9 +80,9 @@ public partial class FrameProperties : ModelElement<DXW.FrameProperties>
  ///   Relative horizontal position of the frame, specifying alignment relative to the horizontal anchor.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FrameProperties.XAlign))]
- public HorizontalAlignmentKind? XAlign { get => _XAlign; set => UpdateField(ref _XAlign, value, nameof(XAlign)); }
+ public HorizontalAlignment? XAlign { get => _XAlign; set => UpdateField(ref _XAlign, value, nameof(XAlign)); }
 
- private HorizontalAlignmentKind? _XAlign;
+ private HorizontalAlignment? _XAlign;
  /// <summary>
  ///   Absolute vertical position of the frame, specified as a string value.
  /// </summary>
@@ -94,16 +94,16 @@ public partial class FrameProperties : ModelElement<DXW.FrameProperties>
  ///   Relative vertical position of the frame, specifying alignment relative to the vertical anchor.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FrameProperties.YAlign))]
- public VerticalAlignmentKind? YAlign { get => _YAlign; set => UpdateField(ref _YAlign, value, nameof(YAlign)); }
+ public VerticalAlignment? YAlign { get => _YAlign; set => UpdateField(ref _YAlign, value, nameof(YAlign)); }
 
- private VerticalAlignmentKind? _YAlign;
+ private VerticalAlignment? _YAlign;
  /// <summary>
  ///   Height rule for the frame, specifying how the frame height is determined.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FrameProperties.HeightType))]
- public HeightRuleKind? HeightType { get => _HeightType; set => UpdateField(ref _HeightType, value, nameof(HeightType)); }
+ public HeightRule? HeightType { get => _HeightType; set => UpdateField(ref _HeightType, value, nameof(HeightType)); }
 
- private HeightRuleKind? _HeightType;
+ private HeightRule? _HeightType;
  /// <summary>
  ///   Indicates whether the frame anchor is locked to the paragraph, preventing movement.
  /// </summary>

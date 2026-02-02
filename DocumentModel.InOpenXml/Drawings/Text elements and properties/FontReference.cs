@@ -9,9 +9,9 @@ public partial class FontReference : ModelElement<DXD.FontReference>
  ///   Identifier for the font collection index.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontReference.Index))]
- public FontCollectionIndexKind? Index { get => _Index; set => UpdateField(ref _Index, value, nameof(Index)); }
+ public FontCollectionIndex? Index { get => _Index; set => UpdateField(ref _Index, value, nameof(Index)); }
 
- private FontCollectionIndexKind? _Index;
+ private FontCollectionIndex? _Index;
  /// <summary>
  ///   Color specified using the RGB color model with percentage values.
  /// </summary>

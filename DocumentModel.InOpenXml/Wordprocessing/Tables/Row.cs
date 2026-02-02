@@ -26,7 +26,7 @@ public partial interface Row
   /// <summary>
   /// Height rule for the row, specifying whether the height is at least, exactly, or auto.
   /// </summary>
-  public HeightRuleKind? HeightRule { get; set; }
+  public HeightRule? HeightRule { get; set; }
 
   /// <summary>
   /// Whether the row is a header row. Header rows are repeated at the top of each page when a table spans multiple pages.

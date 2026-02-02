@@ -18,17 +18,17 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
  ///   If this element is omitted, the line break occurs before the binary operator. 
  ///   That is, the binary operator is the first element on the wrapped line.
  /// </summary>
- public BreakBinaryOperatorKind? BreakBinary { get => _BreakBinary; set => UpdateField(ref _BreakBinary, value, nameof(BreakBinary)); }
+ public BreakBinaryOperator? BreakBinary { get => _BreakBinary; set => UpdateField(ref _BreakBinary, value, nameof(BreakBinary)); }
 
- private BreakBinaryOperatorKind? _BreakBinary;
+ private BreakBinaryOperator? _BreakBinary;
  /// <summary>
  ///   Specifies how the subtraction operator is treated when it coincides with a line break, 
  ///   when brkBin is set to repeat. 
  ///   If this element is omitted, the subtraction operator is repeated before and after the break.
  /// </summary>
- public BreakBinarySubtractionKind? BreakBinarySubtraction { get => _BreakBinarySubtraction; set => UpdateField(ref _BreakBinarySubtraction, value, nameof(BreakBinarySubtraction)); }
+ public BreakBinarySubtraction? BreakBinarySubtraction { get => _BreakBinarySubtraction; set => UpdateField(ref _BreakBinarySubtraction, value, nameof(BreakBinarySubtraction)); }
 
- private BreakBinarySubtractionKind? _BreakBinarySubtraction;
+ private BreakBinarySubtraction? _BreakBinarySubtraction;
  /// <summary>
  ///   Specifies a reduced fraction size display math, such that the numerator and denominator 
  ///   are written in script size instead of at the size of regular text.
@@ -79,9 +79,9 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
  ///   and the entire block is centered with respect to column margins. 
  ///   If this element is omitted, the mathematical text is centered as a group. 
  /// </summary>
- public JustificationKind? DefaultJustification { get => _DefaultJustification; set => UpdateField(ref _DefaultJustification, value, nameof(DefaultJustification)); }
+ public Justification? DefaultJustification { get => _DefaultJustification; set => UpdateField(ref _DefaultJustification, value, nameof(DefaultJustification)); }
 
- private JustificationKind? _DefaultJustification;
+ private Justification? _DefaultJustification;
  /// <summary>
  ///   Specifies the spacing before a math paragraph, in twips. 
  ///   If this element is omitted, no spacing is applied before the paragraph. 
@@ -136,14 +136,14 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
  ///   when converted from a linear form to a two-dimensional output (professional form). 
  ///   Limits can be either centered above and below the integral, or positioned just to the right of the operator.
  /// </summary>
- public LimitLocationKind? IntegralLimitLocation { get => _IntegralLimitLocation; set => UpdateField(ref _IntegralLimitLocation, value, nameof(IntegralLimitLocation)); }
+ public LimitLocation? IntegralLimitLocation { get => _IntegralLimitLocation; set => UpdateField(ref _IntegralLimitLocation, value, nameof(IntegralLimitLocation)); }
 
- private LimitLocationKind? _IntegralLimitLocation;
+ private LimitLocation? _IntegralLimitLocation;
  /// <summary>
  ///   Specifies the location of limits in n-ary operators. 
  ///   Limits can be either centered above and below the n-ary operator, or positioned just to the right of the operator.
  /// </summary>
- public LimitLocationKind? NaryLimitLocation { get => _NaryLimitLocation; set => UpdateField(ref _NaryLimitLocation, value, nameof(NaryLimitLocation)); }
+ public LimitLocation? NaryLimitLocation { get => _NaryLimitLocation; set => UpdateField(ref _NaryLimitLocation, value, nameof(NaryLimitLocation)); }
 
- private LimitLocationKind? _NaryLimitLocation;
+ private LimitLocation? _NaryLimitLocation;
 }

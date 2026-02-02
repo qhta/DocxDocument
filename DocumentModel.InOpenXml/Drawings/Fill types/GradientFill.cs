@@ -8,7 +8,7 @@ public partial class GradientFill : Fill<DXD.GradientFill>
  /// <summary>
  ///   Tile Flip
  /// </summary>
- public TileFlipKind? Flip { get; set; }
+ public TileFlip? Flip { get; set; }
  /// <summary>
  ///   Rotate With Shape
  /// </summary>

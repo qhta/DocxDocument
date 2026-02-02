@@ -10,9 +10,9 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
  /// Source document type for the mail merge (e.g., form letter, email, envelope).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.MailMerge.MainDocumentType))]
- public MailMergeDocumentKind? MainDocumentType { get => _MainDocumentType; set => UpdateField(ref _MainDocumentType, value, nameof(MainDocumentType)); }
+ public MailMergeDocument? MainDocumentType { get => _MainDocumentType; set => UpdateField(ref _MainDocumentType, value, nameof(MainDocumentType)); }
 
- private MailMergeDocumentKind? _MainDocumentType;
+ private MailMergeDocument? _MainDocumentType;
  /// <summary>
  /// Indicates whether the query contains a link to an external query file.
  /// </summary>
@@ -24,9 +24,9 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
  /// Data source type for the mail merge (e.g., database, spreadsheet, text file).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.MailMerge.DataType))]
- public MailMergeDataKind? DataType { get => _DataType; set => UpdateField(ref _DataType, value, nameof(DataType)); }
+ public MailMergeData? DataType { get => _DataType; set => UpdateField(ref _DataType, value, nameof(DataType)); }
 
- private MailMergeDataKind? _DataType;
+ private MailMergeData? _DataType;
  /// <summary>
  /// Connection string used to connect to the data source.
  /// </summary>
@@ -66,9 +66,9 @@ public partial class MailMerge : ModelElement<DXW.MailMerge>
  /// Destination for the merged document (e.g., new document, printer, email).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.MailMerge.Destination))]
- public MailMergeDestinationKind? Destination { get => _Destination; set => UpdateField(ref _Destination, value, nameof(Destination)); }
+ public MailMergeDestination? Destination { get => _Destination; set => UpdateField(ref _Destination, value, nameof(Destination)); }
 
- private MailMergeDestinationKind? _Destination;
+ private MailMergeDestination? _Destination;
  /// <summary>
  /// FontName of the column containing email addresses for email merges.
  /// </summary>

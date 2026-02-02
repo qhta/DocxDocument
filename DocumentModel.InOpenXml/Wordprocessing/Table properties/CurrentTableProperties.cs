@@ -13,7 +13,7 @@ public partial class CurrentTableProperties<T> : BaseTableProperties<T> where T 
   /// <summary>
   /// Table layout type, specifying the layout algorithm used for the table (e.g., fixed or auto).
   /// </summary>
-  public TableLayoutKind? TableLayout { get; set; }
+  public TableLayout? TableLayout { get; set; }
   /// <summary>
   /// Table style conditional formatting settings, controlling the appearance and behavior of table styles.
   /// </summary>
