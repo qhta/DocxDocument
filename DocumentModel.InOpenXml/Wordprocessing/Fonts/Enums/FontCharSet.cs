@@ -3,7 +3,8 @@ namespace DocumentModel.Wordprocessing;
 ///   Specific Windows character set codes using in font table.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
-public enum Charset
+[OpenXmlType(typeof(DXW.FontCharSet))]
+public enum FontCharSet
 {
   /// <summary>
   /// ANSI character set (IANA name iso-8859-1).

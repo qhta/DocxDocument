@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the file format for importing/exporting sources.
 /// </summary>
+[OpenXmlNotMapped]
 public enum BibliographyFormatKind
 {
   /// <summary>Office Open XML format</summary>

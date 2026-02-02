@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the trailing character that follows list numbering.
 /// </summary>
+[OpenXmlNotMapped]
 public enum TrailingCharacterKind
 {
   /// <summary>Tab character</summary>

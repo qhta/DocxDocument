@@ -27,9 +27,10 @@ public partial class PageSize : ModelElement<DXW.PageSize>, ISectionPropertiesCo
  public PageOrientationKind? Orient { get => _Orient; set => UpdateField(ref _Orient, value, nameof(Orient)); }
 
  private PageOrientationKind? _Orient;
- /// <summary>
- /// Printer paper size, mapped from the printer paper code.
- /// </summary>
+  /// <summary>
+  /// Printer paper size, mapped from the printer paper code.
+  /// </summary>
+  [NotMapped]
  public PaperSize? PaperSize { get => _PaperSize; set => UpdateField(ref _PaperSize, value, nameof(PaperSize)); }
 
  private PaperSize? _PaperSize;

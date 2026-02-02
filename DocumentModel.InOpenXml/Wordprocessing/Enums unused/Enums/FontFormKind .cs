@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Defines the FontForm enumeration.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlNotMapped]
 public enum FontFormKind
 {
   /// <summary>

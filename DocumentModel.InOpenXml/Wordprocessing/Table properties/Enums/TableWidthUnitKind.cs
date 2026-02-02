@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Defines the TableWidthUnitValues enumeration.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlType(typeof(DXW.TableWidthUnitValues))]
 public enum TableWidthUnitType
 {
   /// <summary>

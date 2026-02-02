@@ -5,6 +5,7 @@
 /// </summary>
 /// <remarks>This enumeration is bitwise-combinable.
 /// It decodes ExtendedFileProperties.DocumentSecurity int value.</remarks>
+[OpenXmlType(typeof(DXEP.DocumentSecurity))]
 [Flags]
 public enum DocumentSecurityKind
 {
@@ -16,20 +17,20 @@ public enum DocumentSecurityKind
   /// <summary>
   /// Indicates that the document is read-only.
   /// </summary>
-  ReadOnly = 1 << 0,
+  ReadOnly = 1,
 
   /// <summary>
   /// Indicates that the document is protected by a password.
   /// </summary>
-  PasswordProtected = 1 << 1,
+  PasswordProtected = 2,
 
   /// <summary>
   /// Indicates that the document is restricted for editing.
   /// </summary>
-  RestrictedEditing = 1 << 2,
+  RestrictedEditing = 4,
 
   /// <summary>
   /// Indicates that the document is locked for annotations.
   /// </summary>
-  LockedForAnnotations = 1 << 3,
+  LockedForAnnotations = 8,
 }

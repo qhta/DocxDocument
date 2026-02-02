@@ -2,26 +2,27 @@
 /// <summary>
 /// Enum type defined basing on RowSpacingRule element.
 /// </summary>
+[OpenXmlType(typeof(DXM.RowSpacingRule))]
 public enum RowSpacingRuleKind
 {
   /// <summary>
   /// Sigle line height
   /// </summary>
-  Single,
+  Single = 0,
   /// <summary>
   /// One and half of line height
   /// </summary>
-  OneAndHalf,
+  OneAndHalf =1,
   /// <summary>
   /// Double line height
   /// </summary>
-  Double,
+  Double = 2,
   /// <summary>
   /// Exact value of point set by RowSpacing
   /// </summary>
-  Exactly,
+  Exactly = 3,
   /// <summary>
   /// Multiple number of half-lines set by RowSpacing
   /// </summary>
-  Multiple,
+  Multiple = 4,
 }

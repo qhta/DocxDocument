@@ -3,6 +3,7 @@
 /// <summary>
 /// Text case types.
 /// </summary>
+[OpenXmlNotMapped]
 public enum CaseKind
 {
   /// <summary>Mixed case</summary>

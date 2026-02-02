@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies stylistic sets in OpenType fonts.
 /// </summary>
+[OpenXmlNotMapped]
 public enum StylisticSetKind
 {
   /// <summary>Default (no stylistic set)</summary>

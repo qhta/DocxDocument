@@ -3,6 +3,7 @@
 /// <summary>
 /// Sort field types.
 /// </summary>
+[OpenXmlNotMapped]
 public enum SortFieldKind
 {
   /// <summary>Alphanumeric</summary>

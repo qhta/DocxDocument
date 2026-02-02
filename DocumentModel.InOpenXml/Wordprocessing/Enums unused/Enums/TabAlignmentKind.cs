@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies tab stop alignment.
 /// </summary>
+[OpenXmlNotMapped]
 public enum TabAlignmentKind
 {
   /// <summary>Left-aligned tab</summary>

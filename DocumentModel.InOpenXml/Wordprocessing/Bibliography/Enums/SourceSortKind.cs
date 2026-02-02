@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the criteria for sorting sources.
 /// </summary>
+[OpenXmlNotMapped]
 public enum SourceSortKind
 {
   /// <summary>Sort by tag identifier</summary>
