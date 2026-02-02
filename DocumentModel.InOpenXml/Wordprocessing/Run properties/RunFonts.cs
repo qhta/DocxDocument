@@ -8,7 +8,7 @@ public partial class RunFonts : RunProperty
   /// <summary>
   /// Font content type hint, specifying the intended use or type of the font (e.g., default, East Asian, complex script).
   /// </summary>
-  public FontTypeHintKind? Hint { get; set; }
+  public FontTypeHint? Hint { get; set; }
   /// <summary>
   /// Font information for ASCII characters (first 128 Unicode code points).
   /// </summary>
@@ -28,17 +28,17 @@ public partial class RunFonts : RunProperty
   /// <summary>
   /// Theme font for ASCII characters, enabling theme-based font selection for ASCII text.
   /// </summary>
-  public ThemeFontKind? AsciiTheme { get; set; }
+  public ThemeFont? AsciiTheme { get; set; }
   /// <summary>
   /// Theme font for High ANSI characters, enabling theme-based font selection for extended Latin and Western scripts.
   /// </summary>
-  public ThemeFontKind? HighAnsiTheme { get; set; }
+  public ThemeFont? HighAnsiTheme { get; set; }
   /// <summary>
   /// Theme font for East Asian characters, enabling theme-based font selection for CJK scripts.
   /// </summary>
-  public ThemeFontKind? EastAsiaTheme { get; set; }
+  public ThemeFont? EastAsiaTheme { get; set; }
   /// <summary>
   /// Theme font for complex script characters, enabling theme-based font selection for bidirectional and complex scripts.
   /// </summary>
-  public ThemeFontKind? ComplexScriptTheme { get; set; }
+  public ThemeFont? ComplexScriptTheme { get; set; }
 }

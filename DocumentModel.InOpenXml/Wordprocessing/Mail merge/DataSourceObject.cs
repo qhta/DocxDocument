@@ -38,9 +38,9 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
  /// Type of the ODSO data source (e.g., database, spreadsheet, text file).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DataSourceObject.MailMergeSource))]
- public MailMergeSourceKind? MailMergeSource { get => _MailMergeSource; set => UpdateField(ref _MailMergeSource, value, nameof(MailMergeSource)); }
+ public MailMergeSource? MailMergeSource { get => _MailMergeSource; set => UpdateField(ref _MailMergeSource, value, nameof(MailMergeSource)); }
 
- private MailMergeSourceKind? _MailMergeSource;
+ private MailMergeSource? _MailMergeSource;
  /// <summary>
  /// Indicates whether the first row of the data source contains column names.
  /// </summary>

@@ -89,9 +89,9 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Alignment of the horizontal rule within its container.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.HorizontalAlignment))]
- public HorizontalRuleAlignmentKind? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
+ public HorizontalRuleAlignment? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
 
- private HorizontalRuleAlignmentKind? _HorizontalAlignment;
+ private HorizontalRuleAlignment? _HorizontalAlignment;
  /// <summary>
  ///   Indicates whether the arc can be placed inside a table cell.
  /// </summary>
@@ -166,9 +166,9 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Specifies how text margins are calculated within the arc.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.InsetMode))]
- public InsetMarginKind? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
+ public InsetMargin? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
 
- private InsetMarginKind? _InsetMode;
+ private InsetMargin? _InsetMode;
  /// <summary>
  ///   Indicates whether the arc interior is filled.
  /// </summary>
@@ -222,9 +222,9 @@ public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
  ///   Type of connector line used when the arc acts as a connector.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Arc.ConnectorType))]
- public ConnectorKind? ConnectorType { get => _ConnectorType; set => UpdateField(ref _ConnectorType, value, nameof(ConnectorType)); }
+ public ConnectorType? ConnectorType { get => _ConnectorType; set => UpdateField(ref _ConnectorType, value, nameof(ConnectorType)); }
 
- private ConnectorKind? _ConnectorType;
+ private ConnectorType? _ConnectorType;
  /// <summary>
  ///   Rendering mode when displaying in black and white.
  /// </summary>

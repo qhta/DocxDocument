@@ -9,7 +9,7 @@ public partial class StyleDef : IEquatable<StyleDef>
  /// <summary>
  /// Style type, such as paragraph, character, table, or numbering.
  /// </summary>
- public StyleKind? Type { get; set; }
+ public StyleType? Type { get; set; }
  /// <summary>
  /// Style identifier, used to uniquely identify the style in the document.
  /// </summary>

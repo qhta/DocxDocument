@@ -9,7 +9,7 @@ public partial class Behaviors : ModelElement<DXW.Behaviors>
  /// <summary>
  /// Entry insertion behavior type, specifying how the document part behaves during insertion.
  /// </summary>
- public DocPartBehaviorKind? Behavior { get => _Behavior; set => UpdateField(ref _Behavior, value, nameof(Behavior)); }
+ public DocPartBehavior? Behavior { get => _Behavior; set => UpdateField(ref _Behavior, value, nameof(Behavior)); }
 
- private DocPartBehaviorKind? _Behavior;
+ private DocPartBehavior? _Behavior;
 }

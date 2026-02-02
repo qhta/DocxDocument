@@ -10,9 +10,9 @@ public partial class TableStyleProperties : ModelElement<DXW.TableStylePropertie
  /// Table style conditional formatting type, specifying the override kind for conditional formatting.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableStyleProperties.Type))]
- public TableStyleOverrideKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public TableStyleOverride? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private TableStyleOverrideKind? _Type;
+ private TableStyleOverride? _Type;
  /// <summary>
  /// Table style conditional formatting paragraph properties, specifying formatting for paragraphs within the table.
  /// </summary>

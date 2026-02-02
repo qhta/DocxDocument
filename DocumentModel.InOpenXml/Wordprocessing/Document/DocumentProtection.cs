@@ -10,9 +10,9 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Document editing restrictions, specifying the allowed editing mode (e.g., read-only, tracked changes, comments).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.Edit))]
- public DocumentProtectionKind? Edit { get => _Edit; set => UpdateField(ref _Edit, value, nameof(Edit)); }
+ public DocumentProtectionType? Edit { get => _Edit; set => UpdateField(ref _Edit, value, nameof(Edit)); }
 
- private DocumentProtectionKind? _Edit;
+ private DocumentProtectionType? _Edit;
  /// <summary>
  /// Indicates whether only formatting with unlocked styles is allowed.
  /// </summary>
@@ -31,23 +31,23 @@ public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
  /// Cryptographic provider type used for document protection.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.CryptographicProviderType))]
- public CryptProviderKind? CryptographicProviderType { get => _CryptographicProviderType; set => UpdateField(ref _CryptographicProviderType, value, nameof(CryptographicProviderType)); }
+ public CryptProvider? CryptographicProviderType { get => _CryptographicProviderType; set => UpdateField(ref _CryptographicProviderType, value, nameof(CryptographicProviderType)); }
 
- private CryptProviderKind? _CryptographicProviderType;
+ private CryptProvider? _CryptographicProviderType;
  /// <summary>
  /// Cryptographic algorithm class used for document protection.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.CryptographicAlgorithmClass))]
- public CryptAlgorithmClassKind? CryptographicAlgorithmClass { get => _CryptographicAlgorithmClass; set => UpdateField(ref _CryptographicAlgorithmClass, value, nameof(CryptographicAlgorithmClass)); }
+ public CryptAlgorithmClass? CryptographicAlgorithmClass { get => _CryptographicAlgorithmClass; set => UpdateField(ref _CryptographicAlgorithmClass, value, nameof(CryptographicAlgorithmClass)); }
 
- private CryptAlgorithmClassKind? _CryptographicAlgorithmClass;
+ private CryptAlgorithmClass? _CryptographicAlgorithmClass;
  /// <summary>
  /// Cryptographic algorithm type used for document protection.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentProtection.CryptographicAlgorithmType))]
- public CryptAlgorithmKind? CryptographicAlgorithmType { get => _CryptographicAlgorithmType; set => UpdateField(ref _CryptographicAlgorithmType, value, nameof(CryptographicAlgorithmType)); }
+ public CryptAlgorithm? CryptographicAlgorithmType { get => _CryptographicAlgorithmType; set => UpdateField(ref _CryptographicAlgorithmType, value, nameof(CryptographicAlgorithmType)); }
 
- private CryptAlgorithmKind? _CryptographicAlgorithmType;
+ private CryptAlgorithm? _CryptographicAlgorithmType;
  /// <summary>
  /// Cryptographic hashing algorithm identifier.
  /// </summary>

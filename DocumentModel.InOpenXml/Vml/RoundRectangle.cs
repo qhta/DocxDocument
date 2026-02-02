@@ -181,9 +181,9 @@ public partial class RoundRectangle: ModelElement<DXV.RoundRectangle>, IEmbedded
   ///   Alignment of the horizontal rule within its container.
   /// </summary>
   [OpenXmlProperty(nameof(DXV.RoundRectangle.HorizontalAlignment))]
-  public HorizontalRuleAlignmentKind? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
+  public HorizontalRuleAlignment? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
 
-  private HorizontalRuleAlignmentKind? _HorizontalAlignment;
+  private HorizontalRuleAlignment? _HorizontalAlignment;
 
   /// <summary>
   ///   Indicates whether the shape can be placed inside a table cell.
@@ -269,9 +269,9 @@ public partial class RoundRectangle: ModelElement<DXV.RoundRectangle>, IEmbedded
   ///   Specifies how text margins are calculated within the shape.
   /// </summary>
   [OpenXmlProperty(nameof(DXV.RoundRectangle.InsetMode))]
-  public InsetMarginKind? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
+  public InsetMargin? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
 
-  private InsetMarginKind? _InsetMode;
+  private InsetMargin? _InsetMode;
 
   /// <summary>
   ///   Indicates whether the shape interior is filled.
@@ -333,9 +333,9 @@ public partial class RoundRectangle: ModelElement<DXV.RoundRectangle>, IEmbedded
   ///   Type of connector line used when the shape acts as a connector.
   /// </summary>
   [OpenXmlProperty(nameof(DXV.RoundRectangle.ConnectorType))]
-  public ConnectorKind? ConnectorType { get => _ConnectorType; set => UpdateField(ref _ConnectorType, value, nameof(ConnectorType)); }
+  public ConnectorType? ConnectorType { get => _ConnectorType; set => UpdateField(ref _ConnectorType, value, nameof(ConnectorType)); }
 
-  private ConnectorKind? _ConnectorType;
+  private ConnectorType? _ConnectorType;
 
   /// <summary>
   ///   Rendering mode when displaying in black and white.

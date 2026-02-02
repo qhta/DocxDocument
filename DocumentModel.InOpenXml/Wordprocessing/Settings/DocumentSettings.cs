@@ -211,9 +211,9 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// Represents the following element tag in the schema: w:characterSpacingControl
  /// </remarks>
  [Category("Wordprocessing")]
- public CharacterSpacingKind? CharacterSpacingControl { get => _CharacterSpacingControl; set => UpdateField(ref _CharacterSpacingControl, value, nameof(CharacterSpacingControl)); }
+ public CharacterSpacing? CharacterSpacingControl { get => _CharacterSpacingControl; set => UpdateField(ref _CharacterSpacingControl, value, nameof(CharacterSpacingControl)); }
 
- private CharacterSpacingKind? _CharacterSpacingControl;
+ private CharacterSpacing? _CharacterSpacingControl;
  /// <summary>
  /// Specifies how chart datapoint properties and data labels behave in all charts in the document.
  /// </summary>
@@ -382,9 +382,9 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// Represents the following element tag in the schema: w:documentType
  /// </remarks>
  [Category("Conformance")]
- public DocumentKind? DocumentType { get => _DocumentType; set => UpdateField(ref _DocumentType, value, nameof(DocumentType)); }
+ public DocumentType? DocumentType { get => _DocumentType; set => UpdateField(ref _DocumentType, value, nameof(DocumentType)); }
 
- private DocumentKind? _DocumentType;
+ private DocumentType? _DocumentType;
  /// <summary>
  /// Specifies that pictures shall not automatically be compressed when saving the document.
  /// </summary>
@@ -997,9 +997,9 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
  /// </remarks>
  [Category("View")]
  [OpenXmlProperty(nameof(DXW.Settings.View))]
- public ViewKind? View { get => _View; set => UpdateField(ref _View, value, nameof(View)); }
+ public ViewType? View { get => _View; set => UpdateField(ref _View, value, nameof(View)); }
 
- private ViewKind? _View;
+ private ViewType? _View;
  /// <summary>
  /// Specifies the write protection settings applied to the document.
  /// </summary>

@@ -14,15 +14,15 @@ public partial class TextOutlineEffect : IDrawingProperty
   /// <summary>
   /// The cap type applied to the ends of the outline line, such as flat, round, or square.
   /// </summary>
-  public LineCapKind? CapType { get; set; }
+  public LineCap? CapType { get; set; }
   /// <summary>
   /// The compound line style, specifying whether the outline is single, double, or another compound type.
   /// </summary>
-  public CompoundLineKind? Compound { get; set; }
+  public CompoundLine? Compound { get; set; }
   /// <summary>
   /// The alignment of the outline pen, specifying how the outline is positioned relative to the text edge.
   /// </summary>
-  public PenAlignmentKind? Alignment { get; set; }
+  public PenAlignment? Alignment { get; set; }
   /// <summary>
   /// Indicates that no fill is applied to the outline.
   /// </summary>
@@ -38,7 +38,7 @@ public partial class TextOutlineEffect : IDrawingProperty
   /// <summary>
   /// The preset line dash style for the outline, such as solid, dash, or dot.
   /// </summary>
-  public PresetLineDashKind? PresetLineDashProperties { get; set; }
+  public PresetLineDash? PresetLineDashProperties { get; set; }
   /// <summary>
   /// Indicates that the outline uses a round join style.
   /// </summary>

@@ -20,9 +20,9 @@ public partial class NaryProperties : ModelElement<DXM.NaryProperties>
  ///   Limits can be either centered above and below the n-ary operator
  ///   or positioned just to the right of the operator.
  /// </summary>
- public LimitLocationKind? LimitLocation { get => _LimitLocation; set => UpdateField(ref _LimitLocation, value, nameof(LimitLocation)); }
+ public LimitLocation? LimitLocation { get => _LimitLocation; set => UpdateField(ref _LimitLocation, value, nameof(LimitLocation)); }
 
- private LimitLocationKind? _LimitLocation;
+ private LimitLocation? _LimitLocation;
  /// <summary>
  ///   Specifies the growth property of n-ary operators. 
  ///   When 0 or false, n-ary operators such as integrals and summations do not grow to match the size of their operand height. 

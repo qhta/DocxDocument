@@ -26,15 +26,15 @@ public partial class RunProperties : ModelElement<DXM.RunProperties>
  /// <summary>
  ///  Describes the script applied to the characters in the run.
  /// </summary>
- public ScriptKind? Script { get => _Script; set => UpdateField(ref _Script, value, nameof(Script)); }
+ public RunScript? Script { get => _Script; set => UpdateField(ref _Script, value, nameof(Script)); }
 
- private ScriptKind? _Script;
+ private RunScript? _Script;
  /// <summary>
  /// Describes the font style applied to the characters in the run. 
  /// </summary>
- public StyleKind? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
+ public RunStyle? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
 
- private StyleKind? _Style;
+ private RunStyle? _Style;
  /// <summary>
  /// Specifies whether there is a line break at the start of a run, or at the start of the Box object, 
  /// such that the line wraps at the start of the run or box object. 

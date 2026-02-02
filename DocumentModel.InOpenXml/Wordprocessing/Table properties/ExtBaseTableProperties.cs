@@ -15,7 +15,7 @@ public partial class ExtBaseTableProperties<T> : CurrentTableProperties<T> where
   /// <summary>
   ///   Specifies how the table interacts or overlaps with other tables or document content.
   /// </summary>
-  public TableOverlapKind? TableOverlap { get; set; }
+  public TableOverlap? TableOverlap { get; set; }
   /// <summary>
   ///   Indicates whether the table uses bidirectional (BiDi) visual layout for right-to-left scripts.
   /// </summary>

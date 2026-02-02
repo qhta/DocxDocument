@@ -9,9 +9,9 @@ public partial class EquationArrayProperties : ModelElement<DXM.EquationArrayPro
  ///   Equation Array Base Justification.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.EquationArrayProperties.BaseJustification))]
- public VerticalAlignmentKind? BaseJustification { get => _BaseJustification; set => UpdateField(ref _BaseJustification, value, nameof(BaseJustification)); }
+ public VerticalAlignment? BaseJustification { get => _BaseJustification; set => UpdateField(ref _BaseJustification, value, nameof(BaseJustification)); }
 
- private VerticalAlignmentKind? _BaseJustification;
+ private VerticalAlignment? _BaseJustification;
  /// <summary>
  ///   Maximum Distribution.
  /// </summary>

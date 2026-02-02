@@ -50,9 +50,9 @@ public partial class OuterShadow : ModelElement<DXD.OuterShadow>
  /// <summary>
  ///   Alignment of the shadow relative to the object.
  /// </summary>
- public RectangleAlignmentKind? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
+ public RectangleAlignment? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
 
- private RectangleAlignmentKind? _Alignment;
+ private RectangleAlignment? _Alignment;
  /// <summary>
  ///   Indicates whether the shadow rotates with the shape.
  /// </summary>

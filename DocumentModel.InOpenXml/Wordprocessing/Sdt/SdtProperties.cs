@@ -27,9 +27,9 @@ public partial class SdtProperties : ModelElement<DXW.SdtProperties>, IStoryCont
  /// <summary>
  /// Locking behavior that controls how the content and the SDT itself can be edited.
  /// </summary>
- public LockingKind? Lock { get => _Lock; set => UpdateField(ref _Lock, value, nameof(Lock)); }
+ public Locking? Lock { get => _Lock; set => UpdateField(ref _Lock, value, nameof(Lock)); }
 
- private LockingKind? _Lock;
+ private Locking? _Lock;
  /// <summary>
  /// Placeholder configuration that defines the text displayed when the SDT is empty.
  /// </summary>
@@ -69,9 +69,9 @@ public partial class SdtProperties : ModelElement<DXW.SdtProperties>, IStoryCont
  /// <summary>
  /// Visual appearance style for this structured document tag.
  /// </summary>
- public SdtAppearanceKind? Appearance { get => _Appearance; set => UpdateField(ref _Appearance, value, nameof(Appearance)); }
+ public SdtAppearance? Appearance { get => _Appearance; set => UpdateField(ref _Appearance, value, nameof(Appearance)); }
 
- private SdtAppearanceKind? _Appearance;
+ private SdtAppearance? _Appearance;
  /// <summary>
  /// Indicates whether this SDT is linked to a web extension (Office Add-in).
  /// </summary>

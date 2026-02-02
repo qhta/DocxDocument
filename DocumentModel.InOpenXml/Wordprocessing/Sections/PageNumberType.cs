@@ -10,9 +10,9 @@ public partial class PageNumberType : ModelElement<DXW.PageNumberType>, ISection
  /// Page number format, specifying the numbering style for pages.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageNumberType.Format))]
- public NumberFormatKind? Format { get => _Format; set => UpdateField(ref _Format, value, nameof(Format)); }
+ public NumberFormat? Format { get => _Format; set => UpdateField(ref _Format, value, nameof(Format)); }
 
- private NumberFormatKind? _Format;
+ private NumberFormat? _Format;
  /// <summary>
  /// Starting page number for the section.
  /// </summary>
@@ -31,7 +31,7 @@ public partial class PageNumberType : ModelElement<DXW.PageNumberType>, ISection
  /// Chapter separator character, specifying the character used to separate chapter numbers from page numbers.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageNumberType.ChapterSeparator))]
- public ChapterSeparatorKind? ChapterSeparator { get => _ChapterSeparator; set => UpdateField(ref _ChapterSeparator, value, nameof(ChapterSeparator)); }
+ public ChapterSeparator? ChapterSeparator { get => _ChapterSeparator; set => UpdateField(ref _ChapterSeparator, value, nameof(ChapterSeparator)); }
 
- private ChapterSeparatorKind? _ChapterSeparator;
+ private ChapterSeparator? _ChapterSeparator;
 }

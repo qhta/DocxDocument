@@ -93,9 +93,9 @@ public partial class Reflection : ModelElement<DXD.Reflection>
  ///   Alignment of the reflection relative to the object.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Reflection.Alignment))]
- public RectangleAlignmentKind? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
+ public RectangleAlignment? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
 
- private RectangleAlignmentKind? _Alignment;
+ private RectangleAlignment? _Alignment;
  /// <summary>
  ///   Indicates whether the reflection rotates with the shape.
  /// </summary>

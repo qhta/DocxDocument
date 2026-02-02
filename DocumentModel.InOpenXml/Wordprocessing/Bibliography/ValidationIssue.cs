@@ -15,7 +15,7 @@ public partial class ValidationIssue : ModelElement //<DXW.ValidationIssue>
   /// <summary>
   ///   Gets the severity of the issue.
   /// </summary>
-  public ValidationSeverityKind Severity { get; }
+  public ValidationSeverity Severity { get; }
   /// <summary>
   ///   Gets the description of the issue.
   /// </summary>

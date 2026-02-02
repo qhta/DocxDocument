@@ -26,9 +26,9 @@ public abstract partial  class BaseTableRowProperties<T> : ModelElement<T> where
     /// <summary>
     /// Specifies the alignment of a single row in the parent table with respect to the text margins in the current section.
     /// </summary>
-    public TableRowAlignmentKind? RowAlignment { get => _RowAlignment; set => UpdateField(ref _RowAlignment, value, nameof(RowAlignment)); }
+    public TableRowAlignment? RowAlignment { get => _RowAlignment; set => UpdateField(ref _RowAlignment, value, nameof(RowAlignment)); }
 
-    private TableRowAlignmentKind? _RowAlignment;
+    private TableRowAlignment? _RowAlignment;
     /// <summary>
     /// Specifies the default table cell spacing for all cells in the parent row, determining the minimum space between cells including borders.
     /// </summary>

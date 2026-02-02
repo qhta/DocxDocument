@@ -9,9 +9,9 @@ public partial class PatternFill : ModelElement<DXD.PatternFill>
  ///   Preset pattern type used for the fill.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.PatternFill.Preset))]
- public PresetPatternKind? Preset { get => _Preset; set => UpdateField(ref _Preset, value, nameof(Preset)); }
+ public PresetPattern? Preset { get => _Preset; set => UpdateField(ref _Preset, value, nameof(Preset)); }
 
- private PresetPatternKind? _Preset;
+ private PresetPattern? _Preset;
  /// <summary>
  ///   Foreground color of the pattern.
  /// </summary>

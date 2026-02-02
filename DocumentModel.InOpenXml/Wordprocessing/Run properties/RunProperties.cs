@@ -26,7 +26,7 @@ public partial class RunProperties : BaseRunProperties<DXW.RunProperties>
  /// <summary>
  /// Highlight color.
  /// </summary>
- public HighlightColorKind? Highlight { get; set; }
+ public HighlightColors? Highlight { get; set; }
  /// <summary>
  /// Indicates whether text direction is right-to-left.
  /// </summary>
@@ -70,15 +70,15 @@ public partial class RunProperties : BaseRunProperties<DXW.RunProperties>
  /// <summary>
  /// OpenType ligatures setting (Office 2010+), controls which ligatures are used in OpenType fonts.
  /// </summary>
- public LigaturesKind? Ligatures { get; set; }
+ public Ligatures? Ligatures { get; set; }
  /// <summary>
  /// Number form for OpenType fonts (Office 2010+), specifies lining or old-style numerals.
  /// </summary>
- public NumberFormKind? NumberingFormat { get; set; }
+ public NumberForm? NumberingFormat { get; set; }
  /// <summary>
  /// Number spacing for OpenType fonts (Office 2010+), specifies proportional or tabular spacing for numbers.
  /// </summary>
- public NumberSpacingKind? NumberSpacing { get; set; }
+ public NumberSpacing? NumberSpacing { get; set; }
  /// <summary>
  /// Stylistic sets collection (Office 2010+), OpenType fonts may include alternate glyph sets.
  /// </summary>

@@ -45,9 +45,9 @@ public partial class Frame : ModelElement<DXW.Frame>, IFramesetItem
  /// Scrollbar display option for the frame, specifying visibility and behavior of scrollbars.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Frame.ScrollbarVisibility))]
- public FrameScrollbarVisibilityKind? ScrollbarVisibility { get => _ScrollbarVisibility; set => UpdateField(ref _ScrollbarVisibility, value, nameof(ScrollbarVisibility)); }
+ public FrameScrollbarVisibility? ScrollbarVisibility { get => _ScrollbarVisibility; set => UpdateField(ref _ScrollbarVisibility, value, nameof(ScrollbarVisibility)); }
 
- private FrameScrollbarVisibilityKind? _ScrollbarVisibility;
+ private FrameScrollbarVisibility? _ScrollbarVisibility;
  /// <summary>
  /// Indicates whether the frame cannot be resized by the user.
  /// </summary>

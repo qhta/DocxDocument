@@ -166,9 +166,9 @@ public partial class Group : ModelElementCollection<ModelElement, DXV.Group, DX.
  ///   Alignment of the horizontal rule within its container.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.HorizontalAlignment))]
- public HorizontalRuleAlignmentKind? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
+ public HorizontalRuleAlignment? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
 
- private HorizontalRuleAlignmentKind? _HorizontalAlignment;
+ private HorizontalRuleAlignment? _HorizontalAlignment;
  /// <summary>
  ///   Indicates whether the group can be placed inside a table cell.
  /// </summary>
@@ -215,9 +215,9 @@ public partial class Group : ModelElementCollection<ModelElement, DXV.Group, DX.
  ///   Specifies how text margins are calculated within the group.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.InsetMode))]
- public InsetMarginKind? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
+ public InsetMargin? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
 
- private InsetMarginKind? _InsetMode;
+ private InsetMargin? _InsetMode;
  /// <summary>
  ///   Base64-encoded binary package data embedded within the group.
  /// </summary>
@@ -229,9 +229,9 @@ public partial class Group : ModelElementCollection<ModelElement, DXV.Group, DX.
  ///   Specifies the group diagram type for editing.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Group.EditAs))]
- public EditAsKind? EditAs { get => _EditAs; set => UpdateField(ref _EditAs, value, nameof(EditAs)); }
+ public EditAs? EditAs { get => _EditAs; set => UpdateField(ref _EditAs, value, nameof(EditAs)); }
 
- private EditAsKind? _EditAs;
+ private EditAs? _EditAs;
  /// <summary>
  ///   Table property settings for the group.
  /// </summary>

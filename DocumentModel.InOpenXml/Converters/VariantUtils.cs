@@ -818,9 +818,9 @@ public static class VariantUtils
               case 3:
                 var n4 = (int)varItem;
                 var n4l = (Int16)(n4 & 0xFFFF);
-                item.Attachment = (HyperlinkAttachmentKind)Enum.ToObject(typeof(HyperlinkAttachmentKind), n4l);
+                item.Attachment = (HyperlinkAttachment)Enum.ToObject(typeof(HyperlinkAttachment), n4l);
                 var n4h = (Int16)(n4 >> 16 & 0xFFFF);
-                item.Action = (HyperlinkActionKind)Enum.ToObject(typeof(HyperlinkActionKind), n4h);
+                item.Action = (HyperlinkAction)Enum.ToObject(typeof(HyperlinkAction), n4h);
                 break;
               case 4:
                 item.Target = (string?)varItem ?? string.Empty;

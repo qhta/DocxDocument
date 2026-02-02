@@ -10,9 +10,9 @@ public partial class EndnoteProperties : ModelElement<DXW.EndnoteProperties>, IS
  /// Placement of the endnote, specifying where the endnote appears (e.g., end of section, end of document).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EndnoteProperties.EndnotePosition))]
- public EndnotePositionKind? EndnotePosition { get => _EndnotePosition; set => UpdateField(ref _EndnotePosition, value, nameof(EndnotePosition)); }
+ public EndnotePosition? EndnotePosition { get => _EndnotePosition; set => UpdateField(ref _EndnotePosition, value, nameof(EndnotePosition)); }
 
- private EndnotePositionKind? _EndnotePosition;
+ private EndnotePosition? _EndnotePosition;
  /// <summary>
  /// Numbering format for the endnote, specifying the style of numbering (e.g., Arabic, Roman, letters).
  /// </summary>
@@ -31,7 +31,7 @@ public partial class EndnoteProperties : ModelElement<DXW.EndnoteProperties>, IS
  /// Location where footnote and endnote numbering restarts (e.g., each section, each page, continuous).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.EndnoteProperties.NumberingRestart))]
- public RestartNumberKind? NumberingRestart { get => _NumberingRestart; set => UpdateField(ref _NumberingRestart, value, nameof(NumberingRestart)); }
+ public RestartNumber? NumberingRestart { get => _NumberingRestart; set => UpdateField(ref _NumberingRestart, value, nameof(NumberingRestart)); }
 
- private RestartNumberKind? _NumberingRestart;
+ private RestartNumber? _NumberingRestart;
 }

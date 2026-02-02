@@ -24,9 +24,9 @@ public partial class PageSize : ModelElement<DXW.PageSize>, ISectionPropertiesCo
  /// Page orientation, such as portrait or landscape.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageSize.Orient))]
- public PageOrientationKind? Orient { get => _Orient; set => UpdateField(ref _Orient, value, nameof(Orient)); }
+ public PageOrientation? Orient { get => _Orient; set => UpdateField(ref _Orient, value, nameof(Orient)); }
 
- private PageOrientationKind? _Orient;
+ private PageOrientation? _Orient;
   /// <summary>
   /// Printer paper size, mapped from the printer paper code.
   /// </summary>

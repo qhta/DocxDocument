@@ -9,9 +9,9 @@ public partial class PresetShadow : ModelElement<DXD.PresetShadow>
  ///   Preset shadow type.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.PresetShadow.Preset))]
- public PresetShadowKind? Preset { get => _Preset; set => UpdateField(ref _Preset, value, nameof(Preset)); }
+ public PresetShadows? Preset { get => _Preset; set => UpdateField(ref _Preset, value, nameof(Preset)); }
 
- private PresetShadowKind? _Preset;
+ private PresetShadows? _Preset;
  /// <summary>
  ///   Distance to offset the shadow from the object.
  /// </summary>

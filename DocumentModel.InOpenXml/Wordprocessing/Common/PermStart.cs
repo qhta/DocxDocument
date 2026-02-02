@@ -17,7 +17,7 @@ public partial class PermStart : MarkupStartRangeElement<DXW.PermStart, DXW.Perm
   /// <summary>
   /// Alias or editing group used to determine if the current user is allowed to edit this range. If both EditorGroup and Ed are present, the value of EditorGroup is ignored.
   /// </summary>
-  public RangePermissionEditingGroupKind? EditorGroup { get; set; }
+  public RangePermissionEditingGroup? EditorGroup { get; set; }
   /// <summary>
   /// Single user for which this range permission is enabled. The editor can be specified as DOMAIN\username, user@domain.com, or user, depending on the authentication method.
   /// </summary>

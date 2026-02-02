@@ -86,9 +86,9 @@ public partial class Path : ModelElement<DXV.Path>
  ///   Connection Point Type
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Path.ConnectionPointType))]
- public ConnectKind? ConnectionPointType { get => _ConnectionPointType; set => UpdateField(ref _ConnectionPointType, value, nameof(ConnectionPointType)); }
+ public ConnectType? ConnectionPointType { get => _ConnectionPointType; set => UpdateField(ref _ConnectionPointType, value, nameof(ConnectionPointType)); }
 
- private ConnectKind? _ConnectionPointType;
+ private ConnectType? _ConnectionPointType;
  /// <summary>
  ///   Connection Points
  /// </summary>

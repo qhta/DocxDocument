@@ -24,27 +24,27 @@ public partial class TextBodyProperties : ModelElement<DXO10WDS.TextBodyProperti
     /// <summary>
     /// Specifies the vertical overflow behavior for the text body, such as clipping or overflowing text.
     /// </summary>
-    public TextVerticalOverflowKind? VerticalOverflow { get => _VerticalOverflow; set => UpdateField(ref _VerticalOverflow, value, nameof(VerticalOverflow)); }
+    public TextVerticalOverflow? VerticalOverflow { get => _VerticalOverflow; set => UpdateField(ref _VerticalOverflow, value, nameof(VerticalOverflow)); }
 
-    private TextVerticalOverflowKind? _VerticalOverflow;
+    private TextVerticalOverflow? _VerticalOverflow;
     /// <summary>
     /// Specifies the horizontal overflow behavior for the text body, such as clipping or overflowing text.
     /// </summary>
-    public TextHorizontalOverflowKind? HorizontalOverflow { get => _HorizontalOverflow; set => UpdateField(ref _HorizontalOverflow, value, nameof(HorizontalOverflow)); }
+    public TextHorizontalOverflow? HorizontalOverflow { get => _HorizontalOverflow; set => UpdateField(ref _HorizontalOverflow, value, nameof(HorizontalOverflow)); }
 
-    private TextHorizontalOverflowKind? _HorizontalOverflow;
+    private TextHorizontalOverflow? _HorizontalOverflow;
     /// <summary>
     /// The vertical text orientation for the text body, such as horizontal, vertical, or stacked.
     /// </summary>
-    public TextVerticalKind? Vertical { get => _Vertical; set => UpdateField(ref _Vertical, value, nameof(Vertical)); }
+    public TextVertical? Vertical { get => _Vertical; set => UpdateField(ref _Vertical, value, nameof(Vertical)); }
 
-    private TextVerticalKind? _Vertical;
+    private TextVertical? _Vertical;
     /// <summary>
     /// The type of text wrapping applied to the text body, controlling how text flows within the shape.
     /// </summary>
-    public TextWrappingKind? Wrap { get => _Wrap; set => UpdateField(ref _Wrap, value, nameof(Wrap)); }
+    public TextWrapping? Wrap { get => _Wrap; set => UpdateField(ref _Wrap, value, nameof(Wrap)); }
 
-    private TextWrappingKind? _Wrap;
+    private TextWrapping? _Wrap;
     /// <summary>
     /// The left inset distance for the text body, specifying padding from the left edge.
     /// </summary>
@@ -96,9 +96,9 @@ public partial class TextBodyProperties : ModelElement<DXO10WDS.TextBodyProperti
     /// <summary>
     /// The anchoring type for the text body, specifying how text is anchored within the shape.
     /// </summary>
-    public TextAnchoringKind? Anchor { get => _Anchor; set => UpdateField(ref _Anchor, value, nameof(Anchor)); }
+    public TextAnchoring? Anchor { get => _Anchor; set => UpdateField(ref _Anchor, value, nameof(Anchor)); }
 
-    private TextAnchoringKind? _Anchor;
+    private TextAnchoring? _Anchor;
     /// <summary>
     /// Indicates whether the anchor is centered within the text body.
     /// </summary>

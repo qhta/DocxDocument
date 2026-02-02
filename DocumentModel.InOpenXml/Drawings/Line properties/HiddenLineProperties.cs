@@ -16,23 +16,23 @@ public partial class HiddenLineProperties : ModelElement<DXO10D.HiddenLineProper
  /// Specifies the line cap type (e.g., flat, round, square).
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.HiddenLineProperties.CapType))]
- public LineCapKind? CapType { get => _CapType; set => UpdateField(ref _CapType, value, nameof(CapType)); }
+ public LineCap? CapType { get => _CapType; set => UpdateField(ref _CapType, value, nameof(CapType)); }
 
- private LineCapKind? _CapType;
+ private LineCap? _CapType;
  /// <summary>
  /// Specifies the compound line type (e.g., single, double, triple).
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.HiddenLineProperties.CompoundLineType))]
- public CompoundLineKind? CompoundLineType { get => _CompoundLineType; set => UpdateField(ref _CompoundLineType, value, nameof(CompoundLineType)); }
+ public CompoundLine? CompoundLineType { get => _CompoundLineType; set => UpdateField(ref _CompoundLineType, value, nameof(CompoundLineType)); }
 
- private CompoundLineKind? _CompoundLineType;
+ private CompoundLine? _CompoundLineType;
  /// <summary>
  /// Specifies the pen alignment for the line.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.HiddenLineProperties.Alignment))]
- public PenAlignmentKind? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
+ public PenAlignment? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
 
- private PenAlignmentKind? _Alignment;
+ private PenAlignment? _Alignment;
  /// <summary>
  /// Specifies the fill formatting for the line.
  /// </summary>
@@ -42,9 +42,9 @@ public partial class HiddenLineProperties : ModelElement<DXO10D.HiddenLineProper
  /// <summary>
  /// Specifies the preset dash style for the line.
  /// </summary>
- public PresetLineDashKind? PresetDash { get => _PresetDash; set => UpdateField(ref _PresetDash, value, nameof(PresetDash)); }
+ public PresetLineDashes? PresetDash { get => _PresetDash; set => UpdateField(ref _PresetDash, value, nameof(PresetDash)); }
 
- private PresetLineDashKind? _PresetDash;
+ private PresetLineDashes? _PresetDash;
  /// <summary>
  /// Specifies the custom dash pattern for the line.
  /// </summary>

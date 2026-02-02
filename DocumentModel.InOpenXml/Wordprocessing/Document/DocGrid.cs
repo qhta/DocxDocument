@@ -10,9 +10,9 @@ public partial class DocGrid : ModelElement<DXW.DocGrid>, ISectionPropertiesCont
  /// Document grid type, specifying the kind of grid used for text layout (e.g., none, lines, lines and characters, snap to characters).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocGrid.Type))]
- public DocGridKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public DocGridType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private DocGridKind? _Type;
+ private DocGridType? _Type;
  /// <summary>
  /// Line pitch for the document grid, specifying the vertical spacing between grid lines in twips.
  /// </summary>

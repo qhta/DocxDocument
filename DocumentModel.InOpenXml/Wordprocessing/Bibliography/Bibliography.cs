@@ -60,9 +60,9 @@ public partial class Bibliography : ModelElement
     ///   Determines how bibliography entries are ordered (alphabetically by author,
     ///   by appearance in document, by year, etc.).
     /// </remarks>
-    public BibliographySortOrderKind? SortOrder { get => _SortOrder; set => UpdateField(ref _SortOrder, value, nameof(SortOrder)); }
+    public BibliographySortOrder? SortOrder { get => _SortOrder; set => UpdateField(ref _SortOrder, value, nameof(SortOrder)); }
 
-    private BibliographySortOrderKind? _SortOrder;
+    private BibliographySortOrder? _SortOrder;
     /// <summary>
     ///   Gets or sets whether to show all bibliography sources or only cited sources.
     /// </summary>

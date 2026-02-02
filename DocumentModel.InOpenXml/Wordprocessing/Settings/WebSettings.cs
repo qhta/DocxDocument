@@ -52,5 +52,5 @@ public partial class WebSettings
   /// <summary>
   /// Target screen size for the web page, specifying the intended display dimensions.
   /// </summary>
-  public TargetScreenSizeKind? TargetScreenSize { get; set; }
+  public TargetScreenSize? TargetScreenSize { get; set; }
 }

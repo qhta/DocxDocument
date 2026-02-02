@@ -35,9 +35,9 @@ public partial class AbstractNum : ModelElement<DXW.AbstractNum>
  ///   (i.e. a list with multiple levels marked as singleLevel shall not be prevented from using levels 2 through 9).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AbstractNum.MultiLevelType))]
- public MultiLevelKind? MultiLevelType { get => _MultiLevelType; set => UpdateField(ref _MultiLevelType, value, nameof(MultiLevelType)); }
+ public MultiLevel? MultiLevelType { get => _MultiLevelType; set => UpdateField(ref _MultiLevelType, value, nameof(MultiLevelType)); }
 
- private MultiLevelKind? _MultiLevelType;
+ private MultiLevel? _MultiLevelType;
  /// <summary>
  ///   Specifies the name of a given abstract numbering definition. 
  ///   This name can be surfaced in order to provide a user friendly alias for a given numbering definition, 
