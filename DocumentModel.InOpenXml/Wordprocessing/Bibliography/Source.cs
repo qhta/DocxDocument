@@ -16,9 +16,9 @@ public partial class Source : ModelElement<DXB.Source>
  ///   Gets or sets the type of source (book, journal article, website, etc.).
  /// </summary>
  [OpenXmlProperty(nameof(DXB.Source.SourceType))]
- public SourceTypeKind? SourceType { get => _SourceType; set => UpdateField(ref _SourceType, value, nameof(SourceType)); }
+ public SourceType? SourceType { get => _SourceType; set => UpdateField(ref _SourceType, value, nameof(SourceType)); }
 
- private SourceTypeKind? _SourceType;
+ private SourceType? _SourceType;
  /// <summary>
  ///   Gets or sets the title of the source.
  /// </summary>

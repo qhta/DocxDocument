@@ -9,9 +9,9 @@ public partial class AutoNumberedBullet : ModelElement<DXD.AutoNumberedBullet>
  /// Bullet autonumbering type.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AutoNumberedBullet.Type))]
- public TextAutoNumberSchemeKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public TextAutoNumberSchemeType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private TextAutoNumberSchemeKind? _Type;
+ private TextAutoNumberSchemeType? _Type;
  /// <summary>
  /// Starting value for numbering.
  /// </summary>

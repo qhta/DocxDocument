@@ -19,27 +19,27 @@ public partial class BodyProperties : ModelElement, IExtendableElement
     /// <summary>
     /// Vertical overflow behavior for text.
     /// </summary>
-    public TextVerticalOverflowKind? VerticalOverflow { get => _VerticalOverflow; set => UpdateField(ref _VerticalOverflow, value, nameof(VerticalOverflow)); }
+    public TextVerticalOverflow? VerticalOverflow { get => _VerticalOverflow; set => UpdateField(ref _VerticalOverflow, value, nameof(VerticalOverflow)); }
 
-    private TextVerticalOverflowKind? _VerticalOverflow;
+    private TextVerticalOverflow? _VerticalOverflow;
     /// <summary>
     /// Horizontal overflow behavior for text.
     /// </summary>
-    public TextHorizontalOverflowKind? HorizontalOverflow { get => _HorizontalOverflow; set => UpdateField(ref _HorizontalOverflow, value, nameof(HorizontalOverflow)); }
+    public TextHorizontalOverflow? HorizontalOverflow { get => _HorizontalOverflow; set => UpdateField(ref _HorizontalOverflow, value, nameof(HorizontalOverflow)); }
 
-    private TextHorizontalOverflowKind? _HorizontalOverflow;
+    private TextHorizontalOverflow? _HorizontalOverflow;
     /// <summary>
     /// Vertical text orientation.
     /// </summary>
-    public TextVerticalKind? Vertical { get => _Vertical; set => UpdateField(ref _Vertical, value, nameof(Vertical)); }
+    public TextVertical? Vertical { get => _Vertical; set => UpdateField(ref _Vertical, value, nameof(Vertical)); }
 
-    private TextVerticalKind? _Vertical;
+    private TextVertical? _Vertical;
     /// <summary>
     /// Text wrapping type.
     /// </summary>
-    public DMW.TextWrappingKind? Wrap { get => _Wrap; set => UpdateField(ref _Wrap, value, nameof(Wrap)); }
+    public DMW.TextWrapping? Wrap { get => _Wrap; set => UpdateField(ref _Wrap, value, nameof(Wrap)); }
 
-    private DMW.TextWrappingKind? _Wrap;
+    private DMW.TextWrapping? _Wrap;
     /// <summary>
     /// Left inset of the text body.
     /// </summary>
@@ -91,9 +91,9 @@ public partial class BodyProperties : ModelElement, IExtendableElement
     /// <summary>
     /// Text anchor type.
     /// </summary>
-    public TextAnchoringKind? Anchor { get => _Anchor; set => UpdateField(ref _Anchor, value, nameof(Anchor)); }
+    public TextAnchoring? Anchor { get => _Anchor; set => UpdateField(ref _Anchor, value, nameof(Anchor)); }
 
-    private TextAnchoringKind? _Anchor;
+    private TextAnchoring? _Anchor;
     /// <summary>
     /// Gets or sets a value indicating whether the anchor is centered.
     /// </summary>

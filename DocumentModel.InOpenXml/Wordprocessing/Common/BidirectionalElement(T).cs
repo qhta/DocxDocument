@@ -10,11 +10,11 @@ public abstract partial class BidirectionalElement<T>: ModelElement<T>, //IEleme
   /// <summary>
   /// Specifies the text direction (left-to-right or right-to-left) for the bidirectional element.
   /// </summary>
-  public DirectionKind? Type
+  public Direction? Type
   {
     get => _Type;
     set => UpdateField(ref _Type, value, nameof(Type));
   }
 
-  private DirectionKind? _Type;
+  private Direction? _Type;
 }

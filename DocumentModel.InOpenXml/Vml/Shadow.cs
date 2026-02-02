@@ -23,9 +23,9 @@ public partial class Shadow : ModelElement<DXV.Shadow>
  ///   Shadow Type
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shadow.Type))]
- public ShadowKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public ShadowType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private ShadowKind? _Type;
+ private ShadowType? _Type;
  /// <summary>
  ///   Shadow Transparency
  /// </summary>

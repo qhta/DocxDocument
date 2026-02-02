@@ -53,9 +53,9 @@ public partial class Shadow : ModelElement<DXW.Shadow>, IDrawingProperty
   /// <summary>
   /// The alignment of the shadow within the bounding rectangle, specifying how the shadow is positioned relative to the object.
   /// </summary>
-  public RectangleAlignmentKind? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
+  public RectangleAlignment? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
 
-  private RectangleAlignmentKind? _Alignment;
+  private RectangleAlignment? _Alignment;
   /// <summary>
   /// The RGB color value for the shadow effect, allowing precise color specification using hexadecimal notation.
   /// </summary>

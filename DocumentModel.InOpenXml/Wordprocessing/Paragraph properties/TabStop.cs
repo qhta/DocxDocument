@@ -10,16 +10,16 @@ public partial class TabStop : ModelElement<DXW.TabStop>
  /// Type of the tab stop, specifying the alignment (e.g., left, center, right, decimal, bar).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TabStop.Val))]
- public TabStopKind? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+ public TabStopType? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
- private TabStopKind? _Val;
+ private TabStopType? _Val;
  /// <summary>
  /// Leader character for the tab stop, specifying the character used to fill the space advanced by the tab (e.g., dots, dashes, underline).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TabStop.Leader))]
- public TabStopLeaderCharKind? Leader { get => _Leader; set => UpdateField(ref _Leader, value, nameof(Leader)); }
+ public TabStopLeaderChar? Leader { get => _Leader; set => UpdateField(ref _Leader, value, nameof(Leader)); }
 
- private TabStopLeaderCharKind? _Leader;
+ private TabStopLeaderChar? _Leader;
  /// <summary>
  /// Position of the tab stop, specified in twentieths of a point from the paragraph's left margin.
  /// </summary>

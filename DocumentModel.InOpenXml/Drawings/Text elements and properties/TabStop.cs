@@ -16,7 +16,7 @@ public partial class TabStop : ModelElement<DXD.TabStop>
  ///   Alignment type for the tab stop.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TabStop.Alignment))]
- public TextTabAlignmentKind? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
+ public TextTabAlignment? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
 
- private TextTabAlignmentKind? _Alignment;
+ private TextTabAlignment? _Alignment;
 }

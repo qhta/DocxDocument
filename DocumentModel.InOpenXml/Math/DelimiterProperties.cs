@@ -39,9 +39,9 @@ public partial class DelimiterProperties : ModelElement<DXM.DelimiterProperties>
  ///   or they are matched to the baseline of the expression.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.DelimiterProperties.Shape))]
- public ShapeDelimiterKind? Shape { get => _Shape; set => UpdateField(ref _Shape, value, nameof(Shape)); }
+ public ShapeDelimiter? Shape { get => _Shape; set => UpdateField(ref _Shape, value, nameof(Shape)); }
 
- private ShapeDelimiterKind? _Shape;
+ private ShapeDelimiter? _Shape;
  /// <summary>
  ///   Specifies formatting of delimiter object argument.
  /// </summary>

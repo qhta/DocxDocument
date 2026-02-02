@@ -168,9 +168,9 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Alignment of the horizontal rule.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.HorizontalAlignment))]
- public HorizontalRuleAlignmentKind? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
+ public HorizontalRuleAlignment? HorizontalAlignment { get => _HorizontalAlignment; set => UpdateField(ref _HorizontalAlignment, value, nameof(HorizontalAlignment)); }
 
- private HorizontalRuleAlignmentKind? _HorizontalAlignment;
+ private HorizontalRuleAlignment? _HorizontalAlignment;
  /// <summary>
  /// Indicates whether the shape is allowed in a table cell.
  /// </summary>
@@ -245,9 +245,9 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Text inset mode for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.InsetMode))]
- public InsetMarginKind? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
+ public InsetMargin? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
 
- private InsetMarginKind? _InsetMode;
+ private InsetMargin? _InsetMode;
  /// <summary>
  /// Indicates whether the shape is filled.
  /// </summary>
@@ -301,9 +301,9 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Connector type for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.ConnectorType))]
- public ConnectorKind? ConnectorType { get => _ConnectorType; set => UpdateField(ref _ConnectorType, value, nameof(ConnectorType)); }
+ public ConnectorType? ConnectorType { get => _ConnectorType; set => UpdateField(ref _ConnectorType, value, nameof(ConnectorType)); }
 
- private ConnectorKind? _ConnectorType;
+ private ConnectorType? _ConnectorType;
  /// <summary>
  /// Black-and-white mode for the shape.
  /// </summary>

@@ -9,9 +9,9 @@ public partial class PresetGeometry : ModelElement<DXD.PresetGeometry>
  ///   Preset shape type.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.PresetGeometry.Preset))]
- public ShapeKind? Preset { get => _Preset; set => UpdateField(ref _Preset, value, nameof(Preset)); }
+ public Shapes? Preset { get => _Preset; set => UpdateField(ref _Preset, value, nameof(Preset)); }
 
- private ShapeKind? _Preset;
+ private Shapes? _Preset;
  /// <summary>
  ///   List of adjustment values for the preset shape.
  /// </summary>

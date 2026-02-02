@@ -14,7 +14,7 @@ public partial class SpacingBetween : ModelElement //<DXW.SpacingBetween>
     /// <summary>
     /// Type of spacing rule applied between lines (e.g., auto, exact, at least, multiple).
     /// </summary>
-    public LineSpacingRuleKind? LineRule { get => _LineRule; set => UpdateField(ref _LineRule, value, nameof(LineRule)); }
+    public LineSpacingRule? LineRule { get => _LineRule; set => UpdateField(ref _LineRule, value, nameof(LineRule)); }
 
-    private LineSpacingRuleKind? _LineRule;
+    private LineSpacingRule? _LineRule;
 }

@@ -10,9 +10,9 @@ public partial class RubyProperties : ModelElement<DXW.RubyProperties>
  /// Alignment of the phonetic guide text relative to the base text.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.RubyProperties.RubyAlign))]
- public RubyAlignKind? RubyAlign { get => _RubyAlign; set => UpdateField(ref _RubyAlign, value, nameof(RubyAlign)); }
+ public RubyAlign? RubyAlign { get => _RubyAlign; set => UpdateField(ref _RubyAlign, value, nameof(RubyAlign)); }
 
- private RubyAlignKind? _RubyAlign;
+ private RubyAlign? _RubyAlign;
  /// <summary>
  /// Font size of the phonetic guide text, specified in half-points.
  /// </summary>

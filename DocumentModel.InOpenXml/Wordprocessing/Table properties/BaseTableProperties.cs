@@ -9,9 +9,9 @@ public partial class BaseTableProperties<T> : ModelElement<T> where T: DX.OpenXm
     /// <summary>
     /// Table alignment, specifying horizontal justification of the table within the document.
     /// </summary>
-    public TableRowAlignmentKind? TableJustification { get => _TableJustification; set => UpdateField(ref _TableJustification, value, nameof(TableJustification)); }
+    public TableRowAlignment? TableJustification { get => _TableJustification; set => UpdateField(ref _TableJustification, value, nameof(TableJustification)); }
 
-    private TableRowAlignmentKind? _TableJustification;
+    private TableRowAlignment? _TableJustification;
     /// <summary>
     /// Table indent from leading margin, specifying the distance from the document margin to the table.
     /// </summary>

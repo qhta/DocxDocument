@@ -20,7 +20,7 @@
     /// <summary>
     /// Theme font to be used for this font, allowing theme-based font selection.
     /// </summary>
-    public ThemeFontKind? Theme { get; set; }
+    public ThemeFont? Theme { get; set; }
     
     /// <summary>
     /// Indicates whether to select a bold version of the font.

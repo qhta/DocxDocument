@@ -1,0 +1,19 @@
+namespace DocumentModel.Drawings;
+/// <summary>
+///   Specifies the color type for a hyperlink in a drawing object.
+/// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXO19DHC.HyperlinkColorEnum))]
+public enum HyperlinkColor
+{
+  /// <summary>
+  ///   Hyperlink color. Indicates that the standard hyperlink color is applied.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXO19DHC.HyperlinkColorEnum.HLink))]
+  HLink,
+  /// <summary>
+  ///   Text color. Indicates that the hyperlink uses the surrounding text color.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXO19DHC.HyperlinkColorEnum.Tx))]
+  Tx
+}

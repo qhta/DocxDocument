@@ -17,7 +17,7 @@ public partial class Category : ModelElement<DXW.Category>
  /// Gallery associated with the entry, specifying the type of document part gallery.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Category.Gallery))]
- public DocPartGalleryKind? Gallery { get => _Gallery; set => UpdateField(ref _Gallery, value, nameof(Gallery)); }
+ public DocPartGalleryType? Gallery { get => _Gallery; set => UpdateField(ref _Gallery, value, nameof(Gallery)); }
 
- private DocPartGalleryKind? _Gallery;
+ private DocPartGalleryType? _Gallery;
 }

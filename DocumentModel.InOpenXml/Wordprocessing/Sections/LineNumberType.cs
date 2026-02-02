@@ -31,7 +31,7 @@ public partial class LineNumberType : ModelElement<DXW.LineNumberType>, ISection
  /// Line numbering restart setting, specifying when line numbering should restart (e.g., each page or section).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LineNumberType.Restart))]
- public LineNumberRestartKind? Restart { get => _Restart; set => UpdateField(ref _Restart, value, nameof(Restart)); }
+ public LineNumberRestart? Restart { get => _Restart; set => UpdateField(ref _Restart, value, nameof(Restart)); }
 
- private LineNumberRestartKind? _Restart;
+ private LineNumberRestart? _Restart;
 }

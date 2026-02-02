@@ -12,9 +12,9 @@ public abstract partial class MarkupStartRangeElement<T1, T2> : ModelElement<T1>
     ///   Indicates that the parent annotation's placement is directly linked with the location of the physical presentation of a custom XML element in the document.
     ///   This property only has an effect when the custom XML element is block-level (i.e., surrounds an entire paragraph), as the logical and physical placement of the annotation and custom XML element can differ in this scenario.
     /// </summary>
-    public DisplacedByCustomXmlKind? DisplacedByCustomXml { get => _DisplacedByCustomXml; set => UpdateField(ref _DisplacedByCustomXml, value, nameof(DisplacedByCustomXml)); }
+    public DisplacedByCustomXml? DisplacedByCustomXml { get => _DisplacedByCustomXml; set => UpdateField(ref _DisplacedByCustomXml, value, nameof(DisplacedByCustomXml)); }
 
-    private DisplacedByCustomXmlKind? _DisplacedByCustomXml;
+    private DisplacedByCustomXml? _DisplacedByCustomXml;
 
     /// <summary>
     ///   The element that forms the matching pair for this markup range start element, if one exists (e.g., the corresponding range end element).

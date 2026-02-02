@@ -23,7 +23,7 @@ public partial class BevelType : ModelElement<DXD.BevelType>
  /// Preset bevel style.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.BevelType.Preset))]
- public BevelPresetKind? Preset { get => _Preset; set => UpdateField(ref _Preset, value, nameof(Preset)); }
+ public BevelPresets? Preset { get => _Preset; set => UpdateField(ref _Preset, value, nameof(Preset)); }
 
- private BevelPresetKind? _Preset;
+ private BevelPresets? _Preset;
 }

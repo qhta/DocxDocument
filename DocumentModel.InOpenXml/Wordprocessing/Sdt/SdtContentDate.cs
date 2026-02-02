@@ -31,14 +31,14 @@ public partial class SdtContentDate : ModelElement<DXW.SdtContentDate>
  /// Custom XML data date storage format, specifying how the date is stored in the underlying XML data.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtContentDate.SdtDateMappingType))]
- public DateFormatKind? SdtDateMappingType { get => _SdtDateMappingType; set => UpdateField(ref _SdtDateMappingType, value, nameof(SdtDateMappingType)); }
+ public DateFormat? SdtDateMappingType { get => _SdtDateMappingType; set => UpdateField(ref _SdtDateMappingType, value, nameof(SdtDateMappingType)); }
 
- private DateFormatKind? _SdtDateMappingType;
+ private DateFormat? _SdtDateMappingType;
  /// <summary>
  /// Date picker calendar type, specifying the calendar system used for date selection (e.g., Gregorian, Hijri).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtContentDate.Calendar))]
- public CalendarKind? Calendar { get => _Calendar; set => UpdateField(ref _Calendar, value, nameof(Calendar)); }
+ public Calendar? Calendar { get => _Calendar; set => UpdateField(ref _Calendar, value, nameof(Calendar)); }
 
- private CalendarKind? _Calendar;
+ private Calendar? _Calendar;
 }

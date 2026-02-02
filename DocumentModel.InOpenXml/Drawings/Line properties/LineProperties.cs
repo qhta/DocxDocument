@@ -12,15 +12,15 @@ public partial class LineProperties : ElementCollection<IDrawingProperty>, ILine
  /// <summary>
  ///   Specifies the line cap type (e.g., flat, round, square).
  /// </summary>
- public LineCapKind? CapType { get; set; }
+ public LineCap? CapType { get; set; }
  /// <summary>
  ///   Specifies the compound line type (e.g., single, double, triple).
  /// </summary>
- public CompoundLineKind? CompoundLineType { get; set; }
+ public CompoundLine? CompoundLineType { get; set; }
  /// <summary>
  ///   Specifies the pen alignment for the line.
  /// </summary>
- public PenAlignmentKind? Alignment { get; set; }
+ public PenAlignment? Alignment { get; set; }
  /// <summary>
  ///   Specifies the fill properties for the line.
  /// </summary>
@@ -28,7 +28,7 @@ public partial class LineProperties : ElementCollection<IDrawingProperty>, ILine
  /// <summary>
  ///   Specifies the preset dash style for the line.
  /// </summary>
- public PresetLineDashKind? PresetDash { get; set; }
+ public PresetLineDashes? PresetDash { get; set; }
  /// <summary>
  ///   Specifies the custom dash pattern for the line.
  /// </summary>

@@ -9,9 +9,9 @@ public partial class ShapeIdMap : ModelElement<DXVO.ShapeIdMap>
  ///   VML Extension Handling Behavior
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ShapeIdMap.Extension))]
- public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
+ public ExtensionHandlingBehavior? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
- private ExtensionHandlingBehaviorKind? _Extension;
+ private ExtensionHandlingBehavior? _Extension;
  /// <summary>
  ///   Shape IDs
  /// </summary>

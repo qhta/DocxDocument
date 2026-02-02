@@ -8,19 +8,19 @@ public partial class LineEndPropertiesType : ModelElement<DXD.LineEndPropertiesT
  /// <summary>
  ///   Type of the line head or end.
  /// </summary>
- public LineEndKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public LineEndType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private LineEndKind? _Type;
+ private LineEndType? _Type;
  /// <summary>
  ///   Width of the line head or end.
  /// </summary>
- public LineEndWidthKind? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+ public LineEndWidth? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
 
- private LineEndWidthKind? _Width;
+ private LineEndWidth? _Width;
  /// <summary>
  ///   Length of the line head or end.
  /// </summary>
- public LineEndLengthKind? Length { get => _Length; set => UpdateField(ref _Length, value, nameof(Length)); }
+ public LineEndLength? Length { get => _Length; set => UpdateField(ref _Length, value, nameof(Length)); }
 
- private LineEndLengthKind? _Length;
+ private LineEndLength? _Length;
 }

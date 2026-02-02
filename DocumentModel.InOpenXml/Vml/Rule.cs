@@ -16,16 +16,16 @@ public partial class Rule : ModelElement<DXVO.Rule>
  /// Specifies the rule type.
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Rule.Type))]
- public RuleKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public RuleType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private RuleKind? _Type;
+ private RuleType? _Type;
  /// <summary>
  /// Specifies the alignment rule type.
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Rule.How))]
- public AlignmentKind? How { get => _How; set => UpdateField(ref _How, value, nameof(How)); }
+ public Alignment? How { get => _How; set => UpdateField(ref _How, value, nameof(How)); }
 
- private AlignmentKind? _How;
+ private Alignment? _How;
  /// <summary>
  /// Reference to the shape associated with this rule.
  /// </summary>

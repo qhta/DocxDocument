@@ -26,14 +26,14 @@ public class HyperlinkInfo: CollectionItem
   ///  5 - IHyperlink attached to a WordprocessingML  field
   ///  6 - IHyperlink attached to a SpreadsheetML  range
   /// </summary>
-  public HyperlinkAttachmentKind Attachment { get; set; }
+  public HyperlinkAttachment Attachment { get; set; }
   /// <summary>
   ///  The high 16 bits store hyperlink action with one of the possible values:
   ///  0 - None
   ///  1 - Change the link to new hyperlink value
   ///  2 - Remove hyperlink from object
   /// </summary>
-  public HyperlinkActionKind Action { get; set; }
+  public HyperlinkAction Action { get; set; }
   /// <summary>
   /// Specifies the hyperlink target. It can't be empty because of Open XML specifications.
   /// </summary>

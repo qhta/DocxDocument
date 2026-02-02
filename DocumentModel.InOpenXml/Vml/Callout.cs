@@ -9,9 +9,9 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   VML Extension Handling Behavior
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.Extension))]
- public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
+ public ExtensionHandlingBehavior? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
- private ExtensionHandlingBehaviorKind? _Extension;
+ private ExtensionHandlingBehavior? _Extension;
  /// <summary>
  ///   Callout toggle
  /// </summary>
@@ -37,9 +37,9 @@ public partial class Callout : ModelElement<DXVO.Callout>
  ///   Callout angle
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Callout.Angle))]
- public AngleKind? Angle { get => _Angle; set => UpdateField(ref _Angle, value, nameof(Angle)); }
+ public Angle? Angle { get => _Angle; set => UpdateField(ref _Angle, value, nameof(Angle)); }
 
- private AngleKind? _Angle;
+ private Angle? _Angle;
  /// <summary>
  ///   Callout automatic drop toggle
  /// </summary>

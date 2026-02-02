@@ -9,9 +9,9 @@ public partial class RelativeHeight : ModelElement<DXO10WD.RelativeHeight>
  /// <summary>
  /// The reference point used to determine the relative vertical sizing, such as margin, page, or paragraph.
  /// </summary>
- public SizeRelativeVerticallyKind? RelativeFrom { get => _RelativeFrom; set => UpdateField(ref _RelativeFrom, value, nameof(RelativeFrom)); }
+ public SizeRelativeVertically? RelativeFrom { get => _RelativeFrom; set => UpdateField(ref _RelativeFrom, value, nameof(RelativeFrom)); }
 
- private SizeRelativeVerticallyKind? _RelativeFrom;
+ private SizeRelativeVertically? _RelativeFrom;
  /// <summary>
  /// The percentage value specifying the height of the drawing element relative to the reference point.
  /// </summary>

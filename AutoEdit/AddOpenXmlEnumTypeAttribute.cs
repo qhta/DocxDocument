@@ -89,7 +89,7 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
     else
     {
       enumTypeName = node.Identifier.Text;
-      if (enumTypeName.EndsWith("Kind"))
+      if (enumTypeName.EndsWith("Type"))
         enumTypeName = enumTypeName.Substring(0, enumTypeName.Length - 4);
       enumTypeNameCandidates.Add(enumTypeName + "Values");
       enumTypeNameCandidates.Add(enumTypeName + "TypeValues");

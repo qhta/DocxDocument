@@ -9,7 +9,7 @@ public partial class Complex : ModelElement<DXVO.Complex>
  ///   VML Extension Handling Behavior
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Complex.Extension))]
- public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
+ public ExtensionHandlingBehavior? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
- private ExtensionHandlingBehaviorKind? _Extension;
+ private ExtensionHandlingBehavior? _Extension;
 }

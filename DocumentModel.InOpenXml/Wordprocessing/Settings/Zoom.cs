@@ -11,9 +11,9 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
  /// Zoom type, specifying the preset magnification mode.
  /// </summary>
  [OpenXmlProperty("Val")]
- public PresetZoomKind? Kind { get => _Kind; set => UpdateField(ref _Kind, value, nameof(Kind)); }
+ public PresetZoom? Kind { get => _Kind; set => UpdateField(ref _Kind, value, nameof(Kind)); }
 
- private PresetZoomKind? _Kind;
+ private PresetZoom? _Kind;
  /// <summary>
  /// Zoom percentage, specifying the magnification level as a percentage.
  /// </summary>
@@ -36,7 +36,7 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
  }
 
  /// <summary>
- /// Returns a string representation of the Zoom instance, prioritizing the Kind property if set, otherwise the Percent property.
+ /// Returns a string representation of the Zoom instance, prioritizing the Type property if set, otherwise the Percent property.
  /// </summary>
  /// <returns></returns>
  public override string? ToString()
@@ -48,7 +48,7 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
  /// Implements equality comparison between two Zoom instances.
  /// </summary>
  /// <param name = "other">Other Zoom instance to compare with.</param>
- /// <remarks>Compares the Kind and Percent properties for equality.</remarks>
+ /// <remarks>Compares the Type and Percent properties for equality.</remarks>
  /// <returns>True if the two Zoom instances are equal; otherwise, false.</returns>
  public bool Equals(Zoom? other)
  {

@@ -8,9 +8,9 @@ public partial class ProofState
   /// <summary>
   /// Spell checking state, indicating the status of spelling checks in the document.
   /// </summary>
-  public ProofingStateKind? Spelling { get; set; }
+  public ProofingState? Spelling { get; set; }
   /// <summary>
   /// Grammatical checking state, indicating the status of grammar checks in the document.
   /// </summary>
-  public ProofingStateKind? Grammar { get; set; }
+  public ProofingState? Grammar { get; set; }
 }

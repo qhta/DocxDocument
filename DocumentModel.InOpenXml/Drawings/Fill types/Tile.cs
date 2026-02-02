@@ -32,13 +32,13 @@ public partial class Tile : ModelElement<DXD.Tile>
  /// <summary>
  ///   Tile flipping mode.
  /// </summary>
- public TileFlipKind? Flip { get => _Flip; set => UpdateField(ref _Flip, value, nameof(Flip)); }
+ public TileFlip? Flip { get => _Flip; set => UpdateField(ref _Flip, value, nameof(Flip)); }
 
- private TileFlipKind? _Flip;
+ private TileFlip? _Flip;
  /// <summary>
  ///   Alignment of the tile within the filled area.
  /// </summary>
- public RectangleAlignmentKind? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
+ public RectangleAlignment? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
 
- private RectangleAlignmentKind? _Alignment;
+ private RectangleAlignment? _Alignment;
 }

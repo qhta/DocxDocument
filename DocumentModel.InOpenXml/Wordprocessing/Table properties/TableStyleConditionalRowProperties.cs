@@ -32,7 +32,7 @@ public partial class TableStyleConditionalRowProperties : ModelElement //<DXW.Ta
     /// <summary>
     /// Table row justification, specifying horizontal alignment of the row within the table.
     /// </summary>
-    public TableRowAlignmentKind? TableJustification { get => _TableJustification; set => UpdateField(ref _TableJustification, value, nameof(TableJustification)); }
+    public TableRowAlignment? TableJustification { get => _TableJustification; set => UpdateField(ref _TableJustification, value, nameof(TableJustification)); }
 
-    private TableRowAlignmentKind? _TableJustification;
+    private TableRowAlignment? _TableJustification;
 }

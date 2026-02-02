@@ -25,7 +25,7 @@ public abstract partial class BaseSectionProperties<T> : ElementCollection<ISect
   /// <summary>
   /// Type of the section mark.
   /// </summary>
-  public SectionMarkKind? SectionType { get; set; }
+  public SectionMarkType? SectionType { get; set; }
   /// <summary>
   /// Indicates whether form protection is enabled.
   /// </summary>
@@ -33,7 +33,7 @@ public abstract partial class BaseSectionProperties<T> : ElementCollection<ISect
   /// <summary>
   /// Vertical alignment of text on the page.
   /// </summary>
-  public VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
+  public VerticalJustification? VerticalTextAlignmentOnPage { get; set; }
   /// <summary>
   /// Indicates whether endnotes are omitted from the document output.
   /// </summary>
@@ -45,7 +45,7 @@ public abstract partial class BaseSectionProperties<T> : ElementCollection<ISect
   /// <summary>
   /// Text direction for the section.
   /// </summary>
-  public TextDirectionKind? TextDirection { get; set; }
+  public TextDirection? TextDirection { get; set; }
   /// <summary>
   /// Indicates whether bidirectional (BiDi) text support is enabled.
   /// </summary>

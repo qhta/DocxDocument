@@ -7,7 +7,7 @@ public partial class PathGradientFill : GradientFill
   /// <summary>
   ///   Type of path used for the gradient fill.
   /// </summary>
-  public PathShadeKind? Path { get; set; }
+  public PathShade? Path { get; set; }
   /// <summary>
   ///   Rectangle that limits the area affected by the gradient fill.
   /// </summary>

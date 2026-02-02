@@ -10,9 +10,9 @@ public partial class TextInput : ModelElement<DXW.TextInput>
  /// Type of the text box form field, specifying the kind of input allowed (e.g., regular text, number, date).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TextInput.TextBoxFormFieldType))]
- public TextBoxFormFieldKind? TextBoxFormFieldType { get => _TextBoxFormFieldType; set => UpdateField(ref _TextBoxFormFieldType, value, nameof(TextBoxFormFieldType)); }
+ public TextBoxFormField? TextBoxFormFieldType { get => _TextBoxFormFieldType; set => UpdateField(ref _TextBoxFormFieldType, value, nameof(TextBoxFormFieldType)); }
 
- private TextBoxFormFieldKind? _TextBoxFormFieldType;
+ private TextBoxFormField? _TextBoxFormFieldType;
  /// <summary>
  /// Default string value for the text box form field, displayed when the form is loaded.
  /// </summary>

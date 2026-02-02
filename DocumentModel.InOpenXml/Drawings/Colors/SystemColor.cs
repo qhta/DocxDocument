@@ -41,7 +41,7 @@ public partial class SystemColor : DrawingColor<DXD.SystemColor>
  /// document elements can integrate seamlessly with the user's desktop environment.
  /// </para>
  /// </remarks>
- public SystemColorKind? Val { get; set; }
+ public SystemColors? Val { get; set; }
  /// <summary>
  /// Gets or sets the last known RGB value for this system color, used as a fallback.
  /// </summary>

@@ -43,11 +43,11 @@ public partial class BaseTableCellProperties<T>: ModelElement<T> where T: DX.Ope
   /// <summary>
   /// Vertical alignment of content within the table cell.
   /// </summary>
-  public TableVerticalAlignmentKind? TableCellVerticalAlignment
+  public TableVerticalAlignment? TableCellVerticalAlignment
   {
     get => _TableCellVerticalAlignment;
     set => UpdateField(ref _TableCellVerticalAlignment, value, nameof(TableCellVerticalAlignment));
   }
 
-  private TableVerticalAlignmentKind? _TableCellVerticalAlignment;
+  private TableVerticalAlignment? _TableCellVerticalAlignment;
 }

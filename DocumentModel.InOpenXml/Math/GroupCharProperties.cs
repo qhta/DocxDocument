@@ -16,16 +16,16 @@ public partial class GroupCharProperties : ModelElement<DXM.GroupCharProperties>
  ///   Position (Group Character).
  /// </summary>
  [OpenXmlProperty(nameof(DXM.GroupCharProperties.Position))]
- public VerticalJustificationKind? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
+ public VerticalJustification? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
 
- private VerticalJustificationKind? _Position;
+ private VerticalJustification? _Position;
  /// <summary>
  ///   Vertical Justification.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.GroupCharProperties.VerticalJustification))]
- public VerticalJustificationKind? VerticalJustification { get => _VerticalJustification; set => UpdateField(ref _VerticalJustification, value, nameof(VerticalJustification)); }
+ public VerticalJustification? VerticalJustification { get => _VerticalJustification; set => UpdateField(ref _VerticalJustification, value, nameof(VerticalJustification)); }
 
- private VerticalJustificationKind? _VerticalJustification;
+ private VerticalJustification? _VerticalJustification;
  /// <summary>
  ///   Specifies formatting of group-char object argument.
  /// </summary>

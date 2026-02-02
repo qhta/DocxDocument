@@ -9,9 +9,9 @@ public partial class ClassificationOutcome : ModelElement<DXO21DDC.Classificatio
  /// Classification outcome type.
  /// </summary>
  [OpenXmlProperty(nameof(DXO21DDC.ClassificationOutcome.ClassificationOutcomeType))]
- public ClassificationOutcomeKind? ClassificationOutcomeType { get => _ClassificationOutcomeType; set => UpdateField(ref _ClassificationOutcomeType, value, nameof(ClassificationOutcomeType)); }
+ public ClassificationOutcomeType? ClassificationOutcomeType { get => _ClassificationOutcomeType; set => UpdateField(ref _ClassificationOutcomeType, value, nameof(ClassificationOutcomeType)); }
 
- private ClassificationOutcomeKind? _ClassificationOutcomeType;
+ private ClassificationOutcomeType? _ClassificationOutcomeType;
  /// <summary>
  /// List of extensions for additional data.
  /// </summary>

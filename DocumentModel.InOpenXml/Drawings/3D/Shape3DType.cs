@@ -30,9 +30,9 @@ public partial class Shape3DType : ModelElement<DXD.Shape3DType>, IExtendableEle
  ///   Preset Material Type
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape3DType.PresetMaterial))]
- public PresetMaterialKind? PresetMaterial { get => _PresetMaterial; set => UpdateField(ref _PresetMaterial, value, nameof(PresetMaterial)); }
+ public PresetMaterialType? PresetMaterial { get => _PresetMaterial; set => UpdateField(ref _PresetMaterial, value, nameof(PresetMaterial)); }
 
- private PresetMaterialKind? _PresetMaterial;
+ private PresetMaterialType? _PresetMaterial;
  /// <summary>
  ///   Top Bevel.
  /// </summary>

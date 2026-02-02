@@ -10,9 +10,9 @@ public partial class RegroupTable: ModelElement<DXVO.RegroupTable>
   ///   Specifies how VML extension elements are handled during processing.
   /// </summary>
   [OpenXmlProperty(nameof(DXVO.RegroupTable.Extension))]
-  public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
+  public ExtensionHandlingBehavior? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
-  private ExtensionHandlingBehaviorKind? _Extension;
+  private ExtensionHandlingBehavior? _Extension;
 
   /// <summary>
   ///   Contains the collection of regrouping history entries for shape groups.

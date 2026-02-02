@@ -9,9 +9,9 @@ public partial class BorderType : ModelElement<DXW.BorderType>
   /// <summary>
   /// Border style, specifying the type of border (e.g., single, double, dashed).
   /// </summary>
-  public BorderKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+  public BorderStyle? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
-  private BorderKind? _Type;
+  private BorderStyle? _Type;
   /// <summary>
   /// Border width, specified as a 64-bit integer value.
   /// </summary>

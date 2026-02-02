@@ -21,5 +21,5 @@ public partial class Frameset : ModelElementCollection<ModelElement, DXW.Framese
  /// <summary>
  /// Layout of the frameset, specifying how frames are arranged within the frameset.
  /// </summary>
- public FrameLayoutKind? FrameLayout { get; set; }
+ public FrameLayout? FrameLayout { get; set; }
 }

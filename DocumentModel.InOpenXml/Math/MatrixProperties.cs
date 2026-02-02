@@ -11,9 +11,9 @@ public partial class MatrixProperties : ModelElement<DXM.MatrixProperties>
  ///   If this element is omitted, the matrix assumes center justification. 
  ///   In other words, whether the element is absent or present without the val attribute, the default of the val attribute is center.
  /// </summary>
- public VerticalAlignmentKind? BaseJustification { get => _BaseJustification; set => UpdateField(ref _BaseJustification, value, nameof(BaseJustification)); }
+ public VerticalAlignment? BaseJustification { get => _BaseJustification; set => UpdateField(ref _BaseJustification, value, nameof(BaseJustification)); }
 
- private VerticalAlignmentKind? _BaseJustification;
+ private VerticalAlignment? _BaseJustification;
  /// <summary>
  ///   Hide Placeholders (Matrix).
  /// </summary>

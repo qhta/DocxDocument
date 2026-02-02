@@ -9,9 +9,9 @@ public partial class TextWrap : ModelElement<DXVW.TextWrap>
  /// <summary>
  /// The wrapping type applied to the shape, determining how text interacts with the object (e.g., square, tight, through).
  /// </summary>
- public WrapKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public WrapType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private WrapKind? _Type;
+ private WrapType? _Type;
  /// <summary>
  /// The side of the shape where text wrapping occurs, specifying whether text wraps on both, left, or right sides.
  /// </summary>
@@ -21,13 +21,13 @@ public partial class TextWrap : ModelElement<DXVW.TextWrap>
  /// <summary>
  /// The horizontal positioning anchor for the wrapped shape, indicating the reference point for horizontal alignment.
  /// </summary>
- public HorizontalAnchorKind? AnchorX { get => _AnchorX; set => UpdateField(ref _AnchorX, value, nameof(AnchorX)); }
+ public HorizontalAnchorType? AnchorX { get => _AnchorX; set => UpdateField(ref _AnchorX, value, nameof(AnchorX)); }
 
- private HorizontalAnchorKind? _AnchorX;
+ private HorizontalAnchorType? _AnchorX;
  /// <summary>
  /// The vertical positioning anchor for the wrapped shape, indicating the reference point for vertical alignment.
  /// </summary>
- public VerticalAnchorKind? AnchorY { get => _AnchorY; set => UpdateField(ref _AnchorY, value, nameof(AnchorY)); }
+ public VerticalAnchorType? AnchorY { get => _AnchorY; set => UpdateField(ref _AnchorY, value, nameof(AnchorY)); }
 
- private VerticalAnchorKind? _AnchorY;
+ private VerticalAnchorType? _AnchorY;
 }

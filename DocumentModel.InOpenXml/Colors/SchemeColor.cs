@@ -33,7 +33,7 @@ public partial class SchemeColor : Color<DXD.SchemeColor>
  /// require compatibility with Office 2010 or higher to display correctly.
  /// </para>
  /// </remarks>
- public SchemeColorKind? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+ public SchemeColors? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
- private SchemeColorKind? _Val;
+ private SchemeColors? _Val;
 }

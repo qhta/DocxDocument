@@ -10,23 +10,23 @@ public partial class PageBorders : ModelElement<DXW.PageBorders>, ISectionProper
  /// Z-ordering of the page border, specifying the stacking order relative to other elements.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageBorders.ZOrder))]
- public PageBorderZOrderKind? ZOrder { get => _ZOrder; set => UpdateField(ref _ZOrder, value, nameof(ZOrder)); }
+ public PageBorderZOrder? ZOrder { get => _ZOrder; set => UpdateField(ref _ZOrder, value, nameof(ZOrder)); }
 
- private PageBorderZOrderKind? _ZOrder;
+ private PageBorderZOrder? _ZOrder;
  /// <summary>
  /// Pages to display page borders, specifying which pages the borders are shown on.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageBorders.Display))]
- public PageBorderDisplayKind? Display { get => _Display; set => UpdateField(ref _Display, value, nameof(Display)); }
+ public PageBorderDisplay? Display { get => _Display; set => UpdateField(ref _Display, value, nameof(Display)); }
 
- private PageBorderDisplayKind? _Display;
+ private PageBorderDisplay? _Display;
  /// <summary>
  /// Page border positioning, specifying the offset from the page edge.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageBorders.OffsetFrom))]
- public PageBorderOffsetKind? OffsetFrom { get => _OffsetFrom; set => UpdateField(ref _OffsetFrom, value, nameof(OffsetFrom)); }
+ public PageBorderOffset? OffsetFrom { get => _OffsetFrom; set => UpdateField(ref _OffsetFrom, value, nameof(OffsetFrom)); }
 
- private PageBorderOffsetKind? _OffsetFrom;
+ private PageBorderOffset? _OffsetFrom;
  /// <summary>
  /// Top border of the page, specifying the style and appearance of the top edge.
  /// </summary>

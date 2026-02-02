@@ -42,13 +42,13 @@ namespace DocumentModel.Drawings;
 /// // Create a red color
 /// var red = new PresetColor 
 /// { 
-///     Val = PresetColorKind.Red
+///     Val = PresetColors.Red
 /// };
 /// 
 /// // Create a semi-transparent light blue
 /// var lightBlue = new PresetColor
 /// {
-///     Val = PresetColorKind.Blue,
+///     Val = PresetColors.Blue,
 ///     Tint = new Percent(40),        // 40% lighter
 ///     Alpha = 50000                  // 50% opacity
 /// };
@@ -56,7 +56,7 @@ namespace DocumentModel.Drawings;
 /// // Create a desaturated green
 /// var mutedGreen = new PresetColor
 /// {
-///     Val = PresetColorKind.Green,
+///     Val = PresetColors.Green,
 ///     SaturationModulation = 50000  // 50% saturation
 /// };
 /// </code>
@@ -81,5 +81,5 @@ public partial class PresetColor : DrawingColor<DXD.PresetColor>
  /// These mappings ensure consistent color rendering across different applications and platforms.
  /// </para>
  /// </remarks>
- public PresetColorKind? Val { get; set; }
+ public PresetColors? Val { get; set; }
 }

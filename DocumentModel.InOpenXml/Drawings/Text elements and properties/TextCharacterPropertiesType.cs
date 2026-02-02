@@ -63,16 +63,16 @@ public partial class TextCharacterPropertiesType : ModelElement<DXD.TextCharacte
  ///   Underline style.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TextCharacterPropertiesType.Underline))]
- public TextUnderlineKind? Underline { get => _Underline; set => UpdateField(ref _Underline, value, nameof(Underline)); }
+ public TextUnderline? Underline { get => _Underline; set => UpdateField(ref _Underline, value, nameof(Underline)); }
 
- private TextUnderlineKind? _Underline;
+ private TextUnderline? _Underline;
  /// <summary>
  ///   Strike-through style.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TextCharacterPropertiesType.Strike))]
- public TextStrikeKind? Strike { get => _Strike; set => UpdateField(ref _Strike, value, nameof(Strike)); }
+ public TextStrike? Strike { get => _Strike; set => UpdateField(ref _Strike, value, nameof(Strike)); }
 
- private TextStrikeKind? _Strike;
+ private TextStrike? _Strike;
  /// <summary>
  ///   Kerning value.
  /// </summary>
@@ -84,9 +84,9 @@ public partial class TextCharacterPropertiesType : ModelElement<DXD.TextCharacte
  ///   Capitalization style.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TextCharacterPropertiesType.Capital))]
- public TextCapsKind? Capital { get => _Capital; set => UpdateField(ref _Capital, value, nameof(Capital)); }
+ public TextCaps? Capital { get => _Capital; set => UpdateField(ref _Capital, value, nameof(Capital)); }
 
- private TextCapsKind? _Capital;
+ private TextCaps? _Capital;
  /// <summary>
  ///   Spacing value.
  /// </summary>

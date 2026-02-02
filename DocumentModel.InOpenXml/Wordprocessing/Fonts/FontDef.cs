@@ -38,9 +38,9 @@ public partial class FontDef : ModelElement<DXW.Font>
  /// Font family classification (e.g., Roman, Swiss, Modern).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.FontFamily))]
- public FontFamilyKind? FontFamily { get => _FontFamily; set => UpdateField(ref _FontFamily, value, nameof(FontFamily)); }
+ public FontFamily? FontFamily { get => _FontFamily; set => UpdateField(ref _FontFamily, value, nameof(FontFamily)); }
 
- private FontFamilyKind? _FontFamily;
+ private FontFamily? _FontFamily;
  /// <summary>
  /// Indicates whether the font is not a TrueType font.
  /// </summary>
@@ -52,9 +52,9 @@ public partial class FontDef : ModelElement<DXW.Font>
  /// Pitch of the font (e.g., fixed, variable).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.Pitch))]
- public FontPitchKind? Pitch { get => _Pitch; set => UpdateField(ref _Pitch, value, nameof(Pitch)); }
+ public FontPitch? Pitch { get => _Pitch; set => UpdateField(ref _Pitch, value, nameof(Pitch)); }
 
- private FontPitchKind? _Pitch;
+ private FontPitch? _Pitch;
  /// <summary>
  /// Font signature information, including Unicode subset and code page bitfields.
  /// </summary>

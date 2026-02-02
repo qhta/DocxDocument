@@ -8,7 +8,7 @@ public partial class FootnoteEndnoteType : Story
   /// <summary>
   /// Type of the note, specifying whether it is a footnote or endnote.
   /// </summary>
-  public FootnoteEndnoteKind? Type { get; set; }
+  public FootnoteEndnote? Type { get; set; }
   /// <summary>
   /// Unique identifier for the footnote or endnote.
   /// </summary>

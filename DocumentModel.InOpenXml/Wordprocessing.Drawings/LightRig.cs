@@ -11,25 +11,25 @@ public partial class LightRig: ModelElement<DXO10W.LightRig>
   /// The type of light rig used, defining the arrangement and style of lights applied to the 3D scene.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10W.LightRig.LightRigType))]
-  public LightRigKind? LightRigType
+  public LightRigType? LightRigType
   {
     get => _LightRigType;
     set => UpdateField(ref _LightRigType, value, nameof(LightRigType));
   }
 
-  private LightRigKind? _LightRigType;
+  private LightRigType? _LightRigType;
 
   /// <summary>
   /// The direction of the light rig, specifying the orientation of the lighting relative to the 3D object.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10W.LightRig.LightDirectionType))]
-  public LightRigDirectionKind? LightDirectionType
+  public LightRigDirection? LightDirectionType
   {
     get => _LightDirectionType;
     set => UpdateField(ref _LightDirectionType, value, nameof(LightDirectionType));
   }
 
-  private LightRigDirectionKind? _LightDirectionType;
+  private LightRigDirection? _LightDirectionType;
 
   /// <summary>
   /// The sphere coordinates for the light rig, allowing precise positioning of the light source in 3D space.

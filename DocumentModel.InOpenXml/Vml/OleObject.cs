@@ -11,9 +11,9 @@ public partial class OleObject : ModelElement<DXVO.OleObject>, IEmbeddedObjectCo
  ///   OLE Object Type
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.OleObject.Type))]
- public OleKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public OleType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private OleKind? _Type;
+ private OleType? _Type;
  /// <summary>
  ///   OLE Object Application
  /// </summary>
@@ -32,9 +32,9 @@ public partial class OleObject : ModelElement<DXVO.OleObject>, IEmbeddedObjectCo
  ///   OLE Object Representation
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.OleObject.DrawAspect))]
- public OleDrawAspectKind? DrawAspect { get => _DrawAspect; set => UpdateField(ref _DrawAspect, value, nameof(DrawAspect)); }
+ public OleDrawAspect? DrawAspect { get => _DrawAspect; set => UpdateField(ref _DrawAspect, value, nameof(DrawAspect)); }
 
- private OleDrawAspectKind? _DrawAspect;
+ private OleDrawAspect? _DrawAspect;
  /// <summary>
  ///   OLE Object Unique ID
  /// </summary>

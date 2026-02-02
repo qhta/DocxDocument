@@ -10,9 +10,9 @@ public partial class FieldChar : ModelElement<DXW.FieldChar>, IRunContent
  /// IField character type, specifying whether this is a start, separator, or end character for the complex field.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FieldChar.FieldCharType))]
- public FieldCharKind? FieldCharType { get => _FieldCharType; set => UpdateField(ref _FieldCharType, value, nameof(FieldCharType)); }
+ public FieldCharType? FieldCharType { get => _FieldCharType; set => UpdateField(ref _FieldCharType, value, nameof(FieldCharType)); }
 
- private FieldCharKind? _FieldCharType;
+ private FieldCharType? _FieldCharType;
  /// <summary>
  /// Indicates whether the field should not be recalculated.
  /// </summary>

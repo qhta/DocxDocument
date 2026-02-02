@@ -69,7 +69,7 @@ public partial class BaseRunProperties<T> : ModelElementCollection<RunProperty, 
   /// <summary>
   /// Alignment for the run contents, supporting subscript and superscript.
   /// </summary>
-  public VerticalPositionKind? VerticalTextAlignment { get; set; }
+  public VerticalPosition? VerticalTextAlignment { get; set; }
   /// <summary>
   /// Amount by which text is raised or lowered relative to the baseline, in half-points.
   /// </summary>
@@ -109,7 +109,7 @@ public partial class BaseRunProperties<T> : ModelElementCollection<RunProperty, 
   /// <summary>
   /// Animated text effect for the run.
   /// </summary>
-  public TextEffectKind? TextEffect { get; set; }
+  public TextEffect? TextEffect { get; set; }
   /// <summary>
   /// Resizes run contents to fit a specified width by adjusting character size.
   /// </summary>
@@ -117,7 +117,7 @@ public partial class BaseRunProperties<T> : ModelElementCollection<RunProperty, 
   /// <summary>
   /// Emphasis mark applied to each non-space character in the run.
   /// </summary>
-  public EmphasisMarkKind? Emphasis { get; set; }
+  public EmphasisMark? Emphasis { get; set; }
   /// <summary>
   /// East Asian typography settings, including two lines in one and horizontal in vertical text options.
   /// </summary>

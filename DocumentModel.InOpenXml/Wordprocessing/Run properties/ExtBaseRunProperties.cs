@@ -28,7 +28,7 @@ public partial class ExtBaseRunProperties<T>: BaseRunProperties<T> where T: DX.O
   /// <summary>
   /// Highlighting color applied as a background behind the run contents. Supersedes shading when displayed.
   /// </summary>
-  public HighlightColorKind? Highlight { get; set; }
+  public HighlightColors? Highlight { get; set; }
 
   #endregion
 
@@ -77,17 +77,17 @@ public partial class ExtBaseRunProperties<T>: BaseRunProperties<T> where T: DX.O
   /// <summary>
   /// Specifies which kinds of ligatures to use when displaying the text.
   /// </summary>
-  public LigaturesKind? Ligatures { get; set; }
+  public Ligatures? Ligatures { get; set; }
 
   /// <summary>
   /// Number form for OpenType fonts, specifies lining or old-style numerals.
   /// </summary>
-  public NumberFormKind? NumberingFormat { get; set; }
+  public NumberForm? NumberingFormat { get; set; }
 
   /// <summary>
   /// Number spacing for OpenType fonts, specifies proportional or tabular spacing for numbers.
   /// </summary>
-  public NumberSpacingKind? NumberSpacing { get; set; }
+  public NumberSpacing? NumberSpacing { get; set; }
 
   /// <summary>
   /// Stylistic sets collection for OpenType fonts, enabling alternate glyph sets.

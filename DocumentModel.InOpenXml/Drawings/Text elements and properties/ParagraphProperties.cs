@@ -37,9 +37,9 @@ public partial class ParagraphProperties : ModelElement<DXD.ParagraphProperties>
  ///   Alignment of the paragraph text.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ParagraphProperties.Alignment))]
- public TextAlignmentKind? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
+ public TextAlignment? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
 
- private TextAlignmentKind? _Alignment;
+ private TextAlignment? _Alignment;
  /// <summary>
  ///   Default tab size for the paragraph.
  /// </summary>
@@ -65,9 +65,9 @@ public partial class ParagraphProperties : ModelElement<DXD.ParagraphProperties>
  ///   Font alignment within the paragraph.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ParagraphProperties.FontAlignment))]
- public TextFontAlignmentKind? FontAlignment { get => _FontAlignment; set => UpdateField(ref _FontAlignment, value, nameof(FontAlignment)); }
+ public TextFontAlignment? FontAlignment { get => _FontAlignment; set => UpdateField(ref _FontAlignment, value, nameof(FontAlignment)); }
 
- private TextFontAlignmentKind? _FontAlignment;
+ private TextFontAlignment? _FontAlignment;
  /// <summary>
  ///   Enables Latin line break rules.
  /// </summary>

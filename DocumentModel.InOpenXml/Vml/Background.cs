@@ -51,9 +51,9 @@ public partial class Background : ModelElement<DXV.Background>
  ///   Target Screen Size
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Background.TargetScreenSize))]
- public ScreenSizeKind? TargetScreenSize { get => _TargetScreenSize; set => UpdateField(ref _TargetScreenSize, value, nameof(TargetScreenSize)); }
+ public ScreenSize? TargetScreenSize { get => _TargetScreenSize; set => UpdateField(ref _TargetScreenSize, value, nameof(TargetScreenSize)); }
 
- private ScreenSizeKind? _TargetScreenSize;
+ private ScreenSize? _TargetScreenSize;
  /// <summary>
  ///   Fill.
  /// </summary>

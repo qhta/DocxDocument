@@ -273,7 +273,7 @@ namespace DocumentModel.InOpenXml.Test
       };
       if (createAllProperties)
       {
-        props.DocumentSecurity = DocumentSecurityKind.ReadOnly | DocumentSecurityKind.PasswordProtected;
+        props.DocumentSecurity = DocumentSecurity.ReadOnly | DocumentSecurity.PasswordProtected;
         props.DigitalSignature = [0x01, 0x02, 0x03, 0x04, 0x05];
         props.HyperlinkBase = "http://www.example.com/";
         props.HeadingPairs = new HeadingPairs
@@ -289,8 +289,8 @@ namespace DocumentModel.InOpenXml.Test
           "Chapter 2"
         };
         props.HyperlinkList = new HyperlinkList([
-          new HyperlinkInfo { Action = HyperlinkActionKind.Change, Attachment = HyperlinkAttachmentKind.Field, Location = "http://www.example.com/link1" },
-          new HyperlinkInfo { Action = HyperlinkActionKind.Remove, Attachment = HyperlinkAttachmentKind.Background, Location = "http://www.example.com/link2" },
+          new HyperlinkInfo { Action = HyperlinkAction.Change, Attachment = HyperlinkAttachment.Field, Location = "http://www.example.com/link1" },
+          new HyperlinkInfo { Action = HyperlinkAction.Remove, Attachment = HyperlinkAttachment.Background, Location = "http://www.example.com/link2" },
         ]);
       }
       return props;

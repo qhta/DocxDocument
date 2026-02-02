@@ -20,10 +20,10 @@ namespace DocumentModel.Wordprocessing
    if (reader.TokenType == JsonTokenType.String)
    {
     var kindStr = reader.GetString();
-    if (Enum.TryParse(typeof(PresetZoomKind), kindStr, out var kind))
+    if (Enum.TryParse(typeof(PresetZoom), kindStr, out var kind))
      return new Zoom
      {
-      Kind = (PresetZoomKind)kind!
+      Kind = (PresetZoom)kind!
      };
    }
    else if (reader.TokenType == JsonTokenType.Number && reader.TryGetInt32(out int percent))

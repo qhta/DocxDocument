@@ -24,6 +24,6 @@ public partial interface TableRow
   /// </summary>
   /// <param name="height">Height in points.</param>
   /// <param name="heightRule">Height rule.</param>
-  public void SetHeight(float height, HeightRuleKind heightRule);
+  public void SetHeight(float height, HeightRule heightRule);
 
 }

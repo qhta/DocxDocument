@@ -9,9 +9,9 @@ public partial class Camera : ModelElement<DXD.Camera>
  /// Preset camera type.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Camera.Preset))]
- public PresetCameraKind? Preset { get => _Preset; set => UpdateField(ref _Preset, value, nameof(Preset)); }
+ public PresetCameraType? Preset { get => _Preset; set => UpdateField(ref _Preset, value, nameof(Preset)); }
 
- private PresetCameraKind? _Preset;
+ private PresetCameraType? _Preset;
  /// <summary>
  /// Field of view.
  /// </summary>

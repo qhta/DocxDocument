@@ -9,9 +9,9 @@ public partial class ShapeDefaults : ModelElement<DXVO.ShapeDefaults>
  ///   VML Extension Handling Behavior
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.Extension))]
- public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
+ public ExtensionHandlingBehavior? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
- private ExtensionHandlingBehaviorKind? _Extension;
+ private ExtensionHandlingBehavior? _Extension;
  /// <summary>
  ///   Shape ID Optional Storage
  /// </summary>
@@ -72,9 +72,9 @@ public partial class ShapeDefaults : ModelElement<DXVO.ShapeDefaults>
  ///   Type of Inset Margin
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.InsetMode))]
- public InsetMarginKind? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
+ public InsetMargin? InsetMode { get => _InsetMode; set => UpdateField(ref _InsetMode, value, nameof(InsetMode)); }
 
- private InsetMarginKind? _InsetMode;
+ private InsetMargin? _InsetMode;
  /// <summary>
  ///   Fill.
  /// </summary>

@@ -17,7 +17,7 @@ public partial class TableWidth : ModelElement<DXW.TableWidth>
  /// Table width type, determining whether the value is absolute, relative, "auto", or "nil".
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableWidth.Type))]
- public TableWidthUnitType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public TableWidthUnit? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private TableWidthUnitType? _Type;
+ private TableWidthUnit? _Type;
 }

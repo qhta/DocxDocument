@@ -16,9 +16,9 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Fill Type
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Type))]
- public FillTypeKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public FillType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private FillTypeKind? _Type;
+ private FillType? _Type;
  /// <summary>
  ///   Fill Toggle
  /// </summary>
@@ -93,9 +93,9 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Image Aspect Ratio
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Aspect))]
- public ImageAspectKind? Aspect { get => _Aspect; set => UpdateField(ref _Aspect, value, nameof(Aspect)); }
+ public ImageAspectType? Aspect { get => _Aspect; set => UpdateField(ref _Aspect, value, nameof(Aspect)); }
 
- private ImageAspectKind? _Aspect;
+ private ImageAspectType? _Aspect;
  /// <summary>
  ///   Intermediate Colors
  /// </summary>
@@ -142,9 +142,9 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Gradient Fill Method
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Method))]
- public FillMethodKind? Method { get => _Method; set => UpdateField(ref _Method, value, nameof(Method)); }
+ public FillMethod? Method { get => _Method; set => UpdateField(ref _Method, value, nameof(Method)); }
 
- private FillMethodKind? _Method;
+ private FillMethod? _Method;
  /// <summary>
  ///   Detect Mouse Click
  /// </summary>

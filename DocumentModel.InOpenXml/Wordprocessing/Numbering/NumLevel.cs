@@ -62,9 +62,9 @@ public partial class NumLevel : ModelElement<DXW.Level>
  /// Content added between the numbering level's text and the text of every numbered paragraph referencing this level. Defaults to tab if omitted.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Level.LevelSuffix))]
- public LevelSuffixKind? LevelSuffix { get => _LevelSuffix; set => UpdateField(ref _LevelSuffix, value, nameof(LevelSuffix)); }
+ public LevelSuffix? LevelSuffix { get => _LevelSuffix; set => UpdateField(ref _LevelSuffix, value, nameof(LevelSuffix)); }
 
- private LevelSuffixKind? _LevelSuffix;
+ private LevelSuffix? _LevelSuffix;
  /// <summary>
  /// Textual content displayed for paragraphs at this numbering level, with %x replaced by the appropriate number.
  /// </summary>
@@ -97,9 +97,9 @@ public partial class NumLevel : ModelElement<DXW.Level>
  /// Justification for the numbering level (e.g., left, center, right).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Level.LevelJustification))]
- public LevelJustificationKind? LevelJustification { get => _LevelJustification; set => UpdateField(ref _LevelJustification, value, nameof(LevelJustification)); }
+ public LevelJustification? LevelJustification { get => _LevelJustification; set => UpdateField(ref _LevelJustification, value, nameof(LevelJustification)); }
 
- private LevelJustificationKind? _LevelJustification;
+ private LevelJustification? _LevelJustification;
  /// <summary>
  /// Run properties for the numbering symbol at this level, specifying formatting for the symbol.
  /// </summary>

@@ -10,7 +10,7 @@ public partial class ProofError : ModelElement<DXW.ProofError>
  /// Proofing error anchor type, specifying the kind of proofing error (e.g., spelling, grammar).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.ProofError.Type))]
- public ProofingErrorKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public ProofingError? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private ProofingErrorKind? _Type;
+ private ProofingError? _Type;
 }

@@ -30,9 +30,9 @@ public partial class Shape3D : ModelElement<DXDD.Shape3D>, IExtendableElement
  ///   Preset material type applied to the shape's surface.
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.Shape3D.PresetMaterial))]
- public PresetMaterialKind? PresetMaterial { get => _PresetMaterial; set => UpdateField(ref _PresetMaterial, value, nameof(PresetMaterial)); }
+ public PresetMaterialType? PresetMaterial { get => _PresetMaterial; set => UpdateField(ref _PresetMaterial, value, nameof(PresetMaterial)); }
 
- private PresetMaterialKind? _PresetMaterial;
+ private PresetMaterialType? _PresetMaterial;
  /// <summary>
  ///   Top bevel effect applied to the shape.
  /// </summary>

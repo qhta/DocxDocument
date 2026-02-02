@@ -7,7 +7,7 @@ public struct RowSpacing
   /// <summary>
   /// Specifies the interpretation of Val property.
   /// </summary>
-  public RowSpacingRuleKind Rule { get; set; }
+  public RowSpacingRule Rule { get; set; }
   /// <summary>
   /// Specifies numeric value for Exactly and Multiply rules.
   /// </summary>
@@ -19,7 +19,7 @@ public struct RowSpacing
   /// <summary>
   /// Value constructor
   /// </summary>
-  public RowSpacing(RowSpacingRuleKind rule, UInt16? val)
+  public RowSpacing(RowSpacingRule rule, UInt16? val)
   {
     Rule = rule;
     Value = val;
@@ -30,23 +30,23 @@ public struct RowSpacing
   public RowSpacing(string str)
   {
     if (Char.IsLetter(str.FirstOrDefault()))
-      Rule = Enum.Parse<RowSpacingRuleKind>(str, true);
+      Rule = Enum.Parse<RowSpacingRule>(str, true);
     else
     {
       if (str.EndsWith("ln"))
       {
         Value = (UInt16)(Double.Parse(str.Substring(0,str.Length-2).Trim(), CultureInfo.InvariantCulture)*2);
-        Rule = RowSpacingRuleKind.Multiple;
+        Rule = RowSpacingRule.Multiple;
       }
       else if (str.EndsWith("pt"))
       {
         Value = UInt16.Parse(str.Substring(0,str.Length-2).Trim());
-        Rule = RowSpacingRuleKind.Exactly;
+        Rule = RowSpacingRule.Exactly;
       }
       else
       {
         Value = UInt16.Parse(str.Trim());
-        Rule = RowSpacingRuleKind.Exactly;
+        Rule = RowSpacingRule.Exactly;
       }
     }
   }
@@ -57,15 +57,15 @@ public struct RowSpacing
   {
     switch (Rule)
     {
-      case RowSpacingRuleKind.Single:
+      case RowSpacingRule.Single:
         return "single";
-      case RowSpacingRuleKind.OneAndHalf:
+      case RowSpacingRule.OneAndHalf:
         return "oneAndHalf";
-      case RowSpacingRuleKind.Double:
+      case RowSpacingRule.Double:
         return "double";
-      case RowSpacingRuleKind.Exactly:
+      case RowSpacingRule.Exactly:
         return $"{Value}pt";
-      case RowSpacingRuleKind.Multiple:
+      case RowSpacingRule.Multiple:
         double v = (Value ?? 0) / 2.0;
         return $"{v.ToString(CultureInfo.InvariantCulture)}ln";
     }

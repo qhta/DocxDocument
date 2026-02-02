@@ -10,13 +10,13 @@ public abstract partial class HeaderFooterReferenceType<T> : ModelElement<T>, IP
   /// Specifies which header or footer (even, default, first) is referred to by this reference.
   /// </summary>
   [OpenXmlProperty(nameof(HeaderReference.Type))]
-  public HeaderFooterKind? Type
+  public HeaderFooterType? Type
   {
     get => _Type;
     set => UpdateField(ref _Type, value, nameof(Type));
   }
 
-  private HeaderFooterKind? _Type;
+  private HeaderFooterType? _Type;
 
   /// <summary>
   /// Relationship ID to the part where the header or footer is defined.

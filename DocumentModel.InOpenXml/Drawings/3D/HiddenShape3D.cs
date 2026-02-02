@@ -30,9 +30,9 @@ public partial class HiddenShape3D : ModelElement<DXO10D.HiddenShape3D>, IExtend
  ///   Preset material type applied to the shape's surface.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.HiddenShape3D.PresetMaterial))]
- public PresetMaterialKind? PresetMaterial { get => _PresetMaterial; set => UpdateField(ref _PresetMaterial, value, nameof(PresetMaterial)); }
+ public PresetMaterialType? PresetMaterial { get => _PresetMaterial; set => UpdateField(ref _PresetMaterial, value, nameof(PresetMaterial)); }
 
- private PresetMaterialKind? _PresetMaterial;
+ private PresetMaterialType? _PresetMaterial;
  /// <summary>
  ///   Top bevel effect applied to the shape.
  /// </summary>

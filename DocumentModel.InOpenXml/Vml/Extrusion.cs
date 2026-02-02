@@ -9,9 +9,9 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
  ///   VML Extension Handling Behavior
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Extrusion.Extension))]
- public ExtensionHandlingBehaviorKind? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
+ public ExtensionHandlingBehavior? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
 
- private ExtensionHandlingBehaviorKind? _Extension;
+ private ExtensionHandlingBehavior? _Extension;
  /// <summary>
  ///   Extrusion Toggle
  /// </summary>
@@ -23,16 +23,16 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
  ///   Extrusion Type
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Extrusion.Type))]
- public ExtrusionKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public ExtrusionType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private ExtrusionKind? _Type;
+ private ExtrusionType? _Type;
  /// <summary>
  ///   Extrusion Render Mode
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Extrusion.Render))]
- public ExtrusionRenderKind? Render { get => _Render; set => UpdateField(ref _Render, value, nameof(Render)); }
+ public ExtrusionRender? Render { get => _Render; set => UpdateField(ref _Render, value, nameof(Render)); }
 
- private ExtrusionRenderKind? _Render;
+ private ExtrusionRender? _Render;
  /// <summary>
  ///   Extrusion Viewpoint Origin
  /// </summary>

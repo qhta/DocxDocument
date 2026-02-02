@@ -18,17 +18,17 @@ public partial class Style: ModelElement<DXW.Style>
   /// Built-in style identifier, specifying the predefined style type.
   /// </summary>
   [NotMapped]
-  public BuiltInStyleKind? BuiltIn { get => _BuiltIn; set => UpdateField(ref _BuiltIn, value, nameof(BuiltIn)); }
+  public BuiltInStyleType? BuiltIn { get => _BuiltIn; set => UpdateField(ref _BuiltIn, value, nameof(BuiltIn)); }
 
-  private BuiltInStyleKind? _BuiltIn;
+  private BuiltInStyleType? _BuiltIn;
 
   /// <summary>
   /// Type of style, such as paragraph, character, table, or numbering.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Style.Type))]
-  public StyleKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+  public StyleType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
-  private StyleKind? _Type;
+  private StyleType? _Type;
 
   /// <summary>
   /// Base style on which this style is based, enabling inheritance of formatting.

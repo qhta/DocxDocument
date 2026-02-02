@@ -20,11 +20,11 @@ public partial class CurrentTableCellProperties<T> : BaseTableCellProperties<T> 
   /// <summary>
   /// Indicates that this cell is part of a horizontally merged set of cells in a table.
   /// </summary>
-  public MergedCellKind? HorizontalMerge { get; set; }
+  public MergedCell? HorizontalMerge { get; set; }
   /// <summary>
   /// Indicates that this cell is part of a vertically merged set of cells in a table.
   /// </summary>
-  public MergedCellKind? VerticalMerge { get; set; }
+  public MergedCell? VerticalMerge { get; set; }
   /// <summary>
   /// Set of borders for the edges of the current table cell, using the eight border types defined by its child elements.
   /// </summary>
@@ -32,7 +32,7 @@ public partial class CurrentTableCellProperties<T> : BaseTableCellProperties<T> 
   /// <summary>
   /// Direction of the text flow for this table cell.
   /// </summary>
-  public TextDirectionKind? TextDirection { get; set; }
+  public TextDirection? TextDirection { get; set; }
   /// <summary>
   /// Indicates that the contents of the current cell have their inter-character spacing adjusted to fit the cell width.
   /// </summary>

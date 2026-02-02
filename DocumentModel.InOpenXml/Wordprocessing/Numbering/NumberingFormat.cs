@@ -9,9 +9,9 @@ public partial class NumberingFormat : ModelElement<DXW.NumberingFormat>
  /// <summary>
  /// Standard numbering format type, specifying the built-in numbering style (e.g., decimal, roman, bullet).
  /// </summary>
- public NumberFormatKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public NumberFormat? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private NumberFormatKind? _Type;
+ private NumberFormat? _Type;
  /// <summary>
  /// Custom number format using XSLT format attribute syntax. This format is used for all numbering in the parent object (e.g., Katakana numbering).
  /// </summary>

@@ -25,9 +25,9 @@ public partial class CaptionDefinition : ModelElement<DXW.Caption>
  /// Specifies how an automatically inserted caption shall be positioned relative to the object that it is captioning.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Caption.Position))]
- public CaptionPositionKind? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
+ public CaptionPosition? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
 
- private CaptionPositionKind? _Position;
+ private CaptionPosition? _Position;
  /// <summary>
  /// Specifies whether to display numbering associated with the most recent chapter
  /// heading in the WordprocessingML document within the caption field.A chapter heading
@@ -60,9 +60,9 @@ public partial class CaptionDefinition : ModelElement<DXW.Caption>
  /// Caption numbering format, specifying the format used for numbering captions.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Caption.NumberFormat))]
- public NumberFormatKind? NumberFormat { get => _NumberFormat; set => UpdateField(ref _NumberFormat, value, nameof(NumberFormat)); }
+ public NumberFormat? NumberFormat { get => _NumberFormat; set => UpdateField(ref _NumberFormat, value, nameof(NumberFormat)); }
 
- private NumberFormatKind? _NumberFormat;
+ private NumberFormat? _NumberFormat;
  /// <summary>
  /// Specifies the character which shall be used to separate the chapter number used in this
  /// caption from the caption item numbering.A caption format consists of three components:
@@ -76,7 +76,7 @@ public partial class CaptionDefinition : ModelElement<DXW.Caption>
  /// If the chapter number is not part of the caption format, then this parameter shall be ignored.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Caption.Separator))]
- public ChapterSeparatorKind? Separator { get => _Separator; set => UpdateField(ref _Separator, value, nameof(Separator)); }
+ public ChapterSeparator? Separator { get => _Separator; set => UpdateField(ref _Separator, value, nameof(Separator)); }
 
- private ChapterSeparatorKind? _Separator;
+ private ChapterSeparator? _Separator;
 }
