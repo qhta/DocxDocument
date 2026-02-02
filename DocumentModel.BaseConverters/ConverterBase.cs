@@ -19,7 +19,7 @@ public class ConversionToMap : Dictionary<(Type Source, Type Target), Func<objec
   }
 }
 
-public class ConversionFromMap : Dictionary<(Type Source, Type Target), Func<object, object?>>
+public class ConversionFromMap : Dictionary<(Type Source, Type Target), Func<object, Type, object?>>
 {
   public void Append(ConversionFromMap source)
   {
@@ -119,7 +119,14 @@ public static class ConverterBase
       {
         if (fromMethod != null)
         {
-          conversionFromMap[(item.TargetType, modelType)] = value => fromMethod.Invoke(null, [value])!;
+          conversionFromMap[(item.TargetType, modelType)] = (value, targetType) =>
+          {
+            var parameters = fromMethod.GetParameters();
+            if (parameters.Length == 1)
+              return fromMethod.Invoke(null, [value])!;
+
+            return fromMethod.Invoke(null, [value, targetType])!;
+          };
         }
         if (toMethod != null)
         {
@@ -186,6 +193,11 @@ public static class ConverterBase
     //Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
 
     var targetSubType = Nullable.GetUnderlyingType(targetType) ?? targetType;
+    if (targetSubType.Name.StartsWith("EnumValue`"))
+    {
+      targetSubType = typeof(DX.EnumValue<>);
+      sourceType = typeof(Enum);
+    }
     while (targetSubType != null)
     {
       //Debug.WriteLine($"Search for conversion from {sourceType.FullName} to {targetSubType.FullName}");
@@ -273,23 +285,28 @@ public static class ConverterBase
 
 
     //Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
-
+    var searchTargetType = targetType;
     var sourceSubType = Nullable.GetUnderlyingType(sourceType) ?? sourceType;
+    if (sourceSubType.Name.StartsWith("EnumValue`"))
+    {
+      sourceSubType = typeof(DX.EnumValue<>);
+      searchTargetType = typeof(Enum);
+    }
     while (sourceSubType != null)
     {
       //Debug.WriteLine($"Search for conversion from {sourceSubType.FullName} to {targetType.FullName}");
 
-      if (conversionFromMap.TryGetValue((sourceSubType, targetType), out var conversionFunc))
+      if (conversionFromMap.TryGetValue((sourceSubType, searchTargetType), out var conversionFunc))
       {
         //Debug.WriteLine($"Converting from {sourceType.FullName} to {sourceSubType.FullName}");
-        result = conversionFunc(value);
+        result = conversionFunc(value, targetType);
         return true;
       }
 
       sourceSubType = sourceSubType.BaseType;
     }
 
-    if (TryImplicitConvertFrom(value, targetType, out  result))
+    if (TryImplicitConvertFrom(value, targetType, out result))
       return true;
 
     if (value is DX.OpenXmlLeafTextElement textElement)

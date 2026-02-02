@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXW.TableWidthValues))]
-public enum TableWidth
+public enum TableWidthType
 {
   /// <summary>
   ///   nil.
