@@ -21,7 +21,7 @@ public static class EnumConverterTest
   [
     (typeof(DocumentModel.PresetColors), typeof(DX.EnumValue<DXD.PresetColorValues>)),
     (typeof(DocumentModel.Vml.FillMethod), typeof(DX.EnumValue<DXV.FillMethodValues>)),
-
+    (typeof(DocumentModel.Math.RowSpacingRule), typeof(DXM.RowSpacingRule)),
   ];
 
   /// <summary>
