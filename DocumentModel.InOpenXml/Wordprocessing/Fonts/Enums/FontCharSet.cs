@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlType(typeof(DXW.FontCharSet))]
-public enum FontCharSet
+public enum FontCharset
 {
   /// <summary>
   /// ANSI character set (IANA name iso-8859-1).
