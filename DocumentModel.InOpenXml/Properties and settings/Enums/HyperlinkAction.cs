@@ -4,7 +4,7 @@
 ///   Indicates the type of action to perform on a hyperlink or hyperlink field in a document model.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlType(typeof(DXVT.Variant))]
+[OpenXmlNotMapped]
 public enum HyperlinkAction
 {
   /// <summary>

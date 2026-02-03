@@ -4,7 +4,7 @@
 ///   Indicates the context or attachment type for a hyperlink or graphic reference in a document.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlType(typeof(DXVT.Variant))]
+[OpenXmlNotMapped]
 public enum HyperlinkAttachment
 {
   /// <summary>

@@ -242,6 +242,8 @@ public static class ConverterBase
       result = targetInstance;
       return true;
     }
+    if (TryUseConverter(value, targetType, out result))
+      return true;
     return false;
   }
 
@@ -337,7 +339,10 @@ public static class ConverterBase
       result = ConvertFrom(valValue, targetType, conversionFromMap);
       return true;
     }
-    throw new NotSupportedException($"Conversion from {sourceType.FullName} to {targetType.FullName} is not supported.");
+    if (TryUseConverter(value, targetType, out result))
+      return true;
+
+    return false;
   }
 
   /// <summary>
@@ -398,6 +403,25 @@ public static class ConverterBase
       result = op.Invoke(null, [source]);
       return true;
     }
+    return false;
+  }
+
+  /// <summary>
+  /// Attempts to use IConvertible to convert the source object to the target type.
+  /// </summary>
+  /// <param name="source"></param>
+  /// <param name="targetType"></param>
+  /// <param name="result"></param>
+  /// <returns></returns>
+  public static bool TryUseConverter(object? source, Type targetType, out object? result)
+  {
+    if (source is IConvertible convertible && targetType.GetInterface("IConvertible") != null)
+    {
+      result = convertible.ToType(targetType, null);
+      return true;
+    }
+
+    result = null;
     return false;
   }
 

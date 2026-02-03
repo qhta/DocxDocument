@@ -8,7 +8,7 @@
 /// This is typically used for custom serialization, mapping, or tooling scenarios where explicit property
 /// naming is required.</remarks>
 /// <param name="propertyName">The name of the Open XML property to be associated with the target class or property. Cannot be null or empty.</param>
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Class | AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
 public class OpenXmlPropertyAttribute(string propertyName) : Attribute
 {
   /// <summary>
