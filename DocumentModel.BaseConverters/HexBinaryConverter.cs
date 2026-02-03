@@ -66,7 +66,6 @@ public static class HexBinaryConverter
 
   #endregion
 
-
   #region StringValue conversion.
 
   /// <summary>
@@ -177,14 +176,13 @@ public static class HexBinaryConverter
     if (element == null)
       return null;
 
-    var valProperty = element.GetType().GetProperty("Value");
-    if (valProperty != null)
-    {
-      var value = (string?)valProperty.GetValue(element);
-      if (value != null)
-        return new HexBinary(value);
-    }
-    throw new InvalidOperationException($"The OpenXml element of type {element.GetType()} does not have a valid 'Value' property.");
+    var valProperty = element.GetType().GetProperty("Value") ?? element.GetType().GetProperty("Val");
+    if (valProperty == null)
+      throw new InvalidOperationException($"The OpenXml element of type {element.GetType()} does not have a valid 'Value' property.");
+    var value = valProperty.GetValue(element);
+    if (value != null)
+      return ConvertFrom(value);
+    return null;
   }
 
   /// <summary>
@@ -199,9 +197,12 @@ public static class HexBinaryConverter
       return null;
 
     var element = (DX.OpenXmlLeafElement)Activator.CreateInstance(targetType)!;
-    var valProperty = targetType.GetProperty("Value");
+    var valProperty = targetType.GetProperty("Value") ?? element.GetType().GetProperty("Val");
     if (valProperty != null)
-      valProperty.SetValue(element, value.ToString());
+    {
+      var valObject = ConvertTo(value, valProperty.PropertyType);
+      valProperty.SetValue(element, valObject);
+    }
     return element;
   }
 
@@ -221,17 +222,17 @@ public static class HexBinaryConverter
       return null;
 
     List<string> parts = new();
-    if (element.UnicodeSignature0?.Value!=null)
+    if (element.UnicodeSignature0?.Value != null)
       parts.Add(element.UnicodeSignature0!.Value!);
-    if (element.UnicodeSignature1?.Value!=null)
+    if (element.UnicodeSignature1?.Value != null)
       parts.Add(element.UnicodeSignature1!.Value!);
-    if (element.UnicodeSignature2?.Value!=null)
+    if (element.UnicodeSignature2?.Value != null)
       parts.Add(element.UnicodeSignature2!.Value!);
-    if (element.UnicodeSignature3?.Value!=null)
+    if (element.UnicodeSignature3?.Value != null)
       parts.Add(element.UnicodeSignature3!.Value!);
-    if (element.CodePageSignature0?.Value!=null)
+    if (element.CodePageSignature0?.Value != null)
       parts.Add(element.CodePageSignature0!.Value!);
-    if (element.CodePageSignature1?.Value!=null)
+    if (element.CodePageSignature1?.Value != null)
       parts.Add(element.CodePageSignature1!.Value!);
     var text = String.Join("-", parts);
     return new HexBinary(text);
@@ -251,17 +252,17 @@ public static class HexBinaryConverter
     var element = (DXW.FontSignature)Activator.CreateInstance(targetType)!;
     var text = ((HexBinary)value).ToString();
     string[] parts = text.Split('-');
-    if (parts.Length>0)
+    if (parts.Length > 0)
       element.UnicodeSignature0 = new DX.HexBinaryValue(parts[0]);
-    if (parts.Length>1)
+    if (parts.Length > 1)
       element.UnicodeSignature1 = new DX.HexBinaryValue(parts[1]);
-    if (parts.Length>2)
+    if (parts.Length > 2)
       element.UnicodeSignature2 = new DX.HexBinaryValue(parts[2]);
-    if (parts.Length>3)
+    if (parts.Length > 3)
       element.UnicodeSignature3 = new DX.HexBinaryValue(parts[3]);
-    if (parts.Length>4)
+    if (parts.Length > 4)
       element.CodePageSignature0 = new DX.HexBinaryValue(parts[4]);
-    if (parts.Length>5)
+    if (parts.Length > 5)
       element.CodePageSignature1 = new DX.HexBinaryValue(parts[5]);
     return element;
   }

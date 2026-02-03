@@ -50,6 +50,8 @@ public static class SingleConverterTest
     0f,
     1f,
     -1f,
+    123.456f,
+    -123.456f,
     float.MaxValue,
     float.MinValue
   ];
@@ -77,6 +79,9 @@ public static class SingleConverterTest
           Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
           return false;
         }
+        if (valueIndex == 0)
+          Console.WriteLine();
+        Console.WriteLine($"  {testValue} -> {openXmlValue.GetType()} : {openXmlValue}");
         // Convert back to Single
         var convertedBackValue = SingleConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
@@ -89,7 +94,8 @@ public static class SingleConverterTest
           Console.WriteLine($"Mismatch: original {testValue}, converted back {convertedBackValue}");
           return false;
         }
-      } catch (Exception e)
+      }
+      catch (Exception e)
       {
         Console.WriteLine(e.Message);
         return false;

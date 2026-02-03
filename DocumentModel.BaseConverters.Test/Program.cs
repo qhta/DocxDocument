@@ -17,202 +17,62 @@ internal class Program
     Console.WriteLine("║   DocumentModel BaseConverters Test Suite        ║");
     Console.WriteLine("╚══════════════════════════════════════════════════╝");
     Console.WriteLine();
+    if (!Run(BooleanConverterTest.Run))
+      return;
+    if (!Run(TSBooleanConverterTest.Run))
+      return;
+    if (!Run(StringConverterTest.Run))
+      return;
+    if (!Run(Int32ConverterTest.Run))
+      return;
+    if (!Run(Int64ConverterTest.Run))
+      return;
+    if (!Run(Int16ConverterTest.Run))
+      return;
+    if (!Run(SByteConverterTest.Run))
+      return;
+    if (!Run(ByteConverterTest.Run))
+      return;
+    if (!Run(UInt16ConverterTest.Run))
+      return;
+    if (!Run(UInt32ConverterTest.Run))
+      return;
+    if (!Run(UInt64ConverterTest.Run))
+      return;
+    if (!Run(HexIntConverterTest.Run))
+      return;
+    if (!Run(HexLongConverterTest.Run))
+      return;
+    if (!Run(HexCharConverterTest.Run))
+      return;
+    if (!Run(StringListConverterTest.Run))
+      return;
+    if (!Run(RgbConverterTest.Run))
+      return;
+    if (!Run(HexBinaryConverterTest.Run))
+      return;
+    if (!Run(DecimalConverterTest.Run))
+      return;
+    if (!Run(SingleConverterTest.Run))
+      return;
+    if (!Run(EnumConverterTest.Run))
+      return;
+    if (!Run(SimpleValueConverterTest.Run))
+      return;
 
-    if (!EnumConverterTest.Run())
+    Console.WriteLine("All tests passed.");
+  }
+
+  private static bool Run(Func<bool> runMethod)
+  {
+    if (!runMethod())
     {
       Console.WriteLine("\nSome tests failed.");
-      return;
+      return false;
     }
     Console.WriteLine();
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
-
-    //if (!BooleanConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!TSBooleanConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!StringConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!Int32ConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!Int64ConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!Int16ConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!SByteConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!ByteConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!UInt16ConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!UInt32ConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!UInt64ConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!HexIntConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!HexLongConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!HexCharConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!StringListConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-    
-    //if (!RgbConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!HexBinaryConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!SingleConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    //if (!SimpleValueConverterTest.Run())
-    //{
-    //  Console.WriteLine("\nSome tests failed.");
-    //  return;
-    //}
-
-    //Console.WriteLine();
-    //Console.WriteLine("═══════════════════════════════════════════════════════════");
-    //Console.WriteLine();
-
-    Console.WriteLine("All tests passed.");
+    return true;
   }
 }

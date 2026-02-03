@@ -16,6 +16,7 @@ public static class HexBinaryConverterTest
     typeof(DX.StringValue),
     typeof(DX.HexBinaryValue),
     typeof(DXW.FontSignature),
+    typeof(DXW.Panose1Number),
   ];
 
   /// <summary>
@@ -42,12 +43,15 @@ public static class HexBinaryConverterTest
   /// <summary>
   ///   Test values used for HexBinary conversion tests, including boundary and typical values.
   /// </summary>
-  static readonly HexBinary[] testValues =
-  [
-    new HexBinary(),
-    new HexBinary("00000001-00000002-00000003-00000004-01234567-89ABCDEF")
-  ];
- 
+  static readonly Dictionary<Type, HexBinary> testValues = new()  
+  {
+    { typeof(DX.StringValue), new HexBinary() },
+    { typeof(DX.HexBinaryValue), new HexBinary("0123456789ABCDEF") },
+    { typeof(DXW.FontSignature), new HexBinary("00000001-00000002-00000003-00000004-01234567-89ABCDEF") },
+    { typeof(DXW.Panose1Number), new HexBinary("0102030405060708090A") },
+
+  };
+
   /// <summary>
   ///   Tests round-trip conversion of HexBinary values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
@@ -56,8 +60,7 @@ public static class HexBinaryConverterTest
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestHexBinaryConversion(Type openXmlType)
   {
-    int valueIndex = 0;
-    foreach (var testValue in testValues)
+    if (testValues.TryGetValue(openXmlType, out var testValue))
     {
       try
       {
@@ -71,32 +74,17 @@ public static class HexBinaryConverterTest
           Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
           return false;
         }
-        if (openXmlValue is DX.StringValue strVal)
-        {
-          // Additional check for StringValue representation
-          // ReSharper disable once SpecifyACultureInStringConversionExplicitly
-          var expectedString = testValue.ToString();
-          if (valueIndex == 0) Console.WriteLine();
-          Console.WriteLine($"testValue = {testValue} result = {strVal.Value}");
-          if (strVal.Value != expectedString)
-          {
-            Console.WriteLine($"StringValue mismatch: expected {expectedString}, got {strVal.Value}");
+        string expectedString = testValue.ToString();
+        string? actualString = (openXmlValue as DX.HexBinaryValue)?.Value ??
+                               (openXmlValue as DX.StringValue)?.Value ??
+                               ((openXmlValue is DXW.FontSignature fs) 
+                                 ? $"{fs.UnicodeSignature0}-{fs.UnicodeSignature1}-{fs.UnicodeSignature2}-{fs.UnicodeSignature3}-{fs.CodePageSignature0}-{fs.CodePageSignature1}" : 
+                               (openXmlValue as DXW.Panose1Number)?.Val?.Value ??
+                               openXmlValue.ToString());
+        Console.WriteLine($"\ntestValue = {testValue} result = {actualString}");
+        if (expectedString != actualString)
+        { Console.WriteLine($"StringValue mismatch: expected {expectedString}, got {actualString}");
             return false;
-          }
-        }
-        else
-        if (openXmlValue is DX.HexBinaryValue hexBinVal)
-        {
-          // Additional check for HexBinaryValue representation
-          // ReSharper disable once SpecifyACultureInStringConversionExplicitly
-          var expectedString = testValue.ToString();
-          if (valueIndex == 0) Console.WriteLine();
-          Console.WriteLine($"testValue = {testValue} result = {hexBinVal.Value}");
-          if (hexBinVal.Value != expectedString)
-          {
-            Console.WriteLine($"StringValue mismatch: expected {expectedString}, got {hexBinVal.Value}");
-            return false;
-          }
         }
 
         // Convert back to HexBinary
@@ -117,7 +105,6 @@ public static class HexBinaryConverterTest
         Console.WriteLine(e.Message);
         return false;
       }
-      valueIndex++;
     }
     return true;
   }
