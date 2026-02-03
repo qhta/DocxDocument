@@ -69,7 +69,10 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
     string? enumTypeName = null;
     if (node.AttributeLists.SelectMany(al => al.Attributes)
           .FirstOrDefault(attr => attr.Name.ToString().Contains("OpenXmlType", StringComparison.Ordinal)) != null)
+    {
+      Console.WriteLine(node.Identifier.Text);
       return base.VisitEnumDeclaration(node);
+    }
     if (node.AttributeLists.SelectMany(al => al.Attributes)
           .FirstOrDefault(attr => attr.Name.ToString().Contains("OpenXmlNotMapped", StringComparison.Ordinal)) != null)
       return base.VisitEnumDeclaration(node);
