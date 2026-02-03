@@ -8,6 +8,7 @@ public static class EnumConverter
   private static readonly ConversionMethodInfo[] supportedConversions =
   [
     new(typeof(DX.EnumValue<>), nameof(ConvertFromEnumValue), nameof(ConvertToEnumValue)),
+    new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
   ];
 
   internal static readonly ConversionToMap ConversionToMap = new();
@@ -67,10 +68,11 @@ public static class EnumConverter
     }
     return enumValuesMap;
   }
+
   #region EnumValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml openXmlEnumValue to Enum.
+  /// Converts an OpenXml EnumValue to Enum.
   /// </summary>
   /// <param name="openXmlEnumValue">The openXmlEnumValue to convert.</param>
   /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
@@ -134,6 +136,70 @@ public static class EnumConverter
 
   #endregion
 
+  #region OpenXmlLeafElement conversion.
+
+  /// <summary>
+  /// Converts an OpenXml OpenXmlLeafElement to Enum.
+  /// </summary>
+  /// <param name="openXmlValue">The openXmlValue to convert.</param>
+  /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
+  /// <returns>The Enum value, or null if the element has no content.</returns>
+  private static Enum? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? openXmlValue, Type modelEnumType)
+  {
+    if (openXmlValue == null) return null;
+
+    if (!modelEnumType.IsEnum)
+      throw new InvalidOperationException($"Target model type {modelEnumType.Name} is not an enum.");
+
+    var openXmlType = openXmlValue.GetType();
+
+    var valProp = openXmlType.GetProperty("Value") ?? openXmlType.GetProperty("Val");
+    if (valProp == null)
+      throw new InvalidOperationException($"EnumValue of type {openXmlType} does not have a Value property");
+    var valObject = valProp.GetValue(openXmlValue);
+    if (valObject == null)
+      return null;
+
+    openXmlType = valObject.GetType()!;
+    valProp = openXmlType.GetProperty("Value");
+    if (valProp == null)
+      throw new InvalidOperationException($"EnumValue of type {openXmlType} does not have a Value property");
+    valObject = valProp.GetValue(valObject);
+    if (valObject == null)
+      return null;
+    var intVal = Convert.ToInt32(valObject);
+
+    var enumValue = Enum.ToObject(modelEnumType, intVal);
+    return (Enum)enumValue;
+  }
+
+  /// <summary>
+  /// Creates an OpenXmlLeafElement from an Enum value.
+  /// </summary>
+  /// <param name="value">The Enum value to convert.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type for the created EnumValue instance. Must be of OpenXml EnumValue type.</param>
+  /// <returns>A new EnumValue, or null if the input is null.</returns>
+  private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Enum? value, Type openXmlType)
+  {
+    if (value == null) return null;
+
+    var result = (DX.OpenXmlLeafElement)Activator.CreateInstance(openXmlType)!;
+    var valProp = openXmlType.GetProperty("Value") ?? openXmlType.GetProperty("Val");
+    if (valProp == null)
+      throw new InvalidOperationException($"EnumValue of type {openXmlType} does not have a Value property");
+    var openXmlValType = valProp.PropertyType;
+    if (openXmlValType == typeof(DX.IntegerValue))
+    {
+      var intValue = Convert.ToInt32(value);
+      var openXmlEnumValuesObject = (DX.IntegerValue)Activator.CreateInstance(openXmlValType)!;
+      openXmlEnumValuesObject.Value = intValue;
+      valProp.SetValue(result, openXmlEnumValuesObject);
+    }
+
+    return result;
+  }
+
+  #endregion
   #region Generic OpenXml conversion methods
 
   /// <summary>
