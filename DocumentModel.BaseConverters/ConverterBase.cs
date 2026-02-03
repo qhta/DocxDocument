@@ -192,11 +192,13 @@ public static class ConverterBase
 
     //Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
 
+    if (sourceType.IsEnum)
+      sourceType = typeof(Enum);
+
     var targetSubType = Nullable.GetUnderlyingType(targetType) ?? targetType;
     if (targetSubType.Name.StartsWith("EnumValue`"))
     {
       targetSubType = typeof(DX.EnumValue<>);
-      sourceType = typeof(Enum);
     }
     while (targetSubType != null)
     {
@@ -286,11 +288,12 @@ public static class ConverterBase
 
     //Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
     var searchTargetType = targetType;
+    if (targetType.IsEnum)
+      searchTargetType = typeof(Enum);
     var sourceSubType = Nullable.GetUnderlyingType(sourceType) ?? sourceType;
     if (sourceSubType.Name.StartsWith("EnumValue`"))
     {
       sourceSubType = typeof(DX.EnumValue<>);
-      searchTargetType = typeof(Enum);
     }
     while (sourceSubType != null)
     {
