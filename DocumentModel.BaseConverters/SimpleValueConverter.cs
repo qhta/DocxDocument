@@ -38,6 +38,7 @@ public static class SimpleValueConverter
     ConversionToMap.Append(StringListConverter.ConversionToMap);
     ConversionToMap.Append(RgbConverter.ConversionToMap);
     ConversionToMap.Append(HexBinaryConverter.ConversionToMap);
+    ConversionToMap.Append(EnumConverter.ConversionToMap);
 
     ConversionFromMap.Append(BooleanConverter.ConversionFromMap);
     ConversionFromMap.Append(TSBooleanConverter.ConversionFromMap);
@@ -55,6 +56,7 @@ public static class SimpleValueConverter
     ConversionFromMap.Append(StringListConverter.ConversionFromMap);
     ConversionFromMap.Append(RgbConverter.ConversionFromMap);
     ConversionFromMap.Append(HexBinaryConverter.ConversionFromMap);
+    ConversionFromMap.Append(EnumConverter.ConversionFromMap);
 
   }
 

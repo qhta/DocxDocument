@@ -98,7 +98,7 @@ public static class TSBooleanConverter
   /// <param name="targetType">The desired Open XML target type.</param>
   /// <returns>The converted object suitable for the specified target type.</returns>
   /// <exception cref="NotSupportedException">Thrown when no converter exists for <paramref name="targetType"/>.</exception>
-  public static object? ConvertFrom(TSBoolean? value, Type targetType)
+  public static object? ConvertTo(TSBoolean? value, Type targetType)
   {
     return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
   }
@@ -110,7 +110,7 @@ public static class TSBooleanConverter
   /// <returns>A <see cref="TSBoolean"/> representation of the specified value, or <see langword="null"/> if <paramref
   /// name="value"/> is <see langword="null"/>.</returns>
   /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="TSBoolean"/> is not supported.</exception>
-  public static TSBoolean? ConvertTo(object? value)
+  public static TSBoolean? ConvertFrom(object? value)
   {
     return (TSBoolean?)ConverterBase.ConvertFrom(value, typeof(TSBoolean), ConversionFromMap);
   }

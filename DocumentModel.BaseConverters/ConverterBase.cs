@@ -192,9 +192,11 @@ public static class ConverterBase
 
     //Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
 
+    var sourceSearchType = sourceType;
     if (sourceType.IsEnum)
-      sourceType = typeof(Enum);
+      sourceSearchType = typeof(Enum);
 
+    if (targetType.Name=="Panose1Number") Debug.Assert((true));
     var targetSubType = Nullable.GetUnderlyingType(targetType) ?? targetType;
     if (targetSubType.Name.StartsWith("EnumValue`"))
     {
@@ -204,7 +206,8 @@ public static class ConverterBase
     {
       //Debug.WriteLine($"Search for conversion from {sourceType.FullName} to {targetSubType.FullName}");
 
-      if (conversionToMap.TryGetValue((sourceType, targetSubType), out var conversionFunc))
+      if (conversionToMap.TryGetValue((sourceSearchType, targetSubType), out var conversionFunc)
+          || (sourceSearchType != sourceType) && conversionToMap.TryGetValue((sourceType, targetSubType), out conversionFunc))
       {
         //Debug.WriteLine($"Converting from {sourceType.FullName} to {targetSubType.FullName}");
         result = conversionFunc(value, targetType);
@@ -289,9 +292,9 @@ public static class ConverterBase
 
 
     //Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
-    var searchTargetType = targetType;
+    var targetSearchType = targetType;
     if (targetType.IsEnum)
-      searchTargetType = typeof(Enum);
+      targetSearchType = typeof(Enum);
     var sourceSubType = Nullable.GetUnderlyingType(sourceType) ?? sourceType;
     if (sourceSubType.Name.StartsWith("EnumValue`"))
     {
@@ -301,7 +304,8 @@ public static class ConverterBase
     {
       //Debug.WriteLine($"Search for conversion from {sourceSubType.FullName} to {targetType.FullName}");
 
-      if (conversionFromMap.TryGetValue((sourceSubType, searchTargetType), out var conversionFunc))
+      if (conversionFromMap.TryGetValue((sourceSubType, targetSearchType), out var conversionFunc)
+          || (targetSearchType!=targetType) && conversionFromMap.TryGetValue((sourceSubType, targetType), out conversionFunc))
       {
         //Debug.WriteLine($"Converting from {sourceType.FullName} to {sourceSubType.FullName}");
         result = conversionFunc(value, targetType);

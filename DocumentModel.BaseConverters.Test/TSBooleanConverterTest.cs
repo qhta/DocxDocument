@@ -48,21 +48,21 @@ public static class TSBooleanConverterTest
   public static bool TestTSBooleanConversion(Type openXmlType)
   {
     var trueInput = TSBoolean.True;
-    var trueOpenXml = OpenXml.TSBooleanConverter.ConvertFrom(trueInput, openXmlType);
-    var trueOutput = OpenXml.TSBooleanConverter.ConvertTo(trueOpenXml!);
+    var trueOpenXml = OpenXml.TSBooleanConverter.ConvertTo(trueInput, openXmlType);
+    var trueOutput = OpenXml.TSBooleanConverter.ConvertFrom(trueOpenXml!);
     if (trueOutput != TSBoolean.True)
       return false;
 
     var falseInput = TSBoolean.False;
-    var falseOpenXml = OpenXml.TSBooleanConverter.ConvertFrom(falseInput, openXmlType);
-    var falseOutput = OpenXml.TSBooleanConverter.ConvertTo(falseOpenXml!);
+    var falseOpenXml = OpenXml.TSBooleanConverter.ConvertTo(falseInput, openXmlType);
+    var falseOutput = OpenXml.TSBooleanConverter.ConvertFrom(falseOpenXml!);
     if ( falseOutput != TSBoolean.False)
       return false;
 
-    var blankInput = TSBoolean.False;
-    var blankOpenXml = OpenXml.TSBooleanConverter.ConvertFrom(blankInput, openXmlType);
-    var blankOutput = OpenXml.TSBooleanConverter.ConvertTo(blankOpenXml!);
-    if (blankOutput != TSBoolean.False)
+    var blankInput = TSBoolean.Blank;
+    var blankOpenXml = OpenXml.TSBooleanConverter.ConvertTo(blankInput, openXmlType);
+    var blankOutput = OpenXml.TSBooleanConverter.ConvertFrom(blankOpenXml!);
+    if (blankOutput != TSBoolean.Blank)
       return false;
 
     return true;

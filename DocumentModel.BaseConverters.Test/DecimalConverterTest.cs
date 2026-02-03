@@ -2,27 +2,27 @@
 
 using DocumentModel.OpenXml;
 
-using SingleConverter = DocumentModel.OpenXml.SingleConverter;
+using DecimalConverter = DocumentModel.OpenXml.DecimalConverter;
 
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="SingleConverter"/> conversions between .NET Single values and various Open XML numeric types.
+///   Provides unit tests for verifying the correctness of <see cref="DecimalConverter"/> conversions between .NET Decimal values and various Open XML numeric types.
 ///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
-public static class SingleConverterTest
+public static class DecimalConverterTest
 {
   /// <summary>
-  ///   List of Open XML types supported for Single value conversion tests.
+  ///   List of Open XML types supported for Decimal value conversion tests.
   /// </summary>
   public static Type[] SupportedTypes { get; } =
   [
-    typeof(DX.SingleValue),
+    typeof(DX.DecimalValue),
     typeof(DX.StringValue),
   ];
 
   /// <summary>
-  ///   Runs all SingleConverter tests for supported types and reports results to the console.
+  ///   Runs all DecimalConverter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -30,8 +30,8 @@ public static class SingleConverterTest
     bool testResult = true;
     foreach (var type in SupportedTypes)
     {
-      Console.Write($"TestSingleConversion with {type.Name} ");
-      if (!TestSingleConversion(type))
+      Console.Write($"TestDecimalConversion with {type.Name} ");
+      if (!TestDecimalConversion(type))
       {
         Console.WriteLine("failed.");
         testResult = false;
@@ -43,26 +43,26 @@ public static class SingleConverterTest
   }
 
   /// <summary>
-  ///   Test values used for Single conversion tests, including boundary and typical values.
+  ///   Test values used for Decimal conversion tests, including boundary and typical values.
   /// </summary>
-  static readonly Single[] testValues =
+  static readonly Decimal[] testValues =
   [
-    0f,
-    1f,
-    -1f,
-    123.456f,
-    -123.456f,
-    float.MaxValue,
-    float.MinValue
+    0m,
+    1m,
+    -1m,
+    123.456m,
+    -123.456m,
+    decimal.MaxValue,
+    decimal.MinValue
   ];
 
   /// <summary>
-  ///   Tests round-trip conversion of Single values to and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of Decimal values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type to test Single conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test Decimal conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
-  public static bool TestSingleConversion(Type openXmlType)
+  public static bool TestDecimalConversion(Type openXmlType)
   {
     int valueIndex = 0;
     foreach (var testValue in testValues)
@@ -73,7 +73,7 @@ public static class SingleConverterTest
           Debug.Assert(true);
 
         // Convert to OpenXml
-        var openXmlValue = SingleConverter.ConvertTo(testValue, openXmlType);
+        var openXmlValue = DecimalConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
           Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
@@ -82,11 +82,11 @@ public static class SingleConverterTest
         if (valueIndex == 0)
           Console.WriteLine();
         Console.WriteLine($"  {testValue} -> {openXmlValue.GetType()} : {openXmlValue}");
-        // Convert back to Single
-        var convertedBackValue = SingleConverter.ConvertFrom(openXmlValue);
+        // Convert back to Decimal
+        var convertedBackValue = DecimalConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back to Single returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to Decimal returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

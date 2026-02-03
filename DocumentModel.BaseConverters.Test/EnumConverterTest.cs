@@ -70,14 +70,14 @@ public static class EnumConverterTest
       var combinedEnum = Enum.ToObject(modelType, combinedValue);
       testValues = testValues.Cast<object>().Append(combinedEnum).ToArray();
     }
-    int testIndex = 0;
+    int valueIndex = 0;
     foreach (var testValue in testValues)
     {
       // Convert to OpenXml
       var openXmlValue = EnumConverter.ConvertTo((Enum)testValue, openXmlType);
       if (openXmlValue == null)
       {
-        if (testIndex == 0)
+        if (valueIndex == 0)
           Console.WriteLine();
         Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
         return false;
@@ -89,7 +89,7 @@ public static class EnumConverterTest
         ? ((openXmlType.GetProperty("Val") ?? openXmlType.GetProperty("Value"))?.GetValue(openXmlLeafElement)?.ToString())
         : (openXmlValue as DX.IEnumValue)?.Value
         ?? openXmlValue.ToString();
-      if (testIndex == 0)
+      if (valueIndex == 0)
         Console.WriteLine();
       Console.WriteLine($"Converted {testValue} to OpenXml value {outputText}"); 
 
@@ -97,7 +97,7 @@ public static class EnumConverterTest
       var convertedBackValue = EnumConverter.ConvertFrom(openXmlValue, modelType);
       if (convertedBackValue == null)
       {
-        if (testIndex == 0)
+        if (valueIndex == 0)
           Console.WriteLine();
         Console.WriteLine($"Conversion back to Enum returned null for OpenXml value {openXmlValue}");
         return false;
@@ -107,7 +107,7 @@ public static class EnumConverterTest
         Console.WriteLine($"Mismatch: original {testValue}, converted back {convertedBackValue}");
         return false;
       }
-      testIndex++;
+      valueIndex++;
     }
     return true;
   }
