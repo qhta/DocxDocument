@@ -17,9 +17,11 @@ public static class EnumConverterTest
   /// <summary>
   ///   List of Open XML types supported for Enum value conversion tests.
   /// </summary>
-  public static (object modelValue, Type openXmlType)[] TestData { get; } =
+  public static (Type modelType, Type openXmlType)[] TestData { get; } =
   [
-    (DocumentModel.PresetColors.AliceBlue, typeof(DX.EnumValue<DXD.PresetColorValues>)),
+    (typeof(DocumentModel.PresetColors), typeof(DX.EnumValue<DXD.PresetColorValues>)),
+    (typeof(DocumentModel.Vml.FillMethod), typeof(DX.EnumValue<DXV.FillMethodValues>)),
+
   ];
 
   /// <summary>
@@ -31,7 +33,7 @@ public static class EnumConverterTest
     bool testResult = true;
     foreach (var pair in TestData)
     {
-      Console.Write($"TestEnumConversion with {pair.modelValue.GetType().Name} and {pair.openXmlType.Name}");
+      Console.Write($"TestEnumConversion with {pair.modelType} and {pair.openXmlType}");
       if (!TestEnumConversion(pair))
       {
         Console.WriteLine(" failed.");
@@ -49,29 +51,32 @@ public static class EnumConverterTest
   /// </summary>
   /// <param name="pair">The pair of test data type</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
-  public static bool TestEnumConversion((object testValue, Type openXmlType) pair)
+  public static bool TestEnumConversion((Type modelType, Type openXmlType) pair)
   {
+    foreach (var testValue in Enum.GetValues(pair.modelType))
+    {
+      // Convert to OpenXml
+      var openXmlValue = EnumConverter.ConvertTo((Enum)testValue, pair.openXmlType);
+      if (openXmlValue == null)
+      {
+        Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
+        return false;
+      }
 
-    var testValue = (Enum)pair.testValue;
-    // Convert to OpenXml
-    var openXmlValue = EnumConverter.ConvertTo(testValue, pair.openXmlType);
-    if (openXmlValue == null)
-    {
-      Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
-      return false;
-    }
-    // Convert back to Enum
-    var convertedBackValue = EnumConverter.ConvertFrom(openXmlValue, testValue.GetType());
-    if (convertedBackValue == null)
-    {
-      Console.WriteLine($"Conversion back to Enum returned null for OpenXml value {openXmlValue}");
-      return false;
-    }
-    if (!testValue.Equals(convertedBackValue))
-    {
-      Console.WriteLine($"Mismatch: original {testValue}, converted back {convertedBackValue}");
-      return false;
+      // Convert back to Enum
+      var convertedBackValue = EnumConverter.ConvertFrom(openXmlValue, pair.modelType);
+      if (convertedBackValue == null)
+      {
+        Console.WriteLine($"Conversion back to Enum returned null for OpenXml value {openXmlValue}");
+        return false;
+      }
+      if (!testValue.Equals(convertedBackValue))
+      {
+        Console.WriteLine($"Mismatch: original {testValue}, converted back {convertedBackValue}");
+        return false;
+      }
     }
     return true;
   }
 }
+
