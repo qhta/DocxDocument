@@ -39,6 +39,7 @@ public static class SimpleValueConverter
     ConversionToMap.Append(RgbConverter.ConversionToMap);
     ConversionToMap.Append(HexBinaryConverter.ConversionToMap);
     ConversionToMap.Append(EnumConverter.ConversionToMap);
+    ConversionToMap.Append(PercentConverter.ConversionToMap);
 
     ConversionFromMap.Append(BooleanConverter.ConversionFromMap);
     ConversionFromMap.Append(TSBooleanConverter.ConversionFromMap);
@@ -57,6 +58,7 @@ public static class SimpleValueConverter
     ConversionFromMap.Append(RgbConverter.ConversionFromMap);
     ConversionFromMap.Append(HexBinaryConverter.ConversionFromMap);
     ConversionFromMap.Append(EnumConverter.ConversionFromMap);
+    ConversionFromMap.Append(PercentConverter.ConversionFromMap);
 
   }
 
@@ -121,16 +123,22 @@ public static class SimpleValueConverter
     if (sourceType == targetType)
       return true;
 
+    if (ConverterBase.TryConvertTo(value, targetType, ConversionToMap, out result))
+      return true;
+
     if (BaseTypeMappings.TryGetValue(sourceType, out var newTargetType))
     {
       if (ConverterBase.TryImplicitConvertTo(value, newTargetType, out var newValue))
       {
         value = newValue;
         targetType = newTargetType;
+        if (ConverterBase.TryConvertTo(value, targetType, ConversionToMap, out result))
+          return true;
       }
     }
-    return ConverterBase.TryConvertTo(value, targetType, ConversionToMap, out result);
+    return false;
   }
+
   /// <summary>
   /// Converts a value to the specified target type using standard type conversion.
   /// </summary>

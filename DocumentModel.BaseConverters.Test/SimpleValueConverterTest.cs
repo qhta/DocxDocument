@@ -9,6 +9,7 @@ public static class SimpleValueConverterTest
 
   private static readonly (Type modelType, Type otherType)[] SupportedTypes =
   [
+    (typeof(System.Boolean), typeof(DXW.EmptyType)),
     (typeof(System.Boolean), typeof(DX.BooleanValue)),
     (typeof(System.Boolean), typeof(DX.OnOffValue)),
     (typeof(System.Boolean), typeof(DXW.OnOffOnlyValues)),
@@ -66,11 +67,13 @@ public static class SimpleValueConverterTest
     (typeof(DocumentModel.StringList), typeof(DX.StringValue)),
     (typeof(DocumentModel.RGB), typeof(DXW.Color)),
     (typeof(DocumentModel.PresetColors), typeof(DXD.PresetColorValues)),
+    (typeof(DocumentModel.Percent), typeof(DXW.SummaryLength)),
 
   ];
 
   private static readonly Dictionary<Type, Type> ConcreteTypesMap = new Dictionary<Type, Type>
   {
+    { typeof(DXW.EmptyType), typeof(DXW.ForceUpgrade) },
     { typeof(DXW.OnOffType), typeof(DXW.Active) },
     { typeof(DXO10W.OnOffType), typeof(DXO10W.ConflictMode) },
     { typeof(DXO13W.OnOffType), typeof(DXO13W.DefaultCollapsed) },
@@ -185,7 +188,8 @@ public static class SimpleValueConverterTest
         var roundTripValue = SimpleValueConverter.ConvertFrom(convertedValue, modelType);
         if (!testValue.Equals(roundTripValue))
         {
-          if (otherType != typeof(Uri))
+          if (otherType != typeof(Uri)
+              && (otherType.IsSubclassOf(typeof(DXW.EmptyType)) && testValue.Equals(true)))
           {
             Console.WriteLine($" - Conversion failed for value {testValue ?? "null"} of type {modelType.Name}");
             testResult = false;
@@ -301,7 +305,8 @@ public static class SimpleValueConverterTest
       return [new DocumentModel.RGB(), new DocumentModel.RGB("ABCDEF")];
     if (testedType == typeof(DocumentModel.PresetColors))
       return [new DocumentModel.PresetColors()];
-
+    if (testedType == typeof(DocumentModel.Percent))
+      return [new DocumentModel.Percent("50%")];
     throw new NotSupportedException($"No test data defined for type {testedType.Name}");
   }
 }

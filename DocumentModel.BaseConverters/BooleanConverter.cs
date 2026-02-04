@@ -7,6 +7,7 @@ public static class BooleanConverter
 {
   private static readonly ConversionMethodInfo[] supportedConversions =
   [
+    new(typeof(DXW.EmptyType), nameof(ConvertFromEmptyType), nameof(ConvertToEmptyType)),
     new(typeof(DX.OnOffValue), nameof(ConvertFromOnOffValue), nameof(ConvertToOnOffValue)),
     new(typeof(DXW.OnOffOnlyValues), nameof(ConvertFromOnOffOnlyValues), nameof(ConvertToOnOffOnlyValues)),
     new(typeof(DXO10W.OnOffValues), nameof(ConvertFromO10WOnOffValues), nameof(ConvertToO10WOnOffValues)),
@@ -36,6 +37,43 @@ public static class BooleanConverter
   {
     ConverterBase.RegisterConversionMethods(typeof(BooleanConverter), typeof(bool), supportedConversions, ConversionToMap, ConversionFromMap);
   }
+
+
+  #region EmptyType conversion.
+
+  /// <summary>
+  /// Converts a nullable Open XML EmptyType element to a Boolean value.
+  /// </summary>
+  /// <param name="openXmlElement">The Open XML EmptyType element to convert. If null, the method returns null.</param>
+  /// <returns>A Boolean value that is <see langword="true"/> if <paramref name="openXmlElement"/> is not null;
+  /// otherwise, <see langword="false"/>.</returns>
+  private static Boolean ConvertFromEmptyType(DXW.EmptyType? openXmlElement)
+  {
+    if (openXmlElement == null) return false;
+
+    return true;
+  }
+
+  /// <summary>
+  /// Converts a nullable Boolean value to a new instance of the specified DXW.EmptyType, or returns null if the value
+  /// is null or false.
+  /// </summary>
+  /// <param name="value">The nullable Boolean value to convert. If null or <see langword="false"/>, the method returns null.</param>
+  /// <param name="targetType">The type of DXW.EmptyType to instantiate if <paramref name="value"/> is <see langword="true"/>. Must be a type
+  /// that derives from DXW.EmptyType and has a parameterless constructor.</param>
+  /// <returns>A new instance of the specified DXW.EmptyType if <paramref name="value"/> is <see langword="true"/>; otherwise,
+  /// null.</returns>
+  private static DXW.EmptyType? ConvertToEmptyType(Boolean? value, Type targetType)
+  {
+    if (value == null) return null;
+    if ((bool)value == false) return null;
+
+    return (DXW.EmptyType)Activator.CreateInstance(targetType)!;
+  }
+
+  #endregion
+
+
 
   #region OnOffValue conversion.
 
@@ -518,6 +556,7 @@ public static class BooleanConverter
       var text = element.Text.ToLower();
       switch (text)
       {
+        case "": return null;
         case "true": return true;
         case "false": return false;
         case "1": return true;

@@ -55,9 +55,9 @@ public class PercentJsonConverter : JsonConverter<Percent>
     {
       try
       {
-        if (reader.TryGetDouble(out double doubleValue))
+        if (reader.TryGetUInt32(out uint uintValue))
         {
-          return new Percent(doubleValue);
+          return new Percent(uintValue);
         }
 
         // Try as other numeric types

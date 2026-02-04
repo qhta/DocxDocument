@@ -1,70 +1,269 @@
-using DocumentFormat.OpenXml.Packaging;
-
-namespace DocumentModel.OpenXml.Packaging;
+namespace DocumentModel.OpenXml;
 
 /// <summary>
-///   Defines a reference relationship. A reference relationship can be internal or external.
+/// Provides conversion methods for ReferenceRelationship value to/from Open XML.
 /// </summary>
 public static class ReferenceRelationshipConverter
 {
+  private static readonly ConversionMethodInfo[] supportedConversions =
+  [
+    new(typeof(DXW.RelationshipType), nameof(ConvertFromRelationshipType), nameof(ConvertToRelationshipType)),
+  ];
+
+  internal static readonly ConversionToMap ConversionToMap = new();
+  internal static readonly ConversionFromMap ConversionFromMap = new();
+
   /// <summary>
-  ///   Gets the relationship type.
+  /// Initializes the conversion maps for <see cref="ReferenceRelationshipConverter"/>.
   /// </summary>
-  public static String? GetRelationshipType(ReferenceRelationship? openXmlElement)
+  static ReferenceRelationshipConverter()
   {
-    return openXmlElement?.RelationshipType;
+    ConverterBase.RegisterConversionMethods(typeof(ReferenceRelationshipConverter), typeof(ReferenceRelationship), supportedConversions, ConversionToMap,
+      ConversionFromMap);
+  }
+
+  #region RelationshipType conversion.
+
+  /// <summary>
+  /// Converts an OpenXml RelationshipType to ReferenceRelationship.
+  /// </summary>
+  /// <param name="openXmlRelationshipType">The openXmlRelationshipType to convert.</param>
+  /// <param name="modelReferenceRelationshipType">The target model type for the conversion. It must be an ReferenceRelationship type</param>
+  /// <returns>The ReferenceRelationship value, or null if the element has no content.</returns>
+  private static RelationshipType<T>? ConvertFromRelationshipType<T>(DXW.RelationshipType? openXmlRelationshipType, Type modelReferenceRelationshipType)
+  {
+    if (openXmlRelationshipType == null) return null;
+
+    if (!modelReferenceRelationshipType.IsReferenceRelationship)
+      throw new InvalidOperationException($"Target model type {modelReferenceRelationshipType.Name} is not an ReferenceRelationship.");
+
+    var openXmlType = openXmlRelationshipType.GetType();
+    if (!openXmlType.Name.StartsWith("RelationshipType`"))
+      throw new InvalidOperationException($"{openXmlType.Name} is not OpenXml RelationshipType<> type .");
+
+    var valProp = openXmlType.GetProperty("Value");
+    if (valProp == null)
+      throw new InvalidOperationException($"RelationshipType of type {openXmlType} does not have a Value property");
+
+    var valObject = valProp.GetValue(openXmlRelationshipType)!;
+    var openXmlRelationshipTypesObject = valProp.GetValue(openXmlRelationshipType);
+    if (openXmlRelationshipTypesObject == null)
+      return null;
+
+    var openXmlRelationshipTypesType = openXmlRelationshipTypesObject.GetType();
+    var RelationshipTypesMap = GetRelationshipTypesMap(modelReferenceRelationshipType, openXmlRelationshipTypesType);
+    var RelationshipType = RelationshipTypesMap.GetValue1(valObject);
+    return (ReferenceRelationship)RelationshipType;
   }
 
   /// <summary>
-  ///   Gets a value indicating whether the target of the relationship is Internal or External to the .
+  /// Creates an OpenXml RelationshipType from an ReferenceRelationship value.
   /// </summary>
-  public static Boolean? GetIsExternal(ReferenceRelationship? openXmlElement)
+  /// <param name="value">The ReferenceRelationship value to convert.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type for the created RelationshipType instance. Must be of OpenXml RelationshipType type.</param>
+  /// <returns>A new RelationshipType, or null if the input is null.</returns>
+  private static DX.OpenXmlSimpleType? ConvertToRelationshipType(ReferenceRelationship? value, Type openXmlType)
   {
-    return openXmlElement?.IsExternal;
+    if (value == null) return null;
+
+    if (!openXmlType.Name.StartsWith("RelationshipType`"))
+      throw new InvalidOperationException($"Invalid RelationshipType type {openXmlType.Name}.");
+
+    var openXmlRelationshipTypesType = openXmlType.GenericTypeArguments.FirstOrDefault();
+    if (openXmlRelationshipTypesType == null)
+      throw new InvalidOperationException($"RelationshipType type {openXmlType.Name} does not have a generic argument.");
+
+    var modelReferenceRelationshipType = value.GetType()!;
+    var RelationshipTypesMap = GetRelationshipTypesMap(modelReferenceRelationshipType, openXmlRelationshipTypesType);
+    var openXmlRelationshipTypesObject = RelationshipTypesMap.GetValue2(value);
+    var result = (DX.OpenXmlSimpleType)Activator.CreateInstance(openXmlType)!;
+    var valProp = openXmlType.GetProperty("Value");
+    if (valProp == null)
+      throw new InvalidOperationException($"RelationshipType of type {openXmlType} does not have a Value property");
+
+    valProp.SetValue(result, openXmlRelationshipTypesObject);
+    return result;
+  }
+
+  #endregion
+
+  #region IIRelationshipType conversion.
+
+  /// <summary>
+  /// Converts an OpenXml IRelationshipType to ReferenceRelationship.
+  /// </summary>
+  /// <param name="openXmlValue">The openXmlValue to convert.</param>
+  /// <param name="modelReferenceRelationshipType">The target model type for the conversion. It must be an ReferenceRelationship type</param>
+  /// <returns>The ReferenceRelationship value, or null if the element has no content.</returns>
+  private static ReferenceRelationship? ConvertFromIRelationshipType(DX.IRelationshipType? openXmlValue, Type modelReferenceRelationshipType)
+  {
+    if (openXmlValue == null) return null;
+
+    if (!modelReferenceRelationshipType.IsReferenceRelationship)
+      throw new InvalidOperationException($"Target model type {modelReferenceRelationshipType.Name} is not an ReferenceRelationship.");
+
+    var openXmlType = openXmlValue.GetType();
+
+    var IRelationshipTypesMap = GetRelationshipTypesMap(modelReferenceRelationshipType, openXmlType);
+    var IRelationshipType = IRelationshipTypesMap.GetValue1(openXmlValue);
+    return (ReferenceRelationship)IRelationshipType;
   }
 
   /// <summary>
-  ///   Gets the relationship ID.
+  /// Creates an OpenXml IRelationshipType from an ReferenceRelationship value.
   /// </summary>
-  public static String? GetId(ReferenceRelationship? openXmlElement)
+  /// <param name="value">The ReferenceRelationship value to convert.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type for the created IRelationshipType instance. Must be of OpenXml IRelationshipType type.</param>
+  /// <returns>A new IRelationshipType, or null if the input is null.</returns>
+  private static DX.IRelationshipType? ConvertToIRelationshipType(ReferenceRelationship? value, Type openXmlType)
   {
-    return openXmlElement?.Id;
+    if (value == null) return null;
+
+    if (openXmlType.GetInterface("IRelationshipType") == null)
+      throw new InvalidOperationException($"Invalid IRelationshipType type {openXmlType.Name}.");
+
+    var modelReferenceRelationshipType = value.GetType()!;
+    var IRelationshipTypesMap = GetRelationshipTypesMap(modelReferenceRelationshipType, openXmlType);
+    var result = (DX.IRelationshipType)IRelationshipTypesMap.GetValue2(value);
+    return result;
+  }
+
+  #endregion
+
+  #region OpenXmlLeafTextElement conversion.
+
+  /// <summary>
+  /// Converts an OpenXml OpenXmlLeafTextElement to ReferenceRelationship.
+  /// </summary>
+  /// <param name="openXmlValue">The openXmlValue to convert.</param>
+  /// <param name="modelReferenceRelationshipType">The target model type for the conversion. It must be an ReferenceRelationship type</param>
+  /// <returns>The ReferenceRelationship value, or null if the element has no content.</returns>
+  private static ReferenceRelationship? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? openXmlValue, Type modelReferenceRelationshipType)
+  {
+    if (openXmlValue == null) return null;
+
+    if (!modelReferenceRelationshipType.IsReferenceRelationship)
+      throw new InvalidOperationException($"Target model type {modelReferenceRelationshipType.Name} is not an ReferenceRelationship.");
+
+    var valText = openXmlValue.Text;
+    var intVal = Convert.ToInt32(valText);
+    var RelationshipType = ReferenceRelationship.ToObject(modelReferenceRelationshipType, intVal);
+    return (ReferenceRelationship)RelationshipType;
   }
 
   /// <summary>
-  ///   Gets the target URI of the relationship.
+  /// Creates an OpenXmlLeafTextElement from an ReferenceRelationship value.
   /// </summary>
-  public static Uri? GetUri(ReferenceRelationship? openXmlElement)
+  /// <param name="value">The ReferenceRelationship value to convert.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type for the created RelationshipType instance. Must be of OpenXml RelationshipType type.</param>
+  /// <returns>A new RelationshipType, or null if the input is null.</returns>
+  private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(ReferenceRelationship? value, Type openXmlType)
   {
-    return openXmlElement?.Uri;
+    if (value == null) return null;
+
+    var result = (DX.OpenXmlLeafTextElement)Activator.CreateInstance(openXmlType)!;
+    var intValue = Convert.ToInt32(value);
+    result.Text = intValue.ToString();
+    return result;
   }
 
-  //public static DocumentModel.Packaging.ReferenceRelationship? CreateModelElement(ReferenceRelationship? openXmlElement)
-  //{
-  //  if (openXmlElement != null)
-  //  {
-  //    var value = new DocumentModel.Packaging.ReferenceRelationship();
-  //    value.RelationshipType = GetRelationshipType(openXmlElement);
-  //    value.IsExternal = GetIsExternal(openXmlElement);
-  //    value.Id = GetId(openXmlElement);
-  //    value.Uri = GetUri(openXmlElement);
-  //    return value;
-  //  }
-  //  return null;
-  //}
+  #endregion
 
-  //public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ReferenceRelationship? value)
-  //  where OpenXmlElementType : ReferenceRelationship, new()
-  //{
-  //  if (value != null)
-  //  {
-  //    var openXmlElement = new OpenXmlElementType();
-  //    //SetRelationshipType(openXmlElement, value?.RelationshipType);
-  //    //SetId(openXmlElement, value?.Id);
-  //    //SetIsExternal(openXmlElement, value?.IsExternal);
-  //    //SetUri(openXmlElement, value?.Uri);
-  //    return openXmlElement;
-  //  }
-  //  return default;
-  //}
+  #region OpenXmlLeafElement conversion.
+
+  /// <summary>
+  /// Converts an OpenXml OpenXmlLeafElement to ReferenceRelationship.
+  /// </summary>
+  /// <param name="openXmlValue">The openXmlValue to convert.</param>
+  /// <param name="modelReferenceRelationshipType">The target model type for the conversion. It must be an ReferenceRelationship type</param>
+  /// <returns>The ReferenceRelationship value, or null if the element has no content.</returns>
+  private static ReferenceRelationship? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? openXmlValue, Type modelReferenceRelationshipType)
+  {
+    if (openXmlValue == null) return null;
+
+    if (!modelReferenceRelationshipType.IsReferenceRelationship)
+      throw new InvalidOperationException($"Target model type {modelReferenceRelationshipType.Name} is not an ReferenceRelationship.");
+
+    var openXmlType = openXmlValue.GetType();
+    var valProp = openXmlType.GetProperty("Value") ?? openXmlType.GetProperty("Val");
+    if (valProp == null)
+      throw new InvalidOperationException($"RelationshipType of type {openXmlType} does not have a Value property");
+
+    var valObject = valProp.GetValue(openXmlValue);
+    if (valObject == null)
+      return null;
+
+    openXmlType = valObject.GetType()!;
+    valProp = openXmlType.GetProperty("Value");
+    if (valProp == null)
+      throw new InvalidOperationException($"RelationshipType of type {openXmlType} does not have a Value property");
+
+    valObject = valProp.GetValue(valObject);
+    if (valObject == null)
+      return null;
+
+    var intVal = Convert.ToInt32(valObject);
+    var RelationshipType = ReferenceRelationship.ToObject(modelReferenceRelationshipType, intVal);
+    return (ReferenceRelationship)RelationshipType;
+  }
+
+  /// <summary>
+  /// Creates an OpenXmlLeafElement from an ReferenceRelationship value.
+  /// </summary>
+  /// <param name="value">The ReferenceRelationship value to convert.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type for the created RelationshipType instance. Must be of OpenXml RelationshipType type.</param>
+  /// <returns>A new RelationshipType, or null if the input is null.</returns>
+  private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(ReferenceRelationship? value, Type openXmlType)
+  {
+    if (value == null) return null;
+
+    var result = (DX.OpenXmlLeafElement)Activator.CreateInstance(openXmlType)!;
+    var valProp = openXmlType.GetProperty("Value") ?? openXmlType.GetProperty("Val");
+    if (valProp == null)
+      throw new InvalidOperationException($"RelationshipType of type {openXmlType} does not have a Value property");
+
+    var openXmlValType = valProp.PropertyType;
+    var intValue = Convert.ToInt32(value);
+    var targetInstance = Activator.CreateInstance(openXmlValType)!;
+    var targetInstanceType = targetInstance.GetType();
+    var valueProp = targetInstanceType.GetProperty("Value") ?? targetInstanceType.GetProperty("Val");
+    if (valueProp == null)
+      throw new InvalidOperationException($"RelationshipType of type {targetInstanceType} does not have a Value property");
+
+    var targetValue = Int32Converter.ConvertTo(intValue, valueProp.PropertyType);
+    valueProp.SetValue(targetInstance, targetValue);
+    valProp.SetValue(result, targetInstance);
+    return result;
+  }
+
+  #endregion
+
+  #region Generic OpenXml conversion methods
+
+  /// <summary>
+  /// Converts an ReferenceRelationship value to the specified target type using standard type conversion.
+  /// </summary>
+  /// <param name="value">The ReferenceRelationship value to convert.</param>
+  /// <param name="targetType">The target type to convert to.</param>
+  /// <returns>The converted value, or null if the input is null.</returns>
+  /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
+  public static object? ConvertTo(ReferenceRelationship? value, Type targetType)
+  {
+    return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
+  }
+
+  /// <summary>
+  /// Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
+  /// </summary>
+  /// <param name="value">The value to convert to an <see cref="ReferenceRelationship"/>. Can be <see langword="null"/>.</param>
+  /// <param name="targetType">The target type to convert to.</param>
+  /// <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
+  /// is <see langword="null"/>.</returns>
+  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="ReferenceRelationship"/> is not supported.</exception>
+  public static ReferenceRelationship? ConvertFrom(object? value, Type targetType)
+  {
+    return (ReferenceRelationship?)ConverterBase.ConvertFrom(value, targetType, ConversionFromMap);
+  }
+
+  #endregion
 }

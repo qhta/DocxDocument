@@ -6,7 +6,7 @@ namespace DocumentModel.OpenXml;
 public static class ReferenceConverter
 {
   #region Reference get/set methods
-  public static Reference? GetRefId<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
+  public static ReferenceRelationship? GetRefId<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
     {
@@ -25,8 +25,8 @@ public static class ReferenceConverter
           if (value is not null)
           {
             if (value is string str)
-              return new Reference(str);
-            return new Reference(value.ToString()!);
+              return new ReferenceRelationship(str);
+            return new ReferenceRelationship(value.ToString()!);
           }
         }
       }
