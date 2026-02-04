@@ -293,7 +293,7 @@ namespace DocumentModel.InOpenXml.Test
           SaveFormsData = true,
           SaveSubsetFonts = false,
           View = ViewType.Print,
-          Zoom = 100, //PresetZoom.FullPage,
+          Zoom = "100%", //PresetZoom.FullPage,
         };
       else
         return new DocumentSettings
@@ -366,7 +366,7 @@ namespace DocumentModel.InOpenXml.Test
           UpdateFieldsOnOpen = true,
           UseXsltWhenSaving = false,
           View = ViewType.Print,
-          Zoom = 100, // PresetZoom.FullPage,
+          Zoom = "100%", // PresetZoom.FullPage,
 
           ActiveWritingStyles =
           [

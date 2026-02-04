@@ -17,6 +17,27 @@ public partial class AttachedSchema : ModelElement<DXW.AttachedSchema>
   private string? _Uri;
 
   /// <summary>
+  /// Returns a string representation of the current object.
+  /// </summary>
+  /// <returns>A string that represents the URI associated with this instance.</returns>
+  public override string? ToString()
+  {
+    return _Uri;
+  }
+
+  /// <summary>
+  /// Implicitly converts an AttachedSchema instance to its URI string.
+  /// </summary>
+  /// <param name="attachedSchema">Schema instance to convert</param>
+  public static implicit operator string(AttachedSchema attachedSchema) => attachedSchema.Uri!;
+
+  /// <summary>
+  /// Implicitly converts a URI string to an AttachedSchema instance.
+  /// </summary>
+  /// <param name="uri">URI string to convert</param>
+  public static implicit operator AttachedSchema(string uri) => new AttachedSchema { Uri = uri };
+
+  /// <summary>
   ///   Updates the URI value of the specified Open XML element if it is an attached schema element.
   ///   If the URI is null or the provided element is not a <c>DXW.AttachedSchema</c>, this method performs no action.
   /// </summary>

@@ -52,20 +52,10 @@ public partial class HexBinary : IXmlSerializable
       // Parse the hex string and update the readonly field using reflection
       if (!string.IsNullOrEmpty(hexString))
       {
-        if (hexString.Length % 2 != 0)
-          throw new InvalidOperationException("HexBinary length must be even to convert from string to bytes");
-
-        var result = new byte[hexString.Length / 2];
-        for (var i = 0; i < result.Length; i++)
-        {
-          var b = Byte.Parse(hexString.Substring(i * 2, 2), System.Globalization.NumberStyles.HexNumber);
-          result[i] = b;
-        }
-
-        // Use reflection to set the readonly field during deserialization
+       // Use reflection to set the readonly field during deserialization
         var valueField = typeof(HexBinary).GetField("value",
           System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        valueField?.SetValue(this, result);
+        valueField?.SetValue(this, hexString);
       }
 
       reader.Read(); // Move past text

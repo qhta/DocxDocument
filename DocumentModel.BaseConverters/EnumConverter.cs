@@ -9,8 +9,8 @@ public static class EnumConverter
   [
     new(typeof(DX.EnumValue<>), nameof(ConvertFromEnumValue), nameof(ConvertToEnumValue)),
     new(typeof(ValueType), nameof(ConvertFromIEnumValue), nameof(ConvertToIEnumValue)),
-    new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement),
-      nameof(ConvertToOpenXmlLeafTextElement)),
+    new(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
+    new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
     new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
   ];
 
@@ -136,7 +136,7 @@ public static class EnumConverter
 
   #endregion
 
-  #region IIEnumValue conversion.
+  #region IEnumValue conversion.
 
   /// <summary>
   /// Converts an OpenXml IEnumValue to Enum.
@@ -174,6 +174,51 @@ public static class EnumConverter
     var modelEnumType = value.GetType()!;
     var IEnumValuesMap = GetEnumValuesMap(modelEnumType, openXmlType);
     var result = (DX.IEnumValue)IEnumValuesMap.GetValue2(value);
+    return result;
+  }
+
+  #endregion
+
+  #region String conversion.
+
+  /// <summary>
+  /// Converts an OpenXml String to Enum.
+  /// </summary>
+  /// <param name="value">The value to convert.</param>
+  /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
+  /// <returns>The Enum value, or null if the element has no content.</returns>
+  private static Enum? ConvertFromString(String? value, Type modelEnumType)
+  {
+    if (value == null) return null;
+
+    if (!modelEnumType.IsEnum)
+      throw new InvalidOperationException($"Target model type {modelEnumType.Name} is not an enum.");
+
+    if (int.TryParse(value, out var intValue))
+    {
+      var enumValue = Enum.ToObject(modelEnumType, intValue);
+      return (Enum)enumValue;
+    }
+
+    return (Enum?)Enum.Parse(modelEnumType, value)!;
+  }
+
+  /// <summary>
+  /// Creates an OpenXml String from an Enum value.
+  /// </summary>
+  /// <param name="value">The Enum value to convert.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type for the created String instance. Must be of OpenXml String type.</param>
+  /// <returns>A new String, or null if the input is null.</returns>
+  private static String? ConvertToString(Enum? value, Type openXmlType)
+  {
+    if (value == null) return null;
+
+    if (openXmlType.GetInterface("String") == null)
+      throw new InvalidOperationException($"Invalid String type {openXmlType.Name}.");
+
+    var modelEnumType = value.GetType()!;
+    var StringsMap = GetEnumValuesMap(modelEnumType, openXmlType);
+    var result = (String)StringsMap.GetValue2(value);
     return result;
   }
 
@@ -253,9 +298,7 @@ public static class EnumConverter
     if (valObject == null)
       return null;
 
-    var intVal = Convert.ToInt32(valObject);
-    var enumValue = Enum.ToObject(modelEnumType, intVal);
-    return (Enum)enumValue;
+    return ConvertFrom(valObject, modelEnumType);
   }
 
   /// <summary>
