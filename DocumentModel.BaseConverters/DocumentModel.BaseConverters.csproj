@@ -22,6 +22,7 @@
     <Compile Remove="ReferenceConverter.cs" />
     <Compile Remove="ReferenceRelationshipConverter.cs" />
     <Compile Remove="Utilities\OpenXmlCompositeElementUtils.cs" />
+    <Compile Remove="VariantConverter - Copy.cs" />
   </ItemGroup>
 
   <ItemGroup>
