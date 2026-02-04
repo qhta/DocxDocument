@@ -226,17 +226,19 @@ public static class ConverterBase
       result = targetInstance;
       return true;
     }
-    else
     if (targetType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
     {
       var valProp = targetType.GetValProperty();
       if (valProp == null)
         return false;
-      var valValue = ConvertTo(value, valProp.PropertyType, conversionToMap);
-      var targetInstance = Activator.CreateInstance(targetType);
-      valProp.SetValue(targetInstance, valValue);
-      result = targetInstance;
-      return true;
+
+      if (TryConvertTo(value, valProp.PropertyType, conversionToMap, out object? valValue))
+      {
+        var targetInstance = Activator.CreateInstance(targetType);
+        valProp.SetValue(targetInstance, valValue);
+        result = targetInstance;
+        return true;
+      }
     }
     if (targetType.IsEqualOrSubclassOf(typeof(DX.StringValue)))
     {
@@ -321,8 +323,8 @@ public static class ConverterBase
     if (value is DX.OpenXmlLeafTextElement textElement)
     {
       var valValue = textElement.Text;
-      result = ConvertFrom(valValue, targetType, conversionFromMap);
-      return true;
+      if (TryConvertFrom(valValue, targetType, conversionFromMap, out result))
+        return true;
     }
 
     if (sourceType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
@@ -331,8 +333,8 @@ public static class ConverterBase
       if (valProp == null)
         return false;
       var valValue = valProp.GetValue(value);
-      result = ConvertFrom(valValue, targetType, conversionFromMap);
-      return true;
+      if (valValue!=null && TryConvertFrom(valValue, targetType, conversionFromMap, out result))
+        return true;
     }
     if (sourceType.IsEqualOrSubclassOf(typeof(DX.StringValue)))
     {
@@ -340,8 +342,8 @@ public static class ConverterBase
       if (valProp == null)
         throw new NotSupportedException($"Val property in {sourceType.FullName} not found.");
       var valValue = valProp.GetValue(value);
-      result = ConvertFrom(valValue, targetType, conversionFromMap);
-      return true;
+      if (TryConvertFrom(valValue, targetType, conversionFromMap, out result))
+        return true;
     }
     if (TryUseConverter(value, targetType, out result))
       return true;
@@ -421,8 +423,15 @@ public static class ConverterBase
   {
     if (source is IConvertible convertible && targetType.GetInterface("IConvertible") != null)
     {
-      result = convertible.ToType(targetType, null);
-      return true;
+      try
+      {
+        result = convertible.ToType(targetType, null);
+        return true;
+      } catch (Exception e)
+      {
+        Debug.WriteLine(e);
+      }
+
     }
 
     result = null;

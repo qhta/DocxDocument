@@ -31,8 +31,7 @@
 [JsonConverter(typeof(HexBinaryJsonConverter))]
 public partial class HexBinary : IEquatable<HexBinary>
 {
-  private readonly byte[] value = Array.Empty<byte>();
-  private string? mask = null;
+  private readonly string value;
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="HexBinary"/> class with an empty byte array.
@@ -41,7 +40,8 @@ public partial class HexBinary : IEquatable<HexBinary>
   ///   This parameterless constructor is required for XML serialization.
   /// </remarks>
   public HexBinary()
-  {
+  { 
+    value = string.Empty;
   }
 
   /// <summary>
@@ -50,7 +50,7 @@ public partial class HexBinary : IEquatable<HexBinary>
   /// <param name="val">The byte array to wrap.</param>
   public HexBinary(byte[] val)
   {
-    value = val ?? Array.Empty<byte>();
+    value = String.Join("", val.Select(b => b.ToString("X2")));
   }
 
   /// <summary>
@@ -62,21 +62,25 @@ public partial class HexBinary : IEquatable<HexBinary>
   /// </exception>
   public HexBinary(string val)
   {
+    value = val;
+  }
+
+  /// <summary>
+  /// Converts a hexadecimal string to its corresponding byte array representation.
+  /// Removes any dashes and validates that the string length is even.
+  /// </summary>
+  /// <param name="val">String to convert</param>
+  /// <returns>Array of bytes</returns>
+  /// <exception cref="InvalidOperationException"></exception>
+  public byte[] StringToBytes(string val)
+  {
     if (string.IsNullOrEmpty(val))
     {
-      value = Array.Empty<byte>();
-      return;
+      return Array.Empty<byte>();
     }
 
     if (val.Contains('-'))
     {
-      var chars = val.ToCharArray();
-      for (int i=0; i < chars.Length; i++)
-      {
-        if (chars[i]!= '-')
-          chars[i] = 'X';
-      }
-      mask = new string(chars);
       val = val.Replace("-", string.Empty);
     }
 
@@ -89,7 +93,7 @@ public partial class HexBinary : IEquatable<HexBinary>
       var b = Byte.Parse(val.Substring(i * 2, 2), NumberStyles.HexNumber);
       result[i] = b;
     }
-    value = result;
+    return result;
   }
 
   /// <summary>
@@ -118,7 +122,7 @@ public partial class HexBinary : IEquatable<HexBinary>
   /// </summary>
   /// <remarks>If the specified HexBinary instance is null, this operator returns an empty byte array.</remarks>
   /// <param name="val">The HexBinary instance to convert. Can be null.</param>
-  public static implicit operator byte[](HexBinary val) => val?.value ?? Array.Empty<byte>();
+  public static implicit operator byte[](HexBinary val) => val?.StringToBytes(val.value) ?? Array.Empty<byte>();
 
   /// <summary>
   /// Defines an implicit conversion from a byte array to a HexBinary instance.
@@ -135,7 +139,7 @@ public partial class HexBinary : IEquatable<HexBinary>
   /// <remarks>This operator enables direct assignment of a HexBinary object to a byte variable. If the
   /// HexBinary instance is null or its value is null or empty, the result is 0.</remarks>
   /// <param name="val">The HexBinary instance to convert to a byte.</param>
-  public static implicit operator byte(HexBinary val) => val?.value[0] ?? 0;
+  public static implicit operator byte(HexBinary val) => (val?.StringToBytes(val.value) ?? Array.Empty<byte>())[0];
 
   /// <summary>
   /// Defines an implicit conversion from a single byte value to a HexBinary instance.
@@ -201,34 +205,7 @@ public partial class HexBinary : IEquatable<HexBinary>
   /// empty.</returns>
   public override string ToString()
   {
-    if (value.Length == 0)
-      return string.Empty;
-
-    if (mask != null)
-    {
-      var sb = new StringBuilder(mask);
-      int byteIndex = 0;
-      for (int i = 0; i < sb.Length; i++)
-      {
-        if (sb[i] != 'X')
-          continue;
-
-        sb[i] = value[byteIndex].ToString("X2")[0];
-        i++;
-        sb[i] = value[byteIndex].ToString("X2")[1];
-        byteIndex++;
-      }
-      return sb.ToString();
-    }
-    else
-    {
-      var sb = new StringBuilder(value.Length * 2);
-      foreach (var b in value)
-      {
-        sb.Append(b.ToString("X2"));
-      }
-      return sb.ToString();
-    }
+    return value;
   }
 
   /// <summary>
@@ -240,7 +217,7 @@ public partial class HexBinary : IEquatable<HexBinary>
   {
     if (other == null)
       return false;
-    return value.SequenceEqual(other.value);
+    return value.Equals(other.value, StringComparison.InvariantCultureIgnoreCase);
   }
 
   /// <summary>
