@@ -10,35 +10,37 @@ public static class VariantUtils
   /// <summary>
   /// Table to convert OpenXml VectorBaseValues value to C# type.
   /// </summary>
-  private static Dictionary<DXVT.VectorBaseValues, Type> VectorBaseValueToType = new Dictionary<DXVT.VectorBaseValues, Type>()
-  {
-    { DXVT.VectorBaseValues.Variant, typeof(object) },
-    { DXVT.VectorBaseValues.OneByteSignedInteger, typeof(sbyte) },
-    { DXVT.VectorBaseValues.TwoBytesSignedInteger, typeof(Int16) },
-    { DXVT.VectorBaseValues.FourBytesSignedInteger, typeof(Int32) },
-    { DXVT.VectorBaseValues.EightBytesSignedInteger, typeof(Int64) },
-    { DXVT.VectorBaseValues.OneByteUnsignedInteger, typeof(byte) },
-    { DXVT.VectorBaseValues.TwoBytesUnsignedInteger, typeof(UInt16) },
-    { DXVT.VectorBaseValues.FourBytesUnsignedInteger, typeof(UInt32) },
-    { DXVT.VectorBaseValues.EightBytesUnsignedInteger, typeof(UInt64) },
-    { DXVT.VectorBaseValues.FourBytesReal, typeof(Single) },
-    { DXVT.VectorBaseValues.EightBytesReal, typeof(Double) },
-    { DXVT.VectorBaseValues.Lpstr, typeof(String) },
-    { DXVT.VectorBaseValues.Lpwstr, typeof(String) },
-    { DXVT.VectorBaseValues.Bstr, typeof(String) },
-    { DXVT.VectorBaseValues.Date, typeof(DateTime) },
-    { DXVT.VectorBaseValues.Filetime, typeof(DateTime) },
-    { DXVT.VectorBaseValues.Bool, typeof(bool) },
-    { DXVT.VectorBaseValues.Currency, typeof(Decimal) },
-    { DXVT.VectorBaseValues.Error, typeof(int) },
-    { DXVT.VectorBaseValues.ClassId, typeof(Guid) },
-  };
+  private static readonly Dictionary<DXVT.VectorBaseValues, Type> VectorBaseValueToType =
+    new Dictionary<DXVT.VectorBaseValues, Type>()
+    {
+      { DXVT.VectorBaseValues.Variant, typeof(object) },
+      { DXVT.VectorBaseValues.OneByteSignedInteger, typeof(sbyte) },
+      { DXVT.VectorBaseValues.TwoBytesSignedInteger, typeof(Int16) },
+      { DXVT.VectorBaseValues.FourBytesSignedInteger, typeof(Int32) },
+      { DXVT.VectorBaseValues.EightBytesSignedInteger, typeof(Int64) },
+      { DXVT.VectorBaseValues.OneByteUnsignedInteger, typeof(byte) },
+      { DXVT.VectorBaseValues.TwoBytesUnsignedInteger, typeof(UInt16) },
+      { DXVT.VectorBaseValues.FourBytesUnsignedInteger, typeof(UInt32) },
+      { DXVT.VectorBaseValues.EightBytesUnsignedInteger, typeof(UInt64) },
+      { DXVT.VectorBaseValues.FourBytesReal, typeof(Single) },
+      { DXVT.VectorBaseValues.EightBytesReal, typeof(Double) },
+      { DXVT.VectorBaseValues.Lpstr, typeof(String) },
+      { DXVT.VectorBaseValues.Lpwstr, typeof(String) },
+      { DXVT.VectorBaseValues.Bstr, typeof(String) },
+      { DXVT.VectorBaseValues.Date, typeof(DateTime) },
+      { DXVT.VectorBaseValues.Filetime, typeof(DateTime) },
+      { DXVT.VectorBaseValues.Bool, typeof(bool) },
+      { DXVT.VectorBaseValues.Currency, typeof(Decimal) },
+      { DXVT.VectorBaseValues.Error, typeof(int) },
+      { DXVT.VectorBaseValues.ClassId, typeof(Guid) },
+    };
 
   /// <summary>
   /// Converts the specified OpenXml VTVector element to a C# array.
   /// </summary>
   /// <param name="element"></param>
   /// <returns></returns>
+  // ReSharper disable InvokeAsExtensionMember
   public static Array? AsArray(this DXVT.VTVector? element) => AsArray(element, out _);
 
   /// <summary>
@@ -53,6 +55,7 @@ public static class VariantUtils
     baseType = null;
     if (element == null)
       return null;
+
     baseType = element.BaseType?.Value;
     Type itemType = (baseType == null) ? typeof(object) : VectorBaseValueToType[(DXVT.VectorBaseValues)baseType];
     var size = /*(int?)element.Size?.Value ?? */element.Elements().Count();
@@ -66,30 +69,30 @@ public static class VariantUtils
     return array;
   }
 
-
   /// <summary>
   /// Table to convert C# type to OpenXml VectorBaseValues value.
   /// Contains default base values. Default for String type is Lpwstr.
   /// </summary>
-  private static readonly Dictionary<Type, DXVT.VectorBaseValues> TypeToVectorBase = new Dictionary<Type, DXVT.VectorBaseValues>
-  {
-    { typeof(object), DXVT.VectorBaseValues.Variant },
-    { typeof(sbyte), DXVT.VectorBaseValues.OneByteSignedInteger },
-    { typeof(Int16), DXVT.VectorBaseValues.TwoBytesSignedInteger },
-    { typeof(Int32), DXVT.VectorBaseValues.FourBytesSignedInteger },
-    { typeof(Int64), DXVT.VectorBaseValues.EightBytesSignedInteger },
-    { typeof(byte), DXVT.VectorBaseValues.OneByteUnsignedInteger },
-    { typeof(UInt16), DXVT.VectorBaseValues.TwoBytesUnsignedInteger },
-    { typeof(UInt32), DXVT.VectorBaseValues.FourBytesUnsignedInteger },
-    { typeof(UInt64), DXVT.VectorBaseValues.EightBytesUnsignedInteger },
-    { typeof(Single), DXVT.VectorBaseValues.FourBytesReal },
-    { typeof(Double), DXVT.VectorBaseValues.EightBytesReal },
-    { typeof(string), DXVT.VectorBaseValues.Lpwstr },
-    { typeof(DateTime), DXVT.VectorBaseValues.Filetime },
-    { typeof(bool), DXVT.VectorBaseValues.Bool },
-    { typeof(decimal), DXVT.VectorBaseValues.Currency },
-    { typeof(Guid), DXVT.VectorBaseValues.ClassId },
-  };
+  private static readonly Dictionary<Type, DXVT.VectorBaseValues> TypeToVectorBase =
+    new Dictionary<Type, DXVT.VectorBaseValues>
+    {
+      { typeof(object), DXVT.VectorBaseValues.Variant },
+      { typeof(sbyte), DXVT.VectorBaseValues.OneByteSignedInteger },
+      { typeof(Int16), DXVT.VectorBaseValues.TwoBytesSignedInteger },
+      { typeof(Int32), DXVT.VectorBaseValues.FourBytesSignedInteger },
+      { typeof(Int64), DXVT.VectorBaseValues.EightBytesSignedInteger },
+      { typeof(byte), DXVT.VectorBaseValues.OneByteUnsignedInteger },
+      { typeof(UInt16), DXVT.VectorBaseValues.TwoBytesUnsignedInteger },
+      { typeof(UInt32), DXVT.VectorBaseValues.FourBytesUnsignedInteger },
+      { typeof(UInt64), DXVT.VectorBaseValues.EightBytesUnsignedInteger },
+      { typeof(Single), DXVT.VectorBaseValues.FourBytesReal },
+      { typeof(Double), DXVT.VectorBaseValues.EightBytesReal },
+      { typeof(string), DXVT.VectorBaseValues.Lpwstr },
+      { typeof(DateTime), DXVT.VectorBaseValues.Filetime },
+      { typeof(bool), DXVT.VectorBaseValues.Bool },
+      { typeof(decimal), DXVT.VectorBaseValues.Currency },
+      { typeof(Guid), DXVT.VectorBaseValues.ClassId },
+    };
 
   /// <summary>
   /// Converts the specified array to an array of OpenXmlElements
@@ -103,9 +106,11 @@ public static class VariantUtils
   {
     if (array == null)
       return null;
+
     var itemType = array.GetType().GetElementType();
     if (itemType == null)
       return null;
+
     if (baseType == null)
       baseType = TypeToVectorBase[itemType];
     var size = array.Length;
@@ -133,9 +138,11 @@ public static class VariantUtils
   {
     if (array == null)
       return null;
+
     var itemType = array.GetType().GetElementType();
     if (itemType == null)
       return null;
+
     if (baseType == null)
       baseType = TypeToVectorBase[itemType];
     var size = array.Length;
@@ -153,25 +160,26 @@ public static class VariantUtils
   /// <summary>
   /// Table to convert OpenXml ArrayBaseValues value to C# type.
   /// </summary>
-  internal static Dictionary<DXVT.ArrayBaseValues, Type> ArrayBaseValueToType = new Dictionary<DXVT.ArrayBaseValues, Type>()
-  {
-    {  DXVT.ArrayBaseValues.Variant, typeof(object) },
-    {  DXVT.ArrayBaseValues.OneByteSignedInteger, typeof(sbyte) },
-    {  DXVT.ArrayBaseValues.TwoBytesSignedInteger, typeof(Int16) },
-    {  DXVT.ArrayBaseValues.FourBytesSignedInteger, typeof(Int32) },
-    {  DXVT.ArrayBaseValues.Integer, typeof(Int64) },
-    {  DXVT.ArrayBaseValues.OneByteUnsignedInteger, typeof(byte) },
-    {  DXVT.ArrayBaseValues.TwoBytesUnsignedInteger, typeof(UInt16) },
-    {  DXVT.ArrayBaseValues.FourBytesUnsignedInteger, typeof(UInt32) },
-    {  DXVT.ArrayBaseValues.UnsignedInteger, typeof(UInt64) },
-    {  DXVT.ArrayBaseValues.FourBytesReal, typeof(Single) },
-    {  DXVT.ArrayBaseValues.EightBytesReal, typeof(Double) },
-    {  DXVT.ArrayBaseValues.Bstr, typeof(String) },
-    {  DXVT.ArrayBaseValues.Date, typeof(DateTime) },
-    {  DXVT.ArrayBaseValues.Bool, typeof(bool) },
-    {  DXVT.ArrayBaseValues.Currency, typeof(Decimal) },
-    {  DXVT.ArrayBaseValues.Error, typeof(int) },
-  };
+  internal static Dictionary<DXVT.ArrayBaseValues, Type> ArrayBaseValueToType =
+    new Dictionary<DXVT.ArrayBaseValues, Type>()
+    {
+      { DXVT.ArrayBaseValues.Variant, typeof(object) },
+      { DXVT.ArrayBaseValues.OneByteSignedInteger, typeof(sbyte) },
+      { DXVT.ArrayBaseValues.TwoBytesSignedInteger, typeof(Int16) },
+      { DXVT.ArrayBaseValues.FourBytesSignedInteger, typeof(Int32) },
+      { DXVT.ArrayBaseValues.Integer, typeof(Int64) },
+      { DXVT.ArrayBaseValues.OneByteUnsignedInteger, typeof(byte) },
+      { DXVT.ArrayBaseValues.TwoBytesUnsignedInteger, typeof(UInt16) },
+      { DXVT.ArrayBaseValues.FourBytesUnsignedInteger, typeof(UInt32) },
+      { DXVT.ArrayBaseValues.UnsignedInteger, typeof(UInt64) },
+      { DXVT.ArrayBaseValues.FourBytesReal, typeof(Single) },
+      { DXVT.ArrayBaseValues.EightBytesReal, typeof(Double) },
+      { DXVT.ArrayBaseValues.Bstr, typeof(String) },
+      { DXVT.ArrayBaseValues.Date, typeof(DateTime) },
+      { DXVT.ArrayBaseValues.Bool, typeof(bool) },
+      { DXVT.ArrayBaseValues.Currency, typeof(Decimal) },
+      { DXVT.ArrayBaseValues.Error, typeof(int) },
+    };
 
   /// <summary>
   /// Converts the specified OpenXml VTArray element to a C# array.
@@ -192,19 +200,18 @@ public static class VariantUtils
     baseType = null;
     if (element == null)
       return null;
+
     baseType = element.BaseType?.Value;
     var itemType = (baseType == null) ? typeof(object) : ArrayBaseValueToType[(DXVT.ArrayBaseValues)baseType];
     var lowerBounds = element.LowerBounds?.Value ?? 0;
     var upperBounds = element.UpperBounds?.Value ?? 0;
-    Array? array = Array.CreateInstance(itemType, lowerBounds, upperBounds);
-    if (array != null)
+    Array array = Array.CreateInstance(itemType, lowerBounds, upperBounds);
+    
+    var i = 0;
+    foreach (var child in element.Elements())
     {
-      var i = 0;
-      foreach (var child in element.Elements())
-      {
-        var item = AsObject(child);
-        array.SetValue(element, i++);
-      }
+      var item = AsObject(child);
+      array.SetValue(element, i++);
     }
     return array;
   }
@@ -220,6 +227,7 @@ public static class VariantUtils
   {
     if (long.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -233,6 +241,7 @@ public static class VariantUtils
   {
     if (ulong.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -246,6 +255,7 @@ public static class VariantUtils
   {
     if (bool.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -258,6 +268,7 @@ public static class VariantUtils
   {
     if (sbyte.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -272,6 +283,7 @@ public static class VariantUtils
   {
     if (short.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -284,6 +296,7 @@ public static class VariantUtils
   {
     if (int.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -296,6 +309,7 @@ public static class VariantUtils
   {
     if (long.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -308,6 +322,7 @@ public static class VariantUtils
   {
     if (byte.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -320,6 +335,7 @@ public static class VariantUtils
   {
     if (ushort.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -332,6 +348,7 @@ public static class VariantUtils
   {
     if (uint.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -344,6 +361,7 @@ public static class VariantUtils
   {
     if (ulong.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -356,6 +374,7 @@ public static class VariantUtils
   {
     if (float.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -368,9 +387,9 @@ public static class VariantUtils
   {
     if (double.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
-
 
   /// <summary>
   /// Converts the value of the specified VTDecimal variant to a nullable decimal number.
@@ -381,6 +400,7 @@ public static class VariantUtils
   {
     if (decimal.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -393,6 +413,7 @@ public static class VariantUtils
   {
     if (decimal.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -407,6 +428,7 @@ public static class VariantUtils
   {
     if (DateTime.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -422,6 +444,7 @@ public static class VariantUtils
   {
     if (DateTime.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -436,6 +459,7 @@ public static class VariantUtils
   {
     if (Guid.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
 
@@ -448,9 +472,9 @@ public static class VariantUtils
   {
     if (HexInt.TryParse(variant.InnerText, out var result))
       return result;
+
     return null;
   }
-
 
   /// <summary>
   /// Converts the value of the specified VTBlob variant to a byte array.
@@ -487,7 +511,6 @@ public static class VariantUtils
     return value;
   }
 
-
   /// <summary>
   /// Converts the value of the specified VTOStorage variant to a byte array.
   /// </summary>
@@ -498,7 +521,6 @@ public static class VariantUtils
     var value = Convert.FromBase64String(variant.InnerText);
     return value;
   }
-
 
   /// <summary>
   /// Converts the value of the specified VTOStreamData variant to a byte array.
@@ -596,6 +618,7 @@ public static class VariantUtils
       return vtOStream.AsByteArray();
     if (element is DXVT.VTVStreamData vtVStream)
       return vtVStream.AsGuidAndByteArray();
+
     return null;
   }
 
@@ -612,11 +635,12 @@ public static class VariantUtils
       return new DXVT.VTNull();
     if (value == DBNull.Value)
       return new DXVT.VTEmpty();
+
     if (baseType == null)
     {
       if (value is Variant variant)
       {
-        if (variant.ValueType!=null)
+        if (variant.ValueType != null)
         {
           baseType = TypeToVectorBase[variant.ValueType];
           value = variant.Value;
@@ -675,10 +699,12 @@ public static class VariantUtils
       return new DXVT.VTError("0x" + ((int)value).ToString("X8"));
     if (baseType == DXVT.VectorBaseValues.ClassId)
       return new DXVT.VTClassId(((Guid)value).ToString("B"));
+
     return null;
   }
 
   #region conversion methods needed for ExtendedFileProperties read/write
+
   /// <summary>
   /// Converts an array of items to the string of items separated with commas.
   /// Items which are strings are emitted enclosed with double-quotes characters.
@@ -688,6 +714,7 @@ public static class VariantUtils
   public static string? AsString(this Array? array)
   {
     if (array == null) return null;
+
     var ss = new List<string?>();
     for (int i = 0; i < array.Length; i++)
     {
@@ -725,6 +752,7 @@ public static class VariantUtils
   public static DXVT.VTVector? AsVTVector(this StringList? value)
   {
     if (value == null) return null;
+
     var result = new DXVT.VTVector
     {
       Size = new DX.UInt32Value((uint)value.Count()),
@@ -738,134 +766,5 @@ public static class VariantUtils
     return result;
   }
 
-  /// <summary>
-  /// Converts the specified OpenXml VTVector element to a HeadingPairs value.
-  /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
-  public static HeadingPairs? AsHeadingPairs(this DXVT.VTVector? element)
-  {
-    var array = element?.AsArray();
-    if (array != null)
-    {
-      var result = new HeadingPairs();
-      for (int i = 0; i < array.Length / 2; i++)
-      {
-        var item1 = array.GetValue(i * 2);
-        var item2 = array.GetValue(i * 2 + 1);
-        if (item1 is string str && item2 is int num)
-          result.Add(new HeadingPair { Name = str, Number = num });
-      }
-      return result;
-    }
-    return null;
-  }
-
-  /// <summary>
-  /// Converts the specified HeadingPairs value to an OpenXml VTVector element.
-  /// </summary>
-  /// <param name="value"></param>
-  /// <returns></returns>
-  public static DXVT.VTVector? AsVTVector(this HeadingPairs? value)
-  {
-    if (value == null) return null;
-    var result = new DXVT.VTVector
-    {
-      Size = new DX.UInt32Value((uint)value.Count() * 2),
-      BaseType = new DX.EnumValue<DXVT.VectorBaseValues>(DXVT.VectorBaseValues.Variant)
-    };
-    foreach (var item in value)
-    {
-      var childItem1 = new DXVT.VTLPSTR(item.Name ?? "");
-      result.AppendChild(childItem1);
-      var childItem2 = new DXVT.VTInt32(item.Number.ToString() ?? "");
-      result.AppendChild(childItem2);
-    }
-    return result;
-  }
-
-  /// <summary>
-  /// Converts the specified OpenXml VTVector element to a HyperlinkList value.
-  /// </summary>
-  /// <param name="element"></param>
-  /// <returns></returns>
-  public static HyperlinkList? AsHyperlinkList(this DXVT.VTVector? element)
-  {
-    var array = element?.AsArray();
-    if (array != null)
-    {
-      var result = new HyperlinkList();
-      int n = array.Length;
-      for (int i = 0; i < n / 6; i++)
-      {
-        var item = new HyperlinkInfo();
-        for (var k = 0; k < 6; k++)
-        {
-          var varItem = array.GetValue(i * 6 + k);
-          if (varItem is not null)
-          {
-            switch (k)
-            {
-              case 0:
-                item.N1 = (int)varItem;
-                break;
-              case 1:
-                item.N2 = (int)varItem;
-                break;
-              case 2:
-                item.N3 = (int)varItem;
-                break;
-              case 3:
-                var n4 = (int)varItem;
-                var n4l = (Int16)(n4 & 0xFFFF);
-                item.Attachment = (HyperlinkAttachment)Enum.ToObject(typeof(HyperlinkAttachment), n4l);
-                var n4h = (Int16)(n4 >> 16 & 0xFFFF);
-                item.Action = (HyperlinkAction)Enum.ToObject(typeof(HyperlinkAction), n4h);
-                break;
-              case 4:
-                item.Target = (string?)varItem ?? string.Empty;
-                break;
-              case 5:
-                item.Location = (string?)varItem ?? string.Empty;
-                break;
-            }
-          }
-        }
-        result.Add(item);
-      }
-      return result;
-    }
-    return null;
-  }
-
-  /// <summary>
-  /// Converts the specified HyperlinkList value to an OpenXml VTVector element.
-  /// </summary>
-  /// <param name="value"></param>
-  /// <returns></returns>
-  public static DXVT.VTVector? AsVTVector(this HyperlinkList? value)
-  {
-    if (value == null) return null;
-    var result = new DXVT.VTVector
-    {
-      Size = new DX.UInt32Value((uint)value.Count * 2),
-      BaseType = new DX.EnumValue<DXVT.VectorBaseValues>(DXVT.VectorBaseValues.Variant)
-    };
-    foreach (var item in value)
-    {
-      result.AppendChild(new DXVT.VTInt32(item.N1.ToString()));
-      result.AppendChild(new DXVT.VTInt32(item.N2.ToString()));
-      result.AppendChild(new DXVT.VTInt32(item.N3.ToString()));
-      var n4h = (uint)Convert.ChangeType(item.Action, typeof(uint));
-      var n4l = (uint)Convert.ChangeType(item.Attachment, typeof(uint));
-      var n4 = (n4h << 16) | (n4l);
-      result.AppendChild(new DXVT.VTInt32(n4.ToString()));
-      result.AppendChild(new DXVT.VTLPSTR(item.Target ?? ""));
-      result.AppendChild(new DXVT.VTLPSTR(item.Location ?? ""));
-    }
-    return result;
-  }
   #endregion
 }
-
-
