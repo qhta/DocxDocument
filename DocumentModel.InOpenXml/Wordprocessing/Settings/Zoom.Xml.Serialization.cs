@@ -22,8 +22,8 @@ public partial class Zoom : IXmlSerializable
   /// <param name="writer">The <see cref="XmlWriter"/> to write XML content to.</param>
   public void WriteXml(XmlWriter writer)
   {
-    if (Kind != null)
-      writer.WriteString(Kind.ToString());
+    if (Preset != null)
+      writer.WriteString(Preset.ToString());
     else if (Percent != null)
       writer.WriteString(Percent.Value.ToString());
   }
@@ -35,14 +35,14 @@ public partial class Zoom : IXmlSerializable
   public void ReadXml(XmlReader reader)
   {
     var content = reader.ReadElementContentAsString();
-    if (int.TryParse(content, out var percent))
+    if (content.EndsWith("%"))
     {
-      Percent = percent;
-      Kind = null;
+      Percent = new Percent(content);
+      Preset = null;
     }
     else if (Enum.TryParse(typeof(PresetZoom), content, out var kind))
     {
-      Kind = (PresetZoom)kind!;
+      Preset = (PresetZoom)kind!;
       Percent = null;
     }
   }

@@ -17,6 +17,7 @@ public static class OpenXmlModelConverter
     if (modelObject == null)
       return null;
 
+    if (openXmlType.Name == "Zoom") Debug.Assert(true);
     var modelType = modelObject.GetType().GetNotNullableType();
     if (modelType == openXmlType)
       return modelObject;
@@ -46,7 +47,7 @@ public static class OpenXmlModelConverter
     var openXmlType = openXmlElement.GetType().GetNotNullableType();
     if (modelType == openXmlType)
       return openXmlElement;
-    if (!SimpleValueConverter.TryConvertFrom(openXmlElement, modelType, out var result))
+    if (SimpleValueConverter.TryConvertFrom(openXmlElement, modelType, out var result))
       return result;
 
     var modelObject = Activator.CreateInstance(modelType)!;
@@ -109,7 +110,7 @@ public static class OpenXmlModelConverter
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return;
 
-    if (modelProperty.Name == "Panose") Debug.Assert(true);
+    if (modelProperty.Name == "Zoom") Debug.Assert(true);
 
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanWrite)
@@ -344,7 +345,7 @@ public static class OpenXmlModelConverter
     foreach (var childElement in children)
     {
       var modelValue = ConvertFrom(childElement, modelPropertyType);
-      if (!modelPropertyType.IsInstanceOfType(modelValue))
+      if (modelValue!=null && !modelPropertyType.IsInstanceOfType(modelValue))
         throw new InvalidOperationException($"Converted value {modelValue} is not of type {modelPropertyType} for model property {modelProperty.Name}");
       modelProperty.SetValue(modelObject, modelValue);
       return;
@@ -382,7 +383,7 @@ public static class OpenXmlModelConverter
     foreach (var openXmlChildElement in children)
     {
       var modelItem = ConvertFrom(openXmlChildElement, modelItemType);
-      if (!modelItemType.IsInstanceOfType(modelItem))
+      if (modelItem !=null && !modelItemType.IsInstanceOfType(modelItem))
         throw new InvalidOperationException($"Converted model Item is not compatible to {modelItemType}");
       if (modelValue == null)
         modelValue = Activator.CreateInstance(modelPropertyType)!;

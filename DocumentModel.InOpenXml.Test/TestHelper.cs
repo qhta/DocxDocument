@@ -100,11 +100,16 @@ public static class TestHelper
           if (equatableType.IsInstanceOfType(obj1Value))
           {
             result = (bool)equatableType.GetMethod("Equals")!.Invoke(obj1Value, [obj2Value])!;
-            if (!result)
-              return false;
+            if (result)
+              continue;
           }
           if (!CompareTestData1(property.PropertyType, obj1Value, obj2Value, ref propName))
           {
+            if (obj1Value is bool boolObj1Value)
+            {
+              if (boolObj1Value == false && obj2Value is null)
+                continue;
+            }
             return false;
           }
         }

@@ -23,7 +23,7 @@ namespace DocumentModel.Wordprocessing
     if (Enum.TryParse(typeof(PresetZoom), kindStr, out var kind))
      return new Zoom
      {
-      Kind = (PresetZoom)kind!
+      Preset = (PresetZoom)kind!
      };
    }
    else if (reader.TokenType == JsonTokenType.Number && reader.TryGetInt32(out int percent))
@@ -45,9 +45,9 @@ namespace DocumentModel.Wordprocessing
   /// <param name="options">Options to control the conversion behavior.</param>
   public override void Write(Utf8JsonWriter writer, Zoom value, JsonSerializerOptions options)
   {
-   if (value.Kind != null)
+   if (value.Preset != null)
    {
-    writer.WriteStringValue(value.Kind.ToString());
+    writer.WriteStringValue(value.Preset.ToString());
    }
    else if (value.Percent != null)
    {
