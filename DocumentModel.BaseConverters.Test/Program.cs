@@ -57,6 +57,8 @@ internal class Program
       return;
     if (!Run(EnumConverterTest.Run))
       return;
+    if (!Run(PercentConverterTest.Run))
+      return;
     if (!Run(SimpleValueConverterTest.Run))
       return;
 

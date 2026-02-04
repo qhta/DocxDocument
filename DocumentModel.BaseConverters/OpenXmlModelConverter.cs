@@ -78,7 +78,7 @@ public static class OpenXmlModelConverter
     }
     foreach (var modelProperty in modelType.GetModelProperties())
     {
-      if (modelProperty.Name == "Id") Debug.Assert(true);
+      if (modelProperty.Name == "SummaryLength") Debug.Assert(true);
       UpdateData(modelObject, modelProperty, openXmlElement, openXmlType);
     }
   }
@@ -122,7 +122,7 @@ public static class OpenXmlModelConverter
       openXmlProperty.SetValue(openXmlElement, modelValue);
       return;
     }
-    if (modelProperty.Name == "CharacterSpacingControl") Debug.Assert(true);
+    if (modelProperty.Name == "SummaryLength") Debug.Assert(true);
     var updateDataMethod = OpenXmlPropertyMap.GetUpdateDataMethod(modelProperty, openXmlType);
     if (updateDataMethod != null)
     {
@@ -139,7 +139,7 @@ public static class OpenXmlModelConverter
       }
       throw new InvalidOperationException($"Invalid number of parameters in method {updateDataMethod.DeclaringType}.{updateDataMethod.Name}");
     }
-    if (modelProperty.Name == "CharacterSpacingControl") Debug.Assert(true);
+    if (modelProperty.Name == "SummaryLength") Debug.Assert(true);
     var openXmlElementAttribute = modelProperty.GetCustomAttribute<OpenXmlElementAttribute>();
     if (openXmlElementAttribute != null)
     {
@@ -185,7 +185,11 @@ public static class OpenXmlModelConverter
     if (modelValue == null)
       return;
 
-    if (modelProperty.Name == "CharacterSpacingControl") Debug.Assert(true);
+    if (modelProperty.Name == "SummaryLength") Debug.Assert(true);
+
+    if (openXmlChildType.IsSubclassOf(typeof(DXW.EmptyType)) && !modelValue.Equals(true))
+      return;
+
     var openXmlChildElement = ConvertTo(modelValue, openXmlChildType);
     if (openXmlChildElement is not DX.OpenXmlElement o)
       throw new InvalidOperationException($"Converted Open XML child element " + $"is not of type DX.OpenXmlElement for model property {modelProperty.Name}");

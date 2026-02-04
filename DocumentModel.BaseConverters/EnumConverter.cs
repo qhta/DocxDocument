@@ -195,6 +195,8 @@ public static class EnumConverter
       throw new InvalidOperationException($"Target model type {modelEnumType.Name} is not an enum.");
 
     var valText = openXmlValue.Text;
+    if (string.IsNullOrEmpty(valText))
+      return null;
     var intVal = Convert.ToInt32(valText);
     var enumValue = Enum.ToObject(modelEnumType, intVal);
     return (Enum)enumValue;
@@ -272,14 +274,16 @@ public static class EnumConverter
       throw new InvalidOperationException($"EnumValue of type {openXmlType} does not have a Value property");
 
     var openXmlValType = valProp.PropertyType;
-    var intValue = Convert.ToInt32(value);
     var targetInstance = Activator.CreateInstance(openXmlValType)!;
     var targetInstanceType = targetInstance.GetType();
     var valueProp = targetInstanceType.GetProperty("Value") ?? targetInstanceType.GetProperty("Val");
     if (valueProp == null)
       throw new InvalidOperationException($"EnumValue of type {targetInstanceType} does not have a Value property");
 
-    var targetValue = Int32Converter.ConvertTo(intValue, valueProp.PropertyType);
+    if (valueProp.PropertyType.Name == "CharacterSpacingValues") Debug.Assert(true);
+    var targetValue = (valueProp.PropertyType.GetInterface("IEnumValue") != null)?
+      EnumConverter.ConvertToIEnumValue(value, valueProp.PropertyType) : 
+      Int32Converter.ConvertTo(Convert.ToInt32(value), valueProp.PropertyType);
     valueProp.SetValue(targetInstance, targetValue);
     valProp.SetValue(result, targetInstance);
     return result;

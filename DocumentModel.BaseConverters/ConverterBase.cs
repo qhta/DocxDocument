@@ -45,7 +45,7 @@ public static class ConverterBase
   /// only one exists; otherwise, <see langword="null"/>.</returns>
   public static PropertyInfo? GetValProperty(this Type type)
   {
-    var valProp = type.GetProperty("Val");
+    var valProp = type.GetProperty("Val") ?? type.GetProperty("Value");
     if (valProp == null)
     {
       var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
