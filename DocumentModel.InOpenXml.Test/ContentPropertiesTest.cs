@@ -274,7 +274,7 @@ namespace DocumentModel.InOpenXml.Test
       if (createAllProperties)
       {
         props.DocumentSecurity = DocumentSecurity.ReadOnly | DocumentSecurity.PasswordProtected;
-        props.DigitalSignature = [0x01, 0x02, 0x03, 0x04, 0x05];
+        props.DigitalSignature = new HexBinary([0x01, 0x02, 0x03, 0x04, 0x05]);
         props.HyperlinkBase = "http://www.example.com/";
         props.HeadingPairs = new HeadingPairs
         {

@@ -36,7 +36,7 @@ public static class OpenXmlElementConverter
       }
       return null;
     }
-    if (SimpleValueConverter.TryConvertFrom(modelValue, openXmlType, out var result))
+    if (SimpleValueConverter.TryConvertTo(modelValue, openXmlType, out var result))
     {
       return result;
     }
