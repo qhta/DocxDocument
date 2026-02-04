@@ -33,10 +33,34 @@ public partial class ContentProperties
     if (openXmlElement is DXEP.HeadingPairs headingPairs)
     {
       var variant = headingPairs.VTVector;
-      return variant?.AsHeadingPairs();
+      return VTVectorToHeadingPairs(variant);
     }
     return null;
   }
+
+  /// <summary>
+  /// Converts the specified OpenXml VTVector element to a HeadingPairs value.
+  /// </summary>
+  /// <param name="element">VTVector element to convert.</param>
+  /// <returns>HeadingPairs representation of the VTVector.</returns>
+  public static HeadingPairs? VTVectorToHeadingPairs(DXVT.VTVector? element)
+  {
+    var array = element?.AsArray();
+    if (array != null)
+    {
+      var result = new HeadingPairs();
+      for (int i = 0; i < array.Length / 2; i++)
+      {
+        var item1 = array.GetValue(i * 2);
+        var item2 = array.GetValue(i * 2 + 1);
+        if (item1 is string str && item2 is int num)
+          result.Add(new HeadingPair { Name = str, Number = num });
+      }
+      return result;
+    }
+    return null;
+  }
+
 
   /// <summary>
   /// Converts a model object representing heading pairs to an Open XML HeadingPairs object if the specified type
@@ -54,10 +78,35 @@ public partial class ContentProperties
     if (openXmlType == typeof(DXEP.HeadingPairs))
     {
       if (modelObject is DocumentModel.HeadingPairs headingPairs)
-        return new DXEP.HeadingPairs(headingPairs.AsVTVector()!);
+        return new DXEP.HeadingPairs(ConvertVTVectorToHeadingPairs(headingPairs)!);
     }
     return null;
   }
+
+  /// <summary>
+  /// Converts the specified HeadingPairs value to an OpenXml VTVector element.
+  /// </summary>
+  /// <param name="value">The HeadingPairs value to convert.</param>
+  /// <returns>VTVector representation of the HeadingPairs.</returns>
+  public static DXVT.VTVector? ConvertVTVectorToHeadingPairs(HeadingPairs? value)
+  {
+    if (value == null) return null;
+
+    var result = new DXVT.VTVector
+    {
+      Size = new DX.UInt32Value((uint)value.Count() * 2),
+      BaseType = new DX.EnumValue<DXVT.VectorBaseValues>(DXVT.VectorBaseValues.Variant)
+    };
+    foreach (var item in value)
+    {
+      var childItem1 = new DXVT.VTLPSTR(item.Name ?? "");
+      result.AppendChild(childItem1);
+      var childItem2 = new DXVT.VTInt32(item.Number.ToString() ?? "");
+      result.AppendChild(childItem2);
+    }
+    return result;
+  }
+
 
   /// <summary>
   /// Converts an OpenXml TitlesOfParts element to a list of string titles, if available.
@@ -107,10 +156,66 @@ public partial class ContentProperties
     if (openXmlElement is DXEP.HyperlinkList hyperlinkList)
     {
       var variant = hyperlinkList.VTVector;
-      return variant?.AsHyperlinkList();
+      return VTVectorToHyperlinkList(variant);
     }
     return null;
   }
+
+
+  /// <summary>
+  /// Converts the specified OpenXml VTVector element to a HyperlinkList value.
+  /// </summary>
+  /// <param name="element">The OpenXml VTVector element to convert.</param>
+  /// <returns>A HyperlinkList representing the converted element, or null if the conversion fails.</returns>
+  public static HyperlinkList? VTVectorToHyperlinkList(DXVT.VTVector? element)
+  {
+    var array = element?.AsArray();
+    if (array != null)
+    {
+      var result = new HyperlinkList();
+      int n = array.Length;
+      for (int i = 0; i < n / 6; i++)
+      {
+        var item = new HyperlinkInfo();
+        for (var k = 0; k < 6; k++)
+        {
+          var varItem = array.GetValue(i * 6 + k);
+          if (varItem is not null)
+          {
+            switch (k)
+            {
+              case 0:
+                item.N1 = (int)varItem;
+                break;
+              case 1:
+                item.N2 = (int)varItem;
+                break;
+              case 2:
+                item.N3 = (int)varItem;
+                break;
+              case 3:
+                var n4 = (int)varItem;
+                var n4l = (Int16)(n4 & 0xFFFF);
+                item.Attachment = (HyperlinkAttachment)Enum.ToObject(typeof(HyperlinkAttachment), n4l);
+                var n4h = (Int16)(n4 >> 16 & 0xFFFF);
+                item.Action = (HyperlinkAction)Enum.ToObject(typeof(HyperlinkAction), n4h);
+                break;
+              case 4:
+                item.Target = (string?)varItem ?? string.Empty;
+                break;
+              case 5:
+                item.Location = (string?)varItem ?? string.Empty;
+                break;
+            }
+          }
+        }
+        result.Add(item);
+      }
+      return result;
+    }
+    return null;
+  }
+
 
   /// <summary>
   /// Converts a model object representing a hyperlink list to an Open XML HyperlinkList instance if the specified type
@@ -128,9 +233,39 @@ public partial class ContentProperties
     if (openXmlType == typeof(DXEP.HyperlinkList))
     {
       if (modelObject is DocumentModel.HyperlinkList hyperlinkList)
-        return new DXEP.HyperlinkList(hyperlinkList.AsVTVector()!);
+        return new DXEP.HyperlinkList(HyperlinkListToVTVector(hyperlinkList)!);
     }
     return null;
+  }
+
+
+  /// <summary>
+  /// Converts the specified HyperlinkList value to an OpenXml VTVector element.
+  /// </summary>
+  /// <param name="value">The HyperlinkList value to convert.</param>
+  /// <returns>VTVector representation of the HyperlinkList.</returns>
+  public static DXVT.VTVector? HyperlinkListToVTVector(HyperlinkList? value)
+  {
+    if (value == null) return null;
+
+    var result = new DXVT.VTVector
+    {
+      Size = new DX.UInt32Value((uint)value.Count * 2),
+      BaseType = new DX.EnumValue<DXVT.VectorBaseValues>(DXVT.VectorBaseValues.Variant)
+    };
+    foreach (var item in value)
+    {
+      result.AppendChild(new DXVT.VTInt32(item.N1.ToString()));
+      result.AppendChild(new DXVT.VTInt32(item.N2.ToString()));
+      result.AppendChild(new DXVT.VTInt32(item.N3.ToString()));
+      var n4h = (uint)Convert.ChangeType(item.Action, typeof(uint));
+      var n4l = (uint)Convert.ChangeType(item.Attachment, typeof(uint));
+      var n4 = (n4h << 16) | (n4l);
+      result.AppendChild(new DXVT.VTInt32(n4.ToString()));
+      result.AppendChild(new DXVT.VTLPSTR(item.Target ?? ""));
+      result.AppendChild(new DXVT.VTLPSTR(item.Location ?? ""));
+    }
+    return result;
   }
 
   /// <summary>
