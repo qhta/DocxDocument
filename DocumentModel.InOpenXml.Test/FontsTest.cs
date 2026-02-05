@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Text.Json;
@@ -25,7 +26,8 @@ namespace DocumentModel.InOpenXml.Test
 			if (!TestEdgeCases()) return false;
 			if (!TestStoreInDocument()) return false;
 			if (!TestUpdateInDocument()) return false;
-			Console.WriteLine("All Fonts tests passed.\n");
+			if (!TestValidateOpenXml()) return false;
+      Console.WriteLine("All Fonts tests passed.\n");
 			return true;
 		}
 
@@ -232,11 +234,53 @@ namespace DocumentModel.InOpenXml.Test
 		}
 
 
-		/// <summary>
-		/// Creates a sample Fonts object with various property types.
-		/// </summary>
-		/// <returns>A populated Fonts object.</returns>
-		static Fonts CreateSampleFonts()
+    /// <summary>
+    /// Tests setting sample Fonts to a new document and outputs the result to the console.
+    /// </summary>
+    /// <remarks>This method is intended for use in test scenarios to verify that document Fonts can
+    /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
+    /// inspection.</remarks>
+    /// <returns>true if the document Fonts are successfully stored and verified; otherwise, false.</returns>
+    static bool TestValidateOpenXml()
+    {
+      Console.WriteLine("--- Validate sample Fonts stored in new document against OpenXml schema ---");
+      {
+        Fonts testData = CreateSampleFonts();
+        using (var document = Document.CreateDocument("temp.docx"))
+        {
+          document.Fonts = testData;
+        }
+
+        using (var document = Document.OpenDocument("temp.docx"))
+        {
+          var openXml = document.WordprocessingDocument!.MainDocumentPart!.FontTablePart!.Fonts!.OuterXml;
+          openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",
+            "http://purl.oclc.org/ooxml/wordprocessingml/main");
+				var formattedOpenXml = FormatXmlWithLineNumbers(openXml);
+				Console.WriteLine(formattedOpenXml);
+          var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
+					if (!validationResult.IsValid)
+					{
+						Console.WriteLine("✗ OpenXml schema validation FAILED - issues found:");
+						foreach (var message in validationResult.Messages)
+						{
+							Console.WriteLine($" {message}");
+						}
+						return false;
+          }
+        }
+
+        Console.WriteLine("✓ Store sample Fonts test passed\n");
+        return true;
+      }
+    }
+
+
+    /// <summary>
+    /// Creates a sample Fonts object with various property types.
+    /// </summary>
+    /// <returns>A populated Fonts object.</returns>
+    static Fonts CreateSampleFonts()
 		{
 			var fonts = new Fonts();
 			fonts.Add(new FontDef 
@@ -266,7 +310,8 @@ namespace DocumentModel.InOpenXml.Test
           FontFamily = FontFamily.Modern,
           Pitch = FontPitch.Fixed,
           Panose = "02070309020205020404",
-          FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
+          FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000",
+					NotTrueType = true,
         });
       return fonts;
 		}
@@ -321,6 +366,45 @@ namespace DocumentModel.InOpenXml.Test
 		{
 			var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
 			return JsonSerializer.Deserialize<Fonts>(json, jsonOptions);
+		}
+
+    /// <summary>
+    /// Formats XML string with line numbers for easier debugging.
+    /// </summary>
+    /// <param name="xml"></param>
+    /// <returns></returns>
+    static string FormatXmlWithLineNumbers(string xml)
+		{
+			var xmlDoc = new XmlDocument();
+			using (var reader = XmlReader.Create(new StringReader(xml)))
+			{
+				xmlDoc.Load(reader);
+			}
+
+			var writerSettings = new XmlWriterSettings
+			{
+				Indent = true,
+				NewLineHandling = NewLineHandling.Replace,
+				NewLineChars = Environment.NewLine,
+				OmitXmlDeclaration = false
+			};
+
+			using var stringWriter = new StringWriter();
+			using (var xmlWriter = XmlWriter.Create(stringWriter, writerSettings))
+			{
+				xmlDoc.Save(xmlWriter);
+			}
+
+			var formattedXml = stringWriter.ToString();
+			var lines = formattedXml.Split(["\r\n", "\n", "\r"], StringSplitOptions.None);
+			var builder = new StringBuilder(formattedXml.Length + lines.Length * 8);
+			for (int i = 0; i < lines.Length; i++)
+			{
+				builder.Append((i + 1).ToString().PadLeft(4));
+				builder.Append(": ");
+				builder.AppendLine(lines[i]);
+			}
+			return builder.ToString();
 		}
 	}
 }

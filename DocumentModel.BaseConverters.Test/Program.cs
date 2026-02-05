@@ -17,55 +17,55 @@ internal class Program
     Console.WriteLine("║   DocumentModel BaseConverters Test Suite        ║");
     Console.WriteLine("╚══════════════════════════════════════════════════╝");
     Console.WriteLine();
-    if (!Run(BooleanConverterTest.Run))
+    if (!Exec(BooleanConverterTest.Run))
       return;
-    if (!Run(TSBooleanConverterTest.Run))
+    if (!Exec(TSBooleanConverterTest.Run))
       return;
-    if (!Run(StringConverterTest.Run))
+    if (!Exec(StringConverterTest.Run))
       return;
-    if (!Run(Int32ConverterTest.Run))
+    if (!Exec(Int32ConverterTest.Run))
       return;
-    if (!Run(Int64ConverterTest.Run))
+    if (!Exec(Int64ConverterTest.Run))
       return;
-    if (!Run(Int16ConverterTest.Run))
+    if (!Exec(Int16ConverterTest.Run))
       return;
-    if (!Run(SByteConverterTest.Run))
+    if (!Exec(SByteConverterTest.Run))
       return;
-    if (!Run(ByteConverterTest.Run))
+    if (!Exec(ByteConverterTest.Run))
       return;
-    if (!Run(UInt16ConverterTest.Run))
+    if (!Exec(UInt16ConverterTest.Run))
       return;
-    if (!Run(UInt32ConverterTest.Run))
+    if (!Exec(UInt32ConverterTest.Run))
       return;
-    if (!Run(UInt64ConverterTest.Run))
+    if (!Exec(UInt64ConverterTest.Run))
       return;
-    if (!Run(HexIntConverterTest.Run))
+    if (!Exec(HexIntConverterTest.Run))
       return;
-    if (!Run(HexLongConverterTest.Run))
+    if (!Exec(HexLongConverterTest.Run))
       return;
-    if (!Run(HexCharConverterTest.Run))
+    if (!Exec(HexCharConverterTest.Run))
       return;
-    if (!Run(StringListConverterTest.Run))
+    if (!Exec(StringListConverterTest.Run))
       return;
-    if (!Run(RgbConverterTest.Run))
+    if (!Exec(RgbConverterTest.Run))
       return;
-    if (!Run(HexBinaryConverterTest.Run))
+    if (!Exec(HexBinaryConverterTest.Run))
       return;
-    if (!Run(DecimalConverterTest.Run))
+    if (!Exec(DecimalConverterTest.Run))
       return;
-    if (!Run(SingleConverterTest.Run))
+    if (!Exec(SingleConverterTest.Run))
       return;
-    if (!Run(EnumConverterTest.Run))
+    if (!Exec(EnumConverterTest.Run))
       return;
-    if (!Run(PercentConverterTest.Run))
+    if (!Exec(PercentConverterTest.Run))
       return;
-    if (!Run(SimpleValueConverterTest.Run))
+    if (!Exec(SimpleValueConverterTest.Run))
       return;
 
     Console.WriteLine("All tests passed.");
   }
 
-  private static bool Run(Func<bool> runMethod)
+  private static bool Exec(Func<bool> runMethod)
   {
     if (!runMethod())
     {

@@ -420,6 +420,15 @@
             inspection.</remarks>
             <returns>true if the document Fonts are successfully updated and verified; otherwise, false.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.FontsTest.TestValidateOpenXml">
+            <summary>
+            Tests setting sample Fonts to a new document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document Fonts can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document Fonts are successfully stored and verified; otherwise, false.</returns>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.FontsTest.CreateSampleFonts">
             <summary>
             Creates a sample Fonts object with various property types.
@@ -453,6 +462,25 @@
             </summary>
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Fonts object, or null if deserialization fails.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.FontsTest.FormatXmlWithLineNumbers(System.String)">
+            <summary>
+            Formats XML string with line numbers for easier debugging.
+            </summary>
+            <param name="xml"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocumentModel.InOpenXml.Test.OpenXmlSchemaValidator">
+            <summary>
+            Validates generated OpenXml XML against the canonical schema set.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.Program.Exec(System.Func{System.Boolean})">
+            <summary>
+            Runs the specified test method and reports the result to the console.
+            </summary>
+            <param name="runMethod"></param>
+            <returns></returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.RsidsTest">
             <summary>

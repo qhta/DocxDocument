@@ -14,55 +14,43 @@ internal class Program
     Console.WriteLine("╚═════════════════════════════════════════════╝");
     Console.WriteLine();
 
-    if (!CorePropertiesTest.Run())
+    if (!Exec(ContentPropertiesTest.Run))
       return;
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    if (!ContentPropertiesTest.Run())
+    if (!Exec(StatisticPropertiesTest.Run))
       return;
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    if (!StatisticPropertiesTest.Run())
+    if (!Exec(CustomPropertiesTest.Run))
       return;
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    if (!CustomPropertiesTest.Run())
+    if (!Exec(DocumentSettingsTest.Run))
       return;
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    if (!DocumentSettingsTest.Run())
+    if (!Exec(RsidsTest.Run))
       return;
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    if (!RsidsTest.Run())
+    if (!Exec(FontsTest.Run))
       return;
 
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    if (!FontsTest.Run())
-      return;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
     Console.WriteLine("All tests passed.");
+  }
+
+  /// <summary>
+  /// Runs the specified test method and reports the result to the console.
+  /// </summary>
+  /// <param name="runMethod"></param>
+  /// <returns></returns>
+  public static bool Exec(Func<bool> runMethod)
+  {
+    if (!runMethod())
+    {
+      Console.WriteLine("\nSome tests failed.");
+      return false;
+    }
+    Console.WriteLine();
+    Console.WriteLine("═══════════════════════════════════════════════════════════");
+    Console.WriteLine();
+    return true;
   }
 }
 
