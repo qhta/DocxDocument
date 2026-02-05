@@ -1,4 +1,5 @@
 ﻿namespace DocumentModel;
+// ReSharper disable SpecifyACultureInStringConversionExplicitly
 
 /// <summary>
 ///   Represents a character value encoded as a hexadecimal string (2 or 4 hex digits) for use in Office Open XML documents.
@@ -36,9 +37,16 @@
 ///   </para>
 /// </remarks>
 [JsonConverter(typeof(HexCharJsonConverter))]
-public readonly partial struct HexChar : IConvertible, IEquatable<HexChar>
+public partial record HexChar : IConvertible, IEquatable<HexChar>
 {
   private readonly ushort value;
+
+  /// <summary>
+  /// Default constructor needed for XML deserialization. Initializes the HexChar with a default value of 0 (null character).
+  /// </summary>
+  public HexChar()
+  {
+  }
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="HexChar"/> struct from a hexadecimal string.
@@ -404,6 +412,16 @@ public readonly partial struct HexChar : IConvertible, IEquatable<HexChar>
   }
 
   /// <summary>
+  ///   Implicitly converts a HexChar to a 8-bit unsigned integer.
+  /// </summary>
+  /// <param name="val">A HexChar value.</param>
+  /// <returns>The underlying byte value (0-255).</returns>
+  public static implicit operator byte(HexChar val)
+  {
+    return (byte)val.value;
+  }
+
+  /// <summary>
   ///   Implicitly converts a HexChar to a 16-bit unsigned integer.
   /// </summary>
   /// <param name="val">A HexChar value.</param>
@@ -432,7 +450,7 @@ public readonly partial struct HexChar : IConvertible, IEquatable<HexChar>
   /// </returns>
   public static implicit operator uint?(HexChar? val)
   {
-    return (val is not null) ? (uint)val.Value : null;
+    return (val is not null) ? (uint)val : null;
   }
 
   /// <summary>
@@ -443,6 +461,16 @@ public readonly partial struct HexChar : IConvertible, IEquatable<HexChar>
   public static implicit operator ulong(HexChar val)
   {
     return (ulong)val.value;
+  }
+
+  /// <summary>
+  ///   Implicitly converts a 8-bit unsigned integer to a HexChar.
+  /// </summary>
+  /// <param name="val">A byte value (0-255).</param>
+  /// <returns>A HexChar representing the byte value.</returns>
+  public static implicit operator HexChar(byte val)
+  {
+    return new HexChar((ushort)val);
   }
 
   /// <summary>
@@ -515,8 +543,10 @@ public readonly partial struct HexChar : IConvertible, IEquatable<HexChar>
   /// <returns>
   ///   <see langword="true"/> if the character codes are equal; otherwise <see langword="false"/>.
   /// </returns>
-  public bool Equals(HexChar other)
+  public virtual bool Equals(HexChar? other)
   {
+    if (other == null)
+      return false;
     return value == other.value;
   }
 

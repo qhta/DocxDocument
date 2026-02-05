@@ -11,12 +11,12 @@ using System.IO;
 using System.Linq;
 
 /// <summary>
-/// Adds <c>[OpenXmlType]</c> annotations to classes that derive from Open XML-backed model types.
+/// Adds <c>[Format]</c> annotations to classes that derive from Open XML-backed model types.
 /// </summary>
 public static class AddOpenXmlTypeAttribute
 {
   /// <summary>
-  /// Processes the supplied C# file, inserting <c>[OpenXmlType]</c> attributes where needed.
+  /// Processes the supplied C# file, inserting <c>[Format]</c> attributes where needed.
   /// </summary>
   /// <param name="filePath">Absolute or relative path to the file to rewrite.</param>
   public static void Run(string filePath)
@@ -39,7 +39,7 @@ public static class AddOpenXmlTypeAttribute
 }
 
 /// <summary>
-/// Roslyn rewriter that annotates model classes with <c>[OpenXmlType]</c> metadata.
+/// Roslyn rewriter that annotates model classes with <c>[Format]</c> metadata.
 /// </summary>
 public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
 {
@@ -49,7 +49,7 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
   public bool Changed { get; private set; } = false;
 
   /// <summary>
-  /// Adds an <c>[OpenXmlType]</c> attribute to classes inheriting from Open XML model base types when missing.
+  /// Adds an <c>[Format]</c> attribute to classes inheriting from Open XML model base types when missing.
   /// </summary>
   /// <param name="classNode">The class declaration being inspected.</param>
   /// <returns>The updated class declaration, or the original when no changes are needed.</returns>
@@ -76,12 +76,12 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
 
     bool hasClassAttr = classNode.AttributeLists
       .SelectMany(al => al.Attributes)
-      .Any(attr => attr.Name.ToString().Contains("OpenXmlType"));
+      .Any(attr => attr.Name.ToString().Contains("Format"));
 
     if (!hasClassAttr)
     {
       var openXmlTypeAttr = SyntaxFactory.Attribute(
-        SyntaxFactory.IdentifierName("OpenXmlType"),
+        SyntaxFactory.IdentifierName("Format"),
         SyntaxFactory.AttributeArgumentList(
           SyntaxFactory.SingletonSeparatedList(
             SyntaxFactory.AttributeArgument(

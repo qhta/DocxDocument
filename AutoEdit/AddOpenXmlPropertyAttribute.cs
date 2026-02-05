@@ -93,7 +93,7 @@ public class AddOpenXmlPropertyAttributeRewriter(Dictionary<string, string> alia
 
       openXmlTypeName = qualifiedName;
     }
-    // Add [OpenXmlProperty(nameof(OpenXmlType.EnumPropertyName))] to each property
+    // Add [OpenXmlProperty(nameof(Format.EnumPropertyName))] to each property
     var newMembers = classNode.Members.Select(member =>
     {
       if (member is PropertyDeclarationSyntax prop)
