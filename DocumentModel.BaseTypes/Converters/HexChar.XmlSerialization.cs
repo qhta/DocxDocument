@@ -1,11 +1,6 @@
-﻿using System.Globalization;
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
+﻿namespace DocumentModel;
 
-namespace DocumentModel;
-
-public partial struct HexChar : IXmlSerializable
+public partial record HexChar : IXmlSerializable
 {
   #region IXmlSerializable Implementation
 

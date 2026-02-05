@@ -42,7 +42,7 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
 
 
   /// <summary>
-  ///   Initializes a new instance of the <see cref="ModelElement{OpenXmlType}"/> class.
+  ///   Initializes a new instance of the <see cref="ModelElement{Format}"/> class.
   /// </summary>
   protected ModelElement()
   {
@@ -81,7 +81,7 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
 
 
   /// <summary>
-  ///   Initializes a new instance of the <see cref="ModelElement{OpenXmlType}"/> class with the specified OpenXml element.
+  ///   Initializes a new instance of the <see cref="ModelElement{Format}"/> class with the specified OpenXml element.
   /// </summary>
   /// <param name="openXmlElement">The OpenXml element to wrap and synchronize with.</param>
   protected ModelElement(OpenXmlType? openXmlElement)
