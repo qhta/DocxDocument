@@ -12,6 +12,7 @@ public static class EnumConverter
     new(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
     new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
     new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
+
   ];
 
   internal static readonly ConversionToMap ConversionToMap = new();
@@ -310,6 +311,7 @@ public static class EnumConverter
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Enum? value, Type openXmlType)
   {
     if (value == null) return null;
+    if (openXmlType.Name == "FontCharSet") Debug.Assert(true);
 
     var result = (DX.OpenXmlLeafElement)Activator.CreateInstance(openXmlType)!;
     var valProp = openXmlType.GetProperty("Value") ?? openXmlType.GetProperty("Val");
