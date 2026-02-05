@@ -44,7 +44,7 @@ public static class AddOpenXmlEnumTypeAttribute
 }
 
 /// <summary>
-/// Roslyn syntax rewriter that augments enums and members with OpenXmlType/OpenXmlEnumElement attributes.
+/// Roslyn syntax rewriter that augments enums and members with Format/OpenXmlEnumElement attributes.
 /// </summary>
 /// <param name="aliasMap">Namespace aliases detected within the file being processed.</param>
 public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> aliasMap): CSharpSyntaxRewriter
@@ -68,7 +68,7 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
     List<string> enumTypeNameCandidates = new();
     string? enumTypeName = null;
     if (node.AttributeLists.SelectMany(al => al.Attributes)
-          .FirstOrDefault(attr => attr.Name.ToString().Contains("OpenXmlType", StringComparison.Ordinal)) != null)
+          .FirstOrDefault(attr => attr.Name.ToString().Contains("Format", StringComparison.Ordinal)) != null)
     {
       Console.WriteLine(node.Identifier.Text);
       return base.VisitEnumDeclaration(node);
@@ -184,10 +184,10 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
   }
 
   /// <summary>
-  /// Builds an <c>[OpenXmlType(typeof(...))]</c> attribute list for a resolved Open XML enum value type.
+  /// Builds an <c>[Format(typeof(...))]</c> attribute list for a resolved Open XML enum value type.
   /// </summary>
   /// <param name="openXmlEnumType">The Open XML enum value type to reference.</param>
-  /// <returns>An attribute list syntax node representing <c>[OpenXmlType]</c>.</returns>
+  /// <returns>An attribute list syntax node representing <c>[Format]</c>.</returns>
   private static AttributeListSyntax CreateOpenXmlTypeAttribute(Type openXmlEnumType)
   {
     try
@@ -203,7 +203,7 @@ public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> alia
       return SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attribute));
     } catch (Exception ex)
     {
-      Console.WriteLine($"Error occurred while creating OpenXmlType attribute for {openXmlEnumType}: {ex.Message}");
+      Console.WriteLine($"Error occurred while creating Format attribute for {openXmlEnumType}: {ex.Message}");
       throw;
     }
 

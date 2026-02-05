@@ -61,7 +61,7 @@ public class AnalyzeTypeMapping
   public void GenerateReport(string filePath)
   {
     using var writer = new StreamWriter(filePath);
-    writer.WriteLine("ModelType;OpenXmlType;Count");
+    writer.WriteLine("ModelType;Format;Count");
     foreach (var (mapping, count) in PropTypeMappings)
     {
       writer.WriteLine($"{mapping.ModelType};{mapping.OpenXmlType};{count}");
