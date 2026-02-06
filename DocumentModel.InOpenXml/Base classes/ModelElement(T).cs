@@ -20,6 +20,7 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   [NotMapped]
   public DXPP.WordprocessingDocument? WordprocessingDocument
   {
+    [DebuggerStepThrough]
     get
     {
       if (_WordprocessingDocument != null)

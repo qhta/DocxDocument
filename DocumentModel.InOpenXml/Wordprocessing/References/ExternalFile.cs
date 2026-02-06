@@ -10,10 +10,10 @@ namespace DocumentModel.Wordprocessing;
 //[OpenXmlUpdateData(nameof(ModelElement.UpdateData))]
 public abstract partial class ExternalFile<T> : RelationshipType<DXW.RelationshipType>
 {
-  /// <summary>
-  ///   Reference to the underlying Open XML reference relationship, if available.
-  /// </summary>
-  internal DXPP.ReferenceRelationship? ReferenceRelationship { get; private set; }
+  ///// <summary>
+  /////   Reference to the underlying Open XML reference relationship, if available.
+  ///// </summary>
+  //internal DXPP.ReferenceRelationship? ReferenceRelationship { get; private set; }
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="ExternalFile{T}"/> class with default values.
@@ -93,22 +93,27 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
   ///   Removes any old relationship with the same ID before adding the new one.
   /// </summary>
   /// <param name="openXmlElement">The Open XML element context for the update operation.</param>
-  public void UpdateUriInOpenXml(object openXmlElement)
+  public void UpdateUriInOpenXml(DX.OpenXmlElement openXmlElement)
   {
     if (Uri == null)
       return;
+
+    var parentPart = openXmlElement.GetOpenXmlPart();
+    if (parentPart == null)
+      return;
+
     var doc = WordprocessingDocument;
     if (doc == null)
       throw new InvalidOperationException($"No WordprocessingDocument is known for model element {this}");
     // Remove old relationship if present
     if (!string.IsNullOrEmpty(Id))
     {
-      var oldRel = doc.MainDocumentPart?.ExternalRelationships.FirstOrDefault(r => r.Id == Id);
+      var oldRel = parentPart.ExternalRelationships.FirstOrDefault(r => r.Id == Id);
       if (oldRel != null)
-        doc.MainDocumentPart?.DeleteExternalRelationship(oldRel.Id);
+        parentPart.DeleteExternalRelationship(oldRel.Id);
     }
 
-    var rel = doc.MainDocumentPart?.AddExternalRelationship("http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate", new Uri(Uri));
+    var rel = parentPart?.AddExternalRelationship("http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate", new Uri(Uri));
     Id = rel?.Id;
   }
 
@@ -118,7 +123,7 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
   ///   If the document or relationship is not found, the <c>Uri</c> property remains unchanged.
   /// </summary>
   /// <param name="openXmlElement">The Open XML element from which to load the relationship URI. Used as a context for the operation.</param>
-  public void LoadUriFromOpenXml(object openXmlElement)
+  public void LoadUriFromOpenXml(DX.OpenXmlElement openXmlElement)
   {
     if (openXmlElement is not DX.OpenXmlElement element)
       throw new InvalidOperationException($"OpenXmlElement expected in {nameof(LoadUriFromOpenXml)}");
@@ -131,7 +136,13 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
       throw new InvalidOperationException($"OpenXmlElement is a {openXmlElement.GetType()} but not RelationshipType");
     if (Id == null)
       throw new InvalidOperationException($"No Id property in {element} of type {element.GetType()}");
-    var foundRel = doc.MainDocumentPart?.ExternalRelationships.FirstOrDefault(r => r.Id == Id);
+
+    var openXmlPart = openXmlElement.GetOpenXmlPart();
+    if (openXmlPart == null)
+      openXmlPart = doc.MainDocumentPart;
+    if (openXmlPart == null)
+      throw new InvalidOperationException("No OpenXmlPart found for loading external relationship");
+    var foundRel = openXmlPart.ExternalRelationships.FirstOrDefault(r => r.Id == Id);
     if (foundRel == null)
       throw new InvalidOperationException($"Relationship '{Id}' not found in WordprocessingDocument");
     Uri = foundRel.Uri?.ToString();

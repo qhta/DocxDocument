@@ -64,9 +64,13 @@ public static class OpenXmlModelConverter
   /// model object and Open XML element are compatible for synchronization.</remarks>
   /// <param name="modelObject">The model object whose properties will be updated based on the Open XML element. Cannot be null.</param>
   /// <param name="openXmlElement">The Open XML element containing the data to synchronize with the model object. Cannot be null.</param>
-  /// <param name="openXmlType">The type of the Open XML element used to determine property mapping. Cannot be null.</param>
-  public static void UpdateData(object modelObject, object openXmlElement, Type openXmlType)
+  /// <param name="openXmlType">The type of the Open XML element used to determine property mapping.
+  /// If null then type of <paramref name="openXmlElement"/> will be used.</param>
+  public static void UpdateData(object modelObject, object openXmlElement, Type? openXmlType = null)
   {
+    if (openXmlType == null)
+      openXmlType = openXmlElement.GetType();
+
     var modelType = modelObject.GetType();
     var updateMethod = modelType.GetCustomAttribute<OpenXmlUpdateDataAttribute>()?.MethodName;
     if (updateMethod != null)
@@ -79,7 +83,7 @@ public static class OpenXmlModelConverter
     }
     foreach (var modelProperty in modelType.GetModelProperties())
     {
-      if (modelProperty.Name == "SummaryLength") Debug.Assert(true);
+      if (modelProperty.Name == "AttachedTemplate") Debug.Assert(true);
       UpdateData(modelObject, modelProperty, openXmlElement, openXmlType);
     }
   }
@@ -196,6 +200,7 @@ public static class OpenXmlModelConverter
     RegisterChildOrder(openXmlElement.GetType(), modelObject.GetType());
 
     openXmlElement.AppendChildUsingOrder(o);
+    UpdateData(modelValue, openXmlChildElement);
   }
 
   /// <summary>
