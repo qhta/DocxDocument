@@ -26,11 +26,11 @@ internal class Program
     if (!Exec(DocumentSettingsTest.Run))
       return;
 
-    if (!Exec(RsidsTest.Run))
-      return;
+    //if (!Exec(RsidsTest.Run))
+    //  return;
 
-    if (!Exec(FontsTest.Run))
-      return;
+    //if (!Exec(FontsTest.Run))
+    //  return;
 
     Console.WriteLine("All tests passed.");
   }

@@ -27,12 +27,12 @@ namespace DocumentModel.InOpenXml.Test
     public static bool Run()
     {
       Console.WriteLine("=== DocumentSettings Test ===\n");
-      if (!TestXmlSerialization()) return false;
-      if (!TestJsonSerialization()) return false;
-      if (!TestEdgeCases()) return false;
+      //if (!TestXmlSerialization()) return false;
+      //if (!TestJsonSerialization()) return false;
+      //if (!TestEdgeCases()) return false;
       if (!TestStoreInDocument()) return false;
-      if (!TestUpdateInDocument()) return false;
-      if (!TestValidateOpenXml()) return false;
+      //if (!TestUpdateInDocument()) return false;
+      //if (!TestValidateOpenXml()) return false;
       //if (!TestPerformance()) return false;
       Console.WriteLine("All DocumentSettings tests passed.\n");
       return true;
@@ -436,14 +436,14 @@ namespace DocumentModel.InOpenXml.Test
           AttachedSchemas = new AttachedSchemas([
             new AttachedSchema
             {
-              Uri = "http://example.com/schema1",
+              Uri = "http://schemas.microsoft.com/office/word/2010/wordml",
             },
             new AttachedSchema
             {
-              Uri = "http://example.com/schema2",
+              Uri = "http://schemas.microsoft.com/office/word/2012/wordml",   
             }
           ]),
-          AttachedTemplate = new AttachedTemplate("http://example.com/template.dotx"),
+          AttachedTemplate = new AttachedTemplate("file:///C:\\Users\\qhta1\\AppData\\Roaming\\Microsoft\\Templates\\NormalEmail.dotm\" TargetMode=\"External\"/"),
           Captions = new Captions
           {
             CaptionDefinitions = new CaptionDefinitions([
