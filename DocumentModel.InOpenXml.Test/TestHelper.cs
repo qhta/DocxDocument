@@ -85,11 +85,7 @@ public static class TestHelper
         propName = property.DeclaringType?.Name +"."+ property.Name;
         var obj1Value = property.GetValue(obj1);
         var obj2Value = property.GetValue(obj2);
-        //if (propName == "Value")
-        //{
-        //  if (!Equals(obj1Value, obj2Value))
-        //    Debug.Assert(true);
-        //}
+
         if (comparedType.IsValueType)
         {
           result = Comparer.Equals(obj1Value, obj2Value);
@@ -113,6 +109,10 @@ public static class TestHelper
               if (boolObj1Value == false && obj2Value is null)
                 continue;
             }
+            if (obj1Value is null && obj2Value is IEnumerable enumerable2 && !enumerable2.Cast<object>().Any())
+              continue;
+            if (obj2Value is null && obj1Value is IEnumerable enumerable1 && !enumerable1.Cast<object>().Any())
+              continue;
             return false;
           }
         }

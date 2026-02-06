@@ -217,6 +217,36 @@ public static class WordprocessingHelper
   }
 
   /// <summary>
+  /// Gets the OpenXmlPart associated with the specified OpenXmlElement, if available.
+  /// </summary>
+  /// <param name="element">The OpenXmlElement for which to retrieve the associated OpenXmlPart.</param>
+  /// <returns>The OpenXmlPart that contains the specified element, or null if the element is not part of an OpenXmlPart.</returns>
+  public static DXPP.OpenXmlPart? GetOpenXmlPart(this DX.OpenXmlElement element)
+  {
+    var root = element.GetRootElement();
+    if (root is DX.OpenXmlPartRootElement rootElement)
+    {
+      return rootElement.OpenXmlPart;
+    }
+    return null;
+  }
+
+  /// <summary>
+  /// Gets the root element of the OpenXmlElement, which is the topmost ancestor in the element hierarchy.
+  /// </summary>
+  /// <param name="element"></param>
+  /// <returns></returns>
+  public static DX.OpenXmlElement GetRootElement(this DX.OpenXmlElement element)
+  {
+    var current = element;
+    while (current.Parent != null)
+    {
+      current = current.Parent;
+    }
+    return current;
+  }
+
+  /// <summary>
   /// Gets the WordprocessingDocument that contains the specified OpenXmlElement.
   /// </summary>
   /// <param name="element">The OpenXmlElement to search for.</param>
