@@ -30,7 +30,7 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
   public static implicit operator Zoom(string value)
   {
     if (value.EndsWith("%"))
-      return new Zoom { Percent = value };
+      return new Zoom { Percent = int.Parse(value.TrimEnd('%')) };
     else
       return new Zoom { Preset = (PresetZoom)Enum.Parse(typeof(PresetZoom), value) };
   }

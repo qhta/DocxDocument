@@ -186,8 +186,6 @@ public static class OpenXmlModelConverter
     if (modelValue == null)
       return;
 
-    if (modelProperty.Name == "SummaryLength") Debug.Assert(true);
-
     if (openXmlChildType.IsSubclassOf(typeof(DXW.EmptyType)) && !modelValue.Equals(true))
       return;
 
@@ -195,7 +193,9 @@ public static class OpenXmlModelConverter
     if (openXmlChildElement is not DX.OpenXmlElement o)
       throw new InvalidOperationException($"Converted Open XML child element " + $"is not of type DX.OpenXmlElement for model property {modelProperty.Name}");
 
-    openXmlElement.AppendChild(o);
+    RegisterChildOrder(openXmlElement.GetType(), modelObject.GetType());
+
+    openXmlElement.AppendChildUsingOrder(o);
   }
 
   /// <summary>
@@ -229,14 +229,90 @@ public static class OpenXmlModelConverter
     foreach (var child in children)
       openXmlElement.RemoveChild(child);
     var modelElementsCollection = (IEnumerable<object>)modelValue;
+
+
+    RegisterChildOrder(openXmlElement.GetType(), modelObject.GetType());
+
     foreach (var modelElement in modelElementsCollection)
     {
       var openXmlChildElement = ConvertTo(modelElement, openXmlChildType);
       if (openXmlChildElement is not DX.OpenXmlElement o)
         throw new InvalidOperationException($"Converted Open XML child element is not of type DX.OpenXmlElement " + $"for model property {modelProperty.Name}");
 
-      openXmlElement.AppendChild(o);
+
+      openXmlElement.AppendChildUsingOrder(o);
     }
+  }
+
+  /// <summary>
+  /// This dictionary defines the order of child elements for each Open XML element type,
+  /// mapping parent types to their child types and the corresponding order index.
+  /// </summary>
+  private static readonly Dictionary<Type, Dictionary<Type, int>> ChildrenOrder = new();
+
+  private static void RegisterChildOrder(Type openXmlType, Type modelType)
+  {
+    if (!ChildrenOrder.ContainsKey(openXmlType))
+    {
+      var childOrders = new Dictionary<Type, int>();
+      foreach (var property in modelType.GetProperties())
+      {
+        Type? childType = null;
+        int propOrder = 0;
+        var openXmlElementAttribute = property.GetCustomAttribute<OpenXmlElementAttribute>();
+        if (openXmlElementAttribute != null)
+        {
+          childType = openXmlElementAttribute.OpenXmlType;
+          propOrder = openXmlElementAttribute.Order;
+        }
+        else
+        {
+          var openXmlElementCollectionAttribute = property.GetCustomAttribute<OpenXmlElementCollectionAttribute>();
+          if (openXmlElementCollectionAttribute != null)
+          {
+            childType = openXmlElementCollectionAttribute.OpenXmlType;
+            propOrder = openXmlElementCollectionAttribute.Order;
+          }
+        }
+        if (childType != null && propOrder != 0)
+        {
+          childOrders[childType] = propOrder;
+        }
+      }
+      ChildrenOrder[openXmlType] = childOrders;
+    }
+  }
+
+  /// <summary>
+  /// Appends a child element to a parent Open XML element
+  /// while maintaining the correct order of child elements as defined in the Open XML schema.
+  /// </summary>
+  /// <param name="parentElement">The parent Open XML element.</param>
+  /// <param name="child">The child Open XML element to append.</param>
+  private static void AppendChildUsingOrder(this DX.OpenXmlElement parentElement, DX.OpenXmlElement child)
+  {
+    if (child is DXW.DecimalSymbol) Debug.Assert(true);
+    if (ChildrenOrder.TryGetValue(parentElement.GetType(), out var childOrders) &&
+        childOrders.TryGetValue(child.GetType(), out var childOrder) && childOrder > 0)
+    {
+      var existingChild = parentElement.ChildElements.FirstOrDefault(c =>
+      {
+        var cType = c.GetType();
+        if (child is DXW.DecimalSymbol && cType == typeof(DXO13W.ChartTrackingRefBased)) Debug.Assert(true);
+
+        if (childOrders.TryGetValue(cType, out var order))
+        {
+          return order > childOrder;
+        }
+        return true;
+      });
+      if (existingChild != null)
+      {
+        parentElement.InsertBefore(child, existingChild);
+        return;
+      }
+    }
+    parentElement.AppendChild(child);
   }
 
   /// <summary>
@@ -284,7 +360,7 @@ public static class OpenXmlModelConverter
   /// <param name="openXmlType">The type of the Open XML element.</param>
   public static void LoadData(object modelObject, PropertyInfo modelProperty, object openXmlElement, Type openXmlType)
   {
-    if (modelProperty.Name== "AttachedSchemas") Debug.Assert(true);
+    if (modelProperty.Name == "AttachedSchemas") Debug.Assert(true);
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanRead)
     {
@@ -328,6 +404,15 @@ public static class OpenXmlModelConverter
                                         $"to model element {modelObject.GetType()}property {modelProperty.Name}");
   }
 
+  /// <summary>
+  /// Loads a child element from an Open XML element into a model object's property, based on the specified Open XML type and child type.
+  /// </summary>
+  /// <param name="modelObject">The model object to load the child element into.</param>
+  /// <param name="modelProperty">The model property to set the value of.</param>
+  /// <param name="openXmlElement">The Open XML element to load the child element from.</param>
+  /// <param name="openXmlType">The Open XML type of the element.</param>
+  /// <param name="openXmlChildType">The Open XML child type of the element.</param>
+  /// <exception cref="InvalidOperationException"></exception>
   public static void LoadChildElement(object modelObject, PropertyInfo modelProperty, DX.OpenXmlElement openXmlElement, Type openXmlType, Type? openXmlChildType)
   {
     var modelPropertyType = modelProperty.PropertyType.GetNotNullableType();
@@ -345,13 +430,21 @@ public static class OpenXmlModelConverter
     foreach (var childElement in children)
     {
       var modelValue = ConvertFrom(childElement, modelPropertyType);
-      if (modelValue!=null && !modelPropertyType.IsInstanceOfType(modelValue))
+      if (modelValue != null && !modelPropertyType.IsInstanceOfType(modelValue))
         throw new InvalidOperationException($"Converted value {modelValue} is not of type {modelPropertyType} for model property {modelProperty.Name}");
       modelProperty.SetValue(modelObject, modelValue);
       return;
     }
   }
 
+  /// <summary>
+  /// Loads a collection of child elements from an Open XML element into a model object's property, based on the specified Open XML type.
+  /// </summary>
+  /// <param name="modelObject">The model object to load the child elements into.</param>
+  /// <param name="modelProperty">The model property to set the value of.</param>
+  /// <param name="openXmlElement">The Open XML element to load the child elements from.</param>
+  /// <param name="openXmlType">The Open XML type of the element.</param>
+  /// <exception cref="InvalidOperationException"></exception>
   public static void LoadChildElementCollection(object modelObject, PropertyInfo modelProperty, DX.OpenXmlElement openXmlElement, Type openXmlType)
   {
     var modelPropertyType = modelProperty.PropertyType.GetNotNullableType();
@@ -378,12 +471,12 @@ public static class OpenXmlModelConverter
     object? modelValue = modelProperty.GetValue(modelObject);
     if (modelValue != null)
       modelClearMethod.Invoke(modelValue, []);
-    if (modelProperty.Name== "AttachedSchemas") Debug.Assert(true);
+    if (modelProperty.Name == "AttachedSchemas") Debug.Assert(true);
     var children = openXmlElement.ChildElements.Where(item => item.GetType() == openXmlChildType).ToArray();
     foreach (var openXmlChildElement in children)
     {
       var modelItem = ConvertFrom(openXmlChildElement, modelItemType);
-      if (modelItem !=null && !modelItemType.IsInstanceOfType(modelItem))
+      if (modelItem != null && !modelItemType.IsInstanceOfType(modelItem))
         throw new InvalidOperationException($"Converted model Item is not compatible to {modelItemType}");
       if (modelValue == null)
         modelValue = Activator.CreateInstance(modelPropertyType)!;

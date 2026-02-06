@@ -113,10 +113,16 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// notification.</param>
   protected void UpdateField<FieldType>(ref FieldType? field, FieldType? value, string propertyName)
   {
-    if (typeof(FieldType).Name.StartsWith("AttachedTemplate")) Debug.Assert(true);
+    if (typeof(FieldType).Name.StartsWith("AttachedSchemas")) Debug.Assert(true);
+    //if (typeof(FieldType).Name.StartsWith("HeadingPairs")) Debug.Assert(true);
 
     if (value is string stringValue && stringValue.Length == 0)
       value = default;
+    //if (value is IEnumerable enumerable && !enumerable.Cast<object>().Any() 
+    //                                    && typeof(FieldType).GetCustomAttribute<XmlIgnoreEmptyCollectionAttribute>()!=null)
+    //{
+    //  return;
+    //}
     if (!Equals(field, value))
     {
       if (field is IWordprocessingDocumentAware oldValue)

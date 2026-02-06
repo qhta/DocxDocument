@@ -40,6 +40,11 @@ public partial class Zoom : IXmlSerializable
       Percent = new Percent(content);
       Preset = null;
     }
+    else if (int.TryParse(content, out var percent))
+    {
+      Percent = percent;
+      Preset = null;
+    }
     else if (Enum.TryParse(typeof(PresetZoom), content, out var kind))
     {
       Preset = (PresetZoom)kind!;

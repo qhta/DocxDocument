@@ -5,7 +5,7 @@
 /// </summary>
 /// <remarks>This enumeration is bitwise-combinable.
 /// It decodes ExtendedFileProperties.DocumentSecurity int value.</remarks>
-[OpenXmlType(typeof(DXEP.DocumentSecurity))]
+[OpenXmlEnumType(typeof(Int32))]
 [Flags]
 public enum DocumentSecurity
 {

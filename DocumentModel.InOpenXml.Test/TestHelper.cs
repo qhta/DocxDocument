@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.Remoting;
+using System.Text;
+using System.Xml;
+
 using DocumentModel.CustomXml;
 using DocumentModel.Wordprocessing;
 
@@ -256,5 +259,45 @@ public static class TestHelper
       internalException = internalException.InnerException;
     }
     return messages.Count > 0 ? string.Join("\n", messages) : "No inner exceptions";
+  }
+
+
+  /// <summary>
+  /// Formats XML string with line numbers for easier debugging.
+  /// </summary>
+  /// <param name="xml"></param>
+  /// <returns></returns>
+  public static string FormatXmlWithLineNumbers(this string xml)
+  {
+    var xmlDoc = new XmlDocument();
+    using (var reader = XmlReader.Create(new StringReader(xml)))
+    {
+      xmlDoc.Load(reader);
+    }
+
+    var writerSettings = new XmlWriterSettings
+    {
+      Indent = true,
+      NewLineHandling = NewLineHandling.Replace,
+      NewLineChars = Environment.NewLine,
+      OmitXmlDeclaration = false
+    };
+
+    using var stringWriter = new StringWriter();
+    using (var xmlWriter = XmlWriter.Create(stringWriter, writerSettings))
+    {
+      xmlDoc.Save(xmlWriter);
+    }
+
+    var formattedXml = stringWriter.ToString();
+    var lines = formattedXml.Split(["\r\n", "\n", "\r"], StringSplitOptions.None);
+    var builder = new StringBuilder(formattedXml.Length + lines.Length * 8);
+    for (int i = 0; i < lines.Length; i++)
+    {
+      builder.Append((i + 1).ToString().PadLeft(4));
+      builder.Append(": ");
+      builder.AppendLine(lines[i]);
+    }
+    return builder.ToString();
   }
 }

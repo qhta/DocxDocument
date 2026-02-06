@@ -203,7 +203,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>The string representation of the value of this instance as specified by the provider.</returns>
   public string ToString(IFormatProvider? provider)
   {
-    return value.ToString(provider);
+    return value.ToString(provider)+"%";
   }
 
   /// <summary>

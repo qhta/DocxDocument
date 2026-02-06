@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a collection of additional schemas attached to a WordprocessingML document.
 /// This class provides access to and management of <see cref = "Schema"/> objects, enabling advanced integration and validation of custom XML data using external or supplementary XML schemas.
 /// </summary>
+[XmlIgnoreEmptyCollection]
 [OpenXmlType(typeof(DMW.AttachedSchema))]
 //[OpenXmlItem(typeof(DXW.AttachedSchema))]
 public class AttachedSchemas : ElementCollection<DMW.AttachedSchema>
