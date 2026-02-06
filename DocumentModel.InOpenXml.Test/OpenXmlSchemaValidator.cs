@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Xml;
@@ -12,7 +13,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 internal static class OpenXmlSchemaValidator
 {
-  private const string SchemaDirectory = @"d:\OneDrive\VS\Docs\OpenXML\Schema2006";
+  private const string SchemaDirectory = @"d:\OneDrive\VS\Docs\OpenXML\Schema2016";
   private static readonly Lazy<XmlSchemaSet> SchemaSet = new(LoadSchemas);
 
   public static OpenXmlValidationResult ValidateFile(string xmlFilePath)
@@ -32,6 +33,10 @@ internal static class OpenXmlSchemaValidator
     if (xmlContent == null)
       throw new ArgumentNullException(nameof(xmlContent));
 
+    xmlContent = xmlContent.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/",
+      "http://purl.oclc.org/ooxml/wordprocessingml/");
+    xmlContent = xmlContent.Replace("http://schemas.openxmlformats.org/officeDocument/2006/",
+      "http://purl.oclc.org/ooxml/officeDocument/");
     xmlContent = NormalizeXmlContent(xmlContent);
 
     return Validate(settings =>
@@ -121,6 +126,8 @@ internal static class OpenXmlSchemaValidator
                         XmlSchemaValidationFlags.ProcessSchemaLocation
     };
 
+    settings.XmlResolver = new XmlUrlResolver();
+
     settings.ValidationEventHandler += (_, args) =>
     {
       var severity = args.Severity == XmlSeverityType.Warning ? "Warning" : "Error";
@@ -142,12 +149,16 @@ internal static class OpenXmlSchemaValidator
     if (!Directory.Exists(SchemaDirectory))
       throw new DirectoryNotFoundException($"Schema folder '{SchemaDirectory}' was not found.");
 
-    var schemaSet = new XmlSchemaSet();
+    var schemaSet = new XmlSchemaSet
+    {
+      XmlResolver = new XmlUrlResolver()
+    };
 
     foreach (var schemaPath in Directory.EnumerateFiles(SchemaDirectory, "*.xsd", SearchOption.AllDirectories))
     {
       try
       {
+        Debug.WriteLine(schemaPath);
         schemaSet.Add(null, schemaPath);
       }
       catch (XmlSchemaException ex)

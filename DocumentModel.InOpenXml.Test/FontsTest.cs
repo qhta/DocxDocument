@@ -233,14 +233,13 @@ namespace DocumentModel.InOpenXml.Test
       }
     }
 
-
     /// <summary>
-    /// Tests setting sample Fonts to a new document and outputs the result to the console.
+    /// Tests validating the OpenXml generated from the document containing sample Fonts against the OpenXml schema.
     /// </summary>
-    /// <remarks>This method is intended for use in test scenarios to verify that document Fonts can
-    /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
+    /// <remarks>This method is intended for use in test scenarios to verify that the OpenXml generated from the document
+    /// containing sample Fonts adheres to the OpenXml schema. It writes status messages and the serialized properties to the console for
     /// inspection.</remarks>
-    /// <returns>true if the document Fonts are successfully stored and verified; otherwise, false.</returns>
+    /// <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
     static bool TestValidateOpenXml()
     {
       Console.WriteLine("--- Validate sample Fonts stored in new document against OpenXml schema ---");
@@ -256,7 +255,7 @@ namespace DocumentModel.InOpenXml.Test
           var openXml = document.WordprocessingDocument!.MainDocumentPart!.FontTablePart!.Fonts!.OuterXml;
           //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",
           //  "http://purl.oclc.org/ooxml/wordprocessingml/main");
-          var formattedOpenXml = FormatXmlWithLineNumbers(openXml);
+          var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
           Console.WriteLine(formattedOpenXml);
           var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
           if (!validationResult.IsValid)
@@ -274,8 +273,7 @@ namespace DocumentModel.InOpenXml.Test
         return true;
       }
     }
-
-
+    
     /// <summary>
     /// Creates a sample Fonts object with various property types.
     /// </summary>
@@ -366,45 +364,6 @@ namespace DocumentModel.InOpenXml.Test
     {
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
       return JsonSerializer.Deserialize<Fonts>(json, jsonOptions);
-    }
-
-    /// <summary>
-    /// Formats XML string with line numbers for easier debugging.
-    /// </summary>
-    /// <param name="xml"></param>
-    /// <returns></returns>
-    static string FormatXmlWithLineNumbers(string xml)
-    {
-      var xmlDoc = new XmlDocument();
-      using (var reader = XmlReader.Create(new StringReader(xml)))
-      {
-        xmlDoc.Load(reader);
-      }
-
-      var writerSettings = new XmlWriterSettings
-      {
-        Indent = true,
-        NewLineHandling = NewLineHandling.Replace,
-        NewLineChars = Environment.NewLine,
-        OmitXmlDeclaration = false
-      };
-
-      using var stringWriter = new StringWriter();
-      using (var xmlWriter = XmlWriter.Create(stringWriter, writerSettings))
-      {
-        xmlDoc.Save(xmlWriter);
-      }
-
-      var formattedXml = stringWriter.ToString();
-      var lines = formattedXml.Split(["\r\n", "\n", "\r"], StringSplitOptions.None);
-      var builder = new StringBuilder(formattedXml.Length + lines.Length * 8);
-      for (int i = 0; i < lines.Length; i++)
-      {
-        builder.Append((i + 1).ToString().PadLeft(4));
-        builder.Append(": ");
-        builder.AppendLine(lines[i]);
-      }
-      return builder.ToString();
     }
   }
 }

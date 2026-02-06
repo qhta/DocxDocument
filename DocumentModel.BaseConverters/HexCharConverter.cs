@@ -123,8 +123,6 @@ public static class HexCharConverter
   public static DX.Int32Value? ConvertToInt32Value(HexChar? value)
   {
     if (value is null) return null;
-    if (value > Int32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range for Int32");
 
     return new DX.Int32Value { Value = (Int32)value };
   }
