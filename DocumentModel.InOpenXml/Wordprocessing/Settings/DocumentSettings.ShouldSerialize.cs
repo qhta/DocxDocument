@@ -8,7 +8,7 @@ public partial class DocumentSettings
   public bool ShouldSerializeAlignBorderAndEdges() => AlignBorderAndEdges is not null;
   public bool ShouldSerializeAlwaysMergeEmptyNamespace() => AlwaysMergeEmptyNamespace is not null;
   public bool ShouldSerializeAlwaysShowPlaceholderText() => AlwaysShowPlaceholderText is not null;
-  public bool ShouldSerializeAttachedSchemas() => AttachedSchemas is not null;
+  public bool ShouldSerializeAttachedSchemas() => AttachedSchemas is not null && AttachedSchemas.Count > 0;
   public bool ShouldSerializeAttachedTemplate() => AttachedTemplate is not null;
   public bool ShouldSerializeAutoFormatOverride() => AutoFormatOverride is not null;
   public bool ShouldSerializeAutoHyphenation() => AutoHyphenation is not null;

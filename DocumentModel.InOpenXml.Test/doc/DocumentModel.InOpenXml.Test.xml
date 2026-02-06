@@ -328,6 +328,15 @@
             document format.</remarks>
             <returns>true if the document settings are stored and reloaded correctly; otherwise, false.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestUpdateInDocument">
+            <summary>
+            Tests updating and persisting document settings within a document file.
+            </summary>
+            <remarks>This method creates a sample document with specific settings, saves it, modifies the original
+            settings, and then reloads the document to verify that the stored settings remain unchanged. It outputs
+            diagnostic information to the console for verification purposes.</remarks>
+            <returns>true if the document settings are correctly stored and reloaded from the document; otherwise, false.</returns>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestPerformance">
             <summary>
             Measures and reports the performance of <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> update.
@@ -422,12 +431,12 @@
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.FontsTest.TestValidateOpenXml">
             <summary>
-            Tests setting sample Fonts to a new document and outputs the result to the console.
+            Tests validating the OpenXml generated from the document containing sample Fonts against the OpenXml schema.
             </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document Fonts can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            <remarks>This method is intended for use in test scenarios to verify that the OpenXml generated from the document
+            containing sample Fonts adheres to the OpenXml schema. It writes status messages and the serialized properties to the console for
             inspection.</remarks>
-            <returns>true if the document Fonts are successfully stored and verified; otherwise, false.</returns>
+            <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.FontsTest.CreateSampleFonts">
             <summary>
@@ -462,13 +471,6 @@
             </summary>
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Fonts object, or null if deserialization fails.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontsTest.FormatXmlWithLineNumbers(System.String)">
-            <summary>
-            Formats XML string with line numbers for easier debugging.
-            </summary>
-            <param name="xml"></param>
-            <returns></returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.OpenXmlSchemaValidator">
             <summary>
@@ -735,6 +737,13 @@
             <param name="ex">The exception from which to extract inner exception messages. Cannot be null.</param>
             <returns>A string listing the messages of all inner exceptions, each prefixed with "Inner Exception:". Returns "No inner
             exceptions" if there are none.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.FormatXmlWithLineNumbers(System.String)">
+            <summary>
+            Formats XML string with line numbers for easier debugging.
+            </summary>
+            <param name="xml"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

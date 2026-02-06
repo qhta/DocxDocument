@@ -32,7 +32,7 @@ namespace DocumentModel.InOpenXml.Test
       if (!TestEdgeCases()) return false;
       if (!TestStoreInDocument()) return false;
       if (!TestUpdateInDocument()) return false;
-
+      if (!TestValidateOpenXml()) return false;
       //if (!TestPerformance()) return false;
       Console.WriteLine("All DocumentSettings tests passed.\n");
       return true;
@@ -178,6 +178,13 @@ namespace DocumentModel.InOpenXml.Test
       return true;
     }
 
+    /// <summary>
+    /// Tests updating and persisting document settings within a document file.
+    /// </summary>
+    /// <remarks>This method creates a sample document with specific settings, saves it, modifies the original
+    /// settings, and then reloads the document to verify that the stored settings remain unchanged. It outputs
+    /// diagnostic information to the console for verification purposes.</remarks>
+    /// <returns>true if the document settings are correctly stored and reloaded from the document; otherwise, false.</returns>
     static bool TestUpdateInDocument()
     {
       Console.WriteLine("--- Update document settings stored in document---");
@@ -224,6 +231,43 @@ namespace DocumentModel.InOpenXml.Test
       return true;
     }
 
+
+    static bool TestValidateOpenXml()
+    {
+      Console.WriteLine("--- Validate sample settings stored in new document against OpenXml schema ---");
+      {
+        DocumentSettings testData = CreateSampleDocumentSettings(true);
+        using (var document = Document.CreateDocument("temp.docx"))
+        {
+          document.DocumentSettings = testData;
+        }
+
+
+
+        using (var document = Document.OpenDocument("temp.docx"))
+        {
+          var openXml = document.WordprocessingDocument!.MainDocumentPart!.DocumentSettingsPart!.Settings!.OuterXml;
+          var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
+          Console.WriteLine(formattedOpenXml);
+          var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
+          if (!validationResult.IsValid)
+          {
+            Console.WriteLine("✗ OpenXml schema validation FAILED - issues found:");
+            var errorsFound = false;
+            foreach (var message in validationResult.Messages)
+            {
+              Console.WriteLine($" {message}");
+              if (message.TrimStart().StartsWith("Error")) errorsFound = true;
+            }
+            if (errorsFound)
+              return !errorsFound;
+          }
+        }
+
+        Console.WriteLine("✓ Validate sample Fonts test passed\n");
+        return true;
+      }
+    }
     /// <summary>
     /// Measures and reports the performance of <see cref="DocumentSettings"/> update.
     /// </summary>
@@ -351,19 +395,19 @@ namespace DocumentModel.InOpenXml.Test
           PrintTwoOnOne = false,
           RemoveDateAndTime = true,
           RemovePersonalInformation = false,
-          SaveFormsData = true,
+          SaveFormsData = false,
           SaveInvalidXml = false,
-          SavePreviewPicture = true,
+          SavePreviewPicture = false,
           SaveSubsetFonts = false,
-          SaveXmlDataOnly = true,
+          SaveXmlDataOnly = false,
           ShowEnvelope = false,
           ShowXmlTags = true,
           StrictFirstAndLastChars = false,
-          StylePaneSortMethods = "alpha",
+          StylePaneSortMethods = StylePaneSortMethods.Name,
           SummaryLength = new Percent(50),
-          TrackRevisions = true,
+          TrackRevisions = false,
           UICompatibleWith97To2003 = false,
-          UpdateFieldsOnOpen = true,
+          UpdateFieldsOnOpen = false,
           UseXsltWhenSaving = false,
           View = ViewType.Print,
           Zoom = "100%", // PresetZoom.FullPage,
