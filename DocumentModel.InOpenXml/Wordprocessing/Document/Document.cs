@@ -200,6 +200,28 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   private DocumentSettings? _DocumentSettings;
 
   /// <summary>
+  /// Collection of all known document properties.
+  /// </summary>
+  public KnownProperties KnownProperties
+  {
+    get
+    {
+      if (_KnownProperties == null)
+      {
+        _KnownProperties = new KnownProperties();
+        _KnownProperties.AddRange(CoreProperties.KnownProperties);
+        _KnownProperties.AddRange(ContentProperties.KnownProperties);
+        _KnownProperties.AddRange(StatisticProperties.KnownProperties);
+        _KnownProperties.AddRange(DocumentSettings.KnownProperties);
+      }
+      return _KnownProperties!;
+    }
+    set => UpdateField(ref _KnownProperties, value, nameof(KnownProperties));
+  }
+
+  private KnownProperties? _KnownProperties;
+
+  /// <summary>
   ///   Collection of revision IDs for tracked changes in the document.
   /// </summary>
   public Rsids? Rsids
