@@ -10,10 +10,6 @@ namespace DocumentModel.Wordprocessing;
 //[OpenXmlUpdateData(nameof(ModelElement.UpdateData))]
 public abstract partial class ExternalFile<T> : RelationshipType<DXW.RelationshipType>
 {
-  ///// <summary>
-  /////   Reference to the underlying Open XML reference relationship, if available.
-  ///// </summary>
-  //internal DXPP.ReferenceRelationship? ReferenceRelationship { get; private set; }
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="ExternalFile{T}"/> class with default values.
@@ -102,10 +98,6 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
     if (parentPart == null)
       return;
 
-    var doc = WordprocessingDocument;
-    if (doc == null)
-      throw new InvalidOperationException($"No WordprocessingDocument is known for model element {this}");
-    // Remove old relationship if present
     if (!string.IsNullOrEmpty(Id))
     {
       var oldRel = parentPart.ExternalRelationships.FirstOrDefault(r => r.Id == Id);

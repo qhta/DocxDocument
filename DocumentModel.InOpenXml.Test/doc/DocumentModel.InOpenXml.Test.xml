@@ -337,6 +337,12 @@
             diagnostic information to the console for verification purposes.</remarks>
             <returns>true if the document settings are correctly stored and reloaded from the document; otherwise, false.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestValidateOpenXml">
+            <summary>
+            Tests that the XML generated for document settings stored in a document conforms to the OpenXml schema.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestPerformance">
             <summary>
             Measures and reports the performance of <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> update.

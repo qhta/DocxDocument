@@ -24,4 +24,14 @@ public interface IUpdatable
   /// <param name="openXmlElement">The Open XML element to update. Cannot be null.</param>
   public void UpdateData(object openXmlElement);
 
+  /// <summary>
+  /// Updates the updatable element with new data or changes.
+  /// </summary>
+  public void UpdateData()
+  {
+    var updatableElement = GetUpdatableElement();
+    if (updatableElement!=null)
+      UpdateData(updatableElement);
+  }
+
 }

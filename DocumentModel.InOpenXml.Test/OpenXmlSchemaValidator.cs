@@ -121,7 +121,7 @@ internal static class OpenXmlSchemaValidator
       Schemas = SchemaSet.Value,
       DtdProcessing = DtdProcessing.Ignore,
       CloseInput = true,
-      ValidationFlags = XmlSchemaValidationFlags.ReportValidationWarnings |
+      ValidationFlags = //XmlSchemaValidationFlags.ReportValidationWarnings |
                         XmlSchemaValidationFlags.ProcessInlineSchema |
                         XmlSchemaValidationFlags.ProcessSchemaLocation
     };
@@ -158,7 +158,7 @@ internal static class OpenXmlSchemaValidator
     {
       try
       {
-        Debug.WriteLine(schemaPath);
+        //Debug.WriteLine(schemaPath);
         schemaSet.Add(null, schemaPath);
       }
       catch (XmlSchemaException ex)
