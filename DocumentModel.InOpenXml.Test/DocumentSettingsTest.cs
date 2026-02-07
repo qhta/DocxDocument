@@ -195,7 +195,7 @@ namespace DocumentModel.InOpenXml.Test
       }
 
       TestHelper.ChangeTestData(testData);
-      testData.Compatibility?.CompatibilitySettings?.Add(new CompatibilitySetting{ Name="CompatibilityMode", Val="value" });
+      testData.Compatibility?.Add(new CompatibilitySetting{ Name="CompatibilityMode", Val="value" });
       DocumentSettings? storedData;
       using (var document = Document.OpenDocument("temp.docx"))
       {
@@ -242,7 +242,7 @@ namespace DocumentModel.InOpenXml.Test
       {
         DocumentSettings testData = CreateSampleDocumentSettings(true);
         TestHelper.ChangeTestData(testData);
-        testData.Compatibility?.CompatibilitySettings?.Add(new CompatibilitySetting { Name = "CompatibilityMode", Val = "value" });
+        testData.Compatibility?.Add(new CompatibilitySetting { Name = "CompatibilityMode", Val = "value" });
         using (var document = Document.CreateDocument("temp.docx"))
         {
           document.DocumentSettings = testData;
