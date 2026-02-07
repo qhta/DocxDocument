@@ -5,7 +5,17 @@ public partial class ContentProperties
   /// <summary>
   /// Known properties that can be set in this class.
   /// </summary>
-  public static KnownProperties KnownProperties { get; } = new KnownProperties(typeof(ContentProperties));
+  public static KnownProperties KnownProperties
+  {
+    get
+    {
+      if (_KnownProperties == null)
+        _KnownProperties = new KnownProperties(typeof(ContentProperties));
+      return _KnownProperties;
+    }
+  }
+
+  private static KnownProperties? _KnownProperties;
 
   /// <summary>
   ///   Specifies the name of an external document template containing format 

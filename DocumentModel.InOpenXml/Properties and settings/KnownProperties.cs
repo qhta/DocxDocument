@@ -20,11 +20,8 @@ public class KnownProperties : Dictionary<string, PropertyModel>
  /// <param name = "type">Type, which public properties are discovered and added.</param>
  public KnownProperties(Type type)
  {
-  var typeProperties = DiscoverProperties(type);
-  foreach (var item in typeProperties)
-  {
-   Add(item);
-  }
+  var discoveredProperties = DiscoverProperties(type);
+  AddRange(discoveredProperties); 
  }
 
  /// <summary>
@@ -34,6 +31,7 @@ public class KnownProperties : Dictionary<string, PropertyModel>
  /// processed. It is intended for internal use to avoid repeated reflection operations when accessing property
  /// information.</remarks>
  static readonly Dictionary<Type, Dictionary<string, PropertyModel>> _knownTypeProperties = new();
+
  /// <summary>
  /// Retrieves a dictionary of known public properties for the specified object instance.
  /// </summary>
@@ -58,7 +56,11 @@ public class KnownProperties : Dictionary<string, PropertyModel>
  {
   if (!_knownTypeProperties.TryGetValue(ofType, out var _properties))
   {
-   _properties = ofType.GetProperties().Where(item => item.Name != "Count" || item.Name != "IsReadOnly").ToDictionary(item => item.Name, item => new PropertyModel(item));
+   _properties = ofType.GetProperties().Where(prop => prop.CanWrite
+       //&& prop.Name != "Count" && prop.Name != "IsReadOnly" && prop.Name != "KnownProperties"
+       && prop.GetCustomAttribute<NotMappedAttribute>()==null
+       )
+     .ToDictionary(item => item.Name, item => new PropertyModel(item));
    _knownTypeProperties.Add(ofType, _properties);
   }
 
@@ -72,7 +74,17 @@ public class KnownProperties : Dictionary<string, PropertyModel>
  /// <param name = "item">The object to add to the collection. Must be of a supported type, such as a DocumentProperty.</param>
  public void Add(object item)
  {
-  if (item is DocumentProperty documentProperty)
-   Add(documentProperty);
+  if (item is PropertyModel propertyModel)
+     Add(propertyModel);
+ }
+
+ /// <summary>
+ /// Adds items from the existing dictionary.
+ /// </summary>
+ /// <param name = "items">Directory of property models.</param>
+ public void AddRange(Dictionary<string, PropertyModel> items)
+ {
+   foreach (var pair in items)
+     Add(pair.Key, pair.Value);
  }
 }

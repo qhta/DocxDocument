@@ -1,3 +1,5 @@
+using System.Dynamic;
+
 namespace DocumentModel;
 #pragma warning disable OOXML0001
 
@@ -6,7 +8,17 @@ public partial class CoreProperties
   /// <summary>
   ///   Provides a registry of known core property definitions for this type.
   /// </summary>
-  public static KnownProperties KnownProperties { get; } = new KnownProperties(typeof(CoreProperties));
+  public static KnownProperties KnownProperties
+  {
+    get
+    {
+      if (_KnownProperties == null) 
+        _KnownProperties = new KnownProperties(typeof(CoreProperties));
+      return _KnownProperties;
+    }
+  }
+
+  private static KnownProperties? _KnownProperties;
 
   /// <summary>
   ///   The main title of the document, typically displayed in the title bar or metadata.

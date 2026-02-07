@@ -23,7 +23,10 @@ internal class Program
     //if (!Exec(CustomPropertiesTest.Run))
     //  return;
 
-    if (!Exec(DocumentSettingsTest.Run))
+    //if (!Exec(DocumentSettingsTest.Run))
+    //  return;
+
+    if (!Exec(KnownPropertiesTest.Run))
       return;
 
     //if (!Exec(RsidsTest.Run))
