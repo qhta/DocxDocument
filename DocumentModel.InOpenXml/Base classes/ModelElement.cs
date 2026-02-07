@@ -113,7 +113,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// notification.</param>
   protected void UpdateField<FieldType>(ref FieldType? field, FieldType? value, string propertyName)
   {
-    if (typeof(FieldType).Name.StartsWith("AttachedSchemas")) Debug.Assert(true);
+    if (typeof(FieldType).Name.StartsWith("LatentStyles")) Debug.Assert(true);
     //if (typeof(FieldType).Name.StartsWith("HeadingPairs")) Debug.Assert(true);
 
     if (value is string stringValue && stringValue.Length == 0)
@@ -127,14 +127,20 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     {
       if (field is IWordprocessingDocumentAware oldValue)
         oldValue.Detach();
-      if (value is IChildItem childItem && childItem.Parent == null)
-        if (!Object.ReferenceEquals(value, this))
-          childItem.Parent = this;
+      //if (value is IChildItem childItem && childItem.Parent == null)
+      //  if (!Object.ReferenceEquals(value, this))
+      //    childItem.Parent = this;
       if (value is IWordprocessingDocumentAware newValue
           && this is IWordprocessingDocumentAware thisElement && thisElement.WordprocessingDocument != null)
         newValue.AttachAndUpdate(thisElement.WordprocessingDocument);
       field = value;
       NotifyPropertyChanged(propertyName);
+    }
+    else if (field is IWordprocessingDocumentAware updatedValue)
+    {
+      var wordprocessingDocument = updatedValue.WordprocessingDocument;
+      if (wordprocessingDocument != null)
+        updatedValue.AttachAndUpdate(wordprocessingDocument);
     }
   }
 
@@ -172,11 +178,11 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <remarks>This method maps properties from the provided Open XML element to the corresponding properties of
   /// the model element. Only writable properties are updated. Override this method in a derived class to customize the
   /// data loading behavior.</remarks>
-  /// <param name="openXmlElement">The Open XML element containing the data to load into the model element. Must be compatible with the current model
-  /// element type.</param>
-  public virtual void LoadData(object openXmlElement)
+  /// <param name="openXmlObject">The Open XML element or other object containing the data to load into the model element.
+  /// Must be compatible with the current model element type.</param>
+  public virtual void LoadData(object openXmlObject)
   {
-    OpenXmlModelConverter.LoadData(this, openXmlElement, this.GetType());
+    OpenXmlModelConverter.LoadData(this, openXmlObject, this.GetType());
   }
 
   /// <summary>
@@ -186,11 +192,12 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// element and sets its value. Derived classes can override this method to customize the update behavior. The method
   /// does not perform validation on the Open XML element; callers should ensure it is compatible with the model
   /// type.</remarks>
-  /// <param name="openXmlElement">The Open XML element to update with property values from this model. Must not be null.</param>
-  public virtual void UpdateData(object openXmlElement)
+  /// <param name="openXmlObject">The Open XML element or other object to update with property values from this model.
+  /// Must not be null.</param>
+  public virtual void UpdateData(object openXmlObject)
   {
-    var openXmlType = this.GetType().GetCustomAttribute<OpenXmlTypeAttribute>()?.Type ?? openXmlElement.GetType();
-    OpenXmlModelConverter.UpdateData(this, openXmlElement, openXmlType);
+    var openXmlType = this.GetType().GetCustomAttribute<OpenXmlTypeAttribute>()?.Type ?? openXmlObject.GetType();
+    OpenXmlModelConverter.UpdateData(this, openXmlObject, openXmlType);
   }
 
   /// <summary>
@@ -201,7 +208,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <param name="propertyName">The name of the property to update. This value cannot be null.</param>
   public virtual void UpdatePropertyData(string propertyName)
   {
-    var updatableElement = GetUpdatableOpenXmlElement();
+    var updatableElement = GetUpdatableElement();
     if (updatableElement == null)
       return;
     var modelProperty = this.GetType().GetProperty(propertyName);
@@ -220,7 +227,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// content.</remarks>
   /// <returns>An object representing the updatable Open XML element. The specific type and structure depend on the
   /// implementation in the derived class.</returns>
-  protected virtual object? GetUpdatableOpenXmlElement() => null;
+  public virtual object? GetUpdatableElement() => null;
 
 
   /// <summary>

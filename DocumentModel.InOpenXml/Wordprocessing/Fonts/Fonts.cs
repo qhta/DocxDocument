@@ -32,7 +32,7 @@ public  sealed class Fonts : ModelElementCollection<FontDef, DXW.Fonts, DXW.Font
   {
     base.AttachAndLoad(wordprocessingDocument);
     var fontTable = wordprocessingDocument.GetFontTable();
-    SetOpenXmlElement(fontTable);
+    SetUpdatableElement(fontTable);
     LoadData(fontTable);
   }
 
@@ -44,9 +44,8 @@ public  sealed class Fonts : ModelElementCollection<FontDef, DXW.Fonts, DXW.Font
   {
     base.AttachAndUpdate(wordprocessingDocument);
     var fontTable = wordprocessingDocument.GetFontTable();
-    SetOpenXmlElement(fontTable);
+    SetUpdatableElement(fontTable);
     UpdateData(fontTable);
-
   }
 
 }

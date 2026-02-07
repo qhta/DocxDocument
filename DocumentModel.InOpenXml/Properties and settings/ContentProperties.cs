@@ -43,7 +43,7 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   {
     base.AttachAndLoad(document);
     var extendedFileProperties = document.GetExtendedFileProperties();
-    SetOpenXmlElement(extendedFileProperties);
+    SetUpdatableElement(extendedFileProperties);
     LoadData(extendedFileProperties);
   }
 
@@ -55,7 +55,7 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   {
     base.AttachAndUpdate(document);
     var extendedFileProperties = document.GetExtendedFileProperties();
-    SetOpenXmlElement(extendedFileProperties);
+    SetUpdatableElement(extendedFileProperties);
     UpdateData(extendedFileProperties);
   }
 
@@ -66,7 +66,7 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   public override void Detach()
   {
     base.Detach();
-    SetOpenXmlElement(null);
+    SetUpdatableElement(null);
   }
 
 }

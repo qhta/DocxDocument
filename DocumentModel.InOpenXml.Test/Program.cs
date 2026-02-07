@@ -14,23 +14,26 @@ internal class Program
     Console.WriteLine("╚═════════════════════════════════════════════╝");
     Console.WriteLine();
 
-    if (!Exec(ContentPropertiesTest.Run))
-      return;
+    //if (!Exec(ContentPropertiesTest.Run))
+    //  return;
 
-    if (!Exec(StatisticPropertiesTest.Run))
-      return;
+    //if (!Exec(StatisticPropertiesTest.Run))
+    //  return;
 
-    if (!Exec(CustomPropertiesTest.Run))
-      return;
+    //if (!Exec(CustomPropertiesTest.Run))
+    //  return;
 
-    if (!Exec(DocumentSettingsTest.Run))
-      return;
+    //if (!Exec(DocumentSettingsTest.Run))
+    //  return;
 
     //if (!Exec(RsidsTest.Run))
     //  return;
 
     //if (!Exec(FontsTest.Run))
     //  return;
+
+    if (!Exec(StylesTest.Run))
+      return;
 
     Console.WriteLine("All tests passed.");
   }

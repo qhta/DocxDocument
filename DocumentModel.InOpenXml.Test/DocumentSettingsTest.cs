@@ -27,12 +27,12 @@ namespace DocumentModel.InOpenXml.Test
     public static bool Run()
     {
       Console.WriteLine("=== DocumentSettings Test ===\n");
-      //if (!TestXmlSerialization()) return false;
-      //if (!TestJsonSerialization()) return false;
-      //if (!TestEdgeCases()) return false;
+      if (!TestXmlSerialization()) return false;
+      if (!TestJsonSerialization()) return false;
+      if (!TestEdgeCases()) return false;
       if (!TestStoreInDocument()) return false;
-      //if (!TestUpdateInDocument()) return false;
-      //if (!TestValidateOpenXml()) return false;
+      if (!TestUpdateInDocument()) return false;
+      if (!TestValidateOpenXml()) return false;
       //if (!TestPerformance()) return false;
       Console.WriteLine("All DocumentSettings tests passed.\n");
       return true;

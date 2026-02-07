@@ -69,7 +69,7 @@ public sealed partial class CustomProperty
   get
   {
    var value = _Value;
-   var openXmlElement = GetOpenXmlElement()?.FirstChild;
+   var openXmlElement = (GetUpdatableElement() as DXCP.CustomDocumentProperty)?.FirstChild;
    if (openXmlElement != null)
    {
     _Value = value;
@@ -83,7 +83,9 @@ public sealed partial class CustomProperty
    if (value != _Value)
    {
     _Value = value;
-    var openXmlElement = GetOpenXmlElement();
+#pragma warning disable IDE0019
+    var openXmlElement = (GetUpdatableElement() as DXCP.CustomDocumentProperty);
+#pragma warning restore IDE0019
     if (openXmlElement != null)
     {
      openXmlElement.RemoveAllChildren();
@@ -161,22 +163,16 @@ public sealed partial class CustomProperty
      type = TypeHelper.GetType(value);
     if (type != null && _Value != null && _Value.ValueType != type)
     {
-     // Try to convert the value to the specified type
-     //try
-     {
       var convertedValue = _Value.ConvertTo(type);
       _Value = convertedValue;
-      var openXmlElement = GetOpenXmlElement();
+#pragma warning disable IDE0019
+      var openXmlElement = (GetUpdatableElement() as DXCP.CustomDocumentProperty);
+#pragma warning restore IDE0019
       if (openXmlElement != null)
       {
-       openXmlElement.RemoveAllChildren();
-       openXmlElement.AppendChild(convertedValue.AsVTVariant());
+        openXmlElement.RemoveAllChildren();
+        openXmlElement.AppendChild(convertedValue.AsVTVariant());
       }
-     }
-    //catch (Exception)
-    //{
-    //  //Console.WriteLine($"Error converting value of type {_Value?.GetType().FontName} to type: " + type?.FontName);
-    //}
     }
 
     NotifyPropertyChanged(nameof(Value));

@@ -8,7 +8,7 @@ namespace DocumentModel;
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
 public abstract class ElementCollection<ItemType> : ModelElement,
   IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>
-  //where ItemType : ICollectionItem
+  
 {
   private readonly ObservableCollection<ItemType> _items = new();
 
@@ -20,6 +20,27 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     _items.CollectionChanged += _items_CollectionChanged;
   }
 
+  /// <summary>
+  /// Creates a new collection with the specified parent element.
+  /// The parent element is assigned to the Parent property of this collection, establishing a hierarchical relationship
+  /// between the collection and its parent. This constructor allows for the creation of collections that are associated
+  /// with a specific parent model element, enabling structured data organization and navigation within the model.
+  /// </summary>
+  /// <param name="parent"></param>
+  protected ElementCollection(ModelElement parent): this()
+  {
+    Parent = parent;
+  }
+
+  /// <summary>
+  /// Handles the CollectionChanged event of the internal ObservableCollection.
+  /// When items are added to the collection, this method checks if the new items implement the ICollectionItem interface and,
+  /// if so, sets their Collection property to this instance of ElementCollection.
+  /// This ensures that each item in the collection has a reference back to the collection it belongs to,
+  /// which can be useful for navigation and data management purposes. 
+  /// </summary>
+  /// <param name="sender"></param>
+  /// <param name="e"></param>
   private void _items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
   {
     if (e.Action == NotifyCollectionChangedAction.Add)

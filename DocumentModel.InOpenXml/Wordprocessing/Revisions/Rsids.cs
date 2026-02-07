@@ -37,7 +37,7 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
    return;
   }
 
-  SetOpenXmlElement(rsids);
+  SetUpdatableElement(rsids);
   LoadData(rsids);
   if (rsids.RsidRoot != null)
   {
@@ -64,7 +64,7 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
    documentSettings.Append(rsids);
   }
 
-  SetOpenXmlElement(rsids);
+  SetUpdatableElement(rsids);
   UpdateData(rsids);
   if (this.Count > 0)
   {

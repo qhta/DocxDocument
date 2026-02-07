@@ -120,7 +120,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   ///   Returns the updatable Open XML element associated with this document (the underlying <see cref="DXPP.WordprocessingDocument"/>).
   /// </summary>
   /// <returns>The updatable Open XML element for this document.</returns>
-  protected override object? GetUpdatableOpenXmlElement()
+  public override object? GetUpdatableElement()
   {
     return WordprocessingDocument;
   }
@@ -230,4 +230,21 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   private Fonts? _Fonts;
+
+
+  /// <summary>
+  ///   Font table for the document, providing access to font definitions used within the document.
+  /// </summary>
+  public Styles? Styles
+  {
+    get
+    {
+      if (_Styles == null && WordprocessingDocument?.MainDocumentPart?.StyleDefinitionsPart != null)
+        _Styles = new Styles(this);
+      return _Styles;
+    }
+    set => UpdateField(ref _Styles, value, nameof(Styles));
+  }
+
+  private Styles? _Styles;
 }
