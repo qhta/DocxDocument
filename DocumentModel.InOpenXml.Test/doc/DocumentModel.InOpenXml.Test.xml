@@ -478,6 +478,27 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Fonts object, or null if deserialization fails.</returns>
         </member>
+        <member name="T:DocumentModel.InOpenXml.Test.KnownPropertiesTest">
+            <summary>
+            Provides comprehensive serialization tests for <see cref="T:DocumentModel.KnownProperties"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.KnownPropertiesTest.Run">
+            <summary>
+            Runs all serialization tests for the <see cref="T:DocumentModel.KnownProperties"/> class and reports the results to the console.
+            </summary>
+            <remarks>
+            Executes XML and JSON serialization tests, as well as edge case tests, for the <see cref="T:DocumentModel.KnownProperties"/> class.
+            Writes the progress and results to the standard output. Use this method to verify that <see cref="T:DocumentModel.KnownProperties"/> serialization behaves as expected.
+            </remarks>
+            <returns>True if all serialization tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.KnownPropertiesTest.TestKnownPropertiesList">
+            <summary>
+            Tests XML serialization and deserialization for <see cref="T:DocumentModel.KnownProperties"/>.
+            </summary>
+            <returns>True if the round-trip succeeds; otherwise, false.</returns>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test.OpenXmlSchemaValidator">
             <summary>
             Validates generated OpenXml XML against the canonical schema set.

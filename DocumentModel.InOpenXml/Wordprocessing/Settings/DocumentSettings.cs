@@ -10,6 +10,22 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.Settings))]
 public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
 {
+
+  /// <summary>
+  /// Known properties that can be set in StatisticProperties
+  /// </summary>
+  public static KnownProperties KnownProperties
+  {
+    get
+    {
+      if (_KnownProperties == null)
+        _KnownProperties = new KnownProperties(typeof(DocumentSettings));
+      return _KnownProperties;
+    }
+  }
+
+  private static KnownProperties? _KnownProperties;
+
   /// <summary>
   ///   Initializes a new instance of the <see cref="DocumentSettings"/> class with default values.
   /// </summary>
@@ -1581,11 +1597,4 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
 
   private DMM.MathProperties? _MathProperties;
 
-  /// <summary>
-  ///   Provides a registry of known property definitions for <see cref="DocumentSettings"/>.
-  /// </summary>
-  [XmlIgnore]
-  [JsonIgnore]
-  [NotMapped]
-  public static KnownProperties KnownProperties { get; } = new KnownProperties(typeof(DocumentSettings));
 }
