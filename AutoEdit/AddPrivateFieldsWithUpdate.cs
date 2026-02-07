@@ -36,7 +36,6 @@ public class AddPrivateFieldsWithUpdate
       return;
 
     var rewriter = new ModelElementPropertyRewriter();
-    if (filePath.EndsWith("LatentStyles.cs")) Debug.Assert(true);
     var newRoot = rewriter.Visit(root);
     if (rewriter.Changed)
     {

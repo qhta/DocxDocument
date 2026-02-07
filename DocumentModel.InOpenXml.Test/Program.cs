@@ -23,8 +23,8 @@ internal class Program
     //if (!Exec(CustomPropertiesTest.Run))
     //  return;
 
-    //if (!Exec(DocumentSettingsTest.Run))
-    //  return;
+    if (!Exec(DocumentSettingsTest.Run))
+      return;
 
     //if (!Exec(RsidsTest.Run))
     //  return;
@@ -32,8 +32,8 @@ internal class Program
     //if (!Exec(FontsTest.Run))
     //  return;
 
-    if (!Exec(StylesTest.Run))
-      return;
+    //if (!Exec(StylesTest.Run))
+    //  return;
 
     Console.WriteLine("All tests passed.");
   }
