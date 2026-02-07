@@ -119,6 +119,13 @@ public static class TestHelper
       }
     }
     result = true;
+    if (comparedType == typeof(string))
+    {
+      string? obj1String = obj1.ToString();
+      string? obj2String = obj2.ToString();
+      result = string.Equals(obj1String, obj2String);
+      return result;
+    }
     if (comparedType.IsEnumerable(out var itemType) && obj1 is IEnumerable obj1Enumerable
                                                     && obj2 is IEnumerable obj2Enumerable)
     {
@@ -138,7 +145,7 @@ public static class TestHelper
       {
         result = !enumerator1.MoveNext() && !enumerator2.MoveNext();
         if (!result)
-          propName = "Count()";
+          propName = $"{comparedType}.Count";
       }
       (enumerator1 as IDisposable)?.Dispose();
       (enumerator2 as IDisposable)?.Dispose();

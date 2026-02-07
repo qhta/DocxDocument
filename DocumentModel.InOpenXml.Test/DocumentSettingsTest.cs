@@ -195,6 +195,7 @@ namespace DocumentModel.InOpenXml.Test
       }
 
       TestHelper.ChangeTestData(testData);
+      testData.Compatibility?.CompatibilitySettings?.Add(new CompatibilitySetting{ Name="CompatibilityMode", Val="value" });
       DocumentSettings? storedData;
       using (var document = Document.OpenDocument("temp.docx"))
       {
@@ -231,12 +232,17 @@ namespace DocumentModel.InOpenXml.Test
       return true;
     }
 
-
+    /// <summary>
+    /// Tests that the XML generated for document settings stored in a document conforms to the OpenXml schema.
+    /// </summary>
+    /// <returns></returns>
     static bool TestValidateOpenXml()
     {
       Console.WriteLine("--- Validate sample settings stored in new document against OpenXml schema ---");
       {
         DocumentSettings testData = CreateSampleDocumentSettings(true);
+        TestHelper.ChangeTestData(testData);
+        testData.Compatibility?.CompatibilitySettings?.Add(new CompatibilitySetting { Name = "CompatibilityMode", Val = "value" });
         using (var document = Document.CreateDocument("temp.docx"))
         {
           document.DocumentSettings = testData;
@@ -440,10 +446,10 @@ namespace DocumentModel.InOpenXml.Test
             },
             new AttachedSchema
             {
-              Uri = "http://schemas.microsoft.com/office/word/2012/wordml",   
+              Uri = "http://schemas.microsoft.com/office/word/2012/wordml",
             }
           ]),
-          AttachedTemplate = new AttachedTemplate("file:///C:\\Users\\qhta1\\AppData\\Roaming\\Microsoft\\Templates\\NormalEmail.dotm\" TargetMode=\"External\"/"),
+          AttachedTemplate = new AttachedTemplate("file:///C:/Users/qhta1/AppData/Roaming/Microsoft/Templates/NormalEmail.dotm\" TargetMode=\"External\"/"),
           Captions = new Captions
           {
             CaptionDefinitions = new CaptionDefinitions([
@@ -474,6 +480,74 @@ namespace DocumentModel.InOpenXml.Test
                 Caption = "Tab.",
               }
             ])
+          },
+          Compatibility = new Compatibility
+          {
+            UseSingleBorderForContiguousCells = true,
+            WordPerfectJustification = true,
+            NoTabHangIndent = true,
+            NoLeading = true,
+            SpaceForUnderline = true,
+            NoColumnBalance = true,
+            BalanceSingleByteDoubleByteWidth = true,
+            NoExtraLineSpacing = true,
+            DoNotLeaveBackslashAlone = true,
+            UnderlineTrailingSpaces = true,
+            DoNotExpandShiftReturn = true,
+            SpacingInWholePoints = true,
+            LineWrapLikeWord6 = true,
+            PrintBodyTextBeforeHeader = true,
+            PrintColorBlackWhite = true,
+            WordPerfectSpaceWidth = true,
+            ShowBreaksInFrames = true,
+            SubFontBySize = true,
+            SuppressBottomSpacing = true,
+            SuppressTopSpacing = true,
+            SuppressSpacingAtTopOfPage = true,
+            SuppressTopSpacingWordPerfect = true,
+            SuppressSpacingBeforeAfterPageBreak = true,
+            SwapBordersFacingPages = true,
+            ConvertMailMergeEscape = true,
+            TruncateFontHeightsLikeWordPerfect = true,
+            MacWordSmallCaps = true,
+            UsePrinterMetrics = true,
+            DoNotSuppressParagraphBorders = true,
+            WrapTrailSpaces = true,
+            FootnoteLayoutLikeWord8 = true,
+            ShapeLayoutLikeWord8 = true,
+            AlignTablesRowByRow = true,
+            ForgetLastTabAlignment = true,
+            AdjustLineHeightInTable = true,
+            AutoSpaceLikeWord95 = true,
+            NoSpaceRaiseLower = true,
+            DoNotUseHTMLParagraphAutoSpacing = true,
+            LayoutRawTableWidth = true,
+            LayoutTableRowsApart = true,
+            UseWord97LineBreakRules = true,
+            DoNotBreakWrappedTables = true,
+            DoNotSnapToGridInCell = true,
+            SelectFieldWithFirstOrLastChar = true,
+            ApplyBreakingRules = true,
+            DoNotWrapTextWithPunctuation = true,
+            DoNotUseEastAsianBreakRules = true,
+            UseWord2002TableStyleRules = true,
+            GrowAutofit = true,
+            UseFarEastLayout = true,
+            UseNormalStyleForList = true,
+            DoNotUseIndentAsNumberingTabStop = true,
+            UseAltKinsokuLineBreakRules = true,
+            AllowSpaceOfSameStyleInTable = true,
+            DoNotSuppressIndentation = true,
+            DoNotAutofitConstrainedTables = true,
+            AutofitToFirstFixedWidthCell = true,
+            UnderlineTabInNumberingList = true,
+            DisplayHangulFixedWidth = true,
+            SplitPageBreakAndParagraphMark = true,
+            DoNotVerticallyAlignCellWithShape = true,
+            DoNotBreakConstrainedForcedTable = true,
+            DoNotVerticallyAlignInTextBox = true,
+            UseAnsiKerningPairs = true,
+            CachedColumnBalance = true,
           }
         };
     }

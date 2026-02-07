@@ -133,6 +133,8 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       if (value is IWordprocessingDocumentAware newValue
           && this is IWordprocessingDocumentAware thisElement && thisElement.WordprocessingDocument != null)
         newValue.AttachAndUpdate(thisElement.WordprocessingDocument);
+      else if (value is IUpdatable updatableValue)
+        updatableValue.UpdateData();
       field = value;
       NotifyPropertyChanged(propertyName);
     }
