@@ -39,7 +39,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
  /// </summary>
  /// <returns>An object representing the updatable Open XML package properties, or <see langword="null"/> if no properties are
  /// available.</returns>
- protected override object? GetUpdatableOpenXmlElement()
+ public override object? GetUpdatableElement()
  {
   if (WordprocessingDocument != null)
    return WordprocessingDocument.GetPackageProperties();
@@ -83,8 +83,8 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
  /// <remarks>This method matches properties by name between the Open XML element and the current instance.
  /// Only writable properties are set. Type conversion is performed if the property types do not match
  /// exactly.</remarks>
- /// <param name = "openXmlElement">The Open XML element containing property values to load. Must be an instance of the expected Open XML type.</param>
- public override void LoadData(object openXmlElement)
+ /// <param name = "openXmlObject">The Open XML element containing property values to load. Must be an instance of the expected Open XML type.</param>
+ public override void LoadData(object openXmlObject)
  {
   var currentType = GetType();
   var openXmlType = typeof(PackageProperties);
@@ -93,7 +93,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
    var modelProperty = currentType.GetProperty(openXmlProperty.Name);
    if (modelProperty != null && modelProperty.CanWrite)
    {
-    var openXmlValue = openXmlProperty.GetValue(openXmlElement);
+    var openXmlValue = openXmlProperty.GetValue(openXmlObject);
     if (!modelProperty.PropertyType.IsInstanceOfType(openXmlValue))
      openXmlValue = OpenXmlConverter.ConvertToOpenXml(openXmlValue, modelProperty.PropertyType.GetNotNullableType());
     modelProperty.SetValue(this, openXmlValue);
@@ -107,9 +107,9 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
  /// <remarks>This method maps the public instance properties of the current object to properties of the Open
  /// XML element with matching names. Only properties that exist and are writable on the Open XML element are updated.
  /// Property values are converted to the appropriate Open XML types as needed.</remarks>
- /// <param name = "openXmlElement">The Open XML element to update. Must be an instance of the expected Open XML type that supports writable
+ /// <param name = "openXmlObject">The Open XML element to update. Must be an instance of the expected Open XML type that supports writable
  /// properties corresponding to this model.</param>
- public override void UpdateData(object openXmlElement)
+ public override void UpdateData(object openXmlObject)
  {
   var modelType = GetType();
   var openXmlType = typeof(PackageProperties);
@@ -121,7 +121,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
     var modelValue = modelProperty.GetValue(this);
     if (!openXmlProperty.PropertyType.IsInstanceOfType(modelValue))
      modelValue = OpenXmlConverter.ConvertToOpenXml(modelValue, openXmlProperty.PropertyType);
-    openXmlProperty.SetValue(openXmlElement, modelValue);
+    openXmlProperty.SetValue(openXmlObject, modelValue);
    }
   }
  }
@@ -136,7 +136,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
  /// property defined on this instance.</param>
  public override void UpdatePropertyData(string propertyName)
  {
-  var openXmlElement = GetUpdatableOpenXmlElement();
+  var openXmlElement = GetUpdatableElement();
   if (openXmlElement == null)
    return;
   var modelProperty = this.GetType().GetProperty(propertyName);
@@ -165,7 +165,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
    modelProperty.SetValue(this, value);
   }
 
-  var updatableElement = GetUpdatableOpenXmlElement();
+  var updatableElement = GetUpdatableElement();
   if (updatableElement != null)
    UpdateData(updatableElement);
  }

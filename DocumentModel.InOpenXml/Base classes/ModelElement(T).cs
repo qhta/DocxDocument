@@ -5,7 +5,7 @@
 ///   Supports loading, updating, and detaching data from WordprocessingML or other OpenXml-based elements.
 /// </summary>
 /// <typeparam name="OpenXmlType">Specifies the type of the underlying OpenXml element being wrapped and synchronized.</typeparam>
-public abstract class ModelElement<OpenXmlType> : ModelElement, IWordprocessingDocumentAware
+public abstract class ModelElement<OpenXmlType> : ModelElement, IWordprocessingDocumentAware, IUpdatable
 where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with PackageProperties
 {
   private OpenXmlType? _openXmlElement;
@@ -20,17 +20,15 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   [NotMapped]
   public DXPP.WordprocessingDocument? WordprocessingDocument
   {
-    [DebuggerStepThrough]
+    //[DebuggerStepThrough]
     get
     {
       if (_WordprocessingDocument != null)
         return _WordprocessingDocument;
-      if (Collection != null)
-        if (Collection is IWordprocessingDocumentAware collectionAware)
-          return collectionAware.WordprocessingDocument;
-      if (Parent != null)
-        if (Parent is IWordprocessingDocumentAware parentAware)
-          return parentAware.WordprocessingDocument;
+      if (Collection is IWordprocessingDocumentAware collectionAware)
+        return collectionAware.WordprocessingDocument;
+      if (Parent is IWordprocessingDocumentAware parentAware)
+        return parentAware.WordprocessingDocument;
 
       return null;
     }
@@ -77,7 +75,7 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   public virtual void Detach()
   {
     WordprocessingDocument = null;
-    SetOpenXmlElement(null);
+    SetUpdatableElement(null);
   }
 
 
@@ -92,22 +90,19 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
 
 
   /// <summary>
-  ///   Returns the wrapped OpenXml element instance, or null if not set.
-  /// </summary>
-  /// <returns>The OpenXml element instance, or null if not set.</returns>
-  public virtual OpenXmlType? GetOpenXmlElement()
-  {
-    return _openXmlElement;
-  }
-
-
-  /// <summary>
   ///   Assigns the wrapped OpenXml element instance.
   /// </summary>
   /// <param name="element">The OpenXml element to assign.</param>
-  public virtual void SetOpenXmlElement(OpenXmlType? element)
+  public virtual void SetUpdatableElement(object? element)
   {
-    _openXmlElement = element;
+    if (element == null)
+      _openXmlElement = null;
+    else
+    if (element is OpenXmlType openXmlElement)
+      _openXmlElement = openXmlElement;
+    else
+      throw new ArgumentException(
+        $"Expected an element of type {typeof(OpenXmlType).FullName}, but received {element.GetType().FullName}.");
   }
 
 
@@ -115,7 +110,7 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   ///   Returns the OpenXml element instance for update operations, or null if not set.
   /// </summary>
   /// <returns>The OpenXml element instance, or null if not set.</returns>
-  protected override object? GetUpdatableOpenXmlElement()
+  public override object? GetUpdatableElement()
   {
     return _openXmlElement;
   }

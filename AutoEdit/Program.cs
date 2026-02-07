@@ -37,12 +37,12 @@ public static class Program
           {
             //MoveEnumType.Run(filePath);
             //GenerateShouldSerializeFunctions.Run(filePath);
-            //AddPrivateFieldsWithUpdate.Run(filePath);
+            AddPrivateFieldsWithUpdate.Run(filePath);
             //AddOpenXmlPropertyAttribute.Run(filePath);
             //AddOpenXmlEnumTypeAttribute.Run(filePath);
             //AddOpenXmlTypeAttribute.Run(filePath);
             //RemoveDuplicateDocComments.Run(filePath);
-            AddOpenXmlEnumTypeAttribute.Run(filePath);
+            //AddOpenXmlEnumTypeAttribute.Run(filePath);
           }
         }
       }
@@ -70,14 +70,18 @@ public static class Program
     var result = new List<string>();
     foreach (var file in Directory.GetFiles(path, "*.cs"))
     {
+      var directory = Path.GetDirectoryName(file)!;
       var filename = Path.GetFileNameWithoutExtension(file);
       if (filename.Equals("GlobalUsings", StringComparison.OrdinalIgnoreCase)
           || filename.Equals("Program", StringComparison.OrdinalIgnoreCase))
         continue;
       if (filename.Contains(".") && !filename.EndsWith(".Properties", StringComparison.OrdinalIgnoreCase))
         continue;
-      //if (filename.EndsWith("NonVisualDrawingShapeExtensionList"))
-      result.Add(file);
+      if (directory.EndsWith("Styles"))
+      {
+        // Include all files in the Styles directory
+        result.Add(file);
+      }
     }
     foreach (var dir in Directory.GetDirectories(path))
     {

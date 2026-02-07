@@ -279,4 +279,20 @@ public static class WordprocessingHelper
     var fonts = part.Fonts ?? (part.Fonts = new DXW.Fonts());
     return fonts;
   }
+
+
+  /// <summary>
+  /// Retrieves the Styles element for the specified Wordprocessing document, creating it if necessary.
+  /// </summary>
+  /// <param name="wordDocument">The Document instance.</param>
+  /// <returns>The Styles element.</returns>
+  public static DXW.Styles GetStyles(this DXPP.WordprocessingDocument wordDocument)
+  {
+    var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
+    var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
+    DXPP.StyleDefinitionsPart part = mainPart.StyleDefinitionsPart ?? mainPart.AddNewPart<DXPP.StyleDefinitionsPart>();
+    var Styles = part.Styles ?? (part.Styles = new DXW.Styles());
+    return Styles;
+  }
+
 }

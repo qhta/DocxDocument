@@ -34,7 +34,7 @@ public sealed class CustomProperties : ModelElementCollection<CustomProperty, DX
   {
     base.AttachAndLoad(wordprocessingDocument);
     var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
-    SetOpenXmlElement(customFileProperties);
+    SetUpdatableElement(customFileProperties);
     LoadData(customFileProperties);
   }
 
@@ -46,7 +46,7 @@ public sealed class CustomProperties : ModelElementCollection<CustomProperty, DX
   {
     base.AttachAndUpdate(wordprocessingDocument);
     var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
-    SetOpenXmlElement(customFileProperties);
+    SetUpdatableElement(customFileProperties);
     UpdateData(customFileProperties);
   }
 
