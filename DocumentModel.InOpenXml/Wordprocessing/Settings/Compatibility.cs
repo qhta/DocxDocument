@@ -11,7 +11,6 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   /// </summary>
   public Compatibility()
   {
-    _CompatibilitySettings = new CompatibilitySettings(this);
   }
 
   /// <summary>
@@ -731,4 +730,17 @@ public partial class Compatibility: ModelElement<DXW.Compatibility>
   }
 
   private CompatibilitySettings? _CompatibilitySettings;
+
+  /// <summary>
+  /// Adds a compatibility setting to the CompatibilitySettings collection.
+  /// If the collection does not exist, it will be initialized before adding the setting.
+  /// </summary>
+  /// <param name="setting"></param>
+  public void Add(CompatibilitySetting setting)
+  {
+    if (_CompatibilitySettings == null)
+      _CompatibilitySettings = new CompatibilitySettings(this);
+    _CompatibilitySettings.Add(setting);
+
+  }
 }
