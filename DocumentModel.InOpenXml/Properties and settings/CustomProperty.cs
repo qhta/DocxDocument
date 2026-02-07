@@ -1,19 +1,24 @@
 namespace DocumentModel;
+
 /// <summary>
 ///   Custom-defined document property.
 /// </summary>
 [OpenXmlType(typeof(DXCP.CustomDocumentProperty))]
-public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentProperty>
+public sealed partial class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>
 {
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  private DXCP.CustomDocumentProperty? OpenXmlCustomDocumentProperty { get => GetOpenXmlElement()!; set => SetOpenXmlElement(value); }
+  private DXCP.CustomDocumentProperty? OpenXmlCustomDocumentProperty
+  {
+    get => GetUpdatableElement() as DXCP.CustomDocumentProperty; 
+    set => SetUpdatableElement(value);
+  }
 
   /// <summary>
   /// Default constructor needed for serialization.
   /// </summary>
-  public CustomProperty() : base()
+  public CustomProperty(): base()
   {
   }
 
@@ -22,9 +27,11 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
   /// </summary>
   /// <param name = "propertiesCollection">Collection that contains this property</param>
   /// <param name = "openXmlCustomDocumentProperty">Element from the Open XML SDK representing a custom document property.</param>
-  public CustomProperty(CustomProperties propertiesCollection, DXCP.CustomDocumentProperty openXmlCustomDocumentProperty) //: base(propertiesCollection)
+  public CustomProperty
+  (CustomProperties propertiesCollection,
+    DXCP.CustomDocumentProperty openXmlCustomDocumentProperty) //: base(propertiesCollection)
   {
-    SetOpenXmlElement(openXmlCustomDocumentProperty);
+    SetUpdatableElement(openXmlCustomDocumentProperty);
     LoadData(openXmlCustomDocumentProperty);
   }
 

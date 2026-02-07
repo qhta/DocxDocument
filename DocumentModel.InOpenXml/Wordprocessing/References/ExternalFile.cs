@@ -35,8 +35,8 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
   ///   Updates the internal data by loading information from the specified Open XML element.
   ///   If the associated document is not available, no update is performed.
   /// </summary>
-  /// <param name="openXmlElement">The Open XML element from which to load data. Must represent a valid Open XML element associated with a document.</param>
-  public override void UpdateData(object openXmlElement)
+  /// <param name="openXmlObject">The Open XML element from which to load data. Must represent a valid Open XML element associated with a document.</param>
+  public override void UpdateData(object openXmlObject)
   {
     if (WordprocessingDocument != null)
       UpdateData(WordprocessingDocument);
@@ -49,7 +49,7 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
   /// <param name="document">The document from which to load data.</param>
   public override void LoadData(DXPP.WordprocessingDocument document)
   {
-    DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableOpenXmlElement();
+    DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableElement();
     if (updatedElement != null)
     {
       Id = updatedElement.Id;
@@ -68,7 +68,7 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
   /// <param name="document">The document to update with new relationship data. Cannot be null.</param>
   public override void UpdateData(DXPP.WordprocessingDocument document)
   {
-    DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableOpenXmlElement();
+    DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableElement();
     if (updatedElement != null)
     {
       updatedElement.Id = Id;

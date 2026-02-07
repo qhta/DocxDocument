@@ -6,8 +6,33 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to paragraph, character, table, and numbering styles, enabling advanced formatting and style management for document content.
 /// </summary>
 [OpenXmlType(typeof(Style))]
-public partial class DefinedStyles : ElementCollection<Style>
+public partial class DefinedStyles : ModelElementCollection<Style>
 {
+  /// <summary>
+  /// Default constructor.
+  /// </summary>
+  public DefinedStyles()
+  {
+  }
+
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
+  /// <param name = "styles"></param>
+  public DefinedStyles(Styles styles)
+  {
+    Styles = styles;
+  }
+
+  /// <summary>
+  /// Parent styles element that contains this collection of defined styles. 
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public Styles? Styles { get => _Styles; set => UpdateField(ref _Styles, value, nameof(Styles)); }
+
+  private Styles? _Styles;
 ///// <summary>
 ///// Collection of paragraph styles defined in the document, used for formatting paragraphs.
 ///// </summary>

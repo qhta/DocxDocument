@@ -53,9 +53,9 @@ public abstract partial class RelationshipType<T>: ModelElement<T> where T: DXW.
   /// </summary>
   /// <remarks>If the associated Document is not available, the method does not perform any
   /// update.</remarks>
-  /// <param name = "openXmlElement">The Open XML element from which to load data. This parameter must represent a valid Open XML element associated
+  /// <param name = "openXmlObject">The Open XML element from which to load data. This parameter must represent a valid Open XML element associated
   /// with a Document.</param>
-  public override void UpdateData(object openXmlElement)
+  public override void UpdateData(object openXmlObject)
   {
     if (WordprocessingDocument == null)
       return;
@@ -72,7 +72,7 @@ public abstract partial class RelationshipType<T>: ModelElement<T> where T: DXW.
   /// <param name = "document">The Document from which to load data.</param>
   public virtual void LoadData(DXPP.WordprocessingDocument document)
   {
-    DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableOpenXmlElement();
+    DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableElement();
     if (updatedElement != null)
     {
       Id = updatedElement.Id;
@@ -88,7 +88,7 @@ public abstract partial class RelationshipType<T>: ModelElement<T> where T: DXW.
   /// <param name = "document">The Document to update with new relationship data. Cannot be null.</param>
   public virtual void UpdateData(DXPP.WordprocessingDocument document)
   {
-    DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableOpenXmlElement();
+    DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableElement();
     if (updatedElement != null)
     {
       updatedElement.Id = Id;

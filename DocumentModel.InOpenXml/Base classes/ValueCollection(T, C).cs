@@ -55,7 +55,7 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   public virtual void Detach()
   {
     WordprocessingDocument = null;
-    SetOpenXmlElement(null);
+    SetUpdatableElement(null);
   }
 
 
@@ -108,7 +108,7 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   ///   Returns the wrapped OpenXml collection element instance, or null if not set.
   /// </summary>
   /// <returns>The OpenXml collection element instance, or null if not set.</returns>
-  public OpenXmlCollectionType? GetOpenXmlElement()
+  public override OpenXmlCollectionType? GetUpdatableElement()
   {
     return _openXmlCollection;
   }
@@ -118,32 +118,20 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   ///   Assigns the wrapped OpenXml collection element instance.
   /// </summary>
   /// <param name="element">The OpenXml collection element to assign.</param>
-  public void SetOpenXmlElement(OpenXmlCollectionType? element)
+  public void SetUpdatableElement(OpenXmlCollectionType? element)
   {
     _openXmlCollection = element;
   }
-
-
-  /// <summary>
-  ///   Returns the OpenXml collection element instance for update operations, or null if not set.
-  /// </summary>
-  /// <returns>The OpenXml collection element instance, or null if not set.</returns>
-  protected override object? GetUpdatableOpenXmlElement()
-  {
-    return _openXmlCollection;
-  }
-
-
 
   /// <summary>
   ///   Loads data from the specified OpenXml element into this value collection.
   ///   Sets the isLoading flag to true while loading data to avoid unnecessary updates by collection change events.
   /// </summary>
-  /// <param name="openXmlElement">The OpenXml element to load data from.</param>
-  public override void LoadData(object openXmlElement)
+  /// <param name="openXmlObject">The OpenXml element to load data from.</param>
+  public override void LoadData(object openXmlObject)
   {
     isLoading = true;
-    if (openXmlElement is OpenXmlCollectionType openXmlModeledElement)
+    if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {
       LoadDataCollection(openXmlModeledElement);
     }
@@ -165,10 +153,10 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   ///   Stores data from this value collection to the specified OpenXml element.
   ///   Calls the abstract <see cref="UpdateDataCollection"/> method for the actual mapping logic.
   /// </summary>
-  /// <param name="openXmlElement">The OpenXml element to store data to.</param>
-  public override void UpdateData(object openXmlElement)
+  /// <param name="openXmlObject">The OpenXml element to store data to.</param>
+  public override void UpdateData(object openXmlObject)
   {
-    if (openXmlElement is OpenXmlCollectionType openXmlModeledElement)
+    if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {
       UpdateDataCollection(openXmlModeledElement);
     }

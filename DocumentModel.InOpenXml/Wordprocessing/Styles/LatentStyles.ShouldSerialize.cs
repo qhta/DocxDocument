@@ -9,5 +9,4 @@ public partial class LatentStyles
   public bool ShouldSerializeDefaultSemiHidden() => DefaultSemiHidden is not null;
   public bool ShouldSerializeDefaultUnhideWhenUsed() => DefaultUnhideWhenUsed is not null;
   public bool ShouldSerializeDefaultPrimaryStyle() => DefaultPrimaryStyle is not null;
-  public bool ShouldSerializeTotalCount() => TotalCount is not null;
 }

@@ -30,7 +30,7 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
  {
   base.AttachAndLoad(wordprocessingDocument);
   var extendedFileProperties = wordprocessingDocument.GetExtendedFileProperties();
-  SetOpenXmlElement(extendedFileProperties);
+  SetUpdatableElement(extendedFileProperties);
   LoadData(extendedFileProperties);
  }
 
@@ -42,7 +42,7 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
  {
   base.AttachAndUpdate(wordprocessingDocument);
   var extendedFileProperties = wordprocessingDocument.GetExtendedFileProperties();
-  SetOpenXmlElement(extendedFileProperties);
+  SetUpdatableElement(extendedFileProperties);
   UpdateData(extendedFileProperties);
  }
 

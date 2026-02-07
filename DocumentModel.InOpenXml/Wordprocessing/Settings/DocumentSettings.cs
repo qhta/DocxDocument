@@ -43,7 +43,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   {
     base.AttachAndLoad(wordprocessingDocument);
     var documentSettings = wordprocessingDocument.GetDocumentSettings();
-    SetOpenXmlElement(documentSettings);
+    SetUpdatableElement(documentSettings);
     LoadData(documentSettings);
   }
 
@@ -55,7 +55,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   {
     base.AttachAndUpdate(wordprocessingDocument);
     var documentSettings = wordprocessingDocument.GetDocumentSettings();
-    SetOpenXmlElement(documentSettings);
+    SetUpdatableElement(documentSettings);
     UpdateData(documentSettings);
   }
 
