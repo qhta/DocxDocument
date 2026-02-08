@@ -12,7 +12,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
 {
 
   /// <summary>
-  /// Known properties that can be set in StatisticProperties
+  /// Known properties that can be set in DocumentSettings.
   /// </summary>
   public static KnownProperties KnownProperties
   {
@@ -367,13 +367,13 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// </remarks>
   [Category("Conformance")]
   [OpenXmlElement(typeof(DXW.Compatibility),80)]
-  public Compatibility? Compatibility
+  public CompatibilitySettings? Compatibility
   {
     get => _Compatibility;
     set => UpdateField(ref _Compatibility, value, nameof(Compatibility));
   }
 
-  private Compatibility? _Compatibility;
+  private CompatibilitySettings? _Compatibility;
 
   /// <summary>
   /// Specifies that the user was resolving conflicting edits when the document was saved.

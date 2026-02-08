@@ -95,7 +95,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
    {
     var openXmlValue = openXmlProperty.GetValue(openXmlObject);
     if (!modelProperty.PropertyType.IsInstanceOfType(openXmlValue))
-     openXmlValue = OpenXmlConverter.ConvertToOpenXml(openXmlValue, modelProperty.PropertyType.GetNotNullableType());
+     openXmlValue = OpenXmlModelConverter.ConvertTo(openXmlValue, modelProperty.PropertyType.GetNotNullableType());
     modelProperty.SetValue(this, openXmlValue);
    }
   }
@@ -120,7 +120,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
    {
     var modelValue = modelProperty.GetValue(this);
     if (!openXmlProperty.PropertyType.IsInstanceOfType(modelValue))
-     modelValue = OpenXmlConverter.ConvertToOpenXml(modelValue, openXmlProperty.PropertyType);
+     modelValue = OpenXmlModelConverter.ConvertTo(modelValue, openXmlProperty.PropertyType);
     openXmlProperty.SetValue(openXmlObject, modelValue);
    }
   }
@@ -148,7 +148,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
    return;
   var modelValue = modelProperty.GetValue(this);
   if (!openXmlProperty.PropertyType.IsInstanceOfType(modelValue))
-   modelValue = OpenXmlConverter.ConvertToOpenXml(modelValue, openXmlProperty.PropertyType);
+   modelValue = OpenXmlModelConverter.ConvertTo(modelValue, openXmlProperty.PropertyType);
   openXmlProperty.SetValue(openXmlElement, modelValue);
  }
 

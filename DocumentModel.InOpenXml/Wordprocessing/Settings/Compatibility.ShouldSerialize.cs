@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 #pragma warning disable CS1591
 
-public partial class Compatibility
+public partial class CompatibilitySettings
 {
   public bool ShouldSerializeUseSingleBorderForContiguousCells() => UseSingleBorderForContiguousCells is not null;
   public bool ShouldSerializeWordPerfectJustification() => WordPerfectJustification is not null;
@@ -69,5 +69,5 @@ public partial class Compatibility
   public bool ShouldSerializeDoNotVerticallyAlignInTextBox() => DoNotVerticallyAlignInTextBox is not null;
   public bool ShouldSerializeUseAnsiKerningPairs() => UseAnsiKerningPairs is not null;
   public bool ShouldSerializeCachedColumnBalance() => CachedColumnBalance is not null;
-  public bool ShouldSerializeCompatibilitySettings() => CompatibilitySettings is not null && CompatibilitySettings.Count>0;
+  public bool ShouldSerializeOtherSettings() => OtherSettings is not null && OtherSettings.Count>0;
 }
