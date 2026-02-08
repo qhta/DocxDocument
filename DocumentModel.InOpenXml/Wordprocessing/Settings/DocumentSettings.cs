@@ -82,7 +82,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:activeWritingStyle
   /// </remarks>
   [Category("Proofing")]
-  [OpenXmlElementCollection(typeof(DXW.ActiveWritingStyle), 22)]
+  [OpenXmlElementCollection(typeof(DXW.ActiveWritingStyle))]
   public ActiveWritingStyles? ActiveWritingStyles
   {
     get => _ActiveWritingStyles;
@@ -98,7 +98,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:alignBordersAndEdges
   /// </remarks>
   [Category("Page layout")]
-  [OpenXmlElement(typeof(DXW.AlignBorderAndEdges), 16)]
+  [OpenXmlElement(typeof(DXW.AlignBorderAndEdges))]
   public bool? AlignBorderAndEdges
   {
     get => _AlignBorderAndEdges;
@@ -114,7 +114,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:alwaysMergeEmptyNamespace
   /// </remarks>
   [Category("CustomXml")]
-  [OpenXmlElement(typeof(DXW.AlwaysMergeEmptyNamespace), 76)]
+  [OpenXmlElement(typeof(DXW.AlwaysMergeEmptyNamespace))]
   public bool? AlwaysMergeEmptyNamespace
   {
     get => _AlwaysMergeEmptyNamespace;
@@ -130,7 +130,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:alwaysShowPlaceholderText
   /// </remarks>
   [Category("CustomXml")]
-  [OpenXmlElement(typeof(DXW.AlwaysShowPlaceholderText), 70)]
+  [OpenXmlElement(typeof(DXW.AlwaysShowPlaceholderText))]
   public bool? AlwaysShowPlaceholderText
   {
     get => _AlwaysShowPlaceholderText;
@@ -146,7 +146,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:attachedSchema
   /// </remarks>
   [Category("CustomXml")]
-  [OpenXmlElementCollection(typeof(DXW.AttachedSchema), 84)]
+  [OpenXmlElementCollection(typeof(DXW.AttachedSchema))]
   public AttachedSchemas? AttachedSchemas
   {
     get => _AttachedSchemas;
@@ -162,7 +162,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:attachedTemplate
   /// </remarks>
   [Category("Template")]
-  [OpenXmlElement(typeof(DXW.AttachedTemplate), 25)]
+  [OpenXmlElement(typeof(DXW.AttachedTemplate))]
   public AttachedTemplate? AttachedTemplate
   {
     get => _AttachedTemplate;
@@ -178,7 +178,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:autoFormatOverride
   /// </remarks>
   [Category("Protection")]
-  [OpenXmlElement(typeof(DXW.AutoFormatOverride), 36)]
+  [OpenXmlElement(typeof(DXW.AutoFormatOverride))]
   public bool? AutoFormatOverride
   {
     get => _AutoFormatOverride;
@@ -194,7 +194,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:autoHyphenation
   /// </remarks>
   [Category("Hyphenation")]
-  [OpenXmlElement(typeof(DXW.AutoHyphenation), 40)]
+  [OpenXmlElement(typeof(DXW.AutoHyphenation))]
   public bool? AutoHyphenation
   {
     get => _AutoHyphenation;
@@ -210,7 +210,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:bookFoldPrinting
   /// </remarks>
   [Category("Printing")]
-  [OpenXmlElement(typeof(DXW.BookFoldPrinting), 50)]
+  [OpenXmlElement(typeof(DXW.BookFoldPrinting))]
   public bool? BookFoldPrinting
   {
     get => _BookFoldPrinting;
@@ -226,7 +226,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:bookFoldPrintingSheets
   /// </remarks>
   [Category("Printing")]
-  [OpenXmlElement(typeof(DXW.BookFoldPrintingSheets), 51)]
+  [OpenXmlElement(typeof(DXW.BookFoldPrintingSheets))]
   public short? BookFoldPrintingSheets
   {
     get => _BookFoldPrintingSheets;
@@ -242,7 +242,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:bookFoldRevPrinting
   /// </remarks>
   [Category("Printing")]
-  [OpenXmlElement(typeof(DXW.BookFoldReversePrinting),49)]
+  [OpenXmlElement(typeof(DXW.BookFoldReversePrinting))]
   public bool? BookFoldReversePrinting
   {
     get => _BookFoldReversePrinting;
@@ -258,7 +258,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:bordersDoNotSurroundFooter
   /// </remarks>
   [Category("Page layout")]
-  [OpenXmlElement(typeof(DXW.BordersDoNotSurroundFooter),18)]
+  [OpenXmlElement(typeof(DXW.BordersDoNotSurroundFooter))]
   public bool? BordersDoNotSurroundFooter
   {
     get => _BordersDoNotSurroundFooter;
@@ -274,7 +274,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:bordersDoNotSurroundHeader
   /// </remarks>
   [Category("Page layout")]
-  [OpenXmlElement(typeof(DXW.BordersDoNotSurroundHeader),17)]
+  [OpenXmlElement(typeof(DXW.BordersDoNotSurroundHeader))]
   public bool? BordersDoNotSurroundHeader
   {
     get => _BordersDoNotSurroundHeader;
@@ -290,7 +290,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:captions
   /// </remarks>
   [Category("Captions")]
-  [OpenXmlElement(typeof(DXW.Captions),90)]
+  [OpenXmlElement(typeof(DXW.Captions))]
   public Captions? Captions { get => _Captions; set => UpdateField(ref _Captions, value, nameof(Captions)); }
 
   private Captions? _Captions;
@@ -302,7 +302,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:characterSpacingControl
   /// </remarks>
   [Category("Wordprocessing")]
-  [OpenXmlElement(typeof(DXW.CharacterSpacingControl),61)]
+  [OpenXmlElement(typeof(DXW.CharacterSpacingControl))]
   public CharacterSpacing? CharacterSpacingControl
   {
     get => _CharacterSpacingControl;
@@ -334,7 +334,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:clickAndTypeStyle
   /// </remarks>
   [Category("Styling")]
-  [OpenXmlElement(typeof(DXW.ClickAndTypeStyle),46)]
+  [OpenXmlElement(typeof(DXW.ClickAndTypeStyle))]
   public string? ClickAndTypeStyle
   {
     get => _ClickAndTypeStyle;
@@ -350,7 +350,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:clrSchemeMapping
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement(typeof(DXW.ColorSchemeMapping),86)]
+  [OpenXmlElement(typeof(DXW.ColorSchemeMapping))]
   public DMWD.ColorSchemeMapping? ColorSchemeMapping
   {
     get => _ColorSchemeMapping;
@@ -366,7 +366,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:compat
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement(typeof(DXW.Compatibility),80)]
+  [OpenXmlElement(typeof(DXW.Compatibility))]
   public CompatibilitySettings? Compatibility
   {
     get => _Compatibility;
@@ -398,7 +398,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:consecutiveHyphenLimit
   /// </remarks>
   [Category("Hyphenation")]
-  [OpenXmlElement(typeof(DXW.ConsecutiveHyphenLimit),41)]
+  [OpenXmlElement(typeof(DXW.ConsecutiveHyphenLimit))]
   public ushort? ConsecutiveHyphenLimit
   {
     get => _ConsecutiveHyphenLimit;
@@ -414,7 +414,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:decimalSymbol
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement(typeof(DXW.DecimalSymbol),95)]
+  [OpenXmlElement(typeof(DXW.DecimalSymbol))]
   public string? DecimalSymbol
   {
     get => _DecimalSymbol;
@@ -446,7 +446,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:defaultTableStyle
   /// </remarks>
   [Category("Styling")]
-  [OpenXmlElement(typeof(DXW.DefaultTableStyle),47)]
+  [OpenXmlElement(typeof(DXW.DefaultTableStyle))]
   public string? DefaultTableStyle
   {
     get => _DefaultTableStyle;
@@ -462,7 +462,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:defaultTabStop
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement(typeof(DXW.DefaultTabStop),39)]
+  [OpenXmlElement(typeof(DXW.DefaultTabStop))]
   public short? DefaultTabStop
   {
     get => _DefaultTabStop;
@@ -494,7 +494,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:displayBackgroundShape
   /// </remarks>
   [Category("View")]
-  [OpenXmlElement(typeof(DXW.DisplayBackgroundShape),7)]
+  [OpenXmlElement(typeof(DXW.DisplayBackgroundShape))]
   public bool? DisplayBackgroundShape
   {
     get => _DisplayBackgroundShape;
@@ -510,7 +510,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:displayHorizontalDrawingGridEvery
   /// </remarks>
   [Category("Document grid")]
-  [OpenXmlElement(typeof(DXW.DisplayHorizontalDrawingGrid),54)]
+  [OpenXmlElement(typeof(DXW.DisplayHorizontalDrawingGrid))]
   public int? DisplayHorizontalDrawingGrid
   {
     get => _DisplayHorizontalDrawingGrid;
@@ -526,7 +526,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:displayVerticalDrawingGridEvery
   /// </remarks>
   [Category("Document grid")]
-  [OpenXmlElement(typeof(DXW.DisplayVerticalDrawingGrid),55)]
+  [OpenXmlElement(typeof(DXW.DisplayVerticalDrawingGrid))]
   public int? DisplayVerticalDrawingGrid
   {
     get => _DisplayVerticalDrawingGrid;
@@ -554,7 +554,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:documentProtection
   /// </remarks>
   [Category("Protection")]
-  [OpenXmlElement(typeof(DXW.DocumentProtection),35)]
+  [OpenXmlElement(typeof(DXW.DocumentProtection))]
   public DocumentProtection? DocumentProtection
   {
     get => _DocumentProtection;
@@ -570,7 +570,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:documentType
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement(typeof(DXW.DocumentType),29)]
+  [OpenXmlElement(typeof(DXW.DocumentType))]
   public DocumentType? DocumentType
   {
     get => _DocumentType;
@@ -586,7 +586,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:doNotAutoCompressPictures
   /// </remarks>
   [Category("Images")]
-  [OpenXmlElement(typeof(DXW.DoNotAutoCompressPictures),88)]
+  [OpenXmlElement(typeof(DXW.DoNotAutoCompressPictures))]
   public bool? DoNotAutoCompressPictures
   {
     get => _DoNotAutoCompressPictures;
@@ -602,7 +602,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:doNotDemarcateInvalidXml
   /// </remarks>
   [Category("CustomXml")]
-  [OpenXmlElement(typeof(DXW.DoNotDemarcateInvalidXml),71)]
+  [OpenXmlElement(typeof(DXW.DoNotDemarcateInvalidXml))]
   public bool? DoNotDemarcateInvalidXml
   {
     get => _DoNotDemarcateInvalidXml;
@@ -618,7 +618,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:doNotDisplayPageBoundaries
   /// </remarks>
   [Category("View")]
-  [OpenXmlElement(typeof(DXW.DoNotDisplayPageBoundaries),6)]
+  [OpenXmlElement(typeof(DXW.DoNotDisplayPageBoundaries))]
   public bool? DoNotDisplayPageBoundaries
   {
     get => _DoNotDisplayPageBoundaries;
@@ -634,7 +634,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:doNotHyphenateCaps
   /// </remarks>
   [Category("Hyphenation")]
-  [OpenXmlElement(typeof(DXW.DoNotHyphenateCaps),43)]
+  [OpenXmlElement(typeof(DXW.DoNotHyphenateCaps))]
   public bool? DoNotHyphenateCaps
   {
     get => _DoNotHyphenateCaps;
@@ -650,7 +650,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:doNotIncludeSubdocsInStats
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement(typeof(DXW.DoNotIncludeSubdocsInStats),87)]
+  [OpenXmlElement(typeof(DXW.DoNotIncludeSubdocsInStats))]
   public bool? DoNotIncludeSubdocsInStats
   {
     get => _DoNotIncludeSubdocsInStats;
@@ -666,7 +666,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:doNotShadeFormData
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement(typeof(DXW.DoNotShadeFormData),59)]
+  [OpenXmlElement(typeof(DXW.DoNotShadeFormData))]
   public bool? DoNotShadeFormData
   {
     get => _DoNotShadeFormData;
@@ -682,7 +682,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:doNotTrackFormatting
   /// </remarks>
   [Category("Tracking")]
-  [OpenXmlElement(typeof(DXW.DoNotTrackFormatting),34)]
+  [OpenXmlElement(typeof(DXW.DoNotTrackFormatting))]
   public bool? DoNotTrackFormatting
   {
     get => _DoNotTrackFormatting;
@@ -698,7 +698,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:doNotTrackMoves
   /// </remarks>
   [Category("Tracking")]
-  [OpenXmlElement(typeof(DXW.DoNotTrackMoves),33)]
+  [OpenXmlElement(typeof(DXW.DoNotTrackMoves))]
   public bool? DoNotTrackMoves
   {
     get => _DoNotTrackMoves;
@@ -714,7 +714,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:doNotUseMarginsForDrawingGridOrigin
   /// </remarks>
   [Category("Document grid")]
-  [OpenXmlElement(typeof(DXW.DoNotUseMarginsForDrawingGridOrigin),56)]
+  [OpenXmlElement(typeof(DXW.DoNotUseMarginsForDrawingGridOrigin))]
   public bool? DoNotUseMarginsForDrawingGridOrigin
   {
     get => _DoNotUseMarginsForDrawingGridOrigin;
@@ -730,7 +730,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:doNotValidateAgainstSchema
   /// </remarks>
   [Category("CustomXml")]
-  [OpenXmlElement(typeof(DXW.DoNotValidateAgainstSchema),67)]
+  [OpenXmlElement(typeof(DXW.DoNotValidateAgainstSchema))]
   public bool? DoNotValidateAgainstSchema
   {
     get => _DoNotValidateAgainstSchema;
@@ -746,7 +746,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:drawingGridHorizontalOrigin
   /// </remarks>
   [Category("Document grid")]
-  [OpenXmlElement(typeof(DXW.DrawingGridHorizontalOrigin),57)]
+  [OpenXmlElement(typeof(DXW.DrawingGridHorizontalOrigin))]
   public Twips? DrawingGridHorizontalOrigin
   {
     get => _DrawingGridHorizontalOrigin;
@@ -762,7 +762,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:drawingGridHorizontalSpacing
   /// </remarks>
   [Category("Document grid")]
-  [OpenXmlElement(typeof(DXW.DrawingGridHorizontalSpacing),52)]
+  [OpenXmlElement(typeof(DXW.DrawingGridHorizontalSpacing))]
   public Twips? DrawingGridHorizontalSpacing
   {
     get => _DrawingGridHorizontalSpacing;
@@ -778,7 +778,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:drawingGridVerticalOrigin
   /// </remarks>
   [Category("Document grid")]
-  [OpenXmlElement(typeof(DXW.DrawingGridVerticalOrigin),58)]
+  [OpenXmlElement(typeof(DXW.DrawingGridVerticalOrigin))]
   public Twips? DrawingGridVerticalOrigin
   {
     get => _DrawingGridVerticalOrigin;
@@ -794,7 +794,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:drawingGridVerticalSpacing
   /// </remarks>
   [Category("Document grid")]
-  [OpenXmlElement(typeof(DXW.DrawingGridVerticalSpacing),53)]
+  [OpenXmlElement(typeof(DXW.DrawingGridVerticalSpacing))]
   public Twips? DrawingGridVerticalSpacing
   {
     get => _DrawingGridVerticalSpacing;
@@ -810,7 +810,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:embedSystemFonts
   /// </remarks>
   [Category("Fonts")]
-  [OpenXmlElement(typeof(DXW.EmbedSystemFonts),12)]
+  [OpenXmlElement(typeof(DXW.EmbedSystemFonts))]
   public bool? EmbedSystemFonts
   {
     get => _EmbedSystemFonts;
@@ -826,7 +826,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:embedTrueTypeFonts
   /// </remarks>
   [Category("Fonts")]
-  [OpenXmlElement(typeof(DXW.EmbedTrueTypeFonts),11)]
+  [OpenXmlElement(typeof(DXW.EmbedTrueTypeFonts))]
   public bool? EmbedTrueTypeFonts
   {
     get => _EmbedTrueTypeFonts;
@@ -839,7 +839,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the endnote properties for the document.
   /// </summary>
   [Category("Footnotes and endnotes")]
-  [OpenXmlElement(typeof(DXW.EndnoteDocumentWideProperties),79)]
+  [OpenXmlElement(typeof(DXW.EndnoteDocumentWideProperties))]
   public EndnoteDocumentWideProperties? EndnoteDocumentWideProperties
   {
     get => _EndnoteDocumentWideProperties;
@@ -855,7 +855,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:evenAndOddHeaders
   /// </remarks>
   [Category("Pagination")]
-  [OpenXmlElement(typeof(DXW.EvenAndOddHeaders),48)]
+  [OpenXmlElement(typeof(DXW.EvenAndOddHeaders))]
   public bool? EvenAndOddHeaders
   {
     get => _EvenAndOddHeaders;
@@ -868,7 +868,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the footnote properties for the document.
   /// </summary>
   [Category("Footnotes and endnotes")]
-  [OpenXmlElement(typeof(DXW.FootnoteDocumentWideProperties),78)]
+  [OpenXmlElement(typeof(DXW.FootnoteDocumentWideProperties))]
   public FootnoteDocumentWideProperties? FootnoteDocumentWideProperties
   {
     get => _FootnoteDocumentWideProperties;
@@ -884,7 +884,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:forceUpgrade
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement(typeof(DXW.ForceUpgrade),89)]
+  [OpenXmlElement(typeof(DXW.ForceUpgrade))]
   public bool? ForceUpgrade
   {
     get => _ForceUpgrade;
@@ -900,7 +900,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:formsDesign
   /// </remarks>
   [Category("Forms")]
-  [OpenXmlElement(typeof(DXW.FormsDesign),24)]
+  [OpenXmlElement(typeof(DXW.FormsDesign))]
   public bool? FormsDesign { get => _FormsDesign; set => UpdateField(ref _FormsDesign, value, nameof(FormsDesign)); }
 
   private bool? _FormsDesign;
@@ -912,7 +912,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:gutterAtTop
   /// </remarks>
   [Category("Printing")]
-  [OpenXmlElement(typeof(DXW.GutterAtTop),19)]
+  [OpenXmlElement(typeof(DXW.GutterAtTop))]
   public bool? GutterAtTop { get => _GutterAtTop; set => UpdateField(ref _GutterAtTop, value, nameof(GutterAtTop)); }
 
   private bool? _GutterAtTop;
@@ -937,7 +937,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:hideGrammaticalErrors
   /// </remarks>
   [Category("Proofing")]
-  [OpenXmlElement(typeof(DXW.HideGrammaticalErrors),21)]
+  [OpenXmlElement(typeof(DXW.HideGrammaticalErrors))]
   public bool? HideGrammaticalErrors
   {
     get => _HideGrammaticalErrors;
@@ -953,7 +953,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:hideSpellingErrors
   /// </remarks>
   [Category("Proofing")]
-  [OpenXmlElement(typeof(DXW.HideSpellingErrors),20)]
+  [OpenXmlElement(typeof(DXW.HideSpellingErrors))]
   public bool? HideSpellingErrors
   {
     get => _HideSpellingErrors;
@@ -969,7 +969,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:hyphenationZone
   /// </remarks>
   [Category("Hyphenation")]
-  [OpenXmlElement(typeof(DXW.HyphenationZone),42)]
+  [OpenXmlElement(typeof(DXW.HyphenationZone))]
   public Twips? HyphenationZone
   {
     get => _HyphenationZone;
@@ -985,7 +985,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:ignoreMixedContent
   /// </remarks>
   [Category("CustomXml")]
-  [OpenXmlElement(typeof(DXW.IgnoreMixedContent),69)]
+  [OpenXmlElement(typeof(DXW.IgnoreMixedContent))]
   public bool? IgnoreMixedContent
   {
     get => _IgnoreMixedContent;
@@ -1001,7 +1001,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:linkStyles
   /// </remarks>
   [Category("Styling")]
-  [OpenXmlElement(typeof(DXW.LinkStyles),26)]
+  [OpenXmlElement(typeof(DXW.LinkStyles))]
   public bool? LinkStyles { get => _LinkStyles; set => UpdateField(ref _LinkStyles, value, nameof(LinkStyles)); }
 
   private bool? _LinkStyles;
@@ -1013,7 +1013,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:listSeparator
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement(typeof(DXW.ListSeparator),96)]
+  [OpenXmlElement(typeof(DXW.ListSeparator))]
   public string? ListSeparator
   {
     get => _ListSeparator;
@@ -1029,7 +1029,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:mirrorMargins
   /// </remarks>
   [Category("Pagination")]
-  [OpenXmlElement(typeof(DXW.MirrorMargins),15)]
+  [OpenXmlElement(typeof(DXW.MirrorMargins))]
   public bool? MirrorMargins
   {
     get => _MirrorMargins;
@@ -1042,7 +1042,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the set of characters restricted from ending a line for custom line breaking logic.
   /// </summary>
   [Category("Multilanguage")]
-  [OpenXmlElement(typeof(DXW.NoLineBreaksAfterKinsoku),64)]
+  [OpenXmlElement(typeof(DXW.NoLineBreaksAfterKinsoku))]
   public NoLineBreaksAfterKinsoku? NoLineBreaksAfterKinsoku
   {
     get => _NoLineBreaksAfterKinsoku;
@@ -1055,7 +1055,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the set of characters restricted from beginning a new line for custom line breaking logic.
   /// </summary>
   [Category("Multilanguage")]
-  [OpenXmlElement(typeof(DXW.NoLineBreaksBeforeKinsoku),65)]
+  [OpenXmlElement(typeof(DXW.NoLineBreaksBeforeKinsoku))]
   public NoLineBreaksBeforeKinsoku? NoLineBreaksBeforeKinsoku
   {
     get => _NoLineBreaksBeforeKinsoku;
@@ -1071,7 +1071,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:noPunctuationKerning
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement(typeof(DXW.NoPunctuationKerning),60)]
+  [OpenXmlElement(typeof(DXW.NoPunctuationKerning))]
   public bool? NoPunctuationKerning
   {
     get => _NoPunctuationKerning;
@@ -1103,7 +1103,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:printFormsData
   /// </remarks>
   [Category("Printing")]
-  [OpenXmlElement(typeof(DXW.PrintFormsData),10)]
+  [OpenXmlElement(typeof(DXW.PrintFormsData))]
   public bool? PrintFormsData
   {
     get => _PrintFormsData;
@@ -1119,7 +1119,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:printFractionalCharacterWidth
   /// </remarks>
   [Category("Printing")]
-  [OpenXmlElement(typeof(DXW.PrintFractionalCharacterWidth),9)]
+  [OpenXmlElement(typeof(DXW.PrintFractionalCharacterWidth))]
   public bool? PrintFractionalCharacterWidth
   {
     get => _PrintFractionalCharacterWidth;
@@ -1135,7 +1135,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:printPostScriptOverText
   /// </remarks>
   [Category("Printing")]
-  [OpenXmlElement(typeof(DXW.PrintPostScriptOverText),8)]
+  [OpenXmlElement(typeof(DXW.PrintPostScriptOverText))]
   public bool? PrintPostScriptOverText
   {
     get => _PrintPostScriptOverText;
@@ -1151,7 +1151,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:printTwoOnOne
   /// </remarks>
   [Category("Printing")]
-  [OpenXmlElement(typeof(DXW.PrintTwoOnOne),62)]
+  [OpenXmlElement(typeof(DXW.PrintTwoOnOne))]
   public bool? PrintTwoOnOne
   {
     get => _PrintTwoOnOne;
@@ -1167,7 +1167,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:proofState
   /// </remarks>
   [Category("Proofing")]
-  [OpenXmlElement(typeof(DXW.ProofState),23)]
+  [OpenXmlElement(typeof(DXW.ProofState))]
   public ProofState? ProofState { get => _ProofState; set => UpdateField(ref _ProofState, value, nameof(ProofState)); }
 
   private ProofState? _ProofState;
@@ -1176,7 +1176,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the exact set of page and text sizing parameters for displaying the document, used for ink annotations.
   /// </summary>
   [Category("View")]
-  [OpenXmlElement(typeof(DMWD.ReadModeInkLockDown),91)]
+  [OpenXmlElement(typeof(DMWD.ReadModeInkLockDown))]
   public DMWD.ReadModeInkLockDown? ReadModeInkLockDown
   {
     get => _ReadModeInkLockDown;
@@ -1192,7 +1192,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:removeDateAndTime
   /// </remarks>
   [Category("Saving")]
-  [OpenXmlElement(typeof(DXW.RemoveDateAndTime),5)]
+  [OpenXmlElement(typeof(DXW.RemoveDateAndTime))]
   public bool? RemoveDateAndTime
   {
     get => _RemoveDateAndTime;
@@ -1208,7 +1208,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:removePersonalInformation
   /// </remarks>
   [Category("Saving")]
-  [OpenXmlElement(typeof(DXW.RemovePersonalInformation),4)]
+  [OpenXmlElement(typeof(DXW.RemovePersonalInformation))]
   public bool? RemovePersonalInformation
   {
     get => _RemovePersonalInformation;
@@ -1224,7 +1224,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:revisionView
   /// </remarks>
   [Category("View")]
-  [OpenXmlElement(typeof(RevisionView),31)]
+  [OpenXmlElement(typeof(RevisionView))]
   public RevisionView? RevisionView
   {
     get => _RevisionView;
@@ -1240,7 +1240,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:saveFormsData
   /// </remarks>
   [Category("Saving")]
-  [OpenXmlElement(typeof(DXW.SaveFormsData),14)]
+  [OpenXmlElement(typeof(DXW.SaveFormsData))]
   public bool? SaveFormsData
   {
     get => _SaveFormsData;
@@ -1256,7 +1256,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:saveInvalidXml
   /// </remarks>
   [Category("Saving")]
-  [OpenXmlElement(typeof(DXW.SaveInvalidXml),68)]
+  [OpenXmlElement(typeof(DXW.SaveInvalidXml))]
   public bool? SaveInvalidXml
   {
     get => _SaveInvalidXml;
@@ -1272,7 +1272,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:savePreviewPicture
   /// </remarks>
   [Category("Saving")]
-  [OpenXmlElement(typeof(DXW.SavePreviewPicture),66)]
+  [OpenXmlElement(typeof(DXW.SavePreviewPicture))]
   public bool? SavePreviewPicture
   {
     get => _SavePreviewPicture;
@@ -1288,7 +1288,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:saveSubsetFonts
   /// </remarks>
   [Category("Saving")]
-  [OpenXmlElement(typeof(DXW.SaveSubsetFonts),13)]
+  [OpenXmlElement(typeof(DXW.SaveSubsetFonts))]
   public bool? SaveSubsetFonts
   {
     get => _SaveSubsetFonts;
@@ -1301,7 +1301,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the location of a custom XSL transform to be used when saving as a single XML file.
   /// </summary>
   [Category("Saving")]
-  [OpenXmlElement(typeof(SaveThroughXslt),74)]
+  [OpenXmlElement(typeof(SaveThroughXslt))]
   public SaveThroughXslt? SaveThroughXslt
   {
     get => _SaveThroughXslt;
@@ -1314,7 +1314,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies that only custom XML markup is saved as an XML file.
   /// </summary>
   [Category("Saving")]
-  [OpenXmlElement(typeof(DXW.SaveXmlDataOnly),72)] 
+  [OpenXmlElement(typeof(DXW.SaveXmlDataOnly))] 
   public bool? SaveXmlDataOnly
   {
     get => _SaveXmlDataOnly;
@@ -1327,7 +1327,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the set of XML namespaces associated with custom XML markup in the document.
   /// </summary>
   [Category("CustomXml")]
-  [OpenXmlElement(typeof(DXCXSR.SchemaLibrary),93)]
+  [OpenXmlElement(typeof(DXCXSR.SchemaLibrary))]
   public SchemaLibrary? SchemaLibrary
   {
     get => _SchemaLibrary;
@@ -1357,7 +1357,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:showEnvelope
   /// </remarks>
   [Category("Mailing")]
-  [OpenXmlElement(typeof(DXW.ShowEnvelope),44)]
+  [OpenXmlElement(typeof(DXW.ShowEnvelope))]
   public bool? ShowEnvelope
   {
     get => _ShowEnvelope;
@@ -1373,7 +1373,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:showXMLTags
   /// </remarks>
   [Category("View")]
-  [OpenXmlElement(typeof(DXW.ShowXmlTags),75)]
+  [OpenXmlElement(typeof(DXW.ShowXmlTags))]
   public bool? ShowXmlTags { get => _ShowXmlTags; set => UpdateField(ref _ShowXmlTags, value, nameof(ShowXmlTags)); }
 
   private bool? _ShowXmlTags;
@@ -1385,7 +1385,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:strictFirstAndLastChars
   /// </remarks>
   [Category("Multilanguage")]
-  [OpenXmlElement(typeof(DXW.StrictFirstAndLastChars),63)]
+  [OpenXmlElement(typeof(DXW.StrictFirstAndLastChars))]
   public bool? StrictFirstAndLastChars
   {
     get => _StrictFirstAndLastChars;
@@ -1398,7 +1398,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies suggested filters to be applied to the list of document styles in the application UI.
   /// </summary>
   [Category("StylePane")]
-  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter),27)]
+  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
   public StylePaneFormatFilter? StylePaneFormatFilter
   {
     get => _StylePaneFormatFilter;
@@ -1414,7 +1414,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:stylePaneSortMethod
   /// </remarks>
   [Category("StylePane")]
-  [OpenXmlElement(typeof(DXW.StylePaneSortMethods),28)]
+  [OpenXmlElement(typeof(DXW.StylePaneSortMethods))]
   public StylePaneSortMethods? StylePaneSortMethods
   {
     get => _StylePaneSortMethods;
@@ -1435,7 +1435,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Performing an automatic document summary is a runtime operation outside the scope of /IEC 29500.
   /// </remarks>
   [Category("Automation")]
-  [OpenXmlElement(typeof(DXW.SummaryLength),45)]
+  [OpenXmlElement(typeof(DXW.SummaryLength))]
   public Percent? SummaryLength
   {
     get => _SummaryLength;
@@ -1448,7 +1448,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the language used to determine theme fonts in the document's Theme part.
   /// </summary>
   [Category("Theme")]
-  [OpenXmlElement(typeof(DXW.ThemeFontLanguages),85)]
+  [OpenXmlElement(typeof(DXW.ThemeFontLanguages))]
   public Languages? ThemeFontLanguages
   {
     get => _ThemeFontLanguages;
@@ -1464,7 +1464,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:trackRevisions
   /// </remarks>
   [Category("Tracking")]
-  [OpenXmlElement(typeof(DXW.TrackRevisions),32)]
+  [OpenXmlElement(typeof(DXW.TrackRevisions))]
   public bool? TrackRevisions
   {
     get => _TrackRevisions;
@@ -1480,7 +1480,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:uiCompat97To2003
   /// </remarks>
   [Category("Conformance")]
-  [OpenXmlElement(typeof(DXW.UICompatibleWith97To2003),97)]
+  [OpenXmlElement(typeof(DXW.UICompatibleWith97To2003))]
   public bool? UICompatibleWith97To2003
   {
     get => _UICompatibleWith97To2003;
@@ -1496,7 +1496,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:updateFields
   /// </remarks>
   [Category("Automation")]
-  [OpenXmlElement(typeof(DXW.UpdateFieldsOnOpen),77)]
+  [OpenXmlElement(typeof(DXW.UpdateFieldsOnOpen))]
   public bool? UpdateFieldsOnOpen
   {
     get => _UpdateFieldsOnOpen;
@@ -1512,7 +1512,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:useXSLTWhenSaving
   /// </remarks>
   [Category("Saving")]
-  [OpenXmlElement(typeof(DXW.UseXsltWhenSaving),73)]
+  [OpenXmlElement(typeof(DXW.UseXsltWhenSaving))]
   public bool? UseXsltWhenSaving
   {
     get => _UseXsltWhenSaving;
@@ -1528,7 +1528,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:view
   /// </remarks>
   [Category("View")]
-  [OpenXmlElement(typeof(DXW.View),2)]
+  [OpenXmlElement(typeof(DXW.View))]
   public ViewType? View { get => _View; set => UpdateField(ref _View, value, nameof(View)); }
 
   private ViewType? _View;
@@ -1540,7 +1540,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:writeProtection
   /// </remarks>
   [Category("Protection")]
-  [OpenXmlElement(typeof(DXW.WriteProtection),1)]
+  [OpenXmlElement(typeof(DXW.WriteProtection))]
   public WriteProtection? WriteProtection
   {
     get => _WriteProtection;
@@ -1556,30 +1556,16 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:zoom
   /// </remarks>
   [Category("View")]
-  [OpenXmlElement(typeof(DXW.Zoom),3)]
+  [OpenXmlElement(typeof(DXW.Zoom))]
   public Zoom? Zoom { get => _Zoom; set => UpdateField(ref _Zoom, value, nameof(Zoom)); }
 
   private Zoom? _Zoom;
 
   /// <summary>
-  /// Specifies the presence of document variables in the document.
-  /// </summary>
-  [Category("Variables")]
-  [OpenXmlElement(typeof(DXW.DocumentVariables),81)]
-  public Variables? DocumentVariables
-  {
-    get => _DocumentVariables;
-    set => UpdateField(ref _DocumentVariables, (value != null && value.Count > 0) ? value : null,
-      nameof(DocumentVariables));
-  }
-
-  private Variables? _DocumentVariables;
-
-  /// <summary>
   /// Specifies all mail merge information for the document.
   /// </summary>
   [Category("Mailing")]
-  [OpenXmlElement(typeof(DXW.MailMerge),30)]
+  [OpenXmlElement(typeof(DXW.MailMerge))]
   public MailMerge? MailMerge { get => _MailMerge; set => UpdateField(ref _MailMerge, value, nameof(MailMerge)); }
 
   private MailMerge? _MailMerge;
@@ -1588,7 +1574,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the document-level properties for all math in the document.
   /// </summary>
   [Category("Math")]
-  [OpenXmlElement(typeof(DMM.MathProperties),83)]
+  [OpenXmlElement(typeof(DMM.MathProperties))]
   public DMM.MathProperties? MathProperties
   {
     get => _MathProperties;

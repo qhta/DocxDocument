@@ -5,12 +5,28 @@ namespace DocumentModel.Math;
 [OpenXmlType(typeof(DXM.MathProperties))]
 public partial class MathProperties : ModelElement<DXM.MathProperties>
 {
- /// <summary>
- ///   Specifies the default math font to be used in the document. 
- ///   If this element is omitted, font substitution (§17.8.2) should be used 
- ///   to determine the most appropriate font for use throughout the document.  
- /// </summary>
- public string? MathFont { get => _MathFont; set => UpdateField(ref _MathFont, value, nameof(MathFont)); }
+
+  /// <summary>
+  /// Known properties that can be set in MathProperties.
+  /// </summary>
+  public static KnownProperties KnownProperties
+  {
+    get
+    {
+      if (_KnownProperties == null)
+        _KnownProperties = new KnownProperties(typeof(MathProperties));
+      return _KnownProperties;
+    }
+  }
+
+  private static KnownProperties? _KnownProperties;
+
+  /// <summary>
+  ///   Specifies the default math font to be used in the document. 
+  ///   If this element is omitted, font substitution (§17.8.2) should be used 
+  ///   to determine the most appropriate font for use throughout the document.  
+  /// </summary>
+  public string? MathFont { get => _MathFont; set => UpdateField(ref _MathFont, value, nameof(MathFont)); }
 
  private string? _MathFont;
  /// <summary>

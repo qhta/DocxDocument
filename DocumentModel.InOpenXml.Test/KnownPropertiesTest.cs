@@ -52,17 +52,21 @@ namespace DocumentModel.InOpenXml.Test
         countComponentTypes[prop.ComponentType] = countComponentTypes.GetValueOrDefault(prop.ComponentType) + 1;
       }
       Console.WriteLine();
+      var totalCount = countComponentTypes.Values.Sum();
       foreach (var type in countComponentTypes.Keys)
       {
         Console.WriteLine($"ComponentType: {type.Name}, Count: {countComponentTypes[type]}");
       }
       Console.WriteLine();
+      Console.WriteLine($"Total Count: {totalCount}");
+      result = totalCount >= 240;
+      Console.WriteLine();
 
-      //if (!result)
-      //{
-      //  Console.WriteLine($"✗ {noCategoryProps} properties do not have a category declared.");
-      //  return false;
-      //}
+      if (!result)
+      {
+        Console.WriteLine($"✗ Some properties are not listed.");
+        return false;
+      }
       Console.WriteLine("✓ Known properties list test passed\n");
       return true;
     }

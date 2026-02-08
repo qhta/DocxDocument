@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides conversion methods for complex types between model objects and Open XML types.
 /// </summary>
-public static class OpenXmlModelConverter
+public static partial class OpenXmlModelConverter
 {
   public static readonly Dictionary<Type, ConvertFromOpenXml> ConvertFromOpenDelegates = new();
   public static readonly Dictionary<Type, ConvertToOpenXml> ConvertToOpenDelegates = new();
@@ -229,9 +229,7 @@ public static class OpenXmlModelConverter
     if (openXmlChildElement is not DX.OpenXmlElement o)
       throw new InvalidOperationException($"Converted Open XML child element " + $"is not of type DX.OpenXmlElement for model property {modelProperty.Name}");
 
-    RegisterChildOrder(openXmlElement.GetType(), modelObject.GetType());
-
-    openXmlElement.AppendChildUsingOrder(o);
+    openXmlElement.AddChildUsingSchemaOrder(o);
     UpdateData(modelValue, openXmlChildElement);
   }
 
@@ -267,9 +265,6 @@ public static class OpenXmlModelConverter
       openXmlElement.RemoveChild(child);
     var modelElementsCollection = (IEnumerable<object>)modelValue;
 
-
-    RegisterChildOrder(openXmlElement.GetType(), modelObject.GetType());
-
     foreach (var modelElement in modelElementsCollection)
     {
       var openXmlChildElement = ConvertTo(modelElement, openXmlChildType);
@@ -277,7 +272,7 @@ public static class OpenXmlModelConverter
         throw new InvalidOperationException($"Converted Open XML child element is not of type DX.OpenXmlElement " + $"for model property {modelProperty.Name}");
 
 
-      openXmlElement.AppendChildUsingOrder(o);
+      openXmlElement.AddChildUsingSchemaOrder(o);
     }
   }
 
@@ -313,16 +308,13 @@ public static class OpenXmlModelConverter
       openXmlElement.RemoveChild(child);
     var modelElementsCollection = (IEnumerable<object>)modelObject;
 
-
-    RegisterChildOrder(openXmlElement.GetType(), modelObject.GetType());
-
     foreach (var modelElement in modelElementsCollection)
     {
       var openXmlChildElement = ConvertTo(modelElement, openXmlChildType);
       if (openXmlChildElement is not DX.OpenXmlElement o)
         throw new InvalidOperationException($"Converted Open XML child element is not of a DX.OpenXmlElement");
 
-      openXmlElement.AppendChildUsingOrder(o);
+      openXmlElement.AddChildUsingSchemaOrder(o);
     }
   }
 
@@ -333,70 +325,56 @@ public static class OpenXmlModelConverter
   /// </summary>
   private static readonly Dictionary<Type, Dictionary<Type, int>> ChildrenOrder = new();
 
-  private static void RegisterChildOrder(Type openXmlType, Type modelType)
+  /// <summary>
+  /// Registers the order of child elements for a given Open XML element type.
+  /// </summary>
+  /// <param name="openXmlType"></param>
+  /// <param name="childTypes"></param>
+  public static void RegisterChildrenOrder(Type openXmlType, Type[] childTypes)
   {
     if (!ChildrenOrder.ContainsKey(openXmlType))
     {
       var childOrders = new Dictionary<Type, int>();
-      foreach (var property in modelType.GetProperties())
+      int propOrder = 0;
+      foreach (var childType in childTypes)
       {
-        Type? childType = null;
-        int propOrder = 0;
-        var openXmlElementAttribute = property.GetCustomAttribute<OpenXmlElementAttribute>();
-        if (openXmlElementAttribute != null)
-        {
-          childType = openXmlElementAttribute.OpenXmlType;
-          propOrder = openXmlElementAttribute.Order;
-        }
-        else
-        {
-          var openXmlElementCollectionAttribute = property.GetCustomAttribute<OpenXmlElementCollectionAttribute>();
-          if (openXmlElementCollectionAttribute != null)
-          {
-            childType = openXmlElementCollectionAttribute.OpenXmlType;
-            propOrder = openXmlElementCollectionAttribute.Order;
-          }
-        }
-        if (childType != null && propOrder != 0)
-        {
-          childOrders[childType] = propOrder;
-        }
+        childOrders[childType] = propOrder;
       }
       ChildrenOrder[openXmlType] = childOrders;
     }
   }
 
-  /// <summary>
-  /// Appends a child element to a parent Open XML element
-  /// while maintaining the correct order of child elements as defined in the Open XML schema.
-  /// </summary>
-  /// <param name="parentElement">The parent Open XML element.</param>
-  /// <param name="child">The child Open XML element to append.</param>
-  private static void AppendChildUsingOrder(this DX.OpenXmlElement parentElement, DX.OpenXmlElement child)
-  {
-    if (child is DXW.DecimalSymbol) Debug.Assert(true);
-    if (ChildrenOrder.TryGetValue(parentElement.GetType(), out var childOrders) &&
-        childOrders.TryGetValue(child.GetType(), out var childOrder) && childOrder > 0)
-    {
-      var existingChild = parentElement.ChildElements.FirstOrDefault(c =>
-      {
-        var cType = c.GetType();
-        if (child is DXW.DecimalSymbol && cType == typeof(DXO13W.ChartTrackingRefBased)) Debug.Assert(true);
+  ///// <summary>
+  ///// Appends a child element to a parent Open XML element
+  ///// while maintaining the correct order of child elements as defined in the Open XML schema.
+  ///// </summary>
+  ///// <param name="parentElement">The parent Open XML element.</param>
+  ///// <param name="child">The child Open XML element to append.</param>
+  //public static void AppendChildUsingOrder(this DX.OpenXmlElement parentElement, DX.OpenXmlElement child)
+  //{
+  //  if (child is DXW.DecimalSymbol) Debug.Assert(true);
+  //  if (ChildrenOrder.TryGetValue(parentElement.GetType(), out var childOrders) &&
+  //      childOrders.TryGetValue(child.GetType(), out var childOrder) && childOrder > 0)
+  //  {
+  //    var existingChild = parentElement.ChildElements.FirstOrDefault(c =>
+  //    {
+  //      var cType = c.GetType();
+  //      if (child is DXW.DecimalSymbol && cType == typeof(DXO13W.ChartTrackingRefBased)) Debug.Assert(true);
 
-        if (childOrders.TryGetValue(cType, out var order))
-        {
-          return order > childOrder;
-        }
-        return true;
-      });
-      if (existingChild != null)
-      {
-        parentElement.InsertBefore(child, existingChild);
-        return;
-      }
-    }
-    parentElement.AppendChild(child);
-  }
+  //      if (childOrders.TryGetValue(cType, out var order))
+  //      {
+  //        return order > childOrder;
+  //      }
+  //      return true;
+  //    });
+  //    if (existingChild != null)
+  //    {
+  //      parentElement.InsertBefore(child, existingChild);
+  //      return;
+  //    }
+  //  }
+  //  parentElement.AppendChild(child);
+  //}
 
 
   /// <summary>
