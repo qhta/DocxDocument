@@ -57,7 +57,7 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
       }
       else
       {
-        modelObject = (ItemType)OpenXmlConverter.ConvertFromOpenXml(openXmlElement, typeof(ItemType))!;
+        modelObject = (ItemType)OpenXmlModelConverter.ConvertFrom(openXmlElement, typeof(ItemType))!;
       }
       this.Add(modelObject);
     }
@@ -76,7 +76,7 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
     }
     foreach (var item in this)
     {
-      OpenXmlItemType openXmlElement = (OpenXmlItemType)OpenXmlConverter.ConvertToOpenXml(item, typeof(OpenXmlItemType))!;
+      OpenXmlItemType openXmlElement = (OpenXmlItemType)OpenXmlModelConverter.ConvertTo(item, typeof(OpenXmlItemType))!;
       openXmlModeledCollection.AppendChild(openXmlElement);
     }
   }

@@ -481,7 +481,7 @@ namespace DocumentModel.InOpenXml.Test
               }
             ])
           },
-          Compatibility = new Compatibility
+          Compatibility = new CompatibilitySettings
           {
             UseSingleBorderForContiguousCells = true,
             WordPerfectJustification = true,

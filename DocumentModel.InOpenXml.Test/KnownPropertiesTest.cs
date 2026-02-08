@@ -42,6 +42,43 @@ namespace DocumentModel.InOpenXml.Test
       var document = new Document();
       var knownProperties = document.KnownProperties;
       bool result = true;
+      Dictionary<Type, int> countComponentTypes = new();
+      foreach (var item in knownProperties)
+      {
+        var name = item.Key;
+        var prop = item.Value;
+        Console.WriteLine($"Property: {name}, ComponentType: {prop.ComponentType.Name}, " +
+                          $"Type: {prop.PropertyType.Name}, Category: {prop.Category}");
+        countComponentTypes[prop.ComponentType] = countComponentTypes.GetValueOrDefault(prop.ComponentType) + 1;
+      }
+      Console.WriteLine();
+      foreach (var type in countComponentTypes.Keys)
+      {
+        Console.WriteLine($"ComponentType: {type.Name}, Count: {countComponentTypes[type]}");
+      }
+      Console.WriteLine();
+
+      //if (!result)
+      //{
+      //  Console.WriteLine($"✗ {noCategoryProps} properties do not have a category declared.");
+      //  return false;
+      //}
+      Console.WriteLine("✓ Known properties list test passed\n");
+      return true;
+    }
+
+
+
+    /// <summary>
+    /// Tests XML serialization and deserialization for <see cref="KnownProperties"/>.
+    /// </summary>
+    /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
+    static bool TestPropertiesCategories()
+    {
+      Console.WriteLine("--- Known properties list ---");
+      var document = new Document();
+      var knownProperties = document.KnownProperties;
+      bool result = true;
       int noCategoryProps = 0;
       foreach (var item in knownProperties)
       {
@@ -64,5 +101,6 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("✓ Known properties list test passed\n");
       return true;
     }
- }
+
+  }
 }

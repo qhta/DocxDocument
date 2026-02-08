@@ -499,6 +499,12 @@
             </summary>
             <returns>True if the round-trip succeeds; otherwise, false.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.KnownPropertiesTest.TestPropertiesCategories">
+            <summary>
+            Tests XML serialization and deserialization for <see cref="T:DocumentModel.KnownProperties"/>.
+            </summary>
+            <returns>True if the round-trip succeeds; otherwise, false.</returns>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test.OpenXmlSchemaValidator">
             <summary>
             Validates generated OpenXml XML against the canonical schema set.

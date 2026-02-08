@@ -19,8 +19,8 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// needs to be called once per process.</remarks>
   public static void RegisterOpenXmlConversion()
   {
-    OpenXmlConverter.ConvertFromOpenDelegates[typeof(Guid)] = ConvertGuidFromOpenXml;
-    OpenXmlConverter.ConvertToOpenDelegates[typeof(Guid)] = ConvertToGuidOpenXml;
+    OpenXmlModelConverter.ConvertFromOpenDelegates[typeof(Guid)] = ConvertGuidFromOpenXml;
+    OpenXmlModelConverter.ConvertToOpenDelegates[typeof(Guid)] = ConvertToGuidOpenXml;
   }
 
   /// <summary>
@@ -127,9 +127,11 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     {
       if (field is IWordprocessingDocumentAware oldValue)
         oldValue.Detach();
+
       //if (value is IChildItem childItem && childItem.Parent == null)
       //  if (!Object.ReferenceEquals(value, this))
       //    childItem.Parent = this;
+
       if (value is IWordprocessingDocumentAware newValue
           && this is IWordprocessingDocumentAware thisElement && thisElement.WordprocessingDocument != null)
         newValue.AttachAndUpdate(thisElement.WordprocessingDocument);

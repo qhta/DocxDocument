@@ -6,20 +6,20 @@ public partial class ContentProperties
   /// Registers conversion delegates for OpenXml property types to enable conversion between OpenXml elements and their
   /// corresponding domain objects.
   /// </summary>
-  /// <remarks>Call this method before performing conversions using the OpenXmlConverter to ensure that the
+  /// <remarks>Call this method before performing conversions using the OpenXmlModelConverter to ensure that the
   /// necessary type mappings are available. This method is typically invoked during application initialization to
   /// configure conversion support for HeadingPairs, TitlesOfParts, HyperlinkList, and DigitalSignature
   /// elements.</remarks>
   public new static void RegisterOpenXmlConversion()
   {
-    OpenXmlConverter.ConvertFromOpenDelegates[typeof(DXEP.HeadingPairs)] = ConvertFromOpenXmlHeadingPairs;
-    OpenXmlConverter.ConvertFromOpenDelegates[typeof(DXEP.TitlesOfParts)] = ConvertFromOpenXmlTitlesOfParts;
-    OpenXmlConverter.ConvertFromOpenDelegates[typeof(DXEP.HyperlinkList)] = ConvertFromOpenXmlHyperlinkList;
-    OpenXmlConverter.ConvertFromOpenDelegates[typeof(DXEP.DigitalSignature)] = ConvertFromOpenXmlDigitalSignature;
-    OpenXmlConverter.ConvertToOpenDelegates[typeof(DXEP.HeadingPairs)] = ConvertToOpenXmlHeadingPairs;
-    OpenXmlConverter.ConvertToOpenDelegates[typeof(DXEP.TitlesOfParts)] = ConvertToOpenXmlTitlesOfParts;
-    OpenXmlConverter.ConvertToOpenDelegates[typeof(DXEP.HyperlinkList)] = ConvertToOpenXmlHyperlinkList;
-    OpenXmlConverter.ConvertToOpenDelegates[typeof(DXEP.DigitalSignature)] = ConvertToOpenXmlDigitalSignature;
+    OpenXmlModelConverter.ConvertFromOpenDelegates[typeof(DXEP.HeadingPairs)] = ConvertFromOpenXmlHeadingPairs;
+    OpenXmlModelConverter.ConvertFromOpenDelegates[typeof(DXEP.TitlesOfParts)] = ConvertFromOpenXmlTitlesOfParts;
+    OpenXmlModelConverter.ConvertFromOpenDelegates[typeof(DXEP.HyperlinkList)] = ConvertFromOpenXmlHyperlinkList;
+    OpenXmlModelConverter.ConvertFromOpenDelegates[typeof(DXEP.DigitalSignature)] = ConvertFromOpenXmlDigitalSignature;
+    OpenXmlModelConverter.ConvertToOpenDelegates[typeof(DXEP.HeadingPairs)] = ConvertToOpenXmlHeadingPairs;
+    OpenXmlModelConverter.ConvertToOpenDelegates[typeof(DXEP.TitlesOfParts)] = ConvertToOpenXmlTitlesOfParts;
+    OpenXmlModelConverter.ConvertToOpenDelegates[typeof(DXEP.HyperlinkList)] = ConvertToOpenXmlHyperlinkList;
+    OpenXmlModelConverter.ConvertToOpenDelegates[typeof(DXEP.DigitalSignature)] = ConvertToOpenXmlDigitalSignature;
   }
 
   /// <summary>
@@ -281,7 +281,8 @@ public partial class ContentProperties
     if (openXmlElement is DXEP.DigitalSignature digitalSignature)
     {
       var variant = digitalSignature.VTBlob;
-      return variant?.AsByteArray();
+      if (variant != null) 
+        return new HexBinary(variant.AsByteArray()!);
     }
     return null;
   }
@@ -295,10 +296,10 @@ public partial class ContentProperties
   /// otherwise, null.</returns>
   private static object? ConvertToOpenXmlDigitalSignature(object? modelObject, Type openXmlType)
   {
-    if (openXmlType == typeof(DXEP.DigitalSignature) && modelObject is byte[] digitalSignature)
+    if (openXmlType == typeof(DXEP.DigitalSignature) && modelObject is HexBinary digitalSignature)
       return new DXEP.DigitalSignature
       {
-        VTBlob = new DXVT.VTBlob(new Base64Binary(digitalSignature))
+        VTBlob = new DXVT.VTBlob(new Base64Binary((byte[])digitalSignature))
       };
     return null;
   }

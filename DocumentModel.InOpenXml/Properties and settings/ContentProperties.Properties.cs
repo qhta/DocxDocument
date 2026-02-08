@@ -81,7 +81,7 @@ public partial class ContentProperties
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
   [OpenXmlType(typeof(DXEP.HeadingPairs))]
-  public HeadingPairs? HeadingPairs //{ get; set; }
+  public HeadingPairs? HeadingPairs
   {
     get => _HeadingPairs;
     set => UpdateField(ref _HeadingPairs, value, nameof(HeadingPairs));
@@ -184,7 +184,12 @@ public partial class ContentProperties
   ///   property should be for legacy compatibility only, and is application-defined. 
   /// </summary>
   [OpenXmlType(typeof(DXEP.DigitalSignature))]
-  public byte[]? DigitalSignature { get; set; }
+  public HexBinary? DigitalSignature
+  {
+    get => _DigitalSignature;
+    set => UpdateField(ref _DigitalSignature, value, nameof(DigitalSignature));
+  }
+  private HexBinary? _DigitalSignature;
 
   /// <summary>
   ///   Specifies the name of the application that created this document.
