@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "CollectionItem"/> and provides properties for the variable name and value, enabling advanced storage and retrieval of custom metadata or automation variables within the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.DocumentVariable))]
-public partial class Variable : ModelElement<DXW.DocumentVariable>
+public partial class DocumentVariable : ModelElement<DXW.DocumentVariable>
 {
  /// <summary>
  /// FontName of the document variable, specifying the unique identifier for the variable.
@@ -19,7 +19,7 @@ public partial class Variable : ModelElement<DXW.DocumentVariable>
  /// </summary>
  [XmlAttribute]
  [OpenXmlProperty(nameof(DXW.DocumentVariable.Val))]
- public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+ public string? Value { get => _value; set => UpdateField(ref _value, value, nameof(Value)); }
 
- private string? _Val;
+ private string? _value;
 }

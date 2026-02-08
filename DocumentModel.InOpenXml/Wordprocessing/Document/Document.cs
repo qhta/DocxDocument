@@ -214,6 +214,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
         _KnownProperties.AddRange(StatisticProperties.KnownProperties);
         _KnownProperties.AddRange(DocumentSettings.KnownProperties);
         _KnownProperties.AddRange(CompatibilitySettings.KnownProperties);
+        _KnownProperties.AddRange(MailMerge.KnownProperties);
+        _KnownProperties.AddRange(DMM.MathProperties.KnownProperties);
+
       }
       return _KnownProperties!;
     }
@@ -237,6 +240,22 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   private Rsids? _Rsids;
+
+  /// <summary>
+  ///   Collection of DocumentVariables used in the document.
+  /// </summary>
+  public DocumentVariables? DocumentVariables
+  {
+    get
+    {
+      if (_DocumentVariables == null && WordprocessingDocument?.MainDocumentPart?.DocumentSettingsPart != null)
+        _DocumentVariables = new DocumentVariables(this);
+      return _DocumentVariables;
+    }
+    set => UpdateField(ref _DocumentVariables, value, nameof(DocumentVariables));
+  }
+
+  private DocumentVariables? _DocumentVariables;
 
   /// <summary>
   ///   Font table for the document, providing access to font definitions used within the document.
