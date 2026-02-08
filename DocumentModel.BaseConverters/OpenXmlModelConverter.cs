@@ -5,6 +5,10 @@
 /// </summary>
 public static class OpenXmlModelConverter
 {
+  public static readonly Dictionary<Type, ConvertFromOpenXml> ConvertFromOpenDelegates = new();
+  public static readonly Dictionary<Type, ConvertToOpenXml> ConvertToOpenDelegates = new();
+
+
   /// <summary>
   /// Converts a model object to an Open XML element of the specified type.
   /// </summary>
@@ -17,10 +21,17 @@ public static class OpenXmlModelConverter
     if (modelObject == null)
       return null;
 
-    if (openXmlType.Name == "Zoom") Debug.Assert(true);
+    if (openXmlType.Name == "DigitalSignature") Debug.Assert(true);
+
+
     var modelType = modelObject.GetType().GetNotNullableType();
     if (modelType == openXmlType)
       return modelObject;
+    if (ConvertToOpenDelegates.TryGetValue(modelType, out var convertToOpenXml)
+        || ConvertToOpenDelegates.TryGetValue(openXmlType, out convertToOpenXml))
+      return convertToOpenXml(modelObject, openXmlType);
+    if (openXmlType.IsEqualOrSubclassOf(typeof(DX.OpenXmlElement)))
+      return OpenXmlElementConverter.ConvertTo(modelObject, openXmlType);
     if (SimpleValueConverter.TryConvertTo(modelObject, openXmlType, out var result))
       return result;
 
@@ -34,24 +45,36 @@ public static class OpenXmlModelConverter
   /// </summary>
   /// <remarks>The returned object is created using the default constructor of the specified model type. Ensure
   /// that <paramref name="modelType"/> has a public parameterless constructor and is compatible with the data in
-  /// <paramref name="openXmlElement"/>.</remarks>
-  /// <param name="openXmlElement">The OpenXML element to convert. Can be null.</param>
+  /// <paramref name="openXmlObject"/>.</remarks>
+  /// <param name="openXmlObject">The OpenXML element to convert. Can be null.</param>
   /// <param name="modelType">The type of the model object to create and populate from the OpenXML element. Must not be null.</param>
   /// <returns>An object of the specified model type populated with data from the OpenXML element, or null if <paramref
-  /// name="openXmlElement"/> is null.</returns>
-  public static object? ConvertFrom(object? openXmlElement, Type modelType)
+  /// name="openXmlObject"/> is null.</returns>
+  public static object? ConvertFrom(object? openXmlObject, Type modelType)
   {
-    if (openXmlElement == null)
+    if (openXmlObject == null)
       return null;
 
-    var openXmlType = openXmlElement.GetType().GetNotNullableType();
+    var openXmlType = openXmlObject.GetType().GetNotNullableType();
     if (modelType == openXmlType)
-      return openXmlElement;
-    if (SimpleValueConverter.TryConvertFrom(openXmlElement, modelType, out var result))
-      return result;
+      return openXmlObject;
+    if (modelType.IsAssignableFrom(openXmlObject.GetType()!))
+      return openXmlObject;
 
+    if (ConvertFromOpenDelegates.TryGetValue(modelType, out var convertFromOpenXml)
+        || ConvertFromOpenDelegates.TryGetValue(openXmlType, out convertFromOpenXml))
+      return convertFromOpenXml(openXmlObject, modelType);
+    
+    if (SimpleValueConverter.TryConvertFrom(openXmlObject, modelType, out var result))
+      return result;
+    
+    //if (openXmlObject is DX.OpenXmlElement openXmlElement)
+    //  return OpenXmlElementConverter.ConvertFrom(openXmlElement, modelType);
+    //if (openXmlObject is DX.OpenXmlSimpleType openXmlSimpleType)
+    //  return SimpleValueConverter.ConvertFrom(openXmlSimpleType, modelType);
     var modelObject = Activator.CreateInstance(modelType)!;
-    LoadData(modelObject, openXmlElement, modelType);
+    if (openXmlObject is DX.OpenXmlElement openXmlElement)
+      LoadData(modelObject, openXmlElement, modelType);
     return modelObject;
   }
 
@@ -83,7 +106,7 @@ public static class OpenXmlModelConverter
     }
     foreach (var modelProperty in modelType.GetModelProperties())
     {
-      if (modelProperty.Name == "LatentStyles") Debug.Assert(true);
+      if (modelProperty.Name == "DigitalSignature") Debug.Assert(true);
       UpdateData(modelObject, modelProperty, openXmlObject, openXmlType);
     }
     if (openXmlObject is DX.OpenXmlElement openXmlElement && modelType.GetCustomAttribute<OpenXmlItemAttribute>() != null)
@@ -118,7 +141,7 @@ public static class OpenXmlModelConverter
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return;
 
-    if (modelProperty.Name == "LatentStyles") Debug.Assert(true);
+    if (modelProperty.Name == "DigitalSignature") Debug.Assert(true);
 
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanWrite)
@@ -433,7 +456,7 @@ public static class OpenXmlModelConverter
       if (openXmlValue != null && !modelProperty.PropertyType.IsInstanceOfType(openXmlValue))
       {
         var modelPropertyType = modelProperty.PropertyType.GetNotNullableType();
-        var modelValue = ConvertValueFromOpenXml(openXmlValue, modelPropertyType);
+        var modelValue = ConvertFrom(openXmlValue, modelPropertyType);
         if (modelValue != null && !modelPropertyType.IsInstanceOfType(modelValue))
         {
           modelValue = SimpleValueConverter.ConvertFrom(modelValue, modelPropertyType);
@@ -592,34 +615,6 @@ public static class OpenXmlModelConverter
         throw new InvalidOperationException($"Converted model Item is not compatible to {modelItemType}");
       modelAddMethod.Invoke(modelObject, [modelItem]);
     }
-  }
-
-  /// <summary>
-  /// Converts a value to the specified Open XML type using the OpenXmlConverter.
-  /// </summary>
-  /// <param name="value">The value to convert.</param>
-  /// <param name="targetType">The target Open XML type.</param>
-  /// <returns>The converted value, or null if the input is null.</returns>
-  public static object? ConvertValueToOpenXml(object? value, Type targetType)
-  {
-    if (value == null)
-      return null;
-
-    return OpenXmlConverter.ConvertToOpenXml(value, targetType);
-  }
-
-  /// <summary>
-  /// Converts a value from an Open XML type to the specified model type using the OpenXmlConverter.
-  /// </summary>
-  /// <param name="value">The value to convert.</param>
-  /// <param name="targetType">The target model type.</param>
-  /// <returns>The converted value, or null if the input is null.</returns>
-  public static object? ConvertValueFromOpenXml(object? value, Type targetType)
-  {
-    if (value == null)
-      return null;
-
-    return OpenXmlConverter.ConvertFromOpenXml(value, targetType);
   }
 
   /// <summary>

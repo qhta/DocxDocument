@@ -213,6 +213,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
         _KnownProperties.AddRange(ContentProperties.KnownProperties);
         _KnownProperties.AddRange(StatisticProperties.KnownProperties);
         _KnownProperties.AddRange(DocumentSettings.KnownProperties);
+        _KnownProperties.AddRange(CompatibilitySettings.KnownProperties);
       }
       return _KnownProperties!;
     }
