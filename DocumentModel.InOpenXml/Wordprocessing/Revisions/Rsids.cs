@@ -61,7 +61,7 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
   if (rsids == null)
   {
    rsids = new DXW.Rsids();
-   documentSettings.Append(rsids);
+   documentSettings.AddChildUsingSchemaOrder(rsids);
   }
 
   SetUpdatableElement(rsids);

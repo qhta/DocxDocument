@@ -101,7 +101,6 @@ public partial class DocumentSettings
   public bool ShouldSerializeView() => View is not null;
   public bool ShouldSerializeWriteProtection() => WriteProtection is not null;
   public bool ShouldSerializeZoom() => Zoom is not null;
-  public bool ShouldSerializeDocumentVariables() => DocumentVariables is not null;
   public bool ShouldSerializeMailMerge() => MailMerge is not null;
   public bool ShouldSerializeMathProperties() => MathProperties is not null;
 }

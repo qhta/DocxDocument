@@ -388,6 +388,87 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance.</returns>
         </member>
+        <member name="T:DocumentModel.InOpenXml.Test.DocumentVariablesTest">
+            <summary>
+            Comprehensive serialization test for DocumentModel.DocumentVariables.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.Run">
+            <summary>
+            Runs all DocumentVariables serialization tests.
+            </summary>
+            <returns>True if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.TestXmlSerialization">
+            <summary>
+            Tests XML serialization and deserialization of DocumentVariables.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.TestJsonSerialization">
+            <summary>
+            Tests JSON serialization and deserialization of DocumentVariables.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.TestEdgeCases">
+            <summary>
+            Tests edge cases like empty DocumentVariables object.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.TestStoreInDocument">
+            <summary>
+            Tests setting sample DocumentVariables to a new document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document DocumentVariables can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document DocumentVariables are successfully stored and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.TestUpdateInDocument">
+            <summary>
+            Tests updating the DocumentVariables of a document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document DocumentVariables can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document DocumentVariables are successfully updated and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.CreateSampleDocumentVariables">
+            <summary>
+            Creates a sample DocumentVariables object with various property types.
+            </summary>
+            <returns>A populated DocumentVariables object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.SerializeToXml(DocumentModel.Wordprocessing.DocumentVariables)">
+            <summary>
+            Serializes a DocumentVariables object to an XML string.
+            </summary>
+            <param name="props">The DocumentVariables object to serialize.</param>
+            <returns>The serialized XML string.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.DeserializeFromXml(System.String)">
+            <summary>
+            Deserializes a DocumentVariables object from an XML string.
+            </summary>
+            <param name="xml">The XML string to deserialize.</param>
+            <returns>The deserialized DocumentVariables object, or null if deserialization fails.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.SerializeToJson(DocumentModel.Wordprocessing.DocumentVariables)">
+            <summary>
+            Serializes a DocumentVariables object to a JSON string.
+            </summary>
+            <param name="props">The DocumentVariables object to serialize.</param>
+            <returns>The serialized JSON string.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.DeserializeFromJson(System.String)">
+            <summary>
+            Deserializes a DocumentVariables object from a JSON string.
+            </summary>
+            <param name="json">The JSON string to deserialize.</param>
+            <returns>The deserialized DocumentVariables object, or null if deserialization fails.</returns>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test.FontsTest">
             <summary>
             Comprehensive serialization test for DocumentModel.Fonts.

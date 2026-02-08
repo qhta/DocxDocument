@@ -26,11 +26,14 @@ internal class Program
     if (!Exec(DocumentSettingsTest.Run))
       return;
 
+    if (!Exec(RsidsTest.Run))
+      return;
+    
+
     if (!Exec(KnownPropertiesTest.Run))
       return;
 
-    //if (!Exec(RsidsTest.Run))
-    //  return;
+
 
     //if (!Exec(FontsTest.Run))
     //  return;

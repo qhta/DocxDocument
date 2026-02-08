@@ -270,7 +270,7 @@ namespace DocumentModel.InOpenXml.Test
           }
         }
 
-        Console.WriteLine("✓ Validate sample Fonts test passed\n");
+        Console.WriteLine("✓ Validate sample settings test passed\n");
         return true;
       }
     }
