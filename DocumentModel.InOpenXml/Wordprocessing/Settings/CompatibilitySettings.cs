@@ -31,6 +31,17 @@ public partial class CompatibilitySettings: ModelElement<DXW.Compatibility>
   }
 
   /// <summary>
+  ///   Initializes a new instance of the <see cref="DocumentSettings"/> class and attaches it to the specified Wordprocessing document model.
+  /// </summary>
+  /// <param name="document">The Wordprocessing document model to attach to.</param>
+  public CompatibilitySettings(Wordprocessing.Document document)
+  {
+    if (document.WordprocessingDocument != null)
+      AttachAndLoad(document.WordprocessingDocument);
+  }
+
+
+  /// <summary>
   /// Use simplified rules for table border conflicts.
   /// </summary>
   public bool? UseSingleBorderForContiguousCells

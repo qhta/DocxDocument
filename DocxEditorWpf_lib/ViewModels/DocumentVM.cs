@@ -16,7 +16,7 @@ public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
 
   public DocumentModel.Wordprocessing.Document Document => Model;
 
-  public string Caption => Document?.Properties?.Title ?? "Untitled";
+  public string Caption => Document?.CoreProperties?.Title ?? "Untitled";
 
   /// <summary>
   /// Collection of document properties as view models.
@@ -27,8 +27,7 @@ public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
     {
       if (_documentPropertiesVM == null)
       {
-        Document.Properties ??= new DocumentModel.AllDocumentProperties(Document);
-        _documentPropertiesVM = new DocumentPropertiesVM(Document.Properties);
+        _documentPropertiesVM = new DocumentPropertiesVM(this);
       }
       return _documentPropertiesVM;
     }

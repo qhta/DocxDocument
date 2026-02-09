@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DocxEditorWpf_lib</name>
+    </assembly>
+    <members>
+        <member name="T:DocxEditor.Helpers.PropertiesViewNameCellStyleSelector">
+            <summary>
+            Selects a style for PropertiesView name cell based on IPropertyVM properties.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesViewNameCellStyleSelector.SelectStyle(System.Object,System.Windows.DependencyObject)">
+            <summary>
+            if item is IPropertyVM and is empty, set foreground to light gray.
+            </summary>
+            <param name="item"></param>
+            <param name="container"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocxEditor.Helpers.PropertiesViewRowStyleSelector">
+            <summary>
+            Selects a style for TreeGrid rows based on IPropertyVM properties.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesViewRowStyleSelector.SelectStyle(System.Object,System.Windows.DependencyObject)">
+            <summary>
+            Selects a style for TreeGrid rows based on IPropertyVM properties.
+            </summary>
+            <param name="item"></param>
+            <param name="container"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocxEditor.Helpers.PropertyEmptyToForegroundConverter">
+            <summary>
+            Converts IsEmpty property to Foreground brush - light gray if empty, default otherwise.
+            </summary>
+        </member>
+        <member name="T:DocxEditor.ViewModels.DocumentPropertiesVM">
+            <summary>
+            ViewModel for DocumentModel.DocumentProperties.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.ViewModels.DocumentPropertiesVM.#ctor(DocxEditor.ViewModels.DocumentVM)">
+            <summary>
+            Initializing constructor.
+            </summary>
+            <param name="document">Model view for the document.</param>
+        </member>
+        <member name="P:DocxEditor.ViewModels.DocumentPropertiesVM.DocumentModel">
+            <summary>
+            Model collection of document properties.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.DocumentPropertiesVM.PropertiesProvider">
+            <summary>
+            Provider for dynamic properties recognition needed by PropertyGrid.
+            </summary>
+        </member>
+        <member name="T:DocxEditor.ViewModels.DocumentPropertyVM">
+            <summary>
+            ViewModel representing a document property.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.ViewModels.DocumentPropertyVM.#ctor(DocumentModel.PropertyModel)">
+            <summary>
+            Initializing constructor.
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="P:DocxEditor.ViewModels.DocumentPropertyVM.Name">
+            <summary>
+            Name of the property.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.DocumentPropertyVM.Value">
+            <summary>
+            Value of the property.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.DocumentPropertyVM.ValueType">
+            <summary>
+            Value type of the property.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.DocumentPropertyVM.IsEmpty">
+            <summary>
+            Empty property has no value or an empty string.
+            </summary>
+        </member>
+        <member name="T:DocxEditor.ViewModels.DocumentVM">
+            <summary>
+            ViewModel for DocumentModel.Wordprocessing.Document.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.ViewModels.DocumentVM.#ctor(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Initializing constructor.
+            </summary>
+            <param name="document"></param>
+        </member>
+        <member name="P:DocxEditor.ViewModels.DocumentVM.DocumentProperties">
+            <summary>
+            Collection of document properties as view models.
+            </summary>
+        </member>
+        <member name="T:DocxEditor.ViewModels.IPropertyVM">
+            <summary>
+            Interface for any class representing a property in the ViewModel.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.IPropertyVM.Name">
+            <summary>
+            Name of the property.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.IPropertyVM.Value">
+            <summary>
+            Value of the property.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.IPropertyVM.ValueType">
+            <summary>
+            Value type of the property.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.IPropertyVM.IsEmpty">
+            <summary>
+            Determines whether the property is empty
+            </summary>
+        </member>
+        <member name="T:DocxEditor.Views.DocumentPropertiesView">
+            <summary>
+            View for displaying and editing document properties.
+            </summary>
+            <summary>
+            DocumentPropertiesView
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Views.DocumentPropertiesView.#ctor">
+            <summary>
+            Initializing constructor.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Views.DocumentPropertiesView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DocxEditor.Views.DocumentView">
+            <summary>
+            Composite view for displaying and editing a document.
+            </summary>
+            <summary>
+            DocumentView
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Views.DocumentView.#ctor">
+            <summary>
+            Initializing constructor.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Views.DocumentView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>
