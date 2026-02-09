@@ -1,21 +1,15 @@
 ﻿namespace DocxEditor.Helpers
 {
-  public class DocumentPropertiesProvider : ViewModel, ICustomTypeDescriptor
+  public class DocumentPropertiesProvider(KnownProperties knownProperties): ViewModel, ICustomTypeDescriptor
   {
-    private IDictionary<string, PropertyModel> _models = new Dictionary<string, PropertyModel>();
+    //private IDictionary<string, PropertyModel> _models = new Dictionary<string, PropertyModel>();
     private IDictionary<string, string> displayNames = new Dictionary<string, string>();
+
+    private KnownProperties KnownProperties { get; } = knownProperties;
 
     #region Properties
 
-    public IDictionary<string, PropertyModel> Models
-    {
-      get => _models;
-      set
-      {
-        _models = value;
-        NotifyPropertyChanged(nameof(Models));
-      }
-    }
+    public IDictionary<string, PropertyModel> Models => KnownProperties;
 
     public IDictionary<string, string> DisplayNames
     {
@@ -86,7 +80,7 @@
                                                   element.Key,
                                                   displayName,
                                                   element.Value.PropertyType,
-                                                  []);
+                                                  element.Value.PropertyAttributes);
       });
       return new PropertyDescriptorCollection(propertyDetails.ToArray<PropertyDescriptor>());
     }
@@ -101,7 +95,7 @@
 
     public object GetPropertyOwner(PropertyDescriptor? pd)
     {
-      return this;
+      return (pd as PropertyModel)?.Component ?? this;
     }
 
     #endregion

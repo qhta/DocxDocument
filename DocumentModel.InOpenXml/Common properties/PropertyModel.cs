@@ -5,7 +5,10 @@ namespace DocumentModel;
 /// </summary>
 public partial class PropertyModel: PropertyDescriptor
 {
-  private readonly PropertyInfo _propertyInfo;
+  /// <summary>
+  /// Underlying reflected property information that this model represents. 
+  /// </summary>
+  public PropertyInfo PropertyInfo { get; private set; }
 
   /// <summary>
   /// Initializing constructor.
@@ -13,7 +16,7 @@ public partial class PropertyModel: PropertyDescriptor
   /// <param name = "propertyInfo">Reflected property info</param>
   public PropertyModel(PropertyInfo propertyInfo): base(propertyInfo.Name, [])
   {
-    _propertyInfo = propertyInfo;
+    PropertyInfo = propertyInfo;
   }
 
   /// <summary>
@@ -32,12 +35,12 @@ public partial class PropertyModel: PropertyDescriptor
   public override bool CanResetValue(object component)
   {
     // Check if the property has a default value attribute
-    var defaultValueAttr = _propertyInfo.GetCustomAttribute<DefaultValueAttribute>();
+    var defaultValueAttr = PropertyInfo.GetCustomAttribute<DefaultValueAttribute>();
     if (defaultValueAttr != null)
       return true;
 
     // For reference types (except string), can reset to null
-    if (!_propertyInfo.PropertyType.IsValueType || Nullable.GetUnderlyingType(_propertyInfo.PropertyType) != null)
+    if (!PropertyInfo.PropertyType.IsValueType || Nullable.GetUnderlyingType(PropertyInfo.PropertyType) != null)
       return true;
 
     return false;
@@ -51,9 +54,9 @@ public partial class PropertyModel: PropertyDescriptor
   public override object? GetValue(object? component)
   {
     if (component == null)
-      return null;
+      component = Component;
 
-    return _propertyInfo.GetValue(component);
+    return PropertyInfo.GetValue(component);
   }
 
   /// <summary>
@@ -69,29 +72,29 @@ public partial class PropertyModel: PropertyDescriptor
       return;
 
     // Try to get default value from attribute
-    var defaultValueAttr = _propertyInfo.GetCustomAttribute<DefaultValueAttribute>();
+    var defaultValueAttr = PropertyInfo.GetCustomAttribute<DefaultValueAttribute>();
     if (defaultValueAttr != null)
     {
-      _propertyInfo.SetValue(component, defaultValueAttr.Value);
+      PropertyInfo.SetValue(component, defaultValueAttr.Value);
       return;
     }
 
     // For reference types, reset to null
-    if (!_propertyInfo.PropertyType.IsValueType)
+    if (!PropertyInfo.PropertyType.IsValueType)
     {
-      _propertyInfo.SetValue(component, null);
+      PropertyInfo.SetValue(component, null);
       return;
     }
 
     // For nullable value types, reset to null
-    if (Nullable.GetUnderlyingType(_propertyInfo.PropertyType) != null)
+    if (Nullable.GetUnderlyingType(PropertyInfo.PropertyType) != null)
     {
-      _propertyInfo.SetValue(component, null);
+      PropertyInfo.SetValue(component, null);
       return;
     }
 
     // For value types, reset to default(T)
-    _propertyInfo.SetValue(component, Activator.CreateInstance(_propertyInfo.PropertyType));
+    PropertyInfo.SetValue(component, Activator.CreateInstance(PropertyInfo.PropertyType));
   }
 
   /// <summary>
@@ -104,7 +107,7 @@ public partial class PropertyModel: PropertyDescriptor
     if (component == null)
       return;
 
-    _propertyInfo.SetValue(component, value);
+    PropertyInfo.SetValue(component, value);
   }
 
   /// <summary>
@@ -121,10 +124,10 @@ public partial class PropertyModel: PropertyDescriptor
     if (component == null)
       return false;
 
-    var currentValue = _propertyInfo.GetValue(component);
+    var currentValue = PropertyInfo.GetValue(component);
 
     // Check if there's a default value attribute
-    var defaultValueAttr = _propertyInfo.GetCustomAttribute<DefaultValueAttribute>();
+    var defaultValueAttr = PropertyInfo.GetCustomAttribute<DefaultValueAttribute>();
     if (defaultValueAttr != null)
     {
       // Serialize if value differs from default
@@ -132,61 +135,68 @@ public partial class PropertyModel: PropertyDescriptor
     }
 
     // For reference types, serialize if not null
-    if (!_propertyInfo.PropertyType.IsValueType)
+    if (!PropertyInfo.PropertyType.IsValueType)
       return currentValue != null;
 
     // For nullable value types, serialize if has value
-    if (Nullable.GetUnderlyingType(_propertyInfo.PropertyType) != null)
+    if (Nullable.GetUnderlyingType(PropertyInfo.PropertyType) != null)
       return currentValue != null;
 
     // For value types, compare with default(T)
-    var defaultValue = Activator.CreateInstance(_propertyInfo.PropertyType);
+    var defaultValue = Activator.CreateInstance(PropertyInfo.PropertyType);
     return !Equals(currentValue, defaultValue);
   }
 
   /// <summary>
   /// Gets the type of the object that this property descriptor is associated with.
   /// </summary>
-  public override Type ComponentType => _propertyInfo.DeclaringType ?? typeof(object);
+  public override Type ComponentType => PropertyInfo.DeclaringType ?? typeof(object);
 
   /// <summary>
   /// Gets a value indicating whether the property is read-only.
   /// </summary>
   /// <remarks>A property is considered read-only if it does not have a public setter or if a set accessor is
   /// not defined. Use this property to determine whether the value of the property can be changed.</remarks>
-  public override bool IsReadOnly => !_propertyInfo.CanWrite || _propertyInfo.GetSetMethod() == null;
+  public override bool IsReadOnly => !PropertyInfo.CanWrite || PropertyInfo.GetSetMethod() == null;
 
 
   /// <summary>
   /// Gets a value indicating whether the property is nullable.
   /// </summary>
   /// <remarks>A property is considered nullable if it is a reference type or a nullable value type.</remarks>
-  public bool IsNullable => _propertyInfo.PropertyType.IsNullable() || _propertyInfo.PropertyType.IsClass;
+  public bool IsNullable => PropertyInfo.PropertyType.IsNullable() || PropertyInfo.PropertyType.IsClass;
 
   /// <summary>
   /// Gets the type of the property represented by this instance.
   /// </summary>
-  public override Type PropertyType => _propertyInfo.PropertyType.GetNotNullableType();
+  public override Type PropertyType => PropertyInfo.PropertyType.GetNotNullableType();
 
   /// <summary>
   /// Gets the display name from propertyInfo.
   /// </summary>
-  public override string Name => _propertyInfo.Name;
+  public override string Name => PropertyInfo.Name;
 
   /// <summary>
   /// Gets the display name from propertyInfo.
   /// </summary>
-  public override string DisplayName => _propertyInfo.Name;
+  public override string DisplayName => PropertyInfo.Name;
+
+  /// <summary>
+  /// Gets the type of the property represented by this instance.
+  /// </summary>
+  public Attribute[] PropertyAttributes => 
+    PropertyInfo.GetCustomAttributes( true).OfType<Attribute>().ToArray();
+
 
   /// <summary>
   /// Gets the category of the property, if specified.
   /// </summary>
-  public override string Category => _propertyInfo.GetCustomAttribute<CategoryAttribute>()?.Category ?? String.Empty;
+  public override string Category => PropertyInfo.GetCustomAttribute<CategoryAttribute>()?.Category ?? String.Empty;
 
   /// <summary>
   /// Gets the unit of measurement associated with the property, if specified.
   /// </summary>
   /// <remarks>The unit is determined by the <see cref = "UnitAttribute"/> applied to the property. If no unit is
   /// specified, the value is <see langword="null"/>.</remarks>
-  public string? Unit => _propertyInfo.GetCustomAttribute<UnitAttribute>()?.Unit;
+  public string? Unit => PropertyInfo.GetCustomAttribute<UnitAttribute>()?.Unit;
 }
