@@ -190,7 +190,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   {
     get
     {
-      if (_DocumentSettings == null && WordprocessingDocument?.MainDocumentPart?.DocumentSettingsPart != null)
+      if (_DocumentSettings == null)
         _DocumentSettings = new DocumentSettings(this);
       return _DocumentSettings;
     }
@@ -198,6 +198,25 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   private DocumentSettings? _DocumentSettings;
+
+
+  ///// <summary>
+  /////   Document-level settings, including compatibility, protection, and view options.
+  ///// </summary>
+  //public CompatibilitySettings? CompatibilitySettings
+  //{
+  //  get
+  //  {
+  //    if (_DocumentSettings == null)
+  //      _DocumentSettings = new DocumentSettings(this);
+  //    if (CompatibilitySettings == null)
+  //      CompatibilitySettings = new CompatibilitySettings(this);
+  //    return _CompatibilitySettings;
+  //  }
+  //  set => UpdateField(ref _CompatibilitySettings, value, nameof(CompatibilitySettings));
+  //}
+
+  //private CompatibilitySettings? _CompatibilitySettings;
 
   /// <summary>
   /// Collection of all known document properties.
@@ -209,13 +228,20 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
       if (_KnownProperties == null)
       {
         _KnownProperties = new KnownProperties();
-        _KnownProperties.AddRange(CoreProperties.KnownProperties);
-        _KnownProperties.AddRange(ContentProperties.KnownProperties);
-        _KnownProperties.AddRange(StatisticProperties.KnownProperties);
-        _KnownProperties.AddRange(DocumentSettings.KnownProperties);
-        _KnownProperties.AddRange(CompatibilitySettings.KnownProperties);
-        _KnownProperties.AddRange(MailMerge.KnownProperties);
-        _KnownProperties.AddRange(DMM.MathProperties.KnownProperties);
+        foreach (var propModel in CoreProperties.KnownProperties.Values)
+          _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = CoreProperties });
+        foreach (var propModel in ContentProperties.KnownProperties.Values)
+          _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = ContentProperties });
+        foreach (var propModel in StatisticProperties.KnownProperties.Values)
+          _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = StatisticProperties });
+        foreach (var propModel in DocumentSettings.KnownProperties.Values)
+          _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = DocumentSettings });
+        //foreach (var propModel in CompatibilitySettings.KnownProperties.Values)
+        //  _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = CompatibilitySettings });
+
+        //_KnownProperties.AddRange(CompatibilitySettings.KnownProperties);
+        //_KnownProperties.AddRange(MailMerge.KnownProperties);
+        //_KnownProperties.AddRange(DMM.MathProperties.KnownProperties);
 
       }
       return _KnownProperties!;

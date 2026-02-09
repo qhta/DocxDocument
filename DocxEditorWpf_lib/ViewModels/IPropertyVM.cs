@@ -8,7 +8,7 @@ public interface IPropertyVM
   /// <summary>
   /// Name of the property.
   /// </summary>
-  public string Name { get; set; }
+  public string Name { get; }
 
   /// <summary>
   /// Value of the property.

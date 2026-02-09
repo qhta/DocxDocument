@@ -3,13 +3,13 @@
 /// <summary>
 /// ViewModel representing a document property.
 /// </summary>
-public class DocumentPropertyVM: ViewModel<DocumentModel.DocumentProperty>, IPropertyVM  
+public class DocumentPropertyVM: ViewModel<PropertyModel>, IPropertyVM  
 {
   /// <summary>
   /// Initializing constructor.
   /// </summary>
   /// <param name="model"></param>
-  public DocumentPropertyVM(DocumentProperty model) : base(model)
+  public DocumentPropertyVM(PropertyModel model) : base(model)
   {
   }
 
@@ -19,7 +19,6 @@ public class DocumentPropertyVM: ViewModel<DocumentModel.DocumentProperty>, IPro
   public string Name
   {
     get => Model.Name ?? string.Empty;
-    set => Model.Name = value;
   }
 
   /// <summary>
@@ -27,8 +26,11 @@ public class DocumentPropertyVM: ViewModel<DocumentModel.DocumentProperty>, IPro
   /// </summary>
   public object? Value
   {
-    get => Model.Value;
-    set => Model.Value = value;
+    get => Model.GetValue(Model.Component);
+    set
+    {
+      throw new NotImplementedException();
+    }
   }
 
   /// <summary>
@@ -36,8 +38,8 @@ public class DocumentPropertyVM: ViewModel<DocumentModel.DocumentProperty>, IPro
   /// </summary>
   public Type ValueType
   {
-    get => Model.Type ?? typeof(object);
-    set => Model.Type = value;
+    get => Model.PropertyType;
+    set { }
   }
 
   /// <summary>
@@ -48,6 +50,5 @@ public class DocumentPropertyVM: ViewModel<DocumentModel.DocumentProperty>, IPro
   public string Category
   {
     get => Model.Category ?? string.Empty;
-    set => Model.Category = value;
   }
 }

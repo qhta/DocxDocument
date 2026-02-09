@@ -38,8 +38,7 @@ public partial class MainWindow : Window
     if (result == true)
     {
       string filename = dialog.FileName;
-      var document = new DocumentModel.Wordprocessing.Document();
-      document.Open(filename);
+      var document = DocumentModel.Wordprocessing.Document.OpenDocument(filename);
       var documentVM = new DocumentVM(document);
       var documentView = new DocumentView();
       documentView.DataContext = documentVM;

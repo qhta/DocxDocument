@@ -75,7 +75,7 @@ public class KnownProperties : Dictionary<string, PropertyModel>
  public void Add(object item)
  {
   if (item is PropertyModel propertyModel)
-     Add(propertyModel);
+     Add(propertyModel.Name, propertyModel);
  }
 
  /// <summary>
