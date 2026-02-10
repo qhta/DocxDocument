@@ -3,6 +3,7 @@
 global using System.Collections;
 global using System.Collections.ObjectModel;
 global using System.ComponentModel;
+global using System.Diagnostics;
 global using System.Globalization;
 global using System.Windows;
 global using System.Windows.Controls;

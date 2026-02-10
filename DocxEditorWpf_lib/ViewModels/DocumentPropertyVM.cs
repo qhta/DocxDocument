@@ -47,8 +47,13 @@ public class DocumentPropertyVM: ViewModel<PropertyModel>, IPropertyVM
   /// </summary>
   public bool IsEmpty => Value == null || (Value is string str && string.IsNullOrEmpty(str));
 
+  /// <summary>
+  /// Gets the category associated with the model.
+  /// </summary>
   public string Category
   {
     get => Model.Category ?? string.Empty;
   }
+
+
 }

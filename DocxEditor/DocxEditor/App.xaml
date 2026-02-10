@@ -8,6 +8,7 @@
       <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Qhta.SF.WPF.Tools;component/Resources/SfDataGridTools.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Qhta.SF.WPF.Tools;component/Resources/SfTreeGridTools.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/DocxEditorWpf_lib;component/themes/generic.xaml"/>
       </ResourceDictionary.MergedDictionaries>
       <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </ResourceDictionary>
