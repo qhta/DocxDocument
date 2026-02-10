@@ -185,12 +185,5 @@
 
     #endregion
 
-
-    public RelayCommand ResetCommand => new RelayCommand(Reset);
-
-    private void Reset()
-    {
-      Debug.WriteLine("Reset");
-    }
   }
 }

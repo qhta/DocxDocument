@@ -35,7 +35,7 @@ public abstract class ValueCollection<ItemType> : ModelElement,
         {
           if (newItem is ICollectionItem collectionItem)
           {
-            collectionItem.Collection = this;
+            collectionItem.SetCollection(this);
           }
         }
       }

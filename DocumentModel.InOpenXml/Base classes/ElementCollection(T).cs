@@ -29,7 +29,7 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   /// <param name="parent"></param>
   protected ElementCollection(ModelElement parent): this()
   {
-    Parent = parent;
+    SetParent(parent);
   }
 
   /// <summary>
@@ -51,7 +51,7 @@ public abstract class ElementCollection<ItemType> : ModelElement,
         {
           if (newItem is ICollectionItem collectionItem)
           {
-            collectionItem.Collection = this;
+            collectionItem.SetCollection(this);
           }
         }
       }
