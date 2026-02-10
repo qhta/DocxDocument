@@ -1,61 +1,145 @@
-﻿namespace DocxEditor.Helpers;
+﻿using System.Runtime.CompilerServices;
 
-public class DocumentPropertyDescriptor : PropertyDescriptor
+namespace DocxEditor.Helpers;
+
+/// <summary>
+/// A property descriptor for a document property, which provides information about the property
+/// and allows getting and setting its value.
+/// </summary>
+public class DocumentPropertyDescriptor : PropertyDescriptor, INotifyPropertyChanged
 {
+  private readonly PropertyModel propertyModel;
+
   private readonly DocumentPropertiesProvider propertiesProvider;
 
   #region Constructors
 
+  /// <summary>
+  /// Initializes a new instance of the DocumentPropertyDescriptor class
+  /// with the specified properties provider and property model.
+  /// </summary>
+  /// <param name="propertiesProvider"></param>
+  /// <param name="propertyModel"></param>
   public DocumentPropertyDescriptor(DocumentPropertiesProvider propertiesProvider,
-    string propertyName,
-    string propertyDisplayName,
-    Type propertyType,
-    Attribute[] propertyAttributes)
-    : base(propertyName, propertyAttributes)
+    PropertyModel propertyModel)
+    : base(propertyModel.Name, propertyModel.PropertyAttributes)
   {
     this.propertiesProvider = propertiesProvider;
-    PropertyType = propertyType;
-    DisplayName = propertyDisplayName;
+    this.propertyModel = propertyModel;
   }
 
   #endregion
 
   #region Properties
 
+  /// <summary>
+  /// Gets the type of the component associated with this provider.
+  /// </summary>
   public override Type ComponentType => typeof(DocumentPropertiesProvider);
 
-  public override string DisplayName { get; }
+  /// <summary>
+  /// Gets the display name of the property, which is used to show the property in the property grid.
+  /// </summary>
+  public override string DisplayName => propertiesProvider.GetDisplayName(propertyModel);
 
-  public override bool IsReadOnly => false;
+  /// <summary>
+  /// Gets a value indicating whether the property is read-only.
+  /// </summary>
+  public override bool IsReadOnly => propertyModel.IsReadOnly;
 
-  public override Type PropertyType { get; }
+  /// <summary>
+  /// Gets the type of the property, which is used to determine how to display and edit the property in the property grid.
+  /// </summary>
+  public override Type PropertyType => propertyModel.PropertyType;
+
 
   #endregion
 
   #region Override members
 
-  public override bool CanResetValue(object component) => true;
+  private object? Component => propertyModel.Component;
 
-  public override object? GetValue(object? component)
-  {
-    var model = propertiesProvider.Models[Name];
-    return model.GetValue(model.Component);
-  }
+  /// <summary>
+  /// Determines whether the value of the specified component can be reset to its default state.
+  /// </summary>
+  /// <remarks>
+  /// Component is passed to the property model, but is ignored there.
+  /// </remarks>
+  public override bool CanResetValue(object component) => Component != null && propertyModel.CanResetValue(Component);
 
+  /// <summary>
+  /// Gets the current value of the property for the specified component.
+  /// </summary>
+  /// <remarks>
+  /// Null is passed as the component because the property model does not rely on a specific component instance to manage the property value,
+  /// </remarks>
+  public override object? GetValue(object? component) => propertyModel.GetValue(Component);
+
+  /// <summary>
+  /// Resets the value of the property to its default state for the specified component.
+  /// </summary>
+  /// <remarks>
+  /// Null is passed as the component because the property model does not rely on a specific component instance to manage the property value,
+  /// </remarks>
   public override void ResetValue(object component)
   {
+    if (Component == null)
+      return;
+
+    propertyModel.ResetValue(Component);
+    OnValueChanged(Component, EventArgs.Empty);
   }
+
+  /// <summary>
+  /// Sets the value of the property represented by this descriptor for the specified component.
+  /// </summary>
+  /// <remarks>
+  /// Null is passed as the component because the property model does not rely on a specific component instance to manage the property value,
+  /// </remarks>
 
   public override void SetValue(object? component, object? value)
   {
-    var model = propertiesProvider.Models[Name];
-    model.SetValue(model.Component, value);
+    propertyModel.SetValue(Component, value);
+    OnValueChanged(Component, EventArgs.Empty);
   }
 
-  public override bool ShouldSerializeValue(object component)
-  {
-    return false;
-  }
+  /// <summary>
+  /// Determines whether the value of the specified component should be persisted.
+  /// </summary>
+  /// <remarks>
+  ///  Need to return false here to prevent the property grid from trying to persist the property value,
+  /// </remarks>
+  public override bool ShouldSerializeValue(object component) => Component != null && propertyModel.ShouldSerializeValue(Component);
 
   #endregion
+
+
+  public RelayCommand ResetCommand => new RelayCommand(Reset);
+
+  public void Reset()
+  {
+    Debug.WriteLine("Reset");
+  }
+
+  public event PropertyChangedEventHandler? PropertyChanged
+  {
+    add => _PropertyChanged += value;
+    remove => _PropertyChanged -= value;
+  }
+
+  private event PropertyChangedEventHandler? _PropertyChanged;
+
+  protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+  {
+    _PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+  }
+
+  protected bool SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
+  {
+    if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+
+    field = value;
+    OnPropertyChanged(propertyName);
+    return true;
+  }
 }

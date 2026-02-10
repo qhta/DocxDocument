@@ -13,6 +13,7 @@ global using System.Xml.Serialization;
 global using System.Text.Json.Serialization;
 global using DocumentModel.OpenXml;
 global using Qhta.TypeUtils;
+global using Qhta.TextUtils;
 
 #pragma warning disable OOXML0001
 global using PackageProperties = DocumentFormat.OpenXml.Packaging.IPackageProperties;

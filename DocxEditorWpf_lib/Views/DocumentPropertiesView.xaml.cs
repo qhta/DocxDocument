@@ -1,6 +1,10 @@
-﻿using DocxEditor.ViewModels;
+﻿using System.Reflection;
+
+using DocxEditor.Helpers;
+using DocxEditor.ViewModels;
 
 using Syncfusion.Windows.PropertyGrid;
+using Syncfusion.Windows.Shared;
 
 namespace DocxEditor.Views;
 /// <summary>
@@ -15,13 +19,25 @@ public partial class DocumentPropertiesView : UserControl
   public DocumentPropertiesView()
   {
     InitializeComponent();
-    //string candidateName = "John";
-    //string candidateAddress = "435 East Coast Road";
-    //int age = 30;
-    //propertiesProvider.Values.Add("Name", candidateName);
-    //propertiesProvider.Values.Add("Address", candidateAddress);
-    //propertiesProvider.Values.Add("Age", age);
-    //propertyGrid.SelectedObject = propertiesProvider;
   }
 
+  private void PropertyGrid_OnAutoGeneratingPropertyGridItem(object? sender, AutoGeneratingPropertyGridItemEventArgs e)
+  {
+    var propertyItem = e.OriginalSource as PropertyItem;
+    var resetCommand = new Syncfusion.Windows.Shared.DelegateCommand(ResetItem, CanResetItem);
+    typeof(PropertyItem).GetField("_resetCommand", BindingFlags.Instance | BindingFlags.NonPublic)!.SetValue(propertyItem, resetCommand);
+  }
+
+  private void ResetItem(object propertyItem)
+  {
+    if (propertyItem is PropertyItem item)
+    {
+      item.SetValue(PropertyItem.ValueProperty, null);
+    }
+  }
+
+  private bool CanResetItem(object propertyItem)
+  {
+    return true;
+  }
 }

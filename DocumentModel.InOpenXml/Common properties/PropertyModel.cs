@@ -69,7 +69,7 @@ public partial class PropertyModel: PropertyDescriptor
   public override void ResetValue(object? component)
   {
     if (component == null)
-      return;
+      component = Component;
 
     // Try to get default value from attribute
     var defaultValueAttr = PropertyInfo.GetCustomAttribute<DefaultValueAttribute>();
@@ -105,7 +105,7 @@ public partial class PropertyModel: PropertyDescriptor
   public override void SetValue(object? component, object? value)
   {
     if (component == null)
-      return;
+      component = Component;
 
     PropertyInfo.SetValue(component, value);
   }
@@ -169,7 +169,7 @@ public partial class PropertyModel: PropertyDescriptor
   /// <summary>
   /// Gets the type of the property represented by this instance.
   /// </summary>
-  public override Type PropertyType => PropertyInfo.PropertyType.GetNotNullableType();
+  public override Type PropertyType => PropertyInfo.PropertyType;
 
   /// <summary>
   /// Gets the display name from propertyInfo.
@@ -179,7 +179,7 @@ public partial class PropertyModel: PropertyDescriptor
   /// <summary>
   /// Gets the display name from propertyInfo.
   /// </summary>
-  public override string DisplayName => PropertyInfo.Name;
+  public override string DisplayName => PropertyInfo.Name.DeCamelCase();
 
   /// <summary>
   /// Gets the type of the property represented by this instance.
