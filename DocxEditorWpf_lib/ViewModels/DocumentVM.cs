@@ -14,8 +14,14 @@ public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
   {
   }
 
+  /// <summary>
+  /// Model of the document represented by this view model.
+  /// </summary>
   public DocumentModel.Wordprocessing.Document Document => Model;
 
+  /// <summary>
+  /// Caption for the document, which is typically displayed in the title bar of the application.
+  /// </summary>
   public string Caption => Document?.CoreProperties?.Title ?? "Untitled";
 
   /// <summary>
@@ -33,4 +39,12 @@ public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
     }
   }
   private DocumentPropertiesVM? _documentPropertiesVM;
+
+  public RelayCommand ResetCommand => new RelayCommand(Reset);
+
+  private void Reset()
+  {
+    Debug.WriteLine("Reset");
+  }
+
 }

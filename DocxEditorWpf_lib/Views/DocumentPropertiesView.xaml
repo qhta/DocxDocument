@@ -15,43 +15,16 @@
     <helpers:PropertyEmptyToForegroundConverter x:Key="PropertyEmptyToForegroundConverter"/>
   </UserControl.Resources>
   <Grid Background="White">
-    <!--<syncfusion:SfDataGrid
-      x:Name="DocumentPropertiesGrid"
-      ItemsSource="{Binding DocumentProperties}"
-      AutoGenerateColumns="False"
-      AllowResizingColumns="True"
-      AllowEditing="False"
-      AllowSorting="False"
-      AllowFiltering="False"
-      EditorSelectionBehavior="SelectAll"
-      EditTrigger="OnTap"
-      ColumnSizer="AutoWithLastColumnFill"
-      >
-      <syncfusion:SfDataGrid.Columns>
-        <syncfusion:GridTextColumn
-          HeaderText="Name"
-          MappingName="Name"
-          >
-          <syncfusion:GridTextColumn.CellTemplate>
-            <DataTemplate DataType="{x:Type viewModels:DocumentPropertyVM}">
-              <TextBlock 
-                Text="{Binding Name}" 
-                Foreground="{Binding IsEmpty, Converter={StaticResource PropertyEmptyToForegroundConverter}}"
-                VerticalAlignment="Center"
-                Padding="3,0"/>
-            </DataTemplate>
-          </syncfusion:GridTextColumn.CellTemplate>
-        </syncfusion:GridTextColumn>
-        <syncfusion:GridTextColumn
-          HeaderText="Value"
-          MappingName="Value"
-        />
-      </syncfusion:SfDataGrid.Columns>
-    </syncfusion:SfDataGrid>-->
     <syncfusion:PropertyGrid
       x:Name="propertyGrid"
+      PropertyExpandMode="NestedMode"
+      MenuButtonVisibility="true"
+      AutoGeneratingPropertyGridItem="PropertyGrid_OnAutoGeneratingPropertyGridItem"
       SelectedObject="{Binding DocumentProperties.PropertiesProvider}"
       >
+      <syncfusion:PropertyGrid.MenuItems>
+        <MenuItem Header="Reset" Command="{Binding ResetCommand}" CommandParameter="{Binding}"/>
+      </syncfusion:PropertyGrid.MenuItems>
     </syncfusion:PropertyGrid>
   </Grid>
 </UserControl>
