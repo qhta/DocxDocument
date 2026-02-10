@@ -23,6 +23,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The main title of the document, typically displayed in the title bar or metadata.
   /// </summary>
+  [Category("Base")]
   [OpenXmlProperty(nameof(PackageProperties.Title))]
   public string? Title
   {
@@ -34,6 +35,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The subject or topic of the document's content.
   /// </summary>
+  [Category("Base")]
   [OpenXmlProperty(nameof(PackageProperties.Subject))]
   public string? Subject
   {
@@ -45,6 +47,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The person or entity primarily responsible for creating the document content.
   /// </summary>
+  [Category("Base")]
   [OpenXmlProperty(nameof(PackageProperties.Creator))]
   public string? Creator
   {
@@ -56,6 +59,7 @@ public partial class CoreProperties
   /// <summary>
   ///   A delimited set of keywords to support searching and indexing. Typically a list of terms not available elsewhere in the properties. May use xml:lang for language identification and allow mixed content.
   /// </summary>
+  [Category("Base")]
   [OpenXmlProperty(nameof(PackageProperties.Keywords))]
   public string? Keywords
   {
@@ -67,6 +71,7 @@ public partial class CoreProperties
   /// <summary>
   ///   An explanation or abstract of the document content. May include a summary, table of contents, or free-text account of the content.
   /// </summary>
+  [Category("Base")]
   [OpenXmlProperty(nameof(PackageProperties.Description))]
   public string? Description
   {
@@ -78,6 +83,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The user who last modified the document. Identification is environment-specific (e.g., name, email, or employee ID).
   /// </summary>
+  [Category("Base")]
   [OpenXmlProperty(nameof(PackageProperties.LastModifiedBy))]
   public string? LastModifiedBy
   {
@@ -89,7 +95,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The revision number, typically incremented after each save or revision.
   /// </summary>
-  [OpenXmlProperty(nameof(PackageProperties.Revision))]
+  [Category("Versioning")]
   public int? Revision
   {
     get => _Revision;
@@ -100,6 +106,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The date and time when the document was last printed.
   /// </summary>
+  [Category("Base")]
   [OpenXmlProperty(nameof(PackageProperties.LastPrinted))]
   public DateTime? LastPrinted
   {
@@ -111,6 +118,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The date and time when the document was created.
   /// </summary>
+  [Category("Base")]
   [OpenXmlProperty(nameof(PackageProperties.Created))]
   public DateTime? Created
   {
@@ -122,6 +130,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The date and time when the document was last modified.
   /// </summary>
+  [Category("Base")]
   [OpenXmlProperty(nameof(PackageProperties.Modified))]
   public DateTime? Modified
   {
@@ -133,6 +142,7 @@ public partial class CoreProperties
   /// <summary>
   ///   A categorization of the document content, such as Resume, Letter, Proposal, or Technical Presentation. May be used for navigation or filtering.
   /// </summary>
+  [Category("Base")]
   [OpenXmlProperty(nameof(PackageProperties.Category))]
   public string? Category
   {
@@ -144,6 +154,7 @@ public partial class CoreProperties
   /// <summary>
   ///   An unambiguous reference to the document within a given context.
   /// </summary>
+  [Category("Identification")]
   [OpenXmlProperty(nameof(PackageProperties.Identifier))]
   public string? Identifier
   {
@@ -155,6 +166,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The type of content represented, as defined by a specific application.
   /// </summary>
+  [Category("Base")]
   [OpenXmlProperty(nameof(PackageProperties.ContentType))]
   public string? ContentType
   {
@@ -166,6 +178,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The language of the document content, typically encoded per IETF RFC 3066.
   /// </summary>
+  [Category("Base")]
   [OpenXmlProperty(nameof(PackageProperties.Language))]
   public string? Language
   {
@@ -177,6 +190,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The version number of the document, set by the user or application.
   /// </summary>
+  [Category("Versioning")]
   [OpenXmlProperty(nameof(PackageProperties.Version))]
   public string? Version
   {
@@ -188,6 +202,7 @@ public partial class CoreProperties
   /// <summary>
   ///   The status of the document content, such as Draft, Reviewed, or Final.
   /// </summary>
+  [Category("Base")]
   [OpenXmlProperty(nameof(PackageProperties.ContentStatus))]
   public string? ContentStatus
   {

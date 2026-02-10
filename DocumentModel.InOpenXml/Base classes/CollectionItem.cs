@@ -17,7 +17,7 @@ public abstract class CollectionItem: ModelElement, ICollectionItem
   /// <param name="collection"></param>
   protected CollectionItem(IElementCollection<CollectionItem> collection)
   {
-    Collection = collection;
+    SetCollection(collection);
   }
 
   ///// <summary>

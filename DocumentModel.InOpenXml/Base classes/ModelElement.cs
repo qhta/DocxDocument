@@ -1,14 +1,37 @@
-﻿#pragma warning disable CS0659  
+﻿using DocumentModel;
+
+#pragma warning disable CS0659  
 namespace DocumentModel;
 
 /// <summary>
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
-public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem
+public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem, IModifiable
 {
   static ModelElement()
   {
     RegisterOpenXmlConversion();
+  }
+
+  /// <summary>
+  /// Default constructor needed for serialization.
+  /// </summary>
+  protected ModelElement()
+  {
+    PropertyChanged += ModelElement_PropertyChanged;
+  }
+
+  /// <summary>
+  /// Passes the IsModified up to the parent IModifiable object.
+  /// </summary>
+  /// <param name="sender">Sender object that raised the event.</param>
+  /// <param name="args">Event arguments containing the property name.</param>
+  private void ModelElement_PropertyChanged(object? sender, PropertyChangedEventArgs args)
+  {
+    if (args.PropertyName == nameof(IsModified) && IsModified && Parent is IModifiable modifiableParent)
+      modifiableParent.SetIsModified(true);
+    else if (args.PropertyName != nameof(IsModified))
+      SetIsModified(true);
   }
 
   /// <summary>
@@ -65,12 +88,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     return null;
   }
 
-  /// <summary>
-  /// Default constructor needed for serialization.
-  /// </summary>
-  protected ModelElement()
-  {
-  }
 
   /// <summary>
   /// Occurs when a property value changes. Can be subscribed to by listeners to receive notifications of property changes.
@@ -113,25 +130,13 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// notification.</param>
   protected void UpdateField<FieldType>(ref FieldType? field, FieldType? value, string propertyName)
   {
-    if (typeof(FieldType).Name.StartsWith("LatentStyles")) Debug.Assert(true);
-    //if (typeof(FieldType).Name.StartsWith("HeadingPairs")) Debug.Assert(true);
 
     if (value is string stringValue && stringValue.Length == 0)
       value = default;
-    //if (value is IEnumerable enumerable && !enumerable.Cast<object>().Any() 
-    //                                    && typeof(FieldType).GetCustomAttribute<XmlIgnoreEmptyCollectionAttribute>()!=null)
-    //{
-    //  return;
-    //}
     if (!Equals(field, value))
     {
       if (field is IWordprocessingDocumentAware oldValue)
         oldValue.Detach();
-
-      //if (value is IChildItem childItem && childItem.Parent == null)
-      //  if (!Object.ReferenceEquals(value, this))
-      //    childItem.Parent = this;
-
       if (value is IWordprocessingDocumentAware newValue
           && this is IWordprocessingDocumentAware thisElement && thisElement.WordprocessingDocument != null)
         newValue.AttachAndUpdate(thisElement.WordprocessingDocument);
@@ -233,21 +238,60 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// implementation in the derived class.</returns>
   public virtual object? GetUpdatableElement() => null;
 
-
   /// <summary>
   /// Parent object that contains this item.
   /// </summary>
-  [XmlIgnore]
-  [JsonIgnore]
-  [NotMapped]
-  public object? Parent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public object? Parent => _Parent;
+
+  private object? _Parent;
+
+  /// <summary>
+  /// Sets the parent object to be used by the instance.
+  /// </summary>
+  /// <param name="parent">The parent object to assign. Can be null to clear the current parent.</param>
+  public void SetParent(object? parent)
+  {
+    _Parent = parent;
+  }
 
 
   /// <summary>
   /// Optional collection that contains this item.
   /// </summary>
-  [XmlIgnore]
-  [JsonIgnore]
-  [NotMapped]
-  public object? Collection { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  [DebuggerStepThrough]
+  public object? GetCollection() => _Collection;
+
+  private object? _Collection;
+
+  /// <summary>
+  /// Sets the collection object to be used by the instance.
+  /// </summary>
+  /// <param name="collection">The collection object to assign. Can be null to clear the current collection.</param>
+  public void SetCollection(object? collection)
+  {
+    _Collection = collection;
+  }
+
+  /// <summary>
+  /// Gets a value indicating whether the object has been modified since it was last saved or loaded.
+  /// </summary>
+  public bool IsModified => _IsModified;
+
+  /// <summary>
+  /// IsModified object that contains this item.
+  /// </summary>
+  [DebuggerStepThrough]
+  public bool GetIsModified() => _IsModified;
+
+  private bool _IsModified;
+
+  /// <summary>
+  /// Sets the ismodified object to be used by the instance.
+  /// </summary>
+  /// <param name="ismodified">The ismodified object to assign. Can be null to clear the current ismodified.</param>
+  public void SetIsModified(bool ismodified)
+  {
+    _IsModified = ismodified;
+    NotifyPropertyChanged(nameof(IsModified));
+  }
 }

@@ -4,12 +4,13 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 
-using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
 
 using DocxEditor.ViewModels;
 using DocxEditor.Views;
 
 using Qhta.MVVM;
+
 using Syncfusion.Windows.Tools.Controls;
 
 namespace DocxEditor;
@@ -23,13 +24,35 @@ public partial class MainWindow : Window
   public MainWindow()
   {
     InitializeComponent();
+    Closing += MainWindow_Closing;
+  }
+
+  private void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+  {
+    if (Document != null)
+    {
+      if (Document.IsModified)
+      {
+        var result = MessageBox.Show("Do you want to save changes to the document?", "Save Changes", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+        if (result == MessageBoxResult.Cancel)
+        {
+          e.Cancel = true;
+          return;
+        }
+        if (result == MessageBoxResult.Yes)
+        {
+          Document.Save();
+        }
+      }
+      Document.Dispose();
+    }
   }
 
   private void FileOpen_Executed(object sender, ExecutedRoutedEventArgs e)
   {
     var dialog = new Microsoft.Win32.OpenFileDialog();
     dialog.InitialDirectory = @"d:\OneDrive\VS\Projects\DocxDocument\DocxDocument.Test\Samples";
-      //Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+    //Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
     //dialog.FileName = "Document"; // Default file name
     dialog.DefaultExt = ".docx"; // Default file extension
     dialog.Filter = "Word documents (.docx)|*.docx"; // Filter files by extension
@@ -38,13 +61,18 @@ public partial class MainWindow : Window
     if (result == true)
     {
       string filename = dialog.FileName;
-      var document = DocumentModel.Wordprocessing.Document.OpenDocument(filename);
-      var documentVM = new DocumentVM(document);
+      Document = Document.OpenDocument(filename);
+      var documentVM = new DocumentVM(Document);
       var documentView = new DocumentView();
       documentView.DataContext = documentVM;
       AddFloatingView(documentView, "Document", documentVM.Caption);
     }
   }
+
+  /// <summary>
+  /// Opened document model, which is currently being edited and displayed in the MainWindow.
+  /// </summary>
+  public Document? Document { get; private set; }
 
   private void ViewModel_ActiveViewChanged(object sender, DependencyPropertyChangedEventArgs e)
   {

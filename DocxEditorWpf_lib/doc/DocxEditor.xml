@@ -242,6 +242,24 @@
             Converts IsEmpty property to Foreground brush - light gray if empty, default otherwise.
             </summary>
         </member>
+        <member name="M:DocxEditor.Helpers.PropertyEmptyToForegroundConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a boolean value indicating whether a property is empty to a SolidColorBrush for the foreground color.
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertyEmptyToForegroundConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+             <summary>
+             Converts back from a SolidColorBrush to a boolean value indicating whether the property is empty.
+             </summary>
+            <remarks>
+              Not implemented as the conversion back from a brush to a boolean value is not needed in this context and may not be straightforward to implement.
+             </remarks>
+        </member>
         <member name="T:DocxEditor.ViewModels.DocumentPropertiesVM">
             <summary>
             ViewModel for DocumentModel.DocumentProperties.
@@ -363,6 +381,30 @@
             Initializing constructor.
             </summary>
         </member>
+        <member name="M:DocxEditor.Views.DocumentPropertiesView.PropertyGrid_OnAutoGeneratingPropertyGridItem(System.Object,Syncfusion.Windows.PropertyGrid.AutoGeneratingPropertyGridItemEventArgs)">
+            <summary>
+            Handler for PropertyGrid's AutoGeneratingPropertyGridItem event, which is raised for each property item being generated.
+            This handler sets a custom reset command for each property item, allowing users to reset the property value to its default state.
+            The reset command is implemented using a DelegateCommand that calls the ResetItem method when executed
+            and checks if the reset action can be performed using the CanResetItem method.
+            </summary>
+            <param name="sender">The PropertyGrid control.</param>
+            <param name="e">Arguments for the event.</param>
+        </member>
+        <member name="M:DocxEditor.Views.DocumentPropertiesView.ResetItem(System.Object)">
+            <summary>
+            Resets the value of the specified property item to its default state.
+            This method is called when the reset command for a property item is executed.
+            </summary>
+            <param name="propertyItem"></param>
+        </member>
+        <member name="M:DocxEditor.Views.DocumentPropertiesView.CanResetItem(System.Object)">
+            <summary>
+            Returns a boolean value indicating whether the specified property item can be reset to its default state.
+            </summary>
+            <param name="propertyItem"></param>
+            <returns></returns>
+        </member>
         <member name="M:DocxEditor.Views.DocumentPropertiesView.InitializeComponent">
             <summary>
             InitializeComponent
@@ -384,36 +426,6 @@
         <member name="M:DocxEditor.Views.DocumentView.InitializeComponent">
             <summary>
             InitializeComponent
-            </summary>
-        </member>
-        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
-            <summary>
-            GeneratedInternalTypeHelper
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
-            <summary>
-            CreateInstance
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            GetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            SetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
-            <summary>
-            CreateDelegate
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
-            <summary>
-            AddEventHandler
             </summary>
         </member>
     </members>
