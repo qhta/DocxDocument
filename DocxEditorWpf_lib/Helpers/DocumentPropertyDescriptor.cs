@@ -6,7 +6,7 @@ namespace DocxEditor.Helpers;
 /// A property descriptor for a document property, which provides information about the property
 /// and allows getting and setting its value.
 /// </summary>
-public class DocumentPropertyDescriptor : PropertyDescriptor, INotifyPropertyChanged
+public class DocumentPropertyDescriptor : PropertyDescriptor
 {
   private readonly PropertyModel propertyModel;
 
@@ -113,33 +113,4 @@ public class DocumentPropertyDescriptor : PropertyDescriptor, INotifyPropertyCha
 
   #endregion
 
-
-  public RelayCommand ResetCommand => new RelayCommand(Reset);
-
-  public void Reset()
-  {
-    Debug.WriteLine("Reset");
-  }
-
-  public event PropertyChangedEventHandler? PropertyChanged
-  {
-    add => _PropertyChanged += value;
-    remove => _PropertyChanged -= value;
-  }
-
-  private event PropertyChangedEventHandler? _PropertyChanged;
-
-  protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
-  {
-    _PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-  }
-
-  protected bool SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
-  {
-    if (EqualityComparer<T>.Default.Equals(field, value)) return false;
-
-    field = value;
-    OnPropertyChanged(propertyName);
-    return true;
-  }
 }

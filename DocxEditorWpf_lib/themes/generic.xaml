@@ -272,7 +272,7 @@
       </shared:DescriptionDetailsTextBlock>
     </Grid>
   </DataTemplate>
-  <Style x:Key="DefaultPropertyViewItemStyle" TargetType="{x:Type shared:PropertyViewItem}">
+  <!--<Style x:Key="DefaultPropertyViewItemStyle" TargetType="{x:Type shared:PropertyViewItem}">
     <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
     <Setter Property="IsTabStop" Value="False" />
     <Setter Property="shared:PropertyViewItem.EditorTemplate" Value="{StaticResource PropertyNameTemplate}" />
@@ -416,8 +416,8 @@
         </ItemsPanelTemplate>
       </Setter.Value>
     </Setter>
-  </Style>
-  <Style x:Key="{x:Type shared:PropertyViewItem}" BasedOn="{StaticResource DefaultPropertyViewItemStyle}"
+  </Style>-->
+  <!--<Style x:Key="{x:Type shared:PropertyViewItem}" BasedOn="{StaticResource DefaultPropertyViewItemStyle}"
          TargetType="{x:Type shared:PropertyViewItem}" />
   <Style x:Key="DefaultPropertyCatagoryViewItemStyle" TargetType="{x:Type shared:PropertyCatagoryViewItem}">
     <Setter Property="BorderBrush" Value="#FFD3D3D3" />
@@ -516,7 +516,7 @@
   </Style>
   <Style x:Key="{x:Type shared:PropertyCatagoryViewItem}"
          BasedOn="{StaticResource DefaultPropertyCatagoryViewItemStyle}"
-         TargetType="{x:Type shared:PropertyCatagoryViewItem}" />
+         TargetType="{x:Type shared:PropertyCatagoryViewItem}" />-->
   <Style x:Key="DefaultPropertyViewStyle" TargetType="{x:Type shared:PropertyView}">
     <Setter Property="Template">
       <Setter.Value>
@@ -703,7 +703,8 @@
                       </Border>
                       <MenuItem Name="Reset_MenuItem"
                                 Margin="0,0,0,8" Header="{shared:PropertyGridLocalizationResource ResourceName=Reset}"
-                                Command="{Binding ResetCommand1}"
+                                Command="{Binding ResetCommand}"
+                                CommandParameter="{Binding Path=PlacementTarget, RelativeSource={RelativeSource AncestorType=Popup}}"
                                 Visibility="Collapsed"/>
                       <Separator Name="TopSeperator" Visibility="Collapsed" Margin="30,0,0,0" Height="2" />
                       <ItemsControl Name="PART_Menu" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"

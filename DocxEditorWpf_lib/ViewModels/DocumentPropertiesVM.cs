@@ -27,11 +27,4 @@ public sealed class DocumentPropertiesVM : ObservableCollection<DocumentProperty
   /// </summary>
   public DocumentPropertiesProvider PropertiesProvider { get; private set; }
 
-
-  public RelayCommand ResetCommand => new RelayCommand(Reset);
-
-  private void Reset()
-  {
-    Debug.WriteLine("Reset");
-  }
 }

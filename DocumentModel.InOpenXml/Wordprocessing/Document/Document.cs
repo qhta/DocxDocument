@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Represents a WordprocessingML document, providing access to its settings, properties, and lifecycle management.
 ///   Enables loading, saving, and manipulating document-level metadata, content, and configuration for Open XML word processing documents.
 /// </summary>
-public partial class Document : ModelElement, IWordprocessingDocumentAware, IDisposable
+public partial class Document : ModelElement, IWordprocessingDocumentAware, IDisposable, IModifiable
 {
   /// <summary>
   ///   Initializes a new instance of the <see cref="Document"/> class with default property objects.
@@ -15,6 +15,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     _ContentProperties = new ContentProperties(this);
     _StatisticProperties = new StatisticProperties(this);
   }
+
+
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="Document"/> class and attaches it to the specified Open XML word processing document.
@@ -97,11 +99,40 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   ///   Opens a WordprocessingML document from the specified file path and returns a new <see cref="Document"/> instance representing it.
   /// </summary>
   /// <param name="filePath">The full path to the file to open. The file must exist and be a valid Word document.</param>
-  /// <returns>A <see cref="Document"/> instance representing the opened file.</returns>
-  public static Document OpenDocument(string filePath)
+  /// <param name="editable">Determines if the document should be opened in editable mode.</param>
+  /// <returns>A <see cref="Document"/>The instance representing the opened file.</returns>
+  public static Document OpenDocument(string filePath, bool editable = true)
   {
-    var newDocument = new Document(WordprocessingHelper.OpenWordDocument(filePath));
+    var tempFile = Path.ChangeExtension(filePath, ".tmp");
+    File.Copy(filePath, tempFile, true);
+    var newDocument = new Document(WordprocessingHelper.OpenWordDocument(tempFile, editable));
+    newDocument.Filename = filePath;
     return newDocument;
+  }
+
+  /// <summary>
+  /// Filename of the document, which can be used for display purposes or to track the source of the document.
+  /// </summary>
+  public string? Filename
+  {
+    get => _Filename;
+    set
+    {
+      if (_Filename != value)
+      {
+        _Filename = value;
+        NotifyPropertyChanged(nameof(Filename));
+      }
+    }
+  }
+  private string? _Filename;
+
+  /// <summary>
+  /// Saves the current state of the document to its underlying data source, such as a file or stream.
+  /// </summary>
+  public void Save()
+  {
+    SetIsModified(false);
   }
 
   /// <summary>
@@ -110,7 +141,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// </summary>
   public void Dispose()
   {
-    WordprocessingDocument?.Dispose();
     WordprocessingDocument = null;
     Detach();
     NotifyPropertyChanged(nameof(WordprocessingDocument));
@@ -230,12 +260,12 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
         _KnownProperties = new KnownProperties();
         foreach (var propModel in CoreProperties.KnownProperties.Values)
           _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = CoreProperties });
-        foreach (var propModel in ContentProperties.KnownProperties.Values)
-          _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = ContentProperties });
-        foreach (var propModel in StatisticProperties.KnownProperties.Values)
-          _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = StatisticProperties });
-        foreach (var propModel in DocumentSettings.KnownProperties.Values)
-          _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = DocumentSettings });
+        //foreach (var propModel in ContentProperties.KnownProperties.Values)
+        //  _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = ContentProperties });
+        //foreach (var propModel in StatisticProperties.KnownProperties.Values)
+        //  _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = StatisticProperties });
+        //foreach (var propModel in DocumentSettings.KnownProperties.Values)
+        //  _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = DocumentSettings });
         //foreach (var propModel in CompatibilitySettings.KnownProperties.Values)
         //  _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = CompatibilitySettings });
 
