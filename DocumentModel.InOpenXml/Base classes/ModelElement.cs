@@ -28,9 +28,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <param name="args">Event arguments containing the property name.</param>
   private void ModelElement_PropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
-    if (args.PropertyName == nameof(IsModified) && IsModified && Parent is IModifiable modifiableParent)
-      modifiableParent.SetIsModified(true);
-    else if (args.PropertyName != nameof(IsModified))
+    if (args.PropertyName != nameof(IsModified))
       SetIsModified(true);
   }
 
@@ -241,7 +239,11 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <summary>
   /// Parent object that contains this item.
   /// </summary>
-  public object? Parent => _Parent;
+  public object? Parent
+  {
+    [DebuggerStepThrough]
+    get => _Parent;
+  }
 
   private object? _Parent;
 
@@ -258,16 +260,19 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <summary>
   /// Optional collection that contains this item.
   /// </summary>
-  [DebuggerStepThrough]
-  public object? GetCollection() => _Collection;
+  public ICollection? Collection
+  {
+    [DebuggerStepThrough]
+    get => _Collection;
+  }
 
-  private object? _Collection;
+  private ICollection? _Collection;
 
   /// <summary>
   /// Sets the collection object to be used by the instance.
   /// </summary>
   /// <param name="collection">The collection object to assign. Can be null to clear the current collection.</param>
-  public void SetCollection(object? collection)
+  public void SetCollection(ICollection? collection)
   {
     _Collection = collection;
   }
@@ -277,21 +282,33 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// </summary>
   public bool IsModified => _IsModified;
 
-  /// <summary>
-  /// IsModified object that contains this item.
-  /// </summary>
-  [DebuggerStepThrough]
-  public bool GetIsModified() => _IsModified;
-
   private bool _IsModified;
 
   /// <summary>
-  /// Sets the ismodified object to be used by the instance.
+  /// Sets the isModified object to be used by the instance.
   /// </summary>
-  /// <param name="ismodified">The ismodified object to assign. Can be null to clear the current ismodified.</param>
-  public void SetIsModified(bool ismodified)
+  /// <param name="isModified">The isModified object to assign. Can be null to clear the current isModified.</param>
+  public void SetIsModified(bool isModified)
   {
-    _IsModified = ismodified;
-    NotifyPropertyChanged(nameof(IsModified));
+    if (_IsModified != isModified)
+    {
+      _IsModified = isModified;
+      if (IsModified)
+      {
+        if (Parent is IModifiable modifiableParent)
+          modifiableParent.SetIsModified(IsModified);
+        else if (Collection is IModifiable modifiableCollection)
+          modifiableCollection.SetIsModified(IsModified);
+      }
+      else
+      {
+        foreach (var prop in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
+        {
+          if (prop.GetValue(this) is IModifiable modifiableChild)
+            modifiableChild.SetIsModified(IsModified);
+        }
+      }
+      NotifyPropertyChanged(nameof(IsModified));
+    }
   }
 }

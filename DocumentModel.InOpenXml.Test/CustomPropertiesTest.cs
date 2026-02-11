@@ -137,13 +137,13 @@ namespace DocumentModel.InOpenXml.Test
 			Console.WriteLine("--- Store sample custom properties in new document---");
 			{
 				CustomProperties testData = CreateSampleCustomProperties();
-				using (var document = Document.CreateDocument("temp.docx"))
+				using (var document = new Document("temp.docx", FileMode.Create))
 				{
 					document.CustomProperties = testData;
 				}
 
 				CustomProperties storedData;
-				using (var document = Document.OpenDocument("temp.docx"))
+				using (var document = new Document("temp.docx"))
 				{
 					storedData = document.CustomProperties ?? throw new InvalidOperationException("Custom properties not found.");
 				}
@@ -183,7 +183,7 @@ namespace DocumentModel.InOpenXml.Test
 			{
 				CustomProperties testData = CreateSampleCustomProperties();
 				var initialCount = testData.Count;
-				using (var document = Document.CreateDocument("temp.docx"))
+				using (var document = new Document("temp.docx", FileMode.Create))
 				{
 					document.CustomProperties = testData;
 
@@ -191,7 +191,7 @@ namespace DocumentModel.InOpenXml.Test
 				}
 
 				CustomProperties storedData;
-				using (var document = Document.OpenDocument("temp.docx"))
+				using (var document = new Document("temp.docx"))
 				{
 					storedData = document.CustomProperties ?? throw new InvalidOperationException("Custom properties not found.");
 				}

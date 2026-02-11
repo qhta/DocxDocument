@@ -139,7 +139,7 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- New document content properties ---");
       {
         ContentProperties testData;
-        using (var document = Document.CreateDocument("temp.docx"))
+        using (var document = new Document("temp.docx", FileMode.Create))
         {
           testData = document.ContentProperties;
         }
@@ -170,13 +170,13 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Store sample content properties in new document---");
       {
         ContentProperties testData = CreateSampleContentProperties(true);
-        using (var document = Document.CreateDocument("temp.docx"))
+        using (var document = new Document("temp.docx", FileMode.Create))
         {
           document.ContentProperties = testData;
         }
 
         ContentProperties storedData;
-        using (var document = Document.OpenDocument("temp.docx"))
+        using (var document = new Document("temp.docx"))
         {
           storedData = document.ContentProperties;
         }
@@ -215,7 +215,7 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Update document content properties ---");
       {
         var testData = CreateSampleContentProperties(false);
-        using (var document = Document.CreateDocument("temp.docx"))
+        using (var document = new Document("temp.docx", FileMode.Create))
         {
           document.ContentProperties = testData;
 
@@ -224,7 +224,7 @@ namespace DocumentModel.InOpenXml.Test
         }
 
         ContentProperties storedData;
-        using (var document = Document.OpenDocument("temp.docx"))
+        using (var document = new Document("temp.docx"))
         {
           storedData = document.ContentProperties;
         }

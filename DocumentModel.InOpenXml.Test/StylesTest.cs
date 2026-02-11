@@ -139,13 +139,13 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Store sample Styles in new document---");
       {
         Styles testData = CreateSampleStyles();
-        using (var document = Document.CreateDocument("temp.docx"))
+        using (var document = new Document("temp.docx", FileMode.Create))
         {
           document.Styles = testData;
         }
 
         Styles storedData;
-        using (var document = Document.OpenDocument("temp.docx"))
+        using (var document = new Document("temp.docx"))
         {
           storedData = document.Styles ?? throw new InvalidOperationException("Styles not found.");
         }
@@ -185,7 +185,7 @@ namespace DocumentModel.InOpenXml.Test
       {
         Styles testData = CreateSampleStyles();
         var initialCount = testData.LatentStyles.Count;
-        using (var document = Document.CreateDocument("temp.docx"))
+        using (var document = new Document("temp.docx", FileMode.Create))
         {
           document.Styles = testData;
           document.Styles.LatentStyles.Add(new LatentStyleExceptionInfo()
@@ -196,7 +196,7 @@ namespace DocumentModel.InOpenXml.Test
           });
         }
         Styles storedData;
-        using (var document = Document.OpenDocument("temp.docx"))
+        using (var document = new Document("temp.docx"))
         {
           storedData = document.Styles ?? throw new InvalidOperationException("Styles not found.");
         }
@@ -241,12 +241,12 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Validate sample Styles stored in new document against OpenXml schema ---");
       {
         Styles testData = CreateSampleStyles();
-        using (var document = Document.CreateDocument("temp.docx"))
+        using (var document = new Document("temp.docx", FileMode.Create))
         {
           document.Styles = testData;
         }
 
-        using (var document = Document.OpenDocument("temp.docx"))
+        using (var document = new Document("temp.docx"))
         {
           var openXml = document.WordprocessingDocument!.MainDocumentPart!.StyleDefinitionsPart!.Styles!.OuterXml;
           //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",

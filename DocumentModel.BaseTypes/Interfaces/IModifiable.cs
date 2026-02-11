@@ -11,12 +11,12 @@ public interface IModifiable
   /// This method should return true if any changes have been made to the object's state that would require saving.
   /// </summary>
   /// <returns></returns>
-  public bool GetIsModified();
+  public bool IsModified { get; }
 
   /// <summary>
   /// Marks the object as modified or unmodified.
   /// </summary>
-  /// <param name="value">A value indicating whether the object should be marked as modified. Set to <see langword="true"/> to mark as
+  /// <param name="isModified">A isModified indicating whether the object should be marked as modified. Set to <see langword="true"/> to mark as
   /// modified; otherwise, <see langword="false"/>.</param>
-  public void SetIsModified(bool value);
+  public void SetIsModified(bool isModified);
 }

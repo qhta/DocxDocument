@@ -61,11 +61,11 @@ public partial class MainWindow : Window
     if (result == true)
     {
       string filename = dialog.FileName;
-      Document = Document.OpenDocument(filename);
+      Document = new Document(filename);
       var documentVM = new DocumentVM(Document);
       var documentView = new DocumentView();
       documentView.DataContext = documentVM;
-      AddFloatingView(documentView, "Document", documentVM.Caption);
+      AddFloatingView(documentView, "Document", new Binding { Path = new PropertyPath(nameof(DocumentVM.Caption)) });
     }
   }
 
@@ -90,7 +90,7 @@ public partial class MainWindow : Window
   /// <param name="view"></param>
   /// <param name="windowName"></param>
   /// <param name="header"></param>
-  public void AddFloatingView(System.Windows.Controls.Control view, string windowName, string? header)
+  public void AddFloatingView(System.Windows.Controls.Control view, string windowName, object? header)
   {
     if (DataContext is MDIViewModel viewModel)
     {
@@ -111,7 +111,13 @@ public partial class MainWindow : Window
 
 
       DocumentContainer.Items.Add(view);
-      DocumentContainer.SetHeader(view, header);
+      //if (header is BindingBase binding)
+      //{
+      //  var dataTemplate = Resources["WindowCaptionTemplate"] as DataTemplate;
+      //  DocumentContainer.SetHeaderTemplate(view, dataTemplate);
+      //}
+      //else
+      //  DocumentContainer.SetHeader(view, header);
 
       //// Get top-left of dockingManager in screen pixels
       Point screenTopLeftPx = DocumentContainer.PointToScreen(new Point(0, 0));

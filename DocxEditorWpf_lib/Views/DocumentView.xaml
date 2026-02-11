@@ -4,7 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:views="clr-namespace:DocxEditor.Views"
+             xmlns:viewModels="clr-namespace:DocxEditor.ViewModels"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
              mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=viewModels:DocumentVM}"
+             syncfusion:DocumentContainer.Header="{Binding Caption}"
              d:DesignHeight="250" d:DesignWidth="500">
   <Grid>
     <TabControl>
