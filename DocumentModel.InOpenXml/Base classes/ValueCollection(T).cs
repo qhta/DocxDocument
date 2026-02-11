@@ -5,7 +5,7 @@
 /// </summary>
 /// <typeparam name="ItemType">The type of items in the collection.</typeparam>
 public abstract class ValueCollection<ItemType> : ModelElement,
-  IValueCollection<ItemType>, IEquatable<ValueCollection<ItemType>>
+  IValueCollection<ItemType>, IEquatable<ValueCollection<ItemType>>, ICollection
 {
   private readonly ObservableCollection<ItemType> _items = new();
 
@@ -164,6 +164,34 @@ public abstract class ValueCollection<ItemType> : ModelElement,
   /// Returns the number of items in the collection.
   /// </summary>
   public int Count => _items.Count;
+
+  /// <summary>
+  /// Copies the elements of the collection to a one-dimensional array, starting at the specified index of the target
+  /// array.
+  /// </summary>
+  /// <param name="array">The one-dimensional array that is the destination of the elements copied from the collection. The array must have
+  /// zero-based indexing.</param>
+  /// <param name="index">The zero-based index in the destination array at which copying begins.</param>
+  public void CopyTo(Array array, int index)
+  {
+    ((ICollection)_items).CopyTo(array, index);
+  }
+
+  /// <summary>
+  /// Gets a value indicating whether access to the collection is synchronized (thread-safe).
+  /// </summary>
+  /// <remarks>Use this property to determine if the collection can be safely accessed by multiple threads
+  /// concurrently. If the value is <see langword="false"/>, callers should implement their own synchronization when
+  /// accessing the collection from multiple threads.</remarks>
+  public bool IsSynchronized => ((ICollection)_items).IsSynchronized;
+
+  /// <summary>
+  /// Gets an object that can be used to synchronize access to the collection.
+  /// </summary>
+  /// <remarks>Use the returned object to lock the collection during multithreaded operations to ensure thread
+  /// safety. Accessing the collection through the SyncRoot property is recommended when performing synchronized
+  /// operations from multiple threads.</remarks>
+  public object SyncRoot => ((ICollection)_items).SyncRoot;
 
   /// <summary>
   /// Indicates whether the collection is read-only.

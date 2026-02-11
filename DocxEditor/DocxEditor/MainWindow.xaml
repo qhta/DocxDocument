@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         xmlns:local="clr-namespace:DocxEditor"
+        xmlns:vm="clr-namespace:DocxEditor.ViewModels;assembly=DocxEditorWpf_lib"
         xmlns:views="clr-namespace:DocxEditor.Views;assembly=DocxEditorWpf_lib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowState="Maximized">
@@ -35,17 +36,17 @@
       
     >
       <!--  Customized Header Template  -->
-      <syncfusion:DocumentContainer.HeaderTemplate>
+      <!--<syncfusion:DocumentContainer.HeaderTemplate>
         <DataTemplate>
           <DockPanel LastChildFill="True">
             <TextBlock
               Margin="5,0,0,0"
               VerticalAlignment="Center"
-              Text="{Binding}"
+              Text="{Binding DataContext}"
               TextTrimming="CharacterEllipsis" />
           </DockPanel>
         </DataTemplate>
-      </syncfusion:DocumentContainer.HeaderTemplate>
+      </syncfusion:DocumentContainer.HeaderTemplate>-->
     </syncfusion:DocumentContainer>
   </Grid>
 </Window>

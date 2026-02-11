@@ -7,7 +7,7 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
 public abstract class ElementCollection<ItemType> : ModelElement,
-  IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>
+  IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>, ICollection
   
 {
   private readonly ObservableCollection<ItemType> _items = new();
@@ -174,10 +174,39 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     return _items.Remove(item);
   }
 
+
   /// <summary>
   /// Returns the number of items in the collection.
   /// </summary>
   public int Count => _items.Count;
+
+  /// <summary>
+  /// Copies the elements of the collection to a specified one-dimensional array, starting at the given index in the
+  /// target array.
+  /// </summary>
+  /// <param name="array">The one-dimensional array that is the destination of the elements copied from the collection. The array must have
+  /// zero-based indexing and sufficient space to accommodate the copied elements.</param>
+  /// <param name="index">The zero-based index in the destination array at which copying begins.</param>
+  public void CopyTo(Array array, int index)
+  {
+    ((ICollection)_items).CopyTo(array, index);
+  }
+
+  /// <summary>
+  /// Gets a value indicating whether access to the collection is synchronized (thread-safe).
+  /// </summary>
+  /// <remarks>If this property returns <see langword="true"/>, access to the collection is thread-safe and can
+  /// be shared among multiple threads without additional synchronization. If <see langword="false"/>, callers must
+  /// implement their own synchronization to ensure thread safety when accessing the collection concurrently.</remarks>
+  public bool IsSynchronized => ((ICollection)_items).IsSynchronized;
+
+  /// <summary>
+  /// Gets an object that can be used to synchronize access to the collection.
+  /// </summary>
+  /// <remarks>Use the returned object with a lock statement to ensure thread safety when accessing the
+  /// collection from multiple threads. Synchronizing access using this object helps prevent race conditions and data
+  /// corruption in multithreaded scenarios.</remarks>
+  public object SyncRoot => ((ICollection)_items).SyncRoot;
 
   /// <summary>
   /// Indicates whether the collection is read-only.

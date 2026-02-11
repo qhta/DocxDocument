@@ -25,7 +25,7 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
     {
       if (_WordprocessingDocument != null)
         return _WordprocessingDocument;
-      if (GetCollection() is IWordprocessingDocumentAware collectionAware)
+      if (Collection is IWordprocessingDocumentAware collectionAware)
         return collectionAware.WordprocessingDocument;
       if (Parent is IWordprocessingDocumentAware parentAware)
         return parentAware.WordprocessingDocument;

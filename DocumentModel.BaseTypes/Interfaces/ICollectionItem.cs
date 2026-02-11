@@ -7,9 +7,12 @@ public interface ICollectionItem
   /// <summary>
   /// Collection that contains this item.
   /// </summary>
+  public ICollection? Collection { get; }
 
-  public object? GetCollection();
-
-  public void SetCollection(object? collection);
+  /// <summary>
+  /// Sets the collection that contains this item.
+  /// </summary>
+  /// <param name="collection"></param>
+  public void SetCollection(ICollection? collection);
 
 }

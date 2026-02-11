@@ -20,6 +20,7 @@
       PropertyExpandMode="NestedMode"
       MenuButtonVisibility="true"
       AutoGeneratingPropertyGridItem="PropertyGrid_OnAutoGeneratingPropertyGridItem"
+      UpdateSourceMode="ReturnOrLostFocus"
       SelectedObject="{Binding DocumentProperties.PropertiesProvider}"
       >
       <syncfusion:PropertyGrid.MenuItems>

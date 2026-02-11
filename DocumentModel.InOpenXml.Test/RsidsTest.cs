@@ -137,13 +137,13 @@ namespace DocumentModel.InOpenXml.Test
 			Console.WriteLine("--- Store sample Rsids in new document---");
 			{
 				Rsids testData = CreateSampleRsids();
-				using (var document = Document.CreateDocument("temp.docx"))
+				using (var document = new Document("temp.docx", FileMode.Create))
 				{
 					document.Rsids = testData;
 				}
 
 				Rsids storedData;
-				using (var document = Document.OpenDocument("temp.docx"))
+				using (var document = new Document("temp.docx"))
 				{
 					storedData = document.Rsids ?? throw new InvalidOperationException("Rsids not found.");
 				}
@@ -183,14 +183,14 @@ namespace DocumentModel.InOpenXml.Test
 			{
 				Rsids testData = CreateSampleRsids();
 				var initialCount = testData.Count;
-				using (var document = Document.CreateDocument("temp.docx"))
+				using (var document = new Document("temp.docx", FileMode.Create))
 				{
 					document.Rsids = testData;
     			document.Rsids.Add(Random.Shared.Next() );
 				}
 
 				Rsids storedData;
-				using (var document = Document.OpenDocument("temp.docx"))
+				using (var document = new Document("temp.docx"))
 				{
 					storedData = document.Rsids ?? throw new InvalidOperationException("Rsids not found.");
 				}

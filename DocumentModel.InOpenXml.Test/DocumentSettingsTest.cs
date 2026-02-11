@@ -141,13 +141,13 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- Store sample document settings in new document---");
       DocumentSettings testData = CreateSampleDocumentSettings(true);
-      using (var document = Document.CreateDocument("temp.docx"))
+      using (var document = new Document("temp.docx", FileMode.Create))
       {
         document.DocumentSettings = testData;
       }
 
       DocumentSettings? storedData;
-      using (var document = Document.OpenDocument("temp.docx"))
+      using (var document = new Document("temp.docx"))
       {
         storedData = document.DocumentSettings;
       }
@@ -189,7 +189,7 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- Update document settings stored in document---");
       DocumentSettings testData = CreateSampleDocumentSettings(true);
-      using (var document = Document.CreateDocument("temp.docx"))
+      using (var document = new Document("temp.docx", FileMode.Create))
       {
         document.DocumentSettings = testData;
       }
@@ -197,7 +197,7 @@ namespace DocumentModel.InOpenXml.Test
       TestHelper.ChangeTestData(testData);
       testData.Compatibility?.Add(new CompatibilitySetting{ Name="CompatibilityMode", Val="value" });
       DocumentSettings? storedData;
-      using (var document = Document.OpenDocument("temp.docx"))
+      using (var document = new Document("temp.docx"))
       {
         storedData = document.DocumentSettings;
         if (storedData != null)
@@ -243,14 +243,14 @@ namespace DocumentModel.InOpenXml.Test
         DocumentSettings testData = CreateSampleDocumentSettings(true);
         TestHelper.ChangeTestData(testData);
         testData.Compatibility?.Add(new CompatibilitySetting { Name = "CompatibilityMode", Val = "value" });
-        using (var document = Document.CreateDocument("temp.docx"))
+        using (var document = new Document("temp.docx", FileMode.Create))
         {
           document.DocumentSettings = testData;
         }
 
 
 
-        using (var document = Document.OpenDocument("temp.docx"))
+        using (var document = new Document("temp.docx"))
         {
           var openXml = document.WordprocessingDocument!.MainDocumentPart!.DocumentSettingsPart!.Settings!.OuterXml;
           var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
@@ -299,13 +299,13 @@ namespace DocumentModel.InOpenXml.Test
     static void UpdateMethodForPerformanceTest()
     {
       DocumentSettings testData = CreateSampleDocumentSettings(true);
-      using (var document = Document.CreateDocument("temp.docx"))
+      using (var document = new Document("temp.docx", FileMode.Create))
       {
         document.DocumentSettings = testData;
       }
 
       TestHelper.ChangeTestData(testData);
-      using (var document = Document.OpenDocument("temp.docx"))
+      using (var document = new Document("temp.docx"))
       {
         var storedData = document.DocumentSettings;
         if (storedData != null)

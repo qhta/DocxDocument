@@ -93,4 +93,5 @@ public class MDIViewModel: ViewModel
   /// </summary>
   public ObservableCollection<DockItem> DockCollections { get; } = new ObservableCollection<DockItem>();
 
+  public string Caption => "Ala ma kota";
 }
