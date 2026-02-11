@@ -15,9 +15,15 @@ public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
     document.PropertyChanged += Document_PropertyChanged;
   }
 
-  private void Document_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+  /// <summary>
+  /// Notifies the view that the caption has changed when the IsModified property of the document changes,
+  /// allowing the UI to update accordingly (args.g., adding an asterisk to indicate unsaved changes).
+  /// </summary>
+  /// <param name="sender">The source of the event.</param>
+  /// <param name="args">The arguments of the event.</param>
+  private void Document_PropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
-    if (e.PropertyName==nameof(Document.IsModified) || e.PropertyName == nameof(Document.CoreProperties))
+    if (args.PropertyName==nameof(Document.IsModified))
     {
       NotifyPropertyChanged(nameof(Caption));
     }

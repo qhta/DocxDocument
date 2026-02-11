@@ -57,17 +57,17 @@ public class HexCharJsonConverter : JsonConverter<HexChar>
   /// <exception cref="JsonException">
   ///   Thrown when the JSON token is not a string or when the string cannot be parsed as a valid hexadecimal value.
   /// </exception>
-  public override HexChar Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+  public override HexChar? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
   {
     if (reader.TokenType == JsonTokenType.Null)
-      return default;
+      return null;
 
     if (reader.TokenType != JsonTokenType.String)
       throw new JsonException($"Expected string token for HexChar, but got {reader.TokenType}");
 
     var value = reader.GetString();
     if (string.IsNullOrEmpty(value))
-      return default;
+      return null;
 
     try
     {

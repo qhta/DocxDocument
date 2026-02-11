@@ -16,7 +16,19 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     _StatisticProperties = new StatisticProperties(this);
   }
 
-
+  /// <summary>
+  /// Creates a new instance of the <see cref="Document"/> class and opens a WordprocessingML document from the specified file path.
+  /// </summary>
+  /// <param name="filePath">The file path of the WordprocessingML document to open.</param>
+  /// <param name="mode">The file mode to open. Create, Open, and OpenOrCreate are recognized. Default is OpenOrCreate</param>
+  /// <param name="access">The file access mode to open. Read, Write, and ReadWrite are recognized. Default is ReadWrite</param>
+  public Document(string filePath, FileMode mode = FileMode.OpenOrCreate, FileAccess access = FileAccess.ReadWrite) : this()
+  {
+    if (mode == FileMode.Create || mode == FileMode.OpenOrCreate && !File.Exists(filePath))
+      CreateDocument(filePath);
+    else if (mode == FileMode.Open || mode == FileMode.OpenOrCreate)
+      OpenDocument(filePath, access is FileAccess.ReadWrite or FileAccess.Write);
+  }
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="Document"/> class and attaches it to the specified Open XML word processing document.
@@ -25,7 +37,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public Document(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
-    wordprocessingDocument.GetPackageProperties();
     _CoreProperties = new CoreProperties(this);
     _ContentProperties = new ContentProperties(this);
     _StatisticProperties = new StatisticProperties(this);
@@ -49,6 +60,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
+    wordprocessingDocument.GetPackageProperties();
+
     _CoreProperties.AttachAndLoad(wordprocessingDocument);
     _ContentProperties.AttachAndLoad(wordprocessingDocument);
     _StatisticProperties.AttachAndLoad(wordprocessingDocument);
@@ -89,25 +102,31 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// </summary>
   /// <param name="filePath">The file path for the new document.</param>
   /// <returns>A new <see cref="Document"/> instance representing the created file.</returns>
-  public static Document CreateDocument(string filePath)
+  public void CreateDocument(string filePath)
   {
-    var newDocument = new Document(WordprocessingHelper.CreateWordDocument(filePath));
-    return newDocument;
+    OpenDocument(filePath);
   }
 
   /// <summary>
-  ///   Opens a WordprocessingML document from the specified file path and returns a new <see cref="Document"/> instance representing it.
+  ///   Opens a WordprocessingML document from the specified file path.
   /// </summary>
   /// <param name="filePath">The full path to the file to open. The file must exist and be a valid Word document.</param>
   /// <param name="editable">Determines if the document should be opened in editable mode.</param>
   /// <returns>A <see cref="Document"/>The instance representing the opened file.</returns>
-  public static Document OpenDocument(string filePath, bool editable = true)
+  public void OpenDocument(string filePath, bool editable = true)
   {
     var tempFile = Path.ChangeExtension(filePath, ".tmp");
-    File.Copy(filePath, tempFile, true);
-    var newDocument = new Document(WordprocessingHelper.OpenWordDocument(tempFile, editable));
-    newDocument.Filename = filePath;
-    return newDocument;
+    using (var fileStream = new FileStream(tempFile,
+             editable ? FileMode.OpenOrCreate : FileMode.Open,
+             editable ? FileAccess.ReadWrite : FileAccess.Read))
+    {
+      fileStream.CopyTo(DocumentStream);
+    }
+    Filename = filePath;
+
+    var wordprocessingDocument = WordprocessingHelper.OpenWordDocument(tempFile, editable);
+    AttachAndLoad(wordprocessingDocument);
+    SetIsModified(false);
   }
 
   /// <summary>
@@ -126,6 +145,13 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
   }
   private string? _Filename;
+
+  /// <summary>
+  /// This stream is used to hold the document's data in memory,
+  /// allowing for operations that require a stream representation of the document without directly modifying
+  /// the underlying file.
+  /// </summary>
+  private MemoryStream DocumentStream { get; } = new MemoryStream();
 
   /// <summary>
   /// Saves the current state of the document to its underlying data source, such as a file or stream.

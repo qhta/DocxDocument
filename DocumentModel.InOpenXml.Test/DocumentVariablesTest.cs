@@ -137,13 +137,13 @@ namespace DocumentModel.InOpenXml.Test
 			Console.WriteLine("--- Store sample DocumentVariables in new document---");
 			{
 				DocumentVariables testData = CreateSampleDocumentVariables();
-				using (var document = Document.CreateDocument("temp.docx"))
+				using (var document = new Document("temp.docx", FileMode.Create))
 				{
 					document.DocumentVariables = testData;
 				}
 
 				DocumentVariables storedData;
-				using (var document = Document.OpenDocument("temp.docx"))
+				using (var document = new Document("temp.docx"))
 				{
 					storedData = document.DocumentVariables ?? throw new InvalidOperationException("DocumentVariables not found.");
 				}
@@ -184,14 +184,14 @@ namespace DocumentModel.InOpenXml.Test
 				DocumentVariables testData = CreateSampleDocumentVariables();
 				var initialCount = testData.Count;
         var i = initialCount;
-				using (var document = Document.CreateDocument("temp.docx"))
+				using (var document = new Document("temp.docx", FileMode.Create))
 				{
 					document.DocumentVariables = testData;
     			document.DocumentVariables.Add(new DocumentVariable { Name = $"Var{i}", Value = $"Value{i}" });
 				}
 
 				DocumentVariables storedData;
-				using (var document = Document.OpenDocument("temp.docx"))
+				using (var document = new Document("temp.docx"))
 				{
 					storedData = document.DocumentVariables ?? throw new InvalidOperationException("DocumentVariables not found.");
 				}

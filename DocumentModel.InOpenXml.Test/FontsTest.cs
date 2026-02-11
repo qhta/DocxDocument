@@ -139,13 +139,13 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Store sample Fonts in new document---");
       {
         Fonts testData = CreateSampleFonts();
-        using (var document = Document.CreateDocument("temp.docx"))
+        using (var document = new Document("temp.docx", FileMode.Create))
         {
           document.Fonts = testData;
         }
 
         Fonts storedData;
-        using (var document = Document.OpenDocument("temp.docx"))
+        using (var document = new Document("temp.docx"))
         {
           storedData = document.Fonts ?? throw new InvalidOperationException("Fonts not found.");
         }
@@ -185,7 +185,7 @@ namespace DocumentModel.InOpenXml.Test
       {
         Fonts testData = CreateSampleFonts();
         var initialCount = testData.Count;
-        using (var document = Document.CreateDocument("temp.docx"))
+        using (var document = new Document("temp.docx", FileMode.Create))
         {
           document.Fonts = testData;
           document.Fonts.Add(new FontDef
@@ -200,7 +200,7 @@ namespace DocumentModel.InOpenXml.Test
           });
         }
         Fonts storedData;
-        using (var document = Document.OpenDocument("temp.docx"))
+        using (var document = new Document("temp.docx"))
         {
           storedData = document.Fonts ?? throw new InvalidOperationException("Fonts not found.");
         }
@@ -245,12 +245,12 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Validate sample Fonts stored in new document against OpenXml schema ---");
       {
         Fonts testData = CreateSampleFonts();
-        using (var document = Document.CreateDocument("temp.docx"))
+        using (var document = new Document("temp.docx", FileMode.Create))
         {
           document.Fonts = testData;
         }
 
-        using (var document = Document.OpenDocument("temp.docx"))
+        using (var document = new Document("temp.docx"))
         {
           var openXml = document.WordprocessingDocument!.MainDocumentPart!.FontTablePart!.Fonts!.OuterXml;
           //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",

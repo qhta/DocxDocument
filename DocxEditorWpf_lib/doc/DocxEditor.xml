@@ -328,6 +328,14 @@
             </summary>
             <param name="document"></param>
         </member>
+        <member name="M:DocxEditor.ViewModels.DocumentVM.Document_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Notifies the view that the caption has changed when the IsModified property of the document changes,
+            allowing the UI to update accordingly (args.g., adding an asterisk to indicate unsaved changes).
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">The arguments of the event.</param>
+        </member>
         <member name="P:DocxEditor.ViewModels.DocumentVM.Document">
             <summary>
             Model of the document represented by this view model.
