@@ -304,8 +304,16 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       {
         foreach (var prop in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
         {
-          if (prop.GetValue(this) is IModifiable modifiableChild)
-            modifiableChild.SetIsModified(IsModified);
+          try
+          {
+            if (prop.GetIndexParameters().Length == 0)
+              if (prop.GetValue(this) is IModifiable modifiableChild)
+                modifiableChild.SetIsModified(IsModified);
+
+          } catch (Exception ex)
+          {
+            Debug.WriteLine($"Error setting IsModified for property '{prop.Name}' of type '{this.GetType().Name}': {ex.Message}");
+          }
         }
       }
       NotifyPropertyChanged(nameof(IsModified));
