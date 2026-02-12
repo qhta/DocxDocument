@@ -35,18 +35,6 @@
       Mode="MDI"
       
     >
-      <!--  Customized Header Template  -->
-      <!--<syncfusion:DocumentContainer.HeaderTemplate>
-        <DataTemplate>
-          <DockPanel LastChildFill="True">
-            <TextBlock
-              Margin="5,0,0,0"
-              VerticalAlignment="Center"
-              Text="{Binding DataContext}"
-              TextTrimming="CharacterEllipsis" />
-          </DockPanel>
-        </DataTemplate>
-      </syncfusion:DocumentContainer.HeaderTemplate>-->
     </syncfusion:DocumentContainer>
   </Grid>
 </Window>

@@ -40,7 +40,17 @@ public class MDIViewModel: ViewModel
     MDILayoutChangedCommand = new DelegateCommand<object>(MDILayoutChanged);
   }
 
-
+  /// <summary>
+  /// Handles changes to the MDI layout for a document container within a docking manager based on the specified layout
+  /// type.
+  /// </summary>
+  /// <remarks>This method updates the layout of the DocumentContainer within the provided DockingManager
+  /// according to the specified layout type. It also subscribes to the ActiveDocumentChanged event to handle document
+  /// changes when the layout is modified. The method expects the input parameter to be an object array with the correct
+  /// types and order.</remarks>
+  /// <param name="obj">An object array where the first element is a string specifying the desired layout type (such as "Cascade",
+  /// "Horizontal", or "Vertical"), and the second element is a DockingManager instance whose document container layout
+  /// will be updated.</param>
   private void MDILayoutChanged(object obj)
   {
     if (obj is object?[] parameters && parameters[0] is not null && parameters[1] is DockingManager dockingManager)

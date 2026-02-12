@@ -28,6 +28,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
       CreateDocument(filePath);
     else if (mode == FileMode.Open || mode == FileMode.OpenOrCreate)
       OpenDocument(filePath, access is FileAccess.ReadWrite or FileAccess.Write);
+    if (access!=FileAccess.ReadWrite && access!=FileAccess.Write && access!=FileAccess.Read)
+      IsEditable = false;
   }
 
   /// <summary>
@@ -115,16 +117,10 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <returns>A <see cref="Document"/>The instance representing the opened file.</returns>
   public void OpenDocument(string filePath, bool editable = true)
   {
-    var tempFile = Path.ChangeExtension(filePath, ".tmp");
-    using (var fileStream = new FileStream(tempFile,
-             editable ? FileMode.OpenOrCreate : FileMode.Open,
-             editable ? FileAccess.ReadWrite : FileAccess.Read))
-    {
-      fileStream.CopyTo(DocumentStream);
-    }
     Filename = filePath;
+    IsEditable = editable;
 
-    var wordprocessingDocument = WordprocessingHelper.OpenWordDocument(tempFile, editable);
+    var wordprocessingDocument = WordprocessingHelper.OpenWordDocument(Filename, editable);
     AttachAndLoad(wordprocessingDocument);
     SetIsModified(false);
   }
@@ -146,18 +142,40 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
   private string? _Filename;
 
+
   /// <summary>
-  /// This stream is used to hold the document's data in memory,
-  /// allowing for operations that require a stream representation of the document without directly modifying
-  /// the underlying file.
+  /// Checks if the document is currently opened in an editable mode,
+  /// which determines whether changes can be made to the document's content and properties.
   /// </summary>
-  private MemoryStream DocumentStream { get; } = new MemoryStream();
+  public bool IsEditable
+  {
+    get => _IsEditable;
+    set
+    {
+      if (_IsEditable != value)
+      {
+        _IsEditable = value;
+        NotifyPropertyChanged(nameof(IsEditable));
+      }
+    }
+  }
+  private bool _IsEditable;
 
   /// <summary>
   /// Saves the current state of the document to its underlying data source, such as a file or stream.
   /// </summary>
   public void Save()
   {
+    if (Filename == null)
+      return;
+    if (!IsEditable)
+      return;
+    if (WordprocessingDocument == null)
+      throw new InvalidOperationException("Document is not attached.");
+
+    if (WordprocessingDocument.CanSave)
+        WordprocessingDocument.Save();
+
     SetIsModified(false);
   }
 
@@ -167,7 +185,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// </summary>
   public void Dispose()
   {
-    WordprocessingDocument = null;
     Detach();
     NotifyPropertyChanged(nameof(WordprocessingDocument));
   }
