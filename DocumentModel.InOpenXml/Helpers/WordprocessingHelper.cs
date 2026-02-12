@@ -34,15 +34,41 @@ public static class WordprocessingHelper
   {
     // Create a document by supplying the filename. 
     var wordDocument = DXPP.WordprocessingDocument.Open(filename, editable);
-    {
-      // Add the MainDocumentPart, root Document and the Body.
-      var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
-      var packageProperties = wordDocument.GetPackageProperties();
-
-      var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
-      var body = document.Body ?? (document.Body = document.AppendChild(new DXW.Body()));
-    }
+    InitWordprocessingDocument(wordDocument);
     return wordDocument;
+  }
+
+
+  /// <summary>
+  /// Opens an existing Wordprocessing document at the specified file path.
+  /// </summary>
+  /// <param name="stream">The stream of the document to open.</param>
+  /// <param name="editable">Specifies whether the document should be opened in editable mode.</param>
+  /// <returns>An instance of the <c>Document</c> class.</returns>
+  public static DXPP.WordprocessingDocument OpenWordDocument(Stream stream, bool editable = true)
+  {
+    // Create a document by supplying the stream. 
+    var wordDocument = DXPP.WordprocessingDocument.Open(stream, editable);
+    InitWordprocessingDocument(wordDocument);
+    return wordDocument;
+  }
+
+  /// <summary>
+  /// Initializes the specified WordprocessingDocument by ensuring that the main document part, root document, and body
+  /// are present.
+  /// </summary>
+  /// <remarks>Call this method before adding content to a WordprocessingDocument to guarantee that the document
+  /// structure is properly set up. If the main document part, document, or body does not exist, they will be
+  /// created.</remarks>
+  /// <param name="wordDocument">The WordprocessingDocument to initialize. Cannot be null.</param>
+  private static void InitWordprocessingDocument(DXPP.WordprocessingDocument wordDocument)
+  {
+    // Add the MainDocumentPart, root Document and the Body.
+    var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
+    var packageProperties = wordDocument.GetPackageProperties();
+
+    var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
+    var body = document.Body ?? (document.Body = document.AppendChild(new DXW.Body()));
   }
 
   /// <summary>
