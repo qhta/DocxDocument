@@ -21,6 +21,7 @@ public partial class ContentProperties
   ///   Specifies the name of an external document template containing format 
   ///   and style information used to create the current document.
   /// </summary>
+  [DefaultValue("Normal.dotm")]
   public string? Template
   {
     get => _Template;
@@ -194,6 +195,7 @@ public partial class ContentProperties
   /// <summary>
   ///   Specifies the name of the application that created this document.
   /// </summary>
+  [DefaultValue("Microsoft Office Word")]
   public string? Application
   {
     get => _Application;
@@ -205,6 +207,7 @@ public partial class ContentProperties
   /// <summary>
   ///   Specifies the version of the application which produced this document.
   /// </summary>
+  [DefaultValue("16.0000")]
   public string? ApplicationVersion
   {
     get => _ApplicationVersion;

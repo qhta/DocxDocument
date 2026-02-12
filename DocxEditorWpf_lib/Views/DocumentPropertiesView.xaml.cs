@@ -50,7 +50,7 @@ public partial class DocumentPropertiesView : UserControl
   {
     if (propertyItem is PropertyItem item)
     {
-      item.SetValue(PropertyItem.ValueProperty, null);
+      item.SetValue(PropertyItem.ValueProperty, item.DefaultValue);
     }
   }
 
