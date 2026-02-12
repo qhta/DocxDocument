@@ -301,10 +301,10 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
       if (_KnownProperties == null)
       {
         _KnownProperties = new KnownProperties();
-        foreach (var propModel in CoreProperties.KnownProperties.Values)
-          _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = CoreProperties });
-        //foreach (var propModel in ContentProperties.KnownProperties.Values)
-        //  _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = ContentProperties });
+        //foreach (var propModel in CoreProperties.KnownProperties.Values)
+        //  _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = CoreProperties });
+        foreach (var propModel in ContentProperties.KnownProperties.Values)
+          _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = ContentProperties });
         //foreach (var propModel in StatisticProperties.KnownProperties.Values)
         //  _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = StatisticProperties });
         //foreach (var propModel in DocumentSettings.KnownProperties.Values)
