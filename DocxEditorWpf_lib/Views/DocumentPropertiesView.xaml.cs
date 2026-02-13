@@ -1,8 +1,4 @@
-﻿using System.Reflection;
-
-using Syncfusion.Windows.PropertyGrid;
-
-namespace DocxEditor.Views;
+﻿namespace DocxEditor.Views;
 /// <summary>
 /// View for displaying and editing document properties.
 /// </summary>
@@ -27,6 +23,8 @@ public partial class DocumentPropertiesView : UserControl
   /// <param name="e">Arguments for the event.</param>
   private void PropertyGrid_OnAutoGeneratingPropertyGridItem(object? sender, AutoGeneratingPropertyGridItemEventArgs e)
   {
+    if (sender is not PropertyGrid propertyGrid)
+      return;
     var propertyItem = e.OriginalSource as PropertyItem;
 
     if (propertyItem == null)
@@ -36,9 +34,14 @@ public partial class DocumentPropertiesView : UserControl
       e.Cancel = true;
       return;
     }
+
     var resetCommand = new Syncfusion.Windows.Shared.DelegateCommand(ResetItem, CanResetItem);
     typeof(PropertyItem).GetField("_resetCommand", BindingFlags.Instance | BindingFlags.NonPublic)!
       .SetValue(propertyItem, resetCommand);
+    if (propertyItem.Name == "Revision")
+    {
+      Debug.Assert(true);
+    }
   }
 
   /// <summary>
@@ -63,4 +66,12 @@ public partial class DocumentPropertiesView : UserControl
   {
     return true;
   }
+
+  //private void PropertyGrid_OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+  //{
+  //  if (sender is PropertyGrid aPropertyGrid && propertyGrid.DataContext is DocumentPropertiesVM viewModel)
+  //  {
+  //    viewModel.PopulateProperties(aPropertyGrid);
+  //  }
+  //}
 }
