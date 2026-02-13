@@ -57,7 +57,10 @@ public class DocumentPropertyDescriptor : PropertyDescriptor
 
   #region Override members
 
-  private object? Component => propertyModel.Component;
+  /// <summary>
+  /// Component of the property model, which is used to get and set the property value. 
+  /// </summary>
+  public object? Component => propertyModel.Component;
 
   /// <summary>
   /// Determines whether the value of the specified component can be reset to its default state.
@@ -110,6 +113,11 @@ public class DocumentPropertyDescriptor : PropertyDescriptor
   ///  Need to return false here to prevent the property grid from trying to persist the property value,
   /// </remarks>
   public override bool ShouldSerializeValue(object component) => Component != null && propertyModel.ShouldSerializeValue(Component);
+
+  public override object? GetEditor(Type editorBaseType)
+  {
+    return base.GetEditor(editorBaseType);
+  }
 
   #endregion
 
