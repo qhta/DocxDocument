@@ -11,14 +11,10 @@
             which is necessary because the properties of the document are not known at compile time
             and can vary depending on the document's content and structure.
             </summary>
-            <param name="knownProperties"></param>
         </member>
         <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.#ctor(DocumentModel.KnownProperties)">
             <summary>
-            Provides properties of the document to be displayed in the property grid.
-            It must implement ICustomTypeDescriptor to allow dynamic properties recognition by the property grid,
-            which is necessary because the properties of the document are not known at compile time
-            and can vary depending on the document's content and structure.
+            Initializing constructor
             </summary>
             <param name="knownProperties"></param>
         </member>
@@ -171,6 +167,11 @@
             Gets the type of the property, which is used to determine how to display and edit the property in the property grid.
             </summary>
         </member>
+        <member name="P:DocxEditor.Helpers.DocumentPropertyDescriptor.Component">
+            <summary>
+            Component of the property model, which is used to get and set the property value. 
+            </summary>
+        </member>
         <member name="M:DocxEditor.Helpers.DocumentPropertyDescriptor.CanResetValue(System.Object)">
             <summary>
             Determines whether the value of the specified component can be reset to its default state.
@@ -210,6 +211,150 @@
             <remarks>
              Need to return false here to prevent the property grid from trying to persist the property value,
             </remarks>
+        </member>
+        <member name="T:DocxEditor.Helpers.EmailEditor">
+            <summary>
+            Custom editor for email address properties using a Syncfusion masked edit control.
+            </summary>
+            <remarks>
+            This editor provides a masked input for editing email addresses within a property grid.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.EmailEditor.Attach(Syncfusion.Windows.PropertyGrid.PropertyViewItem,Syncfusion.Windows.PropertyGrid.PropertyItem)">
+            <summary>
+            Attaches the editor to the specified property, configuring binding and enabling/disabling based on writability.
+            </summary>
+            <param name="property">The property view item to attach to.</param>
+            <param name="info">The property item containing metadata and value information.</param>
+        </member>
+        <member name="M:DocxEditor.Helpers.EmailEditor.Create(System.Reflection.PropertyInfo)">
+            <summary>
+            Creates and configures a Syncfusion masked edit control for email address editing based on the provided property information.
+            </summary>
+            <param name="propertyInfo">Reflection information about the property being edited.</param>
+            <returns>The configured SfMaskedEdit control instance.</returns>
+        </member>
+        <member name="M:DocxEditor.Helpers.EmailEditor.Create(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Creates and configures a Syncfusion masked edit control for email address editing based on the provided
+            property descriptor.
+            </summary>
+            <param name="PropertyDescriptor">Descriptor for the property being edited.</param>
+        </member>
+        <member name="M:DocxEditor.Helpers.EmailEditor.Init">
+            <summary>
+            Initializes and configures a new instance of the SfMaskedEdit control for email address validation using a regular
+            expression mask.
+            </summary>
+            <returns>A configured SfMaskedEdit control that validates input against a standard email address pattern.</returns>
+        </member>
+        <member name="M:DocxEditor.Helpers.EmailEditor.Detach(Syncfusion.Windows.PropertyGrid.PropertyViewItem)">
+            <summary>
+            Detaches the editor from the specified property. No operation is performed in this implementation.
+            </summary>
+            <param name="property">The property view item to detach from.</param>
+        </member>
+        <member name="M:DocxEditor.Helpers.EmailEditor.ShouldPropertyGridTryToHandleKeyDown(System.Windows.Input.Key)">
+            <summary>
+            Indicates whether the property grid should handle key down events for this editor.
+            </summary>
+            <param name="key">The key pressed by the user.</param>
+            <returns>Always returns false, allowing default handling.</returns>
+        </member>
+        <member name="T:DocxEditor.Helpers.IntegerBaseTypeEditor">
+            <summary>
+            Custom editor for integer values in a property grid using Syncfusion UpDown control.
+            </summary>
+            <remarks>
+            This editor provides a numeric up/down interface for editing integer properties within a property grid.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerBaseTypeEditor.Attach(Syncfusion.Windows.PropertyGrid.PropertyViewItem,Syncfusion.Windows.PropertyGrid.PropertyItem)">
+            <summary>
+            Attaches the editor to the specified property, configuring binding and enabling/disabling based on writability.
+            </summary>
+            <param name="property">The property view item to attach to.</param>
+            <param name="info">The property item containing metadata and value information.</param>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerBaseTypeEditor.Create(System.Reflection.PropertyInfo)">
+            <summary>
+            Creates and configures a Syncfusion UpDown control for integer editing based on the provided property information.
+            </summary>
+            <param name="propertyInfo">Reflection information about the property being edited.</param>
+            <returns>The configured UpDown control instance.</returns>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerBaseTypeEditor.Create(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Creates and configures a Syncfusion UpDown control for integer editing based on the provided property descriptor.
+            </summary>
+            <returns>The configured UpDown control instance.</returns>
+            <param name="propertyDescriptor">Descriptor for the property being edited.</param>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerBaseTypeEditor.Detach(Syncfusion.Windows.PropertyGrid.PropertyViewItem)">
+            <summary>
+            Detaches the editor from the specified property. No operation is performed in this implementation.
+            </summary>
+            <param name="property">The property view item to detach from.</param>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerBaseTypeEditor.ShouldPropertyGridTryToHandleKeyDown(System.Windows.Input.Key)">
+            <summary>
+            Indicates whether the property grid should handle key down events for this editor.
+            </summary>
+            <param name="key">The key pressed by the user.</param>
+            <returns>Always returns false, allowing default handling.</returns>
+        </member>
+        <member name="T:DocxEditor.Helpers.IntegerCustomEditor">
+            <summary>
+            Provides a custom editor for integer properties, enabling specialized editing functionality for integer values
+            within property grids or similar UI components.
+            </summary>
+        </member>
+        <member name="T:DocxEditor.Helpers.IntegerEditor">
+            <summary>
+            Custom editor for integer values in a property grid using Syncfusion UpDown control.
+            </summary>
+            <remarks>
+            This editor provides a numeric up/down interface for editing integer properties within a property grid.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerEditor.Attach(Syncfusion.Windows.PropertyGrid.PropertyViewItem,Syncfusion.Windows.PropertyGrid.PropertyItem)">
+            <summary>
+            Attaches the editor to the specified property, configuring binding and enabling/disabling based on writability.
+            </summary>
+            <param name="property">The property view item to attach to.</param>
+            <param name="info">The property item containing metadata and value information.</param>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerEditor.Create(System.Reflection.PropertyInfo)">
+            <summary>
+            Creates and configures a Syncfusion UpDown control for integer editing based on the provided property information.
+            </summary>
+            <param name="propertyInfo">Reflection information about the property being edited.</param>
+            <returns>The configured UpDown control instance.</returns>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerEditor.Create(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Creates and configures a Syncfusion UpDown control for integer editing based on the provided property descriptor.
+            </summary>
+            <returns>The configured UpDown control instance.</returns>
+            <param name="PropertyDescriptor">Descriptor for the property being edited.</param>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerEditor.Init">
+            <summary>
+            Initializes and configures a new instance of the UpDown control with default settings.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerEditor.Detach(Syncfusion.Windows.PropertyGrid.PropertyViewItem)">
+            <summary>
+            Detaches the editor from the specified property. No operation is performed in this implementation.
+            </summary>
+            <param name="property">The property view item to detach from.</param>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerEditor.ShouldPropertyGridTryToHandleKeyDown(System.Windows.Input.Key)">
+            <summary>
+            Indicates whether the property grid should handle key down events for this editor.
+            </summary>
+            <param name="key">The key pressed by the user.</param>
+            <returns>Always returns false, allowing default handling.</returns>
         </member>
         <member name="T:DocxEditor.Helpers.PropertiesViewNameCellStyleSelector">
             <summary>

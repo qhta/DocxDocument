@@ -27,10 +27,7 @@ public class DocumentPropertyVM: ViewModel<PropertyModel>, IPropertyVM
   public object? Value
   {
     get => Model.GetValue(Model.Component);
-    set
-    {
-      throw new NotImplementedException();
-    }
+    set => Model.SetValue(Model.Component, value);
   }
 
   /// <summary>

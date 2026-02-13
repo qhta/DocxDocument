@@ -7,6 +7,8 @@
              xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
              xmlns:viewModels="clr-namespace:DocxEditor.ViewModels"
              xmlns:helpers="clr-namespace:DocxEditor.Helpers"
+             xmlns:mvvm="clr-namespace:Qhta.MVVM;assembly=Qhta.MVVM"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type=viewModels:DocumentVM}"
              d:DesignHeight="450" d:DesignWidth="800">
@@ -16,16 +18,32 @@
   </UserControl.Resources>
   <Grid Background="White">
     <syncfusion:PropertyGrid
-      x:Name="propertyGrid"
+      x:Name="PropertyGrid"
       PropertyExpandMode="NestedMode"
       MenuButtonVisibility="true"
+      AutoGenerateItems="True"
       AutoGeneratingPropertyGridItem="PropertyGrid_OnAutoGeneratingPropertyGridItem"
       UpdateSourceMode="ReturnOrLostFocus"
-      SelectedObject="{Binding DocumentProperties.PropertiesProvider}"
+      DataContext="{Binding DocumentProperties}"
+      SelectedObject="{Binding PropertiesProvider}"
+      CustomEditorCollection="{Binding CustomEditors}"
       >
-      <syncfusion:PropertyGrid.MenuItems>
+      <syncfusion:PropertyGrid.MenuItems >
         <MenuItem Header="Reset" Command="{Binding ResetCommand}" CommandParameter="{Binding}"/>
       </syncfusion:PropertyGrid.MenuItems>
+      <!--<syncfusion:PropertyGrid.CustomEditorCollection>
+        <syncfusion:CustomEditorCollection>
+          <syncfusion:CustomEditor  PropertyType="{x:Type system:Int32}" 
+                                    HasPropertyType="True" EditorType="{x:Type helpers:IntegerEditor}" >
+            <syncfusion:CustomEditor.ConstructorParameters>
+              <x:Array Type="{x:Type system:Object}">
+                <system:Boolean>True</system:Boolean>
+              </x:Array>
+            </syncfusion:CustomEditor.ConstructorParameters>
+          </syncfusion:CustomEditor>
+        </syncfusion:CustomEditorCollection>
+      </syncfusion:PropertyGrid.CustomEditorCollection>-->
+      <!--DataContextChanged="PropertyGrid_OnDataContextChanged"-->
     </syncfusion:PropertyGrid>
   </Grid>
 </UserControl>
