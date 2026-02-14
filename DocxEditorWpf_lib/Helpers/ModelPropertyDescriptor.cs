@@ -6,11 +6,11 @@ namespace DocxEditor.Helpers;
 /// A property descriptor for a document property, which provides information about the property
 /// and allows getting and setting its value.
 /// </summary>
-public class DocumentPropertyDescriptor : PropertyDescriptor
+public class ModelPropertyDescriptor : PropertyDescriptor
 {
   private readonly PropertyModel propertyModel;
 
-  private readonly DocumentPropertiesProvider propertiesProvider;
+  private readonly PropertiesProvider propertiesProvider;
 
   #region Constructors
 
@@ -20,7 +20,7 @@ public class DocumentPropertyDescriptor : PropertyDescriptor
   /// </summary>
   /// <param name="propertiesProvider"></param>
   /// <param name="propertyModel"></param>
-  public DocumentPropertyDescriptor(DocumentPropertiesProvider propertiesProvider,
+  public ModelPropertyDescriptor(PropertiesProvider propertiesProvider,
     PropertyModel propertyModel)
     : base(propertyModel.Name, propertyModel.PropertyAttributes)
   {
@@ -35,7 +35,7 @@ public class DocumentPropertyDescriptor : PropertyDescriptor
   /// <summary>
   /// Gets the type of the component associated with this provider.
   /// </summary>
-  public override Type ComponentType => typeof(DocumentPropertiesProvider);
+  public override Type ComponentType => typeof(PropertiesProvider);
 
   /// <summary>
   /// Gets the display name of the property, which is used to show the property in the property grid.
@@ -114,10 +114,6 @@ public class DocumentPropertyDescriptor : PropertyDescriptor
   /// </remarks>
   public override bool ShouldSerializeValue(object component) => Component != null && propertyModel.ShouldSerializeValue(Component);
 
-  public override object? GetEditor(Type editorBaseType)
-  {
-    return base.GetEditor(editorBaseType);
-  }
 
   #endregion
 

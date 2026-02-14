@@ -1,22 +1,24 @@
 ﻿namespace DocxEditor.Helpers;
 
 /// <summary>
-/// Provides properties of the document to be displayed in the property grid.
+/// Provides properties of the component to be displayed in the property grid.
 /// It must implement ICustomTypeDescriptor to allow dynamic properties recognition by the property grid,
-/// which is necessary because the properties of the document are not known at compile time
-/// and can vary depending on the document's content and structure.
+/// which is necessary because the properties of the component are not known at compile time
+/// and can vary depending on the component's content and structure.
 /// </summary>
-//[Editor(typeof(int?), typeof(IntegerEditor))]
-public class DocumentPropertiesProvider: ViewModel, ICustomTypeDescriptor
+public class PropertiesProvider: ViewModel, ICustomTypeDescriptor
 {
 
   /// <summary>
   /// Initializing constructor
   /// </summary>
-  /// <param name="knownProperties"></param>
-  public DocumentPropertiesProvider(KnownProperties knownProperties)
+  /// <param name="component">Model component that is the source of properties.</param>
+  public PropertiesProvider(object component)
   {
-    KnownProperties = knownProperties;
+    if (component is IPropertiesProvider propertiesProvider)
+      KnownProperties = propertiesProvider.GetKnownProperties();
+    else
+      throw new InvalidOperationException($"{component} must implement IPropertiesProvider");
   }
 
   //private IDictionary<string, PropertyModel> _models = new Dictionary<string, PropertyModel>();
@@ -65,7 +67,7 @@ public class DocumentPropertiesProvider: ViewModel, ICustomTypeDescriptor
   /// </remarks>
   public PropertyDescriptorCollection GetProperties()
   {
-    var propertyDetails = Models.Select(model => new DocumentPropertyDescriptor(this, model));
+    var propertyDetails = Models.Select(model => new ModelPropertyDescriptor(this, model));
     return new PropertyDescriptorCollection(propertyDetails.ToArray<PropertyDescriptor>());
   }
 

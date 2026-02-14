@@ -13,7 +13,7 @@
   <Grid>
     <TabControl>
       <TabItem Header="Properties">
-        <views:DocumentPropertiesView/>
+        <views:PropertiesView/>
       </TabItem>
       <TabItem Header="Content">
         <Grid Background="#FFE5E5E5"/>

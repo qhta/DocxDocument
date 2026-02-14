@@ -2,7 +2,6 @@ namespace DocumentModel;
 /// <summary>
 ///   Maintains a collection of type definitions that can be referenced by name for model mapping and serialization.
 /// </summary>
-[OpenXmlType(typeof(string))]
 public class KnownTypes : Dictionary<string, TypeModel>
 {
  /// <summary>
