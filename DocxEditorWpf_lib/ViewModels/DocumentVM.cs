@@ -61,7 +61,11 @@ public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
   /// <summary>
   /// Components of the document that are exposed as view models for binding in the UI.
   /// </summary>
-  public object[] Components => [Document.CoreProperties, Document.ContentProperties];
+  public object[] Components => 
+    [
+      Document.CoreProperties, 
+      Document.ContentProperties
+    ];
 
   /// <summary>
   /// Component selected in the UI, which can be used to display and edit its properties in a property grid or similar control.
@@ -94,7 +98,7 @@ public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
   /// </summary>
   public CustomEditorCollection CustomEditors => _customEditors;
 
-  private static CustomEditorCollection _customEditors = new CustomEditorCollection
+  private static readonly CustomEditorCollection _customEditors = new CustomEditorCollection
   {
     new CustomEditor { PropertyType = typeof(int), EditorType = typeof(IntegerBaseTypeEditor), HasPropertyType = true },
     new CustomEditor { PropertyType = typeof(int?), EditorType = typeof(IntegerBaseTypeEditor), HasPropertyType = true }
