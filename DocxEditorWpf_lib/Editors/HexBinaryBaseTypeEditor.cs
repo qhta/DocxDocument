@@ -1,4 +1,7 @@
 ﻿using Qhta.TypeUtils;
+using System.Globalization;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace DocxEditor;
 
@@ -12,10 +15,16 @@ public class HexBinaryBaseTypeEditor : BaseTypeEditor
 {
   private readonly SfMaskedEdit maskedEdit = new SfMaskedEdit
   {
-    BorderThickness = new Thickness(0,0,0,0),
-    BorderBrush = new SolidColorBrush(Colors.Transparent),
-    Padding = new Thickness(0,3,0,3)
+    //BorderThickness = new Thickness(0,0,0,0),
+    BorderBrush = Brushes.Transparent,
+    Padding = new Thickness(0,3,0,3),
+    ValidationMode = InputValidationMode.LostFocus, 
   };
+  private Brush? defaultBorderBrush;
+  private Thickness defaultBorderThickness;
+  private bool isValidationHandlerAttached;
+  private readonly HexBinaryEvenLengthValidationRule evenLengthRule = new();
+  private ValidationError? evenLengthError;
 
   /// <summary>
   /// Attaches the editor to the specified property, configuring binding and enabling/disabling based on writability.
@@ -29,12 +38,13 @@ public class HexBinaryBaseTypeEditor : BaseTypeEditor
       var binding = new Binding("Value")
       {
         Mode = BindingMode.TwoWay,
-        UpdateSourceTrigger = UpdateSourceTrigger.LostFocus,
+        UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
         Source = info,
         Converter = new HexBinaryValueConverter(),
         ConverterParameter = info.PropertyType,
         ValidatesOnExceptions = true,
-        ValidatesOnDataErrors = true
+        ValidatesOnDataErrors = true,
+        NotifyOnValidationError = true,
       };
       BindingOperations.SetBinding(maskedEdit, SfMaskedEdit.ValueProperty, binding);
     }
@@ -74,16 +84,68 @@ public class HexBinaryBaseTypeEditor : BaseTypeEditor
   private object Init(Type propertyType)
   {
     propertyType = propertyType.GetNotNullableType();
+    EnsureValidationHandler();
     maskedEdit.MaskType = MaskType.RegEx;
     int digits = 0;
     if (propertyType==typeof(HexChar))
-      digits = 2;
-    else if (propertyType==typeof(HexInt))
       digits = 4;
-    else if (propertyType == typeof(HexLong))
+    else if (propertyType==typeof(HexInt))
       digits = 8;
-    maskedEdit.Mask = "([0-9A-Fa-f][0-9A-Fa-f])" + (digits==0 ? "*" : $"{{{digits}}}");
+    else if (propertyType == typeof(HexLong))
+      digits = 16;
+    maskedEdit.Mask = "[0-9A-Fa-f]" + (digits==0 ? "*" : $"{{{digits}}}");
     return maskedEdit;
+  }
+
+  private void EnsureValidationHandler()
+  {
+    if (isValidationHandlerAttached)
+    {
+      return;
+    }
+
+    defaultBorderBrush = Brushes.Transparent;
+     // maskedEdit.BorderBrush;
+    defaultBorderThickness = maskedEdit.BorderThickness;
+    Validation.AddErrorHandler(maskedEdit, OnMaskedEditValidationError);
+    maskedEdit.TextChanged += OnMaskedEditTextChanged;
+    isValidationHandlerAttached = true;
+  }
+
+  private void OnMaskedEditTextChanged(object sender, TextChangedEventArgs e)
+  {
+    var bindingExpression = maskedEdit.GetBindingExpression(SfMaskedEdit.ValueProperty);
+    if (bindingExpression == null)
+    {
+      return;
+    }
+
+    var result = evenLengthRule.Validate(maskedEdit.Text ?? string.Empty, CultureInfo.CurrentCulture);
+    if (result.IsValid)
+    {
+      if (evenLengthError != null)
+      {
+        Validation.ClearInvalid(bindingExpression);
+        evenLengthError = null;
+      }
+      return;
+    }
+
+    evenLengthError = new ValidationError(evenLengthRule, bindingExpression, result.ErrorContent, null);
+    Validation.MarkInvalid(bindingExpression, evenLengthError);
+  }
+
+  private void OnMaskedEditValidationError(object?
+    sender, ValidationErrorEventArgs e)
+  {
+    if (Validation.GetHasError(maskedEdit))
+    {
+      maskedEdit.BorderBrush = Brushes.Red;
+      return;
+    }
+
+    maskedEdit.BorderBrush = defaultBorderBrush;
+    maskedEdit.BorderThickness = defaultBorderThickness;
   }
 
   /// <summary>

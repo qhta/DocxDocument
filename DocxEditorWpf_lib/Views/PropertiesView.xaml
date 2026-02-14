@@ -13,6 +13,16 @@
   <UserControl.Resources>
     <local:PropertiesViewNameCellStyleSelector x:Key="PropertiesViewNameCellStyleSelector"/>
     <local:PropertyEmptyToForegroundConverter x:Key="PropertyEmptyToForegroundConverter"/>
+    <!--<Style x:Key="{x:Type syncfusion:SfMaskedEdit}" TargetType="{x:Type syncfusion:SfMaskedEdit}">
+      <Style.Triggers>
+        <Trigger Property="HasError" Value="False">
+          <Setter Property="BorderBrush" Value="Green"/>
+        </Trigger>
+        <Trigger Property="HasError" Value="True">
+          <Setter Property="BorderBrush" Value="Red"/>
+        </Trigger>
+      </Style.Triggers>
+    </Style>-->
   </UserControl.Resources>
   <Grid >
     <Grid.RowDefinitions>
