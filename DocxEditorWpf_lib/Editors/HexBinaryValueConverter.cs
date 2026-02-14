@@ -1,4 +1,5 @@
 ﻿using Qhta.TypeUtils;
+using System.Windows.Data;
 
 namespace DocxEditor;
 
@@ -15,11 +16,7 @@ public class HexBinaryValueConverter : IValueConverter
     {
       return null;
     }
-    if (targetType == typeof(object))
-    {
-      return value.ToString();
-    }
-    throw new NotImplementedException();
+    return value.ToString();
   }
 
   public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
@@ -29,17 +26,45 @@ public class HexBinaryValueConverter : IValueConverter
 
     if (value is string str)
     {
-      if (str.Length % 2 != 0)
-        str = str.Substring(0, (str.Length / 2) * 2);
+      var normalized = str.Replace(" ", string.Empty);
+      if (string.IsNullOrEmpty(normalized))
+      {
+        return Binding.DoNothing;
+      }
+
       targetType =(parameter as Type)?.GetNotNullableType() ?? Nullable.GetUnderlyingType(targetType) ?? targetType;
       if (targetType == typeof(HexBinary))
-        return new HexBinary(str);
+      {
+        if (normalized.Length % 2 != 0)
+        {
+          return Binding.DoNothing;
+        }
+        return new HexBinary(normalized);
+      }
       if (targetType == typeof(HexChar))
-        return new HexChar(str);
+      {
+        if (normalized.Length > 4)
+        {
+          return Binding.DoNothing;
+        }
+        return new HexChar(normalized);
+      }
       if (targetType == typeof(HexInt))
-        return new HexInt(str);
+      {
+        if (normalized.Length > 8)
+        {
+          return Binding.DoNothing;
+        }
+        return new HexInt(normalized);
+      }
       if (targetType == typeof(HexLong))
-        return new HexLong(str);
+      {
+        if (normalized.Length > 16)
+        {
+          return Binding.DoNothing;
+        }
+        return new HexLong(normalized);
+      }
 
     }
     throw new NotImplementedException();
