@@ -1,4 +1,4 @@
-﻿namespace DocxEditor.Views;
+﻿namespace DocxEditor;
 /// <summary>
 /// View for displaying and editing document component properties.
 /// </summary>

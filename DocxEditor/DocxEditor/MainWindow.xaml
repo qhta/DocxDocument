@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         xmlns:local="clr-namespace:DocxEditor"
-        xmlns:vm="clr-namespace:DocxEditor.ViewModels;assembly=DocxEditorWpf_lib"
-        xmlns:views="clr-namespace:DocxEditor.Views;assembly=DocxEditorWpf_lib"
+        xmlns:vm="clr-namespace:DocxEditor;assembly=DocxEditorWpf_lib"
+        xmlns:views="clr-namespace:DocxEditor;assembly=DocxEditorWpf_lib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowState="Maximized">
   <Window.DataContext>

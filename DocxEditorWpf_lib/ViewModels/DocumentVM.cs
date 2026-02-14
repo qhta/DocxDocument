@@ -1,6 +1,6 @@
-﻿using DocxEditor.Helpers;
+﻿using DocxEditor;
 
-namespace DocxEditor.ViewModels;
+namespace DocxEditor;
 
 
 /// <summary>
@@ -101,7 +101,9 @@ public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
   private static readonly CustomEditorCollection _customEditors = new CustomEditorCollection
   {
     new CustomEditor { PropertyType = typeof(int), EditorType = typeof(IntegerBaseTypeEditor), HasPropertyType = true },
-    new CustomEditor { PropertyType = typeof(int?), EditorType = typeof(IntegerBaseTypeEditor), HasPropertyType = true }
+    new CustomEditor { PropertyType = typeof(int?), EditorType = typeof(IntegerBaseTypeEditor), HasPropertyType = true },
+    new CustomEditor { PropertyType = typeof(HexBinary), EditorType = typeof(HexBinaryBaseTypeEditor), HasPropertyType = true },
+
   };
 
 }

@@ -1,6 +1,4 @@
-﻿using Syncfusion.Windows.Controls.Input;
-
-namespace DocxEditor.Helpers;
+﻿namespace DocxEditor;
 
 /// <summary>
 /// Custom editor for email address properties using a Syncfusion masked edit control.
@@ -8,15 +6,16 @@ namespace DocxEditor.Helpers;
 /// <remarks>
 /// This editor provides a masked input for editing email addresses within a property grid.
 /// </remarks>
-public class EmailEditor : ITypeEditor
+public class EmailBaseTypeEditor : BaseTypeEditor
 {
-  SfMaskedEdit maskededit;
+  private readonly SfMaskedEdit maskedEdit = new SfMaskedEdit();
+
   /// <summary>
   /// Attaches the editor to the specified property, configuring binding and enabling/disabling based on writability.
   /// </summary>
   /// <param name="property">The property view item to attach to.</param>
   /// <param name="info">The property item containing metadata and value information.</param>
-  public void Attach(PropertyViewItem property, PropertyItem info)
+  public override void Attach(PropertyViewItem property, PropertyItem info)
   {
     if (info.CanWrite)
     {
@@ -27,18 +26,18 @@ public class EmailEditor : ITypeEditor
         ValidatesOnExceptions = true,
         ValidatesOnDataErrors = true
       };
-      BindingOperations.SetBinding(maskededit, SfMaskedEdit.ValueProperty, binding);
+      BindingOperations.SetBinding(maskedEdit, SfMaskedEdit.ValueProperty, binding);
     }
     else
     {
-      maskededit.IsEnabled = false;
+      maskedEdit.IsEnabled = false;
       var binding = new Binding("Value")
       {
         Source = info,
         ValidatesOnExceptions = true,
         ValidatesOnDataErrors = true
       };
-      BindingOperations.SetBinding(maskededit, SfMaskedEdit.ValueProperty, binding);
+      BindingOperations.SetBinding(maskedEdit, SfMaskedEdit.ValueProperty, binding);
     }
   }
 
@@ -47,14 +46,14 @@ public class EmailEditor : ITypeEditor
   /// </summary>
   /// <param name="propertyInfo">Reflection information about the property being edited.</param>
   /// <returns>The configured SfMaskedEdit control instance.</returns>
-  public object Create(PropertyInfo propertyInfo) => Init();
+  public override object Create(PropertyInfo propertyInfo) => Init();
 
   /// <summary>
   /// Creates and configures a Syncfusion masked edit control for email address editing based on the provided
   /// property descriptor.
   /// </summary>
   /// <param name="PropertyDescriptor">Descriptor for the property being edited.</param>
-  public object Create(PropertyDescriptor PropertyDescriptor) => Init();
+  public override object Create(PropertyDescriptor PropertyDescriptor) => Init();
 
   /// <summary>
   /// Initializes and configures a new instance of the SfMaskedEdit control for email address validation using a regular
@@ -63,17 +62,16 @@ public class EmailEditor : ITypeEditor
   /// <returns>A configured SfMaskedEdit control that validates input against a standard email address pattern.</returns>
   private object Init()
   {
-    maskededit = new SfMaskedEdit();
-    maskededit.MaskType = MaskType.RegEx;
-    maskededit.Mask = "[A-Za-z0-9._%-]+@[A-Za-z0-9]+.[A-Za-z]{2,3}";
-    return maskededit;
+    maskedEdit.MaskType = MaskType.RegEx;
+    maskedEdit.Mask = "[A-Za-z0-9._%-]+@[A-Za-z0-9]+.[A-Za-z]{2,3}";
+    return maskedEdit;
   }
 
   /// <summary>
   /// Detaches the editor from the specified property. No operation is performed in this implementation.
   /// </summary>
   /// <param name="property">The property view item to detach from.</param>
-  public void Detach(PropertyViewItem property)
+  public override void Detach(PropertyViewItem property)
   {
 
   }
@@ -83,9 +81,9 @@ public class EmailEditor : ITypeEditor
   /// </summary>
   /// <param name="key">The key pressed by the user.</param>
   /// <returns>Always returns false, allowing default handling.</returns>
-  public bool ShouldPropertyGridTryToHandleKeyDown(Key key)
+  public override bool ShouldPropertyGridTryToHandleKeyDown(Key key)
   {
-    return false;
+    return true;
   }
 
 }

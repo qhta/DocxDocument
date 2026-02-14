@@ -1,4 +1,4 @@
-﻿namespace DocxEditor.Helpers;
+﻿namespace DocxEditor;
 
 /// <summary>
 /// Custom editor for integer values in a property grid using Syncfusion UpDown control.
@@ -7,26 +7,27 @@
 /// This editor provides a numeric up/down interface for editing integer properties within a property grid.
 /// </remarks>
 
-public class IntegerEditor : ITypeEditor
+public class IntegerBaseTypeEditor : BaseTypeEditor
 {
   /// <summary>
-  /// Initializes a new instance of the IntegerEditor class.
+  /// Default constructor needed by WPF.
   /// </summary>
-  /// <remarks>This constructor sets up the editor's initial state. Use this constructor to create a new
-  /// IntegerEditor before configuring or displaying it.</remarks>
-  public IntegerEditor()
+  public IntegerBaseTypeEditor()
   {
-    Init();
   }
 
-  UpDown upDown = new UpDown();
+  private readonly UpDown upDown = new UpDown 
+    { ApplyZeroColor = false, 
+      NumberDecimalDigits = 0, 
+      UseNullOption = true, 
+      NullValue = null};
 
   /// <summary>
   /// Attaches the editor to the specified property, configuring binding and enabling/disabling based on writability.
   /// </summary>
   /// <param name="property">The property view item to attach to.</param>
   /// <param name="info">The property item containing metadata and value information.</param>
-  public void Attach(PropertyViewItem property, PropertyItem info)
+  public override void Attach(PropertyViewItem property, PropertyItem info)
   {
     if (info.CanWrite)
     {
@@ -34,6 +35,7 @@ public class IntegerEditor : ITypeEditor
       {
         Mode = BindingMode.TwoWay,
         Source = info,
+        Converter = new IntegerValueConverter(),
         ValidatesOnExceptions = true,
         ValidatesOnDataErrors = true
       };
@@ -45,43 +47,40 @@ public class IntegerEditor : ITypeEditor
       var binding = new Binding("Value")
       {
         Source = info,
+        Converter = new IntegerValueConverter(),
         ValidatesOnExceptions = true,
         ValidatesOnDataErrors = true
       };
       BindingOperations.SetBinding(upDown, UpDown.ValueProperty, binding);
     }
   }
+
   /// <summary>
   /// Creates and configures a Syncfusion UpDown control for integer editing based on the provided property information.
   /// </summary>
   /// <param name="propertyInfo">Reflection information about the property being edited.</param>
   /// <returns>The configured UpDown control instance.</returns>
-  public object Create(PropertyInfo propertyInfo) => Init();
+  public override object Create(PropertyInfo propertyInfo)
+  {
+    return upDown;
+  }
 
   /// <summary>
   /// Creates and configures a Syncfusion UpDown control for integer editing based on the provided property descriptor.
   /// </summary>
   /// <returns>The configured UpDown control instance.</returns>
-  /// <param name="PropertyDescriptor">Descriptor for the property being edited.</param>
-  public object Create(PropertyDescriptor PropertyDescriptor) => Init();
-
-  /// <summary>
-  /// Initializes and configures a new instance of the UpDown control with default settings.
-  /// </summary>
-  private object Init()
+  /// <param name="propertyDescriptor">Descriptor for the property being edited.</param>
+  public override object Create(PropertyDescriptor propertyDescriptor)
   {
-    upDown = new UpDown();
-    upDown.ApplyZeroColor = false;
-    upDown.MinValue = 0;
-    upDown.MaxValue = 100;
-    upDown.NumberDecimalDigits = 0;
     return upDown;
   }
+
+
   /// <summary>
   /// Detaches the editor from the specified property. No operation is performed in this implementation.
   /// </summary>
   /// <param name="property">The property view item to detach from.</param>
-  public void Detach(PropertyViewItem property)
+  public override void Detach(PropertyViewItem property)
   {
 
   }
@@ -91,9 +90,9 @@ public class IntegerEditor : ITypeEditor
   /// </summary>
   /// <param name="key">The key pressed by the user.</param>
   /// <returns>Always returns false, allowing default handling.</returns>
-  public bool ShouldPropertyGridTryToHandleKeyDown(Key key)
+  public override bool ShouldPropertyGridTryToHandleKeyDown(Key key)
   {
-    return true;
+    return false;
   }
 
 }

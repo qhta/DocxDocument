@@ -1,6 +1,6 @@
 using Color = System.Windows.Media.Color;
 
-namespace DocxEditor.Helpers
+namespace DocxEditor
 {
   /// <summary>
   /// Selects a style for PropertiesView name cell based on IPropertyVM properties.

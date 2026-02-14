@@ -1,6 +1,6 @@
-﻿using DocxEditor.Helpers;
+﻿using DocxEditor;
 
-namespace DocxEditor.ViewModels;
+namespace DocxEditor;
 
 /// <summary>
 /// ViewModel for properties of document component.
@@ -27,35 +27,4 @@ public sealed class PropertiesVM : ViewModel
   /// </summary>
   public PropertiesProvider PropertiesProvider { get; private set; }
 
-  ///// <summary>
-  ///// Populates the specified property grid with items that represent the known properties of the current document
-  ///// model.
-  ///// </summary>
-  ///// <remarks>This method initializes the property grid with items based on the document's known properties,
-  ///// allowing users to view and interact with the document's metadata or configurable attributes.</remarks>
-  ///// <param name="propertyGrid">The property grid to populate with property items. Cannot be null.</param>
-  //public void PopulateProperties(PropertyGrid propertyGrid)
-  //{
-  //  PropertiesProvider = new DocumentPropertiesProvider(Component.Document.KnownProperties);
-  //  foreach (var property in PropertiesProvider.Models)
-  //  {
-  //    propertyGrid.Items.Add(new PropertyGridItem
-  //    {
-  //      PropertyName = property.Name,
-  //      PropertyType = property.PropertyType,
-  //    }
-  //    );
-  //  }
-  //}
-
-  /// <summary>
-  /// Custom editors for known property types.
-  /// </summary>
-  public CustomEditorCollection CustomEditors => _customEditors;
-
-  private static CustomEditorCollection _customEditors = new CustomEditorCollection
-  {
-    new CustomEditor { PropertyType = typeof(int), EditorType = typeof(IntegerBaseTypeEditor), HasPropertyType = true },
-    new CustomEditor { PropertyType = typeof(int?), EditorType = typeof(IntegerBaseTypeEditor), HasPropertyType = true }
-  };
 }

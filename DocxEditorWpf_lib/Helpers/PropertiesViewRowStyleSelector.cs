@@ -1,6 +1,6 @@
 using Color = System.Windows.Media.Color;
 
-namespace DocxEditor.Helpers
+namespace DocxEditor
 {
   /// <summary>
   /// Selects a style for TreeGrid rows based on IPropertyVM properties.

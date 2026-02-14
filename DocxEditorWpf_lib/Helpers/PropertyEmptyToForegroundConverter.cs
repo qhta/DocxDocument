@@ -1,4 +1,4 @@
-namespace DocxEditor.Helpers
+namespace DocxEditor
 {
   /// <summary>
   /// Converts IsEmpty property to Foreground brush - light gray if empty, default otherwise.
