@@ -6,9 +6,6 @@ using System.Windows.Media.Animation;
 
 using DocumentModel.Wordprocessing;
 
-using DocxEditor.ViewModels;
-using DocxEditor.Views;
-
 using Qhta.MVVM;
 
 using Syncfusion.Windows.Tools.Controls;

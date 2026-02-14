@@ -1,4 +1,4 @@
-﻿namespace DocxEditor.ViewModels;
+﻿namespace DocxEditor;
 
 /// <summary>
 /// ViewModel representing a document property.

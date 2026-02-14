@@ -1,19 +1,18 @@
-﻿<UserControl x:Class="DocxEditor.Views.DocumentView"
+﻿<UserControl x:Class="DocxEditor.DocumentView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:views="clr-namespace:DocxEditor.Views"
-             xmlns:viewModels="clr-namespace:DocxEditor.ViewModels"
+             xmlns:local="clr-namespace:DocxEditor"
              xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
              mc:Ignorable="d" 
-             d:DataContext="{d:DesignInstance Type=viewModels:DocumentVM}"
+             d:DataContext="{d:DesignInstance Type=local:DocumentVM}"
              syncfusion:DocumentContainer.Header="{Binding Caption}"
              d:DesignHeight="250" d:DesignWidth="500">
   <Grid>
     <TabControl>
       <TabItem Header="Properties">
-        <views:PropertiesView/>
+        <local:PropertiesView/>
       </TabItem>
       <TabItem Header="Content">
         <Grid Background="#FFE5E5E5"/>
