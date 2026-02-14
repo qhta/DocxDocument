@@ -1,35 +1,31 @@
-﻿using DocumentFormat.OpenXml.Office.CustomDocumentInformationPanel;
-
-using DocxEditor.Helpers;
-
-using Qhta.ObservableObjects;
+﻿using DocxEditor.Helpers;
 
 namespace DocxEditor.ViewModels;
 
 /// <summary>
-/// ViewModel for DocumentModel.DocumentProperties.
+/// ViewModel for properties of document component.
 /// </summary>
-public sealed class DocumentPropertiesVM : ViewModel
+public sealed class PropertiesVM : ViewModel
 {
   /// <summary>
   /// Initializing constructor.
   /// </summary>
-  /// <param name="document">Model view for the document.</param>
-  public DocumentPropertiesVM(DocumentVM document)
+  /// <param name="component">Component of the document, which properties will be provided.</param>
+  public PropertiesVM(object component)
   {
-    DocumentModel = document;
-    PropertiesProvider = new DocumentPropertiesProvider(DocumentModel.Document.KnownProperties);
+    Component = component;
+    PropertiesProvider = new PropertiesProvider(component);
   }
 
   /// <summary>
   /// Model collection of document properties.
   /// </summary>
-  public DocumentVM DocumentModel { get; private set; }
+  public object Component { get; private set; }
 
   /// <summary>
   /// Provider for dynamic properties recognition needed by PropertyGrid.
   /// </summary>
-  public DocumentPropertiesProvider PropertiesProvider { get; private set; }
+  public PropertiesProvider PropertiesProvider { get; private set; }
 
   ///// <summary>
   ///// Populates the specified property grid with items that represent the known properties of the current document
@@ -40,7 +36,7 @@ public sealed class DocumentPropertiesVM : ViewModel
   ///// <param name="propertyGrid">The property grid to populate with property items. Cannot be null.</param>
   //public void PopulateProperties(PropertyGrid propertyGrid)
   //{
-  //  PropertiesProvider = new DocumentPropertiesProvider(DocumentModel.Document.KnownProperties);
+  //  PropertiesProvider = new DocumentPropertiesProvider(Component.Document.KnownProperties);
   //  foreach (var property in PropertiesProvider.Models)
   //  {
   //    propertyGrid.Items.Add(new PropertyGridItem
@@ -52,6 +48,9 @@ public sealed class DocumentPropertiesVM : ViewModel
   //  }
   //}
 
+  /// <summary>
+  /// Custom editors for known property types.
+  /// </summary>
   public CustomEditorCollection CustomEditors => _customEditors;
 
   private static CustomEditorCollection _customEditors = new CustomEditorCollection

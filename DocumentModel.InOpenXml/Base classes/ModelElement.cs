@@ -6,7 +6,8 @@ namespace DocumentModel;
 /// <summary>
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
-public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem, IModifiable
+public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem, 
+  IModifiable, IPropertiesProvider
 {
   static ModelElement()
   {
@@ -178,6 +179,37 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     if (obj.GetType() != GetType()) return false;
     return DeepComparer.Equals(this.GetType(), this, obj);
   }
+
+  /// <summary>
+  /// Gets a dictionary of known properties for the current model element type, where the keys are property names
+  /// and the values are PropertyModel instances containing metadata about each property.
+  /// </summary>
+  /// <returns></returns>
+  /// <exception cref="NotImplementedException"></exception>
+  public KnownProperties GetKnownProperties()
+  {
+    if (_knownProperties == null)
+    {
+
+      var modelType = this.GetType();
+      var knownProperties =
+        modelType.GetProperty("KnownProperties", BindingFlags.Public | BindingFlags.Static)?
+            .GetValue(null) as KnownProperties;
+      if (knownProperties == null)
+        knownProperties = new KnownProperties(modelType);
+      _knownProperties = new KnownProperties();
+      foreach (var kvp in knownProperties)
+      {
+        var prop = kvp.Value;
+
+        var modelProp = (PropertyModel)prop.Clone()!;
+        modelProp.Component = this;
+        _knownProperties.Add(modelProp);
+      }
+    }
+    return _knownProperties;
+  }
+  private KnownProperties? _knownProperties;
 
   /// <summary>
   /// Populates the current model element's properties with values from the specified Open XML element.

@@ -1,14 +1,14 @@
 ﻿namespace DocxEditor.Views;
 /// <summary>
-/// View for displaying and editing document properties.
+/// View for displaying and editing document component properties.
 /// </summary>
-public partial class DocumentPropertiesView : UserControl
+public partial class PropertiesView : UserControl
 {
-  //PropertiesProvider propertiesProvider = new PropertiesProvider();
+
   /// <summary>
   /// Initializing constructor.
   /// </summary>
-  public DocumentPropertiesView()
+  public PropertiesView()
   {
     InitializeComponent();
   }
@@ -29,6 +29,11 @@ public partial class DocumentPropertiesView : UserControl
 
     if (propertyItem == null)
       return;
+    if (!propertyItem.CanWrite)
+    {
+      e.Cancel = true;
+      return;
+    }
     if (propertyItem.PropertyType.Namespace!.StartsWith("DocumentFormat"))
     {
       e.Cancel = true;

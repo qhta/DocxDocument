@@ -9,6 +9,11 @@
 
 public class IntegerEditor : ITypeEditor
 {
+  /// <summary>
+  /// Initializes a new instance of the IntegerEditor class.
+  /// </summary>
+  /// <remarks>This constructor sets up the editor's initial state. Use this constructor to create a new
+  /// IntegerEditor before configuring or displaying it.</remarks>
   public IntegerEditor()
   {
     Init();

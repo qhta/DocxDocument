@@ -1,8 +1,10 @@
-﻿namespace DocxEditor.ViewModels;
+﻿using DocxEditor.Helpers;
+
+namespace DocxEditor.ViewModels;
 
 
 /// <summary>
-/// ViewModel for DocumentModel.Wordprocessing.Document.
+/// ViewModel for Component.Wordprocessing.Document.
 /// </summary>
 public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
 {
@@ -43,24 +45,59 @@ public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
   /// <summary>
   /// Collection of document properties as view models.
   /// </summary>
-  public DocumentPropertiesVM DocumentProperties
+  public PropertiesVM DocumentProperties
   {
     get
     {
       if (_documentPropertiesVM == null)
       {
-        _documentPropertiesVM = new DocumentPropertiesVM(this);
+        _documentPropertiesVM = new PropertiesVM(this);
       }
       return _documentPropertiesVM;
     }
   }
-  private DocumentPropertiesVM? _documentPropertiesVM;
+  private PropertiesVM? _documentPropertiesVM;
 
-  //public RelayCommand ResetCommand => new RelayCommand(Reset);
+  /// <summary>
+  /// Components of the document that are exposed as view models for binding in the UI.
+  /// </summary>
+  public object[] Components => [Document.CoreProperties, Document.ContentProperties];
 
-  //private void Reset()
-  //{
-  //  Debug.WriteLine("Reset");
-  //}
+  /// <summary>
+  /// Component selected in the UI, which can be used to display and edit its properties in a property grid or similar control.
+  /// </summary>
+  public object? SelectedComponent
+  {
+    get => _selectedComponent ?? Document.ContentProperties;
+    set
+    {
+      if (value!= _selectedComponent)
+      {
+        _selectedComponent = value;
+        NotifyPropertyChanged(nameof(SelectedComponent));
+        NotifyPropertyChanged(nameof(SelectedComponentProperties));
+      }
+    }
+  }
+  private object? _selectedComponent;
+
+
+  /// <summary>
+  /// Component selected in the UI, which can be used to display and edit its properties in a property grid or similar control.
+  /// </summary>
+  public PropertiesVM? SelectedComponentProperties =>
+    _selectedComponent != null ? new PropertiesVM(_selectedComponent) : null;
+
+
+  /// <summary>
+  /// Custom editors for known property types.
+  /// </summary>
+  public CustomEditorCollection CustomEditors => _customEditors;
+
+  private static CustomEditorCollection _customEditors = new CustomEditorCollection
+  {
+    new CustomEditor { PropertyType = typeof(int), EditorType = typeof(IntegerBaseTypeEditor), HasPropertyType = true },
+    new CustomEditor { PropertyType = typeof(int?), EditorType = typeof(IntegerBaseTypeEditor), HasPropertyType = true }
+  };
 
 }

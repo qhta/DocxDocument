@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="DocxEditor.Views.DocumentPropertiesView"
+﻿<UserControl x:Class="DocxEditor.Views.PropertiesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -16,34 +16,36 @@
     <helpers:PropertiesViewNameCellStyleSelector x:Key="PropertiesViewNameCellStyleSelector"/>
     <helpers:PropertyEmptyToForegroundConverter x:Key="PropertyEmptyToForegroundConverter"/>
   </UserControl.Resources>
-  <Grid Background="White">
+  <Grid >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid Grid.Row="0" Margin="5">
+      <Grid.ColumnDefinitions >
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+        <Label Content="Select component" />
+        <ComboBox Grid.Column="1" 
+          ItemsSource="{Binding Components}"
+          SelectedItem="{Binding SelectedComponent}"/>
+    </Grid>
     <syncfusion:PropertyGrid
       x:Name="PropertyGrid"
+      Grid.Row="1"
+      Background="White"
       PropertyExpandMode="NestedMode"
       MenuButtonVisibility="true"
       AutoGenerateItems="True"
       AutoGeneratingPropertyGridItem="PropertyGrid_OnAutoGeneratingPropertyGridItem"
       UpdateSourceMode="ReturnOrLostFocus"
-      DataContext="{Binding DocumentProperties}"
-      SelectedObject="{Binding PropertiesProvider}"
+      SelectedObject="{Binding SelectedComponent}"
       CustomEditorCollection="{Binding CustomEditors}"
-      >
+    >
       <syncfusion:PropertyGrid.MenuItems >
         <MenuItem Header="Reset" Command="{Binding ResetCommand}" CommandParameter="{Binding}"/>
       </syncfusion:PropertyGrid.MenuItems>
-      <!--<syncfusion:PropertyGrid.CustomEditorCollection>
-        <syncfusion:CustomEditorCollection>
-          <syncfusion:CustomEditor  PropertyType="{x:Type system:Int32}" 
-                                    HasPropertyType="True" EditorType="{x:Type helpers:IntegerEditor}" >
-            <syncfusion:CustomEditor.ConstructorParameters>
-              <x:Array Type="{x:Type system:Object}">
-                <system:Boolean>True</system:Boolean>
-              </x:Array>
-            </syncfusion:CustomEditor.ConstructorParameters>
-          </syncfusion:CustomEditor>
-        </syncfusion:CustomEditorCollection>
-      </syncfusion:PropertyGrid.CustomEditorCollection>-->
-      <!--DataContextChanged="PropertyGrid_OnDataContextChanged"-->
     </syncfusion:PropertyGrid>
   </Grid>
 </UserControl>

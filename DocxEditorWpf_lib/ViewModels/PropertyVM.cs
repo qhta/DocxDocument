@@ -3,13 +3,13 @@
 /// <summary>
 /// ViewModel representing a document property.
 /// </summary>
-public class DocumentPropertyVM: ViewModel<PropertyModel>, IPropertyVM  
+public class PropertyVM: ViewModel<PropertyModel>, IPropertyVM  
 {
   /// <summary>
   /// Initializing constructor.
   /// </summary>
   /// <param name="model"></param>
-  public DocumentPropertyVM(PropertyModel model) : base(model)
+  public PropertyVM(PropertyModel model) : base(model)
   {
   }
 
