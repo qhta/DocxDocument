@@ -21,6 +21,7 @@ public partial class ContentProperties
   ///   Specifies the name of an external document template containing format 
   ///   and style information used to create the current document.
   /// </summary>
+  [Category("Base")]
   [DefaultValue("Normal.dotm")]
   public string? Template
   {
@@ -33,6 +34,7 @@ public partial class ContentProperties
   /// <summary>
   ///   The name of a supervisor associated with the document.
   /// </summary>
+  [Category("Base")]
   public string? Manager
   {
     get => _Manager;
@@ -44,6 +46,7 @@ public partial class ContentProperties
   /// <summary>
   ///   The name of a company associated with the document.
   /// </summary>
+  [Category("Base")]
   public string? Company
   {
     get => _Company;
@@ -56,6 +59,7 @@ public partial class ContentProperties
   ///   The intended format for a presentation document. For example, a presentation intended
   ///   to be shown on video has PresentationFormat "Video".
   /// </summary>
+  [Category("Presentation")]
   public string? PresentationFormat
   {
     get => _PresentationFormat;
@@ -69,6 +73,7 @@ public partial class ContentProperties
   ///   TRUE means scaling of the document thumbnail to the display. 
   ///   FALSE means cropping of the document thumbnail to show only sections that fits the display.
   /// </summary>
+  [Category("Presentation")]
   public bool? ScaleCrop
   {
     get => _ScaleCrop;
@@ -81,6 +86,7 @@ public partial class ContentProperties
   ///   Indicates the grouping of document parts and the number of parts in each group.
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
+  [Category("Structure")]
   [OpenXmlType(typeof(DXEP.HeadingPairs))]
   public HeadingPairs? HeadingPairs
   {
@@ -94,6 +100,7 @@ public partial class ContentProperties
   ///   The title of each document. 
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
+  [Category("Structure")]
   [OpenXmlType(typeof(DXEP.TitlesOfParts))]
   public StringList? TitlesOfParts
   {
@@ -107,6 +114,8 @@ public partial class ContentProperties
   ///   Indicates whether hyperlinks in a document are up-to-date.
   ///   TRUE means that hyperlinks are updated, FALSE means that hyperlinks are outdated.
   /// </summary>
+  [Category("Structure")]
+  [OpenXmlType(typeof(DXEP.LinksUpToDate))]
   public bool? LinksUpToDate
   {
     get => _LinksUpToDate;
@@ -119,6 +128,8 @@ public partial class ContentProperties
   ///   Indicates if this document is currently shared between multiple producers. 
   ///   If this element is set to TRUE, producers should take care when updating the document.
   /// </summary>
+  [Category("Base")]
+  [OpenXmlType(typeof(DXEP.LinksUpToDate))]
   public bool? SharedDocument
   {
     get => _SharedDocument;
@@ -130,6 +141,8 @@ public partial class ContentProperties
   /// <summary>
   ///   The base string used for evaluating relative hyperlinks in this document.
   /// </summary>
+  [Category("Hyperlinks")]
+  [OpenXmlType(typeof(DXEP.HyperlinkBase))]
   public string? HyperlinkBase
   {
     get => _HyperlinkBase;
@@ -141,6 +154,7 @@ public partial class ContentProperties
   /// <summary>
   ///   The set of hyperlinks that were in this document when last saved.
   /// </summary>
+  [Category("Hyperlinks")]
   [OpenXmlType(typeof(DXEP.HyperlinkList))]
   public HyperlinkList? HyperlinkList
   {
@@ -154,6 +168,8 @@ public partial class ContentProperties
   ///   Specifies that one or more hyperlinks in this part were updated exclusively in this part by a producer. 
   ///   The next producer to open this document shall update the hyperlink relationships with the new hyperlinks specified in this part.
   /// </summary>
+  [Category("Hyperlinks")]
+  [OpenXmlType(typeof(DXEP.HyperlinksChanged))]
   public bool? HyperlinksChanged
   {
     get => _HyperlinksChanged;
@@ -170,6 +186,8 @@ public partial class ContentProperties
   ///   4 - Document is enforced to be opened as read-only.
   ///   8 - Document is locked for annotation
   /// </summary>
+  [Category("Security")]
+  [OpenXmlType(typeof(DXEP.DocumentSecurity))]
   public DocumentSecurity? DocumentSecurity
   {
     get => (DocumentSecurity?)_DocumentSecurity;
@@ -184,6 +202,8 @@ public partial class ContentProperties
   ///   representation, and should be avoided in favor of the well-defined mechanism defined in Part 2. Any use of this
   ///   property should be for legacy compatibility only, and is application-defined. 
   /// </summary>
+  [Obsolete]
+  [Category("Security")]
   [OpenXmlType(typeof(DXEP.DigitalSignature))]
   public HexBinary? DigitalSignature
   {
@@ -195,7 +215,9 @@ public partial class ContentProperties
   /// <summary>
   ///   Specifies the name of the application that created this document.
   /// </summary>
+  [Category("Base")]
   [DefaultValue("Microsoft Office Word")]
+  [OpenXmlType(typeof(DXEP.Application))]
   public string? Application
   {
     get => _Application;
@@ -207,7 +229,9 @@ public partial class ContentProperties
   /// <summary>
   ///   Specifies the version of the application which produced this document.
   /// </summary>
+  [Category("Base")]
   [DefaultValue("16.0000")]
+  [OpenXmlType(typeof(DXEP.ApplicationVersion))]
   public string? ApplicationVersion
   {
     get => _ApplicationVersion;
