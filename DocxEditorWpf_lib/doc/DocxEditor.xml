@@ -4,214 +4,6 @@
         <name>DocxEditorWpf_lib</name>
     </assembly>
     <members>
-        <member name="T:DocxEditor.Helpers.DocumentPropertiesProvider">
-            <summary>
-            Provides properties of the document to be displayed in the property grid.
-            It must implement ICustomTypeDescriptor to allow dynamic properties recognition by the property grid,
-            which is necessary because the properties of the document are not known at compile time
-            and can vary depending on the document's content and structure.
-            </summary>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.#ctor(DocumentModel.KnownProperties)">
-            <summary>
-            Initializing constructor
-            </summary>
-            <param name="knownProperties"></param>
-        </member>
-        <member name="P:DocxEditor.Helpers.DocumentPropertiesProvider.Models">
-            <summary>
-            Gets the models representing the properties of the document.
-            </summary>
-        </member>
-        <member name="P:DocxEditor.Helpers.DocumentPropertiesProvider.DisplayNames">
-            <summary>
-            Dictionary of display names for the properties, keyed by property name.
-            If a property does not have a display name in this dictionary, its property name will be used as the display name.
-            </summary>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.GetDisplayName(DocumentModel.PropertyModel)">
-            <summary>
-            Gets the display name for a given property model, which is used to show the property in the property grid.
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.GetProperties">
-            <summary>
-            Gets a collection of properties for the current instance.
-            </summary>
-            <remarks>
-            It is the most important method of the ICustomTypeDescriptor interface in this context,
-            as it provides the dynamic properties of the document to be displayed in the property grid.
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.GetAttributes">
-            <summary>
-            Returns a collection of attributes for the current instance.
-            </summary>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.GetClassName">
-            <summary>
-            Retrieves the class name of the current instance as recognized by the type descriptor system.
-            </summary>
-            <remarks>
-            Not used in this context, but required by the ICustomTypeDescriptor interface.
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.GetComponentName">
-            <summary>
-            Gets the name of the component as recognized by the type descriptor system.
-            </summary>
-            <remarks>
-            Not used in this context, but required by the ICustomTypeDescriptor interface.
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.GetConverter">
-            <summary>
-            Gets a type converter for the current instance, which can be used to convert the instance to and from other types.
-            </summary>
-            <remarks>
-            Not used in this context, but required by the ICustomTypeDescriptor interface.
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.GetDefaultEvent">
-            <summary>
-            Gets the default event for the current instance,
-            which is the event that is considered the most important or commonly used event for the component.
-            </summary>
-            <remarks>
-            Not used in this context, but required by the ICustomTypeDescriptor interface.
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.GetDefaultProperty">
-            <summary>
-            Gets the default property for the current instance,
-            </summary>
-            <remarks>
-            Not used in this context, but required by the ICustomTypeDescriptor interface.
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.GetEditor(System.Type)">
-            <summary>
-            Gets an editor of the specified type for the current instance,
-            which can be used to provide a user interface for editing the instance.
-            </summary>
-            <remarks>
-            Not used in this context, but required by the ICustomTypeDescriptor interface.
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.GetEvents">
-            <summary>
-            Gets a collection of events for the current instance,
-            which can be used to display the events in a property grid or other user interface.
-            </summary>
-            <remarks>
-            Not used in this context, but required by the ICustomTypeDescriptor interface.
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.GetEvents(System.Attribute[])">
-            <summary>
-            Gets a collection of events for the current instance that match the specified attributes,
-            </summary>
-            <remarks>
-            Not used in this context, but required by the ICustomTypeDescriptor interface.
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.GetProperties(System.Attribute[])">
-            <summary>
-            Gets a collection of properties for the current instance that match the specified attributes,
-            </summary>
-            <remarks>
-            Not used in this context, but required by the ICustomTypeDescriptor interface.
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertiesProvider.GetPropertyOwner(System.ComponentModel.PropertyDescriptor)">
-            <summary>
-            Gets the owner of the specified property descriptor, which is the object that the property belongs to.
-            </summary>
-            <remarks>
-            Not used in this context, but required by the ICustomTypeDescriptor interface.
-            </remarks>
-        </member>
-        <member name="T:DocxEditor.Helpers.DocumentPropertyDescriptor">
-            <summary>
-            A property descriptor for a document property, which provides information about the property
-            and allows getting and setting its value.
-            </summary>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertyDescriptor.#ctor(DocxEditor.Helpers.DocumentPropertiesProvider,DocumentModel.PropertyModel)">
-            <summary>
-            Initializes a new instance of the DocumentPropertyDescriptor class
-            with the specified properties provider and property model.
-            </summary>
-            <param name="propertiesProvider"></param>
-            <param name="propertyModel"></param>
-        </member>
-        <member name="P:DocxEditor.Helpers.DocumentPropertyDescriptor.ComponentType">
-            <summary>
-            Gets the type of the component associated with this provider.
-            </summary>
-        </member>
-        <member name="P:DocxEditor.Helpers.DocumentPropertyDescriptor.DisplayName">
-            <summary>
-            Gets the display name of the property, which is used to show the property in the property grid.
-            </summary>
-        </member>
-        <member name="P:DocxEditor.Helpers.DocumentPropertyDescriptor.IsReadOnly">
-            <summary>
-            Gets a value indicating whether the property is read-only.
-            </summary>
-        </member>
-        <member name="P:DocxEditor.Helpers.DocumentPropertyDescriptor.PropertyType">
-            <summary>
-            Gets the type of the property, which is used to determine how to display and edit the property in the property grid.
-            </summary>
-        </member>
-        <member name="P:DocxEditor.Helpers.DocumentPropertyDescriptor.Component">
-            <summary>
-            Component of the property model, which is used to get and set the property value. 
-            </summary>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertyDescriptor.CanResetValue(System.Object)">
-            <summary>
-            Determines whether the value of the specified component can be reset to its default state.
-            </summary>
-            <remarks>
-            Component is passed to the property model, but is ignored there.
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertyDescriptor.GetValue(System.Object)">
-            <summary>
-            Gets the current value of the property for the specified component.
-            </summary>
-            <remarks>
-            Null is passed as the component because the property model does not rely on a specific component instance to manage the property value,
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertyDescriptor.ResetValue(System.Object)">
-            <summary>
-            Resets the value of the property to its default state for the specified component.
-            </summary>
-            <remarks>
-            Null is passed as the component because the property model does not rely on a specific component instance to manage the property value,
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertyDescriptor.SetValue(System.Object,System.Object)">
-            <summary>
-            Sets the value of the property represented by this descriptor for the specified component.
-            </summary>
-            <remarks>
-            Null is passed as the component because the property model does not rely on a specific component instance to manage the property value,
-            </remarks>
-        </member>
-        <member name="M:DocxEditor.Helpers.DocumentPropertyDescriptor.ShouldSerializeValue(System.Object)">
-            <summary>
-            Determines whether the value of the specified component should be persisted.
-            </summary>
-            <remarks>
-             Need to return false here to prevent the property grid from trying to persist the property value,
-            </remarks>
-        </member>
         <member name="T:DocxEditor.Helpers.EmailEditor">
             <summary>
             Custom editor for email address properties using a Syncfusion masked edit control.
@@ -269,6 +61,11 @@
             This editor provides a numeric up/down interface for editing integer properties within a property grid.
             </remarks>
         </member>
+        <member name="M:DocxEditor.Helpers.IntegerBaseTypeEditor.#ctor">
+            <summary>
+            Default constructor needed by WPF.
+            </summary>
+        </member>
         <member name="M:DocxEditor.Helpers.IntegerBaseTypeEditor.Attach(Syncfusion.Windows.PropertyGrid.PropertyViewItem,Syncfusion.Windows.PropertyGrid.PropertyItem)">
             <summary>
             Attaches the editor to the specified property, configuring binding and enabling/disabling based on writability.
@@ -305,8 +102,32 @@
         </member>
         <member name="T:DocxEditor.Helpers.IntegerCustomEditor">
             <summary>
-            Provides a custom editor for integer properties, enabling specialized editing functionality for integer values
-            within property grids or similar UI components.
+            Custom editor for integer properties, enabling specialized editing functionality for integer values in property grids or similar UI components.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.Helpers.IntegerCustomEditor.Editor">
+            <summary>
+            Editor instance used for editing integer values.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.Helpers.IntegerCustomEditor.Properties">
+            <summary>
+            Collection of property names associated with this custom editor.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.Helpers.IntegerCustomEditor.PropertyType">
+            <summary>
+            Type of property handled by this editor, representing integer values.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.Helpers.IntegerCustomEditor.HasPropertyType">
+            <summary>
+            Indicates whether the property type is explicitly defined for this editor.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.Helpers.IntegerCustomEditor.EditorType">
+            <summary>
+            Type of the editor used for integer properties.
             </summary>
         </member>
         <member name="T:DocxEditor.Helpers.IntegerEditor">
@@ -316,6 +137,13 @@
             <remarks>
             This editor provides a numeric up/down interface for editing integer properties within a property grid.
             </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerEditor.#ctor">
+            <summary>
+            Initializes a new instance of the IntegerEditor class.
+            </summary>
+            <remarks>This constructor sets up the editor's initial state. Use this constructor to create a new
+            IntegerEditor before configuring or displaying it.</remarks>
         </member>
         <member name="M:DocxEditor.Helpers.IntegerEditor.Attach(Syncfusion.Windows.PropertyGrid.PropertyViewItem,Syncfusion.Windows.PropertyGrid.PropertyItem)">
             <summary>
@@ -355,6 +183,245 @@
             </summary>
             <param name="key">The key pressed by the user.</param>
             <returns>Always returns false, allowing default handling.</returns>
+        </member>
+        <member name="T:DocxEditor.Helpers.IntegerValueConverter">
+            <summary>
+            Converts integer values to double and back for data binding scenarios in WPF.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts an integer value to a double for use in the target binding.
+            </summary>
+            <param name="value">The source value, expected to be an integer.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">Optional parameter for the converter (not used).</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A double representation of the integer value, or null if the input is null.
+            Throws <see cref="T:System.NotImplementedException"/> if conversion is not supported.
+            </returns>
+        </member>
+        <member name="M:DocxEditor.Helpers.IntegerValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a double value back to an integer for use in the source binding.
+            </summary>
+            <param name="value">The value produced by the binding target, expected to be a double.</param>
+            <param name="targetType">The type to convert to, typically integer.</param>
+            <param name="parameter">Optional parameter for the converter (not used).</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            An integer representation of the double value, or null if the input is null.
+            Throws <see cref="T:System.NotImplementedException"/> if conversion is not supported.
+            </returns>
+        </member>
+        <member name="T:DocxEditor.Helpers.ModelPropertyDescriptor">
+            <summary>
+            A property descriptor for a document property, which provides information about the property
+            and allows getting and setting its value.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Helpers.ModelPropertyDescriptor.#ctor(DocxEditor.Helpers.PropertiesProvider,DocumentModel.PropertyModel)">
+            <summary>
+            Initializes a new instance of the DocumentPropertyDescriptor class
+            with the specified properties provider and property model.
+            </summary>
+            <param name="propertiesProvider"></param>
+            <param name="propertyModel"></param>
+        </member>
+        <member name="P:DocxEditor.Helpers.ModelPropertyDescriptor.ComponentType">
+            <summary>
+            Gets the type of the component associated with this provider.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.Helpers.ModelPropertyDescriptor.DisplayName">
+            <summary>
+            Gets the display name of the property, which is used to show the property in the property grid.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.Helpers.ModelPropertyDescriptor.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the property is read-only.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.Helpers.ModelPropertyDescriptor.PropertyType">
+            <summary>
+            Gets the type of the property, which is used to determine how to display and edit the property in the property grid.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.Helpers.ModelPropertyDescriptor.Component">
+            <summary>
+            Component of the property model, which is used to get and set the property value. 
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Helpers.ModelPropertyDescriptor.CanResetValue(System.Object)">
+            <summary>
+            Determines whether the value of the specified component can be reset to its default state.
+            </summary>
+            <remarks>
+            Component is passed to the property model, but is ignored there.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.ModelPropertyDescriptor.GetValue(System.Object)">
+            <summary>
+            Gets the current value of the property for the specified component.
+            </summary>
+            <remarks>
+            Null is passed as the component because the property model does not rely on a specific component instance to manage the property value,
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.ModelPropertyDescriptor.ResetValue(System.Object)">
+            <summary>
+            Resets the value of the property to its default state for the specified component.
+            </summary>
+            <remarks>
+            Null is passed as the component because the property model does not rely on a specific component instance to manage the property value,
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.ModelPropertyDescriptor.SetValue(System.Object,System.Object)">
+            <summary>
+            Sets the value of the property represented by this descriptor for the specified component.
+            </summary>
+            <remarks>
+            Null is passed as the component because the property model does not rely on a specific component instance to manage the property value,
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.ModelPropertyDescriptor.ShouldSerializeValue(System.Object)">
+            <summary>
+            Determines whether the value of the specified component should be persisted.
+            </summary>
+            <remarks>
+             Need to return false here to prevent the property grid from trying to persist the property value,
+            </remarks>
+        </member>
+        <member name="T:DocxEditor.Helpers.PropertiesProvider">
+            <summary>
+            Provides properties of the component to be displayed in the property grid.
+            It must implement ICustomTypeDescriptor to allow dynamic properties recognition by the property grid,
+            which is necessary because the properties of the component are not known at compile time
+            and can vary depending on the component's content and structure.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.#ctor(System.Object)">
+            <summary>
+            Initializing constructor
+            </summary>
+            <param name="component">Model component that is the source of properties.</param>
+        </member>
+        <member name="P:DocxEditor.Helpers.PropertiesProvider.Models">
+            <summary>
+            Gets the models representing the properties of the document.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.Helpers.PropertiesProvider.DisplayNames">
+            <summary>
+            Dictionary of display names for the properties, keyed by property name.
+            If a property does not have a display name in this dictionary, its property name will be used as the display name.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.GetDisplayName(DocumentModel.PropertyModel)">
+            <summary>
+            Gets the display name for a given property model, which is used to show the property in the property grid.
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.GetProperties">
+            <summary>
+            Gets a collection of properties for the current instance.
+            </summary>
+            <remarks>
+            It is the most important method of the ICustomTypeDescriptor interface in this context,
+            as it provides the dynamic properties of the document to be displayed in the property grid.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.GetAttributes">
+            <summary>
+            Returns a collection of attributes for the current instance.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.GetClassName">
+            <summary>
+            Retrieves the class name of the current instance as recognized by the type descriptor system.
+            </summary>
+            <remarks>
+            Not used in this context, but required by the ICustomTypeDescriptor interface.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.GetComponentName">
+            <summary>
+            Gets the name of the component as recognized by the type descriptor system.
+            </summary>
+            <remarks>
+            Not used in this context, but required by the ICustomTypeDescriptor interface.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.GetConverter">
+            <summary>
+            Gets a type converter for the current instance, which can be used to convert the instance to and from other types.
+            </summary>
+            <remarks>
+            Not used in this context, but required by the ICustomTypeDescriptor interface.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.GetDefaultEvent">
+            <summary>
+            Gets the default event for the current instance,
+            which is the event that is considered the most important or commonly used event for the component.
+            </summary>
+            <remarks>
+            Not used in this context, but required by the ICustomTypeDescriptor interface.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.GetDefaultProperty">
+            <summary>
+            Gets the default property for the current instance,
+            </summary>
+            <remarks>
+            Not used in this context, but required by the ICustomTypeDescriptor interface.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.GetEditor(System.Type)">
+            <summary>
+            Gets an editor of the specified type for the current instance,
+            which can be used to provide a user interface for editing the instance.
+            </summary>
+            <remarks>
+            Not used in this context, but required by the ICustomTypeDescriptor interface.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.GetEvents">
+            <summary>
+            Gets a collection of events for the current instance,
+            which can be used to display the events in a property grid or other user interface.
+            </summary>
+            <remarks>
+            Not used in this context, but required by the ICustomTypeDescriptor interface.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.GetEvents(System.Attribute[])">
+            <summary>
+            Gets a collection of events for the current instance that match the specified attributes,
+            </summary>
+            <remarks>
+            Not used in this context, but required by the ICustomTypeDescriptor interface.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.GetProperties(System.Attribute[])">
+            <summary>
+            Gets a collection of properties for the current instance that match the specified attributes,
+            </summary>
+            <remarks>
+            Not used in this context, but required by the ICustomTypeDescriptor interface.
+            </remarks>
+        </member>
+        <member name="M:DocxEditor.Helpers.PropertiesProvider.GetPropertyOwner(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Gets the owner of the specified property descriptor, which is the object that the property belongs to.
+            </summary>
+            <remarks>
+            Not used in this context, but required by the ICustomTypeDescriptor interface.
+            </remarks>
         </member>
         <member name="T:DocxEditor.Helpers.PropertiesViewNameCellStyleSelector">
             <summary>
@@ -405,66 +472,9 @@
               Not implemented as the conversion back from a brush to a boolean value is not needed in this context and may not be straightforward to implement.
              </remarks>
         </member>
-        <member name="T:DocxEditor.ViewModels.DocumentPropertiesVM">
-            <summary>
-            ViewModel for DocumentModel.DocumentProperties.
-            </summary>
-        </member>
-        <member name="M:DocxEditor.ViewModels.DocumentPropertiesVM.#ctor(DocxEditor.ViewModels.DocumentVM)">
-            <summary>
-            Initializing constructor.
-            </summary>
-            <param name="document">Model view for the document.</param>
-        </member>
-        <member name="P:DocxEditor.ViewModels.DocumentPropertiesVM.DocumentModel">
-            <summary>
-            Model collection of document properties.
-            </summary>
-        </member>
-        <member name="P:DocxEditor.ViewModels.DocumentPropertiesVM.PropertiesProvider">
-            <summary>
-            Provider for dynamic properties recognition needed by PropertyGrid.
-            </summary>
-        </member>
-        <member name="T:DocxEditor.ViewModels.DocumentPropertyVM">
-            <summary>
-            ViewModel representing a document property.
-            </summary>
-        </member>
-        <member name="M:DocxEditor.ViewModels.DocumentPropertyVM.#ctor(DocumentModel.PropertyModel)">
-            <summary>
-            Initializing constructor.
-            </summary>
-            <param name="model"></param>
-        </member>
-        <member name="P:DocxEditor.ViewModels.DocumentPropertyVM.Name">
-            <summary>
-            Name of the property.
-            </summary>
-        </member>
-        <member name="P:DocxEditor.ViewModels.DocumentPropertyVM.Value">
-            <summary>
-            Value of the property.
-            </summary>
-        </member>
-        <member name="P:DocxEditor.ViewModels.DocumentPropertyVM.ValueType">
-            <summary>
-            Value type of the property.
-            </summary>
-        </member>
-        <member name="P:DocxEditor.ViewModels.DocumentPropertyVM.IsEmpty">
-            <summary>
-            Empty property has no value or an empty string.
-            </summary>
-        </member>
-        <member name="P:DocxEditor.ViewModels.DocumentPropertyVM.Category">
-            <summary>
-            Gets the category associated with the model.
-            </summary>
-        </member>
         <member name="T:DocxEditor.ViewModels.DocumentVM">
             <summary>
-            ViewModel for DocumentModel.Wordprocessing.Document.
+            ViewModel for Component.Wordprocessing.Document.
             </summary>
         </member>
         <member name="M:DocxEditor.ViewModels.DocumentVM.#ctor(DocumentModel.Wordprocessing.Document)">
@@ -496,6 +506,26 @@
             Collection of document properties as view models.
             </summary>
         </member>
+        <member name="P:DocxEditor.ViewModels.DocumentVM.Components">
+            <summary>
+            Components of the document that are exposed as view models for binding in the UI.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.DocumentVM.SelectedComponent">
+            <summary>
+            Component selected in the UI, which can be used to display and edit its properties in a property grid or similar control.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.DocumentVM.SelectedComponentProperties">
+            <summary>
+            Component selected in the UI, which can be used to display and edit its properties in a property grid or similar control.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.DocumentVM.CustomEditors">
+            <summary>
+            Custom editors for known property types.
+            </summary>
+        </member>
         <member name="T:DocxEditor.ViewModels.IPropertyVM">
             <summary>
             Interface for any class representing a property in the ViewModel.
@@ -521,46 +551,66 @@
             Determines whether the property is empty
             </summary>
         </member>
-        <member name="T:DocxEditor.Views.DocumentPropertiesView">
+        <member name="T:DocxEditor.ViewModels.PropertiesVM">
             <summary>
-            View for displaying and editing document properties.
-            </summary>
-            <summary>
-            DocumentPropertiesView
+            ViewModel for properties of document component.
             </summary>
         </member>
-        <member name="M:DocxEditor.Views.DocumentPropertiesView.#ctor">
+        <member name="M:DocxEditor.ViewModels.PropertiesVM.#ctor(System.Object)">
             <summary>
             Initializing constructor.
             </summary>
+            <param name="component">Component of the document, which properties will be provided.</param>
         </member>
-        <member name="M:DocxEditor.Views.DocumentPropertiesView.PropertyGrid_OnAutoGeneratingPropertyGridItem(System.Object,Syncfusion.Windows.PropertyGrid.AutoGeneratingPropertyGridItemEventArgs)">
+        <member name="P:DocxEditor.ViewModels.PropertiesVM.Component">
             <summary>
-            Handler for PropertyGrid's AutoGeneratingPropertyGridItem event, which is raised for each property item being generated.
-            This handler sets a custom reset command for each property item, allowing users to reset the property value to its default state.
-            The reset command is implemented using a DelegateCommand that calls the ResetItem method when executed
-            and checks if the reset action can be performed using the CanResetItem method.
+            Model collection of document properties.
             </summary>
-            <param name="sender">The PropertyGrid control.</param>
-            <param name="e">Arguments for the event.</param>
         </member>
-        <member name="M:DocxEditor.Views.DocumentPropertiesView.ResetItem(System.Object)">
+        <member name="P:DocxEditor.ViewModels.PropertiesVM.PropertiesProvider">
             <summary>
-            Resets the value of the specified property item to its default state.
-            This method is called when the reset command for a property item is executed.
+            Provider for dynamic properties recognition needed by PropertyGrid.
             </summary>
-            <param name="propertyItem"></param>
         </member>
-        <member name="M:DocxEditor.Views.DocumentPropertiesView.CanResetItem(System.Object)">
+        <member name="P:DocxEditor.ViewModels.PropertiesVM.CustomEditors">
             <summary>
-            Returns a boolean value indicating whether the specified property item can be reset to its default state.
+            Custom editors for known property types.
             </summary>
-            <param name="propertyItem"></param>
-            <returns></returns>
         </member>
-        <member name="M:DocxEditor.Views.DocumentPropertiesView.InitializeComponent">
+        <member name="T:DocxEditor.ViewModels.PropertyVM">
             <summary>
-            InitializeComponent
+            ViewModel representing a document property.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.ViewModels.PropertyVM.#ctor(DocumentModel.PropertyModel)">
+            <summary>
+            Initializing constructor.
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="P:DocxEditor.ViewModels.PropertyVM.Name">
+            <summary>
+            Name of the property.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.PropertyVM.Value">
+            <summary>
+            Value of the property.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.PropertyVM.ValueType">
+            <summary>
+            Value type of the property.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.PropertyVM.IsEmpty">
+            <summary>
+            Empty property has no value or an empty string.
+            </summary>
+        </member>
+        <member name="P:DocxEditor.ViewModels.PropertyVM.Category">
+            <summary>
+            Gets the category associated with the model.
             </summary>
         </member>
         <member name="T:DocxEditor.Views.DocumentView">
@@ -577,6 +627,48 @@
             </summary>
         </member>
         <member name="M:DocxEditor.Views.DocumentView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DocxEditor.Views.PropertiesView">
+            <summary>
+            View for displaying and editing document component properties.
+            </summary>
+            <summary>
+            PropertiesView
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Views.PropertiesView.#ctor">
+            <summary>
+            Initializing constructor.
+            </summary>
+        </member>
+        <member name="M:DocxEditor.Views.PropertiesView.PropertyGrid_OnAutoGeneratingPropertyGridItem(System.Object,Syncfusion.Windows.PropertyGrid.AutoGeneratingPropertyGridItemEventArgs)">
+            <summary>
+            Handler for PropertyGrid's AutoGeneratingPropertyGridItem event, which is raised for each property item being generated.
+            This handler sets a custom reset command for each property item, allowing users to reset the property value to its default state.
+            The reset command is implemented using a DelegateCommand that calls the ResetItem method when executed
+            and checks if the reset action can be performed using the CanResetItem method.
+            </summary>
+            <param name="sender">The PropertyGrid control.</param>
+            <param name="e">Arguments for the event.</param>
+        </member>
+        <member name="M:DocxEditor.Views.PropertiesView.ResetItem(System.Object)">
+            <summary>
+            Resets the value of the specified property item to its default state.
+            This method is called when the reset command for a property item is executed.
+            </summary>
+            <param name="propertyItem"></param>
+        </member>
+        <member name="M:DocxEditor.Views.PropertiesView.CanResetItem(System.Object)">
+            <summary>
+            Returns a boolean value indicating whether the specified property item can be reset to its default state.
+            </summary>
+            <param name="propertyItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocxEditor.Views.PropertiesView.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>

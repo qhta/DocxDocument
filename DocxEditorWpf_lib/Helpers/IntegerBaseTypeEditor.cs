@@ -9,8 +9,14 @@
 
 public class IntegerBaseTypeEditor : BaseTypeEditor
 {
+  /// <summary>
+  /// Default constructor needed by WPF.
+  /// </summary>
+  public IntegerBaseTypeEditor()
+  {
+  }
 
-  UpDown upDown = new UpDown { ApplyZeroColor = false, NumberDecimalDigits = 0, UseNullOption = true, NullValue = null};
+  readonly UpDown upDown = new UpDown { ApplyZeroColor = false, NumberDecimalDigits = 0, UseNullOption = true, NullValue = null};
 
   /// <summary>
   /// Attaches the editor to the specified property, configuring binding and enabling/disabling based on writability.

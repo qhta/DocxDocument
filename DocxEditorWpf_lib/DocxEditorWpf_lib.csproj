@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\DocumentPropertiesView.xaml.cs">
+    <Compile Update="Views\PropertiesView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\DocumentView.xaml.cs">
