@@ -1,4 +1,4 @@
-﻿namespace DocxEditor.Views;
+﻿namespace DocxEditor;
 /// <summary>
 /// Composite view for displaying and editing a document.
 /// </summary>

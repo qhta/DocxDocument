@@ -1,4 +1,4 @@
-﻿namespace DocxEditor.Helpers;
+﻿namespace DocxEditor;
 
 /// <summary>
 /// Provides properties of the component to be displayed in the property grid.

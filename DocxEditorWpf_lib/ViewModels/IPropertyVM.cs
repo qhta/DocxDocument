@@ -1,4 +1,4 @@
-﻿namespace DocxEditor.ViewModels;
+﻿namespace DocxEditor;
 
 /// <summary>
 /// Interface for any class representing a property in the ViewModel.

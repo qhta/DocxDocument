@@ -31,6 +31,7 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   /// <param name="document">Wordprocessing document model</param>
   public ContentProperties(Wordprocessing.Document document)
   {
+    SetParent(document);
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
   }
