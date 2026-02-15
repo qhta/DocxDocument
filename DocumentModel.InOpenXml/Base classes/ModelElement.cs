@@ -1,12 +1,10 @@
-﻿using DocumentModel;
-
-#pragma warning disable CS0659  
+﻿#pragma warning disable CS0659  
 namespace DocumentModel;
 
 /// <summary>
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
-public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem, 
+public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem,
   IModifiable, IPropertiesProvider
 {
   static ModelElement()
@@ -134,6 +132,8 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       value = default;
     if (!Equals(field, value))
     {
+      if (field is IChildItem oldChild && oldChild.Parent == this)
+        oldChild.SetParent(null);
       if (field is IWordprocessingDocumentAware oldValue)
         oldValue.Detach();
       if (value is IWordprocessingDocumentAware newValue
@@ -142,6 +142,12 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       else if (value is IUpdatable updatableValue)
         updatableValue.UpdateData();
       field = value;
+      if (field is IChildItem newChild && newChild.Parent == null)
+        newChild.SetParent(this);
+      if (value is INotifyCollectionChanged collection) collection.CollectionChanged += ChildCollectionChanged;
+      if (value is INotifyPropertyChanged notificator) notificator.PropertyChanged += ChildPropertyChanged;
+      if (value is INotificationSource source) source.SetPropertyName(propertyName);
+
       NotifyPropertyChanged(propertyName);
     }
     else if (field is IWordprocessingDocumentAware updatedValue)
@@ -150,6 +156,30 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       if (wordprocessingDocument != null)
         updatedValue.AttachAndUpdate(wordprocessingDocument);
     }
+  }
+
+  /// <summary>
+  /// Invoked on child item property change to raise PropertyChanged event on this model.
+  /// </summary>
+  /// <param name="sender">Child item that raised PropertyChanged event.</param>
+  /// <param name="args">Arguments of the event (ignored)</param>
+  private void ChildPropertyChanged(object? sender, PropertyChangedEventArgs args)
+  {
+    if (sender is INotificationSource source)
+      if (source.PropertyName is not null)
+        NotifyPropertyChanged(source.PropertyName);
+  }
+
+  /// <summary>
+  /// Invoked on child collection changed to raise PropertyChanged event on this model.
+  /// </summary>
+  /// <param name="sender">Collection that raised CollectionChanged event.</param>
+  /// <param name="args">Arguments of the event (ignored)</param>
+  private void ChildCollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
+  {
+    if (sender is INotificationSource source)
+      if (source.PropertyName is not null)
+        NotifyPropertyChanged(source.PropertyName);
   }
 
   /// <summary>
@@ -342,7 +372,8 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
               if (prop.GetValue(this) is IModifiable modifiableChild)
                 modifiableChild.SetIsModified(IsModified);
 
-          } catch (Exception ex)
+          }
+          catch (Exception ex)
           {
             Debug.WriteLine($"Error setting IsModified for property '{prop.Name}' of type '{this.GetType().Name}': {ex.Message}");
           }

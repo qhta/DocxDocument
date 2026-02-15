@@ -9,7 +9,7 @@ public partial class ContentProperties
   public bool ShouldSerializeCompany() => Company is not null;
   public bool ShouldSerializePresentationFormat() => PresentationFormat is not null;
   public bool ShouldSerializeScaleCrop() => ScaleCrop is not null;
-  public bool ShouldSerializeHeadingPairs() => HeadingPairs is not null;
+  public bool ShouldSerializeHeadingPairs() => HeadingPairs is not null && HeadingPairs.Any();
   public bool ShouldSerializeTitlesOfParts() => TitlesOfParts is not null;
   public bool ShouldSerializeLinksUpToDate() => LinksUpToDate is not null;
   public bool ShouldSerializeSharedDocument() => SharedDocument is not null;

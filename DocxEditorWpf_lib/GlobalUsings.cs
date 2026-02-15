@@ -15,6 +15,8 @@ global using DocumentModel;
 global using DocxEditor;
 global using Microsoft.DotNet.DesignTools.ViewModels;
 global using Qhta.MVVM;
+global using Qhta.TypeUtils;
+
 global using Syncfusion.UI.Xaml.Grid;
 global using Syncfusion.UI.Xaml.TreeGrid;
 global using Syncfusion.Windows.Controls.Input;
