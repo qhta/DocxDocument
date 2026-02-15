@@ -89,6 +89,36 @@
             </summary>
             <returns>A configured SfMaskedEdit control that validates input against a standard email address pattern.</returns>
         </member>
+        <member name="M:DocxEditor.HexBinaryBaseTypeEditor.EnsureValidationHandler">
+            <summary>
+            Ensures that the validation event handlers are attached to the masked edit control. If the handlers are already
+            attached, this method performs no action.
+            </summary>
+            <remarks>Call this method before performing validation on the masked edit control to guarantee that
+            validation error and text change events are handled appropriately. This method also sets the default border
+            appearance for the control, which may affect its visual feedback during validation.</remarks>
+        </member>
+        <member name="M:DocxEditor.HexBinaryBaseTypeEditor.OnMaskedEditTextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Handles the TextChanged event for the masked edit control and validates the input to ensure it meets the even
+            length requirement.
+            </summary>
+            <remarks>If the input does not satisfy the even length rule, the method marks the associated binding as
+            invalid and provides error information. This helps ensure that only valid input is accepted by the
+            control.</remarks>
+            <param name="sender">The source of the event, typically the masked edit control whose text has changed.</param>
+            <param name="args">The event data containing information about the text change.</param>
+        </member>
+        <member name="M:DocxEditor.HexBinaryBaseTypeEditor.OnMaskedEditValidationError(System.Object,System.Windows.Controls.ValidationErrorEventArgs)">
+            <summary>
+            Handles the validation error event for the masked edit control, updating its border appearance based on the
+            current validation state.
+            </summary>
+            <remarks>If the masked edit control has a validation error, its border is set to red to indicate the error
+            state. Otherwise, the border appearance is reset to its default values.</remarks>
+            <param name="sender">The source of the event, typically the masked edit control that triggered the validation error.</param>
+            <param name="args">The event data containing information about the validation error.</param>
+        </member>
         <member name="M:DocxEditor.HexBinaryBaseTypeEditor.Detach(Syncfusion.Windows.PropertyGrid.PropertyViewItem)">
             <summary>
             Detaches the editor from the specified property. No operation is performed in this implementation.
@@ -102,10 +132,63 @@
             <param name="key">The key pressed by the user.</param>
             <returns>Always returns false, allowing default handling.</returns>
         </member>
+        <member name="T:DocxEditor.HexBinaryEvenLengthValidationRule">
+            <summary>
+            Provides a validation rule that checks whether a hexadecimal binary string has an even number of characters.
+            </summary>
+            <remarks>This rule is typically used to ensure that input values representing hexadecimal binary data are
+            valid for scenarios where each byte is represented by two hexadecimal characters.
+            Whitespace in the input is ignored for the purpose of length validation.
+            If the input is null or not a string, the validation passes by default.</remarks>
+        </member>
+        <member name="M:DocxEditor.HexBinaryEvenLengthValidationRule.Validate(System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Validates whether the specified value, after removing all spaces, has a length that is evenly divisible by two.
+            </summary>
+            <remarks>This method only applies validation logic to string values. All spaces are removed from the input
+            before checking the length. Non-string values and null values are considered valid.</remarks>
+            <param name="value">The value to validate. If the value is null or not a string, the validation succeeds by default.</param>
+            <param name="cultureInfo">The culture-specific information for the validation process. This parameter is not used in the current
+            implementation.</param>
+            <returns>A ValidationResult that indicates whether the value is valid. Returns ValidationResult.ValidResult if the value is
+            null, not a string, or has an even length after removing spaces; otherwise, returns a ValidationResult with an
+            error message.</returns>
+        </member>
         <member name="T:DocxEditor.HexBinaryValueConverter">
             <summary>
             Converts HexBinary values to double and back for data binding scenarios in WPF.
             </summary>
+        </member>
+        <member name="M:DocxEditor.HexBinaryValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the specified value to its string representation using the specified target type and culture information.
+            </summary>
+            <remarks>This method returns null if the input value is null. The conversion is performed by calling the
+            value's ToString method, and does not perform any type-specific formatting beyond what ToString
+            provides.</remarks>
+            <param name="value">The value to convert. If null, the method returns null.</param>
+            <param name="targetType">The type to convert the value to. If a nullable type is specified, its underlying type is used.</param>
+            <param name="parameter">An optional parameter that can be used to provide additional information for the conversion. This parameter is not
+            used in the default implementation.</param>
+            <param name="culture">The culture information to use in the conversion process.</param>
+            <returns>A string representation of the value if the conversion is successful; otherwise, null if the input value is null.</returns>
+        </member>
+        <member name="M:DocxEditor.HexBinaryValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value that represents a hexadecimal string back to its corresponding strongly typed object, such as
+            HexBinary, HexChar, HexInt, or HexLong.
+            </summary>
+            <remarks>If the input string is empty or contains only whitespace, the method returns Binding.DoNothing.
+            The method also returns Binding.DoNothing if the input string does not meet the length requirements for the target
+            type.</remarks>
+            <param name="value">The value to convert, expected to be a string containing a hexadecimal representation.</param>
+            <param name="targetType">The type to convert the value to. This can be HexBinary, HexChar, HexInt, HexLong, or a nullable version of these
+            types.</param>
+            <param name="parameter">An optional parameter that can specify the target type, which may override the targetType argument.</param>
+            <param name="culture">The culture information to use in the conversion. This parameter is not used.</param>
+            <returns>An object representing the converted value of the specified target type, or Binding.DoNothing if the conversion
+            cannot be performed. Returns null if the input value is null.</returns>
+            <exception cref="T:System.NotImplementedException">Thrown if the specified target type is not supported by the converter.</exception>
         </member>
         <member name="T:DocxEditor.IntegerBaseTypeEditor">
             <summary>
@@ -636,36 +719,6 @@
         <member name="M:DocxEditor.PropertiesView.InitializeComponent">
             <summary>
             InitializeComponent
-            </summary>
-        </member>
-        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
-            <summary>
-            GeneratedInternalTypeHelper
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
-            <summary>
-            CreateInstance
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            GetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            SetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
-            <summary>
-            CreateDelegate
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
-            <summary>
-            AddEventHandler
             </summary>
         </member>
     </members>

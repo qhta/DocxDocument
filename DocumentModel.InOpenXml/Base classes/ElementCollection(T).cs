@@ -7,8 +7,8 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
 public abstract class ElementCollection<ItemType> : ModelElement,
-  IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>, ICollection
-  
+  IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>, ICollection, IList, INotificationSource
+
 {
   private readonly ObservableCollection<ItemType> _items = new();
 
@@ -26,8 +26,8 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   /// between the collection and its parent. This constructor allows for the creation of collections that are associated
   /// with a specific parent model element, enabling structured data organization and navigation within the model.
   /// </summary>
-  /// <param name="parent"></param>
-  protected ElementCollection(ModelElement parent): this()
+  /// <param name="parent">Model element that will be notified about modifications.</param>
+  protected ElementCollection(ModelElement parent) : this()
   {
     SetParent(parent);
   }
@@ -39,24 +39,54 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   /// This ensures that each item in the collection has a reference back to the collection it belongs to,
   /// which can be useful for navigation and data management purposes. 
   /// </summary>
-  /// <param name="sender"></param>
-  /// <param name="e"></param>
-  private void _items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+  /// <param name="sender">The object which have raised this event.</param>
+  /// <param name="args">The argument object of the event.</param>
+  private void _items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
-    if (e.Action == NotifyCollectionChangedAction.Add)
+    if (args.Action == NotifyCollectionChangedAction.Add)
     {
-      if (e.NewItems != null)
+      if (args.NewItems != null)
       {
-        foreach (var newItem in e.NewItems)
+        foreach (var newItem in args.NewItems)
         {
           if (newItem is ICollectionItem collectionItem)
-          {
             collectionItem.SetCollection(this);
-          }
+          if (newItem is INotifyPropertyChanged notificationSource)
+            notificationSource.PropertyChanged += ItemPropertyChanged;
         }
       }
     }
+    var openXmlElement = GetUpdatableElement();
+    if (openXmlElement != null)
+      UpdateData(openXmlElement);
+    CollectionChanged?.Invoke(this, args);
+    SetIsModified(true);
   }
+
+  /// <summary>
+  /// Handles notification from child item and raises this PropertyChanged event.
+  /// </summary>
+  /// <param name="sender">Child item that sent PropertyChanged event</param>
+  /// <param name="args">Arguments of this event</param>
+  private void ItemPropertyChanged(object? sender, PropertyChangedEventArgs args)
+  {
+    if (PropertyName!=null)
+      NotifyPropertyChanged(PropertyName);
+  }
+
+  /// <summary>
+  /// Property name to be used when the object raise PropertyChanged event.
+  /// </summary>
+  public string? PropertyName => _PropertyName;
+
+  private string? _PropertyName;
+
+  /// <summary>
+  /// Sets the property name.
+  /// </summary>
+  /// <param name="propertyName">Property name to set (null erases property name)</param>
+
+  public void SetPropertyName(string? propertyName) => _PropertyName = propertyName;
 
   /// <summary>
   /// Initializes a new collection with the specified items.
@@ -258,9 +288,105 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   /// <remarks>Subscribe to this event to receive notifications about changes to the collection. The event
   /// provides details about the type of change and the affected items. This event is typically used to update UI
   /// elements or respond to dynamic data changes in data-binding scenarios.</remarks>
-  public event NotifyCollectionChangedEventHandler? CollectionChanged
+  public event NotifyCollectionChangedEventHandler? CollectionChanged;
+
+  #region implementation of IList
+
+  /// <summary>
+  /// Adds an item to the collection and returns the index at which the item was inserted.
+  /// </summary>
+  /// <remarks>This method modifies the collection by adding the specified item. Ensure that the value parameter
+  /// is of the correct type to avoid exceptions.</remarks>
+  /// <param name="value">The item to add to the collection. Must be of type ItemType.</param>
+  /// <returns>The zero-based index at which the item was added to the collection.</returns>
+  /// <exception cref="InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
+  int IList.Add(object? value)
   {
-    add => _items.CollectionChanged += value;
-    remove => _items.CollectionChanged -= value;
+    if (value is ItemType itemType)
+    {
+      Add(itemType);
+      return Count - 1;
+    }
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
   }
+
+  /// <summary>
+  /// Checks if an item is contained in the collection.
+  /// </summary>
+  /// <param name="value">The item to check.</param>
+  /// <returns>True if an item is contained in the collection, otherwise false.</returns>
+  /// <exception cref="InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
+  bool IList.Contains(object? value)
+  {
+    if (value is ItemType itemType)
+      return Contains(itemType);
+
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Gets the index of the item is contained in the collection.
+  /// </summary>
+  /// <param name="value">The item to search.</param>
+  /// <returns>The index of the item is contained in the collection.</returns>
+  /// <exception cref="InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
+  int IList.IndexOf(object? value)
+  {
+    if (value is ItemType itemType)
+      return IndexOf(itemType);
+
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Inserts an item of type ItemType at the specified index in the collection.
+  /// </summary>
+  /// <remarks>This method modifies the collection by adding the specified item at the given index. Ensure that
+  /// the index is valid before calling this method.</remarks>
+  /// <param name="index">The zero-based index at which the item should be inserted. Must be within the bounds of the collection.</param>
+  /// <param name="value">The object to insert into the collection. Must be of type ItemType; otherwise, an exception is thrown.</param>
+  /// <exception cref="InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
+  void IList.Insert(int index, object? value)
+  {
+    if (value is ItemType itemType)
+    {
+      Insert(index, itemType);
+      return;
+    }
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Removes the specified item from the collection if it is of the correct type.
+  /// </summary>
+  /// <remarks>This method attempts to cast the provided value to <see langword="ItemType"/> before removal. If
+  /// the cast fails, an exception is thrown.</remarks>
+  /// <param name="value">The item to remove from the collection. Must be of type <see langword="ItemType"/>.</param>
+  /// <exception cref="InvalidOperationException">Thrown if the specified item is not of type <see langword="ItemType"/>.</exception>
+  void IList.Remove(object? value)
+  {
+    if (value is ItemType itemType)
+    {
+      Remove(itemType);
+      return;
+    }
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Indexed access to items.
+  /// </summary>
+  /// <param name="index"></param>
+  /// <returns></returns>
+  object? IList.this[int index] { get => this[index]; set => this[index] = (ItemType)value!; }
+
+
+  /// <summary>
+  /// Gets a value indicating whether the collection has a fixed size.
+  /// </summary>
+  /// <remarks>A fixed-size collection does not allow adding or removing elements after it is created. This
+  /// property is useful for determining the mutability of the collection.</remarks>
+  bool IList.IsFixedSize => false;
+
+  #endregion
 }

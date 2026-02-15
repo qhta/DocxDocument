@@ -12,6 +12,7 @@ public interface IChildItem
   /// <summary>
   /// Sets the parent element for this item. 
   /// </summary>
-  /// <param name="parent"></param>
-  public void SetParent(object parent);
+  /// <param name="parent">Object to set as a parent of the item.</param>
+  public void SetParent(object? parent);
+
 }

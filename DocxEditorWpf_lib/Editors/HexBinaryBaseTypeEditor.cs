@@ -1,9 +1,4 @@
-﻿using Qhta.TypeUtils;
-using System.Globalization;
-using System.Windows.Controls;
-using System.Windows.Media;
-
-namespace DocxEditor;
+﻿namespace DocxEditor;
 
 /// <summary>
 /// Custom editor for email address properties using a Syncfusion masked edit control.
@@ -97,6 +92,13 @@ public class HexBinaryBaseTypeEditor : BaseTypeEditor
     return maskedEdit;
   }
 
+  /// <summary>
+  /// Ensures that the validation event handlers are attached to the masked edit control. If the handlers are already
+  /// attached, this method performs no action.
+  /// </summary>
+  /// <remarks>Call this method before performing validation on the masked edit control to guarantee that
+  /// validation error and text change events are handled appropriately. This method also sets the default border
+  /// appearance for the control, which may affect its visual feedback during validation.</remarks>
   private void EnsureValidationHandler()
   {
     if (isValidationHandlerAttached)
@@ -112,7 +114,16 @@ public class HexBinaryBaseTypeEditor : BaseTypeEditor
     isValidationHandlerAttached = true;
   }
 
-  private void OnMaskedEditTextChanged(object sender, TextChangedEventArgs e)
+  /// <summary>
+  /// Handles the TextChanged event for the masked edit control and validates the input to ensure it meets the even
+  /// length requirement.
+  /// </summary>
+  /// <remarks>If the input does not satisfy the even length rule, the method marks the associated binding as
+  /// invalid and provides error information. This helps ensure that only valid input is accepted by the
+  /// control.</remarks>
+  /// <param name="sender">The source of the event, typically the masked edit control whose text has changed.</param>
+  /// <param name="args">The event data containing information about the text change.</param>
+  private void OnMaskedEditTextChanged(object sender, TextChangedEventArgs args)
   {
     var bindingExpression = maskedEdit.GetBindingExpression(SfMaskedEdit.ValueProperty);
     if (bindingExpression == null)
@@ -135,8 +146,15 @@ public class HexBinaryBaseTypeEditor : BaseTypeEditor
     Validation.MarkInvalid(bindingExpression, evenLengthError);
   }
 
-  private void OnMaskedEditValidationError(object?
-    sender, ValidationErrorEventArgs e)
+  /// <summary>
+  /// Handles the validation error event for the masked edit control, updating its border appearance based on the
+  /// current validation state.
+  /// </summary>
+  /// <remarks>If the masked edit control has a validation error, its border is set to red to indicate the error
+  /// state. Otherwise, the border appearance is reset to its default values.</remarks>
+  /// <param name="sender">The source of the event, typically the masked edit control that triggered the validation error.</param>
+  /// <param name="args">The event data containing information about the validation error.</param>
+  private void OnMaskedEditValidationError(object? sender, ValidationErrorEventArgs args)
   {
     if (Validation.GetHasError(maskedEdit))
     {

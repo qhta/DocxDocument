@@ -4,8 +4,8 @@
 /// Collection of Values.
 /// </summary>
 /// <typeparam name="ItemType">The type of items in the collection.</typeparam>
-public abstract class ValueCollection<ItemType> : ModelElement,
-  IValueCollection<ItemType>, IEquatable<ValueCollection<ItemType>>, ICollection
+public abstract class ValueCollection<ItemType>: ModelElement, IValueCollection<ItemType>,
+  IEquatable<ValueCollection<ItemType>>, ICollection, IList
 {
   private readonly ObservableCollection<ItemType> _items = new();
 
@@ -24,14 +24,14 @@ public abstract class ValueCollection<ItemType> : ModelElement,
   /// that implement the ICollectionItem interface. Only addition actions are processed; other change types are
   /// ignored.</remarks>
   /// <param name="sender">The source of the collection change event. Typically, the collection being observed.</param>
-  /// <param name="e">An object that contains information about the change event, including the action performed and the affected items.</param>
-  private void _items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+  /// <param name="args">An object that contains information about the change event, including the action performed and the affected items.</param>
+  private void _items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
-    if (e.Action == NotifyCollectionChangedAction.Add)
+    if (args.Action == NotifyCollectionChangedAction.Add)
     {
-      if (e.NewItems != null)
+      if (args.NewItems != null)
       {
-        foreach (var newItem in e.NewItems)
+        foreach (var newItem in args.NewItems)
         {
           if (newItem is ICollectionItem collectionItem)
           {
@@ -72,6 +72,7 @@ public abstract class ValueCollection<ItemType> : ModelElement,
   public bool Equals(ValueCollection<ItemType>? other)
   {
     if (this.Count != other?.Count) return false;
+
     for (int i = 0; i < this.Count; i++)
     {
       var thisItem = this[i];
@@ -80,7 +81,6 @@ public abstract class ValueCollection<ItemType> : ModelElement,
     }
     return true;
   }
-
 
   /// <summary>
   /// Compares this collection to another object for equality.
@@ -94,6 +94,7 @@ public abstract class ValueCollection<ItemType> : ModelElement,
     if (obj is null) return false;
     if (ReferenceEquals(this, obj)) return true;
     if (obj.GetType() != GetType()) return false;
+
     return Equals((ValueCollection<ItemType>)obj);
   }
 
@@ -231,11 +232,7 @@ public abstract class ValueCollection<ItemType> : ModelElement,
   /// Returns or assigns the item at the specified index.
   /// </summary>
   /// <param name="index">The zero-based index.</param>
-  public ItemType this[int index]
-  {
-    get => _items[index];
-    set => _items[index] = value;
-  }
+  public ItemType this[int index] { get => _items[index]; set => _items[index] = value; }
 
   /// <summary>
   /// Occurs when the collection changes, such as when items are added, removed, or the entire list is refreshed.
@@ -248,5 +245,102 @@ public abstract class ValueCollection<ItemType> : ModelElement,
     add => _items.CollectionChanged += value;
     remove => _items.CollectionChanged -= value;
   }
-}
 
+  #region implementation of IList
+
+  /// <summary>
+  /// Adds an item to the collection and returns the index at which the item was inserted.
+  /// </summary>
+  /// <remarks>This method modifies the collection by adding the specified item. Ensure that the value parameter
+  /// is of the correct type to avoid exceptions.</remarks>
+  /// <param name="value">The item to add to the collection. Must be of type ItemType.</param>
+  /// <returns>The zero-based index at which the item was added to the collection.</returns>
+  /// <exception cref="InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
+  public int Add(object? value)
+  {
+    if (value is ItemType itemType)
+    {
+      Add(itemType);
+      return Count - 1;
+    }
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Checks if an item is contained in the collection.
+  /// </summary>
+  /// <param name="value">The item to check.</param>
+  /// <returns>True if an item is contained in the collection, otherwise false.</returns>
+  /// <exception cref="InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
+  public bool Contains(object? value)
+  {
+    if (value is ItemType itemType)
+      return Contains(itemType);
+
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Gets the index of the item is contained in the collection.
+  /// </summary>
+  /// <param name="value">The item to search.</param>
+  /// <returns>The index of the item is contained in the collection.</returns>
+  /// <exception cref="InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
+  public int IndexOf(object? value)
+  {
+    if (value is ItemType itemType)
+      return IndexOf(itemType);
+
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Inserts an item of type ItemType at the specified index in the collection.
+  /// </summary>
+  /// <remarks>This method modifies the collection by adding the specified item at the given index. Ensure that
+  /// the index is valid before calling this method.</remarks>
+  /// <param name="index">The zero-based index at which the item should be inserted. Must be within the bounds of the collection.</param>
+  /// <param name="value">The object to insert into the collection. Must be of type ItemType; otherwise, an exception is thrown.</param>
+  /// <exception cref="InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
+  public void Insert(int index, object? value)
+  {
+    if (value is ItemType itemType)
+    {
+      Insert(index, itemType);
+    }
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Removes the specified item from the collection if it is of the correct type.
+  /// </summary>
+  /// <remarks>This method attempts to cast the provided value to <see langword="ItemType"/> before removal. If
+  /// the cast fails, an exception is thrown.</remarks>
+  /// <param name="value">The item to remove from the collection. Must be of type <see langword="ItemType"/>.</param>
+  /// <exception cref="InvalidOperationException">Thrown if the specified item is not of type <see langword="ItemType"/>.</exception>
+  public void Remove(object? value)
+  {
+    if (value is ItemType itemType)
+    {
+      Remove(itemType);
+    }
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Indexed access to items.
+  /// </summary>
+  /// <param name="index"></param>
+  /// <returns></returns>
+  object? IList.this[int index] { get => this[index]; set => this[index] = (ItemType)value!; }
+
+
+  /// <summary>
+  /// Gets a value indicating whether the collection has a fixed size.
+  /// </summary>
+  /// <remarks>A fixed-size collection does not allow adding or removing elements after it is created. This
+  /// property is useful for determining the mutability of the collection.</remarks>
+  public bool IsFixedSize => false;
+
+  #endregion
+}
