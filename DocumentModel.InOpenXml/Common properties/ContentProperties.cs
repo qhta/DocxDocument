@@ -23,13 +23,14 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   /// </summary>
   public ContentProperties()
   {
+    HeadingPairs = new HeadingPairs();
   }
 
   /// <summary>
   /// Initializing constructor.
   /// </summary>
   /// <param name="document">Wordprocessing document model</param>
-  public ContentProperties(Wordprocessing.Document document)
+  public ContentProperties(Wordprocessing.Document document): this()
   {
     SetParent(document);
     if (document.WordprocessingDocument != null)

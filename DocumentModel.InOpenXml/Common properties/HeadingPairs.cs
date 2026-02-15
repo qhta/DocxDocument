@@ -4,9 +4,16 @@ namespace DocumentModel;
 /// </summary>
 [SimpleType]
 [OpenXmlType(typeof(HeadingPair))]
-public class HeadingPairs : ValueCollection<HeadingPair>, IEquatable<HeadingPairs>
+public class HeadingPairs : ModelElementCollection<HeadingPair>, IEquatable<HeadingPairs>
 {
- /// <summary>
+  /// <summary>
+  /// Default constructor. Needed to allow adding items.
+  /// </summary>
+  public HeadingPairs()
+  {
+  }
+
+  /// <summary>
  ///   Determines whether the specified object is equal to the current HeadingPairs collection.
  /// </summary>
  /// <param name="obj">The object to compare with the current collection.</param>
@@ -16,15 +23,6 @@ public class HeadingPairs : ValueCollection<HeadingPair>, IEquatable<HeadingPair
   if (obj is HeadingPairs other)
    return Equals(other);
   return false;
- }
-
- /// <summary>
- ///   Returns a hash code for the HeadingPairs collection.
- /// </summary>
- /// <returns>A hash code for the current collection.</returns>
- public override int GetHashCode()
- {
-  return base.GetHashCode();
  }
 
  /// <summary>
@@ -38,4 +36,5 @@ public class HeadingPairs : ValueCollection<HeadingPair>, IEquatable<HeadingPair
    return false;
   return this.SequenceEqual(other);
  }
+
 }
