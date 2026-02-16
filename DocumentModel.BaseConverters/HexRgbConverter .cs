@@ -31,7 +31,7 @@ public static class RgbConverter
   /// </summary>
   static RgbConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(RgbConverter), typeof(RGB), supportedConversions, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(RgbConverter), typeof(HexRgb), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
 
@@ -42,13 +42,13 @@ public static class RgbConverter
   /// </summary>
   /// <param name="SByteValue">The SByteValue to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
-  public static RGB? ConvertFromSByteValue(DX.SByteValue? SByteValue)
+  public static HexRgb? ConvertFromSByteValue(DX.SByteValue? SByteValue)
   {
     if (SByteValue == null) return null;
     if (SByteValue.Value < 0)
       throw new OverflowException($"Value {SByteValue.Value} is out of range for RGB");
 
-    return (RGB)SByteValue.Value;
+    return (HexRgb)SByteValue.Value;
   }
 
   /// <summary>
@@ -56,7 +56,7 @@ public static class RgbConverter
   /// </summary>
   /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new SByteValue, or null if the input is null.</returns>
-  public static DX.SByteValue? ConvertToSByteValue(RGB? value)
+  public static DX.SByteValue? ConvertToSByteValue(HexRgb? value)
   {
     if (value == null) return null;
     if (value > SByte.MaxValue)
@@ -74,13 +74,13 @@ public static class RgbConverter
   /// </summary>
   /// <param name="int16Value">The Int16Value to convert.</param>
   /// <returns>The RGB int16Value, or null if the element has no content.</returns>
-  public static RGB? ConvertFromInt16Value(DX.Int16Value? int16Value)
+  public static HexRgb? ConvertFromInt16Value(DX.Int16Value? int16Value)
   {
     if (int16Value == null) return null;
     if (int16Value < 0)
       throw new OverflowException($"Value {int16Value} is out of range for RGB");
 
-    return (RGB)int16Value.Value;
+    return (HexRgb)int16Value.Value;
   }
 
   /// <summary>
@@ -88,7 +88,7 @@ public static class RgbConverter
   /// </summary>
   /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new Int16Value, or null if the input is null.</returns>
-  public static DX.Int16Value? ConvertToInt16Value(RGB? value)
+  public static DX.Int16Value? ConvertToInt16Value(HexRgb? value)
   {
     if (value == null) return null;
     if (value > Int16.MaxValue)
@@ -106,13 +106,13 @@ public static class RgbConverter
   /// </summary>
   /// <param name="Int32Value">The Int32Value to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
-  public static RGB? ConvertFromInt32Value(DX.Int32Value? Int32Value)
+  public static HexRgb? ConvertFromInt32Value(DX.Int32Value? Int32Value)
   {
     if (Int32Value == null) return null;
     if (Int32Value.Value < 0)
       throw new OverflowException($"Value {Int32Value.Value} is out of range for RGB");
 
-    return (RGB)Int32Value.Value;
+    return (HexRgb)Int32Value.Value;
   }
 
   /// <summary>
@@ -120,7 +120,7 @@ public static class RgbConverter
   /// </summary>
   /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new Int32Value, or null if the input is null.</returns>
-  public static DX.Int32Value? ConvertToInt32Value(RGB? value)
+  public static DX.Int32Value? ConvertToInt32Value(HexRgb? value)
   {
     if (value == null) return null;
     if (value > Int32.MaxValue)
@@ -138,13 +138,13 @@ public static class RgbConverter
   /// </summary>
   /// <param name="Int64Value">The Int64Value to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
-  public static RGB? ConvertFromInt64Value(DX.Int64Value? Int64Value)
+  public static HexRgb? ConvertFromInt64Value(DX.Int64Value? Int64Value)
   {
     if (Int64Value == null) return null;
     if (Int64Value.Value < 0 || Int64Value.Value > UInt32.MaxValue)
       throw new OverflowException($"Value {Int64Value.Value} is out of range for RGB");
 
-    return (RGB)(UInt32)Int64Value.Value;
+    return (HexRgb)(UInt32)Int64Value.Value;
   }
 
   /// <summary>
@@ -152,7 +152,7 @@ public static class RgbConverter
   /// </summary>
   /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new Int64Value, or null if the input is null.</returns>
-  public static DX.Int64Value? ConvertToInt64Value(RGB? value)
+  public static DX.Int64Value? ConvertToInt64Value(HexRgb? value)
   {
     if (value == null) return null;
 
@@ -168,7 +168,7 @@ public static class RgbConverter
   /// </summary>
   /// <param name="IntegerValue">The IntegerValue to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
-  public static RGB? ConvertFromIntegerValue(DX.IntegerValue? IntegerValue)
+  public static HexRgb? ConvertFromIntegerValue(DX.IntegerValue? IntegerValue)
   {
     if (IntegerValue == null) return null;
     if (IntegerValue.Value < 0 || IntegerValue.Value > UInt32.MaxValue)
@@ -182,7 +182,7 @@ public static class RgbConverter
   /// </summary>
   /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new IntegerValue, or null if the input is null.</returns>
-  public static DX.IntegerValue? ConvertToIntegerValue(RGB? value)
+  public static DX.IntegerValue? ConvertToIntegerValue(HexRgb? value)
   {
     if (value == null) return null;
 
@@ -198,11 +198,11 @@ public static class RgbConverter
   /// </summary>
   /// <param name="ByteValue">The ByteValue to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
-  public static RGB? ConvertFromByteValue(DX.ByteValue? ByteValue)
+  public static HexRgb? ConvertFromByteValue(DX.ByteValue? ByteValue)
   {
     if (ByteValue == null) return null;
 
-    return new RGB(ByteValue.Value);
+    return new HexRgb(ByteValue.Value);
   }
 
   /// <summary>
@@ -210,7 +210,7 @@ public static class RgbConverter
   /// </summary>
   /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new ByteValue, or null if the input is null.</returns>
-  public static DX.ByteValue? ConvertToByteValue(RGB? value)
+  public static DX.ByteValue? ConvertToByteValue(HexRgb? value)
   {
     if (value == null) return null;
     if (value < 0 || value > Byte.MaxValue)
@@ -228,11 +228,11 @@ public static class RgbConverter
   /// </summary>
   /// <param name="UInt16Value">The UInt16Value to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
-  public static RGB? ConvertFromUInt16Value(DX.UInt16Value? UInt16Value)
+  public static HexRgb? ConvertFromUInt16Value(DX.UInt16Value? UInt16Value)
   {
     if (UInt16Value == null) return null;
 
-    return new RGB(UInt16Value.Value);
+    return new HexRgb(UInt16Value.Value);
   }
 
   /// <summary>
@@ -240,7 +240,7 @@ public static class RgbConverter
   /// </summary>
   /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new UInt16Value, or null if the input is null.</returns>
-  public static DX.UInt16Value? ConvertToUInt16Value(RGB? value)
+  public static DX.UInt16Value? ConvertToUInt16Value(HexRgb? value)
   {
     if (value == null) return null;
     if (value > UInt16.MaxValue)
@@ -258,11 +258,11 @@ public static class RgbConverter
   /// </summary>
   /// <param name="RgbValue">The RgbValue to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
-  public static RGB? ConvertFromUInt32Value(DX.UInt32Value? RgbValue)
+  public static HexRgb? ConvertFromUInt32Value(DX.UInt32Value? RgbValue)
   {
     if (RgbValue == null) return null;
 
-    return (RGB)RgbValue.Value;
+    return (HexRgb)RgbValue.Value;
   }
 
   /// <summary>
@@ -270,7 +270,7 @@ public static class RgbConverter
   /// </summary>
   /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new RgbValue, or null if the input is null.</returns>
-  public static DX.UInt32Value? ConvertToUInt32Value(RGB? value)
+  public static DX.UInt32Value? ConvertToUInt32Value(HexRgb? value)
   {
     if (value == null) return null;
     if (value < 0)
@@ -287,13 +287,13 @@ public static class RgbConverter
   /// </summary>
   /// <param name="UInt64Value">The UInt64Value to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
-  public static RGB? ConvertFromUInt64Value(DX.UInt64Value? UInt64Value)
+  public static HexRgb? ConvertFromUInt64Value(DX.UInt64Value? UInt64Value)
   {
     if (UInt64Value == null) return null;
     if (UInt64Value.Value > UInt32.MaxValue)
       throw new OverflowException($"Value {UInt64Value.Value} is out of range for RGB");
 
-    return (RGB)UInt64Value.Value;
+    return (HexRgb)UInt64Value.Value;
   }
 
   /// <summary>
@@ -301,7 +301,7 @@ public static class RgbConverter
   /// </summary>
   /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new UInt64Value, or null if the input is null.</returns>
-  public static DX.UInt64Value? ConvertToUInt64Value(RGB? value)
+  public static DX.UInt64Value? ConvertToUInt64Value(HexRgb? value)
   {
     if (value == null) return null;
     if (value < 0)
@@ -318,7 +318,7 @@ public static class RgbConverter
   /// </summary>
   /// <param name="StringValue">The StringValue to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
-  public static RGB? ConvertFromStringValue(DX.StringValue? StringValue)
+  public static HexRgb? ConvertFromStringValue(DX.StringValue? StringValue)
   {
     if (StringValue == null) return null;
     var text = StringValue.Value;
@@ -326,7 +326,7 @@ public static class RgbConverter
     if (text == null)
       throw new InvalidOperationException("StringValue has no content.");
 
-    return new RGB(text);
+    return new HexRgb(text);
   }
 
   /// <summary>
@@ -335,7 +335,7 @@ public static class RgbConverter
   /// <param name="value">The RGB value to convert.</param>
   /// <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
-  public static DX.StringValue? ConvertToStringValue(RGB? value, Type targetType)
+  public static DX.StringValue? ConvertToStringValue(HexRgb? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -354,12 +354,12 @@ public static class RgbConverter
   /// </summary>
   /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
-  public static RGB? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
+  public static HexRgb? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
   {
     if (OpenXmlLeafTextElement == null) return null;
     var text = OpenXmlLeafTextElement.Text;
 
-    return new RGB(text);
+    return new HexRgb(text);
   }
 
   /// <summary>
@@ -368,12 +368,12 @@ public static class RgbConverter
   /// <param name="value">The RGB value to convert.</param>
   /// <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
-  public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(RGB? value, Type targetType)
+  public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexRgb? value, Type targetType)
   {
     if (value == null) return null;
 
     // ReSharper disable once SpecifyACultureInStringConversionExplicitly
-    var text = ((RGB)value).ToString()!;
+    var text = ((HexRgb)value).ToString()!;
     var element = (DX.OpenXmlLeafTextElement)Activator.CreateInstance(targetType)!;
     element.Text = text;
     return element;
@@ -388,14 +388,14 @@ public static class RgbConverter
   /// </summary>
   /// <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
-  public static RGB? ConvertFromHexBinaryValue(DX.HexBinaryValue? HexBinaryValue)
+  public static HexRgb? ConvertFromHexBinaryValue(DX.HexBinaryValue? HexBinaryValue)
   {
     if (HexBinaryValue == null) return null;
     var text = HexBinaryValue.Value;
     if (text == null)
       throw new InvalidOperationException("HexBinaryValue has no content.");
 
-    return new RGB(text);
+    return new HexRgb(text);
     ;
   }
 
@@ -405,12 +405,12 @@ public static class RgbConverter
   /// <param name="value">The RGB value to convert.</param>
   /// <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
-  public static DX.HexBinaryValue? ConvertToHexBinaryValue(RGB? value, Type targetType)
+  public static DX.HexBinaryValue? ConvertToHexBinaryValue(HexRgb? value, Type targetType)
   {
     if (value == null) return null;
 
     // ReSharper disable once SpecifyACultureInStringConversionExplicitly
-    var text = ((RGB)value).ToString()!;
+    var text = ((HexRgb)value).ToString()!;
     var element = (DX.HexBinaryValue)Activator.CreateInstance(targetType)!;
     element.Value = text;
     return element;
@@ -425,7 +425,7 @@ public static class RgbConverter
   /// </summary>
   /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
-  public static RGB? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
+  public static HexRgb? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
   {
     if (OpenXmlLeafElement == null) return null;
 
@@ -442,7 +442,7 @@ public static class RgbConverter
 
     var value = valProp.GetValue(OpenXmlLeafElement);
     var convertedValue = ConvertFrom(value);
-    return (RGB)convertedValue!;
+    return (HexRgb)convertedValue!;
   }
 
   /// <summary>
@@ -451,7 +451,7 @@ public static class RgbConverter
   /// <param name="value">The RGB value to convert.</param>
   /// <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
-  public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(RGB? value, Type targetType)
+  public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(HexRgb? value, Type targetType)
   {
     if (value == null) return null;
 
@@ -480,10 +480,10 @@ public static class RgbConverter
   /// <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
   /// <returns>A RGB integer equivalent to the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
-  private static RGB? ConvertFromString(string? value)
+  private static HexRgb? ConvertFromString(string? value)
   {
     if (value == null) return null;
-    return new RGB(value);
+    return new HexRgb(value);
   }
 
   /// <summary>
@@ -491,7 +491,7 @@ public static class RgbConverter
   /// </summary>
   /// <param name="value">The nullable RGB value to convert. If null, the method returns null.</param>
   /// <returns>A string representation of the specified value, or null if the value is null.</returns>
-  private static String? ConvertToString(RGB? value)
+  private static String? ConvertToString(HexRgb? value)
   {
     if (value == null) return null;
 
@@ -510,7 +510,7 @@ public static class RgbConverter
   /// <param name="targetType">The target type to convert to.</param>
   /// <returns>The converted value, or null if the input is null.</returns>
   /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
-  public static object? ConvertTo(RGB? value, Type targetType)
+  public static object? ConvertTo(HexRgb? value, Type targetType)
   {
     return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
   }
@@ -518,13 +518,13 @@ public static class RgbConverter
   /// <summary>
   /// Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
   /// </summary>
-  /// <param name="value">The value to convert to an <see cref="RGB"/>. Can be <see langword="null"/>.</param>
+  /// <param name="value">The value to convert to an <see cref="HexRgb"/>. Can be <see langword="null"/>.</param>
   /// <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
   /// is <see langword="null"/>.</returns>
-  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="RGB"/> is not supported.</exception>
-  public static RGB? ConvertFrom(object? value)
+  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="HexRgb"/> is not supported.</exception>
+  public static HexRgb? ConvertFrom(object? value)
   {
-    return (RGB?)ConverterBase.ConvertFrom(value, typeof(RGB), ConversionFromMap);
+    return (HexRgb?)ConverterBase.ConvertFrom(value, typeof(HexRgb), ConversionFromMap);
   }
 
   #endregion

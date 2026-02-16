@@ -23,7 +23,9 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   /// </summary>
   public ContentProperties()
   {
+    SetNotificationEnabled(false);
     HeadingPairs = new HeadingPairs();
+    SetNotificationEnabled(true);
   }
 
   /// <summary>

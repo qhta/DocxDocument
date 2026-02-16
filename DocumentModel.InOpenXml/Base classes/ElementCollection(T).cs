@@ -32,6 +32,19 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     SetParent(parent);
   }
 
+
+  /// <summary>
+  /// Initializes a new collection with the specified items.
+  /// </summary>
+  /// <param name="items">The items to add to the collection.</param>
+  protected ElementCollection(IEnumerable<ItemType> items)
+  {
+    foreach (var item in items)
+    {
+      _items.Add(item);
+    }
+  }
+
   /// <summary>
   /// Handles the CollectionChanged event of the internal ObservableCollection.
   /// When items are added to the collection, this method checks if the new items implement the ICollectionItem interface and,
@@ -60,7 +73,8 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     if (openXmlElement != null)
       UpdateData(openXmlElement);
     CollectionChanged?.Invoke(this, args);
-    SetIsModified(true);
+    if (!IsLoaded && IsNotificationEnabled)
+      SetIsModified(true);
   }
 
   /// <summary>
@@ -70,34 +84,8 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   /// <param name="args">Arguments of this event</param>
   private void ItemPropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
-    if (PropertyName!=null)
+    if (IsNotificationEnabled && PropertyName != null)
       NotifyPropertyChanged(PropertyName);
-  }
-
-  /// <summary>
-  /// Property name to be used when the object raise PropertyChanged event.
-  /// </summary>
-  public string? PropertyName => _PropertyName;
-
-  private string? _PropertyName;
-
-  /// <summary>
-  /// Sets the property name.
-  /// </summary>
-  /// <param name="propertyName">Property name to set (null erases property name)</param>
-
-  public void SetPropertyName(string? propertyName) => _PropertyName = propertyName;
-
-  /// <summary>
-  /// Initializes a new collection with the specified items.
-  /// </summary>
-  /// <param name="items">The items to add to the collection.</param>
-  protected ElementCollection(IEnumerable<ItemType> items)
-  {
-    foreach (var item in items)
-    {
-      _items.Add(item);
-    }
   }
 
   /// <summary>
@@ -387,6 +375,25 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   /// <remarks>A fixed-size collection does not allow adding or removing elements after it is created. This
   /// property is useful for determining the mutability of the collection.</remarks>
   bool IList.IsFixedSize => false;
+
+  #endregion
+
+  #region INotificationSource
+
+  /// <summary>
+  /// Sets the IsNotification flag to be used by the instance.
+  /// Flag is set in this instance and child items.
+  /// </summary>
+  /// <param name="enabled">The enabled value to set.</param>
+  void INotificationSource.SetNotificationEnabled(bool enabled)
+  {
+    base.SetNotificationEnabled(enabled);
+    foreach (var item in this)
+    {
+      if (item is INotificationSource notificationSource)
+        notificationSource.SetNotificationEnabled(enabled);
+    }
+  }
 
   #endregion
 }
