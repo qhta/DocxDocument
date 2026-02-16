@@ -30,6 +30,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
       OpenDocument(filePath, access is FileAccess.ReadWrite or FileAccess.Write);
     if (access!=FileAccess.ReadWrite && access!=FileAccess.Write && access!=FileAccess.Read)
       IsEditable = false;
+    SetNotificationEnabled(true);
   }
 
   /// <summary>
@@ -42,6 +43,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     _CoreProperties = new CoreProperties(this);
     _ContentProperties = new ContentProperties(this);
     _StatisticProperties = new StatisticProperties(this);
+    SetNotificationEnabled(true);
   }
 
   /// <summary>
@@ -61,6 +63,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <param name="wordprocessingDocument">The word processing document to attach and load from.</param>
   public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
+    SetNotificationEnabled(false);
     WordprocessingDocument = wordprocessingDocument;
     wordprocessingDocument.GetPackageProperties();
 
@@ -69,6 +72,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     _StatisticProperties.AttachAndLoad(wordprocessingDocument);
     _CustomProperties?.AttachAndLoad(wordprocessingDocument);
     _DocumentSettings?.AttachAndLoad(wordprocessingDocument);
+    SetNotificationEnabled(true);
   }
 
   /// <summary>
@@ -117,12 +121,13 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <returns>A <see cref="Document"/>The instance representing the opened file.</returns>
   public void OpenDocument(string filePath, bool editable = true)
   {
+    SetNotificationEnabled(false);
     Filename = filePath;
     IsEditable = editable;
 
     var wordprocessingDocument = WordprocessingHelper.OpenWordDocument(Filename, editable);
     AttachAndLoad(wordprocessingDocument);
-    SetIsModified(false);
+    SetNotificationEnabled(true);
   }
 
   /// <summary>
@@ -160,6 +165,19 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
   }
   private bool _IsEditable;
+
+  /// <summary>
+  /// Notifies listeners that the value of a property has changed.
+  /// </summary>
+  /// <remarks>Call this method after updating a property value to ensure that any data bindings or listeners
+  /// are notified of the change. Property change notifications are only sent if notifications are currently
+  /// enabled.</remarks>
+  /// <param name="propertyName">The name of the property that has changed. This value is used to identify the property in the change notification.</param>
+  public override void NotifyPropertyChanged(string propertyName)
+  {
+    if (IsNotificationEnabled)
+      OnPropertyChanged(propertyName);
+  }
 
   /// <summary>
   /// Saves the current state of the document to its underlying data source, such as a file or stream.

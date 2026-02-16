@@ -9,9 +9,9 @@
 /// - Bits 8-15 represent the Green component
 /// - Bits 0-7 represent the Blue component
 /// </remarks>
-[JsonConverter(typeof(RGBJsonConverter))]
+[JsonConverter(typeof(HexRgbJsonConverter))]
 [SimpleType]
-public readonly partial struct RGB : IEquatable<RGB>, IConvertible
+public readonly partial struct HexRgb : IEquatable<HexRgb>, IConvertible
 {
   /// <summary>
   /// The internal storage for the compound RGB value.
@@ -22,7 +22,7 @@ public readonly partial struct RGB : IEquatable<RGB>, IConvertible
   /// Constructor with a string parameter. It must be 6-digit hexadecimal value.
   /// First goes the Red value (2 hex digits), then Green, and Blue at the end.
   /// </summary>
-  public RGB(string str)
+  public HexRgb(string str)
   {
     value = UInt32.Parse(str, NumberStyles.HexNumber);
   }
@@ -32,7 +32,7 @@ public readonly partial struct RGB : IEquatable<RGB>, IConvertible
   /// Bits 0-7 represent the Blue value, bits 8-15 - the Green value,
   /// bits 16-23 represent the Red value.
   /// </summary>
-  public RGB(UInt32 value)
+  public HexRgb(UInt32 value)
   {
     this.value = value & 0xFFFFFF; // Mask to ensure only 24 bits are used
   }
@@ -42,7 +42,7 @@ public readonly partial struct RGB : IEquatable<RGB>, IConvertible
   /// Bits 0-7 represent the Blue value, bits 8-15 - the Green value,
   /// bits 16-23 represent the Red value.
   /// </summary>
-  public RGB(Int32 value)
+  public HexRgb(Int32 value)
   {
     this.value = (UInt32)(value & 0xFFFFFF); // Mask to ensure only 24 bits are used
   }
@@ -53,7 +53,7 @@ public readonly partial struct RGB : IEquatable<RGB>, IConvertible
   /// <param name="r">Represents the Red value.</param>
   /// <param name="g">Represents the Green value.</param>
   /// <param name="b">Represents the Blue value.</param>
-  public RGB(byte r, byte g, byte b)
+  public HexRgb(byte r, byte g, byte b)
   {
     value = ((UInt32)r << 16) | ((UInt32)g << 8) | b;
   }
@@ -88,46 +88,46 @@ public readonly partial struct RGB : IEquatable<RGB>, IConvertible
   #region Implicit Conversions
 
   /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer to an <see cref="RGB"/> value.
+  /// Implicitly converts a 32-bit unsigned integer to an <see cref="HexRgb"/> value.
   /// </summary>
   /// <param name="value">The 32-bit unsigned integer to convert.</param>
-  /// <returns>An <see cref="RGB"/> value representing the color.</returns>
-  public static implicit operator RGB(UInt32 value) => new RGB(value);
+  /// <returns>An <see cref="HexRgb"/> value representing the color.</returns>
+  public static implicit operator HexRgb(UInt32 value) => new HexRgb(value);
 
   /// <summary>
-  /// Implicitly converts an <see cref="RGB"/> value to a 32-bit unsigned integer.
+  /// Implicitly converts an <see cref="HexRgb"/> value to a 32-bit unsigned integer.
   /// </summary>
-  /// <param name="value">The <see cref="RGB"/> value to convert.</param>
+  /// <param name="value">The <see cref="HexRgb"/> value to convert.</param>
   /// <returns>A 32-bit unsigned integer representation of the RGB color.</returns>
-  public static implicit operator UInt32(RGB value) => value.value & 0xFFFFFF;
+  public static implicit operator UInt32(HexRgb value) => value.value & 0xFFFFFF;
 
   /// <summary>
-  /// Implicitly converts a 32-bit signed integer to an <see cref="RGB"/> value.
+  /// Implicitly converts a 32-bit signed integer to an <see cref="HexRgb"/> value.
   /// </summary>
   /// <param name="value">The 32-bit signed integer to convert.</param>
-  /// <returns>An <see cref="RGB"/> value representing the color.</returns>
-  public static implicit operator RGB(Int32 value) => new RGB((UInt32)value);
+  /// <returns>An <see cref="HexRgb"/> value representing the color.</returns>
+  public static implicit operator HexRgb(Int32 value) => new HexRgb((UInt32)value);
 
   /// <summary>
-  /// Implicitly converts an <see cref="RGB"/> value to a 32-bit signed integer.
+  /// Implicitly converts an <see cref="HexRgb"/> value to a 32-bit signed integer.
   /// </summary>
-  /// <param name="value">The <see cref="RGB"/> value to convert.</param>
+  /// <param name="value">The <see cref="HexRgb"/> value to convert.</param>
   /// <returns>A 32-bit signed integer representation of the RGB color.</returns>
-  public static implicit operator Int32(RGB value) => (Int32)(value.value & 0xFFFFFF);
+  public static implicit operator Int32(HexRgb value) => (Int32)(value.value & 0xFFFFFF);
 
   /// <summary>
-  /// Implicitly converts a <see cref="HexInt"/> value to an <see cref="RGB"/> value.
+  /// Implicitly converts a <see cref="HexInt"/> value to an <see cref="HexRgb"/> value.
   /// </summary>
   /// <param name="value">The <see cref="HexInt"/> value to convert.</param>
-  /// <returns>An <see cref="RGB"/> value representing the color.</returns>
-  public static implicit operator RGB(HexInt value) => new RGB((UInt32)value);
+  /// <returns>An <see cref="HexRgb"/> value representing the color.</returns>
+  public static implicit operator HexRgb(HexInt value) => new HexRgb((UInt32)value);
 
   /// <summary>
-  /// Implicitly converts an <see cref="RGB"/> value to a <see cref="HexInt"/> value.
+  /// Implicitly converts an <see cref="HexRgb"/> value to a <see cref="HexInt"/> value.
   /// </summary>
-  /// <param name="value">The <see cref="RGB"/> value to convert.</param>
+  /// <param name="value">The <see cref="HexRgb"/> value to convert.</param>
   /// <returns>A <see cref="HexInt"/> representation of the RGB color.</returns>
-  public static implicit operator HexInt(RGB value) => new HexInt((Int32)(value.value & 0xFFFFFF));
+  public static implicit operator HexInt(HexRgb value) => new HexInt((Int32)(value.value & 0xFFFFFF));
 
   #endregion
 
@@ -145,7 +145,7 @@ public readonly partial struct RGB : IEquatable<RGB>, IConvertible
   /// </summary>
   /// <param name="other">An object to compare with this object.</param>
   /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
-  public bool Equals(RGB other)
+  public bool Equals(HexRgb other)
   {
     return value == other.value;
   }
@@ -157,7 +157,7 @@ public readonly partial struct RGB : IEquatable<RGB>, IConvertible
   /// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
   public override bool Equals(object? obj)
   {
-    return obj is RGB other && Equals(other);
+    return obj is HexRgb other && Equals(other);
   }
 
   /// <summary>
@@ -316,7 +316,7 @@ public readonly partial struct RGB : IEquatable<RGB>, IConvertible
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>
   /// An object of the specified type with a value equivalent to the value of this instance.
-  /// Supports conversion to <see cref="String"/>, <see cref="Int32"/>, <see cref="Int64"/>, <see cref="UInt32"/>, <see cref="UInt64"/>, <see cref="HexInt"/>, and <see cref="RGB"/>.
+  /// Supports conversion to <see cref="String"/>, <see cref="Int32"/>, <see cref="Int64"/>, <see cref="UInt32"/>, <see cref="UInt64"/>, <see cref="HexInt"/>, and <see cref="HexRgb"/>.
   /// </returns>
   /// <exception cref="InvalidCastException">This conversion is not supported for the specified type.</exception>
   public object ToType(Type conversionType, IFormatProvider? provider)
@@ -339,7 +339,7 @@ public readonly partial struct RGB : IEquatable<RGB>, IConvertible
     if (conversionType == typeof(HexInt))
       return (HexInt)this;
 
-    if (conversionType == typeof(RGB))
+    if (conversionType == typeof(HexRgb))
       return this;
 
     throw new InvalidCastException($"Cannot convert RGB to {conversionType.Name}.");

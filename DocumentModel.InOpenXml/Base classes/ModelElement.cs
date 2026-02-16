@@ -5,7 +5,7 @@ namespace DocumentModel;
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
 public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem,
-  IModifiable, IPropertiesProvider
+  IModifiable, INotificationSource, ILoadable, IPropertiesProvider
 {
   static ModelElement()
   {
@@ -27,8 +27,9 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <param name="args">Event arguments containing the property name.</param>
   private void ModelElement_PropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
-    if (args.PropertyName != nameof(IsModified))
-      SetIsModified(true);
+    if (IsNotificationEnabled)
+      if (args.PropertyName != nameof(IsModified))
+        SetIsModified(true);
   }
 
   /// <summary>
@@ -97,10 +98,13 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <remarks>Call this method to notify listeners that a property value has changed, typically when
   /// implementing the INotifyPropertyChanged interface in data-binding scenarios.</remarks>
   /// <param name="propertyName">The name of the property that has changed. Cannot be null or empty.</param>
-  public void NotifyPropertyChanged(string propertyName)
+  public virtual void NotifyPropertyChanged(string propertyName)
   {
+    if (propertyName == "IsModified")
+      return;
     UpdatePropertyData(propertyName);
-    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    if (IsNotificationEnabled)
+      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
   }
 
   /// <summary>
@@ -147,8 +151,8 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       if (value is INotifyCollectionChanged collection) collection.CollectionChanged += ChildCollectionChanged;
       if (value is INotifyPropertyChanged notificator) notificator.PropertyChanged += ChildPropertyChanged;
       if (value is INotificationSource source) source.SetPropertyName(propertyName);
-
-      NotifyPropertyChanged(propertyName);
+      if (IsNotificationEnabled)
+        NotifyPropertyChanged(propertyName);
     }
     else if (field is IWordprocessingDocumentAware updatedValue)
     {
@@ -157,6 +161,58 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
         updatedValue.AttachAndUpdate(wordprocessingDocument);
     }
   }
+
+
+  #region INotificationSource implementation
+  /// <summary>
+  /// Property name to be used when the object raise PropertyChanged event.
+  /// </summary>
+  public string? PropertyName => _PropertyName;
+
+  private string? _PropertyName;
+
+  /// <summary>
+  /// Sets the property name.
+  /// </summary>
+  /// <param name="propertyName">Property name to set (null erases property name)</param>
+
+  public void SetPropertyName(string? propertyName) => _PropertyName = propertyName;
+
+  /// <summary>
+  /// Flag to determine if notification is enabled when the object raise PropertyChanged event.
+  /// It should be set to true when the object is created.
+  /// </summary>
+  public bool IsNotificationEnabled => _IsNotificationEnabled;
+
+  private bool _IsNotificationEnabled;
+
+
+  /// <summary>
+  /// Sets the IsNotification flag to be used by the instance.
+  /// Flag is set in this instance and child items.
+  /// </summary>
+  /// <param name="enabled">The enabled value to set.</param>
+  public void SetNotificationEnabled(bool enabled)
+  {
+    Debug.WriteLine($"{this}.SetIsNotificationEnabled({enabled})");
+    _IsNotificationEnabled = enabled;
+    foreach (var prop in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
+    {
+      try
+      {
+        if (prop.CanWrite && prop.GetIndexParameters().Length == 0)
+          if (prop.GetValue(this) is INotificationSource notificationSource)
+            notificationSource.SetNotificationEnabled(enabled);
+
+      }
+      catch (Exception ex)
+      {
+        Debug.WriteLine($"Error setting IsNotificationEnabled for property '{prop.Name}' of type '{this.GetType().Name}': {ex.Message}");
+      }
+    }
+  }
+
+  #endregion
 
   /// <summary>
   /// Invoked on child item property change to raise PropertyChanged event on this model.
@@ -251,7 +307,9 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// Must be compatible with the current model element type.</param>
   public virtual void LoadData(object openXmlObject)
   {
+    SetIsLoaded(true);
     OpenXmlModelConverter.LoadData(this, openXmlObject, this.GetType());
+    SetIsLoaded(false);
   }
 
   /// <summary>
@@ -347,13 +405,18 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   private bool _IsModified;
 
   /// <summary>
-  /// Sets the isModified object to be used by the instance.
+  /// Sets the IsModified flag to be used by the instance.
   /// </summary>
-  /// <param name="isModified">The isModified object to assign. Can be null to clear the current isModified.</param>
+  /// <param name="isModified">The isModified value to set.</param>
   public void SetIsModified(bool isModified)
   {
+    if (IsLoaded)
+      return;
     if (_IsModified != isModified)
     {
+      Debug.WriteLine($"{this}.SetIsModified({isModified})");
+      if (isModified && this is HeadingPairs)
+        Debug.Assert(true);
       _IsModified = isModified;
       if (IsModified)
       {
@@ -379,7 +442,26 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
           }
         }
       }
+      if (this is DMW.Document) Debug.Assert(true);
       NotifyPropertyChanged(nameof(IsModified));
     }
   }
+
+
+  /// <summary>
+  /// Gets a value indicating whether the object is currently loaded.
+  /// </summary>
+  public bool IsLoaded => _IsLoaded;
+
+  private bool _IsLoaded;
+
+  /// <summary>
+  /// Sets the IsLoaded flag to be used by the instance.
+  /// </summary>
+  /// <param name="isLoaded">The isLoaded value to set.</param>
+  public void SetIsLoaded(bool isLoaded)
+  {
+    _IsLoaded = isLoaded;
+  }
+
 }
