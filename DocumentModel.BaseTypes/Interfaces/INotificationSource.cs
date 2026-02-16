@@ -15,4 +15,16 @@ public interface INotificationSource
   /// </summary>
   /// <param name="propertyName">Property name to set (null erases property name)</param>
   public void SetPropertyName (string? propertyName);
+
+  /// <summary>
+  /// Flag to determine if notification is enabled when the object raise PropertyChanged event.
+  /// It should be set to true when the object is created.
+  /// </summary>
+  public bool IsNotificationEnabled { get; }
+
+  /// <summary>
+  /// Sets the flag of IsNotificationEnabled.
+  /// </summary>
+  /// <param name="enable">Value to set.</param>
+  public void SetNotificationEnabled(bool enable);
 }

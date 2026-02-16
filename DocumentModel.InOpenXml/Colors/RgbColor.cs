@@ -19,7 +19,7 @@ public partial class RgbColor : Color<DXD.RgbColorModelHex>
  /// In earlier versions, only the base RGB value may be displayed without transformations.
  /// </para>
  /// </remarks>
- public RGB? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+ public HexRgb? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
- private RGB? _Val;
+ private HexRgb? _Val;
 }

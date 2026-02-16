@@ -54,7 +54,7 @@ public static class RgbConverterTest
   /// <summary>
   ///   Test values used for RGB conversion tests, including boundary and typical values.
   /// </summary>
-  static readonly RGB[] testValues =
+  static readonly HexRgb[] testValues =
   [
     0xABCDEF,
     UInt32.MaxValue

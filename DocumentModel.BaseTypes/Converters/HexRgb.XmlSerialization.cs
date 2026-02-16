@@ -1,9 +1,9 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support for the <see cref="RGB"/> structure.
+/// Provides XML serialization support for the <see cref="HexRgb"/> structure.
 /// </summary>
-public partial struct RGB : IXmlSerializable
+public partial struct HexRgb : IXmlSerializable
 {
   #region IXmlSerializable Implementation
 
@@ -14,7 +14,7 @@ public partial struct RGB : IXmlSerializable
   XmlSchema? IXmlSerializable.GetSchema() => null;
 
   /// <summary>
-  /// Deserializes the <see cref="RGB"/> value from XML.
+  /// Deserializes the <see cref="HexRgb"/> value from XML.
   /// Accepts 6-digit hexadecimal string values representing RGB colors.
   /// </summary>
   /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
@@ -42,7 +42,7 @@ public partial struct RGB : IXmlSerializable
 
       if (!string.IsNullOrEmpty(rgbString))
       {
-        RGB parsedValue = new RGB(rgbString);
+        HexRgb parsedValue = new HexRgb(rgbString);
 
         // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue.value;
@@ -58,7 +58,7 @@ public partial struct RGB : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="RGB"/> value to XML.
+  /// Serializes the <see cref="HexRgb"/> value to XML.
   /// </summary>
   /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
   /// <remarks>
