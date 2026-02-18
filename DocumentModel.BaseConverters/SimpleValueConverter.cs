@@ -31,6 +31,8 @@ public static class SimpleValueConverter
     ConversionToMap.Append(UInt16Converter.ConversionToMap);
     ConversionToMap.Append(UInt32Converter.ConversionToMap);
     ConversionToMap.Append(UInt64Converter.ConversionToMap);
+    ConversionToMap.Append(SingleConverter.ConversionToMap);
+    ConversionToMap.Append(DoubleConverter.ConversionToMap);
     ConversionToMap.Append(DecimalConverter.ConversionToMap);
     ConversionToMap.Append(GuidConverter.ConversionToMap);
     ConversionToMap.Append(DateTimeConverter.ConversionToMap);
@@ -39,6 +41,7 @@ public static class SimpleValueConverter
     ConversionToMap.Append(RgbConverter.ConversionToMap);
     ConversionToMap.Append(HexBinaryConverter.ConversionToMap);
     ConversionToMap.Append(EnumConverter.ConversionToMap);
+    ConversionToMap.Append(BytePercentConverter.ConversionToMap);
     ConversionToMap.Append(PercentConverter.ConversionToMap);
 
     ConversionFromMap.Append(BooleanConverter.ConversionFromMap);
@@ -50,6 +53,8 @@ public static class SimpleValueConverter
     ConversionFromMap.Append(UInt16Converter.ConversionFromMap);
     ConversionFromMap.Append(UInt32Converter.ConversionFromMap);
     ConversionFromMap.Append(UInt64Converter.ConversionFromMap);
+    ConversionFromMap.Append(SingleConverter.ConversionFromMap);
+    ConversionFromMap.Append(DoubleConverter.ConversionFromMap);
     ConversionFromMap.Append(DecimalConverter.ConversionFromMap);
     ConversionFromMap.Append(GuidConverter.ConversionFromMap);
     ConversionFromMap.Append(DateTimeConverter.ConversionFromMap);

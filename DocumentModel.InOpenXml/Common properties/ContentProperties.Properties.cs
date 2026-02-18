@@ -202,7 +202,6 @@ public partial class ContentProperties
   ///   representation, and should be avoided in favor of the well-defined mechanism defined in Part 2. Any use of this
   ///   property should be for legacy compatibility only, and is application-defined. 
   /// </summary>
-  [Obsolete]
   [Category("Security")]
   [OpenXmlType(typeof(DXEP.DigitalSignature))]
   public HexBinary? DigitalSignature

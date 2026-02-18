@@ -418,6 +418,39 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   #endregion
 
   #region String Conversion
+
+
+  /// <summary>
+  /// Parses a string representation of a percentage and returns a corresponding BytePercent instance.
+  /// </summary>
+  /// <param name="str">The string containing the percentage to parse. The string should be in a format recognized by the Percent type,
+  /// such as "50%" or "0.5".</param>
+  /// <returns>A Percent instance that represents the value specified by the input string.</returns>
+  public static BytePercent Parse(string str)
+  {
+    return new BytePercent(str);
+  }
+
+  /// <summary>
+  /// Attempts to parse a string representation of a percentage into a <see cref="BytePercent"/> instance.
+  /// </summary>
+  /// <param name="str">The string representation of the percentage.</param>
+  /// <param name="result">The resulting <see cref="Percent"/> instance if parsing is successful.</param>
+  /// <returns><see langword="true"/> if parsing succeeded; otherwise, <see langword="false"/>.</returns>
+  public static bool TryParse(string str, out BytePercent result)
+  {
+    try
+    {
+      result = new BytePercent(str);
+      return true;
+    }
+    catch
+    {
+      result = default;
+      return false;
+    }
+  }
+  
   /// <summary>
   /// Converts the value of this instance to its equivalent string representation with "%" suffix.
   /// </summary>
@@ -480,6 +513,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
     }
     return value.ToString(provider);
   }
+
   #endregion
 
   #region HexString conversion

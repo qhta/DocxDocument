@@ -10,6 +10,7 @@
     <Description>Definition of document model base types based on OpenXml</Description>
     <Authors>Yarreck Qhta</Authors>
     <Version>1.0</Version>
+    <DocumentationFile>docs\BaseTypes.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <NoWarn>1701;1702;8766;0618</NoWarn>
@@ -18,14 +19,15 @@
     <NoWarn>1701;1702;8766;0618</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Interfaces\**" />
+    <Compile Remove="KnownProperties\**" />
     <Compile Remove="VariantTypes\**" />
+    <EmbeddedResource Remove="Interfaces\**" />
+    <EmbeddedResource Remove="KnownProperties\**" />
     <EmbeddedResource Remove="VariantTypes\**" />
+    <None Remove="Interfaces\**" />
+    <None Remove="KnownProperties\**" />
     <None Remove="VariantTypes\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Converters\UriString.XmlSerialization.cs" />
-    <Compile Remove="Converters\UriStringJsonConverter.cs" />
-    <Compile Remove="UriString.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Qhta.Collections" Version="5.3.0" />

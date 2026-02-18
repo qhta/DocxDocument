@@ -39,36 +39,36 @@ public static class HalfPointsSerializationTests
     {
       // Test string to HalfPoints conversion (plain number)
       HalfPoints hp1 = "144";
-      Console.WriteLine($"✓ String to HalfPoints: {hp1} = {(Int64)hp1} half-points");
+      Console.WriteLine($"\n✓ String to HalfPoints: {hp1} = {(Int64)hp1} half-points");
 
       // Test integer to HalfPoints conversion
       HalfPoints hp2 = 144;
-      Console.WriteLine($"✓ Int to HalfPoints: {hp2}");
+      Console.WriteLine($"\n✓ Int to HalfPoints: {hp2}");
 
       // Test equality
       if (hp1.CompareTo(hp2) == 0)
-        Console.WriteLine("✓ Equality test passed");
+        Console.WriteLine("\n✓ Equality test passed");
       else
         Console.WriteLine("✗ Equality test FAILED");
 
       // Test HalfPoints to string
       string str = hp1.ToString();
-      Console.WriteLine($"✓ HalfPoints to string: {str}");
+      Console.WriteLine($"\n✓ HalfPoints to string: {str}");
 
       // Test HalfPoints to various integer types
       Int32 int32Val = (Int32)hp1;
       Int64 int64Val = (Int64)hp1;
       UInt32 uint32Val = (UInt32)hp1;
-      Console.WriteLine($"✓ Numeric conversions: int32={int32Val}, int64={int64Val}, uint32={uint32Val}");
+      Console.WriteLine($"\n✓ Numeric conversions: int32={int32Val}, int64={int64Val}, uint32={uint32Val}");
 
       // Test hash code
-      Console.WriteLine($"✓ Hash code: {hp1.GetHashCode()}");
+      Console.WriteLine($"\n✓ Hash code: {hp1.GetHashCode()}");
 
       // Test comparison
       HalfPoints hp3 = 288; // 2 inches
-      Console.WriteLine($"✓ CompareTo (144 vs 288): {hp1.CompareTo(hp3)} (expected < 0)");
+      Console.WriteLine($"\n✓ CompareTo (144 vs 288): {hp1.CompareTo(hp3)} (expected < 0)");
 
-      Console.WriteLine("✓ All basic operations passed");
+      Console.WriteLine("\n✓ All basic operations passed");
       Console.WriteLine();
       return true;
     }
@@ -185,124 +185,115 @@ public static class HalfPointsSerializationTests
   {
     Console.WriteLine("--- Testing HalfPoints XML Serialization ---");
 
-    try
+    // Create test object
+    var testData = new HalfPointsTestData
     {
-      // Create test object
-      var testData = new HalfPointsTestData
-      {
-        Id = 1,
-        Name = "XML Test",
-        FontSize = new HalfPoints(24),       // 12 points
-        LineHeight = new HalfPoints(36),     // 18 points
-        LetterSpacing = new HalfPoints(1),   // 0.5 points
-        WordSpacing = new HalfPoints(2),     // 1 point
-        SuperscriptOffset = new HalfPoints(10), // 5 points
-        SubscriptOffset = new HalfPoints(6), // 3 points
-        BorderWidth = new HalfPoints(4),     // 2 points
-        ZeroValue = new HalfPoints(0),
-        SmallValue = new HalfPoints(1),      // 0.5 points
-        LargeValue = new HalfPoints(2000)    // ~13.9 inches
-      };
+      Id = 1,
+      Name = "XML Test",
+      FontSize = new HalfPoints(24),       // 12 points
+      LineHeight = new HalfPoints(36),     // 18 points
+      LetterSpacing = new HalfPoints(1),   // 0.5 points
+      WordSpacing = new HalfPoints(2),     // 1 point
+      SuperscriptOffset = new HalfPoints(10), // 5 points
+      SubscriptOffset = new HalfPoints(6), // 3 points
+      BorderWidth = new HalfPoints(4),     // 2 points
+      ZeroValue = new HalfPoints(0),
+      SmallValue = new HalfPoints(1),      // 0.5 points
+      LargeValue = new HalfPoints(2000)    // ~13.9 inches
+    };
 
-      Console.WriteLine($"Original data:");
-      Console.WriteLine($"  Id: {testData.Id}");
-      Console.WriteLine($"  Name: {testData.Name}");
-      Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
-      Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPoints():F1}pt)");
-      Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing} ({testData.LetterSpacing.ToPoints():F1}pt)");
-      Console.WriteLine($"  WordSpacing: {testData.WordSpacing} ({testData.WordSpacing.ToPoints():F1}pt)");
-      Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset} ({testData.SuperscriptOffset.ToPoints():F1}pt)");
-      Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset} ({testData.SubscriptOffset.ToPoints():F1}pt)");
-      Console.WriteLine($"  BorderWidth: {testData.BorderWidth} ({testData.BorderWidth.ToPoints():F1}pt)");
-      Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
-      Console.WriteLine($"  SmallValue: {testData.SmallValue}");
-      Console.WriteLine($"  LargeValue: {testData.LargeValue}");
-      Console.WriteLine();
+    Console.WriteLine($"Original data:");
 
-      // Serialize to XML
-      var xmlSerializer = new XmlSerializer(typeof(HalfPointsTestData));
-      string xmlString;
 
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings
-      {
-        Indent = true,
-        OmitXmlDeclaration = false,
-        Encoding = System.Text.Encoding.UTF8
-      }))
-      {
-        xmlSerializer.Serialize(xmlWriter, testData);
-        xmlString = stringWriter.ToString();
-      }
+    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPoints():F1}pt)");
+    Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing} ({testData.LetterSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  WordSpacing: {testData.WordSpacing} ({testData.WordSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset} ({testData.SuperscriptOffset.ToPoints():F1}pt)");
+    Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset} ({testData.SubscriptOffset.ToPoints():F1}pt)");
+    Console.WriteLine($"  BorderWidth: {testData.BorderWidth} ({testData.BorderWidth.ToPoints():F1}pt)");
+    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
+    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
+    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
+    Console.WriteLine();
 
-      Console.WriteLine("Serialized XML:");
-      Console.WriteLine(xmlString);
-      Console.WriteLine();
+    // Serialize to XML
+    var xmlSerializer = new XmlSerializer(typeof(HalfPointsTestData));
+    string xmlString;
 
-      // Deserialize from XML
-      HalfPointsTestData? deserializedData;
-      using (var stringReader = new StringReader(xmlString))
-      {
-        deserializedData = (HalfPointsTestData?)xmlSerializer.Deserialize(stringReader);
-      }
-
-      if (deserializedData == null)
-      {
-        Console.WriteLine("✗ XML Deserialization returned null");
-        return false;
-      }
-
-      // Verify deserialized data
-      Console.WriteLine("Deserialized data:");
-      Console.WriteLine($"  Id: {deserializedData.Id}");
-      Console.WriteLine($"  Name: {deserializedData.Name}");
-      Console.WriteLine($"  FontSize: {deserializedData.FontSize} ({deserializedData.FontSize.ToPoints():F1}pt)");
-      Console.WriteLine($"  LineHeight: {deserializedData.LineHeight} ({deserializedData.LineHeight.ToPoints():F1}pt)");
-      Console.WriteLine($"  LetterSpacing: {deserializedData.LetterSpacing} ({deserializedData.LetterSpacing.ToPoints():F1}pt)");
-      Console.WriteLine($"  WordSpacing: {deserializedData.WordSpacing} ({deserializedData.WordSpacing.ToPoints():F1}pt)");
-      Console.WriteLine($"  SuperscriptOffset: {deserializedData.SuperscriptOffset} ({deserializedData.SuperscriptOffset.ToPoints():F1}pt)");
-      Console.WriteLine($"  SubscriptOffset: {deserializedData.SubscriptOffset} ({deserializedData.SubscriptOffset.ToPoints():F1}pt)");
-      Console.WriteLine($"  BorderWidth: {deserializedData.BorderWidth} ({deserializedData.BorderWidth.ToPoints():F1}pt)");
-      Console.WriteLine($"  ZeroValue: {deserializedData.ZeroValue}");
-      Console.WriteLine($"  SmallValue: {deserializedData.SmallValue}");
-      Console.WriteLine($"  LargeValue: {deserializedData.LargeValue}");
-      Console.WriteLine();
-
-      // Validate
-      bool isValid =
-        testData.Id == deserializedData.Id &&
-        testData.Name == deserializedData.Name &&
-        testData.FontSize.CompareTo(deserializedData.FontSize) == 0 &&
-        testData.LineHeight.CompareTo(deserializedData.LineHeight) == 0 &&
-        testData.LetterSpacing.CompareTo(deserializedData.LetterSpacing) == 0 &&
-        testData.WordSpacing.CompareTo(deserializedData.WordSpacing) == 0 &&
-        testData.SuperscriptOffset.CompareTo(deserializedData.SuperscriptOffset) == 0 &&
-        testData.SubscriptOffset.CompareTo(deserializedData.SubscriptOffset) == 0 &&
-        testData.BorderWidth.CompareTo(deserializedData.BorderWidth) == 0 &&
-        testData.ZeroValue.CompareTo(deserializedData.ZeroValue) == 0 &&
-        testData.SmallValue.CompareTo(deserializedData.SmallValue) == 0 &&
-        testData.LargeValue.CompareTo(deserializedData.LargeValue) == 0;
-
-      if (isValid)
-      {
-        Console.WriteLine("✓ XML Serialization/Deserialization test passed");
-        Console.WriteLine();
-        return true;
-      }
-      else
-      {
-        Console.WriteLine("✗ XML Serialization/Deserialization test FAILED - data mismatch");
-        Console.WriteLine();
-        return false;
-      }
+    using (var stringWriter = new StringWriter())
+    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings
+    {
+      Indent = true,
+      OmitXmlDeclaration = false,
+      Encoding = System.Text.Encoding.UTF8
+    }))
+    {
+      xmlSerializer.Serialize(xmlWriter, testData);
+      xmlString = stringWriter.ToString();
     }
-    catch (Exception ex)
+
+    Console.WriteLine("Serialized XML:");
+    Console.WriteLine(xmlString);
+    Console.WriteLine();
+
+    // Deserialize from XML
+    HalfPointsTestData? deserializedData;
+    using (var stringReader = new StringReader(xmlString))
     {
-      Console.WriteLine($"✗ XML Serialization test FAILED: {ex.Message}");
-      Console.WriteLine($"  Stack trace: {ex.StackTrace}");
-      Console.WriteLine();
+      deserializedData = (HalfPointsTestData?)xmlSerializer.Deserialize(stringReader);
+    }
+
+    if (!VerifyDeserializedData(deserializedData, testData))
+      return false;
+
+    Console.WriteLine("\n✓ XML Serialization/Deserialization test passed");
+    Console.WriteLine();
+    return true;
+  }
+
+  private static bool VerifyDeserializedData(HalfPointsTestData? deserializedData, HalfPointsTestData testData)
+  {
+    if (deserializedData == null)
+    {
+      Console.WriteLine("✗ Deserialization returned null");
       return false;
     }
+
+    // Verify deserialized data
+    Console.WriteLine("Deserialized data:");
+
+    Console.WriteLine($"  FontSize: {deserializedData.FontSize} ({deserializedData.FontSize.ToPoints():F1}pt)");
+    if (testData.FontSize.CompareTo(deserializedData.FontSize) != 0)
+      return false;
+    Console.WriteLine($"  LineHeight: {deserializedData.LineHeight} ({deserializedData.LineHeight.ToPoints():F1}pt)");
+    if (testData.LineHeight.CompareTo(deserializedData.LineHeight) != 0)
+      return false;
+    Console.WriteLine($"  LetterSpacing: {deserializedData.LetterSpacing} ({deserializedData.LetterSpacing.ToPoints():F1}pt)");
+    if (testData.LetterSpacing.CompareTo(deserializedData.LetterSpacing) != 0)
+      return false;
+    Console.WriteLine($"  WordSpacing: {deserializedData.WordSpacing} ({deserializedData.WordSpacing.ToPoints():F1}pt)");
+    if (testData.WordSpacing.CompareTo(deserializedData.WordSpacing) != 0)
+      return false;
+    Console.WriteLine($"  SuperscriptOffset: {deserializedData.SuperscriptOffset} ({deserializedData.SuperscriptOffset.ToPoints():F1}pt)");
+    if (testData.SuperscriptOffset.CompareTo(deserializedData.SuperscriptOffset) != 0)
+      return false;
+    Console.WriteLine($"  SubscriptOffset: {deserializedData.SubscriptOffset} ({deserializedData.SubscriptOffset.ToPoints():F1}pt)");
+    if (testData.SubscriptOffset.CompareTo(deserializedData.SubscriptOffset) != 0)
+      return false;
+    Console.WriteLine($"  BorderWidth: {deserializedData.BorderWidth} ({deserializedData.BorderWidth.ToPoints():F1}pt)");
+    if (testData.BorderWidth.CompareTo(deserializedData.BorderWidth) != 0)
+      return false;
+    Console.WriteLine($"  ZeroValue: {deserializedData.ZeroValue}");
+    if (testData.ZeroValue.CompareTo(deserializedData.ZeroValue) != 0)
+      return false;
+    Console.WriteLine($"  SmallValue: {deserializedData.SmallValue}");
+    if (testData.SmallValue.CompareTo(deserializedData.SmallValue) != 0)
+      return false;
+    Console.WriteLine($"  LargeValue: {deserializedData.LargeValue}");
+    if (testData.LargeValue.CompareTo(deserializedData.LargeValue) != 0)
+      return false;
+    return true;
   }
 
   #endregion
@@ -313,113 +304,65 @@ public static class HalfPointsSerializationTests
   {
     Console.WriteLine("--- Testing HalfPoints JSON Serialization ---");
 
-    try
+    // Create test object
+    var testData = new HalfPointsTestData
     {
-      // Create test object
-      var testData = new HalfPointsTestData
-      {
-        Id = 2,
-        Name = "JSON Test",
-        FontSize = new HalfPoints(28),       // 14 points
-        LineHeight = new HalfPoints(42),     // 21 points
-        LetterSpacing = new HalfPoints(2),   // 1 point
-        WordSpacing = new HalfPoints(4),     // 2 points
-        SuperscriptOffset = new HalfPoints(12), // 6 points
-        SubscriptOffset = new HalfPoints(8), // 4 points
-        BorderWidth = new HalfPoints(6),     // 3 points
-        ZeroValue = new HalfPoints(0),
-        SmallValue = new HalfPoints(1),      // 0.5 points
-        LargeValue = new HalfPoints(2000)    // ~13.9 inches
-      };
+      Id = 2,
+      Name = "JSON Test",
+      FontSize = new HalfPoints(28),       // 14 points
+      LineHeight = new HalfPoints(42),     // 21 points
+      LetterSpacing = new HalfPoints(2),   // 1 point
+      WordSpacing = new HalfPoints(4),     // 2 points
+      SuperscriptOffset = new HalfPoints(12), // 6 points
+      SubscriptOffset = new HalfPoints(8), // 4 points
+      BorderWidth = new HalfPoints(6),     // 3 points
+      ZeroValue = new HalfPoints(0),
+      SmallValue = new HalfPoints(1),      // 0.5 points
+      LargeValue = new HalfPoints(2000)    // ~13.9 inches
+    };
 
-      Console.WriteLine($"Original data:");
-      Console.WriteLine($"  Id: {testData.Id}");
-      Console.WriteLine($"  Name: {testData.Name}");
-      Console.WriteLine($"  FontSize: {testData.FontSize}");
-      Console.WriteLine($"  LineHeight: {testData.LineHeight}");
-      Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing}");
-      Console.WriteLine($"  WordSpacing: {testData.WordSpacing}");
-      Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset}");
-      Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset}");
-      Console.WriteLine($"  BorderWidth: {testData.BorderWidth}");
-      Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
-      Console.WriteLine($"  SmallValue: {testData.SmallValue}");
-      Console.WriteLine($"  LargeValue: {testData.LargeValue}");
-      Console.WriteLine();
+    Console.WriteLine($"Original data:");
 
-      // Serialize to JSON
-      var jsonOptions = new JsonSerializerOptions
-      {
-        WriteIndented = true,
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-      };
 
-      string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
+    Console.WriteLine($"  FontSize: {testData.FontSize}");
+    Console.WriteLine($"  LineHeight: {testData.LineHeight}");
+    Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing}");
+    Console.WriteLine($"  WordSpacing: {testData.WordSpacing}");
+    Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset}");
+    Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset}");
+    Console.WriteLine($"  BorderWidth: {testData.BorderWidth}");
+    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
+    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
+    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
+    Console.WriteLine();
 
-      Console.WriteLine("Serialized JSON:");
-      Console.WriteLine(jsonString);
-      Console.WriteLine();
-
-      // Deserialize from JSON
-      var deserializedData = JsonSerializer.Deserialize<HalfPointsTestData>(jsonString, jsonOptions);
-
-      if (deserializedData == null)
-      {
-        Console.WriteLine("✗ JSON Deserialization returned null");
-        return false;
-      }
-
-      // Verify deserialized data
-      Console.WriteLine("Deserialized data:");
-      Console.WriteLine($"  Id: {deserializedData.Id}");
-      Console.WriteLine($"  Name: {deserializedData.Name}");
-      Console.WriteLine($"  FontSize: {deserializedData.FontSize}");
-      Console.WriteLine($"  LineHeight: {deserializedData.LineHeight}");
-      Console.WriteLine($"  LetterSpacing: {deserializedData.LetterSpacing}");
-      Console.WriteLine($"  WordSpacing: {deserializedData.WordSpacing}");
-      Console.WriteLine($"  SuperscriptOffset: {deserializedData.SuperscriptOffset}");
-      Console.WriteLine($"  SubscriptOffset: {deserializedData.SubscriptOffset}");
-      Console.WriteLine($"  BorderWidth: {deserializedData.BorderWidth}");
-      Console.WriteLine($"  ZeroValue: {deserializedData.ZeroValue}");
-      Console.WriteLine($"  SmallValue: {deserializedData.SmallValue}");
-      Console.WriteLine($"  LargeValue: {deserializedData.LargeValue}");
-      Console.WriteLine();
-
-      // Validate
-      bool isValid =
-        testData.Id == deserializedData.Id &&
-        testData.Name == deserializedData.Name &&
-        testData.FontSize.CompareTo(deserializedData.FontSize) == 0 &&
-        testData.LineHeight.CompareTo(deserializedData.LineHeight) == 0 &&
-        testData.LetterSpacing.CompareTo(deserializedData.LetterSpacing) == 0 &&
-        testData.WordSpacing.CompareTo(deserializedData.WordSpacing) == 0 &&
-        testData.SuperscriptOffset.CompareTo(deserializedData.SuperscriptOffset) == 0 &&
-        testData.SubscriptOffset.CompareTo(deserializedData.SubscriptOffset) == 0 &&
-        testData.BorderWidth.CompareTo(deserializedData.BorderWidth) == 0 &&
-        testData.ZeroValue.CompareTo(deserializedData.ZeroValue) == 0 &&
-        testData.SmallValue.CompareTo(deserializedData.SmallValue) == 0 &&
-        testData.LargeValue.CompareTo(deserializedData.LargeValue) == 0;
-
-      if (isValid)
-      {
-        Console.WriteLine("✓ JSON Serialization/Deserialization test passed");
-        Console.WriteLine();
-        return true;
-      }
-      else
-      {
-        Console.WriteLine("✗ JSON Serialization/Deserialization test FAILED - data mismatch");
-        Console.WriteLine();
-        return false;
-      }
-    }
-    catch (Exception ex)
+    // Serialize to JSON
+    var jsonOptions = new JsonSerializerOptions
     {
-      Console.WriteLine($"✗ JSON Serialization test FAILED: {ex.Message}");
-      Console.WriteLine($"  Stack trace: {ex.StackTrace}");
-      Console.WriteLine();
+      WriteIndented = true,
+      PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+    };
+
+    string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
+
+    Console.WriteLine("Serialized JSON:");
+    Console.WriteLine(jsonString);
+    Console.WriteLine();
+
+    // Deserialize from JSON
+    var deserializedData = JsonSerializer.Deserialize<HalfPointsTestData>(jsonString, jsonOptions);
+
+    if (deserializedData == null)
+    {
+      Console.WriteLine("✗ Deserialization returned null");
       return false;
     }
+    if (!VerifyDeserializedData(deserializedData, testData))
+      return false;
+
+    Console.WriteLine("\n✓ JSON Serialization/Deserialization test passed");
+    Console.WriteLine();
+    return true;
   }
 
   #endregion
@@ -492,8 +435,8 @@ public static class HalfPointsSerializationTests
       HalfPoints commaDecimal = new HalfPoints("2,54cm");
       Console.WriteLine($"  \"2,54cm\" → {(Int64)commaDecimal} half-points");
 
-      // Test JSON deserialization from different formats
-      Console.WriteLine("\nTesting JSON deserialization from different formats:");
+      // Test Deserialization from different formats
+      Console.WriteLine("\nTesting Deserialization from different formats:");
 
       // Numeric format
       string jsonNumeric = "{\"Value\":144}";
@@ -667,7 +610,7 @@ public static class HalfPointsSerializationTests
       sw.Stop();
       Console.WriteLine($"JSON Serialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
 
-      // Test JSON deserialization performance
+      // Test Deserialization performance
       string jsonData = JsonSerializer.Serialize(testObj);
       sw.Restart();
       for (int i = 0; i < iterations / 10; i++)
@@ -675,7 +618,7 @@ public static class HalfPointsSerializationTests
         var obj = JsonSerializer.Deserialize<HalfPointsTestData>(jsonData);
       }
       sw.Stop();
-      Console.WriteLine($"JSON Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
+      Console.WriteLine($"Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
 
       // Test comparison performance
       HalfPoints hp1 = 144;
@@ -706,7 +649,7 @@ public static class HalfPointsSerializationTests
       sw.Stop();
       Console.WriteLine($"Implicit conversion to Int64 x {iterations}: {sw.ElapsedMilliseconds}ms");
 
-      Console.WriteLine("✓ Performance tests completed");
+      Console.WriteLine("\n✓ Performance tests completed");
       Console.WriteLine();
       return true;
     }
@@ -768,7 +711,7 @@ public class HalfPointsTestData
 }
 
 /// <summary>
-/// Simple wrapper class for testing JSON deserialization scenarios.
+/// Simple wrapper class for testing Deserialization scenarios.
 /// </summary>
 public class HalfPointsWrapper
 {

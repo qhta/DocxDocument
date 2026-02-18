@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// ValueType of Red, Green, Blue compacted to UInt32
+/// ValueType of Red, Green, Blue compacted to UInt32 and written in hexadecimal format.
 /// </summary>
 /// <remarks>
 /// The RGB value is stored as a 32-bit unsigned integer where:

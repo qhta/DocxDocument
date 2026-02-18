@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 
 namespace DocumentModel;
 
-public readonly partial struct Base64Binary : IXmlSerializable
+public partial class Base64Binary : IXmlSerializable
 {
   /// <summary>
   ///   Returns the XML schema for Base64Binary serialization.

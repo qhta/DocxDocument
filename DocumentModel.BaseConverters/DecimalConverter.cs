@@ -9,7 +9,6 @@ public static class DecimalConverter
 {
   private static readonly ConversionMethodInfo[] supportedConversions =
   [
-
     new(typeof(DX.DecimalValue), nameof(ConvertFromDecimalValue), nameof(ConvertToDecimalValue)),
     new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
     new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),

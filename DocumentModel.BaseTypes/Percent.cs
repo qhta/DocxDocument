@@ -45,12 +45,31 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="Percent"/> struct from an decimal value.
+  /// Initializes a new instance of the <see cref="Percent"/> struct from a decimal value.
   /// </summary>
   /// <param name="value">The decimal value representing the percentage.</param>
   public Percent(decimal value)
   {
     this.value = value;
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Percent"/> struct from a double value.
+  /// </summary>
+  /// <param name="value">The double value representing the percentage.</param>
+  public Percent(double value)
+  {
+    this.value = (decimal)value;
+  }
+
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Percent"/> struct from an UInt64 value.
+  /// </summary>
+  /// <param name="value">The UInt64 value representing the percentage.</param>
+  public Percent(UInt64 value)
+  {
+    this.value = (decimal)value;
   }
 
   /// <summary>
@@ -264,7 +283,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
     if (targetType == typeof(Single))
       return (float)(value);
     if (targetType == typeof(Double))
-      return value;
+      return (double)value;
     if (targetType == typeof(Decimal))
       return (decimal)value;
     if (targetType == typeof(String))
@@ -348,6 +367,16 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   public static implicit operator Decimal(Percent val)
   {
     return (Decimal)val.value;
+  }
+
+  /// <summary>
+  /// Implicitly converts a <see cref="Percent"/> value to a double value.
+  /// </summary>
+  /// <param name="val">The <see cref="Percent"/> value to convert.</param>
+  /// <returns>A decimal representation of the percentage value.</returns>
+  public static implicit operator Double(Percent val)
+  {
+    return (Double)val.value;
   }
 
   /// <summary>

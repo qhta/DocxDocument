@@ -5,7 +5,14 @@
 /// </summary>
 public static partial class OpenXmlModelConverter
 {
+  /// <summary>
+  /// Represents a collection of delegates to convert a type from OpenXml.
+  /// </summary>
   public static readonly Dictionary<Type, ConvertFromOpenXml> ConvertFromOpenDelegates = new();
+
+  /// <summary>
+  /// Represents a collection of delegates to convert a type to OpenXml.
+  /// </summary>
   public static readonly Dictionary<Type, ConvertToOpenXml> ConvertToOpenDelegates = new();
 
   /// <summary>

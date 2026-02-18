@@ -2,13 +2,6 @@
 
 /// <summary>
 /// Represents a 64-bit integer value encoded as a fixed-width, uppercase hexadecimal string for use in Office Open XML documents.
-/// This struct enables type-safe conversion between numeric values and their hexadecimal string representations,
-/// supporting scenarios such as revision IDs, unique element identifiers, ARGB color values, and bitmasks in Office documents.
-/// HexLong ensures consistent 16-character formatting, seamless .NET type integration, and efficient equality checks.
-/// </summary>
-
-/// <summary>
-/// Represents a 64-bit integer value encoded as a fixed-width, uppercase hexadecimal string for use in Office Open XML documents.
 /// Enables type-safe conversion between numeric values and their hexadecimal string representations, supporting scenarios such as revision IDs, unique element identifiers, ARGB color values, and bitmasks in Office documents.
 /// Ensures consistent 16-character formatting, seamless .NET type integration, and efficient equality checks.
 /// </summary>

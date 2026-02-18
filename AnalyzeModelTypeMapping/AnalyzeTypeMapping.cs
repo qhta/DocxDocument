@@ -1,4 +1,6 @@
-﻿namespace AnalyzeModelTypeMapping;
+﻿using DocumentModel;
+
+namespace AnalyzeModelTypeMapping;
 
 /// <summary>
 ///   Represents a mapping between a model type and an Open XML type for analysis and reporting purposes.

@@ -55,15 +55,9 @@ public class PercentJsonConverter : JsonConverter<Percent>
     {
       try
       {
-        if (reader.TryGetUInt32(out uint uintValue))
+        if (reader.TryGetDecimal(out decimal decimalValue))
         {
-          return new Percent(uintValue);
-        }
-
-        // Try as other numeric types
-        if (reader.TryGetInt32(out int intValue))
-        {
-          return new Percent(intValue);
+          return new Percent(decimalValue);
         }
 
         throw new JsonException($"Invalid numeric value for Percent");

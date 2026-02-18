@@ -123,7 +123,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
 
     if (value is ushort vUShort)
     {
-        _variantType = VariantType.UInt16;
+      _variantType = VariantType.UInt16;
       _value = vUShort;
       return;
     }
@@ -137,7 +137,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
 
     if (value is UInt32 vUInt32)
     {
-        _variantType = VariantType.UInt32;
+      _variantType = VariantType.UInt32;
       _value = vUInt32;
       return;
     }
@@ -207,21 +207,21 @@ public partial class Variant : IConvertible, IEquatable<Variant>
 
     if (value is Guid vclassId)
     {
-        _variantType = VariantType.Guid;
+      _variantType = VariantType.Guid;
       _value = vclassId;
       return;
     }
 
     if (value is HexInt vError)
     {
-        _variantType = VariantType.HexInt;
+      _variantType = VariantType.HexInt;
       _value = vError;
       return;
     }
 
     if (value is byte[] vBlob)
     {
-        _variantType = VariantType.Blob;
+      _variantType = VariantType.Blob;
       _value = vBlob;
       return;
     }
@@ -253,7 +253,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   /// </summary>
   /// <param name="variantType">The variant type.</param>
   /// <param name="value">The value to store.</param>
-  public Variant(VariantType variantType, object? value) : this(variantType, null, value)
+  public Variant(VariantType variantType, object? value) : this(variantType, typeof(byte[]), value)
   {
   }
 
@@ -986,6 +986,17 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   {
     return new Variant(VariantType.DateTime, value);
   }
+
+  public static implicit operator byte[](Variant value)
+  {
+    return value.ToBytes();
+  }
+
+  public static implicit operator Variant(byte[] value)
+  {
+    return new Variant(VariantType.Blob, value);
+  }
+
   /// <summary>
   /// Converts the value to a <see cref="DateOnly"/>.
   /// </summary>
@@ -1190,7 +1201,28 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   {
     if (other is null) return false;
     if (ReferenceEquals(this, other)) return true;
-    return Equals(_value, other._value) && _variantType == other._variantType && _valueType == other._valueType;
+    if (_variantType != other._variantType) return false;
+
+    if (_value?.GetType().IsArray == true && other._value?.GetType().IsArray == true)
+    {
+      var array1 = (Array)_value;
+      var array2 = (Array)other._value;
+      if (array1.Length != array2.Length) return false;
+      for (int i = 0; i < array1.Length; i++)
+      {
+        var item1 = array1.GetValue(i);
+        var item2 = array2.GetValue(i);
+        if (!Equals(item1, item2)) return false;
+      }
+    }
+    else
+    {
+      var str1 = this.ToString();
+      var str2 = other.ToString();
+      if (!Equals(str1, str2)) return false;
+    }
+
+    return true;
   }
 
   /// <summary>

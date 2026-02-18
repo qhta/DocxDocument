@@ -13,8 +13,8 @@ public static class HexBinaryConverter
     new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
     new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
     new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
-    new(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
     new(typeof(DXW.FontSignature), nameof(ConvertFromFontSignature), nameof(ConvertToFontSignature)),
+    new(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
   ];
 
   internal static readonly ConversionToMap ConversionToMap = new();
@@ -207,8 +207,7 @@ public static class HexBinaryConverter
   }
 
   #endregion
-
-
+  
   #region FontSignature conversion.
 
   /// <summary>
