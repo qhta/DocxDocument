@@ -79,5 +79,52 @@ public static class PdfSplitter
       }
     }
   }
+
+  /// <summary>
+  ///  Split a PDF file into multiple files, dividing at the specified pages.
+  /// </summary>
+  /// <param name="sourcePdfPath"></param>
+  /// <param name="outputPdfDirectory"></param>
+  /// <param name="splitAtPages">Numbers of pages to split. Each is a number where the next part starts.
+  /// First parts starts at page 1, which must not be specified in the list of numbers.</param>
+  /// <param name="startPartNumber">Number of the fist part</param>
+  public static void SplitPdf(string sourcePdfPath, string outputPdfDirectory, int[] splitAtPages, int startPartNumber = 1)
+  {
+    using (PdfReader reader = new PdfReader(sourcePdfPath))
+    {
+      int totalPages = reader.NumberOfPages;
+      var partsCount = splitAtPages.Length+1;
+      var partDigits = partsCount.ToString().Length;
+
+      var previousPage = 0;
+      var partNo = startPartNumber;
+      for (int i = 0; i <= splitAtPages.Length; i++)
+      {
+        var partNoStr = partNo.ToString();
+        if (partNoStr.Length < partDigits)
+          partNoStr = new String(' ', partDigits - partNoStr.Length) + partNoStr;
+        var outputPdfPath = Path.Combine(outputPdfDirectory, Path.GetFileNameWithoutExtension(Path.GetFileName(sourcePdfPath)) + $" part {partNoStr}" +".pdf");
+
+        var firstPage = previousPage + 1;
+        var lastPage = i<splitAtPages.Length ? splitAtPages[i]-1 : totalPages;
+        // Split part
+        using (FileStream fs1 = new FileStream(outputPdfPath, FileMode.Create, FileAccess.Write))
+        {
+          using (Document document1 = new Document())
+          {
+            PdfCopy copy1 = new PdfCopy(document1, fs1);
+            document1.Open();
+            for (int pageNumber = firstPage; pageNumber <= lastPage; pageNumber++)
+            {
+              copy1.AddPage(copy1.GetImportedPage(reader, pageNumber));
+            }
+          }
+        }
+        previousPage = lastPage + 1;
+        partNo++;
+      }
+    }
+  }
 }
+
 

@@ -5,21 +5,6 @@
 /// </summary>
 /// <remarks>
 ///   <para>
-///   Base64Binary provides a type-safe wrapper for Base64-encoded string values used throughout Office Open XML
-///   documents. This type ensures that binary data can be safely embedded in XML and JSON formats while providing
-///   convenient conversion to and from both string and byte array representations.
-///   </para>
-///   <para>
-///   Base64 encoding is commonly used in Office documents for:
-///   <list type="bullet">
-///   <item><description>Embedded image data and multimedia content</description></item>
-///   <item><description>Binary attachments and OLE objects</description></item>
-///   <item><description>Encrypted or signed document content</description></item>
-///   <item><description>Custom binary data stored in document properties</description></item>
-///   <item><description>Font data and other resources embedded in documents</description></item>
-///   </list>
-///   </para>
-///   <para>
 ///   Base64 encoding converts binary data to ASCII characters using a 64-character alphabet (A-Z, a-z, 0-9, +, /).
 ///   The encoded string length is approximately 133% of the original binary size due to the encoding overhead.
 ///   Padding characters (=) are added to ensure the encoded string length is a multiple of 4.
@@ -37,9 +22,9 @@
 /// </remarks>
 [JsonConverter(typeof(Base64BinaryJsonConverter))]
 [SimpleType]
-public readonly partial struct Base64Binary : IEquatable<Base64Binary>, IEquatable<object>
+public partial class Base64Binary : IEquatable<Base64Binary>
 {
-  internal readonly byte[] value = Array.Empty<byte>();
+  internal byte[] value = Array.Empty<byte>();
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="Base64Binary"/> class with an empty byte array.
@@ -60,7 +45,6 @@ public readonly partial struct Base64Binary : IEquatable<Base64Binary>, IEquatab
     value = Convert.FromBase64String(val);
   }
 
-
   /// <summary>
   ///   Initializes a new instance of the <see cref="Base64Binary"/> class from a byte array.
   /// </summary>
@@ -69,6 +53,11 @@ public readonly partial struct Base64Binary : IEquatable<Base64Binary>, IEquatab
   {
     value = val;
   }
+
+  /// <summary>
+  ///   Gets the number of bytes represented by this value.
+  /// </summary>
+  public int Length => value?.Length ?? 0;
 
   /// <summary>
   ///   Implicitly converts a Base64Binary value to its Base64-encoded string representation.
@@ -182,8 +171,10 @@ public readonly partial struct Base64Binary : IEquatable<Base64Binary>, IEquatab
   ///   are considered equal even if they were created from different sources (byte array vs. Base64 string).
   ///   </para>
   /// </remarks>
-  public bool Equals(Base64Binary other)
+  public bool Equals(Base64Binary? other)
   {
+    if (other == null)
+      return false;
     return Enumerable.SequenceEqual(value, other.value);
   }
 

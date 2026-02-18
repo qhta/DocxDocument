@@ -27,7 +27,7 @@ public static class Int64Converter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps for <see cref="In64Converter"/>.
+  /// Initializes the conversion maps for this converter.
   /// </summary>
   static Int64Converter()
   {

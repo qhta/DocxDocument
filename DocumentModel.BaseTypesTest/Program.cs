@@ -1,5 +1,4 @@
-﻿
-namespace DocumentModel.BaseTypesTest;
+﻿namespace DocumentModel.BaseTypesTest;
 
 /// <summary>
 /// Entry point for the base types serialization test program.
@@ -10,186 +9,65 @@ class Program
   {
     // Ensure Unicode characters display correctly
     Console.OutputEncoding = System.Text.Encoding.UTF8;
-
     Console.WriteLine("╔════════════════════════════════════════════════════════════╗");
     Console.WriteLine("║   DocumentModel Base Types Serialization Test Suite        ║");
     Console.WriteLine("╚════════════════════════════════════════════════════════════╝");
     Console.WriteLine();
+    if (!Exec(HexBinarySerializationTests.Run))
+      return;
+    if (!Exec(HexCharSerializationTests.Run))
+      return;
+    if (!Exec(HexIntSerializationTests.Run))
+      return;
+    if (!Exec(HexLongSerializationTests.Run))
+      return;
+    if (!Exec(Base64BinarySerializationTests.Run))
+      return;
+    if (!Exec(BytePercentSerializationTests.Run))
+      return;
+    if (!Exec(PercentSerializationTests.Run))
+      return;
+    if (!Exec(PointsSerializationTests.Run))
+      return;
+    if (!Exec(TwipsSerializationTests.Run))
+      return;
+    if (!Exec(HalfPointsSerializationTests.Run))
+      return;
+    if (!Exec(EighthPointsSerializationTests.Run))
+      return;
+    if (!Exec(HexRgbSerializationTests.Run))
+      return;
+    if (!Exec(StrNumPairSerializationTests.Run))
+      return;
+    if (!Exec(StringListSerializationTests.Run))
+      return;
+    if (!Exec(ListOfSerializationTests.Run))
+      return;
+    if (!Exec(ArrayVariantSerializationTests.Run))
+      return;
+    if (!Exec(VectorVariantSerializationTests.Run))
+      return;
+    if (!Exec(VClipboardDataSerializationTests.Run))
+      return;
+    if (!Exec(VStreamDataSerializationTests.Run))
+      return;
+    if (!Exec(VariantSerializationTests.Run))
+      return;
 
-    // ReSharper disable once ReplaceWithSingleAssignment.True
-    bool allTestsPassed = true;
+    Console.WriteLine();
+    Console.WriteLine("All tests passed.");
+  }
 
-    // Run HexBinary tests
-    if (!HexBinarySerializationTests.Run())
-      allTestsPassed = false;
-
+  private static bool Exec(Func<bool> runMethod)
+  {
+    if (!runMethod())
+    {
+      Console.WriteLine("\nSome tests failed.");
+      return false;
+    }
     Console.WriteLine();
     Console.WriteLine("═══════════════════════════════════════════════════════════");
     Console.WriteLine();
-
-    // Run HexChar tests
-    if (!HexCharSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run HexInt tests
-    if (!HexIntSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run HexLong tests
-    if (!HexLongSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run BaseBinary tests
-    if (!Base64BinarySerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run BytePercent tests
-    if (!BytePercentSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run Percent tests
-    if (!PercentSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run Points tests
-    if (!PointsSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run Twips tests
-    if (!TwipsSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run HalfPoints tests
-    if (!HalfPointsSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run EighthPoints tests
-    if (!EighthPointsSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run RGB tests
-    if (!RGBSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run StrNumPair tests
-    if (!StrNumPairSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run StringList tests
-    if (!StringListSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run ListOf(T) tests
-    if (!ListOfSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run ArrayVariant tests
-    if (!ArrayVariantSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run VectorVariant tests
-    if (!VectorVariantSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run VClipboardData tests
-    // clipboard data with format identifiers and binary content
-    if (!VClipboardDataSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run VStreamData tests
-    // versioned stream data with GUID identifiers for OLE objects and embedded content
-    if (!VStreamDataSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine("═══════════════════════════════════════════════════════════");
-    Console.WriteLine();
-
-    // Run Variant tests
-    // variant type with support for all Office Open XML variant types
-    if (!VariantSerializationTests.Run())
-      allTestsPassed = false;
-
-    Console.WriteLine();
-    Console.WriteLine  ("╔════════════════════════════════════════════════════════════╗");
-    if (allTestsPassed)
-      Console.WriteLine("║         ✓ All Test Suites Passed Successfully              ║");
-    else
-      Console.WriteLine("║         ✗ Some Tests Failed - Check Output Above           ║");
-    Console.WriteLine  ("╚════════════════════════════════════════════════════════════╝");
-    Console.WriteLine();
-    Console.WriteLine("Press any key to exit...");
-    Console.ReadKey();
-
-    // Exit with appropriate code
-    Environment.Exit(allTestsPassed ? 0 : 1);
+    return true;
   }
 }

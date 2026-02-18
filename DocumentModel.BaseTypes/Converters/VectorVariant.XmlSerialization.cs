@@ -54,13 +54,9 @@ public partial class VectorVariant : IXmlSerializable
     if (baseTypeStr != null)
     {
       if (Enum.TryParse<VariantType>(baseTypeStr, out var baseType))
-      {
         BaseType = baseType;
-      }
       else
-      {
         throw new XmlException($"Invalid baseType value: {baseTypeStr}");
-      }
     }
 
     reader.Read(); // Move to content
@@ -78,6 +74,15 @@ public partial class VectorVariant : IXmlSerializable
         }
         else
         {
+          var itemBaseType = BaseType;
+          baseTypeStr = reader.GetAttribute("baseType");
+          if (baseTypeStr != null)
+          {
+            if (Enum.TryParse<VariantType>(baseTypeStr, out var baseType))
+              itemBaseType = baseType;
+            else
+              throw new XmlException($"Invalid baseType value: {baseTypeStr}");
+          }
           reader.Read(); // Move to content
 
           if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
@@ -87,9 +92,12 @@ public partial class VectorVariant : IXmlSerializable
             // Convert string to appropriate type if baseType is specified
             try
             {
-              object? convertedValue = BaseType.HasValue 
-                ? ConvertFromString(itemValue, BaseType.Value)
+              var currentCulture = CultureInfo.CurrentCulture;
+              CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
+              object? convertedValue = itemBaseType.HasValue 
+                ? ConvertFromString(itemValue, itemBaseType.Value)
                 : itemValue;
+              CultureInfo.CurrentCulture = currentCulture;
               Add(convertedValue);
             }
             catch (Exception ex)
@@ -158,10 +166,17 @@ public partial class VectorVariant : IXmlSerializable
       
       if (item != null)
       {
+        if (!BaseType.HasValue)
+        {
+          writer.WriteAttributeString("baseType", item.GetType().Name);
+        }
+        var currentCulture = CultureInfo.CurrentCulture;
+        CultureInfo.CurrentCulture = CultureInfo.InvariantCulture; 
         string? stringValue = BaseType.HasValue 
           ? ConvertToString(item, BaseType.Value)
           : item.ToString();
-        
+        CultureInfo.CurrentCulture = currentCulture;
+
         if (stringValue != null)
         {
           writer.WriteString(stringValue);

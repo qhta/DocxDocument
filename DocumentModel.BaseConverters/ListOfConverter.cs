@@ -1,9 +1,10 @@
 ﻿namespace DocumentModel.OpenXml;
+// ReSharper disable InvokeAsExtensionMember
 
 /// <summary>
 /// Provides conversion methods for ListValue types in Open XML.
 /// </summary>
-public static class ListValueConverter
+public static class ListOfConverter
 {
   #region ListOf<String> access methods
 
@@ -64,10 +65,11 @@ public static class ListValueConverter
       var result = new ListOf<EnumKind>();
       foreach (var item in element)
       {
-        var itemValue = EnumOpenXmlConverter.GetEnumValue<OpenXmlEnumType, EnumKind>(item);
+        var itemValue = EnumStrongTypedConverter.GetEnumValue<OpenXmlEnumType, EnumKind>(item);
         if (itemValue != null)
           result.Add((EnumKind)itemValue);
       }
+      return result;
     }
     return null;
   }
@@ -86,7 +88,7 @@ public static class ListValueConverter
     var resultList = new List<DX.EnumValue<OpenXmlEnumType>>();
     foreach (var item in value)
     {
-      var itemObject = EnumOpenXmlConverter.CreateOpenXmlEnumValue<OpenXmlEnumType, EnumKind>(item);
+      var itemObject = EnumStrongTypedConverter.CreateOpenXmlEnumValue<OpenXmlEnumType, EnumKind>(item);
       if (itemObject != null)
         resultList.Add(itemObject);
     }

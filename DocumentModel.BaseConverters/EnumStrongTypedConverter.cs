@@ -1,11 +1,9 @@
-﻿using Microsoft.VisualBasic;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides conversion methods for Open XML EnumValue types.
 /// </summary>
-public static class EnumOpenXmlConverter
+public static class EnumStrongTypedConverter
 {
   /// <summary>
   /// Checks if the specified type is supported for conversion here
@@ -490,10 +488,10 @@ public static class EnumOpenXmlConverter
     var openXmlType = openXmlValue.GetType();
 
     if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
-      return EnumOpenXmlConverter.GetEnumValue((DX.OpenXmlLeafElement)openXmlValue, modelType);
+      return EnumStrongTypedConverter.GetEnumValue((DX.OpenXmlLeafElement)openXmlValue, modelType);
 
     if (openXmlType.Name.StartsWith("EnumValue`"))
-      return EnumOpenXmlConverter.GetEnumValue(openXmlValue, modelType);
+      return EnumStrongTypedConverter.GetEnumValue(openXmlValue, modelType);
 
 
     throw new InvalidOperationException($"Cannot convert {openXmlValue} of type {openXmlType} to model type {modelType.FullName}");
