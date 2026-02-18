@@ -306,32 +306,9 @@ public static class HexRgbSerializationTests
   static bool TestHexRgbXmlSerialization()
   {
     Console.WriteLine("--- Testing HexRgb XML Serialization ---");      // Create test object
-    var testData = new HexRgbTestData
-    {
-      PrimaryRed = new HexRgb(255, 0, 0),
-      PrimaryGreen = new HexRgb(0, 255, 0),
-      PrimaryBlue = new HexRgb(0, 0, 255),
-      SecondaryYellow = new HexRgb(255, 255, 0),
-      Black = new HexRgb(0, 0, 0),
-      White = new HexRgb(255, 255, 255),
-      Gray = new HexRgb(128, 128, 128),
-      CustomColor1 = new HexRgb("A1B2C3"),
-      CustomColor2 = new HexRgb(0x456789)
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  PrimaryRed: {testData.PrimaryRed}");
-    Console.WriteLine($"  PrimaryGreen: {testData.PrimaryGreen}");
-    Console.WriteLine($"  PrimaryBlue: {testData.PrimaryBlue}");
-    Console.WriteLine($"  SecondaryYellow: {testData.SecondaryYellow}");
-    Console.WriteLine($"  Black: {testData.Black}");
-    Console.WriteLine($"  White: {testData.White}");
-    Console.WriteLine($"  Gray: {testData.Gray}");
-    Console.WriteLine($"  CustomColor1: {testData.CustomColor1}");
-    Console.WriteLine($"  CustomColor2: {testData.CustomColor2}");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(HexRgbTestData));
@@ -416,32 +393,9 @@ public static class HexRgbSerializationTests
   static bool TestHexRgbJsonSerialization()
   {
     Console.WriteLine("--- Testing HexRgb JSON Serialization ---");      // Create test object
-    var testData = new HexRgbTestData
-    {
-      PrimaryRed = new HexRgb(255, 0, 0),
-      PrimaryGreen = new HexRgb(0, 255, 0),
-      PrimaryBlue = new HexRgb(0, 0, 255),
-      SecondaryYellow = new HexRgb(255, 255, 0),
-      Black = new HexRgb(0, 0, 0),
-      White = new HexRgb(255, 255, 255),
-      Gray = new HexRgb(128, 128, 128),
-      CustomColor1 = new HexRgb("FF8800"),
-      CustomColor2 = new HexRgb(0x00CC99)
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  PrimaryRed: {testData.PrimaryRed}");
-    Console.WriteLine($"  PrimaryGreen: {testData.PrimaryGreen}");
-    Console.WriteLine($"  PrimaryBlue: {testData.PrimaryBlue}");
-    Console.WriteLine($"  SecondaryYellow: {testData.SecondaryYellow}");
-    Console.WriteLine($"  Black: {testData.Black}");
-    Console.WriteLine($"  White: {testData.White}");
-    Console.WriteLine($"  Gray: {testData.Gray}");
-    Console.WriteLine($"  CustomColor1: {testData.CustomColor1}");
-    Console.WriteLine($"  CustomColor2: {testData.CustomColor2}");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -466,6 +420,38 @@ public static class HexRgbSerializationTests
   }
 
   #endregion
+
+  private static HexRgbTestData CreateTestData()
+  {
+    return new HexRgbTestData
+    {
+      PrimaryRed = new HexRgb(255, 0, 0),
+      PrimaryGreen = new HexRgb(0, 255, 0),
+      PrimaryBlue = new HexRgb(0, 0, 255),
+      SecondaryYellow = new HexRgb(255, 255, 0),
+      Black = new HexRgb(0, 0, 0),
+      White = new HexRgb(255, 255, 255),
+      Gray = new HexRgb(128, 128, 128),
+      CustomColor1 = new HexRgb("A1B2C3"),
+      CustomColor2 = new HexRgb(0x456789)
+    };
+  }
+
+  private static void ShowOriginalData(HexRgbTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+
+    Console.WriteLine($"  PrimaryRed: {testData.PrimaryRed}");
+    Console.WriteLine($"  PrimaryGreen: {testData.PrimaryGreen}");
+    Console.WriteLine($"  PrimaryBlue: {testData.PrimaryBlue}");
+    Console.WriteLine($"  SecondaryYellow: {testData.SecondaryYellow}");
+    Console.WriteLine($"  Black: {testData.Black}");
+    Console.WriteLine($"  White: {testData.White}");
+    Console.WriteLine($"  Gray: {testData.Gray}");
+    Console.WriteLine($"  CustomColor1: {testData.CustomColor1}");
+    Console.WriteLine($"  CustomColor2: {testData.CustomColor2}");
+    Console.WriteLine();
+  }
 
   #region Edge Cases Tests
 

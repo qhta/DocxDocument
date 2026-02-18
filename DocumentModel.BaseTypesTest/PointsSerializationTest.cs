@@ -148,32 +148,9 @@ public static class PointsSerializationTests
   static bool TestPointsXmlSerialization()
   {
     Console.WriteLine("--- Testing Points XML Serialization ---");      // Create test object
-    var testData = new PointsTestData
-    {
-      FontSize = new Points(12),       // 12 points
-      LineHeight = new Points(18),     // 18 points
-      ParagraphSpacing = new Points(6),// 6 points
-      Indent = new Points(36),         // 36 points (0.5 inch)
-      BodyFontSize = new Points(10),   // 10 points
-      HeadingFontSize = new Points(24),// 24 points
-      ZeroValue = new Points(0),
-      SmallValue = new Points(1),      // 1 point
-      LargeValue = new Points(1000)    // ~13.9 inches
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
-    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPoints():F1}pt)");
-    Console.WriteLine($"  ParagraphSpacing: {testData.ParagraphSpacing} ({testData.ParagraphSpacing.ToPoints():F1}pt)");
-    Console.WriteLine($"  Indent: {testData.Indent} ({testData.Indent.ToInch():F2}in)");
-    Console.WriteLine($"  BodyFontSize: {testData.BodyFontSize} ({testData.BodyFontSize.ToPoints():F1}pt)");
-    Console.WriteLine($"  HeadingFontSize: {testData.HeadingFontSize} ({testData.HeadingFontSize.ToPoints():F1}pt)");
-    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
-    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
-    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(PointsTestData));
@@ -256,32 +233,9 @@ public static class PointsSerializationTests
   static bool TestPointsJsonSerialization()
   {
     Console.WriteLine("--- Testing Points JSON Serialization ---");      // Create test object
-    var testData = new PointsTestData
-    {
-      FontSize = new Points(14),       // 14 points
-      LineHeight = new Points(21),     // 21 points
-      ParagraphSpacing = new Points(8),// 8 points
-      Indent = new Points(72),         // 72 points (1 inch)
-      BodyFontSize = new Points(11),   // 11 points
-      HeadingFontSize = new Points(18),// 18 points
-      ZeroValue = new Points(0),
-      SmallValue = new Points(1),      // 1 point
-      LargeValue = new Points(1000)    // ~13.9 inches
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  FontSize: {testData.FontSize}");
-    Console.WriteLine($"  LineHeight: {testData.LineHeight}");
-    Console.WriteLine($"  ParagraphSpacing: {testData.ParagraphSpacing}");
-    Console.WriteLine($"  Indent: {testData.Indent}");
-    Console.WriteLine($"  BodyFontSize: {testData.BodyFontSize}");
-    Console.WriteLine($"  HeadingFontSize: {testData.HeadingFontSize}");
-    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
-    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
-    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -306,6 +260,38 @@ public static class PointsSerializationTests
   }
 
   #endregion
+
+  private static PointsTestData CreateTestData()
+  {
+    return new PointsTestData
+    {
+      FontSize = new Points(12),       // 12 points
+      LineHeight = new Points(18),     // 18 points
+      ParagraphSpacing = new Points(6),// 6 points
+      Indent = new Points(36),         // 36 points (0.5 inch)
+      BodyFontSize = new Points(10),   // 10 points
+      HeadingFontSize = new Points(24),// 24 points
+      ZeroValue = new Points(0),
+      SmallValue = new Points(1),      // 1 point
+      LargeValue = new Points(1000)    // ~13.9 inches
+    };
+  }
+
+  private static void ShowOriginalData(PointsTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+
+    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPoints():F1}pt)");
+    Console.WriteLine($"  ParagraphSpacing: {testData.ParagraphSpacing} ({testData.ParagraphSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  Indent: {testData.Indent} ({testData.Indent.ToInch():F2}in)");
+    Console.WriteLine($"  BodyFontSize: {testData.BodyFontSize} ({testData.BodyFontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  HeadingFontSize: {testData.HeadingFontSize} ({testData.HeadingFontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
+    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
+    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
+    Console.WriteLine();
+  }
 
   #region Edge Cases Tests
 

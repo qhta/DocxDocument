@@ -78,23 +78,8 @@ public static class BytePercentSerializationTests
   static bool TestBytePercentXmlSerialization()
   {
     Console.WriteLine("--- Testing BytePercent XML Serialization ---"); // Create test object
-    var testData = new BytePercentTestData
-    {
-      Opacity = 75,
-      ColorAlpha = 100,
-      FillLevel = 50,
-      ZeroPercent = 0,
-      MaxPercent = 100,
-      MidPercent = 50
-    };
-    Console.WriteLine($"Original data:");
-    Console.WriteLine($"  Opacity: {testData.Opacity} ({(byte)testData.Opacity}%)");
-    Console.WriteLine($"  ColorAlpha: {testData.ColorAlpha} ({(byte)testData.ColorAlpha}%)");
-    Console.WriteLine($"  FillLevel: {testData.FillLevel} ({(byte)testData.FillLevel}%)");
-    Console.WriteLine($"  ZeroPercent: {testData.ZeroPercent}");
-    Console.WriteLine($"  MaxPercent: {testData.MaxPercent}");
-    Console.WriteLine($"  MidPercent: {testData.MidPercent}");
-    Console.WriteLine();
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(BytePercentTestData));
@@ -124,6 +109,32 @@ public static class BytePercentSerializationTests
     Console.WriteLine("\n✓ XML Serialization/Deserialization test passed");
     Console.WriteLine();
     return true;
+  }
+
+  private static void ShowOriginalData(BytePercentTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+    Console.WriteLine($"  Opacity: {testData.Opacity} ({(byte)testData.Opacity}%)");
+    Console.WriteLine($"  ColorAlpha: {testData.ColorAlpha} ({(byte)testData.ColorAlpha}%)");
+    Console.WriteLine($"  FillLevel: {testData.FillLevel} ({(byte)testData.FillLevel}%)");
+    Console.WriteLine($"  ZeroPercent: {testData.ZeroPercent}");
+    Console.WriteLine($"  MaxPercent: {testData.MaxPercent}");
+    Console.WriteLine($"  MidPercent: {testData.MidPercent}");
+    Console.WriteLine();
+  }
+
+  private static BytePercentTestData CreateTestData()
+  {
+    var testData = new BytePercentTestData
+    {
+      Opacity = 75,
+      ColorAlpha = 100,
+      FillLevel = 50,
+      ZeroPercent = 0,
+      MaxPercent = 100,
+      MidPercent = 50
+    };
+    return testData;
   }
 
   private static bool VerifyDeserializedData(BytePercentTestData? deserializedData, BytePercentTestData testData)
@@ -170,23 +181,8 @@ public static class BytePercentSerializationTests
   static bool TestBytePercentJsonSerialization()
   {
     Console.WriteLine("--- Testing BytePercent JSON Serialization ---"); // Create test object
-    var testData = new BytePercentTestData
-    {
-      Opacity = 80,
-      ColorAlpha = 95,
-      FillLevel = 25,
-      ZeroPercent = 0,
-      MaxPercent = 100,
-      MidPercent = 50
-    };
-    Console.WriteLine($"Original data:");
-    Console.WriteLine($"  Opacity: {testData.Opacity}");
-    Console.WriteLine($"  ColorAlpha: {testData.ColorAlpha}");
-    Console.WriteLine($"  FillLevel: {testData.FillLevel}");
-    Console.WriteLine($"  ZeroPercent: {testData.ZeroPercent}");
-    Console.WriteLine($"  MaxPercent: {testData.MaxPercent}");
-    Console.WriteLine($"  MidPercent: {testData.MidPercent}");
-    Console.WriteLine();
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions

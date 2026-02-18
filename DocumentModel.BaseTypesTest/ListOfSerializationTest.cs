@@ -353,30 +353,9 @@ public static class ListOfSerializationTests
   static bool TestListOfJsonSerialization()
   {
     Console.WriteLine("--- Testing ListOf<T> JSON Serialization ---");      // Create test object
-    var testData = new ListOfTestData
-    {
-      EmptyIntList = new ListOf<int>(),
-      SingleInt = new ListOf<int>("99"),
-      MultipleInts = new ListOf<int>("10 20 30 40 50"),
-      EmptyStringList = new ListOf<string>(),
-      SingleString = new ListOf<string>("hello"),
-      MultipleStrings = new ListOf<string>("red,green,blue"),
-      DoubleList = new ListOf<double>("10.5 20.5 30.5"),
-      BoolList = new ListOf<bool>("true true false")
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  EmptyIntList: '{testData.EmptyIntList.InnerText}' (Count={testData.EmptyIntList.Count})");
-    Console.WriteLine($"  SingleInt: '{testData.SingleInt.InnerText}' (Count={testData.SingleInt.Count})");
-    Console.WriteLine($"  MultipleInts: '{testData.MultipleInts.InnerText}' (Count={testData.MultipleInts.Count})");
-    Console.WriteLine($"  EmptyStringList: '{testData.EmptyStringList.InnerText}' (Count={testData.EmptyStringList.Count})");
-    Console.WriteLine($"  SingleString: '{testData.SingleString.InnerText}' (Count={testData.SingleString.Count})");
-    Console.WriteLine($"  MultipleStrings: '{testData.MultipleStrings.InnerText}' (Count={testData.MultipleStrings.Count})");
-    Console.WriteLine($"  DoubleList: '{testData.DoubleList.InnerText}' (Count={testData.DoubleList.Count})");
-    Console.WriteLine($"  BoolList: '{testData.BoolList.InnerText}' (Count={testData.BoolList.Count})");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -402,6 +381,36 @@ public static class ListOfSerializationTests
   }
 
   #endregion
+
+  private static ListOfTestData CreateTestData()
+  {
+    return new ListOfTestData
+    {
+      EmptyIntList = new ListOf<int>(),
+      SingleInt = new ListOf<int>("42"),
+      MultipleInts = new ListOf<int>("1 2 3 4 5"),
+      EmptyStringList = new ListOf<string>(),
+      SingleString = new ListOf<string>("hello"),
+      MultipleStrings = new ListOf<string>("apple,banana,cherry"),
+      DoubleList = new ListOf<double>("1.5 2.5 3.5"),
+      BoolList = new ListOf<bool>("true false true false")
+    };
+  }
+
+  private static void ShowOriginalData(ListOfTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+
+    Console.WriteLine($"  EmptyIntList: '{testData.EmptyIntList.InnerText}' (Count={testData.EmptyIntList.Count})");
+    Console.WriteLine($"  SingleInt: '{testData.SingleInt.InnerText}' (Count={testData.SingleInt.Count})");
+    Console.WriteLine($"  MultipleInts: '{testData.MultipleInts.InnerText}' (Count={testData.MultipleInts.Count})");
+    Console.WriteLine($"  EmptyStringList: '{testData.EmptyStringList.InnerText}' (Count={testData.EmptyStringList.Count})");
+    Console.WriteLine($"  SingleString: '{testData.SingleString.InnerText}' (Count={testData.SingleString.Count})");
+    Console.WriteLine($"  MultipleStrings: '{testData.MultipleStrings.InnerText}' (Count={testData.MultipleStrings.Count})");
+    Console.WriteLine($"  DoubleList: '{testData.DoubleList.InnerText}' (Count={testData.DoubleList.Count})");
+    Console.WriteLine($"  BoolList: '{testData.BoolList.InnerText}' (Count={testData.BoolList.Count})");
+    Console.WriteLine();
+  }
 
   #region Edge Cases Tests
 

@@ -163,36 +163,8 @@ public static class EighthPointsSerializationTests
   static bool TestEighthPointsXmlSerialization()
   {
     Console.WriteLine("--- Testing EighthPoints XML Serialization ---");      // Create test object
-    var testData = new EighthPointsTestData
-    {
-      FontSize = new EighthPoints(96),         // 12 points
-      LineHeight = new EighthPoints(144),      // 18 points
-      MicroKerning = new EighthPoints(1),      // 0.125 points
-      LetterSpacing = new EighthPoints(2),     // 0.25 points
-      WordSpacing = new EighthPoints(8),       // 1 point
-      SuperscriptOffset = new EighthPoints(40),// 5 points
-      SubscriptOffset = new EighthPoints(24),  // 3 points
-      BorderWidth = new EighthPoints(16),      // 2 points
-      ZeroValue = new EighthPoints(0),
-      SmallValue = new EighthPoints(1),        // 0.125 points
-      LargeValue = new EighthPoints(8000)      // ~13.9 inches
-    };
-
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
-    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPoints():F1}pt)");
-    Console.WriteLine($"  MicroKerning: {testData.MicroKerning} ({testData.MicroKerning.ToPoints():F3}pt)");
-    Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing} ({testData.LetterSpacing.ToPoints():F3}pt)");
-    Console.WriteLine($"  WordSpacing: {testData.WordSpacing} ({testData.WordSpacing.ToPoints():F1}pt)");
-    Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset} ({testData.SuperscriptOffset.ToPoints():F1}pt)");
-    Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset} ({testData.SubscriptOffset.ToPoints():F1}pt)");
-    Console.WriteLine($"  BorderWidth: {testData.BorderWidth} ({testData.BorderWidth.ToPoints():F1}pt)");
-    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
-    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
-    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
-    Console.WriteLine();
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(EighthPointsTestData));
@@ -235,36 +207,8 @@ public static class EighthPointsSerializationTests
   static bool TestEighthPointsJsonSerialization()
   {
     Console.WriteLine("--- Testing EighthPoints JSON Serialization ---");      // Create test object
-    var testData = new EighthPointsTestData
-    {
-      FontSize = new EighthPoints(112),        // 14 points
-      LineHeight = new EighthPoints(168),      // 21 points
-      MicroKerning = new EighthPoints(2),      // 0.25 points
-      LetterSpacing = new EighthPoints(4),     // 0.5 points
-      WordSpacing = new EighthPoints(16),      // 2 points
-      SuperscriptOffset = new EighthPoints(48),// 6 points
-      SubscriptOffset = new EighthPoints(32),  // 4 points
-      BorderWidth = new EighthPoints(24),      // 3 points
-      ZeroValue = new EighthPoints(0),
-      SmallValue = new EighthPoints(1),        // 0.125 points
-      LargeValue = new EighthPoints(8000)      // ~13.9 inches
-    };
-
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  FontSize: {testData.FontSize}");
-    Console.WriteLine($"  LineHeight: {testData.LineHeight}");
-    Console.WriteLine($"  MicroKerning: {testData.MicroKerning}");
-    Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing}");
-    Console.WriteLine($"  WordSpacing: {testData.WordSpacing}");
-    Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset}");
-    Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset}");
-    Console.WriteLine($"  BorderWidth: {testData.BorderWidth}");
-    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
-    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
-    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
-    Console.WriteLine();
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -287,6 +231,23 @@ public static class EighthPointsSerializationTests
     Console.WriteLine("\n✓ JSON Serialization/Deserialization test passed");
     Console.WriteLine();
     return true;
+  }
+
+  private static void ShowOriginalData(EighthPointsTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+    Console.WriteLine($"  FontSize: {testData.FontSize}");
+    Console.WriteLine($"  LineHeight: {testData.LineHeight}");
+    Console.WriteLine($"  MicroKerning: {testData.MicroKerning}");
+    Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing}");
+    Console.WriteLine($"  WordSpacing: {testData.WordSpacing}");
+    Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset}");
+    Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset}");
+    Console.WriteLine($"  BorderWidth: {testData.BorderWidth}");
+    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
+    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
+    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
+    Console.WriteLine();
   }
 
   private static bool VerifyDeserializedData(EighthPointsTestData? deserializedData, EighthPointsTestData testData)
@@ -335,6 +296,24 @@ public static class EighthPointsSerializationTests
   }
 
   #endregion
+
+  private static EighthPointsTestData CreateTestData()
+  {
+    return new EighthPointsTestData
+    {
+      FontSize = new EighthPoints(96),         // 12 points
+      LineHeight = new EighthPoints(144),      // 18 points
+      MicroKerning = new EighthPoints(1),      // 0.125 points
+      LetterSpacing = new EighthPoints(2),     // 0.25 points
+      WordSpacing = new EighthPoints(8),       // 1 point
+      SuperscriptOffset = new EighthPoints(40),// 5 points
+      SubscriptOffset = new EighthPoints(24),  // 3 points
+      BorderWidth = new EighthPoints(16),      // 2 points
+      ZeroValue = new EighthPoints(0),
+      SmallValue = new EighthPoints(1),        // 0.125 points
+      LargeValue = new EighthPoints(8000)      // ~13.9 inches
+    };
+  }
 
   #region Edge Cases Tests
 
