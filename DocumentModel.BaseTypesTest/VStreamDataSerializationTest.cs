@@ -154,8 +154,8 @@ public static class VStreamDataSerializationTests
     byte[] docBytes = Encoding.UTF8.GetBytes(documentContent);
     VStreamData docStream = new VStreamData(testGuid, docBytes);
     string reconstructed = Encoding.UTF8.GetString(docStream.Data);
-    Console.WriteLine($"  Original: {documentContent.Substring(0, Math.Min(50, documentContent.Length))}...");
-    Console.WriteLine($"  Reconstructed: {reconstructed.Substring(0, Math.Min(50, reconstructed.Length))}...");
+    Console.WriteLine($"  Original: {documentContent.Substring(0, System.Math.Min(50, documentContent.Length))}...");
+    Console.WriteLine($"  Reconstructed: {reconstructed.Substring(0, System.Math.Min(50, reconstructed.Length))}...");
     if (reconstructed != documentContent)
     {
       Console.WriteLine("✗ Document content test FAILED");
@@ -340,7 +340,7 @@ public static class VStreamDataSerializationTests
     }
 
     Console.WriteLine("Serialized XML (first 800 chars):");
-    Console.WriteLine(xmlString.Substring(0, Math.Min(800, xmlString.Length)));
+    Console.WriteLine(xmlString.Substring(0, System.Math.Min(800, xmlString.Length)));
     Console.WriteLine("...");
     Console.WriteLine();
 
@@ -408,7 +408,7 @@ public static class VStreamDataSerializationTests
     string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
 
     Console.WriteLine("Serialized JSON (first 800 chars):");
-    Console.WriteLine(jsonString.Substring(0, Math.Min(800, jsonString.Length)));
+    Console.WriteLine(jsonString.Substring(0, System.Math.Min(800, jsonString.Length)));
     Console.WriteLine("...");
     Console.WriteLine();
 

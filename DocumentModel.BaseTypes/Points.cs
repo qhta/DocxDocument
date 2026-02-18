@@ -25,9 +25,9 @@ public readonly partial struct Points : IComparable<Points>
   /// How many points are in one centimeter.
   /// </summary>
   /// <remarks>
-  /// The value is approximately 28.35 points per centimeter, calculated as PointsInMM / 10.0.
+  /// The value is approximately 28.35 points per centimeter, calculated as PointsInMM * 10.0.
   /// </remarks>
-  public const double PointsInCM = PointsInMM / 10.0;
+  public const double PointsInCM = PointsInMM * 10.0;
 
   /// <summary>
   /// How many points are in one inch.

@@ -26,9 +26,9 @@ public readonly partial struct HalfPoints : IComparable<HalfPoints>
   /// How many half-points are in one centimeter.
   /// </summary>
   /// <remarks>
-  /// The value is approximately 56.7 half-points per centimeter, calculated as HalfPointsInMM / 10.0.
+  /// The value is approximately 56.7 half-points per centimeter, calculated as HalfPointsInMM * 10.0.
   /// </remarks>
-  public const double HalfPointsInCM = HalfPointsInMM / 10.0;
+  public const double HalfPointsInCM = HalfPointsInMM * 10.0;
 
   /// <summary>
   /// How many half-points are in one inch.
