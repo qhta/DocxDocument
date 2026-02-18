@@ -59,7 +59,6 @@ public static class EnumConverter
   /// Creates a mapping between model enum values and OpenXml enum values.
   /// </summary>
   /// <param name="modelEnumType">The model enum type.</param>
-  /// <param name="openXmlEnumValuesType">The OpenXml enum values type.</param>
   /// <returns>Mapping between model enum values and OpenXml enum values.</returns>
   /// <exception cref="InvalidOperationException"></exception>
   private static BiDiDictionary<object, object> GetEnumValuesMapToStringType(Type modelEnumType)

@@ -92,6 +92,7 @@ public partial class Variant : IXmlSerializable
         throw new XmlException($"Could not resolve type: {valueTypeAttr}");
       }
     }
+    else 
 
     reader.Read(); // Move to content
 

@@ -8,8 +8,21 @@
 /// <param name="ConvertToMethod"></param>
 public record ConversionMethodInfo(Type TargetType, string ConvertFromMethod, string ConvertToMethod);
 
-public class ConversionToMap : Dictionary<(Type Source, Type Target), Func<object, Type, object?>>
+/// <summary>
+/// Represents a collection of conversion functions that map a source type to a target type, enabling dynamic type
+/// conversions at runtime.
+/// </summary>
+/// <remarks>This class extends the generic Dictionary, using a tuple of source and target types as the key and a
+/// delegate that performs the conversion as the value. It is useful for scenarios where type conversions need to be
+/// registered and resolved dynamically, such as in serialization frameworks or custom mapping utilities. The Append
+/// method allows merging conversion mappings from another ConversionToMap instance, facilitating
+/// extensibility.</remarks>
+public class ConversionToMap: Dictionary<(Type Source, Type Target), Func<object, Type, object?>>
 {
+  /// <summary>
+  /// Appends map from other source.
+  /// </summary>
+  /// <param name="source"></param>
   public void Append(ConversionToMap source)
   {
     foreach (var item in source)
@@ -19,8 +32,21 @@ public class ConversionToMap : Dictionary<(Type Source, Type Target), Func<objec
   }
 }
 
-public class ConversionFromMap : Dictionary<(Type Source, Type Target), Func<object, Type, object?>>
+/// <summary>
+/// Represents a collection of type conversion functions that map source types to target types, enabling dynamic
+/// conversion between types at runtime.
+/// </summary>
+/// <remarks>This class extends the generic Dictionary, using a tuple of source and target types as the key and a
+/// conversion function as the value. It is useful for scenarios where type conversions need to be registered and
+/// retrieved dynamically, such as in serialization frameworks or custom type mappers. The Append method allows merging
+/// conversion mappings from another ConversionFromMap instance, overwriting existing mappings for the same type
+/// pairs.</remarks>
+public class ConversionFromMap: Dictionary<(Type Source, Type Target), Func<object, Type, object?>>
 {
+  /// <summary>
+  /// Appends map from other source.
+  /// </summary>
+  /// <param name="source"></param>
   public void Append(ConversionFromMap source)
   {
     foreach (var item in source)
@@ -30,9 +56,11 @@ public class ConversionFromMap : Dictionary<(Type Source, Type Target), Func<obj
   }
 }
 
+/// <summary>
+/// Represents base functionality for specific converters.
+/// </summary>
 public static class ConverterBase
 {
-
   /// <summary>
   /// Retrieves the public instance property named "Val" from the specified type, or returns the single declared public
   /// instance property if only one exists.
@@ -57,42 +85,6 @@ public static class ConverterBase
     return valProp;
   }
 
-  ///// <summary>
-  ///// Determines whether the specified type is supported, either directly or through inheritance, based on the provided
-  ///// list of supported types.
-  ///// </summary>
-  ///// <remarks>This method checks if the given type is a subclass of OpenXmlLeafTextElement or
-  ///// OpenXmlLeafElement, or if it matches any of the types in the supportedConversions array. For types derived from
-  ///// OpenXmlLeafElement, the method inspects the 'Val' property or, if absent, the only declared property to determine
-  ///// support based on its type.</remarks>
-  ///// <param name="type">The type to evaluate for support. Cannot be null.</param>
-  ///// <param name="supportedConversions">An array of types that are considered supported. Cannot be null or empty.</param>
-  ///// <returns>true if the specified type or its relevant property type is supported; otherwise, false.</returns>
-  //public static bool SupportsType(Type type, Type[] supportedConversions)
-  //{
-  //  if (type.IsSubclassOf(typeof(DX.OpenXmlLeafTextElement)))
-  //    return true;
-  //  if (type.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
-  //  {
-  //    var valProp = type.GetProperty("Val");
-  //    if (valProp == null)
-  //    {
-  //      var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-  //      if (allProps.Length == 1)
-  //        valProp = allProps[0];
-  //      else
-  //        return false;
-
-  //    }
-  //    if (SupportsType(valProp.PropertyType, supportedConversions))
-  //      return true;
-
-  //    return false;
-  //  }
-
-  //  return supportedConversions.Contains(type);
-  //}
-
   /// <summary>
   /// Registers conversion methods for the specified model type using the provided converter type and supported
   /// conversions.
@@ -108,13 +100,16 @@ public static class ConverterBase
   /// the target type. This dictionary will be updated with the registered conversion methods.</param>
   /// <param name="conversionFromMap">A dictionary that maps a pair of target and source types to a delegate used for converting from the target type to
   /// the model type. This dictionary will be updated with the registered conversion methods.</param>
-  public static void RegisterConversionMethods(Type converterType, Type modelType, ConversionMethodInfo[] supportedConversions,
-    ConversionToMap conversionToMap, ConversionFromMap conversionFromMap)
+  public static void RegisterConversionMethods
+  (Type converterType, Type modelType, ConversionMethodInfo[] supportedConversions, ConversionToMap conversionToMap,
+    ConversionFromMap conversionFromMap)
   {
     foreach (var item in supportedConversions)
     {
-      var fromMethod = converterType.GetMethod(item.ConvertFromMethod, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-      var toMethod = converterType.GetMethod(item.ConvertToMethod, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+      var fromMethod = converterType.GetMethod(item.ConvertFromMethod,
+        BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+      var toMethod = converterType.GetMethod(item.ConvertToMethod,
+        BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
       try
       {
         if (fromMethod != null)
@@ -139,8 +134,7 @@ public static class ConverterBase
             return toMethod.Invoke(null, [value, targetType])!;
           };
         }
-      }
-      catch (TargetInvocationException ex)
+      } catch (TargetInvocationException ex)
       {
         if (ex.InnerException != null)
           throw ex.InnerException;
@@ -165,7 +159,9 @@ public static class ConverterBase
     var sourceType = value.GetType();
     if (TryConvertTo(value, targetType, conversionToMap, out var result))
       return result;
-    throw new NotSupportedException($"Conversion from {sourceType.FullName} to {targetType.FullName} is not supported.");
+
+    throw new NotSupportedException(
+      $"Conversion from {sourceType.FullName} to {targetType.FullName} is not supported.");
   }
 
   /// <summary>
@@ -190,13 +186,10 @@ public static class ConverterBase
     if (sourceType == targetType)
       return true;
 
-    //Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
-
     var sourceSearchType = sourceType;
     if (sourceType.IsEnum)
       sourceSearchType = typeof(Enum);
 
-    if (targetType.Name=="Panose1Number") Debug.Assert((true));
     var targetSubType = Nullable.GetUnderlyingType(targetType) ?? targetType;
     if (targetSubType.Name.StartsWith("EnumValue`"))
     {
@@ -205,15 +198,14 @@ public static class ConverterBase
     while (targetSubType != null)
     {
       //Debug.WriteLine($"Search for conversion from {sourceType.FullName} to {targetSubType.FullName}");
-
-      if (conversionToMap.TryGetValue((sourceSearchType, targetSubType), out var conversionFunc)
-          || (sourceSearchType != sourceType) && conversionToMap.TryGetValue((sourceType, targetSubType), out conversionFunc))
+      if (conversionToMap.TryGetValue((sourceSearchType, targetSubType), out var conversionFunc) ||
+          (sourceSearchType != sourceType) &&
+          conversionToMap.TryGetValue((sourceType, targetSubType), out conversionFunc))
       {
         //Debug.WriteLine($"Converting from {sourceType.FullName} to {targetSubType.FullName}");
         result = conversionFunc(value, targetType);
         return true;
       }
-
       targetSubType = targetSubType.BaseType;
     }
     if (TryImplicitConvertTo(value, targetType, out result))
@@ -247,8 +239,9 @@ public static class ConverterBase
       result = targetInstance;
       return true;
     }
-    if (TryUseConverter(value, targetType, out result))
+    if (TryUseIConvertibleInterface(value, targetType, out result))
       return true;
+
     return false;
   }
 
@@ -263,12 +256,14 @@ public static class ConverterBase
   /// source type.</exception>
   public static object? ConvertFrom(object? value, Type targetType, ConversionFromMap conversionFromMap)
   {
-
     if (value == null) return null;
+
     var sourceType = value.GetType();
     if (TryConvertFrom(value, targetType, conversionFromMap, out var result))
       return result;
-    throw new NotSupportedException($"Conversion from {sourceType.FullName} to {targetType.FullName} is not supported.");
+
+    throw new NotSupportedException(
+      $"Conversion from {sourceType.FullName} to {targetType.FullName} is not supported.");
   }
 
   /// <summary>
@@ -283,7 +278,8 @@ public static class ConverterBase
   /// <param name="result">When this method returns, contains the converted value if the conversion succeeded, or the original value if no
   /// conversion was necessary. This parameter is passed uninitialized.</param>
   /// <returns>true if the conversion was successful or not required; otherwise, false.</returns>
-  public static bool TryConvertFrom(object? value, Type targetType, ConversionFromMap conversionFromMap, out object? result)
+  public static bool TryConvertFrom
+    (object? value, Type targetType, ConversionFromMap conversionFromMap, out object? result)
   {
     result = value;
     if (value == null) return true;
@@ -291,7 +287,6 @@ public static class ConverterBase
     var sourceType = value.GetType();
     if (sourceType == targetType)
       return true;
-
 
     //Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
     var targetSearchType = targetType;
@@ -305,18 +300,16 @@ public static class ConverterBase
     while (sourceSubType != null)
     {
       //Debug.WriteLine($"Search for conversion from {sourceSubType.FullName} to {targetType.FullName}");
-
-      if (conversionFromMap.TryGetValue((sourceSubType, targetSearchType), out var conversionFunc)
-          || (targetSearchType!=targetType) && conversionFromMap.TryGetValue((sourceSubType, targetType), out conversionFunc))
+      if (conversionFromMap.TryGetValue((sourceSubType, targetSearchType), out var conversionFunc) ||
+          (targetSearchType != targetType) &&
+          conversionFromMap.TryGetValue((sourceSubType, targetType), out conversionFunc))
       {
         //Debug.WriteLine($"Converting from {sourceType.FullName} to {sourceSubType.FullName}");
         result = conversionFunc(value, targetType);
         return true;
       }
-
       sourceSubType = sourceSubType.BaseType;
     }
-
     if (TryImplicitConvertFrom(value, targetType, out result))
       return true;
 
@@ -326,14 +319,14 @@ public static class ConverterBase
       if (TryConvertFrom(valValue, targetType, conversionFromMap, out result))
         return true;
     }
-
     if (sourceType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
     {
       var valProp = sourceType.GetValProperty();
       if (valProp == null)
         return false;
+
       var valValue = valProp.GetValue(value);
-      if (valValue!=null && TryConvertFrom(valValue, targetType, conversionFromMap, out result))
+      if (valValue != null && TryConvertFrom(valValue, targetType, conversionFromMap, out result))
         return true;
     }
     if (sourceType.IsEqualOrSubclassOf(typeof(DX.StringValue)))
@@ -341,11 +334,12 @@ public static class ConverterBase
       var valProp = sourceType.GetValProperty();
       if (valProp == null)
         throw new NotSupportedException($"Val property in {sourceType.FullName} not found.");
+
       var valValue = valProp.GetValue(value);
       if (TryConvertFrom(valValue, targetType, conversionFromMap, out result))
         return true;
     }
-    if (TryUseConverter(value, targetType, out result))
+    if (TryUseIConvertibleInterface(value, targetType, out result))
       return true;
 
     return false;
@@ -369,11 +363,11 @@ public static class ConverterBase
       result = source;
       return true;
     }
-
     var methods = sourceType.GetMethods(BindingFlags.Public | BindingFlags.Static)
-    .Concat(targetType.GetMethods(BindingFlags.Public | BindingFlags.Static)).ToArray();
-    var op = methods.FirstOrDefault(m => m.Name == "op_Implicit"
-           && m.ReturnType == targetType && m.GetParameters() is [{ ParameterType: var p }] && p.IsAssignableFrom(sourceType));
+      .Concat(targetType.GetMethods(BindingFlags.Public | BindingFlags.Static)).ToArray();
+    var op = methods.FirstOrDefault(m =>
+      m.Name == "op_Implicit" && m.ReturnType == targetType && m.GetParameters() is [{ ParameterType: var p }] &&
+      p.IsAssignableFrom(sourceType));
     if (op != null)
     {
       result = op.Invoke(null, [source]);
@@ -381,6 +375,7 @@ public static class ConverterBase
     }
     return false;
   }
+
   /// <summary>
   /// Attempts to convert a value from the specified target type using an implicit conversion operator, if available.
   /// </summary>
@@ -399,11 +394,11 @@ public static class ConverterBase
       result = source;
       return true;
     }
-
     var methods = sourceType.GetMethods(BindingFlags.Public | BindingFlags.Static)
       .Concat(targetType.GetMethods(BindingFlags.Public | BindingFlags.Static)).ToArray();
-    var op = methods.FirstOrDefault(m => m.Name == "op_Implicit"
-                                         && m.ReturnType == targetType && m.GetParameters() is [{ ParameterType: var p }] && p.IsAssignableFrom(sourceType));
+    var op = methods.FirstOrDefault(m =>
+      m.Name == "op_Implicit" && m.ReturnType == targetType && m.GetParameters() is [{ ParameterType: var p }] &&
+      p.IsAssignableFrom(sourceType));
     if (op != null)
     {
       result = op.Invoke(null, [source]);
@@ -415,11 +410,11 @@ public static class ConverterBase
   /// <summary>
   /// Attempts to use IConvertible to convert the source object to the target type.
   /// </summary>
-  /// <param name="source"></param>
-  /// <param name="targetType"></param>
-  /// <param name="result"></param>
+  /// <param name="source">Source object to convert.</param>
+  /// <param name="targetType">Target type to convert.</param>
+  /// <param name="result">Converted result.</param>
   /// <returns></returns>
-  public static bool TryUseConverter(object? source, Type targetType, out object? result)
+  public static bool TryUseIConvertibleInterface(object? source, Type targetType, out object? result)
   {
     if (source is IConvertible convertible && targetType.GetInterface("IConvertible") != null)
     {
@@ -431,11 +426,8 @@ public static class ConverterBase
       {
         Debug.WriteLine(e);
       }
-
     }
-
     result = null;
     return false;
   }
-
 }

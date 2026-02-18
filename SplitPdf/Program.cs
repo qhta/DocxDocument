@@ -4,46 +4,9 @@
   {
     static void Main(string[] args)
     {
-      //PdfSplitter.SplitPdf(@"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part1.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part2.pdf",
-      //  179);
-      //PdfSplitter.SplitPdf(@"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part2.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Chapter17.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part3.pdf",
-      //  1355);
-      //PdfSplitter.SplitPdf(@"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part3.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Chapter18.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part4.pdf",
-      //  994);
-      //PdfSplitter.SplitPdf(@"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part4.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Chapter19.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part5.pdf",
-      //  204);
-      //PdfSplitter.SplitPdf(@"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part5.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Chapter20.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part6.pdf",
-      //  463);
-      //PdfSplitter.SplitPdf(@"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part6.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Chapter21.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part7.pdf",
-      //  419);
-      //PdfSplitter.SplitPdf(@"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part7.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Chapter22.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part8.pdf",
-      //  202);
-      //PdfSplitter.SplitPdf(@"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part8.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Chapter23.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part9.pdf",
-      //  6);
-      //PdfSplitter.SplitPdf(@"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part9.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 ChapterA.pdf",
-      //  @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part10.pdf",
-      //  327);
-      PdfSplitter.SplitPdf(@"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part10.pdf",
-        @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 ChapterB.pdf",
-        @"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016 Part11.pdf",
-        275);
+      PdfSplitter.SplitPdf(@"d:\OneDrive\VS\Docs\OpenXML\ISO_IEC_29500-1_2016.pdf",
+        @"d:\OneDrive\VS\Docs\OpenXML\",
+        [11,12,16,20,23,24,25,26,31,37,38,74,113,137,150,174,179,1533,2526,2729,3191,3609,3810,3815,4141,4415,4416,4418,4421,4422,4498,4499,4509,4542,4548,5026,5034],0);
     }
   }
 }

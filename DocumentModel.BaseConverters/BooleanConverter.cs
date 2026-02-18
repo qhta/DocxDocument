@@ -93,8 +93,6 @@ public static class BooleanConverter
   /// Creates an OnOffValue using specified string representations for false and true.
   /// </summary>
   /// <param name="value">The boolean value to convert.</param>
-  /// <param name="falseString">The string representation for false (default is "0").</param>
-  /// <param name="trueString">The string representation for true (default is "1").</param>
   /// <returns>A new OnOffValue object, or null if the input value is null.</returns>
   private static DX.OnOffValue? ConvertToOnOffValue(Boolean? value)
   {
@@ -397,7 +395,7 @@ public static class BooleanConverter
   /// Converts a boolean value to enum value of Office2010 Word OnOffValue.
   /// </summary>
   /// <param name="value">The boolean value to convert.</param>
-  /// <returns>An <see cref="OnOffValues"/> corresponding to the specified Boolean value, or <see
+  /// <returns>An <see cref="DXO10W.OnOffValues"/> corresponding to the specified Boolean value, or <see
   /// langword="null"/> if <paramref name="value"/> is <see langword="null"/>.</returns>
   private static DX.EnumValue<DXO10W.OnOffValues>? ConvertToEnumValueOfO10WOnOffValues(Boolean? value)
   {
@@ -531,7 +529,7 @@ public static class BooleanConverter
   /// Converts a boolean value to enum value of Office2010 Word OnOffValue.
   /// </summary>
   /// <param name="value">The boolean value to convert.</param>
-  /// <returns>An <see cref="OnOffValues"/> corresponding to the specified Boolean value, or <see
+  /// <returns>An <see cref="DXO10W.OnOffValues"/> corresponding to the specified Boolean value, or <see
   /// langword="null"/> if <paramref name="value"/> is <see langword="null"/>.</returns>
   private static DX.EnumValue<DXM.BooleanValues>? ConvertToEnumValueOfBooleanValues(Boolean? value)
   {
@@ -635,7 +633,7 @@ public static class BooleanConverter
 
   #endregion
 
-  #region string conversion.
+  #region String conversion.
 
   /// <summary>
   /// Converts the specified string representation of a logical value to its nullable Boolean equivalent.

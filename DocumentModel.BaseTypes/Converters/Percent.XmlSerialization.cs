@@ -46,7 +46,7 @@ public partial struct Percent : IXmlSerializable
         }
 
         // Parse the percent string to double
-        var parsedValue = uint.Parse(percentString.Replace(",", "."), CultureInfo.InvariantCulture);
+        var parsedValue = decimal.Parse(percentString.Replace(",", "."), CultureInfo.InvariantCulture);
 
         // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
