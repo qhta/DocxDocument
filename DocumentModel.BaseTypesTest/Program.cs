@@ -13,46 +13,26 @@ class Program
     Console.WriteLine("║   DocumentModel Base Types Serialization Test Suite        ║");
     Console.WriteLine("╚════════════════════════════════════════════════════════════╝");
     Console.WriteLine();
-    if (!Exec(HexBinarySerializationTests.Run))
-      return;
-    if (!Exec(HexCharSerializationTests.Run))
-      return;
-    if (!Exec(HexIntSerializationTests.Run))
-      return;
-    if (!Exec(HexLongSerializationTests.Run))
-      return;
-    if (!Exec(Base64BinarySerializationTests.Run))
-      return;
-    if (!Exec(BytePercentSerializationTests.Run))
-      return;
-    if (!Exec(PercentSerializationTests.Run))
-      return;
-    if (!Exec(PointsSerializationTests.Run))
-      return;
-    if (!Exec(TwipsSerializationTests.Run))
-      return;
-    if (!Exec(HalfPointsSerializationTests.Run))
-      return;
-    if (!Exec(EighthPointsSerializationTests.Run))
-      return;
-    if (!Exec(HexRgbSerializationTests.Run))
-      return;
-    if (!Exec(StrNumPairSerializationTests.Run))
-      return;
-    if (!Exec(StringListSerializationTests.Run))
-      return;
-    if (!Exec(ListOfSerializationTests.Run))
-      return;
-    if (!Exec(ArrayVariantSerializationTests.Run))
-      return;
-    if (!Exec(VectorVariantSerializationTests.Run))
-      return;
-    if (!Exec(VClipboardDataSerializationTests.Run))
-      return;
-    if (!Exec(VStreamDataSerializationTests.Run))
-      return;
-    if (!Exec(VariantSerializationTests.Run))
-      return;
+    if (!Exec(ArrayVariantSerializationTests.Run)) return;
+    if (!Exec(Base64BinarySerializationTests.Run)) return;
+    if (!Exec(BytePercentSerializationTests.Run)) return;
+    if (!Exec(EighthPointsSerializationTests.Run)) return;
+    if (!Exec(HalfPointsSerializationTests.Run)) return;
+    if (!Exec(HexBinarySerializationTests.Run)) return;
+    if (!Exec(HexCharSerializationTests.Run)) return;
+    if (!Exec(HexIntSerializationTests.Run)) return;
+    if (!Exec(HexLongSerializationTests.Run)) return;
+    if (!Exec(HexRgbSerializationTests.Run)) return;
+    if (!Exec(ListOfSerializationTests.Run)) return;
+    if (!Exec(PercentSerializationTests.Run)) return;
+    if (!Exec(PointsSerializationTests.Run)) return;
+    if (!Exec(StringListSerializationTests.Run)) return;
+    if (!Exec(StrNumPairSerializationTests.Run)) return;
+    if (!Exec(TwipsSerializationTests.Run)) return;
+    if (!Exec(VariantSerializationTests.Run)) return;
+    if (!Exec(VClipboardDataSerializationTests.Run)) return;
+    if (!Exec(VectorVariantSerializationTests.Run)) return;
+    if (!Exec(VStreamDataSerializationTests.Run)) return;
 
     Console.WriteLine();
     Console.WriteLine("All tests passed.");

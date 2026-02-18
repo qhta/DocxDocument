@@ -148,32 +148,8 @@ public static class TwipsSerializationTests
   static bool TestTwipsXmlSerialization()
   {
     Console.WriteLine("--- Testing Twips XML Serialization ---");      // Create test object
-    var testData = new TwipsTestData
-    {
-      PageWidth = new Twips(12240),    // 8.5 inches
-      PageHeight = new Twips(15840),   // 11 inches
-      LeftMargin = new Twips(1440),    // 1 inch
-      TopMargin = new Twips(1440),     // 1 inch
-      FontSize = new Twips(240),       // 12 points
-      LineSpacing = new Twips(360),    // 18 points
-      ZeroValue = new Twips(0),
-      SmallValue = new Twips(20),      // 1 point
-      LargeValue = new Twips(1000000)  // ~694 inches
-    };
-
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  PageWidth: {testData.PageWidth} ({testData.PageWidth.ToInch():F2}in)");
-    Console.WriteLine($"  PageHeight: {testData.PageHeight} ({testData.PageHeight.ToInch():F2}in)");
-    Console.WriteLine($"  LeftMargin: {testData.LeftMargin} ({testData.LeftMargin.ToInch():F2}in)");
-    Console.WriteLine($"  TopMargin: {testData.TopMargin} ({testData.TopMargin.ToInch():F2}in)");
-    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
-    Console.WriteLine($"  LineSpacing: {testData.LineSpacing} ({testData.LineSpacing.ToPoints():F1}pt)");
-    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
-    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
-    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
-    Console.WriteLine();
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(TwipsTestData));
@@ -256,32 +232,9 @@ public static class TwipsSerializationTests
   static bool TestTwipsJsonSerialization()
   {
     Console.WriteLine("--- Testing Twips JSON Serialization ---");      // Create test object
-    var testData = new TwipsTestData
-    {
-      PageWidth = new Twips(12240),    // 8.5 inches
-      PageHeight = new Twips(15840),   // 11 inches
-      LeftMargin = new Twips(1440),    // 1 inch
-      TopMargin = new Twips(1440),     // 1 inch
-      FontSize = new Twips(240),       // 12 points
-      LineSpacing = new Twips(360),    // 18 points
-      ZeroValue = new Twips(0),
-      SmallValue = new Twips(20),      // 1 point
-      LargeValue = new Twips(1000000)  // ~694 inches
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  PageWidth: {testData.PageWidth}");
-    Console.WriteLine($"  PageHeight: {testData.PageHeight}");
-    Console.WriteLine($"  LeftMargin: {testData.LeftMargin}");
-    Console.WriteLine($"  TopMargin: {testData.TopMargin}");
-    Console.WriteLine($"  FontSize: {testData.FontSize}");
-    Console.WriteLine($"  LineSpacing: {testData.LineSpacing}");
-    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
-    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
-    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -306,6 +259,38 @@ public static class TwipsSerializationTests
   }
 
   #endregion
+
+  private static TwipsTestData CreateTestData()
+  {
+    return new TwipsTestData
+    {
+      PageWidth = new Twips(12240),    // 8.5 inches
+      PageHeight = new Twips(15840),   // 11 inches
+      LeftMargin = new Twips(1440),    // 1 inch
+      TopMargin = new Twips(1440),     // 1 inch
+      FontSize = new Twips(240),       // 12 points
+      LineSpacing = new Twips(360),    // 18 points
+      ZeroValue = new Twips(0),
+      SmallValue = new Twips(20),      // 1 point
+      LargeValue = new Twips(1000000)  // ~694 inches
+    };
+  }
+
+  private static void ShowOriginalData(TwipsTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+
+    Console.WriteLine($"  PageWidth: {testData.PageWidth} ({testData.PageWidth.ToInch():F2}in)");
+    Console.WriteLine($"  PageHeight: {testData.PageHeight} ({testData.PageHeight.ToInch():F2}in)");
+    Console.WriteLine($"  LeftMargin: {testData.LeftMargin} ({testData.LeftMargin.ToInch():F2}in)");
+    Console.WriteLine($"  TopMargin: {testData.TopMargin} ({testData.TopMargin.ToInch():F2}in)");
+    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  LineSpacing: {testData.LineSpacing} ({testData.LineSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
+    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
+    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
+    Console.WriteLine();
+  }
 
   #region Edge Cases Tests
 

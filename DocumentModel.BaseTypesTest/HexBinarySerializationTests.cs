@@ -77,19 +77,9 @@ public static class HexBinarySerializationTests
     Console.WriteLine("--- Testing HexBinary XML Serialization ---");
 
     // Create test object
-    var testData = new HexBinaryTestDataClass
-    {
-      BinaryData = new byte[] { 0x48, 0x65, 0x6C, 0x6C, 0x6F },
-      DocumentHash = "A1B2C3D4E5F6",
-      ImageData = new byte[] { 0xFF, 0xD8, 0xFF, 0xE0 } // JPEG header
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-    Console.WriteLine($"  BinaryData: {testData.BinaryData}");
-    Console.WriteLine($"  DocumentHash: {testData.DocumentHash}");
-    Console.WriteLine($"  ImageData: {testData.ImageData}");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(HexBinaryTestDataClass));
@@ -152,18 +142,9 @@ public static class HexBinarySerializationTests
     Console.WriteLine("--- Testing HexBinary JSON Serialization ---");
 
     // Create test object
-    var testData = new HexBinaryTestDataClass
-    {
-      BinaryData = new byte[] { 0xCA, 0xFE, 0xBA, 0xBE },
-      DocumentHash = "0123456789ABCDEF",
-      ImageData = new byte[] { 0x89, 0x50, 0x4E, 0x47 } // PNG header
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-    Console.WriteLine($"  BinaryData: {testData.BinaryData}");
-    Console.WriteLine($"  DocumentHash: {testData.DocumentHash}");
-    Console.WriteLine($"  ImageData: {testData.ImageData}");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -209,6 +190,26 @@ public static class HexBinarySerializationTests
   }
 
   #endregion
+
+  private static HexBinaryTestDataClass CreateTestData()
+  {
+    return new HexBinaryTestDataClass
+    {
+      BinaryData = new byte[] { 0x48, 0x65, 0x6C, 0x6C, 0x6F },
+      DocumentHash = "A1B2C3D4E5F6",
+      ImageData = new byte[] { 0xFF, 0xD8, 0xFF, 0xE0 } // JPEG header
+    };
+  }
+
+  private static void ShowOriginalData(HexBinaryTestDataClass testData)
+  {
+    Console.WriteLine($"Original data:");
+
+    Console.WriteLine($"  BinaryData: {testData.BinaryData}");
+    Console.WriteLine($"  DocumentHash: {testData.DocumentHash}");
+    Console.WriteLine($"  ImageData: {testData.ImageData}");
+    Console.WriteLine();
+  }
 
   #region Edge Cases Tests
 

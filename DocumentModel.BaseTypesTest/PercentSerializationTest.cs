@@ -182,26 +182,8 @@ public static class PercentSerializationTests
   static bool TestPercentJsonSerialization()
   {
     Console.WriteLine("--- Testing Percent JSON Serialization ---");      // Create test object
-    var testData = new PercentTestData
-    {
-      CompletionRate = new Percent(80.25),
-      SuccessRate = new Percent(95.5),
-      ErrorRate = new Percent(4.5),
-      ZeroPercent = new Percent(0),
-      HundredPercent = new Percent(100),
-      FractionalPercent = new Percent(66.667),
-      NegativePercent = new Percent(-10.0)
-    };
-
-    Console.WriteLine($"Original data:");
-    Console.WriteLine($"  CompletionRate: {testData.CompletionRate}");
-    Console.WriteLine($"  SuccessRate: {testData.SuccessRate}");
-    Console.WriteLine($"  ErrorRate: {testData.ErrorRate}");
-    Console.WriteLine($"  ZeroPercent: {testData.ZeroPercent}");
-    Console.WriteLine($"  HundredPercent: {testData.HundredPercent}");
-    Console.WriteLine($"  FractionalPercent: {testData.FractionalPercent}");
-    Console.WriteLine($"  NegativePercent: {testData.NegativePercent}");
-    Console.WriteLine();
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -227,6 +209,33 @@ public static class PercentSerializationTests
   }
 
   #endregion
+
+  private static PercentTestData CreateTestData()
+  {
+    return new PercentTestData
+    {
+      CompletionRate = new Percent(75.5),
+      SuccessRate = new Percent(98.0),
+      ErrorRate = new Percent(2.0),
+      ZeroPercent = new Percent(0),
+      HundredPercent = new Percent(100),
+      FractionalPercent = new Percent(33.333),
+      NegativePercent = new Percent(-5.5)
+    };
+  }
+
+  private static void ShowOriginalData(PercentTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+    Console.WriteLine($"  CompletionRate: {testData.CompletionRate}");
+    Console.WriteLine($"  SuccessRate: {testData.SuccessRate}");
+    Console.WriteLine($"  ErrorRate: {testData.ErrorRate}");
+    Console.WriteLine($"  ZeroPercent: {testData.ZeroPercent}");
+    Console.WriteLine($"  HundredPercent: {testData.HundredPercent}");
+    Console.WriteLine($"  FractionalPercent: {testData.FractionalPercent}");
+    Console.WriteLine($"  NegativePercent: {testData.NegativePercent}");
+    Console.WriteLine();
+  }
 
   #region Edge Cases Tests
 
