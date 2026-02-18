@@ -338,7 +338,7 @@ public static class VariantSerializationTests
     if (base64 == null)
       Console.WriteLine($"  As Base64: null");
     else
-      Console.WriteLine($"  As Base64: {base64.Substring(0, Math.Min(50, base64.Length))}...");
+      Console.WriteLine($"  As Base64: {base64.Substring(0, System.Math.Min(50, base64.Length))}...");
 
     // Test ClipboardData (if available)
     Console.WriteLine("\nTesting ClipboardData type:");
@@ -531,7 +531,7 @@ public static class VariantSerializationTests
     }
 
     Console.WriteLine("Serialized XML (first 1000 chars):");
-    Console.WriteLine(xmlString.Substring(0, Math.Min(1000, xmlString.Length)));
+    Console.WriteLine(xmlString.Substring(0, System.Math.Min(1000, xmlString.Length)));
     if (xmlString.Length > 1000)
       Console.WriteLine("...");
     Console.WriteLine();
@@ -614,7 +614,7 @@ public static class VariantSerializationTests
     string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
 
     Console.WriteLine("Serialized JSON (first 1000 chars):");
-    Console.WriteLine(jsonString.Substring(0, Math.Min(1000, jsonString.Length)));
+    Console.WriteLine(jsonString.Substring(0, System.Math.Min(1000, jsonString.Length)));
     if (jsonString.Length > 1000)
       Console.WriteLine("...");
     Console.WriteLine();

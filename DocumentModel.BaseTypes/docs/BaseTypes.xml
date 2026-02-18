@@ -1533,7 +1533,7 @@
             How many eighth-points are in one centimeter.
             </summary>
             <remarks>
-            The value is approximately 226.8 eighth-points per centimeter, calculated as EighthPointsInMM / 10.0.
+            The value is approximately 226.8 eighth-points per centimeter, calculated as EighthPointsInMM * 10.0.
             </remarks>
         </member>
         <member name="F:DocumentModel.EighthPoints.EighthPointsInInch">
@@ -1848,7 +1848,7 @@
             </summary>
             <summary>
               Represents an English Metric Unit (EMU), used for precise measurements in drawings.
-              There are 914_400 EMUs per inch.
+              There are 914400 EMUs per inch.
             </summary>
         </member>
         <member name="M:DocumentModel.EMU.System#Xml#Serialization#IXmlSerializable#GetSchema">
@@ -1891,7 +1891,7 @@
             There is a small difference between real and nominal factors.
             </summary>
             <remarks>
-            The value is approximately 56.69 EMU per millimeter, calculated as 1440 / 25.4.
+            The value is approximately 36000 EMU per millimeter, calculated as 914400 / 25.4.
             </remarks>
         </member>
         <member name="F:DocumentModel.EMU.EMUInCM">
@@ -1900,7 +1900,7 @@
             There is a small difference between real and nominal factors.
             </summary>
             <remarks>
-            The value is approximately 566.9 EMU per centimeter, calculated as EMUInMM / 10.0.
+            The value is approximately 360000 EMU per centimeter, calculated as EMUInMM * 10.0.
             </remarks>
         </member>
         <member name="F:DocumentModel.EMU.EMUInInch">
@@ -1908,7 +1908,7 @@
             How many EMU are in one inch.
             </summary>
             <remarks>
-            By definition, there are exactly 1440 EMU in one inch.
+            By definition, there are exactly 914400 EMU in one inch.
             </remarks>
         </member>
         <member name="F:DocumentModel.EMU.EMUInPoint">
@@ -1916,7 +1916,7 @@
             How many EMU are in one point.
             </summary>
             <remarks>
-            By definition, there are exactly 20 EMU in one point (1/72 of an inch).
+            By definition, there are proximately 12694 EMU in one point (1/72 of an inch).
             </remarks>
         </member>
         <member name="M:DocumentModel.EMU.#ctor(System.String)">
@@ -2275,7 +2275,7 @@
             How many half-points are in one centimeter.
             </summary>
             <remarks>
-            The value is approximately 56.7 half-points per centimeter, calculated as HalfPointsInMM / 10.0.
+            The value is approximately 56.7 half-points per centimeter, calculated as HalfPointsInMM * 10.0.
             </remarks>
         </member>
         <member name="F:DocumentModel.HalfPoints.HalfPointsInInch">
@@ -5755,7 +5755,7 @@
             How many points are in one centimeter.
             </summary>
             <remarks>
-            The value is approximately 28.35 points per centimeter, calculated as PointsInMM / 10.0.
+            The value is approximately 28.35 points per centimeter, calculated as PointsInMM * 10.0.
             </remarks>
         </member>
         <member name="F:DocumentModel.Points.PointsInInch">
@@ -6834,7 +6834,7 @@
             There is a small difference between real and nominal factors.
             </summary>
             <remarks>
-            The value is approximately 566.9 twips per centimeter, calculated as TwipsInMM / 10.0.
+            The value is approximately 566.9 twips per centimeter, calculated as TwipsInMM * 10.0.
             </remarks>
         </member>
         <member name="F:DocumentModel.Twips.TwipsInInch">

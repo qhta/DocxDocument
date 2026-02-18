@@ -17,6 +17,7 @@ class Program
     if (!Exec(Base64BinarySerializationTests.Run)) return;
     if (!Exec(BytePercentSerializationTests.Run)) return;
     if (!Exec(EighthPointsSerializationTests.Run)) return;
+    if (!Exec(EMUSerializationTests.Run)) return;
     if (!Exec(HalfPointsSerializationTests.Run)) return;
     if (!Exec(HexBinarySerializationTests.Run)) return;
     if (!Exec(HexCharSerializationTests.Run)) return;

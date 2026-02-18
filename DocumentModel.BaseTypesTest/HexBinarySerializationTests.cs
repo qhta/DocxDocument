@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using System.Xml;
 using System.Xml.Serialization;
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 
 namespace DocumentModel.BaseTypesTest;
 
@@ -344,13 +345,13 @@ public static class HexBinarySerializationTests
 public class HexBinaryTestDataClass
 {
   [XmlElement("BinaryData")]
-  public HexBinary? BinaryData { get; set; }
+  public HexBinary BinaryData { get; set; }
 
   [XmlElement("DocumentHash")]
-  public HexBinary? DocumentHash { get; set; }
+  public HexBinary DocumentHash { get; set; }
 
   [XmlElement("ImageData")]
-  public HexBinary? ImageData { get; set; }
+  public HexBinary ImageData { get; set; }
 }
 
 /// <summary>
@@ -358,7 +359,7 @@ public class HexBinaryTestDataClass
 /// </summary>
 public class HexBinaryTestWrapper
 {
-  public HexBinary? Data { get; set; }
+  public HexBinary Data { get; set; }
 }
 
 #endregion

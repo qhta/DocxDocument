@@ -309,7 +309,7 @@ public static class VClipboardDataSerializationTests
     }
 
     Console.WriteLine("Serialized XML (first 500 chars):");
-    Console.WriteLine(xmlString.Substring(0, Math.Min(500, xmlString.Length)));
+    Console.WriteLine(xmlString.Substring(0, System.Math.Min(500, xmlString.Length)));
     Console.WriteLine("...");
     Console.WriteLine();
 
@@ -376,7 +376,7 @@ public static class VClipboardDataSerializationTests
     string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
 
     Console.WriteLine("Serialized JSON (first 500 chars):");
-    Console.WriteLine(jsonString.Substring(0, Math.Min(500, jsonString.Length)));
+    Console.WriteLine(jsonString.Substring(0, System.Math.Min(500, jsonString.Length)));
     Console.WriteLine("...");
     Console.WriteLine();
 

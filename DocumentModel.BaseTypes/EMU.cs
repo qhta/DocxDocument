@@ -2,7 +2,7 @@
 
 /// <summary>
 ///   Represents an English Metric Unit (EMU), used for precise measurements in drawings.
-///   There are 914_400 EMUs per inch.
+///   There are 914400 EMUs per inch.
 /// </summary>
 [JsonConverter(typeof(EMUJsonConverter))]
 public readonly partial struct EMU : IComparable<EMU>, IEquatable<EMU>
@@ -12,34 +12,34 @@ public readonly partial struct EMU : IComparable<EMU>, IEquatable<EMU>
   /// There is a small difference between real and nominal factors.
   /// </summary>
   /// <remarks>
-  /// The value is approximately 56.69 EMU per millimeter, calculated as 1440 / 25.4.
+  /// The value is approximately 36000 EMU per millimeter, calculated as 914400 / 25.4.
   /// </remarks>
-  public const double EMUInMM = 36_0000;
+  public const double EMUInMM = 914400 / 25.4;
 
   /// <summary>
   /// How many EMU are in one centimeter.
   /// There is a small difference between real and nominal factors.
   /// </summary>
   /// <remarks>
-  /// The value is approximately 566.9 EMU per centimeter, calculated as EMUInMM / 10.0.
+  /// The value is approximately 360000 EMU per centimeter, calculated as EMUInMM * 10.0.
   /// </remarks>
-  public const double EMUInCM = EMUInMM / 10.0;
+  public const double EMUInCM = EMUInMM * 10.0;
 
   /// <summary>
   /// How many EMU are in one inch.
   /// </summary>
   /// <remarks>
-  /// By definition, there are exactly 1440 EMU in one inch.
+  /// By definition, there are exactly 914400 EMU in one inch.
   /// </remarks>
-  public const double EMUInInch = 914_400;
+  public const double EMUInInch = 914400;
 
   /// <summary>
   /// How many EMU are in one point.
   /// </summary>
   /// <remarks>
-  /// By definition, there are exactly 20 EMU in one point (1/72 of an inch).
+  /// By definition, there are proximately 12694 EMU in one point (1/72 of an inch).
   /// </remarks>
-  public const double EMUInPoint = 12_700;
+  public const double EMUInPoint = 914000/72.0;
 
   private readonly Int64 value;
 
@@ -65,26 +65,30 @@ public readonly partial struct EMU : IComparable<EMU>, IEquatable<EMU>
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUInMM;
       value = (Int64)val;
+      return;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUInCM;
       value = (Int64)val;
+      return;
     }
     else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUInInch;
       value = (int)val;
+      return;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUInPoint;
       value = (Int64)val;
+      return;
     }
-    else value = Int32.Parse(str);
+    else value = Int64.Parse(str);
   }
 
   /// <summary>

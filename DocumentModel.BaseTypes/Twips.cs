@@ -26,9 +26,9 @@ public readonly partial struct Twips : IComparable<Twips>, IEquatable<Twips>
   /// There is a small difference between real and nominal factors.
   /// </summary>
   /// <remarks>
-  /// The value is approximately 566.9 twips per centimeter, calculated as TwipsInMM / 10.0.
+  /// The value is approximately 566.9 twips per centimeter, calculated as TwipsInMM * 10.0.
   /// </remarks>
-  public const double TwipsInCM = TwipsInMM / 10.0;
+  public const double TwipsInCM = TwipsInMM * 10.0;
 
   /// <summary>
   /// How many twips are in one inch.

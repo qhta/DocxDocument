@@ -26,9 +26,9 @@ public readonly partial struct EighthPoints : IComparable<EighthPoints>
   /// How many eighth-points are in one centimeter.
   /// </summary>
   /// <remarks>
-  /// The value is approximately 226.8 eighth-points per centimeter, calculated as EighthPointsInMM / 10.0.
+  /// The value is approximately 226.8 eighth-points per centimeter, calculated as EighthPointsInMM * 10.0.
   /// </remarks>
-  public const double EighthPointsInCM = EighthPointsInMM / 10.0;
+  public const double EighthPointsInCM = EighthPointsInMM * 10.0;
 
   /// <summary>
   /// How many eighth-points are in one inch.
