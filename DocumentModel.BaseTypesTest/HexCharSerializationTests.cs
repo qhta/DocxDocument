@@ -79,19 +79,8 @@ public static class HexCharSerializationTests
   static bool TestHexCharXmlSerialization()
   {
     Console.WriteLine("--- Testing HexChar XML Serialization ---"); // Create test object
-    var testData = new HexCharTestData
-    {
-      LetterA = "41", // 'A'
-      Space = "20", // space
-      GreekAlpha = "03B1", // α
-      MaxValue = "FFFF" // maximum ushort
-    };
-    Console.WriteLine($"Original data:");
-    Console.WriteLine($"  LetterA: {testData.LetterA} = '{(char)testData.LetterA.ToUInt16(null)}'");
-    Console.WriteLine($"  Space: {testData.Space} = '{(char)testData.Space.ToUInt16(null)}'");
-    Console.WriteLine($"  GreekAlpha: {testData.GreekAlpha} = char({testData.GreekAlpha.ToUInt16(null)})");
-    Console.WriteLine($"  MaxValue: {testData.MaxValue} = {testData.MaxValue.ToUInt16(null)}");
-    Console.WriteLine();
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(HexCharTestData));
@@ -131,20 +120,8 @@ public static class HexCharSerializationTests
   static bool TestHexCharJsonSerialization()
   {
     Console.WriteLine("--- Testing HexChar JSON Serialization ---"); // Create test object
-    var testData = new HexCharTestData
-    {
-      LetterA = "41", // 'A'
-      Space = "20", // space
-      GreekAlpha = "03B1", // α
-      MaxValue = "FFFF" // maximum ushort
-    };
-    Console.WriteLine($"Original data:");
-
-    Console.WriteLine($"  LetterA: {testData.LetterA}");
-    Console.WriteLine($"  Space: {testData.Space}");
-    Console.WriteLine($"  GreekAlpha: {testData.GreekAlpha}");
-    Console.WriteLine($"  MaxValue: {testData.MaxValue}");
-    Console.WriteLine();
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -163,6 +140,27 @@ public static class HexCharSerializationTests
     Console.WriteLine("\n✓ JSON Serialization/Deserialization test passed");
     Console.WriteLine();
     return true;
+  }
+
+  private static HexCharTestData CreateTestData()
+  {
+    return new HexCharTestData
+    {
+      LetterA = "41", // 'A'
+      Space = "20", // space
+      GreekAlpha = "03B1", // α
+      MaxValue = "FFFF" // maximum ushort
+    };
+  }
+
+  private static void ShowOriginalData(HexCharTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+    Console.WriteLine($"  LetterA: {testData.LetterA} = '{(char)testData.LetterA.ToUInt16(null)}'");
+    Console.WriteLine($"  Space: {testData.Space} = '{(char)testData.Space.ToUInt16(null)}'");
+    Console.WriteLine($"  GreekAlpha: {testData.GreekAlpha} = char({testData.GreekAlpha.ToUInt16(null)})");
+    Console.WriteLine($"  MaxValue: {testData.MaxValue} = {testData.MaxValue.ToUInt16(null)}");
+    Console.WriteLine();
   }
 
   private static bool VerifyDeserializedData

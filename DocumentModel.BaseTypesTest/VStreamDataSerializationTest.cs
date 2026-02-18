@@ -319,39 +319,9 @@ public static class VStreamDataSerializationTests
   static bool TestVStreamDataXmlSerialization()
   {
     Console.WriteLine("--- Testing VStreamData XML Serialization ---");      // Create test object
-    var testData = new VStreamDataTestData
-    {
-      ExcelStream = new VStreamData(
-        new Guid("{00020810-0000-0000-C000-000000000046}"),
-        Encoding.UTF8.GetBytes("Excel OLE Data")
-      ),
-      WordStream = new VStreamData(
-        new Guid("{00020906-0000-0000-C000-000000000046}"),
-        Encoding.UTF8.GetBytes("Word Document Data")
-      ),
-      BinaryStream = new VStreamData(
-        new Guid("{12345678-ABCD-1234-5678-123456789ABC}"),
-        new byte[] { 0xDE, 0xAD, 0xBE, 0xEF, 0xCA, 0xFE, 0xBA, 0xBE }
-      ),
-      EmptyStream = new VStreamData(
-        Guid.NewGuid(),
-        Array.Empty<byte>()
-      ),
-      LargeStream = new VStreamData(
-        Guid.NewGuid(),
-        CreateTestData(2000)
-      )
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  ExcelStream: Version={testData.ExcelStream.Version}, Size={testData.ExcelStream.Data.Length}");
-    Console.WriteLine($"  WordStream: Version={testData.WordStream.Version}, Size={testData.WordStream.Data.Length}");
-    Console.WriteLine($"  BinaryStream: Version={testData.BinaryStream.Version}, Size={testData.BinaryStream.Data.Length}");
-    Console.WriteLine($"  EmptyStream: Version={testData.EmptyStream.Version}, Size={testData.EmptyStream.Data.Length}");
-    Console.WriteLine($"  LargeStream: Version={testData.LargeStream.Version}, Size={testData.LargeStream.Data.Length}");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(VStreamDataTestData));
@@ -424,39 +394,9 @@ public static class VStreamDataSerializationTests
   static bool TestVStreamDataJsonSerialization()
   {
     Console.WriteLine("--- Testing VStreamData JSON Serialization ---");      // Create test object
-    var testData = new VStreamDataTestData
-    {
-      ExcelStream = new VStreamData(
-        new Guid("00020810-0000-0000-C000-000000000046"),
-        Encoding.UTF8.GetBytes("Excel JSON Data")
-      ),
-      WordStream = new VStreamData(
-        new Guid("00020906-0000-0000-C000-000000000046"),
-        Encoding.UTF8.GetBytes("Word JSON Data")
-      ),
-      BinaryStream = new VStreamData(
-        new Guid("FEDCBA98-7654-3210-FEDC-BA9876543210"),
-        new byte[] { 0x01, 0x23, 0x45, 0x67, 0x89, 0xAB, 0xCD, 0xEF }
-      ),
-      EmptyStream = new VStreamData(
-        Guid.Empty,
-        Array.Empty<byte>()
-      ),
-      LargeStream = new VStreamData(
-        Guid.NewGuid(),
-        CreateTestData(1000)
-      )
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  ExcelStream: Version={testData.ExcelStream.Version}, Size={testData.ExcelStream.Data.Length}");
-    Console.WriteLine($"  WordStream: Version={testData.WordStream.Version}, Size={testData.WordStream.Data.Length}");
-    Console.WriteLine($"  BinaryStream: Version={testData.BinaryStream.Version}, Size={testData.BinaryStream.Data.Length}");
-    Console.WriteLine($"  EmptyStream: Version={testData.EmptyStream.Version}, Size={testData.EmptyStream.Data.Length}");
-    Console.WriteLine($"  LargeStream: Version={testData.LargeStream.Version}, Size={testData.LargeStream.Data.Length}");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -680,6 +620,45 @@ public static class VStreamDataSerializationTests
   #endregion
 
   #region Helper Methods
+
+  private static VStreamDataTestData CreateTestData()
+  {
+    return new VStreamDataTestData
+    {
+      ExcelStream = new VStreamData(
+        new Guid("{00020810-0000-0000-C000-000000000046}"),
+        Encoding.UTF8.GetBytes("Excel OLE Data")
+      ),
+      WordStream = new VStreamData(
+        new Guid("{00020906-0000-0000-C000-000000000046}"),
+        Encoding.UTF8.GetBytes("Word Document Data")
+      ),
+      BinaryStream = new VStreamData(
+        new Guid("{12345678-ABCD-1234-5678-123456789ABC}"),
+        new byte[] { 0xDE, 0xAD, 0xBE, 0xEF, 0xCA, 0xFE, 0xBA, 0xBE }
+      ),
+      EmptyStream = new VStreamData(
+        Guid.NewGuid(),
+        Array.Empty<byte>()
+      ),
+      LargeStream = new VStreamData(
+        Guid.NewGuid(),
+        CreateTestData(2000)
+      )
+    };
+  }
+
+  private static void ShowOriginalData(VStreamDataTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+
+    Console.WriteLine($"  ExcelStream: Version={testData.ExcelStream.Version}, Size={testData.ExcelStream.Data.Length}");
+    Console.WriteLine($"  WordStream: Version={testData.WordStream.Version}, Size={testData.WordStream.Data.Length}");
+    Console.WriteLine($"  BinaryStream: Version={testData.BinaryStream.Version}, Size={testData.BinaryStream.Data.Length}");
+    Console.WriteLine($"  EmptyStream: Version={testData.EmptyStream.Version}, Size={testData.EmptyStream.Data.Length}");
+    Console.WriteLine($"  LargeStream: Version={testData.LargeStream.Version}, Size={testData.LargeStream.Data.Length}");
+    Console.WriteLine();
+  }
 
   /// <summary>
   /// Creates test data of specified size with predictable content.

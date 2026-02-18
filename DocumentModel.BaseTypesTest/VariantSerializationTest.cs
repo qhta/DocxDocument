@@ -510,34 +510,9 @@ public static class VariantSerializationTests
   static bool TestVariantXmlSerialization()
   {
     Console.WriteLine("--- Testing Variant XML Serialization ---");      // Create test object with various variant types
-    var testData = new VariantTestData
-    {
-      IntValue = new Variant(42),
-      StringValue = new Variant("Hello, World!"),
-      DoubleValue = new Variant(3.14159),
-      BooleanValue = new Variant(true),
-      DateValue = new Variant(new DateOnly(2024, 1, 15)),
-      DateTimeValue = new Variant(DateTime.Now),
-      GuidValue = new Variant(Guid.NewGuid()),
-      BlobValue = new Variant(VariantType.Blob, new byte[] { 1, 2, 3, 4, 5 }),
-      NullValue = new Variant(VariantType.Null),
-      EmptyValue = new Variant(VariantType.Empty)
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  IntValue: {testData.IntValue.Value} ({testData.IntValue.VariantType})");
-    Console.WriteLine($"  StringValue: {testData.StringValue.Value} ({testData.StringValue.VariantType})");
-    Console.WriteLine($"  DoubleValue: {testData.DoubleValue.Value} ({testData.DoubleValue.VariantType})");
-    Console.WriteLine($"  BooleanValue: {testData.BooleanValue.Value} ({testData.BooleanValue.VariantType})");
-    Console.WriteLine($"  DateValue: {testData.DateValue.Value} ({testData.DateValue.VariantType})");
-    Console.WriteLine($"  DateTimeValue: {testData.DateTimeValue.Value} ({testData.DateTimeValue.VariantType})");
-    Console.WriteLine($"  GuidValue: {testData.GuidValue.Value} ({testData.GuidValue.VariantType})");
-    Console.WriteLine($"  BlobValue: {((byte[])testData.BlobValue.Value!).Length} bytes ({testData.BlobValue.VariantType})");
-    Console.WriteLine($"  NullValue: {testData.NullValue.Value?.GetType().Name ?? "null"} ({testData.NullValue.VariantType})");
-    Console.WriteLine($"  EmptyValue: {testData.EmptyValue.Value ?? "null"} ({testData.EmptyValue.VariantType})");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(VariantTestData));
@@ -625,32 +600,9 @@ public static class VariantSerializationTests
   static bool TestVariantJsonSerialization()
   {
     Console.WriteLine("--- Testing Variant JSON Serialization ---");      // Create test object with various variant types
-    var testData = new VariantTestData
-    {
-      IntValue = new Variant(42),
-      StringValue = new Variant("Hello, JSON!"),
-      DoubleValue = new Variant(2.71828),
-      BooleanValue = new Variant(false),
-      DateValue = new Variant(new DateOnly(2024, 1, 15)),
-      DateTimeValue = new Variant(DateTime.Now),
-      GuidValue = new Variant(Guid.NewGuid()),
-      BlobValue = new Variant(VariantType.Blob, new byte[] { 10, 20, 30, 40, 50 }),
-      NullValue = new Variant(VariantType.Null),
-      EmptyValue = new Variant(VariantType.Empty)
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  IntValue: {testData.IntValue.Value}");
-    Console.WriteLine($"  StringValue: {testData.StringValue.Value}");
-    Console.WriteLine($"  DoubleValue: {testData.DoubleValue.Value}");
-    Console.WriteLine($"  BooleanValue: {testData.BooleanValue.Value}");
-    Console.WriteLine($"  DateValue: {testData.DateValue.Value}");
-    Console.WriteLine($"  DateTimeValue: {testData.DateTimeValue.Value}");
-    Console.WriteLine($"  GuidValue: {testData.GuidValue.Value}");
-    Console.WriteLine($"  BlobValue: {((byte[])testData.BlobValue.Value!).Length} bytes");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -678,6 +630,40 @@ public static class VariantSerializationTests
   }
 
   #endregion
+
+  private static VariantTestData CreateTestData()
+  {
+    return new VariantTestData
+    {
+      IntValue = new Variant(42),
+      StringValue = new Variant("Hello, World!"),
+      DoubleValue = new Variant(3.14159),
+      BooleanValue = new Variant(true),
+      DateValue = new Variant(new DateOnly(2024, 1, 15)),
+      DateTimeValue = new Variant(DateTime.Now),
+      GuidValue = new Variant(Guid.NewGuid()),
+      BlobValue = new Variant(VariantType.Blob, new byte[] { 1, 2, 3, 4, 5 }),
+      NullValue = new Variant(VariantType.Null),
+      EmptyValue = new Variant(VariantType.Empty)
+    };
+  }
+
+  private static void ShowOriginalData(VariantTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+
+    Console.WriteLine($"  IntValue: {testData.IntValue.Value} ({testData.IntValue.VariantType})");
+    Console.WriteLine($"  StringValue: {testData.StringValue.Value} ({testData.StringValue.VariantType})");
+    Console.WriteLine($"  DoubleValue: {testData.DoubleValue.Value} ({testData.DoubleValue.VariantType})");
+    Console.WriteLine($"  BooleanValue: {testData.BooleanValue.Value} ({testData.BooleanValue.VariantType})");
+    Console.WriteLine($"  DateValue: {testData.DateValue.Value} ({testData.DateValue.VariantType})");
+    Console.WriteLine($"  DateTimeValue: {testData.DateTimeValue.Value} ({testData.DateTimeValue.VariantType})");
+    Console.WriteLine($"  GuidValue: {testData.GuidValue.Value} ({testData.GuidValue.VariantType})");
+    Console.WriteLine($"  BlobValue: {((byte[])testData.BlobValue.Value!).Length} bytes ({testData.BlobValue.VariantType})");
+    Console.WriteLine($"  NullValue: {testData.NullValue.Value?.GetType().Name ?? "null"} ({testData.NullValue.VariantType})");
+    Console.WriteLine($"  EmptyValue: {testData.EmptyValue.Value ?? "null"} ({testData.EmptyValue.VariantType})");
+    Console.WriteLine();
+  }
 
   #region Edge Cases Tests
 

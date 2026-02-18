@@ -288,24 +288,9 @@ public static class VClipboardDataSerializationTests
   static bool TestVClipboardDataXmlSerialization()
   {
     Console.WriteLine("--- Testing VClipboardData XML Serialization ---");      // Create test object
-    var testData = new VClipboardDataTestData
-    {
-      TextClipboard = new VClipboardData(1, Encoding.UTF8.GetBytes("Hello, World!")),
-      BitmapClipboard = new VClipboardData(2, new byte[] { 0x42, 0x4D, 0x00, 0x00 }),
-      BinaryClipboard = new VClipboardData(8, new byte[] { 0xDE, 0xAD, 0xBE, 0xEF }),
-      EmptyClipboard = new VClipboardData(13, Array.Empty<byte>()),
-      LargeClipboard = new VClipboardData(14, CreateTestData(1000))
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  TextClipboard: Format={testData.TextClipboard.Format}, Size={testData.TextClipboard.Size}");
-    Console.WriteLine($"  BitmapClipboard: Format={testData.BitmapClipboard.Format}, Size={testData.BitmapClipboard.Size}");
-    Console.WriteLine($"  BinaryClipboard: Format={testData.BinaryClipboard.Format}, Size={testData.BinaryClipboard.Size}");
-    Console.WriteLine($"  EmptyClipboard: Format={testData.EmptyClipboard.Format}, Size={testData.EmptyClipboard.Size}");
-    Console.WriteLine($"  LargeClipboard: Format={testData.LargeClipboard.Format}, Size={testData.LargeClipboard.Size}");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(VClipboardDataTestData));
@@ -377,24 +362,9 @@ public static class VClipboardDataSerializationTests
   static bool TestVClipboardDataJsonSerialization()
   {
     Console.WriteLine("--- Testing VClipboardData JSON Serialization ---");      // Create test object
-    var testData = new VClipboardDataTestData
-    {
-      TextClipboard = new VClipboardData(1, Encoding.UTF8.GetBytes("JSON Test Data")),
-      BitmapClipboard = new VClipboardData(2, new byte[] { 0xFF, 0xD8, 0xFF, 0xE0 }), // JPEG header
-      BinaryClipboard = new VClipboardData(8, new byte[] { 0x00, 0x11, 0x22, 0x33, 0x44 }),
-      EmptyClipboard = new VClipboardData(13, Array.Empty<byte>()),
-      LargeClipboard = new VClipboardData(0xC000, CreateTestData(500))
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  TextClipboard: Format={testData.TextClipboard.Format}, Size={testData.TextClipboard.Size}");
-    Console.WriteLine($"  BitmapClipboard: Format={testData.BitmapClipboard.Format}, Size={testData.BitmapClipboard.Size}");
-    Console.WriteLine($"  BinaryClipboard: Format={testData.BinaryClipboard.Format}, Size={testData.BinaryClipboard.Size}");
-    Console.WriteLine($"  EmptyClipboard: Format={testData.EmptyClipboard.Format}, Size={testData.EmptyClipboard.Size}");
-    Console.WriteLine($"  LargeClipboard: Format={testData.LargeClipboard.Format}, Size={testData.LargeClipboard.Size}");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -578,6 +548,30 @@ public static class VClipboardDataSerializationTests
   #endregion
 
   #region Helper Methods
+
+  private static VClipboardDataTestData CreateTestData()
+  {
+    return new VClipboardDataTestData
+    {
+      TextClipboard = new VClipboardData(1, Encoding.UTF8.GetBytes("Hello, World!")),
+      BitmapClipboard = new VClipboardData(2, new byte[] { 0x42, 0x4D, 0x00, 0x00 }),
+      BinaryClipboard = new VClipboardData(8, new byte[] { 0xDE, 0xAD, 0xBE, 0xEF }),
+      EmptyClipboard = new VClipboardData(13, Array.Empty<byte>()),
+      LargeClipboard = new VClipboardData(14, CreateTestData(1000))
+    };
+  }
+
+  private static void ShowOriginalData(VClipboardDataTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+
+    Console.WriteLine($"  TextClipboard: Format={testData.TextClipboard.Format}, Size={testData.TextClipboard.Size}");
+    Console.WriteLine($"  BitmapClipboard: Format={testData.BitmapClipboard.Format}, Size={testData.BitmapClipboard.Size}");
+    Console.WriteLine($"  BinaryClipboard: Format={testData.BinaryClipboard.Format}, Size={testData.BinaryClipboard.Size}");
+    Console.WriteLine($"  EmptyClipboard: Format={testData.EmptyClipboard.Format}, Size={testData.EmptyClipboard.Size}");
+    Console.WriteLine($"  LargeClipboard: Format={testData.LargeClipboard.Format}, Size={testData.LargeClipboard.Size}");
+    Console.WriteLine();
+  }
 
   /// <summary>
   /// Creates test data of specified size with predictable content.

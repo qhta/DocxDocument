@@ -364,26 +364,9 @@ public static class StringListSerializationTests
   static bool TestStringListXmlSerialization()
   {
     Console.WriteLine("--- Testing StringList XML Serialization ---");      // Create test object
-    var testData = new StringListTestData
-    {
-      EmptyList = new StringList(),
-      SingleItem = new StringList("single"),
-      MultipleItems = new StringList("one,two,three"),
-      ItemsWithSpaces = new StringList("item one,item two,item three"),
-      SpecialChars = new StringList("hello world,test@example.com,path/to/file"),
-      Numbers = new StringList("1,2,3,4,5")
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  EmptyList: '{testData.EmptyList}' (Count={testData.EmptyList.Count})");
-    Console.WriteLine($"  SingleItem: '{testData.SingleItem}' (Count={testData.SingleItem.Count})");
-    Console.WriteLine($"  MultipleItems: '{testData.MultipleItems}' (Count={testData.MultipleItems.Count})");
-    Console.WriteLine($"  ItemsWithSpaces: '{testData.ItemsWithSpaces}' (Count={testData.ItemsWithSpaces.Count})");
-    Console.WriteLine($"  SpecialChars: '{testData.SpecialChars}' (Count={testData.SpecialChars.Count})");
-    Console.WriteLine($"  Numbers: '{testData.Numbers}' (Count={testData.Numbers.Count})");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(StringListTestData));
@@ -457,26 +440,9 @@ public static class StringListSerializationTests
   static bool TestStringListJsonSerialization()
   {
     Console.WriteLine("--- Testing StringList JSON Serialization ---");      // Create test object
-    var testData = new StringListTestData
-    {
-      EmptyList = new StringList(),
-      SingleItem = new StringList("single"),
-      MultipleItems = new StringList("one,two,three"),
-      ItemsWithSpaces = new StringList("item one,item two,item three"),
-      SpecialChars = new StringList("hello world,test@example.com,path/to/file"),
-      Numbers = new StringList("1,2,3,4,5")
-    };
+    var testData = CreateTestData();
 
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  EmptyList: '{testData.EmptyList}' (Count={testData.EmptyList.Count})");
-    Console.WriteLine($"  SingleItem: '{testData.SingleItem}' (Count={testData.SingleItem.Count})");
-    Console.WriteLine($"  MultipleItems: '{testData.MultipleItems}' (Count={testData.MultipleItems.Count})");
-    Console.WriteLine($"  ItemsWithSpaces: '{testData.ItemsWithSpaces}' (Count={testData.ItemsWithSpaces.Count})");
-    Console.WriteLine($"  SpecialChars: '{testData.SpecialChars}' (Count={testData.SpecialChars.Count})");
-    Console.WriteLine($"  Numbers: '{testData.Numbers}' (Count={testData.Numbers.Count})");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -502,6 +468,32 @@ public static class StringListSerializationTests
   }
 
   #endregion
+
+  private static StringListTestData CreateTestData()
+  {
+    return new StringListTestData
+    {
+      EmptyList = new StringList(),
+      SingleItem = new StringList("single"),
+      MultipleItems = new StringList("one,two,three"),
+      ItemsWithSpaces = new StringList("item one,item two,item three"),
+      SpecialChars = new StringList("hello world,test@example.com,path/to/file"),
+      Numbers = new StringList("1,2,3,4,5")
+    };
+  }
+
+  private static void ShowOriginalData(StringListTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+
+    Console.WriteLine($"  EmptyList: '{testData.EmptyList}' (Count={testData.EmptyList.Count})");
+    Console.WriteLine($"  SingleItem: '{testData.SingleItem}' (Count={testData.SingleItem.Count})");
+    Console.WriteLine($"  MultipleItems: '{testData.MultipleItems}' (Count={testData.MultipleItems.Count})");
+    Console.WriteLine($"  ItemsWithSpaces: '{testData.ItemsWithSpaces}' (Count={testData.ItemsWithSpaces.Count})");
+    Console.WriteLine($"  SpecialChars: '{testData.SpecialChars}' (Count={testData.SpecialChars.Count})");
+    Console.WriteLine($"  Numbers: '{testData.Numbers}' (Count={testData.Numbers.Count})");
+    Console.WriteLine();
+  }
 
   #region Edge Cases Tests
 

@@ -345,46 +345,9 @@ public static class VectorVariantSerializationTests
   static bool TestVectorVariantXmlSerialization()
   {
     Console.WriteLine("--- Testing VectorVariant XML Serialization ---");      // Create test object
-    var testData = new VectorVariantTestData
-    {
-      IntVector = new VectorVariant(VariantType.Int32),
-      StringVector = new VectorVariant(VariantType.String),
-      DoubleVector = new VectorVariant(VariantType.Double),
-      BoolVector = new VectorVariant(VariantType.Boolean),
-      MixedVector = new VectorVariant(),
-      EmptyVector = new VectorVariant(VariantType.String)
-    };
+    var testData = CreateTestData();
 
-    // Fill vectors
-    for (int i = 0; i < 5; i++)
-      testData.IntVector.Add((i + 1) * 10);
-
-    testData.StringVector.Add("Alpha");
-    testData.StringVector.Add("Beta");
-    testData.StringVector.Add("Gamma");
-
-    testData.DoubleVector.Add(1.5);
-    testData.DoubleVector.Add(2.75);
-    testData.DoubleVector.Add(3.125);
-    testData.DoubleVector.Add(4.0625);
-
-    testData.BoolVector.Add(true);
-    testData.BoolVector.Add(false);
-
-    testData.MixedVector.Add(100);
-    testData.MixedVector.Add("Mixed");
-    testData.MixedVector.Add(true);
-
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  IntVector: Count={testData.IntVector.Count}");
-    Console.WriteLine($"  StringVector: Count={testData.StringVector.Count}");
-    Console.WriteLine($"  DoubleVector: Count={testData.DoubleVector.Count}");
-    Console.WriteLine($"  BoolVector: Count={testData.BoolVector.Count}");
-    Console.WriteLine($"  MixedVector: Count={testData.MixedVector.Count}, BaseType={testData.MixedVector.BaseType?.ToString() ?? "null"}");
-    Console.WriteLine($"  EmptyVector: Count={testData.EmptyVector.Count}");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(VectorVariantTestData));
@@ -459,47 +422,9 @@ public static class VectorVariantSerializationTests
   static bool TestVectorVariantJsonSerialization()
   {
     Console.WriteLine("--- Testing VectorVariant JSON Serialization ---");      // Create test object
-    var testData = new VectorVariantTestData
-    {
-      IntVector = new VectorVariant(VariantType.Int32),
-      StringVector = new VectorVariant(VariantType.String),
-      DoubleVector = new VectorVariant(VariantType.Double),
-      BoolVector = new VectorVariant(VariantType.Boolean),
-      MixedVector = new VectorVariant(),
-      EmptyVector = new VectorVariant(VariantType.Int32)
-    };
+    var testData = CreateTestData();
 
-    // Fill vectors
-    testData.IntVector.Add(100);
-    testData.IntVector.Add(200);
-    testData.IntVector.Add(300);
-    testData.IntVector.Add(400);
-
-    testData.StringVector.Add("Red");
-    testData.StringVector.Add("Green");
-    testData.StringVector.Add("Blue");
-
-    testData.DoubleVector.Add(10.5);
-    testData.DoubleVector.Add(20.25);
-    testData.DoubleVector.Add(30.125);
-
-    testData.BoolVector.Add(false);
-    testData.BoolVector.Add(true);
-
-    testData.MixedVector.Add(42);
-    testData.MixedVector.Add("Text");
-    testData.MixedVector.Add(3.14);
-
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  IntVector: Count={testData.IntVector.Count}");
-    Console.WriteLine($"  StringVector: Count={testData.StringVector.Count}");
-    Console.WriteLine($"  DoubleVector: Count={testData.DoubleVector.Count}");
-    Console.WriteLine($"  BoolVector: Count={testData.BoolVector.Count}");
-    Console.WriteLine($"  MixedVector: Count={testData.MixedVector.Count}");
-    Console.WriteLine($"  EmptyVector: Count={testData.EmptyVector.Count}");
-    Console.WriteLine();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -531,6 +456,53 @@ public static class VectorVariantSerializationTests
   }
 
   #endregion
+
+  private static VectorVariantTestData CreateTestData()
+  {
+    var testData = new VectorVariantTestData
+    {
+      IntVector = new VectorVariant(VariantType.Int32),
+      StringVector = new VectorVariant(VariantType.String),
+      DoubleVector = new VectorVariant(VariantType.Double),
+      BoolVector = new VectorVariant(VariantType.Boolean),
+      MixedVector = new VectorVariant(),
+      EmptyVector = new VectorVariant(VariantType.String)
+    };
+
+    for (int i = 0; i < 5; i++)
+      testData.IntVector.Add((i + 1) * 10);
+
+    testData.StringVector.Add("Alpha");
+    testData.StringVector.Add("Beta");
+    testData.StringVector.Add("Gamma");
+
+    testData.DoubleVector.Add(1.5);
+    testData.DoubleVector.Add(2.75);
+    testData.DoubleVector.Add(3.125);
+    testData.DoubleVector.Add(4.0625);
+
+    testData.BoolVector.Add(true);
+    testData.BoolVector.Add(false);
+
+    testData.MixedVector.Add(100);
+    testData.MixedVector.Add("Mixed");
+    testData.MixedVector.Add(true);
+
+    return testData;
+  }
+
+  private static void ShowOriginalData(VectorVariantTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+
+    Console.WriteLine($"  IntVector: Count={testData.IntVector.Count}");
+    Console.WriteLine($"  StringVector: Count={testData.StringVector.Count}");
+    Console.WriteLine($"  DoubleVector: Count={testData.DoubleVector.Count}");
+    Console.WriteLine($"  BoolVector: Count={testData.BoolVector.Count}");
+    Console.WriteLine($"  MixedVector: Count={testData.MixedVector.Count}, BaseType={testData.MixedVector.BaseType?.ToString() ?? "null"}");
+    Console.WriteLine($"  EmptyVector: Count={testData.EmptyVector.Count}");
+    Console.WriteLine();
+  }
 
   #region Edge Cases Tests
 

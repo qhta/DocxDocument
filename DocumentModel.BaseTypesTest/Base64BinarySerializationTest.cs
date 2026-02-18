@@ -77,19 +77,8 @@ public static class Base64BinarySerializationTests
     Console.WriteLine("--- Testing Base64Binary XML Serialization ---");
 
     // Create test object
-    var testData = new Base64BinaryTestDataClass
-    {
-      BinaryData = new byte[] { 0xDE, 0xAD, 0xBE, 0xEF },
-      DocumentHash = "A1B2C3D4E5F6",
-      ImageData = new byte[] { 0xFF, 0xD8, 0xFF, 0xE0 } // JPEG header
-    };
-
-    Console.WriteLine($"Original data:");
-
-    Console.WriteLine($"  BinaryData: {testData.BinaryData}");
-    Console.WriteLine($"  DocumentHash: {testData.DocumentHash}");
-    Console.WriteLine($"  ImageData: {testData.ImageData}");
-    Console.WriteLine();
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(Base64BinaryTestDataClass));
@@ -143,6 +132,27 @@ public static class Base64BinarySerializationTests
     return true;
   }
 
+  private static void ShowOriginalData(Base64BinaryTestDataClass testData)
+  {
+    Console.WriteLine($"Original data:");
+
+    Console.WriteLine($"  BinaryData: {testData.BinaryData}");
+    Console.WriteLine($"  DocumentHash: {testData.DocumentHash}");
+    Console.WriteLine($"  ImageData: {testData.ImageData}");
+    Console.WriteLine();
+  }
+
+  private static Base64BinaryTestDataClass CreateTestData()
+  {
+    var testData = new Base64BinaryTestDataClass
+    {
+      BinaryData = new byte[] { 0xDE, 0xAD, 0xBE, 0xEF },
+      DocumentHash = "A1B2C3D4E5F6",
+      ImageData = new byte[] { 0xFF, 0xD8, 0xFF, 0xE0 } // JPEG header
+    };
+    return testData;
+  }
+
   #endregion
 
   #region JSON Serialization Tests
@@ -152,18 +162,8 @@ public static class Base64BinarySerializationTests
     Console.WriteLine("--- Testing Base64Binary JSON Serialization ---");
 
     // Create test object
-    var testData = new Base64BinaryTestDataClass
-    {
-      BinaryData = new byte[] { 0xCA, 0xFE, 0xBA, 0xBE },
-      DocumentHash = "0123456789ABCDEF",
-      ImageData = new byte[] { 0x89, 0x50, 0x4E, 0x47 } // PNG header
-    };
-
-    Console.WriteLine($"Original data:");
-    Console.WriteLine($"  BinaryData: {testData.BinaryData}");
-    Console.WriteLine($"  DocumentHash: {testData.DocumentHash}");
-    Console.WriteLine($"  ImageData: {testData.ImageData}");
-    Console.WriteLine();
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions

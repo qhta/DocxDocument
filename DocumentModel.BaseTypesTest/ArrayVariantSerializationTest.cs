@@ -419,44 +419,8 @@ public static class ArrayVariantSerializationTests
   static bool TestArrayVariantXmlSerialization()
   {
     Console.WriteLine("--- Testing ArrayVariant XML Serialization ---");      // Create test object
-    var testData = new ArrayVariantTestData
-    {
-      IntArray = new ArrayVariant(VariantType.Int32, 5),
-      StringArray = new ArrayVariant(VariantType.String, 3),
-      DoubleArray = new ArrayVariant(VariantType.Double, 4),
-      BoolArray = new ArrayVariant(VariantType.Boolean, 2),
-      CustomBoundsArray = new ArrayVariant(VariantType.Int32, 1, 3),
-      EmptyArray = new ArrayVariant(VariantType.String, 0)
-    };
-
-    // Fill arrays
-    for (int i = 0; i < 5; i++)
-      testData.IntArray[i] = (i + 1) * 10;
-
-    testData.StringArray[0] = "Alpha";
-    testData.StringArray[1] = "Beta";
-    testData.StringArray[2] = "Gamma";
-
-    testData.DoubleArray[0] = 1.5;
-    testData.DoubleArray[1] = 2.75;
-    testData.DoubleArray[2] = 3.125;
-    testData.DoubleArray[3] = 4.0625;
-
-    testData.BoolArray[0] = true;
-    testData.BoolArray[1] = false;
-
-    testData.CustomBoundsArray[1] = 100;
-    testData.CustomBoundsArray[2] = 200;
-    testData.CustomBoundsArray[3] = 300;
-
-    Console.WriteLine($"Original data:");
-    Console.WriteLine($"  IntArray: Size={testData.IntArray.Size}, Count={testData.IntArray.Count}");
-    Console.WriteLine($"  StringArray: Size={testData.StringArray.Size}, Count={testData.StringArray.Count}");
-    Console.WriteLine($"  DoubleArray: Size={testData.DoubleArray.Size}, Count={testData.DoubleArray.Count}");
-    Console.WriteLine($"  BoolArray: Size={testData.BoolArray.Size}, Count={testData.BoolArray.Count}");
-    Console.WriteLine($"  CustomBoundsArray: LowerBounds={testData.CustomBoundsArray.LowerBounds}, UpperBounds={testData.CustomBoundsArray.UpperBounds}");
-    Console.WriteLine($"  EmptyArray: Size={testData.EmptyArray.Size}");
-    Console.WriteLine();
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(ArrayVariantTestData));
@@ -489,6 +453,52 @@ public static class ArrayVariantSerializationTests
     Console.WriteLine("\n✓ XML Serialization/Deserialization test passed");
     Console.WriteLine();
     return true;
+  }
+
+  private static void ShowOriginalData(ArrayVariantTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+    Console.WriteLine($"  IntArray: Size={testData.IntArray.Size}, Count={testData.IntArray.Count}");
+    Console.WriteLine($"  StringArray: Size={testData.StringArray.Size}, Count={testData.StringArray.Count}");
+    Console.WriteLine($"  DoubleArray: Size={testData.DoubleArray.Size}, Count={testData.DoubleArray.Count}");
+    Console.WriteLine($"  BoolArray: Size={testData.BoolArray.Size}, Count={testData.BoolArray.Count}");
+    Console.WriteLine($"  CustomBoundsArray: LowerBounds={testData.CustomBoundsArray.LowerBounds}, UpperBounds={testData.CustomBoundsArray.UpperBounds}");
+    Console.WriteLine($"  EmptyArray: Size={testData.EmptyArray.Size}");
+    Console.WriteLine();
+  }
+
+  private static ArrayVariantTestData CreateTestData()
+  {
+    var testData = new ArrayVariantTestData
+    {
+      IntArray = new ArrayVariant(VariantType.Int32, 5),
+      StringArray = new ArrayVariant(VariantType.String, 3),
+      DoubleArray = new ArrayVariant(VariantType.Double, 4),
+      BoolArray = new ArrayVariant(VariantType.Boolean, 2),
+      CustomBoundsArray = new ArrayVariant(VariantType.Int32, 1, 3),
+      EmptyArray = new ArrayVariant(VariantType.String, 0)
+    };
+
+    // Fill arrays
+    for (int i = 0; i < 5; i++)
+      testData.IntArray[i] = (i + 1) * 10;
+
+    testData.StringArray[0] = "Alpha";
+    testData.StringArray[1] = "Beta";
+    testData.StringArray[2] = "Gamma";
+
+    testData.DoubleArray[0] = 1.5;
+    testData.DoubleArray[1] = 2.75;
+    testData.DoubleArray[2] = 3.125;
+    testData.DoubleArray[3] = 4.0625;
+
+    testData.BoolArray[0] = true;
+    testData.BoolArray[1] = false;
+
+    testData.CustomBoundsArray[1] = 100;
+    testData.CustomBoundsArray[2] = 200;
+    testData.CustomBoundsArray[3] = 300;
+    return testData;
   }
 
   private static bool VerifyDeserializedData(ArrayVariantTestData? deserializedData, ArrayVariantTestData testData)
@@ -530,44 +540,8 @@ public static class ArrayVariantSerializationTests
   static bool TestArrayVariantJsonSerialization()
   {
     Console.WriteLine("--- Testing ArrayVariant JSON Serialization ---");      // Create test object
-    var testData = new ArrayVariantTestData
-    {
-      IntArray = new ArrayVariant(VariantType.Int32, 4),
-      StringArray = new ArrayVariant(VariantType.String, 3),
-      DoubleArray = new ArrayVariant(VariantType.Double, 3),
-      BoolArray = new ArrayVariant(VariantType.Boolean, 2),
-      CustomBoundsArray = new ArrayVariant(VariantType.String, 5, 7),
-      EmptyArray = new ArrayVariant(VariantType.Int32, 0)
-    };
-
-    // Fill arrays
-    testData.IntArray[0] = 100;
-    testData.IntArray[1] = 200;
-    testData.IntArray[2] = 300;
-    testData.IntArray[3] = 400;
-
-    testData.StringArray[0] = "Red";
-    testData.StringArray[1] = "Green";
-    testData.StringArray[2] = "Blue";
-
-    testData.DoubleArray[0] = 10.5;
-    testData.DoubleArray[1] = 20.25;
-    testData.DoubleArray[2] = 30.125;
-
-    testData.BoolArray[0] = false;
-    testData.BoolArray[1] = true;
-
-    testData.CustomBoundsArray[5] = "Fifth";
-    testData.CustomBoundsArray[6] = "Sixth";
-    testData.CustomBoundsArray[7] = "Seventh";
-
-    Console.WriteLine($"Original data:");
-    Console.WriteLine($"  IntArray: Size={testData.IntArray.Size}, Count={testData.IntArray.Count}");
-    Console.WriteLine($"  StringArray: Size={testData.StringArray.Size}, Count={testData.StringArray.Count}");
-    Console.WriteLine($"  DoubleArray: Size={testData.DoubleArray.Size}, Count={testData.DoubleArray.Count}");
-    Console.WriteLine($"  BoolArray: Size={testData.BoolArray.Size}, Count={testData.BoolArray.Count}");
-    Console.WriteLine($"  CustomBoundsArray: LowerBounds={testData.CustomBoundsArray.LowerBounds}, UpperBounds={testData.CustomBoundsArray.UpperBounds}");
-    Console.WriteLine($"  EmptyArray: Size={testData.EmptyArray.Size}");
+    var testData = CreateTestData();
+    ShowOriginalData(testData); 
     Console.WriteLine();
 
     // Serialize to JSON

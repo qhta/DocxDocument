@@ -186,36 +186,8 @@ public static class HalfPointsSerializationTests
     Console.WriteLine("--- Testing HalfPoints XML Serialization ---");
 
     // Create test object
-    var testData = new HalfPointsTestData
-    {
-      Id = 1,
-      Name = "XML Test",
-      FontSize = new HalfPoints(24),       // 12 points
-      LineHeight = new HalfPoints(36),     // 18 points
-      LetterSpacing = new HalfPoints(1),   // 0.5 points
-      WordSpacing = new HalfPoints(2),     // 1 point
-      SuperscriptOffset = new HalfPoints(10), // 5 points
-      SubscriptOffset = new HalfPoints(6), // 3 points
-      BorderWidth = new HalfPoints(4),     // 2 points
-      ZeroValue = new HalfPoints(0),
-      SmallValue = new HalfPoints(1),      // 0.5 points
-      LargeValue = new HalfPoints(2000)    // ~13.9 inches
-    };
-
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
-    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPoints():F1}pt)");
-    Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing} ({testData.LetterSpacing.ToPoints():F1}pt)");
-    Console.WriteLine($"  WordSpacing: {testData.WordSpacing} ({testData.WordSpacing.ToPoints():F1}pt)");
-    Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset} ({testData.SuperscriptOffset.ToPoints():F1}pt)");
-    Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset} ({testData.SubscriptOffset.ToPoints():F1}pt)");
-    Console.WriteLine($"  BorderWidth: {testData.BorderWidth} ({testData.BorderWidth.ToPoints():F1}pt)");
-    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
-    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
-    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
-    Console.WriteLine();
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(HalfPointsTestData));
@@ -250,6 +222,22 @@ public static class HalfPointsSerializationTests
     Console.WriteLine("\n✓ XML Serialization/Deserialization test passed");
     Console.WriteLine();
     return true;
+  }
+
+  private static void ShowOriginalData(HalfPointsTestData testData)
+  {
+    Console.WriteLine($"Original data:");
+    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPoints():F1}pt)");
+    Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing} ({testData.LetterSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  WordSpacing: {testData.WordSpacing} ({testData.WordSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset} ({testData.SuperscriptOffset.ToPoints():F1}pt)");
+    Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset} ({testData.SubscriptOffset.ToPoints():F1}pt)");
+    Console.WriteLine($"  BorderWidth: {testData.BorderWidth} ({testData.BorderWidth.ToPoints():F1}pt)");
+    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
+    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
+    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
+    Console.WriteLine();
   }
 
   private static bool VerifyDeserializedData(HalfPointsTestData? deserializedData, HalfPointsTestData testData)
@@ -305,36 +293,8 @@ public static class HalfPointsSerializationTests
     Console.WriteLine("--- Testing HalfPoints JSON Serialization ---");
 
     // Create test object
-    var testData = new HalfPointsTestData
-    {
-      Id = 2,
-      Name = "JSON Test",
-      FontSize = new HalfPoints(28),       // 14 points
-      LineHeight = new HalfPoints(42),     // 21 points
-      LetterSpacing = new HalfPoints(2),   // 1 point
-      WordSpacing = new HalfPoints(4),     // 2 points
-      SuperscriptOffset = new HalfPoints(12), // 6 points
-      SubscriptOffset = new HalfPoints(8), // 4 points
-      BorderWidth = new HalfPoints(6),     // 3 points
-      ZeroValue = new HalfPoints(0),
-      SmallValue = new HalfPoints(1),      // 0.5 points
-      LargeValue = new HalfPoints(2000)    // ~13.9 inches
-    };
-
-    Console.WriteLine($"Original data:");
-
-
-    Console.WriteLine($"  FontSize: {testData.FontSize}");
-    Console.WriteLine($"  LineHeight: {testData.LineHeight}");
-    Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing}");
-    Console.WriteLine($"  WordSpacing: {testData.WordSpacing}");
-    Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset}");
-    Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset}");
-    Console.WriteLine($"  BorderWidth: {testData.BorderWidth}");
-    Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
-    Console.WriteLine($"  SmallValue: {testData.SmallValue}");
-    Console.WriteLine($"  LargeValue: {testData.LargeValue}");
-    Console.WriteLine();
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
@@ -366,6 +326,26 @@ public static class HalfPointsSerializationTests
   }
 
   #endregion
+
+  private static HalfPointsTestData CreateTestData()
+  {
+    return new HalfPointsTestData
+    {
+      Id = 1,
+      Name = "XML Test",
+      FontSize = new HalfPoints(24),       // 12 points
+      LineHeight = new HalfPoints(36),     // 18 points
+      LetterSpacing = new HalfPoints(1),   // 0.5 points
+      WordSpacing = new HalfPoints(2),     // 1 point
+      SuperscriptOffset = new HalfPoints(10), // 5 points
+      SubscriptOffset = new HalfPoints(6), // 3 points
+      BorderWidth = new HalfPoints(4),     // 2 points
+      ZeroValue = new HalfPoints(0),
+      SmallValue = new HalfPoints(1),      // 0.5 points
+      LargeValue = new HalfPoints(2000)    // ~13.9 inches
+    };
+  }
+
 
   #region Edge Cases Tests
 
