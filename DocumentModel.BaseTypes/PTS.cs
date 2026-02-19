@@ -373,7 +373,7 @@ public readonly partial struct PTS : ILengthMeasure, IComparable<PTS>, IEquatabl
   /// Suffixes for length units that can be used in string representations of length measures.
   /// The order of the suffixes corresponds to the order of the LengthUnit enum values.
   /// </summary>
-  public static string[] LengthUnitSuffixes { get; } = ["twips", "pt", "mm", "cm", "in"];
+  public static string[] LengthUnitSuffixes { get; } = ["tw", "pt", "mm", "cm", "in"];
 
   #endregion
 

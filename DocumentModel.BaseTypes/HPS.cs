@@ -16,12 +16,12 @@ public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable
   /// <summary>
   /// The internal value storing the measurement in half-points.
   /// </summary>
-  private readonly Int64 value;
+  private readonly double value;
 
   /// <summary>
   /// Gets the value of this instance in half-points.
   /// </summary>
-  public Int64 Value => value;
+  public long Value => (long)value;
 
   #region Constant Factors
 
@@ -90,46 +90,39 @@ public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HPSinMM;
-      value = (Int64)val;
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * HPSinMM;
+      value = val;
+      return;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HPSinCM;
-      value = (Int64)val;
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * HPSinCM;
+      value = val;
+      return;
     }
-    else if (str.EndsWith("in"))
+    if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HPSinInch;
-      value = (Int64)val;
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * HPSinInch;
+      value = val;
+      return;
     }
-    else if (str.EndsWith("pt"))
+    if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HPSinPT;
-      value = (Int64)val;
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * HPSinPT;
+      value = val;
+      return;
     }
-    else value = Int64.Parse(str);
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="HPS"/> struct from a 32-bit unsigned integer value.
-  /// </summary>
-  /// <param name="value">The value in half-points.</param>
-  public HPS(UInt32 value)
-  {
-    this.value = value;
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="HPS"/> struct from a 32-bit signed integer value.
-  /// </summary>
-  /// <param name="value">The value in half-points.</param>
-  public HPS(Int32 value)
-  {
-    this.value = (Int64)value;
+    if (str.EndsWith("tw"))
+    {
+      str = str.Substring(0, str.Length - 2).Trim();
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * HPSinTwips;
+      value = val;
+      return;
+    }
+    value = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
   }
 
   /// <summary>
@@ -137,6 +130,16 @@ public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable
   /// </summary>
   /// <param name="value">The value in half-points.</param>
   public HPS(Int64 value)
+  {
+    this.value = value;
+  }
+
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="HPS"/> struct from a 64-bit floating-point value.
+  /// </summary>
+  /// <param name="value">The value in half-points.</param>
+  public HPS(Double value)
   {
     this.value = value;
   }
@@ -289,7 +292,7 @@ public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable
   /// <summary>
   /// Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
   /// </summary>
-  public override string ToString() => Value.ToString(CultureInfo.InvariantCulture);
+  public override string ToString() => value.ToString(CultureInfo.InvariantCulture);
 
   /// <summary>
   /// Converts the current length measure to its string representation using the specified format provider.
@@ -376,7 +379,7 @@ public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable
   /// Suffixes for length units that can be used in string representations of length measures.
   /// The order of the suffixes corresponds to the order of the LengthUnit enum values.
   /// </summary>
-  public static string[] LengthUnitSuffixes { get; } = ["twips", "pt", "mm", "cm", "in"];
+  public static string[] LengthUnitSuffixes { get; } = ["tw", "pt", "mm", "cm", "in"];
 
   #endregion
 
@@ -399,87 +402,7 @@ public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable
   /// <returns>A string representation of the half-points value.</returns>
   public static implicit operator string(HPS value)
   {
-    return value.value.ToString();
-  }
-
-  /// <summary>
-  /// Implicitly converts a 16-bit signed integer to a <see cref="HPS"/> value.
-  /// </summary>
-  /// <param name="value">The 16-bit signed integer to convert.</param>
-  /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
-  public static implicit operator HPS(Int16 value)
-  {
-    return new HPS(value);
-  }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="HPS"/> value to a 16-bit signed integer.
-  /// </summary>
-  /// <param name="value">The <see cref="HPS"/> value to convert.</param>
-  /// <returns>A 16-bit signed integer representation of the half-points value.</returns>
-  public static implicit operator Int16(HPS value)
-  {
-    return (Int16)value.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a 16-bit unsigned integer to a <see cref="HPS"/> value.
-  /// </summary>
-  /// <param name="value">The 16-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
-  public static implicit operator HPS(UInt16 value)
-  {
-    return new HPS(value);
-  }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="HPS"/> value to a 16-bit unsigned integer.
-  /// </summary>
-  /// <param name="value">The <see cref="HPS"/> value to convert.</param>
-  /// <returns>A 16-bit unsigned integer representation of the half-points value.</returns>
-  public static implicit operator UInt16(HPS value)
-  {
-    return (UInt16)value.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a 32-bit signed integer to a <see cref="HPS"/> value.
-  /// </summary>
-  /// <param name="value">The 32-bit signed integer to convert.</param>
-  /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
-  public static implicit operator HPS(Int32 value)
-  {
-    return new HPS(value);
-  }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="HPS"/> value to a 32-bit signed integer.
-  /// </summary>
-  /// <param name="value">The <see cref="HPS"/> value to convert.</param>
-  /// <returns>A 32-bit signed integer representation of the half-points value.</returns>
-  public static implicit operator Int32(HPS value)
-  {
-    return (Int32)value.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer to a <see cref="HPS"/> value.
-  /// </summary>
-  /// <param name="value">The 32-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
-  public static implicit operator HPS(UInt32 value)
-  {
-    return new HPS(value);
-  }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="HPS"/> value to a 32-bit unsigned integer.
-  /// </summary>
-  /// <param name="value">The <see cref="HPS"/> value to convert.</param>
-  /// <returns>A 32-bit unsigned integer representation of the half-points value.</returns>
-  public static implicit operator UInt32(HPS value)
-  {
-    return (UInt32)value.value;
+    return value.value.ToString(CultureInfo.InvariantCulture);
   }
 
   /// <summary>
@@ -503,15 +426,24 @@ public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="HPS"/> value to a 64-bit unsigned integer.
+  /// Implicitly converts a 64-bit signed integer to a <see cref="HPS"/> value.
   /// </summary>
-  /// <param name="value">The <see cref="HPS"/> value to convert.</param>
-  /// <returns>A 64-bit unsigned integer representation of the half-points value.</returns>
-  public static implicit operator UInt64(HPS value)
+  /// <param name="value">The 64-bit signed integer to convert.</param>
+  /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
+  public static implicit operator HPS(Double value)
   {
-    return (UInt64)value.value;
+    return new HPS(value);
   }
 
+  /// <summary>
+  /// Implicitly converts a <see cref="HPS"/> value to a 64-bit signed integer.
+  /// </summary>
+  /// <param name="value">The <see cref="HPS"/> value to convert.</param>
+  /// <returns>A 64-bit signed integer representation of the half-points value.</returns>
+  public static implicit operator Double(HPS value)
+  {
+    return value.value;
+  }
   #endregion
 
   #region IComparable and IEquatable Implementations
