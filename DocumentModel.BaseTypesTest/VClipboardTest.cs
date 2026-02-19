@@ -6,7 +6,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for VClipboardData type serialization in both XML and JSON formats.
 /// </summary>
-public static class VClipboardDataSerializationTests
+public static class VClipboardDataTest
 {
   /// <summary>
   /// Runs all VClipboardData serialization tests.

@@ -5,7 +5,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for HexRgb type serialization in both XML and JSON formats.
 /// </summary>
-public static class HexRgbSerializationTests
+public static class HexRgbTest
 {
   /// <summary>
   /// Runs all HexRgb serialization tests.

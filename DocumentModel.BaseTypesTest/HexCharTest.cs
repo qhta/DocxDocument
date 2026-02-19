@@ -5,7 +5,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for HexChar type serialization in both XML and JSON formats.
 /// </summary>
-public static class HexCharSerializationTests
+public static class HexCharTest
 {
   /// <summary>
   /// Runs all HexChar serialization tests.

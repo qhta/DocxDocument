@@ -3,7 +3,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for TSBoolean type serialization in both XML and JSON formats.
 /// </summary>
-public static class TSBooleanSerializationTests
+public static class TSBooleanTest
 {
   /// <summary>
   /// Runs all TSBoolean serialization tests.

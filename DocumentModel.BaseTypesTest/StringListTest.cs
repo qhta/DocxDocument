@@ -8,7 +8,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for StringList type serialization in both XML and JSON formats.
 /// </summary>
-public static class StringListSerializationTests
+public static class StringListTest
 {
   /// <summary>
   /// Runs all StringList serialization tests.

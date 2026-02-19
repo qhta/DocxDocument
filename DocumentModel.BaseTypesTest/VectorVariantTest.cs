@@ -5,7 +5,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for VectorVariant type serialization in both XML and JSON formats.
 /// </summary>
-public static class VectorVariantSerializationTests
+public static class VectorVariantTest
 {
   /// <summary>
   /// Runs all VectorVariant serialization tests.

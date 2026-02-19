@@ -5,7 +5,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for ListOf&lt;T&gt; type serialization in both XML and JSON formats.
 /// </summary>
-public static class ListOfSerializationTests
+public static class ListOfTest
 {
   /// <summary>
   /// Runs all ListOf&lt;T&gt; serialization tests.

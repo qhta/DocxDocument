@@ -5,7 +5,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for HalfPoints type serialization in both XML and JSON formats.
 /// </summary>
-public static class HPSSerializationTests
+public static class HPSTest
 {
   /// <summary>
   /// Runs all HalfPoints serialization tests.

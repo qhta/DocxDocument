@@ -3,7 +3,7 @@
 /// <summary>
 /// Test suite for Base64Binary type serialization in both XML and JSON formats.
 /// </summary>
-public static class Base64BinarySerializationTests
+public static class Base64BinaryTest
 {
   /// <summary>
   /// Runs all Base64Binary serialization tests.
