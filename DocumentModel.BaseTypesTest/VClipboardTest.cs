@@ -29,8 +29,7 @@ public static class VClipboardDataTest
     return true;
   }
 
-  #region Construction Tests
-
+  
   static bool TestVClipboardDataConstruction()
   {
     Console.WriteLine("--- Testing VClipboardData Construction ---");      // Test constructor with text data
@@ -66,10 +65,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  #endregion
-
-  #region Property Tests
-
+  
+  
   static bool TestVClipboardDataProperties()
   {
     Console.WriteLine("--- Testing VClipboardData Properties ---");      // Test Format property
@@ -140,10 +137,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  #endregion
-
-  #region Equality Tests
-
+  
+  
   static bool TestVClipboardDataEquality()
   {
     Console.WriteLine("--- Testing VClipboardData Equality ---");      // Test equal instances
@@ -217,10 +212,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  #endregion
-
-  #region Clipboard Format Tests
-
+  
+  
   static bool TestVClipboardDataClipboardFormats()
   {
     Console.WriteLine("--- Testing VClipboardData Clipboard Formats ---");      // Test CF_TEXT (1)
@@ -278,10 +271,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestVClipboardDataXmlSerialization()
   {
     Console.WriteLine("--- Testing VClipboardData XML Serialization ---");      // Create test object
@@ -352,10 +343,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestVClipboardDataJsonSerialization()
   {
     Console.WriteLine("--- Testing VClipboardData JSON Serialization ---");      // Create test object
@@ -393,10 +382,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  #endregion
-
-  #region Edge Cases Tests
-
+  
+  
   static bool TestVClipboardDataEdgeCases()
   {
     Console.WriteLine("--- Testing VClipboardData Edge Cases ---");      // Test with all zeros
@@ -460,10 +447,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestVClipboardDataPerformance()
   {
     Console.WriteLine("--- Testing VClipboardData Performance ---"); const int iterations = 10000;
@@ -542,10 +527,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  #endregion
-
-  #region Helper Methods
-
+  
+  
   private static VClipboardDataTestData CreateTestData()
   {
     return new VClipboardDataTestData
@@ -583,10 +566,8 @@ public static class VClipboardDataTest
     return data;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various VClipboardData properties.

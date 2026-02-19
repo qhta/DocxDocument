@@ -23,8 +23,7 @@ public static class Base64BinaryTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestBase64BinaryBasicOperations()
   {
     Console.WriteLine("--- Testing Base64Binary Basic Operations ---");
@@ -64,10 +63,8 @@ public static class Base64BinaryTest
 
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestBase64BinaryXmlSerialization()
   {
     Console.WriteLine("--- Testing Base64Binary XML Serialization ---");
@@ -149,10 +146,8 @@ public static class Base64BinaryTest
     return testData;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestBase64BinaryJsonSerialization()
   {
     Console.WriteLine("--- Testing Base64Binary JSON Serialization ---");
@@ -204,10 +199,8 @@ public static class Base64BinaryTest
     return true;
   }
 
-  #endregion
-
-  #region Edge Cases Tests
-
+  
+  
   static bool TestBase64BinaryEdgeCases()
   {
     Console.WriteLine("--- Testing Base64Binary Edge Cases ---");
@@ -265,10 +258,8 @@ public static class Base64BinaryTest
 
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestBase64BinaryPerformance()
   {
     Console.WriteLine("--- Testing Base64Binary Performance ---");
@@ -330,11 +321,9 @@ public static class Base64BinaryTest
     return true;
   }
 
-  #endregion
-
+  
 }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various Base64Binary properties.

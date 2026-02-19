@@ -25,8 +25,7 @@ public static class HexBinaryTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestHexBinaryBasicOperations()
   {
     Console.WriteLine("--- Testing HexBinary Basic Operations ---");
@@ -66,10 +65,8 @@ public static class HexBinaryTest
 
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestHexBinaryXmlSerialization()
   {
     Console.WriteLine("--- Testing HexBinary XML Serialization ---");
@@ -131,10 +128,8 @@ public static class HexBinaryTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestHexBinaryJsonSerialization()
   {
     Console.WriteLine("--- Testing HexBinary JSON Serialization ---");
@@ -187,8 +182,7 @@ public static class HexBinaryTest
     return true;
   }
 
-  #endregion
-
+  
   private static HexBinaryTestDataClass CreateTestData()
   {
     return new HexBinaryTestDataClass
@@ -209,8 +203,7 @@ public static class HexBinaryTest
     Console.WriteLine();
   }
 
-  #region Edge Cases Tests
-
+  
   static bool TestHexBinaryEdgeCases()
   {
     Console.WriteLine("--- Testing HexBinary Edge Cases ---");
@@ -263,10 +256,8 @@ public static class HexBinaryTest
 
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestHexBinaryPerformance()
   {
     Console.WriteLine("--- Testing HexBinary Performance ---");
@@ -329,11 +320,9 @@ public static class HexBinaryTest
 
   }
 
-  #endregion
-
+  
 }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various HexBinary properties.

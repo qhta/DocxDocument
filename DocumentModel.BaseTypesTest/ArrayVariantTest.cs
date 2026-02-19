@@ -28,8 +28,7 @@ public static class ArrayVariantTests
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestArrayVariantBasicOperations()
   {
     Console.WriteLine("--- Testing ArrayVariant Basic Operations ---");      // Test default constructor
@@ -97,10 +96,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  #endregion
-
-  #region ValueType Conversion Tests
-
+  
+  
   static bool TestArrayVariantTypeConversions()
   {
     Console.WriteLine("--- Testing ArrayVariant ValueType Conversions ---");      // Test different variant types
@@ -152,10 +149,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  #endregion
-
-  #region ToString Tests
-
+  
+  
   static bool TestArrayVariantToString()
   {
     Console.WriteLine("--- Testing ArrayVariant ToString ---");      // Test empty array
@@ -327,10 +322,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  #endregion
-
-  #region Resizing Tests
-
+  
+  
   static bool TestArrayVariantResizing()
   {
     Console.WriteLine("--- Testing ArrayVariant Resizing ---");      // Test resize with size only
@@ -409,10 +402,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestArrayVariantXmlSerialization()
   {
     Console.WriteLine("--- Testing ArrayVariant XML Serialization ---");      // Create test object
@@ -530,10 +521,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestArrayVariantJsonSerialization()
   {
     Console.WriteLine("--- Testing ArrayVariant JSON Serialization ---");      // Create test object
@@ -563,10 +552,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  #endregion
-
-  #region Edge Cases Tests
-
+  
+  
   static bool TestArrayVariantEdgeCases()
   {
     Console.WriteLine("--- Testing ArrayVariant Edge Cases ---");      // Test empty array
@@ -662,10 +649,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestArrayVariantPerformance()
   {
     Console.WriteLine("--- Testing ArrayVariant Performance ---"); const int iterations = 10000;
@@ -778,10 +763,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various ArrayVariant properties.

@@ -26,8 +26,7 @@ public static class PTSTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestPointsBasicOperations()
   {
     Console.WriteLine("--- Testing Points Basic Operations ---");      // Test string to Points conversion (plain number)
@@ -66,10 +65,8 @@ public static class PTSTest
     return true;
   }
 
-  #endregion
-
-  #region Unit Conversion Tests
-
+  
+  
   static bool TestPointsUnitConversions()
   {
     Console.WriteLine("--- Testing Points Unit Conversions ---");      // Test inch conversions
@@ -138,10 +135,8 @@ public static class PTSTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestPointsXmlSerialization()
   {
     Console.WriteLine("--- Testing Points XML Serialization ---");      // Create test object
@@ -223,10 +218,8 @@ public static class PTSTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestPointsJsonSerialization()
   {
     Console.WriteLine("--- Testing Points JSON Serialization ---");      // Create test object
@@ -256,8 +249,7 @@ public static class PTSTest
     return true;
   }
 
-  #endregion
-
+  
   private static PointsTestData CreateTestData()
   {
     return new PointsTestData
@@ -290,8 +282,7 @@ public static class PTSTest
     Console.WriteLine();
   }
 
-  #region Edge Cases Tests
-
+  
   static bool TestPointsEdgeCases()
   {
     Console.WriteLine("--- Testing Points Edge Cases ---");      // Test zero value
@@ -405,10 +396,8 @@ public static class PTSTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestPointsPerformance()
   {
     Console.WriteLine("--- Testing Points Performance ---"); const int iterations = 100000;
@@ -550,10 +539,8 @@ public static class PTSTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various Points properties.

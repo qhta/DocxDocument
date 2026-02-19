@@ -31,8 +31,7 @@ public static class StringListTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestStringListBasicOperations()
   {
     Console.WriteLine("--- Testing StringList Basic Operations ---");      // Test default constructor
@@ -75,10 +74,8 @@ public static class StringListTest
     return true;
   }
 
-  #endregion
-
-  #region Collection Operations Tests
-
+  
+  
   static bool TestStringListCollectionOperations()
   {
     Console.WriteLine("--- Testing StringList Collection Operations ---");      // Test Add and enumeration
@@ -136,10 +133,8 @@ public static class StringListTest
     return true;
   }
 
-  #endregion
-
-  #region Parsing Tests
-
+  
+  
   static bool TestStringListParsing()
   {
     Console.WriteLine("--- Testing StringList Parsing ---");      // Test simple comma-separated values
@@ -222,10 +217,8 @@ public static class StringListTest
     return true;
   }
 
-  #endregion
-
-  #region Conversion Tests
-
+  
+  
   static bool TestStringListConversions()
   {
     Console.WriteLine("--- Testing StringList IConvertible Conversions ---");      // Test GetTypeCode
@@ -355,10 +348,8 @@ public static class StringListTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestStringListXmlSerialization()
   {
     Console.WriteLine("--- Testing StringList XML Serialization ---");      // Create test object
@@ -431,10 +422,8 @@ public static class StringListTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestStringListJsonSerialization()
   {
     Console.WriteLine("--- Testing StringList JSON Serialization ---");      // Create test object
@@ -465,8 +454,7 @@ public static class StringListTest
     return true;
   }
 
-  #endregion
-
+  
   private static StringListTestData CreateTestData()
   {
     return new StringListTestData
@@ -493,8 +481,7 @@ public static class StringListTest
     Console.WriteLine();
   }
 
-  #region Edge Cases Tests
-
+  
   static bool TestStringListEdgeCases()
   {
     Console.WriteLine("--- Testing StringList Edge Cases ---");      // Test null handling
@@ -585,10 +572,8 @@ public static class StringListTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestStringListPerformance()
   {
     Console.WriteLine("--- Testing StringList Performance ---"); const int iterations = 10000;
@@ -711,10 +696,8 @@ public static class StringListTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various StringList properties.

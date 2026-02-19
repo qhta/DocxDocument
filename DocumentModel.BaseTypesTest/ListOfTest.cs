@@ -27,8 +27,7 @@ public static class ListOfTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestListOfBasicOperations()
   {
     Console.WriteLine("--- Testing ListOf<T> Basic Operations ---");      // Test with integer type
@@ -76,10 +75,8 @@ public static class ListOfTest
     return true;
   }
 
-  #endregion
-
-  #region Collection Operations Tests
-
+  
+  
   static bool TestListOfCollectionOperations()
   {
     Console.WriteLine("--- Testing ListOf<T> Collection Operations ---");      // Test Add and enumeration with integers
@@ -138,10 +135,8 @@ public static class ListOfTest
     return true;
   }
 
-  #endregion
-
-  #region Parsing Tests
-
+  
+  
   static bool TestListOfParsing()
   {
     Console.WriteLine("--- Testing ListOf<T> Parsing ---");      // Test space-separated integers
@@ -240,10 +235,8 @@ public static class ListOfTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestListOfXmlSerialization()
   {
     Console.WriteLine("--- Testing ListOf<T> XML Serialization ---");      // Create test object
@@ -343,10 +336,8 @@ public static class ListOfTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestListOfJsonSerialization()
   {
     Console.WriteLine("--- Testing ListOf<T> JSON Serialization ---");      // Create test object
@@ -377,8 +368,7 @@ public static class ListOfTest
     return true;
   }
 
-  #endregion
-
+  
   private static ListOfTestData CreateTestData()
   {
     return new ListOfTestData
@@ -409,8 +399,7 @@ public static class ListOfTest
     Console.WriteLine();
   }
 
-  #region Edge Cases Tests
-
+  
   static bool TestListOfEdgeCases()
   {
     Console.WriteLine("--- Testing ListOf<T> Edge Cases ---");      // Test IConvertible methods
@@ -501,10 +490,8 @@ public static class ListOfTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestListOfPerformance()
   {
     Console.WriteLine("--- Testing ListOf<T> Performance ---"); const int iterations = 10000;
@@ -628,10 +615,8 @@ public static class ListOfTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various ListOf properties.
