@@ -60,23 +60,6 @@ public class PTSJsonConverter : JsonConverter<PTS>
           return new PTS(longValue);
         }
 
-        if (reader.TryGetUInt64(out ulong ulongValue))
-        {
-          return new PTS(ulongValue);
-        }
-
-        // Try as 32-bit integer
-        if (reader.TryGetInt32(out int intValue))
-        {
-          return new PTS(intValue);
-        }
-
-        // Try as 32-bit unsigned integer
-        if (reader.TryGetUInt32(out uint uintValue))
-        {
-          return new PTS(uintValue);
-        }
-
         throw new JsonException($"Invalid numeric value for Points");
       }
       catch (FormatException ex)

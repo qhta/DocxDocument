@@ -1,7 +1,4 @@
 ﻿using System.Globalization;
-using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace DocumentModel.BaseTypesTest;
 
@@ -153,16 +150,16 @@ public static class HPSSerializationTests
       Console.WriteLine("\nTesting string output with units:");
       HPS measurement = 144;
       Console.WriteLine($"  As half-points: {measurement}");
-      Console.WriteLine($"  As inches: {measurement.ToString("in")}");
-      Console.WriteLine($"  As points: {measurement.ToString("pt")}");
-      Console.WriteLine($"  As mm: {measurement.ToString("mm")}");
-      Console.WriteLine($"  As cm: {measurement.ToString("cm")}");
+      Console.WriteLine($"  As inches: {measurement.ToString(LengthUnit.Inches)}");
+      Console.WriteLine($"  As points: {measurement.ToString(LengthUnit.Points)}");
+      Console.WriteLine($"  As mm: {measurement.ToString(LengthUnit.Millimeters)}");
+      Console.WriteLine($"  As cm: {measurement.ToString(LengthUnit.Centimeters)}");
 
       // Test string output with precision
       Console.WriteLine("\nTesting string output with precision:");
-      Console.WriteLine($"  Precision 0: {measurement.ToString(0, "in")}");
-      Console.WriteLine($"  Precision 2: {measurement.ToString(2, "pt")}");
-      Console.WriteLine($"  Precision 4: {measurement.ToString(4, "mm")}");
+      Console.WriteLine($"  Precision 0: {measurement.ToString("F0", LengthUnit.Inches)}");
+      Console.WriteLine($"  Precision 2: {measurement.ToString("F2", LengthUnit.Points)}");
+      Console.WriteLine($"  Precision 4: {measurement.ToString("F4", LengthUnit.Millimeters)}");
 
       Console.WriteLine("\n✓ All unit conversion tests passed");
       Console.WriteLine();
@@ -442,11 +439,11 @@ public static class HPSSerializationTests
       Console.WriteLine("\nTesting output format with different units:");
       HPS measurement = 144;
       Console.WriteLine($"  As half-points: {measurement}");
-      Console.WriteLine($"  As inches (no precision): {measurement.ToString("in")}");
-      Console.WriteLine($"  As inches (2 decimal): {measurement.ToString(2, "in")}");
-      Console.WriteLine($"  As points (1 decimal): {measurement.ToString(1, "pt")}");
-      Console.WriteLine($"  As mm (1 decimal): {measurement.ToString(1, "mm")}");
-      Console.WriteLine($"  As cm (2 decimal): {measurement.ToString(2, "cm")}");
+      Console.WriteLine($"  As inches (no precision): {measurement.ToString(LengthUnit.Inches)}");
+      Console.WriteLine($"  As inches (2 decimal): {measurement.ToString("F2", LengthUnit.Inches)}");
+      Console.WriteLine($"  As points (1 decimal): {measurement.ToString("F1", LengthUnit.Points)}");
+      Console.WriteLine($"  As mm (1 decimal): {measurement.ToString("F1", LengthUnit.Millimeters)}");
+      Console.WriteLine($"  As cm (2 decimal): {measurement.ToString("F2", LengthUnit.Centimeters)}");
 
       // Test comparison
       Console.WriteLine("\nTesting comparison:");
@@ -535,7 +532,7 @@ public static class HPSSerializationTests
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
-        string str = testHp.ToString("in");
+        string str = testHp.ToString(LengthUnit.Inches);
       }
       sw.Stop();
       Console.WriteLine($"ToString(unit) x {iterations}: {sw.ElapsedMilliseconds}ms");

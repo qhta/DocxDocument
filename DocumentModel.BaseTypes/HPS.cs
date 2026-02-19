@@ -11,8 +11,20 @@
 /// Note: 1 half-point = 0.5 points = 1/144 inch.
 /// </remarks>
 [JsonConverter(typeof(HPSJsonConverter))]
-public readonly partial struct HPS : ILengthMeasure, IComparable<HPS>, IEquatable<HPS>
+public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable<HPS>
 {
+  /// <summary>
+  /// The internal value storing the measurement in half-points.
+  /// </summary>
+  private readonly Int64 value;
+
+  /// <summary>
+  /// Gets the value of this instance in half-points.
+  /// </summary>
+  public Int64 Value => value;
+
+  #region Constant Factors
+
   /// <summary>
   /// How many half-points are in one millimeter.
   /// There is a small difference between real and nominal factors.
@@ -54,10 +66,9 @@ public readonly partial struct HPS : ILengthMeasure, IComparable<HPS>, IEquatabl
   /// </remarks>
   public const double HPSinTwips = 1.0 / 10.0;
 
-  /// <summary>
-  /// The internal value storing the measurement in half-points.
-  /// </summary>
-  private readonly UInt64 value;
+  #endregion
+
+  #region Constructors
 
   /// <summary>
   /// Initializes a new instance of the <see cref="HPS"/> struct from a string value.
@@ -80,27 +91,27 @@ public readonly partial struct HPS : ILengthMeasure, IComparable<HPS>, IEquatabl
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HPSinMM;
-      value = (UInt64)val;
+      value = (Int64)val;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HPSinCM;
-      value = (UInt64)val;
+      value = (Int64)val;
     }
     else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HPSinInch;
-      value = (UInt64)val;
+      value = (Int64)val;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HPSinPT;
-      value = (UInt64)val;
+      value = (Int64)val;
     }
-    else value = UInt64.Parse(str);
+    else value = Int64.Parse(str);
   }
 
   /// <summary>
@@ -118,16 +129,7 @@ public readonly partial struct HPS : ILengthMeasure, IComparable<HPS>, IEquatabl
   /// <param name="value">The value in half-points.</param>
   public HPS(Int32 value)
   {
-    this.value = (UInt64)value;
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="HPS"/> struct from a 64-bit unsigned integer value.
-  /// </summary>
-  /// <param name="value">The value in half-points.</param>
-  public HPS(UInt64 value)
-  {
-    this.value = (UInt64)value;
+    this.value = (Int64)value;
   }
 
   /// <summary>
@@ -136,29 +138,30 @@ public readonly partial struct HPS : ILengthMeasure, IComparable<HPS>, IEquatabl
   /// <param name="value">The value in half-points.</param>
   public HPS(Int64 value)
   {
-    this.value = (UInt64)value;
+    this.value = value;
   }
+
+  #endregion
+
+  #region Conversion methods
 
   /// <summary>
   /// Converts the half-points value to millimeters.
   /// </summary>
   /// <returns>The measurement in millimeters as a double-precision floating-point number.</returns>
-  public double ToMM()
-    => value / HPSinMM;
+  public double ToMM() => value / HPSinMM;
 
   /// <summary>
   /// Converts the half-points value to centimeters.
   /// </summary>
   /// <returns>The measurement in centimeters as a double-precision floating-point number.</returns>
-  public double ToCM()
-    => value / HPSinCM;
+  public double ToCM() => value / HPSinCM;
 
   /// <summary>
   /// Converts the half-points value to inches.
   /// </summary>
   /// <returns>The measurement in inches as a double-precision floating-point number.</returns>
-  public double ToInch()
-    => value / HPSinInch;
+  public double ToInch() => value / HPSinInch;
 
   /// <summary>
   /// Converts the half-points value to points.
@@ -167,107 +170,215 @@ public readonly partial struct HPS : ILengthMeasure, IComparable<HPS>, IEquatabl
   /// <remarks>
   /// Since there are 2 half-points per point, this method divides the internal value by 2.
   /// </remarks>
-  public double ToPT()
-    => value / HPSinPT;
+  public double ToPT() => value / HPSinPT;
 
   /// <summary>
   /// Converts the half-points value to twips.
   /// </summary>
   /// <returns>The measurement in twips as a double-precision floating-point number.</returns>
-  public double ToTwips()
-    => value / HPSinTwips;
+  public double ToTwips() => value / HPSinTwips;
 
   /// <summary>
-  /// Converts the value of this instance to its equivalent string representation.
+  /// Converts the current length value to the specified unit of measurement.
   /// </summary>
-  /// <returns>The string representation of the half-points value without unit suffix.</returns>
-  public override string ToString()
+  /// <param name="unit">The target unit to which the length value will be converted. Supported units include Twips, Points, Millimeters,
+  /// Centimeters, and Inches.</param>
+  /// <returns>The length value converted to the specified unit.</returns>
+  /// <exception cref="ArgumentException">Thrown if the specified unit is not supported.</exception>
+  public double ConvertTo(LengthUnit unit)
   {
-    return ToString(null);
-  }
-
-  /// <summary>
-  /// Converts the value to string using the specified unit.
-  /// </summary>
-  /// <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-  /// <returns>The string representation of the value with the specified unit suffix.</returns>
-  /// <remarks>
-  /// When a unit is specified, the value is converted from half-points to the target unit before formatting.
-  /// </remarks>
-  public string ToString(string? unit)
-  {
-    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
-  }
-
-  /// <summary>
-  /// Converts the value to string using the specified unit and precision (fractional digits count).
-  /// </summary>
-  /// <param name="precision">The number of fractional digits in the return value.</param>
-  /// <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-  /// <returns>The string representation of the value with the specified precision and unit suffix.</returns>
-  /// <remarks>
-  /// When a unit is specified, the value is converted from half-points to the target unit before formatting.
-  /// Fixed format is used for the numeric part.
-  /// </remarks>
-  public string ToString(int precision, string? unit)
-  {
-    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
-  }
-
-  /// <summary>
-  /// Converts the value to string using the specified unit, precision (fractional digits count),
-  /// and format provider to determine digit separator. Fixed format is used.
-  /// </summary>
-  /// <param name="precision">The number of fractional digits in the return value.</param>
-  /// <param name="provider">An <see cref="IFormatProvider"/> that supplies culture-specific formatting information.</param>
-  /// <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-  /// <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
-  /// <remarks>
-  /// <para>When a unit is specified, the value is converted from half-points to the target unit before formatting.</para>
-  /// <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-  /// </remarks>
-  public string ToString(int precision, IFormatProvider provider, string? unit)
-  {
-    string format = $"F{precision}";
-    if (unit != null)
+    return unit switch
     {
-      if (unit.EndsWith("mm"))
-        return (value / HPSinMM).ToString(format, provider) + unit;
-      if (unit.EndsWith("cm"))
-        return (value / HPSinCM).ToString(format, provider) + unit;
-      if (unit.EndsWith("in"))
-        return (value / HPSinInch).ToString(format, provider) + unit;
-      if (unit.EndsWith("pt"))
-        return (value / HPSinPT).ToString(format, provider) + unit;
-    }
-    return value.ToString();
+      LengthUnit.Twips => ToTwips(),
+      LengthUnit.Points => ToPT(),
+      LengthUnit.Millimeters => ToMM(),
+      LengthUnit.Centimeters => ToCM(),
+      LengthUnit.Inches => ToInch(),
+      _ => throw new ArgumentException($"Unsupported length unit: {unit}", nameof(unit))
+    };
   }
 
+  #endregion
+
+  #region Static Factory Methods
+
   /// <summary>
-  /// Converts the value to string using the specified unit and format provider to determine digit separator.
+  /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in twips.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> that supplies culture-specific formatting information.</param>
-  /// <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-  /// <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
-  /// <remarks>
-  /// <para>When a unit is specified, the value is converted from half-points to the target unit before formatting.</para>
-  /// <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-  /// </remarks>
-  public string ToString(IFormatProvider provider, string? unit)
+  public static ILengthMeasure FromTwips(double twips) => new HPS((Int64)(twips * HPSinTwips));
+
+  /// <summary>
+  /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in points.
+  /// </summary>
+  public static ILengthMeasure FromPT(double points) => new HPS((Int64)(points * HPSinPT));
+
+  /// <summary>
+  /// Creates a new instance of an object that represents a length specified in millimeters.
+  /// </summary>
+  public static ILengthMeasure FromMM(double millimeters) => new HPS((Int64)(millimeters * HPSinMM));
+
+  /// <summary>
+  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
+  /// centimeters.
+  /// </summary>
+  public static ILengthMeasure FromCM(double centimeters) => new HPS((Int64)(centimeters * HPSinCM));
+
+  /// <summary>
+  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
+  /// </summary>
+  public static ILengthMeasure FromInch(double inches) => new HPS((Int64)(inches * HPSinInch));
+
+  /// <summary>
+  /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
+  /// </summary>
+  /// <remarks>If the input string does not conform to a valid length measure format, an exception may be
+  /// thrown.</remarks>
+  /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+  /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
+  public static ILengthMeasure Parse(string value) => new HPS(value);
+
+  /// <summary>
+  /// Converts a length value from the specified unit to an equivalent length measure.
+  /// </summary>
+  /// <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
+  /// unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
+  /// <param name="value">The numeric value representing the length to convert.</param>
+  /// <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
+  /// <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
+  public static ILengthMeasure ConvertFrom(double value, LengthUnit unit) => unit switch
   {
-    if (unit != null)
+    LengthUnit.Twips => FromTwips(value),
+    LengthUnit.Points => FromPT(value),
+    LengthUnit.Millimeters => FromMM(value),
+    LengthUnit.Centimeters => FromCM(value),
+    LengthUnit.Inches => FromInch(value),
+    _ => throw new ArgumentException($"Unsupported length unit: {unit}", nameof(unit))
+  };
+
+  #endregion
+
+  #region Parsing Methods
+
+  /// <summary>
+  /// Attempts to parse the specified string representation of a length measure and returns a value that indicates
+  /// whether the parsing succeeded.
+  /// </summary>
+  /// <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
+  /// langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
+  /// <param name="value">The string representation of the length measure to parse.</param>
+  /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
+  /// langword="null"/>.</param>
+  /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
+  public static bool TryParse(string value, out ILengthMeasure? result)
+  {
+    try
     {
-      if (unit.EndsWith("mm"))
-        return (value / HPSinMM).ToString(provider) + unit;
-      if (unit.EndsWith("cm"))
-        return (value / HPSinCM).ToString(provider) + unit;
-      if (unit.EndsWith("in"))
-        return (value / HPSinInch).ToString(provider) + unit;
-      if (unit.EndsWith("pt"))
-        return (value / HPSinPT).ToString(provider) + unit;
+      result = new HPS(value);
+      return true;
+    } catch
+    {
+      result = null!;
+      return false;
     }
-    return value.ToString();
   }
+
+  #endregion
+  
+  #region ToString conversions
+
+  /// <summary>
+  /// Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
+  /// </summary>
+  public override string ToString() => Value.ToString(CultureInfo.InvariantCulture);
+
+  /// <summary>
+  /// Converts the current length measure to its string representation using the specified format provider.
+  /// This allows for culture-specific formatting of the output string, such as using different decimal separators
+  /// based on the culture settings provided by the formatProvider.
+  /// If the formatProvider is null, the method should use invariant culture's formatting conventions.
+  /// </summary>
+  /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+  /// <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
+  public string ToString(IFormatProvider? formatProvider)
+    => Value.ToString(formatProvider ?? CultureInfo.InvariantCulture);
+
+  /// <summary>
+  /// Converts the current length measure to its string representation using the specified format string and format provider.
+  /// The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
+  /// while the format provider allows for culture-specific formatting.
+  /// If the format string is null or empty, a default numeric format should be used.
+  /// If the format provider is null, invariant culture's formatting conventions should be applied.
+  /// </summary>
+  /// <param name="format">A standard or custom numeric format string. If null or empty, a default numeric format is used.</param>
+  /// <param name="formatProvider">An object that supplies culture-specific formatting information.
+  /// If null, invariant culture's formatting conventions are used.</param>
+  /// <returns>A string representation of the current length measure,
+  /// formatted according to the specified format string and format provider.</returns>
+  public string ToString(string? format, IFormatProvider? formatProvider)
+    => Value.ToString(format, formatProvider ?? CultureInfo.InvariantCulture);
+
+  /// <summary>
+  /// Converts the current instance to its string representation using the specified format string.
+  /// </summary>
+  /// <remarks>If the format string is not recognized or is invalid, a FormatException may be thrown. Supported
+  /// format strings may include both standard and custom formats, depending on the implementation.</remarks>
+  /// <param name="format">A format string that defines how the value should be represented.
+  /// If null, a default format is used.</param>
+  /// <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
+  public string ToString(string? format) => Value.ToString(format);
+
+  /// <summary>
+  /// Converts the current length measure to its string representation using the specified unit.
+  ///   The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+  /// </summary>
+  /// <param name="unit">The unit to use for the string representation.</param>
+  /// <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
+  public string ToString(LengthUnit unit)
+    => $"{ConvertTo(unit).ToString(CultureInfo.InvariantCulture)} {LengthUnitSuffixes[(int)unit]}";
+
+  /// <summary>
+  /// Converts the current length measure to its string representation using the specified unit and format provider.
+  ///   The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+  /// </summary>
+  /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+  /// <param name="unit">The unit to use for the string representation.</param>
+  /// <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
+  public string ToString(IFormatProvider? formatProvider, LengthUnit unit)
+  => $"{ConvertTo(unit).ToString(formatProvider ?? CultureInfo.InvariantCulture)} {LengthUnitSuffixes[(int)unit]}";
+
+  /// <summary>
+  /// Converts the current length value to its string representation using the specified unit, format, and format
+  /// provider. 
+  /// The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+  /// Format string should not include unit symbols, as they will be added based on the specified unit parameter.
+  /// If the format string is null or empty, a default numeric format should be used.
+  /// </summary>
+  /// <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is
+  ///   used.</param>
+  /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, the current culture is used.</param>
+  /// <param name="unit">The unit of length to use when formatting the value.</param>
+  /// <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
+  /// provider.</returns>
+  public string ToString(string? format, IFormatProvider? formatProvider, LengthUnit unit)
+      => $"{ConvertTo(unit).ToString(format, formatProvider ?? CultureInfo.InvariantCulture)} {LengthUnitSuffixes[(int)unit]}";
+
+  /// <summary>
+  /// Converts the current length value to its string representation using the specified unit and format string.
+  /// The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+  /// </summary>
+  /// <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
+  /// <param name="unit">The unit of length to use when formatting the value.</param>
+  /// <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
+  public string ToString(string? format, LengthUnit unit)
+        => $"{ConvertTo(unit).ToString(format, CultureInfo.InvariantCulture)} {LengthUnitSuffixes[(int)unit]}";
+
+  /// <summary>
+  /// Suffixes for length units that can be used in string representations of length measures.
+  /// The order of the suffixes corresponds to the order of the LengthUnit enum values.
+  /// </summary>
+  public static string[] LengthUnitSuffixes { get; } = ["twips", "pt", "mm", "cm", "in"];
+
+  #endregion
 
   #region Implicit Conversions
 
@@ -276,100 +387,134 @@ public readonly partial struct HPS : ILengthMeasure, IComparable<HPS>, IEquatabl
   /// </summary>
   /// <param name="value">The string to convert.</param>
   /// <returns>A <see cref="HPS"/> value parsed from the string.</returns>
-  public static implicit operator HPS(string value) { return new HPS(value); }
+  public static implicit operator HPS(string value)
+  {
+    return new HPS(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="HPS"/> value to a string.
   /// </summary>
   /// <param name="value">The <see cref="HPS"/> value to convert.</param>
   /// <returns>A string representation of the half-points value.</returns>
-  public static implicit operator string(HPS value) { return value.value.ToString(); }
+  public static implicit operator string(HPS value)
+  {
+    return value.value.ToString();
+  }
 
   /// <summary>
   /// Implicitly converts a 16-bit signed integer to a <see cref="HPS"/> value.
   /// </summary>
   /// <param name="value">The 16-bit signed integer to convert.</param>
   /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
-  public static implicit operator HPS(Int16 value) { return new HPS(value); }
+  public static implicit operator HPS(Int16 value)
+  {
+    return new HPS(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="HPS"/> value to a 16-bit signed integer.
   /// </summary>
   /// <param name="value">The <see cref="HPS"/> value to convert.</param>
   /// <returns>A 16-bit signed integer representation of the half-points value.</returns>
-  public static implicit operator Int16(HPS value) { return (Int16)value.value; }
+  public static implicit operator Int16(HPS value)
+  {
+    return (Int16)value.value;
+  }
 
   /// <summary>
   /// Implicitly converts a 16-bit unsigned integer to a <see cref="HPS"/> value.
   /// </summary>
   /// <param name="value">The 16-bit unsigned integer to convert.</param>
   /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
-  public static implicit operator HPS(UInt16 value) { return new HPS(value); }
+  public static implicit operator HPS(UInt16 value)
+  {
+    return new HPS(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="HPS"/> value to a 16-bit unsigned integer.
   /// </summary>
   /// <param name="value">The <see cref="HPS"/> value to convert.</param>
   /// <returns>A 16-bit unsigned integer representation of the half-points value.</returns>
-  public static implicit operator UInt16(HPS value) { return (UInt16)value.value; }
+  public static implicit operator UInt16(HPS value)
+  {
+    return (UInt16)value.value;
+  }
 
   /// <summary>
   /// Implicitly converts a 32-bit signed integer to a <see cref="HPS"/> value.
   /// </summary>
   /// <param name="value">The 32-bit signed integer to convert.</param>
   /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
-  public static implicit operator HPS(Int32 value) { return new HPS(value); }
+  public static implicit operator HPS(Int32 value)
+  {
+    return new HPS(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="HPS"/> value to a 32-bit signed integer.
   /// </summary>
   /// <param name="value">The <see cref="HPS"/> value to convert.</param>
   /// <returns>A 32-bit signed integer representation of the half-points value.</returns>
-  public static implicit operator Int32(HPS value) { return (Int32)value.value; }
+  public static implicit operator Int32(HPS value)
+  {
+    return (Int32)value.value;
+  }
 
   /// <summary>
   /// Implicitly converts a 32-bit unsigned integer to a <see cref="HPS"/> value.
   /// </summary>
   /// <param name="value">The 32-bit unsigned integer to convert.</param>
   /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
-  public static implicit operator HPS(UInt32 value) { return new HPS(value); }
+  public static implicit operator HPS(UInt32 value)
+  {
+    return new HPS(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="HPS"/> value to a 32-bit unsigned integer.
   /// </summary>
   /// <param name="value">The <see cref="HPS"/> value to convert.</param>
   /// <returns>A 32-bit unsigned integer representation of the half-points value.</returns>
-  public static implicit operator UInt32(HPS value) { return (UInt32)value.value; }
+  public static implicit operator UInt32(HPS value)
+  {
+    return (UInt32)value.value;
+  }
 
   /// <summary>
   /// Implicitly converts a 64-bit signed integer to a <see cref="HPS"/> value.
   /// </summary>
   /// <param name="value">The 64-bit signed integer to convert.</param>
   /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
-  public static implicit operator HPS(Int64 value) { return new HPS(value); }
+  public static implicit operator HPS(Int64 value)
+  {
+    return new HPS(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="HPS"/> value to a 64-bit signed integer.
   /// </summary>
   /// <param name="value">The <see cref="HPS"/> value to convert.</param>
   /// <returns>A 64-bit signed integer representation of the half-points value.</returns>
-  public static implicit operator Int64(HPS value) { return (Int64)value.value; }
-
-  /// <summary>
-  /// Implicitly converts a 64-bit unsigned integer to a <see cref="HPS"/> value.
-  /// </summary>
-  /// <param name="value">The 64-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
-  public static implicit operator HPS(UInt64 value) { return new HPS(value); }
+  public static implicit operator Int64(HPS value)
+  {
+    return (Int64)value.value;
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="HPS"/> value to a 64-bit unsigned integer.
   /// </summary>
   /// <param name="value">The <see cref="HPS"/> value to convert.</param>
   /// <returns>A 64-bit unsigned integer representation of the half-points value.</returns>
-  public static implicit operator UInt64(HPS value) { return (UInt64)value.value; }
+  public static implicit operator UInt64(HPS value)
+  {
+    return (UInt64)value.value;
+  }
 
   #endregion
+
+  #region IComparable and IEquatable Implementations
 
   /// <summary>
   /// Compares this instance to a specified <see cref="HPS"/> object and returns an indication of their relative values.
@@ -417,4 +562,6 @@ public readonly partial struct HPS : ILengthMeasure, IComparable<HPS>, IEquatabl
   {
     return obj is HPS other && Equals(other);
   }
+
+  #endregion
 }

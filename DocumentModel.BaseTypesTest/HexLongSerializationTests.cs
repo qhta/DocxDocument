@@ -1,8 +1,4 @@
-﻿using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
-
-namespace DocumentModel.BaseTypesTest;
+﻿namespace DocumentModel.BaseTypesTest;
 
 /// <summary>
 /// Test suite for HexLong type serialization in both XML and JSON formats.

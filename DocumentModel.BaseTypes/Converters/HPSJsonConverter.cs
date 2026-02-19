@@ -61,23 +61,6 @@ public class HPSJsonConverter : JsonConverter<HPS>
           return new HPS(longValue);
         }
 
-        if (reader.TryGetUInt64(out ulong ulongValue))
-        {
-          return new HPS(ulongValue);
-        }
-
-        // Try as 32-bit integer
-        if (reader.TryGetInt32(out int intValue))
-        {
-          return new HPS(intValue);
-        }
-
-        // Try as 32-bit unsigned integer
-        if (reader.TryGetUInt32(out uint uintValue))
-        {
-          return new HPS(uintValue);
-        }
-
         throw new JsonException($"Invalid numeric value for HalfPoints");
       }
       catch (FormatException ex)

@@ -1,8 +1,4 @@
-﻿using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
-
-using DocumentModel;
+﻿using DocumentModel;
 
 namespace DocumentModel.BaseTypesTest;
 

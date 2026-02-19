@@ -1,7 +1,4 @@
 ﻿using System.Globalization;
-using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace DocumentModel.BaseTypesTest;
 
