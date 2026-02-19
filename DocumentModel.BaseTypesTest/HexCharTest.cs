@@ -25,8 +25,7 @@ public static class HexCharTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestHexCharBasicOperations()
   {
     Console.WriteLine("--- Testing HexChar Basic Operations ---"); // Test string to HexChar conversion (ASCII)
@@ -69,10 +68,8 @@ public static class HexCharTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestHexCharXmlSerialization()
   {
     Console.WriteLine("--- Testing HexChar XML Serialization ---"); // Create test object
@@ -110,10 +107,8 @@ public static class HexCharTest
 
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestHexCharJsonSerialization()
   {
     Console.WriteLine("--- Testing HexChar JSON Serialization ---"); // Create test object
@@ -188,10 +183,8 @@ public static class HexCharTest
     return true;
   }
 
-  #endregion
-
-  #region Edge Cases Tests
-
+  
+  
   static bool TestHexCharEdgeCases()
   {
     Console.WriteLine("--- Testing HexChar Edge Cases ---"); // Test zero value
@@ -252,10 +245,8 @@ public static class HexCharTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestHexCharPerformance()
   {
     Console.WriteLine("--- Testing HexChar Performance ---");
@@ -339,10 +330,8 @@ public static class HexCharTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various HexChar properties.

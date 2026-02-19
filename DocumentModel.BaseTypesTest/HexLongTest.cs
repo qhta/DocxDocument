@@ -23,8 +23,7 @@ public static class HexLongTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestHexLongBasicOperations()
   {
     Console.WriteLine("--- Testing HexLong Basic Operations ---");      // Test string to HexLong conversion
@@ -72,10 +71,8 @@ public static class HexLongTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestHexLongXmlSerialization()
   {
     Console.WriteLine("--- Testing HexLong XML Serialization ---");      // Create test object
@@ -171,10 +168,8 @@ public static class HexLongTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestHexLongJsonSerialization()
   {
     Console.WriteLine("--- Testing HexLong JSON Serialization ---");      // Create test object
@@ -223,10 +218,8 @@ public static class HexLongTest
     return true;
   }
 
-  #endregion
-
-  #region Edge Cases Tests
-
+  
+  
   static bool TestHexLongEdgeCases()
   {
     Console.WriteLine("--- Testing HexLong Edge Cases ---");      // Test zero value
@@ -303,10 +296,8 @@ public static class HexLongTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestHexLongPerformance()
   {
     Console.WriteLine("--- Testing HexLong Performance ---"); const int iterations = 100000;
@@ -403,10 +394,8 @@ public static class HexLongTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various HexLong properties.

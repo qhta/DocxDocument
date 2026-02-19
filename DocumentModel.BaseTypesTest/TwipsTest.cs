@@ -26,8 +26,7 @@ public static class TwipsTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestTwipsBasicOperations()
   {
     Console.WriteLine("--- Testing Twips Basic Operations ---");      // Test string to Twips conversion (plain number)
@@ -66,10 +65,8 @@ public static class TwipsTest
     return true;
   }
 
-  #endregion
-
-  #region Unit Conversion Tests
-
+  
+  
   static bool TestTwipsUnitConversions()
   {
     Console.WriteLine("--- Testing Twips Unit Conversions ---");      // Test inch conversions
@@ -138,10 +135,8 @@ public static class TwipsTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestTwipsXmlSerialization()
   {
     Console.WriteLine("--- Testing Twips XML Serialization ---");      // Create test object
@@ -222,10 +217,8 @@ public static class TwipsTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestTwipsJsonSerialization()
   {
     Console.WriteLine("--- Testing Twips JSON Serialization ---");      // Create test object
@@ -255,8 +248,7 @@ public static class TwipsTest
   
   }
 
-  #endregion
-
+  
   private static TwipsTestData CreateTestData()
   {
     return new TwipsTestData
@@ -289,8 +281,7 @@ public static class TwipsTest
     Console.WriteLine();
   }
 
-  #region Edge Cases Tests
-
+  
   static bool TestTwipsEdgeCases()
   {
     Console.WriteLine("--- Testing Twips Edge Cases ---");      // Test zero value
@@ -401,10 +392,8 @@ public static class TwipsTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestTwipsPerformance()
   {
     Console.WriteLine("--- Testing Twips Performance ---"); const int iterations = 100000;
@@ -546,10 +535,8 @@ public static class TwipsTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various Twips properties.

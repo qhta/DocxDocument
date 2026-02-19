@@ -25,8 +25,7 @@ public static class BytePercentTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestBytePercentBasicOperations()
   {
     Console.WriteLine("--- Testing BytePercent Basic Operations ---"); // Test string to BytePercent conversion
@@ -68,10 +67,8 @@ public static class BytePercentTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestBytePercentXmlSerialization()
   {
     Console.WriteLine("--- Testing BytePercent XML Serialization ---"); // Create test object
@@ -171,10 +168,8 @@ public static class BytePercentTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestBytePercentJsonSerialization()
   {
     Console.WriteLine("--- Testing BytePercent JSON Serialization ---"); // Create test object
@@ -206,10 +201,8 @@ public static class BytePercentTest
     return true;
   }
 
-  #endregion
-
-  #region Edge Cases Tests
-
+  
+  
   static bool TestBytePercentEdgeCases()
   {
     Console.WriteLine("--- Testing BytePercent Edge Cases ---"); // Test zero value
@@ -304,10 +297,8 @@ public static class BytePercentTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestBytePercentPerformance()
   {
     Console.WriteLine("--- Testing BytePercent Performance ---");
@@ -410,10 +401,8 @@ public static class BytePercentTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various BytePercent properties.

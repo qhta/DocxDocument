@@ -26,8 +26,7 @@ public static class StrNumPairTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestStrNumPairBasicOperations()
   {
     Console.WriteLine("--- Testing StrNumPair Basic Operations ---");      // Test string-only constructor
@@ -79,10 +78,8 @@ public static class StrNumPairTest
     return true;
   }
 
-  #endregion
-
-  #region Parsing Tests
-
+  
+  
   static bool TestStrNumPairParsing()
   {
     Console.WriteLine("--- Testing StrNumPair Parsing ---");      // Test format "(Str,Num)" with both values
@@ -180,10 +177,8 @@ public static class StrNumPairTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestStrNumPairXmlSerialization()
   {
     Console.WriteLine("--- Testing StrNumPair XML Serialization ---");      // Create test object
@@ -284,10 +279,8 @@ public static class StrNumPairTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestStrNumPairJsonSerialization()
   {
     Console.WriteLine("--- Testing StrNumPair JSON Serialization ---");      // Create test object
@@ -345,10 +338,8 @@ public static class StrNumPairTest
     return true;
   }
 
-  #endregion
-
-  #region Edge Cases Tests
-
+  
+  
   static bool TestStrNumPairEdgeCases()
   {
     Console.WriteLine("--- Testing StrNumPair Edge Cases ---");      // Test null values
@@ -445,10 +436,8 @@ public static class StrNumPairTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestStrNumPairPerformance()
   {
     Console.WriteLine("--- Testing StrNumPair Performance ---"); const int iterations = 100000;
@@ -573,10 +562,8 @@ public static class StrNumPairTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various StrNumPair properties.

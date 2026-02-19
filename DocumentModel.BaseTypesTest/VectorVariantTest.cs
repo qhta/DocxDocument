@@ -28,8 +28,7 @@ public static class VectorVariantTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestVectorVariantBasicOperations()
   {
     Console.WriteLine("--- Testing VectorVariant Basic Operations ---");      // Test default constructor
@@ -103,10 +102,8 @@ public static class VectorVariantTest
     return true;
   }
 
-  #endregion
-
-  #region ValueType Conversion Tests
-
+  
+  
   static bool TestVectorVariantTypeConversions()
   {
     Console.WriteLine("--- Testing VectorVariant ValueType Conversions ---");      // Test different variant types
@@ -165,10 +162,8 @@ public static class VectorVariantTest
     return true;
   }
 
-  #endregion
-
-  #region List Operations Tests
-
+  
+  
   static bool TestVectorVariantListOperations()
   {
     Console.WriteLine("--- Testing VectorVariant List Operations ---");      // Test Insert
@@ -233,10 +228,8 @@ public static class VectorVariantTest
     return true;
   }
 
-  #endregion
-
-  #region ToString Tests
-
+  
+  
   static bool TestVectorVariantToString()
   {
     Console.WriteLine("--- Testing VectorVariant ToString ---");      // Test empty vector
@@ -335,10 +328,8 @@ public static class VectorVariantTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestVectorVariantXmlSerialization()
   {
     Console.WriteLine("--- Testing VectorVariant XML Serialization ---");      // Create test object
@@ -412,10 +403,8 @@ public static class VectorVariantTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestVectorVariantJsonSerialization()
   {
     Console.WriteLine("--- Testing VectorVariant JSON Serialization ---");      // Create test object
@@ -452,8 +441,7 @@ public static class VectorVariantTest
     return true;
   }
 
-  #endregion
-
+  
   private static VectorVariantTestData CreateTestData()
   {
     var testData = new VectorVariantTestData
@@ -501,8 +489,7 @@ public static class VectorVariantTest
     Console.WriteLine();
   }
 
-  #region Edge Cases Tests
-
+  
   static bool TestVectorVariantEdgeCases()
   {
     Console.WriteLine("--- Testing VectorVariant Edge Cases ---");      // Test empty vector
@@ -610,10 +597,8 @@ public static class VectorVariantTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestVectorVariantPerformance()
   {
     Console.WriteLine("--- Testing VectorVariant Performance ---"); const int iterations = 10000;
@@ -723,10 +708,8 @@ public static class VectorVariantTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various VectorVariant properties.

@@ -7,9 +7,14 @@ namespace DocumentModel.BaseTypesTest;
 /// </summary>
 public static class EMUTest
 {
+
   /// <summary>
-  /// Runs all EMU serialization tests.
+  /// Runs a comprehensive suite of tests to validate the EMU serialization functionality, including basic operations,
+  /// unit conversions, serialization formats, edge cases, and performance.
   /// </summary>
+  /// <remarks>This method writes test results to the console. It is intended for use in verifying the
+  /// correctness and reliability of the EMU serialization components during development or maintenance.</remarks>
+  /// <returns>true if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
     Console.WriteLine("=== EMU Serialization Test Program ===");
@@ -26,41 +31,78 @@ public static class EMUTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  /// <summary>
+  /// Tests the fundamental operations of the EMU class, including conversions between strings, integers, and EMU
+  /// instances, as well as comparison and hash code consistency.
+  /// </summary>
+  /// <remarks>This method verifies that the EMU class correctly handles conversions from string and integer
+  /// representations, supports accurate numeric type conversions, produces consistent hash codes, and implements
+  /// comparison logic as expected. It is intended for use in validating the core functionality of the EMU
+  /// type.</remarks>
+  /// <returns>true if all basic EMU operations succeed; otherwise, false.</returns>
   static bool TestEMUBasicOperations()
   {
-    Console.WriteLine("--- Testing EMU Basic Operations ---");      // Test string to EMU conversion (plain number)
-    EMU emu1 = "914400";
-    Console.WriteLine($"\n✓ String to EMU: {emu1} = {(long)emu1} EMUs");
-
+    Console.WriteLine("--- Testing EMU Basic Operations ---");      
+    // Test string to EMU conversion (plain number)
+    var emu1Str = "914400";
+    long emu1Val = 914400;
+    EMU emu1 = emu1Str;
+    var longEMU = (long)emu1;
+    Console.WriteLine($"\n✓ String to EMU: {emu1} = {longEMU} EMUs");
+    if (longEMU != 914400)
+    {
+      Console.WriteLine("✗ String to EMU conversion FAILED");
+      return false;
+    }
     // Test string to EMU conversion (with unit)
     EMU emu2 = "1in";
-    Console.WriteLine($"\n✓ String with unit to EMU: {emu2} ({emu2.ToInch():F2}in)");
+    var inchEMU = emu2.ToInch();
+    Console.WriteLine($"\n✓ String with unit to EMU: {emu2} ({inchEMU:F2}in)");
+    if (inchEMU != 1.0)
+    {
+      Console.WriteLine("✗ String with unit to EMU conversion FAILED");
+      return false;
+    }
 
     // Test integer to EMU conversion
     EMU emu3 = 914400;
-    Console.WriteLine($"\n✓ Int to EMU: {emu3}");
-
-    // Test equality
-    if (emu1.CompareTo(emu3) == 0)
-      Console.WriteLine("\n✓ Equality test passed");
-    else
-      Console.WriteLine("✗ Equality test FAILED");
-
+    var intEMU = (int)emu3;
+    Console.WriteLine($"\n✓ Int to EMU: {intEMU}");
+    if (intEMU != 914400)
+    {
+      Console.WriteLine("✗ Int to EMU conversion FAILED");
+      return false;
+    }
+    
     // Test EMU to string
-    string str = emu1.ToString();
-    Console.WriteLine($"\n✓ EMU to string: {str}");
+    string strEMU = emu1.ToString();
+    Console.WriteLine($"\n✓ EMU to string: {strEMU}");
+    if (strEMU != emu1Str)
+    {
+      Console.WriteLine("✗ EMU to string conversion FAILED");
+      return false;
+    }
 
     // Test EMU to various integer types
     int int32Val = (int)emu1;
     long int64Val = (long)emu1;
     uint uint32Val = (uint)emu1;
     Console.WriteLine($"\n✓ Numeric conversions: int32={int32Val}, int64={int64Val}, uint32={uint32Val}");
+    if (int32Val != 914400 || int64Val != 914400 || uint32Val != 914400)
+    {
+      Console.WriteLine("✗ EMU to numeric conversions FAILED");
+      return false;
+    }
 
     // Test hash code
-    Console.WriteLine($"\n✓ Hash code: {emu1.GetHashCode()}");
-
+    var hashCode = emu1.GetHashCode();
+    Console.WriteLine($"\n✓ Hash code: {hashCode}");
+    var emu1ValHashCode = emu1Val.GetHashCode();
+    if (hashCode != emu1ValHashCode)
+    {
+      Console.WriteLine($"✗ GetHashCode consistency FAILED emu1Hash={hashCode}, emu1ValHash={emu1ValHashCode}");
+      return false;
+    }
     // Test comparison
     EMU emu4 = 1828800; // 2 inches
     Console.WriteLine($"\n✓ CompareTo (914400 vs 1828800): {emu1.CompareTo(emu4)} (expected < 0)");
@@ -70,13 +112,18 @@ public static class EMUTest
     return true;
   }
 
-  #endregion
-
-  #region Unit Conversion Tests
-
+  /// <summary>
+  /// Tests the accuracy and correctness of conversions between EMUs and various length units, including inches,
+  /// millimeters, centimeters, points, and twips.
+  /// </summary>
+  /// <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
+  /// verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
+  /// Use this method to validate that EMU-related conversion logic is functioning as expected.</remarks>
+  /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestEMUUnitConversions()
   {
-    Console.WriteLine("--- Testing EMU Unit Conversions ---");      // Test inch conversions
+    Console.WriteLine("--- Testing EMU Unit Conversions ---");      
+    // Test inch conversions
     Console.WriteLine("Testing inch conversions:");
     EMU oneInch = "1in";
     Console.WriteLine($"  1in = {(long)oneInch} EMUs (expected 914400)");
@@ -98,6 +145,38 @@ public static class EMUTest
       return false;
     }
 
+    // Test centimeter conversions
+    Console.WriteLine("\nTesting centimeter conversions:");
+    EMU oneCM = "1cm";
+    Console.WriteLine($"  1cm = {(long)oneCM} EMUs (expected ~360000)");
+    Console.WriteLine($"  360000 EMUs = {oneCM.ToCM():F2}cm");
+    if ((long)oneCM != 360000)
+    {
+      Console.WriteLine("✗ Centimeter conversion FAILED");
+      return false;
+    }
+
+    // Test point conversions
+    Console.WriteLine("\nTesting point conversions:");
+    EMU twelvePoints = "12pt";
+    Console.WriteLine($"  12pt = {(long)twelvePoints} EMUs (expected 152400)");
+    Console.WriteLine($"  152400 EMUs = {twelvePoints.ToPT():F2}pt");
+    if ((long)twelvePoints != 152400)
+    {
+      Console.WriteLine("✗ Point conversion FAILED");
+      return false;
+    }
+
+    // Test twips conversions
+    Console.WriteLine("\nTesting twips conversions:");
+    EMU oneInchTwips = 914400;
+    Console.WriteLine($"  1in = {oneInchTwips.ToTwips():F2} twips (expected 1440)");
+    if (System.Math.Abs(oneInchTwips.ToTwips() - 1440) > 0.01)
+    {
+      Console.WriteLine("✗ Twips conversion FAILED");
+      return false;
+    }
+
     // Test conversion accuracy
     Console.WriteLine("\nTesting round-trip conversion accuracy:");
     EMU original = 914400; // 1 inch
@@ -106,29 +185,46 @@ public static class EMUTest
     Console.WriteLine($"  Original: {(long)original} EMUs");
     Console.WriteLine($"  To inches: {inches:F6}in");
     Console.WriteLine($"  Back to EMUs: {(long)roundTrip} EMUs");
-    Console.WriteLine($"  Match: {original.CompareTo(roundTrip) == 0}");
+    if (original.CompareTo(roundTrip) != 0)
+    {
+      Console.WriteLine("✗ Round-trip conversion FAILED");
+      return false;
+    }
+
+    // Test ConvertTo for each unit
+    Console.WriteLine("\nTesting ConvertTo method:");
+    ILengthMeasure length = original;
+    Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches):F2}");
+    Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters):F2}");
+    Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters):F2}");
+    Console.WriteLine($"  To pt: {length.ConvertTo(LengthUnit.Points):F2}");
+    Console.WriteLine($"  To twips: {length.ConvertTo(LengthUnit.Twips):F2}");
 
     // Test string output with units
     Console.WriteLine("\nTesting string output with units:");
-    EMU measurement = 914400;
-    Console.WriteLine($"  As EMUs: {measurement}");
-    Console.WriteLine($"  As inches: {measurement.ToString(LengthUnit.Inches)}");
-    Console.WriteLine($"  As mm: {measurement.ToString(LengthUnit.Millimeters)}");
+    Console.WriteLine($"  As EMUs: {original}");
+    Console.WriteLine($"  As inches: {length.ToString(LengthUnit.Inches)}");
+    Console.WriteLine($"  As mm: {length.ToString(LengthUnit.Millimeters)}");
 
     // Test string output with precision
     Console.WriteLine("\nTesting string output with precision:");
-    Console.WriteLine($"  Precision 0: {measurement.ToString("F0", LengthUnit.Inches)}");
-    Console.WriteLine($"  Precision 2: {measurement.ToString("F2", LengthUnit.Millimeters)}");
+    Console.WriteLine($"  Precision 0: {length.ToString("F0", LengthUnit.Inches)}");
+    Console.WriteLine($"  Precision 2: {length.ToString("F2", LengthUnit.Millimeters)}");
 
     Console.WriteLine("\n✓ All unit conversion tests passed");
     Console.WriteLine();
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  /// <summary>
+  /// Tests the XML serialization and deserialization process for an EMUTestData object and verifies data integrity.
+  /// </summary>
+  /// <remarks>This method creates a sample EMUTestData instance, serializes it to an XML string, and then
+  /// deserializes it back to an object. It compares the deserialized data to the original to ensure that the
+  /// serialization process preserves all relevant information. This is intended for use in validating the correctness
+  /// of XML serialization logic for EMUTestData.</remarks>
+  /// <returns>true if the EMUTestData object is correctly serialized to XML and deserialized back with matching data; otherwise,
+  /// false.</returns>
   static bool TestEMUXmlSerialization()
   {
     Console.WriteLine("--- Testing EMU XML Serialization ---");      // Create test object
@@ -168,10 +264,15 @@ public static class EMUTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  /// <summary>
+  /// Tests the serialization and deserialization of EMU test data using JSON format.
+  /// </summary>
+  /// <remarks>This method creates a sample EMU test data object, serializes it to a JSON string, and then
+  /// deserializes it back to an object to verify that the original and deserialized data are equivalent. The serialized
+  /// JSON output is written to the console for inspection. This method is intended for diagnostic or validation
+  /// purposes and is not typically used in production code.</remarks>
+  /// <returns>true if the JSON serialization and deserialization process completes successfully and the data integrity is
+  /// verified; otherwise, false.</returns>
   static bool TestEMUJsonSerialization()
   {
     Console.WriteLine("--- Testing EMU JSON Serialization ---");      // Create test object
@@ -201,6 +302,13 @@ public static class EMUTest
     return true;
   }
 
+  /// <summary>
+  /// Displays the original dimensions and values of the specified EMUTestData instance in a formatted output.
+  /// </summary>
+  /// <remarks>This method outputs the original data to the console, including conversions of width and height
+  /// to inches and offsets to millimeters.</remarks>
+  /// <param name="testData">The EMUTestData instance containing the original data to be displayed, including width, height, offsets, and
+  /// values.</param>
   private static void ShowOriginalData(EMUTestData testData)
   {
     Console.WriteLine($"Original data:");
@@ -214,6 +322,15 @@ public static class EMUTest
     Console.WriteLine();
   }
 
+  /// <summary>
+  /// Verifies that the deserialized EMUTestData object matches the expected test data values.
+  /// </summary>
+  /// <remarks>If the deserializedData parameter is null, the method returns false and logs an error message.
+  /// The method compares several properties of the deserialized data with the expected values to ensure
+  /// correctness.</remarks>
+  /// <param name="deserializedData">The deserialized EMUTestData object to verify against the expected values. This parameter can be null.</param>
+  /// <param name="testData">The expected EMUTestData object containing the values to compare against the deserialized data.</param>
+  /// <returns>true if the deserialized data matches the expected test data; otherwise, false.</returns>
   private static bool VerifyDeserializedData(EMUTestData? deserializedData, EMUTestData testData)
   {
     if (deserializedData == null)
@@ -249,8 +366,14 @@ public static class EMUTest
     return true;
   }
 
-  #endregion
-
+  /// <summary>
+  /// Creates and initializes a new instance of the EMUTestData class with predefined values for width, height, offsets,
+  /// and various test values.
+  /// </summary>
+  /// <remarks>This method is intended for use in test scenarios where a standard set of EMUTestData values is
+  /// required. The dimensions and offsets are specified in various measurement units, ensuring flexibility in testing
+  /// different configurations.</remarks>
+  /// <returns>A new instance of EMUTestData containing initialized properties for testing purposes.</returns>
   private static EMUTestData CreateTestData()
   {
     return new EMUTestData
@@ -265,8 +388,14 @@ public static class EMUTest
     };
   }
 
-  #region Edge Cases Tests
-
+  /// <summary>
+  /// Tests a variety of edge cases for the EMU (English Metric Unit) class, including zero values, boundary values,
+  /// string parsing, deserialization, formatting, comparisons, and implicit conversions.
+  /// </summary>
+  /// <remarks>This method outputs the results of each test to the console, providing insight into the behavior
+  /// of the EMU class under different scenarios. It is intended for diagnostic or validation purposes and does not
+  /// throw exceptions for failed cases.</remarks>
+  /// <returns>true if all edge case tests are completed successfully; otherwise, false.</returns>
   static bool TestEMUEdgeCases()
   {
     Console.WriteLine("--- Testing EMU Edge Cases ---");      // Test zero value
@@ -349,13 +478,18 @@ public static class EMUTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  /// <summary>
+  /// Measures and reports the performance of various operations related to the EMU class, including construction,
+  /// string conversion, unit conversion, JSON serialization, deserialization, comparison, and hashing.
+  /// </summary>
+  /// <remarks>This method executes a series of timed tests for different EMU class operations, outputting the
+  /// elapsed time for each to the console. It is intended for use in evaluating the efficiency of EMU-related methods
+  /// and conversions. The results can help identify performance bottlenecks or verify optimizations.</remarks>
+  /// <returns>true if all performance tests complete successfully.</returns>
   static bool TestEMUPerformance()
   {
-    Console.WriteLine("--- Testing EMU Performance ---"); const int iterations = 100000;
+    Console.WriteLine("--- Testing EMU Performance ---"); 
+    const int iterations = 100000;
 
     // Test construction from string with unit
     var sw = System.Diagnostics.Stopwatch.StartNew();
@@ -475,10 +609,8 @@ public static class EMUTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various EMU properties.
@@ -516,4 +648,3 @@ public class EMUWrapper
   public EMU Value { get; set; }
 }
 
-#endregion

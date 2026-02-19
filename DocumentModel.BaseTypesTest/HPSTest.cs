@@ -26,8 +26,7 @@ public static class HPSTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestHalfPointsBasicOperations()
   {
     Console.WriteLine("--- Testing HalfPoints Basic Operations ---");
@@ -78,10 +77,8 @@ public static class HPSTest
     }
   }
 
-  #endregion
-
-  #region Unit Conversion Tests
-
+  
+  
   static bool TestHalfPointsUnitConversions()
   {
     Console.WriteLine("--- Testing HalfPoints Unit Conversions ---");
@@ -174,10 +171,8 @@ public static class HPSTest
     }
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestHalfPointsXmlSerialization()
   {
     Console.WriteLine("--- Testing HalfPoints XML Serialization ---");
@@ -281,10 +276,8 @@ public static class HPSTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestHalfPointsJsonSerialization()
   {
     Console.WriteLine("--- Testing HalfPoints JSON Serialization ---");
@@ -322,8 +315,7 @@ public static class HPSTest
     return true;
   }
 
-  #endregion
-
+  
   private static HalfPointsTestData CreateTestData()
   {
     return new HalfPointsTestData
@@ -344,8 +336,7 @@ public static class HPSTest
   }
 
 
-  #region Edge Cases Tests
-
+  
   static bool TestHalfPointsEdgeCases()
   {
     Console.WriteLine("--- Testing HalfPoints Edge Cases ---");
@@ -479,10 +470,8 @@ public static class HPSTest
     }
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestHalfPointsPerformance()
   {
     Console.WriteLine("--- Testing HalfPoints Performance ---");
@@ -639,10 +628,8 @@ public static class HPSTest
     }
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various HalfPoints properties.

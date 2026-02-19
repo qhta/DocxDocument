@@ -29,8 +29,7 @@ public static class VStreamDataTest
     return true;
   }
 
-  #region Construction Tests
-
+  
   static bool TestVStreamDataConstruction()
   {
     Console.WriteLine("--- Testing VStreamData Construction ---");      // Test constructor with version GUID and data
@@ -78,10 +77,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  #endregion
-
-  #region Property Tests
-
+  
+  
   static bool TestVStreamDataProperties()
   {
     Console.WriteLine("--- Testing VStreamData Properties ---");      // Test Version property
@@ -165,10 +162,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  #endregion
-
-  #region Equality Tests
-
+  
+  
   static bool TestVStreamDataEquality()
   {
     Console.WriteLine("--- Testing VStreamData Equality ---");      // Test equal instances
@@ -255,10 +250,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  #endregion
-
-  #region Version GUID Tests
-
+  
+  
   static bool TestVStreamDataVersionGUIDs()
   {
     Console.WriteLine("--- Testing VStreamData Version GUIDs ---");      // Test with Excel CLSID
@@ -309,10 +302,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestVStreamDataXmlSerialization()
   {
     Console.WriteLine("--- Testing VStreamData XML Serialization ---");      // Create test object
@@ -384,10 +375,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestVStreamDataJsonSerialization()
   {
     Console.WriteLine("--- Testing VStreamData JSON Serialization ---");      // Create test object
@@ -426,10 +415,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  #endregion
-
-  #region Edge Cases Tests
-
+  
+  
   static bool TestVStreamDataEdgeCases()
   {
     Console.WriteLine("--- Testing VStreamData Edge Cases ---");      // Test with all zeros data
@@ -514,10 +501,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestVStreamDataPerformance()
   {
     Console.WriteLine("--- Testing VStreamData Performance ---"); const int iterations = 10000;
@@ -614,10 +599,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  #endregion
-
-  #region Helper Methods
-
+  
+  
   private static VStreamDataTestData CreateTestData()
   {
     return new VStreamDataTestData
@@ -670,10 +653,8 @@ public static class VStreamDataTest
     return data;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various VStreamData properties.
