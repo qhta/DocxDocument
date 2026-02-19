@@ -5,7 +5,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for EMU type serialization in both XML and JSON formats.
 /// </summary>
-public static class EMUSerializationTests
+public static class EMUTest
 {
   /// <summary>
   /// Runs all EMU serialization tests.

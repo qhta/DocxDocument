@@ -5,7 +5,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for ArrayVariant type serialization in both XML and JSON formats.
 /// </summary>
-public static class ArrayVariantSerializationTests
+public static class ArrayVariantTests
 {
   /// <summary>
   /// Runs all ArrayVariant serialization tests.

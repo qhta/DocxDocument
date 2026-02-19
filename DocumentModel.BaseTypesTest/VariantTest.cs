@@ -7,7 +7,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for Variant type serialization in both XML and JSON formats.
 /// </summary>
-public static class VariantSerializationTests
+public static class VariantTest
 {
   /// <summary>
   /// Runs all Variant serialization tests.

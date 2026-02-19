@@ -6,7 +6,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for VStreamData type serialization in both XML and JSON formats.
 /// </summary>
-public static class VStreamDataSerializationTests
+public static class VStreamDataTest
 {
   /// <summary>
   /// Runs all VStreamData serialization tests.

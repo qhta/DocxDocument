@@ -5,7 +5,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for HexBinary type serialization in both XML and JSON formats.
 /// </summary>
-public static class HexBinarySerializationTests
+public static class HexBinaryTest
 {
   /// <summary>
   /// Runs all HexBinary serialization tests.

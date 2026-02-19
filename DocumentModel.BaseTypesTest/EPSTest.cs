@@ -5,7 +5,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for EighthPoints type serialization in both XML and JSON formats.
 /// </summary>
-public static class EPSSerializationTests
+public static class EPSTest
 {
   /// <summary>
   /// Runs all EighthPoints serialization tests.
