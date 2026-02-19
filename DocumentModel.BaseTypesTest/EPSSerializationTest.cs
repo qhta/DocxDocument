@@ -1,7 +1,4 @@
 ﻿using System.Globalization;
-using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace DocumentModel.BaseTypesTest;
 
@@ -35,7 +32,7 @@ public static class EPSSerializationTests
   {
     Console.WriteLine("--- Testing EighthPoints Basic Operations ---");      // Test string to EighthPoints conversion (plain number)
     EPS ep1 = "576";
-    Console.WriteLine($"\n✓ String to EighthPoints: {ep1} = {(Int64)ep1} eighth-points");
+    Console.WriteLine($"\n✓ String to EighthPoints: {ep1} = {(Int64)ep1} EPS");
 
     // Test integer to EighthPoints conversion
     EPS ep2 = 576;
@@ -77,9 +74,9 @@ public static class EPSSerializationTests
   {
     Console.WriteLine("--- Testing EighthPoints Unit Conversions ---");      // Test inch conversions
     Console.WriteLine("Testing inch conversions:");
-    EPS oneInch = "1in";
-    Console.WriteLine($"  1in = {(Int64)oneInch} eighth-points (expected 576)");
-    Console.WriteLine($"  576 eighth-points = {oneInch.ToInch():F2}in");
+    EPS oneInch = "1 in";
+    Console.WriteLine($"  1 in = {(Int64)oneInch} EPS (expected 576)");
+    Console.WriteLine($"  576 EPS = {oneInch.ToInch():F2}in");
     if ((Int64)oneInch != 576)
     {
       Console.WriteLine("✗ Inch conversion FAILED");
@@ -88,9 +85,9 @@ public static class EPSSerializationTests
 
     // Test point conversions
     Console.WriteLine("\nTesting point conversions:");
-    EPS onePoint = "1pt";
-    Console.WriteLine($"  1pt = {(Int64)onePoint} eighth-points (expected 8)");
-    Console.WriteLine($"  8 eighth-points = {onePoint.ToPT():F2}pt");
+    EPS onePoint = "1 pt";
+    Console.WriteLine($"  1 pt = {(Int64)onePoint} EPS (expected 8)");
+    Console.WriteLine($"  8 EPS = {onePoint.ToPT():F2}pt");
     if ((Int64)onePoint != 8)
     {
       Console.WriteLine("✗ Point conversion FAILED");
@@ -103,21 +100,21 @@ public static class EPSSerializationTests
     EPS halfPoint = 4;
     EPS fullPoint = 8;
     Console.WriteLine($"  1 eighth-point = {oneEighthPoint.ToPT():F3}pt (0.125pt)");
-    Console.WriteLine($"  4 eighth-points = {halfPoint.ToPT():F3}pt (0.5pt)");
-    Console.WriteLine($"  8 eighth-points = {fullPoint.ToPT():F3}pt (1.0pt)");
+    Console.WriteLine($"  4 EPS = {halfPoint.ToPT():F3}pt (0.5pt)");
+    Console.WriteLine($"  8 EPS = {fullPoint.ToPT():F3}pt (1.0pt)");
 
     // Test millimeter conversions
     Console.WriteLine("\nTesting millimeter conversions:");
-    EPS tenMM = "10mm";
+    EPS tenMM = "10 mm";
     double expectedEighthPoints = 10 * EPS.EPSinMM;
-    Console.WriteLine($"  10mm = {(Int64)tenMM} eighth-points (expected ~{expectedEighthPoints:F0})");
+    Console.WriteLine($"  10 mm = {(Int64)tenMM} EPS (expected ~{expectedEighthPoints:F0})");
     Console.WriteLine($"  Back to mm: {tenMM.ToMM():F2}mm");
 
     // Test centimeter conversions
     Console.WriteLine("\nTesting centimeter conversions:");
-    EPS oneCM = "1cm";
+    EPS oneCM = "1 cm";
     expectedEighthPoints = EPS.EPSinCM;
-    Console.WriteLine($"  1cm = {(Int64)oneCM} eighth-points (expected ~{expectedEighthPoints:F0})");
+    Console.WriteLine($"  1 cm = {(Int64)oneCM} EPS (expected ~{expectedEighthPoints:F0})");
     Console.WriteLine($"  Back to cm: {oneCM.ToCM():F2}cm");
 
     // Test conversion accuracy
@@ -125,31 +122,31 @@ public static class EPSSerializationTests
     EPS original = 576; // 1 inch
     double inches = original.ToInch();
     EPS roundTrip = new EPS($"{inches:F6}in");
-    Console.WriteLine($"  Original: {(Int64)original} eighth-points");
+    Console.WriteLine($"  Original: {(Int64)original} EPS");
     Console.WriteLine($"  To inches: {inches:F6}in");
-    Console.WriteLine($"  Back to eighth-points: {(Int64)roundTrip} eighth-points");
+    Console.WriteLine($"  Back to EPS: {(Int64)roundTrip} EPS");
     Console.WriteLine($"  Match: {original.CompareTo(roundTrip) == 0}");
 
-    // Test relationship between eighth-points and points
+    // Test relationship between EPS and points
     Console.WriteLine("\nTesting eighth-point/point relationships:");
-    EPS twelvePoints = "12pt";
-    Console.WriteLine($"  12pt = {(Int64)twelvePoints} eighth-points (expected 96)");
+    EPS twelvePoints = "12 pt";
+    Console.WriteLine($"  12 pt = {(Int64)twelvePoints} EPS (expected 96)");
     Console.WriteLine($"  Back to points: {twelvePoints.ToPT():F1}pt");
 
     // Test string output with units
     Console.WriteLine("\nTesting string output with units:");
     EPS measurement = 576;
-    Console.WriteLine($"  As eighth-points: {measurement}");
-    Console.WriteLine($"  As inches: {measurement.ToString("in")}");
-    Console.WriteLine($"  As points: {measurement.ToString("pt")}");
-    Console.WriteLine($"  As mm: {measurement.ToString("mm")}");
-    Console.WriteLine($"  As cm: {measurement.ToString("cm")}");
+    Console.WriteLine($"  As EPS: {measurement}");
+    Console.WriteLine($"  As inches: {measurement.ToString(LengthUnit.Inches)}");
+    Console.WriteLine($"  As points: {measurement.ToString(LengthUnit.Points)}");
+    Console.WriteLine($"  As mm: {measurement.ToString(LengthUnit.Millimeters)}");
+    Console.WriteLine($"  As cm: {measurement.ToString(LengthUnit.Centimeters)}");
 
     // Test string output with precision
     Console.WriteLine("\nTesting string output with precision:");
-    Console.WriteLine($"  Precision 0: {measurement.ToString(0, "in")}");
-    Console.WriteLine($"  Precision 2: {measurement.ToString(2, "pt")}");
-    Console.WriteLine($"  Precision 4: {measurement.ToString(4, "mm")}");
+    Console.WriteLine($"  Precision 0: {measurement.ToString("F0", LengthUnit.Inches)}");
+    Console.WriteLine($"  Precision 2: {measurement.ToString("F2", LengthUnit.Points)}");
+    Console.WriteLine($"  Precision 4: {measurement.ToString("F4", LengthUnit.Millimeters)}");
 
     Console.WriteLine("\n✓ All unit conversion tests passed");
     Console.WriteLine();
@@ -322,7 +319,7 @@ public static class EPSSerializationTests
     Console.WriteLine("--- Testing EighthPoints Edge Cases ---");      // Test zero value
     Console.WriteLine("Testing zero value:");
     EPS zero = 0;
-    Console.WriteLine($"  Zero: '{zero}' ({(Int64)zero} eighth-points)");
+    Console.WriteLine($"  Zero: '{zero}' ({(Int64)zero} EPS)");
 
     // Test boundary values
     Console.WriteLine("\nTesting boundary values:");
@@ -338,27 +335,27 @@ public static class EPSSerializationTests
     EPS fourEighths = 4;
     EPS eightEighths = 8;
     Console.WriteLine($"  1 eighth-point = {oneEighth.ToPT():F3}pt (0.125pt)");
-    Console.WriteLine($"  2 eighth-points = {twoEighths.ToPT():F3}pt (0.25pt)");
-    Console.WriteLine($"  4 eighth-points = {fourEighths.ToPT():F3}pt (0.5pt)");
-    Console.WriteLine($"  8 eighth-points = {eightEighths.ToPT():F3}pt (1.0pt)");
+    Console.WriteLine($"  2 EPS = {twoEighths.ToPT():F3}pt (0.25pt)");
+    Console.WriteLine($"  4 EPS = {fourEighths.ToPT():F3}pt (0.5pt)");
+    Console.WriteLine($"  8 EPS = {eightEighths.ToPT():F3}pt (1.0pt)");
 
-    // Test micro-adjustments (use case for eighth-points)
+    // Test micro-adjustments (use case for EPS)
     Console.WriteLine("\nTesting micro-typography adjustments:");
     EPS microKerning = new EPS(1);     // 0.125pt
     EPS fineTracking = new EPS(3);     // 0.375pt
     EPS preciseSpacing = new EPS(5);   // 0.625pt
     Console.WriteLine($"  Micro-kerning (1 eighth-point): {microKerning.ToPT():F3}pt");
-    Console.WriteLine($"  Fine tracking (3 eighth-points): {fineTracking.ToPT():F3}pt");
-    Console.WriteLine($"  Precise spacing (5 eighth-points): {preciseSpacing.ToPT():F3}pt");
+    Console.WriteLine($"  Fine tracking (3 EPS): {fineTracking.ToPT():F3}pt");
+    Console.WriteLine($"  Precise spacing (5 EPS): {preciseSpacing.ToPT():F3}pt");
 
-    // Test common font sizes in eighth-points
+    // Test common font sizes in EPS
     Console.WriteLine("\nTesting common font sizes:");
     EPS font10pt = new EPS(80);    // 10pt
     EPS font12pt = new EPS(96);    // 12pt
     EPS font14pt = new EPS(112);   // 14pt
-    Console.WriteLine($"  10pt = {(Int64)font10pt} eighth-points");
-    Console.WriteLine($"  12pt = {(Int64)font12pt} eighth-points");
-    Console.WriteLine($"  14pt = {(Int64)font14pt} eighth-points");
+    Console.WriteLine($"  10pt = {(Int64)font10pt} EPS");
+    Console.WriteLine($"  12pt = {(Int64)font12pt} EPS");
+    Console.WriteLine($"  14pt = {(Int64)font14pt} EPS");
 
     // Test string parsing variations
     Console.WriteLine("\nTesting string parsing variations:");
@@ -366,22 +363,22 @@ public static class EPSSerializationTests
     EPS fromInches = "1in";
     EPS fromPoints = "12pt";
     EPS fromFraction = "0.125pt";
-    Console.WriteLine($"  \"576\" → {(Int64)fromPlainNumber} eighth-points");
-    Console.WriteLine($"  \"1in\" → {(Int64)fromInches} eighth-points");
-    Console.WriteLine($"  \"12pt\" → {(Int64)fromPoints} eighth-points");
-    Console.WriteLine($"  \"0.125pt\" → {(Int64)fromFraction} eighth-points");
+    Console.WriteLine($"  \"576\" → {(Int64)fromPlainNumber} EPS");
+    Console.WriteLine($"  \"1in\" → {(Int64)fromInches} EPS");
+    Console.WriteLine($"  \"12pt\" → {(Int64)fromPoints} EPS");
+    Console.WriteLine($"  \"0.125pt\" → {(Int64)fromFraction} EPS");
 
     // Test decimal values with units
     Console.WriteLine("\nTesting decimal values with units:");
     EPS halfInch = new EPS("0.5in");
     EPS quarterInch = new EPS("0.25in");
-    Console.WriteLine($"  0.5in = {(Int64)halfInch} eighth-points (expected 288)");
-    Console.WriteLine($"  0.25in = {(Int64)quarterInch} eighth-points (expected 144)");
+    Console.WriteLine($"  0.5in = {(Int64)halfInch} EPS (expected 288)");
+    Console.WriteLine($"  0.25in = {(Int64)quarterInch} EPS (expected 144)");
 
     // Test comma decimal separator
     Console.WriteLine("\nTesting comma decimal separator:");
     EPS commaDecimal = new EPS("2,54cm");
-    Console.WriteLine($"  \"2,54cm\" → {(Int64)commaDecimal} eighth-points");
+    Console.WriteLine($"  \"2,54cm\" → {(Int64)commaDecimal} EPS");
 
     // Test Deserialization from different formats
     Console.WriteLine("\nTesting Deserialization from different formats:");
@@ -409,13 +406,12 @@ public static class EPSSerializationTests
     // Test output with units
     Console.WriteLine("\nTesting output format with different units:");
     EPS measurement = 576;
-    Console.WriteLine($"  As eighth-points: {measurement}");
-    Console.WriteLine($"  As inches (no precision): {measurement.ToString("in")}");
-    Console.WriteLine($"  As inches (3 decimal): {measurement.ToString(3, "in")}");
-    Console.WriteLine($"  As points (2 decimal): {measurement.ToString(2, "pt")}");
-    Console.WriteLine($"  As mm (1 decimal): {measurement.ToString(1, "mm")}");
-    Console.WriteLine($"  As cm (2 decimal): {measurement.ToString(2, "cm")}");
-
+    Console.WriteLine($"  As EPS: {measurement}");
+    Console.WriteLine($"  As inches (no precision): {measurement.ToString(LengthUnit.Inches)}");
+    Console.WriteLine($"  As inches (3 decimal): {measurement.ToString("F3", LengthUnit.Inches)}");
+    Console.WriteLine($"  As points (2 decimal): {measurement.ToString("F2", LengthUnit.Points)}");
+    Console.WriteLine($"  As mm (1 decimal): {measurement.ToString("F1", LengthUnit.Millimeters)}");
+    Console.WriteLine($"  As cm (2 decimal): {measurement.ToString("F2", LengthUnit.Centimeters)}");
     // Test comparison
     Console.WriteLine("\nTesting comparison:");
     EPS small = 288;  // 0.5 inch
@@ -492,7 +488,7 @@ public static class EPSSerializationTests
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      string str = testEp.ToString("in");
+      string str = testEp.ToString(LengthUnit.Inches);
     }
     sw.Stop();
     Console.WriteLine($"ToString(unit) x {iterations}: {sw.ElapsedMilliseconds}ms");

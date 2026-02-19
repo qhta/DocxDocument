@@ -1513,6 +1513,11 @@
             The value is written as a plain numeric string representing EMU without unit suffix.
             </remarks>
         </member>
+        <member name="P:DocumentModel.EMU.Value">
+            <summary>
+            Gets the current value represented by this instance.
+            </summary>
+        </member>
         <member name="F:DocumentModel.EMU.EMUinMM">
             <summary>
             How many EMU are in one millimeter.
@@ -1584,12 +1589,6 @@
             </summary>
             <param name="value">The value in EMU.</param>
         </member>
-        <member name="M:DocumentModel.EMU.#ctor(System.UInt64)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> struct from a 64-bit unsigned integer value.
-            </summary>
-            <param name="value">The value in EMU.</param>
-        </member>
         <member name="M:DocumentModel.EMU.#ctor(System.Int64)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> struct from a 64-bit signed integer value.
@@ -1629,61 +1628,157 @@
             </summary>
             <returns>The measurement in twips as a double-precision floating-point number.</returns>
         </member>
+        <member name="M:DocumentModel.EMU.ConvertTo(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts the current length value to the specified unit of measurement.
+            </summary>
+            <param name="unit">The target unit to which the length value will be converted. Supported units include Twips, Points, Millimeters,
+            Centimeters, and Inches.</param>
+            <returns>The length value converted to the specified unit.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if the specified unit is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.EMU.FromTwips(System.Double)">
+            <summary>
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in twips.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.EMU.FromPT(System.Double)">
+            <summary>
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in points.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.EMU.FromMM(System.Double)">
+            <summary>
+            Creates a new instance of an object that represents a length specified in millimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.EMU.FromCM(System.Double)">
+            <summary>
+            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
+            centimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.EMU.FromInch(System.Double)">
+            <summary>
+            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.EMU.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts a length value from the specified unit to an equivalent length measure.
+            </summary>
+            <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
+            unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
+            <param name="value">The numeric value representing the length to convert.</param>
+            <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
+            <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
+        </member>
+        <member name="M:DocumentModel.EMU.Parse(System.String)">
+            <summary>
+            Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
+            </summary>
+            <remarks>If the input string does not conform to a valid length measure format, an exception may be
+            thrown.</remarks>
+            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
+        </member>
+        <member name="M:DocumentModel.EMU.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthMeasure@)">
+            <summary>
+            Attempts to parse the specified string representation of a length measure and returns a value that indicates
+            whether the parsing succeeded.
+            </summary>
+            <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
+            langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
+            <param name="value">The string representation of the length measure to parse.</param>
+            <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
+            langword="null"/>.</param>
+            <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
         <member name="M:DocumentModel.EMU.ToString">
             <summary>
-            Converts the value of this instance to its equivalent string representation.
+            Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
             </summary>
-            <returns>The string representation of the EMU value without unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.EMU.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the current length measure to its string representation using the specified format provider.
+            This allows for culture-specific formatting of the output string, such as using different decimal separators
+            based on the culture settings provided by the formatProvider.
+            If the formatProvider is null, the method should use invariant culture's formatting conventions.
+            </summary>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
+        </member>
+        <member name="M:DocumentModel.EMU.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the current length measure to its string representation using the specified format string and format provider.
+            The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
+            while the format provider allows for culture-specific formatting.
+            If the format string is null or empty, a default numeric format should be used.
+            If the format provider is null, invariant culture's formatting conventions should be applied.
+            </summary>
+            <param name="format">A standard or custom numeric format string. If null or empty, a default numeric format is used.</param>
+            <param name="formatProvider">An object that supplies culture-specific formatting information.
+            If null, invariant culture's formatting conventions are used.</param>
+            <returns>A string representation of the current length measure,
+            formatted according to the specified format string and format provider.</returns>
         </member>
         <member name="M:DocumentModel.EMU.ToString(System.String)">
             <summary>
-            Converts the value to string using the specified unit.
+            Converts the current instance to its string representation using the specified format string.
             </summary>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified unit suffix.</returns>
-            <remarks>
-            When a unit is specified, the value is converted from EMU to the target unit before formatting.
-            </remarks>
+            <remarks>If the format string is not recognized or is invalid, a FormatException may be thrown. Supported
+            format strings may include both standard and custom formats, depending on the implementation.</remarks>
+            <param name="format">A format string that defines how the value should be represented.
+            If null, a default format is used.</param>
+            <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
         </member>
-        <member name="M:DocumentModel.EMU.ToString(System.Int32,System.String)">
+        <member name="M:DocumentModel.EMU.ToString(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit and precision (fractional digits count).
+            Converts the current length measure to its string representation using the specified unit.
+              The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified precision and unit suffix.</returns>
-            <remarks>
-            When a unit is specified, the value is converted from EMU to the target unit before formatting.
-            Fixed format is used for the numeric part.
-            </remarks>
+            <param name="unit">The unit to use for the string representation.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
         </member>
-        <member name="M:DocumentModel.EMU.ToString(System.Int32,System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.EMU.ToString(System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit, precision (fractional digits count),
-            and format provider to determine digit separator. Fixed format is used.
+            Converts the current length measure to its string representation using the specified unit and format provider.
+              The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
-            <remarks>
-            <para>When a unit is specified, the value is converted from EMU to the target unit before formatting.</para>
-            <para>If the value is zero, "0" is returned regardless of precision.</para>
-            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-            </remarks>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+            <param name="unit">The unit to use for the string representation.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
         </member>
-        <member name="M:DocumentModel.EMU.ToString(System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.EMU.ToString(System.String,System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit and format provider to determine digit separator.
+            Converts the current length value to its string representation using the specified unit, format, and format
+            provider. 
+            The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+            Format string should not include unit symbols, as they will be added based on the specified unit parameter.
+            If the format string is null or empty, a default numeric format should be used.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
-            <remarks>
-            <para>When a unit is specified, the value is converted from EMU to the target unit before formatting.</para>
-            <para>If the value is zero, "0" is returned regardless of the unit.</para>
-            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-            </remarks>
+            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is
+              used.</param>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, the current culture is used.</param>
+            <param name="unit">The unit of length to use when formatting the value.</param>
+            <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
+            provider.</returns>
+        </member>
+        <member name="M:DocumentModel.EMU.ToString(System.String,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts the current length value to its string representation using the specified unit and format string.
+            The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+            </summary>
+            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
+            <param name="unit">The unit of length to use when formatting the value.</param>
+            <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
+        </member>
+        <member name="P:DocumentModel.EMU.LengthUnitSuffixes">
+            <summary>
+            Suffixes for length units that can be used in string representations of length measures.
+            The order of the suffixes corresponds to the order of the LengthUnit enum values.
+            </summary>
         </member>
         <member name="M:DocumentModel.EMU.op_Implicit(System.String)~DocumentModel.EMU">
             <summary>
@@ -1769,20 +1864,6 @@
             <param name="value">The <see cref="T:DocumentModel.EMU"/> value to convert.</param>
             <returns>A 64-bit signed integer representation of the EMU value.</returns>
         </member>
-        <member name="M:DocumentModel.EMU.op_Implicit(System.UInt64)~DocumentModel.EMU">
-            <summary>
-            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.EMU"/> value.
-            </summary>
-            <param name="value">The 64-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.EMU"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EMU.op_Implicit(DocumentModel.EMU)~System.UInt64">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.EMU"/> value to a 64-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EMU"/> value to convert.</param>
-            <returns>A 64-bit unsigned integer representation of the EMU value.</returns>
-        </member>
         <member name="M:DocumentModel.EMU.CompareTo(DocumentModel.EMU)">
             <summary>
             Compares this instance to a specified <see cref="T:DocumentModel.EMU"/> object and returns an indication of their relative values.
@@ -1795,6 +1876,12 @@
             greater than zero if this instance is greater than <paramref name="other"/>.
             </returns>
         </member>
+        <member name="M:DocumentModel.EMU.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
         <member name="M:DocumentModel.EMU.Equals(DocumentModel.EMU)">
             <summary>
             Indicates whether the current object is equal to another object of the same type.
@@ -1802,11 +1889,15 @@
             <param name="other">An object to compare with this object.</param>
             <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
         </member>
-        <member name="M:DocumentModel.EMU.GetHashCode">
+        <member name="M:DocumentModel.EMU.Equals(System.Object)">
             <summary>
-            Returns the hash code for this instance.
+            Determines whether the specified object is equal to the current instance of EMU.
             </summary>
-            <returns>A 32-bit signed integer hash code.</returns>
+            <remarks>This method overrides Object.Equals to provide value equality comparison specific to EMU
+            instances.</remarks>
+            <param name="obj">The object to compare with the current EMU instance. This parameter can be null.</param>
+            <returns>true if the specified object is an instance of EMU and is equal to the current instance; otherwise,
+            false.</returns>
         </member>
         <member name="T:DocumentModel.EMUJsonConverter">
             <summary>
@@ -1903,6 +1994,16 @@
             The value is written as a plain numeric string representing eighth-points without unit suffix.
             </remarks>
         </member>
+        <member name="F:DocumentModel.EPS.value">
+            <summary>
+            The internal value storing the measurement in eighth-points.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.EPS.Value">
+            <summary>
+            Gets the measurement value in eighth-points.
+            </summary>
+        </member>
         <member name="F:DocumentModel.EPS.EPSinMM">
             <summary>
             How many eighth-points are in one millimeter.
@@ -1943,11 +2044,6 @@
             <remarks>
             By definition, there are exactly 2.5 twips in one eight-point.
             </remarks>
-        </member>
-        <member name="F:DocumentModel.EPS.value">
-            <summary>
-            The internal value storing the measurement in eighth-points.
-            </summary>
         </member>
         <member name="M:DocumentModel.EPS.#ctor(System.String)">
             <summary>
@@ -2023,59 +2119,158 @@
             </summary>
             <returns>The measurement in twips as a double-precision floating-point number.</returns>
         </member>
+        <member name="M:DocumentModel.EPS.ConvertTo(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts the current length value to the specified unit of measurement.
+            </summary>
+            <param name="unit">The target unit to which the length value will be converted. Supported units include Twips, Points, Millimeters,
+            Centimeters, and Inches.</param>
+            <returns>The length value converted to the specified unit.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if the specified unit is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.EPS.FromTwips(System.Double)">
+            <summary>
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in twips.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.EPS.FromPT(System.Double)">
+            <summary>
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in points.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.EPS.FromMM(System.Double)">
+            <summary>
+            Creates a new instance of an object that represents a length specified in millimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.EPS.FromCM(System.Double)">
+            <summary>
+            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
+            centimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.EPS.FromInch(System.Double)">
+            <summary>
+            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.EPS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts a length value from the specified unit to an ILengthMeasure representation.
+            </summary>
+            <remarks>Supported units include Twips, Points, Millimeters, Centimeters, and Inches. Ensure that the unit
+            parameter is set to a valid LengthUnit value to avoid exceptions.</remarks>
+            <param name="value">The numeric length value to convert, expressed in the unit specified by the unit parameter.</param>
+            <param name="unit">The unit of measurement for the value parameter. Must be one of the supported LengthUnit values.</param>
+            <returns>An ILengthMeasure instance representing the converted length value in a standard format.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if the specified unit is not supported for conversion.</exception>
+        </member>
+        <member name="M:DocumentModel.EPS.Parse(System.String)">
+            <summary>
+            Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
+            </summary>
+            <remarks>If the input string does not conform to a valid length measure format, an exception may be
+            thrown.</remarks>
+            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
+        </member>
+        <member name="M:DocumentModel.EPS.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthMeasure@)">
+            <summary>
+            Attempts to parse the specified string representation of a length measure and returns a value that indicates
+            whether the parsing succeeded.
+            </summary>
+            <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
+            langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
+            <param name="value">The string representation of the length measure to parse.</param>
+            <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
+            langword="null"/>.</param>
+            <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
         <member name="M:DocumentModel.EPS.ToString">
             <summary>
-            Converts the value of this instance to its equivalent string representation.
+            Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
             </summary>
-            <returns>The string representation of the eighth-points value without unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.EPS.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the current length measure to its string representation using the specified format provider.
+            This allows for culture-specific formatting of the output string, such as using different decimal separators
+            based on the culture settings provided by the formatProvider.
+            If the formatProvider is null, the method should use invariant culture's formatting conventions.
+            </summary>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
+        </member>
+        <member name="M:DocumentModel.EPS.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the current length measure to its string representation using the specified format string and format provider.
+            The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
+            while the format provider allows for culture-specific formatting.
+            If the format string is null or empty, a default numeric format should be used.
+            If the format provider is null, invariant culture's formatting conventions should be applied.
+            </summary>
+            <param name="format">A standard or custom numeric format string. If null or empty, a default numeric format is used.</param>
+            <param name="formatProvider">An object that supplies culture-specific formatting information.
+            If null, invariant culture's formatting conventions are used.</param>
+            <returns>A string representation of the current length measure,
+            formatted according to the specified format string and format provider.</returns>
         </member>
         <member name="M:DocumentModel.EPS.ToString(System.String)">
             <summary>
-            Converts the value to string using the specified unit.
+            Converts the current instance to its string representation using the specified format string.
             </summary>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified unit suffix.</returns>
-            <remarks>
-            When a unit is specified, the value is converted from eighth-points to the target unit before formatting.
-            </remarks>
+            <remarks>If the format string is not recognized or is invalid, a FormatException may be thrown. Supported
+            format strings may include both standard and custom formats, depending on the implementation.</remarks>
+            <param name="format">A format string that defines how the value should be represented.
+            If null, a default format is used.</param>
+            <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
         </member>
-        <member name="M:DocumentModel.EPS.ToString(System.Int32,System.String)">
+        <member name="M:DocumentModel.EPS.ToString(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit and precision (fractional digits count).
+            Converts the current length measure to its string representation using the specified unit.
+              The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified precision and unit suffix.</returns>
-            <remarks>
-            When a unit is specified, the value is converted from eighth-points to the target unit before formatting.
-            Fixed format is used for the numeric part.
-            </remarks>
+            <param name="unit">The unit to use for the string representation.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
         </member>
-        <member name="M:DocumentModel.EPS.ToString(System.Int32,System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.EPS.ToString(System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit, precision (fractional digits count),
-            and format provider to determine digit separator. Fixed format is used.
+            Converts the current length measure to its string representation using the specified unit and format provider.
+              The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
-            <remarks>
-            <para>When a unit is specified, the value is converted from eighth-points to the target unit before formatting.</para>
-            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-            </remarks>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+            <param name="unit">The unit to use for the string representation.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
         </member>
-        <member name="M:DocumentModel.EPS.ToString(System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.EPS.ToString(System.String,System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit and format provider to determine digit separator.
+            Converts the current length value to its string representation using the specified unit, format, and format
+            provider. 
+            The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+            Format string should not include unit symbols, as they will be added based on the specified unit parameter.
+            If the format string is null or empty, a default numeric format should be used.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
-            <remarks>
-            <para>When a unit is specified, the value is converted from eighth-points to the target unit before formatting.</para>
-            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-            </remarks>
+            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is
+              used.</param>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, the current culture is used.</param>
+            <param name="unit">The unit of length to use when formatting the value.</param>
+            <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
+            provider.</returns>
+        </member>
+        <member name="M:DocumentModel.EPS.ToString(System.String,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts the current length value to its string representation using the specified unit and format string.
+            The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+            </summary>
+            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
+            <param name="unit">The unit of length to use when formatting the value.</param>
+            <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
+        </member>
+        <member name="P:DocumentModel.EPS.LengthUnitSuffixes">
+            <summary>
+            Suffixes for length units that can be used in string representations of length measures.
+            The order of the suffixes corresponds to the order of the LengthUnit enum values.
+            </summary>
         </member>
         <member name="M:DocumentModel.EPS.op_Implicit(System.String)~DocumentModel.EPS">
             <summary>
@@ -2202,12 +2397,12 @@
         </member>
         <member name="M:DocumentModel.EPS.Equals(System.Object)">
             <summary>
-            Determines whether the specified object is equal to the current instance of EighthPoints.
+            Determines whether the specified object is equal to the current instance of EPS.
             </summary>
-            <remarks>This method overrides Object.Equals to provide value equality comparison specific to EighthPoints
+            <remarks>This method overrides Object.Equals to provide value equality comparison specific to EPS
             instances.</remarks>
-            <param name="obj">The object to compare with the current EighthPoints instance. This parameter can be null.</param>
-            <returns>true if the specified object is an instance of EighthPoints and is equal to the current instance; otherwise,
+            <param name="obj">The object to compare with the current EPS instance. This parameter can be null.</param>
+            <returns>true if the specified object is an instance of EPS and is equal to the current instance; otherwise,
             false.</returns>
         </member>
         <member name="T:DocumentModel.EPSJsonConverter">
@@ -4611,6 +4806,16 @@
             The value is written as a plain numeric string representing half-points without unit suffix.
             </remarks>
         </member>
+        <member name="F:DocumentModel.HPS.value">
+            <summary>
+            The internal value storing the measurement in half-points.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.HPS.Value">
+            <summary>
+            Gets the value of this instance in half-points.
+            </summary>
+        </member>
         <member name="F:DocumentModel.HPS.HPSinMM">
             <summary>
             How many half-points are in one millimeter.
@@ -4652,11 +4857,6 @@
             By definition, there are exactly 10 twips in one half-point.
             </remarks>
         </member>
-        <member name="F:DocumentModel.HPS.value">
-            <summary>
-            The internal value storing the measurement in half-points.
-            </summary>
-        </member>
         <member name="M:DocumentModel.HPS.#ctor(System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a string value.
@@ -4683,12 +4883,6 @@
         <member name="M:DocumentModel.HPS.#ctor(System.Int32)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a 32-bit signed integer value.
-            </summary>
-            <param name="value">The value in half-points.</param>
-        </member>
-        <member name="M:DocumentModel.HPS.#ctor(System.UInt64)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a 64-bit unsigned integer value.
             </summary>
             <param name="value">The value in half-points.</param>
         </member>
@@ -4731,59 +4925,157 @@
             </summary>
             <returns>The measurement in twips as a double-precision floating-point number.</returns>
         </member>
+        <member name="M:DocumentModel.HPS.ConvertTo(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts the current length value to the specified unit of measurement.
+            </summary>
+            <param name="unit">The target unit to which the length value will be converted. Supported units include Twips, Points, Millimeters,
+            Centimeters, and Inches.</param>
+            <returns>The length value converted to the specified unit.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if the specified unit is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.HPS.FromTwips(System.Double)">
+            <summary>
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in twips.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HPS.FromPT(System.Double)">
+            <summary>
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in points.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HPS.FromMM(System.Double)">
+            <summary>
+            Creates a new instance of an object that represents a length specified in millimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HPS.FromCM(System.Double)">
+            <summary>
+            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
+            centimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HPS.FromInch(System.Double)">
+            <summary>
+            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HPS.Parse(System.String)">
+            <summary>
+            Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
+            </summary>
+            <remarks>If the input string does not conform to a valid length measure format, an exception may be
+            thrown.</remarks>
+            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts a length value from the specified unit to an equivalent length measure.
+            </summary>
+            <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
+            unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
+            <param name="value">The numeric value representing the length to convert.</param>
+            <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
+            <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthMeasure@)">
+            <summary>
+            Attempts to parse the specified string representation of a length measure and returns a value that indicates
+            whether the parsing succeeded.
+            </summary>
+            <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
+            langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
+            <param name="value">The string representation of the length measure to parse.</param>
+            <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
+            langword="null"/>.</param>
+            <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
         <member name="M:DocumentModel.HPS.ToString">
             <summary>
-            Converts the value of this instance to its equivalent string representation.
+            Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
             </summary>
-            <returns>The string representation of the half-points value without unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the current length measure to its string representation using the specified format provider.
+            This allows for culture-specific formatting of the output string, such as using different decimal separators
+            based on the culture settings provided by the formatProvider.
+            If the formatProvider is null, the method should use invariant culture's formatting conventions.
+            </summary>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the current length measure to its string representation using the specified format string and format provider.
+            The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
+            while the format provider allows for culture-specific formatting.
+            If the format string is null or empty, a default numeric format should be used.
+            If the format provider is null, invariant culture's formatting conventions should be applied.
+            </summary>
+            <param name="format">A standard or custom numeric format string. If null or empty, a default numeric format is used.</param>
+            <param name="formatProvider">An object that supplies culture-specific formatting information.
+            If null, invariant culture's formatting conventions are used.</param>
+            <returns>A string representation of the current length measure,
+            formatted according to the specified format string and format provider.</returns>
         </member>
         <member name="M:DocumentModel.HPS.ToString(System.String)">
             <summary>
-            Converts the value to string using the specified unit.
+            Converts the current instance to its string representation using the specified format string.
             </summary>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified unit suffix.</returns>
-            <remarks>
-            When a unit is specified, the value is converted from half-points to the target unit before formatting.
-            </remarks>
+            <remarks>If the format string is not recognized or is invalid, a FormatException may be thrown. Supported
+            format strings may include both standard and custom formats, depending on the implementation.</remarks>
+            <param name="format">A format string that defines how the value should be represented.
+            If null, a default format is used.</param>
+            <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
         </member>
-        <member name="M:DocumentModel.HPS.ToString(System.Int32,System.String)">
+        <member name="M:DocumentModel.HPS.ToString(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit and precision (fractional digits count).
+            Converts the current length measure to its string representation using the specified unit.
+              The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified precision and unit suffix.</returns>
-            <remarks>
-            When a unit is specified, the value is converted from half-points to the target unit before formatting.
-            Fixed format is used for the numeric part.
-            </remarks>
+            <param name="unit">The unit to use for the string representation.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
         </member>
-        <member name="M:DocumentModel.HPS.ToString(System.Int32,System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.HPS.ToString(System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit, precision (fractional digits count),
-            and format provider to determine digit separator. Fixed format is used.
+            Converts the current length measure to its string representation using the specified unit and format provider.
+              The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
-            <remarks>
-            <para>When a unit is specified, the value is converted from half-points to the target unit before formatting.</para>
-            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-            </remarks>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+            <param name="unit">The unit to use for the string representation.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
         </member>
-        <member name="M:DocumentModel.HPS.ToString(System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.HPS.ToString(System.String,System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit and format provider to determine digit separator.
+            Converts the current length value to its string representation using the specified unit, format, and format
+            provider. 
+            The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+            Format string should not include unit symbols, as they will be added based on the specified unit parameter.
+            If the format string is null or empty, a default numeric format should be used.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
-            <remarks>
-            <para>When a unit is specified, the value is converted from half-points to the target unit before formatting.</para>
-            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-            </remarks>
+            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is
+              used.</param>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, the current culture is used.</param>
+            <param name="unit">The unit of length to use when formatting the value.</param>
+            <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
+            provider.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.ToString(System.String,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts the current length value to its string representation using the specified unit and format string.
+            The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+            </summary>
+            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
+            <param name="unit">The unit of length to use when formatting the value.</param>
+            <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
+        </member>
+        <member name="P:DocumentModel.HPS.LengthUnitSuffixes">
+            <summary>
+            Suffixes for length units that can be used in string representations of length measures.
+            The order of the suffixes corresponds to the order of the LengthUnit enum values.
+            </summary>
         </member>
         <member name="M:DocumentModel.HPS.op_Implicit(System.String)~DocumentModel.HPS">
             <summary>
@@ -4868,13 +5160,6 @@
             </summary>
             <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
             <returns>A 64-bit signed integer representation of the half-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.HPS.op_Implicit(System.UInt64)~DocumentModel.HPS">
-            <summary>
-            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.HPS"/> value.
-            </summary>
-            <param name="value">The 64-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
         </member>
         <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.UInt64">
             <summary>
@@ -5817,6 +6102,16 @@
             The value is written as a plain numeric string representing points without unit suffix.
             </remarks>
         </member>
+        <member name="F:DocumentModel.PTS.value">
+            <summary>
+            The internal value storing the measurement in points.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.PTS.Value">
+            <summary>
+            Gets the measurement value in points.
+            </summary>
+        </member>
         <member name="F:DocumentModel.PTS.PTSinMM">
             <summary>
             How many points are in one millimeter.
@@ -5850,11 +6145,6 @@
             By definition, there are exactly 20 twips in one point.
             </remarks>
         </member>
-        <member name="F:DocumentModel.PTS.value">
-            <summary>
-            The internal value storing the measurement in points.
-            </summary>
-        </member>
         <member name="M:DocumentModel.PTS.#ctor(System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a string value.
@@ -5881,12 +6171,6 @@
         <member name="M:DocumentModel.PTS.#ctor(System.Int32)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a 32-bit signed integer value.
-            </summary>
-            <param name="value">The value in points.</param>
-        </member>
-        <member name="M:DocumentModel.PTS.#ctor(System.UInt64)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a 64-bit unsigned integer value.
             </summary>
             <param name="value">The value in points.</param>
         </member>
@@ -5929,59 +6213,157 @@
             </summary>
             <returns>The measurement in twips as a double-precision floating-point number.</returns>
         </member>
+        <member name="M:DocumentModel.PTS.ConvertTo(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts the current length value to the specified unit of measurement.
+            </summary>
+            <param name="unit">The target unit to which the length value will be converted. Supported units include Twips, Points, Millimeters,
+            Centimeters, and Inches.</param>
+            <returns>The length value converted to the specified unit.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if the specified unit is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.PTS.FromTwips(System.Double)">
+            <summary>
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in twips.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.PTS.FromPT(System.Double)">
+            <summary>
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in points.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.PTS.FromMM(System.Double)">
+            <summary>
+            Creates a new instance of an object that represents a length specified in millimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.PTS.FromCM(System.Double)">
+            <summary>
+            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
+            centimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.PTS.FromInch(System.Double)">
+            <summary>
+            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.PTS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts a length value from the specified unit to an equivalent length measure.
+            </summary>
+            <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
+            unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
+            <param name="value">The numeric value representing the length to convert.</param>
+            <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
+            <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
+        </member>
+        <member name="M:DocumentModel.PTS.Parse(System.String)">
+            <summary>
+            Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
+            </summary>
+            <remarks>If the input string does not conform to a valid length measure format, an exception may be
+            thrown.</remarks>
+            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
+        </member>
+        <member name="M:DocumentModel.PTS.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthMeasure@)">
+            <summary>
+            Attempts to parse the specified string representation of a length measure and returns a value that indicates
+            whether the parsing succeeded.
+            </summary>
+            <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
+            langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
+            <param name="value">The string representation of the length measure to parse.</param>
+            <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
+            langword="null"/>.</param>
+            <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
         <member name="M:DocumentModel.PTS.ToString">
             <summary>
-            Converts the value of this instance to its equivalent string representation.
+            Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
             </summary>
-            <returns>The string representation of the points value without unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.PTS.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the current length measure to its string representation using the specified format provider.
+            This allows for culture-specific formatting of the output string, such as using different decimal separators
+            based on the culture settings provided by the formatProvider.
+            If the formatProvider is null, the method should use invariant culture's formatting conventions.
+            </summary>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
+        </member>
+        <member name="M:DocumentModel.PTS.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the current length measure to its string representation using the specified format string and format provider.
+            The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
+            while the format provider allows for culture-specific formatting.
+            If the format string is null or empty, a default numeric format should be used.
+            If the format provider is null, invariant culture's formatting conventions should be applied.
+            </summary>
+            <param name="format">A standard or custom numeric format string. If null or empty, a default numeric format is used.</param>
+            <param name="formatProvider">An object that supplies culture-specific formatting information.
+            If null, invariant culture's formatting conventions are used.</param>
+            <returns>A string representation of the current length measure,
+            formatted according to the specified format string and format provider.</returns>
         </member>
         <member name="M:DocumentModel.PTS.ToString(System.String)">
             <summary>
-            Converts the value to string using the specified unit.
+            Converts the current instance to its string representation using the specified format string.
             </summary>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in").</param>
-            <returns>The string representation of the value with the specified unit suffix.</returns>
-            <remarks>
-            When a unit is specified, the value is converted from points to the target unit before formatting.
-            </remarks>
+            <remarks>If the format string is not recognized or is invalid, a FormatException may be thrown. Supported
+            format strings may include both standard and custom formats, depending on the implementation.</remarks>
+            <param name="format">A format string that defines how the value should be represented.
+            If null, a default format is used.</param>
+            <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
         </member>
-        <member name="M:DocumentModel.PTS.ToString(System.Int32,System.String)">
+        <member name="M:DocumentModel.PTS.ToString(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit and precision (fractional digits count).
+            Converts the current length measure to its string representation using the specified unit.
+              The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in").</param>
-            <returns>The string representation of the value with the specified precision and unit suffix.</returns>
-            <remarks>
-            When a unit is specified, the value is converted from points to the target unit before formatting.
-            Fixed format is used for the numeric part.
-            </remarks>
+            <param name="unit">The unit to use for the string representation.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
         </member>
-        <member name="M:DocumentModel.PTS.ToString(System.Int32,System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.PTS.ToString(System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit, precision (fractional digits count),
-            and format provider to determine digit separator. Fixed format is used.
+            Converts the current length measure to its string representation using the specified unit and format provider.
+              The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in").</param>
-            <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
-            <remarks>
-            <para>When a unit is specified, the value is converted from points to the target unit before formatting.</para>
-            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-            </remarks>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+            <param name="unit">The unit to use for the string representation.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
         </member>
-        <member name="M:DocumentModel.PTS.ToString(System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.PTS.ToString(System.String,System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit and format provider to determine digit separator.
+            Converts the current length value to its string representation using the specified unit, format, and format
+            provider. 
+            The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+            Format string should not include unit symbols, as they will be added based on the specified unit parameter.
+            If the format string is null or empty, a default numeric format should be used.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in").</param>
-            <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
-            <remarks>
-            <para>When a unit is specified, the value is converted from points to the target unit before formatting.</para>
-            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-            </remarks>
+            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is
+              used.</param>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, the current culture is used.</param>
+            <param name="unit">The unit of length to use when formatting the value.</param>
+            <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
+            provider.</returns>
+        </member>
+        <member name="M:DocumentModel.PTS.ToString(System.String,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts the current length value to its string representation using the specified unit and format string.
+            The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+            </summary>
+            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
+            <param name="unit">The unit of length to use when formatting the value.</param>
+            <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
+        </member>
+        <member name="P:DocumentModel.PTS.LengthUnitSuffixes">
+            <summary>
+            Suffixes for length units that can be used in string representations of length measures.
+            The order of the suffixes corresponds to the order of the LengthUnit enum values.
+            </summary>
         </member>
         <member name="M:DocumentModel.PTS.op_Implicit(System.String)~DocumentModel.PTS">
             <summary>
@@ -6066,13 +6448,6 @@
             </summary>
             <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
             <returns>A 64-bit signed integer representation of the points value.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.op_Implicit(System.UInt64)~DocumentModel.PTS">
-            <summary>
-            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.PTS"/> value.
-            </summary>
-            <param name="value">The 64-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the integer.</returns>
         </member>
         <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.UInt64">
             <summary>
@@ -6925,6 +7300,11 @@
             The value is written as a plain numeric string representing twips without unit suffix.
             </remarks>
         </member>
+        <member name="P:DocumentModel.Twips.Value">
+            <summary>
+            Gets the current value represented by this instance.
+            </summary>
+        </member>
         <member name="F:DocumentModel.Twips.TwipsInMM">
             <summary>
             How many twips are in one millimeter.
@@ -7036,61 +7416,157 @@
             This method is provided for consistency with other conversion methods and returns the internal value as a double.
             </remarks>
         </member>
+        <member name="M:DocumentModel.Twips.ConvertTo(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts the current length value to the specified unit of measurement.
+            </summary>
+            <param name="unit">The target unit to which the length value will be converted. Supported units include Twips, Points, Millimeters,
+            Centimeters, and Inches.</param>
+            <returns>The length value converted to the specified unit.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if the specified unit is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.Twips.FromTwips(System.Double)">
+            <summary>
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in twips.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.Twips.FromPT(System.Double)">
+            <summary>
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in points.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.Twips.FromMM(System.Double)">
+            <summary>
+            Creates a new instance of an object that represents a length specified in millimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.Twips.FromCM(System.Double)">
+            <summary>
+            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
+            centimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.Twips.FromInch(System.Double)">
+            <summary>
+            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.Twips.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts a length value from the specified unit to a standardized length measure.
+            </summary>
+            <remarks>Supported units include Twips, Points, Millimeters, Centimeters, and Inches.</remarks>
+            <param name="value">The numeric length value to convert, expressed in the unit specified by the unit parameter.</param>
+            <param name="unit">The unit of measurement for the value parameter. Must be one of the supported length units.</param>
+            <returns>An object that implements ILengthMeasure, representing the converted length value in a standardized format.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the specified unit is not supported for conversion.</exception>
+        </member>
+        <member name="M:DocumentModel.Twips.Parse(System.String)">
+            <summary>
+            Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
+            </summary>
+            <remarks>If the input string does not conform to a valid length measure format, an exception may be
+            thrown.</remarks>
+            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
+        </member>
+        <member name="M:DocumentModel.Twips.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthMeasure@)">
+            <summary>
+            Attempts to parse the specified string representation of a length measure and returns a value that indicates
+            whether the parsing succeeded.
+            </summary>
+            <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
+            langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
+            <param name="value">The string representation of the length measure to parse.</param>
+            <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
+            langword="null"/>.</param>
+            <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
         <member name="M:DocumentModel.Twips.ToString">
             <summary>
-            Converts the value of this instance to its equivalent string representation.
+            Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
             </summary>
-            <returns>The string representation of the twips value without unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.Twips.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the current length measure to its string representation using the specified format provider.
+            This allows for culture-specific formatting of the output string, such as using different decimal separators
+            based on the culture settings provided by the formatProvider.
+            If the formatProvider is null, the method should use invariant culture's formatting conventions.
+            </summary>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
+        </member>
+        <member name="M:DocumentModel.Twips.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the current length measure to its string representation using the specified format string and format provider.
+            The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
+            while the format provider allows for culture-specific formatting.
+            If the format string is null or empty, a default numeric format should be used.
+            If the format provider is null, invariant culture's formatting conventions should be applied.
+            </summary>
+            <param name="format">A standard or custom numeric format string. If null or empty, a default numeric format is used.</param>
+            <param name="formatProvider">An object that supplies culture-specific formatting information.
+            If null, invariant culture's formatting conventions are used.</param>
+            <returns>A string representation of the current length measure,
+            formatted according to the specified format string and format provider.</returns>
         </member>
         <member name="M:DocumentModel.Twips.ToString(System.String)">
             <summary>
-            Converts the value to string using the specified unit.
+            Converts the current instance to its string representation using the specified format string.
             </summary>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified unit suffix.</returns>
-            <remarks>
-            When a unit is specified, the value is converted from twips to the target unit before formatting.
-            </remarks>
+            <remarks>If the format string is not recognized or is invalid, a FormatException may be thrown. Supported
+            format strings may include both standard and custom formats, depending on the implementation.</remarks>
+            <param name="format">A format string that defines how the value should be represented.
+            If null, a default format is used.</param>
+            <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
         </member>
-        <member name="M:DocumentModel.Twips.ToString(System.Int32,System.String)">
+        <member name="M:DocumentModel.Twips.ToString(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit and precision (fractional digits count).
+            Converts the current length measure to its string representation using the specified unit.
+              The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified precision and unit suffix.</returns>
-            <remarks>
-            When a unit is specified, the value is converted from twips to the target unit before formatting.
-            Fixed format is used for the numeric part.
-            </remarks>
+            <param name="unit">The unit to use for the string representation.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
         </member>
-        <member name="M:DocumentModel.Twips.ToString(System.Int32,System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.Twips.ToString(System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit, precision (fractional digits count),
-            and format provider to determine digit separator. Fixed format is used.
+            Converts the current length measure to its string representation using the specified unit and format provider.
+              The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
-            <remarks>
-            <para>When a unit is specified, the value is converted from twips to the target unit before formatting.</para>
-            <para>If the value is zero, "0" is returned regardless of precision.</para>
-            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-            </remarks>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+            <param name="unit">The unit to use for the string representation.</param>
+            <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
         </member>
-        <member name="M:DocumentModel.Twips.ToString(System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.Twips.ToString(System.String,System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
-            Converts the value to string using the specified unit and format provider to determine digit separator.
+            Converts the current length value to its string representation using the specified unit, format, and format
+            provider. 
+            The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+            Format string should not include unit symbols, as they will be added based on the specified unit parameter.
+            If the format string is null or empty, a default numeric format should be used.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
-            <remarks>
-            <para>When a unit is specified, the value is converted from twips to the target unit before formatting.</para>
-            <para>If the value is zero, "0" is returned regardless of the unit.</para>
-            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-            </remarks>
+            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is
+              used.</param>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, the current culture is used.</param>
+            <param name="unit">The unit of length to use when formatting the value.</param>
+            <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
+            provider.</returns>
+        </member>
+        <member name="M:DocumentModel.Twips.ToString(System.String,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts the current length value to its string representation using the specified unit and format string.
+            The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+            </summary>
+            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
+            <param name="unit">The unit of length to use when formatting the value.</param>
+            <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
+        </member>
+        <member name="P:DocumentModel.Twips.LengthUnitSuffixes">
+            <summary>
+            Suffixes for length units that can be used in string representations of length measures.
+            The order of the suffixes corresponds to the order of the LengthUnit enum values.
+            </summary>
         </member>
         <member name="M:DocumentModel.Twips.op_Implicit(System.String)~DocumentModel.Twips">
             <summary>
@@ -7202,6 +7678,12 @@
             greater than zero if this instance is greater than <paramref name="other"/>.
             </returns>
         </member>
+        <member name="M:DocumentModel.Twips.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
         <member name="M:DocumentModel.Twips.Equals(DocumentModel.Twips)">
             <summary>
             Indicates whether the current object is equal to another object of the same type.
@@ -7209,11 +7691,14 @@
             <param name="other">An object to compare with this object.</param>
             <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
         </member>
-        <member name="M:DocumentModel.Twips.GetHashCode">
+        <member name="M:DocumentModel.Twips.Equals(System.Object)">
             <summary>
-            Returns the hash code for this instance.
+            Determines whether the specified object is equal to the current Twips instance.
             </summary>
-            <returns>A 32-bit signed integer hash code.</returns>
+            <remarks>This method supports value comparison for Twips instances. It returns false if the provided
+            object is not a Twips instance.</remarks>
+            <param name="obj">The object to compare with the current instance. This parameter can be null.</param>
+            <returns>true if the specified object is a Twips instance equal to the current instance; otherwise, false.</returns>
         </member>
         <member name="T:DocumentModel.TwipsJsonConverter">
             <summary>
