@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Text;
 
-namespace DocumentModel.BaseTypesTest;
+namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Test suite for VClipboardData type serialization in both XML and JSON formats.

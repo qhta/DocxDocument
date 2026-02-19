@@ -90,28 +90,39 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EPSinMM;
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinMM;
       value = (Int64)val;
+      return;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EPSinCM;
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinCM;
       value = (Int64)val;
+      return;
     }
-    else if (str.EndsWith("in"))
+    if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EPSinInch;
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinInch;
       value = (int)val;
+      return;
     }
-    else if (str.EndsWith("pt"))
+    if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EPSinPT;
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinPT;
       value = (Int64)val;
+      return;
     }
-    else value = Int32.Parse(str);
+    if (str.EndsWith("tw"))
+    {
+      str = str.Substring(0, str.Length - 2).Trim();
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinTwips;
+      value = (Int64)val;
+      return;
+    }
+    value = Int64.Parse(str);
   }
 
   /// <summary>
@@ -389,7 +400,7 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   /// Suffixes for length units that can be used in string representations of length measures.
   /// The order of the suffixes corresponds to the order of the LengthUnit enum values.
   /// </summary>
-  public static string[] LengthUnitSuffixes { get; } = ["twips", "pt", "mm", "cm", "in"];
+  public static string[] LengthUnitSuffixes { get; } = ["tw", "pt", "mm", "cm", "in"];
 
   #endregion
 
@@ -414,87 +425,6 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   {
     return value.value.ToString();
   }
-
-  /// <summary>
-  /// Implicitly converts a 16-bit signed integer to an <see cref="EPS"/> value.
-  /// </summary>
-  /// <param name="value">The 16-bit signed integer to convert.</param>
-  /// <returns>An <see cref="EPS"/> value representing the integer.</returns>
-  public static implicit operator EPS(Int16 value)
-  {
-    return new EPS(value);
-  }
-
-  /// <summary>
-  /// Implicitly converts an <see cref="EPS"/> value to a 16-bit signed integer.
-  /// </summary>
-  /// <param name="value">The <see cref="EPS"/> value to convert.</param>
-  /// <returns>A 16-bit signed integer representation of the eighth-points value.</returns>
-  public static implicit operator Int16(EPS value)
-  {
-    return (Int16)value.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a 16-bit unsigned integer to an <see cref="EPS"/> value.
-  /// </summary>
-  /// <param name="value">The 16-bit unsigned integer to convert.</param>
-  /// <returns>An <see cref="EPS"/> value representing the integer.</returns>
-  public static implicit operator EPS(UInt16 value)
-  {
-    return new EPS(value);
-  }
-
-  /// <summary>
-  /// Implicitly converts an <see cref="EPS"/> value to a 16-bit unsigned integer.
-  /// </summary>
-  /// <param name="value">The <see cref="EPS"/> value to convert.</param>
-  /// <returns>A 16-bit unsigned integer representation of the eighth-points value.</returns>
-  public static implicit operator UInt16(EPS value)
-  {
-    return (UInt16)value.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a 32-bit signed integer to an <see cref="EPS"/> value.
-  /// </summary>
-  /// <param name="value">The 32-bit signed integer to convert.</param>
-  /// <returns>An <see cref="EPS"/> value representing the integer.</returns>
-  public static implicit operator EPS(Int32 value)
-  {
-    return new EPS(value);
-  }
-
-  /// <summary>
-  /// Implicitly converts an <see cref="EPS"/> value to a 32-bit signed integer.
-  /// </summary>
-  /// <param name="value">The <see cref="EPS"/> value to convert.</param>
-  /// <returns>A 32-bit signed integer representation of the eighth-points value.</returns>
-  public static implicit operator Int32(EPS value)
-  {
-    return (Int32)value.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer to an <see cref="EPS"/> value.
-  /// </summary>
-  /// <param name="value">The 32-bit unsigned integer to convert.</param>
-  /// <returns>An <see cref="EPS"/> value representing the integer.</returns>
-  public static implicit operator EPS(UInt32 value)
-  {
-    return new EPS(value);
-  }
-
-  /// <summary>
-  /// Implicitly converts an <see cref="EPS"/> value to a 32-bit unsigned integer.
-  /// </summary>
-  /// <param name="value">The <see cref="EPS"/> value to convert.</param>
-  /// <returns>A 32-bit unsigned integer representation of the eighth-points value.</returns>
-  public static implicit operator UInt32(EPS value)
-  {
-    return (UInt32)value.value;
-  }
-
   /// <summary>
   /// Implicitly converts a 64-bit signed integer to an <see cref="EPS"/> value.
   /// </summary>
@@ -513,26 +443,6 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   public static implicit operator Int64(EPS value)
   {
     return (Int64)value.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a 64-bit unsigned integer to an <see cref="EPS"/> value.
-  /// </summary>
-  /// <param name="value">The 64-bit unsigned integer to convert.</param>
-  /// <returns>An <see cref="EPS"/> value representing the integer.</returns>
-  public static implicit operator EPS(UInt64 value)
-  {
-    return new EPS(value);
-  }
-
-  /// <summary>
-  /// Implicitly converts an <see cref="EPS"/> value to a 64-bit unsigned integer.
-  /// </summary>
-  /// <param name="value">The <see cref="EPS"/> value to convert.</param>
-  /// <returns>A 64-bit unsigned integer representation of the eighth-points value.</returns>
-  public static implicit operator UInt64(EPS value)
-  {
-    return (UInt64)value.value;
   }
 
   #endregion

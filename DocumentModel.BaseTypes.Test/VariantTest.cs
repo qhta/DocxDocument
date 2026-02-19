@@ -2,7 +2,7 @@
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 
-namespace DocumentModel.BaseTypesTest;
+namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Test suite for Variant type serialization in both XML and JSON formats.

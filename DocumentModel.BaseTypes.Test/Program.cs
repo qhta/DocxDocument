@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace DocumentModel.BaseTypesTest;
+namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Entry point for the base types serialization test program.
@@ -21,7 +21,7 @@ class Program
     //if (!Exec(Base64BinaryTest.Run)) return;
     //if (!Exec(BytePercentTest.Run)) return;
     if (!Exec(EMUTest.Run)) return;
-    if (!Exec(EPSTest.Run)) return;
+    if (!Exec(HPSTest.Run)) return;
     //if (!Exec(HPSTest.Run)) return;
     //if (!Exec(HexBinaryTest.Run)) return;
     //if (!Exec(HexCharTest.Run)) return;
