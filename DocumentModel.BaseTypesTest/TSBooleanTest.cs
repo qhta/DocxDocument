@@ -23,8 +23,7 @@ public static class TSBooleanTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestTSBooleanBasicOperations()
   {
     Console.WriteLine("--- Testing TSBoolean Basic Operations ---");
@@ -60,10 +59,8 @@ public static class TSBooleanTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestTSBooleanXmlSerialization()
   {
     Console.WriteLine("--- Testing TSBoolean XML Serialization ---");
@@ -102,10 +99,8 @@ public static class TSBooleanTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestTSBooleanJsonSerialization()
   {
     Console.WriteLine("--- Testing TSBoolean JSON Serialization ---");
@@ -169,8 +164,7 @@ public static class TSBooleanTest
     return true;
   }
 
-  #endregion
-
+  
   private static TSBooleanTestData CreateTestData()
   {
     return new TSBooleanTestData
@@ -182,8 +176,7 @@ public static class TSBooleanTest
     };
   }
 
-  #region Edge Cases Tests
-
+  
   static bool TestTSBooleanEdgeCases()
   {
     Console.WriteLine("--- Testing TSBoolean Edge Cases ---");
@@ -223,10 +216,8 @@ public static class TSBooleanTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestTSBooleanPerformance()
   {
     Console.WriteLine("--- Testing TSBoolean Performance ---");
@@ -282,10 +273,8 @@ public static class TSBooleanTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various TSBoolean properties.
@@ -314,4 +303,3 @@ public class TSBooleanWrapper
   public TSBoolean Value { get; set; }
 }
 
-#endregion

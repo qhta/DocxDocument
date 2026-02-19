@@ -25,8 +25,7 @@ public static class HexIntTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestHexIntBasicOperations()
   {
     Console.WriteLine("--- Testing HexInt Basic Operations ---"); // Test string to HexInt conversion
@@ -73,10 +72,8 @@ public static class HexIntTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestHexIntXmlSerialization()
   {
     Console.WriteLine("--- Testing HexInt XML Serialization ---"); // Create test object
@@ -173,10 +170,8 @@ public static class HexIntTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestHexIntJsonSerialization()
   {
     Console.WriteLine("--- Testing HexInt JSON Serialization ---"); // Create test object
@@ -221,10 +216,8 @@ public static class HexIntTest
 
   }
 
-  #endregion
-
-  #region Edge Cases Tests
-
+  
+  
   static bool TestHexIntEdgeCases()
   {
     Console.WriteLine("--- Testing HexInt Edge Cases ---"); // Test zero value
@@ -298,10 +291,8 @@ public static class HexIntTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestHexIntPerformance()
   {
     Console.WriteLine("--- Testing HexInt Performance ---");
@@ -397,10 +388,8 @@ public static class HexIntTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various HexInt properties.

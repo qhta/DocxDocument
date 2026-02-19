@@ -27,8 +27,7 @@ public static class PercentTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestPercentBasicOperations()
   {
     Console.WriteLine("--- Testing Percent Basic Operations ---");      // Test string to Percent conversion
@@ -75,10 +74,8 @@ public static class PercentTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestPercentXmlSerialization()
   {
     Console.WriteLine("--- Testing Percent XML Serialization ---");      // Create test object
@@ -173,10 +170,8 @@ public static class PercentTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestPercentJsonSerialization()
   {
     Console.WriteLine("--- Testing Percent JSON Serialization ---");      // Create test object
@@ -206,8 +201,7 @@ public static class PercentTest
     return true;
   }
 
-  #endregion
-
+  
   private static PercentTestData CreateTestData()
   {
     return new PercentTestData
@@ -235,8 +229,7 @@ public static class PercentTest
     Console.WriteLine();
   }
 
-  #region Edge Cases Tests
-
+  
   static bool TestPercentEdgeCases()
   {
     Console.WriteLine("--- Testing Percent Edge Cases ---");      // Test zero value
@@ -343,10 +336,8 @@ public static class PercentTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestPercentPerformance()
   {
     Console.WriteLine("--- Testing Percent Performance ---"); const int iterations = 100000;
@@ -460,10 +451,8 @@ public static class PercentTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various Percent properties.

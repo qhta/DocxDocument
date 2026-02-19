@@ -27,8 +27,7 @@ public static class HexRgbTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestHexRgbBasicOperations()
   {
     Console.WriteLine("--- Testing HexRgb Basic Operations ---");      // Test string to HexRgb conversion
@@ -83,10 +82,8 @@ public static class HexRgbTest
     return true;
   }
 
-  #endregion
-
-  #region Color Operations Tests
-
+  
+  
   static bool TestHexRgbColorOperations()
   {
     Console.WriteLine("--- Testing HexRgb Color Operations ---");      // Test primary colors
@@ -156,10 +153,8 @@ public static class HexRgbTest
     return true;
   }
 
-  #endregion
-
-  #region Conversion Tests
-
+  
+  
   static bool TestHexRgbConversions()
   {
     Console.WriteLine("--- Testing HexRgb IConvertible Conversions ---");      // Test GetTypeCode
@@ -296,10 +291,8 @@ public static class HexRgbTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestHexRgbXmlSerialization()
   {
     Console.WriteLine("--- Testing HexRgb XML Serialization ---");      // Create test object
@@ -383,10 +376,8 @@ public static class HexRgbTest
     return true;
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestHexRgbJsonSerialization()
   {
     Console.WriteLine("--- Testing HexRgb JSON Serialization ---");      // Create test object
@@ -416,8 +407,7 @@ public static class HexRgbTest
     return true;
   }
 
-  #endregion
-
+  
   private static HexRgbTestData CreateTestData()
   {
     return new HexRgbTestData
@@ -450,8 +440,7 @@ public static class HexRgbTest
     Console.WriteLine();
   }
 
-  #region Edge Cases Tests
-
+  
   static bool TestHexRgbEdgeCases()
   {
     Console.WriteLine("--- Testing HexRgb Edge Cases ---");
@@ -550,10 +539,8 @@ public static class HexRgbTest
     return true;
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestHexRgbPerformance()
   {
     Console.WriteLine("--- Testing HexRgb Performance ---"); const int iterations = 100000;
@@ -684,10 +671,8 @@ public static class HexRgbTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various HexRgb color properties.

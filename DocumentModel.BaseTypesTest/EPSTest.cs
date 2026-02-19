@@ -26,8 +26,7 @@ public static class EPSTest
     return true;
   }
 
-  #region Basic Operations Tests
-
+  
   static bool TestEighthPointsBasicOperations()
   {
     Console.WriteLine("--- Testing EighthPoints Basic Operations ---");      // Test string to EighthPoints conversion (plain number)
@@ -66,10 +65,8 @@ public static class EPSTest
     return true;
   }
 
-  #endregion
-
-  #region Unit Conversion Tests
-
+  
+  
   static bool TestEighthPointsUnitConversions()
   {
     Console.WriteLine("--- Testing EighthPoints Unit Conversions ---");      // Test inch conversions
@@ -153,10 +150,8 @@ public static class EPSTest
     return true;
   }
 
-  #endregion
-
-  #region XML Serialization Tests
-
+  
+  
   static bool TestEighthPointsXmlSerialization()
   {
     Console.WriteLine("--- Testing EighthPoints XML Serialization ---");      // Create test object
@@ -197,10 +192,8 @@ public static class EPSTest
 
   }
 
-  #endregion
-
-  #region JSON Serialization Tests
-
+  
+  
   static bool TestEighthPointsJsonSerialization()
   {
     Console.WriteLine("--- Testing EighthPoints JSON Serialization ---");      // Create test object
@@ -292,8 +285,7 @@ public static class EPSTest
     return true;
   }
 
-  #endregion
-
+  
   private static EighthPointsTestData CreateTestData()
   {
     return new EighthPointsTestData
@@ -312,8 +304,7 @@ public static class EPSTest
     };
   }
 
-  #region Edge Cases Tests
-
+  
   static bool TestEighthPointsEdgeCases()
   {
     Console.WriteLine("--- Testing EighthPoints Edge Cases ---");      // Test zero value
@@ -439,10 +430,8 @@ public static class EPSTest
 
   }
 
-  #endregion
-
-  #region Performance Tests
-
+  
+  
   static bool TestEighthPointsPerformance()
   {
     Console.WriteLine("--- Testing EighthPoints Performance ---"); const int iterations = 100000;
@@ -586,10 +575,8 @@ public static class EPSTest
     return true;
   }
 
-  #endregion
-}
+  }
 
-#region Test Helper Classes
 
 /// <summary>
 /// Test data class containing various EighthPoints properties.
