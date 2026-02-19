@@ -1,7 +1,4 @@
 ﻿using System.Globalization;
-using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace DocumentModel.BaseTypesTest;
 
@@ -48,7 +45,7 @@ public static class TwipsSerializationTests
       Console.WriteLine("✗ Equality test FAILED");
 
     // Test Twips to string
-    string str = twips1.ToString();
+    string str = twips1.ToString()!;
     Console.WriteLine($"\n✓ Twips to string: {str}");
 
     // Test Twips to various integer types
@@ -125,16 +122,16 @@ public static class TwipsSerializationTests
     Console.WriteLine("\nTesting string output with units:");
     Twips measurement = 1440;
     Console.WriteLine($"  As twips: {measurement}");
-    Console.WriteLine($"  As inches: {measurement.ToString("in")}");
-    Console.WriteLine($"  As points: {measurement.ToString("pt")}");
-    Console.WriteLine($"  As mm: {measurement.ToString("mm")}");
-    Console.WriteLine($"  As cm: {measurement.ToString("cm")}");
+    Console.WriteLine($"  As inches: {measurement.ToString(LengthUnit.Inches)}");
+    Console.WriteLine($"  As points: {measurement.ToString(LengthUnit.Points)}");
+    Console.WriteLine($"  As mm: {measurement.ToString(LengthUnit.Millimeters)}");
+    Console.WriteLine($"  As cm: {measurement.ToString(LengthUnit.Centimeters)}");
 
     // Test string output with precision
     Console.WriteLine("\nTesting string output with precision:");
-    Console.WriteLine($"  Precision 0: {measurement.ToString(0, "in")}");
-    Console.WriteLine($"  Precision 2: {measurement.ToString(2, "in")}");
-    Console.WriteLine($"  Precision 4: {measurement.ToString(4, "mm")}");
+    Console.WriteLine($"  Precision 0: {measurement.ToString("F0", LengthUnit.Inches)}");
+    Console.WriteLine($"  Precision 2: {measurement.ToString("F2", LengthUnit.Inches)}");
+    Console.WriteLine($"  Precision 4: {measurement.ToString("F4", LengthUnit.Millimeters)}");
 
     Console.WriteLine("\n✓ All unit conversion tests passed");
     Console.WriteLine();
@@ -300,7 +297,7 @@ public static class TwipsSerializationTests
     Console.WriteLine("Testing zero value:");
     Twips zero = 0;
     Console.WriteLine($"  Zero: '{zero}' ({(Int64)zero} twips)");
-    Console.WriteLine($"  Zero with unit: '{zero.ToString("in")}'");
+    Console.WriteLine($"  Zero with unit: '{zero.ToString(LengthUnit.Inches)}'");
 
     // Test boundary values
     Console.WriteLine("\nTesting boundary values:");
@@ -372,11 +369,11 @@ public static class TwipsSerializationTests
     Console.WriteLine("\nTesting output format with different units:");
     Twips measurement = 1440;
     Console.WriteLine($"  As twips: {measurement}");
-    Console.WriteLine($"  As inches (no precision): {measurement.ToString("in")}");
-    Console.WriteLine($"  As inches (2 decimal): {measurement.ToString(2, "in")}");
-    Console.WriteLine($"  As points: {measurement.ToString("pt")}");
-    Console.WriteLine($"  As mm (1 decimal): {measurement.ToString(1, "mm")}");
-    Console.WriteLine($"  As cm (2 decimal): {measurement.ToString(2, "cm")}");
+    Console.WriteLine($"  As inches (no precision): {measurement.ToString(LengthUnit.Inches)}");
+    Console.WriteLine($"  As inches (2 decimal): {measurement.ToString("F2",LengthUnit.Inches)}");
+    Console.WriteLine($"  As points: {measurement.ToString(LengthUnit.Points)}");
+    Console.WriteLine($"  As mm (1 decimal): {measurement.ToString("F1", LengthUnit.Millimeters)}");
+    Console.WriteLine($"  As cm (2 decimal): {measurement.ToString("F2", LengthUnit.Centimeters)}");
 
     // Test comparison
     Console.WriteLine("\nTesting comparison:");
@@ -444,7 +441,7 @@ public static class TwipsSerializationTests
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      string str = testTwips.ToString();
+      string str = testTwips.ToString()!;
     }
     sw.Stop();
     Console.WriteLine($"ToString() x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -453,7 +450,7 @@ public static class TwipsSerializationTests
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      string str = testTwips.ToString("in");
+      string str = testTwips.ToString(LengthUnit.Inches);
     }
     sw.Stop();
     Console.WriteLine($"ToString(unit) x {iterations}: {sw.ElapsedMilliseconds}ms");

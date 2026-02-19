@@ -1,8 +1,4 @@
 using System.Globalization;
-using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
-
 
 namespace DocumentModel.BaseTypesTest;
 
@@ -116,13 +112,13 @@ public static class EMUSerializationTests
     Console.WriteLine("\nTesting string output with units:");
     EMU measurement = 914400;
     Console.WriteLine($"  As EMUs: {measurement}");
-    Console.WriteLine($"  As inches: {measurement.ToString("in")}");
-    Console.WriteLine($"  As mm: {measurement.ToString("mm")}");
+    Console.WriteLine($"  As inches: {measurement.ToString(LengthUnit.Inches)}");
+    Console.WriteLine($"  As mm: {measurement.ToString(LengthUnit.Millimeters)}");
 
     // Test string output with precision
     Console.WriteLine("\nTesting string output with precision:");
-    Console.WriteLine($"  Precision 0: {measurement.ToString(0, "in")}");
-    Console.WriteLine($"  Precision 2: {measurement.ToString(2, "mm")}");
+    Console.WriteLine($"  Precision 0: {measurement.ToString("F0", LengthUnit.Inches)}");
+    Console.WriteLine($"  Precision 2: {measurement.ToString("F2", LengthUnit.Millimeters)}");
 
     Console.WriteLine("\n✓ All unit conversion tests passed");
     Console.WriteLine();
@@ -323,9 +319,9 @@ public static class EMUSerializationTests
     Console.WriteLine("\nTesting output format with different units:");
     EMU measurement = 914400;
     Console.WriteLine($"  As EMUs: {measurement}");
-    Console.WriteLine($"  As inches (no precision): {measurement.ToString("in")}");
-    Console.WriteLine($"  As inches (3 decimal): {measurement.ToString(3, "in")}");
-    Console.WriteLine($"  As mm (1 decimal): {measurement.ToString(1, "mm")}");
+    Console.WriteLine($"  As inches (no precision): {measurement.ToString(LengthUnit.Inches)}");
+    Console.WriteLine($"  As inches (3 decimal): {measurement.ToString("F3", LengthUnit.Inches)}");
+    Console.WriteLine($"  As mm (1 decimal): {measurement.ToString("F1", LengthUnit.Millimeters)}");
 
     // Test comparison
     Console.WriteLine("\nTesting comparison:");
@@ -402,7 +398,7 @@ public static class EMUSerializationTests
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      string str = testEmu.ToString("in");
+      string str = testEmu.ToString(LengthUnit.Inches);
     }
     sw.Stop();
     Console.WriteLine($"ToString(unit) x {iterations}: {sw.ElapsedMilliseconds}ms");

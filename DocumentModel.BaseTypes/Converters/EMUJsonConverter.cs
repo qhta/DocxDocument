@@ -60,23 +60,6 @@ public class EMUJsonConverter : JsonConverter<EMU>
           return new EMU(longValue);
         }
 
-        if (reader.TryGetUInt64(out ulong ulongValue))
-        {
-          return new EMU(ulongValue);
-        }
-
-        // Try as 32-bit integer
-        if (reader.TryGetInt32(out int intValue))
-        {
-          return new EMU(intValue);
-        }
-
-        // Try as 32-bit unsigned integer
-        if (reader.TryGetUInt32(out uint uintValue))
-        {
-          return new EMU(uintValue);
-        }
-
         throw new JsonException($"Invalid numeric value for EMU");
       }
       catch (FormatException ex)

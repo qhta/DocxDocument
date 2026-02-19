@@ -1,7 +1,5 @@
 ﻿using System.Globalization;
-using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
+
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 
 namespace DocumentModel.BaseTypesTest;

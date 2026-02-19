@@ -10,8 +10,17 @@
 /// This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// </remarks>
 [JsonConverter(typeof(TwipsJsonConverter))]
-public readonly partial struct Twips : ILengthMeasure, IComparable<Twips>, IEquatable<Twips>
+public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquatable<Twips>
 {
+  private readonly Int64 value;
+
+  /// <summary>
+  /// Gets the current value represented by this instance.
+  /// </summary>
+  public Int64 Value => value;
+
+  #region Constant factors for unit conversions
+
   /// <summary>
   /// How many twips are in one millimeter.
   /// There is a small difference between real and nominal factors.
@@ -46,7 +55,9 @@ public readonly partial struct Twips : ILengthMeasure, IComparable<Twips>, IEqua
   /// </remarks>
   public const double TwipsInPT = 20;
 
-  private readonly Int64 value;
+  #endregion
+
+  #region Constructors
 
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> struct from a string value.
@@ -128,26 +139,27 @@ public readonly partial struct Twips : ILengthMeasure, IComparable<Twips>, IEqua
     this.value = value;
   }
 
+  #endregion
+
+  #region Conversion Methods
+
   /// <summary>
   /// Converts the twips value to millimeters.
   /// </summary>
   /// <returns>The measurement in millimeters as a double-precision floating-point number.</returns>
-  public double ToMM()
-    => value / TwipsInMM;
+  public double ToMM() => value / TwipsInMM;
 
   /// <summary>
   /// Converts the twips value to centimeters.
   /// </summary>
   /// <returns>The measurement in centimeters as a double-precision floating-point number.</returns>
-  public double ToCM()
-    => value / TwipsInCM;
+  public double ToCM() => value / TwipsInCM;
 
   /// <summary>
   /// Converts the twips value to inches.
   /// </summary>
   /// <returns>The measurement in inches as a double-precision floating-point number.</returns>
-  public double ToInch()
-    => value / TwipsInInch;
+  public double ToInch() => value / TwipsInInch;
 
   /// <summary>
   /// Converts the twips value to points.
@@ -156,9 +168,7 @@ public readonly partial struct Twips : ILengthMeasure, IComparable<Twips>, IEqua
   /// <remarks>
   /// A point is defined as 1/72 of an inch.
   /// </remarks>
-  public double ToPT()
-    => value / TwipsInPT;
-
+  public double ToPT() => value / TwipsInPT;
 
   /// <summary>
   /// Converts the twips value to twips.
@@ -167,106 +177,209 @@ public readonly partial struct Twips : ILengthMeasure, IComparable<Twips>, IEqua
   /// <remarks>
   /// This method is provided for consistency with other conversion methods and returns the internal value as a double.
   /// </remarks>
-  public double ToTwips()
-    => value;
+  public double ToTwips() => value;
+
 
   /// <summary>
-  /// Converts the value of this instance to its equivalent string representation.
+  /// Converts the current length value to the specified unit of measurement.
   /// </summary>
-  /// <returns>The string representation of the twips value without unit suffix.</returns>
-  public override string ToString()
+  /// <param name="unit">The target unit to which the length value will be converted. Supported units include Twips, Points, Millimeters,
+  /// Centimeters, and Inches.</param>
+  /// <returns>The length value converted to the specified unit.</returns>
+  /// <exception cref="ArgumentException">Thrown if the specified unit is not supported.</exception>
+  public double ConvertTo(LengthUnit unit)
   {
-    return ToString(null);
-  }
-
-  /// <summary>
-  /// Converts the value to string using the specified unit.
-  /// </summary>
-  /// <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-  /// <returns>The string representation of the value with the specified unit suffix.</returns>
-  /// <remarks>
-  /// When a unit is specified, the value is converted from twips to the target unit before formatting.
-  /// </remarks>
-  public string ToString(string? unit)
-  {
-    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
-  }
-
-  /// <summary>
-  /// Converts the value to string using the specified unit and precision (fractional digits count).
-  /// </summary>
-  /// <param name="precision">The number of fractional digits in the return value.</param>
-  /// <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-  /// <returns>The string representation of the value with the specified precision and unit suffix.</returns>
-  /// <remarks>
-  /// When a unit is specified, the value is converted from twips to the target unit before formatting.
-  /// Fixed format is used for the numeric part.
-  /// </remarks>
-  public string ToString(int precision, string? unit)
-  {
-    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
-  }
-
-  /// <summary>
-  /// Converts the value to string using the specified unit, precision (fractional digits count),
-  /// and format provider to determine digit separator. Fixed format is used.
-  /// </summary>
-  /// <param name="precision">The number of fractional digits in the return value.</param>
-  /// <param name="provider">An <see cref="IFormatProvider"/> that supplies culture-specific formatting information.</param>
-  /// <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-  /// <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
-  /// <remarks>
-  /// <para>When a unit is specified, the value is converted from twips to the target unit before formatting.</para>
-  /// <para>If the value is zero, "0" is returned regardless of precision.</para>
-  /// <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-  /// </remarks>
-  public string ToString(int precision, IFormatProvider provider, string? unit)
-  {
-    string format = $"F{precision}";
-    if (unit != null)
+    return unit switch
     {
-      if (value == 0)
-        return "0";
-      if (unit.EndsWith("mm"))
-        return (value / TwipsInMM).ToString(format, provider) + unit;
-      if (unit.EndsWith("cm"))
-        return (value / TwipsInCM).ToString(format, provider) + unit;
-      if (unit.EndsWith("in"))
-        return (value / TwipsInInch).ToString(format, provider) + unit;
-      if (unit.EndsWith("pt"))
-        return (value / TwipsInPT).ToString(format, provider) + unit;
-    }
-    return value.ToString();
+      LengthUnit.Twips => ToTwips(),
+      LengthUnit.Points => ToPT(),
+      LengthUnit.Millimeters => ToMM(),
+      LengthUnit.Centimeters => ToCM(),
+      LengthUnit.Inches => ToInch(),
+      _ => throw new ArgumentException($"Unsupported length unit: {unit}", nameof(unit))
+    };
   }
+  #endregion
+
+  #region Static Factory Methods
 
   /// <summary>
-  /// Converts the value to string using the specified unit and format provider to determine digit separator.
+  /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in twips.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> that supplies culture-specific formatting information.</param>
-  /// <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-  /// <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
-  /// <remarks>
-  /// <para>When a unit is specified, the value is converted from twips to the target unit before formatting.</para>
-  /// <para>If the value is zero, "0" is returned regardless of the unit.</para>
-  /// <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-  /// </remarks>
-  public string ToString(IFormatProvider provider, string? unit)
+  public static ILengthMeasure FromTwips(double twips) => new Twips((Int64)twips);
+
+  /// <summary>
+  /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in points.
+  /// </summary>
+  public static ILengthMeasure FromPT(double points) => new Twips((Int64)(points * TwipsInPT));
+
+  /// <summary>
+  /// Creates a new instance of an object that represents a length specified in millimeters.
+  /// </summary>
+  public static ILengthMeasure FromMM(double millimeters) => new Twips((Int64)(millimeters * TwipsInMM));
+
+  /// <summary>
+  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
+  /// centimeters.
+  /// </summary>
+  public static ILengthMeasure FromCM(double centimeters) => new Twips((Int64)(centimeters * TwipsInCM));
+
+  /// <summary>
+  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
+  /// </summary>
+  public static ILengthMeasure FromInch(double inches) => new Twips((Int64)(inches * TwipsInInch));
+
+  /// <summary>
+  /// Converts a length value from the specified unit to a standardized length measure.
+  /// </summary>
+  /// <remarks>Supported units include Twips, Points, Millimeters, Centimeters, and Inches.</remarks>
+  /// <param name="value">The numeric length value to convert, expressed in the unit specified by the unit parameter.</param>
+  /// <param name="unit">The unit of measurement for the value parameter. Must be one of the supported length units.</param>
+  /// <returns>An object that implements ILengthMeasure, representing the converted length value in a standardized format.</returns>
+  /// <exception cref="ArgumentException">Thrown when the specified unit is not supported for conversion.</exception>
+  public static ILengthMeasure ConvertFrom(double value, LengthUnit unit) => unit switch
   {
-    if (unit != null)
+    LengthUnit.Twips => FromTwips(value),
+    LengthUnit.Points => FromPT(value),
+    LengthUnit.Millimeters => FromMM(value),
+    LengthUnit.Centimeters => FromCM(value),
+    LengthUnit.Inches => FromInch(value),
+    _ => throw new ArgumentException($"Unsupported length unit: {unit}", nameof(unit))
+  };
+
+  #endregion
+
+  #region Parsing Methods
+
+  /// <summary>
+  /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
+  /// </summary>
+  /// <remarks>If the input string does not conform to a valid length measure format, an exception may be
+  /// thrown.</remarks>
+  /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+  /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
+  public static ILengthMeasure Parse(string value) => new Twips(value);
+
+  /// <summary>
+  /// Attempts to parse the specified string representation of a length measure and returns a value that indicates
+  /// whether the parsing succeeded.
+  /// </summary>
+  /// <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
+  /// langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
+  /// <param name="value">The string representation of the length measure to parse.</param>
+  /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
+  /// langword="null"/>.</param>
+  /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
+  public static bool TryParse(string value, out ILengthMeasure? result)
+  {
+    try
     {
-      if (value == 0)
-        return "0";
-      if (unit.EndsWith("mm"))
-        return (value / TwipsInMM).ToString(provider) + unit;
-      if (unit.EndsWith("cm"))
-        return (value / TwipsInCM).ToString(provider) + unit;
-      if (unit.EndsWith("in"))
-        return (value / TwipsInInch).ToString(provider) + unit;
-      if (unit.EndsWith("pt"))
-        return (value / TwipsInPT).ToString(provider) + unit;
+      result = new Twips(value);
+      return true;
+    } catch
+    {
+      result = null!;
+      return false;
     }
-    return value.ToString();
   }
+
+  #endregion
+
+  #region ToString conversions
+
+  /// <summary>
+  /// Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
+  /// </summary>
+  public override string ToString() => Value.ToString(CultureInfo.InvariantCulture);
+
+  /// <summary>
+  /// Converts the current length measure to its string representation using the specified format provider.
+  /// This allows for culture-specific formatting of the output string, such as using different decimal separators
+  /// based on the culture settings provided by the formatProvider.
+  /// If the formatProvider is null, the method should use invariant culture's formatting conventions.
+  /// </summary>
+  /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+  /// <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
+  public string ToString(IFormatProvider? formatProvider)
+    => Value.ToString(formatProvider ?? CultureInfo.InvariantCulture);
+
+  /// <summary>
+  /// Converts the current length measure to its string representation using the specified format string and format provider.
+  /// The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
+  /// while the format provider allows for culture-specific formatting.
+  /// If the format string is null or empty, a default numeric format should be used.
+  /// If the format provider is null, invariant culture's formatting conventions should be applied.
+  /// </summary>
+  /// <param name="format">A standard or custom numeric format string. If null or empty, a default numeric format is used.</param>
+  /// <param name="formatProvider">An object that supplies culture-specific formatting information.
+  /// If null, invariant culture's formatting conventions are used.</param>
+  /// <returns>A string representation of the current length measure,
+  /// formatted according to the specified format string and format provider.</returns>
+  public string ToString(string? format, IFormatProvider? formatProvider)
+    => Value.ToString(format, formatProvider ?? CultureInfo.InvariantCulture);
+
+  /// <summary>
+  /// Converts the current instance to its string representation using the specified format string.
+  /// </summary>
+  /// <remarks>If the format string is not recognized or is invalid, a FormatException may be thrown. Supported
+  /// format strings may include both standard and custom formats, depending on the implementation.</remarks>
+  /// <param name="format">A format string that defines how the value should be represented.
+  /// If null, a default format is used.</param>
+  /// <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
+  public string ToString(string? format) => Value.ToString(format);
+
+  /// <summary>
+  /// Converts the current length measure to its string representation using the specified unit.
+  ///   The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+  /// </summary>
+  /// <param name="unit">The unit to use for the string representation.</param>
+  /// <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
+  public string ToString(LengthUnit unit)
+    => $"{ConvertTo(unit).ToString(CultureInfo.InvariantCulture)} {LengthUnitSuffixes[(int)unit]}";
+
+  /// <summary>
+  /// Converts the current length measure to its string representation using the specified unit and format provider.
+  ///   The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+  /// </summary>
+  /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+  /// <param name="unit">The unit to use for the string representation.</param>
+  /// <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
+  public string ToString(IFormatProvider? formatProvider, LengthUnit unit)
+  => $"{ConvertTo(unit).ToString(formatProvider ?? CultureInfo.InvariantCulture)} {LengthUnitSuffixes[(int)unit]}";
+
+  /// <summary>
+  /// Converts the current length value to its string representation using the specified unit, format, and format
+  /// provider. 
+  /// The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+  /// Format string should not include unit symbols, as they will be added based on the specified unit parameter.
+  /// If the format string is null or empty, a default numeric format should be used.
+  /// </summary>
+  /// <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is
+  ///   used.</param>
+  /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, the current culture is used.</param>
+  /// <param name="unit">The unit of length to use when formatting the value.</param>
+  /// <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
+  /// provider.</returns>
+  public string ToString(string? format, IFormatProvider? formatProvider, LengthUnit unit)
+      => $"{ConvertTo(unit).ToString(format, formatProvider ?? CultureInfo.InvariantCulture)} {LengthUnitSuffixes[(int)unit]}";
+
+  /// <summary>
+  /// Converts the current length value to its string representation using the specified unit and format string.
+  /// The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
+  /// </summary>
+  /// <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
+  /// <param name="unit">The unit of length to use when formatting the value.</param>
+  /// <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
+  public string ToString(string? format, LengthUnit unit)
+        => $"{ConvertTo(unit).ToString(format, CultureInfo.InvariantCulture)} {LengthUnitSuffixes[(int)unit]}";
+
+  /// <summary>
+  /// Suffixes for length units that can be used in string representations of length measures.
+  /// The order of the suffixes corresponds to the order of the LengthUnit enum values.
+  /// </summary>
+  public static string[] LengthUnitSuffixes { get; } = ["twips", "pt", "mm", "cm", "in"];
+
+  #endregion
 
   #region Implicit Conversions
 
@@ -275,100 +388,144 @@ public readonly partial struct Twips : ILengthMeasure, IComparable<Twips>, IEqua
   /// </summary>
   /// <param name="value">The string to convert.</param>
   /// <returns>A <see cref="Twips"/> value parsed from the string.</returns>
-  public static implicit operator Twips(string value) { return new Twips(value); }
+  public static implicit operator Twips(string value)
+  {
+    return new Twips(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="Twips"/> value to a string.
   /// </summary>
   /// <param name="value">The <see cref="Twips"/> value to convert.</param>
   /// <returns>A string representation of the twips value.</returns>
-  public static implicit operator string(Twips value) { return value.value.ToString(); }
+  public static implicit operator string(Twips value)
+  {
+    return value.value.ToString();
+  }
 
   /// <summary>
   /// Implicitly converts a 16-bit signed integer to a <see cref="Twips"/> value.
   /// </summary>
   /// <param name="value">The 16-bit signed integer to convert.</param>
   /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
-  public static implicit operator Twips(Int16 value) { return new Twips(value); }
+  public static implicit operator Twips(Int16 value)
+  {
+    return new Twips(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="Twips"/> value to a 16-bit signed integer.
   /// </summary>
   /// <param name="value">The <see cref="Twips"/> value to convert.</param>
   /// <returns>A 16-bit signed integer representation of the twips value.</returns>
-  public static implicit operator Int16(Twips value) { return (Int16)value.value; }
+  public static implicit operator Int16(Twips value)
+  {
+    return (Int16)value.value;
+  }
 
   /// <summary>
   /// Implicitly converts a 16-bit unsigned integer to a <see cref="Twips"/> value.
   /// </summary>
   /// <param name="value">The 16-bit unsigned integer to convert.</param>
   /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
-  public static implicit operator Twips(UInt16 value) { return new Twips(value); }
+  public static implicit operator Twips(UInt16 value)
+  {
+    return new Twips(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="Twips"/> value to a 16-bit unsigned integer.
   /// </summary>
   /// <param name="value">The <see cref="Twips"/> value to convert.</param>
   /// <returns>A 16-bit unsigned integer representation of the twips value.</returns>
-  public static implicit operator UInt16(Twips value) { return (UInt16)value.value; }
+  public static implicit operator UInt16(Twips value)
+  {
+    return (UInt16)value.value;
+  }
 
   /// <summary>
   /// Implicitly converts a 32-bit signed integer to a <see cref="Twips"/> value.
   /// </summary>
   /// <param name="value">The 32-bit signed integer to convert.</param>
   /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
-  public static implicit operator Twips(Int32 value) { return new Twips(value); }
+  public static implicit operator Twips(Int32 value)
+  {
+    return new Twips(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="Twips"/> value to a 32-bit signed integer.
   /// </summary>
   /// <param name="value">The <see cref="Twips"/> value to convert.</param>
   /// <returns>A 32-bit signed integer representation of the twips value.</returns>
-  public static implicit operator Int32(Twips value) { return (Int32)value.value; }
+  public static implicit operator Int32(Twips value)
+  {
+    return (Int32)value.value;
+  }
 
   /// <summary>
   /// Implicitly converts a 32-bit unsigned integer to a <see cref="Twips"/> value.
   /// </summary>
   /// <param name="value">The 32-bit unsigned integer to convert.</param>
   /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
-  public static implicit operator Twips(UInt32 value) { return new Twips(value); }
+  public static implicit operator Twips(UInt32 value)
+  {
+    return new Twips(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="Twips"/> value to a 32-bit unsigned integer.
   /// </summary>
   /// <param name="value">The <see cref="Twips"/> value to convert.</param>
   /// <returns>A 32-bit unsigned integer representation of the twips value.</returns>
-  public static implicit operator UInt32(Twips value) { return (UInt32)value.value; }
+  public static implicit operator UInt32(Twips value)
+  {
+    return (UInt32)value.value;
+  }
 
   /// <summary>
   /// Implicitly converts a 64-bit signed integer to a <see cref="Twips"/> value.
   /// </summary>
   /// <param name="value">The 64-bit signed integer to convert.</param>
   /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
-  public static implicit operator Twips(Int64 value) { return new Twips(value); }
+  public static implicit operator Twips(Int64 value)
+  {
+    return new Twips(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="Twips"/> value to a 64-bit signed integer.
   /// </summary>
   /// <param name="value">The <see cref="Twips"/> value to convert.</param>
   /// <returns>A 64-bit signed integer representation of the twips value.</returns>
-  public static implicit operator Int64(Twips value) { return (Int64)value.value; }
+  public static implicit operator Int64(Twips value)
+  {
+    return (Int64)value.value;
+  }
 
   /// <summary>
   /// Implicitly converts a 64-bit unsigned integer to a <see cref="Twips"/> value.
   /// </summary>
   /// <param name="value">The 64-bit unsigned integer to convert.</param>
   /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
-  public static implicit operator Twips(UInt64 value) { return new Twips(value); }
+  public static implicit operator Twips(UInt64 value)
+  {
+    return new Twips(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="Twips"/> value to a 64-bit unsigned integer.
   /// </summary>
   /// <param name="value">The <see cref="Twips"/> value to convert.</param>
   /// <returns>A 64-bit unsigned integer representation of the twips value.</returns>
-  public static implicit operator UInt64(Twips value) { return (UInt64)value.value; }
+  public static implicit operator UInt64(Twips value)
+  {
+    return (UInt64)value.value;
+  }
 
   #endregion
+
+  #region IComparable and IEquatable Implementations
 
   /// <summary>
   /// Compares this instance to a specified <see cref="Twips"/> object and returns an indication of their relative values.
@@ -384,6 +541,15 @@ public readonly partial struct Twips : ILengthMeasure, IComparable<Twips>, IEqua
   {
     return value.CompareTo(other.value);
   }
+  
+  /// <summary>
+  /// Returns the hash code for this instance.
+  /// </summary>
+  /// <returns>A 32-bit signed integer hash code.</returns>
+  public override int GetHashCode()
+  {
+    return value.GetHashCode();
+  }
 
   /// <summary>
   /// Indicates whether the current object is equal to another object of the same type.
@@ -396,11 +562,16 @@ public readonly partial struct Twips : ILengthMeasure, IComparable<Twips>, IEqua
   }
 
   /// <summary>
-  /// Returns the hash code for this instance.
+  /// Determines whether the specified object is equal to the current Twips instance.
   /// </summary>
-  /// <returns>A 32-bit signed integer hash code.</returns>
-  public override int GetHashCode()
+  /// <remarks>This method supports value comparison for Twips instances. It returns false if the provided
+  /// object is not a Twips instance.</remarks>
+  /// <param name="obj">The object to compare with the current instance. This parameter can be null.</param>
+  /// <returns>true if the specified object is a Twips instance equal to the current instance; otherwise, false.</returns>
+  public override bool Equals(object? obj)
   {
-    return value.GetHashCode();
+    return obj is Twips other && Equals(other);
   }
+  
+  #endregion
 }
