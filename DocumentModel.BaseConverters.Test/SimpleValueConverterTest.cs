@@ -52,7 +52,7 @@ public static class SimpleValueConverterTest
     (typeof(DocumentModel.Twips), typeof(DXW.TwipsMeasureType)),
     (typeof(DocumentModel.EMU), typeof(DX.Int64Value)),
     (typeof(DocumentModel.EMU), typeof(DX.StringValue)),
-    (typeof(DocumentModel.HalfPoints), typeof(DXW.HpsMeasureType)),
+    (typeof(DocumentModel.HPS), typeof(DXW.HpsMeasureType)),
     (typeof(System.Decimal), typeof(DX.DecimalValue)),
     (typeof(System.Single), typeof(DX.SingleValue)),
     (typeof(System.DateTime), typeof(DX.DateTimeValue)),
@@ -295,8 +295,8 @@ public static class SimpleValueConverterTest
         new DocumentModel.HexBinary([0xDE, 0xAD, 0xBE, 0xEF]),
         new DocumentModel.HexBinary([0x00, 0xFF, 0x7A, 0x3C])
       ];
-    if (testedType == typeof(DocumentModel.HalfPoints))
-      return [new DocumentModel.HalfPoints(0), new DocumentModel.HalfPoints(72), new DocumentModel.HalfPoints(-36)];
+    if (testedType == typeof(DocumentModel.HPS))
+      return [new DocumentModel.HPS(0), new DocumentModel.HPS(72), new DocumentModel.HPS(-36)];
     if (testedType == typeof(DocumentModel.HexChar))
       return [new DocumentModel.HexChar('A'), new DocumentModel.HexChar('z'), new DocumentModel.HexChar('0')];
     if (testedType == typeof(DocumentModel.StringList))

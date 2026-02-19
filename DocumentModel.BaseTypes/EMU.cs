@@ -5,7 +5,7 @@
 ///   There are 914400 EMUs per inch.
 /// </summary>
 [JsonConverter(typeof(EMUJsonConverter))]
-public readonly partial struct EMU : IComparable<EMU>, IEquatable<EMU>
+public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatable<EMU>
 {
   /// <summary>
   /// How many EMU are in one millimeter.
@@ -14,16 +14,16 @@ public readonly partial struct EMU : IComparable<EMU>, IEquatable<EMU>
   /// <remarks>
   /// The value is approximately 36000 EMU per millimeter, calculated as 914400 / 25.4.
   /// </remarks>
-  public const double EMUInMM = 914400 / 25.4;
+  public const double EMUinMM = 914400 / 25.4;
 
   /// <summary>
   /// How many EMU are in one centimeter.
   /// There is a small difference between real and nominal factors.
   /// </summary>
   /// <remarks>
-  /// The value is approximately 360000 EMU per centimeter, calculated as EMUInMM * 10.0.
+  /// The value is approximately 360000 EMU per centimeter, calculated as EMUinMM * 10.0.
   /// </remarks>
-  public const double EMUInCM = EMUInMM * 10.0;
+  public const double EMUinCM = EMUinMM * 10.0;
 
   /// <summary>
   /// How many EMU are in one inch.
@@ -31,7 +31,7 @@ public readonly partial struct EMU : IComparable<EMU>, IEquatable<EMU>
   /// <remarks>
   /// By definition, there are exactly 914400 EMU in one inch.
   /// </remarks>
-  public const double EMUInInch = 914400;
+  public const double EMUinInch = 914400;
 
   /// <summary>
   /// How many EMU are in one point.
@@ -39,7 +39,16 @@ public readonly partial struct EMU : IComparable<EMU>, IEquatable<EMU>
   /// <remarks>
   /// By definition, there are proximately 12694 EMU in one point (1/72 of an inch).
   /// </remarks>
-  public const double EMUInPoint = 914000/72.0;
+  public const double EMUinPT = EMUinInch / 72.0;
+
+
+  /// <summary>
+  /// How many EMU are in one twips.
+  /// </summary>
+  /// <remarks>
+  /// By definition, there are exactly 635 EMU in one twip (1/1440 of an inch, or 1/20 of a point).
+  /// </remarks>
+  public const double EMUinTwips = EMUinPT / 20.0;
 
   private readonly Int64 value;
 
@@ -63,28 +72,28 @@ public readonly partial struct EMU : IComparable<EMU>, IEquatable<EMU>
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUInMM;
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUinMM;
       value = (Int64)val;
       return;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUInCM;
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUinCM;
       value = (Int64)val;
       return;
     }
     else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUInInch;
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUinInch;
       value = (int)val;
       return;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUInPoint;
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUinPT;
       value = (Int64)val;
       return;
     }
@@ -132,21 +141,21 @@ public readonly partial struct EMU : IComparable<EMU>, IEquatable<EMU>
   /// </summary>
   /// <returns>The measurement in millimeters as a double-precision floating-point number.</returns>
   public double ToMM()
-    => value / EMUInMM;
+    => value / EMUinMM;
 
   /// <summary>
   /// Converts the EMU value to centimeters.
   /// </summary>
   /// <returns>The measurement in centimeters as a double-precision floating-point number.</returns>
   public double ToCM()
-    => value / EMUInCM;
+    => value / EMUinCM;
 
   /// <summary>
   /// Converts the EMU value to inches.
   /// </summary>
   /// <returns>The measurement in inches as a double-precision floating-point number.</returns>
   public double ToInch()
-    => value / EMUInInch;
+    => value / EMUinInch;
 
   /// <summary>
   /// Converts the EMU value to points.
@@ -155,8 +164,16 @@ public readonly partial struct EMU : IComparable<EMU>, IEquatable<EMU>
   /// <remarks>
   /// A point is defined as 1/72 of an inch.
   /// </remarks>
-  public double ToPoints()
-    => value / EMUInPoint;
+  public double ToPT()
+    => value / EMUinPT;
+
+
+  /// <summary>
+  /// Converts the EMU value to twips.
+  /// </summary>
+  /// <returns>The measurement in twips as a double-precision floating-point number.</returns>
+  public double ToTwips()
+    => value / EMUinTwips;
 
   /// <summary>
   /// Converts the value of this instance to its equivalent string representation.
@@ -216,13 +233,13 @@ public readonly partial struct EMU : IComparable<EMU>, IEquatable<EMU>
       if (value == 0)
         return "0";
       if (unit.EndsWith("mm"))
-        return (value / EMUInMM).ToString(format, provider) + unit;
+        return (value / EMUinMM).ToString(format, provider) + unit;
       if (unit.EndsWith("cm"))
-        return (value / EMUInCM).ToString(format, provider) + unit;
+        return (value / EMUinCM).ToString(format, provider) + unit;
       if (unit.EndsWith("in"))
-        return (value / EMUInInch).ToString(format, provider) + unit;
+        return (value / EMUinInch).ToString(format, provider) + unit;
       if (unit.EndsWith("pt"))
-        return (value / EMUInPoint).ToString(format, provider) + unit;
+        return (value / EMUinPT).ToString(format, provider) + unit;
     }
     return value.ToString();
   }
@@ -245,13 +262,13 @@ public readonly partial struct EMU : IComparable<EMU>, IEquatable<EMU>
       if (value == 0)
         return "0";
       if (unit.EndsWith("mm"))
-        return (value / EMUInMM).ToString(provider) + unit;
+        return (value / EMUinMM).ToString(provider) + unit;
       if (unit.EndsWith("cm"))
-        return (value / EMUInCM).ToString(provider) + unit;
+        return (value / EMUinCM).ToString(provider) + unit;
       if (unit.EndsWith("in"))
-        return (value / EMUInInch).ToString(provider) + unit;
+        return (value / EMUinInch).ToString(provider) + unit;
       if (unit.EndsWith("pt"))
-        return (value / EMUInPoint).ToString(provider) + unit;
+        return (value / EMUinPT).ToString(provider) + unit;
     }
     return value.ToString();
   }

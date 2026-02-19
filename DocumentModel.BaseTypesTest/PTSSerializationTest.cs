@@ -8,7 +8,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for Points type serialization in both XML and JSON formats.
 /// </summary>
-public static class PointsSerializationTests
+public static class PTSSerializationTests
 {
   /// <summary>
   /// Runs all Points serialization tests.
@@ -34,11 +34,11 @@ public static class PointsSerializationTests
   static bool TestPointsBasicOperations()
   {
     Console.WriteLine("--- Testing Points Basic Operations ---");      // Test string to Points conversion (plain number)
-    Points points1 = "72";
+    PTS points1 = "72";
     Console.WriteLine($"\n✓ String to Points: {points1} = {(Int64)points1} points");
 
     // Test integer to Points conversion
-    Points points2 = 72;
+    PTS points2 = 72;
     Console.WriteLine($"\n✓ Int to Points: {points2}");
 
     // Test equality
@@ -61,7 +61,7 @@ public static class PointsSerializationTests
     Console.WriteLine($"\n✓ Hash code: {points1.GetHashCode()}");
 
     // Test comparison
-    Points points3 = 144; // 2 inches
+    PTS points3 = 144; // 2 inches
     Console.WriteLine($"\n✓ CompareTo (72 vs 144): {points1.CompareTo(points3)} (expected < 0)");
 
     Console.WriteLine("\n✓ All basic operations passed");
@@ -77,7 +77,7 @@ public static class PointsSerializationTests
   {
     Console.WriteLine("--- Testing Points Unit Conversions ---");      // Test inch conversions
     Console.WriteLine("Testing inch conversions:");
-    Points oneInch = "1in";
+    PTS oneInch = "1in";
     Console.WriteLine($"  1in = {(Int64)oneInch} points (expected 72)");
     Console.WriteLine($"  72 points = {oneInch.ToInch():F2}in");
     if ((Int64)oneInch != 72)
@@ -88,9 +88,9 @@ public static class PointsSerializationTests
 
     // Test point conversions (identity)
     Console.WriteLine("\nTesting point conversions:");
-    Points twelvePoints = "12pt";
+    PTS twelvePoints = "12pt";
     Console.WriteLine($"  12pt = {(Int64)twelvePoints} points (expected 12)");
-    Console.WriteLine($"  12 points = {twelvePoints.ToPoints():F2}pt");
+    Console.WriteLine($"  12 points = {twelvePoints.ToPT():F2}pt");
     if ((Int64)twelvePoints != 12)
     {
       Console.WriteLine("✗ Point conversion FAILED");
@@ -99,23 +99,23 @@ public static class PointsSerializationTests
 
     // Test millimeter conversions
     Console.WriteLine("\nTesting millimeter conversions:");
-    Points tenMM = "10mm";
-    double expectedPoints = 10 * Points.PointsInMM;
+    PTS tenMM = "10mm";
+    double expectedPoints = 10 * PTS.PTSinMM;
     Console.WriteLine($"  10mm = {(Int64)tenMM} points (expected ~{expectedPoints:F0})");
     Console.WriteLine($"  Back to mm: {tenMM.ToMM():F2}mm");
 
     // Test centimeter conversions
     Console.WriteLine("\nTesting centimeter conversions:");
-    Points oneCM = "1cm";
-    expectedPoints = Points.PointsInCM;
+    PTS oneCM = "1cm";
+    expectedPoints = PTS.PTSinCM;
     Console.WriteLine($"  1cm = {(Int64)oneCM} points (expected ~{expectedPoints:F0})");
     Console.WriteLine($"  Back to cm: {oneCM.ToCM():F2}cm");
 
     // Test conversion accuracy
     Console.WriteLine("\nTesting round-trip conversion accuracy:");
-    Points original = 72; // 1 inch
+    PTS original = 72; // 1 inch
     double inches = original.ToInch();
-    Points roundTrip = new Points($"{inches:F6}in");
+    PTS roundTrip = new PTS($"{inches:F6}in");
     Console.WriteLine($"  Original: {(Int64)original} points");
     Console.WriteLine($"  To inches: {inches:F6}in");
     Console.WriteLine($"  Back to points: {(Int64)roundTrip} points");
@@ -123,7 +123,7 @@ public static class PointsSerializationTests
 
     // Test string output with units
     Console.WriteLine("\nTesting string output with units:");
-    Points measurement = 72;
+    PTS measurement = 72;
     Console.WriteLine($"  As points: {measurement}");
     Console.WriteLine($"  As inches: {measurement.ToString("in")}");
     Console.WriteLine($"  As points: {measurement.ToString("pt")}");
@@ -195,22 +195,22 @@ public static class PointsSerializationTests
 
     Console.WriteLine("Deserialized data:");
 
-    Console.WriteLine($"  FontSize: {deserializedData.FontSize} ({deserializedData.FontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  FontSize: {deserializedData.FontSize} ({deserializedData.FontSize.ToPT():F1}pt)");
     if (testData.FontSize.CompareTo(deserializedData.FontSize) != 0)
       return false;
-    Console.WriteLine($"  LineHeight: {deserializedData.LineHeight} ({deserializedData.LineHeight.ToPoints():F1}pt)");
+    Console.WriteLine($"  LineHeight: {deserializedData.LineHeight} ({deserializedData.LineHeight.ToPT():F1}pt)");
     if (testData.LineHeight.CompareTo(deserializedData.LineHeight) != 0)
       return false;
-    Console.WriteLine($"  ParagraphSpacing: {deserializedData.ParagraphSpacing} ({deserializedData.ParagraphSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  ParagraphSpacing: {deserializedData.ParagraphSpacing} ({deserializedData.ParagraphSpacing.ToPT():F1}pt)");
     if (testData.ParagraphSpacing.CompareTo(deserializedData.ParagraphSpacing) != 0)
       return false;
     Console.WriteLine($"  Indent: {deserializedData.Indent} ({deserializedData.Indent.ToInch():F2}in)");
     if (testData.Indent.CompareTo(deserializedData.Indent) != 0)
       return false;
-    Console.WriteLine($"  BodyFontSize: {deserializedData.BodyFontSize} ({deserializedData.BodyFontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  BodyFontSize: {deserializedData.BodyFontSize} ({deserializedData.BodyFontSize.ToPT():F1}pt)");
     if (testData.BodyFontSize.CompareTo(deserializedData.BodyFontSize) != 0)
       return false;
-    Console.WriteLine($"  HeadingFontSize: {deserializedData.HeadingFontSize} ({deserializedData.HeadingFontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  HeadingFontSize: {deserializedData.HeadingFontSize} ({deserializedData.HeadingFontSize.ToPT():F1}pt)");
     if (testData.HeadingFontSize.CompareTo(deserializedData.HeadingFontSize) != 0)
       return false;
     Console.WriteLine($"  ZeroValue: {deserializedData.ZeroValue}");
@@ -265,15 +265,15 @@ public static class PointsSerializationTests
   {
     return new PointsTestData
     {
-      FontSize = new Points(12),       // 12 points
-      LineHeight = new Points(18),     // 18 points
-      ParagraphSpacing = new Points(6),// 6 points
-      Indent = new Points(36),         // 36 points (0.5 inch)
-      BodyFontSize = new Points(10),   // 10 points
-      HeadingFontSize = new Points(24),// 24 points
-      ZeroValue = new Points(0),
-      SmallValue = new Points(1),      // 1 point
-      LargeValue = new Points(1000)    // ~13.9 inches
+      FontSize = new PTS(12),       // 12 points
+      LineHeight = new PTS(18),     // 18 points
+      ParagraphSpacing = new PTS(6),// 6 points
+      Indent = new PTS(36),         // 36 points (0.5 inch)
+      BodyFontSize = new PTS(10),   // 10 points
+      HeadingFontSize = new PTS(24),// 24 points
+      ZeroValue = new PTS(0),
+      SmallValue = new PTS(1),      // 1 point
+      LargeValue = new PTS(1000)    // ~13.9 inches
     };
   }
 
@@ -281,12 +281,12 @@ public static class PointsSerializationTests
   {
     Console.WriteLine($"Original data:");
 
-    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
-    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPoints():F1}pt)");
-    Console.WriteLine($"  ParagraphSpacing: {testData.ParagraphSpacing} ({testData.ParagraphSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPT():F1}pt)");
+    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPT():F1}pt)");
+    Console.WriteLine($"  ParagraphSpacing: {testData.ParagraphSpacing} ({testData.ParagraphSpacing.ToPT():F1}pt)");
     Console.WriteLine($"  Indent: {testData.Indent} ({testData.Indent.ToInch():F2}in)");
-    Console.WriteLine($"  BodyFontSize: {testData.BodyFontSize} ({testData.BodyFontSize.ToPoints():F1}pt)");
-    Console.WriteLine($"  HeadingFontSize: {testData.HeadingFontSize} ({testData.HeadingFontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  BodyFontSize: {testData.BodyFontSize} ({testData.BodyFontSize.ToPT():F1}pt)");
+    Console.WriteLine($"  HeadingFontSize: {testData.HeadingFontSize} ({testData.HeadingFontSize.ToPT():F1}pt)");
     Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
     Console.WriteLine($"  SmallValue: {testData.SmallValue}");
     Console.WriteLine($"  LargeValue: {testData.LargeValue}");
@@ -299,24 +299,24 @@ public static class PointsSerializationTests
   {
     Console.WriteLine("--- Testing Points Edge Cases ---");      // Test zero value
     Console.WriteLine("Testing zero value:");
-    Points zero = 0;
+    PTS zero = 0;
     Console.WriteLine($"  Zero: '{zero}' ({(Int64)zero} points)");
 
     // Test boundary values
     Console.WriteLine("\nTesting boundary values:");
-    Points minInt32 = Int32.MinValue;
-    Points maxInt32 = Int32.MaxValue;
+    PTS minInt32 = Int32.MinValue;
+    PTS maxInt32 = Int32.MaxValue;
     Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch():F2}in)");
     Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch():F2}in)");
 
     // Test common font sizes
     Console.WriteLine("\nTesting common font sizes:");
-    Points font8pt = new Points("8pt");
-    Points font10pt = new Points("10pt");
-    Points font12pt = new Points("12pt");
-    Points font14pt = new Points("14pt");
-    Points font18pt = new Points("18pt");
-    Points font24pt = new Points("24pt");
+    PTS font8pt = new PTS("8pt");
+    PTS font10pt = new PTS("10pt");
+    PTS font12pt = new PTS("12pt");
+    PTS font14pt = new PTS("14pt");
+    PTS font18pt = new PTS("18pt");
+    PTS font24pt = new PTS("24pt");
     Console.WriteLine($"  8pt = {(Int64)font8pt} points");
     Console.WriteLine($"  10pt = {(Int64)font10pt} points");
     Console.WriteLine($"  12pt = {(Int64)font12pt} points");
@@ -326,32 +326,32 @@ public static class PointsSerializationTests
 
     // Test common measurements in typography
     Console.WriteLine("\nTesting common typography measurements:");
-    Points pica = new Points("12pt");  // 1 pica = 12 points
-    Points halfInch = new Points("0.5in");
-    Points quarterInch = new Points("0.25in");
+    PTS pica = new PTS("12pt");  // 1 pica = 12 points
+    PTS halfInch = new PTS("0.5in");
+    PTS quarterInch = new PTS("0.25in");
     Console.WriteLine($"  1 pica (12pt): {(Int64)pica} points");
     Console.WriteLine($"  0.5in: {(Int64)halfInch} points (expected 36)");
     Console.WriteLine($"  0.25in: {(Int64)quarterInch} points (expected 18)");
 
     // Test string parsing variations
     Console.WriteLine("\nTesting string parsing variations:");
-    Points fromPlainNumber = "72";
-    Points fromInches = "1in";
-    Points fromPoints = "72pt";
+    PTS fromPlainNumber = "72";
+    PTS fromInches = "1in";
+    PTS fromPoints = "72pt";
     Console.WriteLine($"  \"72\" → {(Int64)fromPlainNumber} points");
     Console.WriteLine($"  \"1in\" → {(Int64)fromInches} points");
     Console.WriteLine($"  \"72pt\" → {(Int64)fromPoints} points");
 
     // Test decimal values with units
     Console.WriteLine("\nTesting decimal values with units:");
-    Points halfPoint = new Points("0.5pt");
-    Points quarterPoint = new Points("0.25pt");
+    PTS halfPoint = new PTS("0.5pt");
+    PTS quarterPoint = new PTS("0.25pt");
     Console.WriteLine($"  0.5pt = {(Int64)halfPoint} points (expected 0)");
     Console.WriteLine($"  0.25pt = {(Int64)quarterPoint} points (expected 0)");
 
     // Test comma decimal separator
     Console.WriteLine("\nTesting comma decimal separator:");
-    Points commaDecimal = new Points("2,54cm");
+    PTS commaDecimal = new PTS("2,54cm");
     Console.WriteLine($"  \"2,54cm\" → {(Int64)commaDecimal} points");
 
     // Test Deserialization from different formats
@@ -374,7 +374,7 @@ public static class PointsSerializationTests
 
     // Test output with units match input
     Console.WriteLine("\nTesting output format with different units:");
-    Points measurement = 72;
+    PTS measurement = 72;
     Console.WriteLine($"  As points: {measurement}");
     Console.WriteLine($"  As inches (no precision): {measurement.ToString("in")}");
     Console.WriteLine($"  As inches (2 decimal): {measurement.ToString(2, "in")}");
@@ -384,17 +384,17 @@ public static class PointsSerializationTests
 
     // Test comparison
     Console.WriteLine("\nTesting comparison:");
-    Points small = 36;  // 0.5 inch
-    Points large = 72;  // 1 inch
+    PTS small = 36;  // 0.5 inch
+    PTS large = 72;  // 1 inch
     Console.WriteLine($"  36 < 72: {small.CompareTo(large) < 0}");
     Console.WriteLine($"  72 > 36: {large.CompareTo(small) > 0}");
-    Console.WriteLine($"  72 == 72: {large.CompareTo(new Points(72)) == 0}");
+    Console.WriteLine($"  72 == 72: {large.CompareTo(new PTS(72)) == 0}");
 
     // Test implicit conversions
     Console.WriteLine("\nTesting implicit conversions:");
-    Points fromInt32 = 72;
-    Points fromInt64 = 72L;
-    Points fromUInt32 = 72U;
+    PTS fromInt32 = 72;
+    PTS fromInt64 = 72L;
+    PTS fromUInt32 = 72U;
     Int32 toInt32 = fromInt32;
     Int64 toInt64 = fromInt64;
     Console.WriteLine($"  From Int32: {fromInt32}");
@@ -420,7 +420,7 @@ public static class PointsSerializationTests
     var sw = System.Diagnostics.Stopwatch.StartNew();
     for (int i = 0; i < iterations; i++)
     {
-      Points points = "1in";
+      PTS points = "1in";
     }
     sw.Stop();
     Console.WriteLine($"Construction from string with unit x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -429,7 +429,7 @@ public static class PointsSerializationTests
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      Points points = "72";
+      PTS points = "72";
     }
     sw.Stop();
     Console.WriteLine($"Construction from plain string x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -438,13 +438,13 @@ public static class PointsSerializationTests
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      Points points = 72;
+      PTS points = 72;
     }
     sw.Stop();
     Console.WriteLine($"Construction from integer x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     // Test ToString performance
-    Points testPoints = 72;
+    PTS testPoints = 72;
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
@@ -474,10 +474,10 @@ public static class PointsSerializationTests
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double points = testPoints.ToPoints();
+      double points = testPoints.ToPT();
     }
     sw.Stop();
-    Console.WriteLine($"ToPoints() x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"ToPT() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
     for (int i = 0; i < iterations; i++)
@@ -490,15 +490,15 @@ public static class PointsSerializationTests
     // Test JSON serialization performance
     var testObj = new PointsTestData
     {
-      FontSize = new Points(12),
-      LineHeight = new Points(18),
-      ParagraphSpacing = new Points(6),
-      Indent = new Points(36),
-      BodyFontSize = new Points(10),
-      HeadingFontSize = new Points(24),
-      ZeroValue = new Points(0),
-      SmallValue = new Points(1),
-      LargeValue = new Points(1000)
+      FontSize = new PTS(12),
+      LineHeight = new PTS(18),
+      ParagraphSpacing = new PTS(6),
+      Indent = new PTS(36),
+      BodyFontSize = new PTS(10),
+      HeadingFontSize = new PTS(24),
+      ZeroValue = new PTS(0),
+      SmallValue = new PTS(1),
+      LargeValue = new PTS(1000)
     };
 
     sw.Restart();
@@ -520,8 +520,8 @@ public static class PointsSerializationTests
     Console.WriteLine($"Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
 
     // Test comparison performance
-    Points points1 = 72;
-    Points points2 = 72;
+    PTS points1 = 72;
+    PTS points2 = 72;
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
@@ -565,31 +565,31 @@ public static class PointsSerializationTests
 public class PointsTestData
 {
   [XmlElement("FontSize")]
-  public Points FontSize { get; set; }
+  public PTS FontSize { get; set; }
 
   [XmlElement("LineHeight")]
-  public Points LineHeight { get; set; }
+  public PTS LineHeight { get; set; }
 
   [XmlElement("ParagraphSpacing")]
-  public Points ParagraphSpacing { get; set; }
+  public PTS ParagraphSpacing { get; set; }
 
   [XmlElement("Indent")]
-  public Points Indent { get; set; }
+  public PTS Indent { get; set; }
 
   [XmlElement("BodyFontSize")]
-  public Points BodyFontSize { get; set; }
+  public PTS BodyFontSize { get; set; }
 
   [XmlElement("HeadingFontSize")]
-  public Points HeadingFontSize { get; set; }
+  public PTS HeadingFontSize { get; set; }
 
   [XmlElement("ZeroValue")]
-  public Points ZeroValue { get; set; }
+  public PTS ZeroValue { get; set; }
 
   [XmlElement("SmallValue")]
-  public Points SmallValue { get; set; }
+  public PTS SmallValue { get; set; }
 
   [XmlElement("LargeValue")]
-  public Points LargeValue { get; set; }
+  public PTS LargeValue { get; set; }
 }
 
 /// <summary>
@@ -597,7 +597,7 @@ public class PointsTestData
 /// </summary>
 public class PointsWrapper
 {
-  public Points Value { get; set; }
+  public PTS Value { get; set; }
 }
 
 #endregion

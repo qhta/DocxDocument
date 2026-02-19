@@ -1,21 +1,21 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support for the <see cref="HalfPoints"/> structure.
+/// Provides JSON serialization and deserialization support for the <see cref="HPS"/> structure.
 /// </summary>
 /// <remarks>
 /// This converter handles both string and numeric JSON tokens for deserialization,
 /// and writes half-points values as strings for compatibility with Office Open XML conventions.
 /// </remarks>
-public class HalfPointsJsonConverter : JsonConverter<HalfPoints>
+public class HPSJsonConverter : JsonConverter<HPS>
 {
   /// <summary>
-  /// Reads and converts JSON to a <see cref="HalfPoints"/> value.
+  /// Reads and converts JSON to a <see cref="HPS"/> value.
   /// </summary>
   /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
   /// <param name="typeToConvert">The type to convert.</param>
   /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
-  /// <returns>A <see cref="HalfPoints"/> value parsed from the JSON input.</returns>
+  /// <returns>A <see cref="HPS"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
   /// <list type="bullet">
@@ -33,7 +33,7 @@ public class HalfPointsJsonConverter : JsonConverter<HalfPoints>
   /// </list>
   /// Note: When using "pt" suffix, the value is multiplied by 2 (e.g., "12pt" becomes 24 half-points).
   /// </remarks>
-  public override HalfPoints Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+  public override HPS Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
   {
     if (reader.TokenType == JsonTokenType.String)
     {
@@ -43,7 +43,7 @@ public class HalfPointsJsonConverter : JsonConverter<HalfPoints>
 
       try
       {
-        return new HalfPoints(value);
+        return new HPS(value);
       }
       catch (FormatException ex)
       {
@@ -58,24 +58,24 @@ public class HalfPointsJsonConverter : JsonConverter<HalfPoints>
       {
         if (reader.TryGetInt64(out long longValue))
         {
-          return new HalfPoints(longValue);
+          return new HPS(longValue);
         }
 
         if (reader.TryGetUInt64(out ulong ulongValue))
         {
-          return new HalfPoints(ulongValue);
+          return new HPS(ulongValue);
         }
 
         // Try as 32-bit integer
         if (reader.TryGetInt32(out int intValue))
         {
-          return new HalfPoints(intValue);
+          return new HPS(intValue);
         }
 
         // Try as 32-bit unsigned integer
         if (reader.TryGetUInt32(out uint uintValue))
         {
-          return new HalfPoints(uintValue);
+          return new HPS(uintValue);
         }
 
         throw new JsonException($"Invalid numeric value for HalfPoints");
@@ -90,16 +90,16 @@ public class HalfPointsJsonConverter : JsonConverter<HalfPoints>
   }
 
   /// <summary>
-  /// Writes a <see cref="HalfPoints"/> value as JSON.
+  /// Writes a <see cref="HPS"/> value as JSON.
   /// </summary>
   /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
-  /// <param name="value">The <see cref="HalfPoints"/> value to serialize.</param>
+  /// <param name="value">The <see cref="HPS"/> value to serialize.</param>
   /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <remarks>
   /// Writes the half-points value as a numeric string without unit suffix.
   /// For example, a value of 144 half-points (1 inch) is written as "144".
   /// </remarks>
-  public override void Write(Utf8JsonWriter writer, HalfPoints value, JsonSerializerOptions options)
+  public override void Write(Utf8JsonWriter writer, HPS value, JsonSerializerOptions options)
   {
     // Write as numeric string without unit suffix
     writer.WriteStringValue(((Int64)value).ToString());

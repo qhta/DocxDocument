@@ -1,9 +1,9 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support for the <see cref="EighthPoints"/> structure.
+/// Provides XML serialization support for the <see cref="HPS"/> structure.
 /// </summary>
-public partial struct EighthPoints : IXmlSerializable
+public partial struct HPS : IXmlSerializable
 {
   #region IXmlSerializable Implementation
 
@@ -14,18 +14,18 @@ public partial struct EighthPoints : IXmlSerializable
   XmlSchema? IXmlSerializable.GetSchema() => null;
 
   /// <summary>
-  /// Deserializes the <see cref="EighthPoints"/> value from XML.
+  /// Deserializes the <see cref="HPS"/> value from XML.
   /// Accepts numeric values and values with unit suffixes (mm, cm, pt, in).
   /// </summary>
   /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
-  /// <item><description>Plain numeric values (e.g., "576" representing eighth-points directly)</description></item>
+  /// <item><description>Plain numeric values (e.g., "144" representing half-points directly)</description></item>
   /// <item><description>Values with millimeter suffix (e.g., "25.4mm")</description></item>
   /// <item><description>Values with centimeter suffix (e.g., "2.54cm")</description></item>
-  /// <item><description>Values with point suffix (e.g., "12pt" will be converted to 96 eighth-points)</description></item>
-  /// <item><description>Values with inch suffix (e.g., "1in" will be converted to 576 eighth-points)</description></item>
+  /// <item><description>Values with point suffix (e.g., "12pt" will be converted to 24 half-points)</description></item>
+  /// <item><description>Values with inch suffix (e.g., "1in" will be converted to 144 half-points)</description></item>
   /// <item><description>Empty elements</description></item>
   /// </list>
   /// Commas in the input are automatically replaced with periods for decimal separator consistency.
@@ -42,11 +42,11 @@ public partial struct EighthPoints : IXmlSerializable
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
-      string eighthPointsString = reader.Value;
+      string halfPointsString = reader.Value;
 
-      if (!string.IsNullOrEmpty(eighthPointsString))
+      if (!string.IsNullOrEmpty(halfPointsString))
       {
-        EighthPoints parsedValue = new EighthPoints(eighthPointsString);
+        HPS parsedValue = new HPS(halfPointsString);
 
         // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue.value;
@@ -62,11 +62,11 @@ public partial struct EighthPoints : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="EighthPoints"/> value to XML.
+  /// Serializes the <see cref="HPS"/> value to XML.
   /// </summary>
   /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
   /// <remarks>
-  /// The value is written as a plain numeric string representing eighth-points without unit suffix.
+  /// The value is written as a plain numeric string representing half-points without unit suffix.
   /// </remarks>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
