@@ -17,9 +17,9 @@ public partial class RubyProperties : ModelElement<DXW.RubyProperties>
  /// Font size of the phonetic guide text, specified in half-points.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.RubyProperties.PhoneticGuideTextFontSize))]
- public HalfPoints? PhoneticGuideTextFontSize { get => _PhoneticGuideTextFontSize; set => UpdateField(ref _PhoneticGuideTextFontSize, value, nameof(PhoneticGuideTextFontSize)); }
+ public HPS? PhoneticGuideTextFontSize { get => _PhoneticGuideTextFontSize; set => UpdateField(ref _PhoneticGuideTextFontSize, value, nameof(PhoneticGuideTextFontSize)); }
 
- private HalfPoints? _PhoneticGuideTextFontSize;
+ private HPS? _PhoneticGuideTextFontSize;
  /// <summary>
  /// Distance between the phonetic guide text and the base text, specified in twips.
  /// </summary>
@@ -31,9 +31,9 @@ public partial class RubyProperties : ModelElement<DXW.RubyProperties>
  /// Font size of the phonetic guide base text, specified in half-points.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.RubyProperties.PhoneticGuideBaseTextSize))]
- public HalfPoints? PhoneticGuideBaseTextSize { get => _PhoneticGuideBaseTextSize; set => UpdateField(ref _PhoneticGuideBaseTextSize, value, nameof(PhoneticGuideBaseTextSize)); }
+ public HPS? PhoneticGuideBaseTextSize { get => _PhoneticGuideBaseTextSize; set => UpdateField(ref _PhoneticGuideBaseTextSize, value, nameof(PhoneticGuideBaseTextSize)); }
 
- private HalfPoints? _PhoneticGuideBaseTextSize;
+ private HPS? _PhoneticGuideBaseTextSize;
  /// <summary>
  /// Language ID for the phonetic guide, specifying the language used for annotation.
  /// </summary>

@@ -10,7 +10,7 @@
 /// This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// </remarks>
 [JsonConverter(typeof(TwipsJsonConverter))]
-public readonly partial struct Twips : IComparable<Twips>, IEquatable<Twips>
+public readonly partial struct Twips : ILengthMeasure, IComparable<Twips>, IEquatable<Twips>
 {
   /// <summary>
   /// How many twips are in one millimeter.
@@ -44,7 +44,7 @@ public readonly partial struct Twips : IComparable<Twips>, IEquatable<Twips>
   /// <remarks>
   /// By definition, there are exactly 20 twips in one point (1/72 of an inch).
   /// </remarks>
-  public const double TwipsInPoint = 20;
+  public const double TwipsInPT = 20;
 
   private readonly Int64 value;
 
@@ -86,7 +86,7 @@ public readonly partial struct Twips : IComparable<Twips>, IEquatable<Twips>
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * TwipsInPoint;
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * TwipsInPT;
       value = (Int64)val;
     }
     else value = Int32.Parse(str);
@@ -156,8 +156,19 @@ public readonly partial struct Twips : IComparable<Twips>, IEquatable<Twips>
   /// <remarks>
   /// A point is defined as 1/72 of an inch.
   /// </remarks>
-  public double ToPoints()
-    => value / TwipsInPoint;
+  public double ToPT()
+    => value / TwipsInPT;
+
+
+  /// <summary>
+  /// Converts the twips value to twips.
+  /// </summary>
+  /// <returns>The measurement in twips as a double-precision floating-point number.</returns>
+  /// <remarks>
+  /// This method is provided for consistency with other conversion methods and returns the internal value as a double.
+  /// </remarks>
+  public double ToTwips()
+    => value;
 
   /// <summary>
   /// Converts the value of this instance to its equivalent string representation.
@@ -223,7 +234,7 @@ public readonly partial struct Twips : IComparable<Twips>, IEquatable<Twips>
       if (unit.EndsWith("in"))
         return (value / TwipsInInch).ToString(format, provider) + unit;
       if (unit.EndsWith("pt"))
-        return (value / TwipsInPoint).ToString(format, provider) + unit;
+        return (value / TwipsInPT).ToString(format, provider) + unit;
     }
     return value.ToString();
   }
@@ -252,7 +263,7 @@ public readonly partial struct Twips : IComparable<Twips>, IEquatable<Twips>
       if (unit.EndsWith("in"))
         return (value / TwipsInInch).ToString(provider) + unit;
       if (unit.EndsWith("pt"))
-        return (value / TwipsInPoint).ToString(provider) + unit;
+        return (value / TwipsInPT).ToString(provider) + unit;
     }
     return value.ToString();
   }

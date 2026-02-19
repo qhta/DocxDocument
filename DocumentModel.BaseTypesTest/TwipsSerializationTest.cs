@@ -90,7 +90,7 @@ public static class TwipsSerializationTests
     Console.WriteLine("\nTesting point conversions:");
     Twips onePoint = "1pt";
     Console.WriteLine($"  1pt = {(Int64)onePoint} twips (expected 20)");
-    Console.WriteLine($"  20 twips = {onePoint.ToPoints():F2}pt");
+    Console.WriteLine($"  20 twips = {onePoint.ToPT():F2}pt");
     if ((Int64)onePoint != 20)
     {
       Console.WriteLine("✗ Point conversion FAILED");
@@ -206,10 +206,10 @@ public static class TwipsSerializationTests
     Console.WriteLine($"  TopMargin: {deserializedData.TopMargin} ({deserializedData.TopMargin.ToInch():F2}in)");
     if (!testData.TopMargin.Equals(deserializedData.TopMargin))
       return false;
-    Console.WriteLine($"  FontSize: {deserializedData.FontSize} ({deserializedData.FontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  FontSize: {deserializedData.FontSize} ({deserializedData.FontSize.ToPT():F1}pt)");
     if (!testData.FontSize.Equals(deserializedData.FontSize))
       return false;
-    Console.WriteLine($"  LineSpacing: {deserializedData.LineSpacing} ({deserializedData.LineSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  LineSpacing: {deserializedData.LineSpacing} ({deserializedData.LineSpacing.ToPT():F1}pt)");
     if (!testData.LineSpacing.Equals(deserializedData.LineSpacing))
       return false;
     Console.WriteLine($"  ZeroValue: {deserializedData.ZeroValue}");
@@ -284,8 +284,8 @@ public static class TwipsSerializationTests
     Console.WriteLine($"  PageHeight: {testData.PageHeight} ({testData.PageHeight.ToInch():F2}in)");
     Console.WriteLine($"  LeftMargin: {testData.LeftMargin} ({testData.LeftMargin.ToInch():F2}in)");
     Console.WriteLine($"  TopMargin: {testData.TopMargin} ({testData.TopMargin.ToInch():F2}in)");
-    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
-    Console.WriteLine($"  LineSpacing: {testData.LineSpacing} ({testData.LineSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPT():F1}pt)");
+    Console.WriteLine($"  LineSpacing: {testData.LineSpacing} ({testData.LineSpacing.ToPT():F1}pt)");
     Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
     Console.WriteLine($"  SmallValue: {testData.SmallValue}");
     Console.WriteLine($"  LargeValue: {testData.LargeValue}");
@@ -470,10 +470,10 @@ public static class TwipsSerializationTests
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double points = testTwips.ToPoints();
+      double points = testTwips.ToPT();
     }
     sw.Stop();
-    Console.WriteLine($"ToPoints() x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"ToPT() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
     for (int i = 0; i < iterations; i++)

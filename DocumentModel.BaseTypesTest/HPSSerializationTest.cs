@@ -8,7 +8,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for HalfPoints type serialization in both XML and JSON formats.
 /// </summary>
-public static class HalfPointsSerializationTests
+public static class HPSSerializationTests
 {
   /// <summary>
   /// Runs all HalfPoints serialization tests.
@@ -38,11 +38,11 @@ public static class HalfPointsSerializationTests
     try
     {
       // Test string to HalfPoints conversion (plain number)
-      HalfPoints hp1 = "144";
+      HPS hp1 = "144";
       Console.WriteLine($"\n✓ String to HalfPoints: {hp1} = {(Int64)hp1} half-points");
 
       // Test integer to HalfPoints conversion
-      HalfPoints hp2 = 144;
+      HPS hp2 = 144;
       Console.WriteLine($"\n✓ Int to HalfPoints: {hp2}");
 
       // Test equality
@@ -65,7 +65,7 @@ public static class HalfPointsSerializationTests
       Console.WriteLine($"\n✓ Hash code: {hp1.GetHashCode()}");
 
       // Test comparison
-      HalfPoints hp3 = 288; // 2 inches
+      HPS hp3 = 288; // 2 inches
       Console.WriteLine($"\n✓ CompareTo (144 vs 288): {hp1.CompareTo(hp3)} (expected < 0)");
 
       Console.WriteLine("\n✓ All basic operations passed");
@@ -93,7 +93,7 @@ public static class HalfPointsSerializationTests
     {
       // Test inch conversions
       Console.WriteLine("Testing inch conversions:");
-      HalfPoints oneInch = "1in";
+      HPS oneInch = "1in";
       Console.WriteLine($"  1in = {(Int64)oneInch} half-points (expected 144)");
       Console.WriteLine($"  144 half-points = {oneInch.ToInch():F2}in");
       if ((Int64)oneInch != 144)
@@ -104,9 +104,9 @@ public static class HalfPointsSerializationTests
 
       // Test point conversions
       Console.WriteLine("\nTesting point conversions:");
-      HalfPoints onePoint = "1pt";
+      HPS onePoint = "1pt";
       Console.WriteLine($"  1pt = {(Int64)onePoint} half-points (expected 2)");
-      Console.WriteLine($"  2 half-points = {onePoint.ToPoints():F2}pt");
+      Console.WriteLine($"  2 half-points = {onePoint.ToPT():F2}pt");
       if ((Int64)onePoint != 2)
       {
         Console.WriteLine("✗ Point conversion FAILED");
@@ -115,29 +115,29 @@ public static class HalfPointsSerializationTests
 
       // Test half-point precision
       Console.WriteLine("\nTesting half-point precision:");
-      HalfPoints halfPoint = "0.5pt";
+      HPS halfPoint = "0.5pt";
       Console.WriteLine($"  0.5pt = {(Int64)halfPoint} half-points (expected 1)");
-      Console.WriteLine($"  Back to points: {halfPoint.ToPoints():F1}pt");
+      Console.WriteLine($"  Back to points: {halfPoint.ToPT():F1}pt");
 
       // Test millimeter conversions
       Console.WriteLine("\nTesting millimeter conversions:");
-      HalfPoints tenMM = "10mm";
-      double expectedHalfPoints = 10 * HalfPoints.HalfPointsInMM;
+      HPS tenMM = "10mm";
+      double expectedHalfPoints = 10 * HPS.HPSinMM;
       Console.WriteLine($"  10mm = {(Int64)tenMM} half-points (expected ~{expectedHalfPoints:F0})");
       Console.WriteLine($"  Back to mm: {tenMM.ToMM():F2}mm");
 
       // Test centimeter conversions
       Console.WriteLine("\nTesting centimeter conversions:");
-      HalfPoints oneCM = "1cm";
-      expectedHalfPoints = HalfPoints.HalfPointsInCM;
+      HPS oneCM = "1cm";
+      expectedHalfPoints = HPS.HPSinCM;
       Console.WriteLine($"  1cm = {(Int64)oneCM} half-points (expected ~{expectedHalfPoints:F0})");
       Console.WriteLine($"  Back to cm: {oneCM.ToCM():F2}cm");
 
       // Test conversion accuracy
       Console.WriteLine("\nTesting round-trip conversion accuracy:");
-      HalfPoints original = 144; // 1 inch
+      HPS original = 144; // 1 inch
       double inches = original.ToInch();
-      HalfPoints roundTrip = new HalfPoints($"{inches:F6}in");
+      HPS roundTrip = new HPS($"{inches:F6}in");
       Console.WriteLine($"  Original: {(Int64)original} half-points");
       Console.WriteLine($"  To inches: {inches:F6}in");
       Console.WriteLine($"  Back to half-points: {(Int64)roundTrip} half-points");
@@ -145,13 +145,13 @@ public static class HalfPointsSerializationTests
 
       // Test relationship between half-points and points
       Console.WriteLine("\nTesting half-point/point relationships:");
-      HalfPoints twelvePoints = "12pt";
+      HPS twelvePoints = "12pt";
       Console.WriteLine($"  12pt = {(Int64)twelvePoints} half-points (expected 24)");
-      Console.WriteLine($"  Back to points: {twelvePoints.ToPoints():F1}pt");
+      Console.WriteLine($"  Back to points: {twelvePoints.ToPT():F1}pt");
 
       // Test string output with units
       Console.WriteLine("\nTesting string output with units:");
-      HalfPoints measurement = 144;
+      HPS measurement = 144;
       Console.WriteLine($"  As half-points: {measurement}");
       Console.WriteLine($"  As inches: {measurement.ToString("in")}");
       Console.WriteLine($"  As points: {measurement.ToString("pt")}");
@@ -227,13 +227,13 @@ public static class HalfPointsSerializationTests
   private static void ShowOriginalData(HalfPointsTestData testData)
   {
     Console.WriteLine($"Original data:");
-    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
-    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPoints():F1}pt)");
-    Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing} ({testData.LetterSpacing.ToPoints():F1}pt)");
-    Console.WriteLine($"  WordSpacing: {testData.WordSpacing} ({testData.WordSpacing.ToPoints():F1}pt)");
-    Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset} ({testData.SuperscriptOffset.ToPoints():F1}pt)");
-    Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset} ({testData.SubscriptOffset.ToPoints():F1}pt)");
-    Console.WriteLine($"  BorderWidth: {testData.BorderWidth} ({testData.BorderWidth.ToPoints():F1}pt)");
+    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPT():F1}pt)");
+    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPT():F1}pt)");
+    Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing} ({testData.LetterSpacing.ToPT():F1}pt)");
+    Console.WriteLine($"  WordSpacing: {testData.WordSpacing} ({testData.WordSpacing.ToPT():F1}pt)");
+    Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset} ({testData.SuperscriptOffset.ToPT():F1}pt)");
+    Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset} ({testData.SubscriptOffset.ToPT():F1}pt)");
+    Console.WriteLine($"  BorderWidth: {testData.BorderWidth} ({testData.BorderWidth.ToPT():F1}pt)");
     Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
     Console.WriteLine($"  SmallValue: {testData.SmallValue}");
     Console.WriteLine($"  LargeValue: {testData.LargeValue}");
@@ -251,25 +251,25 @@ public static class HalfPointsSerializationTests
     // Verify deserialized data
     Console.WriteLine("Deserialized data:");
 
-    Console.WriteLine($"  FontSize: {deserializedData.FontSize} ({deserializedData.FontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  FontSize: {deserializedData.FontSize} ({deserializedData.FontSize.ToPT():F1}pt)");
     if (testData.FontSize.CompareTo(deserializedData.FontSize) != 0)
       return false;
-    Console.WriteLine($"  LineHeight: {deserializedData.LineHeight} ({deserializedData.LineHeight.ToPoints():F1}pt)");
+    Console.WriteLine($"  LineHeight: {deserializedData.LineHeight} ({deserializedData.LineHeight.ToPT():F1}pt)");
     if (testData.LineHeight.CompareTo(deserializedData.LineHeight) != 0)
       return false;
-    Console.WriteLine($"  LetterSpacing: {deserializedData.LetterSpacing} ({deserializedData.LetterSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  LetterSpacing: {deserializedData.LetterSpacing} ({deserializedData.LetterSpacing.ToPT():F1}pt)");
     if (testData.LetterSpacing.CompareTo(deserializedData.LetterSpacing) != 0)
       return false;
-    Console.WriteLine($"  WordSpacing: {deserializedData.WordSpacing} ({deserializedData.WordSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  WordSpacing: {deserializedData.WordSpacing} ({deserializedData.WordSpacing.ToPT():F1}pt)");
     if (testData.WordSpacing.CompareTo(deserializedData.WordSpacing) != 0)
       return false;
-    Console.WriteLine($"  SuperscriptOffset: {deserializedData.SuperscriptOffset} ({deserializedData.SuperscriptOffset.ToPoints():F1}pt)");
+    Console.WriteLine($"  SuperscriptOffset: {deserializedData.SuperscriptOffset} ({deserializedData.SuperscriptOffset.ToPT():F1}pt)");
     if (testData.SuperscriptOffset.CompareTo(deserializedData.SuperscriptOffset) != 0)
       return false;
-    Console.WriteLine($"  SubscriptOffset: {deserializedData.SubscriptOffset} ({deserializedData.SubscriptOffset.ToPoints():F1}pt)");
+    Console.WriteLine($"  SubscriptOffset: {deserializedData.SubscriptOffset} ({deserializedData.SubscriptOffset.ToPT():F1}pt)");
     if (testData.SubscriptOffset.CompareTo(deserializedData.SubscriptOffset) != 0)
       return false;
-    Console.WriteLine($"  BorderWidth: {deserializedData.BorderWidth} ({deserializedData.BorderWidth.ToPoints():F1}pt)");
+    Console.WriteLine($"  BorderWidth: {deserializedData.BorderWidth} ({deserializedData.BorderWidth.ToPT():F1}pt)");
     if (testData.BorderWidth.CompareTo(deserializedData.BorderWidth) != 0)
       return false;
     Console.WriteLine($"  ZeroValue: {deserializedData.ZeroValue}");
@@ -333,16 +333,16 @@ public static class HalfPointsSerializationTests
     {
       Id = 1,
       Name = "XML Test",
-      FontSize = new HalfPoints(24),       // 12 points
-      LineHeight = new HalfPoints(36),     // 18 points
-      LetterSpacing = new HalfPoints(1),   // 0.5 points
-      WordSpacing = new HalfPoints(2),     // 1 point
-      SuperscriptOffset = new HalfPoints(10), // 5 points
-      SubscriptOffset = new HalfPoints(6), // 3 points
-      BorderWidth = new HalfPoints(4),     // 2 points
-      ZeroValue = new HalfPoints(0),
-      SmallValue = new HalfPoints(1),      // 0.5 points
-      LargeValue = new HalfPoints(2000)    // ~13.9 inches
+      FontSize = new HPS(24),       // 12 points
+      LineHeight = new HPS(36),     // 18 points
+      LetterSpacing = new HPS(1),   // 0.5 points
+      WordSpacing = new HPS(2),     // 1 point
+      SuperscriptOffset = new HPS(10), // 5 points
+      SubscriptOffset = new HPS(6), // 3 points
+      BorderWidth = new HPS(4),     // 2 points
+      ZeroValue = new HPS(0),
+      SmallValue = new HPS(1),      // 0.5 points
+      LargeValue = new HPS(2000)    // ~13.9 inches
     };
   }
 
@@ -357,47 +357,47 @@ public static class HalfPointsSerializationTests
     {
       // Test zero value
       Console.WriteLine("Testing zero value:");
-      HalfPoints zero = 0;
+      HPS zero = 0;
       Console.WriteLine($"  Zero: '{zero}' ({(Int64)zero} half-points)");
 
       // Test boundary values
       Console.WriteLine("\nTesting boundary values:");
-      HalfPoints minInt32 = Int32.MinValue;
-      HalfPoints maxInt32 = Int32.MaxValue;
+      HPS minInt32 = Int32.MinValue;
+      HPS maxInt32 = Int32.MaxValue;
       Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch():F2}in)");
       Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch():F2}in)");
 
       // Test half-point precision (unique to HalfPoints)
       Console.WriteLine("\nTesting half-point precision:");
-      HalfPoints oneHalfPoint = 1;
-      HalfPoints twoHalfPoints = 2;
-      Console.WriteLine($"  1 half-point = {oneHalfPoint.ToPoints():F1}pt");
-      Console.WriteLine($"  2 half-points = {twoHalfPoints.ToPoints():F1}pt (1 full point)");
+      HPS oneHalfPoint = 1;
+      HPS twoHalfPoints = 2;
+      Console.WriteLine($"  1 half-point = {oneHalfPoint.ToPT():F1}pt");
+      Console.WriteLine($"  2 half-points = {twoHalfPoints.ToPT():F1}pt (1 full point)");
 
       // Test common fine-grained adjustments
       Console.WriteLine("\nTesting fine-grained typography adjustments:");
-      HalfPoints letterSpacing = new HalfPoints(1);    // 0.5pt letter spacing
-      HalfPoints kerning = new HalfPoints(2);          // 1pt kerning
-      HalfPoints tracking = new HalfPoints(3);         // 1.5pt tracking
-      Console.WriteLine($"  Letter spacing (1 half-point): {letterSpacing.ToPoints():F1}pt");
-      Console.WriteLine($"  Kerning (2 half-points): {kerning.ToPoints():F1}pt");
-      Console.WriteLine($"  Tracking (3 half-points): {tracking.ToPoints():F1}pt");
+      HPS letterSpacing = new HPS(1);    // 0.5pt letter spacing
+      HPS kerning = new HPS(2);          // 1pt kerning
+      HPS tracking = new HPS(3);         // 1.5pt tracking
+      Console.WriteLine($"  Letter spacing (1 half-point): {letterSpacing.ToPT():F1}pt");
+      Console.WriteLine($"  Kerning (2 half-points): {kerning.ToPT():F1}pt");
+      Console.WriteLine($"  Tracking (3 half-points): {tracking.ToPT():F1}pt");
 
       // Test common font sizes in half-points
       Console.WriteLine("\nTesting common font sizes:");
-      HalfPoints font10pt = new HalfPoints(20);   // 10pt
-      HalfPoints font12pt = new HalfPoints(24);   // 12pt
-      HalfPoints font14pt = new HalfPoints(28);   // 14pt
+      HPS font10pt = new HPS(20);   // 10pt
+      HPS font12pt = new HPS(24);   // 12pt
+      HPS font14pt = new HPS(28);   // 14pt
       Console.WriteLine($"  10pt = {(Int64)font10pt} half-points");
       Console.WriteLine($"  12pt = {(Int64)font12pt} half-points");
       Console.WriteLine($"  14pt = {(Int64)font14pt} half-points");
 
       // Test string parsing variations
       Console.WriteLine("\nTesting string parsing variations:");
-      HalfPoints fromPlainNumber = "144";
-      HalfPoints fromInches = "1in";
-      HalfPoints fromPoints = "12pt";
-      HalfPoints fromHalfPoints = "0.5pt";
+      HPS fromPlainNumber = "144";
+      HPS fromInches = "1in";
+      HPS fromPoints = "12pt";
+      HPS fromHalfPoints = "0.5pt";
       Console.WriteLine($"  \"144\" → {(Int64)fromPlainNumber} half-points");
       Console.WriteLine($"  \"1in\" → {(Int64)fromInches} half-points");
       Console.WriteLine($"  \"12pt\" → {(Int64)fromPoints} half-points");
@@ -405,14 +405,14 @@ public static class HalfPointsSerializationTests
 
       // Test decimal values with units
       Console.WriteLine("\nTesting decimal values with units:");
-      HalfPoints halfInch = new HalfPoints("0.5in");
-      HalfPoints quarterInch = new HalfPoints("0.25in");
+      HPS halfInch = new HPS("0.5in");
+      HPS quarterInch = new HPS("0.25in");
       Console.WriteLine($"  0.5in = {(Int64)halfInch} half-points (expected 72)");
       Console.WriteLine($"  0.25in = {(Int64)quarterInch} half-points (expected 36)");
 
       // Test comma decimal separator
       Console.WriteLine("\nTesting comma decimal separator:");
-      HalfPoints commaDecimal = new HalfPoints("2,54cm");
+      HPS commaDecimal = new HPS("2,54cm");
       Console.WriteLine($"  \"2,54cm\" → {(Int64)commaDecimal} half-points");
 
       // Test Deserialization from different formats
@@ -440,7 +440,7 @@ public static class HalfPointsSerializationTests
 
       // Test output with units
       Console.WriteLine("\nTesting output format with different units:");
-      HalfPoints measurement = 144;
+      HPS measurement = 144;
       Console.WriteLine($"  As half-points: {measurement}");
       Console.WriteLine($"  As inches (no precision): {measurement.ToString("in")}");
       Console.WriteLine($"  As inches (2 decimal): {measurement.ToString(2, "in")}");
@@ -450,17 +450,17 @@ public static class HalfPointsSerializationTests
 
       // Test comparison
       Console.WriteLine("\nTesting comparison:");
-      HalfPoints small = 72;  // 0.5 inch
-      HalfPoints large = 144; // 1 inch
+      HPS small = 72;  // 0.5 inch
+      HPS large = 144; // 1 inch
       Console.WriteLine($"  72 < 144: {small.CompareTo(large) < 0}");
       Console.WriteLine($"  144 > 72: {large.CompareTo(small) > 0}");
-      Console.WriteLine($"  144 == 144: {large.CompareTo(new HalfPoints(144)) == 0}");
+      Console.WriteLine($"  144 == 144: {large.CompareTo(new HPS(144)) == 0}");
 
       // Test implicit conversions
       Console.WriteLine("\nTesting implicit conversions:");
-      HalfPoints fromInt32 = 144;
-      HalfPoints fromInt64 = 144L;
-      HalfPoints fromUInt32 = 144U;
+      HPS fromInt32 = 144;
+      HPS fromInt64 = 144L;
+      HPS fromUInt32 = 144U;
       Int32 toInt32 = fromInt32;
       Int64 toInt64 = fromInt64;
       Console.WriteLine($"  From Int32: {fromInt32}");
@@ -498,7 +498,7 @@ public static class HalfPointsSerializationTests
       var sw = System.Diagnostics.Stopwatch.StartNew();
       for (int i = 0; i < iterations; i++)
       {
-        HalfPoints hp = "1in";
+        HPS hp = "1in";
       }
       sw.Stop();
       Console.WriteLine($"Construction from string with unit x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -507,7 +507,7 @@ public static class HalfPointsSerializationTests
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
-        HalfPoints hp = "144";
+        HPS hp = "144";
       }
       sw.Stop();
       Console.WriteLine($"Construction from plain string x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -516,13 +516,13 @@ public static class HalfPointsSerializationTests
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
-        HalfPoints hp = 144;
+        HPS hp = 144;
       }
       sw.Stop();
       Console.WriteLine($"Construction from integer x {iterations}: {sw.ElapsedMilliseconds}ms");
 
       // Test ToString performance
-      HalfPoints testHp = 144;
+      HPS testHp = 144;
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
@@ -552,10 +552,10 @@ public static class HalfPointsSerializationTests
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
-        double points = testHp.ToPoints();
+        double points = testHp.ToPT();
       }
       sw.Stop();
-      Console.WriteLine($"ToPoints() x {iterations}: {sw.ElapsedMilliseconds}ms");
+      Console.WriteLine($"ToPT() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
       sw.Restart();
       for (int i = 0; i < iterations; i++)
@@ -570,16 +570,16 @@ public static class HalfPointsSerializationTests
       {
         Id = 1,
         Name = "Perf Test",
-        FontSize = new HalfPoints(24),
-        LineHeight = new HalfPoints(36),
-        LetterSpacing = new HalfPoints(1),
-        WordSpacing = new HalfPoints(2),
-        SuperscriptOffset = new HalfPoints(10),
-        SubscriptOffset = new HalfPoints(6),
-        BorderWidth = new HalfPoints(4),
-        ZeroValue = new HalfPoints(0),
-        SmallValue = new HalfPoints(1),
-        LargeValue = new HalfPoints(2000)
+        FontSize = new HPS(24),
+        LineHeight = new HPS(36),
+        LetterSpacing = new HPS(1),
+        WordSpacing = new HPS(2),
+        SuperscriptOffset = new HPS(10),
+        SubscriptOffset = new HPS(6),
+        BorderWidth = new HPS(4),
+        ZeroValue = new HPS(0),
+        SmallValue = new HPS(1),
+        LargeValue = new HPS(2000)
       };
 
       sw.Restart();
@@ -601,8 +601,8 @@ public static class HalfPointsSerializationTests
       Console.WriteLine($"Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
 
       // Test comparison performance
-      HalfPoints hp1 = 144;
-      HalfPoints hp2 = 144;
+      HPS hp1 = 144;
+      HPS hp2 = 144;
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
@@ -660,34 +660,34 @@ public class HalfPointsTestData
   public string Name { get; set; } = string.Empty;
 
   [XmlElement("FontSize")]
-  public HalfPoints FontSize { get; set; }
+  public HPS FontSize { get; set; }
 
   [XmlElement("LineHeight")]
-  public HalfPoints LineHeight { get; set; }
+  public HPS LineHeight { get; set; }
 
   [XmlElement("LetterSpacing")]
-  public HalfPoints LetterSpacing { get; set; }
+  public HPS LetterSpacing { get; set; }
 
   [XmlElement("WordSpacing")]
-  public HalfPoints WordSpacing { get; set; }
+  public HPS WordSpacing { get; set; }
 
   [XmlElement("SuperscriptOffset")]
-  public HalfPoints SuperscriptOffset { get; set; }
+  public HPS SuperscriptOffset { get; set; }
 
   [XmlElement("SubscriptOffset")]
-  public HalfPoints SubscriptOffset { get; set; }
+  public HPS SubscriptOffset { get; set; }
 
   [XmlElement("BorderWidth")]
-  public HalfPoints BorderWidth { get; set; }
+  public HPS BorderWidth { get; set; }
 
   [XmlElement("ZeroValue")]
-  public HalfPoints ZeroValue { get; set; }
+  public HPS ZeroValue { get; set; }
 
   [XmlElement("SmallValue")]
-  public HalfPoints SmallValue { get; set; }
+  public HPS SmallValue { get; set; }
 
   [XmlElement("LargeValue")]
-  public HalfPoints LargeValue { get; set; }
+  public HPS LargeValue { get; set; }
 }
 
 /// <summary>
@@ -695,7 +695,7 @@ public class HalfPointsTestData
 /// </summary>
 public class HalfPointsWrapper
 {
-  public HalfPoints Value { get; set; }
+  public HPS Value { get; set; }
 }
 
 #endregion

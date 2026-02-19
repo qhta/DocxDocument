@@ -12,4 +12,7 @@ global using System.Text.Json.Serialization;
 global using System.Xml;
 global using System.Xml.Schema;
 global using System.Xml.Serialization;
+
+global using DocumentModel.BaseTypes.Interfaces;
+
 global using JsonException = System.Text.Json.JsonException;

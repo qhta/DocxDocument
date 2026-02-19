@@ -1,9 +1,9 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support for the <see cref="HalfPoints"/> structure.
+/// Provides XML serialization support for the <see cref="PTS"/> structure.
 /// </summary>
-public partial struct HalfPoints : IXmlSerializable
+public partial struct PTS : IXmlSerializable
 {
   #region IXmlSerializable Implementation
 
@@ -14,18 +14,18 @@ public partial struct HalfPoints : IXmlSerializable
   XmlSchema? IXmlSerializable.GetSchema() => null;
 
   /// <summary>
-  /// Deserializes the <see cref="HalfPoints"/> value from XML.
+  /// Deserializes the <see cref="PTS"/> value from XML.
   /// Accepts numeric values and values with unit suffixes (mm, cm, pt, in).
   /// </summary>
   /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
-  /// <item><description>Plain numeric values (e.g., "144" representing half-points directly)</description></item>
+  /// <item><description>Plain numeric values (e.g., "72" representing points directly)</description></item>
   /// <item><description>Values with millimeter suffix (e.g., "25.4mm")</description></item>
   /// <item><description>Values with centimeter suffix (e.g., "2.54cm")</description></item>
-  /// <item><description>Values with point suffix (e.g., "12pt" will be converted to 24 half-points)</description></item>
-  /// <item><description>Values with inch suffix (e.g., "1in" will be converted to 144 half-points)</description></item>
+  /// <item><description>Values with point suffix (e.g., "12pt")</description></item>
+  /// <item><description>Values with inch suffix (e.g., "1in")</description></item>
   /// <item><description>Empty elements</description></item>
   /// </list>
   /// Commas in the input are automatically replaced with periods for decimal separator consistency.
@@ -42,11 +42,11 @@ public partial struct HalfPoints : IXmlSerializable
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
-      string halfPointsString = reader.Value;
+      string pointsString = reader.Value;
 
-      if (!string.IsNullOrEmpty(halfPointsString))
+      if (!string.IsNullOrEmpty(pointsString))
       {
-        HalfPoints parsedValue = new HalfPoints(halfPointsString);
+        PTS parsedValue = new PTS(pointsString);
 
         // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue.value;
@@ -62,11 +62,11 @@ public partial struct HalfPoints : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="HalfPoints"/> value to XML.
+  /// Serializes the <see cref="PTS"/> value to XML.
   /// </summary>
   /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
   /// <remarks>
-  /// The value is written as a plain numeric string representing half-points without unit suffix.
+  /// The value is written as a plain numeric string representing points without unit suffix.
   /// </remarks>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
