@@ -350,4 +350,3 @@ public class Base64BinaryTestWrapper
   public Base64Binary? Data { get; set; }
 }
 
-#endregion

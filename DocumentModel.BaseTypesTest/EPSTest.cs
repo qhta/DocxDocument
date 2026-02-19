@@ -3,62 +3,104 @@
 namespace DocumentModel.BaseTypesTest;
 
 /// <summary>
-/// Test suite for EighthPoints type serialization in both XML and JSON formats.
+/// Test suite for EPS type serialization in both XML and JSON formats.
 /// </summary>
 public static class EPSTest
 {
   /// <summary>
-  /// Runs all EighthPoints serialization tests.
+  /// Runs all EPS serialization tests.
   /// </summary>
+  /// <returns>true if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
-    Console.WriteLine("=== EighthPoints Serialization Test Program ===");
+    Console.WriteLine("=== EPS Serialization Test Program ===");
     Console.WriteLine();
 
     // Run all tests
-    if (!TestEighthPointsBasicOperations()) return false;
-    if (!TestEighthPointsUnitConversions()) return false;
-    if (!TestEighthPointsXmlSerialization()) return false;
-    if (!TestEighthPointsJsonSerialization()) return false;
-    if (!TestEighthPointsEdgeCases()) return false;
-    if (!TestEighthPointsPerformance()) return false;
+    if (!TestEPSBasicOperations()) return false;
+    if (!TestEPSUnitConversions()) return false;
+    if (!TestEPSXmlSerialization()) return false;
+    if (!TestEPSJsonSerialization()) return false;
+    if (!TestEPSEdgeCases()) return false;
+    if (!TestEPSPerformance()) return false;
 
     return true;
   }
 
-  
-  static bool TestEighthPointsBasicOperations()
+  /// <summary>
+  /// Tests the basic operations of the EPS class, including conversions between EPS and various types, string
+  /// representations, and comparisons.
+  /// </summary>
+  /// <remarks>This method verifies the correctness of the EPS class by testing string and numeric conversions,
+  /// string representations, hash code consistency, and comparison operations. It outputs diagnostic information to the
+  /// console for each test and returns false if any test fails.</remarks>
+  /// <returns>true if all basic EPS operations pass successfully; otherwise, false.</returns>
+  static bool TestEPSBasicOperations()
   {
-    Console.WriteLine("--- Testing EighthPoints Basic Operations ---");      // Test string to EighthPoints conversion (plain number)
-    EPS ep1 = "576";
-    Console.WriteLine($"\n✓ String to EighthPoints: {ep1} = {(Int64)ep1} EPS");
+    Console.WriteLine("--- Testing EPS Basic Operations ---");
+    // Test string to EPS conversion (plain number)
+    long eps1Val = 7315200;
+    var eps1Str = eps1Val.ToString();
+    EPS eps1 = eps1Str;
+    var longEPS = (long)eps1;
+    Console.WriteLine($"\n✓ String to EPS: {eps1} = {longEPS} EPSs");
+    if (longEPS != 7315200)
+    {
+      Console.WriteLine("✗ String to EPS conversion FAILED");
+      return false;
+    }
+    // Test string to EPS conversion (with unit)
+    EPS eps2 = "1in";
+    var inchEPS = eps2.ToInch();
+    Console.WriteLine($"\n✓ String with unit to EPS: {eps2} ({inchEPS:F2}in)");
+    if (inchEPS != 1.0)
+    {
+      Console.WriteLine("✗ String with unit to EPS conversion FAILED");
+      return false;
+    }
 
-    // Test integer to EighthPoints conversion
-    EPS ep2 = 576;
-    Console.WriteLine($"\n✓ Int to EighthPoints: {ep2}");
+    // Test integer to EPS conversion
+    EPS eps3 = eps1Val;
+    var intEPS = (int)eps3;
+    Console.WriteLine($"\n✓ Int to EPS: {intEPS}");
+    if (intEPS != eps1Val)
+    {
+      Console.WriteLine("✗ Int to EPS conversion FAILED");
+      return false;
+    }
 
-    // Test equality
-    if (ep1.CompareTo(ep2) == 0)
-      Console.WriteLine("\n✓ Equality test passed");
-    else
-      Console.WriteLine("✗ Equality test FAILED");
+    // Test EPS to string
+    string strEPS = eps1.ToString();
+    Console.WriteLine($"\n✓ EPS to string: {strEPS}");
+    if (strEPS != eps1Str)
+    {
+      Console.WriteLine("✗ EPS to string conversion FAILED");
+      return false;
+    }
 
-    // Test EighthPoints to string
-    string str = ep1.ToString();
-    Console.WriteLine($"\n✓ EighthPoints to string: {str}");
-
-    // Test EighthPoints to various integer types
-    Int32 int32Val = (Int32)ep1;
-    Int64 int64Val = (Int64)ep1;
-    UInt32 uint32Val = (UInt32)ep1;
+    // Test EPS to various integer types
+    int int32Val = (int)eps1;
+    long int64Val = (long)eps1;
+    uint uint32Val = (uint)eps1;
     Console.WriteLine($"\n✓ Numeric conversions: int32={int32Val}, int64={int64Val}, uint32={uint32Val}");
+    if (int32Val != eps1Val || int64Val != eps1Val || uint32Val != eps1Val)
+    {
+      Console.WriteLine("✗ EPS to numeric conversions FAILED");
+      return false;
+    }
 
     // Test hash code
-    Console.WriteLine($"\n✓ Hash code: {ep1.GetHashCode()}");
-
+    var hashCode = eps1.GetHashCode();
+    Console.WriteLine($"\n✓ Hash code: {hashCode}");
+    var eps1ValHashCode = eps1Val.GetHashCode();
+    if (hashCode != eps1ValHashCode)
+    {
+      Console.WriteLine($"✗ GetHashCode consistency FAILED eps1Hash={hashCode}, eps1ValHash={eps1ValHashCode}");
+      return false;
+    }
     // Test comparison
-    EPS ep3 = 1152; // 2 inches
-    Console.WriteLine($"\n✓ CompareTo (576 vs 1152): {ep1.CompareTo(ep3)} (expected < 0)");
+    EPS eps4 = eps1Val * 2; // 2 inches
+    Console.WriteLine($"\n✓ CompareTo (914400 vs 1828800): {eps1.CompareTo(eps4)} (expected < 0)");
 
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
@@ -66,10 +108,18 @@ public static class EPSTest
   }
 
   
-  
-  static bool TestEighthPointsUnitConversions()
+  /// <summary>
+  /// Tests the accuracy of conversions between EPS (Encapsulated PostScript) units and common measurement units,
+  /// including inches, points, millimeters, and centimeters.
+  /// </summary>
+  /// <remarks>This method performs a series of validation checks to ensure that conversions to and from EPS
+  /// units are correct and consistent. It includes tests for inch and point conversions, eighth-point precision,
+  /// millimeter and centimeter conversions, round-trip accuracy, and string formatting with various units and
+  /// precisions. The results of each test are output to the console for review.</remarks>
+  /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
+  static bool TestEPSUnitConversions()
   {
-    Console.WriteLine("--- Testing EighthPoints Unit Conversions ---");      // Test inch conversions
+    Console.WriteLine("--- Testing EPS Unit Conversions ---");      // Test inch conversions
     Console.WriteLine("Testing inch conversions:");
     EPS oneInch = "1 in";
     Console.WriteLine($"  1 in = {(Int64)oneInch} EPS (expected 576)");
@@ -103,15 +153,15 @@ public static class EPSTest
     // Test millimeter conversions
     Console.WriteLine("\nTesting millimeter conversions:");
     EPS tenMM = "10 mm";
-    double expectedEighthPoints = 10 * EPS.EPSinMM;
-    Console.WriteLine($"  10 mm = {(Int64)tenMM} EPS (expected ~{expectedEighthPoints:F0})");
+    double expectedEPS = 10 * EPS.EPSinMM;
+    Console.WriteLine($"  10 mm = {(Int64)tenMM} EPS (expected ~{expectedEPS:F0})");
     Console.WriteLine($"  Back to mm: {tenMM.ToMM():F2}mm");
 
     // Test centimeter conversions
     Console.WriteLine("\nTesting centimeter conversions:");
     EPS oneCM = "1 cm";
-    expectedEighthPoints = EPS.EPSinCM;
-    Console.WriteLine($"  1 cm = {(Int64)oneCM} EPS (expected ~{expectedEighthPoints:F0})");
+    expectedEPS = EPS.EPSinCM;
+    Console.WriteLine($"  1 cm = {(Int64)oneCM} EPS (expected ~{expectedEPS:F0})");
     Console.WriteLine($"  Back to cm: {oneCM.ToCM():F2}cm");
 
     // Test conversion accuracy
@@ -150,16 +200,23 @@ public static class EPSTest
     return true;
   }
 
-  
-  
-  static bool TestEighthPointsXmlSerialization()
+  /// <summary>
+  /// Tests the XML serialization and deserialization process for an EPSTestData object to verify data integrity.
+  /// </summary>
+  /// <remarks>This method creates a sample EPSTestData instance, serializes it to XML, and then deserializes it
+  /// to ensure that the original and deserialized data are equivalent. The serialized XML is written to the console for
+  /// inspection. Use this method to validate that changes to the EPSTestData structure or serialization logic do not
+  /// break XML compatibility.</remarks>
+  /// <returns>true if the EPSTestData object is successfully serialized to XML and deserialized back with matching data;
+  /// otherwise, false.</returns>
+  static bool TestEPSXmlSerialization()
   {
-    Console.WriteLine("--- Testing EighthPoints XML Serialization ---");      // Create test object
+    Console.WriteLine("--- Testing EPS XML Serialization ---");      // Create test object
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
     // Serialize to XML
-    var xmlSerializer = new XmlSerializer(typeof(EighthPointsTestData));
+    var xmlSerializer = new XmlSerializer(typeof(EPSTestData));
     string xmlString;
 
     using (var stringWriter = new StringWriter())
@@ -179,10 +236,10 @@ public static class EPSTest
     Console.WriteLine();
 
     // Deserialize from XML
-    EighthPointsTestData? deserializedData;
+    EPSTestData? deserializedData;
     using (var stringReader = new StringReader(xmlString))
     {
-      deserializedData = (EighthPointsTestData?)xmlSerializer.Deserialize(stringReader);
+      deserializedData = (EPSTestData?)xmlSerializer.Deserialize(stringReader);
     }
 
     if (!VerifyDeserializedData(deserializedData, testData)) return false;
@@ -193,10 +250,18 @@ public static class EPSTest
   }
 
   
-  
-  static bool TestEighthPointsJsonSerialization()
+  /// <summary>
+  /// Tests the serialization and deserialization of EPS test data to and from JSON format.
+  /// </summary>
+  /// <remarks>This method creates a sample EPS test data object, serializes it to a JSON string, and then
+  /// deserializes it back to an object. It outputs the serialized JSON to the console for inspection and verifies that
+  /// the deserialized data matches the original. Use this method to validate that EPS data can be accurately
+  /// round-tripped using JSON serialization.</remarks>
+  /// <returns>true if the JSON serialization and deserialization process completes successfully and the data integrity is
+  /// verified; otherwise, false.</returns>
+  static bool TestEPSJsonSerialization()
   {
-    Console.WriteLine("--- Testing EighthPoints JSON Serialization ---");      // Create test object
+    Console.WriteLine("--- Testing EPS JSON Serialization ---");      // Create test object
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
@@ -214,7 +279,7 @@ public static class EPSTest
     Console.WriteLine();
 
     // Deserialize from JSON
-    var deserializedData = JsonSerializer.Deserialize<EighthPointsTestData>(jsonString, jsonOptions);
+    var deserializedData = JsonSerializer.Deserialize<EPSTestData>(jsonString, jsonOptions);
 
     if (!VerifyDeserializedData(deserializedData, testData)) return false;
 
@@ -223,7 +288,11 @@ public static class EPSTest
     return true;
   }
 
-  private static void ShowOriginalData(EighthPointsTestData testData)
+  /// <summary>
+  /// Shows the original EPS test data values in a readable format to the console for verification before serialization.
+  /// </summary>
+  /// <param name="testData"></param>
+  private static void ShowOriginalData(EPSTestData testData)
   {
     Console.WriteLine($"Original data:");
     Console.WriteLine($"  FontSize: {testData.FontSize}");
@@ -240,7 +309,17 @@ public static class EPSTest
     Console.WriteLine();
   }
 
-  private static bool VerifyDeserializedData(EighthPointsTestData? deserializedData, EighthPointsTestData testData)
+  /// <summary>
+  /// Verifies that the deserialized data matches the expected test data by comparing relevant properties.
+  /// </summary>
+  /// <remarks>The method compares several properties, including FontSize, LineHeight, MicroKerning,
+  /// LetterSpacing, WordSpacing, SuperscriptOffset, SubscriptOffset, BorderWidth, ZeroValue, SmallValue, and
+  /// LargeValue. If any property does not match, the method returns false. If deserializedData is null, an error
+  /// message is written to the console and the method returns false.</remarks>
+  /// <param name="deserializedData">The deserialized EPSTestData instance to verify. If null, the verification fails.</param>
+  /// <param name="testData">The expected EPSTestData instance to compare against.</param>
+  /// <returns>true if all compared properties of the deserialized data match the expected test data; otherwise, false.</returns>
+  private static bool VerifyDeserializedData(EPSTestData? deserializedData, EPSTestData testData)
   {
     if (deserializedData == null)
     {
@@ -285,10 +364,17 @@ public static class EPSTest
     return true;
   }
 
-  
-  private static EighthPointsTestData CreateTestData()
+  /// <summary>
+  /// Creates a new instance of the EPSTestData class initialized with default typographic values for testing purposes.
+  /// </summary>
+  /// <remarks>This method is intended for use in test scenarios that require consistent and repeatable
+  /// typographic settings. All values are specified in EPS units and may need to be converted for use in other
+  /// measurement systems.</remarks>
+  /// <returns>An EPSTestData object containing predefined values for font size, line height, kerning, spacing, and offset
+  /// properties.</returns>
+  private static EPSTestData CreateTestData()
   {
-    return new EighthPointsTestData
+    return new EPSTestData
     {
       FontSize = new EPS(96),         // 12 points
       LineHeight = new EPS(144),      // 18 points
@@ -304,10 +390,18 @@ public static class EPSTest
     };
   }
 
-  
-  static bool TestEighthPointsEdgeCases()
+  /// <summary>
+  /// Tests a comprehensive set of edge cases for the EPS (Encapsulated PostScript) type, including zero, boundary
+  /// values, precision, parsing, formatting, comparison, and implicit conversions.
+  /// </summary>
+  /// <remarks>This method outputs the results of each test to the console for verification. It covers scenarios
+  /// such as micro-typography adjustments, string parsing with various units and decimal separators, deserialization
+  /// from different JSON formats, and conversion between numeric types. Use this method to validate the correctness and
+  /// robustness of the EPS type implementation.</remarks>
+  /// <returns>true if all EPS edge case tests are completed successfully.</returns>
+  static bool TestEPSEdgeCases()
   {
-    Console.WriteLine("--- Testing EighthPoints Edge Cases ---");      // Test zero value
+    Console.WriteLine("--- Testing EPS Edge Cases ---");      // Test zero value
     Console.WriteLine("Testing zero value:");
     EPS zero = 0;
     Console.WriteLine($"  Zero: '{zero}' ({(Int64)zero} EPS)");
@@ -319,7 +413,7 @@ public static class EPSTest
     Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch():F2}in)");
     Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch():F2}in)");
 
-    // Test eighth-point precision (unique to EighthPoints - finest granularity)
+    // Test eighth-point precision (unique to EPS - finest granularity)
     Console.WriteLine("\nTesting eighth-point precision (finest granularity):");
     EPS oneEighth = 1;
     EPS twoEighths = 2;
@@ -376,22 +470,22 @@ public static class EPSTest
 
     // Numeric format
     string jsonNumeric = "{\"Value\":576}";
-    var fromNumeric = JsonSerializer.Deserialize<EighthPointsWrapper>(jsonNumeric);
+    var fromNumeric = JsonSerializer.Deserialize<EPSWrapper>(jsonNumeric);
     Console.WriteLine($"  From JSON number 576: {fromNumeric?.Value}");
 
     // String format with unit
     string jsonStringInch = "{\"Value\":\"1in\"}";
-    var fromStringInch = JsonSerializer.Deserialize<EighthPointsWrapper>(jsonStringInch);
+    var fromStringInch = JsonSerializer.Deserialize<EPSWrapper>(jsonStringInch);
     Console.WriteLine($"  From JSON string \"1in\": {fromStringInch?.Value}");
 
     // String format with point unit
     string jsonStringPt = "{\"Value\":\"12pt\"}";
-    var fromStringPt = JsonSerializer.Deserialize<EighthPointsWrapper>(jsonStringPt);
+    var fromStringPt = JsonSerializer.Deserialize<EPSWrapper>(jsonStringPt);
     Console.WriteLine($"  From JSON string \"12pt\": {fromStringPt?.Value} (expected 96)");
 
     // String format without unit
     string jsonStringPlain = "{\"Value\":\"576\"}";
-    var fromStringPlain = JsonSerializer.Deserialize<EighthPointsWrapper>(jsonStringPlain);
+    var fromStringPlain = JsonSerializer.Deserialize<EPSWrapper>(jsonStringPlain);
     Console.WriteLine($"  From JSON string \"576\": {fromStringPlain?.Value}");
 
     // Test output with units
@@ -430,11 +524,14 @@ public static class EPSTest
 
   }
 
-  
-  
-  static bool TestEighthPointsPerformance()
+  /// <summary>
+  /// Tests the performance of various operations on the EPS type, including construction from strings and integers,
+  /// conversion to different units, and JSON serialization/deserialization.
+  /// </summary>
+  /// <returns>true if all EPS performance tests are completed successfully.</returns>
+  static bool TestEPSPerformance()
   {
-    Console.WriteLine("--- Testing EighthPoints Performance ---"); const int iterations = 100000;
+    Console.WriteLine("--- Testing EPS Performance ---"); const int iterations = 100000;
 
     // Test construction from string with unit
     var sw = System.Diagnostics.Stopwatch.StartNew();
@@ -508,7 +605,7 @@ public static class EPSTest
     Console.WriteLine($"ToMM() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     // Test JSON serialization performance
-    var testObj = new EighthPointsTestData
+    var testObj = new EPSTestData
     {
       FontSize = new EPS(96),
       LineHeight = new EPS(144),
@@ -536,7 +633,7 @@ public static class EPSTest
     sw.Restart();
     for (int i = 0; i < iterations / 10; i++)
     {
-      var obj = JsonSerializer.Deserialize<EighthPointsTestData>(jsonData);
+      var obj = JsonSerializer.Deserialize<EPSTestData>(jsonData);
     }
     sw.Stop();
     Console.WriteLine($"Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
@@ -579,10 +676,10 @@ public static class EPSTest
 
 
 /// <summary>
-/// Test data class containing various EighthPoints properties.
+/// Test data class containing various EPS properties.
 /// </summary>
-[XmlRoot("EighthPointsTestData")]
-public class EighthPointsTestData
+[XmlRoot("EPSTestData")]
+public class EPSTestData
 {
   [XmlElement("FontSize")]
   public EPS FontSize { get; set; }
@@ -621,9 +718,8 @@ public class EighthPointsTestData
 /// <summary>
 /// Simple wrapper class for testing Deserialization scenarios.
 /// </summary>
-public class EighthPointsWrapper
+public class EPSWrapper
 {
   public EPS Value { get; set; }
 }
 
-#endregion

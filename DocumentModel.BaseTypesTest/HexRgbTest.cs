@@ -716,4 +716,3 @@ public class HexRgbWrapper
   public HexRgb Value { get; set; }
 }
 
-#endregion

@@ -42,10 +42,10 @@ public static class EMUTest
   /// <returns>true if all basic EMU operations succeed; otherwise, false.</returns>
   static bool TestEMUBasicOperations()
   {
-    Console.WriteLine("--- Testing EMU Basic Operations ---");      
+    Console.WriteLine("--- Testing EMU Basic Operations ---");
     // Test string to EMU conversion (plain number)
-    var emu1Str = "914400";
     long emu1Val = 914400;
+    var emu1Str = emu1Val.ToString();
     EMU emu1 = emu1Str;
     var longEMU = (long)emu1;
     Console.WriteLine($"\n✓ String to EMU: {emu1} = {longEMU} EMUs");
@@ -65,10 +65,10 @@ public static class EMUTest
     }
 
     // Test integer to EMU conversion
-    EMU emu3 = 914400;
+    EMU emu3 = emu1Val;
     var intEMU = (int)emu3;
     Console.WriteLine($"\n✓ Int to EMU: {intEMU}");
-    if (intEMU != 914400)
+    if (intEMU != emu1Val)
     {
       Console.WriteLine("✗ Int to EMU conversion FAILED");
       return false;
@@ -88,7 +88,7 @@ public static class EMUTest
     long int64Val = (long)emu1;
     uint uint32Val = (uint)emu1;
     Console.WriteLine($"\n✓ Numeric conversions: int32={int32Val}, int64={int64Val}, uint32={uint32Val}");
-    if (int32Val != 914400 || int64Val != 914400 || uint32Val != 914400)
+    if (int32Val != emu1Val || int64Val != emu1Val || uint32Val != emu1Val)
     {
       Console.WriteLine("✗ EMU to numeric conversions FAILED");
       return false;
@@ -104,8 +104,8 @@ public static class EMUTest
       return false;
     }
     // Test comparison
-    EMU emu4 = 1828800; // 2 inches
-    Console.WriteLine($"\n✓ CompareTo (914400 vs 1828800): {emu1.CompareTo(emu4)} (expected < 0)");
+    EMU emu4 = emu1Val * 2; // 2 inches
+    Console.WriteLine($"\n✓ CompareTo ({emu1Val} vs {emu4}): {emu1.CompareTo(emu4)} (expected < 0)");
 
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
