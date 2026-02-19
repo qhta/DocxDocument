@@ -7,7 +7,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for Percent type serialization in both XML and JSON formats.
 /// </summary>
-public static class PercentSerializationTests
+public static class PercentTest
 {
   /// <summary>
   /// Runs all Percent serialization tests.

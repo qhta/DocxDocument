@@ -5,7 +5,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for Twips type serialization in both XML and JSON formats.
 /// </summary>
-public static class TwipsSerializationTests
+public static class TwipsTest
 {
   /// <summary>
   /// Runs all Twips serialization tests.

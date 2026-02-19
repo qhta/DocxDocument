@@ -5,7 +5,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for StrNumPair type serialization in both XML and JSON formats.
 /// </summary>
-public static class StrNumPairSerializationTests
+public static class StrNumPairTest
 {
   /// <summary>
   /// Runs all StrNumPair serialization tests.

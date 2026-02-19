@@ -5,7 +5,7 @@ namespace DocumentModel.BaseTypesTest;
 /// <summary>
 /// Test suite for Points type serialization in both XML and JSON formats.
 /// </summary>
-public static class PTSSerializationTests
+public static class PTSTest
 {
   /// <summary>
   /// Runs all Points serialization tests.
