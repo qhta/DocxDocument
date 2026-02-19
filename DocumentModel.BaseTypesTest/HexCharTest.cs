@@ -352,4 +352,3 @@ public class HexCharTestData
   public HexChar MaxValue { get; set; }
 }
 
-#endregion

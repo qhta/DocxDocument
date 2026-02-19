@@ -348,4 +348,3 @@ public class HexBinaryTestWrapper
   public HexBinary Data { get; set; }
 }
 
-#endregion

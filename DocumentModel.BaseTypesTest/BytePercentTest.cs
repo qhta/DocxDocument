@@ -437,4 +437,3 @@ public class BytePercentWrapper
   public BytePercent Value { get; set; }
 }
 
-#endregion

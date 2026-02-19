@@ -736,4 +736,3 @@ public class VectorVariantTestData
   public VectorVariant EmptyVector { get; set; } = new VectorVariant();
 }
 
-#endregion
