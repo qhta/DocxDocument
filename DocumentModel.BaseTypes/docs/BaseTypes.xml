@@ -2286,62 +2286,6 @@
             <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
             <returns>A string representation of the eighth-points value.</returns>
         </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(System.Int16)~DocumentModel.EPS">
-            <summary>
-            Implicitly converts a 16-bit signed integer to an <see cref="T:DocumentModel.EPS"/> value.
-            </summary>
-            <param name="value">The 16-bit signed integer to convert.</param>
-            <returns>An <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.Int16">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.EPS"/> value to a 16-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
-            <returns>A 16-bit signed integer representation of the eighth-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(System.UInt16)~DocumentModel.EPS">
-            <summary>
-            Implicitly converts a 16-bit unsigned integer to an <see cref="T:DocumentModel.EPS"/> value.
-            </summary>
-            <param name="value">The 16-bit unsigned integer to convert.</param>
-            <returns>An <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.UInt16">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.EPS"/> value to a 16-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
-            <returns>A 16-bit unsigned integer representation of the eighth-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(System.Int32)~DocumentModel.EPS">
-            <summary>
-            Implicitly converts a 32-bit signed integer to an <see cref="T:DocumentModel.EPS"/> value.
-            </summary>
-            <param name="value">The 32-bit signed integer to convert.</param>
-            <returns>An <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.Int32">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.EPS"/> value to a 32-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
-            <returns>A 32-bit signed integer representation of the eighth-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(System.UInt32)~DocumentModel.EPS">
-            <summary>
-            Implicitly converts a 32-bit unsigned integer to an <see cref="T:DocumentModel.EPS"/> value.
-            </summary>
-            <param name="value">The 32-bit unsigned integer to convert.</param>
-            <returns>An <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.UInt32">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.EPS"/> value to a 32-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
-            <returns>A 32-bit unsigned integer representation of the eighth-points value.</returns>
-        </member>
         <member name="M:DocumentModel.EPS.op_Implicit(System.Int64)~DocumentModel.EPS">
             <summary>
             Implicitly converts a 64-bit signed integer to an <see cref="T:DocumentModel.EPS"/> value.
@@ -2355,20 +2299,6 @@
             </summary>
             <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
             <returns>A 64-bit signed integer representation of the eighth-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(System.UInt64)~DocumentModel.EPS">
-            <summary>
-            Implicitly converts a 64-bit unsigned integer to an <see cref="T:DocumentModel.EPS"/> value.
-            </summary>
-            <param name="value">The 64-bit unsigned integer to convert.</param>
-            <returns>An <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.UInt64">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.EPS"/> value to a 64-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
-            <returns>A 64-bit unsigned integer representation of the eighth-points value.</returns>
         </member>
         <member name="M:DocumentModel.EPS.CompareTo(DocumentModel.EPS)">
             <summary>
@@ -4874,21 +4804,15 @@
             <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
             </remarks>
         </member>
-        <member name="M:DocumentModel.HPS.#ctor(System.UInt32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a 32-bit unsigned integer value.
-            </summary>
-            <param name="value">The value in half-points.</param>
-        </member>
-        <member name="M:DocumentModel.HPS.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a 32-bit signed integer value.
-            </summary>
-            <param name="value">The value in half-points.</param>
-        </member>
         <member name="M:DocumentModel.HPS.#ctor(System.Int64)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a 64-bit signed integer value.
+            </summary>
+            <param name="value">The value in half-points.</param>
+        </member>
+        <member name="M:DocumentModel.HPS.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a 64-bit floating-point value.
             </summary>
             <param name="value">The value in half-points.</param>
         </member>
@@ -5091,62 +5015,6 @@
             <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
             <returns>A string representation of the half-points value.</returns>
         </member>
-        <member name="M:DocumentModel.HPS.op_Implicit(System.Int16)~DocumentModel.HPS">
-            <summary>
-            Implicitly converts a 16-bit signed integer to a <see cref="T:DocumentModel.HPS"/> value.
-            </summary>
-            <param name="value">The 16-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.Int16">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a 16-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
-            <returns>A 16-bit signed integer representation of the half-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.HPS.op_Implicit(System.UInt16)~DocumentModel.HPS">
-            <summary>
-            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.HPS"/> value.
-            </summary>
-            <param name="value">The 16-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.UInt16">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a 16-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
-            <returns>A 16-bit unsigned integer representation of the half-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.HPS.op_Implicit(System.Int32)~DocumentModel.HPS">
-            <summary>
-            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.HPS"/> value.
-            </summary>
-            <param name="value">The 32-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.Int32">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a 32-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
-            <returns>A 32-bit signed integer representation of the half-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.HPS.op_Implicit(System.UInt32)~DocumentModel.HPS">
-            <summary>
-            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.HPS"/> value.
-            </summary>
-            <param name="value">The 32-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.UInt32">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a 32-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
-            <returns>A 32-bit unsigned integer representation of the half-points value.</returns>
-        </member>
         <member name="M:DocumentModel.HPS.op_Implicit(System.Int64)~DocumentModel.HPS">
             <summary>
             Implicitly converts a 64-bit signed integer to a <see cref="T:DocumentModel.HPS"/> value.
@@ -5161,12 +5029,19 @@
             <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
             <returns>A 64-bit signed integer representation of the half-points value.</returns>
         </member>
-        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.UInt64">
+        <member name="M:DocumentModel.HPS.op_Implicit(System.Double)~DocumentModel.HPS">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a 64-bit unsigned integer.
+            Implicitly converts a 64-bit signed integer to a <see cref="T:DocumentModel.HPS"/> value.
+            </summary>
+            <param name="value">The 64-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.Double">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a 64-bit signed integer.
             </summary>
             <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
-            <returns>A 64-bit unsigned integer representation of the half-points value.</returns>
+            <returns>A 64-bit signed integer representation of the half-points value.</returns>
         </member>
         <member name="M:DocumentModel.HPS.CompareTo(DocumentModel.HPS)">
             <summary>

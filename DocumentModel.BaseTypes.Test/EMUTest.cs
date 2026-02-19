@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace DocumentModel.BaseTypesTest;
+namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Test suite for EMU type serialization in both XML and JSON formats.
@@ -122,13 +122,18 @@ public static class EMUTest
   /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestEMUUnitConversions()
   {
+    var emu1Inch = 914400;
+    var emu1MM = 36000;
+    var emu1CM = 360000;
+    var emu12PT = 152400;
+    var emu10Twips = 6350;
     Console.WriteLine("--- Testing EMU Unit Conversions ---");      
     // Test inch conversions
     Console.WriteLine("Testing inch conversions:");
     EMU oneInch = "1in";
-    Console.WriteLine($"  1in = {(long)oneInch} EMUs (expected 914400)");
-    Console.WriteLine($"  914400 EMUs = {oneInch.ToInch():F2}in");
-    if ((long)oneInch != 914400)
+    Console.WriteLine($"  1in = {(long)oneInch} EMUs (expected {emu1Inch})");
+    Console.WriteLine($"  {emu1Inch} EMUs = {oneInch.ToInch():F2}in");
+    if ((long)oneInch != emu1Inch)
     {
       Console.WriteLine("✗ Inch conversion FAILED");
       return false;
@@ -137,9 +142,9 @@ public static class EMUTest
     // Test millimeter conversions
     Console.WriteLine("\nTesting millimeter conversions:");
     EMU oneMM = "1mm";
-    Console.WriteLine($"  1mm = {(long)oneMM} EMUs (expected 36000)");
-    Console.WriteLine($"  36000 EMUs = {oneMM.ToMM():F2}mm");
-    if ((long)oneMM != 36000)
+    Console.WriteLine($"  1mm = {(long)oneMM} EMUs (expected {emu1MM})");
+    Console.WriteLine($"  {emu1MM} EMUs = {oneMM.ToMM():F2}mm");
+    if ((long)oneMM != emu1MM)
     {
       Console.WriteLine("✗ Millimeter conversion FAILED");
       return false;
@@ -148,9 +153,9 @@ public static class EMUTest
     // Test centimeter conversions
     Console.WriteLine("\nTesting centimeter conversions:");
     EMU oneCM = "1cm";
-    Console.WriteLine($"  1cm = {(long)oneCM} EMUs (expected ~360000)");
-    Console.WriteLine($"  360000 EMUs = {oneCM.ToCM():F2}cm");
-    if ((long)oneCM != 360000)
+    Console.WriteLine($"  1cm = {(long)oneCM} EMUs (expected ~{emu1CM})");
+    Console.WriteLine($"  {emu1CM} EMUs = {oneCM.ToCM():F2}cm");
+    if ((long)oneCM != emu1CM)
     {
       Console.WriteLine("✗ Centimeter conversion FAILED");
       return false;
@@ -159,9 +164,9 @@ public static class EMUTest
     // Test point conversions
     Console.WriteLine("\nTesting point conversions:");
     EMU twelvePoints = "12pt";
-    Console.WriteLine($"  12pt = {(long)twelvePoints} EMUs (expected 152400)");
-    Console.WriteLine($"  152400 EMUs = {twelvePoints.ToPT():F2}pt");
-    if ((long)twelvePoints != 152400)
+    Console.WriteLine($"  12pt = {(long)twelvePoints} EMUs (expected {emu12PT})");
+    Console.WriteLine($"  {emu12PT} EMUs = {twelvePoints.ToPT():F2}pt");
+    if ((long)twelvePoints != emu12PT)
     {
       Console.WriteLine("✗ Point conversion FAILED");
       return false;
@@ -169,9 +174,10 @@ public static class EMUTest
 
     // Test twips conversions
     Console.WriteLine("\nTesting twips conversions:");
-    EMU oneInchTwips = 914400;
-    Console.WriteLine($"  1in = {oneInchTwips.ToTwips():F2} twips (expected 1440)");
-    if (System.Math.Abs(oneInchTwips.ToTwips() - 1440) > 0.01)
+    EMU tenTwips = "10tw";
+    Console.WriteLine($"  10tw = {(long)tenTwips} EMUs (expected {emu10Twips})");
+    Console.WriteLine($"  {emu10Twips} EMUs = {tenTwips.ToTwips():F2}tw");
+    if ((long)tenTwips != emu10Twips)
     {
       Console.WriteLine("✗ Twips conversion FAILED");
       return false;
@@ -179,7 +185,7 @@ public static class EMUTest
 
     // Test conversion accuracy
     Console.WriteLine("\nTesting round-trip conversion accuracy:");
-    EMU original = 914400; // 1 inch
+    EMU original = emu1Inch; // 1 inch
     double inches = original.ToInch();
     EMU roundTrip = new EMU($"{inches:F6}in");
     Console.WriteLine($"  Original: {(long)original} EMUs");

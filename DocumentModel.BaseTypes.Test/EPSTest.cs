@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace DocumentModel.BaseTypesTest;
+namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Test suite for EPS type serialization in both XML and JSON formats.
@@ -43,7 +43,7 @@ public static class EPSTest
     var eps1Str = eps1Val.ToString();
     EPS eps1 = eps1Str;
     var longEPS = (long)eps1;
-    Console.WriteLine($"\n✓ String to EPS: {eps1} = {longEPS} EPSs");
+    Console.WriteLine($"\n✓ String to EPS: {eps1} = {longEPS} EPS");
     if (longEPS != 7315200)
     {
       Console.WriteLine("✗ String to EPS conversion FAILED");
@@ -100,100 +100,117 @@ public static class EPSTest
     }
     // Test comparison
     EPS eps4 = eps1Val * 2; // 2 inches
-    Console.WriteLine($"\n✓ CompareTo (914400 vs 1828800): {eps1.CompareTo(eps4)} (expected < 0)");
+    Console.WriteLine($"\n✓ CompareTo ({eps1Val} vs {eps4}): {eps1.CompareTo(eps4)} (expected < 0)");
 
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
     return true;
   }
 
-  
   /// <summary>
-  /// Tests the accuracy of conversions between EPS (Encapsulated PostScript) units and common measurement units,
-  /// including inches, points, millimeters, and centimeters.
+  /// Tests the accuracy and correctness of conversions between EPS and various length units, including inches,
+  /// millimeters, centimeters, points, and twips.
   /// </summary>
-  /// <remarks>This method performs a series of validation checks to ensure that conversions to and from EPS
-  /// units are correct and consistent. It includes tests for inch and point conversions, eighth-point precision,
-  /// millimeter and centimeter conversions, round-trip accuracy, and string formatting with various units and
-  /// precisions. The results of each test are output to the console for review.</remarks>
+  /// <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
+  /// verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
+  /// Use this method to validate that EPS-related conversion logic is functioning as expected.</remarks>
   /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestEPSUnitConversions()
   {
-    Console.WriteLine("--- Testing EPS Unit Conversions ---");      // Test inch conversions
+    var eps1Inch = 72*8;
+    var eps1MM = eps1Inch / 25.4;
+    var eps1CM = eps1MM * 10;
+    var eps12PT = 12*8;
+    var eps10Twips = 8/20.0;
+    Console.WriteLine("--- Testing EPS Unit Conversions ---");
+    // Test inch conversions
     Console.WriteLine("Testing inch conversions:");
-    EPS oneInch = "1 in";
-    Console.WriteLine($"  1 in = {(Int64)oneInch} EPS (expected 576)");
-    Console.WriteLine($"  576 EPS = {oneInch.ToInch():F2}in");
-    if ((Int64)oneInch != 576)
+    EPS oneInch = "1in";
+    Console.WriteLine($"  1in = {(long)oneInch} EPS (expected {eps1Inch})");
+    Console.WriteLine($"  {eps1Inch} EPS = {oneInch.ToInch():F2}in");
+    if ((long)oneInch != eps1Inch)
     {
       Console.WriteLine("✗ Inch conversion FAILED");
       return false;
     }
 
+    // Test millimeter conversions
+    Console.WriteLine("\nTesting millimeter conversions:");
+    EPS oneMM = "1mm";
+    Console.WriteLine($"  1mm = {(long)oneMM} EPS (expected {eps1MM})");
+    Console.WriteLine($"  {eps1MM} EPS = {oneMM.ToMM():F2}mm");
+    if (System.Math.Abs(oneMM - eps1MM) > 0.01)
+    {
+      Console.WriteLine("✗ Millimeter conversion FAILED");
+      return false;
+    }
+
+    // Test centimeter conversions
+    Console.WriteLine("\nTesting centimeter conversions:");
+    EPS oneCM = "1cm";
+    Console.WriteLine($"  1cm = {(long)oneCM} EPS (expected ~{eps1CM})");
+    Console.WriteLine($"  {eps1CM} EPS = {oneCM.ToCM():F2}cm");
+    if ((long)oneCM != eps1CM)
+    {
+      Console.WriteLine("✗ Centimeter conversion FAILED");
+      return false;
+    }
+
     // Test point conversions
     Console.WriteLine("\nTesting point conversions:");
-    EPS onePoint = "1 pt";
-    Console.WriteLine($"  1 pt = {(Int64)onePoint} EPS (expected 8)");
-    Console.WriteLine($"  8 EPS = {onePoint.ToPT():F2}pt");
-    if ((Int64)onePoint != 8)
+    EPS twelvePoints = "12pt";
+    Console.WriteLine($"  12pt = {(long)twelvePoints} EPS (expected {eps12PT})");
+    Console.WriteLine($"  {eps12PT} EPS = {twelvePoints.ToPT():F2}pt");
+    if ((long)twelvePoints != eps12PT)
     {
       Console.WriteLine("✗ Point conversion FAILED");
       return false;
     }
 
-    // Test eighth-point precision (unique feature)
-    Console.WriteLine("\nTesting eighth-point precision:");
-    EPS oneEighthPoint = 1;
-    EPS halfPoint = 4;
-    EPS fullPoint = 8;
-    Console.WriteLine($"  1 eighth-point = {oneEighthPoint.ToPT():F3}pt (0.125pt)");
-    Console.WriteLine($"  4 EPS = {halfPoint.ToPT():F3}pt (0.5pt)");
-    Console.WriteLine($"  8 EPS = {fullPoint.ToPT():F3}pt (1.0pt)");
-
-    // Test millimeter conversions
-    Console.WriteLine("\nTesting millimeter conversions:");
-    EPS tenMM = "10 mm";
-    double expectedEPS = 10 * EPS.EPSinMM;
-    Console.WriteLine($"  10 mm = {(Int64)tenMM} EPS (expected ~{expectedEPS:F0})");
-    Console.WriteLine($"  Back to mm: {tenMM.ToMM():F2}mm");
-
-    // Test centimeter conversions
-    Console.WriteLine("\nTesting centimeter conversions:");
-    EPS oneCM = "1 cm";
-    expectedEPS = EPS.EPSinCM;
-    Console.WriteLine($"  1 cm = {(Int64)oneCM} EPS (expected ~{expectedEPS:F0})");
-    Console.WriteLine($"  Back to cm: {oneCM.ToCM():F2}cm");
+    // Test twips conversions
+    Console.WriteLine("\nTesting twips conversions:");
+    EPS tenTwips = "10tw";
+    Console.WriteLine($"  10tw = {(long)tenTwips} EPS (expected {eps10Twips})");
+    Console.WriteLine($"  {eps10Twips} EPS = {tenTwips.ToTwips():F2}tw");
+    if ((long)tenTwips != eps10Twips)
+    {
+      Console.WriteLine("✗ Twips conversion FAILED");
+      return false;
+    }
 
     // Test conversion accuracy
     Console.WriteLine("\nTesting round-trip conversion accuracy:");
-    EPS original = 576; // 1 inch
+    EPS original = eps1Inch; // 1 inch
     double inches = original.ToInch();
     EPS roundTrip = new EPS($"{inches:F6}in");
-    Console.WriteLine($"  Original: {(Int64)original} EPS");
+    Console.WriteLine($"  Original: {(long)original} EPS");
     Console.WriteLine($"  To inches: {inches:F6}in");
-    Console.WriteLine($"  Back to EPS: {(Int64)roundTrip} EPS");
-    Console.WriteLine($"  Match: {original.CompareTo(roundTrip) == 0}");
+    Console.WriteLine($"  Back to EPS: {(long)roundTrip} EPS");
+    if (original.CompareTo(roundTrip) != 0)
+    {
+      Console.WriteLine("✗ Round-trip conversion FAILED");
+      return false;
+    }
 
-    // Test relationship between EPS and points
-    Console.WriteLine("\nTesting eighth-point/point relationships:");
-    EPS twelvePoints = "12 pt";
-    Console.WriteLine($"  12 pt = {(Int64)twelvePoints} EPS (expected 96)");
-    Console.WriteLine($"  Back to points: {twelvePoints.ToPT():F1}pt");
+    // Test ConvertTo for each unit
+    Console.WriteLine("\nTesting ConvertTo method:");
+    ILengthMeasure length = original;
+    Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches):F2}");
+    Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters):F2}");
+    Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters):F2}");
+    Console.WriteLine($"  To pt: {length.ConvertTo(LengthUnit.Points):F2}");
+    Console.WriteLine($"  To twips: {length.ConvertTo(LengthUnit.Twips):F2}");
 
     // Test string output with units
     Console.WriteLine("\nTesting string output with units:");
-    EPS measurement = 576;
-    Console.WriteLine($"  As EPS: {measurement}");
-    Console.WriteLine($"  As inches: {measurement.ToString(LengthUnit.Inches)}");
-    Console.WriteLine($"  As points: {measurement.ToString(LengthUnit.Points)}");
-    Console.WriteLine($"  As mm: {measurement.ToString(LengthUnit.Millimeters)}");
-    Console.WriteLine($"  As cm: {measurement.ToString(LengthUnit.Centimeters)}");
+    Console.WriteLine($"  As EPS: {original}");
+    Console.WriteLine($"  As inches: {length.ToString(LengthUnit.Inches)}");
+    Console.WriteLine($"  As mm: {length.ToString(LengthUnit.Millimeters)}");
 
     // Test string output with precision
     Console.WriteLine("\nTesting string output with precision:");
-    Console.WriteLine($"  Precision 0: {measurement.ToString("F0", LengthUnit.Inches)}");
-    Console.WriteLine($"  Precision 2: {measurement.ToString("F2", LengthUnit.Points)}");
-    Console.WriteLine($"  Precision 4: {measurement.ToString("F4", LengthUnit.Millimeters)}");
+    Console.WriteLine($"  Precision 0: {length.ToString("F0", LengthUnit.Inches)}");
+    Console.WriteLine($"  Precision 2: {length.ToString("F2", LengthUnit.Millimeters)}");
 
     Console.WriteLine("\n✓ All unit conversion tests passed");
     Console.WriteLine();
@@ -507,21 +524,14 @@ public static class EPSTest
 
     // Test implicit conversions
     Console.WriteLine("\nTesting implicit conversions:");
-    EPS fromInt32 = 576;
     EPS fromInt64 = 576L;
-    EPS fromUInt32 = 576U;
-    Int32 toInt32 = fromInt32;
     Int64 toInt64 = fromInt64;
-    Console.WriteLine($"  From Int32: {fromInt32}");
     Console.WriteLine($"  From Int64: {fromInt64}");
-    Console.WriteLine($"  From UInt32: {fromUInt32}");
-    Console.WriteLine($"  To Int32: {toInt32}");
     Console.WriteLine($"  To Int64: {toInt64}");
 
     Console.WriteLine("\n✓ All edge case tests completed");
     Console.WriteLine();
     return true;
-
   }
 
   /// <summary>

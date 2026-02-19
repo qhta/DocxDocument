@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace DocumentModel.BaseTypesTest;
+namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Test suite for ArrayVariant type serialization in both XML and JSON formats.
