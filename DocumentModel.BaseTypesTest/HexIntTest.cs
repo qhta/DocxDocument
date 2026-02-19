@@ -419,4 +419,3 @@ public class HexIntTestData
   public HexInt MinNegative { get; set; }
 }
 
-#endregion

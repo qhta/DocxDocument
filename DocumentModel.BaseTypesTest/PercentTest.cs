@@ -490,4 +490,3 @@ public class PercentWrapper
   public Percent Value { get; set; }
 }
 
-#endregion

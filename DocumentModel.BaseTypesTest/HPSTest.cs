@@ -682,4 +682,3 @@ public class HalfPointsWrapper
   public HPS Value { get; set; }
 }
 
-#endregion

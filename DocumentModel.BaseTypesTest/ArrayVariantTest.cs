@@ -791,4 +791,3 @@ public class ArrayVariantTestData
   public ArrayVariant EmptyArray { get; set; } = new ArrayVariant();
 }
 
-#endregion
