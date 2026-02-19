@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DocumentModel.BaseTypes.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure">
+            <summary>
+            Represents a length measurement that can be converted to various units (twips, points, millimeters, centimeters, inches).
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToTwips">
+            <summary>
+            Value of the length in twips (1/20 of a point). This is the base unit for internal calculations.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToPT">
+            <summary>
+            Value of the length in points (1/72 of an inch).
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToMM">
+            <summary>
+            Converts the current measurement to millimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToCM">
+            <summary>
+            Converts the current measurement to centimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToInch">
+            <summary>
+            Converts the current measurement to inches.
+            </summary>  
+        </member>
+    </members>
+</doc>

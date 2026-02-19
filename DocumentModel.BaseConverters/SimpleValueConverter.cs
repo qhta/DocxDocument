@@ -77,7 +77,7 @@ public static class SimpleValueConverter
   {
     [typeof(Twips)] = typeof(Int32),
     [typeof(EMU)] = typeof(Int64),
-    [typeof(HalfPoints)] = typeof(Int32),
+    [typeof(HPS)] = typeof(Int32),
   };
 
   /// <summary>

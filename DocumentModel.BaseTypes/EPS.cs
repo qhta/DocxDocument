@@ -10,8 +10,8 @@
 /// This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// Note: 1 eighth-point = 0.125 points = 1/576 inch. There are 8 eighth-points in 1 point.
 /// </remarks>
-[JsonConverter(typeof(EighthPointsJsonConverter))]
-public readonly partial struct EighthPoints : IComparable<EighthPoints>
+[JsonConverter(typeof(EPSJsonConverter))]
+public readonly partial struct EPS : ILengthMeasure, IComparable<EPS>, IEquatable<EPS>
 {
   /// <summary>
   /// How many eighth-points are in one millimeter.
@@ -20,15 +20,15 @@ public readonly partial struct EighthPoints : IComparable<EighthPoints>
   /// <remarks>
   /// The value is approximately 22.68 eighth-points per millimeter, calculated as 576 / 25.4.
   /// </remarks>
-  public const double EighthPointsInMM = 576 / 25.4; //22.677795275590551181102362204724;
+  public const double EPSinMM = 576 / 25.4; //22.677795275590551181102362204724;
 
   /// <summary>
   /// How many eighth-points are in one centimeter.
   /// </summary>
   /// <remarks>
-  /// The value is approximately 226.8 eighth-points per centimeter, calculated as EighthPointsInMM * 10.0.
+  /// The value is approximately 226.8 eighth-points per centimeter, calculated as EPSinMM * 10.0.
   /// </remarks>
-  public const double EighthPointsInCM = EighthPointsInMM * 10.0;
+  public const double EPSinCM = EPSinMM * 10.0;
 
   /// <summary>
   /// How many eighth-points are in one inch.
@@ -36,7 +36,7 @@ public readonly partial struct EighthPoints : IComparable<EighthPoints>
   /// <remarks>
   /// By definition, there are exactly 576 eighth-points in one inch.
   /// </remarks>
-  public const double EighthPointsInInch = 576;
+  public const double EPSinInch = 576;
 
   /// <summary>
   /// How many eighth-points are in one point.
@@ -44,7 +44,15 @@ public readonly partial struct EighthPoints : IComparable<EighthPoints>
   /// <remarks>
   /// By definition, there are exactly 8 eighth-points in one point.
   /// </remarks>
-  public const double EighthPointsInPoint = 8;
+  public const double EPSinPT = 8;
+  
+  /// <summary>
+  /// How many eighth-points are in one twips.
+  /// </summary>
+  /// <remarks>
+  /// By definition, there are exactly 2.5 twips in one eight-point.
+  /// </remarks>
+  public const double EPSinTwips = 1.0 / 20.0 * 8;
 
   /// <summary>
   /// The internal value storing the measurement in eighth-points.
@@ -52,7 +60,7 @@ public readonly partial struct EighthPoints : IComparable<EighthPoints>
   private readonly Int64 value;
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="EighthPoints"/> struct from a string value.
+  /// Initializes a new instance of the <see cref="EPS"/> struct from a string value.
   /// </summary>
   /// <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
@@ -66,67 +74,67 @@ public readonly partial struct EighthPoints : IComparable<EighthPoints>
   /// </list>
   /// <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
   /// </remarks>
-  public EighthPoints(string str)
+  public EPS(string str)
   {
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EighthPointsInMM;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EPSinMM;
       value = (Int64)val;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EighthPointsInCM;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EPSinCM;
       value = (Int64)val;
     }
     else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EighthPointsInInch;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EPSinInch;
       value = (int)val;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EighthPointsInPoint;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EPSinPT;
       value = (Int64)val;
     }
     else value = Int32.Parse(str);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="EighthPoints"/> struct from a 32-bit unsigned integer value.
+  /// Initializes a new instance of the <see cref="EPS"/> struct from a 32-bit unsigned integer value.
   /// </summary>
   /// <param name="value">The value in eighth-points.</param>
-  public EighthPoints(UInt32 value)
+  public EPS(UInt32 value)
   {
     this.value = value;
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="EighthPoints"/> struct from a 32-bit signed integer value.
+  /// Initializes a new instance of the <see cref="EPS"/> struct from a 32-bit signed integer value.
   /// </summary>
   /// <param name="value">The value in eighth-points.</param>
-  public EighthPoints(Int32 value)
+  public EPS(Int32 value)
   {
     this.value = value;
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="EighthPoints"/> struct from a 64-bit unsigned integer value.
+  /// Initializes a new instance of the <see cref="EPS"/> struct from a 64-bit unsigned integer value.
   /// </summary>
   /// <param name="value">The value in eighth-points.</param>
-  public EighthPoints(UInt64 value)
+  public EPS(UInt64 value)
   {
     this.value = (Int64)value;
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="EighthPoints"/> struct from a 64-bit signed integer value.
+  /// Initializes a new instance of the <see cref="EPS"/> struct from a 64-bit signed integer value.
   /// </summary>
   /// <param name="value">The value in eighth-points.</param>
-  public EighthPoints(Int64 value)
+  public EPS(Int64 value)
   {
     this.value = value;
   }
@@ -136,21 +144,21 @@ public readonly partial struct EighthPoints : IComparable<EighthPoints>
   /// </summary>
   /// <returns>The measurement in millimeters as a double-precision floating-point number.</returns>
   public double ToMM()
-    => value / EighthPointsInMM;
+    => value / EPSinMM;
 
   /// <summary>
   /// Converts the eighth-points value to centimeters.
   /// </summary>
   /// <returns>The measurement in centimeters as a double-precision floating-point number.</returns>
   public double ToCM()
-    => value / EighthPointsInCM;
+    => value / EPSinCM;
 
   /// <summary>
   /// Converts the eighth-points value to inches.
   /// </summary>
   /// <returns>The measurement in inches as a double-precision floating-point number.</returns>
   public double ToInch()
-    => value / EighthPointsInInch;
+    => value / EPSinInch;
 
   /// <summary>
   /// Converts the eighth-points value to points.
@@ -159,8 +167,16 @@ public readonly partial struct EighthPoints : IComparable<EighthPoints>
   /// <remarks>
   /// Since there are 8 eighth-points per point, this method divides the internal value by 8.
   /// </remarks>
-  public double ToPoints()
-    => value / EighthPointsInPoint;
+  public double ToPT()
+    => value / EPSinPT;
+
+
+  /// <summary>
+  /// Converts the eighth-points value to twips.
+  /// </summary>
+  /// <returns>The measurement in twips as a double-precision floating-point number.</returns>
+  public double ToTwips()
+    => value / EPSinTwips;
 
   /// <summary>
   /// Converts the value of this instance to its equivalent string representation.
@@ -217,13 +233,13 @@ public readonly partial struct EighthPoints : IComparable<EighthPoints>
     if (unit != null)
     {
       if (unit.EndsWith("mm"))
-        return (value / EighthPointsInMM).ToString(format, provider) + unit;
+        return (value / EPSinMM).ToString(format, provider) + unit;
       if (unit.EndsWith("cm"))
-        return (value / EighthPointsInCM).ToString(format, provider) + unit;
+        return (value / EPSinCM).ToString(format, provider) + unit;
       if (unit.EndsWith("in"))
-        return (value / EighthPointsInInch).ToString(format, provider) + unit;
+        return (value / EPSinInch).ToString(format, provider) + unit;
       if (unit.EndsWith("pt"))
-        return (value / EighthPointsInPoint).ToString(format, provider) + unit;
+        return (value / EPSinPT).ToString(format, provider) + unit;
     }
     return value.ToString();
   }
@@ -243,13 +259,13 @@ public readonly partial struct EighthPoints : IComparable<EighthPoints>
     if (unit != null)
     {
       if (unit.EndsWith("mm"))
-        return (value / EighthPointsInMM).ToString(provider) + unit;
+        return (value / EPSinMM).ToString(provider) + unit;
       if (unit.EndsWith("cm"))
-        return (value / EighthPointsInCM).ToString(provider) + unit;
+        return (value / EPSinCM).ToString(provider) + unit;
       if (unit.EndsWith("in"))
-        return (value / EighthPointsInInch).ToString(provider) + unit;
+        return (value / EPSinInch).ToString(provider) + unit;
       if (unit.EndsWith("pt"))
-        return (value / EighthPointsInPoint).ToString(provider) + unit;
+        return (value / EPSinPT).ToString(provider) + unit;
     }
     return value.ToString();
   }
@@ -257,116 +273,116 @@ public readonly partial struct EighthPoints : IComparable<EighthPoints>
   #region Implicit Conversions
 
   /// <summary>
-  /// Implicitly converts a string to an <see cref="EighthPoints"/> value.
+  /// Implicitly converts a string to an <see cref="EPS"/> value.
   /// </summary>
   /// <param name="value">The string to convert.</param>
-  /// <returns>An <see cref="EighthPoints"/> value parsed from the string.</returns>
-  public static implicit operator EighthPoints(string value) { return new EighthPoints(value); }
+  /// <returns>An <see cref="EPS"/> value parsed from the string.</returns>
+  public static implicit operator EPS(string value) { return new EPS(value); }
 
   /// <summary>
-  /// Implicitly converts an <see cref="EighthPoints"/> value to a string.
+  /// Implicitly converts an <see cref="EPS"/> value to a string.
   /// </summary>
-  /// <param name="value">The <see cref="EighthPoints"/> value to convert.</param>
+  /// <param name="value">The <see cref="EPS"/> value to convert.</param>
   /// <returns>A string representation of the eighth-points value.</returns>
-  public static implicit operator string(EighthPoints value) { return value.value.ToString(); }
+  public static implicit operator string(EPS value) { return value.value.ToString(); }
 
   /// <summary>
-  /// Implicitly converts a 16-bit signed integer to an <see cref="EighthPoints"/> value.
+  /// Implicitly converts a 16-bit signed integer to an <see cref="EPS"/> value.
   /// </summary>
   /// <param name="value">The 16-bit signed integer to convert.</param>
-  /// <returns>An <see cref="EighthPoints"/> value representing the integer.</returns>
-  public static implicit operator EighthPoints(Int16 value) { return new EighthPoints(value); }
+  /// <returns>An <see cref="EPS"/> value representing the integer.</returns>
+  public static implicit operator EPS(Int16 value) { return new EPS(value); }
 
   /// <summary>
-  /// Implicitly converts an <see cref="EighthPoints"/> value to a 16-bit signed integer.
+  /// Implicitly converts an <see cref="EPS"/> value to a 16-bit signed integer.
   /// </summary>
-  /// <param name="value">The <see cref="EighthPoints"/> value to convert.</param>
+  /// <param name="value">The <see cref="EPS"/> value to convert.</param>
   /// <returns>A 16-bit signed integer representation of the eighth-points value.</returns>
-  public static implicit operator Int16(EighthPoints value) { return (Int16)value.value; }
+  public static implicit operator Int16(EPS value) { return (Int16)value.value; }
 
   /// <summary>
-  /// Implicitly converts a 16-bit unsigned integer to an <see cref="EighthPoints"/> value.
+  /// Implicitly converts a 16-bit unsigned integer to an <see cref="EPS"/> value.
   /// </summary>
   /// <param name="value">The 16-bit unsigned integer to convert.</param>
-  /// <returns>An <see cref="EighthPoints"/> value representing the integer.</returns>
-  public static implicit operator EighthPoints(UInt16 value) { return new EighthPoints(value); }
+  /// <returns>An <see cref="EPS"/> value representing the integer.</returns>
+  public static implicit operator EPS(UInt16 value) { return new EPS(value); }
 
   /// <summary>
-  /// Implicitly converts an <see cref="EighthPoints"/> value to a 16-bit unsigned integer.
+  /// Implicitly converts an <see cref="EPS"/> value to a 16-bit unsigned integer.
   /// </summary>
-  /// <param name="value">The <see cref="EighthPoints"/> value to convert.</param>
+  /// <param name="value">The <see cref="EPS"/> value to convert.</param>
   /// <returns>A 16-bit unsigned integer representation of the eighth-points value.</returns>
-  public static implicit operator UInt16(EighthPoints value) { return (UInt16)value.value; }
+  public static implicit operator UInt16(EPS value) { return (UInt16)value.value; }
 
   /// <summary>
-  /// Implicitly converts a 32-bit signed integer to an <see cref="EighthPoints"/> value.
+  /// Implicitly converts a 32-bit signed integer to an <see cref="EPS"/> value.
   /// </summary>
   /// <param name="value">The 32-bit signed integer to convert.</param>
-  /// <returns>An <see cref="EighthPoints"/> value representing the integer.</returns>
-  public static implicit operator EighthPoints(Int32 value) { return new EighthPoints(value); }
+  /// <returns>An <see cref="EPS"/> value representing the integer.</returns>
+  public static implicit operator EPS(Int32 value) { return new EPS(value); }
 
   /// <summary>
-  /// Implicitly converts an <see cref="EighthPoints"/> value to a 32-bit signed integer.
+  /// Implicitly converts an <see cref="EPS"/> value to a 32-bit signed integer.
   /// </summary>
-  /// <param name="value">The <see cref="EighthPoints"/> value to convert.</param>
+  /// <param name="value">The <see cref="EPS"/> value to convert.</param>
   /// <returns>A 32-bit signed integer representation of the eighth-points value.</returns>
-  public static implicit operator Int32(EighthPoints value) { return (Int32)value.value; }
+  public static implicit operator Int32(EPS value) { return (Int32)value.value; }
 
   /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer to an <see cref="EighthPoints"/> value.
+  /// Implicitly converts a 32-bit unsigned integer to an <see cref="EPS"/> value.
   /// </summary>
   /// <param name="value">The 32-bit unsigned integer to convert.</param>
-  /// <returns>An <see cref="EighthPoints"/> value representing the integer.</returns>
-  public static implicit operator EighthPoints(UInt32 value) { return new EighthPoints(value); }
+  /// <returns>An <see cref="EPS"/> value representing the integer.</returns>
+  public static implicit operator EPS(UInt32 value) { return new EPS(value); }
 
   /// <summary>
-  /// Implicitly converts an <see cref="EighthPoints"/> value to a 32-bit unsigned integer.
+  /// Implicitly converts an <see cref="EPS"/> value to a 32-bit unsigned integer.
   /// </summary>
-  /// <param name="value">The <see cref="EighthPoints"/> value to convert.</param>
+  /// <param name="value">The <see cref="EPS"/> value to convert.</param>
   /// <returns>A 32-bit unsigned integer representation of the eighth-points value.</returns>
-  public static implicit operator UInt32(EighthPoints value) { return (UInt32)value.value; }
+  public static implicit operator UInt32(EPS value) { return (UInt32)value.value; }
 
   /// <summary>
-  /// Implicitly converts a 64-bit signed integer to an <see cref="EighthPoints"/> value.
+  /// Implicitly converts a 64-bit signed integer to an <see cref="EPS"/> value.
   /// </summary>
   /// <param name="value">The 64-bit signed integer to convert.</param>
-  /// <returns>An <see cref="EighthPoints"/> value representing the integer.</returns>
-  public static implicit operator EighthPoints(Int64 value) { return new EighthPoints(value); }
+  /// <returns>An <see cref="EPS"/> value representing the integer.</returns>
+  public static implicit operator EPS(Int64 value) { return new EPS(value); }
 
   /// <summary>
-  /// Implicitly converts an <see cref="EighthPoints"/> value to a 64-bit signed integer.
+  /// Implicitly converts an <see cref="EPS"/> value to a 64-bit signed integer.
   /// </summary>
-  /// <param name="value">The <see cref="EighthPoints"/> value to convert.</param>
+  /// <param name="value">The <see cref="EPS"/> value to convert.</param>
   /// <returns>A 64-bit signed integer representation of the eighth-points value.</returns>
-  public static implicit operator Int64(EighthPoints value) { return (Int64)value.value; }
+  public static implicit operator Int64(EPS value) { return (Int64)value.value; }
 
   /// <summary>
-  /// Implicitly converts a 64-bit unsigned integer to an <see cref="EighthPoints"/> value.
+  /// Implicitly converts a 64-bit unsigned integer to an <see cref="EPS"/> value.
   /// </summary>
   /// <param name="value">The 64-bit unsigned integer to convert.</param>
-  /// <returns>An <see cref="EighthPoints"/> value representing the integer.</returns>
-  public static implicit operator EighthPoints(UInt64 value) { return new EighthPoints(value); }
+  /// <returns>An <see cref="EPS"/> value representing the integer.</returns>
+  public static implicit operator EPS(UInt64 value) { return new EPS(value); }
 
   /// <summary>
-  /// Implicitly converts an <see cref="EighthPoints"/> value to a 64-bit unsigned integer.
+  /// Implicitly converts an <see cref="EPS"/> value to a 64-bit unsigned integer.
   /// </summary>
-  /// <param name="value">The <see cref="EighthPoints"/> value to convert.</param>
+  /// <param name="value">The <see cref="EPS"/> value to convert.</param>
   /// <returns>A 64-bit unsigned integer representation of the eighth-points value.</returns>
-  public static implicit operator UInt64(EighthPoints value) { return (UInt64)value.value; }
+  public static implicit operator UInt64(EPS value) { return (UInt64)value.value; }
 
   #endregion
 
   /// <summary>
-  /// Compares this instance to a specified <see cref="EighthPoints"/> object and returns an indication of their relative values.
+  /// Compares this instance to a specified <see cref="EPS"/> object and returns an indication of their relative values.
   /// </summary>
-  /// <param name="other">An <see cref="EighthPoints"/> object to compare.</param>
+  /// <param name="other">An <see cref="EPS"/> object to compare.</param>
   /// <returns>
   /// A signed number indicating the relative values of this instance and <paramref name="other"/>.
   /// Less than zero if this instance is less than <paramref name="other"/>;
   /// zero if this instance equals <paramref name="other"/>;
   /// greater than zero if this instance is greater than <paramref name="other"/>.
   /// </returns>
-  public int CompareTo(EighthPoints other)
+  public int CompareTo(EPS other)
   {
     return value.CompareTo(other.value);
   }
@@ -378,5 +394,28 @@ public readonly partial struct EighthPoints : IComparable<EighthPoints>
   public override int GetHashCode()
   {
     return value.GetHashCode();
+  }
+
+  /// <summary>
+  /// Compares this instance to another <see cref="EPS"/> object for equality.
+  /// </summary>
+  /// <param name="other">An <see cref="EPS"/> object to compare.</param>
+  /// <returns><c>true</c> if the objects are equal; otherwise, <c>false</c>.</returns>
+  public bool Equals(EPS other)
+  {
+    return value == other.value;
+  }
+
+  /// <summary>
+  /// Determines whether the specified object is equal to the current instance of EighthPoints.
+  /// </summary>
+  /// <remarks>This method overrides Object.Equals to provide value equality comparison specific to EighthPoints
+  /// instances.</remarks>
+  /// <param name="obj">The object to compare with the current EighthPoints instance. This parameter can be null.</param>
+  /// <returns>true if the specified object is an instance of EighthPoints and is equal to the current instance; otherwise,
+  /// false.</returns>
+  public override bool Equals(object? obj)
+  {
+    return obj is EPS other && Equals(other);
   }
 }

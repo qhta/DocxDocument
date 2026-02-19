@@ -16,9 +16,9 @@ class Program
     if (!Exec(ArrayVariantSerializationTests.Run)) return;
     if (!Exec(Base64BinarySerializationTests.Run)) return;
     if (!Exec(BytePercentSerializationTests.Run)) return;
-    if (!Exec(EighthPointsSerializationTests.Run)) return;
+    if (!Exec(EPSSerializationTests.Run)) return;
     if (!Exec(EMUSerializationTests.Run)) return;
-    if (!Exec(HalfPointsSerializationTests.Run)) return;
+    if (!Exec(HPSSerializationTests.Run)) return;
     if (!Exec(HexBinarySerializationTests.Run)) return;
     if (!Exec(HexCharSerializationTests.Run)) return;
     if (!Exec(HexIntSerializationTests.Run)) return;
@@ -26,7 +26,8 @@ class Program
     if (!Exec(HexRgbSerializationTests.Run)) return;
     if (!Exec(ListOfSerializationTests.Run)) return;
     if (!Exec(PercentSerializationTests.Run)) return;
-    if (!Exec(PointsSerializationTests.Run)) return;
+    if (!Exec(PTSSerializationTests.Run)) return;
+    if (!Exec(TSBooleanSerializationTests.Run)) return;
     if (!Exec(StringListSerializationTests.Run)) return;
     if (!Exec(StrNumPairSerializationTests.Run)) return;
     if (!Exec(TwipsSerializationTests.Run)) return;

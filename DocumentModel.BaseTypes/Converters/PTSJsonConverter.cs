@@ -1,21 +1,21 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support for the <see cref="Points"/> structure.
+/// Provides JSON serialization and deserialization support for the <see cref="PTS"/> structure.
 /// </summary>
 /// <remarks>
 /// This converter handles both string and numeric JSON tokens for deserialization,
 /// and writes points values as strings for compatibility with Office Open XML conventions.
 /// </remarks>
-public class PointsJsonConverter : JsonConverter<Points>
+public class PTSJsonConverter : JsonConverter<PTS>
 {
   /// <summary>
-  /// Reads and converts JSON to a <see cref="Points"/> value.
+  /// Reads and converts JSON to a <see cref="PTS"/> value.
   /// </summary>
   /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
   /// <param name="typeToConvert">The type to convert.</param>
   /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
-  /// <returns>A <see cref="Points"/> value parsed from the JSON input.</returns>
+  /// <returns>A <see cref="PTS"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
   /// <list type="bullet">
@@ -32,7 +32,7 @@ public class PointsJsonConverter : JsonConverter<Points>
   /// <item><description>Numeric tokens as integer values representing points directly</description></item>
   /// </list>
   /// </remarks>
-  public override Points Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+  public override PTS Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
   {
     if (reader.TokenType == JsonTokenType.String)
     {
@@ -42,7 +42,7 @@ public class PointsJsonConverter : JsonConverter<Points>
 
       try
       {
-        return new Points(value);
+        return new PTS(value);
       }
       catch (FormatException ex)
       {
@@ -57,24 +57,24 @@ public class PointsJsonConverter : JsonConverter<Points>
       {
         if (reader.TryGetInt64(out long longValue))
         {
-          return new Points(longValue);
+          return new PTS(longValue);
         }
 
         if (reader.TryGetUInt64(out ulong ulongValue))
         {
-          return new Points(ulongValue);
+          return new PTS(ulongValue);
         }
 
         // Try as 32-bit integer
         if (reader.TryGetInt32(out int intValue))
         {
-          return new Points(intValue);
+          return new PTS(intValue);
         }
 
         // Try as 32-bit unsigned integer
         if (reader.TryGetUInt32(out uint uintValue))
         {
-          return new Points(uintValue);
+          return new PTS(uintValue);
         }
 
         throw new JsonException($"Invalid numeric value for Points");
@@ -89,16 +89,16 @@ public class PointsJsonConverter : JsonConverter<Points>
   }
 
   /// <summary>
-  /// Writes a <see cref="Points"/> value as JSON.
+  /// Writes a <see cref="PTS"/> value as JSON.
   /// </summary>
   /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
-  /// <param name="value">The <see cref="Points"/> value to serialize.</param>
+  /// <param name="value">The <see cref="PTS"/> value to serialize.</param>
   /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <remarks>
   /// Writes the points value as a numeric string without unit suffix.
   /// For example, a value of 72 points is written as "72".
   /// </remarks>
-  public override void Write(Utf8JsonWriter writer, Points value, JsonSerializerOptions options)
+  public override void Write(Utf8JsonWriter writer, PTS value, JsonSerializerOptions options)
   {
     // Write as numeric string without unit suffix
     writer.WriteStringValue(((Int64)value).ToString());

@@ -1470,378 +1470,6 @@
             </para>
             </remarks>
         </member>
-        <member name="T:DocumentModel.EighthPoints">
-            <summary>
-            Provides XML serialization support for the <see cref="T:DocumentModel.EighthPoints"/> structure.
-            </summary>
-            <summary>
-            Represents a measurement in eighth-points (one-eighth of a typographic point).
-            An eighth-point is defined as 1/576 of an inch, providing extremely fine-grained precision for typography.
-            Supports conversions to/from millimeters, centimeters, inches, and points.
-            </summary>
-            <remarks>
-            Eighth-points provide the finest precision among point-based measurements for typographic adjustments.
-            This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
-            Note: 1 eighth-point = 0.125 points = 1/576 inch. There are 8 eighth-points in 1 point.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.System#Xml#Serialization#IXmlSerializable#GetSchema">
-            <summary>
-            This method is reserved and should not be used. Returns null as no schema is required.
-            </summary>
-            <returns>Always returns null.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
-            <summary>
-            Deserializes the <see cref="T:DocumentModel.EighthPoints"/> value from XML.
-            Accepts numeric values and values with unit suffixes (mm, cm, pt, in).
-            </summary>
-            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> to read from.</param>
-            <remarks>
-            The method handles the following formats:
-            <list type="bullet">
-            <item><description>Plain numeric values (e.g., "576" representing eighth-points directly)</description></item>
-            <item><description>Values with millimeter suffix (e.g., "25.4mm")</description></item>
-            <item><description>Values with centimeter suffix (e.g., "2.54cm")</description></item>
-            <item><description>Values with point suffix (e.g., "12pt" will be converted to 96 eighth-points)</description></item>
-            <item><description>Values with inch suffix (e.g., "1in" will be converted to 576 eighth-points)</description></item>
-            <item><description>Empty elements</description></item>
-            </list>
-            Commas in the input are automatically replaced with periods for decimal separator consistency.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
-            <summary>
-            Serializes the <see cref="T:DocumentModel.EighthPoints"/> value to XML.
-            </summary>
-            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
-            <remarks>
-            The value is written as a plain numeric string representing eighth-points without unit suffix.
-            </remarks>
-        </member>
-        <member name="F:DocumentModel.EighthPoints.EighthPointsInMM">
-            <summary>
-            How many eighth-points are in one millimeter.
-            There is a small difference between real and nominal factors.
-            </summary>
-            <remarks>
-            The value is approximately 22.68 eighth-points per millimeter, calculated as 576 / 25.4.
-            </remarks>
-        </member>
-        <member name="F:DocumentModel.EighthPoints.EighthPointsInCM">
-            <summary>
-            How many eighth-points are in one centimeter.
-            </summary>
-            <remarks>
-            The value is approximately 226.8 eighth-points per centimeter, calculated as EighthPointsInMM * 10.0.
-            </remarks>
-        </member>
-        <member name="F:DocumentModel.EighthPoints.EighthPointsInInch">
-            <summary>
-            How many eighth-points are in one inch.
-            </summary>
-            <remarks>
-            By definition, there are exactly 576 eighth-points in one inch.
-            </remarks>
-        </member>
-        <member name="F:DocumentModel.EighthPoints.EighthPointsInPoint">
-            <summary>
-            How many eighth-points are in one point.
-            </summary>
-            <remarks>
-            By definition, there are exactly 8 eighth-points in one point.
-            </remarks>
-        </member>
-        <member name="F:DocumentModel.EighthPoints.value">
-            <summary>
-            The internal value storing the measurement in eighth-points.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EighthPoints"/> struct from a string value.
-            </summary>
-            <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
-            <remarks>
-            <para>Supported formats:</para>
-            <list type="bullet">
-            <item><description>"100" - interpreted as eighth-points</description></item>
-            <item><description>"10mm" - millimeters</description></item>
-            <item><description>"1cm" - centimeters</description></item>
-            <item><description>"12pt" - points (will be converted to 96 eighth-points)</description></item>
-            <item><description>"1in" - inches (will be converted to 576 eighth-points)</description></item>
-            </list>
-            <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.#ctor(System.UInt32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EighthPoints"/> struct from a 32-bit unsigned integer value.
-            </summary>
-            <param name="value">The value in eighth-points.</param>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EighthPoints"/> struct from a 32-bit signed integer value.
-            </summary>
-            <param name="value">The value in eighth-points.</param>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.#ctor(System.UInt64)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EighthPoints"/> struct from a 64-bit unsigned integer value.
-            </summary>
-            <param name="value">The value in eighth-points.</param>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.#ctor(System.Int64)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EighthPoints"/> struct from a 64-bit signed integer value.
-            </summary>
-            <param name="value">The value in eighth-points.</param>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.ToMM">
-            <summary>
-            Converts the eighth-points value to millimeters.
-            </summary>
-            <returns>The measurement in millimeters as a double-precision floating-point number.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.ToCM">
-            <summary>
-            Converts the eighth-points value to centimeters.
-            </summary>
-            <returns>The measurement in centimeters as a double-precision floating-point number.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.ToInch">
-            <summary>
-            Converts the eighth-points value to inches.
-            </summary>
-            <returns>The measurement in inches as a double-precision floating-point number.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.ToPoints">
-            <summary>
-            Converts the eighth-points value to points.
-            </summary>
-            <returns>The measurement in points as a double-precision floating-point number.</returns>
-            <remarks>
-            Since there are 8 eighth-points per point, this method divides the internal value by 8.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.ToString">
-            <summary>
-            Converts the value of this instance to its equivalent string representation.
-            </summary>
-            <returns>The string representation of the eighth-points value without unit suffix.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.ToString(System.String)">
-            <summary>
-            Converts the value to string using the specified unit.
-            </summary>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified unit suffix.</returns>
-            <remarks>
-            When a unit is specified, the value is converted from eighth-points to the target unit before formatting.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.ToString(System.Int32,System.String)">
-            <summary>
-            Converts the value to string using the specified unit and precision (fractional digits count).
-            </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified precision and unit suffix.</returns>
-            <remarks>
-            When a unit is specified, the value is converted from eighth-points to the target unit before formatting.
-            Fixed format is used for the numeric part.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.ToString(System.Int32,System.IFormatProvider,System.String)">
-            <summary>
-            Converts the value to string using the specified unit, precision (fractional digits count),
-            and format provider to determine digit separator. Fixed format is used.
-            </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
-            <remarks>
-            <para>When a unit is specified, the value is converted from eighth-points to the target unit before formatting.</para>
-            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.ToString(System.IFormatProvider,System.String)">
-            <summary>
-            Converts the value to string using the specified unit and format provider to determine digit separator.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
-            <remarks>
-            <para>When a unit is specified, the value is converted from eighth-points to the target unit before formatting.</para>
-            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(System.String)~DocumentModel.EighthPoints">
-            <summary>
-            Implicitly converts a string to an <see cref="T:DocumentModel.EighthPoints"/> value.
-            </summary>
-            <param name="value">The string to convert.</param>
-            <returns>An <see cref="T:DocumentModel.EighthPoints"/> value parsed from the string.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(DocumentModel.EighthPoints)~System.String">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.EighthPoints"/> value to a string.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EighthPoints"/> value to convert.</param>
-            <returns>A string representation of the eighth-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(System.Int16)~DocumentModel.EighthPoints">
-            <summary>
-            Implicitly converts a 16-bit signed integer to an <see cref="T:DocumentModel.EighthPoints"/> value.
-            </summary>
-            <param name="value">The 16-bit signed integer to convert.</param>
-            <returns>An <see cref="T:DocumentModel.EighthPoints"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(DocumentModel.EighthPoints)~System.Int16">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.EighthPoints"/> value to a 16-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EighthPoints"/> value to convert.</param>
-            <returns>A 16-bit signed integer representation of the eighth-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(System.UInt16)~DocumentModel.EighthPoints">
-            <summary>
-            Implicitly converts a 16-bit unsigned integer to an <see cref="T:DocumentModel.EighthPoints"/> value.
-            </summary>
-            <param name="value">The 16-bit unsigned integer to convert.</param>
-            <returns>An <see cref="T:DocumentModel.EighthPoints"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(DocumentModel.EighthPoints)~System.UInt16">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.EighthPoints"/> value to a 16-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EighthPoints"/> value to convert.</param>
-            <returns>A 16-bit unsigned integer representation of the eighth-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(System.Int32)~DocumentModel.EighthPoints">
-            <summary>
-            Implicitly converts a 32-bit signed integer to an <see cref="T:DocumentModel.EighthPoints"/> value.
-            </summary>
-            <param name="value">The 32-bit signed integer to convert.</param>
-            <returns>An <see cref="T:DocumentModel.EighthPoints"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(DocumentModel.EighthPoints)~System.Int32">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.EighthPoints"/> value to a 32-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EighthPoints"/> value to convert.</param>
-            <returns>A 32-bit signed integer representation of the eighth-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(System.UInt32)~DocumentModel.EighthPoints">
-            <summary>
-            Implicitly converts a 32-bit unsigned integer to an <see cref="T:DocumentModel.EighthPoints"/> value.
-            </summary>
-            <param name="value">The 32-bit unsigned integer to convert.</param>
-            <returns>An <see cref="T:DocumentModel.EighthPoints"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(DocumentModel.EighthPoints)~System.UInt32">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.EighthPoints"/> value to a 32-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EighthPoints"/> value to convert.</param>
-            <returns>A 32-bit unsigned integer representation of the eighth-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(System.Int64)~DocumentModel.EighthPoints">
-            <summary>
-            Implicitly converts a 64-bit signed integer to an <see cref="T:DocumentModel.EighthPoints"/> value.
-            </summary>
-            <param name="value">The 64-bit signed integer to convert.</param>
-            <returns>An <see cref="T:DocumentModel.EighthPoints"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(DocumentModel.EighthPoints)~System.Int64">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.EighthPoints"/> value to a 64-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EighthPoints"/> value to convert.</param>
-            <returns>A 64-bit signed integer representation of the eighth-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(System.UInt64)~DocumentModel.EighthPoints">
-            <summary>
-            Implicitly converts a 64-bit unsigned integer to an <see cref="T:DocumentModel.EighthPoints"/> value.
-            </summary>
-            <param name="value">The 64-bit unsigned integer to convert.</param>
-            <returns>An <see cref="T:DocumentModel.EighthPoints"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.op_Implicit(DocumentModel.EighthPoints)~System.UInt64">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.EighthPoints"/> value to a 64-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EighthPoints"/> value to convert.</param>
-            <returns>A 64-bit unsigned integer representation of the eighth-points value.</returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.CompareTo(DocumentModel.EighthPoints)">
-            <summary>
-            Compares this instance to a specified <see cref="T:DocumentModel.EighthPoints"/> object and returns an indication of their relative values.
-            </summary>
-            <param name="other">An <see cref="T:DocumentModel.EighthPoints"/> object to compare.</param>
-            <returns>
-            A signed number indicating the relative values of this instance and <paramref name="other"/>.
-            Less than zero if this instance is less than <paramref name="other"/>;
-            zero if this instance equals <paramref name="other"/>;
-            greater than zero if this instance is greater than <paramref name="other"/>.
-            </returns>
-        </member>
-        <member name="M:DocumentModel.EighthPoints.GetHashCode">
-            <summary>
-            Returns the hash code for this instance.
-            </summary>
-            <returns>A 32-bit signed integer hash code.</returns>
-        </member>
-        <member name="T:DocumentModel.EighthPointsJsonConverter">
-            <summary>
-            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.EighthPoints"/> structure.
-            </summary>
-            <remarks>
-            This converter handles both string and numeric JSON tokens for deserialization,
-            and writes eighth-points values as strings for compatibility with Office Open XML conventions.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EighthPointsJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
-            <summary>
-            Reads and converts JSON to an <see cref="T:DocumentModel.EighthPoints"/> value.
-            </summary>
-            <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader"/> to read from.</param>
-            <param name="typeToConvert">The type to convert.</param>
-            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
-            <returns>An <see cref="T:DocumentModel.EighthPoints"/> value parsed from the JSON input.</returns>
-            <exception cref="T:System.Text.Json.JsonException">
-            Thrown when:
-            <list type="bullet">
-            <item><description>The JSON token is a string but contains a null value.</description></item>
-            <item><description>The string value cannot be parsed as a valid eighth-points measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or in).</description></item>
-            <item><description>The JSON token is a number but cannot be converted to a 64-bit integer.</description></item>
-            <item><description>The JSON token is neither a string nor a number.</description></item>
-            </list>
-            </exception>
-            <remarks>
-            Accepts the following input formats:
-            <list type="bullet">
-            <item><description>String tokens with numeric values and optional unit suffixes (e.g., "576", "1in", "12pt", "25.4mm", "2.54cm")</description></item>
-            <item><description>Numeric tokens as integer values representing eighth-points directly</description></item>
-            </list>
-            Note: When using "pt" suffix, the value is multiplied by 8 (e.g., "12pt" becomes 96 eighth-points).
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EighthPointsJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.EighthPoints,System.Text.Json.JsonSerializerOptions)">
-            <summary>
-            Writes an <see cref="T:DocumentModel.EighthPoints"/> value as JSON.
-            </summary>
-            <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter"/> to write to.</param>
-            <param name="value">The <see cref="T:DocumentModel.EighthPoints"/> value to serialize.</param>
-            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
-            <remarks>
-            Writes the eighth-points value as a numeric string without unit suffix.
-            For example, a value of 576 eighth-points (1 inch) is written as "576".
-            </remarks>
-        </member>
         <member name="T:DocumentModel.EMU">
             <summary>
             Provides XML serialization support for the <see cref="T:DocumentModel.EMU"/> structure.
@@ -1885,7 +1513,7 @@
             The value is written as a plain numeric string representing EMU without unit suffix.
             </remarks>
         </member>
-        <member name="F:DocumentModel.EMU.EMUInMM">
+        <member name="F:DocumentModel.EMU.EMUinMM">
             <summary>
             How many EMU are in one millimeter.
             There is a small difference between real and nominal factors.
@@ -1894,16 +1522,16 @@
             The value is approximately 36000 EMU per millimeter, calculated as 914400 / 25.4.
             </remarks>
         </member>
-        <member name="F:DocumentModel.EMU.EMUInCM">
+        <member name="F:DocumentModel.EMU.EMUinCM">
             <summary>
             How many EMU are in one centimeter.
             There is a small difference between real and nominal factors.
             </summary>
             <remarks>
-            The value is approximately 360000 EMU per centimeter, calculated as EMUInMM * 10.0.
+            The value is approximately 360000 EMU per centimeter, calculated as EMUinMM * 10.0.
             </remarks>
         </member>
-        <member name="F:DocumentModel.EMU.EMUInInch">
+        <member name="F:DocumentModel.EMU.EMUinInch">
             <summary>
             How many EMU are in one inch.
             </summary>
@@ -1911,12 +1539,20 @@
             By definition, there are exactly 914400 EMU in one inch.
             </remarks>
         </member>
-        <member name="F:DocumentModel.EMU.EMUInPoint">
+        <member name="F:DocumentModel.EMU.EMUinPT">
             <summary>
             How many EMU are in one point.
             </summary>
             <remarks>
             By definition, there are proximately 12694 EMU in one point (1/72 of an inch).
+            </remarks>
+        </member>
+        <member name="F:DocumentModel.EMU.EMUinTwips">
+            <summary>
+            How many EMU are in one twips.
+            </summary>
+            <remarks>
+            By definition, there are exactly 635 EMU in one twip (1/1440 of an inch, or 1/20 of a point).
             </remarks>
         </member>
         <member name="M:DocumentModel.EMU.#ctor(System.String)">
@@ -1978,7 +1614,7 @@
             </summary>
             <returns>The measurement in inches as a double-precision floating-point number.</returns>
         </member>
-        <member name="M:DocumentModel.EMU.ToPoints">
+        <member name="M:DocumentModel.EMU.ToPT">
             <summary>
             Converts the EMU value to points.
             </summary>
@@ -1986,6 +1622,12 @@
             <remarks>
             A point is defined as 1/72 of an inch.
             </remarks>
+        </member>
+        <member name="M:DocumentModel.EMU.ToTwips">
+            <summary>
+            Converts the EMU value to twips.
+            </summary>
+            <returns>The measurement in twips as a double-precision floating-point number.</returns>
         </member>
         <member name="M:DocumentModel.EMU.ToString">
             <summary>
@@ -2212,178 +1854,192 @@
             For example, a value of 1440 EMU is written as "1440".
             </remarks>
         </member>
-        <member name="T:DocumentModel.HalfPoints">
+        <member name="T:DocumentModel.EPS">
             <summary>
-            Provides XML serialization support for the <see cref="T:DocumentModel.HalfPoints"/> structure.
+            Provides XML serialization support for the <see cref="T:DocumentModel.EPS"/> structure.
             </summary>
             <summary>
-            Represents a measurement in half-points (half of a typographic point).
-            A half-point is defined as 1/144 of an inch, commonly used for fine-grained typography adjustments.
+            Represents a measurement in eighth-points (one-eighth of a typographic point).
+            An eighth-point is defined as 1/576 of an inch, providing extremely fine-grained precision for typography.
             Supports conversions to/from millimeters, centimeters, inches, and points.
             </summary>
             <remarks>
-            Half-points provide finer precision than points for typographic measurements in desktop publishing and word processing.
+            Eighth-points provide the finest precision among point-based measurements for typographic adjustments.
             This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
-            Note: 1 half-point = 0.5 points = 1/144 inch.
+            Note: 1 eighth-point = 0.125 points = 1/576 inch. There are 8 eighth-points in 1 point.
             </remarks>
         </member>
-        <member name="M:DocumentModel.HalfPoints.System#Xml#Serialization#IXmlSerializable#GetSchema">
+        <member name="M:DocumentModel.EPS.System#Xml#Serialization#IXmlSerializable#GetSchema">
             <summary>
             This method is reserved and should not be used. Returns null as no schema is required.
             </summary>
             <returns>Always returns null.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+        <member name="M:DocumentModel.EPS.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
             <summary>
-            Deserializes the <see cref="T:DocumentModel.HalfPoints"/> value from XML.
+            Deserializes the <see cref="T:DocumentModel.EPS"/> value from XML.
             Accepts numeric values and values with unit suffixes (mm, cm, pt, in).
             </summary>
             <param name="reader">The <see cref="T:System.Xml.XmlReader"/> to read from.</param>
             <remarks>
             The method handles the following formats:
             <list type="bullet">
-            <item><description>Plain numeric values (e.g., "144" representing half-points directly)</description></item>
+            <item><description>Plain numeric values (e.g., "576" representing eighth-points directly)</description></item>
             <item><description>Values with millimeter suffix (e.g., "25.4mm")</description></item>
             <item><description>Values with centimeter suffix (e.g., "2.54cm")</description></item>
-            <item><description>Values with point suffix (e.g., "12pt" will be converted to 24 half-points)</description></item>
-            <item><description>Values with inch suffix (e.g., "1in" will be converted to 144 half-points)</description></item>
+            <item><description>Values with point suffix (e.g., "12pt" will be converted to 96 eighth-points)</description></item>
+            <item><description>Values with inch suffix (e.g., "1in" will be converted to 576 eighth-points)</description></item>
             <item><description>Empty elements</description></item>
             </list>
             Commas in the input are automatically replaced with periods for decimal separator consistency.
             </remarks>
         </member>
-        <member name="M:DocumentModel.HalfPoints.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+        <member name="M:DocumentModel.EPS.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
             <summary>
-            Serializes the <see cref="T:DocumentModel.HalfPoints"/> value to XML.
+            Serializes the <see cref="T:DocumentModel.EPS"/> value to XML.
             </summary>
             <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
             <remarks>
-            The value is written as a plain numeric string representing half-points without unit suffix.
+            The value is written as a plain numeric string representing eighth-points without unit suffix.
             </remarks>
         </member>
-        <member name="F:DocumentModel.HalfPoints.HalfPointsInMM">
+        <member name="F:DocumentModel.EPS.EPSinMM">
             <summary>
-            How many half-points are in one millimeter.
+            How many eighth-points are in one millimeter.
             There is a small difference between real and nominal factors.
             </summary>
             <remarks>
-            The value is approximately 5.67 half-points per millimeter, calculated as 144 / 25.4.
+            The value is approximately 22.68 eighth-points per millimeter, calculated as 576 / 25.4.
             </remarks>
         </member>
-        <member name="F:DocumentModel.HalfPoints.HalfPointsInCM">
+        <member name="F:DocumentModel.EPS.EPSinCM">
             <summary>
-            How many half-points are in one centimeter.
+            How many eighth-points are in one centimeter.
             </summary>
             <remarks>
-            The value is approximately 56.7 half-points per centimeter, calculated as HalfPointsInMM * 10.0.
+            The value is approximately 226.8 eighth-points per centimeter, calculated as EPSinMM * 10.0.
             </remarks>
         </member>
-        <member name="F:DocumentModel.HalfPoints.HalfPointsInInch">
+        <member name="F:DocumentModel.EPS.EPSinInch">
             <summary>
-            How many half-points are in one inch.
+            How many eighth-points are in one inch.
             </summary>
             <remarks>
-            By definition, there are exactly 144 half-points in one inch.
+            By definition, there are exactly 576 eighth-points in one inch.
             </remarks>
         </member>
-        <member name="F:DocumentModel.HalfPoints.HalfPointsInPoint">
+        <member name="F:DocumentModel.EPS.EPSinPT">
             <summary>
-            How many half-points are in one point.
+            How many eighth-points are in one point.
             </summary>
             <remarks>
-            By definition, there are exactly 2 half-points in one point.
+            By definition, there are exactly 8 eighth-points in one point.
             </remarks>
         </member>
-        <member name="F:DocumentModel.HalfPoints.value">
+        <member name="F:DocumentModel.EPS.EPSinTwips">
             <summary>
-            The internal value storing the measurement in half-points.
+            How many eighth-points are in one twips.
+            </summary>
+            <remarks>
+            By definition, there are exactly 2.5 twips in one eight-point.
+            </remarks>
+        </member>
+        <member name="F:DocumentModel.EPS.value">
+            <summary>
+            The internal value storing the measurement in eighth-points.
             </summary>
         </member>
-        <member name="M:DocumentModel.HalfPoints.#ctor(System.String)">
+        <member name="M:DocumentModel.EPS.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.HalfPoints"/> struct from a string value.
+            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> struct from a string value.
             </summary>
             <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
             <remarks>
             <para>Supported formats:</para>
             <list type="bullet">
-            <item><description>"100" - interpreted as half-points</description></item>
+            <item><description>"100" - interpreted as eighth-points</description></item>
             <item><description>"10mm" - millimeters</description></item>
             <item><description>"1cm" - centimeters</description></item>
-            <item><description>"12pt" - points (will be converted to 24 half-points)</description></item>
-            <item><description>"1in" - inches (will be converted to 144 half-points)</description></item>
+            <item><description>"12pt" - points (will be converted to 96 eighth-points)</description></item>
+            <item><description>"1in" - inches (will be converted to 576 eighth-points)</description></item>
             </list>
             <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
             </remarks>
         </member>
-        <member name="M:DocumentModel.HalfPoints.#ctor(System.UInt32)">
+        <member name="M:DocumentModel.EPS.#ctor(System.UInt32)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.HalfPoints"/> struct from a 32-bit unsigned integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> struct from a 32-bit unsigned integer value.
             </summary>
-            <param name="value">The value in half-points.</param>
+            <param name="value">The value in eighth-points.</param>
         </member>
-        <member name="M:DocumentModel.HalfPoints.#ctor(System.Int32)">
+        <member name="M:DocumentModel.EPS.#ctor(System.Int32)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.HalfPoints"/> struct from a 32-bit signed integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> struct from a 32-bit signed integer value.
             </summary>
-            <param name="value">The value in half-points.</param>
+            <param name="value">The value in eighth-points.</param>
         </member>
-        <member name="M:DocumentModel.HalfPoints.#ctor(System.UInt64)">
+        <member name="M:DocumentModel.EPS.#ctor(System.UInt64)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.HalfPoints"/> struct from a 64-bit unsigned integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> struct from a 64-bit unsigned integer value.
             </summary>
-            <param name="value">The value in half-points.</param>
+            <param name="value">The value in eighth-points.</param>
         </member>
-        <member name="M:DocumentModel.HalfPoints.#ctor(System.Int64)">
+        <member name="M:DocumentModel.EPS.#ctor(System.Int64)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.HalfPoints"/> struct from a 64-bit signed integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> struct from a 64-bit signed integer value.
             </summary>
-            <param name="value">The value in half-points.</param>
+            <param name="value">The value in eighth-points.</param>
         </member>
-        <member name="M:DocumentModel.HalfPoints.ToMM">
+        <member name="M:DocumentModel.EPS.ToMM">
             <summary>
-            Converts the half-points value to millimeters.
+            Converts the eighth-points value to millimeters.
             </summary>
             <returns>The measurement in millimeters as a double-precision floating-point number.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.ToCM">
+        <member name="M:DocumentModel.EPS.ToCM">
             <summary>
-            Converts the half-points value to centimeters.
+            Converts the eighth-points value to centimeters.
             </summary>
             <returns>The measurement in centimeters as a double-precision floating-point number.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.ToInch">
+        <member name="M:DocumentModel.EPS.ToInch">
             <summary>
-            Converts the half-points value to inches.
+            Converts the eighth-points value to inches.
             </summary>
             <returns>The measurement in inches as a double-precision floating-point number.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.ToPoints">
+        <member name="M:DocumentModel.EPS.ToPT">
             <summary>
-            Converts the half-points value to points.
+            Converts the eighth-points value to points.
             </summary>
             <returns>The measurement in points as a double-precision floating-point number.</returns>
             <remarks>
-            Since there are 2 half-points per point, this method divides the internal value by 2.
+            Since there are 8 eighth-points per point, this method divides the internal value by 8.
             </remarks>
         </member>
-        <member name="M:DocumentModel.HalfPoints.ToString">
+        <member name="M:DocumentModel.EPS.ToTwips">
+            <summary>
+            Converts the eighth-points value to twips.
+            </summary>
+            <returns>The measurement in twips as a double-precision floating-point number.</returns>
+        </member>
+        <member name="M:DocumentModel.EPS.ToString">
             <summary>
             Converts the value of this instance to its equivalent string representation.
             </summary>
-            <returns>The string representation of the half-points value without unit suffix.</returns>
+            <returns>The string representation of the eighth-points value without unit suffix.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.ToString(System.String)">
+        <member name="M:DocumentModel.EPS.ToString(System.String)">
             <summary>
             Converts the value to string using the specified unit.
             </summary>
             <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
             <returns>The string representation of the value with the specified unit suffix.</returns>
             <remarks>
-            When a unit is specified, the value is converted from half-points to the target unit before formatting.
+            When a unit is specified, the value is converted from eighth-points to the target unit before formatting.
             </remarks>
         </member>
-        <member name="M:DocumentModel.HalfPoints.ToString(System.Int32,System.String)">
+        <member name="M:DocumentModel.EPS.ToString(System.Int32,System.String)">
             <summary>
             Converts the value to string using the specified unit and precision (fractional digits count).
             </summary>
@@ -2391,11 +2047,11 @@
             <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
             <returns>The string representation of the value with the specified precision and unit suffix.</returns>
             <remarks>
-            When a unit is specified, the value is converted from half-points to the target unit before formatting.
+            When a unit is specified, the value is converted from eighth-points to the target unit before formatting.
             Fixed format is used for the numeric part.
             </remarks>
         </member>
-        <member name="M:DocumentModel.HalfPoints.ToString(System.Int32,System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.EPS.ToString(System.Int32,System.IFormatProvider,System.String)">
             <summary>
             Converts the value to string using the specified unit, precision (fractional digits count),
             and format provider to determine digit separator. Fixed format is used.
@@ -2405,11 +2061,11 @@
             <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
             <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
             <remarks>
-            <para>When a unit is specified, the value is converted from half-points to the target unit before formatting.</para>
+            <para>When a unit is specified, the value is converted from eighth-points to the target unit before formatting.</para>
             <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
             </remarks>
         </member>
-        <member name="M:DocumentModel.HalfPoints.ToString(System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.EPS.ToString(System.IFormatProvider,System.String)">
             <summary>
             Converts the value to string using the specified unit and format provider to determine digit separator.
             </summary>
@@ -2417,113 +2073,113 @@
             <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
             <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
             <remarks>
-            <para>When a unit is specified, the value is converted from half-points to the target unit before formatting.</para>
+            <para>When a unit is specified, the value is converted from eighth-points to the target unit before formatting.</para>
             <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
             </remarks>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(System.String)~DocumentModel.HalfPoints">
+        <member name="M:DocumentModel.EPS.op_Implicit(System.String)~DocumentModel.EPS">
             <summary>
-            Implicitly converts a string to a <see cref="T:DocumentModel.HalfPoints"/> value.
+            Implicitly converts a string to an <see cref="T:DocumentModel.EPS"/> value.
             </summary>
             <param name="value">The string to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HalfPoints"/> value parsed from the string.</returns>
+            <returns>An <see cref="T:DocumentModel.EPS"/> value parsed from the string.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(DocumentModel.HalfPoints)~System.String">
+        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.String">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HalfPoints"/> value to a string.
+            Implicitly converts an <see cref="T:DocumentModel.EPS"/> value to a string.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.HalfPoints"/> value to convert.</param>
-            <returns>A string representation of the half-points value.</returns>
+            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
+            <returns>A string representation of the eighth-points value.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(System.Int16)~DocumentModel.HalfPoints">
+        <member name="M:DocumentModel.EPS.op_Implicit(System.Int16)~DocumentModel.EPS">
             <summary>
-            Implicitly converts a 16-bit signed integer to a <see cref="T:DocumentModel.HalfPoints"/> value.
+            Implicitly converts a 16-bit signed integer to an <see cref="T:DocumentModel.EPS"/> value.
             </summary>
             <param name="value">The 16-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HalfPoints"/> value representing the integer.</returns>
+            <returns>An <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(DocumentModel.HalfPoints)~System.Int16">
+        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.Int16">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HalfPoints"/> value to a 16-bit signed integer.
+            Implicitly converts an <see cref="T:DocumentModel.EPS"/> value to a 16-bit signed integer.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.HalfPoints"/> value to convert.</param>
-            <returns>A 16-bit signed integer representation of the half-points value.</returns>
+            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
+            <returns>A 16-bit signed integer representation of the eighth-points value.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(System.UInt16)~DocumentModel.HalfPoints">
+        <member name="M:DocumentModel.EPS.op_Implicit(System.UInt16)~DocumentModel.EPS">
             <summary>
-            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.HalfPoints"/> value.
+            Implicitly converts a 16-bit unsigned integer to an <see cref="T:DocumentModel.EPS"/> value.
             </summary>
             <param name="value">The 16-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HalfPoints"/> value representing the integer.</returns>
+            <returns>An <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(DocumentModel.HalfPoints)~System.UInt16">
+        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.UInt16">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HalfPoints"/> value to a 16-bit unsigned integer.
+            Implicitly converts an <see cref="T:DocumentModel.EPS"/> value to a 16-bit unsigned integer.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.HalfPoints"/> value to convert.</param>
-            <returns>A 16-bit unsigned integer representation of the half-points value.</returns>
+            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
+            <returns>A 16-bit unsigned integer representation of the eighth-points value.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(System.Int32)~DocumentModel.HalfPoints">
+        <member name="M:DocumentModel.EPS.op_Implicit(System.Int32)~DocumentModel.EPS">
             <summary>
-            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.HalfPoints"/> value.
+            Implicitly converts a 32-bit signed integer to an <see cref="T:DocumentModel.EPS"/> value.
             </summary>
             <param name="value">The 32-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HalfPoints"/> value representing the integer.</returns>
+            <returns>An <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(DocumentModel.HalfPoints)~System.Int32">
+        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.Int32">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HalfPoints"/> value to a 32-bit signed integer.
+            Implicitly converts an <see cref="T:DocumentModel.EPS"/> value to a 32-bit signed integer.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.HalfPoints"/> value to convert.</param>
-            <returns>A 32-bit signed integer representation of the half-points value.</returns>
+            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
+            <returns>A 32-bit signed integer representation of the eighth-points value.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(System.UInt32)~DocumentModel.HalfPoints">
+        <member name="M:DocumentModel.EPS.op_Implicit(System.UInt32)~DocumentModel.EPS">
             <summary>
-            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.HalfPoints"/> value.
+            Implicitly converts a 32-bit unsigned integer to an <see cref="T:DocumentModel.EPS"/> value.
             </summary>
             <param name="value">The 32-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HalfPoints"/> value representing the integer.</returns>
+            <returns>An <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(DocumentModel.HalfPoints)~System.UInt32">
+        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.UInt32">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HalfPoints"/> value to a 32-bit unsigned integer.
+            Implicitly converts an <see cref="T:DocumentModel.EPS"/> value to a 32-bit unsigned integer.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.HalfPoints"/> value to convert.</param>
-            <returns>A 32-bit unsigned integer representation of the half-points value.</returns>
+            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
+            <returns>A 32-bit unsigned integer representation of the eighth-points value.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(System.Int64)~DocumentModel.HalfPoints">
+        <member name="M:DocumentModel.EPS.op_Implicit(System.Int64)~DocumentModel.EPS">
             <summary>
-            Implicitly converts a 64-bit signed integer to a <see cref="T:DocumentModel.HalfPoints"/> value.
+            Implicitly converts a 64-bit signed integer to an <see cref="T:DocumentModel.EPS"/> value.
             </summary>
             <param name="value">The 64-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HalfPoints"/> value representing the integer.</returns>
+            <returns>An <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(DocumentModel.HalfPoints)~System.Int64">
+        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.Int64">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HalfPoints"/> value to a 64-bit signed integer.
+            Implicitly converts an <see cref="T:DocumentModel.EPS"/> value to a 64-bit signed integer.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.HalfPoints"/> value to convert.</param>
-            <returns>A 64-bit signed integer representation of the half-points value.</returns>
+            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
+            <returns>A 64-bit signed integer representation of the eighth-points value.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(System.UInt64)~DocumentModel.HalfPoints">
+        <member name="M:DocumentModel.EPS.op_Implicit(System.UInt64)~DocumentModel.EPS">
             <summary>
-            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.HalfPoints"/> value.
+            Implicitly converts a 64-bit unsigned integer to an <see cref="T:DocumentModel.EPS"/> value.
             </summary>
             <param name="value">The 64-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HalfPoints"/> value representing the integer.</returns>
+            <returns>An <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.op_Implicit(DocumentModel.HalfPoints)~System.UInt64">
+        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.UInt64">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HalfPoints"/> value to a 64-bit unsigned integer.
+            Implicitly converts an <see cref="T:DocumentModel.EPS"/> value to a 64-bit unsigned integer.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.HalfPoints"/> value to convert.</param>
-            <returns>A 64-bit unsigned integer representation of the half-points value.</returns>
+            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
+            <returns>A 64-bit unsigned integer representation of the eighth-points value.</returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.CompareTo(DocumentModel.HalfPoints)">
+        <member name="M:DocumentModel.EPS.CompareTo(DocumentModel.EPS)">
             <summary>
-            Compares this instance to a specified <see cref="T:DocumentModel.HalfPoints"/> object and returns an indication of their relative values.
+            Compares this instance to a specified <see cref="T:DocumentModel.EPS"/> object and returns an indication of their relative values.
             </summary>
-            <param name="other">A <see cref="T:DocumentModel.HalfPoints"/> object to compare.</param>
+            <param name="other">An <see cref="T:DocumentModel.EPS"/> object to compare.</param>
             <returns>
             A signed number indicating the relative values of this instance and <paramref name="other"/>.
             Less than zero if this instance is less than <paramref name="other"/>;
@@ -2531,34 +2187,51 @@
             greater than zero if this instance is greater than <paramref name="other"/>.
             </returns>
         </member>
-        <member name="M:DocumentModel.HalfPoints.GetHashCode">
+        <member name="M:DocumentModel.EPS.GetHashCode">
             <summary>
             Returns the hash code for this instance.
             </summary>
             <returns>A 32-bit signed integer hash code.</returns>
         </member>
-        <member name="T:DocumentModel.HalfPointsJsonConverter">
+        <member name="M:DocumentModel.EPS.Equals(DocumentModel.EPS)">
             <summary>
-            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.HalfPoints"/> structure.
+            Compares this instance to another <see cref="T:DocumentModel.EPS"/> object for equality.
+            </summary>
+            <param name="other">An <see cref="T:DocumentModel.EPS"/> object to compare.</param>
+            <returns><c>true</c> if the objects are equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:DocumentModel.EPS.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current instance of EighthPoints.
+            </summary>
+            <remarks>This method overrides Object.Equals to provide value equality comparison specific to EighthPoints
+            instances.</remarks>
+            <param name="obj">The object to compare with the current EighthPoints instance. This parameter can be null.</param>
+            <returns>true if the specified object is an instance of EighthPoints and is equal to the current instance; otherwise,
+            false.</returns>
+        </member>
+        <member name="T:DocumentModel.EPSJsonConverter">
+            <summary>
+            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.EPS"/> structure.
             </summary>
             <remarks>
             This converter handles both string and numeric JSON tokens for deserialization,
-            and writes half-points values as strings for compatibility with Office Open XML conventions.
+            and writes eighth-points values as strings for compatibility with Office Open XML conventions.
             </remarks>
         </member>
-        <member name="M:DocumentModel.HalfPointsJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+        <member name="M:DocumentModel.EPSJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
             <summary>
-            Reads and converts JSON to a <see cref="T:DocumentModel.HalfPoints"/> value.
+            Reads and converts JSON to an <see cref="T:DocumentModel.EPS"/> value.
             </summary>
             <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader"/> to read from.</param>
             <param name="typeToConvert">The type to convert.</param>
             <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
-            <returns>A <see cref="T:DocumentModel.HalfPoints"/> value parsed from the JSON input.</returns>
+            <returns>An <see cref="T:DocumentModel.EPS"/> value parsed from the JSON input.</returns>
             <exception cref="T:System.Text.Json.JsonException">
             Thrown when:
             <list type="bullet">
             <item><description>The JSON token is a string but contains a null value.</description></item>
-            <item><description>The string value cannot be parsed as a valid half-points measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or in).</description></item>
+            <item><description>The string value cannot be parsed as a valid eighth-points measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or in).</description></item>
             <item><description>The JSON token is a number but cannot be converted to a 64-bit integer.</description></item>
             <item><description>The JSON token is neither a string nor a number.</description></item>
             </list>
@@ -2566,22 +2239,22 @@
             <remarks>
             Accepts the following input formats:
             <list type="bullet">
-            <item><description>String tokens with numeric values and optional unit suffixes (e.g., "144", "1in", "12pt", "25.4mm", "2.54cm")</description></item>
-            <item><description>Numeric tokens as integer values representing half-points directly</description></item>
+            <item><description>String tokens with numeric values and optional unit suffixes (e.g., "576", "1in", "12pt", "25.4mm", "2.54cm")</description></item>
+            <item><description>Numeric tokens as integer values representing eighth-points directly</description></item>
             </list>
-            Note: When using "pt" suffix, the value is multiplied by 2 (e.g., "12pt" becomes 24 half-points).
+            Note: When using "pt" suffix, the value is multiplied by 8 (e.g., "12pt" becomes 96 eighth-points).
             </remarks>
         </member>
-        <member name="M:DocumentModel.HalfPointsJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.HalfPoints,System.Text.Json.JsonSerializerOptions)">
+        <member name="M:DocumentModel.EPSJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.EPS,System.Text.Json.JsonSerializerOptions)">
             <summary>
-            Writes a <see cref="T:DocumentModel.HalfPoints"/> value as JSON.
+            Writes an <see cref="T:DocumentModel.EPS"/> value as JSON.
             </summary>
             <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter"/> to write to.</param>
-            <param name="value">The <see cref="T:DocumentModel.HalfPoints"/> value to serialize.</param>
+            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to serialize.</param>
             <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
             <remarks>
-            Writes the half-points value as a numeric string without unit suffix.
-            For example, a value of 144 half-points (1 inch) is written as "144".
+            Writes the eighth-points value as a numeric string without unit suffix.
+            For example, a value of 576 eighth-points (1 inch) is written as "576".
             </remarks>
         </member>
         <member name="T:DocumentModel.HexBinary">
@@ -4889,6 +4562,409 @@
             This format is compatible with web standards and CSS color values.
             </remarks>
         </member>
+        <member name="T:DocumentModel.HPS">
+            <summary>
+            Provides XML serialization support for the <see cref="T:DocumentModel.HPS"/> structure.
+            </summary>
+            <summary>
+            Represents a measurement in half-points (half of a typographic point).
+            A half-point is defined as 1/144 of an inch, commonly used for fine-grained typography adjustments.
+            Supports conversions to/from millimeters, centimeters, inches, and points.
+            </summary>
+            <remarks>
+            Half-points provide finer precision than points for typographic measurements in desktop publishing and word processing.
+            This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
+            Note: 1 half-point = 0.5 points = 1/144 inch.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HPS.System#Xml#Serialization#IXmlSerializable#GetSchema">
+            <summary>
+            This method is reserved and should not be used. Returns null as no schema is required.
+            </summary>
+            <returns>Always returns null.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Deserializes the <see cref="T:DocumentModel.HPS"/> value from XML.
+            Accepts numeric values and values with unit suffixes (mm, cm, pt, in).
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> to read from.</param>
+            <remarks>
+            The method handles the following formats:
+            <list type="bullet">
+            <item><description>Plain numeric values (e.g., "144" representing half-points directly)</description></item>
+            <item><description>Values with millimeter suffix (e.g., "25.4mm")</description></item>
+            <item><description>Values with centimeter suffix (e.g., "2.54cm")</description></item>
+            <item><description>Values with point suffix (e.g., "12pt" will be converted to 24 half-points)</description></item>
+            <item><description>Values with inch suffix (e.g., "1in" will be converted to 144 half-points)</description></item>
+            <item><description>Empty elements</description></item>
+            </list>
+            Commas in the input are automatically replaced with periods for decimal separator consistency.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HPS.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Serializes the <see cref="T:DocumentModel.HPS"/> value to XML.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <remarks>
+            The value is written as a plain numeric string representing half-points without unit suffix.
+            </remarks>
+        </member>
+        <member name="F:DocumentModel.HPS.HPSinMM">
+            <summary>
+            How many half-points are in one millimeter.
+            There is a small difference between real and nominal factors.
+            </summary>
+            <remarks>
+            The value is approximately 5.67 half-points per millimeter, calculated as 144 / 25.4.
+            </remarks>
+        </member>
+        <member name="F:DocumentModel.HPS.HPSinCM">
+            <summary>
+            How many half-points are in one centimeter.
+            </summary>
+            <remarks>
+            The value is approximately 56.7 half-points per centimeter, calculated as HPSinMM * 10.0.
+            </remarks>
+        </member>
+        <member name="F:DocumentModel.HPS.HPSinInch">
+            <summary>
+            How many half-points are in one inch.
+            </summary>
+            <remarks>
+            By definition, there are exactly 144 half-points in one inch.
+            </remarks>
+        </member>
+        <member name="F:DocumentModel.HPS.HPSinPT">
+            <summary>
+            How many half-points are in one point.
+            </summary>
+            <remarks>
+            By definition, there are exactly 2 half-points in one point.
+            </remarks>
+        </member>
+        <member name="F:DocumentModel.HPS.HPSinTwips">
+            <summary>
+            How many half-points are in one twips.
+            </summary>
+            <remarks>
+            By definition, there are exactly 10 twips in one half-point.
+            </remarks>
+        </member>
+        <member name="F:DocumentModel.HPS.value">
+            <summary>
+            The internal value storing the measurement in half-points.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HPS.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a string value.
+            </summary>
+            <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
+            <remarks>
+            <para>Supported formats:</para>
+            <list type="bullet">
+            <item><description>"100" - interpreted as half-points</description></item>
+            <item><description>"10mm" - millimeters</description></item>
+            <item><description>"1cm" - centimeters</description></item>
+            <item><description>"12pt" - points (will be converted to 24 half-points)</description></item>
+            <item><description>"1in" - inches (will be converted to 144 half-points)</description></item>
+            </list>
+            <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HPS.#ctor(System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a 32-bit unsigned integer value.
+            </summary>
+            <param name="value">The value in half-points.</param>
+        </member>
+        <member name="M:DocumentModel.HPS.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a 32-bit signed integer value.
+            </summary>
+            <param name="value">The value in half-points.</param>
+        </member>
+        <member name="M:DocumentModel.HPS.#ctor(System.UInt64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a 64-bit unsigned integer value.
+            </summary>
+            <param name="value">The value in half-points.</param>
+        </member>
+        <member name="M:DocumentModel.HPS.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a 64-bit signed integer value.
+            </summary>
+            <param name="value">The value in half-points.</param>
+        </member>
+        <member name="M:DocumentModel.HPS.ToMM">
+            <summary>
+            Converts the half-points value to millimeters.
+            </summary>
+            <returns>The measurement in millimeters as a double-precision floating-point number.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.ToCM">
+            <summary>
+            Converts the half-points value to centimeters.
+            </summary>
+            <returns>The measurement in centimeters as a double-precision floating-point number.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.ToInch">
+            <summary>
+            Converts the half-points value to inches.
+            </summary>
+            <returns>The measurement in inches as a double-precision floating-point number.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.ToPT">
+            <summary>
+            Converts the half-points value to points.
+            </summary>
+            <returns>The measurement in points as a double-precision floating-point number.</returns>
+            <remarks>
+            Since there are 2 half-points per point, this method divides the internal value by 2.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HPS.ToTwips">
+            <summary>
+            Converts the half-points value to twips.
+            </summary>
+            <returns>The measurement in twips as a double-precision floating-point number.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.ToString">
+            <summary>
+            Converts the value of this instance to its equivalent string representation.
+            </summary>
+            <returns>The string representation of the half-points value without unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.ToString(System.String)">
+            <summary>
+            Converts the value to string using the specified unit.
+            </summary>
+            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified unit suffix.</returns>
+            <remarks>
+            When a unit is specified, the value is converted from half-points to the target unit before formatting.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HPS.ToString(System.Int32,System.String)">
+            <summary>
+            Converts the value to string using the specified unit and precision (fractional digits count).
+            </summary>
+            <param name="precision">The number of fractional digits in the return value.</param>
+            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified precision and unit suffix.</returns>
+            <remarks>
+            When a unit is specified, the value is converted from half-points to the target unit before formatting.
+            Fixed format is used for the numeric part.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HPS.ToString(System.Int32,System.IFormatProvider,System.String)">
+            <summary>
+            Converts the value to string using the specified unit, precision (fractional digits count),
+            and format provider to determine digit separator. Fixed format is used.
+            </summary>
+            <param name="precision">The number of fractional digits in the return value.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
+            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
+            <remarks>
+            <para>When a unit is specified, the value is converted from half-points to the target unit before formatting.</para>
+            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HPS.ToString(System.IFormatProvider,System.String)">
+            <summary>
+            Converts the value to string using the specified unit and format provider to determine digit separator.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
+            <param name="unit">The unit suffix to append (e.g., "mm", "cm", "pt", "in"), or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
+            <remarks>
+            <para>When a unit is specified, the value is converted from half-points to the target unit before formatting.</para>
+            <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(System.String)~DocumentModel.HPS">
+            <summary>
+            Implicitly converts a string to a <see cref="T:DocumentModel.HPS"/> value.
+            </summary>
+            <param name="value">The string to convert.</param>
+            <returns>A <see cref="T:DocumentModel.HPS"/> value parsed from the string.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.String">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a string.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
+            <returns>A string representation of the half-points value.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(System.Int16)~DocumentModel.HPS">
+            <summary>
+            Implicitly converts a 16-bit signed integer to a <see cref="T:DocumentModel.HPS"/> value.
+            </summary>
+            <param name="value">The 16-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.Int16">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a 16-bit signed integer.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
+            <returns>A 16-bit signed integer representation of the half-points value.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(System.UInt16)~DocumentModel.HPS">
+            <summary>
+            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.HPS"/> value.
+            </summary>
+            <param name="value">The 16-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.UInt16">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a 16-bit unsigned integer.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
+            <returns>A 16-bit unsigned integer representation of the half-points value.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(System.Int32)~DocumentModel.HPS">
+            <summary>
+            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.HPS"/> value.
+            </summary>
+            <param name="value">The 32-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.Int32">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a 32-bit signed integer.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
+            <returns>A 32-bit signed integer representation of the half-points value.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(System.UInt32)~DocumentModel.HPS">
+            <summary>
+            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.HPS"/> value.
+            </summary>
+            <param name="value">The 32-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.UInt32">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a 32-bit unsigned integer.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
+            <returns>A 32-bit unsigned integer representation of the half-points value.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(System.Int64)~DocumentModel.HPS">
+            <summary>
+            Implicitly converts a 64-bit signed integer to a <see cref="T:DocumentModel.HPS"/> value.
+            </summary>
+            <param name="value">The 64-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.Int64">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a 64-bit signed integer.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
+            <returns>A 64-bit signed integer representation of the half-points value.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(System.UInt64)~DocumentModel.HPS">
+            <summary>
+            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.HPS"/> value.
+            </summary>
+            <param name="value">The 64-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.UInt64">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a 64-bit unsigned integer.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
+            <returns>A 64-bit unsigned integer representation of the half-points value.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.CompareTo(DocumentModel.HPS)">
+            <summary>
+            Compares this instance to a specified <see cref="T:DocumentModel.HPS"/> object and returns an indication of their relative values.
+            </summary>
+            <param name="other">A <see cref="T:DocumentModel.HPS"/> object to compare.</param>
+            <returns>
+            A signed number indicating the relative values of this instance and <paramref name="other"/>.
+            Less than zero if this instance is less than <paramref name="other"/>;
+            zero if this instance equals <paramref name="other"/>;
+            greater than zero if this instance is greater than <paramref name="other"/>.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HPS.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="M:DocumentModel.HPS.Equals(DocumentModel.HPS)">
+            <summary>
+            Compares this instance to another <see cref="T:DocumentModel.HPS"/> object for equality.
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocumentModel.HPS.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current HalfPoints instance.
+            </summary>
+            <remarks>This method provides a type-specific equality comparison for HalfPoints objects, overriding the
+            base implementation to ensure accurate value comparison.</remarks>
+            <param name="obj">The object to compare with the current HalfPoints instance. This parameter can be null.</param>
+            <returns><see langword="true"/> if the specified object is a HalfPoints instance and is equal to the current instance;
+            otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="T:DocumentModel.HPSJsonConverter">
+            <summary>
+            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.HPS"/> structure.
+            </summary>
+            <remarks>
+            This converter handles both string and numeric JSON tokens for deserialization,
+            and writes half-points values as strings for compatibility with Office Open XML conventions.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HPSJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Reads and converts JSON to a <see cref="T:DocumentModel.HPS"/> value.
+            </summary>
+            <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader"/> to read from.</param>
+            <param name="typeToConvert">The type to convert.</param>
+            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
+            <returns>A <see cref="T:DocumentModel.HPS"/> value parsed from the JSON input.</returns>
+            <exception cref="T:System.Text.Json.JsonException">
+            Thrown when:
+            <list type="bullet">
+            <item><description>The JSON token is a string but contains a null value.</description></item>
+            <item><description>The string value cannot be parsed as a valid half-points measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or in).</description></item>
+            <item><description>The JSON token is a number but cannot be converted to a 64-bit integer.</description></item>
+            <item><description>The JSON token is neither a string nor a number.</description></item>
+            </list>
+            </exception>
+            <remarks>
+            Accepts the following input formats:
+            <list type="bullet">
+            <item><description>String tokens with numeric values and optional unit suffixes (e.g., "144", "1in", "12pt", "25.4mm", "2.54cm")</description></item>
+            <item><description>Numeric tokens as integer values representing half-points directly</description></item>
+            </list>
+            Note: When using "pt" suffix, the value is multiplied by 2 (e.g., "12pt" becomes 24 half-points).
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HPSJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.HPS,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Writes a <see cref="T:DocumentModel.HPS"/> value as JSON.
+            </summary>
+            <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter"/> to write to.</param>
+            <param name="value">The <see cref="T:DocumentModel.HPS"/> value to serialize.</param>
+            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
+            <remarks>
+            Writes the half-points value as a numeric string without unit suffix.
+            For example, a value of 144 half-points (1 inch) is written as "144".
+            </remarks>
+        </member>
         <member name="T:DocumentModel.ListOf`1">
             <summary>
             Represents a generic list of values that implements XSD list semantics.
@@ -5693,9 +5769,9 @@
             For example, a value of 50 is written as "50%".
             </remarks>
         </member>
-        <member name="T:DocumentModel.Points">
+        <member name="T:DocumentModel.PTS">
             <summary>
-            Provides XML serialization support for the <see cref="T:DocumentModel.Points"/> structure.
+            Provides XML serialization support for the <see cref="T:DocumentModel.PTS"/> structure.
             </summary>
             <summary>
             Represents a measurement in points (typographic unit).
@@ -5707,15 +5783,15 @@
             This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
             </remarks>
         </member>
-        <member name="M:DocumentModel.Points.System#Xml#Serialization#IXmlSerializable#GetSchema">
+        <member name="M:DocumentModel.PTS.System#Xml#Serialization#IXmlSerializable#GetSchema">
             <summary>
             This method is reserved and should not be used. Returns null as no schema is required.
             </summary>
             <returns>Always returns null.</returns>
         </member>
-        <member name="M:DocumentModel.Points.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+        <member name="M:DocumentModel.PTS.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
             <summary>
-            Deserializes the <see cref="T:DocumentModel.Points"/> value from XML.
+            Deserializes the <see cref="T:DocumentModel.PTS"/> value from XML.
             Accepts numeric values and values with unit suffixes (mm, cm, pt, in).
             </summary>
             <param name="reader">The <see cref="T:System.Xml.XmlReader"/> to read from.</param>
@@ -5732,16 +5808,16 @@
             Commas in the input are automatically replaced with periods for decimal separator consistency.
             </remarks>
         </member>
-        <member name="M:DocumentModel.Points.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+        <member name="M:DocumentModel.PTS.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
             <summary>
-            Serializes the <see cref="T:DocumentModel.Points"/> value to XML.
+            Serializes the <see cref="T:DocumentModel.PTS"/> value to XML.
             </summary>
             <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
             <remarks>
             The value is written as a plain numeric string representing points without unit suffix.
             </remarks>
         </member>
-        <member name="F:DocumentModel.Points.PointsInMM">
+        <member name="F:DocumentModel.PTS.PTSinMM">
             <summary>
             How many points are in one millimeter.
             There is a small difference between real and nominal factors.
@@ -5750,15 +5826,15 @@
             The value is approximately 2.83 points per millimeter, calculated as 72 / 25.4.
             </remarks>
         </member>
-        <member name="F:DocumentModel.Points.PointsInCM">
+        <member name="F:DocumentModel.PTS.PTSinCM">
             <summary>
             How many points are in one centimeter.
             </summary>
             <remarks>
-            The value is approximately 28.35 points per centimeter, calculated as PointsInMM * 10.0.
+            The value is approximately 28.35 points per centimeter, calculated as PTSinMM * 10.0.
             </remarks>
         </member>
-        <member name="F:DocumentModel.Points.PointsInInch">
+        <member name="F:DocumentModel.PTS.PTSinInch">
             <summary>
             How many points are in one inch.
             </summary>
@@ -5766,14 +5842,22 @@
             By definition, there are exactly 72 points in one inch.
             </remarks>
         </member>
-        <member name="F:DocumentModel.Points.value">
+        <member name="F:DocumentModel.PTS.PTSinTwips">
+            <summary>
+            How many points are in one twips.
+            </summary>
+            <remarks>
+            By definition, there are exactly 20 twips in one point.
+            </remarks>
+        </member>
+        <member name="F:DocumentModel.PTS.value">
             <summary>
             The internal value storing the measurement in points.
             </summary>
         </member>
-        <member name="M:DocumentModel.Points.#ctor(System.String)">
+        <member name="M:DocumentModel.PTS.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Points"/> struct from a string value.
+            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a string value.
             </summary>
             <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
             <remarks>
@@ -5788,49 +5872,49 @@
             <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
             </remarks>
         </member>
-        <member name="M:DocumentModel.Points.#ctor(System.UInt32)">
+        <member name="M:DocumentModel.PTS.#ctor(System.UInt32)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Points"/> struct from a 32-bit unsigned integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a 32-bit unsigned integer value.
             </summary>
             <param name="value">The value in points.</param>
         </member>
-        <member name="M:DocumentModel.Points.#ctor(System.Int32)">
+        <member name="M:DocumentModel.PTS.#ctor(System.Int32)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Points"/> struct from a 32-bit signed integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a 32-bit signed integer value.
             </summary>
             <param name="value">The value in points.</param>
         </member>
-        <member name="M:DocumentModel.Points.#ctor(System.UInt64)">
+        <member name="M:DocumentModel.PTS.#ctor(System.UInt64)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Points"/> struct from a 64-bit unsigned integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a 64-bit unsigned integer value.
             </summary>
             <param name="value">The value in points.</param>
         </member>
-        <member name="M:DocumentModel.Points.#ctor(System.Int64)">
+        <member name="M:DocumentModel.PTS.#ctor(System.Int64)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Points"/> struct from a 64-bit signed integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a 64-bit signed integer value.
             </summary>
             <param name="value">The value in points.</param>
         </member>
-        <member name="M:DocumentModel.Points.ToMM">
+        <member name="M:DocumentModel.PTS.ToMM">
             <summary>
             Converts the points value to millimeters.
             </summary>
             <returns>The measurement in millimeters as a double-precision floating-point number.</returns>
         </member>
-        <member name="M:DocumentModel.Points.ToCM">
+        <member name="M:DocumentModel.PTS.ToCM">
             <summary>
             Converts the points value to centimeters.
             </summary>
             <returns>The measurement in centimeters as a double-precision floating-point number.</returns>
         </member>
-        <member name="M:DocumentModel.Points.ToInch">
+        <member name="M:DocumentModel.PTS.ToInch">
             <summary>
             Converts the points value to inches.
             </summary>
             <returns>The measurement in inches as a double-precision floating-point number.</returns>
         </member>
-        <member name="M:DocumentModel.Points.ToPoints">
+        <member name="M:DocumentModel.PTS.ToPT">
             <summary>
             Converts the points value to points (returns the value itself as a double).
             </summary>
@@ -5839,13 +5923,19 @@
             This method is provided for consistency with other conversion methods and returns the internal value as a double.
             </remarks>
         </member>
-        <member name="M:DocumentModel.Points.ToString">
+        <member name="M:DocumentModel.PTS.ToTwips">
+            <summary>
+            Converts the points value to twips.
+            </summary>
+            <returns>The measurement in twips as a double-precision floating-point number.</returns>
+        </member>
+        <member name="M:DocumentModel.PTS.ToString">
             <summary>
             Converts the value of this instance to its equivalent string representation.
             </summary>
             <returns>The string representation of the points value without unit suffix.</returns>
         </member>
-        <member name="M:DocumentModel.Points.ToString(System.String)">
+        <member name="M:DocumentModel.PTS.ToString(System.String)">
             <summary>
             Converts the value to string using the specified unit.
             </summary>
@@ -5855,7 +5945,7 @@
             When a unit is specified, the value is converted from points to the target unit before formatting.
             </remarks>
         </member>
-        <member name="M:DocumentModel.Points.ToString(System.Int32,System.String)">
+        <member name="M:DocumentModel.PTS.ToString(System.Int32,System.String)">
             <summary>
             Converts the value to string using the specified unit and precision (fractional digits count).
             </summary>
@@ -5867,7 +5957,7 @@
             Fixed format is used for the numeric part.
             </remarks>
         </member>
-        <member name="M:DocumentModel.Points.ToString(System.Int32,System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.PTS.ToString(System.Int32,System.IFormatProvider,System.String)">
             <summary>
             Converts the value to string using the specified unit, precision (fractional digits count),
             and format provider to determine digit separator. Fixed format is used.
@@ -5881,7 +5971,7 @@
             <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
             </remarks>
         </member>
-        <member name="M:DocumentModel.Points.ToString(System.IFormatProvider,System.String)">
+        <member name="M:DocumentModel.PTS.ToString(System.IFormatProvider,System.String)">
             <summary>
             Converts the value to string using the specified unit and format provider to determine digit separator.
             </summary>
@@ -5893,109 +5983,109 @@
             <para>Supported unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), "in" (inches).</para>
             </remarks>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(System.String)~DocumentModel.Points">
+        <member name="M:DocumentModel.PTS.op_Implicit(System.String)~DocumentModel.PTS">
             <summary>
-            Implicitly converts a string to a <see cref="T:DocumentModel.Points"/> value.
+            Implicitly converts a string to a <see cref="T:DocumentModel.PTS"/> value.
             </summary>
             <param name="value">The string to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Points"/> value parsed from the string.</returns>
+            <returns>A <see cref="T:DocumentModel.PTS"/> value parsed from the string.</returns>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(DocumentModel.Points)~System.String">
+        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.String">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Points"/> value to a string.
+            Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a string.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.Points"/> value to convert.</param>
+            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
             <returns>A string representation of the points value.</returns>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(System.Int16)~DocumentModel.Points">
+        <member name="M:DocumentModel.PTS.op_Implicit(System.Int16)~DocumentModel.PTS">
             <summary>
-            Implicitly converts a 16-bit signed integer to a <see cref="T:DocumentModel.Points"/> value.
+            Implicitly converts a 16-bit signed integer to a <see cref="T:DocumentModel.PTS"/> value.
             </summary>
             <param name="value">The 16-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Points"/> value representing the integer.</returns>
+            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(DocumentModel.Points)~System.Int16">
+        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.Int16">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Points"/> value to a 16-bit signed integer.
+            Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a 16-bit signed integer.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.Points"/> value to convert.</param>
+            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
             <returns>A 16-bit signed integer representation of the points value.</returns>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(System.UInt16)~DocumentModel.Points">
+        <member name="M:DocumentModel.PTS.op_Implicit(System.UInt16)~DocumentModel.PTS">
             <summary>
-            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.Points"/> value.
+            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.PTS"/> value.
             </summary>
             <param name="value">The 16-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Points"/> value representing the integer.</returns>
+            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(DocumentModel.Points)~System.UInt16">
+        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.UInt16">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Points"/> value to a 16-bit unsigned integer.
+            Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a 16-bit unsigned integer.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.Points"/> value to convert.</param>
+            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
             <returns>A 16-bit unsigned integer representation of the points value.</returns>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(System.Int32)~DocumentModel.Points">
+        <member name="M:DocumentModel.PTS.op_Implicit(System.Int32)~DocumentModel.PTS">
             <summary>
-            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.Points"/> value.
+            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.PTS"/> value.
             </summary>
             <param name="value">The 32-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Points"/> value representing the integer.</returns>
+            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(DocumentModel.Points)~System.Int32">
+        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.Int32">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Points"/> value to a 32-bit signed integer.
+            Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a 32-bit signed integer.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.Points"/> value to convert.</param>
+            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
             <returns>A 32-bit signed integer representation of the points value.</returns>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(System.UInt32)~DocumentModel.Points">
+        <member name="M:DocumentModel.PTS.op_Implicit(System.UInt32)~DocumentModel.PTS">
             <summary>
-            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.Points"/> value.
+            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.PTS"/> value.
             </summary>
             <param name="value">The 32-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Points"/> value representing the integer.</returns>
+            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(DocumentModel.Points)~System.UInt32">
+        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.UInt32">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Points"/> value to a 32-bit unsigned integer.
+            Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a 32-bit unsigned integer.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.Points"/> value to convert.</param>
+            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
             <returns>A 32-bit unsigned integer representation of the points value.</returns>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(System.Int64)~DocumentModel.Points">
+        <member name="M:DocumentModel.PTS.op_Implicit(System.Int64)~DocumentModel.PTS">
             <summary>
-            Implicitly converts a 64-bit signed integer to a <see cref="T:DocumentModel.Points"/> value.
+            Implicitly converts a 64-bit signed integer to a <see cref="T:DocumentModel.PTS"/> value.
             </summary>
             <param name="value">The 64-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Points"/> value representing the integer.</returns>
+            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(DocumentModel.Points)~System.Int64">
+        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.Int64">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Points"/> value to a 64-bit signed integer.
+            Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a 64-bit signed integer.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.Points"/> value to convert.</param>
+            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
             <returns>A 64-bit signed integer representation of the points value.</returns>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(System.UInt64)~DocumentModel.Points">
+        <member name="M:DocumentModel.PTS.op_Implicit(System.UInt64)~DocumentModel.PTS">
             <summary>
-            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.Points"/> value.
+            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.PTS"/> value.
             </summary>
             <param name="value">The 64-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Points"/> value representing the integer.</returns>
+            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.Points.op_Implicit(DocumentModel.Points)~System.UInt64">
+        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.UInt64">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Points"/> value to a 64-bit unsigned integer.
+            Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a 64-bit unsigned integer.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.Points"/> value to convert.</param>
+            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
             <returns>A 64-bit unsigned integer representation of the points value.</returns>
         </member>
-        <member name="M:DocumentModel.Points.CompareTo(DocumentModel.Points)">
+        <member name="M:DocumentModel.PTS.CompareTo(DocumentModel.PTS)">
             <summary>
-            Compares this instance to a specified <see cref="T:DocumentModel.Points"/> object and returns an indication of their relative values.
+            Compares this instance to a specified <see cref="T:DocumentModel.PTS"/> object and returns an indication of their relative values.
             </summary>
-            <param name="other">A <see cref="T:DocumentModel.Points"/> object to compare.</param>
+            <param name="other">A <see cref="T:DocumentModel.PTS"/> object to compare.</param>
             <returns>
             A signed number indicating the relative values of this instance and <paramref name="other"/>.
             Less than zero if this instance is less than <paramref name="other"/>;
@@ -6003,29 +6093,45 @@
             greater than zero if this instance is greater than <paramref name="other"/>.
             </returns>
         </member>
-        <member name="M:DocumentModel.Points.GetHashCode">
+        <member name="M:DocumentModel.PTS.GetHashCode">
             <summary>
             Returns the hash code for this instance.
             </summary>
             <returns>A 32-bit signed integer hash code.</returns>
         </member>
-        <member name="T:DocumentModel.PointsJsonConverter">
+        <member name="M:DocumentModel.PTS.Equals(DocumentModel.PTS)">
             <summary>
-            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.Points"/> structure.
+            Compares this instance to another <see cref="T:DocumentModel.PTS"/> object for equality.
+            </summary>
+            <param name="other">An <see cref="T:DocumentModel.PTS"/> object to compare.</param>
+            <returns><c>true</c> if the objects are equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:DocumentModel.PTS.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current instance of Points.
+            </summary>
+            <remarks>This method first checks whether the provided object is of type Points. If so, it compares the
+            current instance with the specified Points object using the type-specific equality logic.</remarks>
+            <param name="obj">The object to compare with the current Points instance. This parameter can be null.</param>
+            <returns>true if the specified object is a Points instance and is equal to the current instance; otherwise, false.</returns>
+        </member>
+        <member name="T:DocumentModel.PTSJsonConverter">
+            <summary>
+            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.PTS"/> structure.
             </summary>
             <remarks>
             This converter handles both string and numeric JSON tokens for deserialization,
             and writes points values as strings for compatibility with Office Open XML conventions.
             </remarks>
         </member>
-        <member name="M:DocumentModel.PointsJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+        <member name="M:DocumentModel.PTSJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
             <summary>
-            Reads and converts JSON to a <see cref="T:DocumentModel.Points"/> value.
+            Reads and converts JSON to a <see cref="T:DocumentModel.PTS"/> value.
             </summary>
             <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader"/> to read from.</param>
             <param name="typeToConvert">The type to convert.</param>
             <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
-            <returns>A <see cref="T:DocumentModel.Points"/> value parsed from the JSON input.</returns>
+            <returns>A <see cref="T:DocumentModel.PTS"/> value parsed from the JSON input.</returns>
             <exception cref="T:System.Text.Json.JsonException">
             Thrown when:
             <list type="bullet">
@@ -6043,12 +6149,12 @@
             </list>
             </remarks>
         </member>
-        <member name="M:DocumentModel.PointsJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.Points,System.Text.Json.JsonSerializerOptions)">
+        <member name="M:DocumentModel.PTSJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.PTS,System.Text.Json.JsonSerializerOptions)">
             <summary>
-            Writes a <see cref="T:DocumentModel.Points"/> value as JSON.
+            Writes a <see cref="T:DocumentModel.PTS"/> value as JSON.
             </summary>
             <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter"/> to write to.</param>
-            <param name="value">The <see cref="T:DocumentModel.Points"/> value to serialize.</param>
+            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to serialize.</param>
             <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
             <remarks>
             Writes the points value as a numeric string without unit suffix.
@@ -6845,7 +6951,7 @@
             By definition, there are exactly 1440 twips in one inch.
             </remarks>
         </member>
-        <member name="F:DocumentModel.Twips.TwipsInPoint">
+        <member name="F:DocumentModel.Twips.TwipsInPT">
             <summary>
             How many twips are in one point.
             </summary>
@@ -6912,13 +7018,22 @@
             </summary>
             <returns>The measurement in inches as a double-precision floating-point number.</returns>
         </member>
-        <member name="M:DocumentModel.Twips.ToPoints">
+        <member name="M:DocumentModel.Twips.ToPT">
             <summary>
             Converts the twips value to points.
             </summary>
             <returns>The measurement in points as a double-precision floating-point number.</returns>
             <remarks>
             A point is defined as 1/72 of an inch.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.Twips.ToTwips">
+            <summary>
+            Converts the twips value to twips.
+            </summary>
+            <returns>The measurement in twips as a double-precision floating-point number.</returns>
+            <remarks>
+            This method is provided for consistency with other conversion methods and returns the internal value as a double.
             </remarks>
         </member>
         <member name="M:DocumentModel.Twips.ToString">

@@ -3,6 +3,7 @@
   <Project Path="../AutoEdit/AutoEdit.csproj" />
   <Project Path="../DocumentModel.BaseConverters.Test/DocumentModel.BaseConverters.Test.csproj" Id="5e745e67-8641-4f7b-8fe5-f8b94a192bd3" />
   <Project Path="../DocumentModel.BaseConverters/DocumentModel.BaseConverters.csproj" />
+  <Project Path="../DocumentModel.BaseTypes.Interfaces/DocumentModel.BaseTypes.Interfaces.csproj" Id="73c0e464-215c-44f4-8ef6-6e7675db305c" />
   <Project Path="../DocumentModel.BaseTypes/DocumentModel.BaseTypes.csproj" />
   <Project Path="../DocumentModel.BaseTypesTest/DocumentModel.BaseTypesTest.csproj" />
   <Project Path="../DocumentModel.InOpenXml.Test/DocumentModel.InOpenXml.Test.csproj" Id="edc556fe-37c9-43cf-9462-8defdeac7a4b" />
