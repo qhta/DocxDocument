@@ -11,7 +11,7 @@
 /// Note: 1 eighth-point = 0.125 points = 1/576 inch. There are 8 eighth-points in 1 point.
 /// </remarks>
 [JsonConverter(typeof(EPSJsonConverter))]
-public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable<EPS>, IEquatable<object>
+public readonly partial struct EPS: ILengthValue, IComparable<EPS>, IEquatable<EPS>, IEquatable<object>
 {
   /// <summary>
   /// The internal value storing the measurement in eighth-points.
@@ -201,30 +201,30 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   #region Static Factory Methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in twips.
+  /// Creates an instance of an <see cref="ILengthValue"/> that represents the specified value in twips.
   /// </summary>
-  public static ILengthMeasure FromTwips(double twips) => new EPS((Int64)(twips * EPSinTwips));
+  public static ILengthValue FromTwips(double twips) => new EPS((Int64)(twips * EPSinTwips));
 
   /// <summary>
-  /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in points.
+  /// Creates an instance of an <see cref="ILengthValue"/> that represents the specified value in points.
   /// </summary>
-  public static ILengthMeasure FromPT(double points) => new EPS((Int64)(points * EPSinPT));
+  public static ILengthValue FromPT(double points) => new EPS((Int64)(points * EPSinPT));
 
   /// <summary>
   /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
-  public static ILengthMeasure FromMM(double millimeters) => new EPS((Int64)(millimeters * EPSinMM));
+  public static ILengthValue FromMM(double millimeters) => new EPS((Int64)(millimeters * EPSinMM));
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
-  public static ILengthMeasure FromCM(double centimeters) => new EPS((Int64)(centimeters * EPSinCM));
+  public static ILengthValue FromCM(double centimeters) => new EPS((Int64)(centimeters * EPSinCM));
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static ILengthMeasure FromInch(double inches) => new EPS((Int64)(inches * EPSinInch));
+  public static ILengthValue FromInch(double inches) => new EPS((Int64)(inches * EPSinInch));
 
   /// <summary>
   /// Converts a length value from the specified unit to an ILengthMeasure representation.
@@ -235,7 +235,7 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   /// <param name="unit">The unit of measurement for the value parameter. Must be one of the supported LengthUnit values.</param>
   /// <returns>An ILengthMeasure instance representing the converted length value in a standard format.</returns>
   /// <exception cref="ArgumentException">Thrown if the specified unit is not supported for conversion.</exception>
-  public static ILengthMeasure ConvertFrom(double value, LengthUnit unit)
+  public static ILengthValue ConvertFrom(double value, LengthUnit unit)
   {
     return unit switch
     {
@@ -259,7 +259,7 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   /// thrown.</remarks>
   /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-  public static ILengthMeasure Parse(string value) => new EPS(value);
+  public static ILengthValue Parse(string value) => new EPS(value);
 
   /// <summary>
   /// Attempts to parse the specified string representation of a length measure and returns a value that indicates
@@ -271,7 +271,7 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
   /// langword="null"/>.</param>
   /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
-  public static bool TryParse(string value, out ILengthMeasure? result)
+  public static bool TryParse(string value, out ILengthValue? result)
   {
     try
     {
@@ -499,7 +499,7 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   {
     if (obj is EPS otherEPS)
       return Equals(otherEPS);
-    if (obj is ILengthMeasure otherMeasure)
+    if (obj is ILengthValue otherMeasure)
     {
       try
       {

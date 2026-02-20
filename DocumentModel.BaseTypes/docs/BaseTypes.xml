@@ -1633,12 +1633,12 @@
         </member>
         <member name="M:DocumentModel.EMU.FromTwips(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in twips.
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthValue"/> that represents the specified value in twips.
             </summary>
         </member>
         <member name="M:DocumentModel.EMU.FromPT(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in points.
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthValue"/> that represents the specified value in points.
             </summary>
         </member>
         <member name="M:DocumentModel.EMU.FromMM(System.Double)">
@@ -1676,7 +1676,7 @@
             <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
             <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
-        <member name="M:DocumentModel.EMU.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthMeasure@)">
+        <member name="M:DocumentModel.EMU.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthValue@)">
             <summary>
             Attempts to parse the specified string representation of a length measure and returns a value that indicates
             whether the parsing succeeded.
@@ -2060,12 +2060,12 @@
         </member>
         <member name="M:DocumentModel.EPS.FromTwips(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in twips.
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthValue"/> that represents the specified value in twips.
             </summary>
         </member>
         <member name="M:DocumentModel.EPS.FromPT(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in points.
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthValue"/> that represents the specified value in points.
             </summary>
         </member>
         <member name="M:DocumentModel.EPS.FromMM(System.Double)">
@@ -2104,7 +2104,7 @@
             <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
             <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
-        <member name="M:DocumentModel.EPS.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthMeasure@)">
+        <member name="M:DocumentModel.EPS.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthValue@)">
             <summary>
             Attempts to parse the specified string representation of a length measure and returns a value that indicates
             whether the parsing succeeded.
@@ -4809,12 +4809,12 @@
         </member>
         <member name="M:DocumentModel.HPS.FromTwips(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in twips.
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthValue"/> that represents the specified value in twips.
             </summary>
         </member>
         <member name="M:DocumentModel.HPS.FromPT(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in points.
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthValue"/> that represents the specified value in points.
             </summary>
         </member>
         <member name="M:DocumentModel.HPS.FromMM(System.Double)">
@@ -4852,7 +4852,7 @@
             <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
             <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
         </member>
-        <member name="M:DocumentModel.HPS.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthMeasure@)">
+        <member name="M:DocumentModel.HPS.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthValue@)">
             <summary>
             Attempts to parse the specified string representation of a length measure and returns a value that indicates
             whether the parsing succeeded.
@@ -6047,12 +6047,12 @@
         </member>
         <member name="M:DocumentModel.PTS.FromTwips(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in twips.
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthValue"/> that represents the specified value in twips.
             </summary>
         </member>
         <member name="M:DocumentModel.PTS.FromPT(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in points.
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthValue"/> that represents the specified value in points.
             </summary>
         </member>
         <member name="M:DocumentModel.PTS.FromMM(System.Double)">
@@ -6090,7 +6090,7 @@
             <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
             <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
-        <member name="M:DocumentModel.PTS.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthMeasure@)">
+        <member name="M:DocumentModel.PTS.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthValue@)">
             <summary>
             Attempts to parse the specified string representation of a length measure and returns a value that indicates
             whether the parsing succeeded.
@@ -7195,12 +7195,12 @@
         </member>
         <member name="M:DocumentModel.Twips.FromTwips(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in twips.
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthValue"/> that represents the specified value in twips.
             </summary>
         </member>
         <member name="M:DocumentModel.Twips.FromPT(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in points.
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthValue"/> that represents the specified value in points.
             </summary>
         </member>
         <member name="M:DocumentModel.Twips.FromMM(System.Double)">
@@ -7238,7 +7238,7 @@
             <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
             <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
-        <member name="M:DocumentModel.Twips.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthMeasure@)">
+        <member name="M:DocumentModel.Twips.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthValue@)">
             <summary>
             Attempts to parse the specified string representation of a length measure and returns a value that indicates
             whether the parsing succeeded.

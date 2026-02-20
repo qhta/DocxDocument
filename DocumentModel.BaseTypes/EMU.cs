@@ -5,7 +5,7 @@
 ///   There are 914400 EMUs per inch.
 /// </summary>
 [JsonConverter(typeof(EMUJsonConverter))]
-public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatable<EMU>, IEquatable<object>
+public readonly partial struct EMU : ILengthValue, IComparable<EMU>, IEquatable<EMU>, IEquatable<object>
 {
 
   private readonly Double value;
@@ -198,30 +198,30 @@ public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatabl
   #region Static Factory Methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in twips.
+  /// Creates an instance of an <see cref="ILengthValue"/> that represents the specified value in twips.
   /// </summary>
-  public static ILengthMeasure FromTwips(double twips) => new EMU((Int64)(twips * EMUinTwips));
+  public static ILengthValue FromTwips(double twips) => new EMU((Int64)(twips * EMUinTwips));
 
   /// <summary>
-  /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in points.
+  /// Creates an instance of an <see cref="ILengthValue"/> that represents the specified value in points.
   /// </summary>
-  public static ILengthMeasure FromPT(double points) => new EMU((Int64)(points * EMUinPT));
+  public static ILengthValue FromPT(double points) => new EMU((Int64)(points * EMUinPT));
 
   /// <summary>
   /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
-  public static ILengthMeasure FromMM(double millimeters) => new EMU((Int64)(millimeters * EMUinMM));
+  public static ILengthValue FromMM(double millimeters) => new EMU((Int64)(millimeters * EMUinMM));
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
-  public static ILengthMeasure FromCM(double centimeters) => new EMU((Int64)(centimeters * EMUinCM));
+  public static ILengthValue FromCM(double centimeters) => new EMU((Int64)(centimeters * EMUinCM));
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static ILengthMeasure FromInch(double inches) => new EMU((Int64)(inches * EMUinInch));
+  public static ILengthValue FromInch(double inches) => new EMU((Int64)(inches * EMUinInch));
 
 
   /// <summary>
@@ -232,7 +232,7 @@ public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatabl
   /// <param name="value">The numeric value representing the length to convert.</param>
   /// <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
   /// <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
-  public static ILengthMeasure ConvertFrom(double value, LengthUnit unit)
+  public static ILengthValue ConvertFrom(double value, LengthUnit unit)
   {
     return unit switch
     {
@@ -256,7 +256,7 @@ public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatabl
   /// thrown.</remarks>
   /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-  public static ILengthMeasure Parse(string value) => new EMU(value);
+  public static ILengthValue Parse(string value) => new EMU(value);
 
   /// <summary>
   /// Attempts to parse the specified string representation of a length measure and returns a value that indicates
@@ -268,7 +268,7 @@ public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatabl
   /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
   /// langword="null"/>.</param>
   /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
-  public static bool TryParse(string value, out ILengthMeasure? result)
+  public static bool TryParse(string value, out ILengthValue? result)
   {
     try
     {
@@ -465,7 +465,7 @@ public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatabl
   {
     if (obj is EMU otherEMU)
       return Equals(otherEMU);
-    if (obj is ILengthMeasure otherMeasure)
+    if (obj is ILengthValue otherMeasure)
     {
       try
       {

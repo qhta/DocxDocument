@@ -200,7 +200,7 @@ public static class TwipsTest
 
     // Test ConvertTo for each unit
     Console.WriteLine("\nTesting ConvertTo method:");
-    ILengthMeasure length = original;
+    ILengthValue length = original;
     Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches)}");
     Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters)}");
     Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters)}");
