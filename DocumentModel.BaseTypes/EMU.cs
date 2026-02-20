@@ -5,7 +5,7 @@
 ///   There are 914400 EMUs per inch.
 /// </summary>
 [JsonConverter(typeof(EMUJsonConverter))]
-public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatable<EMU>
+public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatable<EMU>, IEquatable<object>
 {
 
   private readonly Double value;
@@ -80,60 +80,38 @@ public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatabl
   /// </remarks>
   public EMU(string str)
   {
+    str = str.Replace(",", ".").Trim();
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUinMM;
-      value = (Int64)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * EMUinMM;
       return;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUinCM;
-      value = (Int64)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * EMUinCM;
       return;
     }
     if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUinInch;
-      value = (int)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * EMUinInch;
       return;
     }
     if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUinPT;
-      value = (Int64)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * EMUinPT;
       return;
     }
     if (str.EndsWith("tw"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EMUinTwips;
-      value = (Int64)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * EMUinTwips;
       return;
     }
-    value = Int64.Parse(str);
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="EMU"/> struct from a 32-bit unsigned integer value.
-  /// </summary>
-  /// <param name="value">The value in EMU.</param>
-  public EMU(UInt32 value)
-  {
-    this.value = value;
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="EMU"/> struct from a 32-bit signed integer value.
-  /// </summary>
-  /// <param name="value">The value in EMU.</param>
-  public EMU(Int32 value)
-  {
-    this.value = value;
+    value = Double.Parse(str, CultureInfo.InvariantCulture);
   }
 
   /// <summary>
@@ -141,6 +119,15 @@ public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatabl
   /// </summary>
   /// <param name="value">The value in EMU.</param>
   public EMU(Int64 value)
+  {
+    this.value = value;
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="EMU"/> struct from a 64-bit floating-point value.
+  /// </summary>
+  /// <param name="value">The value in EMU.</param>
+  public EMU(Double value)
   {
     this.value = value;
   }
@@ -407,63 +394,7 @@ public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatabl
   /// </summary>
   /// <param name="value">The <see cref="EMU"/> value to convert.</param>
   /// <returns>A string representation of the EMU value.</returns>
-  public static implicit operator string(EMU value) { return value.value.ToString(); }
-
-  /// <summary>
-  /// Implicitly converts a 16-bit signed integer to a <see cref="EMU"/> value.
-  /// </summary>
-  /// <param name="value">The 16-bit signed integer to convert.</param>
-  /// <returns>A <see cref="EMU"/> value representing the integer.</returns>
-  public static implicit operator EMU(Int16 value) { return new EMU(value); }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="EMU"/> value to a 16-bit signed integer.
-  /// </summary>
-  /// <param name="value">The <see cref="EMU"/> value to convert.</param>
-  /// <returns>A 16-bit signed integer representation of the EMU value.</returns>
-  public static implicit operator Int16(EMU value) { return (Int16)value.value; }
-
-  /// <summary>
-  /// Implicitly converts a 16-bit unsigned integer to a <see cref="EMU"/> value.
-  /// </summary>
-  /// <param name="value">The 16-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="EMU"/> value representing the integer.</returns>
-  public static implicit operator EMU(UInt16 value) { return new EMU(value); }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="EMU"/> value to a 16-bit unsigned integer.
-  /// </summary>
-  /// <param name="value">The <see cref="EMU"/> value to convert.</param>
-  /// <returns>A 16-bit unsigned integer representation of the EMU value.</returns>
-  public static implicit operator UInt16(EMU value) { return (UInt16)value.value; }
-
-  /// <summary>
-  /// Implicitly converts a 32-bit signed integer to a <see cref="EMU"/> value.
-  /// </summary>
-  /// <param name="value">The 32-bit signed integer to convert.</param>
-  /// <returns>A <see cref="EMU"/> value representing the integer.</returns>
-  public static implicit operator EMU(Int32 value) { return new EMU(value); }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="EMU"/> value to a 32-bit signed integer.
-  /// </summary>
-  /// <param name="value">The <see cref="EMU"/> value to convert.</param>
-  /// <returns>A 32-bit signed integer representation of the EMU value.</returns>
-  public static implicit operator Int32(EMU value) { return (Int32)value.value; }
-
-  /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer to a <see cref="EMU"/> value.
-  /// </summary>
-  /// <param name="value">The 32-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="EMU"/> value representing the integer.</returns>
-  public static implicit operator EMU(UInt32 value) { return new EMU(value); }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="EMU"/> value to a 32-bit unsigned integer.
-  /// </summary>
-  /// <param name="value">The <see cref="EMU"/> value to convert.</param>
-  /// <returns>A 32-bit unsigned integer representation of the EMU value.</returns>
-  public static implicit operator UInt32(EMU value) { return (UInt32)value.value; }
+  public static implicit operator string(EMU value) { return value.value.ToString(CultureInfo.InvariantCulture); }
 
   /// <summary>
   /// Implicitly converts a 64-bit signed integer to a <see cref="EMU"/> value.
@@ -478,6 +409,13 @@ public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatabl
   /// <param name="value">The <see cref="EMU"/> value to convert.</param>
   /// <returns>A 64-bit signed integer representation of the EMU value.</returns>
   public static implicit operator Int64(EMU value) { return (Int64)value.value; }
+  
+  /// <summary>
+  /// Implicitly converts a double-precision floating-point number to a <see cref="EMU"/> value.
+  /// </summary>
+  /// <param name="value">The double-precision floating-point number to convert.</param>
+  /// <returns>A <see cref="EMU"/> value representing the double-precision floating-point number.</returns>
+  public static implicit operator EMU(Double value) { return new EMU(value); }
 
   #endregion
 
@@ -519,16 +457,40 @@ public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatabl
   }
 
   /// <summary>
-  /// Determines whether the specified object is equal to the current instance of EMU.
+  /// Compares this instance to a specified object and returns a value that indicates whether they are equal.
   /// </summary>
-  /// <remarks>This method overrides Object.Equals to provide value equality comparison specific to EMU
-  /// instances.</remarks>
   /// <param name="obj">The object to compare with the current EMU instance. This parameter can be null.</param>
-  /// <returns>true if the specified object is an instance of EMU and is equal to the current instance; otherwise,
-  /// false.</returns>
+  /// <returns><c>true</c> if the specified object is equal to the current EMU instance; otherwise, <c>false</c>.</returns>
   public override bool Equals(object? obj)
   {
-    return obj is EMU other && Equals(other);
+    if (obj is EMU otherEMU)
+      return Equals(otherEMU);
+    if (obj is ILengthMeasure otherMeasure)
+    {
+      try
+      {
+        var thisPoints = ConvertTo(LengthUnit.Points);
+        var otherPointsConvertTo = otherMeasure.ConvertTo(LengthUnit.Points);
+        return System.Math.Abs(thisPoints - otherPointsConvertTo) < 1e-10;
+      }
+      catch
+      {
+        return false;
+      }
+    }
+    if (obj is IConvertible convertible)
+    {
+      try
+      {
+        var otherValue = convertible.ToDouble(CultureInfo.InvariantCulture);
+        return System.Math.Abs(value - otherValue) < 1e-10;
+      }
+      catch
+      {
+        return false;
+      }
+    }
+    return false;
   }
 
   #endregion

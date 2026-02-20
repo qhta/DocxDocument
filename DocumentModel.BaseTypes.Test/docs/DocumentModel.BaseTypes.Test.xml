@@ -528,20 +528,107 @@
         </member>
         <member name="T:DocumentModel.BaseTypes.Test.PTSTest">
             <summary>
-            Test suite for Points type serialization in both XML and JSON formats.
+            Test suite for PTS type serialization in both XML and JSON formats.
             </summary>
         </member>
         <member name="M:DocumentModel.BaseTypes.Test.PTSTest.Run">
             <summary>
-            Runs all Points serialization tests.
+            Runs all PTS serialization tests.
             </summary>
         </member>
-        <member name="T:DocumentModel.BaseTypes.Test.PointsTestData">
+        <member name="M:DocumentModel.BaseTypes.Test.PTSTest.TestPTSBasicOperations">
             <summary>
-            Test data class containing various Points properties.
+            Tests the basic operations of the PTS class, including conversions between PTS and various types, string
+            representations, and comparisons.
+            </summary>
+            <remarks>This method verifies the correctness of the PTS class by testing string and numeric conversions,
+            string representations, hash code consistency, and comparison operations. It outputs diagnostic information to the
+            console for each test and returns false if any test fails.</remarks>
+            <returns>true if all basic PTS operations pass successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.PTSTest.TestPTSUnitConversions">
+            <summary>
+            Tests the accuracy and correctness of conversions between PTS and various length units, including inches,
+            millimeters, centimeters, pts, and twips.
+            </summary>
+            <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
+            verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
+            Use this method to validate that PTS-related conversion logic is functioning as expected.</remarks>
+            <returns>true if all unit conversion tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.PTSTest.TestPTSXmlSerialization">
+            <summary>
+            Tests the XML serialization and deserialization of a PTSTestData object containing various PTS properties.
+            This method verifies that the original data is accurately preserved through the serialization process
+            by comparing the deserialized object to the original test data.
+            It outputs the original data, the serialized XML, and the deserialized data to the console for diagnostic purposes.
+            If any discrepancies are found during verification, it returns false; otherwise, it confirms that the test passed successfully.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.PTSTest.VerifyDeserializedData(DocumentModel.BaseTypes.Test.PTSTestData,DocumentModel.BaseTypes.Test.PTSTestData)">
+            <summary>
+            Tests the JSON serialization and deserialization of a PTSTestData object containing various PTS properties.
+            This method verifies that the original data is accurately preserved through the serialization process
+            by comparing the deserialized object to the original test data.
+            It outputs the original data, the serialized JSON, and the deserialized data to the console for diagnostic purposes.
+            If any discrepancies are found during verification, it returns false;
+            otherwise, it confirms that the test passed successfully.
+            </summary>
+            <param name="deserializedData">The deserialized PTSTestData object to verify.</param>
+            <param name="testData">The original PTSTestData object used for comparison.</param>
+            <returns>true if the deserialized data matches the original data; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.PTSTest.TestPTSJsonSerialization">
+            <summary>
+            Tests the serialization and deserialization of PTS data to and from JSON format.
+            </summary>
+            <remarks>This method creates a test object, serializes it to JSON, and then deserializes it back to verify
+            the integrity of the data. It outputs the serialized JSON string to the console for inspection.</remarks>
+            <returns>true if the JSON serialization and deserialization test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.PTSTest.CreateTestData">
+            <summary>
+            Creates a new instance of the PTSTestData class initialized with standard typographic values for testing purposes.
+            </summary>
+            <remarks>Use this method to obtain consistent formatting values when writing tests that require predefined
+            typographic settings. The returned data reflects commonly used values in document formatting scenarios.</remarks>
+            <returns>A PTSTestData object populated with default values for font size, line height, paragraph spacing, indentation, and
+            related properties.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.PTSTest.ShowOriginalData(DocumentModel.BaseTypes.Test.PTSTestData)">
+            <summary>
+            Displays the original formatting values from the specified test data to the console in a human-readable format.
+            </summary>
+            <remarks>The output includes font sizes, line height, paragraph spacing, indentation, and additional value
+            fields. Measurements are converted to points or inches where applicable for clarity.</remarks>
+            <param name="testData">The PTSTestData instance containing the original formatting values to display.</param>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.PTSTest.TestPTSEdgeCases">
+            <summary>
+            Tests various edge cases for the PTS struct, including zero values, boundary values, common font sizes,
+            and different measurement units.
+            </summary>
+            <returns>true if all edge case tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.PTSTest.TestPTSPerformance">
+            <summary>
+            Measures and reports the performance of various operations related to the PTS class, including construction,
+            conversion, comparison, and serialization.
+            </summary>
+            <remarks>This method executes a series of timed tests for PTS operations, such as constructing instances
+            from different input types, converting between units, serializing and deserializing objects, and comparing or
+            hashing values. The elapsed time for each operation is output to the console to assist with performance analysis.
+            This method is intended for diagnostic or benchmarking purposes and does not validate correctness of the
+            operations.</remarks>
+            <returns>true if all performance tests complete successfully.</returns>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.PTSTestData">
+            <summary>
+            Test data class containing various PTS properties.
             </summary>
         </member>
-        <member name="T:DocumentModel.BaseTypes.Test.PointsWrapper">
+        <member name="T:DocumentModel.BaseTypes.Test.PTSWrapper">
             <summary>
             Simple wrapper class for testing Deserialization scenarios.
             </summary>
@@ -615,6 +702,85 @@
             <summary>
             Runs all Twips serialization tests.
             </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.TwipsTest.TestTwipsBasicOperations">
+            <summary>
+            Tests the basic operations of the Twips class, including conversions between Twips and various types, string
+            representations, and comparisons.
+            </summary>
+            <remarks>This method verifies the correctness of the Twips class by testing string and numeric conversions,
+            string representations, hash code consistency, and comparison operations. It outputs diagnostic information to the
+            console for each test and returns false if any test fails.</remarks>
+            <returns>true if all basic Twips operations pass successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.TwipsTest.TestTwipsUnitConversions">
+            <summary>
+            Tests the accuracy and correctness of conversions between Twips and various length units, including inches,
+            millimeters, centimeters, Twips, and twips.
+            </summary>
+            <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
+            verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
+            Use this method to validate that Twips-related conversion logic is functioning as expected.</remarks>
+            <returns>true if all unit conversion tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.TwipsTest.VerifyDeserializedData(DocumentModel.BaseTypes.Test.TwipsTestData,DocumentModel.BaseTypes.Test.TwipsTestData)">
+            <summary>
+            Verifies that the deserialized TwipsTestData matches the original test data. It checks each property for equality
+            and outputs diagnostic information to the console for any discrepancies.
+            </summary>
+            <param name="deserializedData">The deserialized TwipsTestData object.</param>
+            <param name="testData">The original TwipsTestData object used for serialization.</param>
+            <returns>true if all properties match; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.TwipsTest.TestTwipsJsonSerialization">
+            <summary>
+            Tests the JSON serialization and deserialization process for TwipsTestData objects to ensure data integrity.
+            </summary>
+            <remarks>This method creates a TwipsTestData instance, serializes it to a JSON string, and then
+            deserializes it back to verify that the original and resulting objects are equivalent. The serialized JSON output
+            is written to the console for inspection.</remarks>
+            <returns>true if the serialized and deserialized data match and the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.TwipsTest.CreateTestData">
+            <summary>
+            Creates a new instance of the TwipsTestData class initialized with standard page dimensions, margins, font size,
+            and spacing values for testing purposes.
+            </summary>
+            <remarks>This method is intended for use in test scenarios that require consistent and representative
+            document layout data. All values are specified in twips, a unit commonly used in document formatting.</remarks>
+            <returns>A TwipsTestData object populated with predefined values for page width, page height, margins, font size, line
+            spacing, and additional test values.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.TwipsTest.ShowOriginalData(DocumentModel.BaseTypes.Test.TwipsTestData)">
+            <summary>
+            Displays the original data values from the specified TwipsTestData instance, including page dimensions, margins,
+            font size, line spacing, and specific value properties.
+            </summary>
+            <remarks>This method outputs the original data to the console in both Twips and converted units (inches
+            and points) for better readability.</remarks>
+            <param name="testData">The TwipsTestData instance containing the original data to be displayed.</param>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.TwipsTest.TestTwipsEdgeCases">
+            <summary>
+            Tests a variety of edge cases for the Twips class, including zero values, boundary values, common document
+            measurements, font sizes, string parsing, deserialization, output formatting, comparisons, and implicit
+            conversions.
+            </summary>
+            <remarks>This method outputs the results of each test to the console, providing insight into the behavior
+            of the Twips class under different scenarios. It is intended for diagnostic and validation purposes during
+            development.</remarks>
+            <returns>true if all Twips edge case tests are completed successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.TwipsTest.TestTwipsPerformance">
+            <summary>
+            Measures and reports the performance of various operations related to the Twips class, including construction,
+            conversion, comparison, and JSON serialization.
+            </summary>
+            <remarks>This method executes a series of timed tests for common Twips operations, such as constructing
+            instances from different formats, converting units, serializing and deserializing with JSON, and performing
+            equality and comparison checks. The elapsed time for each operation is output to the console to assist developers
+            in evaluating the performance characteristics of the Twips class.</remarks>
+            <returns>true if all performance tests complete successfully.</returns>
         </member>
         <member name="T:DocumentModel.BaseTypes.Test.TwipsTestData">
             <summary>

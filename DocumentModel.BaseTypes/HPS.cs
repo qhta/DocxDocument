@@ -11,7 +11,7 @@
 /// Note: 1 half-point = 0.5 points = 1/144 inch.
 /// </remarks>
 [JsonConverter(typeof(HPSJsonConverter))]
-public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable<HPS>
+public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable<HPS>, IEquatable<object>
 {
   /// <summary>
   /// The internal value storing the measurement in half-points.
@@ -87,42 +87,38 @@ public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable
   /// </remarks>
   public HPS(string str)
   {
+    str = str.Replace(",", ".").Trim();
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * HPSinMM;
-      value = val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * HPSinMM;
       return;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * HPSinCM;
-      value = val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * HPSinCM;
       return;
     }
     if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * HPSinInch;
-      value = val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * HPSinInch;
       return;
     }
     if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * HPSinPT;
-      value = val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * HPSinPT;
       return;
     }
     if (str.EndsWith("tw"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * HPSinTwips;
-      value = val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * HPSinTwips;
       return;
     }
-    value = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
+    value = Double.Parse(str, CultureInfo.InvariantCulture);
   }
 
   /// <summary>
@@ -424,26 +420,14 @@ public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable
   {
     return (Int64)value.value;
   }
-
+  
   /// <summary>
-  /// Implicitly converts a 64-bit signed integer to a <see cref="HPS"/> value.
+  /// Implicitly converts a double-precision floating-point number to a <see cref="HPS"/> value.
   /// </summary>
-  /// <param name="value">The 64-bit signed integer to convert.</param>
-  /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
-  public static implicit operator HPS(Double value)
-  {
-    return new HPS(value);
-  }
+  /// <param name="value">The double-precision floating-point number to convert.</param>
+  /// <returns>A <see cref="HPS"/> value representing the double-precision floating-point number.</returns>
+  public static implicit operator HPS(Double value) { return new HPS(value); }
 
-  /// <summary>
-  /// Implicitly converts a <see cref="HPS"/> value to a 64-bit signed integer.
-  /// </summary>
-  /// <param name="value">The <see cref="HPS"/> value to convert.</param>
-  /// <returns>A 64-bit signed integer representation of the half-points value.</returns>
-  public static implicit operator Double(HPS value)
-  {
-    return value.value;
-  }
   #endregion
 
   #region IComparable and IEquatable Implementations
@@ -482,17 +466,42 @@ public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable
     return value == other.value;
   }
 
+
   /// <summary>
-  /// Determines whether the specified object is equal to the current HalfPoints instance.
+  /// Compares this instance to a specified object and returns a value that indicates whether they are equal.
   /// </summary>
-  /// <remarks>This method provides a type-specific equality comparison for HalfPoints objects, overriding the
-  /// base implementation to ensure accurate value comparison.</remarks>
-  /// <param name="obj">The object to compare with the current HalfPoints instance. This parameter can be null.</param>
-  /// <returns><see langword="true"/> if the specified object is a HalfPoints instance and is equal to the current instance;
-  /// otherwise, <see langword="false"/>.</returns>
+  /// <param name="obj">The object to compare with the current HPS instance. This parameter can be null.</param>
+  /// <returns><c>true</c> if the specified object is equal to the current HPS instance; otherwise, <c>false</c>.</returns>
   public override bool Equals(object? obj)
   {
-    return obj is HPS other && Equals(other);
+    if (obj is HPS otherHPS)
+      return Equals(otherHPS);
+    if (obj is ILengthMeasure otherMeasure)
+    {
+      try
+      {
+        var thisPoints = ConvertTo(LengthUnit.Points);
+        var otherPointsConvertTo = otherMeasure.ConvertTo(LengthUnit.Points);
+        return System.Math.Abs(thisPoints - otherPointsConvertTo) < 1e-10;
+      }
+      catch
+      {
+        return false;
+      }
+    }
+    if (obj is IConvertible convertible)
+    {
+      try
+      {
+        var otherValue = convertible.ToDouble(CultureInfo.InvariantCulture);
+        return System.Math.Abs(value - otherValue) < 1e-10;
+      }
+      catch
+      {
+        return false;
+      }
+    }
+    return false;
   }
 
   #endregion

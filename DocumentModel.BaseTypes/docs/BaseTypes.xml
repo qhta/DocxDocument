@@ -1577,21 +1577,15 @@
             <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
             </remarks>
         </member>
-        <member name="M:DocumentModel.EMU.#ctor(System.UInt32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> struct from a 32-bit unsigned integer value.
-            </summary>
-            <param name="value">The value in EMU.</param>
-        </member>
-        <member name="M:DocumentModel.EMU.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> struct from a 32-bit signed integer value.
-            </summary>
-            <param name="value">The value in EMU.</param>
-        </member>
         <member name="M:DocumentModel.EMU.#ctor(System.Int64)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> struct from a 64-bit signed integer value.
+            </summary>
+            <param name="value">The value in EMU.</param>
+        </member>
+        <member name="M:DocumentModel.EMU.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> struct from a 64-bit floating-point value.
             </summary>
             <param name="value">The value in EMU.</param>
         </member>
@@ -1794,62 +1788,6 @@
             <param name="value">The <see cref="T:DocumentModel.EMU"/> value to convert.</param>
             <returns>A string representation of the EMU value.</returns>
         </member>
-        <member name="M:DocumentModel.EMU.op_Implicit(System.Int16)~DocumentModel.EMU">
-            <summary>
-            Implicitly converts a 16-bit signed integer to a <see cref="T:DocumentModel.EMU"/> value.
-            </summary>
-            <param name="value">The 16-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.EMU"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EMU.op_Implicit(DocumentModel.EMU)~System.Int16">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.EMU"/> value to a 16-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EMU"/> value to convert.</param>
-            <returns>A 16-bit signed integer representation of the EMU value.</returns>
-        </member>
-        <member name="M:DocumentModel.EMU.op_Implicit(System.UInt16)~DocumentModel.EMU">
-            <summary>
-            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.EMU"/> value.
-            </summary>
-            <param name="value">The 16-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.EMU"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EMU.op_Implicit(DocumentModel.EMU)~System.UInt16">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.EMU"/> value to a 16-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EMU"/> value to convert.</param>
-            <returns>A 16-bit unsigned integer representation of the EMU value.</returns>
-        </member>
-        <member name="M:DocumentModel.EMU.op_Implicit(System.Int32)~DocumentModel.EMU">
-            <summary>
-            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.EMU"/> value.
-            </summary>
-            <param name="value">The 32-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.EMU"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EMU.op_Implicit(DocumentModel.EMU)~System.Int32">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.EMU"/> value to a 32-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EMU"/> value to convert.</param>
-            <returns>A 32-bit signed integer representation of the EMU value.</returns>
-        </member>
-        <member name="M:DocumentModel.EMU.op_Implicit(System.UInt32)~DocumentModel.EMU">
-            <summary>
-            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.EMU"/> value.
-            </summary>
-            <param name="value">The 32-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.EMU"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EMU.op_Implicit(DocumentModel.EMU)~System.UInt32">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.EMU"/> value to a 32-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EMU"/> value to convert.</param>
-            <returns>A 32-bit unsigned integer representation of the EMU value.</returns>
-        </member>
         <member name="M:DocumentModel.EMU.op_Implicit(System.Int64)~DocumentModel.EMU">
             <summary>
             Implicitly converts a 64-bit signed integer to a <see cref="T:DocumentModel.EMU"/> value.
@@ -1863,6 +1801,13 @@
             </summary>
             <param name="value">The <see cref="T:DocumentModel.EMU"/> value to convert.</param>
             <returns>A 64-bit signed integer representation of the EMU value.</returns>
+        </member>
+        <member name="M:DocumentModel.EMU.op_Implicit(System.Double)~DocumentModel.EMU">
+            <summary>
+            Implicitly converts a double-precision floating-point number to a <see cref="T:DocumentModel.EMU"/> value.
+            </summary>
+            <param name="value">The double-precision floating-point number to convert.</param>
+            <returns>A <see cref="T:DocumentModel.EMU"/> value representing the double-precision floating-point number.</returns>
         </member>
         <member name="M:DocumentModel.EMU.CompareTo(DocumentModel.EMU)">
             <summary>
@@ -1891,13 +1836,10 @@
         </member>
         <member name="M:DocumentModel.EMU.Equals(System.Object)">
             <summary>
-            Determines whether the specified object is equal to the current instance of EMU.
+            Compares this instance to a specified object and returns a value that indicates whether they are equal.
             </summary>
-            <remarks>This method overrides Object.Equals to provide value equality comparison specific to EMU
-            instances.</remarks>
             <param name="obj">The object to compare with the current EMU instance. This parameter can be null.</param>
-            <returns>true if the specified object is an instance of EMU and is equal to the current instance; otherwise,
-            false.</returns>
+            <returns><c>true</c> if the specified object is equal to the current EMU instance; otherwise, <c>false</c>.</returns>
         </member>
         <member name="T:DocumentModel.EMUJsonConverter">
             <summary>
@@ -2288,6 +2230,13 @@
             <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
             <returns>A 64-bit signed integer representation of the eighth-points value.</returns>
         </member>
+        <member name="M:DocumentModel.EPS.op_Implicit(System.Double)~DocumentModel.EPS">
+            <summary>
+            Implicitly converts a double-precision floating-point number to a <see cref="T:DocumentModel.EPS"/> value.
+            </summary>
+            <param name="value">The double-precision floating-point number to convert.</param>
+            <returns>A <see cref="T:DocumentModel.EPS"/> value representing the double-precision floating-point number.</returns>
+        </member>
         <member name="M:DocumentModel.EPS.CompareTo(DocumentModel.EPS)">
             <summary>
             Compares this instance to a specified <see cref="T:DocumentModel.EPS"/> object and returns an indication of their relative values.
@@ -2315,13 +2264,10 @@
         </member>
         <member name="M:DocumentModel.EPS.Equals(System.Object)">
             <summary>
-            Determines whether the specified object is equal to the current instance of EPS.
+            Compares this instance to a specified object and returns a value that indicates whether they are equal.
             </summary>
-            <remarks>This method overrides Object.Equals to provide value equality comparison specific to EPS
-            instances.</remarks>
             <param name="obj">The object to compare with the current EPS instance. This parameter can be null.</param>
-            <returns>true if the specified object is an instance of EPS and is equal to the current instance; otherwise,
-            false.</returns>
+            <returns><c>true</c> if the specified object is equal to the current EPS instance; otherwise, <c>false</c>.</returns>
         </member>
         <member name="T:DocumentModel.EPSJsonConverter">
             <summary>
@@ -5019,17 +4965,10 @@
         </member>
         <member name="M:DocumentModel.HPS.op_Implicit(System.Double)~DocumentModel.HPS">
             <summary>
-            Implicitly converts a 64-bit signed integer to a <see cref="T:DocumentModel.HPS"/> value.
+            Implicitly converts a double-precision floating-point number to a <see cref="T:DocumentModel.HPS"/> value.
             </summary>
-            <param name="value">The 64-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.Double">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HPS"/> value to a 64-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
-            <returns>A 64-bit signed integer representation of the half-points value.</returns>
+            <param name="value">The double-precision floating-point number to convert.</param>
+            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the double-precision floating-point number.</returns>
         </member>
         <member name="M:DocumentModel.HPS.CompareTo(DocumentModel.HPS)">
             <summary>
@@ -5058,13 +4997,10 @@
         </member>
         <member name="M:DocumentModel.HPS.Equals(System.Object)">
             <summary>
-            Determines whether the specified object is equal to the current HalfPoints instance.
+            Compares this instance to a specified object and returns a value that indicates whether they are equal.
             </summary>
-            <remarks>This method provides a type-specific equality comparison for HalfPoints objects, overriding the
-            base implementation to ensure accurate value comparison.</remarks>
-            <param name="obj">The object to compare with the current HalfPoints instance. This parameter can be null.</param>
-            <returns><see langword="true"/> if the specified object is a HalfPoints instance and is equal to the current instance;
-            otherwise, <see langword="false"/>.</returns>
+            <param name="obj">The object to compare with the current HPS instance. This parameter can be null.</param>
+            <returns><c>true</c> if the specified object is equal to the current HPS instance; otherwise, <c>false</c>.</returns>
         </member>
         <member name="T:DocumentModel.HPSJsonConverter">
             <summary>
@@ -6025,15 +5961,9 @@
             <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
             </remarks>
         </member>
-        <member name="M:DocumentModel.PTS.#ctor(System.UInt32)">
+        <member name="M:DocumentModel.PTS.#ctor(System.Int64)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a 32-bit unsigned integer value.
-            </summary>
-            <param name="value">The value in points.</param>
-        </member>
-        <member name="M:DocumentModel.PTS.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a 32-bit signed integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a 64-bit signed integer value.
             </summary>
             <param name="value">The value in points.</param>
         </member>
@@ -6242,62 +6172,6 @@
             <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
             <returns>A string representation of the points value.</returns>
         </member>
-        <member name="M:DocumentModel.PTS.op_Implicit(System.Int16)~DocumentModel.PTS">
-            <summary>
-            Implicitly converts a 16-bit signed integer to a <see cref="T:DocumentModel.PTS"/> value.
-            </summary>
-            <param name="value">The 16-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.Int16">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a 16-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
-            <returns>A 16-bit signed integer representation of the points value.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.op_Implicit(System.UInt16)~DocumentModel.PTS">
-            <summary>
-            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.PTS"/> value.
-            </summary>
-            <param name="value">The 16-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.UInt16">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a 16-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
-            <returns>A 16-bit unsigned integer representation of the points value.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.op_Implicit(System.Int32)~DocumentModel.PTS">
-            <summary>
-            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.PTS"/> value.
-            </summary>
-            <param name="value">The 32-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.Int32">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a 32-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
-            <returns>A 32-bit signed integer representation of the points value.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.op_Implicit(System.UInt32)~DocumentModel.PTS">
-            <summary>
-            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.PTS"/> value.
-            </summary>
-            <param name="value">The 32-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.UInt32">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a 32-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
-            <returns>A 32-bit unsigned integer representation of the points value.</returns>
-        </member>
         <member name="M:DocumentModel.PTS.op_Implicit(System.Int64)~DocumentModel.PTS">
             <summary>
             Implicitly converts a 64-bit signed integer to a <see cref="T:DocumentModel.PTS"/> value.
@@ -6312,12 +6186,12 @@
             <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
             <returns>A 64-bit signed integer representation of the points value.</returns>
         </member>
-        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.UInt64">
+        <member name="M:DocumentModel.PTS.op_Implicit(System.Double)~DocumentModel.PTS">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a 64-bit unsigned integer.
+            Implicitly converts a double-precision floating-point number to a <see cref="T:DocumentModel.PTS"/> value.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
-            <returns>A 64-bit unsigned integer representation of the points value.</returns>
+            <param name="value">The double-precision floating-point number to convert.</param>
+            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the double-precision floating-point number.</returns>
         </member>
         <member name="M:DocumentModel.PTS.CompareTo(DocumentModel.PTS)">
             <summary>
@@ -6346,12 +6220,10 @@
         </member>
         <member name="M:DocumentModel.PTS.Equals(System.Object)">
             <summary>
-            Determines whether the specified object is equal to the current instance of Points.
+            Compares this instance to a specified object and returns a value that indicates whether they are equal.
             </summary>
-            <remarks>This method first checks whether the provided object is of type Points. If so, it compares the
-            current instance with the specified Points object using the type-specific equality logic.</remarks>
-            <param name="obj">The object to compare with the current Points instance. This parameter can be null.</param>
-            <returns>true if the specified object is a Points instance and is equal to the current instance; otherwise, false.</returns>
+            <param name="obj">The object to compare with the current PTS instance. This parameter can be null.</param>
+            <returns><c>true</c> if the specified object is equal to the current PTS instance; otherwise, <c>false</c>.</returns>
         </member>
         <member name="T:DocumentModel.PTSJsonConverter">
             <summary>
@@ -7455,15 +7327,6 @@
             <remarks>This conversion allows for seamless integration of double values into contexts where Twips are
             required, facilitating operations that involve measurements in twips.</remarks>
             <param name="value">The value to convert, representing a measurement in twips.</param>
-        </member>
-        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Double">
-            <summary>
-            Implicitly converts a Twips value to its equivalent double-precision floating-point representation.
-            </summary>
-            <remarks>This conversion enables Twips values to be used seamlessly in contexts where double values are
-            required, such as mathematical operations or comparisons. The conversion preserves the numeric value represented
-            by the Twips instance.</remarks>
-            <param name="value">The Twips value to convert to a double.</param>
         </member>
         <member name="M:DocumentModel.Twips.CompareTo(DocumentModel.Twips)">
             <summary>

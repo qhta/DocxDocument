@@ -76,43 +76,40 @@ public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquat
   /// </remarks>
   public Twips(string str)
   {
+    str = str.Replace(",", ".").Trim();
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * TwipsInMM;
-      value = val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * TwipsInMM;
       return;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * TwipsInCM;
-      value = val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * TwipsInCM;
       return;
     }
     if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * TwipsInInch;
-      value = val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * TwipsInInch;
       return;
     }
     if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * TwipsInPT;
-      value = val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * TwipsInPT;
       return;
     }
     if (str.EndsWith("tw"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
-      value = val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture);
       return;
     }
-    value = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
+    value = Double.Parse(str, CultureInfo.InvariantCulture);
   }
+
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> struct from a 64-bit integer value.
   /// </summary>
@@ -427,18 +424,6 @@ public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquat
     return new Twips(value);
   }
 
-  /// <summary>
-  /// Implicitly converts a Twips value to its equivalent double-precision floating-point representation.
-  /// </summary>
-  /// <remarks>This conversion enables Twips values to be used seamlessly in contexts where double values are
-  /// required, such as mathematical operations or comparisons. The conversion preserves the numeric value represented
-  /// by the Twips instance.</remarks>
-  /// <param name="value">The Twips value to convert to a double.</param>
-  public static implicit operator Double(Twips value)
-  {
-    return (Double)value.value;
-  }
-
   #endregion
 
   #region IComparable and IEquatable Implementations
@@ -486,8 +471,35 @@ public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquat
   /// <returns>true if the specified object is a Twips instance equal to the current instance; otherwise, false.</returns>
   public override bool Equals(object? obj)
   {
-    return obj is Twips other && Equals(other);
+    if (obj is Twips otherTwips)
+      return Equals(otherTwips);
+    if (obj is ILengthMeasure otherMeasure)
+    {
+      try
+      {
+        var thisPoints = ConvertTo(LengthUnit.Points);
+        var otherPointsConvertTo = otherMeasure.ConvertTo(LengthUnit.Points);
+        return System.Math.Abs(thisPoints - otherPointsConvertTo) < 1e-10;
+      }
+      catch
+      {
+        return false;
+      }
+    }
+    if (obj is IConvertible convertible)
+    {
+      try
+      {
+        var otherValue = convertible.ToDouble(CultureInfo.InvariantCulture);
+        return System.Math.Abs(value - otherValue) < 1e-10;
+      }
+      catch
+      {
+        return false;
+      }
+    }
+    return false;
   }
-  
+
   #endregion
 }

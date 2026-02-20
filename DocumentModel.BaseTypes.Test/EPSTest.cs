@@ -52,7 +52,7 @@ public static class EPSTest
     // Test string to EPS conversion (with unit)
     EPS eps2 = "1in";
     var inchEPS = eps2.ToInch();
-    Console.WriteLine($"\n✓ String with unit to EPS: {eps2} ({inchEPS:F2}in)");
+    Console.WriteLine($"\n✓ String with unit to EPS: {eps2} ({inchEPS}in)");
     if (inchEPS != 1.0)
     {
       Console.WriteLine("✗ String with unit to EPS conversion FAILED");
@@ -120,11 +120,13 @@ public static class EPSTest
   /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestEPSUnitConversions()
   {
-    var eps1Inch = 72*8;
+    var eps1Inch = 72 * 8;
     var eps1MM = eps1Inch / 25.4;
     var eps1CM = eps1MM * 10;
-    var eps12PT = 12*8;
-    var eps10Twips = 4;
+    var eps1PT = eps1Inch / 72;
+    var eps12PT = eps1PT * 12;
+    var eps1Twips = eps1Inch / 1440.0;
+    var eps10Twips = eps1Twips * 10;
     Console.WriteLine("--- Testing EPS Unit Conversions ---");
     // Test inch conversions
     Console.WriteLine("Testing inch conversions:");
@@ -198,11 +200,11 @@ public static class EPSTest
     // Test ConvertTo for each unit
     Console.WriteLine("\nTesting ConvertTo method:");
     ILengthMeasure length = original;
-    Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches):F2}");
-    Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters):F2}");
-    Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters):F2}");
-    Console.WriteLine($"  To pt: {length.ConvertTo(LengthUnit.Points):F2}");
-    Console.WriteLine($"  To twips: {length.ConvertTo(LengthUnit.Twips):F2}");
+    Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches)}");
+    Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters)}");
+    Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters)}");
+    Console.WriteLine($"  To pt: {length.ConvertTo(LengthUnit.Points)}");
+    Console.WriteLine($"  To twips: {length.ConvertTo(LengthUnit.Twips)}");
 
     // Test string output with units
     Console.WriteLine("\nTesting string output with units:");
@@ -430,8 +432,8 @@ public static class EPSTest
     Console.WriteLine("\nTesting boundary values:");
     EPS minInt32 = Int32.MinValue;
     EPS maxInt32 = Int32.MaxValue;
-    Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch():F2}in)");
-    Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch():F2}in)");
+    Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch()}in)");
+    Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch()}in)");
 
     // Test eighth-point precision (unique to EPS - finest granularity)
     Console.WriteLine("\nTesting eighth-point precision (finest granularity):");
