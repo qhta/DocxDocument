@@ -411,6 +411,7 @@ public static class BytePercentTest
 public class BytePercentTestData
 {
   [XmlElement("Opacity")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public BytePercent Opacity { get; set; }
 
   [XmlElement("ColorAlpha")]

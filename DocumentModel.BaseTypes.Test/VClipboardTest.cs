@@ -576,6 +576,7 @@ public static class VClipboardDataTest
 public class VClipboardDataTestData
 {
   [XmlElement("TextClipboard")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public VClipboardData TextClipboard { get; set; }
 
   [XmlElement("BitmapClipboard")]

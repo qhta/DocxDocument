@@ -404,6 +404,7 @@ public static class HexLongTest
 public class HexLongTestData
 {
   [XmlElement("RevisionId")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public HexLong RevisionId { get; set; }
 
   [XmlElement("DocumentHash")]

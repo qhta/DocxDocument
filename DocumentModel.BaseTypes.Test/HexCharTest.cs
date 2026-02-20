@@ -340,6 +340,7 @@ public static class HexCharTest
 public class HexCharTestData
 {
   [XmlElement("LetterA")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public HexChar LetterA { get; set; }
 
   [XmlElement("Space")]

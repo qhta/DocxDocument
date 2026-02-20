@@ -283,6 +283,7 @@ public static class TSBooleanTest
 public class TSBooleanTestData
 {
   [XmlElement("Enabled")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public TSBoolean Enabled { get; set; }
 
   [XmlElement("Disabled")]

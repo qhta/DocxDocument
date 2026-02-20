@@ -29,60 +29,86 @@ public static class HPSTest
   }
 
   /// <summary>
-  /// Tests the fundamental operations of the HPS class, including conversions, equality checks, and comparisons.
+  /// Tests the basic operations of the HPS class, including conversions between HPS and various types, string
+  /// representations, and comparisons.
   /// </summary>
-  /// <remarks>This method exercises key features of the HPS class, such as converting between strings and
-  /// integers, verifying equality and comparison logic, and generating hash codes. It writes the results of each test
-  /// to the console and reports any exceptions encountered during execution.</remarks>
-  /// <returns>true if all basic HPS operations succeed; otherwise, false.</returns>
+  /// <remarks>This method verifies the correctness of the HPS class by testing string and numeric conversions,
+  /// string representations, hash code consistency, and comparison operations. It outputs diagnostic information to the
+  /// console for each test and returns false if any test fails.</remarks>
+  /// <returns>true if all basic HPS operations pass successfully; otherwise, false.</returns>
   static bool TestHPSBasicOperations()
   {
     Console.WriteLine("--- Testing HPS Basic Operations ---");
-
-    try
+    // Test string to HPS conversion (plain number)
+    long hps1Val = 7315200;
+    var hps1Str = hps1Val.ToString();
+    HPS hps1 = hps1Str;
+    var longHPS = (long)hps1;
+    Console.WriteLine($"\n✓ String to HPS: {hps1} = {longHPS} HPS");
+    if (longHPS != 7315200)
     {
-      // Test string to HPS conversion (plain number)
-      HPS hp1 = "144";
-      Console.WriteLine($"\n✓ String to HPS: {hp1} = {(Int64)hp1} HPS");
-
-      // Test integer to HPS conversion
-      HPS hp2 = 144;
-      Console.WriteLine($"\n✓ Int to HPS: {hp2}");
-
-      // Test equality
-      if (hp1.CompareTo(hp2) == 0)
-        Console.WriteLine("\n✓ Equality test passed");
-      else
-        Console.WriteLine("✗ Equality test FAILED");
-
-      // Test HPS to string
-      string str = hp1.ToString();
-      Console.WriteLine($"\n✓ HPS to string: {str}");
-
-      // Test HPS to various integer types
-      Int32 int32Val = (Int32)hp1;
-      Int64 int64Val = (Int64)hp1;
-      UInt32 uint32Val = (UInt32)hp1;
-      Console.WriteLine($"\n✓ Numeric conversions: int32={int32Val}, int64={int64Val}, uint32={uint32Val}");
-
-      // Test hash code
-      Console.WriteLine($"\n✓ Hash code: {hp1.GetHashCode()}");
-
-      // Test comparison
-      HPS hp3 = 288; // 2 inches
-      Console.WriteLine($"\n✓ CompareTo (144 vs 288): {hp1.CompareTo(hp3)} (expected < 0)");
-
-      Console.WriteLine("\n✓ All basic operations passed");
-      Console.WriteLine();
-      return true;
-    }
-    catch (Exception ex)
-    {
-      Console.WriteLine($"✗ Basic operations test FAILED: {ex.Message}");
-      Console.WriteLine($"  Stack trace: {ex.StackTrace}");
-      Console.WriteLine();
+      Console.WriteLine("✗ String to HPS conversion FAILED");
       return false;
     }
+    // Test string to HPS conversion (with unit)
+    HPS hps2 = "1in";
+    var inchHPS = hps2.ToInch();
+    Console.WriteLine($"\n✓ String with unit to HPS: {hps2} ({inchHPS:F2}in)");
+    if (inchHPS != 1.0)
+    {
+      Console.WriteLine("✗ String with unit to HPS conversion FAILED");
+      return false;
+    }
+
+    // Test integer to HPS conversion
+    HPS hps3 = hps1Val;
+    var intHPS = (int)hps3;
+    Console.WriteLine($"\n✓ Int to HPS: {intHPS}");
+    if (intHPS != hps1Val)
+    {
+      Console.WriteLine("✗ Int to HPS conversion FAILED");
+      return false;
+    }
+
+    // Test HPS to string
+    string strHPS = hps1.ToString();
+    Console.WriteLine($"\n✓ HPS to string: {strHPS}");
+    if (strHPS != hps1Str)
+    {
+      Console.WriteLine("✗ HPS to string conversion FAILED");
+      return false;
+    }
+
+    // Test HPS to various integer types
+    int int32Val = (int)hps1;
+    long int64Val = (long)hps1;
+    uint uint32Val = (uint)hps1;
+    Console.WriteLine($"\n✓ Numeric conversions: int32={int32Val}, int64={int64Val}, uint32={uint32Val}");
+    if (int32Val != hps1Val || int64Val != hps1Val || uint32Val != hps1Val)
+    {
+      Console.WriteLine("✗ HPS to numeric conversions FAILED");
+      return false;
+    }
+
+    // Test comparison
+    HPS hps4 = hps1Val * 2; // 2 inches
+    Console.WriteLine($"\n✓ CompareTo ({hps1Val} vs {hps4}): {hps1.CompareTo(hps4)} (expected < 0)");
+
+
+    // Test hash code
+    var hps1HashCode = hps1.GetHashCode();
+    HPS hps5 = hps1Str;
+    Console.WriteLine($"\n✓ Hash code: {hps1HashCode}");
+    var hps5HashCode = hps5.GetHashCode();
+    if (hps1HashCode != hps5HashCode)
+    {
+      Console.WriteLine($"✗ GetHashCode consistency FAILED hps1Hash={hps1HashCode}, hps1ValHash={hps5HashCode}");
+      return false;
+    }
+
+    Console.WriteLine("\n✓ All basic operations passed");
+    Console.WriteLine();
+    return true;
   }
 
 
@@ -196,6 +222,11 @@ public static class HPSTest
     return true;
   }
 
+  /// <summary>
+  /// Tests the serialization and deserialization of HPS values within an XML format using the XmlSerializer. This test
+  /// ensures that HPS values are correctly preserved during the XML serialization and deserialization process.
+  /// </summary>
+  /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestHPSXmlSerialization()
   {
     Console.WriteLine("--- Testing HPS XML Serialization ---");
@@ -239,6 +270,13 @@ public static class HPSTest
     return true;
   }
 
+  /// <summary>
+  /// Displays the original formatting values from the specified HPSTestData instance in a readable format.
+  /// </summary>
+  /// <remarks>This method outputs various formatting properties, such as font size, line height, letter
+  /// spacing, word spacing, superscript and subscript offsets, border width, and value thresholds, to the console.
+  /// Measurements are shown in both their original units and converted to points where applicable.</remarks>
+  /// <param name="testData">The HPSTestData instance containing the formatting values to display.</param>
   private static void ShowOriginalData(HPSTestData testData)
   {
     Console.WriteLine($"Original data:");
@@ -255,6 +293,15 @@ public static class HPSTest
     Console.WriteLine();
   }
 
+  /// <summary>
+  /// Determines whether the deserialized HPSTestData object matches the expected test data values.
+  /// </summary>
+  /// <remarks>If deserializedData is null, the method returns false. Each property of deserializedData is
+  /// compared to the corresponding property in testData, and the method returns false on the first mismatch.</remarks>
+  /// <param name="deserializedData">The HPSTestData instance obtained from deserialization to verify. This parameter can be null.</param>
+  /// <param name="testData">The original HPSTestData instance containing the expected values for comparison.</param>
+  /// <returns>true if all properties of the deserialized data are equal to the corresponding properties in the test data;
+  /// otherwise, false.</returns>
   private static bool VerifyDeserializedData(HPSTestData? deserializedData, HPSTestData testData)
   {
     if (deserializedData == null)
@@ -299,8 +346,12 @@ public static class HPSTest
     return true;
   }
 
-
-
+  /// <summary>
+  /// Tests the serialization and deserialization of HPS data to and from JSON format.
+  /// </summary>
+  /// <remarks>This method creates a test object, serializes it to JSON, and then deserializes it back to verify
+  /// the integrity of the data. It outputs the serialized JSON string to the console for inspection.</remarks>
+  /// <returns>true if the JSON serialization and deserialization process is successful; otherwise, false.</returns>
   static bool TestHPSJsonSerialization()
   {
     Console.WriteLine("--- Testing HPS JSON Serialization ---");
@@ -338,7 +389,10 @@ public static class HPSTest
     return true;
   }
 
-
+  /// <summary>
+  /// Creates a new instance of HPSTestData with predefined test values.
+  /// </summary>
+  /// <returns>A new HPSTestData instance populated with test values.</returns>
   private static HPSTestData CreateTestData()
   {
     return new HPSTestData
@@ -356,8 +410,14 @@ public static class HPSTest
     };
   }
 
-
-
+  /// <summary>
+  /// Tests a comprehensive set of edge cases for the HPS (Half-Point Size) type, including zero, boundary values,
+  /// precision, string parsing, unit conversions, deserialization, and implicit conversions.
+  /// </summary>
+  /// <remarks>This method outputs detailed results to the console, providing insights into the behavior of the
+  /// HPS type under various scenarios. It is intended for use in validating the correctness and robustness of HPS
+  /// handling, especially when dealing with different input formats, units, and conversions.</remarks>
+  /// <returns>true if all edge case tests complete successfully; otherwise, false.</returns>
   static bool TestHPSEdgeCases()
   {
     Console.WriteLine("--- Testing HPS Edge Cases ---");
@@ -485,8 +545,15 @@ public static class HPSTest
     }
   }
 
-
-
+  /// <summary>
+  /// Measures and reports the performance of various operations related to the HPS class, including construction,
+  /// string conversion, unit conversion, JSON serialization, deserialization, comparison, and hashing.
+  /// </summary>
+  /// <remarks>This method executes multiple iterations of each tested operation and outputs the elapsed time
+  /// for each to the console. It is intended to help identify performance bottlenecks in the HPS class and related
+  /// serialization routines. If an exception occurs during testing, the method reports the failure and returns
+  /// false.</remarks>
+  /// <returns>true if all performance tests complete successfully; otherwise, false.</returns>
   static bool TestHPSPerformance()
   {
     Console.WriteLine("--- Testing HPS Performance ---");
@@ -642,7 +709,6 @@ public static class HPSTest
   }
 
 }
-
 
 /// <summary>
 /// Test data class containing various HPS properties.
