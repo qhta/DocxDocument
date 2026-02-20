@@ -126,16 +126,19 @@ public static class EMUTest
   static bool TestEMUUnitConversions()
   {
     var emu1Inch = 914400;
-    var emu1MM = 36000;
-    var emu1CM = 360000;
-    var emu12PT = 152400;
-    var emu10Twips = 6350;
+    var emu1MM = emu1Inch / 25.4;
+    var emu1CM = emu1MM * 10;
+    var emu1PT = emu1Inch / 72;
+    var emu12PT = emu1PT * 12;
+    var emu1Twips = emu1Inch / 1440.0;
+    var emu10Twips = emu1Twips * 10;
+
     Console.WriteLine("--- Testing EMU Unit Conversions ---");      
     // Test inch conversions
     Console.WriteLine("Testing inch conversions:");
     EMU oneInch = "1in";
     Console.WriteLine($"  1in = {(long)oneInch} EMUs (expected {emu1Inch})");
-    Console.WriteLine($"  {emu1Inch} EMUs = {oneInch.ToInch():F2}in");
+    Console.WriteLine($"  {emu1Inch} EMUs = {oneInch.ToInch()}in");
     if (!oneInch.Equals(emu1Inch))
     {
       Console.WriteLine("✗ Inch conversion FAILED");
@@ -146,7 +149,7 @@ public static class EMUTest
     Console.WriteLine("\nTesting millimeter conversions:");
     EMU oneMM = "1mm";
     Console.WriteLine($"  1mm = {(long)oneMM} EMUs (expected {emu1MM})");
-    Console.WriteLine($"  {emu1MM} EMUs = {oneMM.ToMM():F2}mm");
+    Console.WriteLine($"  {emu1MM} EMUs = {oneMM.ToMM()}mm");
     if (!oneMM.Equals(emu1MM))
     {
       Console.WriteLine("✗ Millimeter conversion FAILED");
@@ -157,7 +160,7 @@ public static class EMUTest
     Console.WriteLine("\nTesting centimeter conversions:");
     EMU oneCM = "1cm";
     Console.WriteLine($"  1cm = {(long)oneCM} EMUs (expected ~{emu1CM})");
-    Console.WriteLine($"  {emu1CM} EMUs = {oneCM.ToCM():F2}cm");
+    Console.WriteLine($"  {emu1CM} EMUs = {oneCM.ToCM()}cm");
     if (!oneCM.Equals(emu1CM))
     {
       Console.WriteLine("✗ Centimeter conversion FAILED");
@@ -168,7 +171,7 @@ public static class EMUTest
     Console.WriteLine("\nTesting point conversions:");
     EMU twelvePoints = "12pt";
     Console.WriteLine($"  12pt = {(long)twelvePoints} EMUs (expected {emu12PT})");
-    Console.WriteLine($"  {emu12PT} EMUs = {twelvePoints.ToPT():F2}pt");
+    Console.WriteLine($"  {emu12PT} EMUs = {twelvePoints.ToPT()}pt");
     if (!twelvePoints.Equals(emu12PT))
     {
       Console.WriteLine("✗ Point conversion FAILED");
@@ -179,7 +182,7 @@ public static class EMUTest
     Console.WriteLine("\nTesting twips conversions:");
     EMU tenTwips = "10tw";
     Console.WriteLine($"  10tw = {(long)tenTwips} EMUs (expected {emu10Twips})");
-    Console.WriteLine($"  {emu10Twips} EMUs = {tenTwips.ToTwips():F2}tw");
+    Console.WriteLine($"  {emu10Twips} EMUs = {tenTwips.ToTwips()}tw");
     if (!tenTwips.Equals(emu10Twips))
     {
       Console.WriteLine("✗ Twips conversion FAILED");
@@ -203,11 +206,11 @@ public static class EMUTest
     // Test ConvertTo for each unit
     Console.WriteLine("\nTesting ConvertTo method:");
     ILengthMeasure length = original;
-    Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches):F2}");
-    Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters):F2}");
-    Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters):F2}");
-    Console.WriteLine($"  To pt: {length.ConvertTo(LengthUnit.Points):F2}");
-    Console.WriteLine($"  To twips: {length.ConvertTo(LengthUnit.Twips):F2}");
+    Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches)}");
+    Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters)}");
+    Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters)}");
+    Console.WriteLine($"  To pt: {length.ConvertTo(LengthUnit.Points)}");
+    Console.WriteLine($"  To twips: {length.ConvertTo(LengthUnit.Twips)}");
 
     // Test string output with units
     Console.WriteLine("\nTesting string output with units:");
@@ -321,8 +324,8 @@ public static class EMUTest
   private static void ShowOriginalData(EMUTestData testData)
   {
     Console.WriteLine($"Original data:");
-    Console.WriteLine($"  Width: {testData.Width} ({testData.Width.ToInch():F2}in)");
-    Console.WriteLine($"  Height: {testData.Height} ({testData.Height.ToInch():F2}in)");
+    Console.WriteLine($"  Width: {testData.Width} ({testData.Width.ToInch()}in)");
+    Console.WriteLine($"  Height: {testData.Height} ({testData.Height.ToInch()}in)");
     Console.WriteLine($"  LeftOffset: {testData.LeftOffset} ({testData.LeftOffset.ToMM():F1}mm)");
     Console.WriteLine($"  TopOffset: {testData.TopOffset} ({testData.TopOffset.ToMM():F1}mm)");
     Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
@@ -416,8 +419,8 @@ public static class EMUTest
     Console.WriteLine("\nTesting boundary values:");
     EMU minInt32 = int.MinValue;
     EMU maxInt32 = int.MaxValue;
-    Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch():F2}in)");
-    Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch():F2}in)");
+    Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch()}in)");
+    Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch()}in)");
 
     // Test string parsing variations
     Console.WriteLine("\nTesting string parsing variations:");
@@ -471,15 +474,9 @@ public static class EMUTest
 
     // Test implicit conversions
     Console.WriteLine("\nTesting implicit conversions:");
-    EMU fromInt32 = 914400;
     EMU fromInt64 = 914400L;
-    EMU fromUInt32 = 914400U;
-    int toInt32 = fromInt32;
     long toInt64 = fromInt64;
-    Console.WriteLine($"  From Int32: {fromInt32}");
     Console.WriteLine($"  From Int64: {fromInt64}");
-    Console.WriteLine($"  From UInt32: {fromUInt32}");
-    Console.WriteLine($"  To Int32: {toInt32}");
     Console.WriteLine($"  To Int64: {toInt64}");
 
     Console.WriteLine("\n✓ All edge case tests completed");

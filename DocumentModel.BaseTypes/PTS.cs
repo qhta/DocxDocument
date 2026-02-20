@@ -10,7 +10,7 @@
 /// This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// </remarks>
 [JsonConverter(typeof(PTSJsonConverter))]
-public readonly partial struct PTS : ILengthMeasure, IComparable<PTS>, IEquatable<PTS>
+public readonly partial struct PTS : ILengthMeasure, IComparable<PTS>, IEquatable<PTS>, IEquatable<object>
 {
 
   /// <summary>
@@ -78,47 +78,45 @@ public readonly partial struct PTS : ILengthMeasure, IComparable<PTS>, IEquatabl
   /// </remarks>
   public PTS(string str)
   {
+    str = str.Replace(",", ".").Trim();
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * PTSinMM;
-      value = (Double)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * PTSinMM;
+      return;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * PTSinCM;
-      value = (Double)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * PTSinCM;
+      return;
     }
-    else if (str.EndsWith("in"))
+    if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * PTSinInch;
-      value = (int)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * PTSinInch;
+      return;
     }
-    else if (str.EndsWith("pt"))
+    if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture);
-      value = (Double)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture);
+      return;
     }
-    else value = Int32.Parse(str);
+    if (str.EndsWith("tw"))
+    {
+      str = str.Substring(0, str.Length - 2).Trim();
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * PTSinTwips;
+      return;
+    }
+    value = Double.Parse(str, CultureInfo.InvariantCulture);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="PTS"/> struct from a 32-bit unsigned integer value.
+  /// Initializes a new instance of the <see cref="PTS"/> struct from a 64-bit signed integer value.
   /// </summary>
   /// <param name="value">The value in points.</param>
-  public PTS(UInt32 value)
-  {
-    this.value = value;
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="PTS"/> struct from a 32-bit signed integer value.
-  /// </summary>
-  /// <param name="value">The value in points.</param>
-  public PTS(Int32 value)
+  public PTS(Int64 value)
   {
     this.value = value;
   }
@@ -391,63 +389,7 @@ public readonly partial struct PTS : ILengthMeasure, IComparable<PTS>, IEquatabl
   /// </summary>
   /// <param name="value">The <see cref="PTS"/> value to convert.</param>
   /// <returns>A string representation of the points value.</returns>
-  public static implicit operator string(PTS value) { return value.value.ToString(); }
-
-  /// <summary>
-  /// Implicitly converts a 16-bit signed integer to a <see cref="PTS"/> value.
-  /// </summary>
-  /// <param name="value">The 16-bit signed integer to convert.</param>
-  /// <returns>A <see cref="PTS"/> value representing the integer.</returns>
-  public static implicit operator PTS(Int16 value) { return new PTS(value); }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="PTS"/> value to a 16-bit signed integer.
-  /// </summary>
-  /// <param name="value">The <see cref="PTS"/> value to convert.</param>
-  /// <returns>A 16-bit signed integer representation of the points value.</returns>
-  public static implicit operator Int16(PTS value) { return (Int16)value.value; }
-
-  /// <summary>
-  /// Implicitly converts a 16-bit unsigned integer to a <see cref="PTS"/> value.
-  /// </summary>
-  /// <param name="value">The 16-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="PTS"/> value representing the integer.</returns>
-  public static implicit operator PTS(UInt16 value) { return new PTS(value); }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="PTS"/> value to a 16-bit unsigned integer.
-  /// </summary>
-  /// <param name="value">The <see cref="PTS"/> value to convert.</param>
-  /// <returns>A 16-bit unsigned integer representation of the points value.</returns>
-  public static implicit operator UInt16(PTS value) { return (UInt16)value.value; }
-
-  /// <summary>
-  /// Implicitly converts a 32-bit signed integer to a <see cref="PTS"/> value.
-  /// </summary>
-  /// <param name="value">The 32-bit signed integer to convert.</param>
-  /// <returns>A <see cref="PTS"/> value representing the integer.</returns>
-  public static implicit operator PTS(Int32 value) { return new PTS(value); }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="PTS"/> value to a 32-bit signed integer.
-  /// </summary>
-  /// <param name="value">The <see cref="PTS"/> value to convert.</param>
-  /// <returns>A 32-bit signed integer representation of the points value.</returns>
-  public static implicit operator Int32(PTS value) { return (Int32)value.value; }
-
-  /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer to a <see cref="PTS"/> value.
-  /// </summary>
-  /// <param name="value">The 32-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="PTS"/> value representing the integer.</returns>
-  public static implicit operator PTS(UInt32 value) { return new PTS(value); }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="PTS"/> value to a 32-bit unsigned integer.
-  /// </summary>
-  /// <param name="value">The <see cref="PTS"/> value to convert.</param>
-  /// <returns>A 32-bit unsigned integer representation of the points value.</returns>
-  public static implicit operator UInt32(PTS value) { return (UInt32)value.value; }
+  public static implicit operator string(PTS value) { return value.value.ToString(CultureInfo.InvariantCulture); }
 
   /// <summary>
   /// Implicitly converts a 64-bit signed integer to a <see cref="PTS"/> value.
@@ -464,11 +406,11 @@ public readonly partial struct PTS : ILengthMeasure, IComparable<PTS>, IEquatabl
   public static implicit operator Int64(PTS value) { return (Int64)value.value; }
 
   /// <summary>
-  /// Implicitly converts a <see cref="PTS"/> value to a 64-bit unsigned integer.
+  /// Implicitly converts a double-precision floating-point number to a <see cref="PTS"/> value.
   /// </summary>
-  /// <param name="value">The <see cref="PTS"/> value to convert.</param>
-  /// <returns>A 64-bit unsigned integer representation of the points value.</returns>
-  public static implicit operator UInt64(PTS value) { return (UInt64)value.value; }
+  /// <param name="value">The double-precision floating-point number to convert.</param>
+  /// <returns>A <see cref="PTS"/> value representing the double-precision floating-point number.</returns>
+  public static implicit operator PTS(Double value) { return new PTS(value); }
 
   #endregion
 
@@ -509,15 +451,40 @@ public readonly partial struct PTS : ILengthMeasure, IComparable<PTS>, IEquatabl
   }
 
   /// <summary>
-  /// Determines whether the specified object is equal to the current instance of Points.
+  /// Compares this instance to a specified object and returns a value that indicates whether they are equal.
   /// </summary>
-  /// <remarks>This method first checks whether the provided object is of type Points. If so, it compares the
-  /// current instance with the specified Points object using the type-specific equality logic.</remarks>
-  /// <param name="obj">The object to compare with the current Points instance. This parameter can be null.</param>
-  /// <returns>true if the specified object is a Points instance and is equal to the current instance; otherwise, false.</returns>
+  /// <param name="obj">The object to compare with the current PTS instance. This parameter can be null.</param>
+  /// <returns><c>true</c> if the specified object is equal to the current PTS instance; otherwise, <c>false</c>.</returns>
   public override bool Equals(object? obj)
   {
-    return obj is PTS other && Equals(other);
+    if (obj is PTS otherPTS)
+      return Equals(otherPTS);
+    if (obj is ILengthMeasure otherMeasure)
+    {
+      try
+      {
+        var thisPoints = ConvertTo(LengthUnit.Points);
+        var otherPointsConvertTo = otherMeasure.ConvertTo(LengthUnit.Points);
+        return System.Math.Abs(thisPoints - otherPointsConvertTo) < 1e-10;
+      }
+      catch
+      {
+        return false;
+      }
+    }
+    if (obj is IConvertible convertible)
+    {
+      try
+      {
+        var otherValue = convertible.ToDouble(CultureInfo.InvariantCulture);
+        return System.Math.Abs(value - otherValue) < 1e-10;
+      }
+      catch
+      {
+        return false;
+      }
+    }
+    return false;
   }
 
   #endregion
