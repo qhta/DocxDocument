@@ -87,42 +87,38 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   /// </remarks>
   public EPS(string str)
   {
+    str = str.Replace(",", ".").Trim();
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinMM;
-      value = (Double)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * EPSinMM;
       return;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinCM;
-      value = (Double)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * EPSinCM;
       return;
     }
     if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinInch;
-      value = (int)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * EPSinInch;
       return;
     }
     if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinPT;
-      value = (Double)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * EPSinPT;
       return;
     }
     if (str.EndsWith("tw"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinTwips;
-      value = (Double)val;
+      value = Double.Parse(str, CultureInfo.InvariantCulture) * EPSinTwips;
       return;
     }
-    value = Double.Parse(str);
+    value = Double.Parse(str, CultureInfo.InvariantCulture);
   }
 
   /// <summary>
@@ -428,25 +424,13 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
     return (Int64)value.value;
   }
 
-  ///// <summary>
-  ///// Implicitly converts a double-precision floating-point number to an <see cref="EPS"/> value.
-  ///// </summary>
-  ///// <param name="value">The double-precision floating-point number to convert.</param>
-  ///// <returns>An <see cref="EPS"/> value representing the double-precision floating-point number.</returns>
-  //public static implicit operator EPS(Double value)
-  //{
-  //  return new EPS(value);
-  //}
+  /// <summary>
+  /// Implicitly converts a double-precision floating-point number to a <see cref="EPS"/> value.
+  /// </summary>
+  /// <param name="value">The double-precision floating-point number to convert.</param>
+  /// <returns>A <see cref="EPS"/> value representing the double-precision floating-point number.</returns>
+  public static implicit operator EPS(Double value) { return new EPS(value); }
 
-  ///// <summary>
-  ///// Implicitly converts an <see cref="EPS"/> value to a double-precision floating-point number.
-  ///// </summary>
-  ///// <param name="value">The <see cref="EPS"/> value to convert.</param>
-  ///// <returns>A double-precision floating-point representation of the eighth-points value.</returns>
-  //public static implicit operator Double(EPS value)
-  //{
-  //  return (Double)value.value;
-  //}
   #endregion
 
   #region IComparable and IEquatable implementations
@@ -486,17 +470,27 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   }
 
   /// <summary>
-  /// Determines whether the specified object is equal to the current instance of EPS.
+  /// Compares this instance to a specified object and returns a value that indicates whether they are equal.
   /// </summary>
-  /// <remarks>This method overrides Object.Equals to provide value equality comparison specific to EPS
-  /// instances.</remarks>
   /// <param name="obj">The object to compare with the current EPS instance. This parameter can be null.</param>
-  /// <returns>true if the specified object is an instance of EPS and is equal to the current instance; otherwise,
-  /// false.</returns>
+  /// <returns><c>true</c> if the specified object is equal to the current EPS instance; otherwise, <c>false</c>.</returns>
   public override bool Equals(object? obj)
   {
     if (obj is EPS otherEPS)
       return Equals(otherEPS);
+    if (obj is ILengthMeasure otherMeasure)
+    {
+      try
+      {
+        var thisPoints = ConvertTo(LengthUnit.Points);
+        var otherPointsConvertTo = otherMeasure.ConvertTo(LengthUnit.Points);
+        return System.Math.Abs(thisPoints - otherPointsConvertTo) < 1e-10;
+      }
+      catch
+      {
+        return false;
+      }
+    }
     if (obj is IConvertible convertible)
     {
       try

@@ -26,117 +26,202 @@ public static class TwipsTest
     return true;
   }
 
-  
+
+  /// <summary>
+  /// Tests the basic operations of the Twips class, including conversions between Twips and various types, string
+  /// representations, and comparisons.
+  /// </summary>
+  /// <remarks>This method verifies the correctness of the Twips class by testing string and numeric conversions,
+  /// string representations, hash code consistency, and comparison operations. It outputs diagnostic information to the
+  /// console for each test and returns false if any test fails.</remarks>
+  /// <returns>true if all basic Twips operations pass successfully; otherwise, false.</returns>
   static bool TestTwipsBasicOperations()
   {
-    Console.WriteLine("--- Testing Twips Basic Operations ---");      // Test string to Twips conversion (plain number)
-    Twips twips1 = "1440";
-    Console.WriteLine($"\n✓ String to Twips: {twips1} = {(Int64)twips1} twips");
+    Console.WriteLine("--- Testing Twips Basic Operations ---");
+    // Test string to Twips conversion (plain number)
+    long Twips1Val = 7315200;
+    var Twips1Str = Twips1Val.ToString();
+    Twips Twips1 = Twips1Str;
+    var longTwips = (long)Twips1;
+    Console.WriteLine($"\n✓ String to Twips: {Twips1} = {longTwips} Twips");
+    if (longTwips != 7315200)
+    {
+      Console.WriteLine("✗ String to Twips conversion FAILED");
+      return false;
+    }
+    // Test string to Twips conversion (with unit)
+    Twips Twips2 = "1in";
+    var inchTwips = Twips2.ToInch();
+    Console.WriteLine($"\n✓ String with unit to Twips: {Twips2} ({inchTwips}in)");
+    if (inchTwips != 1.0)
+    {
+      Console.WriteLine("✗ String with unit to Twips conversion FAILED");
+      return false;
+    }
 
     // Test integer to Twips conversion
-    Twips twips2 = 1440;
-    Console.WriteLine($"\n✓ Int to Twips: {twips2}");
-
-    // Test equality
-    if (twips1.Equals(twips2))
-      Console.WriteLine("\n✓ Equality test passed");
-    else
-      Console.WriteLine("✗ Equality test FAILED");
+    Twips Twips3 = Twips1Val;
+    var intTwips = (int)Twips3;
+    Console.WriteLine($"\n✓ Int to Twips: {intTwips}");
+    if (intTwips != Twips1Val)
+    {
+      Console.WriteLine("✗ Int to Twips conversion FAILED");
+      return false;
+    }
 
     // Test Twips to string
-    string str = twips1.ToString()!;
-    Console.WriteLine($"\n✓ Twips to string: {str}");
+    string strTwips = Twips1.ToString();
+    Console.WriteLine($"\n✓ Twips to string: {strTwips}");
+    if (strTwips != Twips1Str)
+    {
+      Console.WriteLine("✗ Twips to string conversion FAILED");
+      return false;
+    }
 
     // Test Twips to various integer types
-    Int32 int32Val = (Int32)twips1;
-    Int64 int64Val = (Int64)twips1;
-    UInt32 uint32Val = (UInt32)twips1;
+    int int32Val = (int)Twips1;
+    long int64Val = (long)Twips1;
+    uint uint32Val = (uint)Twips1;
     Console.WriteLine($"\n✓ Numeric conversions: int32={int32Val}, int64={int64Val}, uint32={uint32Val}");
-
-    // Test hash code
-    Console.WriteLine($"\n✓ Hash code: {twips1.GetHashCode()}");
+    if (int32Val != Twips1Val || int64Val != Twips1Val || uint32Val != Twips1Val)
+    {
+      Console.WriteLine("✗ Twips to numeric conversions FAILED");
+      return false;
+    }
 
     // Test comparison
-    Twips twips3 = 2880; // 2 inches
-    Console.WriteLine($"\n✓ CompareTo (1440 vs 2880): {twips1.CompareTo(twips3)} (expected < 0)");
+    Twips Twips4 = Twips1Val * 2; // 2 inches
+    Console.WriteLine($"\n✓ CompareTo ({Twips1Val} vs {Twips4}): {Twips1.CompareTo(Twips4)} (expected < 0)");
+
+
+    // Test hash code
+    var Twips1HashCode = Twips1.GetHashCode();
+    Twips Twips5 = Twips1Str;
+    Console.WriteLine($"\n✓ Hash code: {Twips1HashCode}");
+    var Twips5HashCode = Twips5.GetHashCode();
+    if (Twips1HashCode != Twips5HashCode)
+    {
+      Console.WriteLine($"✗ GetHashCode consistency FAILED Twips1Hash={Twips1HashCode}, Twips1ValHash={Twips5HashCode}");
+      return false;
+    }
 
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
     return true;
   }
 
-  
-  
+  /// <summary>
+  /// Tests the accuracy and correctness of conversions between Twips and various length units, including inches,
+  /// millimeters, centimeters, Twips, and twips.
+  /// </summary>
+  /// <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
+  /// verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
+  /// Use this method to validate that Twips-related conversion logic is functioning as expected.</remarks>
+  /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestTwipsUnitConversions()
   {
-    Console.WriteLine("--- Testing Twips Unit Conversions ---");      // Test inch conversions
+    var Twips1Inch = 72.0 * 20;
+    var Twips1MM = Twips1Inch / 25.4;
+    var Twips1CM = Twips1MM * 10;
+    var Twips1PT = Twips1Inch / 72.0;
+    var Twips12PT = Twips1PT * 12;
+    var Twips1Twips = Twips1Inch / 1440.0;
+    var Twips10Twips = Twips1Twips * 10;
+
+    Console.WriteLine("--- Testing Twips Unit Conversions ---");
+    // Test inch conversions
     Console.WriteLine("Testing inch conversions:");
     Twips oneInch = "1in";
-    Console.WriteLine($"  1in = {(Int64)oneInch} twips (expected 1440)");
-    Console.WriteLine($"  1440 twips = {oneInch.ToInch():F2}in");
-    if ((Int64)oneInch != 1440)
+    Console.WriteLine($"  1in = {oneInch} Twips (expected {Twips1Inch})");
+    Console.WriteLine($"  {Twips1Inch} Twips = {oneInch.ToInch()}in");
+    if (!oneInch.Equals(Twips1Inch))
     {
       Console.WriteLine("✗ Inch conversion FAILED");
       return false;
     }
 
+    // Test millimeter conversions
+    Console.WriteLine("\nTesting millimeter conversions:");
+    Twips oneMM = "1mm";
+    Console.WriteLine($"  1mm = {oneMM} Twips (expected {Twips1MM})");
+    Console.WriteLine($"  {Twips1MM} Twips = {oneMM.ToMM()}mm");
+    if (!oneMM.Equals(Twips1MM))
+    {
+      Console.WriteLine("✗ Millimeter conversion FAILED");
+      return false;
+    }
+
+    // Test centimeter conversions
+    Console.WriteLine("\nTesting centimeter conversions:");
+    Twips oneCM = "1cm";
+    Console.WriteLine($"  1cm = {oneCM} Twips (expected ~{Twips1CM})");
+    Console.WriteLine($"  {Twips1CM} Twips = {oneCM.ToCM()}cm");
+    if (!oneCM.Equals(Twips1CM))
+    {
+      Console.WriteLine("✗ Centimeter conversion FAILED");
+      return false;
+    }
+
     // Test point conversions
     Console.WriteLine("\nTesting point conversions:");
-    Twips onePoint = "1pt";
-    Console.WriteLine($"  1pt = {(Int64)onePoint} twips (expected 20)");
-    Console.WriteLine($"  20 twips = {onePoint.ToPT():F2}pt");
-    if ((Int64)onePoint != 20)
+    Twips twelveTwips = "12pt";
+    Console.WriteLine($"  12pt = {twelveTwips} Twips (expected {Twips12PT})");
+    Console.WriteLine($"  {Twips12PT} Twips = {twelveTwips.ToPT()}pt");
+    if (!twelveTwips.Equals(Twips12PT))
     {
       Console.WriteLine("✗ Point conversion FAILED");
       return false;
     }
 
-    // Test millimeter conversions
-    Console.WriteLine("\nTesting millimeter conversions:");
-    Twips tenMM = "10mm";
-    double expectedTwips = 10 * Twips.TwipsInMM;
-    Console.WriteLine($"  10mm = {(Int64)tenMM} twips (expected ~{expectedTwips:F0})");
-    Console.WriteLine($"  Back to mm: {tenMM.ToMM():F2}mm");
-
-    // Test centimeter conversions
-    Console.WriteLine("\nTesting centimeter conversions:");
-    Twips oneCM = "1cm";
-    expectedTwips = Twips.TwipsInCM;
-    Console.WriteLine($"  1cm = {(Int64)oneCM} twips (expected ~{expectedTwips:F0})");
-    Console.WriteLine($"  Back to cm: {oneCM.ToCM():F2}cm");
+    // Test twips conversions
+    Console.WriteLine("\nTesting twips conversions:");
+    Twips tenTwips = "10tw";
+    Console.WriteLine($"  10tw = {tenTwips} Twips (expected {Twips10Twips})");
+    Console.WriteLine($"  {Twips10Twips} Twips = {tenTwips.ToTwips()}tw");
+    if (!tenTwips.Equals(Twips10Twips))
+    {
+      Console.WriteLine("✗ Twips conversion FAILED");
+      return false;
+    }
 
     // Test conversion accuracy
     Console.WriteLine("\nTesting round-trip conversion accuracy:");
-    Twips original = 1440; // 1 inch
+    Twips original = Twips1Inch; // 1 inch
     double inches = original.ToInch();
     Twips roundTrip = new Twips($"{inches:F6}in");
-    Console.WriteLine($"  Original: {(Int64)original} twips");
+    Console.WriteLine($"  Original: {(long)original} Twips");
     Console.WriteLine($"  To inches: {inches:F6}in");
-    Console.WriteLine($"  Back to twips: {(Int64)roundTrip} twips");
-    Console.WriteLine($"  Match: {original.Equals(roundTrip)}");
+    Console.WriteLine($"  Back to Twips: {(long)roundTrip} Twips");
+    if (original.CompareTo(roundTrip) != 0)
+    {
+      Console.WriteLine("✗ Round-trip conversion FAILED");
+      return false;
+    }
+
+    // Test ConvertTo for each unit
+    Console.WriteLine("\nTesting ConvertTo method:");
+    ILengthMeasure length = original;
+    Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches)}");
+    Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters)}");
+    Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters)}");
+    Console.WriteLine($"  To pt: {length.ConvertTo(LengthUnit.Points)}");
+    Console.WriteLine($"  To twips: {length.ConvertTo(LengthUnit.Twips)}");
 
     // Test string output with units
     Console.WriteLine("\nTesting string output with units:");
-    Twips measurement = 1440;
-    Console.WriteLine($"  As twips: {measurement}");
-    Console.WriteLine($"  As inches: {measurement.ToString(LengthUnit.Inches)}");
-    Console.WriteLine($"  As points: {measurement.ToString(LengthUnit.Points)}");
-    Console.WriteLine($"  As mm: {measurement.ToString(LengthUnit.Millimeters)}");
-    Console.WriteLine($"  As cm: {measurement.ToString(LengthUnit.Centimeters)}");
+    Console.WriteLine($"  As Twips: {original}");
+    Console.WriteLine($"  As inches: {length.ToString(LengthUnit.Inches)}");
+    Console.WriteLine($"  As mm: {length.ToString(LengthUnit.Millimeters)}");
 
     // Test string output with precision
     Console.WriteLine("\nTesting string output with precision:");
-    Console.WriteLine($"  Precision 0: {measurement.ToString("F0", LengthUnit.Inches)}");
-    Console.WriteLine($"  Precision 2: {measurement.ToString("F2", LengthUnit.Inches)}");
-    Console.WriteLine($"  Precision 4: {measurement.ToString("F4", LengthUnit.Millimeters)}");
+    Console.WriteLine($"  Precision 0: {length.ToString("F0", LengthUnit.Inches)}");
+    Console.WriteLine($"  Precision 2: {length.ToString("F2", LengthUnit.Millimeters)}");
 
     Console.WriteLine("\n✓ All unit conversion tests passed");
     Console.WriteLine();
     return true;
   }
-
-  
-  
   static bool TestTwipsXmlSerialization()
   {
     Console.WriteLine("--- Testing Twips XML Serialization ---");      // Create test object
@@ -176,6 +261,13 @@ public static class TwipsTest
     return true;
   }
 
+  /// <summary>
+  /// Verifies that the deserialized TwipsTestData matches the original test data. It checks each property for equality
+  /// and outputs diagnostic information to the console for any discrepancies.
+  /// </summary>
+  /// <param name="deserializedData">The deserialized TwipsTestData object.</param>
+  /// <param name="testData">The original TwipsTestData object used for serialization.</param>
+  /// <returns>true if all properties match; otherwise, false.</returns>
   private static bool VerifyDeserializedData(TwipsTestData? deserializedData, TwipsTestData testData)
   {
     if (deserializedData == null)
@@ -217,11 +309,17 @@ public static class TwipsTest
     return true;
   }
 
-  
-  
+  /// <summary>
+  /// Tests the JSON serialization and deserialization process for TwipsTestData objects to ensure data integrity.
+  /// </summary>
+  /// <remarks>This method creates a TwipsTestData instance, serializes it to a JSON string, and then
+  /// deserializes it back to verify that the original and resulting objects are equivalent. The serialized JSON output
+  /// is written to the console for inspection.</remarks>
+  /// <returns>true if the serialized and deserialized data match and the test passes; otherwise, false.</returns>
   static bool TestTwipsJsonSerialization()
   {
-    Console.WriteLine("--- Testing Twips JSON Serialization ---");      // Create test object
+    Console.WriteLine("--- Testing Twips JSON Serialization ---");
+    // Create test object
     var testData = CreateTestData();
 
     ShowOriginalData(testData);
@@ -241,14 +339,21 @@ public static class TwipsTest
 
     // Deserialize from JSON
     var deserializedData = JsonSerializer.Deserialize<TwipsTestData>(jsonString, jsonOptions);
- if (!VerifyDeserializedData(deserializedData, testData)) return false;
+    if (!VerifyDeserializedData(deserializedData, testData)) return false;
     Console.WriteLine("\n✓ JSON Serialization/Deserialization test passed");
     Console.WriteLine();
     return true;
-  
+
   }
 
-  
+  /// <summary>
+  /// Creates a new instance of the TwipsTestData class initialized with standard page dimensions, margins, font size,
+  /// and spacing values for testing purposes.
+  /// </summary>
+  /// <remarks>This method is intended for use in test scenarios that require consistent and representative
+  /// document layout data. All values are specified in twips, a unit commonly used in document formatting.</remarks>
+  /// <returns>A TwipsTestData object populated with predefined values for page width, page height, margins, font size, line
+  /// spacing, and additional test values.</returns>
   private static TwipsTestData CreateTestData()
   {
     return new TwipsTestData
@@ -265,6 +370,13 @@ public static class TwipsTest
     };
   }
 
+  /// <summary>
+  /// Displays the original data values from the specified TwipsTestData instance, including page dimensions, margins,
+  /// font size, line spacing, and specific value properties.
+  /// </summary>
+  /// <remarks>This method outputs the original data to the console in both Twips and converted units (inches
+  /// and points) for better readability.</remarks>
+  /// <param name="testData">The TwipsTestData instance containing the original data to be displayed.</param>
   private static void ShowOriginalData(TwipsTestData testData)
   {
     Console.WriteLine($"Original data:");
@@ -281,7 +393,15 @@ public static class TwipsTest
     Console.WriteLine();
   }
 
-  
+  /// <summary>
+  /// Tests a variety of edge cases for the Twips class, including zero values, boundary values, common document
+  /// measurements, font sizes, string parsing, deserialization, output formatting, comparisons, and implicit
+  /// conversions.
+  /// </summary>
+  /// <remarks>This method outputs the results of each test to the console, providing insight into the behavior
+  /// of the Twips class under different scenarios. It is intended for diagnostic and validation purposes during
+  /// development.</remarks>
+  /// <returns>true if all Twips edge case tests are completed successfully; otherwise, false.</returns>
   static bool TestTwipsEdgeCases()
   {
     Console.WriteLine("--- Testing Twips Edge Cases ---");      // Test zero value
@@ -361,7 +481,7 @@ public static class TwipsTest
     Twips measurement = 1440;
     Console.WriteLine($"  As twips: {measurement}");
     Console.WriteLine($"  As inches (no precision): {measurement.ToString(LengthUnit.Inches)}");
-    Console.WriteLine($"  As inches (2 decimal): {measurement.ToString("F2",LengthUnit.Inches)}");
+    Console.WriteLine($"  As inches (2 decimal): {measurement.ToString("F2", LengthUnit.Inches)}");
     Console.WriteLine($"  As points: {measurement.ToString(LengthUnit.Points)}");
     Console.WriteLine($"  As mm (1 decimal): {measurement.ToString("F1", LengthUnit.Millimeters)}");
     Console.WriteLine($"  As cm (2 decimal): {measurement.ToString("F2", LengthUnit.Centimeters)}");
@@ -386,8 +506,15 @@ public static class TwipsTest
     return true;
   }
 
-  
-  
+  /// <summary>
+  /// Measures and reports the performance of various operations related to the Twips class, including construction,
+  /// conversion, comparison, and JSON serialization.
+  /// </summary>
+  /// <remarks>This method executes a series of timed tests for common Twips operations, such as constructing
+  /// instances from different formats, converting units, serializing and deserializing with JSON, and performing
+  /// equality and comparison checks. The elapsed time for each operation is output to the console to assist developers
+  /// in evaluating the performance characteristics of the Twips class.</remarks>
+  /// <returns>true if all performance tests complete successfully.</returns>
   static bool TestTwipsPerformance()
   {
     Console.WriteLine("--- Testing Twips Performance ---"); const int iterations = 100000;
@@ -529,7 +656,7 @@ public static class TwipsTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

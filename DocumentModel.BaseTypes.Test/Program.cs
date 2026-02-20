@@ -20,9 +20,9 @@ class Program
     //if (!Exec(ArrayVariantTests.Run)) return;
     //if (!Exec(Base64BinaryTest.Run)) return;
     //if (!Exec(BytePercentTest.Run)) return;
-    //if (!Exec(EMUTest.Run)) return;
+    if (!Exec(EMUTest.Run)) return;
     if (!Exec(EPSTest.Run)) return;
-    //if (!Exec(HPSTest.Run)) return;
+    if (!Exec(HPSTest.Run)) return;
     //if (!Exec(HexBinaryTest.Run)) return;
     //if (!Exec(HexCharTest.Run)) return;
     //if (!Exec(HexIntTest.Run)) return;
@@ -30,11 +30,11 @@ class Program
     //if (!Exec(HexRgbTest.Run)) return;
     //if (!Exec(ListOfTest.Run)) return;
     //if (!Exec(PercentTest.Run)) return;
-    //if (!Exec(PTSTest.Run)) return;
+    if (!Exec(PTSTest.Run)) return;
     //if (!Exec(TSBooleanTest.Run)) return;
     //if (!Exec(StringListTest.Run)) return;
     //if (!Exec(StrNumPairTest.Run)) return;
-    //if (!Exec(TwipsTest.Run)) return;
+    if (!Exec(TwipsTest.Run)) return;
     //if (!Exec(VariantTest.Run)) return;
     //if (!Exec(VClipboardDataTest.Run)) return;
     //if (!Exec(VectorVariantTest.Run)) return;

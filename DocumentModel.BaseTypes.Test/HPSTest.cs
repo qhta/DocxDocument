@@ -53,7 +53,7 @@ public static class HPSTest
     // Test string to HPS conversion (with unit)
     HPS hps2 = "1in";
     var inchHPS = hps2.ToInch();
-    Console.WriteLine($"\n✓ String with unit to HPS: {hps2} ({inchHPS:F2}in)");
+    Console.WriteLine($"\n✓ String with unit to HPS: {hps2} ({inchHPS}in)");
     if (inchHPS != 1.0)
     {
       Console.WriteLine("✗ String with unit to HPS conversion FAILED");
@@ -111,7 +111,6 @@ public static class HPSTest
     return true;
   }
 
-
   /// <summary>
   /// Tests the accuracy and correctness of conversions between HPS and various length units, including inches,
   /// millimeters, centimeters, points, and twips.
@@ -125,15 +124,18 @@ public static class HPSTest
     var hps1Inch = 72 * 2;
     var hps1MM = hps1Inch / 25.4;
     var hps1CM = hps1MM * 10;
-    var hps12PT = 12 * 2;
-    var hps10Twips = 20 / 20.0;
+    var hps1PT = hps1Inch / 72;
+    var hps12PT = hps1PT * 12;
+    var hps1Twips = hps1Inch / 1440.0;
+    var hps10Twips = hps1Twips * 10;
+
     Console.WriteLine("--- Testing HPS Unit Conversions ---");
     // Test inch conversions
     Console.WriteLine("Testing inch conversions:");
     HPS oneInch = "1in";
-    Console.WriteLine($"  1in = {(long)oneInch} HPS (expected {hps1Inch})");
+    Console.WriteLine($"  1in = {oneInch} HPS (expected {hps1Inch})");
     Console.WriteLine($"  {hps1Inch} HPS = {oneInch.ToInch()}in");
-    if (System.Math.Abs(oneInch - hps1Inch) > 0.01)
+    if (!oneInch.Equals(hps1Inch))
     {
       Console.WriteLine("✗ Inch conversion FAILED");
       return false;
@@ -144,7 +146,7 @@ public static class HPSTest
     HPS oneMM = "1mm";
     Console.WriteLine($"  1mm = {oneMM} HPS (expected {hps1MM})");
     Console.WriteLine($"  {hps1MM} HPS = {oneMM.ToMM()}mm");
-    if (System.Math.Abs(oneMM - hps1MM) > 0.01)
+    if (!oneMM.Equals(hps1MM))
     {
       Console.WriteLine("✗ Millimeter conversion FAILED");
       return false;
@@ -155,7 +157,7 @@ public static class HPSTest
     HPS oneCM = "1cm";
     Console.WriteLine($"  1cm = {oneCM} HPS (expected ~{hps1CM})");
     Console.WriteLine($"  {hps1CM} HPS = {oneCM.ToCM()}cm");
-    if (System.Math.Abs(oneCM - hps1CM) > 0.01)
+    if (!oneCM.Equals(hps1CM))
     {
       Console.WriteLine("✗ Centimeter conversion FAILED");
       return false;
@@ -166,7 +168,7 @@ public static class HPSTest
     HPS twelvePoints = "12pt";
     Console.WriteLine($"  12pt = {twelvePoints} HPS (expected {hps12PT})");
     Console.WriteLine($"  {hps12PT} HPS = {twelvePoints.ToPT()}pt");
-    if (System.Math.Abs(twelvePoints - hps12PT) > 0.01)
+    if (!twelvePoints.Equals(hps12PT))
     {
       Console.WriteLine("✗ Point conversion FAILED");
       return false;
@@ -177,7 +179,7 @@ public static class HPSTest
     HPS tenTwips = "10tw";
     Console.WriteLine($"  10tw = {tenTwips} HPS (expected {hps10Twips})");
     Console.WriteLine($"  {hps10Twips} HPS = {tenTwips.ToTwips()}tw");
-    if (System.Math.Abs(tenTwips - hps10Twips) > 0.01)
+    if (!tenTwips.Equals(hps10Twips))
     {
       Console.WriteLine("✗ Twips conversion FAILED");
       return false;
@@ -187,10 +189,10 @@ public static class HPSTest
     Console.WriteLine("\nTesting round-trip conversion accuracy:");
     HPS original = hps1Inch; // 1 inch
     double inches = original.ToInch();
-    HPS roundTrip = new HPS($"{inches}in");
-    Console.WriteLine($"  Original: {original} HPS");
-    Console.WriteLine($"  To inches: {inches}in");
-    Console.WriteLine($"  Back to HPS: {roundTrip} HPS");
+    HPS roundTrip = new HPS($"{inches:F6}in");
+    Console.WriteLine($"  Original: {(long)original} HPS");
+    Console.WriteLine($"  To inches: {inches:F6}in");
+    Console.WriteLine($"  Back to HPS: {(long)roundTrip} HPS");
     if (original.CompareTo(roundTrip) != 0)
     {
       Console.WriteLine("✗ Round-trip conversion FAILED");
@@ -200,11 +202,11 @@ public static class HPSTest
     // Test ConvertTo for each unit
     Console.WriteLine("\nTesting ConvertTo method:");
     ILengthMeasure length = original;
-    Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches):F2}");
-    Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters):F2}");
-    Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters):F2}");
-    Console.WriteLine($"  To pt: {length.ConvertTo(LengthUnit.Points):F2}");
-    Console.WriteLine($"  To twips: {length.ConvertTo(LengthUnit.Twips):F2}");
+    Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches)}");
+    Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters)}");
+    Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters)}");
+    Console.WriteLine($"  To pt: {length.ConvertTo(LengthUnit.Points)}");
+    Console.WriteLine($"  To twips: {length.ConvertTo(LengthUnit.Twips)}");
 
     // Test string output with units
     Console.WriteLine("\nTesting string output with units:");
@@ -433,8 +435,8 @@ public static class HPSTest
       Console.WriteLine("\nTesting boundary values:");
       HPS minInt32 = Int32.MinValue;
       HPS maxInt32 = Int32.MaxValue;
-      Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch():F2}in)");
-      Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch():F2}in)");
+      Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch()}in)");
+      Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch()}in)");
 
       // Test half-point precision (unique to HPS)
       Console.WriteLine("\nTesting half-point precision:");
