@@ -625,6 +625,7 @@ public static class ListOfTest
 public class ListOfTestData
 {
   [XmlElement("EmptyIntList")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public ListOf<int> EmptyIntList { get; set; } = new ListOf<int>();
 
   [XmlElement("SingleInt")]

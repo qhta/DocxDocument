@@ -331,6 +331,7 @@ public static class HexBinaryTest
 public class HexBinaryTestDataClass
 {
   [XmlElement("BinaryData")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public HexBinary BinaryData { get; set; }
 
   [XmlElement("DocumentHash")]

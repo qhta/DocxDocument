@@ -16,12 +16,12 @@ public readonly partial struct PTS : ILengthMeasure, IComparable<PTS>, IEquatabl
   /// <summary>
   /// The internal value storing the measurement in points.
   /// </summary>
-  private readonly Int64 value;
+  private readonly Double value;
 
   /// <summary>
   /// Gets the measurement value in points.
   /// </summary>
-  public Int64 Value => value;
+  public Double Value => value;
 
   #region Unit Conversion Constants
   /// <summary>
@@ -82,13 +82,13 @@ public readonly partial struct PTS : ILengthMeasure, IComparable<PTS>, IEquatabl
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * PTSinMM;
-      value = (Int64)val;
+      value = (Double)val;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * PTSinCM;
-      value = (Int64)val;
+      value = (Double)val;
     }
     else if (str.EndsWith("in"))
     {
@@ -100,7 +100,7 @@ public readonly partial struct PTS : ILengthMeasure, IComparable<PTS>, IEquatabl
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture);
-      value = (Int64)val;
+      value = (Double)val;
     }
     else value = Int32.Parse(str);
   }
@@ -127,7 +127,7 @@ public readonly partial struct PTS : ILengthMeasure, IComparable<PTS>, IEquatabl
   /// Initializes a new instance of the <see cref="PTS"/> struct from a 64-bit signed integer value.
   /// </summary>
   /// <param name="value">The value in points.</param>
-  public PTS(Int64 value)
+  public PTS(Double value)
   {
     this.value = value;
   }

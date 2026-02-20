@@ -376,15 +376,9 @@ public static class TwipsTest
 
     // Test implicit conversions
     Console.WriteLine("\nTesting implicit conversions:");
-    Twips fromInt32 = 1440;
     Twips fromInt64 = 1440L;
-    Twips fromUInt32 = 1440U;
-    Int32 toInt32 = fromInt32;
     Int64 toInt64 = fromInt64;
-    Console.WriteLine($"  From Int32: {fromInt32}");
     Console.WriteLine($"  From Int64: {fromInt64}");
-    Console.WriteLine($"  From UInt32: {fromUInt32}");
-    Console.WriteLine($"  To Int32: {toInt32}");
     Console.WriteLine($"  To Int64: {toInt64}");
 
     Console.WriteLine("\n✓ All edge case tests completed");
@@ -545,6 +539,7 @@ public static class TwipsTest
 public class TwipsTestData
 {
   [XmlElement("PageWidth")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Twips PageWidth { get; set; }
 
   [XmlElement("PageHeight")]

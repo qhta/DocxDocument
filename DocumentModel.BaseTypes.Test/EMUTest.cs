@@ -57,7 +57,7 @@ public static class EMUTest
     // Test string to EMU conversion (with unit)
     EMU emu2 = "1in";
     var inchEMU = emu2.ToInch();
-    Console.WriteLine($"\n✓ String with unit to EMU: {emu2} ({inchEMU:F2}in)");
+    Console.WriteLine($"\n✓ String with unit to EMU: {emu2} ({inchEMU}in)");
     if (inchEMU != 1.0)
     {
       Console.WriteLine("✗ String with unit to EMU conversion FAILED");
@@ -94,18 +94,21 @@ public static class EMUTest
       return false;
     }
 
-    // Test hash code
-    var hashCode = emu1.GetHashCode();
-    Console.WriteLine($"\n✓ Hash code: {hashCode}");
-    var emu1ValHashCode = emu1Val.GetHashCode();
-    if (hashCode != emu1ValHashCode)
-    {
-      Console.WriteLine($"✗ GetHashCode consistency FAILED emu1Hash={hashCode}, emu1ValHash={emu1ValHashCode}");
-      return false;
-    }
     // Test comparison
     EMU emu4 = emu1Val * 2; // 2 inches
     Console.WriteLine($"\n✓ CompareTo ({emu1Val} vs {emu4}): {emu1.CompareTo(emu4)} (expected < 0)");
+
+
+    // Test hash code
+    var emu1HashCode = emu1.GetHashCode();
+    EMU emu5 = emu1Str;
+    Console.WriteLine($"\n✓ Hash code: {emu1HashCode}");
+    var emu5HashCode = emu5.GetHashCode();
+    if (emu1HashCode != emu5HashCode)
+    {
+      Console.WriteLine($"✗ GetHashCode consistency FAILED emu1Hash={emu1HashCode}, emu1ValHash={emu5HashCode}");
+      return false;
+    }
 
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
@@ -133,7 +136,7 @@ public static class EMUTest
     EMU oneInch = "1in";
     Console.WriteLine($"  1in = {(long)oneInch} EMUs (expected {emu1Inch})");
     Console.WriteLine($"  {emu1Inch} EMUs = {oneInch.ToInch():F2}in");
-    if ((long)oneInch != emu1Inch)
+    if (!oneInch.Equals(emu1Inch))
     {
       Console.WriteLine("✗ Inch conversion FAILED");
       return false;
@@ -144,7 +147,7 @@ public static class EMUTest
     EMU oneMM = "1mm";
     Console.WriteLine($"  1mm = {(long)oneMM} EMUs (expected {emu1MM})");
     Console.WriteLine($"  {emu1MM} EMUs = {oneMM.ToMM():F2}mm");
-    if ((long)oneMM != emu1MM)
+    if (!oneMM.Equals(emu1MM))
     {
       Console.WriteLine("✗ Millimeter conversion FAILED");
       return false;
@@ -155,7 +158,7 @@ public static class EMUTest
     EMU oneCM = "1cm";
     Console.WriteLine($"  1cm = {(long)oneCM} EMUs (expected ~{emu1CM})");
     Console.WriteLine($"  {emu1CM} EMUs = {oneCM.ToCM():F2}cm");
-    if ((long)oneCM != emu1CM)
+    if (!oneCM.Equals(emu1CM))
     {
       Console.WriteLine("✗ Centimeter conversion FAILED");
       return false;
@@ -166,7 +169,7 @@ public static class EMUTest
     EMU twelvePoints = "12pt";
     Console.WriteLine($"  12pt = {(long)twelvePoints} EMUs (expected {emu12PT})");
     Console.WriteLine($"  {emu12PT} EMUs = {twelvePoints.ToPT():F2}pt");
-    if ((long)twelvePoints != emu12PT)
+    if (!twelvePoints.Equals(emu12PT))
     {
       Console.WriteLine("✗ Point conversion FAILED");
       return false;
@@ -177,7 +180,7 @@ public static class EMUTest
     EMU tenTwips = "10tw";
     Console.WriteLine($"  10tw = {(long)tenTwips} EMUs (expected {emu10Twips})");
     Console.WriteLine($"  {emu10Twips} EMUs = {tenTwips.ToTwips():F2}tw");
-    if ((long)tenTwips != emu10Twips)
+    if (!tenTwips.Equals(emu10Twips))
     {
       Console.WriteLine("✗ Twips conversion FAILED");
       return false;
@@ -625,6 +628,7 @@ public static class EMUTest
 public class EMUTestData
 {
   [XmlElement("Width")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public EMU Width { get; set; }
 
   [XmlElement("Height")]

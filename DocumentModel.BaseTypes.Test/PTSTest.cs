@@ -549,6 +549,7 @@ public static class PTSTest
 public class PointsTestData
 {
   [XmlElement("FontSize")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public PTS FontSize { get; set; }
 
   [XmlElement("LineHeight")]
