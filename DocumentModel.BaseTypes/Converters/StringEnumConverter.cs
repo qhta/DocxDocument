@@ -131,7 +131,7 @@ public class StringEnumConverter : JsonConverterFactory
     /// <param name="options">The JSON serializer options.</param>
     public override void Write(Utf8JsonWriter writer, TEnum value, JsonSerializerOptions options)
     {
-      writer.WriteStringValue(value.ToString());
+      writer.WriteStringValue(value.ToString(CultureInfo.InvariantCulture));
     }
   }
 
@@ -196,7 +196,7 @@ public class StringEnumConverter : JsonConverterFactory
     {
       if (value.HasValue)
       {
-        writer.WriteStringValue(value.Value.ToString());
+        writer.WriteStringValue(value.Value.ToString(CultureInfo.InvariantCulture));
       }
       else
       {

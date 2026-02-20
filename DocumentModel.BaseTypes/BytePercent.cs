@@ -22,7 +22,7 @@
 /// BytePercent percent3 = 100;                        // Implicit conversion
 /// 
 /// // Convert to string
-/// string str = percent1.ToString();                  // "50%"
+/// string str = percent1.ToString(CultureInfo.InvariantCulture);                  // "50%"
 /// string hex = percent1.ToHexString();               // "80" (128 in hex)
 /// 
 /// // Create from hexadecimal
@@ -406,7 +406,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// </summary>
   /// <param name="value">The BytePercent value to convert.</param>
   /// <returns>A new HexBinary instance created from the string representation of the BytePercent value.</returns>
-  public static implicit operator HexBinary(BytePercent value) => new HexBinary(value.ToString());
+  public static implicit operator HexBinary(BytePercent value) => new HexBinary(value.ToString(CultureInfo.InvariantCulture));
 
   /// <summary>
   /// Implicitly converts a <see cref="HexBinary"/> value to a <see cref="BytePercent"/> value.

@@ -5,7 +5,7 @@ namespace DocumentModel;
 /// </summary>
 public partial struct StrNumPair : IXmlSerializable
 {
-  #region IXmlSerializable Implementation
+
 
   /// <summary>
   /// This method is reserved and should not be used. Returns null as no schema is required.
@@ -71,6 +71,4 @@ public partial struct StrNumPair : IXmlSerializable
   {
     writer.WriteString(ToString());
   }
-
-  #endregion
 }

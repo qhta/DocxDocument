@@ -102,6 +102,6 @@ public class EPSJsonConverter : JsonConverter<EPS>
   public override void Write(Utf8JsonWriter writer, EPS value, JsonSerializerOptions options)
   {
     // Write as numeric string without unit suffix
-    writer.WriteStringValue(((Int64)value).ToString());
+    writer.WriteStringValue(((Int64)value).ToString(CultureInfo.InvariantCulture));
   }
 }

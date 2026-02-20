@@ -147,11 +147,11 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
             }
             else if (reader.TokenType == JsonTokenType.Number)
             {
-              stringValue = reader.GetDouble().ToString();
+              stringValue = reader.GetDouble().ToString(CultureInfo.InvariantCulture);
             }
             else if (reader.TokenType == JsonTokenType.True || reader.TokenType == JsonTokenType.False)
             {
-              stringValue = reader.GetBoolean().ToString();
+              stringValue = reader.GetBoolean().ToString(CultureInfo.InvariantCulture);
             }
             
             if (stringValue != null)
@@ -261,7 +261,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
       else
       {
         // For other IConvertible types, convert to string
-        writer.WriteStringValue(item.ToString());
+        writer.WriteStringValue(item.ToString(CultureInfo.InvariantCulture));
       }
     }
     

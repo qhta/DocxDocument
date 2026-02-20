@@ -10,7 +10,7 @@ namespace DocumentModel;
 /// </summary>
 public partial class Variant : IXmlSerializable
 {
-  #region IXmlSerializable Implementation
+
 
   /// <summary>
   /// This method is reserved and should not be used. Returns null as no schema is required.
@@ -169,7 +169,7 @@ public partial class Variant : IXmlSerializable
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
     // Write type attribute
-    writer.WriteAttributeString("type", VariantType.ToString());
+    writer.WriteAttributeString("type", VariantType.ToString(CultureInfo.InvariantCulture));
 
     // Write valueType attribute for Enum and Object types
     if ((VariantType == VariantType.Enum || VariantType == VariantType.Object) && ValueType != null)
@@ -193,8 +193,6 @@ public partial class Variant : IXmlSerializable
       }
     }
   }
-
-  #endregion
 
   #region Helper Methods
 
@@ -367,12 +365,10 @@ public partial class Variant : IXmlSerializable
         if (value is DateTime dateTime)
           return XmlConvert.ToString(dateTime, XmlDateTimeSerializationMode.RoundtripKind);
         return value.ToString();
-
       case VariantType.Guid:
         if (value is Guid guid)
           return guid.ToString();
-        return value.ToString();
-
+        return value.ToString();  
       case VariantType.HexInt:
         return value.ToString();
 
@@ -405,7 +401,7 @@ public partial class Variant : IXmlSerializable
 
       case VariantType.Variant:
         if (value is Variant variant)
-          return variant.ToString(CultureInfo.InvariantCulture);
+          return variant.ToString();
         return value.ToString();
 
       case VariantType.Object:

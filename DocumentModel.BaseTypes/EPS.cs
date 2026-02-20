@@ -405,6 +405,27 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   }
 
   /// <summary>
+  /// Implicitly converts a EPS instance to a 32-bit signed integer (Int32).
+  /// </summary>
+  /// <remarks>This conversion allows for seamless integration of EPS values in contexts where an Int32 is
+  /// expected. Ensure that the EPS value is within the range of Int32 to avoid overflow.</remarks>
+  /// <param name="value">The EPS instance to convert.</param>
+  public static implicit operator Int32(EPS value)
+  {
+    return (Int32)value.value;
+  }
+
+  /// <summary>
+  /// Implicitly converts a 32-bit signed integer to a <see cref="EPS"/> value.
+  /// </summary>
+  /// <param name="value">The 32-bit signed integer to convert.</param>
+  /// <returns>A <see cref="EPS"/> value representing the integer.</returns>
+  public static implicit operator EPS(Int32 value)
+  {
+    return new EPS(value);
+  }
+
+  /// <summary>
   /// Implicitly converts a 64-bit signed integer to an <see cref="EPS"/> value.
   /// </summary>
   /// <param name="value">The 64-bit signed integer to convert.</param>

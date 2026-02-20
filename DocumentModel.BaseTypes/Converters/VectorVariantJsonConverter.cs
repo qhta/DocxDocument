@@ -218,7 +218,7 @@ public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
       writer.WriteStartObject();
 
       // Write baseType
-      writer.WriteString("baseType", value.BaseType.Value.ToString());
+      writer.WriteString("baseType", value.BaseType.Value.ToString(CultureInfo.InvariantCulture));
 
       // Write items array
       writer.WritePropertyName("items");

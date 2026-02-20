@@ -391,6 +391,27 @@ public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquat
   {
     return value.value.ToString(CultureInfo.InvariantCulture);
   }
+  
+  /// <summary>
+  /// Implicitly converts a Twips instance to a 32-bit signed integer (Int32).
+  /// </summary>
+  /// <remarks>This conversion allows for seamless integration of Twips values in contexts where an Int32 is
+  /// expected. Ensure that the Twips value is within the range of Int32 to avoid overflow.</remarks>
+  /// <param name="value">The Twips instance to convert.</param>
+  public static implicit operator Int32(Twips value)
+  {
+    return (Int32)value.value;
+  }
+
+  /// <summary>
+  /// Implicitly converts a 32-bit signed integer to a <see cref="Twips"/> value.
+  /// </summary>
+  /// <param name="value">The 32-bit signed integer to convert.</param>
+  /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
+  public static implicit operator Twips(Int32 value)
+  {
+    return new Twips(value);
+  }
 
   /// <summary>
   /// Implicitly converts a Twips instance to a 64-bit signed integer (Int64).

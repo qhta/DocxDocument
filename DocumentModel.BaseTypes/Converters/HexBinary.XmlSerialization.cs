@@ -2,7 +2,7 @@
 
 public partial class HexBinary : IXmlSerializable
 {
-  #region IXmlSerializable Implementation
+
 
   /// <summary>
   ///   Returns null to indicate this type has no XML schema.
@@ -96,6 +96,4 @@ public partial class HexBinary : IXmlSerializable
       writer.WriteString(ToString());
     }
   }
-
-  #endregion
 }

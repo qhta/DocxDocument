@@ -7,8 +7,9 @@ public static class EnumConverter
 {
   private static readonly ConversionMethodInfo[] supportedConversions =
   [
+    new(typeof(ValueType), nameof(ConvertFromValueType), nameof(ConvertToValueType)),
     new(typeof(DX.EnumValue<>), nameof(ConvertFromEnumValue), nameof(ConvertToEnumValue)),
-    new(typeof(ValueType), nameof(ConvertFromIEnumValue), nameof(ConvertToIEnumValue)),
+    new(typeof(DX.IEnumValue), nameof(ConvertFromIEnumValue), nameof(ConvertToIEnumValue)),
     new(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
     new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
     new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
@@ -231,6 +232,46 @@ public static class EnumConverter
 
   #endregion
 
+
+  #region ValueType conversion.
+
+  /// <summary>
+  /// Converts ValueType value to Enum.
+  /// </summary>
+  /// <param name="value">The value to convert.</param>
+  /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
+  /// <returns>The Enum value, or null if the element has no content.</returns>
+  public static Enum? ConvertFromValueType(ValueType? value, Type modelEnumType)
+  {
+    if (value == null) return null;
+
+    if (value is DX.IEnumValue iEnumValue)
+      return ConvertFromIEnumValue(iEnumValue, modelEnumType);
+
+    var enumValue = Enum.ToObject(modelEnumType, value);
+    return (Enum)enumValue;
+
+  }
+
+  /// <summary>
+  /// Creates a ValueType value from an Enum value.
+  /// </summary>
+  /// <param name="value">The Enum value to convert.</param>
+  /// <param name="valueType">The target ValueType for the conversion.</param>
+  /// <returns>A new ValueType, or null if the input is null.</returns>
+  public static ValueType? ConvertToValueType(Enum? value, Type valueType)
+  {
+    if (value == null) return null;
+
+    if (valueType.GetInterface("IEnumValue") != null)
+      return (ValueType?)ConvertToIEnumValue(value, valueType);
+
+    var result = Enum.ToObject(valueType, value);
+    return (ValueType)result;
+  }
+
+  #endregion
+
   #region String conversion.
 
   /// <summary>
@@ -252,10 +293,10 @@ public static class EnumConverter
       return (Enum)enumValue;
     }
 
-    var enumValuesMap = GetEnumValuesMap(modelEnumType, typeof(string));
-    return (Enum?)enumValuesMap.GetValue1(value);
+    //var enumValuesMap = GetEnumValuesMap(modelEnumType, typeof(string));
+    //return (Enum?)enumValuesMap.GetValue1(value);
 
-    //return (Enum?)Enum.Parse(modelEnumType, value)!;
+    return (Enum?)Enum.Parse(modelEnumType, value)!;
   }
 
   /// <summary>
@@ -278,8 +319,15 @@ public static class EnumConverter
       var intValue = Convert.ToInt32(value);
       return intValue.ToString();
     }
-    var StringsMap = GetEnumValuesMap(modelEnumType, openXmlType);
-    var result = (String)StringsMap.GetValue2(value);
+
+    var result = value.ToString();
+    //var StringsMap = GetEnumValuesMap(modelEnumType, openXmlType);
+    //if (modelEnumType.GetCustomAttribute<FlagsAttribute>() != null)
+    //{
+    //  var result = (String)StringsMap.GetValue2(value);
+    //  return result;
+    //}
+    //var result = (String)StringsMap.GetValue2(value);
     return result;
   }
 

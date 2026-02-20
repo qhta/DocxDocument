@@ -489,7 +489,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// <remarks>
   ///   Example: HexInt(123) converts to HexBinary("0000007B").
   /// </remarks>
-  public static implicit operator HexBinary(HexInt value) => new HexBinary(value.ToString());
+  public static implicit operator HexBinary(HexInt value) => new HexBinary(value.ToString(CultureInfo.InvariantCulture));
 
   /// <summary>
   ///   Implicitly converts a HexBinary to a HexInt.

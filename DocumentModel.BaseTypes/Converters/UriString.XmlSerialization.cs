@@ -5,7 +5,7 @@
 /// </summary>
 public partial struct UriString : IXmlSerializable
 {
-  #region IXmlSerializable Implementation
+
 
   /// <summary>
   /// Returns null to indicate this type has no XML schema.
@@ -56,6 +56,4 @@ public partial struct UriString : IXmlSerializable
   {
     writer.WriteString(ToString());
   }
-
-  #endregion
 }

@@ -148,6 +148,6 @@ public class HexLongJsonConverter : JsonConverter<HexLong>
   /// </remarks>
   public override void Write(Utf8JsonWriter writer, HexLong value, JsonSerializerOptions options)
   {
-    writer.WriteStringValue(value.ToString());
+    writer.WriteStringValue(value.ToString(CultureInfo.InvariantCulture));
   }
 }

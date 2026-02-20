@@ -119,7 +119,7 @@ public static class ConverterBase
             var parameters = fromMethod.GetParameters();
             if (parameters.Length == 1)
               return fromMethod.Invoke(null, [value])!;
-
+            Debug.Assert(parameters.Length==2);
             return fromMethod.Invoke(null, [value, targetType])!;
           };
         }
@@ -130,7 +130,7 @@ public static class ConverterBase
             var parameters = toMethod.GetParameters();
             if (parameters.Length == 1)
               return toMethod.Invoke(null, [value])!;
-
+            Debug.Assert(parameters.Length == 2);
             return toMethod.Invoke(null, [value, targetType])!;
           };
         }
@@ -304,9 +304,17 @@ public static class ConverterBase
           (targetSearchType != targetType) &&
           conversionFromMap.TryGetValue((sourceSubType, targetType), out conversionFunc))
       {
-        //Debug.WriteLine($"Converting from {sourceType.FullName} to {sourceSubType.FullName}");
-        result = conversionFunc(value, targetType);
-        return true;
+        try
+        {
+          //Debug.WriteLine($"Converting from {sourceType.FullName} to {sourceSubType.FullName}");
+          result = conversionFunc(value, targetType);
+          return true;
+        } catch
+        {
+          break;
+        }
+
+
       }
       sourceSubType = sourceSubType.BaseType;
     }

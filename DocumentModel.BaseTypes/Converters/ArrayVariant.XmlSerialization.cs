@@ -9,7 +9,7 @@ namespace DocumentModel;
 /// </summary>
 public partial class ArrayVariant : IXmlSerializable
 {
-  #region IXmlSerializable Implementation
+
 
   /// <summary>
   /// This method is reserved and should not be used. Returns null as no schema is required.
@@ -162,9 +162,9 @@ public partial class ArrayVariant : IXmlSerializable
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
     // Write attributes
-    writer.WriteAttributeString("baseType", BaseType.ToString());
-    writer.WriteAttributeString("lowerBounds", LowerBounds.ToString());
-    writer.WriteAttributeString("upperBounds", UpperBounds.ToString());
+    writer.WriteAttributeString("baseType", BaseType.ToString(CultureInfo.InvariantCulture));
+    writer.WriteAttributeString("lowerBounds", LowerBounds.ToString(CultureInfo.InvariantCulture));
+    writer.WriteAttributeString("upperBounds", UpperBounds.ToString(CultureInfo.InvariantCulture));
 
     // Write array items
     if (_items != null)
@@ -186,8 +186,6 @@ public partial class ArrayVariant : IXmlSerializable
       }
     }
   }
-
-  #endregion
 
   #region Helper Methods
 
@@ -228,7 +226,7 @@ public partial class ArrayVariant : IXmlSerializable
   /// <param name="value">The object to convert.</param>
   /// <param name="variantType">The variant type of the value.</param>
   /// <returns>The string representation, or null if the value is null.</returns>
-  private static string? ConvertToString(object value, VariantType variantType)
+  private static string? ConvertToString(object? value, VariantType variantType)
   {
     if (value == null)
       return null;

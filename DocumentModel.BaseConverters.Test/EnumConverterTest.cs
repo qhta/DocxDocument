@@ -83,7 +83,7 @@ public static class EnumConverterTest
         return false;
       }
 
-      var outputText = (openXmlValue is DX.OpenXmlLeafTextElement openXmlLeafTextElement) 
+      var outputText = (openXmlValue is DX.OpenXmlLeafTextElement openXmlLeafTextElement)
         ? openXmlLeafTextElement.Text
         : (openXmlValue is DX.OpenXmlLeafElement openXmlLeafElement)
         ? ((openXmlType.GetProperty("Val") ?? openXmlType.GetProperty("Value"))?.GetValue(openXmlLeafElement)?.ToString())
@@ -91,7 +91,7 @@ public static class EnumConverterTest
         ?? openXmlValue.ToString();
       if (valueIndex == 0)
         Console.WriteLine();
-      Console.WriteLine($"Converted {testValue} to OpenXml value {outputText}"); 
+      Console.WriteLine($"Converted {testValue} to OpenXml value {outputText}");
 
       // Convert back to Enum
       var convertedBackValue = EnumConverter.ConvertFrom(openXmlValue, modelType);

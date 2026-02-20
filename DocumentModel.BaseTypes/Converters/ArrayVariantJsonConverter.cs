@@ -228,7 +228,7 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
     writer.WriteStartObject();
 
     // Write baseType
-    writer.WriteString("baseType", value.BaseType.ToString());
+    writer.WriteString("baseType", value.BaseType.ToString(CultureInfo.InvariantCulture));
 
     // Write bounds
     writer.WriteNumber("lowerBounds", value.LowerBounds);
