@@ -102,11 +102,11 @@ public class HexLongJsonConverter : JsonConverter<HexLong>
     }
     catch (FormatException ex)
     {
-      throw new JsonException($"Invalid hexadecimal string '{value}' for HexLong. Expected hex digits (0-9, A-F) representing a 32-bit longeger.", ex);
+      throw new JsonException($"Invalid hexadecimal string '{value}' for HexLong. Expected hex digits (0-9, A-F) representing a 64-bit long.", ex);
     }
     catch (OverflowException ex)
     {
-      throw new JsonException($"Hexadecimal value '{value}' is out of range for HexLong. Must represent a 32-bit signed longeger.", ex);
+      throw new JsonException($"Hexadecimal value '{value}' is out of range for HexLong. Must represent a 64-bit signed long.", ex);
     }
   }
 
@@ -148,6 +148,7 @@ public class HexLongJsonConverter : JsonConverter<HexLong>
   /// </remarks>
   public override void Write(Utf8JsonWriter writer, HexLong value, JsonSerializerOptions options)
   {
-    writer.WriteStringValue(value.ToString(CultureInfo.InvariantCulture));
+    // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+    writer.WriteStringValue(value.ToString());
   }
 }

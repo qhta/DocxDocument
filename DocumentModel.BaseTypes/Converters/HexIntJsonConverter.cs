@@ -149,6 +149,7 @@ public class HexIntJsonConverter : JsonConverter<HexInt>
   /// </remarks>
   public override void Write(Utf8JsonWriter writer, HexInt value, JsonSerializerOptions options)
   {
-    writer.WriteStringValue(value.ToString(CultureInfo.InvariantCulture));
+    // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+    writer.WriteStringValue(value.ToString());
   }
 }
