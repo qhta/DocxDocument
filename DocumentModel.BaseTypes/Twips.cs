@@ -10,7 +10,7 @@
 /// This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// </remarks>
 [JsonConverter(typeof(TwipsJsonConverter))]
-public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquatable<Twips>
+public readonly partial struct Twips: ILengthValue, IComparable<Twips>, IEquatable<Twips>
 {
   private readonly Double value;
 
@@ -193,30 +193,30 @@ public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquat
   #region Static Factory Methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in twips.
+  /// Creates an instance of an <see cref="ILengthValue"/> that represents the specified value in twips.
   /// </summary>
-  public static ILengthMeasure FromTwips(double twips) => new Twips((Double)twips);
+  public static ILengthValue FromTwips(double twips) => new Twips((Double)twips);
 
   /// <summary>
-  /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in points.
+  /// Creates an instance of an <see cref="ILengthValue"/> that represents the specified value in points.
   /// </summary>
-  public static ILengthMeasure FromPT(double points) => new Twips((Double)(points * TwipsInPT));
+  public static ILengthValue FromPT(double points) => new Twips((Double)(points * TwipsInPT));
 
   /// <summary>
   /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
-  public static ILengthMeasure FromMM(double millimeters) => new Twips((Double)(millimeters * TwipsInMM));
+  public static ILengthValue FromMM(double millimeters) => new Twips((Double)(millimeters * TwipsInMM));
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
-  public static ILengthMeasure FromCM(double centimeters) => new Twips((Double)(centimeters * TwipsInCM));
+  public static ILengthValue FromCM(double centimeters) => new Twips((Double)(centimeters * TwipsInCM));
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static ILengthMeasure FromInch(double inches) => new Twips((Double)(inches * TwipsInInch));
+  public static ILengthValue FromInch(double inches) => new Twips((Double)(inches * TwipsInInch));
 
   /// <summary>
   /// Converts a length value from the specified unit to a standardized length measure.
@@ -226,7 +226,7 @@ public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquat
   /// <param name="unit">The unit of measurement for the value parameter. Must be one of the supported length units.</param>
   /// <returns>An object that implements ILengthMeasure, representing the converted length value in a standardized format.</returns>
   /// <exception cref="ArgumentException">Thrown when the specified unit is not supported for conversion.</exception>
-  public static ILengthMeasure ConvertFrom(double value, LengthUnit unit) => unit switch
+  public static ILengthValue ConvertFrom(double value, LengthUnit unit) => unit switch
   {
     LengthUnit.Twips => FromTwips(value),
     LengthUnit.Points => FromPT(value),
@@ -247,7 +247,7 @@ public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquat
   /// thrown.</remarks>
   /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-  public static ILengthMeasure Parse(string value) => new Twips(value);
+  public static ILengthValue Parse(string value) => new Twips(value);
 
   /// <summary>
   /// Attempts to parse the specified string representation of a length measure and returns a value that indicates
@@ -259,7 +259,7 @@ public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquat
   /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
   /// langword="null"/>.</param>
   /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
-  public static bool TryParse(string value, out ILengthMeasure? result)
+  public static bool TryParse(string value, out ILengthValue? result)
   {
     try
     {
@@ -494,7 +494,7 @@ public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquat
   {
     if (obj is Twips otherTwips)
       return Equals(otherTwips);
-    if (obj is ILengthMeasure otherMeasure)
+    if (obj is ILengthValue otherMeasure)
     {
       try
       {

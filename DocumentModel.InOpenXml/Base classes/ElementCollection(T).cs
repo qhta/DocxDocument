@@ -7,7 +7,7 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
 public abstract class ElementCollection<ItemType> : ModelElement,
-  IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>, ICollection, IList, INotificationSource
+  IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, INotificationSource
 
 {
   private readonly ObservableCollection<ItemType> _items = new();

@@ -4,43 +4,43 @@
         <name>DocumentModel.BaseTypes.Interfaces</name>
     </assembly>
     <members>
-        <member name="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure">
+        <member name="T:DocumentModel.BaseTypes.Interfaces.ILengthValue">
             <summary>
             Represents a length measurement that can be converted to various units (twips, points, millimeters, centimeters, inches).
             </summary>
         </member>
-        <member name="P:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.Value">
+        <member name="P:DocumentModel.BaseTypes.Interfaces.ILengthValue.Value">
             <summary>
             Raw value. The unit of this value is implementation-specific,
             but it is expected to be in a consistent base unit (e.g., twips) for internal calculations and conversions.
             </summary>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToTwips">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ToTwips">
             <summary>
             Value of the length in twips (1/20 of a point). This is the base unit for internal calculations.
             </summary>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToPT">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ToPT">
             <summary>
             Value of the length in points (1/72 of an inch).
             </summary>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToMM">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ToMM">
             <summary>
             Converts the current measurement to millimeters.
             </summary>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToCM">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ToCM">
             <summary>
             Converts the current measurement to centimeters.
             </summary>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToInch">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ToInch">
             <summary>
             Converts the current measurement to inches.
             </summary>  
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ConvertTo(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ConvertTo(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
             Converts the current length value to the specified unit of measurement.
             </summary>
@@ -49,33 +49,33 @@
             <returns>The length value converted to the specified unit.</returns>
             <exception cref="T:System.ArgumentException">Thrown if the specified unit is not supported.</exception>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.FromTwips(System.Double)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.FromTwips(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in twips.
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthValue"/> that represents the specified value in twips.
             </summary>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.FromPT(System.Double)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.FromPT(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthMeasure"/> that represents the specified value in points.
+            Creates an instance of an <see cref="T:DocumentModel.BaseTypes.Interfaces.ILengthValue"/> that represents the specified value in points.
             </summary>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.FromMM(System.Double)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.FromMM(System.Double)">
             <summary>
             Creates a new instance of an object that represents a length specified in millimeters.
             </summary>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.FromCM(System.Double)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.FromCM(System.Double)">
             <summary>
             Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
             centimeters.
             </summary>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.FromInch(System.Double)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.FromInch(System.Double)">
             <summary>
             Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
             </summary>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
             Converts a length value from the specified unit to an equivalent length measure.
             </summary>
@@ -85,7 +85,7 @@
             <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
             <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.Parse(System.String)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.Parse(System.String)">
             <summary>
             Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
             </summary>
@@ -95,7 +95,7 @@
             <param name="value">The string that contains the length measure to parse. The format must be recognized by the implementation.</param>
             <returns>An ILengthMeasure instance that represents the parsed length measure.</returns>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthMeasure@)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.TryParse(System.String,DocumentModel.BaseTypes.Interfaces.ILengthValue@)">
             <summary>
             Attempts to convert the specified string representation of a length measure to its equivalent object, returning a
             value that indicates whether the conversion succeeded.  
@@ -107,12 +107,12 @@
             default value for the type.</param>
             <returns>true if the value was converted successfully; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToString">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ToString">
             <summary>
             Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
             </summary>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToString(System.IFormatProvider)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ToString(System.IFormatProvider)">
             <summary>
             Converts the current length measure to its string representation using the specified format provider.
             This allows for culture-specific formatting of the output string, such as using different decimal separators
@@ -122,7 +122,7 @@
             <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
             <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToString(System.String,System.IFormatProvider)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ToString(System.String,System.IFormatProvider)">
             <summary>
             Converts the current length measure to its string representation using the specified format string and format provider.
             The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
@@ -136,7 +136,7 @@
             <returns>A string representation of the current length measure,
             formatted according to the specified format string and format provider.</returns>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToString(System.String)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ToString(System.String)">
             <summary>
             Converts the current instance to its string representation using the specified format string.
             </summary>
@@ -146,7 +146,7 @@
             If null, a default format is used.</param>
             <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToString(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ToString(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
             Converts the current length measure to its string representation using the specified unit.
               The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
@@ -154,7 +154,7 @@
             <param name="unit">The unit to use for the string representation.</param>
             <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToString(System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ToString(System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
             Converts the current length measure to its string representation using the specified unit and format provider.
               The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
@@ -163,7 +163,7 @@
             <param name="unit">The unit to use for the string representation.</param>
             <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToString(System.String,System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ToString(System.String,System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
             Converts the current length value to its string representation using the specified unit, format, and format
             provider. 
@@ -178,7 +178,7 @@
             <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
             provider.</returns>
         </member>
-        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.ToString(System.String,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.BaseTypes.Interfaces.ILengthValue.ToString(System.String,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
             Converts the current length value to its string representation using the specified unit and format string.
             The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
@@ -187,10 +187,18 @@
             <param name="unit">The unit of length to use when formatting the value.</param>
             <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
         </member>
-        <member name="P:DocumentModel.BaseTypes.Interfaces.ILengthMeasure.LengthUnitSuffixes">
+        <member name="P:DocumentModel.BaseTypes.Interfaces.ILengthValue.LengthUnitSuffixes">
             <summary>
             Suffixes for length units that can be used in string representations of length measures.
             The order of the suffixes corresponds to the order of the LengthUnit enum values.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Interfaces.IPercentValue">
+            <summary>
+            Interface for percent value types, representing a value as a percentage (e.g., 50% as 0.5).
+            This interface can be implemented by types that encapsulate percentage values
+            and provide methods for conversion to and from percentage representations.
+            It serves as a marker interface to identify types that represent percentage values in the DocumentModel base types library.
             </summary>
         </member>
         <member name="T:DocumentModel.BaseTypes.Interfaces.LengthUnit">

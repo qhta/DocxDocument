@@ -359,6 +359,8 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <summary>
   /// Parent object that contains this item.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
   public object? Parent
   {
     [DebuggerStepThrough]
@@ -380,19 +382,21 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <summary>
   /// Optional collection that contains this item.
   /// </summary>
-  public ICollection? Collection
+  [XmlIgnore]
+  [JsonIgnore]
+  public object? Collection
   {
     [DebuggerStepThrough]
     get => _Collection;
   }
 
-  private ICollection? _Collection;
+  private object? _Collection;
 
   /// <summary>
   /// Sets the collection object to be used by the instance.
   /// </summary>
   /// <param name="collection">The collection object to assign. Can be null to clear the current collection.</param>
-  public void SetCollection(ICollection? collection)
+  public void SetCollection(object? collection)
   {
     _Collection = collection;
   }

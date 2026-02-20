@@ -6565,7 +6565,7 @@
             Collection that contains this item.
             </summary>
         </member>
-        <member name="M:DocumentModel.ICollectionItem.SetCollection(System.Collections.ICollection)">
+        <member name="M:DocumentModel.ICollectionItem.SetCollection(System.Object)">
             <summary>
             Sets the collection that contains this item.
             </summary>

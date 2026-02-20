@@ -21,6 +21,11 @@ public static class TypeHelper
       result = Assembly.GetAssembly(typeof(HexInt))?.ExportedTypes.FirstOrDefault(t => t.Name == typeName);
     if (result == null)
       result = Assembly.GetAssembly(typeof(TypeHelper))?.ExportedTypes.FirstOrDefault(t => t.Name == typeName);
+    if (result == null)
+    {
+      if (typeName=="Byte[]")
+        return typeof(byte[]);
+    }
     Debug.Assert(result is not null);
     return result;
   } 

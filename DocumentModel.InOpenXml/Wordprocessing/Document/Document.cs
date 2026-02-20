@@ -203,6 +203,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// </summary>
   public void Dispose()
   {
+    if (WordprocessingDocument != null)
+      WordprocessingDocument.Dispose();
     Detach();
     NotifyPropertyChanged(nameof(WordprocessingDocument));
   }

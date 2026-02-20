@@ -253,7 +253,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   /// </summary>
   /// <param name="variantType">The variant type.</param>
   /// <param name="value">The value to store.</param>
-  public Variant(VariantType variantType, object? value) : this(variantType, typeof(byte[]), value)
+  public Variant(VariantType variantType, object? value) : this(variantType, value?.GetType(), value)
   {
   }
 
