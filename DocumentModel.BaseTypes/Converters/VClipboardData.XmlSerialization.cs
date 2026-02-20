@@ -9,7 +9,7 @@ namespace DocumentModel;
 /// </summary>
 public partial struct VClipboardData : IXmlSerializable
 {
-  #region IXmlSerializable Implementation
+
 
   /// <summary>
   /// This method is reserved and should not be used. Returns null as no schema is required.
@@ -136,10 +136,10 @@ public partial struct VClipboardData : IXmlSerializable
   {
     // Write format attribute
 
-    writer.WriteAttributeString("format", Format.ToString());
+    writer.WriteAttributeString("format", Format.ToString(CultureInfo.InvariantCulture));
 
     // Write size attribute
-      writer.WriteAttributeString("size", Size.ToString());
+      writer.WriteAttributeString("size", Size.ToString(CultureInfo.InvariantCulture));
 
     // Write Base64-encoded data
     if (Data.Length > 0)
@@ -148,6 +148,4 @@ public partial struct VClipboardData : IXmlSerializable
       writer.WriteString(base64Data);
     }
   }
-
-  #endregion
 }

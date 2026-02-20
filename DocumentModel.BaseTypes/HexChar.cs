@@ -408,7 +408,7 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   /// </remarks>
   public static implicit operator string?(HexChar? val)
   {
-    return val?.ToString();
+    return val?.ToString(CultureInfo.InvariantCulture);
   }
 
   /// <summary>

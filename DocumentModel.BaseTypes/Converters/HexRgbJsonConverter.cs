@@ -96,6 +96,6 @@ public class HexRgbJsonConverter : JsonConverter<HexRgb>
   public override void Write(Utf8JsonWriter writer, HexRgb value, JsonSerializerOptions options)
   {
     // Write as hexadecimal string in RRGGBB format
-    writer.WriteStringValue(value.ToString());
+    writer.WriteStringValue(value.ToString(CultureInfo.InvariantCulture));
   }
 }

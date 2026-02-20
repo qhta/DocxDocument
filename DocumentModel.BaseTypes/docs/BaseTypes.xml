@@ -777,7 +777,7 @@
             BytePercent percent3 = 100;                        // Implicit conversion
             
             // Convert to string
-            string str = percent1.ToString();                  // "50%"
+            string str = percent1.ToString(CultureInfo.InvariantCulture);                  // "50%"
             string hex = percent1.ToHexString();               // "80" (128 in hex)
             
             // Create from hexadecimal
@@ -2215,6 +2215,21 @@
             </summary>
             <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
             <returns>A string representation of the eighth-points value.</returns>
+        </member>
+        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.Int32">
+            <summary>
+            Implicitly converts a EPS instance to a 32-bit signed integer (Int32).
+            </summary>
+            <remarks>This conversion allows for seamless integration of EPS values in contexts where an Int32 is
+            expected. Ensure that the EPS value is within the range of Int32 to avoid overflow.</remarks>
+            <param name="value">The EPS instance to convert.</param>
+        </member>
+        <member name="M:DocumentModel.EPS.op_Implicit(System.Int32)~DocumentModel.EPS">
+            <summary>
+            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.EPS"/> value.
+            </summary>
+            <param name="value">The 32-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
         </member>
         <member name="M:DocumentModel.EPS.op_Implicit(System.Int64)~DocumentModel.EPS">
             <summary>
@@ -4949,6 +4964,21 @@
             <param name="value">The <see cref="T:DocumentModel.HPS"/> value to convert.</param>
             <returns>A string representation of the half-points value.</returns>
         </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(DocumentModel.HPS)~System.Int32">
+            <summary>
+            Implicitly converts a HPS instance to a 32-bit signed integer (Int32).
+            </summary>
+            <remarks>This conversion allows for seamless integration of HPS values in contexts where an Int32 is
+            expected. Ensure that the HPS value is within the range of Int32 to avoid overflow.</remarks>
+            <param name="value">The HPS instance to convert.</param>
+        </member>
+        <member name="M:DocumentModel.HPS.op_Implicit(System.Int32)~DocumentModel.HPS">
+            <summary>
+            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.HPS"/> value.
+            </summary>
+            <param name="value">The 32-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.HPS"/> value representing the integer.</returns>
+        </member>
         <member name="M:DocumentModel.HPS.op_Implicit(System.Int64)~DocumentModel.HPS">
             <summary>
             Implicitly converts a 64-bit signed integer to a <see cref="T:DocumentModel.HPS"/> value.
@@ -6172,6 +6202,21 @@
             <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
             <returns>A string representation of the points value.</returns>
         </member>
+        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.Int32">
+            <summary>
+            Implicitly converts a PTS instance to a 32-bit signed integer (Int32).
+            </summary>
+            <remarks>This conversion allows for seamless integration of PTS values in contexts where an Int32 is
+            expected. Ensure that the PTS value is within the range of Int32 to avoid overflow.</remarks>
+            <param name="value">The PTS instance to convert.</param>
+        </member>
+        <member name="M:DocumentModel.PTS.op_Implicit(System.Int32)~DocumentModel.PTS">
+            <summary>
+            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.PTS"/> value.
+            </summary>
+            <param name="value">The 32-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the integer.</returns>
+        </member>
         <member name="M:DocumentModel.PTS.op_Implicit(System.Int64)~DocumentModel.PTS">
             <summary>
             Implicitly converts a 64-bit signed integer to a <see cref="T:DocumentModel.PTS"/> value.
@@ -7304,6 +7349,21 @@
             </summary>
             <param name="value">The <see cref="T:DocumentModel.Twips"/> value to convert.</param>
             <returns>A string representation of the twips value.</returns>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Int32">
+            <summary>
+            Implicitly converts a Twips instance to a 32-bit signed integer (Int32).
+            </summary>
+            <remarks>This conversion allows for seamless integration of Twips values in contexts where an Int32 is
+            expected. Ensure that the Twips value is within the range of Int32 to avoid overflow.</remarks>
+            <param name="value">The Twips instance to convert.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(System.Int32)~DocumentModel.Twips">
+            <summary>
+            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.Twips"/> value.
+            </summary>
+            <param name="value">The 32-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Twips"/> value representing the integer.</returns>
         </member>
         <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Int64">
             <summary>

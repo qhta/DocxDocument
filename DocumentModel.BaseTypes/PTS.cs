@@ -392,6 +392,27 @@ public readonly partial struct PTS : ILengthMeasure, IComparable<PTS>, IEquatabl
   public static implicit operator string(PTS value) { return value.value.ToString(CultureInfo.InvariantCulture); }
 
   /// <summary>
+  /// Implicitly converts a PTS instance to a 32-bit signed integer (Int32).
+  /// </summary>
+  /// <remarks>This conversion allows for seamless integration of PTS values in contexts where an Int32 is
+  /// expected. Ensure that the PTS value is within the range of Int32 to avoid overflow.</remarks>
+  /// <param name="value">The PTS instance to convert.</param>
+  public static implicit operator Int32(PTS value)
+  {
+    return (Int32)value.value;
+  }
+
+  /// <summary>
+  /// Implicitly converts a 32-bit signed integer to a <see cref="PTS"/> value.
+  /// </summary>
+  /// <param name="value">The 32-bit signed integer to convert.</param>
+  /// <returns>A <see cref="PTS"/> value representing the integer.</returns>
+  public static implicit operator PTS(Int32 value)
+  {
+    return new PTS(value);
+  }
+
+  /// <summary>
   /// Implicitly converts a 64-bit signed integer to a <see cref="PTS"/> value.
   /// </summary>
   /// <param name="value">The 64-bit signed integer to convert.</param>

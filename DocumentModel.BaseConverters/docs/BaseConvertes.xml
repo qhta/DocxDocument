@@ -1694,6 +1694,22 @@
             <param name="openXmlType">The target OpenXmlValues type for the created IEnumValue instance. Must be of OpenXml IEnumValue type.</param>
             <returns>A new IEnumValue, or null if the input is null.</returns>
         </member>
+        <member name="M:DocumentModel.OpenXml.EnumConverter.ConvertFromValueType(System.ValueType,System.Type)">
+            <summary>
+            Converts ValueType value to Enum.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
+            <returns>The Enum value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EnumConverter.ConvertToValueType(System.Enum,System.Type)">
+            <summary>
+            Creates a ValueType value from an Enum value.
+            </summary>
+            <param name="value">The Enum value to convert.</param>
+            <param name="valueType">The target ValueType for the conversion.</param>
+            <returns>A new ValueType, or null if the input is null.</returns>
+        </member>
         <member name="M:DocumentModel.OpenXml.EnumConverter.ConvertFromString(System.String,System.Type)">
             <summary>
             Converts an OpenXml String to Enum.
