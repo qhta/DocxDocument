@@ -5,7 +5,7 @@ namespace DocumentModel.BaseTypes.Interfaces;
 /// <summary>
 /// Represents a length measurement that can be converted to various units (twips, points, millimeters, centimeters, inches).
 /// </summary>
-public interface ILengthMeasure //: IComparable<ILength>
+public interface ILengthValue //: IComparable<ILength>
 {
   /// <summary>
   /// Raw value. The unit of this value is implementation-specific,
@@ -64,30 +64,30 @@ public interface ILengthMeasure //: IComparable<ILength>
   #region Static factory methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in twips.
+  /// Creates an instance of an <see cref="ILengthValue"/> that represents the specified value in twips.
   /// </summary>
-  public static abstract ILengthMeasure FromTwips(double twips);
+  public static abstract ILengthValue FromTwips(double twips);
 
   /// <summary>
-  /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in points.
+  /// Creates an instance of an <see cref="ILengthValue"/> that represents the specified value in points.
   /// </summary>
-  public static abstract ILengthMeasure FromPT(double points);
+  public static abstract ILengthValue FromPT(double points);
 
   /// <summary>
   /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
-  public static abstract ILengthMeasure FromMM(double millimeters);
+  public static abstract ILengthValue FromMM(double millimeters);
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
-  public static abstract ILengthMeasure FromCM(double centimeters);
+  public static abstract ILengthValue FromCM(double centimeters);
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static abstract ILengthMeasure FromInch(double inches);
+  public static abstract ILengthValue FromInch(double inches);
 
   /// <summary>
   /// Converts a length value from the specified unit to an equivalent length measure.
@@ -97,7 +97,7 @@ public interface ILengthMeasure //: IComparable<ILength>
   /// <param name="value">The numeric value representing the length to convert.</param>
   /// <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
   /// <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
-  public static abstract ILengthMeasure ConvertFrom(double value, LengthUnit unit);
+  public static abstract ILengthValue ConvertFrom(double value, LengthUnit unit);
   
   #endregion
 
@@ -111,7 +111,7 @@ public interface ILengthMeasure //: IComparable<ILength>
   /// is not in a valid format, an exception may be thrown.</remarks>
   /// <param name="value">The string that contains the length measure to parse. The format must be recognized by the implementation.</param>
   /// <returns>An ILengthMeasure instance that represents the parsed length measure.</returns>
-  public static abstract ILengthMeasure Parse(string value);
+  public static abstract ILengthValue Parse(string value);
 
   /// <summary>
   /// Attempts to convert the specified string representation of a length measure to its equivalent object, returning a
@@ -123,7 +123,7 @@ public interface ILengthMeasure //: IComparable<ILength>
   /// <param name="result">When this method returns, contains the parsed length measure if the conversion succeeded; otherwise, contains the
   /// default value for the type.</param>
   /// <returns>true if the value was converted successfully; otherwise, false.</returns>
-  public static abstract bool TryParse(string value, out ILengthMeasure? result);
+  public static abstract bool TryParse(string value, out ILengthValue? result);
 
   #endregion
 

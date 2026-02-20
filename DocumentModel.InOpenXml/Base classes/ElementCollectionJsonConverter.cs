@@ -11,7 +11,7 @@ namespace DocumentModel
   /// <typeparam name="TCollection">The type of the element collection to convert.</typeparam>
   /// <typeparam name="TItem">The type of items contained in the collection.</typeparam>
   public class ElementCollectionJsonConverter<TCollection, TItem> : JsonConverter<TCollection>
-    where TCollection : ElementCollection<TItem>, new()
+    where TCollection : /*ElementCollection<TItem>, */new()
     where TItem : ICollectionItem
   {
     /// <summary>
@@ -28,7 +28,7 @@ namespace DocumentModel
       if (items != null)
       {
         foreach (var item in items)
-          collection.Add(item);
+          (collection as ICollection<TItem>)!.Add(item);
       }
       return collection;
     }
