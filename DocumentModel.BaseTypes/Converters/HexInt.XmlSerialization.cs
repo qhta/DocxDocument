@@ -2,7 +2,7 @@
 
 public partial struct HexInt : IXmlSerializable
 {
-  #region IXmlSerializable Implementation
+
 
   /// <summary>
   ///   Returns null to indicate this type has no XML schema.
@@ -130,6 +130,4 @@ public partial struct HexInt : IXmlSerializable
   {
     writer.WriteString(ToString());
   }
-
-  #endregion
 }

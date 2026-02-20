@@ -249,7 +249,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
     writer.WriteStartObject();
 
     // Write type
-    writer.WriteString("type", value.VariantType.ToString());
+    writer.WriteString("type", value.VariantType.ToString(CultureInfo.InvariantCulture));
 
     // Write valueType for Enum and Object types
     if ((value.VariantType == VariantType.Enum || value.VariantType == VariantType.Object) && value.ValueType != null)
@@ -547,14 +547,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
 
       case VariantType.Object:
         // For objects, serialize using JsonSerializer
-        if (value != null)
-        {
-          JsonSerializer.Serialize(writer, value, value.GetType(), options);
-        }
-        else
-        {
-          writer.WriteNullValue();
-        }
+        JsonSerializer.Serialize(writer, value, value.GetType(), options);
         break;
 
       case VariantType.Null:

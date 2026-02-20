@@ -297,7 +297,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
         return ValueType?.FullName ?? "Enum";
       if (VariantType == VariantType.Object)
         return ValueType?.FullName ?? "Object";
-      return VariantType.ToString();
+      return VariantType.ToString(CultureInfo.InvariantCulture);
     }
   }
 
@@ -848,7 +848,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
 
   public static implicit operator string(Variant value)
   {
-    return value.ToString() ?? string.Empty;
+    return value.ToString(CultureInfo.InvariantCulture) ?? string.Empty;
   }
 
   public static implicit operator Variant(string value)
@@ -1149,7 +1149,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
       if (value is DBNull)
         return "DBNull";
       if (value is HexInt vWord)
-        return vWord.ToString();
+        return vWord.ToString(CultureInfo.InvariantCulture);
       return Convert.ToString(value);
     }
     throw new InvalidOperationException($"Can't convert variant value to {destinationType}");
@@ -1217,8 +1217,8 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     }
     else
     {
-      var str1 = this.ToString();
-      var str2 = other.ToString();
+      var str1 = this.ToString(CultureInfo.InvariantCulture);
+      var str2 = other.ToString(CultureInfo.InvariantCulture);
       if (!Equals(str1, str2)) return false;
     }
 

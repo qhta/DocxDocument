@@ -3,7 +3,7 @@ namespace DocumentModel;
 public partial class ListOf<T> : IXmlSerializable
   where T : IConvertible
 {
-  #region IXmlSerializable Implementation
+
 
   /// <summary>
   /// This method is reserved and should not be used. Returns null as no schema is required.
@@ -79,6 +79,4 @@ public partial class ListOf<T> : IXmlSerializable
   {
     writer.WriteString(InnerText);
   }
-
-  #endregion
 }

@@ -9,7 +9,7 @@ namespace DocumentModel;
 /// </summary>
 public partial class VectorVariant : IXmlSerializable
 {
-  #region IXmlSerializable Implementation
+
 
   /// <summary>
   /// This method is reserved and should not be used. Returns null as no schema is required.
@@ -156,7 +156,7 @@ public partial class VectorVariant : IXmlSerializable
     // Write baseType attribute if specified
     if (BaseType.HasValue)
     {
-      writer.WriteAttributeString("baseType", BaseType.Value.ToString());
+      writer.WriteAttributeString("baseType", BaseType.Value.ToString(CultureInfo.InvariantCulture));
     }
 
     // Write vector items
@@ -186,8 +186,6 @@ public partial class VectorVariant : IXmlSerializable
       writer.WriteEndElement();
     }
   }
-
-  #endregion
 
   #region Helper Methods
 
@@ -228,7 +226,7 @@ public partial class VectorVariant : IXmlSerializable
   /// <param name="value">The object to convert.</param>
   /// <param name="variantType">The variant type of the value.</param>
   /// <returns>The string representation, or null if the value is null.</returns>
-  private static string? ConvertToString(object value, VariantType variantType)
+  private static string? ConvertToString(object? value, VariantType variantType)
   {
     if (value == null)
       return null;

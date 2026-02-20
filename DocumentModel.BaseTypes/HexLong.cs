@@ -300,7 +300,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   /// <summary>
   /// Implicitly converts a HexLong to a HexBinary.
   /// </summary>
-  public static implicit operator HexBinary(HexLong value) => new HexBinary(value.ToString());
+  public static implicit operator HexBinary(HexLong value) => new HexBinary(value.ToString(CultureInfo.InvariantCulture));
 
   /// <summary>
   /// Implicitly converts a HexBinary to a HexLong.

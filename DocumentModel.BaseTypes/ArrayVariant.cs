@@ -559,7 +559,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// </para>
   /// <para>
   /// If a <paramref name="provider"/> is specified, it is used for formatting elements that implement
-  /// <see cref="IFormattable"/>. For other elements, the standard <see cref="object.ToString()"/> method is used.
+  /// <see cref="IFormattable"/>. For other elements, the standard <see cref="object.ToString( )"/> method is used.
   /// </para>
   /// <para>
   /// Example outputs:

@@ -9,7 +9,7 @@ namespace DocumentModel;
 /// </summary>
 public partial struct VStreamData : IXmlSerializable
 {
-  #region IXmlSerializable Implementation
+
 
   /// <summary>
   /// This method is reserved and should not be used. Returns null as no schema is required.
@@ -138,12 +138,10 @@ public partial struct VStreamData : IXmlSerializable
     }
 
     // Write Base64-encoded data
-    if (Data != null && Data.Length > 0)
+    if (Data.Length > 0)
     {
       string base64Data = Convert.ToBase64String(Data);
       writer.WriteString(base64Data);
     }
   }
-
-  #endregion
 }
