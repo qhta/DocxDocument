@@ -461,6 +461,7 @@ public static class PercentTest
 public class PercentTestData
 {
   [XmlElement("CompletionRate")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Percent CompletionRate { get; set; }
 
   [XmlElement("SuccessRate")]

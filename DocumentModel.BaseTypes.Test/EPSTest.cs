@@ -89,18 +89,21 @@ public static class EPSTest
       return false;
     }
 
-    // Test hash code
-    var hashCode = eps1.GetHashCode();
-    Console.WriteLine($"\n✓ Hash code: {hashCode}");
-    var eps1ValHashCode = eps1Val.GetHashCode();
-    if (hashCode != eps1ValHashCode)
-    {
-      Console.WriteLine($"✗ GetHashCode consistency FAILED eps1Hash={hashCode}, eps1ValHash={eps1ValHashCode}");
-      return false;
-    }
     // Test comparison
     EPS eps4 = eps1Val * 2; // 2 inches
     Console.WriteLine($"\n✓ CompareTo ({eps1Val} vs {eps4}): {eps1.CompareTo(eps4)} (expected < 0)");
+
+
+    // Test hash code
+    var eps1HashCode = eps1.GetHashCode();
+    EPS eps5 = eps1Str;
+    Console.WriteLine($"\n✓ Hash code: {eps1HashCode}");
+    var eps5HashCode = eps5.GetHashCode();
+    if (eps1HashCode != eps5HashCode)
+    {
+      Console.WriteLine($"✗ GetHashCode consistency FAILED eps1Hash={eps1HashCode}, eps1ValHash={eps5HashCode}");
+      return false;
+    }
 
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
@@ -121,14 +124,14 @@ public static class EPSTest
     var eps1MM = eps1Inch / 25.4;
     var eps1CM = eps1MM * 10;
     var eps12PT = 12*8;
-    var eps10Twips = 8/20.0;
+    var eps10Twips = 4;
     Console.WriteLine("--- Testing EPS Unit Conversions ---");
     // Test inch conversions
     Console.WriteLine("Testing inch conversions:");
     EPS oneInch = "1in";
-    Console.WriteLine($"  1in = {(long)oneInch} EPS (expected {eps1Inch})");
-    Console.WriteLine($"  {eps1Inch} EPS = {oneInch.ToInch():F2}in");
-    if ((long)oneInch != eps1Inch)
+    Console.WriteLine($"  1in = {oneInch} EPS (expected {eps1Inch})");
+    Console.WriteLine($"  {eps1Inch} EPS = {oneInch.ToInch()}in");
+    if (!oneInch.Equals(eps1Inch))
     {
       Console.WriteLine("✗ Inch conversion FAILED");
       return false;
@@ -137,9 +140,9 @@ public static class EPSTest
     // Test millimeter conversions
     Console.WriteLine("\nTesting millimeter conversions:");
     EPS oneMM = "1mm";
-    Console.WriteLine($"  1mm = {(long)oneMM} EPS (expected {eps1MM})");
-    Console.WriteLine($"  {eps1MM} EPS = {oneMM.ToMM():F2}mm");
-    if (System.Math.Abs(oneMM - eps1MM) > 0.01)
+    Console.WriteLine($"  1mm = {oneMM} EPS (expected {eps1MM})");
+    Console.WriteLine($"  {eps1MM} EPS = {oneMM.ToMM()}mm");
+    if (!oneMM.Equals(eps1MM))
     {
       Console.WriteLine("✗ Millimeter conversion FAILED");
       return false;
@@ -148,9 +151,9 @@ public static class EPSTest
     // Test centimeter conversions
     Console.WriteLine("\nTesting centimeter conversions:");
     EPS oneCM = "1cm";
-    Console.WriteLine($"  1cm = {(long)oneCM} EPS (expected ~{eps1CM})");
-    Console.WriteLine($"  {eps1CM} EPS = {oneCM.ToCM():F2}cm");
-    if ((long)oneCM != eps1CM)
+    Console.WriteLine($"  1cm = {oneCM} EPS (expected ~{eps1CM})");
+    Console.WriteLine($"  {eps1CM} EPS = {oneCM.ToCM()}cm");
+    if (!oneCM.Equals(eps1CM))
     {
       Console.WriteLine("✗ Centimeter conversion FAILED");
       return false;
@@ -159,9 +162,9 @@ public static class EPSTest
     // Test point conversions
     Console.WriteLine("\nTesting point conversions:");
     EPS twelvePoints = "12pt";
-    Console.WriteLine($"  12pt = {(long)twelvePoints} EPS (expected {eps12PT})");
-    Console.WriteLine($"  {eps12PT} EPS = {twelvePoints.ToPT():F2}pt");
-    if ((long)twelvePoints != eps12PT)
+    Console.WriteLine($"  12pt = {twelvePoints} EPS (expected {eps12PT})");
+    Console.WriteLine($"  {eps12PT} EPS = {twelvePoints.ToPT()}pt");
+    if (!twelvePoints.Equals(eps12PT))
     {
       Console.WriteLine("✗ Point conversion FAILED");
       return false;
@@ -170,9 +173,9 @@ public static class EPSTest
     // Test twips conversions
     Console.WriteLine("\nTesting twips conversions:");
     EPS tenTwips = "10tw";
-    Console.WriteLine($"  10tw = {(long)tenTwips} EPS (expected {eps10Twips})");
-    Console.WriteLine($"  {eps10Twips} EPS = {tenTwips.ToTwips():F2}tw");
-    if ((long)tenTwips != eps10Twips)
+    Console.WriteLine($"  10tw = {tenTwips} EPS (expected {eps10Twips})");
+    Console.WriteLine($"  {eps10Twips} EPS = {tenTwips.ToTwips()}tw");
+    if (!tenTwips.Equals(eps10Twips))
     {
       Console.WriteLine("✗ Twips conversion FAILED");
       return false;
@@ -692,6 +695,7 @@ public static class EPSTest
 public class EPSTestData
 {
   [XmlElement("FontSize")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public EPS FontSize { get; set; }
 
   [XmlElement("LineHeight")]

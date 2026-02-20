@@ -11,7 +11,7 @@ public interface ILengthMeasure //: IComparable<ILength>
   /// Raw value. The unit of this value is implementation-specific,
   /// but it is expected to be in a consistent base unit (e.g., twips) for internal calculations and conversions.
   /// </summary>
-  public Int64 Value { get; }
+  public Double Value { get; }
 
   #region Conversion methods
   /// <summary>
@@ -219,7 +219,7 @@ public interface ILengthMeasure //: IComparable<ILength>
   /// Suffixes for length units that can be used in string representations of length measures.
   /// The order of the suffixes corresponds to the order of the LengthUnit enum values.
   /// </summary>
-  public static string[] LengthUnitSuffixes { get; } = ["twips", "pt", "mm", "cm", "in"];
+  public static string[] LengthUnitSuffixes { get; } = ["tw", "pt", "mm", "cm", "in"];
 
   #endregion
 }

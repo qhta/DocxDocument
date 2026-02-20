@@ -825,6 +825,7 @@ public static class VariantTest
 public class VariantTestData
 {
   [XmlElement("IntValue")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Variant IntValue { get; set; }
 
   [XmlElement("StringValue")]

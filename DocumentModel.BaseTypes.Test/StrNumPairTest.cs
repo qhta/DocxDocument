@@ -572,6 +572,7 @@ public static class StrNumPairTest
 public class StrNumPairTestData
 {
   [XmlElement("StringOnly")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public StrNumPair StringOnly { get; set; }
 
   [XmlElement("NumberOnly")]

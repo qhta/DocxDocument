@@ -706,6 +706,7 @@ public static class StringListTest
 public class StringListTestData
 {
   [XmlElement("EmptyList")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public StringList EmptyList { get; set; } = new StringList();
 
   [XmlElement("SingleItem")]

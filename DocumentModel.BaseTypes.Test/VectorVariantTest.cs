@@ -718,6 +718,7 @@ public static class VectorVariantTest
 public class VectorVariantTestData
 {
   [XmlElement("IntVector")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public VectorVariant IntVector { get; set; } = new VectorVariant();
 
   [XmlElement("StringVector")]

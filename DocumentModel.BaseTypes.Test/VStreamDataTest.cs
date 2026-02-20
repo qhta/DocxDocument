@@ -663,6 +663,7 @@ public static class VStreamDataTest
 public class VStreamDataTestData
 {
   [XmlElement("ExcelStream")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public VStreamData ExcelStream { get; set; }
 
   [XmlElement("WordStream")]

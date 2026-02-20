@@ -16,12 +16,12 @@ public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable
   /// <summary>
   /// The internal value storing the measurement in half-points.
   /// </summary>
-  private readonly double value;
+  private readonly Double value;
 
   /// <summary>
   /// Gets the value of this instance in half-points.
   /// </summary>
-  public long Value => (long)value;
+  public Double Value => value;
 
   #region Constant Factors
 
@@ -292,7 +292,7 @@ public readonly partial struct HPS: ILengthMeasure, IComparable<HPS>, IEquatable
   /// <summary>
   /// Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
   /// </summary>
-  public override string ToString() => value.ToString(CultureInfo.InvariantCulture);
+  public override string ToString() => Value.ToString(CultureInfo.InvariantCulture);
 
   /// <summary>
   /// Converts the current length measure to its string representation using the specified format provider.

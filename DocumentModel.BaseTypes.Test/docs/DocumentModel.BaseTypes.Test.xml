@@ -1,0 +1,700 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DocumentModel.BaseTypes.Test</name>
+    </assembly>
+    <members>
+        <member name="T:DocumentModel.BaseTypes.Test.ArrayVariantTests">
+            <summary>
+            Test suite for ArrayVariant type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.ArrayVariantTests.Run">
+            <summary>
+            Runs all ArrayVariant serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.ArrayVariantTestData">
+            <summary>
+            Test data class containing various ArrayVariant properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.Base64BinaryTest">
+            <summary>
+            Test suite for Base64Binary type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.Base64BinaryTest.Run">
+            <summary>
+            Runs all Base64Binary serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.Base64BinaryTestDataClass">
+            <summary>
+            Test data class containing various Base64Binary properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.Base64BinaryTestWrapper">
+            <summary>
+            Simple wrapper class for testing nullable scenarios.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.BytePercentTest">
+            <summary>
+            Test suite for BytePercent type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.BytePercentTest.Run">
+            <summary>
+            Runs all BytePercent serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.BytePercentTestData">
+            <summary>
+            Test data class containing various BytePercent properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.BytePercentWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.EMUTest">
+            <summary>
+            Test suite for EMU type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EMUTest.Run">
+            <summary>
+            Runs a comprehensive suite of tests to validate the EMU serialization functionality, including basic operations,
+            unit conversions, serialization formats, edge cases, and performance.
+            </summary>
+            <remarks>This method writes test results to the console. It is intended for use in verifying the
+            correctness and reliability of the EMU serialization components during development or maintenance.</remarks>
+            <returns>true if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EMUTest.TestEMUBasicOperations">
+            <summary>
+            Tests the fundamental operations of the EMU class, including conversions between strings, integers, and EMU
+            instances, as well as comparison and hash code consistency.
+            </summary>
+            <remarks>This method verifies that the EMU class correctly handles conversions from string and integer
+            representations, supports accurate numeric type conversions, produces consistent hash codes, and implements
+            comparison logic as expected. It is intended for use in validating the core functionality of the EMU
+            type.</remarks>
+            <returns>true if all basic EMU operations succeed; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EMUTest.TestEMUUnitConversions">
+            <summary>
+            Tests the accuracy and correctness of conversions between EMUs and various length units, including inches,
+            millimeters, centimeters, points, and twips.
+            </summary>
+            <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
+            verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
+            Use this method to validate that EMU-related conversion logic is functioning as expected.</remarks>
+            <returns>true if all unit conversion tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EMUTest.TestEMUXmlSerialization">
+            <summary>
+            Tests the XML serialization and deserialization process for an EMUTestData object and verifies data integrity.
+            </summary>
+            <remarks>This method creates a sample EMUTestData instance, serializes it to an XML string, and then
+            deserializes it back to an object. It compares the deserialized data to the original to ensure that the
+            serialization process preserves all relevant information. This is intended for use in validating the correctness
+            of XML serialization logic for EMUTestData.</remarks>
+            <returns>true if the EMUTestData object is correctly serialized to XML and deserialized back with matching data; otherwise,
+            false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EMUTest.TestEMUJsonSerialization">
+            <summary>
+            Tests the serialization and deserialization of EMU test data using JSON format.
+            </summary>
+            <remarks>This method creates a sample EMU test data object, serializes it to a JSON string, and then
+            deserializes it back to an object to verify that the original and deserialized data are equivalent. The serialized
+            JSON output is written to the console for inspection. This method is intended for diagnostic or validation
+            purposes and is not typically used in production code.</remarks>
+            <returns>true if the JSON serialization and deserialization process completes successfully and the data integrity is
+            verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EMUTest.ShowOriginalData(DocumentModel.BaseTypes.Test.EMUTestData)">
+            <summary>
+            Displays the original dimensions and values of the specified EMUTestData instance in a formatted output.
+            </summary>
+            <remarks>This method outputs the original data to the console, including conversions of width and height
+            to inches and offsets to millimeters.</remarks>
+            <param name="testData">The EMUTestData instance containing the original data to be displayed, including width, height, offsets, and
+            values.</param>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EMUTest.VerifyDeserializedData(DocumentModel.BaseTypes.Test.EMUTestData,DocumentModel.BaseTypes.Test.EMUTestData)">
+            <summary>
+            Verifies that the deserialized EMUTestData object matches the expected test data values.
+            </summary>
+            <remarks>If the deserializedData parameter is null, the method returns false and logs an error message.
+            The method compares several properties of the deserialized data with the expected values to ensure
+            correctness.</remarks>
+            <param name="deserializedData">The deserialized EMUTestData object to verify against the expected values. This parameter can be null.</param>
+            <param name="testData">The expected EMUTestData object containing the values to compare against the deserialized data.</param>
+            <returns>true if the deserialized data matches the expected test data; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EMUTest.CreateTestData">
+            <summary>
+            Creates and initializes a new instance of the EMUTestData class with predefined values for width, height, offsets,
+            and various test values.
+            </summary>
+            <remarks>This method is intended for use in test scenarios where a standard set of EMUTestData values is
+            required. The dimensions and offsets are specified in various measurement units, ensuring flexibility in testing
+            different configurations.</remarks>
+            <returns>A new instance of EMUTestData containing initialized properties for testing purposes.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EMUTest.TestEMUEdgeCases">
+            <summary>
+            Tests a variety of edge cases for the EMU (English Metric Unit) class, including zero values, boundary values,
+            string parsing, deserialization, formatting, comparisons, and implicit conversions.
+            </summary>
+            <remarks>This method outputs the results of each test to the console, providing insight into the behavior
+            of the EMU class under different scenarios. It is intended for diagnostic or validation purposes and does not
+            throw exceptions for failed cases.</remarks>
+            <returns>true if all edge case tests are completed successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EMUTest.TestEMUPerformance">
+            <summary>
+            Measures and reports the performance of various operations related to the EMU class, including construction,
+            string conversion, unit conversion, JSON serialization, deserialization, comparison, and hashing.
+            </summary>
+            <remarks>This method executes a series of timed tests for different EMU class operations, outputting the
+            elapsed time for each to the console. It is intended for use in evaluating the efficiency of EMU-related methods
+            and conversions. The results can help identify performance bottlenecks or verify optimizations.</remarks>
+            <returns>true if all performance tests complete successfully.</returns>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.EMUTestData">
+            <summary>
+            Test data class containing various EMU properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.EMUWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.EPSTest">
+            <summary>
+            Test suite for EPS type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.Run">
+            <summary>
+            Runs all EPS serialization tests.
+            </summary>
+            <returns>true if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.TestEPSBasicOperations">
+            <summary>
+            Tests the basic operations of the EPS class, including conversions between EPS and various types, string
+            representations, and comparisons.
+            </summary>
+            <remarks>This method verifies the correctness of the EPS class by testing string and numeric conversions,
+            string representations, hash code consistency, and comparison operations. It outputs diagnostic information to the
+            console for each test and returns false if any test fails.</remarks>
+            <returns>true if all basic EPS operations pass successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.TestEPSUnitConversions">
+            <summary>
+            Tests the accuracy and correctness of conversions between EPS and various length units, including inches,
+            millimeters, centimeters, points, and twips.
+            </summary>
+            <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
+            verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
+            Use this method to validate that EPS-related conversion logic is functioning as expected.</remarks>
+            <returns>true if all unit conversion tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.TestEPSXmlSerialization">
+            <summary>
+            Tests the XML serialization and deserialization process for an EPSTestData object to verify data integrity.
+            </summary>
+            <remarks>This method creates a sample EPSTestData instance, serializes it to XML, and then deserializes it
+            to ensure that the original and deserialized data are equivalent. The serialized XML is written to the console for
+            inspection. Use this method to validate that changes to the EPSTestData structure or serialization logic do not
+            break XML compatibility.</remarks>
+            <returns>true if the EPSTestData object is successfully serialized to XML and deserialized back with matching data;
+            otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.TestEPSJsonSerialization">
+            <summary>
+            Tests the serialization and deserialization of EPS test data to and from JSON format.
+            </summary>
+            <remarks>This method creates a sample EPS test data object, serializes it to a JSON string, and then
+            deserializes it back to an object. It outputs the serialized JSON to the console for inspection and verifies that
+            the deserialized data matches the original. Use this method to validate that EPS data can be accurately
+            round-tripped using JSON serialization.</remarks>
+            <returns>true if the JSON serialization and deserialization process completes successfully and the data integrity is
+            verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.ShowOriginalData(DocumentModel.BaseTypes.Test.EPSTestData)">
+            <summary>
+            Shows the original EPS test data values in a readable format to the console for verification before serialization.
+            </summary>
+            <param name="testData"></param>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.VerifyDeserializedData(DocumentModel.BaseTypes.Test.EPSTestData,DocumentModel.BaseTypes.Test.EPSTestData)">
+            <summary>
+            Verifies that the deserialized data matches the expected test data by comparing relevant properties.
+            </summary>
+            <remarks>The method compares several properties, including FontSize, LineHeight, MicroKerning,
+            LetterSpacing, WordSpacing, SuperscriptOffset, SubscriptOffset, BorderWidth, ZeroValue, SmallValue, and
+            LargeValue. If any property does not match, the method returns false. If deserializedData is null, an error
+            message is written to the console and the method returns false.</remarks>
+            <param name="deserializedData">The deserialized EPSTestData instance to verify. If null, the verification fails.</param>
+            <param name="testData">The expected EPSTestData instance to compare against.</param>
+            <returns>true if all compared properties of the deserialized data match the expected test data; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.CreateTestData">
+            <summary>
+            Creates a new instance of the EPSTestData class initialized with default typographic values for testing purposes.
+            </summary>
+            <remarks>This method is intended for use in test scenarios that require consistent and repeatable
+            typographic settings. All values are specified in EPS units and may need to be converted for use in other
+            measurement systems.</remarks>
+            <returns>An EPSTestData object containing predefined values for font size, line height, kerning, spacing, and offset
+            properties.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.TestEPSEdgeCases">
+            <summary>
+            Tests a comprehensive set of edge cases for the EPS (Encapsulated PostScript) type, including zero, boundary
+            values, precision, parsing, formatting, comparison, and implicit conversions.
+            </summary>
+            <remarks>This method outputs the results of each test to the console for verification. It covers scenarios
+            such as micro-typography adjustments, string parsing with various units and decimal separators, deserialization
+            from different JSON formats, and conversion between numeric types. Use this method to validate the correctness and
+            robustness of the EPS type implementation.</remarks>
+            <returns>true if all EPS edge case tests are completed successfully.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.TestEPSPerformance">
+            <summary>
+            Tests the performance of various operations on the EPS type, including construction from strings and integers,
+            conversion to different units, and JSON serialization/deserialization.
+            </summary>
+            <returns>true if all EPS performance tests are completed successfully.</returns>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.EPSTestData">
+            <summary>
+            Test data class containing various EPS properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.EPSWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexBinaryTest">
+            <summary>
+            Test suite for HexBinary type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HexBinaryTest.Run">
+            <summary>
+            Runs all HexBinary serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexBinaryTestDataClass">
+            <summary>
+            Test data class containing various HexBinary properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexBinaryTestWrapper">
+            <summary>
+            Simple wrapper class for testing nullable scenarios.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexCharTest">
+            <summary>
+            Test suite for HexChar type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HexCharTest.Run">
+            <summary>
+            Runs all HexChar serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexCharTestData">
+            <summary>
+            Test data class containing various HexChar properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexIntTest">
+            <summary>
+            Test suite for HexInt type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HexIntTest.Run">
+            <summary>
+            Runs all HexInt serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexIntTestData">
+            <summary>
+            Test data class containing various HexInt properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexLongTest">
+            <summary>
+            Test suite for HexLong type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HexLongTest.Run">
+            <summary>
+            Runs all HexLong serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexLongTestData">
+            <summary>
+            Test data class containing various HexLong properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexRgbTest">
+            <summary>
+            Test suite for HexRgb type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HexRgbTest.Run">
+            <summary>
+            Runs all HexRgb serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexRgbTestData">
+            <summary>
+            Test data class containing various HexRgb color properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexRgbWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HPSTest">
+            <summary>
+            Test suite for HPS type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HPSTest.Run">
+            <summary>
+            Runs a comprehensive suite of tests for the HPS Serialization Test Program, including validation of basic
+            operations, unit conversions, serialization formats, edge cases, and performance.
+            </summary>
+            <remarks>This method writes the test program title to the console and executes multiple test methods in
+            sequence. Each test method must succeed for the overall test run to be considered successful.</remarks>
+            <returns>true if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HPSTest.TestHPSBasicOperations">
+            <summary>
+            Tests the basic operations of the HPS class, including conversions between HPS and various types, string
+            representations, and comparisons.
+            </summary>
+            <remarks>This method verifies the correctness of the HPS class by testing string and numeric conversions,
+            string representations, hash code consistency, and comparison operations. It outputs diagnostic information to the
+            console for each test and returns false if any test fails.</remarks>
+            <returns>true if all basic HPS operations pass successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HPSTest.TestHPSUnitConversions">
+            <summary>
+            Tests the accuracy and correctness of conversions between HPS and various length units, including inches,
+            millimeters, centimeters, points, and twips.
+            </summary>
+            <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
+            verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
+            Use this method to validate that HPS-related conversion logic is functioning as expected.</remarks>
+            <returns>true if all unit conversion tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HPSTest.TestHPSXmlSerialization">
+            <summary>
+            Tests the serialization and deserialization of HPS values within an XML format using the XmlSerializer. This test
+            ensures that HPS values are correctly preserved during the XML serialization and deserialization process.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HPSTest.ShowOriginalData(DocumentModel.BaseTypes.Test.HPSTestData)">
+            <summary>
+            Displays the original formatting values from the specified HPSTestData instance in a readable format.
+            </summary>
+            <remarks>This method outputs various formatting properties, such as font size, line height, letter
+            spacing, word spacing, superscript and subscript offsets, border width, and value thresholds, to the console.
+            Measurements are shown in both their original units and converted to points where applicable.</remarks>
+            <param name="testData">The HPSTestData instance containing the formatting values to display.</param>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HPSTest.VerifyDeserializedData(DocumentModel.BaseTypes.Test.HPSTestData,DocumentModel.BaseTypes.Test.HPSTestData)">
+            <summary>
+            Determines whether the deserialized HPSTestData object matches the expected test data values.
+            </summary>
+            <remarks>If deserializedData is null, the method returns false. Each property of deserializedData is
+            compared to the corresponding property in testData, and the method returns false on the first mismatch.</remarks>
+            <param name="deserializedData">The HPSTestData instance obtained from deserialization to verify. This parameter can be null.</param>
+            <param name="testData">The original HPSTestData instance containing the expected values for comparison.</param>
+            <returns>true if all properties of the deserialized data are equal to the corresponding properties in the test data;
+            otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HPSTest.TestHPSJsonSerialization">
+            <summary>
+            Tests the serialization and deserialization of HPS data to and from JSON format.
+            </summary>
+            <remarks>This method creates a test object, serializes it to JSON, and then deserializes it back to verify
+            the integrity of the data. It outputs the serialized JSON string to the console for inspection.</remarks>
+            <returns>true if the JSON serialization and deserialization process is successful; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HPSTest.CreateTestData">
+            <summary>
+            Creates a new instance of HPSTestData with predefined test values.
+            </summary>
+            <returns>A new HPSTestData instance populated with test values.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HPSTest.TestHPSEdgeCases">
+            <summary>
+            Tests a comprehensive set of edge cases for the HPS (Half-Point Size) type, including zero, boundary values,
+            precision, string parsing, unit conversions, deserialization, and implicit conversions.
+            </summary>
+            <remarks>This method outputs detailed results to the console, providing insights into the behavior of the
+            HPS type under various scenarios. It is intended for use in validating the correctness and robustness of HPS
+            handling, especially when dealing with different input formats, units, and conversions.</remarks>
+            <returns>true if all edge case tests complete successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HPSTest.TestHPSPerformance">
+            <summary>
+            Measures and reports the performance of various operations related to the HPS class, including construction,
+            string conversion, unit conversion, JSON serialization, deserialization, comparison, and hashing.
+            </summary>
+            <remarks>This method executes multiple iterations of each tested operation and outputs the elapsed time
+            for each to the console. It is intended to help identify performance bottlenecks in the HPS class and related
+            serialization routines. If an exception occurs during testing, the method reports the failure and returns
+            false.</remarks>
+            <returns>true if all performance tests complete successfully; otherwise, false.</returns>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HPSTestData">
+            <summary>
+            Test data class containing various HPS properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HPSWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.ListOfTest">
+            <summary>
+            Test suite for ListOf&lt;T&gt; type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.ListOfTest.Run">
+            <summary>
+            Runs all ListOf&lt;T&gt; serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.ListOfTestData">
+            <summary>
+            Test data class containing various ListOf properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.ListOfIntWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios with integers.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.ListOfStringWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios with strings.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.PercentTest">
+            <summary>
+            Test suite for Percent type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.PercentTest.Run">
+            <summary>
+            Runs all Percent serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.PercentTestData">
+            <summary>
+            Test data class containing various Percent properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.PercentWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.Program">
+            <summary>
+            Entry point for the base types serialization test program.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.PTSTest">
+            <summary>
+            Test suite for Points type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.PTSTest.Run">
+            <summary>
+            Runs all Points serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.PointsTestData">
+            <summary>
+            Test data class containing various Points properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.PointsWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.StringListTest">
+            <summary>
+            Test suite for StringList type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.StringListTest.Run">
+            <summary>
+            Runs all StringList serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.StringListTestData">
+            <summary>
+            Test data class containing various StringList properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.StringListWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.StrNumPairTest">
+            <summary>
+            Test suite for StrNumPair type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.StrNumPairTest.Run">
+            <summary>
+            Runs all StrNumPair serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.StrNumPairTestData">
+            <summary>
+            Test data class containing various StrNumPair properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.StrNumPairWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.TSBooleanTest">
+            <summary>
+            Test suite for TSBoolean type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.TSBooleanTest.Run">
+            <summary>
+            Runs all TSBoolean serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.TSBooleanTestData">
+            <summary>
+            Test data class containing various TSBoolean properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.TSBooleanWrapper">
+            <summary>
+            Simple wrapper class for testing deserialization scenarios.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.TwipsTest">
+            <summary>
+            Test suite for Twips type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.TwipsTest.Run">
+            <summary>
+            Runs all Twips serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.TwipsTestData">
+            <summary>
+            Test data class containing various Twips properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.TwipsWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.VariantTest">
+            <summary>
+            Test suite for Variant type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.VariantTest.Run">
+            <summary>
+            Runs all Variant serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.VariantTestData">
+            <summary>
+            Test data class containing various Variant properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.VClipboardDataTest">
+            <summary>
+            Test suite for VClipboardData type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.VClipboardDataTest.Run">
+            <summary>
+            Runs all VClipboardData serialization tests.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.VClipboardDataTest.CreateTestData(System.Int32)">
+            <summary>
+            Creates test data of specified size with predictable content.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.VClipboardDataTestData">
+            <summary>
+            Test data class containing various VClipboardData properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.VectorVariantTest">
+            <summary>
+            Test suite for VectorVariant type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.VectorVariantTest.Run">
+            <summary>
+            Runs all VectorVariant serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.VectorVariantTestData">
+            <summary>
+            Test data class containing various VectorVariant properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.VStreamDataTest">
+            <summary>
+            Test suite for VStreamData type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.VStreamDataTest.Run">
+            <summary>
+            Runs all VStreamData serialization tests.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.VStreamDataTest.CreateTestData(System.Int32)">
+            <summary>
+            Creates test data of specified size with predictable content.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.VStreamDataTestData">
+            <summary>
+            Test data class containing various VStreamData properties.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -333,6 +333,7 @@ public class Base64BinaryTestDataClass
 {
   [XmlElement("BinaryData")]
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Base64Binary BinaryData { get; set; }
 
   [XmlElement("DocumentHash")]

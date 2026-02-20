@@ -681,6 +681,7 @@ public static class HexRgbTest
 public class HexRgbTestData
 {
   [XmlElement("PrimaryRed")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public HexRgb PrimaryRed { get; set; }
 
   [XmlElement("PrimaryGreen")]

@@ -12,12 +12,12 @@
 [JsonConverter(typeof(TwipsJsonConverter))]
 public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquatable<Twips>
 {
-  private readonly Int64 value;
+  private readonly Double value;
 
   /// <summary>
   /// Gets the current value represented by this instance.
   /// </summary>
-  public Int64 Value => value;
+  public Double Value => value;
 
   #region Constant factors for unit conversions
 
@@ -80,61 +80,53 @@ public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquat
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * TwipsInMM;
-      value = (Int64)val;
+      value = val;
+      return;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * TwipsInCM;
-      value = (Int64)val;
+      value = val;
+      return;
     }
-    else if (str.EndsWith("in"))
+    if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * TwipsInInch;
-      value = (int)val;
+      value = val;
+      return;
     }
-    else if (str.EndsWith("pt"))
+    if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * TwipsInPT;
-      value = (Int64)val;
+      value = val;
+      return;
     }
-    else value = Int32.Parse(str);
+    if (str.EndsWith("tw"))
+    {
+      str = str.Substring(0, str.Length - 2).Trim();
+      var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
+      value = val;
+      return;
+    }
+    value = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
   }
-
   /// <summary>
-  /// Initializes a new instance of the <see cref="Twips"/> struct from a 32-bit unsigned integer value.
+  /// Initializes a new instance of the <see cref="Twips"/> struct from a 64-bit integer value.
   /// </summary>
   /// <param name="value">The value in twips.</param>
-  public Twips(UInt32 value)
+  public Twips(Int64 value)
   {
-    this.value = value;
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="Twips"/> struct from a 32-bit signed integer value.
-  /// </summary>
-  /// <param name="value">The value in twips.</param>
-  public Twips(Int32 value)
-  {
-    this.value = value;
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="Twips"/> struct from a 64-bit unsigned integer value.
-  /// </summary>
-  /// <param name="value">The value in twips.</param>
-  public Twips(UInt64 value)
-  {
-    this.value = (Int64)value;
+    this.value = (Double)value;
   }
 
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> struct from a 64-bit signed integer value.
   /// </summary>
   /// <param name="value">The value in twips.</param>
-  public Twips(Int64 value)
+  public Twips(Double value)
   {
     this.value = value;
   }
@@ -206,28 +198,28 @@ public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquat
   /// <summary>
   /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in twips.
   /// </summary>
-  public static ILengthMeasure FromTwips(double twips) => new Twips((Int64)twips);
+  public static ILengthMeasure FromTwips(double twips) => new Twips((Double)twips);
 
   /// <summary>
   /// Creates an instance of an <see cref="ILengthMeasure"/> that represents the specified value in points.
   /// </summary>
-  public static ILengthMeasure FromPT(double points) => new Twips((Int64)(points * TwipsInPT));
+  public static ILengthMeasure FromPT(double points) => new Twips((Double)(points * TwipsInPT));
 
   /// <summary>
   /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
-  public static ILengthMeasure FromMM(double millimeters) => new Twips((Int64)(millimeters * TwipsInMM));
+  public static ILengthMeasure FromMM(double millimeters) => new Twips((Double)(millimeters * TwipsInMM));
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
-  public static ILengthMeasure FromCM(double centimeters) => new Twips((Int64)(centimeters * TwipsInCM));
+  public static ILengthMeasure FromCM(double centimeters) => new Twips((Double)(centimeters * TwipsInCM));
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static ILengthMeasure FromInch(double inches) => new Twips((Int64)(inches * TwipsInInch));
+  public static ILengthMeasure FromInch(double inches) => new Twips((Double)(inches * TwipsInInch));
 
   /// <summary>
   /// Converts a length value from the specified unit to a standardized length measure.
@@ -400,87 +392,18 @@ public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquat
   /// <returns>A string representation of the twips value.</returns>
   public static implicit operator string(Twips value)
   {
-    return value.value.ToString();
+    return value.value.ToString(CultureInfo.InvariantCulture);
   }
 
   /// <summary>
-  /// Implicitly converts a 16-bit signed integer to a <see cref="Twips"/> value.
+  /// Implicitly converts a Twips instance to a 64-bit signed integer (Int64).
   /// </summary>
-  /// <param name="value">The 16-bit signed integer to convert.</param>
-  /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
-  public static implicit operator Twips(Int16 value)
+  /// <remarks>This conversion allows for seamless integration of Twips values in contexts where an Int64 is
+  /// expected. Ensure that the Twips value is within the range of Int64 to avoid overflow.</remarks>
+  /// <param name="value">The Twips instance to convert.</param>
+  public static implicit operator Int64(Twips value)
   {
-    return new Twips(value);
-  }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="Twips"/> value to a 16-bit signed integer.
-  /// </summary>
-  /// <param name="value">The <see cref="Twips"/> value to convert.</param>
-  /// <returns>A 16-bit signed integer representation of the twips value.</returns>
-  public static implicit operator Int16(Twips value)
-  {
-    return (Int16)value.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a 16-bit unsigned integer to a <see cref="Twips"/> value.
-  /// </summary>
-  /// <param name="value">The 16-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
-  public static implicit operator Twips(UInt16 value)
-  {
-    return new Twips(value);
-  }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="Twips"/> value to a 16-bit unsigned integer.
-  /// </summary>
-  /// <param name="value">The <see cref="Twips"/> value to convert.</param>
-  /// <returns>A 16-bit unsigned integer representation of the twips value.</returns>
-  public static implicit operator UInt16(Twips value)
-  {
-    return (UInt16)value.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a 32-bit signed integer to a <see cref="Twips"/> value.
-  /// </summary>
-  /// <param name="value">The 32-bit signed integer to convert.</param>
-  /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
-  public static implicit operator Twips(Int32 value)
-  {
-    return new Twips(value);
-  }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="Twips"/> value to a 32-bit signed integer.
-  /// </summary>
-  /// <param name="value">The <see cref="Twips"/> value to convert.</param>
-  /// <returns>A 32-bit signed integer representation of the twips value.</returns>
-  public static implicit operator Int32(Twips value)
-  {
-    return (Int32)value.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer to a <see cref="Twips"/> value.
-  /// </summary>
-  /// <param name="value">The 32-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
-  public static implicit operator Twips(UInt32 value)
-  {
-    return new Twips(value);
-  }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="Twips"/> value to a 32-bit unsigned integer.
-  /// </summary>
-  /// <param name="value">The <see cref="Twips"/> value to convert.</param>
-  /// <returns>A 32-bit unsigned integer representation of the twips value.</returns>
-  public static implicit operator UInt32(Twips value)
-  {
-    return (UInt32)value.value;
+    return (Int64)value.value;
   }
 
   /// <summary>
@@ -494,33 +417,26 @@ public readonly partial struct Twips: ILengthMeasure, IComparable<Twips>, IEquat
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="Twips"/> value to a 64-bit signed integer.
+  /// Implicitly converts a double-precision floating-point number to a Twips instance.
   /// </summary>
-  /// <param name="value">The <see cref="Twips"/> value to convert.</param>
-  /// <returns>A 64-bit signed integer representation of the twips value.</returns>
-  public static implicit operator Int64(Twips value)
-  {
-    return (Int64)value.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a 64-bit unsigned integer to a <see cref="Twips"/> value.
-  /// </summary>
-  /// <param name="value">The 64-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
-  public static implicit operator Twips(UInt64 value)
+  /// <remarks>This conversion allows for seamless integration of double values into contexts where Twips are
+  /// required, facilitating operations that involve measurements in twips.</remarks>
+  /// <param name="value">The value to convert, representing a measurement in twips.</param>
+  public static implicit operator Twips(Double value)
   {
     return new Twips(value);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="Twips"/> value to a 64-bit unsigned integer.
+  /// Implicitly converts a Twips value to its equivalent double-precision floating-point representation.
   /// </summary>
-  /// <param name="value">The <see cref="Twips"/> value to convert.</param>
-  /// <returns>A 64-bit unsigned integer representation of the twips value.</returns>
-  public static implicit operator UInt64(Twips value)
+  /// <remarks>This conversion enables Twips values to be used seamlessly in contexts where double values are
+  /// required, such as mathematical operations or comparisons. The conversion preserves the numeric value represented
+  /// by the Twips instance.</remarks>
+  /// <param name="value">The Twips value to convert to a double.</param>
+  public static implicit operator Double(Twips value)
   {
-    return (UInt64)value.value;
+    return (Double)value.value;
   }
 
   #endregion

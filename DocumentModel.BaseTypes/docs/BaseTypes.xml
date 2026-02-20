@@ -2062,25 +2062,13 @@
             <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
             </remarks>
         </member>
-        <member name="M:DocumentModel.EPS.#ctor(System.UInt32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> struct from a 32-bit unsigned integer value.
-            </summary>
-            <param name="value">The value in eighth-points.</param>
-        </member>
-        <member name="M:DocumentModel.EPS.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> struct from a 32-bit signed integer value.
-            </summary>
-            <param name="value">The value in eighth-points.</param>
-        </member>
-        <member name="M:DocumentModel.EPS.#ctor(System.UInt64)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> struct from a 64-bit unsigned integer value.
-            </summary>
-            <param name="value">The value in eighth-points.</param>
-        </member>
         <member name="M:DocumentModel.EPS.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> struct from a 64-bit signed integer value.
+            </summary>
+            <param name="value">The value in eighth-points.</param>
+        </member>
+        <member name="M:DocumentModel.EPS.#ctor(System.Double)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> struct from a 64-bit signed integer value.
             </summary>
@@ -6049,7 +6037,7 @@
             </summary>
             <param name="value">The value in points.</param>
         </member>
-        <member name="M:DocumentModel.PTS.#ctor(System.Int64)">
+        <member name="M:DocumentModel.PTS.#ctor(System.Double)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a 64-bit signed integer value.
             </summary>
@@ -7231,25 +7219,13 @@
             <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
             </remarks>
         </member>
-        <member name="M:DocumentModel.Twips.#ctor(System.UInt32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> struct from a 32-bit unsigned integer value.
-            </summary>
-            <param name="value">The value in twips.</param>
-        </member>
-        <member name="M:DocumentModel.Twips.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> struct from a 32-bit signed integer value.
-            </summary>
-            <param name="value">The value in twips.</param>
-        </member>
-        <member name="M:DocumentModel.Twips.#ctor(System.UInt64)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> struct from a 64-bit unsigned integer value.
-            </summary>
-            <param name="value">The value in twips.</param>
-        </member>
         <member name="M:DocumentModel.Twips.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> struct from a 64-bit integer value.
+            </summary>
+            <param name="value">The value in twips.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.#ctor(System.Double)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> struct from a 64-bit signed integer value.
             </summary>
@@ -7457,61 +7433,13 @@
             <param name="value">The <see cref="T:DocumentModel.Twips"/> value to convert.</param>
             <returns>A string representation of the twips value.</returns>
         </member>
-        <member name="M:DocumentModel.Twips.op_Implicit(System.Int16)~DocumentModel.Twips">
+        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Int64">
             <summary>
-            Implicitly converts a 16-bit signed integer to a <see cref="T:DocumentModel.Twips"/> value.
+            Implicitly converts a Twips instance to a 64-bit signed integer (Int64).
             </summary>
-            <param name="value">The 16-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Twips"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Int16">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Twips"/> value to a 16-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.Twips"/> value to convert.</param>
-            <returns>A 16-bit signed integer representation of the twips value.</returns>
-        </member>
-        <member name="M:DocumentModel.Twips.op_Implicit(System.UInt16)~DocumentModel.Twips">
-            <summary>
-            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.Twips"/> value.
-            </summary>
-            <param name="value">The 16-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Twips"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.UInt16">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Twips"/> value to a 16-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.Twips"/> value to convert.</param>
-            <returns>A 16-bit unsigned integer representation of the twips value.</returns>
-        </member>
-        <member name="M:DocumentModel.Twips.op_Implicit(System.Int32)~DocumentModel.Twips">
-            <summary>
-            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.Twips"/> value.
-            </summary>
-            <param name="value">The 32-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Twips"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Int32">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Twips"/> value to a 32-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.Twips"/> value to convert.</param>
-            <returns>A 32-bit signed integer representation of the twips value.</returns>
-        </member>
-        <member name="M:DocumentModel.Twips.op_Implicit(System.UInt32)~DocumentModel.Twips">
-            <summary>
-            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.Twips"/> value.
-            </summary>
-            <param name="value">The 32-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Twips"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.UInt32">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Twips"/> value to a 32-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.Twips"/> value to convert.</param>
-            <returns>A 32-bit unsigned integer representation of the twips value.</returns>
+            <remarks>This conversion allows for seamless integration of Twips values in contexts where an Int64 is
+            expected. Ensure that the Twips value is within the range of Int64 to avoid overflow.</remarks>
+            <param name="value">The Twips instance to convert.</param>
         </member>
         <member name="M:DocumentModel.Twips.op_Implicit(System.Int64)~DocumentModel.Twips">
             <summary>
@@ -7520,26 +7448,22 @@
             <param name="value">The 64-bit signed integer to convert.</param>
             <returns>A <see cref="T:DocumentModel.Twips"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Int64">
+        <member name="M:DocumentModel.Twips.op_Implicit(System.Double)~DocumentModel.Twips">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Twips"/> value to a 64-bit signed integer.
+            Implicitly converts a double-precision floating-point number to a Twips instance.
             </summary>
-            <param name="value">The <see cref="T:DocumentModel.Twips"/> value to convert.</param>
-            <returns>A 64-bit signed integer representation of the twips value.</returns>
+            <remarks>This conversion allows for seamless integration of double values into contexts where Twips are
+            required, facilitating operations that involve measurements in twips.</remarks>
+            <param name="value">The value to convert, representing a measurement in twips.</param>
         </member>
-        <member name="M:DocumentModel.Twips.op_Implicit(System.UInt64)~DocumentModel.Twips">
+        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Double">
             <summary>
-            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.Twips"/> value.
+            Implicitly converts a Twips value to its equivalent double-precision floating-point representation.
             </summary>
-            <param name="value">The 64-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Twips"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.UInt64">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Twips"/> value to a 64-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.Twips"/> value to convert.</param>
-            <returns>A 64-bit unsigned integer representation of the twips value.</returns>
+            <remarks>This conversion enables Twips values to be used seamlessly in contexts where double values are
+            required, such as mathematical operations or comparisons. The conversion preserves the numeric value represented
+            by the Twips instance.</remarks>
+            <param name="value">The Twips value to convert to a double.</param>
         </member>
         <member name="M:DocumentModel.Twips.CompareTo(DocumentModel.Twips)">
             <summary>

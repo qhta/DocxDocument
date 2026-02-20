@@ -398,6 +398,7 @@ public static class HexIntTest
 public class HexIntTestData
 {
   [XmlElement("RevisionId")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public HexInt RevisionId { get; set; }
 
   [XmlElement("DocumentHash")]

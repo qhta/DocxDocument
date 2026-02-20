@@ -8,14 +8,15 @@
 public readonly partial struct EMU : ILengthMeasure, IComparable<EMU>, IEquatable<EMU>
 {
 
-  private readonly Int64 value;
+  private readonly Double value;
 
   /// <summary>
   /// Gets the current value represented by this instance.
   /// </summary>
-  public Int64 Value => value;
+  public Double Value => value;
 
   #region Constant Factors
+
   /// <summary>
   /// How many EMU are in one millimeter.
   /// There is a small difference between real and nominal factors.

@@ -773,6 +773,7 @@ public static class ArrayVariantTests
 public class ArrayVariantTestData
 {
   [XmlElement("IntArray")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public ArrayVariant IntArray { get; set; } = new ArrayVariant();
 
   [XmlElement("StringArray")]

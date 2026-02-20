@@ -11,17 +11,17 @@
 /// Note: 1 eighth-point = 0.125 points = 1/576 inch. There are 8 eighth-points in 1 point.
 /// </remarks>
 [JsonConverter(typeof(EPSJsonConverter))]
-public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable<EPS>
+public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable<EPS>, IEquatable<object>
 {
   /// <summary>
   /// The internal value storing the measurement in eighth-points.
   /// </summary>
-  private readonly Int64 value;
+  private readonly Double value;
 
   /// <summary>
   /// Gets the measurement value in eighth-points.
   /// </summary>
-  public Int64 Value => value;
+  public Double Value => value;
 
   #region Constant factors for unit conversions
 
@@ -91,14 +91,14 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinMM;
-      value = (Int64)val;
+      value = (Double)val;
       return;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinCM;
-      value = (Int64)val;
+      value = (Double)val;
       return;
     }
     if (str.EndsWith("in"))
@@ -112,44 +112,17 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinPT;
-      value = (Int64)val;
+      value = (Double)val;
       return;
     }
     if (str.EndsWith("tw"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = Double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * EPSinTwips;
-      value = (Int64)val;
+      value = (Double)val;
       return;
     }
-    value = Int64.Parse(str);
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="EPS"/> struct from a 32-bit unsigned integer value.
-  /// </summary>
-  /// <param name="value">The value in eighth-points.</param>
-  public EPS(UInt32 value)
-  {
-    this.value = value;
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="EPS"/> struct from a 32-bit signed integer value.
-  /// </summary>
-  /// <param name="value">The value in eighth-points.</param>
-  public EPS(Int32 value)
-  {
-    this.value = value;
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="EPS"/> struct from a 64-bit unsigned integer value.
-  /// </summary>
-  /// <param name="value">The value in eighth-points.</param>
-  public EPS(UInt64 value)
-  {
-    this.value = (Int64)value;
+    value = Double.Parse(str);
   }
 
   /// <summary>
@@ -157,6 +130,15 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   /// </summary>
   /// <param name="value">The value in eighth-points.</param>
   public EPS(Int64 value)
+  {
+    this.value = value;
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="EPS"/> struct from a 64-bit signed integer value.
+  /// </summary>
+  /// <param name="value">The value in eighth-points.</param>
+  public EPS(Double value)
   {
     this.value = value;
   }
@@ -423,8 +405,9 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   /// <returns>A string representation of the eighth-points value.</returns>
   public static implicit operator string(EPS value)
   {
-    return value.value.ToString();
+    return value.value.ToString(CultureInfo.InvariantCulture);
   }
+
   /// <summary>
   /// Implicitly converts a 64-bit signed integer to an <see cref="EPS"/> value.
   /// </summary>
@@ -445,6 +428,25 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
     return (Int64)value.value;
   }
 
+  ///// <summary>
+  ///// Implicitly converts a double-precision floating-point number to an <see cref="EPS"/> value.
+  ///// </summary>
+  ///// <param name="value">The double-precision floating-point number to convert.</param>
+  ///// <returns>An <see cref="EPS"/> value representing the double-precision floating-point number.</returns>
+  //public static implicit operator EPS(Double value)
+  //{
+  //  return new EPS(value);
+  //}
+
+  ///// <summary>
+  ///// Implicitly converts an <see cref="EPS"/> value to a double-precision floating-point number.
+  ///// </summary>
+  ///// <param name="value">The <see cref="EPS"/> value to convert.</param>
+  ///// <returns>A double-precision floating-point representation of the eighth-points value.</returns>
+  //public static implicit operator Double(EPS value)
+  //{
+  //  return (Double)value.value;
+  //}
   #endregion
 
   #region IComparable and IEquatable implementations
@@ -480,7 +482,7 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   /// <returns><c>true</c> if the objects are equal; otherwise, <c>false</c>.</returns>
   public bool Equals(EPS other)
   {
-    return value == other.value;
+    return System.Math.Abs(value - other.Value) < 1e-10;
   }
 
   /// <summary>
@@ -493,7 +495,21 @@ public readonly partial struct EPS: ILengthMeasure, IComparable<EPS>, IEquatable
   /// false.</returns>
   public override bool Equals(object? obj)
   {
-    return obj is EPS other && Equals(other);
+    if (obj is EPS otherEPS)
+      return Equals(otherEPS);
+    if (obj is IConvertible convertible)
+    {
+      try
+      {
+        var otherValue = convertible.ToDouble(CultureInfo.InvariantCulture);
+        return System.Math.Abs(value - otherValue) < 1e-10;
+      }
+      catch
+      {
+        return false;
+      }
+    }
+    return false;
   }
 
   #endregion
