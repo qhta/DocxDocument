@@ -183,9 +183,10 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// Flag to determine if notification is enabled when the object raise PropertyChanged event.
   /// It should be set to true when the object is created.
   /// </summary>
-  public bool IsNotificationEnabled => _IsNotificationEnabled;
+  public bool IsNotificationEnabled => _IsNotificationEnabled 
+                                       ?? Parent is INotificationSource parentSource && parentSource.IsNotificationEnabled;
 
-  private bool _IsNotificationEnabled;
+  private bool? _IsNotificationEnabled;
 
 
   /// <summary>
@@ -196,20 +197,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   public void SetNotificationEnabled(bool enabled)
   {
     _IsNotificationEnabled = enabled;
-    foreach (var prop in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
-    {
-      try
-      {
-        if (prop.CanWrite && prop.GetIndexParameters().Length == 0)
-          if (prop.GetValue(this) is INotificationSource notificationSource)
-            notificationSource.SetNotificationEnabled(enabled);
-
-      }
-      catch (Exception ex)
-      {
-        Debug.WriteLine($"Error setting IsNotificationEnabled for property '{prop.Name}' of type '{this.GetType().Name}': {ex.Message}");
-      }
-    }
   }
 
   #endregion

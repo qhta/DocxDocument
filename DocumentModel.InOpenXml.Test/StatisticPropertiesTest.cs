@@ -138,7 +138,7 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- New document statistic properties ---");
       {
         StatisticProperties testData;
-        using (var document = new Document("temp.docx", FileMode.Create))
+        using (var document = new Document("temp.docx", FileMode.CreateNew))
         {
           testData = document.StatisticProperties;
         }
@@ -169,7 +169,7 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Store sample statistic properties in new document---");
       {
         StatisticProperties testData = CreateSampleStatisticProperties();
-        using (var document = new Document("temp.docx", FileMode.Create))
+        using (var document = new Document("temp.docx", FileMode.CreateNew))
         {
           document.StatisticProperties = testData;
         }
@@ -213,7 +213,7 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Update document statistic properties ---");
       {
         StatisticProperties testData = CreateSampleStatisticProperties();
-        using (var document = new Document("temp.docx", FileMode.Create))
+        using (var document = new Document("temp.docx", FileMode.CreateNew))
         {
           document.StatisticProperties = testData;
 
