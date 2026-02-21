@@ -381,18 +381,18 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Font table for the document, providing access to font definitions used within the document.
   /// </summary>
-  public Fonts? Fonts
+  public FontTable? FontTableTable
   {
     get
     {
-      if (_Fonts == null && WordprocessingDocument?.MainDocumentPart?.FontTablePart != null)
-        _Fonts = new Fonts(this);
-      return _Fonts;
+      if (_FontTable == null && WordprocessingDocument?.MainDocumentPart?.FontTablePart != null)
+        _FontTable = new FontTable(this);
+      return _FontTable;
     }
-    set => UpdateField(ref _Fonts, value, nameof(Fonts));
+    set => UpdateField(ref _FontTable, value, nameof(FontTableTable));
   }
 
-  private Fonts? _Fonts;
+  private FontTable? _FontTable;
 
 
   /// <summary>

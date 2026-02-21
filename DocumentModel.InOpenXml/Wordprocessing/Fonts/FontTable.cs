@@ -5,12 +5,13 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref="FontDef"/> objects, enabling advanced organization, referencing, and configuration of fonts used throughout the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.Fonts))]
-public  sealed class Fonts : ModelElementCollection<FontDef, DXW.Fonts, DXW.Font>
+[XmlRoot("FontTable")]
+public  sealed class FontTable : ModelElementCollection<FontDef, DXW.Fonts, DXW.Font>
 {
   /// <summary>
   /// Default constructor.
   /// </summary>
-  public Fonts()
+  public FontTable()
   {
   }
 
@@ -18,7 +19,7 @@ public  sealed class Fonts : ModelElementCollection<FontDef, DXW.Fonts, DXW.Font
   /// Initializing constructor.
   /// </summary>
   /// <param name="document">The document to attach to.</param>
-  public Fonts(Wordprocessing.Document document)
+  public FontTable(Wordprocessing.Document document)
   {
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);

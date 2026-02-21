@@ -10,9 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="DocumentVariablesTest.cs" />
-    <Compile Remove="FontsTest.cs" />
-    <Compile Remove="RsidsTest.cs" />
     <Compile Remove="StylesTest.cs" />
   </ItemGroup>
 
