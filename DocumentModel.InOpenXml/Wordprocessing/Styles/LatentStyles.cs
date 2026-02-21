@@ -29,9 +29,8 @@ public partial class LatentStyles : ModelElementCollection<LatentStyleExceptionI
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public Styles? Styles { get => _Styles; set => UpdateField(ref _Styles, value, nameof(Styles)); }
+  public Styles? Styles { get => Parent as Styles; set => SetParent(value); }
 
-  private Styles? _Styles;
   /// <summary>
   /// Default style locking setting, indicating whether styles are locked by default.
   /// </summary>

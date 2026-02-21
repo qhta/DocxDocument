@@ -137,7 +137,7 @@ namespace DocumentModel.InOpenXml.Test
 			Console.WriteLine("--- Store sample custom properties in new document---");
 			{
 				CustomProperties testData = CreateSampleCustomProperties();
-				using (var document = new Document("temp.docx", FileMode.Create))
+				using (var document = new Document("temp.docx", FileMode.CreateNew))
 				{
 					document.CustomProperties = testData;
 				}
@@ -185,7 +185,7 @@ namespace DocumentModel.InOpenXml.Test
 				var initialCount = testData.Count;
         var newCustomProperty = new CustomProperty { Name = "CustomTitle", Value = "Updated Title" };
 
-        using (var document = new Document("temp.docx", FileMode.Create))
+        using (var document = new Document("temp.docx", FileMode.CreateNew))
 				{
 					document.CustomProperties = testData;
 

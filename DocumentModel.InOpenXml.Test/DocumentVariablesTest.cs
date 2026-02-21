@@ -137,7 +137,7 @@ namespace DocumentModel.InOpenXml.Test
 			Console.WriteLine("--- Store sample DocumentVariables in new document---");
 			{
 				DocumentVariables testData = CreateSampleDocumentVariables();
-				using (var document = new Document("temp.docx", FileMode.Create))
+				using (var document = new Document("temp.docx", FileMode.CreateNew))
 				{
 					document.DocumentVariables = testData;
 				}
@@ -184,7 +184,7 @@ namespace DocumentModel.InOpenXml.Test
 				DocumentVariables testData = CreateSampleDocumentVariables();
 				var initialCount = testData.Count;
         var i = initialCount+1;
-				using (var document = new Document("temp.docx", FileMode.Create))
+				using (var document = new Document("temp.docx", FileMode.CreateNew))
 				{
 					document.DocumentVariables = testData;
     			document.DocumentVariables.Add(new DocumentVariable { Name = $"Var{i}", Value = $"Value{i}" });

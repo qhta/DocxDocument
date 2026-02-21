@@ -141,7 +141,7 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- Store sample document settings in new document---");
       DocumentSettings testData = CreateSampleDocumentSettings(true);
-      using (var document = new Document("temp.docx", FileMode.Create))
+      using (var document = new Document("temp.docx", FileMode.CreateNew))
       {
         document.DocumentSettings = testData;
       }
@@ -189,7 +189,7 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- Update document settings stored in document---");
       DocumentSettings testData = CreateSampleDocumentSettings(true);
-      using (var document = new Document("temp.docx", FileMode.Create))
+      using (var document = new Document("temp.docx", FileMode.CreateNew))
       {
         document.DocumentSettings = testData;
       }
@@ -243,7 +243,7 @@ namespace DocumentModel.InOpenXml.Test
         DocumentSettings testData = CreateSampleDocumentSettings(true);
         TestHelper.ChangeTestData(testData);
         testData.Compatibility?.Add(new CompatibilitySetting { Name = "CompatibilityMode", Val = "value" });
-        using (var document = new Document("temp.docx", FileMode.Create))
+        using (var document = new Document("temp.docx", FileMode.CreateNew))
         {
           document.DocumentSettings = testData;
         }
@@ -299,7 +299,7 @@ namespace DocumentModel.InOpenXml.Test
     static void UpdateMethodForPerformanceTest()
     {
       DocumentSettings testData = CreateSampleDocumentSettings(true);
-      using (var document = new Document("temp.docx", FileMode.Create))
+      using (var document = new Document("temp.docx", FileMode.CreateNew))
       {
         document.DocumentSettings = testData;
       }

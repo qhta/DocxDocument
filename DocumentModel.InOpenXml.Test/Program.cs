@@ -22,9 +22,7 @@ internal class Program
     if (!Exec(RsidsTest.Run)) return;
     if (!Exec(DocumentVariablesTest.Run)) return;
     if (!Exec(FontTableTest.Run)) return;
-
-    //if (!Exec(StylesTest.Run))
-    //  return;
+    if (!Exec(LatentStylesTest.Run))  return;
 
     Console.WriteLine("All tests passed.");
   }

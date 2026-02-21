@@ -139,7 +139,7 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Store sample Fonts in new document---");
       {
         FontTable testData = CreateSampleFonts();
-        using (var document = new Document("temp.docx", FileMode.Create))
+        using (var document = new Document("temp.docx", FileMode.CreateNew))
         {
           document.FontTableTable = testData;
         }
@@ -185,7 +185,7 @@ namespace DocumentModel.InOpenXml.Test
       {
         FontTable testData = CreateSampleFonts();
         var initialCount = testData.Count;
-        using (var document = new Document("temp.docx", FileMode.Create))
+        using (var document = new Document("temp.docx", FileMode.CreateNew))
         {
           document.FontTableTable = testData;
           document.FontTableTable.Add(new FontDef
@@ -239,7 +239,7 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Validate sample Fonts stored in new document against OpenXml schema ---");
       {
         FontTable testData = CreateSampleFonts();
-        using (var document = new Document("temp.docx", FileMode.Create))
+        using (var document = new Document("temp.docx", FileMode.CreateNew))
         {
           document.FontTableTable = testData;
         }

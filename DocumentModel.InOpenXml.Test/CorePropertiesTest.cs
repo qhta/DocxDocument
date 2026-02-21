@@ -155,7 +155,7 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- New document core properties ---");
       {
         CoreProperties testData;
-        using (var document = new Document("temp.docx", FileMode.Create))
+        using (var document = new Document("temp.docx", FileMode.CreateNew))
         {
           testData = document.CoreProperties;
         }
@@ -186,7 +186,7 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Store sample core properties in new document---");
       {
         CoreProperties testData = CreateSampleCoreProperties();
-        using (var document = new Document("temp.docx", FileMode.Create))
+        using (var document = new Document("temp.docx", FileMode.CreateNew))
         {
           document.CoreProperties = testData;
         }
@@ -231,10 +231,9 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Update document core properties ---");
       {
         CoreProperties testData = CreateSampleCoreProperties();
-        using (var document = new Document("temp.docx", FileMode.Create))
+        using (var document = new Document("temp.docx", FileMode.CreateNew))
         {
           document.CoreProperties = testData;
-
           document.CoreProperties.Title = "Updated Title";
         }
 
