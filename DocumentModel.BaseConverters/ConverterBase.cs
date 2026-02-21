@@ -197,12 +197,10 @@ public static class ConverterBase
     }
     while (targetSubType != null)
     {
-      //Debug.WriteLine($"Search for conversion from {sourceType.FullName} to {targetSubType.FullName}");
       if (conversionToMap.TryGetValue((sourceSearchType, targetSubType), out var conversionFunc) ||
           (sourceSearchType != sourceType) &&
           conversionToMap.TryGetValue((sourceType, targetSubType), out conversionFunc))
       {
-        //Debug.WriteLine($"Converting from {sourceType.FullName} to {targetSubType.FullName}");
         result = conversionFunc(value, targetType);
         return true;
       }
@@ -288,7 +286,6 @@ public static class ConverterBase
     if (sourceType == targetType)
       return true;
 
-    //Debug.WriteLine($"Start converting from {sourceType.FullName} to {targetType.FullName}");
     var targetSearchType = targetType;
     if (targetType.IsEnum)
       targetSearchType = typeof(Enum);
@@ -299,14 +296,12 @@ public static class ConverterBase
     }
     while (sourceSubType != null)
     {
-      //Debug.WriteLine($"Search for conversion from {sourceSubType.FullName} to {targetType.FullName}");
       if (conversionFromMap.TryGetValue((sourceSubType, targetSearchType), out var conversionFunc) ||
           (targetSearchType != targetType) &&
           conversionFromMap.TryGetValue((sourceSubType, targetType), out conversionFunc))
       {
         try
         {
-          //Debug.WriteLine($"Converting from {sourceType.FullName} to {sourceSubType.FullName}");
           result = conversionFunc(value, targetType);
           return true;
         } catch
@@ -430,9 +425,9 @@ public static class ConverterBase
       {
         result = convertible.ToType(targetType, null);
         return true;
-      } catch (Exception e)
+      } catch (Exception ex)
       {
-        Debug.WriteLine(e);
+        Debug.WriteLine(ex);
       }
     }
     result = null;

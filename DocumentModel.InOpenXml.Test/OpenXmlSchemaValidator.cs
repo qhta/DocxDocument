@@ -158,7 +158,6 @@ internal static class OpenXmlSchemaValidator
     {
       try
       {
-        //Debug.WriteLine(schemaPath);
         schemaSet.Add(null, schemaPath);
       }
       catch (XmlSchemaException ex)

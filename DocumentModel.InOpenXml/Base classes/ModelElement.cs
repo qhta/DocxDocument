@@ -195,7 +195,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <param name="enabled">The enabled value to set.</param>
   public void SetNotificationEnabled(bool enabled)
   {
-    Debug.WriteLine($"{this}.SetIsNotificationEnabled({enabled})");
     _IsNotificationEnabled = enabled;
     foreach (var prop in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
     {
