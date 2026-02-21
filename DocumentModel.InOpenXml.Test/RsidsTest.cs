@@ -137,7 +137,7 @@ namespace DocumentModel.InOpenXml.Test
 			Console.WriteLine("--- Store sample Rsids in new document---");
 			{
 				Rsids testData = CreateSampleRsids();
-				using (var document = new Document("temp.docx", FileMode.Create))
+				using (var document = new Document("temp.docx", FileMode.CreateNew))
 				{
 					document.Rsids = testData;
 				}
@@ -183,7 +183,7 @@ namespace DocumentModel.InOpenXml.Test
 			{
 				Rsids testData = CreateSampleRsids();
 				var initialCount = testData.Count;
-				using (var document = new Document("temp.docx", FileMode.Create))
+				using (var document = new Document("temp.docx", FileMode.CreateNew))
 				{
 					document.Rsids = testData;
     			document.Rsids.Add(Random.Shared.Next() );

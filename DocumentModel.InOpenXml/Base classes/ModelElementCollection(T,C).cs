@@ -66,7 +66,11 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   [NotMapped]
   public DXPP.WordprocessingDocument? WordprocessingDocument
   {
-    get => _WordprocessingDocument ?? (Parent as IWordprocessingDocumentAware)?.WordprocessingDocument;
+    get
+    {
+      Debug.WriteLine($"Parent of {this} is {(Parent ?? "null")}");
+      return _WordprocessingDocument ?? (Parent as IWordprocessingDocumentAware)?.WordprocessingDocument;
+    }
     protected set => _WordprocessingDocument = value;
   }
 

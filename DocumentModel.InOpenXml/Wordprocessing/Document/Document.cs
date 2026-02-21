@@ -24,6 +24,11 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <param name="access">The file access mode to open. Read, Write, and ReadWrite are recognized. Default is ReadWrite</param>
   public Document(string filePath, FileMode mode = FileMode.OpenOrCreate, FileAccess access = FileAccess.ReadWrite) : this()
   {
+    if (mode == FileMode.CreateNew && File.Exists(filePath))
+    {
+      File.Delete(filePath);
+      CreateDocument(filePath);
+    }
     if (mode == FileMode.Create || mode == FileMode.OpenOrCreate && !File.Exists(filePath))
       CreateDocument(filePath);
     else if (mode == FileMode.Open || mode == FileMode.OpenOrCreate)
