@@ -658,9 +658,6 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   /// <returns>The value as an object.</returns>
   public object? GetValue()
   {
-#if TraceSetValue
-    Debug.WriteLine($"GetValue()");
-#endif
     var val = ConvertValue(VariantType, _value);
     if (val != null && VariantType == VariantType.Enum && ValueType != null)
     {
