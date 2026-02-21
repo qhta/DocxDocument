@@ -82,7 +82,6 @@ public class AnalyzeTypeMapping
     VisitedTypes.Add(type);
 
     Console.WriteLine($"Analyzing type: {type.FullName}");
-    if (type.FullName! == "DocumentModel.Drawings.TabStop") Debug.Assert(true);
     var openXmlType = DocumentModel.OpenXml.OpenXmlTypeMap.GetOpenXmlTypeForModelType(type);
     if (openXmlType != null)
     {
@@ -92,7 +91,6 @@ public class AnalyzeTypeMapping
         if (openXmlPropertyAttribute == null)
           continue;
         var propType = prop.PropertyType.GetNotNullableType();
-        if (propType == typeof(Uri)) Debug.Assert(true);
 
         if (!propType.IsEnum && !propType.IsAbstract && !propType.IsInterface && !propType.IsGenericTypeDefinition)
         {
@@ -110,10 +108,6 @@ public class AnalyzeTypeMapping
             continue;
 
           var openXmlPropType = openXmlProp.PropertyType.GetNotNullableType()!;
-          if (propType == typeof(string) && openXmlPropType.BaseType == typeof(DX.OpenXmlLeafTextElement)) Debug.Assert(true);
-          //var baseType = GetBaseType(openXmlPropType);
-          if (propType == typeof(string) && openXmlPropType.BaseType == typeof(DX.OpenXmlLeafElement)) Debug.Assert(true);
-        
           var openXmlPropTypeNameBaseType = GetOpenXmlTypeName(openXmlPropType);
           if (openXmlPropTypeNameBaseType.EndsWith("Dx.DX.OpenXmlCompositeElement"))
             continue;

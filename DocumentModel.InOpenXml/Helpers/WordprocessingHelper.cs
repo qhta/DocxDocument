@@ -32,7 +32,6 @@ public static class WordprocessingHelper
   /// <returns>An instance of the <c>Document</c> class.</returns>
   public static DXPP.WordprocessingDocument OpenWordDocument(string filename, bool editable = true)
   {
-    // Create a document by supplying the filename. 
     var wordDocument = DXPP.WordprocessingDocument.Open(filename, editable);
     InitWordprocessingDocument(wordDocument);
     return wordDocument;
@@ -47,7 +46,6 @@ public static class WordprocessingHelper
   /// <returns>An instance of the <c>Document</c> class.</returns>
   public static DXPP.WordprocessingDocument OpenWordDocument(Stream stream, bool editable = true)
   {
-    // Create a document by supplying the stream. 
     var wordDocument = DXPP.WordprocessingDocument.Open(stream, editable);
     InitWordprocessingDocument(wordDocument);
     return wordDocument;

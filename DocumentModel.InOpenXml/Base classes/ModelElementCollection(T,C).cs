@@ -67,7 +67,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   public DXPP.WordprocessingDocument? WordprocessingDocument
   {
     get => _WordprocessingDocument ?? (Parent as IWordprocessingDocumentAware)?.WordprocessingDocument;
-    private set => _WordprocessingDocument = value;
+    protected set => _WordprocessingDocument = value;
   }
 
   private DXPP.WordprocessingDocument? _WordprocessingDocument;

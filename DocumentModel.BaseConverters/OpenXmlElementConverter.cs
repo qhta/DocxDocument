@@ -23,8 +23,6 @@ public static class OpenXmlElementConverter
     if (modelType == openXmlType)
       return true;
 
-    if (openXmlType.Name == "Zoom") Debug.Assert(true);
-
     if (OpenXmlModelConverter.ConvertToOpenDelegates.TryGetValue(modelType, out var convertDelegate)
         || OpenXmlModelConverter.ConvertToOpenDelegates.TryGetValue(openXmlType, out convertDelegate))
     {

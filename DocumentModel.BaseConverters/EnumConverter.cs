@@ -80,8 +80,21 @@ public static class EnumConverter
         var modelEnumValue = modelEnumField.GetValue(null)!;
         enumValuesMap.Add(modelEnumValue, mappedName);
       }
+      //if (modelEnumType.GetCustomAttribute<FlagsAttribute>() != null)
+      //{
+      //  // For Flags enums, test a combination of all values
+      //  long combinedValue = 0;
+      //  foreach (var value in modelEnumFields)
+      //  {
+      //    combinedValue |= Convert.ToInt64(value);
+      //  }
+      //  var combinedEnum = Enum.ToObject(modelEnumType, combinedValue);
+      //  enumValuesMap.Add(combinedEnum, combinedEnum.ToString()!);
+
+      //}
       mappingEnumValues[modelEnumType] = enumValuesMap;
     }
+
     return enumValuesMap;
   }
 
@@ -293,10 +306,11 @@ public static class EnumConverter
       return (Enum)enumValue;
     }
 
-    //var enumValuesMap = GetEnumValuesMap(modelEnumType, typeof(string));
-    //return (Enum?)enumValuesMap.GetValue1(value);
+    var enumValuesMap = GetEnumValuesMap(modelEnumType, typeof(string));
+    if (enumValuesMap.TryGetValue1(enumValuesMap, out var result))
+      return (Enum)result;
 
-    return (Enum?)Enum.Parse(modelEnumType, value)!;
+    return (Enum?)Enum.Parse(modelEnumType, value, true)!;
   }
 
   /// <summary>
@@ -308,7 +322,6 @@ public static class EnumConverter
   private static String? ConvertToString(Enum? value, Type? openXmlType = null)
   {
     if (value == null) return null;
-    if (value.ToString() == "Name") Debug.Assert(true);
 
     if (openXmlType == null)
       openXmlType = typeof(String);
@@ -320,14 +333,9 @@ public static class EnumConverter
       return intValue.ToString();
     }
 
-    var result = value.ToString();
-    //var StringsMap = GetEnumValuesMap(modelEnumType, openXmlType);
-    //if (modelEnumType.GetCustomAttribute<FlagsAttribute>() != null)
-    //{
-    //  var result = (String)StringsMap.GetValue2(value);
-    //  return result;
-    //}
-    //var result = (String)StringsMap.GetValue2(value);
+
+    var StringsMap = GetEnumValuesMap(modelEnumType, openXmlType);
+    var result = (String)StringsMap.GetValue2(value);
     return result;
   }
 
@@ -365,7 +373,6 @@ public static class EnumConverter
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Enum? value, Type openXmlType)
   {
     if (value == null) return null;
-    if (value.ToString() == "Name") Debug.Assert(true);
 
     var result = (DX.OpenXmlLeafTextElement)Activator.CreateInstance(openXmlType)!;
     var textValue = EnumConverter.ConvertToString(value) ?? "";
@@ -420,7 +427,6 @@ public static class EnumConverter
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Enum? value, Type openXmlType)
   {
     if (value == null) return null;
-    if (value.ToString() == "Name") Debug.Assert(true);
 
     var result = (DX.OpenXmlLeafElement)Activator.CreateInstance(openXmlType)!;
     var valProp = openXmlType.GetProperty("Value") ?? openXmlType.GetProperty("Val");
@@ -434,7 +440,6 @@ public static class EnumConverter
     if (valueProp == null)
       throw new InvalidOperationException($"EnumValue of type {targetInstanceType} does not have a Value property");
 
-    if (valueProp.PropertyType.Name == "CharacterSpacingValues") Debug.Assert(true);
     object? targetValue = null;
     if (valueProp.PropertyType.GetInterface("IEnumValue") != null)
       targetValue = EnumConverter.ConvertToIEnumValue(value, valueProp.PropertyType);
@@ -460,7 +465,6 @@ public static class EnumConverter
   /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
   public static object? ConvertTo(Enum? value, Type targetType)
   {
-    if (value?.ToString() == "Name") Debug.Assert(true);
     return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
   }
 

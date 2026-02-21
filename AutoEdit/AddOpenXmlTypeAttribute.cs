@@ -55,14 +55,6 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
   /// <returns>The updated class declaration, or the original when no changes are needed.</returns>
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax classNode)
   {
-    if (classNode.Identifier.Text.Contains("TransformEffect")) Debug.Assert(true);
-
-    //if (classNode.Modifiers.Any(SyntaxKind.AbstractKeyword))
-    //  return classNode;
-
-    //if (classNode.ConstraintClauses.Any())
-    //  return classNode;
-
     var typeParameterNames = classNode.TypeParameterList?.Parameters
       .Select(p => p.Identifier.Text)
       .ToHashSet(StringComparer.Ordinal);
