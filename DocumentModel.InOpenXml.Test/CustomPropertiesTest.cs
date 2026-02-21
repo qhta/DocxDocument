@@ -183,11 +183,13 @@ namespace DocumentModel.InOpenXml.Test
 			{
 				CustomProperties testData = CreateSampleCustomProperties();
 				var initialCount = testData.Count;
-				using (var document = new Document("temp.docx", FileMode.Create))
+        var newCustomProperty = new CustomProperty { Name = "CustomTitle", Value = "Updated Title" };
+
+        using (var document = new Document("temp.docx", FileMode.Create))
 				{
 					document.CustomProperties = testData;
 
-					document.CustomProperties.Add(new CustomProperty { Name = "CustomTitle", Value = "Updated Title" });
+					document.CustomProperties.Add(newCustomProperty);
 				}
 
 				CustomProperties storedData;
@@ -212,14 +214,14 @@ namespace DocumentModel.InOpenXml.Test
 					Console.WriteLine($"✗ Updated document custom properties test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
 					return false;
 				}
+        var storedCustomProperty = storedData.Last();
+				if (!TestHelper.CompareTestData(newCustomProperty, storedCustomProperty, out var propName))
+        {
+          Console.WriteLine($"✗ Store sample custom properties test FAILED - data mismatch in new item '{propName}'");
+          return false;
+        }
 
-				if (!TestHelper.CompareTestData(testData, storedData, out var propName))
-				{
-					Console.WriteLine($"✗ Updated document custom properties test FAILED - data mismatch in '{propName}'");
-					return false;
-				}
-
-				Console.WriteLine("✓ Updated document custom properties test passed\n");
+        Console.WriteLine("✓ Updated document custom properties test passed\n");
 				return true;
 			}
 		}

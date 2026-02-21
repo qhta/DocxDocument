@@ -59,7 +59,7 @@ public static class EnumConverterTest
   public static bool TestEnumConversion(Type modelType, Type openXmlType)
   {
     var testValues = Enum.GetValues(modelType);
-    if (modelType.GetCustomAttributes(typeof(FlagsAttribute), false).Length > 0)
+    if (modelType.GetCustomAttribute<FlagsAttribute>() != null)
     {
       // For Flags enums, test a combination of all values
       long combinedValue = 0;

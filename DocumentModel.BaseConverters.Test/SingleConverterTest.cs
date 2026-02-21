@@ -69,9 +69,6 @@ public static class SingleConverterTest
     {
       try
       {
-        if (openXmlType == typeof(DX.Int16Value))
-          Debug.Assert(true);
-
         // Convert to OpenXml
         var openXmlValue = SingleConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)

@@ -107,7 +107,6 @@ public static partial class OpenXmlModelConverter
     }
     foreach (var modelProperty in modelType.GetModelProperties())
     {
-      if (modelProperty.Name == "DigitalSignature") Debug.Assert(true);
       UpdateData(modelObject, modelProperty, openXmlObject, openXmlType);
     }
     if (openXmlObject is DX.OpenXmlElement openXmlElement &&
@@ -144,7 +143,6 @@ public static partial class OpenXmlModelConverter
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return;
 
-    if (modelProperty.Name == "DigitalSignature") Debug.Assert(true);
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanWrite)
     {
@@ -163,7 +161,6 @@ public static partial class OpenXmlModelConverter
       }
       return;
     }
-    if (modelProperty.Name == "LatentStyles") Debug.Assert(true);
     var updateDataMethod = OpenXmlPropertyMap.GetUpdateDataMethod(modelProperty, openXmlType);
     if (updateDataMethod != null)
     {
@@ -181,7 +178,6 @@ public static partial class OpenXmlModelConverter
       throw new InvalidOperationException(
         $"Invalid number of parameters in method {updateDataMethod.DeclaringType}.{updateDataMethod.Name}");
     }
-    if (modelProperty.Name == "LatentStyles") Debug.Assert(true);
     var openXmlElementAttribute = modelProperty.GetCustomAttribute<OpenXmlElementAttribute>();
     if (openXmlElementAttribute != null)
     {
@@ -350,38 +346,6 @@ public static partial class OpenXmlModelConverter
     }
   }
 
-  ///// <summary>
-  ///// Appends a child element to a parent Open XML element
-  ///// while maintaining the correct order of child elements as defined in the Open XML schema.
-  ///// </summary>
-  ///// <param name="parentElement">The parent Open XML element.</param>
-  ///// <param name="child">The child Open XML element to append.</param>
-  //public static void AppendChildUsingOrder(this DX.OpenXmlElement parentElement, DX.OpenXmlElement child)
-  //{
-  //  if (child is DXW.DecimalSymbol) Debug.Assert(true);
-  //  if (ChildrenOrder.TryGetValue(parentElement.GetType(), out var childOrders) &&
-  //      childOrders.TryGetValue(child.GetType(), out var childOrder) && childOrder > 0)
-  //  {
-  //    var existingChild = parentElement.ChildElements.FirstOrDefault(c =>
-  //    {
-  //      var cType = c.GetType();
-  //      if (child is DXW.DecimalSymbol && cType == typeof(DXO13W.ChartTrackingRefBased)) Debug.Assert(true);
-
-  //      if (childOrders.TryGetValue(cType, out var order))
-  //      {
-  //        return order > childOrder;
-  //      }
-  //      return true;
-  //    });
-  //    if (existingChild != null)
-  //    {
-  //      parentElement.InsertBefore(child, existingChild);
-  //      return;
-  //    }
-  //  }
-  //  parentElement.AppendChild(child);
-  //}
-
   /// <summary>
   /// Converts an Open XML element to a model object of the specified type.
   /// </summary>
@@ -432,7 +396,6 @@ public static partial class OpenXmlModelConverter
   /// <param name="openXmlType">The type of the Open XML element.</param>
   public static void LoadData(object modelObject, PropertyInfo modelProperty, object openXmlObject, Type openXmlType)
   {
-    if (modelProperty.Name == "HeadingPairs") Debug.Assert(true);
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanRead)
     {
@@ -551,7 +514,7 @@ public static partial class OpenXmlModelConverter
     object? modelValue = modelProperty.GetValue(modelObject);
     if (modelValue != null)
       modelClearMethod.Invoke(modelValue, []);
-    if (modelProperty.Name == "AttachedSchemas") Debug.Assert(true);
+
     var children = openXmlElement.ChildElements.Where(item => item.GetType() == openXmlChildType).ToArray();
     foreach (var openXmlChildElement in children)
     {

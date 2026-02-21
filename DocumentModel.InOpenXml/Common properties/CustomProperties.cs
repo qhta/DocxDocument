@@ -44,7 +44,7 @@ public sealed class CustomProperties : ModelElementCollection<CustomProperty, DX
   /// <param name="wordprocessingDocument">Document to attach to.</param>
   public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-    base.AttachAndUpdate(wordprocessingDocument);
+    WordprocessingDocument = wordprocessingDocument;
     var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
     SetUpdatableElement(customFileProperties);
     UpdateData(customFileProperties);

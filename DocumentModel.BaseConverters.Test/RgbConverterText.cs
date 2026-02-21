@@ -90,9 +90,6 @@ public static class RgbConverterTest
     {
       try
       {
-        if (openXmlType == typeof(DX.Int16Value))
-          Debug.Assert(true);
-
         // Convert to OpenXml
         var openXmlValue = RgbConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)

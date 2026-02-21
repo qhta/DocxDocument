@@ -92,9 +92,6 @@ public static class HexCharConverterTest
     {
       try
       {
-        if (openXmlType == typeof(DX.Int16Value))
-          Debug.Assert(true);
-
         // Convert to OpenXml
         var openXmlValue = HexCharConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)

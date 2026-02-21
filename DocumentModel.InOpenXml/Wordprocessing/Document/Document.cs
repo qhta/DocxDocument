@@ -124,8 +124,10 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     SetNotificationEnabled(false);
     Filename = filePath;
     IsEditable = editable;
-
-    var wordprocessingDocument = WordprocessingHelper.OpenWordDocument(Filename, editable);
+    
+    var wordprocessingDocument =     (!File.Exists(filePath))
+      ? WordprocessingHelper.CreateWordDocument(filePath)
+      : WordprocessingHelper.OpenWordDocument(Filename, editable);
     AttachAndLoad(wordprocessingDocument);
     SetNotificationEnabled(true);
   }

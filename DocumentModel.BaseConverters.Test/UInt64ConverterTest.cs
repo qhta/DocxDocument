@@ -92,9 +92,6 @@ public static class UInt64ConverterTest
     {
       try
       {
-        if (openXmlType == typeof(DX.StringValue))
-          Debug.Assert(true);
-
         // Convert to OpenXml
         var openXmlValue = UInt64Converter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)

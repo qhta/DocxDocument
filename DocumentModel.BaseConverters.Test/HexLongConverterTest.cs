@@ -93,10 +93,6 @@ public static class HexLongConverterTest
     {
       try
       {
-        if (openXmlType == typeof(DX.Int16Value))
-          Debug.Assert(true);
-
-        if (openXmlType.Name=="Int16Value") Debug.Assert(true);
         // Convert to OpenXml
         var openXmlValue = HexLongConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)

@@ -43,10 +43,6 @@ public partial class PropertiesView : UserControl
     var resetCommand = new Syncfusion.Windows.Shared.DelegateCommand(ResetItem, CanResetItem);
     typeof(PropertyItem).GetField("_resetCommand", BindingFlags.Instance | BindingFlags.NonPublic)!
       .SetValue(propertyItem, resetCommand);
-    if (propertyItem.Name == "Revision")
-    {
-      Debug.Assert(true);
-    }
   }
 
   /// <summary>

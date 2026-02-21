@@ -94,14 +94,6 @@ public static class PercentConverterTest
     {
       try
       {
-        if (openXmlType == typeof(DX.Int16Value))
-          Debug.Assert(true);
-
-        // Convert to OpenXml
-        // ReSharper disable once SpecifyACultureInStringConversionExplicitly
-
-        if (testValue.ToString() == "-1%" && openXmlType == typeof(DX.Int32Value))
-          Debug.Assert(true); 
         var openXmlValue = PercentConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {

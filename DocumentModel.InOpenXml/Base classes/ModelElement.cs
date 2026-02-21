@@ -138,12 +138,13 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     {
       if (field is IChildItem oldChild && oldChild.Parent == this)
         oldChild.SetParent(null);
-      if (field is IWordprocessingDocumentAware oldValue)
+      if (field is IWordprocessingDocumentAware oldValue && oldValue.WordprocessingDocument != null)
         oldValue.Detach();
       if (value is IWordprocessingDocumentAware newValue
           && this is IWordprocessingDocumentAware thisElement && thisElement.WordprocessingDocument != null)
         newValue.AttachAndUpdate(thisElement.WordprocessingDocument);
-      else if (value is IUpdatable updatableValue)
+      else 
+      if (value is IUpdatable updatableValue)
         updatableValue.UpdateData();
       field = value;
       if (field is IChildItem newChild && newChild.Parent == null)
@@ -418,9 +419,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       return;
     if (_IsModified != isModified)
     {
-      Debug.WriteLine($"{this}.SetIsModified({isModified})");
-      if (isModified && this is HeadingPairs)
-        Debug.Assert(true);
       _IsModified = isModified;
       if (IsModified)
       {
@@ -446,7 +444,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
           }
         }
       }
-      if (this is DMW.Document) Debug.Assert(true);
       NotifyPropertyChanged(nameof(IsModified));
     }
   }
