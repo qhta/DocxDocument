@@ -19,13 +19,9 @@ internal class Program
     if (!Exec(StatisticPropertiesTest.Run)) return;
     if (!Exec(CustomPropertiesTest.Run)) return;
     if (!Exec(DocumentSettingsTest.Run)) return;
-    //if (!Exec(RsidsTest.Run)) return;
-    //if (!Exec(KnownPropertiesTest.Run)) return;
-
-
-
-    //if (!Exec(FontsTest.Run))
-    //  return;
+    if (!Exec(RsidsTest.Run)) return;
+    if (!Exec(DocumentVariablesTest.Run)) return;
+    if (!Exec(FontTableTest.Run)) return;
 
     //if (!Exec(StylesTest.Run))
     //  return;
