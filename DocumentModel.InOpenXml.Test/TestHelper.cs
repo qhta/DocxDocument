@@ -55,8 +55,6 @@ public static class TestHelper
   /// </summary>
   private static bool CompareTestData1<T>(Type comparedType, T obj1, T obj2, ref string? propName)
   {
-    if (obj1 is DocumentSettings) Debug.Assert(true);
-    if (propName == "SchemaLibrary") Debug.Assert(true);
     bool result;
 
     if (obj1 == null && obj2 == null) return true;

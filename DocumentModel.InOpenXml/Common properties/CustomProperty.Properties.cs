@@ -165,10 +165,7 @@ public sealed partial class CustomProperty
     {
       var convertedValue = _Value.ConvertTo(type);
       _Value = convertedValue;
-#pragma warning disable IDE0019
-      var openXmlElement = (GetUpdatableElement() as DXCP.CustomDocumentProperty);
-#pragma warning restore IDE0019
-      if (openXmlElement != null)
+      if (GetUpdatableElement() is DXCP.CustomDocumentProperty openXmlElement)
       {
         openXmlElement.RemoveAllChildren();
         openXmlElement.AppendChild(convertedValue.AsVTVariant());

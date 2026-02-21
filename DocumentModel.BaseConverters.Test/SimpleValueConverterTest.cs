@@ -175,15 +175,9 @@ public static class SimpleValueConverterTest
       object testValue = testValue0;
       if (testValue0.GetType() != modelType)
         testValue = Convert.ChangeType(testValue0, modelType);
-      if (modelType == typeof(string)) Debug.Assert(true);
-      if (otherType == typeof(DXW.Text)) Debug.Assert(true);
+
       try
       {
-        if (modelType == typeof(Twips) && (Int64)(Twips)testValue < 0)
-        {
-          // Skip negative Twips to UInt32Value conversion test
-        }
-        if (modelType == typeof(DocumentModel.StringList)) Debug.Assert(true);
         var convertedValue = SimpleValueConverter.ConvertTo(testValue, otherType);
         var roundTripValue = SimpleValueConverter.ConvertFrom(convertedValue, modelType);
         if (!testValue.Equals(roundTripValue))

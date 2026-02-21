@@ -92,9 +92,6 @@ public static class Int16ConverterTest
     {
       try
       {
-        if (openXmlType == typeof(DX.Int16Value))
-          Debug.Assert(true);
-
         // Convert to OpenXml
         var openXmlValue = Int16Converter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)

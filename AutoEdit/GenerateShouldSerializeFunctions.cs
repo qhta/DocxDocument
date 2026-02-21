@@ -24,7 +24,6 @@ internal class GenerateShouldSerializeFunctions
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
     var root = tree.GetRoot();
-    if (filename==("Rectangle")) Debug.Assert(true);
     
     BaseNamespaceDeclarationSyntax? namespaceNode = root.DescendantNodes().OfType<NamespaceDeclarationSyntax>().FirstOrDefault();
     if (namespaceNode == null)

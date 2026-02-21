@@ -69,9 +69,6 @@ public static class DecimalConverterTest
     {
       try
       {
-        if (openXmlType == typeof(DX.Int16Value))
-          Debug.Assert(true);
-
         // Convert to OpenXml
         var openXmlValue = DecimalConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)

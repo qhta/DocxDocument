@@ -13,7 +13,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 internal static class OpenXmlSchemaValidator
 {
-  private const string SchemaDirectory = @"d:\OneDrive\VS\Docs\OpenXML\Schema2016";
+  private const string SchemaDirectory = @"Schema";
   private static readonly Lazy<XmlSchemaSet> SchemaSet = new(LoadSchemas);
 
   public static OpenXmlValidationResult ValidateFile(string xmlFilePath)
