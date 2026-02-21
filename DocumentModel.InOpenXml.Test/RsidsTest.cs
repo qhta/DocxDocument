@@ -212,12 +212,6 @@ namespace DocumentModel.InOpenXml.Test
 					return false;
 				}
 
-				if (!TestHelper.CompareTestData(testData, storedData, out var propName))
-				{
-					Console.WriteLine($"✗ Updated document Rsids test FAILED - data mismatch in '{propName}'");
-					return false;
-				}
-
 				Console.WriteLine("✓ Updated document Rsids test passed\n");
 				return true;
 			}

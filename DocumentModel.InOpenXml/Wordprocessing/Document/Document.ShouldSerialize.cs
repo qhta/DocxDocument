@@ -8,5 +8,5 @@ public partial class Document
   public bool ShouldSerializeCustomProperties() => CustomProperties is not null;
   public bool ShouldSerializeDocumentSettings() => DocumentSettings is not null;
   public bool ShouldSerializeRsids() => Rsids is not null;
-  public bool ShouldSerializeFonts() => Fonts is not null;
+  public bool ShouldSerializeFonts() => FontTableTable is not null;
 }
