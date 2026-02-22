@@ -48,4 +48,52 @@ public static class OpenXmlTypeMap
 
     return typeCandidates.FirstOrDefault();
   }
+
+  /// <summary>
+  /// Retrieves the update data method information for the model type.
+  /// This method is used to update the OpenXml element with the model property value.
+  /// </summary>
+  /// <param name="modelType">The type of the model element for which to find the appropriate method.</param>
+  /// <param name="openXmlType">The OpenXml type to update data.</param>
+  /// <remarks>
+  /// Attempts to find a method name specified in the OpenXmlUpdateDataAttribute applied to the model type.
+  /// </remarks>
+  /// <returns>A method info is found; otherwise, null.</returns>
+  public static MethodInfo? GetUpdateDataMethod(Type modelType, Type openXmlType)
+  {
+    var methodName = modelType.GetCustomAttribute<OpenXmlUpdateDataAttribute>()?.MethodName;
+    if (methodName != null)
+    {
+      var methodInfo = modelType
+        .GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+      if (methodInfo != null)
+        return methodInfo;
+    }
+
+    return null;
+  }
+
+  /// <summary>
+  /// Retrieves the load data method information for the model type.
+  /// This method is used to load data from the OpenXml element with to the model type value.
+  /// </summary>
+  /// <param name="modelType">The type of the model element for which to find the appropriate method.</param>
+  /// <param name="openXmlType">The OpenXml type to update data.</param>
+  /// <remarks>
+  /// Attempts to find a method name specified in the OpenXmlLoadDataAttribute applied to the model type.
+  /// </remarks>
+  /// <returns>A method info is found; otherwise, null.</returns>
+  public static MethodInfo? GetLoadDataMethod(Type modelType, Type openXmlType)
+  {
+
+    var methodName = modelType.GetCustomAttribute<OpenXmlLoadDataAttribute>()?.MethodName;
+    if (methodName != null)
+    {
+      var methodInfo = modelType.DeclaringType?.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
+      if (methodInfo != null)
+        return methodInfo;
+    }
+
+    return null;
+  }
 }

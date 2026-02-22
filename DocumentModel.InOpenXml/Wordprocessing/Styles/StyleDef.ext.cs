@@ -6,10 +6,10 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class StyleDef : IAliasedObject
 {
-  /// <summary>
-  /// The primary style name associated with this style definition.
-  /// </summary>
-  public string? Name { get; set; }
+  ///// <summary>
+  ///// The primary style name associated with this style definition.
+  ///// </summary>
+  //public string? Name { get; set; }
   
   /// <summary>
   /// Indicates whether any properties are defined for this style.
