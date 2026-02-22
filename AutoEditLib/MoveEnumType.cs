@@ -30,7 +30,8 @@ public static class MoveEnumType
     Directory.CreateDirectory(enumsDir);
 
     var newPath = Path.Combine(enumsDir, Path.GetFileName(filePath));
-    File.Move(filePath, newPath, overwrite: true);
+    if (File.Exists(newPath)) File.Delete(newPath);
+    File.Move(filePath, newPath);
     Console.WriteLine($"Moved {filePath} to {newPath}");
   }
 }
