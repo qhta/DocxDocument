@@ -6,7 +6,9 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to paragraph, character, table, and numbering styles, enabling advanced formatting and style management for document content.
 /// </summary>
 [OpenXmlType(typeof(Style))]
-public partial class DefinedStyles : ModelElementCollection<Style>
+[OpenXmlUpdateData(nameof(UpdateStyles))]
+[OpenXmlLoadData(nameof(LoadStyles))]
+public partial class DefinedStyles : ModelElementCollection<StyleDef>
 {
   /// <summary>
   /// Default constructor.
@@ -30,23 +32,62 @@ public partial class DefinedStyles : ModelElementCollection<Style>
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public Styles? Styles { get => _Styles; set => UpdateField(ref _Styles, value, nameof(Styles)); }
+  public Styles? Styles { get => Parent as Styles; set => SetParent(value); }
 
-  private Styles? _Styles;
-///// <summary>
-///// Collection of paragraph styles defined in the document, used for formatting paragraphs.
-///// </summary>
-//public IEnumerable<Style> ParagraphStyles { get; set; }
-///// <summary>
-///// Collection of character styles defined in the document, used for formatting text runs and characters.
-///// </summary>
-//public IEnumerable<Style> CharacterStyles { get; set; }
-///// <summary>
-///// Collection of table styles defined in the document, used for formatting tables and table elements.
-///// </summary>
-//public IEnumerable<Style> TableStyles { get; set; }
-///// <summary>
-///// Collection of numbering styles defined in the document, used for formatting numbered lists and outlines.
-///// </summary>
-//public IEnumerable<Style> NumberingStyles { get; set; }
+  /// <summary>
+  /// Gets updatable element for this collection of defined styles,
+  /// which is the <see cref="DXW.Styles"/> element that contains the individual <see cref="DXW.Style"/> elements
+  /// representing each defined style.
+  /// </summary>
+  /// <returns></returns>
+  public override DX.OpenXmlElement? GetUpdatableElement()
+  {
+    return Styles?.GetUpdatableElement() as DXW.Styles;
+  }
+
+  /// <summary>
+  /// Updates the styles in the specified OpenXml element by removing all existing styles and adding new styles defined
+  /// in the current collection.  
+  /// </summary>
+  /// <remarks>This method replaces all styles in the target element with those defined in the current
+  /// collection. Ensure that the styles being added are properly configured for the document context.</remarks>
+  /// <param name="element">The OpenXml element to update. Must be of type <see cref="DXW.Styles"/>.</param>
+  /// <exception cref="ArgumentException">Thrown if <paramref name="element"/> is not of type <see cref="DXW.Styles"/>.</exception>
+  public void UpdateStyles(DX.OpenXmlElement element)
+  {
+    if (element is not DXW.Styles styles)
+      throw new ArgumentException($"Expected element of type {typeof(DXW.Styles).FullName}, but got {element.GetType().FullName}.");
+    Debug.WriteLine($"Updating styles. Current collection count: {this.Count}");
+    styles.RemoveAllChildren<DXW.Style>();
+    foreach (var styleDef in this)
+    {
+      var style = OpenXmlElementConverter.ConvertTo(styleDef, typeof(DXW.Style)) as DXW.Style;
+      Debug.WriteLine($"Updating style. StyleId: {styleDef?.StyleId}, StyleName: {styleDef?.StyleName}");
+      styles.AppendChild(style);
+    }
+  }
+
+  /// <summary>
+  /// Loads styles from the specified OpenXmlElement into the current collection, replacing any existing styles.
+  /// </summary>
+  /// <remarks>This method clears the current collection before loading new styles. The collection will contain
+  /// only the styles loaded from the specified element after the method completes.</remarks>
+  /// <param name="element">The OpenXmlElement containing the styles to load. Must be of type DXW.Styles.</param>
+  /// <exception cref="ArgumentException">Thrown if the provided element is not of type DXW.Styles.</exception>
+  public void LoadStyles(DX.OpenXmlElement element)
+  {
+    if (element is not DXW.Styles styles)
+      throw new ArgumentException($"Expected element of type {typeof(DXW.Styles).FullName}, but got {element.GetType().FullName}.");
+    SetIsLoaded(true);
+    var styleElements = styles.Elements<DXW.Style>().ToArray();
+    Debug.WriteLine($"Loading styles. Styles collection count: {styleElements.Length}");
+    this.Clear();
+    foreach (var style in styleElements)
+    {
+      var styleDef = OpenXmlElementConverter.ConvertFrom(style, typeof(DMW.StyleDef)) as DMW.StyleDef;
+      Debug.WriteLine($"Loading style. StyleId: {styleDef?.StyleId}, StyleName: {styleDef?.StyleName}"); SetIsLoaded(true);
+      this.Add(styleDef!);
+    }
+    SetIsLoaded(false);
+  }
 }

@@ -4449,7 +4449,7 @@
         <member name="M:DocumentModel.OpenXml.OpenXmlPropertyMap.GetLoadDataMethod(System.Reflection.PropertyInfo,System.Type)">
             <summary>
             Retrieves the load data method information for the model property.
-            This method is used to load data from the OpenXml element with the model property value.
+            This method is used to load data from the OpenXml element to the model property value.
             </summary>
             <param name="modelProperty">The property of the model element for which to find the appropriate method.</param>
             <param name="openXmlType">The OpenXml type to update data.</param>
@@ -4486,6 +4486,30 @@
             <param name="modelType">The type of the model element for which to obtain the mapped OpenXML type. Cannot be null.</param>
             <remarks>Corresponding OpenXML types are determined by the OpenXmlTypeAttribute applied to model element types.</remarks>
             <returns>The OpenXML type that is mapped to the specified model element type, or null if not found.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlTypeMap.GetUpdateDataMethod(System.Type,System.Type)">
+            <summary>
+            Retrieves the update data method information for the model type.
+            This method is used to update the OpenXml element with the model property value.
+            </summary>
+            <param name="modelType">The type of the model element for which to find the appropriate method.</param>
+            <param name="openXmlType">The OpenXml type to update data.</param>
+            <remarks>
+            Attempts to find a method name specified in the OpenXmlUpdateDataAttribute applied to the model type.
+            </remarks>
+            <returns>A method info is found; otherwise, null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlTypeMap.GetLoadDataMethod(System.Type,System.Type)">
+            <summary>
+            Retrieves the load data method information for the model type.
+            This method is used to load data from the OpenXml element with to the model type value.
+            </summary>
+            <param name="modelType">The type of the model element for which to find the appropriate method.</param>
+            <param name="openXmlType">The OpenXml type to update data.</param>
+            <remarks>
+            Attempts to find a method name specified in the OpenXmlLoadDataAttribute applied to the model type.
+            </remarks>
+            <returns>A method info is found; otherwise, null.</returns>
         </member>
         <member name="T:DocumentModel.OpenXml.PercentConverter">
             <summary>
