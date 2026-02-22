@@ -180,7 +180,7 @@ public class AddOpenXmlElementAttributeRewriter(Dictionary<string, string> alias
     {
       var alias = typeName.Substring(0, dotIndex);
       if (aliasMap.TryGetValue(alias, out var ns))
-        return ns + "." + typeName[(dotIndex + 1)..];
+        return ns + "." + typeName.Substring(dotIndex + 1);
     }
     return typeName;
   }

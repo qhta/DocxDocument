@@ -11,9 +11,12 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace ShouldSerialize
 {
+
   [DiagnosticAnalyzer(LanguageNames.CSharp)]
   public class ShouldSerializeAnalyzer : DiagnosticAnalyzer
   {
+    private static readonly string[] ignoredAttributes = ["XmlIgnore", "JsonIgnore", "NotMapped"];
+
     public const string DiagnosticId = "ShouldSerialize";
     private static readonly DiagnosticDescriptor Rule = new DiagnosticDescriptor(
       DiagnosticId,
@@ -27,6 +30,7 @@ namespace ShouldSerialize
 
     public override void Initialize(AnalysisContext context)
     {
+      context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze | GeneratedCodeAnalysisFlags.ReportDiagnostics);
       context.EnableConcurrentExecution();
       context.RegisterSyntaxNodeAction(AnalyzeClass, SyntaxKind.ClassDeclaration);
     }
@@ -36,10 +40,16 @@ namespace ShouldSerialize
       var classDecl = (ClassDeclarationSyntax)context.Node;
       var members = classDecl.Members;
 
-      var propertyNames = members
-        .OfType<PropertyDeclarationSyntax>()
-        .Where(p => p.Modifiers.Any(m => m.IsKind(SyntaxKind.PublicKeyword)))
+      var propertyNames = classDecl.Members.OfType<PropertyDeclarationSyntax>()
+        .Where(p =>
+          p.Modifiers.Any(m => m.Text == "public") &&
+          p.Modifiers.All(m => m.Text != "static") &&
+          !p.AttributeLists.Any(alist => alist.Attributes
+            .Any(a => ignoredAttributes.Contains(a.Name.ToString()))) &&
+          p.AccessorList != null &&
+          p.AccessorList.Accessors.Any(a => a.Kind() == SyntaxKind.SetAccessorDeclaration))
         .Select(p => p.Identifier.Text)
+
         .ToList();
 
       var methodNames = members

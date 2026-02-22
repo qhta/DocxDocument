@@ -1,4 +1,6 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using System.Collections;
+
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Collections.Generic;
@@ -10,7 +12,7 @@ namespace AutoEdit;
 /// <summary>
 /// Generates partial files containing ShouldSerialize helpers for model classes by analyzing their properties.
 /// </summary>
-internal class GenerateShouldSerializeFunctions
+public class GenerateShouldSerializeFunctions
 {
   private static readonly string[] ignoredAttributes = [ "XmlIgnore", "JsonIgnore", "NotMapped"];
   /// <summary>
@@ -24,6 +26,15 @@ internal class GenerateShouldSerializeFunctions
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
     var root = tree.GetRoot();
+    var compilation = CSharpCompilation.Create("ShouldSerializeAnalysis")
+      .AddReferences(
+        MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
+        MetadataReference.CreateFromFile(typeof(Enumerable).Assembly.Location),
+        MetadataReference.CreateFromFile(typeof(ICollection).Assembly.Location))
+      .AddSyntaxTrees(tree);
+    var semanticModel = compilation.GetSemanticModel(tree);
+    var iCollectionType = compilation.GetTypeByMetadataName("System.Collections.ICollection");
+    var iGenericCollectionType = compilation.GetTypeByMetadataName("System.Collections.Generic.ICollection`1");
     
     BaseNamespaceDeclarationSyntax? namespaceNode = root.DescendantNodes().OfType<NamespaceDeclarationSyntax>().FirstOrDefault();
     if (namespaceNode == null)
@@ -56,9 +67,25 @@ internal class GenerateShouldSerializeFunctions
     {
       var propName = prop.Identifier.Text;
       var propType = prop.Type;
+      var typeSymbol = semanticModel.GetTypeInfo(propType).Type;
+      var isCollection = typeSymbol != null &&
+        (SymbolEqualityComparer.Default.Equals(typeSymbol, iCollectionType) ||
+         SymbolEqualityComparer.Default.Equals(typeSymbol.OriginalDefinition, iGenericCollectionType) ||
+         typeSymbol.AllInterfaces.Any(i =>
+           SymbolEqualityComparer.Default.Equals(i, iCollectionType) ||
+           SymbolEqualityComparer.Default.Equals(i.OriginalDefinition, iGenericCollectionType)));
       if (propType is NullableTypeSyntax)
       {
-        propertyTypes[propName] = $"{propName} is not null";
+        var str = $"{propName}.HasValue";
+        if (isCollection) {
+          str += $" && {propName}.Value.Count > 0";
+        }
+        propertyTypes[propName] = str;
+      }
+      else if (isCollection)
+      {
+        var str = $"{propName}.Value.Count > 0";
+        propertyTypes[propName] = str;
       }
       else if (propType is PredefinedTypeSyntax predefinedType)
       {
