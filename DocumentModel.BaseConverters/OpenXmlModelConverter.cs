@@ -96,14 +96,11 @@ public static partial class OpenXmlModelConverter
     if (openXmlType == null)
       openXmlType = openXmlObject.GetType();
     var modelType = modelObject.GetType();
-    var updateMethod = modelType.GetCustomAttribute<OpenXmlUpdateDataAttribute>()?.MethodName;
+    var updateMethod = OpenXmlTypeMap.GetUpdateDataMethod(modelType, openXmlType);
     if (updateMethod != null)
     {
-      var methodInfo = modelType.GetMethod(updateMethod, [openXmlType]);
-      if (methodInfo == null)
-        throw new InvalidOperationException($"Update method {updateMethod} not found in type {modelType}");
-
-      methodInfo.Invoke(modelObject, [openXmlObject]);
+      Debug.Assert(updateMethod.GetParameters().Length == 1, $"Update method {updateMethod} should have exactly one parameter");
+      updateMethod.Invoke(modelObject, [openXmlObject]);
     }
     foreach (var modelProperty in modelType.GetModelProperties())
     {
@@ -161,23 +158,32 @@ public static partial class OpenXmlModelConverter
       }
       return;
     }
-    var updateDataMethod = OpenXmlPropertyMap.GetUpdateDataMethod(modelProperty, openXmlType);
-    if (updateDataMethod != null)
+    var updatePropertyMethod = OpenXmlPropertyMap.GetUpdateDataMethod(modelProperty, openXmlType);
+    if (updatePropertyMethod != null)
     {
-      var targetParameters = updateDataMethod.GetParameters();
+      var targetParameters = updatePropertyMethod.GetParameters();
       if (targetParameters.Length == 1)
       {
-        //var value = modelProperty.ConvertToBool(modelObject);
-        //if (value != null && !targetParameters[0].ParameterType.IsInstanceOfType(value))
-        //{
-        //  value = ConvertValue(value, targetParameters[0].ParameterType);
-        //}
-        updateDataMethod.Invoke(modelObject, [openXmlObject]);
+        updatePropertyMethod.Invoke(modelObject, [openXmlObject]);
         return;
       }
       throw new InvalidOperationException(
-        $"Invalid number of parameters in method {updateDataMethod.DeclaringType}.{updateDataMethod.Name}");
+        $"Invalid number of parameters in method {updatePropertyMethod.DeclaringType}.{updatePropertyMethod.Name}");
     }
+    var updateTypeMethod = OpenXmlTypeMap.GetUpdateDataMethod(modelProperty.PropertyType, openXmlType);
+    if (updateTypeMethod != null)
+    {
+      var targetParameters = updateTypeMethod.GetParameters();
+      if (targetParameters.Length == 1)
+      {
+        var propertyValue = modelProperty.GetValue(modelObject); 
+        updateTypeMethod.Invoke(propertyValue, [openXmlObject]);
+        return;
+      }
+      throw new InvalidOperationException(
+        $"Invalid number of parameters in method {modelProperty.PropertyType}.{updateTypeMethod.Name}");
+    }
+
     var openXmlElementAttribute = modelProperty.GetCustomAttribute<OpenXmlElementAttribute>();
     if (openXmlElementAttribute != null)
     {
@@ -413,15 +419,19 @@ public static partial class OpenXmlModelConverter
       }
       return;
     }
-    var getMappedMethod = OpenXmlPropertyMap.GetLoadDataMethod(modelProperty, openXmlType);
-    if (getMappedMethod != null)
+    var loadPropertyMethod = OpenXmlPropertyMap.GetLoadDataMethod(modelProperty, openXmlType);
+    if (loadPropertyMethod != null)
     {
-      var targetParameters = getMappedMethod.GetParameters();
-      if (getMappedMethod.DeclaringType == modelObject.GetType() ||
-          modelObject.GetType().IsEqualOrSubclassOf(getMappedMethod.DeclaringType!))
-      {
-        getMappedMethod.Invoke(modelObject, [openXmlObject]);
-      }
+      Debug.Assert(loadPropertyMethod.GetParameters().Length == 1, $"Load method {loadPropertyMethod} should have exactly one parameter");
+      loadPropertyMethod.Invoke(modelObject, [openXmlObject]);
+      return;
+    }
+    var loadTypeMethod = OpenXmlTypeMap.GetLoadDataMethod(modelProperty.PropertyType, openXmlType);
+    if (loadTypeMethod != null)
+    {
+      Debug.Assert(loadTypeMethod.GetParameters().Length == 1, $"Load method {loadTypeMethod} should have exactly one parameter");
+      var propertyValue = modelProperty.GetValue(modelObject);
+      loadTypeMethod.Invoke(propertyValue, [openXmlObject]);
       return;
     }
     var openXmlElementAttribute = modelProperty.GetCustomAttribute<OpenXmlElementAttribute>();

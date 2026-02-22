@@ -5,7 +5,7 @@
 /// </summary>
 /// <param name="methodName">The name of the method to be called to update Open XML element with model data.
 /// Cannot be null or empty.</param>
-[AttributeUsage(AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
 public class OpenXmlLoadDataAttribute(string methodName) : Attribute
 {
   /// <summary>

@@ -69,12 +69,13 @@ public abstract class ElementCollection<ItemType> : ModelElement,
         }
       }
     }
-    if (Parent!=null)
-    {
-      var openXmlElement = GetUpdatableElement();
-      if (openXmlElement != null)
-        UpdateData(openXmlElement);
-    }
+    if (!IsLoaded) 
+      if (Parent!=null)
+      {
+        var openXmlElement = GetUpdatableElement();
+        if (openXmlElement != null)
+          UpdateData(openXmlElement);
+      }
     CollectionChanged?.Invoke(this, args);
     if (!IsLoaded && IsNotificationEnabled)
       SetIsModified(true);

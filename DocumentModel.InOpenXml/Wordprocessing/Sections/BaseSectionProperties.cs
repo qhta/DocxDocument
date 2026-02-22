@@ -4,7 +4,8 @@ namespace DocumentModel.Wordprocessing;
 /// If it occurs as the last body element, then it specifies the properties of the last section of the document.
 /// For any other section the properties are stored as a child element of the paragraph element corresponding to the last paragraph in the given section.
 /// </summary>
-public abstract partial class BaseSectionProperties<T> : ElementCollection<ISectionPropertiesContent> where T : DX.OpenXmlElement
+public abstract partial class BaseSectionProperties<T> : 
+  ModelElement<T> where T : DX.OpenXmlElement
 {
   /// <summary>
   /// Physical section mark character revision ID.

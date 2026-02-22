@@ -64,7 +64,7 @@ public static class OpenXmlPropertyMap
 
   /// <summary>
   /// Retrieves the load data method information for the model property.
-  /// This method is used to load data from the OpenXml element with the model property value.
+  /// This method is used to load data from the OpenXml element to the model property value.
   /// </summary>
   /// <param name="modelProperty">The property of the model element for which to find the appropriate method.</param>
   /// <param name="openXmlType">The OpenXml type to update data.</param>
@@ -84,7 +84,8 @@ public static class OpenXmlPropertyMap
     var methodName = modelProperty.GetCustomAttribute<OpenXmlLoadDataAttribute>()?.MethodName;
     if (methodName != null)
     {
-      var methodInfo = modelProperty.DeclaringType?.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
+      var methodInfo = modelProperty.DeclaringType?
+        .GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
       if (methodInfo != null)
         return methodInfo;
     }

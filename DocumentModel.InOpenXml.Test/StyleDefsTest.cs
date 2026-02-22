@@ -12,7 +12,7 @@ namespace DocumentModel.InOpenXml.Test
   /// <summary>
   /// Comprehensive serialization test for DocumentModel.Styles.
   /// </summary>
-  public static class LatentStylesTest
+  public static class StyleDefsTest
   {
     /// <summary>
     /// Runs all Styles serialization tests.
@@ -20,7 +20,7 @@ namespace DocumentModel.InOpenXml.Test
     /// <returns>True if all tests pass; otherwise, false.</returns>
     public static bool Run()
     {
-      Console.WriteLine("=== Latent Styles Test ===\n");
+      Console.WriteLine("=== StyleDefs Test ===\n");
       if (!TestXmlSerialization()) return false;
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
@@ -130,7 +130,7 @@ namespace DocumentModel.InOpenXml.Test
     /// <returns>true if the document Styles are successfully stored and verified; otherwise, false.</returns>
     static bool TestStoreInDocument()
     {
-      Console.WriteLine("--- Store sample latent styles in new document---");
+      Console.WriteLine("--- Store sample StyleDefs in new document---");
       Styles testData = CreateSampleStyles();
       using (var document = new Document("temp.docx", FileMode.CreateNew))
       {
@@ -155,11 +155,11 @@ namespace DocumentModel.InOpenXml.Test
 
       if (!TestHelper.CompareTestData(testData, storedData, out var propName))
       {
-        Console.WriteLine($"✗ Store sample latent styles test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ Store sample StyleDefs test FAILED - data mismatch in '{propName}'");
         return false;
       }
 
-      Console.WriteLine("✓ Store sample latent styles test passed\n");
+      Console.WriteLine("✓ Store sample StyleDefs test passed\n");
       return true;
     }
     
@@ -172,17 +172,15 @@ namespace DocumentModel.InOpenXml.Test
     /// <returns>true if the document Styles are successfully updated and verified; otherwise, false.</returns>
     static bool TestUpdateInDocument()
     {
-      Console.WriteLine("--- Update document latent styles ---");
+      Console.WriteLine("--- Update document StyleDefs ---");
       {
         Styles testData = CreateSampleStyles();
-        var initialCount = testData.LatentStyles.Count;
+        var initialCount = testData.DefinedStyles.Count;
         using (var document = new Document("temp.docx", FileMode.CreateNew))
         {
           document.Styles = testData;
-          document.Styles.LatentStyles.Add(new LatentStyleExceptionInfo()
-          {
-            Name = "New style",
-          });
+          var newStyle = new StyleDef() { StyleName = "New Style" };
+          document.Styles.DefinedStyles.Add(newStyle);
         }
         Styles storedData;
         using (var document = new Document("temp.docx"))
@@ -198,12 +196,12 @@ namespace DocumentModel.InOpenXml.Test
           xmlSerializer.Serialize(xmlWriter, storedData);
           xmlString = stringWriter.ToString();
         }
-        Console.WriteLine("Updated document latent Styles:\n" + xmlString);
+        Console.WriteLine("Updated document StyleDefs:\n" + xmlString);
 
-        var storedCount = storedData.LatentStyles.Count;
+        var storedCount = storedData.DefinedStyles.Count;
         if (storedCount != initialCount + 1)
         {
-          Console.WriteLine($"✗ Updated document latent styles test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
+          Console.WriteLine($"✗ Updated document StyleDefs test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
           return false;
         }
 
@@ -221,7 +219,7 @@ namespace DocumentModel.InOpenXml.Test
     /// <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
     static bool TestValidateOpenXml()
     {
-      Console.WriteLine("--- Validate sample latent styles stored in new document against OpenXml schema ---");
+      Console.WriteLine("--- Validate sample StyleDefs stored in new document against OpenXml schema ---");
       {
         Styles testData = CreateSampleStyles();
         using (var document = new Document("temp.docx", FileMode.CreateNew))
@@ -248,7 +246,7 @@ namespace DocumentModel.InOpenXml.Test
           }
         }
 
-        Console.WriteLine("✓ Validate sample latent styles test passed\n");
+        Console.WriteLine("✓ Validate sample StyleDefs test passed\n");
         return true;
       }
     }
@@ -260,33 +258,25 @@ namespace DocumentModel.InOpenXml.Test
     static Styles CreateSampleStyles()
     {
       var Styles = new Styles();
-      Styles.LatentStyles.Add(new LatentStyleExceptionInfo()
+      Styles.DefinedStyles.Add(new StyleDef()
       {
-        Name = "Normal",
-        PrimaryStyle = true
+        StyleName = "Normal",
       });
-      Styles.LatentStyles.Add(new LatentStyleExceptionInfo()
+      Styles.DefinedStyles.Add(new StyleDef()
       {
-        Name = "Heading 1",
-        PrimaryStyle = true
+        StyleName = "Heading 1",
       });
-      Styles.LatentStyles.Add(new LatentStyleExceptionInfo()
+      Styles.DefinedStyles.Add(new StyleDef()
       {
-        Name = "Heading 6",
-        SemiHidden = true,
-        UnhideWhenUsed = true,
-        PrimaryStyle = true
+        StyleName = "Heading 6",
       });
-      Styles.LatentStyles.Add(new LatentStyleExceptionInfo()
+      Styles.DefinedStyles.Add(new StyleDef()
       {
-        Name = "annotation text",
-        UiPriority = 99,
+        StyleName = "annotation text",
       });
-      Styles.LatentStyles.Add(new LatentStyleExceptionInfo()
+      Styles.DefinedStyles.Add(new StyleDef()
       {
-        Name = "Book title",
-        UiPriority = 33,
-        PrimaryStyle = true
+        StyleName = "Book title",
       });
 
       return Styles;

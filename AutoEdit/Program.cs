@@ -77,7 +77,7 @@ public static class Program
         continue;
       if (filename.Contains(".") && !filename.EndsWith(".Properties", StringComparison.OrdinalIgnoreCase))
         continue;
-      if (filename.EndsWith("Compatibility"))
+      if (filename.Equals("StyleDef"))
       {
         // Include all files in the Styles directory
         result.Add(file);

@@ -14,10 +14,10 @@ public partial class StyleDef
   public bool ShouldSerializeLinkedStyle() => LinkedStyle is not null;
   public bool ShouldSerializeUIPriority() => UIPriority is not null;
   public bool ShouldSerializeRsid() => Rsid is not null;
-  public bool ShouldSerializeStyleParagraphProperties() => StyleParagraphProperties is not null;
-  public bool ShouldSerializeStyleRunProperties() => StyleRunProperties is not null;
-  public bool ShouldSerializeStyleTableProperties() => StyleTableProperties is not null;
-  public bool ShouldSerializeTableStyleConditionalFormattingTableRowProperties() => TableStyleConditionalFormattingTableRowProperties is not null;
-  public bool ShouldSerializeStyleTableCellProperties() => StyleTableCellProperties is not null;
-  public bool ShouldSerializeTableStyleConditionalProperties() => TableStyleConditionalProperties is not null;
+  //public bool ShouldSerializeStyleParagraphProperties() => StyleParagraphProperties is not null;
+  //public bool ShouldSerializeStyleRunProperties() => StyleRunProperties is not null;
+  //public bool ShouldSerializeStyleTableProperties() => StyleTableProperties is not null;
+  //public bool ShouldSerializeTableStyleConditionalFormattingTableRowProperties() => TableStyleConditionalFormattingTableRowProperties is not null;
+  //public bool ShouldSerializeStyleTableCellProperties() => StyleTableCellProperties is not null;
+  //public bool ShouldSerializeTableStyleConditionalProperties() => TableStyleConditionalProperties is not null;
 }
