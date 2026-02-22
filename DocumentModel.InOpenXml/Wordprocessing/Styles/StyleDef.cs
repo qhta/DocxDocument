@@ -79,6 +79,7 @@ public partial class StyleDef: ModelElement<DXW.Style>
   /// Indicates whether user formatting is automatically merged into the style definition.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Style.AutoRedefine))]
+  [DefaultValue(false)]
   public Boolean IsAutoRedefined
   {
     get => _IsAutoRedefined;
@@ -99,6 +100,7 @@ public partial class StyleDef: ModelElement<DXW.Style>
   /// Indicates whether the style is hidden from the main user class.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Style.SemiHidden))]
+  [DefaultValue(false)]
   public Boolean IsSemiHidden
   {
     get => _IsSemiHidden;
@@ -111,6 +113,7 @@ public partial class StyleDef: ModelElement<DXW.Style>
   /// Indicates whether the semi-hidden property is removed when the style is used.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Style.UnhideWhenUsed))]
+  [DefaultValue(false)]
   public Boolean IsUnhiddenWhenUsed
   {
     get => _IsUnhiddenWhenUsed;
@@ -131,6 +134,7 @@ public partial class StyleDef: ModelElement<DXW.Style>
   /// Indicates whether the style is a primary style.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Style.PrimaryStyle))]
+  [DefaultValue(false)]
   public Boolean IsPrimary { get => _IsPrimary; set => UpdateField(ref _IsPrimary, value, nameof(IsPrimary)); }
 
   private Boolean _IsPrimary;
@@ -139,6 +143,7 @@ public partial class StyleDef: ModelElement<DXW.Style>
   /// Indicates whether the style cannot be applied.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Style.Locked))]
+  [DefaultValue(false)]
   public Boolean IsLocked { get => _IsLocked; set => UpdateField(ref _IsLocked, value, nameof(IsLocked)); }
 
   private Boolean _IsLocked;
@@ -149,12 +154,14 @@ public partial class StyleDef: ModelElement<DXW.Style>
   [OpenXmlProperty(nameof(DXW.Style.Personal))]
   public Boolean IsPersonal { get => _IsPersonal; set => UpdateField(ref _IsPersonal, value, nameof(IsPersonal)); }
 
+  [DefaultValue(false)]
   private Boolean _IsPersonal;
 
   /// <summary>
   /// Indicates whether the style is used for e-mail message composition.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Style.PersonalCompose))]
+  [DefaultValue(false)]
   public Boolean IsPersonalCompose
   {
     get => _IsPersonalCompose;
@@ -167,6 +174,7 @@ public partial class StyleDef: ModelElement<DXW.Style>
   /// Indicates whether the style is used for e-mail message replies.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Style.PersonalReply))]
+  [DefaultValue(false)]
   public Boolean IsPersonalReply
   {
     get => _IsPersonalReply;

@@ -36,8 +36,8 @@ public static class Program
           foreach (var filePath in fileList)
           {
             //MoveEnumType.Run(filePath);
-            //GenerateShouldSerializeFunctions.Run(filePath);
-            AddPrivateFieldsWithUpdate.Run(filePath);
+            GenerateShouldSerializeFunctions.Run(filePath);
+            //AddPrivateFieldsWithUpdate.Run(filePath);
             //AddOpenXmlPropertyAttribute.Run(filePath);
             //AddOpenXmlEnumTypeAttribute.Run(filePath);
             //AddOpenXmlTypeAttribute.Run(filePath);
@@ -77,7 +77,7 @@ public static class Program
         continue;
       if (filename.Contains(".") && !filename.EndsWith(".Properties", StringComparison.OrdinalIgnoreCase))
         continue;
-      if (filename.Equals("StyleDef"))
+      if (filename.Equals("Styles"))
       {
         // Include all files in the Styles directory
         result.Add(file);
