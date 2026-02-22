@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable">
+  <Extern href="stdidcmd.h" />
+  <Extern href="vsshlids.h" />
+
+  <Commands package="{515FF228-D898-4CB8-95C4-F7EDA0AE8DE4}">
+    <Menus>
+      <Menu guid="guidAutoEditCmdSet" id="AutoEditSubMenu" priority="0x0100" type="Menu">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
+        <Strings>
+          <ButtonText>AutoEdit</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+
+    <Groups>
+      <Group guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" priority="0x0100">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenu" />
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlElementAttribute" priority="0x0100" type="Button">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Strings>
+          <ButtonText>Add OpenXml Element Attribute</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0110" type="Button">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Strings>
+          <ButtonText>Add OpenXml Enum Type Attribute</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0120" type="Button">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Strings>
+          <ButtonText>Add OpenXml Property Attribute</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0130" type="Button">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Strings>
+          <ButtonText>Add OpenXml Type Attribute</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidAutoEditCmdSet" id="cmdidAddPartialToClass" priority="0x0140" type="Button">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Strings>
+          <ButtonText>Add Partial To Class</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidAutoEditCmdSet" id="cmdidAddPrivateFieldsWithUpdate" priority="0x0150" type="Button">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Strings>
+          <ButtonText>Add Private Fields With Update</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidAutoEditCmdSet" id="cmdidGenerateShouldSerializeFunctions" priority="0x0160" type="Button">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Strings>
+          <ButtonText>Generate ShouldSerialize Functions</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidAutoEditCmdSet" id="cmdidRemoveDuplicateDocComments" priority="0x0170" type="Button">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Strings>
+          <ButtonText>Remove Duplicate Doc Comments</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidAutoEditCmdSet" value="{A7F1C3D5-6C25-4D78-B8EE-18A0A60F0123}">
+      <IDSymbol name="AutoEditSubMenu" value="0x1000" />
+      <IDSymbol name="AutoEditSubMenuGroup" value="0x1001" />
+      <IDSymbol name="cmdidAddOpenXmlElementAttribute" value="0x0100" />
+      <IDSymbol name="cmdidAddOpenXmlEnumTypeAttribute" value="0x0101" />
+      <IDSymbol name="cmdidAddOpenXmlPropertyAttribute" value="0x0102" />
+      <IDSymbol name="cmdidAddOpenXmlTypeAttribute" value="0x0103" />
+      <IDSymbol name="cmdidAddPartialToClass" value="0x0104" />
+      <IDSymbol name="cmdidAddPrivateFieldsWithUpdate" value="0x0105" />
+      <IDSymbol name="cmdidGenerateShouldSerializeFunctions" value="0x0106" />
+      <IDSymbol name="cmdidRemoveDuplicateDocComments" value="0x0107" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AutoEditLib\AutoEditLib.csproj" />
     <ProjectReference Include="..\DocumentModel.InOpenXml\DocumentModel.InOpenXml.csproj" />
     <ProjectReference Include="..\NamespaceMappings\NamespaceMappings.csproj" />
   </ItemGroup>
