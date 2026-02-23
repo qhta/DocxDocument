@@ -1,8 +1,4 @@
 <Solution>
-  <Project Path="../AnalyzeModelTypeMapping/AnalyzeModelTypeMapping.csproj" />
-  <Project Path="../AutoEdit/AutoEdit.csproj" />
-  <Project Path="../AutoEditLib/AutoEditLib.csproj" />
-  <Project Path="../AutoEditVsix/AutoEditVsix.csproj" Id="e260f997-8dc3-4ee4-97dc-33dbbbe17b4e" />
   <Project Path="../DocumentModel.BaseConverters.Test/DocumentModel.BaseConverters.Test.csproj" Id="5e745e67-8641-4f7b-8fe5-f8b94a192bd3" />
   <Project Path="../DocumentModel.BaseConverters/DocumentModel.BaseConverters.csproj" />
   <Project Path="../DocumentModel.BaseTypes.Interfaces/DocumentModel.BaseTypes.Interfaces.csproj" Id="73c0e464-215c-44f4-8ef6-6e7675db305c" />

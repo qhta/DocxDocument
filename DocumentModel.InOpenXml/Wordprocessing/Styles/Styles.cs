@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to document default paragraph and run properties, latent style information, and defined styles, enabling advanced style management and formatting for document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.Styles))]
-public sealed partial class Styles : ModelElement<DXW.Styles>
+public sealed partial class Styles: ModelElement<DXW.Styles>
 {
   /// <summary>
   /// Default constructor.
@@ -21,7 +21,7 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   /// Initializing constructor.
   /// </summary>
   /// <param name = "document">The document to attach to.</param>
-  public Styles(Document document) : this()
+  public Styles(Document document): this()
   {
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
@@ -55,14 +55,23 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   /// Document default paragraph and run properties, specifying default formatting for paragraphs and text runs.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Styles.DocDefaults))]
-  public DocDefaults? DocDefaults { get => _DocDefaults; set => UpdateField(ref _DocDefaults, value, nameof(DocDefaults)); }
+  public DocDefaults? DocDefaults
+  {
+    get => _DocDefaults;
+    set => UpdateField(ref _DocDefaults, value, nameof(DocDefaults));
+  }
 
   private DocDefaults? _DocDefaults;
+
   /// <summary>
   /// Latent style information, providing metadata and settings for latent styles in the document.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Styles.LatentStyles))]
-  public LatentStyles LatentStyles { get => _LatentStyles; set => UpdateField(ref _LatentStyles, value, nameof(LatentStyles)); }
+  public LatentStyles LatentStyles
+  {
+    get => _LatentStyles;
+    set => UpdateField(ref _LatentStyles, value, nameof(LatentStyles));
+  }
 
   private LatentStyles _LatentStyles;
 
@@ -72,7 +81,11 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   [OpenXmlElementCollection(typeof(DXW.Style))]
   [OpenXmlUpdateData(nameof(UpdateDefinedStyles))]
   [OpenXmlLoadData(nameof(LoadDefinedStyles))]
-  public DefinedStyles DefinedStyles { get => _DefinedStyles; set => UpdateField(ref _DefinedStyles, value, nameof(DefinedStyles)); }
+  public DefinedStyles DefinedStyles
+  {
+    get => _DefinedStyles;
+    set => UpdateField(ref _DefinedStyles, value, nameof(DefinedStyles));
+  }
 
   private DefinedStyles _DefinedStyles;
 
