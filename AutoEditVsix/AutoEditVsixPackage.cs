@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 
 using Task = System.Threading.Tasks.Task;
 
@@ -27,8 +28,9 @@ namespace AutoEdit
   /// </remarks>
   [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
   [ProvideMenuResource("Menus.ctmenu", 1)]
-  [Guid(AutoEditPackage.PackageGuidString)]
-  public sealed class AutoEditPackage : AsyncPackage
+  [ProvideAutoLoad(UIContextGuids80.SolutionExists, PackageAutoLoadFlags.BackgroundLoad)]
+  [Guid(AutoEditVsixPackage.PackageGuidString)]
+  public sealed class AutoEditVsixPackage : AsyncPackage
   {
     /// <summary>
     /// AutoEditVsixPackage GUID string.

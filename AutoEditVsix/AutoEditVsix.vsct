@@ -3,10 +3,16 @@
   <Extern href="stdidcmd.h" />
   <Extern href="vsshlids.h" />
 
-  <Commands package="{515FF228-D898-4CB8-95C4-F7EDA0AE8DE4}">
+  <Commands package="guidAutoEditPkg">
     <Menus>
-      <Menu guid="guidAutoEditCmdSet" id="AutoEditSubMenu" priority="0x0100" type="Menu">
-        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
+      <Menu guid="guidAutoEditCmdSet" id="AutoEditSubMenuItemNode" priority="0x0100" type="Menu">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditContextItemNodeGroup" />
+        <Strings>
+          <ButtonText>AutoEdit</ButtonText>
+        </Strings>
+      </Menu>
+      <Menu guid="guidAutoEditCmdSet" id="AutoEditSubMenuProjNode" priority="0x0100" type="Menu">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditContextProjNodeGroup" />
         <Strings>
           <ButtonText>AutoEdit</ButtonText>
         </Strings>
@@ -14,56 +20,65 @@
     </Menus>
 
     <Groups>
-      <Group guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" priority="0x0100">
-        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenu" />
+      <Group guid="guidAutoEditCmdSet" id="AutoEditContextItemNodeGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE" />
+      </Group>
+      <Group guid="guidAutoEditCmdSet" id="AutoEditContextProjNodeGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE" />
+      </Group>
+      <Group guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" priority="0x0100">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuItemNode" />
+      </Group>
+      <Group guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupProjNode" priority="0x0100">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuProjNode" />
       </Group>
     </Groups>
 
     <Buttons>
       <Button guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlElementAttribute" priority="0x0100" type="Button">
-        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupProjNode" />
         <Strings>
           <ButtonText>Add OpenXml Element Attribute</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0110" type="Button">
-        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupProjNode" />
         <Strings>
           <ButtonText>Add OpenXml Enum Type Attribute</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0120" type="Button">
-        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupProjNode" />
         <Strings>
           <ButtonText>Add OpenXml Property Attribute</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0130" type="Button">
-        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupProjNode" />
         <Strings>
           <ButtonText>Add OpenXml Type Attribute</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidAutoEditCmdSet" id="cmdidAddPartialToClass" priority="0x0140" type="Button">
-        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupProjNode" />
         <Strings>
           <ButtonText>Add Partial To Class</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidAutoEditCmdSet" id="cmdidAddPrivateFieldsWithUpdate" priority="0x0150" type="Button">
-        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupProjNode" />
         <Strings>
           <ButtonText>Add Private Fields With Update</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidAutoEditCmdSet" id="cmdidGenerateShouldSerializeFunctions" priority="0x0160" type="Button">
-        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupProjNode" />
         <Strings>
           <ButtonText>Generate ShouldSerialize Functions</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidAutoEditCmdSet" id="cmdidRemoveDuplicateDocComments" priority="0x0170" type="Button">
-        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroup" />
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupProjNode" />
         <Strings>
           <ButtonText>Remove Duplicate Doc Comments</ButtonText>
         </Strings>
@@ -71,10 +86,50 @@
     </Buttons>
   </Commands>
 
+  <CommandPlacements>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlElementAttribute" priority="0x0100">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0110">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0120">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0130">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPartialToClass" priority="0x0140">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPrivateFieldsWithUpdate" priority="0x0150">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidGenerateShouldSerializeFunctions" priority="0x0160">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidRemoveDuplicateDocComments" priority="0x0170">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    
+  </CommandPlacements>
+
   <Symbols>
+    <GuidSymbol name="guidAutoEditPkg" value="{515FF228-D898-4CB8-95C4-F7EDA0AE8DE4}" />
     <GuidSymbol name="guidAutoEditCmdSet" value="{A7F1C3D5-6C25-4D78-B8EE-18A0A60F0123}">
-      <IDSymbol name="AutoEditSubMenu" value="0x1000" />
-      <IDSymbol name="AutoEditSubMenuGroup" value="0x1001" />
+      <IDSymbol name="AutoEditSubMenuItemNode" value="0x1000" />
+      <IDSymbol name="AutoEditSubMenuProjNode" value="0x1001" />
+      <IDSymbol name="AutoEditContextItemNodeGroup" value="0x1004" />
+      <IDSymbol name="AutoEditContextProjNodeGroup" value="0x1005" />
+      <IDSymbol name="AutoEditSubMenuGroupItemNode" value="0x1002" />
+      <IDSymbol name="AutoEditSubMenuGroupProjNode" value="0x1003" />
       <IDSymbol name="cmdidAddOpenXmlElementAttribute" value="0x0100" />
       <IDSymbol name="cmdidAddOpenXmlEnumTypeAttribute" value="0x0101" />
       <IDSymbol name="cmdidAddOpenXmlPropertyAttribute" value="0x0102" />
