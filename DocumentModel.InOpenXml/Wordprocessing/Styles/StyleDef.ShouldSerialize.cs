@@ -12,7 +12,15 @@ public partial class StyleDef
   public bool ShouldSerializeBasedOn() => BasedOn is not null;
   public bool ShouldSerializeNextParagraphStyle() => NextParagraphStyle is not null;
   public bool ShouldSerializeLinkedStyle() => LinkedStyle is not null;
+  public bool ShouldSerializeIsAutoRedefined() => IsAutoRedefined;
+  public bool ShouldSerializeIsSemiHidden() => IsSemiHidden;
+  public bool ShouldSerializeIsUnhiddenWhenUsed() => IsUnhiddenWhenUsed;
   public bool ShouldSerializeUIPriority() => UIPriority is not null;
+  public bool ShouldSerializeIsPrimary() => IsPrimary;
+  public bool ShouldSerializeIsLocked() => IsLocked;
+  public bool ShouldSerializeIsPersonal() => IsPersonal;
+  public bool ShouldSerializeIsPersonalCompose() => IsPersonalCompose;
+  public bool ShouldSerializeIsPersonalReply() => IsPersonalReply;
   public bool ShouldSerializeRsid() => Rsid is not null;
   //public bool ShouldSerializeStyleParagraphProperties() => StyleParagraphProperties is not null;
   //public bool ShouldSerializeStyleRunProperties() => StyleRunProperties is not null;
