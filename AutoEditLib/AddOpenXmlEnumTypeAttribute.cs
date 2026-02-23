@@ -25,7 +25,7 @@ public static class AddOpenXmlEnumTypeAttribute
   /// Rewrites the specified source file, inserting Open XML metadata attributes where needed.
   /// </summary>
   /// <param name="filePath">Absolute or relative path to the C# file to update.</param>
-  public static bool Run(string filePath)
+  public static void Run(string filePath)
   {
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
@@ -37,9 +37,7 @@ public static class AddOpenXmlEnumTypeAttribute
     {
       File.WriteAllText(filePath, newRoot.NormalizeWhitespace("  ").ToFullString());
       Console.WriteLine($"Updated: {filePath}");
-      return true;
     }
-    return false;
   }
 }
 
