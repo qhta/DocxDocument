@@ -87,6 +87,22 @@ public readonly partial struct HexRgb : IEquatable<HexRgb>, IConvertible
 
   #region Implicit Conversions
 
+
+  /// <summary>
+  /// Implicitly converts a string to an <see cref="HexRgb"/> value.
+  /// </summary>
+  /// <param name="value">The string to convert.</param>
+  /// <returns>An <see cref="HexRgb"/> value representing the color.</returns>
+  public static implicit operator HexRgb(string value) => new HexRgb(value);
+
+  /// <summary>
+  /// Implicitly converts an <see cref="HexRgb"/> value to a string representation.
+  /// </summary>
+  /// <param name="value">The <see cref="HexRgb"/> value to convert.</param>
+  /// <returns>A string representation of the RGB color.</returns>
+  // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+  public static implicit operator String(HexRgb value) => value.ToString();
+
   /// <summary>
   /// Implicitly converts a 32-bit unsigned integer to an <see cref="HexRgb"/> value.
   /// </summary>

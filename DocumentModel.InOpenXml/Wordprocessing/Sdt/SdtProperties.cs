@@ -63,9 +63,9 @@ public partial class SdtProperties : ModelElement<DXW.SdtProperties>, IStoryCont
  /// <summary>
  /// Color used for visual highlighting or borders of the SDT.
  /// </summary>
- public DocumentModel.Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+ public DocumentModel.AbstractColor? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
 
- private DocumentModel.Color? _Color;
+ private DocumentModel.AbstractColor? _Color;
  /// <summary>
  /// Visual appearance style for this structured document tag.
  /// </summary>

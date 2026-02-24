@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// Basic color type. Contains name and RGB values.
 /// </summary>
 
-public abstract class Color: ModelElement
+public abstract class AbstractColor: ModelElement
 {
   ///// <summary>
   /////   Gets RGB value of the color.
@@ -35,6 +35,6 @@ public abstract class Color: ModelElement
 /// </summary>
 /// <typeparam name="T">The type of the underlying Open XML element represented by this color model element. Must derive from
 /// DX.OpenXmlElement.</typeparam>
-public abstract class Color<T> : ModelElement<T> where T : DX.OpenXmlElement
+public abstract class AbstractColor<T> : ModelElement<T> where T : DX.OpenXmlElement
 {
 }

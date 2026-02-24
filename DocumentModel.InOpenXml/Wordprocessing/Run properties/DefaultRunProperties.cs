@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "BaseRunProperties"/> and is used in <see cref = "DocDefaults"/> to specify the default character-level formatting applied to all runs in the document unless overridden by more specific formatting.
 /// </summary>
 [OpenXmlType(typeof(DXW.RunPropertiesDefault))]
+[XmlRoot("DefaultRunProperties")]
 public class DefaultRunProperties : BaseRunProperties<DXW.RunPropertiesDefault>
 {
 }

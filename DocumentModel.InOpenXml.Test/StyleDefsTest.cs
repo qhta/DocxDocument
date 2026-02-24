@@ -261,22 +261,45 @@ namespace DocumentModel.InOpenXml.Test
       Styles.DefinedStyles.Add(new StyleDef()
       {
         StyleName = "Normal",
+        Type = StyleType.Paragraph,
+        IsDefault = true,
+        IsPrimary = true,
+        UIPriority = 1,
       });
       Styles.DefinedStyles.Add(new StyleDef()
       {
         StyleName = "Heading 1",
+        Type = StyleType.Paragraph,
+        IsCustom = true,
+        BasedOn = "Normal",
+        NextParagraphStyle = "Normal",
+        UIPriority = 9,
       });
       Styles.DefinedStyles.Add(new StyleDef()
       {
         StyleName = "Heading 6",
+        Type = StyleType.Paragraph,
+        IsCustom = true,
+        BasedOn = "Normal",
+        NextParagraphStyle = "Normal",
+        UIPriority = 14,
       });
       Styles.DefinedStyles.Add(new StyleDef()
       {
         StyleName = "annotation text",
+        Type = StyleType.Character,
+        IsCustom = true,
+        BasedOn = "DefaultParagraphFont",
+        UIPriority = 99,
       });
       Styles.DefinedStyles.Add(new StyleDef()
       {
         StyleName = "Book title",
+        Type = StyleType.Paragraph,
+        IsCustom = true,
+        BasedOn = "Normal",
+        NextParagraphStyle = "Normal",
+        UIPriority = 22,
       });
 
       return Styles;
