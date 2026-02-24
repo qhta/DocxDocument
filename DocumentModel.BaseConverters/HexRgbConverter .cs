@@ -58,7 +58,7 @@ public static class RgbConverter
   /// <returns>A new SByteValue, or null if the input is null.</returns>
   public static DX.SByteValue? ConvertToSByteValue(HexRgb? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
     if (value > SByte.MaxValue)
       throw new OverflowException($"Value {value} is out of range for SByte");
 
@@ -90,7 +90,7 @@ public static class RgbConverter
   /// <returns>A new Int16Value, or null if the input is null.</returns>
   public static DX.Int16Value? ConvertToInt16Value(HexRgb? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
     if (value > Int16.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Int16");
 
@@ -122,7 +122,7 @@ public static class RgbConverter
   /// <returns>A new Int32Value, or null if the input is null.</returns>
   public static DX.Int32Value? ConvertToInt32Value(HexRgb? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
     if (value > Int32.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Int32");
 
@@ -154,7 +154,7 @@ public static class RgbConverter
   /// <returns>A new Int64Value, or null if the input is null.</returns>
   public static DX.Int64Value? ConvertToInt64Value(HexRgb? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
 
     return new DX.Int64Value { Value = (UInt32)value };
   }
@@ -184,7 +184,7 @@ public static class RgbConverter
   /// <returns>A new IntegerValue, or null if the input is null.</returns>
   public static DX.IntegerValue? ConvertToIntegerValue(HexRgb? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
 
     return new DX.IntegerValue { Value = (UInt32)value };
   }
@@ -212,7 +212,7 @@ public static class RgbConverter
   /// <returns>A new ByteValue, or null if the input is null.</returns>
   public static DX.ByteValue? ConvertToByteValue(HexRgb? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
     if (value < 0 || value > Byte.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Byte");
 
@@ -242,7 +242,7 @@ public static class RgbConverter
   /// <returns>A new UInt16Value, or null if the input is null.</returns>
   public static DX.UInt16Value? ConvertToUInt16Value(HexRgb? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
     if (value > UInt16.MaxValue)
       throw new OverflowException($"Value {value} is out of range for UInt16");
 
@@ -272,7 +272,7 @@ public static class RgbConverter
   /// <returns>A new RgbValue, or null if the input is null.</returns>
   public static DX.UInt32Value? ConvertToUInt32Value(HexRgb? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
     if (value < 0)
       throw new OverflowException($"Value {value} is out of range for RGB");
     return new DX.UInt32Value { Value = (UInt32)value };
@@ -303,7 +303,7 @@ public static class RgbConverter
   /// <returns>A new UInt64Value, or null if the input is null.</returns>
   public static DX.UInt64Value? ConvertToUInt64Value(HexRgb? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
     if (value < 0)
       throw new OverflowException($"Value {value} is out of range for UInt64");
     return new DX.UInt64Value { Value = (UInt64)value };
@@ -337,7 +337,7 @@ public static class RgbConverter
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(HexRgb? value, Type targetType)
   {
-    if (value == null) return null;
+    if (value is null) return null;
 
     var text = value.ToString()!;
     var element = (DX.StringValue)Activator.CreateInstance(targetType)!;
@@ -370,7 +370,7 @@ public static class RgbConverter
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexRgb? value, Type targetType)
   {
-    if (value == null) return null;
+    if (value is null) return null;
 
     // ReSharper disable once SpecifyACultureInStringConversionExplicitly
     var text = ((HexRgb)value).ToString()!;
@@ -407,7 +407,7 @@ public static class RgbConverter
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   public static DX.HexBinaryValue? ConvertToHexBinaryValue(HexRgb? value, Type targetType)
   {
-    if (value == null) return null;
+    if (value is null) return null;
 
     // ReSharper disable once SpecifyACultureInStringConversionExplicitly
     var text = ((HexRgb)value).ToString()!;
@@ -453,7 +453,7 @@ public static class RgbConverter
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(HexRgb? value, Type targetType)
   {
-    if (value == null) return null;
+    if (value is null) return null;
 
     var element = (DX.OpenXmlLeafElement)Activator.CreateInstance(targetType)!;
     var valProp = element.GetType().GetProperty("Val");
@@ -482,7 +482,7 @@ public static class RgbConverter
   /// not a valid integer.</returns>
   private static HexRgb? ConvertFromString(string? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
     return new HexRgb(value);
   }
 
@@ -493,7 +493,7 @@ public static class RgbConverter
   /// <returns>A string representation of the specified value, or null if the value is null.</returns>
   private static String? ConvertToString(HexRgb? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
 
     var text = value.ToString()!;
     return text;

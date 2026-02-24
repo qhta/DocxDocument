@@ -16,9 +16,9 @@ public partial class Border : ModelElement<DXW.Border>
  /// Border color, specified as an abstract color value.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Border.Color))]
- public DocumentModel.Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+ public DocumentModel.AbstractColor? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
 
- private DocumentModel.Color? _Color;
+ private DocumentModel.AbstractColor? _Color;
  /// <summary>
  /// Border width, specified in twips.
  /// </summary>

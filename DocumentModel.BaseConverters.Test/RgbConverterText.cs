@@ -133,7 +133,7 @@ public static class RgbConverterTest
         //}
         // Convert back to RGB
         var convertedBackValue = RgbConverter.ConvertFrom(openXmlValue);
-        if (convertedBackValue == null)
+        if (convertedBackValue is null)
         {
           Console.WriteLine($"Conversion back to RGB returned null for OpenXml value {openXmlValue}");
           return false;

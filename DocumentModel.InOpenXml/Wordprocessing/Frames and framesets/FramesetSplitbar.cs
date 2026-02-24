@@ -17,9 +17,9 @@ public partial class FramesetSplitbar : ModelElement<DXW.FramesetSplitbar>
  /// Color of the frameset splitter, specified as an abstract color value.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FramesetSplitbar.Color))]
- public DocumentModel.Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+ public DocumentModel.AbstractColor? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
 
- private DocumentModel.Color? _Color;
+ private DocumentModel.AbstractColor? _Color;
  /// <summary>
  /// Indicates whether frameset splitters should not be displayed (no border).
  /// </summary>
