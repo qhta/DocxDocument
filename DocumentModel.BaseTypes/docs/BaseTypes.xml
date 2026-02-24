@@ -4387,6 +4387,20 @@
             Blue component of the color.
             </summary>
         </member>
+        <member name="M:DocumentModel.HexRgb.op_Implicit(System.String)~DocumentModel.HexRgb">
+            <summary>
+            Implicitly converts a string to an <see cref="T:DocumentModel.HexRgb"/> value.
+            </summary>
+            <param name="value">The string to convert.</param>
+            <returns>An <see cref="T:DocumentModel.HexRgb"/> value representing the color.</returns>
+        </member>
+        <member name="M:DocumentModel.HexRgb.op_Implicit(DocumentModel.HexRgb)~System.String">
+            <summary>
+            Implicitly converts an <see cref="T:DocumentModel.HexRgb"/> value to a string representation.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.HexRgb"/> value to convert.</param>
+            <returns>A string representation of the RGB color.</returns>
+        </member>
         <member name="M:DocumentModel.HexRgb.op_Implicit(System.UInt32)~DocumentModel.HexRgb">
             <summary>
             Implicitly converts a 32-bit unsigned integer to an <see cref="T:DocumentModel.HexRgb"/> value.

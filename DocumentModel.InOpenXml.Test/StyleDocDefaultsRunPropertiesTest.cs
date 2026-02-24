@@ -1,6 +1,5 @@
-﻿using System;
+using System;
 using System.IO;
-using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Text.Json;
@@ -10,29 +9,29 @@ using DocumentModel.Wordprocessing;
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for DocumentModel.Styles.
+  /// Comprehensive serialization test for Styles DocDefaults DefaultRunProperties.
   /// </summary>
-  public static class StyleDefsTest
+  public static class StyleDocDefaultsRunPropertiesTest
   {
     /// <summary>
-    /// Runs all Styles serialization tests.
+    /// Runs all Styles DocDefaults DefaultRunProperties tests.
     /// </summary>
     /// <returns>True if all tests pass; otherwise, false.</returns>
     public static bool Run()
     {
-      Console.WriteLine("=== StyleDefs Test ===\n");
+      Console.WriteLine("=== Styles DocDefaults DefaultRunProperties Test ===\n");
       if (!TestXmlSerialization()) return false;
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
       if (!TestStoreInDocument()) return false;
       if (!TestUpdateInDocument()) return false;
       if (!TestValidateOpenXml()) return false;
-      Console.WriteLine("All Styles tests passed.\n");
+      Console.WriteLine("All Styles DocDefaults DefaultRunProperties tests passed.\n");
       return true;
     }
 
     /// <summary>
-    /// Tests XML serialization and deserialization of Styles.
+    /// Tests XML serialization and deserialization of Styles DocDefaults DefaultRunProperties.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestXmlSerialization()
@@ -69,7 +68,7 @@ namespace DocumentModel.InOpenXml.Test
     }
 
     /// <summary>
-    /// Tests JSON serialization and deserialization of Styles.
+    /// Tests JSON serialization and deserialization of Styles DocDefaults DefaultRunProperties.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestJsonSerialization()
@@ -124,13 +123,10 @@ namespace DocumentModel.InOpenXml.Test
     /// <summary>
     /// Tests setting sample Styles to a new document and outputs the result to the console.
     /// </summary>
-    /// <remarks>This method is intended for use in test scenarios to verify that document Styles can
-    /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
-    /// inspection.</remarks>
     /// <returns>true if the document Styles are successfully stored and verified; otherwise, false.</returns>
     static bool TestStoreInDocument()
     {
-      Console.WriteLine("--- Store sample StyleDefs in new document---");
+      Console.WriteLine("--- Store sample doc defaults run properties in new document---");
       Styles testData = CreateSampleStyles();
       using (var document = new Document("temp.docx", FileMode.CreateNew))
       {
@@ -155,71 +151,72 @@ namespace DocumentModel.InOpenXml.Test
 
       if (!TestHelper.CompareTestData(testData, storedData, out var propName))
       {
-        Console.WriteLine($"✗ Store sample StyleDefs test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ Store sample doc defaults run properties test FAILED - data mismatch in '{propName}'");
         return false;
       }
 
-      Console.WriteLine("✓ Store sample StyleDefs test passed\n");
+      Console.WriteLine("✓ Store sample doc defaults run properties test passed\n");
       return true;
     }
-    
+
     /// <summary>
     /// Tests updating the Styles of a document and outputs the result to the console.
     /// </summary>
-    /// <remarks>This method is intended for use in test scenarios to verify that document Styles can
-    /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
-    /// inspection.</remarks>
     /// <returns>true if the document Styles are successfully updated and verified; otherwise, false.</returns>
     static bool TestUpdateInDocument()
     {
-      Console.WriteLine("--- Update document StyleDefs ---");
+      Console.WriteLine("--- Update document doc defaults run properties ---");
+      Styles testData = CreateSampleStyles();
+      using (var document = new Document("temp.docx", FileMode.CreateNew))
       {
-        Styles testData = CreateSampleStyles();
-        var initialCount = testData.DefinedStyles.Count;
-        using (var document = new Document("temp.docx", FileMode.CreateNew))
-        {
-          document.Styles = testData;
-          var newStyle = new StyleDef() { StyleName = "New Style" };
-          document.Styles.DefinedStyles.Add(newStyle);
-        }
-        Styles storedData;
-        using (var document = new Document("temp.docx"))
-        {
-          storedData = document.Styles ?? throw new InvalidOperationException("Styles not found.");
-        }
-
-        var xmlSerializer = new XmlSerializer(typeof(Styles));
-        string xmlString;
-        using (var stringWriter = new StringWriter())
-        using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-        {
-          xmlSerializer.Serialize(xmlWriter, storedData);
-          xmlString = stringWriter.ToString();
-        }
-        Console.WriteLine("Updated document StyleDefs:\n" + xmlString);
-
-        var storedCount = storedData.DefinedStyles.Count;
-        if (storedCount != initialCount + 1)
-        {
-          Console.WriteLine($"✗ Updated document StyleDefs test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
-          return false;
-        }
-
-        Console.WriteLine("✓ Updated document Styles test passed\n");
-        return true;
+        document.Styles = testData;
       }
+
+      testData.DocDefaults = CreateSampleDocDefaults(isUpdated: true);
+
+      Styles? storedData;
+      using (var document = new Document("temp.docx"))
+      {
+        storedData = document.Styles;
+        if (storedData?.DocDefaults != null && testData.DocDefaults != null)
+        {
+          TestHelper.CopyTestData(testData.DocDefaults, storedData.DocDefaults);
+        }
+      }
+
+      var xmlSerializer = new XmlSerializer(typeof(Styles));
+      string xmlString;
+      using (var stringWriter = new StringWriter())
+      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+      {
+        xmlSerializer.Serialize(xmlWriter, storedData);
+        xmlString = stringWriter.ToString();
+      }
+      Console.WriteLine("Updated document doc defaults run properties:\n" + xmlString);
+
+      if (storedData == null)
+      {
+        Console.WriteLine("✗ XML Deserialization returned null");
+        return false;
+      }
+
+      if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+      {
+        Console.WriteLine($"✗ Updated document doc defaults run properties test FAILED - data mismatch in '{propName}'");
+        return false;
+      }
+
+      Console.WriteLine("✓ Updated document doc defaults run properties test passed\n");
+      return true;
     }
 
     /// <summary>
     /// Tests validating the OpenXml generated from the document containing sample Styles against the OpenXml schema.
     /// </summary>
-    /// <remarks>This method is intended for use in test scenarios to verify that the OpenXml generated from the document
-    /// containing sample Styles adheres to the OpenXml schema. It writes status messages and the serialized properties to the console for
-    /// inspection.</remarks>
     /// <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
     static bool TestValidateOpenXml()
     {
-      Console.WriteLine("--- Validate sample StyleDefs stored in new document against OpenXml schema ---");
+      Console.WriteLine("--- Validate sample doc defaults run properties stored in new document against OpenXml schema ---");
       {
         Styles testData = CreateSampleStyles();
         using (var document = new Document("temp.docx", FileMode.CreateNew))
@@ -230,8 +227,6 @@ namespace DocumentModel.InOpenXml.Test
         using (var document = new Document("temp.docx"))
         {
           var openXml = document.WordprocessingDocument!.MainDocumentPart!.StyleDefinitionsPart!.Styles!.OuterXml;
-          //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",
-          //  "http://purl.oclc.org/ooxml/wordprocessingml/main");
           var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
           Console.WriteLine(formattedOpenXml);
           var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
@@ -246,63 +241,47 @@ namespace DocumentModel.InOpenXml.Test
           }
         }
 
-        Console.WriteLine("✓ Validate sample StyleDefs test passed\n");
+        Console.WriteLine("✓ Validate sample doc defaults run properties test passed\n");
         return true;
       }
     }
-    
+
     /// <summary>
-    /// Creates a sample Styles object with various property types.
+    /// Creates a sample Styles object with DocDefaults DefaultRunProperties.
     /// </summary>
     /// <returns>A populated Styles object.</returns>
     static Styles CreateSampleStyles()
     {
-      var Styles = new Styles();
-      Styles.DefinedStyles.Add(new StyleDef()
+      return new Styles
       {
-        StyleName = "Normal",
-        Type = StyleType.Paragraph,
-        IsDefault = true,
-        IsPrimary = true,
-        UIPriority = 1,
-      });
-      Styles.DefinedStyles.Add(new StyleDef()
-      {
-        StyleName = "Heading 1",
-        Type = StyleType.Paragraph,
-        IsCustom = true,
-        BasedOn = "Normal",
-        NextParagraphStyle = "Normal",
-        UIPriority = 9,
-      });
-      Styles.DefinedStyles.Add(new StyleDef()
-      {
-        StyleName = "Heading 6",
-        Type = StyleType.Paragraph,
-        IsCustom = true,
-        BasedOn = "Normal",
-        NextParagraphStyle = "Normal",
-        UIPriority = 14,
-      });
-      Styles.DefinedStyles.Add(new StyleDef()
-      {
-        StyleName = "annotation text",
-        Type = StyleType.Character,
-        IsCustom = true,
-        BasedOn = "DefaultParagraphFont",
-        UIPriority = 99,
-      });
-      Styles.DefinedStyles.Add(new StyleDef()
-      {
-        StyleName = "Book title",
-        Type = StyleType.Paragraph,
-        IsCustom = true,
-        BasedOn = "Normal",
-        NextParagraphStyle = "Normal",
-        UIPriority = 22,
-      });
+        DocDefaults = CreateSampleDocDefaults()
+      };
+    }
 
-      return Styles;
+    static DocDefaults CreateSampleDocDefaults(bool isUpdated = false)
+    {
+      return new DocDefaults
+      {
+        RunPropertiesDefault = CreateSampleRunProperties(isUpdated)
+      };
+    }
+
+    static DefaultRunProperties CreateSampleRunProperties(bool isUpdated = false)
+    {
+      return new DefaultRunProperties
+      {
+        Bold = true,
+        Italic = true,
+        FontSize = isUpdated ? new FontSizes(28, 24) : new FontSizes(24, 20),
+        Caps = isUpdated ? false : true,
+        SmallCaps = true,
+        Strike = true,
+        DoubleStrike = isUpdated ? true : null,
+        Color = new HexRgb(isUpdated ? "00AA00" : "FF0000" ),
+        Spacing = isUpdated ? new Twips(30) : new Twips(20),
+        CharacterScale = isUpdated ? new Percent(115) : new Percent(110),
+        NoProof = true
+      };
     }
 
     /// <summary>

@@ -17,13 +17,13 @@ public partial class Shading : ModelElement<DXW.Shading>
  /// <summary>
  /// The color of the pattern foreground, specifying the primary color used in the shading pattern.
  /// </summary>
- public DocumentModel.Color? ForegroundColor { get => _ForegroundColor; set => UpdateField(ref _ForegroundColor, value, nameof(ForegroundColor)); }
+ public DocumentModel.AbstractColor? ForegroundColor { get => _ForegroundColor; set => UpdateField(ref _ForegroundColor, value, nameof(ForegroundColor)); }
 
- private DocumentModel.Color? _ForegroundColor;
+ private DocumentModel.AbstractColor? _ForegroundColor;
  /// <summary>
  /// The color of the pattern background, specifying the secondary color used in the shading pattern.
  /// </summary>
- public DocumentModel.Color? BackgroundColor { get => _BackgroundColor; set => UpdateField(ref _BackgroundColor, value, nameof(BackgroundColor)); }
+ public DocumentModel.AbstractColor? BackgroundColor { get => _BackgroundColor; set => UpdateField(ref _BackgroundColor, value, nameof(BackgroundColor)); }
 
- private DocumentModel.Color? _BackgroundColor;
+ private DocumentModel.AbstractColor? _BackgroundColor;
 }

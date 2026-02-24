@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 ///   All drawing color types derive from class..
 /// </summary>
 [OpenXmlType(typeof(DXD.ColorType))]
-public class ColorType : Color<DXD.ColorType>
+public class ColorType : AbstractColor<DXD.ColorType>
 {
 }

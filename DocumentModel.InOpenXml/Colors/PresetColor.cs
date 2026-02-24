@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// specified by name (e.g., "Red", "Blue", "AliceBlue") from a standard palette.
 /// </summary>
 [OpenXmlType(typeof(DXD.PresetColor))]
-public partial class PresetColor : Color<DXD.PresetColor>
+public partial class PresetColor : AbstractColor<DXD.PresetColor>
 {
  /// <summary>
  /// Gets or sets the preset color name that defines the base color.
