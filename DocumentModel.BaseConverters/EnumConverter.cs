@@ -349,12 +349,9 @@ public static class EnumConverter
   /// <param name="value">The Enum value to convert.</param>
   /// <param name="openXmlType">The target OpenXmlValues type for the created String instance. Must be of OpenXml String type.</param>
   /// <returns>A new String, or null if the input is null.</returns>
-  private static String? ConvertToString(Enum? value, Type? openXmlType = null)
+  private static String? ConvertToString(Enum? value)
   {
     if (value == null) return null;
-
-    if (openXmlType == null)
-      openXmlType = typeof(String);
 
     var modelEnumType = value.GetType()!;
     if (modelEnumType.GetCustomAttribute<OpenXmlEnumTypeAttribute>()?.TargetType == typeof(Int32))
@@ -363,9 +360,7 @@ public static class EnumConverter
       return intValue.ToString();
     }
 
-
-    var StringsMap = GetEnumValuesMap(modelEnumType, openXmlType);
-    var result = (String)StringsMap.GetValue2(value);
+    var result = value.ToString();
     return result;
   }
 
@@ -474,7 +469,7 @@ public static class EnumConverter
     if (valueProp.PropertyType.GetInterface("IEnumValue") != null)
       targetValue = EnumConverter.ConvertToIEnumValue(value, valueProp.PropertyType);
     else if (valueProp.PropertyType == typeof(string))
-      targetValue = EnumConverter.ConvertToString(value, valueProp.PropertyType);
+      targetValue = EnumConverter.ConvertToString(value);
     else
       targetValue = Int32Converter.ConvertTo(Convert.ToInt32(value), valueProp.PropertyType);
     valueProp.SetValue(targetInstance, targetValue);
