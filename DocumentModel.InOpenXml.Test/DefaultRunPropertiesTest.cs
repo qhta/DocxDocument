@@ -147,7 +147,7 @@ namespace DocumentModel.InOpenXml.Test
         SmallCaps = true,
         Strike = true,
         DoubleStrike = isUpdated ? true : null,
-        Color = new DMW.Color(isUpdated ? "00AA00" : "FF0000" ),
+        Color = isUpdated ? new DMW.Color( "00AA00") : new DMW.Color{ Val = "000000", ThemeColor = ThemeColors.Text1 },
         Spacing = isUpdated ? new Twips(30) : new Twips(20),
         CharacterScale = isUpdated ? new Percent(115) : new Percent(110),
         NoProof = true
