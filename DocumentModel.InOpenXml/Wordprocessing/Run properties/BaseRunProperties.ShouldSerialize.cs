@@ -10,7 +10,7 @@ public partial class BaseRunProperties<T>
   public bool ShouldSerializeSmallCaps() => SmallCaps.HasValue;
   public bool ShouldSerializeStrike() => Strike.HasValue;
   public bool ShouldSerializeDoubleStrike() => DoubleStrike.HasValue;
-  public bool ShouldSerializeColor() => Color.HasValue;
+  public bool ShouldSerializeColor() => Color != null;
   public bool ShouldSerializeSpacing() => Spacing != null;
   public bool ShouldSerializeCharacterScale() => CharacterScale.HasValue;
   public bool ShouldSerializeKern() => Kern != null;
