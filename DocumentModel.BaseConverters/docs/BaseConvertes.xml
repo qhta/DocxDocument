@@ -1876,7 +1876,7 @@
             <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
             <returns>The Enum value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.EnumConverter.ConvertToString(System.Enum,System.Type)">
+        <member name="M:DocumentModel.OpenXml.EnumConverter.ConvertToString(System.Enum)">
             <summary>
             Creates an OpenXml String from an Enum value.
             </summary>
