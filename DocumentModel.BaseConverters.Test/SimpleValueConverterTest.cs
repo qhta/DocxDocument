@@ -55,6 +55,7 @@ public static class SimpleValueConverterTest
     (typeof(DocumentModel.HPS), typeof(DXW.HpsMeasureType)),
     (typeof(System.Decimal), typeof(DX.DecimalValue)),
     (typeof(System.Single), typeof(DX.SingleValue)),
+    (typeof(System.Double), typeof(DX.DoubleValue)),
     (typeof(System.DateTime), typeof(DX.DateTimeValue)),
     (typeof(System.DateTime), typeof(System.DateTime)),
     (typeof(System.Guid), typeof(DX.StringValue)),
@@ -257,6 +258,12 @@ public static class SimpleValueConverterTest
       return [Int64.MinValue, -1234567890123456789, 0L, 1234567890123456789, Int64.MaxValue];
     if (testedType == typeof(UInt32))
       return [UInt32.MinValue, 0u, 1234567890u, UInt32.MaxValue];
+    if (testedType == typeof(Double))
+      return
+      [
+        Double.MinValue, -12345.6789, 0.0, 12345.6789, Double.MaxValue, Double.NaN, Double.NegativeInfinity,
+        Double.PositiveInfinity
+      ];
     if (testedType == typeof(Single))
       return
       [

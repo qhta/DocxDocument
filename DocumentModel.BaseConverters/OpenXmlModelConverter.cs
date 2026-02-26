@@ -27,7 +27,7 @@ public static partial class OpenXmlModelConverter
     if (modelObject == null)
       return null;
 
-    if (openXmlType.Name == "DigitalSignature") Debug.Assert(true);
+    if (openXmlType.Name == "DocDefaults") Debug.Assert(true);
     var modelType = modelObject.GetType().GetNotNullableType();
     if (modelType == openXmlType)
       return modelObject;
@@ -235,6 +235,7 @@ public static partial class OpenXmlModelConverter
     if (openXmlChildType.IsSubclassOf(typeof(DXW.EmptyType)) && !modelValue.Equals(true))
       return;
 
+    if (openXmlChildType == typeof(DXW.Spacing)) Debug.Assert(true);
     var openXmlChildElement = ConvertTo(modelValue, openXmlChildType);
     if (openXmlChildElement is not DX.OpenXmlElement o)
       throw new InvalidOperationException($"Converted Open XML child element " +
@@ -381,10 +382,15 @@ public static partial class OpenXmlModelConverter
   /// type of modelObject.</param>
   public static void LoadData(object modelObject, object openXmlObject, Type modelType)
   {
+
+    if (modelObject.GetType().Name == "DefaultRunProperties") Debug.Assert(true);
     var openXmlType = openXmlObject.GetType();
     foreach (var modelProperty in modelType.GetModelProperties())
     {
-      LoadData(modelObject, modelProperty, openXmlObject, openXmlType);
+      if (modelProperty.CanWrite && modelProperty.GetCustomAttribute<NotMappedAttribute>() == null)
+      {
+        LoadData(modelObject, modelProperty, openXmlObject, openXmlType);
+      }
     }
     if (openXmlObject is DX.OpenXmlElement openXmlElement &&
         modelType.GetCustomAttribute<OpenXmlItemAttribute>() != null)
@@ -402,22 +408,36 @@ public static partial class OpenXmlModelConverter
   /// <param name="openXmlType">The type of the Open XML element.</param>
   public static void LoadData(object modelObject, PropertyInfo modelProperty, object openXmlObject, Type openXmlType)
   {
+    Debug.WriteLine($"Loading property {modelProperty.Name} of type {modelProperty.PropertyType} " +
+                    $"from Open XML type {openXmlType} into model type {modelObject.GetType()}");
+    if (modelProperty.Name == "Spacing") Debug.Assert(true);
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanRead)
     {
       var openXmlValue = openXmlProperty.GetValue(openXmlObject);
-      if (openXmlValue != null && !modelProperty.PropertyType.IsInstanceOfType(openXmlValue))
+      if (openXmlValue != null)
       {
         var modelPropertyType = modelProperty.PropertyType.GetNotNullableType();
-        var modelValue = ConvertFrom(openXmlValue, modelPropertyType);
-        if (modelValue != null && !modelPropertyType.IsInstanceOfType(modelValue))
+        if (modelPropertyType.IsValueType || modelPropertyType.IsEnum || modelPropertyType == typeof(string)
+            || modelPropertyType.GetCustomAttribute<SimpleTypeAttribute>() != null)
         {
-          modelValue = SimpleValueConverter.ConvertFrom(modelValue, modelPropertyType);
+          var modelValue = ConvertFrom(openXmlValue, modelPropertyType);
+          if (modelValue != null && !modelPropertyType.IsInstanceOfType(modelValue))
+          {
+            modelValue = SimpleValueConverter.ConvertFrom(modelValue, modelPropertyType);
+          }
+          modelValue = ConvertValue(modelValue, modelPropertyType);
+          modelProperty.SetValue(modelObject, modelValue);
+          return;
         }
-        modelValue = ConvertValue(modelValue, modelPropertyType);
-        modelProperty.SetValue(modelObject, modelValue);
+        else
+        {
+          var modelValue = Activator.CreateInstance(modelProperty.PropertyType)!;
+          LoadData(modelValue, openXmlValue, modelProperty.PropertyType);
+          modelProperty.SetValue(modelObject, modelValue);
+          return;
+        }
       }
-      return;
     }
     var loadPropertyMethod = OpenXmlPropertyMap.GetLoadDataMethod(modelProperty, openXmlType);
     if (loadPropertyMethod != null)
@@ -435,16 +455,16 @@ public static partial class OpenXmlModelConverter
       return;
     }
     var openXmlElementAttribute = modelProperty.GetCustomAttribute<OpenXmlElementAttribute>();
-    if (openXmlElementAttribute != null)
+    if (openXmlElementAttribute != null && openXmlObject is DX.OpenXmlCompositeElement compositeElement)
     {
-      LoadChildElement(modelObject, modelProperty, (DX.OpenXmlElement)openXmlObject, openXmlType,
+      LoadChildElement(modelObject, modelProperty, compositeElement, openXmlType,
         openXmlElementAttribute.OpenXmlType);
       return;
     }
     var openXmlElementCollectionAttribute = modelProperty.GetCustomAttribute<OpenXmlElementCollectionAttribute>();
-    if (openXmlElementCollectionAttribute != null)
+    if (openXmlElementCollectionAttribute != null && openXmlObject is DX.OpenXmlCompositeElement compositeElementCollection)
     {
-      LoadChildElementCollection(modelObject, modelProperty, (DX.OpenXmlElement)openXmlObject, openXmlType);
+      LoadChildElementCollection(modelObject, modelProperty, compositeElementCollection, openXmlType);
       return;
     }
   }
@@ -459,7 +479,7 @@ public static partial class OpenXmlModelConverter
   /// <param name="openXmlChildType">The Open XML child type of the element.</param>
   /// <exception cref="InvalidOperationException"></exception>
   public static void LoadChildElement
-  (object modelObject, PropertyInfo modelProperty, DX.OpenXmlElement openXmlElement, Type openXmlType,
+  (object modelObject, PropertyInfo modelProperty, DX.OpenXmlCompositeElement openXmlElement, Type openXmlType,
     Type? openXmlChildType)
   {
     var modelPropertyType = modelProperty.PropertyType.GetNotNullableType();
@@ -471,7 +491,11 @@ public static partial class OpenXmlModelConverter
         throw new InvalidOperationException($"No Open XML type mapping found " +
                                             $"for model property {modelProperty.Name} of type {modelPropertyType}");
     }
-    var children = openXmlElement.ChildElements.Where(item => item.GetType() == openXmlChildType).ToArray();
+    var children = openXmlElement.ElementsOfType(openXmlChildType)
+      .Select(child => ResolveTypedChildElement(child, openXmlChildType))
+      .Where(child => child != null)
+      .Cast<DX.OpenXmlElement>()
+      .ToArray();
     if (children.Length > 1)
       throw new InvalidOperationException($"Multiple child elements of type {openXmlChildType} " +
                                           $"found in Open XML element {openXmlType} for model property {modelProperty.Name}");
@@ -497,7 +521,7 @@ public static partial class OpenXmlModelConverter
   /// <param name="openXmlType">The Open XML type of the element.</param>
   /// <exception cref="InvalidOperationException"></exception>
   public static void LoadChildElementCollection
-    (object modelObject, PropertyInfo modelProperty, DX.OpenXmlElement openXmlElement, Type openXmlType)
+    (object modelObject, PropertyInfo modelProperty, DX.OpenXmlCompositeElement openXmlElement, Type openXmlType)
   {
     var modelPropertyType = modelProperty.PropertyType.GetNotNullableType();
     var collectionInterface = modelPropertyType.GetInterfaces()
@@ -525,7 +549,11 @@ public static partial class OpenXmlModelConverter
     if (modelValue != null)
       modelClearMethod.Invoke(modelValue, []);
 
-    var children = openXmlElement.ChildElements.Where(item => item.GetType() == openXmlChildType).ToArray();
+    var children = openXmlElement.Elements()
+      .Select(child => ResolveTypedChildElement(child, openXmlChildType))
+      .Where(child => child != null)
+      .Cast<DX.OpenXmlElement>()
+      .ToArray();
     foreach (var openXmlChildElement in children)
     {
       var modelItem = ConvertFrom(openXmlChildElement, modelItemType);
@@ -574,7 +602,11 @@ public static partial class OpenXmlModelConverter
       throw new InvalidOperationException($"No Clear method found in collection type {modelType}");
 
     modelClearMethod.Invoke(modelObject, []);
-    var children = openXmlElement.ChildElements.Where(item => item.GetType() == openXmlChildType).ToArray();
+    var children = openXmlElement.ChildElements
+      .Select(child => ResolveTypedChildElement(child, openXmlChildType))
+      .Where(child => child != null)
+      .Cast<DX.OpenXmlElement>()
+      .ToArray();
     foreach (var openXmlChildElement in children)
     {
       var modelItem = ConvertFrom(openXmlChildElement, modelItemType);
@@ -582,6 +614,62 @@ public static partial class OpenXmlModelConverter
         throw new InvalidOperationException($"Converted model Item is not compatible to {modelItemType}");
 
       modelAddMethod.Invoke(modelObject, [modelItem]);
+    }
+  }
+
+  /// <summary>
+  /// Resolves the specified child element to a strongly typed OpenXmlElement if it matches the expected type or can be
+  /// converted from an unknown element.
+  /// </summary>
+  /// <remarks>If the child element is of type DX.OpenXmlUnknownElement, the method attempts to create an
+  /// instance of the specified type and populate it with the data from the unknown element. Returns null if the types
+  /// do not match, conversion is not possible, or an error occurs during instantiation.</remarks>
+  /// <param name="childElement">The child element to resolve. Must be an instance of DX.OpenXmlElement or DX.OpenXmlUnknownElement.</param>
+  /// <param name="openXmlChildType">The expected type of the OpenXmlElement to match or convert to.</param>
+  /// <returns>An instance of DX.OpenXmlElement of the specified type if the child element matches or can be converted;
+  /// otherwise, null.</returns>
+  private static DX.OpenXmlElement? ResolveTypedChildElement(DX.OpenXmlElement childElement, Type openXmlChildType)
+  {
+    if (childElement.GetType() == openXmlChildType)
+      return childElement;
+
+    if (childElement is not DX.OpenXmlUnknownElement)
+      return null;
+
+    DX.OpenXmlElement? prototype = null;
+    try
+    {
+      prototype = Activator.CreateInstance(openXmlChildType) as DX.OpenXmlElement;
+    }
+    catch
+    {
+      return null;
+    }
+
+    if (prototype == null || childElement.LocalName != prototype.LocalName || childElement.NamespaceUri != prototype.NamespaceUri)
+      return null;
+    //prototype.Load(childElement.OuterXml);
+    //var outerXmlCtor = typeof(DX.OpenXmlElement).GetConstructor([typeof(string)]);
+    //if (outerXmlCtor == null)
+    //  return null;
+
+    try
+    {
+      var outerXmlSetter = 
+        typeof(DX.OpenXmlElement).GetProperty("OuterXml", BindingFlags.Public | BindingFlags.Instance)?.
+          GetSetMethod(true);
+      if (outerXmlSetter != null)
+      {
+        outerXmlSetter.Invoke(prototype, [childElement.OuterXml]);
+        var parseMethod = openXmlChildType.GetMethod("ParseXml", BindingFlags.NonPublic | BindingFlags.Instance);
+        parseMethod?.Invoke(prototype, []);
+      }
+      return prototype;
+
+    }
+    catch
+    {
+      return null;
     }
   }
 

@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides XML serialization support for the <see cref="EMU"/> structure.
 /// </summary>
-public partial struct EMU : IXmlSerializable
+public partial class EMU : IXmlSerializable
 {
 
 
@@ -48,8 +48,8 @@ public partial struct EMU : IXmlSerializable
       {
         EMU parsedValue = new EMU(EMUString);
 
-        // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue.value;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in unit) = parsedValue.Unit;
       }
 
       reader.Read(); // Move past text
@@ -70,6 +70,6 @@ public partial struct EMU : IXmlSerializable
   /// </remarks>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
-    writer.WriteString(value.ToString(CultureInfo.InvariantCulture));
+    writer.WriteString(ToString());
   }
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class Styles
 {
-  public bool ShouldSerializeDocDefaults() => DocDefaults is not null;
+  public bool ShouldSerializeDocDefaults() => !DocDefaults.IsEmpty();
 
   public bool ShouldSerializeLatentStyles() => LatentStyles.Count > 0;
 

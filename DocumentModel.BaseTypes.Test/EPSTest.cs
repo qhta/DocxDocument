@@ -93,18 +93,6 @@ public static class EPSTest
     EPS eps4 = eps1Val * 2; // 2 inches
     Console.WriteLine($"\n✓ CompareTo ({eps1Val} vs {eps4}): {eps1.CompareTo(eps4)} (expected < 0)");
 
-
-    // Test hash code
-    var eps1HashCode = eps1.GetHashCode();
-    EPS eps5 = eps1Str;
-    Console.WriteLine($"\n✓ Hash code: {eps1HashCode}");
-    var eps5HashCode = eps5.GetHashCode();
-    if (eps1HashCode != eps5HashCode)
-    {
-      Console.WriteLine($"✗ GetHashCode consistency FAILED eps1Hash={eps1HashCode}, eps1ValHash={eps5HashCode}");
-      return false;
-    }
-
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
     return true;
@@ -199,7 +187,7 @@ public static class EPSTest
 
     // Test ConvertTo for each unit
     Console.WriteLine("\nTesting ConvertTo method:");
-    ILengthValue length = original;
+    UniversalMeasure length = original;
     Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches)}");
     Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters)}");
     Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters)}");

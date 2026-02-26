@@ -24,8 +24,8 @@ internal class Program
     //if (!Exec(FontTableTest.Run)) return;
     //if (!Exec(LatentStylesTest.Run)) return;
     //if (!Exec(StyleDefsTest.Run)) return;
-    //if (!Exec(StyleDefsTest.Run)) return;
-    if (!Exec(DefaultRunPropertiesTest.Run)) return;
+    //if (!Exec(DefaultRunPropertiesTest.Run)) return;
+    if (!Exec(StyleDocDefaultsRunPropertiesTest.Run)) return;
 
     Console.WriteLine("All tests passed.");
   }

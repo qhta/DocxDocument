@@ -43,6 +43,7 @@ public static class SimpleValueConverter
     ConversionToMap.Append(EnumConverter.ConversionToMap);
     ConversionToMap.Append(BytePercentConverter.ConversionToMap);
     ConversionToMap.Append(PercentConverter.ConversionToMap);
+    ConversionToMap.Append(TwipsConverter.ConversionToMap);
 
     ConversionFromMap.Append(BooleanConverter.ConversionFromMap);
     ConversionFromMap.Append(TSBooleanConverter.ConversionFromMap);
@@ -64,6 +65,7 @@ public static class SimpleValueConverter
     ConversionFromMap.Append(HexBinaryConverter.ConversionFromMap);
     ConversionFromMap.Append(EnumConverter.ConversionFromMap);
     ConversionFromMap.Append(PercentConverter.ConversionFromMap);
+    ConversionFromMap.Append(TwipsConverter.ConversionFromMap);
 
   }
 
