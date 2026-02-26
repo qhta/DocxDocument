@@ -123,7 +123,7 @@
     <xsd:attribute name="val" type="s:ST_String" use="required"/>
   </xsd:complexType>
   <xsd:simpleType name="ST_TextScale">
-    <xsd:union memberTypes="ST_TextScalePercent"/>
+    <xsd:union memberTypes="s:ST_UnsignedDecimalNumber ST_TextScalePercent"/>
   </xsd:simpleType>
   <xsd:simpleType name="ST_TextScalePercent">
     <xsd:restriction base="xsd:string">

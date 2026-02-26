@@ -20,6 +20,7 @@ namespace DocumentModel.InOpenXml.Test
     /// <returns>True if all tests pass; otherwise, false.</returns>
     public static bool Run()
     {
+      //DXW.CharacterScale
       Console.WriteLine("=== Styles DocDefaults DefaultRunProperties Test ===\n");
       //if (!TestXmlSerialization()) return false;
       //if (!TestJsonSerialization()) return false;
