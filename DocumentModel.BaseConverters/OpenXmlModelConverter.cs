@@ -408,8 +408,8 @@ public static partial class OpenXmlModelConverter
   /// <param name="openXmlType">The type of the Open XML element.</param>
   public static void LoadData(object modelObject, PropertyInfo modelProperty, object openXmlObject, Type openXmlType)
   {
-    Debug.WriteLine($"Loading property {modelProperty.Name} of type {modelProperty.PropertyType} " +
-                    $"from Open XML type {openXmlType} into model type {modelObject.GetType()}");
+    //Debug.WriteLine($"Loading property {modelProperty.Name} of type {modelProperty.PropertyType} " +
+    //                $"from Open XML type {openXmlType} into model type {modelObject.GetType()}");
     if (modelProperty.Name == "Spacing") Debug.Assert(true);
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanRead)

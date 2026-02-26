@@ -76,11 +76,17 @@ public class GenerateShouldSerializeFunctions
            SymbolEqualityComparer.Default.Equals(i.OriginalDefinition, iGenericCollectionType)));
       if (propType is NullableTypeSyntax)
       {
-        var str = $"{propName}.HasValue";
-        if (isCollection) {
-          str += $" && {propName}.Value.Count > 0";
+        if (propType.ToString().Equals("String?", StringComparison.OrdinalIgnoreCase))
+        {
+          var str = $"!String.IsNullOrEmpty({propName})";
+          propertyTypes[propName] = str;
         }
-        propertyTypes[propName] = str;
+        else
+        {
+          var str = $"{propName}.HasValue";
+          if (isCollection) str += $" && {propName}.Value.Count > 0";
+          propertyTypes[propName] = str;
+        }
       }
       else if (isCollection)
       {
@@ -101,6 +107,9 @@ public class GenerateShouldSerializeFunctions
           //  break;
           case "bool":
             propertyTypes[propName] = $"{propName} == true";
+            break;
+          case "string":
+            propertyTypes[propName] = $"!string.IsNullOrEmpty({propName})";
             break;
           //case "char":
           //  propertyTypes[propName] = $"{propName} != '\\0'";
