@@ -6,22 +6,20 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to document default paragraph and run properties, latent style information, and defined styles, enabling advanced style management and formatting for document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.Styles))]
-public sealed partial class Styles: ModelElement<DXW.Styles>
+public sealed partial class Styles : ModelElement<DXW.Styles>
 {
   /// <summary>
   /// Default constructor.
   /// </summary>
   public Styles()
   {
-    _LatentStyles = new LatentStyles(this);
-    _DefinedStyles = new DefinedStyles(this);
   }
 
   /// <summary>
   /// Initializing constructor.
   /// </summary>
   /// <param name = "document">The document to attach to.</param>
-  public Styles(Document document): this()
+  public Styles(Document document) : this()
   {
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
@@ -55,9 +53,14 @@ public sealed partial class Styles: ModelElement<DXW.Styles>
   /// Document default paragraph and run properties, specifying default formatting for paragraphs and text runs.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Styles.DocDefaults))]
-  public DocDefaults? DocDefaults
+  public DocDefaults DocDefaults
   {
-    get => _DocDefaults;
+    get
+    {
+      if (_DocDefaults == null)
+        _DocDefaults = new DocDefaults(this);
+      return _DocDefaults;
+    }
     set => UpdateField(ref _DocDefaults, value, nameof(DocDefaults));
   }
 
@@ -69,11 +72,16 @@ public sealed partial class Styles: ModelElement<DXW.Styles>
   [OpenXmlProperty(nameof(DXW.Styles.LatentStyles))]
   public LatentStyles LatentStyles
   {
-    get => _LatentStyles;
+    get
+    {
+      if (_LatentStyles == null)
+        _LatentStyles = new LatentStyles(this);
+      return _LatentStyles;
+    }
     set => UpdateField(ref _LatentStyles, value, nameof(LatentStyles));
   }
 
-  private LatentStyles _LatentStyles;
+  private LatentStyles? _LatentStyles;
 
   /// <summary>
   /// Collection of defined styles in the document, including paragraph, character, table, and numbering styles.
@@ -83,11 +91,16 @@ public sealed partial class Styles: ModelElement<DXW.Styles>
   [OpenXmlLoadData(nameof(LoadDefinedStyles))]
   public DefinedStyles DefinedStyles
   {
-    get => _DefinedStyles;
+    get
+    {
+      if (_DefinedStyles == null)
+        _DefinedStyles = new DefinedStyles(this);
+      return _DefinedStyles;
+    }
     set => UpdateField(ref _DefinedStyles, value, nameof(DefinedStyles));
   }
 
-  private DefinedStyles _DefinedStyles;
+  private DefinedStyles? _DefinedStyles;
 
   /// <summary>
   /// Updates the styles in the specified OpenXml element b with styles defined in the DefinedStyles collection.  

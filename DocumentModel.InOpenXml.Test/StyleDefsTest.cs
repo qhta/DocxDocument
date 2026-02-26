@@ -255,7 +255,7 @@ namespace DocumentModel.InOpenXml.Test
     /// Creates a sample Styles object with various property types.
     /// </summary>
     /// <returns>A populated Styles object.</returns>
-    static Styles CreateSampleStyles()
+    internal static Styles CreateSampleStyles()
     {
       var Styles = new Styles();
       Styles.DefinedStyles.Add(new StyleDef()

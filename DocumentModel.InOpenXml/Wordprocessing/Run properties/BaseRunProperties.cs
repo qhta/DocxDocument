@@ -21,6 +21,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Bold property for characters in the run.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Bold))]
   public Boolean? Bold { get => _Bold; set => UpdateField(ref _Bold, value, nameof(Bold)); }
 
   private Boolean? _Bold;
@@ -28,6 +29,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Separate bold property for characters in the complex script.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.BoldComplexScript))]
   public Boolean? BoldCS { get => _BoldCS; set => UpdateField(ref _BoldCS, value, nameof(BoldCS)); }
 
   private Boolean? _BoldCS;
@@ -35,6 +37,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Italic property for characters in the run.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Italic))]
   public Boolean? Italic { get => _Italic; set => UpdateField(ref _Italic, value, nameof(Italic)); }
 
   private Boolean? _Italic;
@@ -42,16 +45,27 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Separate italic property for characters in the complex script.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.ItalicComplexScript))]
   public Boolean? ItalicCS { get => _ItalicCS; set => UpdateField(ref _ItalicCS, value, nameof(ItalicCS)); }
 
   private Boolean? _ItalicCS;
 
   /// <summary>
-  /// Font size for the run, with separate values for regular and complex script, measured in half points.
+  /// Font size for the run, measured in half points.
   /// </summary>
-  public FontSizes? FontSize { get => _FontSize; set => UpdateField(ref _FontSize, value, nameof(FontSize)); }
+  [OpenXmlElement(typeof(DXW.FontSize))]
+  public HPS? FontSize { get => _FontSize; set => UpdateField(ref _FontSize, value, nameof(FontSize)); }
 
-  private FontSizes? _FontSize;
+  private HPS? _FontSize;
+
+
+  /// <summary>
+  /// Separate font size for characters in complex script, measured in half points.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.FontSizeComplexScript))]
+  public HPS? FontSizeCS { get => _FontSizeCS; set => UpdateField(ref _FontSizeCS, value, nameof(FontSizeCS)); }
+
+  private HPS? _FontSizeCS;
 
   /// <summary>
   /// Formats lowercase characters as capital letters for display only.
@@ -79,6 +93,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Displays a single horizontal line through the center of the run.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Strike))]
   public bool? Strike { get => _Strike; set => UpdateField(ref _Strike, value, nameof(Strike)); }
 
   private bool? _Strike;
@@ -86,6 +101,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Displays two horizontal lines through each character in the run.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.DoubleStrike))]
   public bool? DoubleStrike
   {
     get => _DoubleStrike;
@@ -97,6 +113,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Color used to display the run contents, can be explicit or automatic.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Color))]
   public DocumentModel.HexRgb? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
 
   private DocumentModel.HexRgb? _Color;
@@ -104,6 +121,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Character pitch added or removed after each character in the run.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Spacing))]
   public Twips? Spacing { get => _Spacing; set => UpdateField(ref _Spacing, value, nameof(Spacing)); }
 
   private Twips? _Spacing;

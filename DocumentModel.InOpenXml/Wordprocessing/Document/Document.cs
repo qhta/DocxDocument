@@ -11,9 +11,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// </summary>
   public Document()
   {
-    _CoreProperties = new CoreProperties(this);
-    _ContentProperties = new ContentProperties(this);
-    _StatisticProperties = new StatisticProperties(this);
   }
 
   /// <summary>
@@ -22,7 +19,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <param name="filePath">The file path of the WordprocessingML document to open.</param>
   /// <param name="mode">The file mode to open. Create, Open, and OpenOrCreate are recognized. Default is OpenOrCreate</param>
   /// <param name="access">The file access mode to open. Read, Write, and ReadWrite are recognized. Default is ReadWrite</param>
-  public Document(string filePath, FileMode mode = FileMode.OpenOrCreate, FileAccess access = FileAccess.ReadWrite) : this()
+  public Document(string filePath, FileMode mode = FileMode.OpenOrCreate, FileAccess access = FileAccess.ReadWrite)
   {
     if (mode == FileMode.CreateNew && File.Exists(filePath))
     {
@@ -35,6 +32,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
       OpenDocument(filePath, access is FileAccess.ReadWrite or FileAccess.Write);
     if (access!=FileAccess.ReadWrite && access!=FileAccess.Write && access!=FileAccess.Read)
       IsEditable = false;
+
     SetNotificationEnabled(true);
   }
 
@@ -45,9 +43,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public Document(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
-    _CoreProperties = new CoreProperties(this);
-    _ContentProperties = new ContentProperties(this);
-    _StatisticProperties = new StatisticProperties(this);
     SetNotificationEnabled(true);
   }
 
@@ -56,6 +51,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// </summary>
   public DXPP.WordprocessingDocument? WordprocessingDocument
   {
+    [DebuggerStepThrough]
     get => _WordprocessingDocument;
     set => UpdateField(ref _WordprocessingDocument, value, nameof(WordprocessingDocument));
   }
@@ -72,11 +68,11 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     WordprocessingDocument = wordprocessingDocument;
     wordprocessingDocument.GetPackageProperties();
 
-    _CoreProperties.AttachAndLoad(wordprocessingDocument);
-    _ContentProperties.AttachAndLoad(wordprocessingDocument);
-    _StatisticProperties.AttachAndLoad(wordprocessingDocument);
-    _CustomProperties?.AttachAndLoad(wordprocessingDocument);
-    _DocumentSettings?.AttachAndLoad(wordprocessingDocument);
+    CoreProperties.AttachAndLoad(wordprocessingDocument);
+    ContentProperties.AttachAndLoad(wordprocessingDocument);
+    StatisticProperties.AttachAndLoad(wordprocessingDocument);
+    CustomProperties?.AttachAndLoad(wordprocessingDocument);
+    DocumentSettings?.AttachAndLoad(wordprocessingDocument);
     SetNotificationEnabled(true);
   }
 
@@ -87,11 +83,11 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
-    _CoreProperties.AttachAndUpdate(wordprocessingDocument);
-    _ContentProperties.AttachAndUpdate(wordprocessingDocument);
-    _StatisticProperties.AttachAndUpdate(wordprocessingDocument);
-    _CustomProperties?.AttachAndUpdate(wordprocessingDocument);
-    _DocumentSettings?.AttachAndUpdate(wordprocessingDocument);
+    CoreProperties.AttachAndUpdate(wordprocessingDocument);
+    ContentProperties.AttachAndUpdate(wordprocessingDocument);
+    StatisticProperties.AttachAndUpdate(wordprocessingDocument);
+    CustomProperties?.AttachAndUpdate(wordprocessingDocument);
+    DocumentSettings?.AttachAndUpdate(wordprocessingDocument);
   }
 
   /// <summary>
@@ -102,10 +98,11 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public void Detach()
   {
     WordprocessingDocument = null;
-    _CoreProperties.Detach();
-    _ContentProperties.Detach();
-    _StatisticProperties.Detach();
-    _CustomProperties?.Detach();
+    CoreProperties.Detach();
+    ContentProperties.Detach();
+    StatisticProperties.Detach();
+    CustomProperties?.Detach();
+    DocumentSettings?.Detach();
   }
 
   /// <summary>
@@ -231,17 +228,22 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   [NotMapped]
   public CoreProperties CoreProperties
   {
-    get => _CoreProperties;
+    get
+    {
+      if (_CoreProperties == null)
+        _CoreProperties = new CoreProperties(this);
+      return _CoreProperties!;
+    }
     set
     {
-      if (!Equals(_CoreProperties, value))
+      if (!Equals(CoreProperties, value))
       {
-        _CoreProperties.CopyFrom(value);
+        CoreProperties.CopyFrom(value);
       }
     }
   }
 
-  private readonly CoreProperties _CoreProperties;
+  private CoreProperties? _CoreProperties;
 
   /// <summary>
   ///   Content-specific document properties, such as content type and structure.
@@ -249,11 +251,16 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   [NotMapped]
   public ContentProperties ContentProperties
   {
-    get => _ContentProperties;
+    get
+    {
+      if (_ContentProperties == null)
+        _ContentProperties = new ContentProperties(this);
+      return _ContentProperties!;
+    }
     set => UpdateField(ref _ContentProperties!, value, nameof(ContentProperties));
   }
 
-  private ContentProperties _ContentProperties;
+  private ContentProperties? _ContentProperties;
 
   /// <summary>
   ///   Statistical document properties such as word count and page count.
@@ -261,11 +268,16 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   [NotMapped]
   public StatisticProperties StatisticProperties
   {
-    get => _StatisticProperties;
+    get
+    {
+      if (_StatisticProperties == null)
+        _StatisticProperties = new StatisticProperties(this);
+      return _StatisticProperties!;
+    }
     set => UpdateField(ref _StatisticProperties!, value, nameof(StatisticProperties));
   }
 
-  private StatisticProperties _StatisticProperties;
+  private StatisticProperties? _StatisticProperties;
 
   /// <summary>
   ///   Custom document properties, allowing storage of user-defined metadata.

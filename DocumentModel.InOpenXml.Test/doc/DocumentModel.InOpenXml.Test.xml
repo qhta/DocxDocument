@@ -711,6 +711,14 @@
             </summary>
             <returns>A populated Styles object.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.CreateSampleLatentStyles">
+            <summary>
+            Creates a collection of sample latent styles for use in document formatting.
+            </summary>
+            <remarks>This method initializes several latent styles with specific properties, such as primary
+            status and UI priority, to facilitate consistent document styling.</remarks>
+            <returns>A LatentStyles object containing predefined latent styles, including primary styles and annotations.</returns>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.SerializeToXml(DocumentModel.Wordprocessing.Styles)">
             <summary>
             Serializes a Styles object to an XML string.
