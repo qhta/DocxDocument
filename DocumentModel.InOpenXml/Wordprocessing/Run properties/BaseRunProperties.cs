@@ -114,9 +114,9 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Color used to display the run contents, can be explicit or automatic.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Color))]
-  public DocumentModel.HexRgb? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+  public DMW.Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
 
-  private DocumentModel.HexRgb? _Color;
+  private DMW.Color? _Color;
 
   /// <summary>
   /// Character pitch added or removed after each character in the run.
