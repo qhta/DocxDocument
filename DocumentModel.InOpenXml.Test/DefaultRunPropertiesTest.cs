@@ -130,6 +130,13 @@ namespace DocumentModel.InOpenXml.Test
     {
       return new DefaultRunProperties
       {
+        RunFonts = new RunFonts
+        {
+          Ascii = "Times New Roman",
+          HighAnsi = "Times New Roman",
+          ComplexScript = "Arial",
+          EastAsia = "Arial"
+        },
         Bold = true,
         BoldCS = true,
         Italic = true,

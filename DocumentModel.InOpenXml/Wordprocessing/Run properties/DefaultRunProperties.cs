@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DXW.RunPropertiesDefault))]
 [XmlRoot("DefaultRunProperties")]
-public class DefaultRunProperties : BaseRunProperties<DXW.RunPropertiesDefault>
+public class DefaultRunProperties : BaseRunProperties<DXW.RunPropertiesBaseStyle>
 {
 }

@@ -13,7 +13,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Fonts used to display the text contents of this run, supporting ASCII, High ANSI, Complex Script, and East Asian character ranges.
   /// </summary>
-  [XmlIgnore]
+  [OpenXmlElement(typeof(DXW.RunFonts))]
   public RunFonts? RunFonts { get => _RunFonts; set => UpdateField(ref _RunFonts, value, nameof(RunFonts)); }
 
   private RunFonts? _RunFonts;
@@ -129,6 +129,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Amount by which each character is expanded or compressed when rendered.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.CharacterScale))]
   public Percent? CharacterScale
   {
     get => _CharacterScale;
@@ -140,6 +141,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Minimum font size for automatic kerning in the run.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Kern))]
   public Twips? Kern { get => _Kern; set => UpdateField(ref _Kern, value, nameof(Kern)); }
 
   private Twips? _Kern;
@@ -147,6 +149,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Determines if the run uses the document grid characters per line settings.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.SnapToGrid))]
   public bool? SnapToGrid { get => _SnapToGrid; set => UpdateField(ref _SnapToGrid, value, nameof(SnapToGrid)); }
 
   private bool? _SnapToGrid;
@@ -154,6 +157,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Alignment for the run contents, supporting subscript and superscript.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.VerticalTextAlignment))]
   public VerticalPosition? VerticalTextAlignment
   {
     get => _VerticalTextAlignment;
@@ -165,6 +169,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Amount by which text is raised or lowered relative to the baseline, in half-points.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Position))]
   public Twips? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
 
   private Twips? _Position;
@@ -172,6 +177,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Displays the run contents as an outline by drawing a border around each character glyph.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Outline))]
   public bool? Outline { get => _Outline; set => UpdateField(ref _Outline, value, nameof(Outline)); }
 
   private bool? _Outline;
@@ -179,6 +185,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Displays the run contents as embossed, making text appear raised off the page.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Emboss))]
   public bool? Emboss { get => _Emboss; set => UpdateField(ref _Emboss, value, nameof(Emboss)); }
 
   private bool? _Emboss;
@@ -186,6 +193,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Displays the run contents as imprinted (engraved), making text appear pressed into the page.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Imprint))]
   public bool? Imprint { get => _Imprint; set => UpdateField(ref _Imprint, value, nameof(Imprint)); }
 
   private bool? _Imprint;
@@ -193,6 +201,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Displays the run contents with a shadow effect.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Shadow))]
   public bool? Shadow { get => _Shadow; set => UpdateField(ref _Shadow, value, nameof(Shadow)); }
 
   private bool? _Shadow;
@@ -200,6 +209,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Languages used for spell checking and grammar, supporting regular, complex, and East Asian scripts.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Languages))]
   public Languages? Language { get => _Language; set => UpdateField(ref _Language, value, nameof(Language)); }
 
   private Languages? _Language;
@@ -207,6 +217,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Prevents spelling and grammar errors from being reported for this run.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.NoProof))]
   public bool? NoProof { get => _NoProof; set => UpdateField(ref _NoProof, value, nameof(NoProof)); }
 
   private bool? _NoProof;
@@ -214,6 +225,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Shading applied to the run, including background color, pattern, and pattern color.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Shading))]
   public Shading? Shading { get => _Shading; set => UpdateField(ref _Shading, value, nameof(Shading)); }
 
   private Shading? _Shading;
@@ -221,6 +233,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Border information for the run, including grouping and rendering details.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Border))]
   public Border? Border { get => _Border; set => UpdateField(ref _Border, value, nameof(Border)); }
 
   private Border? _Border;
@@ -228,6 +241,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Animated text effect for the run.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.TextEffect))]
   public TextEffect? TextEffect { get => _TextEffect; set => UpdateField(ref _TextEffect, value, nameof(TextEffect)); }
 
   private TextEffect? _TextEffect;
@@ -235,6 +249,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Resizes run contents to fit a specified width by adjusting character size.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.FitText))]
   public FitText? FitText { get => _FitText; set => UpdateField(ref _FitText, value, nameof(FitText)); }
 
   private FitText? _FitText;
@@ -242,6 +257,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Emphasis mark applied to each non-space character in the run.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Emphasis))]
   public EmphasisMark? Emphasis { get => _Emphasis; set => UpdateField(ref _Emphasis, value, nameof(Emphasis)); }
 
   private EmphasisMark? _Emphasis;
@@ -249,6 +265,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// East Asian typography settings, including two lines in one and horizontal in vertical text options.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.EastAsianLayout))]
   public EastAsianLayout? EastAsianLayout
   {
     get => _EastAsianLayout;
@@ -260,6 +277,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Hides the run contents from display at display time in the document.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.Vanish))]
   public bool? Vanish { get => _Vanish; set => UpdateField(ref _Vanish, value, nameof(Vanish)); }
 
   private bool? _Vanish;
@@ -267,6 +285,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Ensures the run always behaves as hidden, even when hidden text is displayed (for paragraph marks).
   /// </summary>
+  [OpenXmlElement(typeof(DXW.SpecVanish))]
   public bool? SpecVanish { get => _SpecVanish; set => UpdateField(ref _SpecVanish, value, nameof(SpecVanish)); }
 
   private bool? _SpecVanish;
@@ -274,6 +293,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Hides the run contents from display in web page view.
   /// </summary>
+  [OpenXmlElement(typeof(DXW.WebHidden))]
   public bool? WebHidden { get => _WebHidden; set => UpdateField(ref _WebHidden, value, nameof(WebHidden)); }
 
   private bool? _WebHidden;
