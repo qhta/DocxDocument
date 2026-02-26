@@ -11,12 +11,12 @@ public partial class BaseRunProperties<T>
   public bool ShouldSerializeStrike() => Strike.HasValue;
   public bool ShouldSerializeDoubleStrike() => DoubleStrike.HasValue;
   public bool ShouldSerializeColor() => Color.HasValue;
-  public bool ShouldSerializeSpacing() => Spacing.HasValue;
+  public bool ShouldSerializeSpacing() => Spacing != null;
   public bool ShouldSerializeCharacterScale() => CharacterScale.HasValue;
-  public bool ShouldSerializeKern() => Kern.HasValue;
+  public bool ShouldSerializeKern() => Kern != null;
   public bool ShouldSerializeSnapToGrid() => SnapToGrid.HasValue;
   public bool ShouldSerializeVerticalTextAlignment() => VerticalTextAlignment.HasValue;
-  public bool ShouldSerializePosition() => Position.HasValue;
+  public bool ShouldSerializePosition() => Position != null;
   public bool ShouldSerializeOutline() => Outline.HasValue;
   public bool ShouldSerializeEmboss() => Emboss.HasValue;
   public bool ShouldSerializeImprint() => Imprint.HasValue;

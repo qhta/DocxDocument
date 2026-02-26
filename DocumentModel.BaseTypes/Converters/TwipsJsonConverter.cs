@@ -60,6 +60,11 @@ public class TwipsJsonConverter : JsonConverter<Twips>
           return new Twips(longValue);
         }
 
+        if (reader.TryGetUInt64(out ulong ulongValue))
+        {
+          return new Twips(ulongValue);
+        }
+
         if (reader.TryGetDecimal(out decimal decimalValue))
         {
           return new Twips(decimalValue);

@@ -9,9 +9,9 @@ public partial class TableRowHeight : ModelElement<DXW.TableRowHeight>
  /// <summary>
  /// Table row height value, specifying the height in twips.
  /// </summary>
- public Twips Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
+ public Twips? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
 
- private Twips _Value;
+ private Twips? _Value;
  /// <summary>
  /// Table row height type, specifying whether the height is at least, exactly, or auto.
  /// </summary>
