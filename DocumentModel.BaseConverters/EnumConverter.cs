@@ -80,18 +80,48 @@ public static class EnumConverter
         var modelEnumValue = modelEnumField.GetValue(null)!;
         enumValuesMap.Add(modelEnumValue, mappedName);
       }
-      //if (modelEnumType.GetCustomAttribute<FlagsAttribute>() != null)
-      //{
-      //  // For Flags enums, test a combination of all values
-      //  long combinedValue = 0;
-      //  foreach (var value in modelEnumFields)
-      //  {
-      //    combinedValue |= Convert.ToInt64(value);
-      //  }
-      //  var combinedEnum = Enum.ToObject(modelEnumType, combinedValue);
-      //  enumValuesMap.Add(combinedEnum, combinedEnum.ToString()!);
+      if (modelEnumType.GetCustomAttribute<FlagsAttribute>() != null)
+      {
+        var existingValues = new HashSet<long>(modelEnumFields
+          .Select(value => Convert.ToInt64(value.GetValue(null))));
+        var flagValues = modelEnumFields
+          .Select(value => Convert.ToInt64(value.GetValue(null)))
+          .Where(value => value != 0)
+          .Distinct()
+          .ToArray();
 
-      //}
+        if (flagValues.Length < 63)
+        {
+          var combinationCount = 1L << flagValues.Length;
+          for (var mask = 1L; mask < combinationCount; mask++)
+          {
+            long combinedValue = 0;
+            for (var index = 0; index < flagValues.Length; index++)
+            {
+              if ((mask & (1L << index)) != 0)
+                combinedValue |= flagValues[index];
+            }
+
+            if (combinedValue == 0 || !existingValues.Add(combinedValue))
+              continue;
+
+            var combinedEnum = Enum.ToObject(modelEnumType, combinedValue);
+            enumValuesMap.Add(combinedEnum, combinedEnum.ToString()!);
+          }
+        }
+        else
+        {
+          long combinedValue = 0;
+          foreach (var value in flagValues)
+            combinedValue |= value;
+
+          if (combinedValue != 0 && existingValues.Add(combinedValue))
+          {
+            var combinedEnum = Enum.ToObject(modelEnumType, combinedValue);
+            enumValuesMap.Add(combinedEnum, combinedEnum.ToString()!);
+          }
+        }
+      }
       mappingEnumValues[modelEnumType] = enumValuesMap;
     }
 

@@ -60,21 +60,14 @@ public class TwipsJsonConverter : JsonConverter<Twips>
           return new Twips(longValue);
         }
 
-        if (reader.TryGetUInt64(out ulong ulongValue))
+        if (reader.TryGetDecimal(out decimal decimalValue))
         {
-          return new Twips(ulongValue);
+          return new Twips(decimalValue);
         }
 
-        // Try as 32-bit integer
-        if (reader.TryGetInt32(out int intValue))
+        if (reader.TryGetDouble(out double doubleValue))
         {
-          return new Twips(intValue);
-        }
-
-        // Try as 32-bit unsigned integer
-        if (reader.TryGetUInt32(out uint uintValue))
-        {
-          return new Twips(uintValue);
+          return new Twips(doubleValue);
         }
 
         throw new JsonException($"Invalid numeric value for Twips");
@@ -100,7 +93,6 @@ public class TwipsJsonConverter : JsonConverter<Twips>
   /// </remarks>
   public override void Write(Utf8JsonWriter writer, Twips value, JsonSerializerOptions options)
   {
-    // Write as numeric string without unit suffix
-    writer.WriteStringValue(((Int64)value).ToString(CultureInfo.InvariantCulture));
+    writer.WriteStringValue(value.ToString(CultureInfo.InvariantCulture));
   }
 }

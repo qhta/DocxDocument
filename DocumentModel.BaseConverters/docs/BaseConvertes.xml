@@ -4081,7 +4081,7 @@
             <param name="openXmlObject">The source Open XML element or other object.</param>
             <param name="openXmlType">The type of the Open XML element.</param>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadChildElement(System.Object,System.Reflection.PropertyInfo,DocumentFormat.OpenXml.OpenXmlElement,System.Type,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadChildElement(System.Object,System.Reflection.PropertyInfo,DocumentFormat.OpenXml.OpenXmlCompositeElement,System.Type,System.Type)">
             <summary>
             Loads a child element from an Open XML element into a model object's property, based on the specified Open XML type and child type.
             </summary>
@@ -4092,7 +4092,7 @@
             <param name="openXmlChildType">The Open XML child type of the element.</param>
             <exception cref="T:System.InvalidOperationException"></exception>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadChildElementCollection(System.Object,System.Reflection.PropertyInfo,DocumentFormat.OpenXml.OpenXmlElement,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadChildElementCollection(System.Object,System.Reflection.PropertyInfo,DocumentFormat.OpenXml.OpenXmlCompositeElement,System.Type)">
             <summary>
             Loads a collection of child elements from an Open XML element into a model object's property, based on the specified Open XML type.
             </summary>
@@ -4111,6 +4111,19 @@
             <param name="openXmlElement">The Open XML element to load the child elements from.</param>
             <param name="openXmlType">The Open XML type of the element.</param>
             <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.ResolveTypedChildElement(DocumentFormat.OpenXml.OpenXmlElement,System.Type)">
+            <summary>
+            Resolves the specified child element to a strongly typed OpenXmlElement if it matches the expected type or can be
+            converted from an unknown element.
+            </summary>
+            <remarks>If the child element is of type DX.OpenXmlUnknownElement, the method attempts to create an
+            instance of the specified type and populate it with the data from the unknown element. Returns null if the types
+            do not match, conversion is not possible, or an error occurs during instantiation.</remarks>
+            <param name="childElement">The child element to resolve. Must be an instance of DX.OpenXmlElement or DX.OpenXmlUnknownElement.</param>
+            <param name="openXmlChildType">The expected type of the OpenXmlElement to match or convert to.</param>
+            <returns>An instance of DX.OpenXmlElement of the specified type if the child element matches or can be converted;
+            otherwise, null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.ConvertValue(System.Object,System.Type)">
             <summary>
@@ -5423,6 +5436,136 @@
             name="value"/> is <see langword="null"/>.</returns>
             <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.TSBoolean"/> is not supported.</exception>
         </member>
+        <member name="T:DocumentModel.OpenXml.TwipsConverter">
+            <summary>
+            Provides conversion methods for Twips value to/from Open XML.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.#cctor">
+            <summary>
+            Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.Int32Converter"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value)">
+            <summary>
+            Converts an OpenXml Int32Value to Twips.
+            </summary>
+            <param name="Int32Value">The Int32Value to convert.</param>
+            <returns>The Twips value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertToInt32Value(DocumentModel.Twips)">
+            <summary>
+            Creates an OpenXml Int32Value from an Twips value.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+            <returns>A new Int32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromInt64Value(DocumentFormat.OpenXml.Int64Value)">
+            <summary>
+            Converts an OpenXml Int64Value to Twips.
+            </summary>
+            <param name="Int64Value">The Int64Value to convert.</param>
+            <returns>The Twips value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertToInt64Value(DocumentModel.Twips)">
+            <summary>
+            Creates an OpenXml Int64Value from an Twips value.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+            <returns>A new Int64Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromIntegerValue(DocumentFormat.OpenXml.IntegerValue)">
+            <summary>
+            Converts an OpenXml IntegerValue to Twips.
+            </summary>
+            <param name="IntegerValue">The IntegerValue to convert.</param>
+            <returns>The Twips value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertToIntegerValue(DocumentModel.Twips)">
+            <summary>
+            Creates an OpenXml IntegerValue from an Twips value.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+            <returns>A new IntegerValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
+            <summary>
+            Converts an OpenXml StringValue to Twips.
+            </summary>
+            <param name="StringValue">The StringValue to convert.</param>
+            <returns>The Twips value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertToStringValue(DocumentModel.Twips,System.Type)">
+            <summary>
+            Creates an OpenXml StringValue from an Twips value.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+            <returns>A new StringValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts the specified string representation of a number to its 32-bit signed integer equivalent.
+            </summary>
+            <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+            <returns>A 32-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
+            not a valid integer.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertToString(DocumentModel.Twips)">
+            <summary>
+            Converts a nullable 32-bit integer value to its string representation.
+            </summary>
+            <param name="value">The nullable 32-bit integer value to convert. If null, the method returns null.</param>
+            <returns>A string representation of the specified value, or null if the value is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafTextElement to Twips.
+            </summary>
+            <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+            <returns>The Twips value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertToOpenXmlLeafTextElement(DocumentModel.Twips,System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafTextElement from an Twips value.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafElement to Twips.
+            </summary>
+            <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+            <returns>The Twips value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertToOpenXmlLeafElement(DocumentModel.Twips,System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafElement from an Twips value.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertTo(DocumentModel.Twips,System.Type)">
+            <summary>
+            Converts an Twips value to the specified target type using standard type conversion.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+            <param name="targetType">The target type to convert to.</param>
+            <returns>The converted value, or null if the input is null.</returns>
+            <exception cref="T:System.NotSupportedException">Raised when the target type is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFrom(System.Object)">
+            <summary>
+            Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
+            </summary>
+            <param name="value">The value to convert to an <see cref="T:DocumentModel.Twips"/>. Can be <see langword="null"/>.</param>
+            <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
+            is <see langword="null"/>.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.Twips"/> is not supported.</exception>
+        </member>
         <member name="T:DocumentModel.OpenXml.UInt16Converter">
             <summary>
             Provides conversion methods for UInt16 value to/from Open XML.
@@ -6191,6 +6334,95 @@
             <param name="element">The OpenXml OnOffValue element to convert.</param>
             <returns>The boolean value, or null if the element is null.</returns>
         </member>
+        <member name="T:DocumentModel.OpenXml.OpenXmlCompositeElementUtils">
+            <summary>
+            This static class contains extension operations to be performed on a OpenXmlCompositeElement object.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlCompositeElementUtils.GetTwipsVal``1(DocumentFormat.OpenXml.OpenXmlCompositeElement)">
+            <summary>
+            Retrieves the Twips value from the specified OpenXmlCompositeElement if an element of the given type is present
+            and contains a valid Twips value.
+            </summary>
+            <typeparam name="ElementType">The type of OpenXmlLeafElement to search for within the composite element.</typeparam>
+            <param name="openXmlElement">The OpenXmlCompositeElement from which to extract the Twips value. This parameter can be null.</param>
+            <returns>A Twips object representing the extracted value if a valid Twips value is found; otherwise, null.</returns>
+            <exception cref="T:System.IO.InvalidDataException">Thrown if the found element is not of a supported type for Twips conversion.</exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlCompositeElementUtils.SetTwipsVal``1(DocumentFormat.OpenXml.OpenXmlCompositeElement,DocumentModel.Twips)">
+            <summary>
+            Sets the specified twips measurement value on a child element of the given OpenXmlCompositeElement, creating the
+            child element if it does not already exist. Removes the child element if the value is null.
+            </summary>
+            <remarks>This method is typically used to set or clear measurement values, such as margins or spacing, in
+            Open XML WordprocessingML or MathML documents. The method determines the appropriate value assignment based on the
+            type of the child element. If the child element does not exist and a non-null value is provided, it is created and
+            appended to the composite element.</remarks>
+            <typeparam name="ElementType">The type of OpenXmlLeafElement to create or modify. Must be a type that supports assignment of a twips value.</typeparam>
+            <param name="openXmlElement">The OpenXmlCompositeElement to which the twips value will be applied. This element must be capable of containing
+            the specified leaf element type.</param>
+            <param name="value">The twips value to set. If null, the existing child element of the specified type will be removed.</param>
+            <exception cref="T:System.IO.InvalidDataException">Thrown if the specified ElementType does not support conversion from the twips value.</exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlCompositeElementUtils.GetObject``2(DocumentFormat.OpenXml.OpenXmlCompositeElement)">
+            <summary>
+            Retrieves an instance of the specified object type that is constructed from the first child element of the given
+            OpenXmlCompositeElement, if such a child exists.
+            </summary>
+            <remarks>ObjectType must define a public constructor that takes a single OpenXmlElement parameter. If
+            openXmlElement does not contain a child of type ElementType, or if openXmlElement is null, the method returns
+            null.</remarks>
+            <typeparam name="ObjectType">The type of the object to create. Must be a reference type with a constructor that accepts an OpenXmlElement as a
+            parameter.</typeparam>
+            <typeparam name="ElementType">The type of OpenXmlElement to search for as a child of the provided OpenXmlCompositeElement.</typeparam>
+            <param name="openXmlElement">The OpenXmlCompositeElement from which to retrieve the child element. Can be null.</param>
+            <returns>An instance of ObjectType created from the first child element of type ElementType, or null if no such child
+            exists or if openXmlElement is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlCompositeElementUtils.AddChildElement(DocumentFormat.OpenXml.OpenXmlCompositeElement,DocumentFormat.OpenXml.OpenXmlElement)">
+            <summary>
+            Adds the specified child element to the given OpenXmlCompositeElement, ensuring that the child is detached from
+            any existing parent before being appended.
+            </summary>
+            <remarks>If the child element is already part of another parent, it will be removed from that parent
+            before being added to the specified composite element. This method modifies the document structure by reparenting
+            the child element as needed.</remarks>
+            <param name="openXmlElement">The OpenXmlCompositeElement to which the child element will be added. Cannot be null.</param>
+            <param name="childElement">The OpenXmlElement to add as a child. If this element already has a parent, it will be removed from that parent
+            before being appended. Cannot be null.</param>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlCompositeElementUtils.ElementsOfType(DocumentFormat.OpenXml.OpenXmlCompositeElement,System.Type)">
+            <summary>
+            Retrieves the child elements of the specified type from the given OpenXmlCompositeElement.
+            </summary>
+            <remarks>Use this method to query for specific types of child elements within an OpenXmlCompositeElement.
+            This enables type-safe access to elements and simplifies element filtering in Open XML document
+            processing.</remarks>
+            <param name="openXmlElement">The OpenXmlCompositeElement instance from which to retrieve child elements. Cannot be null.</param>
+            <param name="childElementType">The Type used to filter child elements. Only elements matching this type will be included in the result. Cannot be
+            null.</param>
+            <returns>An IEnumerable of DX.OpenXmlElement containing the child elements that match the specified type. The collection
+            will be empty if no matching elements are found.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlCompositeElementUtils.ElementOfType(DocumentFormat.OpenXml.OpenXmlCompositeElement,System.Type)">
+            <summary>
+            Retrieves the first child element of the specified type from the given composite OpenXml element.
+            </summary>
+            <remarks>This method searches the immediate children of the provided composite element and returns the
+            first element that matches the specified type. If the element has no children or none match the specified type,
+            null is returned.</remarks>
+            <param name="openXmlElement">The composite OpenXml element from which to retrieve the child element. Cannot be null.</param>
+            <param name="childElementType">The type of the child element to retrieve. Must be a valid OpenXml element type.</param>
+            <returns>The first child element of the specified type, or null if no such child element exists.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlCompositeElementUtils.MatchType(DocumentFormat.OpenXml.OpenXmlElement,System.Type)">
+            <summary>
+            Determines whether the specified OpenXmlElement is an instance of the given type or represents an unknown element.
+            </summary>
+            <param name="element">The OpenXmlElement to evaluate against the specified type.</param>
+            <param name="type">The Type to check for compatibility with the element.</param>
+            <returns>true if the element is an instance of the specified type or is an unknown element; otherwise, false.</returns>
+        </member>
         <member name="T:DocumentModel.OpenXml.OpenXmlLeafElementUtils">
             <summary>
             This static class contains extension operations to be performed on a OpenXmlLeafElement object.
@@ -6594,6 +6826,18 @@
             Sets the collection that contains this item.
             </summary>
             <param name="collection"></param>
+        </member>
+        <member name="T:DocumentModel.IEmptyCheckable">
+            <summary>
+            Interface for types that can be checked for emptiness, allowing clients to determine i
+            f the object is considered empty based on its internal state or content.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.IEmptyCheckable.IsEmpty">
+            <summary>
+            Determines whether the current object is considered empty.
+            </summary>
+            <returns><c>true</c> if the object is empty; otherwise, <c>false</c>.</returns>
         </member>
         <member name="T:DocumentModel.ILoadable">
             <summary>

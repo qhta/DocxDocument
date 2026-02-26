@@ -5,7 +5,7 @@ namespace DocumentModel;
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
 public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem,
-  IModifiable, INotificationSource, ILoadable, IPropertiesProvider
+  IModifiable, INotificationSource, ILoadable, IEmptyCheckable, IPropertiesProvider
 {
   static ModelElement()
   {
@@ -183,6 +183,9 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// Flag to determine if notification is enabled when the object raise PropertyChanged event.
   /// It should be set to true when the object is created.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public bool IsNotificationEnabled => _IsNotificationEnabled 
                                        ?? Parent is INotificationSource parentSource && parentSource.IsNotificationEnabled;
 
@@ -391,6 +394,9 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <summary>
   /// Gets a value indicating whether the object has been modified since it was last saved or loaded.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public bool IsModified => _IsModified;
 
   private bool _IsModified;
@@ -433,11 +439,13 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       NotifyPropertyChanged(nameof(IsModified));
     }
   }
-
-
+  
   /// <summary>
   /// Gets a value indicating whether the object is currently loaded.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public bool IsLoaded => _IsLoaded;
 
   private bool _IsLoaded;
@@ -451,4 +459,42 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     _IsLoaded = isLoaded;
   }
 
+  /// <summary>
+  /// Checks if all public properties of the current model element are null or empty (for strings and collections).
+  /// </summary>
+  /// <returns>True if all public properties are null or empty; otherwise, false.</returns>
+  public virtual bool IsEmpty()
+  {
+    foreach (var prop in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
+    {
+      if (prop.GetIndexParameters().Length == 0)
+      {
+        var value = prop.GetValue(this);
+        if (value != null)
+        {
+          if (value is string strValue)
+          {
+            if (!string.IsNullOrEmpty(strValue))
+              return false;
+          }
+          else  if (value is IEmptyCheckable emptyCheckValue)
+          {
+            if (!emptyCheckValue.IsEmpty())
+              return false;
+          }
+          else if (value is IEnumerable enumerableValue)
+          {
+            foreach (var item in enumerableValue)
+            {
+              if (item != null)
+                return false;
+            }
+          }
+          else
+            return false;
+        }
+      }
+    }
+    return true;
+  }
 }

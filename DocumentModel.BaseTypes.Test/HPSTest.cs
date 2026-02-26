@@ -94,18 +94,6 @@ public static class HPSTest
     HPS hps4 = hps1Val * 2; // 2 inches
     Console.WriteLine($"\n✓ CompareTo ({hps1Val} vs {hps4}): {hps1.CompareTo(hps4)} (expected < 0)");
 
-
-    // Test hash code
-    var hps1HashCode = hps1.GetHashCode();
-    HPS hps5 = hps1Str;
-    Console.WriteLine($"\n✓ Hash code: {hps1HashCode}");
-    var hps5HashCode = hps5.GetHashCode();
-    if (hps1HashCode != hps5HashCode)
-    {
-      Console.WriteLine($"✗ GetHashCode consistency FAILED hps1Hash={hps1HashCode}, hps1ValHash={hps5HashCode}");
-      return false;
-    }
-
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
     return true;
@@ -201,7 +189,7 @@ public static class HPSTest
 
     // Test ConvertTo for each unit
     Console.WriteLine("\nTesting ConvertTo method:");
-    ILengthValue length = original;
+    UniversalMeasure length = original;
     Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches)}");
     Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters)}");
     Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters)}");

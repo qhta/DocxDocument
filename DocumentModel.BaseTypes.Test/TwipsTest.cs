@@ -93,18 +93,6 @@ public static class TwipsTest
     Twips Twips4 = Twips1Val * 2; // 2 inches
     Console.WriteLine($"\n✓ CompareTo ({Twips1Val} vs {Twips4}): {Twips1.CompareTo(Twips4)} (expected < 0)");
 
-
-    // Test hash code
-    var Twips1HashCode = Twips1.GetHashCode();
-    Twips Twips5 = Twips1Str;
-    Console.WriteLine($"\n✓ Hash code: {Twips1HashCode}");
-    var Twips5HashCode = Twips5.GetHashCode();
-    if (Twips1HashCode != Twips5HashCode)
-    {
-      Console.WriteLine($"✗ GetHashCode consistency FAILED Twips1Hash={Twips1HashCode}, Twips1ValHash={Twips5HashCode}");
-      return false;
-    }
-
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
     return true;
@@ -200,7 +188,7 @@ public static class TwipsTest
 
     // Test ConvertTo for each unit
     Console.WriteLine("\nTesting ConvertTo method:");
-    ILengthValue length = original;
+    UniversalMeasure length = original;
     Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches)}");
     Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters)}");
     Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters)}");

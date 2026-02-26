@@ -7,7 +7,8 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
 public abstract class ElementCollection<ItemType> : ModelElement,
-  IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, INotificationSource
+  IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, 
+  INotificationSource, IEmptyCheckable
 
 {
   private readonly ObservableCollection<ItemType> _items = new();
@@ -382,8 +383,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
 
   #endregion
 
-  #region INotificationSource
-
   /// <summary>
   /// Sets the IsNotification flag to be used by the instance.
   /// Flag is set in this instance and child items.
@@ -399,5 +398,25 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     }
   }
 
-  #endregion
+  /// <summary>
+  /// Checks if the collection is empty.
+  /// A collection is considered empty if all its properties are null or empty
+  /// (as determined by the base implementation of IsEmpty())
+  /// and it contains no items or if all items in the collection are themselves empty
+  /// (i.e., they implement IEmptyCheckable and return true for IsEmpty()).
+  /// </summary>
+  /// <returns></returns>
+  public override bool IsEmpty()
+  {
+    if (!base.IsEmpty()) return false;
+    foreach (var item in this)
+    {
+      if (item is IEmptyCheckable emptyCheckable && !emptyCheckable.IsEmpty())
+        return false;
+    }
+    return true;
+  }
+
+
+
 }

@@ -126,7 +126,7 @@ namespace DocumentModel.InOpenXml.Test
       return CreateSampleRunProperties(isUpdated);
  }
 
-    static DefaultRunProperties CreateSampleRunProperties(bool isUpdated = false)
+    internal static DefaultRunProperties CreateSampleRunProperties(bool isUpdated = false)
     {
       return new DefaultRunProperties
       {
@@ -134,7 +134,8 @@ namespace DocumentModel.InOpenXml.Test
         BoldCS = true,
         Italic = true,
         ItalicCS = false,
-        FontSize = isUpdated ? new FontSizes(28, 24) : new FontSizes(24, 20),
+        FontSize = isUpdated ? 28 : 24,
+        FontSizeCS = isUpdated ? new HPS("12 pt") : "10 pt",
         Caps = isUpdated ? false : true,
         SmallCaps = true,
         Strike = true,

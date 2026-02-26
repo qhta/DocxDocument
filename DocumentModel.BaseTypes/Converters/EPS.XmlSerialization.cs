@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Provides XML serialization support for the <see cref="EPS"/> structure.
 /// </summary>
-public partial struct EPS : IXmlSerializable
+public partial class EPS : IXmlSerializable
 {
 
 
@@ -48,8 +48,8 @@ public partial struct EPS : IXmlSerializable
       {
         EPS parsedValue = new EPS(eighthPointsString);
 
-        // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue.value;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in unit) = parsedValue.Unit;
       }
 
       reader.Read(); // Move past text
@@ -70,7 +70,7 @@ public partial struct EPS : IXmlSerializable
   /// </remarks>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
-    writer.WriteString(value.ToString(CultureInfo.InvariantCulture));
+    writer.WriteString(ToString());
   }
 
 }

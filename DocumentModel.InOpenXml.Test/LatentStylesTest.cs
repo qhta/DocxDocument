@@ -4,6 +4,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Text.Json;
+
 using DocumentModel;
 using DocumentModel.Wordprocessing;
 
@@ -162,7 +163,7 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("✓ Store sample latent styles test passed\n");
       return true;
     }
-    
+
     /// <summary>
     /// Tests updating the Styles of a document and outputs the result to the console.
     /// </summary>
@@ -252,44 +253,59 @@ namespace DocumentModel.InOpenXml.Test
         return true;
       }
     }
-    
+
     /// <summary>
     /// Creates a sample Styles object with various property types.
     /// </summary>
     /// <returns>A populated Styles object.</returns>
     static Styles CreateSampleStyles()
     {
-      var Styles = new Styles();
-      Styles.LatentStyles.Add(new LatentStyleExceptionInfo()
+      var Styles = new Styles
+      {
+        LatentStyles = CreateSampleLatentStyles(),
+      };
+      return Styles;
+    }
+
+    /// <summary>
+    /// Creates a collection of sample latent styles for use in document formatting.
+    /// </summary>
+    /// <remarks>This method initializes several latent styles with specific properties, such as primary
+    /// status and UI priority, to facilitate consistent document styling.</remarks>
+    /// <returns>A LatentStyles object containing predefined latent styles, including primary styles and annotations.</returns>
+    internal static LatentStyles CreateSampleLatentStyles()
+    {
+      var latentStyles = new LatentStyles();
+      latentStyles.Add(new LatentStyleExceptionInfo()
       {
         Name = "Normal",
         PrimaryStyle = true
       });
-      Styles.LatentStyles.Add(new LatentStyleExceptionInfo()
+      latentStyles.Add(new LatentStyleExceptionInfo()
       {
         Name = "Heading 1",
         PrimaryStyle = true
       });
-      Styles.LatentStyles.Add(new LatentStyleExceptionInfo()
+      latentStyles.Add(new LatentStyleExceptionInfo()
       {
         Name = "Heading 6",
         SemiHidden = true,
         UnhideWhenUsed = true,
         PrimaryStyle = true
       });
-      Styles.LatentStyles.Add(new LatentStyleExceptionInfo()
+      latentStyles.Add(new LatentStyleExceptionInfo()
       {
         Name = "annotation text",
         UiPriority = 99,
       });
-      Styles.LatentStyles.Add(new LatentStyleExceptionInfo()
+      latentStyles.Add(new LatentStyleExceptionInfo()
       {
         Name = "Book title",
         UiPriority = 33,
         PrimaryStyle = true
       });
 
-      return Styles;
+      return latentStyles;
     }
 
     /// <summary>

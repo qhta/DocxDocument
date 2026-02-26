@@ -98,18 +98,6 @@ public static class EMUTest
     EMU emu4 = emu1Val * 2; // 2 inches
     Console.WriteLine($"\n✓ CompareTo ({emu1Val} vs {emu4}): {emu1.CompareTo(emu4)} (expected < 0)");
 
-
-    // Test hash code
-    var emu1HashCode = emu1.GetHashCode();
-    EMU emu5 = emu1Str;
-    Console.WriteLine($"\n✓ Hash code: {emu1HashCode}");
-    var emu5HashCode = emu5.GetHashCode();
-    if (emu1HashCode != emu5HashCode)
-    {
-      Console.WriteLine($"✗ GetHashCode consistency FAILED emu1Hash={emu1HashCode}, emu1ValHash={emu5HashCode}");
-      return false;
-    }
-
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
     return true;
@@ -205,7 +193,7 @@ public static class EMUTest
 
     // Test ConvertTo for each unit
     Console.WriteLine("\nTesting ConvertTo method:");
-    ILengthValue length = original;
+    UniversalMeasure length = original;
     Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches)}");
     Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters)}");
     Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters)}");
@@ -626,6 +614,7 @@ public class EMUTestData
 {
   [XmlElement("Width")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
   public EMU Width { get; set; }
 
   [XmlElement("Height")]

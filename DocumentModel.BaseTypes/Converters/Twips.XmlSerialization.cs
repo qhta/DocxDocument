@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides XML serialization support for the <see cref="Twips"/> structure.
 /// </summary>
-public partial struct Twips : IXmlSerializable
+public partial class Twips : IXmlSerializable
 {
 
 
@@ -48,8 +48,8 @@ public partial struct Twips : IXmlSerializable
       {
         Twips parsedValue = new Twips(twipsString);
 
-        // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue.value;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in unit) = parsedValue.Unit;
       }
 
       reader.Read(); // Move past text
@@ -70,6 +70,6 @@ public partial struct Twips : IXmlSerializable
   /// </remarks>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
-    writer.WriteString(value.ToString(CultureInfo.InvariantCulture));
+    writer.WriteString(ToString());
   }
 }
