@@ -12,6 +12,8 @@ public static class TwipsConverter
     new(typeof(DX.Int32Value), nameof(ConvertFromInt32Value), nameof(ConvertToInt32Value)),
     new(typeof(DX.Int64Value), nameof(ConvertFromInt64Value), nameof(ConvertToInt64Value)),
     new(typeof(DX.IntegerValue), nameof(ConvertFromIntegerValue), nameof(ConvertToIntegerValue)),
+    new(typeof(DX.UInt32Value), nameof(ConvertFromUInt32Value), nameof(ConvertToUInt32Value)),
+    new(typeof(DX.UInt64Value), nameof(ConvertFromUInt64Value), nameof(ConvertToUInt64Value)),
     new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
     new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
     new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
@@ -69,9 +71,6 @@ public static class TwipsConverter
   {
     if (Int64Value == null) return null;
 
-    //if (Int64Value.Value < Twips.MinValue || Int64Value.Value > Twips.MaxValue)
-    //  throw new OverflowException($"Value {Int64Value.Value} is out of range for Twips");
-
     return (Twips)Int64Value.Value;
   }
 
@@ -84,7 +83,7 @@ public static class TwipsConverter
   {
     if (value is null) return null;
 
-    if (value < Int64.MinValue || value > Int64.MaxValue)
+    if ((double)value < Int64.MinValue || (double)value > Int64.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Twips");
 
     return new DX.Int64Value { Value = (Int64)value };
@@ -114,10 +113,71 @@ public static class TwipsConverter
   private static DX.IntegerValue? ConvertToIntegerValue(Twips? value)
   {
     if (value is null) return null;
-    if (value < Int64.MinValue || value > Int64.MaxValue)
+    if ((double)value < Int64.MinValue || (double)value > Int64.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Twips");
 
     return new DX.IntegerValue { Value = (Int64)value };
+  }
+
+  #endregion
+
+  #region UInt32Value conversion.
+
+  /// <summary>
+  /// Converts an OpenXml UInt32Value to Twips.
+  /// </summary>
+  /// <param name="UInt32Value">The UInt32Value to convert.</param>
+  /// <returns>The Twips value, or null if the element has no content.</returns>
+  private static Twips? ConvertFromUInt32Value(DX.UInt32Value? UInt32Value)
+  {
+    if (UInt32Value == null) return null;
+
+    return UInt32Value.Value;
+  }
+
+  /// <summary>
+  /// Creates an OpenXml UInt32Value from an Twips value.
+  /// </summary>
+  /// <param name="value">The Twips value to convert.</param>
+  /// <returns>A new UInt32Value, or null if the input is null.</returns>
+  private static DX.UInt32Value? ConvertToUInt32Value(Twips? value)
+  {
+    if (value is null) return null;
+    if ((double)value < (double)UInt32.MinValue || (double)value > (double)UInt32.MaxValue)
+      throw new OverflowException($"Value {value} is out of range for UInt32");
+
+    return new DX.UInt32Value { Value = (UInt32)value };
+  }
+
+  #endregion
+
+  #region UInt64Value conversion.
+
+  /// <summary>
+  /// Converts an OpenXml UInt64Value to Twips.
+  /// </summary>
+  /// <param name="UInt64Value">The UInt64Value to convert.</param>
+  /// <returns>The Twips value, or null if the element has no content.</returns>
+  private static Twips? ConvertFromUInt64Value(DX.UInt64Value? UInt64Value)
+  {
+    if (UInt64Value == null) return null;
+
+    return (Twips)UInt64Value.Value;
+  }
+
+  /// <summary>
+  /// Creates an OpenXml UInt64Value from an Twips value.
+  /// </summary>
+  /// <param name="value">The Twips value to convert.</param>
+  /// <returns>A new UInt64Value, or null if the input is null.</returns>
+  private static DX.UInt64Value? ConvertToUInt64Value(Twips? value)
+  {
+    if (value is null) return null;
+
+    if ((double)value < UInt64.MinValue || (double)value > UInt64.MaxValue)
+      throw new OverflowException($"Value {value} is out of range for Twips");
+
+    return new DX.UInt64Value { Value = (UInt64)value };
   }
 
   #endregion

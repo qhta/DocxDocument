@@ -83,7 +83,6 @@ public class PTSJsonConverter : JsonConverter<PTS>
   /// </remarks>
   public override void Write(Utf8JsonWriter writer, PTS value, JsonSerializerOptions options)
   {
-    // Write as numeric string without unit suffix
-    writer.WriteStringValue(((Int64)value).ToString(CultureInfo.InvariantCulture));
+    writer.WriteStringValue(value.ToString(CultureInfo.InvariantCulture));
   }
 }

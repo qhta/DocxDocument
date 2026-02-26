@@ -15,13 +15,12 @@ public class LegacyNumbering : ModelElement<DXW.LegacyNumbering>
  /// <summary>
  ///   Legacy Spacing
  /// </summary>
- public Twips Space { get => _Space; set => UpdateField(ref _Space, value, nameof(Space)); }
+ public Twips? Space { get => _Space; set => UpdateField(ref _Space, value, nameof(Space)); }
 
- private Twips _Space;
+ private Twips? _Space;
  /// <summary>
  ///   Legacy Indent
  /// </summary>
- public Twips Indent { get => _Indent; set => UpdateField(ref _Indent, value, nameof(Indent)); }
-
- private Twips _Indent;
+ public Twips? Indent { get => _Indent; set => UpdateField(ref _Indent, value, nameof(Indent)); }
+ private Twips? _Indent;
 }
