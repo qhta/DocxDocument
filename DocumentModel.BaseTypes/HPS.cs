@@ -7,14 +7,14 @@
 /// </summary>
 /// <remarks>
 /// Half-points provide finer precision than points for typographic measurements in desktop publishing and word processing.
-/// This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
+/// This supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// Note: 1 half-point = 0.5 points = 1/144 inch.
 /// </remarks>
 [JsonConverter(typeof(HPSJsonConverter))]
 public partial class HPS: UniversalMeasure
 {
   /// <summary>
-  /// Defines the number of twips in one inch.
+  /// Defines the number of HPS in one inch.
   /// </summary>
   protected override double UnitsPerInch => 144;
 
@@ -28,7 +28,7 @@ public partial class HPS: UniversalMeasure
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="HPS"/> struct from a string value.
+  /// Initializes a new instance of the <see cref="HPS"/> from a string value.
   /// </summary>
   /// <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
@@ -48,17 +48,24 @@ public partial class HPS: UniversalMeasure
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="HPS"/> struct from a 64-bit signed integer value.
+  /// Initializes a new instance of the <see cref="HPS"/> from an Int64 value.
   /// </summary>
-  /// <param name="value">The value in half-points.</param>
+  /// <param name="value">The value in HPS.</param>
   public HPS(Int64 value)
   {
     Init(value);
   }
-
+  /// <summary>
+  /// Initializes a new instance of the <see cref="HPS"/> from a UInt64 value.
+  /// </summary>
+  /// <param name="value">The value in HPS.</param>
+  public HPS(UInt64 value)
+  {
+    Init(value);
+  }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="HPS"/> struct from a 64-bit floating-point value.
+  /// Initializes a new instance of the <see cref="HPS"/> from a 64-bit floating-point value.
   /// </summary>
   /// <param name="value">The value in half-points.</param>
   public HPS(Double value)

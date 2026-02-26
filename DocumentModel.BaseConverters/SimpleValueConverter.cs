@@ -44,6 +44,10 @@ public static class SimpleValueConverter
     ConversionToMap.Append(BytePercentConverter.ConversionToMap);
     ConversionToMap.Append(PercentConverter.ConversionToMap);
     ConversionToMap.Append(TwipsConverter.ConversionToMap);
+    ConversionToMap.Append(EMUConverter.ConversionToMap);
+    ConversionToMap.Append(EPSConverter.ConversionToMap);
+    ConversionToMap.Append(HPSConverter.ConversionToMap);
+    ConversionToMap.Append(PTSConverter.ConversionToMap);
 
     ConversionFromMap.Append(BooleanConverter.ConversionFromMap);
     ConversionFromMap.Append(TSBooleanConverter.ConversionFromMap);
@@ -66,6 +70,10 @@ public static class SimpleValueConverter
     ConversionFromMap.Append(EnumConverter.ConversionFromMap);
     ConversionFromMap.Append(PercentConverter.ConversionFromMap);
     ConversionFromMap.Append(TwipsConverter.ConversionFromMap);
+    ConversionFromMap.Append(EMUConverter.ConversionFromMap);
+    ConversionFromMap.Append(EPSConverter.ConversionFromMap);
+    ConversionFromMap.Append(HPSConverter.ConversionFromMap);
+    ConversionFromMap.Append(PTSConverter.ConversionFromMap);
 
   }
 

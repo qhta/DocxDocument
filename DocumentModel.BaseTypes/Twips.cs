@@ -7,7 +7,7 @@
 /// </summary>
 /// <remarks>
 /// Twips provide a precise, integer-based unit for document measurements.
-/// This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
+/// This supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// </remarks>
 [JsonConverter(typeof(TwipsJsonConverter))]
 public partial class Twips: UniversalMeasure
@@ -27,7 +27,7 @@ public partial class Twips: UniversalMeasure
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="Twips"/> struct from a string value.
+  /// Initializes a new instance of the <see cref="Twips"/> from a string value.
   /// </summary>
   /// <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
@@ -45,19 +45,26 @@ public partial class Twips: UniversalMeasure
   {
     Init(str);
   }
-
-
+  
   /// <summary>
-  /// Initializes a new instance of the <see cref="Twips"/> struct from a 64-bit integer value.
+  /// Initializes a new instance of the <see cref="Twips"/> from an Int64 value.
   /// </summary>
   /// <param name="value">The value in twips.</param>
   public Twips(Int64 value)
   {
     Init(value);
   }
-  
   /// <summary>
-  /// Initializes a new instance of the <see cref="Twips"/> struct from a Decimal value.
+  /// Initializes a new instance of the <see cref="Twips"/> from a UInt64 value.
+  /// </summary>
+  /// <param name="value">The value in twips.</param>
+  public Twips(UInt64 value)
+  {
+    Init(value);
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Twips"/> from a Decimal value.
   /// </summary>
   /// <param name="value">The value in twips.</param>
   public Twips(Decimal value)
@@ -66,7 +73,7 @@ public partial class Twips: UniversalMeasure
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="Twips"/> struct from a Double value.
+  /// Initializes a new instance of the <see cref="Twips"/> from a Double value.
   /// </summary>
   /// <param name="value">The value in twips.</param>
   public Twips(Double value)

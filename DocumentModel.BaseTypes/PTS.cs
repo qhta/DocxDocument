@@ -1,226 +1,116 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a measurement in points (typographic unit).
-/// A point is defined as 1/72 of an inch, commonly used for font sizes and typography.
-/// Supports conversions to/from millimeters, centimeters, and inches.
+/// Represents a measurement in typographic points.
+/// A point is defined as 1/72 of an inch, commonly used for typography adjustments.
+/// Supports conversions to/from millimeters, centimeters, inches, and points.
 /// </summary>
 /// <remarks>
-/// Points provide a standard unit for typographic measurements in desktop publishing and word processing.
-/// This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
+/// Points provide finer precision than inches for typographic measurements in desktop publishing and word processing.
+/// This supports implicit conversions to/from various integer types and string representations with unit suffixes.
+/// Note: 1 point = 1/72 inch.
 /// </remarks>
 [JsonConverter(typeof(PTSJsonConverter))]
-public readonly partial struct PTS : IComparable<PTS>, IEquatable<PTS>, IEquatable<object>
+public partial class PTS : UniversalMeasure
 {
-
   /// <summary>
-  /// The internal value storing the measurement in points.
+  /// Defines the number of points in one inch.
   /// </summary>
-  private readonly Double value;
-
-  /// <summary>
-  /// Gets the measurement value in points.
-  /// </summary>
-  public Double DoubleValue => value;
-
-  #region Unit Conversion Constants
-  /// <summary>
-  /// How many points are in one millimeter.
-  /// There is a small difference between real and nominal factors.
-  /// </summary>
-  /// <remarks>
-  /// The value is approximately 2.83 points per millimeter, calculated as 72 / 25.4.
-  /// </remarks>
-  public const double PTSinMM = 72 / 25.4; //2.8346456692913385826771653543307
-
-  /// <summary>
-  /// How many points are in one centimeter.
-  /// </summary>
-  /// <remarks>
-  /// The value is approximately 28.35 points per centimeter, calculated as PTSinMM * 10.0.
-  /// </remarks>
-  public const double PTSinCM = PTSinMM * 10.0;
-
-  /// <summary>
-  /// How many points are in one inch.
-  /// </summary>
-  /// <remarks>
-  /// By definition, there are exactly 72 points in one inch.
-  /// </remarks>
-  public const double PTSinInch = 72;
-
-  /// <summary>
-  /// How many points are in one twips.
-  /// </summary>
-  /// <remarks>
-  /// By definition, there are exactly 20 twips in one point.
-  /// </remarks>
-  public const double PTSinTwips = 1.0 / 20.0;
-
-  #endregion
+  protected override double UnitsPerInch => 72;
 
   #region Constructors
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="PTS"/> struct from a string value.
+  /// Default constructor. Creates an empty instance.
+  /// </summary>
+  public PTS()
+  {
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="PTS"/> from a string value.
   /// </summary>
   /// <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
   /// <para>Supported formats:</para>
   /// <list type="bullet">
-  /// <item><description>"100" - interpreted as points</description></item>
+  /// <item><description>"100" - interpreted as half-points</description></item>
   /// <item><description>"10mm" - millimeters</description></item>
   /// <item><description>"1cm" - centimeters</description></item>
-  /// <item><description>"12pt" - points</description></item>
-  /// <item><description>"1in" - inches</description></item>
+  /// <item><description>"12pt" - points (will be converted to 24 half-points)</description></item>
+  /// <item><description>"1in" - inches (will be converted to 144 half-points)</description></item>
   /// </list>
   /// <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
   /// </remarks>
   public PTS(string str)
   {
-    str = str.Replace(",", ".").Trim();
-    if (str.EndsWith("mm"))
-    {
-      str = str.Substring(0, str.Length - 2).Trim();
-      value = Double.Parse(str, CultureInfo.InvariantCulture) * PTSinMM;
-      return;
-    }
-    if (str.EndsWith("cm"))
-    {
-      str = str.Substring(0, str.Length - 2).Trim();
-      value = Double.Parse(str, CultureInfo.InvariantCulture) * PTSinCM;
-      return;
-    }
-    if (str.EndsWith("in"))
-    {
-      str = str.Substring(0, str.Length - 2).Trim();
-      value = Double.Parse(str, CultureInfo.InvariantCulture) * PTSinInch;
-      return;
-    }
-    if (str.EndsWith("pt"))
-    {
-      str = str.Substring(0, str.Length - 2).Trim();
-      value = Double.Parse(str, CultureInfo.InvariantCulture);
-      return;
-    }
-    if (str.EndsWith("tw"))
-    {
-      str = str.Substring(0, str.Length - 2).Trim();
-      value = Double.Parse(str, CultureInfo.InvariantCulture) * PTSinTwips;
-      return;
-    }
-    value = Double.Parse(str, CultureInfo.InvariantCulture);
+    Init(str);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="PTS"/> struct from a 64-bit signed integer value.
+  /// Initializes a new instance of the <see cref="PTS"/> from an Int64 value.
   /// </summary>
-  /// <param name="value">The value in points.</param>
+  /// <param name="value">The value in PTS.</param>
   public PTS(Int64 value)
   {
-    this.value = value;
+    Init(value);
+  }
+  /// <summary>
+  /// Initializes a new instance of the <see cref="PTS"/> from a UInt64 value.
+  /// </summary>
+  /// <param name="value">The value in PTS.</param>
+  public PTS(UInt64 value)
+  {
+    Init(value);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="PTS"/> struct from a 64-bit signed integer value.
+  /// Initializes a new instance of the <see cref="PTS"/> from a 64-bit floating-point value.
   /// </summary>
-  /// <param name="value">The value in points.</param>
+  /// <param name="value">The value in half-points.</param>
   public PTS(Double value)
   {
-    this.value = value;
-  }
-
-  #endregion
-
-  #region Conversion Methods
-
-  /// <summary>
-  /// Converts the points value to millimeters.
-  /// </summary>
-  /// <returns>The measurement in millimeters as a double-precision floating-point number.</returns>
-  public double ToMM()
-    => value / PTSinMM;
-
-  /// <summary>
-  /// Converts the points value to centimeters.
-  /// </summary>
-  /// <returns>The measurement in centimeters as a double-precision floating-point number.</returns>
-  public double ToCM()
-    => value / PTSinCM;
-
-  /// <summary>
-  /// Converts the points value to inches.
-  /// </summary>
-  /// <returns>The measurement in inches as a double-precision floating-point number.</returns>
-  public double ToInch()
-    => value / PTSinInch;
-
-  /// <summary>
-  /// Converts the points value to points (returns the value itself as a double).
-  /// </summary>
-  /// <returns>The measurement in points as a double-precision floating-point number.</returns>
-  /// <remarks>
-  /// This method is provided for consistency with other conversion methods and returns the internal value as a double.
-  /// </remarks>
-  public double ToPT() => value;
-
-
-  /// <summary>
-  /// Converts the points value to twips.
-  /// </summary>
-  /// <returns>The measurement in twips as a double-precision floating-point number.</returns>
-  public double ToTwips()
-    => value / PTSinTwips;
-
-  /// <summary>
-  /// Converts the current length value to the specified unit of measurement.
-  /// </summary>
-  /// <param name="unit">The target unit to which the length value will be converted. Supported units include Twips, Points, Millimeters,
-  /// Centimeters, and Inches.</param>
-  /// <returns>The length value converted to the specified unit.</returns>
-  /// <exception cref="ArgumentException">Thrown if the specified unit is not supported.</exception>
-  public double ConvertTo(LengthUnit unit)
-  {
-    return unit switch
-    {
-      LengthUnit.Twips => ToTwips(),
-      LengthUnit.Points => ToPT(),
-      LengthUnit.Millimeters => ToMM(),
-      LengthUnit.Centimeters => ToCM(),
-      LengthUnit.Inches => ToInch(),
-      _ => throw new ArgumentException($"Unsupported length unit: {unit}", nameof(unit))
-    };
+    Init(value);
   }
 
   #endregion
 
   #region Static Factory Methods
+
   /// <summary>
   /// Creates an instance of an <see cref="PTS"/> that represents the specified value in twips.
   /// </summary>
-  public static PTS FromTwips(double twips) => new PTS((Int64)(twips * PTSinTwips));
+  public static PTS FromTwips(double twips) => new PTS($"{twips}tw");
 
   /// <summary>
   /// Creates an instance of an <see cref="PTS"/> that represents the specified value in points.
   /// </summary>
-  public static PTS FromPT(double points) => new PTS((Int64)(points));
+  public static PTS FromPT(double points) => new PTS($"{points}pt");
 
   /// <summary>
   /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
-  public static PTS FromMM(double millimeters) => new PTS((Int64)(millimeters * PTSinMM));
+  public static PTS FromMM(double millimeters) => new PTS($"{millimeters}mm");
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
-  public static PTS FromCM(double centimeters) => new PTS((Int64)(centimeters * PTSinCM));
+  public static PTS FromCM(double centimeters) => new PTS($"{centimeters}cm");
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static PTS FromInch(double inches) => new PTS((Int64)(inches * PTSinInch));
+  public static PTS FromInch(double inches) => new PTS($"{inches}in");
 
+  /// <summary>
+  /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
+  /// </summary>
+  /// <remarks>If the input string does not conform to a valid length measure format, an exception may be
+  /// thrown.</remarks>
+  /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+  /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
+  public static PTS Parse(string value) => new PTS(value);
 
   /// <summary>
   /// Converts a length value from the specified unit to an equivalent length measure.
@@ -243,15 +133,6 @@ public readonly partial struct PTS : IComparable<PTS>, IEquatable<PTS>, IEquatab
   #endregion
 
   #region Parsing Methods
-
-  /// <summary>
-  /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
-  /// </summary>
-  /// <remarks>If the input string does not conform to a valid length measure format, an exception may be
-  /// thrown.</remarks>
-  /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
-  /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-  public static PTS Parse(string value) => new PTS(value);
 
   /// <summary>
   /// Attempts to parse the specified string representation of a length measure and returns a value that indicates
@@ -279,102 +160,6 @@ public readonly partial struct PTS : IComparable<PTS>, IEquatable<PTS>, IEquatab
 
   #endregion
 
-  #region ToString conversions
-
-  /// <summary>
-  /// Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
-  /// </summary>
-  public override string ToString() => DoubleValue.ToString(CultureInfo.InvariantCulture);
-
-  /// <summary>
-  /// Converts the current length measure to its string representation using the specified format provider.
-  /// This allows for culture-specific formatting of the output string, such as using different decimal separators
-  /// based on the culture settings provided by the formatProvider.
-  /// If the formatProvider is null, the method should use invariant culture's formatting conventions.
-  /// </summary>
-  /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
-  /// <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
-  public string ToString(IFormatProvider? formatProvider)
-    => DoubleValue.ToString(formatProvider ?? CultureInfo.InvariantCulture);
-
-  /// <summary>
-  /// Converts the current length measure to its string representation using the specified format string and format provider.
-  /// The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
-  /// while the format provider allows for culture-specific formatting.
-  /// If the format string is null or empty, a default numeric format should be used.
-  /// If the format provider is null, invariant culture's formatting conventions should be applied.
-  /// </summary>
-  /// <param name="format">A standard or custom numeric format string. If null or empty, a default numeric format is used.</param>
-  /// <param name="formatProvider">An object that supplies culture-specific formatting information.
-  /// If null, invariant culture's formatting conventions are used.</param>
-  /// <returns>A string representation of the current length measure,
-  /// formatted according to the specified format string and format provider.</returns>
-  public string ToString(string? format, IFormatProvider? formatProvider)
-    => DoubleValue.ToString(format, formatProvider ?? CultureInfo.InvariantCulture);
-
-  /// <summary>
-  /// Converts the current instance to its string representation using the specified format string.
-  /// </summary>
-  /// <remarks>If the format string is not recognized or is invalid, a FormatException may be thrown. Supported
-  /// format strings may include both standard and custom formats, depending on the implementation.</remarks>
-  /// <param name="format">A format string that defines how the value should be represented.
-  /// If null, a default format is used.</param>
-  /// <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
-  public string ToString(string? format) => DoubleValue.ToString(format);
-
-  /// <summary>
-  /// Converts the current length measure to its string representation using the specified unit.
-  ///   The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
-  /// </summary>
-  /// <param name="unit">The unit to use for the string representation.</param>
-  /// <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
-  public string ToString(LengthUnit unit)
-    => $"{ConvertTo(unit).ToString(CultureInfo.InvariantCulture)} {LengthUnitSuffixes[(int)unit]}";
-
-  /// <summary>
-  /// Converts the current length measure to its string representation using the specified unit and format provider.
-  ///   The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
-  /// </summary>
-  /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
-  /// <param name="unit">The unit to use for the string representation.</param>
-  /// <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
-  public string ToString(IFormatProvider? formatProvider, LengthUnit unit)
-  => $"{ConvertTo(unit).ToString(formatProvider ?? CultureInfo.InvariantCulture)} {LengthUnitSuffixes[(int)unit]}";
-
-  /// <summary>
-  /// Converts the current length value to its string representation using the specified unit, format, and format
-  /// provider. 
-  /// The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
-  /// Format string should not include unit symbols, as they will be added based on the specified unit parameter.
-  /// If the format string is null or empty, a default numeric format should be used.
-  /// </summary>
-  /// <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is
-  ///   used.</param>
-  /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, the current culture is used.</param>
-  /// <param name="unit">The unit of length to use when formatting the value.</param>
-  /// <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
-  /// provider.</returns>
-  public string ToString(string? format, IFormatProvider? formatProvider, LengthUnit unit)
-      => $"{ConvertTo(unit).ToString(format, formatProvider ?? CultureInfo.InvariantCulture)} {LengthUnitSuffixes[(int)unit]}";
-
-  /// <summary>
-  /// Converts the current length value to its string representation using the specified unit and format string.
-  /// The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
-  /// </summary>
-  /// <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
-  /// <param name="unit">The unit of length to use when formatting the value.</param>
-  /// <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
-  public string ToString(string? format, LengthUnit unit)
-        => $"{ConvertTo(unit).ToString(format, CultureInfo.InvariantCulture)} {LengthUnitSuffixes[(int)unit]}";
-
-  /// <summary>
-  /// Suffixes for length units that can be used in string representations of length measures.
-  /// The order of the suffixes corresponds to the order of the LengthUnit enum values.
-  /// </summary>
-  public static string[] LengthUnitSuffixes { get; } = ["tw", "pt", "mm", "cm", "in"];
-
-  #endregion
-
   #region Implicit Conversions
 
   /// <summary>
@@ -382,24 +167,19 @@ public readonly partial struct PTS : IComparable<PTS>, IEquatable<PTS>, IEquatab
   /// </summary>
   /// <param name="value">The string to convert.</param>
   /// <returns>A <see cref="PTS"/> value parsed from the string.</returns>
-  public static implicit operator PTS(string value) { return new PTS(value); }
+  public static implicit operator PTS(string value)
+  {
+    return new PTS(value);
+  }
 
   /// <summary>
   /// Implicitly converts a <see cref="PTS"/> value to a string.
   /// </summary>
   /// <param name="value">The <see cref="PTS"/> value to convert.</param>
-  /// <returns>A string representation of the points value.</returns>
-  public static implicit operator string(PTS value) { return value.value.ToString(CultureInfo.InvariantCulture); }
-
-  /// <summary>
-  /// Implicitly converts a PTS instance to a 32-bit signed integer (Int32).
-  /// </summary>
-  /// <remarks>This conversion allows for seamless integration of PTS values in contexts where an Int32 is
-  /// expected. Ensure that the PTS value is within the range of Int32 to avoid overflow.</remarks>
-  /// <param name="value">The PTS instance to convert.</param>
-  public static implicit operator Int32(PTS value)
+  /// <returns>A string representation of the PTS value.</returns>
+  public static implicit operator string(PTS value)
   {
-    return (Int32)value.value;
+    return value.ToString();
   }
 
   /// <summary>
@@ -417,95 +197,20 @@ public readonly partial struct PTS : IComparable<PTS>, IEquatable<PTS>, IEquatab
   /// </summary>
   /// <param name="value">The 64-bit signed integer to convert.</param>
   /// <returns>A <see cref="PTS"/> value representing the integer.</returns>
-  public static implicit operator PTS(Int64 value) { return new PTS(value); }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="PTS"/> value to a 64-bit signed integer.
-  /// </summary>
-  /// <param name="value">The <see cref="PTS"/> value to convert.</param>
-  /// <returns>A 64-bit signed integer representation of the points value.</returns>
-  public static implicit operator Int64(PTS value) { return (Int64)value.value; }
-
-  /// <summary>
-  /// Implicitly converts a double-precision floating-point number to a <see cref="PTS"/> value.
-  /// </summary>
-  /// <param name="value">The double-precision floating-point number to convert.</param>
-  /// <returns>A <see cref="PTS"/> value representing the double-precision floating-point number.</returns>
-  public static implicit operator PTS(Double value) { return new PTS(value); }
-
-  #endregion
-
-  #region IComparable and IEquatable Implementations
-
-  /// <summary>
-  /// Compares this instance to a specified <see cref="PTS"/> object and returns an indication of their relative values.
-  /// </summary>
-  /// <param name="other">A <see cref="PTS"/> object to compare.</param>
-  /// <returns>
-  /// A signed number indicating the relative values of this instance and <paramref name="other"/>.
-  /// Less than zero if this instance is less than <paramref name="other"/>;
-  /// zero if this instance equals <paramref name="other"/>;
-  /// greater than zero if this instance is greater than <paramref name="other"/>.
-  /// </returns>
-  public int CompareTo(PTS other)
+  public static implicit operator PTS(Int64 value)
   {
-    return value.CompareTo(other.value);
+    return new PTS(value);
   }
 
   /// <summary>
-  /// Returns the hash code for this instance.
+  /// Implicitly converts a double-precision floating-point number to a PTS instance.
   /// </summary>
-  /// <returns>A 32-bit signed integer hash code.</returns>
-  public override int GetHashCode()
+  /// <remarks>This conversion allows for seamless integration of double values into contexts where PTS are
+  /// required, facilitating operations that involve measurements in PTS.</remarks>
+  /// <param name="value">The value to convert, representing a measurement in PTS.</param>
+  public static implicit operator PTS(Double value)
   {
-    return value.GetHashCode();
-  }
-
-  /// <summary>
-  /// Compares this instance to another <see cref="PTS"/> object for equality.
-  /// </summary>
-  /// <param name="other">An <see cref="PTS"/> object to compare.</param>
-  /// <returns><c>true</c> if the objects are equal; otherwise, <c>false</c>.</returns>
-  public bool Equals(PTS other)
-  {
-    return value == other.value;
-  }
-
-  /// <summary>
-  /// Compares this instance to a specified object and returns a value that indicates whether they are equal.
-  /// </summary>
-  /// <param name="obj">The object to compare with the current PTS instance. This parameter can be null.</param>
-  /// <returns><c>true</c> if the specified object is equal to the current PTS instance; otherwise, <c>false</c>.</returns>
-  public override bool Equals(object? obj)
-  {
-    if (obj is PTS otherPTS)
-      return Equals(otherPTS);
-    if (obj is PTS otherMeasure)
-    {
-      try
-      {
-        var thisPoints = ConvertTo(LengthUnit.Points);
-        var otherPointsConvertTo = otherMeasure.ConvertTo(LengthUnit.Points);
-        return System.Math.Abs(thisPoints - otherPointsConvertTo) < 1e-10;
-      }
-      catch
-      {
-        return false;
-      }
-    }
-    if (obj is IConvertible convertible)
-    {
-      try
-      {
-        var otherValue = convertible.ToDouble(CultureInfo.InvariantCulture);
-        return System.Math.Abs(value - otherValue) < 1e-10;
-      }
-      catch
-      {
-        return false;
-      }
-    }
-    return false;
+    return new PTS(value);
   }
 
   #endregion

@@ -1618,6 +1618,164 @@
             <returns>The extracted Double representation.</returns>
             <exception cref="T:System.NotSupportedException">Raised when the source type has no registered converter.</exception>
         </member>
+        <member name="T:DocumentModel.OpenXml.EMUConverter">
+            <summary>
+            Provides conversion methods for EMU value to/from Open XML.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.#cctor">
+            <summary>
+            Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.Int32Converter"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value)">
+            <summary>
+            Converts an OpenXml Int32Value to EMU.
+            </summary>
+            <param name="Int32Value">The Int32Value to convert.</param>
+            <returns>The EMU value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertToInt32Value(DocumentModel.EMU)">
+            <summary>
+            Creates an OpenXml Int32Value from an EMU value.
+            </summary>
+            <param name="value">The EMU value to convert.</param>
+            <returns>A new Int32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertFromInt64Value(DocumentFormat.OpenXml.Int64Value)">
+            <summary>
+            Converts an OpenXml Int64Value to EMU.
+            </summary>
+            <param name="Int64Value">The Int64Value to convert.</param>
+            <returns>The EMU value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertToInt64Value(DocumentModel.EMU)">
+            <summary>
+            Creates an OpenXml Int64Value from an EMU value.
+            </summary>
+            <param name="value">The EMU value to convert.</param>
+            <returns>A new Int64Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertFromIntegerValue(DocumentFormat.OpenXml.IntegerValue)">
+            <summary>
+            Converts an OpenXml IntegerValue to EMU.
+            </summary>
+            <param name="IntegerValue">The IntegerValue to convert.</param>
+            <returns>The EMU value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertToIntegerValue(DocumentModel.EMU)">
+            <summary>
+            Creates an OpenXml IntegerValue from an EMU value.
+            </summary>
+            <param name="value">The EMU value to convert.</param>
+            <returns>A new IntegerValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertFromUInt32Value(DocumentFormat.OpenXml.UInt32Value)">
+            <summary>
+            Converts an OpenXml UInt32Value to EMU.
+            </summary>
+            <param name="UInt32Value">The UInt32Value to convert.</param>
+            <returns>The EMU value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertToUInt32Value(DocumentModel.EMU)">
+            <summary>
+            Creates an OpenXml UInt32Value from an EMU value.
+            </summary>
+            <param name="value">The EMU value to convert.</param>
+            <returns>A new UInt32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertFromUInt64Value(DocumentFormat.OpenXml.UInt64Value)">
+            <summary>
+            Converts an OpenXml UInt64Value to EMU.
+            </summary>
+            <param name="UInt64Value">The UInt64Value to convert.</param>
+            <returns>The EMU value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertToUInt64Value(DocumentModel.EMU)">
+            <summary>
+            Creates an OpenXml UInt64Value from an EMU value.
+            </summary>
+            <param name="value">The EMU value to convert.</param>
+            <returns>A new UInt64Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
+            <summary>
+            Converts an OpenXml StringValue to EMU.
+            </summary>
+            <param name="StringValue">The StringValue to convert.</param>
+            <returns>The EMU value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertToStringValue(DocumentModel.EMU,System.Type)">
+            <summary>
+            Creates an OpenXml StringValue from an EMU value.
+            </summary>
+            <param name="value">The EMU value to convert.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+            <returns>A new StringValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts the specified string representation of a number to its 32-bit signed integer equivalent.
+            </summary>
+            <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+            <returns>A 32-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
+            not a valid integer.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertToString(DocumentModel.EMU)">
+            <summary>
+            Converts a nullable 32-bit integer value to its string representation.
+            </summary>
+            <param name="value">The nullable 32-bit integer value to convert. If null, the method returns null.</param>
+            <returns>A string representation of the specified value, or null if the value is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafTextElement to EMU.
+            </summary>
+            <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+            <returns>The EMU value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertToOpenXmlLeafTextElement(DocumentModel.EMU,System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafTextElement from an EMU value.
+            </summary>
+            <param name="value">The EMU value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafElement to EMU.
+            </summary>
+            <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+            <returns>The EMU value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertToOpenXmlLeafElement(DocumentModel.EMU,System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafElement from an EMU value.
+            </summary>
+            <param name="value">The EMU value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertTo(DocumentModel.EMU,System.Type)">
+            <summary>
+            Converts an EMU value to the specified target type using standard type conversion.
+            </summary>
+            <param name="value">The EMU value to convert.</param>
+            <param name="targetType">The target type to convert to.</param>
+            <returns>The converted value, or null if the input is null.</returns>
+            <exception cref="T:System.NotSupportedException">Raised when the target type is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertFrom(System.Object)">
+            <summary>
+            Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
+            </summary>
+            <param name="value">The value to convert to an <see cref="T:DocumentModel.EMU"/>. Can be <see langword="null"/>.</param>
+            <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
+            is <see langword="null"/>.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.EMU"/> is not supported.</exception>
+        </member>
         <member name="T:DocumentModel.OpenXml.EnumConverter">
             <summary>
             Provides conversion methods for Enum value to/from Open XML.
@@ -1954,6 +2112,164 @@
             <returns>An enumeration value of the specified model type that corresponds to the provided Open XML value, or null if the
             input value is null.</returns>
             <exception cref="T:System.InvalidOperationException">Thrown if the provided value cannot be converted to the specified model type.</exception>
+        </member>
+        <member name="T:DocumentModel.OpenXml.EPSConverter">
+            <summary>
+            Provides conversion methods for EPS value to/from Open XML.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.#cctor">
+            <summary>
+            Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.Int32Converter"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value)">
+            <summary>
+            Converts an OpenXml Int32Value to EPS.
+            </summary>
+            <param name="Int32Value">The Int32Value to convert.</param>
+            <returns>The EPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertToInt32Value(DocumentModel.EPS)">
+            <summary>
+            Creates an OpenXml Int32Value from an EPS value.
+            </summary>
+            <param name="value">The EPS value to convert.</param>
+            <returns>A new Int32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertFromInt64Value(DocumentFormat.OpenXml.Int64Value)">
+            <summary>
+            Converts an OpenXml Int64Value to EPS.
+            </summary>
+            <param name="Int64Value">The Int64Value to convert.</param>
+            <returns>The EPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertToInt64Value(DocumentModel.EPS)">
+            <summary>
+            Creates an OpenXml Int64Value from an EPS value.
+            </summary>
+            <param name="value">The EPS value to convert.</param>
+            <returns>A new Int64Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertFromIntegerValue(DocumentFormat.OpenXml.IntegerValue)">
+            <summary>
+            Converts an OpenXml IntegerValue to EPS.
+            </summary>
+            <param name="IntegerValue">The IntegerValue to convert.</param>
+            <returns>The EPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertToIntegerValue(DocumentModel.EPS)">
+            <summary>
+            Creates an OpenXml IntegerValue from an EPS value.
+            </summary>
+            <param name="value">The EPS value to convert.</param>
+            <returns>A new IntegerValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertFromUInt32Value(DocumentFormat.OpenXml.UInt32Value)">
+            <summary>
+            Converts an OpenXml UInt32Value to EPS.
+            </summary>
+            <param name="UInt32Value">The UInt32Value to convert.</param>
+            <returns>The EPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertToUInt32Value(DocumentModel.EPS)">
+            <summary>
+            Creates an OpenXml UInt32Value from an EPS value.
+            </summary>
+            <param name="value">The EPS value to convert.</param>
+            <returns>A new UInt32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertFromUInt64Value(DocumentFormat.OpenXml.UInt64Value)">
+            <summary>
+            Converts an OpenXml UInt64Value to EPS.
+            </summary>
+            <param name="UInt64Value">The UInt64Value to convert.</param>
+            <returns>The EPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertToUInt64Value(DocumentModel.EPS)">
+            <summary>
+            Creates an OpenXml UInt64Value from an EPS value.
+            </summary>
+            <param name="value">The EPS value to convert.</param>
+            <returns>A new UInt64Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
+            <summary>
+            Converts an OpenXml StringValue to EPS.
+            </summary>
+            <param name="StringValue">The StringValue to convert.</param>
+            <returns>The EPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertToStringValue(DocumentModel.EPS,System.Type)">
+            <summary>
+            Creates an OpenXml StringValue from an EPS value.
+            </summary>
+            <param name="value">The EPS value to convert.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+            <returns>A new StringValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts the specified string representation of a number to its 32-bit signed integer equivalent.
+            </summary>
+            <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+            <returns>A 32-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
+            not a valid integer.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertToString(DocumentModel.EPS)">
+            <summary>
+            Converts a nullable 32-bit integer value to its string representation.
+            </summary>
+            <param name="value">The nullable 32-bit integer value to convert. If null, the method returns null.</param>
+            <returns>A string representation of the specified value, or null if the value is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafTextElement to EPS.
+            </summary>
+            <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+            <returns>The EPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertToOpenXmlLeafTextElement(DocumentModel.EPS,System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafTextElement from an EPS value.
+            </summary>
+            <param name="value">The EPS value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafElement to EPS.
+            </summary>
+            <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+            <returns>The EPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertToOpenXmlLeafElement(DocumentModel.EPS,System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafElement from an EPS value.
+            </summary>
+            <param name="value">The EPS value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertTo(DocumentModel.EPS,System.Type)">
+            <summary>
+            Converts an EPS value to the specified target type using standard type conversion.
+            </summary>
+            <param name="value">The EPS value to convert.</param>
+            <param name="targetType">The target type to convert to.</param>
+            <returns>The converted value, or null if the input is null.</returns>
+            <exception cref="T:System.NotSupportedException">Raised when the target type is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertFrom(System.Object)">
+            <summary>
+            Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
+            </summary>
+            <param name="value">The value to convert to an <see cref="T:DocumentModel.EPS"/>. Can be <see langword="null"/>.</param>
+            <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
+            is <see langword="null"/>.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.EPS"/> is not supported.</exception>
         </member>
         <member name="T:DocumentModel.OpenXml.GuidConverter">
             <summary>
@@ -3079,6 +3395,164 @@
             <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
             is <see langword="null"/>.</returns>
             <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.HexRgb"/> is not supported.</exception>
+        </member>
+        <member name="T:DocumentModel.OpenXml.HPSConverter">
+            <summary>
+            Provides conversion methods for HPS value to/from Open XML.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.#cctor">
+            <summary>
+            Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.Int32Converter"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value)">
+            <summary>
+            Converts an OpenXml Int32Value to HPS.
+            </summary>
+            <param name="Int32Value">The Int32Value to convert.</param>
+            <returns>The HPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertToInt32Value(DocumentModel.HPS)">
+            <summary>
+            Creates an OpenXml Int32Value from an HPS value.
+            </summary>
+            <param name="value">The HPS value to convert.</param>
+            <returns>A new Int32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertFromInt64Value(DocumentFormat.OpenXml.Int64Value)">
+            <summary>
+            Converts an OpenXml Int64Value to HPS.
+            </summary>
+            <param name="Int64Value">The Int64Value to convert.</param>
+            <returns>The HPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertToInt64Value(DocumentModel.HPS)">
+            <summary>
+            Creates an OpenXml Int64Value from an HPS value.
+            </summary>
+            <param name="value">The HPS value to convert.</param>
+            <returns>A new Int64Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertFromIntegerValue(DocumentFormat.OpenXml.IntegerValue)">
+            <summary>
+            Converts an OpenXml IntegerValue to HPS.
+            </summary>
+            <param name="IntegerValue">The IntegerValue to convert.</param>
+            <returns>The HPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertToIntegerValue(DocumentModel.HPS)">
+            <summary>
+            Creates an OpenXml IntegerValue from an HPS value.
+            </summary>
+            <param name="value">The HPS value to convert.</param>
+            <returns>A new IntegerValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertFromUInt32Value(DocumentFormat.OpenXml.UInt32Value)">
+            <summary>
+            Converts an OpenXml UInt32Value to HPS.
+            </summary>
+            <param name="UInt32Value">The UInt32Value to convert.</param>
+            <returns>The HPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertToUInt32Value(DocumentModel.HPS)">
+            <summary>
+            Creates an OpenXml UInt32Value from an HPS value.
+            </summary>
+            <param name="value">The HPS value to convert.</param>
+            <returns>A new UInt32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertFromUInt64Value(DocumentFormat.OpenXml.UInt64Value)">
+            <summary>
+            Converts an OpenXml UInt64Value to HPS.
+            </summary>
+            <param name="UInt64Value">The UInt64Value to convert.</param>
+            <returns>The HPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertToUInt64Value(DocumentModel.HPS)">
+            <summary>
+            Creates an OpenXml UInt64Value from an HPS value.
+            </summary>
+            <param name="value">The HPS value to convert.</param>
+            <returns>A new UInt64Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
+            <summary>
+            Converts an OpenXml StringValue to HPS.
+            </summary>
+            <param name="StringValue">The StringValue to convert.</param>
+            <returns>The HPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertToStringValue(DocumentModel.HPS,System.Type)">
+            <summary>
+            Creates an OpenXml StringValue from an HPS value.
+            </summary>
+            <param name="value">The HPS value to convert.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+            <returns>A new StringValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts the specified string representation of a number to its 32-bit signed integer equivalent.
+            </summary>
+            <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+            <returns>A 32-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
+            not a valid integer.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertToString(DocumentModel.HPS)">
+            <summary>
+            Converts a nullable 32-bit integer value to its string representation.
+            </summary>
+            <param name="value">The nullable 32-bit integer value to convert. If null, the method returns null.</param>
+            <returns>A string representation of the specified value, or null if the value is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafTextElement to HPS.
+            </summary>
+            <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+            <returns>The HPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertToOpenXmlLeafTextElement(DocumentModel.HPS,System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafTextElement from an HPS value.
+            </summary>
+            <param name="value">The HPS value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafElement to HPS.
+            </summary>
+            <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+            <returns>The HPS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertToOpenXmlLeafElement(DocumentModel.HPS,System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafElement from an HPS value.
+            </summary>
+            <param name="value">The HPS value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertTo(DocumentModel.HPS,System.Type)">
+            <summary>
+            Converts an HPS value to the specified target type using standard type conversion.
+            </summary>
+            <param name="value">The HPS value to convert.</param>
+            <param name="targetType">The target type to convert to.</param>
+            <returns>The converted value, or null if the input is null.</returns>
+            <exception cref="T:System.NotSupportedException">Raised when the target type is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertFrom(System.Object)">
+            <summary>
+            Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
+            </summary>
+            <param name="value">The value to convert to an <see cref="T:DocumentModel.HPS"/>. Can be <see langword="null"/>.</param>
+            <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
+            is <see langword="null"/>.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.HPS"/> is not supported.</exception>
         </member>
         <member name="T:DocumentModel.OpenXml.Int16Converter">
             <summary>
@@ -4738,6 +5212,164 @@
             is <see langword="null"/>.</returns>
             <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.Percent"/> is not supported.</exception>
         </member>
+        <member name="T:DocumentModel.OpenXml.PTSConverter">
+            <summary>
+            Provides conversion methods for PTS value to/from Open XML.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.#cctor">
+            <summary>
+            Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.Int32Converter"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value)">
+            <summary>
+            Converts an OpenXml Int32Value to PTS.
+            </summary>
+            <param name="Int32Value">The Int32Value to convert.</param>
+            <returns>The PTS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertToInt32Value(DocumentModel.PTS)">
+            <summary>
+            Creates an OpenXml Int32Value from an PTS value.
+            </summary>
+            <param name="value">The PTS value to convert.</param>
+            <returns>A new Int32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertFromInt64Value(DocumentFormat.OpenXml.Int64Value)">
+            <summary>
+            Converts an OpenXml Int64Value to PTS.
+            </summary>
+            <param name="Int64Value">The Int64Value to convert.</param>
+            <returns>The PTS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertToInt64Value(DocumentModel.PTS)">
+            <summary>
+            Creates an OpenXml Int64Value from an PTS value.
+            </summary>
+            <param name="value">The PTS value to convert.</param>
+            <returns>A new Int64Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertFromIntegerValue(DocumentFormat.OpenXml.IntegerValue)">
+            <summary>
+            Converts an OpenXml IntegerValue to PTS.
+            </summary>
+            <param name="IntegerValue">The IntegerValue to convert.</param>
+            <returns>The PTS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertToIntegerValue(DocumentModel.PTS)">
+            <summary>
+            Creates an OpenXml IntegerValue from an PTS value.
+            </summary>
+            <param name="value">The PTS value to convert.</param>
+            <returns>A new IntegerValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertFromUInt32Value(DocumentFormat.OpenXml.UInt32Value)">
+            <summary>
+            Converts an OpenXml UInt32Value to PTS.
+            </summary>
+            <param name="UInt32Value">The UInt32Value to convert.</param>
+            <returns>The PTS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertToUInt32Value(DocumentModel.PTS)">
+            <summary>
+            Creates an OpenXml UInt32Value from an PTS value.
+            </summary>
+            <param name="value">The PTS value to convert.</param>
+            <returns>A new UInt32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertFromUInt64Value(DocumentFormat.OpenXml.UInt64Value)">
+            <summary>
+            Converts an OpenXml UInt64Value to PTS.
+            </summary>
+            <param name="UInt64Value">The UInt64Value to convert.</param>
+            <returns>The PTS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertToUInt64Value(DocumentModel.PTS)">
+            <summary>
+            Creates an OpenXml UInt64Value from an PTS value.
+            </summary>
+            <param name="value">The PTS value to convert.</param>
+            <returns>A new UInt64Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
+            <summary>
+            Converts an OpenXml StringValue to PTS.
+            </summary>
+            <param name="StringValue">The StringValue to convert.</param>
+            <returns>The PTS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertToStringValue(DocumentModel.PTS,System.Type)">
+            <summary>
+            Creates an OpenXml StringValue from an PTS value.
+            </summary>
+            <param name="value">The PTS value to convert.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+            <returns>A new StringValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts the specified string representation of a number to its 32-bit signed integer equivalent.
+            </summary>
+            <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+            <returns>A 32-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
+            not a valid integer.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertToString(DocumentModel.PTS)">
+            <summary>
+            Converts a nullable 32-bit integer value to its string representation.
+            </summary>
+            <param name="value">The nullable 32-bit integer value to convert. If null, the method returns null.</param>
+            <returns>A string representation of the specified value, or null if the value is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafTextElement to PTS.
+            </summary>
+            <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+            <returns>The PTS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertToOpenXmlLeafTextElement(DocumentModel.PTS,System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafTextElement from an PTS value.
+            </summary>
+            <param name="value">The PTS value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafElement to PTS.
+            </summary>
+            <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+            <returns>The PTS value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertToOpenXmlLeafElement(DocumentModel.PTS,System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafElement from an PTS value.
+            </summary>
+            <param name="value">The PTS value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertTo(DocumentModel.PTS,System.Type)">
+            <summary>
+            Converts an PTS value to the specified target type using standard type conversion.
+            </summary>
+            <param name="value">The PTS value to convert.</param>
+            <param name="targetType">The target type to convert to.</param>
+            <returns>The converted value, or null if the input is null.</returns>
+            <exception cref="T:System.NotSupportedException">Raised when the target type is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertFrom(System.Object)">
+            <summary>
+            Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
+            </summary>
+            <param name="value">The value to convert to an <see cref="T:DocumentModel.PTS"/>. Can be <see langword="null"/>.</param>
+            <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
+            is <see langword="null"/>.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.PTS"/> is not supported.</exception>
+        </member>
         <member name="T:DocumentModel.OpenXml.SByteConverter">
             <summary>
             Provides conversion methods for SByte value to/from Open XML.
@@ -5487,6 +6119,34 @@
             </summary>
             <param name="value">The Twips value to convert.</param>
             <returns>A new IntegerValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromUInt32Value(DocumentFormat.OpenXml.UInt32Value)">
+            <summary>
+            Converts an OpenXml UInt32Value to Twips.
+            </summary>
+            <param name="UInt32Value">The UInt32Value to convert.</param>
+            <returns>The Twips value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertToUInt32Value(DocumentModel.Twips)">
+            <summary>
+            Creates an OpenXml UInt32Value from an Twips value.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+            <returns>A new UInt32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromUInt64Value(DocumentFormat.OpenXml.UInt64Value)">
+            <summary>
+            Converts an OpenXml UInt64Value to Twips.
+            </summary>
+            <param name="UInt64Value">The UInt64Value to convert.</param>
+            <returns>The Twips value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertToUInt64Value(DocumentModel.Twips)">
+            <summary>
+            Creates an OpenXml UInt64Value from an Twips value.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+            <returns>A new UInt64Value, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
             <summary>

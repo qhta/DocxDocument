@@ -1515,7 +1515,7 @@
         </member>
         <member name="P:DocumentModel.EMU.UnitsPerInch">
             <summary>
-            Defines the number of twips in one inch.
+            Defines the number of EMU in one inch.
             </summary>
         </member>
         <member name="M:DocumentModel.EMU.#ctor">
@@ -1525,7 +1525,7 @@
         </member>
         <member name="M:DocumentModel.EMU.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> struct from a string value.
+            Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> from a string value.
             </summary>
             <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
             <remarks>
@@ -1542,13 +1542,19 @@
         </member>
         <member name="M:DocumentModel.EMU.#ctor(System.Int64)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> struct from a 64-bit signed integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> from an Int64 value.
             </summary>
-            <param name="value">The value in half-points.</param>
+            <param name="value">The value in EMU.</param>
+        </member>
+        <member name="M:DocumentModel.EMU.#ctor(System.UInt64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> from a UInt64 value.
+            </summary>
+            <param name="value">The value in EMU.</param>
         </member>
         <member name="M:DocumentModel.EMU.#ctor(System.Double)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> struct from a 64-bit floating-point value.
+            Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> from a 64-bit floating-point value.
             </summary>
             <param name="value">The value in half-points.</param>
         </member>
@@ -1702,7 +1708,7 @@
             </summary>
             <remarks>
             Eighth-points provide the finest precision among point-based measurements for typographic adjustments.
-            This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
+            This supports implicit conversions to/from various integer types and string representations with unit suffixes.
             Note: 1 eighth-point = 0.125 points = 1/576 inch. There are 8 eighth-points in 1 point.
             </remarks>
         </member>
@@ -1742,7 +1748,7 @@
         </member>
         <member name="P:DocumentModel.EPS.UnitsPerInch">
             <summary>
-            Defines the number of twips in one inch.
+            Defines the number of eighth-points in one inch.
             </summary>
         </member>
         <member name="M:DocumentModel.EPS.#ctor">
@@ -1752,7 +1758,7 @@
         </member>
         <member name="M:DocumentModel.EPS.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> struct from a string value.
+            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> from a string value.
             </summary>
             <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
             <remarks>
@@ -1769,13 +1775,19 @@
         </member>
         <member name="M:DocumentModel.EPS.#ctor(System.Int64)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> struct from a 64-bit signed integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> from an Int64 value.
             </summary>
-            <param name="value">The value in half-points.</param>
+            <param name="value">The value in EPS.</param>
+        </member>
+        <member name="M:DocumentModel.EPS.#ctor(System.UInt64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> from a UInt64 value.
+            </summary>
+            <param name="value">The value in EPS.</param>
         </member>
         <member name="M:DocumentModel.EPS.#ctor(System.Double)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> struct from a 64-bit floating-point value.
+            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> from a 64-bit floating-point value.
             </summary>
             <param name="value">The value in half-points.</param>
         </member>
@@ -4249,7 +4261,7 @@
             </summary>
             <remarks>
             Half-points provide finer precision than points for typographic measurements in desktop publishing and word processing.
-            This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
+            This supports implicit conversions to/from various integer types and string representations with unit suffixes.
             Note: 1 half-point = 0.5 points = 1/144 inch.
             </remarks>
         </member>
@@ -4289,7 +4301,7 @@
         </member>
         <member name="P:DocumentModel.HPS.UnitsPerInch">
             <summary>
-            Defines the number of twips in one inch.
+            Defines the number of HPS in one inch.
             </summary>
         </member>
         <member name="M:DocumentModel.HPS.#ctor">
@@ -4299,7 +4311,7 @@
         </member>
         <member name="M:DocumentModel.HPS.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a string value.
+            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> from a string value.
             </summary>
             <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
             <remarks>
@@ -4316,13 +4328,19 @@
         </member>
         <member name="M:DocumentModel.HPS.#ctor(System.Int64)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a 64-bit signed integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> from an Int64 value.
             </summary>
-            <param name="value">The value in half-points.</param>
+            <param name="value">The value in HPS.</param>
+        </member>
+        <member name="M:DocumentModel.HPS.#ctor(System.UInt64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> from a UInt64 value.
+            </summary>
+            <param name="value">The value in HPS.</param>
         </member>
         <member name="M:DocumentModel.HPS.#ctor(System.Double)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> struct from a 64-bit floating-point value.
+            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> from a 64-bit floating-point value.
             </summary>
             <param name="value">The value in half-points.</param>
         </member>
@@ -5275,13 +5293,14 @@
             Provides XML serialization support for the <see cref="T:DocumentModel.PTS"/> structure.
             </summary>
             <summary>
-            Represents a measurement in points (typographic unit).
-            A point is defined as 1/72 of an inch, commonly used for font sizes and typography.
-            Supports conversions to/from millimeters, centimeters, and inches.
+            Represents a measurement in typographic points.
+            A point is defined as 1/72 of an inch, commonly used for typography adjustments.
+            Supports conversions to/from millimeters, centimeters, inches, and points.
             </summary>
             <remarks>
-            Points provide a standard unit for typographic measurements in desktop publishing and word processing.
-            This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
+            Points provide finer precision than inches for typographic measurements in desktop publishing and word processing.
+            This supports implicit conversions to/from various integer types and string representations with unit suffixes.
+            Note: 1 point = 1/72 inch.
             </remarks>
         </member>
         <member name="M:DocumentModel.PTS.System#Xml#Serialization#IXmlSerializable#GetSchema">
@@ -5318,119 +5337,50 @@
             The value is written as a plain numeric string representing points without unit suffix.
             </remarks>
         </member>
-        <member name="F:DocumentModel.PTS.value">
+        <member name="P:DocumentModel.PTS.UnitsPerInch">
             <summary>
-            The internal value storing the measurement in points.
+            Defines the number of points in one inch.
             </summary>
         </member>
-        <member name="P:DocumentModel.PTS.DoubleValue">
+        <member name="M:DocumentModel.PTS.#ctor">
             <summary>
-            Gets the measurement value in points.
+            Default constructor. Creates an empty instance.
             </summary>
-        </member>
-        <member name="F:DocumentModel.PTS.PTSinMM">
-            <summary>
-            How many points are in one millimeter.
-            There is a small difference between real and nominal factors.
-            </summary>
-            <remarks>
-            The value is approximately 2.83 points per millimeter, calculated as 72 / 25.4.
-            </remarks>
-        </member>
-        <member name="F:DocumentModel.PTS.PTSinCM">
-            <summary>
-            How many points are in one centimeter.
-            </summary>
-            <remarks>
-            The value is approximately 28.35 points per centimeter, calculated as PTSinMM * 10.0.
-            </remarks>
-        </member>
-        <member name="F:DocumentModel.PTS.PTSinInch">
-            <summary>
-            How many points are in one inch.
-            </summary>
-            <remarks>
-            By definition, there are exactly 72 points in one inch.
-            </remarks>
-        </member>
-        <member name="F:DocumentModel.PTS.PTSinTwips">
-            <summary>
-            How many points are in one twips.
-            </summary>
-            <remarks>
-            By definition, there are exactly 20 twips in one point.
-            </remarks>
         </member>
         <member name="M:DocumentModel.PTS.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a string value.
+            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> from a string value.
             </summary>
             <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
             <remarks>
             <para>Supported formats:</para>
             <list type="bullet">
-            <item><description>"100" - interpreted as points</description></item>
+            <item><description>"100" - interpreted as half-points</description></item>
             <item><description>"10mm" - millimeters</description></item>
             <item><description>"1cm" - centimeters</description></item>
-            <item><description>"12pt" - points</description></item>
-            <item><description>"1in" - inches</description></item>
+            <item><description>"12pt" - points (will be converted to 24 half-points)</description></item>
+            <item><description>"1in" - inches (will be converted to 144 half-points)</description></item>
             </list>
             <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
             </remarks>
         </member>
         <member name="M:DocumentModel.PTS.#ctor(System.Int64)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a 64-bit signed integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> from an Int64 value.
             </summary>
-            <param name="value">The value in points.</param>
+            <param name="value">The value in PTS.</param>
+        </member>
+        <member name="M:DocumentModel.PTS.#ctor(System.UInt64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> from a UInt64 value.
+            </summary>
+            <param name="value">The value in PTS.</param>
         </member>
         <member name="M:DocumentModel.PTS.#ctor(System.Double)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> struct from a 64-bit signed integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> from a 64-bit floating-point value.
             </summary>
-            <param name="value">The value in points.</param>
-        </member>
-        <member name="M:DocumentModel.PTS.ToMM">
-            <summary>
-            Converts the points value to millimeters.
-            </summary>
-            <returns>The measurement in millimeters as a double-precision floating-point number.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.ToCM">
-            <summary>
-            Converts the points value to centimeters.
-            </summary>
-            <returns>The measurement in centimeters as a double-precision floating-point number.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.ToInch">
-            <summary>
-            Converts the points value to inches.
-            </summary>
-            <returns>The measurement in inches as a double-precision floating-point number.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.ToPT">
-            <summary>
-            Converts the points value to points (returns the value itself as a double).
-            </summary>
-            <returns>The measurement in points as a double-precision floating-point number.</returns>
-            <remarks>
-            This method is provided for consistency with other conversion methods and returns the internal value as a double.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.PTS.ToTwips">
-            <summary>
-            Converts the points value to twips.
-            </summary>
-            <returns>The measurement in twips as a double-precision floating-point number.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.ConvertTo(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
-            <summary>
-            Converts the current length value to the specified unit of measurement.
-            </summary>
-            <param name="unit">The target unit to which the length value will be converted. Supported units include Twips, Points, Millimeters,
-            Centimeters, and Inches.</param>
-            <returns>The length value converted to the specified unit.</returns>
-            <exception cref="T:System.ArgumentException">Thrown if the specified unit is not supported.</exception>
+            <param name="value">The value in half-points.</param>
         </member>
         <member name="M:DocumentModel.PTS.FromTwips(System.Double)">
             <summary>
@@ -5458,6 +5408,15 @@
             Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
             </summary>
         </member>
+        <member name="M:DocumentModel.PTS.Parse(System.String)">
+            <summary>
+            Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
+            </summary>
+            <remarks>If the input string does not conform to a valid length measure format, an exception may be
+            thrown.</remarks>
+            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
+        </member>
         <member name="M:DocumentModel.PTS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
             Converts a length value from the specified unit to an equivalent length measure.
@@ -5468,16 +5427,7 @@
             <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
             <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
         </member>
-        <member name="M:DocumentModel.PTS.Parse(System.String)">
-            <summary>
-            Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
-            </summary>
-            <remarks>If the input string does not conform to a valid length measure format, an exception may be
-            thrown.</remarks>
-            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
-            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.TryParse(System.String,System.Nullable{DocumentModel.PTS}@)">
+        <member name="M:DocumentModel.PTS.TryParse(System.String,DocumentModel.PTS@)">
             <summary>
             Attempts to parse the specified string representation of a length measure and returns a value that indicates
             whether the parsing succeeded.
@@ -5488,92 +5438,6 @@
             <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
             langword="null"/>.</param>
             <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.ToString">
-            <summary>
-            Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.PTS.ToString(System.IFormatProvider)">
-            <summary>
-            Converts the current length measure to its string representation using the specified format provider.
-            This allows for culture-specific formatting of the output string, such as using different decimal separators
-            based on the culture settings provided by the formatProvider.
-            If the formatProvider is null, the method should use invariant culture's formatting conventions.
-            </summary>
-            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
-            <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.ToString(System.String,System.IFormatProvider)">
-            <summary>
-            Converts the current length measure to its string representation using the specified format string and format provider.
-            The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
-            while the format provider allows for culture-specific formatting.
-            If the format string is null or empty, a default numeric format should be used.
-            If the format provider is null, invariant culture's formatting conventions should be applied.
-            </summary>
-            <param name="format">A standard or custom numeric format string. If null or empty, a default numeric format is used.</param>
-            <param name="formatProvider">An object that supplies culture-specific formatting information.
-            If null, invariant culture's formatting conventions are used.</param>
-            <returns>A string representation of the current length measure,
-            formatted according to the specified format string and format provider.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.ToString(System.String)">
-            <summary>
-            Converts the current instance to its string representation using the specified format string.
-            </summary>
-            <remarks>If the format string is not recognized or is invalid, a FormatException may be thrown. Supported
-            format strings may include both standard and custom formats, depending on the implementation.</remarks>
-            <param name="format">A format string that defines how the value should be represented.
-            If null, a default format is used.</param>
-            <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.ToString(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
-            <summary>
-            Converts the current length measure to its string representation using the specified unit.
-              The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
-            </summary>
-            <param name="unit">The unit to use for the string representation.</param>
-            <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.ToString(System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
-            <summary>
-            Converts the current length measure to its string representation using the specified unit and format provider.
-              The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
-            </summary>
-            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
-            <param name="unit">The unit to use for the string representation.</param>
-            <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.ToString(System.String,System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
-            <summary>
-            Converts the current length value to its string representation using the specified unit, format, and format
-            provider. 
-            The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
-            Format string should not include unit symbols, as they will be added based on the specified unit parameter.
-            If the format string is null or empty, a default numeric format should be used.
-            </summary>
-            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is
-              used.</param>
-            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, the current culture is used.</param>
-            <param name="unit">The unit of length to use when formatting the value.</param>
-            <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
-            provider.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.ToString(System.String,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
-            <summary>
-            Converts the current length value to its string representation using the specified unit and format string.
-            The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
-            </summary>
-            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
-            <param name="unit">The unit of length to use when formatting the value.</param>
-            <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
-        </member>
-        <member name="P:DocumentModel.PTS.LengthUnitSuffixes">
-            <summary>
-            Suffixes for length units that can be used in string representations of length measures.
-            The order of the suffixes corresponds to the order of the LengthUnit enum values.
-            </summary>
         </member>
         <member name="M:DocumentModel.PTS.op_Implicit(System.String)~DocumentModel.PTS">
             <summary>
@@ -5587,15 +5451,7 @@
             Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a string.
             </summary>
             <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
-            <returns>A string representation of the points value.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.Int32">
-            <summary>
-            Implicitly converts a PTS instance to a 32-bit signed integer (Int32).
-            </summary>
-            <remarks>This conversion allows for seamless integration of PTS values in contexts where an Int32 is
-            expected. Ensure that the PTS value is within the range of Int32 to avoid overflow.</remarks>
-            <param name="value">The PTS instance to convert.</param>
+            <returns>A string representation of the PTS value.</returns>
         </member>
         <member name="M:DocumentModel.PTS.op_Implicit(System.Int32)~DocumentModel.PTS">
             <summary>
@@ -5611,51 +5467,13 @@
             <param name="value">The 64-bit signed integer to convert.</param>
             <returns>A <see cref="T:DocumentModel.PTS"/> value representing the integer.</returns>
         </member>
-        <member name="M:DocumentModel.PTS.op_Implicit(DocumentModel.PTS)~System.Int64">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.PTS"/> value to a 64-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.PTS"/> value to convert.</param>
-            <returns>A 64-bit signed integer representation of the points value.</returns>
-        </member>
         <member name="M:DocumentModel.PTS.op_Implicit(System.Double)~DocumentModel.PTS">
             <summary>
-            Implicitly converts a double-precision floating-point number to a <see cref="T:DocumentModel.PTS"/> value.
+            Implicitly converts a double-precision floating-point number to a PTS instance.
             </summary>
-            <param name="value">The double-precision floating-point number to convert.</param>
-            <returns>A <see cref="T:DocumentModel.PTS"/> value representing the double-precision floating-point number.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.CompareTo(DocumentModel.PTS)">
-            <summary>
-            Compares this instance to a specified <see cref="T:DocumentModel.PTS"/> object and returns an indication of their relative values.
-            </summary>
-            <param name="other">A <see cref="T:DocumentModel.PTS"/> object to compare.</param>
-            <returns>
-            A signed number indicating the relative values of this instance and <paramref name="other"/>.
-            Less than zero if this instance is less than <paramref name="other"/>;
-            zero if this instance equals <paramref name="other"/>;
-            greater than zero if this instance is greater than <paramref name="other"/>.
-            </returns>
-        </member>
-        <member name="M:DocumentModel.PTS.GetHashCode">
-            <summary>
-            Returns the hash code for this instance.
-            </summary>
-            <returns>A 32-bit signed integer hash code.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.Equals(DocumentModel.PTS)">
-            <summary>
-            Compares this instance to another <see cref="T:DocumentModel.PTS"/> object for equality.
-            </summary>
-            <param name="other">An <see cref="T:DocumentModel.PTS"/> object to compare.</param>
-            <returns><c>true</c> if the objects are equal; otherwise, <c>false</c>.</returns>
-        </member>
-        <member name="M:DocumentModel.PTS.Equals(System.Object)">
-            <summary>
-            Compares this instance to a specified object and returns a value that indicates whether they are equal.
-            </summary>
-            <param name="obj">The object to compare with the current PTS instance. This parameter can be null.</param>
-            <returns><c>true</c> if the specified object is equal to the current PTS instance; otherwise, <c>false</c>.</returns>
+            <remarks>This conversion allows for seamless integration of double values into contexts where PTS are
+            required, facilitating operations that involve measurements in PTS.</remarks>
+            <param name="value">The value to convert, representing a measurement in PTS.</param>
         </member>
         <member name="T:DocumentModel.PTSJsonConverter">
             <summary>
@@ -6430,7 +6248,7 @@
             </summary>
             <remarks>
             Twips provide a precise, integer-based unit for document measurements.
-            This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
+            This supports implicit conversions to/from various integer types and string representations with unit suffixes.
             </remarks>
         </member>
         <member name="M:DocumentModel.Twips.System#Xml#Serialization#IXmlSerializable#GetSchema">
@@ -6479,7 +6297,7 @@
         </member>
         <member name="M:DocumentModel.Twips.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> struct from a string value.
+            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> from a string value.
             </summary>
             <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
             <remarks>
@@ -6496,19 +6314,25 @@
         </member>
         <member name="M:DocumentModel.Twips.#ctor(System.Int64)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> struct from a 64-bit integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> from an Int64 value.
+            </summary>
+            <param name="value">The value in twips.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.#ctor(System.UInt64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> from a UInt64 value.
             </summary>
             <param name="value">The value in twips.</param>
         </member>
         <member name="M:DocumentModel.Twips.#ctor(System.Decimal)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> struct from a Decimal value.
+            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> from a Decimal value.
             </summary>
             <param name="value">The value in twips.</param>
         </member>
         <member name="M:DocumentModel.Twips.#ctor(System.Double)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> struct from a Double value.
+            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> from a Double value.
             </summary>
             <param name="value">The value in twips.</param>
         </member>
@@ -8557,6 +8381,36 @@
             </para>
             </remarks>
         </member>
+        <member name="T:DocumentModel.BaseTypes.Interfaces.LengthUnit">
+            <summary>
+            Enumeration of length units supported by ToString or Parse methods of length-related base types.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.BaseTypes.Interfaces.LengthUnit.Twips">
+            <summary>
+            Represents the twips unit of length, where 1 twip is equal to 1/20 of a point.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.BaseTypes.Interfaces.LengthUnit.Points">
+            <summary>
+            Represents the point unit of length.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.BaseTypes.Interfaces.LengthUnit.Millimeters">
+            <summary>
+            Represents the millimeter unit of length.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.BaseTypes.Interfaces.LengthUnit.Centimeters">
+            <summary>
+            Represents the centimeter unit of length.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.BaseTypes.Interfaces.LengthUnit.Inches">
+            <summary>
+            Represents the inch unit of length.
+            </summary>
+        </member>
         <member name="T:DocumentModel.SimpleTypeAttribute">
             <summary>
             Attribute to indicate that a class or struct represents a simple type in the model.
@@ -8613,6 +8467,11 @@
             Checks if the instance represents an integer value.
             </summary>
         </member>
+        <member name="P:DocumentModel.UniversalMeasure.IsUnsignedInteger">
+            <summary>
+            Checks if the instance represents an unsigned integer value.
+            </summary>
+        </member>
         <member name="P:DocumentModel.UniversalMeasure.IsDecimal">
             <summary>
             Checks if the instance represents a decimal value.
@@ -8627,6 +8486,13 @@
             <summary>
             Gets the Int64 value represented by this instance.
             If the instance was initialized with a Double or Decimal value, the value will be converted to Int64 by rounding
+            away from zero.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.UniversalMeasure.UIntValue">
+            <summary>
+            Gets the UInt64 value represented by this instance.
+            If the instance was initialized with a Double or Decimal value, the value will be converted to UInt64 by rounding
             away from zero.
             </summary>
         </member>
@@ -8701,9 +8567,15 @@
         </member>
         <member name="M:DocumentModel.UniversalMeasure.Init(System.Int64)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.UniversalMeasure"/> from a 64-bit integer value.
+            Initializes a new instance of the <see cref="T:DocumentModel.UniversalMeasure"/> from an Int64 integer value.
             </summary>
             <param name="int64Value">The value in UniversalMeasure.</param>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.Init(System.UInt64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.UniversalMeasure"/> from a UInt64 value.
+            </summary>
+            <param name="uint64Value">The value in UniversalMeasure.</param>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.Init(System.Decimal)">
             <summary>
@@ -8757,7 +8629,7 @@
             <summary>
             Converts the current length value to the specified unit of measurement.
             </summary>
-            <param name="unit">The target unit to which the length value will be converted. Supported units include Twips, Points, Millimeters,
+            <param name="units">The target unit to which the length value will be converted. Supported units include Twips, Points, Millimeters,
             Centimeters, and Inches.</param>
             <returns>The length value converted to the specified unit.</returns>
             <exception cref="T:System.ArgumentException">Thrown if the specified unit is not supported.</exception>
@@ -8806,7 +8678,7 @@
             Converts the current length measure to its string representation using the specified unit.
               The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
-            <param name="unit">The unit to use for the string representation.</param>
+            <param name="units">The unit to use for the string representation.</param>
             <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToString(System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
@@ -8815,7 +8687,7 @@
               The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
             <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
-            <param name="unit">The unit to use for the string representation.</param>
+            <param name="units">The unit to use for the string representation.</param>
             <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToString(System.String,System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
@@ -8829,7 +8701,7 @@
             <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is
               used.</param>
             <param name="formatProvider">An object that supplies culture-specific formatting information. If null, the current culture is used.</param>
-            <param name="unit">The unit of length to use when formatting the value.</param>
+            <param name="units">The unit of length to use when formatting the value.</param>
             <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
             provider.</returns>
         </member>
@@ -8839,7 +8711,7 @@
             The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
             <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
-            <param name="unit">The unit of length to use when formatting the value.</param>
+            <param name="units">The unit of length to use when formatting the value.</param>
             <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
         </member>
         <member name="P:DocumentModel.UniversalMeasure.UnitSuffixed">
@@ -8857,7 +8729,7 @@
         </member>
         <member name="M:DocumentModel.UniversalMeasure.op_Implicit(DocumentModel.UniversalMeasure)~System.Int32">
             <summary>
-            Implicitly converts a UniversalMeasure instance to a 32-bit signed integer (Int32).
+            Implicitly converts a UniversalMeasure instance to an Int32 value.
             </summary>
             <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where an Int32 is
             expected. Ensure that the UniversalMeasure value is within the range of Int32 to avoid overflow.</remarks>
@@ -8865,15 +8737,31 @@
         </member>
         <member name="M:DocumentModel.UniversalMeasure.op_Implicit(DocumentModel.UniversalMeasure)~System.Int64">
             <summary>
-            Implicitly converts a UniversalMeasure instance to a 64-bit signed integer (Int64).
+            Implicitly converts a UniversalMeasure instance to an Int64 value.
             </summary>
-            <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where an Int64 is
+            <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a Int64 is
             expected. Ensure that the UniversalMeasure value is within the range of Int64 to avoid overflow.</remarks>
+            <param name="value">The UniversalMeasure instance to convert.</param>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.op_Implicit(DocumentModel.UniversalMeasure)~System.UInt32">
+            <summary>
+            Implicitly converts a UniversalMeasure instance to a UInt32 value.
+            </summary>
+            <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a UInt32 is
+            expected. Ensure that the UniversalMeasure value is within the range of UInt32 to avoid overflow.</remarks>
+            <param name="value">The UniversalMeasure instance to convert.</param>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.op_Implicit(DocumentModel.UniversalMeasure)~System.UInt64">
+            <summary>
+            Implicitly converts a UniversalMeasure instance to a UInt64 value.
+            </summary>
+            <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a UInt64 is
+            expected. Ensure that the UniversalMeasure value is within the range of UInt64 to avoid overflow.</remarks>
             <param name="value">The UniversalMeasure instance to convert.</param>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.op_Implicit(DocumentModel.UniversalMeasure)~System.Decimal">
             <summary>
-            Implicitly converts a UniversalMeasure instance to its equivalent decimal value.
+            Implicitly converts a UniversalMeasure instance to its equivalent Decimal value.
             </summary>
             <remarks>This conversion returns the value of the DecimalValue property, representing the UniversalMeasure
             in decimal format. This allows UniversalMeasure instances to be used in contexts where a decimal is expected
@@ -8882,7 +8770,7 @@
         </member>
         <member name="M:DocumentModel.UniversalMeasure.op_Implicit(DocumentModel.UniversalMeasure)~System.Double">
             <summary>
-            Implicitly converts a UniversalMeasure instance to a double-precision floating-point number (Double).
+            Implicitly converts a UniversalMeasure instance to equivalent Double value
             </summary>
             <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a Double is
             expected. Ensure that the UniversalMeasure value is within the range of Double to avoid overflow.</remarks>

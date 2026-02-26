@@ -8,7 +8,7 @@
 public partial class EMU : UniversalMeasure
 {
   /// <summary>
-  /// Defines the number of twips in one inch.
+  /// Defines the number of EMU in one inch.
   /// </summary>
   protected override double UnitsPerInch => 914400;
 
@@ -22,7 +22,7 @@ public partial class EMU : UniversalMeasure
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="EMU"/> struct from a string value.
+  /// Initializes a new instance of the <see cref="EMU"/> from a string value.
   /// </summary>
   /// <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
@@ -42,17 +42,24 @@ public partial class EMU : UniversalMeasure
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="EMU"/> struct from a 64-bit signed integer value.
+  /// Initializes a new instance of the <see cref="EMU"/> from an Int64 value.
   /// </summary>
-  /// <param name="value">The value in half-points.</param>
+  /// <param name="value">The value in EMU.</param>
   public EMU(Int64 value)
   {
     Init(value);
   }
-
-
   /// <summary>
-  /// Initializes a new instance of the <see cref="EMU"/> struct from a 64-bit floating-point value.
+  /// Initializes a new instance of the <see cref="EMU"/> from a UInt64 value.
+  /// </summary>
+  /// <param name="value">The value in EMU.</param>
+  public EMU(UInt64 value)
+  {
+    Init(value);
+  }
+  
+  /// <summary>
+  /// Initializes a new instance of the <see cref="EMU"/> from a 64-bit floating-point value.
   /// </summary>
   /// <param name="value">The value in half-points.</param>
   public EMU(Double value)

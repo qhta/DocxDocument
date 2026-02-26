@@ -36,6 +36,11 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   public bool IsInteger => value is Int64;
 
   /// <summary>
+  /// Checks if the instance represents an unsigned integer value.
+  /// </summary>
+  public bool IsUnsignedInteger => value is UInt64;
+
+  /// <summary>
   /// Checks if the instance represents a decimal value.
   /// </summary>
   public bool IsDecimal => value is Decimal;
@@ -51,16 +56,27 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// away from zero.
   /// </summary>
   public Int64 IntValue => IsInteger ? (Int64)value! 
+    : IsUnsignedInteger ? Convert.ToInt64((UInt64)value!)
     : IsDecimal ? (Int64)Math.Round((Decimal)value!, MidpointRounding.AwayFromZero) 
     : IsDouble ? (Int64)Math.Round((Double)value!, MidpointRounding.AwayFromZero) : 0;
 
+  /// <summary>
+  /// Gets the UInt64 value represented by this instance.
+  /// If the instance was initialized with a Double or Decimal value, the value will be converted to UInt64 by rounding
+  /// away from zero.
+  /// </summary>
+  public UInt64 UIntValue => IsUnsignedInteger ? (UInt64)value!
+    : IsInteger ? Convert.ToUInt64((Int64)value!)
+    : IsDecimal ? Convert.ToUInt64(Math.Round((Decimal)value!, MidpointRounding.AwayFromZero))
+    : IsDouble ? Convert.ToUInt64(Math.Round((Double)value!, MidpointRounding.AwayFromZero)) : 0;
 
   /// <summary>
   /// Gets the Decimal value represented by this instance.
   /// If the instance was initialized with an Int64 or Double value, it will be converted to Decimal.
   /// </summary>
   public Decimal DecimalValue => IsDecimal? (Decimal) value!
-    : IsInteger ? (Int64)value!
+    : IsInteger ? Convert.ToDecimal((Int64)value!)
+    : IsUnsignedInteger ? Convert.ToDecimal((UInt64)value!)
     : IsDouble ? Convert.ToDecimal((Double)value!) : 0;
 
 
@@ -68,9 +84,10 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// Gets the Double value represented by this instance.
   /// If the instance was initialized with an Int64 or Decimal value, it will be converted to double.
   /// </summary>
-  public Double DoubleValue => IsDouble ? (Double)value! 
-    : IsDecimal ? Convert.ToDouble((Decimal)value!)
-    : IsInteger ? (Double)(Int64)value! : 0;
+  public Double DoubleValue => IsDouble ? (Double)value! :
+    IsDecimal ? Convert.ToDouble((Decimal)value!) :
+    IsInteger ? Convert.ToDouble((Int64)value!) :
+    IsUnsignedInteger ? Convert.ToDouble((UInt64)value!) : 0;
 
   /// <summary>
   /// Gets the number of UniversalMeasure per inch for the current measurement system.
@@ -175,6 +192,11 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
       value = int64Value;
       return;
     }
+    if (UInt64.TryParse(str, NumberStyles.Integer, CultureInfo.InvariantCulture, out var uint64Value))
+    {
+      value = uint64Value;
+      return;
+    }
     if (Decimal.TryParse(str, NumberStyles.Integer, CultureInfo.InvariantCulture, out var decimalValue))
     {
       value = decimalValue;
@@ -191,12 +213,21 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
 
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="UniversalMeasure"/> from a 64-bit integer value.
+  /// Initializes a new instance of the <see cref="UniversalMeasure"/> from an Int64 integer value.
   /// </summary>
   /// <param name="int64Value">The value in UniversalMeasure.</param>
   protected void Init(Int64 int64Value)
   {
     this.value = int64Value;
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="UniversalMeasure"/> from a UInt64 value.
+  /// </summary>
+  /// <param name="uint64Value">The value in UniversalMeasure.</param>
+  protected void Init(UInt64 uint64Value)
+  {
+    this.value = uint64Value;
   }
 
   /// <summary>
@@ -259,20 +290,20 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// <summary>
   /// Converts the current length value to the specified unit of measurement.
   /// </summary>
-  /// <param name="unit">The target unit to which the length value will be converted. Supported units include Twips, Points, Millimeters,
+  /// <param name="units">The target unit to which the length value will be converted. Supported units include Twips, Points, Millimeters,
   /// Centimeters, and Inches.</param>
   /// <returns>The length value converted to the specified unit.</returns>
   /// <exception cref="ArgumentException">Thrown if the specified unit is not supported.</exception>
-  public double ConvertTo(LengthUnit unit)
+  public double ConvertTo(LengthUnit units)
   {
-    return unit switch
+    return units switch
     {
       LengthUnit.Twips => ToTwips(),
       LengthUnit.Points => ToPT(),
       LengthUnit.Millimeters => ToMM(),
       LengthUnit.Centimeters => ToCM(),
       LengthUnit.Inches => ToInch(),
-      _ => throw new ArgumentException($"Unsupported length unit: {unit}", nameof(unit))
+      _ => throw new ArgumentException($"Unsupported length unit: {units}", nameof(units))
     };
   }
   #endregion
@@ -290,6 +321,8 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
       return ((Decimal)value!).ToString(CultureInfo.InvariantCulture); 
     if (IsInteger)
       return ((Int64)value!).ToString(CultureInfo.InvariantCulture);
+    if (IsUnsignedInteger)
+      return ((UInt64)value!).ToString(CultureInfo.InvariantCulture);
     return string.Empty;
   }
 
@@ -309,6 +342,8 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
       return ((Decimal)value!).ToString(formatProvider);
     if (IsInteger)
       return ((Int64)value!).ToString(formatProvider);
+    if (IsUnsignedInteger)
+      return ((UInt64)value!).ToString(formatProvider);
     return string.Empty;
   }
 
@@ -332,6 +367,8 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
       return ((Decimal)value!).ToString(format, formatProvider);
     if (IsInteger)
       return ((Int64)value!).ToString(format, formatProvider);
+    if (IsUnsignedInteger)
+      return ((UInt64)value!).ToString(format, formatProvider);
     return string.Empty;
   }
 
@@ -351,6 +388,8 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
       return ((Decimal)value!).ToString(format);
     if (IsInteger)
       return ((Int64)value!).ToString(format);
+    if (IsUnsignedInteger)
+      return ((UInt64)value!).ToString(format);
     return string.Empty;
   }
 
@@ -358,20 +397,20 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// Converts the current length measure to its string representation using the specified unit.
   ///   The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
   /// </summary>
-  /// <param name="unit">The unit to use for the string representation.</param>
+  /// <param name="units">The unit to use for the string representation.</param>
   /// <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
-  public string ToString(LengthUnit unit)
-    => $"{ConvertTo(unit).ToString(CultureInfo.InvariantCulture)} {UnitSuffixed[(int)unit]}";
+  public string ToString(LengthUnit units)
+    => $"{ConvertTo(units).ToString(CultureInfo.InvariantCulture)} {UnitSuffixed[(int)units]}";
 
   /// <summary>
   /// Converts the current length measure to its string representation using the specified unit and format provider.
   ///   The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
   /// </summary>
   /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
-  /// <param name="unit">The unit to use for the string representation.</param>
+  /// <param name="units">The unit to use for the string representation.</param>
   /// <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
-  public string ToString(IFormatProvider? formatProvider, LengthUnit unit)
-  => $"{ConvertTo(unit).ToString(formatProvider ?? CultureInfo.InvariantCulture)} {UnitSuffixed[(int)unit]}";
+  public string ToString(IFormatProvider? formatProvider, LengthUnit units)
+  => $"{ConvertTo(units).ToString(formatProvider ?? CultureInfo.InvariantCulture)} {UnitSuffixed[(int)units]}";
 
   /// <summary>
   /// Converts the current length value to its string representation using the specified unit, format, and format
@@ -383,21 +422,21 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is
   ///   used.</param>
   /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, the current culture is used.</param>
-  /// <param name="unit">The unit of length to use when formatting the value.</param>
+  /// <param name="units">The unit of length to use when formatting the value.</param>
   /// <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
   /// provider.</returns>
-  public string ToString(string? format, IFormatProvider? formatProvider, LengthUnit unit)
-      => $"{ConvertTo(unit).ToString(format, formatProvider ?? CultureInfo.InvariantCulture)} {UnitSuffixed[(int)unit]}";
+  public string ToString(string? format, IFormatProvider? formatProvider, LengthUnit units)
+      => $"{ConvertTo(units).ToString(format, formatProvider ?? CultureInfo.InvariantCulture)} {UnitSuffixed[(int)units]}";
 
   /// <summary>
   /// Converts the current length value to its string representation using the specified unit and format string.
   /// The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
   /// </summary>
   /// <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
-  /// <param name="unit">The unit of length to use when formatting the value.</param>
+  /// <param name="units">The unit of length to use when formatting the value.</param>
   /// <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
-  public string ToString(string? format, LengthUnit unit)
-        => $"{ConvertTo(unit).ToString(format, CultureInfo.InvariantCulture)} {UnitSuffixed[(int)unit]}";
+  public string ToString(string? format, LengthUnit units)
+        => $"{ConvertTo(units).ToString(format, CultureInfo.InvariantCulture)} {UnitSuffixed[(int)units]}";
 
   /// <summary>
   /// Suffixes for length UniversalMeasure that can be used in string representations of length measures.
@@ -420,7 +459,7 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   }
   
   /// <summary>
-  /// Implicitly converts a UniversalMeasure instance to a 32-bit signed integer (Int32).
+  /// Implicitly converts a UniversalMeasure instance to an Int32 value.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where an Int32 is
   /// expected. Ensure that the UniversalMeasure value is within the range of Int32 to avoid overflow.</remarks>
@@ -431,9 +470,9 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   }
 
   /// <summary>
-  /// Implicitly converts a UniversalMeasure instance to a 64-bit signed integer (Int64).
+  /// Implicitly converts a UniversalMeasure instance to an Int64 value.
   /// </summary>
-  /// <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where an Int64 is
+  /// <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a Int64 is
   /// expected. Ensure that the UniversalMeasure value is within the range of Int64 to avoid overflow.</remarks>
   /// <param name="value">The UniversalMeasure instance to convert.</param>
   public static implicit operator Int64(UniversalMeasure value)
@@ -441,8 +480,32 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
     return value.IntValue;
   }
 
+
   /// <summary>
-  /// Implicitly converts a UniversalMeasure instance to its equivalent decimal value.
+  /// Implicitly converts a UniversalMeasure instance to a UInt32 value.
+  /// </summary>
+  /// <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a UInt32 is
+  /// expected. Ensure that the UniversalMeasure value is within the range of UInt32 to avoid overflow.</remarks>
+  /// <param name="value">The UniversalMeasure instance to convert.</param>
+  public static implicit operator UInt32(UniversalMeasure value)
+  {
+    return Convert.ToUInt32(value.UIntValue);
+  }
+
+  /// <summary>
+  /// Implicitly converts a UniversalMeasure instance to a UInt64 value.
+  /// </summary>
+  /// <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a UInt64 is
+  /// expected. Ensure that the UniversalMeasure value is within the range of UInt64 to avoid overflow.</remarks>
+  /// <param name="value">The UniversalMeasure instance to convert.</param>
+  public static implicit operator UInt64(UniversalMeasure value)
+  {
+    return value.UIntValue;
+  }
+
+
+  /// <summary>
+  /// Implicitly converts a UniversalMeasure instance to its equivalent Decimal value.
   /// </summary>
   /// <remarks>This conversion returns the value of the DecimalValue property, representing the UniversalMeasure
   /// in decimal format. This allows UniversalMeasure instances to be used in contexts where a decimal is expected
@@ -454,7 +517,7 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   }
 
   /// <summary>
-  /// Implicitly converts a UniversalMeasure instance to a double-precision floating-point number (Double).
+  /// Implicitly converts a UniversalMeasure instance to equivalent Double value
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a Double is
   /// expected. Ensure that the UniversalMeasure value is within the range of Double to avoid overflow.</remarks>

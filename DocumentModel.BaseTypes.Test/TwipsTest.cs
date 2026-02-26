@@ -655,6 +655,7 @@ public class TwipsTestData
 {
   [XmlElement("PageWidth")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
   public Twips PageWidth { get; set; }
 
   [XmlElement("PageHeight")]

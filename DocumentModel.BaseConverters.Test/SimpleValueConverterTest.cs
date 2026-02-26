@@ -157,8 +157,11 @@ public static class SimpleValueConverterTest
     Console.Write($"TestSimpleValueConverter with {modelType.Name} and {otherType.Name}");
     bool testResult = true;
     if (testValues == null) testValues = GetTestData(modelType);
+    if (otherType == typeof(DXW.TwipsMeasureType)) Debug.Assert(true);
+
     if (otherType.IsAbstract)
       otherType = ConcreteTypesMap[otherType];
+
     if (otherType == typeof(Uri))
     {
       testValues = ["", "https://sample.uri"];
@@ -179,6 +182,7 @@ public static class SimpleValueConverterTest
 
       try
       {
+
         var convertedValue = SimpleValueConverter.ConvertTo(testValue, otherType);
         var roundTripValue = SimpleValueConverter.ConvertFrom(convertedValue, modelType);
         if (!testValue.Equals(roundTripValue))
@@ -199,7 +203,8 @@ public static class SimpleValueConverterTest
         {
           Debug.WriteLine("Expected exception for Int32 to Int16Value conversion");
         }
-        else if (modelType == typeof(Twips) && testedOtherType == typeof(DX.UInt32Value) && (Int64)(Twips)testValue < 0)
+        else if (modelType == typeof(Twips) &&
+                 (testedOtherType == typeof(DX.UInt32Value) || testedOtherType == typeof(DXM.ColumnSpacing)) && (Int64)(Twips)testValue < 0)
         {
           Debug.WriteLine("Expected exception for negative Twips to UInt32Value conversion");
         }

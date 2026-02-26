@@ -7,14 +7,14 @@
 /// </summary>
 /// <remarks>
 /// Eighth-points provide the finest precision among point-based measurements for typographic adjustments.
-/// This struct supports implicit conversions to/from various integer types and string representations with unit suffixes.
+/// This supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// Note: 1 eighth-point = 0.125 points = 1/576 inch. There are 8 eighth-points in 1 point.
 /// </remarks>
 [JsonConverter(typeof(EPSJsonConverter))]
 public partial class EPS : UniversalMeasure
 {
   /// <summary>
-  /// Defines the number of twips in one inch.
+  /// Defines the number of eighth-points in one inch.
   /// </summary>
   protected override double UnitsPerInch => 72*8;
 
@@ -28,7 +28,7 @@ public partial class EPS : UniversalMeasure
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="EPS"/> struct from a string value.
+  /// Initializes a new instance of the <see cref="EPS"/> from a string value.
   /// </summary>
   /// <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
@@ -48,17 +48,24 @@ public partial class EPS : UniversalMeasure
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="EPS"/> struct from a 64-bit signed integer value.
+  /// Initializes a new instance of the <see cref="EPS"/> from an Int64 value.
   /// </summary>
-  /// <param name="value">The value in half-points.</param>
+  /// <param name="value">The value in EPS.</param>
   public EPS(Int64 value)
   {
     Init(value);
   }
-
+  /// <summary>
+  /// Initializes a new instance of the <see cref="EPS"/> from a UInt64 value.
+  /// </summary>
+  /// <param name="value">The value in EPS.</param>
+  public EPS(UInt64 value)
+  {
+    Init(value);
+  }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="EPS"/> struct from a 64-bit floating-point value.
+  /// Initializes a new instance of the <see cref="EPS"/> from a 64-bit floating-point value.
   /// </summary>
   /// <param name="value">The value in half-points.</param>
   public EPS(Double value)
