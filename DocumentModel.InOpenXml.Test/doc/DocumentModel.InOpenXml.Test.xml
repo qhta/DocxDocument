@@ -320,6 +320,13 @@
             </summary>
             <returns>A populated Styles object.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DefaultRunPropertiesTest.CreateSampleRunProperties(System.Boolean)">
+            <summary>
+            This method is used also in StyleDocDefaultsRunPropertiesTest.
+            </summary>
+            <param name="isUpdated">Indicates whether to create updated sample properties for update scenarios.</param>
+            <returns>A populated DefaultRunProperties object.</returns>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.DefaultRunPropertiesTest.SerializeToXml(DocumentModel.Wordprocessing.Styles)">
             <summary>
             Serializes a Styles object to an XML string.
