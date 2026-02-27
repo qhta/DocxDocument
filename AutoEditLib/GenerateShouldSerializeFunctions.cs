@@ -83,7 +83,7 @@ public class GenerateShouldSerializeFunctions
         }
         else
         {
-          var str = $"{propName}.HasValue";
+          var str = $"{propName} is not null";
           if (isCollection) str += $" && {propName}.Value.Count > 0";
           propertyTypes[propName] = str;
         }
