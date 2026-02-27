@@ -1,15 +1,16 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 /// Represents a color definition for use in WordprocessingML documents.
 /// This class extends <see cref = "AbstractColor"/> and is used to specify color values for document elements such as borders, shading, and text, enabling advanced formatting and visual customization.
 /// </summary>
 [OpenXmlType(typeof(DXW.Color))]
-public partial class Color : AbstractColor<DXW.Color>
+public partial class Color: AbstractColor<DXW.Color>
 {
   /// <summary>
   /// Initializes a new instance of the Color class.
   /// </summary>
-  public Color() : base()
+  public Color(): base()
   {
   }
 
@@ -64,12 +65,18 @@ public partial class Color : AbstractColor<DXW.Color>
   [OpenXmlProperty(nameof(DXW.Color.ThemeShade))]
   public Byte? ThemeShade { get; set; }
 
+  /// <summary>
+  /// String representation of the Color instance, which includes the hexadecimal color value and theme color information if available.
+  /// </summary>
+  /// <returns></returns>
   public override string? ToString()
   {
     if (Val is not null)
       return Val.ToString();
     if (ThemeColor is not null)
-      return ThemeColor.ToString() + (ThemeTint is not null ? $" Tint:{ThemeTint}" : "") + (ThemeShade is not null ? $" Shade:{ThemeShade}" : "");
+      return ThemeColor.ToString() + (ThemeTint is not null ? $" Tint:{ThemeTint}" : "") +
+             (ThemeShade is not null ? $" Shade:{ThemeShade}" : "");
+
     return base.ToString();
   }
 }

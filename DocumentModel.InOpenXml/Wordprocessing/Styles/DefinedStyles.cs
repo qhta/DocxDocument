@@ -57,12 +57,10 @@ public partial class DefinedStyles : ModelElementCollection<StyleDef>
   {
     if (element is not DXW.Styles styles)
       throw new ArgumentException($"Expected element of type {typeof(DXW.Styles).FullName}, but got {element.GetType().FullName}.");
-    Debug.WriteLine($"Updating styles. Current collection count: {this.Count}");
     styles.RemoveAllChildren<DXW.Style>();
     foreach (var styleDef in this)
     {
       var style = OpenXmlElementConverter.ConvertTo(styleDef, typeof(DXW.Style)) as DXW.Style;
-      Debug.WriteLine($"Updating style. StyleId: {styleDef?.StyleId}, StyleName: {styleDef?.StyleName}");
       styles.AppendChild(style);
     }
   }
@@ -80,12 +78,10 @@ public partial class DefinedStyles : ModelElementCollection<StyleDef>
       throw new ArgumentException($"Expected element of type {typeof(DXW.Styles).FullName}, but got {element.GetType().FullName}.");
     SetIsLoaded(true);
     var styleElements = styles.Elements<DXW.Style>().ToArray();
-    Debug.WriteLine($"Loading styles. Styles collection count: {styleElements.Length}");
     this.Clear();
     foreach (var style in styleElements)
     {
       var styleDef = OpenXmlElementConverter.ConvertFrom(style, typeof(DMW.StyleDef)) as DMW.StyleDef;
-      Debug.WriteLine($"Loading style. StyleId: {styleDef?.StyleId}, StyleName: {styleDef?.StyleName}"); SetIsLoaded(true);
       this.Add(styleDef!);
     }
     SetIsLoaded(false);

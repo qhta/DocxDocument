@@ -36,10 +36,6 @@ public partial class RunProperties : BaseRunProperties<DXW.RunProperties>
  /// </summary>
  public bool? ComplexScript { get; set; }
  /// <summary>
- /// Language settings for spell checking and grammar.
- /// </summary>
- public LanguageType? Languages { get; set; }
- /// <summary>
  /// Glow effect (Office 2010+).
  /// </summary>
  public DMWD.Glow? Glow { get; set; }

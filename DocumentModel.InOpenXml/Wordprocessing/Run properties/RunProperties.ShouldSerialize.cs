@@ -11,7 +11,6 @@ public partial class RunProperties
   public bool ShouldSerializeHighlight() => Highlight is not null;
   public bool ShouldSerializeRightToLeftText() => RightToLeftText is not null;
   public bool ShouldSerializeComplexScript() => ComplexScript is not null;
-  public bool ShouldSerializeLanguages() => Languages is not null;
   public bool ShouldSerializeGlow() => Glow is not null;
   public bool ShouldSerializeShadow14() => Shadow14 is not null;
   public bool ShouldSerializeReflection() => Reflection is not null;
