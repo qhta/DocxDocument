@@ -142,9 +142,9 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Minimum font size for automatic kerning in the run.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Kern))]
-  public Twips? Kern { get => _Kern; set => UpdateField(ref _Kern, value, nameof(Kern)); }
+  public HPS? Kern { get => _Kern; set => UpdateField(ref _Kern, value, nameof(Kern)); }
 
-  private Twips? _Kern;
+  private HPS? _Kern;
 
   /// <summary>
   /// Determines if the run uses the document grid characters per line settings.

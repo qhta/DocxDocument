@@ -157,7 +157,9 @@ namespace DocumentModel.InOpenXml.Test
         Underline = new Underline { Type = UnderlineType.Wave, Color = "FF0000" }, 
         Spacing = isUpdated ? new Twips(30) : new Twips(20),
         CharacterScale = isUpdated ? new Percent(115) : new Percent(110),
-        NoProof = true
+        NoProof = true,
+        Kern = isUpdated ? new HPS("10 pt") : new HPS("12 pt"), 
+        Language = isUpdated ? "en-US" : "fr-FR"
       };
     }
 
