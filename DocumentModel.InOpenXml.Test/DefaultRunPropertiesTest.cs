@@ -3,6 +3,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Text.Json;
+
 using DocumentModel;
 using DocumentModel.Wordprocessing;
 
@@ -124,8 +125,13 @@ namespace DocumentModel.InOpenXml.Test
     static DefaultRunProperties CreateSampleProperties(bool isUpdated = false)
     {
       return CreateSampleRunProperties(isUpdated);
- }
+    }
 
+    /// <summary>
+    /// This method is used also in StyleDocDefaultsRunPropertiesTest.
+    /// </summary>
+    /// <param name="isUpdated">Indicates whether to create updated sample properties for update scenarios.</param>
+    /// <returns>A populated DefaultRunProperties object.</returns>
     internal static DefaultRunProperties CreateSampleRunProperties(bool isUpdated = false)
     {
       return new DefaultRunProperties
@@ -147,7 +153,8 @@ namespace DocumentModel.InOpenXml.Test
         SmallCaps = true,
         Strike = true,
         DoubleStrike = isUpdated ? true : null,
-        Color = isUpdated ? new DMW.Color( "00AA00") : new DMW.Color{ Val = "000000", ThemeColor = ThemeColors.Text1 },
+        Color = isUpdated ? new DMW.Color("00AA00") : new DMW.Color { Val = "000000", ThemeColor = ThemeColors.Text1 },
+        Underline = new Underline { Type = UnderlineType.Wave, Color = "FF0000" }, 
         Spacing = isUpdated ? new Twips(30) : new Twips(20),
         CharacterScale = isUpdated ? new Percent(115) : new Percent(110),
         NoProof = true

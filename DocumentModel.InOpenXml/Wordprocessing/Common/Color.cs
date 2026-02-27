@@ -63,4 +63,13 @@ public partial class Color : AbstractColor<DXW.Color>
   /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.ThemeShade))]
   public Byte? ThemeShade { get; set; }
+
+  public override string? ToString()
+  {
+    if (Val is not null)
+      return Val.ToString();
+    if (ThemeColor is not null)
+      return ThemeColor.ToString() + (ThemeTint is not null ? $" Tint:{ThemeTint}" : "") + (ThemeShade is not null ? $" Shade:{ThemeShade}" : "");
+    return base.ToString();
+  }
 }

@@ -6,9 +6,10 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.Underline))]
 public partial class Underline : ModelElement<DXW.Underline>
 {
- /// <summary>
- /// Underline style, specifying the type of underline applied to the text (e.g., single, double, dotted).
- /// </summary>
+  /// <summary>
+  /// Underline style, specifying the type of underline applied to the text (e.g., single, double, dotted).
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Underline.Val))]
  public UnderlineType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
  private UnderlineType? _Type;
@@ -16,9 +17,9 @@ public partial class Underline : ModelElement<DXW.Underline>
  /// Underline color, specified as a hex RGB value or named color.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Underline.Color))]
- public Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+ public string? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
 
- private Color? _Color;
+ private string? _Color;
  /// <summary>
  /// Theme color index for the underline, enabling theme-aware underline coloring.
  /// </summary>

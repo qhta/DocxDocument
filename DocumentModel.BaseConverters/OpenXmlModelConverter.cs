@@ -147,6 +147,7 @@ public static partial class OpenXmlModelConverter
       object? openXmlValue = null;
       if (modelValue != null && !openXmlProperty.PropertyType.IsInstanceOfType(modelValue))
       {
+        if (modelProperty.Name == "Color") Debug.Assert(true);
         openXmlValue = ConvertTo(modelValue, openXmlProperty.PropertyType);
       }
       openXmlProperty.SetValue(openXmlObject, openXmlValue);
