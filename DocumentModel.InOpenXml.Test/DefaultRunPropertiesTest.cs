@@ -169,6 +169,9 @@ namespace DocumentModel.InOpenXml.Test
           Shadow = true,
           Frame = false,
         },
+        TextEffect = isUpdated ? TextEffect.BlinkBackground : TextEffect.None,
+        FitText = new FitText { Id = 50, Width = "0.5in" },
+        Emphasis = isUpdated ? EmphasisMark.Circle : EmphasisMark.None,
       };
     }
 
