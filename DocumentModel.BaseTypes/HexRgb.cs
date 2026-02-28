@@ -157,6 +157,50 @@ public readonly partial struct HexRgb : IEquatable<HexRgb>, IConvertible
   }
 
   /// <summary>
+  /// Parses the specified string representation of a hexadecimal RGB color and outputs the corresponding <see
+  /// cref="HexRgb"/> object.
+  /// </summary>
+  /// <remarks>If the input string is not in a valid hexadecimal RGB format, the behavior of this method is
+  /// undefined. It is recommended to validate the input before calling this method.</remarks>
+  /// <param name="str">The string containing the hexadecimal RGB color to parse.
+  /// The string must be in a valid hex color format, such as "RRGGBB".</param>
+  /// <param name="result">When this method returns, contains the <see cref="HexRgb"/> object
+  /// that corresponds to the parsed color.</param>
+  public static HexRgb Parse (string str)
+  {
+    if (TryParse(str, out var rgb))
+    {
+      return rgb;
+    }
+    throw new FormatException($"Invalid hexadecimal RGB color format: '{str}'.");
+  }
+
+  /// <summary>
+  /// Attempts to convert the specified string representation of a hexadecimal RGB color to its equivalent <see
+  /// cref="HexRgb"/> value without throwing an exception.
+  /// </summary>
+  /// <remarks>Use this method to safely attempt to parse a hexadecimal RGB color string. If the input is not in
+  /// a valid format, the method returns false and does not throw an exception.</remarks>
+  /// <param name="str">The string containing the hexadecimal RGB color to parse.
+  /// The string must be in a valid format, such as "RRGGBB".</param>
+  /// <param name="result">When this method returns, contains the parsed <see cref="HexRgb"/> value
+  /// if the conversion succeeded; otherwise,  the default value of <see cref="HexRgb"/>.</param>
+  /// <returns>true if the string was successfully parsed; otherwise, false.</returns>
+  public static bool TryParse(string str, out HexRgb result)
+  {
+    try
+    {
+      result = new HexRgb(str);
+      return true;
+    }
+    catch
+    {
+      result = default;
+      return false;
+    }
+  }
+
+  /// <summary>
   /// Indicates whether the current object is equal to another object of the same type.
   /// </summary>
   /// <param name="other">An object to compare with this object.</param>

@@ -6,22 +6,24 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.Border))]
 public partial class Border : ModelElement<DXW.Border>
 {
- /// <summary>
- /// Border style, specifying the type of border (e.g., single, double, dashed).
- /// </summary>
- public BorderStyle? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+  /// <summary>
+  /// Border style, specifying the type of border (e.g., single, double, dashed).
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Border.Val))]
+ public BorderStyle? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
 
- private BorderStyle? _Type;
+ private BorderStyle? _Style;
  /// <summary>
  /// Border color, specified as an abstract color value.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Border.Color))]
- public DocumentModel.AbstractColor? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+ public string? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
 
- private DocumentModel.AbstractColor? _Color;
+ private string? _Color;
  /// <summary>
  /// Border width, specified in twips.
  /// </summary>
+ [OpenXmlProperty(nameof(DXW.Border.Size))]
  public Twips? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
 
  private Twips? _Width;

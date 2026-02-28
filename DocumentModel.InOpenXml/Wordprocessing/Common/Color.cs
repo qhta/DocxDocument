@@ -65,6 +65,22 @@ public partial class Color: AbstractColor<DXW.Color>
   [OpenXmlProperty(nameof(DXW.Color.ThemeShade))]
   public Byte? ThemeShade { get; set; }
 
+
+  /// <summary>
+  /// Implicitly converts a string to a <see cref="Color"/> value.
+  /// </summary>
+  /// <param name="value">The string to convert.</param>
+  /// <returns>A <see cref="Color"/> value representing the color.</returns>
+  public static implicit operator Color(string value) => new Color( value );
+
+  /// <summary>
+  /// Implicitly converts an <see cref="Color"/> value to a string representation.
+  /// </summary>
+  /// <param name="value">The <see cref="Color"/> value to convert.</param>
+  /// <returns>A string representation of the RGB color.</returns>
+  // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+  public static implicit operator String(Color value) => value.ToString()!;
+
   /// <summary>
   /// String representation of the Color instance, which includes the hexadecimal color value and theme color information if available.
   /// </summary>
@@ -78,5 +94,65 @@ public partial class Color: AbstractColor<DXW.Color>
              (ThemeShade is not null ? $" Shade:{ThemeShade}" : "");
 
     return base.ToString();
+  }
+
+  /// <summary>
+  /// Parses a string representation of a color and returns a corresponding Color object. Supports both hexadecimal RGB
+  /// values and theme color names.
+  /// </summary>
+  /// <remarks>The method first attempts to parse the input as a hexadecimal RGB value. If parsing fails, it
+  /// then tries to interpret the input as a theme color name. If both attempts fail, a FormatException is
+  /// thrown.</remarks>
+  /// <param name="colorString">The string that represents the color to parse. This value must be a valid hexadecimal color value or a recognized
+  /// theme color name. Cannot be null or empty.</param>
+  /// <returns>A Color object that corresponds to the parsed color value.</returns>
+  /// <exception cref="ArgumentException">Thrown when the colorString parameter is null or empty.</exception>
+  /// <exception cref="FormatException">Thrown when colorString is not a valid hexadecimal color value or a recognized theme color name.</exception>
+  public static Color Parse(string colorString)
+  {
+    if (string.IsNullOrEmpty(colorString))
+      throw new ArgumentException("Color string cannot be null or empty.", nameof(colorString));
+    // Try parsing as HexRgb
+    if (HexRgb.TryParse(colorString, out var hexColor))
+    {
+      return new Color { Val = hexColor };
+    }
+    // Try parsing as ThemeColors
+    if (Enum.TryParse<ThemeColors>(colorString, true, out var themeColor))
+    {
+      return new Color { ThemeColor = themeColor };
+    }
+    throw new FormatException($"Invalid color string format: '{colorString}'. Expected a hexadecimal color value or a theme color name.");
+  }
+
+  /// <summary>
+  /// Attempts to parse the specified color string into a <see cref="Color"/> object, supporting both hexadecimal RGB
+  /// and named theme color formats.
+  /// </summary>
+  /// <remarks>This method supports parsing color strings in both hexadecimal RGB format and as named theme
+  /// colors. If the input string is null or empty, parsing fails.</remarks>
+  /// <param name="colorString">The color string to parse. This can be a hexadecimal RGB value (e.g., "#FF0000") or the name of a theme color.
+  /// Cannot be null or empty.</param>
+  /// <param name="color">When this method returns <see langword="true"/>, contains the parsed <see cref="Color"/> object; otherwise, is
+  /// <see langword="null"/>.</param>
+  /// <returns>true if the color string was successfully parsed; otherwise, false.</returns>
+  public static bool TryParse(string? colorString, out Color? color)
+  {
+    color = null;
+    if (string.IsNullOrEmpty(colorString))
+      return false;
+    // Try parsing as HexRgb
+    if (HexRgb.TryParse(colorString, out var hexColor))
+    {
+      color = new Color { Val = hexColor };
+      return true;
+    }
+    // Try parsing as ThemeColors
+    if (Enum.TryParse<ThemeColors>(colorString, true, out var themeColor))
+    {
+      color = new Color { ThemeColor = themeColor };
+      return true;
+    }
+    return false;
   }
 }

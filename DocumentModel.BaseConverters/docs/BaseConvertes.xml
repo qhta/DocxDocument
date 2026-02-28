@@ -1240,6 +1240,16 @@
             Represents base functionality for specific converters.
             </summary>
         </member>
+        <member name="M:DocumentModel.OpenXml.ConverterBase.HasSingleProperty(System.Type)">
+            <summary>
+            Determines whether the specified type declares exactly one public instance property.
+            </summary>
+            <remarks>This method considers only properties declared directly on the specified type and ignores
+            inherited properties.</remarks>
+            <param name="type">The type to inspect for public instance properties. Must not be null.</param>
+            <returns>Returns <see langword="true"/> if the type declares exactly one public instance property; otherwise, <see
+            langword="false"/>. Returns <see langword="null"/> if <paramref name="type"/> is null.</returns>
+        </member>
         <member name="M:DocumentModel.OpenXml.ConverterBase.GetValProperty(System.Type)">
             <summary>
             Retrieves the public instance property named "Val" from the specified type, or returns the single declared public

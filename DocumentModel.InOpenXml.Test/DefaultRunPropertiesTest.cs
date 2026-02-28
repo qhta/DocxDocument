@@ -159,7 +159,16 @@ namespace DocumentModel.InOpenXml.Test
         CharacterScale = isUpdated ? new Percent(115) : new Percent(110),
         NoProof = true,
         Kern = isUpdated ? new HPS("10 pt") : new HPS("12 pt"), 
-        Language = isUpdated ? "en-US" : "fr-FR"
+        Language = isUpdated ? "en-US" : new Languages("fr-FR", "ar-SA", "ja-JP"),
+        Border = new DMW.Border
+        {
+          Style = BorderStyle.Dash,
+          Color = "0000FF",
+          Width = "0.5pt",
+          Space = "0.25pt",
+          Shadow = true,
+          Frame = false,
+        },
       };
     }
 

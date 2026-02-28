@@ -17,7 +17,7 @@ public record ConversionMethodInfo(Type TargetType, string ConvertFromMethod, st
 /// registered and resolved dynamically, such as in serialization frameworks or custom mapping utilities. The Append
 /// method allows merging conversion mappings from another ConversionToMap instance, facilitating
 /// extensibility.</remarks>
-public class ConversionToMap: Dictionary<(Type Source, Type Target), Func<object, Type, object?>>
+public class ConversionToMap : Dictionary<(Type Source, Type Target), Func<object, Type, object?>>
 {
   /// <summary>
   /// Appends map from other source.
@@ -41,7 +41,7 @@ public class ConversionToMap: Dictionary<(Type Source, Type Target), Func<object
 /// retrieved dynamically, such as in serialization frameworks or custom type mappers. The Append method allows merging
 /// conversion mappings from another ConversionFromMap instance, overwriting existing mappings for the same type
 /// pairs.</remarks>
-public class ConversionFromMap: Dictionary<(Type Source, Type Target), Func<object, Type, object?>>
+public class ConversionFromMap : Dictionary<(Type Source, Type Target), Func<object, Type, object?>>
 {
   /// <summary>
   /// Appends map from other source.
@@ -61,6 +61,20 @@ public class ConversionFromMap: Dictionary<(Type Source, Type Target), Func<obje
 /// </summary>
 public static class ConverterBase
 {
+  /// <summary>
+  /// Determines whether the specified type declares exactly one public instance property.
+  /// </summary>
+  /// <remarks>This method considers only properties declared directly on the specified type and ignores
+  /// inherited properties.</remarks>
+  /// <param name="type">The type to inspect for public instance properties. Must not be null.</param>
+  /// <returns>Returns <see langword="true"/> if the type declares exactly one public instance property; otherwise, <see
+  /// langword="false"/>. Returns <see langword="null"/> if <paramref name="type"/> is null.</returns>
+  public static bool HasSingleProperty(this Type type)
+  {
+    var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+    return allProps.Length == 1;
+  }
+
   /// <summary>
   /// Retrieves the public instance property named "Val" from the specified type, or returns the single declared public
   /// instance property if only one exists.
@@ -119,7 +133,7 @@ public static class ConverterBase
             var parameters = fromMethod.GetParameters();
             if (parameters.Length == 1)
               return fromMethod.Invoke(null, [value])!;
-            Debug.Assert(parameters.Length==2);
+            Debug.Assert(parameters.Length == 2);
             return fromMethod.Invoke(null, [value, targetType])!;
           };
         }
@@ -134,7 +148,8 @@ public static class ConverterBase
             return toMethod.Invoke(null, [value, targetType])!;
           };
         }
-      } catch (TargetInvocationException ex)
+      }
+      catch (TargetInvocationException ex)
       {
         if (ex.InnerException != null)
           throw ex.InnerException;
@@ -216,7 +231,7 @@ public static class ConverterBase
       result = targetInstance;
       return true;
     }
-    if (targetType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    if (targetType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)) && targetType.HasSingleProperty())
     {
       var valProp = targetType.GetValProperty();
       if (valProp == null)
@@ -304,7 +319,8 @@ public static class ConverterBase
         {
           result = conversionFunc(value, targetType);
           return true;
-        } catch
+        }
+        catch
         {
           break;
         }
@@ -322,7 +338,7 @@ public static class ConverterBase
       if (TryConvertFrom(valValue, targetType, conversionFromMap, out result))
         return true;
     }
-    if (sourceType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    if (sourceType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)) && sourceType.HasSingleProperty())
     {
       var valProp = sourceType.GetValProperty();
       if (valProp == null)
@@ -332,7 +348,7 @@ public static class ConverterBase
       if (valValue != null && TryConvertFrom(valValue, targetType, conversionFromMap, out result))
         return true;
     }
-    if (sourceType.IsEqualOrSubclassOf(typeof(DX.StringValue)))
+    if (sourceType.IsEqualOrSubclassOf(typeof(DX.StringValue)) && sourceType.HasSingleProperty())
     {
       var valProp = sourceType.GetValProperty();
       if (valProp == null)
@@ -425,7 +441,8 @@ public static class ConverterBase
       {
         result = convertible.ToType(targetType, null);
         return true;
-      } catch (Exception ex)
+      }
+      catch (Exception ex)
       {
         Debug.WriteLine(ex);
       }

@@ -19,6 +19,8 @@
 
   <ItemGroup>
     <Compile Remove="Base interfaces\ITypedModelElement.cs" />
+    <Compile Remove="Wordprocessing\Run properties\Languages.ShouldSerialize.cs" />
+    <Compile Remove="Wordprocessing\Run properties\Languages.XmlSerialization.cs" />
     <Compile Remove="Wordprocessing\Settings\Settings.cs" />
     <Compile Remove="Wordprocessing\Styles\StyleDef.ext.cs" />
   </ItemGroup>

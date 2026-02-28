@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class enables specification of language settings for spell checking, grammar checking, and text processing in multilingual documents.
 /// </summary>
 [OpenXmlType(typeof(DXW.Languages))]
-public partial class Languages: ModelElement<DXW.Languages>
+public partial class Languages : ModelElement<DXW.Languages>
 {
   /// <summary>
   /// Default constructor.
@@ -61,17 +61,15 @@ public partial class Languages: ModelElement<DXW.Languages>
   /// 'EA:{EastAsia}', separated by commas.</returns>
   public override string ToString()
   {
-    var parts = new List<string>();
+    var stringList = new List<string>();
     if (Val != null)
-      parts.Add(Val);
-    if (Bidi != null)
-      parts.Add($"Bidi:{Bidi}");
-    if (EastAsia != null)
-      parts.Add($"EastAsia:{EastAsia}");
-    return string.Join(", ", parts);
+      stringList.Add(Val);
+    if (EastAsia != null) stringList.Add($"EastAsia: {EastAsia}");
+    if (Bidi != null) stringList.Add($"Bidi: {Bidi}");
+    return string.Join(", ", stringList);
   }
 
-  
+
   /// <summary>
   /// Implicitly converts a nullable Languages enumeration value to its string representation.
   /// </summary>
@@ -131,10 +129,20 @@ public partial class Languages: ModelElement<DXW.Languages>
     for (int i = 1; i < parts.Length; i++)
     {
       var part = parts[i];
-      if (part.StartsWith("CS:"))
-        lang.Bidi = part.Substring(3);
-      else if (part.StartsWith("EA:"))
-        lang.EastAsia = part.Substring(3);
+      if (part.StartsWith("EastAsia:"))
+      {
+        var ss = part.Split(':');
+        if (ss.Length != 2)
+          return false;
+        lang.EastAsia = ss[1];
+      }
+      else if (part.StartsWith("Bidi:"))
+      {
+        var ss = part.Split(':');
+        if (ss.Length != 2)
+          return false;
+        lang.Bidi = ss[1];
+      }
       else
         return false; // Unrecognized format
     }
