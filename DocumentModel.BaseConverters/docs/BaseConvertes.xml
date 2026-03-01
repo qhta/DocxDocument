@@ -1821,6 +1821,14 @@
             <returns>Mapping between model enum values and OpenXml enum values.</returns>
             <exception cref="T:System.InvalidOperationException"></exception>
         </member>
+        <member name="M:DocumentModel.OpenXml.EnumConverter.GetOpenXmlEnumValuesMapToString(System.Type)">
+            <summary>
+            Creates a mapping between OpenXml enum values and strings .
+            </summary>
+            <param name="openXmlEnumValuesType">The OpenXml enum values type.</param>
+            <returns>Mapping between OpenXml enum values and strings.</returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
         <member name="M:DocumentModel.OpenXml.EnumConverter.GetEnumValuesMapToEnumValuesType(System.Type,System.Type)">
             <summary>
             Creates a mapping between model enum values and OpenXml enum values.
@@ -1926,7 +1934,45 @@
             <param name="openXmlType">The target OpenXmlValues type for the created EnumValue instance. Must be of OpenXml EnumValue type.</param>
             <returns>A new EnumValue, or null if the input is null.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.EnumConverter.ConvertTo(System.Enum,System.Type)">
+        <member name="M:DocumentModel.OpenXml.EnumConverter.ConvertFromOpenXmlEnumValueToString(DocumentFormat.OpenXml.OpenXmlSimpleType)">
+            <summary>
+            Converts an OpenXml EnumValue to Enum.
+            </summary>
+            <param name="openXmlEnumValue">The openXmlEnumValue to convert.</param>
+            <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
+            <returns>The Enum value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EnumConverter.ConvertToOpenXmlEnumValueFromString(System.String,System.Type)">
+            <summary>
+            Creates an OpenXml EnumValue from an Enum value.
+            </summary>
+            <param name="value">The Enum value to convert.</param>
+            <param name="openXmlType">The target OpenXmlValues type for the created EnumValue instance. Must be of OpenXml EnumValue type.</param>
+            <returns>A new EnumValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EnumConverter.TryConvertTo(System.Object,System.Type,System.Object@)">
+            <summary>
+            Attempts to convert an Enum value to the specified target type using standard type conversion, returning a boolean to indicate success or failure.
+            </summary>
+            <param name="value">The Enum value to convert.</param>
+            <param name="targetType">The target type to convert to.</param>
+            <param name="result">The converted value, or null if the conversion failed.</param>
+            <returns>True if the conversion was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EnumConverter.TryConvertFrom(System.Object,System.Type,System.Object@)">
+            <summary>
+            Attempts to convert the specified value to the specified target type.
+            </summary>
+            <remarks>This method utilizes a predefined conversion map to determine how to convert the value to the
+            target type. It is important to ensure that the target type is compatible with the provided value to avoid
+            conversion failures.</remarks>
+            <param name="value">The object to convert. This can be null, in which case the conversion will not be performed.</param>
+            <param name="targetType">The type to which the value should be converted. This must be a valid type that the conversion supports.</param>
+            <param name="result">When this method returns, contains the converted value if the conversion was successful; otherwise, it will be
+            null.</param>
+            <returns>true if the conversion was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.EnumConverter.ConvertTo(System.Object,System.Type)">
             <summary>
             Converts an Enum value to the specified target type using standard type conversion.
             </summary>

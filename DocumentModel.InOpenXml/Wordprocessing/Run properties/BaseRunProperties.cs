@@ -14,6 +14,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Fonts used to display the text contents of this run, supporting ASCII, High ANSI, Complex Script, and East Asian character ranges.
   /// </summary>
   [OpenXmlElement(typeof(DXW.RunFonts))]
+  [Category("Fonts and attributes")]
   public RunFonts? RunFonts { get => _RunFonts; set => UpdateField(ref _RunFonts, value, nameof(RunFonts)); }
 
   private RunFonts? _RunFonts;
@@ -22,6 +23,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Bold property for characters in the run.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Bold))]
+  [Category("Fonts and attributes")]
   public Boolean? Bold { get => _Bold; set => UpdateField(ref _Bold, value, nameof(Bold)); }
 
   private Boolean? _Bold;
@@ -30,6 +32,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Separate bold property for characters in the complex script.
   /// </summary>
   [OpenXmlElement(typeof(DXW.BoldComplexScript))]
+  [Category("Fonts and attributes")]
   public Boolean? BoldCS { get => _BoldCS; set => UpdateField(ref _BoldCS, value, nameof(BoldCS)); }
 
   private Boolean? _BoldCS;
@@ -38,6 +41,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Italic property for characters in the run.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Italic))]
+  [Category("Fonts and attributes")]
   public Boolean? Italic { get => _Italic; set => UpdateField(ref _Italic, value, nameof(Italic)); }
 
   private Boolean? _Italic;
@@ -46,6 +50,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Separate italic property for characters in the complex script.
   /// </summary>
   [OpenXmlElement(typeof(DXW.ItalicComplexScript))]
+  [Category("Fonts and attributes")]
   public Boolean? ItalicCS { get => _ItalicCS; set => UpdateField(ref _ItalicCS, value, nameof(ItalicCS)); }
 
   private Boolean? _ItalicCS;
@@ -54,6 +59,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Font size for the run, measured in half points.
   /// </summary>
   [OpenXmlElement(typeof(DXW.FontSize))]
+  [Category("Fonts and attributes")]
   public HPS? FontSize { get => _FontSize; set => UpdateField(ref _FontSize, value, nameof(FontSize)); }
 
   private HPS? _FontSize;
@@ -63,6 +69,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Separate font size for characters in complex script, measured in half points.
   /// </summary>
   [OpenXmlElement(typeof(DXW.FontSizeComplexScript))]
+  [Category("Fonts and attributes")]
   public HPS? FontSizeCS { get => _FontSizeCS; set => UpdateField(ref _FontSizeCS, value, nameof(FontSizeCS)); }
 
   private HPS? _FontSizeCS;
@@ -71,6 +78,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Formats lowercase characters as capital letters for display only.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Caps))]
+  [Category("Fonts and attributes")]
   public bool? Caps { get => _Caps; set => UpdateField(ref _Caps, value, nameof(Caps)); }
 
   private bool? _Caps;
@@ -79,6 +87,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Formats small letter characters as capital letters in a smaller font size for display only.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SmallCaps))]
+  [Category("Fonts and attributes")]
   public bool? SmallCaps { get => _SmallCaps; set => UpdateField(ref _SmallCaps, value, nameof(SmallCaps)); }
 
   private bool? _SmallCaps;
@@ -86,6 +95,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// <summary>
   /// Underline style for the run contents.
   /// </summary>
+  [Category("Fonts and attributes")]
   public Underline? Underline { get => _Underline; set => UpdateField(ref _Underline, value, nameof(Underline)); }
 
   private Underline? _Underline;
@@ -94,6 +104,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Displays a single horizontal line through the center of the run.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Strike))]
+  [Category("Fonts and attributes")]
   public bool? Strike { get => _Strike; set => UpdateField(ref _Strike, value, nameof(Strike)); }
 
   private bool? _Strike;
@@ -102,6 +113,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Displays two horizontal lines through each character in the run.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoubleStrike))]
+  [Category("Fonts and attributes")]
   public bool? DoubleStrike
   {
     get => _DoubleStrike;
@@ -114,6 +126,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Color used to display the run contents, can be explicit or automatic.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Color))]
+  [Category("Fonts and attributes")]
   public DMW.Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
 
   private DMW.Color? _Color;
@@ -122,6 +135,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Character pitch added or removed after each character in the run.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Spacing))]
+  [Category("Scaling and spacing")]
   public Twips? Spacing { get => _Spacing; set => UpdateField(ref _Spacing, value, nameof(Spacing)); }
 
   private Twips? _Spacing;
@@ -130,6 +144,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Amount by which each character is expanded or compressed when rendered.
   /// </summary>
   [OpenXmlElement(typeof(DXW.CharacterScale))]
+  [Category("Scaling and spacing")]
   public Percent? CharacterScale
   {
     get => _CharacterScale;
@@ -142,6 +157,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Minimum font size for automatic kerning in the run.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Kern))]
+  [Category("Positioning and alignment")]
   public HPS? Kern { get => _Kern; set => UpdateField(ref _Kern, value, nameof(Kern)); }
 
   private HPS? _Kern;
@@ -150,6 +166,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Determines if the run uses the document grid characters per line settings.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SnapToGrid))]
+  [Category("Positioning and alignment")]
   public bool? SnapToGrid { get => _SnapToGrid; set => UpdateField(ref _SnapToGrid, value, nameof(SnapToGrid)); }
 
   private bool? _SnapToGrid;
@@ -158,6 +175,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Alignment for the run contents, supporting subscript and superscript.
   /// </summary>
   [OpenXmlElement(typeof(DXW.VerticalTextAlignment))]
+  [Category("Positioning and alignment")]
   public VerticalPosition? VerticalTextAlignment
   {
     get => _VerticalTextAlignment;
@@ -170,6 +188,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Amount by which text is raised or lowered relative to the baseline, in half-points.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Position))]
+  [Category("Positioning and alignment")]
   public Twips? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
 
   private Twips? _Position;
@@ -178,6 +197,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Displays the run contents as an outline by drawing a border around each character glyph.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Outline))]
+  [Category("Effects and Border")]
   public bool? Outline { get => _Outline; set => UpdateField(ref _Outline, value, nameof(Outline)); }
 
   private bool? _Outline;
@@ -186,6 +206,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Displays the run contents as embossed, making text appear raised off the page.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Emboss))]
+  [Category("Effects and Border")]
   public bool? Emboss { get => _Emboss; set => UpdateField(ref _Emboss, value, nameof(Emboss)); }
 
   private bool? _Emboss;
@@ -194,6 +215,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Displays the run contents as imprinted (engraved), making text appear pressed into the page.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Imprint))]
+  [Category("Effects and Border")]
   public bool? Imprint { get => _Imprint; set => UpdateField(ref _Imprint, value, nameof(Imprint)); }
 
   private bool? _Imprint;
@@ -202,6 +224,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Displays the run contents with a shadow effect.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Shadow))]
+  [Category("Effects and Border")]
   public bool? Shadow { get => _Shadow; set => UpdateField(ref _Shadow, value, nameof(Shadow)); }
 
   private bool? _Shadow;
@@ -210,6 +233,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Languages used for spell checking and grammar, supporting regular, complex, and East Asian scripts.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Languages))]
+  [Category("Languages and proofing")]
   public Languages? Language { get => _Language; set => UpdateField(ref _Language, value, nameof(Language)); }
 
   private Languages? _Language;
@@ -218,6 +242,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Prevents spelling and grammar errors from being reported for this run.
   /// </summary>
   [OpenXmlElement(typeof(DXW.NoProof))]
+  [Category("Languages and proofing")]
   public bool? NoProof { get => _NoProof; set => UpdateField(ref _NoProof, value, nameof(NoProof)); }
 
   private bool? _NoProof;
@@ -226,6 +251,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Shading applied to the run, including background color, pattern, and pattern color.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Shading))]
+  [Category("Effects and Border")]
   public Shading? Shading { get => _Shading; set => UpdateField(ref _Shading, value, nameof(Shading)); }
 
   private Shading? _Shading;
@@ -234,6 +260,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Border information for the run, including grouping and rendering details.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Border))]
+  [Category("Effects and Border")]
   public Border? Border { get => _Border; set => UpdateField(ref _Border, value, nameof(Border)); }
 
   private Border? _Border;
@@ -242,6 +269,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Animated text effect for the run.
   /// </summary>
   [OpenXmlElement(typeof(DXW.TextEffect))]
+  [Category("Effects and Border")]
   public TextEffect? TextEffect { get => _TextEffect; set => UpdateField(ref _TextEffect, value, nameof(TextEffect)); }
 
   private TextEffect? _TextEffect;
@@ -250,6 +278,7 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Resizes run contents to fit a specified width by adjusting character size.
   /// </summary>
   [OpenXmlElement(typeof(DXW.FitText))]
+  [Category("Scaling and spacing")]
   public FitText? FitText { get => _FitText; set => UpdateField(ref _FitText, value, nameof(FitText)); }
 
   private FitText? _FitText;
@@ -278,25 +307,25 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
   /// Hides the run contents from display at display time in the document.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Vanish))]
-  public bool? Vanish { get => _Vanish; set => UpdateField(ref _Vanish, value, nameof(Vanish)); }
+  public bool? Hidden { get => _hidden; set => UpdateField(ref _hidden, value, nameof(Hidden)); }
 
-  private bool? _Vanish;
+  private bool? _hidden;
 
   /// <summary>
   /// Ensures the run always behaves as hidden, even when hidden text is displayed (for paragraph marks).
   /// </summary>
   [OpenXmlElement(typeof(DXW.SpecVanish))]
-  public bool? SpecVanish { get => _SpecVanish; set => UpdateField(ref _SpecVanish, value, nameof(SpecVanish)); }
+  public bool? HiddenAlways { get => _hiddenAlways; set => UpdateField(ref _hiddenAlways, value, nameof(HiddenAlways)); }
 
-  private bool? _SpecVanish;
+  private bool? _hiddenAlways;
 
   /// <summary>
   /// Hides the run contents from display in web page view.
   /// </summary>
   [OpenXmlElement(typeof(DXW.WebHidden))]
-  public bool? WebHidden { get => _WebHidden; set => UpdateField(ref _WebHidden, value, nameof(WebHidden)); }
+  public bool? HiddenInWeb { get => _hiddenInWeb; set => UpdateField(ref _hiddenInWeb, value, nameof(HiddenInWeb)); }
 
-  private bool? _WebHidden;
+  private bool? _hiddenInWeb;
 
   #endregion
 
