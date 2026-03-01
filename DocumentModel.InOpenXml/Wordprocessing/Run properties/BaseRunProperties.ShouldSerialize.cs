@@ -35,7 +35,7 @@ public partial class BaseRunProperties<T>
   public bool ShouldSerializeFitText() => FitText is not null;
   public bool ShouldSerializeEmphasis() => Emphasis is not null;
   public bool ShouldSerializeEastAsianLayout() => EastAsianLayout is not null;
-  public bool ShouldSerializeVanish() => Vanish is not null;
-  public bool ShouldSerializeSpecVanish() => SpecVanish is not null;
-  public bool ShouldSerializeWebHidden() => WebHidden is not null;
+  public bool ShouldSerializeVanish() => Hidden is not null;
+  public bool ShouldSerializeSpecVanish() => HiddenAlways is not null;
+  public bool ShouldSerializeWebHidden() => HiddenInWeb is not null;
 }

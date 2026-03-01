@@ -13,7 +13,11 @@ public static class EnumConverter
     new(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
     new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
     new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
+  ];
 
+  private static readonly ConversionMethodInfo[] stringConversions =
+  [
+    new(typeof(DX.EnumValue<>), nameof(ConvertFromOpenXmlEnumValueToString), nameof(ConvertToOpenXmlEnumValueFromString)),
   ];
 
   internal static readonly ConversionToMap ConversionToMap = new();
@@ -25,6 +29,8 @@ public static class EnumConverter
   static EnumConverter()
   {
     ConverterBase.RegisterConversionMethods(typeof(EnumConverter), typeof(Enum), supportedConversions, ConversionToMap,
+      ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(EnumConverter), typeof(String), stringConversions, ConversionToMap,
       ConversionFromMap);
   }
 
@@ -46,6 +52,8 @@ public static class EnumConverter
   /// <exception cref="InvalidOperationException"></exception>
   private static BiDiDictionary<object, object> GetEnumValuesMap(Type modelEnumType, Type targetType)
   {
+    if (modelEnumType == typeof(string))
+      return GetOpenXmlEnumValuesMapToString(targetType);
     if (targetType == typeof(String))
       return GetEnumValuesMapToStringType(modelEnumType);
     if (targetType.Name.StartsWith("EnumValue`"))
@@ -74,10 +82,9 @@ public static class EnumConverter
       enumValuesMap = new BiDiDictionary<object, object>();
       foreach (var modelEnumField in modelEnumFields)
       {
+        var modelEnumValue = modelEnumField.GetValue(null)!;
         string mappedName = modelEnumField.GetCustomAttribute<OpenXmlEnumValueAttribute>()?.EnumValueName ??
                             modelEnumField.Name;
-
-        var modelEnumValue = modelEnumField.GetValue(null)!;
         enumValuesMap.Add(modelEnumValue, mappedName);
       }
       if (modelEnumType.GetCustomAttribute<FlagsAttribute>() != null)
@@ -125,6 +132,34 @@ public static class EnumConverter
       mappingEnumValues[modelEnumType] = enumValuesMap;
     }
 
+    return enumValuesMap;
+  }
+
+
+  /// <summary>
+  /// Creates a mapping between OpenXml enum values and strings .
+  /// </summary>
+  /// <param name="openXmlEnumValuesType">The OpenXml enum values type.</param>
+  /// <returns>Mapping between OpenXml enum values and strings.</returns>
+  /// <exception cref="InvalidOperationException"></exception>
+  private static BiDiDictionary<object, object> GetOpenXmlEnumValuesMapToString(Type openXmlEnumValuesType)
+  {
+
+    var openXmlEnumValuesProps = openXmlEnumValuesType.GetProperties(BindingFlags.Public | BindingFlags.Static);
+    if (openXmlEnumValuesProps.Length == 0)
+      throw new InvalidOperationException($"Public static properties of type {openXmlEnumValuesType} not found.");
+
+    if (!mappingEnumValues.TryGetValue(openXmlEnumValuesType, out var enumValuesMap))
+    {
+      enumValuesMap = new BiDiDictionary<object, object>();
+      foreach (var openXmlEnumValuesProp in openXmlEnumValuesProps)
+      {
+        var openXmlEnumValue = openXmlEnumValuesProp.GetValue(null)!;
+        string mappedName = openXmlEnumValuesProp.Name;
+        enumValuesMap.Add(openXmlEnumValue, mappedName);
+      }
+      mappingEnumValues[openXmlEnumValuesType] = enumValuesMap;
+    }
     return enumValuesMap;
   }
 
@@ -440,7 +475,7 @@ public static class EnumConverter
     if (valObject == null)
       return null;
 
-    return ConvertFrom(valObject, modelEnumType);
+    return (Enum?)ConvertFrom(valObject, modelEnumType);
   }
 
   /// <summary>
@@ -479,7 +514,106 @@ public static class EnumConverter
 
   #endregion
 
+
+  #region EnumValue<> conversion.
+
+  /// <summary>
+  /// Converts an OpenXml EnumValue to Enum.
+  /// </summary>
+  /// <param name="openXmlEnumValue">The openXmlEnumValue to convert.</param>
+  /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
+  /// <returns>The Enum value, or null if the element has no content.</returns>
+  public static string? ConvertFromOpenXmlEnumValueToString(DX.OpenXmlSimpleType? openXmlEnumValue)
+  {
+    if (openXmlEnumValue == null) return null;
+    
+    var openXmlType = openXmlEnumValue.GetType();
+    if (!openXmlType.Name.StartsWith("EnumValue`"))
+      throw new InvalidOperationException($"{openXmlType.Name} is not OpenXml EnumValue<> type .");
+
+    var valProp = openXmlType.GetProperty("Value");
+    if (valProp == null)
+      throw new InvalidOperationException($"EnumValue of type {openXmlType} does not have a Value property");
+
+    var valObject = valProp.GetValue(openXmlEnumValue)!;
+    var openXmlEnumValuesObject = valProp.GetValue(openXmlEnumValue);
+    if (openXmlEnumValuesObject == null)
+      return null;
+
+    var openXmlEnumValuesType = openXmlEnumValuesObject.GetType();
+    var enumValuesMap = GetEnumValuesMap(typeof(string), openXmlEnumValuesType);
+    var str = enumValuesMap.GetValue2(valObject);
+    return (string)str;
+  }
+
+  /// <summary>
+  /// Creates an OpenXml EnumValue from an Enum value.
+  /// </summary>
+  /// <param name="value">The Enum value to convert.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type for the created EnumValue instance. Must be of OpenXml EnumValue type.</param>
+  /// <returns>A new EnumValue, or null if the input is null.</returns>
+  public static DX.OpenXmlSimpleType? ConvertToOpenXmlEnumValueFromString(string? value, Type openXmlType)
+  {
+    if (value == null) return null;
+
+    if (!openXmlType.Name.StartsWith("EnumValue`"))
+      throw new InvalidOperationException($"Invalid EnumValue type {openXmlType.Name}.");
+
+    var openXmlEnumValuesType = openXmlType.GenericTypeArguments.FirstOrDefault();
+    if (openXmlEnumValuesType == null)
+      throw new InvalidOperationException($"EnumValue type {openXmlType.Name} does not have a generic argument.");
+
+    var modelEnumType = value.GetType()!;
+    var enumValuesMap = GetEnumValuesMap(modelEnumType, openXmlEnumValuesType);
+    var openXmlEnumValuesObject = enumValuesMap.GetValue1(value);
+    var result = (DX.OpenXmlSimpleType)Activator.CreateInstance(openXmlType)!;
+    var valProp = openXmlType.GetProperty("Value");
+    if (valProp == null)
+      throw new InvalidOperationException($"EnumValue of type {openXmlType} does not have a Value property");
+
+    valProp.SetValue(result, openXmlEnumValuesObject);
+    return result;
+  }
+
+  #endregion
+
   #region Generic OpenXml conversion methods
+
+  /// <summary>
+  /// Attempts to convert an Enum value to the specified target type using standard type conversion, returning a boolean to indicate success or failure.
+  /// </summary>
+  /// <param name="value">The Enum value to convert.</param>
+  /// <param name="targetType">The target type to convert to.</param>
+  /// <param name="result">The converted value, or null if the conversion failed.</param>
+  /// <returns>True if the conversion was successful; otherwise, false.</returns>
+  public static bool TryConvertTo(object? value, Type targetType, out object? result)
+  {
+    return ConverterBase.TryConvertTo(value, targetType, ConversionToMap, out result);
+  }
+
+  /// <summary>
+  /// Attempts to convert the specified value to the specified target type.
+  /// </summary>
+  /// <remarks>This method utilizes a predefined conversion map to determine how to convert the value to the
+  /// target type. It is important to ensure that the target type is compatible with the provided value to avoid
+  /// conversion failures.</remarks>
+  /// <param name="value">The object to convert. This can be null, in which case the conversion will not be performed.</param>
+  /// <param name="targetType">The type to which the value should be converted. This must be a valid type that the conversion supports.</param>
+  /// <param name="result">When this method returns, contains the converted value if the conversion was successful; otherwise, it will be
+  /// null.</param>
+  /// <returns>true if the conversion was successful; otherwise, false.</returns>
+  public static bool TryConvertFrom(object? value, Type targetType, out object? result)
+  {
+    try
+    {
+      return ConverterBase.TryConvertFrom(value, targetType, ConversionFromMap, out result);
+    }
+    catch
+    {
+      result = null;
+      return false;
+    }
+  }
 
   /// <summary>
   /// Converts an Enum value to the specified target type using standard type conversion.
@@ -488,7 +622,7 @@ public static class EnumConverter
   /// <param name="targetType">The target type to convert to.</param>
   /// <returns>The converted value, or null if the input is null.</returns>
   /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
-  public static object? ConvertTo(Enum? value, Type targetType)
+  public static object? ConvertTo(object? value, Type targetType)
   {
     return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
   }
@@ -501,9 +635,9 @@ public static class EnumConverter
   /// <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
   /// is <see langword="null"/>.</returns>
   /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="Enum"/> is not supported.</exception>
-  public static Enum? ConvertFrom(object? value, Type targetType)
+  public static object? ConvertFrom(object? value, Type targetType)
   {
-    return (Enum?)ConverterBase.ConvertFrom(value, targetType, ConversionFromMap);
+    return ConverterBase.ConvertFrom(value, targetType, ConversionFromMap);
   }
 
   #endregion

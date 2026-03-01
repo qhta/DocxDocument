@@ -35,12 +35,12 @@ public enum BorderStyle
   ///   Dotted Border.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.BorderValues.Dotted))]
-  Dot,
+  Dotted,
   /// <summary>
   ///   Specifies a line border consisting of a dashed line around the parent object.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.BorderValues.Dashed))]
-  Dash,
+  Dashed,
   /// <summary>
   ///   Dot Dash Border.
   /// </summary>
@@ -50,7 +50,7 @@ public enum BorderStyle
   ///   Dash Dot Dot Border.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.BorderValues.DotDotDash))]
-  DashDotDot,
+  DotDotDash,
   /// <summary>
   ///   Triple Line Border.
   /// </summary>
@@ -140,5 +140,5 @@ public enum BorderStyle
   ///   Inset Border.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.BorderValues.Inset))]
-  Inset
+  Inset,
 }

@@ -162,7 +162,8 @@ namespace DocumentModel.InOpenXml.Test
         Language = isUpdated ? "en-US" : new Languages("fr-FR", "ar-SA", "ja-JP"),
         Border = new DMW.Border
         {
-          Style = BorderStyle.Dash,
+          Style = isUpdated ? null : BorderStyle.Dashed,
+          ArtStyle = isUpdated ? "Apples" : null,
           Color = "0000FF",
           Width = "0.5pt",
           Space = "0.25pt",
@@ -172,6 +173,17 @@ namespace DocumentModel.InOpenXml.Test
         TextEffect = isUpdated ? TextEffect.BlinkBackground : TextEffect.None,
         FitText = new FitText { Id = 50, Width = "0.5in" },
         Emphasis = isUpdated ? EmphasisMark.Circle : EmphasisMark.None,
+        EastAsianLayout = new EastAsianLayout
+        {
+          Id = 1,
+          Combine = true,
+          CombineBrackets = CombineBracket.Square,
+          Vertical = true,
+          VerticalCompress = false
+        },
+        Hidden = true,
+        HiddenAlways = true,
+        HiddenInWeb = true,
       };
     }
 
