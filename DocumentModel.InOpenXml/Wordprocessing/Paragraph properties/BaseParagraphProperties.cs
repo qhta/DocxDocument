@@ -294,13 +294,13 @@ public abstract partial class BaseParagraphProperties<T> : ModelElement<T> where
   /// Vertical text alignment for the paragraph (e.g., baseline, top, center, bottom).
   /// </summary>
   [OpenXmlProperty(nameof(DXW.ParagraphProperties.TextAlignment))]
-  public VerticalTextAlignment? TextAlignment
+  public VerticalTextAlignment? VerticalTextAlignment
   {
-    get => _TextAlignment;
-    set => UpdateField(ref _TextAlignment, value, nameof(TextAlignment));
+    get => _verticalTextAlignment;
+    set => UpdateField(ref _verticalTextAlignment, value, nameof(VerticalTextAlignment));
   }
 
-  private VerticalTextAlignment? _TextAlignment;
+  private VerticalTextAlignment? _verticalTextAlignment;
 
   /// <summary>
   /// Text box tight wrap setting for the paragraph.

@@ -31,7 +31,7 @@ public partial class BaseParagraphProperties<T>
   public bool ShouldSerializeSuppressOverlap() => SuppressOverlap is not null;
   public bool ShouldSerializeJustification() => Justification is not null;
   public bool ShouldSerializeTextDirection() => TextDirection is not null;
-  public bool ShouldSerializeTextAlignment() => TextAlignment is not null;
+  public bool ShouldSerializeTextAlignment() => VerticalTextAlignment is not null;
   public bool ShouldSerializeTextBoxTightWrap() => TextBoxTightWrap is not null;
   public bool ShouldSerializeOutlineLevel() => OutlineLevel is not null;
 }
