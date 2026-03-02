@@ -4058,8 +4058,7 @@
             undefined. It is recommended to validate the input before calling this method.</remarks>
             <param name="str">The string containing the hexadecimal RGB color to parse.
             The string must be in a valid hex color format, such as "RRGGBB".</param>
-            <param name="result">When this method returns, contains the <see cref="T:DocumentModel.HexRgb"/> object
-            that corresponds to the parsed color.</param>
+            <returns>A <see cref="T:DocumentModel.HexRgb"/> object representing the parsed RGB color.</returns>
         </member>
         <member name="M:DocumentModel.HexRgb.TryParse(System.String,DocumentModel.HexRgb@)">
             <summary>

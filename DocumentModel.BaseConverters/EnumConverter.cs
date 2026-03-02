@@ -382,7 +382,6 @@ public static class EnumConverter
   /// Creates an OpenXml String from an Enum value.
   /// </summary>
   /// <param name="value">The Enum value to convert.</param>
-  /// <param name="openXmlType">The target OpenXmlValues type for the created String instance. Must be of OpenXml String type.</param>
   /// <returns>A new String, or null if the input is null.</returns>
   private static String? ConvertToString(Enum? value)
   {
@@ -521,7 +520,6 @@ public static class EnumConverter
   /// Converts an OpenXml EnumValue to Enum.
   /// </summary>
   /// <param name="openXmlEnumValue">The openXmlEnumValue to convert.</param>
-  /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   public static string? ConvertFromOpenXmlEnumValueToString(DX.OpenXmlSimpleType? openXmlEnumValue)
   {
