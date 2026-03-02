@@ -136,7 +136,29 @@ namespace DocumentModel.InOpenXml.Test
     {
       return new DefaultParagraphProperties
       {
+        KeepNext = isUpdated,
+        KeepLines = true,
+        PageBreakBefore = true,
+        WidowControl = true,
+        SuppressLineNumbers = true,
+        SuppressAutoHyphens = true,
+        Kinsoku = true,
+        WordWrap = true,
+        OverflowPunctuation = true,
+        TopLinePunctuation = true,
+        AutoSpaceDE = true,
+        AutoSpaceDN = true,
+        BiDi = true,
+        AdjustRightIndent = true,
+        SnapToGrid = true,
+        ContextualSpacing = true,
+        MirrorIndents = true,
+        SuppressOverlap = true,
         Justification = isUpdated ? Justification.Center : Justification.Start,
+        TextDirection = isUpdated ? TextDirection.TopToBottom : TextDirection.LeftToRight,
+        VerticalTextAlignment = isUpdated ? VerticalTextAlignment.Center : VerticalTextAlignment.Top,
+        TextBoxTightWrap = TextBoxTightWrap.AllLines,
+        OutlineLevel = isUpdated ? 2 : 1,
         //SpacingBetweenLines = new SpacingBetween()
         //{
         //  Line = isUpdated ? "360" : "240",
@@ -147,9 +169,7 @@ namespace DocumentModel.InOpenXml.Test
           Start = isUpdated ? "720" : "480",
           Hanging = isUpdated ? "360" : "240"
         },
-        KeepNext = true,
-        KeepLines = true,
-        WidowControl = true
+
       };
     }
 
