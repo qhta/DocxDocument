@@ -27,7 +27,6 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
   /// <summary>
   ///   Default run properties, specifying the default character-level formatting for text runs.
   /// </summary>
-  //[OpenXmlProperty(nameof(DXW.DocDefaults.RunPropertiesDefault))]
   [OpenXmlUpdateData(nameof(UpdateDefaultRunPropertiesInOpenXml))]
   [OpenXmlLoadData(nameof(LoadDefaultRunProperties))]
   public DefaultRunProperties? DefaultRunProperties
@@ -41,7 +40,8 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
   /// <summary>
   ///   Default paragraph properties, specifying the default paragraph-level formatting for paragraphs.
   /// </summary>
-  [OpenXmlProperty(nameof(DXW.DocDefaults.ParagraphPropertiesDefault))]
+  [OpenXmlUpdateData(nameof(UpdateDefaultParagraphPropertiesInOpenXml))]
+  [OpenXmlLoadData(nameof(LoadDefaultParagraphProperties))]
   public DefaultParagraphProperties? DefaultParagraphProperties
   {
     get => _defaultParagraphProperties;
@@ -88,4 +88,45 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
       DefaultRunProperties = OpenXmlModelConverter.ConvertFrom(runPropertiesBaseStyle, typeof(DefaultRunProperties)) as DefaultRunProperties;
     }
   }
+
+
+  /// <summary>
+  /// Updates the default Paragraph properties in the specified Word document defaults to match the current default Paragraph
+  /// properties.
+  /// </summary>
+  /// <remarks>This method is needed because the default Paragraph properties in the document defaults are defined
+  /// as a DXW.ParagraphPropertiesBaseStyle, which is a child element of the DXW.ParagraphPropertiesDefault.</remarks>
+  /// <param name="wordDocDefaults">The document defaults object to update with the new Paragraph properties. This parameter cannot be null.</param>
+  public void UpdateDefaultParagraphPropertiesInOpenXml(DXW.DocDefaults wordDocDefaults)
+  {
+    if (DefaultParagraphProperties != null)
+    {
+      var ParagraphPropertiesBaseStyle =
+        (DXW.ParagraphPropertiesBaseStyle)OpenXmlModelConverter.ConvertTo(DefaultParagraphProperties, typeof(DXW.ParagraphPropertiesBaseStyle))!;
+      wordDocDefaults.ParagraphPropertiesDefault ??= new DXW.ParagraphPropertiesDefault();
+      wordDocDefaults.ParagraphPropertiesDefault.ParagraphPropertiesBaseStyle = ParagraphPropertiesBaseStyle;
+    }
+    else
+    {
+      if (wordDocDefaults.ParagraphPropertiesDefault != null)
+        wordDocDefaults.ParagraphPropertiesDefault.RemoveAllChildren<DXW.ParagraphPropertiesBaseStyle>();
+      wordDocDefaults.ParagraphPropertiesDefault = null;
+    }
+  }
+
+  /// <summary>
+  /// Loads the default Paragraph properties from the specified document defaults object.
+  /// </summary>
+  /// <remarks>This method is needed because the default Paragraph properties in the document defaults are defined
+  /// as a DXW.ParagraphPropertiesBaseStyle, which is a child element of the DXW.ParagraphPropertiesDefault.</remarks>
+  /// <param name="wordDocDefaults">The document defaults object to load the new Paragraph properties from. This parameter cannot be null.</param>
+  public void LoadDefaultParagraphProperties(DXW.DocDefaults wordDocDefaults)
+  {
+    var ParagraphPropertiesBaseStyle = wordDocDefaults.ParagraphPropertiesDefault?.ParagraphPropertiesBaseStyle;
+    if (ParagraphPropertiesBaseStyle != null)
+    {
+      DefaultParagraphProperties = OpenXmlModelConverter.ConvertFrom(ParagraphPropertiesBaseStyle, typeof(DefaultParagraphProperties)) as DefaultParagraphProperties;
+    }
+  }
+
 }

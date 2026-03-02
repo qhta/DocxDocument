@@ -164,8 +164,7 @@ public readonly partial struct HexRgb : IEquatable<HexRgb>, IConvertible
   /// undefined. It is recommended to validate the input before calling this method.</remarks>
   /// <param name="str">The string containing the hexadecimal RGB color to parse.
   /// The string must be in a valid hex color format, such as "RRGGBB".</param>
-  /// <param name="result">When this method returns, contains the <see cref="HexRgb"/> object
-  /// that corresponds to the parsed color.</param>
+  /// <returns>A <see cref="HexRgb"/> object representing the parsed RGB color.</returns>
   public static HexRgb Parse (string str)
   {
     if (TryParse(str, out var rgb))
