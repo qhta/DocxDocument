@@ -27,7 +27,7 @@ public static partial class OpenXmlModelConverter
     if (modelObject == null)
       return null;
 
-    if (openXmlType.Name == "DocDefaults") Debug.Assert(true);
+    if (openXmlType==typeof(DXW.FontCharSet)) Debug.Assert(true);
     var modelType = modelObject.GetType().GetNotNullableType();
     if (modelType == openXmlType)
       return modelObject;
@@ -193,8 +193,7 @@ public static partial class OpenXmlModelConverter
   {
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return false;
-
-    if (modelProperty.Name == "Before") Debug.Assert(true);
+    if (modelProperty.Name== "DefaultTabStop") Debug.Assert(true);
     if (TryUpdateUsingPropertyUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingTypeUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingElementAttribute(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
@@ -388,7 +387,7 @@ public static partial class OpenXmlModelConverter
     if (openXmlChildType.IsSubclassOf(typeof(DXW.EmptyType)) && !modelValue.Equals(true))
       return;
 
-    if (openXmlChildType == typeof(DXW.Spacing)) Debug.Assert(true);
+    //if (openXmlChildType == typeof(DXW.StylePaneSortMethods)) Debug.Assert(true);
     var openXmlChildElement = ConvertTo(modelValue, openXmlChildType);
     if (openXmlChildElement is not DX.OpenXmlElement o)
       throw new InvalidOperationException($"Converted Open XML child element " +
@@ -405,13 +404,14 @@ public static partial class OpenXmlModelConverter
   /// <param name="modelProperty">The property from the model object.</param>
   /// <param name="openXmlElement">The target Open XML element.</param>
   /// <param name="openXmlType">The type of the Open XML element.</param>
+  /// <returns></returns>
   /// <exception cref="InvalidOperationException">Thrown if the update fails.</exception>
-  public static void UpdateChildElementCollection
+  public static bool UpdateChildElementCollection
     (object modelObject, PropertyInfo modelProperty, DX.OpenXmlElement openXmlElement, Type openXmlType)
   {
     var modelValue = modelProperty.GetValue(modelObject);
     if (modelValue == null)
-      return;
+      return true;
 
     var modelPropertyType = modelProperty.PropertyType.GetNotNullableType();
     var collectionInterface = modelPropertyType.GetInterfaces()
@@ -431,6 +431,7 @@ public static partial class OpenXmlModelConverter
     foreach (var child in children)
       openXmlElement.RemoveChild(child);
     var modelElementsCollection = (IEnumerable<object>)modelValue;
+    bool updated = false;
     foreach (var modelElement in modelElementsCollection)
     {
       var openXmlChildElement = ConvertTo(modelElement, openXmlChildType);
@@ -439,7 +440,9 @@ public static partial class OpenXmlModelConverter
                                             $"for model property {modelProperty.Name}");
 
       openXmlElement.AddChildUsingSchemaOrder(o);
+      updated = true;
     }
+    return updated;
   }
 
   /// <summary>
@@ -500,17 +503,18 @@ public static partial class OpenXmlModelConverter
     TryLoadUsingItemAttribute(modelObject, openXmlObject, modelType, openXmlType);
   }
 
-
   /// <summary>
-  /// Attempts to populate a property of a model object with data from an Open XML object using a model type loading method.
+  /// Attempts to load data into the specified model object by invoking a corresponding load method for the given Open
+  /// XML type.
   /// </summary>
-  /// <remarks>This method locates and invokes a loading method based on the property type and Open XML type.
-  /// The loading method must accept exactly one parameter, which is enforced by an assertion.</remarks>
-  /// <param name="modelObject">The instance of the model object containing the property to be populated.</param>
-  /// <param name="modelProperty">The property information for the model property that will receive the loaded data.</param>
-  /// <param name="openXmlObject">The Open XML object that provides the data to be loaded into the model property.</param>
-  /// <param name="openXmlType">The type of the Open XML object, used to determine the appropriate loading method.</param>
-  /// <returns>true if the data was successfully loaded into the model property; otherwise, false.</returns>
+  /// <remarks>This method uses reflection to locate and invoke a load method on the model object that matches
+  /// the provided Open XML type. The load method must accept exactly one parameter of the Open XML object's type. If no
+  /// suitable method is found, the operation returns false.</remarks>
+  /// <param name="modelObject">The target model object that will receive the loaded data. This object must define a load method compatible with
+  /// the specified Open XML type.</param>
+  /// <param name="openXmlObject">The Open XML object containing the data to be loaded into the model object.</param>
+  /// <param name="openXmlType">The type of the Open XML object, used to identify the appropriate load method on the model object.</param>
+  /// <returns>true if the data was successfully loaded into the model object; otherwise, false.</returns>
   private static bool TryLoadUsingTypeLoadDataMethod
     (object modelObject, object openXmlObject, Type openXmlType)
   {

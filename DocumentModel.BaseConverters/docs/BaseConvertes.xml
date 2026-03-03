@@ -1240,16 +1240,6 @@
             Represents base functionality for specific converters.
             </summary>
         </member>
-        <member name="M:DocumentModel.OpenXml.ConverterBase.HasSingleProperty(System.Type)">
-            <summary>
-            Determines whether the specified type declares exactly one public instance property.
-            </summary>
-            <remarks>This method considers only properties declared directly on the specified type and ignores
-            inherited properties.</remarks>
-            <param name="type">The type to inspect for public instance properties. Must not be null.</param>
-            <returns>Returns <see langword="true"/> if the type declares exactly one public instance property; otherwise, <see
-            langword="false"/>. Returns <see langword="null"/> if <paramref name="type"/> is null.</returns>
-        </member>
         <member name="M:DocumentModel.OpenXml.ConverterBase.GetValProperty(System.Type)">
             <summary>
             Retrieves the public instance property named "Val" from the specified type, or returns the single declared public
@@ -4660,6 +4650,7 @@
             <param name="modelProperty">The property from the model object.</param>
             <param name="openXmlElement">The target Open XML element.</param>
             <param name="openXmlType">The type of the Open XML element.</param>
+            <returns></returns>
             <exception cref="T:System.InvalidOperationException">Thrown if the update fails.</exception>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.UpdateElementCollection(System.Object,DocumentFormat.OpenXml.OpenXmlElement)">
@@ -4685,15 +4676,17 @@
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingTypeLoadDataMethod(System.Object,System.Object,System.Type)">
             <summary>
-            Attempts to populate a property of a model object with data from an Open XML object using a model type loading method.
+            Attempts to load data into the specified model object by invoking a corresponding load method for the given Open
+            XML type.
             </summary>
-            <remarks>This method locates and invokes a loading method based on the property type and Open XML type.
-            The loading method must accept exactly one parameter, which is enforced by an assertion.</remarks>
-            <param name="modelObject">The instance of the model object containing the property to be populated.</param>
-            <param name="modelProperty">The property information for the model property that will receive the loaded data.</param>
-            <param name="openXmlObject">The Open XML object that provides the data to be loaded into the model property.</param>
-            <param name="openXmlType">The type of the Open XML object, used to determine the appropriate loading method.</param>
-            <returns>true if the data was successfully loaded into the model property; otherwise, false.</returns>
+            <remarks>This method uses reflection to locate and invoke a load method on the model object that matches
+            the provided Open XML type. The load method must accept exactly one parameter of the Open XML object's type. If no
+            suitable method is found, the operation returns false.</remarks>
+            <param name="modelObject">The target model object that will receive the loaded data. This object must define a load method compatible with
+            the specified Open XML type.</param>
+            <param name="openXmlObject">The Open XML object containing the data to be loaded into the model object.</param>
+            <param name="openXmlType">The type of the Open XML object, used to identify the appropriate load method on the model object.</param>
+            <returns>true if the data was successfully loaded into the model object; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingItemAttribute(System.Object,System.Object,System.Type,System.Type)">
             <summary>

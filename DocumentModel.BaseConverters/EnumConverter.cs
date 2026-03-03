@@ -503,7 +503,7 @@ public static partial class EnumConverter
     if (valueProp.PropertyType.GetInterface("IEnumValue") != null)
       targetValue = EnumConverter.ConvertToIEnumValue(value, valueProp.PropertyType);
     else if (valueProp.PropertyType == typeof(string))
-      targetValue = EnumConverter.ConvertToString(value);
+      targetValue = EnumConverter.ConvertToString(value)?.ToLowerInvariant();
     else
       targetValue = Int32Converter.ConvertTo(Convert.ToInt32(value), valueProp.PropertyType);
     valueProp.SetValue(targetInstance, targetValue);

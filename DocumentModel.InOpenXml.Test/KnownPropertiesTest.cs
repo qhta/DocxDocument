@@ -1,15 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text.Json;
-using DocumentModel.CustomXml;
-using DocumentModel.Wordprocessing;
-
-using Qhta.TypeUtils;
-
-namespace DocumentModel.InOpenXml.Test
+﻿namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
   /// Provides comprehensive serialization tests for <see cref="KnownProperties"/>.

@@ -61,19 +61,6 @@ public class ConversionFromMap : Dictionary<(Type Source, Type Target), Func<obj
 /// </summary>
 public static class ConverterBase
 {
-  /// <summary>
-  /// Determines whether the specified type declares exactly one public instance property.
-  /// </summary>
-  /// <remarks>This method considers only properties declared directly on the specified type and ignores
-  /// inherited properties.</remarks>
-  /// <param name="type">The type to inspect for public instance properties. Must not be null.</param>
-  /// <returns>Returns <see langword="true"/> if the type declares exactly one public instance property; otherwise, <see
-  /// langword="false"/>. Returns <see langword="null"/> if <paramref name="type"/> is null.</returns>
-  public static bool HasSingleProperty(this Type type)
-  {
-    var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-    return allProps.Length == 1;
-  }
 
   /// <summary>
   /// Retrieves the public instance property named "Val" from the specified type, or returns the single declared public
@@ -87,17 +74,16 @@ public static class ConverterBase
   /// only one exists; otherwise, <see langword="null"/>.</returns>
   public static PropertyInfo? GetValProperty(this Type type)
   {
-    var valProp = type.GetProperty("Val") ?? type.GetProperty("Value");
-    if (valProp == null)
-    {
-      var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-      if (allProps.Length == 1)
-        valProp = allProps[0];
-      else
-        return null;
-    }
-    return valProp;
-  }
+    var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+    if (allProps.Length == 1)
+        return allProps[0];
+    if (type == typeof(DX.OpenXmlElement))
+      return null;
+    var baseType = type.BaseType;
+    if (baseType!= null)
+      return baseType.GetValProperty();
+    return null;
+ }
 
   /// <summary>
   /// Registers conversion methods for the specified model type using the provided converter type and supported
@@ -210,6 +196,7 @@ public static class ConverterBase
     {
       targetSubType = typeof(DX.EnumValue<>);
     }
+    if (targetType.IsEqualOrSubclassOf(typeof(DXW.FontCharSet))) Debug.Assert(true);
     while (targetSubType != null)
     {
       if (conversionToMap.TryGetValue((sourceSearchType, targetSubType), out var conversionFunc) ||
@@ -231,19 +218,18 @@ public static class ConverterBase
       result = targetInstance;
       return true;
     }
-    if (targetType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)) && targetType.HasSingleProperty())
+    if (targetType.IsEqualOrSubclassOf(typeof(DXW.FontCharSet))) Debug.Assert(true);
+    if (targetType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
     {
       var valProp = targetType.GetValProperty();
-      if (valProp == null)
-        return false;
-
-      if (TryConvertTo(value, valProp.PropertyType, conversionToMap, out object? valValue))
-      {
-        var targetInstance = Activator.CreateInstance(targetType);
-        valProp.SetValue(targetInstance, valValue);
-        result = targetInstance;
-        return true;
-      }
+      if (valProp != null)
+        if (TryConvertTo(value, valProp.PropertyType, conversionToMap, out object? valValue))
+        {
+          var targetInstance = Activator.CreateInstance(targetType);
+          valProp.SetValue(targetInstance, valValue);
+          result = targetInstance;
+          return true;
+        }
     }
     if (targetType.IsEqualOrSubclassOf(typeof(DX.StringValue)))
     {
@@ -338,17 +324,17 @@ public static class ConverterBase
       if (TryConvertFrom(valValue, targetType, conversionFromMap, out result))
         return true;
     }
-    if (sourceType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)) && sourceType.HasSingleProperty())
+    if (sourceType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
     {
       var valProp = sourceType.GetValProperty();
-      if (valProp == null)
-        return false;
-
-      var valValue = valProp.GetValue(value);
-      if (valValue != null && TryConvertFrom(valValue, targetType, conversionFromMap, out result))
-        return true;
+      if (valProp != null)
+      {
+        var valValue = valProp.GetValue(value);
+        if (valValue != null && TryConvertFrom(valValue, targetType, conversionFromMap, out result))
+          return true;
+      }
     }
-    if (sourceType.IsEqualOrSubclassOf(typeof(DX.StringValue)) && sourceType.HasSingleProperty())
+    if (sourceType.IsEqualOrSubclassOf(typeof(DX.StringValue)))
     {
       var valProp = sourceType.GetValProperty();
       if (valProp == null)
