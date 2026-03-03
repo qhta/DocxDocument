@@ -159,17 +159,17 @@ namespace DocumentModel.InOpenXml.Test
         VerticalTextAlignment = isUpdated ? VerticalTextAlignment.Center : VerticalTextAlignment.Top,
         TextBoxTightWrap = TextBoxTightWrap.AllLines,
         OutlineLevel = isUpdated ? 2 : 1,
-        //SpacingBetweenLines = new SpacingBetween()
-        //{
-        //  Line = isUpdated ? "360" : "240",
-        //  LineRule = LineSpacingRuleValues.Auto
-        //},
         Indentation = new Indentation
         {
           Start = isUpdated ? "720" : "480",
           Hanging = isUpdated ? "360" : "240"
         },
-
+        Spacing = new ParagraphSpacing()
+        {
+          Before = new SpacingBefore { Val = isUpdated ? "200" : "100" },
+          After = new SpacingAfter { Lines = isUpdated ? 150 : 100, AutoSpacing = isUpdated },
+          Interlines = new SpacingInterlines { Line = isUpdated ? "360" : "240", LineRule = LineSpacingRule.AtLeast }
+        },
       };
     }
 

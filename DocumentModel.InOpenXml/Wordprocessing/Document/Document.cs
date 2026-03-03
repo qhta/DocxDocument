@@ -21,16 +21,17 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <param name="access">The file access mode to open. Read, Write, and ReadWrite are recognized. Default is ReadWrite</param>
   public Document(string filePath, FileMode mode = FileMode.OpenOrCreate, FileAccess access = FileAccess.ReadWrite)
   {
-    if (mode == FileMode.CreateNew && File.Exists(filePath))
+    if (mode == FileMode.CreateNew)
     {
-      File.Delete(filePath);
+      if (File.Exists(filePath))
+        File.Delete(filePath);
       CreateDocument(filePath);
     }
-    if (mode == FileMode.Create || mode == FileMode.OpenOrCreate && !File.Exists(filePath))
+    else if (mode == FileMode.Create || mode == FileMode.OpenOrCreate && !File.Exists(filePath))
       CreateDocument(filePath);
     else if (mode == FileMode.Open || mode == FileMode.OpenOrCreate)
       OpenDocument(filePath, access is FileAccess.ReadWrite or FileAccess.Write);
-    if (access!=FileAccess.ReadWrite && access!=FileAccess.Write && access!=FileAccess.Read)
+    if (access != FileAccess.ReadWrite && access != FileAccess.Write && access != FileAccess.Read)
       IsEditable = false;
 
     SetNotificationEnabled(true);
@@ -126,8 +127,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     SetNotificationEnabled(false);
     Filename = filePath;
     IsEditable = editable;
-    
-    var wordprocessingDocument =     (!File.Exists(filePath))
+
+    var wordprocessingDocument = (!File.Exists(filePath))
       ? WordprocessingHelper.CreateWordDocument(filePath)
       : WordprocessingHelper.OpenWordDocument(Filename, editable);
     AttachAndLoad(wordprocessingDocument);
@@ -196,7 +197,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
       throw new InvalidOperationException("Document is not attached.");
 
     if (WordprocessingDocument.CanSave)
-        WordprocessingDocument.Save();
+      WordprocessingDocument.Save();
 
     SetIsModified(false);
   }

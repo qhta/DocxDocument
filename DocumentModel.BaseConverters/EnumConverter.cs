@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides conversion methods for Enum value to/from Open XML.
 /// </summary>
-public static class EnumConverter
+public static partial class EnumConverter
 {
   private static readonly ConversionMethodInfo[] supportedConversions =
   [
