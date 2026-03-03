@@ -26,7 +26,7 @@ internal class Program
     //if (!Exec(StyleDefsTest.Run)) return;
     //if (!Exec(DefaultRunPropertiesTest.Run)) return;
     //if (!Exec(StyleDocDefaultsRunPropertiesTest.Run)) return;
-    //if (!Exec(DefaultParagraphPropertiesTest.Run)) return;
+    if (!Exec(DefaultParagraphPropertiesTest.Run)) return;
     if (!Exec(StyleDocDefaultsParagraphPropertiesTest.Run)) return;
 
     Console.WriteLine("All tests passed.");

@@ -210,13 +210,13 @@ public abstract partial class BaseParagraphProperties<T> : ModelElement<T> where
   /// Spacing settings between lines and paragraphs.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.ParagraphProperties.SpacingBetweenLines))]
-  public ParagraphSpacing? SpacingBetweenLines
+  public ParagraphSpacing? Spacing
   {
-    get => _SpacingBetweenLines;
-    set => UpdateField(ref _SpacingBetweenLines, value, nameof(SpacingBetweenLines));
+    get => _spacing;
+    set => UpdateField(ref _spacing, value, nameof(Spacing));
   }
 
-  private ParagraphSpacing? _SpacingBetweenLines;
+  private ParagraphSpacing? _spacing;
 
   /// <summary>
   /// Indentation settings for the paragraph, including left, right, first line, and hanging indents.

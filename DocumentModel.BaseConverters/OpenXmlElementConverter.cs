@@ -40,6 +40,7 @@ public static class OpenXmlElementConverter
     {
       return result;
     }
+    if (openXmlType.IsEqualOrSubclassOf(typeof(DXW.SpacingBetweenLines))) Debug.Assert(true);
 
     var openXmlElement = Activator.CreateInstance(openXmlType)!;
     OpenXmlModelConverter.UpdateData(modelValue, openXmlElement, openXmlType);
