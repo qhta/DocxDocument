@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides conversion methods for Open XML EnumValue types.
 /// </summary>
-public static class EnumStrongTypedConverter
+public static partial class EnumConverter
 {
   /// <summary>
   /// Checks if the specified type is supported for conversion here
@@ -67,7 +67,7 @@ public static class EnumStrongTypedConverter
   /// <typeparam name="ModelEnumType">The target model enum type.</typeparam>
   /// <param name="value">The value to convert.</param>
   /// <returns>The converted enum value, or null if the input is null.</returns>
-  public static ModelEnumType? Convert<ModelEnumType, OpenXmlEnumValue>(OpenXmlEnumValue? value)
+  public static ModelEnumType? ConvertFrom<ModelEnumType, OpenXmlEnumValue>(OpenXmlEnumValue? value)
     where OpenXmlEnumValue : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumValue>
     where ModelEnumType : struct, IConvertible
   {
@@ -488,10 +488,10 @@ public static class EnumStrongTypedConverter
     var openXmlType = openXmlValue.GetType();
 
     if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
-      return EnumStrongTypedConverter.GetEnumValue((DX.OpenXmlLeafElement)openXmlValue, modelType);
+      return EnumConverter.GetEnumValue((DX.OpenXmlLeafElement)openXmlValue, modelType);
 
     if (openXmlType.Name.StartsWith("EnumValue`"))
-      return EnumStrongTypedConverter.GetEnumValue(openXmlValue, modelType);
+      return EnumConverter.GetEnumValue(openXmlValue, modelType);
 
 
     throw new InvalidOperationException($"Cannot convert {openXmlValue} of type {openXmlType} to model type {modelType.FullName}");
