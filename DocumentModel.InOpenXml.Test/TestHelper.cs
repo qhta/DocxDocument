@@ -1,17 +1,4 @@
-﻿using System.Collections;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics;
-using System.Reflection;
-using System.Runtime.Remoting;
-using System.Text;
-using System.Xml;
-
-using DocumentModel.CustomXml;
-using DocumentModel.Wordprocessing;
-
-using Qhta.TypeUtils;
-
-namespace DocumentModel.InOpenXml.Test;
+﻿namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
 /// Provides helper methods for test scenarios.
