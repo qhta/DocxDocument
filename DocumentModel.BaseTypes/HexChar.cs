@@ -66,7 +66,7 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   /// <exception cref="OverflowException">
   ///   Thrown when the parsed value exceeds 65535 (ushort.MaxValue).
   /// </exception>
-  public HexChar(string val)
+  public HexChar(string? val)
   {
     value = ushort.Parse(val, NumberStyles.HexNumber);
   }

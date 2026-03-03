@@ -1,12 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text.Json;
-using DocumentModel;
-using DocumentModel.Wordprocessing;
-
-namespace DocumentModel.InOpenXml.Test
+﻿namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
   /// Provides comprehensive serialization tests for <see cref="DocumentModel.ContentProperties"/>.

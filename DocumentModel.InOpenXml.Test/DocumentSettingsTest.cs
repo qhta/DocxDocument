@@ -1,15 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text.Json;
-using DocumentModel.CustomXml;
-using DocumentModel.Wordprocessing;
-
-using Qhta.TypeUtils;
-
-namespace DocumentModel.InOpenXml.Test
+﻿namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
   /// Provides comprehensive serialization tests for <see cref="DocumentSettings"/>.
@@ -33,7 +22,6 @@ namespace DocumentModel.InOpenXml.Test
       if (!TestStoreInDocument()) return false;
       if (!TestUpdateInDocument()) return false;
       if (!TestValidateOpenXml()) return false;
-      //if (!TestPerformance()) return false;
       Console.WriteLine("All DocumentSettings tests passed.\n");
       return true;
     }

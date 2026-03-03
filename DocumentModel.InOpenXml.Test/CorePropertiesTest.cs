@@ -1,16 +1,4 @@
-﻿using System;
-using System.Diagnostics.Contracts;
-using System.IO;
-using System.Reflection;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text.Json;
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentModel;
-using DocumentModel.Wordprocessing;
-
-namespace DocumentModel.InOpenXml.Test
+﻿namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
   /// Comprehensive serialization test for DocumentModel.CoreProperties.
