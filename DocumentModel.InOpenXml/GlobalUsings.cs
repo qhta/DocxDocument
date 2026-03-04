@@ -12,6 +12,8 @@ global using System.Text.Json;
 global using System.Xml.Serialization;
 global using System.Text.Json.Serialization;
 global using DocumentModel.OpenXml;
+
+global using Qhta.Collections;
 global using Qhta.TypeUtils;
 global using Qhta.TextUtils;
 

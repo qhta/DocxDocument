@@ -12,8 +12,10 @@ namespace DocumentModel.Wordprocessing;
 public abstract partial class RelationshipType<T>: ModelElement<T> where T: DXW.RelationshipType
 {
   /// <summary>
-  /// Gets the underlying Document instance associated with this object.
+  /// Identifier of the relationship, corresponding to the 'r:id' attribute in the Open XML schema.
+  /// This property is used to link the relationship to a specific part or resource within the document.
   /// </summary>
+  [OpenXmlProperty(nameof(DXW.RelationshipType.Id))]
   public string? Id
   {
     get => _Id;
