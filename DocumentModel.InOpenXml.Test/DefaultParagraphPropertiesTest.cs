@@ -161,6 +161,13 @@ namespace DocumentModel.InOpenXml.Test
           After = new SpacingAfter { Lines = isUpdated ? 150 : 100, AutoSpacing = isUpdated },
           Interlines = new SpacingInterlines { Line = isUpdated ? "360" : "240", LineRule = LineSpacingRule.AtLeast }
         },
+        Borders = new ParagraphBorders
+        {
+          TopBorder = new Border { Style = BorderStyle.Single, Color = "FF0000", Width = 4, Space = "2mm" },
+          LeftBorder = new Border { Style = BorderStyle.Dashed, Color = "00FF00", Width = 2, Space = "2mm" },
+          BottomBorder = new Border { Style = BorderStyle.DotDash, Color = "0000FF", Width = 3, Space = "2mm" },
+          RightBorder = new Border { Style = BorderStyle.Double, Color = "FFFF00", Width = 5, Space = "2mm" }
+        }
       };
     }
 

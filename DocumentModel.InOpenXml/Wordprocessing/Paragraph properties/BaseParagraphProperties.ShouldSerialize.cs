@@ -11,7 +11,7 @@ public partial class BaseParagraphProperties<T>
   public bool ShouldSerializeWidowControl() => WidowControl is not null;
   public bool ShouldSerializeNumberingProperties() => NumberingProperties is not null;
   public bool ShouldSerializeSuppressLineNumbers() => SuppressLineNumbers is not null;
-  public bool ShouldSerializeParagraphBorders() => ParagraphBorders is not null;
+  public bool ShouldSerializeParagraphBorders() => Borders is not null;
   public bool ShouldSerializeShading() => Shading is not null;
   public bool ShouldSerializeTabs() => Tabs is not null;
   public bool ShouldSerializeSuppressAutoHyphens() => SuppressAutoHyphens is not null;

@@ -27,7 +27,7 @@ public static partial class OpenXmlModelConverter
     if (modelObject == null)
       return null;
 
-    if (openXmlType==typeof(DXW.FontCharSet)) Debug.Assert(true);
+    if (openXmlType==typeof(DXW.TopBorder)) Debug.Assert(true);
     var modelType = modelObject.GetType().GetNotNullableType();
     if (modelType == openXmlType)
       return modelObject;
@@ -341,6 +341,7 @@ public static partial class OpenXmlModelConverter
       var targetParameters = updatePropertyMethod.GetParameters();
       if (targetParameters.Length == 1)
       {
+        if (openXmlObject is DXW.TopBorder) Debug.Assert(true);
         updatePropertyMethod.Invoke(modelObject, [openXmlObject]);
         return true;
       }

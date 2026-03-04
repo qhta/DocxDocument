@@ -86,13 +86,13 @@ public abstract partial class BaseParagraphProperties<T> : ModelElement<T> where
   /// Border settings for the paragraph, specifying borders on all sides and between paragraphs.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.ParagraphProperties.ParagraphBorders))]
-  public ParagraphBorders? ParagraphBorders
+  public ParagraphBorders? Borders
   {
-    get => _ParagraphBorders;
-    set => UpdateField(ref _ParagraphBorders, value, nameof(ParagraphBorders));
+    get => _borders;
+    set => UpdateField(ref _borders, value, nameof(Borders));
   }
 
-  private ParagraphBorders? _ParagraphBorders;
+  private ParagraphBorders? _borders;
 
   /// <summary>
   /// Shading (background color and pattern) for the paragraph.
