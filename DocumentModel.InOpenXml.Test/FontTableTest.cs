@@ -4,6 +4,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Text.Json;
+
 using DocumentModel;
 using DocumentModel.Wordprocessing;
 
@@ -188,16 +189,7 @@ namespace DocumentModel.InOpenXml.Test
         using (var document = new Document("temp.docx", FileMode.CreateNew))
         {
           document.FontTableTable = testData;
-          document.FontTableTable.Add(new FontDef
-          {
-            FontName = "Windings",
-            Aliases = "Courier",
-            FontFamily = FontFamily.Auto,
-            Charset = FontCharset.Symbol,
-            Pitch = FontPitch.Fixed,
-            Panose = "05000000000000000000",
-            FontSignature = "00000000-10000000-00000000-00000000-80000000-00000000"
-          });
+          document.FontTableTable.Add(CreateOneFont());
         }
         FontTable storedData;
         using (var document = new Document("temp.docx"))
@@ -267,7 +259,7 @@ namespace DocumentModel.InOpenXml.Test
         return true;
       }
     }
-    
+
     /// <summary>
     /// Creates a sample Fonts object with various property types.
     /// </summary>
@@ -306,6 +298,26 @@ namespace DocumentModel.InOpenXml.Test
         NotTrueType = true,
       });
       return fonts;
+    }
+
+    /// <summary>
+    /// Creates a new instance of the FontDef class.
+    /// </summary>
+    static FontDef CreateOneFont()
+    {
+      var font = (new FontDef
+      {
+        FontName = "Arial",
+        Aliases = "Helvetica,Swiss",
+        FontFamily = FontFamily.Swiss,
+        Pitch = FontPitch.Variable,
+        Charset = FontCharset.EastEurope,
+        Panose = "020B0604020202020204",
+        FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000",
+        // TODO: Test FontRelationshipType properties when supported by the model and embed the font accordingly
+        //EmbedRegularFont =  new FontRelationshipType { Id = "rId1", FontKey = Guid.NewGuid(), Subsetted = false },
+      });
+      return font;
     }
 
     /// <summary>

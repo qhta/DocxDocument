@@ -1,4 +1,4 @@
-using Qhta.Collections;
+// ReSharper disable SpecifyACultureInStringConversionExplicitly
 
 namespace DocumentModel.Wordprocessing;
 
@@ -29,9 +29,9 @@ public partial class FontDef : ModelElement<DXW.Font>
   /// Panose-1 classification number, used for font substitution logic to locate appropriate substitute fonts.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Font.Panose1Number))]
-  public HexBinary? Panose { get => _Panose; set => UpdateField(ref _Panose, value, nameof(Panose)); }
+  public HexBinary? Panose { get => _panose; set => UpdateField(ref _panose, value, nameof(Panose)); }
 
-  private HexBinary? _Panose;
+  private HexBinary? _panose;
 
   /// <summary>
   /// Character set supported by the font, used for font substitution logic.
@@ -47,9 +47,9 @@ public partial class FontDef : ModelElement<DXW.Font>
   /// Font family classification (e.g., Roman, Swiss, Modern).
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Font.FontFamily))]
-  public FontFamily? FontFamily { get => _FontFamily; set => UpdateField(ref _FontFamily, value, nameof(FontFamily)); }
+  public FontFamily? FontFamily { get => _fontFamily; set => UpdateField(ref _fontFamily, value, nameof(FontFamily)); }
 
-  private FontFamily? _FontFamily;
+  private FontFamily? _fontFamily;
 
   /// <summary>
   /// Indicates whether the font is not a TrueType font.
@@ -78,6 +78,58 @@ public partial class FontDef : ModelElement<DXW.Font>
   }
 
   private HexBinary? _FontSignature;
+
+  /// <summary>
+  /// Reference to an embedded font part containing the regular (non-bold, non-italic) form of the font,
+  /// used for embedding font data within the document package.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.EmbedRegularFont))]
+  public FontRelationshipType? EmbedRegularFont
+  {
+    get => _EmbedRegularFont;
+    set => UpdateField(ref _EmbedRegularFont, value, nameof(EmbedRegularFont));
+  }
+
+  private FontRelationshipType? _EmbedRegularFont;
+
+  /// <summary>
+  /// Reference to an embedded font part containing the bold form of the font,
+  /// used for embedding font data within the document package.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.EmbedBoldFont))]
+  public FontRelationshipType? EmbedBoldFont
+  {
+    get => _EmbedBoldFont;
+    set => UpdateField(ref _EmbedBoldFont, value, nameof(EmbedBoldFont));
+  }
+
+  private FontRelationshipType? _EmbedBoldFont;
+
+  /// <summary>
+  /// Reference to an embedded font part containing the italic form of the font,
+  /// used for embedding font data within the document package.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.EmbedItalicFont))]
+  public FontRelationshipType? EmbedItalicFont
+  {
+    get => _EmbedItalicFont;
+    set => UpdateField(ref _EmbedItalicFont, value, nameof(EmbedItalicFont));
+  }
+
+  private FontRelationshipType? _EmbedItalicFont;
+
+  /// <summary>
+  /// Reference to an embedded font part containing the bold italic form of the font,
+  /// used for embedding font data within the document package.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.EmbedBoldItalicFont))]
+  public FontRelationshipType? EmbedBoldItalicFont
+  {
+    get => _EmbedBoldItalicFont;
+    set => UpdateField(ref _EmbedBoldItalicFont, value, nameof(EmbedBoldItalicFont));
+  }
+
+  private FontRelationshipType? _EmbedBoldItalicFont;
 
   /// <summary>
   /// Loads the character set from the specified font source and updates the Charset property accordingly.
@@ -114,7 +166,6 @@ public partial class FontDef : ModelElement<DXW.Font>
     {
       fontElement.FontCharSet = new DXW.FontCharSet()
       {
-        // ReSharper disable once SpecifyACultureInStringConversionExplicitly
         Val = Charset.ToString(),
       };
     }

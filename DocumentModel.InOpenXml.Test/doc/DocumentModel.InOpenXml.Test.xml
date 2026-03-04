@@ -671,6 +671,11 @@
             </summary>
             <returns>A populated Fonts object.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.CreateOneFont">
+            <summary>
+            Creates a new instance of the FontDef class.
+            </summary>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.SerializeToXml(DocumentModel.Wordprocessing.FontTable)">
             <summary>
             Serializes a Fonts object to an XML string.
