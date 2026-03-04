@@ -92,7 +92,7 @@ public static class FontCharset
   /// Specifies the Thai character set (IANA name windows-874).
   /// </summary>
   [OpenXmlProperty(nameof(DXW.StrictCharacterSet.chsThai))]
-  public static byte Thai = 0xA1;
+  public static byte Thai = 0xDE;
   /// <summary>
   /// Specifies the EasternEuropean character set (IANA name windows-1250).
   /// </summary>

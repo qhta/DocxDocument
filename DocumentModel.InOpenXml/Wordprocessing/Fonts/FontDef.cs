@@ -39,9 +39,9 @@ public partial class FontDef : ModelElement<DXW.Font>
   //[OpenXmlProperty(nameof(DXW.Font.FontCharSet))]
   [OpenXmlLoadData(nameof(LoadCharset))]
   [OpenXmlUpdateData(nameof(UpdateCharset))]
-  public HexChar? Charset { get => _charset; set => UpdateField(ref _charset, value, nameof(Charset)); }
+  public HexByte? Charset { get => _charset; set => UpdateField(ref _charset, value, nameof(Charset)); }
 
-  private HexChar? _charset;
+  private HexByte? _charset;
 
   /// <summary>
   /// Font family classification (e.g., Roman, Swiss, Modern).
@@ -91,8 +91,12 @@ public partial class FontDef : ModelElement<DXW.Font>
     if (fontElement.FontCharSet == null)
       Charset = null;
     else
-      Charset = /*fontElement.FontCharSet.StrictCharacterSet != null ? strictCharacterSets.GetValue1(fontElement.FontCharSet.StrictCharacterSet) :*/
-        new HexChar(fontElement.FontCharSet.Val?.Value);
+    if (fontElement.FontCharSet?.Val?.Value != null)
+      Charset = new HexByte(fontElement.FontCharSet.Val!.Value!);
+    else if (fontElement.FontCharSet?.StrictCharacterSet != null)
+      Charset = strictCharacterSets.GetValue2(fontElement.FontCharSet.StrictCharacterSet);
+    else
+      Charset = null;
   }
 
   /// <summary>
@@ -108,38 +112,49 @@ public partial class FontDef : ModelElement<DXW.Font>
       fontElement.FontCharSet = null;
     else
     {
-      //if (strictCharacterSets.TryGetValue2(Charset, out var strictCharacterSet))
-      //  fontElement.FontCharSet = new DXW.FontCharSet()
-      //  {
-      //    StrictCharacterSet = strictCharacterSet,
-      //    Val = Charset,
-      //  };
-      //else
-        fontElement.FontCharSet = new DXW.FontCharSet()
-        {
-          // ReSharper disable once SpecifyACultureInStringConversionExplicitly
-          Val = Charset.ToString(),
-        };
+      fontElement.FontCharSet = new DXW.FontCharSet()
+      {
+        // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+        Val = Charset.ToString(),
+      };
     }
   }
 
-  private static readonly BiDiDictionary<string, DXW.StrictCharacterSet> strictCharacterSets = new BiDiDictionary<string, DXW.StrictCharacterSet>() {
-    { "ansi", DXW.StrictCharacterSet.chsAnsi },
-    { "macintosh", DXW.StrictCharacterSet.chsMacFfn },
-    { "shift_jis", DXW.StrictCharacterSet.chsShiftJIS},
-    { "ks_c-5601-1987", DXW.StrictCharacterSet.chsHangeul},
-    {" ks_c-5601-1992", DXW.StrictCharacterSet.chsJohab},
-    { "gbk", DXW.StrictCharacterSet.chsGB2312},
-    { "big5", DXW.StrictCharacterSet.chsChinese5},
-    { "windows-1253", DXW.StrictCharacterSet.chsGreek},
-    { "iso-8859-9", DXW.StrictCharacterSet.chsTurkish},
-    { "windows-1258", DXW.StrictCharacterSet.chsVietnamese},
-    { "windows-1255", DXW.StrictCharacterSet.chsHebrew},
-    { "windows-1256", DXW.StrictCharacterSet.chsArabic},
-    { "windows-1257", DXW.StrictCharacterSet.chsBaltic},
-    { "windows-1251", DXW.StrictCharacterSet.chsRussian},
-    { "windows-874", DXW.StrictCharacterSet.chsThai},
-    { "windows-1250", DXW.StrictCharacterSet.chsEastEurope},
+  private static readonly BiDiDictionary<DXW.StrictCharacterSet, string> strictCharacterSets = new BiDiDictionary<DXW.StrictCharacterSet, string>() {
+    { DXW.StrictCharacterSet.chsAnsi, "ansi" },
+    { DXW.StrictCharacterSet.chsMacFfn, "macintosh" },
+    { DXW.StrictCharacterSet.chsShiftJIS, "shift_jis"},
+    { DXW.StrictCharacterSet.chsHangeul, "ks_c-5601-1987"},
+    { DXW.StrictCharacterSet.chsJohab, "ks_c-5601-1992"},
+    { DXW.StrictCharacterSet.chsGB2312, "gbk"},
+    { DXW.StrictCharacterSet.chsChinese5, "big5"},
+    { DXW.StrictCharacterSet.chsGreek, "windows-1253"},
+    { DXW.StrictCharacterSet.chsTurkish, "iso-8859-9"},
+    { DXW.StrictCharacterSet.chsVietnamese, "windows-1258"},
+    { DXW.StrictCharacterSet.chsHebrew, "windows-1255"},
+    { DXW.StrictCharacterSet.chsArabic, "windows-1256"},
+    { DXW.StrictCharacterSet.chsBaltic, "windows-1257"},
+    { DXW.StrictCharacterSet.chsRussian, "windows-1251"},
+    { DXW.StrictCharacterSet.chsThai, "windows-874"},
+    { DXW.StrictCharacterSet.chsEastEurope, "windows-1250"},
   };
 
+  private static readonly BiDiDictionary<DXW.StrictCharacterSet, byte> characterSetsCode = new BiDiDictionary<DXW.StrictCharacterSet, byte>() {
+    { DXW.StrictCharacterSet.chsAnsi, 0x00 },
+    { DXW.StrictCharacterSet.chsMacFfn, 0x4D },
+    { DXW.StrictCharacterSet.chsShiftJIS, 0x80 },
+    { DXW.StrictCharacterSet.chsHangeul, 0x81 },
+    { DXW.StrictCharacterSet.chsJohab, 0x82 },
+    { DXW.StrictCharacterSet.chsGB2312, 0x86 },
+    { DXW.StrictCharacterSet.chsChinese5, 0x05 },
+    { DXW.StrictCharacterSet.chsGreek, 0xA1 },
+    { DXW.StrictCharacterSet.chsTurkish, 0xA2 },
+    { DXW.StrictCharacterSet.chsVietnamese, 0xA3 },
+    { DXW.StrictCharacterSet.chsHebrew, 0xB1 },
+    { DXW.StrictCharacterSet.chsArabic, 0xB2 },
+    { DXW.StrictCharacterSet.chsBaltic, 0xBA },
+    { DXW.StrictCharacterSet.chsRussian, 0xCC },
+    { DXW.StrictCharacterSet.chsThai, 0xDE },
+    { DXW.StrictCharacterSet.chsEastEurope, 0xEE },
+  };
 }

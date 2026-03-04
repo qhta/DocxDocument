@@ -2281,6 +2281,501 @@
               </para>
             </remarks>
         </member>
+        <member name="T:DocumentModel.HexByte">
+            <summary>
+              Represents a byte value encoded as a hexadecimal string (2 hex digits) for use in Office Open XML documents.
+            </summary>
+            <remarks>
+              <para>
+              HexByte provides a type-safe wrapper for byte values that are represented as hexadecimal strings
+              in Office Open XML documents. It stores an 8-bit unsigned integer value (0-255) that can represent
+              any byte value.
+              </para>
+              <para>
+              The struct implements <see cref="T:System.IConvertible"/> for seamless integration with .NET type conversion
+              and <see cref="T:System.IEquatable`1"/> for efficient equality comparisons. It provides implicit conversions
+              between HexByte and common numeric types (byte, ushort, uint, ulong) as well as string representations.
+              </para>
+              <para>
+              <b>Office Availability:</b> Hexadecimal byte encoding is supported across all Office Open XML
+              formats including Word, Excel, and PowerPoint documents (Office 2007 and later).
+              </para>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexByte.System#Xml#Serialization#IXmlSerializable#GetSchema">
+            <summary>
+              Returns null to indicate this type has no XML schema.
+            </summary>
+            <remarks>
+              HexByte is serialized as simple string content, so no XML schema definition is required.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexByte.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+              Reads the HexByte value from XML as hexadecimal string content.
+            </summary>
+            <param name="reader">The XML reader to read from.</param>
+            <remarks>
+              <para>
+              This method reads the hexadecimal string content from the XML element and parses it
+              into the internal ushort value. Empty elements result in a zero value.
+              </para>
+              <para>
+              Since HexByte is a struct with a readonly field, this method uses unsafe code to update
+              the field during XML deserialization. This is necessary for XmlSerializer compatibility
+              while maintaining immutability for normal usage.
+              </para>
+              <para>
+              The method properly handles three scenarios:
+              <list type="number">
+              <item><description><b>Empty elements:</b> &lt;Byte /&gt; → Value remains 0 (default)</description></item>
+              <item><description><b>Text content:</b> &lt;Byte&gt;41&lt;/Byte&gt; → Parses and sets hex value</description></item>
+              <item><description><b>No content:</b> &lt;Byte&gt;&lt;/Byte&gt; → Value remains 0 (default)</description></item>
+              </list>
+              </para>
+            </remarks>
+            <exception cref="T:System.FormatException">
+              Thrown when the string is not a valid hexadecimal number.
+            </exception>
+            <exception cref="T:System.OverflowException">
+              Thrown when the parsed value exceeds 255 (byte.MaxValue).
+            </exception>
+        </member>
+        <member name="M:DocumentModel.HexByte.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+              Writes the HexByte value to XML as hexadecimal string content.
+            </summary>
+            <param name="writer">The XML writer to write to.</param>
+            <remarks>
+              <para>
+              This method writes the hexadecimal string representation of the character code as
+              text content within the XML element. The output uses uppercase hexadecimal digits
+              (0-9, A-F) for consistency with Office Open XML standards.
+              </para>
+              <para>
+              Zero values are written as "00", not as empty elements, to maintain consistency
+              with Office Open XML character code representations.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexByte.#ctor">
+            <summary>
+            Default constructor needed for XML deserialization. Initializes the HexByte with a default value of 0 (null byte).
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HexByte.#ctor(System.String)">
+            <summary>
+              Initializes a new instance of the <see cref="T:DocumentModel.HexByte"/> struct from a hexadecimal string.
+            </summary>
+            <param name="val">
+              A hexadecimal string containing 2 or 4 hex digits (0-9, A-F, a-f) representing a byte code.
+            </param>
+            <remarks>
+              <para>
+              The string is parsed as a hexadecimal number to obtain the byte code value.
+              Valid input examples: "41" (65, 'A'), "20" (32, space), "03B1" (945, Greek alpha α).
+              </para>
+            </remarks>
+            <exception cref="T:System.FormatException">
+              Thrown when the string is not a valid hexadecimal number.
+            </exception>
+            <exception cref="T:System.OverflowException">
+              Thrown when the parsed value exceeds 65535 (ushort.MaxValue).
+            </exception>
+        </member>
+        <member name="M:DocumentModel.HexByte.#ctor(System.Byte)">
+            <summary>
+              Initializes a new instance of the <see cref="T:DocumentModel.HexByte"/> struct from a byte value.
+            </summary>
+            <param name="value">
+              A byte value (0-255) representing a byte code.
+            </param>
+            <remarks>
+              This constructor is useful for ASCII and extended ASCII bytes (0-255).
+              Example: new HexByte(65) represents 'A'.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexByte.#ctor(System.Char)">
+            <summary>
+              Initializes a new instance of the <see cref="T:DocumentModel.HexByte"/> struct from a character.
+            </summary>
+            <param name="value">
+              A character whose ASCII code point will be stored.
+            </param>
+            <remarks>
+              This constructor converts a .NET character to its numeric ASCII value.
+              Example: new HexByte('A') stores value 65 (0x41).
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexByte.#ctor(System.UInt16)">
+            <summary>
+              Initializes a new instance of the <see cref="T:DocumentModel.HexByte"/> struct from a 16-bit unsigned integer.
+            </summary>
+            <param name="value">
+              A 16-bit unsigned integer (0-65535) representing a byte code.
+            </param>
+            <remarks>
+              This is the primary constructor that directly stores the byte code value.
+              It can represent any Unicode byte in the Basic Multilingual Plane.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexByte.#ctor(System.Int32)">
+            <summary>
+              Initializes a new instance of the <see cref="T:DocumentModel.HexByte"/> struct from a 32-bit signed integer.
+            </summary>
+            <param name="value">
+              A 32-bit signed integer (0-65535) representing a byte code.
+            </param>
+            <remarks>
+              The value is cast to ushort. Values outside the range 0-65535 will be truncated.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexByte.GetTypeCode">
+            <summary>
+              Returns the <see cref="T:System.TypeCode"/> for the underlying value type.
+            </summary>
+            <returns>
+              <see cref="F:System.TypeCode.UInt16"/>, indicating the underlying storage type.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToBoolean(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a Boolean value.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> (not used).</param>
+            <returns>
+              <see langword="true"/> if the byte code is non-zero; otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToByte(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a byte.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> (not used).</param>
+            <returns>
+              A byte representing the byte code, truncated if necessary.
+            </returns>
+            <remarks>
+              Values greater than 255 will be truncated to their lower 8 bits.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToChar(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a byte.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> for culture-specific formatting.</param>
+            <returns>
+              A byte corresponding to the Unicode code point stored in this HexByte.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToDateTime(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a DateTime.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> for culture-specific formatting.</param>
+            <returns>
+              A DateTime value (delegates to the underlying ushort conversion).
+            </returns>
+            <exception cref="T:System.InvalidCastException">
+              This conversion is not supported and will typically throw an exception.
+            </exception>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToDecimal(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a decimal.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> (not used).</param>
+            <returns>
+              A decimal value representing the byte code.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToDouble(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a double-precision floating-point number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> (not used).</param>
+            <returns>
+              A double value representing the byte code.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToInt16(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a 16-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> (not used).</param>
+            <returns>
+              A 16-bit signed integer. Values greater than 32767 will produce negative results.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToInt32(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a 32-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> (not used).</param>
+            <returns>
+              A 32-bit signed integer representing the byte code (0-65535).
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToInt64(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a 64-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> (not used).</param>
+            <returns>
+              A 64-bit signed integer representing the byte code (0-65535).
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToSByte(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a signed byte.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> (not used).</param>
+            <returns>
+              A signed byte. Values greater than 127 will produce negative results.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToSingle(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a single-precision floating-point number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> (not used).</param>
+            <returns>
+              A float value representing the byte code.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToString(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a string using the specified format provider.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> for culture-specific formatting.</param>
+            <returns>
+              A string representation of the underlying numeric value (not hexadecimal).
+            </returns>
+            <remarks>
+              This method returns the decimal string representation of the byte code.
+              For hexadecimal string representation, use <see cref="M:DocumentModel.HexByte.ToString"/>.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToUInt16(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a 16-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> (not used).</param>
+            <returns>
+              A 16-bit unsigned integer representing the byte code (0-65535).
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToUInt32(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a 32-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> (not used).</param>
+            <returns>
+              A 32-bit unsigned integer representing the byte code (0-65535).
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToUInt64(System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to a 64-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> (not used).</param>
+            <returns>
+              A 64-bit unsigned integer representing the byte code (0-65535).
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToType(System.Type,System.IFormatProvider)">
+            <summary>
+              Converts the HexByte value to the specified target type.
+            </summary>
+            <param name="targetType">The type to convert to.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> for culture-specific formatting.</param>
+            <returns>
+              An object of the specified target type.
+            </returns>
+            <remarks>
+              <para>
+              This method provides explicit conversions to common numeric types and string:
+              <list type="bullet">
+              <item><description>UInt16, Int32, UInt32, UInt64: Direct numeric conversions</description></item>
+              <item><description>Int16, Byte, SByte: Conversions with potential truncation/overflow</description></item>
+              <item><description>Single, Double, Decimal: Floating-point conversions</description></item>
+              <item><description>String: Hexadecimal string representation</description></item>
+              <item><description>HexByte: Creates a new HexByte with the same value</description></item>
+              </list>
+              </para>
+            </remarks>
+            <exception cref="T:System.InvalidCastException">
+              Thrown when conversion to the target type is not supported.
+            </exception>
+        </member>
+        <member name="M:DocumentModel.HexByte.op_Implicit(System.String)~DocumentModel.HexByte">
+            <summary>
+              Implicitly converts a hexadecimal string to a HexByte.
+            </summary>
+            <param name="val">A hexadecimal string (2 or 4 hex digits).</param>
+            <returns>A HexByte representing the parsed byte code.</returns>
+            <remarks>
+              Example: HexByte c = "41"; // represents 'A' (65)
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexByte.op_Implicit(DocumentModel.HexByte)~System.String">
+            <summary>
+              Implicitly converts a nullable HexByte to its hexadecimal string representation.
+            </summary>
+            <param name="val">A nullable HexByte value.</param>
+            <returns>
+              A hexadecimal string (2 or 4 digits), or null if the input is null.
+            </returns>
+            <remarks>
+              Example: string s = hexByte; // produces "0041" or "41" depending on value
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexByte.op_Implicit(DocumentModel.HexByte)~System.Byte">
+            <summary>
+              Implicitly converts a HexByte to a 8-bit unsigned integer.
+            </summary>
+            <param name="val">A HexByte value.</param>
+            <returns>The underlying byte value (0-255).</returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.op_Implicit(DocumentModel.HexByte)~System.UInt16">
+            <summary>
+              Implicitly converts a HexByte to a 16-bit unsigned integer.
+            </summary>
+            <param name="val">A HexByte value.</param>
+            <returns>The underlying ushort value (0-65535).</returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.op_Implicit(DocumentModel.HexByte)~System.UInt32">
+            <summary>
+              Implicitly converts a HexByte to a 32-bit unsigned integer.
+            </summary>
+            <param name="val">A HexByte value.</param>
+            <returns>The byte code as a uint (0-65535).</returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.op_Implicit(DocumentModel.HexByte)~System.Nullable{System.UInt32}">
+            <summary>
+              Implicitly converts a nullable HexByte to a nullable 32-bit unsigned integer.
+            </summary>
+            <param name="val">A nullable HexByte value.</param>
+            <returns>
+              The byte code as a nullable uint, or null if the input is null.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.op_Implicit(DocumentModel.HexByte)~System.UInt64">
+            <summary>
+              Implicitly converts a HexByte to a 64-bit unsigned integer.
+            </summary>
+            <param name="val">A HexByte value.</param>
+            <returns>The byte code as a ulong (0-65535).</returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.op_Implicit(System.Byte)~DocumentModel.HexByte">
+            <summary>
+              Implicitly converts a 8-bit unsigned integer to a HexByte.
+            </summary>
+            <param name="val">A byte value (0-255).</param>
+            <returns>A HexByte representing the byte value.</returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.op_Implicit(System.UInt16)~DocumentModel.HexByte">
+            <summary>
+              Implicitly converts a 16-bit unsigned integer to a HexByte.
+            </summary>
+            <param name="val">A ushort value (0-65535).</param>
+            <returns>A HexByte representing the byte code.</returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.op_Implicit(System.UInt32)~DocumentModel.HexByte">
+            <summary>
+              Implicitly converts a 32-bit unsigned integer to a HexByte.
+            </summary>
+            <param name="val">A uint value (must be 0-65535).</param>
+            <returns>A HexByte representing the byte code.</returns>
+            <exception cref="T:System.InvalidCastException">
+              Thrown when the value exceeds 65535 (ushort.MaxValue).
+            </exception>
+        </member>
+        <member name="M:DocumentModel.HexByte.op_Implicit(System.UInt64)~DocumentModel.HexByte">
+            <summary>
+              Implicitly converts a 64-bit unsigned integer to a HexByte.
+            </summary>
+            <param name="val">A ulong value (must be 0-65535).</param>
+            <returns>A HexByte representing the byte code.</returns>
+            <exception cref="T:System.InvalidCastException">
+              Thrown when the value exceeds 65535 (ushort.MaxValue).
+            </exception>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToString">
+            <summary>
+              Converts this HexByte to its hexadecimal string representation.
+            </summary>
+            <returns>
+              A hexadecimal string of 2 digits.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.Equals(DocumentModel.HexByte)">
+            <summary>
+              Determines whether this HexByte is equal to another HexByte.
+            </summary>
+            <param name="other">The HexByte to compare with this instance.</param>
+            <returns>
+              <see langword="true"/> if the byte codes are equal; otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.GetHashCode">
+            <summary>
+              Returns a hash code for this HexByte.
+            </summary>
+            <returns>
+              A 32-bit signed integer hash code equal to the byte code value.
+            </returns>
+        </member>
+        <member name="T:DocumentModel.HexByteJsonConverter">
+            <summary>
+              JSON converter that serializes HexByte values as hexadecimal strings.
+            </summary>
+            <remarks>
+              <para>
+              This converter ensures that HexByte values are written as hexadecimal string values in JSON output
+              (e.g., "41") rather than numeric values or complex objects. During deserialization, the converter
+              reads string values and constructs HexByte instances from them.
+              </para>
+              <para>
+              All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
+              uppercase and lowercase hex digits are accepted, and the converter validates that input strings
+              contain only valid hexadecimal characters.
+              </para>
+              <para>
+              <b>Usage Context:</b> This converter is automatically applied to HexByte properties when the type
+              is used in JSON serialization, ensuring consistent hexadecimal string representation across all
+              JSON operations in Office Open XML document processing.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexByteJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+              Reads a HexByte value from JSON as a hexadecimal string.
+            </summary>
+            <param name="reader">The JSON reader to read from.</param>
+            <param name="typeToConvert">The type of object to convert to.</param>
+            <param name="options">The JSON serializer options.</param>
+            <returns>
+              A HexByte value constructed from the hexadecimal string, or a default HexByte if the value is null or empty.
+            </returns>
+            <remarks>
+              <para>
+              The input string must contain only valid hexadecimal characters (0-9, A-F, a-f) and should be
+              2 characters long. The method accepts both uppercase and lowercase hexadecimal digits.
+              </para>
+            </remarks>
+            <exception cref="T:System.Text.Json.JsonException">
+              Thrown when the JSON token is not a string or when the string cannot be parsed as a valid hexadecimal value.
+            </exception>
+        </member>
+        <member name="M:DocumentModel.HexByteJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.HexByte,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+              Writes a HexByte value to JSON as a hexadecimal string.
+            </summary>
+            <param name="writer">The JSON writer to write to.</param>
+            <param name="value">The HexByte value to write.</param>
+            <param name="options">The JSON serializer options.</param>
+        </member>
         <member name="T:DocumentModel.HexChar">
             <summary>
               Represents a character value encoded as a hexadecimal string (2 or 4 hex digits) for use in Office Open XML documents.
