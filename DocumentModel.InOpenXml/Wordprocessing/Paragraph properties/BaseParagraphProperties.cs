@@ -57,19 +57,6 @@ public abstract partial class BaseParagraphProperties<T> : ModelElement<T> where
   }
 
   private bool? _WidowControl;
-
-  /// <summary>
-  /// Numbering properties for the paragraph, specifying list and outline numbering.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXW.ParagraphProperties.NumberingProperties))]
-  public NumberingProperties? NumberingProperties
-  {
-    get => _NumberingProperties;
-    set => UpdateField(ref _NumberingProperties, value, nameof(NumberingProperties));
-  }
-
-  private NumberingProperties? _NumberingProperties;
-
   /// <summary>
   /// Indicates whether line numbers should be suppressed for the paragraph.
   /// </summary>
@@ -318,11 +305,26 @@ public abstract partial class BaseParagraphProperties<T> : ModelElement<T> where
   /// Outline level for the paragraph, used for document structure and navigation.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.ParagraphProperties.OutlineLevel))]
-  public Int32? OutlineLevel
+  public OutlineLevel? OutlineLevel
   {
     get => _OutlineLevel;
     set => UpdateField(ref _OutlineLevel, value, nameof(OutlineLevel));
   }
 
-  private Int32? _OutlineLevel;
+  private OutlineLevel? _OutlineLevel;
+
+  /// <summary>
+  /// Numbering properties for the paragraph, specifying list and outline numbering.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.ParagraphProperties.NumberingProperties))]
+  public NumberingProperties? NumberingProperties
+  {
+    get => _NumberingProperties;
+    set => UpdateField(ref _NumberingProperties, value, nameof(NumberingProperties));
+  }
+
+  private NumberingProperties? _NumberingProperties;
+
+
+
 }
