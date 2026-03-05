@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXW.TabStopLeaderCharValues))]
-public enum TabStopLeaderChar
+public enum TabStopLeader
 {
   /// <summary>
   ///   No tab stop leader.
