@@ -149,7 +149,7 @@ namespace DocumentModel.InOpenXml.Test
         TextDirection = isUpdated ? TextDirection.TopToBottom : TextDirection.LeftToRight,
         VerticalTextAlignment = isUpdated ? VerticalTextAlignment.Center : VerticalTextAlignment.Top,
         TextBoxTightWrap = TextBoxTightWrap.AllLines,
-        OutlineLevel = isUpdated ? 2 : 1,
+        OutlineLevel = isUpdated ? OutlineLevel.Level2 : OutlineLevel.Level1,
         Indentation = new Indentation
         {
           Start = isUpdated ? "720" : "480",
