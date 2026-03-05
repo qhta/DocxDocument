@@ -108,7 +108,6 @@ public partial class Border: ModelElement<DXW.BorderType>
       border.Val = null;
   }
 
-
   /// <summary>
   /// Loads the border color from the specified OpenXML border element, applying any associated theme color, tint,
   /// or shade settings.
