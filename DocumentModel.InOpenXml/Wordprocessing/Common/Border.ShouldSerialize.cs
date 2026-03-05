@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class Border
 {
-  public bool ShouldSerializeType() => Style is not null;
+  public bool ShouldSerializeType() => Type is not null;
   public bool ShouldSerializeColor() => Color is not null;
   public bool ShouldSerializeWidth() => Width is not null;
   public bool ShouldSerializeSpace() => Space is not null;
