@@ -484,27 +484,27 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  /// <summary>
  ///   Specifies the top border definition.
  /// </summary>
- public BorderType? TopBorder { get => _TopBorder; set => UpdateField(ref _TopBorder, value, nameof(TopBorder)); }
+ public Border? TopBorder { get => _TopBorder; set => UpdateField(ref _TopBorder, value, nameof(TopBorder)); }
 
- private BorderType? _TopBorder;
+ private Border? _TopBorder;
  /// <summary>
  ///   Specifies the bottom border definition.
  /// </summary>
- public BorderType? BottomBorder { get => _BottomBorder; set => UpdateField(ref _BottomBorder, value, nameof(BottomBorder)); }
+ public Border? BottomBorder { get => _BottomBorder; set => UpdateField(ref _BottomBorder, value, nameof(BottomBorder)); }
 
- private BorderType? _BottomBorder;
+ private Border? _BottomBorder;
  /// <summary>
  ///   Specifies the left border definition.
  /// </summary>
- public BorderType? LeftBorder { get => _LeftBorder; set => UpdateField(ref _LeftBorder, value, nameof(LeftBorder)); }
+ public Border? LeftBorder { get => _LeftBorder; set => UpdateField(ref _LeftBorder, value, nameof(LeftBorder)); }
 
- private BorderType? _LeftBorder;
+ private Border? _LeftBorder;
  /// <summary>
  ///   Specifies the right border definition.
  /// </summary>
- public BorderType? RightBorder { get => _RightBorder; set => UpdateField(ref _RightBorder, value, nameof(RightBorder)); }
+ public Border? RightBorder { get => _RightBorder; set => UpdateField(ref _RightBorder, value, nameof(RightBorder)); }
 
- private BorderType? _RightBorder;
+ private Border? _RightBorder;
  /// <summary>
  ///   Contains ink drawing data.
  /// </summary>
