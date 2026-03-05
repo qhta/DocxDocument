@@ -153,7 +153,7 @@ namespace DocumentModel.InOpenXml.Test
         Language = isUpdated ? "en-US" : new Languages("fr-FR", "ar-SA", "ja-JP"),
         Border = new DMW.Border
         {
-          Style = isUpdated ? null : BorderStyle.Dashed,
+          Type = isUpdated ? null : BorderType.Dashed,
           ArtStyle = isUpdated ? "Apples" : null,
           Color = "0000FF",
           Width = "0.5pt",

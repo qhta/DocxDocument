@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXW.BorderValues))]
-public enum BorderStyle
+public enum BorderType
 {
   /// <summary>
   ///   No Border.
