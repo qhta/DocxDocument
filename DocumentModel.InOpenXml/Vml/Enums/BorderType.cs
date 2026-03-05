@@ -4,7 +4,7 @@ namespace DocumentModel.Vml;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXVW.BorderValues))]
-public enum BorderStyle
+public enum BorderType
 {
   /// <summary>
   ///   No Border.

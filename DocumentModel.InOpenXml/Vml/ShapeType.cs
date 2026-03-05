@@ -493,27 +493,27 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// <summary>
  /// Top border type for the shape.
  /// </summary>
- public BorderType? TopBorder { get => _TopBorder; set => UpdateField(ref _TopBorder, value, nameof(TopBorder)); }
+ public Border? TopBorder { get => _TopBorder; set => UpdateField(ref _TopBorder, value, nameof(TopBorder)); }
 
- private BorderType? _TopBorder;
+ private Border? _TopBorder;
  /// <summary>
  /// Bottom border type for the shape.
  /// </summary>
- public BorderType? BottomBorder { get => _BottomBorder; set => UpdateField(ref _BottomBorder, value, nameof(BottomBorder)); }
+ public Border? BottomBorder { get => _BottomBorder; set => UpdateField(ref _BottomBorder, value, nameof(BottomBorder)); }
 
- private BorderType? _BottomBorder;
+ private Border? _BottomBorder;
  /// <summary>
  /// Left border type for the shape.
  /// </summary>
- public BorderType? LeftBorder { get => _LeftBorder; set => UpdateField(ref _LeftBorder, value, nameof(LeftBorder)); }
+ public Border? LeftBorder { get => _LeftBorder; set => UpdateField(ref _LeftBorder, value, nameof(LeftBorder)); }
 
- private BorderType? _LeftBorder;
+ private Border? _LeftBorder;
  /// <summary>
  /// Right border type for the shape.
  /// </summary>
- public BorderType? RightBorder { get => _RightBorder; set => UpdateField(ref _RightBorder, value, nameof(RightBorder)); }
+ public Border? RightBorder { get => _RightBorder; set => UpdateField(ref _RightBorder, value, nameof(RightBorder)); }
 
- private BorderType? _RightBorder;
+ private Border? _RightBorder;
  /// <summary>
  /// Complex element for the shape, specifying advanced formatting or behavior.
  /// </summary>
