@@ -6,4 +6,14 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(TabStop))]
 public class Tabs : ModelElementCollection<TabStop, DXW.Tabs, DXW.TabStop>
 {
+  /// <summary>
+  /// Default constructor
+  /// </summary>
+  public Tabs() : base() { }
+
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
+  /// <param name="items"></param>
+  public Tabs(IEnumerable<TabStop> items) : base(items) { }
 }
