@@ -7,17 +7,7 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class SimpleValueConverter
 {
-  /// <summary>
-  /// Aggregates conversion mappings for converting to various types.
-  /// </summary>
-  private static readonly ConversionToMap ConversionToMap = new();
-
-  /// <summary>
-  /// Aggregates conversion mappings for converting from various types.
-  /// </summary>
-  private static readonly ConversionFromMap ConversionFromMap = new();
-
-  private static readonly BiDiDictionary<Type, Type> specificConverters = new BiDiDictionary<Type, Type>
+  private static readonly BiDiDictionary<Type,Type> specificConverters = new BiDiDictionary<Type, Type>
   {
     { typeof(Boolean), typeof(BooleanConverter) },
     { typeof(TSBoolean), typeof(TSBooleanConverter) },
@@ -52,6 +42,15 @@ public static class SimpleValueConverter
   };
 
   /// <summary>
+  /// Aggregates conversion mappings for converting to various types.
+  /// </summary>
+  private static readonly ConversionToMap ConversionToMap = new();
+  /// <summary>
+  /// Aggregates conversion mappings for converting from various types.
+  /// </summary>
+  private static readonly ConversionFromMap ConversionFromMap = new();
+
+  /// <summary>
   /// Static constructor to initialize the conversion maps.
   /// </summary>
   static SimpleValueConverter()
@@ -59,10 +58,8 @@ public static class SimpleValueConverter
     foreach (var kvp in specificConverters)
     {
       var converterType = kvp.Value;
-      var conversionToMapField = converterType.GetField(nameof(ConversionToMap),
-        BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-      var conversionFromMapField = converterType.GetField(nameof(ConversionFromMap),
-        BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+      var conversionToMapField = converterType.GetField(nameof(ConversionToMap), BindingFlags.Public | BindingFlags.Static);
+      var conversionFromMapField = converterType.GetField(nameof(ConversionFromMap), BindingFlags.Public | BindingFlags.Static);
       if (conversionToMapField != null && conversionFromMapField != null)
       {
         var conversionToMap = (ConversionToMap)conversionToMapField.GetValue(null)!;
@@ -70,12 +67,7 @@ public static class SimpleValueConverter
         ConversionToMap.Append(conversionToMap);
         ConversionFromMap.Append(conversionFromMap);
       }
-      else
-      {
-        throw new InvalidOperationException(
-          $"Converter type {converterType.FullName} must have static fields named {nameof(ConversionToMap)} and {nameof(ConversionFromMap)}.");
-      }
-    }
+    } 
   }
 
   /// <summary>
@@ -138,6 +130,7 @@ public static class SimpleValueConverter
     var sourceType = value.GetType();
     if (sourceType == targetType)
       return true;
+
     if (ConverterBase.TryConvertTo(value, targetType, ConversionToMap, out result))
       return true;
 

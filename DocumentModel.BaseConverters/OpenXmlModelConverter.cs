@@ -27,7 +27,7 @@ public static partial class OpenXmlModelConverter
     if (modelObject == null)
       return null;
 
-    if (openXmlType==typeof(DXW.TopBorder)) Debug.Assert(true);
+    if (openXmlType == typeof(DXW.TopBorder)) Debug.Assert(true);
     var modelType = modelObject.GetType().GetNotNullableType();
     if (modelType == openXmlType)
       return modelObject;
@@ -193,7 +193,7 @@ public static partial class OpenXmlModelConverter
   {
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return false;
-    if (modelProperty.Name== "DefaultTabStop") Debug.Assert(true);
+    if (modelProperty.Name == "DefaultTabStop") Debug.Assert(true);
     if (TryUpdateUsingPropertyUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingTypeUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingElementAttribute(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
@@ -230,11 +230,10 @@ public static partial class OpenXmlModelConverter
         openXmlValue = ConvertTo(modelValue, openXmlProperty.PropertyType);
       }
       openXmlProperty.SetValue(openXmlObject, openXmlValue);
-      if (modelValue is IUpdatable updatable)
+      if (modelValue is IUpdatable updatable && openXmlValue is DX.OpenXmlElement)
       {
         updatable.SetUpdatableElement(openXmlValue);
-        if (openXmlValue != null)
-          updatable.UpdateData(openXmlValue);
+        updatable.UpdateData(openXmlValue);
       }
       return true;
     }
@@ -901,7 +900,8 @@ public static partial class OpenXmlModelConverter
     try
     {
       prototype = Activator.CreateInstance(openXmlChildType) as DX.OpenXmlElement;
-    } catch
+    }
+    catch
     {
       return null;
     }
@@ -924,7 +924,8 @@ public static partial class OpenXmlModelConverter
         parseMethod?.Invoke(prototype, []);
       }
       return prototype;
-    } catch
+    }
+    catch
     {
       return null;
     }

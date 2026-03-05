@@ -2,12 +2,10 @@
 
 using DocumentModel.OpenXml;
 
-using RgbConverter = DocumentModel.OpenXml.RgbConverter;
-
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="RgbConverter"/> conversions between .NET RGB values and various Open XML numeric types.
+///   Provides unit tests for verifying the correctness of <see cref="HexRgbConverter"/> conversions between .NET RGB values and various Open XML numeric types.
 ///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
 public static class RgbConverterTest
@@ -91,7 +89,7 @@ public static class RgbConverterTest
       try
       {
         // Convert to OpenXml
-        var openXmlValue = RgbConverter.ConvertTo(testValue, openXmlType);
+        var openXmlValue = HexRgbConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
           Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
@@ -132,7 +130,7 @@ public static class RgbConverterTest
         //  return false; // Expected exception for out-of-range value
         //}
         // Convert back to RGB
-        var convertedBackValue = RgbConverter.ConvertFrom(openXmlValue);
+        var convertedBackValue = HexRgbConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue is null)
         {
           Console.WriteLine($"Conversion back to RGB returned null for OpenXml value {openXmlValue}");
