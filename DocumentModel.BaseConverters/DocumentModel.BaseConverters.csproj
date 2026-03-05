@@ -23,6 +23,7 @@
     <Compile Remove="OpenXmlPartConverter.cs" />
     <Compile Remove="ReferenceConverter.cs" />
     <Compile Remove="ReferenceRelationshipConverter.cs" />
+    <Compile Remove="SimpleValueConverter - Copy.cs" />
     <Compile Remove="VariantConverter - Copy.cs" />
   </ItemGroup>
 

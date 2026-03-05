@@ -11,70 +11,71 @@ public static class SimpleValueConverter
   /// Aggregates conversion mappings for converting to various types.
   /// </summary>
   private static readonly ConversionToMap ConversionToMap = new();
+
   /// <summary>
   /// Aggregates conversion mappings for converting from various types.
   /// </summary>
   private static readonly ConversionFromMap ConversionFromMap = new();
+
+  private static readonly BiDiDictionary<Type, Type> specificConverters = new BiDiDictionary<Type, Type>
+  {
+    { typeof(Boolean), typeof(BooleanConverter) },
+    { typeof(TSBoolean), typeof(TSBooleanConverter) },
+    { typeof(String), typeof(StringConverter) },
+    { typeof(SByte), typeof(SByteConverter) },
+    { typeof(Int32), typeof(Int32Converter) },
+    { typeof(Int64), typeof(Int64Converter) },
+    { typeof(Byte), typeof(ByteConverter) },
+    { typeof(UInt16), typeof(UInt16Converter) },
+    { typeof(UInt32), typeof(UInt32Converter) },
+    { typeof(UInt64), typeof(UInt64Converter) },
+    { typeof(Single), typeof(SingleConverter) },
+    { typeof(Double), typeof(DoubleConverter) },
+    { typeof(Decimal), typeof(DecimalConverter) },
+    { typeof(Guid), typeof(GuidConverter) },
+    { typeof(DateTime), typeof(DateTimeConverter) },
+    { typeof(HexBinary), typeof(HexBinaryConverter) },
+    { typeof(HexByte), typeof(HexByteConverter) },
+    { typeof(HexChar), typeof(HexCharConverter) },
+    { typeof(HexRgb), typeof(HexRgbConverter) },
+    { typeof(HexInt), typeof(HexIntConverter) },
+    { typeof(HexLong), typeof(HexLongConverter) },
+    { typeof(StringList), typeof(StringListConverter) },
+    { typeof(Enum), typeof(EnumConverter) },
+    { typeof(BytePercent), typeof(BytePercentConverter) },
+    { typeof(Percent), typeof(PercentConverter) },
+    { typeof(Twips), typeof(TwipsConverter) },
+    { typeof(EMU), typeof(EMUConverter) },
+    { typeof(EPS), typeof(EPSConverter) },
+    { typeof(HPS), typeof(HPSConverter) },
+    { typeof(PTS), typeof(PTSConverter) }
+  };
 
   /// <summary>
   /// Static constructor to initialize the conversion maps.
   /// </summary>
   static SimpleValueConverter()
   {
-    ConversionToMap.Append(BooleanConverter.ConversionToMap);
-    ConversionToMap.Append(TSBooleanConverter.ConversionToMap);
-    ConversionToMap.Append(StringConverter.ConversionToMap);
-    ConversionToMap.Append(SByteConverter.ConversionToMap);
-    ConversionToMap.Append(Int32Converter.ConversionToMap);
-    ConversionToMap.Append(Int64Converter.ConversionToMap);
-    ConversionToMap.Append(ByteConverter.ConversionToMap);
-    ConversionToMap.Append(UInt16Converter.ConversionToMap);
-    ConversionToMap.Append(UInt32Converter.ConversionToMap);
-    ConversionToMap.Append(UInt64Converter.ConversionToMap);
-    ConversionToMap.Append(SingleConverter.ConversionToMap);
-    ConversionToMap.Append(DoubleConverter.ConversionToMap);
-    ConversionToMap.Append(DecimalConverter.ConversionToMap);
-    ConversionToMap.Append(GuidConverter.ConversionToMap);
-    ConversionToMap.Append(DateTimeConverter.ConversionToMap);
-    ConversionToMap.Append(HexLongConverter.ConversionToMap);
-    ConversionToMap.Append(StringListConverter.ConversionToMap);
-    ConversionToMap.Append(RgbConverter.ConversionToMap);
-    ConversionToMap.Append(HexBinaryConverter.ConversionToMap);
-    ConversionToMap.Append(EnumConverter.ConversionToMap);
-    ConversionToMap.Append(BytePercentConverter.ConversionToMap);
-    ConversionToMap.Append(PercentConverter.ConversionToMap);
-    ConversionToMap.Append(TwipsConverter.ConversionToMap);
-    ConversionToMap.Append(EMUConverter.ConversionToMap);
-    ConversionToMap.Append(EPSConverter.ConversionToMap);
-    ConversionToMap.Append(HPSConverter.ConversionToMap);
-    ConversionToMap.Append(PTSConverter.ConversionToMap);
-
-    ConversionFromMap.Append(BooleanConverter.ConversionFromMap);
-    ConversionFromMap.Append(TSBooleanConverter.ConversionFromMap);
-    ConversionFromMap.Append(StringConverter.ConversionFromMap);
-    ConversionFromMap.Append(SByteConverter.ConversionFromMap);
-    ConversionFromMap.Append(Int32Converter.ConversionFromMap);
-    ConversionFromMap.Append(Int64Converter.ConversionFromMap);
-    ConversionFromMap.Append(UInt16Converter.ConversionFromMap);
-    ConversionFromMap.Append(UInt32Converter.ConversionFromMap);
-    ConversionFromMap.Append(UInt64Converter.ConversionFromMap);
-    ConversionFromMap.Append(SingleConverter.ConversionFromMap);
-    ConversionFromMap.Append(DoubleConverter.ConversionFromMap);
-    ConversionFromMap.Append(DecimalConverter.ConversionFromMap);
-    ConversionFromMap.Append(GuidConverter.ConversionFromMap);
-    ConversionFromMap.Append(DateTimeConverter.ConversionFromMap);
-    ConversionFromMap.Append(HexIntConverter.ConversionFromMap);
-    ConversionFromMap.Append(StringListConverter.ConversionFromMap);
-    ConversionFromMap.Append(RgbConverter.ConversionFromMap);
-    ConversionFromMap.Append(HexBinaryConverter.ConversionFromMap);
-    ConversionFromMap.Append(EnumConverter.ConversionFromMap);
-    ConversionFromMap.Append(PercentConverter.ConversionFromMap);
-    ConversionFromMap.Append(TwipsConverter.ConversionFromMap);
-    ConversionFromMap.Append(EMUConverter.ConversionFromMap);
-    ConversionFromMap.Append(EPSConverter.ConversionFromMap);
-    ConversionFromMap.Append(HPSConverter.ConversionFromMap);
-    ConversionFromMap.Append(PTSConverter.ConversionFromMap);
-
+    foreach (var kvp in specificConverters)
+    {
+      var converterType = kvp.Value;
+      var conversionToMapField = converterType.GetField(nameof(ConversionToMap),
+        BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+      var conversionFromMapField = converterType.GetField(nameof(ConversionFromMap),
+        BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+      if (conversionToMapField != null && conversionFromMapField != null)
+      {
+        var conversionToMap = (ConversionToMap)conversionToMapField.GetValue(null)!;
+        var conversionFromMap = (ConversionFromMap)conversionFromMapField.GetValue(null)!;
+        ConversionToMap.Append(conversionToMap);
+        ConversionFromMap.Append(conversionFromMap);
+      }
+      else
+      {
+        throw new InvalidOperationException(
+          $"Converter type {converterType.FullName} must have static fields named {nameof(ConversionToMap)} and {nameof(ConversionFromMap)}.");
+      }
+    }
   }
 
   /// <summary>
@@ -137,7 +138,6 @@ public static class SimpleValueConverter
     var sourceType = value.GetType();
     if (sourceType == targetType)
       return true;
-
     if (ConverterBase.TryConvertTo(value, targetType, ConversionToMap, out result))
       return true;
 

@@ -8,22 +8,23 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.Shading))]
 public partial class Shading : ModelElement<DXW.Shading>
 {
- /// <summary>
- /// The shading pattern applied to the drawing element, determining the style of the fill pattern.
- /// </summary>
+  /// <summary>
+  /// The shading pattern applied to the drawing element, determining the style of the fill pattern.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Shading.Val))]
  public ShadingPattern? Pattern { get => _Pattern; set => UpdateField(ref _Pattern, value, nameof(Pattern)); }
 
  private ShadingPattern? _Pattern;
  /// <summary>
  /// The color of the pattern foreground, specifying the primary color used in the shading pattern.
  /// </summary>
- public DocumentModel.AbstractColor? ForegroundColor { get => _ForegroundColor; set => UpdateField(ref _ForegroundColor, value, nameof(ForegroundColor)); }
+ public DMW.Color? ForegroundColor { get => _ForegroundColor; set => UpdateField(ref _ForegroundColor, value, nameof(ForegroundColor)); }
 
- private DocumentModel.AbstractColor? _ForegroundColor;
+ private DMW.Color? _ForegroundColor;
  /// <summary>
  /// The color of the pattern background, specifying the secondary color used in the shading pattern.
  /// </summary>
- public DocumentModel.AbstractColor? BackgroundColor { get => _BackgroundColor; set => UpdateField(ref _BackgroundColor, value, nameof(BackgroundColor)); }
+ public DMW.Color? BackgroundColor { get => _BackgroundColor; set => UpdateField(ref _BackgroundColor, value, nameof(BackgroundColor)); }
 
- private DocumentModel.AbstractColor? _BackgroundColor;
+ private DMW.Color? _BackgroundColor;
 }
