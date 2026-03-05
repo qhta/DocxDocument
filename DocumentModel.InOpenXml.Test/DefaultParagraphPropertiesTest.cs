@@ -167,7 +167,8 @@ namespace DocumentModel.InOpenXml.Test
           LeftBorder = new Border { Style = BorderStyle.Dashed, Color = "00FF00", Width = 2, Space = "2mm" },
           BottomBorder = new Border { Style = BorderStyle.DotDash, Color = "0000FF", Width = 3, Space = "2mm" },
           RightBorder = new Border { Style = BorderStyle.Double, Color = "FFFF00", Width = 5, Space = "2mm" }
-        }
+        },
+        //Shading = new Shading { Pattern = ShadingPattern.Percent10, ForegroundColor = "CCCCCC", BackgroundColor = "333333",  }
       };
     }
 

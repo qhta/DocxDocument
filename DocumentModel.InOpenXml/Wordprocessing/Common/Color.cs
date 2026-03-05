@@ -1,3 +1,5 @@
+using EnumConverter = DocumentModel.OpenXml.EnumConverter;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -5,12 +7,12 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "AbstractColor"/> and is used to specify color values for document elements such as borders, shading, and text, enabling advanced formatting and visual customization.
 /// </summary>
 [OpenXmlType(typeof(DXW.Color))]
-public partial class Color: AbstractColor<DXW.Color>
+public partial class Color : AbstractColor<DXW.Color>
 {
   /// <summary>
   /// Initializes a new instance of the Color class.
   /// </summary>
-  public Color(): base()
+  public Color() : base()
   {
   }
 
@@ -71,13 +73,14 @@ public partial class Color: AbstractColor<DXW.Color>
   /// </summary>
   /// <param name="value">The string to convert.</param>
   /// <returns>A <see cref="Color"/> value representing the color.</returns>
-  public static implicit operator Color(string value) => new Color( value );
+  public static implicit operator Color(string value) => new Color(value);
 
   /// <summary>
   /// Implicitly converts an <see cref="Color"/> value to a string representation.
   /// </summary>
   /// <param name="value">The <see cref="Color"/> value to convert.</param>
   /// <returns>A string representation of the RGB color.</returns>
+
   // ReSharper disable once SpecifyACultureInStringConversionExplicitly
   public static implicit operator String(Color value) => value.ToString()!;
 
@@ -112,17 +115,20 @@ public partial class Color: AbstractColor<DXW.Color>
   {
     if (string.IsNullOrEmpty(colorString))
       throw new ArgumentException("Color string cannot be null or empty.", nameof(colorString));
+
     // Try parsing as HexRgb
     if (HexRgb.TryParse(colorString, out var hexColor))
     {
       return new Color { Val = hexColor };
     }
+
     // Try parsing as ThemeColors
     if (Enum.TryParse<ThemeColors>(colorString, true, out var themeColor))
     {
       return new Color { ThemeColor = themeColor };
     }
-    throw new FormatException($"Invalid color string format: '{colorString}'. Expected a hexadecimal color value or a theme color name.");
+    throw new FormatException(
+      $"Invalid color string format: '{colorString}'. Expected a hexadecimal color value or a theme color name.");
   }
 
   /// <summary>
@@ -141,12 +147,14 @@ public partial class Color: AbstractColor<DXW.Color>
     color = null;
     if (string.IsNullOrEmpty(colorString))
       return false;
+
     // Try parsing as HexRgb
     if (HexRgb.TryParse(colorString, out var hexColor))
     {
       color = new Color { Val = hexColor };
       return true;
     }
+
     // Try parsing as ThemeColors
     if (Enum.TryParse<ThemeColors>(colorString, true, out var themeColor))
     {
@@ -154,5 +162,71 @@ public partial class Color: AbstractColor<DXW.Color>
       return true;
     }
     return false;
+  }
+
+  /// <summary>
+  /// Creates new instance of <see cref="Color"/> based on the provided OpenXml color properties, including the color value, theme color, tint,
+  /// and shade.
+  /// </summary>
+  /// <param name="val">StringValue representing the color value.</param>
+  /// <param name="themeColor">EnumValue representing the theme color.</param>
+  /// <param name="themeTint">StringValue representing the theme tint.</param>
+  /// <param name="themeShade">StringValue representing the theme shade.</param>
+  /// <returns>A Color object populated with the provided OpenXml color properties. If no color properties are provided, returns null.</returns>
+  public static DMW.Color? FromOpenXml
+  (DX.StringValue? val = null, DX.EnumValue<DXW.ThemeColorValues>? themeColor = null,
+    DX.StringValue? themeTint = null, DX.StringValue? themeShade = null)
+  {
+    DMW.Color? color = null;
+
+    if (val?.Value != null)
+    {
+      color ??= new DMW.Color();
+      color.Val = HexRgbConverter.ConvertFrom(val);
+    }
+
+    if (themeColor?.Value != null)
+    {
+      color ??= new DMW.Color();
+      color.ThemeColor = (ThemeColors)EnumConverter.ConvertFrom(themeColor, typeof(ThemeColors))!;
+    }
+
+    if (themeTint?.Value != null)
+    {
+      color ??= new DMW.Color();
+      color.ThemeTint = HexByteConverter.ConvertFrom(themeTint)!;
+    }
+    if (themeShade?.Value != null)
+    {
+      color ??= new DMW.Color();
+      color.ThemeShade = HexByteConverter.ConvertFrom(themeShade)!;
+    }
+
+    return color;
+  }
+
+  /// <summary>
+  /// Converts the current color and theme-related properties to their OpenXML representations.
+  /// </summary>
+  /// <remarks>Use this method to obtain OpenXML-compatible values for color and theme settings when generating
+  /// or modifying OpenXML documents. Properties that are not set will result in null values in the returned
+  /// tuple.</remarks>
+  /// <returns>A tuple containing the converted color value, theme color, theme tint, and theme shade. Each element may be null
+  /// if the corresponding property is not set.</returns>
+  public (DX.StringValue? val, DX.EnumValue<DXW.ThemeColorValues>? themeColor, DX.StringValue? themeTint, DX.StringValue? themeShade) ToOpenXml()
+  {
+    DX.StringValue? val = null;
+    if (Val is not null)
+      val = HexRgbConverter.ConvertTo(Val, typeof(DX.StringValue)) as DX.StringValue;
+    DX.EnumValue<DXW.ThemeColorValues>? themeColor = null;
+    if (ThemeColor is not null)
+      themeColor = EnumConverter.ConvertTo(ThemeColor, typeof(DX.EnumValue<DXW.ThemeColorValues>)) as DX.EnumValue<DXW.ThemeColorValues>;
+    DX.StringValue? themeTint = null;
+    if (ThemeTint is not null)
+      themeTint = HexByteConverter.ConvertTo(ThemeTint, typeof(DX.StringValue)) as DX.StringValue;
+    DX.StringValue? themeShade = null;
+    if (ThemeShade is not null)
+      themeShade = HexByteConverter.ConvertTo(ThemeShade, typeof(DX.StringValue)) as DX.StringValue;
+    return (val, themeColor, themeTint, themeShade);
   }
 }

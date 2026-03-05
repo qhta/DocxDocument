@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides conversion methods for RGB value to/from Open XML.
 /// </summary>
-public static class RgbConverter
+public static class HexRgbConverter
 {
   private static readonly ConversionMethodInfo[] supportedConversions =
   [
@@ -27,11 +27,11 @@ public static class RgbConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps for <see cref="RgbConverter"/>.
+  /// Initializes the conversion maps for <see cref="HexRgbConverter"/>.
   /// </summary>
-  static RgbConverter()
+  static HexRgbConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(RgbConverter), typeof(HexRgb), supportedConversions, ConversionToMap, ConversionFromMap);
+    ConverterBase.RegisterConversionMethods(typeof(HexRgbConverter), typeof(HexRgb), supportedConversions, ConversionToMap, ConversionFromMap);
   }
 
 
