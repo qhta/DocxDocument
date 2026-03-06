@@ -76,7 +76,7 @@ public partial class DefinedStyles : ModelElementCollection<StyleDef>
   {
     if (element is not DXW.Styles styles)
       throw new ArgumentException($"Expected element of type {typeof(DXW.Styles).FullName}, but got {element.GetType().FullName}.");
-    SetIsLoaded(true);
+    SetIsLoading(true);
     var styleElements = styles.Elements<DXW.Style>().ToArray();
     this.Clear();
     foreach (var style in styleElements)
@@ -84,6 +84,6 @@ public partial class DefinedStyles : ModelElementCollection<StyleDef>
       var styleDef = OpenXmlElementConverter.ConvertFrom(style, typeof(DMW.StyleDef)) as DMW.StyleDef;
       this.Add(styleDef!);
     }
-    SetIsLoaded(false);
+    SetIsLoading(false);
   }
 }

@@ -10,12 +10,12 @@ public interface ILoadable
   /// This method should return true if any changes have been made to the object's state that would require saving.
   /// </summary>
   /// <returns></returns>
-  public bool IsLoaded { get; }
+  public bool IsLoading { get; }
 
   /// <summary>
   /// Marks the object as Loaded or unLoaded.
   /// </summary>
-  /// <param name="isLoaded">A isLoaded indicating whether the object should be marked as Loaded. Set to <see langword="true"/> to mark as
+  /// <param name="isLoading">A isLoaded indicating whether the object should be marked as Loaded. Set to <see langword="true"/> to mark as
   /// Loaded; otherwise, <see langword="false"/>.</param>
-  public void SetIsLoaded(bool isLoaded);
+  public void SetIsLoading(bool isLoading);
 }

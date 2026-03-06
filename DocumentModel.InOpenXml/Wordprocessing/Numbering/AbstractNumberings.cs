@@ -2,7 +2,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Collection of AbstractNum elements.
 /// </summary>
-[OpenXmlType(typeof(Style))]
 [OpenXmlUpdateData(nameof(UpdateNumberings))]
 [OpenXmlLoadData(nameof(LoadNumberings))]
 public partial class AbstractNumberings : ModelElementCollection<AbstractNumbering, DXW.Numbering, DXW.AbstractNum>
@@ -33,8 +32,8 @@ public partial class AbstractNumberings : ModelElementCollection<AbstractNumberi
 
   /// <summary>
   /// Gets updatable element for this collection of abstract numbering,
-  /// which is the <see cref="DXW.Numbering"/> element that contains the individual <see cref="DXW.Style"/> elements
-  /// representing each abstract style.
+  /// which is the <see cref="DXW.Numbering"/> element that contains the individual <see cref="DXW.AbstractNum"/> elements
+  /// representing each abstract AbstractNum.
   /// </summary>
   /// <returns></returns>
   public override DX.OpenXmlElement? GetUpdatableElement()
@@ -54,7 +53,7 @@ public partial class AbstractNumberings : ModelElementCollection<AbstractNumberi
   {
     if (element is not DXW.Numbering numbering)
       throw new ArgumentException($"Expected element of type {typeof(DXW.Numbering).FullName}, but got {element.GetType().FullName}.");
-    numbering.RemoveAllChildren<DXW.Style>();
+    numbering.RemoveAllChildren<DXW.AbstractNum>();
     foreach (var abstractNumbering in this)
     {
       var abstractNum = OpenXmlElementConverter.ConvertTo(abstractNumbering, typeof(DXW.AbstractNum)) as DXW.AbstractNum;
@@ -73,14 +72,14 @@ public partial class AbstractNumberings : ModelElementCollection<AbstractNumberi
   {
     if (element is not DXW.Numbering numbering)
       throw new ArgumentException($"Expected element of type {typeof(DXW.Numbering).FullName}, but got {element.GetType().FullName}.");
-    SetIsLoaded(true);
-    var styleElements = numbering.Elements<DXW.AbstractNum>().ToArray();
+    SetIsLoading(true);
+    var abstractNumElements = numbering.Elements<DXW.AbstractNum>().ToArray();
     this.Clear();
-    foreach (var openXmlElement in styleElements)
+    foreach (var openXmlElement in abstractNumElements)
     {
       var abstractNumbering = OpenXmlElementConverter.ConvertFrom(openXmlElement, typeof(DMW.AbstractNumbering)) as DMW.AbstractNumbering;
       this.Add(abstractNumbering!);
     }
-    SetIsLoaded(false);
+    SetIsLoading(false);
   }
 }

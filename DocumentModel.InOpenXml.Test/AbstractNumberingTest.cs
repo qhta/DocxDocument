@@ -271,6 +271,73 @@
         Name = "Normal",
         NsId = 1,
         AbstractNumId = 1,
+        MultiLevelType = MultiLevel.SingleLevel,
+        TemplateCode = 101,
+        Levels = new NumberingLevels
+        {
+          new NumberingLevel
+          {
+            LevelIndex = 0,
+            StartNumberingValue = 1,
+            NumberingFormat = new NumberingFormat { Type = NumberFormat.Decimal },
+            LevelText = new LevelText { Text = "%1." },
+            LevelSuffix = LevelSuffix.Space,
+            Justification = LevelJustification.Left,
+          }
+        },
+      });
+
+      abstractNumberings.Add(new AbstractNumbering()
+      {
+        Name = "Outline",
+        NsId = 2,
+        AbstractNumId = 2,
+        MultiLevelType = MultiLevel.Multilevel,
+        TemplateCode = 202,
+        StyleLink = "Heading1",
+        Levels = new NumberingLevels
+        {
+          new NumberingLevel
+          {
+            LevelIndex = 0,
+            StartNumberingValue = 1,
+            NumberingFormat = new NumberingFormat { Type = NumberFormat.UpperRoman },
+            LevelText = new LevelText { Text = "%1." },
+            LevelSuffix = LevelSuffix.Tab,
+            Justification = LevelJustification.Left,
+            IsLegalNumberingStyle = true,
+          },
+          new NumberingLevel
+          {
+            LevelIndex = 1,
+            StartNumberingValue = 1,
+            NumberingFormat = new NumberingFormat { Type = NumberFormat.Decimal },
+            LevelText = new LevelText { Text = "%1.%2." },
+            LevelSuffix = LevelSuffix.Space,
+            Justification = LevelJustification.Left,
+          }
+        },
+      });
+
+      abstractNumberings.Add(new AbstractNumbering()
+      {
+        Name = "Bullet",
+        NsId = 3,
+        AbstractNumId = 3,
+        MultiLevelType = MultiLevel.HybridMultilevel,
+        TemplateCode = 303,
+        NumberingStyleLink = "ListBullet",
+        Levels = new NumberingLevels
+        {
+          new NumberingLevel
+          {
+            LevelIndex = 0,
+            NumberingFormat = new NumberingFormat { Type = NumberFormat.Bullet },
+            LevelText = new LevelText { Text = "•" },
+            LevelSuffix = LevelSuffix.Space,
+            Justification = LevelJustification.Left,
+          }
+        },
       });
 
       return abstractNumberings;

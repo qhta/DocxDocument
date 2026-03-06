@@ -7968,18 +7968,18 @@
             Interface for types that can be loaded, allowing clients to check if the object has been Loaded and to set its Loaded state.
             </summary>
         </member>
-        <member name="P:DocumentModel.ILoadable.IsLoaded">
+        <member name="P:DocumentModel.ILoadable.IsLoading">
             <summary>
             Checks if the object has been Loaded since it was last saved or loaded.
             This method should return true if any changes have been made to the object's state that would require saving.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:DocumentModel.ILoadable.SetIsLoaded(System.Boolean)">
+        <member name="M:DocumentModel.ILoadable.SetIsLoading(System.Boolean)">
             <summary>
             Marks the object as Loaded or unLoaded.
             </summary>
-            <param name="isLoaded">A isLoaded indicating whether the object should be marked as Loaded. Set to <see langword="true"/> to mark as
+            <param name="isLoading">A isLoaded indicating whether the object should be marked as Loaded. Set to <see langword="true"/> to mark as
             Loaded; otherwise, <see langword="false"/>.</param>
         </member>
         <member name="T:DocumentModel.IModifiable">

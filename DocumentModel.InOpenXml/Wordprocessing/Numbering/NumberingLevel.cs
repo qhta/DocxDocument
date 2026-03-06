@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// A numbering level definition is identical to a numbering level override definition, except it is defined as part of a numbering definition instance using the abstractNum element rather than as part of an abstract numbering definition using the num element.
 /// </remarks>
 [OpenXmlType(typeof(DXW.Level))]
-public partial class NumLevel : ModelElement<DXW.Level>
+public partial class NumberingLevel : ModelElement<DXW.Level>
 {
  /// <summary>
  /// Zero-based index of the numbering level defined by this set of properties (e.g., 2 is the 3rd list level).
@@ -69,9 +69,9 @@ public partial class NumLevel : ModelElement<DXW.Level>
  /// Textual content displayed for paragraphs at this numbering level, with %x replaced by the appropriate number.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Level.LevelText))]
- public NumLevelText? LevelText { get => _LevelText; set => UpdateField(ref _LevelText, value, nameof(LevelText)); }
+ public LevelText? LevelText { get => _LevelText; set => UpdateField(ref _LevelText, value, nameof(LevelText)); }
 
- private NumLevelText? _LevelText;
+ private LevelText? _LevelText;
  /// <summary>
  /// Identifier for the picture bullet to use as the numbering symbol at this level.
  /// </summary>
@@ -97,9 +97,9 @@ public partial class NumLevel : ModelElement<DXW.Level>
  /// Justification for the numbering level (e.g., left, center, right).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Level.LevelJustification))]
- public LevelJustification? LevelJustification { get => _LevelJustification; set => UpdateField(ref _LevelJustification, value, nameof(LevelJustification)); }
+ public LevelJustification? Justification { get => _justification; set => UpdateField(ref _justification, value, nameof(Justification)); }
 
- private LevelJustification? _LevelJustification;
+ private LevelJustification? _justification;
  /// <summary>
  /// Run properties for the numbering symbol at this level, specifying formatting for the symbol.
  /// </summary>

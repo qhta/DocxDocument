@@ -102,6 +102,7 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   {
     AbstractNumberings.LoadNumberings(element);
   }
+
   /// <summary>
   /// Collection of numbering instances definitions
   /// </summary>

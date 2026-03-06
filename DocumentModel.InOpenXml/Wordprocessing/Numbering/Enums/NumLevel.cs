@@ -4,7 +4,7 @@
 /// Numbering level enumeration for numbering in WordprocessingML documents.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
-public enum NumberingLevel
+public enum NumLevel
 {
   /// <summary>
   /// Represents the first level in an outline hierarchy, typically assigned to Header1.
