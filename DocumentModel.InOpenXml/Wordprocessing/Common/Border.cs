@@ -1,5 +1,4 @@
 using EnumConverter = DocumentModel.OpenXml.EnumConverter;
-using StringConverter = DocumentModel.OpenXml.StringConverter;
 
 namespace DocumentModel.Wordprocessing;
 
@@ -15,6 +14,7 @@ public partial class Border: ModelElement<DXW.BorderType>
   /// </summary>
   [OpenXmlLoadData(nameof(LoadBorderType))]
   [OpenXmlUpdateData(nameof(UpdateBorderType))]
+  [Required]
   public BorderType? Type { get => _type; set => UpdateField(ref _type, value, nameof(Type)); }
 
   private BorderType? _type;

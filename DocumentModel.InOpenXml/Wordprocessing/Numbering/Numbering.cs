@@ -24,7 +24,7 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   }
 
   /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's FontTable.
+  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's Numberings part.
   /// </summary>
   /// <param name = "wordprocessingDocument">Document to attach to.</param>
   public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
@@ -36,7 +36,7 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   }
 
   /// <summary>
-  /// Attach this instance to the specified document. Data is stored to the document's FontTable.
+  /// Attach this instance to the specified document. Data is stored to the document's Numberings part.
   /// </summary>
   /// <param name = "wordprocessingDocument">Document to attach to.</param>
   public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
@@ -82,22 +82,22 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   private AbstractNumberings? _AbstractNumberings;
 
   /// <summary>
-  /// Updates the abstractnumberings in the specified OpenXml element b with abstractnumberings defined in the DefinedAbstractNumberings collection.  
+  /// Updates the abstract numberings in the specified OpenXml element with abstract numberings defined in the AbstractNumberings collection.  
   /// </summary>
-  /// <remarks>This method passes the specified element to the DefinedAbstractNumberings collection for updating.</remarks>
-  /// <param name="element">The OpenXml element to update. Must be of type <see cref="DXW.AbstractNumberings"/>.</param>
-  /// <exception cref="ArgumentException">Thrown if <paramref name="element"/> is not of type <see cref="DXW.AbstractNumberings"/>.</exception>
+  /// <remarks>This method passes the specified element to the AbstractNumberings collection for updating.</remarks>
+  /// <param name="element">The OpenXml element to update. Must be of type <see cref="DXW.Numberings"/>.</param>
+  /// <exception cref="ArgumentException">Thrown if <paramref name="element"/> is not of type <see cref="DXW.Numberings"/>.</exception>
   public void UpdateAbstractNumberings(DX.OpenXmlElement element)
   {
     AbstractNumberings.UpdateNumberings(element);
   }
 
   /// <summary>
-  /// Loads abstractnumberings from the specified OpenXmlElement into the DefinedAbstractNumberings collection, replacing any existing abstractnumberings.
+  /// Loads abstract numberings from the specified OpenXmlElement into the AbstractNumberings collection, replacing any existing abstract numbering.
   /// </summary>
-  /// <remarks>This method passes the specified element to the DefinedAbstractNumberings collection for loading.</remarks>
-  /// <param name="element">The OpenXmlElement containing the abstractnumberings to load. Must be of type DXW.AbstractNumberings.</param>
-  /// <exception cref="ArgumentException">Thrown if the provided element is not of type DXW.AbstractNumberings.</exception>
+  /// <remarks>This method passes the specified element to the AbstractNumberings collection for loading.</remarks>
+  /// <param name="element">The OpenXmlElement containing the abstract numberings to load. Must be of type DXW.Numberings.</param>
+  /// <exception cref="ArgumentException">Thrown if the provided element is not of type DXW.Numberings.</exception>
   public void LoadAbstractNumberings(DX.OpenXmlElement element)
   {
     AbstractNumberings.LoadNumberings(element);
@@ -106,22 +106,53 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   /// <summary>
   /// Collection of numbering instances definitions
   /// </summary>
-  public NumberingInstances? NumberingInstances
+  [OpenXmlElementCollection(typeof(DXW.NumberingInstance))]
+  [OpenXmlUpdateData(nameof(UpdateNumberingInstances))]
+  [OpenXmlLoadData(nameof(LoadNumberingInstances))]
+  public NumberingInstances NumberingInstances
   {
-    get => _NumberingInstances;
+    get
+    {
+      if (_NumberingInstances == null)
+        _NumberingInstances = new NumberingInstances(this);
+      return _NumberingInstances;
+    }
     set => UpdateField(ref _NumberingInstances, value, nameof(NumberingInstances));
   }
 
   private NumberingInstances? _NumberingInstances;
 
-//  /// <summary>
-//  /// Collection of numbering picture bullets
-//  /// </summary>
-//  public NumberingPictureBullets? NumberingPictureBullets
-//  {
-//    get => _NumberingPictureBullets;
-//    set => UpdateField(ref _NumberingPictureBullets, value, nameof(NumberingPictureBullets));
-//  }
 
-//  private NumberingPictureBullets? _NumberingPictureBullets;
+  /// <summary>
+  /// Updates the numbering instances in the specified OpenXml element with numbering instances defined in the NumberingInstances collection.  
+  /// </summary>
+  /// <remarks>This method passes the specified element to the NumberingInstances collection for updating.</remarks>
+  /// <param name="element">The OpenXml element to update. Must be of type <see cref="DXW.Numbering"/>.</param>
+  /// <exception cref="ArgumentException">Thrown if <paramref name="element"/> is not of type <see cref="DXW.Numbering"/>.</exception>
+  public void UpdateNumberingInstances(DX.OpenXmlElement element)
+  {
+    NumberingInstances.UpdateNumberings(element);
+  }
+
+  /// <summary>
+  /// Loads numbering instances from the specified OpenXmlElement into the NumberingInstances collection, replacing any existing NumberingInstances.
+  /// </summary>
+  /// <remarks>This method passes the specified element to the NumberingInstances collection for loading.</remarks>
+  /// <param name="element">The OpenXmlElement containing the numbering instances to load. Must be of type DXW.NumberingInstances.</param>
+  /// <exception cref="ArgumentException">Thrown if the provided element is not of type DXW.NumberingInstances.</exception>
+  public void LoadNumberingInstances(DX.OpenXmlElement element)
+  {
+    NumberingInstances.LoadNumberings(element);
+  }
+
+  //  /// <summary>
+  //  /// Collection of numbering picture bullets
+  //  /// </summary>
+  //  public NumberingPictureBullets? NumberingPictureBullets
+  //  {
+  //    get => _NumberingPictureBullets;
+  //    set => UpdateField(ref _NumberingPictureBullets, value, nameof(NumberingPictureBullets));
+  //  }
+
+  //  private NumberingPictureBullets? _NumberingPictureBullets;
 }

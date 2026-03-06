@@ -69,9 +69,9 @@ public partial class NumberingLevel : ModelElement<DXW.Level>
  /// Textual content displayed for paragraphs at this numbering level, with %x replaced by the appropriate number.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Level.LevelText))]
- public LevelText? LevelText { get => _LevelText; set => UpdateField(ref _LevelText, value, nameof(LevelText)); }
+ public NumberingLevelText? LevelText { get => _LevelText; set => UpdateField(ref _LevelText, value, nameof(LevelText)); }
 
- private LevelText? _LevelText;
+ private NumberingLevelText? _LevelText;
  /// <summary>
  /// Identifier for the picture bullet to use as the numbering symbol at this level.
  /// </summary>

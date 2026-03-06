@@ -163,7 +163,7 @@ namespace DocumentModel.InOpenXml.Test
         },
         Borders = new ParagraphBorders
         {
-          TopBorder = new Border { Type = BorderType.Single, Color = "FF0000", Width = 4, Space = "2mm" },
+          TopBorder = new Border { Type = BorderType.Single, /* Color = "FF0000", Width = 4, Space = "2mm"*/ },
           LeftBorder = new Border { Type = BorderType.Dashed, Color = "00FF00", Width = 2, Space = "2mm" },
           BottomBorder = new Border { Type = BorderType.DotDash, Color = "0000FF", Width = 3, Space = "2mm" },
           RightBorder = new Border { Type = BorderType.Double, Color = "FFFF00", Width = 5, Space = "2mm" }

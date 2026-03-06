@@ -1,5 +1,3 @@
-using DocumentModel.Drawings;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents shading formatting for a drawing element in a Wordprocessing document.
@@ -12,6 +10,7 @@ public partial class Shading : ModelElement<DXW.Shading>
   /// The shading pattern applied to the drawing element, determining the style of the fill pattern.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Shading.Val))]
+  [Required]
   public ShadingPattern? Pattern { get => _Pattern; set => UpdateField(ref _Pattern, value, nameof(Pattern)); }
 
   private ShadingPattern? _Pattern;

@@ -17,6 +17,7 @@ public partial class AbstractNumbering: ModelElement<DXW.AbstractNum>
   ///   in order to inherit the properties specified by this abstract numbering definition.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.AbstractNum.AbstractNumberId))]
+  [Required]
   public Int32? AbstractNumId
   {
     get => _abstractNumId;

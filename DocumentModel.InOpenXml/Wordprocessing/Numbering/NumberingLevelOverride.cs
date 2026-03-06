@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Each instance of this element overrides the appearance and behavior of a specific numbering level definition within the abstract numbering definition, enabling advanced customization of list and outline numbering.
 /// </summary>
 [OpenXmlType(typeof(DXW.LevelOverride))]
-public partial class NumLevelOverride : ModelElement<DXW.LevelOverride>
+public partial class NumberingLevelOverride : ModelElement<DXW.LevelOverride>
 {
  /// <summary>
  /// Numbering level ID, specifying the zero-based index of the level being overridden.
