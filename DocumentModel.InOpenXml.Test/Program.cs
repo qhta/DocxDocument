@@ -25,6 +25,7 @@ internal class Program
     if (!Exec(StyleDocDefaultsRunPropertiesTest.Run)) return;
     if (!Exec(DefaultParagraphPropertiesTest.Run)) return;
     if (!Exec(StyleDocDefaultsParagraphPropertiesTest.Run)) return;
+    if (!Exec(AbstractNumberingsTest.Run)) return;
 
     Console.WriteLine("All tests passed.");
   }

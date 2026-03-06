@@ -319,4 +319,17 @@ public static class WordprocessingHelper
     return Styles;
   }
 
+  /// <summary>
+  /// Retrieves the Numbering element for the specified Wordprocessing document, creating it if necessary.
+  /// </summary>
+  /// <param name="wordDocument">The Document instance.</param>
+  /// <returns>The Numbering element.</returns>
+  public static DXW.Numbering GetNumbering(this DXPP.WordprocessingDocument wordDocument)
+  {
+    var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
+    var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
+    DXPP.NumberingDefinitionsPart part = mainPart.NumberingDefinitionsPart ?? mainPart.AddNewPart<DXPP.NumberingDefinitionsPart>();
+    var Numbering = part.Numbering ?? (part.Numbering = new DXW.Numbering());
+    return Numbering;
+  }
 }

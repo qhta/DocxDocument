@@ -467,7 +467,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   {
     foreach (var prop in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
     {
-      if (prop.GetIndexParameters().Length == 0)
+      if (prop.GetIndexParameters().Length == 0 && prop.CanWrite && prop.GetCustomAttribute<NotMappedAttribute>() == null)
       {
         var value = prop.GetValue(this);
         if (value != null)
