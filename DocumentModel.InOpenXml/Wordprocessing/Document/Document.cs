@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public partial class Document : ModelElement, IWordprocessingDocumentAware, IDisposable, IModifiable
 {
   /// <summary>
-  ///   Initializes a new instance of the <see cref="Document"/> class with default property objects.
+  ///  Default constructor - needed for serialization.
   /// </summary>
   public Document()
   {
@@ -414,7 +414,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
 
 
   /// <summary>
-  ///   Font table for the document, providing access to font definitions used within the document.
+  ///   Styles for the document, providing access to style definitions used within the document.
   /// </summary>
   public Styles? Styles
   {
@@ -428,4 +428,20 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   private Styles? _Styles;
+
+  /// <summary>
+  /// Numbering definitions for the document, providing access to numbering formats and instances used within the document.
+  /// </summary>
+  public Numbering? Numbering
+  {
+    get
+    {
+      if (_Numbering == null && WordprocessingDocument?.MainDocumentPart?.NumberingDefinitionsPart != null)
+        _Numbering = new Numbering(this);
+      return _Numbering;
+    }
+    set => UpdateField(ref _Numbering, value, nameof(Numbering));
+  }
+
+  private Numbering? _Numbering;
 }
