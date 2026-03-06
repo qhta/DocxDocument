@@ -297,9 +297,9 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// Must be compatible with the current model element type.</param>
   public virtual void LoadData(object openXmlObject)
   {
-    SetIsLoaded(true);
+    SetIsLoading(true);
     OpenXmlModelConverter.LoadData(this, openXmlObject, this.GetType());
-    SetIsLoaded(false);
+    SetIsLoading(false);
   }
 
   /// <summary>
@@ -407,7 +407,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <param name="isModified">The isModified value to set.</param>
   public void SetIsModified(bool isModified)
   {
-    if (IsLoaded)
+    if (IsLoading)
       return;
     if (_IsModified != isModified)
     {
@@ -446,17 +446,17 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public bool IsLoaded => _IsLoaded;
+  public bool IsLoading => _isLoading;
 
-  private bool _IsLoaded;
+  private bool _isLoading;
 
   /// <summary>
-  /// Sets the IsLoaded flag to be used by the instance.
+  /// Sets the IsLoading flag to be used by the instance.
   /// </summary>
-  /// <param name="isLoaded">The isLoaded value to set.</param>
-  public void SetIsLoaded(bool isLoaded)
+  /// <param name="isLoading">The value to set.</param>
+  public void SetIsLoading(bool isLoading)
   {
-    _IsLoaded = isLoaded;
+    _isLoading = isLoading;
   }
 
   /// <summary>

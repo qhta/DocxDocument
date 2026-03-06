@@ -99,9 +99,44 @@ public partial class AbstractNumbering: ModelElement<DXW.AbstractNum>
   private string? _NumberingStyleLink;
 
   /// <summary>
-  ///   Definitions of abstract numbering levels.
+  ///   Definitions of numbering levels.
   /// </summary>
-  public NumLevels? Levels { get => _Levels; set => UpdateField(ref _Levels, value, nameof(Levels)); }
+  [OpenXmlElementCollection(typeof(DXW.Level))]
+  [OpenXmlUpdateData(nameof(UpdateNumberingLevels))]
+  [OpenXmlLoadData(nameof(LoadNumberingLevels))]
+  public NumberingLevels Levels
+  {
+    get
+    {
+      if (_Levels == null)
+        _Levels = new NumberingLevels(this);
+      return _Levels;
+    }
+    set => UpdateField(ref _Levels, value, nameof(Levels));
+  }
 
-  private NumLevels? _Levels;
+  private NumberingLevels? _Levels;
+
+  /// <summary>
+  /// Updates the numbering levels of the specified OpenXmlElement.
+  /// </summary>
+  /// <remarks>This method updates the numbering levels only if the Levels property is not null. Ensure that the
+  /// Levels property is initialized before calling this method.</remarks>
+  /// <param name="element">The OpenXmlElement whose numbering levels are to be updated. This parameter must not be null.</param>
+  public void UpdateNumberingLevels(DX.OpenXmlElement element)
+  {
+    Levels?.UpdateLevels(element);
+  }
+
+  /// <summary>
+  /// Loads numbering levels from the specified OpenXmlElement into the current instance.
+  /// </summary>
+  /// <remarks>This method delegates the loading operation to the Levels property, if it is not null. Use this
+  /// method to import numbering level information from an OpenXmlElement, such as when processing WordprocessingML
+  /// documents.</remarks>
+  /// <param name="element">The OpenXmlElement that contains the numbering level definitions to load. Cannot be null.</param>
+  public void LoadNumberingLevels(DX.OpenXmlElement element)
+  {
+    Levels?.LoadLevels(element);
+  }
 }

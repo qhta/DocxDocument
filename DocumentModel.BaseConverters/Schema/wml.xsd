@@ -631,8 +631,10 @@
   </xsd:complexType>
   <xsd:simpleType name="ST_Jc">
     <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="left"/>
       <xsd:enumeration value="start"/>
       <xsd:enumeration value="center"/>
+      <xsd:enumeration value="right"/>
       <xsd:enumeration value="end"/>
       <xsd:enumeration value="both"/>
       <xsd:enumeration value="mediumKashida"/>
@@ -641,6 +643,13 @@
       <xsd:enumeration value="highKashida"/>
       <xsd:enumeration value="lowKashida"/>
       <xsd:enumeration value="thaiDistribute"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ST_LvlJc">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="left"/>
+      <xsd:enumeration value="center"/>
+      <xsd:enumeration value="right"/>
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:simpleType name="ST_JcTable">
@@ -652,6 +661,9 @@
   </xsd:simpleType>
   <xsd:complexType name="CT_Jc">
     <xsd:attribute name="val" type="ST_Jc" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="CT_LvlJc">
+    <xsd:attribute name="val" type="ST_LvlJc" use="required"/>
   </xsd:complexType>
   <xsd:complexType name="CT_JcTable">
     <xsd:attribute name="val" type="ST_JcTable" use="required"/>
@@ -2979,7 +2991,7 @@
       <xsd:element name="suff" type="CT_LevelSuffix" minOccurs="0"/>
       <xsd:element name="lvlText" type="CT_LevelText" minOccurs="0"/>
       <xsd:element name="lvlPicBulletId" type="CT_DecimalNumber" minOccurs="0"/>
-      <xsd:element name="lvlJc" type="CT_Jc" minOccurs="0"/>
+      <xsd:element name="lvlJc" type="CT_LvlJc" minOccurs="0"/>
       <xsd:element name="pPr" type="CT_PPrGeneral" minOccurs="0"/>
       <xsd:element name="rPr" type="CT_RPr" minOccurs="0"/>
     </xsd:sequence>

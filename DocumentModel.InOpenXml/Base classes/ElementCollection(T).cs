@@ -70,7 +70,7 @@ public abstract class ElementCollection<ItemType> : ModelElement,
         }
       }
     }
-    if (!IsLoaded) 
+    if (!IsLoading) 
       if (Parent!=null)
       {
         var openXmlElement = GetUpdatableElement();
@@ -78,7 +78,7 @@ public abstract class ElementCollection<ItemType> : ModelElement,
           UpdateData(openXmlElement);
       }
     CollectionChanged?.Invoke(this, args);
-    if (!IsLoaded && IsNotificationEnabled)
+    if (!IsLoading && IsNotificationEnabled)
       SetIsModified(true);
   }
 
