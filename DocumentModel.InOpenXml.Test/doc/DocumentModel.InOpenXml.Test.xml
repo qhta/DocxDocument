@@ -927,6 +927,104 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Styles object, or null if deserialization fails.</returns>
         </member>
+        <member name="T:DocumentModel.InOpenXml.Test.NumberingInstancesTest">
+            <summary>
+            Comprehensive serialization test for DocumentModel.Numbering.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.Run">
+            <summary>
+            Runs all Numbering serialization tests.
+            </summary>
+            <returns>True if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.TestXmlSerialization">
+            <summary>
+            Tests XML serialization and deserialization of Numbering.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.TestJsonSerialization">
+            <summary>
+            Tests JSON serialization and deserialization of Numbering.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.TestEdgeCases">
+            <summary>
+            Tests edge cases like empty Numbering object.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.TestStoreInDocument">
+            <summary>
+            Tests setting sample Numbering to a new document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document Numbering can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document Numbering are successfully stored and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.TestUpdateInDocument">
+            <summary>
+            Tests updating the Numbering of a document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document Numbering can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document Numbering are successfully updated and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.TestValidateOpenXml">
+            <summary>
+            Tests validating the OpenXml generated from the document containing sample Numbering against the OpenXml schema.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that the OpenXml generated from the document
+            containing sample Numbering adheres to the OpenXml schema. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.CreateSampleNumbering">
+            <summary>
+            Creates a sample Numbering object with various property types.
+            </summary>
+            <returns>A populated Numbering object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.CreateSampleNumberingInstances">
+            <summary>
+            Creates a collection of sample abstract numbering for use in document formatting.
+            </summary>
+            <remarks>This method initializes several abstract numbering with specific properties, such as primary
+            status and UI priority, to facilitate consistent document styling.</remarks>
+            <returns>A NumberingInstances object containing predefined abstract numbering, including primary numbering and annotations.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.SerializeToXml(DocumentModel.Wordprocessing.Numbering)">
+            <summary>
+            Serializes a Numbering object to an XML string.
+            </summary>
+            <param name="props">The Numbering object to serialize.</param>
+            <returns>The serialized XML string.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.DeserializeFromXml(System.String)">
+            <summary>
+            Deserializes a Numbering object from an XML string.
+            </summary>
+            <param name="xml">The XML string to deserialize.</param>
+            <returns>The deserialized Numbering object, or null if deserialization fails.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.SerializeToJson(DocumentModel.Wordprocessing.Numbering)">
+            <summary>
+            Serializes a Numbering object to a JSON string.
+            </summary>
+            <param name="props">The Numbering object to serialize.</param>
+            <returns>The serialized JSON string.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.DeserializeFromJson(System.String)">
+            <summary>
+            Deserializes a Numbering object from a JSON string.
+            </summary>
+            <param name="json">The JSON string to deserialize.</param>
+            <returns>The deserialized Numbering object, or null if deserialization fails.</returns>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test.OpenXmlSchemaValidator">
             <summary>
             Validates generated OpenXml XML against the canonical schema set.
