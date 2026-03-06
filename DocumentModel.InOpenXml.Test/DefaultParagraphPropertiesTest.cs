@@ -173,6 +173,11 @@ namespace DocumentModel.InOpenXml.Test
         [
           new TabStop { Type = TabStopType.Center, Position = 720, Leader = TabStopLeader.Dot }
         ]),
+        NumberingProperties = new NumberingProperties
+        {
+          NumberingId = 1,
+          NumberingLevelReference = 0,
+        }
       };
     }
 
