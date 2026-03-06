@@ -2,7 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 #pragma warning disable CS1591
 
-public partial class LevelText
+public partial class NumberingLevelText
 {
   public bool ShouldSerializeText() => Text is not null;
+
+  public bool ShouldSerializeNull() => IsNull is not null;
 }

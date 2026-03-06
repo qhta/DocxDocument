@@ -280,7 +280,7 @@
             LevelIndex = 0,
             StartNumberingValue = 1,
             NumberingFormat = new NumberingFormat { Type = NumberFormat.Decimal },
-            LevelText = new LevelText { Text = "%1." },
+            LevelText = new NumberingLevelText { Text = "%1." },
             LevelSuffix = LevelSuffix.Space,
             Justification = LevelJustification.Left,
           }
@@ -302,7 +302,7 @@
             LevelIndex = 0,
             StartNumberingValue = 1,
             NumberingFormat = new NumberingFormat { Type = NumberFormat.UpperRoman },
-            LevelText = new LevelText { Text = "%1." },
+            LevelText = new NumberingLevelText { Text = "%1." },
             LevelSuffix = LevelSuffix.Tab,
             Justification = LevelJustification.Left,
             IsLegalNumberingStyle = true,
@@ -312,7 +312,7 @@
             LevelIndex = 1,
             StartNumberingValue = 1,
             NumberingFormat = new NumberingFormat { Type = NumberFormat.Decimal },
-            LevelText = new LevelText { Text = "%1.%2." },
+            LevelText = new NumberingLevelText { Text = "%1.%2." },
             LevelSuffix = LevelSuffix.Space,
             Justification = LevelJustification.Left,
           }
@@ -333,7 +333,7 @@
           {
             LevelIndex = 0,
             NumberingFormat = new NumberingFormat { Type = NumberFormat.Bullet },
-            LevelText = new LevelText { Text = "•" },
+            LevelText = new NumberingLevelText { Text = "•" },
             LevelSuffix = LevelSuffix.Space,
             Justification = LevelJustification.Left,
           }
