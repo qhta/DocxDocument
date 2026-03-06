@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 #pragma warning disable CS1591
 
-public partial class NumLevel
+public partial class NumberingLevel
 {
   public bool ShouldSerializeLevelIndex() => LevelIndex is not null;
   public bool ShouldSerializeTentative() => Tentative is not null;
@@ -16,6 +16,6 @@ public partial class NumLevel
   public bool ShouldSerializeLevelPictureBulletId() => LevelPictureBulletId is not null;
   public bool ShouldSerializeTemplateCode() => TemplateCode is not null;
   public bool ShouldSerializeLegacyNumbering() => LegacyNumbering is not null;
-  public bool ShouldSerializeLevelJustification() => LevelJustification is not null;
+  public bool ShouldSerializeJustification() => Justification is not null;
   public bool ShouldSerializeNumberingSymbolRunProperties() => NumberingSymbolRunProperties is not null;
 }

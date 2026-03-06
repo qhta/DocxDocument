@@ -11,13 +11,13 @@ public partial class NumberingProperties: ModelElement<DXW.NumberingProperties>
   /// Reference to the numbering level applied to the paragraph or list item.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.NumberingProperties.NumberingLevelReference))]
-  public NumberingLevel? NumberingLevelReference
+  public NumLevel? NumberingLevelReference
   {
     get => _NumberingLevelReference;
     set => UpdateField(ref _NumberingLevelReference, value, nameof(NumberingLevelReference));
   }
 
-  private NumberingLevel? _NumberingLevelReference;
+  private NumLevel? _NumberingLevelReference;
 
   /// <summary>
   /// Reference to the numbering definition instance used for the paragraph or list item.
