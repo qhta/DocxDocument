@@ -1,10 +1,11 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 ///   Collection of NumberingInstance elements
 /// </summary>
 [OpenXmlUpdateData(nameof(UpdateNumberings))]
 [OpenXmlLoadData(nameof(LoadNumberings))]
-public class NumberingInstances : ModelElementCollection<NumberingInstance, DXW.Numbering, DXW.NumberingInstance>
+public class NumberingInstances: ModelElementCollection<NumberingInstance, DXW.Numbering, DXW.NumberingInstance>
 {
   /// <summary>
   /// Default constructor.
@@ -23,7 +24,7 @@ public class NumberingInstances : ModelElementCollection<NumberingInstance, DXW.
   }
 
   /// <summary>
-  /// Parent numbering element that contains this collection of numbering instance. 
+  /// Parent numbering element that contains this collection of numbering instances. 
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
@@ -32,8 +33,7 @@ public class NumberingInstances : ModelElementCollection<NumberingInstance, DXW.
 
   /// <summary>
   /// Gets updatable element for this collection of numbering instance,
-  /// which is the <see cref="DXW.Numbering"/> element that contains the individual <see cref="DXW.NumberingInstance"/> elements
-  /// representing each abstract AbstractNum.
+  /// which is the <see cref="DXW.Numbering"/> element that contains the individual <see cref="DXW.NumberingInstance"/> elements.
   /// </summary>
   /// <returns></returns>
   public override DX.OpenXmlElement? GetUpdatableElement()
@@ -42,7 +42,7 @@ public class NumberingInstances : ModelElementCollection<NumberingInstance, DXW.
   }
 
   /// <summary>
-  /// Updates the numbering in the specified OpenXml element by removing all existing numbering and adding new numbering instance
+  /// Updates the specified OpenXml element by removing all existing numbering and adding new numbering instances
   /// in the current collection.  
   /// </summary>
   /// <remarks>This method replaces all numbering in the target element with those abstract in the current
@@ -52,17 +52,20 @@ public class NumberingInstances : ModelElementCollection<NumberingInstance, DXW.
   public void UpdateNumberings(DX.OpenXmlElement element)
   {
     if (element is not DXW.Numbering numbering)
-      throw new ArgumentException($"Expected element of type {typeof(DXW.Numbering).FullName}, but got {element.GetType().FullName}.");
+      throw new ArgumentException(
+        $"Expected element of type {typeof(DXW.Numbering).FullName}, but got {element.GetType().FullName}.");
+
     numbering.RemoveAllChildren<DXW.NumberingInstance>();
     foreach (var modeItem in this)
     {
-      var openXmlChild = OpenXmlElementConverter.ConvertTo(modeItem, typeof(DXW.NumberingInstance)) as DXW.NumberingInstance;
+      var openXmlChild =
+        OpenXmlElementConverter.ConvertTo(modeItem, typeof(DXW.NumberingInstance)) as DXW.NumberingInstance;
       numbering.AppendChild(openXmlChild);
     }
   }
 
   /// <summary>
-  /// Loads numbering from the specified OpenXmlElement into the current collection, replacing any existing numbering.
+  /// Loads numbering from the specified OpenXmlElement into the current collection, replacing any existing item.
   /// </summary>
   /// <remarks>This method clears the current collection before loading new numbering. The collection will contain
   /// only the numbering loaded from the specified element after the method completes.</remarks>
@@ -71,16 +74,18 @@ public class NumberingInstances : ModelElementCollection<NumberingInstance, DXW.
   public void LoadNumberings(DX.OpenXmlElement element)
   {
     if (element is not DXW.Numbering numbering)
-      throw new ArgumentException($"Expected element of type {typeof(DXW.Numbering).FullName}, but got {element.GetType().FullName}.");
+      throw new ArgumentException(
+        $"Expected element of type {typeof(DXW.Numbering).FullName}, but got {element.GetType().FullName}.");
+
     SetIsLoading(true);
     var openXmlChildren = numbering.Elements<DXW.NumberingInstance>().ToArray();
     this.Clear();
     foreach (var openXmlChild in openXmlChildren)
     {
-      var modelItem = OpenXmlElementConverter.ConvertFrom(openXmlChild, typeof(DMW.NumberingInstance)) as DMW.NumberingInstance;
+      var modelItem =
+        OpenXmlElementConverter.ConvertFrom(openXmlChild, typeof(DMW.NumberingInstance)) as DMW.NumberingInstance;
       this.Add(modelItem!);
     }
     SetIsLoading(false);
   }
-
 }

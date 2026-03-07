@@ -10,6 +10,7 @@ public static partial class EnumConverter
     new(typeof(ValueType), nameof(ConvertFromValueType), nameof(ConvertToValueType)),
     new(typeof(DX.EnumValue<>), nameof(ConvertFromEnumValue), nameof(ConvertToEnumValue)),
     new(typeof(DX.IEnumValue), nameof(ConvertFromIEnumValue), nameof(ConvertToIEnumValue)),
+    new(typeof(DX.Int32Value), nameof(ConvertFromInt32Value), nameof(ConvertToInt32Value)),
     new(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
     new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
     new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
@@ -310,6 +311,40 @@ public static partial class EnumConverter
 
   #endregion
 
+  #region Int32Value conversion.
+
+  /// <summary>
+  /// Converts an OpenXml Int32Value to Enum.
+  /// </summary>
+  /// <param name="openXmlValue">The openXmlValue to convert.</param>
+  /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
+  /// <returns>The Enum value, or null if the element has no content.</returns>
+  private static Enum? ConvertFromInt32Value(DX.Int32Value? openXmlValue, Type modelEnumType)
+  {
+    if (openXmlValue == null) return null;
+
+    if (!modelEnumType.IsEnum)
+      throw new InvalidOperationException($"Target model type {modelEnumType.Name} is not an enum.");
+
+    var intValue = openXmlValue.Value;
+
+    return (Enum)Enum.ToObject(modelEnumType, intValue);
+  }
+
+  /// <summary>
+  /// Creates an OpenXml Int32Value from an Enum value.
+  /// </summary>
+  /// <param name="value">The Enum value to convert.</param>
+  /// <returns>A new Int32Value, or null if the input is null.</returns>
+  private static DX.Int32Value? ConvertToInt32Value(Enum? value)
+  {
+    if (value == null) return null;
+
+    var result = new DX.Int32Value(Convert.ToInt32(value));
+    return result;
+  }
+
+  #endregion
 
   #region ValueType conversion.
 

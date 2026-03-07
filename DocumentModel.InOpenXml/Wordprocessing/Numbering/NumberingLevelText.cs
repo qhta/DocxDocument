@@ -18,7 +18,7 @@ public partial class NumberingLevelText: ModelElement<DXW.LevelText>
   ///   Indicates whether the level text is a null character.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.LevelText.Null))]
-  public Boolean? IsNull { get => _IsNull; set => UpdateField(ref _IsNull, value, nameof(IsNull)); }
+  public Boolean IsNull { get => _IsNull; set => UpdateField(ref _IsNull, value, nameof(IsNull)); }
 
-  private Boolean? _IsNull;
+  private Boolean _IsNull;
 }

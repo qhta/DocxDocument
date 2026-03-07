@@ -272,6 +272,23 @@
 
         AbstractNumId = 1,
         NumberID=1,
+        //LevelOverrides = new NumberingLevelOverrides()
+        //{
+        //  new NumberingLevelOverride() 
+        //  {
+        //    LevelIndex = NumLevel.Level1,
+        //    StartOverrideNumberingValue = 1,
+        //  },
+        //  //new NumberingLevelOverride()
+        //  //{
+        //  //  LevelIndex = NumLevel.Level3,
+        //  //  Level = new NumberingLevel()
+        //  //  {
+        //  //    LevelRestart = NumLevel.Level2,
+        //  //  },
+        //  //},
+
+        //}
       });
 
       NumberingInstances.Add(new NumberingInstance()

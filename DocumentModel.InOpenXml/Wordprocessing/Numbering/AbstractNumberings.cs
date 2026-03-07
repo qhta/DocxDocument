@@ -33,8 +33,7 @@ public partial class AbstractNumberings: ModelElementCollection<AbstractNumberin
 
   /// <summary>
   /// Gets updatable element for this collection of abstract numbering,
-  /// which is the <see cref="DXW.Numbering"/> element that contains the individual <see cref="DXW.AbstractNum"/> elements
-  /// representing each abstract AbstractNum.
+  /// which is the <see cref="DXW.Numbering"/> element that contains the individual <see cref="DXW.AbstractNum"/> elements.
   /// </summary>
   /// <returns></returns>
   public override DX.OpenXmlElement? GetUpdatableElement()

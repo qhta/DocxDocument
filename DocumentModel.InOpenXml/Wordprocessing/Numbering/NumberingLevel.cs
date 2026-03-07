@@ -13,9 +13,9 @@ public partial class NumberingLevel : ModelElement<DXW.Level>
  /// Zero-based index of the numbering level defined by this set of properties (e.g., 2 is the 3rd list level).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Level.LevelIndex))]
- public Int32? LevelIndex { get => _LevelIndex; set => UpdateField(ref _LevelIndex, value, nameof(LevelIndex)); }
+ public NumLevel? LevelIndex { get => _LevelIndex; set => UpdateField(ref _LevelIndex, value, nameof(LevelIndex)); }
 
- private Int32? _LevelIndex;
+ private NumLevel? _LevelIndex;
  /// <summary>
  /// Indicates that this numbering level was saved by a producer but not used in the parent document, allowing redefinition by future consumers.
  /// </summary>
@@ -30,13 +30,16 @@ public partial class NumberingLevel : ModelElement<DXW.Level>
  public Int32? StartNumberingValue { get => _StartNumberingValue; set => UpdateField(ref _StartNumberingValue, value, nameof(StartNumberingValue)); }
 
  private Int32? _StartNumberingValue;
- /// <summary>
- /// One-based index determining when this numbering level should restart to its start value, based on higher or earlier levels.
+  /// <summary>
+  /// One-based index determining when this numbering level should restart to its start value, based on higher or earlier levels.
+  /// A numbering level restarts when an instance of the specified numbering level, which shall be higher (earlier than this level)
+  /// or any earlier level is used in the given document's contents.
+  /// (e.g., If this value is 2, then both level two and level one reset this value.)
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Level.LevelRestart))]
- public Int32? LevelRestart { get => _LevelRestart; set => UpdateField(ref _LevelRestart, value, nameof(LevelRestart)); }
+ public NumLevel? LevelRestart { get => _LevelRestart; set => UpdateField(ref _LevelRestart, value, nameof(LevelRestart)); }
 
- private Int32? _LevelRestart;
+ private NumLevel? _LevelRestart;
  /// <summary>
  /// Number format used to display numbering at this level, replacing %x in the level text string with the appropriate value.
  /// </summary>
