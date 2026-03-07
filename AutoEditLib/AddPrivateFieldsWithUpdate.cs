@@ -63,11 +63,11 @@ public class ModelElementPropertyRewriter: CSharpSyntaxRewriter
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
   {
     // Check if class inherits from ModelElement (with or without generic)
-    var inheritsModelElement = node.BaseList?.Types.Any(bt =>
-      bt.Type is IdentifierNameSyntax id && (id.Identifier.Text == "ModelElement" || id.Identifier.Text == "ModelElementCollection") ||
-      bt.Type is GenericNameSyntax g && (g.Identifier.Text == "ModelElement" || g.Identifier.Text == "ModelElementCollection")) ?? false;
-    if (!inheritsModelElement)
-      return base.VisitClassDeclaration(node);
+    //var inheritsModelElement = node.BaseList?.Types.Any(bt =>
+    //  bt.Type is IdentifierNameSyntax id && (id.Identifier.Text == "ModelElement" || id.Identifier.Text == "ModelElementCollection") ||
+    //  bt.Type is GenericNameSyntax g && (g.Identifier.Text == "ModelElement" || g.Identifier.Text == "ModelElementCollection")) ?? false;
+    //if (!inheritsModelElement)
+    //  return base.VisitClassDeclaration(node);
 
     var newMembers = node.Members.ToList();
     var toReplace = new List<(PropertyDeclarationSyntax, int)>();
