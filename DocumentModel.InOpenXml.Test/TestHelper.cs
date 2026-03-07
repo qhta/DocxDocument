@@ -67,7 +67,7 @@ public static class TestHelper
       if (propName=="SchemaLibrary") Debug.Assert(true);
       if (property.CanWrite && property.GetIndexParameters().Length == 0 && !property.IsDefined(typeof(NotMappedAttribute), true))
       {
-        propName = property.DeclaringType?.Name +"."+ property.Name;
+        propName = /*property.DeclaringType?.Name +"."+ */property.Name;
         var obj1Value = property.GetValue(obj1);
         var obj2Value = property.GetValue(obj2);
 
@@ -121,7 +121,7 @@ public static class TestHelper
       {
         if (!CompareTestData(itemType, enumerator1.Current, enumerator2.Current, out var itemPropName))
         {
-          propName = $"item[{itemCount}].{itemPropName}";
+          propName = $"{itemType.Name}[{itemCount}].{itemPropName}";
           result = false;
           break;
         }

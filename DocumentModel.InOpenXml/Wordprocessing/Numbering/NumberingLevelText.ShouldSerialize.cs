@@ -6,5 +6,5 @@ public partial class NumberingLevelText
 {
   public bool ShouldSerializeText() => Text is not null;
 
-  public bool ShouldSerializeNull() => IsNull is not null;
+  public bool ShouldSerializeIsNull() => IsNull == true;
 }
