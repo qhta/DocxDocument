@@ -131,6 +131,12 @@
       Numbering storedData;
       using (var document = new Document("temp.docx"))
       {
+        var openXml = document.WordprocessingDocument!.MainDocumentPart!.NumberingDefinitionsPart!.Numbering!.OuterXml;
+        //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",
+        //  "http://purl.oclc.org/ooxml/wordprocessingml/main");
+        var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
+        Console.WriteLine(formattedOpenXml);
+
         storedData = document.Numbering ?? throw new InvalidOperationException("Numbering not found.");
       }
 
@@ -309,7 +315,7 @@
           },
           new NumberingLevel
           {
-            LevelIndex = 1,
+            LevelIndex = NumLevel.Level2,
             StartNumberingValue = 1,
             NumberingFormat = new NumberingFormat { Type = NumberFormat.Decimal },
             LevelText = new NumberingLevelText { Text = "%1.%2." },
