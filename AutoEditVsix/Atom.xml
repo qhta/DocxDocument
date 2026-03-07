@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>AutoEdit VSIX Feed</title>
+  <id>urn:AutoEditVsix:feed</id>
+  <updated>2026-03-07T00:00:00Z</updated>
+
+  <entry>
+    <id>urn:AutoEditVsix:1.5.0</id>
+    <title>AutoEdit VSIX</title>
+    <updated>2026-03-07T00:00:00Z</updated>
+    <summary>AutoEdit extension update</summary>
+    <link rel="enclosure"
+          type="application/octet-stream"
+          href="file://d:\OneDrive\VS\Projects\DocxDocument\AutoEditVsix\bin\Debug\AutoEditVsix.vsix" />
+  </entry>
+</feed>

@@ -9,9 +9,8 @@ public partial class BaseParagraphProperties<T>
   public bool ShouldSerializePageBreakBefore() => PageBreakBefore is not null;
   public bool ShouldSerializeFrameProperties() => FrameProperties is not null;
   public bool ShouldSerializeWidowControl() => WidowControl is not null;
-  public bool ShouldSerializeNumberingProperties() => NumberingProperties is not null;
   public bool ShouldSerializeSuppressLineNumbers() => SuppressLineNumbers is not null;
-  public bool ShouldSerializeParagraphBorders() => Borders is not null;
+  public bool ShouldSerializeBorders() => Borders is not null;
   public bool ShouldSerializeShading() => Shading is not null;
   public bool ShouldSerializeTabs() => Tabs is not null;
   public bool ShouldSerializeSuppressAutoHyphens() => SuppressAutoHyphens is not null;
@@ -31,7 +30,9 @@ public partial class BaseParagraphProperties<T>
   public bool ShouldSerializeSuppressOverlap() => SuppressOverlap is not null;
   public bool ShouldSerializeJustification() => Justification is not null;
   public bool ShouldSerializeTextDirection() => TextDirection is not null;
-  public bool ShouldSerializeTextAlignment() => VerticalTextAlignment is not null;
+  public bool ShouldSerializeVerticalTextAlignment() => VerticalTextAlignment is not null;
   public bool ShouldSerializeTextBoxTightWrap() => TextBoxTightWrap is not null;
   public bool ShouldSerializeOutlineLevel() => OutlineLevel is not null;
+  public bool ShouldSerializeNumberingProperties() => NumberingProperties is not null;
+
 }

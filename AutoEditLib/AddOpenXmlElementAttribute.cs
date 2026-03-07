@@ -58,8 +58,8 @@ public class AddOpenXmlElementAttributeRewriter(Dictionary<string, string> alias
   /// <returns>The updated class declaration, or the original node when no changes were required.</returns>
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
   {
-    if (node.Modifiers.Any(m => m.IsKind(SyntaxKind.AbstractKeyword)))
-      return node;
+    //if (node.Modifiers.Any(m => m.IsKind(SyntaxKind.AbstractKeyword)))
+    //  return node;
 
     var baseType = node.BaseList?.Types
         .Select(bt => bt.Type)

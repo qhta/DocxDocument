@@ -342,6 +342,10 @@
             LevelText = new NumberingLevelText { Text = "•" },
             LevelSuffix = LevelSuffix.Space,
             Justification = LevelJustification.Left,
+            ParagraphProperties = new NumberingLevelParagraphProperties()
+            {
+              Justification = Justification.Both,
+            }
           }
         },
       });
