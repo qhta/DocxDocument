@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 #pragma warning disable CS1591
 
-public partial class BaseSectionProperties<T> 
+public partial class BaseSectionProperties<T>
 {
   public bool ShouldSerializeRsidRPr() => RsidRPr is not null;
   public bool ShouldSerializeRsidDel() => RsidDel is not null;
