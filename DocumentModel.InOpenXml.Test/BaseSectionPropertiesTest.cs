@@ -115,7 +115,7 @@ namespace DocumentModel.InOpenXml.Test
     /// <returns>A populated Styles object.</returns>
     static BaseSectionProperties CreateSampleProperties(bool isUpdated = false)
     {
-      return CreateSampleSectionProperties(isUpdated);
+      return CreateBaseSectionProperties(isUpdated);
     }
 
     /// <summary>
@@ -124,7 +124,7 @@ namespace DocumentModel.InOpenXml.Test
     /// </summary>
     /// <param name="isUpdated">Indicates whether to create updated sample properties for update scenarios.</param>
     /// <returns>A populated BaseSectionProperties object.</returns>
-    internal static BaseSectionProperties CreateSampleSectionProperties(bool isUpdated = false)
+    internal static BaseSectionProperties CreateBaseSectionProperties(bool isUpdated = false)
     {
       return new BaseSectionProperties
       {
