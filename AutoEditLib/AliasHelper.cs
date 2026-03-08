@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
+using Qhta.Collections;
+
 namespace AutoEdit;
 
 /// <summary>
@@ -22,9 +24,9 @@ static class AliasHelper
   /// <param name="filePath">Path to the source file currently being processed.</param>
   /// <param name="root">The parsed compilation unit for the file.</param>
   /// <returns>A dictionary mapping alias identifiers to fully-qualified namespaces.</returns>
-  public static Dictionary<string, string> BuildAliasMap(string filePath, CompilationUnitSyntax root)
+  public static BiDiDictionary<string, string> BuildAliasMap(string filePath, CompilationUnitSyntax root)
   {
-    var map = new Dictionary<string, string>(StringComparer.Ordinal);
+    var map = new BiDiDictionary<string, string>(StringComparer.Ordinal, StringComparer.Ordinal);
 
     foreach (var u in root.Usings.Where(u => u.Alias != null))
     {

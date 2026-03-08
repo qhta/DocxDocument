@@ -16,12 +16,12 @@ public enum TableWidthUnit
   ///   Width in Fiftieths of a Percent.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Pct))]
-  Pct,
+  Percent,
   /// <summary>
   ///   Width in Twentieths of a Point.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Dxa))]
-  Twips,
+  Absolute,
   /// <summary>
   ///   Automatically Determined Width.
   /// </summary>
