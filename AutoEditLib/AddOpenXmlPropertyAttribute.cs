@@ -1,4 +1,6 @@
-﻿namespace AutoEdit;
+﻿using Qhta.Collections;
+
+namespace AutoEdit;
 
 using System;
 using System.Collections.Generic;
@@ -49,7 +51,7 @@ public static class AddOpenXmlPropertyAttribute
 /// Roslyn rewriter that injects <c>[OpenXmlProperty]</c> attributes for <c>ModelElement&lt;TOpenXml&gt;</c> classes.
 /// </summary>
 /// <param name="aliasMap">Namespace alias map extracted from the processed file.</param>
-public class AddOpenXmlPropertyAttributeRewriter(Dictionary<string, string> aliasMap) : CSharpSyntaxRewriter
+public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> aliasMap) : CSharpSyntaxRewriter
 {
   public bool Changed { get; private set; } = false;
 
@@ -65,18 +67,28 @@ public class AddOpenXmlPropertyAttributeRewriter(Dictionary<string, string> alia
     //if (classNode.Modifiers.Any(m => m.IsKind(SyntaxKind.AbstractKeyword)))
     //  return classNode;
 
-    // Check if class inherits from ModelElement<T>
-    var baseTypeNode = classNode.BaseList?.Types
-        .Select(bt => bt.Type)
-        .OfType<GenericNameSyntax>()
-        .FirstOrDefault(g => g.Identifier.Text == "ModelElement");
+    var openXmlTypeAttribute = classNode.AttributeLists
+      .SelectMany(al => al.Attributes)
+      .FirstOrDefault(attr =>
+      {
+        var attrName = attr.Name.ToString();
+        return attrName == "OpenXmlType"
+               || attrName == "OpenXmlTypeAttribute"
+               || attrName.EndsWith(".OpenXmlType")
+               || attrName.EndsWith(".OpenXmlTypeAttribute");
+      });
 
-    if (baseTypeNode == null)
+    if (openXmlTypeAttribute?.ArgumentList == null) 
       return base.VisitClassDeclaration(classNode);
 
-    // Get the type parameter (OpenXml type)
-    var argumentTypeNode = baseTypeNode.TypeArgumentList.Arguments.First();
-    var openXmlTypeName = argumentTypeNode.ToString();
+    if (openXmlTypeAttribute.ArgumentList.Arguments.Count < 1)
+      return base.VisitClassDeclaration(classNode);
+
+    var openXmlTypeExpression = openXmlTypeAttribute.ArgumentList.Arguments[0].Expression;
+    if (openXmlTypeExpression is not TypeOfExpressionSyntax typeOfExpression)
+      return base.VisitClassDeclaration(classNode);
+
+    var openXmlTypeName = typeOfExpression.Type.ToString();
     if (openXmlTypeName == "T")
     {
       var typeParamClause = classNode.ConstraintClauses.FirstOrDefault(clause => clause.Name.Identifier.Text == openXmlTypeName);

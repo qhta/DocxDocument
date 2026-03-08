@@ -2,6 +2,8 @@ using System.Diagnostics;
 
 using DocumentFormat.OpenXml.Drawing;
 
+using Qhta.Collections;
+
 namespace AutoEdit;
 
 using System;
@@ -45,7 +47,7 @@ public static class AddOpenXmlEnumTypeAttribute
 /// Roslyn syntax rewriter that augments enums and members with Format/OpenXmlEnumElement attributes.
 /// </summary>
 /// <param name="aliasMap">Namespace aliases detected within the file being processed.</param>
-public class AddOpenXmlEnumTypeAttributeRewriter(Dictionary<string, string> aliasMap): CSharpSyntaxRewriter
+public class AddOpenXmlEnumTypeAttributeRewriter(BiDiDictionary<string, string> aliasMap): CSharpSyntaxRewriter
 {
   private readonly Dictionary<string, Type?> _typeCache = new(StringComparer.Ordinal);
   private static readonly Assembly? OpenXmlFrameworkAssembly = typeof(OpenXmlElement).Assembly;

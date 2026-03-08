@@ -1,9 +1,9 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Provides XML serialization support for the <see cref="Twips"/> structure.
 /// </summary>
-public partial class Twips : IXmlSerializable
+public partial class TableWidth : IXmlSerializable
 {
 
 
@@ -46,10 +46,12 @@ public partial class Twips : IXmlSerializable
 
       if (!string.IsNullOrEmpty(twipsString))
       {
-        Twips parsedValue = new Twips(twipsString);
+        var parsedValue = new DMW.TableWidth(twipsString);
 
         System.Runtime.CompilerServices.Unsafe.AsRef(in _value) = parsedValue._value;
         System.Runtime.CompilerServices.Unsafe.AsRef(in _unit) = parsedValue.Unit;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in _type) = parsedValue.Type;
+
       }
 
       reader.Read(); // Move past text

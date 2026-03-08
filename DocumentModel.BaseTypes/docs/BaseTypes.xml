@@ -8965,10 +8965,21 @@
             This supports implicit conversions to/from various integer types and string representations with unit suffixes.
             </remarks>
         </member>
+        <member name="F:DocumentModel.UniversalMeasure._value">
+            <summary>
+            internal storage for the length value. This can be of type Int64, UInt64, Decimal, or Double, depending on how the instance was initialized.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.UniversalMeasure._unit">
+            <summary>
+            Internal storage for the unit of measurement associated with this length value.
+            </summary>
+        </member>
         <member name="P:DocumentModel.UniversalMeasure.Unit">
             <summary>
             Unit of measurement for this length value.
-            This property should be overridden in derived classes to specify the actual unit (e.g., UniversalMeasure, Millimeters, etc.).
+            This can be set based on the input string during initialization (e.g., "mm", "cm", "in", "pt")
+            or left null if the unit is not specified.
             </summary>
         </member>
         <member name="P:DocumentModel.UniversalMeasure.IsEmpty">

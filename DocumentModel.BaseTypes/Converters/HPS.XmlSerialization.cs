@@ -48,8 +48,8 @@ public partial class HPS : IXmlSerializable
       {
         HPS parsedValue = new HPS(halfPointsString);
 
-        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue.value;
-        System.Runtime.CompilerServices.Unsafe.AsRef(in unit) = parsedValue.Unit;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in _value) = parsedValue._value;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in _unit) = parsedValue.Unit;
       }
 
       reader.Read(); // Move past text

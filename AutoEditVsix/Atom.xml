@@ -1,16 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>AutoEdit VSIX Feed</title>
+  <title>AutoEdit Private Gallery</title>
   <id>urn:AutoEditVsix:feed</id>
-  <updated>2026-03-07T00:00:00Z</updated>
-
+  <updated>2026-03-08T12:00:00Z</updated>
   <entry>
-    <id>urn:AutoEditVsix:1.5.0</id>
-    <title>AutoEdit VSIX</title>
-    <updated>2026-03-07T00:00:00Z</updated>
-    <summary>AutoEdit extension update</summary>
-    <link rel="enclosure"
-          type="application/octet-stream"
-          href="file://d:\OneDrive\VS\Projects\DocxDocument\AutoEditVsix\bin\Debug\AutoEditVsix.vsix" />
+    <id>AutoEditVsix.db58de0f-7d8f-4832-bec3-d33ee18085a5</id>
+    <title>AutoEditVsix</title>
+    <updated>2026-03-08T12:00:00Z</updated>
+    <summary>AutoEdit Extension</summary>
+    <link rel="enclosure" type="application/octet-stream" href="http://localhost:8080/AutoEditVsix.vsix" />
   </entry>
 </feed>

@@ -137,7 +137,7 @@
             </summary>
             <returns>A populated Styles object.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BaseSectionPropertiesTest.CreateSampleSectionProperties(System.Boolean)">
+        <member name="M:DocumentModel.InOpenXml.Test.BaseSectionPropertiesTest.CreateBaseSectionProperties(System.Boolean)">
             <summary>
             Creates a sample BaseSectionProperties object with test data for all properties,
             optionally with updated values for update scenarios.
@@ -167,6 +167,77 @@
             <returns>The serialized JSON string.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.BaseSectionPropertiesTest.DeserializeFromJson(System.String)">
+            <summary>
+            Deserializes a Styles object from a JSON string.
+            </summary>
+            <param name="json">The JSON string to deserialize.</param>
+            <returns>The deserialized Styles object, or null if deserialization fails.</returns>
+        </member>
+        <member name="T:DocumentModel.InOpenXml.Test.BaseTableCellPropertiesTest">
+            <summary>
+            Comprehensive serialization test for Styles BaseTableCellProperties.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseTableCellPropertiesTest.Run">
+            <summary>
+            Paragraphs all Styles BaseTableCellProperties tests.
+            </summary>
+            <returns>True if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseTableCellPropertiesTest.TestXmlSerialization">
+            <summary>
+            Tests XML serialization and deserialization of Styles BaseTableCellProperties.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseTableCellPropertiesTest.TestJsonSerialization">
+            <summary>
+            Tests JSON serialization and deserialization of Styles BaseTableCellProperties.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseTableCellPropertiesTest.TestEdgeCases">
+            <summary>
+            Tests edge cases like empty Styles object.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseTableCellPropertiesTest.CreateSampleProperties(System.Boolean)">
+            <summary>
+            Creates a sample Styles object with BaseTableCellProperties.
+            </summary>
+            <returns>A populated Styles object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseTableCellPropertiesTest.CreateBaseTableCellProperties(System.Boolean)">
+            <summary>
+            Creates a sample BaseTableCellProperties object with test data for all properties,
+            optionally with updated values for update scenarios.
+            </summary>
+            <param name="isUpdated">Indicates whether to create updated sample properties for update scenarios.</param>
+            <returns>A populated BaseTableCellProperties object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseTableCellPropertiesTest.SerializeToXml(DocumentModel.Wordprocessing.Styles)">
+            <summary>
+            Serializes a Styles object to an XML string.
+            </summary>
+            <param name="props">The Styles object to serialize.</param>
+            <returns>The serialized XML string.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseTableCellPropertiesTest.DeserializeFromXml(System.String)">
+            <summary>
+            Deserializes a Styles object from an XML string.
+            </summary>
+            <param name="xml">The XML string to deserialize.</param>
+            <returns>The deserialized Styles object, or null if deserialization fails.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseTableCellPropertiesTest.SerializeToJson(DocumentModel.Wordprocessing.Styles)">
+            <summary>
+            Serializes a Styles object to a JSON string.
+            </summary>
+            <param name="props">The Styles object to serialize.</param>
+            <returns>The serialized JSON string.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseTableCellPropertiesTest.DeserializeFromJson(System.String)">
             <summary>
             Deserializes a Styles object from a JSON string.
             </summary>

@@ -1,4 +1,6 @@
-﻿namespace DocumentModel;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace DocumentModel;
 
 /// <summary>
 /// Represents abstract universal measurement in some length unit measure.
@@ -10,84 +12,93 @@
 /// </remarks>
 public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatable<UniversalMeasure>
 {
-  internal object? value;
-  internal LengthUnit? unit;
+  /// <summary>
+  /// internal storage for the length value. This can be of type Int64, UInt64, Decimal, or Double, depending on how the instance was initialized.
+  /// </summary>
+  protected internal  object? _value;
+
+  /// <summary>
+  /// Internal storage for the unit of measurement associated with this length value.
+  /// </summary>
+  protected internal LengthUnit? _unit;
 
 
   /// <summary>
   /// Unit of measurement for this length value.
-  /// This property should be overridden in derived classes to specify the actual unit (e.g., UniversalMeasure, Millimeters, etc.).
+  /// This can be set based on the input string during initialization (e.g., "mm", "cm", "in", "pt")
+  /// or left null if the unit is not specified.
   /// </summary>
-  public LengthUnit? Unit => unit;
+  [NotMapped]
+  public LengthUnit? Unit { get => _unit; protected set => _unit = value; }
 
   /// <summary>
   /// Checks if the instance is empty, meaning it has not been initialized with a value.
   /// </summary>
-  public bool IsEmpty => value == null;
+  public bool IsEmpty => _value == null;
 
   /// <summary>
   /// Checks if the instance has been initialized with a value.
   /// </summary>
-  public bool HasValue => value != null;
+  public bool HasValue => _value != null;
 
   /// <summary>
   /// Checks if the instance represents an integer value.
   /// </summary>
-  public bool IsInteger => value is Int64;
+  public bool IsInteger => _value is Int64;
 
   /// <summary>
   /// Checks if the instance represents an unsigned integer value.
   /// </summary>
-  public bool IsUnsignedInteger => value is UInt64;
+  public bool IsUnsignedInteger => _value is UInt64;
 
   /// <summary>
   /// Checks if the instance represents a decimal value.
   /// </summary>
-  public bool IsDecimal => value is Decimal;
+  public bool IsDecimal => _value is Decimal;
 
   /// <summary>
   /// Checks if the instance represents a double value.
   /// </summary>
-  public bool IsDouble => value is Double;
+  public bool IsDouble => _value is Double;
 
   /// <summary>
   /// Gets the Int64 value represented by this instance.
   /// If the instance was initialized with a Double or Decimal value, the value will be converted to Int64 by rounding
   /// away from zero.
   /// </summary>
-  public Int64 IntValue => IsInteger ? (Int64)value! 
-    : IsUnsignedInteger ? Convert.ToInt64((UInt64)value!)
-    : IsDecimal ? (Int64)Math.Round((Decimal)value!, MidpointRounding.AwayFromZero) 
-    : IsDouble ? (Int64)Math.Round((Double)value!, MidpointRounding.AwayFromZero) : 0;
+  public Int64 IntValue => IsInteger ? (Int64)_value! 
+    : IsUnsignedInteger ? Convert.ToInt64((UInt64)_value!)
+    : IsDecimal ? (Int64)Math.Round((Decimal)_value!, MidpointRounding.AwayFromZero) 
+    : IsDouble ? (Int64)Math.Round((Double)_value!, MidpointRounding.AwayFromZero) : 0;
 
   /// <summary>
   /// Gets the UInt64 value represented by this instance.
   /// If the instance was initialized with a Double or Decimal value, the value will be converted to UInt64 by rounding
   /// away from zero.
   /// </summary>
-  public UInt64 UIntValue => IsUnsignedInteger ? (UInt64)value!
-    : IsInteger ? Convert.ToUInt64((Int64)value!)
-    : IsDecimal ? Convert.ToUInt64(Math.Round((Decimal)value!, MidpointRounding.AwayFromZero))
-    : IsDouble ? Convert.ToUInt64(Math.Round((Double)value!, MidpointRounding.AwayFromZero)) : 0;
+  public UInt64 UIntValue => IsUnsignedInteger ? (UInt64)_value!
+    : IsInteger ? Convert.ToUInt64((Int64)_value!)
+    : IsDecimal ? Convert.ToUInt64(Math.Round((Decimal)_value!, MidpointRounding.AwayFromZero))
+    : IsDouble ? Convert.ToUInt64(Math.Round((Double)_value!, MidpointRounding.AwayFromZero)) : 0;
 
   /// <summary>
   /// Gets the Decimal value represented by this instance.
   /// If the instance was initialized with an Int64 or Double value, it will be converted to Decimal.
   /// </summary>
-  public Decimal DecimalValue => IsDecimal? (Decimal) value!
-    : IsInteger ? Convert.ToDecimal((Int64)value!)
-    : IsUnsignedInteger ? Convert.ToDecimal((UInt64)value!)
-    : IsDouble ? Convert.ToDecimal((Double)value!) : 0;
+  public Decimal DecimalValue => IsDecimal? (Decimal) _value!
+    : IsInteger ? Convert.ToDecimal((Int64)_value!)
+    : IsUnsignedInteger ? Convert.ToDecimal((UInt64)_value!)
+    : IsDouble ? Convert.ToDecimal((Double)_value!) : 0;
 
 
   /// <summary>
   /// Gets the Double value represented by this instance.
   /// If the instance was initialized with an Int64 or Decimal value, it will be converted to double.
   /// </summary>
-  public Double DoubleValue => IsDouble ? (Double)value! :
-    IsDecimal ? Convert.ToDouble((Decimal)value!) :
-    IsInteger ? Convert.ToDouble((Int64)value!) :
-    IsUnsignedInteger ? Convert.ToDouble((UInt64)value!) : 0;
+  public Double DoubleValue => IsDouble ? (Double)_value! :
+    IsDecimal ? Convert.ToDouble((Decimal)_value!) :
+    IsInteger ? Convert.ToDouble((Int64)_value!) :
+    IsUnsignedInteger ? Convert.ToDouble((UInt64)_value!) : 0;
 
   /// <summary>
   /// Gets the number of UniversalMeasure per inch for the current measurement system.
@@ -148,63 +159,63 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// </list>
   /// <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
   /// </remarks>
-  protected void Init(string str)
+  protected virtual void Init(string str)
   {
     str = str.Replace(",", ".").Trim();
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      value = Double.Parse(str, CultureInfo.InvariantCulture) * UnitsPerMM;
-      unit = LengthUnit.Millimeters;
+      _value = Double.Parse(str, CultureInfo.InvariantCulture) * UnitsPerMM;
+      _unit = LengthUnit.Millimeters;
       return;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      value = Double.Parse(str, CultureInfo.InvariantCulture) * UnitsInCM;
-      unit = LengthUnit.Centimeters;
+      _value = Double.Parse(str, CultureInfo.InvariantCulture) * UnitsInCM;
+      _unit = LengthUnit.Centimeters;
       return;
     }
     if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       // ReSharper disable once VirtualMemberCallInConstructor
-      value = Double.Parse(str, CultureInfo.InvariantCulture) * UnitsPerInch;
-      unit = LengthUnit.Inches;
+      _value = Double.Parse(str, CultureInfo.InvariantCulture) * UnitsPerInch;
+      _unit = LengthUnit.Inches;
       return;
     }
     if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      value = Double.Parse(str, CultureInfo.InvariantCulture) * UnitsPerPoint;
-      unit = LengthUnit.Points;
+      _value = Double.Parse(str, CultureInfo.InvariantCulture) * UnitsPerPoint;
+      _unit = LengthUnit.Points;
       return;
     }
     if (str.EndsWith("tw"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      value = Double.Parse(str, CultureInfo.InvariantCulture) * UnitsPerTwips;
-      unit = LengthUnit.Twips;
+      _value = Double.Parse(str, CultureInfo.InvariantCulture) * UnitsPerTwips;
+      _unit = LengthUnit.Twips;
       return;
     }
     if (Int64.TryParse(str, NumberStyles.Integer, CultureInfo.InvariantCulture, out var int64Value))
     {
-      value = int64Value;
+      _value = int64Value;
       return;
     }
     if (UInt64.TryParse(str, NumberStyles.Integer, CultureInfo.InvariantCulture, out var uint64Value))
     {
-      value = uint64Value;
+      _value = uint64Value;
       return;
     }
     if (Decimal.TryParse(str, NumberStyles.Integer, CultureInfo.InvariantCulture, out var decimalValue))
     {
-      value = decimalValue;
+      _value = decimalValue;
       return;
     }
     if (Double.TryParse(str, CultureInfo.InvariantCulture, out var dblValue))
     {
-      value = dblValue;
+      _value = dblValue;
       return;
     }
     if (str != string.Empty)
@@ -218,7 +229,7 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// <param name="int64Value">The value in UniversalMeasure.</param>
   protected void Init(Int64 int64Value)
   {
-    this.value = int64Value;
+    this._value = int64Value;
   }
 
   /// <summary>
@@ -227,7 +238,7 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// <param name="uint64Value">The value in UniversalMeasure.</param>
   protected void Init(UInt64 uint64Value)
   {
-    this.value = uint64Value;
+    this._value = uint64Value;
   }
 
   /// <summary>
@@ -236,7 +247,7 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// <param name="decimalValue">The value in UniversalMeasure.</param>
   protected void Init(Decimal decimalValue)
   {
-    this.value = decimalValue;
+    this._value = decimalValue;
   }
   /// <summary>
   /// Initializes a new instance of the <see cref="UniversalMeasure"/> from a Double value.
@@ -244,7 +255,7 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// <param name="doubleValue">The value in UniversalMeasure.</param>
   protected void Init(Double doubleValue)
   {
-    this.value = doubleValue;
+    this._value = doubleValue;
   }
 
   #endregion
@@ -316,13 +327,13 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   public override string ToString()
   {
     if (IsDouble)
-      return ((Double)value!).ToString(CultureInfo.InvariantCulture);
+      return ((Double)_value!).ToString(CultureInfo.InvariantCulture);
     if (IsDecimal)
-      return ((Decimal)value!).ToString(CultureInfo.InvariantCulture); 
+      return ((Decimal)_value!).ToString(CultureInfo.InvariantCulture); 
     if (IsInteger)
-      return ((Int64)value!).ToString(CultureInfo.InvariantCulture);
+      return ((Int64)_value!).ToString(CultureInfo.InvariantCulture);
     if (IsUnsignedInteger)
-      return ((UInt64)value!).ToString(CultureInfo.InvariantCulture);
+      return ((UInt64)_value!).ToString(CultureInfo.InvariantCulture);
     return string.Empty;
   }
 
@@ -334,16 +345,16 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// </summary>
   /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
   /// <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
-  public string ToString(IFormatProvider? formatProvider)
+  public virtual string ToString(IFormatProvider? formatProvider)
   {
     if (IsDouble)
-      return ((Double)value!).ToString(formatProvider);
+      return ((Double)_value!).ToString(formatProvider);
     if (IsDecimal)
-      return ((Decimal)value!).ToString(formatProvider);
+      return ((Decimal)_value!).ToString(formatProvider);
     if (IsInteger)
-      return ((Int64)value!).ToString(formatProvider);
+      return ((Int64)_value!).ToString(formatProvider);
     if (IsUnsignedInteger)
-      return ((UInt64)value!).ToString(formatProvider);
+      return ((UInt64)_value!).ToString(formatProvider);
     return string.Empty;
   }
 
@@ -359,16 +370,16 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// If null, invariant culture's formatting conventions are used.</param>
   /// <returns>A string representation of the current length measure,
   /// formatted according to the specified format string and format provider.</returns>
-  public string ToString(string? format, IFormatProvider? formatProvider)
+  public virtual string ToString(string? format, IFormatProvider? formatProvider)
   {
     if (IsDouble)
-      return ((Double)value!).ToString(format, formatProvider);
+      return ((Double)_value!).ToString(format, formatProvider);
     if (IsDecimal)
-      return ((Decimal)value!).ToString(format, formatProvider);
+      return ((Decimal)_value!).ToString(format, formatProvider);
     if (IsInteger)
-      return ((Int64)value!).ToString(format, formatProvider);
+      return ((Int64)_value!).ToString(format, formatProvider);
     if (IsUnsignedInteger)
-      return ((UInt64)value!).ToString(format, formatProvider);
+      return ((UInt64)_value!).ToString(format, formatProvider);
     return string.Empty;
   }
 
@@ -380,16 +391,16 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// <param name="format">A format string that defines how the value should be represented.
   /// If null, a default format is used.</param>
   /// <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
-  public string ToString(string? format)
+  public virtual string ToString(string? format)
   {
     if (IsDouble)
-      return ((Double)value!).ToString(format);
+      return ((Double)_value!).ToString(format);
     if (IsDecimal)
-      return ((Decimal)value!).ToString(format);
+      return ((Decimal)_value!).ToString(format);
     if (IsInteger)
-      return ((Int64)value!).ToString(format);
+      return ((Int64)_value!).ToString(format);
     if (IsUnsignedInteger)
-      return ((UInt64)value!).ToString(format);
+      return ((UInt64)_value!).ToString(format);
     return string.Empty;
   }
 
