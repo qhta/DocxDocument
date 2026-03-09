@@ -6,6 +6,12 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.TableCellProperties))]
 public partial class CurrentTableCellProperties<T> : BaseTableCellProperties<T> where T : DX.OpenXmlElement
 {
+
+  static CurrentTableCellProperties()
+  {
+    TableMeasureOpenXmlConverter.RegisterOpenXmlConversion();
+  }
+
   /// <summary>
   /// Set of conditional table style formatting properties applied to this table cell, used for style hierarchy and optimization.
   /// </summary>
