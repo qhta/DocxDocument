@@ -9,8 +9,8 @@ namespace DocumentModel.Wordprocessing;
 /// The type of the Value is determined with the Type property.
 /// This class is used in multiple measures according to table horizontal dimension.
 /// </summary>
-[JsonConverter(typeof(TableWidthJsonConverter))]
-public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidth>, IEquatable<TableWidth>
+[JsonConverter(typeof(TableMeasureJsonConverter))]
+public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMeasure>, IEquatable<TableMeasure>
 {
   /// <summary>
   /// Defines the number of TableWidth in one inch.
@@ -21,21 +21,21 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   /// Represents the type of the TableWidth value, which can be absolute (in TableWidth), relative (in fiftieth of percent),
   /// or special values like "auto" or "nil".
   /// </summary>
-  public TableWidthUnit Type => _type;
+  public TableMeasureType Type => _type;
 
-  private TableWidthUnit _type;
+  private TableMeasureType _type;
 
   #region Constructors
 
   /// <summary>
   /// Default constructor. Creates an empty instance.
   /// </summary>
-  public TableWidth()
+  public TableMeasure()
   {
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="TableWidth"/> from a string value.
+  /// Initializes a new instance of the <see cref="TableMeasure"/> from a string value.
   /// </summary>
   /// <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
@@ -52,48 +52,48 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   /// </list>
   /// <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
   /// </remarks>
-  public TableWidth(string str)
+  public TableMeasure(string str)
   {
     Init(str);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="TableWidth"/> from an Int64 value.
+  /// Initializes a new instance of the <see cref="TableMeasure"/> from an Int64 value.
   /// </summary>
   /// <param name="value">The value in TableWidth.</param>
-  public TableWidth(Int64 value)
+  public TableMeasure(Int64 value)
   {
     Init(value);
-    _type = TableWidthUnit.Absolute;
+    _type = TableMeasureType.Absolute;
   }
   /// <summary>
-  /// Initializes a new instance of the <see cref="TableWidth"/> from a UInt64 value.
+  /// Initializes a new instance of the <see cref="TableMeasure"/> from a UInt64 value.
   /// </summary>
   /// <param name="value">The value in TableWidth.</param>
-  public TableWidth(UInt64 value)
+  public TableMeasure(UInt64 value)
   {
     Init(value);
-    _type = TableWidthUnit.Absolute;
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="TableWidth"/> from a Decimal value.
-  /// </summary>
-  /// <param name="value">The value in TableWidth.</param>
-  public TableWidth(Decimal value)
-  {
-    Init(value);
-    _type = TableWidthUnit.Absolute;
+    _type = TableMeasureType.Absolute;
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="TableWidth"/> from a Double value.
+  /// Initializes a new instance of the <see cref="TableMeasure"/> from a Decimal value.
   /// </summary>
   /// <param name="value">The value in TableWidth.</param>
-  public TableWidth(Double value)
+  public TableMeasure(Decimal value)
   {
     Init(value);
-    _type = TableWidthUnit.Absolute;
+    _type = TableMeasureType.Absolute;
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="TableMeasure"/> from a Double value.
+  /// </summary>
+  /// <param name="value">The value in TableWidth.</param>
+  public TableMeasure(Double value)
+  {
+    Init(value);
+    _type = TableMeasureType.Absolute;
   }
   #endregion
 
@@ -111,23 +111,23 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   {
     if (str == "nil")
     {
-      _type = TableWidthUnit.Nil;
+      _type = TableMeasureType.Nil;
       _value = 0;
     }
     else if (str == "auto")
     {
-      _type = TableWidthUnit.Auto;
+      _type = TableMeasureType.Auto;
       _value = 0;
     }
     else if (str.EndsWith("%"))
     {
-      _type = TableWidthUnit.Percent;
+      _type = TableMeasureType.Percent;
       _value = double.Parse(str.TrimEnd('%')) * 50; // Convert percentage to fiftieths of percent
     }
     else
     {
       base.Init(str); // Parse as absolute value in TableWidth
-      _type = TableWidthUnit.Absolute;
+      _type = TableMeasureType.Absolute;
     }
   }
 
@@ -141,11 +141,11 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   /// base implementation is used.</returns>
   public override string ToString()
   {
-    if (Type == TableWidthUnit.Auto)
+    if (Type == TableMeasureType.Auto)
       return "auto";
-    if (Type == TableWidthUnit.Nil)
+    if (Type == TableMeasureType.Nil)
       return "nil";
-    if (Type == TableWidthUnit.Percent)
+    if (Type == TableMeasureType.Percent)
       return (DecimalValue / 50).ToString(CultureInfo.InvariantCulture)+"%";
     return base.ToString();
   }
@@ -161,11 +161,11 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   /// <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
   public override string ToString(IFormatProvider? formatProvider)
   {
-    if (Type == TableWidthUnit.Auto)
+    if (Type == TableMeasureType.Auto)
       return "auto";
-    if (Type == TableWidthUnit.Nil)
+    if (Type == TableMeasureType.Nil)
       return "nil";
-    if (Type == TableWidthUnit.Percent)
+    if (Type == TableMeasureType.Percent)
       return (DecimalValue / 50).ToString(formatProvider) + "%";
     return base.ToString();
   }
@@ -184,11 +184,11 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   /// formatted according to the specified format string and format provider.</returns>
   public override string ToString(string? format, IFormatProvider? formatProvider)
   {
-    if (Type == TableWidthUnit.Auto)
+    if (Type == TableMeasureType.Auto)
       return "auto";
-    if (Type == TableWidthUnit.Nil)
+    if (Type == TableMeasureType.Nil)
       return "nil";
-    if (Type == TableWidthUnit.Percent)
+    if (Type == TableMeasureType.Percent)
       return (DecimalValue / 50).ToString(format, formatProvider) + "%";
     return base.ToString();
   }
@@ -203,11 +203,11 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   /// <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
   public override string ToString(string? format)
   {
-    if (Type == TableWidthUnit.Auto)
+    if (Type == TableMeasureType.Auto)
       return "auto";
-    if (Type == TableWidthUnit.Nil)
+    if (Type == TableMeasureType.Nil)
       return "nil";
-    if (Type == TableWidthUnit.Percent)
+    if (Type == TableMeasureType.Percent)
       return (DecimalValue / 50).ToString(format, CultureInfo.InvariantCulture) + "%";
     return base.ToString();
   }
@@ -217,29 +217,29 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   #region Static Factory Methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="TableWidth"/> that represents the specified value in TableWidth.
+  /// Creates an instance of an <see cref="TableMeasure"/> that represents the specified value in TableWidth.
   /// </summary>
-  public static TableWidth FromTableWidth(double TableWidth) => new TableWidth($"{TableWidth}tw");
+  public static TableMeasure FromTableWidth(double TableWidth) => new TableMeasure($"{TableWidth}tw");
   /// <summary>
-  /// Creates an instance of an <see cref="TableWidth"/> that represents the specified value in points.
+  /// Creates an instance of an <see cref="TableMeasure"/> that represents the specified value in points.
   /// </summary>
-  public static TableWidth FromPT(double points) => new TableWidth($"{points}pt");
+  public static TableMeasure FromPT(double points) => new TableMeasure($"{points}pt");
 
   /// <summary>
   /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
-  public static TableWidth FromMM(double millimeters) => new TableWidth($"{millimeters}mm");
+  public static TableMeasure FromMM(double millimeters) => new TableMeasure($"{millimeters}mm");
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
-  public static TableWidth FromCM(double centimeters) => new TableWidth($"{centimeters}cm");
+  public static TableMeasure FromCM(double centimeters) => new TableMeasure($"{centimeters}cm");
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static TableWidth FromInch(double inches) => new TableWidth($"{inches}in");
+  public static TableMeasure FromInch(double inches) => new TableMeasure($"{inches}in");
 
   /// <summary>
   /// Converts a length value from the specified unit to a standardized length measure.
@@ -249,7 +249,7 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   /// <param name="unit">The unit of measurement for the value parameter. Must be one of the supported length units.</param>
   /// <returns>An object that implements ILengthMeasure, representing the converted length value in a standardized format.</returns>
   /// <exception cref="ArgumentException">Thrown when the specified unit is not supported for conversion.</exception>
-  public static TableWidth ConvertFrom(double value, LengthUnit unit) => unit switch
+  public static TableMeasure ConvertFrom(double value, LengthUnit unit) => unit switch
   {
     LengthUnit.Twips => FromTableWidth(value),
     LengthUnit.Points => FromPT(value),
@@ -270,7 +270,7 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   /// thrown.</remarks>
   /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-  public static TableWidth Parse(string value) => new TableWidth(value);
+  public static TableMeasure Parse(string value) => new TableMeasure(value);
 
   /// <summary>
   /// Attempts to parse the specified string representation of a length measure and returns a value that indicates
@@ -282,11 +282,11 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
   /// langword="null"/>.</param>
   /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
-  public static bool TryParse(string value, out TableWidth? result)
+  public static bool TryParse(string value, out TableMeasure? result)
   {
     try
     {
-      result = new TableWidth(value);
+      result = new TableMeasure(value);
       return true;
     }
     catch
@@ -301,43 +301,43 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   #region Implicit Conversions
 
   /// <summary>
-  /// Implicitly converts a string to a <see cref="TableWidth"/> value.
+  /// Implicitly converts a string to a <see cref="TableMeasure"/> value.
   /// </summary>
   /// <param name="value">The string to convert.</param>
-  /// <returns>A <see cref="TableWidth"/> value parsed from the string.</returns>
-  public static implicit operator TableWidth(string value)
+  /// <returns>A <see cref="TableMeasure"/> value parsed from the string.</returns>
+  public static implicit operator TableMeasure(string value)
   {
-    return new TableWidth(value);
+    return new TableMeasure(value);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="TableWidth"/> value to a string.
+  /// Implicitly converts a <see cref="TableMeasure"/> value to a string.
   /// </summary>
-  /// <param name="value">The <see cref="TableWidth"/> value to convert.</param>
+  /// <param name="value">The <see cref="TableMeasure"/> value to convert.</param>
   /// <returns>A string representation of the TableWidth value.</returns>
-  public static implicit operator string(TableWidth value)
+  public static implicit operator string(TableMeasure value)
   {
     return value.ToString();
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit signed integer to a <see cref="TableWidth"/> value.
+  /// Implicitly converts a 32-bit signed integer to a <see cref="TableMeasure"/> value.
   /// </summary>
   /// <param name="value">The 32-bit signed integer to convert.</param>
-  /// <returns>A <see cref="TableWidth"/> value representing the integer.</returns>
-  public static implicit operator TableWidth(Int32 value)
+  /// <returns>A <see cref="TableMeasure"/> value representing the integer.</returns>
+  public static implicit operator TableMeasure(Int32 value)
   {
-    return new TableWidth(value);
+    return new TableMeasure(value);
   }
 
   /// <summary>
-  /// Implicitly converts a 64-bit signed integer to a <see cref="TableWidth"/> value.
+  /// Implicitly converts a 64-bit signed integer to a <see cref="TableMeasure"/> value.
   /// </summary>
   /// <param name="value">The 64-bit signed integer to convert.</param>
-  /// <returns>A <see cref="TableWidth"/> value representing the integer.</returns>
-  public static implicit operator TableWidth(Int64 value)
+  /// <returns>A <see cref="TableMeasure"/> value representing the integer.</returns>
+  public static implicit operator TableMeasure(Int64 value)
   {
-    return new TableWidth(value);
+    return new TableMeasure(value);
   }
 
   /// <summary>
@@ -346,9 +346,9 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   /// <remarks>This conversion allows for seamless integration of double values into contexts where TableWidth are
   /// required, facilitating operations that involve measurements in TableWidth.</remarks>
   /// <param name="value">The value to convert, representing a measurement in TableWidth.</param>
-  public static implicit operator TableWidth(Double value)
+  public static implicit operator TableMeasure(Double value)
   {
-    return new TableWidth(value);
+    return new TableMeasure(value);
   }
 
   #endregion
@@ -357,22 +357,22 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   #region IComparable and IEquatable Implementations
 
   /// <summary>
-  /// Compares this instance to a specified <see cref="TableWidth"/> object and returns an indication of their relative values.
+  /// Compares this instance to a specified <see cref="TableMeasure"/> object and returns an indication of their relative values.
   /// </summary>
-  /// <param name="other">A <see cref="TableWidth"/> object to compare.</param>
+  /// <param name="other">A <see cref="TableMeasure"/> object to compare.</param>
   /// <returns>
   /// A signed number indicating the relative values of this instance and <paramref name="other"/>.
   /// Less than zero if this instance is less than <paramref name="other"/>;
   /// zero if this instance equals <paramref name="other"/>;
   /// greater than zero if this instance is greater than <paramref name="other"/>.
   /// </returns>
-  public int CompareTo(TableWidth? other)
+  public int CompareTo(TableMeasure? other)
   {
     if (other == null)
       throw new ArgumentNullException(nameof(other), "Cannot compare to null.");
     if (other.Type != Type)
       throw new ArgumentException($"Cannot compare TableWidth of type {Type} to TableWidth of type {other.Type}.");
-    if (Type == TableWidthUnit.Auto || Type == TableWidthUnit.Nil)
+    if (Type == TableMeasureType.Auto || Type == TableMeasureType.Nil)
       return 0; // Consider "auto" and "nil" as equal for comparison purposes 
     return DecimalValue.CompareTo(other.DecimalValue);
   }
@@ -392,13 +392,13 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   /// </summary>
   /// <param name="other">An object to compare with this object.</param>
   /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
-  public bool Equals(TableWidth? other)
+  public bool Equals(TableMeasure? other)
   {
     if (other == null)
       return IsEmpty;
     if (other.Type != Type)
       throw new ArgumentException($"Cannot compare TableWidth of type {Type} to TableWidth of type {other.Type}.");
-    if (Type == TableWidthUnit.Auto || Type == TableWidthUnit.Nil)
+    if (Type == TableMeasureType.Auto || Type == TableMeasureType.Nil)
       return true; // Consider "auto" and "nil" as equal for comparison purposes 
 
     return System.Math.Abs(ToInch() - other.ToInch()) < 1e-10;
@@ -414,7 +414,7 @@ public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidt
   /// <returns>true if the specified object is a TableWidth instance equal to the current instance; otherwise, false.</returns>
   public override bool Equals(object? obj)
   {
-    if (obj is TableWidth tableWidth)
+    if (obj is TableMeasure tableWidth)
       return Equals(tableWidth);
 
     if (obj is IConvertible convertible)

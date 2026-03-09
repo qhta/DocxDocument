@@ -26,9 +26,9 @@ public partial class TableStyleConditionalRowProperties : ModelElement //<DXW.Ta
     /// <summary>
     /// Cell spacing for the row, specifying the space between adjacent cells.
     /// </summary>
-    public TableWidth? TableCellSpacing { get => _TableCellSpacing; set => UpdateField(ref _TableCellSpacing, value, nameof(TableCellSpacing)); }
+    public TableMeasure? TableCellSpacing { get => _TableCellSpacing; set => UpdateField(ref _TableCellSpacing, value, nameof(TableCellSpacing)); }
 
-    private TableWidth? _TableCellSpacing;
+    private TableMeasure? _TableCellSpacing;
     /// <summary>
     /// Table row justification, specifying horizontal alignment of the row within the table.
     /// </summary>

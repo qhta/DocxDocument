@@ -15,9 +15,9 @@ public partial class BaseTableProperties<T> : ModelElement<T> where T: DX.OpenXm
     /// <summary>
     /// Table indent from leading margin, specifying the distance from the document margin to the table.
     /// </summary>
-    public TableWidth? TableIndentation { get => _TableIndentation; set => UpdateField(ref _TableIndentation, value, nameof(TableIndentation)); }
+    public TableMeasure? TableIndentation { get => _TableIndentation; set => UpdateField(ref _TableIndentation, value, nameof(TableIndentation)); }
 
-    private TableWidth? _TableIndentation;
+    private TableMeasure? _TableIndentation;
     /// <summary>
     /// Default cell margin for the table, specifying padding for all table cells.
     /// </summary>
@@ -27,9 +27,9 @@ public partial class BaseTableProperties<T> : ModelElement<T> where T: DX.OpenXm
     /// <summary>
     /// Cell spacing for the table, specifying the space between adjacent cells.
     /// </summary>
-    public TableWidth? TableCellSpacing { get => _TableCellSpacing; set => UpdateField(ref _TableCellSpacing, value, nameof(TableCellSpacing)); }
+    public TableMeasure? TableCellSpacing { get => _TableCellSpacing; set => UpdateField(ref _TableCellSpacing, value, nameof(TableCellSpacing)); }
 
-    private TableWidth? _TableCellSpacing;
+    private TableMeasure? _TableCellSpacing;
     /// <summary>
     /// Borders for the table, specifying line style, color, and width for table edges.
     /// </summary>
