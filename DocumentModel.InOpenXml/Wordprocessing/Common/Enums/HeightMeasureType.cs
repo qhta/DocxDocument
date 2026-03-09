@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXW.HeightRuleValues))]
-public enum HeightRule
+public enum HeightMeasureType
 {
   /// <summary>
   ///   Determine Height Based On Contents.

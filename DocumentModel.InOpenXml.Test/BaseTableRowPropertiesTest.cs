@@ -1,34 +1,34 @@
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for Styles BaseTableCellProperties.
+  /// Comprehensive serialization test for BaseTableRowProperties.
   /// </summary>
-  public static class BaseTableCellPropertiesTest
+  public static class BaseTableRowPropertiesTest
   {
     /// <summary>
-    /// Paragraphs all Styles BaseTableCellProperties tests.
+    /// Paragraphs all BaseTableRowProperties tests.
     /// </summary>
     /// <returns>True if all tests pass; otherwise, false.</returns>
     public static bool Run()
     {
-      Console.WriteLine("=== BaseTableCellProperties Test ===\n");
+      Console.WriteLine("=== BaseTableRowProperties Test ===\n");
       if (!TestXmlSerialization()) return false;
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
 
-      Console.WriteLine("All BaseTableCellProperties tests passed.\n");
+      Console.WriteLine("All BaseTableRowProperties tests passed.\n");
       return true;
     }
 
     /// <summary>
-    /// Tests XML serialization and deserialization of Styles BaseTableCellProperties.
+    /// Tests XML serialization and deserialization of BaseTableRowProperties.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestXmlSerialization()
     {
       Console.WriteLine("--- XML Serialization ---");
       var testData = CreateSampleProperties();
-      var xmlSerializer = new XmlSerializer(typeof(BaseTableCellProperties));
+      var xmlSerializer = new XmlSerializer(typeof(BaseTableRowProperties));
       string xmlString;
       using (var stringWriter = new StringWriter())
       using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
@@ -38,17 +38,17 @@ namespace DocumentModel.InOpenXml.Test
       }
       Console.WriteLine("Serialized XML:\n" + xmlString);
 
-      BaseTableCellProperties? deserialized;
+      BaseTableRowProperties? deserialized;
       using (var stringReader = new StringReader(xmlString))
       {
-        deserialized = (BaseTableCellProperties?)xmlSerializer.Deserialize(stringReader);
+        deserialized = (BaseTableRowProperties?)xmlSerializer.Deserialize(stringReader);
       }
       if (deserialized == null)
       {
         Console.WriteLine("✗ XML Deserialization returned null");
         return false;
       }
-      if (!TestHelper.CompareTestData(typeof(BaseTableCellProperties), (object)testData, (object)deserialized, out var propName))
+      if (!TestHelper.CompareTestData(typeof(BaseTableRowProperties), (object)testData, (object)deserialized, out var propName))
       {
         Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
         return false;
@@ -58,7 +58,7 @@ namespace DocumentModel.InOpenXml.Test
     }
 
     /// <summary>
-    /// Tests JSON serialization and deserialization of Styles BaseTableCellProperties.
+    /// Tests JSON serialization and deserialization of BaseTableRowProperties.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestJsonSerialization()
@@ -69,13 +69,13 @@ namespace DocumentModel.InOpenXml.Test
       string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
       Console.WriteLine("Serialized JSON:\n" + jsonString);
 
-      var deserialized = JsonSerializer.Deserialize<BaseTableCellProperties>(jsonString, jsonOptions);
+      var deserialized = JsonSerializer.Deserialize<BaseTableRowProperties>(jsonString, jsonOptions);
       if (deserialized == null)
       {
         Console.WriteLine("✗ JSON Deserialization returned null");
         return false;
       }
-      if (!TestHelper.CompareTestData(typeof(BaseTableCellProperties), (object)testData, (object)deserialized, out var propName))
+      if (!TestHelper.CompareTestData(typeof(BaseTableRowProperties), (object)testData, (object)deserialized, out var propName))
       {
         Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
         return false;
@@ -110,41 +110,40 @@ namespace DocumentModel.InOpenXml.Test
       return true;
     }
     /// <summary>
-    /// Creates a sample Styles object with BaseTableCellProperties.
+    /// Creates a sample Styles object with BaseTableRowProperties.
     /// </summary>
     /// <returns>A populated Styles object.</returns>
-    static BaseTableCellProperties CreateSampleProperties(bool isUpdated = false)
+    static BaseTableRowProperties CreateSampleProperties(bool isUpdated = false)
     {
-      return CreateBaseTableCellProperties(isUpdated);
+      return CreateBaseTableRowProperties(isUpdated);
     }
 
     /// <summary>
-    /// Creates a sample BaseTableCellProperties object with test data for all properties,
+    /// Creates a sample BaseTableRowProperties object with test data for all properties,
     /// optionally with updated values for update scenarios.
     /// </summary>
     /// <param name="isUpdated">Indicates whether to create updated sample properties for update scenarios.</param>
-    /// <returns>A populated BaseTableCellProperties object.</returns>
-    internal static BaseTableCellProperties CreateBaseTableCellProperties(bool isUpdated = false)
+    /// <returns>A populated BaseTableRowProperties object.</returns>
+    internal static BaseTableRowProperties CreateBaseTableRowProperties(bool isUpdated = false)
     {
-      return new BaseTableCellProperties
+      return new BaseTableRowProperties
       {
-        Shading = new Shading
+        RowHeight = new HeightMeasure
         {
-          Pattern = isUpdated ? ShadingPattern.Percent20 : ShadingPattern.Percent10,
-          ForegroundColor = isUpdated ? "333333" : "666666",
-          BackgroundColor = isUpdated ? "DDDDDD" : "F2F2F2"
+          Value = isUpdated ? 420 : 360,
+          Type = isUpdated ? HeightMeasureType.Exact : HeightMeasureType.AtLeast
         },
-        NoWrap = isUpdated,
-        TableCellMargin = new TableCellMargin
-        {
-          TopMargin = "120tw",//new TableWidth { Value = 120, Type = TableWidthUnit.Absolute },
-          LeftMargin = "50%",//new TableWidth { Value = 50, Type = TableWidthUnit.Percent },
-          StartMargin = "180",//new TableWidth { Value = 180, Type = TableWidthUnit.Absolute },
-          BottomMargin = "auto",//new TableWidth { Type = TableWidthUnit.Auto },
-          RightMargin = "nil",//new TableWidth { Type = TableWidthUnit.Nil },
-          EndMargin = 240,//new TableWidth { Value = 240, Type = TableWidthUnit.Absolute },
-        },
-        TableCellVerticalAlignment = isUpdated ? TableVerticalAlignment.Center : TableVerticalAlignment.Top
+        CantSplit = true,
+        IsHeader = isUpdated,
+        RowAlignment = isUpdated ? TableRowAlignment.Center : TableRowAlignment.Left,
+        CellSpacing = isUpdated ? new TableMeasure(120) : new TableMeasure(60),
+        GlyphHidden = isUpdated,
+        GridBefore = isUpdated ? 1 : 0,
+        GridAfter = isUpdated ? 2 : 1,
+        WidthBefore = isUpdated ? new TableMeasure(720) : new TableMeasure(360),
+        WidthAfter = isUpdated ? new TableMeasure(720) : new TableMeasure(360),
+        DivId = isUpdated ? "row-div-updated" : "row-div",
+        ConditionalFormatStyle = ConditionalFormatFlags.FirstRow | ConditionalFormatFlags.FirstColumn
       };
     }
 
