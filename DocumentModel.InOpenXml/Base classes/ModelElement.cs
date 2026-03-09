@@ -40,8 +40,8 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// needs to be called once per process.</remarks>
   public static void RegisterOpenXmlConversion()
   {
-    OpenXmlModelConverter.ConvertFromOpenDelegates[typeof(Guid)] = ConvertGuidFromOpenXml;
-    OpenXmlModelConverter.ConvertToOpenDelegates[typeof(Guid)] = ConvertToGuidOpenXml;
+    OpenXmlModelConverter.ConvertFromOpenXmlDelegates[typeof(Guid)] = ConvertGuidFromOpenXml;
+    OpenXmlModelConverter.ConvertToOpenXmlDelegates[typeof(Guid)] = ConvertToGuidOpenXml;
   }
 
   /// <summary>

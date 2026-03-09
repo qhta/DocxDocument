@@ -41,7 +41,7 @@ public static class SimpleValueConverter
     { typeof(HexInt), typeof(HexIntConverter) },
     { typeof(HexLong), typeof(HexLongConverter) },
     { typeof(StringList), typeof(StringListConverter) },
-    { typeof(Enum), typeof(EnumConverter) },
+    { typeof(Enum), typeof(EnumTypeConverter) },
     { typeof(BytePercent), typeof(BytePercentConverter) },
     { typeof(Percent), typeof(PercentConverter) },
     { typeof(Twips), typeof(TwipsConverter) },

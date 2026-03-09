@@ -1,4 +1,4 @@
-using EnumConverter = DocumentModel.OpenXml.EnumConverter;
+using EnumConverter = DocumentModel.OpenXml.EnumTypeConverter;
 
 namespace DocumentModel.Wordprocessing;
 

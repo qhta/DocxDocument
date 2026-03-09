@@ -65,7 +65,7 @@ public static class ListOfConverter
       var result = new ListOf<EnumKind>();
       foreach (var item in element)
       {
-        var itemValue = EnumConverter.GetEnumValue<OpenXmlEnumType, EnumKind>(item);
+        var itemValue = EnumTypeConverter.GetEnumValue<OpenXmlEnumType, EnumKind>(item);
         if (itemValue != null)
           result.Add((EnumKind)itemValue);
       }
@@ -88,7 +88,7 @@ public static class ListOfConverter
     var resultList = new List<DX.EnumValue<OpenXmlEnumType>>();
     foreach (var item in value)
     {
-      var itemObject = EnumConverter.CreateOpenXmlEnumValue<OpenXmlEnumType, EnumKind>(item);
+      var itemObject = EnumTypeConverter.CreateOpenXmlEnumValue<OpenXmlEnumType, EnumKind>(item);
       if (itemObject != null)
         resultList.Add(itemObject);
     }

@@ -23,8 +23,8 @@ public static class OpenXmlElementConverter
     if (modelType == openXmlType)
       return true;
 
-    if (OpenXmlModelConverter.ConvertToOpenDelegates.TryGetValue(modelType, out var convertDelegate)
-        || OpenXmlModelConverter.ConvertToOpenDelegates.TryGetValue(openXmlType, out convertDelegate))
+    if (OpenXmlModelConverter.ConvertToOpenXmlDelegates.TryGetValue(modelType, out var convertDelegate)
+        || OpenXmlModelConverter.ConvertToOpenXmlDelegates.TryGetValue(openXmlType, out convertDelegate))
     {
       return convertDelegate(modelValue, openXmlType)!;
     }
@@ -66,8 +66,8 @@ public static class OpenXmlElementConverter
       return openXmlElement;
 
     if (modelType.Name== "Zoom") Debug.Assert(true);
-    if (OpenXmlModelConverter.ConvertFromOpenDelegates.TryGetValue(openXmlType, out var convertDelegate) 
-        || OpenXmlModelConverter.ConvertFromOpenDelegates.TryGetValue(modelType, out convertDelegate))
+    if (OpenXmlModelConverter.ConvertFromOpenXmlDelegates.TryGetValue(openXmlType, out var convertDelegate) 
+        || OpenXmlModelConverter.ConvertFromOpenXmlDelegates.TryGetValue(modelType, out convertDelegate))
     {
       return convertDelegate(openXmlElement, modelType)!;
     }

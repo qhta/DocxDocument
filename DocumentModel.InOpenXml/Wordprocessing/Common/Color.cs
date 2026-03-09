@@ -1,5 +1,3 @@
-using EnumConverter = DocumentModel.OpenXml.EnumConverter;
-
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -188,7 +186,7 @@ public partial class Color : AbstractColor<DXW.Color>
     if (themeColor?.Value != null)
     {
       color ??= new DMW.Color();
-      color.ThemeColor = (ThemeColors)EnumConverter.ConvertFrom(themeColor, typeof(ThemeColors))!;
+      color.ThemeColor = (ThemeColors)EnumTypeConverter.ConvertFrom(themeColor, typeof(ThemeColors))!;
     }
 
     if (themeTint?.Value != null)
@@ -220,7 +218,8 @@ public partial class Color : AbstractColor<DXW.Color>
       val = HexRgbConverter.ConvertTo(Val, typeof(DX.StringValue)) as DX.StringValue;
     DX.EnumValue<DXW.ThemeColorValues>? themeColor = null;
     if (ThemeColor is not null)
-      themeColor = EnumConverter.ConvertTo(ThemeColor, typeof(DX.EnumValue<DXW.ThemeColorValues>)) as DX.EnumValue<DXW.ThemeColorValues>;
+      // ReSharper disable once InvokeAsExtensionMember
+      themeColor = EnumTypeConverter.CreateOpenXmlEnumValue<DXW.ThemeColorValues, ThemeColors>(ThemeColor.Value);
     DX.StringValue? themeTint = null;
     if (ThemeTint is not null)
       themeTint = HexByteConverter.ConvertTo(ThemeTint, typeof(DX.StringValue)) as DX.StringValue;
