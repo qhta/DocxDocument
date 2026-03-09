@@ -340,3 +340,10 @@ public partial class BaseRunProperties<T> : ModelElement<T> where T : DX.OpenXml
 
   //private DrawingProperties? _DrawingProperties;
 }
+
+/// <summary>
+/// Concrete class for BaseRunProperties
+/// </summary>
+public class BaseRunProperties : BaseRunProperties<DXW.RunPropertiesBaseStyle>
+{
+}

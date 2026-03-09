@@ -1,34 +1,34 @@
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for Styles DefaultParagraphProperties.
+  /// Comprehensive serialization test for BaseParagraphProperties.
   /// </summary>
-  public static class DefaultParagraphPropertiesTest
+  public static class BaseParagraphPropertiesTest
   {
     /// <summary>
-    /// Paragraphs all Styles DefaultParagraphProperties tests.
+    /// Run all BaseParagraphProperties tests.
     /// </summary>
     /// <returns>True if all tests pass; otherwise, false.</returns>
     public static bool Run()
     {
-      Console.WriteLine("=== Styles DefaultParagraphProperties Test ===\n");
+      Console.WriteLine("=== BaseParagraphProperties Test ===\n");
       if (!TestXmlSerialization()) return false;
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
 
-      Console.WriteLine("All Styles DefaultParagraphProperties tests passed.\n");
+      Console.WriteLine("All BaseParagraphProperties tests passed.\n");
       return true;
     }
 
     /// <summary>
-    /// Tests XML serialization and deserialization of Styles DefaultParagraphProperties.
+    /// Tests XML serialization and deserialization of BaseParagraphProperties.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestXmlSerialization()
     {
       Console.WriteLine("--- XML Serialization ---");
       var testData = CreateSampleProperties();
-      var xmlSerializer = new XmlSerializer(typeof(DefaultParagraphProperties));
+      var xmlSerializer = new XmlSerializer(typeof(BaseParagraphProperties));
       string xmlString;
       using (var stringWriter = new StringWriter())
       using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
@@ -38,10 +38,10 @@ namespace DocumentModel.InOpenXml.Test
       }
       Console.WriteLine("Serialized XML:\n" + xmlString);
 
-      DefaultParagraphProperties? deserialized;
+      BaseParagraphProperties? deserialized;
       using (var stringReader = new StringReader(xmlString))
       {
-        deserialized = (DefaultParagraphProperties?)xmlSerializer.Deserialize(stringReader);
+        deserialized = (BaseParagraphProperties?)xmlSerializer.Deserialize(stringReader);
       }
       if (deserialized == null)
       {
@@ -58,7 +58,7 @@ namespace DocumentModel.InOpenXml.Test
     }
 
     /// <summary>
-    /// Tests JSON serialization and deserialization of Styles DefaultParagraphProperties.
+    /// Tests JSON serialization and deserialization of BaseParagraphProperties.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestJsonSerialization()
@@ -69,7 +69,7 @@ namespace DocumentModel.InOpenXml.Test
       string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
       Console.WriteLine("Serialized JSON:\n" + jsonString);
 
-      var deserialized = JsonSerializer.Deserialize<DefaultParagraphProperties>(jsonString, jsonOptions);
+      var deserialized = JsonSerializer.Deserialize<BaseParagraphProperties>(jsonString, jsonOptions);
       if (deserialized == null)
       {
         Console.WriteLine("✗ JSON Deserialization returned null");
@@ -110,10 +110,10 @@ namespace DocumentModel.InOpenXml.Test
       return true;
     }
     /// <summary>
-    /// Creates a sample Styles object with DefaultParagraphProperties.
+    /// Creates a sample Styles object with BaseParagraphProperties.
     /// </summary>
     /// <returns>A populated Styles object.</returns>
-    static DefaultParagraphProperties CreateSampleProperties(bool isUpdated = false)
+    static BaseParagraphProperties CreateSampleProperties(bool isUpdated = false)
     {
       return CreateSampleParagraphProperties(isUpdated);
     }
@@ -122,10 +122,10 @@ namespace DocumentModel.InOpenXml.Test
     /// This method is used also in StyleDocDefaultsParagraphPropertiesTest.
     /// </summary>
     /// <param name="isUpdated">Indicates whether to create updated sample properties for update scenarios.</param>
-    /// <returns>A populated DefaultParagraphProperties object.</returns>
-    internal static DefaultParagraphProperties CreateSampleParagraphProperties(bool isUpdated = false)
+    /// <returns>A populated BaseParagraphProperties object.</returns>
+    internal static BaseParagraphProperties CreateSampleParagraphProperties(bool isUpdated = false)
     {
-      return new DefaultParagraphProperties
+      return new BaseParagraphProperties
       {
         KeepNext = isUpdated,
         KeepLines = true,

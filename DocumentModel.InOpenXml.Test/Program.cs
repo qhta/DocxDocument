@@ -21,9 +21,9 @@ internal class Program
     if (!Exec(FontTableTest.Run)) return;
     if (!Exec(LatentStylesTest.Run)) return;
     if (!Exec(StyleDefsTest.Run)) return;
-    if (!Exec(DefaultRunPropertiesTest.Run)) return;
+    if (!Exec(BaseRunPropertiesTest.Run)) return;
     if (!Exec(StyleDocDefaultsRunPropertiesTest.Run)) return;
-    if (!Exec(DefaultParagraphPropertiesTest.Run)) return;
+    if (!Exec(BaseParagraphPropertiesTest.Run)) return;
     if (!Exec(StyleDocDefaultsParagraphPropertiesTest.Run)) return;
     if (!Exec(AbstractNumberingsTest.Run)) return;
     if (!Exec(NumberingInstancesTest.Run)) return;
