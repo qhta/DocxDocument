@@ -7,24 +7,28 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.TableWidthUnitValues))]
 public enum TableWidthUnit
 {
+
   /// <summary>
   ///   No Width.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Nil))]
   Nil,
-  /// <summary>
-  ///   Width in Fiftieths of a Percent.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Pct))]
-  Percent,
+
   /// <summary>
   ///   Width in Twentieths of a Point.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Dxa))]
   Absolute,
+
+  /// <summary>
+  ///   Width in Fiftieths of a Percent.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Pct))]
+  Percent,
+
   /// <summary>
   ///   Automatically Determined Width.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Auto))]
-  Auto
+  Auto,
 }
