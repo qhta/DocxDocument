@@ -5,7 +5,7 @@ using DocumentModel.BaseTypes.Interfaces;
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the TableWidthType class. Its Value can be absolute (in TableWidth) or relative (in fiftieth of percent), or "auto" or "nil".
+/// Defines the TableMeasureType class. Its Value can be absolute (in TableMeasure) or relative (in fiftieth of percent), or "auto" or "nil".
 /// The type of the Value is determined with the Type property.
 /// This class is used in multiple measures according to table horizontal dimension.
 /// </summary>
@@ -18,15 +18,28 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   }
 
   /// <summary>
-  /// Defines the number of TableWidth in one inch.
+  /// Defines the number of TableMeasure in one inch.
   /// </summary>
   protected override double UnitsPerInch => 1440.0;
 
   /// <summary>
-  /// Represents the type of the TableWidth value, which can be absolute (in TableWidth), relative (in fiftieth of percent),
+  /// Gets or sets the value represented as a nullable 64-bit signed integer.
+  /// </summary>
+  /// <remarks>This property allows for the storage of a 64-bit signed integer value, which can be null. It is
+  /// useful in scenarios where the absence of a value is significant.</remarks>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public Int64? Value { get => (Int64?)_value; set => _value = value; }
+
+  /// <summary>
+  /// Represents the type of the TableMeasure value, which can be absolute (in TableMeasure), relative (in fiftieth of percent),
   /// or special values like "auto" or "nil".
   /// </summary>
-  public TableMeasureType Type => _type;
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public TableMeasureType Type { get => _type; set => _type = value; }
 
   private TableMeasureType _type;
 
@@ -63,9 +76,20 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   }
 
   /// <summary>
+  /// Initializes a new instance of the <see cref="TableMeasure"/> from an Int64 value and a specified type.
+  /// </summary>
+  /// <param name="value">The value in TableMeasure.</param>
+  /// <param name="type">The type of the TableMeasure value.</param>
+  public TableMeasure(Int64 value, TableMeasureType type)
+  {
+    Init(value);
+    _type = type;
+  }
+
+  /// <summary>
   /// Initializes a new instance of the <see cref="TableMeasure"/> from an Int64 value.
   /// </summary>
-  /// <param name="value">The value in TableWidth.</param>
+  /// <param name="value">The value in TableMeasure.</param>
   public TableMeasure(Int64 value)
   {
     Init(value);
@@ -74,7 +98,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   /// <summary>
   /// Initializes a new instance of the <see cref="TableMeasure"/> from a UInt64 value.
   /// </summary>
-  /// <param name="value">The value in TableWidth.</param>
+  /// <param name="value">The value in TableMeasure.</param>
   public TableMeasure(UInt64 value)
   {
     Init(value);
@@ -84,7 +108,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   /// <summary>
   /// Initializes a new instance of the <see cref="TableMeasure"/> from a Decimal value.
   /// </summary>
-  /// <param name="value">The value in TableWidth.</param>
+  /// <param name="value">The value in TableMeasure.</param>
   public TableMeasure(Decimal value)
   {
     Init(value);
@@ -94,7 +118,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   /// <summary>
   /// Initializes a new instance of the <see cref="TableMeasure"/> from a Double value.
   /// </summary>
-  /// <param name="value">The value in TableWidth.</param>
+  /// <param name="value">The value in TableMeasure.</param>
   public TableMeasure(Double value)
   {
     Init(value);
@@ -127,11 +151,11 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
     else if (str.EndsWith("%"))
     {
       _type = TableMeasureType.Percent;
-      _value = double.Parse(str.TrimEnd('%')) * 50; // Convert percentage to fiftieths of percent
+      _value = Decimal.Parse(str.TrimEnd('%').Replace(',', '.'), CultureInfo.InvariantCulture) * 50; // Convert percentage to fiftieths of percent
     }
     else
     {
-      base.Init(str); // Parse as absolute value in TableWidth
+      base.Init(str); // Parse as absolute value
       _type = TableMeasureType.Absolute;
     }
   }
@@ -222,9 +246,10 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   #region Static Factory Methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="TableMeasure"/> that represents the specified value in TableWidth.
+  /// Creates an instance of an <see cref="TableMeasure"/> that represents the specified value in Twips.
   /// </summary>
-  public static TableMeasure FromTableWidth(double TableWidth) => new TableMeasure($"{TableWidth}tw");
+  public static TableMeasure FromTwips(double Twips) => new TableMeasure($"{Twips}tw");
+
   /// <summary>
   /// Creates an instance of an <see cref="TableMeasure"/> that represents the specified value in points.
   /// </summary>
@@ -249,14 +274,14 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   /// <summary>
   /// Converts a length value from the specified unit to a standardized length measure.
   /// </summary>
-  /// <remarks>Supported units include TableWidth, Points, Millimeters, Centimeters, and Inches.</remarks>
+  /// <remarks>Supported units include TableMeasure, Points, Millimeters, Centimeters, and Inches.</remarks>
   /// <param name="value">The numeric length value to convert, expressed in the unit specified by the unit parameter.</param>
   /// <param name="unit">The unit of measurement for the value parameter. Must be one of the supported length units.</param>
   /// <returns>An object that implements ILengthMeasure, representing the converted length value in a standardized format.</returns>
   /// <exception cref="ArgumentException">Thrown when the specified unit is not supported for conversion.</exception>
   public static TableMeasure ConvertFrom(double value, LengthUnit unit) => unit switch
   {
-    LengthUnit.Twips => FromTableWidth(value),
+    LengthUnit.Twips => FromTwips(value),
     LengthUnit.Points => FromPT(value),
     LengthUnit.Millimeters => FromMM(value),
     LengthUnit.Centimeters => FromCM(value),
@@ -319,7 +344,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   /// Implicitly converts a <see cref="TableMeasure"/> value to a string.
   /// </summary>
   /// <param name="value">The <see cref="TableMeasure"/> value to convert.</param>
-  /// <returns>A string representation of the TableWidth value.</returns>
+  /// <returns>A string representation of the TableMeasure value.</returns>
   public static implicit operator string(TableMeasure value)
   {
     return value.ToString();
@@ -346,11 +371,11 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   }
 
   /// <summary>
-  /// Implicitly converts a double-precision floating-point number to a TableWidth instance.
+  /// Implicitly converts a double-precision floating-point number to a TableMeasure instance.
   /// </summary>
-  /// <remarks>This conversion allows for seamless integration of double values into contexts where TableWidth are
-  /// required, facilitating operations that involve measurements in TableWidth.</remarks>
-  /// <param name="value">The value to convert, representing a measurement in TableWidth.</param>
+  /// <remarks>This conversion allows for seamless integration of double values into contexts where TableMeasure are
+  /// required, facilitating operations that involve measurements in TableMeasure.</remarks>
+  /// <param name="value">The value to convert, representing a measurement in TableMeasure.</param>
   public static implicit operator TableMeasure(Double value)
   {
     return new TableMeasure(value);
@@ -375,7 +400,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
     if (other == null)
       throw new ArgumentNullException(nameof(other), "Cannot compare to null.");
     if (other.Type != Type)
-      throw new ArgumentException($"Cannot compare TableWidth of type {Type} to TableWidth of type {other.Type}.");
+      throw new ArgumentException($"Cannot compare TableMeasure of type {Type} to TableMeasure of type {other.Type}.");
     if (Type == TableMeasureType.Auto || Type == TableMeasureType.Nil)
       return 0; // Consider "auto" and "nil" as equal for comparison purposes 
     return DecimalValue.CompareTo(other.DecimalValue);
@@ -401,7 +426,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
     if (other == null)
       return IsEmpty;
     if (other.Type != Type)
-      throw new ArgumentException($"Cannot compare TableWidth of type {Type} to TableWidth of type {other.Type}.");
+      throw new ArgumentException($"Cannot compare TableMeasure of type {Type} to TableMeasure of type {other.Type}.");
     if (Type == TableMeasureType.Auto || Type == TableMeasureType.Nil)
       return true; // Consider "auto" and "nil" as equal for comparison purposes 
 
@@ -410,16 +435,16 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   }
 
   /// <summary>
-  /// Determines whether the specified object is equal to the current TableWidth instance.
+  /// Determines whether the specified object is equal to the current TableMeasure instance.
   /// </summary>
-  /// <remarks>This method supports value comparison for TableWidth instances. It returns false if the provided
-  /// object is not a TableWidth instance.</remarks>
+  /// <remarks>This method supports value comparison for TableMeasure instances. It returns false if the provided
+  /// object is not a TableMeasure instance.</remarks>
   /// <param name="obj">The object to compare with the current instance. This parameter can be null.</param>
-  /// <returns>true if the specified object is a TableWidth instance equal to the current instance; otherwise, false.</returns>
+  /// <returns>true if the specified object is a TableMeasure instance equal to the current instance; otherwise, false.</returns>
   public override bool Equals(object? obj)
   {
-    if (obj is TableMeasure tableWidth)
-      return Equals(tableWidth);
+    if (obj is TableMeasure TableMeasure)
+      return Equals(TableMeasure);
 
     if (obj is IConvertible convertible)
     {
