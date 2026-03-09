@@ -1,5 +1,3 @@
-using EnumConverter = DocumentModel.OpenXml.EnumConverter;
-
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -81,7 +79,7 @@ public partial class Border: ModelElement<DXW.BorderType>
   {
     if (border.Val != null)
     {
-      var s = (string)EnumConverter.ConvertFromOpenXmlEnumValueToString(border.Val)!;
+      var s = (string)EnumTypeConverter.ConvertFromOpenXmlEnumValueToString(border.Val)!;
       if (Enum.TryParse(s, true, out BorderType style))
         Type = style;
       else
@@ -99,11 +97,10 @@ public partial class Border: ModelElement<DXW.BorderType>
   public void UpdateBorderType(DXW.BorderType border)
   {
     if (Type != null)
-      border.Val =
-        (DX.EnumValue<DXW.BorderValues>)EnumConverter.ConvertTo(Type, typeof(DX.EnumValue<DXW.BorderValues>))!;
+      border.Val = EnumTypeConverter.CreateOpenXmlEnumValue<DXW.BorderValues, BorderType>(Type.Value)!;
     else if (ArtStyle != null)
       border.Val =
-        (DX.EnumValue<DXW.BorderValues>)EnumConverter.ConvertTo(ArtStyle, typeof(DX.EnumValue<DXW.BorderValues>))!;
+        (DX.EnumValue<DXW.BorderValues>)EnumTypeConverter.ConvertTo(ArtStyle, typeof(DX.EnumValue<DXW.BorderValues>))!;
     else
       border.Val = null;
   }

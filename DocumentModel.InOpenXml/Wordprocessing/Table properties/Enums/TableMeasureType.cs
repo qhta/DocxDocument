@@ -15,10 +15,10 @@ public enum TableMeasureType
   Nil,
 
   /// <summary>
-  ///   Width in Twentieths of a Point.
+  ///   Automatically Determined Width.
   /// </summary>
-  [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Dxa))]
-  Absolute,
+  [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Auto))]
+  Auto,
 
   /// <summary>
   ///   Width in Fiftieths of a Percent.
@@ -27,8 +27,10 @@ public enum TableMeasureType
   Percent,
 
   /// <summary>
-  ///   Automatically Determined Width.
+  ///   Width in Twentieths of a Point.
   /// </summary>
-  [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Auto))]
-  Auto,
+  [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Dxa))]
+  Absolute,
+
+
 }

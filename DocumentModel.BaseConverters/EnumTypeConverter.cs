@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides conversion methods for Enum value to/from Open XML.
 /// </summary>
-public static partial class EnumConverter
+public static partial class EnumTypeConverter
 {
   private static readonly ConversionMethodInfo[] supportedConversions =
   [
@@ -25,13 +25,13 @@ public static partial class EnumConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps for <see cref="EnumConverter"/>.
+  /// Initializes the conversion maps for <see cref="EnumTypeConverter"/>.
   /// </summary>
-  static EnumConverter()
+  static EnumTypeConverter()
   {
-    ConverterBase.RegisterConversionMethods(typeof(EnumConverter), typeof(Enum), supportedConversions, ConversionToMap,
+    ConverterBase.RegisterConversionMethods(typeof(EnumTypeConverter), typeof(Enum), supportedConversions, ConversionToMap,
       ConversionFromMap);
-    ConverterBase.RegisterConversionMethods(typeof(EnumConverter), typeof(String), stringConversions, ConversionToMap,
+    ConverterBase.RegisterConversionMethods(typeof(EnumTypeConverter), typeof(String), stringConversions, ConversionToMap,
       ConversionFromMap);
   }
 
@@ -211,7 +211,7 @@ public static partial class EnumConverter
   /// <param name="openXmlEnumValue">The openXmlEnumValue to convert.</param>
   /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
-  private static Enum? ConvertFromEnumValue(DX.OpenXmlSimpleType? openXmlEnumValue, Type modelEnumType)
+  private static Enum? ConvertFromEnumValue(object? openXmlEnumValue, Type modelEnumType)
   {
     if (openXmlEnumValue == null) return null;
 
@@ -243,7 +243,7 @@ public static partial class EnumConverter
   /// <param name="value">The Enum value to convert.</param>
   /// <param name="openXmlType">The target OpenXmlValues type for the created EnumValue instance. Must be of OpenXml EnumValue type.</param>
   /// <returns>A new EnumValue, or null if the input is null.</returns>
-  private static DX.OpenXmlSimpleType? ConvertToEnumValue(Enum? value, Type openXmlType)
+  private static object? ConvertToEnumValue(Enum? value, Type openXmlType)
   {
     if (value == null) return null;
 
@@ -469,7 +469,7 @@ public static partial class EnumConverter
     if (value == null) return null;
 
     var result = (DX.OpenXmlLeafTextElement)Activator.CreateInstance(openXmlType)!;
-    var textValue = EnumConverter.ConvertToString(value) ?? "";
+    var textValue = EnumTypeConverter.ConvertToString(value) ?? "";
     result.Text = textValue;
     return result;
   }
@@ -536,9 +536,9 @@ public static partial class EnumConverter
 
     object? targetValue = null;
     if (valueProp.PropertyType.GetInterface("IEnumValue") != null)
-      targetValue = EnumConverter.ConvertToIEnumValue(value, valueProp.PropertyType);
+      targetValue = EnumTypeConverter.ConvertToIEnumValue(value, valueProp.PropertyType);
     else if (valueProp.PropertyType == typeof(string))
-      targetValue = EnumConverter.ConvertToString(value)?.ToLowerInvariant();
+      targetValue = EnumTypeConverter.ConvertToString(value)?.ToLowerInvariant();
     else
       targetValue = Int32Converter.ConvertTo(Convert.ToInt32(value), valueProp.PropertyType);
     valueProp.SetValue(targetInstance, targetValue);

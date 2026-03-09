@@ -1,15 +1,9 @@
-﻿using System.Diagnostics;
-
-using DocumentFormat.OpenXml.Office2016.ExcelAc;
-
-using DocumentModel.OpenXml;
-
-using EnumConverter = DocumentModel.OpenXml.EnumConverter;
+﻿using EnumTypeConverter = DocumentModel.OpenXml.EnumTypeConverter;
 
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="EnumConverter"/> conversions between .NET Enum values and various Open XML numeric types.
+///   Provides unit tests for verifying the correctness of <see cref="EnumTypeConverter"/> conversions between .NET Enum values and various Open XML numeric types.
 ///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
 public static class EnumConverterTest
@@ -25,7 +19,7 @@ public static class EnumConverterTest
     (typeof(DocumentModel.DocumentSecurity), typeof(DXEP.DocumentSecurity)),
     (typeof(DocumentModel.Wordprocessing.SourceType), typeof(DXB.SourceType)),
     (typeof(DocumentModel.Wordprocessing.FontCharset), typeof(DXW.FontCharSet)),
-    (typeof(DocumentModel.Wordprocessing.TableWidthUnit), typeof(DXW.TableWidthUnitValues)),
+    (typeof(DocumentModel.Wordprocessing.TableMeasureType), typeof(DXW.TableWidthUnitValues)),
   ];
 
   /// <summary>
@@ -74,7 +68,7 @@ public static class EnumConverterTest
     foreach (var testValue in testValues)
     {
       // Convert to OpenXml
-      var openXmlValue = EnumConverter.ConvertTo((Enum)testValue, openXmlType);
+      var openXmlValue = EnumTypeConverter.ConvertTo((Enum)testValue, openXmlType);
       if (openXmlValue == null)
       {
         if (valueIndex == 0)
@@ -94,7 +88,7 @@ public static class EnumConverterTest
       Console.WriteLine($"Converted {testValue} to OpenXml value {outputText}");
 
       // Convert back to Enum
-      var convertedBackValue = EnumConverter.ConvertFrom(openXmlValue, modelType);
+      var convertedBackValue = EnumTypeConverter.ConvertFrom(openXmlValue, modelType);
       if (convertedBackValue == null)
       {
         if (valueIndex == 0)
