@@ -131,6 +131,6 @@ public partial class ParagraphSpacing: ModelElement<DXW.SpacingBetweenLines>
     if (Interlines.Line != null)
       target.Line = Interlines.Line.IntValue.ToString();
     if (Interlines.LineRule != null)
-      target.LineRule = Interlines.LineRule.Value.CreateOpenXmlEnumValue<DXW.LineSpacingRuleValues, LineSpacingRule>();
+      target.LineRule = EnumTypeConverter.CreateOpenXmlEnumValue<DXW.LineSpacingRuleValues, LineSpacingRule>(Interlines.LineRule.Value);
   }
 }

@@ -79,5 +79,6 @@ global using DMV = DocumentModel.Vml;
 global using DMW = DocumentModel.Wordprocessing;
 global using DMWD = DocumentModel.Wordprocessing.Drawings;
 global using DMWV = DocumentModel.Wordprocessing.Vml;
+global using EnumTypeConverter = DocumentModel.OpenXml.EnumTypeConverter;
 
 

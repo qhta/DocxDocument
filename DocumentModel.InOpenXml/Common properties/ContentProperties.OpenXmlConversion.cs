@@ -12,14 +12,14 @@ public partial class ContentProperties
   /// elements.</remarks>
   public new static void RegisterOpenXmlConversion()
   {
-    OpenXmlModelConverter.ConvertFromOpenDelegates[typeof(DXEP.HeadingPairs)] = ConvertFromOpenXmlHeadingPairs;
-    OpenXmlModelConverter.ConvertFromOpenDelegates[typeof(DXEP.TitlesOfParts)] = ConvertFromOpenXmlTitlesOfParts;
-    OpenXmlModelConverter.ConvertFromOpenDelegates[typeof(DXEP.HyperlinkList)] = ConvertFromOpenXmlHyperlinkList;
-    OpenXmlModelConverter.ConvertFromOpenDelegates[typeof(DXEP.DigitalSignature)] = ConvertFromOpenXmlDigitalSignature;
-    OpenXmlModelConverter.ConvertToOpenDelegates[typeof(DXEP.HeadingPairs)] = ConvertToOpenXmlHeadingPairs;
-    OpenXmlModelConverter.ConvertToOpenDelegates[typeof(DXEP.TitlesOfParts)] = ConvertToOpenXmlTitlesOfParts;
-    OpenXmlModelConverter.ConvertToOpenDelegates[typeof(DXEP.HyperlinkList)] = ConvertToOpenXmlHyperlinkList;
-    OpenXmlModelConverter.ConvertToOpenDelegates[typeof(DXEP.DigitalSignature)] = ConvertToOpenXmlDigitalSignature;
+    OpenXmlModelConverter.ConvertFromOpenXmlDelegates[typeof(DXEP.HeadingPairs)] = ConvertFromOpenXmlHeadingPairs;
+    OpenXmlModelConverter.ConvertFromOpenXmlDelegates[typeof(DXEP.TitlesOfParts)] = ConvertFromOpenXmlTitlesOfParts;
+    OpenXmlModelConverter.ConvertFromOpenXmlDelegates[typeof(DXEP.HyperlinkList)] = ConvertFromOpenXmlHyperlinkList;
+    OpenXmlModelConverter.ConvertFromOpenXmlDelegates[typeof(DXEP.DigitalSignature)] = ConvertFromOpenXmlDigitalSignature;
+    OpenXmlModelConverter.ConvertToOpenXmlDelegates[typeof(DXEP.HeadingPairs)] = ConvertToOpenXmlHeadingPairs;
+    OpenXmlModelConverter.ConvertToOpenXmlDelegates[typeof(DXEP.TitlesOfParts)] = ConvertToOpenXmlTitlesOfParts;
+    OpenXmlModelConverter.ConvertToOpenXmlDelegates[typeof(DXEP.HyperlinkList)] = ConvertToOpenXmlHyperlinkList;
+    OpenXmlModelConverter.ConvertToOpenXmlDelegates[typeof(DXEP.DigitalSignature)] = ConvertToOpenXmlDigitalSignature;
   }
 
   /// <summary>
