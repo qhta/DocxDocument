@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents run properties for numbering symbols in a WordprocessingML document.
-/// This class extends <see cref = "BaseRunProperties"/> and provides additional properties for complex script and right-to-left text formatting, enabling advanced control over the appearance of numbering symbols in lists and outlines.
+/// This class extends <see cref = "BaseRunProperties{T}"/> and provides additional properties for complex script and right-to-left text formatting, enabling advanced control over the appearance of numbering symbols in lists and outlines.
 /// </summary>
 [OpenXmlType(typeof(DXW.NumberingSymbolRunProperties))]
 public partial class NumberingSymbolRunProperties : BaseRunProperties<DXW.NumberingSymbolRunProperties>

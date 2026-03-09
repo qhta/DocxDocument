@@ -255,7 +255,7 @@ namespace DocumentModel.InOpenXml.Test
     {
       return new DocDefaults
       {
-        DefaultParagraphProperties = DefaultParagraphPropertiesTest.CreateSampleParagraphProperties(isUpdated)
+        DefaultParagraphProperties = BaseParagraphPropertiesTest.CreateSampleParagraphProperties(isUpdated)
       };
     }
 
