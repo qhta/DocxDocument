@@ -137,12 +137,12 @@ namespace DocumentModel.InOpenXml.Test
         NoWrap = isUpdated,
         TableCellMargin = new TableCellMargin
         {
-          TopMargin = "120tw",//new TableWidth { Value = 120, Type = TableWidthUnit.Twips },
-          LeftMargin = "50%",//new TableWidth { Value = isUpdated ? 180 : 120, Type = TableWidthUnit.Twips },
-          StartMargin = "120",//new TableWidth { Value = isUpdated ? 180 : 120, Type = TableWidthUnit.Twips },
-          BottomMargin = "auto",//new TableWidth { Value = 120, Type = TableWidthUnit.Twips },
-          RightMargin = "nil",//new TableWidth { Value = isUpdated ? 180 : 120, Type = TableWidthUnit.Twips },
-          EndMargin = "nil",
+          TopMargin = "120tw",//new TableWidth { Value = 120, Type = TableWidthUnit.Absolute },
+          LeftMargin = "50%",//new TableWidth { Value = 50, Type = TableWidthUnit.Percent },
+          StartMargin = "180",//new TableWidth { Value = 180, Type = TableWidthUnit.Absolute },
+          BottomMargin = "auto",//new TableWidth { Type = TableWidthUnit.Auto },
+          RightMargin = "nil",//new TableWidth { Type = TableWidthUnit.Nil },
+          EndMargin = 240,//new TableWidth { Value = 240, Type = TableWidthUnit.Absolute },
         },
         TableCellVerticalAlignment = isUpdated ? TableVerticalAlignment.Center : TableVerticalAlignment.Top
       };
