@@ -10,7 +10,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class is used in multiple measures according to table horizontal dimension.
 /// </summary>
 [JsonConverter(typeof(TableWidthJsonConverter))]
-public sealed partial class TableWidth : UniversalMeasure
+public sealed partial class TableWidth : UniversalMeasure, IComparable<TableWidth>, IEquatable<TableWidth>
 {
   /// <summary>
   /// Defines the number of TableWidth in one inch.
@@ -64,6 +64,7 @@ public sealed partial class TableWidth : UniversalMeasure
   public TableWidth(Int64 value)
   {
     Init(value);
+    _type = TableWidthUnit.Absolute;
   }
   /// <summary>
   /// Initializes a new instance of the <see cref="TableWidth"/> from a UInt64 value.
@@ -72,6 +73,7 @@ public sealed partial class TableWidth : UniversalMeasure
   public TableWidth(UInt64 value)
   {
     Init(value);
+    _type = TableWidthUnit.Absolute;
   }
 
   /// <summary>
@@ -81,6 +83,7 @@ public sealed partial class TableWidth : UniversalMeasure
   public TableWidth(Decimal value)
   {
     Init(value);
+    _type = TableWidthUnit.Absolute;
   }
 
   /// <summary>
@@ -90,6 +93,7 @@ public sealed partial class TableWidth : UniversalMeasure
   public TableWidth(Double value)
   {
     Init(value);
+    _type = TableWidthUnit.Absolute;
   }
   #endregion
 
@@ -345,6 +349,80 @@ public sealed partial class TableWidth : UniversalMeasure
   public static implicit operator TableWidth(Double value)
   {
     return new TableWidth(value);
+  }
+
+  #endregion
+
+
+  #region IComparable and IEquatable Implementations
+
+  /// <summary>
+  /// Compares this instance to a specified <see cref="TableWidth"/> object and returns an indication of their relative values.
+  /// </summary>
+  /// <param name="other">A <see cref="TableWidth"/> object to compare.</param>
+  /// <returns>
+  /// A signed number indicating the relative values of this instance and <paramref name="other"/>.
+  /// Less than zero if this instance is less than <paramref name="other"/>;
+  /// zero if this instance equals <paramref name="other"/>;
+  /// greater than zero if this instance is greater than <paramref name="other"/>.
+  /// </returns>
+  public int CompareTo(TableWidth? other)
+  {
+    if (other == null)
+      throw new ArgumentNullException(nameof(other), "Cannot compare to null.");
+    if (other.Type != Type)
+      throw new ArgumentException($"Cannot compare TableWidth of type {Type} to TableWidth of type {other.Type}.");
+    if (Type == TableWidthUnit.Auto || Type == TableWidthUnit.Nil)
+      return 0; // Consider "auto" and "nil" as equal for comparison purposes 
+    return DecimalValue.CompareTo(other.DecimalValue);
+  }
+
+  /// <summary>
+  /// Returns the hash code for this instance.
+  /// </summary>
+  /// <returns>A 32-bit signed integer hash code.</returns>
+  public override int GetHashCode()
+  {
+    // ReSharper disable once BaseObjectGetHashCodeCallInGetHashCode
+    return base.GetHashCode();
+  }
+
+  /// <summary>
+  /// Indicates whether the current object is equal to another object of the same type.
+  /// </summary>
+  /// <param name="other">An object to compare with this object.</param>
+  /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
+  public bool Equals(TableWidth? other)
+  {
+    if (other == null)
+      return IsEmpty;
+    if (other.Type != Type)
+      throw new ArgumentException($"Cannot compare TableWidth of type {Type} to TableWidth of type {other.Type}.");
+    if (Type == TableWidthUnit.Auto || Type == TableWidthUnit.Nil)
+      return true; // Consider "auto" and "nil" as equal for comparison purposes 
+
+    return System.Math.Abs(ToInch() - other.ToInch()) < 1e-10;
+
+  }
+
+  /// <summary>
+  /// Determines whether the specified object is equal to the current TableWidth instance.
+  /// </summary>
+  /// <remarks>This method supports value comparison for TableWidth instances. It returns false if the provided
+  /// object is not a TableWidth instance.</remarks>
+  /// <param name="obj">The object to compare with the current instance. This parameter can be null.</param>
+  /// <returns>true if the specified object is a TableWidth instance equal to the current instance; otherwise, false.</returns>
+  public override bool Equals(object? obj)
+  {
+    if (obj is TableWidth tableWidth)
+      return Equals(tableWidth);
+
+    if (obj is IConvertible convertible)
+    {
+      var doubleValue = Convert.ToDouble(convertible);
+      return System.Math.Abs(DoubleValue - doubleValue) < 1e-10;
+    }
+    return false;
   }
 
   #endregion

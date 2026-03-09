@@ -64,7 +64,7 @@ public static class TestHelper
 
     foreach (var property in comparedType.GetProperties())
     {
-      if (propName=="SchemaLibrary") Debug.Assert(true);
+      if (propName=="TableCellMargin") Debug.Assert(true);
       if (property.CanWrite && property.GetIndexParameters().Length == 0 && !property.IsDefined(typeof(NotMappedAttribute), true))
       {
         propName = /*property.DeclaringType?.Name +"."+ */property.Name;
@@ -83,7 +83,8 @@ public static class TestHelper
           var equatableType = typeof(IEquatable<>).MakeGenericType(property.PropertyType);
           if (equatableType.IsInstanceOfType(obj1Value))
           {
-            result = (bool)equatableType.GetMethod("Equals")!.Invoke(obj1Value, [obj2Value])!;
+            var equalsMethod = equatableType.GetMethod("Equals", [property.PropertyType]);
+            result = (bool)equalsMethod!.Invoke(obj1Value, [obj2Value])!;
             if (result)
               continue;
           }
