@@ -15,14 +15,23 @@ public partial class Color : AbstractColor<DXW.Color>
   }
 
   /// <summary>
-  /// Initializes a new instance of the Color class using the specified hexadecimal color string.
+  /// Initializes a new instance of the Color class using the specified color string.
   /// </summary>
-  /// <remarks>The hexColor parameter can be null, in which case the Color instance will be initialized with a
+  /// <remarks>The compoundString parameter can be null, in which case the Color instance will be initialized with a
   /// null value.</remarks>
-  /// <param name = "hexColor">The hexadecimal color string to initialize the Color instance. It should be in the format 'RRGGBB'.</param>
-  public Color(string hexColor)
+  /// <param name = "colorString">The color string to initialize the Color instance.</param>
+  public Color(string colorString)
   {
-    Val = hexColor;
+    Init(colorString);
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the Color class using the specified hexadecimal RGB color value.
+  /// </summary>
+  /// <param name="hexRgb"></param>
+  public Color(UInt32 hexRgb)
+  {
+    Val = hexRgb;
   }
 
   /// <summary>
@@ -83,18 +92,51 @@ public partial class Color : AbstractColor<DXW.Color>
   public static implicit operator String(Color value) => value.ToString()!;
 
   /// <summary>
+  /// Initializes instance properties based on the provided color string,
+  /// which can include hexadecimal RGB values and theme color information.
+  /// The method parses the input string to extract and set the appropriate properties of the Color instance.
+  /// </summary>
+  /// <param name="colorString">The string that represents the color to initialize the Color instance.</param>
+  /// <exception cref="ArgumentException"></exception>
+  protected void Init(String colorString)
+  {
+    if (string.IsNullOrEmpty(colorString))
+      throw new ArgumentException("Color string cannot be null or empty.", nameof(colorString));
+
+    var strings = colorString.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+    foreach (var str in strings)
+    {
+      var s = str.Trim();
+      if (HexRgb.TryParse(s, out var hexColor))
+        Val = hexColor;
+      else if (Enum.TryParse<ThemeColors>(s, true, out var themeColor))
+        ThemeColor = themeColor;
+      if (s.StartsWith("ThemeTint:", StringComparison.OrdinalIgnoreCase) &&
+               byte.TryParse(s.Substring("ThemeTint:".Length).Trim(), out var themeTint))
+        ThemeTint = themeTint;
+      if (s.StartsWith("ThemeShade:", StringComparison.OrdinalIgnoreCase) &&
+               byte.TryParse(s.Substring("ThemeShade:".Length).Trim(), out var themeShade))
+        ThemeShade = themeShade;
+    }
+  }
+
+  /// <summary>
   /// String representation of the Color instance, which includes the hexadecimal color value and theme color information if available.
   /// </summary>
   /// <returns></returns>
   public override string? ToString()
   {
+    var strings = new List<string>();
     if (Val is not null)
-      return Val.ToString();
+      strings.Add(Val.ToString()!);
     if (ThemeColor is not null)
-      return ThemeColor.ToString() + (ThemeTint is not null ? $" Tint:{ThemeTint}" : "") +
-             (ThemeShade is not null ? $" Shade:{ThemeShade}" : "");
+      strings.Add(ThemeColor.ToString()!);
+    if (ThemeTint is not null)
+      strings.Add($"ThemeTint:{ThemeTint}");
+    if (ThemeShade is not null)
+      strings.Add($"ThemeShade:{ThemeShade}");
 
-    return base.ToString();
+    return String.Join(" ", strings);
   }
 
   /// <summary>
@@ -114,19 +156,7 @@ public partial class Color : AbstractColor<DXW.Color>
     if (string.IsNullOrEmpty(colorString))
       throw new ArgumentException("Color string cannot be null or empty.", nameof(colorString));
 
-    // Try parsing as HexRgb
-    if (HexRgb.TryParse(colorString, out var hexColor))
-    {
-      return new Color { Val = hexColor };
-    }
-
-    // Try parsing as ThemeColors
-    if (Enum.TryParse<ThemeColors>(colorString, true, out var themeColor))
-    {
-      return new Color { ThemeColor = themeColor };
-    }
-    throw new FormatException(
-      $"Invalid color string format: '{colorString}'. Expected a hexadecimal color value or a theme color name.");
+    return new Color(colorString);
   }
 
   /// <summary>
@@ -146,20 +176,15 @@ public partial class Color : AbstractColor<DXW.Color>
     if (string.IsNullOrEmpty(colorString))
       return false;
 
-    // Try parsing as HexRgb
-    if (HexRgb.TryParse(colorString, out var hexColor))
+    try
     {
-      color = new Color { Val = hexColor };
+      color = new Color(colorString);
       return true;
     }
-
-    // Try parsing as ThemeColors
-    if (Enum.TryParse<ThemeColors>(colorString, true, out var themeColor))
+    catch (FormatException)
     {
-      color = new Color { ThemeColor = themeColor };
-      return true;
+      return false;
     }
-    return false;
   }
 
   /// <summary>
