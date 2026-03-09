@@ -8,6 +8,11 @@ namespace DocumentModel.Wordprocessing;
 public partial class BaseTableCellProperties<T>: ModelElement<T>
   where T: DX.OpenXmlElement
 {
+  static BaseTableCellProperties()
+  {
+    TableMeasureOpenXmlConverter.RegisterOpenXmlConversion();
+  }
+
   /// <summary>
   /// Shading applied to the table cell, specifying background and pattern formatting.
   /// </summary>

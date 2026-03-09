@@ -8,6 +8,11 @@ namespace DocumentModel.Wordprocessing;
 public abstract partial class BaseTableRowProperties<T>: ModelElement<T>
   where T: DX.OpenXmlElement
 {
+  static BaseTableRowProperties()
+  {
+    TableMeasureOpenXmlConverter.RegisterOpenXmlConversion();
+  }
+
   /// <summary>
   /// Specifies the height of the current table row within the current table. This height is used to determine the resulting height of the table row, which can be absolute or relative.
   /// </summary>

@@ -12,6 +12,11 @@ namespace DocumentModel.Wordprocessing;
 [JsonConverter(typeof(TableMeasureJsonConverter))]
 public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMeasure>, IEquatable<TableMeasure>
 {
+  static TableMeasure()
+  {
+    TableMeasureOpenXmlConverter.RegisterOpenXmlConversion();
+  }
+
   /// <summary>
   /// Defines the number of TableWidth in one inch.
   /// </summary>
@@ -352,7 +357,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   }
 
   #endregion
-
 
   #region IComparable and IEquatable Implementations
 
