@@ -48,13 +48,13 @@ public abstract partial class BaseTableRowProperties<T>: ModelElement<T>
   /// Specifies the default table cell spacing for all cells in the parent row, determining the minimum space between cells including borders.
   /// </summary>
   [OpenXmlElement(typeof(DXW.TableCellSpacing))]
-  public TableWidth? CellSpacing
+  public TableMeasure? CellSpacing
   {
     get => _CellSpacing;
     set => UpdateField(ref _CellSpacing, value, nameof(CellSpacing));
   }
 
-  private TableWidth? _CellSpacing;
+  private TableMeasure? _CellSpacing;
 
   /// <summary>
   /// Specifies that the glyph representing the end character of the current table row shall not be displayed in the document.
@@ -84,21 +84,21 @@ public abstract partial class BaseTableRowProperties<T>: ModelElement<T>
   /// Specifies the preferred width for the total number of grid columns before this table row, used in table layout algorithms.
   /// </summary>
   [OpenXmlElement(typeof(DXW.WidthBeforeTableRow))]
-  public TableWidth? WidthBefore
+  public TableMeasure? WidthBefore
   {
     get => _WidthBefore;
     set => UpdateField(ref _WidthBefore, value, nameof(WidthBefore));
   }
 
-  private TableWidth? _WidthBefore;
+  private TableMeasure? _WidthBefore;
 
   /// <summary>
   /// Specifies the preferred width for the total number of grid columns after this table row, used in table layout algorithms.
   /// </summary>
   [OpenXmlElement(typeof(DXW.WidthAfterTableRow))]
-  public TableWidth? WidthAfter { get => _WidthAfter; set => UpdateField(ref _WidthAfter, value, nameof(WidthAfter)); }
+  public TableMeasure? WidthAfter { get => _WidthAfter; set => UpdateField(ref _WidthAfter, value, nameof(WidthAfter)); }
 
-  private TableWidth? _WidthAfter;
+  private TableMeasure? _WidthAfter;
 
   /// <summary>
   /// Specifies the HTML div information associated with the current table row, used for round-tripping HTML div formatting.

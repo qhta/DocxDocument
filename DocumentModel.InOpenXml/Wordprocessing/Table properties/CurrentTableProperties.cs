@@ -9,7 +9,7 @@ public partial class CurrentTableProperties<T> : BaseTableProperties<T> where T 
   /// <summary>
   /// Preferred table width, used in table layout algorithms to determine the optimal width of the table.
   /// </summary>
-  public TableWidth? TableWidth { get; set; }
+  public TableMeasure? TableWidth { get; set; }
   /// <summary>
   /// Table layout type, specifying the layout algorithm used for the table (e.g., fixed or auto).
   /// </summary>

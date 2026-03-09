@@ -17,7 +17,7 @@ public partial class TableIndentation : ModelElement<DXW.TableIndentation>
  /// The unit type for the table indentation width, such as points, percentage, or other supported units.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableIndentation.Type))]
- public TableWidthUnit? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ public TableMeasureType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- private TableWidthUnit? _Type;
+ private TableMeasureType? _Type;
 }

@@ -17,9 +17,9 @@ public partial class CurrentTableCellProperties<T> : BaseTableCellProperties<T> 
   /// Preferred width for this table cell, used in table layout algorithms.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.TableCellProperties.TableCellWidth))]
-  public TableWidth? TableCellWidth { get => _TableCellWidth; set => UpdateField(ref _TableCellWidth, value, nameof(TableCellWidth)); }
+  public TableMeasure? TableCellWidth { get => _TableCellWidth; set => UpdateField(ref _TableCellWidth, value, nameof(TableCellWidth)); }
 
-  private TableWidth? _TableCellWidth;
+  private TableMeasure? _TableCellWidth;
   /// <summary>
   /// Number of grid columns in the parent table's grid spanned by the current cell, allowing merged cell appearance.
   /// </summary>
