@@ -11,15 +11,16 @@ public abstract partial class BaseTableRowProperties<T>: ModelElement<T>
   static BaseTableRowProperties()
   {
     TableMeasureOpenXmlConverter.RegisterOpenXmlConversion();
+    HeightMeasureOpenXmlConverter.RegisterOpenXmlConversion();
   }
 
   /// <summary>
   /// Specifies the height of the current table row within the current table. This height is used to determine the resulting height of the table row, which can be absolute or relative.
   /// </summary>
   [OpenXmlElement(typeof(DXW.TableRowHeight))]
-  public TableRowHeight? RowHeight { get => _RowHeight; set => UpdateField(ref _RowHeight, value, nameof(RowHeight)); }
+  public HeightMeasure? RowHeight { get => _RowHeight; set => UpdateField(ref _RowHeight, value, nameof(RowHeight)); }
 
-  private TableRowHeight? _RowHeight;
+  private HeightMeasure? _RowHeight;
 
   /// <summary>
   /// Specifies whether the contents within the current cell shall be rendered on a single page. If set, all contents of a table row are rendered on the same page by moving the start of the row to a new page if necessary.
@@ -124,4 +125,12 @@ public abstract partial class BaseTableRowProperties<T>: ModelElement<T>
   }
 
   private ConditionalFormatFlags? _ConditionalFormatStyle;
+}
+
+/// <summary>
+/// Concrete class for BaseTableRowProperties.
+/// </summary>
+public class BaseTableRowProperties: BaseTableRowProperties<DXW.TableRowProperties>
+{
+
 }
