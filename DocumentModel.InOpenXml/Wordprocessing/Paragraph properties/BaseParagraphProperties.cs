@@ -325,6 +325,11 @@ public abstract partial class BaseParagraphProperties<T> : ModelElement<T> where
 
   private NumberingProperties? _NumberingProperties;
 
+}
 
-
+/// <summary>
+/// Concrete class for BaseParagraphProperties.
+/// </summary>
+public class BaseParagraphProperties : BaseParagraphProperties<DXW.ParagraphPropertiesBaseStyle>
+{
 }

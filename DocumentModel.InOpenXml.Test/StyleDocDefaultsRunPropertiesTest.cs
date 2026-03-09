@@ -255,7 +255,7 @@ namespace DocumentModel.InOpenXml.Test
     {
       return new DocDefaults
       {
-        DefaultRunProperties = DefaultRunPropertiesTest.CreateSampleRunProperties(isUpdated)
+        DefaultRunProperties = BaseRunPropertiesTest.CreateSampleRunProperties(isUpdated)
       };
     }
 

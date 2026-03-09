@@ -1,34 +1,34 @@
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for Styles DefaultRunProperties.
+  /// Comprehensive serialization test for BaseRunProperties.
   /// </summary>
-  public static class DefaultRunPropertiesTest
+  public static class BaseRunPropertiesTest
   {
     /// <summary>
-    /// Runs all Styles DefaultRunProperties tests.
+    /// Runs all BaseRUnProperties tests.
     /// </summary>
     /// <returns>True if all tests pass; otherwise, false.</returns>
     public static bool Run()
     {
-      Console.WriteLine("=== Styles DefaultRunProperties Test ===\n");
+      Console.WriteLine("=== BaseRunProperties Test ===\n");
       if (!TestXmlSerialization()) return false;
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
 
-      Console.WriteLine("All Styles DefaultRunProperties tests passed.\n");
+      Console.WriteLine("All BaseRunProperties tests passed.\n");
       return true;
     }
 
     /// <summary>
-    /// Tests XML serialization and deserialization of Styles DefaultRunProperties.
+    /// Tests XML serialization and deserialization of BaseRunProperties.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestXmlSerialization()
     {
       Console.WriteLine("--- XML Serialization ---");
       var testData = CreateSampleProperties();
-      var xmlSerializer = new XmlSerializer(typeof(DefaultRunProperties));
+      var xmlSerializer = new XmlSerializer(typeof(BaseRunProperties));
       string xmlString;
       using (var stringWriter = new StringWriter())
       using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
@@ -38,10 +38,10 @@ namespace DocumentModel.InOpenXml.Test
       }
       Console.WriteLine("Serialized XML:\n" + xmlString);
 
-      DefaultRunProperties? deserialized;
+      BaseRunProperties? deserialized;
       using (var stringReader = new StringReader(xmlString))
       {
-        deserialized = (DefaultRunProperties?)xmlSerializer.Deserialize(stringReader);
+        deserialized = (BaseRunProperties?)xmlSerializer.Deserialize(stringReader);
       }
       if (deserialized == null)
       {
@@ -58,7 +58,7 @@ namespace DocumentModel.InOpenXml.Test
     }
 
     /// <summary>
-    /// Tests JSON serialization and deserialization of Styles DefaultRunProperties.
+    /// Tests JSON serialization and deserialization of BaseRunProperties.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestJsonSerialization()
@@ -69,7 +69,7 @@ namespace DocumentModel.InOpenXml.Test
       string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
       Console.WriteLine("Serialized JSON:\n" + jsonString);
 
-      var deserialized = JsonSerializer.Deserialize<DefaultRunProperties>(jsonString, jsonOptions);
+      var deserialized = JsonSerializer.Deserialize<BaseRunProperties>(jsonString, jsonOptions);
       if (deserialized == null)
       {
         Console.WriteLine("✗ JSON Deserialization returned null");
@@ -110,10 +110,10 @@ namespace DocumentModel.InOpenXml.Test
       return true;
     }
     /// <summary>
-    /// Creates a sample Styles object with DefaultRunProperties.
+    /// Creates a sample Styles object with BaseRUnProperties.
     /// </summary>
     /// <returns>A populated Styles object.</returns>
-    static DefaultRunProperties CreateSampleProperties(bool isUpdated = false)
+    static BaseRunProperties CreateSampleProperties(bool isUpdated = false)
     {
       return CreateSampleRunProperties(isUpdated);
     }
@@ -122,10 +122,10 @@ namespace DocumentModel.InOpenXml.Test
     /// This method is used also in StyleDocDefaultsRunPropertiesTest.
     /// </summary>
     /// <param name="isUpdated">Indicates whether to create updated sample properties for update scenarios.</param>
-    /// <returns>A populated DefaultRunProperties object.</returns>
-    internal static DefaultRunProperties CreateSampleRunProperties(bool isUpdated = false)
+    /// <returns>A populated BaseRUnProperties object.</returns>
+    internal static BaseRunProperties CreateSampleRunProperties(bool isUpdated = false)
     {
-      return new DefaultRunProperties
+      return new BaseRunProperties
       {
         RunFonts = new RunFonts
         {

@@ -29,26 +29,26 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
   /// </summary>
   [OpenXmlUpdateData(nameof(UpdateDefaultRunPropertiesInOpenXml))]
   [OpenXmlLoadData(nameof(LoadDefaultRunProperties))]
-  public DefaultRunProperties? DefaultRunProperties
+  public BaseRunProperties? DefaultRunProperties
   {
     get => _defaultRunProperties;
     set => UpdateField(ref _defaultRunProperties, value, nameof(DefaultRunProperties));
   }
 
-  private DefaultRunProperties? _defaultRunProperties;
+  private BaseRunProperties? _defaultRunProperties;
 
   /// <summary>
   ///   Default paragraph properties, specifying the default paragraph-level formatting for paragraphs.
   /// </summary>
   [OpenXmlUpdateData(nameof(UpdateDefaultParagraphPropertiesInOpenXml))]
   [OpenXmlLoadData(nameof(LoadDefaultParagraphProperties))]
-  public DefaultParagraphProperties? DefaultParagraphProperties
+  public BaseParagraphProperties? DefaultParagraphProperties
   {
     get => _defaultParagraphProperties;
     set => UpdateField(ref _defaultParagraphProperties, value, nameof(DefaultParagraphProperties));
   }
 
-  private DefaultParagraphProperties? _defaultParagraphProperties;
+  private BaseParagraphProperties? _defaultParagraphProperties;
 
   /// <summary>
   /// Updates the default run properties in the specified Word document defaults to match the current default run
@@ -85,7 +85,7 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
     var runPropertiesBaseStyle = wordDocDefaults.RunPropertiesDefault?.RunPropertiesBaseStyle;
     if (runPropertiesBaseStyle != null)
     {
-      DefaultRunProperties = OpenXmlModelConverter.ConvertFrom(runPropertiesBaseStyle, typeof(DefaultRunProperties)) as DefaultRunProperties;
+      DefaultRunProperties = OpenXmlModelConverter.ConvertFrom(runPropertiesBaseStyle, typeof(BaseRunProperties)) as BaseRunProperties;
     }
   }
 
@@ -125,7 +125,7 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
     var ParagraphPropertiesBaseStyle = wordDocDefaults.ParagraphPropertiesDefault?.ParagraphPropertiesBaseStyle;
     if (ParagraphPropertiesBaseStyle != null)
     {
-      DefaultParagraphProperties = OpenXmlModelConverter.ConvertFrom(ParagraphPropertiesBaseStyle, typeof(DefaultParagraphProperties)) as DefaultParagraphProperties;
+      DefaultParagraphProperties = OpenXmlModelConverter.ConvertFrom(ParagraphPropertiesBaseStyle, typeof(BaseParagraphProperties)) as BaseParagraphProperties;
     }
   }
 
