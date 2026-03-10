@@ -5,12 +5,12 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "AbstractColor"/> and is used to specify color values for document elements such as borders, shading, and text, enabling advanced formatting and visual customization.
 /// </summary>
 [OpenXmlType(typeof(DXW.Color))]
-public partial class Color : AbstractColor<DXW.Color>
+public partial class Color: AbstractColor<DXW.Color>
 {
   /// <summary>
   /// Initializes a new instance of the Color class.
   /// </summary>
-  public Color() : base()
+  public Color(): base()
   {
   }
 
@@ -74,7 +74,6 @@ public partial class Color : AbstractColor<DXW.Color>
   [OpenXmlProperty(nameof(DXW.Color.ThemeShade))]
   public Byte? ThemeShade { get; set; }
 
-
   /// <summary>
   /// Implicitly converts a string to a <see cref="Color"/> value.
   /// </summary>
@@ -112,10 +111,10 @@ public partial class Color : AbstractColor<DXW.Color>
       else if (Enum.TryParse<ThemeColors>(s, true, out var themeColor))
         ThemeColor = themeColor;
       if (s.StartsWith("ThemeTint:", StringComparison.OrdinalIgnoreCase) &&
-               byte.TryParse(s.Substring("ThemeTint:".Length).Trim(), out var themeTint))
+          byte.TryParse(s.Substring("ThemeTint:".Length).Trim(), out var themeTint))
         ThemeTint = themeTint;
       if (s.StartsWith("ThemeShade:", StringComparison.OrdinalIgnoreCase) &&
-               byte.TryParse(s.Substring("ThemeShade:".Length).Trim(), out var themeShade))
+          byte.TryParse(s.Substring("ThemeShade:".Length).Trim(), out var themeShade))
         ThemeShade = themeShade;
     }
   }
@@ -135,7 +134,6 @@ public partial class Color : AbstractColor<DXW.Color>
       strings.Add($"ThemeTint:{ThemeTint}");
     if (ThemeShade is not null)
       strings.Add($"ThemeShade:{ThemeShade}");
-
     return String.Join(" ", strings);
   }
 
@@ -180,8 +178,7 @@ public partial class Color : AbstractColor<DXW.Color>
     {
       color = new Color(colorString);
       return true;
-    }
-    catch (FormatException)
+    } catch (FormatException)
     {
       return false;
     }
@@ -196,24 +193,20 @@ public partial class Color : AbstractColor<DXW.Color>
   /// <param name="themeTint">StringValue representing the theme tint.</param>
   /// <param name="themeShade">StringValue representing the theme shade.</param>
   /// <returns>A Color object populated with the provided OpenXml color properties. If no color properties are provided, returns null.</returns>
-  public static DMW.Color? FromOpenXml
-  (DX.StringValue? val = null, DX.EnumValue<DXW.ThemeColorValues>? themeColor = null,
-    DX.StringValue? themeTint = null, DX.StringValue? themeShade = null)
+  public static DMW.Color? FromOpenXml (DX.StringValue? val = null, 
+    DX.EnumValue<DXW.ThemeColorValues>? themeColor = null, DX.StringValue? themeTint = null, DX.StringValue? themeShade = null)
   {
     DMW.Color? color = null;
-
     if (val?.Value != null)
     {
       color ??= new DMW.Color();
       color.Val = HexRgbConverter.ConvertFrom(val);
     }
-
     if (themeColor?.Value != null)
     {
       color ??= new DMW.Color();
       color.ThemeColor = (ThemeColors)EnumTypeConverter.ConvertFrom(themeColor, typeof(ThemeColors))!;
     }
-
     if (themeTint?.Value != null)
     {
       color ??= new DMW.Color();
@@ -224,7 +217,6 @@ public partial class Color : AbstractColor<DXW.Color>
       color ??= new DMW.Color();
       color.ThemeShade = HexByteConverter.ConvertFrom(themeShade)!;
     }
-
     return color;
   }
 
@@ -236,13 +228,15 @@ public partial class Color : AbstractColor<DXW.Color>
   /// tuple.</remarks>
   /// <returns>A tuple containing the converted color value, theme color, theme tint, and theme shade. Each element may be null
   /// if the corresponding property is not set.</returns>
-  public (DX.StringValue? val, DX.EnumValue<DXW.ThemeColorValues>? themeColor, DX.StringValue? themeTint, DX.StringValue? themeShade) ToOpenXml()
+  public (DX.StringValue? val, 
+    DX.EnumValue<DXW.ThemeColorValues>? themeColor, DX.StringValue? themeTint, DX.StringValue? themeShade) ToOpenXml()
   {
     DX.StringValue? val = null;
     if (Val is not null)
       val = HexRgbConverter.ConvertTo(Val, typeof(DX.StringValue)) as DX.StringValue;
     DX.EnumValue<DXW.ThemeColorValues>? themeColor = null;
     if (ThemeColor is not null)
+
       // ReSharper disable once InvokeAsExtensionMember
       themeColor = EnumTypeConverter.CreateOpenXmlEnumValue<DXW.ThemeColorValues, ThemeColors>(ThemeColor.Value);
     DX.StringValue? themeTint = null;

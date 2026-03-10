@@ -32,16 +32,7 @@ public static class HeightMeasureOpenXmlConverter
   private static HeightMeasure? ConvertFromOpenXmlTableRowHeight(object? openXmlElement, Type modelType)
   {
     if (openXmlElement is DXW.TableRowHeight tableRowHeight)
-    {
-      if (tableRowHeight.HeightType == null || tableRowHeight.Val == null)
-        return null;
-      if (tableRowHeight.HeightType == DXW.HeightRuleValues.Auto)
-        return new HeightMeasure("auto");
-      if (tableRowHeight.HeightType == DXW.HeightRuleValues.AtLeast)
-        return new HeightMeasure("atLeast "+tableRowHeight.Val);
-      if (tableRowHeight.HeightType == DXW.HeightRuleValues.Exact)
-        return new HeightMeasure("exact "+tableRowHeight.Val);
-    }
+      return HeightMeasure.FromOpenXml(tableRowHeight.Val, tableRowHeight.HeightType);
     return null;
   }
 
@@ -59,15 +50,10 @@ public static class HeightMeasureOpenXmlConverter
   /// <returns>An Open XML TableRowHeight object if the conversion is successful; otherwise, null.</returns>
   private static object? ConvertToOpenXmlTableRowHeight(object? modelObject, Type openXmlType)
   {
-    if (openXmlType == typeof(DXW.TableRowHeight))
+    if (openXmlType == typeof(DXW.TableRowHeight) && modelObject is HeightMeasure HeightMeasure)
     {
-      if (modelObject is HeightMeasure HeightMeasure)
-        return new DXW.TableRowHeight
-        {
-          Val = (UInt32)HeightMeasure.UIntValue,
-          // ReSharper disable once InvokeAsExtensionMember
-          HeightType = EnumTypeConverter.CreateOpenXmlEnumValue<DXW.HeightRuleValues, HeightMeasureType>(HeightMeasure.Type)
-        };
+      var (height, heightType) = HeightMeasure.ToOpenXml();
+      return new DXW.TableRowHeight { Val = height, HeightType = heightType };
     }
     return null;
   }

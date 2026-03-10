@@ -472,4 +472,43 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   }
 
   #endregion
+
+  #region OpenXml conversion methods
+
+  /// <summary>
+  /// Creates a new HeightMeasure instance from an OpenXML height value and an optional height rule type.
+  /// </summary>
+  /// <remarks>Use this method to convert OpenXML height specifications into a HeightMeasure object for use
+  /// within the application. If the heightType parameter is not provided, the resulting HeightMeasure will use
+  /// HeightMeasureType.Auto.</remarks>
+  /// <param name="val">The height value as a UInt32Value, representing the height in OpenXML units.</param>
+  /// <param name="heightType">An optional height rule type that determines how the height value is interpreted. If null, the height type
+  /// defaults to Auto.</param>
+  /// <returns>A HeightMeasure instance that encapsulates the specified height value and its corresponding height type.</returns>
+  public static HeightMeasure FromOpenXml(DX.UInt32Value? val, DX.EnumValue<DXW.HeightRuleValues>? heightType)
+  {
+      HeightMeasureType? type = HeightMeasureType.Auto;
+      if (heightType != null)
+        type = OpenXml.EnumTypeConverter.ConvertFrom<HeightMeasureType, DXW.HeightRuleValues>(heightType!);
+      UInt32 nonNullVal = val?.Value ?? 0;
+    return new HeightMeasure(nonNullVal, type!.Value);
+  } 
+
+  /// <summary>
+  /// Converts the current height measure instance to its OpenXML representation.
+  /// </summary>
+  /// <remarks>Use this method to obtain the OpenXML-compatible values for table or row height settings when
+  /// working with the OpenXML SDK. The returned values can be used directly with OpenXML elements that require height
+  /// specifications.</remarks>
+  /// <returns>A tuple containing the OpenXML value as a UInt32Value and an optional height type as an EnumValue of
+  /// HeightRuleValues. The height type may be null if not applicable.</returns>
+  public (DX.UInt32Value val, DX.EnumValue<DXW.HeightRuleValues>? heightType) ToOpenXml()
+  {
+    var val = (UInt32)UIntValue;
+    DXW.HeightRuleValues heightType =  OpenXml.EnumTypeConverter.ConvertTo<DXW.HeightRuleValues, HeightMeasureType>(Type);
+    return (val, heightType);
+  }
+
+
+  #endregion
 }

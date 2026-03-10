@@ -24,7 +24,7 @@ public enum TableMeasureType
   ///   Width in Fiftieths of a Percent.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Pct))]
-  Percent,
+  Relative,
 
   /// <summary>
   ///   Width in Twentieths of a Point.

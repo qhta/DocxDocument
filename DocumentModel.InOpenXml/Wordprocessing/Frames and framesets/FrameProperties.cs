@@ -32,27 +32,6 @@ public partial class FrameProperties: ModelElement<DXW.FrameProperties>
 
   private Twips? _Width;
 
-  ///// <summary>
-  /////   Height of the frame, specified as an unsigned integer value.
-  ///// </summary>
-  //[OpenXmlProperty(nameof(DXW.FrameProperties.Height))]
-  //public UInt32? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
-
-  //private UInt32? _Height;
-
-  ///// <summary>
-  /////   Height rule for the frame, specifying how the frame height is determined.
-  ///// </summary>
-  //[OpenXmlProperty(nameof(DXW.FrameProperties.HeightType))]
-  //public HeightMeasureType? HeightType
-  //{
-  //  get => _HeightType;
-  //  set => UpdateField(ref _HeightType, value, nameof(HeightType));
-  //}
-
-  //private HeightMeasureType? _HeightType;
-
-
   /// <summary>
   ///   Height of the frame, specified as an unsigned integer value.
   /// </summary>
@@ -70,27 +49,8 @@ public partial class FrameProperties: ModelElement<DXW.FrameProperties>
   /// <param name="element">The OpenXml element to update. Must be of type FrameProperties for height settings to be applied.</param>
   public void UpdateOpenXmlHeight(DX.OpenXmlElement element)
   {
-    if (element is DXW.FrameProperties frameProperties)
-    {
-      if (Height != null)
-      {
-        frameProperties.Height = (UInt32)Height.UIntValue;
-        // Set HeightType based on the type of HeightMeasure
-        if (Height.Type == HeightMeasureType.Auto)
-          frameProperties.HeightType = DXW.HeightRuleValues.Auto;
-        else if (Height.Type == HeightMeasureType.AtLeast)
-          frameProperties.HeightType = DXW.HeightRuleValues.AtLeast;
-        else if (Height.Type == HeightMeasureType.Exact)
-          frameProperties.HeightType = DXW.HeightRuleValues.Exact;
-        else
-          frameProperties.HeightType = null; // No specific height type
-      }
-      else
-      {
-        frameProperties.Height = null;
-        frameProperties.HeightType = DXW.HeightRuleValues.Auto;
-      }
-    }
+    if (element is DXW.FrameProperties frameProperties && Height!=null) 
+      (frameProperties.Height, frameProperties.HeightType) = Height.ToOpenXml();
   }
 
   /// <summary>
@@ -101,20 +61,8 @@ public partial class FrameProperties: ModelElement<DXW.FrameProperties>
   /// <param name="element">The OpenXML element containing frame properties, which may include height information.</param>
   public void LoadOpenXmlHeight(DX.OpenXmlElement element)
   {
-    if (element is DXW.FrameProperties frameProperties)
-    {
-      if (frameProperties.Height != null)
-      {
-        HeightMeasureType? type = HeightMeasureType.Auto;
-        if (frameProperties.HeightType != null)
-          type = OpenXml.EnumTypeConverter.ConvertFrom<HeightMeasureType, DXW.HeightRuleValues>(frameProperties.HeightType!);
-        Height = new HeightMeasure((UInt32)frameProperties.Height.Value, type!.Value);
-      }
-      else
-      {
-        Height = null;
-      }
-    }
+    if (element is DXW.FrameProperties frameProperties && frameProperties.Height != null) 
+      Height = HeightMeasure.FromOpenXml(frameProperties.Height, frameProperties.HeightType);
   }
 
   /// <summary>
