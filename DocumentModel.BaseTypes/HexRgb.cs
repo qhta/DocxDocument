@@ -165,7 +165,7 @@ public readonly partial struct HexRgb : IEquatable<HexRgb>, IConvertible
   /// <param name="str">The string containing the hexadecimal RGB color to parse.
   /// The string must be in a valid hex color format, such as "RRGGBB".</param>
   /// <returns>A <see cref="HexRgb"/> object representing the parsed RGB color.</returns>
-  public static HexRgb Parse (string str)
+  public static HexRgb Parse(string str)
   {
     if (TryParse(str, out var rgb))
     {
@@ -187,16 +187,13 @@ public readonly partial struct HexRgb : IEquatable<HexRgb>, IConvertible
   /// <returns>true if the string was successfully parsed; otherwise, false.</returns>
   public static bool TryParse(string str, out HexRgb result)
   {
-    try
+    if (UInt32.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var value))
     {
-      result = new HexRgb(str);
+      result = new HexRgb(value);
       return true;
     }
-    catch
-    {
-      result = default;
-      return false;
-    }
+    result = default;
+    return false;
   }
 
   /// <summary>

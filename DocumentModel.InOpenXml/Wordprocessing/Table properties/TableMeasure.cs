@@ -150,7 +150,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
     }
     else if (str.EndsWith("%"))
     {
-      _type = TableMeasureType.Percent;
+      _type = TableMeasureType.Relative;
       _value = Decimal.Parse(str.TrimEnd('%').Replace(',', '.'), CultureInfo.InvariantCulture) * 50; // Convert percentage to fiftieths of percent
     }
     else
@@ -174,7 +174,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
       return "auto";
     if (Type == TableMeasureType.Nil)
       return "nil";
-    if (Type == TableMeasureType.Percent)
+    if (Type == TableMeasureType.Relative)
       return (DecimalValue / 50).ToString(CultureInfo.InvariantCulture)+"%";
     return base.ToString();
   }
@@ -194,7 +194,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
       return "auto";
     if (Type == TableMeasureType.Nil)
       return "nil";
-    if (Type == TableMeasureType.Percent)
+    if (Type == TableMeasureType.Relative)
       return (DecimalValue / 50).ToString(formatProvider) + "%";
     return base.ToString();
   }
@@ -217,7 +217,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
       return "auto";
     if (Type == TableMeasureType.Nil)
       return "nil";
-    if (Type == TableMeasureType.Percent)
+    if (Type == TableMeasureType.Relative)
       return (DecimalValue / 50).ToString(format, formatProvider) + "%";
     return base.ToString();
   }
@@ -236,7 +236,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
       return "auto";
     if (Type == TableMeasureType.Nil)
       return "nil";
-    if (Type == TableMeasureType.Percent)
+    if (Type == TableMeasureType.Relative)
       return (DecimalValue / 50).ToString(format, CultureInfo.InvariantCulture) + "%";
     return base.ToString();
   }
@@ -454,5 +454,48 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
     return false;
   }
 
+  #endregion
+
+  #region OpenXml conversion methods
+  /// <summary>
+  /// Converts an OpenXML table width value and its unit type to a corresponding TableMeasure object.
+  /// </summary>
+  /// <remarks>If the width type is Nil, the method returns a TableMeasure with the value "nil". If the width
+  /// type is Auto, it returns a TableMeasure with the value "auto". For percentage widths, the value is suffixed with
+  /// "%". For Dxa units, the value is used as-is.</remarks>
+  /// <param name="val">The string value representing the table width, which may be expressed in different units depending on the
+  /// specified width type.</param>
+  /// <param name="widthType">The unit type that determines how the width value is interpreted. Supported types include Nil, Auto, Pct
+  /// (percentage), and Dxa (twentieths of a point).</param>
+  /// <returns>A TableMeasure object representing the converted width, or null if the width type is null or not recognized.</returns>
+  public static TableMeasure? FromOpenXml(DX.StringValue? val, DX.EnumValue<DXW.TableWidthUnitValues>? widthType)
+  {
+    if (widthType == null)
+      return null;
+    if (widthType == DXW.TableWidthUnitValues.Nil)
+      return new TableMeasure("nil");
+    if (widthType == DXW.TableWidthUnitValues.Auto)
+      return new TableMeasure("auto");
+    var intVal = val?.Value != null ? Int64.Parse(val.Value) : 0;
+    if (widthType == DXW.TableWidthUnitValues.Pct)
+      return new TableMeasure(intVal, TableMeasureType.Relative);
+    if (widthType == DXW.TableWidthUnitValues.Dxa)
+      return new TableMeasure(intVal, TableMeasureType.Absolute);
+    return null;
+  }
+
+  /// <summary>
+  /// Converts the current table measurement to its OpenXML representation.
+  /// </summary>
+  /// <remarks>The width type is determined by converting the current measurement type to the corresponding
+  /// OpenXML width unit value. If the conversion is not possible, the width type will be null.</remarks>
+  /// <returns>A tuple containing the string value of the measurement and an optional width type as an OpenXML table width unit
+  /// value.</returns>
+  public (DX.StringValue val, DX.EnumValue<DXW.TableWidthUnitValues>? widthType) ToOpenXml()
+  {
+    var val = IntValue.ToString();
+    DXW.TableWidthUnitValues widthType = EnumTypeConverter.ConvertTo<DXW.TableWidthUnitValues, TableMeasureType>(Type);
+    return (val, widthType);
+  }
   #endregion
 }
