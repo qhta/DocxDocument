@@ -74,7 +74,7 @@ public static partial class EnumTypeConverter
   /// <param name="value">The model enum value.</param>
   /// <returns>A new instance of the OpenXml element with the "Val" property set.</returns>
   public static OpenXmlElementType ConvertTo<OpenXmlElementType, OpenXmlEnumType, ModelEnumType>
-    (this ModelEnumType value) where OpenXmlElementType : DX.OpenXmlLeafElement, new()
+    (ModelEnumType value) where OpenXmlElementType : DX.OpenXmlLeafElement, new()
     where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
     where ModelEnumType : struct, Enum
   {
@@ -90,7 +90,7 @@ public static partial class EnumTypeConverter
   /// <typeparam name="ModelEnumType">The model enum type.</typeparam>
   /// <param name="value">The model enum value.</param>
   /// <returns>The converted OpenXml enum value.</returns>
-  public static OpenXmlEnumType ConvertTo<OpenXmlEnumType, ModelEnumType>(this ModelEnumType value) 
+  public static OpenXmlEnumType ConvertTo<OpenXmlEnumType, ModelEnumType>(ModelEnumType value) 
     where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
     where ModelEnumType : struct, Enum
   {

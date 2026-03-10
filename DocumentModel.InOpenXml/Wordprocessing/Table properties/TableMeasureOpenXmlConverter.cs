@@ -32,44 +32,24 @@ public static class TableMeasureOpenXmlConverter
   private static TableMeasure? ConvertFromOpenXmlTableWidth(object? openXmlElement, Type modelType)
   {
     if (openXmlElement is DXW.TableWidth tableWidth)
-    {
-      if (tableWidth.Type == null || tableWidth.Width == null)
-        return null;
-      if (tableWidth.Type == DXW.TableWidthUnitValues.Nil)
-        return new TableMeasure("nil");
-      if (tableWidth.Type == DXW.TableWidthUnitValues.Auto)
-        return new TableMeasure("auto");
-      if (tableWidth.Type == DXW.TableWidthUnitValues.Pct)
-        return new TableMeasure(tableWidth.Width.ToString()!+"%");
-      if (tableWidth.Type == DXW.TableWidthUnitValues.Dxa)
-        return new TableMeasure(tableWidth.Width.ToString()!);
-    }
+      return TableMeasure.FromOpenXml(tableWidth.Width, tableWidth.Type);
     return null;
   }
 
-
   /// <summary>
-  /// Converts a model object representing table width to an Open XML TableWidth  object if the specified type
-  /// matches.
+  /// Converts a table measurement model object to an OpenXml TableWidth object if the specified type matches.
   /// </summary>
-  /// <remarks>This method is intended for internal use when mapping model objects to Open XML types. If the
-  /// provided model object is not compatible with the specified Open XML type, the method returns null without throwing
-  /// an exception.</remarks>
-  /// <param name="modelObject">The model object to convert. Must be an instance of DocumentModel.HeadingPairs to perform the conversion;
-  /// otherwise, the method returns null.</param>
-  /// <param name="openXmlType">The target Open XML type. Conversion is performed only if this is typeof(DXW.TableWidth).</param>
-  /// <returns>An Open XML TableWidth object if the conversion is successful; otherwise, null.</returns>
+  /// <param name="modelObject">The model object representing the table measurement to convert. This should be an instance of TableMeasure or
+  /// null.</param>
+  /// <param name="openXmlType">The target OpenXml type for conversion. Must be typeof(DXW.TableWidth) to perform the conversion.</param>
+  /// <returns>A new DXW.TableWidth object representing the converted table measurement if the parameters are valid; otherwise,
+  /// null.</returns>
   private static object? ConvertToOpenXmlTableWidth(object? modelObject, Type openXmlType)
   {
-    if (openXmlType == typeof(DXW.TableWidth))
+    if (openXmlType == typeof(DXW.TableWidth) && modelObject is TableMeasure tableMeasure)
     {
-      if (modelObject is TableMeasure tableMeasure)
-        return new DXW.TableWidth
-        {
-          Width = tableMeasure.IntValue.ToString(),
-          // ReSharper disable once InvokeAsExtensionMember
-          Type = EnumTypeConverter.CreateOpenXmlEnumValue<DXW.TableWidthUnitValues, TableMeasureType>(tableMeasure.Type)
-        };
+      var (width, widthType) = tableMeasure.ToOpenXml();
+      return new DXW.TableWidth { Width = width, Type = widthType };
     }
     return null;
   }

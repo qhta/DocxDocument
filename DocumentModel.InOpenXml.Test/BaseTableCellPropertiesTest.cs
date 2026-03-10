@@ -138,7 +138,7 @@ namespace DocumentModel.InOpenXml.Test
         TableCellMargin = new TableCellMargin
         {
           TopMargin = new TableMeasure { Value = 120, Type = TableMeasureType.Absolute },
-          LeftMargin = new TableMeasure { Value = 50, Type = TableMeasureType.Percent },
+          LeftMargin = new TableMeasure { Value = 50, Type = TableMeasureType.Relative },
           StartMargin = new TableMeasure { Value = 180, Type = TableMeasureType.Absolute },
           BottomMargin = new TableMeasure { Type = TableMeasureType.Auto },
           RightMargin = new TableMeasure { Type = TableMeasureType.Nil },
