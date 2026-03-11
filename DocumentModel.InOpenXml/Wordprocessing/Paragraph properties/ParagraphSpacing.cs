@@ -1,136 +1,60 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Represents the spacing settings between lines and paragraphs in a WordprocessingML document.
-/// This class provides properties for configuring spacing above and below paragraphs, automatic spacing, line spacing, and line spacing rules, enabling advanced control over paragraph layout and readability.
+/// Represents line spacing settings for a paragraph in a WordprocessingML document.
+/// This class provides properties for specifying spacing in twentieths of a point, line units, and automatic spacing, enabling advanced control over paragraph layout and readability.
 /// </summary>
-public partial class ParagraphSpacing: ModelElement<DXW.SpacingBetweenLines>
+public partial class ParagraphSpacing : ModelElement //<DXW.SpacingBeforeOrAfter>
 {
   /// <summary>
-  /// Spacing above the paragraph.
+  /// Spacing specified in twentieths of a point.
   /// </summary>
-  [OpenXmlLoadData(nameof(LoadBefore))]
-  [OpenXmlUpdateData(nameof(UpdateBefore))]
-  public SpacingBefore? Before { get => _Before; set => UpdateField(ref _Before, value, nameof(Before)); }
+  public Twips? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
-  private SpacingBefore? _Before;
+  private Twips? _Val;
 
   /// <summary>
-  /// Spacing below the paragraph.
+  /// Spacing between lines, specified in line units.
   /// </summary>
-  [OpenXmlLoadData(nameof(LoadAfter))]
-  [OpenXmlUpdateData(nameof(UpdateAfter))]
-  public SpacingAfter? After { get => _After; set => UpdateField(ref _After, value, nameof(After)); }
+  public Int32? Lines { get => _Lines; set => UpdateField(ref _Lines, value, nameof(Lines)); }
 
-  private SpacingAfter? _After;
+  private Int32? _Lines;
 
   /// <summary>
-  /// Spacing between lines within the paragraph.
+  /// Indicates whether spacing is determined automatically.
   /// </summary>
-  [OpenXmlLoadData(nameof(LoadInterlines))]
-  [OpenXmlUpdateData(nameof(UpdateInterlines))]
-  public SpacingInterlines? Interlines
+  public bool? AutoSpacing { get => _AutoSpacing; set => UpdateField(ref _AutoSpacing, value, nameof(AutoSpacing)); }
+
+  private bool? _AutoSpacing;
+
+  /// <summary>
+  /// Converts spacing settings from the provided source values,
+  /// allowing for the creation of a SpacingBeforeOrAfter instance based on existing document properties.
+  /// </summary>
+  /// <param name="sourceVal">The source value for the spacing before the paragraph.</param>
+  /// <param name="sourceLines">The source value for the line spacing before the paragraph.</param>
+  /// <param name="sourceAutoSpacing">The source value for the automatic spacing before the paragraph.</param>
+  /// <returns>A new instance of SpacingBeforeOrAfter with the specified settings.</returns>
+  public void FromOpenXml
+    (DX.StringValue? sourceVal, DX.Int32Value? sourceLines, DX.OnOffValue? sourceAutoSpacing)
   {
-    get => _Interlines;
-    set => UpdateField(ref _Interlines, value, nameof(Interlines));
-  }
-
-  private SpacingInterlines? _Interlines;
-
-  /// <summary>
-  /// Loads the spacing <see cref="Before"/> property from the provided source.
-  /// </summary>
-  /// <param name="source">The source configuration containing spacing values to apply.
-  /// If <see langword="null"/>, no updates are performed.</param>
-  public void LoadBefore(DXW.SpacingBetweenLines? source)
-  {
-    if (source == null) return;
-    if (source.Before == null && source.BeforeLines == null && source.BeforeAutoSpacing == null) return;
-    Before = new SpacingBefore();
-    Before.Init(source.Before, source.BeforeLines, source.BeforeAutoSpacing);
+    Val = (sourceVal?.Value) != null ? new Twips(sourceVal.Value) : null;
+    Lines = sourceLines?.Value;
+    AutoSpacing = sourceAutoSpacing?.Value;
   }
 
   /// <summary>
-  /// Updates the spacing settings that precede the current paragraph based on the specified source configuration.
+  /// Converts the current instance to a tuple of Open XML value types representing the value, line count, and auto
+  /// spacing settings.
   /// </summary>
-  /// <remarks>If the preceding spacing settings have not been initialized, this method creates them before
-  /// applying the values from the source configuration. The method updates the spacing value, line count, and automatic
-  /// spacing properties according to the provided source.</remarks>
-  /// <param name="target">The source configuration containing spacing values to apply. If <see langword="null"/>, no updates are performed.</param>
-  public void UpdateBefore(DXW.SpacingBetweenLines? target)
+  /// <remarks>This method is typically used to facilitate interoperability with Open XML SDK types when
+  /// serializing or manipulating document elements.</remarks>
+  /// <returns>A tuple containing the value as a StringValue, the line count as an Int32Value, and the auto spacing setting as an
+  /// OnOffValue. Each element is null if the corresponding property is not set.</returns>
+  public (DX.StringValue? sourceVal, DX.Int32Value? sourceLines, DX.OnOffValue? sourceAutoSpacing) ToOpenXml()
   {
-    if (target == null || Before == null) return;
-
-    if (Before.Val != null)
-      target.Before = Before.Val.IntValue.ToString();
-    if (Before.Lines != null)
-      target.BeforeLines = Before.Lines.Value;
-    if (Before.AutoSpacing != null)
-      target.BeforeAutoSpacing = Before.AutoSpacing.Value;
-  }
-
-  /// <summary>
-  /// Loads the spacing <see cref="After"/> property from the provided source.
-  /// </summary>
-  /// <param name="source">The source configuration containing spacing values to apply.
-  /// If <see langword="null"/>, no updates are performed.</param>
-  public void LoadAfter(DXW.SpacingBetweenLines? source)
-  {
-    if (source == null) return;
-    if (source.After == null && source.AfterLines == null && source.AfterAutoSpacing == null) return;
-    After = new SpacingAfter();
-    After.Init(source.After, source.AfterLines, source.AfterAutoSpacing);
-  }
-
-  /// <summary>
-  /// Updates the spacing settings that precede the current paragraph based on the specified source configuration.
-  /// </summary>
-  /// <remarks>If the preceding spacing settings have not been initialized, this method creates them before
-  /// applying the values from the source configuration. The method updates the spacing value, line count, and automatic
-  /// spacing properties according to the provided source.</remarks>
-  /// <param name="target">The source configuration containing spacing values to apply. If <see langword="null"/>, no updates are performed.</param>
-  public void UpdateAfter(DXW.SpacingBetweenLines? target)
-  {
-    if (target == null || After == null) return;
-
-    if (After.Val != null)
-      target.After = After.Val.IntValue.ToString();
-    if (After.Lines != null)
-      target.AfterLines = After.Lines.Value;
-    if (After.AutoSpacing != null)
-      target.AfterAutoSpacing = After.AutoSpacing.Value;
-  }
-
-  /// <summary>
-  /// Loads interline spacing settings from the specified source object.
-  /// </summary>
-  /// <remarks>This method updates the Interlines property using values from the provided source. If the source
-  /// is null, the method does not modify any settings.</remarks>
-  /// <param name="source">The source object containing interline spacing information to apply. If null, no changes are made.</param>
-  public void LoadInterlines(DXW.SpacingBetweenLines? source)
-  {
-    if (source == null) return;
-    if (source.Line == null && source.LineRule == null) return;
-    Interlines = new SpacingInterlines
-    {
-      Line = (source.Line?.Value) != null ? new Twips(source.Line.Value) : null,
-      LineRule = source.LineRule?.GetEnumValue<DXW.LineSpacingRuleValues, LineSpacingRule>()
-    };
-  }
-
-  /// <summary>
-  /// Updates the specified spacing between lines object with the current interline settings, if available.
-  /// </summary>
-  /// <remarks>This method does not modify the target if either the target or the current interline settings are
-  /// null.</remarks>
-  /// <param name="target">The spacing between lines object to update. Must not be null.</param>
-  public void UpdateInterlines(DXW.SpacingBetweenLines? target)
-  {
-    if (target == null || Interlines == null) return;
-
-    if (Interlines.Line != null)
-      target.Line = Interlines.Line.IntValue.ToString();
-    if (Interlines.LineRule != null)
-      target.LineRule = EnumTypeConverter.CreateOpenXmlEnumValue<DXW.LineSpacingRuleValues, LineSpacingRule>(Interlines.LineRule.Value);
+    return (Val != null ? new DX.StringValue(Val.ToString()) : null,
+            Lines != null ? new DX.Int32Value(Lines.Value) : null,
+            AutoSpacing != null ? new DX.OnOffValue(AutoSpacing.Value) : null);
   }
 }

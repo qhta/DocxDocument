@@ -9,13 +9,13 @@ public interface AbstractColor
   /// <summary>
   ///   Gets RGB value of the color.
   /// </summary>
-  public RGB? GetValue();
+  public HexRgb? GetValue();
 
   /// <summary>
   /// Sets RGB value of the color.
   /// </summary>
   /// <param name="value">RGB hexadecimal value</param>
-  public void FromRGB(RGB value);
+  public void FromRGB(HexRgb value);
 
   /// <summary>
   /// Sets color from string value;

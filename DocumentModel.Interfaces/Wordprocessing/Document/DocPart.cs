@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
   /// Represents a glossary document entry (DocPart) in a WordprocessingML document.
   /// This interface extends <see cref="DMPack.OpenXmlPart"/> and provides properties for entry properties and content, enabling advanced management, organization, and reuse of document parts such as building blocks, autotext, and other glossary entries.
   /// </summary>
-  public interface DocPart : DMPack.OpenXmlPart, CollectionItem
+  public interface DocPart : CollectionItem
   {
     
     /// <summary>

@@ -33,7 +33,7 @@ public interface TextBodyProperties
   /// <summary>
   /// Wrapping type for text within the text body.
   /// </summary>
-  public DMW.TextWrappingKind? Wrap { get; set; }
+  public DMW.TextWrapping? Wrap { get; set; }
 
   /// <summary>
   /// Left inset distance between the text and the text box edge.
