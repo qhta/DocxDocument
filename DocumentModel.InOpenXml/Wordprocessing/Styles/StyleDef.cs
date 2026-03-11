@@ -1,3 +1,7 @@
+using Qhta.OpenXmlTools;
+
+using BooleanConverter = DocumentModel.OpenXml.BooleanConverter;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -5,7 +9,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for style type, identifiers, inheritance, UI settings, revision tracking, and formatting options, enabling advanced style management and customization for document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.Style))]
-public partial class StyleDef: ModelElement<DXW.Style>
+public partial class StyleDef : ModelElement<DXW.Style>
 {
   /// <summary>
   /// Style type, such as paragraph, character, table, or numbering.
@@ -88,39 +92,55 @@ public partial class StyleDef: ModelElement<DXW.Style>
 
   private Boolean _IsAutoRedefined;
 
-  ///// <summary>
-  ///// Indicates whether the style is hidden from the user class.
-  ///// </summary>
-  //[OpenXmlProperty(nameof(DXW.Style.))]
-  //public Boolean IsHidden { get => _IsHidden; set => UpdateField(ref _IsHidden, value, nameof(IsHidden)); }
+  /// <summary>
+  /// Indicates whether the style is hidden in the user interface, preventing it from being displayed in style galleries or lists.
+  /// </summary>
+  [OpenXmlLoadData(nameof(LoadStyleHide))]
+  [OpenXmlUpdateData(nameof(UpdateStyleHide))]
+  public StyleHide IsHidden { get => _IsHidden; set => UpdateField(ref _IsHidden, value, nameof(IsHidden)); }
 
-  //private Boolean _IsHidden;
+  private StyleHide _IsHidden;
 
   /// <summary>
-  /// Indicates whether the style is hidden from the main user class.
+  /// Loads the style visibility flags from the specified OpenXmlElement and updates the hidden state accordingly.
   /// </summary>
-  [OpenXmlProperty(nameof(DXW.Style.SemiHidden))]
-  [DefaultValue(false)]
-  public Boolean IsSemiHidden
+  /// <remarks>If the provided element is not a DXW.Style, this method does not modify the hidden state. The
+  /// method interprets the StyleHidden, SemiHidden, and UnhideWhenUsed properties to determine the style's visibility
+  /// flags.</remarks>
+  /// <param name="element">The OpenXmlElement representing a style from which to read visibility properties. Must be a DXW.Style element to
+  /// have an effect.</param>
+  public void LoadStyleHide(DX.OpenXmlElement element)
   {
-    get => _IsSemiHidden;
-    set => UpdateField(ref _IsSemiHidden, value, nameof(IsSemiHidden));
+    if (element is DXW.Style styleElement)
+    {
+      StyleHide isHidden = 0;
+      if (styleElement.StyleHidden?.GetValueOrDefault(false)==true)
+        isHidden |= StyleHide.Hidden;     
+      if (styleElement.SemiHidden?.GetValueOrDefault(false)==true)
+        isHidden |= StyleHide.SemiHidden;
+      if (styleElement.UnhideWhenUsed?.GetValueOrDefault(false)==true)
+        isHidden |= StyleHide.UnhiddenWhenUsed;
+      IsHidden = isHidden;
+    }
   }
-
-  private Boolean _IsSemiHidden;
 
   /// <summary>
-  /// Indicates whether the semi-hidden property is removed when the style is used.
+  /// Updates the visibility-related style properties of the specified OpenXml style element based on the current style
+  /// hide settings.  
   /// </summary>
-  [OpenXmlProperty(nameof(DXW.Style.UnhideWhenUsed))]
-  [DefaultValue(false)]
-  public Boolean IsUnhiddenWhenUsed
+  /// <remarks>This method modifies the StyleHidden, SemiHidden, and UnhideWhenUsed properties of the style
+  /// element to reflect the current hide settings. No changes are made if the provided element is not a style
+  /// element.</remarks>
+  /// <param name="element">The OpenXmlElement to update. Must be a style element to apply visibility changes; otherwise, no action is taken.</param>
+  public void UpdateStyleHide(DX.OpenXmlElement element)
   {
-    get => _IsUnhiddenWhenUsed;
-    set => UpdateField(ref _IsUnhiddenWhenUsed, value, nameof(IsUnhiddenWhenUsed));
+    if (element is DXW.Style styleElement)
+    {
+      styleElement.StyleHidden = BooleanConverter.ConvertTo<DXW.StyleHidden>((IsHidden & StyleHide.Hidden) != 0);
+      styleElement.SemiHidden = BooleanConverter.ConvertTo<DXW.SemiHidden>((IsHidden & StyleHide.SemiHidden) != 0);
+      styleElement.UnhideWhenUsed = BooleanConverter.ConvertTo<DXW.UnhideWhenUsed>((IsHidden & StyleHide.UnhiddenWhenUsed) != 0);
+    }
   }
-
-  private Boolean _IsUnhiddenWhenUsed;
 
   /// <summary>
   /// Optional user interface sorting order, specifying the priority of the style in the UI.

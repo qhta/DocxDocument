@@ -291,6 +291,7 @@
         BasedOn = "Normal",
         NextParagraphStyle = "Normal",
         UIPriority = 22,
+        IsHidden = StyleHide.Hidden | StyleHide.UnhiddenWhenUsed ,
       });
 
       return Styles;
