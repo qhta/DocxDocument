@@ -501,6 +501,26 @@
             Simple wrapper class for testing Deserialization scenarios with strings.
             </summary>
         </member>
+        <member name="T:DocumentModel.BaseTypes.Test.OnOffTest">
+            <summary>
+            Test suite for OnOff type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.OnOffTest.Run">
+            <summary>
+            Runs all OnOff serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.OnOffTestData">
+            <summary>
+            Test data class containing various OnOff properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.OnOffWrapper">
+            <summary>
+            Simple wrapper class for testing deserialization scenarios.
+            </summary>
+        </member>
         <member name="T:DocumentModel.BaseTypes.Test.PercentTest">
             <summary>
             Test suite for Percent type serialization in both XML and JSON formats.

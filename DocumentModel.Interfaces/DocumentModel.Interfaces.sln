@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModel.Interfaces", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModel.BaseTypes", "..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj", "{6771423F-1D4D-48F7-BCC1-11578168C52F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModel.Interop", "..\DocumentModel.Interop\DocumentModel.Interop.csproj", "{961F094F-3644-4E36-801C-09AB20416940}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6771423F-1D4D-48F7-BCC1-11578168C52F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6771423F-1D4D-48F7-BCC1-11578168C52F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6771423F-1D4D-48F7-BCC1-11578168C52F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{961F094F-3644-4E36-801C-09AB20416940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{961F094F-3644-4E36-801C-09AB20416940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{961F094F-3644-4E36-801C-09AB20416940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{961F094F-3644-4E36-801C-09AB20416940}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

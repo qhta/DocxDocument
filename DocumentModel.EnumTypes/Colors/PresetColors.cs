@@ -1,959 +1,859 @@
 namespace DocumentModel;
+
 /// <summary>
 ///   Preset Color Value
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXD.PresetColorValues))]
-public enum PresetColors
+public enum PresetColors: uint
 {
   /// <summary>
-  ///   Alice Blue Preset Color.
+  /// Alice Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.AliceBlue))]
-  AliceBlue,
+  AliceBlue = 0x00F0F8FF,
+
   /// <summary>
-  ///   Antique White Preset Color.
+  /// Antique White Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.AntiqueWhite))]
-  AntiqueWhite,
+  AntiqueWhite = 0x00FAEBD7,
+
   /// <summary>
-  ///   Aqua Preset Color.
+  /// Aqua Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Aqua))]
-  Aqua,
+  Aqua = 0x0000FFFF,
+
   /// <summary>
-  ///   Aquamarine Preset Color.
+  /// Aquamarine Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Aquamarine))]
-  Aquamarine,
+  Aquamarine = 0x007FFFD4,
+
   /// <summary>
-  ///   Azure Preset Color.
+  /// Azure Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Azure))]
-  Azure,
+  Azure = 0x00F0FFFF,
+
   /// <summary>
-  ///   Beige Preset Color.
+  /// Beige Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Beige))]
-  Beige,
+  Beige = 0x00F5F5DC,
+
   /// <summary>
-  ///   Bisque Preset Color.
+  /// Bisque Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Bisque))]
-  Bisque,
+  Bisque = 0x00FFE4C4,
+
   /// <summary>
-  ///   Black Preset Color.
+  /// Black Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Black))]
-  Black,
+  Black = 0x00000000,
+
   /// <summary>
-  ///   Blanched Almond Preset Color.
+  /// Blanched Almond Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.BlanchedAlmond))]
-  BlanchedAlmond,
+  BlanchedAlmond = 0x00FFEBCD,
+
   /// <summary>
-  ///   Blue Preset Color.
+  /// Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Blue))]
-  Blue,
+  Blue = 0x000000FF,
+
   /// <summary>
-  ///   Blue Violet Preset Color.
+  /// Blue Violet Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.BlueViolet))]
-  BlueViolet,
+  BlueViolet = 0x008A2BE2,
+
   /// <summary>
-  ///   Brown Preset Color.
+  /// Brown Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Brown))]
-  Brown,
+  Brown = 0x00A52A2A,
+
   /// <summary>
-  ///   Burly Wood Preset Color.
+  /// Burly Wood Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.BurlyWood))]
-  BurlyWood,
+  BurlyWood = 0x00DEB887,
+
   /// <summary>
-  ///   Cadet Blue Preset Color.
+  /// Cadet Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.CadetBlue))]
-  CadetBlue,
+  CadetBlue = 0x005F9EA0,
+
   /// <summary>
-  ///   Chartreuse Preset Color.
+  /// Chartreuse Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Chartreuse))]
-  Chartreuse,
+  Chartreuse = 0x007FFF00,
+
   /// <summary>
-  ///   Chocolate Preset Color.
+  /// Chocolate Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Chocolate))]
-  Chocolate,
+  Chocolate = 0x00D2691E,
+
   /// <summary>
-  ///   Coral Preset Color.
+  /// Coral Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Coral))]
-  Coral,
+  Coral = 0x00FF7F50,
+
   /// <summary>
-  ///   Cornflower Blue Preset Color.
+  /// Cornflower Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.CornflowerBlue))]
-  CornflowerBlue,
+  CornflowerBlue = 0x006495ED,
+
   /// <summary>
-  ///   Cornsilk Preset Color.
+  /// Cornsilk Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Cornsilk))]
-  Cornsilk,
+  Cornsilk = 0x00FFF8DC,
+
   /// <summary>
-  ///   Crimson Preset Color.
+  /// Crimson Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Crimson))]
-  Crimson,
+  Crimson = 0x00DC143C,
+
   /// <summary>
-  ///   Cyan Preset Color.
+  /// Cyan Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Cyan))]
-  Cyan,
+  Cyan = 0x0000FFFF,
+
   /// <summary>
-  ///   Dark Blue Preset Color.
+  /// Dark Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkBlue))]
-  DarkBlue,
+  DarkBlue = 0x0000008B,
+
   /// <summary>
-  ///   Dark Cyan Preset Color.
+  /// Dark Cyan Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkCyan))]
-  DarkCyan,
+  DarkCyan = 0x00008B8B,
+
   /// <summary>
-  ///   Dark Goldenrod Preset Color.
+  /// Dark Goldenrod Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkGoldenrod))]
-  DarkGoldenrod,
+  DarkGoldenrod = 0x00B8860B,
+
   /// <summary>
-  ///   Dark Gray Preset Color.
+  /// Dark Gray Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkGray))]
-  DarkGray,
+  DarkGray = 0x00A9A9A9,
+
   /// <summary>
-  ///   Dark Green Preset Color.
+  /// Dark Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkGreen))]
-  DarkGreen,
+  DarkGreen = 0x00006400,
+
   /// <summary>
-  ///   Dark Khaki Preset Color.
+  /// Dark Khaki Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkKhaki))]
-  DarkKhaki,
+  DarkKhaki = 0x00BDB76B,
+
   /// <summary>
-  ///   Dark Magenta Preset Color.
+  /// Dark Magenta Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkMagenta))]
-  DarkMagenta,
+  DarkMagenta = 0x008B008B,
+
   /// <summary>
-  ///   Dark Olive Green Preset Color.
+  /// Dark Olive Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkOliveGreen))]
-  DarkOliveGreen,
+  DarkOliveGreen = 0x00556B2F,
+
   /// <summary>
-  ///   Dark Orange Preset Color.
+  /// Dark Orange Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkOrange))]
-  DarkOrange,
+  DarkOrange = 0x00FF8C00,
+
   /// <summary>
-  ///   Dark Orchid Preset Color.
+  /// Dark Orchid Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkOrchid))]
-  DarkOrchid,
+  DarkOrchid = 0x009932CC,
+
   /// <summary>
-  ///   Dark Red Preset Color.
+  /// Dark Red Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkRed))]
-  DarkRed,
+  DarkRed = 0x008B0000,
+
   /// <summary>
-  ///   Dark Salmon Preset Color.
+  /// Dark Salmon Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkSalmon))]
-  DarkSalmon,
+  DarkSalmon = 0x00E9967A,
+
   /// <summary>
-  ///   Dark Sea Green Preset Color.
+  /// Dark Sea Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkSeaGreen))]
-  DarkSeaGreen,
+  DarkSeaGreen = 0x008FBC8F,
+
   /// <summary>
-  ///   Dark Slate Blue Preset Color.
+  /// Dark Slate Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkSlateBlue))]
-  DarkSlateBlue,
+  DarkSlateBlue = 0x00483D8B,
+
   /// <summary>
-  ///   Dark Slate Gray Preset Color.
+  /// Dark Slate Gray Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkSlateGray))]
-  DarkSlateGray,
+  DarkSlateGray = 0x002F4F4F,
+
   /// <summary>
-  ///   Dark Turquoise Preset Color.
+  /// Dark Turquoise Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkTurquoise))]
-  DarkTurquoise,
+  DarkTurquoise = 0x0000CED1,
+
   /// <summary>
-  ///   Dark Violet Preset Color.
+  /// Dark Violet Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkViolet))]
-  DarkViolet,
+  DarkViolet = 0x009400D3,
+
   /// <summary>
-  ///   Deep Pink Preset Color.
+  /// Deep Pink Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DeepPink))]
-  DeepPink,
+  DeepPink = 0x00FF1493,
+
   /// <summary>
-  ///   Deep Sky Blue Preset Color.
+  /// Deep Sky Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DeepSkyBlue))]
-  DeepSkyBlue,
+  DeepSkyBlue = 0x0000BFFF,
+
   /// <summary>
-  ///   Dim Gray Preset Color.
+  /// Dim Gray Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DimGray))]
-  DimGray,
+  DimGray = 0x00696969,
+
   /// <summary>
-  ///   Dodger Blue Preset Color.
+  /// Dodger Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DodgerBlue))]
-  DodgerBlue,
+  DodgerBlue = 0x001E90FF,
+
   /// <summary>
-  ///   Firebrick Preset Color.
+  /// Firebrick Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Firebrick))]
-  Firebrick,
+  Firebrick = 0x00B22222,
+
   /// <summary>
-  ///   Floral White Preset Color.
+  /// Floral White Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.FloralWhite))]
-  FloralWhite,
+  FloralWhite = 0x00FFFAF0,
+
   /// <summary>
-  ///   Forest Green Preset Color.
+  /// Forest Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.ForestGreen))]
-  ForestGreen,
+  ForestGreen = 0x00228B22,
+
   /// <summary>
-  ///   Fuchsia Preset Color.
+  /// Fuchsia Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Fuchsia))]
-  Fuchsia,
+  Fuchsia = 0x00FF00FF,
+
   /// <summary>
-  ///   Gainsboro Preset Color.
+  /// Gainsboro Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Gainsboro))]
-  Gainsboro,
+  Gainsboro = 0x00DCDCDC,
+
   /// <summary>
-  ///   Ghost White Preset Color.
+  /// Ghost White Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.GhostWhite))]
-  GhostWhite,
+  GhostWhite = 0x00F8F8FF,
+
   /// <summary>
-  ///   Gold Preset Color.
+  /// Gold Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Gold))]
-  Gold,
+  Gold = 0x00FFD700,
+
   /// <summary>
-  ///   Goldenrod Preset Color.
+  /// Goldenrod Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Goldenrod))]
-  Goldenrod,
+  Goldenrod = 0x00DAA520,
+
   /// <summary>
-  ///   Gray Preset Color.
+  /// Gray Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Gray))]
-  Gray,
+  Gray = 0x00808080,
+
   /// <summary>
-  ///   Green Preset Color.
+  /// Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Green))]
-  Green,
+  Green = 0x00008000,
+
   /// <summary>
-  ///   Green Yellow Preset Color.
+  /// Green Yellow Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.GreenYellow))]
-  GreenYellow,
+  GreenYellow = 0x00ADFF2F,
+
   /// <summary>
-  ///   Honeydew Preset Color.
+  /// Honeydew Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Honeydew))]
-  Honeydew,
+  Honeydew = 0x00F0FFF0,
+
   /// <summary>
-  ///   Hot Pink Preset Color.
+  /// Hot Pink Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.HotPink))]
-  HotPink,
+  HotPink = 0x00FF69B4,
+
   /// <summary>
-  ///   Indian Red Preset Color.
+  /// Indian Red Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.IndianRed))]
-  IndianRed,
+  IndianRed = 0x00CD5C5C,
+
   /// <summary>
-  ///   Indigo Preset Color.
+  /// Indigo Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Indigo))]
-  Indigo,
+  Indigo = 0x004B0082,
+
   /// <summary>
-  ///   Ivory Preset Color.
+  /// Ivory Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Ivory))]
-  Ivory,
+  Ivory = 0x00FFFFF0,
+
   /// <summary>
-  ///   Khaki Preset Color.
+  /// Khaki Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Khaki))]
-  Khaki,
+  Khaki = 0x00F0E68C,
+
   /// <summary>
-  ///   Lavender Preset Color.
+  /// Lavender Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Lavender))]
-  Lavender,
+  Lavender = 0x00E6E6FA,
+
   /// <summary>
-  ///   Lavender Blush Preset Color.
+  /// Lavender Blush Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LavenderBlush))]
-  LavenderBlush,
+  LavenderBlush = 0x00FFF0F5,
+
   /// <summary>
-  ///   Lawn Green Preset Color.
+  /// Lawn Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LawnGreen))]
-  LawnGreen,
+  LawnGreen = 0x007CFC00,
+
   /// <summary>
-  ///   Lemon Chiffon Preset Color.
+  /// Lemon Chiffon Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LemonChiffon))]
-  LemonChiffon,
+  LemonChiffon = 0x00FFFACD,
+
   /// <summary>
-  ///   Light Blue Preset Color.
+  /// Light Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightBlue))]
-  LightBlue,
+  LightBlue = 0x00ADD8E6,
+
   /// <summary>
-  ///   Light Coral Preset Color.
+  /// Light Coral Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightCoral))]
-  LightCoral,
+  LightCoral = 0x00F08080,
+
   /// <summary>
-  ///   Light Cyan Preset Color.
+  /// Light Cyan Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightCyan))]
-  LightCyan,
+  LightCyan = 0x00E0FFFF,
+
   /// <summary>
-  ///   Light Goldenrod Yellow Preset Color.
+  /// Light Goldenrod Yellow Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightGoldenrodYellow))]
-  LightGoldenrodYellow,
+  LightGoldenrodYellow = 0x00FAFAD2,
+
   /// <summary>
-  ///   Light Gray Preset Color.
+  /// Light Gray Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightGray))]
-  LightGray,
+  LightGray = 0x00D3D3D3,
+
   /// <summary>
-  ///   Light Green Preset Color.
+  /// Light Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightGreen))]
-  LightGreen,
+  LightGreen = 0x0090EE90,
+
   /// <summary>
-  ///   Light Pink Preset Color.
+  /// Light Pink Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightPink))]
-  LightPink,
+  LightPink = 0x00FFB6C1,
+
   /// <summary>
-  ///   Light Salmon Preset Color.
+  /// Light Salmon Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightSalmon))]
-  LightSalmon,
+  LightSalmon = 0x00FFA07A,
+
   /// <summary>
-  ///   Light Sea Green Preset Color.
+  /// Light Sea Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightSeaGreen))]
-  LightSeaGreen,
+  LightSeaGreen = 0x0020B2AA,
+
   /// <summary>
-  ///   Light Sky Blue Preset Color.
+  /// Light Sky Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightSkyBlue))]
-  LightSkyBlue,
+  LightSkyBlue = 0x0087CEFA,
+
   /// <summary>
-  ///   Light Slate Gray Preset Color.
+  /// Light Slate Gray Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightSlateGray))]
-  LightSlateGray,
+  LightSlateGray = 0x00778899,
+
   /// <summary>
-  ///   Light Steel Blue Preset Color.
+  /// Light Steel Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightSteelBlue))]
-  LightSteelBlue,
+  LightSteelBlue = 0x00B0C4DE,
+
   /// <summary>
-  ///   Light Yellow Preset Color.
+  /// Light Yellow Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightYellow))]
-  LightYellow,
+  LightYellow = 0x00FFFFE0,
+
   /// <summary>
-  ///   Lime Preset Color.
+  /// Lime Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Lime))]
-  Lime,
+  Lime = 0x0000FF00,
+
   /// <summary>
-  ///   Lime Green Preset Color.
+  /// Lime Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LimeGreen))]
-  LimeGreen,
+  LimeGreen = 0x0032CD32,
+
   /// <summary>
-  ///   Linen Preset Color.
+  /// Linen Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Linen))]
-  Linen,
+  Linen = 0x00FAF0E6,
+
   /// <summary>
-  ///   Magenta Preset Color.
+  /// Magenta Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Magenta))]
-  Magenta,
+  Magenta = 0x00FF00FF,
+
   /// <summary>
-  ///   Maroon Preset Color.
+  /// Maroon Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Maroon))]
-  Maroon,
+  Maroon = 0x00800000,
+
   /// <summary>
-  ///   Medium Aquamarine Preset Color.
+  /// Medium Aquamarine Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MedAquamarine))]
-  MedAquamarine,
+  MediumAquamarine = 0x0066CDAA,
+
   /// <summary>
-  ///   Medium Blue Preset Color.
+  /// Medium Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumBlue))]
-  MediumBlue,
+  MediumBlue = 0x000000CD,
+
   /// <summary>
-  ///   Medium Orchid Preset Color.
+  /// Medium Orchid Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumOrchid))]
-  MediumOrchid,
+  MediumOrchid = 0x00BA55D3,
+
   /// <summary>
-  ///   Medium Purple Preset Color.
+  /// Medium Purple Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumPurple))]
-  MediumPurple,
+  MediumPurple = 0x009370DB,
+
   /// <summary>
-  ///   Medium Sea Green Preset Color.
+  /// Medium Sea Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumSeaGreen))]
-  MediumSeaGreen,
+  MediumSeaGreen = 0x003CB371,
+
   /// <summary>
-  ///   Medium Slate Blue Preset Color.
+  /// Medium Slate Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumSlateBlue))]
-  MediumSlateBlue,
+  MediumSlateBlue = 0x007B68EE,
+
   /// <summary>
-  ///   Medium Spring Green Preset Color.
+  /// Medium Spring Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumSpringGreen))]
-  MediumSpringGreen,
+  MediumSpringGreen = 0x0000FA9A,
+
   /// <summary>
-  ///   Medium Turquoise Preset Color.
+  /// Medium Turquoise Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumTurquoise))]
-  MediumTurquoise,
+  MediumTurquoise = 0x0048D1CC,
+
   /// <summary>
-  ///   Medium Violet Red Preset Color.
+  /// Medium Violet Red Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumVioletRed))]
-  MediumVioletRed,
+  MediumVioletRed = 0x00C71585,
+
   /// <summary>
-  ///   Midnight Blue Preset Color.
+  /// Midnight Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MidnightBlue))]
-  MidnightBlue,
+  MidnightBlue = 0x00191970,
+
   /// <summary>
-  ///   Mint Cream Preset Color.
+  /// Mint Cream Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MintCream))]
-  MintCream,
+  MintCream = 0x00F5FFFA,
+
   /// <summary>
-  ///   Misty Rose Preset Color.
+  /// Misty Rose Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MistyRose))]
-  MistyRose,
+  MistyRose = 0x00FFE4E1,
+
   /// <summary>
-  ///   Moccasin Preset Color.
+  /// Moccasin Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Moccasin))]
-  Moccasin,
+  Moccasin = 0x00FFE4B5,
+
   /// <summary>
-  ///   Navajo White Preset Color.
+  /// Navajo White Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.NavajoWhite))]
-  NavajoWhite,
+  NavajoWhite = 0x00FFDEAD,
+
   /// <summary>
-  ///   Navy Preset Color.
+  /// Navy Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Navy))]
-  Navy,
+  Navy = 0x00000080,
+
   /// <summary>
-  ///   Old Lace Preset Color.
+  /// Old Lace Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.OldLace))]
-  OldLace,
+  OldLace = 0x00FDF5E6,
+
   /// <summary>
-  ///   Olive Preset Color.
+  /// Olive Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Olive))]
-  Olive,
+  Olive = 0x00808000,
+
   /// <summary>
-  ///   Olive Drab Preset Color.
+  /// Olive Drab Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.OliveDrab))]
-  OliveDrab,
+  OliveDrab = 0x006B8E23,
+
   /// <summary>
-  ///   Orange Preset Color.
+  /// Orange Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Orange))]
-  Orange,
+  Orange = 0x00FFA500,
+
   /// <summary>
-  ///   Orange Red Preset Color.
+  /// Orange Red Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.OrangeRed))]
-  OrangeRed,
+  OrangeRed = 0x00FF4500,
+
   /// <summary>
-  ///   Orchid Preset Color.
+  /// Orchid Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Orchid))]
-  Orchid,
+  Orchid = 0x00DA70D6,
+
   /// <summary>
-  ///   Pale Goldenrod Preset Color.
+  /// Pale Goldenrod Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.PaleGoldenrod))]
-  PaleGoldenrod,
+  PaleGoldenrod = 0x00EEE8AA,
+
   /// <summary>
-  ///   Pale Green Preset Color.
+  /// Pale Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.PaleGreen))]
-  PaleGreen,
+  PaleGreen = 0x0098FB98,
+
   /// <summary>
-  ///   Pale Turquoise Preset Color.
+  /// Pale Turquoise Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.PaleTurquoise))]
-  PaleTurquoise,
+  PaleTurquoise = 0x00AFEEEE,
+
   /// <summary>
-  ///   Pale Violet Red Preset Color.
+  /// Pale Violet Red Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.PaleVioletRed))]
-  PaleVioletRed,
+  PaleVioletRed = 0x00DB7093,
+
   /// <summary>
-  ///   Papaya Whip Preset Color.
+  /// Papaya Whip Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.PapayaWhip))]
-  PapayaWhip,
+  PapayaWhip = 0x00FFEFD5,
+
   /// <summary>
-  ///   Peach Puff Preset Color.
+  /// Peach Puff Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.PeachPuff))]
-  PeachPuff,
+  PeachPuff = 0x00FFDAB9,
+
   /// <summary>
-  ///   Peru Preset Color.
+  /// Peru Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Peru))]
-  Peru,
+  Peru = 0x00CD853F,
+
   /// <summary>
-  ///   Pink Preset Color.
+  /// Pink Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Pink))]
-  Pink,
+  Pink = 0x00FFC0CB,
+
   /// <summary>
-  ///   Plum Preset Color.
+  /// Plum Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Plum))]
-  Plum,
+  Plum = 0x00DDA0DD,
+
   /// <summary>
-  ///   Powder Blue Preset Color.
+  /// Powder Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.PowderBlue))]
-  PowderBlue,
+  PowderBlue = 0x00B0E0E6,
+
   /// <summary>
-  ///   Purple Preset Color.
+  /// Purple Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Purple))]
-  Purple,
+  Purple = 0x00800080,
+
   /// <summary>
-  ///   Red Preset Color.
+  /// Red Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Red))]
-  Red,
+  Red = 0x00FF0000,
+
   /// <summary>
-  ///   Rosy Brown Preset Color.
+  /// Rosy Brown Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.RosyBrown))]
-  RosyBrown,
+  RosyBrown = 0x00BC8F8F,
+
   /// <summary>
-  ///   Royal Blue Preset Color.
+  /// Royal Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.RoyalBlue))]
-  RoyalBlue,
+  RoyalBlue = 0x004169E1,
+
   /// <summary>
-  ///   Saddle Brown Preset Color.
+  /// Saddle Brown Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.SaddleBrown))]
-  SaddleBrown,
+  SaddleBrown = 0x008B4513,
+
   /// <summary>
-  ///   Salmon Preset Color.
+  /// Salmon Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Salmon))]
-  Salmon,
+  Salmon = 0x00FA8072,
+
   /// <summary>
-  ///   Sandy Brown Preset Color.
+  /// Sandy Brown Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.SandyBrown))]
-  SandyBrown,
+  SandyBrown = 0x00F4A460,
+
   /// <summary>
-  ///   Sea Green Preset Color.
+  /// Sea Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.SeaGreen))]
-  SeaGreen,
+  SeaGreen = 0x002E8B57,
+
   /// <summary>
-  ///   Sea Shell Preset Color.
+  /// Sea Shell Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.SeaShell))]
-  SeaShell,
+  SeaShell = 0x00FFF5EE,
+
   /// <summary>
-  ///   Sienna Preset Color.
+  /// Sienna Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Sienna))]
-  Sienna,
+  Sienna = 0x00A0522D,
+
   /// <summary>
-  ///   Silver Preset Color.
+  /// Silver Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Silver))]
-  Silver,
+  Silver = 0x00C0C0C0,
+
   /// <summary>
-  ///   Sky Blue Preset Color.
+  /// Sky Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.SkyBlue))]
-  SkyBlue,
+  SkyBlue = 0x0087CEEB,
+
   /// <summary>
-  ///   Slate Blue Preset Color.
+  /// Slate Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.SlateBlue))]
-  SlateBlue,
+  SlateBlue = 0x006A5ACD,
+
   /// <summary>
-  ///   Slate Gray Preset Color.
+  /// Slate Gray Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.SlateGray))]
-  SlateGray,
+  SlateGray = 0x00708090,
+
   /// <summary>
-  ///   Snow Preset Color.
+  /// Snow Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Snow))]
-  Snow,
+  Snow = 0x00FFFAFA,
+
   /// <summary>
-  ///   Spring Green Preset Color.
+  /// Spring Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.SpringGreen))]
-  SpringGreen,
+  SpringGreen = 0x0000FF7F,
+
   /// <summary>
-  ///   Steel Blue Preset Color.
+  /// Steel Blue Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.SteelBlue))]
-  SteelBlue,
+  SteelBlue = 0x004682B4,
+
   /// <summary>
-  ///   Tan Preset Color.
+  /// Tan Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Tan))]
-  Tan,
+  Tan = 0x00D2B48C,
+
   /// <summary>
-  ///   Teal Preset Color.
+  /// Teal Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Teal))]
-  Teal,
+  Teal = 0x00008080,
+
   /// <summary>
-  ///   Thistle Preset Color.
+  /// Thistle Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Thistle))]
-  Thistle,
+  Thistle = 0x00D8BFD8,
+
   /// <summary>
-  ///   Tomato Preset Color.
+  /// Tomato Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Tomato))]
-  Tomato,
+  Tomato = 0x00FF6347,
+
   /// <summary>
-  ///   Turquoise Preset Color.
+  /// Turquoise Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Turquoise))]
-  Turquoise,
+  Turquoise = 0x0040E0D0,
+
   /// <summary>
-  ///   Violet Preset Color.
+  /// Violet Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Violet))]
-  Violet,
+  Violet = 0x00EE82EE,
+
   /// <summary>
-  ///   Wheat Preset Color.
+  /// Wheat Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Wheat))]
-  Wheat,
+  Wheat = 0x00F5DEB3,
+
   /// <summary>
-  ///   White Preset Color.
+  /// White Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.White))]
-  White,
+  White = 0x00FFFFFF,
+
   /// <summary>
-  ///   White Smoke Preset Color.
+  /// White Smoke Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.WhiteSmoke))]
-  WhiteSmoke,
+  WhiteSmoke = 0x00F5F5F5,
+
   /// <summary>
-  ///   Yellow Preset Color.
+  /// Yellow Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Yellow))]
-  Yellow,
+  Yellow = 0x00FFFF00,
+
   /// <summary>
-  ///   Yellow Green Preset Color.
+  /// Yellow Green Preset Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetColorValues.YellowGreen))]
-  YellowGreen,
+  YellowGreen = 0x009ACD32,
+
   /// <summary>
-  ///   darkBlue.
+  /// Transparent color, not defined in Open XML standard, but used in Word to represent "no color". It is not a real color and should not be used for any other purpose.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkBlue2010))]
-  DarkBlue2010,
+  Transparent = 0xFFFFFFFF,
+  
   /// <summary>
-  ///   darkCyan.
+  /// Automatic color, not defined in Open XML standard, but used in Word to represent "automatic color". It is not a real color and should not be used for any other purpose.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkCyan2010))]
-  DarkCyan2010,
-  /// <summary>
-  ///   darkGoldenrod.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkGoldenrod2010))]
-  DarkGoldenrod2010,
-  /// <summary>
-  ///   darkGray.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkGray2010))]
-  DarkGray2010,
-  /// <summary>
-  ///   darkGrey.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkGrey2010))]
-  DarkGrey2010,
-  /// <summary>
-  ///   darkGreen.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkGreen2010))]
-  DarkGreen2010,
-  /// <summary>
-  ///   darkKhaki.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkKhaki2010))]
-  DarkKhaki2010,
-  /// <summary>
-  ///   darkMagenta.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkMagenta2010))]
-  DarkMagenta2010,
-  /// <summary>
-  ///   darkOliveGreen.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkOliveGreen2010))]
-  DarkOliveGreen2010,
-  /// <summary>
-  ///   darkOrange.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkOrange2010))]
-  DarkOrange2010,
-  /// <summary>
-  ///   darkOrchid.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkOrchid2010))]
-  DarkOrchid2010,
-  /// <summary>
-  ///   darkRed.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkRed2010))]
-  DarkRed2010,
-  /// <summary>
-  ///   darkSalmon.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkSalmon2010))]
-  DarkSalmon2010,
-  /// <summary>
-  ///   darkSeaGreen.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkSeaGreen2010))]
-  DarkSeaGreen2010,
-  /// <summary>
-  ///   darkSlateBlue.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkSlateBlue2010))]
-  DarkSlateBlue2010,
-  /// <summary>
-  ///   darkSlateGray.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkSlateGray2010))]
-  DarkSlateGray2010,
-  /// <summary>
-  ///   darkSlateGrey.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkSlateGrey2010))]
-  DarkSlateGrey2010,
-  /// <summary>
-  ///   darkTurquoise.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkTurquoise2010))]
-  DarkTurquoise2010,
-  /// <summary>
-  ///   darkViolet.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkViolet2010))]
-  DarkViolet2010,
-  /// <summary>
-  ///   lightBlue.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightBlue2010))]
-  LightBlue2010,
-  /// <summary>
-  ///   lightCoral.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightCoral2010))]
-  LightCoral2010,
-  /// <summary>
-  ///   lightCyan.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightCyan2010))]
-  LightCyan2010,
-  /// <summary>
-  ///   lightGoldenrodYellow.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightGoldenrodYellow2010))]
-  LightGoldenrodYellow2010,
-  /// <summary>
-  ///   lightGray.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightGray2010))]
-  LightGray2010,
-  /// <summary>
-  ///   lightGrey.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightGrey2010))]
-  LightGrey2010,
-  /// <summary>
-  ///   lightGreen.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightGreen2010))]
-  LightGreen2010,
-  /// <summary>
-  ///   lightPink.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightPink2010))]
-  LightPink2010,
-  /// <summary>
-  ///   lightSalmon.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightSalmon2010))]
-  LightSalmon2010,
-  /// <summary>
-  ///   lightSeaGreen.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightSeaGreen2010))]
-  LightSeaGreen2010,
-  /// <summary>
-  ///   lightSkyBlue.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightSkyBlue2010))]
-  LightSkyBlue2010,
-  /// <summary>
-  ///   lightSlateGray.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightSlateGray2010))]
-  LightSlateGray2010,
-  /// <summary>
-  ///   lightSlateGrey.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightSlateGrey2010))]
-  LightSlateGrey2010,
-  /// <summary>
-  ///   lightSteelBlue.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightSteelBlue2010))]
-  LightSteelBlue2010,
-  /// <summary>
-  ///   lightYellow.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightYellow2010))]
-  LightYellow2010,
-  /// <summary>
-  ///   mediumAquamarine.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumAquamarine2010))]
-  MediumAquamarine2010,
-  /// <summary>
-  ///   mediumBlue.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumBlue2010))]
-  MediumBlue2010,
-  /// <summary>
-  ///   mediumOrchid.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumOrchid2010))]
-  MediumOrchid2010,
-  /// <summary>
-  ///   mediumPurple.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumPurple2010))]
-  MediumPurple2010,
-  /// <summary>
-  ///   mediumSeaGreen.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumSeaGreen2010))]
-  MediumSeaGreen2010,
-  /// <summary>
-  ///   mediumSlateBlue.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumSlateBlue2010))]
-  MediumSlateBlue2010,
-  /// <summary>
-  ///   mediumSpringGreen.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumSpringGreen2010))]
-  MediumSpringGreen2010,
-  /// <summary>
-  ///   mediumTurquoise.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumTurquoise2010))]
-  MediumTurquoise2010,
-  /// <summary>
-  ///   mediumVioletRed.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.MediumVioletRed2010))]
-  MediumVioletRed2010,
-  /// <summary>
-  ///   dkGrey.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkGrey))]
-  DarkGrey,
-  /// <summary>
-  ///   dimGrey.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DimGrey))]
-  DimGrey,
-  /// <summary>
-  ///   dkSlateGrey.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.DarkSlateGrey))]
-  DarkSlateGrey,
-  /// <summary>
-  ///   grey.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.Grey))]
-  Grey,
-  /// <summary>
-  ///   ltGrey.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightGrey))]
-  LightGrey,
-  /// <summary>
-  ///   ltSlateGrey.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.LightSlateGrey))]
-  LightSlateGrey,
-  /// <summary>
-  ///   slateGrey.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetColorValues.SlateGrey))]
-  SlateGrey
+  Auto = 0xFF000000,
 }
