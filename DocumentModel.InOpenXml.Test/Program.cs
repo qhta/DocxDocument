@@ -30,6 +30,7 @@ internal class Program
     if (!Exec(BaseSectionPropertiesTest.Run)) return;
     if (!Exec(BaseTableCellPropertiesTest.Run)) return;
     if (!Exec(BaseTableRowPropertiesTest.Run)) return;
+    if (!Exec(BaseTablePropertiesTest.Run)) return;
 
     Console.WriteLine("All tests passed.");
   }

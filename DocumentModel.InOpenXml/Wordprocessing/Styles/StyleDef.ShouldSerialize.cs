@@ -13,8 +13,7 @@ public partial class StyleDef
   public bool ShouldSerializeNextParagraphStyle() => NextParagraphStyle is not null;
   public bool ShouldSerializeLinkedStyle() => LinkedStyle is not null;
   public bool ShouldSerializeIsAutoRedefined() => IsAutoRedefined;
-  public bool ShouldSerializeIsSemiHidden() => IsSemiHidden;
-  public bool ShouldSerializeIsUnhiddenWhenUsed() => IsUnhiddenWhenUsed;
+  public bool ShouldSerializeIsHidden() => IsHidden != 0;
   public bool ShouldSerializeUIPriority() => UIPriority is not null;
   public bool ShouldSerializeIsPrimary() => IsPrimary;
   public bool ShouldSerializeIsLocked() => IsLocked;

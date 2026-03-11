@@ -731,6 +731,15 @@
             <returns>The boolean value represented by the element.</returns>
             <exception cref="T:System.NotSupportedException"></exception>
         </member>
+        <member name="M:DocumentModel.OpenXml.BooleanConverter.ConvertTo``1(System.Nullable{System.Boolean})">
+            <summary>
+            Strongly-typed version of <see cref="M:DocumentModel.OpenXml.BooleanConverter.ConvertTo(System.Nullable{System.Boolean},System.Type)"/> for better usability in code.
+            Converts a boolean value to an OpenXml value or element of the specified type.
+            </summary>
+            <typeparam name="T">Result type</typeparam>
+            <param name="value">Value to convert</param>
+            <returns></returns>
+        </member>
         <member name="T:DocumentModel.OpenXml.ByteConverter">
             <summary>
             Provides conversion methods for Byte value to/from Open XML.
