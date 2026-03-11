@@ -36,7 +36,7 @@ public interface TextBodyProperties
   /// <summary>
   /// The type of text wrapping applied to the text body, controlling how text flows within the shape.
   /// </summary>
-  public TextWrappingKind? Wrap { get; set; }
+  public TextWrapping? Wrap { get; set; }
 
   /// <summary>
   /// The left inset distance for the text body, specifying padding from the left edge.

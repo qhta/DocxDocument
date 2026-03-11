@@ -136,5 +136,5 @@ public interface SystemColor: ColorType, Color2Type, DrawingColorModifications
   /// fallback for non-Windows or incompatible systems.
   /// </para>
   /// </remarks>
-  public RGB? LastColor { get; set; }
+  public HexRgb? LastColor { get; set; }
   }
