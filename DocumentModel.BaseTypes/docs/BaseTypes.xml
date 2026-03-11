@@ -5381,6 +5381,193 @@
             <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
             <returns>A <see cref="T:System.Text.Json.Serialization.JsonConverter"/> instance for the specified type.</returns>
         </member>
+        <member name="T:DocumentModel.OnOff">
+            <summary>
+            Specific logical type for flag values switching between on and off states.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OnOff.System#Xml#Serialization#IXmlSerializable#GetSchema">
+            <summary>
+              Returns null to indicate this type has no XML schema.
+            </summary>
+            <remarks>
+              OnOff is serialized as simple string content, so no XML schema definition is required.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.OnOff.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+              Reads the OnOff value from XML as hexadecimal string content.
+            </summary>
+            <param name="reader">The XML reader to read from.</param>
+            <remarks>
+              <para>
+              This method reads the hexadecimal string content from the XML element and parses it
+              into the internal ushort value. Empty elements result in a zero value.
+              </para>
+              <para>
+              Since OnOff is a struct with a readonly field, this method uses unsafe code to update
+              the field during XML deserialization. This is necessary for XmlSerializer compatibility
+              while maintaining immutability for normal usage.
+              </para>
+              <para>
+              The method properly handles three scenarios:
+              <list type="number">
+              <item><description><b>Empty elements:</b> &lt;Byte /&gt; → Value remains 0 (default)</description></item>
+              <item><description><b>Text content:</b> &lt;Byte&gt;41&lt;/Byte&gt; → Parses and sets hex value</description></item>
+              <item><description><b>No content:</b> &lt;Byte&gt;&lt;/Byte&gt; → Value remains 0 (default)</description></item>
+              </list>
+              </para>
+            </remarks>
+            <exception cref="T:System.FormatException">
+              Thrown when the string is not a valid hexadecimal number.
+            </exception>
+            <exception cref="T:System.OverflowException">
+              Thrown when the parsed value exceeds 255 (byte.MaxValue).
+            </exception>
+        </member>
+        <member name="M:DocumentModel.OnOff.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+              Writes the OnOff value to XML as hexadecimal string content.
+            </summary>
+            <param name="writer">The XML writer to write to.</param>
+            <remarks>
+              <para>
+              This method writes the hexadecimal string representation of the character code as
+              text content within the XML element. The output uses uppercase hexadecimal digits
+              (0-9, A-F) for consistency with Office Open XML standards.
+              </para>
+              <para>
+              Zero values are written as "00", not as empty elements, to maintain consistency
+              with Office Open XML character code representations.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.OnOff.#ctor">
+            <summary>
+            Default constructor initializes the OnOff instance to an undefined state (value = 0).
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OnOff.#ctor(System.Byte)">
+            <summary>
+            Value initialization constructor allows setting the internal byte value directly,
+            which can represent on, off, or undefined states based on predefined constants.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="F:DocumentModel.OnOff.Undefined">
+            <summary>
+            State is not defined,
+            which can be used to represent an uninitialized state or a state where the on/off status is not applicable.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.OnOff.On">
+            <summary>
+            State is on, indicating that the feature or setting is active or enabled.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.OnOff.Off">
+            <summary>
+            State is off, indicating that the feature or setting is inactive or disabled.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OnOff.op_Implicit(DocumentModel.OnOff)~System.Byte">
+            <summary>
+            Implicit conversion from byte to OnOff, allowing for easy assignment of byte values to OnOff variables.
+            </summary>
+            <param name="onOff">The OnOff instance to convert to a byte value.</param>
+        </member>
+        <member name="M:DocumentModel.OnOff.op_Implicit(System.Byte)~DocumentModel.OnOff">
+            <summary>
+            Defines an implicit conversion from a byte value to an OnOff instance.
+            </summary>
+            <param name="value">The byte value to convert to an OnOff instance.</param>
+        </member>
+        <member name="M:DocumentModel.OnOff.Equals(System.Byte)">
+            <summary>
+            Compares the current OnOff instance with a byte value for equality, returning true if they represent the same state (On, Off, or Undefined).
+            </summary>
+            <param name="other">The byte value to compare with the current instance.</param>
+            <returns>true if the current instance and the specified byte value represent the same state; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.OnOff.Equals(System.Boolean)">
+            <summary>
+            Determines whether the current instance and the specified Boolean value represent the same logical state.
+            </summary>
+            <param name="other">The Boolean value to compare with the current instance.</param>
+            <returns>true if the logical state of the current instance matches the specified Boolean value; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.OnOff.Parse(System.String)">
+            <summary>
+            Parses the specified string and returns its equivalent OnOff value.
+            </summary>
+            <param name="value">The string representation to parse.
+            Expected values are "on", "off", "undefined", or null/empty.</param>
+            <returns>The OnOff value that corresponds to the specified string.</returns>
+            <exception cref="T:System.FormatException">Thrown if the value is not a valid OnOff representation.</exception>
+        </member>
+        <member name="M:DocumentModel.OnOff.TryParse(System.String,DocumentModel.OnOff@)">
+            <summary>
+            Attempts to convert the specified string representation to its equivalent OnOff value.
+            </summary>
+            <remarks>If the input string is null or empty, the result is set to an undefined OnOff value and the
+            method returns true. The comparison is case-insensitive.</remarks>
+            <param name="value">The string to parse. Can be "on", "off", or null/empty.</param>
+            <param name="result">When this method returns, contains the OnOff value equivalent to the string, or an undefined value if the input is
+            null or empty. This parameter is passed uninitialized.</param>
+            <returns>true if the string was successfully parsed or is null/empty; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.OnOff.ToString">
+            <summary>
+            Returns a string that represents the current value.
+            </summary>
+            <returns>A string representation of the value: "On" if the value is 1, "Off" if the value is 2, "Undefined" if the value is
+            0, or "Unknown(value)" for any other value.</returns>
+        </member>
+        <member name="T:DocumentModel.OnOffJsonConverter">
+            <summary>
+              JSON converter that serializes OnOff values as hexadecimal strings.
+            </summary>
+            <remarks>
+              <para>
+              This converter ensures that OnOff values are written as hexadecimal string values in JSON output
+              (e.g., "41") rather than numeric values or complex objects. During deserialization, the converter
+              reads string values and constructs OnOff instances from them.
+              </para>
+              <para>
+              All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
+              uppercase and lowercase hex digits are accepted, and the converter validates that input strings
+              contain only valid hexadecimal characters.
+              </para>
+              <para>
+              <b>Usage Context:</b> This converter is automatically applied to OnOff properties when the type
+              is used in JSON serialization, ensuring consistent hexadecimal string representation across all
+              JSON operations in Office Open XML document processing.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.OnOffJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+              Reads a OnOff value from JSON as a string.
+            </summary>
+            <param name="reader">The JSON reader to read from.</param>
+            <param name="typeToConvert">The type of object to convert to.</param>
+            <param name="options">The JSON serializer options.</param>
+            <returns>
+              A OnOff value constructed from the hexadecimal string, or a default OnOff if the value is null or empty.
+            </returns>
+            <exception cref="T:System.Text.Json.JsonException">
+              Thrown when the JSON token is not a string
+            or when the string cannot be parsed as a valid byte value.
+            </exception>
+        </member>
+        <member name="M:DocumentModel.OnOffJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.OnOff,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+              Writes a OnOff value to JSON as a string.
+            </summary>
+            <param name="writer">The JSON writer to write to.</param>
+            <param name="value">The OnOff value to write.</param>
+            <param name="options">The JSON serializer options.</param>
+        </member>
         <member name="T:DocumentModel.Percent">
             <summary>
             Represents a percentage value stored as a double-precision floating-point number.
@@ -8928,6 +9115,32 @@
         <member name="F:DocumentModel.BaseTypes.Interfaces.LengthUnit.Inches">
             <summary>
             Represents the inch unit of length.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.OnOffToggle">
+            <summary>
+            Specific logical type for flag values switching between on and off states, with an additional toggle state for switching to the opposite state.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.OnOffToggle.Undefined">
+            <summary>
+            State is not defined,
+            which can be used to represent an uninitialized state or a state where the on/off status is not applicable.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.OnOffToggle.On">
+            <summary>
+            State is on, indicating that the feature or setting is active or enabled.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.OnOffToggle.Off">
+            <summary>
+            State is off, indicating that the feature or setting is inactive or disabled.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.OnOffToggle.Toggle">
+            <summary>
+            Represents a toggle control, which allows users to switch between two states such as on and off.
             </summary>
         </member>
         <member name="T:DocumentModel.SimpleTypeAttribute">
