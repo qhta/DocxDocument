@@ -72,6 +72,7 @@ global using DXVT = DocumentFormat.OpenXml.VariantTypes;
 global using DXVW = DocumentFormat.OpenXml.Vml.Wordprocessing;
 global using DXW = DocumentFormat.OpenXml.Wordprocessing;
 
+global using DM = DocumentModel;
 global using DMD = DocumentModel.Drawings;
 global using DMDO = DocumentModel.Drawings.Office;
 global using DMM = DocumentModel.Math;

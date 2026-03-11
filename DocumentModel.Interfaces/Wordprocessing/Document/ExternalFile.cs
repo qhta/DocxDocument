@@ -10,5 +10,5 @@ public interface ExternalFile : RelationshipType
   /// <summary>
   /// URI of the external file, specifying the location or filename of the linked resource.
   /// </summary>
-  public Uri? Uri { get; set; }
+  public UriString? Uri { get; set; }
 }

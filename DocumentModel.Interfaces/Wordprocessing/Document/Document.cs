@@ -112,7 +112,7 @@ public interface Document
   /// <summary>
   /// Style definitions.
   /// </summary>
-  public Styles? Styles { get; set; }
+  public IStyles? Styles { get; set; }
 
   /// <summary>
   /// Set of color and font themes.

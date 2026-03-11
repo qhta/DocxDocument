@@ -25,5 +25,5 @@ namespace DocumentModel.Wordprocessing;
     /// <summary>
     /// Layout of the frameset, specifying how frames are arranged within the frameset.
     /// </summary>
-    public FrameLayoutKind? FrameLayout { get; set; }
+    public FrameLayout? FrameLayout { get; set; }
   }

@@ -23,9 +23,11 @@ public partial class BaseParagraphProperties<T>
   public bool ShouldSerializeBiDi() => BiDi is not null;
   public bool ShouldSerializeAdjustRightIndent() => AdjustRightIndent is not null;
   public bool ShouldSerializeSnapToGrid() => SnapToGrid is not null;
-  public bool ShouldSerializeSpacing() => Spacing is not null;
+  public bool ShouldSerializeAfter() => SpacingAfter is not null;
+  public bool ShouldSerializeBefore() => SpacingBefore is not null;
+  public bool ShouldSerializeInterline() => SpacingInterline is not null;
   public bool ShouldSerializeIndentation() => Indentation is not null;
-  public bool ShouldSerializeContextualSpacing() => ContextualSpacing is not null;
+  public bool ShouldSerializeContextualSpacing() => SpacingByContext is not null;
   public bool ShouldSerializeMirrorIndents() => MirrorIndents is not null;
   public bool ShouldSerializeSuppressOverlap() => SuppressOverlap is not null;
   public bool ShouldSerializeJustification() => Justification is not null;

@@ -19,5 +19,5 @@ public interface RgbColor: AbstractColor
   /// In earlier versions, only the base RGB value may be displayed without transformations.
   /// </para>
   /// </remarks>
-  public RGB? Val { get; set; }
+  public HexRgb? Val { get; set; }
   }

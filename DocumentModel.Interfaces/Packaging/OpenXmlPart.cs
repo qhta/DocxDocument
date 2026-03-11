@@ -8,7 +8,7 @@ public interface OpenXmlPart
   /// <summary>
   ///   Gets the internal part path in the package.
   /// </summary>
-  public Uri? Uri { get; set; }
+  public UriString? Uri { get; set; }
   /// <summary>
   ///   Gets the content type (MIME type) of the content data in the part.
   /// </summary>

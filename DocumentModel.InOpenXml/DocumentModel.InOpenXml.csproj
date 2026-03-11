@@ -38,6 +38,7 @@
     <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXmlTools.csproj" />
     <ProjectReference Include="..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
+    <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
   </ItemGroup>
 
   <ItemGroup>

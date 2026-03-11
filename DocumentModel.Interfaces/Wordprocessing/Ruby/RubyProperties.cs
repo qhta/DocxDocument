@@ -15,7 +15,7 @@ public interface RubyProperties
   /// <summary>
   /// Font size of the phonetic guide text, specified in half-points.
   /// </summary>
-  public HalfPoints? PhoneticGuideTextFontSize { get; set; }
+  public HPS? PhoneticGuideTextFontSize { get; set; }
   
   /// <summary>
   /// Distance between the phonetic guide text and the base text, specified in twips.
@@ -25,7 +25,7 @@ public interface RubyProperties
   /// <summary>
   /// Font size of the phonetic guide base text, specified in half-points.
   /// </summary>
-  public HalfPoints? PhoneticGuideBaseTextSize { get; set; }
+  public HPS? PhoneticGuideBaseTextSize { get; set; }
   
   /// <summary>
   /// Language ID for the phonetic guide, specifying the language used for annotation.

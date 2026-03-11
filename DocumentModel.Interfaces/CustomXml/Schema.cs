@@ -21,7 +21,7 @@ public interface Schema: CollectionItem
   ///   The namespace URI identifies the schema and matches the target namespace defined in the schema file.
   ///   This is used to associate XML elements in the custom XML data with their corresponding schema definitions.
   /// </remarks>
-  public Uri? Uri { get; set; }
+  public UriString? Uri { get; set; }
 
   /// <summary>
   ///   Gets or sets the location of the resource manifest file for this schema.

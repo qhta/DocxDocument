@@ -10,10 +10,10 @@
     /// <summary>
     /// Font size value for regular script, specified in half-points.
     /// </summary>
-    public HalfPoints? Val { get; set; }
+    public HPS? Val { get; set; }
     
     /// <summary>
     /// Font size value for complex script, specified in half-points. If null, the regular script value is used.
     /// </summary>
-    public HalfPoints? ValCS { get; set; }
+    public HPS? ValCS { get; set; }
   }

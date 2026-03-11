@@ -29,17 +29,17 @@ public interface TablePositionProperties
   /// <summary>
   /// Table vertical anchor, specifying the reference point for vertical positioning.
   /// </summary>
-  public VerticalAnchorKind? VerticalAnchor { get; set; }
+  public VerticalAnchor? VerticalAnchor { get; set; }
 
   /// <summary>
   /// Table horizontal anchor, specifying the reference point for horizontal positioning.
   /// </summary>
-  public HorizontalAnchorKind? HorizontalAnchor { get; set; }
+  public HorizontalAnchor? HorizontalAnchor { get; set; }
 
   /// <summary>
   /// Relative horizontal alignment from anchor, specifying how the table is aligned horizontally relative to its anchor.
   /// </summary>
-  public HorizontalAlignmentKind? TablePositionXAlignment { get; set; }
+  public HorizontalAlignment? TablePositionXAlignment { get; set; }
 
   /// <summary>
   /// Absolute horizontal distance from anchor, specifying the offset from the anchor point.
@@ -49,7 +49,7 @@ public interface TablePositionProperties
   /// <summary>
   /// Relative vertical alignment from anchor, specifying how the table is aligned vertically relative to its anchor.
   /// </summary>
-  public VerticalAlignmentKind? TablePositionYAlignment { get; set; }
+  public VerticalAlignment? TablePositionYAlignment { get; set; }
 
   /// <summary>
   /// Absolute vertical distance from anchor, specifying the offset from the anchor point.

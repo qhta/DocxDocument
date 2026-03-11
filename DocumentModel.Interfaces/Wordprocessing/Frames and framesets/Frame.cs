@@ -35,7 +35,7 @@ public interface Frame : FramesetItem
   /// <summary>
   /// Scrollbar display option for the frame, specifying visibility and behavior of scrollbars.
   /// </summary>
-  public FrameScrollbarVisibilityKind? ScrollbarVisibility { get; set; }
+  public FrameScrollbarVisibility? ScrollbarVisibility { get; set; }
   
   /// <summary>
   /// Indicates whether the frame cannot be resized by the user.

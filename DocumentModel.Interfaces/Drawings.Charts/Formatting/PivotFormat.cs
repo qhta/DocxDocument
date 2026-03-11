@@ -1,5 +1,3 @@
-using System;
-
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>

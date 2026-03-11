@@ -4,7 +4,8 @@ namespace DocumentModel.Wordprocessing;
 /// Base interface for all paragraph properties classes in a WordprocessingML document.
 /// Contains common properties for controlling paragraph formatting, layout, alignment, borders, spacing, indentation, and advanced typography features.
 /// </summary>
-public abstract partial class BaseParagraphProperties<T> : ModelElement<T> where T : DX.OpenXmlCompositeElement
+public abstract partial class BaseParagraphProperties<T>: ModelElement<T>//, IBaseParagraphProperties
+  where T: DX.OpenXmlCompositeElement
 {
   /// <summary>
   /// Indicates whether the paragraph should be kept on the same page as the next paragraph.
@@ -57,6 +58,7 @@ public abstract partial class BaseParagraphProperties<T> : ModelElement<T> where
   }
 
   private bool? _WidowControl;
+
   /// <summary>
   /// Indicates whether line numbers should be suppressed for the paragraph.
   /// </summary>
@@ -73,11 +75,7 @@ public abstract partial class BaseParagraphProperties<T> : ModelElement<T> where
   /// Border settings for the paragraph, specifying borders on all sides and between paragraphs.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.ParagraphProperties.ParagraphBorders))]
-  public ParagraphBorders? Borders
-  {
-    get => _borders;
-    set => UpdateField(ref _borders, value, nameof(Borders));
-  }
+  public ParagraphBorders? Borders { get => _borders; set => UpdateField(ref _borders, value, nameof(Borders)); }
 
   private ParagraphBorders? _borders;
 
@@ -193,17 +191,212 @@ public abstract partial class BaseParagraphProperties<T> : ModelElement<T> where
 
   private bool? _SnapToGrid;
 
+  ///// <summary>
+  ///// Spacing settings between lines and paragraphs.
+  ///// </summary>
+  //[OpenXmlProperty(nameof(DXW.ParagraphProperties.SpacingBetweenLines))]
+  //public ParagraphSpacing? Spacing
+  //{
+  //  get => _spacing;
+  //  set => UpdateField(ref _spacing, value, nameof(Spacing));
+  //}
+
+  //private ParagraphSpacing? _spacing;
+
   /// <summary>
-  /// Spacing settings between lines and paragraphs.
+  /// Spacing above the paragraph.
   /// </summary>
-  [OpenXmlProperty(nameof(DXW.ParagraphProperties.SpacingBetweenLines))]
-  public ParagraphSpacing? Spacing
+  [OpenXmlLoadData(nameof(LoadBefore))]
+  [OpenXmlUpdateData(nameof(UpdateBefore))]
+  public ParagraphSpacing? SpacingBefore
   {
-    get => _spacing;
-    set => UpdateField(ref _spacing, value, nameof(Spacing));
+    get => _spacingBefore;
+    set => UpdateField(ref _spacingBefore, value, nameof(SpacingBefore));
   }
 
-  private ParagraphSpacing? _spacing;
+  private ParagraphSpacing? _spacingBefore;
+
+  /// <summary>
+  /// Spacing below the paragraph.
+  /// </summary>
+  [OpenXmlLoadData(nameof(LoadAfter))]
+  [OpenXmlUpdateData(nameof(UpdateAfter))]
+  public ParagraphSpacing? SpacingAfter
+  {
+    get => _spacingAfter;
+    set => UpdateField(ref _spacingAfter, value, nameof(SpacingAfter));
+  }
+
+  private ParagraphSpacing? _spacingAfter;
+
+  /// <summary>
+  /// Spacing between lines within the paragraph.
+  /// </summary>
+  [OpenXmlLoadData(nameof(LoadInterlines))]
+  [OpenXmlUpdateData(nameof(UpdateInterlines))]
+  public Interline? SpacingInterline
+  {
+    get => _spacingInterline;
+    set => UpdateField(ref _spacingInterline, value, nameof(SpacingInterline));
+  }
+
+  private Interline? _spacingInterline;
+
+  /// <summary>
+  /// Loads the spacing information that appears before a paragraph from the specified OpenXmlElement.
+  /// </summary>
+  /// <remarks>This method inspects the provided OpenXmlElement for spacing properties related to the space
+  /// before a paragraph. If no relevant spacing information is present, the method performs no action.</remarks>
+  /// <param name="openXmlElement">The OpenXmlElement instance from which
+  /// to extract the 'before' paragraph spacing settings. Must not be null.</param>
+  public void LoadBefore(DX.OpenXmlElement openXmlElement)
+  {
+    var paragraphSpacing = openXmlElement.GetType().GetProperty("SpacingBetweenLines")?.GetValue(openXmlElement);
+    if (paragraphSpacing is DXW.SpacingBetweenLines source)
+    {
+      if (source.Before == null && source.BeforeLines == null && source.BeforeAutoSpacing == null) return;
+
+      SpacingBefore = new ParagraphSpacing();
+      SpacingBefore.FromOpenXml(source.Before, source.BeforeLines, source.BeforeAutoSpacing);
+    }
+  }
+
+  /// <summary>
+  /// Updates the spacing before a paragraph by setting the corresponding properties
+  /// on the specified OpenXmlElement.
+  /// </summary>
+  /// <remarks>This method applies the values from the 'Before' property, if present, to the
+  /// 'SpacingBetweenLines' property of the provided OpenXmlElement.
+  /// If 'Before' is null, no changes are made.</remarks>
+  /// <param name="openXmlElement">The OpenXmlElement to update with spacing information.
+  /// Must not be null and should support a 'SpacingBetweenLines'
+  /// property.</param>
+  public void UpdateBefore(DX.OpenXmlElement openXmlElement)
+  {
+    if (SpacingBefore == null) return;
+
+    var paragraphSpacing = openXmlElement.GetType().GetProperty("SpacingBetweenLines")?.GetValue(openXmlElement);
+    if (paragraphSpacing is not DXW.SpacingBetweenLines target)
+    {
+      target = new DXW.SpacingBetweenLines();
+      openXmlElement.GetType().GetProperty("SpacingBetweenLines")?.SetValue(openXmlElement, target);
+    }
+    var (sourceVal, sourceLines, sourceAutoSpacing) = SpacingBefore.ToOpenXml();
+    if (sourceVal != null)
+      target.Before = sourceVal;
+    if (sourceLines != null)
+      target.BeforeLines = sourceLines.Value;
+    if (sourceAutoSpacing != null)
+      target.BeforeAutoSpacing = sourceAutoSpacing.Value;
+  }
+
+  /// <summary>
+  /// Loads the spacing information that appears after a paragraph from the specified OpenXmlElement.
+  /// </summary>
+  /// <remarks>This method inspects the provided OpenXmlElement for spacing properties related to the space
+  /// after a paragraph. If no relevant spacing information is present, the method performs no action.</remarks>
+  /// <param name="openXmlElement">The OpenXmlElement instance from which
+  /// to extract the 'After' paragraph spacing settings. Must not be null.</param>
+  public void LoadAfter(DX.OpenXmlElement openXmlElement)
+  {
+    var paragraphSpacing = openXmlElement.GetType().GetProperty("SpacingBetweenLines")?.GetValue(openXmlElement);
+    if (paragraphSpacing is DXW.SpacingBetweenLines source)
+    {
+      if (source.After == null && source.AfterLines == null && source.AfterAutoSpacing == null) return;
+
+      SpacingAfter = new ParagraphSpacing();
+      SpacingAfter.FromOpenXml(source.After, source.AfterLines, source.AfterAutoSpacing);
+    }
+  }
+
+  /// <summary>
+  /// Updates the spacing after a paragraph by setting the corresponding properties
+  /// on the specified OpenXmlElement.
+  /// </summary>
+  /// <remarks>This method applies the values from the 'After' property, if present, to the
+  /// 'SpacingBetweenLines' property of the provided OpenXmlElement.
+  /// If 'After' is null, no changes are made.</remarks>
+  /// <param name="openXmlElement">The OpenXmlElement to update with spacing information.
+  /// Must not be null and should support a 'SpacingBetweenLines'
+  /// property.</param>
+  public void UpdateAfter(DX.OpenXmlElement openXmlElement)
+  {
+    if (SpacingAfter == null) return;
+
+    var paragraphSpacing = openXmlElement.GetType().GetProperty("SpacingBetweenLines")?.GetValue(openXmlElement);
+    if (paragraphSpacing is not DXW.SpacingBetweenLines target)
+    {
+      target = new DXW.SpacingBetweenLines();
+      openXmlElement.GetType().GetProperty("SpacingBetweenLines")?.SetValue(openXmlElement, target);
+    }
+    var (sourceVal, sourceLines, sourceAutoSpacing) = SpacingAfter.ToOpenXml();
+    if (sourceVal != null)
+      target.After = sourceVal;
+    if (sourceLines != null)
+      target.AfterLines = sourceLines.Value;
+    if (sourceAutoSpacing != null)
+      target.AfterAutoSpacing = sourceAutoSpacing.Value;
+  }
+
+  /// <summary>
+  /// Loads paragraph line spacing information from the specified OpenXmlElement and updates the Interlines property
+  /// accordingly.
+  /// </summary>
+  /// <remarks>If the specified element does not contain line spacing information, the Interlines property is
+  /// not modified.</remarks>
+  /// <param name="openXmlElement">The OpenXmlElement instance from which to extract line spacing information. Must represent a paragraph element
+  /// that may contain spacing settings.</param>
+  public void LoadInterlines(DX.OpenXmlElement openXmlElement)
+  {
+    var paragraphSpacing = openXmlElement.GetType().GetProperty("SpacingBetweenLines")?.GetValue(openXmlElement);
+    if (paragraphSpacing is DXW.SpacingBetweenLines source)
+    {
+      if (source.Line == null && source.LineRule == null) return;
+
+      SpacingInterline = new Interline
+      {
+        Line = (source.Line?.Value) != null ? new Twips(source.Line.Value) : null,
+        LineRule = source.LineRule?.GetEnumValue<DXW.LineSpacingRuleValues, LineSpacingRule>()
+      };
+    }
+  }
+
+  /// <summary>
+  /// Updates the line spacing properties of the specified OpenXmlElement to match the current interline settings.
+  /// </summary>
+  /// <remarks>If the interline settings are not defined, this method performs no action. The method creates or
+  /// updates the SpacingBetweenLines property on the provided element as needed.</remarks>
+  /// <param name="openXmlElement">The OpenXmlElement whose line spacing properties will be updated. Must support a property named
+  /// "SpacingBetweenLines" compatible with WordprocessingML.</param>
+  public void UpdateInterlines(DX.OpenXmlElement openXmlElement)
+  {
+    if (SpacingInterline == null) return;
+
+    var paragraphSpacing = openXmlElement.GetType().GetProperty("SpacingBetweenLines")?.GetValue(openXmlElement);
+    if (paragraphSpacing is not DXW.SpacingBetweenLines target)
+    {
+      target = new DXW.SpacingBetweenLines();
+      openXmlElement.GetType().GetProperty("SpacingBetweenLines")?.SetValue(openXmlElement, target);
+    }
+    if (SpacingInterline.Line != null)
+      target.Line = SpacingInterline.Line.IntValue.ToString();
+    if (SpacingInterline.LineRule != null)
+      target.LineRule =
+        EnumTypeConverter.CreateOpenXmlEnumValue<DXW.LineSpacingRuleValues, LineSpacingRule>(SpacingInterline.LineRule.Value);
+  }
+
+  /// <summary>
+  /// Indicates whether contextual spacing is enabled, allowing spacing to be determined by surrounding paragraphs.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.ParagraphProperties.ContextualSpacing))]
+  public bool? SpacingByContext
+  {
+    get => _spacingByContext;
+    set => UpdateField(ref _spacingByContext, value, nameof(SpacingByContext));
+  }
+
+  private bool? _spacingByContext;
+
 
   /// <summary>
   /// Indentation settings for the paragraph, including left, right, first line, and hanging indents.
@@ -216,18 +409,6 @@ public abstract partial class BaseParagraphProperties<T> : ModelElement<T> where
   }
 
   private Indentation? _Indentation;
-
-  /// <summary>
-  /// Indicates whether contextual spacing is enabled, allowing spacing to be determined by surrounding paragraphs.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXW.ParagraphProperties.ContextualSpacing))]
-  public bool? ContextualSpacing
-  {
-    get => _ContextualSpacing;
-    set => UpdateField(ref _ContextualSpacing, value, nameof(ContextualSpacing));
-  }
-
-  private bool? _ContextualSpacing;
 
   /// <summary>
   /// Indicates whether mirror indents are enabled for the paragraph (used for facing pages).
@@ -324,12 +505,11 @@ public abstract partial class BaseParagraphProperties<T> : ModelElement<T> where
   }
 
   private NumberingProperties? _NumberingProperties;
-
 }
 
 /// <summary>
 /// Concrete class for BaseParagraphProperties.
 /// </summary>
-public class BaseParagraphProperties : BaseParagraphProperties<DXW.ParagraphPropertiesBaseStyle>
+public class BaseParagraphProperties: BaseParagraphProperties<DXW.ParagraphPropertiesBaseStyle>
 {
 }

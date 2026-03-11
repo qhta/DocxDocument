@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a table cell in a Wordprocessing document.
 /// This class provides access to cell properties, alternative content chunks, custom XML blocks, structured document tags, paragraphs, and nested tables, enabling advanced configuration and content management within table cells.
 /// </summary>
-public partial interface TableCell: IElementCollection<ITableCellContent>, ITableRowContent, ISdtCellContent
+public partial class TableCell: ModelElement<DXW.TableCell>, ITableRowContent, ISdtCellContent
 {
 
   /// <summary>

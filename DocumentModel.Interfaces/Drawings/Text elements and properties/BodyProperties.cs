@@ -33,7 +33,7 @@ public interface BodyProperties: ExtendableElement
   /// <summary>
   /// Text wrapping type.
   /// </summary>
-  public DMW.TextWrappingKind? Wrap { get; set; }
+  public DMW.TextWrapping? Wrap { get; set; }
 
   /// <summary>
   /// Left inset of the text body.

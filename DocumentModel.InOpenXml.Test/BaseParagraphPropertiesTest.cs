@@ -142,7 +142,7 @@ namespace DocumentModel.InOpenXml.Test
         BiDi = true,
         AdjustRightIndent = true,
         SnapToGrid = true,
-        ContextualSpacing = true,
+        SpacingByContext = true,
         MirrorIndents = true,
         SuppressOverlap = true,
         Justification = isUpdated ? Justification.Center : Justification.Start,
@@ -155,12 +155,9 @@ namespace DocumentModel.InOpenXml.Test
           Start = isUpdated ? "720" : "480",
           Hanging = isUpdated ? "360" : "240"
         },
-        Spacing = new ParagraphSpacing()
-        {
-          Before = new SpacingBefore { Val = isUpdated ? "200" : "100" },
-          After = new SpacingAfter { Lines = isUpdated ? 150 : 100, AutoSpacing = isUpdated },
-          Interlines = new SpacingInterlines { Line = isUpdated ? "360" : "240", LineRule = LineSpacingRule.AtLeast }
-        },
+        SpacingBefore = new ParagraphSpacing { Val = isUpdated ? "200" : "100" },
+        SpacingAfter = new ParagraphSpacing { Lines = isUpdated ? 150 : 100, AutoSpacing = isUpdated },
+        SpacingInterline = new Interline { Line = isUpdated ? "360" : "240", LineRule = LineSpacingRule.AtLeast },
         Borders = new ParagraphBorders
         {
           TopBorder = new Border { Type = BorderType.Single, /* Color = "FF0000", Width = 4, Space = "2mm"*/ },
