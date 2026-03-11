@@ -1,34 +1,34 @@
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for BaseTableRowProperties.
+  /// Comprehensive serialization test for BaseTableProperties.
   /// </summary>
-  public static class BaseTableRowPropertiesTest
+  public static class BaseTablePropertiesTest
   {
     /// <summary>
-    /// Paragraphs all BaseTableRowProperties tests.
+    /// Paragraphs all BaseTableProperties tests.
     /// </summary>
     /// <returns>True if all tests pass; otherwise, false.</returns>
     public static bool Run()
     {
-      Console.WriteLine("=== BaseTableRowProperties Test ===\n");
+      Console.WriteLine("=== BaseTableProperties Test ===\n");
       if (!TestXmlSerialization()) return false;
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
 
-      Console.WriteLine("All BaseTableRowProperties tests passed.\n");
+      Console.WriteLine("All BaseTableProperties tests passed.\n");
       return true;
     }
 
     /// <summary>
-    /// Tests XML serialization and deserialization of BaseTableRowProperties.
+    /// Tests XML serialization and deserialization of BaseTableProperties.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestXmlSerialization()
     {
       Console.WriteLine("--- XML Serialization ---");
       var testData = CreateSampleProperties();
-      var xmlSerializer = new XmlSerializer(typeof(BaseTableRowProperties));
+      var xmlSerializer = new XmlSerializer(typeof(BaseTableProperties));
       string xmlString;
       using (var stringWriter = new StringWriter())
       using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
@@ -38,17 +38,17 @@ namespace DocumentModel.InOpenXml.Test
       }
       Console.WriteLine("Serialized XML:\n" + xmlString);
 
-      BaseTableRowProperties? deserialized;
+      BaseTableProperties? deserialized;
       using (var stringReader = new StringReader(xmlString))
       {
-        deserialized = (BaseTableRowProperties?)xmlSerializer.Deserialize(stringReader);
+        deserialized = (BaseTableProperties?)xmlSerializer.Deserialize(stringReader);
       }
       if (deserialized == null)
       {
         Console.WriteLine("✗ XML Deserialization returned null");
         return false;
       }
-      if (!TestHelper.CompareTestData(typeof(BaseTableRowProperties), (object)testData, (object)deserialized, out var propName))
+      if (!TestHelper.CompareTestData(typeof(BaseTableProperties), (object)testData, (object)deserialized, out var propName))
       {
         Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
         return false;
@@ -58,7 +58,7 @@ namespace DocumentModel.InOpenXml.Test
     }
 
     /// <summary>
-    /// Tests JSON serialization and deserialization of BaseTableRowProperties.
+    /// Tests JSON serialization and deserialization of BaseTableProperties.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestJsonSerialization()
@@ -69,13 +69,13 @@ namespace DocumentModel.InOpenXml.Test
       string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
       Console.WriteLine("Serialized JSON:\n" + jsonString);
 
-      var deserialized = JsonSerializer.Deserialize<BaseTableRowProperties>(jsonString, jsonOptions);
+      var deserialized = JsonSerializer.Deserialize<BaseTableProperties>(jsonString, jsonOptions);
       if (deserialized == null)
       {
         Console.WriteLine("✗ JSON Deserialization returned null");
         return false;
       }
-      if (!TestHelper.CompareTestData(typeof(BaseTableRowProperties), (object)testData, (object)deserialized, out var propName))
+      if (!TestHelper.CompareTestData(typeof(BaseTableProperties), (object)testData, (object)deserialized, out var propName))
       {
         Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
         return false;
@@ -110,40 +110,53 @@ namespace DocumentModel.InOpenXml.Test
       return true;
     }
     /// <summary>
-    /// Creates a sample Styles object with BaseTableRowProperties.
+    /// Creates a sample Styles object with BaseTableProperties.
     /// </summary>
     /// <returns>A populated Styles object.</returns>
-    static BaseTableRowProperties CreateSampleProperties(bool isUpdated = false)
+    static BaseTableProperties CreateSampleProperties(bool isUpdated = false)
     {
-      return CreateBaseTableRowProperties(isUpdated);
+      return CreateBaseTableProperties(isUpdated);
     }
 
     /// <summary>
-    /// Creates a sample BaseTableRowProperties object with test data for all properties,
+    /// Creates a sample BaseTableProperties object with test data for all properties,
     /// optionally with updated values for update scenarios.
     /// </summary>
     /// <param name="isUpdated">Indicates whether to create updated sample properties for update scenarios.</param>
-    /// <returns>A populated BaseTableRowProperties object.</returns>
-    internal static BaseTableRowProperties CreateBaseTableRowProperties(bool isUpdated = false)
+    /// <returns>A populated BaseTableProperties object.</returns>
+    internal static BaseTableProperties CreateBaseTableProperties(bool isUpdated = false)
     {
-      return new BaseTableRowProperties
+      return new BaseTableProperties
       {
-        RowHeight = new HeightMeasure
+        TableJustification = isUpdated ? TableRowAlignment.Center : TableRowAlignment.Left,
+        TableIndentation = isUpdated ? new TableMeasure(720) : new TableMeasure(360),
+        DefaultTableCellMargin = new TableCellMargin
         {
-          Value = isUpdated ? 420 : 360,
-          Type = isUpdated ? HeightMeasureType.Exact : HeightMeasureType.AtLeast
+          TopMargin = new TableMeasure(120),
+          LeftMargin = new TableMeasure(isUpdated ? 180 : 120),
+          StartMargin = new TableMeasure(isUpdated ? 180 : 120),
+          BottomMargin = new TableMeasure(120),
+          RightMargin = new TableMeasure(isUpdated ? 180 : 120),
+          EndMargin = new TableMeasure(isUpdated ? 180 : 120)
         },
-        CantSplit = true,
-        IsHeader = isUpdated,
-        RowAlignment = isUpdated ? TableRowAlignment.Center : TableRowAlignment.Left,
-        CellSpacing = isUpdated ? new TableMeasure(120) : new TableMeasure(60),
-        GlyphHidden = isUpdated,
-        GridBefore = isUpdated ? 1 : 0,
-        GridAfter = isUpdated ? 2 : 1,
-        WidthBefore = isUpdated ? new TableMeasure(720) : new TableMeasure(360),
-        WidthAfter = isUpdated ? new TableMeasure(720) : new TableMeasure(360),
-        DivId = isUpdated ? "row-div-updated" : "row-div",
-        ConditionalFormatStyle = ConditionalFormatFlags.FirstRow | ConditionalFormatFlags.FirstColumn
+        TableCellSpacing = isUpdated ? new TableMeasure(80) : new TableMeasure(40),
+        TableBorders = new TableBorders
+        {
+          TopBorder = new Border { Type = BorderType.Single, Color = "000000", Width = 4, Space = "2mm" },
+          LeftBorder = new Border { Type = BorderType.Dashed, Color = "00AA00", Width = 3, Space = "2mm" },
+          StartBorder = new Border { Type = BorderType.Dashed, Color = "00AA00", Width = 3, Space = "2mm" },
+          BottomBorder = new Border { Type = BorderType.Double, Color = "0000AA", Width = 4, Space = "2mm" },
+          RightBorder = new Border { Type = BorderType.DotDash, Color = "AA0000", Width = 3, Space = "2mm" },
+          EndBorder = new Border { Type = BorderType.DotDash, Color = "AA0000", Width = 3, Space = "2mm" },
+          InsideHorizontalBorder = new Border { Type = BorderType.Single, Color = "777777", Width = 2, Space = "1mm" },
+          InsideVerticalBorder = new Border { Type = BorderType.Single, Color = "777777", Width = 2, Space = "1mm" }
+        },
+        Shading = new Shading
+        {
+          Pattern = isUpdated ? ShadingPattern.Percent20 : ShadingPattern.Percent10,
+          ForegroundColor = isUpdated ? "333333" : "666666",
+          BackgroundColor = isUpdated ? "DDDDDD" : "F2F2F2"
+        }
       };
     }
 

@@ -695,5 +695,17 @@ public static class BooleanConverter
     return (bool?)ConverterBase.ConvertFrom(value, typeof(bool), ConversionFromMap);
   }
 
+  /// <summary>
+  /// Strongly-typed version of <see cref="ConvertTo(bool?, Type)"/> for better usability in code.
+  /// Converts a boolean value to an OpenXml value or element of the specified type.
+  /// </summary>
+  /// <typeparam name="T">Result type</typeparam>
+  /// <param name="value">Value to convert</param>
+  /// <returns></returns>
+  public static T? ConvertTo<T>(bool? value)
+  {
+    return (T?)ConverterBase.ConvertTo(value, typeof(T), ConversionToMap);
+  }
   #endregion
+
 }

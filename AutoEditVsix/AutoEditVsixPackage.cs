@@ -50,8 +50,16 @@ namespace AutoEdit
     {
       // When initialized asynchronously, the current thread may be a background thread at this point.
       // Do any initialization that requires the UI thread after switching to the UI thread.
-      await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
-      await AutoEditCommands.InitializeAsync(this);
+      try
+      {
+        await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+        await AutoEditCommands.InitializeAsync(this);
+      }
+      catch (Exception ex)
+      {
+        ActivityLog.LogError(nameof(AutoEditVsixPackage), ex.ToString());
+        throw;
+      }
     }
 
     #endregion
