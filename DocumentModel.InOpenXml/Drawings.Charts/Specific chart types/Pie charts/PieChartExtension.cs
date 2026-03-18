@@ -1,12 +1,15 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a pie chart, providing additional series filtering capabilities.
 /// </summary>
-public class PieChartExtension : Extension
+[OpenXmlType(typeof(DXDC.PieChartExtension))]
+public partial class PieChartExtension : Extension<DXDC.PieChartExtension>
 {
   /// <summary>
   ///   Filtered pie series for the chart extension.
   /// </summary>
-  public FilteredPieSeries? FilteredPieSeries { get; set; }
+  [OpenXmlElement(typeof(DXO13DC.FilteredPieSeries))]
+  public FilteredPieSeries? FilteredPieSeries { get => _FilteredPieSeries; set => UpdateField(ref _FilteredPieSeries, value, nameof(FilteredPieSeries)); }
+
+  private FilteredPieSeries? _FilteredPieSeries;
 }
