@@ -1,12 +1,16 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents a filtered pie series for a chart, containing a reference to a pie chart series.
 /// </summary>
-public class FilteredPieSeries
+[OpenXmlType(typeof(DXO13DC.FilteredPieSeries))]
+public partial class FilteredPieSeries : ModelElement<DXO13DC.FilteredPieSeries>
 {
   /// <summary>
   ///   Pie chart series associated with the filtered pie series.
   /// </summary>
-  public PieChartSeries3? PieChartSeries { get; set; }
+  [OpenXmlProperty(nameof(DXO13DC.FilteredPieSeries.PieChartSeries))]
+  [OpenXmlType(typeof(DXO13DC.PieChartSeries))]
+  public PieChartSeries? PieChartSeries { get => _PieChartSeries; set => UpdateField(ref _PieChartSeries, value, nameof(PieChartSeries)); }
+
+  private PieChartSeries? _PieChartSeries;
 }
