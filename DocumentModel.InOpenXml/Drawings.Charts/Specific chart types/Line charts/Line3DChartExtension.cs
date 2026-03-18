@@ -3,10 +3,18 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents an extension for a 3D line chart, providing additional series extension capabilities.
 /// </summary>
-public class Line3DChartExtension : Extension
+[OpenXmlType(typeof(DXDC.Line3DChartExtension))]
+public partial class Line3DChartExtension: Extension<DXDC.Line3DChartExtension>
 {
   /// <summary>
   ///   Filtered line series extension for the chart extension.
   /// </summary>
-  public FilteredLineSeriesExtension? FilteredLineSeriesExtension { get; set; }
+  [OpenXmlElement(typeof(DXO13DC.FilteredLineSeriesExtension))]
+  public FilteredLineSeriesExtension? FilteredLineSeriesExtension
+  {
+    get => _FilteredLineSeriesExtension;
+    set => UpdateField(ref _FilteredLineSeriesExtension, value, nameof(FilteredLineSeriesExtension));
+  }
+
+  private FilteredLineSeriesExtension? _FilteredLineSeriesExtension;
 }

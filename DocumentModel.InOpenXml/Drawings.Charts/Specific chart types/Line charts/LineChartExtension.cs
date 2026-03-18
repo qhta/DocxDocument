@@ -1,12 +1,15 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a line chart, providing additional series extension capabilities.
 /// </summary>
-public class LineChartExtension : Extension
+[OpenXmlType(typeof(DXDC.LineChartExtension))]
+public partial class LineChartExtension : Extension<DXDC.LineChartExtension>
 {
   /// <summary>
   ///   Filtered line series extension for the chart extension.
   /// </summary>
-  public FilteredLineSeriesExtension? FilteredLineSeriesExtension { get; set; }
+  [OpenXmlElement(typeof(DXO13DC.FilteredLineSeriesExtension))]
+  public FilteredLineSeriesExtension? FilteredLineSeriesExtension { get => _FilteredLineSeriesExtension; set => UpdateField(ref _FilteredLineSeriesExtension, value, nameof(FilteredLineSeriesExtension)); }
+
+  private FilteredLineSeriesExtension? _FilteredLineSeriesExtension;
 }
