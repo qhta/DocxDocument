@@ -3,46 +3,94 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Manual Layout.
 /// </summary>
-public class ManualLayout
+[OpenXmlType(typeof(DXDC.ManualLayout))]
+public partial class ManualLayout: ModelElement<DXDC.ManualLayout>
 {
   /// <summary>
   ///   Layout Target.
   /// </summary>
-  public LayoutTarget? LayoutTarget { get; set; }
+  [OpenXmlProperty(nameof(DXDC.ManualLayout.LayoutTarget))]
+  public LayoutTarget? LayoutTarget
+  {
+    get => _LayoutTarget;
+    set => UpdateField(ref _LayoutTarget, value, nameof(LayoutTarget));
+  }
+
+  private LayoutTarget? _LayoutTarget;
+
   /// <summary>
   ///   Left Mode.
   /// </summary>
-  public LayoutMode? LeftMode { get; set; }
+  [OpenXmlProperty(nameof(DXDC.ManualLayout.LeftMode))]
+  public LayoutMode? LeftMode { get => _LeftMode; set => UpdateField(ref _LeftMode, value, nameof(LeftMode)); }
+
+  private LayoutMode? _LeftMode;
+
   /// <summary>
   ///   Top Mode.
   /// </summary>
-  public LayoutMode? TopMode { get; set; }
+  [OpenXmlProperty(nameof(DXDC.ManualLayout.TopMode))]
+  public LayoutMode? TopMode { get => _TopMode; set => UpdateField(ref _TopMode, value, nameof(TopMode)); }
+
+  private LayoutMode? _TopMode;
+
   /// <summary>
   ///   Width Mode.
   /// </summary>
-  public LayoutMode? WidthMode { get; set; }
+  [OpenXmlProperty(nameof(DXDC.ManualLayout.WidthMode))]
+  public LayoutMode? WidthMode { get => _WidthMode; set => UpdateField(ref _WidthMode, value, nameof(WidthMode)); }
+
+  private LayoutMode? _WidthMode;
+
   /// <summary>
   ///   Height Mode.
   /// </summary>
-  public LayoutMode? HeightMode { get; set; }
+  [OpenXmlProperty(nameof(DXDC.ManualLayout.HeightMode))]
+  public LayoutMode? HeightMode { get => _HeightMode; set => UpdateField(ref _HeightMode, value, nameof(HeightMode)); }
+
+  private LayoutMode? _HeightMode;
+
   /// <summary>
   ///   Left.
   /// </summary>
-  public Double? Left { get; set; }
+  [OpenXmlProperty(nameof(DXDC.ManualLayout.Left))]
+  public Double? Left { get => _Left; set => UpdateField(ref _Left, value, nameof(Left)); }
+
+  private Double? _Left;
+
   /// <summary>
   ///   Top.
   /// </summary>
-  public Double? Top { get; set; }
+  [OpenXmlProperty(nameof(DXDC.ManualLayout.Top))]
+  public Double? Top { get => _Top; set => UpdateField(ref _Top, value, nameof(Top)); }
+
+  private Double? _Top;
+
   /// <summary>
   ///   Width.
   /// </summary>
-  public Double? Width { get; set; }
+  [OpenXmlProperty(nameof(DXDC.ManualLayout.Width))]
+  public Double? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+
+  private Double? _Width;
+
   /// <summary>
   ///   Height.
   /// </summary>
-  public Double? Height { get; set; }
+  [OpenXmlProperty(nameof(DXDC.ManualLayout.Height))]
+  public Double? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
+
+  private Double? _Height;
+
   /// <summary>
   ///   Chart Extensibility.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+  [OpenXmlProperty(nameof(DXDC.ManualLayout.ExtensionList))]
+  public ExtensionList? ExtensionList
+  {
+    get => _ExtensionList;
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
+
+  private ExtensionList? _ExtensionList;
 }

@@ -3,22 +3,50 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the PrintSettings Class.
 /// </summary>
-public class PrintSettings
+[OpenXmlType(typeof(DXDC.PrintSettings))]
+public partial class PrintSettings: ModelElement<DXDC.PrintSettings>
 {
   /// <summary>
   ///   Header and Footer.
   /// </summary>
-  public HeaderFooter? HeaderFooter { get; set; }
+  [OpenXmlProperty(nameof(DXDC.PrintSettings.HeaderFooter))]
+  public HeaderFooter? HeaderFooter
+  {
+    get => _HeaderFooter;
+    set => UpdateField(ref _HeaderFooter, value, nameof(HeaderFooter));
+  }
+
+  private HeaderFooter? _HeaderFooter;
+
   /// <summary>
   ///   Page Margins.
   /// </summary>
-  public PageMargins? PageMargins { get; set; }
+  [OpenXmlProperty(nameof(DXDC.PrintSettings.PageMargins))]
+  public PageMargins? PageMargins
+  {
+    get => _PageMargins;
+    set => UpdateField(ref _PageMargins, value, nameof(PageMargins));
+  }
+
+  private PageMargins? _PageMargins;
+
   /// <summary>
   ///   Page Setup.
   /// </summary>
-  public PageSetup? PageSetup { get; set; }
+  [OpenXmlProperty(nameof(DXDC.PrintSettings.PageSetup))]
+  public PageSetup? PageSetup { get => _PageSetup; set => UpdateField(ref _PageSetup, value, nameof(PageSetup)); }
+
+  private PageSetup? _PageSetup;
+
   /// <summary>
   ///   Legacy Drawing for Headers and Footers.
   /// </summary>
-  public RelationshipIdType? LegacyDrawingHeaderFooter { get; set; }
+  [OpenXmlProperty(nameof(DXDC.PrintSettings.LegacyDrawingHeaderFooter))]
+  public RelationshipIdType? LegacyDrawingHeaderFooter
+  {
+    get => _LegacyDrawingHeaderFooter;
+    set => UpdateField(ref _LegacyDrawingHeaderFooter, value, nameof(LegacyDrawingHeaderFooter));
+  }
+
+  private RelationshipIdType? _LegacyDrawingHeaderFooter;
 }
