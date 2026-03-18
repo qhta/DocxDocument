@@ -3,7 +3,18 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Down Bars.
 /// </summary>
-public class DownBars
+[OpenXmlType(typeof(DXDC.DownBars))]
+public partial class DownBars: ModelElement<DXDC.DownBars>
 {
-  public ChartShapeProperties? ChartShapeProperties { get; set; }
+  /// <summary>
+  /// Chart shape properties for the down bars.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.DownBars.ChartShapeProperties))]
+  public ChartShapeProperties? ChartShapeProperties
+  {
+    get => _ChartShapeProperties;
+    set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties));
+  }
+
+  private ChartShapeProperties? _ChartShapeProperties;
 }

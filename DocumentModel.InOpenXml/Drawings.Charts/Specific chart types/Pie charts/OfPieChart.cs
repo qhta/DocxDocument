@@ -53,7 +53,7 @@ public class OfPieChart : ModelElement<DXDC.OfPieChart>
   /// <summary>
   ///   Series lines connecting the main and secondary chart.
   /// </summary>
-  public SeriesLines? SeriesLines { get; set; }
+  public SeriesLinesList? SeriesLines { get; set; }
 
   /// <summary>
   ///   Extension list for additional chart properties.

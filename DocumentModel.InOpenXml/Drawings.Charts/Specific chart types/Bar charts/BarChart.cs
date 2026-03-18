@@ -43,7 +43,7 @@ public class BarChart : ModelElement<DXDC.BarChart>, IChart
   /// <summary>
   ///   Series lines configuration for the chart.
   /// </summary>
-  public SeriesLines? SeriesLines { get; set; }
+  public SeriesLinesList? SeriesLines { get; set; }
 
   /// <summary>
   ///   Identifiers for the axes used in the chart.

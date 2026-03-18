@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Drawings;
 /// <summary>
 ///   Base type for a color for drawing elements.
 ///   All drawing color types derive from class..
