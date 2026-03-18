@@ -1,12 +1,15 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a stock chart, providing additional series extension capabilities.
 /// </summary>
-public class StockChartExtension : Extension
+[OpenXmlType(typeof(DXDC.StockChartExtension))]
+public partial class StockChartExtension : Extension<DXDC.StockChartExtension>
 {
   /// <summary>
   ///   Filtered line series extension for the stock chart extension.
   /// </summary>
-  public FilteredLineSeriesExtension? FilteredLineSeriesExtension { get; set; }
+  [OpenXmlElement(typeof(DXO13DC.FilteredLineSeriesExtension))]
+  public FilteredLineSeriesExtension? FilteredLineSeriesExtension { get => _FilteredLineSeriesExtension; set => UpdateField(ref _FilteredLineSeriesExtension, value, nameof(FilteredLineSeriesExtension)); }
+
+  private FilteredLineSeriesExtension? _FilteredLineSeriesExtension;
 }
