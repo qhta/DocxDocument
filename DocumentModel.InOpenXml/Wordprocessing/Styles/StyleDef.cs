@@ -114,11 +114,11 @@ public partial class StyleDef : ModelElement<DXW.Style>
     if (element is DXW.Style styleElement)
     {
       StyleHide isHidden = 0;
-      if (styleElement.StyleHidden?.GetValueOrDefault(false)==true)
+      if (styleElement.StyleHidden?.Val?.Value == DXW.OnOffOnlyValues.On)
         isHidden |= StyleHide.Hidden;     
-      if (styleElement.SemiHidden?.GetValueOrDefault(false)==true)
+      if (styleElement.SemiHidden?.Val?.Value == DXW.OnOffOnlyValues.On)
         isHidden |= StyleHide.SemiHidden;
-      if (styleElement.UnhideWhenUsed?.GetValueOrDefault(false)==true)
+      if (styleElement.UnhideWhenUsed?.Val?.Value == DXW.OnOffOnlyValues.On)
         isHidden |= StyleHide.UnhiddenWhenUsed;
       IsHidden = isHidden;
     }

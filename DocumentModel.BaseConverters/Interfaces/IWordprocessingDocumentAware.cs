@@ -13,7 +13,7 @@ public interface IWordprocessingDocumentAware
   /// </summary>
   /// <remarks>The returned WordprocessingDocument provides access to the contents and structure of the Open XML
   /// Word document. The value may be null if no document is currently loaded or associated.</remarks>
-  public WordprocessingDocument? WordprocessingDocument { get; }
+  public DXPP.WordprocessingDocument? WordprocessingDocument { get; }
 
   /// <summary>
   /// Attaches to the specified WordprocessingDocument and loads its content for further processing.
@@ -22,13 +22,13 @@ public interface IWordprocessingDocumentAware
   /// Any previously attached document will be detached. This method does not take ownership of the document; the caller
   /// remains responsible for disposing of it when no longer needed.</remarks>
   /// <param name="wordprocessingDocument">The WordprocessingDocument instance to attach and load. Cannot be null.</param>
-  public void AttachAndLoad(WordprocessingDocument wordprocessingDocument);
+  public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument);
 
   /// <summary>
   /// Attaches the specified WordprocessingDocument to the current context and updates its state to reflect any changes.
   /// </summary>
   /// <param name="wordprocessingDocument">The WordprocessingDocument instance to attach and update. Cannot be null.</param>
-  public void AttachAndUpdate(WordprocessingDocument wordprocessingDocument);
+  public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument);
 
   /// <summary>
   /// Detaches the current object from its parent or container, removing any associations or references.

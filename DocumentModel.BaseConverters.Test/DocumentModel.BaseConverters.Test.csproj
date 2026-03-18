@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="OnOffConverterTest.cs" />
+    <Compile Remove="OnOffToggleConverterTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\NamespaceMappings\OpenXmlUsings.cs" Link="OpenXmlUsings.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Qhta.Collections" Version="5.4.0" />
   </ItemGroup>
 
