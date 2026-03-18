@@ -3,10 +3,18 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a collection of 3D surface chart extensions.
 /// </summary>
-public class Surface3DChartExtensionList : ModelElement<DXDC.Surface3DChartExtensionList>
+[OpenXmlType(typeof(DXDC.Surface3DChartExtensionList))]
+public partial class Surface3DChartExtensionList: ModelElement<DXDC.Surface3DChartExtensionList>
 {
   /// <summary>
   ///   Collection of 3D surface chart extension items.
   /// </summary>
-  public Surface3DChartExtensions? Surface3DChartExtensions { get; set; }
+  [OpenXmlElement(typeof(DXDC.Surface3DChartExtension))]
+  public Surface3DChartExtensions? Surface3DChartExtensions
+  {
+    get => _Surface3DChartExtensions;
+    set => UpdateField(ref _Surface3DChartExtensions, value, nameof(Surface3DChartExtensions));
+  }
+
+  private Surface3DChartExtensions? _Surface3DChartExtensions;
 }
