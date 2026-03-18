@@ -3,6 +3,23 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a series in an area chart, including values, formatting, and data point configuration.
 /// </summary>
+///<remarks>
+/// <para>The following table lists the possible child types:</para>
+/// <list type="bullet">
+///   <item><description><see cref="T:DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties"/> <c>&lt;c:spPr&gt;</c></description></item>
+///   <item><description><see cref="T:DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtensionList"/> <c>&lt;c:extLst&gt;</c></description></item>
+///   <item><description><see cref="T:DocumentFormat.OpenXml.Drawing.Charts.CategoryAxisData"/> <c>&lt;c:cat&gt;</c></description></item>
+///   <item><description><see cref="T:DocumentFormat.OpenXml.Drawing.Charts.DataLabels"/> <c>&lt;c:dLbls&gt;</c></description></item>
+///   <item><description><see cref="T:DocumentFormat.OpenXml.Drawing.Charts.DataPoint"/> <c>&lt;c:dPt&gt;</c></description></item>
+///   <item><description><see cref="T:DocumentFormat.OpenXml.Drawing.Charts.ErrorBars"/> <c>&lt;c:errBars&gt;</c></description></item>
+///   <item><description><see cref="T:DocumentFormat.OpenXml.Drawing.Charts.Values"/> <c>&lt;c:val&gt;</c></description></item>
+///   <item><description><see cref="T:DocumentFormat.OpenXml.Drawing.Charts.PictureOptions"/> <c>&lt;c:pictureOptions&gt;</c></description></item>
+///   <item><description><see cref="T:DocumentFormat.OpenXml.Drawing.Charts.SeriesText"/> <c>&lt;c:tx&gt;</c></description></item>
+///   <item><description><see cref="T:DocumentFormat.OpenXml.Drawing.Charts.Trendline"/> <c>&lt;c:trendline&gt;</c></description></item>
+///   <item><description><see cref="T:DocumentFormat.OpenXml.Drawing.Charts.Index"/> <c>&lt;c:idx&gt;</c></description></item>
+///   <item><description><see cref="T:DocumentFormat.OpenXml.Drawing.Charts.Order"/> <c>&lt;c:order&gt;</c></description></item>
+/// </list>
+/// </remarks>
 [OpenXmlType(typeof(DXDC.AreaChartSeries))]
 public partial class AreaChartSeries: ModelElement<DXDC.AreaChartSeries>
 {
