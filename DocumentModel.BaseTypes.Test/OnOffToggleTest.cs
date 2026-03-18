@@ -1,0 +1,315 @@
+namespace DocumentModel.BaseTypes.Test;
+
+/// <summary>
+/// Test suite for OnOffToggle type serialization in both XML and JSON formats.
+/// </summary>
+public static class OnOffToggleTest
+{
+  /// <summary>
+  /// Runs all OnOffToggle serialization tests.
+  /// </summary>
+  public static bool Run()
+  {
+    Console.WriteLine("=== OnOffToggle Serialization Test Program ===");
+    Console.WriteLine();
+
+    // Run all tests
+    if (!TestOnOffToggleBasicOperations()) return false;
+    if (!TestOnOffToggleXmlSerialization()) return false;
+    if (!TestOnOffToggleJsonSerialization()) return false;
+    if (!TestOnOffToggleEdgeCases()) return false;
+    if (!TestOnOffTogglePerformance()) return false;
+
+    return true;
+  }
+
+  
+  static bool TestOnOffToggleBasicOperations()
+  {
+    Console.WriteLine("--- Testing OnOffToggle Basic Operations ---");
+
+    OnOffToggle on = OnOffToggle.On;
+    OnOffToggle off = OnOffToggle.Off;
+    OnOffToggle undefined = OnOffToggle.Undefined;
+    OnOffToggle toggle = OnOffToggle.Toggle;
+
+    Console.WriteLine($"\n✓ True value: {on}");
+    Console.WriteLine($"\n✓ False value: {off}");
+    Console.WriteLine($"\n✓ Undefined value: {undefined}");
+    Console.WriteLine($"\n✓ Toggle value: {toggle}");
+    if (!on.Equals(true)|| !off.Equals(false))
+    {
+      Console.WriteLine("✗ Equality test FAILED");
+      return false;
+    }
+
+    Console.WriteLine("\n✓ Equality test passed");
+
+    string trueString = on.ToString();
+    string falseString = off.ToString();
+    Console.WriteLine($"\n✓ ToString(): {trueString}, {falseString}");
+
+    int trueInt = (int)on;
+    OnOffToggle fromInt = (OnOffToggle)1;
+    Console.WriteLine($"\n✓ Numeric conversions: True={trueInt}, FromInt={fromInt}");
+
+    Console.WriteLine($"\n✓ Hash codes: True={on.GetHashCode()}, False={off.GetHashCode()}, Undefined={undefined.GetHashCode()}");
+
+    Console.WriteLine("\n✓ All basic operations passed");
+    Console.WriteLine();
+    return true;
+  }
+
+  
+  
+  static bool TestOnOffToggleXmlSerialization()
+  {
+    Console.WriteLine("--- Testing OnOffToggle XML Serialization ---");
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
+
+    var xmlSerializer = new XmlSerializer(typeof(OnOffToggleTestData));
+    string xmlString;
+
+    using (var stringWriter = new StringWriter())
+    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings
+    {
+      Indent = true,
+      OmitXmlDeclaration = false,
+      Encoding = System.Text.Encoding.UTF8
+    }))
+    {
+      xmlSerializer.Serialize(xmlWriter, testData);
+      xmlString = stringWriter.ToString();
+    }
+
+    Console.WriteLine("Serialized XML:");
+    Console.WriteLine(xmlString);
+    Console.WriteLine();
+
+    OnOffToggleTestData? deserializedData;
+    using (var stringReader = new StringReader(xmlString))
+    {
+      deserializedData = (OnOffToggleTestData?)xmlSerializer.Deserialize(stringReader);
+    }
+
+    if (!VerifyDeserializedData(deserializedData, testData)) return false;
+
+    Console.WriteLine("\n✓ XML Serialization/Deserialization test passed");
+    Console.WriteLine();
+    return true;
+  }
+
+  
+  
+  static bool TestOnOffToggleJsonSerialization()
+  {
+    Console.WriteLine("--- Testing OnOffToggle JSON Serialization ---");
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
+
+    var jsonOptions = new JsonSerializerOptions
+    {
+      WriteIndented = true,
+      PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+    };
+
+    string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
+
+    Console.WriteLine("Serialized JSON:");
+    Console.WriteLine(jsonString);
+    Console.WriteLine();
+
+    var deserializedData = JsonSerializer.Deserialize<OnOffToggleTestData>(jsonString, jsonOptions);
+
+    if (!VerifyDeserializedData(deserializedData, testData)) return false;
+
+    Console.WriteLine("\n✓ JSON Serialization/Deserialization test passed");
+    Console.WriteLine();
+    return true;
+  }
+
+  private static void ShowOriginalData(OnOffToggleTestData testData)
+  {
+    Console.WriteLine("Original data:");
+    Console.WriteLine($"  Enabled: {testData.Enabled}");
+    Console.WriteLine($"  Disabled: {testData.Disabled}");
+    Console.WriteLine($"  Indeterminate: {testData.Indeterminate}");
+    Console.WriteLine($"  Toggle: {testData.Toggle}");
+    Console.WriteLine($"  DefaultValue: {testData.DefaultValue}");
+    Console.WriteLine();
+  }
+
+  private static bool VerifyDeserializedData(OnOffToggleTestData? deserializedData, OnOffToggleTestData testData)
+  {
+    if (deserializedData == null)
+    {
+      Console.WriteLine("✗ Deserialization returned null");
+      return false;
+    }
+
+    Console.WriteLine("Deserialized data:");
+
+    Console.WriteLine($"  Enabled: {deserializedData.Enabled}");
+    if (testData.Enabled != deserializedData.Enabled)
+      return false;
+    Console.WriteLine($"  Disabled: {deserializedData.Disabled}");
+    if (testData.Disabled != deserializedData.Disabled)
+      return false;
+    Console.WriteLine($"  Indeterminate: {deserializedData.Indeterminate}");
+    if (testData.Indeterminate != deserializedData.Indeterminate)
+      return false;
+    Console.WriteLine($"  Toggle: {deserializedData.Toggle}");
+    if (testData.Toggle != deserializedData.Toggle)
+      return false;
+    Console.WriteLine($"  DefaultValue: {deserializedData.DefaultValue}");
+    if (testData.DefaultValue != deserializedData.DefaultValue)
+      return false;
+
+    return true;
+  }
+
+  
+  private static OnOffToggleTestData CreateTestData()
+  {
+    return new OnOffToggleTestData
+    {
+      Enabled = OnOffToggle.On,
+      Disabled = OnOffToggle.Off,
+      Indeterminate = OnOffToggle.Undefined,
+      Toggle = OnOffToggle.Toggle,
+      DefaultValue = OnOffToggle.Undefined
+    };
+  }
+
+  
+  static bool TestOnOffToggleEdgeCases()
+  {
+    Console.WriteLine("--- Testing OnOffToggle Edge Cases ---");
+
+    Console.WriteLine("Testing numeric values:");
+    OnOffToggle fromZero = (OnOffToggle)0;
+    OnOffToggle fromOne = (OnOffToggle)1;
+    OnOffToggle fromTwo = (OnOffToggle)2;
+    Console.WriteLine($"  0 -> {fromZero}");
+    Console.WriteLine($"  1 -> {fromOne}");
+    Console.WriteLine($"  2 -> {fromTwo}");
+
+    Console.WriteLine("\nTesting OnOffToggle.TryParse:");
+    bool parsedTrue = OnOffToggle.TryParse("On", out var parsedTrueValue);
+    bool parsedFalse = OnOffToggle.TryParse("Off", out var parsedFalseValue);
+    bool parsedUndefined = OnOffToggle.TryParse("Undefined", out var parsedUndefinedValue);
+    bool parsedInvalid = OnOffToggle.TryParse("Invalid", out var _);
+
+    Console.WriteLine($"  \"On\" -> {parsedTrueValue} (success={parsedTrue})");
+    Console.WriteLine($"  \"Off\" -> {parsedFalseValue} (success={parsedFalse})");
+    Console.WriteLine($"  \"Undefined\" -> {parsedUndefinedValue} (success={parsedUndefined})");
+    Console.WriteLine($"  \"Invalid\" -> success={parsedInvalid} (expected false)");
+
+    if (!parsedTrue || !parsedFalse || !parsedUndefined || parsedInvalid)
+    {
+      Console.WriteLine("✗ OnOffToggle parsing test FAILED");
+      return false;
+    }
+
+    Console.WriteLine("\nTesting JSON numeric deserialization:");
+    string jsonNumeric = "{\"Value\":1}";
+    var fromNumeric = JsonSerializer.Deserialize<OnOffToggleWrapper>(jsonNumeric);
+    Console.WriteLine($"  From JSON number 1: {fromNumeric?.Value}");
+
+    Console.WriteLine("\n✓ All edge case tests completed");
+    Console.WriteLine();
+    return true;
+  }
+
+  
+  
+  static bool TestOnOffTogglePerformance()
+  {
+    Console.WriteLine("--- Testing OnOffToggle Performance ---");
+    const int iterations = 100000;
+
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+
+    OnOffToggle testValue = OnOffToggle.Off;
+    sw.Restart();
+    for (int i = 0; i < iterations; i++)
+    {
+      string str = testValue.ToString();
+    }
+    sw.Stop();
+    Console.WriteLine($"ToString() x {iterations}: {sw.ElapsedMilliseconds}ms");
+
+    sw.Restart();
+    for (int i = 0; i < iterations; i++)
+    {
+      int numeric = (int)testValue;
+    }
+    sw.Stop();
+    Console.WriteLine($"Cast to int x {iterations}: {sw.ElapsedMilliseconds}ms");
+
+    var testObj = CreateTestData();
+    sw.Restart();
+    for (int i = 0; i < iterations / 10; i++)
+    {
+      string json = JsonSerializer.Serialize(testObj);
+    }
+    sw.Stop();
+    Console.WriteLine($"JSON Serialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
+
+    string jsonData = JsonSerializer.Serialize(testObj);
+    sw.Restart();
+    for (int i = 0; i < iterations / 10; i++)
+    {
+      var obj = JsonSerializer.Deserialize<OnOffToggleTestData>(jsonData);
+    }
+    sw.Stop();
+    Console.WriteLine($"Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
+
+    sw.Restart();
+    for (int i = 0; i < iterations; i++)
+    {
+      bool result = testValue == OnOffToggle.Off;
+    }
+    sw.Stop();
+    Console.WriteLine($"Equality check x {iterations}: {sw.ElapsedMilliseconds}ms");
+
+    Console.WriteLine("\n✓ Performance tests completed");
+    Console.WriteLine();
+    return true;
+  }
+
+  }
+
+
+/// <summary>
+/// Test data class containing various OnOffToggle properties.
+/// </summary>
+[XmlRoot("OnOffToggleTestData")]
+public class OnOffToggleTestData
+{
+  [XmlElement("Enabled")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+  public OnOffToggle Enabled { get; set; } = OnOffToggle.On;
+
+  [XmlElement("Disabled")]
+  public OnOffToggle Disabled { get; set; } = OnOffToggle.Off;
+
+  [XmlElement("Toggle")]
+  public OnOffToggle Toggle { get; set; } = OnOffToggle.Toggle;
+
+  [XmlElement("Indeterminate")]
+  public OnOffToggle Indeterminate { get; set; } = OnOffToggle.Undefined;
+
+  [XmlElement("DefaultValue")]
+  public OnOffToggle DefaultValue { get; set; } =OnOffToggle.Undefined;
+}
+
+/// <summary>
+/// Simple wrapper class for testing deserialization scenarios.
+/// </summary>
+public class OnOffToggleWrapper
+{
+  public OnOffToggle Value { get; set; } = OnOffToggle.Undefined;
+}
+

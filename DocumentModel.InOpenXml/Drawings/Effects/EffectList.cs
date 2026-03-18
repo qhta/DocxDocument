@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a container for various drawing effects that can be applied to graphical elements.
 /// </summary>
 [OpenXmlType(typeof(DXD.EffectList))]
-public partial class EffectList : ModelElement<DXD.EffectList>
+public partial class EffectList : ModelElementCollection<Effect, DXD.EffectList, DXD.Effect>
 {
  /// <summary>
  /// Blur effect applied to the element.

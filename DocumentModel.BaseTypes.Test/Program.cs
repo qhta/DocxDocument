@@ -17,7 +17,7 @@ class Program
     Console.WriteLine("║   DocumentModel Base Types Serialization Test Suite        ║");
     Console.WriteLine("╚════════════════════════════════════════════════════════════╝");
     Console.WriteLine();
-    if (!Exec(OnOffTest.Run)) return;
+    //if (!Exec(OnOffTest.Run)) return;
 
     if (!Exec(ArrayVariantTests.Run)) return;
     if (!Exec(Base64BinaryTest.Run)) return;

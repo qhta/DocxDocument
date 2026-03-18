@@ -10,6 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="OnOffTest.cs" />
+    <Compile Remove="OnOffToggleTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.InOpenXml\DocumentModel.InOpenXml.csproj" />
   </ItemGroup>

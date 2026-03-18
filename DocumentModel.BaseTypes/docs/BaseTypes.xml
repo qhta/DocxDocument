@@ -9117,32 +9117,6 @@
             Represents the inch unit of length.
             </summary>
         </member>
-        <member name="T:DocumentModel.OnOffToggle">
-            <summary>
-            Specific logical type for flag values switching between on and off states, with an additional toggle state for switching to the opposite state.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.OnOffToggle.Undefined">
-            <summary>
-            State is not defined,
-            which can be used to represent an uninitialized state or a state where the on/off status is not applicable.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.OnOffToggle.On">
-            <summary>
-            State is on, indicating that the feature or setting is active or enabled.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.OnOffToggle.Off">
-            <summary>
-            State is off, indicating that the feature or setting is inactive or disabled.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.OnOffToggle.Toggle">
-            <summary>
-            Represents a toggle control, which allows users to switch between two states such as on and off.
-            </summary>
-        </member>
         <member name="T:DocumentModel.SimpleTypeAttribute">
             <summary>
             Attribute to indicate that a class or struct represents a simple type in the model.

@@ -1,7 +1,5 @@
 ﻿using DocumentModel.Wordprocessing;
 
-using Microsoft.Office.Interop.Word;
-
 namespace DocumentModel.Interop;
 
 public interface ITextFormat

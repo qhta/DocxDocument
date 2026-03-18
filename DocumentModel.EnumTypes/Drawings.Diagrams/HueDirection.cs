@@ -1,0 +1,21 @@
+namespace DocumentModel.Drawings.Diagrams;
+
+/// <summary>
+/// Defines the HueDirection enumeration.
+/// Used in types such as ColorsType, ColorsTypeConverter.
+/// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXDD.HueDirectionValues))]
+public enum HueDirection
+{
+  /// <summary>
+  ///   Clockwise Hue Direction.
+  /// </summary>
+  [OpenXmlEnumValue("Clockwise")]
+  Clockwise,
+  /// <summary>
+  ///   Counterclockwise Hue Direction.
+  /// </summary>
+  [OpenXmlEnumValue("Counterclockwise")]
+  Counterclockwise
+}

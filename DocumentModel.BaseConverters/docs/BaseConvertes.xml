@@ -177,6 +177,30 @@
             The Open XML element type name associated with the decorated member.
             </summary>
         </member>
+        <member name="T:DocumentModel.OpenXml.OpenXmlIndirectElementAttribute">
+            <summary>
+            Specifies that the decorated model property is mapped to the Open XML child element with the given type
+            and this child element is not directly contained in the parent element,
+            but is instead contained within another element.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlIndirectElementAttribute.#ctor(System.Type,System.Type)">
+            <summary>
+            Specifies that the decorated model property is mapped to the Open XML child element with the given type
+            and this child element is not directly contained in the parent element,
+            but is instead contained within another element.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.OpenXml.OpenXmlIndirectElementAttribute.OuterElementType">
+            <summary>
+            The Open XML element type name which occurs in the parent element.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.OpenXml.OpenXmlIndirectElementAttribute.InnerElementType">
+            <summary>
+            The Open XML element type name which occurs in the child element.
+            </summary>
+        </member>
         <member name="T:DocumentModel.OpenXml.OpenXmlItemAttribute">
             <summary>
             Specifies that the decorated model class is a collection of Open XML elements.
