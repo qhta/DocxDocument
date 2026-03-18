@@ -1,13 +1,15 @@
 namespace DocumentModel.Drawings.ChartsStyle;
-
 /// <summary>
 ///    FillReference in ChartsStyle extends FillReference in Drawings with StyleColor.
 /// </summary>
-public class FillReference : DocumentModel.Drawings.FillReference
+[OpenXmlType(typeof(DXO13DCS.FillReference))]
+public partial class FillReference : DocumentModel.Drawings.FillReference
 {
   /// <summary>
-  /// Refers to color configuration for the fill, allowing for detailed styling of chart fills such as solid colors, gradients, and pattern fills.
+  /// The style color for the fill reference, which can be used to specify a color from the chart's style. 
   /// </summary>
+  [OpenXmlElement(typeof(DXO13DCS.StyleColor))]
+  public StyleColor? StyleColor { get => _StyleColor; set => UpdateField(ref _StyleColor, value, nameof(StyleColor)); }
 
-  public StyleColor? StyleColor { get; set; }
+  private StyleColor? _StyleColor;
 }

@@ -1,12 +1,15 @@
 namespace DocumentModel.Drawings.ChartsStyle;
-
 /// <summary>
 ///   EffectReference in ChartsStyle extends EffectReference in Drawings with StyleColor.
 /// </summary>
-public class EffectReference : DocumentModel.Drawings.EffectReference
+[OpenXmlType(typeof(DXO13DCS.EffectReference))]
+public partial class EffectReference : DocumentModel.Drawings.EffectReference
 {
   /// <summary>
-  /// Refers to color configuration for the effect, allowing for detailed styling of chart effects such as shadows, glows, and reflections.
+  /// The style color for the effect reference, which can be used to specify a color from the chart's style. 
   /// </summary>
-  public StyleColor? StyleColor { get; set; }
+  [OpenXmlElement(typeof(DXO13DCS.StyleColor))]
+  public StyleColor? StyleColor { get => _StyleColor; set => UpdateField(ref _StyleColor, value, nameof(StyleColor)); }
+
+  private StyleColor? _StyleColor;
 }

@@ -27,6 +27,7 @@ global using DXO10WDG = DocumentFormat.OpenXml.Office2010.Word.DrawingGroup;
 global using DXO10WDS = DocumentFormat.OpenXml.Office2010.Word.DrawingShape;
 global using DXO13D = DocumentFormat.OpenXml.Office2013.Drawing;
 global using DXO13DC = DocumentFormat.OpenXml.Office2013.Drawing.Chart;
+global using DXO13DCS = DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
 global using DXO13T = DocumentFormat.OpenXml.Office2013.Theme;
 global using DXO13W = DocumentFormat.OpenXml.Office2013.Word;
 global using DXO13WD = DocumentFormat.OpenXml.Office2013.Word.Drawing;
