@@ -1,13 +1,15 @@
 namespace DocumentModel.Drawings.ChartsStyle;
-
 /// <summary>
 ///    LineReference in ChartsStyle extends LineReference in Drawings with StyleColor.
 /// </summary>
-public class LineReference : DocumentModel.Drawings.LineReference
+[OpenXmlType(typeof(DXO13DCS.LineReference))]
+public partial class LineReference : DocumentModel.Drawings.LineReference
 {
   /// <summary>
-  /// Refers to color configuration for the line, allowing for detailed styling of chart lines such as solid colors, gradients, and pattern fills.
+  /// The style color for the line reference, which can be used to specify a color from the chart's style. 
   /// </summary>
+  [OpenXmlElement(typeof(DXO13DCS.StyleColor))]
+  public StyleColor? StyleColor { get => _StyleColor; set => UpdateField(ref _StyleColor, value, nameof(StyleColor)); }
 
-  public StyleColor? StyleColor { get; set; }
+  private StyleColor? _StyleColor;
 }
