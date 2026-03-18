@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Custom Split.
 /// </summary>
-public class CustomSplit : Collection<UInt32>
+[OpenXmlType(typeof(DXDC.CustomSplit))]
+public class CustomSplit : ValueCollection<UInt32>
 {
 }
