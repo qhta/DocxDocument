@@ -4,7 +4,8 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents the data source for an axis in a chart.
 ///   This class allows specifying different types of data sources, such as references or literals for numbers and strings, to define the values displayed along a chart axis.
 /// </summary>
-public abstract partial class AxisDataSourceType<T>: ModelElement<T> where T : DX.OpenXmlElement
+[OpenXmlType(typeof(DXDC.AxisDataSourceType))]
+public partial class AxisDataSourceType : ModelElement<DXDC.AxisDataSourceType>
 {
   /// <summary>
   ///   Reference to a multi-level string data source, used for hierarchical or grouped axis labels.
@@ -67,12 +68,4 @@ public abstract partial class AxisDataSourceType<T>: ModelElement<T> where T : D
   private StringLiteral? _StringLiteral;
 }
 
-/// <summary>
-/// Concrete class for AxisDataSourceType.
-/// </summary>
-[OpenXmlType(typeof(DXDC.AxisDataSourceType))]
-public  class AxisDataSourceType: AxisDataSourceType<DXDC.AxisDataSourceType>
-{
-
-}
 

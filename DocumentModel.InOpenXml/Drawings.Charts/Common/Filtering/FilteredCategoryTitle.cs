@@ -9,11 +9,12 @@ public partial class FilteredCategoryTitle: ModelElement<DXO13DC.FilteredCategor
   /// <summary>
   ///   Axis data source type associated with the filtered category title.
   /// </summary>
-  public AxisDataSourceType3? AxisDataSourceType
+  [OpenXmlType(typeof(DXO13DC.AxisDataSourceType))]
+  public AxisDataSourceType? AxisDataSourceType
   {
     get => _AxisDataSourceType;
     set => UpdateField(ref _AxisDataSourceType, value, nameof(AxisDataSourceType));
   }
 
-  private AxisDataSourceType3? _AxisDataSourceType;
+  private AxisDataSourceType? _AxisDataSourceType;
 }
