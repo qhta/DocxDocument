@@ -3,25 +3,54 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents an extension for a bubble chart series, providing additional formatting, filtering, and labeling options.
 /// </summary>
-public class BubbleSerExtension : Extension
+[OpenXmlType(typeof(DXDC.BubbleSerExtension))]
+public partial class BubbleSerExtension: Extension<DXDC.BubbleSerExtension>
 {
   /// <summary>
   ///   Invert solid fill format for the series.
   /// </summary>
-  public InvertSolidFillFormat? InvertSolidFillFormat { get; set; }
+  [OpenXmlElement(typeof(DXO10DC.InvertSolidFillFormat))]
+  public InvertSolidFillFormat? InvertSolidFillFormat
+  {
+    get => _InvertSolidFillFormat;
+    set => UpdateField(ref _InvertSolidFillFormat, value, nameof(InvertSolidFillFormat));
+  }
+
+  private InvertSolidFillFormat? _InvertSolidFillFormat;
 
   /// <summary>
   ///   Filtered title for the category.
   /// </summary>
-  public FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
+  [OpenXmlElement(typeof(DXO13DC.FilteredCategoryTitle))]
+  public FilteredCategoryTitle? FilteredCategoryTitle
+  {
+    get => _FilteredCategoryTitle;
+    set => UpdateField(ref _FilteredCategoryTitle, value, nameof(FilteredCategoryTitle));
+  }
+
+  private FilteredCategoryTitle? _FilteredCategoryTitle;
 
   /// <summary>
   ///   Data labels range for the series.
   /// </summary>
-  public DataLabelsRange? DataLabelsRange { get; set; }
+  [OpenXmlElement(typeof(DXO13DC.DataLabelsRange))]
+  public DataLabelsRange? DataLabelsRange
+  {
+    get => _DataLabelsRange;
+    set => UpdateField(ref _DataLabelsRange, value, nameof(DataLabelsRange));
+  }
+
+  private DataLabelsRange? _DataLabelsRange;
 
   /// <summary>
   ///   Exceptions for category filters applied to the series.
   /// </summary>
-  public CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
+  [OpenXmlElement(typeof(DXO13DC.CategoryFilterExceptions))]
+  public CategoryFilterExceptions? CategoryFilterExceptions
+  {
+    get => _CategoryFilterExceptions;
+    set => UpdateField(ref _CategoryFilterExceptions, value, nameof(CategoryFilterExceptions));
+  }
+
+  private CategoryFilterExceptions? _CategoryFilterExceptions;
 }
