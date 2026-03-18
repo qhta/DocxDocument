@@ -3,10 +3,18 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FilteredSurfaceSeries Class.
 /// </summary>
-public class FilteredSurfaceSeries : ModelElement<DXDC.SurfaceChartSeries>
+[OpenXmlType(typeof(DXO13DC.FilteredSurfaceSeries))]
+public partial class FilteredSurfaceSeries: ModelElement<DXDC.SurfaceChartSeries>
 {
   /// <summary>
   ///   Surface chart series associated with the filtered surface series.
   /// </summary>
-  public SurfaceChartSeries3? SurfaceChartSeries { get; set; }
+  [OpenXmlType(typeof(DXO13DC.SurfaceChartSeries))]
+  public SurfaceChartSeries? SurfaceChartSeries
+  {
+    get => _SurfaceChartSeries;
+    set => UpdateField(ref _SurfaceChartSeries, value, nameof(SurfaceChartSeries));
+  }
+
+  private SurfaceChartSeries? _SurfaceChartSeries;
 }
