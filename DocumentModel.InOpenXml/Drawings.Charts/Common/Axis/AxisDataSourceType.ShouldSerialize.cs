@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings.Charts;
 
 #pragma warning disable CS1591
 
-public partial class AxisDataSourceType<T>
+public partial class AxisDataSourceType
 {
   public bool ShouldSerializeMultiLevelStringReference() => MultiLevelStringReference is not null;
   public bool ShouldSerializeNumberReference() => NumberReference is not null;

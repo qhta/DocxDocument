@@ -1,12 +1,15 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Defines the UpDownBarType Class.
 /// </summary>
-public class UpDownBarType
+[OpenXmlType(typeof(DXDC.UpDownBarType))]
+public partial class UpDownBarType : ModelElement<DXDC.UpDownBarType>
 {
   /// <summary>
   ///   ChartShapeProperties.
   /// </summary>
-  public ChartShapeProperties? ChartShapeProperties { get; set; }
+  [OpenXmlProperty(nameof(DXDC.UpDownBarType.ChartShapeProperties))]
+  public ChartShapeProperties? ChartShapeProperties { get => _ChartShapeProperties; set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties)); }
+
+  private ChartShapeProperties? _ChartShapeProperties;
 }

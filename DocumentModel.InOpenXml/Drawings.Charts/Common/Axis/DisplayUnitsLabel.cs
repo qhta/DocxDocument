@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Display Units Label.
 /// </summary>
 [OpenXmlType(typeof(DXDC.DisplayUnitsLabel))]
-public class DisplayUnitsLabel: ModelElement<DXDC.DisplayUnitsLabel>
+public partial class DisplayUnitsLabel: ModelElement<DXDC.DisplayUnitsLabel>
 {
   /// <summary>
   ///   Layout.
