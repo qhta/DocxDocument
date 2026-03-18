@@ -19,12 +19,18 @@
     <Compile Remove="ModelElementConverter.cs" />
     <Compile Remove="ModelObjectComparer.cs" />
     <Compile Remove="NumericValueConverter.cs" />
+    <Compile Remove="OnOffConverter.cs" />
+    <Compile Remove="OnOffToggleConverter.cs" />
     <Compile Remove="OpenXmlPackageConverter.cs" />
     <Compile Remove="OpenXmlPartConverter.cs" />
     <Compile Remove="ReferenceConverter.cs" />
     <Compile Remove="ReferenceRelationshipConverter.cs" />
     <Compile Remove="SimpleValueConverter - Copy.cs" />
     <Compile Remove="VariantConverter - Copy.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\NamespaceMappings\OpenXmlUsings.cs" Link="OpenXmlUsings.cs" />
   </ItemGroup>
 
   <ItemGroup>
