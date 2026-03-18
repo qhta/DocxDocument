@@ -1,12 +1,15 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Defines the RelationshipIdType Class.
 /// </summary>
-public class RelationshipIdType
+[OpenXmlType(typeof(DXDC.RelationshipIdType))]
+public partial class RelationshipIdType : ModelElement<DXDC.RelationshipIdType>
 {
   /// <summary>
   ///   Relationship Reference
   /// </summary>
-  public string? Id { get; set; }
+  [OpenXmlProperty(nameof(DXDC.RelationshipIdType.Id))]
+  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+
+  private string? _Id;
 }
