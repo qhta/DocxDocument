@@ -3,9 +3,6 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Shape Adjust.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Adjust))]
-/// <summary>
-/// Represents the Adjust.
-/// </summary>
 public partial class Adjust : ModelElement<DXDD.Adjust>
 {
  /// <summary>

@@ -3,99 +3,76 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Connection.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Connection))]
-/// <summary>
-/// Represents the Connection.
-/// </summary>
-public class Connection : ModelElement<DXDD.Connection>
+public partial class Connection : ModelElement<DXDD.Connection>
 {
- /// <summary>
- ///   Model Identifier
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Connection.ModelId))]
- /// <summary>
- /// Model Id.
- /// </summary>
- public string? ModelId { get; set; }
+  /// <summary>
+  ///   Model Identifier
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Connection.ModelId))]
+  public string? ModelId { get => _ModelId; set => UpdateField(ref _ModelId, value, nameof(ModelId)); }
 
- /// <summary>
- ///   Point Type
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Connection.Type))]
- /// <summary>
- /// Type.
- /// </summary>
- public ConnectionType? Type { get; set; }
+  private string? _ModelId;
+  /// <summary>
+  ///   Point Type
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Connection.Type))]
+  public ConnectionType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- /// <summary>
- ///   Source Identifier
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Connection.SourceId))]
- /// <summary>
- /// Source Id.
- /// </summary>
- public string? SourceId { get; set; }
+  private ConnectionType? _Type;
+  /// <summary>
+  ///   Source Identifier
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Connection.SourceId))]
+  public string? SourceId { get => _SourceId; set => UpdateField(ref _SourceId, value, nameof(SourceId)); }
 
- /// <summary>
- ///   Destination Identifier
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Connection.DestinationId))]
- /// <summary>
- /// Destination Id.
- /// </summary>
- public string? DestinationId { get; set; }
+  private string? _SourceId;
+  /// <summary>
+  ///   Destination Identifier
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Connection.DestinationId))]
+  public string? DestinationId { get => _DestinationId; set => UpdateField(ref _DestinationId, value, nameof(DestinationId)); }
 
- /// <summary>
- ///   Source Position
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Connection.SourcePosition))]
- /// <summary>
- /// Source Position.
- /// </summary>
- public UInt32? SourcePosition { get; set; }
+  private string? _DestinationId;
+  /// <summary>
+  ///   Source Position
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Connection.SourcePosition))]
+  public UInt32? SourcePosition { get => _SourcePosition; set => UpdateField(ref _SourcePosition, value, nameof(SourcePosition)); }
 
- /// <summary>
- ///   Destination Position
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Connection.DestinationPosition))]
- /// <summary>
- /// Destination Position.
- /// </summary>
- public UInt32? DestinationPosition { get; set; }
+  private UInt32? _SourcePosition;
+  /// <summary>
+  ///   Destination Position
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Connection.DestinationPosition))]
+  public UInt32? DestinationPosition { get => _DestinationPosition; set => UpdateField(ref _DestinationPosition, value, nameof(DestinationPosition)); }
 
- /// <summary>
- ///   Parent Transition Identifier
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Connection.ParentTransitionId))]
- /// <summary>
- /// Parent Transition Id.
- /// </summary>
- public string? ParentTransitionId { get; set; }
+  private UInt32? _DestinationPosition;
+  /// <summary>
+  ///   Parent Transition Identifier
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Connection.ParentTransitionId))]
+  public string? ParentTransitionId { get => _ParentTransitionId; set => UpdateField(ref _ParentTransitionId, value, nameof(ParentTransitionId)); }
 
- /// <summary>
- ///   Sibling Transition Identifier
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Connection.SiblingTransitionId))]
- /// <summary>
- /// Sibling Transition Id.
- /// </summary>
- public string? SiblingTransitionId { get; set; }
+  private string? _ParentTransitionId;
+  /// <summary>
+  ///   Sibling Transition Identifier
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Connection.SiblingTransitionId))]
+  public string? SiblingTransitionId { get => _SiblingTransitionId; set => UpdateField(ref _SiblingTransitionId, value, nameof(SiblingTransitionId)); }
 
- /// <summary>
- ///   Presentation Identifier
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Connection.PresentationId))]
- /// <summary>
- /// Presentation Id.
- /// </summary>
- public string? PresentationId { get; set; }
+  private string? _SiblingTransitionId;
+  /// <summary>
+  ///   Presentation Identifier
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Connection.PresentationId))]
+  public string? PresentationId { get => _PresentationId; set => UpdateField(ref _PresentationId, value, nameof(PresentationId)); }
 
- /// <summary>
- ///   ExtensionList.
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Connection.ExtensionList))]
- /// <summary>
- /// Extension List.
- /// </summary>
- public ExtensionList? ExtensionList { get; set; }
+  private string? _PresentationId;
+  /// <summary>
+  ///   ExtensionList.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Connection.ExtensionList))]
+  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+  private ExtensionList? _ExtensionList;
 }
-

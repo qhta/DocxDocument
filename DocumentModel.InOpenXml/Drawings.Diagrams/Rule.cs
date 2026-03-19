@@ -3,81 +3,62 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Rule.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Rule))]
-/// <summary>
-/// Represents the Rule.
-/// </summary>
-public class Rule : ModelElement<DXDD.Rule>
+public partial class Rule : ModelElement<DXDD.Rule>
 {
- /// <summary>
- ///   Constraint Type
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Rule.Type))]
- /// <summary>
- /// Type.
- /// </summary>
- public Constraint? Type { get; set; }
+  /// <summary>
+  ///   Constraint Type
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Rule.Type))]
+  public Constraint? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- /// <summary>
- ///   For
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Rule.For))]
- /// <summary>
- /// For.
- /// </summary>
- public ConstraintRelationship? For { get; set; }
+  private Constraint? _Type;
+  /// <summary>
+  ///   For
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Rule.For))]
+  public ConstraintRelationship? For { get => _For; set => UpdateField(ref _For, value, nameof(For)); }
 
- /// <summary>
- ///   For Name
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Rule.ForName))]
- /// <summary>
- /// For Name.
- /// </summary>
- public string? ForName { get; set; }
+  private ConstraintRelationship? _For;
+  /// <summary>
+  ///   For Name
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Rule.ForName))]
+  public string? ForName { get => _ForName; set => UpdateField(ref _ForName, value, nameof(ForName)); }
 
- /// <summary>
- ///   Data Point Type
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Rule.PointType))]
- /// <summary>
- /// Point Type.
- /// </summary>
- public ElementType? PointType { get; set; }
+  private string? _ForName;
+  /// <summary>
+  ///   Data Point Type
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Rule.PointType))]
+  public ElementType? PointType { get => _PointType; set => UpdateField(ref _PointType, value, nameof(PointType)); }
 
- /// <summary>
- ///   Value
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Rule.Val))]
- /// <summary>
- /// Val.
- /// </summary>
- public Double? Val { get; set; }
+  private ElementType? _PointType;
+  /// <summary>
+  ///   Value
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Rule.Val))]
+  public Double? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
- /// <summary>
- ///   Factor
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Rule.Fact))]
- /// <summary>
- /// Fact.
- /// </summary>
- public Double? Fact { get; set; }
+  private Double? _Val;
+  /// <summary>
+  ///   Factor
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Rule.Fact))]
+  public Double? Fact { get => _Fact; set => UpdateField(ref _Fact, value, nameof(Fact)); }
 
- /// <summary>
- ///   Max Value
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Rule.Max))]
- /// <summary>
- /// Max.
- /// </summary>
- public Double? Max { get; set; }
+  private Double? _Fact;
+  /// <summary>
+  ///   Max Value
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Rule.Max))]
+  public Double? Max { get => _Max; set => UpdateField(ref _Max, value, nameof(Max)); }
 
- /// <summary>
- ///   ExtensionList.
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Rule.ExtensionList))]
- /// <summary>
- /// Extension List.
- /// </summary>
- public ExtensionList? ExtensionList { get; set; }
+  private Double? _Max;
+  /// <summary>
+  ///   ExtensionList.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Rule.ExtensionList))]
+  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+  private ExtensionList? _ExtensionList;
 }
-
