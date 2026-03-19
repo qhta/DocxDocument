@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents the soft edge formatting for a shape or range of shapes.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a page in a document. Use the Page object and the related methods and properties for programmatically defining page layout in a document.

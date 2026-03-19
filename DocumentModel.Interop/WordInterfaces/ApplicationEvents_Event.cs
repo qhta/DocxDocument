@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Events interface for Microsoft Word 97 Application object events.

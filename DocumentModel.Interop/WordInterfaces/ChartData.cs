@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents access to the linked or embedded data associated with a chart.

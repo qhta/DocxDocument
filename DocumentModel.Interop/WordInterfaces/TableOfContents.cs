@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a single table of contents in a document.

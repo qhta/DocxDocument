@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents the OLE characteristics (other than linking) for an OLE object, ActiveX control, or field.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// A collection of Version objects that represent all the versions of a document. Corresponds to the items listed in the Versions dialog box (File menu).

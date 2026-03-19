@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// A collection of Dictionary objects that includes the active custom spelling dictionaries.

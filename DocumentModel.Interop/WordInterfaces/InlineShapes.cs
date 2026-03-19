@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// A collection of InlineShape objects that represent all the inline shapes in a document, range, or selection.

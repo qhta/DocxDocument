@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Contains global application-level attributes used by Microsoft Word when you create and edit e-mail messages and replies.

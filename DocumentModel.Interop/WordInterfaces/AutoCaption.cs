@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a single caption that can be automatically added when items such as tables, pictures, or OLE objects are inserted into a document.

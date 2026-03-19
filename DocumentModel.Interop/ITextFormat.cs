@@ -35,7 +35,6 @@ public interface ITextFormat
   /// </summary>
   public string FontNameFarEast { get; set; }
 
-
   /// <summary>
   /// The font size in points.
   /// </summary>
@@ -51,70 +50,70 @@ public interface ITextFormat
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle Bold { get; set; }
+  public int Bold { get; set; }
 
   /// <summary>
   /// True if the text is formatted as bold (for bidirectional script).
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle BoldBi { get; set; }
+  public int BoldBi { get; set; }
 
   /// <summary>
   /// True if the text is formatted as italic.
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle Italic { get; set; }
+  public int Italic { get; set; }
 
   /// <summary>
   /// True if the text is formatted as italic (for bidirectional script).
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle ItalicBi { get; set; }
+  public int ItalicBi { get; set; }
 
   /// <summary>
   /// True if the text is formatted as strike-through.
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle StrikeThrough { get; set; }
+  public int StrikeThrough { get; set; }
 
   /// <summary>
   /// True if the text is formatted as double strike-through.
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle DoubleStrikeThrough { get; set; }
+  public int DoubleStrikeThrough { get; set; }
 
   /// <summary>
   /// True if the text is formatted as all capital letters.
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle AllCaps { get; set; }
+  public int AllCaps { get; set; }
 
   /// <summary>
   /// True if the text is formatted as small capital letters.
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle SmallCaps { get; set; }
+  public int SmallCaps { get; set; }
 
   /// <summary>
   /// True if the text is formatted as subscript.
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle Subscript { get; set; }
+  public int Subscript { get; set; }
 
   /// <summary>
   /// True if the text is formatted as superscript.
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle Superscript { get; set; }
+  public int Superscript { get; set; }
 
   /// <summary>
   /// The 24-bit color for the specified Font object.
@@ -160,21 +159,21 @@ public interface ITextFormat
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle Outline { get; set; }
+  public int Outline { get; set; }
 
   /// <summary>
   /// True if the text is formatted as embossed.
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle Emboss { get; set; }
+  public int Emboss { get; set; }
 
   /// <summary>
   /// True if the text is formatted as engraved.
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle Engrave { get; set; }
+  public int Engrave { get; set; }
 
   /// <summary>
   /// The minimum font size for which kerning should be applied automatically.
@@ -187,7 +186,7 @@ public interface ITextFormat
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
-  public OnOffToggle Hidden { get; set; }
+  public int Hidden { get; set; }
 
 
   public WdAnimation Animation { get; set; }

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// A collection of TableOfAuthorities objects (TOA fields) that represents the tables of authorities in a document.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// True if an axis title will occupy the chart layout space when a chart layout is being determined. The default value is True. Read/write

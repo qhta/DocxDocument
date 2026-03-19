@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a variable stored as part of a document. Document variables are used to preserve macro settings in between macro sessions.

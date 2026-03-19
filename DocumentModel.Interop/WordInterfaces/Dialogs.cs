@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// A collection of Dialog objects in Microsoft Word. Each Dialog object represents a built-in Word dialog box.

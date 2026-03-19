@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// A collection of XSLTransform objects that represent all of the Extensible Stylesheet Language Transformations (XSLTs) for a specific XML namespace.

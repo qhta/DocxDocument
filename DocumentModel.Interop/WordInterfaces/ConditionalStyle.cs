@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents special formatting applied to specified areas of a table when the selected table is formatted with a specified table style.

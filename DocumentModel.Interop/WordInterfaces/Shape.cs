@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents an object in the drawing layer, such as an AutoShape, freeform, OLE object, ActiveX control, or picture.

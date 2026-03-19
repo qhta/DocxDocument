@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a chart in a document.
@@ -73,7 +73,7 @@ public partial interface Chart : InteropObject
   /// <summary>
   /// The chart type.
   /// </summary>
-  public Core.XlChartType ChartType { get; set; }
+  public object ChartType { get; set; }
 
   /// <summary>
   /// The has data table.
