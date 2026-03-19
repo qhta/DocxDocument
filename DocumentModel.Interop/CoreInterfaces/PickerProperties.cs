@@ -1,65 +1,14 @@
-﻿using System.Collections;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-[ComImport]
-[Guid("000C03E3-0000-0000-C000-000000000046")]
-[TypeLibType(4288)]
 public interface PickerProperties: _IMsoDispObj, IEnumerable
 {
-  [DispId(1610743808)]
-  new object Application
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(1610743808)]
-    [return: MarshalAs(UnmanagedType.IDispatch)]
-    get;
-  }
-
-  [DispId(1610743809)]
-  new int Creator
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(1610743809)]
-    get;
-  }
-
-  [DispId(0)]
-  PickerProperty this[[In] int Index]
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(0)]
-    [return: MarshalAs(UnmanagedType.Interface)]
-    get;
-  }
-
-  [DispId(1)]
-  int Count
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(1)]
-    get;
-  }
-
-  [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-  [DispId(2)]
-  [return: MarshalAs(UnmanagedType.Interface)]
-  PickerProperty Add
-  ([In] [MarshalAs(UnmanagedType.BStr)] string Id, [In] [MarshalAs(UnmanagedType.BStr)] string Value,
-    [In] MsoPickerField Type);
-
-  [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-  [DispId(3)]
-  void Remove([In] [MarshalAs(UnmanagedType.BStr)] string Id);
-
-  [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-  [DispId(-4)]
-  [TypeLibFunc(1024)]
-  [return:
-    MarshalAs(UnmanagedType.CustomMarshaler,
-      MarshalType =
-        "System.Runtime.InteropServices.CustomMarshalers.EnumeratorToEnumVariantMarshaler, CustomMarshalers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+  new object Application { get; }
+  new int Creator { get; }
+  PickerProperty this[int Index] { get; }
+  int Count { get; }
+  PickerProperty Add(string Id, string Value, MsoPickerField Type);
+  void Remove(string Id);
   new IEnumerator GetEnumerator();
 }

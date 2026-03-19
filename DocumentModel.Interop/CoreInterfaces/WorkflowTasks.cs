@@ -1,54 +1,12 @@
-﻿using System.Collections;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-[ComImport]
-[Guid("000CD901-0000-0000-C000-000000000046")]
-[TypeLibType(4288)]
 public interface WorkflowTasks: _IMsoDispObj, IEnumerable
 {
-  [DispId(1610743808)]
-  new object Application
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(1610743808)]
-    [return: MarshalAs(UnmanagedType.IDispatch)]
-    get;
-  }
-
-  [DispId(1610743809)]
-  new int Creator
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(1610743809)]
-    get;
-  }
-
-  [DispId(0)]
-  WorkflowTask this[[In] int Index]
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(0)]
-    [return: MarshalAs(UnmanagedType.Interface)]
-    get;
-  }
-
-  [DispId(1)]
-  int Count
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(1)]
-    get;
-  }
-
-  [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-  [TypeLibFunc(1024)]
-  [DispId(-4)]
-  [return:
-    MarshalAs(UnmanagedType.CustomMarshaler,
-      MarshalType =
-        "System.Runtime.InteropServices.CustomMarshalers.EnumeratorToEnumVariantMarshaler, CustomMarshalers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+  new object Application { get; }
+  new int Creator { get; }
+  WorkflowTask this[int Index] { get; }
+  int Count { get; }
   new IEnumerator GetEnumerator();
 }
