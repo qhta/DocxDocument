@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Text Properties.
 /// </summary>
 [OpenXmlType(typeof(DXDD.TextProperties))]
+/// <summary>
+/// Represents the Text Properties.
+/// </summary>
 public class TextProperties: ModelElement<DXDD.TextProperties>
 {
   /// <summary>
