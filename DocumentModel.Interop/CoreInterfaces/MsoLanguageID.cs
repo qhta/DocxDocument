@@ -1,4 +1,3 @@
-﻿using System.Runtime.InteropServices;
 
 namespace DocumentModel.Interop.Core;
 
@@ -51,8 +50,6 @@ public enum MsoLanguageID
   msoLanguageIDDivehi = 1125,
   msoLanguageIDBelgianDutch = 2067,
   msoLanguageIDDutch = 1043,
-
-  [TypeLibVar(64)]
   msoLanguageIDDzongkhaBhutan = 2129,
   msoLanguageIDEdo = 1126,
   msoLanguageIDEnglishAUS = 3081,
@@ -88,8 +85,6 @@ public enum MsoLanguageID
   msoLanguageIDFrenchSenegal = 10252,
   msoLanguageIDSwissFrench = 4108,
   msoLanguageIDFrenchWestIndies = 7180,
-
-  [TypeLibVar(64)]
   msoLanguageIDFrenchZaire = 9228,
   msoLanguageIDFrenchCongoDRC = 9228,
   msoLanguageIDFrisianNetherlands = 1122,
@@ -133,8 +128,6 @@ public enum MsoLanguageID
   msoLanguageIDLao = 1108,
   msoLanguageIDLatvian = 1062,
   msoLanguageIDLithuanian = 1063,
-
-  [TypeLibVar(64)]
   msoLanguageIDMacedonian = 1071,
   msoLanguageIDMacedonianFYROM = 1071,
   msoLanguageIDMalaysian = 1086,

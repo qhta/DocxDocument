@@ -1,9 +1,6 @@
-﻿using System.Runtime.InteropServices;
 
 namespace DocumentModel.Interop.Core;
 
-[Guid("BF78D790-8DCF-4CF1-9CD4-4FCEB78EBE14")]
-[TypeLibType(16)]
 public enum XlDisplayUnit
 {
   xlHundreds = -2,

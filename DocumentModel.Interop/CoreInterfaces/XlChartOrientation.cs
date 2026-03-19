@@ -1,9 +1,6 @@
-﻿using System.Runtime.InteropServices;
 
 namespace DocumentModel.Interop.Core;
 
-[Guid("94E08815-49E8-45BB-9BC2-8972405756CF")]
-[TypeLibType(16)]
 public enum XlChartOrientation
 {
   xlDownward = -4170,
