@@ -7,16 +7,16 @@ public interface DiagramNode: _IMsoDispObj
   new int Creator { get; }
 
   DiagramNode AddNode
-  (MsoRelativeNodePosition Pos = MsoRelativeNodePosition.msoAfterNode,
-    MsoDiagramNodeType NodeType = MsoDiagramNodeType.msoDiagramNode);
+  (MsoRelativeNodePosition Pos,
+    MsoDiagramNodeType NodeType);
 
   void Delete();
   void MoveNode(DiagramNode TargetNode, MsoRelativeNodePosition Pos);
   void ReplaceNode(DiagramNode TargetNode);
-  void SwapNode(DiagramNode TargetNode, bool SwapChildren = true);
+  void SwapNode(DiagramNode TargetNode, bool SwapChildren);
 
   DiagramNode CloneNode
-    (bool CopyChildren, DiagramNode TargetNode, MsoRelativeNodePosition Pos = MsoRelativeNodePosition.msoAfterNode);
+    (bool CopyChildren, DiagramNode TargetNode, MsoRelativeNodePosition Pos);
 
   void TransferChildren(DiagramNode ReceivingNode);
   DiagramNode NextNode();

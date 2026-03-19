@@ -12,7 +12,7 @@ public interface _CustomXMLSchemaCollection: _IMsoDispObj, IEnumerable
   string NamespaceURI { get; }
 
   CustomXMLSchema Add
-    (string NamespaceURI = "", string Alias = "", string FileName = "", bool InstallForAllUsers = false);
+    (string NamespaceURI, string Alias, string FileName, bool InstallForAllUsers);
 
   void AddCollection(CustomXMLSchemaCollection SchemaCollection);
   bool Validate();

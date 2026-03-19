@@ -8,8 +8,8 @@ public interface SmartArtNode: _IMsoDispObj
   object Parent { get; }
 
   SmartArtNode AddNode
-  (MsoSmartArtNodePosition Position = MsoSmartArtNodePosition.msoSmartArtNodeDefault,
-    MsoSmartArtNodeType Type = MsoSmartArtNodeType.msoSmartArtNodeTypeDefault);
+  (MsoSmartArtNodePosition Position,
+    MsoSmartArtNodeType Type);
 
   void Delete();
   void Promote();

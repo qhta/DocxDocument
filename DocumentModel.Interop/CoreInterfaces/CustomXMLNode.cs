@@ -24,24 +24,24 @@ public interface CustomXMLNode: _IMsoDispObj
   string XML { get; }
 
   void AppendChildNode
-  (string Name = "", string NamespaceURI = "",
-    MsoCustomXMLNodeType NodeType = MsoCustomXMLNodeType.msoCustomXMLNodeElement, string NodeValue = "");
+  (string Name, string NamespaceURI,
+    MsoCustomXMLNodeType NodeType, string NodeValue);
 
   void AppendChildSubtree(string XML);
   void Delete();
   bool HasChildNodes();
 
   void InsertNodeBefore
-  (string Name = "", string NamespaceURI = "",
-    MsoCustomXMLNodeType NodeType = MsoCustomXMLNodeType.msoCustomXMLNodeElement, string NodeValue = "",
-    CustomXMLNode NextSibling = null);
+  (string Name, string NamespaceURI,
+    MsoCustomXMLNodeType NodeType, string NodeValue,
+    CustomXMLNode NextSibling);
 
-  void InsertSubtreeBefore(string XML, CustomXMLNode NextSibling = null);
+  void InsertSubtreeBefore(string XML, CustomXMLNode NextSibling);
   void RemoveChild(CustomXMLNode Child);
 
   void ReplaceChildNode
-  (CustomXMLNode OldNode, string Name = "", string NamespaceURI = "",
-    MsoCustomXMLNodeType NodeType = MsoCustomXMLNodeType.msoCustomXMLNodeElement, string NodeValue = "");
+  (CustomXMLNode OldNode, string Name, string NamespaceURI,
+    MsoCustomXMLNodeType NodeType, string NodeValue);
 
   void ReplaceChildSubtree(string XML, CustomXMLNode OldNode);
   CustomXMLNodes SelectNodes(string XPath);

@@ -7,6 +7,6 @@ public interface SmartDocument: _IMsoDispObj
   new int Creator { get; }
   string SolutionID { get; set; }
   string SolutionURL { get; set; }
-  void PickSolution(bool ConsiderAllSchemas = false);
+  void PickSolution(bool ConsiderAllSchemas);
   void RefreshPane();
 }

@@ -6,7 +6,7 @@ public interface IMsoSeries
   object Parent { get; }
 
   object _ApplyDataLabels
-  (XlDataLabelsType Type = XlDataLabelsType.xlDataLabelsShowValue, object IMsoLegendKey, object AutoText,
+  (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines);
 
   XlAxisGroup AxisGroup { get; set; }
@@ -61,7 +61,7 @@ public interface IMsoSeries
   IMsoLeaderLines LeaderLines { get; }
 
   object ApplyDataLabels
-  (XlDataLabelsType Type = XlDataLabelsType.xlDataLabelsShowValue, object IMsoLegendKey, object AutoText,
+  (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines, object ShowSeriesName, object ShowCategoryName, object ShowValue, object ShowPercentage,
     object ShowBubbleSize, object Separator);
 

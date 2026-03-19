@@ -9,6 +9,6 @@ public interface CustomXMLValidationErrors: _IMsoDispObj, IEnumerable
   object Parent { get; }
   int Count { get; }
   CustomXMLValidationError this[int Index] { get; }
-  void Add(CustomXMLNode Node, string ErrorName, string ErrorText = "", bool ClearedOnUpdate = true);
+  void Add(CustomXMLNode Node, string ErrorName, string ErrorText, bool ClearedOnUpdate);
   new IEnumerator GetEnumerator();
 }

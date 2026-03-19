@@ -8,8 +8,8 @@ public interface FreeformBuilder: _IMsoDispObj
   object Parent { get; }
 
   void AddNodes
-  (MsoSegmentType SegmentType, MsoEditingType EditingType, float X1, float Y1, float X2 = 0f, float Y2 = 0f,
-    float X3 = 0f, float Y3 = 0f);
+  (MsoSegmentType SegmentType, MsoEditingType EditingType, float X1, float Y1, float X2, float Y2,
+    float X3, float Y3);
 
   Shape ConvertToShape();
 }

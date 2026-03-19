@@ -14,8 +14,8 @@ public interface _CustomXMLPart: _IMsoDispObj
   string XML { get; }
 
   void AddNode
-  (CustomXMLNode Parent, string Name = "", string NamespaceURI = "", CustomXMLNode NextSibling = null,
-    MsoCustomXMLNodeType NodeType = MsoCustomXMLNodeType.msoCustomXMLNodeElement, string NodeValue = "");
+  (CustomXMLNode Parent, string Name, string NamespaceURI, CustomXMLNode NextSibling,
+    MsoCustomXMLNodeType NodeType, string NodeValue);
 
   void Delete();
   bool Load(string FilePath);

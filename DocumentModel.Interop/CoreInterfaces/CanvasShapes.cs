@@ -18,8 +18,8 @@ public interface CanvasShapes: _IMsoDispObj, IEnumerable
   Shape AddLine(float BeginX, float BeginY, float EndX, float EndY);
 
   Shape AddPicture
-  (string FileName, MsoTriState LinkToFile, MsoTriState SaveWithDocument, float Left, float Top, float Width = -1f,
-    float Height = -1f);
+  (string FileName, MsoTriState LinkToFile, MsoTriState SaveWithDocument, float Left, float Top, float Width,
+    float Height);
 
   Shape AddPolyline(object SafeArrayOfPoints);
   Shape AddShape(MsoAutoShapeType Type, float Left, float Top, float Width, float Height);

@@ -1,12 +1,10 @@
 using System;
 
-using stdole;
-
 namespace DocumentModel.Interop.Core;
 
 public interface SignatureProvider
 {
-  IPictureDisp GenerateSignatureLineImage
+  object GenerateSignatureLineImage
     (SignatureLineImage siglnimg, SignatureSetup psigsetup, SignatureInfo psiginfo, object XmlDsigStream);
 
   void ShowSignatureSetup(object ParentWindow, SignatureSetup psigsetup);

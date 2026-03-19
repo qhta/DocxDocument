@@ -9,7 +9,7 @@ public interface _CustomXMLParts: _IMsoDispObj, IEnumerable
   object Parent { get; }
   int Count { get; }
   CustomXMLPart this[object Index] { get; }
-  CustomXMLPart Add(string XML = "", object SchemaCollection);
+  CustomXMLPart Add(string XML, object SchemaCollection);
   CustomXMLPart SelectByID(string Id);
   CustomXMLParts SelectByNamespace(string NamespaceURI);
   new IEnumerator GetEnumerator();

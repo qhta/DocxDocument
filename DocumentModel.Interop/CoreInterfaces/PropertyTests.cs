@@ -11,7 +11,7 @@ public interface PropertyTests: _IMsoDispObj, IEnumerable
 
   void Add
   (string Name, MsoCondition Condition, object Value, object SecondValue,
-    MsoConnector Connector = MsoConnector.msoConnectorAnd);
+    MsoConnector Connector);
 
   void Remove(int Index);
   new IEnumerator GetEnumerator();

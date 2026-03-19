@@ -8,6 +8,5 @@ public interface Axes
   object _NewEnum { get; }
   object Application { get; }
   int Creator { get; }
-  IMsoAxis this[XlAxisType Type, XlAxisGroup AxisGroup = XlAxisGroup.xlPrimary] { get; }
   object Parent { get; }
 }

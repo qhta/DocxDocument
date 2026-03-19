@@ -9,7 +9,7 @@ public interface HTMLProjectItem: _IMsoDispObj
   string Name { get; }
   bool IsOpen { get; }
   void LoadFromFile(string FileName);
-  void Open(MsoHTMLProjectOpen OpenKind = (MsoHTMLProjectOpen)0);
+  void Open(MsoHTMLProjectOpen OpenKind);
   void SaveCopyAs(string FileName);
   string Text { get; set; }
   object Parent { get; }

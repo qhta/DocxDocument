@@ -1,6 +1,4 @@
 
-using stdole;
-
 namespace DocumentModel.Interop.Core;
 
 public interface _CommandBarButton: CommandBarControl
@@ -72,7 +70,7 @@ public interface _CommandBarButton: CommandBarControl
   MsoButtonState State { get; set; }
   MsoButtonStyle Style { get; set; }
   MsoCommandBarButtonHyperlinkType HyperlinkType { get; set; }
-  IPictureDisp Picture { get; set; }
-  IPictureDisp Mask { get; set; }
+  object Picture { get; set; }
+  object Mask { get; set; }
   object InstanceIdPtr { get; }
 }

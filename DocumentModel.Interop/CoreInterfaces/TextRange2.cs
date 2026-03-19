@@ -27,9 +27,9 @@ public interface TextRange2: _IMsoDispObj, IEnumerable
   float BoundWidth { get; }
   float BoundHeight { get; }
   TextRange2 TrimText();
-  TextRange2 InsertAfter(string NewText = "");
-  TextRange2 InsertBefore(string NewText = "");
-  TextRange2 InsertSymbol(string FontName, int CharNumber, MsoTriState Unicode = MsoTriState.msoFalse);
+  TextRange2 InsertAfter(string NewText);
+  TextRange2 InsertBefore(string NewText);
+  TextRange2 InsertSymbol(string FontName, int CharNumber, MsoTriState Unicode);
   void Select();
   void Cut();
   void Copy();
@@ -41,12 +41,12 @@ public interface TextRange2: _IMsoDispObj, IEnumerable
   void RemovePeriods();
 
   TextRange2 Find
-  (string FindWhat, int After = 0, MsoTriState MatchCase = MsoTriState.msoFalse,
-    MsoTriState WholeWords = MsoTriState.msoFalse);
+  (string FindWhat, int After, MsoTriState MatchCase,
+    MsoTriState WholeWords);
 
   TextRange2 Replace
-  (string FindWhat, string ReplaceWhat, int After = 0, MsoTriState MatchCase = MsoTriState.msoFalse,
-    MsoTriState WholeWords = MsoTriState.msoFalse);
+  (string FindWhat, string ReplaceWhat, int After, MsoTriState MatchCase,
+    MsoTriState WholeWords);
 
   void RotatedBounds
     (out float X1, out float Y1, out float X2, out float Y2, out float X3, out float Y3, out float x4, out float y4);
@@ -55,5 +55,5 @@ public interface TextRange2: _IMsoDispObj, IEnumerable
   void RtlRun();
   void LtrRun();
   TextRange2 MathZones { get; }
-  TextRange2 InsertChartField(MsoChartFieldType ChartFieldType, string Formula = "", int Position = -1);
+  TextRange2 InsertChartField(MsoChartFieldType ChartFieldType, string Formula, int Position);
 }

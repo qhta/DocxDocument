@@ -6,7 +6,7 @@ public interface ILicWizExternal
 {
   void PrintHtmlDocument(object punkHtmlDoc);
   void InvokeDateTimeApplet();
-  string FormatDate(DateTime date, string pFormat = "");
+  string FormatDate(DateTime date, string pFormat);
   void ShowHelp(ref object pvarId);
   void Terminate();
   void DisableVORWReminder(int BPC);
