@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Algorithm.
 /// </summary>
-public class Algorithm
+[OpenXmlType(typeof(DXDD.Algorithm))]
+public class Algorithm: ModelElement<DXDD.Algorithm>
 {
   /// <summary>
   ///   Algorithm Type

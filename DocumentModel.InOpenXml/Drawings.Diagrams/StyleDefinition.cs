@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Style Definition.
 /// </summary>
-public class StyleDefinition
+[OpenXmlType(typeof(DXDD.StyleDefinition))]
+public class StyleDefinition: ModelElement<DXDD.StyleDefinition>
 {
   /// <summary>
   ///   Unique Style ID
@@ -21,6 +22,7 @@ public class StyleDefinition
   public ExtensionList? ExtensionList { get; set; }
 }
 
-public class StyleLabelDescriptions : ElementCollection<StyleLabelDescription>
+[OpenXmlType(typeof(DXDD.StyleLabelDescription))]
+public class StyleLabelDescriptions : ModelElementCollection<StyleLabelDescription>
 {
 }

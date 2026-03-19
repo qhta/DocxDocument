@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Layout Definition.
 /// </summary>
-public class LayoutDefinition
+[OpenXmlType(typeof(DXDD.LayoutDefinition))]
+public class LayoutDefinition: ModelElement<DXDD.LayoutDefinition>
 {
   /// <summary>
   ///   uniqueId

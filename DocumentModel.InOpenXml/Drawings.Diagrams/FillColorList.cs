@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Fill Color List.
 /// </summary>
-public class FillColorList
+[OpenXmlType(typeof(DXDD.FillColorList))]
+public class FillColorList: ColorsType
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
   public RgbColorModelHex? RgbColorModelHex { get; set; }

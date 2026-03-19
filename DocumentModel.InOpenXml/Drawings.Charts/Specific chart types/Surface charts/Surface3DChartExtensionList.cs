@@ -4,7 +4,8 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a collection of 3D surface chart extensions.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Surface3DChartExtensionList))]
-public partial class Surface3DChartExtensionList: ModelElement<DXDC.Surface3DChartExtensionList>
+public partial class Surface3DChartExtensionList: ModelElementCollection<Surface3DChartExtension, 
+  DXDC.Surface3DChartExtensionList, DXDC.Surface3DChartExtension>
 {
   /// <summary>
   ///   Collection of 3D surface chart extension items.

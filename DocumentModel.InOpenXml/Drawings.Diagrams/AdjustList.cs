@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Shape Adjust List.
 /// </summary>
-public class AdjustList : ElementCollection<Adjust>
+[OpenXmlType(typeof(DXDD.AdjustList))]
+public class AdjustList : ModelElementCollection<Adjust, DXDD.AdjustList, DXDD.Adjust>
 {
 }

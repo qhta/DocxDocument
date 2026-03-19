@@ -1,16 +1,19 @@
 namespace DocumentModel.Drawings.Diagrams;
-
 /// <summary>
 ///   Category.
 /// </summary>
-public class Category : CollectionItem
+[OpenXmlType(typeof(DXDD.Category))]
+public class Category : ModelElement<DXDD.Category>
 {
-  /// <summary>
-  ///   Category Type
-  /// </summary>
-  public string? Type { get; set; }
-  /// <summary>
-  ///   Priority
-  /// </summary>
-  public UInt32? Priority { get; set; }
+ /// <summary>
+ ///   Category Type
+ /// </summary>
+ [OpenXmlProperty(nameof(DXDD.Category.Type))]
+ public string? Type { get; set; }
+
+ /// <summary>
+ ///   Priority
+ /// </summary>
+ [OpenXmlProperty(nameof(DXDD.Category.Priority))]
+ public UInt32? Priority { get; set; }
 }

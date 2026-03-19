@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Layout Node.
 /// </summary>
-public class LayoutNode
+[OpenXmlType(typeof(DXDD.LayoutNode))]
+public class LayoutNode: ModelElement<DXDD.LayoutNode>
 {
   /// <summary>
   ///   Name
