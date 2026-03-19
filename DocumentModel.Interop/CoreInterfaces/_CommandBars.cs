@@ -1,7 +1,5 @@
 using System.Collections;
 
-using stdole;
-
 namespace DocumentModel.Interop.Core;
 
 public interface _CommandBars: _IMsoDispObj, IEnumerable
@@ -36,6 +34,6 @@ public interface _CommandBars: _IMsoDispObj, IEnumerable
   string GetLabelMso(string idMso);
   string GetScreentipMso(string idMso);
   string GetSupertipMso(string idMso);
-  IPictureDisp GetImageMso(string idMso, int Width, int Height);
+  object GetImageMso(string idMso, int Width, int Height);
   void CommitRenderingTransaction(int hwnd);
 }

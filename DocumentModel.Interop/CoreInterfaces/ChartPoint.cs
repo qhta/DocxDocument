@@ -6,7 +6,7 @@ public interface ChartPoint
   object Parent { get; }
 
   object _ApplyDataLabels
-  (XlDataLabelsType Type = XlDataLabelsType.xlDataLabelsShowValue, object IMsoLegendKey, object AutoText,
+  (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines);
 
   IMsoBorder Border { get; }
@@ -36,7 +36,7 @@ public interface ChartPoint
   ChartFillFormat Fill { get; }
 
   object ApplyDataLabels
-  (XlDataLabelsType Type = XlDataLabelsType.xlDataLabelsShowValue, object IMsoLegendKey, object AutoText,
+  (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines, object ShowSeriesName, object ShowCategoryName, object ShowValue, object ShowPercentage,
     object ShowBubbleSize, object Separator);
 
@@ -50,5 +50,5 @@ public interface ChartPoint
   double Width { get; }
   double Left { get; }
   double Top { get; }
-  double PieSliceLocation(XlPieSliceLocation loc, XlPieSliceIndex Index = XlPieSliceIndex.xlOuterCenterPoint);
+  double PieSliceLocation(XlPieSliceLocation loc, XlPieSliceIndex Index);
 }

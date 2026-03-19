@@ -3,7 +3,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoEServicesDialog
 {
-  void Close(bool ApplyWebComponentChanges = false);
+  void Close(bool ApplyWebComponentChanges);
   void AddTrustedDomain(string Domain);
   string ApplicationName { get; }
   object Application { get; }

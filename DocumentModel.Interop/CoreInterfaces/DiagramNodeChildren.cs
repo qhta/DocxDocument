@@ -9,7 +9,7 @@ public interface DiagramNodeChildren: _IMsoDispObj, IEnumerable
   new int Creator { get; }
   new IEnumerator GetEnumerator();
   DiagramNode Item(object Index);
-  DiagramNode AddNode(object Index = -1, MsoDiagramNodeType NodeType = MsoDiagramNodeType.msoDiagramNode);
+  DiagramNode AddNode(object Index, MsoDiagramNodeType NodeType);
   void SelectAll();
   object Parent { get; }
   int Count { get; }

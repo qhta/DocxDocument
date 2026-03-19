@@ -9,6 +9,6 @@ public interface PickerDialog: _IMsoDispObj
   string Title { get; set; }
   PickerProperties Properties { get; }
   PickerResults CreatePickerResults();
-  PickerResults Show(bool IsMultiSelect = true, PickerResults ExistingResults = null);
+  PickerResults Show(bool IsMultiSelect, PickerResults ExistingResults);
   PickerResults Resolve(string TokenText, int duplicateDlgMode);
 }

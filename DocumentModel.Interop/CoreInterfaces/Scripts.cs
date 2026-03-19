@@ -13,9 +13,9 @@ public interface Scripts: _IMsoDispObj, IEnumerable
   Script Item(object Index);
 
   Script Add
-  (object Anchor, MsoScriptLocation Location = MsoScriptLocation.msoScriptLocationInBody,
-    MsoScriptLanguage Language = MsoScriptLanguage.msoScriptLanguageVisualBasic, string Id = "", string Extended = "",
-    string ScriptText = "");
+  (object Anchor, MsoScriptLocation Location,
+    MsoScriptLanguage Language, string Id, string Extended,
+    string ScriptText);
 
   void Delete();
 }

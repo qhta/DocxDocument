@@ -15,8 +15,8 @@ public interface FileSearch: _IMsoDispObj
   string LookIn { get; set; }
 
   int Execute
-  (MsoSortBy SortBy = MsoSortBy.msoSortByFileName, MsoSortOrder SortOrder = MsoSortOrder.msoSortOrderAscending,
-    bool AlwaysAccurate = true);
+  (MsoSortBy SortBy, MsoSortOrder SortOrder,
+    bool AlwaysAccurate);
 
   void NewSearch();
   FoundFiles FoundFiles { get; }

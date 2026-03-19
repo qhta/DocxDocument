@@ -18,8 +18,8 @@ public interface Shapes: _IMsoDispObj, IEnumerable
   Shape AddLine(float BeginX, float BeginY, float EndX, float EndY);
 
   Shape AddPicture
-  (string FileName, MsoTriState LinkToFile, MsoTriState SaveWithDocument, float Left, float Top, float Width = -1f,
-    float Height = -1f);
+  (string FileName, MsoTriState LinkToFile, MsoTriState SaveWithDocument, float Left, float Top, float Width,
+    float Height);
 
   Shape AddPolyline(object SafeArrayOfPoints);
   Shape AddShape(MsoAutoShapeType Type, float Left, float Top, float Width, float Height);
@@ -38,16 +38,16 @@ public interface Shapes: _IMsoDispObj, IEnumerable
   Shape AddCanvas(float Left, float Top, float Width, float Height);
 
   Shape AddChart
-    (XlChartType Type = (XlChartType)(-1), float Left = -1f, float Top = -1f, float Width = -1f, float Height = -1f);
+    (XlChartType Type, float Left, float Top, float Width, float Height);
 
   Shape AddTable(int NumRows, int NumColumns, float Left, float Top, float Width, float Height);
-  Shape AddSmartArt(SmartArtLayout Layout, float Left = -1f, float Top = -1f, float Width = -1f, float Height = -1f);
+  Shape AddSmartArt(SmartArtLayout Layout, float Left, float Top, float Width, float Height);
 
   Shape AddChart2
-  (int Style = -1, XlChartType Type = (XlChartType)(-1), float Left = -1f, float Top = -1f, float Width = -1f,
-    float Height = -1f, bool NewLayout = true);
+  (int Style, XlChartType Type, float Left, float Top, float Width,
+    float Height, bool NewLayout);
 
   Shape AddPicture2
-  (string FileName, MsoTriState LinkToFile, MsoTriState SaveWithDocument, float Left, float Top, float Width = -1f,
-    float Height = -1f, MsoPictureCompress Compress = MsoPictureCompress.msoPictureCompressDocDefault);
+  (string FileName, MsoTriState LinkToFile, MsoTriState SaveWithDocument, float Left, float Top, float Width,
+    float Height, MsoPictureCompress Compress);
 }

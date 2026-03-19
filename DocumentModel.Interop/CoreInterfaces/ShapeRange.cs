@@ -26,10 +26,10 @@ public interface ShapeRange: _IMsoDispObj, IEnumerable
   void RerouteConnections();
 
   void ScaleHeight
-    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale = MsoScaleFrom.msoScaleFromTopLeft);
+    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale);
 
   void ScaleWidth
-    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale = MsoScaleFrom.msoScaleFromTopLeft);
+    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale);
 
   void Select(object Replace);
   void SetShapesDefaultProperties();
@@ -90,5 +90,5 @@ public interface ShapeRange: _IMsoDispObj, IEnumerable
   GlowFormat Glow { get; }
   ReflectionFormat Reflection { get; }
   string Title { get; set; }
-  void MergeShapes(MsoMergeCmd MergeCmd, Shape PrimaryShape = null);
+  void MergeShapes(MsoMergeCmd MergeCmd, Shape PrimaryShape);
 }

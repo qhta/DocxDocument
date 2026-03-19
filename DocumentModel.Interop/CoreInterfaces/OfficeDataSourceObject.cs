@@ -9,14 +9,14 @@ public interface OfficeDataSourceObject
   object Columns { get; }
   int RowCount { get; }
   object Filters { get; }
-  int Move(MsoMoveRow MsoMoveRow, int RowNbr = 1);
+  int Move(MsoMoveRow MsoMoveRow, int RowNbr);
 
   void Open
-    (string bstrSrc = "", string bstrConnect = "", string bstrTable = "", int fOpenExclusive = 0, int fNeverPrompt = 1);
+    (string bstrSrc, string bstrConnect, string bstrTable, int fOpenExclusive, int fNeverPrompt);
 
   void SetSortOrder
-  (string SortField1, bool SortAscending1 = true, string SortField2 = "", bool SortAscending2 = true,
-    string SortField3 = "", bool SortAscending3 = true);
+  (string SortField1, bool SortAscending1, string SortField2, bool SortAscending2,
+    string SortField3, bool SortAscending3);
 
   void ApplyFilter();
 }

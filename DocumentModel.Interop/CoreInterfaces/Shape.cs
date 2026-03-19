@@ -17,10 +17,10 @@ public interface Shape: _IMsoDispObj
   void RerouteConnections();
 
   void ScaleHeight
-    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale = MsoScaleFrom.msoScaleFromTopLeft);
+    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale);
 
   void ScaleWidth
-    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale = MsoScaleFrom.msoScaleFromTopLeft);
+    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale);
 
   void Select(object Replace);
   void SetShapesDefaultProperties();
