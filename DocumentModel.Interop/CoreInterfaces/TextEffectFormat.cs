@@ -1,188 +1,22 @@
-﻿using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace DocumentModel.Interop.Core;
 
-[ComImport]
-[Guid("000C031F-0000-0000-C000-000000000046")]
-[TypeLibType(4304)]
 public interface TextEffectFormat: _IMsoDispObj
 {
-  [DispId(1610743808)]
-  new object Application
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(1610743808)]
-    [return: MarshalAs(UnmanagedType.IDispatch)]
-    get;
-  }
-
-  [DispId(1610743809)]
-  new int Creator
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(1610743809)]
-    get;
-  }
-
-  [DispId(1)]
-  object Parent
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(1)]
-    [return: MarshalAs(UnmanagedType.IDispatch)]
-    get;
-  }
-
-  [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-  [DispId(10)]
+  new object Application { get; }
+  new int Creator { get; }
+  object Parent { get; }
   void ToggleVerticalText();
-
-  [DispId(100)]
-  MsoTextEffectAlignment Alignment
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(100)]
-    get;
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(100)]
-    [param: In]
-    set;
-  }
-
-  [DispId(101)]
-  MsoTriState FontBold
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(101)]
-    get;
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(101)]
-    [param: In]
-    set;
-  }
-
-  [DispId(102)]
-  MsoTriState FontItalic
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(102)]
-    get;
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(102)]
-    [param: In]
-    set;
-  }
-
-  [DispId(103)]
-  string FontName
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(103)]
-    [return: MarshalAs(UnmanagedType.BStr)]
-    get;
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(103)]
-    [param: In]
-    [param: MarshalAs(UnmanagedType.BStr)]
-    set;
-  }
-
-  [DispId(104)]
-  float FontSize
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(104)]
-    get;
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(104)]
-    [param: In]
-    set;
-  }
-
-  [DispId(105)]
-  MsoTriState KernedPairs
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(105)]
-    get;
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(105)]
-    [param: In]
-    set;
-  }
-
-  [DispId(106)]
-  MsoTriState NormalizedHeight
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(106)]
-    get;
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(106)]
-    [param: In]
-    set;
-  }
-
-  [DispId(107)]
-  MsoPresetTextEffectShape PresetShape
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(107)]
-    get;
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(107)]
-    [param: In]
-    set;
-  }
-
-  [DispId(108)]
-  MsoPresetTextEffect PresetTextEffect
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(108)]
-    get;
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(108)]
-    [param: In]
-    set;
-  }
-
-  [DispId(109)]
-  MsoTriState RotatedChars
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(109)]
-    get;
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(109)]
-    [param: In]
-    set;
-  }
-
-  [DispId(110)]
-  string Text
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(110)]
-    [return: MarshalAs(UnmanagedType.BStr)]
-    get;
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(110)]
-    [param: In]
-    [param: MarshalAs(UnmanagedType.BStr)]
-    set;
-  }
-
-  [DispId(111)]
-  float Tracking
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(111)]
-    get;
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(111)]
-    [param: In]
-    set;
-  }
+  MsoTextEffectAlignment Alignment { get; set; }
+  MsoTriState FontBold { get; set; }
+  MsoTriState FontItalic { get; set; }
+  string FontName { get; set; }
+  float FontSize { get; set; }
+  MsoTriState KernedPairs { get; set; }
+  MsoTriState NormalizedHeight { get; set; }
+  MsoPresetTextEffectShape PresetShape { get; set; }
+  MsoPresetTextEffect PresetTextEffect { get; set; }
+  MsoTriState RotatedChars { get; set; }
+  string Text { get; set; }
+  float Tracking { get; set; }
 }

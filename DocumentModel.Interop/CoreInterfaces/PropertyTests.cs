@@ -1,67 +1,18 @@
-﻿using System.Collections;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-[ComImport]
-[Guid("000C0334-0000-0000-C000-000000000046")]
-[TypeLibType(4176)]
 public interface PropertyTests: _IMsoDispObj, IEnumerable
 {
-  [DispId(1610743808)]
-  new object Application
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(1610743808)]
-    [return: MarshalAs(UnmanagedType.IDispatch)]
-    get;
-  }
+  new object Application { get; }
+  new int Creator { get; }
+  PropertyTest this[int Index] { get; }
+  int Count { get; }
 
-  [DispId(1610743809)]
-  new int Creator
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(1610743809)]
-    get;
-  }
-
-  [DispId(0)]
-  PropertyTest this[[In] int Index]
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [LCIDConversion(1)]
-    [DispId(0)]
-    [return: MarshalAs(UnmanagedType.Interface)]
-    get;
-  }
-
-  [DispId(4)]
-  int Count
-  {
-    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    [DispId(4)]
-    get;
-  }
-
-  [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-  [DispId(5)]
   void Add
-  ([In] [MarshalAs(UnmanagedType.BStr)] string Name, [In] MsoCondition Condition,
-    [Optional] [In] [MarshalAs(UnmanagedType.Struct)] object Value,
-    [Optional] [In] [MarshalAs(UnmanagedType.Struct)] object SecondValue,
-    [In] MsoConnector Connector = MsoConnector.msoConnectorAnd);
+  (string Name, MsoCondition Condition, object Value, object SecondValue,
+    MsoConnector Connector = MsoConnector.msoConnectorAnd);
 
-  [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-  [DispId(6)]
-  void Remove([In] int Index);
-
-  [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-  [DispId(-4)]
-  [TypeLibFunc(1024)]
-  [return:
-    MarshalAs(UnmanagedType.CustomMarshaler,
-      MarshalType =
-        "System.Runtime.InteropServices.CustomMarshalers.EnumeratorToEnumVariantMarshaler, CustomMarshalers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+  void Remove(int Index);
   new IEnumerator GetEnumerator();
 }
