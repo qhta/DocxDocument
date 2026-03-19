@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Property Set.
 /// </summary>
 [OpenXmlType(typeof(DXDD.PropertySet))]
+/// <summary>
+/// Represents the Property Set.
+/// </summary>
 public class PropertySet: ModelElement<DXDD.PropertySet>
 {
   /// <summary>

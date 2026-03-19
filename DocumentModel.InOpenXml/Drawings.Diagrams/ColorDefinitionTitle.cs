@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Title.
 /// </summary>
 [OpenXmlType(typeof(DXDD.ColorDefinitionTitle))]
+/// <summary>
+/// Represents the Color Definition Title.
+/// </summary>
 public class ColorDefinitionTitle: ModelElement<DXDD.ColorDefinitionTitle>
 {
   /// <summary>

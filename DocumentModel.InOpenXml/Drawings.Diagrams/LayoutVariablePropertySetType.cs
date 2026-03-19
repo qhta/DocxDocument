@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines the LayoutVariablePropertySetType Class.
 /// </summary>
 [OpenXmlType(typeof(DXDD.LayoutVariablePropertySetType))]
+/// <summary>
+/// Represents the Layout Variable Property Set Type.
+/// </summary>
 public class LayoutVariablePropertySetType: ModelElement<DXDD.LayoutVariablePropertySetType>
 {
   /// <summary>

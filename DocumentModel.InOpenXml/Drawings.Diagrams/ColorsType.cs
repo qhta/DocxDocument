@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines the ColorsType Class.
 /// </summary>
 [OpenXmlType(typeof(DXDD.ColorsType))]
+/// <summary>
+/// Represents the Colors Type.
+/// </summary>
 public class ColorsType: ModelElement<DXDD.ColorsType>
 {
   /// <summary>
