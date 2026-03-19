@@ -17,3 +17,4 @@ public class StyleLabelDescription : ModelElement<DXDD.StyleLabelDescription>
  [OpenXmlProperty(nameof(DXDD.StyleLabelDescription.Val))]
  public string? Val { get; set; }
 }
+

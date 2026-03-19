@@ -22,7 +22,3 @@ public class StyleDefinition: ModelElement<DXDD.StyleDefinition>
   public ExtensionList? ExtensionList { get; set; }
 }
 
-[OpenXmlType(typeof(DXDD.StyleLabelDescription))]
-public class StyleLabelDescriptions : ModelElementCollection<StyleLabelDescription>
-{
-}
