@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents the walls of a 3-D chart. This object isnĂ„â€šĂ‹ÂÄ‚â€šĂ˘â€šÂ¬Ä‚â€šĂ˘â€žËt a collection. ThereĂ„â€šĂ‹ÂÄ‚â€šĂ˘â€šÂ¬Ä‚â€šĂ˘â€žËs no object that represents a single wall; you must return all the walls as a unit.

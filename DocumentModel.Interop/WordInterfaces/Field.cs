@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a field. The Field object is a member of the Fields collection. The Fields collection represents the fields in a selection, range, or document.

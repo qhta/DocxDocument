@@ -12,7 +12,7 @@ public interface InteropObject
   /// If the object was created in Microsoft Word, this property returns the hexadecimal number 4D535744,
   /// which represents the string "MSWD." This value can also be represented by the constant wdCreatorCode.
   /// </remarks>
-  public object Application { get; }
+  public Word._Application Application { get; }
 
   /// <summary>
   /// Returns a 32-bit integer that indicates the application in which the specified object was created.

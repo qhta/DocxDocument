@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a single list level, either the only level for a bulleted or numbered list or one of the nine levels of an outline numbered list.
