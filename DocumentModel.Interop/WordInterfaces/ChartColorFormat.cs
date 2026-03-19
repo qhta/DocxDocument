@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents the color of a one-color object or the foreground or background color of an object with a gradient or patterned fill.

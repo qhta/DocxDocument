@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a collection of recognized functions. Use the OMathRecognizedFunction object to access individual members of the collection.

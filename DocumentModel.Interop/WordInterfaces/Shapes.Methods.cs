@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 public partial interface Shapes
 {
@@ -201,7 +201,7 @@ public partial interface Shapes
   /// <param name="Height">The height of the chart.</param>
   /// <param name="Anchor">The anchor for the chart.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
-  public Shape AddChart(Core.XlChartType Type, object Left, object Top, object Width, object Height, object Anchor);
+  public Shape AddChart(object Type, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
   /// Adds a SmartArt graphic to the collection as a shape.
@@ -213,7 +213,7 @@ public partial interface Shapes
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
-  public Shape AddSmartArt(Core.SmartArtLayout Layout, object Left, object Top, object Width, object Height, object Anchor);
+  public Shape AddSmartArt(object Layout, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
   /// Adds a web video to the collection as a shape.
@@ -243,5 +243,5 @@ public partial interface Shapes
   /// <param name="Anchor">The anchor for the chart.</param>
   /// <param name="NewLayout">The new layout for the chart.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
-  public Shape AddChart2(int Style, Core.XlChartType Type, object Left, object Top, object Width, object Height, object Anchor, object NewLayout);
+  public Shape AddChart2(int Style, object Type, object Left, object Top, object Width, object Height, object Anchor, object NewLayout);
 }

@@ -1,0 +1,337 @@
+﻿using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace DocumentModel.Interop.Core;
+
+[ComImport]
+[Guid("000C170F-0000-0000-C000-000000000046")]
+[TypeLibType(4304)]
+public interface IMsoChartTitle
+{
+  [DispId(1610743808)]
+  string Caption
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743808)]
+    [return: MarshalAs(UnmanagedType.BStr)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743808)]
+    [param: In]
+    [param: MarshalAs(UnmanagedType.BStr)]
+    set;
+  }
+
+  [DispId(1610743810)]
+  IMsoCharacters Characters
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743810)]
+    [return: MarshalAs(UnmanagedType.Interface)]
+    get;
+  }
+
+  [DispId(1610743811)]
+  ChartFont Font
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743811)]
+    [return: MarshalAs(UnmanagedType.Interface)]
+    get;
+  }
+
+  [DispId(1610743812)]
+  object HorizontalAlignment
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743812)]
+    [return: MarshalAs(UnmanagedType.Struct)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743812)]
+    [param: In]
+    [param: MarshalAs(UnmanagedType.Struct)]
+    set;
+  }
+
+  [DispId(1610743814)]
+  double Left
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743814)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743814)]
+    [param: In]
+    set;
+  }
+
+  [DispId(1610743816)]
+  object Orientation
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743816)]
+    [return: MarshalAs(UnmanagedType.Struct)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743816)]
+    [param: In]
+    [param: MarshalAs(UnmanagedType.Struct)]
+    set;
+  }
+
+  [DispId(1610743818)]
+  bool Shadow
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743818)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743818)]
+    [param: In]
+    set;
+  }
+
+  [DispId(1610743820)]
+  string Text
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743820)]
+    [return: MarshalAs(UnmanagedType.BStr)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743820)]
+    [param: In]
+    [param: MarshalAs(UnmanagedType.BStr)]
+    set;
+  }
+
+  [DispId(1610743822)]
+  double Top
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743822)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743822)]
+    [param: In]
+    set;
+  }
+
+  [DispId(1610743824)]
+  object VerticalAlignment
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743824)]
+    [return: MarshalAs(UnmanagedType.Struct)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743824)]
+    [param: In]
+    [param: MarshalAs(UnmanagedType.Struct)]
+    set;
+  }
+
+  [DispId(1610743826)]
+  int ReadingOrder
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743826)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743826)]
+    [param: In]
+    set;
+  }
+
+  [DispId(1610743828)]
+  object AutoScaleFont
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743828)]
+    [return: MarshalAs(UnmanagedType.Struct)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743828)]
+    [param: In]
+    [param: MarshalAs(UnmanagedType.Struct)]
+    set;
+  }
+
+  [DispId(1610743830)]
+  IMsoInterior Interior
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743830)]
+    [return: MarshalAs(UnmanagedType.Interface)]
+    get;
+  }
+
+  [DispId(1610743831)]
+  ChartFillFormat Fill
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743831)]
+    [return: MarshalAs(UnmanagedType.Interface)]
+    get;
+  }
+
+  [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+  [DispId(1610743832)]
+  [return: MarshalAs(UnmanagedType.Struct)]
+  object Delete();
+
+  [DispId(1610743833)]
+  IMsoBorder Border
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743833)]
+    [return: MarshalAs(UnmanagedType.Interface)]
+    get;
+  }
+
+  [DispId(1610743834)]
+  string Name
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743834)]
+    [return: MarshalAs(UnmanagedType.BStr)]
+    get;
+  }
+
+  [DispId(1610743835)]
+  object Parent
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743835)]
+    [return: MarshalAs(UnmanagedType.IDispatch)]
+    get;
+  }
+
+  [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+  [DispId(1610743836)]
+  [return: MarshalAs(UnmanagedType.Struct)]
+  object Select();
+
+  [DispId(2418)]
+  bool IncludeInLayout
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(2418)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(2418)]
+    [param: In]
+    set;
+  }
+
+  [DispId(1671)]
+  XlChartElementPosition Position
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1671)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1671)]
+    [param: In]
+    set;
+  }
+
+  [DispId(1610743841)]
+  IMsoChartFormat Format
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743841)]
+    [return: MarshalAs(UnmanagedType.Interface)]
+    get;
+  }
+
+  [DispId(1610743842)]
+  double Height
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743842)]
+    get;
+  }
+
+  [DispId(148)]
+  object Application
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(148)]
+    [return: MarshalAs(UnmanagedType.IDispatch)]
+    get;
+  }
+
+  [DispId(149)]
+  int Creator
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(149)]
+    get;
+  }
+
+  [DispId(1610743845)]
+  double Width
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743845)]
+    get;
+  }
+
+  [DispId(1610743846)]
+  string Formula
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743846)]
+    [return: MarshalAs(UnmanagedType.BStr)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743846)]
+    [param: In]
+    [param: MarshalAs(UnmanagedType.BStr)]
+    set;
+  }
+
+  [DispId(1610743848)]
+  string FormulaR1C1
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743848)]
+    [return: MarshalAs(UnmanagedType.BStr)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743848)]
+    [param: In]
+    [param: MarshalAs(UnmanagedType.BStr)]
+    set;
+  }
+
+  [DispId(1610743850)]
+  string FormulaLocal
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743850)]
+    [return: MarshalAs(UnmanagedType.BStr)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743850)]
+    [param: In]
+    [param: MarshalAs(UnmanagedType.BStr)]
+    set;
+  }
+
+  [DispId(1610743852)]
+  string FormulaR1C1Local
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743852)]
+    [return: MarshalAs(UnmanagedType.BStr)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(1610743852)]
+    [param: In]
+    [param: MarshalAs(UnmanagedType.BStr)]
+    set;
+  }
+}

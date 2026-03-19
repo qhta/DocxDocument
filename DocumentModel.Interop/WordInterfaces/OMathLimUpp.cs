@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents the upper limit mathematical construct, consisting of text on the baseline and reduced-size text immediately above it.

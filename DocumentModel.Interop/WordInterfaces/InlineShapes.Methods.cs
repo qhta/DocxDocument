@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 public partial interface InlineShapes
 {
@@ -70,7 +70,7 @@ public partial interface InlineShapes
   /// <param name="Type">The chart type.</param>
   /// <param name="Range">The range where the chart is inserted.</param>
   /// <returns>The created <see cref="InlineShape"/> object.</returns>
-  public InlineShape AddChart(Core.XlChartType Type, object Range);
+  public InlineShape AddChart(object Type, object Range);
 
   /// <summary>
   /// Adds a SmartArt graphic to the document as an inline shape.
@@ -78,7 +78,7 @@ public partial interface InlineShapes
   /// <param name="Layout">The SmartArt layout.</param>
   /// <param name="Range">The range where the SmartArt is inserted.</param>
   /// <returns>The created <see cref="InlineShape"/> object.</returns>
-  public InlineShape AddSmartArt(Core.SmartArtLayout Layout, object Range);
+  public InlineShape AddSmartArt(object Layout, object Range);
 
   /// <summary>
   /// Adds a web video to the document as an inline shape.
@@ -100,5 +100,5 @@ public partial interface InlineShapes
   /// <param name="Range">The range where the chart is inserted.</param>
   /// <param name="NewLayout">The new layout for the chart.</param>
   /// <returns>The created <see cref="InlineShape"/> object.</returns>
-  public InlineShape AddChart2(int Style, Core.XlChartType Type, object Range, object NewLayout);
+  public InlineShape AddChart2(int Style, object Type, object Range, object NewLayout);
 }

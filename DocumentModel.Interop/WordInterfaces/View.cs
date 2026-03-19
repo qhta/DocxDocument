@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Contains the view attributes (show all, field shading, table gridlines, and so on) for a window or pane.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a matrix column. The OMathMatCol object is a member of the OMathMatCols collection.

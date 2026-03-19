@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a collection of math AutoCorrect entries. Use the OMathAutoCorrectEntry object to access individual AutoCorrect entries.

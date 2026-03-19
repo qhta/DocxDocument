@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// A collection of XMLSchemaReference objects that represent the unique namespaces that are attached to a document.

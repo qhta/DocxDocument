@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents the current settings related to display of reviewersÄ‚ËĂ‚â‚¬Ă‚â„˘ comments and revision marks in the document.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a series in a chart.
@@ -133,7 +133,7 @@ public partial interface Series : InteropObject
   /// <summary>
   /// The chart type.
   /// </summary>
-  public Core.XlChartType ChartType { get; set; }
+  public object ChartType { get; set; }
 
   /// <summary>
   /// The values.

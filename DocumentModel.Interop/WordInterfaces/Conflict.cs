@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a conflicting edit in a co-authored document. The type of a Conflict object is specified by the WdRevisionType enumeration.

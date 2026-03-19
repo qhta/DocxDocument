@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.CoreInterfaces;
+﻿namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the data type for a document property.

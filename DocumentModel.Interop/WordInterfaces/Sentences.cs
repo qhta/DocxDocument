@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// A collection of Range objects that represent all the sentences in a selection, range, or document. There is no Sentence object.

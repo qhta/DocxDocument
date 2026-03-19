@@ -1,37 +1,101 @@
-﻿namespace DocumentModel.Interop.CoreInterfaces;
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
-/// <summary>
-/// Represents a single document property, which is a metadata element associated with a document
-/// that provides information about the document's attributes, characteristics, or content.
-/// Document properties can include built-in properties such as title, author, and creation date,
-/// as well as custom properties defined by users.
-/// These properties are used to store and retrieve information about the document,
-/// and they can be accessed and manipulated programmatically through the DocumentProperty interface.
-/// </summary>
-public interface DocumentProperty: InteropObject
+namespace DocumentModel.Interop.Core;
+
+[ComImport]
+[TypeLibType(4096)]
+[DefaultMember("Value")]
+[Guid("2DF8D04E-5BFA-101B-BDE5-00AA0044DE52")]
+public interface DocumentProperty
 {
-  /// <summary>
-  /// Gets the name associated with this instance.
-  /// </summary>
-  public string Name { get; }
+  [DispId(1)]
+  object Parent
+  {
+    [MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall,
+      MethodCodeType = MethodCodeType.Runtime)]
+    [return: MarshalAs(UnmanagedType.IDispatch)]
+    get;
+  }
 
-  /// <summary>
-  /// Gets the property type represented by this instance.
-  /// </summary>
-  public MsoPropertyType Type { get; }
+  [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+  void Delete();
 
-  /// <summary>
-  /// Gets or sets the value associated with this instance.
-  /// </summary>
-  public object Value { get; set; }
+  [DispId(3)]
+  string Name
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [LCIDConversion(0)]
+    [return: MarshalAs(UnmanagedType.BStr)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [LCIDConversion(0)]
+    [param: In]
+    [param: MarshalAs(UnmanagedType.BStr)]
+    set;
+  }
 
-  /// <summary>
-  /// Gets or sets a value indicating whether links to content are enabled.
-  /// </summary>
-  public bool LinkToContent { get; set; }
+  [DispId(0)]
+  object Value
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [LCIDConversion(0)]
+    [return: MarshalAs(UnmanagedType.Struct)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [LCIDConversion(0)]
+    [param: In]
+    [param: MarshalAs(UnmanagedType.Struct)]
+    set;
+  }
 
-  /// <summary>
-  /// Gets or sets the source URL or identifier associated with the link.
-  /// </summary>
-  public string LinkSource { get; set; }
+  [DispId(5)]
+  MsoDocProperties Type
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [LCIDConversion(0)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [LCIDConversion(0)]
+    [param: In]
+    set;
+  }
+
+  [DispId(6)]
+  bool LinkToContent
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [param: In]
+    set;
+  }
+
+  [DispId(7)]
+  string LinkSource
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [return: MarshalAs(UnmanagedType.BStr)]
+    get;
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [param: In]
+    [param: MarshalAs(UnmanagedType.BStr)]
+    set;
+  }
+
+  [DispId(1610743820)]
+  object Application
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    [return: MarshalAs(UnmanagedType.IDispatch)]
+    get;
+  }
+
+  [DispId(1610743821)]
+  int Creator
+  {
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+    get;
+  }
 }

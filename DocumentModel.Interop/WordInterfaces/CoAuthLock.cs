@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a lock within the document. The CoAuthLock object is a member of the CoAuthLocks collection.

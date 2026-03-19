@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// A collection of ListGallery objects that represent the three tabs in the Bullets and Numbering dialog box.

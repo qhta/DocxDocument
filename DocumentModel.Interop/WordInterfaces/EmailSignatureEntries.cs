@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// A collection of EmailSignatureEntry objects that represents all the e-mail signature entries available to Microsoft Word.
