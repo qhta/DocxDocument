@@ -1,6 +1,4 @@
 
-using stdole;
-
 namespace DocumentModel.Interop.Core;
 
 public interface SignatureInfo: _IMsoDispObj
@@ -10,7 +8,7 @@ public interface SignatureInfo: _IMsoDispObj
   bool ReadOnly { get; }
   string SignatureProvider { get; }
   string SignatureText { get; set; }
-  IPictureDisp SignatureImage { get; set; }
+  object SignatureImage { get; set; }
   string SignatureComment { get; set; }
   object GetSignatureDetail(SignatureDetail sigdet);
   object GetCertificateDetail(CertificateDetail certdet);

@@ -33,7 +33,6 @@ public interface IMsoDataLabels: IEnumerable
   bool ShowBubbleSize { get; set; }
   object Separator { get; set; }
   int Count { get; }
-  IMsoDataLabel Item(object Index);
   new IEnumerator GetEnumerator();
   IMsoChartFormat Format { get; }
   object Application { get; }

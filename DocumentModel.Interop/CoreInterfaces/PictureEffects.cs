@@ -9,6 +9,6 @@ public interface PictureEffects: _IMsoDispObj, IEnumerable
   PictureEffect this[int Index] { get; }
   int Count { get; }
   new IEnumerator GetEnumerator();
-  PictureEffect Insert(MsoPictureEffectType EffectType, int Position = -1);
-  void Delete(int Index = -1);
+  PictureEffect Insert(MsoPictureEffectType EffectType, int Position);
+  void Delete(int Index);
 }

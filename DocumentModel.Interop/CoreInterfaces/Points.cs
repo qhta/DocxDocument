@@ -6,7 +6,6 @@ public interface Points: IEnumerable
 {
   object Parent { get; }
   int Count { get; }
-  ChartPoint Item(int Index);
   new IEnumerator GetEnumerator();
   object Application { get; }
   int Creator { get; }

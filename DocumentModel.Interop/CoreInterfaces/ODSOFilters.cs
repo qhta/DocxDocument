@@ -10,8 +10,8 @@ public interface ODSOFilters: _IMsoDispObj
   object Item(int Index);
 
   void Add
-  (string Column, MsoFilterComparison Comparison, MsoFilterConjunction Conjunction, string bstrCompareTo = "",
-    bool DeferUpdate = false);
+  (string Column, MsoFilterComparison Comparison, MsoFilterConjunction Conjunction, string bstrCompareTo,
+    bool DeferUpdate);
 
-  void Delete(int Index, bool DeferUpdate = false);
+  void Delete(int Index, bool DeferUpdate);
 }

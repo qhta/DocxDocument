@@ -25,7 +25,7 @@ public interface IMsoChart
   object SeriesCollection(object Index);
 
   void _ApplyDataLabels
-  (XlDataLabelsType Type = XlDataLabelsType.xlDataLabelsShowValue, object IMsoLegendKey, object AutoText,
+  (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines);
 
   int SubType { get; set; }
@@ -33,7 +33,7 @@ public interface IMsoChart
   IMsoCorners Corners { get; }
 
   void ApplyDataLabels
-  (XlDataLabelsType Type = XlDataLabelsType.xlDataLabelsShowValue, object IMsoLegendKey, object AutoText,
+  (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines, object ShowSeriesName, object ShowCategoryName, object ShowValue, object ShowPercentage,
     object ShowBubbleSize, object Separator);
 
@@ -45,7 +45,7 @@ public interface IMsoChart
   XlRowCol PlotBy { get; set; }
   bool HasLegend { get; set; }
   IMsoLegend Legend { get; }
-  object Axes(object Type, XlAxisGroup AxisGroup = XlAxisGroup.xlPrimary);
+  object Axes(object Type, XlAxisGroup AxisGroup);
   object HasAxis { get; set; }
   IMsoWalls Walls { get; }
   IMsoFloor Floor { get; }
@@ -61,7 +61,7 @@ public interface IMsoChart
     object varSeriesLabels, object varHasLegend, object varTitle, object varCategoryTitle, object varValueTitle,
     object varExtraTitle);
 
-  void CopyPicture(int Appearance = 1, int Format = -4147, int Size = 2);
+  void CopyPicture(int Appearance, int Format, int Size);
   IMsoDataTable DataTable { get; }
   object Evaluate(object varName, int LocaleID, out int ObjType);
   object _Evaluate(object varName, int LocaleID);
