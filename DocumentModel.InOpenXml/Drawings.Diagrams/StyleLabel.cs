@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Style Label.
 /// </summary>
 [OpenXmlType(typeof(DXDD.StyleLabel))]
+/// <summary>
+/// Represents the Style Label.
+/// </summary>
 public class StyleLabel: ModelElement<DXDD.StyleLabel>
 {
   /// <summary>

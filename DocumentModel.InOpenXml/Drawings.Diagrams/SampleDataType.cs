@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines the SampleDataType Class.
 /// </summary>
 [OpenXmlType(typeof(DXDD.SampleDataType))]
+/// <summary>
+/// Represents the Sample Data Type.
+/// </summary>
 public class SampleDataType: ModelElement<DXDD.SampleDataType>
 {
   /// <summary>

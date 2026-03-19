@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Presentation Of.
 /// </summary>
 [OpenXmlType(typeof(DXDD.PresentationOf))]
+/// <summary>
+/// Represents the Presentation Of.
+/// </summary>
 public class PresentationOf: ModelElement<DXDD.PresentationOf>
 {
   /// <summary>

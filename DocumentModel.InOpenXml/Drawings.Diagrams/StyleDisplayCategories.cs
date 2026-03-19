@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Category List.
 /// </summary>
 [OpenXmlType(typeof(DXDD.StyleDisplayCategories))]
+/// <summary>
+/// Represents the Style Display Categories.
+/// </summary>
 public class StyleDisplayCategories : ModelElementCollection<StyleDisplayCategory, DXDD.StyleDisplayCategories, DXDD.StyleDisplayCategory>
 {
 }

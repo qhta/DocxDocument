@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Data Model.
 /// </summary>
 [OpenXmlType(typeof(DXDD.DataModelRoot))]
+/// <summary>
+/// Represents the Data Model Root.
+/// </summary>
 public class DataModelRoot: ModelElement<DXDD.DataModelRoot>
 {
   /// <summary>

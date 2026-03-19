@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines the NonVisualDrawingProperties Class.
 /// </summary>
 [OpenXmlType(typeof(DocumentFormat.OpenXml.Office2010.Drawing.Diagram.NonVisualDrawingProperties))]
+/// <summary>
+/// Represents the Non Visual Drawing Properties.
+/// </summary>
 public class NonVisualDrawingProperties: ModelElement<DocumentFormat.OpenXml.Office2010.Drawing.Diagram.NonVisualDrawingProperties>
 {
   /// <summary>

@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Text Body.
 /// </summary>
 [OpenXmlType(typeof(DXDD.TextBody))]
+/// <summary>
+/// Represents the Text Body.
+/// </summary>
 public class TextBody: ModelElement<DXDD.TextBody>
 {
   /// <summary>
@@ -14,5 +17,9 @@ public class TextBody: ModelElement<DXDD.TextBody>
   ///   Text List Styles.
   /// </summary>
   public ListStyle? ListStyle { get; set; }
+  /// <summary>
+  /// Paragraph.
+  /// </summary>
   public Paragraph? Paragraph { get; set; }
 }
+

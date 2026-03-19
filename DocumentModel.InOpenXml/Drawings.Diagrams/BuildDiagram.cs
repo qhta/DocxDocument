@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings;
 /// Represents build diagram options, including build type, reverse animation, and additional extension settings for diagram elements.
 /// </summary>
 [OpenXmlType(typeof(DXD.BuildDiagram))]
+/// <summary>
+/// Represents the Build Diagram.
+/// </summary>
 public class BuildDiagram: ModelElement<DXD.BuildDiagram>// , ExtendableElement
 {
   /// <summary>
@@ -12,7 +15,7 @@ public class BuildDiagram: ModelElement<DXD.BuildDiagram>// , ExtendableElement
   public string? Build { get; set; }
 
   /// <summary>
-  /// Gets or sets a value indicating whether the animation should be reversed.
+  /// Indicates whether the animation should be reversed.
   /// </summary>
   public bool? ReverseAnimation { get; set; }
 }

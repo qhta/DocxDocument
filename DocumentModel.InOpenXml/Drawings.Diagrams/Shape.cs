@@ -4,6 +4,9 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Shape.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Shape))]
+/// <summary>
+/// Represents the Shape.
+/// </summary>
 public class Shape: ModelElement<DXDD.Shape>
 {
   /// <summary>
