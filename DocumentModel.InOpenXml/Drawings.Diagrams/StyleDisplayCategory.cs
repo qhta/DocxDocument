@@ -3,27 +3,20 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Category.
 /// </summary>
 [OpenXmlType(typeof(DXDD.StyleDisplayCategory))]
-/// <summary>
-/// Represents the Style Display Category.
-/// </summary>
-public class StyleDisplayCategory : ModelElement<DXDD.StyleDisplayCategory>
+public partial class StyleDisplayCategory : ModelElement<DXDD.StyleDisplayCategory>
 {
- /// <summary>
- ///   Category Type
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.StyleDisplayCategory.Type))]
- /// <summary>
- /// Type.
- /// </summary>
- public string? Type { get; set; }
+  /// <summary>
+  ///   Category Type
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.StyleDisplayCategory.Type))]
+  public string? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- /// <summary>
- ///   Priority
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.StyleDisplayCategory.Priority))]
- /// <summary>
- /// Priority.
- /// </summary>
- public UInt32? Priority { get; set; }
+  private string? _Type;
+  /// <summary>
+  ///   Priority
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.StyleDisplayCategory.Priority))]
+  public UInt32? Priority { get => _Priority; set => UpdateField(ref _Priority, value, nameof(Priority)); }
+
+  private UInt32? _Priority;
 }
-

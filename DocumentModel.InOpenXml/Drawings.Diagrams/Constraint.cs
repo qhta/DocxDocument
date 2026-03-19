@@ -3,117 +3,90 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Constraint.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Constraint))]
-/// <summary>
-/// Represents the Constraint.
-/// </summary>
-public class Constraint : ModelElement<DXDD.Constraint>
+public partial class Constraint : ModelElement<DXDD.Constraint>
 {
- /// <summary>
- ///   Constraint Type
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Constraint.Type))]
- /// <summary>
- /// Type.
- /// </summary>
- public ConstraintType? Type { get; set; }
+  /// <summary>
+  ///   Constraint Type
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Constraint.Type))]
+  public ConstraintType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- /// <summary>
- ///   For
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Constraint.For))]
- /// <summary>
- /// For.
- /// </summary>
- public ConstraintRelationship? For { get; set; }
+  private ConstraintType? _Type;
+  /// <summary>
+  ///   For
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Constraint.For))]
+  public ConstraintRelationship? For { get => _For; set => UpdateField(ref _For, value, nameof(For)); }
 
- /// <summary>
- ///   For Name
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Constraint.ForName))]
- /// <summary>
- /// For Name.
- /// </summary>
- public string? ForName { get; set; }
+  private ConstraintRelationship? _For;
+  /// <summary>
+  ///   For Name
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Constraint.ForName))]
+  public string? ForName { get => _ForName; set => UpdateField(ref _ForName, value, nameof(ForName)); }
 
- /// <summary>
- ///   Data Point Type
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Constraint.PointType))]
- /// <summary>
- /// Point Type.
- /// </summary>
- public ElementType? PointType { get; set; }
+  private string? _ForName;
+  /// <summary>
+  ///   Data Point Type
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Constraint.PointType))]
+  public ElementType? PointType { get => _PointType; set => UpdateField(ref _PointType, value, nameof(PointType)); }
 
- /// <summary>
- ///   Reference Type
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Constraint.ReferenceType))]
- /// <summary>
- /// Reference Type.
- /// </summary>
- public Constraint? ReferenceType { get; set; }
+  private ElementType? _PointType;
+  /// <summary>
+  ///   Reference Type
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Constraint.ReferenceType))]
+  public Constraint? ReferenceType { get => _ReferenceType; set => UpdateField(ref _ReferenceType, value, nameof(ReferenceType)); }
 
- /// <summary>
- ///   Reference For
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Constraint.ReferenceFor))]
- /// <summary>
- /// Reference For.
- /// </summary>
- public ConstraintRelationship? ReferenceFor { get; set; }
+  private Constraint? _ReferenceType;
+  /// <summary>
+  ///   Reference For
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Constraint.ReferenceFor))]
+  public ConstraintRelationship? ReferenceFor { get => _ReferenceFor; set => UpdateField(ref _ReferenceFor, value, nameof(ReferenceFor)); }
 
- /// <summary>
- ///   Reference For Name
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Constraint.ReferenceForName))]
- /// <summary>
- /// Reference For Name.
- /// </summary>
- public string? ReferenceForName { get; set; }
+  private ConstraintRelationship? _ReferenceFor;
+  /// <summary>
+  ///   Reference For Name
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Constraint.ReferenceForName))]
+  public string? ReferenceForName { get => _ReferenceForName; set => UpdateField(ref _ReferenceForName, value, nameof(ReferenceForName)); }
 
- /// <summary>
- ///   Reference Point Type
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Constraint.ReferencePointType))]
- /// <summary>
- /// Reference Point Type.
- /// </summary>
- public ElementType? ReferencePointType { get; set; }
+  private string? _ReferenceForName;
+  /// <summary>
+  ///   Reference Point Type
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Constraint.ReferencePointType))]
+  public ElementType? ReferencePointType { get => _ReferencePointType; set => UpdateField(ref _ReferencePointType, value, nameof(ReferencePointType)); }
 
- /// <summary>
- ///   Operator
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Constraint.Operator))]
- /// <summary>
- /// Operator.
- /// </summary>
- public BoolOperator? Operator { get; set; }
+  private ElementType? _ReferencePointType;
+  /// <summary>
+  ///   Operator
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Constraint.Operator))]
+  public BoolOperator? Operator { get => _Operator; set => UpdateField(ref _Operator, value, nameof(Operator)); }
 
- /// <summary>
- ///   Value
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Constraint.Val))]
- /// <summary>
- /// Val.
- /// </summary>
- public Double? Val { get; set; }
+  private BoolOperator? _Operator;
+  /// <summary>
+  ///   Value
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Constraint.Val))]
+  public Double? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
- /// <summary>
- ///   Factor
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Constraint.Fact))]
- /// <summary>
- /// Fact.
- /// </summary>
- public Double? Fact { get; set; }
+  private Double? _Val;
+  /// <summary>
+  ///   Factor
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Constraint.Fact))]
+  public Double? Fact { get => _Fact; set => UpdateField(ref _Fact, value, nameof(Fact)); }
 
- /// <summary>
- ///   ExtensionList.
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Constraint.ExtensionList))]
- /// <summary>
- /// Extension List.
- /// </summary>
- public ExtensionList? ExtensionList { get; set; }
+  private Double? _Fact;
+  /// <summary>
+  ///   ExtensionList.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Constraint.ExtensionList))]
+  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+  private ExtensionList? _ExtensionList;
 }
-

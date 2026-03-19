@@ -1,40 +1,57 @@
 namespace DocumentModel.Drawings.Diagrams;
-
 /// <summary>
 ///   Presentation Of.
 /// </summary>
 [OpenXmlType(typeof(DXDD.PresentationOf))]
-/// <summary>
-/// Represents the Presentation Of.
-/// </summary>
-public class PresentationOf: ModelElement<DXDD.PresentationOf>
+public partial class PresentationOf : ModelElement<DXDD.PresentationOf>
 {
   /// <summary>
   ///   Axis
   /// </summary>
-  public ListOf<AxisType>? Axis { get; set; }
+  [OpenXmlProperty(nameof(DXDD.PresentationOf.Axis))]
+  public ListOf<AxisType>? Axis { get => _Axis; set => UpdateField(ref _Axis, value, nameof(Axis)); }
+
+  private ListOf<AxisType>? _Axis;
   /// <summary>
   ///   Data Point Type
   /// </summary>
-  public ListOf<ElementType>? PointType { get; set; }
+  [OpenXmlProperty(nameof(DXDD.PresentationOf.PointType))]
+  public ListOf<ElementType>? PointType { get => _PointType; set => UpdateField(ref _PointType, value, nameof(PointType)); }
+
+  private ListOf<ElementType>? _PointType;
   /// <summary>
   ///   Hide Last Transition
   /// </summary>
-  public ListOf<Boolean>? HideLastTrans { get; set; }
+  [OpenXmlProperty(nameof(DXDD.PresentationOf.HideLastTrans))]
+  public ListOf<Boolean>? HideLastTrans { get => _HideLastTrans; set => UpdateField(ref _HideLastTrans, value, nameof(HideLastTrans)); }
+
+  private ListOf<Boolean>? _HideLastTrans;
   /// <summary>
   ///   Start
   /// </summary>
-  public ListOf<Int32>? Start { get; set; }
+  [OpenXmlProperty(nameof(DXDD.PresentationOf.Start))]
+  public ListOf<Int32>? Start { get => _Start; set => UpdateField(ref _Start, value, nameof(Start)); }
+
+  private ListOf<Int32>? _Start;
   /// <summary>
   ///   Count
   /// </summary>
-  public ListOf<UInt32>? Count { get; set; }
+  [OpenXmlProperty(nameof(DXDD.PresentationOf.Count))]
+  public ListOf<UInt32>? Count { get => _Count; set => UpdateField(ref _Count, value, nameof(Count)); }
+
+  private ListOf<UInt32>? _Count;
   /// <summary>
   ///   Step
   /// </summary>
-  public ListOf<Int32>? Step { get; set; }
+  [OpenXmlProperty(nameof(DXDD.PresentationOf.Step))]
+  public ListOf<Int32>? Step { get => _Step; set => UpdateField(ref _Step, value, nameof(Step)); }
+
+  private ListOf<Int32>? _Step;
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+  [OpenXmlProperty(nameof(DXDD.PresentationOf.ExtensionList))]
+  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+  private ExtensionList? _ExtensionList;
 }

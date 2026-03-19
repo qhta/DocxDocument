@@ -1,29 +1,36 @@
 namespace DocumentModel.Drawings.Diagrams;
-
 /// <summary>
 ///   Algorithm.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Algorithm))]
-/// <summary>
-/// Represents the Algorithm.
-/// </summary>
-public class Algorithm: ModelElement<DXDD.Algorithm>
+public partial class Algorithm : ModelElement<DXDD.Algorithm>
 {
   /// <summary>
   ///   Algorithm Type
   /// </summary>
-  public AlgorithmType? Type { get; set; }
+  [OpenXmlProperty(nameof(DXDD.Algorithm.Type))]
+  public AlgorithmType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+
+  private AlgorithmType? _Type;
   /// <summary>
   ///   Revision Number
   /// </summary>
-  public UInt32? Revision { get; set; }
+  [OpenXmlProperty(nameof(DXDD.Algorithm.Revision))]
+  public UInt32? Revision { get => _Revision; set => UpdateField(ref _Revision, value, nameof(Revision)); }
+
+  private UInt32? _Revision;
   /// <summary>
   /// Parameters.
   /// </summary>
-  public Parameters? Parameters { get; set; }
+  [OpenXmlElement(typeof(DXDD.Parameter))]
+  public Parameters? Parameters { get => _Parameters; set => UpdateField(ref _Parameters, value, nameof(Parameters)); }
+
+  private Parameters? _Parameters;
   /// <summary>
   /// Extension List.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
-}
+  [OpenXmlElement(typeof(DXDD.ExtensionList))]
+  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
+  private ExtensionList? _ExtensionList;
+}

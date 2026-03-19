@@ -1,17 +1,15 @@
 namespace DocumentModel.Drawings.Diagrams;
-
 /// <summary>
 ///   Defines the PtExtension class.
 /// </summary>
 [OpenXmlType(typeof(DXD.PtExtension))]
-/// <summary>
-/// Represents the Pt Extension.
-/// </summary>
-public class PtExtension : Extension<DXD.PtExtension>
+public partial class PtExtension : Extension<DXD.PtExtension>
 {
   /// <summary>
   /// Non Visual Drawing Properties.
   /// </summary>
-  public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
-}
+  [OpenXmlElement(typeof(DocumentFormat.OpenXml.Office2010.Drawing.Diagram.NonVisualDrawingProperties))]
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
 
+  private NonVisualDrawingProperties? _NonVisualDrawingProperties;
+}

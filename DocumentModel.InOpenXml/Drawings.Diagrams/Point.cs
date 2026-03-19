@@ -3,72 +3,55 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Point.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Point))]
-/// <summary>
-/// Represents the Point.
-/// </summary>
-public class Point : ModelElement<DXDD.Point>
+public partial class Point : ModelElement<DXDD.Point>
 {
- /// <summary>
- ///   Model Identifier
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Point.ModelId))]
- /// <summary>
- /// Model Id.
- /// </summary>
- public string? ModelId { get; set; }
+  /// <summary>
+  ///   Model Identifier
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Point.ModelId))]
+  public string? ModelId { get => _ModelId; set => UpdateField(ref _ModelId, value, nameof(ModelId)); }
 
- /// <summary>
- ///   Point Type
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Point.Type))]
- /// <summary>
- /// Type.
- /// </summary>
- public Point? Type { get; set; }
+  private string? _ModelId;
+  /// <summary>
+  ///   Point Type
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Point.Type))]
+  public Point? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
 
- /// <summary>
- ///   Connection Identifier
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Point.ConnectionId))]
- /// <summary>
- /// Connection Id.
- /// </summary>
- public string? ConnectionId { get; set; }
+  private Point? _Type;
+  /// <summary>
+  ///   Connection Identifier
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Point.ConnectionId))]
+  public string? ConnectionId { get => _ConnectionId; set => UpdateField(ref _ConnectionId, value, nameof(ConnectionId)); }
 
- /// <summary>
- ///   Property Set.
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Point.PropertySet))]
- /// <summary>
- /// Property Set.
- /// </summary>
- public PropertySet? PropertySet { get; set; }
+  private string? _ConnectionId;
+  /// <summary>
+  ///   Property Set.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Point.PropertySet))]
+  public PropertySet? PropertySet { get => _PropertySet; set => UpdateField(ref _PropertySet, value, nameof(PropertySet)); }
 
- /// <summary>
- ///   Shape Properties.
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Point.ShapeProperties))]
- /// <summary>
- /// Shape Properties.
- /// </summary>
- public ShapeProperties? ShapeProperties { get; set; }
+  private PropertySet? _PropertySet;
+  /// <summary>
+  ///   Shape Properties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Point.ShapeProperties))]
+  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
 
- /// <summary>
- ///   Text Body.
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Point.TextBody))]
- /// <summary>
- /// Text Body.
- /// </summary>
- public TextBody? TextBody { get; set; }
+  private ShapeProperties? _ShapeProperties;
+  /// <summary>
+  ///   Text Body.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Point.TextBody))]
+  public TextBody? TextBody { get => _TextBody; set => UpdateField(ref _TextBody, value, nameof(TextBody)); }
 
- /// <summary>
- ///   PtExtensionList.
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Point.PtExtensionList))]
- /// <summary>
- /// Pt Extension List.
- /// </summary>
- public PtExtensionList? PtExtensionList { get; set; }
+  private TextBody? _TextBody;
+  /// <summary>
+  ///   PtExtensionList.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Point.PtExtensionList))]
+  public PtExtensionList? PtExtensionList { get => _PtExtensionList; set => UpdateField(ref _PtExtensionList, value, nameof(PtExtensionList)); }
+
+  private PtExtensionList? _PtExtensionList;
 }
-

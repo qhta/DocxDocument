@@ -3,28 +3,20 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Style Label Description.
 /// </summary>
 [OpenXmlType(typeof(DXDD.StyleLabelDescription))]
-/// <summary>
-/// Represents the Style Label Description.
-/// </summary>
-public class StyleLabelDescription : ModelElement<DXDD.StyleLabelDescription>
+public partial class StyleLabelDescription : ModelElement<DXDD.StyleLabelDescription>
 {
- /// <summary>
- ///   Natural Language
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.StyleLabelDescription.Language))]
- /// <summary>
- /// Language.
- /// </summary>
- public string? Language { get; set; }
+  /// <summary>
+  ///   Natural Language
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.StyleLabelDescription.Language))]
+  public string? Language { get => _Language; set => UpdateField(ref _Language, value, nameof(Language)); }
 
- /// <summary>
- ///   Description Value
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.StyleLabelDescription.Val))]
- /// <summary>
- /// Val.
- /// </summary>
- public string? Val { get; set; }
+  private string? _Language;
+  /// <summary>
+  ///   Description Value
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.StyleLabelDescription.Val))]
+  public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+
+  private string? _Val;
 }
-
-

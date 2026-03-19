@@ -3,27 +3,20 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Title.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Title))]
-/// <summary>
-/// Represents the Title.
-/// </summary>
-public class Title : ModelElement<DXDD.Title>
+public partial class Title : ModelElement<DXDD.Title>
 {
- /// <summary>
- ///   Language
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Title.Language))]
- /// <summary>
- /// Language.
- /// </summary>
- public string? Language { get; set; }
+  /// <summary>
+  ///   Language
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Title.Language))]
+  public string? Language { get => _Language; set => UpdateField(ref _Language, value, nameof(Language)); }
 
- /// <summary>
- ///   Value
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.Title.Val))]
- /// <summary>
- /// Val.
- /// </summary>
- public string? Val { get; set; }
+  private string? _Language;
+  /// <summary>
+  ///   Value
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.Title.Val))]
+  public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+
+  private string? _Val;
 }
-

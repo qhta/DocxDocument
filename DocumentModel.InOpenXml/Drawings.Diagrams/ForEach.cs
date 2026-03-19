@@ -1,81 +1,127 @@
 namespace DocumentModel.Drawings.Diagrams;
-
 /// <summary>
 ///   For Each.
 /// </summary>
 [OpenXmlType(typeof(DXDD.ForEach))]
-/// <summary>
-/// Represents the For Each.
-/// </summary>
-public class ForEach: ModelElement<DXDD.ForEach>
+public partial class ForEach : ModelElement<DXDD.ForEach>
 {
   /// <summary>
   ///   Name
   /// </summary>
-  public string? Name { get; set; }
+  [OpenXmlProperty(nameof(DXDD.ForEach.Name))]
+  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+
+  private string? _Name;
   /// <summary>
   ///   Reference
   /// </summary>
-  public string? Reference { get; set; }
+  [OpenXmlProperty(nameof(DXDD.ForEach.Reference))]
+  public string? Reference { get => _Reference; set => UpdateField(ref _Reference, value, nameof(Reference)); }
+
+  private string? _Reference;
   /// <summary>
   ///   Axis
   /// </summary>
-  public ListOf<AxisType>? Axis { get; set; }
+  [OpenXmlProperty(nameof(DXDD.ForEach.Axis))]
+  public ListOf<AxisType>? Axis { get => _Axis; set => UpdateField(ref _Axis, value, nameof(Axis)); }
+
+  private ListOf<AxisType>? _Axis;
   /// <summary>
   ///   Data Point Type
   /// </summary>
-  public ListOf<ElementType>? PointType { get; set; }
+  [OpenXmlProperty(nameof(DXDD.ForEach.PointType))]
+  public ListOf<ElementType>? PointType { get => _PointType; set => UpdateField(ref _PointType, value, nameof(PointType)); }
+
+  private ListOf<ElementType>? _PointType;
   /// <summary>
   ///   Hide Last Transition
   /// </summary>
-  public ListOf<Boolean>? HideLastTrans { get; set; }
+  [OpenXmlProperty(nameof(DXDD.ForEach.HideLastTrans))]
+  public ListOf<Boolean>? HideLastTrans { get => _HideLastTrans; set => UpdateField(ref _HideLastTrans, value, nameof(HideLastTrans)); }
+
+  private ListOf<Boolean>? _HideLastTrans;
   /// <summary>
   ///   Start
   /// </summary>
-  public ListOf<Int32>? Start { get; set; }
+  [OpenXmlProperty(nameof(DXDD.ForEach.Start))]
+  public ListOf<Int32>? Start { get => _Start; set => UpdateField(ref _Start, value, nameof(Start)); }
+
+  private ListOf<Int32>? _Start;
   /// <summary>
   ///   Count
   /// </summary>
-  public ListOf<UInt32>? Count { get; set; }
+  [OpenXmlProperty(nameof(DXDD.ForEach.Count))]
+  public ListOf<UInt32>? Count { get => _Count; set => UpdateField(ref _Count, value, nameof(Count)); }
+
+  private ListOf<UInt32>? _Count;
   /// <summary>
   ///   Step
   /// </summary>
-  public ListOf<Int32>? Step { get; set; }
+  [OpenXmlProperty(nameof(DXDD.ForEach.Step))]
+  public ListOf<Int32>? Step { get => _Step; set => UpdateField(ref _Step, value, nameof(Step)); }
+
+  private ListOf<Int32>? _Step;
   /// <summary>
   /// Algorithm.
   /// </summary>
-  public Algorithm? Algorithm { get; set; }
+  [OpenXmlElement(typeof(DXDD.Algorithm))]
+  public Algorithm? Algorithm { get => _Algorithm; set => UpdateField(ref _Algorithm, value, nameof(Algorithm)); }
+
+  private Algorithm? _Algorithm;
   /// <summary>
   /// Shape.
   /// </summary>
-  public Shape? Shape { get; set; }
+  [OpenXmlElement(typeof(DXDD.Shape))]
+  public Shape? Shape { get => _Shape; set => UpdateField(ref _Shape, value, nameof(Shape)); }
+
+  private Shape? _Shape;
   /// <summary>
   /// Presentation Of.
   /// </summary>
-  public PresentationOf? PresentationOf { get; set; }
+  [OpenXmlElement(typeof(DXDD.PresentationOf))]
+  public PresentationOf? PresentationOf { get => _PresentationOf; set => UpdateField(ref _PresentationOf, value, nameof(PresentationOf)); }
+
+  private PresentationOf? _PresentationOf;
   /// <summary>
   /// Constraints.
   /// </summary>
-  public Constraints? Constraints { get; set; }
+  [OpenXmlElement(typeof(DXDD.Constraints))]
+  public Constraints? Constraints { get => _Constraints; set => UpdateField(ref _Constraints, value, nameof(Constraints)); }
+
+  private Constraints? _Constraints;
   /// <summary>
   /// Rule List.
   /// </summary>
-  public RuleList? RuleList { get; set; }
+  [OpenXmlElement(typeof(DXDD.RuleList))]
+  public RuleList? RuleList { get => _RuleList; set => UpdateField(ref _RuleList, value, nameof(RuleList)); }
+
+  private RuleList? _RuleList;
   /// <summary>
   /// Child For Each.
   /// </summary>
-  public ForEach? ChildForEach { get; set; }
+  [OpenXmlElement(typeof(DXDD.ForEach))]
+  public ForEach? ChildForEach { get => _ChildForEach; set => UpdateField(ref _ChildForEach, value, nameof(ChildForEach)); }
+
+  private ForEach? _ChildForEach;
   /// <summary>
   /// Layout Node.
   /// </summary>
-  public LayoutNode? LayoutNode { get; set; }
+  [OpenXmlElement(typeof(DXDD.LayoutNode))]
+  public LayoutNode? LayoutNode { get => _LayoutNode; set => UpdateField(ref _LayoutNode, value, nameof(LayoutNode)); }
+
+  private LayoutNode? _LayoutNode;
   /// <summary>
   /// Choose.
   /// </summary>
-  public Choose? Choose { get; set; }
+  [OpenXmlElement(typeof(DXDD.Choose))]
+  public Choose? Choose { get => _Choose; set => UpdateField(ref _Choose, value, nameof(Choose)); }
+
+  private Choose? _Choose;
   /// <summary>
   /// Extension List.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
-}
+  [OpenXmlElement(typeof(DXDD.ExtensionList))]
+  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
+  private ExtensionList? _ExtensionList;
+}
