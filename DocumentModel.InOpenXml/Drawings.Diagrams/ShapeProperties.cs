@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Shape Properties.
 /// </summary>
-public class ShapeProperties
+[OpenXmlType(typeof(DXDD.ShapeProperties))]
+public class ShapeProperties: ModelElement<DXDD.ShapeProperties>
 {
   /// <summary>
   ///   Black and White Mode

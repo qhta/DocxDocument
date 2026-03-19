@@ -1,5 +1,8 @@
 namespace DocumentModel.Drawings.Diagrams;
 
-public class StyleDefinitionTitles : ElementCollection<StyleDefinitionTitle>
+/// <summary>
+/// Represents a collection of style definition titles used for organizing or displaying style-related metadata.
+/// </summary>
+public class StyleDefinitionTitles : ModelElementCollection<StyleDefinitionTitle>
 {
 }

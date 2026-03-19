@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Whole E2O Formatting.
 /// </summary>
-public class Whole
+[OpenXmlType(typeof(DXDD.Whole))]
+public class Whole: ModelElement<DXDD.Whole>
 {
   /// <summary>
   ///   Outline.

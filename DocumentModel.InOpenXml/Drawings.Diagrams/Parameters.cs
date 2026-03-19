@@ -1,5 +1,8 @@
 namespace DocumentModel.Drawings.Diagrams;
 
-public class Parameters : ElementCollection<Parameter>
+/// <summary>
+/// Represents a collection of parameter elements used within a model.
+/// </summary>
+public class Parameters : ModelElementCollection<Parameter>
 {
 }

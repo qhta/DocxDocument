@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Shape.
 /// </summary>
-public class Shape
+[OpenXmlType(typeof(DXDD.Shape))]
+public class Shape: ModelElement<DXDD.Shape>
 {
   /// <summary>
   ///   Rotation

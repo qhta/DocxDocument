@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a picture bullet, which uses an image as a bullet in lists or text.
 /// </summary>
-public class PictureBullet
+[OpenXmlType(typeof(DXD.PictureBullet))]
+public class PictureBullet: ModelElement<DXD.PictureBullet>
 {
   /// <summary>
   ///   Image used for the picture bullet.

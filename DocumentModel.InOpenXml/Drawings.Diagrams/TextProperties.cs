@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Text Properties.
 /// </summary>
-public class TextProperties
+[OpenXmlType(typeof(DXDD.TextProperties))]
+public class TextProperties: ModelElement<DXDD.TextProperties>
 {
   /// <summary>
   ///   Apply 3D shape properties.

@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Title.
 /// </summary>
-public class ColorDefinitionTitle//:  IEquatable<ColorDefinitionTitle>
+[OpenXmlType(typeof(DXDD.ColorDefinitionTitle))]
+public class ColorDefinitionTitle: ModelElement<DXDD.ColorDefinitionTitle>
 {
   /// <summary>
   ///   Language

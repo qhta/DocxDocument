@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Choose Element.
 /// </summary>
-public class Choose
+[OpenXmlType(typeof(DXDD.Choose))]
+public class Choose: ModelElement<DXDD.Choose>
 {
   /// <summary>
   ///   Name

@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   For Each.
 /// </summary>
-public class ForEach
+[OpenXmlType(typeof(DXDD.ForEach))]
+public class ForEach: ModelElement<DXDD.ForEach>
 {
   /// <summary>
   ///   Name

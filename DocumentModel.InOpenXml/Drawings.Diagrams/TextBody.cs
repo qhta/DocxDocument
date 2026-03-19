@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Text Body.
 /// </summary>
-public class TextBody
+[OpenXmlType(typeof(DXDD.TextBody))]
+public class TextBody: ModelElement<DXDD.TextBody>
 {
   /// <summary>
   ///   Body Properties.

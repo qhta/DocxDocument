@@ -1,16 +1,19 @@
 namespace DocumentModel.Drawings.Diagrams;
-
 /// <summary>
 ///   Description.
 /// </summary>
-public class ColorTransformDescription : CollectionItem
+[OpenXmlType(typeof(DXDD.ColorTransformDescription))]
+public class ColorTransformDescription : ModelElement<DXDD.ColorTransformDescription>
 {
-  /// <summary>
-  ///   Language
-  /// </summary>
-  public string? Language { get; set; }
-  /// <summary>
-  ///   Description Value
-  /// </summary>
-  public string? Val { get; set; }
+ /// <summary>
+ ///   Language
+ /// </summary>
+ [OpenXmlProperty(nameof(DXDD.ColorTransformDescription.Language))]
+ public string? Language { get; set; }
+
+ /// <summary>
+ ///   Description Value
+ /// </summary>
+ [OpenXmlProperty(nameof(DXDD.ColorTransformDescription.Val))]
+ public string? Val { get; set; }
 }

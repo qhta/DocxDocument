@@ -5,7 +5,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Defines the DiagramDefinitionExtension Class.
 /// </summary>
-public class DiagramDefinitionExtension : Extension
+[OpenXmlType(typeof(DXDD.DiagramDefinitionExtension))]
+public class DiagramDefinitionExtension : Extension<DXDD.DiagramDefinitionExtension>
 {
   public NumberDiagramInfoList? NumberDiagramInfoList { get; set; }
   public ListStyle? TextListStyleType { get; set; }

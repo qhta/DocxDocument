@@ -58,12 +58,8 @@ public partial class DataLabelExtension: Extension<DXDC.DLblExtension>
   /// <summary>
   ///   Layout configuration for the data label.
   /// </summary>
-  [OpenXmlType(typeof(DXO13DC.Layout))]
-
-  /// <summary>
-  ///   Layout configuration for the data label.
-  /// </summary>
   [OpenXmlElement(typeof(DXO13DC.Layout))]
+  [OpenXmlType(typeof(DXO13DC.Layout))]
   public Layout? Layout { get => _Layout; set => UpdateField(ref _Layout, value, nameof(Layout)); }
 
   private Layout? _Layout;

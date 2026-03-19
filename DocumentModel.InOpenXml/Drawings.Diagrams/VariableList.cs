@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Variable List.
 /// </summary>
-public class VariableList
+[OpenXmlType(typeof(DXDD.VariableList))]
+public class VariableList: LayoutVariablePropertySetType
 {
   public bool? OrganizationChart { get; set; }
   public Int32? MaxNumberOfChildren { get; set; }

@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Text Effect Color List.
 /// </summary>
-public class TextEffectColorList
+[OpenXmlType(typeof(DXDD.TextEffectColorList))]
+public class TextEffectColorList: ColorsType
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
   public RgbColorModelHex? RgbColorModelHex { get; set; }

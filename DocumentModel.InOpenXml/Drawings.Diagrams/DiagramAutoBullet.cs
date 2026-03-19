@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagram1;
 /// <summary>
 ///   Defines the DiagramAutoBullet Class.
 /// </summary>
-public class DiagramAutoBullet
+[OpenXmlType(typeof(DXO19DD1.DiagramAutoBullet))]
+public class DiagramAutoBullet: ModelElement<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet>
 {
   /// <summary>
   ///   prefix

@@ -261,20 +261,10 @@ public partial class StyleColor: ModelElement<DXO13DCS.StyleColor>
   /// <summary>
   /// Indicates if gamma correction is applied to the color.
   /// </summary>
-  [DefaultValue(false)]
-
-  /// <summary>
-  /// Indicates if gamma correction is applied to the color.
-  /// </summary>
   [OpenXmlElement(typeof(DXD.Gamma))]
   public Boolean Gamma { get => _Gamma; set => UpdateField(ref _Gamma, value, nameof(Gamma)); }
 
   private Boolean _Gamma;
-
-  /// <summary>
-  /// Indicates if inverse gamma correction is applied to the color.
-  /// </summary>
-  [DefaultValue(false)]
 
   /// <summary>
   /// Indicates if inverse gamma correction is applied to the color.

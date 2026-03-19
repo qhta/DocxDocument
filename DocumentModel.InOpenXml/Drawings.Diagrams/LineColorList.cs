@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Line Color List.
 /// </summary>
-public class LineColorList
+[OpenXmlType(typeof(DXDD.LineColorList))]
+public class LineColorList: ColorsType
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
   public RgbColorModelHex? RgbColorModelHex { get; set; }

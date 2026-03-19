@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Color Transform Definitions.
 /// </summary>
-public class ColorsDefinition
+[OpenXmlType(typeof(DXDD.ColorsDefinition))]
+public class ColorsDefinition: ModelElement<DXDD.ColorsDefinition>
 {
   /// <summary>
   ///   Unique ID

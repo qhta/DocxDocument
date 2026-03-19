@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Presentation Layout Variables.
 /// </summary>
-public class PresentationLayoutVariables
+[OpenXmlType(typeof(DXDD.PresentationLayoutVariables))]
+public class PresentationLayoutVariables: LayoutVariablePropertySetType
 {
   public bool? OrganizationChart { get; set; }
   public Int32? MaxNumberOfChildren { get; set; }
