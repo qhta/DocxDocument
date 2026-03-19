@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Defines the LayoutVariablePropertySetType Class.
 /// </summary>
-public class LayoutVariablePropertySetType
+[OpenXmlType(typeof(DXDD.LayoutVariablePropertySetType))]
+public class LayoutVariablePropertySetType: ModelElement<DXDD.LayoutVariablePropertySetType>
 {
   /// <summary>
   ///   Show Organization Chart User class.

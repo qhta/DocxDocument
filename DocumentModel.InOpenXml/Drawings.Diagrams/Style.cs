@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Shape Style.
 /// </summary>
-public class Style
+[OpenXmlType(typeof(DXDD.Style))]
+public class Style: ModelElement<DXDD.Style>
 {
   /// <summary>
   ///   LineReference.

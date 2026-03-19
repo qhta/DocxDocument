@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Presentation Of.
 /// </summary>
-public class PresentationOf
+[OpenXmlType(typeof(DXDD.PresentationOf))]
+public class PresentationOf: ModelElement<DXDD.PresentationOf>
 {
   /// <summary>
   ///   Axis

@@ -1,5 +1,8 @@
 namespace DocumentModel.Drawings.Diagrams;
 
-public class Descriptions : ElementCollection<Description>
+/// <summary>
+/// Represents a collection of description elements.
+/// </summary>
+public class Descriptions : ModelElementCollection<Description>
 {
 }

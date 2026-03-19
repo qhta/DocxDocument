@@ -1,5 +1,8 @@
 namespace DocumentModel.Drawings.Diagrams;
 
-public class Titles : ElementCollection<Title>
+/// <summary>
+/// Represents a collection of title elements.
+/// </summary>
+public class Titles : ModelElementCollection<Title>
 {
 }

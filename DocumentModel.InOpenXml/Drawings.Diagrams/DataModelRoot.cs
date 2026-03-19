@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Data Model.
 /// </summary>
-public class DataModelRoot
+[OpenXmlType(typeof(DXDD.DataModelRoot))]
+public class DataModelRoot: ModelElement<DXDD.DataModelRoot>
 {
   /// <summary>
   ///   Point List.

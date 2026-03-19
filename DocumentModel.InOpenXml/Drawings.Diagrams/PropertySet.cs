@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Property Set.
 /// </summary>
-public class PropertySet
+[OpenXmlType(typeof(DXDD.PropertySet))]
+public class PropertySet: ModelElement<DXDD.PropertySet>
 {
   /// <summary>
   ///   Presentation Element Identifier

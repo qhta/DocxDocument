@@ -39,6 +39,7 @@ global using DXO19DHC = DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor
 global using DXO19DS = DocumentFormat.OpenXml.Office2019.Drawing.SVG;
 global using DXO19P = DocumentFormat.OpenXml.Office2019.Presentation;
 global using DXO19WC = DocumentFormat.OpenXml.Office2019.Word.Cid;
+global using DXO19DD1 = DocumentFormat.OpenXml.Office2019.Drawing.Diagram11;
 global using DXO21DDC = DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification;
 global using DXO21DL = DocumentFormat.OpenXml.Office2021.Drawing.Livefeed;
 global using DXO21DSS = DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes;

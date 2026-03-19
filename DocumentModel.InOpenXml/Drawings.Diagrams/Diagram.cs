@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Diagram to Animate.
 /// </summary>
-public class Diagram
+[OpenXmlType(typeof(DXD.Diagram))]
+public class Diagram: ModelElement<DXD.Diagram>
 {
   /// <summary>
   ///   Identifier

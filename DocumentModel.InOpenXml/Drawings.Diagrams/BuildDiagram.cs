@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents build diagram options, including build type, reverse animation, and additional extension settings for diagram elements.
 /// </summary>
-public class BuildDiagram//: iExtendableElement
+[OpenXmlType(typeof(DXD.BuildDiagram))]
+public class BuildDiagram: ModelElement<DXD.BuildDiagram>// , ExtendableElement
 {
   /// <summary>
   /// Build type or sequence for the diagram.

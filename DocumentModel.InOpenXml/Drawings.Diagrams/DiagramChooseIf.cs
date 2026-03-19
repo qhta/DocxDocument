@@ -3,7 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   If.
 /// </summary>
-public class DiagramChooseIf
+[OpenXmlType(typeof(DXDD.DiagramChooseIf))]
+public class DiagramChooseIf: ModelElement<DXDD.DiagramChooseIf>
 {
   /// <summary>
   ///   Name
