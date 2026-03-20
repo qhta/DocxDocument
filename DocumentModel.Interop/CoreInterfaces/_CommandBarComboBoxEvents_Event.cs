@@ -5,5 +5,5 @@ public delegate void _CommandBarComboBoxEvents_ChangeEventHandler(CommandBarComb
 
 public interface _CommandBarComboBoxEvents_Event
 {
-  event _CommandBarComboBoxEvents_ChangeEventHandler Change;
+  public event _CommandBarComboBoxEvents_ChangeEventHandler Change;
 }

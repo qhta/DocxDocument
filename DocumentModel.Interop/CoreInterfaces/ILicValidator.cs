@@ -3,6 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface ILicValidator
 {
-  object Products { get; }
-  int Selection { get; set; }
+  public object Products { get; }
+  public int Selection { get; set; }
 }

@@ -3,11 +3,11 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoDownBars
 {
-  string Name { get; }
-  object Select();
-  IMsoBorder Border { get; }
-  object Delete();
-  IMsoInterior Interior { get; }
-  ChartFillFormat Fill { get; }
-  IMsoChartFormat Format { get; }
+  public string Name { get; }
+  public object Select();
+  public IMsoBorder Border { get; }
+  public object Delete();
+  public IMsoInterior Interior { get; }
+  public ChartFillFormat Fill { get; }
+  public IMsoChartFormat Format { get; }
 }

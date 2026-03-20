@@ -6,6 +6,6 @@ public delegate void _CustomTaskPaneEvents_DockPositionStateChangeEventHandler(C
 
 public interface _CustomTaskPaneEvents_Event
 {
-  event _CustomTaskPaneEvents_VisibleStateChangeEventHandler VisibleStateChange;
-  event _CustomTaskPaneEvents_DockPositionStateChangeEventHandler DockPositionStateChange;
+  public event _CustomTaskPaneEvents_VisibleStateChangeEventHandler VisibleStateChange;
+  public event _CustomTaskPaneEvents_DockPositionStateChangeEventHandler DockPositionStateChange;
 }

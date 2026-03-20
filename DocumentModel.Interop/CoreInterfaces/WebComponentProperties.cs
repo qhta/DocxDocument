@@ -3,13 +3,13 @@ namespace DocumentModel.Interop.Core;
 
 public interface WebComponentProperties
 {
-  object Shape { get; }
-  string Name { get; set; }
-  string URL { get; set; }
-  string HTML { get; set; }
-  string PreviewGraphic { get; set; }
-  string PreviewHTML { get; set; }
-  int Width { get; set; }
-  int Height { get; set; }
-  string Tag { get; set; }
+  public object Shape { get; }
+  public string Name { get; set; }
+  public string URL { get; set; }
+  public string HTML { get; set; }
+  public string PreviewGraphic { get; set; }
+  public string PreviewHTML { get; set; }
+  public int Width { get; set; }
+  public int Height { get; set; }
+  public string Tag { get; set; }
 }

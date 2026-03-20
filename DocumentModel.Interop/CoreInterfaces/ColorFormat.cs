@@ -4,10 +4,10 @@ namespace DocumentModel.Interop.Core;
 
 public interface ColorFormat: InteropObject
 {
-  int RGB { get; set; }
-  int SchemeColor { get; set; }
-  MsoColorType Type { get; }
-  float TintAndShade { get; set; }
-  MsoThemeColorIndex ObjectThemeColor { get; set; }
-  float Brightness { get; set; }
+  public int RGB { get; set; }
+  public int SchemeColor { get; set; }
+  public MsoColorType Type { get; }
+  public float TintAndShade { get; set; }
+  public MsoThemeColorIndex ObjectThemeColor { get; set; }
+  public float Brightness { get; set; }
 }

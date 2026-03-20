@@ -3,13 +3,13 @@ namespace DocumentModel.Interop.Core;
 
 public interface WebComponent
 {
-  object Shape { get; }
-  string URL { get; set; }
-  string HTML { get; set; }
-  string Name { get; set; }
-  int Width { get; set; }
-  int Height { get; set; }
-  void SetPlaceHolderGraphic(string PlaceHolderGraphic);
-  void Commit();
-  void Revert();
+  public object Shape { get; }
+  public string URL { get; set; }
+  public string HTML { get; set; }
+  public string Name { get; set; }
+  public int Width { get; set; }
+  public int Height { get; set; }
+  public void SetPlaceHolderGraphic(string PlaceHolderGraphic);
+  public void Commit();
+  public void Revert();
 }

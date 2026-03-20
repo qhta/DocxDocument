@@ -3,70 +3,70 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoSeries
 {
-  object _ApplyDataLabels
+  public object _ApplyDataLabels
   (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines);
 
-  XlAxisGroup AxisGroup { get; set; }
-  IMsoBorder Border { get; }
-  object ClearFormats();
-  object Copy();
-  object DataLabels(object Index);
-  object Delete();
+  public XlAxisGroup AxisGroup { get; set; }
+  public IMsoBorder Border { get; }
+  public object ClearFormats();
+  public object Copy();
+  public object DataLabels(object Index);
+  public object Delete();
 
-  object ErrorBar
+  public object ErrorBar
     (XlErrorBarDirection Direction, XlErrorBarInclude Include, XlErrorBarType Type, object Amount, object MinusValues);
 
-  IMsoErrorBars ErrorBars { get; }
-  int Explosion { get; set; }
-  string Formula { get; set; }
-  string FormulaLocal { get; set; }
-  string FormulaR1C1 { get; set; }
-  string FormulaR1C1Local { get; set; }
-  bool HasDataLabels { get; set; }
-  bool HasErrorBars { get; set; }
-  IMsoInterior Interior { get; }
-  ChartFillFormat Fill { get; }
-  bool InvertIfNegative { get; set; }
-  int MarkerBackgroundColor { get; set; }
-  XlColorIndex MarkerBackgroundColorIndex { get; set; }
-  int MarkerForegroundColor { get; set; }
-  XlColorIndex MarkerForegroundColorIndex { get; set; }
-  int MarkerSize { get; set; }
-  XlMarkerStyle MarkerStyle { get; set; }
-  string Name { get; set; }
-  object Paste();
-  XlChartPictureType PictureType { get; set; }
-  double PictureUnit { get; set; }
-  int PlotOrder { get; set; }
-  object Points(object Index);
-  object Select();
-  bool Smooth { get; set; }
-  object Trendlines(object Index);
-  int Type { get; set; }
-  XlChartType ChartType { get; set; }
-  void ApplyCustomType(XlChartType ChartType);
-  object Values { get; set; }
-  object XValues { get; set; }
-  object BubbleSizes { get; set; }
-  XlBarShape BarShape { get; set; }
-  bool ApplyPictToSides { get; set; }
-  bool ApplyPictToFront { get; set; }
-  bool ApplyPictToEnd { get; set; }
-  bool Has3DEffect { get; set; }
-  bool Shadow { get; set; }
-  bool HasLeaderLines { get; set; }
-  IMsoLeaderLines LeaderLines { get; }
+  public IMsoErrorBars ErrorBars { get; }
+  public int Explosion { get; set; }
+  public string Formula { get; set; }
+  public string FormulaLocal { get; set; }
+  public string FormulaR1C1 { get; set; }
+  public string FormulaR1C1Local { get; set; }
+  public bool HasDataLabels { get; set; }
+  public bool HasErrorBars { get; set; }
+  public IMsoInterior Interior { get; }
+  public ChartFillFormat Fill { get; }
+  public bool InvertIfNegative { get; set; }
+  public int MarkerBackgroundColor { get; set; }
+  public XlColorIndex MarkerBackgroundColorIndex { get; set; }
+  public int MarkerForegroundColor { get; set; }
+  public XlColorIndex MarkerForegroundColorIndex { get; set; }
+  public int MarkerSize { get; set; }
+  public XlMarkerStyle MarkerStyle { get; set; }
+  public string Name { get; set; }
+  public object Paste();
+  public XlChartPictureType PictureType { get; set; }
+  public double PictureUnit { get; set; }
+  public int PlotOrder { get; set; }
+  public object Points(object Index);
+  public object Select();
+  public bool Smooth { get; set; }
+  public object Trendlines(object Index);
+  public int Type { get; set; }
+  public XlChartType ChartType { get; set; }
+  public void ApplyCustomType(XlChartType ChartType);
+  public object Values { get; set; }
+  public object XValues { get; set; }
+  public object BubbleSizes { get; set; }
+  public XlBarShape BarShape { get; set; }
+  public bool ApplyPictToSides { get; set; }
+  public bool ApplyPictToFront { get; set; }
+  public bool ApplyPictToEnd { get; set; }
+  public bool Has3DEffect { get; set; }
+  public bool Shadow { get; set; }
+  public bool HasLeaderLines { get; set; }
+  public IMsoLeaderLines LeaderLines { get; }
 
-  object ApplyDataLabels
+  public object ApplyDataLabels
   (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines, object ShowSeriesName, object ShowCategoryName, object ShowValue, object ShowPercentage,
     object ShowBubbleSize, object Separator);
 
-  IMsoChartFormat Format { get; }
-  double PictureUnit2 { get; set; }
-  int PlotColorIndex { get; }
-  int InvertColor { get; set; }
-  XlColorIndex InvertColorIndex { get; set; }
-  bool IsFiltered { get; set; }
+  public IMsoChartFormat Format { get; }
+  public double PictureUnit2 { get; set; }
+  public int PlotColorIndex { get; }
+  public int InvertColor { get; set; }
+  public XlColorIndex InvertColorIndex { get; set; }
+  public bool IsFiltered { get; set; }
 }

@@ -3,37 +3,37 @@ namespace DocumentModel.Interop.Core;
 
 public interface Font2: InteropObject
 {
-  MsoTriState Bold { get; set; }
-  MsoTriState Italic { get; set; }
-  MsoTextStrike Strike { get; set; }
-  MsoTextCaps Caps { get; set; }
-  MsoTriState AutorotateNumbers { get; set; }
-  float BaselineOffset { get; set; }
-  float Kerning { get; set; }
-  float Size { get; set; }
-  float Spacing { get; set; }
-  MsoTextUnderlineType UnderlineStyle { get; set; }
-  MsoTriState Allcaps { get; set; }
-  MsoTriState DoubleStrikeThrough { get; set; }
-  MsoTriState Equalize { get; set; }
-  FillFormat Fill { get; }
-  GlowFormat Glow { get; }
-  ReflectionFormat Reflection { get; }
-  LineFormat Line { get; }
-  ShadowFormat Shadow { get; }
-  ColorFormat Highlight { get; }
-  ColorFormat UnderlineColor { get; }
-  MsoTriState Smallcaps { get; set; }
-  MsoSoftEdgeType SoftEdgeFormat { get; set; }
-  MsoTriState StrikeThrough { get; set; }
-  MsoTriState Subscript { get; set; }
-  MsoTriState Superscript { get; set; }
-  MsoPresetTextEffect WordArtformat { get; set; }
-  MsoTriState Embeddable { get; }
-  MsoTriState Embedded { get; }
-  string Name { get; set; }
-  string NameAscii { get; set; }
-  string NameComplexScript { get; set; }
-  string NameFarEast { get; set; }
-  string NameOther { get; set; }
+  public MsoTriState Bold { get; set; }
+  public MsoTriState Italic { get; set; }
+  public MsoTextStrike Strike { get; set; }
+  public MsoTextCaps Caps { get; set; }
+  public MsoTriState AutorotateNumbers { get; set; }
+  public float BaselineOffset { get; set; }
+  public float Kerning { get; set; }
+  public float Size { get; set; }
+  public float Spacing { get; set; }
+  public MsoTextUnderlineType UnderlineStyle { get; set; }
+  public MsoTriState Allcaps { get; set; }
+  public MsoTriState DoubleStrikeThrough { get; set; }
+  public MsoTriState Equalize { get; set; }
+  public FillFormat Fill { get; }
+  public GlowFormat Glow { get; }
+  public ReflectionFormat Reflection { get; }
+  public LineFormat Line { get; }
+  public ShadowFormat Shadow { get; }
+  public ColorFormat Highlight { get; }
+  public ColorFormat UnderlineColor { get; }
+  public MsoTriState Smallcaps { get; set; }
+  public MsoSoftEdgeType SoftEdgeFormat { get; set; }
+  public MsoTriState StrikeThrough { get; set; }
+  public MsoTriState Subscript { get; set; }
+  public MsoTriState Superscript { get; set; }
+  public MsoPresetTextEffect WordArtformat { get; set; }
+  public MsoTriState Embeddable { get; }
+  public MsoTriState Embedded { get; }
+  public string Name { get; set; }
+  public string NameAscii { get; set; }
+  public string NameComplexScript { get; set; }
+  public string NameFarEast { get; set; }
+  public string NameOther { get; set; }
 }

@@ -6,6 +6,6 @@ public delegate void IMsoEnvelopeVBEvents_EnvelopeHideEventHandler();
 
 public interface IMsoEnvelopeVBEvents_Event
 {
-  event IMsoEnvelopeVBEvents_EnvelopeShowEventHandler EnvelopeShow;
-  event IMsoEnvelopeVBEvents_EnvelopeHideEventHandler EnvelopeHide;
+  public event IMsoEnvelopeVBEvents_EnvelopeShowEventHandler EnvelopeShow;
+  public event IMsoEnvelopeVBEvents_EnvelopeHideEventHandler EnvelopeHide;
 }

@@ -5,5 +5,5 @@ namespace DocumentModel.Interop.Core;
 
 public interface RulerLevels2: InteropDictionary<string, RulerLevel2>
 {
-  RulerLevel2 Item(object Index);
+  public RulerLevel2 Item(object Index);
 }

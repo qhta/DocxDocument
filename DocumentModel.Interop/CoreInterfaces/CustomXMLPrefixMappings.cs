@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface CustomXMLPrefixMappings: InteropDictionary<string, CustomXMLPrefixMapping>
 {
-  void AddNamespace(string Prefix, string NamespaceURI);
-  string LookupNamespace(string Prefix);
-  string LookupPrefix(string NamespaceURI);
+  public void AddNamespace(string Prefix, string NamespaceURI);
+  public string LookupNamespace(string Prefix);
+  public string LookupPrefix(string NamespaceURI);
 }

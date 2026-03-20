@@ -3,8 +3,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoLeaderLines
 {
-  void Select();
-  IMsoBorder Border { get; }
-  void Delete();
-  IMsoChartFormat Format { get; }
+  public void Select();
+  public IMsoBorder Border { get; }
+  public void Delete();
+  public IMsoChartFormat Format { get; }
 }

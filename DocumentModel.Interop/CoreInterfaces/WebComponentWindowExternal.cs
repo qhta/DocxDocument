@@ -3,9 +3,9 @@ namespace DocumentModel.Interop.Core;
 
 public interface WebComponentWindowExternal
 {
-  int InterfaceVersion { get; }
-  string ApplicationName { get; }
-  int ApplicationVersion { get; }
-  void CloseWindow();
-  WebComponent WebComponent { get; }
+  public int InterfaceVersion { get; }
+  public string ApplicationName { get; }
+  public int ApplicationVersion { get; }
+  public void CloseWindow();
+  public WebComponent WebComponent { get; }
 }

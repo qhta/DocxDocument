@@ -3,12 +3,12 @@ namespace DocumentModel.Interop.Core;
 
 public interface PickerResult: InteropObject
 {
-  string Id { get; }
-  string DisplayName { get; set; }
-  string Type { get; set; }
-  string SIPId { get; set; }
-  object ItemData { get; set; }
-  object SubItems { get; set; }
-  object DuplicateResults { get; }
-  PickerFields Fields { get; set; }
+  public string Id { get; }
+  public string DisplayName { get; set; }
+  public string Type { get; set; }
+  public string SIPId { get; set; }
+  public object ItemData { get; set; }
+  public object SubItems { get; set; }
+  public object DuplicateResults { get; }
+  public PickerFields Fields { get; set; }
 }

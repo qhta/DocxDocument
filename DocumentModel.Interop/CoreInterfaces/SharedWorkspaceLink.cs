@@ -4,13 +4,13 @@ namespace DocumentModel.Interop.Core;
 
 public interface SharedWorkspaceLink: InteropObject
 {
-  string URL { get; set; }
-  string Description { get; set; }
-  string Notes { get; set; }
-  string CreatedBy { get; }
-  object CreatedDate { get; }
-  string ModifiedBy { get; }
-  object ModifiedDate { get; }
-  void Save();
-  void Delete();
+  public string URL { get; set; }
+  public string Description { get; set; }
+  public string Notes { get; set; }
+  public string CreatedBy { get; }
+  public object CreatedDate { get; }
+  public string ModifiedBy { get; }
+  public object ModifiedDate { get; }
+  public void Save();
+  public void Delete();
 }

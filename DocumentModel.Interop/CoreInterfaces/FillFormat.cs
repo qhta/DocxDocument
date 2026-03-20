@@ -3,37 +3,37 @@ namespace DocumentModel.Interop.Core;
 
 public interface FillFormat: InteropObject
 {
-  void Background();
-  void OneColorGradient(MsoGradientStyle Style, int Variant, float Degree);
-  void Patterned(MsoPatternType Pattern);
-  void PresetGradient(MsoGradientStyle Style, int Variant, MsoPresetGradientType PresetGradientType);
-  void PresetTextured(MsoPresetTexture PresetTexture);
-  void Solid();
-  void TwoColorGradient(MsoGradientStyle Style, int Variant);
-  void UserPicture(string PictureFile);
-  void UserTextured(string TextureFile);
-  ColorFormat BackColor { get; set; }
-  ColorFormat ForeColor { get; set; }
-  MsoGradientColorType GradientColorType { get; }
-  float GradientDegree { get; }
-  MsoGradientStyle GradientStyle { get; }
-  int GradientVariant { get; }
-  MsoPatternType Pattern { get; }
-  MsoPresetGradientType PresetGradientType { get; }
-  MsoPresetTexture PresetTexture { get; }
-  string TextureName { get; }
-  MsoTextureType TextureType { get; }
-  float Transparency { get; set; }
-  MsoFillType Type { get; }
-  MsoTriState Visible { get; set; }
-  GradientStops GradientStops { get; }
-  float TextureOffsetX { get; set; }
-  float TextureOffsetY { get; set; }
-  MsoTextureAlignment TextureAlignment { get; set; }
-  float TextureHorizontalScale { get; set; }
-  float TextureVerticalScale { get; set; }
-  MsoTriState TextureTile { get; set; }
-  MsoTriState RotateWithObject { get; set; }
-  PictureEffects PictureEffects { get; }
-  float GradientAngle { get; set; }
+  public void Background();
+  public void OneColorGradient(MsoGradientStyle Style, int Variant, float Degree);
+  public void Patterned(MsoPatternType Pattern);
+  public void PresetGradient(MsoGradientStyle Style, int Variant, MsoPresetGradientType PresetGradientType);
+  public void PresetTextured(MsoPresetTexture PresetTexture);
+  public void Solid();
+  public void TwoColorGradient(MsoGradientStyle Style, int Variant);
+  public void UserPicture(string PictureFile);
+  public void UserTextured(string TextureFile);
+  public ColorFormat BackColor { get; set; }
+  public ColorFormat ForeColor { get; set; }
+  public MsoGradientColorType GradientColorType { get; }
+  public float GradientDegree { get; }
+  public MsoGradientStyle GradientStyle { get; }
+  public int GradientVariant { get; }
+  public MsoPatternType Pattern { get; }
+  public MsoPresetGradientType PresetGradientType { get; }
+  public MsoPresetTexture PresetTexture { get; }
+  public string TextureName { get; }
+  public MsoTextureType TextureType { get; }
+  public float Transparency { get; set; }
+  public MsoFillType Type { get; }
+  public MsoTriState Visible { get; set; }
+  public GradientStops GradientStops { get; }
+  public float TextureOffsetX { get; set; }
+  public float TextureOffsetY { get; set; }
+  public MsoTextureAlignment TextureAlignment { get; set; }
+  public float TextureHorizontalScale { get; set; }
+  public float TextureVerticalScale { get; set; }
+  public MsoTriState TextureTile { get; set; }
+  public MsoTriState RotateWithObject { get; set; }
+  public PictureEffects PictureEffects { get; }
+  public float GradientAngle { get; set; }
 }

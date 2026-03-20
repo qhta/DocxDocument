@@ -3,18 +3,18 @@ namespace DocumentModel.Interop.Core;
 
 public interface ChartFont
 {
-  object Background { get; set; }
-  object Bold { get; set; }
-  object Color { get; set; }
-  object ColorIndex { get; set; }
-  object FontStyle { get; set; }
-  object Italic { get; set; }
-  object Name { get; set; }
-  object OutlineFont { get; set; }
-  object Shadow { get; set; }
-  object Size { get; set; }
-  object StrikeThrough { get; set; }
-  object Subscript { get; set; }
-  object Superscript { get; set; }
-  object Underline { get; set; }
+  public object Background { get; set; }
+  public object Bold { get; set; }
+  public object Color { get; set; }
+  public object ColorIndex { get; set; }
+  public object FontStyle { get; set; }
+  public object Italic { get; set; }
+  public object Name { get; set; }
+  public object OutlineFont { get; set; }
+  public object Shadow { get; set; }
+  public object Size { get; set; }
+  public object StrikeThrough { get; set; }
+  public object Subscript { get; set; }
+  public object Superscript { get; set; }
+  public object Underline { get; set; }
 }

@@ -3,8 +3,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface ThemeFontScheme: InteropObject
 {
-  void Load(string FileName);
-  void Save(string FileName);
-  ThemeFonts MinorFont { get; }
-  ThemeFonts MajorFont { get; }
+  public void Load(string FileName);
+  public void Save(string FileName);
+  public ThemeFonts MinorFont { get; }
+  public ThemeFonts MajorFont { get; }
 }

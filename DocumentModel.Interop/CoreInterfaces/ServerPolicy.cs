@@ -3,11 +3,11 @@ namespace DocumentModel.Interop.Core;
 
 public interface ServerPolicy: InteropObject
 {
-  PolicyItem this[object Index] { get; }
-  string Id { get; }
-  string Name { get; }
-  string Description { get; }
-  string Statement { get; }
-  int Count { get; }
-  bool BlockPreview { get; }
+  public PolicyItem this[object Index] { get; }
+  public string Id { get; }
+  public string Name { get; }
+  public string Description { get; }
+  public string Statement { get; }
+  public int Count { get; }
+  public bool BlockPreview { get; }
 }

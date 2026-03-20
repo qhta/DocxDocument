@@ -4,13 +4,13 @@ namespace DocumentModel.Interop.Core;
 
 public interface _CustomTaskPane
 {
-  string Title { get; }
-  object Window { get; }
-  bool Visible { get; set; }
-  object ContentControl { get; }
-  int Height { get; set; }
-  int Width { get; set; }
-  MsoCTPDockPosition DockPosition { get; set; }
-  MsoCTPDockPositionRestrict DockPositionRestrict { get; set; }
-  void Delete();
+  public string Title { get; }
+  public object Window { get; }
+  public bool Visible { get; set; }
+  public object ContentControl { get; }
+  public int Height { get; set; }
+  public int Width { get; set; }
+  public MsoCTPDockPosition DockPosition { get; set; }
+  public MsoCTPDockPositionRestrict DockPositionRestrict { get; set; }
+  public void Delete();
 }

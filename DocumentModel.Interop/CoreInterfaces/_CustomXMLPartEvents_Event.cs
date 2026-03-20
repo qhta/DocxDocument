@@ -11,7 +11,7 @@ public delegate void _CustomXMLPartEvents_NodeAfterReplaceEventHandler(CustomXML
 
 public interface _CustomXMLPartEvents_Event
 {
-  event _CustomXMLPartEvents_NodeAfterInsertEventHandler NodeAfterInsert;
-  event _CustomXMLPartEvents_NodeAfterDeleteEventHandler NodeAfterDelete;
-  event _CustomXMLPartEvents_NodeAfterReplaceEventHandler NodeAfterReplace;
+  public event _CustomXMLPartEvents_NodeAfterInsertEventHandler NodeAfterInsert;
+  public event _CustomXMLPartEvents_NodeAfterDeleteEventHandler NodeAfterDelete;
+  public event _CustomXMLPartEvents_NodeAfterReplaceEventHandler NodeAfterReplace;
 }

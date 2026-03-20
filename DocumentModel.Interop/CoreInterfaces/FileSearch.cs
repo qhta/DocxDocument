@@ -3,24 +3,24 @@ namespace DocumentModel.Interop.Core;
 
 public interface FileSearch: InteropObject
 {
-  bool SearchSubFolders { get; set; }
-  bool MatchTextExactly { get; set; }
-  bool MatchAllWordForms { get; set; }
-  string FileName { get; set; }
-  MsoFileType FileType { get; set; }
-  MsoLastModified LastModified { get; set; }
-  string TextOrProperty { get; set; }
-  string LookIn { get; set; }
+  public bool SearchSubFolders { get; set; }
+  public bool MatchTextExactly { get; set; }
+  public bool MatchAllWordForms { get; set; }
+  public string FileName { get; set; }
+  public MsoFileType FileType { get; set; }
+  public MsoLastModified LastModified { get; set; }
+  public string TextOrProperty { get; set; }
+  public string LookIn { get; set; }
 
-  int Execute
+  public int Execute
   (MsoSortBy SortBy, MsoSortOrder SortOrder,
     bool AlwaysAccurate);
 
-  void NewSearch();
-  FoundFiles FoundFiles { get; }
-  PropertyTests PropertyTests { get; }
-  SearchScopes SearchScopes { get; }
-  SearchFolders SearchFolders { get; }
-  FileTypes FileTypes { get; }
-  void RefreshScopes();
+  public void NewSearch();
+  public FoundFiles FoundFiles { get; }
+  public PropertyTests PropertyTests { get; }
+  public SearchScopes SearchScopes { get; }
+  public SearchFolders SearchFolders { get; }
+  public FileTypes FileTypes { get; }
+  public void RefreshScopes();
 }

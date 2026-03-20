@@ -1,7 +1,3 @@
-using DocumentModel.Interop.Core;
-
-using Microsoft.Office.Interop.Word;
-
 namespace DocumentModel.Interop;
 
 /// <summary>
@@ -874,10 +870,10 @@ public partial interface _Document: InteropObject
   /// </summary>
   public WdSummaryMode SummaryViewMode { get; set; }
 
-  ///// <summary>
-  ///// Returns a Sync object that provides access to the methods and properties for documents that are part of a Document Workspace.
-  ///// </summary>
-  //public Core.Sync Sync { get; }
+  /// <summary>
+  /// Returns a Sync object that provides access to the methods and properties for documents that are part of a Document Workspace.
+  /// </summary>
+  public Core.Sync Sync { get; }
 
   /// <summary>
   /// Returns a Tables collection that represents all the tables in the specified document.

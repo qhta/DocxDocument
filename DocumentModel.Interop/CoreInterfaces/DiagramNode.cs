@@ -3,25 +3,25 @@ namespace DocumentModel.Interop.Core;
 
 public interface DiagramNode: InteropObject
 {
-  DiagramNode AddNode
+  public DiagramNode AddNode
   (MsoRelativeNodePosition Pos,
     MsoDiagramNodeType NodeType);
 
-  void Delete();
-  void MoveNode(DiagramNode TargetNode, MsoRelativeNodePosition Pos);
-  void ReplaceNode(DiagramNode TargetNode);
-  void SwapNode(DiagramNode TargetNode, bool SwapChildren);
+  public void Delete();
+  public void MoveNode(DiagramNode TargetNode, MsoRelativeNodePosition Pos);
+  public void ReplaceNode(DiagramNode TargetNode);
+  public void SwapNode(DiagramNode TargetNode, bool SwapChildren);
 
-  DiagramNode CloneNode
+  public DiagramNode CloneNode
     (bool CopyChildren, DiagramNode TargetNode, MsoRelativeNodePosition Pos);
 
-  void TransferChildren(DiagramNode ReceivingNode);
-  DiagramNode NextNode();
-  DiagramNode PrevNode();
-  DiagramNodeChildren Children { get; }
-  Shape Shape { get; }
-  DiagramNode Root { get; }
-  IMsoDiagram Diagram { get; }
-  MsoOrgChartLayoutType Layout { get; set; }
-  Shape TextShape { get; }
+  public void TransferChildren(DiagramNode ReceivingNode);
+  public DiagramNode NextNode();
+  public DiagramNode PrevNode();
+  public DiagramNodeChildren Children { get; }
+  public Shape Shape { get; }
+  public DiagramNode Root { get; }
+  public IMsoDiagram Diagram { get; }
+  public MsoOrgChartLayoutType Layout { get; set; }
+  public Shape TextShape { get; }
 }

@@ -3,8 +3,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface SmartDocument: InteropObject
 {
-  string SolutionID { get; set; }
-  string SolutionURL { get; set; }
-  void PickSolution(bool ConsiderAllSchemas);
-  void RefreshPane();
+  public string SolutionID { get; set; }
+  public string SolutionURL { get; set; }
+  public void PickSolution(bool ConsiderAllSchemas);
+  public void RefreshPane();
 }

@@ -4,13 +4,13 @@ namespace DocumentModel.Interop.Core;
 
 public interface Sync: InteropObject
 {
-  MsoSyncStatusType Status { get; }
-  string WorkspaceLastChangedBy { get; }
-  object LastSyncTime { get; }
-  MsoSyncErrorType ErrorType { get; }
-  void GetUpdate();
-  void PutUpdate();
-  void OpenVersion(MsoSyncVersionType SyncVersionType);
-  void ResolveConflict(MsoSyncConflictResolutionType SyncConflictResolution);
-  void Unsuspend();
+  public MsoSyncStatusType Status { get; }
+  public string WorkspaceLastChangedBy { get; }
+  public object LastSyncTime { get; }
+  public MsoSyncErrorType ErrorType { get; }
+  public void GetUpdate();
+  public void PutUpdate();
+  public void OpenVersion(MsoSyncVersionType SyncVersionType);
+  public void ResolveConflict(MsoSyncConflictResolutionType SyncConflictResolution);
+  public void Unsuspend();
 }

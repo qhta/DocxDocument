@@ -3,6 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface RulerLevel2: InteropObject
 {
-  float FirstMargin { get; set; }
-  float LeftMargin { get; set; }
+  public float FirstMargin { get; set; }
+  public float LeftMargin { get; set; }
 }

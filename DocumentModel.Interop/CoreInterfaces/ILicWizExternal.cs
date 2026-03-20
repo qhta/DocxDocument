@@ -4,31 +4,31 @@ namespace DocumentModel.Interop.Core;
 
 public interface ILicWizExternal
 {
-  void PrintHtmlDocument(object punkHtmlDoc);
-  void InvokeDateTimeApplet();
-  string FormatDate(DateTime date, string pFormat);
-  void ShowHelp(ref object pvarId);
-  void Terminate();
-  void DisableVORWReminder(int BPC);
-  string SaveReceipt(string bstrReceipt);
-  void OpenInDefaultBrowser(string bstrUrl);
-  int MsoAlert(string bstrText, string bstrButtons, string bstrIcon);
-  int DepositPidKey(string bstrKey, int fMORW);
-  void WriteLog(string bstrMessage);
-  void ResignDpc(string bstrProductCode);
-  void ResetPID();
-  void SetDialogSize(int dx, int dy);
-  int VerifyClock(int lMode);
-  void SortSelectOptions(object pdispSelect);
-  void InternetDisconnect();
-  int GetConnectedState();
-  int Context { get; }
-  object Validator { get; }
-  object LicAgent { get; }
-  string CountryInfo { get; }
-  int WizardVisible { set; }
-  string WizardTitle { set; }
-  int AnimationEnabled { get; }
-  int CurrentHelpId { set; }
-  string OfficeOnTheWebUrl { get; }
+  public void PrintHtmlDocument(object punkHtmlDoc);
+  public void InvokeDateTimeApplet();
+  public string FormatDate(DateTime date, string pFormat);
+  public void ShowHelp(ref object pvarId);
+  public void Terminate();
+  public void DisableVORWReminder(int BPC);
+  public string SaveReceipt(string bstrReceipt);
+  public void OpenInDefaultBrowser(string bstrUrl);
+  public int MsoAlert(string bstrText, string bstrButtons, string bstrIcon);
+  public int DepositPidKey(string bstrKey, int fMORW);
+  public void WriteLog(string bstrMessage);
+  public void ResignDpc(string bstrProductCode);
+  public void ResetPID();
+  public void SetDialogSize(int dx, int dy);
+  public int VerifyClock(int lMode);
+  public void SortSelectOptions(object pdispSelect);
+  public void InternetDisconnect();
+  public int GetConnectedState();
+  public int Context { get; }
+  public object Validator { get; }
+  public object LicAgent { get; }
+  public string CountryInfo { get; }
+  public int WizardVisible { set; }
+  public string WizardTitle { set; }
+  public int AnimationEnabled { get; }
+  public int CurrentHelpId { set; }
+  public string OfficeOnTheWebUrl { get; }
 }

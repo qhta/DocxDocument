@@ -4,8 +4,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface ScopeFolder: InteropObject
 {
-  string Name { get; }
-  string Path { get; }
-  ScopeFolders ScopeFolders { get; }
-  void AddToSearchFolders();
+  public string Name { get; }
+  public string Path { get; }
+  public ScopeFolders ScopeFolders { get; }
+  public void AddToSearchFolders();
 }

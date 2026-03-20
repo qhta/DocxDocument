@@ -11,7 +11,7 @@ public partial interface SeriesCollection
   /// <param name="CategoryLabels">Indicates if the first row or column contains category labels.</param>
   /// <param name="Replace">true to replace existing data; otherwise, false.</param>
   /// <returns>The created <see cref="Series"/> object.</returns>
-  public Series Add(object Source, XlRowCol RowCol, object SeriesLabels, object CategoryLabels, object Replace);
+  public Series Add(object Source, Core.XlRowCol RowCol, object SeriesLabels, object CategoryLabels, object Replace);
 
   /// <summary>
   /// Extends the series collection with additional data.

@@ -3,34 +3,34 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoChartGroup
 {
-  int AxisGroup { get; set; }
-  int DoughnutHoleSize { get; set; }
-  IMsoDownBars DownBars { get; }
-  IMsoDropLines DropLines { get; }
-  int FirstSliceAngle { get; set; }
-  int GapWidth { get; set; }
-  bool HasDropLines { get; set; }
-  bool HasHiLoLines { get; set; }
-  bool HasRadarAxisLabels { get; set; }
-  bool HasSeriesLines { get; set; }
-  bool HasUpDownBars { get; set; }
-  IMsoHiLoLines HiLoLines { get; }
-  int Index { get; }
-  int Overlap { get; set; }
-  object RadarAxisLabels { get; }
-  object SeriesCollection(object Index);
-  IMsoSeriesLines SeriesLines { get; }
-  int SubType { get; set; }
-  int Type { get; set; }
-  IMsoUpBars UpBars { get; }
-  bool VaryByCategories { get; set; }
-  XlSizeRepresents SizeRepresents { get; set; }
-  int BubbleScale { get; set; }
-  bool ShowNegativeBubbles { get; set; }
-  XlChartSplitType SplitType { get; set; }
-  object SplitValue { get; set; }
-  int SecondPlotSize { get; set; }
-  bool Has3DShading { get; set; }
-  object CategoryCollection(object Index);
-  object FullCategoryCollection(object Index);
+  public int AxisGroup { get; set; }
+  public int DoughnutHoleSize { get; set; }
+  public IMsoDownBars DownBars { get; }
+  public IMsoDropLines DropLines { get; }
+  public int FirstSliceAngle { get; set; }
+  public int GapWidth { get; set; }
+  public bool HasDropLines { get; set; }
+  public bool HasHiLoLines { get; set; }
+  public bool HasRadarAxisLabels { get; set; }
+  public bool HasSeriesLines { get; set; }
+  public bool HasUpDownBars { get; set; }
+  public IMsoHiLoLines HiLoLines { get; }
+  public int Index { get; }
+  public int Overlap { get; set; }
+  public object RadarAxisLabels { get; }
+  public object SeriesCollection(object Index);
+  public IMsoSeriesLines SeriesLines { get; }
+  public int SubType { get; set; }
+  public int Type { get; set; }
+  public IMsoUpBars UpBars { get; }
+  public bool VaryByCategories { get; set; }
+  public XlSizeRepresents SizeRepresents { get; set; }
+  public int BubbleScale { get; set; }
+  public bool ShowNegativeBubbles { get; set; }
+  public XlChartSplitType SplitType { get; set; }
+  public object SplitValue { get; set; }
+  public int SecondPlotSize { get; set; }
+  public bool Has3DShading { get; set; }
+  public object CategoryCollection(object Index);
+  public object FullCategoryCollection(object Index);
 }

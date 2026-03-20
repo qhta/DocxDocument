@@ -4,5 +4,5 @@ namespace DocumentModel.Interop.Core;
 
 public interface BalloonCheckboxes: InteropCollection<BalloonCheckbox>
 {
-  string Name { get; }
+  public string Name { get; }
 }

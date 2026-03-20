@@ -4,30 +4,30 @@ namespace DocumentModel.Interop.Core;
 
 public interface _CommandBars: InteropDictionary<string, CommandBar>
 {
-  CommandBarControl ActionControl { get; }
-  CommandBar ActiveMenuBar { get; }
-  CommandBar Add(object Name, object Position, object MenuBar, object Temporary);
-  bool DisplayTooltips { get; set; }
-  bool DisplayKeysInTooltips { get; set; }
-  CommandBarControl FindControl(object Type, object Id, object Tag, object Visible);
-  bool LargeButtons { get; set; }
-  MsoMenuAnimation MenuAnimationStyle { get; set; }
-  void ReleaseFocus();
-  int IdsString { get; }
-  int TmcGetName { get; }
-  bool AdaptiveMenus { get; set; }
-  CommandBarControls FindControls(object Type, object Id, object Tag, object Visible);
-  CommandBar AddEx(object TbidOrName, object Position, object MenuBar, object Temporary, object TbtrProtection);
-  bool DisplayFonts { get; set; }
-  bool DisableCustomize { get; set; }
-  bool DisableAskAQuestionDropdown { get; set; }
-  void ExecuteMso(string idMso);
-  bool GetEnabledMso(string idMso);
-  bool GetVisibleMso(string idMso);
-  bool GetPressedMso(string idMso);
-  string GetLabelMso(string idMso);
-  string GetScreentipMso(string idMso);
-  string GetSupertipMso(string idMso);
-  object GetImageMso(string idMso, int Width, int Height);
-  void CommitRenderingTransaction(int hwnd);
+  public CommandBarControl ActionControl { get; }
+  public CommandBar ActiveMenuBar { get; }
+  public CommandBar Add(object Name, object Position, object MenuBar, object Temporary);
+  public bool DisplayTooltips { get; set; }
+  public bool DisplayKeysInTooltips { get; set; }
+  public CommandBarControl FindControl(object Type, object Id, object Tag, object Visible);
+  public bool LargeButtons { get; set; }
+  public MsoMenuAnimation MenuAnimationStyle { get; set; }
+  public void ReleaseFocus();
+  public int IdsString { get; }
+  public int TmcGetName { get; }
+  public bool AdaptiveMenus { get; set; }
+  public CommandBarControls FindControls(object Type, object Id, object Tag, object Visible);
+  public CommandBar AddEx(object TbidOrName, object Position, object MenuBar, object Temporary, object TbtrProtection);
+  public bool DisplayFonts { get; set; }
+  public bool DisableCustomize { get; set; }
+  public bool DisableAskAQuestionDropdown { get; set; }
+  public void ExecuteMso(string idMso);
+  public bool GetEnabledMso(string idMso);
+  public bool GetVisibleMso(string idMso);
+  public bool GetPressedMso(string idMso);
+  public string GetLabelMso(string idMso);
+  public string GetScreentipMso(string idMso);
+  public string GetSupertipMso(string idMso);
+  public object GetImageMso(string idMso, int Width, int Height);
+  public void CommitRenderingTransaction(int hwnd);
 }

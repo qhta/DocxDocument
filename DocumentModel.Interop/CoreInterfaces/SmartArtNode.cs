@@ -3,23 +3,23 @@ namespace DocumentModel.Interop.Core;
 
 public interface SmartArtNode: InteropObject
 {
-  SmartArtNode AddNode
+  public SmartArtNode AddNode
   (MsoSmartArtNodePosition Position,
     MsoSmartArtNodeType Type);
 
-  void Delete();
-  void Promote();
-  void Demote();
-  MsoOrgChartLayoutType OrgChartLayout { get; set; }
-  ShapeRange Shapes { get; }
-  TextFrame2 TextFrame2 { get; }
-  void Larger();
-  void Smaller();
-  int Level { get; }
-  MsoTriState Hidden { get; }
-  SmartArtNodes Nodes { get; }
-  SmartArtNode ParentNode { get; }
-  MsoSmartArtNodeType Type { get; }
-  void ReorderUp();
-  void ReorderDown();
+  public void Delete();
+  public void Promote();
+  public void Demote();
+  public MsoOrgChartLayoutType OrgChartLayout { get; set; }
+  public ShapeRange Shapes { get; }
+  public TextFrame2 TextFrame2 { get; }
+  public void Larger();
+  public void Smaller();
+  public int Level { get; }
+  public MsoTriState Hidden { get; }
+  public SmartArtNodes Nodes { get; }
+  public SmartArtNode ParentNode { get; }
+  public MsoSmartArtNodeType Type { get; }
+  public void ReorderUp();
+  public void ReorderDown();
 }

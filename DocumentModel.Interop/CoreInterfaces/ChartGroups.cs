@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface ChartGroups: IEnumerable
 {
-  int Count { get; }
-  IMsoChartGroup Item(object Index);
-  new IEnumerator GetEnumerator();
+  public int Count { get; }
+  public IMsoChartGroup Item(object Index);
+  public new IEnumerator GetEnumerator();
 }

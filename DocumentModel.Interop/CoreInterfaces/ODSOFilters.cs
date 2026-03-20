@@ -3,12 +3,12 @@ namespace DocumentModel.Interop.Core;
 
 public interface ODSOFilters: InteropObject
 {
-  int Count { get; }
-  object Item(int Index);
+  public int Count { get; }
+  public object Item(int Index);
 
-  void Add
+  public void Add
   (string Column, MsoFilterComparison Comparison, MsoFilterConjunction Conjunction, string bstrCompareTo,
     bool DeferUpdate);
 
-  void Delete(int Index, bool DeferUpdate);
+  public void Delete(int Index, bool DeferUpdate);
 }

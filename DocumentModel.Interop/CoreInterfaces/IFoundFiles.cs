@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface IFoundFiles: IEnumerable
 {
-  string this[int Index] { get; }
-  int Count { get; }
-  new IEnumerator GetEnumerator();
+  public string this[int Index] { get; }
+  public int Count { get; }
+  public new IEnumerator GetEnumerator();
 }

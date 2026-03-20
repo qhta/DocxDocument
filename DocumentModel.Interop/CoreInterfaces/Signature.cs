@@ -3,22 +3,22 @@ namespace DocumentModel.Interop.Core;
 
 public interface Signature: InteropObject
 {
-  string Signer { get; }
-  string Issuer { get; }
-  object ExpireDate { get; }
-  bool IsValid { get; }
-  bool AttachCertificate { get; set; }
-  void Delete();
-  bool IsCertificateExpired { get; }
-  bool IsCertificateRevoked { get; }
-  object SignDate { get; }
-  bool IsSigned { get; }
-  void Sign(object varSigImg, object varDelSuggSigner, object varDelSuggSignerLine2, object varDelSuggSignerEmail);
-  SignatureInfo Details { get; }
-  void ShowDetails();
-  bool CanSetup { get; }
-  SignatureSetup Setup { get; }
-  bool IsSignatureLine { get; }
-  object SignatureLineShape { get; }
-  int SortHint { get; }
+  public string Signer { get; }
+  public string Issuer { get; }
+  public object ExpireDate { get; }
+  public bool IsValid { get; }
+  public bool AttachCertificate { get; set; }
+  public void Delete();
+  public bool IsCertificateExpired { get; }
+  public bool IsCertificateRevoked { get; }
+  public object SignDate { get; }
+  public bool IsSigned { get; }
+  public void Sign(object varSigImg, object varDelSuggSigner, object varDelSuggSignerLine2, object varDelSuggSignerEmail);
+  public SignatureInfo Details { get; }
+  public void ShowDetails();
+  public bool CanSetup { get; }
+  public SignatureSetup Setup { get; }
+  public bool IsSignatureLine { get; }
+  public object SignatureLineShape { get; }
+  public int SortHint { get; }
 }

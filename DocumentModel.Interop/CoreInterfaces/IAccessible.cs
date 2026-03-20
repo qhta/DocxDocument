@@ -3,23 +3,23 @@ namespace DocumentModel.Interop.Core;
 
 public interface IAccessible
 {
-  object accParent { get; }
-  int accChildCount { get; }
-  object accChild { get; }
-  string accName { get; set; }
-  string accValue { get; set; }
-  string accDescription { get; }
-  object accRole { get; }
-  object accState { get; }
-  string accHelp { get; }
-  int accHelpTopic { get; }
-  string accKeyboardShortcut { get; }
-  object accFocus { get; }
-  object accSelection { get; }
-  string accDefaultAction { get; }
-  void accSelect(int flagsSelect, object varChild);
-  void accLocation(out int pxLeft, out int pyTop, out int pcxWidth, out int pcyHeight, object varChild);
-  object accNavigate(int navDir, object varStart);
-  object accHitTest(int xLeft, int yTop);
-  void accDoDefaultAction(object varChild);
+  public object accParent { get; }
+  public int accChildCount { get; }
+  public object accChild { get; }
+  public string accName { get; set; }
+  public string accValue { get; set; }
+  public string accDescription { get; }
+  public object accRole { get; }
+  public object accState { get; }
+  public string accHelp { get; }
+  public int accHelpTopic { get; }
+  public string accKeyboardShortcut { get; }
+  public object accFocus { get; }
+  public object accSelection { get; }
+  public string accDefaultAction { get; }
+  public void accSelect(int flagsSelect, object varChild);
+  public void accLocation(out int pxLeft, out int pyTop, out int pcxWidth, out int pcyHeight, object varChild);
+  public object accNavigate(int navDir, object varStart);
+  public object accHitTest(int xLeft, int yTop);
+  public void accDoDefaultAction(object varChild);
 }

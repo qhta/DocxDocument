@@ -4,11 +4,11 @@ namespace DocumentModel.Interop.Core;
 
 public interface _CustomXMLSchemaCollection: InteropDictionary<string, CustomXMLSchema>
 {
-  string NamespaceURI { get; }
+  public string NamespaceURI { get; }
 
-  CustomXMLSchema Add
+  public CustomXMLSchema Add
     (string NamespaceURI, string Alias, string FileName, bool InstallForAllUsers);
 
-  void AddCollection(CustomXMLSchemaCollection SchemaCollection);
-  bool Validate();
+  public void AddCollection(CustomXMLSchemaCollection SchemaCollection);
+  public bool Validate();
 }

@@ -4,18 +4,18 @@ namespace DocumentModel.Interop.Core;
 
 public interface SeriesCollection: IEnumerable
 {
-  IMsoSeries Add
+  public IMsoSeries Add
     (object Source, XlRowCol Rowcol, object SeriesLabels, object CategoryLabels, object Replace);
 
-  int Count { get; }
-  object Extend(object Source, object Rowcol, object CategoryLabels);
+  public int Count { get; }
+  public object Extend(object Source, object Rowcol, object CategoryLabels);
   
-  new IEnumerator GetEnumerator();
+  public new IEnumerator GetEnumerator();
 
-  object Paste
+  public object Paste
   (XlRowCol Rowcol, object SeriesLabels, object CategoryLabels, object Replace,
     object NewSeries);
 
-  IMsoSeries NewSeries();
-  IMsoSeries this[object Index] { get; }
+  public IMsoSeries NewSeries();
+  public IMsoSeries this[object Index] { get; }
 }

@@ -3,9 +3,9 @@ namespace DocumentModel.Interop.Core;
 
 public interface ReflectionFormat: InteropObject
 {
-  MsoReflectionType Type { get; set; }
-  float Transparency { get; set; }
-  float Size { get; set; }
-  float Offset { get; set; }
-  float Blur { get; set; }
+  public MsoReflectionType Type { get; set; }
+  public float Transparency { get; set; }
+  public float Size { get; set; }
+  public float Offset { get; set; }
+  public float Blur { get; set; }
 }

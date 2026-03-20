@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface SharedWorkspaceTasks: InteropCollection<SharedWorkspaceTask>
 {
-  SharedWorkspaceTask Add
+  public SharedWorkspaceTask Add
     (string Title, object Status, object Priority, object Assignee, object Description, object DueDate);
-  bool ItemCountExceeded { get; }
+  public bool ItemCountExceeded { get; }
 }

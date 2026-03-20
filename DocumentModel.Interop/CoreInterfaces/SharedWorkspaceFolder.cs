@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface SharedWorkspaceFolder: InteropObject
 {
-  string FolderName { get; }
-  void Delete(object DeleteEventIfFolderContainsFiles);
+  public string FolderName { get; }
+  public void Delete(object DeleteEventIfFolderContainsFiles);
 }

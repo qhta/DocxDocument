@@ -3,19 +3,19 @@ namespace DocumentModel.Interop.Core;
 
 public interface LineFormat: InteropObject
 {
-  ColorFormat BackColor { get; set; }
-  MsoArrowheadLength BeginArrowheadLength { get; set; }
-  MsoArrowheadStyle BeginArrowheadStyle { get; set; }
-  MsoArrowheadWidth BeginArrowheadWidth { get; set; }
-  MsoLineDashStyle DashStyle { get; set; }
-  MsoArrowheadLength EndArrowheadLength { get; set; }
-  MsoArrowheadStyle EndArrowheadStyle { get; set; }
-  MsoArrowheadWidth EndArrowheadWidth { get; set; }
-  ColorFormat ForeColor { get; set; }
-  MsoPatternType Pattern { get; set; }
-  MsoLineStyle Style { get; set; }
-  float Transparency { get; set; }
-  MsoTriState Visible { get; set; }
-  float Weight { get; set; }
-  MsoTriState InsetPen { get; set; }
+  public ColorFormat BackColor { get; set; }
+  public MsoArrowheadLength BeginArrowheadLength { get; set; }
+  public MsoArrowheadStyle BeginArrowheadStyle { get; set; }
+  public MsoArrowheadWidth BeginArrowheadWidth { get; set; }
+  public MsoLineDashStyle DashStyle { get; set; }
+  public MsoArrowheadLength EndArrowheadLength { get; set; }
+  public MsoArrowheadStyle EndArrowheadStyle { get; set; }
+  public MsoArrowheadWidth EndArrowheadWidth { get; set; }
+  public ColorFormat ForeColor { get; set; }
+  public MsoPatternType Pattern { get; set; }
+  public MsoLineStyle Style { get; set; }
+  public float Transparency { get; set; }
+  public MsoTriState Visible { get; set; }
+  public float Weight { get; set; }
+  public MsoTriState InsetPen { get; set; }
 }

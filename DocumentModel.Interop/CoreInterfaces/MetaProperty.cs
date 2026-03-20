@@ -4,12 +4,12 @@ namespace DocumentModel.Interop.Core;
 
 public interface MetaProperty: InteropObject
 {
-  object Value { get; set; }
-  string Name { get; }
-  string Id { get; }
-  bool IsReadOnly { get; }
-  bool IsRequired { get; }
-  MsoMetaPropertyType Type { get; }
-  string Validate();
-  string ValidationError { get; }
+  public object Value { get; set; }
+  public string Name { get; }
+  public string Id { get; }
+  public bool IsReadOnly { get; }
+  public bool IsRequired { get; }
+  public MsoMetaPropertyType Type { get; }
+  public string Validate();
+  public string ValidationError { get; }
 }

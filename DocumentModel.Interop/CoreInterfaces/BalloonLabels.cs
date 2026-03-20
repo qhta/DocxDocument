@@ -4,5 +4,5 @@ namespace DocumentModel.Interop.Core;
 
 public interface BalloonLabels: InteropCollection<object>
 {
-  string Name { get; }
+  public string Name { get; }
 }

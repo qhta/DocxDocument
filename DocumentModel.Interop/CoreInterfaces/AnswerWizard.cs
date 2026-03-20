@@ -3,7 +3,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface AnswerWizard: InteropObject
 {
-  AnswerWizardFiles Files { get; }
-  void ClearFileList();
-  void ResetFileList();
+  public AnswerWizardFiles Files { get; }
+  public void ClearFileList();
+  public void ResetFileList();
 }

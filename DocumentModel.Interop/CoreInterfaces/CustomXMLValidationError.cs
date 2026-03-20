@@ -3,10 +3,10 @@ namespace DocumentModel.Interop.Core;
 
 public interface CustomXMLValidationError: InteropObject
 {
-  string Name { get; }
-  CustomXMLNode Node { get; }
-  string Text { get; }
-  MsoCustomXMLValidationErrorType Type { get; }
-  void Delete();
-  int ErrorCode { get; }
+  public string Name { get; }
+  public CustomXMLNode Node { get; }
+  public string Text { get; }
+  public MsoCustomXMLValidationErrorType Type { get; }
+  public void Delete();
+  public int ErrorCode { get; }
 }

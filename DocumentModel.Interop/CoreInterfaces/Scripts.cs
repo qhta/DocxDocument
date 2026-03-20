@@ -5,12 +5,12 @@ namespace DocumentModel.Interop.Core;
 
 public interface Scripts: InteropDictionary<string, Script>
 {
-  Script Item(object Index);
+  public Script Item(object Index);
 
-  Script Add
+  public Script Add
   (object Anchor, MsoScriptLocation Location,
     MsoScriptLanguage Language, string Id, string Extended,
     string ScriptText);
 
-  void Delete();
+  public void Delete();
 }

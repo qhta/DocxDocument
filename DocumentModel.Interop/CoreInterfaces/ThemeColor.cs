@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface ThemeColor: InteropObject
 {
-  int RGB { get; set; }
-  MsoThemeColorSchemeIndex ThemeColorSchemeIndex { get; }
+  public int RGB { get; set; }
+  public MsoThemeColorSchemeIndex ThemeColorSchemeIndex { get; }
 }

@@ -3,6 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface CategoryCollection
 {
-  int Count { get; }
-  IMsoCategory this[object Index] { get; }
+  public int Count { get; }
+  public IMsoCategory this[object Index] { get; }
 }

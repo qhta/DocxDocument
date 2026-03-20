@@ -3,7 +3,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface TabStop2: InteropObject
 {
-  void Clear();
-  float Position { get; set; }
-  MsoTabStopType Type { get; set; }
+  public void Clear();
+  public float Position { get; set; }
+  public MsoTabStopType Type { get; set; }
 }

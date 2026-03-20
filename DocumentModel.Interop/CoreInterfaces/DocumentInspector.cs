@@ -4,8 +4,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface DocumentInspector: InteropObject
 {
-  string Name { get; }
-  string Description { get; }
-  void Inspect(out MsoDocInspectorStatus Status, out string Results);
-  void Fix(out MsoDocInspectorStatus Status, out string Results);
+  public string Name { get; }
+  public string Description { get; }
+  public void Inspect(out MsoDocInspectorStatus Status, out string Results);
+  public void Fix(out MsoDocInspectorStatus Status, out string Results);
 }

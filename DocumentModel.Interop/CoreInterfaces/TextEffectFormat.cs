@@ -3,17 +3,17 @@ namespace DocumentModel.Interop.Core;
 
 public interface TextEffectFormat: InteropObject
 {
-  void ToggleVerticalText();
-  MsoTextEffectAlignment Alignment { get; set; }
-  MsoTriState FontBold { get; set; }
-  MsoTriState FontItalic { get; set; }
-  string FontName { get; set; }
-  float FontSize { get; set; }
-  MsoTriState KernedPairs { get; set; }
-  MsoTriState NormalizedHeight { get; set; }
-  MsoPresetTextEffectShape PresetShape { get; set; }
-  MsoPresetTextEffect PresetTextEffect { get; set; }
-  MsoTriState RotatedChars { get; set; }
-  string Text { get; set; }
-  float Tracking { get; set; }
+  public void ToggleVerticalText();
+  public MsoTextEffectAlignment Alignment { get; set; }
+  public MsoTriState FontBold { get; set; }
+  public MsoTriState FontItalic { get; set; }
+  public string FontName { get; set; }
+  public float FontSize { get; set; }
+  public MsoTriState KernedPairs { get; set; }
+  public MsoTriState NormalizedHeight { get; set; }
+  public MsoPresetTextEffectShape PresetShape { get; set; }
+  public MsoPresetTextEffect PresetTextEffect { get; set; }
+  public MsoTriState RotatedChars { get; set; }
+  public string Text { get; set; }
+  public float Tracking { get; set; }
 }

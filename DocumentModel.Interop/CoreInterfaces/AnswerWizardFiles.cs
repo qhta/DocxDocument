@@ -3,8 +3,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface AnswerWizardFiles: InteropObject
 {
-  string this[int Index] { get; }
-  int Count { get; }
-  void Add(string FileName);
-  void Delete(string FileName);
+  public string this[int Index] { get; }
+  public int Count { get; }
+  public void Add(string FileName);
+  public void Delete(string FileName);
 }

@@ -3,15 +3,15 @@ namespace DocumentModel.Interop.Core;
 
 public interface LegendEntry
 {
-  object Delete();
-  ChartFont Font { get; }
-  int Index { get; }
-  IMsoLegendKey LegendKey { get; }
-  object Select();
-  object AutoScaleFont { get; set; }
-  double Left { get; }
-  double Top { get; }
-  double Width { get; }
-  double Height { get; }
-  IMsoChartFormat Format { get; }
+  public object Delete();
+  public ChartFont Font { get; }
+  public int Index { get; }
+  public IMsoLegendKey LegendKey { get; }
+  public object Select();
+  public object AutoScaleFont { get; set; }
+  public double Left { get; }
+  public double Top { get; }
+  public double Width { get; }
+  public double Height { get; }
+  public IMsoChartFormat Format { get; }
 }

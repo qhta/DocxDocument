@@ -13,7 +13,7 @@ public partial interface Axis : InteropObject
   /// <summary>
   /// The axis group.
   /// </summary>
-  public XlAxisGroup AxisGroup { get; }
+  public Core.XlAxisGroup AxisGroup { get; }
 
   /// <summary>
   /// The axis title.
@@ -28,7 +28,7 @@ public partial interface Axis : InteropObject
   /// <summary>
   /// The crosses.
   /// </summary>
-  public XlAxisCrosses Crosses { get; set; }
+  public Core.XlAxisCrosses Crosses { get; set; }
 
   /// <summary>
   /// The crosses at.
@@ -58,7 +58,7 @@ public partial interface Axis : InteropObject
   /// <summary>
   /// The major tick mark.
   /// </summary>
-  public XlTickMark MajorTickMark { get; set; }
+  public Core.XlTickMark MajorTickMark { get; set; }
 
   /// <summary>
   /// The major unit.
@@ -108,7 +108,7 @@ public partial interface Axis : InteropObject
   /// <summary>
   /// The minor tick mark.
   /// </summary>
-  public XlTickMark MinorTickMark { get; set; }
+  public Core.XlTickMark MinorTickMark { get; set; }
 
   /// <summary>
   /// The minor unit.
@@ -128,12 +128,12 @@ public partial interface Axis : InteropObject
   /// <summary>
   /// The scale type.
   /// </summary>
-  public XlScaleType ScaleType { get; set; }
+  public Core.XlScaleType ScaleType { get; set; }
 
   /// <summary>
   /// The tick label position.
   /// </summary>
-  public XlTickLabelPosition TickLabelPosition { get; set; }
+  public Core.XlTickLabelPosition TickLabelPosition { get; set; }
 
   /// <summary>
   /// The tick labels.
@@ -153,12 +153,12 @@ public partial interface Axis : InteropObject
   /// <summary>
   /// The type.
   /// </summary>
-  public XlAxisType Type { get; set; }
+  public Core.XlAxisType Type { get; set; }
 
   /// <summary>
   /// The base unit.
   /// </summary>
-  public XlTimeUnit BaseUnit { get; set; }
+  public Core.XlTimeUnit BaseUnit { get; set; }
 
   /// <summary>
   /// The base unit is auto.
@@ -168,17 +168,17 @@ public partial interface Axis : InteropObject
   /// <summary>
   /// The major unit scale.
   /// </summary>
-  public XlTimeUnit MajorUnitScale { get; set; }
+  public Core.XlTimeUnit MajorUnitScale { get; set; }
 
   /// <summary>
   /// The minor unit scale.
   /// </summary>
-  public XlTimeUnit MinorUnitScale { get; set; }
+  public Core.XlTimeUnit MinorUnitScale { get; set; }
 
   /// <summary>
   /// The category type.
   /// </summary>
-  public XlCategoryType CategoryType { get; set; }
+  public Core.XlCategoryType CategoryType { get; set; }
 
   /// <summary>
   /// The left.
@@ -203,7 +203,7 @@ public partial interface Axis : InteropObject
   /// <summary>
   /// The display unit.
   /// </summary>
-  public XlDisplayUnit DisplayUnit { get; set; }
+  public Core.XlDisplayUnit DisplayUnit { get; set; }
 
   /// <summary>
   /// The display unit custom.

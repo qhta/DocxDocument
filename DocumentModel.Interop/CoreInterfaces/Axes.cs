@@ -3,7 +3,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface Axes
 {
-  int Count { get; }
-  IMsoAxis Item { get; }
-  object _NewEnum { get; }
+  public int Count { get; }
+  public IMsoAxis Item { get; }
+  public object _NewEnum { get; }
 }

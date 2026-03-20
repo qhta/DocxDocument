@@ -7,7 +7,7 @@ public delegate void _CustomXMLPartsEvents_PartAfterLoadEventHandler(CustomXMLPa
 
 public interface _CustomXMLPartsEvents_Event
 {
-  event _CustomXMLPartsEvents_PartAfterAddEventHandler PartAfterAdd;
-  event _CustomXMLPartsEvents_PartBeforeDeleteEventHandler PartBeforeDelete;
-  event _CustomXMLPartsEvents_PartAfterLoadEventHandler PartAfterLoad;
+  public event _CustomXMLPartsEvents_PartAfterAddEventHandler PartAfterAdd;
+  public event _CustomXMLPartsEvents_PartBeforeDeleteEventHandler PartBeforeDelete;
+  public event _CustomXMLPartsEvents_PartAfterLoadEventHandler PartAfterLoad;
 }

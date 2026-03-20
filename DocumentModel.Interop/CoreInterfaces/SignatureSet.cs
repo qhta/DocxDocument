@@ -4,11 +4,11 @@ namespace DocumentModel.Interop.Core;
 
 public interface SignatureSet: InteropCollection<Signature>
 {
-  Signature Add();
-  void Commit();
-  Signature AddNonVisibleSignature(object varSigProv);
-  bool CanAddSignatureLine { get; }
-  Signature AddSignatureLine(object varSigProv);
-  MsoSignatureSubset Subset { get; set; }
-  bool ShowSignaturesPane { set; }
+  public Signature Add();
+  public void Commit();
+  public Signature AddNonVisibleSignature(object varSigProv);
+  public bool CanAddSignatureLine { get; }
+  public Signature AddSignatureLine(object varSigProv);
+  public MsoSignatureSubset Subset { get; set; }
+  public bool ShowSignaturesPane { set; }
 }

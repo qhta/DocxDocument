@@ -3,7 +3,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoContactCard: InteropObject
 {
-  string Address { get; }
-  MsoContactCardAddressType AddressType { get; }
-  MsoContactCardType CardType { get; }
+  public string Address { get; }
+  public MsoContactCardAddressType AddressType { get; }
+  public MsoContactCardType CardType { get; }
 }

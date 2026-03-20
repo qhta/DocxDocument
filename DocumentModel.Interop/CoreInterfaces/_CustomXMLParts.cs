@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface _CustomXMLParts: InteropDictionary<string, CustomXMLPart>
 {
-  CustomXMLPart Add(string XML, object SchemaCollection);
-  CustomXMLPart SelectByID(string Id);
-  CustomXMLParts SelectByNamespace(string NamespaceURI);
+  public CustomXMLPart Add(string XML, object SchemaCollection);
+  public CustomXMLPart SelectByID(string Id);
+  public CustomXMLParts SelectByNamespace(string NamespaceURI);
 }

@@ -4,9 +4,9 @@ namespace DocumentModel.Interop.Core;
 
 public interface HTMLProject: InteropObject
 {
-  MsoHTMLProjectState State { get; }
-  void RefreshProject(bool Refresh);
-  void RefreshDocument(bool Refresh);
-  HTMLProjectItems HTMLProjectItems { get; }
-  void Open(MsoHTMLProjectOpen OpenKind);
+  public MsoHTMLProjectState State { get; }
+  public void RefreshProject(bool Refresh);
+  public void RefreshDocument(bool Refresh);
+  public HTMLProjectItems HTMLProjectItems { get; }
+  public void Open(MsoHTMLProjectOpen OpenKind);
 }

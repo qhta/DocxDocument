@@ -4,8 +4,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface BalloonCheckbox: InteropObject
 {
-  string Item { get; }
-  string Name { get; }
-  bool Checked { get; set; }
-  string Text { get; set; }
+  public string Item { get; }
+  public string Name { get; }
+  public bool Checked { get; set; }
+  public string Text { get; set; }
 }

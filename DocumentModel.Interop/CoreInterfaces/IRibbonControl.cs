@@ -3,7 +3,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface IRibbonControl
 {
-  string Id { get; }
-  object Context { get; }
-  string Tag { get; }
+  public string Id { get; }
+  public object Context { get; }
+  public string Tag { get; }
 }

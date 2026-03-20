@@ -3,19 +3,19 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoTickLabels
 {
-  object Delete();
-  ChartFont Font { get; }
-  string Name { get; }
-  string NumberFormat { get; set; }
-  bool NumberFormatLinked { get; set; }
-  object NumberFormatLocal { get; set; }
-  XlTickLabelOrientation Orientation { get; set; }
-  object Select();
-  int ReadingOrder { get; set; }
-  object AutoScaleFont { get; set; }
-  int Depth { get; }
-  int Offset { get; set; }
-  int Alignment { get; set; }
-  bool MultiLevel { get; set; }
-  IMsoChartFormat Format { get; }
+  public object Delete();
+  public ChartFont Font { get; }
+  public string Name { get; }
+  public string NumberFormat { get; set; }
+  public bool NumberFormatLinked { get; set; }
+  public object NumberFormatLocal { get; set; }
+  public XlTickLabelOrientation Orientation { get; set; }
+  public object Select();
+  public int ReadingOrder { get; set; }
+  public object AutoScaleFont { get; set; }
+  public int Depth { get; }
+  public int Offset { get; set; }
+  public int Alignment { get; set; }
+  public bool MultiLevel { get; set; }
+  public IMsoChartFormat Format { get; }
 }
