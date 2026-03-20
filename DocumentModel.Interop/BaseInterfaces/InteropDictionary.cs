@@ -16,7 +16,14 @@ public interface InteropDictionary<IndexType, ItemType>: IDictionary<IndexType, 
   /// </summary>
   /// <param name="Index">The key or index of the item to get.</param>
   /// <returns>The item associated with the specified index.</returns>
-  public ItemType get_Item(IndexType Index);
+  public ItemType Item(int Index);
+
+  /// <summary>
+  /// Gets the item associated with the specified index.
+  /// </summary>
+  /// <param name="Index">The key or index of the item to get.</param>
+  /// <returns>The item associated with the specified index.</returns>
+  public ItemType Item(IndexType Index);
 
   /// <summary>
   /// Gets the default item associated with the specified index.
@@ -24,4 +31,5 @@ public interface InteropDictionary<IndexType, ItemType>: IDictionary<IndexType, 
   /// <param name="Index">The key or index of the item to get.</param>
   /// <returns>The default item associated with the specified index.</returns>
   public ItemType _Default(IndexType Index);
+
 }

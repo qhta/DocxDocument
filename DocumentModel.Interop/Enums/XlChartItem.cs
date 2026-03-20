@@ -1,0 +1,37 @@
+namespace DocumentModel.Interop.Word;
+
+public enum XlChartItem
+{
+  xlDataLabel = unchecked((int)0),
+  xlChartArea = unchecked((int)2),
+  xlSeries = unchecked((int)3),
+  xlChartTitle = unchecked((int)4),
+  xlWalls = unchecked((int)5),
+  xlCorners = unchecked((int)6),
+  xlDataTable = unchecked((int)7),
+  xlTrendline = unchecked((int)8),
+  xlErrorBars = unchecked((int)9),
+  xlXErrorBars = unchecked((int)10),
+  xlYErrorBars = unchecked((int)11),
+  xlLegendEntry = unchecked((int)12),
+  xlLegendKey = unchecked((int)13),
+  xlShape = unchecked((int)14),
+  xlMajorGridlines = unchecked((int)15),
+  xlMinorGridlines = unchecked((int)16),
+  xlAxisTitle = unchecked((int)17),
+  xlUpBars = unchecked((int)18),
+  xlPlotArea = unchecked((int)19),
+  xlDownBars = unchecked((int)20),
+  xlAxis = unchecked((int)21),
+  xlSeriesLines = unchecked((int)22),
+  xlFloor = unchecked((int)23),
+  xlLegend = unchecked((int)24),
+  xlHiLoLines = unchecked((int)25),
+  xlDropLines = unchecked((int)26),
+  xlRadarAxisLabels = unchecked((int)27),
+  xlNothing = unchecked((int)28),
+  xlLeaderLines = unchecked((int)29),
+  xlDisplayUnitLabel = unchecked((int)30),
+  xlPivotChartFieldButton = unchecked((int)31),
+  xlPivotChartDropZone = unchecked((int)32)
+}
