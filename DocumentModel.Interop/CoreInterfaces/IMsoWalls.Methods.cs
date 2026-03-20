@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoWalls` interface.
+/// Represents chart walls.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls?view=office-pia
 /// </remarks>
 public partial interface IMsoWalls
 {
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the chart walls.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoWalls
   /// </remarks>
   public object Select();
   /// <summary>
-  /// Invokes `ClearFormats`.
+  /// Clears formatting from the chart walls.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -26,7 +26,7 @@ public partial interface IMsoWalls
   /// </remarks>
   public object ClearFormats();
   /// <summary>
-  /// Invokes `Paste`.
+  /// Pastes content onto the chart walls.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls.paste?view=office-pia

@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `ICustomXMLPartsEvents` interface.
+/// Events interface for `CustomXMLParts` object events.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartsevents?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartsevents?view=office-pia
 /// </remarks>
 public partial interface ICustomXMLPartsEvents
 {
   /// <summary>
-  /// Invokes `PartAfterAdd`.
+  /// Raised after a custom XML part is added.
   /// </summary>
   /// <param name="NewPart">The `NewPart` parameter.</param>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface ICustomXMLPartsEvents
   /// </remarks>
   public void PartAfterAdd(CustomXMLPart NewPart);
   /// <summary>
-  /// Invokes `PartBeforeDelete`.
+  /// Raised before a custom XML part is deleted.
   /// </summary>
   /// <param name="OldPart">The `OldPart` parameter.</param>
   /// <remarks>
@@ -26,7 +26,7 @@ public partial interface ICustomXMLPartsEvents
   /// </remarks>
   public void PartBeforeDelete(CustomXMLPart OldPart);
   /// <summary>
-  /// Invokes `PartAfterLoad`.
+  /// Raised after a custom XML part is loaded.
   /// </summary>
   /// <param name="Part">The `Part` parameter.</param>
   /// <remarks>

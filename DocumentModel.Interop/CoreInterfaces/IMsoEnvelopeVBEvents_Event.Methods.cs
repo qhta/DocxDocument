@@ -3,10 +3,10 @@ namespace DocumentModel.Interop.Core;
 
 
 /// <summary>
-/// Represents the `IMsoEnvelopeVBEvents_Event` interface.
+/// Events interface for `MsoEnvelope` object events.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents_event?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents_event?view=office-pia
 /// </remarks>
 public partial interface IMsoEnvelopeVBEvents_Event
 {

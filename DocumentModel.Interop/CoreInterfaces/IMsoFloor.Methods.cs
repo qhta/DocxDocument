@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoFloor` interface.
+/// Represents the floor of a 3-D chart.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsofloor?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsofloor?view=office-pia
 /// </remarks>
 public partial interface IMsoFloor
 {
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the chart floor.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoFloor
   /// </remarks>
   public object Select();
   /// <summary>
-  /// Invokes `ClearFormats`.
+  /// Clears formatting from the chart floor.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -26,7 +26,7 @@ public partial interface IMsoFloor
   /// </remarks>
   public object ClearFormats();
   /// <summary>
-  /// Invokes `Paste`.
+  /// Pastes content onto the chart floor.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsofloor.paste?view=office-pia

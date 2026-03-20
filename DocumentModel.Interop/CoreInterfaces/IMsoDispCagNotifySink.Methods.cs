@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoDispCagNotifySink` interface.
+/// Reserved for internal use.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodispcagnotifysink?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodispcagnotifysink?view=office-pia
 /// </remarks>
 public partial interface IMsoDispCagNotifySink
 {
   /// <summary>
-  /// Invokes `InsertClip`.
+  /// Inserts a clip.
   /// </summary>
   /// <param name="pClipMoniker">The `pClipMoniker` parameter.</param>
   /// <param name="pItemMoniker">The `pItemMoniker` parameter.</param>
@@ -19,7 +19,7 @@ public partial interface IMsoDispCagNotifySink
   /// </remarks>
   public void InsertClip(object pClipMoniker, object pItemMoniker);
   /// <summary>
-  /// Invokes `WindowIsClosing`.
+  /// Indicates that the window is closing.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodispcagnotifysink.windowisclosing?view=office-pia

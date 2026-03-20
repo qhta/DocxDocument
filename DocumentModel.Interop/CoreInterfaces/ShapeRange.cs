@@ -4,10 +4,10 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `ShapeRange` interface.
+/// Reserved for internal use.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange?view=office-pia
 /// </remarks>
 public partial interface ShapeRange: InteropDictionary<string, Shape>
 {
@@ -284,6 +284,12 @@ public partial interface ShapeRange: InteropDictionary<string, Shape>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.id?view=office-pia
   /// </remarks>
   public int Id { get; }
+  /// <summary>
+  /// Sets the rich text format (RTF) content for the shape range text.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.rtf?view=office-pia
+  /// </remarks>
   public string RTF { set; }
   /// <summary>
   /// Gets the `TextFrame2` property.

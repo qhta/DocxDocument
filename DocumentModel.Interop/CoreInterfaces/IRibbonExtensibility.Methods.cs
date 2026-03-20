@@ -2,18 +2,18 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IRibbonExtensibility` interface.
+/// Defines how the Ribbon UI communicates with a COM add-in to customize the UI.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonextensibility?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonextensibility?view=office-pia
 /// </remarks>
 public partial interface IRibbonExtensibility
 {
   /// <summary>
-  /// Invokes `GetCustomUI`.
+  /// Loads the XML markup that customizes the Ribbon UI.
   /// </summary>
   /// <param name="RibbonID">The `RibbonID` parameter.</param>
-  /// <returns>The result of the operation.</returns>
+  /// <returns>The custom Ribbon UI XML markup.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonextensibility.getcustomui?view=office-pia
   /// </remarks>

@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters?view=office-pia
 /// </remarks>
-public partial interface FileDialogFilters
+public partial interface FileDialogFilters: InteropCollection<FileDialogFilter>
 {
   /// <summary>
   /// Returns a filter by index.
@@ -28,13 +28,6 @@ public partial interface FileDialogFilters
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters.delete?view=office-pia
   /// </remarks>
   public void Delete(object filter);
-  /// <summary>
-  /// Removes all filters from the collection.
-  /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters.clear?view=office-pia
-  /// </remarks>
-  public void Clear();
   /// <summary>
   /// Adds a file filter to the collection.
   /// </summary>

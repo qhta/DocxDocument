@@ -2,10 +2,10 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `ODSOFilters` interface.
+/// Represents all filters applied to the attached mail merge data source.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters?view=office-pia
 /// </remarks>
 public partial interface ODSOFilters: InteropObject
 {

@@ -6,12 +6,12 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `UserPermission` interface.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.userpermission?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.userpermission?view=office-pia
 /// </remarks>
 public partial interface UserPermission: InteropObject
 {
   /// <summary>
-  /// Gets or sets the `UserId` property.
+  /// Gets the `UserId` property.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.userpermission.userid?view=office-pia

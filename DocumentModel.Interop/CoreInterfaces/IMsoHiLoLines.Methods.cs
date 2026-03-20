@@ -2,22 +2,22 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoHiLoLines` interface.
+/// Represents high-low lines in a chart.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsohilolines?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsohilolines?view=office-pia
 /// </remarks>
 public partial interface IMsoHiLoLines
 {
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the high-low lines.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsohilolines.select?view=office-pia
   /// </remarks>
   public void Select();
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the high-low lines.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsohilolines.delete?view=office-pia

@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoDisplayUnitLabel` interface.
+/// Represents a display unit label.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel?view=office-pia
 /// </remarks>
 public partial interface IMsoDisplayUnitLabel
 {
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the display unit label.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoDisplayUnitLabel
   /// </remarks>
   public new object Delete();
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the display unit label.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>

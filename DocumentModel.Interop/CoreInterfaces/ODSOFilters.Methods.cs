@@ -2,24 +2,24 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `ODSOFilters` interface.
+/// Represents all filters applied to the attached mail merge data source.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters?view=office-pia
 /// </remarks>
 public partial interface ODSOFilters
 {
   /// <summary>
-  /// Invokes `Item`.
+  /// Returns a filter from the collection.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
-  /// <returns>The result of the operation.</returns>
+  /// <returns>The requested filter object.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters.item?view=office-pia
   /// </remarks>
   public object Item(int Index);
   /// <summary>
-  /// Invokes `Add`.
+  /// Adds a filter to the collection.
   /// </summary>
   /// <param name="Column">The `Column` parameter.</param>
   /// <param name="Comparison">The `Comparison` parameter.</param>
@@ -33,7 +33,7 @@ public partial interface ODSOFilters
   (string Column, MsoFilterComparison Comparison, MsoFilterConjunction Conjunction, string bstrCompareTo,
     bool DeferUpdate);
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes a filter from the collection.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <param name="DeferUpdate">The `DeferUpdate` parameter.</param>

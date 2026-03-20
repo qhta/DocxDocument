@@ -5,12 +5,12 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `WebComponent` interface.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponent?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponent?view=office-pia
 /// </remarks>
 public partial interface WebComponent
 {
   /// <summary>
-  /// Gets or sets the `Shape` property.
+  /// Gets the `Shape` property.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponent.shape?view=office-pia

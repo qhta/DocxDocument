@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoCharacters` interface.
+/// Represents characters in chart text.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharacters?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharacters?view=office-pia
 /// </remarks>
 public partial interface IMsoCharacters
 {
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the specified characters.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoCharacters
   /// </remarks>
   public object Delete();
   /// <summary>
-  /// Invokes `Insert`.
+  /// Inserts text at the specified character position.
   /// </summary>
   /// <param name="bstr">The `bstr` parameter.</param>
   /// <returns>The result of the operation.</returns>

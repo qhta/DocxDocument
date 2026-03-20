@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IConverter` interface.
+/// Defines methods used by Office document converters.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter?view=office-pia
 /// </remarks>
 public partial interface IConverter
 {
   /// <summary>
-  /// Invokes `HrInitConverter`.
+  /// Initializes the converter.
   /// </summary>
   /// <param name="pcap">The `pcap` parameter.</param>
   /// <param name="ppcp">The `ppcp` parameter.</param>
@@ -21,7 +21,7 @@ public partial interface IConverter
   public void HrInitConverter
     (IConverterApplicationPreferences pcap, out IConverterPreferences ppcp, IConverterUICallback pcuic);
   /// <summary>
-  /// Invokes `HrUninitConverter`.
+  /// Uninitializes the converter.
   /// </summary>
   /// <param name="pcuic">The `pcuic` parameter.</param>
   /// <remarks>
@@ -29,7 +29,7 @@ public partial interface IConverter
   /// </remarks>
   public void HrUninitConverter(IConverterUICallback pcuic);
   /// <summary>
-  /// Invokes `HrImport`.
+  /// Imports content from a source path to a destination path.
   /// </summary>
   /// <param name="bstrSourcePath">The `bstrSourcePath` parameter.</param>
   /// <param name="bstrDestPath">The `bstrDestPath` parameter.</param>
@@ -43,7 +43,7 @@ public partial interface IConverter
   (string bstrSourcePath, string bstrDestPath, IConverterApplicationPreferences pcap, out IConverterPreferences ppcp,
     IConverterUICallback pcuic);
   /// <summary>
-  /// Invokes `HrExport`.
+  /// Exports content from a source path to a destination path.
   /// </summary>
   /// <param name="bstrSourcePath">The `bstrSourcePath` parameter.</param>
   /// <param name="bstrDestPath">The `bstrDestPath` parameter.</param>
@@ -58,7 +58,7 @@ public partial interface IConverter
   (string bstrSourcePath, string bstrDestPath, string bstrClass, IConverterApplicationPreferences pcap,
     out IConverterPreferences ppcp, IConverterUICallback pcuic);
   /// <summary>
-  /// Invokes `HrGetFormat`.
+  /// Retrieves the converter format class for the specified path.
   /// </summary>
   /// <param name="bstrPath">The `bstrPath` parameter.</param>
   /// <param name="pbstrClass">The `pbstrClass` parameter.</param>
@@ -72,7 +72,7 @@ public partial interface IConverter
   (string bstrPath, out string pbstrClass, IConverterApplicationPreferences pcap, out IConverterPreferences ppcp,
     IConverterUICallback pcuic);
   /// <summary>
-  /// Invokes `HrGetErrorString`.
+  /// Retrieves an error message string for an error code.
   /// </summary>
   /// <param name="hrErr">The `hrErr` parameter.</param>
   /// <param name="pbstrErrorMsg">The `pbstrErrorMsg` parameter.</param>

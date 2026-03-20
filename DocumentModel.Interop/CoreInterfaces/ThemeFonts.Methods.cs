@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `ThemeFonts` interface.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefonts?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefonts?view=office-pia
 /// </remarks>
 public partial interface ThemeFonts
 {

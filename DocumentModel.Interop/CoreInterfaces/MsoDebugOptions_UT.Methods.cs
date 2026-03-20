@@ -3,17 +3,17 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `MsoDebugOptions_UT` interface.
+/// Represents a debug unit test.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut?view=office-pia
 /// </remarks>
 public partial interface MsoDebugOptions_UT
 {
   /// <summary>
-  /// Invokes `Run`.
+  /// Runs the unit test.
   /// </summary>
-  /// <returns>The result of the operation.</returns>
+  /// <returns>The unit test run result.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut.run?view=office-pia
   /// </remarks>

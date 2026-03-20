@@ -3,10 +3,10 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `HTMLProject` interface.
+/// Represents a top-level HTML project branch in Script Editor.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject?view=office-pia
 /// </remarks>
 public partial interface HTMLProject: InteropObject
 {

@@ -24,5 +24,11 @@ public partial interface SignatureSet: InteropCollection<Signature>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureset.subset?view=office-pia
   /// </remarks>
   public MsoSignatureSubset Subset { get; set; }
+  /// <summary>
+  /// Sets the `ShowSignaturesPane` property.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureset.showsignaturespane?view=office-pia
+  /// </remarks>
   public bool ShowSignaturesPane { set; }
 }
