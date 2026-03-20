@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface _IMsoOleAccDispObj: IAccessible
+public partial interface _IMsoOleAccDispObj: IAccessible
 {
   public new object accParent { get; }
   public new int accChildCount { get; }
@@ -17,9 +17,4 @@ public interface _IMsoOleAccDispObj: IAccessible
   public new object accFocus { get; }
   public new object accSelection { get; }
   public new string accDefaultAction { get; }
-  public new void accSelect(int flagsSelect, object varChild);
-  public new void accLocation(out int pxLeft, out int pyTop, out int pcxWidth, out int pcyHeight, object varChild);
-  public new object accNavigate(int navDir, object varStart);
-  public new object accHitTest(int xLeft, int yTop);
-  public new void accDoDefaultAction(object varChild);
 }

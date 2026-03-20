@@ -1,7 +1,6 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ICustomTaskPaneConsumer
+public partial interface ICustomTaskPaneConsumer
 {
-  public void CTPFactoryAvailable(ICTPFactory CTPFactoryInst);
 }

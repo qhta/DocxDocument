@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface SignatureSetup: InteropObject
+public partial interface SignatureSetup: InteropObject
 {
   public bool ReadOnly { get; }
   public string Id { get; }

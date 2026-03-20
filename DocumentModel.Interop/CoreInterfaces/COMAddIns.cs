@@ -3,9 +3,6 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface COMAddIns: InteropCollection<COMAddIn>
+public partial interface COMAddIns: InteropCollection<COMAddIn>
 {
-  public COMAddIn Item(ref object Index);
-  public void Update();
-  public void SetAppModal(bool varfModal);
 }

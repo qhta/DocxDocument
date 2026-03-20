@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface IMsoAxis
+public partial interface IMsoAxis
 {
   public bool AxisBetweenCategories { get; set; }
   public XlAxisGroup AxisGroup { get; }
@@ -9,7 +9,6 @@ public interface IMsoAxis
   public object CategoryNames { get; set; }
   public XlAxisCrosses Crosses { get; set; }
   public double CrossesAt { get; set; }
-  public object Delete();
   public bool HasMajorGridlines { get; set; }
   public bool HasMinorGridlines { get; set; }
   public bool HasTitle { get; set; }
@@ -29,7 +28,6 @@ public interface IMsoAxis
   public bool MinorUnitIsAuto { get; set; }
   public bool ReversePlotOrder { get; set; }
   public XlScaleType ScaleType { get; set; }
-  public object Select();
   public XlTickLabelPosition TickLabelPosition { get; set; }
   public IMsoTickLabels TickLabels { get; }
   public int TickLabelSpacing { get; set; }

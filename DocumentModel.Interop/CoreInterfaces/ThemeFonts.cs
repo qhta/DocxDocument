@@ -3,7 +3,6 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface ThemeFonts: InteropCollection<ThemeFont>
+public partial interface ThemeFonts: InteropCollection<ThemeFont>
 {
-  public ThemeFont Item(MsoFontLanguageIndex Index);
 }

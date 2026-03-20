@@ -1,6 +1,6 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface IMsoHyperlinks
+public partial interface IMsoHyperlinks
 {
 }

@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface WebComponentProperties
+public partial interface WebComponentProperties
 {
   public object Shape { get; }
   public string Name { get; set; }

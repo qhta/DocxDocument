@@ -3,7 +3,6 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface FileDialogSelectedItems: InteropCollection<string>
+public partial interface FileDialogSelectedItems: InteropCollection<string>
 {
-  public string Item(int Index);
 }

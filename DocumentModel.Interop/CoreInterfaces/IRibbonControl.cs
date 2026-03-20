@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface IRibbonControl
+public partial interface IRibbonControl
 {
   public string Id { get; }
   public object Context { get; }

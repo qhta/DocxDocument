@@ -1,6 +1,6 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface _IMsoDispObj
+public partial interface _IMsoDispObj
 {
 }

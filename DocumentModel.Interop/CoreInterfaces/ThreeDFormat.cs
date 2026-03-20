@@ -1,13 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ThreeDFormat: InteropObject
+public partial interface ThreeDFormat: InteropObject
 {
-  public void IncrementRotationX(float Increment);
-  public void IncrementRotationY(float Increment);
-  public void ResetRotation();
-  public void SetThreeDFormat(MsoPresetThreeDFormat PresetThreeDFormat);
-  public void SetExtrusionDirection(MsoPresetExtrusionDirection PresetExtrusionDirection);
   public float Depth { get; set; }
   public ColorFormat ExtrusionColor { get; }
   public MsoExtrusionColorType ExtrusionColorType { get; set; }
@@ -20,10 +15,6 @@ public interface ThreeDFormat: InteropObject
   public float RotationX { get; set; }
   public float RotationY { get; set; }
   public MsoTriState Visible { get; set; }
-  public void SetPresetCamera(MsoPresetCamera PresetCamera);
-  public void IncrementRotationZ(float Increment);
-  public void IncrementRotationHorizontal(float Increment);
-  public void IncrementRotationVertical(float Increment);
   public MsoLightRigType PresetLighting { get; set; }
   public float Z { get; set; }
   public MsoBevelType BevelTopType { get; set; }

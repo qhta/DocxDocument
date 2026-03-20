@@ -1,10 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ShadowFormat: InteropObject
+public partial interface ShadowFormat: InteropObject
 {
-  public void IncrementOffsetX(float Increment);
-  public void IncrementOffsetY(float Increment);
   public ColorFormat ForeColor { get; set; }
   public MsoTriState Obscured { get; set; }
   public float OffsetX { get; set; }

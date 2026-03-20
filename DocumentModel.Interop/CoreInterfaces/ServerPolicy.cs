@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ServerPolicy: InteropObject
+public partial interface ServerPolicy: InteropObject
 {
   public PolicyItem this[object Index] { get; }
   public string Id { get; }

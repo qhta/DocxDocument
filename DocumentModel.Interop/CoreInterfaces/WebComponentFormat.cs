@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface WebComponentFormat
+public partial interface WebComponentFormat
 {
   public string URL { get; set; }
   public string HTML { get; set; }
@@ -9,5 +9,4 @@ public interface WebComponentFormat
   public int Width { get; set; }
   public int Height { get; set; }
   public string PreviewGraphic { get; set; }
-  public void LaunchPropertiesWindow();
 }

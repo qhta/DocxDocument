@@ -1,12 +1,10 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface IMsoPlotArea
+public partial interface IMsoPlotArea
 {
   public string Name { get; }
-  public object Select();
   public IMsoBorder Border { get; }
-  public object ClearFormats();
   public double Height { get; set; }
   public IMsoInterior Interior { get; }
   public ChartFillFormat Fill { get; }

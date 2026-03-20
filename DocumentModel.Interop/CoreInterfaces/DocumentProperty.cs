@@ -2,9 +2,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface DocumentProperty
+public partial interface DocumentProperty
 {
-  public void Delete();
   public string Name { get; set; }
   public object Value { get; set; }
   public MsoDocProperties Type { get; set; }
