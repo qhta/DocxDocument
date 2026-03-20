@@ -3,10 +3,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface DiagramNodes: InteropObject, IEnumerable
+public interface DiagramNodes: InteropDictionary<string, DiagramNode>
 {
-  new IEnumerator GetEnumerator();
   DiagramNode Item(object Index);
   void SelectAll();
-  int Count { get; }
 }

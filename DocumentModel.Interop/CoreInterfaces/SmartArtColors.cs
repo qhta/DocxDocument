@@ -2,9 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface SmartArtColors: InteropObject, IEnumerable
+public interface SmartArtColors: InteropDictionary<string, SmartArtColor>
 {
-  new IEnumerator GetEnumerator();
-  SmartArtColor this[object Index] { get; }
-  int Count { get; }
 }

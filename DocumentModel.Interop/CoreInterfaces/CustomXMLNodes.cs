@@ -2,9 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface CustomXMLNodes: InteropObject, IEnumerable
+public interface CustomXMLNodes: InteropCollection<CustomXMLNode>
 {
-  int Count { get; }
-  CustomXMLNode this[int Index] { get; }
-  new IEnumerator GetEnumerator();
 }

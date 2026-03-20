@@ -2,9 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface SearchScopes: InteropObject, IEnumerable
+public interface SearchScopes: InteropCollection<SearchScope>
 {
-  SearchScope this[int Index] { get; }
-  int Count { get; }
-  new IEnumerator GetEnumerator();
 }

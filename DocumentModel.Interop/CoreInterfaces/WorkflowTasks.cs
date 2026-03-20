@@ -2,9 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface WorkflowTasks: InteropObject, IEnumerable
+public interface WorkflowTasks: InteropCollection<WorkflowTask>
 {
-  WorkflowTask this[int Index] { get; }
-  int Count { get; }
-  new IEnumerator GetEnumerator();
 }

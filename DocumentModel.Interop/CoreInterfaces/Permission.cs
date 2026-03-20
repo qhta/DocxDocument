@@ -2,10 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface Permission: InteropObject, IEnumerable
+public interface Permission: InteropDictionary<string, UserPermission>
 {
-  UserPermission this[object Index] { get; }
-  int Count { get; }
   bool EnableTrustedBrowser { get; set; }
   UserPermission Add(string UserId, object Permission, object ExpirationDate);
   void ApplyPolicy(string FileName);
@@ -17,5 +15,4 @@ public interface Permission: InteropObject, IEnumerable
   bool StoreLicenses { get; set; }
   string DocumentAuthor { get; set; }
   bool PermissionFromPolicy { get; }
-  new IEnumerator GetEnumerator();
 }

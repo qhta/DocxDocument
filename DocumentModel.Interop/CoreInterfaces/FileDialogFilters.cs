@@ -3,10 +3,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface FileDialogFilters: InteropObject, IEnumerable
+public interface FileDialogFilters: InteropCollection<FileDialogFilter>
 {
-  new IEnumerator GetEnumerator();
-  int Count { get; }
   FileDialogFilter Item(int Index);
   void Delete(object filter);
   void Clear();

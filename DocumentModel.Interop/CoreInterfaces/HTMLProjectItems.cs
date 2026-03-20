@@ -3,9 +3,7 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface HTMLProjectItems: InteropObject, IEnumerable
+public interface HTMLProjectItems: InteropCollection<HTMLProjectItem>
 {
   HTMLProjectItem Item(ref object Index);
-  int Count { get; }
-  new IEnumerator GetEnumerator();
 }
