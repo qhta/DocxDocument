@@ -3,11 +3,9 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface ThemeColorScheme: InteropObject, IEnumerable
+public interface ThemeColorScheme: InteropCollection<ThemeColor>
 {
-  int Count { get; }
   ThemeColor Colors(MsoThemeColorSchemeIndex Index);
-  new IEnumerator GetEnumerator();
   void Load(string FileName);
   void Save(string FileName);
   int GetCustomColor(string Name);

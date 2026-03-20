@@ -2,10 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface _CustomXMLSchemaCollection: InteropObject, IEnumerable
+public interface _CustomXMLSchemaCollection: InteropDictionary<string, CustomXMLSchema>
 {
-  int Count { get; }
-  CustomXMLSchema this[object Index] { get; }
   string NamespaceURI { get; }
 
   CustomXMLSchema Add
@@ -13,5 +11,4 @@ public interface _CustomXMLSchemaCollection: InteropObject, IEnumerable
 
   void AddCollection(CustomXMLSchemaCollection SchemaCollection);
   bool Validate();
-  new IEnumerator GetEnumerator();
 }

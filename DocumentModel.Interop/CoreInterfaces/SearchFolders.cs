@@ -2,11 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface SearchFolders: InteropObject, IEnumerable
+public interface SearchFolders: InteropCollection<ScopeFolder>
 {
-  ScopeFolder this[int Index] { get; }
-  int Count { get; }
   void Add(ScopeFolder ScopeFolder);
   void Remove(int Index);
-  new IEnumerator GetEnumerator();
 }

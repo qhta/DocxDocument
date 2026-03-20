@@ -3,9 +3,7 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface ThemeFonts: InteropObject, IEnumerable
+public interface ThemeFonts: InteropCollection<ThemeFont>
 {
-  int Count { get; }
   ThemeFont Item(MsoFontLanguageIndex Index);
-  new IEnumerator GetEnumerator();
 }

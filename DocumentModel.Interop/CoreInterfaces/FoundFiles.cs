@@ -2,9 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface FoundFiles: InteropObject, IEnumerable
+public interface FoundFiles: InteropCollection<string>
 {
-  string this[int Index] { get; }
-  int Count { get; }
-  new IEnumerator GetEnumerator();
 }

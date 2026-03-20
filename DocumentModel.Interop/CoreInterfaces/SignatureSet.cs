@@ -2,11 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface SignatureSet: InteropObject, IEnumerable
+public interface SignatureSet: InteropCollection<Signature>
 {
-  new IEnumerator GetEnumerator();
-  int Count { get; }
-  Signature this[int iSig] { get; }
   Signature Add();
   void Commit();
   Signature AddNonVisibleSignature(object varSigProv);

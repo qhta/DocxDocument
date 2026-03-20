@@ -2,9 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface PickerFields: InteropObject, IEnumerable
+public interface PickerFields: InteropCollection<PickerField>
 {
-  PickerField this[int Index] { get; }
-  int Count { get; }
-  new IEnumerator GetEnumerator();
 }

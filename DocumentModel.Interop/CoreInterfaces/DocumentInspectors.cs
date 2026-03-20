@@ -2,9 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface DocumentInspectors: InteropObject, IEnumerable
+public interface DocumentInspectors: InteropCollection<DocumentInspector>
 {
-  new IEnumerator GetEnumerator();
-  DocumentInspector this[int Index] { get; }
-  int Count { get; }
 }

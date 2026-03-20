@@ -2,9 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface ScopeFolders: InteropObject, IEnumerable
+public interface ScopeFolders: InteropCollection<ScopeFolder>
 {
-  ScopeFolder this[int Index] { get; }
-  int Count { get; }
-  new IEnumerator GetEnumerator();
 }

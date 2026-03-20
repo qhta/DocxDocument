@@ -2,9 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface SmartArtQuickStyles: InteropObject, IEnumerable
+public interface SmartArtQuickStyles: InteropDictionary<string, SmartArtQuickStyle>
 {
-  new IEnumerator GetEnumerator();
-  SmartArtQuickStyle this[object Index] { get; }
-  int Count { get; }
 }

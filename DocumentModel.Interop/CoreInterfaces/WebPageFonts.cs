@@ -2,9 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface WebPageFonts: InteropObject, IEnumerable
+public interface WebPageFonts: InteropCollection<WebPageFont>
 {
-  int Count { get; }
-  WebPageFont this[MsoCharacterSet Index] { get; }
-  new IEnumerator GetEnumerator();
 }

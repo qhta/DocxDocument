@@ -3,11 +3,9 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface ShapeNodes: InteropObject, IEnumerable
+public interface ShapeNodes: InteropDictionary<string, ShapeNode>
 {
-  int Count { get; }
   ShapeNode Item(object Index);
-  new IEnumerator GetEnumerator();
   void Delete(int Index);
 
   void Insert
