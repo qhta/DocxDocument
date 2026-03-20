@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoLegend` interface.
+/// Represents a chart legend.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend?view=office-pia
 /// </remarks>
 public partial interface IMsoLegend
 {
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the legend.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoLegend
   /// </remarks>
   public object Select();
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the legend.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -26,7 +26,7 @@ public partial interface IMsoLegend
   /// </remarks>
   public object Delete();
   /// <summary>
-  /// Invokes `LegendEntries`.
+  /// Returns legend entries.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
@@ -35,7 +35,7 @@ public partial interface IMsoLegend
   /// </remarks>
   public object LegendEntries(object Index);
   /// <summary>
-  /// Invokes `Clear`.
+  /// Clears the legend.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>

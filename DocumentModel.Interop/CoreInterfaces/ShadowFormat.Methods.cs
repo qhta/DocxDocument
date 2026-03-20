@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `ShadowFormat` interface.
+/// Represents shadow formatting for a shape.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat?view=office-pia
 /// </remarks>
 public partial interface ShadowFormat
 {
   /// <summary>
-  /// Invokes `IncrementOffsetX`.
+  /// Changes the horizontal shadow offset by the specified amount.
   /// </summary>
   /// <param name="Increment">The `Increment` parameter.</param>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface ShadowFormat
   /// </remarks>
   public void IncrementOffsetX(float Increment);
   /// <summary>
-  /// Invokes `IncrementOffsetY`.
+  /// Changes the vertical shadow offset by the specified amount.
   /// </summary>
   /// <param name="Increment">The `Increment` parameter.</param>
   /// <remarks>

@@ -4,10 +4,10 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `Scripts` interface.
+/// Represents a collection of HTML script blocks in a document.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts?view=office-pia
 /// </remarks>
 public partial interface Scripts: InteropDictionary<string, Script>
 {

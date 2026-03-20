@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoChartArea` interface.
+/// Represents the chart area.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea?view=office-pia
 /// </remarks>
 public partial interface IMsoChartArea
 {
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the chart area.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoChartArea
   /// </remarks>
   public object Select();
   /// <summary>
-  /// Invokes `Clear`.
+  /// Clears the chart area.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -26,7 +26,7 @@ public partial interface IMsoChartArea
   /// </remarks>
   public object Clear();
   /// <summary>
-  /// Invokes `ClearContents`.
+  /// Clears the contents of the chart area.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -34,7 +34,7 @@ public partial interface IMsoChartArea
   /// </remarks>
   public object ClearContents();
   /// <summary>
-  /// Invokes `Copy`.
+  /// Copies the chart area.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -42,7 +42,7 @@ public partial interface IMsoChartArea
   /// </remarks>
   public object Copy();
   /// <summary>
-  /// Invokes `ClearFormats`.
+  /// Clears formatting from the chart area.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>

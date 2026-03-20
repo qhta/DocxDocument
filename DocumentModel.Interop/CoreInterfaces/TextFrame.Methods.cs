@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `TextFrame` interface.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe?view=office-pia
 /// </remarks>
 public partial interface TextFrame
 {

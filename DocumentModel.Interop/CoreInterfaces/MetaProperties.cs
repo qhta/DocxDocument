@@ -3,10 +3,10 @@ using System.Collections;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `MetaProperties` interface.
+/// Represents a collection of metadata properties.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties?view=office-pia
 /// </remarks>
 public partial interface MetaProperties: InteropDictionary<string, MetaProperty>
 {

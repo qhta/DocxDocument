@@ -3,10 +3,10 @@ using System;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IBlogExtensibility` interface.
+/// Provides the ability to manipulate blog entries.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility?view=office-pia
 /// </remarks>
 public partial interface IBlogExtensibility
 {

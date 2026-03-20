@@ -2,10 +2,10 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `PictureFormat` interface.
+/// Contains properties for formatting pictures and OLE objects.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat?view=office-pia
 /// </remarks>
 public partial interface PictureFormat: InteropObject
 {

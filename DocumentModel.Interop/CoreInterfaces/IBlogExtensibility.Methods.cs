@@ -3,15 +3,15 @@ using System;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IBlogExtensibility` interface.
+/// Provides the ability to manipulate blog entries.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility?view=office-pia
 /// </remarks>
 public partial interface IBlogExtensibility
 {
   /// <summary>
-  /// Invokes `BlogProviderProperties`.
+  /// Contains information about the blog provider.
   /// </summary>
   /// <param name="BlogProvider">The `BlogProvider` parameter.</param>
   /// <param name="FriendlyName">The `FriendlyName` parameter.</param>
@@ -23,7 +23,7 @@ public partial interface IBlogExtensibility
   public void BlogProviderProperties
     (out string BlogProvider, out string FriendlyName, out MsoBlogCategorySupport CategorySupport, out bool Padding);
   /// <summary>
-  /// Invokes `SetupBlogAccount`.
+  /// Sets up a provider account from the account selection dialogs.
   /// </summary>
   /// <param name="Account">The `Account` parameter.</param>
   /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
@@ -35,7 +35,7 @@ public partial interface IBlogExtensibility
   /// </remarks>
   public void SetupBlogAccount(string Account, int ParentWindow, object Document, bool NewAccount, out bool ShowPictureUI);
   /// <summary>
-  /// Invokes `GetUserBlogs`.
+  /// Returns the list and details of user blogs associated with the specified account.
   /// </summary>
   /// <param name="Account">The `Account` parameter.</param>
   /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
@@ -49,7 +49,7 @@ public partial interface IBlogExtensibility
   public void GetUserBlogs
     (string Account, int ParentWindow, object Document, out Array BlogNames, out Array BlogIDs, out Array BlogURLs);
   /// <summary>
-  /// Invokes `GetRecentPosts`.
+  /// Returns recent blog posts for display in the Open Existing Post dialog.
   /// </summary>
   /// <param name="Account">The `Account` parameter.</param>
   /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
@@ -63,7 +63,7 @@ public partial interface IBlogExtensibility
   public void GetRecentPosts
     (string Account, int ParentWindow, object Document, out Array PostTitles, out Array PostDates, out Array PostIDs);
   /// <summary>
-  /// Invokes `Open`.
+  /// Opens the blog post specified by the post identifier.
   /// </summary>
   /// <param name="Account">The `Account` parameter.</param>
   /// <param name="PostID">The `PostID` parameter.</param>
@@ -79,7 +79,7 @@ public partial interface IBlogExtensibility
   (string Account, string PostID, int ParentWindow, out string xHTML, out string Title, out string DatePosted,
     out Array Categories);
   /// <summary>
-  /// Invokes `PublishPost`.
+  /// Hands off the current post so it can be published by the provider.
   /// </summary>
   /// <param name="Account">The `Account` parameter.</param>
   /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
@@ -98,7 +98,7 @@ public partial interface IBlogExtensibility
   (string Account, int ParentWindow, object Document, string xHTML, string Title, string DateTime, Array Categories,
     bool Draft, out string PostID, out string PublishMessage);
   /// <summary>
-  /// Invokes `RepublishPost`.
+  /// Hands off an existing post so it can be republished by the provider.
   /// </summary>
   /// <param name="Account">The `Account` parameter.</param>
   /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
@@ -117,7 +117,7 @@ public partial interface IBlogExtensibility
   (string Account, int ParentWindow, object Document, string PostID, string xHTML, string Title, string DateTime,
     Array Categories, bool Draft, out string PublishMessage);
   /// <summary>
-  /// Invokes `GetCategories`.
+  /// Returns the list of blog categories for an account.
   /// </summary>
   /// <param name="Account">The `Account` parameter.</param>
   /// <param name="ParentWindow">The `ParentWindow` parameter.</param>

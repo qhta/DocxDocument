@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `PictureFormat` interface.
+/// Contains properties for formatting pictures and OLE objects.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat?view=office-pia
 /// </remarks>
 public partial interface PictureFormat
 {
   /// <summary>
-  /// Invokes `IncrementBrightness`.
+  /// Changes the picture brightness by the specified amount.
   /// </summary>
   /// <param name="Increment">The `Increment` parameter.</param>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface PictureFormat
   /// </remarks>
   public void IncrementBrightness(float Increment);
   /// <summary>
-  /// Invokes `IncrementContrast`.
+  /// Changes the picture contrast by the specified amount.
   /// </summary>
   /// <param name="Increment">The `Increment` parameter.</param>
   /// <remarks>

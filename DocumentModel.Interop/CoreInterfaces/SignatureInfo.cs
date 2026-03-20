@@ -10,7 +10,7 @@ namespace DocumentModel.Interop.Core;
 public partial interface SignatureInfo: InteropObject
 {
   /// <summary>
-  /// Gets or sets the `ReadOnly` property.
+  /// Gets the `ReadOnly` property.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureinfo.readonly?view=office-pia

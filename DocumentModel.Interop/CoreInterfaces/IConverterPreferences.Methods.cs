@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IConverterPreferences` interface.
+/// Defines converter-specific preferences for Office document converters.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences?view=office-pia
 /// </remarks>
 public partial interface IConverterPreferences
 {
   /// <summary>
-  /// Invokes `HrGetMacroEnabled`.
+  /// Gets whether macros are enabled.
   /// </summary>
   /// <param name="pfMacroEnabled">The `pfMacroEnabled` parameter.</param>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IConverterPreferences
   /// </remarks>
   public void HrGetMacroEnabled(out int pfMacroEnabled);
   /// <summary>
-  /// Invokes `HrCheckFormat`.
+  /// Gets format-related preference information.
   /// </summary>
   /// <param name="pFormat">The `pFormat` parameter.</param>
   /// <remarks>
@@ -26,7 +26,7 @@ public partial interface IConverterPreferences
   /// </remarks>
   public void HrCheckFormat(out int pFormat);
   /// <summary>
-  /// Invokes `HrGetLossySave`.
+  /// Gets whether lossy save is enabled.
   /// </summary>
   /// <param name="pfLossySave">The `pfLossySave` parameter.</param>
   /// <remarks>

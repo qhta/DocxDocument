@@ -3,15 +3,15 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IFind` interface.
+/// Provides file search functionality.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind?view=office-pia
 /// </remarks>
 public partial interface IFind
 {
   /// <summary>
-  /// Invokes `Show`.
+  /// Displays the Find dialog.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -19,14 +19,14 @@ public partial interface IFind
   /// </remarks>
   public int Show();
   /// <summary>
-  /// Invokes `Execute`.
+  /// Executes the file search.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.execute?view=office-pia
   /// </remarks>
   public void Execute();
   /// <summary>
-  /// Invokes `Load`.
+  /// Loads a saved search query.
   /// </summary>
   /// <param name="bstrQueryName">The `bstrQueryName` parameter.</param>
   /// <remarks>
@@ -34,7 +34,7 @@ public partial interface IFind
   /// </remarks>
   public void Load(string bstrQueryName);
   /// <summary>
-  /// Invokes `Save`.
+  /// Saves the current search query.
   /// </summary>
   /// <param name="bstrQueryName">The `bstrQueryName` parameter.</param>
   /// <remarks>
@@ -42,7 +42,7 @@ public partial interface IFind
   /// </remarks>
   public void Save(string bstrQueryName);
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes a saved search query.
   /// </summary>
   /// <param name="bstrQueryName">The `bstrQueryName` parameter.</param>
   /// <remarks>

@@ -3,10 +3,10 @@ using System.Collections;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `Permission` interface.
+/// Restricts permissions to the active document and exposes permission settings.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.permission?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.permission?view=office-pia
 /// </remarks>
 public partial interface Permission: InteropDictionary<string, UserPermission>
 {

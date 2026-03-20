@@ -3,10 +3,10 @@ using System.Collections;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `PickerFields` interface.
+/// Represents a collection of `PickerField` objects.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerfields?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerfields?view=office-pia
 /// </remarks>
 public partial interface PickerFields: InteropCollection<PickerField>
 {

@@ -3,15 +3,15 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `Script` interface.
+/// Represents a block of HTML script in an Office document.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.script?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.script?view=office-pia
 /// </remarks>
 public partial interface Script
 {
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes this script from the collection.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.script.delete?view=office-pia

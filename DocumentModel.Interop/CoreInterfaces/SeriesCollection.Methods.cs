@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SeriesCollection
+public partial interface SeriesCollection: InteropCollection<IMsoSeries>
 {
   /// <summary>
   /// Invokes `Add`.
@@ -35,14 +35,6 @@ public partial interface SeriesCollection
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.extend?view=office-pia
   /// </remarks>
   public object Extend(object Source, object Rowcol, object CategoryLabels);
-  /// <summary>
-  /// Invokes `GetEnumerator`.
-  /// </summary>
-  /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.getenumerator?view=office-pia
-  /// </remarks>
-  public new IEnumerator GetEnumerator();
   /// <summary>
   /// Invokes `Paste`.
   /// </summary>

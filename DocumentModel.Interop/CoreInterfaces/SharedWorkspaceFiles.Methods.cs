@@ -3,21 +3,21 @@ using System.Collections;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `SharedWorkspaceFiles` interface.
+/// Represents a collection of files in a shared workspace.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefiles?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefiles?view=office-pia
 /// </remarks>
 public partial interface SharedWorkspaceFiles
 {
   /// <summary>
-  /// Invokes `Add`.
+  /// Adds a file to the shared workspace.
   /// </summary>
-  /// <param name="FileName">The `FileName` parameter.</param>
-  /// <param name="ParentFolder">The `ParentFolder` parameter.</param>
-  /// <param name="OverwriteIfFileAlreadyExists">The `OverwriteIfFileAlreadyExists` parameter.</param>
-  /// <param name="KeepInSync">The `KeepInSync` parameter.</param>
-  /// <returns>The result of the operation.</returns>
+  /// <param name="FileName">The file path or name to add.</param>
+  /// <param name="ParentFolder">The optional parent folder.</param>
+  /// <param name="OverwriteIfFileAlreadyExists">Whether to overwrite an existing file.</param>
+  /// <param name="KeepInSync">Whether to keep the file synchronized.</param>
+  /// <returns>The added shared workspace file.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefiles.add?view=office-pia
   /// </remarks>

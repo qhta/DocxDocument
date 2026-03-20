@@ -3,17 +3,17 @@ using System.Collections;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `LegendEntries` interface.
+/// Represents a collection of legend entries.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries?view=office-pia
 /// </remarks>
 public partial interface LegendEntries
 {
   /// <summary>
-  /// Invokes `GetEnumerator`.
+  /// Returns an enumerator that iterates through the legend entries.
   /// </summary>
-  /// <returns>The result of the operation.</returns>
+  /// <returns>An enumerator for the collection.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries.getenumerator?view=office-pia
   /// </remarks>

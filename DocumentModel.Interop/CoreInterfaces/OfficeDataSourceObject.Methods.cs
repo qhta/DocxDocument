@@ -2,25 +2,25 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `OfficeDataSourceObject` interface.
+/// Represents the mail merge data source in a mail merge operation.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject?view=office-pia
 /// </remarks>
 public partial interface OfficeDataSourceObject
 {
   /// <summary>
-  /// Invokes `Move`.
+  /// Moves the focus to a specified row.
   /// </summary>
   /// <param name="MsoMoveRow">The `MsoMoveRow` parameter.</param>
   /// <param name="RowNbr">The `RowNbr` parameter.</param>
-  /// <returns>The result of the operation.</returns>
+  /// <returns>The resulting row number.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject.move?view=office-pia
   /// </remarks>
   public int Move(MsoMoveRow MsoMoveRow, int RowNbr);
   /// <summary>
-  /// Invokes `Open`.
+  /// Opens a connection to a mail merge data source.
   /// </summary>
   /// <param name="bstrSrc">The `bstrSrc` parameter.</param>
   /// <param name="bstrConnect">The `bstrConnect` parameter.</param>
@@ -33,7 +33,7 @@ public partial interface OfficeDataSourceObject
   public void Open
     (string bstrSrc, string bstrConnect, string bstrTable, int fOpenExclusive, int fNeverPrompt);
   /// <summary>
-  /// Invokes `SetSortOrder`.
+  /// Sets the sort order for mail merge data.
   /// </summary>
   /// <param name="SortField1">The `SortField1` parameter.</param>
   /// <param name="SortAscending1">The `SortAscending1` parameter.</param>
@@ -48,7 +48,7 @@ public partial interface OfficeDataSourceObject
   (string SortField1, bool SortAscending1, string SortField2, bool SortAscending2,
     string SortField3, bool SortAscending3);
   /// <summary>
-  /// Invokes `ApplyFilter`.
+  /// Applies the configured filters to the data source.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject.applyfilter?view=office-pia

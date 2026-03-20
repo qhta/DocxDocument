@@ -2,10 +2,10 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `ShadowFormat` interface.
+/// Represents shadow formatting for a shape.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat?view=office-pia
 /// </remarks>
 public partial interface ShadowFormat: InteropObject
 {
