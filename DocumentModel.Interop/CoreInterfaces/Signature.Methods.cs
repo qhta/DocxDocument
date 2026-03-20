@@ -1,9 +1,37 @@
 
 namespace DocumentModel.Interop.Core;
 
+/// <summary>
+/// Represents the `Signature` interface.
+/// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature?view=office-pia` for Office interop details.
+/// </remarks>
 public partial interface Signature
 {
+  /// <summary>
+  /// Invokes `Delete`.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.delete?view=office-pia
+  /// </remarks>
   public void Delete();
+  /// <summary>
+  /// Invokes `Sign`.
+  /// </summary>
+  /// <param name="varSigImg">The `varSigImg` parameter.</param>
+  /// <param name="varDelSuggSigner">The `varDelSuggSigner` parameter.</param>
+  /// <param name="varDelSuggSignerLine2">The `varDelSuggSignerLine2` parameter.</param>
+  /// <param name="varDelSuggSignerEmail">The `varDelSuggSignerEmail` parameter.</param>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.sign?view=office-pia
+  /// </remarks>
   public void Sign(object varSigImg, object varDelSuggSigner, object varDelSuggSignerLine2, object varDelSuggSignerEmail);
+  /// <summary>
+  /// Invokes `ShowDetails`.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.showdetails?view=office-pia
+  /// </remarks>
   public void ShowDetails();
 }
