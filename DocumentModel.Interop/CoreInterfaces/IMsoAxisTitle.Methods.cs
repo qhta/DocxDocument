@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoAxisTitle` interface.
+/// Represents a chart axis title.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle?view=office-pia
 /// </remarks>
 public partial interface IMsoAxisTitle
 {
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the axis title.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoAxisTitle
   /// </remarks>
   public new object Delete();
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the axis title.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>

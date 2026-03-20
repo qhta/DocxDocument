@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoDataLabel` interface.
+/// Represents a data label.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel?view=office-pia
 /// </remarks>
 public partial interface IMsoDataLabel
 {
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the data label.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoDataLabel
   /// </remarks>
   public object Select();
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the data label.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>

@@ -2,10 +2,10 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoSeries` interface.
+/// Represents a chart series.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries?view=office-pia
 /// </remarks>
 public partial interface IMsoSeries
 {

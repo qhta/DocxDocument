@@ -3,10 +3,10 @@ using System.Collections;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `PictureEffects` interface.
+/// Represents a collection of picture effects.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffects?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffects?view=office-pia
 /// </remarks>
 public partial interface PictureEffects: InteropCollection<PictureEffect>
 {

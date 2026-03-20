@@ -3,10 +3,10 @@ using System.Collections;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `SearchScopes` interface.
+/// Represents a collection of available search scopes.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.searchscopes?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.searchscopes?view=office-pia
 /// </remarks>
 public partial interface SearchScopes
 {

@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoEServicesDialog` interface.
+/// Reserved for internal use.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoeservicesdialog?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoeservicesdialog?view=office-pia
 /// </remarks>
 public partial interface IMsoEServicesDialog
 {
   /// <summary>
-  /// Invokes `Close`.
+  /// Closes the eServices dialog.
   /// </summary>
   /// <param name="ApplyWebComponentChanges">The `ApplyWebComponentChanges` parameter.</param>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoEServicesDialog
   /// </remarks>
   public void Close(bool ApplyWebComponentChanges);
   /// <summary>
-  /// Invokes `AddTrustedDomain`.
+  /// Adds a trusted domain.
   /// </summary>
   /// <param name="Domain">The `Domain` parameter.</param>
   /// <remarks>

@@ -4,18 +4,18 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `RulerLevels2` interface.
+/// Represents a collection of ruler outline levels.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.rulerlevels2?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.rulerlevels2?view=office-pia
 /// </remarks>
 public partial interface RulerLevels2
 {
   /// <summary>
-  /// Invokes `Item`.
+  /// Returns a ruler level by index.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
-  /// <returns>The result of the operation.</returns>
+  /// <param name="Index">The index of the ruler level to return.</param>
+  /// <returns>The requested ruler level.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.rulerlevels2.item?view=office-pia
   /// </remarks>

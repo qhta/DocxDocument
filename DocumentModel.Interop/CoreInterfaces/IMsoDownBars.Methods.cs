@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoDownBars` interface.
+/// Represents down bars in a chart.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars?view=office-pia
 /// </remarks>
 public partial interface IMsoDownBars
 {
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the down bars.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoDownBars
   /// </remarks>
   public object Select();
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the down bars.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>

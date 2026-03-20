@@ -2,22 +2,22 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoEnvelopeVBEvents` interface.
+/// Reserved for internal use.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents?view=office-pia
 /// </remarks>
 public partial interface IMsoEnvelopeVBEvents
 {
   /// <summary>
-  /// Invokes `EnvelopeShow`.
+  /// Occurs when the envelope user interface is shown.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents.envelopeshow?view=office-pia
   /// </remarks>
   public void EnvelopeShow();
   /// <summary>
-  /// Invokes `EnvelopeHide`.
+  /// Occurs when the envelope user interface is hidden.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents.envelopehide?view=office-pia

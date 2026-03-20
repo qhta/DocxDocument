@@ -2,10 +2,10 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IConverterPreferences` interface.
+/// Defines converter-specific preferences for Office document converters.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences?view=office-pia
 /// </remarks>
 public partial interface IConverterPreferences
 {

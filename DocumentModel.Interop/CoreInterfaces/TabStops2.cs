@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `TabStops2` interface.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2?view=office-pia
 /// </remarks>
 public partial interface TabStops2: InteropDictionary<string, TabStop2>
 {

@@ -3,10 +3,10 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `SharedWorkspaceFolder` interface.
+/// Represents a folder in a shared workspace.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolder?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolder?view=office-pia
 /// </remarks>
 public partial interface SharedWorkspaceFolder: InteropObject
 {

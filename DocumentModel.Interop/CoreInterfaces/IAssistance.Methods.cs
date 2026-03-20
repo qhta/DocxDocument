@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IAssistance` interface.
+/// Represents the Microsoft Office Help Viewer assistance interface.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iassistance?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iassistance?view=office-pia
 /// </remarks>
 public partial interface IAssistance
 {
   /// <summary>
-  /// Invokes `ShowHelp`.
+  /// Displays a Help topic in the Office Help Viewer.
   /// </summary>
   /// <param name="HelpId">The `HelpId` parameter.</param>
   /// <param name="Scope">The `Scope` parameter.</param>
@@ -19,7 +19,7 @@ public partial interface IAssistance
   /// </remarks>
   public void ShowHelp(string HelpId, string Scope);
   /// <summary>
-  /// Invokes `SearchHelp`.
+  /// Searches Help content in the Office Help Viewer.
   /// </summary>
   /// <param name="Query">The `Query` parameter.</param>
   /// <param name="Scope">The `Scope` parameter.</param>
@@ -28,7 +28,7 @@ public partial interface IAssistance
   /// </remarks>
   public void SearchHelp(string Query, string Scope);
   /// <summary>
-  /// Invokes `SetDefaultContext`.
+  /// Sets the default Help context.
   /// </summary>
   /// <param name="HelpId">The `HelpId` parameter.</param>
   /// <remarks>
@@ -36,7 +36,7 @@ public partial interface IAssistance
   /// </remarks>
   public void SetDefaultContext(string HelpId);
   /// <summary>
-  /// Invokes `ClearDefaultContext`.
+  /// Clears a default Help context.
   /// </summary>
   /// <param name="HelpId">The `HelpId` parameter.</param>
   /// <remarks>

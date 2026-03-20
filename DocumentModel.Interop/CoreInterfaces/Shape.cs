@@ -2,10 +2,10 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `Shape` interface.
+/// Reserved for internal use.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape?view=office-pia
 /// </remarks>
 public partial interface Shape: InteropObject
 {
@@ -282,6 +282,12 @@ public partial interface Shape: InteropObject
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.id?view=office-pia
   /// </remarks>
   public int Id { get; }
+  /// <summary>
+  /// Sets the rich text format (RTF) content for the shape text.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.rtf?view=office-pia
+  /// </remarks>
   public string RTF { set; }
   /// <summary>
   /// Gets the `TextFrame2` property.

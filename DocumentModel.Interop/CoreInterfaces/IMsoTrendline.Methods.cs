@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoTrendline` interface.
+/// Represents a trendline in a chart.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline?view=office-pia
 /// </remarks>
 public partial interface IMsoTrendline
 {
   /// <summary>
-  /// Invokes `ClearFormats`.
+  /// Clears formatting from the trendline.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoTrendline
   /// </remarks>
   public object ClearFormats();
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the trendline.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -26,7 +26,7 @@ public partial interface IMsoTrendline
   /// </remarks>
   public object Delete();
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the trendline.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>

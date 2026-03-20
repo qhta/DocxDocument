@@ -2,10 +2,10 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `PickerField` interface.
+/// Represents a field definition for picker result sub-items.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerfield?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerfield?view=office-pia
 /// </remarks>
 public partial interface PickerField
 {

@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoTickLabels` interface.
+/// Represents tick labels on a chart axis.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels?view=office-pia
 /// </remarks>
 public partial interface IMsoTickLabels
 {
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the tick labels.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoTickLabels
   /// </remarks>
   public object Delete();
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the tick labels.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>

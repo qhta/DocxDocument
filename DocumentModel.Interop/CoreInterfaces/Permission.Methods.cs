@@ -3,26 +3,26 @@ using System.Collections;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `Permission` interface.
+/// Restricts permissions to the active document and exposes permission settings.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.permission?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.permission?view=office-pia
 /// </remarks>
 public partial interface Permission
 {
   /// <summary>
-  /// Invokes `Add`.
+  /// Creates permissions for a specified user.
   /// </summary>
   /// <param name="UserId">The `UserId` parameter.</param>
   /// <param name="Permission">The `Permission` parameter.</param>
   /// <param name="ExpirationDate">The `ExpirationDate` parameter.</param>
-  /// <returns>The result of the operation.</returns>
+  /// <returns>The created user permission.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.permission.add?view=office-pia
   /// </remarks>
   public UserPermission Add(string UserId, object Permission, object ExpirationDate);
   /// <summary>
-  /// Invokes `ApplyPolicy`.
+  /// Applies a permission policy to the active document.
   /// </summary>
   /// <param name="FileName">The `FileName` parameter.</param>
   /// <remarks>
@@ -30,7 +30,7 @@ public partial interface Permission
   /// </remarks>
   public void ApplyPolicy(string FileName);
   /// <summary>
-  /// Invokes `RemoveAll`.
+  /// Removes all user permissions and disables restrictions.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.permission.removeall?view=office-pia

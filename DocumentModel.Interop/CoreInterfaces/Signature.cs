@@ -10,7 +10,7 @@ namespace DocumentModel.Interop.Core;
 public partial interface Signature: InteropObject
 {
   /// <summary>
-  /// Gets or sets the `Signer` property.
+  /// Gets the `Signer` property.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.signer?view=office-pia

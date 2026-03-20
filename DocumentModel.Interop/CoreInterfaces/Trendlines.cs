@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `Trendlines` interface.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines?view=office-pia
 /// </remarks>
 public partial interface Trendlines: IEnumerable
 {
@@ -17,5 +17,11 @@ public partial interface Trendlines: IEnumerable
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines.count?view=office-pia
   /// </remarks>
   public int Count { get; }
+  /// <summary>
+  /// Gets the trendline at the specified index.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines.item?view=office-pia
+  /// </remarks>
   public IMsoTrendline this[object Index] { get; }
 }

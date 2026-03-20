@@ -2,10 +2,10 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IConverter` interface.
+/// Defines methods used by Office document converters.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter?view=office-pia
 /// </remarks>
 public partial interface IConverter
 {

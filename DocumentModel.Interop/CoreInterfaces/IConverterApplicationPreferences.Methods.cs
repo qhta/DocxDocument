@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IConverterApplicationPreferences` interface.
+/// Defines application preferences used by Office document converters.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences?view=office-pia
 /// </remarks>
 public partial interface IConverterApplicationPreferences
 {
   /// <summary>
-  /// Invokes `HrGetLcid`.
+  /// Gets the current locale identifier.
   /// </summary>
   /// <param name="plcid">The `plcid` parameter.</param>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IConverterApplicationPreferences
   /// </remarks>
   public void HrGetLcid(out uint plcid);
   /// <summary>
-  /// Invokes `HrGetHwnd`.
+  /// Gets the host application window handle.
   /// </summary>
   /// <param name="phwnd">The `phwnd` parameter.</param>
   /// <remarks>
@@ -26,7 +26,7 @@ public partial interface IConverterApplicationPreferences
   /// </remarks>
   public void HrGetHwnd(out int phwnd);
   /// <summary>
-  /// Invokes `HrGetApplication`.
+  /// Gets the host application name.
   /// </summary>
   /// <param name="pbstrApplication">The `pbstrApplication` parameter.</param>
   /// <remarks>
@@ -34,7 +34,7 @@ public partial interface IConverterApplicationPreferences
   /// </remarks>
   public void HrGetApplication(out string pbstrApplication);
   /// <summary>
-  /// Invokes `HrCheckFormat`.
+  /// Gets format-related information for the converter.
   /// </summary>
   /// <param name="pFormat">The `pFormat` parameter.</param>
   /// <remarks>

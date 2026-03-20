@@ -3,15 +3,15 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `HTMLProjectItem` interface.
+/// Represents an individual project item branch in the Project Explorer in the Microsoft Script Editor.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlprojectitem?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlprojectitem?view=office-pia
 /// </remarks>
 public partial interface HTMLProjectItem
 {
   /// <summary>
-  /// Invokes `LoadFromFile`.
+  /// Updates the text in the Microsoft Script Editor with text from the specified file on disk.
   /// </summary>
   /// <param name="FileName">The `FileName` parameter.</param>
   /// <remarks>
@@ -19,7 +19,7 @@ public partial interface HTMLProjectItem
   /// </remarks>
   public void LoadFromFile(string FileName);
   /// <summary>
-  /// Invokes `Open`.
+  /// Opens the specified HTML project item in the Microsoft Script Editor in one of the supported views.
   /// </summary>
   /// <param name="OpenKind">The `OpenKind` parameter.</param>
   /// <remarks>
@@ -27,7 +27,7 @@ public partial interface HTMLProjectItem
   /// </remarks>
   public void Open(MsoHTMLProjectOpen OpenKind);
   /// <summary>
-  /// Invokes `SaveCopyAs`.
+  /// Saves the specified HTML project item using a new file name.
   /// </summary>
   /// <param name="FileName">The `FileName` parameter.</param>
   /// <remarks>

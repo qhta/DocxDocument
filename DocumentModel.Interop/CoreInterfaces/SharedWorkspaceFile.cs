@@ -3,10 +3,10 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `SharedWorkspaceFile` interface.
+/// Represents a file in a shared workspace.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefile?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefile?view=office-pia
 /// </remarks>
 public partial interface SharedWorkspaceFile: InteropObject
 {

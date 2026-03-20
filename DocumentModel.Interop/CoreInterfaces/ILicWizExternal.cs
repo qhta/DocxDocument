@@ -3,10 +3,10 @@ using System;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `ILicWizExternal` interface.
+/// Reserved for internal use.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal?view=office-pia
 /// </remarks>
 public partial interface ILicWizExternal
 {
@@ -38,7 +38,19 @@ public partial interface ILicWizExternal
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.countryinfo?view=office-pia
   /// </remarks>
   public string CountryInfo { get; }
+  /// <summary>
+  /// Sets whether the licensing wizard is visible.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.wizardvisible?view=office-pia
+  /// </remarks>
   public int WizardVisible { set; }
+  /// <summary>
+  /// Sets the title of the licensing wizard.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.wizardtitle?view=office-pia
+  /// </remarks>
   public string WizardTitle { set; }
   /// <summary>
   /// Gets the `AnimationEnabled` property.
@@ -47,6 +59,12 @@ public partial interface ILicWizExternal
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.animationenabled?view=office-pia
   /// </remarks>
   public int AnimationEnabled { get; }
+  /// <summary>
+  /// Sets the current Help topic identifier.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.currenthelpid?view=office-pia
+  /// </remarks>
   public int CurrentHelpId { set; }
   /// <summary>
   /// Gets the `OfficeOnTheWebUrl` property.

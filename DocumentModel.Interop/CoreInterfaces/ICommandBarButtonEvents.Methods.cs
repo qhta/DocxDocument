@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `ICommandBarButtonEvents` interface.
+/// Reserved for internal use.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icommandbarbuttonevents?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icommandbarbuttonevents?view=office-pia
 /// </remarks>
 public partial interface ICommandBarButtonEvents
 {
   /// <summary>
-  /// Invokes `Click`.
+  /// Handles the click event for a command bar button.
   /// </summary>
   /// <param name="Ctrl">The `Ctrl` parameter.</param>
   /// <param name="CancelDefault">The `CancelDefault` parameter.</param>

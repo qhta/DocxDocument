@@ -3,10 +3,10 @@ using System.Collections;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `SharedWorkspaceFiles` interface.
+/// Represents a collection of files in a shared workspace.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefiles?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefiles?view=office-pia
 /// </remarks>
 public partial interface SharedWorkspaceFiles: InteropCollection<SharedWorkspaceFile>
 {

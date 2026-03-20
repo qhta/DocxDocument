@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoChartGroup` interface.
+/// Represents a chart group.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup?view=office-pia
 /// </remarks>
 public partial interface IMsoChartGroup
 {
   /// <summary>
-  /// Invokes `SeriesCollection`.
+  /// Returns a series collection from the chart group.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
@@ -19,7 +19,7 @@ public partial interface IMsoChartGroup
   /// </remarks>
   public object SeriesCollection(object Index);
   /// <summary>
-  /// Invokes `CategoryCollection`.
+  /// Returns a category collection from the chart group.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
@@ -28,7 +28,7 @@ public partial interface IMsoChartGroup
   /// </remarks>
   public object CategoryCollection(object Index);
   /// <summary>
-  /// Invokes `FullCategoryCollection`.
+  /// Returns a full category collection from the chart group.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>

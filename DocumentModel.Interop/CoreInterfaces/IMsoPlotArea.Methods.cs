@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoPlotArea` interface.
+/// Represents the plot area of a chart.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea?view=office-pia
 /// </remarks>
 public partial interface IMsoPlotArea
 {
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the plot area.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoPlotArea
   /// </remarks>
   public object Select();
   /// <summary>
-  /// Invokes `ClearFormats`.
+  /// Clears formatting from the plot area.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>

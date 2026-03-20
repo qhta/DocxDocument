@@ -3,15 +3,15 @@ using System.Collections;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoDataLabels` interface.
+/// Represents a collection of data labels.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels?view=office-pia
 /// </remarks>
 public partial interface IMsoDataLabels
 {
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the data labels collection.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -19,7 +19,7 @@ public partial interface IMsoDataLabels
   /// </remarks>
   public object Select();
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the data labels collection.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -27,15 +27,15 @@ public partial interface IMsoDataLabels
   /// </remarks>
   public object Delete();
   /// <summary>
-  /// Invokes `GetEnumerator`.
+  /// Returns an enumerator that iterates through the data labels.
   /// </summary>
-  /// <returns>The result of the operation.</returns>
+  /// <returns>An enumerator for the collection.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.getenumerator?view=office-pia
   /// </remarks>
   public new IEnumerator GetEnumerator();
   /// <summary>
-  /// Invokes `Propagate`.
+  /// Propagates data label settings.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <remarks>

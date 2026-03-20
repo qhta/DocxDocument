@@ -4,32 +4,32 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `Scripts` interface.
+/// Represents a collection of HTML script blocks in a document.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts?view=office-pia
 /// </remarks>
 public partial interface Scripts
 {
   /// <summary>
-  /// Invokes `Item`.
+  /// Returns a script by name, ID, or index.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
-  /// <returns>The result of the operation.</returns>
+  /// <param name="Index">The script name, ID, or index.</param>
+  /// <returns>The requested script.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.item?view=office-pia
   /// </remarks>
   public Script Item(object Index);
   /// <summary>
-  /// Invokes `Add`.
+  /// Adds a script to the collection.
   /// </summary>
-  /// <param name="Anchor">The `Anchor` parameter.</param>
-  /// <param name="Location">The `Location` parameter.</param>
-  /// <param name="Language">The `Language` parameter.</param>
-  /// <param name="Id">The `Id` parameter.</param>
-  /// <param name="Extended">The `Extended` parameter.</param>
-  /// <param name="ScriptText">The `ScriptText` parameter.</param>
-  /// <returns>The result of the operation.</returns>
+  /// <param name="Anchor">The optional anchor for script placement.</param>
+  /// <param name="Location">The script anchor location.</param>
+  /// <param name="Language">The script language.</param>
+  /// <param name="Id">The script ID attribute.</param>
+  /// <param name="Extended">Additional script tag attributes.</param>
+  /// <param name="ScriptText">The script content.</param>
+  /// <returns>The added script.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.add?view=office-pia
   /// </remarks>
@@ -38,7 +38,7 @@ public partial interface Scripts
     MsoScriptLanguage Language, string Id, string Extended,
     string ScriptText);
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes all scripts in the collection.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.delete?view=office-pia

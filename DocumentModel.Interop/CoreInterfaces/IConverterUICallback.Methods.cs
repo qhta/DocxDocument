@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IConverterUICallback` interface.
+/// Defines UI callback methods for Office document converters.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverteruicallback?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverteruicallback?view=office-pia
 /// </remarks>
 public partial interface IConverterUICallback
 {
   /// <summary>
-  /// Invokes `HrReportProgress`.
+  /// Reports conversion progress.
   /// </summary>
   /// <param name="uPercentComplete">The `uPercentComplete` parameter.</param>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IConverterUICallback
   /// </remarks>
   public void HrReportProgress(uint uPercentComplete);
   /// <summary>
-  /// Invokes `HrMessageBox`.
+  /// Displays a message box through the host UI.
   /// </summary>
   /// <param name="bstrText">The `bstrText` parameter.</param>
   /// <param name="bstrCaption">The `bstrCaption` parameter.</param>
@@ -29,7 +29,7 @@ public partial interface IConverterUICallback
   /// </remarks>
   public void HrMessageBox(string bstrText, string bstrCaption, uint uType, out int pidResult);
   /// <summary>
-  /// Invokes `HrInputBox`.
+  /// Displays an input box through the host UI.
   /// </summary>
   /// <param name="bstrText">The `bstrText` parameter.</param>
   /// <param name="bstrCaption">The `bstrCaption` parameter.</param>

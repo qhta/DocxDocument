@@ -2,10 +2,10 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoEnvelopeVB` interface.
+/// Provides access to functionality that lets you send documents as email from Office applications.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevb?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevb?view=office-pia
 /// </remarks>
 public partial interface IMsoEnvelopeVB
 {
@@ -17,14 +17,14 @@ public partial interface IMsoEnvelopeVB
   /// </remarks>
   public string Introduction { get; set; }
   /// <summary>
-  /// Gets the `Item` property.
+  /// Gets a mail item that can be used to send the document as email.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevb.item?view=office-pia
   /// </remarks>
   public object Item { get; }
   /// <summary>
-  /// Gets the `CommandBars` property.
+  /// Gets the command bars collection.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevb.commandbars?view=office-pia

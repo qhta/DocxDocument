@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoChartTitle` interface.
+/// Represents a chart title.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle?view=office-pia
 /// </remarks>
 public partial interface IMsoChartTitle
 {
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the chart title.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoChartTitle
   /// </remarks>
   public object Delete();
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the chart title.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>

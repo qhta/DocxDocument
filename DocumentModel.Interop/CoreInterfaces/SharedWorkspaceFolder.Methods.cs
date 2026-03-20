@@ -3,17 +3,17 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `SharedWorkspaceFolder` interface.
+/// Represents a folder in a shared workspace.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolder?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolder?view=office-pia
 /// </remarks>
 public partial interface SharedWorkspaceFolder
 {
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the shared workspace folder.
   /// </summary>
-  /// <param name="DeleteEventIfFolderContainsFiles">The `DeleteEventIfFolderContainsFiles` parameter.</param>
+  /// <param name="DeleteEventIfFolderContainsFiles">Whether to delete even if the folder contains files.</param>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolder.delete?view=office-pia
   /// </remarks>

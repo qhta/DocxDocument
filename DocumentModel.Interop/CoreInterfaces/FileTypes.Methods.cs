@@ -8,16 +8,8 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filetypes?view=office-pia
 /// </remarks>
-public partial interface FileTypes
+public partial interface FileTypes: InteropCollection<MsoFileType>
 {
-  /// <summary>
-  /// Adds a file type to the collection.
-  /// </summary>
-  /// <param name="FileType">The `FileType` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filetypes.add?view=office-pia
-  /// </remarks>
-  public void Add(MsoFileType FileType);
   /// <summary>
   /// Removes a file type from the collection.
   /// </summary>

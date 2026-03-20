@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoLegendKey` interface.
+/// Represents a legend key in a chart.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey?view=office-pia
 /// </remarks>
 public partial interface IMsoLegendKey
 {
   /// <summary>
-  /// Invokes `ClearFormats`.
+  /// Clears formatting from the legend key.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoLegendKey
   /// </remarks>
   public object ClearFormats();
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the legend key.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -26,7 +26,7 @@ public partial interface IMsoLegendKey
   /// </remarks>
   public object Delete();
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the legend key.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>

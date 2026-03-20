@@ -3,10 +3,10 @@ using System.Collections;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `SearchFolders` interface.
+/// Represents the collection of folders included in a file search.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.searchfolders?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.searchfolders?view=office-pia
 /// </remarks>
 public partial interface SearchFolders: InteropCollection<ScopeFolder>
 {

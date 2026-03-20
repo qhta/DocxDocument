@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoSeries` interface.
+/// Represents a chart series.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries?view=office-pia
 /// </remarks>
 public partial interface IMsoSeries
 {
   /// <summary>
-  /// Invokes `_ApplyDataLabels`.
+  /// Applies data labels to the series.
   /// </summary>
   /// <param name="Type">The `Type` parameter.</param>
   /// <param name="IMsoLegendKey">The `IMsoLegendKey` parameter.</param>
@@ -24,7 +24,7 @@ public partial interface IMsoSeries
   (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines);
   /// <summary>
-  /// Invokes `ClearFormats`.
+  /// Clears formatting from the series.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -32,7 +32,7 @@ public partial interface IMsoSeries
   /// </remarks>
   public object ClearFormats();
   /// <summary>
-  /// Invokes `Copy`.
+  /// Copies the series.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -40,7 +40,7 @@ public partial interface IMsoSeries
   /// </remarks>
   public object Copy();
   /// <summary>
-  /// Invokes `DataLabels`.
+  /// Returns data labels for the series.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
@@ -49,7 +49,7 @@ public partial interface IMsoSeries
   /// </remarks>
   public object DataLabels(object Index);
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the series.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -57,7 +57,7 @@ public partial interface IMsoSeries
   /// </remarks>
   public object Delete();
   /// <summary>
-  /// Invokes `ErrorBar`.
+  /// Sets error bar options for the series.
   /// </summary>
   /// <param name="Direction">The `Direction` parameter.</param>
   /// <param name="Include">The `Include` parameter.</param>
@@ -71,7 +71,7 @@ public partial interface IMsoSeries
   public object ErrorBar
     (XlErrorBarDirection Direction, XlErrorBarInclude Include, XlErrorBarType Type, object Amount, object MinusValues);
   /// <summary>
-  /// Invokes `Paste`.
+  /// Pastes data into the series.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -79,7 +79,7 @@ public partial interface IMsoSeries
   /// </remarks>
   public object Paste();
   /// <summary>
-  /// Invokes `Points`.
+  /// Returns points in the series.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
@@ -88,7 +88,7 @@ public partial interface IMsoSeries
   /// </remarks>
   public object Points(object Index);
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the series.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -96,7 +96,7 @@ public partial interface IMsoSeries
   /// </remarks>
   public object Select();
   /// <summary>
-  /// Invokes `Trendlines`.
+  /// Returns trendlines for the series.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
@@ -105,7 +105,7 @@ public partial interface IMsoSeries
   /// </remarks>
   public object Trendlines(object Index);
   /// <summary>
-  /// Invokes `ApplyCustomType`.
+  /// Applies a custom chart type to the series.
   /// </summary>
   /// <param name="ChartType">The `ChartType` parameter.</param>
   /// <remarks>
@@ -113,7 +113,7 @@ public partial interface IMsoSeries
   /// </remarks>
   public void ApplyCustomType(XlChartType ChartType);
   /// <summary>
-  /// Invokes `ApplyDataLabels`.
+  /// Applies data labels to the series with detailed display options.
   /// </summary>
   /// <param name="Type">The `Type` parameter.</param>
   /// <param name="IMsoLegendKey">The `IMsoLegendKey` parameter.</param>

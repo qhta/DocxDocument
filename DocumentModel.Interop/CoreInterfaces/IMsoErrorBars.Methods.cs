@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoErrorBars` interface.
+/// Represents error bars in a chart.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars?view=office-pia
 /// </remarks>
 public partial interface IMsoErrorBars
 {
   /// <summary>
-  /// Invokes `Select`.
+  /// Selects the error bars.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -18,7 +18,7 @@ public partial interface IMsoErrorBars
   /// </remarks>
   public object Select();
   /// <summary>
-  /// Invokes `Delete`.
+  /// Deletes the error bars.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>
@@ -26,7 +26,7 @@ public partial interface IMsoErrorBars
   /// </remarks>
   public object Delete();
   /// <summary>
-  /// Invokes `ClearFormats`.
+  /// Clears formatting from the error bars.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <remarks>

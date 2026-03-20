@@ -3,29 +3,29 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `ScopeFolder` interface.
+/// Represents a searchable folder.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scopefolder?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scopefolder?view=office-pia
 /// </remarks>
 public partial interface ScopeFolder: InteropObject
 {
   /// <summary>
-  /// Gets the `Name` property.
+  /// Gets the folder name.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scopefolder.name?view=office-pia
   /// </remarks>
   public string Name { get; }
   /// <summary>
-  /// Gets the `Path` property.
+  /// Gets the folder path.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scopefolder.path?view=office-pia
   /// </remarks>
   public string Path { get; }
   /// <summary>
-  /// Gets the `ScopeFolders` property.
+  /// Gets the collection of subfolders.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scopefolder.scopefolders?view=office-pia

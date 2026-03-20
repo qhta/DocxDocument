@@ -2,10 +2,10 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IRibbonUI` interface.
+/// Represents the Ribbon UI object returned by the `onLoad` procedure.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui?view=office-pia
 /// </remarks>
 public partial interface IRibbonUI
 {

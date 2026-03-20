@@ -3,10 +3,10 @@ using System.Collections;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoDataLabels` interface.
+/// Represents a collection of data labels.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels?view=office-pia
 /// </remarks>
 public partial interface IMsoDataLabels: IEnumerable
 {
@@ -199,6 +199,12 @@ public partial interface IMsoDataLabels: IEnumerable
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.format?view=office-pia
   /// </remarks>
   public IMsoChartFormat Format { get; }
+  /// <summary>
+  /// Gets a data label by index.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.item?view=office-pia
+  /// </remarks>
   public IMsoDataLabel this[object Index] { get; }
   /// <summary>
   /// Gets or sets the `ShowRange` property.

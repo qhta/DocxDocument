@@ -3,17 +3,17 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `MetaProperty` interface.
+/// Represents a metadata property.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty?view=office-pia
 /// </remarks>
 public partial interface MetaProperty
 {
   /// <summary>
-  /// Invokes `Validate`.
+  /// Validates the metadata property value.
   /// </summary>
-  /// <returns>The result of the operation.</returns>
+  /// <returns>The validation error message, if any.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.validate?view=office-pia
   /// </remarks>

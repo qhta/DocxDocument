@@ -4,15 +4,15 @@ using System.Reflection;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `GroupShapes` interface.
+/// Reserved for internal use.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.groupshapes?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.groupshapes?view=office-pia
 /// </remarks>
 public partial interface GroupShapes
 {
   /// <summary>
-  /// Invokes `Item`.
+  /// Returns a shape from the group by index or name.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
@@ -21,7 +21,7 @@ public partial interface GroupShapes
   /// </remarks>
   public Shape Item(object Index);
   /// <summary>
-  /// Invokes `Range`.
+  /// Returns a shape range from the group.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>

@@ -2,20 +2,20 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `ICTPFactory` interface.
+/// Used to create a custom task pane.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ictpfactory?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ictpfactory?view=office-pia
 /// </remarks>
 public partial interface ICTPFactory
 {
   /// <summary>
-  /// Invokes `CreateCTP`.
+  /// Creates an instance of a custom task pane.
   /// </summary>
   /// <param name="CTPAxID">The `CTPAxID` parameter.</param>
   /// <param name="CTPTitle">The `CTPTitle` parameter.</param>
   /// <param name="CTPParentWindow">The `CTPParentWindow` parameter.</param>
-  /// <returns>The result of the operation.</returns>
+  /// <returns>The created custom task pane.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ictpfactory.createctp?view=office-pia
   /// </remarks>

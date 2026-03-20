@@ -2,22 +2,22 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `ILicValidator` interface.
+/// Reserved for internal use.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicvalidator?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicvalidator?view=office-pia
 /// </remarks>
 public partial interface ILicValidator
 {
   /// <summary>
-  /// Gets or sets the `Products` property.
+  /// Gets the products collection used by the licensing validator.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicvalidator.products?view=office-pia
   /// </remarks>
   public object Products { get; }
   /// <summary>
-  /// Gets or sets the `Selection` property.
+  /// Gets or sets the selected product index.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicvalidator.selection?view=office-pia

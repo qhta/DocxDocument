@@ -3,26 +3,26 @@ using System.Collections;
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `MetaProperties` interface.
+/// Represents a collection of metadata properties.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties?view=office-pia
 /// </remarks>
 public partial interface MetaProperties
 {
   /// <summary>
-  /// Invokes `GetItemByInternalName`.
+  /// Gets a metadata property by its internal name.
   /// </summary>
   /// <param name="InternalName">The `InternalName` parameter.</param>
-  /// <returns>The result of the operation.</returns>
+  /// <returns>The matching metadata property.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.getitembyinternalname?view=office-pia
   /// </remarks>
   public MetaProperty GetItemByInternalName(string InternalName);
   /// <summary>
-  /// Invokes `Validate`.
+  /// Validates all metadata properties.
   /// </summary>
-  /// <returns>The result of the operation.</returns>
+  /// <returns>The validation error message, if any.</returns>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.validate?view=office-pia
   /// </remarks>

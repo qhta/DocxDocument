@@ -2,29 +2,29 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `IMsoChartData` interface.
+/// Represents chart data.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata?view=office-pia
 /// </remarks>
 public partial interface IMsoChartData
 {
   /// <summary>
-  /// Invokes `Activate`.
+  /// Activates chart data editing.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata.activate?view=office-pia
   /// </remarks>
   public void Activate();
   /// <summary>
-  /// Invokes `BreakLink`.
+  /// Breaks the link to the source data.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata.breaklink?view=office-pia
   /// </remarks>
   public void BreakLink();
   /// <summary>
-  /// Invokes `ActivateChartDataWindow`.
+  /// Activates the chart data window.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata.activatechartdatawindow?view=office-pia

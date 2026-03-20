@@ -2,15 +2,15 @@
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
-/// Represents the `ICustomXMLPartEvents` interface.
+/// Events interface for `CustomXMLPart` object events.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents?view=office-pia` for Office interop details.
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents?view=office-pia
 /// </remarks>
 public partial interface ICustomXMLPartEvents
 {
   /// <summary>
-  /// Invokes `NodeAfterInsert`.
+  /// Raised after a custom XML node is inserted.
   /// </summary>
   /// <param name="NewNode">The `NewNode` parameter.</param>
   /// <param name="InUndoRedo">The `InUndoRedo` parameter.</param>
@@ -19,7 +19,7 @@ public partial interface ICustomXMLPartEvents
   /// </remarks>
   public void NodeAfterInsert(CustomXMLNode NewNode, bool InUndoRedo);
   /// <summary>
-  /// Invokes `NodeAfterDelete`.
+  /// Raised after a custom XML node is deleted.
   /// </summary>
   /// <param name="OldNode">The `OldNode` parameter.</param>
   /// <param name="OldParentNode">The `OldParentNode` parameter.</param>
@@ -31,7 +31,7 @@ public partial interface ICustomXMLPartEvents
   public void NodeAfterDelete
     (CustomXMLNode OldNode, CustomXMLNode OldParentNode, CustomXMLNode OldNextSibling, bool InUndoRedo);
   /// <summary>
-  /// Invokes `NodeAfterReplace`.
+  /// Raised after a custom XML node is replaced.
   /// </summary>
   /// <param name="OldNode">The `OldNode` parameter.</param>
   /// <param name="NewNode">The `NewNode` parameter.</param>
