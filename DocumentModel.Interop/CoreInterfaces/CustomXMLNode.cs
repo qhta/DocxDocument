@@ -3,44 +3,44 @@ namespace DocumentModel.Interop.Core;
 
 public interface CustomXMLNode: InteropObject
 {
-  CustomXMLNodes Attributes { get; }
-  string BaseName { get; }
-  CustomXMLNodes ChildNodes { get; }
-  CustomXMLNode FirstChild { get; }
-  CustomXMLNode LastChild { get; }
-  string NamespaceURI { get; }
-  CustomXMLNode NextSibling { get; }
-  MsoCustomXMLNodeType NodeType { get; }
-  string NodeValue { get; set; }
-  object OwnerDocument { get; }
-  CustomXMLPart OwnerPart { get; }
-  CustomXMLNode PreviousSibling { get; }
-  CustomXMLNode ParentNode { get; }
-  string Text { get; set; }
-  string XPath { get; }
-  string XML { get; }
+  public CustomXMLNodes Attributes { get; }
+  public string BaseName { get; }
+  public CustomXMLNodes ChildNodes { get; }
+  public CustomXMLNode FirstChild { get; }
+  public CustomXMLNode LastChild { get; }
+  public string NamespaceURI { get; }
+  public CustomXMLNode NextSibling { get; }
+  public MsoCustomXMLNodeType NodeType { get; }
+  public string NodeValue { get; set; }
+  public object OwnerDocument { get; }
+  public CustomXMLPart OwnerPart { get; }
+  public CustomXMLNode PreviousSibling { get; }
+  public CustomXMLNode ParentNode { get; }
+  public string Text { get; set; }
+  public string XPath { get; }
+  public string XML { get; }
 
-  void AppendChildNode
+  public void AppendChildNode
   (string Name, string NamespaceURI,
     MsoCustomXMLNodeType NodeType, string NodeValue);
 
-  void AppendChildSubtree(string XML);
-  void Delete();
-  bool HasChildNodes();
+  public void AppendChildSubtree(string XML);
+  public void Delete();
+  public bool HasChildNodes();
 
-  void InsertNodeBefore
+  public void InsertNodeBefore
   (string Name, string NamespaceURI,
     MsoCustomXMLNodeType NodeType, string NodeValue,
     CustomXMLNode NextSibling);
 
-  void InsertSubtreeBefore(string XML, CustomXMLNode NextSibling);
-  void RemoveChild(CustomXMLNode Child);
+  public void InsertSubtreeBefore(string XML, CustomXMLNode NextSibling);
+  public void RemoveChild(CustomXMLNode Child);
 
-  void ReplaceChildNode
+  public void ReplaceChildNode
   (CustomXMLNode OldNode, string Name, string NamespaceURI,
     MsoCustomXMLNodeType NodeType, string NodeValue);
 
-  void ReplaceChildSubtree(string XML, CustomXMLNode OldNode);
-  CustomXMLNodes SelectNodes(string XPath);
-  CustomXMLNode SelectSingleNode(string XPath);
+  public void ReplaceChildSubtree(string XML, CustomXMLNode OldNode);
+  public CustomXMLNodes SelectNodes(string XPath);
+  public CustomXMLNode SelectSingleNode(string XPath);
 }

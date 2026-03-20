@@ -3,14 +3,14 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoDataTable
 {
-  bool ShowLegendKey { get; set; }
-  bool HasBorderHorizontal { get; set; }
-  bool HasBorderVertical { get; set; }
-  bool HasBorderOutline { get; set; }
-  IMsoBorder Border { get; }
-  ChartFont Font { get; }
-  void Select();
-  void Delete();
-  object AutoScaleFont { get; set; }
-  IMsoChartFormat Format { get; }
+  public bool ShowLegendKey { get; set; }
+  public bool HasBorderHorizontal { get; set; }
+  public bool HasBorderVertical { get; set; }
+  public bool HasBorderOutline { get; set; }
+  public IMsoBorder Border { get; }
+  public ChartFont Font { get; }
+  public void Select();
+  public void Delete();
+  public object AutoScaleFont { get; set; }
+  public IMsoChartFormat Format { get; }
 }

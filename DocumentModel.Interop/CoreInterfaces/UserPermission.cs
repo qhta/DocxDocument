@@ -4,8 +4,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface UserPermission: InteropObject
 {
-  string UserId { get; }
-  int Permission { get; set; }
-  object ExpirationDate { get; set; }
-  void Remove();
+  public string UserId { get; }
+  public int Permission { get; set; }
+  public object ExpirationDate { get; set; }
+  public void Remove();
 }

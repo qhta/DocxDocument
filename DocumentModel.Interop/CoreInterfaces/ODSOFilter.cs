@@ -3,9 +3,9 @@ namespace DocumentModel.Interop.Core;
 
 public interface ODSOFilter: InteropObject
 {
-  int Index { get; }
-  string Column { get; set; }
-  MsoFilterComparison Comparison { get; set; }
-  string CompareTo { get; set; }
-  MsoFilterConjunction Conjunction { get; set; }
+  public int Index { get; }
+  public string Column { get; set; }
+  public MsoFilterComparison Comparison { get; set; }
+  public string CompareTo { get; set; }
+  public MsoFilterConjunction Conjunction { get; set; }
 }

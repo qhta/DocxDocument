@@ -4,10 +4,10 @@ namespace DocumentModel.Interop.Core;
 
 public interface DocumentProperty
 {
-  void Delete();
-  string Name { get; set; }
-  object Value { get; set; }
-  MsoDocProperties Type { get; set; }
-  bool LinkToContent { get; set; }
-  string LinkSource { get; set; }
+  public void Delete();
+  public string Name { get; set; }
+  public object Value { get; set; }
+  public MsoDocProperties Type { get; set; }
+  public bool LinkToContent { get; set; }
+  public string LinkSource { get; set; }
 }

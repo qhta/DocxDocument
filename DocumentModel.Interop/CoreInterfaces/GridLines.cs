@@ -3,9 +3,9 @@ namespace DocumentModel.Interop.Core;
 
 public interface GridLines
 {
-  string Name { get; }
-  object Select();
-  IMsoBorder Border { get; }
-  object Delete();
-  IMsoChartFormat Format { get; }
+  public string Name { get; }
+  public object Select();
+  public IMsoBorder Border { get; }
+  public object Delete();
+  public IMsoChartFormat Format { get; }
 }

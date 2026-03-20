@@ -4,8 +4,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface MsoDebugOptions_UTManager: InteropObject
 {
-  MsoDebugOptions_UTs UnitTests { get; }
-  void NotifyStartOfTestSuiteRun();
-  void NotifyEndOfTestSuiteRun();
-  bool ReportErrors { get; set; }
+  public MsoDebugOptions_UTs UnitTests { get; }
+  public void NotifyStartOfTestSuiteRun();
+  public void NotifyEndOfTestSuiteRun();
+  public bool ReportErrors { get; set; }
 }

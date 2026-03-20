@@ -3,15 +3,15 @@ namespace DocumentModel.Interop.Core;
 
 public interface BulletFormat2: InteropObject
 {
-  int Character { get; set; }
-  Font2 Font { get; }
-  int Number { get; }
-  void Picture(string FileName);
-  float RelativeSize { get; set; }
-  int StartValue { get; set; }
-  MsoNumberedBulletStyle Style { get; set; }
-  MsoBulletType Type { get; set; }
-  MsoTriState UseTextColor { get; set; }
-  MsoTriState UseTextFont { get; set; }
-  MsoTriState Visible { get; set; }
+  public int Character { get; set; }
+  public Font2 Font { get; }
+  public int Number { get; }
+  public void Picture(string FileName);
+  public float RelativeSize { get; set; }
+  public int StartValue { get; set; }
+  public MsoNumberedBulletStyle Style { get; set; }
+  public MsoBulletType Type { get; set; }
+  public MsoTriState UseTextColor { get; set; }
+  public MsoTriState UseTextFont { get; set; }
+  public MsoTriState Visible { get; set; }
 }

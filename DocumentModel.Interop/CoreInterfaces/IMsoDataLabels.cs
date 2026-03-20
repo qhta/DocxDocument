@@ -4,37 +4,37 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoDataLabels: IEnumerable
 {
-  string Name { get; }
-  object Select();
-  IMsoBorder Border { get; }
-  object Delete();
-  IMsoInterior Interior { get; }
-  ChartFillFormat Fill { get; }
-  IMsoCharacters Characters { get; }
-  ChartFont Font { get; }
-  object HorizontalAlignment { get; set; }
-  object Orientation { get; set; }
-  bool Shadow { get; set; }
-  object VerticalAlignment { get; set; }
-  int ReadingOrder { get; set; }
-  object AutoScaleFont { get; set; }
-  bool AutoText { get; set; }
-  string NumberFormat { get; set; }
-  bool NumberFormatLinked { get; set; }
-  object NumberFormatLocal { get; set; }
-  bool ShowLegendKey { get; set; }
-  object Type { get; set; }
-  XlDataLabelPosition Position { get; set; }
-  bool ShowSeriesName { get; set; }
-  bool ShowCategoryName { get; set; }
-  bool ShowValue { get; set; }
-  bool ShowPercentage { get; set; }
-  bool ShowBubbleSize { get; set; }
-  object Separator { get; set; }
-  int Count { get; }
-  new IEnumerator GetEnumerator();
-  IMsoChartFormat Format { get; }
-  IMsoDataLabel this[object Index] { get; }
-  void Propagate(object Index);
-  bool ShowRange { get; set; }
+  public string Name { get; }
+  public object Select();
+  public IMsoBorder Border { get; }
+  public object Delete();
+  public IMsoInterior Interior { get; }
+  public ChartFillFormat Fill { get; }
+  public IMsoCharacters Characters { get; }
+  public ChartFont Font { get; }
+  public object HorizontalAlignment { get; set; }
+  public object Orientation { get; set; }
+  public bool Shadow { get; set; }
+  public object VerticalAlignment { get; set; }
+  public int ReadingOrder { get; set; }
+  public object AutoScaleFont { get; set; }
+  public bool AutoText { get; set; }
+  public string NumberFormat { get; set; }
+  public bool NumberFormatLinked { get; set; }
+  public object NumberFormatLocal { get; set; }
+  public bool ShowLegendKey { get; set; }
+  public object Type { get; set; }
+  public XlDataLabelPosition Position { get; set; }
+  public bool ShowSeriesName { get; set; }
+  public bool ShowCategoryName { get; set; }
+  public bool ShowValue { get; set; }
+  public bool ShowPercentage { get; set; }
+  public bool ShowBubbleSize { get; set; }
+  public object Separator { get; set; }
+  public int Count { get; }
+  public new IEnumerator GetEnumerator();
+  public IMsoChartFormat Format { get; }
+  public IMsoDataLabel this[object Index] { get; }
+  public void Propagate(object Index);
+  public bool ShowRange { get; set; }
 }

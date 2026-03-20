@@ -5,8 +5,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface ThemeColorScheme: InteropCollection<ThemeColor>
 {
-  ThemeColor Colors(MsoThemeColorSchemeIndex Index);
-  void Load(string FileName);
-  void Save(string FileName);
-  int GetCustomColor(string Name);
+  public ThemeColor Colors(MsoThemeColorSchemeIndex Index);
+  public void Load(string FileName);
+  public void Save(string FileName);
+  public int GetCustomColor(string Name);
 }

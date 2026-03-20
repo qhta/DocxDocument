@@ -3,6 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface ODSOColumns: InteropObject
 {
-  int Count { get; }
-  object Item(object varIndex);
+  public int Count { get; }
+  public object Item(object varIndex);
 }

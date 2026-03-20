@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface SharedWorkspaceFiles: InteropCollection<SharedWorkspaceFile>
 {
-  SharedWorkspaceFile Add(string FileName, object ParentFolder, object OverwriteIfFileAlreadyExists, object KeepInSync);
-  bool ItemCountExceeded { get; }
+  public SharedWorkspaceFile Add(string FileName, object ParentFolder, object OverwriteIfFileAlreadyExists, object KeepInSync);
+  public bool ItemCountExceeded { get; }
 }

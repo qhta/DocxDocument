@@ -3,10 +3,10 @@ namespace DocumentModel.Interop.Core;
 
 public interface WorkflowTemplate: InteropObject
 {
-  string Id { get; }
-  string Name { get; }
-  string Description { get; }
-  string DocumentLibraryName { get; }
-  string DocumentLibraryURL { get; }
-  int Show();
+  public string Id { get; }
+  public string Name { get; }
+  public string Description { get; }
+  public string DocumentLibraryName { get; }
+  public string DocumentLibraryURL { get; }
+  public int Show();
 }

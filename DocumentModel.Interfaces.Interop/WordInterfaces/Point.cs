@@ -43,7 +43,7 @@ public partial interface Point : InteropObject
   /// <summary>
   /// The marker background color index.
   /// </summary>
-  public XlColorIndex MarkerBackgroundColorIndex { get; set; }
+  public Core.XlColorIndex MarkerBackgroundColorIndex { get; set; }
 
   /// <summary>
   /// The marker foreground color.
@@ -53,7 +53,7 @@ public partial interface Point : InteropObject
   /// <summary>
   /// The marker foreground color index.
   /// </summary>
-  public XlColorIndex MarkerForegroundColorIndex { get; set; }
+  public Core.XlColorIndex MarkerForegroundColorIndex { get; set; }
 
   /// <summary>
   /// The marker size.
@@ -63,12 +63,12 @@ public partial interface Point : InteropObject
   /// <summary>
   /// The marker style.
   /// </summary>
-  public XlMarkerStyle MarkerStyle { get; set; }
+  public Core.XlMarkerStyle MarkerStyle { get; set; }
 
   /// <summary>
   /// The picture type.
   /// </summary>
-  public XlChartPictureType PictureType { get; set; }
+  public Core.XlChartPictureType PictureType { get; set; }
 
   /// <summary>
   /// The picture unit.

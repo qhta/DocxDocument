@@ -3,18 +3,18 @@ namespace DocumentModel.Interop.Core;
 
 public interface CalloutFormat: InteropObject
 {
-  void AutomaticLength();
-  void CustomDrop(float Drop);
-  void CustomLength(float Length);
-  void PresetDrop(MsoCalloutDropType DropType);
-  MsoTriState Accent { get; set; }
-  MsoCalloutAngleType Angle { get; set; }
-  MsoTriState AutoAttach { get; set; }
-  MsoTriState AutoLength { get; }
-  MsoTriState Border { get; set; }
-  float Drop { get; }
-  MsoCalloutDropType DropType { get; }
-  float Gap { get; set; }
-  float Length { get; }
-  MsoCalloutType Type { get; set; }
+  public void AutomaticLength();
+  public void CustomDrop(float Drop);
+  public void CustomLength(float Length);
+  public void PresetDrop(MsoCalloutDropType DropType);
+  public MsoTriState Accent { get; set; }
+  public MsoCalloutAngleType Angle { get; set; }
+  public MsoTriState AutoAttach { get; set; }
+  public MsoTriState AutoLength { get; }
+  public MsoTriState Border { get; set; }
+  public float Drop { get; }
+  public MsoCalloutDropType DropType { get; }
+  public float Gap { get; set; }
+  public float Length { get; }
+  public MsoCalloutType Type { get; set; }
 }

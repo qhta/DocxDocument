@@ -3,7 +3,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface OfficeTheme: InteropObject
 {
-  ThemeColorScheme ThemeColorScheme { get; }
-  ThemeFontScheme ThemeFontScheme { get; }
-  ThemeEffectScheme ThemeEffectScheme { get; }
+  public ThemeColorScheme ThemeColorScheme { get; }
+  public ThemeFontScheme ThemeFontScheme { get; }
+  public ThemeEffectScheme ThemeEffectScheme { get; }
 }

@@ -8,7 +8,7 @@ public partial interface Series : InteropObject
   /// <summary>
   /// The axis group.
   /// </summary>
-  public XlAxisGroup AxisGroup { get; set; }
+  public Core.XlAxisGroup AxisGroup { get; set; }
 
   /// <summary>
   /// The border.
@@ -78,7 +78,7 @@ public partial interface Series : InteropObject
   /// <summary>
   /// The marker background color index.
   /// </summary>
-  public XlColorIndex MarkerBackgroundColorIndex { get; set; }
+  public Core.XlColorIndex MarkerBackgroundColorIndex { get; set; }
 
   /// <summary>
   /// The marker foreground color.
@@ -88,7 +88,7 @@ public partial interface Series : InteropObject
   /// <summary>
   /// The marker foreground color index.
   /// </summary>
-  public XlColorIndex MarkerForegroundColorIndex { get; set; }
+  public Core.XlColorIndex MarkerForegroundColorIndex { get; set; }
 
   /// <summary>
   /// The marker size.
@@ -98,7 +98,7 @@ public partial interface Series : InteropObject
   /// <summary>
   /// The marker style.
   /// </summary>
-  public XlMarkerStyle MarkerStyle { get; set; }
+  public Core.XlMarkerStyle MarkerStyle { get; set; }
 
   /// <summary>
   /// The name.
@@ -108,7 +108,7 @@ public partial interface Series : InteropObject
   /// <summary>
   /// The picture type.
   /// </summary>
-  public XlChartPictureType PictureType { get; set; }
+  public Core.XlChartPictureType PictureType { get; set; }
 
   /// <summary>
   /// The picture unit.
@@ -133,7 +133,7 @@ public partial interface Series : InteropObject
   /// <summary>
   /// The chart type.
   /// </summary>
-  //public Core.XlChartType ChartType { get; set; }
+  public Core.XlChartType ChartType { get; set; }
 
   /// <summary>
   /// The values.
@@ -153,7 +153,7 @@ public partial interface Series : InteropObject
   /// <summary>
   /// The bar shape.
   /// </summary>
-  public XlBarShape BarShape { get; set; }
+  public Core.XlBarShape BarShape { get; set; }
 
   /// <summary>
   /// The apply pict to sides.
@@ -213,7 +213,7 @@ public partial interface Series : InteropObject
   /// <summary>
   /// The invert color index.
   /// </summary>
-  public XlColorIndex InvertColorIndex { get; set; }
+  public Core.XlColorIndex InvertColorIndex { get; set; }
 
   /// <summary>
   /// The is filtered.

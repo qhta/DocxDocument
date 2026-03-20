@@ -5,5 +5,5 @@ namespace DocumentModel.Interop.Core;
 
 public interface HTMLProjectItems: InteropCollection<HTMLProjectItem>
 {
-  HTMLProjectItem Item(ref object Index);
+  public HTMLProjectItem Item(ref object Index);
 }

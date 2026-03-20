@@ -4,11 +4,11 @@ namespace DocumentModel.Interop.Core;
 
 public interface Trendlines: IEnumerable
 {
-  IMsoTrendline Add
+  public IMsoTrendline Add
   (XlTrendlineType Type, object Order, object Period, object Forward, object Backward,
     object Intercept, object DisplayEquation, object DisplayRSquared, object Name);
 
-  int Count { get; }
-  new IEnumerator GetEnumerator();
-  IMsoTrendline this[object Index] { get; }
+  public int Count { get; }
+  public new IEnumerator GetEnumerator();
+  public IMsoTrendline this[object Index] { get; }
 }

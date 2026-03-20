@@ -3,9 +3,9 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoDropLines
 {
-  string Name { get; }
-  void Select();
-  IMsoBorder Border { get; }
-  void Delete();
-  IMsoChartFormat Format { get; }
+  public string Name { get; }
+  public void Select();
+  public IMsoBorder Border { get; }
+  public void Delete();
+  public IMsoChartFormat Format { get; }
 }

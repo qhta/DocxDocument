@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface BalloonLabel: InteropObject
 {
-  string Item { get; }
-  string Name { get; }
-  string Text { get; set; }
+  public string Item { get; }
+  public string Name { get; }
+  public string Text { get; set; }
 }

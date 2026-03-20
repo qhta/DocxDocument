@@ -3,6 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface CustomTaskPaneEvents
 {
-  void VisibleStateChange(CustomTaskPane CustomTaskPaneInst);
-  void DockPositionStateChange(CustomTaskPane CustomTaskPaneInst);
+  public void VisibleStateChange(CustomTaskPane CustomTaskPaneInst);
+  public void DockPositionStateChange(CustomTaskPane CustomTaskPaneInst);
 }

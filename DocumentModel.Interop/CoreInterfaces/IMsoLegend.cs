@@ -3,22 +3,22 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoLegend
 {
-  string Name { get; }
-  object Select();
-  IMsoBorder Border { get; }
-  object Delete();
-  ChartFont Font { get; }
-  object LegendEntries(object Index);
-  XlLegendPosition Position { get; set; }
-  bool Shadow { get; set; }
-  object Clear();
-  double Height { get; set; }
-  IMsoInterior Interior { get; }
-  ChartFillFormat Fill { get; }
-  double Left { get; set; }
-  double Top { get; set; }
-  double Width { get; set; }
-  object AutoScaleFont { get; set; }
-  bool IncludeInLayout { get; set; }
-  IMsoChartFormat Format { get; }
+  public string Name { get; }
+  public object Select();
+  public IMsoBorder Border { get; }
+  public object Delete();
+  public ChartFont Font { get; }
+  public object LegendEntries(object Index);
+  public XlLegendPosition Position { get; set; }
+  public bool Shadow { get; set; }
+  public object Clear();
+  public double Height { get; set; }
+  public IMsoInterior Interior { get; }
+  public ChartFillFormat Fill { get; }
+  public double Left { get; set; }
+  public double Top { get; set; }
+  public double Width { get; set; }
+  public object AutoScaleFont { get; set; }
+  public bool IncludeInLayout { get; set; }
+  public IMsoChartFormat Format { get; }
 }

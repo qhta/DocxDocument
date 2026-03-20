@@ -3,20 +3,20 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoPlotArea
 {
-  string Name { get; }
-  object Select();
-  IMsoBorder Border { get; }
-  object ClearFormats();
-  double Height { get; set; }
-  IMsoInterior Interior { get; }
-  ChartFillFormat Fill { get; }
-  double Left { get; set; }
-  double Top { get; set; }
-  double Width { get; set; }
-  double InsideLeft { get; set; }
-  double InsideTop { get; set; }
-  double InsideWidth { get; set; }
-  double InsideHeight { get; set; }
-  XlChartElementPosition Position { get; set; }
-  IMsoChartFormat Format { get; }
+  public string Name { get; }
+  public object Select();
+  public IMsoBorder Border { get; }
+  public object ClearFormats();
+  public double Height { get; set; }
+  public IMsoInterior Interior { get; }
+  public ChartFillFormat Fill { get; }
+  public double Left { get; set; }
+  public double Top { get; set; }
+  public double Width { get; set; }
+  public double InsideLeft { get; set; }
+  public double InsideTop { get; set; }
+  public double InsideWidth { get; set; }
+  public double InsideHeight { get; set; }
+  public XlChartElementPosition Position { get; set; }
+  public IMsoChartFormat Format { get; }
 }

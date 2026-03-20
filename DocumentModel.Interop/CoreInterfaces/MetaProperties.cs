@@ -4,8 +4,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface MetaProperties: InteropDictionary<string, MetaProperty>
 {
-  MetaProperty GetItemByInternalName(string InternalName);
-  string Validate();
-  string ValidationError { get; }
-  string SchemaXml { get; }
+  public MetaProperty GetItemByInternalName(string InternalName);
+  public string Validate();
+  public string ValidationError { get; }
+  public string SchemaXml { get; }
 }

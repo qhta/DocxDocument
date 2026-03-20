@@ -4,9 +4,9 @@ namespace DocumentModel.Interop.Core;
 
 public interface PropertyTests: InteropCollection<PropertyTest>
 {
-  void Add
+  public void Add
   (string Name, MsoCondition Condition, object Value, object SecondValue,
     MsoConnector Connector);
 
-  void Remove(int Index);
+  public void Remove(int Index);
 }

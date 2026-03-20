@@ -4,9 +4,9 @@ namespace DocumentModel.Interop.Core;
 
 public interface PropertyTest: InteropObject
 {
-  string Name { get; }
-  MsoCondition Condition { get; }
-  object Value { get; }
-  object SecondValue { get; }
-  MsoConnector Connector { get; }
+  public string Name { get; }
+  public MsoCondition Condition { get; }
+  public object Value { get; }
+  public object SecondValue { get; }
+  public MsoConnector Connector { get; }
 }

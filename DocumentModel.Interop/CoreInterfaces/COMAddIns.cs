@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface COMAddIns: InteropCollection<COMAddIn>
 {
-  COMAddIn Item(ref object Index);
-  void Update();
-  void SetAppModal(bool varfModal);
+  public COMAddIn Item(ref object Index);
+  public void Update();
+  public void SetAppModal(bool varfModal);
 }

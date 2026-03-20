@@ -3,8 +3,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface SmartArtColor: InteropObject
 {
-  string Id { get; }
-  string Name { get; }
-  string Description { get; }
-  string Category { get; }
+  public string Id { get; }
+  public string Name { get; }
+  public string Description { get; }
+  public string Category { get; }
 }

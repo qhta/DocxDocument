@@ -5,5 +5,5 @@ namespace DocumentModel.Interop.Core;
 
 public interface FileDialogSelectedItems: InteropCollection<string>
 {
-  string Item(int Index);
+  public string Item(int Index);
 }

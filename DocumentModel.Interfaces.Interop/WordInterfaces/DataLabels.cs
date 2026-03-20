@@ -93,7 +93,7 @@ public partial interface DataLabels : InteropObject, InteropCollection<DataLabel
   /// <summary>
   /// The position.
   /// </summary>
-  public XlDataLabelPosition Position { get; set; }
+  public Core.XlDataLabelPosition Position { get; set; }
 
   /// <summary>
   /// The show series name.

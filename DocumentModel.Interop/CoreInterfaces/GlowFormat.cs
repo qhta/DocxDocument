@@ -3,7 +3,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface GlowFormat: InteropObject
 {
-  float Radius { get; set; }
-  ColorFormat Color { get; }
-  float Transparency { get; set; }
+  public float Radius { get; set; }
+  public ColorFormat Color { get; }
+  public float Transparency { get; set; }
 }

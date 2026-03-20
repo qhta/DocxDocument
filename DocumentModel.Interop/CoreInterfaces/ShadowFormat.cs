@@ -3,17 +3,17 @@ namespace DocumentModel.Interop.Core;
 
 public interface ShadowFormat: InteropObject
 {
-  void IncrementOffsetX(float Increment);
-  void IncrementOffsetY(float Increment);
-  ColorFormat ForeColor { get; set; }
-  MsoTriState Obscured { get; set; }
-  float OffsetX { get; set; }
-  float OffsetY { get; set; }
-  float Transparency { get; set; }
-  MsoShadowType Type { get; set; }
-  MsoTriState Visible { get; set; }
-  MsoShadowStyle Style { get; set; }
-  float Blur { get; set; }
-  float Size { get; set; }
-  MsoTriState RotateWithShape { get; set; }
+  public void IncrementOffsetX(float Increment);
+  public void IncrementOffsetY(float Increment);
+  public ColorFormat ForeColor { get; set; }
+  public MsoTriState Obscured { get; set; }
+  public float OffsetX { get; set; }
+  public float OffsetY { get; set; }
+  public float Transparency { get; set; }
+  public MsoShadowType Type { get; set; }
+  public MsoTriState Visible { get; set; }
+  public MsoShadowStyle Style { get; set; }
+  public float Blur { get; set; }
+  public float Size { get; set; }
+  public MsoTriState RotateWithShape { get; set; }
 }

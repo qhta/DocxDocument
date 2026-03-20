@@ -18,7 +18,7 @@ public partial interface ErrorBars : InteropObject
   /// <summary>
   /// The end style.
   /// </summary>
-  public XlEndStyleCap EndStyle { get; set; }
+  public Core.XlEndStyleCap EndStyle { get; set; }
 
   /// <summary>
   /// The format.

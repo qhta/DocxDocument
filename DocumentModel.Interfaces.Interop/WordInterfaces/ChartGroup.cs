@@ -8,7 +8,7 @@ public partial interface ChartGroup : InteropObject
   /// <summary>
   /// The axis group.
   /// </summary>
-  public XlAxisGroup AxisGroup { get; set; }
+  public Core.XlAxisGroup AxisGroup { get; set; }
 
   /// <summary>
   /// The doughnut hole size.
@@ -108,7 +108,7 @@ public partial interface ChartGroup : InteropObject
   /// <summary>
   /// The size represents.
   /// </summary>
-  public XlSizeRepresents SizeRepresents { get; set; }
+  public Core.XlSizeRepresents SizeRepresents { get; set; }
 
   /// <summary>
   /// The bubble scale.
@@ -123,7 +123,7 @@ public partial interface ChartGroup : InteropObject
   /// <summary>
   /// The split type.
   /// </summary>
-  public XlChartSplitType SplitType { get; set; }
+  public Core.XlChartSplitType SplitType { get; set; }
 
   /// <summary>
   /// The split value.
