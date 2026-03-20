@@ -3,7 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoTrendline
 {
-  object Parent { get; }
   double Backward { get; set; }
   IMsoBorder Border { get; }
   object ClearFormats();
@@ -22,8 +21,6 @@ public interface IMsoTrendline
   object Select();
   XlTrendlineType Type { get; set; }
   IMsoChartFormat Format { get; }
-  object Application { get; }
-  int Creator { get; }
   double Backward2 { get; set; }
   double Forward2 { get; set; }
 }

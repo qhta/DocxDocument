@@ -20,14 +20,11 @@ public interface IMsoDisplayUnitLabel: IMsoChartTitle
   new object Delete();
   new IMsoBorder Border { get; }
   new string Name { get; }
-  new object Parent { get; }
   new object Select();
   new bool IncludeInLayout { get; set; }
   new XlChartElementPosition Position { get; set; }
   new IMsoChartFormat Format { get; }
   new double Height { get; }
-  new object Application { get; }
-  new int Creator { get; }
   new double Width { get; }
   new string Formula { get; set; }
   new string FormulaR1C1 { get; set; }

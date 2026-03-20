@@ -3,7 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoLegendKey
 {
-  object Parent { get; }
   IMsoBorder Border { get; }
   object ClearFormats();
   object Delete();
@@ -26,7 +25,5 @@ public interface IMsoLegendKey
   double Height { get; }
   bool Shadow { get; set; }
   IMsoChartFormat Format { get; }
-  object Application { get; }
-  int Creator { get; }
   double PictureUnit2 { get; set; }
 }

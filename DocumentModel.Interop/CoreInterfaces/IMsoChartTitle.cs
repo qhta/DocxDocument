@@ -20,14 +20,11 @@ public interface IMsoChartTitle
   object Delete();
   IMsoBorder Border { get; }
   string Name { get; }
-  object Parent { get; }
   object Select();
   bool IncludeInLayout { get; set; }
   XlChartElementPosition Position { get; set; }
   IMsoChartFormat Format { get; }
   double Height { get; }
-  object Application { get; }
-  int Creator { get; }
   double Width { get; }
   string Formula { get; set; }
   string FormulaR1C1 { get; set; }

@@ -17,7 +17,4 @@ public interface ChartFont
   object Subscript { get; set; }
   object Superscript { get; set; }
   object Underline { get; set; }
-  object Application { get; }
-  int Creator { get; }
-  object Parent { get; }
 }

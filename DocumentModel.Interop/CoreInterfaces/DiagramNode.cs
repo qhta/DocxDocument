@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface DiagramNode: _IMsoDispObj
+public interface DiagramNode: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-
   DiagramNode AddNode
   (MsoRelativeNodePosition Pos,
     MsoDiagramNodeType NodeType);
@@ -21,7 +18,6 @@ public interface DiagramNode: _IMsoDispObj
   void TransferChildren(DiagramNode ReceivingNode);
   DiagramNode NextNode();
   DiagramNode PrevNode();
-  object Parent { get; }
   DiagramNodeChildren Children { get; }
   Shape Shape { get; }
   DiagramNode Root { get; }

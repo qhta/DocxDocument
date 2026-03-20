@@ -48,7 +48,7 @@ public interface DefaultWebOptions : InteropObject
   /// <summary>
   /// The screen size.
   /// </summary>
-  public Core.MsoScreenSize ScreenSize { get; set; }
+  //public Core.MsoScreenSize ScreenSize { get; set; }
   /// <summary>
   /// The pixels per inch.
   /// </summary>
@@ -56,7 +56,7 @@ public interface DefaultWebOptions : InteropObject
   /// <summary>
   /// The encoding.
   /// </summary>
-  public Core.MsoEncoding Encoding { get; set; }
+  //public Core.MsoEncoding Encoding { get; set; }
   /// <summary>
   /// The always save in default encoding.
   /// </summary>
@@ -64,7 +64,7 @@ public interface DefaultWebOptions : InteropObject
   /// <summary>
   /// The fonts.
   /// </summary>
-  public Core.WebPageFonts Fonts { get; }
+  //public Core.WebPageFonts Fonts { get; }
   /// <summary>
   /// The folder suffix.
   /// </summary>
@@ -72,7 +72,7 @@ public interface DefaultWebOptions : InteropObject
   /// <summary>
   /// The target browser.
   /// </summary>
-  public Core.MsoTargetBrowser TargetBrowser { get; set; }
+  //public Core.MsoTargetBrowser TargetBrowser { get; set; }
   /// <summary>
   /// The save new web pages as web archives.
   /// </summary>

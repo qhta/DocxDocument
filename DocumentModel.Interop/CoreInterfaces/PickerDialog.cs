@@ -1,10 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface PickerDialog: _IMsoDispObj
+public interface PickerDialog: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   string DataHandlerId { get; set; }
   string Title { get; set; }
   PickerProperties Properties { get; }

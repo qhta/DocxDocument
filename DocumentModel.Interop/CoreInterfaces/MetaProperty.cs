@@ -2,10 +2,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface MetaProperty: _IMsoDispObj
+public interface MetaProperty: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   object Value { get; set; }
   string Name { get; }
   string Id { get; }
@@ -14,5 +12,4 @@ public interface MetaProperty: _IMsoDispObj
   MsoMetaPropertyType Type { get; }
   string Validate();
   string ValidationError { get; }
-  object Parent { get; }
 }

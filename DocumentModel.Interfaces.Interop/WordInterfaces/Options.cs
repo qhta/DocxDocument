@@ -923,7 +923,7 @@ public partial interface Options : InteropObject
   /// <summary>
   /// The default text encoding.
   /// </summary>
-  public Core.MsoEncoding DefaultTextEncoding { get; set; }
+  //public Core.MsoEncoding DefaultTextEncoding { get; set; }
 
   /// <summary>
   /// The label smart tags.

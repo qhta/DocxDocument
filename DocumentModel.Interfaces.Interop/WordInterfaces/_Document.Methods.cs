@@ -427,15 +427,15 @@ public partial interface _Document: InteropObject
   /// </summary>
   public LetterContent GetLetterContent();
 
-  /// <summary>
-  /// Returns the workflow tasks assigned to a document.
-  /// </summary>
-  public Core.WorkflowTasks GetWorkflowTasks();
+  ///// <summary>
+  ///// Returns the workflow tasks assigned to a document.
+  ///// </summary>
+  //public Core.WorkflowTasks GetWorkflowTasks();
 
-  /// <summary>
-  /// Returns the workflow templates attached to a document.
-  /// </summary>
-  public Core.WorkflowTemplates GetWorkflowTemplates();
+  ///// <summary>
+  ///// Returns the workflow templates attached to a document.
+  ///// </summary>
+  //public Core.WorkflowTemplates GetWorkflowTemplates();
 
   /// <summary>
   /// Returns a Range object that represents the start position of the specified item.

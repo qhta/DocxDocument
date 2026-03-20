@@ -13,7 +13,7 @@ public partial interface ShadowFormat : InteropObject
   /// <summary>
   /// The obscured.
   /// </summary>
-  public Core.MsoTriState Obscured { get; set; }
+  //public Core.MsoTriState Obscured { get; set; }
 
   /// <summary>
   /// The offset x.
@@ -33,17 +33,17 @@ public partial interface ShadowFormat : InteropObject
   /// <summary>
   /// The type.
   /// </summary>
-  public Core.MsoShadowType Type { get; set; }
+  //public Core.MsoShadowType Type { get; set; }
 
   /// <summary>
   /// The visible.
   /// </summary>
-  public Core.MsoTriState Visible { get; set; }
+  //public Core.MsoTriState Visible { get; set; }
 
   /// <summary>
   /// The style.
   /// </summary>
-  public Core.MsoShadowStyle Style { get; set; }
+  //public Core.MsoShadowStyle Style { get; set; }
 
   /// <summary>
   /// The blur.
@@ -58,5 +58,5 @@ public partial interface ShadowFormat : InteropObject
   /// <summary>
   /// The rotate with shape.
   /// </summary>
-  public Core.MsoTriState RotateWithShape { get; set; }
+  //public Core.MsoTriState RotateWithShape { get; set; }
 }

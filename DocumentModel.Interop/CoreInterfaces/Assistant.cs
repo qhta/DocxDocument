@@ -2,11 +2,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface Assistant: _IMsoDispObj
+public interface Assistant: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   void Move(int xLeft, int yTop);
   int Top { get; set; }
   int Left { get; set; }

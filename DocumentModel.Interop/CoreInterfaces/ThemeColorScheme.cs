@@ -3,11 +3,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface ThemeColorScheme: _IMsoDispObj, IEnumerable
+public interface ThemeColorScheme: InteropObject, IEnumerable
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   int Count { get; }
   ThemeColor Colors(MsoThemeColorSchemeIndex Index);
   new IEnumerator GetEnumerator();

@@ -4,7 +4,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoDataLabels: IEnumerable
 {
-  object Parent { get; }
   string Name { get; }
   object Select();
   IMsoBorder Border { get; }
@@ -35,8 +34,6 @@ public interface IMsoDataLabels: IEnumerable
   int Count { get; }
   new IEnumerator GetEnumerator();
   IMsoChartFormat Format { get; }
-  object Application { get; }
-  int Creator { get; }
   IMsoDataLabel this[object Index] { get; }
   void Propagate(object Index);
   bool ShowRange { get; set; }

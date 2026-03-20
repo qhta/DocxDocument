@@ -1,10 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ServerPolicy: _IMsoDispObj
+public interface ServerPolicy: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   PolicyItem this[object Index] { get; }
   string Id { get; }
   string Name { get; }
@@ -12,5 +10,4 @@ public interface ServerPolicy: _IMsoDispObj
   string Statement { get; }
   int Count { get; }
   bool BlockPreview { get; }
-  object Parent { get; }
 }

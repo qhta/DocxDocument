@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface TextFrame2: _IMsoDispObj
+public interface TextFrame2: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   float MarginBottom { get; set; }
   float MarginLeft { get; set; }
   float MarginRight { get; set; }

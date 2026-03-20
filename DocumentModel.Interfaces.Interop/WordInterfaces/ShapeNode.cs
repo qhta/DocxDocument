@@ -8,7 +8,7 @@ public interface ShapeNode : InteropObject
   /// <summary>
   /// The editing type.
   /// </summary>
-  public Core.MsoEditingType EditingType { get; }
+  //public Core.MsoEditingType EditingType { get; }
   /// <summary>
   /// The points.
   /// </summary>
@@ -16,6 +16,6 @@ public interface ShapeNode : InteropObject
   /// <summary>
   /// The segment type.
   /// </summary>
-  public Core.MsoSegmentType SegmentType { get; }
+  //public Core.MsoSegmentType SegmentType { get; }
 
 }

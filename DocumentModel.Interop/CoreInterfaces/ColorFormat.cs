@@ -2,11 +2,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface ColorFormat: _IMsoDispObj
+public interface ColorFormat: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   int RGB { get; set; }
   int SchemeColor { get; set; }
   MsoColorType Type { get; }

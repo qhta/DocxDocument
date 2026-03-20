@@ -5,7 +5,6 @@ public interface IMsoPlotArea
 {
   string Name { get; }
   object Select();
-  object Parent { get; }
   IMsoBorder Border { get; }
   object ClearFormats();
   double Height { get; set; }
@@ -20,6 +19,4 @@ public interface IMsoPlotArea
   double InsideHeight { get; set; }
   XlChartElementPosition Position { get; set; }
   IMsoChartFormat Format { get; }
-  object Application { get; }
-  int Creator { get; }
 }

@@ -1,10 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ContactCard: _IMsoDispObj
+public interface ContactCard: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   void Close();
 
   void Show

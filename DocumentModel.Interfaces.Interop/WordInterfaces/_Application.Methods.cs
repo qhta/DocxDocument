@@ -25,7 +25,7 @@ public partial interface _Application
   /// <summary>
   /// The file dialog.
   /// </summary>
-  public Core.FileDialog get_FileDialog(Core.MsoFileDialogType FileDialogType);
+  //public Core.FileDialog get_FileDialog(Core.MsoFileDialogType FileDialogType);
 
   /// <summary>
   /// Quits Microsoft Word and optionally saves or routes the open documents.

@@ -18,37 +18,37 @@ public partial interface ThreeDFormat : InteropObject
   /// <summary>
   /// The extrusion color type.
   /// </summary>
-  public Core.MsoExtrusionColorType ExtrusionColorType { get; set; }
+  //public Core.MsoExtrusionColorType ExtrusionColorType { get; set; }
 
   /// <summary>
   /// The perspective.
   /// </summary>
-  public Core.MsoTriState Perspective { get; set; }
+  //public Core.MsoTriState Perspective { get; set; }
 
   /// <summary>
   /// The preset extrusion direction.
   /// </summary>
-  public Core.MsoPresetExtrusionDirection PresetExtrusionDirection { get; }
+  //public Core.MsoPresetExtrusionDirection PresetExtrusionDirection { get; }
 
   /// <summary>
   /// The preset lighting direction.
   /// </summary>
-  public Core.MsoPresetLightingDirection PresetLightingDirection { get; set; }
+  //public Core.MsoPresetLightingDirection PresetLightingDirection { get; set; }
 
   /// <summary>
   /// The preset lighting softness.
   /// </summary>
-  public Core.MsoPresetLightingSoftness PresetLightingSoftness { get; set; }
+  //public Core.MsoPresetLightingSoftness PresetLightingSoftness { get; set; }
 
   /// <summary>
   /// The preset material.
   /// </summary>
-  public Core.MsoPresetMaterial PresetMaterial { get; set; }
+  //public Core.MsoPresetMaterial PresetMaterial { get; set; }
 
   /// <summary>
   /// The preset three dformat.
   /// </summary>
-  public Core.MsoPresetThreeDFormat PresetThreeDFormat { get; }
+  //public Core.MsoPresetThreeDFormat PresetThreeDFormat { get; }
 
   /// <summary>
   /// The rotation x.
@@ -63,12 +63,12 @@ public partial interface ThreeDFormat : InteropObject
   /// <summary>
   /// The visible.
   /// </summary>
-  public Core.MsoTriState Visible { get; set; }
+  //public Core.MsoTriState Visible { get; set; }
 
   /// <summary>
   /// The preset lighting.
   /// </summary>
-  public Core.MsoLightRigType PresetLighting { get; set; }
+  //public Core.MsoLightRigType PresetLighting { get; set; }
 
   /// <summary>
   /// The z.
@@ -78,7 +78,7 @@ public partial interface ThreeDFormat : InteropObject
   /// <summary>
   /// The bevel top type.
   /// </summary>
-  public Core.MsoBevelType BevelTopType { get; set; }
+  //public Core.MsoBevelType BevelTopType { get; set; }
 
   /// <summary>
   /// The bevel top inset.
@@ -93,7 +93,7 @@ public partial interface ThreeDFormat : InteropObject
   /// <summary>
   /// The bevel bottom type.
   /// </summary>
-  public Core.MsoBevelType BevelBottomType { get; set; }
+  //public Core.MsoBevelType BevelBottomType { get; set; }
 
   /// <summary>
   /// The bevel bottom inset.
@@ -108,7 +108,7 @@ public partial interface ThreeDFormat : InteropObject
   /// <summary>
   /// The preset camera.
   /// </summary>
-  public Core.MsoPresetCamera PresetCamera { get; }
+  //public Core.MsoPresetCamera PresetCamera { get; }
 
   /// <summary>
   /// The rotation z.
@@ -133,7 +133,7 @@ public partial interface ThreeDFormat : InteropObject
   /// <summary>
   /// The project text.
   /// </summary>
-  public Core.MsoTriState ProjectText { get; set; }
+  //public Core.MsoTriState ProjectText { get; set; }
 
   /// <summary>
   /// The light angle.

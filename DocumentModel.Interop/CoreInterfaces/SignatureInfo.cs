@@ -1,10 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface SignatureInfo: _IMsoDispObj
+public interface SignatureInfo: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   bool ReadOnly { get; }
   string SignatureProvider { get; }
   string SignatureText { get; set; }

@@ -8,17 +8,17 @@ public partial interface TextEffectFormat : InteropObject
   /// <summary>
   /// The alignment.
   /// </summary>
-  public Core.MsoTextEffectAlignment Alignment { get; set; }
+  //public Core.MsoTextEffectAlignment Alignment { get; set; }
 
   /// <summary>
   /// The font bold.
   /// </summary>
-  public Core.MsoTriState FontBold { get; set; }
+  //public Core.MsoTriState FontBold { get; set; }
 
   /// <summary>
   /// The font italic.
   /// </summary>
-  public Core.MsoTriState FontItalic { get; set; }
+  //public Core.MsoTriState FontItalic { get; set; }
 
   /// <summary>
   /// The font name.
@@ -33,27 +33,27 @@ public partial interface TextEffectFormat : InteropObject
   /// <summary>
   /// The kerned pairs.
   /// </summary>
-  public Core.MsoTriState KernedPairs { get; set; }
+  //public Core.MsoTriState KernedPairs { get; set; }
 
   /// <summary>
   /// The normalized height.
   /// </summary>
-  public Core.MsoTriState NormalizedHeight { get; set; }
+  //public Core.MsoTriState NormalizedHeight { get; set; }
 
   /// <summary>
   /// The preset shape.
   /// </summary>
-  public Core.MsoPresetTextEffectShape PresetShape { get; set; }
+  //public Core.MsoPresetTextEffectShape PresetShape { get; set; }
 
   /// <summary>
   /// The preset text effect.
   /// </summary>
-  public Core.MsoPresetTextEffect PresetTextEffect { get; set; }
+  //public Core.MsoPresetTextEffect PresetTextEffect { get; set; }
 
   /// <summary>
   /// The rotated chars.
   /// </summary>
-  public Core.MsoTriState RotatedChars { get; set; }
+  //public Core.MsoTriState RotatedChars { get; set; }
 
   /// <summary>
   /// The text.

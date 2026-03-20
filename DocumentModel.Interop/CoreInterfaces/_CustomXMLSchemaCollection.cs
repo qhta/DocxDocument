@@ -2,11 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface _CustomXMLSchemaCollection: _IMsoDispObj, IEnumerable
+public interface _CustomXMLSchemaCollection: InteropObject, IEnumerable
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   int Count { get; }
   CustomXMLSchema this[object Index] { get; }
   string NamespaceURI { get; }

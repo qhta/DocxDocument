@@ -8,7 +8,7 @@ public partial interface ConnectorFormat : InteropObject
   /// <summary>
   /// The begin connected.
   /// </summary>
-  public Core.MsoTriState BeginConnected { get; }
+  //public Core.MsoTriState BeginConnected { get; }
 
   /// <summary>
   /// The begin connected shape.
@@ -23,7 +23,7 @@ public partial interface ConnectorFormat : InteropObject
   /// <summary>
   /// The end connected.
   /// </summary>
-  public Core.MsoTriState EndConnected { get; }
+  //public Core.MsoTriState EndConnected { get; }
 
   /// <summary>
   /// The end connected shape.
@@ -38,5 +38,5 @@ public partial interface ConnectorFormat : InteropObject
   /// <summary>
   /// The type.
   /// </summary>
-  public Core.MsoConnectorType Type { get; set; }
+  //public Core.MsoConnectorType Type { get; set; }
 }

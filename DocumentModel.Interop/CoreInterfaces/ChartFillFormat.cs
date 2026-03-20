@@ -24,7 +24,4 @@ public interface ChartFillFormat
   int TextureType { get; }
   int Type { get; }
   int Visible { get; set; }
-  object Application { get; }
-  int Creator { get; }
-  object Parent { get; }
 }

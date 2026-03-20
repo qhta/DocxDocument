@@ -11,9 +11,6 @@ public interface IMsoDataTable
   ChartFont Font { get; }
   void Select();
   void Delete();
-  object Parent { get; }
   object AutoScaleFont { get; set; }
   IMsoChartFormat Format { get; }
-  object Application { get; }
-  int Creator { get; }
 }

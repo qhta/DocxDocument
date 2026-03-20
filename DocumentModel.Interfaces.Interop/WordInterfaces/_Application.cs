@@ -83,7 +83,7 @@ public partial interface _Application : InteropObject
   /// <summary>
   /// Returns a Assistant object that represents the Microsoft Office Assistant.
   /// </summary>
-  public Core.Assistant Assistant { get; }
+  //public Core.Assistant Assistant { get; }
 
   /// <summary>
   /// Returns a Browser object that represents the Select Browse Object tool on the vertical scroll bar.
@@ -218,7 +218,7 @@ public partial interface _Application : InteropObject
   /// <summary>
   /// Returns a CommandBars collection that represents the menu bar and all the toolbars in Microsoft Word.
   /// </summary>
-  public Core.CommandBars CommandBars { get; }
+  //public Core.CommandBars CommandBars { get; }
 
   /// <summary>
   /// Returns a VBE object that represents the Visual Basic Editor.
@@ -363,7 +363,7 @@ public partial interface _Application : InteropObject
   /// <summary>
   /// Returns a FileSearch object that can be used to search for files using either an absolute or relative path.
   /// </summary>
-  public Core.FileSearch FileSearch { get; }
+  //public Core.FileSearch FileSearch { get; }
 
   /// <summary>
   /// Returns the mail system (or systems) installed on the host machine.
@@ -408,12 +408,12 @@ public partial interface _Application : InteropObject
   /// <summary>
   /// Returns an MsoLanguageID constant that represents the language selected for the Microsoft Word user interface.
   /// </summary>
-  public Core.MsoLanguageID Language { get; }
+  //public Core.MsoLanguageID Language { get; }
 
   /// <summary>
   /// Returns a reference to the COMAddIns collection that represents all the Component Object Model (COM) add-ins currently loaded in Microsoft Word.
   /// </summary>
-  public Core.COMAddIns COMAddIns { get; }
+  //public Core.COMAddIns COMAddIns { get; }
 
   /// <summary>
   /// Determines if Microsoft Word automatically detects the language you are using as you type. Returns True if Microsoft Word automatically detects the language you are using as you type, and False if it does not automatically detect the language.
@@ -423,7 +423,7 @@ public partial interface _Application : InteropObject
   /// <summary>
   /// Returns a LanguageSettings object, which contains information about the language settings in Microsoft Word.
   /// </summary>
-  public Core.LanguageSettings LanguageSettings { get; }
+  //public Core.LanguageSettings LanguageSettings { get; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -433,17 +433,17 @@ public partial interface _Application : InteropObject
   /// <summary>
   /// Returns a AnswerWizard object that contains the files used by the online Help search engine.
   /// </summary>
-  public Core.AnswerWizard AnswerWizard { get; }
+  //public Core.AnswerWizard AnswerWizard { get; }
 
   /// <summary>
   /// Returns or sets how Microsoft Word handles calls to methods and properties that require features not yet installed.
   /// </summary>
-  public Core.MsoFeatureInstall FeatureInstall { get; set; }
+  //public Core.MsoFeatureInstall FeatureInstall { get; set; }
 
   /// <summary>
   /// Returns or sets a MsoAutomationSecurity constant that represents the security setting Microsoft Word uses when programmatically opening files.
   /// </summary>
-  public Core.MsoAutomationSecurity AutomationSecurity { get; set; }
+  //public Core.MsoAutomationSecurity AutomationSecurity { get; set; }
 
   /// <summary>
   /// Returns or sets a String that represents the document template to use when sending e-mail messages.
@@ -458,7 +458,7 @@ public partial interface _Application : InteropObject
   /// <summary>
   /// Returns a NewFile object that represents a document listed on the New Document task pane.
   /// </summary>
-  public Core.NewFile NewDocument { get; }
+  //public Core.NewFile NewDocument { get; }
 
   /// <summary>
   /// Determines if the Task Pane will be displayed when starting Microsoft Word.
@@ -538,7 +538,7 @@ public partial interface _Application : InteropObject
   /// <summary>
   /// Returns an Microsoft.Office.Core.IAssistance object that represents the Microsoft Office Help Viewer. Read-only.
   /// </summary>
-  public Core.IAssistance Assistance { get; }
+  //public Core.IAssistance Assistance { get; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether Microsoft Office Word opens e-mail attachments in Reading mode. Read/write.
@@ -558,17 +558,17 @@ public partial interface _Application : InteropObject
   /// <summary>
   /// Gets a SmartArtLayouts object that represents the set of SmartArt layouts that are currently loaded in the application.
   /// </summary>
-  public Core.SmartArtLayouts SmartArtLayouts { get; }
+  //public Core.SmartArtLayouts SmartArtLayouts { get; }
 
   /// <summary>
   /// Gets a SmartArtQuickStyles object that represents the set of SmartArt styles that are currently loaded in the application.
   /// </summary>
-  public Core.SmartArtQuickStyles SmartArtQuickStyles { get; }
+  //public Core.SmartArtQuickStyles SmartArtQuickStyles { get; }
 
   /// <summary>
   /// Gets a SmartArtColors object that represents the set of color styles that are currently loaded in the application.
   /// </summary>
-  public Core.SmartArtColors SmartArtColors { get; }
+  //public Core.SmartArtColors SmartArtColors { get; }
 
   /// <summary>
   /// Gets an UndoRecord object that provides a custom entry point into the undo stack.
@@ -578,7 +578,7 @@ public partial interface _Application : InteropObject
   /// <summary>
   /// Gets a PickerDialog object that provides the functionality to select people or data in a dialog box.
   /// </summary>
-  public Core.PickerDialog PickerDialog { get; }
+  //public Core.PickerDialog PickerDialog { get; }
 
   /// <summary>
   /// Gets a ProtectedViewWindows collection that represents all protected view windows.
@@ -598,7 +598,7 @@ public partial interface _Application : InteropObject
   /// <summary>
   /// Gets or sets how Word will validate files before opening them.
   /// </summary>
-  public Core.MsoFileValidationMode FileValidation { get; set; }
+  //public Core.MsoFileValidationMode FileValidation { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean ( bool in C#) that specifies whether charts use cell-reference data-point tracking. Read-write.

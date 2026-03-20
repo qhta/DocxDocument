@@ -51,7 +51,4 @@ public interface IMsoAxis
   IMsoBorder Border { get; }
   string Name { get; }
   IMsoChartFormat Format { get; }
-  object Application { get; }
-  int Creator { get; }
-  object Parent { get; }
 }

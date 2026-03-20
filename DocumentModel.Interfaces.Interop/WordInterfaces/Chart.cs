@@ -73,7 +73,7 @@ public partial interface Chart : InteropObject
   /// <summary>
   /// The chart type.
   /// </summary>
-  public Core.XlChartType ChartType { get; set; }
+  //public Core.XlChartType ChartType { get; set; }
 
   /// <summary>
   /// The has data table.

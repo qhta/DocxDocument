@@ -2,10 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface SearchFolders: _IMsoDispObj, IEnumerable
+public interface SearchFolders: InteropObject, IEnumerable
 {
-  new object Application { get; }
-  new int Creator { get; }
   ScopeFolder this[int Index] { get; }
   int Count { get; }
   void Add(ScopeFolder ScopeFolder);

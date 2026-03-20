@@ -3,7 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface LegendEntry
 {
-  object Parent { get; }
   object Delete();
   ChartFont Font { get; }
   int Index { get; }
@@ -15,6 +14,4 @@ public interface LegendEntry
   double Width { get; }
   double Height { get; }
   IMsoChartFormat Format { get; }
-  object Application { get; }
-  int Creator { get; }
 }

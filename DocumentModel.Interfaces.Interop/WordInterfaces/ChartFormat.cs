@@ -32,7 +32,7 @@ public interface ChartFormat : InteropObject
   /// <summary>
   /// The text frame2.
   /// </summary>
-  public Core.TextFrame2 TextFrame2 { get; }
+  //public Core.TextFrame2 TextFrame2 { get; }
   /// <summary>
   /// The three d.
   /// </summary>
@@ -44,6 +44,6 @@ public interface ChartFormat : InteropObject
   /// <summary>
   /// The auto shape type.
   /// </summary>
-  public Core.MsoAutoShapeType AutoShapeType { get; set; }
+  //public Core.MsoAutoShapeType AutoShapeType { get; set; }
 
 }

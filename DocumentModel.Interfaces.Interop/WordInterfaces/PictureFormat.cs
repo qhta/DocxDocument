@@ -13,7 +13,7 @@ public partial interface PictureFormat : InteropObject
   /// <summary>
   /// The color type.
   /// </summary>
-  public Core.MsoPictureColorType ColorType { get; set; }
+  //public Core.MsoPictureColorType ColorType { get; set; }
 
   /// <summary>
   /// The contrast.
@@ -48,10 +48,10 @@ public partial interface PictureFormat : InteropObject
   /// <summary>
   /// The transparent background.
   /// </summary>
-  public Core.MsoTriState TransparentBackground { get; set; }
+  //public Core.MsoTriState TransparentBackground { get; set; }
 
   /// <summary>
   /// The crop.
   /// </summary>
-  public Core.Crop Crop { get; set; }
+  //public Core.Crop Crop { get; set; }
 }

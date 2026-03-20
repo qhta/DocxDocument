@@ -1,10 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface FileSearch: _IMsoDispObj
+public interface FileSearch: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   bool SearchSubFolders { get; set; }
   bool MatchTextExactly { get; set; }
   bool MatchAllWordForms { get; set; }

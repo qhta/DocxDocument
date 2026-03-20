@@ -3,11 +3,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface ShapeNodes: _IMsoDispObj, IEnumerable
+public interface ShapeNodes: InteropObject, IEnumerable
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   int Count { get; }
   ShapeNode Item(object Index);
   new IEnumerator GetEnumerator();

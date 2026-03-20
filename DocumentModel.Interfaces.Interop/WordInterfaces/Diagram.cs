@@ -13,20 +13,20 @@ public partial interface Diagram : InteropObject
   /// <summary>
   /// The type.
   /// </summary>
-  public Core.MsoDiagramType Type { get; }
+  //public Core.MsoDiagramType Type { get; }
 
   /// <summary>
   /// The auto layout.
   /// </summary>
-  public Core.MsoTriState AutoLayout { get; set; }
+  //public Core.MsoTriState AutoLayout { get; set; }
 
   /// <summary>
   /// The reverse.
   /// </summary>
-  public Core.MsoTriState Reverse { get; set; }
+  //public Core.MsoTriState Reverse { get; set; }
 
   /// <summary>
   /// The auto format.
   /// </summary>
-  public Core.MsoTriState AutoFormat { get; set; }
+  //public Core.MsoTriState AutoFormat { get; set; }
 }

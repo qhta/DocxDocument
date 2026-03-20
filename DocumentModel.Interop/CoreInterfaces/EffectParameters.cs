@@ -2,10 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface EffectParameters: _IMsoDispObj, IEnumerable
+public interface EffectParameters: InteropObject, IEnumerable
 {
-  new object Application { get; }
-  new int Creator { get; }
   EffectParameter this[object Index] { get; }
   int Count { get; }
   new IEnumerator GetEnumerator();

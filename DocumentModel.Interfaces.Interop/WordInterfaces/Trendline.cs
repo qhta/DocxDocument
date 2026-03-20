@@ -73,7 +73,7 @@ public partial interface Trendline : InteropObject
   /// <summary>
   /// The type.
   /// </summary>
-  public XlTrendlineType Type { get; set; }
+  //public Core.XlTrendlineType Type { get; set; }
 
   /// <summary>
   /// The format.

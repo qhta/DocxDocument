@@ -1,10 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface WebPageFont: _IMsoDispObj
+public interface WebPageFont: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   string ProportionalFont { get; set; }
   float ProportionalFontSize { get; set; }
   string FixedWidthFont { get; set; }

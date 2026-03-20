@@ -3,8 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface WebComponentFormat
 {
-  object Application { get; }
-  object Parent { get; }
   string URL { get; set; }
   string HTML { get; set; }
   string Name { get; set; }

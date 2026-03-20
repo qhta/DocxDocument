@@ -18,7 +18,7 @@ public partial interface Hyperlink : InteropObject
   /// <summary>
   /// The type.
   /// </summary>
-  public Core.MsoHyperlinkType Type { get; }
+  //public Core.MsoHyperlinkType Type { get; }
 
   /// <summary>
   /// The range.

@@ -1,10 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface PickerResult: _IMsoDispObj
+public interface PickerResult: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   string Id { get; }
   string DisplayName { get; set; }
   string Type { get; set; }

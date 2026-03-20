@@ -4,8 +4,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface SeriesCollection: IEnumerable
 {
-  object Parent { get; }
-
   IMsoSeries Add
     (object Source, XlRowCol Rowcol, object SeriesLabels, object CategoryLabels, object Replace);
 
@@ -19,7 +17,5 @@ public interface SeriesCollection: IEnumerable
     object NewSeries);
 
   IMsoSeries NewSeries();
-  object Application { get; }
-  int Creator { get; }
   IMsoSeries this[object Index] { get; }
 }

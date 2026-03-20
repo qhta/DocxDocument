@@ -22,8 +22,6 @@ public interface CommandBarControl: _IMsoOleAccDispObj
   new object accNavigate(int navDir, object varStart);
   new object accHitTest(int xLeft, int yTop);
   new void accDoDefaultAction(object varChild);
-  new object Application { get; }
-  new int Creator { get; }
   bool BeginGroup { get; set; }
   bool BuiltIn { get; }
   string Caption { get; set; }
@@ -43,7 +41,6 @@ public interface CommandBarControl: _IMsoOleAccDispObj
   int Left { get; }
   MsoControlOLEUsage OLEUsage { get; set; }
   string OnAction { get; set; }
-  CommandBar Parent { get; }
   string Parameter { get; set; }
   int Priority { get; set; }
   void Reset();

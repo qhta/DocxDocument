@@ -13,12 +13,12 @@ public partial interface XMLMapping : InteropObject
   /// <summary>
   /// The custom xmlpart.
   /// </summary>
-  public Core.CustomXMLPart CustomXMLPart { get; }
+  //public Core.CustomXMLPart CustomXMLPart { get; }
 
   /// <summary>
   /// The custom xmlnode.
   /// </summary>
-  public Core.CustomXMLNode CustomXMLNode { get; }
+  //public Core.CustomXMLNode CustomXMLNode { get; }
 
   /// <summary>
   /// The xpath.

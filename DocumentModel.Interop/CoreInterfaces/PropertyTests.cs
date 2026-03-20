@@ -2,10 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface PropertyTests: _IMsoDispObj, IEnumerable
+public interface PropertyTests: InteropObject, IEnumerable
 {
-  new object Application { get; }
-  new int Creator { get; }
   PropertyTest this[int Index] { get; }
   int Count { get; }
 

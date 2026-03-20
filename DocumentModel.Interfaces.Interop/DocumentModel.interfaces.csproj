@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
+    <ProjectReference Include="..\DocumentModel.Interop.Enums\DocumentModel.Interop.Enums.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +30,6 @@
 
   <ItemGroup>
     <Folder Include="docs\" />
-    <Folder Include="CoreInterfaces\" />
   </ItemGroup>
 
 </Project>

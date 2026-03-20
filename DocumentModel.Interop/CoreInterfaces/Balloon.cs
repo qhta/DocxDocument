@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface Balloon: _IMsoDispObj
+public interface Balloon: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   object Checkboxes { get; }
   object Labels { get; }
   MsoBalloonType BalloonType { get; set; }

@@ -2,10 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface GradientStops: _IMsoDispObj, IEnumerable
+public interface GradientStops: InteropObject, IEnumerable
 {
-  new object Application { get; }
-  new int Creator { get; }
   GradientStop this[int Index] { get; }
   int Count { get; }
   new IEnumerator GetEnumerator();

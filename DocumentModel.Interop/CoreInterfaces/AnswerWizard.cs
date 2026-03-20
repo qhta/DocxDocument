@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface AnswerWizard: _IMsoDispObj
+public interface AnswerWizard: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   AnswerWizardFiles Files { get; }
   void ClearFileList();
   void ResetFileList();

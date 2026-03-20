@@ -2,10 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface MsoDebugOptions_UTs: _IMsoDispObj, IEnumerable
+public interface MsoDebugOptions_UTs: InteropObject, IEnumerable
 {
-  new object Application { get; }
-  new int Creator { get; }
   MsoDebugOptions_UT this[int Index] { get; }
   int Count { get; }
   new IEnumerator GetEnumerator();

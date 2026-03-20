@@ -88,7 +88,7 @@ public partial interface _Global: InteropObject
   /// <summary>
   /// Returns an Assistant object that represents the Microsoft Office Assistant.
   /// </summary>
-  public Core.Assistant Assistant { get; }
+  //public Core.Assistant Assistant { get; }
 
   /// <summary>
   /// Returns a FileConverters collection that represents all file converters available to Microsoft Word.
@@ -128,7 +128,7 @@ public partial interface _Global: InteropObject
   /// <summary>
   /// Returns a CommandBars collection that represents the menu bar and all toolbars in Microsoft Word.
   /// </summary>
-  public Core.CommandBars CommandBars { get; }
+  //public Core.CommandBars CommandBars { get; }
 
   /// <summary>
   /// Returns a VBE object that represents the Visual Basic Editor.
@@ -188,12 +188,12 @@ public partial interface _Global: InteropObject
   /// <summary>
   /// Returns a LanguageSettings object that contains language setting information in Microsoft Word.
   /// </summary>
-  public Core.LanguageSettings LanguageSettings { get; }
+  //public Core.LanguageSettings LanguageSettings { get; }
 
   /// <summary>
   /// Returns an AnswerWizard object that contains files used by the online Help search engine.
   /// </summary>
-  public Core.AnswerWizard AnswerWizard { get; }
+  //public Core.AnswerWizard AnswerWizard { get; }
 
   /// <summary>
   /// Returns an AutoCorrect object that represents automatic corrections made to e-mail messages.

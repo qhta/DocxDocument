@@ -78,7 +78,7 @@ public partial interface InlineShapes
   /// <param name="Layout">The SmartArt layout.</param>
   /// <param name="Range">The range where the SmartArt is inserted.</param>
   /// <returns>The created <see cref="InlineShape"/> object.</returns>
-  public InlineShape AddSmartArt(Core.SmartArtLayout Layout, object Range);
+  //public InlineShape AddSmartArt(Core.SmartArtLayout Layout, object Range);
 
   /// <summary>
   /// Adds a web video to the document as an inline shape.

@@ -2,10 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface _CommandBars: _IMsoDispObj, IEnumerable
+public interface _CommandBars: InteropObject, IEnumerable
 {
-  new object Application { get; }
-  new int Creator { get; }
   CommandBarControl ActionControl { get; }
   CommandBar ActiveMenuBar { get; }
   CommandBar Add(object Name, object Position, object MenuBar, object Temporary);
@@ -17,7 +15,6 @@ public interface _CommandBars: _IMsoDispObj, IEnumerable
   bool LargeButtons { get; set; }
   MsoMenuAnimation MenuAnimationStyle { get; set; }
   new IEnumerator GetEnumerator();
-  object Parent { get; }
   void ReleaseFocus();
   int IdsString { get; }
   int TmcGetName { get; }

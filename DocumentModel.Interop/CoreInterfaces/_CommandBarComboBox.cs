@@ -22,8 +22,6 @@ public interface _CommandBarComboBox: CommandBarControl
   new object accNavigate(int navDir, object varStart);
   new object accHitTest(int xLeft, int yTop);
   new void accDoDefaultAction(object varChild);
-  new object Application { get; }
-  new int Creator { get; }
   new bool BeginGroup { get; set; }
   new bool BuiltIn { get; }
   new string Caption { get; set; }
@@ -43,7 +41,6 @@ public interface _CommandBarComboBox: CommandBarControl
   new int Left { get; }
   new MsoControlOLEUsage OLEUsage { get; set; }
   new string OnAction { get; set; }
-  new CommandBar Parent { get; }
   new string Parameter { get; set; }
   new int Priority { get; set; }
   new void Reset();

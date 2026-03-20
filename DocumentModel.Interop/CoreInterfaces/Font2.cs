@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface Font2: _IMsoDispObj
+public interface Font2: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   MsoTriState Bold { get; set; }
   MsoTriState Italic { get; set; }
   MsoTextStrike Strike { get; set; }

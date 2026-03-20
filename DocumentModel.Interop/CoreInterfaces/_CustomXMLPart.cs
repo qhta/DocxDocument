@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface _CustomXMLPart: _IMsoDispObj
+public interface _CustomXMLPart: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   CustomXMLNode DocumentElement { get; }
   string Id { get; }
   string NamespaceURI { get; }

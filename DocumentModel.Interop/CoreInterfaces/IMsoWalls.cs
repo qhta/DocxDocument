@@ -5,7 +5,6 @@ public interface IMsoWalls
 {
   string Name { get; }
   object Select();
-  object Parent { get; }
   IMsoBorder Border { get; }
   object ClearFormats();
   IMsoInterior Interior { get; }
@@ -15,6 +14,4 @@ public interface IMsoWalls
   object PictureUnit { get; set; }
   int Thickness { get; set; }
   IMsoChartFormat Format { get; }
-  object Application { get; }
-  int Creator { get; }
 }

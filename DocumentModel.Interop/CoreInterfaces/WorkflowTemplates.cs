@@ -2,18 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface WorkflowTemplates: _IMsoDispObj, IEnumerable
+public interface WorkflowTemplates: InteropObject, IEnumerable
 {
-  new object Application
-  {
-    get;
-  }
-
-  new int Creator
-  {
-    get;
-  }
-
   WorkflowTemplate this[int Index]
   {
     get;
