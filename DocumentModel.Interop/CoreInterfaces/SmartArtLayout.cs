@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface SmartArtLayout: InteropObject
+public partial interface SmartArtLayout: InteropObject
 {
   public string Id { get; }
   public string Name { get; }

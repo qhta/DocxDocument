@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface SmartArtQuickStyle: InteropObject
+public partial interface SmartArtQuickStyle: InteropObject
 {
   public string Id { get; }
   public string Name { get; }

@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface IMsoChartGroup
+public partial interface IMsoChartGroup
 {
   public int AxisGroup { get; set; }
   public int DoughnutHoleSize { get; set; }
@@ -18,7 +18,6 @@ public interface IMsoChartGroup
   public int Index { get; }
   public int Overlap { get; set; }
   public object RadarAxisLabels { get; }
-  public object SeriesCollection(object Index);
   public IMsoSeriesLines SeriesLines { get; }
   public int SubType { get; set; }
   public int Type { get; set; }
@@ -31,6 +30,4 @@ public interface IMsoChartGroup
   public object SplitValue { get; set; }
   public int SecondPlotSize { get; set; }
   public bool Has3DShading { get; set; }
-  public object CategoryCollection(object Index);
-  public object FullCategoryCollection(object Index);
 }

@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface TextFrame: InteropObject
+public partial interface TextFrame: InteropObject
 {
   public float MarginBottom { get; set; }
   public float MarginLeft { get; set; }

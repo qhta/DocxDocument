@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface SmartArtColor: InteropObject
+public partial interface SmartArtColor: InteropObject
 {
   public string Id { get; }
   public string Name { get; }

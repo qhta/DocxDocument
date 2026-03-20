@@ -1,28 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface Shape: InteropObject
+public partial interface Shape: InteropObject
 {
-  public void Apply();
-  public void Delete();
-  public Shape Duplicate();
-  public void Flip(MsoFlipCmd FlipCmd);
-  public void IncrementLeft(float Increment);
-  public void IncrementRotation(float Increment);
-  public void IncrementTop(float Increment);
-  public void PickUp();
-  public void RerouteConnections();
-
-  public void ScaleHeight
-    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale);
-
-  public void ScaleWidth
-    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale);
-
-  public void Select(object Replace);
-  public void SetShapesDefaultProperties();
-  public ShapeRange Ungroup();
-  public void ZOrder(MsoZOrderCmd ZOrderCmd);
   public Adjustments Adjustments { get; }
   public MsoAutoShapeType AutoShapeType { get; set; }
   public MsoBlackWhiteMode BlackWhiteMode { get; set; }
@@ -62,14 +42,8 @@ public interface Shape: InteropObject
   public Shape ParentGroup { get; }
   public CanvasShapes CanvasItems { get; }
   public int Id { get; }
-  public void CanvasCropLeft(float Increment);
-  public void CanvasCropTop(float Increment);
-  public void CanvasCropRight(float Increment);
-  public void CanvasCropBottom(float Increment);
   public string RTF { set; }
   public TextFrame2 TextFrame2 { get; }
-  public void Cut();
-  public void Copy();
   public MsoTriState HasChart { get; }
   public IMsoChart Chart { get; }
   public MsoShapeStyleIndex ShapeStyle { get; set; }
@@ -79,6 +53,5 @@ public interface Shape: InteropObject
   public ReflectionFormat Reflection { get; }
   public MsoTriState HasSmartArt { get; }
   public SmartArt SmartArt { get; }
-  public void ConvertTextToSmartArt(SmartArtLayout Layout);
   public string Title { get; set; }
 }

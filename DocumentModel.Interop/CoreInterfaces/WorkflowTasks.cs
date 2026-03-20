@@ -2,6 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface WorkflowTasks: InteropCollection<WorkflowTask>
+public partial interface WorkflowTasks: InteropCollection<WorkflowTask>
 {
 }

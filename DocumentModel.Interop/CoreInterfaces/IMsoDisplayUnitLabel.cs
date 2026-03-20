@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface IMsoDisplayUnitLabel: IMsoChartTitle
+public partial interface IMsoDisplayUnitLabel: IMsoChartTitle
 {
   public new string Caption { get; set; }
   public new IMsoCharacters Characters { get; }
@@ -17,10 +17,8 @@ public interface IMsoDisplayUnitLabel: IMsoChartTitle
   public new object AutoScaleFont { get; set; }
   public new IMsoInterior Interior { get; }
   public new ChartFillFormat Fill { get; }
-  public new object Delete();
   public new IMsoBorder Border { get; }
   public new string Name { get; }
-  public new object Select();
   public new bool IncludeInLayout { get; set; }
   public new XlChartElementPosition Position { get; set; }
   public new IMsoChartFormat Format { get; }

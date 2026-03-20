@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface IMsoChartFormat
+public partial interface IMsoChartFormat
 {
   public FillFormat Fill { get; }
   public GlowFormat Glow { get; }

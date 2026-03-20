@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ParagraphFormat2: InteropObject
+public partial interface ParagraphFormat2: InteropObject
 {
   public MsoParagraphAlignment Alignment { get; set; }
   public MsoBaselineAlignment BaselineAlignment { get; set; }

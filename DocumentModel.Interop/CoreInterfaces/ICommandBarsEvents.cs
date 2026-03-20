@@ -1,7 +1,6 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ICommandBarsEvents
+public partial interface ICommandBarsEvents
 {
-  public void OnUpdate();
 }

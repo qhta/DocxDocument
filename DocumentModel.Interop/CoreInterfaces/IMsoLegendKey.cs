@@ -1,11 +1,9 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface IMsoLegendKey
+public partial interface IMsoLegendKey
 {
   public IMsoBorder Border { get; }
-  public object ClearFormats();
-  public object Delete();
   public IMsoInterior Interior { get; }
   public ChartFillFormat Fill { get; }
   public bool InvertIfNegative { get; set; }
@@ -17,7 +15,6 @@ public interface IMsoLegendKey
   public XlMarkerStyle MarkerStyle { get; set; }
   public int PictureType { get; set; }
   public double PictureUnit { get; set; }
-  public object Select();
   public bool Smooth { get; set; }
   public double Left { get; }
   public double Top { get; }

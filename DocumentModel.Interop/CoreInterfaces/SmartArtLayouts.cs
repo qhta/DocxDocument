@@ -2,6 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface SmartArtLayouts: InteropDictionary<string, SmartArtLayout>
+public partial interface SmartArtLayouts: InteropDictionary<string, SmartArtLayout>
 {
 }

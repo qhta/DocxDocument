@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface ChartColorFormat
+public partial interface ChartColorFormat
 {
   public int SchemeColor { get; set; }
   public int RGB { get; set; }

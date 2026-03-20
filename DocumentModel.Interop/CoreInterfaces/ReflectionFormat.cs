@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ReflectionFormat: InteropObject
+public partial interface ReflectionFormat: InteropObject
 {
   public MsoReflectionType Type { get; set; }
   public float Transparency { get; set; }
