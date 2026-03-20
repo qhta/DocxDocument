@@ -3,8 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface ChartPoint
 {
-  object Parent { get; }
-
   object _ApplyDataLabels
   (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines);
@@ -42,8 +40,6 @@ public interface ChartPoint
 
   bool Has3DEffect { get; set; }
   IMsoChartFormat Format { get; }
-  object Application { get; }
-  int Creator { get; }
   double PictureUnit2 { get; set; }
   string Name { get; }
   double Height { get; }

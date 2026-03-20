@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface Shape: _IMsoDispObj
+public interface Shape: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   void Apply();
   void Delete();
   Shape Duplicate();

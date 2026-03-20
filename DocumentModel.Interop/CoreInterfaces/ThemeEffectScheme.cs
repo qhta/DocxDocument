@@ -1,10 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ThemeEffectScheme: _IMsoDispObj
+public interface ThemeEffectScheme: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   void Load(string FileName);
 }

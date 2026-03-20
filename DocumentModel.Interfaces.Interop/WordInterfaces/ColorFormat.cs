@@ -18,7 +18,7 @@ public partial interface ColorFormat : InteropObject
   /// <summary>
   /// The type.
   /// </summary>
-  public Core.MsoColorType Type { get; }
+  //public Core.MsoColorType Type { get; }
 
   /// <summary>
   /// The name.
@@ -33,7 +33,7 @@ public partial interface ColorFormat : InteropObject
   /// <summary>
   /// The over print.
   /// </summary>
-  public Core.MsoTriState OverPrint { get; set; }
+  //public Core.MsoTriState OverPrint { get; set; }
 
   /// <summary>
   /// The cyan.

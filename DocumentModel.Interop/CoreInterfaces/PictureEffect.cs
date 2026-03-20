@@ -2,10 +2,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface PictureEffect: _IMsoDispObj
+public interface PictureEffect: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   MsoPictureEffectType Type { get; }
   int Position { get; set; }
   void Delete();

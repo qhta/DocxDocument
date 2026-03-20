@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface CalloutFormat: _IMsoDispObj
+public interface CalloutFormat: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   void AutomaticLength();
   void CustomDrop(float Drop);
   void CustomLength(float Length);

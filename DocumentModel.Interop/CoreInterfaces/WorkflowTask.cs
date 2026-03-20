@@ -2,10 +2,8 @@ using System;
 
 namespace DocumentModel.Interop.Core;
 
-public interface WorkflowTask: _IMsoDispObj
+public interface WorkflowTask: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   string Id { get; }
   string ListID { get; }
   string WorkflowID { get; }

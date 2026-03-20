@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ParagraphFormat2: _IMsoDispObj
+public interface ParagraphFormat2: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   MsoParagraphAlignment Alignment { get; set; }
   MsoBaselineAlignment BaselineAlignment { get; set; }
   BulletFormat2 Bullet { get; }

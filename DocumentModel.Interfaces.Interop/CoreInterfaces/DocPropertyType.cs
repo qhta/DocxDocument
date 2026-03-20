@@ -10,35 +10,35 @@ namespace DocumentModel.Interop.Core;
 /// number, boolean, date, string, or floating-point value. This is commonly used when programmatically accessing or
 /// setting custom properties in Office automation scenarios.</remarks>
 [JsonConverter(typeof(StringEnumConverter))]
-public enum MsoDocProperties
+public enum DocPropertyType
 {
   /// <summary>
   /// Indicates that the property type is an integer number.
   /// </summary>
   [EnumMember(Value = "Integer")]
-  msoPropertyTypeNumber = 1,
+  Integer = 1,
 
   /// <summary>
   /// Specifies that the property type is a Boolean value.
   /// </summary>
   [EnumMember(Value = "Boolean")]
-  msoPropertyTypeBoolean,
+  Boolean,
 
   /// <summary>
   /// Specifies that the property type is a date-time value.
   /// </summary>
   [EnumMember(Value = "DateTime")]
-  msoPropertyTypeDate,
+  DateTime,
 
   /// <summary>
   /// Indicates that the property type is a string value.
   /// </summary>
   [EnumMember(Value = "String")]
-  msoPropertyTypeString,
+  String,
 
   /// <summary>
   /// Specifies that the property type is a floating-point number.
   /// </summary>
   [EnumMember(Value = "Float")]
-  msoPropertyTypeFloat
+  Float
 }

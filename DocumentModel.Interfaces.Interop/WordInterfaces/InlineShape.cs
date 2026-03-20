@@ -63,7 +63,7 @@ public partial interface InlineShape : InteropObject
   /// <summary>
   /// The lock aspect ratio.
   /// </summary>
-  public Core.MsoTriState LockAspectRatio { get; set; }
+  //public Core.MsoTriState LockAspectRatio { get; set; }
 
   /// <summary>
   /// The line.
@@ -88,7 +88,7 @@ public partial interface InlineShape : InteropObject
   /// <summary>
   /// The script.
   /// </summary>
-  public Core.Script Script { get; }
+  //public Core.Script Script { get; }
 
   /// <summary>
   /// The owsanchor.
@@ -118,7 +118,7 @@ public partial interface InlineShape : InteropObject
   /// <summary>
   /// The has chart.
   /// </summary>
-  public Core.MsoTriState HasChart { get; }
+  //public Core.MsoTriState HasChart { get; }
 
   /// <summary>
   /// The chart.
@@ -148,12 +148,12 @@ public partial interface InlineShape : InteropObject
   /// <summary>
   /// The has smart art.
   /// </summary>
-  public Core.MsoTriState HasSmartArt { get; }
+  //public Core.MsoTriState HasSmartArt { get; }
 
   /// <summary>
   /// The smart art.
   /// </summary>
-  public Core.SmartArt SmartArt { get; }
+  //public Core.SmartArt SmartArt { get; }
 
   /// <summary>
   /// The title.

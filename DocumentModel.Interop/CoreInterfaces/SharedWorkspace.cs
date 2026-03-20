@@ -2,10 +2,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface SharedWorkspace: _IMsoDispObj
+public interface SharedWorkspace: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   string Name { get; set; }
   SharedWorkspaceMembers Members { get; }
   SharedWorkspaceTasks Tasks { get; }
@@ -15,7 +13,6 @@ public interface SharedWorkspace: _IMsoDispObj
   void Refresh();
   void CreateNew(object URL, object Name);
   void Delete();
-  object Parent { get; }
   string URL { get; }
   bool Connected { get; }
   object LastRefreshed { get; }

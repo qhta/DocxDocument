@@ -8,7 +8,7 @@ public interface SoftEdgeFormat : InteropObject
   /// <summary>
   /// The type.
   /// </summary>
-  public Core.MsoSoftEdgeType Type { get; set; }
+  //public Core.MsoSoftEdgeType Type { get; set; }
   /// <summary>
   /// The radius.
   /// </summary>

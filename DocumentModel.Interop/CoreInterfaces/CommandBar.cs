@@ -22,8 +22,6 @@ public interface CommandBar: _IMsoOleAccDispObj
   new object accNavigate(int navDir, object varStart);
   new object accHitTest(int xLeft, int yTop);
   new void accDoDefaultAction(object varChild);
-  new object Application { get; }
-  new int Creator { get; }
   bool BuiltIn { get; }
   string Context { get; set; }
   CommandBarControls Controls { get; }
@@ -36,7 +34,6 @@ public interface CommandBar: _IMsoOleAccDispObj
   int Left { get; set; }
   string Name { get; set; }
   string NameLocal { get; set; }
-  object Parent { get; }
   MsoBarPosition Position { get; set; }
   int RowIndex { get; set; }
   MsoBarProtection Protection { get; set; }

@@ -1,10 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ReflectionFormat: _IMsoDispObj
+public interface ReflectionFormat: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   MsoReflectionType Type { get; set; }
   float Transparency { get; set; }
   float Size { get; set; }

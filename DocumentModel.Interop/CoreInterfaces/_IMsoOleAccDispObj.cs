@@ -22,6 +22,4 @@ public interface _IMsoOleAccDispObj: IAccessible
   new object accNavigate(int navDir, object varStart);
   new object accHitTest(int xLeft, int yTop);
   new void accDoDefaultAction(object varChild);
-  object Application { get; }
-  int Creator { get; }
 }

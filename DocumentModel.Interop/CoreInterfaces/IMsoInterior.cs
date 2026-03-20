@@ -9,7 +9,4 @@ public interface IMsoInterior
   object Pattern { get; set; }
   object PatternColor { get; set; }
   object PatternColorIndex { get; set; }
-  object Application { get; }
-  int Creator { get; }
-  object Parent { get; }
 }

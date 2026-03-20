@@ -31,9 +31,6 @@ public interface IMsoChartGroup
   object SplitValue { get; set; }
   int SecondPlotSize { get; set; }
   bool Has3DShading { get; set; }
-  object Application { get; }
-  int Creator { get; }
-  object Parent { get; }
   object CategoryCollection(object Index);
   object FullCategoryCollection(object Index);
 }

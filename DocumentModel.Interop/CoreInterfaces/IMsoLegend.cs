@@ -3,7 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoLegend
 {
-  object Parent { get; }
   string Name { get; }
   object Select();
   IMsoBorder Border { get; }
@@ -22,6 +21,4 @@ public interface IMsoLegend
   object AutoScaleFont { get; set; }
   bool IncludeInLayout { get; set; }
   IMsoChartFormat Format { get; }
-  object Application { get; }
-  int Creator { get; }
 }

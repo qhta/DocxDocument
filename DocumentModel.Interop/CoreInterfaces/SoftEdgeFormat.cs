@@ -1,10 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface SoftEdgeFormat: _IMsoDispObj
+public interface SoftEdgeFormat: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   MsoSoftEdgeType Type { get; set; }
   float Radius { get; set; }
 }

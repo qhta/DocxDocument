@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface CustomXMLValidationError: _IMsoDispObj
+public interface CustomXMLValidationError: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   string Name { get; }
   CustomXMLNode Node { get; }
   string Text { get; }

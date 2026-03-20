@@ -2,10 +2,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface SharedWorkspaceTask: _IMsoDispObj
+public interface SharedWorkspaceTask: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   string Title { get; set; }
   string AssignedTo { get; set; }
   MsoSharedWorkspaceTaskStatus Status { get; set; }
@@ -18,5 +16,4 @@ public interface SharedWorkspaceTask: _IMsoDispObj
   object ModifiedDate { get; }
   void Save();
   void Delete();
-  object Parent { get; }
 }

@@ -13,7 +13,7 @@ public partial interface Shape : InteropObject
   /// <summary>
   /// The auto shape type.
   /// </summary>
-  public Core.MsoAutoShapeType AutoShapeType { get; set; }
+  //public Core.MsoAutoShapeType AutoShapeType { get; set; }
 
   /// <summary>
   /// The callout.
@@ -28,7 +28,7 @@ public partial interface Shape : InteropObject
   /// <summary>
   /// The connector.
   /// </summary>
-  public Core.MsoTriState Connector { get; }
+  //public Core.MsoTriState Connector { get; }
 
   /// <summary>
   /// The connector format.
@@ -53,7 +53,7 @@ public partial interface Shape : InteropObject
   /// <summary>
   /// The horizontal flip.
   /// </summary>
-  public Core.MsoTriState HorizontalFlip { get; }
+  //public Core.MsoTriState HorizontalFlip { get; }
 
   /// <summary>
   /// The left.
@@ -68,7 +68,7 @@ public partial interface Shape : InteropObject
   /// <summary>
   /// The lock aspect ratio.
   /// </summary>
-  public Core.MsoTriState LockAspectRatio { get; set; }
+  //public Core.MsoTriState LockAspectRatio { get; set; }
 
   /// <summary>
   /// The name.
@@ -118,12 +118,12 @@ public partial interface Shape : InteropObject
   /// <summary>
   /// The type.
   /// </summary>
-  public Core.MsoShapeType Type { get; }
+  //public Core.MsoShapeType Type { get; }
 
   /// <summary>
   /// The vertical flip.
   /// </summary>
-  public Core.MsoTriState VerticalFlip { get; }
+  //public Core.MsoTriState VerticalFlip { get; }
 
   /// <summary>
   /// The vertices.
@@ -133,7 +133,7 @@ public partial interface Shape : InteropObject
   /// <summary>
   /// The visible.
   /// </summary>
-  public Core.MsoTriState Visible { get; set; }
+  //public Core.MsoTriState Visible { get; set; }
 
   /// <summary>
   /// The width.
@@ -193,22 +193,22 @@ public partial interface Shape : InteropObject
   /// <summary>
   /// The script.
   /// </summary>
-  public Core.Script Script { get; }
+  //public Core.Script Script { get; }
 
   /// <summary>
   /// The has diagram.
   /// </summary>
-  public Core.MsoTriState HasDiagram { get; }
+  //public Core.MsoTriState HasDiagram { get; }
 
   /// <summary>
   /// The diagram.
   /// </summary>
-  public Core.IMsoDiagram Diagram { get; }
+  //public Core.IMsoDiagram Diagram { get; }
 
   /// <summary>
   /// The has diagram node.
   /// </summary>
-  public Core.MsoTriState HasDiagramNode { get; }
+  //public Core.MsoTriState HasDiagramNode { get; }
 
   /// <summary>
   /// The diagram node.
@@ -218,7 +218,7 @@ public partial interface Shape : InteropObject
   /// <summary>
   /// The child.
   /// </summary>
-  public Core.MsoTriState Child { get; }
+  //public Core.MsoTriState Child { get; }
 
   /// <summary>
   /// The parent group.
@@ -248,7 +248,7 @@ public partial interface Shape : InteropObject
   /// <summary>
   /// The has chart.
   /// </summary>
-  public Core.MsoTriState HasChart { get; }
+  //public Core.MsoTriState HasChart { get; }
 
   /// <summary>
   /// The chart.
@@ -303,27 +303,27 @@ public partial interface Shape : InteropObject
   /// <summary>
   /// The text frame2.
   /// </summary>
-  public Core.TextFrame2 TextFrame2 { get; }
+  //public Core.TextFrame2 TextFrame2 { get; }
 
   /// <summary>
   /// The has smart art.
   /// </summary>
-  public Core.MsoTriState HasSmartArt { get; }
+  //public Core.MsoTriState HasSmartArt { get; }
 
   /// <summary>
   /// The smart art.
   /// </summary>
-  public Core.SmartArt SmartArt { get; }
+  //public Core.SmartArt SmartArt { get; }
 
   /// <summary>
   /// The shape style.
   /// </summary>
-  public Core.MsoShapeStyleIndex ShapeStyle { get; set; }
+  //public Core.MsoShapeStyleIndex ShapeStyle { get; set; }
 
   /// <summary>
   /// The background style.
   /// </summary>
-  public Core.MsoBackgroundStyleIndex BackgroundStyle { get; set; }
+  //public Core.MsoBackgroundStyleIndex BackgroundStyle { get; set; }
 
   /// <summary>
   /// The title.

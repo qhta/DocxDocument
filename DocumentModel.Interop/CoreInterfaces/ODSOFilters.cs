@@ -1,12 +1,9 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ODSOFilters: _IMsoDispObj
+public interface ODSOFilters: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   int Count { get; }
-  object Parent { get; }
   object Item(int Index);
 
   void Add
