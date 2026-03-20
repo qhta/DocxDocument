@@ -1,6 +1,6 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface CustomTaskPane: _CustomTaskPane, _CustomTaskPaneEvents_Event
+public partial interface CustomTaskPane: _CustomTaskPane, _CustomTaskPaneEvents_Event
 {
 }

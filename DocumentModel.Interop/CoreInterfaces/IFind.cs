@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface IFind
+public partial interface IFind
 {
   public string SearchPath { get; set; }
   public string Name { get; set; }
@@ -25,10 +25,5 @@ public interface IFind
   public MsoFileFindListBy ListBy { get; set; }
   public int SelectedFile { get; set; }
   public IFoundFiles Results { get; }
-  public int Show();
-  public void Execute();
-  public void Load(string bstrQueryName);
-  public void Save(string bstrQueryName);
-  public void Delete(string bstrQueryName);
   public int FileType { get; set; }
 }

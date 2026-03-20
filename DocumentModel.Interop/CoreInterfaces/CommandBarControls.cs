@@ -2,7 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface CommandBarControls: InteropDictionary<string, CommandBarControl>
+public partial interface CommandBarControls: InteropDictionary<string, CommandBarControl>
 {
-  public CommandBarControl Add(object Type, object Id, object Parameter, object Before, object Temporary);
 }

@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface Crop: InteropObject
+public partial interface Crop: InteropObject
 {
   public float PictureOffsetX { get; set; }
   public float PictureOffsetY { get; set; }

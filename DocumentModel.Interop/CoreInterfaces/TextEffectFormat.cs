@@ -1,9 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface TextEffectFormat: InteropObject
+public partial interface TextEffectFormat: InteropObject
 {
-  public void ToggleVerticalText();
   public MsoTextEffectAlignment Alignment { get; set; }
   public MsoTriState FontBold { get; set; }
   public MsoTriState FontItalic { get; set; }

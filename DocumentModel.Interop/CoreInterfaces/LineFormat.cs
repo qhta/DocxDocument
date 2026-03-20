@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface LineFormat: InteropObject
+public partial interface LineFormat: InteropObject
 {
   public ColorFormat BackColor { get; set; }
   public MsoArrowheadLength BeginArrowheadLength { get; set; }

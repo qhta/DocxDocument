@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface GradientStop: InteropObject
+public partial interface GradientStop: InteropObject
 {
   public ColorFormat Color { get; }
   public float Position { get; set; }

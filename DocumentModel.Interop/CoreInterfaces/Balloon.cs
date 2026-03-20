@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface Balloon: InteropObject
+public partial interface Balloon: InteropObject
 {
   public object Checkboxes { get; }
   public object Labels { get; }
@@ -14,8 +14,5 @@ public interface Balloon: InteropObject
   public MsoButtonSetType Button { get; set; }
   public string Callback { get; set; }
   public int Private { get; set; }
-  public void SetAvoidRectangle(int Left, int Top, int Right, int Bottom);
   public string Name { get; }
-  public MsoBalloonButtonType Show();
-  public void Close();
 }

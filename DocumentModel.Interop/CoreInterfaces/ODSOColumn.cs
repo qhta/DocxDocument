@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ODSOColumn: InteropObject
+public partial interface ODSOColumn: InteropObject
 {
   public int Index { get; }
   public string Name { get; }

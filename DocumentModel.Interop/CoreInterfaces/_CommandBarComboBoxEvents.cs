@@ -1,7 +1,6 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface _CommandBarComboBoxEvents
+public partial interface _CommandBarComboBoxEvents
 {
-  public void Change(CommandBarComboBox Ctrl);
 }

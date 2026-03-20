@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface PolicyItem: InteropObject
+public partial interface PolicyItem: InteropObject
 {
   public string Id { get; }
   public string Name { get; }

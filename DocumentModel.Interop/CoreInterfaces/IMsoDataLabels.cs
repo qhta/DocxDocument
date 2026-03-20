@@ -2,12 +2,10 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface IMsoDataLabels: IEnumerable
+public partial interface IMsoDataLabels: IEnumerable
 {
   public string Name { get; }
-  public object Select();
   public IMsoBorder Border { get; }
-  public object Delete();
   public IMsoInterior Interior { get; }
   public ChartFillFormat Fill { get; }
   public IMsoCharacters Characters { get; }
@@ -32,9 +30,7 @@ public interface IMsoDataLabels: IEnumerable
   public bool ShowBubbleSize { get; set; }
   public object Separator { get; set; }
   public int Count { get; }
-  public new IEnumerator GetEnumerator();
   public IMsoChartFormat Format { get; }
   public IMsoDataLabel this[object Index] { get; }
-  public void Propagate(object Index);
   public bool ShowRange { get; set; }
 }

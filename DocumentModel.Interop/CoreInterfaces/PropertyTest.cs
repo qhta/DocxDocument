@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface PropertyTest: InteropObject
+public partial interface PropertyTest: InteropObject
 {
   public string Name { get; }
   public MsoCondition Condition { get; }

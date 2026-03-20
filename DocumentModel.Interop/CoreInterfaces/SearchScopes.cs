@@ -2,6 +2,6 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface SearchScopes: InteropCollection<SearchScope>
+public partial interface SearchScopes: InteropCollection<SearchScope>
 {
 }

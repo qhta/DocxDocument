@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface _CustomTaskPane
+public partial interface _CustomTaskPane
 {
   public string Title { get; }
   public object Window { get; }
@@ -12,5 +12,4 @@ public interface _CustomTaskPane
   public int Width { get; set; }
   public MsoCTPDockPosition DockPosition { get; set; }
   public MsoCTPDockPositionRestrict DockPositionRestrict { get; set; }
-  public void Delete();
 }

@@ -1,10 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface PictureFormat: InteropObject
+public partial interface PictureFormat: InteropObject
 {
-  public void IncrementBrightness(float Increment);
-  public void IncrementContrast(float Increment);
   public float Brightness { get; set; }
   public MsoPictureColorType ColorType { get; set; }
   public float Contrast { get; set; }

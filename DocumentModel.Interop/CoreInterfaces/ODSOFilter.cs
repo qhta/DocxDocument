@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ODSOFilter: InteropObject
+public partial interface ODSOFilter: InteropObject
 {
   public int Index { get; }
   public string Column { get; set; }

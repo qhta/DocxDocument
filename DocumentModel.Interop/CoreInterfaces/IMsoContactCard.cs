@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface IMsoContactCard: InteropObject
+public partial interface IMsoContactCard: InteropObject
 {
   public string Address { get; }
   public MsoContactCardAddressType AddressType { get; }

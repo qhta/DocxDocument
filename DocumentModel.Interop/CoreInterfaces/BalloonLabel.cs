@@ -2,7 +2,7 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface BalloonLabel: InteropObject
+public partial interface BalloonLabel: InteropObject
 {
   public string Item { get; }
   public string Name { get; }

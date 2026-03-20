@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface TextFrame2: InteropObject
+public partial interface TextFrame2: InteropObject
 {
   public float MarginBottom { get; set; }
   public float MarginLeft { get; set; }
@@ -20,6 +20,5 @@ public interface TextFrame2: InteropObject
   public TextRange2 TextRange { get; }
   public TextColumn2 Column { get; }
   public Ruler2 Ruler { get; }
-  public void DeleteText();
   public MsoTriState NoTextRotation { get; set; }
 }

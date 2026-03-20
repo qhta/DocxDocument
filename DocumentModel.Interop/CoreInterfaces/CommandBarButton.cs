@@ -1,6 +1,6 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface CommandBarButton: _CommandBarButton, _CommandBarButtonEvents_Event
+public partial interface CommandBarButton: _CommandBarButton, _CommandBarButtonEvents_Event
 {
 }

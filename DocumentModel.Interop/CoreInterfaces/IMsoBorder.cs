@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface IMsoBorder
+public partial interface IMsoBorder
 {
   public object Color { get; set; }
   public object ColorIndex { get; set; }

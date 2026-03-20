@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface Axes
+public partial interface Axes
 {
   public int Count { get; }
   public IMsoAxis Item { get; }

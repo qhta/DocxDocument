@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface OfficeTheme: InteropObject
+public partial interface OfficeTheme: InteropObject
 {
   public ThemeColorScheme ThemeColorScheme { get; }
   public ThemeFontScheme ThemeFontScheme { get; }

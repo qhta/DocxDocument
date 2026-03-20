@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface Font2: InteropObject
+public partial interface Font2: InteropObject
 {
   public MsoTriState Bold { get; set; }
   public MsoTriState Italic { get; set; }

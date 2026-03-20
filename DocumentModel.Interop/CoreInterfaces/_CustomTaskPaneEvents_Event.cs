@@ -4,8 +4,6 @@ namespace DocumentModel.Interop.Core;
 public delegate void _CustomTaskPaneEvents_VisibleStateChangeEventHandler(CustomTaskPane CustomTaskPaneInst);
 public delegate void _CustomTaskPaneEvents_DockPositionStateChangeEventHandler(CustomTaskPane CustomTaskPaneInst);
 
-public interface _CustomTaskPaneEvents_Event
+public partial interface _CustomTaskPaneEvents_Event
 {
-  public event _CustomTaskPaneEvents_VisibleStateChangeEventHandler VisibleStateChange;
-  public event _CustomTaskPaneEvents_DockPositionStateChangeEventHandler DockPositionStateChange;
 }

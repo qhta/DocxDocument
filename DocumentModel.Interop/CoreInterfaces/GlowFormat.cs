@@ -1,7 +1,7 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface GlowFormat: InteropObject
+public partial interface GlowFormat: InteropObject
 {
   public float Radius { get; set; }
   public ColorFormat Color { get; }
