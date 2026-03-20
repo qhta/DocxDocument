@@ -1,3 +1,7 @@
+using DocumentModel.Interop.Core;
+
+using Microsoft.Office.Interop.Word;
+
 namespace DocumentModel.Interop;
 
 /// <summary>
@@ -63,7 +67,7 @@ public partial interface _Document: InteropObject
   /// <summary>
   /// Returns a DocumentProperties collection that represents all the built-in document properties for the specified document.
   /// </summary>
-  public object BuiltInDocumentProperties { get; }
+  public DocumentProperties BuiltInDocumentProperties { get; }
 
   /// <summary>
   /// Returns a Characters collection that represents the characters in a document.
@@ -95,10 +99,10 @@ public partial interface _Document: InteropObject
   /// </summary>
   public string CodeName { get; }
 
-  /// <summary>
-  /// Returns a CommandBars collection that represents the menu bar and all the toolbars in Microsoft Word.
-  /// </summary>
-  public Core.CommandBars CommandBars { get; }
+  ///// <summary>
+  ///// Returns a CommandBars collection that represents the menu bar and all the toolbars in Microsoft Word.
+  ///// </summary>
+  //public Core.CommandBars CommandBars { get; }
 
   /// <summary>
   /// Returns a Comments collection that represents all the comments in the specified document.
@@ -130,10 +134,10 @@ public partial interface _Document: InteropObject
   /// </summary>
   public ContentControls ContentControls { get; }
 
-  /// <summary>
-  /// Returns the metadata stored in a document, such as author name, subject, and company. Read-only.
-  /// </summary>
-  public Core.MetaProperties ContentTypeProperties { get; }
+  ///// <summary>
+  ///// Returns the metadata stored in a document, such as author name, subject, and company. Read-only.
+  ///// </summary>
+  //public Core.MetaProperties ContentTypeProperties { get; }
 
   /// <summary>
   /// Returns a random number that Word assigns to changes in a document. Read-only.
@@ -143,12 +147,12 @@ public partial interface _Document: InteropObject
   /// <summary>
   /// Returns a DocumentProperties collection that represents all the custom document properties for the specified document.
   /// </summary>
-  public object CustomDocumentProperties { get; }
+  public DocumentProperties CustomDocumentProperties { get; }
 
-  /// <summary>
-  /// Returns a CustomXMLParts#SameCHM collection that represents the custom XML in the XML data store. Read-only.
-  /// </summary>
-  public Core.CustomXMLParts CustomXMLParts { get; }
+  ///// <summary>
+  ///// Returns a CustomXMLParts#SameCHM collection that represents the custom XML in the XML data store. Read-only.
+  ///// </summary>
+  //public Core.CustomXMLParts CustomXMLParts { get; }
 
   /// <summary>
   /// Returns an Object that represents the table style that is applied to all newly created tables in a document.
@@ -170,30 +174,30 @@ public partial interface _Document: InteropObject
   /// </summary>
   public bool DisableFeatures { get; set; }
 
-  /// <summary>
-  /// Disables all features introduced after a specified version of Microsoft Word in the document only.
-  /// </summary>
-  public WdDisableFeaturesIntroducedAfter DisableFeaturesIntroducedAfter { get; set; }
+  ///// <summary>
+  ///// Disables all features introduced after a specified version of Microsoft Word in the document only.
+  ///// </summary>
+  //public WdDisableFeaturesIntroducedAfter DisableFeaturesIntroducedAfter { get; set; }
 
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
   public int DocID { get; }
 
-  /// <summary>
-  /// Returns a DocumentInspectors collection that enables you to locate hidden personal information, such as author name, company name, and revision date. Read-only.
-  /// </summary>
-  public Core.DocumentInspectors DocumentInspectors { get; }
+  ///// <summary>
+  ///// Returns a DocumentInspectors collection that enables you to locate hidden personal information, such as author name, company name, and revision date. Read-only.
+  ///// </summary>
+  //public Core.DocumentInspectors DocumentInspectors { get; }
 
-  /// <summary>
-  /// Returns a DocumentLibraryVersions collection that represents the collection of versions of a shared document that has versioning enabled and that is stored in a document library on a server.
-  /// </summary>
-  public Core.DocumentLibraryVersions DocumentLibraryVersions { get; }
+  ///// <summary>
+  ///// Returns a DocumentLibraryVersions collection that represents the collection of versions of a shared document that has versioning enabled and that is stored in a document library on a server.
+  ///// </summary>
+  //public Core.DocumentLibraryVersions DocumentLibraryVersions { get; }
 
-  /// <summary>
-  /// Returns an OfficeTheme object that represents the Microsoft Office theme applied to a document. Read-only.
-  /// </summary>
-  public Core.OfficeTheme DocumentTheme { get; }
+  ///// <summary>
+  ///// Returns an OfficeTheme object that represents the Microsoft Office theme applied to a document. Read-only.
+  ///// </summary>
+  //public Core.OfficeTheme DocumentTheme { get; }
 
   /// <summary>
   /// Determines if Microsoft Word embeds common system fonts.
@@ -395,10 +399,10 @@ public partial interface _Document: InteropObject
   /// </summary>
   public HTMLDivisions HTMLDivisions { get; }
 
-  /// <summary>
-  /// Returns an HTMLProject object in the specified document that represents a top-level project branch, as in the Project Explorer of the Microsoft Script Editor.
-  /// </summary>
-  public Core.HTMLProject HTMLProject { get; }
+  ///// <summary>
+  ///// Returns an HTMLProject object in the specified document that represents a top-level project branch, as in the Project Explorer of the Microsoft Script Editor.
+  ///// </summary>
+  //public Core.HTMLProject HTMLProject { get; }
 
   /// <summary>
   /// Returns a Hyperlinks collection that represents all the hyperlinks in the specified document, range, or selection.
@@ -485,10 +489,10 @@ public partial interface _Document: InteropObject
   /// </summary>
   public bool LockTheme { get; set; }
 
-  /// <summary>
-  /// Returns an MsoEnvelope object that represents an e-mail header for a document.
-  /// </summary>
-  public Core.MsoEnvelope MailEnvelope { get; }
+  ///// <summary>
+  ///// Returns an MsoEnvelope object that represents an e-mail header for a document.
+  ///// </summary>
+  //public Core.MsoEnvelope MailEnvelope { get; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -570,10 +574,10 @@ public partial interface _Document: InteropObject
   /// </summary>
   public float OMathWrap { get; set; }
 
-  /// <summary>
-  /// Returns the encoding used to open the specified document.
-  /// </summary>
-  public Core.MsoEncoding OpenEncoding { get; }
+  ///// <summary>
+  ///// Returns the encoding used to open the specified document.
+  ///// </summary>
+  //public Core.MsoEncoding OpenEncoding { get; }
 
   /// <summary>
   /// Determines if Microsoft Word optimizes the current document for viewing in Word 97.
@@ -625,10 +629,10 @@ public partial interface _Document: InteropObject
   /// </summary>
   public string Path { get; }
 
-  /// <summary>
-  /// Returns a Permission object that represents the permission settings in the specified document.
-  /// </summary>
-  public Core.Permission Permission { get; }
+  ///// <summary>
+  ///// Returns a Permission object that represents the permission settings in the specified document.
+  ///// </summary>
+  //public Core.Permission Permission { get; }
 
   /// <summary>
   /// Determines if Microsoft Word prints onto a preprinted form only the data entered in the corresponding online form.
@@ -725,10 +729,10 @@ public partial interface _Document: InteropObject
   /// </summary>
   public bool Saved { get; set; }
 
-  /// <summary>
-  /// Returns or sets the encoding to use when saving a document.
-  /// </summary>
-  public Core.MsoEncoding SaveEncoding { get; set; }
+  ///// <summary>
+  ///// Returns or sets the encoding to use when saving a document.
+  ///// </summary>
+  //public Core.MsoEncoding SaveEncoding { get; set; }
 
   /// <summary>
   /// Returns an Integer representing the file format of the specified document or file converter.
@@ -745,10 +749,10 @@ public partial interface _Document: InteropObject
   /// </summary>
   public bool SaveSubsetFonts { get; set; }
 
-  /// <summary>
-  /// Returns a Scripts collection that represents the collection of HTML scripts in the specified object.
-  /// </summary>
-  public Core.Scripts Scripts { get; }
+  ///// <summary>
+  ///// Returns a Scripts collection that represents the collection of HTML scripts in the specified object.
+  ///// </summary>
+  //public Core.Scripts Scripts { get; }
 
   /// <summary>
   /// Returns a Sections collection that represents the sections in the specified document.
@@ -760,20 +764,20 @@ public partial interface _Document: InteropObject
   /// </summary>
   public Sentences Sentences { get; }
 
-  /// <summary>
-  /// Returns the policy specified for a document stored on a server running Microsoft Office SharePoint Server 2007. Read-only.
-  /// </summary>
-  public Core.ServerPolicy ServerPolicy { get; }
+  ///// <summary>
+  ///// Returns the policy specified for a document stored on a server running Microsoft Office SharePoint Server 2007. Read-only.
+  ///// </summary>
+  //public Core.ServerPolicy ServerPolicy { get; }
 
   /// <summary>
   /// Returns a Shapes collection that represents all the Shape objects in the specified document.
   /// </summary>
   public Shapes Shapes { get; }
 
-  /// <summary>
-  /// Returns a SharedWorkspace object that represents the Document Workspace in which a specified document is located.
-  /// </summary>
-  public Core.SharedWorkspace SharedWorkspace { get; }
+  ///// <summary>
+  ///// Returns a SharedWorkspace object that represents the Document Workspace in which a specified document is located.
+  ///// </summary>
+  //public Core.SharedWorkspace SharedWorkspace { get; }
 
   /// <summary>
   /// Determines if grammatical errors are marked by a wavy green line in the specified document.
@@ -795,15 +799,15 @@ public partial interface _Document: InteropObject
   /// </summary>
   public bool ShowSummary { get; set; }
 
-  /// <summary>
-  /// Returns a SignatureSet object that represents the digital signatures for a document.
-  /// </summary>
-  public Core.SignatureSet Signatures { get; }
+  ///// <summary>
+  ///// Returns a SignatureSet object that represents the digital signatures for a document.
+  ///// </summary>
+  //public Core.SignatureSet Signatures { get; }
 
-  /// <summary>
-  /// Returns a SmartDocument object that represents the settings for a smart document solution.
-  /// </summary>
-  public Core.SmartDocument SmartDocument { get; }
+  ///// <summary>
+  ///// Returns a SmartDocument object that represents the settings for a smart document solution.
+  ///// </summary>
+  //public Core.SmartDocument SmartDocument { get; }
 
   /// <summary>
   /// Returns a SmartTags object that represents a smart tag in a document.
@@ -870,10 +874,10 @@ public partial interface _Document: InteropObject
   /// </summary>
   public WdSummaryMode SummaryViewMode { get; set; }
 
-  /// <summary>
-  /// Returns a Sync object that provides access to the methods and properties for documents that are part of a Document Workspace.
-  /// </summary>
-  public Core.Sync Sync { get; }
+  ///// <summary>
+  ///// Returns a Sync object that provides access to the methods and properties for documents that are part of a Document Workspace.
+  ///// </summary>
+  //public Core.Sync Sync { get; }
 
   /// <summary>
   /// Returns a Tables collection that represents all the tables in the specified document.
@@ -900,10 +904,10 @@ public partial interface _Document: InteropObject
   /// </summary>
   public TablesOfFigures TablesOfFigures { get; }
 
-  /// <summary>
-  /// Returns or sets the code page, or character set, that Microsoft Word uses for a document saved as an encoded text file.
-  /// </summary>
-  public Core.MsoEncoding TextEncoding { get; set; }
+  ///// <summary>
+  ///// Returns or sets the code page, or character set, that Microsoft Word uses for a document saved as an encoded text file.
+  ///// </summary>
+  //public Core.MsoEncoding TextEncoding { get; set; }
 
   /// <summary>
   /// Returns or sets a WdLineEndingType constant indicating how Microsoft Word marks the line and paragraph breaks in documents saved as text files.
