@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ConnectorFormat: _IMsoDispObj
+public interface ConnectorFormat: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   void BeginConnect(Shape ConnectedShape, int ConnectionSite);
   void BeginDisconnect();
   void EndConnect(Shape ConnectedShape, int ConnectionSite);

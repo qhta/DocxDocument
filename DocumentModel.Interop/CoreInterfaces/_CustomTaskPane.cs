@@ -5,7 +5,6 @@ namespace DocumentModel.Interop.Core;
 public interface _CustomTaskPane
 {
   string Title { get; }
-  object Application { get; }
   object Window { get; }
   bool Visible { get; set; }
   object ContentControl { get; }

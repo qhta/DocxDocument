@@ -3,7 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoDataLabel
 {
-  object Parent { get; }
   string Name { get; }
   object Select();
   IMsoBorder Border { get; }
@@ -37,8 +36,6 @@ public interface IMsoDataLabel
   object Separator { get; set; }
   IMsoChartFormat Format { get; }
   double _Height { get; }
-  object Application { get; }
-  int Creator { get; }
   double _Width { get; }
   string Formula { get; set; }
   string FormulaR1C1 { get; set; }

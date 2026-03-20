@@ -7,6 +7,7 @@
   <Project Path="../DocumentModel.EnumTypes/DocumentModel.EnumTypes.csproj" Id="8b0d4c8a-7a6d-45f6-9ce6-085beff23b47" />
   <Project Path="../DocumentModel.InOpenXml.Test/DocumentModel.InOpenXml.Test.csproj" Id="edc556fe-37c9-43cf-9462-8defdeac7a4b" />
   <Project Path="../DocumentModel.Interfaces.Interop/DocumentModel.interfaces.csproj" />
+  <Project Path="../DocumentModel.Interop.Enums/DocumentModel.Interop.Enums.csproj" />
   <Project Path="../DocxEditor/DocxEditor/DocxEditor.csproj" />
   <Project Path="../DocxEditorWpf_lib/DocxEditorWpf_lib.csproj" />
   <Project Path="../NamespaceMappings/NamespaceMappings.csproj" />

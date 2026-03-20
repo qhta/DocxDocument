@@ -2,10 +2,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface SharedWorkspaceLink: _IMsoDispObj
+public interface SharedWorkspaceLink: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   string URL { get; set; }
   string Description { get; set; }
   string Notes { get; set; }
@@ -15,5 +13,4 @@ public interface SharedWorkspaceLink: _IMsoDispObj
   object ModifiedDate { get; }
   void Save();
   void Delete();
-  object Parent { get; }
 }

@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface IMsoDiagram: _IMsoDispObj
+public interface IMsoDiagram: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   DiagramNodes Nodes { get; }
   MsoDiagramType Type { get; }
   MsoTriState AutoLayout { get; set; }

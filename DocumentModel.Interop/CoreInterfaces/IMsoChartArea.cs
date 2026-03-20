@@ -5,7 +5,6 @@ public interface IMsoChartArea
 {
   string Name { get; }
   object Select();
-  object Parent { get; }
   IMsoBorder Border { get; }
   object Clear();
   object ClearContents();
@@ -22,6 +21,4 @@ public interface IMsoChartArea
   object AutoScaleFont { get; set; }
   IMsoChartFormat Format { get; }
   bool RoundedCorners { get; set; }
-  object Application { get; }
-  int Creator { get; }
 }

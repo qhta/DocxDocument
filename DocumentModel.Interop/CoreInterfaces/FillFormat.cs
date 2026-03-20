@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface FillFormat: _IMsoDispObj
+public interface FillFormat: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   void Background();
   void OneColorGradient(MsoGradientStyle Style, int Variant, float Degree);
   void Patterned(MsoPatternType Pattern);

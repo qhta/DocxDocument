@@ -43,7 +43,7 @@ public partial interface WebOptions : InteropObject
   /// <summary>
   /// The screen size.
   /// </summary>
-  public Core.MsoScreenSize ScreenSize { get; set; }
+  //public Core.MsoScreenSize ScreenSize { get; set; }
 
   /// <summary>
   /// The pixels per inch.
@@ -53,7 +53,7 @@ public partial interface WebOptions : InteropObject
   /// <summary>
   /// The encoding.
   /// </summary>
-  public Core.MsoEncoding Encoding { get; set; }
+  //public Core.MsoEncoding Encoding { get; set; }
 
   /// <summary>
   /// The folder suffix.
@@ -63,5 +63,5 @@ public partial interface WebOptions : InteropObject
   /// <summary>
   /// The target browser.
   /// </summary>
-  public Core.MsoTargetBrowser TargetBrowser { get; set; }
+  //public Core.MsoTargetBrowser TargetBrowser { get; set; }
 }

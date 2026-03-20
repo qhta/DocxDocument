@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface CustomXMLNode: _IMsoDispObj
+public interface CustomXMLNode: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   CustomXMLNodes Attributes { get; }
   string BaseName { get; }
   CustomXMLNodes ChildNodes { get; }

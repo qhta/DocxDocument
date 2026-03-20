@@ -3,7 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoChart
 {
-  object Parent { get; }
   bool HasTitle { get; set; }
   IMsoChartTitle ChartTitle { get; }
   int DepthPercent { get; set; }
@@ -86,8 +85,6 @@ public interface IMsoChart
   IMsoChartData ChartData { get; }
   IMsoChartFormat Format { get; }
   Shapes Shapes { get; }
-  object Application { get; }
-  int Creator { get; }
   IMsoChartGroup Area3DGroup { get; }
   object AreaGroups(object Index);
   IMsoChartGroup Bar3DGroup { get; }

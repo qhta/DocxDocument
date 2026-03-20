@@ -348,7 +348,7 @@ public partial interface Range : InteropObject
   /// <summary>
   /// The scripts.
   /// </summary>
-  public Core.Scripts Scripts { get; }
+  //public Core.Scripts Scripts { get; }
 
   /// <summary>
   /// The character width.

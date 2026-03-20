@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface SmartArtLayout: _IMsoDispObj
+public interface SmartArtLayout: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   string Id { get; }
   string Name { get; }
   string Description { get; }

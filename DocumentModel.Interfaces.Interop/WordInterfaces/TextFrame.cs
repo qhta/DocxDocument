@@ -28,7 +28,7 @@ public partial interface TextFrame : InteropObject
   /// <summary>
   /// The orientation.
   /// </summary>
-  public Core.MsoTextOrientation Orientation { get; set; }
+  //public Core.MsoTextOrientation Orientation { get; set; }
 
   /// <summary>
   /// The text range.
@@ -73,27 +73,27 @@ public partial interface TextFrame : InteropObject
   /// <summary>
   /// The vertical anchor.
   /// </summary>
-  public Core.MsoVerticalAnchor VerticalAnchor { get; set; }
+  //public Core.MsoVerticalAnchor VerticalAnchor { get; set; }
 
   /// <summary>
   /// The horizontal anchor.
   /// </summary>
-  public Core.MsoHorizontalAnchor HorizontalAnchor { get; set; }
+  //public Core.MsoHorizontalAnchor HorizontalAnchor { get; set; }
 
   /// <summary>
   /// The path format.
   /// </summary>
-  public Core.MsoPathFormat PathFormat { get; set; }
+  //public Core.MsoPathFormat PathFormat { get; set; }
 
   /// <summary>
   /// The warp format.
   /// </summary>
-  public Core.MsoWarpFormat WarpFormat { get; set; }
+  //public Core.MsoWarpFormat WarpFormat { get; set; }
 
   /// <summary>
   /// The column.
   /// </summary>
-  public Core.TextColumn2 Column { get; }
+  //public Core.TextColumn2 Column { get; }
 
   /// <summary>
   /// The three d.
@@ -103,5 +103,5 @@ public partial interface TextFrame : InteropObject
   /// <summary>
   /// The no text rotation.
   /// </summary>
-  public Core.MsoTriState NoTextRotation { get; set; }
+  //public Core.MsoTriState NoTextRotation { get; set; }
 }

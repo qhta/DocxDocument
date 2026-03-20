@@ -26,7 +26,7 @@ public interface DocumentProperty: InteropObject
   /// <summary>
   /// Data type of the property value, specified as a member of the MsoDocProperties enumeration.
   /// </summary>
-  MsoDocProperties Type { get; set; }
+  DocPropertyType Type { get; set; }
 
   /// <summary>
   /// Indicates whether the property is linked to document content.

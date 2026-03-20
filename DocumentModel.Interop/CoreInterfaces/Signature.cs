@@ -1,17 +1,14 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface Signature: _IMsoDispObj
+public interface Signature: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   string Signer { get; }
   string Issuer { get; }
   object ExpireDate { get; }
   bool IsValid { get; }
   bool AttachCertificate { get; set; }
   void Delete();
-  object Parent { get; }
   bool IsCertificateExpired { get; }
   bool IsCertificateRevoked { get; }
   object SignDate { get; }

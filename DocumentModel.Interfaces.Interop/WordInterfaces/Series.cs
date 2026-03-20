@@ -133,7 +133,7 @@ public partial interface Series : InteropObject
   /// <summary>
   /// The chart type.
   /// </summary>
-  public Core.XlChartType ChartType { get; set; }
+  //public Core.XlChartType ChartType { get; set; }
 
   /// <summary>
   /// The values.

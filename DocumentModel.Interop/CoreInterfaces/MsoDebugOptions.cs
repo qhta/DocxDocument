@@ -1,10 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface MsoDebugOptions: _IMsoDispObj
+public interface MsoDebugOptions: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   int FeatureReports { get; set; }
   bool OutputToDebugger { get; set; }
   bool OutputToFile { get; set; }

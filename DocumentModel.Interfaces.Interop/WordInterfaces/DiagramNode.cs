@@ -28,7 +28,7 @@ public partial interface DiagramNode : InteropObject
   /// <summary>
   /// The layout.
   /// </summary>
-  public Core.MsoOrgChartLayoutType Layout { get; set; }
+  //public Core.MsoOrgChartLayoutType Layout { get; set; }
 
   /// <summary>
   /// The text shape.

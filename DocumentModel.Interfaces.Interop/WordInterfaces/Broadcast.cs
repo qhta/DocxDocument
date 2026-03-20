@@ -13,7 +13,7 @@ public partial interface Broadcast : InteropObject
   /// <summary>
   /// The state.
   /// </summary>
-  public Core.MsoBroadcastState State { get; }
+  //public Core.MsoBroadcastState State { get; }
 
   /// <summary>
   /// The capabilities.

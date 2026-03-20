@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ThreeDFormat: _IMsoDispObj
+public interface ThreeDFormat: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   void IncrementRotationX(float Increment);
   void IncrementRotationY(float Increment);
   void ResetRotation();

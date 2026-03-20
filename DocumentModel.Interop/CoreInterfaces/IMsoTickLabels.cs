@@ -3,7 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoTickLabels
 {
-  object Parent { get; }
   object Delete();
   ChartFont Font { get; }
   string Name { get; }
@@ -19,6 +18,4 @@ public interface IMsoTickLabels
   int Alignment { get; set; }
   bool MultiLevel { get; set; }
   IMsoChartFormat Format { get; }
-  object Application { get; }
-  int Creator { get; }
 }

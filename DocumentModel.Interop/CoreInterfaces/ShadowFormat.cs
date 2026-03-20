@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface ShadowFormat: _IMsoDispObj
+public interface ShadowFormat: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   void IncrementOffsetX(float Increment);
   void IncrementOffsetY(float Increment);
   ColorFormat ForeColor { get; set; }

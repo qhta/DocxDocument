@@ -8,7 +8,7 @@ public interface ReflectionFormat : InteropObject
   /// <summary>
   /// The type.
   /// </summary>
-  public Core.MsoReflectionType Type { get; set; }
+  //public Core.MsoReflectionType Type { get; set; }
   /// <summary>
   /// The transparency.
   /// </summary>

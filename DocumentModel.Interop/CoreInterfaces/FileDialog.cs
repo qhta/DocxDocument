@@ -2,11 +2,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface FileDialog: _IMsoDispObj
+public interface FileDialog: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   FileDialogFilters Filters { get; }
   int FilterIndex { get; set; }
   string Title { get; set; }

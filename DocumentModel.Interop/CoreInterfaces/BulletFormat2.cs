@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface BulletFormat2: _IMsoDispObj
+public interface BulletFormat2: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   int Character { get; set; }
   Font2 Font { get; }
   int Number { get; }

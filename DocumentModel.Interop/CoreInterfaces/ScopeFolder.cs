@@ -2,10 +2,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface ScopeFolder: _IMsoDispObj
+public interface ScopeFolder: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   string Name { get; }
   string Path { get; }
   ScopeFolders ScopeFolders { get; }

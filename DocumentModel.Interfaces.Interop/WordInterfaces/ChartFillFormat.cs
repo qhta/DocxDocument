@@ -18,7 +18,7 @@ public partial interface ChartFillFormat : InteropObject
   /// <summary>
   /// The gradient color type.
   /// </summary>
-  public Core.MsoGradientColorType GradientColorType { get; }
+  //public Core.MsoGradientColorType GradientColorType { get; }
 
   /// <summary>
   /// The gradient degree.
@@ -28,7 +28,7 @@ public partial interface ChartFillFormat : InteropObject
   /// <summary>
   /// The gradient style.
   /// </summary>
-  public Core.MsoGradientStyle GradientStyle { get; }
+  //public Core.MsoGradientStyle GradientStyle { get; }
 
   /// <summary>
   /// The gradient variant.
@@ -38,17 +38,17 @@ public partial interface ChartFillFormat : InteropObject
   /// <summary>
   /// The pattern.
   /// </summary>
-  public Core.MsoPatternType Pattern { get; }
+  //public Core.MsoPatternType Pattern { get; }
 
   /// <summary>
   /// The preset gradient type.
   /// </summary>
-  public Core.MsoPresetGradientType PresetGradientType { get; }
+  //public Core.MsoPresetGradientType PresetGradientType { get; }
 
   /// <summary>
   /// The preset texture.
   /// </summary>
-  public Core.MsoPresetTexture PresetTexture { get; }
+  //public Core.MsoPresetTexture PresetTexture { get; }
 
   /// <summary>
   /// The texture name.
@@ -58,15 +58,15 @@ public partial interface ChartFillFormat : InteropObject
   /// <summary>
   /// The texture type.
   /// </summary>
-  public Core.MsoTextureType TextureType { get; }
+  //public Core.MsoTextureType TextureType { get; }
 
   /// <summary>
   /// The type.
   /// </summary>
-  public Core.MsoFillType Type { get; }
+  //public Core.MsoFillType Type { get; }
 
   /// <summary>
   /// The visible.
   /// </summary>
-  public Core.MsoTriState Visible { get; set; }
+  //public Core.MsoTriState Visible { get; set; }
 }

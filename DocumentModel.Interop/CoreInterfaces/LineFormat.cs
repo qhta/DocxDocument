@@ -1,11 +1,8 @@
 
 namespace DocumentModel.Interop.Core;
 
-public interface LineFormat: _IMsoDispObj
+public interface LineFormat: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
-  object Parent { get; }
   ColorFormat BackColor { get; set; }
   MsoArrowheadLength BeginArrowheadLength { get; set; }
   MsoArrowheadStyle BeginArrowheadStyle { get; set; }

@@ -2,10 +2,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface Sync: _IMsoDispObj
+public interface Sync: InteropObject
 {
-  new object Application { get; }
-  new int Creator { get; }
   MsoSyncStatusType Status { get; }
   string WorkspaceLastChangedBy { get; }
   object LastSyncTime { get; }
@@ -15,5 +13,4 @@ public interface Sync: _IMsoDispObj
   void OpenVersion(MsoSyncVersionType SyncVersionType);
   void ResolveConflict(MsoSyncConflictResolutionType SyncConflictResolution);
   void Unsuspend();
-  object Parent { get; }
 }
