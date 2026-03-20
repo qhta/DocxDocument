@@ -4,15 +4,15 @@ namespace DocumentModel.Interop.Core;
 
 public interface Permission: InteropDictionary<string, UserPermission>
 {
-  bool EnableTrustedBrowser { get; set; }
-  UserPermission Add(string UserId, object Permission, object ExpirationDate);
-  void ApplyPolicy(string FileName);
-  void RemoveAll();
-  bool Enabled { get; set; }
-  string RequestPermissionURL { get; set; }
-  string PolicyName { get; }
-  string PolicyDescription { get; }
-  bool StoreLicenses { get; set; }
-  string DocumentAuthor { get; set; }
-  bool PermissionFromPolicy { get; }
+  public bool EnableTrustedBrowser { get; set; }
+  public UserPermission Add(string UserId, object Permission, object ExpirationDate);
+  public void ApplyPolicy(string FileName);
+  public void RemoveAll();
+  public bool Enabled { get; set; }
+  public string RequestPermissionURL { get; set; }
+  public string PolicyName { get; }
+  public string PolicyDescription { get; }
+  public bool StoreLicenses { get; set; }
+  public string DocumentAuthor { get; set; }
+  public bool PermissionFromPolicy { get; }
 }

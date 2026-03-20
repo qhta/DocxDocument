@@ -4,8 +4,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface ChartColorFormat
 {
-  int SchemeColor { get; set; }
-  int RGB { get; set; }
-  int _Default { get; }
-  int Type { get; }
+  public int SchemeColor { get; set; }
+  public int RGB { get; set; }
+  public int _Default { get; }
+  public int Type { get; }
 }

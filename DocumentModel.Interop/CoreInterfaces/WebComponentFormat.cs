@@ -3,11 +3,11 @@ namespace DocumentModel.Interop.Core;
 
 public interface WebComponentFormat
 {
-  string URL { get; set; }
-  string HTML { get; set; }
-  string Name { get; set; }
-  int Width { get; set; }
-  int Height { get; set; }
-  string PreviewGraphic { get; set; }
-  void LaunchPropertiesWindow();
+  public string URL { get; set; }
+  public string HTML { get; set; }
+  public string Name { get; set; }
+  public int Width { get; set; }
+  public int Height { get; set; }
+  public string PreviewGraphic { get; set; }
+  public void LaunchPropertiesWindow();
 }

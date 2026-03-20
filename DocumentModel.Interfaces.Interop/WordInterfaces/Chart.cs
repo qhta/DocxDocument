@@ -53,7 +53,7 @@ public partial interface Chart : InteropObject
   /// <summary>
   /// The display blanks as.
   /// </summary>
-  public XlDisplayBlanksAs DisplayBlanksAs { get; set; }
+  public Core.XlDisplayBlanksAs DisplayBlanksAs { get; set; }
 
   /// <summary>
   /// The sub type.
@@ -83,7 +83,7 @@ public partial interface Chart : InteropObject
   /// <summary>
   /// The plot by.
   /// </summary>
-  public XlRowCol PlotBy { get; set; }
+  public Core.XlRowCol PlotBy { get; set; }
 
   /// <summary>
   /// The has legend.
@@ -133,7 +133,7 @@ public partial interface Chart : InteropObject
   /// <summary>
   /// The bar shape.
   /// </summary>
-  public XlBarShape BarShape { get; set; }
+  public Core.XlBarShape BarShape { get; set; }
 
   /// <summary>
   /// The side wall.
@@ -233,12 +233,12 @@ public partial interface Chart : InteropObject
   /// <summary>
   /// The category label level.
   /// </summary>
-  public XlCategoryLabelLevel CategoryLabelLevel { get; set; }
+  public Core.XlCategoryLabelLevel CategoryLabelLevel { get; set; }
 
   /// <summary>
   /// The series name level.
   /// </summary>
-  public XlSeriesNameLevel SeriesNameLevel { get; set; }
+  public Core.XlSeriesNameLevel SeriesNameLevel { get; set; }
 
   /// <summary>
   /// The has hidden content.

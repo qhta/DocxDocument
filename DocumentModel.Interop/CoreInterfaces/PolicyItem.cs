@@ -4,8 +4,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface PolicyItem: InteropObject
 {
-  string Id { get; }
-  string Name { get; }
-  string Description { get; }
-  string Data { get; }
+  public string Id { get; }
+  public string Name { get; }
+  public string Description { get; }
+  public string Data { get; }
 }

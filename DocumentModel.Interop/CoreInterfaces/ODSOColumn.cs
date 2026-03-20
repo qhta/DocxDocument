@@ -3,7 +3,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface ODSOColumn: InteropObject
 {
-  int Index { get; }
-  string Name { get; }
-  string Value { get; }
+  public int Index { get; }
+  public string Name { get; }
+  public string Value { get; }
 }

@@ -16,31 +16,31 @@ public interface DocumentProperty: InteropObject
   /// Name of the document property.
   /// This is a string that identifies the property and is used to access it within the document's properties collection.
   /// </summary>
-  string Name { get; set; }
+  public string Name { get; set; }
 
   /// <summary>
   /// Gets or sets the underlying value represented by the property.
   /// </summary>
-  object Value { get; set; }
+  public object Value { get; set; }
 
   /// <summary>
   /// Data type of the property value, specified as a member of the MsoDocProperties enumeration.
   /// </summary>
-  DocPropertyType Type { get; set; }
+  public DocPropertyType Type { get; set; }
 
   /// <summary>
   /// Indicates whether the property is linked to document content.
   /// If true, the property value is automatically updated based on the linked content;
   /// if false, the property value is static and must be set manually.
   /// </summary>
-  bool LinkToContent { get; set; }
+  public bool LinkToContent { get; set; }
 
   /// <summary>
   /// The source object to which the property is linked, if LinkToContent is true.
   /// It can be any URL or identifier that represents the content source,
   /// such as a cell reference in a spreadsheet or a bookmark in a word processing document.
   /// </summary>
-  string LinkSource { get; set; }
+  public string LinkSource { get; set; }
 
   /// <summary>
   /// Deletes the current property.
@@ -48,6 +48,6 @@ public interface DocumentProperty: InteropObject
   /// <remarks>Call this method to remove the object or release any associated resources. After calling this
   /// method, the object may no longer be usable, and further operations may result in exceptions or undefined behavior.
   /// The specific effects of deletion depend on the implementation.</remarks>
-  void Delete();
+  public void Delete();
 
 }

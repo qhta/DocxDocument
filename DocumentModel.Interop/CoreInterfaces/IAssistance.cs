@@ -3,8 +3,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface IAssistance
 {
-  void ShowHelp(string HelpId, string Scope);
-  void SearchHelp(string Query, string Scope);
-  void SetDefaultContext(string HelpId);
-  void ClearDefaultContext(string HelpId);
+  public void ShowHelp(string HelpId, string Scope);
+  public void SearchHelp(string Query, string Scope);
+  public void SetDefaultContext(string HelpId);
+  public void ClearDefaultContext(string HelpId);
 }

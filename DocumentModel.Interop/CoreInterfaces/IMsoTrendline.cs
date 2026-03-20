@@ -3,24 +3,24 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoTrendline
 {
-  double Backward { get; set; }
-  IMsoBorder Border { get; }
-  object ClearFormats();
-  IMsoDataLabel DataLabel { get; }
-  object Delete();
-  bool DisplayEquation { get; set; }
-  bool DisplayRSquared { get; set; }
-  double Forward { get; set; }
-  int Index { get; }
-  double Intercept { get; set; }
-  bool InterceptIsAuto { get; set; }
-  string Name { get; set; }
-  bool NameIsAuto { get; set; }
-  int Order { get; set; }
-  int Period { get; set; }
-  object Select();
-  XlTrendlineType Type { get; set; }
-  IMsoChartFormat Format { get; }
-  double Backward2 { get; set; }
-  double Forward2 { get; set; }
+  public double Backward { get; set; }
+  public IMsoBorder Border { get; }
+  public object ClearFormats();
+  public IMsoDataLabel DataLabel { get; }
+  public object Delete();
+  public bool DisplayEquation { get; set; }
+  public bool DisplayRSquared { get; set; }
+  public double Forward { get; set; }
+  public int Index { get; }
+  public double Intercept { get; set; }
+  public bool InterceptIsAuto { get; set; }
+  public string Name { get; set; }
+  public bool NameIsAuto { get; set; }
+  public int Order { get; set; }
+  public int Period { get; set; }
+  public object Select();
+  public XlTrendlineType Type { get; set; }
+  public IMsoChartFormat Format { get; }
+  public double Backward2 { get; set; }
+  public double Forward2 { get; set; }
 }

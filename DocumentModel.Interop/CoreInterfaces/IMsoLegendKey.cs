@@ -3,27 +3,27 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoLegendKey
 {
-  IMsoBorder Border { get; }
-  object ClearFormats();
-  object Delete();
-  IMsoInterior Interior { get; }
-  ChartFillFormat Fill { get; }
-  bool InvertIfNegative { get; set; }
-  int MarkerBackgroundColor { get; set; }
-  XlColorIndex MarkerBackgroundColorIndex { get; set; }
-  int MarkerForegroundColor { get; set; }
-  XlColorIndex MarkerForegroundColorIndex { get; set; }
-  int MarkerSize { get; set; }
-  XlMarkerStyle MarkerStyle { get; set; }
-  int PictureType { get; set; }
-  double PictureUnit { get; set; }
-  object Select();
-  bool Smooth { get; set; }
-  double Left { get; }
-  double Top { get; }
-  double Width { get; }
-  double Height { get; }
-  bool Shadow { get; set; }
-  IMsoChartFormat Format { get; }
-  double PictureUnit2 { get; set; }
+  public IMsoBorder Border { get; }
+  public object ClearFormats();
+  public object Delete();
+  public IMsoInterior Interior { get; }
+  public ChartFillFormat Fill { get; }
+  public bool InvertIfNegative { get; set; }
+  public int MarkerBackgroundColor { get; set; }
+  public XlColorIndex MarkerBackgroundColorIndex { get; set; }
+  public int MarkerForegroundColor { get; set; }
+  public XlColorIndex MarkerForegroundColorIndex { get; set; }
+  public int MarkerSize { get; set; }
+  public XlMarkerStyle MarkerStyle { get; set; }
+  public int PictureType { get; set; }
+  public double PictureUnit { get; set; }
+  public object Select();
+  public bool Smooth { get; set; }
+  public double Left { get; }
+  public double Top { get; }
+  public double Width { get; }
+  public double Height { get; }
+  public bool Shadow { get; set; }
+  public IMsoChartFormat Format { get; }
+  public double PictureUnit2 { get; set; }
 }

@@ -4,10 +4,10 @@ namespace DocumentModel.Interop.Core;
 
 public interface HTMLProjectItem: InteropObject
 {
-  string Name { get; }
-  bool IsOpen { get; }
-  void LoadFromFile(string FileName);
-  void Open(MsoHTMLProjectOpen OpenKind);
-  void SaveCopyAs(string FileName);
-  string Text { get; set; }
+  public string Name { get; }
+  public bool IsOpen { get; }
+  public void LoadFromFile(string FileName);
+  public void Open(MsoHTMLProjectOpen OpenKind);
+  public void SaveCopyAs(string FileName);
+  public string Text { get; set; }
 }

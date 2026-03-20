@@ -3,116 +3,116 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoChart
 {
-  bool HasTitle { get; set; }
-  IMsoChartTitle ChartTitle { get; }
-  int DepthPercent { get; set; }
-  int Elevation { get; set; }
-  int GapDepth { get; set; }
-  int HeightPercent { get; set; }
-  int Perspective { get; set; }
-  object RightAngleAxes { get; set; }
-  object Rotation { get; set; }
-  XlDisplayBlanksAs DisplayBlanksAs { get; set; }
-  bool ProtectData { get; set; }
-  bool ProtectFormatting { get; set; }
-  bool ProtectGoalSeek { get; set; }
-  bool ProtectSelection { get; set; }
-  bool ProtectChartObjects { get; set; }
-  void UnProtect(object Password);
-  void Protect(object Password, object DrawingObjects, object Contents, object Scenarios, object UserInterfaceOnly);
-  object ChartGroups { get; }
-  object SeriesCollection(object Index);
+  public bool HasTitle { get; set; }
+  public IMsoChartTitle ChartTitle { get; }
+  public int DepthPercent { get; set; }
+  public int Elevation { get; set; }
+  public int GapDepth { get; set; }
+  public int HeightPercent { get; set; }
+  public int Perspective { get; set; }
+  public object RightAngleAxes { get; set; }
+  public object Rotation { get; set; }
+  public XlDisplayBlanksAs DisplayBlanksAs { get; set; }
+  public bool ProtectData { get; set; }
+  public bool ProtectFormatting { get; set; }
+  public bool ProtectGoalSeek { get; set; }
+  public bool ProtectSelection { get; set; }
+  public bool ProtectChartObjects { get; set; }
+  public void UnProtect(object Password);
+  public void Protect(object Password, object DrawingObjects, object Contents, object Scenarios, object UserInterfaceOnly);
+  public object ChartGroups { get; }
+  public object SeriesCollection(object Index);
 
-  void _ApplyDataLabels
+  public void _ApplyDataLabels
   (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines);
 
-  int SubType { get; set; }
-  int Type { get; set; }
-  IMsoCorners Corners { get; }
+  public int SubType { get; set; }
+  public int Type { get; set; }
+  public IMsoCorners Corners { get; }
 
-  void ApplyDataLabels
+  public void ApplyDataLabels
   (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines, object ShowSeriesName, object ShowCategoryName, object ShowValue, object ShowPercentage,
     object ShowBubbleSize, object Separator);
 
-  XlChartType ChartType { get; set; }
-  bool HasDataTable { get; set; }
-  void ApplyCustomType(XlChartType ChartType, object TypeName);
-  void GetChartElement(int x, int y, ref int ElementID, ref int Arg1, ref int Arg2);
-  void SetSourceData(string Source, object PlotBy);
-  XlRowCol PlotBy { get; set; }
-  bool HasLegend { get; set; }
-  IMsoLegend Legend { get; }
-  object Axes(object Type, XlAxisGroup AxisGroup);
-  object HasAxis { get; set; }
-  IMsoWalls Walls { get; }
-  IMsoFloor Floor { get; }
-  IMsoPlotArea PlotArea { get; }
-  bool PlotVisibleOnly { get; set; }
-  IMsoChartArea ChartArea { get; }
-  void AutoFormat(int rGallery, object varFormat);
-  bool AutoScaling { get; set; }
-  void SetBackgroundPicture(string bstr);
+  public XlChartType ChartType { get; set; }
+  public bool HasDataTable { get; set; }
+  public void ApplyCustomType(XlChartType ChartType, object TypeName);
+  public void GetChartElement(int x, int y, ref int ElementID, ref int Arg1, ref int Arg2);
+  public void SetSourceData(string Source, object PlotBy);
+  public XlRowCol PlotBy { get; set; }
+  public bool HasLegend { get; set; }
+  public IMsoLegend Legend { get; }
+  public object Axes(object Type, XlAxisGroup AxisGroup);
+  public object HasAxis { get; set; }
+  public IMsoWalls Walls { get; }
+  public IMsoFloor Floor { get; }
+  public IMsoPlotArea PlotArea { get; }
+  public bool PlotVisibleOnly { get; set; }
+  public IMsoChartArea ChartArea { get; }
+  public void AutoFormat(int rGallery, object varFormat);
+  public bool AutoScaling { get; set; }
+  public void SetBackgroundPicture(string bstr);
 
-  void ChartWizard
+  public void ChartWizard
   (object varSource, object varGallery, object varFormat, object varPlotBy, object varCategoryLabels,
     object varSeriesLabels, object varHasLegend, object varTitle, object varCategoryTitle, object varValueTitle,
     object varExtraTitle);
 
-  void CopyPicture(int Appearance, int Format, int Size);
-  IMsoDataTable DataTable { get; }
-  object Evaluate(object varName, int LocaleID, out int ObjType);
-  object _Evaluate(object varName, int LocaleID);
-  void Paste(object varType);
-  XlBarShape BarShape { get; set; }
-  bool Export(string bstr, object varFilterName, object varInteractive);
-  void SetDefaultChart(object varName);
-  void ApplyChartTemplate(string bstrFileName);
-  void SaveChartTemplate(string bstrFileName);
-  IMsoWalls SideWall { get; }
-  IMsoWalls BackWall { get; }
-  object ChartStyle { get; set; }
-  void ClearToMatchStyle();
-  object PivotLayout { get; }
-  bool HasPivotFields { get; set; }
-  void RefreshPivotTable();
-  bool ShowDataLabelsOverMaximum { get; set; }
-  void ApplyLayout(int Layout, object varChartType);
-  object Selection { get; }
-  void Refresh();
-  void SetElement(MsoChartElementType RHS);
-  IMsoChartData ChartData { get; }
-  IMsoChartFormat Format { get; }
-  Shapes Shapes { get; }
-  IMsoChartGroup Area3DGroup { get; }
-  object AreaGroups(object Index);
-  IMsoChartGroup Bar3DGroup { get; }
-  object BarGroups(object Index);
-  IMsoChartGroup Column3DGroup { get; }
-  object ColumnGroups(object Index);
-  IMsoChartGroup Line3DGroup { get; }
-  object LineGroups(object Index);
-  IMsoChartGroup Pie3DGroup { get; }
-  object PieGroups(object Index);
-  object DoughnutGroups(object Index);
-  object RadarGroups(object Index);
-  IMsoChartGroup SurfaceGroup { get; }
-  object XYGroups(object Index);
-  object Delete();
-  object Copy();
-  object Select(object Replace);
-  bool ShowReportFilterFieldButtons { get; set; }
-  bool ShowLegendFieldButtons { get; set; }
-  bool ShowAxisFieldButtons { get; set; }
-  bool ShowValueFieldButtons { get; set; }
-  bool ShowAllFieldButtons { get; set; }
-  bool ProtectChartSheetFormatting { set; }
-  object FullSeriesCollection(object Index);
-  XlCategoryLabelLevel CategoryLabelLevel { get; set; }
-  XlSeriesNameLevel SeriesNameLevel { get; set; }
-  bool HasHiddenContent { get; }
-  void DeleteHiddenContent();
-  object ChartColor { get; set; }
-  void ClearToMatchColorStyle();
+  public void CopyPicture(int Appearance, int Format, int Size);
+  public IMsoDataTable DataTable { get; }
+  public object Evaluate(object varName, int LocaleID, out int ObjType);
+  public object _Evaluate(object varName, int LocaleID);
+  public void Paste(object varType);
+  public XlBarShape BarShape { get; set; }
+  public bool Export(string bstr, object varFilterName, object varInteractive);
+  public void SetDefaultChart(object varName);
+  public void ApplyChartTemplate(string bstrFileName);
+  public void SaveChartTemplate(string bstrFileName);
+  public IMsoWalls SideWall { get; }
+  public IMsoWalls BackWall { get; }
+  public object ChartStyle { get; set; }
+  public void ClearToMatchStyle();
+  public object PivotLayout { get; }
+  public bool HasPivotFields { get; set; }
+  public void RefreshPivotTable();
+  public bool ShowDataLabelsOverMaximum { get; set; }
+  public void ApplyLayout(int Layout, object varChartType);
+  public object Selection { get; }
+  public void Refresh();
+  public void SetElement(MsoChartElementType RHS);
+  public IMsoChartData ChartData { get; }
+  public IMsoChartFormat Format { get; }
+  public Shapes Shapes { get; }
+  public IMsoChartGroup Area3DGroup { get; }
+  public object AreaGroups(object Index);
+  public IMsoChartGroup Bar3DGroup { get; }
+  public object BarGroups(object Index);
+  public IMsoChartGroup Column3DGroup { get; }
+  public object ColumnGroups(object Index);
+  public IMsoChartGroup Line3DGroup { get; }
+  public object LineGroups(object Index);
+  public IMsoChartGroup Pie3DGroup { get; }
+  public object PieGroups(object Index);
+  public object DoughnutGroups(object Index);
+  public object RadarGroups(object Index);
+  public IMsoChartGroup SurfaceGroup { get; }
+  public object XYGroups(object Index);
+  public object Delete();
+  public object Copy();
+  public object Select(object Replace);
+  public bool ShowReportFilterFieldButtons { get; set; }
+  public bool ShowLegendFieldButtons { get; set; }
+  public bool ShowAxisFieldButtons { get; set; }
+  public bool ShowValueFieldButtons { get; set; }
+  public bool ShowAllFieldButtons { get; set; }
+  public bool ProtectChartSheetFormatting { set; }
+  public object FullSeriesCollection(object Index);
+  public XlCategoryLabelLevel CategoryLabelLevel { get; set; }
+  public XlSeriesNameLevel SeriesNameLevel { get; set; }
+  public bool HasHiddenContent { get; }
+  public void DeleteHiddenContent();
+  public object ChartColor { get; set; }
+  public void ClearToMatchColorStyle();
 }

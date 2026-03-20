@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface SharedWorkspaceFolders: InteropCollection<SharedWorkspaceFolder>
 {
-  SharedWorkspaceFolder Add(string FolderName, object ParentFolder);
-  bool ItemCountExceeded { get; }
+  public SharedWorkspaceFolder Add(string FolderName, object ParentFolder);
+  public bool ItemCountExceeded { get; }
 }

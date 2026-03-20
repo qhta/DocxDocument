@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface SharedWorkspaceMembers: InteropCollection<SharedWorkspaceMember>
 {
-  SharedWorkspaceMember Add(string Email, string DomainName, string DisplayName, object Role);
-  bool ItemCountExceeded { get; }
+  public SharedWorkspaceMember Add(string Email, string DomainName, string DisplayName, object Role);
+  public bool ItemCountExceeded { get; }
 }

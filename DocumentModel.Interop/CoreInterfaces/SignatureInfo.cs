@@ -3,20 +3,20 @@ namespace DocumentModel.Interop.Core;
 
 public interface SignatureInfo: InteropObject
 {
-  bool ReadOnly { get; }
-  string SignatureProvider { get; }
-  string SignatureText { get; set; }
-  object SignatureImage { get; set; }
-  string SignatureComment { get; set; }
-  object GetSignatureDetail(SignatureDetail sigdet);
-  object GetCertificateDetail(CertificateDetail certdet);
-  ContentVerificationResults ContentVerificationResults { get; }
-  CertificateVerificationResults CertificateVerificationResults { get; }
-  bool IsValid { get; }
-  bool IsCertificateExpired { get; }
-  bool IsCertificateRevoked { get; }
-  bool IsCertificateUntrusted { get; }
-  void ShowSignatureCertificate(object ParentWindow);
-  void SelectSignatureCertificate(object ParentWindow);
-  void SelectCertificateDetailByThumbprint(string bstrThumbprint);
+  public bool ReadOnly { get; }
+  public string SignatureProvider { get; }
+  public string SignatureText { get; set; }
+  public object SignatureImage { get; set; }
+  public string SignatureComment { get; set; }
+  public object GetSignatureDetail(SignatureDetail sigdet);
+  public object GetCertificateDetail(CertificateDetail certdet);
+  public ContentVerificationResults ContentVerificationResults { get; }
+  public CertificateVerificationResults CertificateVerificationResults { get; }
+  public bool IsValid { get; }
+  public bool IsCertificateExpired { get; }
+  public bool IsCertificateRevoked { get; }
+  public bool IsCertificateUntrusted { get; }
+  public void ShowSignatureCertificate(object ParentWindow);
+  public void SelectSignatureCertificate(object ParentWindow);
+  public void SelectCertificateDetailByThumbprint(string bstrThumbprint);
 }

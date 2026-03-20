@@ -4,5 +4,5 @@ namespace DocumentModel.Interop.Core;
 
 public interface DocumentLibraryVersions: InteropCollection<DocumentLibraryVersion>
 {
-  bool IsVersioningEnabled { get; }
+  public bool IsVersioningEnabled { get; }
 }

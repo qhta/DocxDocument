@@ -3,5 +3,5 @@ namespace DocumentModel.Interop.Core;
 
 public interface ICommandBarComboBoxEvents
 {
-  void Change(CommandBarComboBox Ctrl);
+  public void Change(CommandBarComboBox Ctrl);
 }

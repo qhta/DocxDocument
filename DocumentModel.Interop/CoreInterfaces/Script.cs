@@ -4,11 +4,11 @@ namespace DocumentModel.Interop.Core;
 
 public interface Script: InteropObject
 {
-  string Extended { get; set; }
-  string Id { get; set; }
-  MsoScriptLanguage Language { get; set; }
-  MsoScriptLocation Location { get; }
-  void Delete();
-  object Shape { get; }
-  string ScriptText { get; set; }
+  public string Extended { get; set; }
+  public string Id { get; set; }
+  public MsoScriptLanguage Language { get; set; }
+  public MsoScriptLocation Location { get; }
+  public void Delete();
+  public object Shape { get; }
+  public string ScriptText { get; set; }
 }

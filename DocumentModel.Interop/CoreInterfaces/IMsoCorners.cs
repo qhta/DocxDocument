@@ -3,6 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoCorners
 {
-  string Name { get; }
-  object Select();
+  public string Name { get; }
+  public object Select();
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface IConverterPreferences
 {
-  void HrGetMacroEnabled(out int pfMacroEnabled);
-  void HrCheckFormat(out int pFormat);
-  void HrGetLossySave(out int pfLossySave);
+  public void HrGetMacroEnabled(out int pfMacroEnabled);
+  public void HrCheckFormat(out int pFormat);
+  public void HrGetLossySave(out int pfLossySave);
 }

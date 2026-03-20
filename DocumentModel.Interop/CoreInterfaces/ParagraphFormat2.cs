@@ -3,22 +3,22 @@ namespace DocumentModel.Interop.Core;
 
 public interface ParagraphFormat2: InteropObject
 {
-  MsoParagraphAlignment Alignment { get; set; }
-  MsoBaselineAlignment BaselineAlignment { get; set; }
-  BulletFormat2 Bullet { get; }
-  MsoTriState FarEastLineBreakLevel { get; set; }
-  float FirstLineIndent { get; set; }
-  MsoTriState HangingPunctuation { get; set; }
-  int IndentLevel { get; set; }
-  float LeftIndent { get; set; }
-  MsoTriState LineRuleAfter { get; set; }
-  MsoTriState LineRuleBefore { get; set; }
-  MsoTriState LineRuleWithin { get; set; }
-  float RightIndent { get; set; }
-  float SpaceAfter { get; set; }
-  float SpaceBefore { get; set; }
-  float SpaceWithin { get; set; }
-  TabStops2 TabStops { get; }
-  MsoTextDirection TextDirection { get; set; }
-  MsoTriState WordWrap { get; set; }
+  public MsoParagraphAlignment Alignment { get; set; }
+  public MsoBaselineAlignment BaselineAlignment { get; set; }
+  public BulletFormat2 Bullet { get; }
+  public MsoTriState FarEastLineBreakLevel { get; set; }
+  public float FirstLineIndent { get; set; }
+  public MsoTriState HangingPunctuation { get; set; }
+  public int IndentLevel { get; set; }
+  public float LeftIndent { get; set; }
+  public MsoTriState LineRuleAfter { get; set; }
+  public MsoTriState LineRuleBefore { get; set; }
+  public MsoTriState LineRuleWithin { get; set; }
+  public float RightIndent { get; set; }
+  public float SpaceAfter { get; set; }
+  public float SpaceBefore { get; set; }
+  public float SpaceWithin { get; set; }
+  public TabStops2 TabStops { get; }
+  public MsoTextDirection TextDirection { get; set; }
+  public MsoTriState WordWrap { get; set; }
 }

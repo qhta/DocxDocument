@@ -3,9 +3,9 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoEServicesDialog
 {
-  void Close(bool ApplyWebComponentChanges);
-  void AddTrustedDomain(string Domain);
-  string ApplicationName { get; }
-  object WebComponent { get; }
-  object ClipArt { get; }
+  public void Close(bool ApplyWebComponentChanges);
+  public void AddTrustedDomain(string Domain);
+  public string ApplicationName { get; }
+  public object WebComponent { get; }
+  public object ClipArt { get; }
 }

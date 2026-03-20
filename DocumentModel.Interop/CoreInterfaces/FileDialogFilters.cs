@@ -5,8 +5,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface FileDialogFilters: InteropCollection<FileDialogFilter>
 {
-  FileDialogFilter Item(int Index);
-  void Delete(object filter);
-  void Clear();
-  FileDialogFilter Add(string Description, string Extensions, object Position);
+  public FileDialogFilter Item(int Index);
+  public void Delete(object filter);
+  public void Clear();
+  public FileDialogFilter Add(string Description, string Extensions, object Position);
 }

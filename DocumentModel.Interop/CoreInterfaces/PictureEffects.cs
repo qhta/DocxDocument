@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface PictureEffects: InteropCollection<PictureEffect>
 {
-  PictureEffect Insert(MsoPictureEffectType EffectType, int Position);
-  void Delete(int Index);
+  public PictureEffect Insert(MsoPictureEffectType EffectType, int Position);
+  public void Delete(int Index);
 }

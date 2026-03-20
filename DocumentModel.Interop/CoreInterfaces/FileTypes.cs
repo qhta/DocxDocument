@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface FileTypes: InteropCollection<MsoFileType>
 {
-  void Add(MsoFileType FileType);
-  void Remove(int Index);
+  public void Add(MsoFileType FileType);
+  public void Remove(int Index);
 }

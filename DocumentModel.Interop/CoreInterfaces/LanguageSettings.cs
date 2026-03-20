@@ -3,6 +3,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface LanguageSettings: InteropObject
 {
-  int LanguageID { get; }
-  bool LanguagePreferredForEditing { get; }
+  public int LanguageID { get; }
+  public bool LanguagePreferredForEditing { get; }
 }

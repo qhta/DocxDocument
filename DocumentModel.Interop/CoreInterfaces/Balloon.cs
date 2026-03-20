@@ -3,19 +3,19 @@ namespace DocumentModel.Interop.Core;
 
 public interface Balloon: InteropObject
 {
-  object Checkboxes { get; }
-  object Labels { get; }
-  MsoBalloonType BalloonType { get; set; }
-  MsoIconType Icon { get; set; }
-  string Heading { get; set; }
-  string Text { get; set; }
-  MsoModeType Mode { get; set; }
-  MsoAnimationType Animation { get; set; }
-  MsoButtonSetType Button { get; set; }
-  string Callback { get; set; }
-  int Private { get; set; }
-  void SetAvoidRectangle(int Left, int Top, int Right, int Bottom);
-  string Name { get; }
-  MsoBalloonButtonType Show();
-  void Close();
+  public object Checkboxes { get; }
+  public object Labels { get; }
+  public MsoBalloonType BalloonType { get; set; }
+  public MsoIconType Icon { get; set; }
+  public string Heading { get; set; }
+  public string Text { get; set; }
+  public MsoModeType Mode { get; set; }
+  public MsoAnimationType Animation { get; set; }
+  public MsoButtonSetType Button { get; set; }
+  public string Callback { get; set; }
+  public int Private { get; set; }
+  public void SetAvoidRectangle(int Left, int Top, int Right, int Bottom);
+  public string Name { get; }
+  public MsoBalloonButtonType Show();
+  public void Close();
 }

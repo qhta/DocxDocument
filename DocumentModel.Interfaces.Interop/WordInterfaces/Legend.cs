@@ -23,7 +23,7 @@ public partial interface Legend : InteropObject
   /// <summary>
   /// The position.
   /// </summary>
-  public XlLegendPosition Position { get; set; }
+  public Core.XlLegendPosition Position { get; set; }
 
   /// <summary>
   /// The shadow.

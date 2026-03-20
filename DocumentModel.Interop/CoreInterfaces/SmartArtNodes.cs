@@ -4,5 +4,5 @@ namespace DocumentModel.Interop.Core;
 
 public interface SmartArtNodes: InteropDictionary<string, SmartArtNode>
 {
-  SmartArtNode Add();
+  public SmartArtNode Add();
 }

@@ -3,8 +3,8 @@ namespace DocumentModel.Interop.Core;
 
 public interface IMsoBorder
 {
-  object Color { get; set; }
-  object ColorIndex { get; set; }
-  object LineStyle { get; set; }
-  object Weight { get; set; }
+  public object Color { get; set; }
+  public object ColorIndex { get; set; }
+  public object LineStyle { get; set; }
+  public object Weight { get; set; }
 }

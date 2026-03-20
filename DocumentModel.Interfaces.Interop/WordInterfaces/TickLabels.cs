@@ -33,7 +33,7 @@ public partial interface TickLabels : InteropObject
   /// <summary>
   /// The orientation.
   /// </summary>
-  public XlTickLabelOrientation Orientation { get; set; }
+  public Core.XlTickLabelOrientation Orientation { get; set; }
 
   /// <summary>
   /// The reading order.

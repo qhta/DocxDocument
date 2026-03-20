@@ -4,5 +4,5 @@ namespace DocumentModel.Interop.Core;
 
 public interface ThemeFont: InteropObject
 {
-  string Name { get; set; }
+  public string Name { get; set; }
 }

@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Core;
 
 public interface EffectParameter: InteropObject
 {
-  string Name { get; }
-  object Value { get; set; }
+  public string Name { get; }
+  public object Value { get; set; }
 }

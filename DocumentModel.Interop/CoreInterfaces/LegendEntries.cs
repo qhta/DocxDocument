@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface LegendEntries: IEnumerable
 {
-  int Count { get; }
-  new IEnumerator GetEnumerator();
-  LegendEntry this[object Index] { get; }
+  public int Count { get; }
+  public new IEnumerator GetEnumerator();
+  public LegendEntry this[object Index] { get; }
 }

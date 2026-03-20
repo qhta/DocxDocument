@@ -4,11 +4,11 @@ namespace DocumentModel.Interop.Core;
 
 public interface DocumentLibraryVersion: InteropObject
 {
-  object Modified { get; }
-  int Index { get; }
-  string ModifiedBy { get; }
-  string Comments { get; }
-  void Delete();
-  object Open();
-  object Restore();
+  public object Modified { get; }
+  public int Index { get; }
+  public string ModifiedBy { get; }
+  public string Comments { get; }
+  public void Delete();
+  public object Open();
+  public object Restore();
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface Points: IEnumerable
 {
-  int Count { get; }
-  new IEnumerator GetEnumerator();
-  ChartPoint this[int Index] { get; }
+  public int Count { get; }
+  public new IEnumerator GetEnumerator();
+  public ChartPoint this[int Index] { get; }
 }

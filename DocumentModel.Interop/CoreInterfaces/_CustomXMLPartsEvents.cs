@@ -3,7 +3,7 @@ namespace DocumentModel.Interop.Core;
 
 public interface _CustomXMLPartsEvents
 {
-  void PartAfterAdd(CustomXMLPart NewPart);
-  void PartBeforeDelete(CustomXMLPart OldPart);
-  void PartAfterLoad(CustomXMLPart Part);
+  public void PartAfterAdd(CustomXMLPart NewPart);
+  public void PartBeforeDelete(CustomXMLPart OldPart);
+  public void PartAfterLoad(CustomXMLPart Part);
 }

@@ -88,7 +88,7 @@ public partial interface DisplayUnitLabel : InteropObject
   /// <summary>
   /// The position.
   /// </summary>
-  public XlChartElementPosition Position { get; set; }
+  public Core.XlChartElementPosition Position { get; set; }
 
   /// <summary>
   /// The format.
