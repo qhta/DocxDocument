@@ -2,10 +2,7 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface SmartArtNodes: InteropObject, IEnumerable
+public interface SmartArtNodes: InteropDictionary<string, SmartArtNode>
 {
-  new IEnumerator GetEnumerator();
-  SmartArtNode this[object Index] { get; }
-  int Count { get; }
   SmartArtNode Add();
 }

@@ -2,19 +2,16 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface _CommandBars: InteropObject, IEnumerable
+public interface _CommandBars: InteropDictionary<string, CommandBar>
 {
   CommandBarControl ActionControl { get; }
   CommandBar ActiveMenuBar { get; }
   CommandBar Add(object Name, object Position, object MenuBar, object Temporary);
-  int Count { get; }
   bool DisplayTooltips { get; set; }
   bool DisplayKeysInTooltips { get; set; }
   CommandBarControl FindControl(object Type, object Id, object Tag, object Visible);
-  CommandBar this[object Index] { get; }
   bool LargeButtons { get; set; }
   MsoMenuAnimation MenuAnimationStyle { get; set; }
-  new IEnumerator GetEnumerator();
   void ReleaseFocus();
   int IdsString { get; }
   int TmcGetName { get; }

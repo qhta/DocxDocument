@@ -3,11 +3,9 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface CanvasShapes: InteropObject, IEnumerable
+public interface CanvasShapes: InteropDictionary<string, Shape>
 {
-  int Count { get; }
   Shape Item(object Index);
-  new IEnumerator GetEnumerator();
   Shape AddCallout(MsoCalloutType Type, float Left, float Top, float Width, float Height);
   Shape AddConnector(MsoConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
   Shape AddCurve(object SafeArrayOfPoints);

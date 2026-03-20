@@ -3,12 +3,10 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface TextRange2: InteropObject, IEnumerable
+public interface TextRange2: InteropDictionary<string, TextRange2>
 {
   string Text { get; set; }
-  int Count { get; }
   TextRange2 Item(object Index);
-  new IEnumerator GetEnumerator();
   TextRange2 Paragraphs { get; }
   TextRange2 Sentences { get; }
   TextRange2 Words { get; }

@@ -2,11 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface SharedWorkspaceFiles: InteropObject, IEnumerable
+public interface SharedWorkspaceFiles: InteropCollection<SharedWorkspaceFile>
 {
-  new IEnumerator GetEnumerator();
-  SharedWorkspaceFile this[int Index] { get; }
-  int Count { get; }
   SharedWorkspaceFile Add(string FileName, object ParentFolder, object OverwriteIfFileAlreadyExists, object KeepInSync);
   bool ItemCountExceeded { get; }
 }

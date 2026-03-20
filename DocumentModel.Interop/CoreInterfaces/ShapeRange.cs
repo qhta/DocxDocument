@@ -3,11 +3,9 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface ShapeRange: InteropObject, IEnumerable
+public interface ShapeRange: InteropDictionary<string, Shape>
 {
-  int Count { get; }
   Shape Item(object Index);
-  new IEnumerator GetEnumerator();
   void Align(MsoAlignCmd AlignCmd, MsoTriState RelativeTo);
   void Apply();
   void Delete();

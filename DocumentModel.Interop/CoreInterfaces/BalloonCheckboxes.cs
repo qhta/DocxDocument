@@ -2,10 +2,7 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface BalloonCheckboxes: InteropObject, IEnumerable
+public interface BalloonCheckboxes: InteropCollection<BalloonCheckbox>
 {
   string Name { get; }
-  object this[int Index] { get; }
-  int Count { get; set; }
-  new IEnumerator GetEnumerator();
 }

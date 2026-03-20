@@ -3,10 +3,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface GroupShapes: InteropObject, IEnumerable
+public interface GroupShapes: InteropDictionary<string, Shape>
 {
-  int Count { get; }
   Shape Item(object Index);
-  new IEnumerator GetEnumerator();
   ShapeRange Range(object Index);
 }

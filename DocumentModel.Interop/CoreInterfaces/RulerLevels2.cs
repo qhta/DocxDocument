@@ -3,9 +3,7 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface RulerLevels2: InteropObject, IEnumerable
+public interface RulerLevels2: InteropDictionary<string, RulerLevel2>
 {
-  int Count { get; }
   RulerLevel2 Item(object Index);
-  new IEnumerator GetEnumerator();
 }

@@ -3,10 +3,8 @@ using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
 
-public interface Scripts: InteropObject, IEnumerable
+public interface Scripts: InteropDictionary<string, Script>
 {
-  int Count { get; }
-  new IEnumerator GetEnumerator();
   Script Item(object Index);
 
   Script Add

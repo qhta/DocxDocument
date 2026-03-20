@@ -2,11 +2,8 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
-public interface PictureEffects: InteropObject, IEnumerable
+public interface PictureEffects: InteropCollection<PictureEffect>
 {
-  PictureEffect this[int Index] { get; }
-  int Count { get; }
-  new IEnumerator GetEnumerator();
   PictureEffect Insert(MsoPictureEffectType EffectType, int Position);
   void Delete(int Index);
 }
