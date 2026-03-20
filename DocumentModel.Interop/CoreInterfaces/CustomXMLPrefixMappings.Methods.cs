@@ -2,9 +2,39 @@ using System.Collections;
 
 namespace DocumentModel.Interop.Core;
 
+/// <summary>
+/// Represents a collection of CustomXMLPrefixMapping objects.
+/// </summary>
+/// <remarks>
+/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmappings?view=office-pia
+/// </remarks>
 public partial interface CustomXMLPrefixMappings
 {
+  /// <summary>
+  /// Adds a namespace and prefix mapping to the collection.
+  /// </summary>
+  /// <param name="Prefix">The `Prefix` parameter.</param>
+  /// <param name="NamespaceURI">The `NamespaceURI` parameter.</param>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmappings.addnamespace?view=office-pia
+  /// </remarks>
   public void AddNamespace(string Prefix, string NamespaceURI);
+  /// <summary>
+  /// Looks up a namespace URI by prefix.
+  /// </summary>
+  /// <param name="Prefix">The `Prefix` parameter.</param>
+  /// <returns>The result of the operation.</returns>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmappings.lookupnamespace?view=office-pia
+  /// </remarks>
   public string LookupNamespace(string Prefix);
+  /// <summary>
+  /// Looks up a prefix by namespace URI.
+  /// </summary>
+  /// <param name="NamespaceURI">The `NamespaceURI` parameter.</param>
+  /// <returns>The result of the operation.</returns>
+  /// <remarks>
+  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmappings.lookupprefix?view=office-pia
+  /// </remarks>
   public string LookupPrefix(string NamespaceURI);
 }
