@@ -1,0 +1,35 @@
+namespace DocumentModel.Interop.Word;
+
+public enum WdBuiltInProperty
+{
+  wdPropertyTitle = unchecked((int)1),
+  wdPropertySubject = unchecked((int)2),
+  wdPropertyAuthor = unchecked((int)3),
+  wdPropertyKeywords = unchecked((int)4),
+  wdPropertyComments = unchecked((int)5),
+  wdPropertyTemplate = unchecked((int)6),
+  wdPropertyLastAuthor = unchecked((int)7),
+  wdPropertyRevision = unchecked((int)8),
+  wdPropertyAppName = unchecked((int)9),
+  wdPropertyTimeLastPrinted = unchecked((int)10),
+  wdPropertyTimeCreated = unchecked((int)11),
+  wdPropertyTimeLastSaved = unchecked((int)12),
+  wdPropertyVBATotalEdit = unchecked((int)13),
+  wdPropertyPages = unchecked((int)14),
+  wdPropertyWords = unchecked((int)15),
+  wdPropertyCharacters = unchecked((int)16),
+  wdPropertySecurity = unchecked((int)17),
+  wdPropertyCategory = unchecked((int)18),
+  wdPropertyFormat = unchecked((int)19),
+  wdPropertyManager = unchecked((int)20),
+  wdPropertyCompany = unchecked((int)21),
+  wdPropertyBytes = unchecked((int)22),
+  wdPropertyLines = unchecked((int)23),
+  wdPropertyParas = unchecked((int)24),
+  wdPropertySlides = unchecked((int)25),
+  wdPropertyNotes = unchecked((int)26),
+  wdPropertyHiddenSlides = unchecked((int)27),
+  wdPropertyMMClips = unchecked((int)28),
+  wdPropertyHyperlinkBase = unchecked((int)29),
+  wdPropertyCharsWSpaces = unchecked((int)30)
+}

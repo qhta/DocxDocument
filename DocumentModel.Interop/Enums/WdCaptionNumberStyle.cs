@@ -1,0 +1,37 @@
+namespace DocumentModel.Interop.Word;
+
+public enum WdCaptionNumberStyle
+{
+  wdCaptionNumberStyleArabic = unchecked((int)0),
+  wdCaptionNumberStyleUppercaseRoman = unchecked((int)1),
+  wdCaptionNumberStyleLowercaseRoman = unchecked((int)2),
+  wdCaptionNumberStyleUppercaseLetter = unchecked((int)3),
+  wdCaptionNumberStyleLowercaseLetter = unchecked((int)4),
+  wdCaptionNumberStyleKanji = unchecked((int)10),
+  wdCaptionNumberStyleKanjiDigit = unchecked((int)11),
+  wdCaptionNumberStyleArabicFullWidth = unchecked((int)14),
+  wdCaptionNumberStyleKanjiTraditional = unchecked((int)16),
+  wdCaptionNumberStyleNumberInCircle = unchecked((int)18),
+  wdCaptionNumberStyleGanada = unchecked((int)24),
+  wdCaptionNumberStyleChosung = unchecked((int)25),
+  wdCaptionNumberStyleZodiac1 = unchecked((int)30),
+  wdCaptionNumberStyleZodiac2 = unchecked((int)31),
+  wdCaptionNumberStyleTradChinNum2 = unchecked((int)34),
+  wdCaptionNumberStyleTradChinNum3 = unchecked((int)35),
+  wdCaptionNumberStyleSimpChinNum2 = unchecked((int)38),
+  wdCaptionNumberStyleSimpChinNum3 = unchecked((int)39),
+  wdCaptionNumberStyleHanjaRead = unchecked((int)41),
+  wdCaptionNumberStyleHanjaReadDigit = unchecked((int)42),
+  wdCaptionNumberStyleHebrewLetter1 = unchecked((int)45),
+  wdCaptionNumberStyleArabicLetter1 = unchecked((int)46),
+  wdCaptionNumberStyleHebrewLetter2 = unchecked((int)47),
+  wdCaptionNumberStyleArabicLetter2 = unchecked((int)48),
+  wdCaptionNumberStyleHindiLetter1 = unchecked((int)49),
+  wdCaptionNumberStyleHindiLetter2 = unchecked((int)50),
+  wdCaptionNumberStyleHindiArabic = unchecked((int)51),
+  wdCaptionNumberStyleHindiCardinalText = unchecked((int)52),
+  wdCaptionNumberStyleThaiLetter = unchecked((int)53),
+  wdCaptionNumberStyleThaiArabic = unchecked((int)54),
+  wdCaptionNumberStyleThaiCardinalText = unchecked((int)55),
+  wdCaptionNumberStyleVietCardinalText = unchecked((int)56)
+}

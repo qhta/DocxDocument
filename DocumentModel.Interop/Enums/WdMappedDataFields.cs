@@ -1,0 +1,35 @@
+namespace DocumentModel.Interop.Word;
+
+public enum WdMappedDataFields
+{
+  wdUniqueIdentifier = unchecked((int)1),
+  wdCourtesyTitle = unchecked((int)2),
+  wdFirstName = unchecked((int)3),
+  wdMiddleName = unchecked((int)4),
+  wdLastName = unchecked((int)5),
+  wdSuffix = unchecked((int)6),
+  wdNickname = unchecked((int)7),
+  wdJobTitle = unchecked((int)8),
+  wdCompany = unchecked((int)9),
+  wdAddress1 = unchecked((int)10),
+  wdAddress2 = unchecked((int)11),
+  wdCity = unchecked((int)12),
+  wdState = unchecked((int)13),
+  wdPostalCode = unchecked((int)14),
+  wdCountryRegion = unchecked((int)15),
+  wdBusinessPhone = unchecked((int)16),
+  wdBusinessFax = unchecked((int)17),
+  wdHomePhone = unchecked((int)18),
+  wdHomeFax = unchecked((int)19),
+  wdEmailAddress = unchecked((int)20),
+  wdWebPageURL = unchecked((int)21),
+  wdSpouseCourtesyTitle = unchecked((int)22),
+  wdSpouseFirstName = unchecked((int)23),
+  wdSpouseMiddleName = unchecked((int)24),
+  wdSpouseLastName = unchecked((int)25),
+  wdSpouseNickname = unchecked((int)26),
+  wdRubyFirstName = unchecked((int)27),
+  wdRubyLastName = unchecked((int)28),
+  wdAddress3 = unchecked((int)29),
+  wdDepartment = unchecked((int)30)
+}
