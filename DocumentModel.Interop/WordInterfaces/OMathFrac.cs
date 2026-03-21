@@ -7,17 +7,17 @@ namespace DocumentModel.Interop.Word;
 public interface OMathFrac : InteropObject
 {
   /// <summary>
-  /// The num.
+  /// Returns the num.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfrac.num?view=word-pia"/>
   public OMath Num { get; }
   /// <summary>
-  /// The den.
+  /// Returns the den.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfrac.den?view=word-pia"/>
   public OMath Den { get; }
   /// <summary>
-  /// The type.
+  /// Returns or sets the type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfrac.type?view=word-pia"/>
   public WdOMathFracType Type { get; set; }

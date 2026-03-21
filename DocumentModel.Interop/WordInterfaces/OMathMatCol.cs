@@ -7,19 +7,19 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathMatCol : InteropObject
 {
   /// <summary>
-  /// The args.
+  /// Returns the args.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatcol.args?view=word-pia"/>
   public OMathArgs Args { get; }
 
   /// <summary>
-  /// The col index.
+  /// Returns the col index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatcol.colindex?view=word-pia"/>
   public int ColIndex { get; }
 
   /// <summary>
-  /// The align.
+  /// Returns or sets the align.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatcol.align?view=word-pia"/>
   public WdOMathHorizAlignType Align { get; set; }

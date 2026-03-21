@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public interface Reviewer : InteropObject
 {
   /// <summary>
-  /// The visible.
+  /// Returns or sets whether visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reviewer.visible?view=word-pia"/>
   public bool Visible { get; set; }

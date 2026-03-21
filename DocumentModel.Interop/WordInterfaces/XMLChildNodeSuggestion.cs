@@ -7,19 +7,19 @@ namespace DocumentModel.Interop.Word;
 public partial interface XMLChildNodeSuggestion : InteropObject
 {
   /// <summary>
-  /// The base name.
+  /// Returns the base name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlchildnodesuggestion.basename?view=word-pia"/>
   public string BaseName { get; }
 
   /// <summary>
-  /// The namespace uri.
+  /// Returns the namespace u r i.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlchildnodesuggestion.namespaceuri?view=word-pia"/>
   public string NamespaceURI { get; }
 
   /// <summary>
-  /// The xmlschema reference.
+  /// Returns the x m l schema reference.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlchildnodesuggestion.xmlschemareference?view=word-pia"/>
   public XMLSchemaReference XMLSchemaReference { get; }

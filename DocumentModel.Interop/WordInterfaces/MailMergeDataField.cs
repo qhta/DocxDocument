@@ -7,17 +7,17 @@ namespace DocumentModel.Interop.Word;
 public interface MailMergeDataField : InteropObject
 {
   /// <summary>
-  /// The value.
+  /// Returns the value.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatafield.value?view=word-pia"/>
   public string Value { get; }
   /// <summary>
-  /// The name.
+  /// Returns the name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatafield.name?view=word-pia"/>
   public string Name { get; }
   /// <summary>
-  /// The index.
+  /// Returns the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatafield.index?view=word-pia"/>
   public int Index { get; }

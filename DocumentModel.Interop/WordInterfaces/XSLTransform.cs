@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface XSLTransform : InteropObject
 {
   /// <summary>
-  /// The id.
+  /// Returns the i d.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xsltransform.id?view=word-pia"/>
   public string ID { get; }

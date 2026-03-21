@@ -30,4 +30,8 @@
     <ProjectReference Include="..\DocumentModel.Interop.Enums\DocumentModel.Interop.Enums.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="temp\" />
+  </ItemGroup>
+
 </Project>

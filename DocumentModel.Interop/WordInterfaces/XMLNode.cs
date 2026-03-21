@@ -7,127 +7,127 @@ namespace DocumentModel.Interop.Word;
 public partial interface XMLNode : InteropObject
 {
   /// <summary>
-  /// The base name.
+  /// Returns the base name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.basename?view=word-pia"/>
   public string BaseName { get; }
 
   /// <summary>
-  /// The range.
+  /// Returns the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.range?view=word-pia"/>
   public Range Range { get; }
 
   /// <summary>
-  /// The text.
+  /// Returns or sets the text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.text?view=word-pia"/>
   public string Text { get; set; }
 
   /// <summary>
-  /// The namespace uri.
+  /// Returns the namespace u r i.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.namespaceuri?view=word-pia"/>
   public string NamespaceURI { get; }
 
   /// <summary>
-  /// The next sibling.
+  /// Returns the next sibling.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.nextsibling?view=word-pia"/>
   public XMLNode NextSibling { get; }
 
   /// <summary>
-  /// The previous sibling.
+  /// Returns the previous sibling.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.previoussibling?view=word-pia"/>
   public XMLNode PreviousSibling { get; }
 
   /// <summary>
-  /// The parent node.
+  /// Returns the parent node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.parentnode?view=word-pia"/>
   public XMLNode ParentNode { get; }
 
   /// <summary>
-  /// The first child.
+  /// Returns the first child.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.firstchild?view=word-pia"/>
   public XMLNode FirstChild { get; }
 
   /// <summary>
-  /// The last child.
+  /// Returns the last child.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.lastchild?view=word-pia"/>
   public XMLNode LastChild { get; }
 
   /// <summary>
-  /// The owner document.
+  /// Returns the owner document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.ownerdocument?view=word-pia"/>
   public Document OwnerDocument { get; }
 
   /// <summary>
-  /// The node type.
+  /// Returns the node type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.nodetype?view=word-pia"/>
   public WdXMLNodeType NodeType { get; }
 
   /// <summary>
-  /// The child nodes.
+  /// Returns the child nodes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.childnodes?view=word-pia"/>
   public XMLNodes ChildNodes { get; }
 
   /// <summary>
-  /// The attributes.
+  /// Returns the attributes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.attributes?view=word-pia"/>
   public XMLNodes Attributes { get; }
 
   /// <summary>
-  /// The node value.
+  /// Returns or sets the node value.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.nodevalue?view=word-pia"/>
   public string NodeValue { get; set; }
 
   /// <summary>
-  /// The has child nodes.
+  /// Returns whether child nodes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.haschildnodes?view=word-pia"/>
   public bool HasChildNodes { get; }
 
   /// <summary>
-  /// The child node suggestions.
+  /// Returns the child node suggestions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.childnodesuggestions?view=word-pia"/>
   public XMLChildNodeSuggestions ChildNodeSuggestions { get; }
 
   /// <summary>
-  /// The level.
+  /// Returns the level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.level?view=word-pia"/>
   public WdXMLNodeLevel Level { get; }
 
   /// <summary>
-  /// The validation status.
+  /// Returns the validation status.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.validationstatus?view=word-pia"/>
   public WdXMLValidationStatus ValidationStatus { get; }
 
   /// <summary>
-  /// The smart tag.
+  /// Returns the smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.smarttag?view=word-pia"/>
   public SmartTag SmartTag { get; }
 
   /// <summary>
-  /// The placeholder text.
+  /// Returns or sets the placeholder text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.placeholdertext?view=word-pia"/>
   public string PlaceholderText { get; set; }
 
   /// <summary>
-  /// The word open xml.
+  /// Returns the word open x m l.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.wordopenxml?view=word-pia"/>
   public string WordOpenXML { get; }

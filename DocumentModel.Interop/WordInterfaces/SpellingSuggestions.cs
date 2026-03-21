@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public interface SpellingSuggestions : InteropObject, InteropCollection<SpellingSuggestion>
 {
   /// <summary>
-  /// The spelling error type.
+  /// Returns the spelling error type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.spellingsuggestions.spellingerrortype?view=word-pia"/>
   public WdSpellingErrorType SpellingErrorType { get; }

@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public interface ProofreadingErrors : InteropObject, InteropCollection<Range>
 {
   /// <summary>
-  /// The type.
+  /// Returns the type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.proofreadingerrors.type?view=word-pia"/>
   public WdProofreadingErrorType Type { get; }

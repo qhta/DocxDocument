@@ -7,49 +7,49 @@ namespace DocumentModel.Interop.Word;
 public partial interface SynonymInfo : InteropObject
 {
   /// <summary>
-  /// The word.
+  /// Returns the word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.synonyminfo.word?view=word-pia"/>
   public string Word { get; }
 
   /// <summary>
-  /// The found.
+  /// Returns whether found.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.synonyminfo.found?view=word-pia"/>
   public bool Found { get; }
 
   /// <summary>
-  /// The meaning count.
+  /// Returns the meaning count.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.synonyminfo.meaningcount?view=word-pia"/>
   public int MeaningCount { get; }
 
   /// <summary>
-  /// The meaning list.
+  /// Returns the meaning list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.synonyminfo.meaninglist?view=word-pia"/>
   public object MeaningList { get; }
 
   /// <summary>
-  /// The part of speech list.
+  /// Returns the part of speech list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.synonyminfo.partofspeechlist?view=word-pia"/>
   public object PartOfSpeechList { get; }
 
   /// <summary>
-  /// The antonym list.
+  /// Returns the antonym list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.synonyminfo.antonymlist?view=word-pia"/>
   public object AntonymList { get; }
 
   /// <summary>
-  /// The related expression list.
+  /// Returns the related expression list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.synonyminfo.relatedexpressionlist?view=word-pia"/>
   public object RelatedExpressionList { get; }
 
   /// <summary>
-  /// The related word list.
+  /// Returns the related word list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.synonyminfo.relatedwordlist?view=word-pia"/>
   public object RelatedWordList { get; }

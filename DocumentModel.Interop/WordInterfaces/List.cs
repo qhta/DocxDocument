@@ -7,25 +7,25 @@ namespace DocumentModel.Interop.Word;
 public partial interface List : InteropObject
 {
   /// <summary>
-  /// The range.
+  /// Returns a range object that represents the portion of a document that's contained in the list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list.range?view=word-pia"/>
   public Range Range { get; }
 
   /// <summary>
-  /// The list paragraphs.
+  /// Returns a list paragraphs collection that represents all paragraphs in the list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list.listparagraphs?view=word-pia"/>
   public ListParagraphs ListParagraphs { get; }
 
   /// <summary>
-  /// The single list template.
+  /// Returns whether only one list template is used for all paragraphs in the list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list.singlelisttemplate?view=word-pia"/>
   public bool SingleListTemplate { get; }
 
   /// <summary>
-  /// The style name.
+  /// Returns the style name for the first paragraph in the list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list.stylename?view=word-pia"/>
   public string StyleName { get; }

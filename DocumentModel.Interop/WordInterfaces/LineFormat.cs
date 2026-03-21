@@ -7,77 +7,77 @@ namespace DocumentModel.Interop.Word;
 public interface LineFormat : InteropObject
 {
   /// <summary>
-  /// The back color.
+  /// Returns a color format object that represents the background color for the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.backcolor?view=word-pia"/>
   public ColorFormat BackColor { get; }
   /// <summary>
-  /// The begin arrowhead length.
+  /// Returns or sets the length of the begin arrowhead.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.beginarrowheadlength?view=word-pia"/>
   public Core.MsoArrowheadLength BeginArrowheadLength { get; set; }
   /// <summary>
-  /// The begin arrowhead style.
+  /// Returns or sets the style of the begin arrowhead.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.beginarrowheadstyle?view=word-pia"/>
   public Core.MsoArrowheadStyle BeginArrowheadStyle { get; set; }
   /// <summary>
-  /// The begin arrowhead width.
+  /// Returns or sets the width of the begin arrowhead.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.beginarrowheadwidth?view=word-pia"/>
   public Core.MsoArrowheadWidth BeginArrowheadWidth { get; set; }
   /// <summary>
-  /// The dash style.
+  /// Returns or sets the dash style for the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.dashstyle?view=word-pia"/>
   public Core.MsoLineDashStyle DashStyle { get; set; }
   /// <summary>
-  /// The end arrowhead length.
+  /// Returns or sets the length of the end arrowhead.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.endarrowheadlength?view=word-pia"/>
   public Core.MsoArrowheadLength EndArrowheadLength { get; set; }
   /// <summary>
-  /// The end arrowhead style.
+  /// Returns or sets the style of the end arrowhead.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.endarrowheadstyle?view=word-pia"/>
   public Core.MsoArrowheadStyle EndArrowheadStyle { get; set; }
   /// <summary>
-  /// The end arrowhead width.
+  /// Returns or sets the width of the end arrowhead.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.endarrowheadwidth?view=word-pia"/>
   public Core.MsoArrowheadWidth EndArrowheadWidth { get; set; }
   /// <summary>
-  /// The fore color.
+  /// Returns a color format object that represents the foreground color for the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.forecolor?view=word-pia"/>
   public ColorFormat ForeColor { get; }
   /// <summary>
-  /// The pattern.
+  /// Returns or sets the fill pattern for the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.pattern?view=word-pia"/>
   public Core.MsoPatternType Pattern { get; set; }
   /// <summary>
-  /// The style.
+  /// Returns or sets the style of the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.style?view=word-pia"/>
   public Core.MsoLineStyle Style { get; set; }
   /// <summary>
-  /// The transparency.
+  /// Returns or sets the transparency of the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.transparency?view=word-pia"/>
   public float Transparency { get; set; }
   /// <summary>
-  /// The visible.
+  /// Returns or sets whether the line is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.visible?view=word-pia"/>
   public Core.MsoTriState Visible { get; set; }
   /// <summary>
-  /// The weight.
+  /// Returns or sets the weight of the line, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.weight?view=word-pia"/>
   public float Weight { get; set; }
   /// <summary>
-  /// The inset pen.
+  /// Returns or sets whether the stroke is drawn inside the shape boundary.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.insetpen?view=word-pia"/>
   public Core.MsoTriState InsetPen { get; set; }

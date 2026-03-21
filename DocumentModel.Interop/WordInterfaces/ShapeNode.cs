@@ -7,17 +7,17 @@ namespace DocumentModel.Interop.Word;
 public interface ShapeNode : InteropObject
 {
   /// <summary>
-  /// The editing type.
+  /// Returns the editing type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenode.editingtype?view=word-pia"/>
   public Core.MsoEditingType EditingType { get; }
   /// <summary>
-  /// The points.
+  /// Returns the points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenode.points?view=word-pia"/>
   public object Points { get; }
   /// <summary>
-  /// The segment type.
+  /// Returns the segment type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenode.segmenttype?view=word-pia"/>
   public Core.MsoSegmentType SegmentType { get; }

@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Word;
 public interface Zoom : InteropObject
 {
   /// <summary>
-  /// The percentage.
+  /// Returns or sets the percentage.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.zoom.percentage?view=word-pia"/>
   public int Percentage { get; set; }
   /// <summary>
-  /// The page fit.
+  /// Returns or sets the page fit.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.zoom.pagefit?view=word-pia"/>
   public WdPageFit PageFit { get; set; }
   /// <summary>
-  /// The page rows.
+  /// Returns or sets the page rows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.zoom.pagerows?view=word-pia"/>
   public int PageRows { get; set; }
   /// <summary>
-  /// The page columns.
+  /// Returns or sets the page columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.zoom.pagecolumns?view=word-pia"/>
   public int PageColumns { get; set; }

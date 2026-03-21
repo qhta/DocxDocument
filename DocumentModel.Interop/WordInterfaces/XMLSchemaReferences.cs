@@ -7,31 +7,31 @@ namespace DocumentModel.Interop.Word;
 public partial interface XMLSchemaReferences : InteropObject, InteropCollection<XMLSchemaReference>
 {
   /// <summary>
-  /// The automatic validation.
+  /// Returns or sets whether automatic validation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareferences.automaticvalidation?view=word-pia"/>
   public bool AutomaticValidation { get; set; }
 
   /// <summary>
-  /// The allow save as xmlwithout validation.
+  /// Returns or sets whether allow save as x m l without validation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareferences.allowsaveasxmlwithoutvalidation?view=word-pia"/>
   public bool AllowSaveAsXMLWithoutValidation { get; set; }
 
   /// <summary>
-  /// The hide validation errors.
+  /// Returns or sets whether hide validation errors.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareferences.hidevalidationerrors?view=word-pia"/>
   public bool HideValidationErrors { get; set; }
 
   /// <summary>
-  /// The ignore mixed content.
+  /// Returns or sets whether ignore mixed content.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareferences.ignoremixedcontent?view=word-pia"/>
   public bool IgnoreMixedContent { get; set; }
 
   /// <summary>
-  /// The show placeholder text.
+  /// Returns or sets whether show placeholder text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareferences.showplaceholdertext?view=word-pia"/>
   public bool ShowPlaceholderText { get; set; }

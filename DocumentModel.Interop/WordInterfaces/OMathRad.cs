@@ -7,17 +7,17 @@ namespace DocumentModel.Interop.Word;
 public interface OMathRad : InteropObject
 {
   /// <summary>
-  /// The deg.
+  /// Returns the deg.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrad.deg?view=word-pia"/>
   public OMath Deg { get; }
   /// <summary>
-  /// The e.
+  /// Returns the e.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrad.e?view=word-pia"/>
   public OMath E { get; }
   /// <summary>
-  /// The hide deg.
+  /// Returns or sets whether hide deg.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrad.hidedeg?view=word-pia"/>
   public bool HideDeg { get; set; }
