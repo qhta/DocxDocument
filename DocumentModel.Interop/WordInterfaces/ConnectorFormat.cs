@@ -7,43 +7,43 @@ namespace DocumentModel.Interop.Word;
 public partial interface ConnectorFormat : InteropObject
 {
   /// <summary>
-  /// The begin connected.
+  /// Gets a value indicating whether the beginning of the connector is attached to a shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.beginconnected?view=word-pia"/>
   public Core.MsoTriState BeginConnected { get; }
 
   /// <summary>
-  /// The begin connected shape.
+  /// Gets the shape attached to the beginning of the connector.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.beginconnectedshape?view=word-pia"/>
   public Shape BeginConnectedShape { get; }
 
   /// <summary>
-  /// The begin connection site.
+  /// Gets the connection site on the shape where the beginning of the connector is attached.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.beginconnectionsite?view=word-pia"/>
   public int BeginConnectionSite { get; }
 
   /// <summary>
-  /// The end connected.
+  /// Gets a value indicating whether the end of the connector is attached to a shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.endconnected?view=word-pia"/>
   public Core.MsoTriState EndConnected { get; }
 
   /// <summary>
-  /// The end connected shape.
+  /// Gets the shape attached to the end of the connector.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.endconnectedshape?view=word-pia"/>
   public Shape EndConnectedShape { get; }
 
   /// <summary>
-  /// The end connection site.
+  /// Gets the connection site on the shape where the end of the connector is attached.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.endconnectionsite?view=word-pia"/>
   public int EndConnectionSite { get; }
 
   /// <summary>
-  /// The type.
+  /// Gets or sets the connector type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.type?view=word-pia"/>
   public Core.MsoConnectorType Type { get; set; }

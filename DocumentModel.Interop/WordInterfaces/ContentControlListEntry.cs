@@ -7,19 +7,19 @@ namespace DocumentModel.Interop.Word;
 public partial interface ContentControlListEntry : InteropObject
 {
   /// <summary>
-  /// The text.
+  /// Gets or sets the display text of the list entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrollistentry.text?view=word-pia"/>
   public string Text { get; set; }
 
   /// <summary>
-  /// The value.
+  /// Gets or sets the value of the list entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrollistentry.value?view=word-pia"/>
   public string Value { get; set; }
 
   /// <summary>
-  /// The index.
+  /// Gets or sets the index of the list entry in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrollistentry.index?view=word-pia"/>
   public int Index { get; set; }

@@ -7,49 +7,49 @@ namespace DocumentModel.Interop.Word;
 public partial interface CaptionLabel : InteropObject
 {
   /// <summary>
-  /// The name.
+  /// Gets the name of the caption label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
-  /// The built in.
+  /// Gets a value indicating whether the caption label is built in.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.builtin?view=word-pia"/>
   public bool BuiltIn { get; }
 
   /// <summary>
-  /// The id.
+  /// Gets the built-in ID for the caption label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.id?view=word-pia"/>
   public WdCaptionLabelID ID { get; }
 
   /// <summary>
-  /// The include chapter number.
+  /// Gets or sets a value indicating whether chapter numbers are included in captions for this label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.includechapternumber?view=word-pia"/>
   public bool IncludeChapterNumber { get; set; }
 
   /// <summary>
-  /// The number style.
+  /// Gets or sets the numbering style for captions that use this label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.numberstyle?view=word-pia"/>
   public WdCaptionNumberStyle NumberStyle { get; set; }
 
   /// <summary>
-  /// The chapter style level.
+  /// Gets or sets the heading style level used for chapter numbering in captions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.chapterstylelevel?view=word-pia"/>
   public int ChapterStyleLevel { get; set; }
 
   /// <summary>
-  /// The separator.
+  /// Gets or sets the separator between the chapter number and caption number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.separator?view=word-pia"/>
   public WdSeparatorType Separator { get; set; }
 
   /// <summary>
-  /// The position.
+  /// Gets or sets the position of captions relative to the associated item.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.position?view=word-pia"/>
   public WdCaptionPosition Position { get; set; }

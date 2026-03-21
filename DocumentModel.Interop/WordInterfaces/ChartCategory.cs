@@ -7,12 +7,12 @@ namespace DocumentModel.Interop.Word;
 public interface ChartCategory : InteropObject
 {
   /// <summary>
-  /// The name.
+  /// Gets the name of the chart category.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcategory.name?view=word-pia"/>
   public string Name { get; }
   /// <summary>
-  /// The is filtered.
+  /// Gets or sets a value indicating whether the chart category is filtered.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcategory.isfiltered?view=word-pia"/>
   public bool IsFiltered { get; set; }

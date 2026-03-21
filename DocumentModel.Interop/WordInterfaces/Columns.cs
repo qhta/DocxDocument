@@ -7,49 +7,49 @@ namespace DocumentModel.Interop.Word;
 public partial interface Columns : InteropObject, InteropCollection<Column>
 {
   /// <summary>
-  /// The first.
+  /// Gets the first column in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.first?view=word-pia"/>
   public Column First { get; }
 
   /// <summary>
-  /// The last.
+  /// Gets the last column in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.last?view=word-pia"/>
   public Column Last { get; }
 
   /// <summary>
-  /// The width.
+  /// Gets or sets the width of all columns in the collection, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.width?view=word-pia"/>
   public float Width { get; set; }
 
   /// <summary>
-  /// The borders.
+  /// Gets or sets the border formatting for the columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.borders?view=word-pia"/>
   public Borders Borders { get; set; }
 
   /// <summary>
-  /// The shading.
+  /// Gets the shading formatting for the columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.shading?view=word-pia"/>
   public Shading Shading { get; }
 
   /// <summary>
-  /// The nesting level.
+  /// Gets the nesting level of the columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.nestinglevel?view=word-pia"/>
   public int NestingLevel { get; }
 
   /// <summary>
-  /// The preferred width.
+  /// Gets or sets the preferred width of the columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.preferredwidth?view=word-pia"/>
   public float PreferredWidth { get; set; }
 
   /// <summary>
-  /// The preferred width type.
+  /// Gets or sets the preferred width type for the columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.preferredwidthtype?view=word-pia"/>
   public WdPreferredWidthType PreferredWidthType { get; set; }
