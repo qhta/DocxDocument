@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of EffectParameter objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.effectparameters?view=office-pia"/>
-public partial interface EffectParameters: InteropDictionary<string, EffectParameter>
+public partial interface EffectParameters: InteropCollection<EffectParameter>
 {
 }
 

@@ -11,6 +11,11 @@
     <Compile Remove="**\*.Methods.cs" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Compile Remove="BaseInterfaces\InteropList.cs" />
+  </ItemGroup>
+
   <ItemGroup>
     <None Include=".github\copilot-instructions.md" />
   </ItemGroup>
