@@ -7,10 +7,10 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathMatCols
 {
   /// <summary>
-  /// Adds a new matrix column to the collection.
+  /// Adds a matrix column to the collection.
   /// </summary>
-  /// <param name="BeforeCol">The column before which the new column is added.</param>
-  /// <returns>The created <see cref="OMathMatCol"/> object.</returns>
+  /// <param name="BeforeCol">Specifies the column before which the new column is inserted.</param>
+  /// <returns>The added matrix column object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>

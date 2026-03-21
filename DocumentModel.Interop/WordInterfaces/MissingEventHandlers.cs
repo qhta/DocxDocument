@@ -1,5 +1,8 @@
 namespace DocumentModel.Interop.Word;
 
+/// <summary>
+/// Defines placeholder delegate types for Word interop event handlers that may be absent from some generated references.
+/// </summary>
 public delegate void ApplicationEvents2_DocumentBeforeCloseEventHandler();
 public delegate void ApplicationEvents2_DocumentBeforePrintEventHandler();
 public delegate void ApplicationEvents2_DocumentBeforeSaveEventHandler();

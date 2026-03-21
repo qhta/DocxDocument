@@ -7,9 +7,9 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathScrSubSup
 {
   /// <summary>
-  /// Removes the subscript and superscript from the specified range and returns an OMathFunction object that represents the removed function.
+  /// Removes the subscript-superscript formatting from the equation function.
   /// </summary>
-  /// <returns>An instance of the OMathFunction representing the removed subscript and superscript.</returns>
+  /// <returns>The resulting equation function object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>

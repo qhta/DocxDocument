@@ -7,42 +7,42 @@ namespace DocumentModel.Interop.Word;
 public interface OMathNary : InteropObject
 {
   /// <summary>
-  /// Returns the sub.
+  /// Returns the subscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.sub?view=word-pia"/>
   public OMath Sub { get; }
   /// <summary>
-  /// Returns the sup.
+  /// Returns the superscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.sup?view=word-pia"/>
   public OMath Sup { get; }
   /// <summary>
-  /// Returns the e.
+  /// Returns the base expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.e?view=word-pia"/>
   public OMath E { get; }
   /// <summary>
-  /// Returns or sets the char.
+  /// Returns or sets the n-ary operator character.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.char?view=word-pia"/>
   public short Char { get; set; }
   /// <summary>
-  /// Returns or sets whether grow.
+  /// Returns or sets whether the operator grows to fit the expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.grow?view=word-pia"/>
   public bool Grow { get; set; }
   /// <summary>
-  /// Returns or sets whether sub sup lim.
+  /// Returns or sets whether limits are displayed as subscript and superscript.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.subsuplim?view=word-pia"/>
   public bool SubSupLim { get; set; }
   /// <summary>
-  /// Returns or sets whether hide sub.
+  /// Returns or sets whether the subscript is hidden.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.hidesub?view=word-pia"/>
   public bool HideSub { get; set; }
   /// <summary>
-  /// Returns or sets whether hide sup.
+  /// Returns or sets whether the superscript is hidden.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.hidesup?view=word-pia"/>
   public bool HideSup { get; set; }

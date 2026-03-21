@@ -7,11 +7,11 @@ namespace DocumentModel.Interop.Word;
 public partial interface ListEntries
 {
   /// <summary>
-  /// Returns the value produced by the add operation.
+  /// Adds an item to a drop-down form field.
   /// </summary>
-  /// <param name="Name">Specifies the name.</param>
-  /// <param name="Index">Specifies the index.</param>
-  /// <returns>The resulting value.</returns>
+  /// <param name="Name">The name of the item to add.</param>
+  /// <param name="Index">The position for the item in the list.</param>
+  /// <returns>The added list entry.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>

@@ -7,12 +7,12 @@ namespace DocumentModel.Interop.Word;
 public interface OMathFunc : InteropObject
 {
   /// <summary>
-  /// Returns the f name.
+  /// Returns the function name expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunc.fname?view=word-pia"/>
   public OMath FName { get; }
   /// <summary>
-  /// Returns the e.
+  /// Returns the function argument expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunc.e?view=word-pia"/>
   public OMath E { get; }

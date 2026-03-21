@@ -7,12 +7,12 @@ namespace DocumentModel.Interop.Word;
 public interface OMathScrSup : InteropObject
 {
   /// <summary>
-  /// Returns the e.
+  /// Returns the base expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsup.e?view=word-pia"/>
   public OMath E { get; }
   /// <summary>
-  /// Returns the sup.
+  /// Returns the superscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsup.sup?view=word-pia"/>
   public OMath Sup { get; }

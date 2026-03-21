@@ -7,9 +7,9 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathFunction
 {
   /// <summary>
-  /// Removes the mathematical function from the collection.
+  /// Removes the equation function from the equation.
   /// </summary>
-  /// <returns>The removed <see cref="OMathFunction"/> object.</returns>
+  /// <returns>The removed equation function object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>

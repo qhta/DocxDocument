@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface OLEFormat
 {
   /// <summary>
-  /// Activates the specified object.
+  /// Activates the OLE object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

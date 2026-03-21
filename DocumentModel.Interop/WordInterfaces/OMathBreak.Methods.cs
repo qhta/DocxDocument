@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathBreak
 {
   /// <summary>
-  /// Deletes the specified line break.
+  /// Deletes the equation line break.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

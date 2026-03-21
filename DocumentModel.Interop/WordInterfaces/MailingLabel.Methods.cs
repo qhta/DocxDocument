@@ -7,14 +7,14 @@ namespace DocumentModel.Interop.Word;
 public partial interface MailingLabel
 {
   /// <summary>
-  /// Creates a new document for mailing labels using Word 2000 compatibility.
+  /// Creates a new mailing labels document using Word 2000-compatible behavior.
   /// </summary>
-  /// <param name="Name">The name of the mailing label type.</param>
-  /// <param name="Address">The address to use on the label.</param>
-  /// <param name="AutoText">The AutoText entry to use for the label.</param>
-  /// <param name="ExtractAddress">true to extract the address from the document; otherwise, false.</param>
-  /// <param name="LaserTray">The tray to use for laser printing.</param>
-  /// <returns>The created <see cref="Document"/> object.</returns>
+  /// <param name="Name">Specifies the mailing label type name.</param>
+  /// <param name="Address">Specifies the mailing address text.</param>
+  /// <param name="AutoText">Specifies an AutoText entry for the label content.</param>
+  /// <param name="ExtractAddress">Specifies whether to extract the address from the active document.</param>
+  /// <param name="LaserTray">Specifies the laser printer tray.</param>
+  /// <returns>The created mailing labels document.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>

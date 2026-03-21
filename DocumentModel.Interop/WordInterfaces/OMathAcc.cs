@@ -7,12 +7,12 @@ namespace DocumentModel.Interop.Word;
 public interface OMathAcc : InteropObject
 {
   /// <summary>
-  /// Returns the e.
+  /// Returns the base expression of the accent equation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathacc.e?view=word-pia"/>
   public OMath E { get; }
   /// <summary>
-  /// Returns or sets the char.
+  /// Returns or sets the accent character.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathacc.char?view=word-pia"/>
   public short Char { get; set; }

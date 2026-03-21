@@ -7,10 +7,10 @@ namespace DocumentModel.Interop.Word;
 public partial interface ListTemplate
 {
   /// <summary>
-  /// Converts the list template to a different level or format.
+  /// Converts a list template to another list template type.
   /// </summary>
-  /// <param name="Level">The level or format to convert to.</param>
-  /// <returns>The converted <see cref="ListTemplate"/> object.</returns>
+  /// <param name="Level">Specifies the level used for conversion.</param>
+  /// <returns>The converted list template.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>

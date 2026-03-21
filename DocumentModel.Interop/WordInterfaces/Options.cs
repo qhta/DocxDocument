@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+﻿namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents application and document options in Microsoft Word. Many of the properties for the Options object correspond to items in the Options dialog box (Tools menu).
@@ -13,163 +13,171 @@ public partial interface Options : InteropObject
   public bool AllowAccentedUppercase { get; set; }
 
   /// <summary>
-  /// Returns or sets whether w p help.
+  /// True if pressing Microsoft Word key combinations that produce actions in WordPerfect
+  /// displays dialog boxes that describe how to perform the equivalent actions in Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.wphelp?view=word-pia"/>
   public bool WPHelp { get; set; }
 
   /// <summary>
-  /// Returns or sets whether w p doc nav keys.
+  /// True if pressing Microsoft Word key combinations that produce actions in WordPerfect
+  /// displays dialog boxes that describe how to perform the equivalent actions in Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.wpdocnavkeys?view=word-pia"/>
   public bool WPDocNavKeys { get; set; }
 
   /// <summary>
-  /// Returns or sets whether pagination.
+  /// True if Microsoft Word repaginates documents in the background.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pagination?view=word-pia"/>
   public bool Pagination { get; set; }
 
   /// <summary>
-  /// Returns or sets whether blue screen.
+  /// True if Microsoft Word displays text as white characters on a blue background.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.bluescreen?view=word-pia"/>
   public bool BlueScreen { get; set; }
 
   /// <summary>
-  /// Returns or sets whether enable sound.
+  /// True if Microsoft Word makes the computer respond with a sound whenever an error occurs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.enablesound?view=word-pia"/>
   public bool EnableSound { get; set; }
 
   /// <summary>
-  /// Returns or sets whether confirm conversions.
+  /// True if Microsoft Word displays the Convert File dialog box before it opens or inserts a file
+  /// that isn't a Word document or template.
+  /// In the Convert File dialog box, the user chooses the format to convert the file from.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.confirmconversions?view=word-pia"/>
   public bool ConfirmConversions { get; set; }
 
   /// <summary>
-  /// Returns or sets whether update links at open.
+  /// True if Microsoft Word automatically updates all embedded OLE links in a document when it's opened.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.updatelinksatopen?view=word-pia"/>
   public bool UpdateLinksAtOpen { get; set; }
 
   /// <summary>
-  /// Returns or sets whether send mail attach.
+  /// True if the Send To command on the File menu inserts the active document as an attachment to a mail message.
+  /// False if the Send To command inserts the contents of the active document as text in a mail message.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.sendmailattach?view=word-pia"/>
   public bool SendMailAttach { get; set; }
 
   /// <summary>
-  /// Returns or sets the measurement unit.
+  /// Returns or sets the standard measurement unit for Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.measurementunit?view=word-pia"/>
   public WdMeasurementUnits MeasurementUnit { get; set; }
 
   /// <summary>
-  /// Returns or sets the button field clicks.
+  /// Returns or sets the number of clicks (either one or two) required to run a GOTOBUTTON or MACROBUTTON field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.buttonfieldclicks?view=word-pia"/>
   public int ButtonFieldClicks { get; set; }
 
   /// <summary>
-  /// Returns or sets whether short menu names.
+  /// Returns or sets whether to use short menu names.
   /// </summary>
+  /// <remarks>This option works only on the Macintosh.</remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.shortmenunames?view=word-pia"/>
   public bool ShortMenuNames { get; set; }
 
   /// <summary>
-  /// Returns or sets whether r t f in clipboard.
+  /// Returns or sets whether to copy text to clipboard in RTF.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.rtfinclipboard?view=word-pia"/>
   public bool RTFInClipboard { get; set; }
 
   /// <summary>
-  /// Returns or sets whether update fields at print.
+  /// True if Microsoft Word updates fields automatically before printing a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.updatefieldsatprint?view=word-pia"/>
   public bool UpdateFieldsAtPrint { get; set; }
 
   /// <summary>
-  /// Returns or sets whether print properties.
+  /// True if Microsoft Word prints document summary information on a separate page at the end of the document.
+  /// False if document summary information is not printed.
+  /// Summary information is found in the Properties dialog box (File menu).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.printproperties?view=word-pia"/>
   public bool PrintProperties { get; set; }
 
   /// <summary>
-  /// Returns or sets whether print field codes.
+  /// True if Microsoft Word prints field codes instead of field results.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.printfieldcodes?view=word-pia"/>
   public bool PrintFieldCodes { get; set; }
 
   /// <summary>
-  /// Returns or sets whether print comments.
+  /// True if Microsoft Word prints comments, starting on a new page at the end of the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.printcomments?view=word-pia"/>
   public bool PrintComments { get; set; }
 
   /// <summary>
-  /// Returns or sets whether print hidden text.
+  /// True if hidden text is printed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.printhiddentext?view=word-pia"/>
   public bool PrintHiddenText { get; set; }
 
   /// <summary>
-  /// Returns whether envelope feeder installed.
+  /// True if envelope feeder installed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.envelopefeederinstalled?view=word-pia"/>
   public bool EnvelopeFeederInstalled { get; }
 
   /// <summary>
-  /// Returns or sets whether update links at print.
+  /// True if Microsoft Word updates embedded links to other files before printing a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.updatelinksatprint?view=word-pia"/>
   public bool UpdateLinksAtPrint { get; set; }
 
   /// <summary>
-  /// Returns or sets whether print background.
+  /// True if Microsoft Word prints in the background.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.printbackground?view=word-pia"/>
   public bool PrintBackground { get; set; }
 
   /// <summary>
-  /// Returns or sets whether print drawing objects.
+  /// True if Microsoft Word prints drawing objects.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.printdrawingobjects?view=word-pia"/>
   public bool PrintDrawingObjects { get; set; }
 
   /// <summary>
-  /// Returns or sets the default tray.
+  /// Returns or sets the default tray your printer uses to print documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaulttray?view=word-pia"/>
   public string DefaultTray { get; set; }
 
   /// <summary>
-  /// Returns or sets the default tray i d.
+  /// Returns or sets the default tray your printer uses to print documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaulttrayid?view=word-pia"/>
   public int DefaultTrayID { get; set; }
 
   /// <summary>
-  /// Returns or sets whether create backup.
+  /// True if Microsoft Word creates a backup copy of the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.createbackup?view=word-pia"/>
   public bool CreateBackup { get; set; }
 
   /// <summary>
-  /// Returns or sets whether allow fast save.
+  /// True if Microsoft Word allows fast save.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.allowfastsave?view=word-pia"/>
   public bool AllowFastSave { get; set; }
 
   /// <summary>
-  /// Returns or sets whether save properties prompt.
+  /// True if Microsoft Word prompts to save properties.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.savepropertiesprompt?view=word-pia"/>
   public bool SavePropertiesPrompt { get; set; }
 
   /// <summary>
-  /// Returns or sets whether save normal prompt.
+  /// True if Microsoft Word prompts to save the normal template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.savenormalprompt?view=word-pia"/>
   public bool SaveNormalPrompt { get; set; }
@@ -181,229 +189,254 @@ public partial interface Options : InteropObject
   public int SaveInterval { get; set; }
 
   /// <summary>
-  /// Returns or sets whether background save.
+  /// True if Microsoft Word saves documents in the background.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.backgroundsave?view=word-pia"/>
   public bool BackgroundSave { get; set; }
 
   /// <summary>
-  /// Returns or sets the inserted text mark.
+  /// Returns or sets how Microsoft Word formats inserted text while change tracking is enabled (the TrackRevisions property is True).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.insertedtextmark?view=word-pia"/>
   public WdInsertedTextMark InsertedTextMark { get; set; }
 
   /// <summary>
-  /// Returns or sets the deleted text mark.
+  /// Returns or sets the format of text that is deleted while change tracking is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.deletedtextmark?view=word-pia"/>
   public WdDeletedTextMark DeletedTextMark { get; set; }
 
   /// <summary>
-  /// Returns or sets the revised lines mark.
+  /// Returns or sets the placement of changed lines in a document with tracked changes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisedlinesmark?view=word-pia"/>
   public WdRevisedLinesMark RevisedLinesMark { get; set; }
 
   /// <summary>
-  /// Returns or sets the inserted text color.
+  /// Returns or sets the color of text that is deleted while change tracking is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.insertedtextcolor?view=word-pia"/>
   public WdColorIndex InsertedTextColor { get; set; }
 
   /// <summary>
-  /// Returns or sets the deleted text color.
+  /// Returns or sets the color of text that is deleted while change tracking is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.deletedtextcolor?view=word-pia"/>
   public WdColorIndex DeletedTextColor { get; set; }
 
   /// <summary>
-  /// Returns or sets the revised lines color.
+  /// Returns or sets the color of changed lines in a document with tracked changes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisedlinescolor?view=word-pia"/>
   public WdColorIndex RevisedLinesColor { get; set; }
 
   /// <summary>
-  /// Returns or sets whether overtype.
+  /// True if Overtype mode is active.
   /// </summary>
+  /// <remarks>
+  /// In Overtype mode, the characters you type replace existing characters one by one.
+  /// When Overtype isn't active, the characters you type move existing text to the right.
+  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.overtype?view=word-pia"/>
   public bool Overtype { get; set; }
 
   /// <summary>
-  /// Returns or sets whether replace selection.
+  /// True if the result of typing or pasting replaces the selection.
+  /// False if the result of typing or pasting is added before the selection, leaving the selection intact.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.replaceselection?view=word-pia"/>
   public bool ReplaceSelection { get; set; }
 
   /// <summary>
-  /// Returns or sets whether allow drag and drop.
+  /// True if dragging and dropping can be used to move or copy a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.allowdraganddrop?view=word-pia"/>
   public bool AllowDragAndDrop { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto word selection.
+  /// True if Microsoft Word automatically selects the entire word when you double-click it.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autowordselection?view=word-pia"/>
   public bool AutoWordSelection { get; set; }
 
   /// <summary>
-  /// Returns or sets whether i n s key for paste.
+  /// True if the INS key can be used for pasting the Clipboard contents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.inskeyforpaste?view=word-pia"/>
   public bool INSKeyForPaste { get; set; }
 
   /// <summary>
-  /// Returns or sets whether smart cut paste.
+  /// True if Microsoft Word automatically adjusts the spacing between words and punctuation when cutting and pasting occurs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.smartcutpaste?view=word-pia"/>
   public bool SmartCutPaste { get; set; }
 
   /// <summary>
-  /// Returns or sets whether tab indent key.
+  /// True if the TAB and BACKSPACE keys can be used to increase and decrease, respectively, the left indent of paragraphs
+  /// and if the BACKSPACE key can be used to change right-aligned paragraphs to centered paragraphs
+  /// and centered paragraphs to left-aligned paragraphs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.tabindentkey?view=word-pia"/>
   public bool TabIndentKey { get; set; }
 
   /// <summary>
-  /// Returns or sets the picture editor.
+  /// Returns or sets the name of the application to use to edit pictures.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pictureeditor?view=word-pia"/>
   public string PictureEditor { get; set; }
 
   /// <summary>
-  /// Returns or sets whether animate screen movements.
+  /// True if Microsoft Word animates mouse movements, uses animated cursors, and animates actions
+  /// such as background saving and find and replace operations.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.animatescreenmovements?view=word-pia"/>
   public bool AnimateScreenMovements { get; set; }
 
   /// <summary>
-  /// Returns or sets whether virus protection.
+  /// Returns or sets whether virus protection is enabled. Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.virusprotection?view=word-pia"/>
   public bool VirusProtection { get; set; }
 
   /// <summary>
-  /// Returns or sets the revised properties mark.
+  /// Returns or sets the mark used to show formatting changes while change tracking is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisedpropertiesmark?view=word-pia"/>
   public WdRevisedPropertiesMark RevisedPropertiesMark { get; set; }
 
   /// <summary>
-  /// Returns or sets the revised properties color.
+  /// Returns or sets the color used to mark formatting changes while change tracking is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisedpropertiescolor?view=word-pia"/>
   public WdColorIndex RevisedPropertiesColor { get; set; }
 
   /// <summary>
-  /// Returns or sets whether snap to grid.
+  /// True if AutoShapes or East Asian characters are automatically aligned with an invisible grid
+  /// when they are drawn, moved, or resized in new documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.snaptogrid?view=word-pia"/>
   public bool SnapToGrid { get; set; }
 
   /// <summary>
-  /// Returns or sets whether snap to shapes.
+  /// True if Microsoft Word automatically aligns AutoShapes or East Asian characters with invisible gridlines
+  /// that go through the vertical and horizontal edges of other AutoShapes or East Asian characters in new documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.snaptoshapes?view=word-pia"/>
   public bool SnapToShapes { get; set; }
 
   /// <summary>
-  /// Returns or sets the grid distance horizontal.
+  /// Returns or sets the amount of horizontal space between the invisible gridlines that Microsoft Word uses
+  /// when you draw, move, and resize AutoShapes or East Asian characters in new documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.griddistancehorizontal?view=word-pia"/>
   public float GridDistanceHorizontal { get; set; }
 
   /// <summary>
-  /// Returns or sets the grid distance vertical.
+  /// Returns or sets the amount of vertical space between the invisible gridlines that Microsoft Word uses
+  /// when you draw, move, and resize AutoShapes or East Asian characters in new documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.griddistancevertical?view=word-pia"/>
   public float GridDistanceVertical { get; set; }
 
   /// <summary>
-  /// Returns or sets the grid origin horizontal.
+  /// Returns or sets the point, relative to the left edge of the page, where you want the invisible grid
+  /// for drawing, moving, and resizing AutoShapes or East Asian characters to begin in new documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.gridoriginhorizontal?view=word-pia"/>
   public float GridOriginHorizontal { get; set; }
 
   /// <summary>
-  /// Returns or sets the grid origin vertical.
+  /// Returns or sets the point, relative to the top of the page, where you want the invisible grid
+  /// for drawing, moving, and resizing AutoShapes or East Asian characters to begin in new documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.gridoriginvertical?view=word-pia"/>
   public float GridOriginVertical { get; set; }
 
   /// <summary>
-  /// Returns or sets whether inline conversion.
+  /// True if Microsoft Word displays an unconfirmed character string in the Japanese Input Method Editor (IME)
+  /// as an insertion between existing (confirmed) character strings.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.inlineconversion?view=word-pia"/>
   public bool InlineConversion { get; set; }
 
   /// <summary>
-  /// Returns or sets whether i m e automatic control.
+  /// True if Microsoft Word is set to automatically open and close the Japanese Input Method Editor (IME).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.imeautomaticcontrol?view=word-pia"/>
   public bool IMEAutomaticControl { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto format apply headings.
+  /// True if styles are automatically applied to headings when Word formats a document or range automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autoformatapplyheadings?view=word-pia"/>
   public bool AutoFormatApplyHeadings { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto format apply lists.
+  /// True if styles are automatically applied to lists when Microsoft Word formats a document or range automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autoformatapplylists?view=word-pia"/>
   public bool AutoFormatApplyLists { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto format apply bulleted lists.
+  /// True if characters (such as asterisks, hyphens, and greater-than signs) at the beginning of list paragraphs
+  /// are replaced with bullets from the Bullets and Numbering dialog box (Format menu)
+  /// when Microsoft Word formats a document or range automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autoformatapplybulletedlists?view=word-pia"/>
   public bool AutoFormatApplyBulletedLists { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto format apply other paras.
+  /// True if styles are automatically applied to paragraphs that aren't headings or list items w
+  /// hen Microsoft Word formats a document or range automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autoformatapplyotherparas?view=word-pia"/>
   public bool AutoFormatApplyOtherParas { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto format replace quotes.
+  /// True if straight quotation marks are automatically changed to smart (curly) quotation marks
+  /// when Microsoft Word formats a document or range automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autoformatreplacequotes?view=word-pia"/>
   public bool AutoFormatReplaceQuotes { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto format replace symbols.
+  /// True if two consecutive hyphens (--) are replaced by an en dash (–) or an em dash (— )
+  /// when Microsoft Word formats a document or range automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autoformatreplacesymbols?view=word-pia"/>
   public bool AutoFormatReplaceSymbols { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto format replace ordinals.
+  /// True if the ordinal number suffixes "st", "nd", "rd", and "th" are replaced with the same letters in superscript
+  /// when Word formats a document or range automatically.
+  /// For example, "1st" is replaced with "1" followed by "st" formatted as superscript.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autoformatreplaceordinals?view=word-pia"/>
   public bool AutoFormatReplaceOrdinals { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto format replace fractions.
+  /// True if typed fractions are replaced with fractions from the current character set
+  /// when Microsoft Word formats a document or range automatically.
+  /// For example, "1/2" is replaced with "½."
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autoformatreplacefractions?view=word-pia"/>
   public bool AutoFormatReplaceFractions { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto format replace plain text emphasis.
+  /// True if plain text emphasis (such as *italic* or **bold**) is replaced with the corresponding formatted text
+  /// when Microsoft Word formats a document or range automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autoformatreplaceplaintextemphasis?view=word-pia"/>
   public bool AutoFormatReplacePlainTextEmphasis { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto format preserve styles.
+  /// True if previously applied styles are preserved when Microsoft Word formats a document or range automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autoformatpreservestyles?view=word-pia"/>
   public bool AutoFormatPreserveStyles { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto format as you type apply headings.
+  /// True if styles are automatically applied to headings as you type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autoformatasyoutypeapplyheadings?view=word-pia"/>
   public bool AutoFormatAsYouTypeApplyHeadings { get; set; }
@@ -1021,7 +1054,7 @@ public partial interface Options : InteropObject
   public bool BackgroundOpen { get; set; }
 
   /// <summary>
-  /// Returns or sets whether disable featuresby default.
+  /// Returns or sets whether disable features by default.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.disablefeaturesbydefault?view=word-pia"/>
   public bool DisableFeaturesbyDefault { get; set; }
@@ -1075,7 +1108,7 @@ public partial interface Options : InteropObject
   public WdWrapTypeMerged PictureWrapType { get; set; }
 
   /// <summary>
-  /// Returns or sets the disable features introduced afterby default.
+  /// Returns or sets the disable features introduced after by default.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.disablefeaturesintroducedafterbydefault?view=word-pia"/>
   public WdDisableFeaturesIntroducedAfter DisableFeaturesIntroducedAfterbyDefault { get; set; }
@@ -1129,7 +1162,7 @@ public partial interface Options : InteropObject
   public bool WarnBeforeSavingPrintingSendingMarkup { get; set; }
 
   /// <summary>
-  /// Returns or sets whether store r s i d on save.
+  /// Returns or sets whether store RSID on save.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.storersidonsave?view=word-pia"/>
   public bool StoreRSIDOnSave { get; set; }
@@ -1279,7 +1312,7 @@ public partial interface Options : InteropObject
   public bool EnableLivePreview { get; set; }
 
   /// <summary>
-  /// Returns or sets whether o math auto build up.
+  /// Returns or sets whether equation auto build up.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.omathautobuildup?view=word-pia"/>
   public bool OMathAutoBuildUp { get; set; }
@@ -1321,7 +1354,7 @@ public partial interface Options : InteropObject
   public bool PasteOptionKeepBulletsAndNumbers { get; set; }
 
   /// <summary>
-  /// Returns or sets whether i n s key for overtype.
+  /// Returns or sets whether INS key for overtype.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.inskeyforovertype?view=word-pia"/>
   public bool INSKeyForOvertype { get; set; }
@@ -1357,7 +1390,7 @@ public partial interface Options : InteropObject
   public WdColorIndex MoveFromTextColor { get; set; }
 
   /// <summary>
-  /// Returns or sets whether o math copy l f.
+  /// Returns or sets whether equation copy l f.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.omathcopylf?view=word-pia"/>
   public bool OMathCopyLF { get; set; }

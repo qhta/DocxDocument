@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathFunctions
 {
   /// <summary>
-  /// Adds a new mathematical function to the collection.
+  /// Adds an equation function to the collection.
   /// </summary>
-  /// <param name="Range">The range to which the function is added.</param>
-  /// <param name="Type">The type of mathematical function to add.</param>
-  /// <param name="NumArgs">The number of arguments for the function.</param>
-  /// <param name="NumCols">The number of columns for the function, if applicable.</param>
-  /// <returns>The created <see cref="OMathFunction"/> object.</returns>
+  /// <param name="Range">Specifies the range where the function is inserted.</param>
+  /// <param name="Type">Specifies the equation function type.</param>
+  /// <param name="NumArgs">Specifies the number of arguments.</param>
+  /// <param name="NumCols">Specifies the number of columns, when applicable.</param>
+  /// <returns>The added equation function object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>

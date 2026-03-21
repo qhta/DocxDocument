@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface List
 {
   /// <summary>
-  /// Converts list numbers to text.
+  /// Converts list numbers and LISTNUM fields in the list to text.
   /// </summary>
   /// <param name="NumberType">The type of number format to convert.</param>
   /// <remarks>

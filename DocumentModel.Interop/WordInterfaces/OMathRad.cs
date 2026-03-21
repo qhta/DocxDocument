@@ -7,17 +7,17 @@ namespace DocumentModel.Interop.Word;
 public interface OMathRad : InteropObject
 {
   /// <summary>
-  /// Returns the deg.
+  /// Returns the degree expression of the radical.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrad.deg?view=word-pia"/>
   public OMath Deg { get; }
   /// <summary>
-  /// Returns the e.
+  /// Returns the base expression under the radical.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrad.e?view=word-pia"/>
   public OMath E { get; }
   /// <summary>
-  /// Returns or sets whether hide deg.
+  /// Returns or sets whether the radical degree is hidden.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrad.hidedeg?view=word-pia"/>
   public bool HideDeg { get; set; }
