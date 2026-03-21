@@ -1,13 +1,13 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// A collection of Index objects that represents all the indexes in the specified document.
+/// Represents a collection of index objects in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes?view=word-pia"/>
 public partial interface Indexes : InteropObject, InteropCollection<Index>
 {
   /// <summary>
-  /// The format.
+  /// Returns or sets the built-in format used for the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes.format?view=word-pia"/>
   public WdIndexFormat Format { get; set; }

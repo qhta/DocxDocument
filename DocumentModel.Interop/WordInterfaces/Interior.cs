@@ -7,32 +7,32 @@ namespace DocumentModel.Interop.Word;
 public interface Interior : InteropObject
 {
   /// <summary>
-  /// The color.
+  /// Returns or sets the primary color of the object interior.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.color?view=word-pia"/>
   public object Color { get; set; }
   /// <summary>
-  /// The color index.
+  /// Returns or sets the color index of the object interior.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.colorindex?view=word-pia"/>
   public object ColorIndex { get; set; }
   /// <summary>
-  /// The invert if negative.
+  /// Returns or sets whether the interior pattern is inverted for negative values.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.invertifnegative?view=word-pia"/>
   public object InvertIfNegative { get; set; }
   /// <summary>
-  /// The pattern.
+  /// Returns or sets the fill pattern for the object interior.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.pattern?view=word-pia"/>
   public object Pattern { get; set; }
   /// <summary>
-  /// The pattern color.
+  /// Returns or sets the pattern color of the object interior.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.patterncolor?view=word-pia"/>
   public object PatternColor { get; set; }
   /// <summary>
-  /// The pattern color index.
+  /// Returns or sets the pattern color index of the object interior.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.patterncolorindex?view=word-pia"/>
   public object PatternColorIndex { get; set; }
