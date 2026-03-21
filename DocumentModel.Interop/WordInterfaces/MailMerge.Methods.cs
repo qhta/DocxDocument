@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge?view=word-pia"/>
 public partial interface MailMerge
 {
   /// <summary>
@@ -14,6 +18,10 @@ public partial interface MailMerge
   /// <param name="SQLStatement1">The secondary SQL statement for the data source.</param>
   /// <param name="Connection">The connection string for the data source.</param>
   /// <param name="LinkToSource">true to link to the source; otherwise, false.</param>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge.createdatasource?view=word-pia"/>
   public void CreateDataSource(string Name, string PasswordDocument, string WritePasswordDocument, string HeaderRecord, 
     string MSQuery, string SQLStatement, string SQLStatement1, string Connection, bool LinkToSource);
 }

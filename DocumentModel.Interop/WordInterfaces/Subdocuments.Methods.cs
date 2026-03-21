@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocuments?view=word-pia"/>
 public partial interface Subdocuments
 {
   /// <summary>
@@ -14,6 +18,10 @@ public partial interface Subdocuments
   /// <param name="WritePasswordDocument">The write password for the document, if required.</param>
   /// <param name="WritePasswordTemplate">The write password for the template, if required.</param>
   /// <returns>The created <see cref="Subdocument"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocuments.addfromfile?view=word-pia"/>
   public Subdocument AddFromFile(string Name, bool ConfirmConversions, bool ReadOnly, string PasswordDocument, 
     string PasswordTemplate, bool Revert, string WritePasswordDocument, string WritePasswordTemplate);
 }

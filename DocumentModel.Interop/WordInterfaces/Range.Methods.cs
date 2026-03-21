@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range?view=word-pia"/>
 public partial interface Range
 {
   /// <summary>
@@ -7,6 +11,10 @@ public partial interface Range
   /// </summary>
   /// <param name="Type">The type of information to retrieve.</param>
   /// <returns>The requested information as an object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.information?view=word-pia"/>
   public object Information(WdInformation Type);
 
   /// <summary>
@@ -14,10 +22,18 @@ public partial interface Range
   /// </summary>
   /// <param name="DataOnly">true to return only the data; otherwise, false.</param>
   /// <returns>The XML string for the range.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.xml?view=word-pia"/>
   public string XML(bool DataOnly);
 
   /// <summary>
   /// Selects the range in the document.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.select?view=word-pia"/>
   public void Select();
 }

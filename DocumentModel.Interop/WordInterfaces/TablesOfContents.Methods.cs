@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofcontents?view=word-pia"/>
 public partial interface TablesOfContents
 {
   /// <summary>
@@ -15,6 +19,10 @@ public partial interface TablesOfContents
   /// <param name="IncludePageNumbers">true to include page numbers; otherwise, false.</param>
   /// <param name="AddedStyles">Additional styles to include in the table of contents.</param>
   /// <returns>The created <see cref="TableOfContents"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofcontents.addold?view=word-pia"/>
   public TableOfContents AddOld(Range Range, bool UseHeadingStyles, int UpperHeadingLevel, int LowerHeadingLevel, 
     bool UseFields, string TableID, bool RightAlignPageNumbers, bool IncludePageNumbers, string AddedStyles);
 }

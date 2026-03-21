@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope?view=word-pia"/>
 public partial interface Envelope
 {
   /// <summary>
@@ -23,5 +27,9 @@ public partial interface Envelope
   /// <param name="ReturnAddressFromTop">Specifies the return address from top.</param>
   /// <param name="DefaultFaceUp">Specifies the default face up.</param>
   /// <param name="DefaultOrientation">Specifies the default orientation.</param>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.insert2000?view=word-pia"/>
   public void Insert2000(object ExtractAddress, object Address, object AutoText, object OmitReturnAddress, object ReturnAddress, object ReturnAutoText, object PrintBarCode, object PrintFIMA, object Size, object Height, object Width, object FeedSource, object AddressFromLeft, object AddressFromTop, object ReturnAddressFromLeft, object ReturnAddressFromTop, object DefaultFaceUp, object DefaultOrientation);
 }

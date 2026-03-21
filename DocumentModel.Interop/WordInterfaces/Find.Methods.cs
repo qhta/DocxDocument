@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find?view=word-pia"/>
 public partial interface Find
 {
   /// <summary>
@@ -17,5 +21,9 @@ public partial interface Find
   /// <param name="ReplaceWith">Specifies the replace with.</param>
   /// <param name="Replace">Specifies the replace.</param>
   /// <returns>true if successful; otherwise, false.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.executeold?view=word-pia"/>
   public bool ExecuteOld(object FindText, object MatchCase, object MatchWholeWord, object MatchWildcards, object MatchSoundsLike, object MatchAllWordForms, object Forward, object Wrap, object Format, object ReplaceWith, object Replace);
 }

@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset?view=word-pia"/>
 public partial interface Frameset
 {
   /// <summary>
@@ -7,6 +11,10 @@ public partial interface Frameset
   /// </summary>
   /// <param name="Index">Specifies the index.</param>
   /// <returns>The resulting value.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.get_childframesetitem?view=word-pia"/>
   public Frameset get_ChildFramesetItem(int Index);
 
   /// <summary>
@@ -14,5 +22,9 @@ public partial interface Frameset
   /// </summary>
   /// <param name="Where">Specifies the where.</param>
   /// <returns>The resulting value.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.addnewframe?view=word-pia"/>
   public Frameset AddNewFrame(WdFramesetNewFrameLocation Where);
 }
