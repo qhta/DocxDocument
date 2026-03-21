@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode?view=word-pia"/>
 public partial interface XMLNode
 {
   /// <summary>
@@ -7,6 +11,10 @@ public partial interface XMLNode
   /// </summary>
   /// <param name="DataOnly">true to return only the data; otherwise, false.</param>
   /// <returns>The XML string for the node.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.xml?view=word-pia"/>
   public string XML(bool DataOnly);
 
   /// <summary>
@@ -14,6 +22,10 @@ public partial interface XMLNode
   /// </summary>
   /// <param name="Advanced">true to return advanced error information; otherwise, false.</param>
   /// <returns>The validation error text as a string.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.validationerrortext?view=word-pia"/>
   public string ValidationErrorText(bool Advanced);
 
   /// <summary>
@@ -23,5 +35,9 @@ public partial interface XMLNode
   /// <param name="PrefixMapping">The prefix mapping for the XPath expression.</param>
   /// <param name="FastSearchSkippingTextNodes">true to skip text nodes during the search; otherwise, false.</param>
   /// <returns>The selected <see cref="XMLNode"/> object, or null if not found.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.selectsinglenode?view=word-pia"/>
   public XMLNode SelectSingleNode(string XPath, string PrefixMapping, bool FastSearchSkippingTextNodes);
 }

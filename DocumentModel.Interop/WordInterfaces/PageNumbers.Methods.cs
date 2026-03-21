@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers?view=word-pia"/>
 public partial interface PageNumbers
 {
   /// <summary>
@@ -9,5 +13,9 @@ public partial interface PageNumbers
   /// <param name="FirstPage">Indicates whether the page number should be added to the first page. Set to <see langword="true"/> to include the
   /// page number on the first page; otherwise, <see langword="false"/>.</param>
   /// <returns>A <see cref="PageNumber"/> object representing the added page number.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers.add?view=word-pia"/>
   public PageNumber Add(WdPageNumberAlignment PageNumberAlignment, bool FirstPage);
 }

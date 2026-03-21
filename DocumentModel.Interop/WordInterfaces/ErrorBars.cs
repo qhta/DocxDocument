@@ -3,25 +3,45 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Represents the error bars on a chart series.
 /// </summary>
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.errorbars?view=word-pia"/>
 public partial interface ErrorBars : InteropObject
 {
   /// <summary>
   /// The name.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.errorbars.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
   /// The border.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.errorbars.border?view=word-pia"/>
   public ChartBorder Border { get; }
 
   /// <summary>
   /// The end style.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.errorbars.endstyle?view=word-pia"/>
   public XlEndStyleCap EndStyle { get; set; }
 
   /// <summary>
   /// The format.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.errorbars.format?view=word-pia"/>
   public ChartFormat Format { get; }
 }

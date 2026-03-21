@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.recentfiles?view=word-pia"/>
 public partial interface RecentFiles
 {
  /// <summary>
@@ -9,5 +13,9 @@ public partial interface RecentFiles
  /// <param name="ReadOnly">A value indicating whether the document should be opened in read-only mode. Set to <see langword="true"/> to open
  /// as read-only; otherwise, <see langword="false"/>.</param>
  /// <returns>A <see cref="RecentFile"/> object representing the added document in the recent files list.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.recentfiles.add?view=word-pia"/>
   public RecentFile Add(Document Document, bool ReadOnly);
 }

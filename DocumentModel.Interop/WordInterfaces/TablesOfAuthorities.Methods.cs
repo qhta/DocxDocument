@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofauthorities?view=word-pia"/>
 public partial interface TablesOfAuthorities
 {
   /// <summary>
@@ -17,6 +21,10 @@ public partial interface TablesOfAuthorities
   /// <param name="IncludeCategoryHeader">true to include the category header; otherwise, false.</param>
   /// <param name="PageNumberSeparator">The separator to use for page numbers.</param>
   /// <returns>The created <see cref="TableOfAuthorities"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofauthorities.add?view=word-pia"/>
   public TableOfAuthorities Add(Range Range, object Category, object Bookmark, bool Passim, bool KeepEntryFormatting, 
     string Separator, bool IncludeSequenceName, string EntrySeparator, string PageRangeSeparator, 
     bool IncludeCategoryHeader, string PageNumberSeparator);

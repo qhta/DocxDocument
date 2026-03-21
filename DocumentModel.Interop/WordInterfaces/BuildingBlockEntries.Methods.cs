@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblockentries?view=word-pia"/>
 public partial interface BuildingBlockEntries
 {
   /// <summary>
@@ -7,5 +11,9 @@ public partial interface BuildingBlockEntries
   /// </summary>
   /// <param name="Index">The numeric index or name of the building block.</param>
   /// <returns>The requested <see cref="BuildingBlock"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblockentries.item?view=word-pia"/>
   public BuildingBlock Item(object Index);
 }

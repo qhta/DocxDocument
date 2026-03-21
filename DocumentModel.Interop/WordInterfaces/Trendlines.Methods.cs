@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendlines?view=word-pia"/>
 public partial interface Trendlines
 {
   /// <summary>
@@ -15,6 +19,10 @@ public partial interface Trendlines
   /// <param name="DisplayRSquared">true to display the R-squared value on the chart; otherwise, false.</param>
   /// <param name="Name">The name of the trendline.</param>
   /// <returns>The created <see cref="Trendline"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendlines.add?view=word-pia"/>
   public Trendline Add(XlTrendlineType Type, object Order, int Period, int Forward, int Backward, 
     object Intercept, bool DisplayEquation, bool DisplayRSquared, string Name);
 }

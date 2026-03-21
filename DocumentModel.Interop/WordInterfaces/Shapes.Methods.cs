@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes?view=word-pia"/>
 public partial interface Shapes
 {
   /// <summary>
@@ -12,6 +16,10 @@ public partial interface Shapes
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcallout?view=word-pia"/>
   public Shape AddCallout(Core.MsoCalloutType Type, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
@@ -23,6 +31,10 @@ public partial interface Shapes
   /// <param name="EndX">The ending x-coordinate.</param>
   /// <param name="EndY">The ending y-coordinate.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addconnector?view=word-pia"/>
   public Shape AddConnector(Core.MsoConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
 
   /// <summary>
@@ -31,6 +43,10 @@ public partial interface Shapes
   /// <param name="SafeArrayOfPoints">The array of points for the curve.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcurve?view=word-pia"/>
   public Shape AddCurve(object SafeArrayOfPoints, object Anchor);
 
   /// <summary>
@@ -43,6 +59,10 @@ public partial interface Shapes
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addlabel?view=word-pia"/>
   public Shape AddLabel(Core.MsoTextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
@@ -54,6 +74,10 @@ public partial interface Shapes
   /// <param name="EndY">The ending y-coordinate.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addline?view=word-pia"/>
   public Shape AddLine(float BeginX, float BeginY, float EndX, float EndY, object Anchor);
 
   /// <summary>
@@ -68,6 +92,10 @@ public partial interface Shapes
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addpicture?view=word-pia"/>
   public Shape AddPicture(string FileName, object LinkToFile, object SaveWithDocument, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
@@ -76,6 +104,10 @@ public partial interface Shapes
   /// <param name="SafeArrayOfPoints">The array of points for the polyline.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addpolyline?view=word-pia"/>
   public Shape AddPolyline(object SafeArrayOfPoints, object Anchor);
 
   /// <summary>
@@ -88,6 +120,10 @@ public partial interface Shapes
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addshape?view=word-pia"/>
   public Shape AddShape(int Type, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
@@ -103,6 +139,10 @@ public partial interface Shapes
   /// <param name="Top">The top position of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addtexteffect?view=word-pia"/>
   public Shape AddTextEffect(Core.MsoPresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, Core.MsoTriState FontBold, Core.MsoTriState FontItalic, float Left, float Top, object Anchor);
 
   /// <summary>
@@ -115,6 +155,10 @@ public partial interface Shapes
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addtextbox?view=word-pia"/>
   public Shape AddTextbox(Core.MsoTextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
@@ -124,6 +168,10 @@ public partial interface Shapes
   /// <param name="X1">The x-coordinate of the first point.</param>
   /// <param name="Y1">The y-coordinate of the first point.</param>
   /// <returns>The created <see cref="FreeformBuilder"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.buildfreeform?view=word-pia"/>
   public FreeformBuilder BuildFreeform(Core.MsoEditingType EditingType, float X1, float Y1);
 
   /// <summary>
@@ -131,11 +179,19 @@ public partial interface Shapes
   /// </summary>
   /// <param name="Index">The index or array of indexes of the shapes to include in the range.</param>
   /// <returns>The <see cref="ShapeRange"/> object representing the range.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.range?view=word-pia"/>
   public ShapeRange Range(object Index);
 
   /// <summary>
   /// Selects all the shapes in the main story, in a canvas, or in headers and footers of a document.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.selectall?view=word-pia"/>
   public void SelectAll();
 
   /// <summary>
@@ -154,6 +210,10 @@ public partial interface Shapes
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addoleobject?view=word-pia"/>
   public Shape AddOLEObject(object ClassType, object FileName, object LinkToFile, object DisplayAsIcon, object IconFileName, object IconIndex, object IconLabel, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
@@ -166,6 +226,10 @@ public partial interface Shapes
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addolecontrol?view=word-pia"/>
   public Shape AddOLEControl(object ClassType, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
@@ -178,6 +242,10 @@ public partial interface Shapes
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.adddiagram?view=word-pia"/>
   public Shape AddDiagram(Core.MsoDiagramType Type, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
@@ -189,6 +257,10 @@ public partial interface Shapes
   /// <param name="Height">The height of the canvas.</param>
   /// <param name="Anchor">The anchor for the canvas.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcanvas?view=word-pia"/>
   public Shape AddCanvas(float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
@@ -201,6 +273,10 @@ public partial interface Shapes
   /// <param name="Height">The height of the chart.</param>
   /// <param name="Anchor">The anchor for the chart.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addchart?view=word-pia"/>
   public Shape AddChart(object Type, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
@@ -213,6 +289,10 @@ public partial interface Shapes
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addsmartart?view=word-pia"/>
   public Shape AddSmartArt(object Layout, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
@@ -229,6 +309,10 @@ public partial interface Shapes
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addwebvideo?view=word-pia"/>
   public Shape AddWebVideo(string EmbedCode, object VideoWidth, object VideoHeight, object PosterFrameImage, object Url, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
@@ -243,5 +327,9 @@ public partial interface Shapes
   /// <param name="Anchor">The anchor for the chart.</param>
   /// <param name="NewLayout">The new layout for the chart.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addchart2?view=word-pia"/>
   public Shape AddChart2(int Style, object Type, object Left, object Top, object Width, object Height, object Anchor, object NewLayout);
 }

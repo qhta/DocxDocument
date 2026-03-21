@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybindings?view=word-pia"/>
 public partial interface KeyBindings
 {
   /// <summary>
@@ -11,5 +15,9 @@ public partial interface KeyBindings
   /// <param name="KeyCode2">An optional secondary key code for the key binding.</param>
   /// <param name="CommandParameter">An optional parameter for the command.</param>
   /// <returns>The created <see cref="KeyBinding"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybindings.add?view=word-pia"/>
   public KeyBinding Add(WdKeyCategory KeyCategory, string Command, int KeyCode, int KeyCode2, object CommandParameter);
 }

@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.research?view=word-pia"/>
 public partial interface Research
 {
   /// <summary>
@@ -12,5 +16,9 @@ public partial interface Research
   /// <param name="LaunchQuery">true to launch the query immediately; otherwise, false to prepare the query without executing it.</param>
   /// <returns>An object containing the result of the query. The type and structure of the result depend on the service and query
   /// executed.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.research.query?view=word-pia"/>
   public object Query(string ServiceID, string QueryString, WdLanguageID QueryLanguage, bool UseSelection, bool LaunchQuery);
 }

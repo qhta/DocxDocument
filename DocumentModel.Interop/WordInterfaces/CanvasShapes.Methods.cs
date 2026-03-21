@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes?view=word-pia"/>
 public partial interface CanvasShapes
 {
   /// <summary>
@@ -11,6 +15,10 @@ public partial interface CanvasShapes
   /// <param name="Width">The width, in points, of the shape.</param>
   /// <param name="Height">The height, in points, of the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addcallout?view=word-pia"/>
   public Shape AddCallout(Core.MsoCalloutType Type, float Left, float Top, float Width, float Height);
 
   /// <summary>
@@ -22,6 +30,10 @@ public partial interface CanvasShapes
   /// <param name="EndX">The x-coordinate, in points, of the connector end point.</param>
   /// <param name="EndY">The y-coordinate, in points, of the connector end point.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addconnector?view=word-pia"/>
   public Shape AddConnector(Core.MsoConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
 
   /// <summary>
@@ -29,6 +41,10 @@ public partial interface CanvasShapes
   /// </summary>
   /// <param name="SafeArrayOfPoints">An array of points that defines the curve path.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addcurve?view=word-pia"/>
   public Shape AddCurve(object SafeArrayOfPoints);
 
   /// <summary>
@@ -40,6 +56,10 @@ public partial interface CanvasShapes
   /// <param name="Width">The width, in points, of the label.</param>
   /// <param name="Height">The height, in points, of the label.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addlabel?view=word-pia"/>
   public Shape AddLabel(Core.MsoTextOrientation Orientation, float Left, float Top, float Width, float Height);
 
   /// <summary>
@@ -50,6 +70,10 @@ public partial interface CanvasShapes
   /// <param name="EndX">The x-coordinate, in points, of the line end point.</param>
   /// <param name="EndY">The y-coordinate, in points, of the line end point.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addline?view=word-pia"/>
   public Shape AddLine(float BeginX, float BeginY, float EndX, float EndY);
 
   /// <summary>
@@ -63,6 +87,10 @@ public partial interface CanvasShapes
   /// <param name="Width">The width, in points, of the picture.</param>
   /// <param name="Height">The height, in points, of the picture.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addpicture?view=word-pia"/>
   public Shape AddPicture(string FileName, object LinkToFile, object SaveWithDocument, object Left, object Top, object Width, object Height);
 
   /// <summary>
@@ -70,6 +98,10 @@ public partial interface CanvasShapes
   /// </summary>
   /// <param name="SafeArrayOfPoints">An array of points that defines the polyline path.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addpolyline?view=word-pia"/>
   public Shape AddPolyline(object SafeArrayOfPoints);
 
   /// <summary>
@@ -81,6 +113,10 @@ public partial interface CanvasShapes
   /// <param name="Width">The width, in points, of the shape.</param>
   /// <param name="Height">The height, in points, of the shape.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addshape?view=word-pia"/>
   public Shape AddShape(int Type, float Left, float Top, float Width, float Height);
 
   /// <summary>
@@ -95,6 +131,10 @@ public partial interface CanvasShapes
   /// <param name="Left">The position, in points, of the left edge of the text effect.</param>
   /// <param name="Top">The position, in points, of the top edge of the text effect.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addtexteffect?view=word-pia"/>
   public Shape AddTextEffect(Core.MsoPresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, Core.MsoTriState FontBold, Core.MsoTriState FontItalic, float Left, float Top);
 
   /// <summary>
@@ -106,6 +146,10 @@ public partial interface CanvasShapes
   /// <param name="Width">The width, in points, of the text box.</param>
   /// <param name="Height">The height, in points, of the text box.</param>
   /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addtextbox?view=word-pia"/>
   public Shape AddTextbox(Core.MsoTextOrientation Orientation, float Left, float Top, float Width, float Height);
 
   /// <summary>
@@ -115,6 +159,10 @@ public partial interface CanvasShapes
   /// <param name="X1">The x-coordinate, in points, of the first node.</param>
   /// <param name="Y1">The y-coordinate, in points, of the first node.</param>
   /// <returns>A <see cref="FreeformBuilder"/> used to define the custom shape.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.buildfreeform?view=word-pia"/>
   public FreeformBuilder BuildFreeform(Core.MsoEditingType EditingType, float X1, float Y1);
 
   /// <summary>
@@ -122,10 +170,18 @@ public partial interface CanvasShapes
   /// </summary>
   /// <param name="Index">The index or array of indexes of shapes to return.</param>
   /// <returns>A <see cref="ShapeRange"/> containing the selected shapes.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.range?view=word-pia"/>
   public ShapeRange Range(object Index);
 
   /// <summary>
   /// Selects all shapes on the drawing canvas.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.selectall?view=word-pia"/>
   public void SelectAll();
 }

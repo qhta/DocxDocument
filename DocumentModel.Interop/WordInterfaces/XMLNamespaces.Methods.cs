@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespaces?view=word-pia"/>
 public partial interface XMLNamespaces
 {
   /// <summary>
@@ -10,6 +14,10 @@ public partial interface XMLNamespaces
   /// <param name="Alias">The alias for the namespace.</param>
   /// <param name="InstallForAllUsers">true to install for all users; otherwise, false.</param>
   /// <returns>The created <see cref="XMLNamespace"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespaces.add?view=word-pia"/>
   public XMLNamespace Add(string Path, object NamespaceURI, object Alias, bool InstallForAllUsers);
 
   /// <summary>
@@ -17,5 +25,9 @@ public partial interface XMLNamespaces
   /// </summary>
   /// <param name="Path">The path to the manifest file.</param>
   /// <param name="InstallForAllUsers">true to install for all users; otherwise, false.</param>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespaces.installmanifest?view=word-pia"/>
   public void InstallManifest(string Path, bool InstallForAllUsers);
 }

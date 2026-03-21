@@ -3,11 +3,19 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// This is a primary interface in a COM coclass that is required by managed code for interoperability with the corresponding COM object. Use this primary interface only when the method you want to use shares the same name as an event of the COM object; in this case, cast to this interface to call the method, and cast to the latest events interface to connect to the event. Otherwise, use the .NET interface that is derived from the COM coclass to access methods, properties, and events of the COM object. For information about the COM object, see Font.
 /// </summary>
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font?view=word-pia"/>
 public partial interface _Font : InteropObject
 {
   /// <summary>
   /// The duplicate.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.duplicate?view=word-pia"/>
   public Font Duplicate { get; }
 
   /// <summary>
@@ -15,6 +23,10 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.bold?view=word-pia"/>
   public int Bold { get; set; }
 
   /// <summary>
@@ -22,6 +34,10 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.italic?view=word-pia"/>
   public int Italic { get; set; }
 
   /// <summary>
@@ -29,6 +45,10 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.hidden?view=word-pia"/>
   public int Hidden { get; set; }
 
   /// <summary>
@@ -36,6 +56,10 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.smallcaps?view=word-pia"/>
   public int SmallCaps { get; set; }
 
   /// <summary>
@@ -43,6 +67,10 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.allcaps?view=word-pia"/>
   public int AllCaps { get; set; }
 
   /// <summary>
@@ -50,6 +78,10 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.strikethrough?view=word-pia"/>
   public int StrikeThrough { get; set; }
 
   /// <summary>
@@ -57,11 +89,19 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.doublestrikethrough?view=word-pia"/>
   public int DoubleStrikeThrough { get; set; }
 
   /// <summary>
   /// The color index.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.colorindex?view=word-pia"/>
   public WdColorIndex ColorIndex { get; set; }
 
   /// <summary>
@@ -69,6 +109,10 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.subscript?view=word-pia"/>
   public int Subscript { get; set; }
 
   /// <summary>
@@ -76,41 +120,73 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.superscript?view=word-pia"/>
   public int Superscript { get; set; }
 
   /// <summary>
   /// The underline.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underline?view=word-pia"/>
   public WdUnderline Underline { get; set; }
 
   /// <summary>
   /// The font size in points.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.size?view=word-pia"/>
   public float Size { get; set; }
 
   /// <summary>
   /// The name of the font.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.name?view=word-pia"/>
   public string Name { get; set; }
 
   /// <summary>
   /// The position of text (in points) relative to the baseline. A positive number raises the text, and a negative number lowers it.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.position?view=word-pia"/>
   public int Position { get; set; }
 
   /// <summary>
   /// The spacing (in points) between characters.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.spacing?view=word-pia"/>
   public float Spacing { get; set; }
 
   /// <summary>
   /// The scaling percentage applied to the font. This property stretches or compresses text horizontally as a percentage of the current size (the scaling range is from 1 through 600).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.scaling?view=word-pia"/>
   public int Scaling { get; set; }
 
   /// <summary>
   /// True if the specified font is formatted as shadowed. Can be True, False, or Undefined.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shadow?view=word-pia"/>
   public int Shadow { get; set; }
 
   /// <summary>
@@ -118,6 +194,10 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.outline?view=word-pia"/>
   public int Outline { get; set; }
 
   /// <summary>
@@ -125,11 +205,19 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.emboss?view=word-pia"/>
   public int Emboss { get; set; }
 
   /// <summary>
   /// The minimum font size for which kerning should be applied automatically.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.kerning?view=word-pia"/>
   public float Kerning { get; set; }
 
   /// <summary>
@@ -137,51 +225,91 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.engrave?view=word-pia"/>
   public int Engrave { get; set; }
 
   /// <summary>
   /// The animation.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.animation?view=word-pia"/>
   public WdAnimation Animation { get; set; }
 
   /// <summary>
   /// The borders.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.borders?view=word-pia"/>
   public Borders Borders { get; set; }
 
   /// <summary>
   /// The shading.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shading?view=word-pia"/>
   public Shading Shading { get; }
 
   /// <summary>
   /// The emphasis mark.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.emphasismark?view=word-pia"/>
   public WdEmphasisMark EmphasisMark { get; set; }
 
   /// <summary>
   /// The disable character space grid.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.disablecharacterspacegrid?view=word-pia"/>
   public bool DisableCharacterSpaceGrid { get; set; }
 
   /// <summary>
   /// The name of the font for East Asian scripts.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.namefareast?view=word-pia"/>
   public string NameFarEast { get; set; }
 
   /// <summary>
   /// The name of the font for used for Latin text (characters with character codes from 0 (zero) through 127).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.nameascii?view=word-pia"/>
   public string NameAscii { get; set; }
 
   /// <summary>
   /// The name of the font for characters with character codes from 128 through 255.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.nameother?view=word-pia"/>
   public string NameOther { get; set; }
 
   /// <summary>
   /// The 24-bit color for the specified Font object.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.color?view=word-pia"/>
   public WdColor Color { get; set; }
 
   /// <summary>
@@ -189,6 +317,10 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.boldbi?view=word-pia"/>
   public int BoldBi { get; set; }
 
   /// <summary>
@@ -196,90 +328,162 @@ public partial interface _Font : InteropObject
   /// Returns True, False, or Undefined.
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.italicbi?view=word-pia"/>
   public int ItalicBi { get; set; }
 
   /// <summary>
   /// The font size in points for complex script.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.sizebi?view=word-pia"/>
   public float SizeBi { get; set; }
 
   /// <summary>
   /// The name of the font for complex script.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.namebi?view=word-pia"/>
   public string NameBi { get; set; }
 
   /// <summary>
   /// The color index bi.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.colorindexbi?view=word-pia"/>
   public WdColorIndex ColorIndexBi { get; set; }
 
   /// <summary>
   /// The diacritic color.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.diacriticcolor?view=word-pia"/>
   public WdColor DiacriticColor { get; set; }
 
   /// <summary>
   /// The underline color.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underlinecolor?view=word-pia"/>
   public WdColor UnderlineColor { get; set; }
 
   /// <summary>
   /// The glow.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.glow?view=word-pia"/>
   public GlowFormat Glow { get; set; }
 
   /// <summary>
   /// The reflection.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.reflection?view=word-pia"/>
   public ReflectionFormat Reflection { get; set; }
 
   /// <summary>
   /// The text shadow.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textshadow?view=word-pia"/>
   public ShadowFormat TextShadow { get; set; }
 
   /// <summary>
   /// The fill.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.fill?view=word-pia"/>
   public FillFormat Fill { get; set; }
 
   /// <summary>
   /// The line.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.line?view=word-pia"/>
   public LineFormat Line { get; set; }
 
   /// <summary>
   /// The three d.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.threed?view=word-pia"/>
   public ThreeDFormat ThreeD { get; set; }
 
   /// <summary>
   /// The text color.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textcolor?view=word-pia"/>
   public ColorFormat TextColor { get; }
 
   /// <summary>
   /// The ligatures.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.ligatures?view=word-pia"/>
   public WdLigatures Ligatures { get; set; }
 
   /// <summary>
   /// The number form.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberform?view=word-pia"/>
   public WdNumberForm NumberForm { get; set; }
 
   /// <summary>
   /// The number spacing.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberspacing?view=word-pia"/>
   public WdNumberSpacing NumberSpacing { get; set; }
 
   /// <summary>
   /// The contextual alternates.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.contextualalternates?view=word-pia"/>
   public int ContextualAlternates { get; set; }
 
   /// <summary>
   /// The stylistic set.
   /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.stylisticset?view=word-pia"/>
   public WdStylisticSet StylisticSet { get; set; }
 }

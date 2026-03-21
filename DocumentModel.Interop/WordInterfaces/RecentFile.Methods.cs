@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.recentfile?view=word-pia"/>
 public partial interface RecentFile
 {
   /// <summary>
@@ -7,5 +11,9 @@ public partial interface RecentFile
   /// </summary>
   /// <returns>A <see cref="Document"/> object representing the opened document.
   /// </returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.recentfile.open?view=word-pia"/>
   public Document Open();
 }

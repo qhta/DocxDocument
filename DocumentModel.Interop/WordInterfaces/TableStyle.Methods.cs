@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablestyle?view=word-pia"/>
 public partial interface TableStyle
 {
   /// <summary>
@@ -7,5 +11,9 @@ public partial interface TableStyle
   /// </summary>
   /// <param name="ConditionCode">The condition code for which to retrieve the style.</param>
   /// <returns>The <see cref="ConditionalStyle"/> for the specified condition.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablestyle.condition?view=word-pia"/>
   public ConditionalStyle Condition(WdConditionCode ConditionCode);
 }
