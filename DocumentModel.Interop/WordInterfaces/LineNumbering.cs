@@ -7,27 +7,27 @@ namespace DocumentModel.Interop.Word;
 public interface LineNumbering : InteropObject
 {
   /// <summary>
-  /// The restart mode.
+  /// Returns or sets when line numbering restarts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linenumbering.restartmode?view=word-pia"/>
   public WdNumberingRule RestartMode { get; set; }
   /// <summary>
-  /// The starting number.
+  /// Returns or sets the starting line number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linenumbering.startingnumber?view=word-pia"/>
   public int StartingNumber { get; set; }
   /// <summary>
-  /// The distance from text.
+  /// Returns or sets the distance between line numbers and document text, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linenumbering.distancefromtext?view=word-pia"/>
   public float DistanceFromText { get; set; }
   /// <summary>
-  /// The count by.
+  /// Returns or sets the line numbering interval.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linenumbering.countby?view=word-pia"/>
   public int CountBy { get; set; }
   /// <summary>
-  /// The active.
+  /// Returns or sets whether line numbering is active.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linenumbering.active?view=word-pia"/>
   public int Active { get; set; }

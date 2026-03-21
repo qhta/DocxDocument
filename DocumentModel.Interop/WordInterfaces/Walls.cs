@@ -7,49 +7,49 @@ namespace DocumentModel.Interop.Word;
 public partial interface Walls : InteropObject
 {
   /// <summary>
-  /// The name.
+  /// Returns the name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
-  /// The border.
+  /// Returns the border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.border?view=word-pia"/>
   public ChartBorder Border { get; }
 
   /// <summary>
-  /// The interior.
+  /// Returns the interior.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.interior?view=word-pia"/>
   public Interior Interior { get; }
 
   /// <summary>
-  /// The fill.
+  /// Returns the fill.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.fill?view=word-pia"/>
   public ChartFillFormat Fill { get; }
 
   /// <summary>
-  /// The picture type.
+  /// Returns or sets the picture type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.picturetype?view=word-pia"/>
   public object PictureType { get; set; }
 
   /// <summary>
-  /// The picture unit.
+  /// Returns or sets the picture unit.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.pictureunit?view=word-pia"/>
   public object PictureUnit { get; set; }
 
   /// <summary>
-  /// The thickness.
+  /// Returns or sets the thickness.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.thickness?view=word-pia"/>
   public int Thickness { get; set; }
 
   /// <summary>
-  /// The format.
+  /// Returns the format.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.format?view=word-pia"/>
   public ChartFormat Format { get; }

@@ -7,19 +7,19 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathScrPre : InteropObject
 {
   /// <summary>
-  /// The sub.
+  /// Returns the sub.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.sub?view=word-pia"/>
   public OMath Sub { get; }
 
   /// <summary>
-  /// The sup.
+  /// Returns the sup.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.sup?view=word-pia"/>
   public OMath Sup { get; }
 
   /// <summary>
-  /// The e.
+  /// Returns the e.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.e?view=word-pia"/>
   public OMath E { get; }

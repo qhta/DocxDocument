@@ -7,12 +7,12 @@ namespace DocumentModel.Interop.Word;
 public interface SoftEdgeFormat : InteropObject
 {
   /// <summary>
-  /// The type.
+  /// Returns or sets the type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.softedgeformat.type?view=word-pia"/>
   public Core.MsoSoftEdgeType Type { get; set; }
   /// <summary>
-  /// The radius.
+  /// Returns or sets the radius.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.softedgeformat.radius?view=word-pia"/>
   public float Radius { get; set; }

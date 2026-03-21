@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface RepeatingSectionItem : InteropObject
 {
   /// <summary>
-  /// The range.
+  /// Returns the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.repeatingsectionitem.range?view=word-pia"/>
   public Range Range { get; }

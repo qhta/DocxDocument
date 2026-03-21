@@ -7,43 +7,43 @@ namespace DocumentModel.Interop.Word;
 public partial interface Page : InteropObject
 {
   /// <summary>
-  /// The left.
+  /// Returns the left.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page.left?view=word-pia"/>
   public int Left { get; }
 
   /// <summary>
-  /// The top.
+  /// Returns the top.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page.top?view=word-pia"/>
   public int Top { get; }
 
   /// <summary>
-  /// The width.
+  /// Returns the width.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page.width?view=word-pia"/>
   public int Width { get; }
 
   /// <summary>
-  /// The height.
+  /// Returns the height.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page.height?view=word-pia"/>
   public int Height { get; }
 
   /// <summary>
-  /// The rectangles.
+  /// Returns the rectangles.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page.rectangles?view=word-pia"/>
   public Rectangles Rectangles { get; }
 
   /// <summary>
-  /// The breaks.
+  /// Returns the breaks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page.breaks?view=word-pia"/>
   public Breaks Breaks { get; }
 
   /// <summary>
-  /// The enh meta file bits.
+  /// Returns the enh meta file bits.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page.enhmetafilebits?view=word-pia"/>
   public object EnhMetaFileBits { get; }

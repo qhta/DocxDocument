@@ -7,73 +7,73 @@ namespace DocumentModel.Interop.Word;
 public partial interface TextEffectFormat : InteropObject
 {
   /// <summary>
-  /// The alignment.
+  /// Returns or sets the alignment.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.alignment?view=word-pia"/>
   public Core.MsoTextEffectAlignment Alignment { get; set; }
 
   /// <summary>
-  /// The font bold.
+  /// Returns or sets whether font bold.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontbold?view=word-pia"/>
   public Core.MsoTriState FontBold { get; set; }
 
   /// <summary>
-  /// The font italic.
+  /// Returns or sets whether font italic.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontitalic?view=word-pia"/>
   public Core.MsoTriState FontItalic { get; set; }
 
   /// <summary>
-  /// The font name.
+  /// Returns or sets the font name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontname?view=word-pia"/>
   public string FontName { get; set; }
 
   /// <summary>
-  /// The font size.
+  /// Returns or sets the font size.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontsize?view=word-pia"/>
   public float FontSize { get; set; }
 
   /// <summary>
-  /// The kerned pairs.
+  /// Returns or sets whether kerned pairs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.kernedpairs?view=word-pia"/>
   public Core.MsoTriState KernedPairs { get; set; }
 
   /// <summary>
-  /// The normalized height.
+  /// Returns or sets whether normalized height.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.normalizedheight?view=word-pia"/>
   public Core.MsoTriState NormalizedHeight { get; set; }
 
   /// <summary>
-  /// The preset shape.
+  /// Returns or sets the preset shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.presetshape?view=word-pia"/>
   public Core.MsoPresetTextEffectShape PresetShape { get; set; }
 
   /// <summary>
-  /// The preset text effect.
+  /// Returns or sets the preset text effect.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.presettexteffect?view=word-pia"/>
   public Core.MsoPresetTextEffect PresetTextEffect { get; set; }
 
   /// <summary>
-  /// The rotated chars.
+  /// Returns or sets whether rotated chars.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.rotatedchars?view=word-pia"/>
   public Core.MsoTriState RotatedChars { get; set; }
 
   /// <summary>
-  /// The text.
+  /// Returns or sets the text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.text?view=word-pia"/>
   public string Text { get; set; }
 
   /// <summary>
-  /// The tracking.
+  /// Returns or sets the tracking.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.tracking?view=word-pia"/>
   public float Tracking { get; set; }

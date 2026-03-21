@@ -7,12 +7,12 @@ namespace DocumentModel.Interop.Word;
 public interface OMathBar : InteropObject
 {
   /// <summary>
-  /// The e.
+  /// Returns the e.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbar.e?view=word-pia"/>
   public OMath E { get; }
   /// <summary>
-  /// The bar top.
+  /// Returns or sets whether bar top.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbar.bartop?view=word-pia"/>
   public bool BarTop { get; set; }

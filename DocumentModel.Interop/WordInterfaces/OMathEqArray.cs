@@ -7,32 +7,32 @@ namespace DocumentModel.Interop.Word;
 public interface OMathEqArray : InteropObject
 {
   /// <summary>
-  /// The e.
+  /// Returns the e.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.e?view=word-pia"/>
   public OMathArgs E { get; }
   /// <summary>
-  /// The max dist.
+  /// Returns or sets whether max dist.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.maxdist?view=word-pia"/>
   public bool MaxDist { get; set; }
   /// <summary>
-  /// The obj dist.
+  /// Returns or sets whether obj dist.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.objdist?view=word-pia"/>
   public bool ObjDist { get; set; }
   /// <summary>
-  /// The align.
+  /// Returns or sets the align.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.align?view=word-pia"/>
   public WdOMathVertAlignType Align { get; set; }
   /// <summary>
-  /// The row spacing rule.
+  /// Returns or sets the row spacing rule.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.rowspacingrule?view=word-pia"/>
   public WdOMathSpacingRule RowSpacingRule { get; set; }
   /// <summary>
-  /// The row spacing.
+  /// Returns or sets the row spacing.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.rowspacing?view=word-pia"/>
   public int RowSpacing { get; set; }

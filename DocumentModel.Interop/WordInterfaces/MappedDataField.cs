@@ -7,27 +7,27 @@ namespace DocumentModel.Interop.Word;
 public interface MappedDataField : InteropObject
 {
   /// <summary>
-  /// The index.
+  /// Returns the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mappeddatafield.index?view=word-pia"/>
   public int Index { get; }
   /// <summary>
-  /// The data field name.
+  /// Returns the data field name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mappeddatafield.datafieldname?view=word-pia"/>
   public string DataFieldName { get; }
   /// <summary>
-  /// The name.
+  /// Returns the name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mappeddatafield.name?view=word-pia"/>
   public string Name { get; }
   /// <summary>
-  /// The value.
+  /// Returns the value.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mappeddatafield.value?view=word-pia"/>
   public string Value { get; }
   /// <summary>
-  /// The data field index.
+  /// Returns or sets the data field index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mappeddatafield.datafieldindex?view=word-pia"/>
   public int DataFieldIndex { get; set; }

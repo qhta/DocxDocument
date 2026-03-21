@@ -7,37 +7,37 @@ namespace DocumentModel.Interop.Word;
 public interface OMathPhantom : InteropObject
 {
   /// <summary>
-  /// The e.
+  /// Returns the e.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.e?view=word-pia"/>
   public OMath E { get; }
   /// <summary>
-  /// The show.
+  /// Returns or sets whether show.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.show?view=word-pia"/>
   public bool Show { get; set; }
   /// <summary>
-  /// The zero wid.
+  /// Returns or sets whether zero wid.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.zerowid?view=word-pia"/>
   public bool ZeroWid { get; set; }
   /// <summary>
-  /// The zero asc.
+  /// Returns or sets whether zero asc.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.zeroasc?view=word-pia"/>
   public bool ZeroAsc { get; set; }
   /// <summary>
-  /// The zero desc.
+  /// Returns or sets whether zero desc.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.zerodesc?view=word-pia"/>
   public bool ZeroDesc { get; set; }
   /// <summary>
-  /// The transp.
+  /// Returns or sets whether transp.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.transp?view=word-pia"/>
   public bool Transp { get; set; }
   /// <summary>
-  /// The smash.
+  /// Returns or sets whether smash.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.smash?view=word-pia"/>
   public bool Smash { get; set; }

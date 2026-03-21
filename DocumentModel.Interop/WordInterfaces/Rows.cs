@@ -25,7 +25,7 @@ public partial interface Rows : InteropObject, InteropCollection<Row>
   public int HeadingFormat { get; set; }
 
   /// <summary>
-  /// The amount of spacing, in points, between table columns.
+  /// Returns or sets the space between columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.spacebetweencolumns?view=word-pia"/>
   public float SpaceBetweenColumns { get; set; }
@@ -49,13 +49,13 @@ public partial interface Rows : InteropObject, InteropCollection<Row>
   public float LeftIndent { get; set; }
 
   /// <summary>
-  /// The first row in the collection.
+  /// Returns the first.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.first?view=word-pia"/>
   public Row First { get; }
 
   /// <summary>
-  /// The last row in the collection.
+  /// Returns the last.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.last?view=word-pia"/>
   public Row Last { get; }
@@ -67,7 +67,7 @@ public partial interface Rows : InteropObject, InteropCollection<Row>
   public Borders Borders { get; set; }
 
   /// <summary>
-  /// The shading formatting for the rows.
+  /// Returns the shading.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.shading?view=word-pia"/>
   public Shading Shading { get; }
@@ -133,7 +133,7 @@ public partial interface Rows : InteropObject, InteropCollection<Row>
   public int AllowOverlap { get; set; }
 
   /// <summary>
-  /// The nesting level of the rows within nested tables.
+  /// Returns the nesting level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.nestinglevel?view=word-pia"/>
   public int NestingLevel { get; }

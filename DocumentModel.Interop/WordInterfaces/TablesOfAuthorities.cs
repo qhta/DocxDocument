@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface TablesOfAuthorities : InteropObject, InteropCollection<TableOfAuthorities>
 {
   /// <summary>
-  /// The format.
+  /// Returns or sets the format.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofauthorities.format?view=word-pia"/>
   public WdToaFormat Format { get; set; }

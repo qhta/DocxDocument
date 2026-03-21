@@ -7,37 +7,37 @@ namespace DocumentModel.Interop.Word;
 public interface WrapFormat : InteropObject
 {
   /// <summary>
-  /// The type.
+  /// Returns or sets the type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wrapformat.type?view=word-pia"/>
   public WdWrapType Type { get; set; }
   /// <summary>
-  /// The side.
+  /// Returns or sets the side.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wrapformat.side?view=word-pia"/>
   public WdWrapSideType Side { get; set; }
   /// <summary>
-  /// The distance top.
+  /// Returns or sets the distance top.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wrapformat.distancetop?view=word-pia"/>
   public float DistanceTop { get; set; }
   /// <summary>
-  /// The distance bottom.
+  /// Returns or sets the distance bottom.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wrapformat.distancebottom?view=word-pia"/>
   public float DistanceBottom { get; set; }
   /// <summary>
-  /// The distance left.
+  /// Returns or sets the distance left.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wrapformat.distanceleft?view=word-pia"/>
   public float DistanceLeft { get; set; }
   /// <summary>
-  /// The distance right.
+  /// Returns or sets the distance right.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wrapformat.distanceright?view=word-pia"/>
   public float DistanceRight { get; set; }
   /// <summary>
-  /// The allow overlap.
+  /// Returns or sets the allow overlap.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wrapformat.allowoverlap?view=word-pia"/>
   public int AllowOverlap { get; set; }

@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface RecentFiles : InteropObject, InteropCollection<RecentFile>
 {
   /// <summary>
-  /// The maximum.
+  /// Returns or sets the maximum.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.recentfiles.maximum?view=word-pia"/>
   public int Maximum { get; set; }

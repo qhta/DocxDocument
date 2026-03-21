@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Versions : InteropObject, InteropCollection<Version>
 {
   /// <summary>
-  /// The auto version.
+  /// Returns or sets the auto version.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.versions.autoversion?view=word-pia"/>
   public WdAutoVersions AutoVersion { get; set; }

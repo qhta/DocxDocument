@@ -7,43 +7,43 @@ namespace DocumentModel.Interop.Word;
 public partial interface Task : InteropObject
 {
   /// <summary>
-  /// The name.
+  /// Returns the name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.task.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
-  /// The left.
+  /// Returns or sets the left.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.task.left?view=word-pia"/>
   public int Left { get; set; }
 
   /// <summary>
-  /// The top.
+  /// Returns or sets the top.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.task.top?view=word-pia"/>
   public int Top { get; set; }
 
   /// <summary>
-  /// The width.
+  /// Returns or sets the width.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.task.width?view=word-pia"/>
   public int Width { get; set; }
 
   /// <summary>
-  /// The height.
+  /// Returns or sets the height.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.task.height?view=word-pia"/>
   public int Height { get; set; }
 
   /// <summary>
-  /// The window state.
+  /// Returns or sets the window state.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.task.windowstate?view=word-pia"/>
   public WdWindowState WindowState { get; set; }
 
   /// <summary>
-  /// The visible.
+  /// Returns or sets whether visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.task.visible?view=word-pia"/>
   public bool Visible { get; set; }
