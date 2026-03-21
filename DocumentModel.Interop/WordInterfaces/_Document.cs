@@ -34,7 +34,7 @@ public partial interface _Document : InteropObject
   /// Returns a Template object that represents the template attached to the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.attachedtemplate?view=word-pia"/>
-  public object AttachedTemplate { get; set; }
+  public Template AttachedTemplate { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether automatic formatting options override formatting restrictions in a document where formatting restrictions are in effect.
@@ -172,7 +172,7 @@ public partial interface _Document : InteropObject
   /// Returns a DocumentProperties collection that represents all the custom document properties for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.customdocumentproperties?view=word-pia"/>
-  public object CustomDocumentProperties { get; }
+  public Core.DocumentProperties CustomDocumentProperties { get; }
 
   /// <summary>
   /// Returns a CustomXMLParts#SameCHM collection that represents the custom XML in the XML data store. Read-only.
@@ -181,10 +181,10 @@ public partial interface _Document : InteropObject
   public Core.CustomXMLParts CustomXMLParts { get; }
 
   /// <summary>
-  /// Returns an Object that represents the table style that is applied to all newly created tables in a document.
+  /// Returns a TableStyle that represents the table style that is applied to all newly created tables in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.defaulttablestyle?view=word-pia"/>
-  public object DefaultTableStyle { get; }
+  public TableStyle DefaultTableStyle { get; }
 
   /// <summary>
   /// Returns or sets the interval (in points) between the default tab stops in the specified document.

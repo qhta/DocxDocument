@@ -1,416 +1,278 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// Represents a single axis in a chart.
+/// Represents an axis in a chart.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn API reference.
-/// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis?view=word-pia"/>
 public partial interface Axis : InteropObject
 {
   /// <summary>
-  /// The axis between categories.
+  /// Gets or sets a value indicating whether the value axis crosses between categories.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.axisbetweencategories?view=word-pia"/>
   public bool AxisBetweenCategories { get; set; }
 
   /// <summary>
-  /// The axis group.
+  /// Gets the axis group.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.axisgroup?view=word-pia"/>
   public XlAxisGroup AxisGroup { get; }
 
   /// <summary>
-  /// The axis title.
+  /// Gets the axis title.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.axistitle?view=word-pia"/>
   public AxisTitle AxisTitle { get; }
 
   /// <summary>
-  /// The category names.
+  /// Gets or sets the category names.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.categorynames?view=word-pia"/>
   public object CategoryNames { get; set; }
 
   /// <summary>
-  /// The crosses.
+  /// Gets or sets how the specified axis crosses the other axis.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.crosses?view=word-pia"/>
   public XlAxisCrosses Crosses { get; set; }
 
   /// <summary>
-  /// The crosses at.
+  /// Gets or sets the value axis crossing point on the category axis.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.crossesat?view=word-pia"/>
   public double CrossesAt { get; set; }
 
   /// <summary>
-  /// The has major gridlines.
+  /// Gets or sets a value indicating whether the axis has major gridlines.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.hasmajorgridlines?view=word-pia"/>
   public bool HasMajorGridlines { get; set; }
 
   /// <summary>
-  /// The has minor gridlines.
+  /// Gets or sets a value indicating whether the axis has minor gridlines.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.hasminorgridlines?view=word-pia"/>
   public bool HasMinorGridlines { get; set; }
 
   /// <summary>
-  /// The has title.
+  /// Gets or sets a value indicating whether the axis has a visible title.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.hastitle?view=word-pia"/>
   public bool HasTitle { get; set; }
 
   /// <summary>
-  /// The major gridlines.
+  /// Gets the major gridlines.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.majorgridlines?view=word-pia"/>
   public Gridlines MajorGridlines { get; }
 
   /// <summary>
-  /// The major tick mark.
+  /// Gets or sets the major tick mark type.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.majortickmark?view=word-pia"/>
   public XlTickMark MajorTickMark { get; set; }
 
   /// <summary>
-  /// The major unit.
+  /// Gets or sets the major unit value.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.majorunit?view=word-pia"/>
   public double MajorUnit { get; set; }
 
   /// <summary>
-  /// The log base.
+  /// Gets or sets the logarithmic base value.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.logbase?view=word-pia"/>
   public double LogBase { get; set; }
 
   /// <summary>
-  /// The tick label spacing is auto.
+  /// Gets or sets a value indicating whether tick-label spacing is calculated automatically.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.ticklabelspacingisauto?view=word-pia"/>
   public bool TickLabelSpacingIsAuto { get; set; }
 
   /// <summary>
-  /// The major unit is auto.
+  /// Gets or sets a value indicating whether the major unit is calculated automatically.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.majorunitisauto?view=word-pia"/>
   public bool MajorUnitIsAuto { get; set; }
 
   /// <summary>
-  /// The maximum scale.
+  /// Gets or sets the maximum scale value.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.maximumscale?view=word-pia"/>
   public double MaximumScale { get; set; }
 
   /// <summary>
-  /// The maximum scale is auto.
+  /// Gets or sets a value indicating whether the maximum scale is calculated automatically.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.maximumscaleisauto?view=word-pia"/>
   public bool MaximumScaleIsAuto { get; set; }
 
   /// <summary>
-  /// The minimum scale.
+  /// Gets or sets the minimum scale value.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.minimumscale?view=word-pia"/>
   public double MinimumScale { get; set; }
 
   /// <summary>
-  /// The minimum scale is auto.
+  /// Gets or sets a value indicating whether the minimum scale is calculated automatically.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.minimumscaleisauto?view=word-pia"/>
   public bool MinimumScaleIsAuto { get; set; }
 
   /// <summary>
-  /// The minor gridlines.
+  /// Gets the minor gridlines.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.minorgridlines?view=word-pia"/>
   public Gridlines MinorGridlines { get; }
 
   /// <summary>
-  /// The minor tick mark.
+  /// Gets or sets the minor tick mark type.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.minortickmark?view=word-pia"/>
   public XlTickMark MinorTickMark { get; set; }
 
   /// <summary>
-  /// The minor unit.
+  /// Gets or sets the minor unit value.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.minorunit?view=word-pia"/>
   public double MinorUnit { get; set; }
 
   /// <summary>
-  /// The minor unit is auto.
+  /// Gets or sets a value indicating whether the minor unit is calculated automatically.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.minorunitisauto?view=word-pia"/>
   public bool MinorUnitIsAuto { get; set; }
 
   /// <summary>
-  /// The reverse plot order.
+  /// Gets or sets a value indicating whether categories or values are plotted in reverse order.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.reverseplotorder?view=word-pia"/>
   public bool ReversePlotOrder { get; set; }
 
   /// <summary>
-  /// The scale type.
+  /// Gets or sets the axis scale type.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.scaletype?view=word-pia"/>
   public XlScaleType ScaleType { get; set; }
 
   /// <summary>
-  /// The tick label position.
+  /// Gets or sets the tick-label position.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.ticklabelposition?view=word-pia"/>
   public XlTickLabelPosition TickLabelPosition { get; set; }
 
   /// <summary>
-  /// The tick labels.
+  /// Gets the tick labels.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.ticklabels?view=word-pia"/>
   public TickLabels TickLabels { get; }
 
   /// <summary>
-  /// The tick label spacing.
+  /// Gets or sets the tick-label spacing.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.ticklabelspacing?view=word-pia"/>
   public int TickLabelSpacing { get; set; }
 
   /// <summary>
-  /// The tick mark spacing.
+  /// Gets or sets the tick-mark spacing.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.tickmarkspacing?view=word-pia"/>
   public int TickMarkSpacing { get; set; }
 
   /// <summary>
-  /// The type.
+  /// Gets or sets the axis type.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.type?view=word-pia"/>
   public XlAxisType Type { get; set; }
 
   /// <summary>
-  /// The base unit.
+  /// Gets or sets the base time unit for category-axis labels.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.baseunit?view=word-pia"/>
   public XlTimeUnit BaseUnit { get; set; }
 
   /// <summary>
-  /// The base unit is auto.
+  /// Gets or sets a value indicating whether the base time unit is calculated automatically.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.baseunitisauto?view=word-pia"/>
   public bool BaseUnitIsAuto { get; set; }
 
   /// <summary>
-  /// The major unit scale.
+  /// Gets or sets the major time-unit scale.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.majorunitscale?view=word-pia"/>
   public XlTimeUnit MajorUnitScale { get; set; }
 
   /// <summary>
-  /// The minor unit scale.
+  /// Gets or sets the minor time-unit scale.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.minorunitscale?view=word-pia"/>
   public XlTimeUnit MinorUnitScale { get; set; }
 
   /// <summary>
-  /// The category type.
+  /// Gets or sets the category-axis type.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.categorytype?view=word-pia"/>
   public XlCategoryType CategoryType { get; set; }
 
   /// <summary>
-  /// The left.
+  /// Gets the distance, in points, from the left edge of the chart area to the left edge of the axis.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.left?view=word-pia"/>
   public double Left { get; }
 
   /// <summary>
-  /// The top.
+  /// Gets the distance, in points, from the top edge of the chart area to the top edge of the axis.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.top?view=word-pia"/>
   public double Top { get; }
 
   /// <summary>
-  /// The width.
+  /// Gets the width of the axis, in points.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.width?view=word-pia"/>
   public double Width { get; }
 
   /// <summary>
-  /// The height.
+  /// Gets the height of the axis, in points.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.height?view=word-pia"/>
   public double Height { get; }
 
   /// <summary>
-  /// The display unit.
+  /// Gets or sets the display unit for the value axis.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.displayunit?view=word-pia"/>
   public XlDisplayUnit DisplayUnit { get; set; }
 
   /// <summary>
-  /// The display unit custom.
+  /// Gets or sets the custom display-unit value.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.displayunitcustom?view=word-pia"/>
   public double DisplayUnitCustom { get; set; }
 
   /// <summary>
-  /// The has display unit label.
+  /// Gets or sets a value indicating whether the axis has a display-unit label.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.hasdisplayunitlabel?view=word-pia"/>
   public bool HasDisplayUnitLabel { get; set; }
 
   /// <summary>
-  /// The display unit label.
+  /// Gets the display-unit label.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.displayunitlabel?view=word-pia"/>
   public DisplayUnitLabel DisplayUnitLabel { get; }
 
   /// <summary>
-  /// The border.
+  /// Gets the axis border.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.border?view=word-pia"/>
   public ChartBorder Border { get; }
 
   /// <summary>
-  /// The format.
+  /// Gets the chart formatting for the axis.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.format?view=word-pia"/>
   public ChartFormat Format { get; }
 }

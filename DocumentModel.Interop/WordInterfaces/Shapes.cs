@@ -3,9 +3,6 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// A collection of Shape objects that represent all the shapes in a document or all the shapes in all the headers and footers in a document.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn API reference.
-/// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes?view=word-pia"/>
 public partial interface Shapes : InteropObject, InteropCollection<Shape>
 {
