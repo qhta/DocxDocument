@@ -7,49 +7,49 @@ namespace DocumentModel.Interop.Word;
 public partial interface KeyBinding : InteropObject
 {
   /// <summary>
-  /// The command.
+  /// Returns the command assigned to the key binding.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding.command?view=word-pia"/>
   public string Command { get; }
 
   /// <summary>
-  /// The key string.
+  /// Returns a string that represents the key combination.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding.keystring?view=word-pia"/>
   public string KeyString { get; }
 
   /// <summary>
-  /// The protected.
+  /// Returns whether the key binding is protected from user modification.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding.protected?view=word-pia"/>
   public bool Protected { get; }
 
   /// <summary>
-  /// The key category.
+  /// Returns the category of the key binding.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding.keycategory?view=word-pia"/>
   public WdKeyCategory KeyCategory { get; }
 
   /// <summary>
-  /// The key code.
+  /// Returns the primary key code of the key binding.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding.keycode?view=word-pia"/>
   public int KeyCode { get; }
 
   /// <summary>
-  /// The key code2.
+  /// Returns the secondary key code of the key binding.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding.keycode2?view=word-pia"/>
   public int KeyCode2 { get; }
 
   /// <summary>
-  /// The command parameter.
+  /// Returns the parameter string used with the bound command.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding.commandparameter?view=word-pia"/>
   public string CommandParameter { get; }
 
   /// <summary>
-  /// The context.
+  /// Returns the context in which the key binding is active.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding.context?view=word-pia"/>
   public object Context { get; }

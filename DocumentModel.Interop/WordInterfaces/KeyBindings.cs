@@ -7,7 +7,8 @@ namespace DocumentModel.Interop.Word;
 public partial interface KeyBindings : InteropObject, InteropCollection<KeyBinding>
 {
   /// <summary>
-  /// The context.
+  /// Returns an object that represents the storage location of the specified key binding.
+  /// This property can return a Document, Template, or Application object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybindings.context?view=word-pia"/>
   public object Context { get; }

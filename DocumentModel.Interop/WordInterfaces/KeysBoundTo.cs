@@ -7,25 +7,26 @@ namespace DocumentModel.Interop.Word;
 public partial interface KeysBoundTo : InteropObject, InteropCollection<KeyBinding>
 {
   /// <summary>
-  /// The key category.
+  /// Returns the type of item assigned to the specified key binding.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keysboundto.keycategory?view=word-pia"/>
   public WdKeyCategory KeyCategory { get; }
 
   /// <summary>
-  /// The command.
+  /// Returns the command assigned to the specified key combination.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keysboundto.command?view=word-pia"/>
   public string Command { get; }
 
   /// <summary>
-  /// The command parameter.
+  /// Returns the command parameter assigned to the specified shortcut key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keysboundto.commandparameter?view=word-pia"/>
   public string CommandParameter { get; }
 
   /// <summary>
-  /// The context.
+  /// Returns an object that represents the storage location of the specified key binding.
+  /// This property can return a Document, Template, or Application object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keysboundto.context?view=word-pia"/>
   public object Context { get; }

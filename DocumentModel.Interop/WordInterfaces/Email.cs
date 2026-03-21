@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public interface Email : InteropObject
 {
   /// <summary>
-  /// The current email author.
+  /// Gets the current email author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.email.currentemailauthor?view=word-pia"/>
   public EmailAuthor CurrentEmailAuthor { get; }

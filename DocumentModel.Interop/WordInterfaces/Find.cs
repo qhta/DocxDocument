@@ -7,199 +7,199 @@ namespace DocumentModel.Interop.Word;
 public partial interface Find : InteropObject
 {
   /// <summary>
-  /// The forward.
+  /// Determines if the find operation searches forward through the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.forward?view=word-pia"/>
   public bool Forward { get; set; }
 
   /// <summary>
-  /// The font.
+  /// Returns or sets a <see cref="Font"/> object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.font?view=word-pia"/>
   public Font Font { get; set; }
 
   /// <summary>
-  /// The found.
+  /// Determines if the search for the specified object has produced a match.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.found?view=word-pia"/>
   public bool Found { get; }
 
   /// <summary>
-  /// The match all word forms.
+  /// Determines if all forms of the text to find are found by the find operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchallwordforms?view=word-pia"/>
   public bool MatchAllWordForms { get; set; }
 
   /// <summary>
-  /// The match case.
+  /// Determines if the find operation is case-sensitive.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchcase?view=word-pia"/>
   public bool MatchCase { get; set; }
 
   /// <summary>
-  /// The match wildcards.
+  /// Determines if the text to find contains wildcards.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchwildcards?view=word-pia"/>
   public bool MatchWildcards { get; set; }
 
   /// <summary>
-  /// The match sounds like.
+  /// Determines if words that sound similar to the text to find are returned by the find operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchsoundslike?view=word-pia"/>
   public bool MatchSoundsLike { get; set; }
 
   /// <summary>
-  /// The match whole word.
+  /// Determines if the find operation locates only entire words and not text that's part of a larger word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchwholeword?view=word-pia"/>
   public bool MatchWholeWord { get; set; }
 
   /// <summary>
-  /// The match fuzzy.
+  /// Determines if Microsoft Word uses the nonspecific search options for Japanese text during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchfuzzy?view=word-pia"/>
   public bool MatchFuzzy { get; set; }
 
   /// <summary>
-  /// The match byte.
+  /// Determines if Microsoft Word distinguishes between full-width and half-width letters or characters during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchbyte?view=word-pia"/>
   public bool MatchByte { get; set; }
 
   /// <summary>
-  /// The paragraph format.
+  /// Returns or sets a <see cref="ParagraphFormat"/> object that represents the paragraph settings for the specified range, selection, find or replacement operation, or style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.paragraphformat?view=word-pia"/>
   public ParagraphFormat ParagraphFormat { get; set; }
 
   /// <summary>
-  /// The style.
+  /// Returns or sets the style for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.style?view=word-pia"/>
   public object Style { get; set; }
 
   /// <summary>
-  /// The text.
+  /// Returns or sets the text to find or replace in the specified range or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.text?view=word-pia"/>
   public string Text { get; set; }
 
   /// <summary>
-  /// The language id.
+  /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.languageid?view=word-pia"/>
   public WdLanguageID LanguageID { get; set; }
 
   /// <summary>
-  /// The highlight.
+  /// Determines if highlight formatting is included in the find criteria.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.highlight?view=word-pia"/>
   public int Highlight { get; set; }
 
   /// <summary>
-  /// The replacement.
+  /// Returns a <see cref="Replacement"/> object that contains the criteria for a replace operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.replacement?view=word-pia"/>
   public Replacement Replacement { get; }
 
   /// <summary>
-  /// The frame.
+  /// Returns a <see cref="Frame"/> object that represents the frame formatting for the specified style or find-and-replace operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.frame?view=word-pia"/>
   public Frame Frame { get; }
 
   /// <summary>
-  /// The wrap.
+  /// Returns or sets what happens if the end or beginning of the document is reached during the search, or if the text isn't found in the specified selection or range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.wrap?view=word-pia"/>
   public WdFindWrap Wrap { get; set; }
 
   /// <summary>
-  /// The format.
+  /// Determine if formatting is included in the find operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.format?view=word-pia"/>
   public bool Format { get; set; }
 
   /// <summary>
-  /// The language idfar east.
+  /// Returns or sets an East Asian language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.languageidfareast?view=word-pia"/>
   public WdLanguageID LanguageIDFarEast { get; set; }
 
   /// <summary>
-  /// The language idother.
+  /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.languageidother?view=word-pia"/>
   public WdLanguageID LanguageIDOther { get; set; }
 
   /// <summary>
-  /// The correct hangul endings.
+  /// Determines if Microsoft Word automatically corrects Hangul endings when replacing Hangul text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.correcthangulendings?view=word-pia"/>
   public bool CorrectHangulEndings { get; set; }
 
   /// <summary>
-  /// The no proofing.
+  /// Determines if Microsoft Word finds or replaces text that the spelling and grammar checker ignores.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.noproofing?view=word-pia"/>
   public int NoProofing { get; set; }
 
   /// <summary>
-  /// The match kashida.
+  /// Determines if find operations match text with matching kashidas in an Arabic language document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchkashida?view=word-pia"/>
   public bool MatchKashida { get; set; }
 
   /// <summary>
-  /// The match diacritics.
+  /// Determines if find operations match text with matching diacritics in a right-to-left language document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchdiacritics?view=word-pia"/>
   public bool MatchDiacritics { get; set; }
 
   /// <summary>
-  /// The match alef hamza.
+  /// Determines if find operations match text with matching alef hamzas in an Arabic language document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchalefhamza?view=word-pia"/>
   public bool MatchAlefHamza { get; set; }
 
   /// <summary>
-  /// The match control.
+  /// Determines if find operations match text with matching bidirectional control characters in a right-to-left language document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchcontrol?view=word-pia"/>
   public bool MatchControl { get; set; }
 
   /// <summary>
-  /// The match phrase.
+  /// Returns or sets whether all white space and control characters between words are ignored.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchphrase?view=word-pia"/>
   public bool MatchPhrase { get; set; }
 
   /// <summary>
-  /// The match prefix.
+  /// Returns or sets whether words beginning with the search string are matched.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchprefix?view=word-pia"/>
   public bool MatchPrefix { get; set; }
 
   /// <summary>
-  /// The match suffix.
+  /// Returns or sets whether words ending with the search string are matched.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchsuffix?view=word-pia"/>
   public bool MatchSuffix { get; set; }
 
   /// <summary>
-  /// The ignore space.
+  /// Returns or sets whether a find operation should ignore extra white space in found text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.ignorespace?view=word-pia"/>
   public bool IgnoreSpace { get; set; }
 
   /// <summary>
-  /// The ignore punct.
+  /// Returns or sets whether a find operation should ignore punctuation in found text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.ignorepunct?view=word-pia"/>
   public bool IgnorePunct { get; set; }
 
   /// <summary>
-  /// The hanja phonetic hangul.
+  /// Returns or sets whether to locate phonetic Hangul and Hanja characters in a Korean language find operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.hanjaphonetichangul?view=word-pia"/>
   public bool HanjaPhoneticHangul { get; set; }

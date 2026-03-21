@@ -7,52 +7,52 @@ namespace DocumentModel.Interop.Word;
 public interface Language : InteropObject
 {
   /// <summary>
-  /// The id.
+  /// Returns a language ID constant for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.id?view=word-pia"/>
   public WdLanguageID ID { get; }
   /// <summary>
-  /// The name local.
+  /// Returns the localized name of the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.namelocal?view=word-pia"/>
   public string NameLocal { get; }
   /// <summary>
-  /// The name.
+  /// Returns the name of the language in English.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.name?view=word-pia"/>
   public string Name { get; }
   /// <summary>
-  /// The active grammar dictionary.
+  /// Returns the active grammar dictionary for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.activegrammardictionary?view=word-pia"/>
   public Dictionary ActiveGrammarDictionary { get; }
   /// <summary>
-  /// The active hyphenation dictionary.
+  /// Returns the active hyphenation dictionary for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.activehyphenationdictionary?view=word-pia"/>
   public Dictionary ActiveHyphenationDictionary { get; }
   /// <summary>
-  /// The active spelling dictionary.
+  /// Returns the active spelling dictionary for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.activespellingdictionary?view=word-pia"/>
   public Dictionary ActiveSpellingDictionary { get; }
   /// <summary>
-  /// The active thesaurus dictionary.
+  /// Returns the active thesaurus dictionary for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.activethesaurusdictionary?view=word-pia"/>
   public Dictionary ActiveThesaurusDictionary { get; }
   /// <summary>
-  /// The default writing style.
+  /// Returns or sets the default writing style for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.defaultwritingstyle?view=word-pia"/>
   public string DefaultWritingStyle { get; set; }
   /// <summary>
-  /// The writing style list.
+  /// Returns the list of available writing styles for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.writingstylelist?view=word-pia"/>
   public object WritingStyleList { get; }
   /// <summary>
-  /// The spelling dictionary type.
+  /// Returns or sets the type of spelling dictionary used for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.spellingdictionarytype?view=word-pia"/>
   public WdDictionaryType SpellingDictionaryType { get; set; }
