@@ -1,151 +1,151 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// True if an axis title will occupy the chart layout space when a chart layout is being determined. The default value is True. Read/write
+/// Represents the title of an axis in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle?view=word-pia"/>
 public partial interface AxisTitle : InteropObject
 {
   /// <summary>
-  /// The caption.
+  /// Gets or sets the caption text for the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.caption?view=word-pia"/>
   public string Caption { get; set; }
 
   /// <summary>
-  /// The font.
+  /// Gets the font formatting for the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.font?view=word-pia"/>
   public ChartFont Font { get; }
 
   /// <summary>
-  /// The horizontal alignment.
+  /// Gets or sets the horizontal alignment of the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.horizontalalignment?view=word-pia"/>
   public object HorizontalAlignment { get; set; }
 
   /// <summary>
-  /// The left.
+  /// Gets or sets the distance, in points, from the left edge of the chart area to the left edge of the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.left?view=word-pia"/>
   public double Left { get; set; }
 
   /// <summary>
-  /// The orientation.
+  /// Gets or sets the text orientation of the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.orientation?view=word-pia"/>
   public object Orientation { get; set; }
 
   /// <summary>
-  /// The shadow.
+  /// Gets or sets a value indicating whether the axis title has a shadow.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.shadow?view=word-pia"/>
   public bool Shadow { get; set; }
 
   /// <summary>
-  /// The text.
+  /// Gets or sets the text of the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.text?view=word-pia"/>
   public string Text { get; set; }
 
   /// <summary>
-  /// The top.
+  /// Gets or sets the distance, in points, from the top edge of the chart area to the top edge of the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.top?view=word-pia"/>
   public double Top { get; set; }
 
   /// <summary>
-  /// The vertical alignment.
+  /// Gets or sets the vertical alignment of the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.verticalalignment?view=word-pia"/>
   public object VerticalAlignment { get; set; }
 
   /// <summary>
-  /// The reading order.
+  /// Gets or sets the reading order for the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.readingorder?view=word-pia"/>
   public int ReadingOrder { get; set; }
 
   /// <summary>
-  /// The auto scale font.
+  /// Gets or sets whether the font size is scaled automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.autoscalefont?view=word-pia"/>
   public object AutoScaleFont { get; set; }
 
   /// <summary>
-  /// The interior.
+  /// Gets the interior formatting of the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.interior?view=word-pia"/>
   public Interior Interior { get; }
 
   /// <summary>
-  /// The fill.
+  /// Gets the fill formatting of the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.fill?view=word-pia"/>
   public ChartFillFormat Fill { get; }
 
   /// <summary>
-  /// The border.
+  /// Gets the border formatting of the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.border?view=word-pia"/>
   public ChartBorder Border { get; }
 
   /// <summary>
-  /// The name.
+  /// Gets the name of the axis title object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
-  /// The include in layout.
+  /// Gets or sets a value indicating whether the axis title occupies chart layout space when layout is calculated.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.includeinlayout?view=word-pia"/>
   public bool IncludeInLayout { get; set; }
 
   /// <summary>
-  /// The position.
+  /// Gets or sets the position of the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.position?view=word-pia"/>
   public XlChartElementPosition Position { get; set; }
 
   /// <summary>
-  /// The format.
+  /// Gets the chart formatting for the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.format?view=word-pia"/>
   public ChartFormat Format { get; }
 
   /// <summary>
-  /// The height.
+  /// Gets the height of the axis title, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.height?view=word-pia"/>
   public double Height { get; }
 
   /// <summary>
-  /// The width.
+  /// Gets the width of the axis title, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.width?view=word-pia"/>
   public double Width { get; }
 
   /// <summary>
-  /// The formula.
+  /// Gets or sets the formula for the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.formula?view=word-pia"/>
   public string Formula { get; set; }
 
   /// <summary>
-  /// The formula r1 c1.
+  /// Gets or sets the formula for the axis title in R1C1-style notation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.formular1c1?view=word-pia"/>
   public string FormulaR1C1 { get; set; }
 
   /// <summary>
-  /// The formula local.
+  /// Gets or sets the formula for the axis title in the language of the user.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.formulalocal?view=word-pia"/>
   public string FormulaLocal { get; set; }
 
   /// <summary>
-  /// The formula r1 c1 local.
+  /// Gets or sets the formula for the axis title in R1C1-style notation in the language of the user.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.formular1c1local?view=word-pia"/>
   public string FormulaR1C1Local { get; set; }

@@ -7,25 +7,25 @@ namespace DocumentModel.Interop.Word;
 public partial interface Dialog : InteropObject
 {
   /// <summary>
-  /// The default tab.
+  /// Gets or sets the tab that appears by default when the dialog box is displayed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dialog.defaulttab?view=word-pia"/>
   public WdWordDialogTab DefaultTab { get; set; }
 
   /// <summary>
-  /// The type.
+  /// Gets the built-in type of the dialog box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dialog.type?view=word-pia"/>
   public WdWordDialog Type { get; }
 
   /// <summary>
-  /// The command name.
+  /// Gets the command name associated with the dialog box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dialog.commandname?view=word-pia"/>
   public string CommandName { get; }
 
   /// <summary>
-  /// The command bar id.
+  /// Gets the command bar control ID associated with the dialog box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dialog.commandbarid?view=word-pia"/>
   public int CommandBarId { get; }

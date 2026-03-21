@@ -7,55 +7,55 @@ namespace DocumentModel.Interop.Word;
 public partial interface Cells : InteropObject, InteropCollection<Cell>
 {
   /// <summary>
-  /// The width.
+  /// Gets or sets the width of the cells, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.width?view=word-pia"/>
   public float Width { get; set; }
 
   /// <summary>
-  /// The height.
+  /// Gets or sets the height of the cells, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.height?view=word-pia"/>
   public float Height { get; set; }
 
   /// <summary>
-  /// The height rule.
+  /// Gets or sets the rule for determining row height.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.heightrule?view=word-pia"/>
   public WdRowHeightRule HeightRule { get; set; }
 
   /// <summary>
-  /// The vertical alignment.
+  /// Gets or sets the vertical alignment of text in the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.verticalalignment?view=word-pia"/>
   public WdCellVerticalAlignment VerticalAlignment { get; set; }
 
   /// <summary>
-  /// The borders.
+  /// Gets or sets the border formatting for the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.borders?view=word-pia"/>
   public Borders Borders { get; set; }
 
   /// <summary>
-  /// The shading.
+  /// Gets the shading formatting for the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.shading?view=word-pia"/>
   public Shading Shading { get; }
 
   /// <summary>
-  /// The nesting level.
+  /// Gets the nesting level of the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.nestinglevel?view=word-pia"/>
   public int NestingLevel { get; }
 
   /// <summary>
-  /// The preferred width.
+  /// Gets or sets the preferred width of the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.preferredwidth?view=word-pia"/>
   public float PreferredWidth { get; set; }
 
   /// <summary>
-  /// The preferred width type.
+  /// Gets or sets the preferred width type for the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.preferredwidthtype?view=word-pia"/>
   public WdPreferredWidthType PreferredWidthType { get; set; }

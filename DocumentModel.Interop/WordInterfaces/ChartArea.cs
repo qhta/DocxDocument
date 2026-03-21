@@ -7,73 +7,73 @@ namespace DocumentModel.Interop.Word;
 public partial interface ChartArea : InteropObject
 {
   /// <summary>
-  /// The name.
+  /// Gets the name of the chart area object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
-  /// The border.
+  /// Gets the border formatting for the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.border?view=word-pia"/>
   public ChartBorder Border { get; }
 
   /// <summary>
-  /// The font.
+  /// Gets the font formatting used in the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.font?view=word-pia"/>
   public ChartFont Font { get; }
 
   /// <summary>
-  /// The shadow.
+  /// Gets or sets a value indicating whether the chart area has a shadow.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.shadow?view=word-pia"/>
   public bool Shadow { get; set; }
 
   /// <summary>
-  /// The height.
+  /// Gets or sets the height of the chart area, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.height?view=word-pia"/>
   public double Height { get; set; }
 
   /// <summary>
-  /// The interior.
+  /// Gets the interior formatting of the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.interior?view=word-pia"/>
   public Interior Interior { get; }
 
   /// <summary>
-  /// The fill.
+  /// Gets the fill formatting of the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.fill?view=word-pia"/>
   public ChartFillFormat Fill { get; }
 
   /// <summary>
-  /// The left.
+  /// Gets or sets the distance, in points, from the left edge of the chart area to the left edge of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.left?view=word-pia"/>
   public double Left { get; set; }
 
   /// <summary>
-  /// The top.
+  /// Gets or sets the distance, in points, from the top edge of the chart area to the top edge of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.top?view=word-pia"/>
   public double Top { get; set; }
 
   /// <summary>
-  /// The width.
+  /// Gets or sets the width of the chart area, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.width?view=word-pia"/>
   public double Width { get; set; }
 
   /// <summary>
-  /// The auto scale font.
+  /// Gets or sets whether the font size is scaled automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.autoscalefont?view=word-pia"/>
   public object AutoScaleFont { get; set; }
 
   /// <summary>
-  /// The format.
+  /// Gets the chart formatting for the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.format?view=word-pia"/>
   public ChartFormat Format { get; }

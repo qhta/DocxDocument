@@ -7,12 +7,12 @@ namespace DocumentModel.Interop.Word;
 public interface Characters : InteropObject, InteropCollection<Range>
 {
   /// <summary>
-  /// The first.
+  /// Gets the first character in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.characters.first?view=word-pia"/>
   public Range First { get; }
   /// <summary>
-  /// The last.
+  /// Gets the last character in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.characters.last?view=word-pia"/>
   public Range Last { get; }

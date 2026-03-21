@@ -7,61 +7,61 @@ namespace DocumentModel.Interop.Word;
 public partial interface CalloutFormat : InteropObject
 {
   /// <summary>
-  /// The accent.
+  /// Gets or sets a value indicating whether the callout line has an accent bar.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.accent?view=word-pia"/>
   public Core.MsoTriState Accent { get; set; }
 
   /// <summary>
-  /// The angle.
+  /// Gets or sets the angle type of the callout line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.angle?view=word-pia"/>
   public Core.MsoCalloutAngleType Angle { get; set; }
 
   /// <summary>
-  /// The auto attach.
+  /// Gets or sets a value indicating whether the callout automatically attaches to points on the shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.autoattach?view=word-pia"/>
   public Core.MsoTriState AutoAttach { get; set; }
 
   /// <summary>
-  /// The auto length.
+  /// Gets a value indicating whether the callout length is adjusted automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.autolength?view=word-pia"/>
   public Core.MsoTriState AutoLength { get; }
 
   /// <summary>
-  /// The border.
+  /// Gets or sets a value indicating whether the callout has a border around the text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.border?view=word-pia"/>
   public Core.MsoTriState Border { get; set; }
 
   /// <summary>
-  /// The drop.
+  /// Gets the vertical distance, in points, between the callout text and the callout line anchor.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.drop?view=word-pia"/>
   public float Drop { get; }
 
   /// <summary>
-  /// The drop type.
+  /// Gets the drop type of the callout line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.droptype?view=word-pia"/>
   public Core.MsoCalloutDropType DropType { get; }
 
   /// <summary>
-  /// The gap.
+  /// Gets or sets the distance, in points, between the callout line and the callout text box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.gap?view=word-pia"/>
   public float Gap { get; set; }
 
   /// <summary>
-  /// The length.
+  /// Gets the length, in points, of the callout line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.length?view=word-pia"/>
   public float Length { get; }
 
   /// <summary>
-  /// The type.
+  /// Gets or sets the callout type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.type?view=word-pia"/>
   public Core.MsoCalloutType Type { get; set; }

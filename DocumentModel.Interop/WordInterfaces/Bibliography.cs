@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Word;
 public partial interface Bibliography : InteropObject
 {
   /// <summary>
-  /// The sources.
+  /// Gets the collection of sources in the bibliography.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bibliography.sources?view=word-pia"/>
   public Sources Sources { get; }
 
   /// <summary>
-  /// The bibliography style.
+  /// Gets or sets the bibliography style name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bibliography.bibliographystyle?view=word-pia"/>
   public string BibliographyStyle { get; set; }

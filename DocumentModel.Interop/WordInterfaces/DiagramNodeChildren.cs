@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Word;
 public partial interface DiagramNodeChildren : InteropObject, InteropCollection<DiagramNode>
 {
   /// <summary>
-  /// The first child.
+  /// Gets the first child node in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnodechildren.firstchild?view=word-pia"/>
   public DiagramNode FirstChild { get; }
 
   /// <summary>
-  /// The last child.
+  /// Gets the last child node in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnodechildren.lastchild?view=word-pia"/>
   public DiagramNode LastChild { get; }

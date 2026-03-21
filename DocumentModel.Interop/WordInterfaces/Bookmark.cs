@@ -7,43 +7,43 @@ namespace DocumentModel.Interop.Word;
 public partial interface Bookmark : InteropObject
 {
   /// <summary>
-  /// The name.
+  /// Gets the name of the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
-  /// The range.
+  /// Gets the range that represents the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.range?view=word-pia"/>
   public Range Range { get; }
 
   /// <summary>
-  /// The empty.
+  /// Gets a value indicating whether the bookmark is empty.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.empty?view=word-pia"/>
   public bool Empty { get; }
 
   /// <summary>
-  /// The start.
+  /// Gets or sets the starting character position of the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.start?view=word-pia"/>
   public int Start { get; set; }
 
   /// <summary>
-  /// The end.
+  /// Gets or sets the ending character position of the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.end?view=word-pia"/>
   public int End { get; set; }
 
   /// <summary>
-  /// The column.
+  /// Gets a value indicating whether the bookmark is a table column bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.column?view=word-pia"/>
   public bool Column { get; }
 
   /// <summary>
-  /// The story type.
+  /// Gets the story type for the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.storytype?view=word-pia"/>
   public WdStoryType StoryType { get; }

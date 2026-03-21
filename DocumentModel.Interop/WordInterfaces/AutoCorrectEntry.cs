@@ -7,25 +7,25 @@ namespace DocumentModel.Interop.Word;
 public partial interface AutoCorrectEntry : InteropObject
 {
   /// <summary>
-  /// The index.
+  /// Gets the index number of the AutoCorrect entry in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentry.index?view=word-pia"/>
   public int Index { get; }
 
   /// <summary>
-  /// The name.
+  /// Gets or sets the text to find for this AutoCorrect entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentry.name?view=word-pia"/>
   public string Name { get; set; }
 
   /// <summary>
-  /// The value.
+  /// Gets or sets the replacement text for this AutoCorrect entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentry.value?view=word-pia"/>
   public string Value { get; set; }
 
   /// <summary>
-  /// The rich text.
+  /// Gets a value indicating whether the AutoCorrect entry uses rich-text formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentry.richtext?view=word-pia"/>
   public bool RichText { get; }

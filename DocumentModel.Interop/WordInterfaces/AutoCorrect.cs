@@ -7,97 +7,97 @@ namespace DocumentModel.Interop.Word;
 public interface AutoCorrect : InteropObject
 {
   /// <summary>
-  /// The correct days.
+  /// Gets or sets a value indicating whether day names are corrected automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.correctdays?view=word-pia"/>
   public bool CorrectDays { get; set; }
   /// <summary>
-  /// The correct initial caps.
+  /// Gets or sets a value indicating whether accidental initial capitals are corrected.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.correctinitialcaps?view=word-pia"/>
   public bool CorrectInitialCaps { get; set; }
   /// <summary>
-  /// The correct sentence caps.
+  /// Gets or sets a value indicating whether sentence capitalization is corrected automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.correctsentencecaps?view=word-pia"/>
   public bool CorrectSentenceCaps { get; set; }
   /// <summary>
-  /// The replace text.
+  /// Gets or sets a value indicating whether text is replaced using AutoCorrect entries.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.replacetext?view=word-pia"/>
   public bool ReplaceText { get; set; }
   /// <summary>
-  /// The entries.
+  /// Gets the AutoCorrect entries collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.entries?view=word-pia"/>
   public AutoCorrectEntries Entries { get; }
   /// <summary>
-  /// The first letter exceptions.
+  /// Gets the first-letter exceptions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.firstletterexceptions?view=word-pia"/>
   public FirstLetterExceptions FirstLetterExceptions { get; }
   /// <summary>
-  /// The first letter auto add.
+  /// Gets or sets a value indicating whether first-letter exceptions are added automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.firstletterautoadd?view=word-pia"/>
   public bool FirstLetterAutoAdd { get; set; }
   /// <summary>
-  /// The two initial caps exceptions.
+  /// Gets the two-initial-capitals exceptions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.twoinitialcapsexceptions?view=word-pia"/>
   public TwoInitialCapsExceptions TwoInitialCapsExceptions { get; }
   /// <summary>
-  /// The two initial caps auto add.
+  /// Gets or sets a value indicating whether two-initial-capitals exceptions are added automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.twoinitialcapsautoadd?view=word-pia"/>
   public bool TwoInitialCapsAutoAdd { get; set; }
   /// <summary>
-  /// The correct caps lock.
+  /// Gets or sets a value indicating whether accidental CAPS LOCK usage is corrected.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.correctcapslock?view=word-pia"/>
   public bool CorrectCapsLock { get; set; }
   /// <summary>
-  /// The correct hangul and alphabet.
+  /// Gets or sets a value indicating whether Hangul and alphabet input is corrected.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.correcthangulandalphabet?view=word-pia"/>
   public bool CorrectHangulAndAlphabet { get; set; }
   /// <summary>
-  /// The hangul and alphabet exceptions.
+  /// Gets the Hangul-and-alphabet exceptions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.hangulandalphabetexceptions?view=word-pia"/>
   public HangulAndAlphabetExceptions HangulAndAlphabetExceptions { get; }
   /// <summary>
-  /// The hangul and alphabet auto add.
+  /// Gets or sets a value indicating whether Hangul-and-alphabet exceptions are added automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.hangulandalphabetautoadd?view=word-pia"/>
   public bool HangulAndAlphabetAutoAdd { get; set; }
   /// <summary>
-  /// The replace text from spelling checker.
+  /// Gets or sets a value indicating whether text from the spelling checker is added to AutoCorrect.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.replacetextfromspellingchecker?view=word-pia"/>
   public bool ReplaceTextFromSpellingChecker { get; set; }
   /// <summary>
-  /// The other corrections auto add.
+  /// Gets or sets a value indicating whether other correction exceptions are added automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.othercorrectionsautoadd?view=word-pia"/>
   public bool OtherCorrectionsAutoAdd { get; set; }
   /// <summary>
-  /// The other corrections exceptions.
+  /// Gets the other-corrections exceptions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.othercorrectionsexceptions?view=word-pia"/>
   public OtherCorrectionsExceptions OtherCorrectionsExceptions { get; }
   /// <summary>
-  /// The correct keyboard setting.
+  /// Gets or sets a value indicating whether keyboard setting mismatches are corrected.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.correctkeyboardsetting?view=word-pia"/>
   public bool CorrectKeyboardSetting { get; set; }
   /// <summary>
-  /// The correct table cells.
+  /// Gets or sets a value indicating whether AutoCorrect options are applied in table cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.correcttablecells?view=word-pia"/>
   public bool CorrectTableCells { get; set; }
   /// <summary>
-  /// The display auto correct options.
+  /// Gets or sets a value indicating whether AutoCorrect option buttons are displayed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.displayautocorrectoptions?view=word-pia"/>
   public bool DisplayAutoCorrectOptions { get; set; }

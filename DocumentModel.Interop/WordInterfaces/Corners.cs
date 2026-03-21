@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Corners : InteropObject
 {
   /// <summary>
-  /// The name.
+  /// Gets the name of the `Corners` object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.corners.name?view=word-pia"/>
   public string Name { get; }

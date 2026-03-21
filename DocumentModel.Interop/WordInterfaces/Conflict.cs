@@ -7,19 +7,19 @@ namespace DocumentModel.Interop.Word;
 public partial interface Conflict : InteropObject
 {
   /// <summary>
-  /// The range.
+  /// Gets the range in the document where the conflict occurs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conflict.range?view=word-pia"/>
   public Range Range { get; }
 
   /// <summary>
-  /// The type.
+  /// Gets the revision type of the conflict.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conflict.type?view=word-pia"/>
   public WdRevisionType Type { get; }
 
   /// <summary>
-  /// The index.
+  /// Gets the index number of the conflict in the conflicts collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conflict.index?view=word-pia"/>
   public int Index { get; }

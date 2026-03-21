@@ -7,25 +7,25 @@ namespace DocumentModel.Interop.Word;
 public partial interface CoAuthLock : InteropObject
 {
   /// <summary>
-  /// The type.
+  /// Gets the type of coauthoring lock.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.type?view=word-pia"/>
   public WdLockType Type { get; }
 
   /// <summary>
-  /// The owner.
+  /// Gets the coauthor who owns the lock.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.owner?view=word-pia"/>
   public CoAuthor Owner { get; }
 
   /// <summary>
-  /// The range.
+  /// Gets the range in the document covered by the lock.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.range?view=word-pia"/>
   public Range Range { get; }
 
   /// <summary>
-  /// The header footer.
+  /// Gets a value indicating whether the lock is in a header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.headerfooter?view=word-pia"/>
   public bool HeaderFooter { get; }

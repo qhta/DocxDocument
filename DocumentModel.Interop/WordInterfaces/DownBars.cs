@@ -7,31 +7,31 @@ namespace DocumentModel.Interop.Word;
 public partial interface DownBars : InteropObject
 {
   /// <summary>
-  /// The name.
+  /// Gets the name of the `DownBars` object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.downbars.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
-  /// The border.
+  /// Gets the border formatting for the down bars.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.downbars.border?view=word-pia"/>
   public ChartBorder Border { get; }
 
   /// <summary>
-  /// The interior.
+  /// Gets the interior formatting of the down bars.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.downbars.interior?view=word-pia"/>
   public Interior Interior { get; }
 
   /// <summary>
-  /// The fill.
+  /// Gets the fill formatting of the down bars.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.downbars.fill?view=word-pia"/>
   public ChartFillFormat Fill { get; }
 
   /// <summary>
-  /// The format.
+  /// Gets the chart formatting for the down bars.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.downbars.format?view=word-pia"/>
   public ChartFormat Format { get; }

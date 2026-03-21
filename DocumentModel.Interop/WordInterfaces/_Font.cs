@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface _Font : InteropObject
 {
   /// <summary>
-  /// The duplicate.
+  /// Gets a duplicate of the font formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.duplicate?view=word-pia"/>
   public Font Duplicate { get; }
@@ -69,7 +69,7 @@ public partial interface _Font : InteropObject
   public int DoubleStrikeThrough { get; set; }
 
   /// <summary>
-  /// The color index.
+  /// Gets or sets the color index for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.colorindex?view=word-pia"/>
   public WdColorIndex ColorIndex { get; set; }
@@ -91,7 +91,7 @@ public partial interface _Font : InteropObject
   public int Superscript { get; set; }
 
   /// <summary>
-  /// The underline.
+  /// Gets or sets the underline style for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underline?view=word-pia"/>
   public WdUnderline Underline { get; set; }
@@ -163,31 +163,31 @@ public partial interface _Font : InteropObject
   public int Engrave { get; set; }
 
   /// <summary>
-  /// The animation.
+  /// Gets or sets the animation effect for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.animation?view=word-pia"/>
   public WdAnimation Animation { get; set; }
 
   /// <summary>
-  /// The borders.
+  /// Gets or sets the border formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.borders?view=word-pia"/>
   public Borders Borders { get; set; }
 
   /// <summary>
-  /// The shading.
+  /// Gets the shading formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shading?view=word-pia"/>
   public Shading Shading { get; }
 
   /// <summary>
-  /// The emphasis mark.
+  /// Gets or sets the emphasis mark for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.emphasismark?view=word-pia"/>
   public WdEmphasisMark EmphasisMark { get; set; }
 
   /// <summary>
-  /// The disable character space grid.
+  /// Gets or sets a value indicating whether to disable character spacing on the document grid.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.disablecharacterspacegrid?view=word-pia"/>
   public bool DisableCharacterSpaceGrid { get; set; }
@@ -245,91 +245,91 @@ public partial interface _Font : InteropObject
   public string NameBi { get; set; }
 
   /// <summary>
-  /// The color index bi.
+  /// Gets or sets the color index for complex-script text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.colorindexbi?view=word-pia"/>
   public WdColorIndex ColorIndexBi { get; set; }
 
   /// <summary>
-  /// The diacritic color.
+  /// Gets or sets the color of diacritical marks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.diacriticcolor?view=word-pia"/>
   public WdColor DiacriticColor { get; set; }
 
   /// <summary>
-  /// The underline color.
+  /// Gets or sets the underline color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underlinecolor?view=word-pia"/>
   public WdColor UnderlineColor { get; set; }
 
   /// <summary>
-  /// The glow.
+  /// Gets or sets the glow formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.glow?view=word-pia"/>
   public GlowFormat Glow { get; set; }
 
   /// <summary>
-  /// The reflection.
+  /// Gets or sets the reflection formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.reflection?view=word-pia"/>
   public ReflectionFormat Reflection { get; set; }
 
   /// <summary>
-  /// The text shadow.
+  /// Gets or sets the shadow formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textshadow?view=word-pia"/>
   public ShadowFormat TextShadow { get; set; }
 
   /// <summary>
-  /// The fill.
+  /// Gets or sets the fill formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.fill?view=word-pia"/>
   public FillFormat Fill { get; set; }
 
   /// <summary>
-  /// The line.
+  /// Gets or sets the line formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.line?view=word-pia"/>
   public LineFormat Line { get; set; }
 
   /// <summary>
-  /// The three d.
+  /// Gets or sets the 3D formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.threed?view=word-pia"/>
   public ThreeDFormat ThreeD { get; set; }
 
   /// <summary>
-  /// The text color.
+  /// Gets the text color formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textcolor?view=word-pia"/>
   public ColorFormat TextColor { get; }
 
   /// <summary>
-  /// The ligatures.
+  /// Gets or sets the ligature setting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.ligatures?view=word-pia"/>
   public WdLigatures Ligatures { get; set; }
 
   /// <summary>
-  /// The number form.
+  /// Gets or sets the number form for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberform?view=word-pia"/>
   public WdNumberForm NumberForm { get; set; }
 
   /// <summary>
-  /// The number spacing.
+  /// Gets or sets the number spacing for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberspacing?view=word-pia"/>
   public WdNumberSpacing NumberSpacing { get; set; }
 
   /// <summary>
-  /// The contextual alternates.
+  /// Gets or sets whether contextual alternates are enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.contextualalternates?view=word-pia"/>
   public int ContextualAlternates { get; set; }
 
   /// <summary>
-  /// The stylistic set.
+  /// Gets or sets the stylistic set for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.stylisticset?view=word-pia"/>
   public WdStylisticSet StylisticSet { get; set; }

@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Word;
 public partial interface CustomProperty : InteropObject
 {
   /// <summary>
-  /// The name.
+  /// Gets the name of the custom property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperty.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
-  /// The value.
+  /// Gets or sets the value of the custom property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperty.value?view=word-pia"/>
   public string Value { get; set; }

@@ -7,37 +7,37 @@ namespace DocumentModel.Interop.Word;
 public partial interface Dictionary : InteropObject
 {
   /// <summary>
-  /// The name.
+  /// Gets the name of the dictionary.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
-  /// The path.
+  /// Gets the path of the dictionary file.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.path?view=word-pia"/>
   public string Path { get; }
 
   /// <summary>
-  /// The language id.
+  /// Gets or sets the language ID associated with the dictionary.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.languageid?view=word-pia"/>
   public WdLanguageID LanguageID { get; set; }
 
   /// <summary>
-  /// The read only.
+  /// Gets a value indicating whether the dictionary is read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.readonly?view=word-pia"/>
   public bool ReadOnly { get; }
 
   /// <summary>
-  /// The type.
+  /// Gets the dictionary type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.type?view=word-pia"/>
   public WdDictionaryType Type { get; }
 
   /// <summary>
-  /// The language specific.
+  /// Gets or sets a value indicating whether the dictionary is language-specific.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.languagespecific?view=word-pia"/>
   public bool LanguageSpecific { get; set; }

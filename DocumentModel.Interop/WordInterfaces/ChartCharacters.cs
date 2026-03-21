@@ -7,31 +7,31 @@ namespace DocumentModel.Interop.Word;
 public partial interface ChartCharacters : InteropObject
 {
   /// <summary>
-  /// The caption.
+  /// Gets or sets the caption text for the chart characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.caption?view=word-pia"/>
   public string Caption { get; set; }
 
   /// <summary>
-  /// The count.
+  /// Gets the number of characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.count?view=word-pia"/>
   public int Count { get; }
 
   /// <summary>
-  /// The font.
+  /// Gets the font formatting for the chart characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.font?view=word-pia"/>
   public ChartFont Font { get; }
 
   /// <summary>
-  /// The text.
+  /// Gets or sets the text of the chart characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.text?view=word-pia"/>
   public string Text { get; set; }
 
   /// <summary>
-  /// The phonetic characters.
+  /// Gets or sets the phonetic characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.phoneticcharacters?view=word-pia"/>
   public string PhoneticCharacters { get; set; }

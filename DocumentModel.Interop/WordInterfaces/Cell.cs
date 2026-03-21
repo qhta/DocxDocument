@@ -7,145 +7,145 @@ namespace DocumentModel.Interop.Word;
 public partial interface Cell : InteropObject
 {
   /// <summary>
-  /// The range.
+  /// Gets the range that represents the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.range?view=word-pia"/>
   public Range Range { get; }
 
   /// <summary>
-  /// The row index.
+  /// Gets the index number of the row that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.rowindex?view=word-pia"/>
   public int RowIndex { get; }
 
   /// <summary>
-  /// The column index.
+  /// Gets the index number of the column that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.columnindex?view=word-pia"/>
   public int ColumnIndex { get; }
 
   /// <summary>
-  /// The width.
+  /// Gets or sets the width of the cell, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.width?view=word-pia"/>
   public float Width { get; set; }
 
   /// <summary>
-  /// The height.
+  /// Gets or sets the height of the cell, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.height?view=word-pia"/>
   public float Height { get; set; }
 
   /// <summary>
-  /// The height rule.
+  /// Gets or sets the rule for determining row height.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.heightrule?view=word-pia"/>
   public WdRowHeightRule HeightRule { get; set; }
 
   /// <summary>
-  /// The vertical alignment.
+  /// Gets or sets the vertical alignment of text in the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.verticalalignment?view=word-pia"/>
   public WdCellVerticalAlignment VerticalAlignment { get; set; }
 
   /// <summary>
-  /// The column.
+  /// Gets the column that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.column?view=word-pia"/>
   public Column Column { get; }
 
   /// <summary>
-  /// The row.
+  /// Gets the row that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.row?view=word-pia"/>
   public Row Row { get; }
 
   /// <summary>
-  /// The next.
+  /// Gets the next cell in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.next?view=word-pia"/>
   public Cell Next { get; }
 
   /// <summary>
-  /// The previous.
+  /// Gets the previous cell in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.previous?view=word-pia"/>
   public Cell Previous { get; }
 
   /// <summary>
-  /// The shading.
+  /// Gets the shading formatting for the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.shading?view=word-pia"/>
   public Shading Shading { get; }
 
   /// <summary>
-  /// The borders.
+  /// Gets or sets the border formatting for the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.borders?view=word-pia"/>
   public Borders Borders { get; set; }
 
   /// <summary>
-  /// The tables.
+  /// Gets the collection of tables nested within the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.tables?view=word-pia"/>
   public Tables Tables { get; }
 
   /// <summary>
-  /// The nesting level.
+  /// Gets the nesting level of the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.nestinglevel?view=word-pia"/>
   public int NestingLevel { get; }
 
   /// <summary>
-  /// The word wrap.
+  /// Gets or sets a value indicating whether text wraps within the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.wordwrap?view=word-pia"/>
   public bool WordWrap { get; set; }
 
   /// <summary>
-  /// The preferred width.
+  /// Gets or sets the preferred width of the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.preferredwidth?view=word-pia"/>
   public float PreferredWidth { get; set; }
 
   /// <summary>
-  /// The fit text.
+  /// Gets or sets a value indicating whether text is shrunk to fit within the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.fittext?view=word-pia"/>
   public bool FitText { get; set; }
 
   /// <summary>
-  /// The top padding.
+  /// Gets or sets the top padding of the cell, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.toppadding?view=word-pia"/>
   public float TopPadding { get; set; }
 
   /// <summary>
-  /// The bottom padding.
+  /// Gets or sets the bottom padding of the cell, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.bottompadding?view=word-pia"/>
   public float BottomPadding { get; set; }
 
   /// <summary>
-  /// The left padding.
+  /// Gets or sets the left padding of the cell, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.leftpadding?view=word-pia"/>
   public float LeftPadding { get; set; }
 
   /// <summary>
-  /// The right padding.
+  /// Gets or sets the right padding of the cell, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.rightpadding?view=word-pia"/>
   public float RightPadding { get; set; }
 
   /// <summary>
-  /// The id.
+  /// Gets or sets the identifier for the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.id?view=word-pia"/>
   public string ID { get; set; }
 
   /// <summary>
-  /// The preferred width type.
+  /// Gets or sets the preferred width type for the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.preferredwidthtype?view=word-pia"/>
   public WdPreferredWidthType PreferredWidthType { get; set; }

@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Word;
 public interface AutoCaption : InteropObject
 {
   /// <summary>
-  /// The name.
+  /// Gets the name of the auto caption entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocaption.name?view=word-pia"/>
   public string Name { get; }
   /// <summary>
-  /// The auto insert.
+  /// Gets or sets a value indicating whether the caption label is inserted automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocaption.autoinsert?view=word-pia"/>
   public bool AutoInsert { get; set; }
   /// <summary>
-  /// The index.
+  /// Gets the index number of the auto caption entry in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocaption.index?view=word-pia"/>
   public int Index { get; }
   /// <summary>
-  /// The caption label.
+  /// Gets or sets the caption label associated with the auto caption entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocaption.captionlabel?view=word-pia"/>
   public CaptionLabel CaptionLabel { get; set; }
