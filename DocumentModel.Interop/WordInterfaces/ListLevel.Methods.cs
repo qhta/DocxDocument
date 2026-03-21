@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface ListLevel
 {
   /// <summary>
-  /// Applies a picture bullet to the list level.
+  /// Applies a picture bullet to the list level and returns the picture bullet shape.
   /// </summary>
   /// <param name="FileName">The file name of the picture to use as a bullet.</param>
   /// <returns>The <see cref="InlineShape"/> created for the picture bullet.</returns>

@@ -7,19 +7,19 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathScrPre : InteropObject
 {
   /// <summary>
-  /// Returns the sub.
+  /// Returns the subscript expression to the left of the base.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.sub?view=word-pia"/>
   public OMath Sub { get; }
 
   /// <summary>
-  /// Returns the sup.
+  /// Returns the superscript expression to the left of the base.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.sup?view=word-pia"/>
   public OMath Sup { get; }
 
   /// <summary>
-  /// Returns the e.
+  /// Returns the base expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.e?view=word-pia"/>
   public OMath E { get; }

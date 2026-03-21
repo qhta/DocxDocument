@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Word;
 public partial interface OtherCorrectionsException : InteropObject
 {
   /// <summary>
-  /// Returns the index.
+  /// Returns the index number of the AutoCorrect exception in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.othercorrectionsexception.index?view=word-pia"/>
   public int Index { get; }
 
   /// <summary>
-  /// Returns the name.
+  /// Returns the exception text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.othercorrectionsexception.name?view=word-pia"/>
   public string Name { get; }

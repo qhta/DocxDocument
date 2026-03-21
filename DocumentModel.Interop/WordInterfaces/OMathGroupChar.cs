@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Word;
 public interface OMathGroupChar : InteropObject
 {
   /// <summary>
-  /// Returns the e.
+  /// Returns the expression associated with the group character.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathgroupchar.e?view=word-pia"/>
   public OMath E { get; }
   /// <summary>
-  /// Returns or sets the char.
+  /// Returns or sets the group character.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathgroupchar.char?view=word-pia"/>
   public short Char { get; set; }
   /// <summary>
-  /// Returns or sets whether char top.
+  /// Returns or sets whether the group character is placed above the expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathgroupchar.chartop?view=word-pia"/>
   public bool CharTop { get; set; }
   /// <summary>
-  /// Returns or sets whether align top.
+  /// Returns or sets whether top alignment is used.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathgroupchar.aligntop?view=word-pia"/>
   public bool AlignTop { get; set; }

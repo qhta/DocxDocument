@@ -7,11 +7,11 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathMat
 {
   /// <summary>
-  /// Returns the cell.
+  /// Returns the equation cell at the specified row and column.
   /// </summary>
-  /// <param name="Row">Specifies the row.</param>
-  /// <param name="Col">Specifies the col.</param>
-  /// <returns>The resulting value.</returns>
+  /// <param name="Row">Specifies the one-based row index.</param>
+  /// <param name="Col">Specifies the one-based column index.</param>
+  /// <returns>The equation object in the specified matrix cell.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>

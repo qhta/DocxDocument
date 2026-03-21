@@ -7,10 +7,10 @@ namespace DocumentModel.Interop.Word;
 public partial interface Options
 {
   /// <summary>
-  /// Returns the default file path.
+  /// Returns the default path for the specified file type.
   /// </summary>
-  /// <param name="Path">Specifies the path.</param>
-  /// <returns>The resulting string value.</returns>
+  /// <param name="Path">Specifies the default file path type.</param>
+  /// <returns>The default file path.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
@@ -18,7 +18,7 @@ public partial interface Options
   public string get_DefaultFilePath(WdDefaultFilePath Path);
 
   /// <summary>
-  /// Executes the set wphelp options operation.
+  /// Sets WordPerfect help and navigation option values.
   /// </summary>
   /// <param name="CommandKeyHelp">Specifies the command key help.</param>
   /// <param name="DocNavigationKeys">Specifies the doc navigation keys.</param>

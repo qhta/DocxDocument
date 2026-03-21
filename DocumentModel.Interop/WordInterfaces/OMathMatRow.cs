@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathMatRow : InteropObject
 {
   /// <summary>
-  /// Returns the args.
+  /// Returns the collection of arguments in the matrix row.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatrow.args?view=word-pia"/>
   public OMathArgs Args { get; }
 
   /// <summary>
-  /// Returns the row index.
+  /// Returns the index number of the matrix row.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatrow.rowindex?view=word-pia"/>
   public int RowIndex { get; }

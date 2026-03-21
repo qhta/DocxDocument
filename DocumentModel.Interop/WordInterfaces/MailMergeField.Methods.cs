@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface MailMergeField
 {
   /// <summary>
-  /// Selects the specified object.
+  /// Selects the mail merge field.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

@@ -16,7 +16,7 @@ public partial interface MailMessage
   public void CheckName();
 
   /// <summary>
-  /// Deletes the specified object.
+  /// Deletes the active e-mail message.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -79,7 +79,7 @@ public partial interface MailMessage
   public void GoToPrevious();
 
   /// <summary>
-  /// Opens a new e-mail messageâ?? with the sender's address on the To: lineâ?? for replying to the active message.
+  /// Opens a new e-mail message with the sender's address on the To line for replying to the active message.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -88,7 +88,7 @@ public partial interface MailMessage
   public void Reply();
 
   /// <summary>
-  /// Opens a new e-mail messageâ?? with the senderâ??s and all other recipients' addresses on the To: and Cc: lines, as appropriateâ?? for replying to the active message.
+  /// Opens a new e-mail message with the sender's and all other recipients' addresses on the To and Cc lines for replying to the active message.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

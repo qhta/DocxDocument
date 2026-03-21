@@ -7,10 +7,10 @@ namespace DocumentModel.Interop.Word;
 public partial interface MailMergeDataSource
 {
   /// <summary>
-  /// Finds a record in the data source using Word 2000 compatibility.
+  /// Finds a record in the mail merge data source using Word 2000-compatible behavior.
   /// </summary>
-  /// <param name="FindText">The text to find in the data source.</param>
-  /// <param name="Field">The field to search for the text.</param>
+  /// <param name="FindText">Specifies the text to find.</param>
+  /// <param name="Field">Specifies the field to search.</param>
   /// <returns>true if the record is found; otherwise, false.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.

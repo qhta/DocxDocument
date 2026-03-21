@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface OCXEvents
 {
   /// <summary>
-  /// Occurs when the OCX control receives focus.
+  /// Handles the GotFocus event for the OCX control.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -16,7 +16,7 @@ public partial interface OCXEvents
   public void GotFocus();
 
   /// <summary>
-  /// Occurs when the OCX control loses focus.
+  /// Handles the LostFocus event for the OCX control.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

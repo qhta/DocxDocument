@@ -7,11 +7,11 @@ namespace DocumentModel.Interop.Word;
 public partial interface ListTemplates
 {
   /// <summary>
-  /// Adds a new list template to the collection.
+  /// Adds a list template to the list templates collection.
   /// </summary>
-  /// <param name="OutlineNumbered">true to create an outline-numbered list template; otherwise, false.</param>
-  /// <param name="Name">The name of the new list template.</param>
-  /// <returns>The created <see cref="ListTemplate"/> object.</returns>
+  /// <param name="OutlineNumbered">Specifies whether the list template is outline numbered.</param>
+  /// <param name="Name">Specifies the name of the list template.</param>
+  /// <returns>The added list template.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
