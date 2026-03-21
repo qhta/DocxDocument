@@ -6,10 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+
   <ItemGroup>
-    <Compile Remove="ExcelInterfaces\**" />
-    <EmbeddedResource Remove="ExcelInterfaces\**" />
-    <None Remove="ExcelInterfaces\**" />
+    <Compile Remove="**\*.Methods.cs" />
   </ItemGroup>
 
   <ItemGroup>
