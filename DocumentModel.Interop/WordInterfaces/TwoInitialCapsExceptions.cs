@@ -3,6 +3,10 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// A collection of TwoInitialCapsException objects that represent all the items listed in the Don't correct box on the INitial CAps tab in the AutoCorrect Exceptions dialog box.
 /// </summary>
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.twoinitialcapsexceptions?view=word-pia"/>
 public partial interface TwoInitialCapsExceptions : InteropObject, InteropCollection<TwoInitialCapsException>
 {
 }

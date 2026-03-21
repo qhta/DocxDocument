@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperties?view=word-pia"/>
 public partial interface CustomProperties
 {
   /// <summary>
@@ -8,5 +12,9 @@ public partial interface CustomProperties
   /// <param name="Name">The name of the custom property.</param>
   /// <param name="Value">The value of the custom property.</param>
   /// <returns>The created <see cref="CustomProperty"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperties.add?view=word-pia"/>
   public CustomProperty Add(string Name, string Value);
 }

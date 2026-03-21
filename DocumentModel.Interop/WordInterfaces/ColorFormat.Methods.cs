@@ -1,5 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.colorformat?view=word-pia"/>
 public partial interface ColorFormat
 {
   /// <summary>
@@ -7,6 +11,10 @@ public partial interface ColorFormat
   /// </summary>
   /// <param name="Index">The index of the CMYK ink component.</param>
   /// <returns>The ink value for the specified component.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.colorformat.get_ink?view=word-pia"/>
   public float get_Ink(int Index);
 
   /// <summary>
@@ -16,5 +24,9 @@ public partial interface ColorFormat
   /// <param name="Magenta">The magenta component value.</param>
   /// <param name="Yellow">The yellow component value.</param>
   /// <param name="Black">The black (key) component value.</param>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.colorformat.setcmyk?view=word-pia"/>
   public void SetCMYK(int Cyan, int Magenta, int Yellow, int Black);
 }
