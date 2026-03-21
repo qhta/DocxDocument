@@ -3,42 +3,27 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Contains magnification options (for example, the zoom percentage) for a window or pane.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn API reference.
-/// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.zoom?view=word-pia"/>
 public interface Zoom : InteropObject
 {
   /// <summary>
   /// The percentage.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.zoom.percentage?view=word-pia"/>
   public int Percentage { get; set; }
   /// <summary>
   /// The page fit.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.zoom.pagefit?view=word-pia"/>
   public WdPageFit PageFit { get; set; }
   /// <summary>
   /// The page rows.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.zoom.pagerows?view=word-pia"/>
   public int PageRows { get; set; }
   /// <summary>
   /// The page columns.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn API reference.
-  /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.zoom.pagecolumns?view=word-pia"/>
   public int PageColumns { get; set; }
 

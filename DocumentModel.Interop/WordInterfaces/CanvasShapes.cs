@@ -3,9 +3,6 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Represents the shapes in a drawing canvas.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn API reference.
-/// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes?view=word-pia"/>
 public partial interface CanvasShapes : InteropObject, InteropCollection<Shape>
 {
