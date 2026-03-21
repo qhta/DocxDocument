@@ -4,9 +4,8 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Events interface for `CustomXMLPart` object events.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents?view=office-pia"/>
 public partial interface ICustomXMLPartEvents
 {
 }
+

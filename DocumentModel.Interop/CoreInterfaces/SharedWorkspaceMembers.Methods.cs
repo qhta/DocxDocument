@@ -18,8 +18,7 @@ public partial interface SharedWorkspaceMembers
   /// <param name="DisplayName">The `DisplayName` parameter.</param>
   /// <param name="Role">The `Role` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemembers.add?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemembers.add?view=office-pia"/>
   public SharedWorkspaceMember Add(string Email, string DomainName, string DisplayName, object Role);
 }
+

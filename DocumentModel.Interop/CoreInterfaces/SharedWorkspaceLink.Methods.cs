@@ -13,15 +13,12 @@ public partial interface SharedWorkspaceLink
   /// <summary>
   /// Invokes `Save`.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelink.save?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelink.save?view=office-pia"/>
   public void Save();
   /// <summary>
   /// Invokes `Delete`.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelink.delete?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelink.delete?view=office-pia"/>
   public void Delete();
 }
+

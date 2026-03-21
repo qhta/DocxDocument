@@ -13,15 +13,12 @@ public partial interface SharedWorkspaceTask
   /// <summary>
   /// Invokes `Save`.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetask.save?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetask.save?view=office-pia"/>
   public void Save();
   /// <summary>
   /// Invokes `Delete`.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetask.delete?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetask.delete?view=office-pia"/>
   public void Delete();
 }
+

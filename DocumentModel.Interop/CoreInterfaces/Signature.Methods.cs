@@ -12,9 +12,7 @@ public partial interface Signature
   /// <summary>
   /// Invokes `Delete`.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.delete?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.delete?view=office-pia"/>
   public void Delete();
   /// <summary>
   /// Invokes `Sign`.
@@ -23,15 +21,12 @@ public partial interface Signature
   /// <param name="varDelSuggSigner">The `varDelSuggSigner` parameter.</param>
   /// <param name="varDelSuggSignerLine2">The `varDelSuggSignerLine2` parameter.</param>
   /// <param name="varDelSuggSignerEmail">The `varDelSuggSignerEmail` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.sign?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.sign?view=office-pia"/>
   public void Sign(object varSigImg, object varDelSuggSigner, object varDelSuggSignerLine2, object varDelSuggSignerEmail);
   /// <summary>
   /// Invokes `ShowDetails`.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.showdetails?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.showdetails?view=office-pia"/>
   public void ShowDetails();
 }
+

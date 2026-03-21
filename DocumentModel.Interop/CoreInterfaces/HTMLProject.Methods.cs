@@ -14,24 +14,19 @@ public partial interface HTMLProject
   /// Invokes `RefreshProject`.
   /// </summary>
   /// <param name="Refresh">The `Refresh` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.refreshproject?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.refreshproject?view=office-pia"/>
   public void RefreshProject(bool Refresh);
   /// <summary>
   /// Invokes `RefreshDocument`.
   /// </summary>
   /// <param name="Refresh">The `Refresh` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.refreshdocument?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.refreshdocument?view=office-pia"/>
   public void RefreshDocument(bool Refresh);
   /// <summary>
   /// Invokes `Open`.
   /// </summary>
   /// <param name="OpenKind">The `OpenKind` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.open?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.open?view=office-pia"/>
   public void Open(MsoHTMLProjectOpen OpenKind);
 }
+

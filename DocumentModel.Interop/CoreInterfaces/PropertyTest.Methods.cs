@@ -5,9 +5,8 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents a single file search criterion.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytest?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytest?view=office-pia"/>
 public partial interface PropertyTest
 {
 }
+

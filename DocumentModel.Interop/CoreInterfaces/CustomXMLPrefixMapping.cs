@@ -10,23 +10,18 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents a namespace prefix mapping.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmapping?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmapping?view=office-pia"/>
 public partial interface CustomXMLPrefixMapping: InteropObject
 {
   /// <summary>
   /// Gets the `Prefix` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmapping.prefix?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmapping.prefix?view=office-pia"/>
   public string Prefix { get; }
   /// <summary>
   /// Gets the `NamespaceURI` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmapping.namespaceuri?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmapping.namespaceuri?view=office-pia"/>
   public string NamespaceURI { get; }
 }
+

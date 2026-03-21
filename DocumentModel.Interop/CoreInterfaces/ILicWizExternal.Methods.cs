@@ -5,25 +5,19 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal?view=office-pia"/>
 public partial interface ILicWizExternal
 {
   /// <summary>
   /// Invokes `PrintHtmlDocument`.
   /// </summary>
   /// <param name="punkHtmlDoc">The `punkHtmlDoc` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.printhtmldocument?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.printhtmldocument?view=office-pia"/>
   public void PrintHtmlDocument(object punkHtmlDoc);
   /// <summary>
   /// Invokes `InvokeDateTimeApplet`.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.invokedatetimeapplet?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.invokedatetimeapplet?view=office-pia"/>
   public void InvokeDateTimeApplet();
   /// <summary>
   /// Invokes `FormatDate`.
@@ -31,49 +25,37 @@ public partial interface ILicWizExternal
   /// <param name="date">The `date` parameter.</param>
   /// <param name="pFormat">The `pFormat` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.formatdate?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.formatdate?view=office-pia"/>
   public string FormatDate(DateTime date, string pFormat);
   /// <summary>
   /// Invokes `ShowHelp`.
   /// </summary>
   /// <param name="pvarId">The `pvarId` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.showhelp?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.showhelp?view=office-pia"/>
   public void ShowHelp(ref object pvarId);
   /// <summary>
   /// Invokes `Terminate`.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.terminate?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.terminate?view=office-pia"/>
   public void Terminate();
   /// <summary>
   /// Invokes `DisableVORWReminder`.
   /// </summary>
   /// <param name="BPC">The `BPC` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.disablevorwreminder?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.disablevorwreminder?view=office-pia"/>
   public void DisableVORWReminder(int BPC);
   /// <summary>
   /// Invokes `SaveReceipt`.
   /// </summary>
   /// <param name="bstrReceipt">The `bstrReceipt` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.savereceipt?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.savereceipt?view=office-pia"/>
   public string SaveReceipt(string bstrReceipt);
   /// <summary>
   /// Invokes `OpenInDefaultBrowser`.
   /// </summary>
   /// <param name="bstrUrl">The `bstrUrl` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.openindefaultbrowser?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.openindefaultbrowser?view=office-pia"/>
   public void OpenInDefaultBrowser(string bstrUrl);
   /// <summary>
   /// Invokes `MsoAlert`.
@@ -82,9 +64,7 @@ public partial interface ILicWizExternal
   /// <param name="bstrButtons">The `bstrButtons` parameter.</param>
   /// <param name="bstrIcon">The `bstrIcon` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.msoalert?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.msoalert?view=office-pia"/>
   public int MsoAlert(string bstrText, string bstrButtons, string bstrIcon);
   /// <summary>
   /// Invokes `DepositPidKey`.
@@ -92,72 +72,55 @@ public partial interface ILicWizExternal
   /// <param name="bstrKey">The `bstrKey` parameter.</param>
   /// <param name="fMORW">The `fMORW` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.depositpidkey?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.depositpidkey?view=office-pia"/>
   public int DepositPidKey(string bstrKey, int fMORW);
   /// <summary>
   /// Invokes `WriteLog`.
   /// </summary>
   /// <param name="bstrMessage">The `bstrMessage` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.writelog?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.writelog?view=office-pia"/>
   public void WriteLog(string bstrMessage);
   /// <summary>
   /// Invokes `ResignDpc`.
   /// </summary>
   /// <param name="bstrProductCode">The `bstrProductCode` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.resigndpc?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.resigndpc?view=office-pia"/>
   public void ResignDpc(string bstrProductCode);
   /// <summary>
   /// Invokes `ResetPID`.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.resetpid?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.resetpid?view=office-pia"/>
   public void ResetPID();
   /// <summary>
   /// Invokes `SetDialogSize`.
   /// </summary>
   /// <param name="dx">The `dx` parameter.</param>
   /// <param name="dy">The `dy` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.setdialogsize?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.setdialogsize?view=office-pia"/>
   public void SetDialogSize(int dx, int dy);
   /// <summary>
   /// Invokes `VerifyClock`.
   /// </summary>
   /// <param name="lMode">The `lMode` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.verifyclock?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.verifyclock?view=office-pia"/>
   public int VerifyClock(int lMode);
   /// <summary>
   /// Invokes `SortSelectOptions`.
   /// </summary>
   /// <param name="pdispSelect">The `pdispSelect` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.sortselectoptions?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.sortselectoptions?view=office-pia"/>
   public void SortSelectOptions(object pdispSelect);
   /// <summary>
   /// Invokes `InternetDisconnect`.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.internetdisconnect?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.internetdisconnect?view=office-pia"/>
   public void InternetDisconnect();
   /// <summary>
   /// Invokes `GetConnectedState`.
   /// </summary>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.getconnectedstate?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.getconnectedstate?view=office-pia"/>
   public int GetConnectedState();
 }
+

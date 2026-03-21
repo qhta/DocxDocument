@@ -6,9 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents a collection of HTML script blocks in a document.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts?view=office-pia"/>
 public partial interface Scripts
 {
   /// <summary>
@@ -16,9 +14,7 @@ public partial interface Scripts
   /// </summary>
   /// <param name="Index">The script name, ID, or index.</param>
   /// <returns>The requested script.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.item?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.item?view=office-pia"/>
   public Script Item(object Index);
   /// <summary>
   /// Adds a script to the collection.
@@ -30,9 +26,7 @@ public partial interface Scripts
   /// <param name="Extended">Additional script tag attributes.</param>
   /// <param name="ScriptText">The script content.</param>
   /// <returns>The added script.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.add?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.add?view=office-pia"/>
   public Script Add
   (object Anchor, MsoScriptLocation Location,
     MsoScriptLanguage Language, string Id, string Extended,
@@ -40,8 +34,7 @@ public partial interface Scripts
   /// <summary>
   /// Deletes all scripts in the collection.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.delete?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.delete?view=office-pia"/>
   public void Delete();
 }
+

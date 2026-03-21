@@ -14,8 +14,7 @@ public partial interface _CommandBarButtonEvents
   /// </summary>
   /// <param name="Ctrl">The `Ctrl` parameter.</param>
   /// <param name="CancelDefault">The `CancelDefault` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbuttonevents.click?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbuttonevents.click?view=office-pia"/>
   public void Click(CommandBarButton Ctrl, ref bool CancelDefault);
 }
+

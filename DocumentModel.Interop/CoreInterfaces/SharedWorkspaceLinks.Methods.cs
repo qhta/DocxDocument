@@ -17,8 +17,7 @@ public partial interface SharedWorkspaceLinks
   /// <param name="Description">The `Description` parameter.</param>
   /// <param name="Notes">The `Notes` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelinks.add?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelinks.add?view=office-pia"/>
   public SharedWorkspaceLink Add(string URL, object Description, object Notes);
 }
+

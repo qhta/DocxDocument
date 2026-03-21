@@ -6,9 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes?view=office-pia"/>
 public partial interface Shapes
 {
   /// <summary>
@@ -16,9 +14,7 @@ public partial interface Shapes
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.item?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.item?view=office-pia"/>
   public Shape Item(object Index);
   /// <summary>
   /// Invokes `AddCallout`.
@@ -29,9 +25,7 @@ public partial interface Shapes
   /// <param name="Width">The `Width` parameter.</param>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcallout?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcallout?view=office-pia"/>
   public Shape AddCallout(MsoCalloutType Type, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddConnector`.
@@ -42,18 +36,14 @@ public partial interface Shapes
   /// <param name="EndX">The `EndX` parameter.</param>
   /// <param name="EndY">The `EndY` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addconnector?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addconnector?view=office-pia"/>
   public Shape AddConnector(MsoConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
   /// <summary>
   /// Invokes `AddCurve`.
   /// </summary>
   /// <param name="SafeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcurve?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcurve?view=office-pia"/>
   public Shape AddCurve(object SafeArrayOfPoints);
   /// <summary>
   /// Invokes `AddLabel`.
@@ -64,9 +54,7 @@ public partial interface Shapes
   /// <param name="Width">The `Width` parameter.</param>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addlabel?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addlabel?view=office-pia"/>
   public Shape AddLabel(MsoTextOrientation Orientation, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddLine`.
@@ -76,9 +64,7 @@ public partial interface Shapes
   /// <param name="EndX">The `EndX` parameter.</param>
   /// <param name="EndY">The `EndY` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addline?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addline?view=office-pia"/>
   public Shape AddLine(float BeginX, float BeginY, float EndX, float EndY);
   /// <summary>
   /// Invokes `AddPicture`.
@@ -91,9 +77,7 @@ public partial interface Shapes
   /// <param name="Width">The `Width` parameter.</param>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addpicture?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addpicture?view=office-pia"/>
   public Shape AddPicture
   (string FileName, MsoTriState LinkToFile, MsoTriState SaveWithDocument, float Left, float Top, float Width,
     float Height);
@@ -102,9 +86,7 @@ public partial interface Shapes
   /// </summary>
   /// <param name="SafeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addpolyline?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addpolyline?view=office-pia"/>
   public Shape AddPolyline(object SafeArrayOfPoints);
   /// <summary>
   /// Invokes `AddShape`.
@@ -115,9 +97,7 @@ public partial interface Shapes
   /// <param name="Width">The `Width` parameter.</param>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addshape?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addshape?view=office-pia"/>
   public Shape AddShape(MsoAutoShapeType Type, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddTextEffect`.
@@ -131,9 +111,7 @@ public partial interface Shapes
   /// <param name="Left">The `Left` parameter.</param>
   /// <param name="Top">The `Top` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtexteffect?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtexteffect?view=office-pia"/>
   public Shape AddTextEffect
   (MsoPresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, MsoTriState FontBold,
     MsoTriState FontItalic, float Left, float Top);
@@ -146,9 +124,7 @@ public partial interface Shapes
   /// <param name="Width">The `Width` parameter.</param>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtextbox?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtextbox?view=office-pia"/>
   public Shape AddTextbox(MsoTextOrientation Orientation, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `BuildFreeform`.
@@ -157,25 +133,19 @@ public partial interface Shapes
   /// <param name="X1">The `X1` parameter.</param>
   /// <param name="Y1">The `Y1` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.buildfreeform?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.buildfreeform?view=office-pia"/>
   public FreeformBuilder BuildFreeform(MsoEditingType EditingType, float X1, float Y1);
   /// <summary>
   /// Invokes `Range`.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.range?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.range?view=office-pia"/>
   public ShapeRange Range(object Index);
   /// <summary>
   /// Invokes `SelectAll`.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.selectall?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.selectall?view=office-pia"/>
   public void SelectAll();
   /// <summary>
   /// Invokes `AddDiagram`.
@@ -186,9 +156,7 @@ public partial interface Shapes
   /// <param name="Width">The `Width` parameter.</param>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.adddiagram?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.adddiagram?view=office-pia"/>
   public Shape AddDiagram(MsoDiagramType Type, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddCanvas`.
@@ -198,9 +166,7 @@ public partial interface Shapes
   /// <param name="Width">The `Width` parameter.</param>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcanvas?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcanvas?view=office-pia"/>
   public Shape AddCanvas(float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddChart`.
@@ -211,9 +177,7 @@ public partial interface Shapes
   /// <param name="Width">The `Width` parameter.</param>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addchart?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addchart?view=office-pia"/>
   public Shape AddChart
     (XlChartType Type, float Left, float Top, float Width, float Height);
   /// <summary>
@@ -226,9 +190,7 @@ public partial interface Shapes
   /// <param name="Width">The `Width` parameter.</param>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtable?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtable?view=office-pia"/>
   public Shape AddTable(int NumRows, int NumColumns, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddSmartArt`.
@@ -239,9 +201,7 @@ public partial interface Shapes
   /// <param name="Width">The `Width` parameter.</param>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addsmartart?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addsmartart?view=office-pia"/>
   public Shape AddSmartArt(SmartArtLayout Layout, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddChart2`.
@@ -254,9 +214,7 @@ public partial interface Shapes
   /// <param name="Height">The `Height` parameter.</param>
   /// <param name="NewLayout">The `NewLayout` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addchart2?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addchart2?view=office-pia"/>
   public Shape AddChart2
   (int Style, XlChartType Type, float Left, float Top, float Width,
     float Height, bool NewLayout);
@@ -272,10 +230,9 @@ public partial interface Shapes
   /// <param name="Height">The `Height` parameter.</param>
   /// <param name="Compress">The `Compress` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addpicture2?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addpicture2?view=office-pia"/>
   public Shape AddPicture2
   (string FileName, MsoTriState LinkToFile, MsoTriState SaveWithDocument, float Left, float Top, float Width,
     float Height, MsoPictureCompress Compress);
 }
+
