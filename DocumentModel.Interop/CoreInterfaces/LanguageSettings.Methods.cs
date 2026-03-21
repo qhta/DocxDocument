@@ -4,9 +4,8 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents language settings used by the Office application.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.languagesettings?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.languagesettings?view=office-pia"/>
 public partial interface LanguageSettings
 {
 }
+

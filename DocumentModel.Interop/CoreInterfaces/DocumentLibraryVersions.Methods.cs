@@ -5,9 +5,8 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents a collection of DocumentLibraryVersion objects.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentlibraryversions?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentlibraryversions?view=office-pia"/>
 public partial interface DocumentLibraryVersions
 {
 }
+

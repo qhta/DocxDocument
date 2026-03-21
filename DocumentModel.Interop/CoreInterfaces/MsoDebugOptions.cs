@@ -4,44 +4,33 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents debug options for Office.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions?view=office-pia"/>
 public partial interface MsoDebugOptions: InteropObject
 {
   /// <summary>
   /// Gets or sets the `FeatureReports` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.featurereports?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.featurereports?view=office-pia"/>
   public int FeatureReports { get; set; }
   /// <summary>
   /// Gets or sets the `OutputToDebugger` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.outputtodebugger?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.outputtodebugger?view=office-pia"/>
   public bool OutputToDebugger { get; set; }
   /// <summary>
   /// Gets or sets the `OutputToFile` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.outputtofile?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.outputtofile?view=office-pia"/>
   public bool OutputToFile { get; set; }
   /// <summary>
   /// Gets or sets the `OutputToMessageBox` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.outputtomessagebox?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.outputtomessagebox?view=office-pia"/>
   public bool OutputToMessageBox { get; set; }
   /// <summary>
   /// Gets the `UnitTestManager` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.unittestmanager?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.unittestmanager?view=office-pia"/>
   public object UnitTestManager { get; }
 }
+

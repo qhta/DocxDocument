@@ -4,9 +4,7 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder?view=office-pia"/>
 public partial interface FreeformBuilder
 {
   /// <summary>
@@ -20,9 +18,7 @@ public partial interface FreeformBuilder
   /// <param name="Y2">The `Y2` parameter.</param>
   /// <param name="X3">The `X3` parameter.</param>
   /// <param name="Y3">The `Y3` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder.addnodes?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder.addnodes?view=office-pia"/>
   public void AddNodes
   (MsoSegmentType SegmentType, MsoEditingType EditingType, float X1, float Y1, float X2, float Y2,
     float X3, float Y3);
@@ -30,8 +26,7 @@ public partial interface FreeformBuilder
   /// Converts the freeform builder into a Shape object.
   /// </summary>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder.converttoshape?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder.converttoshape?view=office-pia"/>
   public Shape ConvertToShape();
 }
+

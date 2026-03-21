@@ -4,9 +4,7 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents the mail merge data source in a mail merge operation.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject?view=office-pia"/>
 public partial interface OfficeDataSourceObject
 {
   /// <summary>
@@ -15,9 +13,7 @@ public partial interface OfficeDataSourceObject
   /// <param name="MsoMoveRow">The `MsoMoveRow` parameter.</param>
   /// <param name="RowNbr">The `RowNbr` parameter.</param>
   /// <returns>The resulting row number.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject.move?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject.move?view=office-pia"/>
   public int Move(MsoMoveRow MsoMoveRow, int RowNbr);
   /// <summary>
   /// Opens a connection to a mail merge data source.
@@ -27,9 +23,7 @@ public partial interface OfficeDataSourceObject
   /// <param name="bstrTable">The `bstrTable` parameter.</param>
   /// <param name="fOpenExclusive">The `fOpenExclusive` parameter.</param>
   /// <param name="fNeverPrompt">The `fNeverPrompt` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject.open?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject.open?view=office-pia"/>
   public void Open
     (string bstrSrc, string bstrConnect, string bstrTable, int fOpenExclusive, int fNeverPrompt);
   /// <summary>
@@ -41,17 +35,14 @@ public partial interface OfficeDataSourceObject
   /// <param name="SortAscending2">The `SortAscending2` parameter.</param>
   /// <param name="SortField3">The `SortField3` parameter.</param>
   /// <param name="SortAscending3">The `SortAscending3` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject.setsortorder?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject.setsortorder?view=office-pia"/>
   public void SetSortOrder
   (string SortField1, bool SortAscending1, string SortField2, bool SortAscending2,
     string SortField3, bool SortAscending3);
   /// <summary>
   /// Applies the configured filters to the data source.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject.applyfilter?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject.applyfilter?view=office-pia"/>
   public void ApplyFilter();
 }
+

@@ -4,9 +4,7 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icommandbarbuttonevents?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icommandbarbuttonevents?view=office-pia"/>
 public partial interface ICommandBarButtonEvents
 {
   /// <summary>
@@ -14,8 +12,7 @@ public partial interface ICommandBarButtonEvents
   /// </summary>
   /// <param name="Ctrl">The `Ctrl` parameter.</param>
   /// <param name="CancelDefault">The `CancelDefault` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icommandbarbuttonevents.click?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icommandbarbuttonevents.click?view=office-pia"/>
   public void Click(CommandBarButton Ctrl, ref bool CancelDefault);
 }
+

@@ -5,9 +5,8 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents a collection of GradientStop objects.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.gradientstops?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.gradientstops?view=office-pia"/>
 public partial interface GradientStops: InteropCollection<GradientStop>
 {
 }
+

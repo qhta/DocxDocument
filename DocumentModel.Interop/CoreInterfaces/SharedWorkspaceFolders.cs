@@ -13,8 +13,7 @@ public partial interface SharedWorkspaceFolders: InteropCollection<SharedWorkspa
   /// <summary>
   /// Gets the `ItemCountExceeded` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolders.itemcountexceeded?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolders.itemcountexceeded?view=office-pia"/>
   public bool ItemCountExceeded { get; }
 }
+

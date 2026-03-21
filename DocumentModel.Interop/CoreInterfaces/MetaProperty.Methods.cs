@@ -5,17 +5,14 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents a metadata property.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty?view=office-pia"/>
 public partial interface MetaProperty
 {
   /// <summary>
   /// Validates the metadata property value.
   /// </summary>
   /// <returns>The validation error message, if any.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.validate?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.validate?view=office-pia"/>
   public string Validate();
 }
+
