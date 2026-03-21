@@ -7,25 +7,25 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathScrSubSup : InteropObject
 {
   /// <summary>
-  /// Returns the e.
+  /// Returns the base expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup.e?view=word-pia"/>
   public OMath E { get; }
 
   /// <summary>
-  /// Returns the sub.
+  /// Returns the subscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup.sub?view=word-pia"/>
   public OMath Sub { get; }
 
   /// <summary>
-  /// Returns the sup.
+  /// Returns the superscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup.sup?view=word-pia"/>
   public OMath Sup { get; }
 
   /// <summary>
-  /// Returns or sets whether align scripts.
+  /// Returns or sets whether the scripts are aligned.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup.alignscripts?view=word-pia"/>
   public bool AlignScripts { get; set; }

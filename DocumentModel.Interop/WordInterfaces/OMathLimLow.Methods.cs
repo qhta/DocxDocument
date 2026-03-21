@@ -7,9 +7,9 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathLimLow
 {
   /// <summary>
-  /// Converts the lower limit to an upper limit in the mathematical function.
+  /// Converts the lower-limit construct to an upper-limit construct.
   /// </summary>
-  /// <returns>The resulting <see cref="OMathFunction"/> object.</returns>
+  /// <returns>The resulting equation function object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>

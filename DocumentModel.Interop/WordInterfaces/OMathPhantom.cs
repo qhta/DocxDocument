@@ -7,37 +7,37 @@ namespace DocumentModel.Interop.Word;
 public interface OMathPhantom : InteropObject
 {
   /// <summary>
-  /// Returns the e.
+  /// Returns the base expression for the phantom.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.e?view=word-pia"/>
   public OMath E { get; }
   /// <summary>
-  /// Returns or sets whether show.
+  /// Returns or sets whether the phantom expression is shown.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.show?view=word-pia"/>
   public bool Show { get; set; }
   /// <summary>
-  /// Returns or sets whether zero wid.
+  /// Returns or sets whether the phantom has zero width.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.zerowid?view=word-pia"/>
   public bool ZeroWid { get; set; }
   /// <summary>
-  /// Returns or sets whether zero asc.
+  /// Returns or sets whether the phantom has zero ascent.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.zeroasc?view=word-pia"/>
   public bool ZeroAsc { get; set; }
   /// <summary>
-  /// Returns or sets whether zero desc.
+  /// Returns or sets whether the phantom has zero descent.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.zerodesc?view=word-pia"/>
   public bool ZeroDesc { get; set; }
   /// <summary>
-  /// Returns or sets whether transp.
+  /// Returns or sets whether the phantom is transparent.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.transp?view=word-pia"/>
   public bool Transp { get; set; }
   /// <summary>
-  /// Returns or sets whether smash.
+  /// Returns or sets whether the phantom is smashed for layout.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.smash?view=word-pia"/>
   public bool Smash { get; set; }

@@ -7,11 +7,11 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathAutoCorrectEntries
 {
   /// <summary>
-  /// Returns the value produced by the add operation.
+  /// Adds a math AutoCorrect entry to the collection.
   /// </summary>
-  /// <param name="Name">Specifies the name.</param>
-  /// <param name="Value">Specifies the value.</param>
-  /// <returns>The resulting value.</returns>
+  /// <param name="Name">Specifies the text to replace.</param>
+  /// <param name="Value">Specifies the replacement text.</param>
+  /// <returns>The added math AutoCorrect entry.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>

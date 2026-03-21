@@ -7,12 +7,12 @@ namespace DocumentModel.Interop.Word;
 public interface OMathScrSub : InteropObject
 {
   /// <summary>
-  /// Returns the e.
+  /// Returns the base expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsub.e?view=word-pia"/>
   public OMath E { get; }
   /// <summary>
-  /// Returns the sub.
+  /// Returns the subscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsub.sub?view=word-pia"/>
   public OMath Sub { get; }

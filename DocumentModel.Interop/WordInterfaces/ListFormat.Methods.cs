@@ -7,10 +7,10 @@ namespace DocumentModel.Interop.Word;
 public partial interface ListFormat
 {
   /// <summary>
-  /// Determines whether the specified list template can continue the previous list.
+  /// Returns whether the specified list template can continue the formatting of the previous list.
   /// </summary>
   /// <param name="ListTemplate">The list template to check.</param>
-  /// <returns>A <see cref="WdContinue"/> value indicating if the list can continue.</returns>
+  /// <returns>A value that indicates whether numbering can continue from the previous list.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>

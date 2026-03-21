@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface OCXEvents_Event
 {
   /// <summary>
-  /// Subscribes a handler to the GotFocus event.
+  /// Adds a handler for the GotFocus event.
   /// </summary>
   /// <param name="param1">The delegate to invoke when the GotFocus event is raised.</param>
   /// <remarks>
@@ -17,7 +17,7 @@ public partial interface OCXEvents_Event
   public void add_GotFocus(OCXEvents_GotFocusEventHandler param1);
 
   /// <summary>
-  /// Unsubscribes a handler from the GotFocus event.
+  /// Removes a handler for the GotFocus event.
   /// </summary>
   /// <param name="param1">The delegate to remove from the GotFocus event.</param>
   /// <remarks>
@@ -27,7 +27,7 @@ public partial interface OCXEvents_Event
   public void remove_GotFocus(OCXEvents_GotFocusEventHandler param1);
 
   /// <summary>
-  /// Subscribes a handler to the LostFocus event.
+  /// Adds a handler for the LostFocus event.
   /// </summary>
   /// <param name="param1">The delegate to invoke when the LostFocus event is raised.</param>
   /// <remarks>
@@ -37,7 +37,7 @@ public partial interface OCXEvents_Event
   public void add_LostFocus(OCXEvents_LostFocusEventHandler param1);
 
   /// <summary>
-  /// Unsubscribes a handler from the LostFocus event.
+  /// Removes a handler for the LostFocus event.
   /// </summary>
   /// <param name="param1">The delegate to remove from the LostFocus event.</param>
   /// <remarks>

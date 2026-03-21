@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Word;
 public interface OMathEqArray : InteropObject
 {
   /// <summary>
-  /// Returns the e.
+  /// Returns the collection of equations in the equation array.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.e?view=word-pia"/>
   public OMathArgs E { get; }
   /// <summary>
-  /// Returns or sets whether max dist.
+  /// Returns or sets whether maximum spacing between rows is used.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.maxdist?view=word-pia"/>
   public bool MaxDist { get; set; }
   /// <summary>
-  /// Returns or sets whether obj dist.
+  /// Returns or sets whether object-based row spacing is used.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.objdist?view=word-pia"/>
   public bool ObjDist { get; set; }
   /// <summary>
-  /// Returns or sets the align.
+  /// Returns or sets the vertical alignment of the equation array.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.align?view=word-pia"/>
   public WdOMathVertAlignType Align { get; set; }
@@ -32,7 +32,7 @@ public interface OMathEqArray : InteropObject
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.rowspacingrule?view=word-pia"/>
   public WdOMathSpacingRule RowSpacingRule { get; set; }
   /// <summary>
-  /// Returns or sets the row spacing.
+  /// Returns or sets the row spacing value.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.rowspacing?view=word-pia"/>
   public int RowSpacing { get; set; }

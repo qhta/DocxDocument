@@ -8,10 +8,10 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathMatRows
 {
   /// <summary>
-  /// Adds a new matrix row to the collection.
+  /// Adds a matrix row to the collection.
   /// </summary>
-  /// <param name="BeforeRow">The row before which the new row is added.</param>
-  /// <returns>The created <see cref="OMathMatRow"/> object.</returns>
+  /// <param name="BeforeRow">Specifies the row before which the new row is inserted.</param>
+  /// <returns>The added matrix row object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>

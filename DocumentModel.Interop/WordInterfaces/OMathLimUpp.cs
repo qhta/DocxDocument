@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathLimUpp : InteropObject
 {
   /// <summary>
-  /// Returns the e.
+  /// Returns the base expression for the upper-limit construct.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimupp.e?view=word-pia"/>
   public OMath E { get; }
 
   /// <summary>
-  /// Returns the lim.
+  /// Returns the upper limit expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimupp.lim?view=word-pia"/>
   public OMath Lim { get; }
