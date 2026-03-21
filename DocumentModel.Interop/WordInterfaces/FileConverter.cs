@@ -7,47 +7,47 @@ namespace DocumentModel.Interop.Word;
 public interface FileConverter : InteropObject
 {
   /// <summary>
-  /// The format name.
+  /// Returns the name of the specified file converter.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.formatname?view=word-pia"/>
   public string FormatName { get; }
   /// <summary>
-  /// The class name.
+  /// Returns a unique name that identifies the file converter.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.classname?view=word-pia"/>
   public string ClassName { get; }
   /// <summary>
-  /// The save format.
+  /// Returns the file format of the specified file converter.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.saveformat?view=word-pia"/>
   public int SaveFormat { get; }
   /// <summary>
-  /// The open format.
+  /// Returns the file format of the specified file converter.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.openformat?view=word-pia"/>
   public int OpenFormat { get; }
   /// <summary>
-  /// The can save.
+  /// Determines if the specified file converter is designed to save files.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.cansave?view=word-pia"/>
   public bool CanSave { get; }
   /// <summary>
-  /// The can open.
+  /// Determines if the specified file converter is designed to open files.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.canopen?view=word-pia"/>
   public bool CanOpen { get; }
   /// <summary>
-  /// The path.
+  /// Returns the disk or Web path to the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.path?view=word-pia"/>
   public string Path { get; }
   /// <summary>
-  /// The name.
+  /// Returns or sets the name of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.name?view=word-pia"/>
   public string Name { get; }
   /// <summary>
-  /// The extensions.
+  /// Returns the file name extensions associated with the specified <see cref="FileConverter"/> object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.extensions?view=word-pia"/>
   public string Extensions { get; }

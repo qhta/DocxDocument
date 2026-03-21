@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public interface EmailAuthor : InteropObject
 {
   /// <summary>
-  /// The style.
+  /// Gets the style associated with the email author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailauthor.style?view=word-pia"/>
   public Style Style { get; }

@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Word;
 public interface HorizontalLineFormat : InteropObject
 {
   /// <summary>
-  /// The percent width.
+  /// Returns or sets the width of the horizontal line as a percentage of the window width.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.horizontallineformat.percentwidth?view=word-pia"/>
   public float PercentWidth { get; set; }
   /// <summary>
-  /// The no shade.
+  /// Returns or sets whether the horizontal line is displayed without three-dimensional shading.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.horizontallineformat.noshade?view=word-pia"/>
   public bool NoShade { get; set; }
   /// <summary>
-  /// The alignment.
+  /// Returns or sets the alignment for the horizontal line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.horizontallineformat.alignment?view=word-pia"/>
   public WdHorizontalLineAlignment Alignment { get; set; }
   /// <summary>
-  /// The width type.
+  /// Returns or sets how the width of the horizontal line is measured.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.horizontallineformat.widthtype?view=word-pia"/>
   public WdHorizontalLineWidthType WidthType { get; set; }

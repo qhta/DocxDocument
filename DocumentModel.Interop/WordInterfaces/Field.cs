@@ -7,79 +7,79 @@ namespace DocumentModel.Interop.Word;
 public partial interface Field : InteropObject
 {
   /// <summary>
-  /// The code.
+  /// Gets or sets the field code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.code?view=word-pia"/>
   public Range Code { get; set; }
 
   /// <summary>
-  /// The type.
+  /// Gets the field type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.type?view=word-pia"/>
   public WdFieldType Type { get; }
 
   /// <summary>
-  /// The locked.
+  /// Gets or sets a value indicating whether the field is locked.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.locked?view=word-pia"/>
   public bool Locked { get; set; }
 
   /// <summary>
-  /// The kind.
+  /// Gets the field kind.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.kind?view=word-pia"/>
   public WdFieldKind Kind { get; }
 
   /// <summary>
-  /// The result.
+  /// Gets or sets the result displayed for the field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.result?view=word-pia"/>
   public Range Result { get; set; }
 
   /// <summary>
-  /// The data.
+  /// Gets or sets data associated with the field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.data?view=word-pia"/>
   public string Data { get; set; }
 
   /// <summary>
-  /// The next.
+  /// Gets the next field in the `Fields` collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.next?view=word-pia"/>
   public Field Next { get; }
 
   /// <summary>
-  /// The previous.
+  /// Gets the previous field in the `Fields` collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.previous?view=word-pia"/>
   public Field Previous { get; }
 
   /// <summary>
-  /// The index.
+  /// Gets the index number of the field in the `Fields` collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.index?view=word-pia"/>
   public int Index { get; }
 
   /// <summary>
-  /// The show codes.
+  /// Gets or sets a value indicating whether field codes are displayed instead of field results.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.showcodes?view=word-pia"/>
   public bool ShowCodes { get; set; }
 
   /// <summary>
-  /// The link format.
+  /// Gets the link formatting for a linked field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.linkformat?view=word-pia"/>
   public LinkFormat LinkFormat { get; }
 
   /// <summary>
-  /// The oleformat.
+  /// Gets the OLE formatting for an OLE field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.oleformat?view=word-pia"/>
   public OLEFormat OLEFormat { get; }
 
   /// <summary>
-  /// The inline shape.
+  /// Gets the inline shape associated with the field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.inlineshape?view=word-pia"/>
   public InlineShape InlineShape { get; }

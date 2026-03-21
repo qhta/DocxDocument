@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Word;
 public interface EndnoteOptions : InteropObject
 {
   /// <summary>
-  /// The location.
+  /// Gets or sets the location of endnotes in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnoteoptions.location?view=word-pia"/>
   public WdEndnoteLocation Location { get; set; }
   /// <summary>
-  /// The number style.
+  /// Gets or sets the number style for endnotes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnoteoptions.numberstyle?view=word-pia"/>
   public WdNoteNumberStyle NumberStyle { get; set; }
   /// <summary>
-  /// The starting number.
+  /// Gets or sets the starting number for endnotes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnoteoptions.startingnumber?view=word-pia"/>
   public int StartingNumber { get; set; }
   /// <summary>
-  /// The numbering rule.
+  /// Gets or sets the numbering rule for endnotes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnoteoptions.numberingrule?view=word-pia"/>
   public WdNumberingRule NumberingRule { get; set; }

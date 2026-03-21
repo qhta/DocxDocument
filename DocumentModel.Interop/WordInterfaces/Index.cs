@@ -7,61 +7,61 @@ namespace DocumentModel.Interop.Word;
 public partial interface Index : InteropObject
 {
   /// <summary>
-  /// The heading separator.
+  /// Returns or sets the character that separates topic headings and page numbers in an index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.headingseparator?view=word-pia"/>
   public WdHeadingSeparator HeadingSeparator { get; set; }
 
   /// <summary>
-  /// The right align page numbers.
+  /// Returns or sets whether page numbers are right-aligned in the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.rightalignpagenumbers?view=word-pia"/>
   public bool RightAlignPageNumbers { get; set; }
 
   /// <summary>
-  /// The type.
+  /// Returns or sets the type of index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.type?view=word-pia"/>
   public WdIndexType Type { get; set; }
 
   /// <summary>
-  /// The number of columns.
+  /// Returns or sets the number of columns in the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.numberofcolumns?view=word-pia"/>
   public int NumberOfColumns { get; set; }
 
   /// <summary>
-  /// The range.
+  /// Returns a range object that represents the portion of the document included in the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.range?view=word-pia"/>
   public Range Range { get; }
 
   /// <summary>
-  /// The tab leader.
+  /// Returns or sets the tab leader character between entries and page numbers in the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.tableader?view=word-pia"/>
   public WdTabLeader TabLeader { get; set; }
 
   /// <summary>
-  /// The accented letters.
+  /// Returns or sets whether accented letters are treated separately in index sorting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.accentedletters?view=word-pia"/>
   public bool AccentedLetters { get; set; }
 
   /// <summary>
-  /// The sort by.
+  /// Returns or sets how index entries are sorted.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.sortby?view=word-pia"/>
   public WdIndexSortBy SortBy { get; set; }
 
   /// <summary>
-  /// The filter.
+  /// Returns or sets the type of index filter to apply.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.filter?view=word-pia"/>
   public WdIndexFilter Filter { get; set; }
 
   /// <summary>
-  /// The index language.
+  /// Returns or sets the language used for sorting the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.indexlanguage?view=word-pia"/>
   public WdLanguageID IndexLanguage { get; set; }

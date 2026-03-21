@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface FormFields : InteropObject, InteropCollection<FormField>
 {
   /// <summary>
-  /// The shaded.
+  /// Determines if shading is applied to form fields.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfields.shaded?view=word-pia"/>
   public bool Shaded { get; set; }

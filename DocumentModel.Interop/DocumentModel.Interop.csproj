@@ -21,6 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Office.Interop.Word" Version="15.0.4797.1004" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.Interop.Enums\DocumentModel.Interop.Enums.csproj" />
