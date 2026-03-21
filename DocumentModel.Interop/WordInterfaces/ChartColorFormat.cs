@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Word;
 public interface ChartColorFormat : InteropObject
 {
   /// <summary>
-  /// The scheme color.
+  /// Gets or sets the color in the current color scheme.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcolorformat.schemecolor?view=word-pia"/>
   public int SchemeColor { get; set; }
   /// <summary>
-  /// The rgb.
+  /// Gets the red-green-blue (RGB) value of the color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcolorformat.rgb?view=word-pia"/>
   public int RGB { get; }
   /// <summary>
-  /// The _default.
+  /// Gets the default color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcolorformat._default?view=word-pia"/>
   public int _Default { get; }
   /// <summary>
-  /// The type.
+  /// Gets the type of color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcolorformat.type?view=word-pia"/>
   public int Type { get; }

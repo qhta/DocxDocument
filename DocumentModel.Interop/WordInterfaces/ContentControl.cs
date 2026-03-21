@@ -7,169 +7,169 @@ namespace DocumentModel.Interop.Word;
 public partial interface ContentControl : InteropObject
 {
   /// <summary>
-  /// The range.
+  /// Gets the range of text contained in the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.range?view=word-pia"/>
   public Range Range { get; }
 
   /// <summary>
-  /// The lock content control.
+  /// Gets or sets a value indicating whether the content control itself is locked.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.lockcontentcontrol?view=word-pia"/>
   public bool LockContentControl { get; set; }
 
   /// <summary>
-  /// The lock contents.
+  /// Gets or sets a value indicating whether the contents of the content control are locked.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.lockcontents?view=word-pia"/>
   public bool LockContents { get; set; }
 
   /// <summary>
-  /// The xmlmapping.
+  /// Gets the XML mapping for the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.xmlmapping?view=word-pia"/>
   public XMLMapping XMLMapping { get; }
 
   /// <summary>
-  /// The type.
+  /// Gets or sets the type of content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.type?view=word-pia"/>
   public WdContentControlType Type { get; set; }
 
   /// <summary>
-  /// The dropdown list entries.
+  /// Gets the collection of list entries for a drop-down or combo box content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.dropdownlistentries?view=word-pia"/>
   public ContentControlListEntries DropdownListEntries { get; }
 
   /// <summary>
-  /// The placeholder text.
+  /// Gets the placeholder text building block for the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.placeholdertext?view=word-pia"/>
   public BuildingBlock PlaceholderText { get; }
 
   /// <summary>
-  /// The title.
+  /// Gets or sets the title of the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.title?view=word-pia"/>
   public string Title { get; set; }
 
   /// <summary>
-  /// The date display format.
+  /// Gets or sets the display format for date values.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.datedisplayformat?view=word-pia"/>
   public string DateDisplayFormat { get; set; }
 
   /// <summary>
-  /// The multi line.
+  /// Gets or sets a value indicating whether the content control supports multiple lines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.multiline?view=word-pia"/>
   public bool MultiLine { get; set; }
 
   /// <summary>
-  /// The parent content control.
+  /// Gets the parent content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.parentcontentcontrol?view=word-pia"/>
   public ContentControl ParentContentControl { get; }
 
   /// <summary>
-  /// The temporary.
+  /// Gets or sets a value indicating whether the content control is removed after it is edited.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.temporary?view=word-pia"/>
   public bool Temporary { get; set; }
 
   /// <summary>
-  /// The id.
+  /// Gets the unique identifier of the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.id?view=word-pia"/>
   public string ID { get; }
 
   /// <summary>
-  /// The showing placeholder text.
+  /// Gets a value indicating whether placeholder text is currently displayed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.showingplaceholdertext?view=word-pia"/>
   public bool ShowingPlaceholderText { get; }
 
   /// <summary>
-  /// The date storage format.
+  /// Gets or sets how date values are stored.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.datestorageformat?view=word-pia"/>
   public WdContentControlDateStorageFormat DateStorageFormat { get; set; }
 
   /// <summary>
-  /// The building block type.
+  /// Gets or sets the building block type for a building block gallery content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.buildingblocktype?view=word-pia"/>
   public WdBuildingBlockTypes BuildingBlockType { get; set; }
 
   /// <summary>
-  /// The building block category.
+  /// Gets or sets the building block category for a building block gallery content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.buildingblockcategory?view=word-pia"/>
   public string BuildingBlockCategory { get; set; }
 
   /// <summary>
-  /// The date display locale.
+  /// Gets or sets the locale used to display dates.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.datedisplaylocale?view=word-pia"/>
   public WdLanguageID DateDisplayLocale { get; set; }
 
   /// <summary>
-  /// The default text style.
+  /// Gets or sets the default text style for the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.defaulttextstyle?view=word-pia"/>
   public object DefaultTextStyle { get; set; }
 
   /// <summary>
-  /// The date calendar type.
+  /// Gets or sets the calendar type used for date values.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.datecalendartype?view=word-pia"/>
   public WdCalendarType DateCalendarType { get; set; }
 
   /// <summary>
-  /// The tag.
+  /// Gets or sets a tag value for identifying the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.tag?view=word-pia"/>
   public string Tag { get; set; }
 
   /// <summary>
-  /// The checked.
+  /// Gets or sets a value indicating whether a check box content control is checked.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.checked?view=word-pia"/>
   public bool Checked { get; set; }
 
   /// <summary>
-  /// The color.
+  /// Gets or sets the color of the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.color?view=word-pia"/>
   public WdColor Color { get; set; }
 
   /// <summary>
-  /// The appearance.
+  /// Gets or sets how the content control appears in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.appearance?view=word-pia"/>
   public WdContentControlAppearance Appearance { get; set; }
 
   /// <summary>
-  /// The level.
+  /// Gets the level of the content control in the content control hierarchy.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.level?view=word-pia"/>
   public WdContentControlLevel Level { get; }
 
   /// <summary>
-  /// The repeating section items.
+  /// Gets the collection of repeating section items.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.repeatingsectionitems?view=word-pia"/>
   public RepeatingSectionItemColl RepeatingSectionItems { get; }
 
   /// <summary>
-  /// The repeating section item title.
+  /// Gets or sets the title displayed for each repeating section item.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.repeatingsectionitemtitle?view=word-pia"/>
   public string RepeatingSectionItemTitle { get; set; }
 
   /// <summary>
-  /// The allow insert delete section.
+  /// Gets or sets a value indicating whether users can insert or delete repeating section items.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.allowinsertdeletesection?view=word-pia"/>
   public bool AllowInsertDeleteSection { get; set; }

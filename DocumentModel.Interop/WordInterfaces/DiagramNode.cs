@@ -7,37 +7,37 @@ namespace DocumentModel.Interop.Word;
 public partial interface DiagramNode : InteropObject
 {
   /// <summary>
-  /// The children.
+  /// Gets the collection of child nodes for this diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.children?view=word-pia"/>
   public DiagramNodeChildren Children { get; }
 
   /// <summary>
-  /// The shape.
+  /// Gets the shape associated with this diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.shape?view=word-pia"/>
   public Shape Shape { get; }
 
   /// <summary>
-  /// The root.
+  /// Gets the root node of the diagram that contains this node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.root?view=word-pia"/>
   public DiagramNode Root { get; }
 
   /// <summary>
-  /// The diagram.
+  /// Gets the diagram that contains this node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.diagram?view=word-pia"/>
   public Diagram Diagram { get; }
 
   /// <summary>
-  /// The layout.
+  /// Gets or sets the layout type for this diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.layout?view=word-pia"/>
   public Core.MsoOrgChartLayoutType Layout { get; set; }
 
   /// <summary>
-  /// The text shape.
+  /// Gets the shape that contains text for this diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.textshape?view=word-pia"/>
   public Shape TextShape { get; }

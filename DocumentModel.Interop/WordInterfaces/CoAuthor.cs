@@ -7,27 +7,27 @@ namespace DocumentModel.Interop.Word;
 public interface CoAuthor : InteropObject
 {
   /// <summary>
-  /// The id.
+  /// Gets the unique identifier of the co-author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthor.id?view=word-pia"/>
   public string ID { get; }
   /// <summary>
-  /// The name.
+  /// Gets the display name of the co-author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthor.name?view=word-pia"/>
   public string Name { get; }
   /// <summary>
-  /// The is me.
+  /// Gets a value indicating whether this co-author represents the current user.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthor.isme?view=word-pia"/>
   public bool IsMe { get; }
   /// <summary>
-  /// The locks.
+  /// Gets the collection of coauthoring locks owned by this co-author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthor.locks?view=word-pia"/>
   public CoAuthLocks Locks { get; }
   /// <summary>
-  /// The email address.
+  /// Gets the email address of the co-author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthor.emailaddress?view=word-pia"/>
   public string EmailAddress { get; }

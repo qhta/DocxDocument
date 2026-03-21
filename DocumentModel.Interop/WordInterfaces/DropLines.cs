@@ -7,19 +7,19 @@ namespace DocumentModel.Interop.Word;
 public partial interface DropLines : InteropObject
 {
   /// <summary>
-  /// The name.
+  /// Gets the name of the `DropLines` object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.droplines.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
-  /// The border.
+  /// Gets the border formatting for the drop lines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.droplines.border?view=word-pia"/>
   public ChartBorder Border { get; }
 
   /// <summary>
-  /// The format.
+  /// Gets the chart formatting for the drop lines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.droplines.format?view=word-pia"/>
   public ChartFormat Format { get; }

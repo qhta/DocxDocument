@@ -4,11 +4,6 @@ namespace DocumentModel.Interop.Word;
 /// Represents a collection of building block categories.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.categories?view=word-pia"/>
-public partial interface Categories : InteropObject
+public partial interface Categories : InteropCollection<Category>
 {
-  /// <summary>
-  /// The count.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.categories.count?view=word-pia"/>
-  public int Count { get; }
 }

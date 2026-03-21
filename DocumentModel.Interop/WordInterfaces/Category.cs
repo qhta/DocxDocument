@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Word;
 public interface Category : InteropObject
 {
   /// <summary>
-  /// The index.
+  /// Gets the index number of the category in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.category.index?view=word-pia"/>
   public int Index { get; }
   /// <summary>
-  /// The name.
+  /// Gets the name of the category.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.category.name?view=word-pia"/>
   public string Name { get; }
   /// <summary>
-  /// The building blocks.
+  /// Gets the collection of building blocks in the category.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.category.buildingblocks?view=word-pia"/>
   public BuildingBlocks BuildingBlocks { get; }
   /// <summary>
-  /// The type.
+  /// Gets the building block type that contains this category.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.category.type?view=word-pia"/>
   public BuildingBlockType Type { get; }

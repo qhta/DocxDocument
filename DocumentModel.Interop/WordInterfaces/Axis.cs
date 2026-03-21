@@ -1,7 +1,7 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// Represents an axis in a chart.
+/// Represents a single axis in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis?view=word-pia"/>
 public partial interface Axis : InteropObject
@@ -37,7 +37,7 @@ public partial interface Axis : InteropObject
   public XlAxisCrosses Crosses { get; set; }
 
   /// <summary>
-  /// Gets or sets the value axis crossing point on the category axis.
+  /// Gets or sets the point, on the category axis, where the value axis crosses it.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.crossesat?view=word-pia"/>
   public double CrossesAt { get; set; }

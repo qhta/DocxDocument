@@ -7,37 +7,37 @@ namespace DocumentModel.Interop.Word;
 public partial interface AddIn : InteropObject
 {
   /// <summary>
-  /// The name.
+  /// Gets the name of the add-in.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.addin.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
-  /// The index.
+  /// Gets the index number of the add-in in the `AddIns` collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.addin.index?view=word-pia"/>
   public int Index { get; }
 
   /// <summary>
-  /// The path.
+  /// Gets the path of the add-in.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.addin.path?view=word-pia"/>
   public string Path { get; }
 
   /// <summary>
-  /// The installed.
+  /// Gets or sets a value indicating whether the add-in is installed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.addin.installed?view=word-pia"/>
   public bool Installed { get; set; }
 
   /// <summary>
-  /// The compiled.
+  /// Gets a value indicating whether the add-in is compiled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.addin.compiled?view=word-pia"/>
   public bool Compiled { get; }
 
   /// <summary>
-  /// The autoload.
+  /// Gets a value indicating whether the add-in is loaded automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.addin.autoload?view=word-pia"/>
   public bool Autoload { get; }

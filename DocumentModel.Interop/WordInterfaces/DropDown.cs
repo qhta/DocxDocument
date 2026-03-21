@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Word;
 public interface DropDown : InteropObject
 {
   /// <summary>
-  /// The valid.
+  /// Gets a value indicating whether the `DropDown` object is valid.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropdown.valid?view=word-pia"/>
   public bool Valid { get; }
   /// <summary>
-  /// The default.
+  /// Gets or sets the index number of the default list entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropdown.default?view=word-pia"/>
   public int Default { get; set; }
   /// <summary>
-  /// The value.
+  /// Gets or sets the index number of the selected list entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropdown.value?view=word-pia"/>
   public int Value { get; set; }
   /// <summary>
-  /// The list entries.
+  /// Gets the collection of list entries in the drop-down form field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropdown.listentries?view=word-pia"/>
   public ListEntries ListEntries { get; }

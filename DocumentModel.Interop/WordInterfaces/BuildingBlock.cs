@@ -7,49 +7,49 @@ namespace DocumentModel.Interop.Word;
 public partial interface BuildingBlock : InteropObject
 {
   /// <summary>
-  /// The index.
+  /// Gets the index number of the building block in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.index?view=word-pia"/>
   public int Index { get; }
 
   /// <summary>
-  /// The name.
+  /// Gets or sets the name of the building block.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.name?view=word-pia"/>
   public string Name { get; set; }
 
   /// <summary>
-  /// The type.
+  /// Gets the building block type that contains this building block.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.type?view=word-pia"/>
   public BuildingBlockType Type { get; }
 
   /// <summary>
-  /// The description.
+  /// Gets or sets the description of the building block.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.description?view=word-pia"/>
   public string Description { get; set; }
 
   /// <summary>
-  /// The id.
+  /// Gets the unique identifier of the building block.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.id?view=word-pia"/>
   public string ID { get; }
 
   /// <summary>
-  /// The category.
+  /// Gets the category of the building block.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.category?view=word-pia"/>
   public Category Category { get; }
 
   /// <summary>
-  /// The value.
+  /// Gets or sets the content of the building block.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.value?view=word-pia"/>
   public string Value { get; set; }
 
   /// <summary>
-  /// The insert options.
+  /// Gets or sets the insertion behavior options for the building block.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.insertoptions?view=word-pia"/>
   public int InsertOptions { get; set; }

@@ -7,31 +7,31 @@ namespace DocumentModel.Interop.Word;
 public partial interface Broadcast : InteropObject
 {
   /// <summary>
-  /// The attendee url.
+  /// Gets the attendee URL for the broadcast session.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.broadcast.attendeeurl?view=word-pia"/>
   public string AttendeeUrl { get; }
 
   /// <summary>
-  /// The state.
+  /// Gets the current state of the broadcast session.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.broadcast.state?view=word-pia"/>
   public Core.MsoBroadcastState State { get; }
 
   /// <summary>
-  /// The capabilities.
+  /// Gets the capabilities available for the broadcast session.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.broadcast.capabilities?view=word-pia"/>
   public int Capabilities { get; }
 
   /// <summary>
-  /// The presenter service url.
+  /// Gets the presenter service URL for the broadcast session.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.broadcast.presenterserviceurl?view=word-pia"/>
   public string PresenterServiceUrl { get; }
 
   /// <summary>
-  /// The session id.
+  /// Gets the unique session ID for the broadcast session.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.broadcast.sessionid?view=word-pia"/>
   public string SessionID { get; }

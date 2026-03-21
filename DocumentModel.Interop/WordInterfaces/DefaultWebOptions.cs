@@ -7,92 +7,92 @@ namespace DocumentModel.Interop.Word;
 public interface DefaultWebOptions : InteropObject
 {
   /// <summary>
-  /// The optimize for browser.
+  /// Gets or sets a value indicating whether Word optimizes documents for the target browser when saving as a web page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.optimizeforbrowser?view=word-pia"/>
   public bool OptimizeForBrowser { get; set; }
   /// <summary>
-  /// The browser level.
+  /// Gets or sets the target browser level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.browserlevel?view=word-pia"/>
   public WdBrowserLevel BrowserLevel { get; set; }
   /// <summary>
-  /// The rely on css.
+  /// Gets or sets a value indicating whether formatting is saved by using cascading style sheets (CSS).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.relyoncss?view=word-pia"/>
   public bool RelyOnCSS { get; set; }
   /// <summary>
-  /// The organize in folder.
+  /// Gets or sets a value indicating whether supporting files are organized in a separate folder when saving as a web page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.organizeinfolder?view=word-pia"/>
   public bool OrganizeInFolder { get; set; }
   /// <summary>
-  /// The update links on save.
+  /// Gets or sets a value indicating whether links are updated when the document is saved as a web page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.updatelinksonsave?view=word-pia"/>
   public bool UpdateLinksOnSave { get; set; }
   /// <summary>
-  /// The use long file names.
+  /// Gets or sets a value indicating whether long file names are used when saving as a web page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.uselongfilenames?view=word-pia"/>
   public bool UseLongFileNames { get; set; }
   /// <summary>
-  /// The check if office is htmleditor.
+  /// Gets or sets a value indicating whether Word checks whether Microsoft Office is the default HTML editor.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.checkifofficeishtmleditor?view=word-pia"/>
   public bool CheckIfOfficeIsHTMLEditor { get; set; }
   /// <summary>
-  /// The check if word is default htmleditor.
+  /// Gets or sets a value indicating whether Word checks whether it is the default HTML editor.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.checkifwordisdefaulthtmleditor?view=word-pia"/>
   public bool CheckIfWordIsDefaultHTMLEditor { get; set; }
   /// <summary>
-  /// The rely on vml.
+  /// Gets or sets a value indicating whether Vector Markup Language (VML) is used for drawing objects in web pages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.relyonvml?view=word-pia"/>
   public bool RelyOnVML { get; set; }
   /// <summary>
-  /// The allow png.
+  /// Gets or sets a value indicating whether PNG graphics are allowed when saving as a web page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.allowpng?view=word-pia"/>
   public bool AllowPNG { get; set; }
   /// <summary>
-  /// The screen size.
+  /// Gets or sets the target screen size for saved web pages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.screensize?view=word-pia"/>
   public Core.MsoScreenSize ScreenSize { get; set; }
   /// <summary>
-  /// The pixels per inch.
+  /// Gets or sets the target pixels-per-inch value for saved web pages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.pixelsperinch?view=word-pia"/>
   public int PixelsPerInch { get; set; }
   /// <summary>
-  /// The encoding.
+  /// Gets or sets the default encoding used when saving web pages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.encoding?view=word-pia"/>
   public Core.MsoEncoding Encoding { get; set; }
   /// <summary>
-  /// The always save in default encoding.
+  /// Gets or sets a value indicating whether web pages are always saved in the default encoding.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.alwayssaveindefaultencoding?view=word-pia"/>
   public bool AlwaysSaveInDefaultEncoding { get; set; }
   /// <summary>
-  /// The fonts.
+  /// Gets the web page font settings.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.fonts?view=word-pia"/>
   public Core.WebPageFonts Fonts { get; }
   /// <summary>
-  /// The folder suffix.
+  /// Gets the suffix used for the folder that contains supporting files for saved web pages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.foldersuffix?view=word-pia"/>
   public string FolderSuffix { get; }
   /// <summary>
-  /// The target browser.
+  /// Gets or sets the target browser used for web page compatibility.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.targetbrowser?view=word-pia"/>
   public Core.MsoTargetBrowser TargetBrowser { get; set; }
   /// <summary>
-  /// The save new web pages as web archives.
+  /// Gets or sets a value indicating whether new web pages are saved as single-file web archives.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.savenewwebpagesaswebarchives?view=word-pia"/>
   public bool SaveNewWebPagesAsWebArchives { get; set; }

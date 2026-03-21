@@ -7,139 +7,139 @@ namespace DocumentModel.Interop.Word;
 public partial interface Borders : InteropObject, InteropCollection<Border>
 {
   /// <summary>
-  /// The enable.
+  /// Gets or sets whether borders are enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.enable?view=word-pia"/>
   public int Enable { get; set; }
 
   /// <summary>
-  /// The distance from top.
+  /// Gets or sets the distance, in points, between the top border and the top edge of the page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.distancefromtop?view=word-pia"/>
   public int DistanceFromTop { get; set; }
 
   /// <summary>
-  /// The shadow.
+  /// Gets or sets a value indicating whether the borders have a shadow.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.shadow?view=word-pia"/>
   public bool Shadow { get; set; }
 
   /// <summary>
-  /// The inside line style.
+  /// Gets or sets the line style for inside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.insidelinestyle?view=word-pia"/>
   public WdLineStyle InsideLineStyle { get; set; }
 
   /// <summary>
-  /// The outside line style.
+  /// Gets or sets the line style for outside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.outsidelinestyle?view=word-pia"/>
   public WdLineStyle OutsideLineStyle { get; set; }
 
   /// <summary>
-  /// The inside line width.
+  /// Gets or sets the line width for inside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.insidelinewidth?view=word-pia"/>
   public WdLineWidth InsideLineWidth { get; set; }
 
   /// <summary>
-  /// The outside line width.
+  /// Gets or sets the line width for outside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.outsidelinewidth?view=word-pia"/>
   public WdLineWidth OutsideLineWidth { get; set; }
 
   /// <summary>
-  /// The inside color index.
+  /// Gets or sets the color index for inside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.insidecolorindex?view=word-pia"/>
   public WdColorIndex InsideColorIndex { get; set; }
 
   /// <summary>
-  /// The outside color index.
+  /// Gets or sets the color index for outside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.outsidecolorindex?view=word-pia"/>
   public WdColorIndex OutsideColorIndex { get; set; }
 
   /// <summary>
-  /// The distance from left.
+  /// Gets or sets the distance, in points, between the left border and the left edge of the page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.distancefromleft?view=word-pia"/>
   public int DistanceFromLeft { get; set; }
 
   /// <summary>
-  /// The distance from bottom.
+  /// Gets or sets the distance, in points, between the bottom border and the bottom edge of the page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.distancefrombottom?view=word-pia"/>
   public int DistanceFromBottom { get; set; }
 
   /// <summary>
-  /// The distance from right.
+  /// Gets or sets the distance, in points, between the right border and the right edge of the page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.distancefromright?view=word-pia"/>
   public int DistanceFromRight { get; set; }
 
   /// <summary>
-  /// The always in front.
+  /// Gets or sets a value indicating whether page borders are displayed in front of document text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.alwaysinfront?view=word-pia"/>
   public bool AlwaysInFront { get; set; }
 
   /// <summary>
-  /// The surround header.
+  /// Gets or sets a value indicating whether borders surround header text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.surroundheader?view=word-pia"/>
   public bool SurroundHeader { get; set; }
 
   /// <summary>
-  /// The surround footer.
+  /// Gets or sets a value indicating whether borders surround footer text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.surroundfooter?view=word-pia"/>
   public bool SurroundFooter { get; set; }
 
   /// <summary>
-  /// The join borders.
+  /// Gets or sets a value indicating whether adjacent paragraph borders are joined.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.joinborders?view=word-pia"/>
   public bool JoinBorders { get; set; }
 
   /// <summary>
-  /// The has horizontal.
+  /// Gets a value indicating whether the collection includes a horizontal border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.hashorizontal?view=word-pia"/>
   public bool HasHorizontal { get; }
 
   /// <summary>
-  /// The has vertical.
+  /// Gets a value indicating whether the collection includes a vertical border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.hasvertical?view=word-pia"/>
   public bool HasVertical { get; }
 
   /// <summary>
-  /// The distance from.
+  /// Gets or sets what border distances are measured from.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.distancefrom?view=word-pia"/>
   public WdBorderDistanceFrom DistanceFrom { get; set; }
 
   /// <summary>
-  /// The enable first page in section.
+  /// Gets or sets a value indicating whether borders are enabled on the first page of a section.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.enablefirstpageinsection?view=word-pia"/>
   public bool EnableFirstPageInSection { get; set; }
 
   /// <summary>
-  /// The enable other pages in section.
+  /// Gets or sets a value indicating whether borders are enabled on pages other than the first page in a section.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.enableotherpagesinsection?view=word-pia"/>
   public bool EnableOtherPagesInSection { get; set; }
 
   /// <summary>
-  /// The inside color.
+  /// Gets or sets the color of inside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.insidecolor?view=word-pia"/>
   public WdColor InsideColor { get; set; }
 
   /// <summary>
-  /// The outside color.
+  /// Gets or sets the color of outside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.outsidecolor?view=word-pia"/>
   public WdColor OutsideColor { get; set; }

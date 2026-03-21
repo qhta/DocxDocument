@@ -7,42 +7,42 @@ namespace DocumentModel.Interop.Word;
 public interface Border : InteropObject
 {
   /// <summary>
-  /// The visible.
+  /// Gets or sets a value indicating whether the border is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.border.visible?view=word-pia"/>
   public bool Visible { get; set; }
   /// <summary>
-  /// The color index.
+  /// Gets or sets the color index for the border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.border.colorindex?view=word-pia"/>
   public WdColorIndex ColorIndex { get; set; }
   /// <summary>
-  /// The inside.
+  /// Gets a value indicating whether the border is an inside border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.border.inside?view=word-pia"/>
   public bool Inside { get; }
   /// <summary>
-  /// The line style.
+  /// Gets or sets the line style for the border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.border.linestyle?view=word-pia"/>
   public WdLineStyle LineStyle { get; set; }
   /// <summary>
-  /// The line width.
+  /// Gets or sets the line width for the border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.border.linewidth?view=word-pia"/>
   public WdLineWidth LineWidth { get; set; }
   /// <summary>
-  /// The art style.
+  /// Gets or sets the page border art style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.border.artstyle?view=word-pia"/>
   public WdPageBorderArt ArtStyle { get; set; }
   /// <summary>
-  /// The art width.
+  /// Gets or sets the width of the page border art.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.border.artwidth?view=word-pia"/>
   public int ArtWidth { get; set; }
   /// <summary>
-  /// The color.
+  /// Gets or sets the border color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.border.color?view=word-pia"/>
   public WdColor Color { get; set; }
