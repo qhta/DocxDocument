@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathLimLow : InteropObject
 {
   /// <summary>
-  /// The e.
+  /// Returns the e.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimlow.e?view=word-pia"/>
   public OMath E { get; }
 
   /// <summary>
-  /// The lim.
+  /// Returns the lim.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimlow.lim?view=word-pia"/>
   public OMath Lim { get; }

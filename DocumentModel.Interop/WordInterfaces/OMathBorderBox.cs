@@ -7,47 +7,47 @@ namespace DocumentModel.Interop.Word;
 public interface OMathBorderBox : InteropObject
 {
   /// <summary>
-  /// The e.
+  /// Returns the e.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathborderbox.e?view=word-pia"/>
   public OMath E { get; }
   /// <summary>
-  /// The hide top.
+  /// Returns or sets whether hide top.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathborderbox.hidetop?view=word-pia"/>
   public bool HideTop { get; set; }
   /// <summary>
-  /// The hide bot.
+  /// Returns or sets whether hide bot.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathborderbox.hidebot?view=word-pia"/>
   public bool HideBot { get; set; }
   /// <summary>
-  /// The hide left.
+  /// Returns or sets whether hide left.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathborderbox.hideleft?view=word-pia"/>
   public bool HideLeft { get; set; }
   /// <summary>
-  /// The hide right.
+  /// Returns or sets whether hide right.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathborderbox.hideright?view=word-pia"/>
   public bool HideRight { get; set; }
   /// <summary>
-  /// The strike h.
+  /// Returns or sets whether strike h.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathborderbox.strikeh?view=word-pia"/>
   public bool StrikeH { get; set; }
   /// <summary>
-  /// The strike v.
+  /// Returns or sets whether strike v.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathborderbox.strikev?view=word-pia"/>
   public bool StrikeV { get; set; }
   /// <summary>
-  /// The strike bltr.
+  /// Returns or sets whether strike b l t r.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathborderbox.strikebltr?view=word-pia"/>
   public bool StrikeBLTR { get; set; }
   /// <summary>
-  /// The strike tlbr.
+  /// Returns or sets whether strike t l b r.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathborderbox.striketlbr?view=word-pia"/>
   public bool StrikeTLBR { get; set; }

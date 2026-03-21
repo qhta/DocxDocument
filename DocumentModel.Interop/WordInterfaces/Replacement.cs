@@ -7,55 +7,55 @@ namespace DocumentModel.Interop.Word;
 public partial interface Replacement : InteropObject
 {
   /// <summary>
-  /// The font.
+  /// Returns or sets the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.font?view=word-pia"/>
   public Font Font { get; set; }
 
   /// <summary>
-  /// The paragraph format.
+  /// Returns or sets the paragraph format.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.paragraphformat?view=word-pia"/>
   public ParagraphFormat ParagraphFormat { get; set; }
 
   /// <summary>
-  /// The style.
+  /// Returns or sets the style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.style?view=word-pia"/>
   public object Style { get; set; }
 
   /// <summary>
-  /// The text.
+  /// Returns or sets the text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.text?view=word-pia"/>
   public string Text { get; set; }
 
   /// <summary>
-  /// The language id.
+  /// Returns or sets the language i d.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.languageid?view=word-pia"/>
   public WdLanguageID LanguageID { get; set; }
 
   /// <summary>
-  /// The highlight.
+  /// Returns or sets the highlight.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.highlight?view=word-pia"/>
   public int Highlight { get; set; }
 
   /// <summary>
-  /// The frame.
+  /// Returns the frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.frame?view=word-pia"/>
   public Frame Frame { get; }
 
   /// <summary>
-  /// The language idfar east.
+  /// Returns or sets the language i d far east.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.languageidfareast?view=word-pia"/>
   public WdLanguageID LanguageIDFarEast { get; set; }
 
   /// <summary>
-  /// The no proofing.
+  /// Returns or sets the no proofing.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.noproofing?view=word-pia"/>
   public int NoProofing { get; set; }

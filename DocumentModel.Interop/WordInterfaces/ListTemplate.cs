@@ -7,19 +7,19 @@ namespace DocumentModel.Interop.Word;
 public partial interface ListTemplate : InteropObject
 {
   /// <summary>
-  /// The outline numbered.
+  /// Returns or sets whether outline numbered.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate.outlinenumbered?view=word-pia"/>
   public bool OutlineNumbered { get; set; }
 
   /// <summary>
-  /// The name.
+  /// Returns or sets the name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate.name?view=word-pia"/>
   public string Name { get; set; }
 
   /// <summary>
-  /// The list levels.
+  /// Returns the list levels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate.listlevels?view=word-pia"/>
   public ListLevels ListLevels { get; }

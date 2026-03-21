@@ -7,19 +7,19 @@ namespace DocumentModel.Interop.Word;
 public partial interface RevisionsFilter
 {
   /// <summary>
-  /// The view.
+  /// Returns or sets the view.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisionsfilter.view?view=word-pia"/>
   public WdRevisionsView View { get; set; }
 
   /// <summary>
-  /// The markup.
+  /// Returns or sets the markup.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisionsfilter.markup?view=word-pia"/>
   public WdRevisionsMarkup Markup { get; set; }
 
   /// <summary>
-  /// The reviewers.
+  /// Returns the reviewers.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisionsfilter.reviewers?view=word-pia"/>
   public Reviewers Reviewers { get; }

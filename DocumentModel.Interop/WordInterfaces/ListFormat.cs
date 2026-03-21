@@ -7,55 +7,55 @@ namespace DocumentModel.Interop.Word;
 public partial interface ListFormat : InteropObject
 {
   /// <summary>
-  /// The list level number.
+  /// Returns or sets the list level number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listlevelnumber?view=word-pia"/>
   public int ListLevelNumber { get; set; }
 
   /// <summary>
-  /// The list.
+  /// Returns the list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.list?view=word-pia"/>
   public List List { get; }
 
   /// <summary>
-  /// The list template.
+  /// Returns the list template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listtemplate?view=word-pia"/>
   public ListTemplate ListTemplate { get; }
 
   /// <summary>
-  /// The list value.
+  /// Returns the list value.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listvalue?view=word-pia"/>
   public int ListValue { get; }
 
   /// <summary>
-  /// The single list.
+  /// Returns whether single list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.singlelist?view=word-pia"/>
   public bool SingleList { get; }
 
   /// <summary>
-  /// The single list template.
+  /// Returns whether single list template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.singlelisttemplate?view=word-pia"/>
   public bool SingleListTemplate { get; }
 
   /// <summary>
-  /// The list type.
+  /// Returns the list type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listtype?view=word-pia"/>
   public WdListType ListType { get; }
 
   /// <summary>
-  /// The list string.
+  /// Returns the list string.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.liststring?view=word-pia"/>
   public string ListString { get; }
 
   /// <summary>
-  /// The list picture bullet.
+  /// Returns the list picture bullet.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listpicturebullet?view=word-pia"/>
   public InlineShape ListPictureBullet { get; }

@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathBreak : InteropObject
 {
   /// <summary>
-  /// The range.
+  /// Returns the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbreak.range?view=word-pia"/>
   public Range Range { get; }
 
   /// <summary>
-  /// The align at.
+  /// Returns or sets the align at.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbreak.alignat?view=word-pia"/>
   public int AlignAt { get; set; }

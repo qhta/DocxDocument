@@ -7,19 +7,19 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathAutoCorrectEntry : InteropObject
 {
   /// <summary>
-  /// The index.
+  /// Returns the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrectentry.index?view=word-pia"/>
   public int Index { get; }
 
   /// <summary>
-  /// The name.
+  /// Returns or sets the name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrectentry.name?view=word-pia"/>
   public string Name { get; set; }
 
   /// <summary>
-  /// The value.
+  /// Returns or sets the value.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrectentry.value?view=word-pia"/>
   public string Value { get; set; }

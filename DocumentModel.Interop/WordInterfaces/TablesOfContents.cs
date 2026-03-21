@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface TablesOfContents : InteropObject, InteropCollection<TableOfContents>
 {
   /// <summary>
-  /// The format.
+  /// Returns or sets the format.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofcontents.format?view=word-pia"/>
   public WdTocFormat Format { get; set; }

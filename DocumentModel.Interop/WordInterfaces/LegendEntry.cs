@@ -7,55 +7,55 @@ namespace DocumentModel.Interop.Word;
 public partial interface LegendEntry : InteropObject
 {
   /// <summary>
-  /// The font.
+  /// Returns a font object that represents the font of the legend entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendentry.font?view=word-pia"/>
   public ChartFont Font { get; }
 
   /// <summary>
-  /// The index.
+  /// Returns the index number of the legend entry in the legend entries collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendentry.index?view=word-pia"/>
   public int Index { get; }
 
   /// <summary>
-  /// The legend key.
+  /// Returns a legend key object for the legend entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendentry.legendkey?view=word-pia"/>
   public LegendKey LegendKey { get; }
 
   /// <summary>
-  /// The auto scale font.
+  /// Returns or sets whether the legend entry text scales automatically when the chart size changes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendentry.autoscalefont?view=word-pia"/>
   public object AutoScaleFont { get; set; }
 
   /// <summary>
-  /// The left.
+  /// Returns the distance, in points, from the left edge of the chart area to the left edge of the legend entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendentry.left?view=word-pia"/>
   public double Left { get; }
 
   /// <summary>
-  /// The top.
+  /// Returns the distance, in points, from the top edge of the chart area to the top edge of the legend entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendentry.top?view=word-pia"/>
   public double Top { get; }
 
   /// <summary>
-  /// The width.
+  /// Returns the width of the legend entry, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendentry.width?view=word-pia"/>
   public double Width { get; }
 
   /// <summary>
-  /// The height.
+  /// Returns the height of the legend entry, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendentry.height?view=word-pia"/>
   public double Height { get; }
 
   /// <summary>
-  /// The format.
+  /// Returns the chart format properties for the legend entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendentry.format?view=word-pia"/>
   public ChartFormat Format { get; }

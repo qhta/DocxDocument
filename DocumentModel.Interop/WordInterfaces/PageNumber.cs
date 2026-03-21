@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Word;
 public partial interface PageNumber : InteropObject
 {
   /// <summary>
-  /// The index.
+  /// Returns the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumber.index?view=word-pia"/>
   public int Index { get; }
 
   /// <summary>
-  /// The alignment.
+  /// Returns or sets the alignment.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumber.alignment?view=word-pia"/>
   public WdPageNumberAlignment Alignment { get; set; }

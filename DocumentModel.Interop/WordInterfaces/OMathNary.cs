@@ -7,42 +7,42 @@ namespace DocumentModel.Interop.Word;
 public interface OMathNary : InteropObject
 {
   /// <summary>
-  /// The sub.
+  /// Returns the sub.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.sub?view=word-pia"/>
   public OMath Sub { get; }
   /// <summary>
-  /// The sup.
+  /// Returns the sup.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.sup?view=word-pia"/>
   public OMath Sup { get; }
   /// <summary>
-  /// The e.
+  /// Returns the e.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.e?view=word-pia"/>
   public OMath E { get; }
   /// <summary>
-  /// The char.
+  /// Returns or sets the char.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.char?view=word-pia"/>
   public short Char { get; set; }
   /// <summary>
-  /// The grow.
+  /// Returns or sets whether grow.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.grow?view=word-pia"/>
   public bool Grow { get; set; }
   /// <summary>
-  /// The sub sup lim.
+  /// Returns or sets whether sub sup lim.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.subsuplim?view=word-pia"/>
   public bool SubSupLim { get; set; }
   /// <summary>
-  /// The hide sub.
+  /// Returns or sets whether hide sub.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.hidesub?view=word-pia"/>
   public bool HideSub { get; set; }
   /// <summary>
-  /// The hide sup.
+  /// Returns or sets whether hide sup.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.hidesup?view=word-pia"/>
   public bool HideSup { get; set; }

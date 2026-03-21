@@ -7,61 +7,61 @@ namespace DocumentModel.Interop.Word;
 public partial interface OLEFormat : InteropObject
 {
   /// <summary>
-  /// The class type.
+  /// Returns or sets the class type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.oleformat.classtype?view=word-pia"/>
   public string ClassType { get; set; }
 
   /// <summary>
-  /// The display as icon.
+  /// Returns or sets whether display as icon.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.oleformat.displayasicon?view=word-pia"/>
   public bool DisplayAsIcon { get; set; }
 
   /// <summary>
-  /// The icon name.
+  /// Returns or sets the icon name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.oleformat.iconname?view=word-pia"/>
   public string IconName { get; set; }
 
   /// <summary>
-  /// The icon path.
+  /// Returns the icon path.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.oleformat.iconpath?view=word-pia"/>
   public string IconPath { get; }
 
   /// <summary>
-  /// The icon index.
+  /// Returns or sets the icon index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.oleformat.iconindex?view=word-pia"/>
   public int IconIndex { get; set; }
 
   /// <summary>
-  /// The icon label.
+  /// Returns or sets the icon label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.oleformat.iconlabel?view=word-pia"/>
   public string IconLabel { get; set; }
 
   /// <summary>
-  /// The label.
+  /// Returns the label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.oleformat.label?view=word-pia"/>
   public string Label { get; }
 
   /// <summary>
-  /// The object.
+  /// Returns the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.oleformat.object?view=word-pia"/>
   public object Object { get; }
 
   /// <summary>
-  /// The prog id.
+  /// Returns the prog i d.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.oleformat.progid?view=word-pia"/>
   public string ProgID { get; }
 
   /// <summary>
-  /// The preserve formatting on update.
+  /// Returns or sets whether preserve formatting on update.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.oleformat.preserveformattingonupdate?view=word-pia"/>
   public bool PreserveFormattingOnUpdate { get; set; }

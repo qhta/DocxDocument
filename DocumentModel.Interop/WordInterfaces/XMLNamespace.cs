@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Word;
 public partial interface XMLNamespace : InteropObject
 {
   /// <summary>
-  /// The uri.
+  /// Returns the u r i.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespace.uri?view=word-pia"/>
   public string URI { get; }
 
   /// <summary>
-  /// The xsltransforms.
+  /// Returns the x s l transforms.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespace.xsltransforms?view=word-pia"/>
   public XSLTransforms XSLTransforms { get; }

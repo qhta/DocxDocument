@@ -7,19 +7,19 @@ namespace DocumentModel.Interop.Word;
 public partial interface Sections : InteropObject, InteropCollection<Section>
 {
   /// <summary>
-  /// The first.
+  /// Returns the first.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sections.first?view=word-pia"/>
   public Section First { get; }
 
   /// <summary>
-  /// The last.
+  /// Returns the last.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sections.last?view=word-pia"/>
   public Section Last { get; }
 
   /// <summary>
-  /// The page setup.
+  /// Returns or sets the page setup.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sections.pagesetup?view=word-pia"/>
   public PageSetup PageSetup { get; set; }

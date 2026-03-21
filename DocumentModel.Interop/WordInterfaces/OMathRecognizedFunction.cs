@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathRecognizedFunction : InteropObject
 {
   /// <summary>
-  /// The index.
+  /// Returns the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrecognizedfunction.index?view=word-pia"/>
   public int Index { get; }
 
   /// <summary>
-  /// The name.
+  /// Returns the name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrecognizedfunction.name?view=word-pia"/>
   public string Name { get; }

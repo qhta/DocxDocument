@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Word;
 public partial interface XMLSchemaReference : InteropObject
 {
   /// <summary>
-  /// The namespace uri.
+  /// Returns the namespace u r i.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareference.namespaceuri?view=word-pia"/>
   public string NamespaceURI { get; }
 
   /// <summary>
-  /// The location.
+  /// Returns the location.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareference.location?view=word-pia"/>
   public string Location { get; }

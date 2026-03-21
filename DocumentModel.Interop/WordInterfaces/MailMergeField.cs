@@ -7,31 +7,31 @@ namespace DocumentModel.Interop.Word;
 public partial interface MailMergeField : InteropObject
 {
   /// <summary>
-  /// The type.
+  /// Returns the type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.type?view=word-pia"/>
   public WdFieldType Type { get; }
 
   /// <summary>
-  /// The locked.
+  /// Returns or sets whether locked.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.locked?view=word-pia"/>
   public bool Locked { get; set; }
 
   /// <summary>
-  /// The code.
+  /// Returns or sets the code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.code?view=word-pia"/>
   public Range Code { get; set; }
 
   /// <summary>
-  /// The next.
+  /// Returns the next.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.next?view=word-pia"/>
   public MailMergeField Next { get; }
 
   /// <summary>
-  /// The previous.
+  /// Returns the previous.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.previous?view=word-pia"/>
   public MailMergeField Previous { get; }

@@ -7,31 +7,31 @@ namespace DocumentModel.Interop.Word;
 public partial interface TextColumns : InteropObject, InteropCollection<TextColumn>
 {
   /// <summary>
-  /// The evenly spaced.
+  /// Returns or sets the evenly spaced.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textcolumns.evenlyspaced?view=word-pia"/>
   public int EvenlySpaced { get; set; }
 
   /// <summary>
-  /// The line between.
+  /// Returns or sets the line between.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textcolumns.linebetween?view=word-pia"/>
   public int LineBetween { get; set; }
 
   /// <summary>
-  /// The width.
+  /// Returns or sets the width.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textcolumns.width?view=word-pia"/>
   public float Width { get; set; }
 
   /// <summary>
-  /// The spacing.
+  /// Returns or sets the spacing.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textcolumns.spacing?view=word-pia"/>
   public float Spacing { get; set; }
 
   /// <summary>
-  /// The flow direction.
+  /// Returns or sets the flow direction.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textcolumns.flowdirection?view=word-pia"/>
   public WdFlowDirection FlowDirection { get; set; }

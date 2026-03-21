@@ -7,235 +7,235 @@ namespace DocumentModel.Interop.Word;
 public partial interface Paragraphs : InteropObject, InteropCollection<Paragraph>
 {
   /// <summary>
-  /// The first.
+  /// Returns the first.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.first?view=word-pia"/>
   public Paragraph First { get; }
 
   /// <summary>
-  /// The last.
+  /// Returns the last.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.last?view=word-pia"/>
   public Paragraph Last { get; }
 
   /// <summary>
-  /// The format.
+  /// Returns or sets the format.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.format?view=word-pia"/>
   public ParagraphFormat Format { get; set; }
 
   /// <summary>
-  /// The tab stops.
+  /// Returns or sets the tab stops.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.tabstops?view=word-pia"/>
   public TabStops TabStops { get; set; }
 
   /// <summary>
-  /// The borders.
+  /// Returns or sets the borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.borders?view=word-pia"/>
   public Borders Borders { get; set; }
 
   /// <summary>
-  /// The style.
+  /// Returns or sets the style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.style?view=word-pia"/>
   public object Style { get; set; }
 
   /// <summary>
-  /// The alignment.
+  /// Returns or sets the alignment.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.alignment?view=word-pia"/>
   public WdParagraphAlignment Alignment { get; set; }
 
   /// <summary>
-  /// The keep together.
+  /// Returns or sets the keep together.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.keeptogether?view=word-pia"/>
   public int KeepTogether { get; set; }
 
   /// <summary>
-  /// The keep with next.
+  /// Returns or sets the keep with next.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.keepwithnext?view=word-pia"/>
   public int KeepWithNext { get; set; }
 
   /// <summary>
-  /// The page break before.
+  /// Returns or sets the page break before.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.pagebreakbefore?view=word-pia"/>
   public int PageBreakBefore { get; set; }
 
   /// <summary>
-  /// The no line number.
+  /// Returns or sets the no line number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.nolinenumber?view=word-pia"/>
   public int NoLineNumber { get; set; }
 
   /// <summary>
-  /// The right indent.
+  /// Returns or sets the right indent.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.rightindent?view=word-pia"/>
   public float RightIndent { get; set; }
 
   /// <summary>
-  /// The left indent.
+  /// Returns or sets the left indent.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.leftindent?view=word-pia"/>
   public float LeftIndent { get; set; }
 
   /// <summary>
-  /// The first line indent.
+  /// Returns or sets the first line indent.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.firstlineindent?view=word-pia"/>
   public float FirstLineIndent { get; set; }
 
   /// <summary>
-  /// The line spacing.
+  /// Returns or sets the line spacing.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.linespacing?view=word-pia"/>
   public float LineSpacing { get; set; }
 
   /// <summary>
-  /// The line spacing rule.
+  /// Returns or sets the line spacing rule.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.linespacingrule?view=word-pia"/>
   public WdLineSpacing LineSpacingRule { get; set; }
 
   /// <summary>
-  /// The space before.
+  /// Returns or sets the space before.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.spacebefore?view=word-pia"/>
   public float SpaceBefore { get; set; }
 
   /// <summary>
-  /// The space after.
+  /// Returns or sets the space after.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.spaceafter?view=word-pia"/>
   public float SpaceAfter { get; set; }
 
   /// <summary>
-  /// The hyphenation.
+  /// Returns or sets the hyphenation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.hyphenation?view=word-pia"/>
   public int Hyphenation { get; set; }
 
   /// <summary>
-  /// The widow control.
+  /// Returns or sets the widow control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.widowcontrol?view=word-pia"/>
   public int WidowControl { get; set; }
 
   /// <summary>
-  /// The shading.
+  /// Returns the shading.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.shading?view=word-pia"/>
   public Shading Shading { get; }
 
   /// <summary>
-  /// The far east line break control.
+  /// Returns or sets the far east line break control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.fareastlinebreakcontrol?view=word-pia"/>
   public int FarEastLineBreakControl { get; set; }
 
   /// <summary>
-  /// The word wrap.
+  /// Returns or sets the word wrap.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.wordwrap?view=word-pia"/>
   public int WordWrap { get; set; }
 
   /// <summary>
-  /// The hanging punctuation.
+  /// Returns or sets the hanging punctuation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.hangingpunctuation?view=word-pia"/>
   public int HangingPunctuation { get; set; }
 
   /// <summary>
-  /// The half width punctuation on top of line.
+  /// Returns or sets the half width punctuation on top of line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.halfwidthpunctuationontopofline?view=word-pia"/>
   public int HalfWidthPunctuationOnTopOfLine { get; set; }
 
   /// <summary>
-  /// The add space between far east and alpha.
+  /// Returns or sets the add space between far east and alpha.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.addspacebetweenfareastandalpha?view=word-pia"/>
   public int AddSpaceBetweenFarEastAndAlpha { get; set; }
 
   /// <summary>
-  /// The add space between far east and digit.
+  /// Returns or sets the add space between far east and digit.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.addspacebetweenfareastanddigit?view=word-pia"/>
   public int AddSpaceBetweenFarEastAndDigit { get; set; }
 
   /// <summary>
-  /// The base line alignment.
+  /// Returns or sets the base line alignment.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.baselinealignment?view=word-pia"/>
   public WdBaselineAlignment BaseLineAlignment { get; set; }
 
   /// <summary>
-  /// The auto adjust right indent.
+  /// Returns or sets the auto adjust right indent.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.autoadjustrightindent?view=word-pia"/>
   public int AutoAdjustRightIndent { get; set; }
 
   /// <summary>
-  /// The disable line height grid.
+  /// Returns or sets the disable line height grid.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.disablelineheightgrid?view=word-pia"/>
   public int DisableLineHeightGrid { get; set; }
 
   /// <summary>
-  /// The outline level.
+  /// Returns or sets the outline level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.outlinelevel?view=word-pia"/>
   public WdOutlineLevel OutlineLevel { get; set; }
 
   /// <summary>
-  /// The character unit right indent.
+  /// Returns or sets the character unit right indent.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.characterunitrightindent?view=word-pia"/>
   public float CharacterUnitRightIndent { get; set; }
 
   /// <summary>
-  /// The character unit left indent.
+  /// Returns or sets the character unit left indent.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.characterunitleftindent?view=word-pia"/>
   public float CharacterUnitLeftIndent { get; set; }
 
   /// <summary>
-  /// The character unit first line indent.
+  /// Returns or sets the character unit first line indent.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.characterunitfirstlineindent?view=word-pia"/>
   public float CharacterUnitFirstLineIndent { get; set; }
 
   /// <summary>
-  /// The line unit before.
+  /// Returns or sets the line unit before.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.lineunitbefore?view=word-pia"/>
   public float LineUnitBefore { get; set; }
 
   /// <summary>
-  /// The line unit after.
+  /// Returns or sets the line unit after.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.lineunitafter?view=word-pia"/>
   public float LineUnitAfter { get; set; }
 
   /// <summary>
-  /// The reading order.
+  /// Returns or sets the reading order.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.readingorder?view=word-pia"/>
   public WdReadingOrder ReadingOrder { get; set; }
 
   /// <summary>
-  /// The space before auto.
+  /// Returns or sets the space before auto.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.spacebeforeauto?view=word-pia"/>
   public int SpaceBeforeAuto { get; set; }
 
   /// <summary>
-  /// The space after auto.
+  /// Returns or sets the space after auto.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.spaceafterauto?view=word-pia"/>
   public int SpaceAfterAuto { get; set; }

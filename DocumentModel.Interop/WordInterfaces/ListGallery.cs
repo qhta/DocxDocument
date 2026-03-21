@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface ListGallery : InteropObject
 {
   /// <summary>
-  /// The list templates.
+  /// Returns the list templates.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listgallery.listtemplates?view=word-pia"/>
   public ListTemplates ListTemplates { get; }

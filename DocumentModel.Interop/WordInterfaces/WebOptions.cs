@@ -7,73 +7,73 @@ namespace DocumentModel.Interop.Word;
 public partial interface WebOptions : InteropObject
 {
   /// <summary>
-  /// The optimize for browser.
+  /// Returns or sets whether optimize for browser.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.optimizeforbrowser?view=word-pia"/>
   public bool OptimizeForBrowser { get; set; }
 
   /// <summary>
-  /// The browser level.
+  /// Returns or sets the browser level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.browserlevel?view=word-pia"/>
   public WdBrowserLevel BrowserLevel { get; set; }
 
   /// <summary>
-  /// The rely on css.
+  /// Returns or sets whether rely on c s s.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.relyoncss?view=word-pia"/>
   public bool RelyOnCSS { get; set; }
 
   /// <summary>
-  /// The organize in folder.
+  /// Returns or sets whether organize in folder.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.organizeinfolder?view=word-pia"/>
   public bool OrganizeInFolder { get; set; }
 
   /// <summary>
-  /// The use long file names.
+  /// Returns or sets whether use long file names.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.uselongfilenames?view=word-pia"/>
   public bool UseLongFileNames { get; set; }
 
   /// <summary>
-  /// The rely on vml.
+  /// Returns or sets whether rely on v m l.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.relyonvml?view=word-pia"/>
   public bool RelyOnVML { get; set; }
 
   /// <summary>
-  /// The allow png.
+  /// Returns or sets whether allow p n g.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.allowpng?view=word-pia"/>
   public bool AllowPNG { get; set; }
 
   /// <summary>
-  /// The screen size.
+  /// Returns or sets the screen size.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.screensize?view=word-pia"/>
   public Core.MsoScreenSize ScreenSize { get; set; }
 
   /// <summary>
-  /// The pixels per inch.
+  /// Returns or sets the pixels per inch.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.pixelsperinch?view=word-pia"/>
   public int PixelsPerInch { get; set; }
 
   /// <summary>
-  /// The encoding.
+  /// Returns or sets the encoding.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.encoding?view=word-pia"/>
   public Core.MsoEncoding Encoding { get; set; }
 
   /// <summary>
-  /// The folder suffix.
+  /// Returns the folder suffix.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.foldersuffix?view=word-pia"/>
   public string FolderSuffix { get; }
 
   /// <summary>
-  /// The target browser.
+  /// Returns or sets the target browser.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.targetbrowser?view=word-pia"/>
   public Core.MsoTargetBrowser TargetBrowser { get; set; }

@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface TablesOfFigures : InteropObject, InteropCollection<TableOfFigures>
 {
   /// <summary>
-  /// The format.
+  /// Returns or sets the format.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesoffigures.format?view=word-pia"/>
   public WdTofFormat Format { get; set; }

@@ -7,139 +7,139 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathFunction : InteropObject
 {
   /// <summary>
-  /// The type.
+  /// Returns the type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.type?view=word-pia"/>
   public WdOMathFunctionType Type { get; }
 
   /// <summary>
-  /// The range.
+  /// Returns the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.range?view=word-pia"/>
   public Range Range { get; }
 
   /// <summary>
-  /// The args.
+  /// Returns the args.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.args?view=word-pia"/>
   public OMathArgs Args { get; }
 
   /// <summary>
-  /// The acc.
+  /// Returns the acc.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.acc?view=word-pia"/>
   public OMathAcc Acc { get; }
 
   /// <summary>
-  /// The bar.
+  /// Returns the bar.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.bar?view=word-pia"/>
   public OMathBar Bar { get; }
 
   /// <summary>
-  /// The box.
+  /// Returns the box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.box?view=word-pia"/>
   public OMathBox Box { get; }
 
   /// <summary>
-  /// The border box.
+  /// Returns the border box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.borderbox?view=word-pia"/>
   public OMathBorderBox BorderBox { get; }
 
   /// <summary>
-  /// The delim.
+  /// Returns the delim.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.delim?view=word-pia"/>
   public OMathDelim Delim { get; }
 
   /// <summary>
-  /// The eq array.
+  /// Returns the eq array.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.eqarray?view=word-pia"/>
   public OMathEqArray EqArray { get; }
 
   /// <summary>
-  /// The frac.
+  /// Returns the frac.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.frac?view=word-pia"/>
   public OMathFrac Frac { get; }
 
   /// <summary>
-  /// The func.
+  /// Returns the func.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.func?view=word-pia"/>
   public OMathFunc Func { get; }
 
   /// <summary>
-  /// The group char.
+  /// Returns the group char.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.groupchar?view=word-pia"/>
   public OMathGroupChar GroupChar { get; }
 
   /// <summary>
-  /// The lim low.
+  /// Returns the lim low.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.limlow?view=word-pia"/>
   public OMathLimLow LimLow { get; }
 
   /// <summary>
-  /// The lim upp.
+  /// Returns the lim upp.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.limupp?view=word-pia"/>
   public OMathLimUpp LimUpp { get; }
 
   /// <summary>
-  /// The mat.
+  /// Returns the mat.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.mat?view=word-pia"/>
   public OMathMat Mat { get; }
 
   /// <summary>
-  /// The nary.
+  /// Returns the nary.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.nary?view=word-pia"/>
   public OMathNary Nary { get; }
 
   /// <summary>
-  /// The phantom.
+  /// Returns the phantom.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.phantom?view=word-pia"/>
   public OMathPhantom Phantom { get; }
 
   /// <summary>
-  /// The scr pre.
+  /// Returns the scr pre.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.scrpre?view=word-pia"/>
   public OMathScrPre ScrPre { get; }
 
   /// <summary>
-  /// The rad.
+  /// Returns the rad.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.rad?view=word-pia"/>
   public OMathRad Rad { get; }
 
   /// <summary>
-  /// The scr sub.
+  /// Returns the scr sub.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.scrsub?view=word-pia"/>
   public OMathScrSub ScrSub { get; }
 
   /// <summary>
-  /// The scr sub sup.
+  /// Returns the scr sub sup.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.scrsubsup?view=word-pia"/>
   public OMathScrSubSup ScrSubSup { get; }
 
   /// <summary>
-  /// The scr sup.
+  /// Returns the scr sup.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.scrsup?view=word-pia"/>
   public OMathScrSup ScrSup { get; }
 
   /// <summary>
-  /// The omath.
+  /// Returns the o math.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.omath?view=word-pia"/>
   public OMath OMath { get; }

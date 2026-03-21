@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Word;
 public interface TextRetrievalMode : InteropObject
 {
   /// <summary>
-  /// The view type.
+  /// Returns or sets the view type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textretrievalmode.viewtype?view=word-pia"/>
   public WdViewType ViewType { get; set; }
   /// <summary>
-  /// The duplicate.
+  /// Returns the duplicate.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textretrievalmode.duplicate?view=word-pia"/>
   public TextRetrievalMode Duplicate { get; }
   /// <summary>
-  /// The include hidden text.
+  /// Returns or sets whether include hidden text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textretrievalmode.includehiddentext?view=word-pia"/>
   public bool IncludeHiddenText { get; set; }
   /// <summary>
-  /// The include field codes.
+  /// Returns or sets whether include field codes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textretrievalmode.includefieldcodes?view=word-pia"/>
   public bool IncludeFieldCodes { get; set; }

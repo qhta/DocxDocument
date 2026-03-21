@@ -7,27 +7,27 @@ namespace DocumentModel.Interop.Word;
 public interface ReflectionFormat : InteropObject
 {
   /// <summary>
-  /// The type.
+  /// Returns or sets the type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat.type?view=word-pia"/>
   public Core.MsoReflectionType Type { get; set; }
   /// <summary>
-  /// The transparency.
+  /// Returns or sets the transparency.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat.transparency?view=word-pia"/>
   public float Transparency { get; set; }
   /// <summary>
-  /// The size.
+  /// Returns or sets the size.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat.size?view=word-pia"/>
   public float Size { get; set; }
   /// <summary>
-  /// The offset.
+  /// Returns or sets the offset.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat.offset?view=word-pia"/>
   public float Offset { get; set; }
   /// <summary>
-  /// The blur.
+  /// Returns or sets the blur.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat.blur?view=word-pia"/>
   public float Blur { get; set; }

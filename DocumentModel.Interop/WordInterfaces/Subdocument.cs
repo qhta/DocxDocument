@@ -7,37 +7,37 @@ namespace DocumentModel.Interop.Word;
 public partial interface Subdocument : InteropObject
 {
   /// <summary>
-  /// The locked.
+  /// Returns or sets whether locked.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocument.locked?view=word-pia"/>
   public bool Locked { get; set; }
 
   /// <summary>
-  /// The range.
+  /// Returns the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocument.range?view=word-pia"/>
   public Range Range { get; }
 
   /// <summary>
-  /// The name.
+  /// Returns the name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocument.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
-  /// The path.
+  /// Returns the path.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocument.path?view=word-pia"/>
   public string Path { get; }
 
   /// <summary>
-  /// The has file.
+  /// Returns whether file.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocument.hasfile?view=word-pia"/>
   public bool HasFile { get; }
 
   /// <summary>
-  /// The level.
+  /// Returns the level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocument.level?view=word-pia"/>
   public int Level { get; }

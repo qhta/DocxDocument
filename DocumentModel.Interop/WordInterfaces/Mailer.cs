@@ -7,42 +7,42 @@ namespace DocumentModel.Interop.Word;
 public interface Mailer : InteropObject
 {
   /// <summary>
-  /// The bccrecipients.
+  /// Returns or sets the b c c recipients.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.bccrecipients?view=word-pia"/>
   public object BCCRecipients { get; set; }
   /// <summary>
-  /// The ccrecipients.
+  /// Returns or sets the c c recipients.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.ccrecipients?view=word-pia"/>
   public object CCRecipients { get; set; }
   /// <summary>
-  /// The recipients.
+  /// Returns or sets the recipients.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.recipients?view=word-pia"/>
   public object Recipients { get; set; }
   /// <summary>
-  /// The enclosures.
+  /// Returns or sets the enclosures.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.enclosures?view=word-pia"/>
   public object Enclosures { get; set; }
   /// <summary>
-  /// The sender.
+  /// Returns the sender.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.sender?view=word-pia"/>
   public string Sender { get; }
   /// <summary>
-  /// The send date time.
+  /// Returns the send date time.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.senddatetime?view=word-pia"/>
   public DateTime SendDateTime { get; }
   /// <summary>
-  /// The received.
+  /// Returns whether received.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.received?view=word-pia"/>
   public bool Received { get; }
   /// <summary>
-  /// The subject.
+  /// Returns or sets the subject.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.subject?view=word-pia"/>
   public string Subject { get; set; }

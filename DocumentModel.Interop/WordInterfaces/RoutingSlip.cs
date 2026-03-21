@@ -7,43 +7,43 @@ namespace DocumentModel.Interop.Word;
 public partial interface RoutingSlip : InteropObject
 {
   /// <summary>
-  /// The subject.
+  /// Returns or sets the subject.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.subject?view=word-pia"/>
   public string Subject { get; set; }
 
   /// <summary>
-  /// The message.
+  /// Returns or sets the message.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.message?view=word-pia"/>
   public string Message { get; set; }
 
   /// <summary>
-  /// The delivery.
+  /// Returns or sets the delivery.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.delivery?view=word-pia"/>
   public WdRoutingSlipDelivery Delivery { get; set; }
 
   /// <summary>
-  /// The track status.
+  /// Returns or sets whether track status.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.trackstatus?view=word-pia"/>
   public bool TrackStatus { get; set; }
 
   /// <summary>
-  /// The protect.
+  /// Returns or sets the protect.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.protect?view=word-pia"/>
   public WdProtectionType Protect { get; set; }
 
   /// <summary>
-  /// The return when done.
+  /// Returns or sets whether return when done.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.returnwhendone?view=word-pia"/>
   public bool ReturnWhenDone { get; set; }
 
   /// <summary>
-  /// The status.
+  /// Returns the status.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.status?view=word-pia"/>
   public WdRoutingSlipStatus Status { get; }

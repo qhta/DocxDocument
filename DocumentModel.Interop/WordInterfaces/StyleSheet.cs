@@ -7,37 +7,37 @@ namespace DocumentModel.Interop.Word;
 public partial interface StyleSheet : InteropObject
 {
   /// <summary>
-  /// The full name.
+  /// Returns the full name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.fullname?view=word-pia"/>
   public string FullName { get; }
 
   /// <summary>
-  /// The index.
+  /// Returns the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.index?view=word-pia"/>
   public int Index { get; }
 
   /// <summary>
-  /// The name.
+  /// Returns the name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.name?view=word-pia"/>
   public string Name { get; }
 
   /// <summary>
-  /// The path.
+  /// Returns the path.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.path?view=word-pia"/>
   public string Path { get; }
 
   /// <summary>
-  /// The type.
+  /// Returns or sets the type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.type?view=word-pia"/>
   public WdStyleSheetLinkType Type { get; set; }
 
   /// <summary>
-  /// The title.
+  /// Returns or sets the title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.title?view=word-pia"/>
   public string Title { get; set; }

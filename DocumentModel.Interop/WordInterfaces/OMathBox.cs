@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Word;
 public interface OMathBox : InteropObject
 {
   /// <summary>
-  /// The e.
+  /// Returns the e.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbox.e?view=word-pia"/>
   public OMath E { get; }
   /// <summary>
-  /// The op emu.
+  /// Returns or sets whether op emu.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbox.opemu?view=word-pia"/>
   public bool OpEmu { get; set; }
   /// <summary>
-  /// The no break.
+  /// Returns or sets whether no break.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbox.nobreak?view=word-pia"/>
   public bool NoBreak { get; set; }
   /// <summary>
-  /// The diff.
+  /// Returns or sets whether diff.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbox.diff?view=word-pia"/>
   public bool Diff { get; set; }

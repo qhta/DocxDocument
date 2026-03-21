@@ -7,49 +7,49 @@ namespace DocumentModel.Interop.Word;
 public partial interface PageNumbers : InteropObject, InteropCollection<PageNumber>
 {
   /// <summary>
-  /// The number style.
+  /// Returns or sets the number style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers.numberstyle?view=word-pia"/>
   public WdPageNumberStyle NumberStyle { get; set; }
 
   /// <summary>
-  /// The include chapter number.
+  /// Returns or sets whether include chapter number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers.includechapternumber?view=word-pia"/>
   public bool IncludeChapterNumber { get; set; }
 
   /// <summary>
-  /// The heading level for chapter.
+  /// Returns or sets the heading level for chapter.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers.headinglevelforchapter?view=word-pia"/>
   public int HeadingLevelForChapter { get; set; }
 
   /// <summary>
-  /// The chapter page separator.
+  /// Returns or sets the chapter page separator.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers.chapterpageseparator?view=word-pia"/>
   public WdSeparatorType ChapterPageSeparator { get; set; }
 
   /// <summary>
-  /// The restart numbering at section.
+  /// Returns or sets whether restart numbering at section.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers.restartnumberingatsection?view=word-pia"/>
   public bool RestartNumberingAtSection { get; set; }
 
   /// <summary>
-  /// The starting number.
+  /// Returns or sets the starting number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers.startingnumber?view=word-pia"/>
   public int StartingNumber { get; set; }
 
   /// <summary>
-  /// The show first page number.
+  /// Returns or sets whether show first page number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers.showfirstpagenumber?view=word-pia"/>
   public bool ShowFirstPageNumber { get; set; }
 
   /// <summary>
-  /// The double quote.
+  /// Returns or sets whether double quote.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers.doublequote?view=word-pia"/>
   public bool DoubleQuote { get; set; }

@@ -7,37 +7,37 @@ namespace DocumentModel.Interop.Word;
 public interface Rectangle : InteropObject
 {
   /// <summary>
-  /// The rectangle type.
+  /// Returns the rectangle type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.rectangletype?view=word-pia"/>
   public WdRectangleType RectangleType { get; }
   /// <summary>
-  /// The left.
+  /// Returns the left.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.left?view=word-pia"/>
   public int Left { get; }
   /// <summary>
-  /// The top.
+  /// Returns the top.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.top?view=word-pia"/>
   public int Top { get; }
   /// <summary>
-  /// The width.
+  /// Returns the width.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.width?view=word-pia"/>
   public int Width { get; }
   /// <summary>
-  /// The height.
+  /// Returns the height.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.height?view=word-pia"/>
   public int Height { get; }
   /// <summary>
-  /// The range.
+  /// Returns the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.range?view=word-pia"/>
   public Range Range { get; }
   /// <summary>
-  /// The lines.
+  /// Returns the lines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.lines?view=word-pia"/>
   public Lines Lines { get; }

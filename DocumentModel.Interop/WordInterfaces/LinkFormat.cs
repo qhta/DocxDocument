@@ -7,43 +7,43 @@ namespace DocumentModel.Interop.Word;
 public partial interface LinkFormat : InteropObject
 {
   /// <summary>
-  /// The auto update.
+  /// Returns or sets whether the linked object is updated automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.autoupdate?view=word-pia"/>
   public bool AutoUpdate { get; set; }
 
   /// <summary>
-  /// The source name.
+  /// Returns the source file name for the linked object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.sourcename?view=word-pia"/>
   public string SourceName { get; }
 
   /// <summary>
-  /// The source path.
+  /// Returns the source path for the linked object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.sourcepath?view=word-pia"/>
   public string SourcePath { get; }
 
   /// <summary>
-  /// The locked.
+  /// Returns or sets whether the link is locked.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.locked?view=word-pia"/>
   public bool Locked { get; set; }
 
   /// <summary>
-  /// The type.
+  /// Returns the type of linked object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.type?view=word-pia"/>
   public WdLinkType Type { get; }
 
   /// <summary>
-  /// The source full name.
+  /// Returns or sets the full path and file name of the source for the linked object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.sourcefullname?view=word-pia"/>
   public string SourceFullName { get; set; }
 
   /// <summary>
-  /// The save picture with document.
+  /// Returns or sets whether the linked picture is saved with the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.savepicturewithdocument?view=word-pia"/>
   public bool SavePictureWithDocument { get; set; }
