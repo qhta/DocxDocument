@@ -7,21 +7,20 @@
 public partial interface Options : InteropObject
 {
   /// <summary>
-  /// Returns or sets whether allow accented uppercase.
+  /// True if accents are retained when a French language character is changed to uppercase.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.allowaccenteduppercase?view=word-pia"/>
   public bool AllowAccentedUppercase { get; set; }
 
   /// <summary>
-  /// True if pressing Microsoft Word key combinations that produce actions in WordPerfect
-  /// displays dialog boxes that describe how to perform the equivalent actions in Word.
+  /// True if pressing Microsoft Word key combinations that produce actions in WordPerfect displays dialog boxes
+  /// that describe how to perform the equivalent actions in Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.wphelp?view=word-pia"/>
   public bool WPHelp { get; set; }
 
   /// <summary>
-  /// True if pressing Microsoft Word key combinations that produce actions in WordPerfect
-  /// displays dialog boxes that describe how to perform the equivalent actions in Word.
+  /// True to enable in Microsoft Word navigation keys for WordPerfect users.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.wpdocnavkeys?view=word-pia"/>
   public bool WPDocNavKeys { get; set; }
@@ -45,9 +44,9 @@ public partial interface Options : InteropObject
   public bool EnableSound { get; set; }
 
   /// <summary>
-  /// True if Microsoft Word displays the Convert File dialog box before it opens or inserts a file
-  /// that isn't a Word document or template.
-  /// In the Convert File dialog box, the user chooses the format to convert the file from.
+  /// True if Microsoft Word displays the Convert File dialog box before it opens or inserts a file that isn't a
+  /// Word document or template. In the Convert File dialog box, the user chooses the format to convert the file
+  /// from.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.confirmconversions?view=word-pia"/>
   public bool ConfirmConversions { get; set; }
@@ -79,13 +78,15 @@ public partial interface Options : InteropObject
 
   /// <summary>
   /// You have requested Help for a keyword used only on the Macintosh. For information about this keyword, consult
+  /// the language reference Help included with Microsoft Office Macintosh Edition.
   /// </summary>
   /// <remarks>This option works only on the Macintosh.</remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.shortmenunames?view=word-pia"/>
   public bool ShortMenuNames { get; set; }
 
   /// <summary>
-  /// Returns or sets whether to copy text to clipboard in RTF.
+  /// You have requested Help for a keyword used only on the Macintosh. For information about this keyword, consult
+  /// the language reference Help included with Microsoft Office Macintosh Edition.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.rtfinclipboard?view=word-pia"/>
   public bool RTFInClipboard { get; set; }
@@ -98,8 +99,8 @@ public partial interface Options : InteropObject
 
   /// <summary>
   /// True if Microsoft Word prints document summary information on a separate page at the end of the document.
-  /// False if document summary information is not printed.
-  /// Summary information is found in the Properties dialog box (File menu).
+  /// False if document summary information is not printed. Summary information is found in the Properties dialog
+  /// box (File menu).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.printproperties?view=word-pia"/>
   public bool PrintProperties { get; set; }
@@ -123,7 +124,7 @@ public partial interface Options : InteropObject
   public bool PrintHiddenText { get; set; }
 
   /// <summary>
-  /// True if envelope feeder installed.
+  /// True if the current printer has a special feeder for envelopes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.envelopefeederinstalled?view=word-pia"/>
   public bool EnvelopeFeederInstalled { get; }
@@ -159,43 +160,47 @@ public partial interface Options : InteropObject
   public int DefaultTrayID { get; set; }
 
   /// <summary>
-  /// True if Microsoft Word creates a backup copy of the document.
+  /// True if Microsoft Word creates a backup copy each time a document is saved.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.createbackup?view=word-pia"/>
   public bool CreateBackup { get; set; }
 
   /// <summary>
-  /// True if Microsoft Word allows fast save.
+  /// True if Microsoft Word saves only changes to a document. When reopening the document, Word uses the saved
+  /// changes to reconstruct the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.allowfastsave?view=word-pia"/>
   public bool AllowFastSave { get; set; }
 
   /// <summary>
-  /// True if Microsoft Word prompts to save properties.
+  /// True if Microsoft Word prompts for document property information when saving a new document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.savepropertiesprompt?view=word-pia"/>
   public bool SavePropertiesPrompt { get; set; }
 
   /// <summary>
-  /// True if Microsoft Word prompts to save the normal template.
+  /// True if Microsoft Word prompts the user for confirmation to save changes to the Normal template before it
+  /// quits. False if Word automatically saves changes to the Normal template before it quits.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.savenormalprompt?view=word-pia"/>
   public bool SaveNormalPrompt { get; set; }
 
   /// <summary>
-  /// Returns or sets the save interval.
+  /// Returns or sets the time interval in minutes for saving AutoRecover information.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.saveinterval?view=word-pia"/>
   public int SaveInterval { get; set; }
 
   /// <summary>
-  /// True if Microsoft Word saves documents in the background.
+  /// True if Microsoft Word saves documents in the background. When Word is saving in the background, users can
+  /// continue to type and to choose commands.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.backgroundsave?view=word-pia"/>
   public bool BackgroundSave { get; set; }
 
   /// <summary>
-  /// Returns or sets how Microsoft Word formats inserted text while change tracking is enabled (the TrackRevisions property is True).
+  /// Returns or sets how Microsoft Word formats inserted text while change tracking is enabled (the TrackRevisions
+  /// property is True).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.insertedtextmark?view=word-pia"/>
   public WdInsertedTextMark InsertedTextMark { get; set; }
@@ -213,7 +218,7 @@ public partial interface Options : InteropObject
   public WdRevisedLinesMark RevisedLinesMark { get; set; }
 
   /// <summary>
-  /// Returns or sets the color of text that is deleted while change tracking is enabled.
+  /// Returns or sets the color of text that is inserted while change tracking is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.insertedtextcolor?view=word-pia"/>
   public WdColorIndex InsertedTextColor { get; set; }
@@ -241,8 +246,8 @@ public partial interface Options : InteropObject
   public bool Overtype { get; set; }
 
   /// <summary>
-  /// True if the result of typing or pasting replaces the selection.
-  /// False if the result of typing or pasting is added before the selection, leaving the selection intact.
+  /// True if the result of typing or pasting replaces the selection. False if the result of typing or pasting is
+  /// added before the selection, leaving the selection intact.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.replaceselection?view=word-pia"/>
   public bool ReplaceSelection { get; set; }
@@ -254,7 +259,7 @@ public partial interface Options : InteropObject
   public bool AllowDragAndDrop { get; set; }
 
   /// <summary>
-  /// True if Microsoft Word automatically selects the entire word when you double-click it.
+  /// True if dragging selects one word at a time instead of one character at a time.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autowordselection?view=word-pia"/>
   public bool AutoWordSelection { get; set; }
@@ -266,14 +271,15 @@ public partial interface Options : InteropObject
   public bool INSKeyForPaste { get; set; }
 
   /// <summary>
-  /// True if Microsoft Word automatically adjusts the spacing between words and punctuation when cutting and pasting occurs.
+  /// True if Microsoft Word automatically adjusts the spacing between words and punctuation when cutting and
+  /// pasting occurs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.smartcutpaste?view=word-pia"/>
   public bool SmartCutPaste { get; set; }
 
   /// <summary>
-  /// True if the TAB and BACKSPACE keys can be used to increase and decrease, respectively, the left indent of paragraphs
-  /// and if the BACKSPACE key can be used to change right-aligned paragraphs to centered paragraphs
+  /// Determines if the TAB and BACKSPACE keys can be used to increase and decrease, respectively, the left indent
+  /// of paragraphs and if the BACKSPACE key can be used to change right-aligned paragraphs to centered paragraphs
   /// and centered paragraphs to left-aligned paragraphs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.tabindentkey?view=word-pia"/>
@@ -293,7 +299,7 @@ public partial interface Options : InteropObject
   public bool AnimateScreenMovements { get; set; }
 
   /// <summary>
-  /// Returns or sets whether virus protection is enabled. Reserved for internal use.
+  /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.virusprotection?view=word-pia"/>
   public bool VirusProtection { get; set; }
@@ -311,50 +317,50 @@ public partial interface Options : InteropObject
   public WdColorIndex RevisedPropertiesColor { get; set; }
 
   /// <summary>
-  /// True if AutoShapes or East Asian characters are automatically aligned with an invisible grid
-  /// when they are drawn, moved, or resized in new documents.
+  /// True if AutoShapes or East Asian characters are automatically aligned with an invisible grid when they are
+  /// drawn, moved, or resized in new documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.snaptogrid?view=word-pia"/>
   public bool SnapToGrid { get; set; }
 
   /// <summary>
-  /// True if Microsoft Word automatically aligns AutoShapes or East Asian characters with invisible gridlines
-  /// that go through the vertical and horizontal edges of other AutoShapes or East Asian characters in new documents.
+  /// True if Microsoft Word automatically aligns AutoShapes or East Asian characters with invisible gridlines that
+  /// go through the vertical and horizontal edges of other AutoShapes or East Asian characters in new documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.snaptoshapes?view=word-pia"/>
   public bool SnapToShapes { get; set; }
 
   /// <summary>
-  /// Returns or sets the amount of horizontal space between the invisible gridlines that Microsoft Word uses
-  /// when you draw, move, and resize AutoShapes or East Asian characters in new documents.
+  /// Returns or sets the amount of horizontal space between the invisible gridlines that Microsoft Word uses when
+  /// you draw, move, and resize AutoShapes or East Asian characters in new documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.griddistancehorizontal?view=word-pia"/>
   public float GridDistanceHorizontal { get; set; }
 
   /// <summary>
-  /// Returns or sets the amount of vertical space between the invisible gridlines that Microsoft Word uses
-  /// when you draw, move, and resize AutoShapes or East Asian characters in new documents.
+  /// Returns or sets the amount of vertical space between the invisible gridlines that Microsoft Word uses when you
+  /// draw, move, and resize AutoShapes or East Asian characters in new documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.griddistancevertical?view=word-pia"/>
   public float GridDistanceVertical { get; set; }
 
   /// <summary>
-  /// Returns or sets the point, relative to the left edge of the page, where you want the invisible grid
-  /// for drawing, moving, and resizing AutoShapes or East Asian characters to begin in new documents.
+  /// Returns or sets the point, relative to the left edge of the page, where you want the invisible grid for
+  /// drawing, moving, and resizing AutoShapes or East Asian characters to begin in new documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.gridoriginhorizontal?view=word-pia"/>
   public float GridOriginHorizontal { get; set; }
 
   /// <summary>
-  /// Returns or sets the point, relative to the top of the page, where you want the invisible grid
-  /// for drawing, moving, and resizing AutoShapes or East Asian characters to begin in new documents.
+  /// Returns or sets the point, relative to the top of the page, where you want the invisible grid for drawing,
+  /// moving, and resizing AutoShapes or East Asian characters to begin in new documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.gridoriginvertical?view=word-pia"/>
   public float GridOriginVertical { get; set; }
 
   /// <summary>
-  /// True if Microsoft Word displays an unconfirmed character string in the Japanese Input Method Editor (IME)
-  /// as an insertion between existing (confirmed) character strings.
+  /// True if Microsoft Word displays an unconfirmed character string in the Japanese Input Method Editor (IME) as
+  /// an insertion between existing (confirmed) character strings.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.inlineconversion?view=word-pia"/>
   public bool InlineConversion { get; set; }
@@ -372,7 +378,8 @@ public partial interface Options : InteropObject
   public bool AutoFormatApplyHeadings { get; set; }
 
   /// <summary>
-  /// True if styles are automatically applied to lists when Microsoft Word formats a document or range automatically.
+  /// True if styles are automatically applied to lists when Microsoft Word formats a document or range
+  /// automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autoformatapplylists?view=word-pia"/>
   public bool AutoFormatApplyLists { get; set; }
@@ -532,7 +539,7 @@ public partial interface Options : InteropObject
   public WdLineStyle DefaultBorderLineStyle { get; set; }
 
   /// <summary>
-  /// Returns or sets whether check spelling as you type.
+  /// True if Microsoft Word checks spelling and marks errors automatically as you type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.checkspellingasyoutype?view=word-pia"/>
   public bool CheckSpellingAsYouType { get; set; }
@@ -550,19 +557,20 @@ public partial interface Options : InteropObject
   public bool IgnoreInternetAndFileAddresses { get; set; }
 
   /// <summary>
-  /// Returns or sets whether show readability statistics.
+  /// True if Microsoft Word displays a list of summary statistics, including measures of readability, when it has
+  /// finished checking grammar.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showreadabilitystatistics?view=word-pia"/>
   public bool ShowReadabilityStatistics { get; set; }
 
   /// <summary>
-  /// Returns or sets whether ignore uppercase.
+  /// True if words in all uppercase letters are ignored while checking spelling.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.ignoreuppercase?view=word-pia"/>
   public bool IgnoreUppercase { get; set; }
 
   /// <summary>
-  /// Returns or sets whether ignore mixed digits.
+  /// True if words that contain numbers are ignored while checking spelling.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.ignoremixeddigits?view=word-pia"/>
   public bool IgnoreMixedDigits { get; set; }
@@ -580,7 +588,7 @@ public partial interface Options : InteropObject
   public bool SuggestSpellingCorrections { get; set; }
 
   /// <summary>
-  /// Returns or sets the default border line width.
+  /// Returns or sets the default line width of borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultborderlinewidth?view=word-pia"/>
   public WdLineWidth DefaultBorderLineWidth { get; set; }
@@ -592,25 +600,28 @@ public partial interface Options : InteropObject
   public bool CheckGrammarWithSpelling { get; set; }
 
   /// <summary>
-  /// Returns or sets the default open format.
+  /// Returns or sets the default file converter used to open documents. Can be a number returned by the OpenFormat
+  /// property, or one of the WdOpenFormat constants.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultopenformat?view=word-pia"/>
   public WdOpenFormat DefaultOpenFormat { get; set; }
 
   /// <summary>
-  /// Returns or sets whether print draft.
+  /// True if Microsoft Word prints using minimal formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.printdraft?view=word-pia"/>
   public bool PrintDraft { get; set; }
 
   /// <summary>
-  /// Returns or sets whether print reverse.
+  /// True if Microsoft Word prints pages in reverse order.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.printreverse?view=word-pia"/>
   public bool PrintReverse { get; set; }
 
   /// <summary>
-  /// Returns or sets whether map paper size.
+  /// True if documents formatted for another country's/region's standard paper size (for example, A4) are
+  /// automatically adjusted so that they're printed correctly on your country's/region's standard paper size (for
+  /// example, Letter).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.mappapersize?view=word-pia"/>
   public bool MapPaperSize { get; set; }
@@ -700,55 +711,59 @@ public partial interface Options : InteropObject
   public bool AutoFormatAsYouTypeInsertOvers { get; set; }
 
   /// <summary>
-  /// Returns or sets whether display grid lines.
+  /// True if Microsoft Word displays the document grid. This property is the equivalent of the Gridlines command on
+  /// the View menu.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.displaygridlines?view=word-pia"/>
   public bool DisplayGridLines { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy case.
+  /// True if Microsoft Word ignores the distinction between uppercase and lowercase letters during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzycase?view=word-pia"/>
   public bool MatchFuzzyCase { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy byte.
+  /// True if Microsoft Word ignores the distinction between full-width and half-width characters (Latin or
+  /// Japanese) during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzybyte?view=word-pia"/>
   public bool MatchFuzzyByte { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy hiragana.
+  /// True if Microsoft Word ignores the distinction between hiragana and katakana during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyhiragana?view=word-pia"/>
   public bool MatchFuzzyHiragana { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy small kana.
+  /// True if Microsoft Word ignores the distinction between diphthongs and double consonants during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzysmallkana?view=word-pia"/>
   public bool MatchFuzzySmallKana { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy dash.
+  /// True if Microsoft Word ignores the distinction between minus signs, long vowel sounds, and dashes during a
+  /// search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzydash?view=word-pia"/>
   public bool MatchFuzzyDash { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy iteration mark.
+  /// True if Microsoft Word ignores the distinction between types of repetition marks during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyiterationmark?view=word-pia"/>
   public bool MatchFuzzyIterationMark { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy kanji.
+  /// True if Microsoft Word ignores the distinction between standard and nonstandard kanji ideography during a
+  /// search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzykanji?view=word-pia"/>
   public bool MatchFuzzyKanji { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy old kana.
+  /// True if Microsoft Word ignores the distinction between new kana and old kana characters during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyoldkana?view=word-pia"/>
   public bool MatchFuzzyOldKana { get; set; }
@@ -760,61 +775,68 @@ public partial interface Options : InteropObject
   public bool MatchFuzzyProlongedSoundMark { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy d z.
+  /// True if Microsoft Word ignores the distinction between the "di" and "zi" characters and between the "du" and
+  /// "zu" characters during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzydz?view=word-pia"/>
   public bool MatchFuzzyDZ { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy b v.
+  /// True if Microsoft Word ignores the distinction between the "ba" and "vua" characters and between the "ha" and
+  /// "fua" characters during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzybv?view=word-pia"/>
   public bool MatchFuzzyBV { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy t c.
+  /// True if Microsoft Word ignores the distinction between the "tsui", "tei", and "chi" characters and between the
+  /// "dei" and "ji" characters during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzytc?view=word-pia"/>
   public bool MatchFuzzyTC { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy h f.
+  /// True if Microsoft Word ignores the distinction the "heyu" and "fuyu" characters and between the "beyu" and
+  /// "vuyu" characters during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyhf?view=word-pia"/>
   public bool MatchFuzzyHF { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy z j.
+  /// True if Microsoft Word ignores the distinction the "se" and "shie" characters and between the "ze" and "jie"
+  /// characters during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyzj?view=word-pia"/>
   public bool MatchFuzzyZJ { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy a y.
+  /// True if Microsoft Word ignores the distinction between the "a" and "ya" characters following the "i"-row and
+  /// "e"-row characters during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyay?view=word-pia"/>
   public bool MatchFuzzyAY { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy ki ku.
+  /// True if Microsoft Word ignores the distinction between the "ki" and "ku" characters before "sa"- row
+  /// characters during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzykiku?view=word-pia"/>
   public bool MatchFuzzyKiKu { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy punctuation.
+  /// True if Microsoft Word ignores the distinction between types of punctuation marks during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzypunctuation?view=word-pia"/>
   public bool MatchFuzzyPunctuation { get; set; }
 
   /// <summary>
-  /// Returns or sets whether match fuzzy space.
+  /// True if Microsoft Word ignores the distinction between space markers used during a search.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyspace?view=word-pia"/>
   public bool MatchFuzzySpace { get; set; }
 
   /// <summary>
-  /// Returns or sets whether apply far east fonts to ascii.
+  /// True if Microsoft Word applies East Asian fonts to Latin text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.applyfareastfontstoascii?view=word-pia"/>
   public bool ApplyFarEastFontsToAscii { get; set; }
@@ -838,7 +860,7 @@ public partial interface Options : InteropObject
   public bool PrintEvenPagesInAscendingOrder { get; set; }
 
   /// <summary>
-  /// Returns or sets the default border color index.
+  /// Returns or sets the default line color for borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultbordercolorindex?view=word-pia"/>
   public WdColorIndex DefaultBorderColorIndex { get; set; }
@@ -862,7 +884,8 @@ public partial interface Options : InteropObject
   public bool HangulHanjaFastConversion { get; set; }
 
   /// <summary>
-  /// Returns or sets whether check hangul endings.
+  /// True if Microsoft Word automatically detects Hangul endings and ignores them during conversion from Hangul to
+  /// Hanja.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.checkhangulendings?view=word-pia"/>
   public bool CheckHangulEndings { get; set; }
@@ -880,19 +903,21 @@ public partial interface Options : InteropObject
   public WdMultipleWordConversionsMode MultipleWordConversionsMode { get; set; }
 
   /// <summary>
-  /// Returns or sets the default border color.
+  /// Returns or sets the default 24-bit color to use for new Border objects. Can be any valid WdColor constant or a
+  /// value returned by Visual Basic's RGB function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultbordercolor?view=word-pia"/>
   public WdColor DefaultBorderColor { get; set; }
 
   /// <summary>
-  /// Returns or sets whether allow pixel units.
+  /// True if Microsoft Word uses pixels as the default unit of measurement for HTML features that support
+  /// measurements.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.allowpixelunits?view=word-pia"/>
   public bool AllowPixelUnits { get; set; }
 
   /// <summary>
-  /// Returns or sets whether use character unit.
+  /// True if Microsoft Word uses characters as the default measurement unit for the current document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.usecharacterunit?view=word-pia"/>
   public bool UseCharacterUnit { get; set; }
@@ -904,55 +929,56 @@ public partial interface Options : InteropObject
   public bool AllowCompoundNounProcessing { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto keyboard switching.
+  /// True if Microsoft Word automatically switches the keyboard language to match what you’re typing at any given
+  /// time.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autokeyboardswitching?view=word-pia"/>
   public bool AutoKeyboardSwitching { get; set; }
 
   /// <summary>
-  /// Returns or sets the document view direction.
+  /// Returns or sets the alignment and reading order for the entire document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.documentviewdirection?view=word-pia"/>
   public WdDocumentViewDirection DocumentViewDirection { get; set; }
 
   /// <summary>
-  /// Returns or sets the arabic numeral.
+  /// Returns or sets the numeral style for an Arabic language document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.arabicnumeral?view=word-pia"/>
   public WdArabicNumeral ArabicNumeral { get; set; }
 
   /// <summary>
-  /// Returns or sets the month names.
+  /// Returns or sets the direction for conversion between Hangul and Hanja.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.monthnames?view=word-pia"/>
   public WdMonthNames MonthNames { get; set; }
 
   /// <summary>
-  /// Returns or sets the cursor movement.
+  /// Returns or sets how the insertion point progresses within bidirectional text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.cursormovement?view=word-pia"/>
   public WdCursorMovement CursorMovement { get; set; }
 
   /// <summary>
-  /// Returns or sets the visual selection.
+  /// Returns or sets the selection behavior based on visual cursor movement in a right-to-left language document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.visualselection?view=word-pia"/>
   public WdVisualSelection VisualSelection { get; set; }
 
   /// <summary>
-  /// Returns or sets whether show diacritics.
+  /// True if diacritics are visible in a right-to-left language document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showdiacritics?view=word-pia"/>
   public bool ShowDiacritics { get; set; }
 
   /// <summary>
-  /// Returns or sets whether show control characters.
+  /// True if bidirectional control characters are visible in the current document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showcontrolcharacters?view=word-pia"/>
   public bool ShowControlCharacters { get; set; }
 
   /// <summary>
-  /// Returns or sets whether add control characters.
+  /// True if Microsoft Word adds bidirectional control characters when cutting and copying text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.addcontrolcharacters?view=word-pia"/>
   public bool AddControlCharacters { get; set; }
@@ -964,25 +990,25 @@ public partial interface Options : InteropObject
   public bool AddBiDirectionalMarksWhenSavingTextFile { get; set; }
 
   /// <summary>
-  /// Returns or sets whether strict initial alef hamza.
+  /// True if the spelling checker uses spelling rules regarding Arabic words beginning with an alef hamza.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.strictinitialalefhamza?view=word-pia"/>
   public bool StrictInitialAlefHamza { get; set; }
 
   /// <summary>
-  /// Returns or sets whether strict final yaa.
+  /// True if the spelling checker uses spelling rules regarding Arabic words ending with the letter yaa.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.strictfinalyaa?view=word-pia"/>
   public bool StrictFinalYaa { get; set; }
 
   /// <summary>
-  /// Returns or sets the hebrew mode.
+  /// Returns or sets the mode for the Hebrew spelling checker.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.hebrewmode?view=word-pia"/>
   public WdHebSpellStart HebrewMode { get; set; }
 
   /// <summary>
-  /// Returns or sets the arabic mode.
+  /// Returns or sets the mode for the Arabic spelling checker.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.arabicmode?view=word-pia"/>
   public WdAraSpeller ArabicMode { get; set; }
@@ -1000,25 +1026,26 @@ public partial interface Options : InteropObject
   public bool UseGermanSpellingReform { get; set; }
 
   /// <summary>
-  /// Returns or sets the interpret high ansi.
+  /// Returns or sets the high-ANSI text interpretation behavior.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.interprethighansi?view=word-pia"/>
   public WdHighAnsiText InterpretHighAnsi { get; set; }
 
   /// <summary>
-  /// Returns or sets whether add heb double quote.
+  /// True if Microsoft Word encloses number formats in double quotation marks (").
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.addhebdoublequote?view=word-pia"/>
   public bool AddHebDoubleQuote { get; set; }
 
   /// <summary>
-  /// Returns or sets whether use diff diac color.
+  /// True if you can set the color of diacritics in the current document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.usediffdiaccolor?view=word-pia"/>
   public bool UseDiffDiacColor { get; set; }
 
   /// <summary>
-  /// Returns or sets the diacritic color val.
+  /// Returns or sets the 24-bit color to be used for diacritics in a right-to-left language document. Can be any
+  /// valid WdColor constant or a value returned by Visual Basic's RGB function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.diacriticcolorval?view=word-pia"/>
   public WdColor DiacriticColorVal { get; set; }
@@ -1030,37 +1057,39 @@ public partial interface Options : InteropObject
   public bool OptimizeForWord97byDefault { get; set; }
 
   /// <summary>
-  /// Returns or sets whether local network file.
+  /// True if Microsoft Word creates a local copy of a file on the user's machine when editing a file stored on a
+  /// network server.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.localnetworkfile?view=word-pia"/>
   public bool LocalNetworkFile { get; set; }
 
   /// <summary>
-  /// Returns or sets whether type n replace.
+  /// True for Microsoft Word to replace illegal South Asian characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.typenreplace?view=word-pia"/>
   public bool TypeNReplace { get; set; }
 
   /// <summary>
-  /// Returns or sets whether sequence check.
+  /// True to check the sequence of independent characters for South Asian text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.sequencecheck?view=word-pia"/>
   public bool SequenceCheck { get; set; }
 
   /// <summary>
-  /// Returns or sets whether background open.
+  /// True for Microsoft Word to open Web documents in the background.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.backgroundopen?view=word-pia"/>
   public bool BackgroundOpen { get; set; }
 
   /// <summary>
-  /// Returns or sets whether disable features by default.
+  /// True for Microsoft Word to disable in all documents all features introduced after the version of Word
+  /// specified in the DisableFeaturesIntroducedAfterbyDefault property. The default value is False.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.disablefeaturesbydefault?view=word-pia"/>
   public bool DisableFeaturesbyDefault { get; set; }
 
   /// <summary>
-  /// Returns or sets whether paste adjust word spacing.
+  /// True if Microsoft Word automatically adjusts the spacing of words when cutting and pasting selections.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pasteadjustwordspacing?view=word-pia"/>
   public bool PasteAdjustWordSpacing { get; set; }
@@ -1078,31 +1107,31 @@ public partial interface Options : InteropObject
   public bool PasteAdjustTableFormatting { get; set; }
 
   /// <summary>
-  /// Returns or sets whether paste smart style behavior.
+  /// True if Microsoft Word intelligently merges styles when pasting a selection from a different document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pastesmartstylebehavior?view=word-pia"/>
   public bool PasteSmartStyleBehavior { get; set; }
 
   /// <summary>
-  /// Returns or sets whether paste merge from p p t.
+  /// True to merge text formatting when pasting from Microsoft PowerPoint.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pastemergefromppt?view=word-pia"/>
   public bool PasteMergeFromPPT { get; set; }
 
   /// <summary>
-  /// Returns or sets whether paste merge from x l.
+  /// True to merge table formatting when pasting from Microsoft Excel.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pastemergefromxl?view=word-pia"/>
   public bool PasteMergeFromXL { get; set; }
 
   /// <summary>
-  /// Returns or sets whether ctrl click hyperlink to open.
+  /// True if Microsoft Word requires holding down the CTRL key while clicking to open a hyperlink.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.ctrlclickhyperlinktoopen?view=word-pia"/>
   public bool CtrlClickHyperlinkToOpen { get; set; }
 
   /// <summary>
-  /// Returns or sets the picture wrap type.
+  /// Sets or returns a WdWrapTypeMerged constant that indicates how Microsoft Word wraps text around pictures.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.picturewraptype?view=word-pia"/>
   public WdWrapTypeMerged PictureWrapType { get; set; }
@@ -1114,43 +1143,47 @@ public partial interface Options : InteropObject
   public WdDisableFeaturesIntroducedAfter DisableFeaturesIntroducedAfterbyDefault { get; set; }
 
   /// <summary>
-  /// Returns or sets whether paste smart cut paste.
+  /// True if Microsoft Word intelligently pastes selections into a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pastesmartcutpaste?view=word-pia"/>
   public bool PasteSmartCutPaste { get; set; }
 
   /// <summary>
-  /// Returns or sets whether display paste options.
+  /// True for Microsoft Word to display the Paste Options button, which displays directly under newly pasted text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.displaypasteoptions?view=word-pia"/>
   public bool DisplayPasteOptions { get; set; }
 
   /// <summary>
-  /// Returns or sets whether prompt update style.
+  /// True displays a message asking the user to verify whether they want to reformat a style or reapply the
+  /// original style formatting when changing the formatting of styles. False reapplies the style formatting to the
+  /// selection without verifying whether the user wants to change the style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.promptupdatestyle?view=word-pia"/>
   public bool PromptUpdateStyle { get; set; }
 
   /// <summary>
-  /// Returns or sets the default e postage app.
+  /// Sets or returns a String that represents the path and file name of the default electronic postage application.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultepostageapp?view=word-pia"/>
   public string DefaultEPostageApp { get; set; }
 
   /// <summary>
-  /// Returns or sets the default text encoding.
+  /// Returns or sets a MsoEncoding constant representing the code page, or character set, that Microsoft Word uses
+  /// for all documents saved as encoded text files.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaulttextencoding?view=word-pia"/>
   public Core.MsoEncoding DefaultTextEncoding { get; set; }
 
   /// <summary>
-  /// Returns or sets whether label smart tags.
+  /// True for Microsoft Word to mark text in documents with smart tag information.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.labelsmarttags?view=word-pia"/>
   public bool LabelSmartTags { get; set; }
 
   /// <summary>
-  /// Returns or sets whether display smart tag buttons.
+  /// True for Microsoft Word to display a button directly above a smart tag when a mouse pointer is positioned over
+  /// it.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.displaysmarttagbuttons?view=word-pia"/>
   public bool DisplaySmartTagButtons { get; set; }
@@ -1162,37 +1195,41 @@ public partial interface Options : InteropObject
   public bool WarnBeforeSavingPrintingSendingMarkup { get; set; }
 
   /// <summary>
-  /// Returns or sets whether store RSID on save.
+  /// True for Microsoft Word to assign a random number to changes in a document, each time a document is saved, to
+  /// facilitate comparing and merging documents. Word stores the random numbers in a table and updates the table
+  /// after each save.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.storersidonsave?view=word-pia"/>
   public bool StoreRSIDOnSave { get; set; }
 
   /// <summary>
-  /// Returns or sets whether show format error.
+  /// True for Microsoft Word to mark inconsistencies in formatting by placing a squiggly underline beneath text
+  /// formatted similarly to other formatting that is used more frequently in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showformaterror?view=word-pia"/>
   public bool ShowFormatError { get; set; }
 
   /// <summary>
-  /// Returns or sets whether format scanning.
+  /// True for Microsoft Word to keep track of all formatting in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.formatscanning?view=word-pia"/>
   public bool FormatScanning { get; set; }
 
   /// <summary>
-  /// Returns or sets whether paste merge lists.
+  /// True to merge the formatting of pasted lists with surrounding lists.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pastemergelists?view=word-pia"/>
   public bool PasteMergeLists { get; set; }
 
   /// <summary>
-  /// Returns or sets whether auto create new drawings.
+  /// True for Microsoft Word to draw newly created shapes in a drawing canvas.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autocreatenewdrawings?view=word-pia"/>
   public bool AutoCreateNewDrawings { get; set; }
 
   /// <summary>
-  /// Returns or sets whether smart para selection.
+  /// True for Microsoft Word to include the paragraph mark in a selection when selecting most or all of a
+  /// paragraph.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.smartparaselection?view=word-pia"/>
   public bool SmartParaSelection { get; set; }
@@ -1204,121 +1241,136 @@ public partial interface Options : InteropObject
   public WdRevisionsBalloonPrintOrientation RevisionsBalloonPrintOrientation { get; set; }
 
   /// <summary>
-  /// Returns or sets the comments color.
+  /// Returns or sets a WdColorIndex constant that represents the color of comments in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.commentscolor?view=word-pia"/>
   public WdColorIndex CommentsColor { get; set; }
 
   /// <summary>
-  /// Returns or sets whether print x m l tag.
+  /// Returns a Boolean that represents whether to print the XML tags when printing a document. Corresponds to the
+  /// XML tags check box on the Print tab in the Options dialog box. True indicates that tags are printed. False
+  /// indicates tags are not printed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.printxmltag?view=word-pia"/>
   public bool PrintXMLTag { get; set; }
 
   /// <summary>
-  /// Returns or sets whether print backgrounds.
+  /// Returns a Boolean that represents whether background colors and images are printed when a document is printed.
+  /// True indicates that background colors and images are printed. False indicates that background colors and
+  /// images are not printed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.printbackgrounds?view=word-pia"/>
   public bool PrintBackgrounds { get; set; }
 
   /// <summary>
-  /// Returns or sets whether allow reading mode.
+  /// True indicates that Microsoft Word opens documents in Reading Layout view. Corresponds to the Allow starting
+  /// in Reading Layout check box on the General tab of the Options dialog box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.allowreadingmode?view=word-pia"/>
   public bool AllowReadingMode { get; set; }
 
   /// <summary>
-  /// Returns or sets whether show markup open save.
+  /// Returns or sets a Boolean that represents whether Microsoft Word displays hidden markup when opening or saving
+  /// a file.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showmarkupopensave?view=word-pia"/>
   public bool ShowMarkupOpenSave { get; set; }
 
   /// <summary>
-  /// Returns or sets whether smart cursoring.
+  /// Returns or sets a Boolean that represents whether smart cursoring is enabled. True enables smart cursoring.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.smartcursoring?view=word-pia"/>
   public bool SmartCursoring { get; set; }
 
   /// <summary>
-  /// Returns or sets the move to text mark.
+  /// Returns or sets a WdMoveToTextMark constant that represents the type of revision mark to use for moved text.
+  /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.movetotextmark?view=word-pia"/>
   public WdMoveToTextMark MoveToTextMark { get; set; }
 
   /// <summary>
-  /// Returns or sets the move from text mark.
+  /// Returns or sets a WdMoveFromTextMark constant that represents the type of revision mark to use for moved text.
+  /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.movefromtextmark?view=word-pia"/>
   public WdMoveFromTextMark MoveFromTextMark { get; set; }
 
   /// <summary>
-  /// Returns or sets the bibliography style.
+  /// Returns or sets a String that represents the name of the style to use for formatting bibliographies.
+  /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.bibliographystyle?view=word-pia"/>
   public string BibliographyStyle { get; set; }
 
   /// <summary>
-  /// Returns or sets the bibliography sort.
+  /// Returns or sets a String that represents the order in which to display sources in the Source Manager dialog
+  /// box. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.bibliographysort?view=word-pia"/>
   public string BibliographySort { get; set; }
 
   /// <summary>
-  /// Returns or sets the inserted cell color.
+  /// Returns or sets a WdCellColor constant that represents the color for an inserted table cell. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.insertedcellcolor?view=word-pia"/>
   public WdCellColor InsertedCellColor { get; set; }
 
   /// <summary>
-  /// Returns or sets the deleted cell color.
+  /// Returns or sets a WdCellColor constant that represents the color for a deleted cell. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.deletedcellcolor?view=word-pia"/>
   public WdCellColor DeletedCellColor { get; set; }
 
   /// <summary>
-  /// Returns or sets the merged cell color.
+  /// Returns or sets a WdCellColor constant that represents the color for merged table cells. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.mergedcellcolor?view=word-pia"/>
   public WdCellColor MergedCellColor { get; set; }
 
   /// <summary>
-  /// Returns or sets the split cell color.
+  /// Returns or sets a WdCellColor that represents the color for split table cells. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.splitcellcolor?view=word-pia"/>
   public WdCellColor SplitCellColor { get; set; }
 
   /// <summary>
-  /// Returns or sets whether show selection floaties.
+  /// Returns or sets a Boolean that represents whether mini toolbars display when a user selects text. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showselectionfloaties?view=word-pia"/>
   public bool ShowSelectionFloaties { get; set; }
 
   /// <summary>
-  /// Returns or sets whether show menu floaties.
+  /// Returns or sets a Boolean that represents whether to display mini toolbars when the user right- clicks in the
+  /// document window. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showmenufloaties?view=word-pia"/>
   public bool ShowMenuFloaties { get; set; }
 
   /// <summary>
-  /// Returns or sets whether show dev tools.
+  /// Returns or sets a Boolean that represents whether the Developer tab is displayed in the Ribbon. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showdevtools?view=word-pia"/>
   public bool ShowDevTools { get; set; }
 
   /// <summary>
-  /// Returns or sets whether enable live preview.
+  /// Sets or returns a Boolean that represents whether to show or hide gallery previews that appear when using
+  /// galleries that support previewing. True shows a preview in your document before applying the command.
+  /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.enablelivepreview?view=word-pia"/>
   public bool EnableLivePreview { get; set; }
 
   /// <summary>
-  /// Returns or sets whether equation auto build up.
+  /// Returns or sets a Boolean that represents whether Microsoft Office Word automatically converts equations to
+  /// professional format. True indicates that Word automatically converts equations to professional format.
+  /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.omathautobuildup?view=word-pia"/>
   public bool OMathAutoBuildUp { get; set; }
 
   /// <summary>
-  /// Returns or sets whether always use clear type.
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.alwaysusecleartype?view=word-pia"/>
   public bool AlwaysUseClearType { get; set; }
@@ -1354,109 +1406,120 @@ public partial interface Options : InteropObject
   public bool PasteOptionKeepBulletsAndNumbers { get; set; }
 
   /// <summary>
-  /// Returns or sets whether INS key for overtype.
+  /// True if the INS key can be used for switching Overtype on and off. Read/write Boolean.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.inskeyforovertype?view=word-pia"/>
   public bool INSKeyForOvertype { get; set; }
 
   /// <summary>
-  /// Returns or sets whether repeat word.
+  /// Returns or sets a Boolean that represents whether to mark words that are repeated when spelling is checked.
+  /// True flags repeated words. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.repeatword?view=word-pia"/>
   public bool RepeatWord { get; set; }
 
   /// <summary>
-  /// Returns or sets the french reform.
+  /// Returns or sets a WdFrenchSpeller constant that represents which spelling dictionary to use for regions of
+  /// text with language formatting set to French. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.frenchreform?view=word-pia"/>
   public WdFrenchSpeller FrenchReform { get; set; }
 
   /// <summary>
-  /// Returns or sets whether contextual speller.
+  /// Returns or sets a Boolean that represents whether to use the contextual speller to check spelling based on the
+  /// context of a word and the words around it. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.contextualspeller?view=word-pia"/>
   public bool ContextualSpeller { get; set; }
 
   /// <summary>
-  /// Returns or sets the move to text color.
+  /// Returns or sets a WdColorIndex constant that represents the color of moved text. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.movetotextcolor?view=word-pia"/>
   public WdColorIndex MoveToTextColor { get; set; }
 
   /// <summary>
-  /// Returns or sets the move from text color.
+  /// Returns or sets a WdColorIndex constant that represents the color of moved text. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.movefromtextcolor?view=word-pia"/>
   public WdColorIndex MoveFromTextColor { get; set; }
 
   /// <summary>
-  /// Returns or sets whether equation copy l f.
+  /// Returns or sets a Boolean that represents how equations are represented in plain text. True indicates
+  /// equations are represented in Linear Format. False indicates equations are represented in MathML. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.omathcopylf?view=word-pia"/>
   public bool OMathCopyLF { get; set; }
 
   /// <summary>
-  /// Returns or sets whether use normal style for list.
+  /// Returns or sets a Boolean that represents whether Microsoft Office Word uses the Normal style for bullets and
+  /// numbering. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.usenormalstyleforlist?view=word-pia"/>
   public bool UseNormalStyleForList { get; set; }
 
   /// <summary>
-  /// Returns or sets whether allow open in draft view.
+  /// Returns or sets a Boolean that represents whether to allow users to open documents in draft view. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.allowopenindraftview?view=word-pia"/>
   public bool AllowOpenInDraftView { get; set; }
 
   /// <summary>
-  /// Returns or sets whether enable legacy i m e mode.
+  /// Returns or sets aBoolean that represents whether to enable legacy IME mode. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.enablelegacyimemode?view=word-pia"/>
   public bool EnableLegacyIMEMode { get; set; }
 
   /// <summary>
-  /// Returns or sets whether do not prompt for convert.
+  /// Sets or returns a Boolean that represents whether to prompt a warning dialog when the Convert command is
+  /// invoked for documents that are in compatibility mode. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.donotpromptforconvert?view=word-pia"/>
   public bool DoNotPromptForConvert { get; set; }
 
   /// <summary>
-  /// Returns or sets whether precise positioning.
+  /// Returns or sets a Boolean that represents whether Word optimizes character positioning for print layout rather
+  /// than on-screen readability. True disables the default setting that compresses character spacing to facilitate
+  /// on-screen readability and enables character spacing for print media. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.precisepositioning?view=word-pia"/>
   public bool PrecisePositioning { get; set; }
 
   /// <summary>
-  /// Returns or sets the update style list behavior.
+  /// Gets or sets a WdUpdateStyleListBehavior constant that specifies the behavior Word 2010 should take when
+  /// updating a style to match a selection that contains numbering or bullets.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.updatestylelistbehavior?view=word-pia"/>
   public WdUpdateStyleListBehavior UpdateStyleListBehavior { get; set; }
 
   /// <summary>
-  /// Returns or sets whether strict taa marboota.
+  /// Gets or sets whether the spelling checker uses spelling rules to flag Arabic words ending with haa instead of
+  /// taa marboota.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.stricttaamarboota?view=word-pia"/>
   public bool StrictTaaMarboota { get; set; }
 
   /// <summary>
-  /// Returns or sets whether strict russian e.
+  /// Gets or sets whether the spelling checker uses spelling rules regarding Russian words that use the strict ë
+  /// character.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.strictrussiane?view=word-pia"/>
   public bool StrictRussianE { get; set; }
 
   /// <summary>
-  /// Returns or sets the spanish mode.
+  /// Gets or sets the mode for the Spanish speller.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.spanishmode?view=word-pia"/>
   public WdSpanishSpeller SpanishMode { get; set; }
 
   /// <summary>
-  /// Returns or sets the portugal reform.
+  /// Gets or sets the mode for the European Portuguese speller.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.portugalreform?view=word-pia"/>
   public WdPortugueseReform PortugalReform { get; set; }
 
   /// <summary>
-  /// Returns or sets the brazil reform.
+  /// Gets or sets the mode for the Brazilian Portuguese speller.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.brazilreform?view=word-pia"/>
   public WdPortugueseReform BrazilReform { get; set; }
@@ -1468,19 +1531,22 @@ public partial interface Options : InteropObject
   public bool UpdateFieldsWithTrackedChangesAtPrint { get; set; }
 
   /// <summary>
-  /// Returns or sets whether display alignment guides.
+  /// Returns or sets a Boolean (bool in C#) that specifies whether alignment guides are enabled in the user
+  /// interface. Read-write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.displayalignmentguides?view=word-pia"/>
   public bool DisplayAlignmentGuides { get; set; }
 
   /// <summary>
-  /// Returns or sets whether page alignment guides.
+  /// Returns or sets a Boolean (bool in C#) that specifies whether page alignment guides are displayed in the user
+  /// interface. Read-write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pagealignmentguides?view=word-pia"/>
   public bool PageAlignmentGuides { get; set; }
 
   /// <summary>
-  /// Returns or sets whether margin alignment guides.
+  /// Returns or sets a Boolean (bool in C#) that specifies whether margin alignment guides are displayed in the
+  /// user interface. Read-write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.marginalignmentguides?view=word-pia"/>
   public bool MarginAlignmentGuides { get; set; }
@@ -1492,19 +1558,20 @@ public partial interface Options : InteropObject
   public bool ParagraphAlignmentGuides { get; set; }
 
   /// <summary>
-  /// Returns or sets whether enable live drag.
+  /// Returns or sets a Boolean (bool in C#) that is True if live drag is enabled. Read-write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.enablelivedrag?view=word-pia"/>
   public bool EnableLiveDrag { get; set; }
 
   /// <summary>
-  /// Returns or sets whether use sub pixel positioning.
+  /// Returns or sets a Boolean (bool in C#) that specifies whether sub-pixel positioning is enabled. Read-write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.usesubpixelpositioning?view=word-pia"/>
   public bool UseSubPixelPositioning { get; set; }
 
   /// <summary>
-  /// Returns or sets whether alert if not default.
+  /// Returns or sets a Boolean (bool in C#) that is True if users are notified if Word is not the default program
+  /// for viewing and editing documents. Read-write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.alertifnotdefault?view=word-pia"/>
   public bool AlertIfNotDefault { get; set; }
@@ -1528,13 +1595,15 @@ public partial interface Options : InteropObject
   public bool SkyDriveSignInOption { get; set; }
 
   /// <summary>
-  /// Returns or sets whether expand headings on open.
+  /// True to expand all headings in the document when the document opens. Read/write Boolean (bool in C#).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.expandheadingsonopen?view=word-pia"/>
   public bool ExpandHeadingsOnOpen { get; set; }
 
   /// <summary>
-  /// Returns or sets whether use local user info.
+  /// Returns or sets a Boolean; True if Microsoft Word identifies the document author based upon the User name and
+  /// Initials settings on the General tab of the Options dialog box, and False if Word identifies the author based
+  /// on the account information with which the user signed in to Office. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.uselocaluserinfo?view=word-pia"/>
   public bool UseLocalUserInfo { get; set; }
