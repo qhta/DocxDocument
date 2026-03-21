@@ -78,7 +78,7 @@ public partial interface Options : InteropObject
   public int ButtonFieldClicks { get; set; }
 
   /// <summary>
-  /// Returns or sets whether to use short menu names.
+  /// You have requested Help for a keyword used only on the Macintosh. For information about this keyword, consult
   /// </summary>
   /// <remarks>This option works only on the Macintosh.</remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.shortmenunames?view=word-pia"/>
