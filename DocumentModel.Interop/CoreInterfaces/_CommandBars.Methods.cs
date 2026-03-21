@@ -5,9 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// A collection of CommandBar objects that represent the command bars in the container application.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars?view=office-pia"/>
 public partial interface _CommandBars
 {
   /// <summary>
@@ -18,9 +16,7 @@ public partial interface _CommandBars
   /// <param name="MenuBar">The `MenuBar` parameter.</param>
   /// <param name="Temporary">The `Temporary` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.add?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.add?view=office-pia"/>
   public CommandBar Add(object Name, object Position, object MenuBar, object Temporary);
   /// <summary>
   /// Finds a single command bar control that matches the specified criteria.
@@ -30,16 +26,12 @@ public partial interface _CommandBars
   /// <param name="Tag">The `Tag` parameter.</param>
   /// <param name="Visible">The `Visible` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.findcontrol?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.findcontrol?view=office-pia"/>
   public CommandBarControl FindControl(object Type, object Id, object Tag, object Visible);
   /// <summary>
   /// Releases focus from the command bars user interface.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.releasefocus?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.releasefocus?view=office-pia"/>
   public void ReleaseFocus();
   /// <summary>
   /// Finds all command bar controls that match the specified criteria.
@@ -49,9 +41,7 @@ public partial interface _CommandBars
   /// <param name="Tag">The `Tag` parameter.</param>
   /// <param name="Visible">The `Visible` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.findcontrols?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.findcontrols?view=office-pia"/>
   public CommandBarControls FindControls(object Type, object Id, object Tag, object Visible);
   /// <summary>
   /// Invokes `AddEx`.
@@ -62,71 +52,55 @@ public partial interface _CommandBars
   /// <param name="Temporary">The `Temporary` parameter.</param>
   /// <param name="TbtrProtection">The `TbtrProtection` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.addex?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.addex?view=office-pia"/>
   public CommandBar AddEx(object TbidOrName, object Position, object MenuBar, object Temporary, object TbtrProtection);
   /// <summary>
   /// Executes the built-in control identified by the specified `idMso` value.
   /// </summary>
   /// <param name="idMso">The `idMso` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.executemso?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.executemso?view=office-pia"/>
   public void ExecuteMso(string idMso);
   /// <summary>
   /// Invokes `GetEnabledMso`.
   /// </summary>
   /// <param name="idMso">The `idMso` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getenabledmso?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getenabledmso?view=office-pia"/>
   public bool GetEnabledMso(string idMso);
   /// <summary>
   /// Invokes `GetVisibleMso`.
   /// </summary>
   /// <param name="idMso">The `idMso` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getvisiblemso?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getvisiblemso?view=office-pia"/>
   public bool GetVisibleMso(string idMso);
   /// <summary>
   /// Invokes `GetPressedMso`.
   /// </summary>
   /// <param name="idMso">The `idMso` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getpressedmso?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getpressedmso?view=office-pia"/>
   public bool GetPressedMso(string idMso);
   /// <summary>
   /// Invokes `GetLabelMso`.
   /// </summary>
   /// <param name="idMso">The `idMso` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getlabelmso?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getlabelmso?view=office-pia"/>
   public string GetLabelMso(string idMso);
   /// <summary>
   /// Invokes `GetScreentipMso`.
   /// </summary>
   /// <param name="idMso">The `idMso` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getscreentipmso?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getscreentipmso?view=office-pia"/>
   public string GetScreentipMso(string idMso);
   /// <summary>
   /// Invokes `GetSupertipMso`.
   /// </summary>
   /// <param name="idMso">The `idMso` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getsupertipmso?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getsupertipmso?view=office-pia"/>
   public string GetSupertipMso(string idMso);
   /// <summary>
   /// Invokes `GetImageMso`.
@@ -135,16 +109,13 @@ public partial interface _CommandBars
   /// <param name="Width">The `Width` parameter.</param>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getimagemso?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getimagemso?view=office-pia"/>
   public object GetImageMso(string idMso, int Width, int Height);
   /// <summary>
   /// Invokes `CommitRenderingTransaction`.
   /// </summary>
   /// <param name="hwnd">The `hwnd` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.commitrenderingtransaction?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.commitrenderingtransaction?view=office-pia"/>
   public void CommitRenderingTransaction(int hwnd);
 }
+

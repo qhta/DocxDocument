@@ -13,8 +13,7 @@ public partial interface _CommandBarButtonEvents_Event
   /// <summary>
   /// Occurs when `Click` is raised.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbuttonevents_event.click?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbuttonevents_event.click?view=office-pia"/>
   public event _CommandBarButtonEvents_ClickEventHandler Click;
 }
+

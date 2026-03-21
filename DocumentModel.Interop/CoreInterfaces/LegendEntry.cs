@@ -4,72 +4,53 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents a legend entry in a chart legend.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry?view=office-pia"/>
 public partial interface LegendEntry
 {
   /// <summary>
   /// Gets or sets the `Font` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.font?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.font?view=office-pia"/>
   public ChartFont Font { get; }
   /// <summary>
   /// Gets the `Index` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.index?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.index?view=office-pia"/>
   public int Index { get; }
   /// <summary>
   /// Gets the `LegendKey` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.legendkey?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.legendkey?view=office-pia"/>
   public IMsoLegendKey LegendKey { get; }
   /// <summary>
   /// Gets or sets the `AutoScaleFont` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.autoscalefont?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.autoscalefont?view=office-pia"/>
   public object AutoScaleFont { get; set; }
   /// <summary>
   /// Gets the `Left` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.left?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.left?view=office-pia"/>
   public double Left { get; }
   /// <summary>
   /// Gets the `Top` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.top?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.top?view=office-pia"/>
   public double Top { get; }
   /// <summary>
   /// Gets the `Width` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.width?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.width?view=office-pia"/>
   public double Width { get; }
   /// <summary>
   /// Gets the `Height` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.height?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.height?view=office-pia"/>
   public double Height { get; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.format?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.format?view=office-pia"/>
   public IMsoChartFormat Format { get; }
 }
+

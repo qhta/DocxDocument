@@ -10,44 +10,33 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents a single validation error in a CustomXMLValidationErrors collection.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror?view=office-pia"/>
 public partial interface CustomXMLValidationError: InteropObject
 {
   /// <summary>
   /// Gets the `Name` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.name?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.name?view=office-pia"/>
   public string Name { get; }
   /// <summary>
   /// Gets the `Node` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.node?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.node?view=office-pia"/>
   public CustomXMLNode Node { get; }
   /// <summary>
   /// Gets the `Text` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.text?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.text?view=office-pia"/>
   public string Text { get; }
   /// <summary>
   /// Gets the `Type` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.type?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.type?view=office-pia"/>
   public MsoCustomXMLValidationErrorType Type { get; }
   /// <summary>
   /// Gets the `ErrorCode` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.errorcode?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.errorcode?view=office-pia"/>
   public int ErrorCode { get; }
 }
+

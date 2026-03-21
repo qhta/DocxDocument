@@ -5,9 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents the `Trendlines` interface.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines?view=office-pia"/>
 public partial interface Trendlines
 {
   /// <summary>
@@ -23,9 +21,7 @@ public partial interface Trendlines
   /// <param name="DisplayRSquared">The `DisplayRSquared` parameter.</param>
   /// <param name="Name">The `Name` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines.add?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines.add?view=office-pia"/>
   public IMsoTrendline Add
   (XlTrendlineType Type, object Order, object Period, object Forward, object Backward,
     object Intercept, object DisplayEquation, object DisplayRSquared, object Name);
@@ -33,8 +29,7 @@ public partial interface Trendlines
   /// Invokes `GetEnumerator`.
   /// </summary>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines.getenumerator?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines.getenumerator?view=office-pia"/>
   public new IEnumerator GetEnumerator();
 }
+

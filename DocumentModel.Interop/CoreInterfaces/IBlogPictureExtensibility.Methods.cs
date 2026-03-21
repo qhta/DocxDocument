@@ -4,9 +4,7 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Provides the ability to manipulate blog images.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility?view=office-pia"/>
 public partial interface IBlogPictureExtensibility
 {
   /// <summary>
@@ -14,9 +12,7 @@ public partial interface IBlogPictureExtensibility
   /// </summary>
   /// <param name="BlogPictureProvider">The `BlogPictureProvider` parameter.</param>
   /// <param name="FriendlyName">The `FriendlyName` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility.blogpictureproviderproperties?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility.blogpictureproviderproperties?view=office-pia"/>
   public void BlogPictureProviderProperties(out string BlogPictureProvider, out string FriendlyName);
   /// <summary>
   /// Displays the UI needed to guide the user through picture account setup.
@@ -25,9 +21,7 @@ public partial interface IBlogPictureExtensibility
   /// <param name="BlogProvider">The `BlogProvider` parameter.</param>
   /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
   /// <param name="Document">The `Document` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility.createpictureaccount?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility.createpictureaccount?view=office-pia"/>
   public void CreatePictureAccount(string Account, string BlogProvider, int ParentWindow, object Document);
   /// <summary>
   /// Posts a picture object to its final destination in a blog.
@@ -38,9 +32,8 @@ public partial interface IBlogPictureExtensibility
   /// <param name="Image">The `Image` parameter.</param>
   /// <param name="PictureURI">The `PictureURI` parameter.</param>
   /// <param name="ImageType">The `ImageType` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility.publishpicture?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility.publishpicture?view=office-pia"/>
   public void PublishPicture
     (string Account, int ParentWindow, object Document, object Image, out string PictureURI, int ImageType);
 }
+

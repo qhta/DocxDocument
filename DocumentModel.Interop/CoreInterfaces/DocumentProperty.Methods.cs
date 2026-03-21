@@ -5,16 +5,13 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents a custom or built-in document property.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty?view=office-pia"/>
 public partial interface DocumentProperty
 {
   /// <summary>
   /// Deletes the document property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.delete?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.delete?view=office-pia"/>
   public void Delete();
 }
+

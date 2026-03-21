@@ -12,8 +12,7 @@ public partial interface SmartArt
   /// <summary>
   /// Invokes `Reset`.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart.reset?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart.reset?view=office-pia"/>
   public void Reset();
 }
+

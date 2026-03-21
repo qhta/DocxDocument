@@ -4,23 +4,18 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents chart data.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata?view=office-pia"/>
 public partial interface IMsoChartData
 {
   /// <summary>
   /// Gets the `Workbook` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata.workbook?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata.workbook?view=office-pia"/>
   public object Workbook { get; }
   /// <summary>
   /// Gets the `IsLinked` property.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata.islinked?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata.islinked?view=office-pia"/>
   public bool IsLinked { get; }
 }
+

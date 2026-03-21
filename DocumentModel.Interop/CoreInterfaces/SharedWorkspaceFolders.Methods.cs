@@ -16,8 +16,7 @@ public partial interface SharedWorkspaceFolders
   /// <param name="FolderName">The `FolderName` parameter.</param>
   /// <param name="ParentFolder">The `ParentFolder` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolders.add?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolders.add?view=office-pia"/>
   public SharedWorkspaceFolder Add(string FolderName, object ParentFolder);
 }
+

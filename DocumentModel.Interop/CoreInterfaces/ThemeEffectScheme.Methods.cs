@@ -13,8 +13,7 @@ public partial interface ThemeEffectScheme
   /// Invokes `Load`.
   /// </summary>
   /// <param name="FileName">The `FileName` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themeeffectscheme.load?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themeeffectscheme.load?view=office-pia"/>
   public void Load(string FileName);
 }
+

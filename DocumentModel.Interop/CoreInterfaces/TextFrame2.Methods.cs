@@ -4,16 +4,13 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents the `TextFrame2` interface.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2?view=office-pia"/>
 public partial interface TextFrame2
 {
   /// <summary>
   /// Invokes `DeleteText`.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.deletetext?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.deletetext?view=office-pia"/>
   public void DeleteText();
 }
+

@@ -5,9 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents a collection of `PickerResult` objects.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerresults?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerresults?view=office-pia"/>
 public partial interface PickerResults
 {
   /// <summary>
@@ -20,8 +18,7 @@ public partial interface PickerResults
   /// <param name="ItemData">The `ItemData` parameter.</param>
   /// <param name="SubItems">The `SubItems` parameter.</param>
   /// <returns>The added picker result.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerresults.add?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerresults.add?view=office-pia"/>
   public PickerResult Add(string Id, string DisplayName, string Type, string SIPId, object ItemData, object SubItems);
 }
+

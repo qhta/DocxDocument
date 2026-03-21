@@ -5,9 +5,8 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents the collection of folders included in a file search.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.searchfolders?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.searchfolders?view=office-pia"/>
 public partial interface SearchFolders: InteropCollection<ScopeFolder>
 {
 }
+

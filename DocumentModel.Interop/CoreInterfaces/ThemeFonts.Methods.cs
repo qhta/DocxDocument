@@ -6,9 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents the `ThemeFonts` interface.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefonts?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefonts?view=office-pia"/>
 public partial interface ThemeFonts
 {
   /// <summary>
@@ -16,8 +14,7 @@ public partial interface ThemeFonts
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefonts.item?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefonts.item?view=office-pia"/>
   public ThemeFont Item(MsoFontLanguageIndex Index);
 }
+

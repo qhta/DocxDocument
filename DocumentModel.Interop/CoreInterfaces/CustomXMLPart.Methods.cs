@@ -4,9 +4,8 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents a single custom XML part in a CustomXMLParts collection.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlpart?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlpart?view=office-pia"/>
 public partial interface CustomXMLPart
 {
 }
+

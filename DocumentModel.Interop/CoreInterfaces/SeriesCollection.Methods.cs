@@ -19,9 +19,7 @@ public partial interface SeriesCollection: InteropCollection<IMsoSeries>
   /// <param name="CategoryLabels">The `CategoryLabels` parameter.</param>
   /// <param name="Replace">The `Replace` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.add?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.add?view=office-pia"/>
   public IMsoSeries Add
     (object Source, XlRowCol Rowcol, object SeriesLabels, object CategoryLabels, object Replace);
   /// <summary>
@@ -31,9 +29,7 @@ public partial interface SeriesCollection: InteropCollection<IMsoSeries>
   /// <param name="Rowcol">The `Rowcol` parameter.</param>
   /// <param name="CategoryLabels">The `CategoryLabels` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.extend?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.extend?view=office-pia"/>
   public object Extend(object Source, object Rowcol, object CategoryLabels);
   /// <summary>
   /// Invokes `Paste`.
@@ -44,9 +40,7 @@ public partial interface SeriesCollection: InteropCollection<IMsoSeries>
   /// <param name="Replace">The `Replace` parameter.</param>
   /// <param name="NewSeries">The `NewSeries` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.paste?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.paste?view=office-pia"/>
   public object Paste
   (XlRowCol Rowcol, object SeriesLabels, object CategoryLabels, object Replace,
     object NewSeries);
@@ -54,8 +48,7 @@ public partial interface SeriesCollection: InteropCollection<IMsoSeries>
   /// Invokes `NewSeries`.
   /// </summary>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.newseries?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.newseries?view=office-pia"/>
   public IMsoSeries NewSeries();
 }
+

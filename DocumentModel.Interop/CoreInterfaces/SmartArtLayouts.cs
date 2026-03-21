@@ -5,9 +5,8 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents the `SmartArtLayouts` interface.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayouts?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayouts?view=office-pia"/>
 public partial interface SmartArtLayouts: InteropDictionary<string, SmartArtLayout>
 {
 }
+

@@ -4,9 +4,8 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents a namespace prefix mapping.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmapping?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmapping?view=office-pia"/>
 public partial interface CustomXMLPrefixMapping
 {
 }
+

@@ -18,9 +18,7 @@ public partial interface SignatureProvider
   /// <param name="psiginfo">The `psiginfo` parameter.</param>
   /// <param name="XmlDsigStream">The `XmlDsigStream` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.generatesignaturelineimage?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.generatesignaturelineimage?view=office-pia"/>
   public object GenerateSignatureLineImage
     (SignatureLineImage siglnimg, SignatureSetup psigsetup, SignatureInfo psiginfo, object XmlDsigStream);
   /// <summary>
@@ -28,9 +26,7 @@ public partial interface SignatureProvider
   /// </summary>
   /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.showsignaturesetup?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.showsignaturesetup?view=office-pia"/>
   public void ShowSignatureSetup(object ParentWindow, SignatureSetup psigsetup);
   /// <summary>
   /// Invokes `ShowSigningCeremony`.
@@ -38,9 +34,7 @@ public partial interface SignatureProvider
   /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <param name="psiginfo">The `psiginfo` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.showsigningceremony?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.showsigningceremony?view=office-pia"/>
   public void ShowSigningCeremony(object ParentWindow, SignatureSetup psigsetup, SignatureInfo psiginfo);
   /// <summary>
   /// Invokes `SignXmlDsig`.
@@ -49,9 +43,7 @@ public partial interface SignatureProvider
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <param name="psiginfo">The `psiginfo` parameter.</param>
   /// <param name="XmlDsigStream">The `XmlDsigStream` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.signxmldsig?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.signxmldsig?view=office-pia"/>
   public void SignXmlDsig(object QueryContinue, SignatureSetup psigsetup, SignatureInfo psiginfo, object XmlDsigStream);
   /// <summary>
   /// Invokes `NotifySignatureAdded`.
@@ -59,9 +51,7 @@ public partial interface SignatureProvider
   /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <param name="psiginfo">The `psiginfo` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.notifysignatureadded?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.notifysignatureadded?view=office-pia"/>
   public void NotifySignatureAdded(object ParentWindow, SignatureSetup psigsetup, SignatureInfo psiginfo);
   /// <summary>
   /// Invokes `VerifyXmlDsig`.
@@ -72,9 +62,7 @@ public partial interface SignatureProvider
   /// <param name="XmlDsigStream">The `XmlDsigStream` parameter.</param>
   /// <param name="pcontverres">The `pcontverres` parameter.</param>
   /// <param name="pcertverres">The `pcertverres` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.verifyxmldsig?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.verifyxmldsig?view=office-pia"/>
   public void VerifyXmlDsig
   (object QueryContinue, SignatureSetup psigsetup, SignatureInfo psiginfo, object XmlDsigStream,
     ref ContentVerificationResults pcontverres, ref CertificateVerificationResults pcertverres);
@@ -87,9 +75,7 @@ public partial interface SignatureProvider
   /// <param name="XmlDsigStream">The `XmlDsigStream` parameter.</param>
   /// <param name="pcontverres">The `pcontverres` parameter.</param>
   /// <param name="pcertverres">The `pcertverres` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.showsignaturedetails?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.showsignaturedetails?view=office-pia"/>
   public void ShowSignatureDetails
   (object ParentWindow, SignatureSetup psigsetup, SignatureInfo psiginfo, object XmlDsigStream,
     ref ContentVerificationResults pcontverres, ref CertificateVerificationResults pcertverres);
@@ -98,9 +84,7 @@ public partial interface SignatureProvider
   /// </summary>
   /// <param name="sigprovdet">The `sigprovdet` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.getproviderdetail?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.getproviderdetail?view=office-pia"/>
   public object GetProviderDetail(SignatureProviderDetail sigprovdet);
   /// <summary>
   /// Invokes `HashStream`.
@@ -108,8 +92,7 @@ public partial interface SignatureProvider
   /// <param name="QueryContinue">The `QueryContinue` parameter.</param>
   /// <param name="Stream">The `Stream` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.hashstream?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.hashstream?view=office-pia"/>
   public Array HashStream(object QueryContinue, object Stream);
 }
+

@@ -8,9 +8,8 @@ public delegate void _CustomXMLPartsEvents_PartAfterLoadEventHandler(CustomXMLPa
 /// <summary>
 /// Events interface for CustomXMLParts object events.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpartsevents_event?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpartsevents_event?view=office-pia"/>
 public partial interface _CustomXMLPartsEvents_Event
 {
 }
+

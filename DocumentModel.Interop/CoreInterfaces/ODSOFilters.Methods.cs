@@ -4,9 +4,7 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents all filters applied to the attached mail merge data source.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters?view=office-pia"/>
 public partial interface ODSOFilters
 {
   /// <summary>
@@ -14,9 +12,7 @@ public partial interface ODSOFilters
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The requested filter object.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters.item?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters.item?view=office-pia"/>
   public object Item(int Index);
   /// <summary>
   /// Adds a filter to the collection.
@@ -26,9 +22,7 @@ public partial interface ODSOFilters
   /// <param name="Conjunction">The `Conjunction` parameter.</param>
   /// <param name="bstrCompareTo">The `bstrCompareTo` parameter.</param>
   /// <param name="DeferUpdate">The `DeferUpdate` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters.add?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters.add?view=office-pia"/>
   public void Add
   (string Column, MsoFilterComparison Comparison, MsoFilterConjunction Conjunction, string bstrCompareTo,
     bool DeferUpdate);
@@ -37,8 +31,7 @@ public partial interface ODSOFilters
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <param name="DeferUpdate">The `DeferUpdate` parameter.</param>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters.delete?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters.delete?view=office-pia"/>
   public void Delete(int Index, bool DeferUpdate);
 }
+

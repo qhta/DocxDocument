@@ -20,9 +20,8 @@ public partial interface SharedWorkspaceTasks
   /// <param name="Description">The `Description` parameter.</param>
   /// <param name="DueDate">The `DueDate` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetasks.add?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetasks.add?view=office-pia"/>
   public SharedWorkspaceTask Add
     (string Title, object Status, object Priority, object Assignee, object Description, object DueDate);
 }
+

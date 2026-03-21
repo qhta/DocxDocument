@@ -4,9 +4,8 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Provides the ability to manipulate blog images.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility?view=office-pia"/>
 public partial interface IBlogPictureExtensibility
 {
 }
+

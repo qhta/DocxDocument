@@ -5,23 +5,18 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Events interface for `MsoEnvelope` object events.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents_event?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents_event?view=office-pia"/>
 public partial interface IMsoEnvelopeVBEvents_Event
 {
   /// <summary>
   /// Occurs when `EnvelopeShow` is raised.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents_event.envelopeshow?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents_event.envelopeshow?view=office-pia"/>
   public event IMsoEnvelopeVBEvents_EnvelopeShowEventHandler EnvelopeShow;
   /// <summary>
   /// Occurs when `EnvelopeHide` is raised.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents_event.envelopehide?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents_event.envelopehide?view=office-pia"/>
   public event IMsoEnvelopeVBEvents_EnvelopeHideEventHandler EnvelopeHide;
 }
+
