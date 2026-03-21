@@ -5,44 +5,41 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Represents a custom or built-in document property.
 /// </summary>
-/// <remarks>
-/// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty?view=office-pia
-/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty?view=office-pia"/>
 public partial interface DocumentProperty
 {
   /// <summary>
-  /// Gets or sets the `Name` property.
+  /// Returns or sets the name of the specified object.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.name?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.name?view=office-pia"/>
   public string Name { get; set; }
   /// <summary>
-  /// Gets or sets the `Value` property.
+  /// Returns or sets the value of a document property.
   /// </summary>
   /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.value?view=office-pia
+  ///This property is read-only for built-in document properties; read/write for custom document properties.
   /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.value?view=office-pia"/>
   public object Value { get; set; }
   /// <summary>
-  /// Gets or sets the `Type` property.
+  /// Returns or sets the document property type.
   /// </summary>
-  /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.type?view=office-pia
-  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.type?view=office-pia"/>
   public MsoDocProperties Type { get; set; }
   /// <summary>
-  /// Gets or sets the `LinkToContent` property.
+  /// Determine if the value of the custom document property is linked to the content of the container document.
   /// </summary>
   /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.linktocontent?view=office-pia
+  /// This property applies only to custom document properties. For built-in document properties, the value of this property is False.
   /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.linktocontent?view=office-pia"/>
   public bool LinkToContent { get; set; }
   /// <summary>
-  /// Gets or sets the `LinkSource` property.
+  /// Returns or sets the source of a linked custom document property.
   /// </summary>
   /// <remarks>
-  /// Microsoft Learn: https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.linksource?view=office-pia
+  /// This property applies only to custom document properties; you cannot use it with built-in document properties.
   /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.linksource?view=office-pia"/>
   public string LinkSource { get; set; }
 }

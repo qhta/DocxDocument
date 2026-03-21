@@ -18,6 +18,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="**\*.Methods.cs" />
     <Compile Remove="Base interfaces\ITypedModelElement.cs" />
     <Compile Remove="Wordprocessing\Settings\Settings.cs" />
     <Compile Remove="Wordprocessing\Styles\StyleDef.ext.cs" />
