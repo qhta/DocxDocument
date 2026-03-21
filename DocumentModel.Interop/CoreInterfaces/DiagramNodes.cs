@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodes?view=office-pia"/>
-public partial interface DiagramNodes: InteropDictionary<string, DiagramNode>
+public partial interface DiagramNodes: InteropCollection<DiagramNode>
 {
 }
 

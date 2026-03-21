@@ -16,21 +16,7 @@ public interface InteropCollection<ItemType> : ICollection<ItemType>
   /// </summary>
   /// <param name="Index">The zero-based index of the item to get.</param>
   /// <returns>The item at the specified index.</returns>
-  public ItemType get_Item(int Index);
-
-  /// <summary>
-  /// Gets the item at the specified object index.
-  /// </summary>
-  /// <param name="Index">The index or key of the item to get.</param>
-  /// <returns>The item at the specified index or key.</returns>
-  public ItemType get_Item(object Index);
-
-  /// <summary>
-  /// Gets the default item at the specified integer index.
-  /// </summary>
-  /// <param name="Index">The zero-based index of the item to get.</param>
-  /// <returns>The default item at the specified index.</returns>
-  public ItemType _Default(int Index);
+  public ItemType this[object Index] { get; set; }
 
   /// <summary>
   /// Gets the default item at the specified object index.
