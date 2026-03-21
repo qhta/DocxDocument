@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Restricts permissions to the active document and exposes permission settings.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.permission?view=office-pia"/>
-public partial interface Permission: InteropDictionary<string, UserPermission>
+public partial interface Permission: InteropCollection<UserPermission>
 {
   /// <summary>
   /// Gets or sets the `EnableTrustedBrowser` property.
