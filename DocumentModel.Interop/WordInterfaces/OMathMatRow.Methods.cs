@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathMatRow
 {
   /// <summary>
-  /// Deletes the matrix row.
+  /// Deletes the specified matrix row.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

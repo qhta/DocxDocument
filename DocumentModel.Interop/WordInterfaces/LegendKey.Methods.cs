@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface LegendKey
 {
   /// <summary>
-  /// Clears the formatting for the legend key.
+  /// Clears the formatting of the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

@@ -18,7 +18,7 @@ public partial interface Frames
   public Frame Add(Range Range);
 
   /// <summary>
-  /// Executes the delete operation.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

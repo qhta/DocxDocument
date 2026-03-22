@@ -7,7 +7,8 @@ namespace DocumentModel.Interop.Word;
 public partial interface Revisions
 {
   /// <summary>
-  /// Accepts all the tracked changes in a document or range. The revision marks are removed, and the changes are incorporated into the document.
+  /// Accepts all the tracked changes in a document or range. The revision marks are removed, and the changes are
+  /// incorporated into the document.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

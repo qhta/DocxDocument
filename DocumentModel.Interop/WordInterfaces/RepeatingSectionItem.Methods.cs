@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface RepeatingSectionItem
 {
   /// <summary>
-  /// Deletes the repeating section item.
+  /// Deletes the specified repeating section item.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

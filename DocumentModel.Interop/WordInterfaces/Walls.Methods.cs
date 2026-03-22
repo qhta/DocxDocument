@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Walls
 {
   /// <summary>
-  /// Selects the walls in the chart.
+  /// Selects the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

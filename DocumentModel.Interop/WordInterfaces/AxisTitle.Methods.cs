@@ -16,10 +16,10 @@ public partial interface AxisTitle
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.get_characters?view=word-pia"/>
-  public ChartCharacters get_Characters(object Start, object Length);
+  public ChartCharacters Characters(object Start, object Length);
 
   /// <summary>
-  /// Deletes the axis title.
+  /// Deletes the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

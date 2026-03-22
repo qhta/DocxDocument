@@ -177,7 +177,7 @@ public partial interface CanvasShapes
   public ShapeRange Range(object Index);
 
   /// <summary>
-  /// Selects all shapes on the drawing canvas.
+  /// Selects all the shapes in the main story, in a canvas, or in headers and footers of a document.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

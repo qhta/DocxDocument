@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathAutoCorrectEntry
 {
   /// <summary>
-  /// Deletes the math AutoCorrect entry.
+  /// Deletes the specified OMathAutoCorrectEntry.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface DropLines
 {
   /// <summary>
-  /// Executes the select operation.
+  /// Selects the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

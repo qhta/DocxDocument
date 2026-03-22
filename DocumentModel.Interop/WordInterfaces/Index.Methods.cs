@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Index
 {
   /// <summary>
-  /// Deletes the index.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

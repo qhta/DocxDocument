@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Gridlines
 {
   /// <summary>
-  /// Selects the gridlines.
+  /// Selects the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

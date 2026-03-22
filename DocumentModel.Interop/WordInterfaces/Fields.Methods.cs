@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Fields
 {
   /// <summary>
-  /// Executes the toggle show codes operation.
+  /// Toggles the display of the fields between field codes and field results.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

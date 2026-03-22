@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface HiLoLines
 {
   /// <summary>
-  /// Selects the high-low lines.
+  /// Selects the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

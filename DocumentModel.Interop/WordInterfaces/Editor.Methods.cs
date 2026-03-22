@@ -19,7 +19,7 @@ public partial interface Editor : InteropObject
   public void DeleteAll();
 
   /// <summary>
-  /// Selects all the shapes in a document that were inserted or edited by this user.
+  /// Selects all the shapes in the main story, in a canvas, or in headers and footers of a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editor.selectall?view=word-pia"/>
   public void SelectAll();

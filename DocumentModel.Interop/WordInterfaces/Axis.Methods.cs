@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Axis
 {
   /// <summary>
-  /// Deletes the axis from the chart.
+  /// Deletes the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

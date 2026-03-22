@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Corners
 {
   /// <summary>
-  /// Selects the corner points.
+  /// Selects the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

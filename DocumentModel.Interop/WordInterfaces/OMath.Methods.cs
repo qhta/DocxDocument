@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMath
 {
   /// <summary>
-  /// Converts the equation to linear format.
+  /// Converts an equation into a linear format.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

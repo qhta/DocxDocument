@@ -15,7 +15,7 @@ public partial interface Chart
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.get_chartgroups?view=word-pia"/>
-  public object get_ChartGroups(object Index);
+  public object ChartGroups(object Index);
 
   /// <summary>
   /// Determines whether a chart axis exists.
@@ -27,7 +27,7 @@ public partial interface Chart
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.get_hasaxis?view=word-pia"/>
-  public object get_HasAxis(object Index1, object Index2);
+  public object HasAxis(object Index1, object Index2);
 
   /// <summary>
   /// Returns a single series or the full series collection for the chart.

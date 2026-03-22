@@ -7,7 +7,8 @@ namespace DocumentModel.Interop.Word;
 public partial interface MailMessage
 {
   /// <summary>
-  /// Validates the e-mail addresses that appear in the To:, Cc:, and Bcc: lines in the active e-mail message. This method is available only if you are using Microsoft Word as your e-mail editor.
+  /// Validates the e-mail addresses that appear in the To:, Cc:, and Bcc: lines in the active e-mail message. This
+  /// method is available only if you are using Microsoft Word as your e-mail editor.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -16,7 +17,7 @@ public partial interface MailMessage
   public void CheckName();
 
   /// <summary>
-  /// Deletes the active e-mail message.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -25,7 +26,8 @@ public partial interface MailMessage
   public void Delete();
 
   /// <summary>
-  /// Displays the Move dialog box, in which the user can specify a new location for the active e-mail message in an available message store. This method is available only if you are using Microsoft Word as your e-mail editor.
+  /// Displays the Move dialog box, in which the user can specify a new location for the active e-mail message in an
+  /// available message store. This method is available only if you are using Microsoft Word as your e-mail editor.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -34,7 +36,8 @@ public partial interface MailMessage
   public void DisplayMoveDialog();
 
   /// <summary>
-  /// Displays the Properties dialog box for the active e-mail message. This method is available only if you are using Microsoft Word as your e-mail editor.
+  /// Displays the Properties dialog box for the active e-mail message. This method is available only if you are
+  /// using Microsoft Word as your e-mail editor.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -43,7 +46,9 @@ public partial interface MailMessage
   public void DisplayProperties();
 
   /// <summary>
-  /// Displays the Select Names dialog box, in which the user can add addresses to the To:, Cc:, and Bcc: lines in the active, unsent e-mail message. This method is available only if you are using Microsoft Word as your e-mail editor.
+  /// Displays the Select Names dialog box, in which the user can add addresses to the To:, Cc:, and Bcc: lines in
+  /// the active, unsent e-mail message. This method is available only if you are using Microsoft Word as your
+  /// e-mail editor.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -52,7 +57,8 @@ public partial interface MailMessage
   public void DisplaySelectNamesDialog();
 
   /// <summary>
-  /// Opens a new e-mail message with an empty To: line for forwarding the active message. This method is available only if you are using Microsoft Word as your e-mail editor.
+  /// Opens a new e-mail message with an empty To: line for forwarding the active message. This method is available
+  /// only if you are using Microsoft Word as your e-mail editor.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -79,7 +85,7 @@ public partial interface MailMessage
   public void GoToPrevious();
 
   /// <summary>
-  /// Opens a new e-mail message with the sender's address on the To line for replying to the active message.
+  /// Opens a new e-mail message— with the sender's address on the To: line— for replying to the active message.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -88,7 +94,8 @@ public partial interface MailMessage
   public void Reply();
 
   /// <summary>
-  /// Opens a new e-mail message with the sender's and all other recipients' addresses on the To and Cc lines for replying to the active message.
+  /// Opens a new e-mail message— with the sender’s and all other recipients' addresses on the To: and Cc: lines, as
+  /// appropriate— for replying to the active message.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

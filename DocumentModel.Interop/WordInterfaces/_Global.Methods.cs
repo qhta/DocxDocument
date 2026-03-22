@@ -14,7 +14,7 @@ public partial interface _Global : InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_synonyminfo?view=word-pia"/>
-  public SynonymInfo get_SynonymInfo(string Word, object LanguageID);
+  public SynonymInfo SynonymInfo(string Word, object LanguageID);
   /// <summary>
   /// Returns a KeysBoundTo object that represents all key combinations assigned to the specified item.
   /// </summary>
@@ -25,7 +25,7 @@ public partial interface _Global : InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_keysboundto?view=word-pia"/>
-  public KeysBoundTo get_KeysBoundTo(WdKeyCategory KeyCategory, string Command, object CommandParameter);
+  public KeysBoundTo KeysBoundTo(WdKeyCategory KeyCategory, string Command, object CommandParameter);
   /// <summary>
   /// Returns a KeyBinding object that represents the specified key combination.
   /// </summary>
@@ -35,7 +35,7 @@ public partial interface _Global : InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_findkey?view=word-pia"/>
-  public KeyBinding get_FindKey(int KeyCode, object KeyCode2);
+  public KeyBinding FindKey(int KeyCode, object KeyCode2);
   /// <summary>
   /// Determines whether a variable that references an object is valid.
   /// </summary>
@@ -44,7 +44,7 @@ public partial interface _Global : InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_isobjectvalid?view=word-pia"/>
-  public bool get_IsObjectValid(object Object);
+  public bool IsObjectValid(object Object);
   /// <summary>
   /// Repeats the most recent editing action one or more times.
   /// </summary>

@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface InlineShape
 {
   /// <summary>
-  /// Activates the inline shape.
+  /// Activates the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface ListEntry
 {
   /// <summary>
-  /// Deletes the list entry.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

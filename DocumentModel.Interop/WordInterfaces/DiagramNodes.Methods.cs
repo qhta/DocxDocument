@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface DiagramNodes
 {
   /// <summary>
-  /// Selects all diagram nodes in the collection.
+  /// Selects all the shapes in the main story, in a canvas, or in headers and footers of a document.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

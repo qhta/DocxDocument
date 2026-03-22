@@ -7,7 +7,8 @@ namespace DocumentModel.Interop.Word;
 public partial interface _Font
 {
   /// <summary>
-  /// Performs the grow operation.
+  /// Increases the font size to the next available size. If the selection or range contains more than one font
+  /// size, each size is increased to the next available setting.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

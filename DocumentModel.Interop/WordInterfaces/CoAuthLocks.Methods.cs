@@ -19,7 +19,7 @@ public partial interface CoAuthLocks
   public CoAuthLock Add(object Range, WdLockType Type);
 
   /// <summary>
-  /// Removes ephemeral co-authoring locks.
+  /// Removes ephemeral locks from the document.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

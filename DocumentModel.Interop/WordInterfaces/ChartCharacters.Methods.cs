@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface ChartCharacters
 {
   /// <summary>
-  /// Deletes the chart characters.
+  /// Deletes the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

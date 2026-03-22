@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface BuildingBlock
 {
   /// <summary>
-  /// Deletes the building block.
+  /// Deletes the specified building block.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface UpBars
 {
   /// <summary>
-  /// Selects the up bars in the chart.
+  /// Selects the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface DataTable
 {
   /// <summary>
-  /// Selects the data table.
+  /// Selects the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

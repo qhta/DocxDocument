@@ -7,49 +7,50 @@ namespace DocumentModel.Interop.Word;
 public partial interface _Application
 {
   /// <summary>
-  /// The international.
+  /// Returns information about the current country/region and international settings.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_international?view=word-pia"/>
-  public object get_International(WdInternationalIndex Index);
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.international?view=word-pia"/>
+  public object International(WdInternationalIndex Index);
 
   /// <summary>
-  /// The synonym info.
+  /// Returns a SynonymInfo object that contains information from the thesaurus on synonyms, antonyms, or related
+  /// words and expressions for the specified word or phrase.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_synonyminfo?view=word-pia"/>
-  public SynonymInfo get_SynonymInfo(string Word, object LanguageID);
+  public SynonymInfo SynonymInfo(string Word, object LanguageID);
 
   /// <summary>
-  /// The keys bound to.
+  /// Returns a KeysBoundTo object that represents all the key combinations assigned to the specified item.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_keysboundto?view=word-pia"/>
-  public KeysBoundTo get_KeysBoundTo(WdKeyCategory KeyCategory, string Command, object CommandParameter);
+  public KeysBoundTo KeysBoundTo(WdKeyCategory KeyCategory, string Command, object CommandParameter);
 
   /// <summary>
-  /// The is object valid.
+  /// Determines if the specified variable that references an object is valid.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_isobjectvalid?view=word-pia"/>
-  public bool get_IsObjectValid(object Object);
+  public bool IsObjectValid(object Object);
 
   /// <summary>
-  /// The file dialog.
+  /// Returns a FileDialog object which represents a single instance of a file dialog box.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_filedialog?view=word-pia"/>
-  public Core.FileDialog get_FileDialog(Core.MsoFileDialogType FileDialogType);
+  public Core.FileDialog FileDialog(Core.MsoFileDialogType FileDialogType);
 
   /// <summary>
   /// Quits Microsoft Word and optionally saves or routes the open documents.

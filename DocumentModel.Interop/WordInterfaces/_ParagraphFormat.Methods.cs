@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface _ParagraphFormat
 {
   /// <summary>
-  /// Performs the close up operation.
+  /// Removes any spacing before the specified paragraphs.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

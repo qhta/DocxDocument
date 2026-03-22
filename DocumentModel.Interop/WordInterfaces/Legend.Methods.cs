@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Legend
 {
   /// <summary>
-  /// Selects the legend in the chart.
+  /// Selects the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

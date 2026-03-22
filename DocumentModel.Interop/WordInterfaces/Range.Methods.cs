@@ -29,7 +29,7 @@ public partial interface Range
   public string XML(bool DataOnly);
 
   /// <summary>
-  /// Selects the range in the document.
+  /// Selects the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

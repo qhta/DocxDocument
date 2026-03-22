@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Point
 {
   /// <summary>
-  /// Clears the formatting for the point.
+  /// Clears the formatting of the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

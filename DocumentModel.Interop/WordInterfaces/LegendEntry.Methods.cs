@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface LegendEntry
 {
   /// <summary>
-  /// Deletes the legend entry from the chart.
+  /// Deletes the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

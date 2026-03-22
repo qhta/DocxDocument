@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface HangulAndAlphabetException
 {
   /// <summary>
-  /// Deletes the HangulAndAlphabetException.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
