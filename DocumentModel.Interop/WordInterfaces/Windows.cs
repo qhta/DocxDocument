@@ -7,7 +7,8 @@ namespace DocumentModel.Interop.Word;
 public partial interface Windows : InteropObject, InteropCollection<Window>
 {
   /// <summary>
-  /// Returns or sets whether sync scrolling side by side.
+  /// True enables scrolling of the contents of windows at the same time. False disables scrolling of windows at the
+  /// same time.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.windows.syncscrollingsidebyside?view=word-pia"/>
   public bool SyncScrollingSideBySide { get; set; }

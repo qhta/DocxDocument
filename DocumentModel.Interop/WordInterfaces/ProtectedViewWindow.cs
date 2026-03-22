@@ -7,73 +7,74 @@ namespace DocumentModel.Interop.Word;
 public partial interface ProtectedViewWindow : InteropObject
 {
   /// <summary>
-  /// Returns or sets the caption.
+  /// Gets or sets the caption text that is displayed in the title bar of the document or protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.caption?view=word-pia"/>
   public string Caption { get; set; }
 
   /// <summary>
-  /// Returns the document.
+  /// Gets a Document object associated with the protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.document?view=word-pia"/>
   public Document Document { get; }
 
   /// <summary>
-  /// Returns or sets the left.
+  /// Gets or sets a value, in points, that represents the horizontal position of the specified protected view
+  /// window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.left?view=word-pia"/>
   public int Left { get; set; }
 
   /// <summary>
-  /// Returns or sets the top.
+  /// Gets or sets the vertical position, in points, of the specified protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.top?view=word-pia"/>
   public int Top { get; set; }
 
   /// <summary>
-  /// Returns or sets the width.
+  /// Gets or sets the width, in points, of the specified protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.width?view=word-pia"/>
   public int Width { get; set; }
 
   /// <summary>
-  /// Returns or sets the height.
+  /// Gets or sets the height of the protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.height?view=word-pia"/>
   public int Height { get; set; }
 
   /// <summary>
-  /// Returns or sets the window state.
+  /// Gets or sets the state of the specified protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.windowstate?view=word-pia"/>
   public WdWindowState WindowState { get; set; }
 
   /// <summary>
-  /// Returns whether active.
+  /// Gets whether the specified protected view window is active.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.active?view=word-pia"/>
   public bool Active { get; }
 
   /// <summary>
-  /// Returns the index.
+  /// Returns a value that represents the position of an item in a collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.index?view=word-pia"/>
   public int Index { get; }
 
   /// <summary>
-  /// Returns or sets whether visible.
+  /// Gets or sets whether the specified protected view window is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.visible?view=word-pia"/>
   public bool Visible { get; set; }
 
   /// <summary>
-  /// Returns the source name.
+  /// Gets the name of the source file for the specified protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.sourcename?view=word-pia"/>
   public string SourceName { get; }
 
   /// <summary>
-  /// Returns the source path.
+  /// Gets the path of the source file for the specified protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.sourcepath?view=word-pia"/>
   public string SourcePath { get; }

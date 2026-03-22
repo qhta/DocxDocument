@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Tables : InteropObject, InteropCollection<Table>
 {
   /// <summary>
-  /// Returns the nesting level.
+  /// Returns the nesting level of the specified tables.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tables.nestinglevel?view=word-pia"/>
   public int NestingLevel { get; }

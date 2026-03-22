@@ -7,19 +7,19 @@ namespace DocumentModel.Interop.Word;
 public partial interface XMLChildNodeSuggestion : InteropObject
 {
   /// <summary>
-  /// Returns the base name.
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlchildnodesuggestion.basename?view=word-pia"/>
   public string BaseName { get; }
 
   /// <summary>
-  /// Returns the namespace u r i.
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlchildnodesuggestion.namespaceuri?view=word-pia"/>
   public string NamespaceURI { get; }
 
   /// <summary>
-  /// Returns the x m l schema reference.
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlchildnodesuggestion.xmlschemareference?view=word-pia"/>
   public XMLSchemaReference XMLSchemaReference { get; }
