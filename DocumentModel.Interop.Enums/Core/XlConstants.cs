@@ -34,12 +34,12 @@ public enum XlConstants
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  3DBar = -4099,
+  ThreeDBar = -4099,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  3DSurface = -4103,
+  ThreeDSurface = -4103,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.

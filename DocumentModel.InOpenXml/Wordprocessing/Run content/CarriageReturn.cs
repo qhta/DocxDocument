@@ -1,5 +1,4 @@
 using DocumentFormat.OpenXml.EMMA;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a carriage return character in a text run in WordprocessingML documents.

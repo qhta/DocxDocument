@@ -1,7 +1,5 @@
 ﻿#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
-
 namespace DocumentModel;
-
 /// <summary>
 ///   Represents a collection of model elements associated with an OpenXml element, providing synchronization between the document model and OpenXml elements.
 ///   Supports loading, updating, and detaching data from WordprocessingML or other OpenXml-based collections.
@@ -15,7 +13,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
 {
   private OpenXmlCollectionType? _openXmlCollection;
 
-
   /// <summary>
   ///   Initializes a new instance of the <see cref="ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class.
   ///   Subscribes to collection change events to synchronize with the underlying OpenXml collection.
@@ -24,7 +21,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   {
     InitCollectionChangedEventHandler();
   }
-
   /// <summary>
   /// Initializes a new instance of the ModelElementCollection class with the specified parent element.
   /// </summary>
@@ -33,7 +29,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   {
     InitCollectionChangedEventHandler();
   }
-
   /// <summary>
   /// Initializes collection changed event handler to update data on change.
   /// </summary>
@@ -52,12 +47,10 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
       }
     };
   }
-
   /// <summary>
   /// Indicates whether a loading operation is currently in progress.
   /// </summary>
   protected bool isLoading;
-
   /// <summary>
   ///   The WordprocessingDocument instance to which this model element collection is attached, or null if not attached.
   /// </summary>
@@ -69,9 +62,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
     get => _WordprocessingDocument ?? (Parent as IWordprocessingDocumentAware)?.WordprocessingDocument;
     protected set => _WordprocessingDocument = value;
   }
-
   private DXPP.WordprocessingDocument? _WordprocessingDocument;
-
   /// <summary>
   ///   Attaches this model element collection to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
   /// </summary>
@@ -80,7 +71,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   {
     WordprocessingDocument = wordprocessingDocument;
   }
-
   /// <summary>
   ///   Attaches this model element collection to the specified WordprocessingDocument and updates the document's package properties or OpenXml part with current data.
   /// </summary>
@@ -93,7 +83,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
       UpdateData(updatableElement);
   }
 
-
   /// <summary>
   ///   Detaches this model element collection from the attached document, clearing the underlying OpenXml element reference.
   ///   After detaching, further access to OpenXml properties is not possible until re-attached.
@@ -104,7 +93,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
     SetUpdatableElement(null);
   }
 
-
   /// <summary>
   ///   Initializes a new instance of the <see cref="ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class with the specified OpenXml element.
   /// </summary>
@@ -113,7 +101,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   {
     _openXmlCollection = openXmlCollection;
   }
-
   /// <summary>
   ///   Initializes a new instance of the <see cref="ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class with the specified items.
   /// </summary>
@@ -125,7 +112,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
       Add(item);
     }
   }
-
   /// <summary>
   ///   Returns the OpenXml collection element instance for update operations, or null if not set.
   /// </summary>
@@ -134,7 +120,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   {
     return _openXmlCollection;
   }
-
   /// <summary>
   /// Sets the OpenXml collection element instance for update operations.
   /// </summary>
@@ -151,7 +136,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
       throw new ArgumentException(
         $"Expected an element of type {typeof(OpenXmlCollectionType).FullName}, but received {element.GetType().FullName}.");
   }
-
   /// <summary>
   ///   Loads data from the specified OpenXml element into this model element collection.
   ///   Sets the isLoading flag to true while loading data to avoid unnecessary updates by collection change events.
@@ -167,14 +151,12 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
     isLoading = false;
   }
 
-
   /// <summary>
   ///   Loads data from the modeled OpenXml collection into this model element collection instance.
   ///   Must be implemented by derived classes to define the mapping logic.
   /// </summary>
   /// <param name="openXmlModeledCollection">The OpenXml collection to load data from.</param>
   protected abstract void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection);
-
 
   /// <summary>
   ///   Stores data from this model element collection to the specified OpenXml element.
@@ -188,12 +170,10 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
       UpdateDataCollection(openXmlModeledElement);
     }
   }
-
   /// <summary>
   ///   Stores data from this model element collection instance to the modeled OpenXml collection.
   ///   Must be implemented by derived classes to define the mapping logic.
   /// </summary>
   /// <param name="openXmlModeledCollection">The OpenXml collection to store data to.</param>
   protected abstract void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection);
-
 }

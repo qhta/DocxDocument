@@ -10,6 +10,5 @@ public partial class FilteredBubbleSeries : ModelElement<DXO13DC.FilteredBubbleS
   /// </summary>
   [OpenXmlType(typeof(DXO13DC.BubbleChartSeries))]
   public BubbleChartSeries? BubbleChartSeries { get => _BubbleChartSeries; set => UpdateField(ref _BubbleChartSeries, value, nameof(BubbleChartSeries)); }
-
   private BubbleChartSeries? _BubbleChartSeries;
 }

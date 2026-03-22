@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class SchemeFont<T> 
 {
   public bool ShouldSerializeLatinFont() => LatinFont is not null;

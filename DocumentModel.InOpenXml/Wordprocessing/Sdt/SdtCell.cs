@@ -11,13 +11,11 @@ public partial class SdtCell : ModelElement<DXW.SdtCell>, ITableRowContent, ISdt
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtCell.SdtProperties))]
  public SdtProperties? SdtProperties { get => _SdtProperties; set => UpdateField(ref _SdtProperties, value, nameof(SdtProperties)); }
-
  private SdtProperties? _SdtProperties;
  /// <summary>
  /// Specifies the properties applied to the physical character that delimits the end of a structured document tag.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtCell.SdtEndCharProperties))]
  public SdtEndCharProperties? SdtEndCharProperties { get => _SdtEndCharProperties; set => UpdateField(ref _SdtEndCharProperties, value, nameof(SdtEndCharProperties)); }
-
  private SdtEndCharProperties? _SdtEndCharProperties;
 }

@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel.Wordprocessing;
-
   /// <summary>
   /// Represents font selection information for a text run, including typeface name, theme font, bold, and italic specifications.
   /// This struct enables precise font selection and styling for character-level formatting in WordprocessingML documents.

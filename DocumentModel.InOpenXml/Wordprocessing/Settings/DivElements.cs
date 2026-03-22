@@ -6,6 +6,4 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DivElement))]
 public class DivElements : ElementCollection<DivElement>
 {
-
 }
-

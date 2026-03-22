@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Defines the Statistics Class.
 /// </summary>
@@ -15,6 +14,5 @@ public class Statistics: ModelElement<DXO16DCD.Statistics>
     get => _QuartileMethod;
     set => UpdateField(ref _QuartileMethod, value, nameof(QuartileMethod));
   }
-
   private QuartileMethod? _QuartileMethod;
 }

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents the size values for bubbles in a bubble chart, including references and literals.
 /// </summary>
@@ -14,9 +13,7 @@ public partial class BubbleSize: ModelElement<DXDC.BubbleSize>
     get => _NumberReference;
     set => UpdateField(ref _NumberReference, value, nameof(NumberReference));
   }
-
   private NumberReference? _NumberReference;
-
   /// <summary>
   ///   Literal numeric values for bubble sizes.
   /// </summary>
@@ -25,6 +22,5 @@ public partial class BubbleSize: ModelElement<DXDC.BubbleSize>
     get => _NumberLiteral;
     set => UpdateField(ref _NumberLiteral, value, nameof(NumberLiteral));
   }
-
   private NumberLiteral? _NumberLiteral;
 }

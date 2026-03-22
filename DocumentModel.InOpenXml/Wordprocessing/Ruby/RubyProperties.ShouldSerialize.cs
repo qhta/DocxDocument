@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing;
-
 #pragma warning disable CS1591
-
 public partial class RubyProperties
 {
   public bool ShouldSerializeRubyAlign() => RubyAlign is not null;

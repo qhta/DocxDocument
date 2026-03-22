@@ -11,14 +11,11 @@ public partial class HyperlinkOnClick : ModelElement<DXD.HyperlinkOnClick>, IExt
   /// </summary>
   [OpenXmlProperty(nameof(DXD.HyperlinkOnClick.HyperlinkSound))]
   public EmbeddedWavAudioFileType? HyperlinkSound { get => _HyperlinkSound; set => UpdateField(ref _HyperlinkSound, value, nameof(HyperlinkSound)); }
-
   private EmbeddedWavAudioFileType? _HyperlinkSound;
-
   /// <summary>
   ///   List of extension elements for the click hyperlink, supporting extensibility and application-specific hyperlink data.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.HyperlinkOnClick.HyperlinkExtensionList))]
   public HyperlinkExtensionList? HyperlinkExtensionList { get => _HyperlinkExtensionList; set => UpdateField(ref _HyperlinkExtensionList, value, nameof(HyperlinkExtensionList)); }
-
   private HyperlinkExtensionList? _HyperlinkExtensionList;
 }

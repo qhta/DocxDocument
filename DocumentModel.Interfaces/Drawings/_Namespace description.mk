@@ -1,8 +1,8 @@
 # Namespace: DocumentModel.Drawings
 
-The **DocumentModel.Drawings** namespace contains the core definitions and types for the shared drawing infrastructure (DrawingML) used across document formats. It provides the fundamental building blocks for creating, manipulating, and rendering graphical objects within Office Open XML documents.
+The **DocumentModel.Drawings** namespace contains the definitions and types for the shared drawing infrastructure (DrawingML) used across document formats. It provides the fundamental building blocks for creating, manipulating, and rendering graphical objects within Office Open XML documents.
 
-## Core Components
+## Components
 
 ### 1.Shape Framework
 *   **Shape Properties (`ShapeProperties`):** The central container for visual attributes, including geometry, fills, borders, and effects.

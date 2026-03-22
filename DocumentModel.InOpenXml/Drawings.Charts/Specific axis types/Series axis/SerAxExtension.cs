@@ -5,5 +5,4 @@ namespace DocumentModel.Drawings.Charts;
 [OpenXmlType(typeof(DXDC.SerAxExtension))]
 public partial class SerAxExtension : AxisExtension<DXDC.SerAxExtension>
 {
-
 }

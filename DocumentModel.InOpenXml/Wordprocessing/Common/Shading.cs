@@ -12,7 +12,6 @@ public partial class Shading : ModelElement<DXW.Shading>
   [OpenXmlProperty(nameof(DXW.Shading.Val))]
   [Required]
   public ShadingPattern? Pattern { get => _Pattern; set => UpdateField(ref _Pattern, value, nameof(Pattern)); }
-
   private ShadingPattern? _Pattern;
   /// <summary>
   /// The color of the pattern foreground, specifying the primary color used in the shading pattern.
@@ -20,7 +19,6 @@ public partial class Shading : ModelElement<DXW.Shading>
   [OpenXmlLoadData(nameof(LoadForegroundColor))]
   [OpenXmlUpdateData(nameof(UpdateForegroundColor))]
   public DMW.Color? ForegroundColor { get => _ForegroundColor; set => UpdateField(ref _ForegroundColor, value, nameof(ForegroundColor)); }
-
   private DMW.Color? _ForegroundColor;
   /// <summary>
   /// The color of the pattern background, specifying the secondary color used in the shading pattern.
@@ -28,9 +26,7 @@ public partial class Shading : ModelElement<DXW.Shading>
   [OpenXmlLoadData(nameof(LoadBackgroundColor))]
   [OpenXmlUpdateData(nameof(UpdateBackgroundColor))]
   public DMW.Color? BackgroundColor { get => _BackgroundColor; set => UpdateField(ref _BackgroundColor, value, nameof(BackgroundColor)); }
-
   private DMW.Color? _BackgroundColor;
-
   /// <summary>
   /// Loads the shading foreground color from the specified OpenXML shading element, applying any associated theme color, tint,
   /// or shade settings.
@@ -43,7 +39,6 @@ public partial class Shading : ModelElement<DXW.Shading>
   {
     this.ForegroundColor = DMW.Color.FromOpenXml(shading.Color, shading.ThemeColor, shading.ThemeTint, shading.ThemeShade);
   }
-
   /// <summary>
   /// Updates the color-related properties of the specified shading object to match the current foreground color settings.
   /// </summary>
@@ -66,7 +61,6 @@ public partial class Shading : ModelElement<DXW.Shading>
       shading.ThemeShade = null;
     }
   }
-
   /// <summary>
   /// Loads the shading background color from the specified OpenXML shading element, applying any associated theme color, tint,
   /// or shade settings.
@@ -79,7 +73,6 @@ public partial class Shading : ModelElement<DXW.Shading>
   {
     this.BackgroundColor = DMW.Color.FromOpenXml(shading.Fill, shading.ThemeFill, shading.ThemeFillTint, shading.ThemeFillShade);
   }
-
   /// <summary>
   /// Updates the color-related properties of the specified shading object to match the current background color settings.
   /// </summary>
@@ -102,5 +95,4 @@ public partial class Shading : ModelElement<DXW.Shading>
       shading.ThemeFillShade = null;
     }
   }
-
 }

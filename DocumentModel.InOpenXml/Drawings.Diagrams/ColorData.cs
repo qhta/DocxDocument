@@ -5,5 +5,4 @@ namespace DocumentModel.Drawings.Diagrams;
 [OpenXmlType(typeof(DXDD.ColorData))]
 public partial class ColorData : SampleDataType
 {
-
 }

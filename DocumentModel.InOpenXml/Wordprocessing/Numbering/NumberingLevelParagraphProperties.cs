@@ -11,7 +11,5 @@ public class NumberingLevelParagraphProperties : BaseParagraphProperties<DXW.Pre
   /// </summary>
   [OpenXmlProperty(nameof(DXW.PreviousParagraphProperties.ParagraphStyleId))]
   public string? ParagraphStyleId { get => _ParagraphStyleId; set => UpdateField(ref _ParagraphStyleId, value, nameof(ParagraphStyleId)); }
-
   private string? _ParagraphStyleId;
-
 }

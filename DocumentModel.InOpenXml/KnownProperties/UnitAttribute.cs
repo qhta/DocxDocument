@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 ///   Indicates the unit of measurement associated with a property or field, for documentation, validation, or tooling purposes.
 ///   Apply this attribute to properties or fields to specify the expected unit for their values (e.g., "kg", "m", "s").
@@ -16,7 +15,6 @@ public class UnitAttribute : Attribute
   {
     Unit = unit;
   }
-
   /// <summary>
   ///   The unit of measurement associated with the target property or field.
   /// </summary>

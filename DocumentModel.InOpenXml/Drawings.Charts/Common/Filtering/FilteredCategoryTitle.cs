@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents a filtered category title for a chart, including the axis data source type.
 /// </summary>
@@ -15,6 +14,5 @@ public partial class FilteredCategoryTitle: ModelElement<DXO13DC.FilteredCategor
     get => _AxisDataSourceType;
     set => UpdateField(ref _AxisDataSourceType, value, nameof(AxisDataSourceType));
   }
-
   private AxisDataSourceType? _AxisDataSourceType;
 }

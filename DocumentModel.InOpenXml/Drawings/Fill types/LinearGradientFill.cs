@@ -8,7 +8,6 @@ public partial class LinearGradientFill : GradientFill
   ///   Angle
   /// </summary>
   public Int32? Angle { get; set; }
-
   /// <summary>
   ///   Scaled
   /// </summary>

@@ -10,7 +10,6 @@ public abstract class CollectionItem: ModelElement, ICollectionItem
   protected CollectionItem()
   {
   }
-
   /// <summary>
   /// Protected constructor to initialize the collection item with its containing collection.
   /// </summary>
@@ -19,7 +18,6 @@ public abstract class CollectionItem: ModelElement, ICollectionItem
   {
     SetCollection(collection);
   }
-
   ///// <summary>
   ///// Collection that contains this item.
   ///// </summary>
@@ -27,7 +25,6 @@ public abstract class CollectionItem: ModelElement, ICollectionItem
   //[JsonIgnore]
   //[NotMapped]
   //public object? Collection { get; set; }
-
 
   ///// <summary>
   ///// Collection property is defined  but not stored in OpenXml element
@@ -37,5 +34,4 @@ public abstract class CollectionItem: ModelElement, ICollectionItem
   //{
   //  Collection = value;
   //}
-
 }

@@ -10,13 +10,11 @@ public partial class Run : ModelElement<DXD.Run>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Run.RunProperties))]
  public RunProperties? RunProperties { get => _RunProperties; set => UpdateField(ref _RunProperties, value, nameof(RunProperties)); }
-
  private RunProperties? _RunProperties;
  /// <summary>
  ///   Text string content of the run.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Run.Text))]
  public string? Text { get => _Text; set => UpdateField(ref _Text, value, nameof(Text)); }
-
  private string? _Text;
 }

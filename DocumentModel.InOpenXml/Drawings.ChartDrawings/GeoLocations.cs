@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a container for geographic location data retrieved from geocoding operations.
 /// </summary>

@@ -7,14 +7,12 @@ public sealed partial class CustomProperty
  /// </summary>
  [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.PropertyId))]
  public int? PropertyId { get => _PropertyId; set => UpdateField(ref _PropertyId, value, nameof(PropertyId)); }
-
  private int? _PropertyId;
  /// <summary>
  ///   Property name. Should be unique within the document properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
-
  private string? _Name;
  /// <summary>
  /// Format identifier (FormatId) for the custom document property in OpenXml.
@@ -37,7 +35,6 @@ public sealed partial class CustomProperty
  /// </remarks>
  [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.FormatId))]
  public Guid? FormatId { get => _FormatId; set => UpdateField(ref _FormatId, value, nameof(FormatId)); }
-
  private Guid? _FormatId = new Guid("D5CDD505-2E9C-101B-9397-08002B2CF9AE");
  /// <summary>
  /// Link target for the custom document property in OpenXml.
@@ -57,7 +54,6 @@ public sealed partial class CustomProperty
  /// </remarks>
  [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.LinkTarget))]
  public string? LinkTarget { get => _LinkTarget; set => UpdateField(ref _LinkTarget, value, nameof(LinkTarget)); }
-
  private string? _LinkTarget;
  /// <summary>
  /// Value of the custom document property.
@@ -74,10 +70,8 @@ public sealed partial class CustomProperty
    {
     _Value = value;
    }
-
    return value;
   }
-
   set
   {
    if (value != _Value)
@@ -92,12 +86,10 @@ public sealed partial class CustomProperty
      if (value != null)
       openXmlElement.AppendChild(value.AsVTVariant());
     }
-
     NotifyPropertyChanged(nameof(Value));
    }
   }
  }
-
  private Variant? _Value;
  /// <summary>
  /// Needed to set the value in OpenXml element.
@@ -108,7 +100,6 @@ public sealed partial class CustomProperty
   openXmlElement.RemoveAllChildren();
   openXmlElement.AppendChild(Value.AsVTVariant());
  }
-
  /// <summary>
  /// Needed to get the value in OpenXml element.
  /// </summary>
@@ -122,7 +113,6 @@ public sealed partial class CustomProperty
    _Value = variant;
   }
  }
-
  ///// <summary>
  ///// Needed to get the value from OpenXml element.
  ///// </summary>
@@ -150,10 +140,8 @@ public sealed partial class CustomProperty
     type = _Value.ValueType;
     _Type = type;
    }
-
    return type?.Name;
   }
-
   set
   {
    if (value != _Type?.Name)
@@ -171,11 +159,9 @@ public sealed partial class CustomProperty
         openXmlElement.AppendChild(convertedValue.AsVTVariant());
       }
     }
-
     NotifyPropertyChanged(nameof(Value));
    }
   }
  }
-
  private Type? _Type;
 }

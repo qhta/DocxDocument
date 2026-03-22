@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Provides JSON serialization and deserialization support for the <see cref="TableMeasure"/> structure.
 /// </summary>
@@ -40,7 +39,6 @@ public class TableMeasureJsonConverter : JsonConverter<DMW.TableMeasure>
       var value = reader.GetString();
       if (value == null)
         throw new JsonException($"Expected string value for TableMeasure, but got null");
-
       try
       {
         return new DMW.TableMeasure(value);
@@ -51,7 +49,6 @@ public class TableMeasureJsonConverter : JsonConverter<DMW.TableMeasure>
           $"String must be a valid number optionally followed by unit suffix (mm, cm, pt, or in). Error: {ex.Message}", ex);
       }
     }
-
     if (reader.TokenType == JsonTokenType.Number)
     {
       try
@@ -60,22 +57,18 @@ public class TableMeasureJsonConverter : JsonConverter<DMW.TableMeasure>
         {
           return new TableMeasure(longValue);
         }
-
         if (reader.TryGetUInt64(out ulong ulongValue))
         {
           return new TableMeasure(ulongValue);
         }
-
         if (reader.TryGetDecimal(out decimal decimalValue))
         {
           return new TableMeasure(decimalValue);
         }
-
         if (reader.TryGetDouble(out double doubleValue))
         {
           return new TableMeasure(doubleValue);
         }
-
         throw new JsonException($"Invalid numeric value for TableMeasure");
       }
       catch (FormatException ex)
@@ -83,10 +76,8 @@ public class TableMeasureJsonConverter : JsonConverter<DMW.TableMeasure>
         throw new JsonException($"Invalid numeric value for TableMeasure. Error: {ex.Message}", ex);
       }
     }
-
     throw new JsonException($"Expected string or number token for TableMeasure, but got {reader.TokenType}");
   }
-
   /// <summary>
   /// Writes a <see cref="TableMeasure"/> value as JSON.
   /// </summary>

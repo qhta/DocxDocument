@@ -1,15 +1,11 @@
 using System.Globalization;
 using System.Xml.Serialization;
 // ReSharper disable SpecifyACultureInStringConversionExplicitly
-
 namespace DocumentModel.Wordprocessing;
-
 public partial class Languages : IXmlSerializable
 {
   private const string WordprocessingNamespace = "http://schemas.openxmlformats.org/wordprocessingml/2006/main";
-
   XmlSchema? IXmlSerializable.GetSchema() => null;
-
   void IXmlSerializable.ReadXml(XmlReader reader)
   {
     if (reader.IsEmptyElement)
@@ -17,13 +13,10 @@ public partial class Languages : IXmlSerializable
       reader.Read();
       return;
     }
-
     var valAttribute = reader.GetAttribute("val") ?? reader.GetAttribute("val", WordprocessingNamespace);
     var bidiAttribute = reader.GetAttribute("bidi") ?? reader.GetAttribute("bidi", WordprocessingNamespace);
     var eastAsiaAttribute = reader.GetAttribute("eastAsia") ?? reader.GetAttribute("eastAsia", WordprocessingNamespace);
-
     reader.ReadStartElement();
-
     if (valAttribute == null  && bidiAttribute == null && eastAsiaAttribute == null)
     {
       if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
@@ -41,7 +34,6 @@ public partial class Languages : IXmlSerializable
           var elementValue = reader.ReadElementContentAsString();
           if (namespaceUri != WordprocessingNamespace)
             continue;
-
           switch (localName)
           {
             case "Val":
@@ -59,23 +51,19 @@ public partial class Languages : IXmlSerializable
           }
         }
       }
-
       if (reader.NodeType == XmlNodeType.EndElement)
         reader.ReadEndElement();
       return;
     }
-
     if (!string.IsNullOrWhiteSpace(valAttribute))
       Val = new HexRgb(valAttribute);
     if (!string.IsNullOrWhiteSpace(bidiAttribute))
       Bidi = bidiAttribute;
     if (!string.IsNullOrWhiteSpace(eastAsiaAttribute))
       EastAsia = eastAsiaAttribute;
-
     if (reader.NodeType == XmlNodeType.EndElement)
       reader.ReadEndElement();
   }
-
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
     if (!string.IsNullOrEmpty(Val) && Bidi == null && EastAsia == null)
@@ -83,7 +71,6 @@ public partial class Languages : IXmlSerializable
       writer.WriteString(Val);
       return;
     }
-
     if (!string.IsNullOrEmpty(Val))
       writer.WriteElementString("Val", WordprocessingNamespace, Val);
     if (Bidi != null)

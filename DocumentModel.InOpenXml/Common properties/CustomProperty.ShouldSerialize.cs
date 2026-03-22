@@ -1,7 +1,5 @@
 namespace DocumentModel;
-
 #pragma warning disable CS1591
-
 public partial class CustomProperty
 {
   public bool ShouldSerializePropertyId() => PropertyId is not null;

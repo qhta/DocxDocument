@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the collection of defined styles in a Wordprocessing document.
@@ -16,7 +15,6 @@ public partial class DefinedStyles : ModelElementCollection<StyleDef>
   public DefinedStyles()
   {
   }
-
   /// <summary>
   /// Initializing constructor.
   /// </summary>
@@ -25,7 +23,6 @@ public partial class DefinedStyles : ModelElementCollection<StyleDef>
   {
     Styles = styles;
   }
-
   /// <summary>
   /// Parent styles element that contains this collection of defined styles. 
   /// </summary>
@@ -33,7 +30,6 @@ public partial class DefinedStyles : ModelElementCollection<StyleDef>
   [JsonIgnore]
   [NotMapped]
   public Styles? Styles { get => Parent as Styles; set => SetParent(value); }
-
   /// <summary>
   /// Gets updatable element for this collection of defined styles,
   /// which is the <see cref="DXW.Styles"/> element that contains the individual <see cref="DXW.Style"/> elements
@@ -44,7 +40,6 @@ public partial class DefinedStyles : ModelElementCollection<StyleDef>
   {
     return Styles?.GetUpdatableElement() as DXW.Styles;
   }
-
   /// <summary>
   /// Updates the styles in the specified OpenXml element by removing all existing styles and adding new styles defined
   /// in the current collection.  
@@ -64,7 +59,6 @@ public partial class DefinedStyles : ModelElementCollection<StyleDef>
       styles.AppendChild(style);
     }
   }
-
   /// <summary>
   /// Loads styles from the specified OpenXmlElement into the current collection, replacing any existing styles.
   /// </summary>

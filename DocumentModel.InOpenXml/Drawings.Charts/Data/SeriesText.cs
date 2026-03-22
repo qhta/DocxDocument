@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents text associated with a chart series.
 ///   This class defines either a reference to a string data source or a direct numeric value used as text.
@@ -16,9 +15,7 @@ public partial class SeriesText: ModelElement<DXDC.SeriesText>
     get => _StringReference;
     set => UpdateField(ref _StringReference, value, nameof(StringReference));
   }
-
   private StringReference? _StringReference;
-
   /// <summary>
   ///   Numeric value displayed as text for the series.
   /// </summary>
@@ -28,6 +25,5 @@ public partial class SeriesText: ModelElement<DXDC.SeriesText>
     get => _NumericValue;
     set => UpdateField(ref _NumericValue, value, nameof(NumericValue));
   }
-
   private string? _NumericValue;
 }

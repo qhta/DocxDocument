@@ -17,5 +17,4 @@ public partial class CustomXmlElement : CollectionItem
   /// Custom XML properties representing the element tag in the schema (w:customXmlPr).
   /// </summary>
   public CustomXmlProperties? CustomXmlProperties { get; set; }
-
 }

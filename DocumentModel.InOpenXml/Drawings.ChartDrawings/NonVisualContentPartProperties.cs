@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Defines the NonVisualContentPartProperties Class.
 /// </summary>
@@ -15,9 +14,7 @@ public class NonVisualContentPartProperties: ModelElement<DXO10DCD.NonVisualCont
     get => _NonVisualDrawingProperties;
     set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties));
   }
-
   private NonVisualDrawingProperties? _NonVisualDrawingProperties;
-
   /// <summary>
   /// Specifies the non visual ink content part properties.
   /// </summary>
@@ -27,6 +24,5 @@ public class NonVisualContentPartProperties: ModelElement<DXO10DCD.NonVisualCont
     get => _NonVisualInkContentPartProperties;
     set => UpdateField(ref _NonVisualInkContentPartProperties, value, nameof(NonVisualInkContentPartProperties));
   }
-
   private NonVisualInkContentPartProperties? _NonVisualInkContentPartProperties;
 }

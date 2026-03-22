@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Office;
-
 /// <summary>
 ///   Defines the NonVisualDrawingShapeProperties Class.
 /// </summary>

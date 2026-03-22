@@ -10,6 +10,5 @@ public partial class LineChartExtension : Extension<DXDC.LineChartExtension>
   /// </summary>
   [OpenXmlElement(typeof(DXO13DC.FilteredLineSeriesExtension))]
   public FilteredLineSeriesExtension? FilteredLineSeriesExtension { get => _FilteredLineSeriesExtension; set => UpdateField(ref _FilteredLineSeriesExtension, value, nameof(FilteredLineSeriesExtension)); }
-
   private FilteredLineSeriesExtension? _FilteredLineSeriesExtension;
 }

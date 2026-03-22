@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Defines the ParentLabelLayout Class.
 /// </summary>
@@ -15,6 +14,5 @@ public class ParentLabelLayout: ModelElement<DXO16DCD.ParentLabelLayout>
     get => _ParentLabelLayoutVal;
     set => UpdateField(ref _ParentLabelLayoutVal, value, nameof(ParentLabelLayoutVal));
   }
-
   private ParentLabelLayoutVal? _ParentLabelLayoutVal;
 }

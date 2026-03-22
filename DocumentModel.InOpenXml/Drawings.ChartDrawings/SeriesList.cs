@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 /// Collection of Series elements within a chart,
 /// representing the individual data series that are plotted on the chart.

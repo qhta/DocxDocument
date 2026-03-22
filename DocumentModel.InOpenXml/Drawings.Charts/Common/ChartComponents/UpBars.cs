@@ -10,6 +10,5 @@ public partial class UpBars : ModelElement<DXDC.UpBars>
   /// </summary>
   [OpenXmlProperty(nameof(DXDC.UpBars.ChartShapeProperties))]
   public ChartShapeProperties? ChartShapeProperties { get => _ChartShapeProperties; set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties)); }
-
   private ChartShapeProperties? _ChartShapeProperties;
 }

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Drop Lines.
 /// </summary>
@@ -15,6 +14,5 @@ public partial class DropLines: ModelElement<DXDC.DropLines>
     get => _ChartShapeProperties;
     set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties));
   }
-
   private ChartShapeProperties? _ChartShapeProperties;
 }

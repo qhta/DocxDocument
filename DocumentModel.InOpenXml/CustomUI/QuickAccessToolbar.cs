@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomUI;
-
 /// <summary>
 /// <para>Defines the QuickAccessToolbar Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -24,9 +23,7 @@ public class QuickAccessToolbar: ModelElement<DXO10CUI.QuickAccessToolbar>
     get => _SharedControlsQatItems;
     set => UpdateField(ref _SharedControlsQatItems, value, nameof(SharedControlsQatItems));
   }
-
   private SharedControlsQatItems? _SharedControlsQatItems;
-
   /// <summary>
   /// Specifies the document controls qat items.
   /// </summary>
@@ -36,6 +33,5 @@ public class QuickAccessToolbar: ModelElement<DXO10CUI.QuickAccessToolbar>
     get => _DocumentControlsQatItems;
     set => UpdateField(ref _DocumentControlsQatItems, value, nameof(DocumentControlsQatItems));
   }
-
   private DocumentControlsQatItems? _DocumentControlsQatItems;
 }

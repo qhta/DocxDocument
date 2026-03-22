@@ -10,7 +10,6 @@ public class Tabs : ModelElementCollection<TabStop, DXW.Tabs, DXW.TabStop>
   /// Default constructor
   /// </summary>
   public Tabs() : base() { }
-
   /// <summary>
   /// Initializing constructor.
   /// </summary>

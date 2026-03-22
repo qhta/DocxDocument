@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a reference to external data source for a chart with automatic update capabilities.
 /// </summary>
@@ -30,14 +29,11 @@ public class ExternalData: ModelElement<DXO16DCD.ExternalData>
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ExternalData.Id))]
   public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
   private string? _Id;
-
   /// <summary>
   /// Specifies the auto update.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ExternalData.AutoUpdate))]
   public bool? AutoUpdate { get => _AutoUpdate; set => UpdateField(ref _AutoUpdate, value, nameof(AutoUpdate)); }
-
   private bool? _AutoUpdate;
 }

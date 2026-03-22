@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Charts;
-
 #pragma warning disable CS1591
-
 public partial class Bar3DChart
 {
   public bool ShouldSerializeBarDirection() => BarDirection is not null;

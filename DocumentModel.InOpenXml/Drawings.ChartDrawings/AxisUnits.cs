@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents the unit display information for a chart axis.
 /// </summary>
@@ -20,9 +19,7 @@ public class AxisUnits: ModelElement<DXO16DCD.AxisUnits>
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.AxisUnits.Unit))]
   public AxisUnit? Unit { get => _Unit; set => UpdateField(ref _Unit, value, nameof(Unit)); }
-
   private AxisUnit? _Unit;
-
   /// <summary>
   /// Specifies the axis units label.
   /// </summary>
@@ -32,9 +29,7 @@ public class AxisUnits: ModelElement<DXO16DCD.AxisUnits>
     get => _AxisUnitsLabel;
     set => UpdateField(ref _AxisUnitsLabel, value, nameof(AxisUnitsLabel));
   }
-
   private AxisUnitsLabel? _AxisUnitsLabel;
-
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
@@ -44,6 +39,5 @@ public class AxisUnits: ModelElement<DXO16DCD.AxisUnits>
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

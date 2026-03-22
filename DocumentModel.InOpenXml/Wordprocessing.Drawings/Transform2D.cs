@@ -1,5 +1,4 @@
 using DocumentModel.Drawings;
-
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Specific DXO10WD.Transform2D mapping type.

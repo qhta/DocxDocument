@@ -1,5 +1,4 @@
 using DocumentModel.CustomXml;
-
 namespace DocumentModel.Wordprocessing;
 public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
 {
@@ -16,9 +15,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _ActiveWritingStyles;
     set => UpdateField(ref _ActiveWritingStyles, value, nameof(ActiveWritingStyle));
   }
-
   private ActiveWritingStyles? _ActiveWritingStyles;
-
   /// <summary>
   /// Specifies that paragraph and table borders shall be adjusted to align with page borders if spacing is less than or equal to 10.5 points.
   /// </summary>
@@ -32,9 +29,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _AlignBorderAndEdges;
     set => UpdateField(ref _AlignBorderAndEdges, value, nameof(AlignBorderAndEdges));
   }
-
   private bool? _AlignBorderAndEdges;
-
   /// <summary>
   /// Specifies whether custom XML markup with no associated namespace is treated as an error and moved into a special error namespace.
   /// </summary>
@@ -48,9 +43,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _AlwaysMergeEmptyNamespace;
     set => UpdateField(ref _AlwaysMergeEmptyNamespace, value, nameof(AlwaysMergeEmptyNamespace));
   }
-
   private bool? _AlwaysMergeEmptyNamespace;
-
   /// <summary>
   /// Specifies that custom XML elements always show placeholder text when they contain no run content.
   /// </summary>
@@ -64,9 +57,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _AlwaysShowPlaceholderText;
     set => UpdateField(ref _AlwaysShowPlaceholderText, value, nameof(AlwaysShowPlaceholderText));
   }
-
   private bool? _AlwaysShowPlaceholderText;
-
   /// <summary>
   /// Specifies the custom XML schemas to be associated with this document when loaded.
   /// </summary>
@@ -80,9 +71,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _AttachedSchemas;
     set => UpdateField(ref _AttachedSchemas, value, nameof(AttachedSchemas));
   }
-
   private AttachedSchemas? _AttachedSchemas;
-
   /// <summary>
   /// Specifies the location of a document template to be attached to the current document.
   /// </summary>
@@ -96,9 +85,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _AttachedTemplate;
     set => UpdateField(ref _AttachedTemplate, value, nameof(AttachedTemplate));
   }
-
   private AttachedTemplate? _AttachedTemplate;
-
   /// <summary>
   /// Specifies whether automatically applied formatting can override formatting protection.
   /// </summary>
@@ -112,9 +99,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _AutoFormatOverride;
     set => UpdateField(ref _AutoFormatOverride, value, nameof(AutoFormatOverride));
   }
-
   private bool? _AutoFormatOverride;
-
   /// <summary>
   /// Specifies whether the document should automatically be hyphenated by the hosting application.
   /// </summary>
@@ -128,9 +113,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _AutoHyphenation;
     set => UpdateField(ref _AutoHyphenation, value, nameof(AutoHyphenation));
   }
-
   private bool? _AutoHyphenation;
-
   /// <summary>
   /// Specifies if the document should be printed as signatures for booklet binding.
   /// </summary>
@@ -144,9 +127,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _BookFoldPrinting;
     set => UpdateField(ref _BookFoldPrinting, value, nameof(BookFoldPrinting));
   }
-
   private bool? _BookFoldPrinting;
-
   /// <summary>
   /// Specifies the number of pages to be included in each booklet when printing signatures.
   /// </summary>
@@ -160,9 +141,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _BookFoldPrintingSheets;
     set => UpdateField(ref _BookFoldPrintingSheets, value, nameof(BookFoldPrintingSheets));
   }
-
   private short? _BookFoldPrintingSheets;
-
   /// <summary>
   /// Specifies if pages are to be printed as signatures in reverse order.
   /// </summary>
@@ -176,9 +155,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _BookFoldReversePrinting;
     set => UpdateField(ref _BookFoldReversePrinting, value, nameof(BookFoldReversePrinting));
   }
-
   private bool? _BookFoldReversePrinting;
-
   /// <summary>
   /// Specifies that the page border should not surround contents of the footer.
   /// </summary>
@@ -192,9 +169,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _BordersDoNotSurroundFooter;
     set => UpdateField(ref _BordersDoNotSurroundFooter, value, nameof(BordersDoNotSurroundFooter));
   }
-
   private bool? _BordersDoNotSurroundFooter;
-
   /// <summary>
   /// Specifies that the page border should not surround contents of the header.
   /// </summary>
@@ -208,9 +183,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _BordersDoNotSurroundHeader;
     set => UpdateField(ref _BordersDoNotSurroundHeader, value, nameof(BordersDoNotSurroundHeader));
   }
-
   private bool? _BordersDoNotSurroundHeader;
-
   /// <summary>
   /// Information about captions in the document.
   /// </summary>
@@ -220,9 +193,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [Category("Captions")]
   [OpenXmlElement(typeof(DXW.Captions))]
   public Captions? Captions { get => _Captions; set => UpdateField(ref _Captions, value, nameof(Captions)); }
-
   private Captions? _Captions;
-
   /// <summary>
   /// Specifies how full-width characters should be compressed to remove additional whitespace.
   /// </summary>
@@ -236,9 +207,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _CharacterSpacingControl;
     set => UpdateField(ref _CharacterSpacingControl, value, nameof(CharacterSpacingControl));
   }
-
   private CharacterSpacing? _CharacterSpacingControl;
-
   /// <summary>
   /// Specifies how chart datapoint properties and data labels behave in all charts in the document.
   /// </summary>
@@ -252,9 +221,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _ChartTrackingRefBased;
     set => UpdateField(ref _ChartTrackingRefBased, value, nameof(ChartTrackingRefBased));
   }
-
   private bool? _ChartTrackingRefBased;
-
   /// <summary>
   /// Specifies the paragraph style to be applied to automatically created paragraphs with no other style.
   /// </summary>
@@ -268,9 +235,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _ClickAndTypeStyle;
     set => UpdateField(ref _ClickAndTypeStyle, value, nameof(ClickAndTypeStyle));
   }
-
   private string? _ClickAndTypeStyle;
-
   /// <summary>
   /// Specifies the theme color mapping for the document.
   /// </summary>
@@ -284,9 +249,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _ColorSchemeMapping;
     set => UpdateField(ref _ColorSchemeMapping, value, nameof(ColorSchemeMapping));
   }
-
   private DMWD.ColorSchemeMapping? _ColorSchemeMapping;
-
   /// <summary>
   /// Specifies a set of optional compatibility options for the document.
   /// </summary>
@@ -300,9 +263,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _Compatibility;
     set => UpdateField(ref _Compatibility, value, nameof(Compatibility));
   }
-
   private CompatibilitySettings? _Compatibility;
-
   /// <summary>
   /// Specifies that the user was resolving conflicting edits when the document was saved.
   /// </summary>
@@ -316,9 +277,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _ConflictMode;
     set => UpdateField(ref _ConflictMode, value, nameof(ConflictMode));
   }
-
   private bool? _ConflictMode;
-
   /// <summary>
   /// Specifies the maximum number of consecutive lines ending with a hyphen.
   /// </summary>
@@ -332,9 +291,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _ConsecutiveHyphenLimit;
     set => UpdateField(ref _ConsecutiveHyphenLimit, value, nameof(ConsecutiveHyphenLimit));
   }
-
   private ushort? _ConsecutiveHyphenLimit;
-
   /// <summary>
   /// Specifies the character to be interpreted as the radix point in fields.
   /// </summary>
@@ -348,9 +305,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DecimalSymbol;
     set => UpdateField(ref _DecimalSymbol, value, nameof(DecimalSymbol));
   }
-
   private string? _DecimalSymbol;
-
   /// <summary>
   /// Specifies the resolution in DPI at which images will be saved.
   /// </summary>
@@ -364,9 +319,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DefaultImageDpi;
     set => UpdateField(ref _DefaultImageDpi, value, nameof(DefaultImageDpi));
   }
-
   private int? _DefaultImageDpi;
-
   /// <summary>
   /// Specifies the table style to be automatically applied to newly inserted tables.
   /// </summary>
@@ -380,9 +333,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DefaultTableStyle;
     set => UpdateField(ref _DefaultTableStyle, value, nameof(DefaultTableStyle));
   }
-
   private string? _DefaultTableStyle;
-
   /// <summary>
   /// Specifies the multiplier for automatic tab stops in the document.
   /// </summary>
@@ -396,9 +347,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DefaultTabStop;
     set => UpdateField(ref _DefaultTabStop, value, nameof(DefaultTabStop));
   }
-
   private short? _DefaultTabStop;
-
   /// <summary>
   /// Specifies that cropped-out areas of images are not to be saved.
   /// </summary>
@@ -412,9 +361,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DiscardImageEditingData;
     set => UpdateField(ref _DiscardImageEditingData, value, nameof(DiscardImageEditingData));
   }
-
   private bool? _DiscardImageEditingData;
-
   /// <summary>
   /// Specifies whether background images and colors are displayed in print layout view.
   /// </summary>
@@ -428,9 +375,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DisplayBackgroundShape;
     set => UpdateField(ref _DisplayBackgroundShape, value, nameof(DisplayBackgroundShape));
   }
-
   private bool? _DisplayBackgroundShape;
-
   /// <summary>
   /// Specifies the number of horizontal grid units allowed between visible horizontal drawing grid lines.
   /// </summary>
@@ -444,9 +389,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DisplayHorizontalDrawingGrid;
     set => UpdateField(ref _DisplayHorizontalDrawingGrid, value, nameof(DisplayHorizontalDrawingGrid));
   }
-
   private int? _DisplayHorizontalDrawingGrid;
-
   /// <summary>
   /// Specifies the number of vertical grid units allowed between visible vertical drawing grid lines.
   /// </summary>
@@ -460,9 +403,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DisplayVerticalDrawingGrid;
     set => UpdateField(ref _DisplayVerticalDrawingGrid, value, nameof(DisplayVerticalDrawingGrid));
   }
-
   private int? _DisplayVerticalDrawingGrid;
-
   /// <summary>
   /// Specifies an arbitrary identifier for the context of paragraph identifiers in the document.
   /// </summary>
@@ -472,9 +413,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [Category("Identification")]
   [OpenXmlElement(typeof(DXO10W.DocumentId))]
   public HexInt? DocumentId { get => _DocumentId; set => UpdateField(ref _DocumentId, value, nameof(DocumentId)); }
-
   private HexInt? _DocumentId;
-
   /// <summary>
   /// Specifies the set of document protection restrictions applied to the document.
   /// </summary>
@@ -488,9 +427,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DocumentProtection;
     set => UpdateField(ref _DocumentProtection, value, nameof(DocumentProtection));
   }
-
   private DocumentProtection? _DocumentProtection;
-
   /// <summary>
   /// Specifies the classification of the document for customized UI and formatting behaviors.
   /// </summary>
@@ -504,9 +441,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DocumentType;
     set => UpdateField(ref _DocumentType, value, nameof(DocumentType));
   }
-
   private DocumentType? _DocumentType;
-
   /// <summary>
   /// Specifies that pictures shall not automatically be compressed when saving the document.
   /// </summary>
@@ -520,9 +455,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DoNotAutoCompressPictures;
     set => UpdateField(ref _DoNotAutoCompressPictures, value, nameof(DoNotAutoCompressPictures));
   }
-
   private bool? _DoNotAutoCompressPictures;
-
   /// <summary>
   /// Specifies whether a visual cue should be displayed around invalid custom XML markup.
   /// </summary>
@@ -536,9 +469,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DoNotDemarcateInvalidXml;
     set => UpdateField(ref _DoNotDemarcateInvalidXml, value, nameof(DoNotDemarcateInvalidXml));
   }
-
   private bool? _DoNotDemarcateInvalidXml;
-
   /// <summary>
   /// Specifies whether header and footer contents are displayed in print layout view.
   /// </summary>
@@ -552,9 +483,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DoNotDisplayPageBoundaries;
     set => UpdateField(ref _DoNotDisplayPageBoundaries, value, nameof(DoNotDisplayPageBoundaries));
   }
-
   private bool? _DoNotDisplayPageBoundaries;
-
   /// <summary>
   /// Specifies whether words in all capital letters shall be hyphenated.
   /// </summary>
@@ -568,9 +497,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DoNotHyphenateCaps;
     set => UpdateField(ref _DoNotHyphenateCaps, value, nameof(DoNotHyphenateCaps));
   }
-
   private bool? _DoNotHyphenateCaps;
-
   /// <summary>
   /// Specifies if content in text boxes, footnotes, and endnotes is excluded from document statistics.
   /// </summary>
@@ -584,9 +511,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DoNotIncludeSubdocsInStats;
     set => UpdateField(ref _DoNotIncludeSubdocsInStats, value, nameof(DoNotIncludeSubdocsInStats));
   }
-
   private bool? _DoNotIncludeSubdocsInStats;
-
   /// <summary>
   /// Specifies whether a visual cue should be displayed around form fields.
   /// </summary>
@@ -600,9 +525,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DoNotShadeFormData;
     set => UpdateField(ref _DoNotShadeFormData, value, nameof(DoNotShadeFormData));
   }
-
   private bool? _DoNotShadeFormData;
-
   /// <summary>
   /// Specifies that formatting revisions are not tracked when trackRevisions is turned on.
   /// </summary>
@@ -616,9 +539,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DoNotTrackFormatting;
     set => UpdateField(ref _DoNotTrackFormatting, value, nameof(DoNotTrackFormatting));
   }
-
   private bool? _DoNotTrackFormatting;
-
   /// <summary>
   /// Specifies that moves are not tracked as revisions when trackRevisions is turned on.
   /// </summary>
@@ -632,9 +553,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DoNotTrackMoves;
     set => UpdateField(ref _DoNotTrackMoves, value, nameof(DoNotTrackMoves));
   }
-
   private bool? _DoNotTrackMoves;
-
   /// <summary>
   /// Specifies that the top-left corner of the page is not used as the origin for the drawing grid.
   /// </summary>
@@ -648,9 +567,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DoNotUseMarginsForDrawingGridOrigin;
     set => UpdateField(ref _DoNotUseMarginsForDrawingGridOrigin, value, nameof(DoNotUseMarginsForDrawingGridOrigin));
   }
-
   private bool? _DoNotUseMarginsForDrawingGridOrigin;
-
   /// <summary>
   /// Specifies that custom XML markup is not validated against schemas.
   /// </summary>
@@ -664,9 +581,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DoNotValidateAgainstSchema;
     set => UpdateField(ref _DoNotValidateAgainstSchema, value, nameof(DoNotValidateAgainstSchema));
   }
-
   private bool? _DoNotValidateAgainstSchema;
-
   /// <summary>
   /// Specifies the origin for horizontal gridlines used by the drawing grid.
   /// </summary>
@@ -680,9 +595,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DrawingGridHorizontalOrigin;
     set => UpdateField(ref _DrawingGridHorizontalOrigin, value, nameof(DrawingGridHorizontalOrigin));
   }
-
   private Twips? _DrawingGridHorizontalOrigin;
-
   /// <summary>
   /// Specifies the width of horizontal grid units in the document.
   /// </summary>
@@ -696,9 +609,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DrawingGridHorizontalSpacing;
     set => UpdateField(ref _DrawingGridHorizontalSpacing, value, nameof(DrawingGridHorizontalSpacing));
   }
-
   private Twips? _DrawingGridHorizontalSpacing;
-
   /// <summary>
   /// Specifies the origin for vertical gridlines used by the drawing grid.
   /// </summary>
@@ -712,9 +623,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DrawingGridVerticalOrigin;
     set => UpdateField(ref _DrawingGridVerticalOrigin, value, nameof(DrawingGridVerticalOrigin));
   }
-
   private Twips? _DrawingGridVerticalOrigin;
-
   /// <summary>
   /// Specifies the width of vertical grid units in the document.
   /// </summary>
@@ -728,9 +637,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _DrawingGridVerticalSpacing;
     set => UpdateField(ref _DrawingGridVerticalSpacing, value, nameof(DrawingGridVerticalSpacing));
   }
-
   private Twips? _DrawingGridVerticalSpacing;
-
   /// <summary>
   /// Specifies that system fonts are embedded when font embedding is enabled.
   /// </summary>
@@ -744,9 +651,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _EmbedSystemFonts;
     set => UpdateField(ref _EmbedSystemFonts, value, nameof(EmbedSystemFonts));
   }
-
   private bool? _EmbedSystemFonts;
-
   /// <summary>
   /// Specifies that fonts in use are embedded when the document is saved.
   /// </summary>
@@ -760,9 +665,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _EmbedTrueTypeFonts;
     set => UpdateField(ref _EmbedTrueTypeFonts, value, nameof(EmbedTrueTypeFonts));
   }
-
   private bool? _EmbedTrueTypeFonts;
-
   /// <summary>
   /// Specifies the endnote properties for the document.
   /// </summary>
@@ -773,9 +676,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _EndnoteDocumentWideProperties;
     set => UpdateField(ref _EndnoteDocumentWideProperties, value, nameof(EndnoteDocumentWideProperties));
   }
-
   private EndnoteDocumentWideProperties? _EndnoteDocumentWideProperties;
-
   /// <summary>
   /// Specifies whether sections have different headers and footers for even and odd pages.
   /// </summary>
@@ -789,9 +690,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _EvenAndOddHeaders;
     set => UpdateField(ref _EvenAndOddHeaders, value, nameof(EvenAndOddHeaders));
   }
-
   private bool? _EvenAndOddHeaders;
-
   /// <summary>
   /// Specifies the footnote properties for the document.
   /// </summary>
@@ -802,9 +701,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _FootnoteDocumentWideProperties;
     set => UpdateField(ref _FootnoteDocumentWideProperties, value, nameof(FootnoteDocumentWideProperties));
   }
-
   private FootnoteDocumentWideProperties? _FootnoteDocumentWideProperties;
-
   /// <summary>
   /// Specifies that the document can be upgraded and is not limited to earlier word processing formats.
   /// </summary>
@@ -818,9 +715,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _ForceUpgrade;
     set => UpdateField(ref _ForceUpgrade, value, nameof(ForceUpgrade));
   }
-
   private bool? _ForceUpgrade;
-
   /// <summary>
   /// Specifies that the document was last saved while placeholder text of all structured document tags was being edited.
   /// </summary>
@@ -830,9 +725,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [Category("Forms")]
   [OpenXmlElement(typeof(DXW.FormsDesign))]
   public bool? FormsDesign { get => _FormsDesign; set => UpdateField(ref _FormsDesign, value, nameof(FormsDesign)); }
-
   private bool? _FormsDesign;
-
   /// <summary>
   /// Specifies that the gutter is positioned at the top of the document's pages.
   /// </summary>
@@ -842,9 +735,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [Category("Printing")]
   [OpenXmlElement(typeof(DXW.GutterAtTop))]
   public bool? GutterAtTop { get => _GutterAtTop; set => UpdateField(ref _GutterAtTop, value, nameof(GutterAtTop)); }
-
   private bool? _GutterAtTop;
-
   /// <summary>
   /// Specifies the default parameters for VML objects inserted in the header and footer.
   /// </summary>
@@ -855,9 +746,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _HeaderShapeDefaults;
     set => UpdateField(ref _HeaderShapeDefaults, value, nameof(HeaderShapeDefaults));
   }
-
   private DMWV.HeaderShapeDefaults? _HeaderShapeDefaults;
-
   /// <summary>
   /// Specifies whether a visual cue should be displayed around grammatical errors.
   /// </summary>
@@ -871,9 +760,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _HideGrammaticalErrors;
     set => UpdateField(ref _HideGrammaticalErrors, value, nameof(HideGrammaticalErrors));
   }
-
   private bool? _HideGrammaticalErrors;
-
   /// <summary>
   /// Specifies whether a visual cue should be displayed around spelling errors.
   /// </summary>
@@ -887,9 +774,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _HideSpellingErrors;
     set => UpdateField(ref _HideSpellingErrors, value, nameof(HideSpellingErrors));
   }
-
   private bool? _HideSpellingErrors;
-
   /// <summary>
   /// Specifies the hyphenation zone used for automatic or manual hyphenation.
   /// </summary>
@@ -903,9 +788,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _HyphenationZone;
     set => UpdateField(ref _HyphenationZone, value, nameof(HyphenationZone));
   }
-
   private Twips? _HyphenationZone;
-
   /// <summary>
   /// Specifies that only leaf custom XML elements are validated against schemas.
   /// </summary>
@@ -919,9 +802,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _IgnoreMixedContent;
     set => UpdateField(ref _IgnoreMixedContent, value, nameof(IgnoreMixedContent));
   }
-
   private bool? _IgnoreMixedContent;
-
   /// <summary>
   /// Specifies that styles are updated to match the attached template when the document is opened.
   /// </summary>
@@ -931,9 +812,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [Category("Styling")]
   [OpenXmlElement(typeof(DXW.LinkStyles))]
   public bool? LinkStyles { get => _LinkStyles; set => UpdateField(ref _LinkStyles, value, nameof(LinkStyles)); }
-
   private bool? _LinkStyles;
-
   /// <summary>
   /// Specifies the character used as a list item separator in fields.
   /// </summary>
@@ -947,9 +826,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _ListSeparator;
     set => UpdateField(ref _ListSeparator, value, nameof(ListSeparator));
   }
-
   private string? _ListSeparator;
-
   /// <summary>
   /// Specifies that left and right margins are swapped on every second page.
   /// </summary>
@@ -963,9 +840,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _MirrorMargins;
     set => UpdateField(ref _MirrorMargins, value, nameof(MirrorMargins));
   }
-
   private bool? _MirrorMargins;
-
   /// <summary>
   /// Specifies the set of characters restricted from ending a line for custom line breaking logic.
   /// </summary>
@@ -976,9 +851,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _NoLineBreaksAfterKinsoku;
     set => UpdateField(ref _NoLineBreaksAfterKinsoku, value, nameof(NoLineBreaksAfterKinsoku));
   }
-
   private NoLineBreaksAfterKinsoku? _NoLineBreaksAfterKinsoku;
-
   /// <summary>
   /// Specifies the set of characters restricted from beginning a new line for custom line breaking logic.
   /// </summary>
@@ -989,9 +862,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _NoLineBreaksBeforeKinsoku;
     set => UpdateField(ref _NoLineBreaksBeforeKinsoku, value, nameof(NoLineBreaksBeforeKinsoku));
   }
-
   private NoLineBreaksBeforeKinsoku? _NoLineBreaksBeforeKinsoku;
-
   /// <summary>
   /// Specifies that punctuation characters are not kerned when kerning is enabled.
   /// </summary>
@@ -1005,9 +876,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _NoPunctuationKerning;
     set => UpdateField(ref _NoPunctuationKerning, value, nameof(NoPunctuationKerning));
   }
-
   private bool? _NoPunctuationKerning;
-
   /// <summary>
   /// Specifies a unique identifier for a set of documents derived from a common source.
   /// </summary>
@@ -1021,9 +890,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _PersistentDocumentId;
     set => UpdateField(ref _PersistentDocumentId, value, nameof(PersistentDocumentId));
   }
-
   private Guid? _PersistentDocumentId;
-
   /// <summary>
   /// Specifies that only WordprocessingML form fields are printed, suppressing all other content.
   /// </summary>
@@ -1037,9 +904,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _PrintFormsData;
     set => UpdateField(ref _PrintFormsData, value, nameof(PrintFormsData));
   }
-
   private bool? _PrintFormsData;
-
   /// <summary>
   /// Specifies that fractional character widths are used when printing the document.
   /// </summary>
@@ -1053,9 +918,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _PrintFractionalCharacterWidth;
     set => UpdateField(ref _PrintFractionalCharacterWidth, value, nameof(PrintFractionalCharacterWidth));
   }
-
   private bool? _PrintFractionalCharacterWidth;
-
   /// <summary>
   /// Specifies that PostScript codes are included in foreground with printed data.
   /// </summary>
@@ -1069,9 +932,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _PrintPostScriptOverText;
     set => UpdateField(ref _PrintPostScriptOverText, value, nameof(PrintPostScriptOverText));
   }
-
   private bool? _PrintPostScriptOverText;
-
   /// <summary>
   /// Specifies whether two pages are printed on one sheet of paper.
   /// </summary>
@@ -1085,9 +946,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _PrintTwoOnOne;
     set => UpdateField(ref _PrintTwoOnOne, value, nameof(PrintTwoOnOne));
   }
-
   private bool? _PrintTwoOnOne;
-
   /// <summary>
   /// Specifies if grammar and spell-checking engines completed checking before the document was last saved.
   /// </summary>
@@ -1097,9 +956,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [Category("Proofing")]
   [OpenXmlElement(typeof(DXW.ProofState))]
   public ProofState? ProofState { get => _ProofState; set => UpdateField(ref _ProofState, value, nameof(ProofState)); }
-
   private ProofState? _ProofState;
-
   /// <summary>
   /// Specifies the exact set of page and text sizing parameters for displaying the document, used for ink annotations.
   /// </summary>
@@ -1110,9 +967,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _ReadModeInkLockDown;
     set => UpdateField(ref _ReadModeInkLockDown, value, nameof(ReadModeInkLockDown));
   }
-
   private DMWD.ReadModeInkLockDown? _ReadModeInkLockDown;
-
   /// <summary>
   /// Specifies that date and time information is removed from all annotations when the document is saved.
   /// </summary>
@@ -1126,9 +981,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _RemoveDateAndTime;
     set => UpdateField(ref _RemoveDateAndTime, value, nameof(RemoveDateAndTime));
   }
-
   private bool? _RemoveDateAndTime;
-
   /// <summary>
   /// Specifies that all personal information of document authors is removed upon saving.
   /// </summary>
@@ -1142,9 +995,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _RemovePersonalInformation;
     set => UpdateField(ref _RemovePersonalInformation, value, nameof(RemovePersonalInformation));
   }
-
   private bool? _RemovePersonalInformation;
-
   /// <summary>
   /// Specifies which forms of annotations are visible when the document is displayed.
   /// </summary>
@@ -1158,9 +1009,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _RevisionView;
     set => UpdateField(ref _RevisionView, value, nameof(RevisionView));
   }
-
   private RevisionView? _RevisionView;
-
   /// <summary>
   /// Specifies that only WordprocessingML form fields are saved in a comma-delimited text format.
   /// </summary>
@@ -1174,9 +1023,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _SaveFormsData;
     set => UpdateField(ref _SaveFormsData, value, nameof(SaveFormsData));
   }
-
   private bool? _SaveFormsData;
-
   /// <summary>
   /// Specifies that the document can be saved as a single XML file even when its contents are invalid based on XML schema validation.
   /// </summary>
@@ -1190,9 +1037,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _SaveInvalidXml;
     set => UpdateField(ref _SaveInvalidXml, value, nameof(SaveInvalidXml));
   }
-
   private bool? _SaveInvalidXml;
-
   /// <summary>
   /// Specifies if a document's thumbnail part should be generated for the first page when saved.
   /// </summary>
@@ -1206,9 +1051,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _SavePreviewPicture;
     set => UpdateField(ref _SavePreviewPicture, value, nameof(SavePreviewPicture));
   }
-
   private bool? _SavePreviewPicture;
-
   /// <summary>
   /// Specifies that fonts are subsetted when font embedding is enabled.
   /// </summary>
@@ -1222,9 +1065,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _SaveSubsetFonts;
     set => UpdateField(ref _SaveSubsetFonts, value, nameof(SaveSubsetFonts));
   }
-
   private bool? _SaveSubsetFonts;
-
   /// <summary>
   /// Specifies the location of a custom XSL transform to be used when saving as a single XML file.
   /// </summary>
@@ -1235,9 +1076,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _SaveThroughXslt;
     set => UpdateField(ref _SaveThroughXslt, value, nameof(SaveThroughXslt));
   }
-
   private SaveThroughXslt? _SaveThroughXslt;
-
   /// <summary>
   /// Specifies that only custom XML markup is saved as an XML file.
   /// </summary>
@@ -1248,9 +1087,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _SaveXmlDataOnly;
     set => UpdateField(ref _SaveXmlDataOnly, value, nameof(SaveXmlDataOnly));
   }
-
   private bool? _SaveXmlDataOnly;
-
   /// <summary>
   /// Specifies the set of XML namespaces associated with custom XML markup in the document.
   /// </summary>
@@ -1261,9 +1098,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _SchemaLibrary;
     set => UpdateField(ref _SchemaLibrary, (value != null && value.Count > 0) ? value : null, nameof(SchemaLibrary));
   }
-
   private SchemaLibrary? _SchemaLibrary;
-
   /// <summary>
   /// Specifies the defaults used when creating new shapes, stored once per document.
   /// </summary>
@@ -1275,9 +1110,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _ShapeDefaults;
     set => UpdateField(ref _ShapeDefaults, value, nameof(ShapeDefaults));
   }
-
   private DMWD.ShapeDefaults? _ShapeDefaults;
-
   /// <summary>
   /// Specifies that an e-mail message header is displayed when the document is opened.
   /// </summary>
@@ -1291,9 +1124,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _ShowEnvelope;
     set => UpdateField(ref _ShowEnvelope, value, nameof(ShowEnvelope));
   }
-
   private bool? _ShowEnvelope;
-
   /// <summary>
   /// Specifies that a visual indicator is provided for the start and end locations of custom XML markup.
   /// </summary>
@@ -1303,9 +1134,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [Category("View")]
   [OpenXmlElement(typeof(DXW.ShowXmlTags))]
   public bool? ShowXmlTags { get => _ShowXmlTags; set => UpdateField(ref _ShowXmlTags, value, nameof(ShowXmlTags)); }
-
   private bool? _ShowXmlTags;
-
   /// <summary>
   /// Specifies that the strict set of Multilanguage rules is applied to Japanese text in the document.
   /// </summary>
@@ -1319,9 +1148,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _StrictFirstAndLastChars;
     set => UpdateField(ref _StrictFirstAndLastChars, value, nameof(StrictFirstAndLastChars));
   }
-
   private bool? _StrictFirstAndLastChars;
-
   /// <summary>
   /// Specifies suggested filters to be applied to the list of document styles in the application UI.
   /// </summary>
@@ -1332,9 +1159,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _StylePaneFormatFilter;
     set => UpdateField(ref _StylePaneFormatFilter, value, nameof(StylePaneFormatFilter));
   }
-
   private StylePaneFormatFilter? _StylePaneFormatFilter;
-
   /// <summary>
   /// Specifies a sorting to be applied to the list of styles in the document UI.
   /// </summary>
@@ -1348,9 +1173,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _StylePaneSortMethods;
     set => UpdateField(ref _StylePaneSortMethods, value, nameof(StylePaneSortMethods));
   }
-
   private StylePaneSortMethods? _StylePaneSortMethods;
-
   /// <summary>
   /// Specifies the size for automatic document summaries performed on the content of the document.
   /// </summary>
@@ -1369,9 +1192,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _SummaryLength;
     set => UpdateField(ref _SummaryLength, value, nameof(SummaryLength));
   }
-
   private Percent? _SummaryLength;
-
   /// <summary>
   /// Specifies the language used to determine theme fonts in the document's Theme part.
   /// </summary>
@@ -1382,9 +1203,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _ThemeFontLanguages;
     set => UpdateField(ref _ThemeFontLanguages, value, nameof(ThemeFontLanguages));
   }
-
   private Languages? _ThemeFontLanguages;
-
   /// <summary>
   /// Specifies that revisions are tracked in the document.
   /// </summary>
@@ -1398,9 +1217,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _TrackRevisions;
     set => UpdateField(ref _TrackRevisions, value, nameof(TrackRevisions));
   }
-
   private bool? _TrackRevisions;
-
   /// <summary>
   /// Disables features incompatible with earlier word processing formats.
   /// </summary>
@@ -1414,9 +1231,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _UICompatibleWith97To2003;
     set => UpdateField(ref _UICompatibleWith97To2003, value, nameof(UICompatibleWith97To2003));
   }
-
   private bool? _UICompatibleWith97To2003;
-
   /// <summary>
   /// Specifies whether fields should automatically have their result recalculated when the document is opened.
   /// </summary>
@@ -1430,9 +1245,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _UpdateFieldsOnOpen;
     set => UpdateField(ref _UpdateFieldsOnOpen, value, nameof(UpdateFieldsOnOpen));
   }
-
   private bool? _UpdateFieldsOnOpen;
-
   /// <summary>
   /// Specifies that the document should be saved through the custom XSLT transform when saved as a single XML file.
   /// </summary>
@@ -1446,9 +1259,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _UseXsltWhenSaving;
     set => UpdateField(ref _UseXsltWhenSaving, value, nameof(UseXsltWhenSaving));
   }
-
   private bool? _UseXsltWhenSaving;
-
   /// <summary>
   /// Specifies the manner in which the document should be displayed when opened by an application.
   /// </summary>
@@ -1458,9 +1269,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [Category("View")]
   [OpenXmlElement(typeof(DXW.View))]
   public ViewType? View { get => _View; set => UpdateField(ref _View, value, nameof(View)); }
-
   private ViewType? _View;
-
   /// <summary>
   /// Specifies the write protection settings applied to the document.
   /// </summary>
@@ -1474,9 +1283,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _WriteProtection;
     set => UpdateField(ref _WriteProtection, value, nameof(WriteProtection));
   }
-
   private WriteProtection? _WriteProtection;
-
   /// <summary>
   /// Specifies the magnification level to be applied when the document is displayed.
   /// </summary>
@@ -1486,18 +1293,14 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [Category("View")]
   [OpenXmlElement(typeof(DXW.Zoom))]
   public Zoom? Zoom { get => _Zoom; set => UpdateField(ref _Zoom, value, nameof(Zoom)); }
-
   private Zoom? _Zoom;
-
   /// <summary>
   /// Specifies all mail merge information for the document.
   /// </summary>
   [Category("Mailing")]
   [OpenXmlElement(typeof(DXW.MailMerge))]
   public MailMerge? MailMerge { get => _MailMerge; set => UpdateField(ref _MailMerge, value, nameof(MailMerge)); }
-
   private MailMerge? _MailMerge;
-
   /// <summary>
   /// Specifies the document-level properties for all math in the document.
   /// </summary>
@@ -1508,7 +1311,5 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     get => _MathProperties;
     set => UpdateField(ref _MathProperties, value, nameof(MathProperties));
   }
-
   private DMM.MathProperties? _MathProperties;
-
 }

@@ -12,6 +12,5 @@ public partial class InvertSolidFillFormat : ModelElement<DXO10DC.InvertSolidFil
   [OpenXmlProperty(nameof(DXO10DC.InvertSolidFillFormat.ShapeProperties))]
   [OpenXmlType(typeof(DXO10DC.ShapeProperties))]
   public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
-
   private ShapeProperties? _ShapeProperties;
 }

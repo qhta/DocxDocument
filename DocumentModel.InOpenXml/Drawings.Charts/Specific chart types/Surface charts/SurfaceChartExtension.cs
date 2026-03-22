@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a surface chart, providing additional series filtering capabilities.
 /// </summary>
@@ -15,6 +14,5 @@ public partial class SurfaceChartExtension: Extension<DXDC.SurfaceChartExtension
     get => _FilteredSurfaceSeries;
     set => UpdateField(ref _FilteredSurfaceSeries, value, nameof(FilteredSurfaceSeries));
   }
-
   private FilteredSurfaceSeries? _FilteredSurfaceSeries;
 }

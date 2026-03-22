@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 /// Defines the SeriesLine Class.
 /// Each series line connects the data point in one series to the corresponding data point in another series.

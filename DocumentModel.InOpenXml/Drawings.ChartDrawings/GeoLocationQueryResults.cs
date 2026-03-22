@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a collection of geographic location query results cached for map-based chart visualizations.
 /// </summary>

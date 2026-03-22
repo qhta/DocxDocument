@@ -1,5 +1,4 @@
 using DocumentModel.Drawings;
-
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Specific DXO10WDS.ShapeStyle mapping type.

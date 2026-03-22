@@ -12,7 +12,6 @@ public class HyperlinkList : ElementCollection<HyperlinkInfo>
  public HyperlinkList()
  {
  }
-
  /// <summary>
  /// Initializes a new instance of the HyperlinkList class with the specified collection of hyperlink information.
  /// </summary>

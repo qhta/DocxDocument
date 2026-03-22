@@ -1,9 +1,6 @@
 using DocumentFormat.OpenXml.EMMA;
-
 using DocumentModel.Drawings.ChartDrawing;
-
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   User Shapes.
 /// </summary>
@@ -26,9 +23,7 @@ public partial class UserShapes: ModelElement<DXDC.UserShapes>
     get => _RelativeAnchorSize;
     set => UpdateField(ref _RelativeAnchorSize, value, nameof(RelativeAnchorSize));
   }
-
   private RelativeAnchorSize? _RelativeAnchorSize;
-
   /// <summary>
   /// Absolute Anchor Size of the user shape, specifying the shape's size in absolute terms regardless of its anchor point.
   /// </summary>
@@ -38,6 +33,5 @@ public partial class UserShapes: ModelElement<DXDC.UserShapes>
     get => _AbsoluteAnchorSize;
     set => UpdateField(ref _AbsoluteAnchorSize, value, nameof(AbsoluteAnchorSize));
   }
-
   private AbsoluteAnchorSize? _AbsoluteAnchorSize;
 }

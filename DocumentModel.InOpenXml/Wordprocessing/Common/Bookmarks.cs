@@ -6,5 +6,4 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(Bookmark))]
 public class Bookmarks : ElementCollection<Bookmark>
 {
-
 }

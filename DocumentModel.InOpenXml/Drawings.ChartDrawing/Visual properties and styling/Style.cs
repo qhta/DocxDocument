@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawing;
-
 /// <summary>
 /// Describes style settings for a shape in chart drawings, including references to line, fill, effect, and font formatting.
 /// </summary>
@@ -15,9 +14,7 @@ public class Style: ModelElement<DXDCD.Style>
     get => _LineReference;
     set => UpdateField(ref _LineReference, value, nameof(LineReference));
   }
-
   private LineReference? _LineReference;
-
   /// <summary>
   /// Reference to the fill formatting applied to the shape.
   /// </summary>
@@ -27,9 +24,7 @@ public class Style: ModelElement<DXDCD.Style>
     get => _FillReference;
     set => UpdateField(ref _FillReference, value, nameof(FillReference));
   }
-
   private FillReference? _FillReference;
-
   /// <summary>
   /// Reference to the effect formatting applied to the shape.
   /// </summary>
@@ -39,9 +34,7 @@ public class Style: ModelElement<DXDCD.Style>
     get => _EffectReference;
     set => UpdateField(ref _EffectReference, value, nameof(EffectReference));
   }
-
   private EffectReference? _EffectReference;
-
   /// <summary>
   /// Reference to the font formatting applied to the shape's text content.
   /// </summary>
@@ -51,6 +44,5 @@ public class Style: ModelElement<DXDCD.Style>
     get => _FontReference;
     set => UpdateField(ref _FontReference, value, nameof(FontReference));
   }
-
   private FontReference? _FontReference;
 }

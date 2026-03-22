@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Defines the FilteredSurfaceSeries Class.
 /// </summary>
@@ -15,6 +14,5 @@ public partial class FilteredSurfaceSeries: ModelElement<DXDC.SurfaceChartSeries
     get => _SurfaceChartSeries;
     set => UpdateField(ref _SurfaceChartSeries, value, nameof(SurfaceChartSeries));
   }
-
   private SurfaceChartSeries? _SurfaceChartSeries;
 }

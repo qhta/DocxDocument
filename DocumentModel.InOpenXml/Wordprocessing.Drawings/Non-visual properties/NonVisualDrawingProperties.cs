@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing.Drawings;
-
 /// <summary>
 /// Specific DXO10W.NonVisualDrawingProperties mapping type.
 /// </summary>

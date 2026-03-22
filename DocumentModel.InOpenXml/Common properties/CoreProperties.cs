@@ -18,9 +18,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
     get => _WordprocessingDocument;
     set => UpdateField(ref _WordprocessingDocument, value, nameof(WordprocessingDocument));
   }
-
   private DXPP.WordprocessingDocument? _WordprocessingDocument;
-
   //internal PackageProperties? PackageProperties { get; private set; }
   /// <summary>
   /// Default constructor.
@@ -28,7 +26,6 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   public CoreProperties()
   {
   }
-
   /// <summary>
   /// Initializing constructor.
   /// </summary>
@@ -39,7 +36,6 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
   }
-
   /// <summary>
   /// Retrieves the Open XML element that represents the updatable package properties for the current instance.
   /// </summary>
@@ -49,10 +45,8 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   {
     if (WordprocessingDocument != null)
       return WordprocessingDocument.GetPackageProperties();
-
     return null;
   }
-
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
   /// </summary>
@@ -63,7 +57,6 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
     var packageProperties = wordprocessingDocument.GetPackageProperties();
     LoadData(packageProperties);
   }
-
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is updated to the wordprocessingDocument's PackageProperties.
   /// </summary>
@@ -74,7 +67,6 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
     var packageProperties = wordprocessingDocument.GetPackageProperties();
     UpdateData(packageProperties);
   }
-
   /// <summary>
   /// Detach this instance from the attached document.
   /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
@@ -83,7 +75,6 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   {
     WordprocessingDocument = null;
   }
-
   /// <summary>
   /// Populates the properties of the current instance with values from the specified Open XML element.
   /// </summary>
@@ -107,7 +98,6 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
       }
     }
   }
-
   /// <summary>
   /// Updates the specified Open XML element with the current property values of this instance.
   /// </summary>
@@ -132,7 +122,6 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
       }
     }
   }
-
   /// <summary>
   /// Updates the corresponding Open XML property with the current value of the specified model property.
   /// </summary>
@@ -146,22 +135,18 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
     var openXmlElement = GetUpdatableElement();
     if (openXmlElement == null)
       return;
-
     var modelProperty = this.GetType().GetProperty(propertyName);
     if (modelProperty == null)
       return;
-
     var openXmlType = typeof(PackageProperties);
     var openXmlProperty = openXmlType.GetProperty(modelProperty.Name);
     if (openXmlProperty == null)
       return;
-
     var modelValue = modelProperty.GetValue(this);
     if (!openXmlProperty.PropertyType.IsInstanceOfType(modelValue))
       modelValue = OpenXmlModelConverter.ConvertTo(modelValue, openXmlProperty.PropertyType);
     openXmlProperty.SetValue(openXmlElement, modelValue);
   }
-
   /// <summary>
   /// Copies data from the specified CoreProperties instance to this instance.
   /// </summary>

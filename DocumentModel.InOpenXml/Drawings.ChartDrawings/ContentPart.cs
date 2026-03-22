@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a content part embedded within a chart drawing that references external content through relationships.
 /// </summary>
@@ -26,9 +25,7 @@ public class ContentPart: ModelElement<DXO10DCD.ContentPart> //: OfficeArtExtend
     get => _RelationshipId;
     set => UpdateField(ref _RelationshipId, value, nameof(RelationshipId));
   }
-
   private string? _RelationshipId;
-
   /// <summary>
   /// Specifies the black white mode.
   /// </summary>
@@ -38,9 +35,7 @@ public class ContentPart: ModelElement<DXO10DCD.ContentPart> //: OfficeArtExtend
     get => _BlackWhiteMode;
     set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode));
   }
-
   private BlackWhiteMode? _BlackWhiteMode;
-
   /// <summary>
   /// Specifies the non visual content part properties.
   /// </summary>
@@ -50,9 +45,7 @@ public class ContentPart: ModelElement<DXO10DCD.ContentPart> //: OfficeArtExtend
     get => _NonVisualContentPartProperties;
     set => UpdateField(ref _NonVisualContentPartProperties, value, nameof(NonVisualContentPartProperties));
   }
-
   private NonVisualContentPartProperties? _NonVisualContentPartProperties;
-
   /// <summary>
   /// Specifies the application non visual drawing properties.
   /// </summary>
@@ -63,9 +56,7 @@ public class ContentPart: ModelElement<DXO10DCD.ContentPart> //: OfficeArtExtend
     set => UpdateField(ref _ApplicationNonVisualDrawingProperties, value,
       nameof(ApplicationNonVisualDrawingProperties));
   }
-
   private ApplicationNonVisualDrawingProperties? _ApplicationNonVisualDrawingProperties;
-
   /// <summary>
   /// Specifies the transform2d.
   /// </summary>
@@ -75,6 +66,5 @@ public class ContentPart: ModelElement<DXO10DCD.ContentPart> //: OfficeArtExtend
     get => _Transform2D;
     set => UpdateField(ref _Transform2D, value, nameof(Transform2D));
   }
-
   private Transform2D? _Transform2D;
 }

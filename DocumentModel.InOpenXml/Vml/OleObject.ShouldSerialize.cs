@@ -1,7 +1,5 @@
 namespace DocumentModel.Vml;
-
 #pragma warning disable CS1591
-
 public partial class OleObject
 {
   public bool ShouldSerializeType() => Type is not null;

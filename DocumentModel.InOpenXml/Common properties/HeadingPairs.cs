@@ -12,7 +12,6 @@ public class HeadingPairs : ModelElementCollection<HeadingPair>, IEquatable<Head
   public HeadingPairs()
   {
   }
-
   /// <summary>
  ///   Determines whether the specified object is equal to the current HeadingPairs collection.
  /// </summary>
@@ -24,7 +23,6 @@ public class HeadingPairs : ModelElementCollection<HeadingPair>, IEquatable<Head
    return Equals(other);
   return false;
  }
-
  /// <summary>
  ///   Determines whether the specified HeadingPairs collection is equal to the current collection.
  /// </summary>
@@ -36,5 +34,4 @@ public class HeadingPairs : ModelElementCollection<HeadingPair>, IEquatable<Head
    return false;
   return this.SequenceEqual(other);
  }
-
 }

@@ -10,6 +10,5 @@ public partial class LineTo : ModelElement<DXD.LineTo>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LineTo.Point))]
  public AdjustPoint2DType? Point { get => _Point; set => UpdateField(ref _Point, value, nameof(Point)); }
-
  private AdjustPoint2DType? _Point;
 }

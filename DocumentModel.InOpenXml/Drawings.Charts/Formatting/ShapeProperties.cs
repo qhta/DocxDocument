@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Defines the ShapeProperties Class.
 /// </summary>
@@ -14,9 +13,7 @@ public partial class ShapeProperties: ModelElement<DXDC.ShapeProperties>
     get => _BlackWhiteMode;
     set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode));
   }
-
   private BlackWhiteMode? _BlackWhiteMode;
-
   /// <summary>
   ///   2D Transform for Individual Objects.
   /// </summary>
@@ -25,9 +22,7 @@ public partial class ShapeProperties: ModelElement<DXDC.ShapeProperties>
     get => _Transform2D;
     set => UpdateField(ref _Transform2D, value, nameof(Transform2D));
   }
-
   private Transform2D? _Transform2D;
-
   /// <summary>
   /// Custom Geometry
   /// </summary>
@@ -37,9 +32,7 @@ public partial class ShapeProperties: ModelElement<DXDC.ShapeProperties>
     get => _CustomGeometry;
     set => UpdateField(ref _CustomGeometry, value, nameof(CustomGeometry));
   }
-
   private CustomGeometry? _CustomGeometry;
-
   /// <summary>
   /// Preset Geometry
   /// </summary>
@@ -49,41 +42,31 @@ public partial class ShapeProperties: ModelElement<DXDC.ShapeProperties>
     get => _PresetGeometry;
     set => UpdateField(ref _PresetGeometry, value, nameof(PresetGeometry));
   }
-
   private PresetGeometry? _PresetGeometry;
-
   /// <summary>
   /// Fill Properties
   /// </summary>
   [OpenXmlElement(typeof(DXD.NoFill))]
   public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
-
   private Fill? _Fill;
-
   /// <summary>
   /// Outline Properties
   /// </summary>
   [OpenXmlElement(typeof(DXD.Outline))]
   public LineProperties? Outline { get => _Outline; set => UpdateField(ref _Outline, value, nameof(Outline)); }
-
   private LineProperties? _Outline;
-
   /// <summary>
   /// Effect List
   /// </summary>
   [OpenXmlElement(typeof(DXD.EffectList))]
   public EffectList? EffectList { get => _EffectList; set => UpdateField(ref _EffectList, value, nameof(EffectList)); }
-
   private EffectList? _EffectList;
-
   /// <summary>
   /// Effect DAG
   /// </summary>
   [OpenXmlElement(typeof(DXD.EffectDag))]
   public EffectDag? EffectDag { get => _EffectDag; set => UpdateField(ref _EffectDag, value, nameof(EffectDag)); }
-
   private EffectDag? _EffectDag;
-
   /// <summary>
   /// 3D Scene Type
   /// </summary>
@@ -93,9 +76,7 @@ public partial class ShapeProperties: ModelElement<DXDC.ShapeProperties>
     get => _Scene3DType;
     set => UpdateField(ref _Scene3DType, value, nameof(Scene3DType));
   }
-
   private Scene3DType? _Scene3DType;
-
   /// <summary>
   /// 3D Shape Type
   /// </summary>
@@ -105,9 +86,7 @@ public partial class ShapeProperties: ModelElement<DXDC.ShapeProperties>
     get => _Shape3DType;
     set => UpdateField(ref _Shape3DType, value, nameof(Shape3DType));
   }
-
   private Shape3DType? _Shape3DType;
-
   /// <summary>
   /// Shape Properties Extension List
   /// </summary>
@@ -117,6 +96,5 @@ public partial class ShapeProperties: ModelElement<DXDC.ShapeProperties>
     get => _ShapePropertiesExtensionList;
     set => UpdateField(ref _ShapePropertiesExtensionList, value, nameof(ShapePropertiesExtensionList));
   }
-
   private ShapePropertiesExtensionList? _ShapePropertiesExtensionList;
 }

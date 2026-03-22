@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a multi-level string reference in a chart.
 ///   This extension allows specifying full references, level references, and formula references for hierarchical data.
@@ -16,9 +15,7 @@ public partial class MultiLevelStrRefExtension: Extension<DXDC.MultiLvlStrRefExt
     get => _FullReference;
     set => UpdateField(ref _FullReference, value, nameof(FullReference));
   }
-
   private FullReference? _FullReference;
-
   /// <summary>
   ///   Reference to a specific level within the multi-level data.
   /// </summary>
@@ -28,9 +25,7 @@ public partial class MultiLevelStrRefExtension: Extension<DXDC.MultiLvlStrRefExt
     get => _LevelReference;
     set => UpdateField(ref _LevelReference, value, nameof(LevelReference));
   }
-
   private LevelReference? _LevelReference;
-
   /// <summary>
   ///   Formula reference defining the data source dynamic range.
   /// </summary>
@@ -40,6 +35,5 @@ public partial class MultiLevelStrRefExtension: Extension<DXDC.MultiLvlStrRefExt
     get => _FormulaReference;
     set => UpdateField(ref _FormulaReference, value, nameof(FormulaReference));
   }
-
   private FormulaReference? _FormulaReference;
 }

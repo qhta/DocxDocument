@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 /// Provides helper methods for creating and manipulating Wordprocessing documents using OpenXml.
 /// </summary>
@@ -23,7 +22,6 @@ public static class WordprocessingHelper
     }
     return wordDocument;
   }
-
   /// <summary>
   /// Opens an existing Wordprocessing document at the specified file path.
   /// </summary>
@@ -37,7 +35,6 @@ public static class WordprocessingHelper
     return wordDocument;
   }
 
-
   /// <summary>
   /// Opens an existing Wordprocessing document at the specified file path.
   /// </summary>
@@ -50,7 +47,6 @@ public static class WordprocessingHelper
     InitWordprocessingDocument(wordDocument);
     return wordDocument;
   }
-
   /// <summary>
   /// Initializes the specified WordprocessingDocument by ensuring that the main document part, root document, and body
   /// are present.
@@ -64,11 +60,9 @@ public static class WordprocessingHelper
     // Add the MainDocumentPart, root Document and the Body.
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
     var packageProperties = wordDocument.GetPackageProperties();
-
     var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
     var body = document.Body ?? (document.Body = document.AppendChild(new DXW.Body()));
   }
-
   /// <summary>
   /// Creates a new document from a template file, copying the template and initializing the document structure.
   /// </summary>
@@ -83,25 +77,20 @@ public static class WordprocessingHelper
     {
       File.Delete(documentFilename);
     }
-
     // Copy the template to the output file name.
     File.Copy(templateFilename, documentFilename);
-
     // Now open the copied file
     using (var wordDocument = DXPP.WordprocessingDocument.Open(documentFilename, true))
     {
       // We need to change the file type from template to document.
       wordDocument.ChangeDocumentType(DX.WordprocessingDocumentType.Document);
-
       // MainDocumentPart, root Document and Body already exist just access them
       var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
       var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
       var body = document.Body ?? (document.Body = document.AppendChild(new DXW.Body()));
-
       document.Save();
     }
   }
-
   /// <summary>
   /// Ensures that the Wordprocessing document is initialized with required parts and properties.
   /// </summary>
@@ -114,7 +103,6 @@ public static class WordprocessingHelper
     var contentProperties = wordDocument.ExtendedFilePropertiesPart ?? wordDocument.AddExtendedFilePropertiesPart();
     var body = document.Body ?? (document.Body = document.AppendChild(new DXW.Body()));
   }
-
   /// <summary>
   /// Retrieves the main document part of the specified Document, creating it if it does not already
   /// exist.
@@ -130,7 +118,6 @@ public static class WordprocessingHelper
     var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
     return mainPart;
   }
-
 #pragma warning disable OOXML0001
   /// <summary>
   /// Retrieves the package properties for the specified Wordprocessing document.
@@ -145,7 +132,6 @@ public static class WordprocessingHelper
     var properties = mainPart.OpenXmlPackage.PackageProperties;
     return properties;
   }
-
   /// <summary>
   /// Retrieves the extended file properties for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
@@ -159,7 +145,6 @@ public static class WordprocessingHelper
     var properties = part.Properties ?? (part.Properties = new DXEP.Properties());
     return properties;
   }
-
   /// <summary>
   /// Retrieves the custom file properties for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
@@ -173,7 +158,6 @@ public static class WordprocessingHelper
     var properties = part.Properties ?? (part.Properties = new DXCP.Properties());
     return properties;
   }
-
   /// <summary>
   /// Retrieves the document settings for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
@@ -187,7 +171,6 @@ public static class WordprocessingHelper
     var settings = part.Settings ?? (part.Settings = new DXW.Settings());
     return settings;
   }
-
   /// <summary>
   /// Retrieves the reference relationship with the specified relationship ID from the main document part of the given
   /// Document.
@@ -204,7 +187,6 @@ public static class WordprocessingHelper
     var relationship = mainPart.GetReferenceRelationship(relationshipId);
     return relationship;
   }
-
   /// <summary>
   /// Retrieves the external relationship with the specified relationship ID from the main document part of the given
   /// Document.
@@ -222,7 +204,6 @@ public static class WordprocessingHelper
     var relationship = mainPart.GetExternalRelationship(relationshipId);
     return relationship;
   }
-
   /// <summary>
   /// Creates an external relationship for the main document part of the specified Document using the
   /// given relationship ID and target URI.
@@ -239,7 +220,6 @@ public static class WordprocessingHelper
     var relationship = mainPart.AddExternalRelationship(relationshipId, new Uri(uri));
     return relationship;
   }
-
   /// <summary>
   /// Gets the OpenXmlPart associated with the specified OpenXmlElement, if available.
   /// </summary>
@@ -254,7 +234,6 @@ public static class WordprocessingHelper
     }
     return null;
   }
-
   /// <summary>
   /// Gets the root element of the OpenXmlElement, which is the topmost ancestor in the element hierarchy.
   /// </summary>
@@ -269,7 +248,6 @@ public static class WordprocessingHelper
     }
     return current;
   }
-
   /// <summary>
   /// Gets the WordprocessingDocument that contains the specified OpenXmlElement.
   /// </summary>
@@ -281,14 +259,12 @@ public static class WordprocessingHelper
     DX.OpenXmlElement? current = element;
     while (current != null && !(current is DX.OpenXmlPartRootElement))
       current = current.Parent;
-
     if (current is DX.OpenXmlPartRootElement root && root.OpenXmlPart != null)
     {
       return root.OpenXmlPart.OpenXmlPackage as DXPP.WordprocessingDocument;
     }
     return null;
   }
-
 
   /// <summary>
   /// Retrieves the font table for the specified Wordprocessing document, creating it if necessary.
@@ -304,7 +280,6 @@ public static class WordprocessingHelper
     return fonts;
   }
 
-
   /// <summary>
   /// Retrieves the Styles element for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
@@ -318,7 +293,6 @@ public static class WordprocessingHelper
     var Styles = part.Styles ?? (part.Styles = new DXW.Styles());
     return Styles;
   }
-
   /// <summary>
   /// Retrieves the Numbering element for the specified Wordprocessing document, creating it if necessary.
   /// </summary>

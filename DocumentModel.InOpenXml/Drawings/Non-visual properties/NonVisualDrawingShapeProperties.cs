@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Defines the NonVisualDrawingShapeProperties Class.
 /// </summary>
@@ -17,9 +16,7 @@ public abstract partial class NonVisualDrawingShapeProperties<T>:
     get => _TextBox;
     set => UpdateField(ref _TextBox, value, nameof(TextBox));
   }
-
   private bool? _TextBox;
-
   /// <summary>
   ///   Shape Locks.
   /// </summary>
@@ -29,9 +26,7 @@ public abstract partial class NonVisualDrawingShapeProperties<T>:
     get => _ShapeLocks;
     set => UpdateField(ref _ShapeLocks, value, nameof(ShapeLocks));
   }
-
   private ShapeLocks? _ShapeLocks;
-
   /// <summary>
   ///   ExtensionList.
   /// </summary>
@@ -41,6 +36,5 @@ public abstract partial class NonVisualDrawingShapeProperties<T>:
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

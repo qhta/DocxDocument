@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Defines the OpenXmlTickMarksElement Class.
 /// </summary>
@@ -11,9 +10,7 @@ public class OpenXmlTickMarksElement: ModelElement<DXO16DCD.OpenXmlTickMarksElem
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.OpenXmlTickMarksElement.Type))]
   public TickMarksType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
-
   private TickMarksType? _Type;
-
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
@@ -23,6 +20,5 @@ public class OpenXmlTickMarksElement: ModelElement<DXO16DCD.OpenXmlTickMarksElem
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

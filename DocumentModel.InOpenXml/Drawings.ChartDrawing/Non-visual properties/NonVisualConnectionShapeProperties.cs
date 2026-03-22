@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawing;
-
 /// <summary>
 /// Describes non-visual properties for a connection shape in chart drawings, including shape locks and connection endpoints.
 /// </summary>
@@ -16,9 +15,7 @@ public class
     get => _ConnectionShapeLocks;
     set => UpdateField(ref _ConnectionShapeLocks, value, nameof(ConnectionShapeLocks));
   }
-
   private ConnectionShapeLocks? _ConnectionShapeLocks;
-
   /// <summary>
   /// Defines the starting connection point for the connection shape.
   /// </summary>
@@ -28,9 +25,7 @@ public class
     get => _StartConnection;
     set => UpdateField(ref _StartConnection, value, nameof(StartConnection));
   }
-
   private ConnectionType? _StartConnection;
-
   /// <summary>
   /// Defines the ending connection point for the connection shape.
   /// </summary>
@@ -40,6 +35,5 @@ public class
     get => _EndConnection;
     set => UpdateField(ref _EndConnection, value, nameof(EndConnection));
   }
-
   private ConnectionType? _EndConnection;
 }

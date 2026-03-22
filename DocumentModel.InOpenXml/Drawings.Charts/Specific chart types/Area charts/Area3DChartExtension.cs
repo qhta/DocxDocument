@@ -10,6 +10,5 @@ public partial class Area3DChartExtension : Extension<DXDC.Area3DChartExtension>
   /// </summary>
   [OpenXmlElement(typeof(DXO13DC.FilteredAreaSeries))]
   public FilteredAreaSeries? FilteredAreaSeries { get => _FilteredAreaSeries; set => UpdateField(ref _FilteredAreaSeries, value, nameof(FilteredAreaSeries)); }
-
   private FilteredAreaSeries? _FilteredAreaSeries;
 }

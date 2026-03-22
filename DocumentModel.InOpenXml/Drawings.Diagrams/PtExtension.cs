@@ -10,6 +10,5 @@ public partial class PtExtension : Extension<DXD.PtExtension>
   /// </summary>
   [OpenXmlElement(typeof(DocumentFormat.OpenXml.Office2010.Drawing.Diagram.NonVisualDrawingProperties))]
   public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
-
   private NonVisualDrawingProperties? _NonVisualDrawingProperties;
 }

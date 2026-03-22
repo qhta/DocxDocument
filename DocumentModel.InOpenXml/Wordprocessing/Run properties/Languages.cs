@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Represents language codes for three script types in WordprocessingML documents: regular (normal), complex (bidirectional), and East Asian scripts.
 /// This class enables specification of language settings for spell checking, grammar checking, and text processing in multilingual documents.
@@ -11,7 +10,6 @@ public partial class Languages : ModelElement<DXW.Languages>
   /// Default constructor.
   /// </summary>
   public Languages() : base() { }
-
   /// <summary>
   /// Initializes a new instance of the Languages class with specified language representations, including optional
   /// support for bidirectional and East Asian languages.
@@ -27,31 +25,24 @@ public partial class Languages : ModelElement<DXW.Languages>
     Bidi = bidi;
     EastAsia = eastAsia;
   }
-
   /// <summary>
   /// Language code for all regular (normal) scripts, typically used for Western languages.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Languages.Val))]
   public string? Val { get => _val; set => UpdateField(ref _val, value, nameof(Val)); }
-
   private string? _val;
-
   /// <summary>
   /// Language code for complex (bidirectional) scripts, such as Arabic, Hebrew, or Thai.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Languages.Bidi))]
   public string? Bidi { get => _bidi; set => UpdateField(ref _bidi, value, nameof(Bidi)); }
-
   private string? _bidi;
-
   /// <summary>
   /// Language code for East Asian scripts, such as Chinese, Japanese, or Korean.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Languages.EastAsia))]
   public string? EastAsia { get => _EastAsia; set => UpdateField(ref _EastAsia, value, nameof(EastAsia)); }
-
   private string? _EastAsia;
-
   /// <summary>
   /// Returns a string that represents the current object, including its value and any associated language properties.
   /// </summary>
@@ -69,7 +60,6 @@ public partial class Languages : ModelElement<DXW.Languages>
     return string.Join(", ", stringList);
   }
 
-
   /// <summary>
   /// Implicitly converts a nullable Languages enumeration value to its string representation.
   /// </summary>
@@ -77,7 +67,6 @@ public partial class Languages : ModelElement<DXW.Languages>
   /// representations, which can simplify integration with APIs or components that require string input.</remarks>
   /// <param name="languages">The nullable Languages enumeration value to convert. If the value is null, the result will also be null.</param>
   public static implicit operator string?(Languages? languages) => languages?.ToString();
-
   /// <summary>
   /// Implicitly converts a string representation of language codes and properties into a nullable Languages enumeration value.
   /// </summary>
@@ -89,7 +78,6 @@ public partial class Languages : ModelElement<DXW.Languages>
       return languages;
     return null;
   }
-
   /// <summary>
   /// Parses a string containing language codes and associated properties into a <see cref="Languages"/> object.
   /// </summary>
@@ -102,7 +90,6 @@ public partial class Languages : ModelElement<DXW.Languages>
       return languages!;
     throw new FormatException($"Invalid format for Languages: '{value}'");
   }
-
   /// <summary>
   /// Attempts to parse a string containing language codes and associated properties into a <see cref="Languages"/>
   /// object.

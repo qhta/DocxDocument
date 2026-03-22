@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 ///   Represents a collection of model elements associated with an OpenXml element, providing synchronization between the document model and OpenXml representation.
 ///   Supports initialization from an existing collection and advanced collection management for WordprocessingML or other OpenXml-based elements.
@@ -7,14 +6,12 @@
 /// <typeparam name="ItemType">Specifies the type of model elements contained in the collection.</typeparam>
 public abstract class ModelElementCollection<ItemType> : ElementCollection<ItemType> where ItemType : ModelElement
 {
-
   /// <summary>
   ///   Initializes a new instance of the <see cref="ModelElementCollection{ItemType}"/> class.
   /// </summary>
   protected ModelElementCollection()
   {
   }
-
   /// <summary>
   ///   Initializes a new instance of the <see cref="ModelElementCollection{ItemType}"/> class that contains elements copied from the specified collection.
   /// </summary>
@@ -27,4 +24,3 @@ public abstract class ModelElementCollection<ItemType> : ElementCollection<ItemT
     }
   }
 }
-

@@ -10,6 +10,5 @@ public partial class FillReference : DocumentModel.Drawings.FillReference
   /// </summary>
   [OpenXmlElement(typeof(DXO13DCS.StyleColor))]
   public StyleColor? StyleColor { get => _StyleColor; set => UpdateField(ref _StyleColor, value, nameof(StyleColor)); }
-
   private StyleColor? _StyleColor;
 }

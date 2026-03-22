@@ -1,7 +1,5 @@
 namespace DocumentModel.Math;
-
 #pragma warning disable CS1591
-
 public partial class Nary
 {
   public bool ShouldSerializeNaryProperties() => NaryProperties is not null;

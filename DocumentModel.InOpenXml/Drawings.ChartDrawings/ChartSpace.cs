@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents the complete chart space container that encapsulates all chart elements and their configurations.
 /// </summary>
@@ -22,17 +21,13 @@ public class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ChartSpace.ChartData))]
   public ChartData? ChartData { get => _ChartData; set => UpdateField(ref _ChartData, value, nameof(ChartData)); }
-
   private ChartData? _ChartData;
-
   /// <summary>
   /// Specifies the chart.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ChartSpace.Chart))]
   public Chart? Chart { get => _Chart; set => UpdateField(ref _Chart, value, nameof(Chart)); }
-
   private Chart? _Chart;
-
   /// <summary>
   /// Specifies the shape properties.
   /// </summary>
@@ -42,9 +37,7 @@ public class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
     get => _ShapeProperties;
     set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
   }
-
   private ShapeProperties? _ShapeProperties;
-
   /// <summary>
   /// Specifies the tx pr text body.
   /// </summary>
@@ -54,9 +47,7 @@ public class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
     get => _TxPrTextBody;
     set => UpdateField(ref _TxPrTextBody, value, nameof(TxPrTextBody));
   }
-
   private TxPrTextBody? _TxPrTextBody;
-
   /// <summary>
   /// Specifies the color mapping type.
   /// </summary>
@@ -66,9 +57,7 @@ public class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
     get => _ColorMappingType;
     set => UpdateField(ref _ColorMappingType, value, nameof(ColorMappingType));
   }
-
   private ColorMappingType? _ColorMappingType;
-
   /// <summary>
   /// Specifies the format overrides.
   /// </summary>
@@ -78,9 +67,7 @@ public class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
     get => _FormatOverrides;
     set => UpdateField(ref _FormatOverrides, value, nameof(FormatOverrides));
   }
-
   private FormatOverrides? _FormatOverrides;
-
   /// <summary>
   /// Specifies the print settings.
   /// </summary>
@@ -90,9 +77,7 @@ public class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
     get => _PrintSettings;
     set => UpdateField(ref _PrintSettings, value, nameof(PrintSettings));
   }
-
   private PrintSettings? _PrintSettings;
-
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
@@ -102,6 +87,5 @@ public class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

@@ -12,7 +12,6 @@ public class NumberingLevels : ModelElementCollection<NumberingLevel, DXW.Abstra
   public NumberingLevels()
   {
   }
-
   /// <summary>
   /// Initializing constructor.
   /// </summary>
@@ -21,7 +20,6 @@ public class NumberingLevels : ModelElementCollection<NumberingLevel, DXW.Abstra
   {
     Numbering = numbering;
   }
-
   /// <summary>
   /// Parent numbering definition associated with this element.
   /// </summary>
@@ -33,7 +31,6 @@ public class NumberingLevels : ModelElementCollection<NumberingLevel, DXW.Abstra
   [JsonIgnore]
   [NotMapped]
   public AbstractNumbering? Numbering { get => Parent as AbstractNumbering; set => SetParent(value); }
-
   /// <summary>
   /// Retrieves the updatable abstract numbering element associated with the current numbering instance, if available.
   /// </summary>
@@ -46,7 +43,6 @@ public class NumberingLevels : ModelElementCollection<NumberingLevel, DXW.Abstra
   {
     return Numbering?.GetUpdatableElement() as DXW.AbstractNum;
   }
-
   /// <summary>
   /// Updates the levels of the specified numbering definition by removing all existing levels and adding new levels
   /// from the current instance.
@@ -67,7 +63,6 @@ public class NumberingLevels : ModelElementCollection<NumberingLevel, DXW.Abstra
       numbering.AppendChild(level);
     }
   }
-
   /// <summary>
   /// Loads numbering from the specified OpenXmlElement into the current collection, replacing any existing numbering.
   /// </summary>

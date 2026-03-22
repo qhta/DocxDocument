@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomUI;
-
 /// <summary>
 /// <para>Defines the Box Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -32,41 +31,31 @@ public class Box: ModelElement<DXO10CUI.Box>
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.Id))]
   public String? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
   private String? _Id;
-
   /// <summary>
   /// Specifies the qualified identifier of the box.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.QualifiedId))]
   public String? QualifiedId { get => _QualifiedId; set => UpdateField(ref _QualifiedId, value, nameof(QualifiedId)); }
-
   private String? _QualifiedId;
-
   /// <summary>
   /// Specifies an application-defined tag for the box.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.Tag))]
   public String? Tag { get => _Tag; set => UpdateField(ref _Tag, value, nameof(Tag)); }
-
   private String? _Tag;
-
   /// <summary>
   /// Specifies whether the box is visible.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.Visible))]
   public Boolean? Visible { get => _Visible; set => UpdateField(ref _Visible, value, nameof(Visible)); }
-
   private Boolean? _Visible;
-
   /// <summary>
   /// Specifies the callback that returns whether the box is visible.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.GetVisible))]
   public String? GetVisible { get => _GetVisible; set => UpdateField(ref _GetVisible, value, nameof(GetVisible)); }
-
   private String? _GetVisible;
-
   /// <summary>
   /// Specifies a built-in control after which this box is inserted.
   /// </summary>
@@ -76,9 +65,7 @@ public class Box: ModelElement<DXO10CUI.Box>
     get => _InsertAfterMso;
     set => UpdateField(ref _InsertAfterMso, value, nameof(InsertAfterMso));
   }
-
   private String? _InsertAfterMso;
-
   /// <summary>
   /// Specifies a built-in control before which this box is inserted.
   /// </summary>
@@ -88,9 +75,7 @@ public class Box: ModelElement<DXO10CUI.Box>
     get => _InsertBeforeMso;
     set => UpdateField(ref _InsertBeforeMso, value, nameof(InsertBeforeMso));
   }
-
   private String? _InsertBeforeMso;
-
   /// <summary>
   /// Specifies a qualified control identifier after which this box is inserted.
   /// </summary>
@@ -100,9 +85,7 @@ public class Box: ModelElement<DXO10CUI.Box>
     get => _InsertAfterQualifiedId;
     set => UpdateField(ref _InsertAfterQualifiedId, value, nameof(InsertAfterQualifiedId));
   }
-
   private String? _InsertAfterQualifiedId;
-
   /// <summary>
   /// Specifies a qualified control identifier before which this box is inserted.
   /// </summary>
@@ -112,14 +95,11 @@ public class Box: ModelElement<DXO10CUI.Box>
     get => _InsertBeforeQualifiedId;
     set => UpdateField(ref _InsertBeforeQualifiedId, value, nameof(InsertBeforeQualifiedId));
   }
-
   private String? _InsertBeforeQualifiedId;
-
   /// <summary>
   /// Specifies the visual layout style of the box.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.BoxStyle))]
   public BoxStyle? BoxStyle { get => _BoxStyle; set => UpdateField(ref _BoxStyle, value, nameof(BoxStyle)); }
-
   private BoxStyle? _BoxStyle;
 }

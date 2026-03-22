@@ -11,21 +11,16 @@ public class HeadingPair : ModelElement, IEquatable<HeadingPair>, ICollectionIte
   public HeadingPair()
   {
   }
-
   /// <summary>
   ///   The name or label of the heading group (e.g., "Chapter", "Section").
   /// </summary>
   public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
-
   private string? _Name;
-
   /// <summary>
   ///   The number of parts or sections associated with the heading group.
   /// </summary>
   public int? Number { get => _Number; set => UpdateField(ref _Number, value, nameof(Number)); }
-
   private int? _Number;
-
 
   /// <summary>
   ///   Determines whether the specified <see cref="HeadingPair"/> is equal to the current instance.
@@ -36,7 +31,6 @@ public class HeadingPair : ModelElement, IEquatable<HeadingPair>, ICollectionIte
   {
     return Name == other?.Name && Number == other?.Number;
   }
-
   /// <summary>
   ///   Determines whether the specified object is equal to the current <see cref="HeadingPair"/> instance.
   /// </summary>

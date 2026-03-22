@@ -1,5 +1,4 @@
 namespace DocumentModel.WebExtensions.UI;
-
 /// <summary>
 /// Represents a reference to a web extension part in a WordprocessingML document.
 /// This class provides a property for the part identifier, enabling advanced linking and integration of web extension components within the document user class.

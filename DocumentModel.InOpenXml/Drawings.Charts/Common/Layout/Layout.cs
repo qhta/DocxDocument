@@ -1,7 +1,5 @@
 using DocumentFormat.OpenXml.EMMA;
-
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Layout.
 /// </summary>
@@ -17,9 +15,7 @@ public partial class Layout: ModelElement<DXDC.Layout>
     get => _ManualLayout;
     set => UpdateField(ref _ManualLayout, value, nameof(ManualLayout));
   }
-
   private ManualLayout? _ManualLayout;
-
   /// <summary>
   ///   Chart Extensibility.
   /// </summary>
@@ -29,6 +25,5 @@ public partial class Layout: ModelElement<DXDC.Layout>
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

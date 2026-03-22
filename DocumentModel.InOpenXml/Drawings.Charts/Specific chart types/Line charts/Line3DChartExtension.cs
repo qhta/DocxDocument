@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a 3D line chart, providing additional series extension capabilities.
 /// </summary>
@@ -15,6 +14,5 @@ public partial class Line3DChartExtension: Extension<DXDC.Line3DChartExtension>
     get => _FilteredLineSeriesExtension;
     set => UpdateField(ref _FilteredLineSeriesExtension, value, nameof(FilteredLineSeriesExtension));
   }
-
   private FilteredLineSeriesExtension? _FilteredLineSeriesExtension;
 }

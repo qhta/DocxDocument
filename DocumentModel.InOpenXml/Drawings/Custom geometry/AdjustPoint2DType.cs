@@ -12,7 +12,6 @@ namespace DocumentModel.Drawings;
 /// When specifying a point coordinate in path coordinate space it should be noted that the top left of the coordinate space is x=0, y=0
 /// and the coordinate points for x grow to the right and for y grow down.
 /// </remarks>
-
 [OpenXmlType(typeof(DXD.AdjustPoint2DType))]
 public partial class AdjustPoint2DType : ModelElement<DXD.AdjustPoint2DType>
 {
@@ -21,13 +20,11 @@ public partial class AdjustPoint2DType : ModelElement<DXD.AdjustPoint2DType>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AdjustPoint2DType.X))]
  public EMU? X { get => _X; set => UpdateField(ref _X, value, nameof(X)); }
-
  private EMU? _X;
  /// <summary>
  /// Y-coordinate of the adjustment point.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AdjustPoint2DType.Y))]
  public EMU? Y { get => _Y; set => UpdateField(ref _Y, value, nameof(Y)); }
-
  private EMU? _Y;
 }

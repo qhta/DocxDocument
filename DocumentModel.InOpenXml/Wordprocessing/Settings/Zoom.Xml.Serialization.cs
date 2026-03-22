@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Xml.Serialization;
-
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 ///   Provides XML serialization and deserialization logic for the <see cref="Zoom"/> class, supporting both preset zoom kinds and percentage values in WordprocessingML settings.
 /// </summary>
@@ -13,7 +11,6 @@ public partial class Zoom : IXmlSerializable
   /// </summary>
   /// <returns>Always returns null.</returns>
   public XmlSchema? GetSchema() => null;
-
   /// <summary>
   ///   Serializes the <see cref="Zoom"/> object to XML, writing either the preset kind as a string or the percentage value as a string.
   /// </summary>
@@ -25,7 +22,6 @@ public partial class Zoom : IXmlSerializable
     else if (Percent != null)
       writer.WriteString(Percent.Value.ToString());
   }
-
   /// <summary>
   ///   Deserializes XML content into the <see cref="Zoom"/> object, interpreting the content as either a percentage or a preset kind.
   /// </summary>

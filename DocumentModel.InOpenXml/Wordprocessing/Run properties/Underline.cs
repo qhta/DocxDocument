@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Represents underline formatting for a text run in WordprocessingML documents.
 /// This class provides properties for underline style, color, theme color, and theme color tint/shade, enabling advanced underline customization for character-level formatting.
@@ -12,9 +11,7 @@ public partial class Underline: ModelElement<DXW.Underline>
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Underline.Val))]
   public UnderlineType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
-
   private UnderlineType? _Type;
-
   /// <summary>
   /// Underline color, specified as a hex RGB value or named color.
   /// </summary>
@@ -23,9 +20,7 @@ public partial class Underline: ModelElement<DXW.Underline>
   [OpenXmlLoadData(nameof(LoadColor))]
   [OpenXmlUpdateData(nameof(UpdateColor))]
   public DMW.Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
-
   private DMW.Color? _Color;
-
   /// <summary>
   /// Loads the underline color from the specified OpenXML underline element, applying any associated theme color, tint,
   /// or shade settings.
@@ -38,7 +33,6 @@ public partial class Underline: ModelElement<DXW.Underline>
   {
     this.Color = DMW.Color.FromOpenXml(underline.Color, underline.ThemeColor, underline.ThemeTint, underline.ThemeShade);
   }
-
   /// <summary>
   /// Updates the color-related properties of the specified underline object to match the current color settings.
   /// </summary>

@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomUI;
-
 /// <summary>
 /// <para>Defines the Ribbon Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -25,9 +24,7 @@ public class Ribbon: ModelElement<DXO10CUI.Ribbon>
     get => _StartFromScratch;
     set => UpdateField(ref _StartFromScratch, value, nameof(StartFromScratch));
   }
-
   private Boolean? _StartFromScratch;
-
   /// <summary>
   /// Specifies the quick access toolbar.
   /// </summary>
@@ -37,17 +34,13 @@ public class Ribbon: ModelElement<DXO10CUI.Ribbon>
     get => _QuickAccessToolbar;
     set => UpdateField(ref _QuickAccessToolbar, value, nameof(QuickAccessToolbar));
   }
-
   private QuickAccessToolbar? _QuickAccessToolbar;
-
   /// <summary>
   /// Specifies the tabs.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Ribbon.Tabs))]
   public Tabs? Tabs { get => _Tabs; set => UpdateField(ref _Tabs, value, nameof(Tabs)); }
-
   private Tabs? _Tabs;
-
   /// <summary>
   /// Specifies the contextual tabs.
   /// </summary>
@@ -57,6 +50,5 @@ public class Ribbon: ModelElement<DXO10CUI.Ribbon>
     get => _ContextualTabs;
     set => UpdateField(ref _ContextualTabs, value, nameof(ContextualTabs));
   }
-
   private ContextualTabs? _ContextualTabs;
 }

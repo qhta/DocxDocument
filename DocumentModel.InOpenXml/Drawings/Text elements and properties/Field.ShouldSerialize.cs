@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class Field
 {
   public bool ShouldSerializeId() => Id is not null;

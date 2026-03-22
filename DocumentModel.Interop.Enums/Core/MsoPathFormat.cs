@@ -16,17 +16,17 @@ public enum MsoPathFormat
   /// <summary>
   /// Represents the Type1 format.
   /// </summary>
-  1 = 1,
+  Type1 = 1,
   /// <summary>
   /// Represents the Type2 format.
   /// </summary>
-  2 = 2,
+  Type2 = 2,
   /// <summary>
   /// Represents the Type3 format.
   /// </summary>
-  3 = 3,
+  Type3 = 3,
   /// <summary>
   /// Represents the Type4 format.
   /// </summary>
-  4 = 4
+  Type4 = 4
 }

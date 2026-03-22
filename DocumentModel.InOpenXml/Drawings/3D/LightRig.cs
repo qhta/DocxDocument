@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Represents a light rig configuration, including preset, direction, and rotation for 3D scenes or objects.
 /// </summary>
@@ -15,9 +14,7 @@ public partial class LightRig: ModelElement<DXD.LightRig>
     get => _Rig;
     set => UpdateField(ref _Rig, value, nameof(Rig));
   }
-
   private LightRigType? _Rig;
-
   /// <summary>
   ///   Direction of the light rig.
   /// </summary>
@@ -27,9 +24,7 @@ public partial class LightRig: ModelElement<DXD.LightRig>
     get => _Direction;
     set => UpdateField(ref _Direction, value, nameof(Direction));
   }
-
   private LightRigDirection? _Direction;
-
   /// <summary>
   ///   Rotation settings for the light rig.
   /// </summary>
@@ -39,6 +34,5 @@ public partial class LightRig: ModelElement<DXD.LightRig>
     get => _Rotation;
     set => UpdateField(ref _Rotation, value, nameof(Rotation));
   }
-
   private Rotation? _Rotation;
 }

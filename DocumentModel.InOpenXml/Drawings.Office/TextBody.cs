@@ -11,21 +11,16 @@ public partial class TextBody : ModelElement<DXOD.TextBody>
   /// </summary>
   [OpenXmlProperty(nameof(DXOD.TextBody.BodyProperties))]
   public BodyProperties? BodyProperties { get => _BodyProperties; set => UpdateField(ref _BodyProperties, value, nameof(BodyProperties)); }
-
   private BodyProperties? _BodyProperties;
-
   /// <summary>
   ///   List style definitions for the text body, specifying bullet, numbering, and indentation formatting for paragraphs.
   /// </summary>
   [OpenXmlProperty(nameof(DXOD.TextBody.ListStyle))]
   public ListStyle? ListStyle { get => _ListStyle; set => UpdateField(ref _ListStyle, value, nameof(ListStyle)); }
-
   private ListStyle? _ListStyle;
-
   /// <summary>
   ///   The paragraph content of the text body, containing text runs, fields, and inline formatting.
   /// </summary>
   public Paragraph? Paragraph { get => _Paragraph; set => UpdateField(ref _Paragraph, value, nameof(Paragraph)); }
-
   private Paragraph? _Paragraph;
 }

@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Charts;
-
 #pragma warning disable CS1591
-
 public partial class DisplayUnitsLabel
 {
   public bool ShouldSerializeLayout() => Layout is not null;

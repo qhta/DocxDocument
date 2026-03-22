@@ -1,9 +1,6 @@
 // ReSharper disable SpecifyACultureInStringConversionExplicitly
-
 using DocumentModel.BaseTypes.Interfaces;
-
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Defines the TableMeasureType class. Its Value can be absolute (in TableMeasure) or relative (in fiftieth of percent), or "auto" or "nil".
 /// The type of the Value is determined with the Type property.
@@ -16,12 +13,10 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   {
     TableMeasureOpenXmlConverter.RegisterOpenXmlConversion();
   }
-
   /// <summary>
   /// Defines the number of TableMeasure in one inch.
   /// </summary>
   protected override double UnitsPerInch => 1440.0;
-
   /// <summary>
   /// Gets or sets the value represented as a nullable 64-bit signed integer.
   /// </summary>
@@ -31,7 +26,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   [JsonIgnore]
   [NotMapped]
   public Int64? Value { get => (Int64?)_value; set => _value = value; }
-
   /// <summary>
   /// Represents the type of the TableMeasure value, which can be absolute (in TableMeasure), relative (in fiftieth of percent),
   /// or special values like "auto" or "nil".
@@ -40,18 +34,14 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   [JsonIgnore]
   [NotMapped]
   public TableMeasureType Type { get => _type; set => _type = value; }
-
   private TableMeasureType _type;
-
   #region Constructors
-
   /// <summary>
   /// Default constructor. Creates an empty instance.
   /// </summary>
   public TableMeasure()
   {
   }
-
   /// <summary>
   /// Initializes a new instance of the <see cref="TableMeasure"/> from a string value.
   /// </summary>
@@ -74,7 +64,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   {
     Init(str);
   }
-
   /// <summary>
   /// Initializes a new instance of the <see cref="TableMeasure"/> from an Int64 value and a specified type.
   /// </summary>
@@ -85,7 +74,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
     Init(value);
     _type = type;
   }
-
   /// <summary>
   /// Initializes a new instance of the <see cref="TableMeasure"/> from an Int64 value.
   /// </summary>
@@ -104,7 +92,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
     Init(value);
     _type = TableMeasureType.Absolute;
   }
-
   /// <summary>
   /// Initializes a new instance of the <see cref="TableMeasure"/> from a Decimal value.
   /// </summary>
@@ -114,7 +101,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
     Init(value);
     _type = TableMeasureType.Absolute;
   }
-
   /// <summary>
   /// Initializes a new instance of the <see cref="TableMeasure"/> from a Double value.
   /// </summary>
@@ -125,9 +111,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
     _type = TableMeasureType.Absolute;
   }
   #endregion
-
   #region string conversion
-
   /// <summary>
   /// Initializes the table width unit based on the specified string representation.
   /// </summary>
@@ -159,7 +143,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
       _type = TableMeasureType.Absolute;
     }
   }
-
   /// <summary>
   /// Returns a string that represents the current table width unit in a human-readable format.
   /// </summary>
@@ -179,7 +162,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
     return base.ToString();
   }
 
-
   /// <summary>
   /// Converts the current length measure to its string representation using the specified format provider.
   /// This allows for culture-specific formatting of the output string, such as using different decimal separators
@@ -198,7 +180,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
       return (DecimalValue / 50).ToString(formatProvider) + "%";
     return base.ToString();
   }
-
   /// <summary>
   /// Converts the current length measure to its string representation using the specified format string and format provider.
   /// The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
@@ -221,7 +202,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
       return (DecimalValue / 50).ToString(format, formatProvider) + "%";
     return base.ToString();
   }
-
   /// <summary>
   /// Converts the current instance to its string representation using the specified format string.
   /// </summary>
@@ -240,37 +220,29 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
       return (DecimalValue / 50).ToString(format, CultureInfo.InvariantCulture) + "%";
     return base.ToString();
   }
-
   #endregion
-
   #region Static Factory Methods
-
   /// <summary>
   /// Creates an instance of an <see cref="TableMeasure"/> that represents the specified value in Twips.
   /// </summary>
   public static TableMeasure FromTwips(double Twips) => new TableMeasure($"{Twips}tw");
-
   /// <summary>
   /// Creates an instance of an <see cref="TableMeasure"/> that represents the specified value in points.
   /// </summary>
   public static TableMeasure FromPT(double points) => new TableMeasure($"{points}pt");
-
   /// <summary>
   /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
   public static TableMeasure FromMM(double millimeters) => new TableMeasure($"{millimeters}mm");
-
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
   public static TableMeasure FromCM(double centimeters) => new TableMeasure($"{centimeters}cm");
-
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
   public static TableMeasure FromInch(double inches) => new TableMeasure($"{inches}in");
-
   /// <summary>
   /// Converts a length value from the specified unit to a standardized length measure.
   /// </summary>
@@ -288,11 +260,8 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
     LengthUnit.Inches => FromInch(value),
     _ => throw new ArgumentException($"Unsupported length unit: {unit}", nameof(unit))
   };
-
   #endregion
-
   #region Parsing Methods
-
   /// <summary>
   /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
   /// </summary>
@@ -301,7 +270,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
   public static TableMeasure Parse(string value) => new TableMeasure(value);
-
   /// <summary>
   /// Attempts to parse the specified string representation of a length measure and returns a value that indicates
   /// whether the parsing succeeded.
@@ -325,11 +293,8 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
       return false;
     }
   }
-
   #endregion
-
   #region Implicit Conversions
-
   /// <summary>
   /// Implicitly converts a string to a <see cref="TableMeasure"/> value.
   /// </summary>
@@ -339,7 +304,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   {
     return new TableMeasure(value);
   }
-
   /// <summary>
   /// Implicitly converts a <see cref="TableMeasure"/> value to a string.
   /// </summary>
@@ -349,7 +313,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   {
     return value.ToString();
   }
-
   /// <summary>
   /// Implicitly converts a 32-bit signed integer to a <see cref="TableMeasure"/> value.
   /// </summary>
@@ -359,7 +322,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   {
     return new TableMeasure(value);
   }
-
   /// <summary>
   /// Implicitly converts a 64-bit signed integer to a <see cref="TableMeasure"/> value.
   /// </summary>
@@ -369,7 +331,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   {
     return new TableMeasure(value);
   }
-
   /// <summary>
   /// Implicitly converts a double-precision floating-point number to a TableMeasure instance.
   /// </summary>
@@ -380,11 +341,8 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   {
     return new TableMeasure(value);
   }
-
   #endregion
-
   #region IComparable and IEquatable Implementations
-
   /// <summary>
   /// Compares this instance to a specified <see cref="TableMeasure"/> object and returns an indication of their relative values.
   /// </summary>
@@ -405,7 +363,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
       return 0; // Consider "auto" and "nil" as equal for comparison purposes 
     return DecimalValue.CompareTo(other.DecimalValue);
   }
-
   /// <summary>
   /// Returns the hash code for this instance.
   /// </summary>
@@ -415,7 +372,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
     // ReSharper disable once BaseObjectGetHashCodeCallInGetHashCode
     return base.GetHashCode();
   }
-
   /// <summary>
   /// Indicates whether the current object is equal to another object of the same type.
   /// </summary>
@@ -429,11 +385,8 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
       throw new ArgumentException($"Cannot compare TableMeasure of type {Type} to TableMeasure of type {other.Type}.");
     if (Type == TableMeasureType.Auto || Type == TableMeasureType.Nil)
       return true; // Consider "auto" and "nil" as equal for comparison purposes 
-
     return System.Math.Abs(ToInch() - other.ToInch()) < 1e-10;
-
   }
-
   /// <summary>
   /// Determines whether the specified object is equal to the current TableMeasure instance.
   /// </summary>
@@ -445,7 +398,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   {
     if (obj is TableMeasure TableMeasure)
       return Equals(TableMeasure);
-
     if (obj is IConvertible convertible)
     {
       var doubleValue = Convert.ToDouble(convertible);
@@ -453,9 +405,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
     }
     return false;
   }
-
   #endregion
-
   #region OpenXml conversion methods
   /// <summary>
   /// Converts an OpenXML table width value and its unit type to a corresponding TableMeasure object.
@@ -483,7 +433,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
       return new TableMeasure(intVal, TableMeasureType.Absolute);
     return null;
   }
-
   /// <summary>
   /// Converts the current table measurement to its OpenXML representation.
   /// </summary>

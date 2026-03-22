@@ -1,7 +1,5 @@
 using DocumentModel.CustomXml;
-
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 ///   Specifies all document-level properties that affect the handling, behavior, and appearance of the current Wordprocessing document.
 ///   Provides access to settings for proofing, borders, custom XML, templates, protection, printing, captions, compatibility, styles, and more.
@@ -10,7 +8,6 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.Settings))]
 public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
 {
-
   /// <summary>
   /// Known properties that can be set in DocumentSettings.
   /// </summary>
@@ -23,16 +20,13 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
       return _KnownProperties;
     }
   }
-
   private static KnownProperties? _KnownProperties;
-
   /// <summary>
   ///   Initializes a new instance of the <see cref="DocumentSettings"/> class with default values.
   /// </summary>
   public DocumentSettings()
   {
   }
-
   /// <summary>
   ///   Initializes a new instance of the <see cref="DocumentSettings"/> class and attaches it to the specified Wordprocessing document model.
   /// </summary>
@@ -42,7 +36,6 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
   }
-
   /// <summary>
   ///   Attaches this instance to the specified Wordprocessing document and loads data from the document's settings part.
   /// </summary>
@@ -54,7 +47,6 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     SetUpdatableElement(documentSettings);
     LoadData(documentSettings);
   }
-
   /// <summary>
   ///   Attaches this instance to the specified Wordprocessing document and updates the document's settings part with current data.
   /// </summary>
@@ -66,5 +58,4 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     SetUpdatableElement(documentSettings);
     UpdateData(documentSettings);
   }
-
 }
